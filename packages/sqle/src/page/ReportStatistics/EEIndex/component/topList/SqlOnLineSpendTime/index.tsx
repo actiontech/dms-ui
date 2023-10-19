@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
 import { AxiosResponse } from 'axios';
+import Icon from '@ant-design/icons/lib/components/Icon';
+
 import ColumnIndex from '../ColumnIndex';
 import TableTopList, {
   ITableTopList
@@ -9,6 +11,7 @@ import TableTopList, {
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { IconFlashlight } from '../../../../../../icon/ReportStatistics';
 import { ISqlAverageExecutionTime } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   IGetSqlAverageExecutionTimeV1Params,
@@ -42,6 +45,19 @@ const SqlOnLineSpendTime = () => {
     },
     { onSuccess }
   );
+
+  const renderRapidIcon = (data: number) => {
+    if (!data) return '-';
+    if (data <= 200) {
+      return (
+        <>
+          <Icon component={IconFlashlight} />
+          <span>{data}s</span>
+        </>
+      );
+    }
+    return formatParamsBySeparator(data) + 's';
+  };
 
   const columnData: () => ITableTopList<ISqlAverageExecutionTime>['columns'] =
     () => {

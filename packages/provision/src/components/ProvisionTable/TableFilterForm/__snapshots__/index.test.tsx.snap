@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableFilterForm should update filteredInfo when click search button 1`] = `
+<div>
+  <form
+    class="ant-form ant-form-horizontal filter-form"
+  >
+    <div
+      class="ant-row"
+    >
+      <div
+        class="ant-col ant-col-xs-24 ant-col-sm-12 ant-col-xl-8 ant-col-xxl-6"
+      >
+        <div
+          class="ant-form-item"
+        >
+          <div
+            class="ant-row ant-form-item-row"
+          >
+            <div
+              class="ant-col ant-form-item-label"
+            >
+              <label
+                class=""
+                for="filter_purpose"
+                title="目的"
+              >
+                目的
+              </label>
+            </div>
+            <div
+              class="ant-col ant-form-item-control"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <input
+                    class="ant-input"
+                    id="filter_purpose"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-col text-align-right ant-col-xl-8"
+      >
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center"
+          style="float: right;"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <button
+              class="ant-btn ant-btn-default"
+              type="button"
+            >
+              <span>
+                重 置
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn ant-btn-primary"
+              type="button"
+            >
+              <span>
+                搜 索
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

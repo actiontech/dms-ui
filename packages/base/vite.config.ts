@@ -14,17 +14,24 @@ export default defineConfig((config) => {
   const isCE = buildTypes.includes('ce');
 
   const isSQLE = buildTypes.includes('SQLE');
+  const isPROVISION = buildTypes.includes('PROVISION');
+  const isONLY_SQLE = isSQLE && !isPROVISION;
 
   return {
     plugins: [
       vitePluginConditionalCompile({
-        expand: { isCE, isEE, isSQLE }
+        expand: { isCE, isEE, isSQLE, isPROVISION, isONLY_SQLE }
       }),
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
       }),
       react()
     ],
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, '../provision/src')
+      }
+    },
     css: {
       preprocessorOptions: {
         less: {
@@ -38,13 +45,14 @@ export default defineConfig((config) => {
       watch: {
         ignored: [
           '!**/node_modules/sqle/**',
+          '!**/node_modules/provision/**',
           '!**/node_modules/@actiontech/shared/**'
         ]
       },
       host: '0.0.0.0',
       open: true,
       proxy: {
-        '^(/v|/sqle/v)': {
+        '^(/v|/sqle/v|/provision/v)': {
           target: 'http://10.186.62.13:27601'
         }
       },

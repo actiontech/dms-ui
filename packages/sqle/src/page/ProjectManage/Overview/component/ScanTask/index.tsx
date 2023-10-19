@@ -11,6 +11,7 @@ import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { defaultItemKey } from './index.data';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { IDBTypeAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
+import { Empty } from 'antd';
 
 export type typeChartChildrenProps = {
   apiLoading: boolean;
