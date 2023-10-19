@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test EnterpriseFeatureDisplay should match snapshot 1`] = `
+<div>
+  <section
+    class="padding-content"
+  >
+    <div
+      class="ant-card"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 26px;"
+          >
+            <article>
+              <h4
+                class="ant-typography"
+              >
+                功能说明
+              </h4>
+              <span
+                class="ant-typography whitespace-pre-line"
+              >
+                eeFeatureDescription
+              </span>
+            </article>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <article>
+              <div
+                class="ant-space ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <h4
+                    class="ant-typography"
+                  >
+                    更多关注
+                  </h4>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <span
+                    class="ant-typography"
+                  >
+                    featureName为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <ul>
+                    <li>
+                      <a
+                        href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support"
+                      >
+                        https://actiontech.github.io/sqle-docs/docs/support/commercial-support
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.actionsky.com/"
+                      >
+                        https://www.actionsky.com/
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <span
+                    class="ant-typography"
+                  >
+                    如您想了解更多关于企业版及社区版功能的差异，可参考用户手册：
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <ul>
+                    <li>
+                      <a
+                        href="https://actiontech.github.io/sqle-docs/docs/support/compare"
+                      >
+                        https://actiontech.github.io/sqle-docs/docs/support/compare
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  ee version display
+</div>
+`;
+
+exports[`test EnterpriseFeatureDisplay should match snapshot 2`] = `
+<div>
+  <section
+    class=""
+  >
+    <div
+      class="ant-card"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 26px;"
+          >
+            <article>
+              <h4
+                class="ant-typography"
+              >
+                功能说明
+              </h4>
+              <span
+                class="ant-typography whitespace-pre-line"
+              >
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    <span>
+                      test\\ntest\\n
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <span>
+                      test\\n
+                    </span>
+                  </div>
+                </div>
+              </span>
+            </article>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <article>
+              <div
+                class="ant-space ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <h4
+                    class="ant-typography"
+                  >
+                    更多关注
+                  </h4>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <span
+                    class="ant-typography"
+                  >
+                    featureName为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <ul>
+                    <li>
+                      <a
+                        href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support"
+                      >
+                        https://actiontech.github.io/sqle-docs/docs/support/commercial-support
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.actionsky.com/"
+                      >
+                        https://www.actionsky.com/
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <span
+                    class="ant-typography"
+                  >
+                    如您想了解更多关于企业版及社区版功能的差异，可参考用户手册：
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <ul>
+                    <li>
+                      <a
+                        href="https://actiontech.github.io/sqle-docs/docs/support/compare"
+                      >
+                        https://actiontech.github.io/sqle-docs/docs/support/compare
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  ee version display
+</div>
+`;

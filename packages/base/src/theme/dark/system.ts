@@ -1,0 +1,12 @@
+import { darkThemeUI } from '@actiontech/shared/lib/theme/dark/basic';
+import { SystemTheme } from '../type';
+
+export const systemTheme: SystemTheme = {
+  configButton: {
+    backgroundColor: darkThemeUI.uiToken.colorFillSecondary,
+    border: `1px solid ${darkThemeUI.uiToken.colorBorderSecondary}`
+  },
+  logo: {
+    boxShadow: '0 1px 4px 0 rgba(51, 44, 31, 0.12)'
+  }
+};

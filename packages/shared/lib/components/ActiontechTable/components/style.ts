@@ -1,0 +1,199 @@
+import { styled } from '@mui/material/styles';
+import { Space } from 'antd5';
+import BasicInput from '../../BasicInput/Input';
+import { ANTD_PREFIX_STR } from '../../../data/common';
+import BasicRangePicker from '../../BasicRangePicker';
+
+export const FilterContainerStyleWrapper = styled(Space)`
+  border-bottom: ${({ theme }) =>
+    theme.sharedTheme.components.filterContainer.border};
+  background-color: ${({ theme }) =>
+    theme.sharedTheme.components.filterContainer.backgroundColor};
+  padding: 10px 40px;
+`;
+
+export const SearchInputStyleWrapper = styled(BasicInput)`
+  .${ANTD_PREFIX_STR}-input-suffix.basic-input-wrapper {
+    margin-left: 0;
+    padding: 0 4px;
+
+    .custom-icon-search {
+      cursor: pointer;
+      color: ${({ theme }) =>
+        theme.sharedTheme.components.searchInput.searchIconColor};
+    }
+  }
+`;
+
+export const ColumnsSettingDropdownStyleWrapper = styled('div')`
+  width: 220px;
+  background-color: ${({ theme }) =>
+    theme.sharedTheme.components.columnsSetting.dropdown.backgroundColor};
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: ${({ theme }) =>
+    theme.sharedTheme.components.columnsSetting.dropdown.boxShadow};
+
+  .actiontech-table-setting-fixed-left,
+  .actiontech-table-setting-not-fixed {
+    border-bottom: ${({ theme }) =>
+      theme.sharedTheme.components.columnsSetting.dropdown.border};
+  }
+
+  .actiontech-table-setting-fixed-title {
+    height: 36px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: ${({ theme }) =>
+      theme.sharedTheme.components.columnsSetting.dropdown.title.color};
+  }
+
+  .columns-setting-item-wrapper {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 12px 0 8px;
+
+    &:hover {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.components.columnsSetting.dropdown.item
+          .hoverBackgroundColor};
+    }
+
+    .columns-setting-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      width: 80%;
+      padding: 4px 8px;
+
+      .custom-icon-draggable {
+        color: ${({ theme }) =>
+          theme.sharedTheme.components.columnsSetting.dropdown.item.iconColor};
+      }
+
+      &-label {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        color: ${({ theme }) =>
+          theme.sharedTheme.components.columnsSetting.dropdown.item.labelColor};
+        overflow: hidden;
+        max-width: 70%;
+      }
+    }
+  }
+`;
+
+export const ToolbarStyleWrapper = styled(Space)`
+  border-bottom: ${({ theme }) => theme.sharedTheme.components.toolbar.border};
+  background-color: ${({ theme }) =>
+    theme.sharedTheme.components.toolbar.backgroundColor};
+  padding: 14px 40px;
+
+  .${ANTD_PREFIX_STR}-space-item {
+    padding-bottom: 0 !important;
+  }
+`;
+
+export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
+  &.${ANTD_PREFIX_STR}-picker.${ANTD_PREFIX_STR}-picker-borderless.basic-range-picker-wrapper {
+    border: 1px solid
+      ${({ theme }) =>
+        theme.sharedTheme.components.customFilter.rangePicker
+          .borderColor} !important;
+    border-radius: 4px;
+  }
+
+  .${ANTD_PREFIX_STR}-picker-input:first-child {
+    width: 88%;
+  }
+
+  .${ANTD_PREFIX_STR}-picker-active-bar {
+    display: none;
+  }
+
+  .${ANTD_PREFIX_STR}-picker-input {
+    input::placeholder {
+      color: ${({ theme }) =>
+        theme.sharedTheme.components.customFilter.rangePicker.placeholder
+          .color} !important;
+    }
+  }
+
+  &.${ANTD_PREFIX_STR}-picker-range:hover {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.customFilter.rangePicker
+        .hoverBackgroundColor} !important;
+  }
+
+  &.${ANTD_PREFIX_STR}-picker-focused {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.customFilter.rangePicker
+        .focusBackgroundColor};
+  }
+
+  & .custom-range-picker-filter-label {
+    color: ${({ theme }) =>
+      theme.sharedTheme.components.customFilter.rangePicker.filterLabelColor};
+  }
+`;
+
+export const InlineTableActionButtonsStyleWrapper = styled('div')`
+  display: flex;
+  gap: 8px;
+
+  .actiontech-table-actions-button {
+    height: 24px;
+    font-size: 12px !important;
+  }
+
+  .actiontech-table-actions-more-button {
+    height: 24px;
+    width: 24px;
+  }
+`;
+
+export const InlineTableActionMoreButtonPopoverStyleWrapper = styled('div')`
+  width: 160px;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: ${({ theme }) =>
+    theme.sharedTheme.components.table.row.moreButtonInActions.backgroundColor};
+  color: ${({ theme }) =>
+    theme.sharedTheme.components.table.row.moreButtonInActions.color};
+  border: ${({ theme }) =>
+    theme.sharedTheme.components.table.row.moreButtonInActions.border};
+  box-shadow: ${({ theme }) =>
+    theme.sharedTheme.components.table.row.moreButtonInActions.boxShadow};
+
+  .more-button-item {
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 8px;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.components.table.row.moreButtonInActions
+          .hoverItemBackgroundColor};
+    }
+
+    &-text {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+`;

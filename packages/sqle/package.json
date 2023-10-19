@@ -1,0 +1,53 @@
+{
+  "name": "sqle",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/App.tsx",
+  "dependencies": {
+    "@actiontech/shared": "workspace:^1.0.0",
+    "@dnd-kit/core": "^6.0.8",
+    "@dnd-kit/modifiers": "^6.0.1",
+    "@dnd-kit/sortable": "^7.0.2",
+    "@dnd-kit/utilities": "^3.2.1",
+    "highlight.js": "^11.0.1",
+    "react-grid-layout": "^1.3.4",
+    "react-infinite-scroll-component": "^6.1.0",
+    "sql-formatter": "^12.2.4",
+    "use-resize-observer": "^9.0.2",
+    "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "@types/react-grid-layout": "^1.3.2",
+    "craco-less": "^2.0.0",
+    "jest-canvas-mock": "^2.2.0",
+    "js-conditional-compile-loader": "^1.0.14",
+    "monaco-editor-webpack-plugin": "^7.0.1",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "PORT=3030 craco start",
+    "prebuild": "node ./scripts/moveAntdCss.js && node ./scripts/getGitVersion.js",
+    "build": "craco build",
+    "test": "jest --watchAll=true",
+    "test:c": "jest --watchAll=false --coverage",
+    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "proxy": "http://10.186.62.5:10000"
+}

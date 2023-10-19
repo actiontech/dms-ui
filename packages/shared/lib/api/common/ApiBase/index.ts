@@ -1,0 +1,86 @@
+import { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { ResponseCode } from '../../../enum';
+import Download from '../../../utils/Download';
+import i18n from 'i18next';
+import store from '../../../../../base/src/store';
+import { getErrorMessage } from '../../../utils/Common';
+import { eventEmitter } from '../../../utils/EventEmitter';
+import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
+import { ArgsProps } from 'antd5/es/notification/interface';
+import EmitterKey from '../../../data/EmitterKey';
+
+class ApiBase {
+  public interceptorsResponse(authInvalid: () => void) {
+    const successFn = (res: AxiosResponse<any, any>) => {
+      if (res.status === 401) {
+        authInvalid();
+      } else if (res.headers?.['content-disposition']?.includes('attachment')) {
+        const disposition: string = res.headers?.['content-disposition'];
+        const flag = 'filename=';
+        const flagCharset = 'filename*=';
+        let filename = '';
+        if (disposition.includes(flagCharset)) {
+          const tempArr = disposition.split("'");
+          filename = decodeURI(tempArr[tempArr.length - 1]);
+        } else {
+          const startIndex = disposition.indexOf(flag);
+          filename = disposition.slice(startIndex + flag.length);
+        }
+        Download.downloadByCreateElementA(res.data, filename);
+        return res;
+      } else if (
+        (res.status === 200 && res?.data?.code !== ResponseCode.SUCCESS) ||
+        res.status !== 200
+      ) {
+        eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
+          EmitterKey.OPEN_GLOBAL_NOTIFICATION,
+          'error',
+          {
+            message: `${i18n.t('common.request.noticeFailTitle')}`,
+            description: getErrorMessage(res)
+          }
+        );
+      }
+      return res;
+    };
+
+    const errorFn = (error: any) => {
+      if (error?.response?.status === 401) {
+        authInvalid();
+      } else if (error?.response?.status !== 200) {
+        eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
+          EmitterKey.OPEN_GLOBAL_NOTIFICATION,
+          'error',
+          {
+            message: `${i18n.t('common.request.noticeFailTitle')}`,
+            description: getErrorMessage(error.response)
+          }
+        );
+      }
+      return Promise.reject(error);
+    };
+
+    return { successFn, errorFn };
+  }
+
+  public interceptorsRequest(
+    doNotAddAuthRequest: string[],
+    token = store.getState().user.token
+  ) {
+    return (config: AxiosRequestConfig) => {
+      if (!token || doNotAddAuthRequest.some((url) => config.url === url)) {
+        return config;
+      }
+
+      return {
+        ...config,
+        headers: {
+          ...config.headers,
+          Authorization: token
+        }
+      };
+    };
+  }
+}
+
+export default ApiBase;
