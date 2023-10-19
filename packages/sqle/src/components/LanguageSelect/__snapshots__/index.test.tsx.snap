@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageSelect should render all support language option in select 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-select ant-select-sm font-size-small ant-select-single ant-select-show-arrow"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+        >
+          <span
+            class="anticon"
+            role="img"
+          >
+            <svg
+              height="200"
+              p-id="5423"
+              version="1.1"
+              viewBox="0 0 1536 1024"
+              width="200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h1536v1024H0z"
+                fill="#E94B35"
+                p-id="5424"
+              />
+              <path
+                d="M304 496l-141.056 98.176 49.76-164.48-136.96-103.872 171.84-3.52L304 160l56.416 162.336 171.84 3.52-136.96 103.808 49.76 164.48zM567.232 216.064l-44.288 11.712 27.456-36.672-24.832-38.496 43.36 14.784 28.96-35.52-0.64 45.824 42.72 16.544-43.808 13.536-2.528 45.76zM716.8 339.04l-19.52 41.472-10.4-44.608-45.472-5.76 39.2-23.68L672 261.44l34.688 29.952 40.128-22.08-17.76 42.24 33.408 31.36zM699.552 508.32l-41.6 19.232 20.704-40.896-31.168-33.6 45.28 7.04 22.336-40 7.296 45.216 44.992 8.896-40.8 20.896 5.44 45.504zM567.232 632.064l-44.288 11.712 27.456-36.672-24.832-38.496 43.36 14.784 28.96-35.52-0.64 45.824 42.72 16.544-43.808 13.536-2.528 45.76z"
+                fill="#F2C500"
+                p-id="5425"
+              />
+            </svg>
+          </span>
+           
+          中文
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          aria-label="down"
+          class="anticon anticon-down ant-select-suffix"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="down"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LanguageSelect should render all support language option in select 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-select ant-select-sm font-size-small ant-select-single ant-select-show-arrow ant-select-open"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+        >
+          <span
+            class="anticon"
+            role="img"
+          >
+            <svg
+              height="200"
+              p-id="5423"
+              version="1.1"
+              viewBox="0 0 1536 1024"
+              width="200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h1536v1024H0z"
+                fill="#E94B35"
+                p-id="5424"
+              />
+              <path
+                d="M304 496l-141.056 98.176 49.76-164.48-136.96-103.872 171.84-3.52L304 160l56.416 162.336 171.84 3.52-136.96 103.808 49.76 164.48zM567.232 216.064l-44.288 11.712 27.456-36.672-24.832-38.496 43.36 14.784 28.96-35.52-0.64 45.824 42.72 16.544-43.808 13.536-2.528 45.76zM716.8 339.04l-19.52 41.472-10.4-44.608-45.472-5.76 39.2-23.68L672 261.44l34.688 29.952 40.128-22.08-17.76 42.24 33.408 31.36zM699.552 508.32l-41.6 19.232 20.704-40.896-31.168-33.6 45.28 7.04 22.336-40 7.296 45.216 44.992 8.896-40.8 20.896 5.44 45.504zM567.232 632.064l-44.288 11.712 27.456-36.672-24.832-38.496 43.36 14.784 28.96-35.52-0.64 45.824 42.72 16.544-43.808 13.536-2.528 45.76z"
+                fill="#F2C500"
+                p-id="5425"
+              />
+            </svg>
+          </span>
+           
+          中文
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          aria-label="down"
+          class="anticon anticon-down ant-select-suffix"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="down"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    style="position: absolute; top: 0px; left: 0px; width: 100%;"
+  >
+    <div>
+      <div
+        class="ant-select-dropdown login-page-language"
+        style="opacity: 0; min-width: 0;"
+      >
+        <div>
+          <div
+            id="rc_select_TEST_OR_SSR_list"
+            role="listbox"
+            style="height: 0px; width: 0px; overflow: hidden;"
+          >
+            <div
+              aria-selected="true"
+              id="rc_select_TEST_OR_SSR_list_0"
+              role="option"
+            >
+              zh-CN
+            </div>
+            <div
+              aria-selected="false"
+              id="rc_select_TEST_OR_SSR_list_1"
+              role="option"
+            >
+              en-US
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list"
+            style="position: relative;"
+          >
+            <div
+              class="rc-virtual-list-holder"
+              style="max-height: 256px; overflow-y: auto;"
+            >
+              <div>
+                <div
+                  class="rc-virtual-list-holder-inner"
+                  style="display: flex; flex-direction: column;"
+                >
+                  <div
+                    aria-selected="true"
+                    class="ant-select-item ant-select-item-option font-size-small ant-select-item-option-active ant-select-item-option-selected"
+                  >
+                    <div
+                      class="ant-select-item-option-content"
+                    >
+                      <span
+                        class="anticon"
+                        role="img"
+                      >
+                        <svg
+                          height="200"
+                          p-id="5423"
+                          version="1.1"
+                          viewBox="0 0 1536 1024"
+                          width="200"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 0h1536v1024H0z"
+                            fill="#E94B35"
+                            p-id="5424"
+                          />
+                          <path
+                            d="M304 496l-141.056 98.176 49.76-164.48-136.96-103.872 171.84-3.52L304 160l56.416 162.336 171.84 3.52-136.96 103.808 49.76 164.48zM567.232 216.064l-44.288 11.712 27.456-36.672-24.832-38.496 43.36 14.784 28.96-35.52-0.64 45.824 42.72 16.544-43.808 13.536-2.528 45.76zM716.8 339.04l-19.52 41.472-10.4-44.608-45.472-5.76 39.2-23.68L672 261.44l34.688 29.952 40.128-22.08-17.76 42.24 33.408 31.36zM699.552 508.32l-41.6 19.232 20.704-40.896-31.168-33.6 45.28 7.04 22.336-40 7.296 45.216 44.992 8.896-40.8 20.896 5.44 45.504zM567.232 632.064l-44.288 11.712 27.456-36.672-24.832-38.496 43.36 14.784 28.96-35.52-0.64 45.824 42.72 16.544-43.808 13.536-2.528 45.76z"
+                            fill="#F2C500"
+                            p-id="5425"
+                          />
+                        </svg>
+                      </span>
+                       
+                      中文
+                    </div>
+                    <span
+                      aria-hidden="true"
+                      class="ant-select-item-option-state"
+                      style="user-select: none;"
+                      unselectable="on"
+                    />
+                  </div>
+                  <div
+                    aria-selected="false"
+                    class="ant-select-item ant-select-item-option font-size-small"
+                  >
+                    <div
+                      class="ant-select-item-option-content"
+                    >
+                      <span
+                        class="anticon"
+                        role="img"
+                      >
+                        <svg
+                          height="200"
+                          p-id="5287"
+                          version="1.1"
+                          viewBox="0 0 1536 1024"
+                          width="200"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 0h1536v1024H0z"
+                            fill="#FFFFFF"
+                            p-id="5288"
+                          />
+                          <path
+                            d="M768 0h768v80H768zM768 314.656h768v80H768zM0 629.344v80h1536v-80zM768 157.344h768v80H768zM768 472v80h768v-80zM0 786.656h1536v80H0zM0 944h1536V1024H0z"
+                            fill="#E94B35"
+                            p-id="5289"
+                          />
+                          <path
+                            d="M0 0h768v552H0z"
+                            fill="#227FBB"
+                            p-id="5290"
+                          />
+                          <path
+                            d="M64 96l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L64 48l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM192 96l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L192 48l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM320 96l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L320 48l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM448 96l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L448 48l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM576 96l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L576 48l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928z"
+                            fill="#FFFFFF"
+                            p-id="5291"
+                          />
+                          <path
+                            d="M576 96l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L576 48l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM640 192l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L640 144l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM128 192l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L128 144l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM256 192l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L256 144l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM384 192l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L384 144l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM512 192l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L512 144l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM704 96l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L704 48l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM64 288l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L64 240l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM192 288l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L192 240l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM320 288l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L320 240l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM448 288l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L448 240l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM576 288l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L576 240l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928z"
+                            fill="#FFFFFF"
+                            p-id="5292"
+                          />
+                          <path
+                            d="M576 288l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L576 240l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM640 384l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L640 336l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM128 384l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L128 336l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM256 384l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L256 336l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM384 384l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L384 336l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM512 384l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L512 336l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM704 288l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L704 240l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM64 480l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L64 432l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM192 480l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L192 432l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM320 480l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L320 432l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM448 480l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L448 432l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM576 480l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L576 432l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928z"
+                            fill="#FFFFFF"
+                            p-id="5293"
+                          />
+                          <path
+                            d="M576 480l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L576 432l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928zM704 480l-18.816 9.888 3.584-20.928-15.2-14.848 21.024-3.072L704 432l9.408 19.04 21.024 3.072-15.2 14.848 3.584 20.928z"
+                            fill="#FFFFFF"
+                            p-id="5294"
+                          />
+                        </svg>
+                      </span>
+                       
+                      English
+                    </div>
+                    <span
+                      aria-hidden="true"
+                      class="ant-select-item-option-state"
+                      style="user-select: none;"
+                      unselectable="on"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

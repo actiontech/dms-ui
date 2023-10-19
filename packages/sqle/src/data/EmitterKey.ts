@@ -1,0 +1,42 @@
+enum EmitterKey {
+  Refresh_User_list = 'REFRESH_USER_LIST',
+  Refresh_Role_list = 'REFRESH_ROLE_LIST',
+  Refresh_User_Group_List = 'REFRESH_USER_GROUP_LIST',
+
+  Refresh_Whitelist_List = 'REFRESH_WHITELIST_LIST',
+
+  Refresh_Rule_Template_List = 'REFRESH_RULE_TEMPLATE_LIST',
+  Refresh_Global_Rule_Template_List = 'Refresh_Global_Rule_Template_List',
+  Refresh_Custom_Rule_Template_List = 'Refresh_Custom_Rule_Template_List',
+
+  Reset_Create_Order_Form = 'RESET_CREATE_ORDER_FORM',
+
+  Reset_Test_Data_Source_Connect = 'RESET_TEST_DATA_SOURCE_CONNECT',
+
+  Reset_Workflow_Template_Form = 'RESET_WORKFLOW_TEMPLATE_FORM',
+
+  Submit_Audit_Plan_Form = 'SUBMIT_AUDIT_PLAN_FORM',
+
+  Rest_Audit_Plan_Form = 'REST_AUDIT_PLAN_FORM',
+
+  Reset_Audit_Plan_Form_Instance_List = 'Reset_Audit_Plan_Form_Instance_List',
+
+  Refresh_Audit_Plan_Record = 'REFRESH_AUDIT_PLAN_RECORD',
+
+  Refresh_License = 'REFRESH_LICENSE',
+
+  Refresh_Project_List = 'Refresh_Project_List',
+
+  Refresh_Member_List = 'Refresh_Member_List',
+  Refresh_Member_Group_List = 'Refresh_Member_Group_List',
+  Refresh_Filter_User_Tips = 'Refresh_Filter_User_Tips',
+  Refresh_Filter_User_Group_Tips = 'Refresh_Filter_User_Group_Tips',
+
+  Update_Recently_Opened_Projects = 'UPDATE_RECENTLY_OPENED_PROJECTS',
+
+  Refresh_Sync_Task_Rule_Template_Tips = 'REFRESH_SYNC_TASK_RULE_TEMPLATE_TIPS',
+  Refresh_Report_Statistics = 'Refresh_Report_Statistics',
+  Refresh_Project_Overview = 'Refresh_Project_Overview'
+}
+
+export default EmitterKey;

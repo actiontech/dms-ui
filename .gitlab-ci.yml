@@ -1,0 +1,18 @@
+code-lint-check:
+  script:
+    - make docker_check
+  after_script:
+    - make docker_clean
+  only:
+    - merge_request
+  tags:
+    - docker
+# unit-test:
+#   script:
+#     - make docker_test
+#   after_script:
+#     - make docker_clean
+#   only:
+#     - merge_request
+#   tags:
+#     - docker

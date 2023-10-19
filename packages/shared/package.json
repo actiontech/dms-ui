@@ -1,0 +1,11 @@
+{
+  "name": "@actiontech/shared",
+  "version": "1.0.0",
+  "main": "lib/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watchAll=true",
+    "test:c": "jest --watchAll=false --coverage",
+    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+  }
+}

@@ -1,0 +1,108 @@
+import { useEffect, useState } from 'react';
+import { BasicModal, BasicButton } from '@actiontech/shared';
+import { useTranslation } from 'react-i18next';
+import DmsService from '@actiontech/shared/lib/api/base/service/dms';
+import { Space, Typography } from 'antd5';
+import { UI_VERSION } from '../../../scripts/version';
+import { VersionModalDescribeTextStyleWrapper } from './style';
+
+const VersionModal: React.FC<{
+  open: boolean;
+  setVersionModalClose: () => void;
+}> = ({ open, setVersionModalClose }) => {
+  const { t } = useTranslation();
+
+  const [dmsVersion, setDmsVersion] = useState<string | undefined>('');
+
+  /* IFTRUE_isSQLE */
+  const [sqleVersion, setSqleVersion] = useState<string | undefined>('');
+  /* FITRUE_isSQLE */
+
+  useEffect(() => {
+    if (open) {
+      DmsService.GetBasicInfo().then((res) => {
+        const dms = res.data.data?.components?.find(
+          (i) => i.name === 'dms'
+        )?.version;
+        setDmsVersion(formatServerVersion(dms));
+
+        /* IFTRUE_isSQLE */
+        const sqle = res.data.data?.components?.find(
+          (i) => i.name === 'sqle'
+        )?.version;
+        setSqleVersion(formatServerVersion(sqle));
+
+        /* FITRUE_isSQLE */
+      });
+    }
+  }, [open]);
+
+  const formatServerVersion = (version?: string): string => {
+    if (!version) {
+      return '';
+    }
+    const versionArr = version.replace(/"/g, '').split(' ');
+    if (versionArr.length === 1) {
+      return versionArr[0];
+    }
+    return `${versionArr[0]} ${versionArr[1].slice(0, 10)}`;
+  };
+
+  return (
+    <BasicModal
+      open={open}
+      onCancel={setVersionModalClose}
+      footer={
+        <Space>
+          <BasicButton type="primary">
+            <a
+              target="_blank"
+              href="https://actiontech.github.io/sqle-docs/"
+              rel="noreferrer"
+            >
+              {t('common.showMore')}
+            </a>
+          </BasicButton>
+          <BasicButton type="primary" onClick={setVersionModalClose}>
+            {t('dmsSystem.version.gotIt')}
+          </BasicButton>
+        </Space>
+      }
+    >
+      <Space direction="vertical" size="large">
+        <Space>
+          <Typography.Title level={2}>DMS</Typography.Title>
+        </Space>
+        <Space align="start" direction="vertical">
+          <Typography.Title level={5}>
+            {t('dmsSystem.version.versionInfo')}
+          </Typography.Title>
+          <Space direction="vertical">
+            <Typography>UI: {UI_VERSION}</Typography>
+            <Typography>DMS: {dmsVersion || '-'}</Typography>
+
+            {/* IFTRUE_isSQLE */}
+            <Typography>SQLE: {sqleVersion || '-'}</Typography>
+            {/* FITRUE_isSQLE */}
+          </Space>
+        </Space>
+        <Space align="start" direction="vertical">
+          <Typography.Title level={5}>
+            {t('dmsSystem.version.productIntroduction')}
+          </Typography.Title>
+          <Typography.Text>{t('dmsSystem.version.dms_desc')}</Typography.Text>
+        </Space>
+        <Space align="start" direction="vertical">
+          <Typography.Title level={5}>
+            {t('dmsSystem.version.productFeatures')}
+          </Typography.Title>
+          <VersionModalDescribeTextStyleWrapper>
+            {t('dmsSystem.version.dms_feature')}
+          </VersionModalDescribeTextStyleWrapper>
+        </Space>
+      </Space>
+    </BasicModal>
+  );
+};
+
+export default VersionModal;

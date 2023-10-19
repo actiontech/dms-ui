@@ -1,0 +1,41 @@
+.tooltip-box-wrapper {
+  padding: 6px 0;
+
+  header.tooltip-title {
+    height: auto;
+    min-height: 28px;
+    line-height: 20px;
+    color: #8a8f99;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+
+    span.dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+  }
+
+  dl.tooltip-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #292c33;
+    line-height: 20px;
+    margin: 0;
+    font-weight: 400;
+
+    &:first-of-type {
+      margin-top: 4px;
+    }
+
+    .tooltip-value {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+  }
+}

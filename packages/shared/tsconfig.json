@@ -1,0 +1,4 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["lib", "./jest-setup.ts", "../sqle/src/service"]
+}

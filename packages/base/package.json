@@ -1,0 +1,23 @@
+{
+  "name": "base",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "cross-env buildType=ce,SQLE vite --port=3020",
+    "start:ee": "cross-env buildType=ee,SQLE vite --port=3020",
+    "build": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=ce,SQLE vite build",
+    "build:ee": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=ee,SQLE vite build",
+    "preview": "vite preview",
+    "test": "jest --watchAll=true",
+    "test:c": "jest --coverage",
+    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+  },
+  "dependencies": {
+    "@actiontech/shared": "workspace:^",
+    "babel-preset-react-app": "^10.0.1",
+    "sqle": "workspace:^"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

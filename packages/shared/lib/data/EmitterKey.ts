@@ -1,0 +1,7 @@
+enum EmitterKey {
+  UPDATE_LOCAL_COLUMNS = 'UPDATE_LOCAL_COLUMNS',
+
+  OPEN_GLOBAL_NOTIFICATION = 'OPEN_GLOBAL_NOTIFICATION'
+}
+
+export default EmitterKey;

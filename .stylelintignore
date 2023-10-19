@@ -1,0 +1,16 @@
+src/**/__snapshots__/**
+src/**/public/**/**
+src/**/locale/**/**
+src/**/assets/**/**
+src/**/testUtils/**/**
+src/**/coverage/**/**
+**/coverage/**/*,
+**/node_modules/**/*,
+**/*.snap,
+**/*.md,
+**/*.ts,
+**/*.tsx,
+**/*.js,
+**/*.jsx,
+**/*.svg,
+**/*.png
