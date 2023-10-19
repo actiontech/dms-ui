@@ -46,7 +46,7 @@ const OrderDetailPageHeaderExtra: React.FC<OrderDetailPageHeaderExtraProps> = (
         <Divider type="vertical" className="order-detail-page-header-divider" />
       </div>
 
-      <EmptyBox if={props.isArchive}>
+      <EmptyBox if={!props.isArchive}>
         <BasicButton
           hidden={rejectOrderButtonMeta.hidden}
           onClick={openRejectModal}
@@ -99,7 +99,7 @@ const OrderDetailPageHeaderExtra: React.FC<OrderDetailPageHeaderExtraProps> = (
       </EmptyBox>
 
       <Space hidden={terminateOrderButtonMeta.hidden} size={0}>
-        <EmptyBox if={props.isArchive}>
+        <EmptyBox if={!props.isArchive}>
           <Popconfirm
             title={t('order.operator.terminateConfirmTips')}
             onConfirm={() => terminateOrderButtonMeta.action()}
