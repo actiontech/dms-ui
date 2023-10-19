@@ -81,6 +81,8 @@ export const ComponentControlHeight = {
 
 export const SQLE_BASE_URL = '/sqle/';
 
+export const PROVISION_BASE_URL = '/provision/';
+
 export const DrawerFormLayout = {
   labelCol: { span: 24 },
   wrapperCol: { span: 24 }

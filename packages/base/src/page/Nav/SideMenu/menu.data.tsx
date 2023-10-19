@@ -13,7 +13,10 @@ import {
   IconWhitelist,
   IconWorkflowTemplate,
   IconSQLOrder,
-  IconAuditPlan
+  IconAuditPlan,
+  IconPermissionGroup,
+  IconPermissionTemplate,
+  IconAuthList
 } from '../../../icon/sideMenu';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { MenuProps } from 'antd5';
@@ -98,12 +101,53 @@ export const sideMenuData: (
     },
 
     /* IFTRUE_isEE */
+    /* IFTRUE_isPROVISION */
+    {
+      label: t('dmsMenu.operateAndAudit'),
+      expandIcon({ isOpen }) {
+        return isOpen ? <IconSubmenuExpandTop /> : <IconSubmenuExpandDown />;
+      },
+      icon: <Icon component={IconOperateAndAudit} />,
+      key: 'operate',
+      children: [
+        {
+          label: t('dmsMenu.authAudit'),
+          key: `provision/project/${menuDataPlaceholderKey}/audit/auth`,
+          onClick: () => navigate(`/provision/project/${projectID}/audit/auth`)
+        },
+        {
+          label: t('dmsMenu.templateAudit'),
+          key: `provision/project/${menuDataPlaceholderKey}/audit/template`,
+          onClick: () =>
+            navigate(`/provision/project/${projectID}/audit/template`)
+        },
+        {
+          label: t('dmsMenu.instanceAudit'),
+          key: `provision/project/${menuDataPlaceholderKey}/audit/service`,
+          onClick: () =>
+            navigate(`/provision/project/${projectID}/audit/service`)
+        },
+
+        /* IFTRUE_isSQLE */
+        {
+          label: t('dmsMenu.SQLEOperateRecord'),
+          key: isAdminKeys.operate,
+          onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`)
+        }
+        /* FITRUE_isSQLE */
+      ]
+    },
+    /* FITRUE_isPROVISION */
+
+    /* IFTRUE_isONLY_SQLE */
     {
       label: t('dmsMenu.operateAndAudit'),
       icon: <Icon component={IconOperateAndAudit} />,
       key: isAdminKeys.operate,
       onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`)
     },
+    /* FITRUE_isONLY_SQLE */
+
     /* FITRUE_isEE */
 
     //todo
@@ -159,8 +203,45 @@ export const sideMenuData: (
           onClick: () => navigate(`/sqle/project/${projectID}/auditPlan`)
         }
       ]
-    }
+    },
     /* FITRUE_isSQLE */
+
+    /* IFTRUE_isPROVISION */
+    {
+      type: 'divider'
+    },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.dataSecurity'),
+      children: [
+        {
+          label: t('dmsMenu.permissionGroup'),
+          key: `provision/project/${menuDataPlaceholderKey}/data/operation`,
+          icon: <Icon component={IconPermissionGroup} />,
+          onClick: () =>
+            navigate(`/provision/project/${projectID}/data/operation`)
+        },
+        {
+          label: t('dmsMenu.permissionTemplate'),
+          key: `provision/project/${menuDataPlaceholderKey}/auth/template`,
+          icon: <Icon component={IconPermissionTemplate} />,
+          onClick: () =>
+            navigate(`/provision/project/${projectID}/auth/template`)
+        },
+        {
+          label: t('dmsMenu.authList'),
+          key: `provision/project/${menuDataPlaceholderKey}/auth/list`,
+          icon: <Icon component={IconAuthList} />,
+          onClick: () => navigate(`/provision/project/${projectID}/auth/list`)
+        }
+        // {
+        //   label: t('dmsMenu.permissionOrder'),
+        //   key: 'permissionOrder',
+        //   icon: <Icon component={IconPermissionOrder} />
+        // }
+      ]
+    }
+    /* FITRUE_isPROVISION */
   ];
 
   if (!isAdmin) {

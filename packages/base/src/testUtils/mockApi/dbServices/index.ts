@@ -6,6 +6,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { resolveThreeSecond } from 'sqle/src/testUtils/mockRequest';
 import { dbServices } from './data';
+import auth from '@actiontech/shared/lib/api/provision/service/auth';
 
 class MockDbServicesApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -48,11 +49,34 @@ class MockDbServicesApi implements MockSpyApy {
     return spy;
   }
 
+  public AuthSyncService() {
+    const spy = jest.spyOn(auth, 'AuthSyncService');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
   public checkInstanceIsConnectableByNameV1() {
     const spy = jest.spyOn(instance, 'checkInstanceIsConnectableByNameV1');
     spy.mockImplementation(() =>
       resolveThreeSecond({
         is_instance_connectable: true
+      })
+    );
+    return spy;
+  }
+  public checkInstanceIsConnectableV1() {
+    const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectable');
+    spy.mockImplementation(() =>
+      resolveThreeSecond({
+        connections: [
+          {
+            component: 'provision-router',
+            is_connectable: true
+          },
+          {
+            component: 'sqle-api',
+            is_connectable: true
+          }
+        ]
       })
     );
     return spy;

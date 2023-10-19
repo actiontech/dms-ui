@@ -1,6 +1,10 @@
 import { lazy, ReactNode } from 'react';
 import { Navigate, RouteObject } from 'react-router-dom';
 
+/* IFTRUE_isPROVISION */
+import { AuthRouterConfig as ProvisionAuthRouterConfig } from 'provision/src/router/router';
+/* FITRUE_isPROVISION */
+
 /* IFTRUE_isSQLE */
 import { projectDetailRouterConfig } from 'sqle/src/router/config';
 /* FITRUE_isSQLE */
@@ -244,6 +248,16 @@ export const AuthRouterConfig: RouterConfigItem[] = [
       }
     ] as RouterConfigItem[]
   },
+
+  /* IFTRUE_isPROVISION */
+  {
+    path: 'provision/project/*',
+    key: 'provision',
+    element: <ProjectDetail />,
+    children: ProvisionAuthRouterConfig
+  },
+  /* FITRUE_isPROVISION */
+
   {
     path: '*',
     hideInMenu: true,

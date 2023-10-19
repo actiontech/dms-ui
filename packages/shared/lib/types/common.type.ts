@@ -61,6 +61,10 @@ interface ThemeCustom {
     background: string;
     color: string;
   };
+  provisionHeader: {
+    background: string;
+    color: string;
+  };
   editor: {
     border: string;
   };

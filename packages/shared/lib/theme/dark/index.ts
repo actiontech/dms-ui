@@ -14,7 +14,10 @@ const oldDarkTheme = {
     background: '#001529',
     color: '#fff'
   },
-
+  provisionHeader: {
+    background: 'rgb(15, 28, 41)',
+    color: '#fff'
+  },
   editor: {
     border: '1px solid #434343'
   },

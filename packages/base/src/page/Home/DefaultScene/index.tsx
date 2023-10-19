@@ -167,6 +167,33 @@ export const AdminUserDevopsSteps: (
       },
       /* FITRUE_isSQLE */
 
+      /* IFTRUE_isPROVISION */
+      {
+        key: 'permission',
+        title: t('dmsHome.defaultScene.steps.safetyRule.innerContents.title_1'),
+        content: t(
+          'dmsHome.defaultScene.steps.safetyRule.innerContents.content_1'
+        ),
+        buttons: [
+          {
+            key: 'auth-template-list',
+            label: t(
+              'dmsHome.defaultScene.steps.safetyRule.innerContents.action_1_0'
+            ),
+            action: () =>
+              navigate(`/provision/project/${projectID}/auth/template`)
+          },
+          {
+            key: 'auth-list',
+            label: t(
+              'dmsHome.defaultScene.steps.safetyRule.innerContents.action_1_1'
+            ),
+            action: () => navigate(`/provision/project/${projectID}/auth/list`)
+          }
+        ]
+      },
+      /* FITRUE_isPROVISION */
+
       /* IFTRUE_isSQLE */
       {
         key: 'auditProgress',
@@ -251,6 +278,15 @@ export const AdminUserDevopsSteps: (
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
     icon: <IconStepOperation />,
     children: [
+      // {
+      //   key: 'diagnosis',
+      //   title: t(
+      //     'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.title_0'
+      //   ),
+      //   content: t(
+      //     'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_0'
+      //   )
+      // },
       {
         key: 'operationCheck',
         title: t(
@@ -260,6 +296,32 @@ export const AdminUserDevopsSteps: (
           'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
         ),
         buttons: [
+          /* IFTRUE_isPROVISION */
+          {
+            key: 'audit-auth-list',
+            label: t(
+              'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_0'
+            ),
+            action: () => navigate(`provision/project/${projectID}/audit/auth`)
+          },
+          {
+            key: 'audit-template-list',
+            label: t(
+              'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_1'
+            ),
+            action: () =>
+              navigate(`provision/project/${projectID}/audit/template`)
+          },
+          {
+            key: 'audit-service-list',
+            label: t(
+              'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_2'
+            ),
+            action: () =>
+              navigate(`provision/project/${projectID}/audit/service`)
+          },
+          /* FITRUE_isPROVISION */
+
           /* IFTRUE_isSQLE */
           {
             key: 'operation-record-list',
@@ -325,12 +387,20 @@ export const NormalUserDevopsSteps: (
   },
   /* FITRUE_isSQLE */
 
-  /* IFTRUE_isEE */
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
     icon: <IconStepOperation />,
     children: [
+      // {
+      //   key: 'diagnosis',
+      //   title: t(
+      //     'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.title_0'
+      //   ),
+      //   content: t(
+      //     'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_0'
+      //   )
+      // },
       {
         key: 'operationCheck',
         title: t(
@@ -340,6 +410,32 @@ export const NormalUserDevopsSteps: (
           'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
         ),
         buttons: [
+          /* IFTRUE_isPROVISION */
+          {
+            key: 'audit-auth-list',
+            label: t(
+              'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_0'
+            ),
+            action: () => navigate(`/provision/project/${projectID}/audit/auth`)
+          },
+          {
+            key: 'audit-template-list',
+            label: t(
+              'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_1'
+            ),
+            action: () =>
+              navigate(`/provision/project/${projectID}/audit/template`)
+          },
+          {
+            key: 'audit-service-list',
+            label: t(
+              'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_2'
+            ),
+            action: () =>
+              navigate(`/provision/project/${projectID}/audit/service`)
+          },
+          /* FITRUE_isPROVISION */
+
           /* IFTRUE_isSQLE */
           {
             key: 'operation-record-list',
@@ -353,7 +449,6 @@ export const NormalUserDevopsSteps: (
       }
     ]
   }
-  /* FITRUE_isEE */
 ];
 
 export default DefaultScene;
