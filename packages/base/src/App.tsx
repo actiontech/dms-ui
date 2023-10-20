@@ -34,6 +34,9 @@ import {
   legacyLogicalPropertiesTransformer
 } from '@ant-design/cssinjs';
 import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+import { useRequest } from 'ahooks';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import useSystemConfig from './hooks/useSystemConfig.tsx';
 
 Spin.setDefaultIndicator(<IconSpin />);
 
@@ -52,6 +55,17 @@ function App() {
   const { getUserBySession } = useSessionUser();
 
   const { useInfoFetched } = useCurrentUser();
+
+  /* IFTRUE_isEE */
+  const { syncWebTitleAndLogo } = useSystemConfig();
+  useRequest(() =>
+    dms.GetBasicInfo().then((res) => {
+      const basicInfoRes = res.data.data;
+
+      if (basicInfoRes) syncWebTitleAndLogo(basicInfoRes);
+    })
+  );
+  /* FITRUE_isEE */
 
   const filterRoutesByRole: (
     routes: RouterConfigItem[],
