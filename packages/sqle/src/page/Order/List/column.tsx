@@ -84,7 +84,6 @@ const OrderListColumn: (
       dataIndex: 'workflow_name',
       className: 'order-list-table-workflow-name-column',
       title: () => t('order.order.name'),
-      sorter: true,
       render: (name: string) => (
         <OrderNameStyleWrapper ellipsis={true}>{name}</OrderNameStyleWrapper>
       ),
@@ -94,7 +93,6 @@ const OrderListColumn: (
       dataIndex: 'desc',
       title: () => t('order.order.desc'),
       className: 'order-list-table-desc-column',
-      sorter: true,
       render: (desc: string, record: IWorkflowDetailResV1) =>
         desc ? (
           <OrderDesc
