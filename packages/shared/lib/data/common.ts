@@ -93,7 +93,24 @@ export const SystemFormLayout = {
   wrapperCol: { span: 12 }
 };
 
-export const DMS_DEFAULT_WEB_TITLE = 'SQLE';
+const ALL_TITLE = [
+  /* IFTRUE_isPROVISION */
+  /* IFTRUE_isSQLE */
+  'DMS',
+  /* FITRUE_isSQLE */
+  /* FITRUE_isPROVISION */
+
+  /* IFTRUE_isSQLE */
+  'SQLE',
+  /* FITRUE_isSQLE */
+
+  /* IFTRUE_isPROVISION */
+  'provision'
+  /* FITRUE_isPROVISION */
+];
+
+export const DMS_DEFAULT_WEB_TITLE =
+  ALL_TITLE[0] ?? ALL_TITLE[1] ?? ALL_TITLE[2] ?? 'DMS';
 
 export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';

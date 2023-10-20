@@ -20,7 +20,23 @@ export default defineConfig((config) => {
   const isPROVISION = buildTypes.includes('PROVISION');
   const isONLY_SQLE = isSQLE && !isPROVISION;
 
-  const title = 'Action SQLE';
+  const genTitle = () => {
+    if (isSQLE && isPROVISION) {
+      return 'DMS';
+    }
+
+    if (isSQLE) {
+      return 'SQLE';
+    }
+
+    if (isPROVISION) {
+      return 'provision';
+    }
+
+    return 'DMS';
+  };
+
+  const title = `Action ${genTitle()}`;
 
   return {
     plugins: [
