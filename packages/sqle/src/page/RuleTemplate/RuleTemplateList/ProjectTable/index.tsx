@@ -1,7 +1,7 @@
 import { useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { message as messageApi } from 'antd5';
+import { message } from 'antd5';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -34,7 +34,7 @@ const ProjectTable = (props: TemplateTableProps) => {
 
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [message, contextMessageHolder] = messageApi.useMessage();
+  const [messageApi, contextMessageHolder] = message.useMessage();
   const { projectName, projectID, projectArchive } = useCurrentProject();
   const dispatch = useDispatch();
 
@@ -74,7 +74,7 @@ const ProjectTable = (props: TemplateTableProps) => {
 
   const deleteTemplate = useCallback(
     (templateName: string) => {
-      const hideLoading = message.loading(
+      const hideLoading = messageApi.loading(
         t('ruleTemplate.deleteRuleTemplate.deleting', { name: templateName }),
         0
       );
@@ -85,7 +85,7 @@ const ProjectTable = (props: TemplateTableProps) => {
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            message.success(
+            messageApi.success(
               t('ruleTemplate.deleteRuleTemplate.deleteSuccessTips', {
                 name: templateName
               })
@@ -103,7 +103,7 @@ const ProjectTable = (props: TemplateTableProps) => {
 
   const exportRuleTemplate = useCallback(
     (templateName: string) => {
-      const hideLoading = message.loading(
+      const hideLoading = messageApi.loading(
         t('ruleTemplate.exportRuleTemplate.exporting', { name: templateName }),
         0
       );
@@ -119,7 +119,7 @@ const ProjectTable = (props: TemplateTableProps) => {
         )
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            message.success(
+            messageApi.success(
               t('ruleTemplate.exportRuleTemplate.exportSuccessTips', {
                 name: templateName
               })
@@ -130,7 +130,7 @@ const ProjectTable = (props: TemplateTableProps) => {
           hideLoading();
         });
     },
-    [message, projectName, t]
+    [messageApi, projectName, t]
   );
 
   const openCloneRuleTemplateModal = useCallback(

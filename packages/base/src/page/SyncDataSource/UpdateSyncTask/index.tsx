@@ -34,6 +34,7 @@ const UpdateSyncTask: React.FC = () => {
   const [syncInstanceTask, setSyncInstanceTask] = useState<
     IListDatabaseSourceService | undefined
   >();
+  const [messageApi, contextHoler] = message.useMessage();
 
   const submit = async () => {
     const values: SyncTaskFormFields = await form.validateFields();
@@ -58,7 +59,7 @@ const UpdateSyncTask: React.FC = () => {
       .UpdateDatabaseSourceService(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(t('dmsSyncDataSource.updateSyncTask.successTips'));
+          messageApi.success(t('dmsSyncDataSource.updateSyncTask.successTips'));
           navigate(`/project/${projectID}/syncDataSource`, { replace: true });
         }
       })
@@ -99,6 +100,7 @@ const UpdateSyncTask: React.FC = () => {
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
+      {contextHoler}
       <PageHeader
         fixed
         title={
