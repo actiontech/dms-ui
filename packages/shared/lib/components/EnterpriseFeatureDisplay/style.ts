@@ -6,11 +6,11 @@ export const CEIndexStyleWrapper = styled('section')`
 
   .common-mode-wrapper {
     height: calc(100vh - 60px);
-  }
 
-  .${ANTD_PREFIX_STR}-col {
-    padding: 40px;
-    height: calc(100vh - 60px);
+    .${ANTD_PREFIX_STR}-col {
+      padding: 40px;
+      height: calc(100vh - 60px);
+    }
   }
 
   .title {
@@ -85,8 +85,7 @@ export const CEIndexStyleWrapper = styled('section')`
       line-height: 32px;
     }
 
-    .left,
-    .right {
+    .left {
       margin-top: 12px;
     }
   }
