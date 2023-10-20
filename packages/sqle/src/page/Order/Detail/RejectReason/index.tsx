@@ -7,7 +7,8 @@ import { RejectReasonProps } from './index.type';
 const RejectReason: React.FC<RejectReasonProps> = ({
   stepInfo,
   currentUsername,
-  openModifySqlModal
+  openModifySqlModal,
+  createOrderUserName
 }) => {
   const { t } = useTranslation();
   return (
@@ -28,11 +29,11 @@ const RejectReason: React.FC<RejectReasonProps> = ({
       </div>
 
       <EmptyBox
-        if={currentUsername === stepInfo.operation_user_name}
+        if={currentUsername === createOrderUserName}
         defaultNode={
           <div className="wait-operator-modify-sql">
             {t('order.operator.waitModifySql', {
-              username: stepInfo.operation_user_name
+              username: createOrderUserName
             })}
           </div>
         }
