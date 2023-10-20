@@ -42,8 +42,9 @@ const useSystemConfig = () => {
       : DMS_DEFAULT_WEB_LOGO_URL;
 
     document.title = resTitle;
-    const favIconNode = document.querySelector(
-      'link[rel*="icon"]'
+
+    const favIconNode = document.getElementById(
+      'dms-logo-favicon'
     ) as HTMLLinkElement;
     favIconNode.href = resLogoUrl;
 

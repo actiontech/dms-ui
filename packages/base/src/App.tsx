@@ -56,8 +56,8 @@ function App() {
 
   const { useInfoFetched } = useCurrentUser();
 
+  /* IFTRUE_isEE */
   const { syncWebTitleAndLogo } = useSystemConfig();
-
   useRequest(() =>
     dms.GetBasicInfo().then((res) => {
       const basicInfoRes = res.data.data;
@@ -65,6 +65,7 @@ function App() {
       if (basicInfoRes) syncWebTitleAndLogo(basicInfoRes);
     })
   );
+  /* FITRUE_isEE */
 
   const filterRoutesByRole: (
     routes: RouterConfigItem[],
