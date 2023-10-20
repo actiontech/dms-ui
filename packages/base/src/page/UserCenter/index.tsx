@@ -68,10 +68,6 @@ const UserCenter: React.FC = () => {
               label: t('dmsUserCenter.user.userList.title')
             },
             {
-              value: UserCenterListType.user_group_list,
-              label: t('dmsUserCenter.user.userGroupList.title')
-            },
-            {
               value: UserCenterListType.role_list,
               label: t('dmsUserCenter.role.roleList.title')
             },
