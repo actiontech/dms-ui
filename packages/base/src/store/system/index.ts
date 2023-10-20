@@ -18,7 +18,7 @@ const dmsSystem = createSlice({
   name: 'system',
   initialState,
   reducers: {
-    updateWebTitleAndLog(
+    updateWebTitleAndLogo(
       state,
       {
         payload: { webTitle, webLogoUrl }
@@ -32,7 +32,7 @@ const dmsSystem = createSlice({
 });
 
 export const {
-  updateWebTitleAndLog,
+  updateWebTitleAndLogo,
   initModalStatus: initSystemModalStatus,
   updateModalStatus: updateSystemModalStatus
 } = dmsSystem.actions;
