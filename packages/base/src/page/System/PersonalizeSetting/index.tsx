@@ -1,9 +1,7 @@
 import { useBoolean, useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { Spin } from 'antd5';
-import { updateWebTitleAndLog } from '../../../store/system';
 import { ConfigItem } from '@actiontech/shared';
 import {
   EditInput,
@@ -19,10 +17,10 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useMemo } from 'react';
 import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
+import useSystemConfig from '../../../hooks/useSystemConfig.tsx';
 
 const PersonalizeSetting: React.FC = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
 
   const [
     titleFieldVisible,
@@ -39,20 +37,7 @@ const PersonalizeSetting: React.FC = () => {
 
   useHideConfigInputNode(titleFieldVisible, hideTitleField);
 
-  const syncTitleAndFavIcon = (webTitle: string, webLogoUrl: string) => {
-    document.title = webTitle;
-    const favIconNode = document.querySelector(
-      'link[rel*="icon"]'
-    ) as HTMLLinkElement;
-    favIconNode.href = webLogoUrl;
-
-    dispatch(
-      updateWebTitleAndLog({
-        webTitle,
-        webLogoUrl
-      })
-    );
-  };
+  const { syncWebTitleAndLogo } = useSystemConfig();
 
   const {
     data: basicInfo,
@@ -61,15 +46,8 @@ const PersonalizeSetting: React.FC = () => {
   } = useRequest(() =>
     dms.GetBasicInfo().then((res) => {
       const basicInfoRes = res.data.data;
-      const webTitle = !!basicInfoRes?.title
-        ? basicInfoRes.title
-        : DMS_DEFAULT_WEB_TITLE;
+      if (basicInfoRes) syncWebTitleAndLogo(basicInfoRes);
 
-      const webLogoUrl = !!basicInfoRes?.logo_url
-        ? `${basicInfoRes?.logo_url}?temp=${new Date().getTime()}`
-        : DMS_DEFAULT_WEB_LOGO_URL;
-
-      syncTitleAndFavIcon(webTitle, webLogoUrl);
       return basicInfoRes ?? {};
     })
   );
