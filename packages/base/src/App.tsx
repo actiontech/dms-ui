@@ -58,12 +58,16 @@ function App() {
 
   /* IFTRUE_isEE */
   const { syncWebTitleAndLogo } = useSystemConfig();
-  useRequest(() =>
-    dms.GetBasicInfo().then((res) => {
-      const basicInfoRes = res.data.data;
+  useRequest(
+    () =>
+      dms.GetBasicInfo().then((res) => {
+        const basicInfoRes = res.data.data;
 
-      if (basicInfoRes) syncWebTitleAndLogo(basicInfoRes);
-    })
+        if (basicInfoRes) syncWebTitleAndLogo(basicInfoRes);
+      }),
+    {
+      ready: !!token
+    }
   );
   /* FITRUE_isEE */
 
