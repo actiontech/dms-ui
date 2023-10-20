@@ -109,6 +109,7 @@ const UserGroupList: React.FC = () => {
       {contextHolder}
       <ActiontechTable
         className="user-group-table"
+        rowKey="uid"
         dataSource={userGroupList?.list}
         pagination={{
           total: userGroupList?.total ?? 0
