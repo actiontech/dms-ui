@@ -39,6 +39,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
   taskInfos,
   orderInfo,
   projectName,
+  orderStatus,
   ...props
 }) => {
   const { t } = useTranslation();
@@ -122,7 +123,8 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
         duplicate,
         auditResultActiveKey,
         auditLevelFilterValue,
-        currentListLayout
+        currentListLayout,
+        orderStatus
       ]
     }
   );
@@ -173,7 +175,8 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
         auditResultActiveKey,
         duplicate,
         tableFilterInfo,
-        auditLevelFilterValue
+        auditLevelFilterValue,
+        orderStatus
       ],
       isNoMore: (d) => {
         return d ? (d.list.length % 20 > 0 ? true : false) : false;
