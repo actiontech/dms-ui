@@ -2,6 +2,10 @@ import { BasicTagTheme } from '../../theme.type';
 
 const tagTheme: BasicTagTheme = {
   default: {
+    color: '#575C66',
+    backgroundColor: '#fffff'
+  },
+  gray: {
     color: '#7d8ca8',
     backgroundColor: 'rgba(125, 140, 168, 0.1)'
   },

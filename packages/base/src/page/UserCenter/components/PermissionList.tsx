@@ -54,6 +54,7 @@ const PermissionList: React.FC = () => {
 
   return (
     <ActiontechTable
+      rowKey={(record) => record.op_permission?.uid!}
       dataSource={permissionList?.list}
       pagination={{
         total: permissionList?.total ?? 0
