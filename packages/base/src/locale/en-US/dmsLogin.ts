@@ -1,7 +1,5 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  powered: 'DMS',
-  pageTitle: 'DMS平台',
   login: '登录',
   otherMethod: '其他登录方式',
 
@@ -15,7 +13,7 @@ export default {
   oauth: {
     title: '用户绑定',
     form: {
-      username: '绑定的DMS用户名'
+      username: '绑定的{{title}}用户名'
     },
     submitButton: '绑定并登录',
     bindTips: '如果用户名不存在，会自动创建',
