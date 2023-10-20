@@ -91,7 +91,7 @@ export const SystemFormLayout = {
   wrapperCol: { span: 12 }
 };
 
-export const DMS_DEFAULT_WEB_TITLE = 'DMS';
+export const DMS_DEFAULT_WEB_TITLE = 'SQLE';
 
 export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';
