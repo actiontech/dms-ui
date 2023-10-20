@@ -40,10 +40,11 @@ const OrderSteps: React.FC<OrderStepsProps> = ({
       return number;
     }
 
-    // 上线成功 或 上线失败
+    // 上线成功 上线失败 或 正在上线
     if (
       orderStatus === WorkflowRecordResV2StatusEnum.finished ||
-      orderStatus === WorkflowRecordResV2StatusEnum.exec_failed
+      orderStatus === WorkflowRecordResV2StatusEnum.exec_failed ||
+      orderStatus === WorkflowRecordResV2StatusEnum.executing
     ) {
       return workflowSteps.length + 1;
     }

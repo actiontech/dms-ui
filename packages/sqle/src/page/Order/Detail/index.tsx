@@ -96,7 +96,10 @@ const OrderDetail: React.FC = () => {
                 <OrderDetailPageHeaderExtra
                   projectName={projectName}
                   orderInfo={orderInfo}
-                  refreshOrder={refreshOrder}
+                  refreshOrder={() => {
+                    refreshOrder();
+                    refreshOverviewAction();
+                  }}
                   pass={pass}
                   reject={reject}
                   canRejectOrder={canRejectOrder}
