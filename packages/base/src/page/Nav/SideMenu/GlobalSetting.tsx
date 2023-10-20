@@ -4,8 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import {
   IconGlobalSystem,
-  IconMoon,
-  IconSun,
   IconSystem,
   IconUserCenter,
 
@@ -16,7 +14,6 @@ import {
   /* FITRUE_isSQLE */
 } from '../../../icon/sideMenu';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
-import classNames from 'classnames';
 import { useState } from 'react';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { EmptyBox } from '@actiontech/shared';

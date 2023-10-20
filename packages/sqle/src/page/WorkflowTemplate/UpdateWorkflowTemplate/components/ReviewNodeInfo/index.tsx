@@ -12,7 +12,6 @@ import {
   ReviewAndExecNodeInfoProps
 } from './index.type';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import useUsername from '../../../../../hooks/useUsername';
 import StepButton from '../StepButton';
 import { InfoCircleOutlined } from '@ant-design/icons';
 

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { Treemap, G2 } from '@ant-design/plots';
+import { Treemap } from '@ant-design/plots';
 import { TreemapConfig } from '@ant-design/plots/es/components/treemap';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 import useChangeTheme from '../../../../../../hooks/useChangeTheme';
@@ -26,7 +26,6 @@ const DatabaseTypeOrder = () => {
   const { sqleTheme, sharedTheme } = useThemeStyleData();
   const { getDomStyles } = useGetConfig(sqleTheme);
   const [totalNum, setTotalNum] = useState<number>(0);
-  const G = G2.getEngine('canvas');
 
   const [data, setData] = useState<TreemapConfig['data']>({
     name: 'root',
