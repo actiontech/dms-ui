@@ -189,6 +189,7 @@ const OperationRecord: React.FC = () => {
         filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
+        rowKey="id"
         dataSource={operationRecordList?.list}
         pagination={{
           total: operationRecordList?.total ?? 0
