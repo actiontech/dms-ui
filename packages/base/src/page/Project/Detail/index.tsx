@@ -77,7 +77,10 @@ const ProjectDetail: React.FC = () => {
   /* FITRUE_isCE */
 
   return (
-    <EmptyBox if={projectDetailFetched} defaultNode={<HeaderProgress />}>
+    <EmptyBox
+      if={projectDetailFetched || !nextProjectID}
+      defaultNode={<HeaderProgress />}
+    >
       {/* IFTRUE_isEE */}
       {renderProjectDetail()}
       {/* FITRUE_isEE */}
