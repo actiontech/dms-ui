@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
-import { message as messageApi } from 'antd5';
+import { message } from 'antd5';
 
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { PlanDetailRowStyleWrapper } from './style';
@@ -26,7 +26,7 @@ const PlanDetail = () => {
   const urlParams = useParams<PlanDetailUrlParams>();
   const { projectName, projectArchive } = useCurrentProject();
   const [auditLoading, setAuditLoading] = useState(false);
-  const [message, contextMessageHolder] = messageApi.useMessage();
+  const [messageApi, contextMessageHolder] = message.useMessage();
 
   const onSkipList = () => {
     goBack();
@@ -34,7 +34,7 @@ const PlanDetail = () => {
 
   const onAudit = () => {
     if (!urlParams.auditPlanName || !projectName) return;
-    const hide = message.loading(t('auditPlan.sqlPool.action.loading'), 0);
+    const hide = messageApi.loading(t('auditPlan.sqlPool.action.loading'), 0);
     setAuditLoading(true);
     audit_plan
       .triggerAuditPlanV1({
@@ -43,7 +43,7 @@ const PlanDetail = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(t('auditPlan.sqlPool.action.triggerSuccess'));
+          messageApi.success(t('auditPlan.sqlPool.action.triggerSuccess'));
           EventEmitter.emit(EmitterKey.Refresh_Audit_Plan_Record);
         }
       })

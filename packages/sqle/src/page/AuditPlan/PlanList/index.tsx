@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useMemo, useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Space, message as messageApi } from 'antd5';
+import { Space, message } from 'antd5';
 import { IconTaskType } from '../../../icon/AuditPlan';
 import { IconArrowUp, IconArrowDown } from '@actiontech/shared/lib/Icon';
 import {
@@ -120,7 +120,7 @@ const AuditPlanList = () => {
     [projectID]
   );
 
-  const [message, contextMessageHolder] = messageApi.useMessage();
+  const [messageApi, contextMessageHolder] = message.useMessage();
 
   const [
     removePending,
@@ -131,7 +131,7 @@ const AuditPlanList = () => {
       if (removePending) {
         return;
       }
-      const hide = message.loading(
+      const hide = messageApi.loading(
         t('auditPlan.remove.loading', { name: auditPlanName }),
         0
       );
@@ -143,7 +143,7 @@ const AuditPlanList = () => {
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            message.success(
+            messageApi.success(
               t('auditPlan.remove.successTips', { name: auditPlanName })
             );
             onRefresh();

@@ -20,9 +20,10 @@ const SyncTaskList: React.FC = () => {
   const navigate = useNavigate();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
+  const [messageApi, contextHoler] = message.useMessage();
 
   const syncAction = (taskId: string) => {
-    const hideLoading = message.loading(
+    const hideLoading = messageApi.loading(
       t('dmsSyncDataSource.syncTaskList.syncTaskLoading')
     );
     dms
@@ -32,7 +33,7 @@ const SyncTaskList: React.FC = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsSyncDataSource.syncTaskList.syncTaskSuccessTips')
           );
         }
@@ -43,7 +44,7 @@ const SyncTaskList: React.FC = () => {
       });
   };
   const deleteAction = (taskId: string) => {
-    const hideLoading = message.loading(
+    const hideLoading = messageApi.loading(
       t('dmsSyncDataSource.syncTaskList.deleteTaskLoading')
     );
     dms
@@ -53,7 +54,7 @@ const SyncTaskList: React.FC = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsSyncDataSource.syncTaskList.deleteTaskSuccessTips')
           );
           refresh();
@@ -78,6 +79,7 @@ const SyncTaskList: React.FC = () => {
 
   return (
     <>
+      {contextHoler}
       <PageHeader
         title={
           <Space>

@@ -9,6 +9,7 @@ import {
   IconCustomService
 } from '../Icons/EnterpriseFeatureDisplay';
 import EmptyBox from '../EmptyBox';
+import { DMS_DEFAULT_WEB_TITLE } from '../../data/common';
 
 const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
   children,
@@ -33,7 +34,7 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
     <Card className="ce-card-info" hoverable>
       <Icon component={IconBookMark} className="bg-icon" />
       <div className="info-cont-wrapper">
-        <div className="title">Action DMS</div>
+        <div className="title">Action {DMS_DEFAULT_WEB_TITLE}</div>
         <p className="cont-tip">
           {t('common.enterpriseFeatureDisplay.compareLink')}
         </p>
@@ -56,7 +57,7 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
     <Card className="ce-card-info" hoverable>
       <Icon component={IconCustomService} className="bg-icon" />
       <div className="info-cont-wrapper">
-        <div className="title">Action DMS</div>
+        <div className="title">Action {DMS_DEFAULT_WEB_TITLE}</div>
         <p className="cont-tip">
           {t('common.enterpriseFeatureDisplay.businessLink', {
             featureName

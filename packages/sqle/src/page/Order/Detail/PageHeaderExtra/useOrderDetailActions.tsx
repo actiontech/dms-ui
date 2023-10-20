@@ -129,9 +129,11 @@ const useOrderDetailActions = ({
       [
         WorkflowRecordResV2StatusEnum.wait_for_execution,
         WorkflowRecordResV2StatusEnum.wait_for_audit
-      ].includes(orderInfo.record.status) && canRejectOrder
+      ].includes(orderInfo.record.status) &&
+      canRejectOrder &&
+      currentStep.assignee_user_name_list?.includes(username)
     );
-  }, [canRejectOrder, currentStep, orderInfo?.record?.status]);
+  }, [canRejectOrder, currentStep, orderInfo?.record?.status, username]);
 
   const rejectOrder = useCallback(
     (reason?: string) => {

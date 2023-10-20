@@ -22,6 +22,7 @@ const UserList: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [refreshFlag, { toggle: toggleRefreshFlag }] = useToggle(false);
+  const [messageApi, contextHoler] = message.useMessage();
 
   const getUserList = ({ current, pageSize }: TablePaginationProps) => {
     const params: IListUsersParams = {
@@ -67,7 +68,7 @@ const UserList: React.FC = () => {
   );
 
   const removeUser = (username: string, userUid: string) => {
-    const hideLoading = message.loading(
+    const hideLoading = messageApi.loading(
       t('dmsUserCenter.user.deleteUser.deleting', { username }),
       0
     );
@@ -75,7 +76,7 @@ const UserList: React.FC = () => {
       .DelUser({ user_uid: userUid })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsUserCenter.user.deleteUser.deleteSuccess', { username })
           );
           toggleRefreshFlag();
@@ -98,27 +99,30 @@ const UserList: React.FC = () => {
   }, [toggleRefreshFlag]);
 
   return (
-    <Card
-      title={
-        <Space>
-          {t('dmsUserCenter.user.userList.title')}
-          <Button onClick={toggleRefreshFlag}>
-            <SyncOutlined spin={tableProps.loading} />
+    <>
+      {contextHoler}
+      <Card
+        title={
+          <Space>
+            {t('dmsUserCenter.user.userList.title')}
+            <Button onClick={toggleRefreshFlag}>
+              <SyncOutlined spin={tableProps.loading} />
+            </Button>
+          </Space>
+        }
+        extra={[
+          <Button key="create-user" type="primary" onClick={addUser}>
+            {t('dmsUserCenter.user.userList.addUserButton')}
           </Button>
-        </Space>
-      }
-      extra={[
-        <Button key="create-user" type="primary" onClick={addUser}>
-          {t('dmsUserCenter.user.userList.addUserButton')}
-        </Button>
-      ]}
-    >
-      <Table
-        rowKey="uid"
-        columns={tableHeaderFactory(updateUser, removeUser)}
-        {...tableProps}
-      />
-    </Card>
+        ]}
+      >
+        <Table
+          rowKey="uid"
+          columns={tableHeaderFactory(updateUser, removeUser)}
+          {...tableProps}
+        />
+      </Card>
+    </>
   );
 };
 

@@ -22,6 +22,7 @@ const useGenerateOrderStepsProps = ({
   projectName
 }: HooksParamType) => {
   const { t } = useTranslation();
+  const [messageApi, messageContextHolder] = message.useMessage();
 
   const [tasksStatusNumber, setTasksStatusNumber] =
     useState<TasksStatusNumberType>();
@@ -40,13 +41,20 @@ const useGenerateOrderStepsProps = ({
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            message.success(t('order.operator.approveSuccessTips'));
+            messageApi.success(t('order.operator.approveSuccessTips'));
             refreshOrder();
             refreshOverviewAction();
           }
         });
     },
-    [workflowId, projectName, t, refreshOrder, refreshOverviewAction]
+    [
+      workflowId,
+      projectName,
+      messageApi,
+      t,
+      refreshOrder,
+      refreshOverviewAction
+    ]
   );
 
   const executing = useCallback(async () => {
@@ -57,12 +65,19 @@ const useGenerateOrderStepsProps = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(t('order.operator.executingTips'));
+          messageApi.success(t('order.operator.executingTips'));
           refreshOrder();
           refreshOverviewAction();
         }
       });
-  }, [projectName, refreshOrder, refreshOverviewAction, t, workflowId]);
+  }, [
+    messageApi,
+    projectName,
+    refreshOrder,
+    refreshOverviewAction,
+    t,
+    workflowId
+  ]);
 
   const terminate = useCallback(async () => {
     return workflow
@@ -72,12 +87,19 @@ const useGenerateOrderStepsProps = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(t('order.operator.terminateSuccessTips'));
+          messageApi.success(t('order.operator.terminateSuccessTips'));
           refreshOrder();
           refreshOverviewAction();
         }
       });
-  }, [projectName, refreshOrder, refreshOverviewAction, t, workflowId]);
+  }, [
+    messageApi,
+    projectName,
+    refreshOrder,
+    refreshOverviewAction,
+    t,
+    workflowId
+  ]);
 
   const reject = useCallback(
     async (reason: string, stepId: number) => {
@@ -90,13 +112,20 @@ const useGenerateOrderStepsProps = ({
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            message.success(t('order.operator.rejectSuccessTips'));
+            messageApi.success(t('order.operator.rejectSuccessTips'));
             refreshOrder();
             refreshOverviewAction();
           }
         });
     },
-    [projectName, refreshOrder, refreshOverviewAction, t, workflowId]
+    [
+      messageApi,
+      projectName,
+      refreshOrder,
+      refreshOverviewAction,
+      t,
+      workflowId
+    ]
   );
 
   const complete = useCallback(async () => {
@@ -107,12 +136,19 @@ const useGenerateOrderStepsProps = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(t('order.operator.completeSuccessTips'));
+          messageApi.success(t('order.operator.completeSuccessTips'));
           refreshOrder();
           refreshOverviewAction();
         }
       });
-  }, [projectName, refreshOrder, refreshOverviewAction, t, workflowId]);
+  }, [
+    messageApi,
+    projectName,
+    refreshOrder,
+    refreshOverviewAction,
+    t,
+    workflowId
+  ]);
 
   const getOverviewListSuccessHandle = (list: IGetWorkflowTasksItemV2[]) => {
     setMaintenanceTimeInfo?.(
@@ -161,7 +197,8 @@ const useGenerateOrderStepsProps = ({
     tasksStatusNumber,
     getOverviewListSuccessHandle,
     complete,
-    terminate
+    terminate,
+    messageContextHolder
   };
 };
 

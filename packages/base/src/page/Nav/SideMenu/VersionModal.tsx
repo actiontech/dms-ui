@@ -5,6 +5,7 @@ import DmsService from '@actiontech/shared/lib/api/base/service/dms';
 import { Space, Typography } from 'antd5';
 import { UI_VERSION } from '../../../scripts/version';
 import { VersionModalDescribeTextStyleWrapper } from './style';
+import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 
 const VersionModal: React.FC<{
   open: boolean;
@@ -71,7 +72,7 @@ const VersionModal: React.FC<{
     >
       <Space direction="vertical" size="large">
         <Space>
-          <Typography.Title level={2}>DMS</Typography.Title>
+          <Typography.Title level={2}>{DMS_DEFAULT_WEB_TITLE}</Typography.Title>
         </Space>
         <Space align="start" direction="vertical">
           <Typography.Title level={5}>

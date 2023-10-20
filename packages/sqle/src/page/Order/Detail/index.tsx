@@ -45,7 +45,8 @@ const OrderDetail: React.FC = () => {
     tasksStatusNumber,
     getOverviewListSuccessHandle,
     complete,
-    terminate
+    terminate,
+    messageContextHolder
   } = useGenerateOrderStepsProps({
     workflowId: orderInfo?.workflow_id ?? '',
     refreshOrder,
@@ -76,6 +77,7 @@ const OrderDetail: React.FC = () => {
 
   return (
     <>
+      {messageContextHolder}
       <Spin spinning={initLoading} delay={400}>
         <OrderDetailStyleWrapper
           hidden={modifySqlModalVisibility}
@@ -128,6 +130,7 @@ const OrderDetail: React.FC = () => {
                 stepInfo={currentRejectedStep!}
                 currentUsername={username}
                 openModifySqlModal={openModifySqlModal}
+                createOrderUserName={orderInfo?.create_user_name ?? ''}
               />
             </EmptyBox>
 

@@ -285,7 +285,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
                         allowClear={false}
                         prefix={<IconDatabase />}
                         valuePrefix={<IconDatabaseActive />}
-                        size="large"
+                        size="middle"
                         loading={instanceTipsLoading}
                         options={instanceOptions}
                         onChange={(value) =>
@@ -306,7 +306,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
                         }
                         prefix={<IconDatabaseSchema />}
                         valuePrefix={<IconDatabaseSchemaActive />}
-                        size="large"
+                        size="middle"
                         options={instanceSchemaOptions(field.name)}
                         placeholder={t('order.order.schemaPlaceholder')}
                         loading={!!getSchemaListLoading.get(field.key)}

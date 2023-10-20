@@ -49,6 +49,7 @@ const OrderList: React.FC = () => {
   >('all');
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
   const [confirmLoading, setConfirmLoading] = useState<boolean>(false);
+  const [messageApi, messageContextHolder] = message.useMessage();
 
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceOptions, updateInstanceList } = useInstance();
@@ -138,7 +139,7 @@ const OrderList: React.FC = () => {
   ] = useBoolean(false);
   const exportOrder = () => {
     startExport();
-    const hideLoading = message.loading(t('order.exportOrder.exporting'));
+    const hideLoading = messageApi.loading(t('order.exportOrder.exporting'));
 
     const {
       filter_create_time_from,
@@ -173,7 +174,7 @@ const OrderList: React.FC = () => {
       .exportWorkflowV1(params, { responseType: 'blob' })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(t('order.exportOrder.exportSuccessTips'));
+          messageApi.success(t('order.exportOrder.exportSuccessTips'));
         }
       })
       .finally(() => {
@@ -218,14 +219,14 @@ const OrderList: React.FC = () => {
           setConfirmLoading(false);
         });
     } else {
-      message.warning(
+      messageApi.warning(
         t('order.batchCancel.messageWarn', {
           process: t('order.status.process'),
           reject: t('order.status.reject')
         })
       );
     }
-  }, [selectedRowKeys, orderList?.list, projectName, refresh, t]);
+  }, [selectedRowKeys, orderList?.list, projectName, refresh, messageApi, t]);
 
   useEffect(() => {
     updateUsernameList();
@@ -236,6 +237,7 @@ const OrderList: React.FC = () => {
 
   return (
     <OrderListStyleWrapper>
+      {messageContextHolder}
       <PageHeader
         title={t('order.orderList.pageTitle')}
         extra={
