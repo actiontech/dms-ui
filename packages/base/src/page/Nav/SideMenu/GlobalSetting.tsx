@@ -48,6 +48,7 @@ const GlobalSetting: React.FC<{
           <div className="header">{t('dmsMenu.globalSettings.title')}</div>
           <EmptyBox if={!isAdmin}>
             <div className="content">
+              {/* IFTRUE_isSQLE */}
               <div
                 className="content-item"
                 onClick={() => handleClickItem(`/sqle/rule`)}
@@ -55,6 +56,7 @@ const GlobalSetting: React.FC<{
                 <IconViewRule />
                 <span>{t('dmsMenu.globalSettings.viewRule')}</span>
               </div>
+              {/* FITRUE_isSQLE */}
             </div>
           </EmptyBox>
           <EmptyBox if={isAdmin}>

@@ -58,7 +58,7 @@ export const useAllowAuditLevel = () => {
           return false;
         });
         if (invalidTasks.length > 0 && tips.length > 0) {
-          setDisabledOperatorOrderBtnTips(tips.join('\n'));
+          setDisabledOperatorOrderBtnTips([...new Set(tips)].join('\n'));
           setBtnDisabled();
         } else {
           resetBtnDisabled();

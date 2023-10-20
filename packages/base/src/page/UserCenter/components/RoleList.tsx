@@ -107,6 +107,7 @@ const RoleList: React.FC = () => {
     <>
       {contextHolder}
       <ActiontechTable
+        rowKey="uid"
         dataSource={roleList?.list}
         pagination={{
           total: roleList?.total ?? 0
