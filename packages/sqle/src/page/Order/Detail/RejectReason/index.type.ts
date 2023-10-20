@@ -4,4 +4,5 @@ export type RejectReasonProps = {
   stepInfo: IWorkflowStepResV2;
   currentUsername: string;
   openModifySqlModal: () => void;
+  createOrderUserName: string;
 };

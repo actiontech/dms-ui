@@ -130,6 +130,7 @@ const OrderDetail: React.FC = () => {
                 stepInfo={currentRejectedStep!}
                 currentUsername={username}
                 openModifySqlModal={openModifySqlModal}
+                createOrderUserName={orderInfo?.create_user_name ?? ''}
               />
             </EmptyBox>
 

@@ -1,4 +1,4 @@
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { Space } from 'antd5';
 import { useTranslation } from 'react-i18next';
@@ -10,9 +10,11 @@ import { updateProjectModalStatus } from '../../store/project';
 import { ModalName } from '../../data/ModalName';
 import ProjectManageModal from './Modal';
 import { ProjectListStyledWrapper } from './style';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 const Project: React.FC = () => {
   const { t } = useTranslation();
+  const { isAdmin } = useCurrentUser();
 
   const dispatch = useDispatch();
 
@@ -39,9 +41,11 @@ const Project: React.FC = () => {
           </Space>
         }
         extra={
-          <BasicButton type="primary" onClick={createProject}>
-            {t('dmsProject.createProject.modalTitle')}
-          </BasicButton>
+          <EmptyBox if={isAdmin}>
+            <BasicButton type="primary" onClick={createProject}>
+              {t('dmsProject.createProject.modalTitle')}
+            </BasicButton>
+          </EmptyBox>
         }
       />
       <ProjectList />
