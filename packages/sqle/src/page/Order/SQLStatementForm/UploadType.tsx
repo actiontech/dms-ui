@@ -1,8 +1,8 @@
-import { UploadItemTypeStyleWrapper } from './style';
 import { SQLInputType } from '.';
 import { IconOrderFileUpload, IconOrderSQLUpload } from '../../../icon/Order';
 import { useTranslation } from 'react-i18next';
 import { Row, Col } from 'antd5';
+import UploadTypeItem from './UploadTypeItem';
 
 const UploadType: React.FC<{
   value?: SQLInputType;
@@ -13,31 +13,31 @@ const UploadType: React.FC<{
   return (
     <Row gutter={12}>
       <Col span={8}>
-        <UploadItemTypeStyleWrapper
+        <UploadTypeItem
           onClick={() => onChange?.(SQLInputType.manualInput)}
           active={value === SQLInputType.manualInput}
         >
           <IconOrderSQLUpload />
           <span className="text">{t('order.sqlInfo.manualInput')}</span>
-        </UploadItemTypeStyleWrapper>
+        </UploadTypeItem>
       </Col>
       <Col span={8}>
-        <UploadItemTypeStyleWrapper
+        <UploadTypeItem
           active={value === SQLInputType.uploadFile}
           onClick={() => onChange?.(SQLInputType.uploadFile)}
         >
           <IconOrderFileUpload />
           <span className="text">{t('order.sqlInfo.uploadFile')}</span>
-        </UploadItemTypeStyleWrapper>
+        </UploadTypeItem>
       </Col>
       <Col span={8} hidden={hideUpdateMybatisFile}>
-        <UploadItemTypeStyleWrapper
+        <UploadTypeItem
           active={value === SQLInputType.uploadMybatisFile}
           onClick={() => onChange?.(SQLInputType.uploadMybatisFile)}
         >
           <IconOrderFileUpload />
           <span className="text">{t('order.sqlInfo.updateMybatisFile')}</span>
-        </UploadItemTypeStyleWrapper>
+        </UploadTypeItem>
       </Col>
     </Row>
   );

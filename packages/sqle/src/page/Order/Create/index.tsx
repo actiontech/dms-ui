@@ -240,7 +240,7 @@ const Create: React.FC = () => {
 
       <CreatedResult
         createdOrderId={createdOrderId}
-        desc={baseForm.getFieldsValue()?.desc ?? '-'}
+        desc={baseForm.getFieldsValue()?.desc ?? ''}
         hidden={!showResult}
         projectID={projectID}
       />
