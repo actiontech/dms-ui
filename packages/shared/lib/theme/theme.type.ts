@@ -406,7 +406,8 @@ export type BasicTagColor =
   | 'geekblue'
   | 'purple'
   | 'Grape'
-  | 'lilac';
+  | 'lilac'
+  | 'gray';
 
 export type BasicTagTheme = Record<
   BasicTagColor,
