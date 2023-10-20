@@ -11,7 +11,7 @@ export type BasicRangePickerProps = RangePickerProps & {
 };
 
 const BasicRangePicker = (props: BasicRangePickerProps) => {
-  const { className, suffixIcon, prefix, ...otherParams } = props;
+  const { className, suffixIcon, prefix, size, ...otherParams } = props;
 
   return (
     <ConfigProvider
@@ -29,7 +29,7 @@ const BasicRangePicker = (props: BasicRangePickerProps) => {
         className={classnames('basic-range-picker-wrapper', className, {
           'custom-picker-prefix': !suffixIcon && !!prefix
         })}
-        size="large"
+        size="middle"
         {...otherParams}
         /**
          * when both suffixIcon and prefix exist, the former will force the latter to be overwritten
