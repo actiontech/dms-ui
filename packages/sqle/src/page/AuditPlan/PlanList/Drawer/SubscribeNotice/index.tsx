@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { useBoolean } from 'ahooks';
 
-import { Space, message as messageApi, Form, Spin } from 'antd5';
+import { Space, message, Form, Spin } from 'antd5';
 import {
   BasicDrawer,
   BasicButton,
@@ -40,7 +40,7 @@ const SubscribeNotice = () => {
   const { t } = useTranslation();
 
   const { projectName } = useCurrentProject();
-  const [message, contextMessageHolder] = messageApi.useMessage();
+  const [messageApi, contextMessageHolder] = message.useMessage();
   const dispatch = useDispatch();
   const { getRuleLevelStatusSelectOption } = useStaticStatus();
 
@@ -134,7 +134,7 @@ const SubscribeNotice = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           closeModal();
-          message.success(
+          messageApi.success(
             t('auditPlan.subscribeNotice.form.subscribeNoticeSuccess')
           );
         }
@@ -149,7 +149,7 @@ const SubscribeNotice = () => {
     if (testLoading.current) {
       return;
     }
-    const messageLoadingInstance = message.open({
+    const messageLoadingInstance = messageApi.open({
       type: 'loading',
       content: t('auditPlan.subscribeNotice.form.testLoading', {
         name: currentAuditPlan?.audit_plan_name ?? ''
@@ -163,12 +163,12 @@ const SubscribeNotice = () => {
       });
       if (res.data.code === ResponseCode.SUCCESS) {
         if (res.data.data?.is_notify_send_normal) {
-          message.open({
+          messageApi.open({
             type: 'success',
             content: t('auditPlan.subscribeNotice.form.testSuccess')
           });
         } else {
-          message.open({
+          messageApi.open({
             type: 'error',
             content:
               res.data.data?.send_error_message ?? t('common.unknownError')

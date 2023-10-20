@@ -22,6 +22,7 @@ const UserGroupList: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [refreshFlag, { toggle: toggleRefreshFlag }] = useToggle(false);
+  const [messageApi, contextHoler] = message.useMessage();
 
   const getUserGroupList = ({ current, pageSize }: TablePaginationProps) => {
     const params: IListUserGroupsParams = {
@@ -68,7 +69,7 @@ const UserGroupList: React.FC = () => {
     userGroupName: string,
     userGroupUid: string
   ) => {
-    const hideLoading = message.loading(
+    const hideLoading = messageApi.loading(
       t('dmsUserCenter.user.deleteUserGroup.deleting', { name: userGroupName }),
       0
     );
@@ -77,7 +78,7 @@ const UserGroupList: React.FC = () => {
         user_group_uid: userGroupUid
       });
       if (res.data.code === ResponseCode.SUCCESS) {
-        message.success(
+        messageApi.success(
           t('dmsUserCenter.user.deleteUserGroup.deleteSuccess', {
             name: userGroupName
           })
@@ -104,27 +105,33 @@ const UserGroupList: React.FC = () => {
   }, [toggleRefreshFlag]);
 
   return (
-    <Card
-      title={
-        <Space>
-          {t('dmsUserCenter.user.userGroupList.title')}
-          <Button onClick={toggleRefreshFlag}>
-            <SyncOutlined spin={tableProps.loading} />
+    <>
+      {contextHoler}
+      <Card
+        title={
+          <Space>
+            {t('dmsUserCenter.user.userGroupList.title')}
+            <Button onClick={toggleRefreshFlag}>
+              <SyncOutlined spin={tableProps.loading} />
+            </Button>
+          </Space>
+        }
+        extra={[
+          <Button key="create-user" type="primary" onClick={addUserGroup}>
+            {t('dmsUserCenter.user.userGroupList.addUserGroupButton')}
           </Button>
-        </Space>
-      }
-      extra={[
-        <Button key="create-user" type="primary" onClick={addUserGroup}>
-          {t('dmsUserCenter.user.userGroupList.addUserGroupButton')}
-        </Button>
-      ]}
-    >
-      <Table
-        rowKey="uid"
-        columns={userGroupTableHeaderFactory(updateUserGroup, deleteUserGroup)}
-        {...tableProps}
-      />
-    </Card>
+        ]}
+      >
+        <Table
+          rowKey="uid"
+          columns={userGroupTableHeaderFactory(
+            updateUserGroup,
+            deleteUserGroup
+          )}
+          {...tableProps}
+        />
+      </Card>
+    </>
   );
 };
 

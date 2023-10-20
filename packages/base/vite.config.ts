@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import eslint from 'vite-plugin-eslint';
-import * as path from 'path';
 import vitePluginConditionalCompile from 'vite-plugin-conditional-compile';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 // https://vitejs.dev/config/
 export default defineConfig((config) => {
@@ -15,6 +15,8 @@ export default defineConfig((config) => {
 
   const isSQLE = buildTypes.includes('SQLE');
 
+  const title = 'Action SQLE';
+
   return {
     plugins: [
       vitePluginConditionalCompile({
@@ -23,7 +25,14 @@ export default defineConfig((config) => {
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
       }),
-      react()
+      react(),
+      createHtmlPlugin({
+        inject: {
+          data: {
+            title
+          }
+        }
+      })
     ],
     css: {
       preprocessorOptions: {

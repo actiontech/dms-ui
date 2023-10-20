@@ -22,6 +22,7 @@ const RoleList: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [refreshFlag, { toggle: toggleRefreshFlag }] = useToggle(false);
+  const [messageApi, contextHoler] = message.useMessage();
 
   const getRoleList = ({ current, pageSize }: TablePaginationProps) => {
     const params: IListRolesParams = {
@@ -60,7 +61,7 @@ const RoleList: React.FC = () => {
     );
   };
   const deleteRole = (roleName: string, roleUid: string) => {
-    const hideLoading = message.loading(
+    const hideLoading = messageApi.loading(
       t('dmsUserCenter.role.deleteRole.deleting', { name: roleName }),
       0
     );
@@ -70,7 +71,7 @@ const RoleList: React.FC = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsUserCenter.role.deleteRole.deleteSuccessTips', {
               name: roleName
             })
@@ -96,27 +97,30 @@ const RoleList: React.FC = () => {
   }, [toggleRefreshFlag]);
 
   return (
-    <Card
-      title={
-        <Space>
-          {t('dmsUserCenter.role.roleList.title')}
-          <Button onClick={toggleRefreshFlag}>
-            <SyncOutlined spin={tableProps.loading} />
+    <>
+      {contextHoler}
+      <Card
+        title={
+          <Space>
+            {t('dmsUserCenter.role.roleList.title')}
+            <Button onClick={toggleRefreshFlag}>
+              <SyncOutlined spin={tableProps.loading} />
+            </Button>
+          </Space>
+        }
+        extra={[
+          <Button key="create-role" type="primary" onClick={createRole}>
+            {t('dmsUserCenter.role.createRole.button')}
           </Button>
-        </Space>
-      }
-      extra={[
-        <Button key="create-role" type="primary" onClick={createRole}>
-          {t('dmsUserCenter.role.createRole.button')}
-        </Button>
-      ]}
-    >
-      <Table
-        rowKey="uid"
-        columns={tableHeaderFactory(updateRole, deleteRole)}
-        {...tableProps}
-      />
-    </Card>
+        ]}
+      >
+        <Table
+          rowKey="uid"
+          columns={tableHeaderFactory(updateRole, deleteRole)}
+          {...tableProps}
+        />
+      </Card>
+    </>
   );
 };
 
