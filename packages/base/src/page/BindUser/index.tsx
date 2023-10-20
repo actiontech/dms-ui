@@ -10,6 +10,7 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 import LoginLayout from '../Login/components/LoginLayout';
 import { BasicButton, BasicInput } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon/common';
+import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 
 const BindUser = () => {
   const navigate = useNavigate();
@@ -95,13 +96,17 @@ const BindUser = () => {
             {
               required: true,
               message: t('common.form.rule.require', {
-                name: t('dmsLogin.oauth.form.username')
+                name: t('dmsLogin.oauth.form.username', {
+                  title: DMS_DEFAULT_WEB_TITLE
+                })
               })
             }
           ]}
         >
           <BasicInput
-            placeholder={t('dmsLogin.oauth.form.username')}
+            placeholder={t('dmsLogin.oauth.form.username', {
+              title: DMS_DEFAULT_WEB_TITLE
+            })}
             autoFocus
             className="login-form-field"
             prefix={<IconCommonUser />}
