@@ -4,6 +4,9 @@ import eslint from 'vite-plugin-eslint';
 import vitePluginConditionalCompile from 'vite-plugin-conditional-compile';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
+// Do not delete it. After deletion, it will be synchronized to dms-ui-ee, causing an error.
+import * as path from 'path';
+
 // https://vitejs.dev/config/
 export default defineConfig((config) => {
   const buildTypes = process.env.buildType?.split(',') ?? [];
