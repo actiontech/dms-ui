@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import eslint from 'vite-plugin-eslint';
-import * as path from 'path';
 import vitePluginConditionalCompile from 'vite-plugin-conditional-compile';
+import { createHtmlPlugin } from 'vite-plugin-html';
+
+// Do not delete it. After deletion, it will be synchronized to dms-ui-ee, causing an error.
+import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig((config) => {
@@ -17,6 +20,8 @@ export default defineConfig((config) => {
   const isPROVISION = buildTypes.includes('PROVISION');
   const isONLY_SQLE = isSQLE && !isPROVISION;
 
+  const title = 'Action SQLE';
+
   return {
     plugins: [
       vitePluginConditionalCompile({
@@ -25,7 +30,14 @@ export default defineConfig((config) => {
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
       }),
-      react()
+      react(),
+      createHtmlPlugin({
+        inject: {
+          data: {
+            title
+          }
+        }
+      })
     ],
     resolve: {
       alias: {
