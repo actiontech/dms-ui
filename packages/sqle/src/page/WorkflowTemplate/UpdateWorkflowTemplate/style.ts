@@ -92,6 +92,7 @@ export const StepInfoStyleWrapper = styled(BasicButton)`
     padding: 16px 12px;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     align-self: stretch;
     border-radius: 8px;
     border: ${({ theme }) =>
@@ -109,7 +110,7 @@ export const StepInfoStyleWrapper = styled(BasicButton)`
 
     &.${ANTD_PREFIX_STR}-btn:not(.${ANTD_PREFIX_STR}-btn-icon-only)
       > .${ANTD_PREFIX_STR}-btn-icon:not(:last-child) {
-      margin-right: 5px;
+      margin-right: 0;
     }
   }
 `;
@@ -118,11 +119,8 @@ export const StepButtonStyleWrapper = styled('div')`
   margin-top: 24px;
   display: flex;
   align-items: center;
+  gap: 12px;
   align-self: stretch;
-
-  .basic-button-wrapper.${ANTD_PREFIX_STR}-btn:first-of-type {
-    margin-right: 12px;
-  }
 `;
 
 export const StepNodeAlertStyleWrapper = styled('div')`

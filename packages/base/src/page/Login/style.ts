@@ -53,6 +53,7 @@ export const LoginPageRightStyleWrapper = styled('div')`
         display: flex;
         height: 100%;
         align-items: center;
+        gap: 10px;
         flex-shrink: 0;
         align-self: stretch;
 
@@ -68,7 +69,6 @@ export const LoginPageRightStyleWrapper = styled('div')`
 
         .label-primary {
           color: ${({ theme }) => theme.baseTheme.sideMenu.title.color[0]};
-          margin-right: 10px;
         }
 
         .label-base {
