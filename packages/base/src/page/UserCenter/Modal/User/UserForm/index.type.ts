@@ -20,7 +20,9 @@ export interface IUserFormFields {
 export interface IUserFormProps {
   form: FormInstance<IUserFormFields>;
   userGroupList: IListUserGroup[];
+  getUserGroupListLoading: boolean;
   opPermissionList: IListOpPermission[];
+  getOpPermissionListLoading: boolean;
   isUpdate?: boolean;
   isAdmin?: boolean;
 }

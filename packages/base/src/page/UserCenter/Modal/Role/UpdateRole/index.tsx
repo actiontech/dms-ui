@@ -27,9 +27,11 @@ const UpdateRole = () => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const { opPermissionList, updateOpPermissionList } = useOpPermission(
-    ListOpPermissionsFilterByTargetEnum.member
-  );
+  const {
+    loading: getOpPermissionListLoading,
+    opPermissionList,
+    updateOpPermissionList
+  } = useOpPermission(ListOpPermissionsFilterByTargetEnum.member);
 
   const [updateLoading, { setTrue, setFalse }] = useBoolean();
 
@@ -118,7 +120,12 @@ const UpdateRole = () => {
       }
     >
       {contextHolder}
-      <RoleForm isUpdate={true} form={form} operationList={opPermissionList} />
+      <RoleForm
+        isUpdate={true}
+        form={form}
+        getOpPermissionListLoading={getOpPermissionListLoading}
+        operationList={opPermissionList}
+      />
     </BasicDrawer>
   );
 };
