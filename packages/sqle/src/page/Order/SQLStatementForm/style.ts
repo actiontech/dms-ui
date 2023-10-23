@@ -3,11 +3,15 @@ import { styled } from '@mui/material/styles';
 export const UploadTypeStyleWrapper = styled('div')`
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+
+  .update-type-item-wrapper:not(:first-of-type) {
+    margin-left: 12px;
+  }
 `;
 
 export const UploadItemTypeStyleWrapper = styled('div')<{ active?: boolean }>`
+  flex: 1 0 30%;
   background-color: ${({ theme }) =>
     theme.sharedTheme.uiToken.colorFillQuaternary};
   border: 1px solid
