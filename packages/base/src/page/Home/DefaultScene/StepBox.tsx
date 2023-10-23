@@ -1,14 +1,14 @@
 import { Row, Col, Space } from 'antd5';
 import { useNavigate } from 'react-router-dom';
-import useUserTypeHooks from './hooks/useUserTypeHooks';
 import { AdminUserDevopsSteps, NormalUserDevopsSteps } from '.';
 import { DefaultSceneStepContainerWrapper } from '../style';
 import GuidanceButton from '../components/GuidanceButton';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import { DEFAULT_PROJECT_ID } from '@actiontech/shared/lib/data/common';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 const StepBox: React.FC = () => {
-  const { isAdmin } = useUserTypeHooks();
+  const { isAdmin } = useCurrentUser();
   const navigate = useNavigate();
   let currentProjectID = '';
 
