@@ -37,6 +37,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   const [dbType, setDbType] = useState('');
   const [source, setSource] = useState('');
   const {
+    loading: getTaskSourceListLoading,
     updateTaskSourceList,
     generateTaskSourceSelectOption,
     generateTaskSourceDbTypesSelectOption
@@ -173,6 +174,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               <BasicSelect
                 disabled={isUpdate}
                 allowClear
+                loading={getTaskSourceListLoading}
                 placeholder={t('common.form.placeholder.select', {
                   name: t('dmsSyncDataSource.syncTaskForm.source')
                 })}
