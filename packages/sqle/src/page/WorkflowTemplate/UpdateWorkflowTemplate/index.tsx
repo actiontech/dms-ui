@@ -53,8 +53,12 @@ const UpdateWorkflowTemplate: React.FC = () => {
   const urlParams = useParams<{ workflowName: string }>();
   const { projectName, projectID } = useCurrentProject();
 
-  const { updateUsernameList, generateUsernameSelectOption, usernameList } =
-    useUsername();
+  const {
+    loading: getUsernameListLoading,
+    updateUsernameList,
+    generateUsernameSelectOption,
+    usernameList
+  } = useUsername();
 
   React.useEffect(() => {
     updateUsernameList(projectName);
@@ -198,6 +202,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
         nextStep={nextStep}
         currentStep={currentStep}
         generateUsernameSelectOption={generateUsernameSelectOption}
+        getUsernameListLoading={getUsernameListLoading}
         totalStep={reviewSteps.length + 1}
         updateReviewAndExecNodeInfo={updateReviewAndExecNodeInfo}
       />
