@@ -258,6 +258,9 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
         <BasicSegmented
           value={auditResultActiveKey}
           onChange={(value) => {
+            if (value === OVERVIEW_TAB_KEY) {
+              updateAllSelectedFilterItem(false);
+            }
             setAuditResultActiveKey(value as string);
           }}
           options={[
