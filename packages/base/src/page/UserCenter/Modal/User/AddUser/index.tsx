@@ -20,11 +20,17 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 const AddUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
 
-  const { userGroupList, updateUserGroupList } = useUserGroup();
+  const {
+    loading: getUserGroupListLoading,
+    userGroupList,
+    updateUserGroupList
+  } = useUserGroup();
 
-  const { opPermissionList, updateOpPermissionList } = useOpPermission(
-    ListOpPermissionsFilterByTargetEnum.user
-  );
+  const {
+    loading: getOpPermissionListLoading,
+    opPermissionList,
+    updateOpPermissionList
+  } = useOpPermission(ListOpPermissionsFilterByTargetEnum.user);
 
   const { t } = useTranslation();
 
@@ -109,6 +115,8 @@ const AddUser = () => {
         form={form}
         userGroupList={userGroupList}
         opPermissionList={opPermissionList}
+        getUserGroupListLoading={getUserGroupListLoading}
+        getOpPermissionListLoading={getOpPermissionListLoading}
       />
     </BasicDrawer>
   );

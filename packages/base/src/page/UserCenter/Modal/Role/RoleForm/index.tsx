@@ -59,6 +59,7 @@ const RoleForm: React.FC<IRoleFormProps> = (props) => {
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.role.roleForm.opPermissions')
           })}
+          loading={props.getOpPermissionListLoading}
         >
           {props.operationList.map((operation) => (
             <Select.Option

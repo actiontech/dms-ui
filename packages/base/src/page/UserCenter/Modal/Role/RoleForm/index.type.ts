@@ -11,5 +11,6 @@ export interface IRoleFormFields {
 export interface IRoleFormProps {
   form: FormInstance<IRoleFormFields>;
   operationList: IListOpPermission[];
+  getOpPermissionListLoading: boolean;
   isUpdate?: boolean;
 }

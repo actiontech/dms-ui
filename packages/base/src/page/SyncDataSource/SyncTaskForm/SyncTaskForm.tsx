@@ -43,10 +43,17 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     generateTaskSourceDbTypesSelectOption
   } = useTaskSource();
 
-  const { updateGlobalRuleTemplateList, globalRuleTemplateList } =
-    useGlobalRuleTemplate();
+  const {
+    loading: getGlobalRuleTemplateListLoading,
+    updateGlobalRuleTemplateList,
+    globalRuleTemplateList
+  } = useGlobalRuleTemplate();
 
-  const { updateRuleTemplateList, ruleTemplateList } = useRuleTemplate();
+  const {
+    loading: getRuleTemplateListLoading,
+    updateRuleTemplateList,
+    ruleTemplateList
+  } = useRuleTemplate();
 
   const dbTypeChange = (type: string) => {
     setDbType(type);
@@ -219,6 +226,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               <BasicSelect<string>
                 disabled={isUpdate}
                 allowClear
+                loading={getTaskSourceListLoading}
                 onChange={dbTypeChange}
                 placeholder={t('common.form.placeholder.select', {
                   name: t('dmsSyncDataSource.syncTaskForm.instanceType')
@@ -244,6 +252,9 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             >
               <BasicSelect
                 allowClear
+                loading={
+                  getGlobalRuleTemplateListLoading || getRuleTemplateListLoading
+                }
                 placeholder={t('common.form.placeholder.select', {
                   name: t('dmsSyncDataSource.syncTaskForm.ruleTemplateName')
                 })}

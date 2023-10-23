@@ -25,11 +25,17 @@ import { BasicDrawer, BasicButton } from '@actiontech/shared';
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
 
-  const { userGroupList, updateUserGroupList } = useUserGroup();
+  const {
+    loading: getUserGroupListLoading,
+    userGroupList,
+    updateUserGroupList
+  } = useUserGroup();
 
-  const { opPermissionList, updateOpPermissionList } = useOpPermission(
-    ListOpPermissionsFilterByTargetEnum.user
-  );
+  const {
+    loading: getOpPermissionListLoading,
+    opPermissionList,
+    updateOpPermissionList
+  } = useOpPermission(ListOpPermissionsFilterByTargetEnum.user);
 
   const { t } = useTranslation();
 
@@ -138,6 +144,8 @@ const UpdateUser = () => {
         isUpdate={true}
         userGroupList={userGroupList}
         opPermissionList={opPermissionList}
+        getUserGroupListLoading={getUserGroupListLoading}
+        getOpPermissionListLoading={getOpPermissionListLoading}
         isAdmin={currentUser?.name === 'admin'}
       />
     </BasicDrawer>

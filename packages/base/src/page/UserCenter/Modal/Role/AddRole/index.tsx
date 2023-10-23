@@ -19,9 +19,11 @@ import { BasicDrawer, BasicButton } from '@actiontech/shared';
 const AddRole = () => {
   const [form] = Form.useForm<IRoleFormFields>();
 
-  const { opPermissionList, updateOpPermissionList } = useOpPermission(
-    ListOpPermissionsFilterByTargetEnum.member
-  );
+  const {
+    loading: getOpPermissionListLoading,
+    opPermissionList,
+    updateOpPermissionList
+  } = useOpPermission(ListOpPermissionsFilterByTargetEnum.member);
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -96,7 +98,11 @@ const AddRole = () => {
       }
     >
       {contextHolder}
-      <RoleForm form={form} operationList={opPermissionList} />
+      <RoleForm
+        form={form}
+        getOpPermissionListLoading={getOpPermissionListLoading}
+        operationList={opPermissionList}
+      />
     </BasicDrawer>
   );
 };

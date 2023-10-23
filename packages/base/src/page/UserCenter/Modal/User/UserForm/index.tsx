@@ -155,6 +155,7 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
         <BasicSelect
           mode="multiple"
           showSearch
+          loading={props.getOpPermissionListLoading}
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.user.userForm.opPermissions')
           })}
@@ -176,6 +177,7 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
         <BasicSelect
           mode="multiple"
           showSearch
+          loading={props.getUserGroupListLoading}
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.user.userForm.userGroups')
           })}
