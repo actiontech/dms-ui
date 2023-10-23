@@ -1,4 +1,4 @@
-import { ConfigProvider, SelectProps } from 'antd5';
+import { ConfigProvider, SelectProps, Spin } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { IconClose } from '../../Icon';
 import classnames from 'classnames';
@@ -7,7 +7,7 @@ import { ComponentControlHeight } from '../../data/common';
 
 const BasicSelect = <V = any,>(props: SelectProps<V>) => {
   const { t } = useTranslation();
-  const { className, allowClear, ...otherParams } = props;
+  const { className, allowClear, loading, ...otherParams } = props;
 
   return (
     <ConfigProvider
@@ -27,6 +27,8 @@ const BasicSelect = <V = any,>(props: SelectProps<V>) => {
         {...otherParams}
         clearIcon={<IconClose />}
         allowClear={allowClear}
+        loading={loading}
+        notFoundContent={loading ? <Spin /> : null}
         //ts checker error
         // allowClear={
         //   !!allowClear
