@@ -56,7 +56,7 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
         page_index: 1,
         page_size: DASHBOARD_COMMON_GET_ORDER_NUMBER,
         filter_status: filterStatus,
-        filter_create_user_id: uid,
+        filter_current_step_assignee_user_id: uid,
         project_name: projectName
       };
       return handleTableRequestError(workflow.getWorkflowsV1(params));
