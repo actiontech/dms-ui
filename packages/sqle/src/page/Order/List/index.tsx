@@ -103,10 +103,7 @@ const OrderList: React.FC = () => {
       FilterCustomProps
     >([
       ['create_user_name', { options: usernameOptions }],
-      [
-        'current_step_assignee_user_name_list',
-        { options: usernameOptions, mode: 'multiple' }
-      ],
+      ['current_step_assignee_user_name_list', { options: usernameOptions }],
       [
         'instance_name',
         {

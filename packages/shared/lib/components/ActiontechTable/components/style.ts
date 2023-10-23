@@ -64,6 +64,7 @@ export const ColumnsSettingDropdownStyleWrapper = styled('div')`
     .columns-setting-item {
       display: flex;
       align-items: center;
+      gap: 8px;
       cursor: pointer;
       width: 80%;
       padding: 4px 8px;
@@ -81,7 +82,6 @@ export const ColumnsSettingDropdownStyleWrapper = styled('div')`
           theme.sharedTheme.components.columnsSetting.dropdown.item.labelColor};
         overflow: hidden;
         max-width: 70%;
-        margin-left: 8px;
       }
     }
   }
@@ -143,6 +143,7 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
 
 export const InlineTableActionButtonsStyleWrapper = styled('div')`
   display: flex;
+  gap: 8px;
 
   .actiontech-table-actions-button {
     height: 24px;
@@ -152,7 +153,6 @@ export const InlineTableActionButtonsStyleWrapper = styled('div')`
   .actiontech-table-actions-more-button {
     height: 24px;
     width: 24px;
-    margin-left: 8px;
   }
 `;
 
@@ -174,6 +174,7 @@ export const InlineTableActionMoreButtonPopoverStyleWrapper = styled('div')`
     cursor: pointer;
     display: flex;
     align-items: center;
+    gap: 8px;
     padding: 0 8px;
     border-radius: 4px;
 
@@ -187,7 +188,6 @@ export const InlineTableActionMoreButtonPopoverStyleWrapper = styled('div')`
       font-size: 13px;
       font-weight: 500;
       line-height: 20px;
-      margin-left: 8px;
     }
 
     &-icon {
