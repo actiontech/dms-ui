@@ -4,7 +4,8 @@ import {
   updateManagementPermissions,
   updateToken,
   updateUser,
-  updateUserUid
+  updateUserUid,
+  updateUserInfoFetchStatus
 } from '../../../../../base/src/store/user';
 import { createBrowserHistory } from 'history';
 
@@ -14,6 +15,7 @@ const globalAuthInvalid = () => {
   store.dispatch(updateUserUid({ uid: '' }));
   store.dispatch(updateManagementPermissions({ managementPermissions: [] }));
   store.dispatch(updateBindProjects({ bindProjects: [] }));
+  store.dispatch(updateUserInfoFetchStatus(false));
   const history = createBrowserHistory();
   history.push('/login');
 };
