@@ -4,6 +4,8 @@ import { styled } from '@mui/material/styles';
 
 export const ProjectSelectorStyleWrapper = styled(CustomSelect)`
   &.${ANTD_PREFIX_STR}-select-lg.${ANTD_PREFIX_STR}-select.custom-project-selector {
+    margin: 4px 0;
+
     .${ANTD_PREFIX_STR}-select-selector {
       font-size: 13px;
       font-weight: 500;
@@ -36,7 +38,6 @@ export const ProjectSelectorStyleWrapper = styled(CustomSelect)`
 export const ProjectSelectorLabelStyleWrapper = styled('div')`
   display: flex;
   align-items: center;
-  gap: 8px;
 
   &:hover {
     .project-flag-icon {
@@ -52,6 +53,7 @@ export const ProjectSelectorLabelStyleWrapper = styled('div')`
   }
 
   .project-selector-label-text {
+    margin-left: 8px;
     color: ${({ theme }) =>
       theme.baseTheme.sideMenu.projectSelector.dropdown.labelColor};
   }

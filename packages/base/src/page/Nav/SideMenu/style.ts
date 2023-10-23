@@ -28,14 +28,12 @@ export const SideMenuStyleWrapper = styled('div')`
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 4px;
 
       .title {
         display: flex;
         height: 60px;
         padding: 8px;
         align-items: center;
-        gap: 10px;
         flex-shrink: 0;
         align-self: stretch;
         cursor: pointer;
@@ -52,6 +50,7 @@ export const SideMenuStyleWrapper = styled('div')`
 
         .label-primary {
           color: ${({ theme }) => theme.baseTheme.sideMenu.title.color[0]};
+          margin-right: 10px;
         }
 
         .label-base {
@@ -244,7 +243,6 @@ export const PopoverInnerStyleWrapper = styled('div')`
       display: flex;
       height: 32px;
       align-items: center;
-      gap: 8px;
       align-self: stretch;
       border-radius: 4px;
       font-size: 13px;
@@ -257,6 +255,10 @@ export const PopoverInnerStyleWrapper = styled('div')`
       &:hover {
         background-color: ${({ theme }) =>
           theme.baseTheme.sideMenu.userNavigate.content.hoverBackgroundColor};
+      }
+
+      &-text {
+        margin-left: 8px;
       }
     }
   }
@@ -281,7 +283,6 @@ export const PopoverInnerStyleWrapper = styled('div')`
       padding: 3px;
       justify-content: center;
       align-items: flex-start;
-      gap: 4px;
       border-radius: 100px;
       border: ${({ theme }) =>
         theme.baseTheme.sideMenu.userNavigate.footer.iconWrapper.border};
@@ -289,13 +290,16 @@ export const PopoverInnerStyleWrapper = styled('div')`
         theme.baseTheme.sideMenu.userNavigate.footer.iconWrapper
           .backgroundColor};
 
+      &-wrapper:first-of-type {
+        margin-right: 4px;
+      }
+
       &-wrapper {
         display: flex;
         width: 26px;
         height: 26px;
         justify-content: center;
         align-items: center;
-        gap: 10px;
         cursor: pointer;
         color: ${({ theme }) =>
           theme.baseTheme.sideMenu.userNavigate.footer.iconWrapper.color};
@@ -327,6 +331,7 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
   border: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   border-radius: 4px;
+  margin: 4px 0;
 
   .project-flag-icon {
     margin-right: 8px;
