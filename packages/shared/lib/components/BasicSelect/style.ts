@@ -66,3 +66,9 @@ export const BasicSelectStyleWrapper = styled(Select<any>)`
     }
   }
 `;
+
+export const BasicSelectOptionLabelStyleWrapper = styled('span')`
+  display: flex;
+  gap: 8px;
+`;
+export const BasicSelectPlaceholderStyleWrapper = styled('span')``;

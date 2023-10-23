@@ -25,10 +25,7 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
         .custom-select-placeholder {
           display: inline-flex;
           align-items: center;
-
-          &-value {
-            margin-left: 8px;
-          }
+          gap: 8px;
         }
       }
 
@@ -36,6 +33,7 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
         .custom-select-option-content {
           display: inline-flex;
           align-items: center;
+          gap: 8px;
           max-width: 100%;
         }
       }
@@ -58,9 +56,7 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
       padding-inline-end: 24px;
 
       .${ANTD_PREFIX_STR}-select-selection-overflow {
-        &-item:not(:first-of-type) {
-          margin-left: 2px;
-        }
+        gap: 2px;
       }
     }
   }
@@ -83,9 +79,9 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
 
 export const CustomSelectOptionLabelStyleWrapper = styled('span')`
   display: flex;
+  gap: 8px;
 
   .custom-select-option-content-prefix {
-    margin-right: 8px;
     color: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.content.prefixColor};
   }
