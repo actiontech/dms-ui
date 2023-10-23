@@ -6,7 +6,7 @@ export const OrderStepsStyleWrapper = styled('div')`
   width: 360px;
   min-width: 360px;
   overflow-y: auto;
-  padding: 0 24px;
+  padding: 0 24px 65px;
   transition: width 1s ease-in-out;
   border-left: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
