@@ -39,7 +39,9 @@ const UserNavigate: React.FC<{
               }}
             >
               <IconAccount />
-              <span>{t('dmsMenu.userNavigate.account')}</span>
+              <span className="content-item-text">
+                {t('dmsMenu.userNavigate.account')}
+              </span>
             </div>
             <div
               className="content-item"
@@ -49,7 +51,9 @@ const UserNavigate: React.FC<{
               }}
             >
               <IconAccount />
-              <span>{t('dmsMenu.userNavigate.viewVersion')}</span>
+              <span className="content-item-text">
+                {t('dmsMenu.userNavigate.viewVersion')}
+              </span>
             </div>
             <div
               className="content-item"
@@ -59,7 +63,9 @@ const UserNavigate: React.FC<{
               }}
             >
               <IconAccount />
-              <span>{t('dmsMenu.userNavigate.logout')}</span>
+              <span className="content-item-text">
+                {t('dmsMenu.userNavigate.logout')}
+              </span>
             </div>
           </div>
         </PopoverInnerStyleWrapper>

@@ -47,7 +47,7 @@ const ProjectSelectorModal: React.FC<ProjectSelectorModalProps> = ({
       }
     >
       <SelectProjectModalContentStyleWrapper>
-        <span>{t('dmsProject.detail.modalTips')}</span>
+        <span className="modal-tips">{t('dmsProject.detail.modalTips')}</span>
         <ProjectSelector
           value={projectSelectorValue}
           onChange={setProjectSelectorValue}
