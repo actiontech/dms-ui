@@ -51,7 +51,9 @@ const GlobalSetting: React.FC<{
                 onClick={() => handleClickItem(`/sqle/rule`)}
               >
                 <IconViewRule />
-                <span>{t('dmsMenu.globalSettings.viewRule')}</span>
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.viewRule')}
+                </span>
               </div>
               {/* FITRUE_isSQLE */}
             </div>
@@ -63,7 +65,9 @@ const GlobalSetting: React.FC<{
                 onClick={() => handleClickItem('/userCenter')}
               >
                 <IconUserCenter />
-                <span>{t('dmsMenu.globalSettings.userCenter')}</span>
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.userCenter')}
+                </span>
               </div>
               {/* IFTRUE_isSQLE */}
               <div
@@ -71,21 +75,27 @@ const GlobalSetting: React.FC<{
                 onClick={() => handleClickItem('/sqle/reportStatistics')}
               >
                 <IconReportStatistics />
-                <span>{t('dmsMenu.globalSettings.reportStatistics')}</span>
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.reportStatistics')}
+                </span>
               </div>
               <div
                 className="content-item"
                 onClick={() => handleClickItem(`/sqle/rule`)}
               >
                 <IconViewRule />
-                <span>{t('dmsMenu.globalSettings.viewRule')}</span>
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.viewRule')}
+                </span>
               </div>
               <div
                 className="content-item"
                 onClick={() => handleClickItem(`/sqle/ruleManager`)}
               >
                 <IconRuleManage />
-                <span>{t('dmsMenu.globalSettings.ruleManage')}</span>
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.ruleManage')}
+                </span>
               </div>
               {/* FITRUE_isSQLE */}
               <div
@@ -93,7 +103,9 @@ const GlobalSetting: React.FC<{
                 onClick={() => handleClickItem(`/system`)}
               >
                 <IconSystem />
-                <span>{t('dmsMenu.globalSettings.system')}</span>
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.system')}
+                </span>
               </div>
             </div>
           </EmptyBox>
