@@ -47,8 +47,7 @@ describe.skip('App', () => {
               project_name: 'default'
             }
           ]
-        },
-        home: { userType: 'admin' }
+        }
       });
     });
     (useDispatch as jest.Mock).mockImplementation(() => scopeDispatch);
