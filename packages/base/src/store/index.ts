@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import home from './home';
 import user from './user';
 import userCenter from './userCenter';
 import member from './member';
@@ -19,7 +18,6 @@ import projectManage from 'sqle/src/store/projectManage';
 
 const store = configureStore({
   reducer: {
-    home,
     user,
     userCenter,
     member,
