@@ -25,7 +25,10 @@ import { getWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/
 import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 
 const DBAPanel: React.FC<IDBAPanelProps> = ({
   workflowStatistics,
@@ -34,6 +37,7 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
+  const { uid } = useCurrentUser();
   const [filterStatus, setFilterStatus] = useState<DBAPanelFilterKey>(
     getWorkflowsV1FilterStatusEnum.wait_for_audit
   );
@@ -52,6 +56,7 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
         page_index: 1,
         page_size: DASHBOARD_COMMON_GET_ORDER_NUMBER,
         filter_status: filterStatus,
+        filter_current_step_assignee_user_id: uid,
         project_name: projectName
       };
       return handleTableRequestError(workflow.getWorkflowsV1(params));
