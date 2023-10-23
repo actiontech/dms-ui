@@ -1,6 +1,7 @@
 import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 import { Typography } from 'antd5';
+import { BasicModal } from '@actiontech/shared';
 
 export const SideMenuStyleWrapper = styled('div')`
   &.dms-layout-side {
@@ -331,5 +332,11 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
     margin-right: 8px;
     color: ${({ theme }) =>
       theme.baseTheme.sideMenu.projectSelector.dropdown.activeIconColor};
+  }
+`;
+
+export const VersionModalStyleWrapper = styled(BasicModal)`
+  &.version-modal {
+    width: 720px !important;
   }
 `;
