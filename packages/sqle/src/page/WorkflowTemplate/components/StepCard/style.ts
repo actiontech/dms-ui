@@ -9,7 +9,6 @@ export const StepCardStyleWrapper = styled(Card)`
   padding: 20px 24px 16px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
   border-radius: 8px;
 
   &.${ANTD_PREFIX_STR}-card.step-card-style {

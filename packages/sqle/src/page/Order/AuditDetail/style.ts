@@ -14,8 +14,6 @@ export const OrderDetailAuditResultStyleWrapper = styled('section')`
   }
 
   .${ANTD_PREFIX_STR}-space.audit-result-actions-wrap {
-    gap: 12px !important;
-
     .${ANTD_PREFIX_STR}-divider.audit-result-actions-divider {
       margin: 0;
       height: 28px;
