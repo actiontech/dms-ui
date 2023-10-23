@@ -74,7 +74,7 @@ export const FilterFormRowLayout = {
 export const ANTD_PREFIX_STR = 'antd-v5';
 
 export const ComponentControlHeight = {
-  default: 32,
+  default: 36,
   lg: 36,
   sm: 28
 };

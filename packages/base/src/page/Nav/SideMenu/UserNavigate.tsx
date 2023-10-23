@@ -2,22 +2,21 @@ import { Popover } from 'antd5';
 import { PopoverInnerStyleWrapper } from './style';
 import { IconAccount } from '../../../icon/sideMenu';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
-import { updateToken } from '../../../store/user';
 import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUserInfo } from '@actiontech/shared/lib/global';
 
 const UserNavigate: React.FC<{
   username: string;
   setVersionModalOpen: () => void;
 }> = ({ username, setVersionModalOpen }) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const { clearUserInfo } = useUserInfo();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const logout = () => {
-    dispatch(updateToken({ token: '' }));
+    clearUserInfo();
   };
 
   return (

@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { Space } from 'antd5';
 import { useState } from 'react';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
-import { useBack } from '@actiontech/shared/lib/hooks';
 
 import { useForm } from 'antd5/es/form/Form';
 import { useNavigate } from 'react-router-dom';
@@ -23,7 +22,6 @@ import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 const CreatePlan = () => {
   const { t } = useTranslation();
   const navigater = useNavigate();
-  const { goBack } = useBack();
   const { projectName, projectID } = useCurrentProject();
 
   const [submitLoading, setSubmitLoading] = useState(false);
@@ -32,7 +30,7 @@ const CreatePlan = () => {
 
   const onSkipList = () => {
     onReset();
-    goBack();
+    navigater(`/sqle/project/${projectID}/auditPlan`);
   };
 
   const onReset = () => {

@@ -16,7 +16,9 @@ const ResultDescribe: React.FC<{
   const [inputValue, setInputValue] = useState<string>(value);
 
   const onInputBlur = (e: FocusEvent<HTMLInputElement>) => {
-    onSubmit(e.target.value);
+    if (e.target.value !== value) {
+      onSubmit(e.target.value);
+    }
     setFalse();
   };
 
