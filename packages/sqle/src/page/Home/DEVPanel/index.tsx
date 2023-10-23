@@ -56,7 +56,7 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
       const params: IGetWorkflowsV1Params = {
         page_index: 1,
         page_size: DASHBOARD_COMMON_GET_ORDER_NUMBER,
-        filter_create_user_id: uid,
+        filter_current_step_assignee_user_id: uid,
         filter_status: filterStatus,
         project_name: projectName
       };
