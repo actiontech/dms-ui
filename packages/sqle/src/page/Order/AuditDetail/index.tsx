@@ -275,6 +275,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
         <Space
           hidden={auditResultActiveKey === OVERVIEW_TAB_KEY}
           className="audit-result-actions-wrap"
+          size={12}
         >
           <TableFilterButton
             updateAllSelectedFilterItem={updateAllSelectedFilterItem}

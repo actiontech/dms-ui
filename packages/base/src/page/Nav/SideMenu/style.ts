@@ -282,7 +282,6 @@ export const PopoverInnerStyleWrapper = styled('div')`
       padding: 3px;
       justify-content: center;
       align-items: flex-start;
-      gap: 4px;
       border-radius: 100px;
       border: ${({ theme }) =>
         theme.baseTheme.sideMenu.userNavigate.footer.iconWrapper.border};
@@ -290,13 +289,16 @@ export const PopoverInnerStyleWrapper = styled('div')`
         theme.baseTheme.sideMenu.userNavigate.footer.iconWrapper
           .backgroundColor};
 
+      &-wrapper:first-of-type {
+        margin-right: 4px;
+      }
+
       &-wrapper {
         display: flex;
         width: 26px;
         height: 26px;
         justify-content: center;
         align-items: center;
-        gap: 10px;
         cursor: pointer;
         color: ${({ theme }) =>
           theme.baseTheme.sideMenu.userNavigate.footer.iconWrapper.color};

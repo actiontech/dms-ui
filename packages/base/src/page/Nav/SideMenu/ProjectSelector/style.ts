@@ -38,7 +38,6 @@ export const ProjectSelectorStyleWrapper = styled(CustomSelect)`
 export const ProjectSelectorLabelStyleWrapper = styled('div')`
   display: flex;
   align-items: center;
-  gap: 8px;
 
   &:hover {
     .project-flag-icon {
@@ -54,6 +53,7 @@ export const ProjectSelectorLabelStyleWrapper = styled('div')`
   }
 
   .project-selector-label-text {
+    margin-left: 8px;
     color: ${({ theme }) =>
       theme.baseTheme.sideMenu.projectSelector.dropdown.labelColor};
   }
