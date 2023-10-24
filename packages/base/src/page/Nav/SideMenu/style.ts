@@ -120,10 +120,14 @@ export const SideMenuStyleWrapper = styled('div')`
             border-radius: 4px;
             padding: 0 8px;
             padding-left: 8px !important;
+            color: ${({ theme }) =>
+              theme.sharedTheme.uiToken.colorTextQuaternary};
 
             &:hover {
               background-color: ${({ theme }) =>
                 theme.baseTheme.sideMenu.menu.hoverBackgroundColor};
+              color: ${({ theme }) =>
+                theme.baseTheme.sideMenu.menu.hoverLabelColor};
 
               .${ANTD_PREFIX_STR}-menu-title-content {
                 font-weight: 500;
@@ -149,9 +153,25 @@ export const SideMenuStyleWrapper = styled('div')`
           }
         }
 
+        .${ANTD_PREFIX_STR}-menu-submenu-selected {
+          .${ANTD_PREFIX_STR}-menu-submenu-title {
+            .${ANTD_PREFIX_STR}-menu-item-icon, > svg {
+              filter: brightness(0.3);
+            }
+            .${ANTD_PREFIX_STR}-menu-title-content, > svg {
+              font-weight: 500;
+              color: ${({ theme }) =>
+                theme.baseTheme.sideMenu.menu.hoverLabelColor};
+            }
+          }
+        }
         .${ANTD_PREFIX_STR}-menu-item-selected {
           background-color: ${({ theme }) =>
             theme.baseTheme.sideMenu.menu.hoverBackgroundColor};
+
+          .${ANTD_PREFIX_STR}-menu-item-icon {
+            filter: brightness(0.3);
+          }
 
           .${ANTD_PREFIX_STR}-menu-title-content {
             font-weight: 500;
