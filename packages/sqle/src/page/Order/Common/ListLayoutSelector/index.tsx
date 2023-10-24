@@ -24,7 +24,9 @@ const ListLayoutSelector: React.FC<{
         <div
           className="download-record-item"
           onClick={() => {
-            onChange(ListLayoutEnum.pagination);
+            if (value !== ListLayoutEnum.pagination) {
+              onChange(ListLayoutEnum.pagination);
+            }
             setOpen(false);
           }}
         >
@@ -35,7 +37,9 @@ const ListLayoutSelector: React.FC<{
         <div
           className="download-record-item"
           onClick={() => {
-            onChange(ListLayoutEnum.scroll);
+            if (value !== ListLayoutEnum.scroll) {
+              onChange(ListLayoutEnum.scroll);
+            }
             setOpen(false);
           }}
         >

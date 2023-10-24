@@ -155,7 +155,7 @@ export default {
     operationRecordExpiredHours: '操作记录过期时间',
     urlAddressPrefix: 'URL地址前缀',
     urlAddressPrefixTips: '配置能访问sqle的url地址信息',
-    urlAddressFormatTips: '格式为 http(s)://ip:port'
+    urlAddressFormatTips: '格式为 http(s)://ip:port/sqle'
   },
 
   personalize: {
@@ -176,9 +176,9 @@ export default {
     productFeatures: '功能特点',
     dms_desc:
       'SQLE 是爱可生自主研发，支持多元数据库的 SQL 质量管理平台。应用于开发、测试、上线发布、生产运行阶段的 SQL 质量治理。通过 “建立规范、事前控制、事后监督、标准发布” 的方式，为企业提供 SQL 全生命周期质量管控能力，同时推动企业内部开发规范快速落地。',
-    dms_feature: `1. 满足主流商业及开源数据库使用场景，支持十余种数据源类型
-        2. 提供运维专家团队多年的技术沉淀，并支持规则知识库的自主沉淀
-        3. 提供慢日志等十几种的 SQL智能扫描，覆盖事前事后 SQL 采集需求
+    dms_feature: `1. 满足主流商业及开源数据库使用场景，支持十余种数据源类型。
+        2. 提供运维专家团队多年的技术沉淀，并支持规则知识库的自主沉淀。
+        3. 提供慢日志等十几种的 SQL智能扫描，覆盖事前事后 SQL 采集需求。
         4. 提供SQL全流程的管控视角，追踪问题SQL解决进度、并提供快捷优化。`
   }
 };
