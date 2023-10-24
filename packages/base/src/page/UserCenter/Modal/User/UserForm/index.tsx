@@ -1,15 +1,30 @@
 import { IUserFormProps } from './index.type';
 import { Form, Select, Switch } from 'antd5';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Rule } from 'antd5/es/form';
 import { nameRule, phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmptyBox from '@actiontech/shared/lib/components/EmptyBox';
 import { BasicToolTips } from '@actiontech/shared';
+import useUserGroup from '../../../../../hooks/useUserGroup';
+import useOpPermission from '../../../../../hooks/useOpPermission';
+import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 
 const UserForm: React.FC<IUserFormProps> = (props) => {
   const { t } = useTranslation();
+
+  const {
+    loading: getUserGroupListLoading,
+    userGroupList,
+    updateUserGroupList
+  } = useUserGroup();
+
+  const {
+    loading: getOpPermissionListLoading,
+    opPermissionList,
+    updateOpPermissionList
+  } = useOpPermission(ListOpPermissionsFilterByTargetEnum.user);
 
   const userNameRules = (): Rule[] => {
     const baseRules = [
@@ -25,6 +40,13 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
     }
     return [...baseRules, ...nameRule()];
   };
+
+  useEffect(() => {
+    if (props.visible) {
+      updateUserGroupList();
+      updateOpPermissionList();
+    }
+  }, [updateOpPermissionList, updateUserGroupList, props.visible]);
 
   return (
     <Form form={props.form} layout="vertical">
@@ -155,12 +177,12 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
         <BasicSelect
           mode="multiple"
           showSearch
-          loading={props.getOpPermissionListLoading}
+          loading={getOpPermissionListLoading}
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.user.userForm.opPermissions')
           })}
         >
-          {props.opPermissionList.map((v) => (
+          {opPermissionList.map((v) => (
             <Select.Option
               key={v?.op_permission?.uid}
               value={v?.op_permission?.uid ?? ''}
@@ -177,12 +199,12 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
         <BasicSelect
           mode="multiple"
           showSearch
-          loading={props.getUserGroupListLoading}
+          loading={getUserGroupListLoading}
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.user.userForm.userGroups')
           })}
         >
-          {props.userGroupList.map((group) => (
+          {userGroupList.map((group) => (
             <Select.Option key={group.uid} value={group.uid ?? ''}>
               {group.name}
             </Select.Option>

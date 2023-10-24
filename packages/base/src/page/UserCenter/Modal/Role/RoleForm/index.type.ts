@@ -1,4 +1,3 @@
-import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
 import { FormInstance } from 'antd5';
 
 export interface IRoleFormFields {
@@ -10,7 +9,6 @@ export interface IRoleFormFields {
 
 export interface IRoleFormProps {
   form: FormInstance<IRoleFormFields>;
-  operationList: IListOpPermission[];
-  getOpPermissionListLoading: boolean;
+  visible: boolean;
   isUpdate?: boolean;
 }
