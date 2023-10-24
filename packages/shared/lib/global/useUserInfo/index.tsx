@@ -47,6 +47,7 @@ const useUserInfo = () => {
         managementPermissions: []
       })
     );
+    dispatch(updateUserInfoFetchStatus(false));
   }, [dispatch]);
 
   const {

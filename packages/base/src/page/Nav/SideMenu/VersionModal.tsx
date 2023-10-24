@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
-import { BasicModal, BasicButton } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import DmsService from '@actiontech/shared/lib/api/base/service/dms';
 import { Space, Typography } from 'antd5';
 import { UI_VERSION } from '../../../scripts/version';
-import { VersionModalDescribeTextStyleWrapper } from './style';
+import {
+  VersionModalDescribeTextStyleWrapper,
+  VersionModalStyleWrapper
+} from './style';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 
 const VersionModal: React.FC<{
@@ -50,7 +53,9 @@ const VersionModal: React.FC<{
   };
 
   return (
-    <BasicModal
+    <VersionModalStyleWrapper
+      size="large"
+      className="version-modal"
       open={open}
       onCancel={setVersionModalClose}
       footer={
@@ -102,7 +107,7 @@ const VersionModal: React.FC<{
           </VersionModalDescribeTextStyleWrapper>
         </Space>
       </Space>
-    </BasicModal>
+    </VersionModalStyleWrapper>
   );
 };
 

@@ -2,17 +2,23 @@ import { styled } from '@mui/material/styles';
 
 export const DashboardNameStyleWrapper = styled('div')`
   display: flex;
-  gap: 12px;
   align-items: center;
+
+  .custom-icon {
+    margin-right: 12px;
+  }
 `;
 
 export const TableTitleStyleWrapper = styled('header')`
   display: flex;
-  gap: 8px;
   align-items: center;
   font-size: 16px;
   font-weight: 600;
   color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+
+  .custom-icon {
+    margin-right: 8px;
+  }
 `;
 
 export const NoBorderedPageHeaderWrapper = styled('div')`

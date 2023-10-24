@@ -258,6 +258,9 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
         <BasicSegmented
           value={auditResultActiveKey}
           onChange={(value) => {
+            if (value === OVERVIEW_TAB_KEY) {
+              updateAllSelectedFilterItem(false);
+            }
             setAuditResultActiveKey(value as string);
           }}
           options={[
@@ -275,6 +278,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
         <Space
           hidden={auditResultActiveKey === OVERVIEW_TAB_KEY}
           className="audit-result-actions-wrap"
+          size={12}
         >
           <TableFilterButton
             updateAllSelectedFilterItem={updateAllSelectedFilterItem}
