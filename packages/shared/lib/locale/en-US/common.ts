@@ -180,7 +180,7 @@ export default {
     testFailed: '未能成功链接到数据库'
   },
 
-  sqlStatements: 'sql语句',
+  sqlStatements: 'SQL语句',
 
   enterpriseFeatureDisplay: {
     featureDescription: '功能说明',

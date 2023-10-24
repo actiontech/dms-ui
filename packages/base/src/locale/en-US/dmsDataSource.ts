@@ -41,7 +41,7 @@ export default {
 
   dataSourceForm: {
     baseConfig: '基础配置',
-    sqlConfig: 'sql审核配置',
+    sqlConfig: 'SQL审核配置',
     name: '数据源名称',
     describe: '数据源描述',
     type: '数据库类型',
