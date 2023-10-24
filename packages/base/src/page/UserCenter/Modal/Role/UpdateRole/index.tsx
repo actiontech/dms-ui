@@ -1,4 +1,4 @@
-import React from 'react';
+import { useCallback, useEffect } from 'react';
 import { message, Space, Form } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,9 +9,7 @@ import { IRoleFormFields } from '../RoleForm/index.type';
 import { useBoolean } from 'ahooks';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import useOpPermission from '../../../../../hooks/useOpPermission';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
@@ -27,12 +25,6 @@ const UpdateRole = () => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const {
-    loading: getOpPermissionListLoading,
-    opPermissionList,
-    updateOpPermissionList
-  } = useOpPermission(ListOpPermissionsFilterByTargetEnum.member);
-
   const [updateLoading, { setTrue, setFalse }] = useBoolean();
 
   const visible = useSelector<IReduxState, boolean>(
@@ -43,7 +35,7 @@ const UpdateRole = () => {
     (state) => state.userCenter.selectRole
   );
 
-  const close = React.useCallback(() => {
+  const close = useCallback(() => {
     form.resetFields();
     dispatch(
       updateUserManageModalStatus({
@@ -53,7 +45,7 @@ const UpdateRole = () => {
     );
   }, [dispatch, form]);
 
-  const updateRole = React.useCallback(async () => {
+  const updateRole = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
     dms
@@ -82,7 +74,7 @@ const UpdateRole = () => {
       });
   }, [close, currentRole?.uid, form, setFalse, setTrue, t, messageApi]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (visible) {
       form.setFieldsValue({
         name: currentRole?.name ?? '',
@@ -92,12 +84,6 @@ const UpdateRole = () => {
       });
     }
   }, [visible, currentRole, form]);
-
-  React.useEffect(() => {
-    if (visible) {
-      updateOpPermissionList();
-    }
-  }, [updateOpPermissionList, visible]);
 
   return (
     <BasicDrawer
@@ -120,12 +106,7 @@ const UpdateRole = () => {
       }
     >
       {contextHolder}
-      <RoleForm
-        isUpdate={true}
-        form={form}
-        getOpPermissionListLoading={getOpPermissionListLoading}
-        operationList={opPermissionList}
-      />
+      <RoleForm isUpdate={true} form={form} visible={visible} />
     </BasicDrawer>
   );
 };

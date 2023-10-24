@@ -1,4 +1,4 @@
-import { useRequest } from 'ahooks';
+import { useBoolean, useRequest } from 'ahooks';
 import { Space } from 'antd5';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -18,6 +18,10 @@ import ImportLicense from './Modal/ImportLicense';
 const License = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const [
+    collectLicenseLoading,
+    { setTrue: startCollect, setFalse: collectFinish }
+  ] = useBoolean();
 
   const {
     data,
@@ -30,7 +34,10 @@ const License = () => {
   });
 
   const collectLicense = () => {
-    configuration.GetSQLELicenseInfoV1({ responseType: 'blob' });
+    startCollect();
+    configuration
+      .GetSQLELicenseInfoV1({ responseType: 'blob' })
+      .finally(() => collectFinish());
   };
 
   const importLicense = () => {
@@ -65,7 +72,11 @@ const License = () => {
           </BasicToolTips>
         </Space>
         <Space key="button-wrapper">
-          <BasicButton type="primary" onClick={collectLicense}>
+          <BasicButton
+            type="primary"
+            onClick={collectLicense}
+            loading={collectLicenseLoading}
+          >
             {t('dmsSystem.license.collect')}
           </BasicButton>
           <BasicButton type="primary" onClick={importLicense}>
