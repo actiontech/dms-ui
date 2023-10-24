@@ -46,6 +46,7 @@ import {
 } from '../../../../store/auditPlan';
 import DetailReportDrawer from './Drawer';
 import { RuleUrlParamKey } from '../../../../page/Rule/useRuleFilterForm';
+import { Spin } from 'antd5';
 
 type typeIAuditPlanReportResV1 = keyof IAuditPlanReportResV1;
 
@@ -61,9 +62,9 @@ const DetailReport = () => {
   const dispatch = useDispatch();
 
   const {
-    data: auditTask
+    data: auditTask,
     // run: getTaskInfo,
-    // loading: taskLoading
+    loading: taskLoading
   } = useRequest(() => {
     return audit_plan
       .getAuditPlanV1({
@@ -73,7 +74,7 @@ const DetailReport = () => {
       .then((res) => res.data);
   });
 
-  const { data: reportInfo } = useRequest(() =>
+  const { data: reportInfo, loading: reportInfoLoading } = useRequest(() =>
     audit_plan
       .getAuditPlanReportV1({
         audit_plan_report_id: urlParams.reportId ?? '',
@@ -262,41 +263,46 @@ const DetailReport = () => {
       />
       <DetailReportStyleWrapper>
         <div className="header-wrapper">
-          <div className="left-header">
-            <h3 className="header-cont-text">
-              {t('auditPlan.report.time', {
-                time: formatTime(reportInfo?.audit_plan_report_timestamp, '--')
-              })}
-            </h3>
-            <section className="tag-wrapper">
-              <div className="custom-tag-item">
-                <IconTagBookMark className="custom-tag-icon bookmark-icon" />
-                <div>
-                  {t('auditPlan.detailPage.auditTaskType', {
-                    type:
-                      auditTask?.data?.audit_plan_meta?.audit_plan_type_desc ??
-                      '--'
-                  })}
-                </div>
-              </div>
-              <div
-                className={classNames('custom-tag-item', {
-                  'custom-tag-primary': !!auditTask?.data?.rule_template_name
+          <Spin spinning={taskLoading || reportInfoLoading}>
+            <div className="left-header">
+              <h3 className="header-cont-text">
+                {t('auditPlan.report.time', {
+                  time: formatTime(
+                    reportInfo?.audit_plan_report_timestamp,
+                    '--'
+                  )
                 })}
-                onClick={onSkipRule}
-              >
-                <div>
-                  {t('auditPlan.report.rule_template', {
-                    name: auditTask?.data?.rule_template_name ?? '--'
-                  })}
+              </h3>
+              <section className="tag-wrapper">
+                <div className="custom-tag-item">
+                  <IconTagBookMark className="custom-tag-icon bookmark-icon" />
+                  <div>
+                    {t('auditPlan.detailPage.auditTaskType', {
+                      type:
+                        auditTask?.data?.audit_plan_meta
+                          ?.audit_plan_type_desc ?? '--'
+                    })}
+                  </div>
                 </div>
-                <IconArrowRight className="custom-tag-right-icon" />
-              </div>
-            </section>
-          </div>
-          <div className="right-header">
-            {renderScoreItem(reportInfo ?? {})}
-          </div>
+                <div
+                  className={classNames('custom-tag-item', {
+                    'custom-tag-primary': !!auditTask?.data?.rule_template_name
+                  })}
+                  onClick={onSkipRule}
+                >
+                  <div>
+                    {t('auditPlan.report.rule_template', {
+                      name: auditTask?.data?.rule_template_name ?? '--'
+                    })}
+                  </div>
+                  <IconArrowRight className="custom-tag-right-icon" />
+                </div>
+              </section>
+            </div>
+            <div className="right-header">
+              {renderScoreItem(reportInfo ?? {})}
+            </div>
+          </Spin>
         </div>
         <ActiontechTable
           loading={tableLoading}
