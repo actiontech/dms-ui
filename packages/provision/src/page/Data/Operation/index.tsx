@@ -52,6 +52,7 @@ const Operation = () => {
         ...pagination,
         keyword: searchKeyword
       };
+      // TODO: sort params可能会移除，待后端更新结论。issue：http://10.186.18.11/jira/browse/DMS-556
       createSortParams(params);
 
       return handleTableRequestError(auth.AuthListDataOperationSets(params));
