@@ -4,6 +4,7 @@ import React from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DatabaseTypeLogo from 'sqle/src/components/DatabaseTypeLogo';
 
 const useDbService = () => {
   const [dbServiceList, setDbServiceList] = React.useState<IListDBService[]>(
@@ -43,7 +44,10 @@ const useDbService = () => {
     );
     return dbTypeList.map((type) => {
       return (
-        <Select.OptGroup label={type} key={type}>
+        <Select.OptGroup
+          label={<DatabaseTypeLogo dbType={type ?? ''} />}
+          key={type}
+        >
           {dbServiceList
             .filter((db) => db.db_type === type)
             .map((db) => {
