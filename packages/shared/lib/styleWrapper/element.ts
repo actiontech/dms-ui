@@ -104,3 +104,16 @@ export const PopconfirmMessageStyleWrapper = styled('span')`
   font-weight: 400;
   line-height: 22px;
 `;
+
+export const ConsolidatedListStyleWrapper = styled('section')`
+  .${ANTD_PREFIX_STR}-table-wrapper.actiontech-table-namespace
+    .${ANTD_PREFIX_STR}-table-tbody
+    .${ANTD_PREFIX_STR}-table-row {
+    .${ANTD_PREFIX_STR}-table-cell:first-of-type {
+      padding-left: 16px;
+    }
+    .${ANTD_PREFIX_STR}-table-cell .consolidated-column {
+      padding-left: 24px;
+    }
+  }
+`;

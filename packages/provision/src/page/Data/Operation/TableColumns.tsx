@@ -1,43 +1,76 @@
-import { Tag } from 'antd';
-import i18n from 'i18next';
+import { Space, Typography } from 'antd5';
+import { t } from '../../../locale';
 import { IOperationData } from '.';
-import { TableColumn } from '~/types/common.type';
+import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import { BasicTag } from '@actiontech/shared';
+import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
+import { AuthListDataOperationSetsFilterByDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
 
-export const operationTableColumns = (): TableColumn<IOperationData> => {
+export type OperationListTableFilterParamType = Omit<
+  IAuthListDataOperationSetsParams,
+  'page_index' | 'page_size'
+>;
+
+export const dbTypeOptions = [
+  {
+    value: AuthListDataOperationSetsFilterByDbTypeEnum.MySQL,
+    label: 'MySQL'
+  },
+  {
+    value: AuthListDataOperationSetsFilterByDbTypeEnum.OceanBaseMySQL,
+    label: 'OceanBaseMySQL'
+  }
+];
+
+export const operationTableColumns = (): ActiontechTableColumn<
+  IOperationData,
+  OperationListTableFilterParamType
+> => {
   return [
     {
       dataIndex: 'name',
-      title: () => <>{i18n.t('operation.tableColumns.name')}</>,
-      width: 120,
+      title: () => <>{t('operation.tableColumns.name')}</>,
+      width: 180,
       onCell: (record) => ({
         rowSpan: record.rowSpan
       }),
-      sorter: true
+      sorter: true,
+      render: (name: string) => (
+        <Typography.Text className="consolidated-column">
+          {name}
+        </Typography.Text>
+      )
     },
     {
       dataIndex: 'db_type',
-      title: () => <>{i18n.t('operation.tableColumns.type')}</>,
-      width: 180
+      title: () => <>{t('operation.tableColumns.type')}</>,
+      width: 180,
+      filterCustomType: 'select',
+      filterKey: 'filter_by_db_type'
     },
     {
       dataIndex: 'data_object_types',
-      title: () => <>{i18n.t('operation.tableColumns.scope')}</>,
-      render: (types: IOperationData['data_object_types']) =>
-        types?.map((type) => (
-          <Tag style={{ margin: 5 }} key={type}>
-            {type}
-          </Tag>
-        ))
+      title: () => <>{t('operation.tableColumns.scope')}</>,
+      width: 240,
+      render: (types: IOperationData['data_object_types']) => (
+        <Space size={[0, 8]} wrap>
+          {types?.map((type) => (
+            <BasicTag key={type}>{type}</BasicTag>
+          ))}
+        </Space>
+      )
     },
     {
       dataIndex: 'data_operations',
-      title: () => <>{i18n.t('operation.tableColumns.operation')}</>,
-      render: (operations: IOperationData['data_operations']) =>
-        operations?.map((operation) => (
-          <Tag style={{ margin: 5 }} key={operation.uid}>
-            {operation.name}
-          </Tag>
-        ))
+      title: () => <>{t('operation.tableColumns.operation')}</>,
+      width: 240,
+      render: (operations: IOperationData['data_operations']) => (
+        <Space size={[0, 8]} wrap>
+          {operations?.map((operation) => (
+            <BasicTag key={operation.uid}>{operation.name}</BasicTag>
+          ))}
+        </Space>
+      )
     }
   ];
 };

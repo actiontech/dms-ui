@@ -1,17 +1,25 @@
-import { Box } from '@mui/system';
-import { useRequest } from 'ahooks';
-import { Button, Card, Space } from 'antd';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SyncOutlined } from '@ant-design/icons';
-import ProvisionTable from '~/components/ProvisionTable';
-import useTablePagination from '~/components/ProvisionTable/hooks/useTablePagination';
-import { operationTableColumns } from './TableColumns';
-import OperationListFilterForm, {
-  IFilteredInfo
-} from './OperationListFilterForm';
-import { useState } from 'react';
+import { useRequest } from 'ahooks';
+import {
+  ActiontechTable,
+  useTableFilterContainer,
+  useTableRequestError,
+  TableFilterContainer,
+  TableToolbar,
+  useTableRequestParams,
+  FilterCustomProps
+} from '@actiontech/shared/lib/components/ActiontechTable';
+import {
+  OperationListTableFilterParamType,
+  dbTypeOptions,
+  operationTableColumns
+} from './TableColumns';
+import { PageHeader } from '@actiontech/shared';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IOperationInfo } from '@actiontech/shared/lib/api/provision/service/common';
+import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
+import { ConsolidatedListStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 export interface IOperationData extends IOperationInfo {
   uid?: string;
   name?: string;
@@ -19,69 +27,103 @@ export interface IOperationData extends IOperationInfo {
 }
 const Operation = () => {
   const { t } = useTranslation();
-  const { pageIndex, pageSize, total, setTotal, handleTablePaginationChange } =
-    useTablePagination();
-  const [filteredInfo, setFilteredInfo] = useState<IFilteredInfo | null>(null);
+
   const {
-    data: dataSource,
-    loading,
-    refresh
-  } = useRequest(
-    () =>
-      auth
-        .AuthListDataOperationSets({
-          page_index: pageIndex,
-          page_size: pageSize,
-          ...filteredInfo
-        })
-        .then((res) => {
-          setTotal(res.data.total_nums ?? 0);
-          const data: IOperationData[] = [];
-          res.data.data?.forEach((item) => {
-            const { operations, name, uid } = item;
-            operations?.forEach((operation, index) => {
-              data.push({
-                ...operation,
-                name,
-                uid,
-                rowSpan: index === 0 ? operations.length : 0
-              });
-            });
-          });
-          return data;
-        }),
+    tableFilterInfo,
+    updateTableFilterInfo,
+    sortInfo,
+    createSortParams,
+    tableChange,
+    pagination
+  } = useTableRequestParams<
+    IOperationData,
+    OperationListTableFilterParamType
+  >();
+
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
+
+  const [searchKeyword, setSearchKeyword] = useState<string>('');
+
+  const { data, loading, refresh } = useRequest(
+    () => {
+      const params: IAuthListDataOperationSetsParams = {
+        ...tableFilterInfo,
+        ...pagination,
+        keyword: searchKeyword
+      };
+      createSortParams(params);
+
+      return handleTableRequestError(auth.AuthListDataOperationSets(params));
+    },
     {
-      refreshDeps: [pageIndex, pageSize, filteredInfo]
+      refreshDeps: [tableFilterInfo, sortInfo, pagination, searchKeyword]
     }
   );
+  const dataSource = useMemo(() => {
+    const realData: IOperationData[] = [];
+    data?.list?.forEach((item) => {
+      const { name, uid, operations } = item;
+      operations?.forEach((operation, index) => {
+        realData.push({
+          ...operation,
+          name,
+          uid,
+          rowSpan: index === 0 ? operations.length : 0
+        });
+      });
+    });
+
+    return realData;
+  }, [data]);
+
+  const columns = useMemo(() => operationTableColumns(), []);
+
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(columns, updateTableFilterInfo);
+
+  const filterCustomProps = useMemo(() => {
+    return new Map<keyof IOperationData, FilterCustomProps>([
+      ['db_type', { options: dbTypeOptions }]
+    ]);
+  }, []);
+
+  const onSearch = (value: string) => {
+    setSearchKeyword(value);
+  };
 
   return (
-    <Box
-      sx={{
-        padding: (theme) => theme.layout.padding
-      }}
-    >
-      <Card
-        title={
-          <Space>
-            {t('operation.title')}
-            <Button onClick={refresh} data-testid="refresh">
-              <SyncOutlined spin={loading} />
-            </Button>
-          </Space>
-        }
-      >
-        <OperationListFilterForm setFilteredInfo={setFilteredInfo} />
-        <ProvisionTable
-          rowKey={(record) => record.uid + record.db_type}
-          loading={loading}
-          columns={operationTableColumns()}
-          dataSource={dataSource ?? []}
-          pagination={{ total }}
-          onChange={handleTablePaginationChange}
-        />
-      </Card>
-    </Box>
+    <ConsolidatedListStyleWrapper>
+      <PageHeader title={t('operation.title')} />
+      <TableToolbar
+        refreshButton={{ refresh, disabled: loading }}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
+        searchInput={{
+          onSearch
+        }}
+        loading={loading}
+      />
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        disabled={loading}
+        filterCustomProps={filterCustomProps}
+      />
+      <ActiontechTable
+        rowKey={(record: IOperationData) => `${record?.uid}-${record?.db_type}`}
+        dataSource={dataSource}
+        loading={loading}
+        columns={operationTableColumns()}
+        errorMessage={requestErrorMessage}
+        pagination={{
+          total: data?.total ?? 0
+        }}
+        onChange={tableChange}
+      />
+    </ConsolidatedListStyleWrapper>
   );
 };
 
