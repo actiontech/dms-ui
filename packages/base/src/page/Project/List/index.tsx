@@ -34,6 +34,7 @@ const ProjectList: React.FC = () => {
   const dispatch = useDispatch();
   const { isAdmin, isProjectManager } = useCurrentUser();
   const { updateUserInfo } = useUserInfo();
+
   const allowOperateProject = useCallback(
     (projectName: string) => isAdmin || isProjectManager(projectName),
     [isAdmin, isProjectManager]

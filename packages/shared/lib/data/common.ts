@@ -96,3 +96,7 @@ export const DMS_DEFAULT_WEB_TITLE = 'SQLE';
 export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';
 export const DMS_DEFAULT_WEB_LOGO_URL = '/logo.png';
+
+export enum ManagementPermissionsEnum {
+  Create_Project = '1'
+}

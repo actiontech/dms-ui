@@ -6,7 +6,10 @@ import {
 } from '@actiontech/shared/lib/enum';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IManagementPermissionResV1 } from '@actiontech/shared/lib/types/common.type';
-import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  IUidWithName,
+  IUserBindProject
+} from '@actiontech/shared/lib/api/base/service/common';
 
 type UserReduxState = {
   username: string;
@@ -14,7 +17,7 @@ type UserReduxState = {
   token: string;
   theme: SupportTheme;
   bindProjects: Array<IUserBindProject>;
-  managementPermissions: IManagementPermissionResV1[];
+  managementPermissions: IUidWithName[];
   uid: string;
   useInfoFetched: boolean;
 };
@@ -72,7 +75,7 @@ const user = createSlice({
       state,
       {
         payload: { managementPermissions }
-      }: PayloadAction<{ managementPermissions: IManagementPermissionResV1[] }>
+      }: PayloadAction<{ managementPermissions: IUidWithName[] }>
     ) => {
       state.managementPermissions = managementPermissions;
     },
