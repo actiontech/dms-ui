@@ -5,7 +5,6 @@ import {
   SystemRole
 } from '@actiontech/shared/lib/enum';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IManagementPermissionResV1 } from '@actiontech/shared/lib/types/common.type';
 import {
   IUidWithName,
   IUserBindProject
