@@ -105,6 +105,10 @@ export const PopconfirmMessageStyleWrapper = styled('span')`
   line-height: 22px;
 `;
 
+/**
+ * 功能: 用于带有合并行的表格，处理被合并行第一列的样式问题
+ * PS：合并列的情况暂时还没遇到，之后有使用场景了可再补充
+ */
 export const ConsolidatedListStyleWrapper = styled('section')`
   .${ANTD_PREFIX_STR}-table-wrapper.actiontech-table-namespace
     .${ANTD_PREFIX_STR}-table-tbody
