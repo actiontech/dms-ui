@@ -43,12 +43,6 @@ export interface IStore {
   [key: string]: any;
 }
 
-//todo: sqle后端已删除这个定义，dms暂时还需要保留，所以在此暂存，之后再改
-export interface IManagementPermissionResV1 {
-  code?: number;
-
-  desc?: string;
-}
 interface ThemeCustom {
   common: {
     padding: number;
