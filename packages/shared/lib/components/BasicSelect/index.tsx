@@ -1,4 +1,4 @@
-import { ConfigProvider, SelectProps, Spin } from 'antd5';
+import { ConfigProvider, SelectProps } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { IconClose } from '../../Icon';
 import classnames from 'classnames';
@@ -28,7 +28,7 @@ const BasicSelect = <V = any,>(props: SelectProps<V>) => {
         clearIcon={<IconClose />}
         allowClear={allowClear}
         loading={loading}
-        notFoundContent={loading ? <Spin /> : null}
+        disabled={loading}
         //ts checker error
         // allowClear={
         //   !!allowClear
