@@ -28,7 +28,6 @@ const BasicSelect = <V = any,>(props: SelectProps<V>) => {
         clearIcon={<IconClose />}
         allowClear={allowClear}
         loading={loading}
-        disabled={loading}
         //ts checker error
         // allowClear={
         //   !!allowClear
