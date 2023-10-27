@@ -45,10 +45,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return props.defaultData.source !== SQLE_INSTANCE_SOURCE_NAME;
   }, [props.defaultData]);
 
-  const auditRequired = Form.useWatch(
-    'needSqlAuditService',
-    props.form as FormInstance<DataSourceFormField>
-  );
+  const auditRequired = Form.useWatch('needSqlAuditService', props.form);
   const [auditRequiredPopupVisible, setAuditRequiredPopupVisible] =
     useState<boolean>(false);
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
