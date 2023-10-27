@@ -121,3 +121,19 @@ export const ConsolidatedListStyleWrapper = styled('section')`
     }
   }
 `;
+
+/**
+ * 功能: 用于带Icon的表格列，如工单号
+ */
+export const TableColumnWithIconStyleWrapper = styled('div')`
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`;
