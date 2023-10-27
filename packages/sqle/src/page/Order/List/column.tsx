@@ -10,10 +10,10 @@ import OrderDesc from './components/OrderDesc';
 import OrderStatus from './components/OrderStatus';
 import { OrderNameStyleWrapper } from './style';
 import { IconOrderId } from '../../../icon/Order';
-import { OrderIdStyleWrapper } from '../../../style/order';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { AvatarCom } from '@actiontech/shared';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export type OrderListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetWorkflowsV1Params,
@@ -72,10 +72,10 @@ const OrderListColumn: (
       title: () => t('order.order.id'),
       render: (id: string) => {
         return (
-          <OrderIdStyleWrapper>
+          <TableColumnWithIconStyleWrapper>
             <IconOrderId />
             <span>{id}</span>
-          </OrderIdStyleWrapper>
+          </TableColumnWithIconStyleWrapper>
         );
       },
       fixed: 'left'
