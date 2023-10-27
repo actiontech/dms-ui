@@ -11,6 +11,8 @@ import {
   IGetProjectRuleTemplateResV1,
   IUpdateProjectRuleTemplateReqV1,
   ICloneProjectRuleTemplateReqV1,
+  IGetRuleKnowledgeResV1,
+  IUpdateRuleKnowledgeReq,
   IGetRuleTemplatesResV1,
   ICreateRuleTemplateReqV1,
   IParseProjectRuleTemplateFileResV1,
@@ -124,6 +126,22 @@ export interface IExportProjectRuleTemplateV1Params {
 
   rule_template_name: string;
 }
+
+export interface IGetRuleKnowledgeV1Params {
+  rule_name: string;
+
+  db_type: string;
+}
+
+export interface IGetRuleKnowledgeV1Return extends IGetRuleKnowledgeResV1 {}
+
+export interface IUpdateRuleKnowledgeParams extends IUpdateRuleKnowledgeReq {
+  rule_name: string;
+
+  db_type: string;
+}
+
+export interface IUpdateRuleKnowledgeReturn extends IBaseRes {}
 
 export interface IGetRuleTemplateTipsV1Params {
   filter_db_type?: string;
