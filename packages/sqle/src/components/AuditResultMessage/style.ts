@@ -20,3 +20,15 @@ export const AuditResultMessageStyleWrapper = styled('div')`
     word-break: break-all;
   }
 `;
+
+export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')`
+  .annotation-wrapper {
+    width: 100%;
+    margin-bottom: 0;
+    color: #8a8f99;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 32px;
+    margin-top: 8px;
+  }
+`;

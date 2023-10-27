@@ -37,6 +37,7 @@ const Account = lazy(() => import('../page/Account'));
 /* IFTRUE_isSQLE */
 //sqle global page
 const Rule = lazy(() => import('sqle/src/page/Rule'));
+const RuleKnowledge = lazy(() => import('sqle/src/page/RuleKnowledge'));
 const RuleManager = lazy(() => import('sqle/src/page/RuleManager'));
 const GlobalRuleTemplateDetail = lazy(
   () =>
@@ -120,6 +121,11 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     path: 'project',
     key: 'project',
     element: <Project />
+  },
+  {
+    path: 'sqle/rule/knowledge/:ruleName/:dbType',
+    key: 'ruleKnowledge',
+    element: <RuleKnowledge />
   },
   /* FITRUE_isEE */
 

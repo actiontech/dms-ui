@@ -23,5 +23,9 @@ export default {
     warn: '告警',
     error: '错误',
     toolTipsTitle: '告警等级: {{ruleLevel}}({{text}})'
+  },
+  ruleDetail: {
+    title: '查看规则',
+    knowledge: '规则知识库'
   }
 };
