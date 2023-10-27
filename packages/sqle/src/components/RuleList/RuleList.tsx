@@ -26,8 +26,9 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IconEdit } from '@actiontech/shared/lib/Icon/common';
 import { IconDisabledRule, IconEnabledRule } from '../../icon/Rule';
-
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import RuleDetailModal from './RuleDetailModal';
+import { useBoolean } from 'ahooks';
 
 const scrollStepRange = 30;
 
@@ -37,7 +38,8 @@ const RuleList: React.FC<RuleListProps> = ({
   isAction,
   actionType,
   renderDisableNode,
-  onActionHandle
+  onActionHandle,
+  enableCheckDetail
 }) => {
   const { t } = useTranslation();
   const isDisabled = useMemo(
@@ -114,7 +116,10 @@ const RuleList: React.FC<RuleListProps> = ({
                 className="action-circle-btn edit-rule-item"
                 key="edit-rule-btn"
                 icon={<IconEdit className="icon-edit" />}
-                onClick={() => onActionHandle?.(rule, EnumActionType.edit)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onActionHandle?.(rule, EnumActionType.edit);
+                }}
               ></BasicButton>
             </BasicToolTips>
           )}
@@ -127,7 +132,10 @@ const RuleList: React.FC<RuleListProps> = ({
                 className="action-circle-btn enabled-rule-item"
                 key="enabled-rule-btn"
                 icon={<IconEnabledRule className="icon-enabled" />}
-                onClick={() => onActionHandle?.(rule, EnumActionType.enabled)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onActionHandle?.(rule, EnumActionType.enabled);
+                }}
               ></BasicButton>
             </BasicToolTips>
           ) : renderDisableNode ? (
@@ -142,7 +150,10 @@ const RuleList: React.FC<RuleListProps> = ({
                 className="action-circle-btn disabled-rule-item"
                 key="disabled-rule-btn"
                 icon={<IconDisabledRule className="icon-disabled" />}
-                onClick={() => onActionHandle?.(rule, EnumActionType.disabled)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onActionHandle?.(rule, EnumActionType.disabled);
+                }}
               ></BasicButton>
             </BasicToolTips>
           )}
@@ -153,6 +164,8 @@ const RuleList: React.FC<RuleListProps> = ({
 
   const [scrollData, setScrollData] = useState<IRuleResV1[]>([]);
   const stepRef = useRef(0);
+  const [currentRuleDetail, setCurrentRuleDetail] = useState<IRuleResV1>();
+  const [visible, { set: setVisible }] = useBoolean();
 
   const onScroll = () => {
     setRulesRenderData();
@@ -227,8 +240,18 @@ const RuleList: React.FC<RuleListProps> = ({
                 return (
                   <RuleItemStyleWrapper
                     key={v.rule_name}
-                    style={{ cursor: isAction ? 'pointer' : 'default' }}
+                    style={{
+                      cursor:
+                        isAction || enableCheckDetail ? 'pointer' : 'default'
+                    }}
                     className={classNames({ 'has-top-margin': isAction })}
+                    onClick={() => {
+                      console.log('v--->', v);
+                      if (enableCheckDetail) {
+                        setCurrentRuleDetail(v);
+                        setVisible(true);
+                      }
+                    }}
                   >
                     {renderLevelIcon(v.level)}
                     {renderLevelContent(v)}
@@ -244,6 +267,13 @@ const RuleList: React.FC<RuleListProps> = ({
         target={() =>
           document.querySelector('#rule-list-wrapper-id') as HTMLElement
         }
+      />
+      <RuleDetailModal
+        visible={visible}
+        dataSource={currentRuleDetail}
+        onClosed={() => {
+          setVisible(false);
+        }}
       />
     </>
   );

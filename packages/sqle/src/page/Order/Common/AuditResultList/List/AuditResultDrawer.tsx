@@ -1,18 +1,41 @@
 import ReportDrawer from '../../../../../components/ReportDrawer';
 import { AuditResultDrawerProps } from '../../../Create/AuditResult/index.type';
 import { AuditResultDrawerTitleStyleWrapper } from './style';
+import useAuditResultRuleInfo from '../../../hooks/useAuditResultRuleInfo';
+import { useMemo } from 'react';
 
 const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   onClose,
   open,
-  auditResultRecord
+  auditResultRecord,
+  dbType
 }) => {
+  const { ruleInfo, loading } = useAuditResultRuleInfo(
+    auditResultRecord?.audit_result ?? [],
+    dbType ?? ''
+  );
+
+  const result = useMemo(() => {
+    return (
+      auditResultRecord?.audit_result?.map((item) => {
+        return {
+          annotation:
+            ruleInfo?.find(
+              (i) => i.rule_name === item.rule_name && i.db_type === dbType
+            )?.annotation ?? '',
+          ...item
+        };
+      }) ?? []
+    );
+  }, [ruleInfo, dbType, auditResultRecord?.audit_result]);
+
+  console.log('ruleInfo--->', ruleInfo, loading);
   return (
     <ReportDrawer
       open={open}
       onClose={onClose}
       data={{
-        auditResult: auditResultRecord?.audit_result ?? [],
+        auditResult: result,
         sql: auditResultRecord?.exec_sql ?? ''
       }}
       title={
@@ -22,6 +45,7 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
           </span>
         </AuditResultDrawerTitleStyleWrapper>
       }
+      dbType={dbType}
     />
   );
 };
