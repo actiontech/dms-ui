@@ -1,15 +1,16 @@
-import { Box } from '@mui/system';
-import useTablePagination from '~/components/ProvisionTable/hooks/useTablePagination';
-import { useRequest } from 'ahooks';
-import { SyncOutlined } from '@ant-design/icons';
-import { Button, Card, Space } from 'antd';
-import { useTranslation } from 'react-i18next';
-import ProvisionTable from '~/components/ProvisionTable';
-import { authTemplateListTableColumns } from './TableColumns';
-import AuthTemplateListFilterForm, {
-  IFilteredInfo
-} from './AuthTemplateListFilterForm';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useRequest } from 'ahooks';
+import {
+  AuthTemplateListActions,
+  AuthTemplateListTableColumns
+} from './TableColumns';
+import {
+  useTableRequestError,
+  ActiontechTable,
+  useTableRequestParams,
+  TableToolbar
+} from '@actiontech/shared/lib/components/ActiontechTable';
 import useRemoveTemplate from './hooks/useRemoveTemplate';
 import useModalStatus from '~/hooks/useModalStatus';
 import {
@@ -20,39 +21,46 @@ import { EventEmitterKey, ModalName } from '~/data/enum';
 import AuthTemplateModal from './Modal';
 import { useSetRecoilState } from 'recoil';
 import EventEmitter from '~/utils/EventEmitter';
-import { Link } from '../../../components/Link';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';
+import { BasicButton, PageHeader } from '@actiontech/shared';
+import { Link, useNavigate } from 'react-router-dom';
+import { IconAdd } from '@actiontech/shared/lib/Icon';
 
 const AuthTemplateList = () => {
   const { t } = useTranslation();
-
-  const { pageIndex, pageSize, total, setTotal, handleTablePaginationChange } =
-    useTablePagination();
-  const [filteredInfo, setFilteredInfo] = useState<IFilteredInfo | null>(null);
+  const navigate = useNavigate();
   const { projectID } = useCurrentProject();
+  const { tableChange, pagination } =
+    useTableRequestParams<IListDataPermissionTemplate>();
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
+  const [searchKeyword, setSearchKeyword] = useState<string>('');
+
   const {
     data: dataSource,
     loading,
     refresh
   } = useRequest(
-    () =>
-      auth
-        .AuthListDataPermissionTemplate({
-          page_index: pageIndex,
-          page_size: pageSize,
+    () => {
+      return handleTableRequestError(
+        auth.AuthListDataPermissionTemplate({
+          page_index: pagination.page_index,
+          page_size: pagination.page_size,
           filter_by_namespace_uid: projectID ?? '',
-          ...filteredInfo
+          keyword: searchKeyword
         })
-        .then((res) => {
-          setTotal(res.data.total_nums ?? 0);
-          return res.data.data;
-        }),
+      );
+    },
     {
-      refreshDeps: [pageIndex, pageSize, filteredInfo, projectID]
+      refreshDeps: [pagination, projectID, searchKeyword]
     }
   );
+
+  const onSearch = (value: string) => {
+    setSearchKeyword(value);
+  };
 
   const { toggleModal, initModalStatus } = useModalStatus(
     AuthTemplateModalStatus
@@ -63,6 +71,16 @@ const AuthTemplateList = () => {
     if (record) {
       updateSelectData(record);
     }
+  };
+  const onNavigateToUpdateTemplate = (record: IListDataPermissionTemplate) => {
+    navigate(
+      `/provision/project/${projectID}/auth/template/edit_template/?id=${record?.uid}&name=${record.name}`
+    );
+  };
+  const { removeTemplate, messageContextHolder } = useRemoveTemplate(refresh);
+
+  const onNavigateToAuthList = (record: IListDataPermissionTemplate) => {
+    navigate(`/provision/project/${projectID}/auth/list/add?id=${record.uid}`);
   };
 
   useEffect(() => {
@@ -80,47 +98,46 @@ const AuthTemplateList = () => {
     );
     return unsubscribe;
   }, [refresh]);
-  const { removeTemplate } = useRemoveTemplate(refresh);
+
   return (
-    <Box
-      sx={{
-        padding: (theme) => theme.layout.padding
-      }}
-    >
-      <Card
-        title={
-          <Space>
-            {t('auth.template.title')}
-            <Button onClick={refresh} data-testid="refresh">
-              <SyncOutlined spin={loading} />
-            </Button>
-          </Space>
-        }
+    <section>
+      {messageContextHolder}
+      <PageHeader
+        title={t('auth.template.title')}
         extra={
-          <Link to={`${projectID}/auth/template/edit_template`}>
-            <Button type="primary">{t('auth.button.addTemplate')}</Button>
+          <Link
+            to={`/provision/project/${projectID}/auth/template/edit_template`}
+          >
+            <BasicButton type="primary" icon={<IconAdd />}>
+              {t('auth.button.addTemplate')}
+            </BasicButton>
           </Link>
         }
-      >
-        <Space direction="vertical" className="full-width-element">
-          <AuthTemplateListFilterForm setFilteredInfo={setFilteredInfo} />
-          <ProvisionTable
-            rowKey="uid"
-            className="auth-template-table"
-            loading={loading}
-            columns={authTemplateListTableColumns(
-              openModal,
-              removeTemplate,
-              projectID ?? ''
-            )}
-            dataSource={dataSource ?? []}
-            pagination={{ total }}
-            onChange={handleTablePaginationChange}
-          />
-        </Space>
-      </Card>
+      />
+      <TableToolbar
+        refreshButton={{ refresh, disabled: loading }}
+        searchInput={{
+          onSearch
+        }}
+        loading={loading}
+      />
+      <ActiontechTable
+        rowKey="uid"
+        dataSource={dataSource?.list ?? []}
+        columns={AuthTemplateListTableColumns(projectID)}
+        pagination={{ total: dataSource?.total ?? 0 }}
+        loading={loading}
+        errorMessage={requestErrorMessage}
+        onChange={tableChange}
+        actions={AuthTemplateListActions(
+          onNavigateToUpdateTemplate,
+          removeTemplate,
+          onNavigateToAuthList,
+          openModal
+        )}
+      />
       <AuthTemplateModal />
-    </Box>
+    </section>
   );
 };
 
