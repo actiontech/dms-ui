@@ -43,7 +43,14 @@ const ActiontechTable = <
     if (!props.setting) {
       return mergerColumns;
     }
-    return mergerColumns.filter((v) => localColumns?.[v.dataIndex]?.show);
+    return mergerColumns
+      .filter((v) => localColumns?.[v.dataIndex]?.show)
+      .map((v) => ({
+        ...v,
+        fixed: localColumns?.[v.dataIndex]?.fixed,
+        order: localColumns?.[v.dataIndex]?.order
+      }))
+      .sort((prev, current) => prev.order - current.order);
   }, [localColumns, mergerColumns, props.setting]);
 
   useEffect(() => {
