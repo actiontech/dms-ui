@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance, Popconfirm } from 'antd5';
+import { Form, FormInstance, Popconfirm } from 'antd5';
 import Select, { BaseOptionType } from 'antd5/es/select';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import { useRequest } from 'ahooks';
@@ -45,8 +45,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return props.defaultData.source !== SQLE_INSTANCE_SOURCE_NAME;
   }, [props.defaultData]);
 
-  const [auditRequired, setAuditRequired] = useState<boolean>(
-    !props?.isUpdate || !!props.defaultData?.sqle_config?.rule_template_id
+  const auditRequired = Form.useWatch(
+    'needSqlAuditService',
+    props.form as FormInstance<DataSourceFormField>
   );
   const [auditRequiredPopupVisible, setAuditRequiredPopupVisible] =
     useState<boolean>(false);
@@ -130,13 +131,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         password: props.defaultData.password
       });
       setDatabaseType(props.defaultData.db_type ?? '');
-      setAuditRequired(!!props.defaultData.sqle_config?.rule_template_id);
       setAuditEnabled(
         !!props.defaultData.sqle_config?.sql_query_config?.audit_enabled
       );
     } else {
       props.form.setFieldsValue({
-        needSqlAuditService: auditRequired
+        needSqlAuditService: true
       });
       if (params.length > 0) {
         props.form.setFieldsValue({
@@ -155,7 +155,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [props.form]);
 
   const changeAuditRequired = (check: boolean) => {
-    if (check) setAuditRequired(check);
+    if (check)
+      props.form.setFieldsValue({
+        needSqlAuditService: check
+      });
   };
 
   const onAuditRequiredPopupOpenChange = (open: boolean) => {
@@ -186,7 +189,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       ruleTemplateId: undefined,
       ruleTemplateName: undefined
     });
-    setAuditRequired(false);
   };
 
   const changeRuleTemplate = (value: string, option: BaseOptionType) => {
