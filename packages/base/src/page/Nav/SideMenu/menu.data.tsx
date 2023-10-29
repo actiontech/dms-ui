@@ -68,6 +68,13 @@ export const sideMenuData: (
       key: `sqle/project/${menuDataPlaceholderKey}/dashboard`,
       onClick: () => navigate(`/sqle/project/${projectID}/dashboard`)
     },
+    // todo: 这是一个临时菜单
+    {
+      label: 'SQL管控',
+      icon: <IconInstanceManager />,
+      key: `sqle/project/${menuDataPlaceholderKey}/sqlManagement`,
+      onClick: () => navigate(`/sqle/project/${projectID}/sqlManagement`)
+    },
     /* FITRUE_isSQLE */
 
     {
