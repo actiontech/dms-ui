@@ -46,5 +46,6 @@ export enum ModalName {
   // sqle management
   Assignment_Member_Single = 'Assignment_Member_Single',
   Assignment_Member_Batch = 'Assignment_Member_Batch',
-  Change_Status_Single = 'Change_Status_Single'
+  Change_Status_Single = 'Change_Status_Single',
+  View_Audit_Result_Drawer = 'View_Audit_Result_Drawer'
 }

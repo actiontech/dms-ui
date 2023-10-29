@@ -126,7 +126,8 @@ const SQLEEIndex = () => {
         modalStatus: {
           [ModalName.Assignment_Member_Single]: false,
           [ModalName.Assignment_Member_Batch]: false,
-          [ModalName.Change_Status_Single]: false
+          [ModalName.Change_Status_Single]: false,
+          [ModalName.View_Audit_Result_Drawer]: false
         }
       })
     );
@@ -145,6 +146,7 @@ const SQLEEIndex = () => {
           status: true
         })
       );
+      console.log(name);
     },
     [dispatch]
   );

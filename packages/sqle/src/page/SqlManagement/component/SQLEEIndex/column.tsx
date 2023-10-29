@@ -200,6 +200,7 @@ ${
         return '--';
       }
     },
+    // todo: 审核结果的 drawer 详情
     {
       dataIndex: 'audit_result',
       width: 200,

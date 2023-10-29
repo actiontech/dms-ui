@@ -1,5 +1,6 @@
 import AssignmentBatch from './AssignmentBatch';
 import AssignmentSingle from './AssignmentSingle';
+import ChangeStatus from './ChangeStatus';
 import StatusDrawer from './StatusDrawer';
 
 const SqleManagementModal = () => {
@@ -8,6 +9,7 @@ const SqleManagementModal = () => {
       <AssignmentSingle />
       <StatusDrawer />
       <AssignmentBatch />
+      <ChangeStatus />
     </>
   );
 };

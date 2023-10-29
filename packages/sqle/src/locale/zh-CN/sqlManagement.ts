@@ -30,7 +30,7 @@ export default {
         assignmentSuccessTips: '指派负责人成功',
         updateStatus: {
           triggerText: '变更状态',
-          label: '变更当前SQL状态',
+          label: '当前SQL状态',
           solve: '解决',
           ignore: '忽略',
           manualAudit: '人工审核'
