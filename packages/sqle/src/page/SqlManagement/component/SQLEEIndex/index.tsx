@@ -1,0 +1,365 @@
+import { useTranslation } from 'react-i18next';
+import { useBoolean, useRequest } from 'ahooks';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { BasicButton, PageHeader } from '@actiontech/shared';
+import { IconDownload } from '@actiontech/shared/lib/Icon';
+import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
+import {
+  ActiontechTable,
+  useTableFilterContainer,
+  useTableRequestError,
+  TableFilterContainer,
+  TableToolbar,
+  FilterCustomProps,
+  ColumnsSettingProps,
+  useTableRequestParams
+} from '@actiontech/shared/lib/components/ActiontechTable';
+
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import { IGetSqlManageListParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import StatusFilter, { TypeStatus } from './StatusFilter';
+import { GetSqlManageListFilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import useInstance from '../../../../hooks/useInstance';
+import SqlManagementColumn, {
+  ExtraFilterMeta,
+  SqlManagementRowAction,
+  type SqlManagementTableFilterParamType
+} from './column';
+import useStaticStatus from '../../../../hooks/useStaticStatus';
+import {
+  initSqleManagementModalStatus,
+  updateSqleManagement,
+  updateSqleManagementModalStatus
+} from '../../../../store/sqleManagement';
+import { ModalName } from '../../../../data/ModalName';
+import { TableRowSelection } from 'antd5/es/table/interface';
+import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
+import { tableSingleData } from './mock.data';
+import { message } from 'antd5';
+import SqleManagementModal from './Modal';
+
+const SQLEEIndex = () => {
+  const { t } = useTranslation();
+  const [messageApi, messageContextHolder] = message.useMessage();
+
+  // export
+  const [
+    exportButtonDisabled,
+    { setFalse: finishExport, setTrue: startExport }
+  ] = useBoolean(false);
+  const handleExport = () => {
+    //
+  };
+
+  // api
+  // todo: 接口联调
+  const { projectID, projectArchive, projectName } = useCurrentProject();
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
+  const [filterStatus, setFilterStatus] = useState<TypeStatus>(
+    GetSqlManageListFilterStatusEnum.unhandled
+  );
+  const [searchKeyword, setSearchKeyword] = useState<string>('');
+  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
+    useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
+  const [SQLNum, setSQLNum] = useState<ISQLStatisticsProps['data']>({
+    SQLTotalNum: 0,
+    problemSQlNum: 0,
+    optimizedSQLNum: 0
+  });
+  // todo: 列表数据 与 统计数据是一起返回的
+  const {
+    data: sqlList,
+    loading: getListLoading,
+    refresh,
+    error: getListError
+  } = useRequest(
+    () => {
+      const params: IGetSqlManageListParams = {
+        ...tableFilterInfo,
+        ...pagination,
+        filter_status: filterStatus === 'all' ? undefined : filterStatus,
+        fuzzy_search_sql_fingerprint: searchKeyword,
+        project_name: projectName // ??? 现在都换成 id 了
+      };
+      // new Promise((params) => {
+      //   const res: any = {};
+      //   setSQLNum({
+      //     SQLTotalNum: res.data?.sql_manage_total_num ?? 0,
+      //     problemSQlNum: res.data?.sql_manage_bad_num ?? 0,
+      //     optimizedSQLNum: res.data?.sql_manage_optimized_num ?? 0
+      //   });
+      //   return {
+      //     list: res.data?.data ?? [],
+      //     total: res.data?.sql_manage_total_num ?? 0,
+      //     message: ''
+      //   };
+      // }) as any
+      return handleTableRequestError(SqlManage.GetSqlManageList(params));
+    },
+    {
+      refreshDeps: [pagination, projectName, filterStatus, searchKeyword],
+      onFinally: (params, data) => {
+        // if (data. === ResponseCode.SUCCESS) {
+        //             setSQLNum({
+        //     SQLTotalNum: res.data?.sql_manage_total_num ?? 0,
+        //     problemSQlNum: res.data?.sql_manage_bad_num ?? 0,
+        //     optimizedSQLNum: res.data?.sql_manage_optimized_num ?? 0
+        //   });
+      }
+    }
+  );
+
+  // table
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      initSqleManagementModalStatus({
+        modalStatus: {
+          [ModalName.Assignment_Member_Single]: false,
+          [ModalName.Assignment_Member_Batch]: false,
+          [ModalName.Change_Status_Single]: false
+        }
+      })
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const openModal = useCallback(
+    (name: ModalName, row?: ISqlManage) => {
+      if (row) {
+        dispatch(updateSqleManagement(row));
+      }
+
+      dispatch(
+        updateSqleManagementModalStatus({
+          modalName: name,
+          status: true
+        })
+      );
+    },
+    [dispatch]
+  );
+
+  const actions = useMemo(() => {
+    return SqlManagementRowAction(openModal);
+  }, [openModal]);
+
+  const { isAdmin, username, isProjectManager } = useCurrentUser();
+  const actionPermission = useMemo(() => {
+    return isAdmin || isProjectManager(projectName);
+  }, [isAdmin, isProjectManager, projectName]);
+  const { instanceOptions, updateInstanceList } = useInstance();
+  const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
+
+  const updateRemarkProtect = useRef(false);
+  const updateRemark = useCallback(
+    (id: number, remark: string) => {
+      if (updateRemarkProtect.current || !actionPermission) {
+        return;
+      }
+      updateRemarkProtect.current = true;
+      SqlManage.BatchUpdateSqlManage({
+        project_name: projectName,
+        sql_manage_id_list: [id],
+        remark
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            refresh();
+          }
+        })
+        .finally(() => {
+          updateRemarkProtect.current = false;
+        });
+    },
+    [actionPermission, projectName, refresh]
+  );
+
+  const columns = useMemo(
+    () => SqlManagementColumn(projectID, actionPermission, updateRemark),
+    [projectID, actionPermission, updateRemark]
+  );
+  const { getAuditLevelStatusSelectOption } = useStaticStatus();
+  const tableSetting = useMemo<ColumnsSettingProps>(
+    () => ({
+      tableName: 'sql_management_list',
+      username: username
+    }),
+    [username]
+  );
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
+
+  // todo: filter option data
+  const filterCustomProps = useMemo(() => {
+    return new Map<
+      keyof (ISqlManage & {
+        filter_source?: string;
+        filter_instance_name?: string;
+        filter_audit_level?: string;
+        filter_assignee?: string;
+      }),
+      FilterCustomProps
+    >([
+      ['filter_source', { options: [{ label: 'source11', value: 11 }] }],
+      ['filter_instance_name', { options: instanceOptions }],
+      ['filter_audit_level', { options: [{ label: 'level11', value: 11 }] }],
+      ['filter_assignee', { options: [{ label: 'me 11', value: 11 }] }]
+    ]);
+  }, [instanceOptions]);
+
+  const onSearch = (value: string) => {
+    setSearchKeyword(value);
+  };
+
+  const rowSelection = {
+    selectedRowKeys,
+    onChange: (selectedRowKeys: string[]) => {
+      setSelectedRowKeys(selectedRowKeys);
+    }
+  };
+
+  // batch action
+  const [sloveLoading, setSloveLoading] = useState(false);
+  const onBatchSolve = () => {
+    //
+  };
+  const [ignoreLoading, setIgnoreoading] = useState(false);
+  const onBatchIgnore = () => {
+    //
+  };
+
+  // row action
+  const onAssignment = (record: ISqlManage) => {
+    //
+  };
+
+  const onChangeStatus = (record: ISqlManage) => {
+    //
+  };
+
+  return (
+    <>
+      <PageHeader
+        title={t('sqlManagement.pageTitle')}
+        extra={
+          <BasicButton
+            onClick={handleExport}
+            icon={<IconDownload />}
+            disabled={exportButtonDisabled}
+          >
+            {t('sqlManagement.pageHeader.action.export')}
+          </BasicButton>
+        }
+      />
+      {/* page */}
+      {/* page - total */}
+      <SQLStatistics
+        data={SQLNum}
+        // loading={getListLoading}
+        loading={false}
+        errorMessage={getListError}
+      />
+      {/* table  */}
+      <TableToolbar
+        refreshButton={{ refresh, disabled: getListLoading }}
+        setting={tableSetting}
+        actions={[
+          {
+            key: 'batch-assignment',
+            text: t('sqlManagement.table.action.batch.assignment'),
+            buttonProps: {
+              disabled: selectedRowKeys?.length === 0,
+              onClick: () => {
+                dispatch(
+                  updateSqleManagementModalStatus({
+                    modalName: ModalName.Assignment_Member_Batch,
+                    status: true
+                  })
+                );
+              }
+            }
+          },
+          {
+            key: 'batch-solve',
+            text: t('sqlManagement.table.action.batch.solve'),
+            buttonProps: {
+              disabled: selectedRowKeys?.length === 0
+            },
+            confirm: {
+              onConfirm: onBatchSolve,
+              title: t('sqlManagement.table.action.batch.solveTips'),
+              okButtonProps: {
+                disabled: sloveLoading
+              }
+            }
+          },
+          {
+            key: 'batch-ignore',
+            text: t('sqlManagement.table.action.batch.ignore'),
+            buttonProps: {
+              disabled: selectedRowKeys?.length === 0
+            },
+            confirm: {
+              onConfirm: onBatchIgnore,
+              title: t('sqlManagement.table.action.batch.ignoreTips'),
+              okButtonProps: {
+                disabled: ignoreLoading
+              }
+            }
+          }
+        ]}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
+        searchInput={{
+          onSearch
+        }}
+        // loading={getListLoading}
+        loading={false}
+      >
+        <StatusFilter status={filterStatus} onChange={setFilterStatus} />
+      </TableToolbar>
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        // disabled={getListLoading}
+        disabled={false}
+        filterCustomProps={filterCustomProps}
+      />
+      <ActiontechTable
+        className="table-row-cursor"
+        setting={tableSetting}
+        dataSource={sqlList?.list ?? [tableSingleData]}
+        rowKey={(record: ISqlManage) => {
+          return `${record?.id}`;
+        }}
+        rowSelection={rowSelection as TableRowSelection<ISqlManage>}
+        pagination={{
+          total: sqlList?.total ?? 0
+        }}
+        // loading={getListLoading}
+        loading={false}
+        // columns 为空？？？
+        columns={columns}
+        errorMessage={requestErrorMessage}
+        onChange={tableChange}
+        actions={actions}
+      />
+      {/* modal & drawer */}
+      <SqleManagementModal />
+    </>
+  );
+};
+
+export default SQLEEIndex;
