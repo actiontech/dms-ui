@@ -140,11 +140,13 @@ export const SqlManagementRowAction = (
 const SqlManagementColumn: (
   projectID: string,
   actionPermission: boolean,
-  updateRemark: (id: number, remark: string) => void
+  updateRemark: (id: number, remark: string) => void,
+  openModal: (name: ModalName, row?: ISqlManage) => void
 ) => ActiontechTableColumn<ISqlManage, SqlManagementTableFilterParamType> = (
   projectID,
   actionPermission,
-  updateRemark
+  updateRemark,
+  openModal
 ) => {
   return [
     {
@@ -205,19 +207,27 @@ ${
       dataIndex: 'audit_result',
       width: 200,
       title: () => t('sqlManagement.table.column.auditResult'),
-      render: (result: IAuditResult[]) => {
-        return result?.length > 1 ? (
-          <ResultIconRender
-            iconLevels={result.map((item) => {
-              return item.level ?? '';
-            })}
-          />
-        ) : (
-          <AuditResultMessage
-            auditResult={
-              Array.isArray(result) && result.length ? result[0] : {}
+      render: (result: IAuditResult[], record) => {
+        return (
+          <div
+            onClick={() =>
+              openModal(ModalName.View_Audit_Result_Drawer, record)
             }
-          />
+          >
+            {result?.length > 1 ? (
+              <ResultIconRender
+                iconLevels={result.map((item) => {
+                  return item.level ?? '';
+                })}
+              />
+            ) : (
+              <AuditResultMessage
+                auditResult={
+                  Array.isArray(result) && result.length ? result[0] : {}
+                }
+              />
+            )}
+          </div>
         );
       }
     },

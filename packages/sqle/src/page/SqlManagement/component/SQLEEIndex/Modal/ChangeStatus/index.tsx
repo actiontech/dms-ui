@@ -25,7 +25,7 @@ const ChangeStatus = () => {
   );
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-  const [form] = useForm<any>();
+  const [form] = useForm<{ status: '' }>();
 
   const handleReset = () => {
     form.resetFields();
@@ -51,7 +51,24 @@ const ChangeStatus = () => {
   };
 
   const onSubmit = () => {
-    //
+    /*
+    SqlManage.BatchUpdateSqlManage({
+        project_name: projectName,
+        sql_manage_id_list: [id],
+        status,
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            message.success(
+              t('sqlManagement.table.actions.signalUpdateStatusSuccessTips')
+            );
+            refresh();
+          }
+        })
+        .finally(() => {
+          finishSignalAction();
+        });
+    */
   };
 
   return (
@@ -80,7 +97,7 @@ const ChangeStatus = () => {
         <Form form={form}>
           <FormItemLabelStyleWrapper
             label={t('sqlManagement.table.action.single.updateStatus.label')}
-            name=""
+            name="status"
           >
             <BasicSelect options={[]}></BasicSelect>
           </FormItemLabelStyleWrapper>
