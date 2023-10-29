@@ -41,5 +41,10 @@ export enum ModalName {
   Add_Member = 'Add_Member',
   Update_Member = 'Update_Member',
   Add_Member_Group = 'Add_Member_Group',
-  Update_Member_Group = 'Update_Member_Group'
+  Update_Member_Group = 'Update_Member_Group',
+
+  // sqle management
+  Assignment_Member_Single = 'Assignment_Member_Single',
+  Assignment_Member_Batch = 'Assignment_Member_Batch',
+  Change_Status_Single = 'Change_Status_Single'
 }
