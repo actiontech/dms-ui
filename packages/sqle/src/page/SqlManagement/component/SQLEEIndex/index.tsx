@@ -187,8 +187,9 @@ const SQLEEIndex = () => {
   );
 
   const columns = useMemo(
-    () => SqlManagementColumn(projectID, actionPermission, updateRemark),
-    [projectID, actionPermission, updateRemark]
+    () =>
+      SqlManagementColumn(projectID, actionPermission, updateRemark, openModal),
+    [projectID, actionPermission, updateRemark, openModal]
   );
   const { getAuditLevelStatusSelectOption } = useStaticStatus();
   const tableSetting = useMemo<ColumnsSettingProps>(
