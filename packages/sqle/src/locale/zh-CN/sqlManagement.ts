@@ -33,7 +33,8 @@ export default {
           label: '当前SQL状态',
           solve: '解决',
           ignore: '忽略',
-          manualAudit: '人工审核'
+          manualAudit: '人工审核',
+          signalUpdateStatusSuccessTips: '更新SQL状态成功'
         }
       }
     },
