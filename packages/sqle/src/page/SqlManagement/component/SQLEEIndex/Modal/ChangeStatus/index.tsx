@@ -74,7 +74,7 @@ const ChangeStatus = () => {
             )
           );
           EventEmitter.emit(EmitterKey.Refresh_SQL_Management);
-          handleReset();
+          onCloseModal();
         }
       })
       .finally(() => {

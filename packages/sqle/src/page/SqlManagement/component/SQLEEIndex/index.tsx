@@ -48,7 +48,6 @@ import {
 import { ModalName } from '../../../../data/ModalName';
 import { TableRowSelection } from 'antd5/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { tableSingleData } from './mock.data';
 import { message } from 'antd5';
 import SqleManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -102,7 +101,8 @@ const SQLEEIndex = () => {
         projectName,
         filterStatus,
         searchKeyword,
-        isAssigneeSelf
+        isAssigneeSelf,
+        tableFilterInfo
       ],
       onFinally: (params, data) => {
         setSQLNum({
@@ -156,6 +156,10 @@ const SQLEEIndex = () => {
   }, [isAdmin, isProjectManager, projectName]);
   const { instanceOptions, updateInstanceList } = useInstance();
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
+
+  useEffect(() => {
+    updateInstanceList({ project_name: projectName });
+  }, []);
 
   const updateRemarkProtect = useRef(false);
   const updateRemark = useCallback(
@@ -279,15 +283,6 @@ const SQLEEIndex = () => {
       .finally(() => {
         finishBatchAction();
       });
-  };
-
-  // row action
-  const onAssignment = (record: ISqlManage) => {
-    //
-  };
-
-  const onChangeStatus = (record: ISqlManage) => {
-    //
   };
 
   // export
@@ -447,8 +442,7 @@ const SQLEEIndex = () => {
       <ActiontechTable
         className="table-row-cursor"
         setting={tableSetting}
-        // dataSource={sqlList?.list ?? [tableSingleData]}
-        dataSource={[tableSingleData]}
+        dataSource={sqlList?.list}
         rowKey={(record: ISqlManage) => {
           return `${record?.id}`;
         }}
@@ -456,9 +450,7 @@ const SQLEEIndex = () => {
         pagination={{
           total: sqlList?.total ?? 0
         }}
-        // loading={getListLoading}
-        loading={false}
-        // columns 为空？？？
+        loading={getListLoading}
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
