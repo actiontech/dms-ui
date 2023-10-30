@@ -83,6 +83,7 @@ const AssignmentSingle = () => {
     <>
       {contextMessageHolder}
       <BasicModal
+        size="small"
         open={open}
         title={t('sqlManagement.table.action.single.assignment')}
         closable={false}
