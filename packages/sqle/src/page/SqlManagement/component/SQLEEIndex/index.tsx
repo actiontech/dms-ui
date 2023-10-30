@@ -53,6 +53,7 @@ import { message } from 'antd5';
 import SqleManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
+import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -154,7 +155,7 @@ const SQLEEIndex = () => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
   const { instanceOptions, updateInstanceList } = useInstance();
-  const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
+  const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
 
   const updateRemarkProtect = useRef(false);
   const updateRemark = useCallback(
@@ -216,21 +217,63 @@ const SQLEEIndex = () => {
     setSearchKeyword(value);
   };
 
-  const rowSelection = {
+  const rowSelection: TableRowSelection<ISqlManage> = {
     selectedRowKeys,
-    onChange: (selectedRowKeys: string[]) => {
-      setSelectedRowKeys(selectedRowKeys);
+    onChange: (selectedRowKeys) => {
+      setSelectedRowKeys(selectedRowKeys as number[]);
     }
   };
 
   // batch action
-  const [sloveLoading, setSloveLoading] = useState(false);
+  const [
+    batchActionsLoading,
+    { setFalse: finishBatchAction, setTrue: startBatchAction }
+  ] = useBoolean();
   const onBatchSolve = () => {
-    //
+    if (!actionPermission || selectedRowKeys.length === 0) {
+      return;
+    }
+    startBatchAction();
+    SqlManage.BatchUpdateSqlManage({
+      project_name: projectName,
+      status: BatchUpdateSqlManageReqStatusEnum.solved,
+      sql_manage_id_list: selectedRowKeys
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(
+            t('sqlManagement.table.action.batch.solveSuccessTips')
+          );
+          setSelectedRowKeys([]);
+          refresh();
+        }
+      })
+      .finally(() => {
+        finishBatchAction();
+      });
   };
-  const [ignoreLoading, setIgnoreoading] = useState(false);
   const onBatchIgnore = () => {
-    //
+    if (!actionPermission || selectedRowKeys.length === 0) {
+      return;
+    }
+    startBatchAction();
+    SqlManage.BatchUpdateSqlManage({
+      project_name: projectName,
+      status: BatchUpdateSqlManageReqStatusEnum.ignored,
+      sql_manage_id_list: selectedRowKeys
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(
+            t('sqlManagement.table.action.batch.ignoreSuccessTips')
+          );
+          setSelectedRowKeys([]);
+          refresh();
+        }
+      })
+      .finally(() => {
+        finishBatchAction();
+      });
   };
 
   // row action
@@ -316,63 +359,67 @@ const SQLEEIndex = () => {
       <TableToolbar
         refreshButton={{ refresh, disabled: getListLoading }}
         setting={tableSetting}
-        actions={[
-          {
-            key: 'assignment-self',
-            text: t('sqlManagement.table.filter.assignee'),
-            buttonProps: {
-              className: isAssigneeSelf
-                ? 'switch-btn-active'
-                : 'switch-btn-default',
-              onClick: () => {
-                setAssigneeSelf(!isAssigneeSelf);
-              }
-            }
-          },
-          {
-            key: 'batch-assignment',
-            text: t('sqlManagement.table.action.batch.assignment'),
-            buttonProps: {
-              disabled: selectedRowKeys?.length === 0,
-              onClick: () => {
-                dispatch(
-                  updateSqleManagementModalStatus({
-                    modalName: ModalName.Assignment_Member_Batch,
-                    status: true
-                  })
-                );
-              }
-            }
-          },
-          {
-            key: 'batch-solve',
-            text: t('sqlManagement.table.action.batch.solve'),
-            buttonProps: {
-              disabled: selectedRowKeys?.length === 0
-            },
-            confirm: {
-              onConfirm: onBatchSolve,
-              title: t('sqlManagement.table.action.batch.solveTips'),
-              okButtonProps: {
-                disabled: sloveLoading
-              }
-            }
-          },
-          {
-            key: 'batch-ignore',
-            text: t('sqlManagement.table.action.batch.ignore'),
-            buttonProps: {
-              disabled: selectedRowKeys?.length === 0
-            },
-            confirm: {
-              onConfirm: onBatchIgnore,
-              title: t('sqlManagement.table.action.batch.ignoreTips'),
-              okButtonProps: {
-                disabled: ignoreLoading
-              }
-            }
-          }
-        ]}
+        actions={
+          actionPermission
+            ? [
+                {
+                  key: 'assignment-self',
+                  text: t('sqlManagement.table.filter.assignee'),
+                  buttonProps: {
+                    className: isAssigneeSelf
+                      ? 'switch-btn-active'
+                      : 'switch-btn-default',
+                    onClick: () => {
+                      setAssigneeSelf(!isAssigneeSelf);
+                    }
+                  }
+                },
+                {
+                  key: 'batch-assignment',
+                  text: t('sqlManagement.table.action.batch.assignment'),
+                  buttonProps: {
+                    disabled: selectedRowKeys?.length === 0,
+                    onClick: () => {
+                      dispatch(
+                        updateSqleManagementModalStatus({
+                          modalName: ModalName.Assignment_Member_Batch,
+                          status: true
+                        })
+                      );
+                    }
+                  }
+                },
+                {
+                  key: 'batch-solve',
+                  text: t('sqlManagement.table.action.batch.solve'),
+                  buttonProps: {
+                    disabled: selectedRowKeys?.length === 0
+                  },
+                  confirm: {
+                    onConfirm: onBatchSolve,
+                    title: t('sqlManagement.table.action.batch.solveTips'),
+                    okButtonProps: {
+                      disabled: batchActionsLoading
+                    }
+                  }
+                },
+                {
+                  key: 'batch-ignore',
+                  text: t('sqlManagement.table.action.batch.ignore'),
+                  buttonProps: {
+                    disabled: selectedRowKeys?.length === 0
+                  },
+                  confirm: {
+                    onConfirm: onBatchIgnore,
+                    title: t('sqlManagement.table.action.batch.ignoreTips'),
+                    okButtonProps: {
+                      disabled: batchActionsLoading
+                    }
+                  }
+                }
+              ]
+            : false
+        }
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
