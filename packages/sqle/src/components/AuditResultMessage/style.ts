@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 export const AuditResultMessageStyleWrapper = styled('div')`
   display: flex;
@@ -25,10 +26,14 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')`
   .annotation-wrapper {
     width: 100%;
     margin-bottom: 0;
-    color: #8a8f99;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
     font-size: 12px;
     font-weight: 400;
     margin-left: 32px;
     margin-top: 8px;
+  }
+
+  & .annotation-wrapper .${ANTD_PREFIX_STR}-btn.${ANTD_PREFIX_STR}-btn-sm {
+    font-size: 12px;
   }
 `;

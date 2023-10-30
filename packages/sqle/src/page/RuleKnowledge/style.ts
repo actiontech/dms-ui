@@ -7,6 +7,11 @@ export const RuleKnowledgeContentStyleWrapper = styled('div')`
   .space-wrapper {
     width: 100%;
   }
+
+  .next-icon-wrap {
+    text-align: center;
+    margin: 12px 0;
+  }
 `;
 
 export const RuleKnowledgeEditorStyleWrapper = styled(MDEditor)`
