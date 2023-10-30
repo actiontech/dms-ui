@@ -1,19 +1,29 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
 
-import { Space, message, Form, Spin } from 'antd5';
+import { Space, message, Form, Radio } from 'antd5';
 import { useDispatch } from 'react-redux';
 import { useBoolean } from 'ahooks';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../base/src/store';
 import { useForm } from 'antd5/es/form/Form';
-import { BasicButton, BasicModal, BasicSelect } from '@actiontech/shared';
+import { BasicButton, BasicModal } from '@actiontech/shared';
 import { ModalName } from '../../../../../../data/ModalName';
 import {
   updateSqleManagementModalStatus,
   updateSqleManagement
 } from '../../../../../../store/sqleManagement';
 import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
+import { IBatchUpdateSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import EmitterKey from '../../../../../../data/EmitterKey';
+import EventEmitter from '../../../../../../utils/EventEmitter';
+
+export type ChangeStatusFields = {
+  status: BatchUpdateSqlManageReqStatusEnum;
+};
 
 const ChangeStatus = () => {
   const { t } = useTranslation();
@@ -23,21 +33,18 @@ const ChangeStatus = () => {
   const open = useSelector<IReduxState, boolean>(
     (state) => state.sqleManagement.modalStatus[ModalName.Change_Status_Single]
   );
+  const currentSelected = useSelector<IReduxState, any | null>(
+    (state) => state.sqleManagement.selectSqleManagement
+  );
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
-    useBoolean();
-  const [form] = useForm<{ status: '' }>();
+    useBoolean(false);
+  const [form] = useForm<ChangeStatusFields>();
+  const { projectName } = useCurrentProject();
 
   const handleReset = () => {
     form.resetFields();
     submitFinish();
   };
-
-  useEffect(() => {
-    if (open) {
-      handleReset();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open]);
 
   const onCloseModal = () => {
     dispatch(
@@ -50,25 +57,29 @@ const ChangeStatus = () => {
     handleReset();
   };
 
-  const onSubmit = () => {
-    /*
-    SqlManage.BatchUpdateSqlManage({
-        project_name: projectName,
-        sql_manage_id_list: [id],
-        status,
+  const onSubmit = async () => {
+    const values = await form.validateFields();
+    startSubmit();
+    const params: IBatchUpdateSqlManageParams = {
+      project_name: projectName,
+      sql_manage_id_list: [currentSelected?.id],
+      status: values.status
+    };
+    SqlManage.BatchUpdateSqlManage(params)
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(
+            t(
+              'sqlManagement.table.action.single.updateStatus.signalUpdateStatusSuccessTips'
+            )
+          );
+          EventEmitter.emit(EmitterKey.Refresh_SQL_Management);
+          handleReset();
+        }
       })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            message.success(
-              t('sqlManagement.table.actions.signalUpdateStatusSuccessTips')
-            );
-            refresh();
-          }
-        })
-        .finally(() => {
-          finishSignalAction();
-        });
-    */
+      .finally(() => {
+        submitFinish();
+      });
   };
 
   return (
@@ -76,17 +87,18 @@ const ChangeStatus = () => {
       {contextMessageHolder}
       <BasicModal
         open={open}
+        size="small"
         title={t('sqlManagement.table.action.single.updateStatus.triggerText')}
         closable={false}
         onCancel={onCloseModal}
         footer={
           <Space>
-            <BasicButton onClick={onCloseModal}>
+            <BasicButton onClick={onCloseModal} disabled={submitLoading}>
               {t('common.cancel')}
             </BasicButton>
             <BasicButton
               onClick={onSubmit}
-              disabled={!submitLoading}
+              disabled={submitLoading}
               type="primary"
             >
               {t('common.ok')}
@@ -98,8 +110,24 @@ const ChangeStatus = () => {
           <FormItemLabelStyleWrapper
             label={t('sqlManagement.table.action.single.updateStatus.label')}
             name="status"
+            rules={[{ required: true }]}
+            initialValue={BatchUpdateSqlManageReqStatusEnum.solved}
           >
-            <BasicSelect options={[]}></BasicSelect>
+            <Radio.Group>
+              <Space direction="vertical">
+                <Radio value={BatchUpdateSqlManageReqStatusEnum.solved}>
+                  {t('sqlManagement.table.action.single.updateStatus.solve')}
+                </Radio>
+                <Radio value={BatchUpdateSqlManageReqStatusEnum.ignored}>
+                  {t('sqlManagement.table.action.single.updateStatus.ignore')}
+                </Radio>
+                <Radio value={BatchUpdateSqlManageReqStatusEnum.manual_audited}>
+                  {t(
+                    'sqlManagement.table.action.single.updateStatus.manualAudit'
+                  )}
+                </Radio>
+              </Space>
+            </Radio.Group>
           </FormItemLabelStyleWrapper>
         </Form>
       </BasicModal>
