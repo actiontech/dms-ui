@@ -10,6 +10,7 @@ import { SystemRole } from '@actiontech/shared/lib/enum';
 
 /* IFTRUE_isEE */
 const Project = lazy(() => import('../page/Project'));
+const RuleKnowledge = lazy(() => import('sqle/src/page/RuleKnowledge'));
 /* FITRUE_isEE */
 
 const Login = lazy(() => import('../page/Login'));
@@ -37,7 +38,6 @@ const Account = lazy(() => import('../page/Account'));
 /* IFTRUE_isSQLE */
 //sqle global page
 const Rule = lazy(() => import('sqle/src/page/Rule'));
-const RuleKnowledge = lazy(() => import('sqle/src/page/RuleKnowledge'));
 const RuleManager = lazy(() => import('sqle/src/page/RuleManager'));
 const GlobalRuleTemplateDetail = lazy(
   () =>
