@@ -39,7 +39,7 @@ import SqlManagementColumn, {
   SqlManagementRowAction,
   type SqlManagementTableFilterParamType
 } from './column';
-import useStaticStatus from '../../../../hooks/useStaticStatus';
+import useStaticStatus from './hooks/useStaticStatus';
 import {
   initSqleManagementModalStatus,
   updateSqleManagement,
@@ -186,7 +186,8 @@ const SQLEEIndex = () => {
       SqlManagementColumn(projectID, actionPermission, updateRemark, openModal),
     [projectID, actionPermission, updateRemark, openModal]
   );
-  const { getAuditLevelStatusSelectOption } = useStaticStatus();
+  const { generateAuditLevelSelectOptions, generateSourceSelectOptions } =
+    useStaticStatus();
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
       tableName: 'sql_management_list',
@@ -207,11 +208,15 @@ const SQLEEIndex = () => {
       }),
       FilterCustomProps
     >([
-      ['filter_source', { options: [{ label: 'source11', value: 11 }] }],
+      ['filter_source', { options: generateSourceSelectOptions }],
       ['filter_instance_name', { options: instanceOptions }],
-      ['filter_audit_level', { options: [{ label: 'level11', value: 11 }] }]
+      ['filter_audit_level', { options: generateAuditLevelSelectOptions }]
     ]);
-  }, [instanceOptions]);
+  }, [
+    instanceOptions,
+    generateSourceSelectOptions,
+    generateAuditLevelSelectOptions
+  ]);
 
   const onSearch = (value: string) => {
     setSearchKeyword(value);
