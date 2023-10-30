@@ -6,6 +6,9 @@ export const filterOptionByLabel: SelectProps['filterOption'] = (
   input: string,
   option?: DefaultOptionType
 ) => {
-  const label = extractTextFromReactNode(option?.label);
+  const label = extractTextFromReactNode(
+    option?.label ??
+      (typeof option?.children === 'string' ? option?.children : '')
+  );
   return label.toLowerCase().includes(input.toLowerCase());
 };
