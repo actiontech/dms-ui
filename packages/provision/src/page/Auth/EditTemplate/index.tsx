@@ -1,8 +1,7 @@
-import { Box } from '@mui/system';
-import { Card, Button, Space, Input, Typography, Form, message } from 'antd';
-import { useEffect, useState } from 'react';
+import { Card, Button, Space, Input, Typography, Form, message } from 'antd5';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import ProvisionTable from '~/components/ProvisionTable';
 import { ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
@@ -14,13 +13,23 @@ import { useBoolean, useRequest } from 'ahooks';
 import { cloneDeep } from 'lodash';
 import { ResponseCode } from '~/data/common';
 import { AxiosResponse } from 'axios';
+import {
+  FormAreaBlockStyleWrapper,
+  FormAreaLineStyleWrapper,
+  FormStyleWrapper,
+  formItemLayout
+} from '@actiontech/shared/lib/components/FormCom/style';
 import { generateDataPermissionValueByDataPermission } from './index.utils';
-import useNavigate from '../../../hooks/useNavigate';
-import { Link } from '../../../components/Link';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IDataPermission } from '@actiontech/shared/lib/api/provision/service/common';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BasicButton, BasicInput, PageHeader } from '@actiontech/shared';
+import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
+import { AuthTemplateFormStyleWrapper } from './style';
+import classNames from 'classnames';
+import { IconSelectedBusiness } from '~/icon/AuthTemplate';
 
 interface IEditTemplateFormFields {
   name: string;
@@ -97,6 +106,10 @@ const EditTemplate = () => {
   const [editIndex, setEditIndex] = useState<number>();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
+  const hasSelectedBusiness = useMemo(
+    () => dataPermissions.length > 0,
+    [dataPermissions]
+  );
 
   const handleSubmit = async () => {
     setIsUpdated(false);
@@ -169,96 +182,103 @@ const EditTemplate = () => {
   usePrompt(t('auth.editTemplate.leaveTip'), isUpdated);
 
   return (
-    <Box
-      sx={{
-        padding: (theme) => theme.layout.padding
-      }}
-    >
-      <Card
+    <PageLayoutHasFixedHeaderStyleWrapper>
+      <PageHeader
+        fixed
         title={
-          name
-            ? t('auth.editTemplate.detailTitle')
-            : t('auth.editTemplate.addTitle')
+          <BasicButton
+            onClick={() =>
+              navigate(`/provision/project/${projectID}/auth/template`)
+            }
+            icon={<IconLeftArrow />}
+          >
+            {t('auth.backToAuthTemplateList')}
+          </BasicButton>
         }
         extra={
-          <Link to={`${projectID}/auth/template`}>
-            <Button type="primary">{t('auth.addAuth.back')}</Button>
-          </Link>
+          <BasicButton
+            type="primary"
+            loading={submitLoading}
+            onClick={handleSubmit}
+          >
+            {t('common.save')}
+          </BasicButton>
         }
-        className="add-auth-card"
-      >
+      />
+      <AuthTemplateFormStyleWrapper>
         <Form form={form} wrapperCol={{ span: 5 }}>
           <Form.Item
             name="name"
-            label={t('auth.editTemplate.templateName')}
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true,
+                message: t('common.form.rule.require', {
+                  name: t('auth.template.columns.name')
+                })
+              }
+            ]}
           >
-            <Input
-              disabled={name !== null}
+            <BasicInput
+              disabled={!!name}
               placeholder={t('auth.editTemplate.templateNamePlaceholder')}
               onChange={() => setIsUpdated(true)}
+              size="large"
+              bordered={false}
             />
           </Form.Item>
         </Form>
-        <Space direction="vertical" className="full-width-element" size={20}>
-          <Card
-            className="edit-template"
-            title={
-              <Space size={30}>
-                {t('auth.addAuth.baseForm.overview')}
-                <Typography.Text>
-                  {t('auth.addAuth.baseForm.selected')}
-                  <Input
-                    readOnly={true}
-                    className="selected-business"
-                    value={Array.from(
-                      new Set(dataPermissions.map((item) => item.business))
-                    )}
-                  />
-                </Typography.Text>
-              </Space>
-            }
-            extra={
-              <Space>
-                <Button danger={true} type="text" onClick={removeAllTemplate}>
-                  {t('auth.addAuth.baseForm.reset')}
-                </Button>
-                <Button
-                  type="primary"
-                  onClick={() => openModal(ModalName.DataPermissionModal)}
-                >
-                  {t('auth.button.addDataPermission')}
-                </Button>
-              </Space>
-            }
-          >
-            <ProvisionTable
-              rowKey={(record) =>
-                `${record.serviceLabel}${record.objectsLabel}`
-              }
-              loading={getIdLoading || getPermissionLoading}
-              columns={authTableColumns(editTemplate, removeTemplate)}
-              dataSource={dataPermissions}
-              scroll={{ x: 'max-content' }}
-            />
-          </Card>
-          <Button
-            style={{ float: 'right' }}
-            type="primary"
-            onClick={handleSubmit}
-            loading={submitLoading}
-          >
-            {t('common.save')}
-          </Button>
+        <Space>
+          <section className="tag-wrapper">
+            <IconSelectedBusiness />
+            <Typography.Text
+              className={classNames('selected-business-text', {
+                'has-selected': hasSelectedBusiness
+              })}
+            >
+              {t('auth.addAuth.baseForm.selected')}
+              {hasSelectedBusiness
+                ? Array.from(
+                    new Set(dataPermissions.map((item) => item.business))
+                  )
+                : '-'}
+            </Typography.Text>
+          </section>
         </Space>
-      </Card>
+      </AuthTemplateFormStyleWrapper>
+      <Space direction="vertical" className="full-width-element" size={20}>
+        <Card
+          className="edit-template"
+          title={<Space size={30}>{t('auth.addAuth.baseForm.overview')}</Space>}
+          extra={
+            <Space>
+              <Button danger={true} type="text" onClick={removeAllTemplate}>
+                {t('auth.addAuth.baseForm.reset')}
+              </Button>
+              <Button
+                type="primary"
+                onClick={() => openModal(ModalName.DataPermissionModal)}
+              >
+                {t('auth.button.addDataPermission')}
+              </Button>
+            </Space>
+          }
+        >
+          <ProvisionTable
+            rowKey={(record) => `${record.serviceLabel}${record.objectsLabel}`}
+            loading={getIdLoading || getPermissionLoading}
+            columns={authTableColumns(editTemplate, removeTemplate)}
+            dataSource={dataPermissions}
+            scroll={{ x: 'max-content' }}
+          />
+        </Card>
+      </Space>
       <AddDataPermission
         editIndex={editIndex}
         setEditIndex={setEditIndex}
         dataPermissions={dataPermissions}
         setDataPermissions={setDataPermissions}
       />
-    </Box>
+    </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
 
