@@ -27,6 +27,7 @@ import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provisio
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { Link, useNavigate } from 'react-router-dom';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
+import { Spin } from 'antd5';
 
 const AuthTemplateList = () => {
   const { t } = useTranslation();
@@ -114,28 +115,29 @@ const AuthTemplateList = () => {
           </Link>
         }
       />
-      <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        searchInput={{
-          onSearch
-        }}
-        loading={loading}
-      />
-      <ActiontechTable
-        rowKey="uid"
-        dataSource={dataSource?.list ?? []}
-        columns={AuthTemplateListTableColumns(projectID)}
-        pagination={{ total: dataSource?.total ?? 0 }}
-        loading={loading}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-        actions={AuthTemplateListActions(
-          onNavigateToUpdateTemplate,
-          removeTemplate,
-          onNavigateToAuthList,
-          openModal
-        )}
-      />
+      <Spin spinning={loading}>
+        <TableToolbar
+          refreshButton={{ refresh, disabled: loading }}
+          searchInput={{
+            onSearch
+          }}
+        />
+        <ActiontechTable
+          rowKey="uid"
+          dataSource={dataSource?.list ?? []}
+          columns={AuthTemplateListTableColumns(projectID)}
+          pagination={{ total: dataSource?.total ?? 0 }}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+          actions={AuthTemplateListActions(
+            onNavigateToUpdateTemplate,
+            removeTemplate,
+            onNavigateToAuthList,
+            openModal
+          )}
+        />
+      </Spin>
+
       <AuthTemplateModal />
     </section>
   );
