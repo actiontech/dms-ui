@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 
 export const AuthTemplateFormStyleWrapper = styled('div')`
   padding: 84px 40px 24px;
+  border-bottom: 1px solid
+    ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
 
   .${ANTD_PREFIX_STR}-input-lg.basic-input-wrapper {
     padding: 0;

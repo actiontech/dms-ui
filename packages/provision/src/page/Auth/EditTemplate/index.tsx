@@ -7,18 +7,12 @@ import { ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import { IDataPermissionsTable } from './Modal/AddDataPermission/index.d';
 import { AuthDataPermissionListModalStatus } from '~/store/auth/templateList';
-import { authTableColumns } from './TableColumns';
+import { AuthTableActions, AuthTableColumns } from './TableColumns';
 import AddDataPermission from './Modal/AddDataPermission';
 import { useBoolean, useRequest } from 'ahooks';
 import { cloneDeep } from 'lodash';
 import { ResponseCode } from '~/data/common';
 import { AxiosResponse } from 'axios';
-import {
-  FormAreaBlockStyleWrapper,
-  FormAreaLineStyleWrapper,
-  FormStyleWrapper,
-  formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
 import { generateDataPermissionValueByDataPermission } from './index.utils';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
@@ -30,6 +24,11 @@ import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { AuthTemplateFormStyleWrapper } from './style';
 import classNames from 'classnames';
 import { IconSelectedBusiness } from '~/icon/AuthTemplate';
+import {
+  ActiontechTable,
+  TableToolbar,
+  useTableRequestError
+} from '@actiontech/shared/lib/components/ActiontechTable';
 
 interface IEditTemplateFormFields {
   name: string;
@@ -64,17 +63,22 @@ const EditTemplate = () => {
       refreshDeps: [projectID]
     }
   );
+
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
   const { loading: getPermissionLoading } = useRequest(
     () =>
-      auth.AuthGetDataPermissionsInDataPermissionTemplate({
-        data_permission_template_uid: id ?? templateId ?? ''
-      }),
+      handleTableRequestError(
+        auth.AuthGetDataPermissionsInDataPermissionTemplate({
+          data_permission_template_uid: id ?? templateId ?? ''
+        })
+      ),
     {
       ready: !!id || !!templateId,
       onSuccess: (res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
+        if (res.list && res.list.length > 0) {
           const permissions = generateDataPermissionValueByDataPermission(
-            res.data.data ?? []
+            res.list
           );
           setDataPermissions(permissions);
         }
@@ -245,7 +249,45 @@ const EditTemplate = () => {
           </section>
         </Space>
       </AuthTemplateFormStyleWrapper>
-      <Space direction="vertical" className="full-width-element" size={20}>
+      <TableToolbar
+        actions={
+          hasSelectedBusiness
+            ? [
+                {
+                  key: 'remove-all-permission',
+                  text: t('auth.addAuth.baseForm.reset'),
+                  buttonProps: {
+                    danger: true,
+                    onClick: removeAllTemplate
+                  }
+                },
+                {
+                  key: 'add-data-permission',
+                  text: t('auth.button.addDataPermission'),
+                  buttonProps: {
+                    onClick: () => openModal(ModalName.DataPermissionModal)
+                  }
+                }
+              ]
+            : undefined
+        }
+      >
+        <span className="table-toolbar-title">
+          {t('auth.addAuth.baseForm.overview')}
+        </span>
+      </TableToolbar>
+      <ActiontechTable
+        rowKey={(record) => `${record.serviceLabel}${record.objectsLabel}`}
+        loading={getIdLoading || getPermissionLoading}
+        dataSource={dataPermissions}
+        columns={AuthTableColumns()}
+        actions={AuthTableActions(editTemplate, removeTemplate)}
+        errorMessage={requestErrorMessage}
+        pagination={false}
+        scroll={{ x: 'max-content' }}
+      />
+
+      {/* <Space direction="vertical" className="full-width-element" size={20}>
         <Card
           className="edit-template"
           title={<Space size={30}>{t('auth.addAuth.baseForm.overview')}</Space>}
@@ -262,16 +304,16 @@ const EditTemplate = () => {
               </Button>
             </Space>
           }
-        >
-          <ProvisionTable
-            rowKey={(record) => `${record.serviceLabel}${record.objectsLabel}`}
-            loading={getIdLoading || getPermissionLoading}
-            columns={authTableColumns(editTemplate, removeTemplate)}
-            dataSource={dataPermissions}
-            scroll={{ x: 'max-content' }}
-          />
-        </Card>
-      </Space>
+        > */}
+      {/* <ProvisionTable
+        rowKey={(record) => `${record.serviceLabel}${record.objectsLabel}`}
+        loading={getIdLoading || getPermissionLoading}
+        columns={authTableColumns(editTemplate, removeTemplate)}
+        dataSource={dataPermissions}
+        scroll={{ x: 'max-content' }}
+      /> */}
+      {/* </Card>
+      </Space> */}
       <AddDataPermission
         editIndex={editIndex}
         setEditIndex={setEditIndex}
