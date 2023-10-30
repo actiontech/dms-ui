@@ -1,12 +1,12 @@
 import { Card, Empty, Modal, Space, Typography, Spin, message } from 'antd5';
 import { RuleUnderstandProps } from './index.type';
 import { useTranslation } from 'react-i18next';
-import { EmptyBox, BasicButton, FooterButtonWrapper } from '@actiontech/shared';
+import { EmptyBox, BasicButton } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
 import EditKnowledgeContent from './EditKnowledgeContent';
 import { useEffect, useState } from 'react';
 import rehypeSanitize from 'rehype-sanitize';
-// import rule_template from '../../../api/rule_template';
+import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { ResponseCode } from '../../../data/common';
 import { RuleKnowledgeMarkDownStyleWrapper } from '../style';
 
@@ -22,8 +22,11 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   const { t } = useTranslation();
   const [modifyFlag, { setTrue: startModify, setFalse: modifyFinish }] =
     useBoolean();
+
   const [hasDirtyData, setHasDirtyData] = useState(false);
+
   const [editValue, setEditValue] = useState<string>();
+
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
 
@@ -54,6 +57,7 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   };
   const submit = () => {
     startSubmit();
+    // todo 待后端提供接口
     // const request = isCustomRule
     //   ? rule_template.updateCustomRuleKnowledge({
     //       rule_name: ruleName,
@@ -66,19 +70,24 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
     //       db_type: dbType
     //     });
 
-    // request
-    //   .then((res) => {
-    //     if (res.data.code === ResponseCode.SUCCESS) {
-    //       message.success(t('ruleKnowledge.successTips'));
-    //       setHasDirtyData(false);
-    //       modifyFinish();
-    //       refresh();
-    //       setEditValue('');
-    //     }
-    //   })
-    //   .finally(() => {
-    //     submitFinish();
-    //   });
+    rule_template
+      .updateRuleKnowledge({
+        rule_name: ruleName,
+        knowledge_content: editValue,
+        db_type: dbType
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          message.success(t('ruleKnowledge.successTips'));
+          setHasDirtyData(false);
+          modifyFinish();
+          refresh();
+          setEditValue('');
+        }
+      })
+      .finally(() => {
+        submitFinish();
+      });
   };
 
   useEffect(() => {
@@ -148,23 +157,6 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
           )}
         </Spin>
       </Card>
-
-      {/* <EmptyBox if={modifyFlag}>
-        <FooterButtonWrapper insideProject={false}>
-          <Space>
-            <BasicButton disabled={submitLoading} onClick={cancel}>
-              {t('common.cancel')}
-            </BasicButton>
-            <BasicButton
-              disabled={submitLoading}
-              type="primary"
-              onClick={submit}
-            >
-              {t('common.submit')}
-            </BasicButton>
-          </Space>
-        </FooterButtonWrapper>
-      </EmptyBox> */}
     </>
   );
 };

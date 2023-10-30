@@ -246,7 +246,6 @@ const RuleList: React.FC<RuleListProps> = ({
                     }}
                     className={classNames({ 'has-top-margin': isAction })}
                     onClick={() => {
-                      console.log('v--->', v);
                       if (enableCheckDetail) {
                         setCurrentRuleDetail(v);
                         setVisible(true);

@@ -10,7 +10,7 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   auditResultRecord,
   dbType
 }) => {
-  const { ruleInfo, loading } = useAuditResultRuleInfo(
+  const { ruleInfo } = useAuditResultRuleInfo(
     auditResultRecord?.audit_result ?? [],
     dbType ?? ''
   );
@@ -29,7 +29,6 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
     );
   }, [ruleInfo, dbType, auditResultRecord?.audit_result]);
 
-  console.log('ruleInfo--->', ruleInfo, loading);
   return (
     <ReportDrawer
       open={open}
