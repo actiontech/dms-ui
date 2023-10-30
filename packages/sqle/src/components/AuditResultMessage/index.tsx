@@ -77,11 +77,13 @@ const AuditResultMessage = ({
       <EmptyBox if={showAnnotation && visible && !!auditResult.annotation}>
         <div className="annotation-wrapper">
           {auditResult.annotation}
+          {/* IFTRUE_isEE */}
           <EmptyBox if={showMoreBtn}>
             <Button type="link" size="small" target="_blank" href={moreBtnLink}>
               {t('common.showMore')}
             </Button>
           </EmptyBox>
+          {/* FITRUE_isEE */}
         </div>
       </EmptyBox>
     </AuditResultMessageWithAnnotationStyleWrapper>
