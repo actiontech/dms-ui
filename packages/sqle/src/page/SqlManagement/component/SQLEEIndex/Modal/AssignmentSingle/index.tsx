@@ -73,7 +73,7 @@ const AssignmentSingle = () => {
     const params: IBatchUpdateSqlManageParams = {
       project_name: projectName,
       sql_manage_id_list: [currentSelected.id],
-      assignees: values.assignees
+      assignees: [values.assignees]
     };
     SqlManage.BatchUpdateSqlManage(params)
       .then((res) => {
