@@ -20,7 +20,7 @@ import { SourceTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.e
 import { Link } from 'react-router-dom';
 import { sourceDictionary } from './hooks/useStaticStatus';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { BasicTag, EditText, EmptyBox } from '@actiontech/shared';
+import { BasicTag, EditText } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { Space } from 'antd5';
 
@@ -242,7 +242,6 @@ ${
       align: 'right',
       title: () => t('sqlManagement.table.column.occurrenceCount')
     },
-    // todo: 多个
     {
       dataIndex: 'assignees',
       title: () => t('sqlManagement.table.column.personInCharge'),
@@ -271,26 +270,25 @@ ${
       width: 160,
       title: () => t('sqlManagement.table.column.comment'),
       render: (remark: string, record) => {
+        if (!actionPermission) return remark ?? '--';
         return (
-          <EmptyBox if={actionPermission} defaultNode={<>{remark ?? '--'}</>}>
-            <EditText
-              value={remark}
-              editable={{
-                autoSize: true,
-                onEnd: (val) => {
-                  updateRemark(record.id ?? 0, val);
-                }
-              }}
-              ellipsis={{
-                expandable: false,
-                tooltip: {
-                  arrow: false,
-                  ...tooltipsCommonProps(remark, 100)
-                },
-                rows: 1
-              }}
-            />
-          </EmptyBox>
+          <EditText
+            value={remark}
+            editable={{
+              autoSize: true,
+              onEnd: (val) => {
+                updateRemark(record.id ?? 0, val);
+              }
+            }}
+            ellipsis={{
+              expandable: false,
+              tooltip: {
+                arrow: false,
+                ...tooltipsCommonProps(remark, 100)
+              },
+              rows: 1
+            }}
+          />
         );
       }
     }

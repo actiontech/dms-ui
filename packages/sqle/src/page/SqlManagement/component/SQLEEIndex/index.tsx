@@ -19,14 +19,20 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { IGetSqlManageListParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
+import {
+  IExportSqlManageV1Params,
+  IGetSqlManageListParams
+} from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   useCurrentProject,
   useCurrentUser
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
-import { GetSqlManageListFilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import {
+  GetSqlManageListFilterStatusEnum,
+  exportSqlManageV1FilterStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import useInstance from '../../../../hooks/useInstance';
 import SqlManagementColumn, {
   ExtraFilterMeta,
@@ -242,7 +248,35 @@ const SQLEEIndex = () => {
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
   const handleExport = () => {
-    //
+    if (!actionPermission) {
+      return;
+    }
+    startExport();
+    const hideLoading = messageApi.loading(
+      t('sqlManagement.pageHeader.action.exporting')
+    );
+    const params = {
+      ...tableFilterInfo,
+      filter_status:
+        filterStatus === 'all'
+          ? undefined
+          : (filterStatus as unknown as exportSqlManageV1FilterStatusEnum),
+      fuzzy_search_sql_fingerprint: searchKeyword,
+      project_name: projectName,
+      filter_assignee: isAssigneeSelf ? uid : undefined
+    } as IExportSqlManageV1Params;
+    SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(
+            t('sqlManagement.pageHeader.action.exportSuccessTips')
+          );
+        }
+      })
+      .finally(() => {
+        hideLoading();
+        finishExport();
+      });
   };
 
   useEffect(() => {
@@ -255,16 +289,19 @@ const SQLEEIndex = () => {
 
   return (
     <>
+      {messageContextHolder}
       <PageHeader
         title={t('sqlManagement.pageTitle')}
         extra={
-          <BasicButton
-            onClick={handleExport}
-            icon={<IconDownload />}
-            disabled={exportButtonDisabled}
-          >
-            {t('sqlManagement.pageHeader.action.export')}
-          </BasicButton>
+          actionPermission ? (
+            <BasicButton
+              onClick={handleExport}
+              icon={<IconDownload />}
+              disabled={exportButtonDisabled}
+            >
+              {t('sqlManagement.pageHeader.action.export')}
+            </BasicButton>
+          ) : null
         }
       />
       {/* page */}
