@@ -161,4 +161,11 @@ export const BasicButtonStyleWrapper = styled(Button)`
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
     background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryBgActive};
   }
+
+  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-default.has-icon-primary {
+    .custom-icon {
+      color: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorPrimary} !important;
+    }
+  }
 `;
