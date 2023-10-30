@@ -2,6 +2,7 @@ import { TableProps } from 'antd5';
 import { useCallback, useState } from 'react';
 import { TablePagination, UseTableRequestParamsOptions } from '../index.type';
 import { SorterResult } from 'antd5/es/table/interface';
+import { isEmpty } from 'lodash';
 
 const useTableRequestParams = <
   R extends Record<string, any>,
@@ -44,6 +45,7 @@ const useTableRequestParams = <
   >(
     params: T
   ) => {
+    if (isEmpty(sortInfo)) return;
     if (Array.isArray(sortInfo)) {
       const _sortInfo = sortInfo[0];
       if (!!_sortInfo.order && !!_sortInfo.field) {
