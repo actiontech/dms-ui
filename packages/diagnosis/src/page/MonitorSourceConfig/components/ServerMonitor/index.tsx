@@ -1,20 +1,14 @@
 import { useMemo, useEffect, useCallback } from 'react';
-import { message } from 'antd5';
 import { useToggle } from 'ahooks';
 import { useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import {
-  useCurrentProject,
-  useCurrentUser
-} from '@actiontech/shared/lib/global';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import server from '@actiontech/shared/lib/api/diagnosis/service/server';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -23,65 +17,63 @@ import {
   updateMonitorSourceConfigModalStatus,
   updateSelectServerMonitorData
 } from '../../../../store/monitorSourceConfig';
+import { IServerMonitorProps } from './index.type';
+import { IViewServerReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
+import { IV1ListServersParams } from '@actiontech/shared/lib/api/diagnosis/service/server/index.d';
+import ServerMonitorModal from './components/Modal';
 
-const ServerMonitor: React.FC = () => {
-  const { t } = useTranslation();
-
-  const [messageApi, contextHolder] = message.useMessage();
-
+const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   const dispatch = useDispatch();
 
-  const { projectID, projectArchive, projectName } = useCurrentProject();
-
-  const { isAdmin, isProjectManager } = useCurrentUser();
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
+  const { projectID, projectArchive } = useCurrentProject();
 
   const [refreshFlag, { toggle: toggleRefreshFlag }] = useToggle(false);
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  // const { pagination, tableChange } = useTableRequestParams<
-  //   IListMember,
-  //   IListMembersParams
-  // >();
+  const { pagination, tableChange } = useTableRequestParams<
+    IViewServerReply,
+    IV1ListServersParams
+  >();
 
-  // const {
-  //   data: serverMonitorList,
-  //   loading,
-  //   refresh
-  // } = useRequest(
-  //   () => {
-  //     const params: IListMembersParams = {
-  //       ...pagination,
-  //       project_uid: projectID
-  //     };
-  //     return handleTableRequestError(dms.ListMembers(params));
-  //   },
-  //   {
-  //     refreshDeps: [pagination, refreshFlag, projectID]
-  //   }
-  // );
+  const { data: serverMonitorList, loading } = useRequest(
+    () => {
+      const params: IV1ListServersParams = {
+        ...pagination,
+        project_uid: projectID,
+        fuzzy_search_keyword: props.searchValue
+      };
+      return handleTableRequestError(server.V1ListServers(params));
+    },
+    {
+      refreshDeps: [pagination, refreshFlag, projectID, props.searchValue]
+    }
+  );
+
+  useEffect(() => {
+    props.setLoading(loading);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
 
   const onEditServerMonitor = useCallback(
-    (record: any | undefined) => {
-      dispatch(updateSelectServerMonitorData(record));
-      dispatch(
-        updateMonitorSourceConfigModalStatus({
-          modalName: ModalName.Add_Server_Monitor,
-          status: true
-        })
-      );
+    (record: IViewServerReply | undefined) => {
+      if (record) {
+        dispatch(updateSelectServerMonitorData(record));
+        dispatch(
+          updateMonitorSourceConfigModalStatus({
+            modalName: ModalName.Update_Server_Monitor,
+            status: true
+          })
+        );
+      }
     },
-    [dispatch, actionPermission]
+    [dispatch]
   );
 
   const actions = useMemo(() => {
     return ServerMonitorActions(onEditServerMonitor);
-  }, [ServerMonitorActions, onEditServerMonitor]);
+  }, [onEditServerMonitor]);
 
   const columns = useMemo(() => {
     return ServerMonitorColumns;
@@ -98,21 +90,21 @@ const ServerMonitor: React.FC = () => {
 
   return (
     <>
-      {contextHolder}
       <ActiontechTable
-        rowKey="uid"
-        dataSource={[]}
-        // dataSource={serverMonitorList?.list}
-        pagination={{
-          total: 0
-          // total: serverMonitorList?.total ?? 0
+        rowKey={(record: IViewServerReply) => {
+          return `${record?.createdAt}-${record.host}`;
         }}
-        // loading={loading}
+        dataSource={serverMonitorList?.list}
+        pagination={{
+          total: serverMonitorList?.total ?? 0
+        }}
+        loading={loading}
         columns={columns}
         errorMessage={requestErrorMessage}
-        // onChange={tableChange}
+        onChange={tableChange}
         actions={!projectArchive ? actions : undefined}
       />
+      <ServerMonitorModal />
     </>
   );
 };

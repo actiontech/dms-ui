@@ -2,19 +2,29 @@ import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { IViewServerReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
 import { t } from '../../../../locale';
+import { ViewServerReplyStatusEnum } from '@actiontech/shared/lib/api/diagnosis/service/common.enum';
 
-export const ServerMonitorColumns: ActiontechTableColumn<any> = [
+const serverMonitorStatusDictionary = {
+  [ViewServerReplyStatusEnum.healthy]: t('monitorSourceConfig.status.normal'),
+  [ViewServerReplyStatusEnum.unhealthy]: t(
+    'monitorSourceConfig.status.abnormal'
+  ),
+  [ViewServerReplyStatusEnum.unknown]: t('monitorSourceConfig.status.unknown')
+};
+
+export const ServerMonitorColumns: ActiontechTableColumn<IViewServerReply> = [
   {
-    dataIndex: 'user',
+    dataIndex: 'name',
     title: t('monitorSourceConfig.monitorSourceName')
   },
   {
-    dataIndex: 'user',
+    dataIndex: 'host',
     title: t('monitorSourceConfig.serverMonitor.serverIp')
   },
   {
-    dataIndex: 'user',
+    dataIndex: 'port',
     title: t('monitorSourceConfig.serverMonitor.sshPort')
   },
   {
@@ -22,18 +32,22 @@ export const ServerMonitorColumns: ActiontechTableColumn<any> = [
     title: t('monitorSourceConfig.serverMonitor.sshUser')
   },
   {
-    dataIndex: 'user',
+    dataIndex: 'createdAt',
     title: t('monitorSourceConfig.serverMonitor.creationTime')
   },
   {
-    dataIndex: 'user',
-    title: t('common.status')
+    dataIndex: 'status',
+    title: t('common.status'),
+    render: (record: IViewServerReply) => {
+      if (!record.status) return '-';
+      return serverMonitorStatusDictionary[record.status];
+    }
   }
 ];
 
 export const ServerMonitorActions = (
-  onEditServerMonitor: (record: any | undefined) => void
-): ActiontechTableActionMeta<any>[] => [
+  onEditServerMonitor: (record: IViewServerReply | undefined) => void
+): ActiontechTableActionMeta<IViewServerReply>[] => [
   {
     text: t('common.edit'),
     key: 'editServerMonitor',

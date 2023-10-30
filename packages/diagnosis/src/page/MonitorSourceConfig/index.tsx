@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { SegmentedValue } from 'antd5/es/segmented';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-// import MemberModal from './Modal';
 import { Space } from 'antd5';
 import {
   BasicButton,
@@ -14,10 +13,7 @@ import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { MonitorSourceConfigStyleWrapper } from './style';
 import { updateMonitorSourceConfigModalStatus } from '../../store/monitorSourceConfig';
 import { ModalName } from '../../data/ModalName';
-import {
-  TableToolbar,
-  TableRefreshButton
-} from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -26,6 +22,10 @@ import ServerMonitor from './components/ServerMonitor';
 
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();
+
+  const [searchValue, setSearchValue] = useState<string>();
+
+  const [tableLoading, setTableLoading] = useState<boolean>(false);
 
   const dispatch = useDispatch();
   const { projectArchive } = useCurrentProject();
@@ -53,9 +53,14 @@ const MonitorSourceConfig: React.FC = () => {
 
   const renderTable = () => {
     if (listType === MonitorSourceConfigTypeEnum.server_monitor) {
-      return <ServerMonitor />;
+      return (
+        <ServerMonitor
+          setLoading={setTableLoading}
+          searchValue={searchValue ?? ''}
+        />
+      );
     }
-    return <>数据库监控</>;
+    return null;
   };
 
   const onRefreshTable = () => {
@@ -69,12 +74,7 @@ const MonitorSourceConfig: React.FC = () => {
   return (
     <MonitorSourceConfigStyleWrapper>
       <PageHeader
-        title={
-          <Space size={12}>
-            {t('monitorSourceConfig.title')}
-            <TableRefreshButton refresh={onRefreshTable} />
-          </Space>
-        }
+        title={<Space size={12}>{t('monitorSourceConfig.title')}</Space>}
         extra={
           <EmptyBox if={!projectArchive}>
             <Space size={12}>
@@ -83,13 +83,27 @@ const MonitorSourceConfig: React.FC = () => {
                 type="primary"
                 icon={<IconAdd />}
               >
-                {t('monitorSourceConfig.addMonitorSource')}
+                {listType === MonitorSourceConfigTypeEnum.server_monitor
+                  ? t(
+                      'monitorSourceConfig.serverMonitor.addServerMonitorSource'
+                    )
+                  : t(
+                      'monitorSourceConfig.databaseMonitor.addDatabaseMonitorSource'
+                    )}
               </BasicButton>
             </Space>
           </EmptyBox>
         }
       />
-      <TableToolbar>
+      <TableToolbar
+        refreshButton={{ refresh: onRefreshTable, disabled: tableLoading }}
+        searchInput={{
+          placeholder: t('common.actiontechTable.searchInput.placeholder'),
+          onSearch: (value) => {
+            setSearchValue(value);
+          }
+        }}
+      >
         <BasicSegmented
           value={listType}
           onChange={onChange}
@@ -108,7 +122,6 @@ const MonitorSourceConfig: React.FC = () => {
         />
       </TableToolbar>
       {renderTable()}
-      {/* <MemberModal /> */}
     </MonitorSourceConfigStyleWrapper>
   );
 };
