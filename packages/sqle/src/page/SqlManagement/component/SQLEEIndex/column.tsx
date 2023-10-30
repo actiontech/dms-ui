@@ -24,7 +24,6 @@ import { BasicTag, EditText } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { Space } from 'antd5';
 
-// project_name
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListParams,
   'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
