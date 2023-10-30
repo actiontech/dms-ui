@@ -150,4 +150,15 @@ export const BasicButtonStyleWrapper = styled(Button)`
       }
     }
   }
+
+  /* switch button */
+  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-default.switch-btn-default {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
+  }
+
+  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-default.switch-btn-active {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+    background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryBgActive};
+  }
 `;

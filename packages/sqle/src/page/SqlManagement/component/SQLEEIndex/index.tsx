@@ -45,29 +45,24 @@ import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { tableSingleData } from './mock.data';
 import { message } from 'antd5';
 import SqleManagementModal from './Modal';
+import EmitterKey from '../../../../data/EmitterKey';
+import EventEmitter from '../../../../utils/EventEmitter';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
 
-  // export
-  const [
-    exportButtonDisabled,
-    { setFalse: finishExport, setTrue: startExport }
-  ] = useBoolean(false);
-  const handleExport = () => {
-    //
-  };
-
   // api
   // todo: 接口联调
-  const { projectID, projectArchive, projectName } = useCurrentProject();
+  const { projectID, projectName } = useCurrentProject();
+  const { isAdmin, username, isProjectManager, uid } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
     GetSqlManageListFilterStatusEnum.unhandled
   );
   const [searchKeyword, setSearchKeyword] = useState<string>('');
+  const [isAssigneeSelf, setAssigneeSelf] = useState(false);
   const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
     useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
   const [SQLNum, setSQLNum] = useState<ISQLStatisticsProps['data']>({
@@ -76,6 +71,7 @@ const SQLEEIndex = () => {
     optimizedSQLNum: 0
   });
   // todo: 列表数据 与 统计数据是一起返回的
+  // filter_assignee 需要用 id
   const {
     data: sqlList,
     loading: getListLoading,
@@ -88,32 +84,25 @@ const SQLEEIndex = () => {
         ...pagination,
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
-        project_name: projectName // ??? 现在都换成 id 了
+        project_name: projectName,
+        filter_assignee: isAssigneeSelf ? uid : undefined
       };
-      // new Promise((params) => {
-      //   const res: any = {};
-      //   setSQLNum({
-      //     SQLTotalNum: res.data?.sql_manage_total_num ?? 0,
-      //     problemSQlNum: res.data?.sql_manage_bad_num ?? 0,
-      //     optimizedSQLNum: res.data?.sql_manage_optimized_num ?? 0
-      //   });
-      //   return {
-      //     list: res.data?.data ?? [],
-      //     total: res.data?.sql_manage_total_num ?? 0,
-      //     message: ''
-      //   };
-      // }) as any
       return handleTableRequestError(SqlManage.GetSqlManageList(params));
     },
     {
-      refreshDeps: [pagination, projectName, filterStatus, searchKeyword],
+      refreshDeps: [
+        pagination,
+        projectName,
+        filterStatus,
+        searchKeyword,
+        isAssigneeSelf
+      ],
       onFinally: (params, data) => {
-        // if (data. === ResponseCode.SUCCESS) {
-        //             setSQLNum({
-        //     SQLTotalNum: res.data?.sql_manage_total_num ?? 0,
-        //     problemSQlNum: res.data?.sql_manage_bad_num ?? 0,
-        //     optimizedSQLNum: res.data?.sql_manage_optimized_num ?? 0
-        //   });
+        setSQLNum({
+          SQLTotalNum: data?.otherData?.sql_manage_total_num ?? 0,
+          problemSQlNum: data?.otherData?.sql_manage_bad_num ?? 0,
+          optimizedSQLNum: data?.otherData?.sql_manage_optimized_num ?? 0
+        });
       }
     }
   );
@@ -155,7 +144,6 @@ const SQLEEIndex = () => {
     return SqlManagementRowAction(openModal);
   }, [openModal]);
 
-  const { isAdmin, username, isProjectManager } = useCurrentUser();
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
@@ -209,14 +197,12 @@ const SQLEEIndex = () => {
         filter_source?: string;
         filter_instance_name?: string;
         filter_audit_level?: string;
-        filter_assignee?: string;
       }),
       FilterCustomProps
     >([
       ['filter_source', { options: [{ label: 'source11', value: 11 }] }],
       ['filter_instance_name', { options: instanceOptions }],
-      ['filter_audit_level', { options: [{ label: 'level11', value: 11 }] }],
-      ['filter_assignee', { options: [{ label: 'me 11', value: 11 }] }]
+      ['filter_audit_level', { options: [{ label: 'level11', value: 11 }] }]
     ]);
   }, [instanceOptions]);
 
@@ -250,6 +236,23 @@ const SQLEEIndex = () => {
     //
   };
 
+  // export
+  const [
+    exportButtonDisabled,
+    { setFalse: finishExport, setTrue: startExport }
+  ] = useBoolean(false);
+  const handleExport = () => {
+    //
+  };
+
+  useEffect(() => {
+    EventEmitter.subscribe(EmitterKey.Refresh_SQL_Management, refresh);
+    return () => {
+      EventEmitter.unsubscribe(EmitterKey.Refresh_SQL_Management, refresh);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <PageHeader
@@ -277,6 +280,18 @@ const SQLEEIndex = () => {
         refreshButton={{ refresh, disabled: getListLoading }}
         setting={tableSetting}
         actions={[
+          {
+            key: 'assignment-self',
+            text: t('sqlManagement.table.filter.assignee'),
+            buttonProps: {
+              className: isAssigneeSelf
+                ? 'switch-btn-active'
+                : 'switch-btn-default',
+              onClick: () => {
+                setAssigneeSelf(!isAssigneeSelf);
+              }
+            }
+          },
           {
             key: 'batch-assignment',
             text: t('sqlManagement.table.action.batch.assignment'),
@@ -343,7 +358,8 @@ const SQLEEIndex = () => {
       <ActiontechTable
         className="table-row-cursor"
         setting={tableSetting}
-        dataSource={sqlList?.list ?? [tableSingleData]}
+        // dataSource={sqlList?.list ?? [tableSingleData]}
+        dataSource={[tableSingleData]}
         rowKey={(record: ISqlManage) => {
           return `${record?.id}`;
         }}
@@ -357,7 +373,7 @@ const SQLEEIndex = () => {
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={actions}
+        actions={actionPermission ? actions : []}
       />
       {/* modal & drawer */}
       <SqleManagementModal />

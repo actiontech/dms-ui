@@ -37,7 +37,6 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     filter_instance_name?: string;
     filter_audit_level?: string;
     time?: string;
-    filter_assignee?: string;
   },
   SqlManagementTableFilterParamType
 > = () => {
@@ -47,7 +46,6 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       filter_instance_name?: string;
       filter_audit_level?: string;
       time?: string;
-      filter_assignee?: string;
     }),
     ActiontechTableFilterMetaValue<SqlManagementTableFilterParamType>
   >([
@@ -87,16 +85,6 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
           'filter_last_audit_start_time_to'
         ],
         filterLabel: t('sqlManagement.table.filter.time'),
-        checked: false
-      }
-    ],
-    // todo: 与我相关 做成这样？
-    [
-      'filter_assignee',
-      {
-        filterCustomType: 'select',
-        filterKey: 'filter_assignee',
-        filterLabel: t('sqlManagement.table.filter.assignee'),
         checked: false
       }
     ]
@@ -186,7 +174,7 @@ const SqlManagementColumn: (
           source.type &&
           source.type === SourceTypeEnum.sql_audit_record
         ) {
-          // todo: 路径有问题 -> sqle 审核需要往哪跳转
+          // todo: 路径有问题 -> sqle 审核需要往哪跳转 -> 新增的的页面
           /**
 ${
                 source.sql_audit_record_ids?.join(
