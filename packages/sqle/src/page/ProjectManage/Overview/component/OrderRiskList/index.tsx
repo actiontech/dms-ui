@@ -1,23 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 import ChartWrapper from '../../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../../components/CardWrapper';
 import TableTopList, {
   ITableTopList
 } from '../../../../../components/ChartCom/TableTopList';
 import { AvatarCom, BasicButton } from '@actiontech/shared';
-import { OrderIdStyleWrapper } from '../../../../../style/order';
 import OrderStatus from '../../../../Order/List/components/OrderStatus';
 import { IconOrderId } from '../../../../../icon/Order';
-import { Link } from '../../../../../components/Link';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { IRiskWorkflow } from '@actiontech/shared/lib/api/sqle/service/common';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const OrderRiskList = () => {
   const { t } = useTranslation();
@@ -53,12 +51,14 @@ const OrderRiskList = () => {
         render: (name: string, record: IRiskWorkflow) => {
           if (!name) return '-';
           return (
-            <OrderIdStyleWrapper>
+            <TableColumnWithIconStyleWrapper>
               <IconOrderId />
-              <Link to={`project/${projectID}/order/${record.workflow_id}`}>
+              <Link
+                to={`sqle/project/${projectID}/order/${record.workflow_id}`}
+              >
                 {name}
               </Link>
-            </OrderIdStyleWrapper>
+            </TableColumnWithIconStyleWrapper>
           );
         }
       },

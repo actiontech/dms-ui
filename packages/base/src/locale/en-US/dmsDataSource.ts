@@ -58,6 +58,9 @@ export default {
     queryTimeoutSecond: 'SQL超时限制(s)',
     maintenanceTime: '运维时间',
     maintenanceTimeTips: '设置运维时间后，仅能在此运维时间段内上线工单',
+    needAuditSqlService: '是否开启SQL审核业务',
+    closeAuditSqlServiceTips:
+      '如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？',
     needAuditForSqlQuery: 'SQL查询是否需要审核',
     allowQueryWhenLessThanAuditLevel: '运行查询的最高审核等级',
     passwordTips:
