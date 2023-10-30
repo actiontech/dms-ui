@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance } from 'antd5';
+import { Form, FormInstance, Popconfirm } from 'antd5';
 import Select, { BaseOptionType } from 'antd5/es/select';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import { useRequest } from 'ahooks';
@@ -45,6 +45,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return props.defaultData.source !== SQLE_INSTANCE_SOURCE_NAME;
   }, [props.defaultData]);
 
+  const auditRequired = Form.useWatch('needSqlAuditService', props.form);
+  const [auditRequiredPopupVisible, setAuditRequiredPopupVisible] =
+    useState<boolean>(false);
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
   const { projectName } = useCurrentProject();
@@ -105,6 +108,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         user: props.defaultData.user,
         ruleTemplateId: props.defaultData.sqle_config?.rule_template_id,
         ruleTemplateName: props.defaultData.sqle_config?.rule_template_name,
+        needSqlAuditService: !!props.defaultData.sqle_config?.rule_template_id,
         params: generateFormValueByParams(
           turnDataSourceAsyncFormToCommon(
             props.defaultData.additional_params ?? []
@@ -128,6 +132,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         !!props.defaultData.sqle_config?.sql_query_config?.audit_enabled
       );
     } else {
+      props.form.setFieldsValue({
+        needSqlAuditService: true
+      });
       if (params.length > 0) {
         props.form.setFieldsValue({
           params: generateFormValueByParams(params)
@@ -143,6 +150,18 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     setAuditEnabled(false);
     setDatabaseType('');
   }, [props.form]);
+
+  const changeAuditRequired = (check: boolean) => {
+    if (check)
+      props.form.setFieldsValue({
+        needSqlAuditService: check
+      });
+  };
+
+  const onAuditRequiredPopupOpenChange = (open: boolean) => {
+    if (!auditRequired) return;
+    setAuditRequiredPopupVisible(open);
+  };
 
   const changeAuditEnabled = (check: boolean) => {
     setAuditEnabled(check);
@@ -161,6 +180,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     }
   };
 
+  const clearRuleTemplate = () => {
+    props.form.setFieldsValue({
+      needSqlAuditService: false,
+      ruleTemplateId: undefined,
+      ruleTemplateName: undefined
+    });
+  };
+
   const changeRuleTemplate = (value: string, option: BaseOptionType) => {
     props.form.setFieldsValue({
       ruleTemplateId: option.key
@@ -169,6 +196,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   const submit = useCallback(async () => {
     const values = await props.form.validateFields();
+    delete values.needSqlAuditService;
     if (values.params) {
       values.asyncParams = dmsMergeFromValueIntoParams(values.params, params);
       delete values.params;
@@ -295,12 +323,34 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           <FormItemSubTitle>
             {t('dmsDataSource.dataSourceForm.sqlConfig')}
           </FormItemSubTitle>
+
+          <FormItemLabel
+            label={t('dmsDataSource.dataSourceForm.needAuditSqlService')}
+            name="needSqlAuditService"
+            valuePropName="checked"
+          >
+            <Popconfirm
+              title={t('dmsDataSource.dataSourceForm.closeAuditSqlServiceTips')}
+              overlayClassName="popconfirm-small"
+              open={auditRequiredPopupVisible}
+              onOpenChange={onAuditRequiredPopupOpenChange}
+              onConfirm={clearRuleTemplate}
+            >
+              <BasicSwitch
+                checked={auditRequired}
+                onChange={changeAuditRequired}
+              />
+            </Popconfirm>
+          </FormItemLabel>
           <FormItemLabel name="ruleTemplateId" hidden={true}>
             <BasicInput />
           </FormItemLabel>
           <FormItemLabel
+            hidden={!auditRequired}
             label={t('dmsDataSource.dataSourceForm.ruleTemplate')}
             name="ruleTemplateName"
+            className="has-required-style"
+            rules={[{ required: auditRequired }]}
           >
             <BasicSelect
               showSearch
