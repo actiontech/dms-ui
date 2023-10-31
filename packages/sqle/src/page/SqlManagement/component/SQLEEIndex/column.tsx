@@ -16,20 +16,23 @@ import {
 import RenderSQL from '../../../../components/RenderSQL';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from '../../../../components/AuditResultMessage';
-import { SourceTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  SourceTypeEnum,
+  SqlManageStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Link } from 'react-router-dom';
 import { sourceDictionary } from './hooks/useStaticStatus';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { BasicTag, EditText } from '@actiontech/shared';
+import { AvatarCom, EditText } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
-import { Space } from 'antd5';
+import { Avatar } from 'antd5';
+import StatusTag from './StatusTag';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListParams,
   'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
 >;
 
-// todo: filter data type
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   ISqlManage & {
     filter_source?: string;
@@ -123,7 +126,6 @@ export const SqlManagementRowAction = (
   };
 };
 
-// todo: checkbox fixed 有一个 fixed left 的元素就行
 const SqlManagementColumn: (
   projectID: string,
   actionPermission: boolean,
@@ -137,26 +139,41 @@ const SqlManagementColumn: (
 ) => {
   return [
     {
-      fixed: 'left',
       className: 'ellipsis-column-width',
       dataIndex: 'sql_fingerprint',
       title: () => t('sqlManagement.table.column.SQLFingerprint'),
-      render: (sql_fingerprint) => {
+      render: (sql_fingerprint, record) => {
         if (!sql_fingerprint) return null;
-        return <RenderSQL sql={sql_fingerprint} rows={2} />;
+        return (
+          <RenderSQL
+            onClick={() =>
+              openModal(ModalName.View_Audit_Result_Drawer, record)
+            }
+            tooltip={false}
+            sql={sql_fingerprint}
+            rows={2}
+          />
+        );
       }
     },
     {
-      fixed: 'left',
       dataIndex: 'sql',
       className: 'ellipsis-column-width',
       title: 'SQL',
-      render: (sql) => {
+      render: (sql, record) => {
         if (!sql) return null;
-        return <RenderSQL sql={sql} rows={2} />;
+        return (
+          <RenderSQL
+            onClick={() =>
+              openModal(ModalName.View_Audit_Result_Drawer, record)
+            }
+            tooltip={false}
+            sql={sql}
+            rows={2}
+          />
+        );
       }
     },
-    // todo: 需要跳转到不同的地方
     {
       dataIndex: 'source',
       title: () => t('sqlManagement.table.column.source'),
@@ -173,7 +190,7 @@ const SqlManagementColumn: (
           source.type &&
           source.type === SourceTypeEnum.sql_audit_record
         ) {
-          // todo: 路径有问题 -> sqle 审核需要往哪跳转 -> 新增的的页面
+          // todo: sqle 审核 路径有问题 -> 新增的的页面
           /**
 ${
                 source.sql_audit_record_ids?.join(
@@ -189,7 +206,6 @@ ${
         return '--';
       }
     },
-    // todo: 审核结果的 drawer 详情
     {
       dataIndex: 'audit_result',
       width: 200,
@@ -244,25 +260,30 @@ ${
     {
       dataIndex: 'assignees',
       title: () => t('sqlManagement.table.column.personInCharge'),
-      width: 120,
+      width: 200,
       render: (assignees: string[]) => {
         if (!Array.isArray(assignees)) {
           return '--';
         }
+        if (assignees.length === 1) {
+          return <AvatarCom key={assignees[0]} name={assignees[0]} />;
+        }
         return (
-          <Space size="small">
+          <Avatar.Group maxCount={4}>
             {assignees.map((v) => (
-              <BasicTag key={v}>{v}</BasicTag>
+              <AvatarCom key={v} name={v} />
             ))}
-          </Space>
+          </Avatar.Group>
         );
       }
     },
-    // todo: 状态渲染, 渲染成撒样子
     {
       dataIndex: 'status',
-      width: 160,
-      title: () => t('sqlManagement.table.column.status')
+      title: () => t('sqlManagement.table.column.status'),
+      render: (status: SqlManageStatusEnum) => {
+        if (!status) return '--';
+        return <StatusTag status={status} />;
+      }
     },
     {
       dataIndex: 'remark',

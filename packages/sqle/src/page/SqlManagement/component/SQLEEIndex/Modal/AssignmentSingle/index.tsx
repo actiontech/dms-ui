@@ -1,27 +1,27 @@
-import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../data/ModalName';
+
+import { Space, message } from 'antd5';
+import AssignmentForm from '../AssignmentForm';
+
+import { useBoolean } from 'ahooks';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../../../../../../base/src/store';
 import {
   updateSqleManagementModalStatus,
   updateSqleManagement
 } from '../../../../../../store/sqleManagement';
-
-import { Space, message, Form } from 'antd5';
-import { useBoolean } from 'ahooks';
-import { useSelector } from 'react-redux';
-import { IReduxState } from '../../../../../../../../base/src/store';
 import { useForm } from 'antd5/es/form/Form';
-import { BasicButton, BasicModal, BasicSelect } from '@actiontech/shared';
-import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
-import useUsername from '../../../../../../hooks/useUsername';
-import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import { BasicButton, BasicModal } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IBatchUpdateSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
+import { AssignmentFormField } from '../AssignmentForm/index.type';
+import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const AssignmentSingle = () => {
   const { t } = useTranslation();
@@ -33,28 +33,18 @@ const AssignmentSingle = () => {
     (state) =>
       state.sqleManagement.modalStatus[ModalName.Assignment_Member_Single]
   );
-  const currentSelected = useSelector<IReduxState, any | null>(
+  const currentSelected = useSelector<IReduxState, ISqlManage | null>(
     (state) => state.sqleManagement.selectSqleManagement
   );
   const { projectName } = useCurrentProject();
-  const { loading, updateUsernameList, generateUsernameSelectOption } =
-    useUsername();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-  const [form] = useForm<any>();
+  const [form] = useForm<AssignmentFormField>();
 
   const handleReset = () => {
     form.resetFields();
     submitFinish();
   };
-
-  useEffect(() => {
-    if (open) {
-      handleReset();
-      updateUsernameList(projectName);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open]);
 
   const onCloseModal = () => {
     dispatch(
@@ -64,7 +54,6 @@ const AssignmentSingle = () => {
       })
     );
     dispatch(updateSqleManagement(null));
-    handleReset();
   };
 
   const onSubmit = async () => {
@@ -72,8 +61,8 @@ const AssignmentSingle = () => {
     startSubmit();
     const params: IBatchUpdateSqlManageParams = {
       project_name: projectName,
-      sql_manage_id_list: [currentSelected.id],
-      assignees: [values.assignees]
+      sql_manage_id_list: [Number(currentSelected?.id ?? '')],
+      assignees: values.assignees
     };
     SqlManage.BatchUpdateSqlManage(params)
       .then((res) => {
@@ -99,6 +88,8 @@ const AssignmentSingle = () => {
         title={t('sqlManagement.table.action.single.assignment')}
         closable={false}
         onCancel={onCloseModal}
+        destroyOnClose
+        afterClose={handleReset}
         footer={
           <Space>
             <BasicButton onClick={onCloseModal}>
@@ -114,17 +105,7 @@ const AssignmentSingle = () => {
           </Space>
         }
       >
-        <Form form={form}>
-          <FormItemLabelStyleWrapper label="" name="assignees">
-            <BasicSelect
-              loading={loading}
-              showSearch
-              filterOption={filterOptionByLabel}
-            >
-              {generateUsernameSelectOption()}
-            </BasicSelect>
-          </FormItemLabelStyleWrapper>
-        </Form>
+        <AssignmentForm form={form} submitLoading={submitLoading} init={open} />
       </BasicModal>
     </>
   );

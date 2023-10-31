@@ -72,6 +72,9 @@ export default {
         notice: '提示'
       },
       assignee: '与我相关'
+    },
+    statusReport: {
+      title: 'SQL审核结果'
     }
   }
 };

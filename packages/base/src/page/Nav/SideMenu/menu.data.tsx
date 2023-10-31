@@ -68,13 +68,7 @@ export const sideMenuData: (
       key: `sqle/project/${menuDataPlaceholderKey}/dashboard`,
       onClick: () => navigate(`/sqle/project/${projectID}/dashboard`)
     },
-    // todo: 这是一个临时菜单
-    {
-      label: 'SQL管控',
-      icon: <IconInstanceManager />,
-      key: `sqle/project/${menuDataPlaceholderKey}/sqlManagement`,
-      onClick: () => navigate(`/sqle/project/${projectID}/sqlManagement`)
-    },
+
     /* FITRUE_isSQLE */
 
     {
@@ -152,6 +146,12 @@ export const sideMenuData: (
           key: `sqle/project/${menuDataPlaceholderKey}/progress`,
           icon: <Icon component={IconWorkflowTemplate} />,
           onClick: () => navigate(`/sqle/project/${projectID}/progress`)
+        },
+        {
+          label: t('dmsMenu.sqlManagement'),
+          icon: <IconInstanceManager />,
+          key: `sqle/project/${menuDataPlaceholderKey}/sqlManagement`,
+          onClick: () => navigate(`/sqle/project/${projectID}/sqlManagement`)
         },
         {
           label: t('dmsMenu.SQLOrder'),

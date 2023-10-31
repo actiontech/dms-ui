@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../../../../../base/src/store';
 import { ModalName } from '../../../../../../data/ModalName';
+
+import ReportDrawer from '../../../../../../components/ReportDrawer';
+
 import {
   updateSqleManagementModalStatus,
   updateSqleManagement
 } from '../../../../../../store/sqleManagement';
-import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const StatusDrawer = () => {
@@ -21,12 +22,6 @@ const StatusDrawer = () => {
   const selectedData = useSelector<IReduxState, ISqlManage | null>(
     (state) => state.sqleManagement.selectSqleManagement
   );
-  useEffect(() => {
-    if (visible) {
-      // handleReset();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible]);
 
   const closeModal = () => {
     dispatch(
@@ -39,16 +34,17 @@ const StatusDrawer = () => {
   };
 
   return (
-    <BasicDrawer
-      open={visible}
-      title={'sql审核信息结果'}
-      onClose={closeModal}
-      placement="right"
-    >
-      这里是审核等级的内容
-      {visible}
-      {selectedData?.id}
-    </BasicDrawer>
+    <>
+      <ReportDrawer
+        open={visible}
+        title={t('sqlManagement.table.statusReport.title')}
+        data={{
+          auditResult: selectedData?.audit_result ?? [],
+          sql: selectedData?.sql_fingerprint ?? ''
+        }}
+        onClose={closeModal}
+      />
+    </>
   );
 };
 
