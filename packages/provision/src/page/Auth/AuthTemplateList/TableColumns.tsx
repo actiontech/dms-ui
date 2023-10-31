@@ -11,6 +11,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IconAuthTemplateName } from '../../../icon/AuthTemplate';
 import Icon from '@ant-design/icons';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export const AuthTemplateListTableColumns: (
   projectID: string
@@ -19,12 +20,11 @@ export const AuthTemplateListTableColumns: (
     title: t('auth.template.columns.name'),
     dataIndex: 'name',
     render: (name: string) => {
-      //todo: wait for common wrapper merge in main-ee
       return (
-        <Space align="center">
+        <TableColumnWithIconStyleWrapper>
           <Icon component={IconAuthTemplateName} />
           <span>{name ?? '-'}</span>
-        </Space>
+        </TableColumnWithIconStyleWrapper>
       );
     }
   },

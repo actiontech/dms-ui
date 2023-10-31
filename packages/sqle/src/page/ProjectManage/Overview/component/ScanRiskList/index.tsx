@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 import { Typography } from 'antd5';
 import ChartWrapper from '../../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../../components/CardWrapper';
@@ -9,15 +8,14 @@ import { BasicButton } from '@actiontech/shared';
 import TableTopList, {
   ITableTopList
 } from '../../../../../components/ChartCom/TableTopList';
-import { Link } from '../../../../../components/Link';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IcoScanId } from '../../../../../icon/Scan';
-import { OrderIdStyleWrapper } from '../../../../../style/order';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const ScanRiskList = () => {
   const { t } = useTranslation();
@@ -59,17 +57,17 @@ const ScanRiskList = () => {
         render: (name: string, record: IRiskAuditPlan) => {
           if (!name) return '-';
           return (
-            <OrderIdStyleWrapper>
+            <TableColumnWithIconStyleWrapper>
               <span>
                 <IcoScanId />
               </span>
               <Link
                 data-testid="report-time"
-                to={`project/${projectID}/auditPlan/detail/${record.audit_plan_name}/report/${record.audit_plan_report_id}`}
+                to={`/sqle/project/${projectID}/auditPlan/detail/${record.audit_plan_name}/report/${record.audit_plan_report_id}`}
               >
                 {name}
               </Link>
-            </OrderIdStyleWrapper>
+            </TableColumnWithIconStyleWrapper>
           );
         }
       },

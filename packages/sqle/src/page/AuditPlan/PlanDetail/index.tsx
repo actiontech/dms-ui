@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { useBack } from '@actiontech/shared/lib/hooks';
 import { message } from 'antd5';
+import { useNavigate } from 'react-router-dom';
 
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { PlanDetailRowStyleWrapper } from './style';
@@ -20,16 +20,15 @@ import EventEmitter from '../../../utils/EventEmitter';
 
 const PlanDetail = () => {
   const { t } = useTranslation();
-
-  const { goBack } = useBack();
+  const navigater = useNavigate();
 
   const urlParams = useParams<PlanDetailUrlParams>();
-  const { projectName, projectArchive } = useCurrentProject();
+  const { projectName, projectArchive, projectID } = useCurrentProject();
   const [auditLoading, setAuditLoading] = useState(false);
   const [messageApi, contextMessageHolder] = message.useMessage();
 
   const onSkipList = () => {
-    goBack();
+    navigater(`/sqle/project/${projectID}/auditPlan`);
   };
 
   const onAudit = () => {
