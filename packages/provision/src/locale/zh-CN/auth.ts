@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
+  noData: '暂无数据',
   list: {
     title: '授权清单'
   },
@@ -97,6 +98,7 @@ export default {
   updateExpirationExtra: '说明：续期指在当前时间基础上增加有效期时间',
   updateTemplateSuccess: '更新成功',
   editTemplate: {
+    extraEmptyTips: '您还没有为当前模板添加数据权限',
     addTitle: '添加权限模板',
     detailTitle: '权限模板详情',
     addSuccessTips: '模板"{{name}}"添加成功！',

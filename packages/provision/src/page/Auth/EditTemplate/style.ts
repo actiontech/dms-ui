@@ -39,3 +39,37 @@ export const AuthTemplateFormStyleWrapper = styled('div')`
     }
   }
 `;
+
+export const EditAuthTemplateStyleWrapper = styled('section')`
+  .table-toolbar-title {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .${ANTD_PREFIX_STR}-empty.is-icon-tips {
+    .${ANTD_PREFIX_STR}-empty-description .no-data-cont {
+      color: ${({ theme }) =>
+        theme.sharedTheme.components.basicEmpty.title.color};
+      font-size: ${({ theme }) =>
+        theme.sharedTheme.components.basicEmpty.title.fontSize};
+      font-weight: ${({ theme }) =>
+        theme.sharedTheme.components.basicEmpty.title.fontWeight};
+    }
+
+    .${ANTD_PREFIX_STR}-empty-footer {
+      margin-top: 0;
+
+      .${ANTD_PREFIX_STR}-typography.extra-tips {
+        color: ${({ theme }) =>
+          theme.sharedTheme.components.basicEmpty.info.color};
+        font-size: ${({ theme }) =>
+          theme.sharedTheme.components.basicEmpty.info.fontSize};
+        font-weight: ${({ theme }) =>
+          theme.sharedTheme.components.basicEmpty.info.fontWeight};
+        margin-bottom: 16px;
+      }
+    }
+  }
+`;
