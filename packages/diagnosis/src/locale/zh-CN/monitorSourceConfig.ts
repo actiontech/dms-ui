@@ -20,6 +20,8 @@ export default {
     dataSourceName: '数据源名',
     databaseIp: '数据库IP',
     databasePort: '数据库端口',
+    databaseType: '数据库类型',
+    creationTime: '创建时间',
     addDatabaseMonitorSource: '添加数据库监控源',
     updateDatabaseMonitorSource: '修改数据库监控源',
     addDatabaseMonitorSourceTip: '添加数据库监控源{{name}}成功！',
