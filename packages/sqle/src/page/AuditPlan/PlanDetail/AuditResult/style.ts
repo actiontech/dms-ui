@@ -22,7 +22,7 @@ export const AuditResultStyleWrapper = styled('section')`
       font-size: 16px;
       font-weight: 600;
       line-height: 24px;
-      color: #292c33;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
     }
 
     .refresh-icon {
