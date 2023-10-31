@@ -9,6 +9,10 @@ import { AuthRouterConfig as ProvisionAuthRouterConfig } from 'provision/src/rou
 import { projectDetailRouterConfig } from 'sqle/src/router/config';
 /* FITRUE_isSQLE */
 
+/* IFTRUE_isDIAGNOSIS */
+import { DiagnosisRouterConfig } from 'diagnosis/src/router/router';
+/* FITRUE_isDIAGNOSIS */
+
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
@@ -258,6 +262,14 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   },
   /* FITRUE_isPROVISION */
 
+  /* IFTRUE_isDIAGNOSIS */
+  {
+    path: 'diagnosis/project/*',
+    key: 'diagnosis',
+    element: <ProjectDetail />,
+    children: DiagnosisRouterConfig
+  },
+  /* FITRUE_isDIAGNOSIS */
   {
     path: '*',
     hideInMenu: true,

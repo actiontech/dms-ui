@@ -20,8 +20,10 @@ export default defineConfig((config) => {
   const isPROVISION = buildTypes.includes('PROVISION');
   const isONLY_SQLE = isSQLE && !isPROVISION;
 
+  const isDIAGNOSIS = buildTypes.includes('DIAGNOSIS');
+
   const genTitle = () => {
-    if (isSQLE && isPROVISION) {
+    if (isSQLE && isPROVISION && isDIAGNOSIS) {
       return 'DMS';
     }
 
@@ -33,6 +35,10 @@ export default defineConfig((config) => {
       return 'provision';
     }
 
+    if (isDIAGNOSIS) {
+      return 'Diagnosis';
+    }
+
     return 'DMS';
   };
 
@@ -41,7 +47,7 @@ export default defineConfig((config) => {
   return {
     plugins: [
       vitePluginConditionalCompile({
-        expand: { isCE, isEE, isSQLE, isPROVISION, isONLY_SQLE }
+        expand: { isCE, isEE, isSQLE, isPROVISION, isONLY_SQLE, isDIAGNOSIS }
       }),
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
@@ -74,13 +80,14 @@ export default defineConfig((config) => {
         ignored: [
           '!**/node_modules/sqle/**',
           '!**/node_modules/provision/**',
+          '!**/node_modules/diagnosis/**',
           '!**/node_modules/@actiontech/shared/**'
         ]
       },
       host: '0.0.0.0',
       open: true,
       proxy: {
-        '^(/v|/sqle/v|/provision/v)': {
+        '^(/v|/sqle/v|/provision/v|/diagno/v)': {
           target: 'http://10.186.62.13:27601'
         }
       },

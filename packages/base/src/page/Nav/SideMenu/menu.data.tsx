@@ -16,7 +16,8 @@ import {
   IconAuditPlan,
   IconPermissionGroup,
   IconPermissionTemplate,
-  IconAuthList
+  IconAuthList,
+  IconInspectionAndDiagnosis
 } from '../../../icon/sideMenu';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { MenuProps } from 'antd5';
@@ -240,8 +241,27 @@ export const sideMenuData: (
         //   icon: <Icon component={IconPermissionOrder} />
         // }
       ]
-    }
+    },
     /* FITRUE_isPROVISION */
+
+    /* IFTRUE_isDIAGNOSIS */
+    {
+      type: 'divider'
+    },
+    {
+      type: 'group',
+      label: t('dmsMenu.inspectionAndDiagnosis'),
+      children: [
+        {
+          label: t('dmsMenu.monitorSourceConfig'),
+          key: `diagnosis/project/${menuDataPlaceholderKey}/monitorSourceConfig`,
+          icon: <Icon component={IconInspectionAndDiagnosis} />,
+          onClick: () =>
+            navigate(`/diagnosis/project/${projectID}/monitorSourceConfig`)
+        }
+      ]
+    }
+    /* FITRUE_isDIAGNOSIS */
   ];
 
   if (!isAdmin) {
