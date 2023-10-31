@@ -92,7 +92,9 @@ export default {
 
   create: {
     success: '工单创建成功',
-    guide: '去工单列表查看刚刚创建的工单'
+    guide: '去工单列表查看刚刚创建的工单',
+    cloneOrder: '克隆工单',
+    viewOrderDetail: '查看工单详情'
   },
 
   baseInfo: {

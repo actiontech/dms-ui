@@ -92,20 +92,12 @@ const useInstance = () => {
     });
   }, [instanceList]);
 
-  const instanceOptionsNoGroup = useMemo(() => {
-    return instanceList.map((v) => ({
-      value: v.instance_name,
-      label: `${v.instance_name}(${v.host}:${v.port})`
-    }));
-  }, [instanceList]);
-
   return {
     instanceList,
     loading,
     updateInstanceList,
     generateInstanceSelectOption,
-    instanceOptions,
-    instanceOptionsNoGroup
+    instanceOptions
   };
 };
 

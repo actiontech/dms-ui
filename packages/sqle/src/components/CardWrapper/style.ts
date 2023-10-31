@@ -15,8 +15,9 @@ export const CardWrapperStyleWrapper = styled(Card)`
     align-items: center;
     height: 48px;
     line-height: 48px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+    border-bottom: 1px solid
+      ${({ theme }) =>
+        theme.sqleTheme.reportStatistics.CardWrapper.titleBorderColor};
 
     .title {
       display: flex;
@@ -24,6 +25,8 @@ export const CardWrapperStyleWrapper = styled(Card)`
 
       .title-cont {
         font-size: 14px;
+        color: ${({ theme }) =>
+          theme.sqleTheme.reportStatistics.CardWrapper.titleColor};
       }
 
       .icon-tip {
@@ -40,7 +43,7 @@ export const CardWrapperStyleWrapper = styled(Card)`
   }
 
   .card-cont {
-    padding-top: 10px;
+    padding-top: 20px;
     height: calc(100% - 40px);
   }
 `;
