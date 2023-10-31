@@ -20,7 +20,7 @@ export default {
     mustAuditTips: '您必须先对您的SQL进行审核才能进行创建工单',
     mustHaveAuditResultTips: '不能对审核结果为空的SQL进行创建工单',
     inDifferenceSqlModeShouldAuditAllInstance:
-      '在不同sql语句模式下, 需审核所有数据源后才能创建工单!',
+      '在不同SQL语句模式下, 需审核所有数据源后才能创建工单!',
     workflowNameRule: '只能包含字母、数字、中文、中划线和下划线',
     addDataSourceTips: '请选择数据源',
 
@@ -236,7 +236,7 @@ export default {
       cancelExecScheduled: '取消定时上线',
       cancelExecScheduledTips: '取消定时上线成功',
       sqlExecuteConfirmTips:
-        '当前操作将立即执行该数据源上的sql语句, 是否确认立即上线'
+        '当前操作将立即执行该数据源上的SQL语句, 是否确认立即上线'
     }
   },
   paginationDisplay: '分页展示',
