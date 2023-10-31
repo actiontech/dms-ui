@@ -19,6 +19,7 @@ import EmitterKey from '../../data/EmitterKey';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { MonitorSourceConfigTypeEnum } from './index.type';
 import ServerMonitor from './components/ServerMonitor';
+import DatabaseMonitor from './components/DatabaseMonitor';
 
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();
@@ -36,6 +37,7 @@ const MonitorSourceConfig: React.FC = () => {
 
   const onChange = (key: SegmentedValue) => {
     setListType(key as MonitorSourceConfigTypeEnum);
+    setSearchValue(undefined);
   };
 
   const onAddMonitorSource = (type: MonitorSourceConfigTypeEnum) => {
@@ -60,7 +62,12 @@ const MonitorSourceConfig: React.FC = () => {
         />
       );
     }
-    return null;
+    return (
+      <DatabaseMonitor
+        setLoading={setTableLoading}
+        searchValue={searchValue ?? ''}
+      />
+    );
   };
 
   const onRefreshTable = () => {
@@ -99,6 +106,7 @@ const MonitorSourceConfig: React.FC = () => {
         refreshButton={{ refresh: onRefreshTable, disabled: tableLoading }}
         searchInput={{
           placeholder: t('common.actiontechTable.searchInput.placeholder'),
+          value: searchValue,
           onSearch: (value) => {
             setSearchValue(value);
           }

@@ -18,6 +18,7 @@ import {
   updateMonitorSourceConfigModalStatus,
   updateSelectDatabaseMonitorData
 } from '../../../../store/monitorSourceConfig';
+import DatabaseMonitorModal from './components/Modal';
 
 interface IDatabaseMonitorProps {
   setLoading: (loading: boolean) => void;
@@ -105,6 +106,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
         onChange={tableChange}
         actions={!projectArchive ? actions : undefined}
       />
+      <DatabaseMonitorModal />
     </>
   );
 };

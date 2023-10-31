@@ -1,26 +1,19 @@
 import { BasicInput, BasicInputNumber, BasicSelect } from '@actiontech/shared';
 import { Form, FormInstance } from 'antd5';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import useDbService from '../../../../../../../../../base/src/hooks/useDbService';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 
 interface IServerMonitorFormProps {
   form: FormInstance;
-  project_uid: string;
+  dbServiceOption: React.ReactNode;
 }
 
 const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
   form,
-  project_uid
+  dbServiceOption
 }) => {
   const { t } = useTranslation();
-
-  const { updateDbServiceList, generateDbServiceSelectOption } = useDbService();
-
-  useEffect(() => {
-    updateDbServiceList(project_uid);
-  }, [project_uid, updateDbServiceList]);
 
   return (
     <>
@@ -57,7 +50,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
             optionFilterProp="children"
             filterOption={filterOptionByLabel}
           >
-            {generateDbServiceSelectOption()}
+            {dbServiceOption}
           </BasicSelect>
         </Form.Item>
         <Form.Item
@@ -86,7 +79,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
             }
           ]}
         >
-          <BasicInputNumber />
+          <BasicInputNumber placeholder={t('common.form.placeholder.input')} />
         </Form.Item>
       </Form>
     </>
