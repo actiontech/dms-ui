@@ -101,11 +101,6 @@ const EditTemplate = () => {
     setIsUpdated(true);
     toggleModal(name, true);
   };
-  useEffect(() => {
-    initModalStatus({
-      [ModalName.DataPermissionModal]: false
-    });
-  }, [initModalStatus]);
 
   const [dataPermissions, setDataPermissions] = useState<
     IDataPermissionsTable[]
@@ -157,11 +152,15 @@ const EditTemplate = () => {
     }
   };
 
-  const editTemplate = (index: number) => {
+  const editTemplate = (index?: number) => {
+    if (!index) return;
+
     setEditIndex(index);
     openModal(ModalName.DataPermissionModal);
   };
-  const removeTemplate = (index: number) => {
+  const removeTemplate = (index?: number) => {
+    if (!index) return dataPermissions[0];
+
     const data = cloneDeep(dataPermissions);
     const removed = data.splice(index, 1);
     setDataPermissions(data);
@@ -174,6 +173,12 @@ const EditTemplate = () => {
   };
 
   const [isUpdated, setIsUpdated] = useState<boolean>(false);
+
+  useEffect(() => {
+    initModalStatus({
+      [ModalName.DataPermissionModal]: false
+    });
+  }, [initModalStatus]);
 
   useEffect(() => {
     const beforeunload = (e: any) => {

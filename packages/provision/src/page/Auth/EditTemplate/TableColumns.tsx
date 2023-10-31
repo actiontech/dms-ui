@@ -45,8 +45,8 @@ export const AuthTableColumns =
   };
 
 export const AuthTableActions = (
-  onEditAuth: (index: number) => void,
-  onRemoveAuth: (index: number) => IDataPermissionsTable
+  onEditAuth: (index?: number) => void,
+  onRemoveAuth: (index?: number) => IDataPermissionsTable
 ): ActiontechTableActionMeta<IDataPermissionsTable>[] => {
   return [
     {
@@ -54,7 +54,7 @@ export const AuthTableActions = (
       text: t('common.edit'),
       buttonProps: (record) => {
         return {
-          onClick: onEditAuth.bind(null, record?.index ?? 0)
+          onClick: onEditAuth.bind(null, record?.index)
         };
       }
     },
@@ -64,7 +64,7 @@ export const AuthTableActions = (
       buttonProps: (record) => {
         return {
           danger: true,
-          onClick: onRemoveAuth.bind(null, record?.index ?? 0)
+          onClick: onRemoveAuth.bind(null, record?.index)
         };
       }
     }
