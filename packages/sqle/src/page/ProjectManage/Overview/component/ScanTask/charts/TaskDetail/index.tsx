@@ -52,7 +52,7 @@ const TaskDetail = (props: ITaskDetail) => {
     autoFit: true,
     appendPadding: 20,
     angleField: 'value', // 数据值字段
-    colorField: 'name',
+    colorField: 'desc',
     color: sqleTheme.statistics.rectColor,
     radius: 0.9,
     innerRadius: 0.8,

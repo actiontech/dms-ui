@@ -39,7 +39,7 @@ const BarChat = memo(
         yAxis: false,
         xAxis: false,
         legend: false,
-        appendPadding: [10, 0, 20, 0],
+        appendPadding: [0, 0, 20, 0],
         minBarWidth: 28,
         maxBarWidth: 28,
         barStyle: {

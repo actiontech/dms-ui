@@ -129,7 +129,8 @@ const SqlCount = () => {
         }}
       >
         <ChartContTitle
-          mainText={renderToolTip(totalData.risk_sql_count)}
+          clearMainTextMargin
+          mainText={renderToolTip(`${totalData.risk_sql_count} `)}
           mainSubText={renderToolTip(`/ ${totalData.total_sql_count}`)}
           noteText={t('projectManage.projectOverview.sqlCount.riskSQL')}
         />

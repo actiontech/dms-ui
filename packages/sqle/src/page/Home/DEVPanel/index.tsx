@@ -16,7 +16,7 @@ import { useRequest } from 'ahooks';
 import { BasicSegmented } from '@actiontech/shared';
 import {
   DashboardCommonListStyleWrapper,
-  NoBorderedPageHeaderWrapper,
+  NoBorderedPageHeaderStyleWrapper,
   TableTitleStyleWrapper
 } from '../CommonTable/style';
 import { IconMyOrderList } from '../../../icon/Dashboard';
@@ -79,17 +79,14 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
 
   return (
     <DashboardCommonListStyleWrapper>
-      <NoBorderedPageHeaderWrapper>
+      <NoBorderedPageHeaderStyleWrapper>
         <TableTitleStyleWrapper>
           <IconMyOrderList />
           {t('dashboard.title.myOrderSituation')}
         </TableTitleStyleWrapper>
-      </NoBorderedPageHeaderWrapper>
+      </NoBorderedPageHeaderStyleWrapper>
 
-      <CustomToolbar
-        loading={loading}
-        refreshButton={{ refresh, disabled: loading }}
-      >
+      <CustomToolbar refreshButton={{ refresh, disabled: loading }}>
         <BasicSegmented
           options={[
             {
