@@ -143,7 +143,7 @@ export const RuleTemplateTableColumn: (
       title: () => t('ruleTemplate.ruleTemplateList.table.desc'),
       className: 'ellipsis-column-width',
       render: (desc: string) => {
-        if (!desc) return '';
+        if (!desc) return '-';
         return <BasicTypographyEllipsis textCont={desc} />;
       }
     },
@@ -152,7 +152,7 @@ export const RuleTemplateTableColumn: (
       title: () => t('ruleTemplate.ruleTemplateList.table.dbType'),
       render(type: string) {
         if (!type) {
-          return '--';
+          return '-';
         }
         return <DatabaseTypeLogo dbType={type} />;
       }

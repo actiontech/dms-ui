@@ -10,6 +10,7 @@ interface IChartTitle {
   noteSubStyleAttr?: CSSProperties;
   mainSubStyleAttr?: CSSProperties;
   style?: CSSProperties;
+  clearMainTextMargin?: boolean;
 }
 
 const ChartContTitle = (props: IChartTitle) => {
@@ -21,11 +22,15 @@ const ChartContTitle = (props: IChartTitle) => {
     noteSubText,
     noteSubStyleAttr,
     mainSubStyleAttr,
+    clearMainTextMargin = false,
     style
   } = props;
 
   return (
-    <ChartContTitleStyleWrapper style={style}>
+    <ChartContTitleStyleWrapper
+      clearMainTextMargin={clearMainTextMargin}
+      style={style}
+    >
       <div
         className="line-block"
         hidden={!color}

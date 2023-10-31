@@ -57,7 +57,7 @@ const DetailReport = () => {
   const urlParams = useParams<AuditPlanReportUrlParams>();
   const { projectID, projectName } = useCurrentProject();
   const navigate = useNavigate();
-  const [downloadLoading, setDownloadLoading] = useState(false); // 待处理
+  // const [downloadLoading, setDownloadLoading] = useState(false); // 待处理
   const dispatch = useDispatch();
 
   const {
@@ -235,9 +235,9 @@ const DetailReport = () => {
   };
 
   // todo: 下载的功能
-  const onDownload = () => {
-    setDownloadLoading(true);
-  };
+  // const onDownload = () => {
+  //   setDownloadLoading(true);
+  // };
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>

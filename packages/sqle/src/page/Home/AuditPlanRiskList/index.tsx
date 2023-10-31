@@ -36,10 +36,7 @@ const AuditPlanRiskList: React.FC<IAuditPlanRiskProps> = ({
 
   return (
     <>
-      <CustomToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        loading={loading}
-      >
+      <CustomToolbar refreshButton={{ refresh, disabled: loading }}>
         <TableTitleStyleWrapper>
           <IconAuditPlanTaskList />
           {t('dashboard.title.auditPlanRisk')}
