@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import baseZhCN from './packages/base/src/locale/zh-CN';
 import commonZhCN from './packages/shared/lib/locale/zh-CN';
 import provisionZhCN from './packages/provision/src/locale/zh-CN';
+import diagnosisZhCN from './packages/diagnosis/src/locale/zh-CN';
 import TestMockApi from './packages/shared/lib/testUtil/mockApi';
 import Adapter from '@cfaester/enzyme-adapter-react-18';
 import * as Enzyme from 'enzyme';
@@ -14,6 +15,7 @@ Enzyme.configure({ adapter: new Adapter() });
 const isSqle = !!(global as any).IS_SQLE;
 const isProvision = !!(global as any).IS_PROVISION;
 const isBase = !!(global as any).IS_BASE;
+const isDiagnosis = !!(global as any).IS_DIAGNOSIS;
 
 Object.defineProperty(global, 'matchMedia', {
   writable: true,
@@ -38,7 +40,8 @@ i18n.use(initReactI18next).init({
           translation: {
             ...baseZhCN.translation,
             ...commonZhCN.translation,
-            ...provisionZhCN.translation
+            ...provisionZhCN.translation,
+            ...diagnosisZhCN.translation
           }
         }
   },
@@ -51,7 +54,7 @@ i18n.use(initReactI18next).init({
 
 jest.setTimeout(60 * 1000);
 
-if (isProvision || isBase) {
+if (isProvision || isBase || isDiagnosis) {
   (globalThis as any).ASYNC_VALIDATOR_NO_WARNING = 1;
 } else {
   (globalThis as any).ASYNC_VALIDATOR_NO_WARNING = undefined;
