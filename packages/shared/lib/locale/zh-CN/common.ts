@@ -212,7 +212,8 @@ export default {
     setting: {
       buttonText: '表格设置',
       fixedLeft: '固定在左侧',
-      fixedRight: '固定在右侧'
+      fixedRight: '固定在右侧',
+      noFixed: '不固定'
     },
     filterContainer: {
       rangePickerPlaceholderStart: '开始时间',
