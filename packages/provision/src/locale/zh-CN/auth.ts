@@ -9,7 +9,7 @@ export default {
     columns: {
       name: '权限模版名称',
       template_details: '数据权限',
-      authorization_purpose: '被授权于'
+      authorization_purpose: '关联的授权清单'
     }
   },
   columns: {
