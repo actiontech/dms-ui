@@ -20,6 +20,7 @@ import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IOperationInfo } from '@actiontech/shared/lib/api/provision/service/common';
 import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { ConsolidatedListStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { Spin } from 'antd5';
 export interface IOperationData extends IOperationInfo {
   uid?: string;
   name?: string;
@@ -28,17 +29,8 @@ export interface IOperationData extends IOperationInfo {
 const Operation = () => {
   const { t } = useTranslation();
 
-  const {
-    tableFilterInfo,
-    updateTableFilterInfo,
-    sortInfo,
-    createSortParams,
-    tableChange,
-    pagination
-  } = useTableRequestParams<
-    IOperationData,
-    OperationListTableFilterParamType
-  >();
+  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
+    useTableRequestParams<IOperationData, OperationListTableFilterParamType>();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -52,13 +44,12 @@ const Operation = () => {
         ...pagination,
         keyword: searchKeyword
       };
-      // TODO: sort params可能会移除，待后端更新结论。issue：http://10.186.18.11/jira/browse/DMS-556
-      createSortParams(params);
+      // PS: sort params移除，相关任务暂无排期。issue：http://10.186.18.11/jira/browse/DMS-556
 
       return handleTableRequestError(auth.AuthListDataOperationSets(params));
     },
     {
-      refreshDeps: [tableFilterInfo, sortInfo, pagination, searchKeyword]
+      refreshDeps: [tableFilterInfo, pagination, searchKeyword]
     }
   );
   const dataSource = useMemo(() => {
@@ -96,34 +87,36 @@ const Operation = () => {
   return (
     <ConsolidatedListStyleWrapper>
       <PageHeader title={t('operation.title')} />
-      <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onSearch
-        }}
-        loading={loading}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
-      <ActiontechTable
-        rowKey={(record: IOperationData) => `${record?.uid}-${record?.db_type}`}
-        dataSource={dataSource}
-        loading={loading}
-        columns={operationTableColumns()}
-        errorMessage={requestErrorMessage}
-        pagination={{
-          total: data?.total ?? 0
-        }}
-        onChange={tableChange}
-      />
+      <Spin spinning={loading}>
+        <TableToolbar
+          refreshButton={{ refresh, disabled: loading }}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          searchInput={{
+            onSearch
+          }}
+        />
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={loading}
+          filterCustomProps={filterCustomProps}
+        />
+        <ActiontechTable
+          rowKey={(record: IOperationData) =>
+            `${record?.uid}-${record?.db_type}`
+          }
+          dataSource={dataSource}
+          columns={operationTableColumns()}
+          errorMessage={requestErrorMessage}
+          pagination={{
+            total: data?.total ?? 0
+          }}
+          onChange={tableChange}
+        />
+      </Spin>
     </ConsolidatedListStyleWrapper>
   );
 };

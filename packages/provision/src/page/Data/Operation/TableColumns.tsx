@@ -6,11 +6,20 @@ import { BasicTag } from '@actiontech/shared';
 import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { AuthListDataOperationSetsFilterByDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
 
+/*
+ *PS：
+ * 没有使用PageInfoWithoutIndexAndSize<IAuthListDataOperationSetsParams>的原因：
+ * IAuthListDataOperationSetsParams里的page_index 是可选项，和TablePagination类型不匹配，期望后续后端可以修改。
+ */
+
 export type OperationListTableFilterParamType = Omit<
   IAuthListDataOperationSetsParams,
   'page_index' | 'page_size'
 >;
 
+/**
+ * dbType筛选项因后端不提供接口，故前端暂时写成固定选项
+ */
 export const dbTypeOptions = [
   {
     value: AuthListDataOperationSetsFilterByDbTypeEnum.MySQL,
@@ -34,7 +43,6 @@ export const operationTableColumns = (): ActiontechTableColumn<
       onCell: (record) => ({
         rowSpan: record.rowSpan
       }),
-      sorter: true,
       render: (name: string) => (
         <Typography.Text className="consolidated-column">
           {name}
