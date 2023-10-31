@@ -89,6 +89,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
           })
           .flat() ?? [];
       const curPermission = {
+        index: editIndex,
         business: res.business ?? '',
         serviceValue: res.service ?? '',
         objectsValue: res.data_objects,

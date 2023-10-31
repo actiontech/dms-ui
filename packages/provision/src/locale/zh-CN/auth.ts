@@ -103,6 +103,8 @@ export default {
     detailTitle: '权限模板详情',
     addSuccessTips: '模板"{{name}}"添加成功！',
     editSuccessTips: '模板"{{name}}"修改成功！',
+    removeConfirmTips: '是否确认删除当前数据权限信息?',
+    clearConfirmTips: '是否确认清除当前模板中的数据权限信息？',
     templateName: '数据权限模板名称',
     templateNamePlaceholder: '请输入权限模板名称',
     leaveTip: '离开该页面？系统可能不会保存您所做的更改。'

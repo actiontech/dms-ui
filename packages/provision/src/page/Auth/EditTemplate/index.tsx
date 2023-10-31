@@ -153,16 +153,13 @@ const EditTemplate = () => {
   };
 
   const editTemplate = (index?: number) => {
-    if (!index) return;
-
     setEditIndex(index);
     openModal(ModalName.DataPermissionModal);
   };
-  const removeTemplate = (index?: number) => {
-    if (!index) return dataPermissions[0];
-
+  const removeTemplate = (index: number) => {
     const data = cloneDeep(dataPermissions);
     const removed = data.splice(index, 1);
+
     setDataPermissions(data);
     setIsUpdated(true);
     return removed[0];
@@ -266,8 +263,11 @@ const EditTemplate = () => {
                     key: 'remove-all-permission',
                     text: t('auth.addAuth.baseForm.reset'),
                     buttonProps: {
-                      danger: true,
-                      onClick: removeAllTemplate
+                      danger: true
+                    },
+                    confirm: {
+                      title: t('auth.editTemplate.clearConfirmTips'),
+                      onConfirm: removeAllTemplate
                     }
                   },
                   {
@@ -294,16 +294,20 @@ const EditTemplate = () => {
           errorMessage={requestErrorMessage}
           locale={{
             emptyText: (
-              <BasicEmpty loading={getPermissionLoading}>
-                <Typography.Paragraph className="extra-tips">
-                  {t('auth.editTemplate.extraEmptyTips')}
-                </Typography.Paragraph>
-                <BasicButton
-                  type="primary"
-                  onClick={() => openModal(ModalName.DataPermissionModal)}
-                >
-                  {t('auth.button.addDataPermission')}
-                </BasicButton>
+              <BasicEmpty>
+                {!getPermissionLoading && (
+                  <>
+                    <Typography.Paragraph className="extra-tips">
+                      {t('auth.editTemplate.extraEmptyTips')}
+                    </Typography.Paragraph>
+                    <BasicButton
+                      type="primary"
+                      onClick={() => openModal(ModalName.DataPermissionModal)}
+                    >
+                      {t('auth.button.addDataPermission')}
+                    </BasicButton>
+                  </>
+                )}
               </BasicEmpty>
             )
           }}
