@@ -118,7 +118,7 @@ const ALL_TITLE = [
 ];
 
 export const DMS_DEFAULT_WEB_TITLE =
-  ALL_TITLE[0] ?? ALL_TITLE[1] ?? ALL_TITLE[2] ?? 'DMS';
+  ALL_TITLE[0] ?? ALL_TITLE[1] ?? ALL_TITLE[2] ?? ALL_TITLE[3] ?? 'DMS';
 
 export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';
