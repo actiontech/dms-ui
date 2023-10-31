@@ -7,11 +7,13 @@ import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 type SqleManagementState = {
   modalStatus: ModalStatus;
   selectSqleManagement: null | ISqlManage;
+  selectSqlIdList: ISqlManage[] | null;
 };
 
 const initialState: SqleManagementState = {
   modalStatus: {},
-  selectSqleManagement: null
+  selectSqleManagement: null,
+  selectSqlIdList: null
 };
 
 const sqleManagement = createSlice({
@@ -24,6 +26,12 @@ const sqleManagement = createSlice({
       { payload: selectedData }: PayloadAction<null | ISqlManage>
     ) => {
       state.selectSqleManagement = selectedData;
+    },
+    updateSqlIdList: (
+      state,
+      { payload: sqlIdList }: PayloadAction<null | ISqlManage[]>
+    ) => {
+      state.selectSqlIdList = sqlIdList;
     }
   }
 });
@@ -31,7 +39,8 @@ const sqleManagement = createSlice({
 export const {
   initModalStatus: initSqleManagementModalStatus,
   updateModalStatus: updateSqleManagementModalStatus,
-  updateSqleManagement
+  updateSqleManagement,
+  updateSqlIdList
 } = sqleManagement.actions;
 
 export default sqleManagement.reducer;

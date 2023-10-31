@@ -35,10 +35,11 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
     background: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
   }
 
+  // todo: color 属性若与当前 antd tag color 定义颜色重复，需要覆盖颜色 -> color: gray
   &.basic-tag-wrapper.${ANTD_PREFIX_STR}-tag:not(.basic-default-tag-wrapper) {
     color: ${({ color, theme }) =>
-      theme.sharedTheme.components.basicTag[color].color};
+      theme.sharedTheme.components.basicTag[color].color} !important;
     background: ${({ color, theme }) =>
-      theme.sharedTheme.components.basicTag[color].backgroundColor};
+      theme.sharedTheme.components.basicTag[color].backgroundColor} !important;
   }
 `;

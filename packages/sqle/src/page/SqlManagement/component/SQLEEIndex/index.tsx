@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { BasicButton, PageHeader } from '@actiontech/shared';
@@ -43,7 +42,8 @@ import useStaticStatus from './hooks/useStaticStatus';
 import {
   initSqleManagementModalStatus,
   updateSqleManagement,
-  updateSqleManagementModalStatus
+  updateSqleManagementModalStatus,
+  updateSqlIdList
 } from '../../../../store/sqleManagement';
 import { ModalName } from '../../../../data/ModalName';
 import { TableRowSelection } from 'antd5/es/table/interface';
@@ -59,7 +59,6 @@ const SQLEEIndex = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
 
   // api
-  // todo: 接口联调
   const { projectID, projectName } = useCurrentProject();
   const { isAdmin, username, isProjectManager, uid } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
@@ -76,8 +75,7 @@ const SQLEEIndex = () => {
     problemSQlNum: 0,
     optimizedSQLNum: 0
   });
-  // todo: 列表数据 与 统计数据是一起返回的
-  // filter_assignee 需要用 id
+
   const {
     data: sqlList,
     loading: getListLoading,
@@ -91,7 +89,7 @@ const SQLEEIndex = () => {
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
         project_name: projectName,
-        filter_assignee: isAssigneeSelf ? uid : undefined
+        filter_assignee: isAssigneeSelf ? uid : undefined // filter_assignee 需要用 id
       };
       return handleTableRequestError(SqlManage.GetSqlManageList(params));
     },
@@ -142,7 +140,6 @@ const SQLEEIndex = () => {
           status: true
         })
       );
-      console.log(name);
     },
     [dispatch]
   );
@@ -156,10 +153,16 @@ const SQLEEIndex = () => {
   }, [isAdmin, isProjectManager, projectName]);
   const { instanceOptions, updateInstanceList } = useInstance();
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
+  const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
+  const selectedRowKeysNum = useMemo(
+    () => selectedRowKeys.map((v) => Number(v)),
+    [selectedRowKeys]
+  );
 
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [projectName]);
 
   const updateRemarkProtect = useRef(false);
   const updateRemark = useCallback(
@@ -202,7 +205,6 @@ const SQLEEIndex = () => {
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
 
-  // todo: filter option data
   const filterCustomProps = useMemo(() => {
     return new Map<
       keyof (ISqlManage & {
@@ -228,8 +230,9 @@ const SQLEEIndex = () => {
 
   const rowSelection: TableRowSelection<ISqlManage> = {
     selectedRowKeys,
-    onChange: (selectedRowKeys) => {
-      setSelectedRowKeys(selectedRowKeys as number[]);
+    onChange: (selectedRowKeys, data) => {
+      setSelectedRowKeys(selectedRowKeys.filter((v) => v) as number[]);
+      setSelectedRowData(data);
     }
   };
 
@@ -246,7 +249,7 @@ const SQLEEIndex = () => {
     SqlManage.BatchUpdateSqlManage({
       project_name: projectName,
       status: BatchUpdateSqlManageReqStatusEnum.solved,
-      sql_manage_id_list: selectedRowKeys
+      sql_manage_id_list: selectedRowKeysNum
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -269,7 +272,7 @@ const SQLEEIndex = () => {
     SqlManage.BatchUpdateSqlManage({
       project_name: projectName,
       status: BatchUpdateSqlManageReqStatusEnum.ignored,
-      sql_manage_id_list: selectedRowKeys
+      sql_manage_id_list: selectedRowKeysNum
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -386,6 +389,8 @@ const SQLEEIndex = () => {
                           status: true
                         })
                       );
+                      // selectedRowData
+                      dispatch(updateSqlIdList(selectedRowData));
                     }
                   }
                 },

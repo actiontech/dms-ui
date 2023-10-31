@@ -3,7 +3,9 @@ export default {
   pageTitle: 'SQL管控',
   pageHeader: {
     action: {
-      export: '导出'
+      export: '导出',
+      exporting: '正在导出文件',
+      exportSuccessTips: '导出文件成功'
     }
   },
   statistics: {
@@ -27,7 +29,15 @@ export default {
       },
       single: {
         assignment: '指派负责人',
-        assignmentSuccessTips: '指派负责人成功'
+        assignmentSuccessTips: '指派负责人成功',
+        updateStatus: {
+          triggerText: '变更状态',
+          label: '当前SQL状态',
+          solve: '解决',
+          ignore: '忽略',
+          manualAudit: '人工审核',
+          signalUpdateStatusSuccessTips: '更新SQL状态成功'
+        }
       }
     },
     column: {
@@ -55,11 +65,16 @@ export default {
         apiAudit: 'SQL审核'
       },
       auditLevel: {
+        label: '最低审核等级',
         normal: '普通',
         error: '错误',
         warn: '告警',
         notice: '提示'
-      }
+      },
+      assignee: '与我相关'
+    },
+    statusReport: {
+      title: 'SQL审核结果'
     }
   }
 };
