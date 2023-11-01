@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useBoolean } from 'ahooks';
 import useCurrentProject from '../useCurrentProject';
 import dms from '../../api/base/service/dms';
@@ -49,6 +49,12 @@ const useDbServiceDriver = () => {
     },
     [driverMeta]
   );
+
+  useEffect(() => {
+    if (projectID) {
+      updateDriverNameList();
+    }
+  }, [projectID, updateDriverNameList]);
 
   return {
     driverNameList,
