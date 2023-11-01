@@ -90,11 +90,12 @@ export const OrderStateBarStyleWrapper = styled('section')`
           line-height: 20px;
           color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
           font-size: 12px;
+          white-space: nowrap;
         }
 
         .state-item-cont {
           display: flex;
-          align-items: center;
+          align-items: end;
           line-height: 24px;
           padding-bottom: 12px;
 
@@ -110,6 +111,7 @@ export const OrderStateBarStyleWrapper = styled('section')`
             margin-left: 4px;
             font-size: 12px;
             font-weight: 600;
+            line-height: 19px;
           }
         }
       }

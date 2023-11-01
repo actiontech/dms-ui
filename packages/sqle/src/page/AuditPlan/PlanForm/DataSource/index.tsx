@@ -56,7 +56,7 @@ const DataSource = (props: DataSourceProps) => {
   const {
     loading: getInstanceListLoading,
     updateInstanceList,
-    instanceOptionsNoGroup
+    instanceOptions
   } = useInstance();
 
   const handleDataSourceChange = (dataSource: string) => {
@@ -152,8 +152,8 @@ const DataSource = (props: DataSourceProps) => {
           disabled={submitLoading}
           onChange={handleDataSourceChange}
           placeholder={t('common.form.placeholder.select')}
-          options={instanceOptionsNoGroup}
-        ></BasicSelect>
+          options={instanceOptions}
+        />
       </FormItemLabel>
       <FormItemLabel
         label={t('auditPlan.planForm.dataSource.schema')}
