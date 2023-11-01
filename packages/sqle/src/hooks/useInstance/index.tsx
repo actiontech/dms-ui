@@ -51,7 +51,12 @@ const useInstance = () => {
       return instanceTypeList.map((type) => {
         return (
           <Select.OptGroup
-            label={<DatabaseTypeLogo dbType={type} />}
+            label={
+              <DatabaseTypeLogo
+                dbType={type}
+                logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+              />
+            }
             key={type}
           >
             {filterInstanceList
@@ -81,7 +86,12 @@ const useInstance = () => {
     );
     return instanceTypeList.map((type) => {
       return {
-        label: <DatabaseTypeLogo dbType={type} />,
+        label: (
+          <DatabaseTypeLogo
+            dbType={type}
+            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+          />
+        ),
         options: instanceList
           .filter((v) => v.instance_type === type)
           .map((v) => ({

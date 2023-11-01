@@ -45,7 +45,11 @@ const useDatabaseType = () => {
       return (
         <Select.Option key={v.db_type} value={v.db_type}>
           {/* todo: logoUrl={v.logo_path} 由于后端接口问题，先使用sqle的图标 */}
-          <DatabaseTypeLogo dbType={v.db_type ?? ''} />
+          <DatabaseTypeLogo
+            dbType={v.db_type ?? ''}
+            logoUrl={''}
+            // logoUrl={v.logo_path ?? ''}
+          />
         </Select.Option>
       );
     });

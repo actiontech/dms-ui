@@ -154,7 +154,12 @@ export const RuleTemplateTableColumn: (
         if (!type) {
           return '--';
         }
-        return <DatabaseTypeLogo dbType={type} />;
+        return (
+          <DatabaseTypeLogo
+            dbType={type}
+            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+          />
+        );
       }
     }
   ];
