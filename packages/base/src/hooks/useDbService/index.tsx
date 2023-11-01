@@ -1,6 +1,7 @@
 import React from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd5';
+import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
@@ -12,6 +13,7 @@ const useDbService = () => {
   );
 
   const [loading, { setTrue, setFalse }] = useBoolean();
+  const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const updateDbServiceList = React.useCallback(
     (project_uid: string) => {
@@ -45,7 +47,12 @@ const useDbService = () => {
     return dbTypeList.map((type) => {
       return (
         <Select.OptGroup
-          label={<DatabaseTypeLogo dbType={type ?? ''} logoUrl={''} />}
+          label={
+            <DatabaseTypeLogo
+              dbType={type ?? ''}
+              logoUrl={getLogoUrlByDbType(type ?? '')}
+            />
+          }
           key={type}
         >
           {dbServiceList
@@ -70,7 +77,7 @@ const useDbService = () => {
         </Select.OptGroup>
       );
     });
-  }, [dbServiceList]);
+  }, [dbServiceList, getLogoUrlByDbType]);
 
   return {
     dbServiceList,
