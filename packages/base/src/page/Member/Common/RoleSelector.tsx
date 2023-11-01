@@ -87,9 +87,8 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                     onClick={() => {
                       remove(index);
                     }}
-                  >
-                    <IconFormListDelete />
-                  </DrawerFormIconWrapper>
+                    icon={<IconFormListDelete />}
+                  />
                 </Form.Item>
               </Col>
             </Row>
