@@ -7,7 +7,8 @@ export default {
     },
     filter: {
       instanceName: '数据源',
-      auditTime: '审核时间'
+      auditTime: '审核时间',
+      inputTagPlaceholder: '请输入业务标签搜索'
     },
     status: {
       auditStatus: {
