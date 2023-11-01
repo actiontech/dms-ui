@@ -147,6 +147,12 @@ export const sideMenuData: (
           onClick: () => navigate(`/sqle/project/${projectID}/progress`)
         },
         {
+          label: t('dmsMenu.sqlAudit'),
+          key: `sqle/project/${menuDataPlaceholderKey}/sqlAudit`,
+          icon: <Icon component={IconSQLOrder} />, // todo: icon
+          onClick: () => navigate(`/sqle/project/${projectID}/sqlAudit`)
+        },
+        {
           label: t('dmsMenu.SQLOrder'),
           key: `sqle/project/${menuDataPlaceholderKey}/order`,
           icon: <Icon component={IconSQLOrder} />,

@@ -16,6 +16,7 @@ export default {
   ruleTemplate: '规则模板',
   whitelist: '白名单',
   workflowTemplate: '流程模板',
+  sqlAudit: 'SQL审核',
   SQLOrder: 'SQL工单',
   auditPlan: '扫描任务',
   permissionGroup: '权限组',
