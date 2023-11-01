@@ -21,6 +21,7 @@ import {
   IconFormListAdd,
   IconFormListDelete
 } from '@actiontech/shared/lib/Icon';
+
 import {
   DrawerFormIconWrapper,
   FormListAddButtonWrapper
@@ -285,13 +286,16 @@ const AddDataPermission: FC<IAddDataPermission> = ({
               </Form.Item>
             </Col>
             <Col flex={'48px'}>
-              {/*Todo: 遗留Icon禁用状态的颜色 */}
               <BasicToolTips title={t('dataObject.syncDataSource.button')}>
                 <DrawerFormIconWrapper
                   style={{ marginLeft: '12px' }}
                   onClick={handleSyncService}
                   disabled={!service || SyncService.loading}
-                  icon={<IconSyncDictionary />}
+                  icon={
+                    <IconSyncDictionary
+                      isNormal={!!service && !SyncService.loading}
+                    />
+                  }
                 />
               </BasicToolTips>
             </Col>
@@ -397,7 +401,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
 
         {duplicateError && (
           <Row>
-            <Col offset={7}>
+            <Col>
               <Typography.Text type="danger">
                 {t('auth.addAuth.baseForm.duplicateError')}
               </Typography.Text>

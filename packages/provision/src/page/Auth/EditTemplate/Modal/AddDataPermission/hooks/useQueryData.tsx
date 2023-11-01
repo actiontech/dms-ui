@@ -3,7 +3,10 @@ import { useRequest } from 'ahooks';
 import { Select, message as messageApi } from 'antd5';
 import qs from 'query-string';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../../locale';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
@@ -22,6 +25,7 @@ export const useQueryData = (
 ) => {
   const { projectID } = useCurrentProject();
   const [message, messageContextHolder] = messageApi.useMessage();
+  const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const { data: businessOptions, loading: businessOptionsLoading } = useRequest(
     () =>
@@ -51,7 +55,8 @@ export const useQueryData = (
         .then((res) => {
           return res.data.data?.map((item) => ({
             value: item.uid ?? '',
-            label: `${item.name}(${item.db_type})`
+            label: `${item.name}(${item.db_type})`,
+            type: item.db_type
           }));
         }),
     {
@@ -66,11 +71,14 @@ export const useQueryData = (
     return serviceOptions.map((v) => {
       return (
         <Select.Option key={v.value} value={v.value}>
-          <DatabaseTypeLogo dbType={v.label ?? ''} />
+          <DatabaseTypeLogo
+            dbType={v.label ?? ''}
+            logoUrl={getLogoUrlByDbType(v.type ?? '')}
+          />
         </Select.Option>
       );
     });
-  }, [serviceOptions]);
+  }, [getLogoUrlByDbType, serviceOptions]);
 
   const {
     data: databaseOptions,
