@@ -1,6 +1,6 @@
 import React from 'react';
 import { useBoolean } from 'ahooks';
-import DatabaseTypeLogo from 'sqle/src/components/DatabaseTypeLogo';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IDatabaseDriverOption } from '@actiontech/shared/lib/api/base/service/common';

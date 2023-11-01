@@ -7,7 +7,6 @@ import {
 import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';
-import DatabaseTypeLogo from '../../../components/DatabaseTypeLogo';
 import { Link } from 'react-router-dom';
 import {
   IconCloneRule,
@@ -16,6 +15,7 @@ import {
 } from '../../../icon/Rule';
 import { Space } from 'antd5';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 
 export type RuleTemplateTableParamType =
   PageInfoWithoutIndexAndSize<IGetProjectRuleTemplateListV1Params>;

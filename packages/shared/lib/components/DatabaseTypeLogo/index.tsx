@@ -1,17 +1,17 @@
-import './index.less';
+import { DatabaseTypeLogoStyleWrapper } from './style';
 
 const DatabaseTypeLogo: React.FC<{ dbType: string; logoUrl?: string }> = ({
   dbType,
   logoUrl
 }) => {
   return (
-    <div className="database-type-logo-wrapper">
+    <DatabaseTypeLogoStyleWrapper>
       <img
         src={logoUrl || `/sqle/v1/static/instance_logo?instance_type=${dbType}`}
         alt=""
       />
       <span title={dbType}>{dbType}</span>
-    </div>
+    </DatabaseTypeLogoStyleWrapper>
   );
 };
 export default DatabaseTypeLogo;

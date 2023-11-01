@@ -1,13 +1,12 @@
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import DatabaseTypeLogo from 'sqle/src/components/DatabaseTypeLogo';
 import { IListDatabaseSourceService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { NavigateFunction } from 'react-router-dom';
-import { BasicTag, BasicToolTips } from '@actiontech/shared';
+import { BasicTag, BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
 
 export const SyncTaskListActions: (params: {
   navigate: NavigateFunction;
