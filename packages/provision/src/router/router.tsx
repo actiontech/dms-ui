@@ -12,7 +12,8 @@ const EditTemplate = React.lazy(() => import('~/page/Auth/EditTemplate'));
 const ExternalDataSource = React.lazy(
   () => import('~/page/Data/ExternalDataSource')
 );
-const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
+// 重构中
+const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit1'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 const AuthAuditDetail = React.lazy(
