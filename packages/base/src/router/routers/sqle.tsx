@@ -3,7 +3,6 @@ import { lazy } from 'react';
 import { projectDetailRouterConfig } from 'sqle/src/router/config';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
-import { BaseRouterConfig } from './base';
 
 const ProjectDetail = lazy(() => import('../../page/Project/Detail'));
 
@@ -31,7 +30,6 @@ const UpdateCustomRule = lazy(
 const ReportStatistics = lazy(() => import('sqle/src/page/ReportStatistics'));
 
 export const SQLERouterConfig: RouterConfigItem[] = [
-  ...BaseRouterConfig,
   //====== 这部分路由为sqle特有的全局页面, 所以无法放在 projectDetailRouterConfig, 其内容为 sqle 中 globalRouterConfig 的展开项
   {
     path: 'sqle/reportStatistics',

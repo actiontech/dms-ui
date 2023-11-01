@@ -1,12 +1,15 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
+import { BaseRouterConfig } from './routers/base';
 
 /* IFTRUE_isSQLE */
 import { SQLERouterConfig } from './routers/sqle';
 /* FITRUE_isSQLE */
 
 export const AuthRouterConfig: RouterConfigItem[] = [
+  ...BaseRouterConfig,
+
   /* IFTRUE_isSQLE */
   ...SQLERouterConfig,
   /* FITRUE_isSQLE */
