@@ -163,41 +163,6 @@ const WorkflowTemplateDetail = React.lazy(
     )
 );
 
-const RuleManager = React.lazy(
-  () => import(/* webpackChunkName: "RuleManager" */ '../page/RuleManager')
-);
-
-const GlobalImportRuleTemplate = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ImportRuleTemplate" */ '../page/GlobalRuleTemplate/ImportRuleTemplate'
-    )
-);
-const GlobalUpdateRuleTemplate = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "UpdateRuleTemplate" */ '../page/GlobalRuleTemplate/UpdateRuleTemplate'
-    )
-);
-const GlobalCreateRuleTemplate = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "CreateRuleTemplate" */ '../page/GlobalRuleTemplate/CreateRuleTemplate'
-    )
-);
-const CreateCustomRule = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "CreateCustomRule" */ '../page/CustomRule/CreateCustomRule'
-    )
-);
-const UpdateCustomRule = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "UpdateCustomRule" */ '../page/CustomRule/UpdateCustomRule'
-    )
-);
-
 export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[] =
   [
     {
