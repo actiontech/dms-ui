@@ -45,7 +45,7 @@ const useDbService = () => {
     return dbTypeList.map((type) => {
       return (
         <Select.OptGroup
-          label={<DatabaseTypeLogo dbType={type ?? ''} />}
+          label={<DatabaseTypeLogo dbType={type ?? ''} logoUrl={''} />}
           key={type}
         >
           {dbServiceList

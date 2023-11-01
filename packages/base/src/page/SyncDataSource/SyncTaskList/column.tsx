@@ -90,7 +90,7 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDa
             return '--';
           }
 
-          return <DatabaseTypeLogo dbType={type} />;
+          return <DatabaseTypeLogo dbType={type} logoUrl={''} />;
         }
       },
       {

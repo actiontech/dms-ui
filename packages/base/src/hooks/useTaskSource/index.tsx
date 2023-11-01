@@ -51,7 +51,7 @@ const useTaskSource = () => {
       return dbTypes.map((type) => {
         return (
           <Select.Option key={type} value={type ?? ''}>
-            <DatabaseTypeLogo dbType={type} />
+            <DatabaseTypeLogo dbType={type} logoUrl="" />
           </Select.Option>
         );
       });
