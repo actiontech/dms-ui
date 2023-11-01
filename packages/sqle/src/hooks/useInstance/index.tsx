@@ -1,11 +1,11 @@
 import { useBoolean } from 'ahooks';
-import { Select } from 'antd';
+import { Select } from 'antd5';
 import { useMemo, useState, useCallback } from 'react';
 import { ResponseCode } from '../../data/common';
 import { instanceListDefaultKey } from '../../data/common';
-import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
 import { IGetInstanceTipListV1Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
 import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 
 const useInstance = () => {

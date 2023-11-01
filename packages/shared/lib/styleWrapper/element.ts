@@ -137,3 +137,34 @@ export const TableColumnWithIconStyleWrapper = styled('div')`
     }
   }
 `;
+
+/**
+ * 功能: 用于抽屉内表单的图标样式， 如RoleSelector的删除Icon
+ */
+export const DrawerFormIconWrapper = styled('div')`
+  height: 36px;
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: ${({ theme }) =>
+    theme.sharedTheme.components.basicSelect.default.border};
+  cursor: pointer;
+
+  &:hover {
+    border: ${({ theme }) =>
+      theme.sharedTheme.components.basicSelect.hover.border};
+  }
+`;
+
+/**
+ * 功能: 用于FormList中的添加按钮
+ */
+export const FormListAddButtonWrapper = styled(BasicButton)`
+  &.${ANTD_PREFIX_STR}-btn-default.basic-button-wrapper.form-list-add {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.basic.colorPrimaryBgHover} !important;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
+  }
+`;

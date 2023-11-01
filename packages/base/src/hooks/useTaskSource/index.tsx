@@ -1,11 +1,11 @@
-import { useBoolean } from 'ahooks';
-import { Select } from 'antd';
 import React from 'react';
-import DatabaseTypeLogo from 'sqle/src/components/DatabaseTypeLogo';
+import { useBoolean } from 'ahooks';
+import { Select } from 'antd5';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDatabaseSource } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { DatabaseTypeLogo } from '@actiontech/shared';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 const useTaskSource = () => {
   const [taskSourceList, setTaskSourceList] = React.useState<IDatabaseSource[]>(
