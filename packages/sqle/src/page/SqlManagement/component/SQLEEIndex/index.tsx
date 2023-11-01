@@ -208,15 +208,17 @@ const SQLEEIndex = () => {
   const filterCustomProps = useMemo(() => {
     return new Map<
       keyof (ISqlManage & {
-        filter_source?: string;
-        filter_instance_name?: string;
-        filter_audit_level?: string;
+        filter_source: string;
+        filter_instance_name: string;
+        filter_audit_level: string;
+        time: string;
       }),
       FilterCustomProps
     >([
       ['filter_source', { options: generateSourceSelectOptions }],
       ['filter_instance_name', { options: instanceOptions }],
-      ['filter_audit_level', { options: generateAuditLevelSelectOptions }]
+      ['filter_audit_level', { options: generateAuditLevelSelectOptions }],
+      ['time', { showTime: true }]
     ]);
   }, [
     instanceOptions,
