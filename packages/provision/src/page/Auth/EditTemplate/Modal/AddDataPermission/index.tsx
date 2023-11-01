@@ -1,29 +1,31 @@
 import { cloneDeep, isEqual } from 'lodash';
 import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  CheckOutlined,
-  MinusCircleOutlined,
-  PlusCircleOutlined
-} from '@ant-design/icons';
-import { Button, Col, Form, Modal, Row, Select, Typography } from 'antd';
+import { Col, Form, Row, Select, Typography, Space } from 'antd5';
 import { IDataObjects, IFormFields, IAddDataPermission } from './index.d';
 import { DefaultOptionType } from 'antd/es/select';
 import { ModalName } from '~/data/enum';
-import { ModalFormLayout, ModalSize, ResponseCode } from '~/data/common';
 import useModalStatus from '~/hooks/useModalStatus';
 import { useQueryData } from './hooks/useQueryData';
 import { AuthDataPermissionListModalStatus } from '~/store/auth/templateList';
 import { getObjectsLabelByDataObjects } from '../../index.utils';
-
-import './index.less';
-import { EmptyBox } from '@actiontech/shared';
-
-const formItemLayoutWithOutLabel = {
-  wrapperCol: {
-    sm: { span: 13, offset: 7 }
-  }
-};
+import {
+  BasicButton,
+  BasicDrawer,
+  BasicSelect,
+  BasicToolTips,
+  EmptyBox
+} from '@actiontech/shared';
+import { IconSyncDictionary } from '~/icon/AuthTemplate';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import {
+  IconFormListAdd,
+  IconFormListDelete
+} from '@actiontech/shared/lib/Icon';
+import {
+  DrawerFormIconWrapper,
+  FormListAddButtonWrapper
+} from '@actiontech/shared/lib/styleWrapper/element';
 
 const AddDataPermission: FC<IAddDataPermission> = ({
   dataPermissions,
@@ -117,8 +119,14 @@ const AddDataPermission: FC<IAddDataPermission> = ({
   const dataObjects = Form.useWatch('data_objects', form);
 
   const {
+    businessOptionsLoading,
+    serviceOptionsLoading,
+    databaseOptionsLoading,
+    tableOptionLoading,
+    operationOptionsLoading,
     businessOptions,
     serviceOptions,
+    generateServiceSelectOptions,
     databaseOptions,
     getTableOptions,
     operationOptions,
@@ -226,6 +234,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
   };
 
   const handleSyncService = () => {
+    if (!service || SyncService.loading) return;
     SyncService.run();
     handleServiceChange();
   };
@@ -238,54 +247,70 @@ const AddDataPermission: FC<IAddDataPermission> = ({
   }, [SyncService.data]);
 
   return (
-    <Modal
-      closable={false}
+    <BasicDrawer
       title={t('auth.button.addDataPermission')}
+      width={640}
       open={visible}
-      width={ModalSize.mid}
+      onClose={closeModal}
       footer={
-        <>
-          <Button onClick={closeModal}>{t('common.close')}</Button>
-          <Button type="primary" onClick={submit}>
+        <Space>
+          <BasicButton onClick={closeModal}>{t('common.close')}</BasicButton>
+          <BasicButton type="primary" onClick={submit}>
             {t('common.submit')}
-          </Button>
-        </>
+          </BasicButton>
+        </Space>
       }
     >
       <Form
         className="add-data-permission-form"
-        {...ModalFormLayout}
         form={form}
         onValuesChange={onValuesChange}
+        layout="vertical"
       >
         <Form.Item
           name="business"
           label={t('auth.addAuth.baseForm.business')}
           rules={[{ required: true }]}
         >
-          <Select options={businessOptions} onChange={handleBusinessChange} />
+          <BasicSelect
+            loading={businessOptionsLoading}
+            options={businessOptions}
+            onChange={handleBusinessChange}
+          />
         </Form.Item>
         <Form.Item label={t('auth.addAuth.baseForm.dataSource')}>
           <Row wrap={false}>
-            <Col span={24}>
+            <Col flex={1}>
               <Form.Item name="service" rules={[{ required: true }]} noStyle>
-                <Select
+                <BasicSelect
                   className="data-service-select"
-                  options={serviceOptions}
+                  loading={serviceOptionsLoading}
+                  // options={serviceOptions}
                   onChange={handleServiceChange}
-                />
+                >
+                  {generateServiceSelectOptions()}
+                </BasicSelect>
               </Form.Item>
             </Col>
-            <Col span={4}>
-              <Button
-                type="link"
-                disabled={!service || SyncService.loading}
-                onClick={handleSyncService}
-              >
-                {t('dataObject.syncDataSource.button')}
-              </Button>
+            <Col flex={'48px'}>
+              <BasicToolTips title={t('dataObject.syncDataSource.button')}>
+                <DrawerFormIconWrapper
+                  style={{ marginLeft: '12px' }}
+                  onClick={handleSyncService}
+                >
+                  <IconSyncDictionary />
+                </DrawerFormIconWrapper>
+                {/* <BasicButton
+                  style={{ marginLeft: '12px' }}
+                  size="large"
+                  type="text"
+                  disabled={!service || SyncService.loading}
+                  onClick={handleSyncService}
+                  icon={<IconSyncDictionary />}
+                /> */}
+              </BasicToolTips>
             </Col>
-            {successResult && (
+            {/* {successResult && (
               <Col span={1}>
                 <Button
                   type="text"
@@ -294,7 +319,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
                   style={{ color: '#52c41a' }}
                 />
               </Col>
-            )}
+            )} */}
           </Row>
         </Form.Item>
         <Form.List
@@ -309,25 +334,22 @@ const AddDataPermission: FC<IAddDataPermission> = ({
             <>
               {fields.map((field, index) => (
                 <Form.Item
-                  {...(index === 0
-                    ? ModalFormLayout
-                    : formItemLayoutWithOutLabel)}
                   label={index === 0 ? t('auth.addAuth.baseForm.objects') : ''}
                   required={false}
                   key={field.key}
                   className="database-form-item"
                 >
                   <Row wrap={false}>
-                    <Col span={8}>
+                    <Col flex={'180px'} style={{ marginRight: '12px' }}>
                       <Form.Item
                         {...field}
                         name={[field.name, 'database']}
                         noStyle
                       >
-                        <Select
+                        <BasicSelect
                           placeholder="*"
+                          loading={databaseOptionsLoading}
                           onChange={handleDatabaseChange.bind(null, index)}
-                          dropdownMatchSelectWidth={false}
                           allowClear={true}
                         >
                           {newDatabaseOptions?.map((item) => (
@@ -339,45 +361,51 @@ const AddDataPermission: FC<IAddDataPermission> = ({
                               {item.label}
                             </Select.Option>
                           ))}
-                        </Select>
+                        </BasicSelect>
                       </Form.Item>
                     </Col>
-                    <Col span={15} offset={1}>
+                    <Col flex={1}>
                       <Form.Item
                         {...field}
                         name={[field.name, 'tables']}
                         noStyle
                       >
-                        <Select
+                        <BasicSelect
+                          loading={tableOptionLoading}
                           options={tableOptions[index]}
-                          placeholder=".*"
+                          placeholder="*"
                           mode="multiple"
-                          dropdownMatchSelectWidth={false}
                         />
                       </Form.Item>
                     </Col>
-                    <Col span={1}>
-                      <EmptyBox
-                        if={index < 1}
-                        defaultNode={
-                          <MinusCircleOutlined
-                            className="remove-object-button"
-                            onClick={() => {
-                              handleRemoveDataObject(index);
-                              remove(field.name);
-                            }}
-                          />
-                        }
-                      >
-                        <PlusCircleOutlined
-                          className="add-object-button"
-                          onClick={() => add()}
-                        />
+                    <Col flex={'48px'}>
+                      <EmptyBox if={index > 0}>
+                        <DrawerFormIconWrapper
+                          className="remove-object-button"
+                          style={{ marginLeft: '12px' }}
+                          onClick={() => {
+                            handleRemoveDataObject(index);
+                            remove(field.name);
+                          }}
+                        >
+                          <IconFormListDelete />
+                        </DrawerFormIconWrapper>
                       </EmptyBox>
                     </Col>
                   </Row>
                 </Form.Item>
               ))}
+              <Form.Item label="" colon={false}>
+                <FormListAddButtonWrapper
+                  icon={<IconFormListAdd />}
+                  onClick={() => {
+                    add();
+                  }}
+                  className="form-list-add"
+                >
+                  {t('auth.addAuth.baseForm.addDatabaseTable')}
+                </FormListAddButtonWrapper>
+              </Form.Item>
             </>
           )}
         </Form.List>
@@ -386,7 +414,11 @@ const AddDataPermission: FC<IAddDataPermission> = ({
           label={t('auth.addAuth.baseForm.operation')}
           rules={[{ required: true }]}
         >
-          <Select mode="multiple" options={operationOptions} />
+          <BasicSelect
+            mode="multiple"
+            loading={operationOptionsLoading}
+            options={operationOptions}
+          />
         </Form.Item>
 
         {duplicateError && (
@@ -399,7 +431,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
           </Row>
         )}
       </Form>
-    </Modal>
+    </BasicDrawer>
   );
 };
 

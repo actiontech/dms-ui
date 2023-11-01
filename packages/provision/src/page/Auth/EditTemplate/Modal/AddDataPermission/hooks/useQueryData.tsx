@@ -1,9 +1,11 @@
 import { useRequest } from 'ahooks';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { IDataObjects } from '../index.d';
 import qs from 'query-string';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
+import { Select } from 'antd5';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 
 const defaultParams = {
   page_index: 1,
@@ -17,7 +19,7 @@ export const useQueryData = (
   dataObjects?: IDataObjects[]
 ) => {
   const { projectID } = useCurrentProject();
-  const { data: businessOptions } = useRequest(
+  const { data: businessOptions, loading: businessOptionsLoading } = useRequest(
     () =>
       auth
         .AuthListBusiness({
@@ -34,7 +36,7 @@ export const useQueryData = (
     }
   );
 
-  const { data: serviceOptions } = useRequest(
+  const { data: serviceOptions, loading: serviceOptionsLoading } = useRequest(
     () =>
       auth
         .AuthListService({
@@ -54,7 +56,23 @@ export const useQueryData = (
       ready: !!business
     }
   );
-  const { data: databaseOptions, refresh: refreshDatabaseOptions } = useRequest(
+
+  const generateServiceSelectOptions = useCallback(() => {
+    if (!serviceOptions) return [];
+    return serviceOptions.map((v) => {
+      return (
+        <Select.Option key={v.value} value={v.value}>
+          <DatabaseTypeLogo dbType={v.label ?? ''} />
+        </Select.Option>
+      );
+    });
+  }, [serviceOptions]);
+
+  const {
+    data: databaseOptions,
+    loading: databaseOptionsLoading,
+    refresh: refreshDatabaseOptions
+  } = useRequest(
     () =>
       auth
         .AuthListDatabase({
@@ -73,7 +91,7 @@ export const useQueryData = (
     }
   );
 
-  const { runAsync: getTableOptions } = useRequest(
+  const { runAsync: getTableOptions, loading: tableOptionLoading } = useRequest(
     (id: string) =>
       auth
         .AuthListTable({
@@ -107,30 +125,33 @@ export const useQueryData = (
     return objectsFlag;
   }, [dataObjects, service]);
 
-  const { data: operationOptions, refresh: refreshOperationOptions } =
-    useRequest(
-      () =>
-        auth
-          .AuthListDataOperationSets(
-            {
-              data_object_uids: objects,
-              ...defaultParams
-            },
-            {
-              paramsSerializer: (params) => qs.stringify(params)
-            }
-          )
-          .then((res) => {
-            return res.data.data?.map((item) => ({
-              value: item.uid ?? '',
-              label: item.name ?? ''
-            }));
-          }),
-      {
-        refreshDeps: [objects],
-        ready: !!objects.length
-      }
-    );
+  const {
+    data: operationOptions,
+    loading: operationOptionsLoading,
+    refresh: refreshOperationOptions
+  } = useRequest(
+    () =>
+      auth
+        .AuthListDataOperationSets(
+          {
+            data_object_uids: objects,
+            ...defaultParams
+          },
+          {
+            paramsSerializer: (params) => qs.stringify(params)
+          }
+        )
+        .then((res) => {
+          return res.data.data?.map((item) => ({
+            value: item.uid ?? '',
+            label: item.name ?? ''
+          }));
+        }),
+    {
+      refreshDeps: [objects],
+      ready: !!objects.length
+    }
+  );
 
   const SyncService = useRequest(
     () =>
@@ -147,8 +168,14 @@ export const useQueryData = (
     }
   );
   return {
+    businessOptionsLoading,
+    serviceOptionsLoading,
+    databaseOptionsLoading,
+    operationOptionsLoading,
+    tableOptionLoading,
     businessOptions,
     serviceOptions,
+    generateServiceSelectOptions,
     databaseOptions,
     getTableOptions,
     operationOptions,
