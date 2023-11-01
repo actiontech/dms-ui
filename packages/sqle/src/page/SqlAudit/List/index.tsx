@@ -32,6 +32,7 @@ import SqlAuditListColumn, {
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
+import { tableSingleData } from './mock.data';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
@@ -147,7 +148,8 @@ const SqlAuditList = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch
+          onSearch,
+          placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
         }}
         loading={loading}
       >
@@ -165,7 +167,8 @@ const SqlAuditList = () => {
       <ActiontechTable
         className="table-row-cursor"
         setting={tableSetting}
-        dataSource={dataList?.list}
+        // dataSource={dataList?.list}
+        dataSource={[tableSingleData]}
         rowKey={(record: ISQLAuditRecord) => {
           return `${record?.sql_audit_record_id}`;
         }}

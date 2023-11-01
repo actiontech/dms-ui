@@ -9,8 +9,11 @@ import { ISQLAuditRecord } from '@actiontech/shared/lib/api/sqle/service/common'
 import { t } from '../../../locale';
 import { floatRound, floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { BasicToolTips } from '@actiontech/shared';
+import { AvatarCom, BasicToolTips } from '@actiontech/shared';
 import { Link } from 'react-router-dom';
+import SqlAuditStatusTag from './component/SqlAuditStatusTag';
+import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
+import SqlAuditTags from './component/SqlAuditTags';
 
 export type SqlAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSQLAuditRecordsV1Params,
@@ -67,9 +70,10 @@ const SqlAuditListColumn: (
         if (!id) {
           return '-';
         }
-
         return (
-          <Link to={`project/${projectID}/sqlAudit/detail/${id}`}>{id}</Link>
+          <Link to={`/sqle/project/${projectID}/sqlAudit/detail/${id}`}>
+            {id}
+          </Link>
         );
       },
       width: 200
@@ -96,14 +100,36 @@ const SqlAuditListColumn: (
     },
     {
       dataIndex: 'sql_audit_status',
-      title: () => t('sqlAudit.list.columns.auditStatus')
+      title: () => t('sqlAudit.list.columns.auditStatus'),
+      render: (
+        sql_audit_status: getSQLAuditRecordsV1FilterSqlAuditStatusEnum
+      ) => {
+        if (!sql_audit_status) {
+          return '--';
+        }
+        return (
+          <span className="flex-display">
+            <SqlAuditStatusTag status={sql_audit_status} />
+          </span>
+        );
+      }
     },
     // ???
     {
       dataIndex: 'tags',
-      title: () => t('sqlAudit.list.columns.businessTag')
+      title: () => t('sqlAudit.list.columns.businessTag'),
+      render: (tags: string[], record) => {
+        return (
+          <SqlAuditTags
+            projectID={projectID}
+            defaultTags={tags ?? []}
+            updateTags={(tagsData) => {
+              console.log('update tags', tagsData);
+            }}
+          />
+        );
+      }
     },
-    // ???
     {
       dataIndex: 'score',
       title: () => t('sqlAudit.list.columns.auditRating'),
@@ -111,7 +137,8 @@ const SqlAuditListColumn: (
         const score = record.task?.score;
         return typeof score === 'number' ? floatRound(score) : '-';
       },
-      width: 100
+      width: 100,
+      align: 'right'
     },
     {
       dataIndex: 'audit_pass_rate',
@@ -120,11 +147,19 @@ const SqlAuditListColumn: (
         const rate = record.task?.pass_rate;
         return typeof rate === 'number' ? floatToPercent(rate) : '-';
       },
-      width: 160
+      width: 160,
+      align: 'right'
     },
     {
       dataIndex: 'creator',
-      title: () => t('sqlAudit.list.columns.createUser')
+      title: () => t('sqlAudit.list.columns.createUser'),
+      render: (creator) => {
+        if (!creator) {
+          return '--';
+        }
+        // return <AvatarCom name={creator} />;
+        return creator;
+      }
     },
     {
       dataIndex: 'created_at',
