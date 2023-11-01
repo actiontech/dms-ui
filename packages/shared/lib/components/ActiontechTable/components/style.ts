@@ -61,6 +61,22 @@ export const ColumnsSettingDropdownStyleWrapper = styled('div')`
           .hoverBackgroundColor};
     }
 
+    &.drag-item-active {
+      border: 1px solid ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+    }
+
+    .fixed-options {
+      display: flex;
+      align-items: center;
+
+      .fixed-icon {
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+        padding: 0 2px;
+        margin: 0 2px;
+        cursor: pointer;
+      }
+    }
+
     .columns-setting-item {
       display: flex;
       align-items: center;
@@ -80,8 +96,6 @@ export const ColumnsSettingDropdownStyleWrapper = styled('div')`
         color: ${({ theme }) =>
           theme.sharedTheme.components.columnsSetting.dropdown.item.labelColor};
         overflow: hidden;
-        max-width: 70%;
-        margin-left: 8px;
       }
     }
   }
@@ -116,7 +130,12 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
   }
 
   .${ANTD_PREFIX_STR}-picker-input {
+    input {
+      font-weight: 600;
+    }
+
     input::placeholder {
+      font-weight: 400;
       color: ${({ theme }) =>
         theme.sharedTheme.components.customFilter.rangePicker.placeholder
           .color} !important;

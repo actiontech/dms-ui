@@ -210,6 +210,9 @@ export type ProjectOverviewTheme = {
 export type AuditPlanTheme = {
   detail: {
     tag: {
+      default: {
+        background: string;
+      };
       primary: {
         background: string;
       };

@@ -36,6 +36,12 @@ export const FormInputBotBorderStyleWrapper = styled(BasicInput)`
       background-color: transparent !important;
     }
   }
+
+  &.basic-input-wrapper.${ANTD_PREFIX_STR}-input::placeholder {
+    font-size: 18px !important;
+    line-height: 18px !important;
+    font-weight: 600 !important;
+  }
 `;
 
 export const FormItemLabelStyleWrapper = styled(Form.Item)`
