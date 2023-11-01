@@ -8,6 +8,7 @@ import { Select } from 'antd5';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 const useDatabaseType = () => {
+  //todo: 暂时不移除这里的重复代码，需要另开issue测试一下sqle的影响面
   const [driverNameList, setDriverNameList] = React.useState<string[]>([]);
   const [driverMeta, setDriverMeta] = React.useState<IDatabaseDriverOption[]>(
     []
