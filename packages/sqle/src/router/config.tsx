@@ -218,6 +218,10 @@ const UpdateCustomRule = React.lazy(
     )
 );
 
+const SqlAudit = React.lazy(
+  () => import(/* webpackChunkName: "SqlAudit" */ '../page/SqlAudit')
+);
+
 export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[] =
   [
     {
@@ -392,6 +396,22 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
           path: 'update/:workflowName',
           element: <UpdateWorkflowTemplate />,
           key: 'progressUpdate'
+        }
+      ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
+    },
+    {
+      path: `${PROJECT_ROUTER_PARAM}/sqlAudit`,
+      key: 'sqlAudit',
+      label: 'menu.sqlAudit',
+      icon: <NodeIndexOutlined />,
+      element: <WorkflowTemplate />,
+      hideChildrenInSliderMenu: true,
+      // 'sqlAudit' | 'sqlAuditList' | 'sqlAuditCreate' | 'sqlAuditDetail'
+      children: [
+        {
+          index: true,
+          element: <SqlAudit />,
+          key: 'sqlAuditList'
         }
       ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
     },

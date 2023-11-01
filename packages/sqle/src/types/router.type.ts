@@ -44,7 +44,11 @@ export type ProjectDetailRouterItemKeyLiteral =
   | 'projectRedirect'
   | 'dashboard'
   | 'rule'
-  | 'operationRecord';
+  | 'operationRecord'
+  | 'sqlAudit'
+  | 'sqlAuditList'
+  | 'sqlAuditCreate'
+  | 'sqlAuditDetail';
 
 export type RouterConfigItem<T extends string> = {
   role?: Array<SystemRole | ''>;
