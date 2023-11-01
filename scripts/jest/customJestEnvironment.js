@@ -7,6 +7,9 @@ module.exports = class CustomEnvironment extends Environment {
     this.global.testPath = context.testPath;
     this.global.IS_SQLE = context.testPath.includes('/packages/sqle/');
     this.global.IS_BASE = context.testPath.includes('/packages/base/');
+    this.global.IS_DIAGNOSIS = context.testPath.includes(
+      '/packages/diagnosis/'
+    );
   }
 
   async setup() {

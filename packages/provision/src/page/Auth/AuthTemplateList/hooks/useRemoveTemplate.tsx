@@ -1,13 +1,14 @@
+import { useTranslation } from 'react-i18next';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';
-import { message } from 'antd';
+import { message as messageApi } from 'antd5';
 import { useRef } from 'react';
-import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '~/data/common';
 
 const useRemoveTemplate = (refreshList: () => void) => {
   const removeLoading = useRef(false);
   const { t } = useTranslation();
+  const [message, messageContextHolder] = messageApi.useMessage();
 
   const removeTemplate = async (template: IListDataPermissionTemplate) => {
     if (removeLoading.current) {
@@ -35,7 +36,8 @@ const useRemoveTemplate = (refreshList: () => void) => {
   };
 
   return {
-    removeTemplate
+    removeTemplate,
+    messageContextHolder
   };
 };
 
