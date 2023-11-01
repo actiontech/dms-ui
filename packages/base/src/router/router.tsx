@@ -264,8 +264,8 @@ export const AuthRouterConfig: RouterConfigItem[] = [
 
   /* IFTRUE_isDIAGNOSIS */
   {
-    path: 'diagnosis/project/*',
-    key: 'diagnosis',
+    path: 'diagno/project/*',
+    key: 'diagno',
     element: <ProjectDetail />,
     children: DiagnosisRouterConfig
   },

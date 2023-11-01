@@ -254,10 +254,10 @@ export const sideMenuData: (
       children: [
         {
           label: t('dmsMenu.monitorSourceConfig'),
-          key: `diagnosis/project/${menuDataPlaceholderKey}/monitorSourceConfig`,
+          key: `diagno/project/${menuDataPlaceholderKey}/monitorSourceConfig`,
           icon: <Icon component={IconInspectionAndDiagnosis} />,
           onClick: () =>
-            navigate(`/diagnosis/project/${projectID}/monitorSourceConfig`)
+            navigate(`/diagno/project/${projectID}/monitorSourceConfig`)
         }
       ]
     }

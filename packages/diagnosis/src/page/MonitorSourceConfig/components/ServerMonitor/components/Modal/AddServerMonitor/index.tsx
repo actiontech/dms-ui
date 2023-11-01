@@ -13,13 +13,14 @@ import { IV1AddServerParams } from '@actiontech/shared/lib/api/diagnosis/service
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
+import { IServerMonitorFormField } from '../ServerMonitorForm/index.type';
 
 const AddServerMonitor = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
-  const [form] = Form.useForm<any>();
+  const [form] = Form.useForm<IServerMonitorFormField>();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -34,36 +35,40 @@ const AddServerMonitor = () => {
   const { projectID } = useCurrentProject();
 
   const submit = async () => {
-    const values = await form.validateFields();
-    const params: IV1AddServerParams = {
-      servers: [
-        {
-          host: values.host,
-          name: values.name,
-          password: values.password,
-          port: values.port,
-          user: values.user
-        }
-      ],
-      project_uid: projectID
-    };
-    startSubmit();
-    server
-      .V1AddServer(params)
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(
-            t('monitorSourceConfig.serverMonitor.addServerMonitorSourceTip', {
-              name: values.name
-            })
-          );
-          closeModal();
-          EventEmitter.emit(EmitterKey.Refresh_Server_Monitor);
-        }
-      })
-      .finally(() => {
-        submitFinish();
-      });
+    try {
+      const values = await form.validateFields();
+      const params: IV1AddServerParams = {
+        servers: [
+          {
+            host: values.host,
+            name: values.name,
+            password: values.password,
+            port: Number(values.port),
+            user: values.user
+          }
+        ],
+        project_uid: projectID
+      };
+      startSubmit();
+      server
+        .V1AddServer(params)
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(
+              t('monitorSourceConfig.serverMonitor.addServerMonitorSourceTip', {
+                name: values.name
+              })
+            );
+            closeModal();
+            EventEmitter.emit(EmitterKey.Refresh_Server_Monitor);
+          }
+        })
+        .finally(() => {
+          submitFinish();
+        });
+    } catch (error) {
+      return;
+    }
   };
 
   const closeModal = () => {
