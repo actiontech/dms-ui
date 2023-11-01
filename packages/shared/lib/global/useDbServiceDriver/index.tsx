@@ -10,13 +10,12 @@ const useDbServiceDriver = () => {
   const [driverMeta, setDriverMeta] = React.useState<IDatabaseDriverOption[]>(
     []
   );
-  const [loading, { setTrue: startLoading, setFalse: loadFinish }] =
-    useBoolean();
+  const [loading, { setTrue, setFalse }] = useBoolean();
 
   const { projectID } = useCurrentProject();
 
   const updateDriverNameList = React.useCallback(() => {
-    startLoading();
+    setTrue();
     dms
       .ListDBServiceDriverOption({
         project_uid: projectID
@@ -35,9 +34,9 @@ const useDbServiceDriver = () => {
         setDriverNameList([]);
       })
       .finally(() => {
-        loadFinish();
+        setFalse();
       });
-  }, [loadFinish, startLoading, projectID]);
+  }, [setFalse, setTrue, projectID]);
 
   const getLogoUrlByDbType = useCallback(
     (dbType: string) => {
