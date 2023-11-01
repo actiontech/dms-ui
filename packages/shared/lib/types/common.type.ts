@@ -50,6 +50,7 @@ export interface IManagementPermissionResV1 {
   desc?: string;
 }
 interface ThemeCustom {
+  // provision 重构完后移除
   common: {
     padding: number;
     color: {
@@ -101,7 +102,7 @@ interface ThemeCustom {
     border: string;
     color: string;
   };
-  // antd v5 && demo ui props
+  // antd v5
   sharedTheme: SharedTheme;
 }
 declare module '@mui/system' {
