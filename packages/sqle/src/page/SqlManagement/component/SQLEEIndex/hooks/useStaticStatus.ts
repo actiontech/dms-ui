@@ -64,18 +64,9 @@ const useStaticStatus = () => {
       }));
     }, [t]);
 
-  const generateStatusSelectOptions: SelectProps['options'] = useMemo(() => {
-    return Object.keys(statusDictionary).map((key) => ({
-      label: t(
-        statusDictionary[key as keyof typeof GetSqlManageListFilterStatusEnum]
-      ),
-      value: key
-    }));
-  }, [t]);
   return {
     generateSourceSelectOptions,
-    generateAuditLevelSelectOptions,
-    generateStatusSelectOptions
+    generateAuditLevelSelectOptions
   };
 };
 
