@@ -108,7 +108,8 @@ export default {
     clearConfirmTips: '是否确认清除当前模板中的数据权限信息？',
     templateName: '数据权限模板名称',
     templateNamePlaceholder: '请输入权限模板名称',
-    leaveTip: '离开该页面？系统可能不会保存您所做的更改。'
+    leaveTip: '离开该页面？系统可能不会保存您所做的更改。',
+    syncSuccessTips: '同步字典数据成功'
   },
   removeTemplate: {
     deleteTips: '确认要移除模板"{{name}}"?',

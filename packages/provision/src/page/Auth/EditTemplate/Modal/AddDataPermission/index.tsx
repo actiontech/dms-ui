@@ -17,7 +17,6 @@ import {
   EmptyBox
 } from '@actiontech/shared';
 import { IconSyncDictionary } from '~/icon/AuthTemplate';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   IconFormListAdd,
   IconFormListDelete
@@ -130,7 +129,8 @@ const AddDataPermission: FC<IAddDataPermission> = ({
     databaseOptions,
     getTableOptions,
     operationOptions,
-    SyncService
+    SyncService,
+    messageContextHolder
   } = useQueryData(visible, business, service, dataObjects);
 
   const [selectedDatabase, setSelectedDatabase] = useState<string[]>([]);
@@ -234,17 +234,9 @@ const AddDataPermission: FC<IAddDataPermission> = ({
   };
 
   const handleSyncService = () => {
-    if (!service || SyncService.loading) return;
     SyncService.run();
     handleServiceChange();
   };
-
-  const successResult = useMemo(() => {
-    if (SyncService.data?.data.code === ResponseCode.SUCCESS) {
-      return true;
-    }
-    return false;
-  }, [SyncService.data]);
 
   return (
     <BasicDrawer
@@ -261,6 +253,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
         </Space>
       }
     >
+      {messageContextHolder}
       <Form
         className="add-data-permission-form"
         form={form}
@@ -285,7 +278,6 @@ const AddDataPermission: FC<IAddDataPermission> = ({
                 <BasicSelect
                   className="data-service-select"
                   loading={serviceOptionsLoading}
-                  // options={serviceOptions}
                   onChange={handleServiceChange}
                 >
                   {generateServiceSelectOptions()}
@@ -293,33 +285,16 @@ const AddDataPermission: FC<IAddDataPermission> = ({
               </Form.Item>
             </Col>
             <Col flex={'48px'}>
+              {/*Todo: 遗留Icon禁用状态的颜色 */}
               <BasicToolTips title={t('dataObject.syncDataSource.button')}>
                 <DrawerFormIconWrapper
                   style={{ marginLeft: '12px' }}
                   onClick={handleSyncService}
-                >
-                  <IconSyncDictionary />
-                </DrawerFormIconWrapper>
-                {/* <BasicButton
-                  style={{ marginLeft: '12px' }}
-                  size="large"
-                  type="text"
                   disabled={!service || SyncService.loading}
-                  onClick={handleSyncService}
                   icon={<IconSyncDictionary />}
-                /> */}
+                />
               </BasicToolTips>
             </Col>
-            {/* {successResult && (
-              <Col span={1}>
-                <Button
-                  type="text"
-                  icon={<CheckOutlined />}
-                  loading={SyncService.loading}
-                  style={{ color: '#52c41a' }}
-                />
-              </Col>
-            )} */}
           </Row>
         </Form.Item>
         <Form.List
@@ -387,9 +362,8 @@ const AddDataPermission: FC<IAddDataPermission> = ({
                             handleRemoveDataObject(index);
                             remove(field.name);
                           }}
-                        >
-                          <IconFormListDelete />
-                        </DrawerFormIconWrapper>
+                          icon={<IconFormListDelete />}
+                        />
                       </EmptyBox>
                     </Col>
                   </Row>

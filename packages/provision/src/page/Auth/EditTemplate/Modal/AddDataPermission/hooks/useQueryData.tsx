@@ -1,11 +1,13 @@
-import { useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
-import { IDataObjects } from '../index.d';
+import { useRequest } from 'ahooks';
+import { Select, message as messageApi } from 'antd5';
 import qs from 'query-string';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { Select } from 'antd5';
 import { DatabaseTypeLogo } from '@actiontech/shared';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { t } from '../../../../../../locale';
+import auth from '@actiontech/shared/lib/api/provision/service/auth';
+import { IDataObjects } from '../index.d';
 
 const defaultParams = {
   page_index: 1,
@@ -19,6 +21,8 @@ export const useQueryData = (
   dataObjects?: IDataObjects[]
 ) => {
   const { projectID } = useCurrentProject();
+  const [message, messageContextHolder] = messageApi.useMessage();
+
   const { data: businessOptions, loading: businessOptionsLoading } = useRequest(
     () =>
       auth
@@ -161,7 +165,10 @@ export const useQueryData = (
     {
       manual: true,
       ready: !!service,
-      onSuccess: () => {
+      onSuccess: (res) => {
+        if (res?.data.code === ResponseCode.SUCCESS) {
+          message.success(t('auth.editTemplate.syncSuccessTips'));
+        }
         refreshDatabaseOptions();
         refreshOperationOptions();
       }
@@ -179,6 +186,7 @@ export const useQueryData = (
     databaseOptions,
     getTableOptions,
     operationOptions,
-    SyncService
+    SyncService,
+    messageContextHolder
   };
 };
