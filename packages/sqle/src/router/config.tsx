@@ -222,6 +222,16 @@ const SqlAudit = React.lazy(
   () => import(/* webpackChunkName: "SqlAudit" */ '../page/SqlAudit')
 );
 
+const SqlAuditCreate = React.lazy(
+  () =>
+    import(/* webpackChunkName: "SqlAuditCreate" */ '../page/SqlAudit/Create')
+);
+
+const SqlAuditDetail = React.lazy(
+  () =>
+    import(/* webpackChunkName: "SqlAuditDetail" */ '../page/SqlAudit/Detail')
+);
+
 export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[] =
   [
     {
@@ -406,12 +416,21 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
       icon: <NodeIndexOutlined />,
       element: <WorkflowTemplate />,
       hideChildrenInSliderMenu: true,
-      // 'sqlAudit' | 'sqlAuditList' | 'sqlAuditCreate' | 'sqlAuditDetail'
       children: [
         {
           index: true,
           element: <SqlAudit />,
           key: 'sqlAuditList'
+        },
+        {
+          path: 'create',
+          element: <SqlAuditCreate />,
+          key: 'sqlAuditCreate'
+        },
+        {
+          path: 'detail/:sql_audit_record_id',
+          element: <SqlAuditDetail />,
+          key: 'sqlAuditDetail'
         }
       ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
     },

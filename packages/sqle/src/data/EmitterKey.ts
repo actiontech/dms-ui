@@ -36,7 +36,9 @@ enum EmitterKey {
 
   Refresh_Sync_Task_Rule_Template_Tips = 'REFRESH_SYNC_TASK_RULE_TEMPLATE_TIPS',
   Refresh_Report_Statistics = 'Refresh_Report_Statistics',
-  Refresh_Project_Overview = 'Refresh_Project_Overview'
+  Refresh_Project_Overview = 'Refresh_Project_Overview',
+
+  Refresh_Sql_Audit_Record_List = 'Refresh_Sql_Audit_Record_List'
 }
 
 export default EmitterKey;
