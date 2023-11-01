@@ -293,7 +293,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
                   disabled={!service || SyncService.loading}
                   icon={
                     <IconSyncDictionary
-                      isNormal={!!service && !SyncService.loading}
+                      disabled={!service || SyncService.loading}
                     />
                   }
                 />
