@@ -1,4 +1,4 @@
-import React from 'react';
+import { useCallback } from 'react';
 import { message, Space, Form } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,19 +9,13 @@ import { IRoleFormFields } from '../RoleForm/index.type';
 import { useBoolean } from 'ahooks';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import useOpPermission from '../../../../../hooks/useOpPermission';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
 
 const AddRole = () => {
   const [form] = Form.useForm<IRoleFormFields>();
-
-  const { opPermissionList, updateOpPermissionList } = useOpPermission(
-    ListOpPermissionsFilterByTargetEnum.member
-  );
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -35,7 +29,7 @@ const AddRole = () => {
     (state) => !!state.userCenter.modalStatus[ModalName.DMS_Add_Role]
   );
 
-  const close = React.useCallback(() => {
+  const close = useCallback(() => {
     form.resetFields();
     dispatch(
       updateUserManageModalStatus({
@@ -45,7 +39,7 @@ const AddRole = () => {
     );
   }, [dispatch, form]);
 
-  const addRole = React.useCallback(async () => {
+  const addRole = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
     dms
@@ -73,12 +67,6 @@ const AddRole = () => {
       });
   }, [close, form, setFalse, setTrue, t, messageApi]);
 
-  React.useEffect(() => {
-    if (visible) {
-      updateOpPermissionList();
-    }
-  }, [updateOpPermissionList, visible]);
-
   return (
     <BasicDrawer
       title={t('dmsUserCenter.role.createRole.modalTitle')}
@@ -96,7 +84,7 @@ const AddRole = () => {
       }
     >
       {contextHolder}
-      <RoleForm form={form} operationList={opPermissionList} />
+      <RoleForm form={form} visible={visible} />
     </BasicDrawer>
   );
 };
