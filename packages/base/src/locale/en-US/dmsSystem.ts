@@ -4,6 +4,8 @@ export default {
   pageDesc: '您可以在这里配置您的邮箱SMTP等系统配置',
   testConnection: '测试连通性',
   cancelConfigConfirm: '是否确认关闭当前配置？',
+  resetConfigConfirm:
+    '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？',
 
   tabPaneTitle: {
     pushNotification: '消息推送',
