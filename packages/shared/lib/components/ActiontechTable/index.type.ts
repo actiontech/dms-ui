@@ -3,6 +3,7 @@ import { RangePickerProps } from 'antd5/es/date-picker';
 import { ColumnGroupType, ColumnType } from 'antd5/es/table';
 import { CSSProperties, ReactNode } from 'react';
 import { CustomSelectProps } from '../CustomSelect';
+import { IBasicButton } from '../BasicButton';
 
 //======================================= utils
 
@@ -174,7 +175,7 @@ export type TableSearchInputProps = {
  */
 export type TableRefreshButtonProps = {
   refresh?: () => void;
-} & Omit<ButtonProps, 'onClick'>;
+} & Omit<IBasicButton, 'onClick'>;
 
 /**
  * 表格列缓存数据格式

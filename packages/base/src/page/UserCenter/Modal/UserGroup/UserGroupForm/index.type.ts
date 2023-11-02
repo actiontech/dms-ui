@@ -4,6 +4,7 @@ import { FormInstance } from 'antd5';
 export type UserGroupFormProps = {
   form?: FormInstance<UserGroupFormField>;
   userList?: IUidWithName[];
+  getUserListLoading: boolean;
   isUpdate?: boolean;
 };
 export type UserGroupFormField = {

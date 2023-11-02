@@ -47,6 +47,8 @@ export const DetailComStyleWrapper = styled('section')`
         border: 1px solid
           ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
         margin-right: 8px;
+        background-color: ${({ theme }) =>
+          theme.sqleTheme.auditPlan.detail.tag.default.background} !important;
 
         &.custom-tag-primary {
           background-color: ${({ theme }) =>

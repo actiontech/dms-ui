@@ -1,8 +1,9 @@
 import { styled } from '@mui/material/styles';
 
-export const ChartContTitleStyleWrapper = styled('section')`
+export const ChartContTitleStyleWrapper = styled('section')<{
+  clearMainTextMargin: boolean;
+}>`
   height: auto;
-  margin-top: 20px;
   display: flex;
   align-items: center;
 
@@ -17,7 +18,8 @@ export const ChartContTitleStyleWrapper = styled('section')`
   .line-cont {
     .sub-cont {
       display: inline-block;
-      margin-left: 0.5em;
+      margin-left: ${({ clearMainTextMargin }) =>
+        clearMainTextMargin ? 0 : '0.5em'};
     }
 
     .line1-main {

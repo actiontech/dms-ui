@@ -21,7 +21,7 @@ import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 
 const CreatePlan = () => {
   const { t } = useTranslation();
-  const navigater = useNavigate();
+  const navigate = useNavigate();
   const { projectName, projectID } = useCurrentProject();
 
   const [submitLoading, setSubmitLoading] = useState(false);
@@ -30,7 +30,7 @@ const CreatePlan = () => {
 
   const onSkipList = () => {
     onReset();
-    navigater(`/sqle/project/${projectID}/auditPlan`);
+    navigate(`/sqle/project/${projectID}/auditPlan`);
   };
 
   const onReset = () => {
@@ -122,7 +122,7 @@ const CreatePlan = () => {
               type="primary"
               key="view-audit-plan"
               onClick={() => {
-                navigater(
+                navigate(
                   `/sqle/project/${projectID}/auditPlan/detail/${form.getFieldValue(
                     'name'
                   )}`
