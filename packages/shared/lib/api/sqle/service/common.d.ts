@@ -1218,6 +1218,8 @@ export interface IInstanceTableMeta {
 export interface IInstanceTipResV1 {
   host?: string;
 
+  instance_id?: string;
+
   instance_name?: string;
 
   instance_type?: string;
