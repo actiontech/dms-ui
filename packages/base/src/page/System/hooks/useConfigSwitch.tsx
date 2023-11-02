@@ -2,7 +2,7 @@ import { AxiosResponse } from 'axios';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IGenericResp } from '@actiontech/shared/lib/api/base/service/common';
-import { switchFieldName } from '../LoginConnection/Oauth/index.data';
+import { useCallback } from 'react';
 
 interface IUseConfigSwitchProps {
   switchOpen: boolean;
@@ -11,7 +11,7 @@ interface IUseConfigSwitchProps {
   handleUpdateConfig: () => Promise<AxiosResponse<IGenericResp, any>>;
   handleClickCancel: () => void;
   refreshConfig: () => void;
-  handleOpenSwitch: () => void;
+  handleToggleSwitch: (open: boolean) => void;
 }
 
 const useConfigSwitch = (props: IUseConfigSwitchProps) => {
@@ -22,14 +22,12 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
     handleUpdateConfig,
     handleClickCancel,
     refreshConfig,
-    handleOpenSwitch
+    handleToggleSwitch
   } = props;
   const [
     configSwitchPopoverVisible,
     { setTrue: showConfigSwitchPopover, setFalse: hideConfigSwitchPopover }
   ] = useBoolean(false);
-
-  // const switchOpen = Form.useWatch(switchFieldName, form);
 
   const onConfigSwitchPopoverConfirm = async () => {
     handleUpdateConfig()
@@ -45,8 +43,10 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
   };
 
   const onConfigSwitchPopoverCancel = () => {
-    handleOpenSwitch();
     hideConfigSwitchPopover();
+    if (modifyFlag) {
+      handleToggleSwitch(true);
+    }
   };
 
   const onConfigSwitchChange = (open: boolean) => {
@@ -55,11 +55,22 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
     }
   };
 
-  const onConfigSwitchPopoverOpen = () => {
-    if (!switchOpen) return;
+  const onConfigSwitchPopoverOpen = useCallback(
+    (open: boolean) => {
+      if (!switchOpen) return;
 
-    !modifyFlag ? showConfigSwitchPopover() : handleClickCancel();
-  };
+      handleToggleSwitch(switchOpen);
+      showConfigSwitchPopover();
+
+      open ? showConfigSwitchPopover() : hideConfigSwitchPopover();
+    },
+    [
+      handleToggleSwitch,
+      hideConfigSwitchPopover,
+      showConfigSwitchPopover,
+      switchOpen
+    ]
+  );
 
   return {
     configSwitchPopoverVisible,

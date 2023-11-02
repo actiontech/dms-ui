@@ -16,7 +16,6 @@ import { BasicButton, BasicInput, EmptyBox } from '@actiontech/shared';
 import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { TestFeishuConfigurationAccountTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { isEqual } from 'lodash';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
@@ -32,7 +31,7 @@ import {
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IFeishuConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
-import { defaultFormData, switchFieldName } from './index.data';
+import { switchFieldName } from './index.data';
 
 const LarkSetting: React.FC = () => {
   const { t } = useTranslation();
@@ -71,7 +70,7 @@ const LarkSetting: React.FC = () => {
     }
   );
   const isInitialForm = useMemo(() => {
-    return isEqual(larkInfo, defaultFormData);
+    return !larkInfo?.is_feishu_notification_enabled;
   }, [larkInfo]);
 
   const handelClickModify = () => {
@@ -81,8 +80,13 @@ const LarkSetting: React.FC = () => {
       appKey: larkInfo?.app_id
     });
   };
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
+  };
   const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
+    if (isInitialForm) {
+      form.resetFields();
+    }
     modifyFinish();
   };
 
@@ -108,25 +112,28 @@ const LarkSetting: React.FC = () => {
       });
   };
 
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
     onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    switchOpen,
     modifyFlag,
     startModify,
     handleUpdateConfig: () =>
       dms.UpdateFeishuConfiguration({
         update_feishu_configuration: {
-          ...defaultFormData,
+          ...larkInfo,
           is_feishu_notification_enabled: false
         }
       }),
     handleClickCancel,
     refreshConfig: refreshLarkInfo,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
@@ -317,11 +324,13 @@ const LarkSetting: React.FC = () => {
           configSwitchNode: (
             <ConfigSwitch
               switchFieldName={switchFieldName}
-              disabled={modifyFlag}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
               onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
           configField: (
