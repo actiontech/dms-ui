@@ -8,8 +8,9 @@ export const ProjectSelectorStyleWrapper = styled(CustomSelect)`
 
     .${ANTD_PREFIX_STR}-select-selector {
       font-size: 13px;
-      font-weight: 500;
       overflow: hidden;
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorFillTertiary} !important;
 
       .${ANTD_PREFIX_STR}-select-selection-placeholder,
         .${ANTD_PREFIX_STR}-select-selection-item {
