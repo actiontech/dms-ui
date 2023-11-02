@@ -1,10 +1,10 @@
-import { ConfigProvider, SelectProps, Spin } from 'antd5';
+import { ConfigProvider, SelectProps } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { IconClose } from '../../Icon';
 import classnames from 'classnames';
 import { BasicSelectStyleWrapper } from './style';
 import { ComponentControlHeight } from '../../data/common';
-import { ReactElement } from 'react';
+import BasicEmpty from '../BasicEmpty';
 
 const BasicSelect = <V = any,>(props: SelectProps<V>) => {
   const { t } = useTranslation();
@@ -29,9 +29,9 @@ const BasicSelect = <V = any,>(props: SelectProps<V>) => {
         clearIcon={<IconClose />}
         allowClear={allowClear}
         loading={loading}
-        dropdownRender={(options: ReactElement) => (
-          <Spin spinning={loading}>{options}</Spin>
-        )}
+        notFoundContent={
+          loading ? <BasicEmpty loading={loading} /> : <BasicEmpty />
+        }
         //ts checker error
         // allowClear={
         //   !!allowClear
