@@ -69,6 +69,7 @@ const ProjectSelector: React.FC<CustomSelectProps> = ({
         </div>
       }
       popupMatchSelectWidth={240}
+      bordered={false}
       {...props}
     />
   );

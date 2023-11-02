@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd5';
+import { Col, Row, Spin } from 'antd5';
 import React, { useEffect, useMemo, useState } from 'react';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useRequest } from 'ahooks';
@@ -23,7 +23,11 @@ const WorkflowTemplateDetail: React.FC = () => {
 
   const { isAdmin, isProjectManager } = useCurrentUser();
 
-  const { updateUsernameList, usernameList } = useUsername();
+  const {
+    updateUsernameList,
+    usernameList,
+    loading: getUsernameListLoading
+  } = useUsername();
 
   React.useEffect(() => {
     updateUsernameList(projectName);
@@ -42,17 +46,18 @@ const WorkflowTemplateDetail: React.FC = () => {
     desc: ''
   });
 
-  const { data: workflowTemplate } = useRequest(
-    () =>
-      workflow
-        .getWorkflowTemplateV1({
-          project_name: projectName
-        })
-        .then((res) => res.data.data),
-    {
-      ready: !!projectName
-    }
-  );
+  const { data: workflowTemplate, loading: getWorkflowTemplateLoading } =
+    useRequest(
+      () =>
+        workflow
+          .getWorkflowTemplateV1({
+            project_name: projectName
+          })
+          .then((res) => res.data.data),
+      {
+        ready: !!projectName
+      }
+    );
 
   useEffect(() => {
     if (!!workflowTemplate) {
@@ -88,21 +93,23 @@ const WorkflowTemplateDetail: React.FC = () => {
           </EmptyBox>
         ]}
       />
-      <Row className="workflow-template-wrapper">
-        <Col flex="auto">
-          <WorkflowTemplateStepInfo
-            reviewStepData={reviewSteps}
-            execStepData={execSteps}
-            usernameList={usernameList}
-          />
-        </Col>
-        <Col flex="360px" className="workflow-template-right-module">
-          <WorkflowTemplateAuthInfo
-            level={workflowTemplate?.allow_submit_when_less_audit_level}
-            time={workflowTemplate?.update_time}
-          />
-        </Col>
-      </Row>
+      <Spin spinning={getUsernameListLoading || getWorkflowTemplateLoading}>
+        <Row className="workflow-template-wrapper">
+          <Col flex="auto">
+            <WorkflowTemplateStepInfo
+              reviewStepData={reviewSteps}
+              execStepData={execSteps}
+              usernameList={usernameList}
+            />
+          </Col>
+          <Col flex="360px" className="workflow-template-right-module">
+            <WorkflowTemplateAuthInfo
+              level={workflowTemplate?.allow_submit_when_less_audit_level}
+              time={workflowTemplate?.update_time}
+            />
+          </Col>
+        </Row>
+      </Spin>
     </WorkflowTemplateStyleWrapper>
   );
 };

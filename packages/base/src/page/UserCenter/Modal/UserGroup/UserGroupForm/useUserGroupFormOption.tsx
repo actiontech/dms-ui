@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import useUsername from '../../../../../hooks/useUsername';
 
 const useUserGroupFormOption = (visible: boolean) => {
-  const { usernameList, updateUsernameList } = useUsername();
+  const { loading, usernameList, updateUsernameList } = useUsername();
 
   useEffect(() => {
     if (visible) {
@@ -11,6 +11,7 @@ const useUserGroupFormOption = (visible: boolean) => {
   }, [updateUsernameList, visible]);
 
   return {
+    loading,
     usernameList
   };
 };

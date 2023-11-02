@@ -45,7 +45,7 @@ export default {
     ruleTemplateName: '审核规则模板',
     syncInterval: '同步间隔',
     baseConfig: '基础配置',
-    sqlConfig: 'sql审核配置',
+    sqlConfig: 'SQL审核配置',
     cronConfig: '自定义任务同步周期',
     cronTips: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择'
   }
