@@ -9,7 +9,7 @@ import { ISQLAuditRecord } from '@actiontech/shared/lib/api/sqle/service/common'
 import { t } from '../../../locale';
 import { floatRound, floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { AvatarCom, BasicToolTips } from '@actiontech/shared';
+import { BasicToolTips } from '@actiontech/shared';
 import { Link } from 'react-router-dom';
 import SqlAuditStatusTag from './component/SqlAuditStatusTag';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
@@ -56,12 +56,14 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 };
 
 const SqlAuditListColumn: (
-  projectID: string
+  projectID: string,
+  projectName: string,
+  updateTags: (tags: string[], id: string) => Promise<void>
 ) => ActiontechTableColumn<
   ISQLAuditRecord,
   SqlAuditListTableFilterParamType,
   'instance' | 'score' | 'audit_pass_rate'
-> = (projectID) => {
+> = (projectID, projectName, updateTags) => {
   return [
     {
       dataIndex: 'sql_audit_record_id',
@@ -105,7 +107,7 @@ const SqlAuditListColumn: (
         sql_audit_status: getSQLAuditRecordsV1FilterSqlAuditStatusEnum
       ) => {
         if (!sql_audit_status) {
-          return '--';
+          return '-';
         }
         return (
           <span className="flex-display">
@@ -114,18 +116,17 @@ const SqlAuditListColumn: (
         );
       }
     },
-    // ???
     {
       dataIndex: 'tags',
       title: () => t('sqlAudit.list.columns.businessTag'),
       render: (tags: string[], record) => {
         return (
           <SqlAuditTags
-            projectID={projectID}
+            projectName={projectName}
             defaultTags={tags ?? []}
-            updateTags={(tagsData) => {
-              console.log('update tags', tagsData);
-            }}
+            updateTags={(tagsData) =>
+              updateTags(tagsData, record.sql_audit_record_id ?? '')
+            }
           />
         );
       }
@@ -155,9 +156,8 @@ const SqlAuditListColumn: (
       title: () => t('sqlAudit.list.columns.createUser'),
       render: (creator) => {
         if (!creator) {
-          return '--';
+          return '-';
         }
-        // return <AvatarCom name={creator} />;
         return creator;
       }
     },

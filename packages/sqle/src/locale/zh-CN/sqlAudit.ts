@@ -3,7 +3,15 @@ export default {
   list: {
     pageTitle: 'SQL审核',
     action: {
-      create: '创建审核'
+      create: '创建审核',
+      updateTags: {
+        successTips: '更新业务标签成功',
+        addTag: {
+          text: '新增业务标签',
+          notTags: '暂无标签数据',
+          placeholder: '请输入新增的业务标签'
+        }
+      }
     },
     filter: {
       instanceName: '数据源',
