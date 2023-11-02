@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useCallback } from 'react';
 import { useBoolean } from 'ahooks';
 import { Form, message, Space } from 'antd5';
 import { useTranslation } from 'react-i18next';
@@ -8,23 +8,14 @@ import { IReduxState } from '../../../../../store';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
-import useUserGroup from '../../../../../hooks/useUserGroup';
-import useOpPermission from '../../../../../hooks/useOpPermission';
 import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 const AddUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
-
-  const { userGroupList, updateUserGroupList } = useUserGroup();
-
-  const { opPermissionList, updateOpPermissionList } = useOpPermission(
-    ListOpPermissionsFilterByTargetEnum.user
-  );
 
   const { t } = useTranslation();
 
@@ -38,7 +29,7 @@ const AddUser = () => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const close = React.useCallback(() => {
+  const close = useCallback(() => {
     form.resetFields();
     dispatch(
       updateUserManageModalStatus({
@@ -48,7 +39,7 @@ const AddUser = () => {
     );
   }, [dispatch, form]);
 
-  const addUser = React.useCallback(async () => {
+  const addUser = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
     dms
@@ -80,13 +71,6 @@ const AddUser = () => {
       });
   }, [close, form, setFalse, setTrue, t, messageApi]);
 
-  useEffect(() => {
-    if (visible) {
-      updateUserGroupList();
-      updateOpPermissionList();
-    }
-  }, [updateOpPermissionList, updateUserGroupList, visible]);
-
   return (
     <BasicDrawer
       title={t('dmsUserCenter.user.userList.addUserButton')}
@@ -105,11 +89,7 @@ const AddUser = () => {
       }
     >
       {contextHolder}
-      <UserForm
-        form={form}
-        userGroupList={userGroupList}
-        opPermissionList={opPermissionList}
-      />
+      <UserForm form={form} visible={visible} />
     </BasicDrawer>
   );
 };
