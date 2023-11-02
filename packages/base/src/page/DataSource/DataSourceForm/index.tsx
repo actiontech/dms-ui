@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Form, FormInstance, Popconfirm } from 'antd5';
+import { FormInstance, Popconfirm } from 'antd5';
 import Select, { BaseOptionType } from 'antd5/es/select';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import { useRequest } from 'ahooks';
@@ -35,6 +35,7 @@ import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { turnDataSourceAsyncFormToCommon } from '../tool';
 import useDatabaseType from '../../../hooks/useDatabaseType';
 import { FormItem } from 'sqle/src/components/BackendForm';
+import useAuditRequired from '../../../hooks/useAuditRequired';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -45,9 +46,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return props.defaultData.source !== SQLE_INSTANCE_SOURCE_NAME;
   }, [props.defaultData]);
 
-  const auditRequired = Form.useWatch('needSqlAuditService', props.form);
-  const [auditRequiredPopupVisible, setAuditRequiredPopupVisible] =
-    useState<boolean>(false);
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
   const { projectName } = useCurrentProject();
@@ -105,6 +103,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return turnDataSourceAsyncFormToCommon(temp.params ?? []);
   }, [databaseType, driverMeta]);
 
+  const {
+    auditRequired,
+    auditRequiredPopupVisible,
+    onAuditRequiredPopupOpenChange,
+    clearRuleTemplate,
+    changeAuditRequired
+  } = useAuditRequired(props.form);
+
   useEffect(() => {
     if (!!props.defaultData) {
       props.form.setFieldsValue({
@@ -159,18 +165,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     setDatabaseType('');
   }, [props.form]);
 
-  const changeAuditRequired = (check: boolean) => {
-    if (check)
-      props.form.setFieldsValue({
-        needSqlAuditService: check
-      });
-  };
-
-  const onAuditRequiredPopupOpenChange = (open: boolean) => {
-    if (!auditRequired) return;
-    setAuditRequiredPopupVisible(open);
-  };
-
   const changeAuditEnabled = (check: boolean) => {
     setAuditEnabled(check);
     if (!check) {
@@ -186,14 +180,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         });
       }
     }
-  };
-
-  const clearRuleTemplate = () => {
-    props.form.setFieldsValue({
-      needSqlAuditService: false,
-      ruleTemplateId: undefined,
-      ruleTemplateName: undefined
-    });
   };
 
   const changeRuleTemplate = (value: string, option: BaseOptionType) => {
