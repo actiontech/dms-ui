@@ -22,7 +22,7 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInputCom';
-import { Form, Popconfirm, Spin } from 'antd5';
+import { Popconfirm, Spin } from 'antd5';
 import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
 import useAuditRequired from '../../../hooks/useAuditRequired';
 
