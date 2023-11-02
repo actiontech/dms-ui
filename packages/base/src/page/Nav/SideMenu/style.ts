@@ -352,11 +352,22 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   border-radius: 4px;
   margin: 4px 0;
+  background-color: ${({ theme }) =>
+    theme.sharedTheme.uiToken.colorFillTertiary} !important;
+  font-weight: 500 !important;
 
   .project-flag-icon {
     margin-right: 8px;
     color: ${({ theme }) =>
       theme.baseTheme.sideMenu.projectSelector.dropdown.activeIconColor};
+  }
+
+  .${ANTD_PREFIX_STR}-typography.default-project-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
   }
 `;
 
