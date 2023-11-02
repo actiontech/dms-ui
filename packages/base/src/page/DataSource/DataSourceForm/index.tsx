@@ -51,8 +51,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
   const { projectName } = useCurrentProject();
-  const { driverMeta, updateDriverNameList, generateDriverSelectOptions } =
-    useDatabaseType();
+  const {
+    driverMeta,
+    loading: getDriverMetaLoading,
+    updateDriverNameList,
+    generateDriverSelectOptions
+  } = useDatabaseType();
 
   const databaseTypeChange = useCallback(
     (value: string) => {
@@ -71,14 +75,18 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     [props.form]
   );
 
-  const { data: ruleTemplateList = [] } = useRequest(() =>
-    rule_template
-      .getProjectRuleTemplateTipsV1({
-        project_name: projectName
-      })
-      .then((res) => res.data.data ?? [])
-  );
-  const { data: globalRuleTemplateList = [] } = useRequest(() =>
+  const { data: ruleTemplateList = [], loading: ruleTemplateLoading } =
+    useRequest(() =>
+      rule_template
+        .getProjectRuleTemplateTipsV1({
+          project_name: projectName
+        })
+        .then((res) => res.data.data ?? [])
+    );
+  const {
+    data: globalRuleTemplateList = [],
+    loading: globalRuleTemplateLoading
+  } = useRequest(() =>
     rule_template.getRuleTemplateTipsV1({}).then((res) => res.data.data ?? [])
   );
   const { generateFormValueByParams, dmsMergeFromValueIntoParams } =
@@ -290,6 +298,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             form={props.form}
             databaseTypeChange={databaseTypeChange}
             generateDriverSelectOptions={generateDriverSelectOptions}
+            getDriverMetaLoading={getDriverMetaLoading}
             currentAsyncParams={params}
             isExternalInstance={isExternalInstance}
           />
@@ -355,6 +364,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             <BasicSelect
               showSearch
               allowClear
+              loading={ruleTemplateLoading || globalRuleTemplateLoading}
               placeholder={t('common.form.placeholder.select', {
                 name: t('dmsDataSource.dataSourceForm.ruleTemplate')
               })}

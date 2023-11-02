@@ -1,12 +1,12 @@
 import { t } from '../../../locale';
 import { EmptyBox } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import OrderDesc from '../../Order/List/components/OrderDesc';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { DashboardNameStyleWrapper } from './style';
 import { IconOrderName } from '../../../icon/Dashboard';
 import { Link } from 'react-router-dom';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 
 export const commonColumn: (
   projectID: string
@@ -37,10 +37,14 @@ export const commonColumn: (
       className: 'dashboard-common-list-table-desc-column',
       render: (desc: string, record: IWorkflowDetailResV1) =>
         desc ? (
-          <OrderDesc
-            desc={desc}
-            projectID={projectID}
-            orderID={record.workflow_id ?? ''}
+          <BasicTypographyEllipsis
+            textCont={desc}
+            linkData={{
+              route: `/sqle/project/${projectID}/order/${
+                record.workflow_id ?? ''
+              }`,
+              text: t('order.create.viewOrderDetail')
+            }}
           />
         ) : (
           '-'

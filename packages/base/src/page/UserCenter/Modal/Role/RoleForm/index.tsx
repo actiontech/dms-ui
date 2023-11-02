@@ -1,12 +1,25 @@
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Form, Select, Switch } from 'antd5';
 import { EmptyBox, BasicInput, BasicSelect } from '@actiontech/shared';
 import { roleNameRule } from '@actiontech/shared/lib/utils/FormRule';
-import { Form, Select, Switch } from 'antd5';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { IRoleFormProps } from './index.type';
+import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+import useOpPermission from '../../../../../hooks/useOpPermission';
 
 const RoleForm: React.FC<IRoleFormProps> = (props) => {
   const { t } = useTranslation();
+  const {
+    loading: getOpPermissionListLoading,
+    opPermissionList,
+    updateOpPermissionList
+  } = useOpPermission(ListOpPermissionsFilterByTargetEnum.member);
+
+  useEffect(() => {
+    if (props.visible) {
+      updateOpPermissionList();
+    }
+  }, [updateOpPermissionList, props.visible]);
 
   return (
     <Form form={props.form} layout="vertical">
@@ -59,8 +72,9 @@ const RoleForm: React.FC<IRoleFormProps> = (props) => {
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.role.roleForm.opPermissions')
           })}
+          loading={getOpPermissionListLoading}
         >
-          {props.operationList.map((operation) => (
+          {opPermissionList.map((operation) => (
             <Select.Option
               key={operation.op_permission?.uid}
               value={operation.op_permission?.uid ?? ''}

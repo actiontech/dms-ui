@@ -86,7 +86,8 @@ const UpdateUserGroup = () => {
     }
   }, [visible, currentUserGroup, form]);
 
-  const { usernameList } = useUserGroupFormOption(visible);
+  const { loading: getUserListLoading, usernameList } =
+    useUserGroupFormOption(visible);
 
   return (
     <BasicDrawer
@@ -109,7 +110,13 @@ const UpdateUserGroup = () => {
       }
     >
       {contextHolder}
-      <UserGroupForm form={form} userList={usernameList} isUpdate={true} />
+
+      <UserGroupForm
+        form={form}
+        userList={usernameList}
+        getUserListLoading={getUserListLoading}
+        isUpdate={true}
+      />
     </BasicDrawer>
   );
 };
