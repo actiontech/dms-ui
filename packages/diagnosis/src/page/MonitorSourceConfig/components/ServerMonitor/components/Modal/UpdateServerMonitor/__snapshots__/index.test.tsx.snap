@@ -102,6 +102,7 @@ exports[`test update server monitor should init data for updateServerMonitor 1`]
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-17yz871"
                             id="name"
                             placeholder="请输入{{name}}"
+                            readonly=""
                             type="text"
                             value="test"
                           />
@@ -141,6 +142,7 @@ exports[`test update server monitor should init data for updateServerMonitor 1`]
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-17yz871"
                             id="host"
                             placeholder="请输入{{name}}"
+                            readonly=""
                             type="text"
                             value="172.20.134.1"
                           />
@@ -176,7 +178,7 @@ exports[`test update server monitor should init data for updateServerMonitor 1`]
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-16shlox"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-16shlox ant-input-number-readonly"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -245,6 +247,7 @@ exports[`test update server monitor should init data for updateServerMonitor 1`]
                                 autocomplete="off"
                                 class="ant-input-number-input"
                                 id="port"
+                                readonly=""
                                 role="spinbutton"
                                 step="1"
                                 value="22"
@@ -515,6 +518,7 @@ exports[`test update server monitor should match snapshot when modal state is tr
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-17yz871"
                             id="name"
                             placeholder="请输入{{name}}"
+                            readonly=""
                             type="text"
                             value="test"
                           />
@@ -554,6 +558,7 @@ exports[`test update server monitor should match snapshot when modal state is tr
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-17yz871"
                             id="host"
                             placeholder="请输入{{name}}"
+                            readonly=""
                             type="text"
                             value="172.20.134.1"
                           />
@@ -589,7 +594,7 @@ exports[`test update server monitor should match snapshot when modal state is tr
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-16shlox"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-16shlox ant-input-number-readonly"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -658,6 +663,7 @@ exports[`test update server monitor should match snapshot when modal state is tr
                                 autocomplete="off"
                                 class="ant-input-number-input"
                                 id="port"
+                                readonly=""
                                 role="spinbutton"
                                 step="1"
                                 value="22"
@@ -928,6 +934,7 @@ exports[`test update server monitor should send request when input correct field
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-17yz871"
                             id="name"
                             placeholder="请输入{{name}}"
+                            readonly=""
                             type="text"
                             value="test"
                           />
@@ -967,6 +974,7 @@ exports[`test update server monitor should send request when input correct field
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-17yz871"
                             id="host"
                             placeholder="请输入{{name}}"
+                            readonly=""
                             type="text"
                             value="172.20.134.1"
                           />
@@ -1002,7 +1010,7 @@ exports[`test update server monitor should send request when input correct field
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-16shlox"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-16shlox ant-input-number-readonly"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1071,6 +1079,7 @@ exports[`test update server monitor should send request when input correct field
                                 autocomplete="off"
                                 class="ant-input-number-input"
                                 id="port"
+                                readonly=""
                                 role="spinbutton"
                                 step="1"
                                 value="22"
@@ -1343,6 +1352,7 @@ exports[`test update server monitor should show error when nothing input 1`] = `
                             class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-17yz871"
                             id="name"
                             placeholder="请输入{{name}}"
+                            readonly=""
                             type="text"
                             value=""
                           />
@@ -1404,6 +1414,7 @@ exports[`test update server monitor should show error when nothing input 1`] = `
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-17yz871"
                             id="host"
                             placeholder="请输入{{name}}"
+                            readonly=""
                             type="text"
                             value="172.20.134.1"
                           />
@@ -1439,7 +1450,7 @@ exports[`test update server monitor should show error when nothing input 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-16shlox"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-16shlox ant-input-number-readonly"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1508,6 +1519,7 @@ exports[`test update server monitor should show error when nothing input 1`] = `
                                 autocomplete="off"
                                 class="ant-input-number-input"
                                 id="port"
+                                readonly=""
                                 role="spinbutton"
                                 step="1"
                                 value="22"

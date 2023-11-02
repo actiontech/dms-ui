@@ -1,26 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { act, cleanup } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
-import { SupportTheme } from '@actiontech/shared/lib/enum';
 import { ModalName } from '../../../../../../data/ModalName';
 import ServerMonitorModal from './index';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
-const mockReduxData = {
-  user: {
-    token: 'AAh32ffdswt',
-    theme: SupportTheme.LIGHT,
-    bindProjects: [
-      {
-        project_id: '1',
-        is_manager: true,
-        project_name: 'default'
-      }
-    ]
-  },
-  project: {
-    currentProjectArchive: false
-  }
-};
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
@@ -35,9 +19,9 @@ describe('test update server monitor', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
+    mockUseCurrentProject();
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
-        ...mockReduxData,
         monitorSourceConfig: {
           modalStatus: {}
         }

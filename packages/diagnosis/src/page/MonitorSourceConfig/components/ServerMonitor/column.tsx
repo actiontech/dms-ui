@@ -38,9 +38,9 @@ export const ServerMonitorColumns: ActiontechTableColumn<IViewServerReply> = [
   {
     dataIndex: 'status',
     title: t('common.status'),
-    render: (record: IViewServerReply) => {
-      if (!record.status) return '-';
-      return serverMonitorStatusDictionary[record.status];
+    render: (status) => {
+      if (!status) return '-';
+      return serverMonitorStatusDictionary[status as ViewServerReplyStatusEnum];
     }
   }
 ];

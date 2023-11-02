@@ -12,23 +12,8 @@ import { ModalName } from '../../../../../../../data/ModalName';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
-const mockReduxData = {
-  user: {
-    token: 'AAh32ffdswt',
-    theme: SupportTheme.LIGHT,
-    bindProjects: [
-      {
-        project_id: '1',
-        is_manager: true,
-        project_name: 'default'
-      }
-    ]
-  },
-  project: {
-    currentProjectArchive: false
-  }
-};
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
@@ -43,9 +28,9 @@ describe('test update server monitor', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
+    mockUseCurrentProject();
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
-        ...mockReduxData,
         monitorSourceConfig: {
           selectServerMonitorData: serverMonitorListData[0],
           modalStatus: {
@@ -68,7 +53,6 @@ describe('test update server monitor', () => {
   it('should match no modal when modal status is false', async () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
-        ...mockReduxData,
         monitorSourceConfig: {
           modalStatus: {
             [ModalName.Update_Server_Monitor]: false
@@ -169,7 +153,7 @@ describe('test update server monitor', () => {
           user: 'root'
         }
       ],
-      project_uid: ''
+      project_uid: '700300'
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(

@@ -4,6 +4,10 @@ import { initReactI18next } from 'react-i18next';
 import zhCN from './locale/zh-CN';
 import commonZhCN from '@actiontech/shared/lib/locale/zh-CN';
 import TestMockApi from '@actiontech/shared/lib/testUtil/mockApi';
+import Adapter from '@cfaester/enzyme-adapter-react-18';
+import Enzyme from 'enzyme';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 Object.defineProperty(global, 'matchMedia', {
   writable: true,

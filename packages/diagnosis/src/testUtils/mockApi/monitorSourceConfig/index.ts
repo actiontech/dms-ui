@@ -23,7 +23,7 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
         code: 0,
         data: serverMonitorListData,
         message: 'ok',
-        total: serverMonitorListData.length
+        total_nums: serverMonitorListData.length
       })
     );
     return spy;
@@ -58,7 +58,7 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
         code: 0,
         data: databaseMonitorListData,
         message: 'ok',
-        total: databaseMonitorListData.length
+        total_nums: databaseMonitorListData.length
       })
     );
     return spy;

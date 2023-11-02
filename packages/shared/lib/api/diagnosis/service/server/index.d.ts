@@ -1,15 +1,20 @@
 import {
-  ISaveServersReq,
+  IViewAddServerRequest,
   IGenericResp,
   IDeleteServersReq,
-  IListServersReply
+  IListServersReply,
+  IViewUpdateServerRequest
 } from '../common.d';
 
-export interface IV1AddServerParams extends ISaveServersReq {}
+export interface IV1AddServerParams extends IViewAddServerRequest {
+  project_uid: string;
+}
 
 export interface IV1AddServerReturn extends IGenericResp {}
 
-export interface IV1DeleteServerParams extends IDeleteServersReq {}
+export interface IV1DeleteServerParams extends IDeleteServersReq {
+  project_uid: string;
+}
 
 export interface IV1DeleteServerReturn extends IGenericResp {}
 
@@ -20,9 +25,15 @@ export interface IV1ListServersParams {
 
   page_size?: number;
 
-  project_uid: string;
-
   server_name?: string;
+
+  project_uid: string;
 }
 
 export interface IV1ListServersReturn extends IListServersReply {}
+
+export interface IV1UpdateServerParams extends IViewUpdateServerRequest {
+  project_uid: string;
+}
+
+export interface IV1UpdateServerReturn extends IGenericResp {}

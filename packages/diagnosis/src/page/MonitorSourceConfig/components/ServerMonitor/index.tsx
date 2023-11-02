@@ -52,7 +52,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   );
 
   useEffect(() => {
-    props.setLoading(loading);
+    props?.setLoading?.(loading);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
@@ -92,9 +92,9 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
     <>
       <ActiontechTable
         rowKey={(record: IViewServerReply) => {
-          return `${record?.createdAt}-${record.host}`;
+          return `${record?.name}-${record.host}`;
         }}
-        dataSource={serverMonitorList?.list}
+        dataSource={serverMonitorList?.list ?? []}
         pagination={{
           total: serverMonitorList?.total ?? 0
         }}

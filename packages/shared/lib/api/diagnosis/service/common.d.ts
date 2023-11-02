@@ -1,18 +1,13 @@
 import {
   ViewDatabaseReplyStatusEnum,
-  ViewServerStatusEnum,
   ViewServerReplyStatusEnum
 } from './common.enum';
 
 export interface IDeleteDBsReq {
   db_monitor_names: string[];
-
-  project_uid: string;
 }
 
 export interface IDeleteServersReq {
-  project_uid: string;
-
   serverNames?: string[];
 }
 
@@ -29,7 +24,7 @@ export interface IListDBsReply {
 
   message?: string;
 
-  total?: number;
+  total_nums?: number;
 }
 
 export interface IListServersReply {
@@ -39,19 +34,15 @@ export interface IListServersReply {
 
   message?: string;
 
-  total?: number;
+  total_nums?: number;
 }
 
 export interface ISaveDBsReq {
   dbs: IViewDatabase[];
-
-  project_uid: string;
 }
 
-export interface ISaveServersReq {
-  project_uid: string;
-
-  servers: IViewServer[];
+export interface IViewAddServerRequest {
+  viewServers?: IViewServer[];
 }
 
 export interface IViewDatabase {
@@ -87,8 +78,6 @@ export interface IViewDatabaseReply {
 }
 
 export interface IViewServer {
-  createdAt?: string;
-
   host: string;
 
   name: string;
@@ -97,15 +86,15 @@ export interface IViewServer {
 
   port?: number;
 
-  status?: ViewServerStatusEnum;
-
   user: string;
 }
 
 export interface IViewServerReply {
-  createdAt?: string;
+  created_at?: string;
 
   host: string;
+
+  id?: string;
 
   name: string;
 
@@ -114,6 +103,20 @@ export interface IViewServerReply {
   port?: number;
 
   status?: ViewServerReplyStatusEnum;
+
+  user: string;
+}
+
+export interface IViewUpdateServerRequest {
+  host: string;
+
+  id?: number;
+
+  name: string;
+
+  password: string;
+
+  port?: number;
 
   user: string;
 }

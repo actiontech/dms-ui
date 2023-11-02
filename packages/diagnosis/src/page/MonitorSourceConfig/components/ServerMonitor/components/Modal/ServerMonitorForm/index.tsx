@@ -5,9 +5,13 @@ import { useTranslation } from 'react-i18next';
 
 interface IServerMonitorFormProps {
   form: FormInstance;
+  isUpdate?: boolean;
 }
 
-const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
+const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
+  form,
+  isUpdate
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -25,7 +29,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
             }
           ]}
         >
-          <BasicInput />
+          <BasicInput readOnly={!!isUpdate} />
         </Form.Item>
         <Form.Item
           name="host"
@@ -39,7 +43,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
             }
           ]}
         >
-          <BasicInput />
+          <BasicInput readOnly={!!isUpdate} />
         </Form.Item>
         <Form.Item
           name="port"
@@ -53,7 +57,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
             }
           ]}
         >
-          <BasicInputNumber />
+          <BasicInputNumber readOnly={!!isUpdate} />
         </Form.Item>
         <Form.Item
           name="user"

@@ -36,6 +36,7 @@ const MonitorSourceConfig: React.FC = () => {
 
   const onChange = (key: SegmentedValue) => {
     setListType(key as MonitorSourceConfigTypeEnum);
+    setSearchValue('');
   };
 
   const onAddMonitorSource = (type: MonitorSourceConfigTypeEnum) => {
@@ -99,6 +100,7 @@ const MonitorSourceConfig: React.FC = () => {
         refreshButton={{ refresh: onRefreshTable, disabled: tableLoading }}
         searchInput={{
           placeholder: t('common.actiontechTable.searchInput.placeholder'),
+          value: searchValue,
           onSearch: (value) => {
             setSearchValue(value);
           }

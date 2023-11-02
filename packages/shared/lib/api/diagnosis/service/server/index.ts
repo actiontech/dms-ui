@@ -12,7 +12,9 @@ import {
   IV1DeleteServerParams,
   IV1DeleteServerReturn,
   IV1ListServersParams,
-  IV1ListServersReturn
+  IV1ListServersReturn,
+  IV1UpdateServerParams,
+  IV1UpdateServerReturn
 } from './index.d';
 
 class ServerService extends ServiceBase {
@@ -22,7 +24,7 @@ class ServerService extends ServiceBase {
     delete paramsData.project_uid;
 
     return this.post<IV1AddServerReturn>(
-      `/diagno/v1/${project_uid}/server/add`,
+      `/diagno/v1/projects/${project_uid}/server/add`,
       paramsData,
       options
     );
@@ -37,7 +39,7 @@ class ServerService extends ServiceBase {
     delete paramsData.project_uid;
 
     return this.post<IV1DeleteServerReturn>(
-      `/diagno/v1/${project_uid}/server/delete`,
+      `/diagno/v1/projects/${project_uid}/server/delete`,
       paramsData,
       options
     );
@@ -52,7 +54,22 @@ class ServerService extends ServiceBase {
     delete paramsData.project_uid;
 
     return this.get<IV1ListServersReturn>(
-      `/diagno/v1/${project_uid}/server/list`,
+      `/diagno/v1/projects/${project_uid}/server/list`,
+      paramsData,
+      options
+    );
+  }
+
+  public V1UpdateServer(
+    params: IV1UpdateServerParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<IV1UpdateServerReturn>(
+      `/diagno/v1/projects/${project_uid}/server/update`,
       paramsData,
       options
     );
