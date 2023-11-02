@@ -6,7 +6,7 @@ import ProjectSelector from './ProjectSelector';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCallback, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
-import { menuDataPlaceholderKey, sideMenuData } from './menu.data';
+import { sideMenuData } from './menu.data';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
 import { Menu, MenuProps, SelectProps, Typography } from 'antd5';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
@@ -22,6 +22,7 @@ import {
   DEFAULT_PROJECT_NAME
 } from '@actiontech/shared/lib/data/common';
 import useSystemConfig from '../../../hooks/useSystemConfig.tsx';
+import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
 
 export const SideMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -81,7 +82,7 @@ export const SideMenu: React.FC = () => {
           return [];
         }
         const realPath = `/${route?.key}`.replace(
-          menuDataPlaceholderKey,
+          SIDE_MENU_DATA_PLACEHOLDER_KEY,
           currentProjectID ?? ''
         );
         if (realPath === pathname) {
@@ -140,7 +141,7 @@ export const SideMenu: React.FC = () => {
         {/* IFTRUE_isCE */}
         <CEModeProjectWrapperStyleWrapper>
           <IconProjectFlag />
-          <Typography.Text strong className="default-project-name">
+          <Typography.Text className="default-project-name">
             {DEFAULT_PROJECT_NAME}
           </Typography.Text>
         </CEModeProjectWrapperStyleWrapper>

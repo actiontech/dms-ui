@@ -1,10 +1,6 @@
 import { ReactNode, Suspense, useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate, useRoutes } from 'react-router-dom';
-import {
-  AuthRouterConfig,
-  RouterConfigItem,
-  unAuthRouterConfig
-} from './router/router';
+import { AuthRouterConfig, unAuthRouterConfig } from './router/router';
 import { IReduxState } from './store';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
@@ -40,6 +36,7 @@ import {
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import useSystemConfig from './hooks/useSystemConfig.tsx';
+import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 
 //fix  https://github.com/actiontech/sqle/issues/1350
 export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
