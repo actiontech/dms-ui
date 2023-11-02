@@ -1,6 +1,9 @@
 import { SharedTheme } from './theme.type';
 import { RuleObject } from 'antd/es/form';
 import { ColumnGroupType, ColumnType, TableProps } from 'antd/es/table';
+import { ReactNode } from 'react';
+import { RouteObject } from 'react-router-dom';
+import { SystemRole } from '../enum';
 
 export type Dictionary = {
   [key: string]: string | number | boolean | Dictionary | string[] | undefined;
@@ -42,6 +45,15 @@ export type TemplateKeyPath<T> = {
 export interface IStore {
   [key: string]: any;
 }
+
+export type RouterConfigItem = RouteObject & {
+  label?: string;
+  icon?: ReactNode;
+  hideInMenu?: boolean;
+  key: string;
+  children?: RouterConfigItem[];
+  role?: Array<SystemRole | ''>;
+};
 
 //todo: sqle后端已删除这个定义，dms暂时还需要保留，所以在此暂存，之后再改
 export interface IManagementPermissionResV1 {
