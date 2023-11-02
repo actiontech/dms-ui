@@ -7,6 +7,18 @@ import { BaseRouterConfig } from './routers/base';
 import { SQLERouterConfig } from './routers/sqle';
 /* FITRUE_isSQLE */
 
+/* IFTRUE_isDMS */
+import { DMSRouterConfig } from './routers/dms';
+/* FITRUE_isDMS */
+
+/* IFTRUE_isPROVISION */
+import { ProvisionRouterConfig } from './routers/provision';
+/* FITRUE_isPROVISION */
+
+/* IFTRUE_isDIAGNOSIS */
+import { DiagnosisRouterConfig } from './routers/diagnosis';
+/* FITRUE_isDIAGNOSIS */
+
 export const AuthRouterConfig: RouterConfigItem[] = [
   ...BaseRouterConfig,
 
@@ -14,6 +26,17 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   ...SQLERouterConfig,
   /* FITRUE_isSQLE */
 
+  /* IFTRUE_isDMS */
+  ...DMSRouterConfig,
+  /* FITRUE_isDMS */
+
+  /* IFTRUE_isPROVISION */
+  ...ProvisionRouterConfig,
+  /* FITRUE_isPROVISION */
+
+  /* IFTRUE_isDIAGNOSIS */
+  ...DiagnosisRouterConfig,
+  /* FITRUE_isDIAGNOSIS */
   {
     path: '*',
     hideInMenu: true,

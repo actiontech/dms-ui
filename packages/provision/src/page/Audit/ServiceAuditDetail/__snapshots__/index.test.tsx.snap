@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/audit/serviceDetail should match snapshot 1`] = `
+<div>
+  <div
+    class="MuiBox-root css-19kzrtu"
+  >
+    <div
+      class="ant-card ant-card-bordered"
+    >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            数据源操作详情
+          </div>
+          <div
+            class="ant-card-extra"
+          >
+            <button
+              class="ant-btn ant-btn-primary"
+              type="button"
+            >
+              <span>
+                返 回
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="ant-space ant-space-vertical full-width-element"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 20px;"
+          >
+            <div
+              class="ant-list ant-list-grid"
+            >
+              <div
+                class="ant-list-header"
+              >
+                <h5
+                  class="ant-typography"
+                >
+                  动作信息
+                </h5>
+              </div>
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-row"
+                  >
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        产生时间
+                        ： 
+                        2022-12-29 17:20:53
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 20px;"
+          >
+            <div
+              class="ant-list ant-list-grid"
+            >
+              <div
+                class="ant-list-header"
+              >
+                <h5
+                  class="ant-typography"
+                >
+                  对象信息
+                </h5>
+              </div>
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-row"
+                  >
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        数据源
+                        ： 
+                        service-1
+                      </span>
+                    </div>
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        数据所在业务
+                        ： 
+                        business-1
+                      </span>
+                    </div>
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        操作
+                        ： 
+                        select * 
+                      </span>
+                    </div>
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        操作结果
+                        ： 
+                        success
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-row"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`/audit/serviceDetail should match snapshot 2`] = `
+<div>
+  <div
+    class="MuiBox-root css-19kzrtu"
+  >
+    <div
+      class="ant-card ant-card-bordered"
+    >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            数据源操作详情
+          </div>
+          <div
+            class="ant-card-extra"
+          >
+            <button
+              class="ant-btn ant-btn-primary"
+              type="button"
+            >
+              <span>
+                返 回
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="ant-space ant-space-vertical full-width-element"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 20px;"
+          >
+            <div
+              class="ant-list ant-list-grid"
+            >
+              <div
+                class="ant-list-header"
+              >
+                <h5
+                  class="ant-typography"
+                >
+                  动作信息
+                </h5>
+              </div>
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-row"
+                  >
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        产生时间
+                        ： 
+                        2022-12-29 17:20:53
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 20px;"
+          >
+            <div
+              class="ant-list ant-list-grid"
+            >
+              <div
+                class="ant-list-header"
+              >
+                <h5
+                  class="ant-typography"
+                >
+                  对象信息
+                </h5>
+              </div>
+              <div
+                class="ant-spin-nested-loading"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="ant-row"
+                  >
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        数据源
+                        ： 
+                        service-1
+                      </span>
+                    </div>
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        数据所在业务
+                        ： 
+                        business-1
+                      </span>
+                    </div>
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        操作
+                        ： 
+                        select * 
+                      </span>
+                    </div>
+                    <div
+                      style="width: 33.333333333333336%; max-width: 33.333333333333336%;"
+                    >
+                      <span
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+                        style="margin-bottom: 16px; padding-right: 16px;"
+                      >
+                        操作结果
+                        ： 
+                        success
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-row"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

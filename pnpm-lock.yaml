@@ -260,6 +260,12 @@ importers:
       babel-preset-react-app:
         specifier: ^10.0.1
         version: registry.npmmirror.com/babel-preset-react-app@10.0.1
+      diagnosis:
+        specifier: workspace:^
+        version: link:../diagnosis
+      provision:
+        specifier: workspace:^
+        version: link:../provision
       sqle:
         specifier: workspace:^
         version: link:../sqle
@@ -267,6 +273,18 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: registry.npmmirror.com/cross-env@7.0.3
+
+  packages/diagnosis:
+    dependencies:
+      '@actiontech/shared':
+        specifier: workspace:^1.0.0
+        version: link:../shared
+
+  packages/provision:
+    dependencies:
+      '@actiontech/shared':
+        specifier: workspace:^1.0.0
+        version: link:../shared
 
   packages/shared: {}
 

@@ -28,7 +28,7 @@ const NotFoundRecentlyProject: React.FC<{
 
     navigate(
       location.pathname.replace(
-        /^(\/sqle\/|\/)project\/\/(.+)$/,
+        /^(\/sqle\/|\/provision\/|\/)project\/\/(.+)$/,
         (_, prefix, target) => {
           return `${prefix}project/${projectSelectorValue}/${target}`;
         }
