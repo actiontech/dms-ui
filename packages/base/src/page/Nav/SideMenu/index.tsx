@@ -141,7 +141,7 @@ export const SideMenu: React.FC = () => {
         {/* IFTRUE_isCE */}
         <CEModeProjectWrapperStyleWrapper>
           <IconProjectFlag />
-          <Typography.Text strong className="default-project-name">
+          <Typography.Text className="default-project-name">
             {DEFAULT_PROJECT_NAME}
           </Typography.Text>
         </CEModeProjectWrapperStyleWrapper>
