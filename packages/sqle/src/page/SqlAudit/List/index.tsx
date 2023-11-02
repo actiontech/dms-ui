@@ -49,7 +49,7 @@ const SqlAuditList = () => {
     getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all'
   >('all');
 
-  const { instanceOptions, updateInstanceList } = useInstance();
+  const { instanceIDOptions, updateInstanceList } = useInstance();
 
   const onSearch = (value: string) => {
     setSearchKeyword(value);
@@ -122,7 +122,7 @@ const SqlAuditList = () => {
       }),
       FilterCustomProps
     >([
-      ['instance_name', { options: instanceOptions }],
+      ['instance_name', { options: instanceIDOptions }],
       [
         'auditTime',
         {
@@ -130,7 +130,7 @@ const SqlAuditList = () => {
         }
       ]
     ]);
-  }, [instanceOptions]);
+  }, [instanceIDOptions]);
 
   useEffect(() => {
     updateInstanceList({

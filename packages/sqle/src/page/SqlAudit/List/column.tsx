@@ -38,7 +38,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       'instance_name',
       {
         filterCustomType: 'select',
-        filterKey: 'filter_instance_name',
+        filterKey: 'filter_instance_id',
         filterLabel: t('sqlAudit.list.filter.instanceName'),
         checked: false
       }
