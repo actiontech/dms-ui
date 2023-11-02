@@ -32,7 +32,6 @@ import SqlAuditListColumn, {
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
-import { tableSingleData } from './mock.data';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
@@ -81,7 +80,31 @@ const SqlAuditList = () => {
     }
   );
 
-  const columns = useMemo(() => SqlAuditListColumn(projectID), [projectID]);
+  const updateTags = useCallback(
+    async (tags: string[], id: string) => {
+      sql_audit_record
+        .updateSQLAuditRecordV1({
+          tags,
+          sql_audit_record_id: id,
+          project_name: projectName
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(
+              t('sqlAudit.list.action.updateTags.successTips')
+            );
+            refresh();
+          }
+        });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [projectName]
+  );
+
+  const columns = useMemo(
+    () => SqlAuditListColumn(projectID, projectName, updateTags),
+    [projectID, projectName, updateTags]
+  );
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
       tableName: 'sql_audit_record_list',
@@ -167,8 +190,7 @@ const SqlAuditList = () => {
       <ActiontechTable
         className="table-row-cursor"
         setting={tableSetting}
-        // dataSource={dataList?.list}
-        dataSource={[tableSingleData]}
+        dataSource={dataList?.list}
         rowKey={(record: ISQLAuditRecord) => {
           return `${record?.sql_audit_record_id}`;
         }}

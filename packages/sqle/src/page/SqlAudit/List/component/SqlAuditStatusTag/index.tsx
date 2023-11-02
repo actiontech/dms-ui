@@ -12,7 +12,7 @@ const SqlAuditStatusTag = ({ status }: ISqlAuditStatusTag) => {
   const { t } = useTranslation();
   const color = useMemo(() => {
     const allColor = {
-      auditing: 'blue',
+      auditing: 'geekblue',
       successfully: 'green'
     };
     return allColor[status];
