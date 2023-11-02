@@ -24,8 +24,11 @@ const DataSource = (props: DataSourceProps) => {
   const { form, defaultValue, dataSource, projectName } = props;
   const submitLoading = useContext(FormSubmitStatusContext);
 
-  const { updateDriverNameList, generateDriverSelectOptions } =
-    useDatabaseType();
+  const {
+    loading: getDriverMetaLoading,
+    updateDriverNameList,
+    generateDriverSelectOptions
+  } = useDatabaseType();
 
   const getInstanceParams = useMemo<IGetInstanceTipListV1Params>(() => {
     const params: IGetInstanceTipListV1Params = {
@@ -50,7 +53,11 @@ const DataSource = (props: DataSourceProps) => {
     updateInstanceList({ ...getInstanceParams, filter_db_type: dbType });
   };
 
-  const { updateInstanceList, instanceOptions } = useInstance();
+  const {
+    loading: getInstanceListLoading,
+    updateInstanceList,
+    instanceOptions
+  } = useInstance();
 
   const handleDataSourceChange = (dataSource: string) => {
     props.dataSourceChange?.(dataSource);
@@ -74,10 +81,10 @@ const DataSource = (props: DataSourceProps) => {
     }
   };
 
-  const { generateInstanceSchemaSelectOption } = useInstanceSchema(
-    projectName,
-    dataSource
-  );
+  const {
+    loading: getInstanceSchemaListLoading,
+    generateInstanceSchemaSelectOption
+  } = useInstanceSchema(projectName, dataSource);
 
   useEffect(() => {
     updateDriverNameList();
@@ -120,6 +127,7 @@ const DataSource = (props: DataSourceProps) => {
           placeholder={t('common.form.placeholder.select')}
           onChange={(dnType) => handleDbTypeChange(dnType, true)}
           allowClear
+          loading={getDriverMetaLoading}
         >
           {generateDriverSelectOptions()}
         </BasicSelect>
@@ -140,6 +148,7 @@ const DataSource = (props: DataSourceProps) => {
         <BasicSelect
           allowClear
           showSearch
+          loading={getInstanceListLoading}
           disabled={submitLoading}
           onChange={handleDataSourceChange}
           placeholder={t('common.form.placeholder.select')}
@@ -153,6 +162,7 @@ const DataSource = (props: DataSourceProps) => {
       >
         <BasicSelect
           allowClear
+          loading={getInstanceSchemaListLoading}
           disabled={submitLoading}
           placeholder={t('common.form.placeholder.select')}
         >
