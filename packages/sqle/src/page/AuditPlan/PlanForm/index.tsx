@@ -46,9 +46,16 @@ const PlanForm: React.FC<PlanFormProps> = ({
 
   const asyncParamsRef = useRef<IAuditPlanParamResV1[] | undefined>([]);
 
-  const { globalRuleTemplateList, updateGlobalRuleTemplateList } =
-    useGlobalRuleTemplate();
-  const { ruleTemplateList, updateRuleTemplateList } = useRuleTemplate();
+  const {
+    loading: getGlobalRuleTemplateLoading,
+    globalRuleTemplateList,
+    updateGlobalRuleTemplateList
+  } = useGlobalRuleTemplate();
+  const {
+    loading: getRuleTemplateListLoading,
+    ruleTemplateList,
+    updateRuleTemplateList
+  } = useRuleTemplate();
 
   const { mergeFromValueIntoParams } = useAsyncParams();
 
@@ -198,6 +205,9 @@ const PlanForm: React.FC<PlanFormProps> = ({
             <AuditTemplate
               dbType={dbType}
               templateList={[...ruleTemplateList, ...globalRuleTemplateList]}
+              getRuleTemplateListLoading={
+                getRuleTemplateListLoading || getGlobalRuleTemplateLoading
+              }
             />
           </FormAreaBlockStyleWrapper>
         </FormAreaLineStyleWrapper>
