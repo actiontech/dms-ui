@@ -2,9 +2,10 @@ import { AxiosResponse } from 'axios';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IGenericResp } from '@actiontech/shared/lib/api/base/service/common';
+import { switchFieldName } from '../LoginConnection/Oauth/index.data';
 
 interface IUseConfigSwitchProps {
-  isInitialForm: boolean;
+  switchOpen: boolean;
   modifyFlag: boolean;
   startModify: () => void;
   handleUpdateConfig: () => Promise<AxiosResponse<IGenericResp, any>>;
@@ -15,7 +16,7 @@ interface IUseConfigSwitchProps {
 
 const useConfigSwitch = (props: IUseConfigSwitchProps) => {
   const {
-    isInitialForm,
+    switchOpen,
     modifyFlag,
     startModify,
     handleUpdateConfig,
@@ -27,6 +28,8 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
     configSwitchPopoverVisible,
     { setTrue: showConfigSwitchPopover, setFalse: hideConfigSwitchPopover }
   ] = useBoolean(false);
+
+  // const switchOpen = Form.useWatch(switchFieldName, form);
 
   const onConfigSwitchPopoverConfirm = async () => {
     handleUpdateConfig()
@@ -47,17 +50,20 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
   };
 
   const onConfigSwitchChange = (open: boolean) => {
-    if (isInitialForm && open) {
+    if (open) {
       startModify();
     }
+  };
 
-    if (!open) {
-      !modifyFlag ? showConfigSwitchPopover() : handleClickCancel();
-    }
+  const onConfigSwitchPopoverOpen = () => {
+    if (!switchOpen) return;
+
+    !modifyFlag ? showConfigSwitchPopover() : handleClickCancel();
   };
 
   return {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
     onConfigSwitchPopoverCancel,
     onConfigSwitchChange
