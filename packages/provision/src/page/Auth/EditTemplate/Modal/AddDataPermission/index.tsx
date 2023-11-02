@@ -272,10 +272,23 @@ const AddDataPermission: FC<IAddDataPermission> = ({
             onChange={handleBusinessChange}
           />
         </Form.Item>
-        <Form.Item label={t('auth.addAuth.baseForm.dataSource')}>
+        <Form.Item
+          label={t('auth.addAuth.baseForm.dataSource')}
+          name="service"
+          rules={[
+            {
+              required: true,
+              message: t('auth.addAuth.baseForm.errorByService')
+            }
+          ]}
+        >
           <Row wrap={false}>
             <Col flex={1}>
-              <Form.Item name="service" rules={[{ required: true }]} noStyle>
+              <Form.Item
+                name="service"
+                rules={[{ required: true, message: '' }]}
+                noStyle
+              >
                 <BasicSelect
                   className="data-service-select"
                   loading={serviceOptionsLoading}

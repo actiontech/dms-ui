@@ -65,7 +65,8 @@ export default {
         objects: '数据对象',
         operation: '数据操作'
       },
-      addDatabaseTable: '添加数据库表'
+      addDatabaseTable: '添加数据库表',
+      errorByService: '请选择数据源'
     },
     purposeForm: {
       username: '使用人',
