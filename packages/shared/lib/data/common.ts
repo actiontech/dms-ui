@@ -96,3 +96,5 @@ export const DMS_DEFAULT_WEB_TITLE = 'SQLE';
 export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';
 export const DMS_DEFAULT_WEB_LOGO_URL = '/logo.png';
+export const DMS_REDIRECT_KEY_PARAMS_NAME = 'target';
+export const OPEN_CLOUD_BEAVER_URL_PARAM_NAME = 'open_cloud_beaver';

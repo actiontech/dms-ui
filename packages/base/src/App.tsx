@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useMemo } from 'react';
-import { useRoutes } from 'react-router-dom';
+import { ReactNode, Suspense, useEffect, useMemo, useState } from 'react';
+import { useLocation, useNavigate, useRoutes } from 'react-router-dom';
 import {
   AuthRouterConfig,
   RouterConfigItem,
@@ -33,10 +33,33 @@ import {
   StyleProvider,
   legacyLogicalPropertiesTransformer
 } from '@ant-design/cssinjs';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+import {
+  ANTD_PREFIX_STR,
+  DMS_REDIRECT_KEY_PARAMS_NAME
+} from '@actiontech/shared/lib/data/common';
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import useSystemConfig from './hooks/useSystemConfig.tsx';
+
+//fix  https://github.com/actiontech/sqle/issues/1350
+export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [initRenderApp, setInitRenderApp] = useState<boolean>(true);
+  const token = useSelector<IReduxState, string>((state) => state.user.token);
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!initRenderApp) {
+      return;
+    }
+    setInitRenderApp(false);
+    if (!token && !['/login', '/user/bind'].includes(location.pathname)) {
+      navigate(`/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${location.pathname}`, {
+        replace: true
+      });
+    }
+  }, [initRenderApp, location.pathname, navigate, token]);
+  return <>{!initRenderApp && children}</>;
+};
 
 Spin.setDefaultIndicator(<IconSpin />);
 
@@ -142,64 +165,68 @@ function App() {
   }, [getUserBySession, token]);
 
   return (
-    <StyleProvider
-      hashPriority="high"
-      transformers={[legacyLogicalPropertiesTransformer]}
-    >
-      <ConfigProviderV5
-        locale={zhCN5}
-        prefixCls={ANTD_PREFIX_STR}
-        theme={{
-          algorithm:
-            theme === SupportTheme.DARK
-              ? antdTheme.darkAlgorithm
-              : antdTheme.defaultAlgorithm,
-          token: {
-            fontFamily: `PlusJakartaSans Medium, -apple-system, 'Microsoft YaHei', BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    <Wrapper>
+      <StyleProvider
+        hashPriority="high"
+        transformers={[legacyLogicalPropertiesTransformer]}
+      >
+        <ConfigProviderV5
+          locale={zhCN5}
+          prefixCls={ANTD_PREFIX_STR}
+          theme={{
+            algorithm:
+              theme === SupportTheme.DARK
+                ? antdTheme.darkAlgorithm
+                : antdTheme.defaultAlgorithm,
+            token: {
+              fontFamily: `PlusJakartaSans Medium, -apple-system, 'Microsoft YaHei', BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
   'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
   'Noto Color Emoji'`,
-            fontSize: 14,
-            colorInfo: themeData.sharedTheme.uiToken.colorInfo,
-            colorPrimary: themeData.sharedTheme.uiToken.colorPrimary,
-            colorSuccess: themeData.sharedTheme.uiToken.colorSuccess,
-            colorWarning: themeData.sharedTheme.uiToken.colorWarning,
-            colorError: themeData.sharedTheme.uiToken.colorError,
-            colorTextBase: themeData.sharedTheme.uiToken.colorTextBase,
-            colorBgBase: themeData.sharedTheme.uiToken.colorBgBase,
-            colorText: themeData.sharedTheme.uiToken.colorText,
-            colorTextSecondary:
-              themeData.sharedTheme.uiToken.colorTextSecondary,
-            colorTextTertiary: themeData.sharedTheme.uiToken.colorTextTertiary,
-            colorTextQuaternary:
-              themeData.sharedTheme.uiToken.colorTextQuaternary,
-            colorBorderSecondary:
-              themeData.sharedTheme.uiToken.colorBorderSecondary,
-            colorBorder: themeData.sharedTheme.uiToken.colorBorder,
-            colorFill: themeData.sharedTheme.uiToken.colorFill,
-            colorFillSecondary:
-              themeData.sharedTheme.uiToken.colorFillSecondary,
-            colorFillTertiary: themeData.sharedTheme.uiToken.colorFillTertiary,
-            colorFillQuaternary:
-              themeData.sharedTheme.uiToken.colorFillQuaternary,
-            colorBgLayout: themeData.sharedTheme.uiToken.colorBgLayout,
-            colorWarningBgHover:
-              themeData.sharedTheme.uiToken.colorWarningBgHover,
-            colorErrorBgHover: themeData.sharedTheme.uiToken.colorErrorBgHover
-          }
-        }}
-      >
-        <ConfigProvider locale={zhCN}>
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={themeData}>
-              {notificationContextHolder}
-              <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
-                {body}
-              </EmptyBox>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        </ConfigProvider>
-      </ConfigProviderV5>
-    </StyleProvider>
+              fontSize: 14,
+              colorInfo: themeData.sharedTheme.uiToken.colorInfo,
+              colorPrimary: themeData.sharedTheme.uiToken.colorPrimary,
+              colorSuccess: themeData.sharedTheme.uiToken.colorSuccess,
+              colorWarning: themeData.sharedTheme.uiToken.colorWarning,
+              colorError: themeData.sharedTheme.uiToken.colorError,
+              colorTextBase: themeData.sharedTheme.uiToken.colorTextBase,
+              colorBgBase: themeData.sharedTheme.uiToken.colorBgBase,
+              colorText: themeData.sharedTheme.uiToken.colorText,
+              colorTextSecondary:
+                themeData.sharedTheme.uiToken.colorTextSecondary,
+              colorTextTertiary:
+                themeData.sharedTheme.uiToken.colorTextTertiary,
+              colorTextQuaternary:
+                themeData.sharedTheme.uiToken.colorTextQuaternary,
+              colorBorderSecondary:
+                themeData.sharedTheme.uiToken.colorBorderSecondary,
+              colorBorder: themeData.sharedTheme.uiToken.colorBorder,
+              colorFill: themeData.sharedTheme.uiToken.colorFill,
+              colorFillSecondary:
+                themeData.sharedTheme.uiToken.colorFillSecondary,
+              colorFillTertiary:
+                themeData.sharedTheme.uiToken.colorFillTertiary,
+              colorFillQuaternary:
+                themeData.sharedTheme.uiToken.colorFillQuaternary,
+              colorBgLayout: themeData.sharedTheme.uiToken.colorBgLayout,
+              colorWarningBgHover:
+                themeData.sharedTheme.uiToken.colorWarningBgHover,
+              colorErrorBgHover: themeData.sharedTheme.uiToken.colorErrorBgHover
+            }
+          }}
+        >
+          <ConfigProvider locale={zhCN}>
+            <StyledEngineProvider injectFirst>
+              <ThemeProvider theme={themeData}>
+                {notificationContextHolder}
+                <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
+                  {body}
+                </EmptyBox>
+              </ThemeProvider>
+            </StyledEngineProvider>
+          </ConfigProvider>
+        </ConfigProviderV5>
+      </StyleProvider>
+    </Wrapper>
   );
 }
 

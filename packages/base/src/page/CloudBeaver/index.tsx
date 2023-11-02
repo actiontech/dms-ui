@@ -3,7 +3,6 @@ import { Card, Space, Typography, Spin } from 'antd5';
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from 'sqle/src/data/common';
 import cloudBeaver from '@actiontech/shared/lib/api/base/service/cloudbeaver';
 import { PageHeader } from '@actiontech/shared';
 import {
@@ -11,6 +10,7 @@ import {
   CloudBeaverContentSpaceStyleWrapper,
   CloudBeaverContentIconStyleWrapper
 } from './style';
+import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
 
 const CloudBeaver = () => {
   const { t } = useTranslation();
