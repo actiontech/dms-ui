@@ -7,6 +7,7 @@ interface ConfigSwitchParams {
   switchFieldName: string;
   switchOpen?: boolean;
   modifyFlag: boolean;
+  submitLoading: boolean;
   popoverVisible: boolean;
   onConfirm: () => void;
   onSwitchChange: (open: boolean) => void;
@@ -16,8 +17,9 @@ interface ConfigSwitchParams {
 const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
   switchFieldName,
   switchOpen,
-  popoverVisible,
   modifyFlag,
+  submitLoading,
+  popoverVisible,
   onConfirm,
   onSwitchChange,
   onSwitchPopoverOpen
@@ -35,7 +37,11 @@ const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
       onConfirm={onConfirm}
     >
       <FormItemLabel name={switchFieldName} valuePropName="checked">
-        <BasicSwitch checked={switchOpen} onChange={onSwitchChange} />
+        <BasicSwitch
+          checked={switchOpen}
+          disabled={submitLoading}
+          onChange={onSwitchChange}
+        />
       </FormItemLabel>
     </Popconfirm>
   );

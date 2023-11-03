@@ -1,19 +1,13 @@
 import { useBoolean, useRequest } from 'ahooks';
-import { message, Space, Spin } from 'antd5';
+import { Form, message, Space, Spin } from 'antd5';
 import { useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { isEqual } from 'lodash';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { WebhookFormFields } from './index.type';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/service/common';
-import {
-  DEFAULT_CONSTANT,
-  defaultFormData,
-  serviceInitialData,
-  switchFieldName
-} from './index.data';
+import { DEFAULT_CONSTANT, switchFieldName } from './index.data';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
@@ -78,11 +72,8 @@ const WebHook: React.FC = () => {
       }
     }
   );
-  const isInitialForm = useMemo(() => {
-    return (
-      isEqual(webhookConfig, defaultFormData) ||
-      isEqual(webhookConfig, serviceInitialData)
-    );
+  const isConfigClosed = useMemo(() => {
+    return !webhookConfig?.enable;
   }, [webhookConfig]);
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -130,19 +121,27 @@ const WebHook: React.FC = () => {
   };
 
   const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed) form.setFieldsValue({ [switchFieldName]: false });
     modifyFinish();
   };
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
+  };
+
+  const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
     startModify,
+    startSubmit,
+    submitFinish,
     handleUpdateConfig: () =>
       dms.UpdateWebHookConfiguration({
         webhook_config: {
@@ -151,7 +150,7 @@ const WebHook: React.FC = () => {
       }),
     handleClickCancel,
     refreshConfig: refreshWebhookConfig,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const testTing = useRef(false);
@@ -200,14 +199,14 @@ const WebHook: React.FC = () => {
 
   return (
     <div className="config-form-wrapper">
-      <Spin spinning={loading}>
+      <Spin spinning={loading || submitLoading}>
         {messageContextHolder}
 
         {renderConfigForm({
           data: webhookConfig ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isInitialForm || !extraButtonsVisible}>
+            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
               <BasicToolTips title={t('common.test')} titleWidth={54}>
                 <BasicButton
                   htmlType="submit"
@@ -228,11 +227,13 @@ const WebHook: React.FC = () => {
           configSwitchNode: (
             <ConfigSwitch
               switchFieldName={switchFieldName}
-              disabled={modifyFlag}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
           configField: (

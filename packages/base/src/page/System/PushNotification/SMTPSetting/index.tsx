@@ -11,7 +11,6 @@ import {
   BasicSwitch,
   BasicToolTips
 } from '@actiontech/shared';
-import { isEqual } from 'lodash';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
 import {
@@ -24,7 +23,7 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
-import { defaultFormData, switchFieldName } from './index.data';
+import { switchFieldName } from './index.data';
 import ConfigModifyBtn from '../../components/ConfigModifyBtn';
 import ConfigTestBtn from '../../components/ConfigTestBtn';
 import ConfigSwitch from '../../components/ConfigSwitch';
@@ -86,8 +85,7 @@ const SMTPSetting = () => {
     setFormDefaultValue();
   };
   const handleClickCancel = () => {
-    if (isConfigClosed && modifyFlag)
-      form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed) form.setFieldValue(switchFieldName, false);
     modifyFinish();
   };
 
@@ -134,6 +132,8 @@ const SMTPSetting = () => {
     switchOpen,
     modifyFlag,
     startModify,
+    startSubmit,
+    submitFinish,
     handleUpdateConfig: () =>
       dms.UpdateSMTPConfiguration({
         smtp_configuration: {
@@ -289,6 +289,7 @@ const SMTPSetting = () => {
               switchFieldName={switchFieldName}
               switchOpen={switchOpen}
               modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
               onSwitchChange={onConfigSwitchChange}

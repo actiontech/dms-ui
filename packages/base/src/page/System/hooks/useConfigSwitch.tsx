@@ -9,6 +9,8 @@ interface IUseConfigSwitchProps {
   switchOpen: boolean;
   modifyFlag: boolean;
   startModify: () => void;
+  startSubmit: () => void;
+  submitFinish: () => void;
   handleUpdateConfig: () => Promise<AxiosResponse<IGenericResp, any>>;
   handleClickCancel: () => void;
   refreshConfig: () => void;
@@ -21,6 +23,8 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
     switchOpen,
     modifyFlag,
     startModify,
+    startSubmit,
+    submitFinish,
     handleUpdateConfig,
     handleClickCancel,
     refreshConfig,
@@ -37,6 +41,7 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
       refreshConfig();
       hideConfigSwitchPopover();
     } else {
+      startSubmit();
       handleUpdateConfig()
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
@@ -45,6 +50,7 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
           }
         })
         .finally(() => {
+          submitFinish();
           hideConfigSwitchPopover();
         });
     }
