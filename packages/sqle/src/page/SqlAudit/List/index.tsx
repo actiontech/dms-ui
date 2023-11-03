@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { message } from 'antd5';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import {
   ActiontechTable,
@@ -17,7 +17,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import SqlAuditStatusFilter from './component/SqlAuditStatusFilter';
 
-import { useBoolean, useRequest } from 'ahooks';
+import { useRequest } from 'ahooks';
 import { ResponseCode } from '../../../data/common';
 import useInstance from '../../../hooks/useInstance';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -36,9 +36,8 @@ import EventEmitter from '../../../utils/EventEmitter';
 const SqlAuditList = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const navigate = useNavigate();
-  const { projectName, projectID, projectArchive } = useCurrentProject();
-  const { isAdmin, username } = useCurrentUser();
+  const { projectName, projectID } = useCurrentProject();
+  const { username } = useCurrentUser();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -61,7 +60,7 @@ const SqlAuditList = () => {
     refresh
   } = useRequest(
     () => {
-      // filter_sql_audit_record_ids????
+      // filter_sql_audit_record_ids???? 管控跳转到 审核的
       const params: IGetSQLAuditRecordsV1Params = {
         ...tableFilterInfo,
         ...pagination,
