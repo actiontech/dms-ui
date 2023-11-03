@@ -65,8 +65,8 @@ const SMTPSetting = () => {
       }
     }
   );
-  const isInitialForm = useMemo(() => {
-    return isEqual(smtpInfo, defaultFormData);
+  const isConfigClosed = useMemo(() => {
+    return !smtpInfo?.enable_smtp_notify;
   }, [smtpInfo]);
 
   const setFormDefaultValue = useCallback(() => {
@@ -85,10 +85,14 @@ const SMTPSetting = () => {
     startModify();
     setFormDefaultValue();
   };
-
   const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed && modifyFlag)
+      form.setFieldValue(switchFieldName, false);
     modifyFinish();
+  };
+
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
   };
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -118,25 +122,28 @@ const SMTPSetting = () => {
       });
   };
 
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
     startModify,
     handleUpdateConfig: () =>
       dms.UpdateSMTPConfiguration({
         smtp_configuration: {
-          ...defaultFormData,
+          ...smtpInfo,
           enable_smtp_notify: false
         }
       }),
     handleClickCancel,
     refreshConfig: refreshSMTPInfo,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
@@ -232,14 +239,14 @@ const SMTPSetting = () => {
 
   return (
     <div className="config-form-wrapper">
-      <Spin spinning={loading}>
+      <Spin spinning={loading || submitLoading}>
         {messageContextHolder}
 
         {renderConfigForm({
           data: smtpInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isInitialForm || !extraButtonsVisible}>
+            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
               <ConfigTestBtn
                 testingRef={testTing}
                 popoverOpen={testPopoverVisible}
@@ -280,11 +287,12 @@ const SMTPSetting = () => {
           configSwitchNode: (
             <ConfigSwitch
               switchFieldName={switchFieldName}
-              disabled={modifyFlag}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
           configField: (
@@ -399,7 +407,6 @@ const SMTPSetting = () => {
                   htmlType="submit"
                   type="primary"
                   disabled={submitLoading}
-                  loading={submitLoading}
                 >
                   {t('common.submit')}
                 </BasicButton>

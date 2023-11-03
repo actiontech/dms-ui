@@ -9,7 +9,6 @@ interface ConfigSwitchParams {
   modifyFlag: boolean;
   popoverVisible: boolean;
   onConfirm: () => void;
-  onCancel?: () => void; // deprecated
   onSwitchChange: (open: boolean) => void;
   onSwitchPopoverOpen: (open: boolean) => void;
 }
@@ -28,8 +27,8 @@ const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
     <Popconfirm
       title={
         modifyFlag
-          ? t('dmsSystem.resetConfigConfirm')
-          : t('dmsSystem.cancelConfigConfirm')
+          ? t('dmsSystem.confirmResetConfigTips')
+          : t('dmsSystem.confirmCloseConfigTips')
       }
       open={popoverVisible}
       onOpenChange={onSwitchPopoverOpen}
