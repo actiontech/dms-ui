@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import { message, Space, Spin, Typography } from 'antd5';
+import { Form, message, Space, Spin, Typography } from 'antd5';
 import { BasicToolTips, BasicButton, BasicInput } from '@actiontech/shared';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
@@ -61,7 +61,7 @@ const DingTalkSetting: React.FC = () => {
     }
   );
 
-  const isInitialForm = useMemo(() => {
+  const isConfigClosed = useMemo(() => {
     return !dingTalkInfo?.is_enable_ding_talk_notify;
   }, [dingTalkInfo]);
 
@@ -73,8 +73,12 @@ const DingTalkSetting: React.FC = () => {
     });
   };
   const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed) form.setFieldValue(switchFieldName, false);
     modifyFinish();
+  };
+
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
   };
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -99,15 +103,20 @@ const DingTalkSetting: React.FC = () => {
       });
   };
 
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
     startModify,
+    startSubmit,
+    submitFinish,
     handleUpdateConfig: () =>
       configuration.updateDingTalkConfigurationV1({
         ...defaultFormData,
@@ -115,7 +124,7 @@ const DingTalkSetting: React.FC = () => {
       }),
     handleClickCancel,
     refreshConfig: refreshDingTalkInfo,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const testTing = useRef(false);
@@ -166,7 +175,7 @@ const DingTalkSetting: React.FC = () => {
           data: dingTalkInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isInitialForm || !extraButtonsVisible}>
+            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
               <BasicToolTips title={t('common.test')} titleWidth={54}>
                 <BasicButton
                   htmlType="submit"
@@ -184,11 +193,13 @@ const DingTalkSetting: React.FC = () => {
           configSwitchNode: (
             <ConfigSwitch
               switchFieldName={switchFieldName}
-              disabled={modifyFlag}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
           configField: (

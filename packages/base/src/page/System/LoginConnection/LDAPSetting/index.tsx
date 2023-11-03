@@ -1,15 +1,14 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Space, Spin } from 'antd5';
+import { Form, Space, Spin } from 'antd5';
 import { useBoolean, useRequest } from 'ahooks';
-import { isEqual } from 'lodash';
 import { BasicButton, BasicInput, BasicSwitch } from '@actiontech/shared';
 import { LDAPFormFields } from './index.type';
 import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ILDAPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
-import { defaultFormData, switchFieldName } from './index.data';
+import { switchFieldName } from './index.data';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
@@ -65,8 +64,9 @@ const LDAPSetting = () => {
       ldap_user_email_rdn_key: ldapSetting?.ldap_user_email_rdn_key
     });
   }, [form, ldapSetting]);
-  const isInitialForm = useMemo(() => {
-    return isEqual(ldapSetting, defaultFormData);
+
+  const isConfigClosed = useMemo(() => {
+    return !ldapSetting?.enable_ldap;
   }, [ldapSetting]);
 
   const [
@@ -99,29 +99,38 @@ const LDAPSetting = () => {
   };
 
   const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed) form.setFieldValue(switchFieldName, false);
     modifyFinish();
   };
 
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
+  };
+
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
     startModify,
+    startSubmit: startUpdateLdap,
+    submitFinish: updateLdapFinish,
     handleUpdateConfig: () =>
       dms.UpdateLDAPConfiguration({
         ldap: {
-          ...defaultFormData,
+          ...ldapSetting,
           enable_ldap: false
         }
       }),
     handleClickCancel,
     refreshConfig: refreshLdapSetting,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<ILDAPConfigurationResData> =
@@ -181,23 +190,25 @@ const LDAPSetting = () => {
 
   return (
     <div className="config-form-wrapper">
-      <Spin spinning={loading}>
+      <Spin spinning={loading || submitLoading}>
         {renderConfigForm({
           data: ldapSetting ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space hidden={isInitialForm || !extraButtonsVisible}>
+            <Space hidden={isConfigClosed || !extraButtonsVisible}>
               <ConfigModifyBtn onClick={handleClickModify} />
             </Space>
           ),
           configSwitchNode: (
             <ConfigSwitch
               switchFieldName={switchFieldName}
-              disabled={modifyFlag}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
           configField: (
@@ -297,7 +308,6 @@ const LDAPSetting = () => {
                   type="primary"
                   htmlType="submit"
                   disabled={submitLoading}
-                  loading={submitLoading}
                 >
                   {t('common.submit')}
                 </BasicButton>

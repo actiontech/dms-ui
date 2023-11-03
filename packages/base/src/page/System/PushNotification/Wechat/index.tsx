@@ -9,9 +9,8 @@ import useConfigRender, {
 } from '../../hooks/useConfigRender';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IWeChatConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
-import { isEqual } from 'lodash';
 import { BasicButton, BasicInput, BasicSwitch } from '@actiontech/shared';
-import { defaultFormData, switchFieldName } from './index.data';
+import { switchFieldName } from './index.data';
 import {
   CustomLabelContent,
   FormItemLabel,
@@ -59,8 +58,8 @@ const Wechat = () => {
     switchFieldLabel: t('dmsSystem.wechat.enable_wechat_notify')
   });
 
-  const isInitialForm = useMemo(() => {
-    return isEqual(wechatConfig, defaultFormData);
+  const isConfigClosed = useMemo(() => {
+    return !wechatConfig?.enable_wechat_notify;
   }, [wechatConfig]);
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -107,29 +106,38 @@ const Wechat = () => {
     startModify();
   };
   const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed) form.setFieldsValue({ [switchFieldName]: false });
     modifyFinish();
   };
 
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
+  };
+
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
     startModify,
+    startSubmit,
+    submitFinish,
     handleUpdateConfig: () =>
       dms.UpdateWeChatConfiguration({
         update_wechat_configuration: {
-          ...defaultFormData,
+          ...wechatConfig,
           enable_wechat_notify: false
         }
       }),
     handleClickCancel,
     refreshConfig: refreshWechatConfig,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
@@ -212,13 +220,13 @@ const Wechat = () => {
 
   return (
     <div className="config-form-wrapper">
-      <Spin spinning={loading}>
+      <Spin spinning={loading || submitLoading}>
         {messageContextHolder}
         {renderConfigForm({
           data: wechatConfig ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isInitialForm || !extraButtonsVisible}>
+            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
               <ConfigTestBtn
                 popoverOpen={testPopoverVisible}
                 onPopoverOpenChange={onTestPopoverOpen}
@@ -264,11 +272,13 @@ const Wechat = () => {
           configSwitchNode: (
             <ConfigSwitch
               switchFieldName={switchFieldName}
-              disabled={modifyFlag}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
           configField: (

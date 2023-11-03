@@ -81,8 +81,7 @@ const LarkSetting: React.FC = () => {
     });
   };
   const handleClickCancel = () => {
-    if (isConfigClosed && modifyFlag)
-      form.setFieldsValue({ [switchFieldName]: false });
+    if (isConfigClosed) form.setFieldsValue({ [switchFieldName]: false });
     modifyFinish();
   };
   const handleToggleSwitch = (open: boolean) => {
@@ -123,6 +122,8 @@ const LarkSetting: React.FC = () => {
     switchOpen,
     modifyFlag,
     startModify,
+    startSubmit,
+    submitFinish,
     handleUpdateConfig: () =>
       dms.UpdateFeishuConfiguration({
         update_feishu_configuration: {
@@ -325,6 +326,7 @@ const LarkSetting: React.FC = () => {
               switchFieldName={switchFieldName}
               switchOpen={switchOpen}
               modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
               onSwitchChange={onConfigSwitchChange}
