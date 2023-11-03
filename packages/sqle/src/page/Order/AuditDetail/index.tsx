@@ -2,8 +2,15 @@ import { useTranslation } from 'react-i18next';
 import { OrderDetailAuditResultStyleWrapper } from './style';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicSegmented, EmptyBox } from '@actiontech/shared';
-import { GetAuditTaskPrams, OrderDetailAuditResultProps } from './index.type';
-import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  AuditResultAuditStatusFilterType,
+  GetAuditTaskPrams,
+  OrderDetailAuditResultProps
+} from './index.type';
+import {
+  AuditTaskResV1AuditLevelEnum,
+  WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import InstanceSegmentedLabel from '../Common/InstanceSegmentedLabel';
 import { useState, useRef, useCallback, useMemo } from 'react';
 import OrderDetailAuditResultList from './List';
@@ -35,6 +42,10 @@ import { cloneDeep } from 'lodash';
 
 const OVERVIEW_TAB_KEY = 'OVERVIEW_TAB_KEY';
 
+/**
+ * 工单审核详情 & sql审核详情
+ * 区别：使用 mode 区分是否为工单
+ */
 const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
   taskInfos,
   orderInfo,
@@ -50,8 +61,9 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
     isOrder ? OVERVIEW_TAB_KEY : mode
   );
 
-  const [auditLevelFilterValue, setAuditLevelFilterValue] =
-    useState<AuditResultExecStatusFilterType>('all');
+  const [auditLevelFilterValue, setAuditLevelFilterValue] = useState<
+    AuditResultExecStatusFilterType | AuditResultAuditStatusFilterType
+  >('all');
 
   const [currentListLayout, setCurrentListLayout] = useState<ListLayoutEnum>(
     ListLayoutEnum.pagination
@@ -99,6 +111,10 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
   } = useRequest(
     () => {
       const task_id = !isOrder && taskId ? taskId : auditResultActiveKey;
+      const filterStatusData = {
+        [isOrder ? 'filter_exec_status' : 'filter_audit_level']:
+          auditLevelFilterValue === 'all' ? undefined : auditLevelFilterValue
+      };
       return task
         .getAuditTaskSQLsV2({
           task_id,
@@ -106,8 +122,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
           page_index: pagination.page_index.toString(),
           page_size: pagination.page_size.toString(),
           no_duplicate: duplicate,
-          filter_exec_status:
-            auditLevelFilterValue === 'all' ? undefined : auditLevelFilterValue
+          ...filterStatusData
         })
         .then((res) => {
           return {
@@ -159,6 +174,10 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
       }
       const page = d ? Math.ceil(d.list.length / 20) + 1 : 1;
       scrollPageNumber.current = page;
+      const filterStatusData = {
+        [isOrder ? 'filter_exec_status' : 'filter_audit_level']:
+          auditLevelFilterValue === 'all' ? undefined : auditLevelFilterValue
+      };
       return task
         .getAuditTaskSQLsV2({
           task_id: isOrder ? auditResultActiveKey : taskId ?? '',
@@ -166,8 +185,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
           page_index: `${page}`,
           page_size: '20',
           no_duplicate: duplicate,
-          filter_exec_status:
-            auditLevelFilterValue === 'all' ? undefined : auditLevelFilterValue
+          ...filterStatusData
         })
         .then((res) => {
           return {
@@ -215,6 +233,10 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
       if (auditResultActiveKey === OVERVIEW_TAB_KEY) {
         return;
       }
+      const filterStatusData = {
+        [isOrder ? 'filter_exec_status' : 'filter_audit_level']:
+          auditLevelFilterValue === 'all' ? undefined : auditLevelFilterValue
+      };
       task
         .getAuditTaskSQLsV2({
           task_id: isOrder ? auditResultActiveKey : taskId ?? '',
@@ -222,8 +244,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
           page_index: `${page}`,
           page_size: '20',
           no_duplicate: duplicate,
-          filter_exec_status:
-            auditLevelFilterValue === 'all' ? undefined : auditLevelFilterValue
+          ...filterStatusData
         })
         .then((res) => {
           const { data } = res.data;
@@ -288,6 +309,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
             ]}
           />
         ) : (
+          //todo: 暂时的sql审核标题，之后放模糊搜索之后，就使用之前的标题
           <div className="audit-result-title no-padding">
             {t('audit.result')}
           </div>
@@ -298,11 +320,18 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
           className="audit-result-actions-wrap"
           size={12}
         >
-          <TableFilterButton
-            updateAllSelectedFilterItem={updateAllSelectedFilterItem}
-            filterButtonMeta={filterButtonMeta}
-          />
-          <Divider type="vertical" className="audit-result-actions-divider" />
+          {isOrder ? (
+            <>
+              <TableFilterButton
+                updateAllSelectedFilterItem={updateAllSelectedFilterItem}
+                filterButtonMeta={filterButtonMeta}
+              />
+              <Divider
+                type="vertical"
+                className="audit-result-actions-divider"
+              />
+            </>
+          ) : null}
           <ToggleButtonStyleWrapper
             active={duplicate}
             onClick={() => setDuplicate(!duplicate)}
@@ -317,15 +346,20 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
         </Space>
       </SegmentedRowStyleWrapper>
 
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        filterCustomProps={
-          new Map([
-            ['audit_level', { options: getAuditLevelStatusSelectOptionValues }]
-          ])
-        }
-      />
+      {isOrder ? (
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          filterCustomProps={
+            new Map([
+              [
+                'audit_level',
+                { options: getAuditLevelStatusSelectOptionValues }
+              ]
+            ])
+          }
+        />
+      ) : null}
 
       <EmptyBox if={auditResultActiveKey === OVERVIEW_TAB_KEY && isOrder}>
         <OrderDetailAuditResultList
@@ -348,14 +382,36 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
               },
               ...filterOptions
             ]}
-            filterValue={auditLevelFilterValue}
+            filterValue={
+              auditLevelFilterValue as AuditResultExecStatusFilterType
+            }
             filterValueChange={setAuditLevelFilterValue}
             bordered={false}
             passRate={currentTaskInfo?.pass_rate}
             score={currentTaskInfo?.score}
             instanceSchemaName={currentTaskInfo?.instance_schema}
           />
-        ) : null}
+        ) : (
+          <AuditResultFilterContainer<AuditResultAuditStatusFilterType>
+            filterOptions={[
+              {
+                value: 'all',
+                label: t('audit.execStatus.allStatus')
+                // num: 299 * 4
+              },
+              ...(getAuditLevelStatusSelectOptionValues as Array<
+                AuditResultFilterOptionsType<WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum>
+              >)
+            ]}
+            filterValue={
+              auditLevelFilterValue as AuditResultAuditStatusFilterType
+            }
+            filterValueChange={setAuditLevelFilterValue}
+            bordered={false}
+            passRate={currentTaskInfo?.pass_rate}
+            score={currentTaskInfo?.score}
+          />
+        )}
         {currentListLayout === ListLayoutEnum.scroll ? (
           <DataSourceWaterfallList
             list={currentAuditTaskInfiniteList?.list}

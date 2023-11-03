@@ -3,7 +3,11 @@ import {
   IGetWorkflowTasksItemV2,
   IWorkflowResV2
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  AuditTaskResV1AuditLevelEnum,
+  WorkflowRecordResV2StatusEnum,
+  WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IGetAuditTaskSQLsV2Params } from '@actiontech/shared/lib/api/sqle/service/task/index.d';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -31,6 +35,10 @@ export type GetAuditTaskPrams = Pick<
 
 export type AuditResultExecStatusFilterType =
   | getAuditTaskSQLsV2FilterExecStatusEnum
+  | 'all';
+
+export type AuditResultAuditStatusFilterType =
+  | WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
   | 'all';
 
 export type DataSourceResultListProps = {
