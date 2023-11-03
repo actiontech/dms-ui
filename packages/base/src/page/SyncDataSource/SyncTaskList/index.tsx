@@ -1,13 +1,8 @@
 import { useRequest } from 'ahooks';
-import { message, Space, Typography, Image } from 'antd5';
+import { message, Space } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { SyncTaskListActions, SyncTaskListTableColumnFactory } from './column';
-import {
-  BasicButton,
-  EmptyBox,
-  EnterpriseFeatureDisplay,
-  PageHeader
-} from '@actiontech/shared';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   useCurrentProject,
@@ -100,7 +95,6 @@ const SyncTaskList: React.FC = () => {
             <TableRefreshButton refresh={refresh} />
           </Space>
         }
-        /* IFTRUE_isEE */
         extra={[
           <EmptyBox if={!projectArchive} key="addSyncTask">
             <Link to={`/project/${projectID}/syncDataSource/create`}>
@@ -110,42 +104,24 @@ const SyncTaskList: React.FC = () => {
             </Link>
           </EmptyBox>
         ]}
-        /* FITRUE_isEE */
       />
 
-      <EnterpriseFeatureDisplay
-        featureName={t('dmsSyncDataSource.pageTitle')}
-        eeFeatureDescription={
-          <>
-            <Typography.Paragraph className="paragraph">
-              {t('dmsSyncDataSource.ceTips')}
-            </Typography.Paragraph>
-            <Image
-              width="100%"
-              className="ce_img"
-              alt="reportStatisticsPreview"
-              src="/static/image/ce_sync_instance_preview.png"
-            />
-          </>
-        }
-      >
-        <ActiontechTable
-          errorMessage={requestErrorMessage}
-          dataSource={data?.list}
-          rowKey="uid"
-          loading={loading}
-          pagination={false}
-          columns={SyncTaskListTableColumnFactory()}
-          actions={SyncTaskListActions({
-            navigate,
-            syncAction,
-            projectID,
-            deleteAction,
-            isArchive: projectArchive,
-            actionPermission
-          })}
-        />
-      </EnterpriseFeatureDisplay>
+      <ActiontechTable
+        errorMessage={requestErrorMessage}
+        dataSource={data?.list}
+        rowKey="uid"
+        loading={loading}
+        pagination={false}
+        columns={SyncTaskListTableColumnFactory()}
+        actions={SyncTaskListActions({
+          navigate,
+          syncAction,
+          projectID,
+          deleteAction,
+          isArchive: projectArchive,
+          actionPermission
+        })}
+      />
     </>
   );
 };
