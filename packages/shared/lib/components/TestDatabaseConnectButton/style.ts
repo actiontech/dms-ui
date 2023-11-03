@@ -19,4 +19,5 @@ export const TestConnectResultStyleWrapper = styled('div')<{
 
 export const TestConnectDisableReasonStyleWrapper = styled('pre')`
   white-space: pre-wrap;
+  margin-bottom: 0;
 `;
