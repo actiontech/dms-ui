@@ -14,21 +14,32 @@ export const AuthAuditDetailDrawerStyleWrapper = styled(BasicDrawer)`
     line-height: 20px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
     margin: 24px 0 16px;
+    font-weight: bold;
+  }
+
+  .audit-card {
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 0px rgba(51, 44, 31, 0.12);
+    background: var(--color-white-100, #fff);
+    margin-bottom: 12px;
   }
 `;
 
 export const AuthAuditDetailItemStyleWrapper = styled('div')`
   display: flex;
   line-height: 20px;
-  align-items: center;
   padding: 8px 0;
+  align-items: center;
 
   & .audit-info-item-label {
     width: 120px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+    font-weight: 400;
   }
 
   & .audit-info-item-value {
+    flex: 1;
     .antd-v5-space-item:first-of-type {
       display: inline-flex;
       align-items: center;

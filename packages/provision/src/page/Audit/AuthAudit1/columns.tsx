@@ -11,8 +11,7 @@ import { formatTime } from '~/utils/Common';
 import { t } from '~/locale';
 import { IAuditListAuthorizationEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { Space } from 'antd5';
-import { BasicTag } from '@actiontech/shared';
-import { AvatarCom } from '@actiontech/shared';
+import { BasicTag, AvatarCom } from '@actiontech/shared';
 import AuditActionIcon from '../components/AuditActionIcon';
 
 export const eventType: Record<string, string> = {
@@ -29,12 +28,7 @@ export type AuthAuditTableFilterParamType = PageInfoWithoutIndexAndSize<
 >;
 
 const commonUserRender = (value: string) => {
-  return (
-    <Space>
-      <AvatarCom size={20} name={value} noTips />
-      {value}
-    </Space>
-  );
+  return <AvatarCom name={value} />;
 };
 
 export const AuthAuditTableColumns: ActiontechTableColumn<

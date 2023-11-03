@@ -15,7 +15,7 @@ export const AuditDetailItem: React.FC<{
       case 'date':
         return <IconTimeLine />;
       case 'user':
-        return <AvatarCom size={20} name={value} noTips />;
+        return <AvatarCom name={value} />;
       case 'action':
         return <AuditActionIcon value={value} />;
       default:
@@ -26,7 +26,7 @@ export const AuditDetailItem: React.FC<{
   return (
     <AuthAuditDetailItemStyleWrapper>
       <div className="audit-info-item-label">{label}</div>
-      <Space align="center" className="audit-info-item-value">
+      <Space wrap align="center" className="audit-info-item-value">
         {iconRender()}
         {children || value || '-'}
       </Space>
