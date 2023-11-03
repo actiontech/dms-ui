@@ -7,6 +7,10 @@ const MonitorSourceConfig = React.lazy(
   () => import('../page/MonitorSourceConfig')
 );
 
+const MonitorConfig = React.lazy(
+  () => import('../page/MonitorSourceConfig/components/MonitorConfig')
+);
+
 export type RouterConfigItem = {
   path?: string;
   label?: string;
@@ -28,6 +32,12 @@ export const DiagnosisRouterConfig: RouterConfigItem[] = [
         key: 'monitorSourceConfig',
         label: 'dmsMenu.monitorSourceConfig',
         element: <MonitorSourceConfig />
+      },
+      {
+        path: `${PROJECT_ROUTER_PARAM}/:name/:id/:type/monitorConfigList`,
+        key: 'monitorConfigList',
+        element: <MonitorConfig />,
+        hideInMenu: true
       }
     ]
   },

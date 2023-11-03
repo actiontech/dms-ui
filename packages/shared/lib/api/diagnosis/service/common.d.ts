@@ -27,6 +27,16 @@ export interface IListDBsReply {
   total_nums?: number;
 }
 
+export interface IListMonitorRoutineReply {
+  code?: number;
+
+  data?: IViewMonitorConfigReply[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListServersReply {
   code?: number;
 
@@ -75,6 +85,20 @@ export interface IViewDatabaseReply {
   port: number;
 
   status?: ViewDatabaseReplyStatusEnum;
+}
+
+export interface IViewMonitorConfigReply {
+  desc?: string;
+
+  enable?: boolean;
+
+  id?: number;
+
+  interval?: number;
+
+  routine_name?: string;
+
+  via?: string;
 }
 
 export interface IViewServer {

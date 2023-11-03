@@ -98,7 +98,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
           total: serverMonitorList?.total ?? 0
         }}
         loading={loading}
-        columns={columns}
+        columns={columns(projectID)}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}
