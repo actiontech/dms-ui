@@ -1,7 +1,3 @@
-import {
-  IListUserGroup,
-  IListOpPermission
-} from '@actiontech/shared/lib/api/base/service/common';
 import { FormInstance } from 'antd5';
 
 export interface IUserFormFields {
@@ -19,8 +15,7 @@ export interface IUserFormFields {
 
 export interface IUserFormProps {
   form: FormInstance<IUserFormFields>;
-  userGroupList: IListUserGroup[];
-  opPermissionList: IListOpPermission[];
+  visible: boolean;
   isUpdate?: boolean;
   isAdmin?: boolean;
 }

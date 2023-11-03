@@ -18,8 +18,11 @@ import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 
 const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
   const { t } = useTranslation();
-  const { updateDriverNameList, generateDriverSelectOptions } =
-    useDatabaseType();
+  const {
+    loading: getDriverNameListLoading,
+    updateDriverNameList,
+    generateDriverSelectOptions
+  } = useDatabaseType();
 
   const isUpdate = useMemo(() => !!props.defaultData, [props.defaultData]);
   const [formDefaultLoading, setFormDefaultLoading] = useState(false);
@@ -103,6 +106,7 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
             name: t('ruleTemplate.ruleTemplateForm.databaseType')
           })}
           allowClear
+          loading={getDriverNameListLoading}
           disabled={isUpdate}
         >
           {generateDriverSelectOptions()}

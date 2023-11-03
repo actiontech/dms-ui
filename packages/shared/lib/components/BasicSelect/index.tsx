@@ -4,10 +4,11 @@ import { IconClose } from '../../Icon';
 import classnames from 'classnames';
 import { BasicSelectStyleWrapper } from './style';
 import { ComponentControlHeight } from '../../data/common';
+import BasicEmpty from '../BasicEmpty';
 
 const BasicSelect = <V = any,>(props: SelectProps<V>) => {
   const { t } = useTranslation();
-  const { className, allowClear, ...otherParams } = props;
+  const { className, allowClear, loading, ...otherParams } = props;
 
   return (
     <ConfigProvider
@@ -27,6 +28,10 @@ const BasicSelect = <V = any,>(props: SelectProps<V>) => {
         {...otherParams}
         clearIcon={<IconClose />}
         allowClear={allowClear}
+        loading={loading}
+        notFoundContent={
+          loading ? <BasicEmpty loading={loading} /> : <BasicEmpty />
+        }
         //ts checker error
         // allowClear={
         //   !!allowClear
