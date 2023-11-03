@@ -9,6 +9,7 @@ import rehypeSanitize from 'rehype-sanitize';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { ResponseCode } from '../../../data/common';
 import { RuleKnowledgeMarkDownStyleWrapper } from '../style';
+import classNames from 'classnames';
 
 const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   content,
@@ -127,6 +128,7 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
             </Space>
           )
         }
+        className={classNames({ 'card-editing-status': modifyFlag })}
       >
         <Spin spinning={loading}>
           {modifyFlag ? (
