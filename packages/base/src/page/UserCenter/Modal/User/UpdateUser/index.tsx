@@ -7,13 +7,10 @@ import { useBoolean } from 'ahooks';
 import EmitterKey from '../../../../../data/EmitterKey';
 import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
-import useUserGroup from '../../../../../hooks/useUserGroup';
-import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ModalName } from '../../../../../data/ModalName';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../utils/EventEmitter';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 import {
   IListUser,
   IUpdateUser
@@ -24,12 +21,6 @@ import { BasicDrawer, BasicButton } from '@actiontech/shared';
 
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
-
-  const { userGroupList, updateUserGroupList } = useUserGroup();
-
-  const { opPermissionList, updateOpPermissionList } = useOpPermission(
-    ListOpPermissionsFilterByTargetEnum.user
-  );
 
   const { t } = useTranslation();
 
@@ -95,8 +86,6 @@ const UpdateUser = () => {
 
   useEffect(() => {
     if (visible) {
-      updateUserGroupList();
-      updateOpPermissionList();
       form.setFieldsValue({
         username: currentUser?.name,
         email: currentUser?.email,
@@ -109,7 +98,7 @@ const UpdateUser = () => {
           ListUserStatEnum.被禁用
       });
     }
-  }, [updateUserGroupList, updateOpPermissionList, visible, currentUser, form]);
+  }, [visible, currentUser, form]);
 
   return (
     <BasicDrawer
@@ -135,9 +124,8 @@ const UpdateUser = () => {
       {contextHolder}
       <UserForm
         form={form}
+        visible={visible}
         isUpdate={true}
-        userGroupList={userGroupList}
-        opPermissionList={opPermissionList}
         isAdmin={currentUser?.name === 'admin'}
       />
     </BasicDrawer>
