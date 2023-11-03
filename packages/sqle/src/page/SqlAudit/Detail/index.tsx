@@ -10,7 +10,7 @@ import BasicInfoWrapper from './BasicInfoWrapper';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
 import { useMemo } from 'react';
-import AuditDetail from '../../Order/AuditDetail';
+import AuditResultList from '../../Order/Common/AuditResultList';
 
 const SqlAuditDetail = () => {
   const { t } = useTranslation();
@@ -38,7 +38,7 @@ const SqlAuditDetail = () => {
   }, [auditRecord]);
 
   const auditResultData = useMemo(() => {
-    return auditRecord?.task;
+    return auditRecord?.task ? [auditRecord?.task] : [];
   }, [auditRecord]);
 
   return (
@@ -54,15 +54,10 @@ const SqlAuditDetail = () => {
           }
         />
         <BasicInfoWrapper {...basicInfoData} />
-        <AuditDetail
-          mode="auditRecordDetail"
-          projectName={projectName}
-          taskId={
-            auditRecord?.task?.task_id
-              ? `${auditRecord?.task?.task_id}`
-              : undefined
-          }
-          taskInfos={auditResultData ? [auditResultData] : undefined}
+        <AuditResultList
+          mode="sql-audit"
+          tasks={auditResultData}
+          projectID={projectID}
         />
       </Spin>
     </>
