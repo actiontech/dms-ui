@@ -22,10 +22,17 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
   const { t } = useTranslation();
   const inputRef = useRef<InputRef>(null);
 
-  const { updateDriverNameList, generateDriverSelectOptions } =
-    useDatabaseType();
+  const {
+    loading: getDriverNameListLoading,
+    updateDriverNameList,
+    generateDriverSelectOptions
+  } = useDatabaseType();
 
-  const { updateRuleTypeList, ruleTypeList } = useRuleType();
+  const {
+    loading: getRuleTypeLoading,
+    updateRuleTypeList,
+    ruleTypeList
+  } = useRuleType();
 
   const { getRuleLevelStatusSelectOption } = useStaticStatus();
 
@@ -109,6 +116,7 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
       >
         <BasicSelect
           disabled={isUpdate}
+          loading={getDriverNameListLoading}
           placeholder={t('common.form.placeholder.select', {
             name: t('customRule.baseInfoForm.dbType')
           })}
@@ -137,6 +145,7 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
           disabled={!currentDbType}
           allowClear
           showSearch
+          loading={getRuleTypeLoading}
           placeholder={t('common.form.placeholder.select', {
             name: t('customRule.baseInfoForm.ruleType')
           })}

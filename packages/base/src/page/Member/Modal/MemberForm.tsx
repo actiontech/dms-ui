@@ -14,7 +14,11 @@ const MemberForm: React.FC<IMemberFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const { updateUsernameList, generateUsernameSelectOption } = useUsername();
+  const {
+    loading: getUsernameListLoading,
+    updateUsernameList,
+    generateUsernameSelectOption
+  } = useUsername();
 
   const isProjectAdmin = Form.useWatch('isProjectAdmin', form);
 
@@ -39,6 +43,7 @@ const MemberForm: React.FC<IMemberFormProps> = ({
       >
         <BasicSelect
           showSearch={true}
+          loading={getUsernameListLoading}
           optionFilterProp="children"
           filterOption={filterOptionByLabel}
           disabled={isUpdate}
