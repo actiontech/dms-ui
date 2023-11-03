@@ -20,8 +20,8 @@ export const AuthAuditDetailDrawerStyleWrapper = styled(BasicDrawer)`
   .audit-card {
     padding: 16px;
     border-radius: 8px;
-    box-shadow: 0px 1px 4px 0px rgba(51, 44, 31, 0.12);
-    background: var(--color-white-100, #fff);
+    box-shadow: 0 1px 4px 0 rgba(51, 44, 31, 0.12);
+    background-color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
     margin-bottom: 12px;
   }
 `;
