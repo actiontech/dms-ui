@@ -13,9 +13,8 @@ export default defineConfig((config) => {
   /*
    * ee and ce mode used to support sqle
    */
-  const isEE = buildTypes.includes('ee');
-  const isCE = buildTypes.includes('ce');
-
+  const isCE = buildTypes.includes('ce') && buildTypes.includes('SQLE');
+  const isEE = !isCE;
   const isSQLE = buildTypes.includes('SQLE');
 
   const title = 'Action SQLE';
