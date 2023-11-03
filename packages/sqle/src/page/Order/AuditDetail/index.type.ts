@@ -11,14 +11,16 @@ import { TablePagination } from '@actiontech/shared/lib/components/ActiontechTab
 import { TableProps } from 'antd5';
 
 export type OrderDetailAuditResultProps = {
-  taskInfos: IAuditTaskResV1[];
+  taskInfos?: IAuditTaskResV1[];
   orderInfo?: IWorkflowResV2;
   projectName: string;
-  isArchive: boolean;
-  refreshOverviewFlag: boolean;
-  refreshOrder: () => void;
+  isArchive?: boolean;
+  refreshOverviewFlag?: boolean;
+  refreshOrder?: () => void;
   orderStatus?: WorkflowRecordResV2StatusEnum;
-  getOverviewListSuccessHandle: (list: IGetWorkflowTasksItemV2[]) => void;
+  getOverviewListSuccessHandle?: (list: IGetWorkflowTasksItemV2[]) => void;
+  mode?: 'order' | 'auditRecordCreate' | 'auditRecordDetail';
+  taskId?: string;
 };
 
 // page_size and page_index type is  string

@@ -34,5 +34,14 @@ export default {
       auditTime: '审核时间',
       instanceName: '数据源'
     }
+  },
+  common: {
+    goBackList: '返回SQL审核列表'
+  },
+  detail: {
+    download: '下载审核结果',
+    auditID: '审核ID',
+    auditRating: '审核评分',
+    auditPassRate: '审核通过率'
   }
 };
