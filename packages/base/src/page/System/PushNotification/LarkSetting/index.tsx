@@ -80,13 +80,13 @@ const LarkSetting: React.FC = () => {
       appKey: larkInfo?.app_id
     });
   };
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
   const handleClickCancel = () => {
-    modifyFinish();
     if (isConfigClosed && modifyFlag)
       form.setFieldsValue({ [switchFieldName]: false });
+    modifyFinish();
+  };
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
   };
 
   const submitLarkConfig = (values: FormFields) => {
@@ -218,7 +218,7 @@ const LarkSetting: React.FC = () => {
 
   return (
     <div className="config-form-wrapper">
-      <Spin spinning={loading}>
+      <Spin spinning={loading || submitLoading}>
         {messageContextHolder}
 
         {renderConfigForm({
@@ -371,7 +371,7 @@ const LarkSetting: React.FC = () => {
                 <BasicButton
                   htmlType="submit"
                   type="primary"
-                  loading={submitLoading}
+                  disabled={submitLoading}
                 >
                   {t('common.submit')}
                 </BasicButton>
