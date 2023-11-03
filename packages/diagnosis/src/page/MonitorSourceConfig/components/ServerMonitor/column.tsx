@@ -5,6 +5,7 @@ import {
 import { IViewServerReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
 import { t } from '../../../../locale';
 import { ViewServerReplyStatusEnum } from '@actiontech/shared/lib/api/diagnosis/service/common.enum';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 const serverMonitorStatusDictionary = {
   [ViewServerReplyStatusEnum.healthy]: t('monitorSourceConfig.status.normal'),
@@ -32,8 +33,9 @@ export const ServerMonitorColumns: ActiontechTableColumn<IViewServerReply> = [
     title: t('monitorSourceConfig.serverMonitor.sshUser')
   },
   {
-    dataIndex: 'createdAt',
-    title: t('monitorSourceConfig.serverMonitor.creationTime')
+    dataIndex: 'created_at',
+    title: t('monitorSourceConfig.serverMonitor.creationTime'),
+    render: (time) => formatTime(time, '-')
   },
   {
     dataIndex: 'status',

@@ -13,7 +13,7 @@ import server from '@actiontech/shared/lib/api/diagnosis/service/server';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
-import { IV1AddServerParams } from '@actiontech/shared/lib/api/diagnosis/service/server/index.d';
+import { IV1UpdateServerParams } from '@actiontech/shared/lib/api/diagnosis/service/server/index.d';
 import { IServerMonitorFormField } from '../ServerMonitorForm/index.type';
 
 const UpdateServerMonitor = () => {
@@ -54,21 +54,20 @@ const UpdateServerMonitor = () => {
   const submit = async () => {
     try {
       const values = await form.validateFields();
-      const params: IV1AddServerParams = {
-        servers: [
-          {
-            host: values.host,
-            name: values.name,
-            password: values.password,
-            port: Number(values.port),
-            user: values.user
-          }
-        ],
+      const params: IV1UpdateServerParams = {
+        server: {
+          host: values.host,
+          name: values.name,
+          password: values.password,
+          port: Number(values.port),
+          user: values.user
+        },
+        id: Number(selectData?.id),
         project_uid: projectID
       };
       startSubmit();
       server
-        .V1AddServer(params)
+        .V1UpdateServer(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.success(

@@ -29,7 +29,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
             }
           ]}
         >
-          <BasicInput readOnly={!!isUpdate} />
+          <BasicInput disabled={!!isUpdate} />
         </Form.Item>
         <Form.Item
           name="host"
@@ -43,7 +43,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
             }
           ]}
         >
-          <BasicInput readOnly={!!isUpdate} />
+          <BasicInput disabled={!!isUpdate} />
         </Form.Item>
         <Form.Item
           name="port"
@@ -57,7 +57,10 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
             }
           ]}
         >
-          <BasicInputNumber readOnly={!!isUpdate} />
+          <BasicInputNumber
+            placeholder={t('common.form.placeholder.input')}
+            disabled={!!isUpdate}
+          />
         </Form.Item>
         <Form.Item
           name="user"

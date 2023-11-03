@@ -2,35 +2,38 @@ import { ViewServerReplyStatusEnum } from '@actiontech/shared/lib/api/diagnosis/
 
 export const searchServerMonitorListData = [
   {
-    createdAt: '2023-11-01 16:00:00',
-    host: '172.20.134.2',
+    created_at: '2023-11-03T10:01:43.543+08:00',
+    host: '172.20.134.1',
+    id: '2',
     name: 'test12',
     password: '123',
     port: 22,
     status: ViewServerReplyStatusEnum.unhealthy,
-    user: 'root'
+    user: 'admin'
   }
 ];
 
 export const serverMonitorListData = [
   {
-    createdAt: '2023-11-01 16:00:00',
+    created_at: '2023-11-03T09:49:00.106+08:00',
     host: '172.20.134.1',
+    id: '1',
     name: 'test',
-    password: '123',
+    password: '123456',
     port: 22,
     status: ViewServerReplyStatusEnum.healthy,
-    user: 'root'
+    user: 'test'
   },
   ...searchServerMonitorListData,
   {
-    createdAt: '2023-11-01 16:00:00',
-    host: '172.20.134.3',
-    name: 'test34',
+    created_at: '2023-11-03T10:02:51.132+08:00',
+    host: '172.20.134.10',
+    id: '3',
+    name: 'udp',
     password: '123',
     port: 22,
     status: ViewServerReplyStatusEnum.unknown,
-    user: 'root'
+    user: 'test'
   }
 ];
 

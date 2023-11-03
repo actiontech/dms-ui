@@ -41,7 +41,7 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
   }
 
   public updateServerMonitor() {
-    const spy = jest.spyOn(server, 'V1AddServer');
+    const spy = jest.spyOn(server, 'V1UpdateServer');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         code: 0,

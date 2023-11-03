@@ -8,7 +8,7 @@ export interface IDeleteDBsReq {
 }
 
 export interface IDeleteServersReq {
-  serverNames?: string[];
+  server_names?: string[];
 }
 
 export interface IGenericResp {
@@ -42,7 +42,7 @@ export interface ISaveDBsReq {
 }
 
 export interface IViewAddServerRequest {
-  viewServers?: IViewServer[];
+  servers?: IViewServer[];
 }
 
 export interface IViewDatabase {
@@ -60,7 +60,7 @@ export interface IViewDatabase {
 }
 
 export interface IViewDatabaseReply {
-  createdAt?: string;
+  created_at?: string;
 
   datasource_name: string;
 
@@ -94,7 +94,7 @@ export interface IViewServerReply {
 
   host: string;
 
-  id?: string;
+  id?: number;
 
   name: string;
 
@@ -108,15 +108,7 @@ export interface IViewServerReply {
 }
 
 export interface IViewUpdateServerRequest {
-  host: string;
-
   id?: number;
 
-  name: string;
-
-  password: string;
-
-  port?: number;
-
-  user: string;
+  server?: IViewServer;
 }

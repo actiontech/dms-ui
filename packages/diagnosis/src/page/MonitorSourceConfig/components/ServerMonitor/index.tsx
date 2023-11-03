@@ -1,5 +1,4 @@
 import { useMemo, useEffect, useCallback } from 'react';
-import { useToggle } from 'ahooks';
 import { useDispatch } from 'react-redux';
 import { useRequest } from 'ahooks';
 import {
@@ -25,9 +24,7 @@ import ServerMonitorModal from './components/Modal';
 const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   const dispatch = useDispatch();
 
-  const { projectID, projectArchive } = useCurrentProject();
-
-  const [refreshFlag, { toggle: toggleRefreshFlag }] = useToggle(false);
+  const { projectID } = useCurrentProject();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -37,7 +34,11 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
     IV1ListServersParams
   >();
 
-  const { data: serverMonitorList, loading } = useRequest(
+  const {
+    data: serverMonitorList,
+    loading,
+    refresh
+  } = useRequest(
     () => {
       const params: IV1ListServersParams = {
         ...pagination,
@@ -47,7 +48,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
       return handleTableRequestError(server.V1ListServers(params));
     },
     {
-      refreshDeps: [pagination, refreshFlag, projectID, props.searchValue]
+      refreshDeps: [pagination, projectID, props.searchValue]
     }
   );
 
@@ -82,18 +83,16 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Server_Monitor,
-      toggleRefreshFlag
+      refresh
     );
 
     return unsubscribe;
-  }, [toggleRefreshFlag]);
+  }, [refresh]);
 
   return (
     <>
       <ActiontechTable
-        rowKey={(record: IViewServerReply) => {
-          return `${record?.name}-${record.host}`;
-        }}
+        rowKey="name"
         dataSource={serverMonitorList?.list ?? []}
         pagination={{
           total: serverMonitorList?.total ?? 0
@@ -102,7 +101,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={!projectArchive ? actions : undefined}
+        actions={actions}
       />
       <ServerMonitorModal />
     </>
