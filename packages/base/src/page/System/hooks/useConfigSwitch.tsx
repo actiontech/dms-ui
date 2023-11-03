@@ -5,6 +5,7 @@ import { IGenericResp } from '@actiontech/shared/lib/api/base/service/common';
 import { useCallback } from 'react';
 
 interface IUseConfigSwitchProps {
+  isConfigClosed: boolean;
   switchOpen: boolean;
   modifyFlag: boolean;
   startModify: () => void;
@@ -16,6 +17,7 @@ interface IUseConfigSwitchProps {
 
 const useConfigSwitch = (props: IUseConfigSwitchProps) => {
   const {
+    isConfigClosed,
     switchOpen,
     modifyFlag,
     startModify,
@@ -30,16 +32,22 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
   ] = useBoolean(false);
 
   const onConfigSwitchPopoverConfirm = async () => {
-    handleUpdateConfig()
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          handleClickCancel();
-          refreshConfig();
-        }
-      })
-      .finally(() => {
-        hideConfigSwitchPopover();
-      });
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshConfig();
+      hideConfigSwitchPopover();
+    } else {
+      handleUpdateConfig()
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshConfig();
+          }
+        })
+        .finally(() => {
+          hideConfigSwitchPopover();
+        });
+    }
   };
 
   const onConfigSwitchPopoverCancel = () => {
@@ -59,8 +67,7 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
     (open: boolean) => {
       if (!switchOpen) return;
 
-      handleToggleSwitch(switchOpen);
-      showConfigSwitchPopover();
+      handleToggleSwitch(true);
 
       open ? showConfigSwitchPopover() : hideConfigSwitchPopover();
     },

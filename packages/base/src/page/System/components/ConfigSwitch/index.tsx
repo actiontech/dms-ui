@@ -9,7 +9,7 @@ interface ConfigSwitchParams {
   modifyFlag: boolean;
   popoverVisible: boolean;
   onConfirm: () => void;
-  onCancel?: () => void;
+  onCancel?: () => void; // deprecated
   onSwitchChange: (open: boolean) => void;
   onSwitchPopoverOpen: (open: boolean) => void;
 }
