@@ -43,5 +43,13 @@ export default {
     auditID: '审核ID',
     auditRating: '审核评分',
     auditPassRate: '审核通过率'
+  },
+  create: {
+    title: '创建SQL审核',
+    createTagErrorTips: '当前标签已存在',
+    form: {
+      tags: '业务标签',
+      tagsPlaceholder: '要搜索的业务标签'
+    }
   }
 };
