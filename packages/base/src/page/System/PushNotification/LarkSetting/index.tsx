@@ -69,7 +69,7 @@ const LarkSetting: React.FC = () => {
       }
     }
   );
-  const isInitialForm = useMemo(() => {
+  const isConfigClosed = useMemo(() => {
     return !larkInfo?.is_feishu_notification_enabled;
   }, [larkInfo]);
 
@@ -84,10 +84,9 @@ const LarkSetting: React.FC = () => {
     form.setFieldValue(switchFieldName, open);
   };
   const handleClickCancel = () => {
-    if (isInitialForm) {
-      form.resetFields();
-    }
     modifyFinish();
+    if (isConfigClosed && modifyFlag)
+      form.setFieldsValue({ [switchFieldName]: false });
   };
 
   const submitLarkConfig = (values: FormFields) => {
@@ -118,9 +117,9 @@ const LarkSetting: React.FC = () => {
     configSwitchPopoverVisible,
     onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
+    isConfigClosed,
     switchOpen,
     modifyFlag,
     startModify,
@@ -226,7 +225,7 @@ const LarkSetting: React.FC = () => {
           data: larkInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isInitialForm || !extraButtonsVisible}>
+            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
               <ConfigTestBtn
                 testingRef={testing}
                 popoverOpen={testPopoverVisible}
@@ -328,7 +327,6 @@ const LarkSetting: React.FC = () => {
               modifyFlag={modifyFlag}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
               onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
