@@ -13,17 +13,16 @@ export default defineConfig((config) => {
   /*
    * ee and ce mode used to support sqle
    */
-  const isEE = buildTypes.includes('ee');
-  const isCE = buildTypes.includes('ce');
+  const isCE = buildTypes.includes('ce') && buildTypes.includes('SQLE');
+  const isEE = !isCE;
 
   const isSQLE = buildTypes.includes('SQLE');
   const isPROVISION = buildTypes.includes('PROVISION');
-  const isONLY_SQLE = isSQLE && !isPROVISION;
-
   const isDIAGNOSIS = buildTypes.includes('DIAGNOSIS');
+  const isDMS = buildTypes.includes('DMS');
 
   const genTitle = () => {
-    if (isSQLE && isPROVISION && isDIAGNOSIS) {
+    if (isDMS) {
       return 'DMS';
     }
 
@@ -47,7 +46,7 @@ export default defineConfig((config) => {
   return {
     plugins: [
       vitePluginConditionalCompile({
-        expand: { isCE, isEE, isSQLE, isPROVISION, isONLY_SQLE, isDIAGNOSIS }
+        expand: { isCE, isEE, isSQLE, isPROVISION, isDIAGNOSIS, isDMS }
       }),
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
