@@ -26,7 +26,7 @@ const AuditResultMessage = ({
   moreBtnLink
 }: AuditResultMessageProps) => {
   const { t } = useTranslation();
-  const [visible, { set }] = useBoolean();
+  const [visible, { set }] = useBoolean(true);
 
   const renderIcon = useMemo(() => {
     const { level } = auditResult || {};
