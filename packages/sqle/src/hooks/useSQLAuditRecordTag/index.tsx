@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { Select } from 'antd5';
 import { BasicTag } from '@actiontech/shared';
@@ -42,11 +42,19 @@ const useSQLAuditRecordTag = () => {
     });
   }, [auditRecordTags]);
 
+  const auditRecordTagsOptions = useMemo(() => {
+    return auditRecordTags.map((item) => ({
+      label: item,
+      value: item
+    }));
+  }, [auditRecordTags]);
+
   return {
     loading,
     updateSQLAuditRecordTag,
     auditRecordTags,
-    generateSQLAuditRecordSelectOptions
+    generateSQLAuditRecordSelectOptions,
+    auditRecordTagsOptions
   };
 };
 
