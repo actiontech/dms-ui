@@ -3,11 +3,7 @@ import {
   IGetWorkflowTasksItemV2,
   IWorkflowResV2
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  AuditTaskResV1AuditLevelEnum,
-  WorkflowRecordResV2StatusEnum,
-  WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
-} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IGetAuditTaskSQLsV2Params } from '@actiontech/shared/lib/api/sqle/service/task/index.d';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -15,16 +11,14 @@ import { TablePagination } from '@actiontech/shared/lib/components/ActiontechTab
 import { TableProps } from 'antd5';
 
 export type OrderDetailAuditResultProps = {
-  taskInfos?: IAuditTaskResV1[];
+  taskInfos: IAuditTaskResV1[];
   orderInfo?: IWorkflowResV2;
   projectName: string;
-  isArchive?: boolean;
-  refreshOverviewFlag?: boolean;
-  refreshOrder?: () => void;
+  isArchive: boolean;
+  refreshOverviewFlag: boolean;
+  refreshOrder: () => void;
   orderStatus?: WorkflowRecordResV2StatusEnum;
-  getOverviewListSuccessHandle?: (list: IGetWorkflowTasksItemV2[]) => void;
-  mode?: 'order' | 'auditRecordCreate' | 'auditRecordDetail';
-  taskId?: string;
+  getOverviewListSuccessHandle: (list: IGetWorkflowTasksItemV2[]) => void;
 };
 
 // page_size and page_index type is  string
@@ -35,10 +29,6 @@ export type GetAuditTaskPrams = Pick<
 
 export type AuditResultExecStatusFilterType =
   | getAuditTaskSQLsV2FilterExecStatusEnum
-  | 'all';
-
-export type AuditResultAuditStatusFilterType =
-  | WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
   | 'all';
 
 export type DataSourceResultListProps = {

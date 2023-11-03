@@ -2,10 +2,8 @@ import { styled } from '@mui/material/styles';
 import { Tree } from 'antd5';
 import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
-export const OrderDetailAuditResultStyleWrapper = styled('section')<{
-  noMarginTop: boolean;
-}>`
-  margin-top: ${({ noMarginTop }) => (noMarginTop ? '0' : '40px')};
+export const OrderDetailAuditResultStyleWrapper = styled('section')`
+  margin-top: 40px;
 
   .audit-result-title {
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
@@ -13,10 +11,6 @@ export const OrderDetailAuditResultStyleWrapper = styled('section')<{
     font-weight: 500;
     line-height: 24px;
     padding: 0 40px;
-
-    &.no-padding {
-      padding: 0;
-    }
   }
 
   .${ANTD_PREFIX_STR}-space.audit-result-actions-wrap {
