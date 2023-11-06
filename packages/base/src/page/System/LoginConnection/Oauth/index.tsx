@@ -121,7 +121,6 @@ const Oauth = () => {
 
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      enable: oauthConfig?.enable_oauth2,
       clientId: oauthConfig?.client_id,
       clientHost: oauthConfig?.client_host,
       serverAuthUrl: oauthConfig?.server_auth_url,
@@ -145,9 +144,9 @@ const Oauth = () => {
     isConfigClosed,
     switchOpen,
     modifyFlag,
-    startModify,
     startSubmit,
     submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateOauth2Configuration({
         oauth2: {

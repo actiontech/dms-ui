@@ -65,10 +65,9 @@ const DingTalkSetting: React.FC = () => {
     return !dingTalkInfo?.is_enable_ding_talk_notify;
   }, [dingTalkInfo]);
 
-  const handelClickModify = () => {
+  const handleClickModify = () => {
     startModify();
     form.setFieldsValue({
-      enabled: !!dingTalkInfo?.is_enable_ding_talk_notify,
       appKey: dingTalkInfo?.app_key
     });
   };
@@ -114,9 +113,9 @@ const DingTalkSetting: React.FC = () => {
     isConfigClosed,
     switchOpen,
     modifyFlag,
-    startModify,
     startSubmit,
     submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       configuration.updateDingTalkConfigurationV1({
         ...defaultFormData,
@@ -187,7 +186,7 @@ const DingTalkSetting: React.FC = () => {
                   onClick={testDingTalkConfiguration}
                 />
               </BasicToolTips>
-              <ConfigModifyBtn onClick={handelClickModify} />
+              <ConfigModifyBtn onClick={handleClickModify} />
             </Space>
           ),
           configSwitchNode: (

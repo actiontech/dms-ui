@@ -73,10 +73,9 @@ const LarkSetting: React.FC = () => {
     return !larkInfo?.is_feishu_notification_enabled;
   }, [larkInfo]);
 
-  const handelClickModify = () => {
+  const handleClickModify = () => {
     startModify();
     form.setFieldsValue({
-      enabled: !!larkInfo?.is_feishu_notification_enabled,
       appKey: larkInfo?.app_id
     });
   };
@@ -121,9 +120,9 @@ const LarkSetting: React.FC = () => {
     isConfigClosed,
     switchOpen,
     modifyFlag,
-    startModify,
     startSubmit,
     submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateFeishuConfiguration({
         update_feishu_configuration: {
@@ -318,7 +317,7 @@ const LarkSetting: React.FC = () => {
                   </ConfigTestPopoverForm>
                 }
               />
-              <ConfigModifyBtn onClick={handelClickModify} />
+              <ConfigModifyBtn onClick={handleClickModify} />
             </Space>
           ),
           configSwitchNode: (

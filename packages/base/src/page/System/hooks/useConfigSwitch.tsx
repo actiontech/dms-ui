@@ -8,7 +8,7 @@ interface IUseConfigSwitchProps {
   isConfigClosed: boolean;
   switchOpen: boolean;
   modifyFlag: boolean;
-  startModify: () => void;
+  handleClickModify: () => void;
   startSubmit: () => void;
   submitFinish: () => void;
   handleUpdateConfig: () => Promise<AxiosResponse<IGenericResp, any>>;
@@ -22,7 +22,7 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
     isConfigClosed,
     switchOpen,
     modifyFlag,
-    startModify,
+    handleClickModify,
     startSubmit,
     submitFinish,
     handleUpdateConfig,
@@ -65,7 +65,7 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
 
   const onConfigSwitchChange = (open: boolean) => {
     if (open) {
-      startModify();
+      handleClickModify();
     }
   };
 

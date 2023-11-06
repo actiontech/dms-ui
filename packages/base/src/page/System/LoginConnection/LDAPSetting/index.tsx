@@ -54,7 +54,6 @@ const LDAPSetting = () => {
   );
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      enable_ldap: ldapSetting?.enable_ldap ?? false,
       enable_ssl: ldapSetting?.enable_ssl ?? false,
       ldap_server_host: ldapSetting?.ldap_server_host,
       ldap_server_port: ldapSetting?.ldap_server_port,
@@ -118,9 +117,9 @@ const LDAPSetting = () => {
     isConfigClosed,
     switchOpen,
     modifyFlag,
-    startModify,
     startSubmit: startUpdateLdap,
     submitFinish: updateLdapFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateLDAPConfiguration({
         ldap: {
