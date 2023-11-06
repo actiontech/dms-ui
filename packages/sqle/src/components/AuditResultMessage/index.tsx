@@ -74,7 +74,7 @@ const AuditResultMessage = ({
         <span className="icon-wrapper">{renderIcon}</span>
         <span className="text-wrapper">{renderMessage}</span>
       </AuditResultMessageStyleWrapper>
-      <EmptyBox if={showAnnotation && visible && !!auditResult.annotation}>
+      <EmptyBox if={showAnnotation && visible}>
         <div className="annotation-wrapper">
           {auditResult.annotation}
           {/* IFTRUE_isEE */}

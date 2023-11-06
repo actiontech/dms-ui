@@ -29,7 +29,7 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')`
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
     font-size: 12px;
     font-weight: 400;
-    margin-left: 32px;
+    padding-left: 32px;
     margin-top: 8px;
   }
 

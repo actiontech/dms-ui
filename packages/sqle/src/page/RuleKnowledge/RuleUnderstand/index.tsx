@@ -31,6 +31,8 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
 
+  const [messageApi, messageContextHolder] = message.useMessage();
+
   const [modal, contextHolder] = Modal.useModal();
 
   const cancel = () => {
@@ -58,28 +60,22 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   };
   const submit = () => {
     startSubmit();
-    // todo 待后端提供接口
-    // const request = isCustomRule
-    //   ? rule_template.updateCustomRuleKnowledge({
-    //       rule_name: ruleName,
-    //       knowledge_content: editValue,
-    //       db_type: dbType
-    //     })
-    //   : rule_template.updateRuleKnowledge({
-    //       rule_name: ruleName,
-    //       knowledge_content: editValue,
-    //       db_type: dbType
-    //     });
+    const request = isCustomRule
+      ? rule_template.updateCustomRuleKnowledge({
+          rule_name: ruleName,
+          knowledge_content: editValue,
+          db_type: dbType
+        })
+      : rule_template.updateRuleKnowledge({
+          rule_name: ruleName,
+          knowledge_content: editValue,
+          db_type: dbType
+        });
 
-    rule_template
-      .updateRuleKnowledge({
-        rule_name: ruleName,
-        knowledge_content: editValue,
-        db_type: dbType
-      })
+    request
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(t('ruleKnowledge.successTips'));
+          messageApi.success(t('ruleKnowledge.successTips'));
           setHasDirtyData(false);
           modifyFinish();
           refresh();
@@ -100,6 +96,7 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   return (
     <>
       {contextHolder}
+      {messageContextHolder}
       <Card
         title={t('ruleKnowledge.ruleUnderstanding')}
         extra={
