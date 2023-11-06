@@ -4,9 +4,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { IViewMonitorConfigReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
 import { t } from '../../../../locale';
-import { ViewServerReplyStatusEnum } from '@actiontech/shared/lib/api/diagnosis/service/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { Link } from 'react-router-dom';
 import { MonitorSourceConfigTypeEnum } from '../../index.type';
 
 export const monitorSourceDictionary = {

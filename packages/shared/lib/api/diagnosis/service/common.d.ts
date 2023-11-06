@@ -37,6 +37,16 @@ export interface IListMonitorRoutineReply {
   total_nums?: number;
 }
 
+export interface IListRoutineMetricsReply {
+  code?: number;
+
+  data?: IRoutienMetrics;
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListServersReply {
   code?: number;
 
@@ -45,6 +55,16 @@ export interface IListServersReply {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IRoutienMetrics {
+  metrics?: Array<{
+    desc?: string;
+
+    metric_key?: string;
+  }>;
+
+  routine_id?: number;
 }
 
 export interface ISaveDBsReq {

@@ -1,16 +1,21 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 import { commonModalReducer } from '../common';
-import { IViewServerReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
+import {
+  IViewMonitorConfigReply,
+  IViewServerReply
+} from '@actiontech/shared/lib/api/diagnosis/service/common';
 
 type MonitorSourceConfigState = {
   modalStatus: ModalStatus;
   selectServerMonitorData: IViewServerReply | null;
+  selectMonitorConfigDta: IViewMonitorConfigReply | null;
 };
 
 const initialState: MonitorSourceConfigState = {
   modalStatus: {},
-  selectServerMonitorData: null
+  selectServerMonitorData: null,
+  selectMonitorConfigDta: null
 };
 
 const monitorSourceConfig = createSlice({
@@ -25,6 +30,14 @@ const monitorSourceConfig = createSlice({
       }: PayloadAction<IViewServerReply | null>
     ) => {
       state.selectServerMonitorData = selectServerMonitorData;
+    },
+    updateSelectMonitorConfigData: (
+      state,
+      {
+        payload: selectMonitorConfigDta
+      }: PayloadAction<IViewMonitorConfigReply | null>
+    ) => {
+      state.selectMonitorConfigDta = selectMonitorConfigDta;
     }
   }
 });
@@ -32,7 +45,8 @@ const monitorSourceConfig = createSlice({
 export const {
   initModalStatus: initMonitorSourceConfigModalStatus,
   updateModalStatus: updateMonitorSourceConfigModalStatus,
-  updateSelectServerMonitorData
+  updateSelectServerMonitorData,
+  updateSelectMonitorConfigData
 } = monitorSourceConfig.actions;
 
 export default monitorSourceConfig.reducer;

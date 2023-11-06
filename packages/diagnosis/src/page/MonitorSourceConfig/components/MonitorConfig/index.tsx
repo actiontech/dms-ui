@@ -15,10 +15,24 @@ import { IV1ListMonitorRoutineParams } from '@actiontech/shared/lib/api/diagnosi
 import { IViewMonitorConfigReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
 import { useRequest } from 'ahooks';
 import { IconTagBookMark } from '@actiontech/shared/lib/Icon/common';
-import { MonitorConfigColumns, monitorSourceDictionary } from './column';
+import {
+  MonitorConfigActions,
+  MonitorConfigColumns,
+  monitorSourceDictionary
+} from './column';
 import { MonitorSourceConfigTypeEnum } from '../../index.type';
+import { useDispatch } from 'react-redux';
+import { useCallback, useMemo } from 'react';
+import {
+  updateMonitorSourceConfigModalStatus,
+  updateSelectMonitorConfigData
+} from '../../../../store/monitorSourceConfig';
+import { ModalName } from '../../../../data/ModalName';
+import MonitorConfigModal from './components/Modal';
 
 const MonitorConfig = () => {
+  const dispatch = useDispatch();
+
   const { t } = useTranslation();
 
   const { projectID } = useCurrentProject();
@@ -52,7 +66,30 @@ const MonitorConfig = () => {
       refreshDeps: [urlParams.id, pagination]
     }
   );
-  console.log(urlParams.sourceName);
+
+  const onCheckMonitorConfig = useCallback(
+    (record: IViewMonitorConfigReply | undefined) => {
+      if (record) {
+        dispatch(updateSelectMonitorConfigData(record));
+        dispatch(
+          updateMonitorSourceConfigModalStatus({
+            modalName: ModalName.Check_Monitor_Config,
+            status: true
+          })
+        );
+      }
+    },
+    [dispatch]
+  );
+
+  const actions = useMemo(() => {
+    return MonitorConfigActions(onCheckMonitorConfig);
+  }, [onCheckMonitorConfig]);
+
+  const columns = useMemo(() => {
+    return MonitorConfigColumns();
+  }, []);
+
   return (
     <>
       <MonitorConfigStyleWrapper>
@@ -70,7 +107,7 @@ const MonitorConfig = () => {
         />
         <section className="header-wrapper">
           <section className="header">
-            <h3 className="header-cont-text">{urlParams.sourceName}</h3>
+            <h3 className="header-cont-text">{urlParams.name}</h3>
             <SyncOutlined
               onClick={refresh}
               spin={loading}
@@ -93,7 +130,7 @@ const MonitorConfig = () => {
         <section className="detail-table-wrapper">
           <ActiontechTable
             loading={loading}
-            columns={MonitorConfigColumns()}
+            columns={columns}
             onChange={tableChange}
             pagination={{
               total: monitorConfigList?.total ?? 0
@@ -101,9 +138,11 @@ const MonitorConfig = () => {
             rowKey="routine_name"
             dataSource={monitorConfigList?.list ?? []}
             errorMessage={requestErrorMessage}
+            actions={actions}
           />
         </section>
       </MonitorConfigStyleWrapper>
+      <MonitorConfigModal />
     </>
   );
 };

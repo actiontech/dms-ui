@@ -5,8 +5,8 @@ export const MonitorConfigStyleWrapper = styled('section')`
 
   .header-wrapper {
     padding: 24px 40px;
-    border-bottom: 1px solid
-      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+    border-bottom: ${({ theme }) =>
+      theme.diagnosisTheme.monitorSourceConfig.headerWrapper.borderBottom};
 
     .header {
       display: flex;
@@ -15,10 +15,15 @@ export const MonitorConfigStyleWrapper = styled('section')`
 
       h3.header-cont-text {
         margin-bottom: 0;
-        font-size: 24px;
-        font-weight: 600;
+        font-size: ${({ theme }) =>
+          theme.diagnosisTheme.monitorSourceConfig.headerWrapper.title
+            .fontSize};
+        font-weight: ${({ theme }) =>
+          theme.diagnosisTheme.monitorSourceConfig.headerWrapper.title
+            .fontWeight};
         line-height: 32px;
-        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+        color: ${({ theme }) =>
+          theme.diagnosisTheme.monitorSourceConfig.headerWrapper.title.color};
       }
 
       .refresh-icon {
@@ -26,7 +31,9 @@ export const MonitorConfigStyleWrapper = styled('section')`
         height: 28px;
         line-height: 28px;
         margin-left: 8px;
-        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+        color: ${({ theme }) =>
+          theme.diagnosisTheme.monitorSourceConfig.headerWrapper.refreshIcon
+            .color};
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,29 +50,40 @@ export const MonitorConfigStyleWrapper = styled('section')`
         height: 28px;
         padding: 0 8px 0 6px;
         border-radius: 4px;
-        border: 1px solid
-          ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+        border: ${({ theme }) =>
+          theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+            .tagItem.border};
         margin-right: 8px;
         background-color: ${({ theme }) =>
-          theme.sqleTheme.auditPlan.detail.tag.default.background} !important;
+          theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+            .tagItem.backgroundColor} !important;
 
         &.custom-tag-primary {
           background-color: ${({ theme }) =>
-            theme.sqleTheme.auditPlan.detail.tag.primary.background} !important;
+            theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+              .tagPrimary.primaryColor} !important;
           border-color: ${({ theme }) =>
-            theme.sqleTheme.auditPlan.detail.tag.primary.background} !important;
+            theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+              .tagPrimary.primaryColor} !important;
 
           * {
             color: ${({ theme }) =>
-              theme.sharedTheme.basic.colorPrimaryHover} !important;
+              theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+                .tagPrimary.hoverColor} !important;
           }
         }
 
         * {
-          font-size: 13px;
-          font-weight: 600;
+          font-size: ${({ theme }) =>
+            theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+              .fontSize};
+          font-weight: ${({ theme }) =>
+            theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+              .fontWeight};
           line-height: 20px;
-          color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+          color: ${({ theme }) =>
+            theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+              .color};
         }
 
         .custom-icon {
@@ -84,7 +102,8 @@ export const MonitorConfigStyleWrapper = styled('section')`
 
           &.bookmark-icon {
             background: ${({ theme }) =>
-              theme.sqleTheme.auditPlan.detail.tag.icon.color};
+              theme.diagnosisTheme.monitorSourceConfig.headerWrapper.tagWrapper
+                .icon.backgroundColor};
           }
 
           &.custom-tag-right-icon {

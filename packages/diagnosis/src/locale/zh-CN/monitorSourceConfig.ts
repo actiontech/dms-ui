@@ -43,6 +43,7 @@ export default {
     monitorInterval: '监控周期(ms)',
     monitorVia: '监控命令',
     monitorDesc: '描述',
-    checkMonitorConfig: '查看'
+    checkMonitorConfig: '查看',
+    monitorKey: '监控指标'
   }
 };

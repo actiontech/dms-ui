@@ -3,6 +3,7 @@ import { sideMenuTheme } from './sideMenu';
 import { guidanceTheme } from './guidance';
 import { sqleLightTheme } from 'sqle/src/theme/light';
 import { systemTheme } from './system';
+import { diagnosisLightTheme } from 'diagnosis/src/theme/light';
 
 const lightTheme = createTheme({
   baseTheme: {
@@ -10,7 +11,8 @@ const lightTheme = createTheme({
     guidance: guidanceTheme,
     system: systemTheme
   },
-  sqleTheme: sqleLightTheme
+  sqleTheme: sqleLightTheme,
+  diagnosisTheme: diagnosisLightTheme
 });
 
 export default lightTheme;
