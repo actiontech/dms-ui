@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Card, Space, Typography, Spin } from 'antd5';
+import { Card, Typography, Spin } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
@@ -30,14 +30,13 @@ const RuleKnowledge: React.FC = () => {
     run: getRuleKnowledge
   } = useRequest(
     (isCustomType: boolean, dbType: string) => {
-      //todo 待后端提供接口
-      // if (isCustomType) {
-      //   return rule_template
-      //     .getCustomRuleKnowledgeV1({ rule_name: ruleName, db_type: dbType })
-      //     .then((res) => {
-      //       return res.data.data;
-      //     });
-      // }
+      if (isCustomType) {
+        return rule_template
+          .getCustomRuleKnowledgeV1({ rule_name: ruleName, db_type: dbType })
+          .then((res) => {
+            return res.data.data;
+          });
+      }
       return rule_template
         .getRuleKnowledgeV1({ rule_name: ruleName, db_type: dbType })
         .then((res) => {
