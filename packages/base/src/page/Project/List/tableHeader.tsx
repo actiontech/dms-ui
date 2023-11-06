@@ -9,24 +9,7 @@ import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { ProjectDescStyledWrapper } from './style';
-import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
-
-const ProjectDesc: React.FC<{ desc: string }> = ({ desc }) => {
-  return (
-    <ProjectDescStyledWrapper
-      ellipsis={{
-        expandable: false,
-        tooltip: {
-          placement: 'topLeft',
-          ...tooltipsCommonProps(<span>{desc}</span>, 600)
-        }
-      }}
-    >
-      {desc}
-    </ProjectDescStyledWrapper>
-  );
-};
+import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 
 const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProject> => {
@@ -46,7 +29,7 @@ const ProjectListTableColumnFactory =
         title: () => t('dmsProject.projectForm.desc'),
         className: 'project-table-desc-column',
         render: (desc: string) => {
-          return desc ? <ProjectDesc desc={desc} /> : '-';
+          return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
         }
       },
       /* IFTRUE_isEE */

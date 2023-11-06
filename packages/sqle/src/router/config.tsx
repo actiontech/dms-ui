@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import {
-  GlobalRouterItemKeyLiteral,
   ProjectDetailRouterItemKeyLiteral,
   RouterConfigItem
 } from '../types/router.type';
@@ -13,13 +12,11 @@ import {
   ProfileOutlined,
   NodeIndexOutlined,
   CiCircleOutlined,
-  BarChartOutlined,
   ProjectOutlined
 } from '@ant-design/icons';
 import { SystemRole } from '../data/common';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 
-// 验收已反馈，待后端修改
 const Home = React.lazy(
   () => import(/* webpackChunkName: "Home" */ '../page/Home')
 );
@@ -40,7 +37,6 @@ const OrderDetail = React.lazy(
 const OrderList = React.lazy(
   () => import(/* webpackChunkName: "Order" */ '../page/Order/List')
 );
-// 已重构，剩余列宽问题
 const Whitelist = React.lazy(
   () => import(/* webpackChunkName: "Whitelist" */ '../page/Whitelist')
 );
@@ -52,18 +48,15 @@ const WorkflowTemplate = React.lazy(
     )
 );
 
-// 已重构
 const AuditPlan = React.lazy(
   () => import(/* webpackChunkName: "AuditPlan" */ '../page/AuditPlan')
 );
 
-// 已重构
 const AuditPlanList = React.lazy(
   () =>
     import(/* webpackChunkName: "AuditPlanList" */ '../page/AuditPlan/PlanList')
 );
 
-// 已重构
 const CreateAuditPlan = React.lazy(
   () =>
     import(
@@ -71,7 +64,6 @@ const CreateAuditPlan = React.lazy(
     )
 );
 
-// 已重构
 const UpdateAuditPlan = React.lazy(
   () =>
     import(
@@ -79,13 +71,11 @@ const UpdateAuditPlan = React.lazy(
     )
 );
 
-// 已重构
 const AuditPlanDetail = React.lazy(
   () =>
     import(/* webpackChunkName: "PlanDetail" */ '../page/AuditPlan/PlanDetail')
 );
 
-// 已重构
 const AuditPlanReport = React.lazy(
   () =>
     import(
@@ -93,7 +83,6 @@ const AuditPlanReport = React.lazy(
     )
 );
 
-// 已重构
 const AuditPlanSqlAnalyze = React.lazy(
   () =>
     import(
@@ -101,15 +90,11 @@ const AuditPlanSqlAnalyze = React.lazy(
     )
 );
 
-// ----------------------------
-
-// 已重构
 const OrderSqlAnalyze = React.lazy(
   () =>
     import(/* webpackChunkName: "OrderSqlAnalyze" */ '../page/SqlAnalyze/Order')
 );
 
-// 已重构
 const ReportStatistics = React.lazy(
   () =>
     import(
@@ -117,7 +102,6 @@ const ReportStatistics = React.lazy(
     )
 );
 
-// 已重构
 const ProjectOverview = React.lazy(
   () =>
     import(
@@ -125,7 +109,6 @@ const ProjectOverview = React.lazy(
     )
 );
 
-// 重构中
 const OperationRecord = React.lazy(
   () =>
     import(/* webpackChunkName: "OperationRecord" */ '../page/OperationRecord')
@@ -138,7 +121,6 @@ const ImportRuleTemplate = React.lazy(
     )
 );
 
-// 已重构
 const RuleTemplateList = React.lazy(
   () =>
     import(
@@ -153,7 +135,6 @@ const RuleTemplateDetail = React.lazy(
     )
 );
 
-// 已重构
 const CreateRuleTemplate = React.lazy(
   () =>
     import(
@@ -161,7 +142,6 @@ const CreateRuleTemplate = React.lazy(
     )
 );
 
-// 已重构
 const UpdateRuleTemplate = React.lazy(
   () =>
     import(
@@ -182,40 +162,9 @@ const WorkflowTemplateDetail = React.lazy(
       /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
 );
-// 规则管理 重构中
-const RuleManager = React.lazy(
-  () => import(/* webpackChunkName: "RuleManager" */ '../page/RuleManager')
-);
 
-const GlobalImportRuleTemplate = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ImportRuleTemplate" */ '../page/GlobalRuleTemplate/ImportRuleTemplate'
-    )
-);
-const GlobalUpdateRuleTemplate = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "UpdateRuleTemplate" */ '../page/GlobalRuleTemplate/UpdateRuleTemplate'
-    )
-);
-const GlobalCreateRuleTemplate = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "CreateRuleTemplate" */ '../page/GlobalRuleTemplate/CreateRuleTemplate'
-    )
-);
-const CreateCustomRule = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "CreateCustomRule" */ '../page/CustomRule/CreateCustomRule'
-    )
-);
-const UpdateCustomRule = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "UpdateCustomRule" */ '../page/CustomRule/UpdateCustomRule'
-    )
+const SQLManagement = React.lazy(
+  () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
 
 export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[] =
@@ -412,6 +361,12 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
     },
     /* FITRUE_isEE */
     {
+      path: `${PROJECT_ROUTER_PARAM}/sqlManagement`,
+      label: 'menu.sqlManagement',
+      key: 'sqlManagement',
+      element: <SQLManagement />
+    },
+    {
       path: '*',
       key: 'projectRedirect',
       element: <Navigate to="/" />,
@@ -420,61 +375,62 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
     }
   ];
 
-export const globalRouterConfig: RouterConfigItem<
-  GlobalRouterItemKeyLiteral | ProjectDetailRouterItemKeyLiteral
->[] = [
-  {
-    path: 'reportStatistics',
-    label: 'menu.reportStatistics',
-    element: <ReportStatistics />,
-    icon: <BarChartOutlined />,
-    key: 'reportStatistics',
-    role: [SystemRole.admin]
-  },
-  {
-    key: 'ruleManager',
-    path: 'sqle/ruleManager',
-    element: <RuleManager />,
-    children: [
-      {
-        index: true,
-        element: <RuleManager />
-      },
-      {
-        path: 'globalCreate',
-        key: 'globalRuleTemplateCreate',
-        element: <GlobalCreateRuleTemplate />
-      },
-      {
-        path: 'globalImport',
-        key: 'globalRuleTemplateImport',
-        element: <GlobalImportRuleTemplate />
-      },
-      {
-        path: 'globalUpdate/:templateName',
-        key: 'globalRuleTemplateUpdate',
-        element: <GlobalUpdateRuleTemplate />
-      },
-      /* IFTRUE_isEE */
-      {
-        path: 'customCreate',
-        key: 'createCustomRule',
-        element: <CreateCustomRule />
-      },
-      {
-        path: 'customUpdate/:ruleID',
-        key: 'updateCustomRule',
-        element: <UpdateCustomRule />
-      }
-      /* FITRUE_isEE */
-    ] as RouterConfigItem<GlobalRouterItemKeyLiteral>[]
-  },
-  /* FITRUE_isEE */
-  {
-    path: '*',
-    key: 'redirect',
-    element: <Navigate to="/" />,
-    hideInSliderMenu: true,
-    label: 'menu.dashboard'
-  }
-];
+// sqle 的全局页面, 迁移至 base 下 router/sqle.tsx
+// export const globalRouterConfig: RouterConfigItem<
+//   GlobalRouterItemKeyLiteral | ProjectDetailRouterItemKeyLiteral
+// >[] = [
+//   {
+//     path: 'reportStatistics',
+//     label: 'menu.reportStatistics',
+//     element: <ReportStatistics />,
+//     icon: <BarChartOutlined />,
+//     key: 'reportStatistics',
+//     role: [SystemRole.admin]
+//   },
+//   {
+//     key: 'ruleManager',
+//     path: 'sqle/ruleManager',
+//     element: <RuleManager />,
+//     children: [
+//       {
+//         index: true,
+//         element: <RuleManager />
+//       },
+//       {
+//         path: 'globalCreate',
+//         key: 'globalRuleTemplateCreate',
+//         element: <GlobalCreateRuleTemplate />
+//       },
+//       {
+//         path: 'globalImport',
+//         key: 'globalRuleTemplateImport',
+//         element: <GlobalImportRuleTemplate />
+//       },
+//       {
+//         path: 'globalUpdate/:templateName',
+//         key: 'globalRuleTemplateUpdate',
+//         element: <GlobalUpdateRuleTemplate />
+//       },
+//       /* IFTRUE_isEE */
+//       {
+//         path: 'customCreate',
+//         key: 'createCustomRule',
+//         element: <CreateCustomRule />
+//       },
+//       {
+//         path: 'customUpdate/:ruleID',
+//         key: 'updateCustomRule',
+//         element: <UpdateCustomRule />
+//       }
+//       /* FITRUE_isEE */
+//     ] as RouterConfigItem<GlobalRouterItemKeyLiteral>[]
+//   },
+//   /* FITRUE_isEE */
+//   {
+//     path: '*',
+//     key: 'redirect',
+//     element: <Navigate to="/" />,
+//     hideInSliderMenu: true,
+//     label: 'menu.dashboard'
+//   }
+// ];

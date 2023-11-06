@@ -15,6 +15,7 @@ import reportStatistics from 'sqle/src/store/reportStatistics';
 import ruleTemplate from 'sqle/src/store/ruleTemplate';
 import whitelist from 'sqle/src/store/whitelist';
 import projectManage from 'sqle/src/store/projectManage';
+import sqleManagement from 'sqle/src/store/sqleManagement';
 
 const store = configureStore({
   reducer: {
@@ -31,7 +32,8 @@ const store = configureStore({
     reportStatistics,
     ruleTemplate,
     whitelist,
-    projectManage
+    projectManage,
+    sqleManagement
   }
 });
 

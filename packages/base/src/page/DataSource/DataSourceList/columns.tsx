@@ -7,6 +7,7 @@ import {
   ActiontechTableColumn,
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
+import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 
 export const DataSourceColumns = (): ActiontechTableColumn<
   IListDBService,
@@ -23,7 +24,7 @@ export const DataSourceColumns = (): ActiontechTableColumn<
       title: () => t('dmsDataSource.databaseList.address'),
       render(_, record) {
         if (!record.host || !record.port) {
-          return '--';
+          return '-';
         }
         return `${record.host}:${record.port}`;
       }
@@ -34,7 +35,11 @@ export const DataSourceColumns = (): ActiontechTableColumn<
     },
     {
       dataIndex: 'desc',
-      title: () => t('dmsDataSource.databaseList.describe')
+      title: () => t('dmsDataSource.databaseList.describe'),
+      className: 'ellipsis-column-width',
+      render: (desc: string) => {
+        return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
+      }
     },
     {
       dataIndex: 'db_type',

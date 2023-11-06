@@ -1,4 +1,3 @@
-// import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { Col, Form, Input, Row } from 'antd5';
 import { BasicSelect } from '@actiontech/shared';
 import { useEffect } from 'react';
@@ -18,8 +17,16 @@ import {
 
 const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
   const { t } = useTranslation();
-  const { updateRoleList, generateRoleSelectOption } = useRole();
-  const { updateDbServiceList, generateDbServiceSelectOption } = useDbService();
+  const {
+    loading: getRoleListLoading,
+    updateRoleList,
+    generateRoleSelectOption
+  } = useRole();
+  const {
+    loading: getDbServiceListLoading,
+    updateDbServiceList,
+    generateDbServiceSelectOption
+  } = useDbService();
   useEffect(() => {
     updateRoleList();
     updateDbServiceList(projectID);
@@ -41,6 +48,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                   <BasicSelect<string>
                     popupMatchSelectWidth={false}
                     showSearch
+                    loading={getRoleListLoading}
                     optionFilterProp="children"
                     filterOption={filterOptionByLabel}
                     placeholder={t('common.form.placeholder.select', {
@@ -65,6 +73,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                     mode="multiple"
                     showSearch
                     allowClear
+                    loading={getDbServiceListLoading}
                     optionFilterProp="children"
                     filterOption={filterOptionByLabel}
                   >
