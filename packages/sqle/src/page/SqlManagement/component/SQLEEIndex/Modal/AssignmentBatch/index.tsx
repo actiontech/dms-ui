@@ -61,7 +61,9 @@ const AssignmentBatch = () => {
     startSubmit();
     const params: IBatchUpdateSqlManageParams = {
       project_name: projectName,
-      sql_manage_id_list: currentSelected?.map((item) => Number(item?.id)),
+      sql_manage_id_list: currentSelected
+        ?.filter((item) => item?.id)
+        .map((item) => Number(item?.id)),
       assignees: values.assignees
     };
     SqlManage.BatchUpdateSqlManage(params)

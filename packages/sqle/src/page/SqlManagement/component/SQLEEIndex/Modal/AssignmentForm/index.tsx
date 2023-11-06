@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Form } from 'antd5';
@@ -9,8 +9,6 @@ import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSele
 import useUsername from '../../../../../../hooks/useUsername';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IAssignmentForm } from './index.type';
-
-export const FormSubmitStatusContext = React.createContext<boolean>(false);
 
 const AssignmentForm = ({ form, submitLoading, ...props }: IAssignmentForm) => {
   const { t } = useTranslation();
@@ -26,35 +24,33 @@ const AssignmentForm = ({ form, submitLoading, ...props }: IAssignmentForm) => {
   }, [props.init]);
 
   return (
-    <FormSubmitStatusContext.Provider value={submitLoading}>
-      <Form form={form}>
-        <FormItemLabelStyleWrapper
-          label=""
-          name="assignees"
-          rules={[
-            {
-              required: true,
-              message: t('common.form.placeholder.select', {
-                name: t('sqlManagement.table.column.personInCharge')
-              })
-            }
-          ]}
-        >
-          <BasicSelect
-            loading={loading}
-            showSearch
-            disabled={submitLoading}
-            filterOption={filterOptionByLabel}
-            mode="multiple"
-            placeholder={t('common.form.placeholder.select', {
+    <Form form={form}>
+      <FormItemLabelStyleWrapper
+        label=""
+        name="assignees"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.placeholder.select', {
               name: t('sqlManagement.table.column.personInCharge')
-            })}
-          >
-            {generateUsernameSelectOption()}
-          </BasicSelect>
-        </FormItemLabelStyleWrapper>
-      </Form>
-    </FormSubmitStatusContext.Provider>
+            })
+          }
+        ]}
+      >
+        <BasicSelect
+          loading={loading}
+          showSearch
+          disabled={submitLoading}
+          filterOption={filterOptionByLabel}
+          mode="multiple"
+          placeholder={t('common.form.placeholder.select', {
+            name: t('sqlManagement.table.column.personInCharge')
+          })}
+        >
+          {generateUsernameSelectOption()}
+        </BasicSelect>
+      </FormItemLabelStyleWrapper>
+    </Form>
   );
 };
 

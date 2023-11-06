@@ -203,7 +203,7 @@ ${
             </Link>
           );
         }
-        return '--';
+        return '-';
       }
     },
     {
@@ -263,7 +263,7 @@ ${
       width: 200,
       render: (assignees: string[]) => {
         if (!Array.isArray(assignees)) {
-          return '--';
+          return '-';
         }
         if (assignees.length === 1) {
           return <AvatarCom key={assignees[0]} name={assignees[0]} />;
@@ -281,7 +281,7 @@ ${
       dataIndex: 'status',
       title: () => t('sqlManagement.table.column.status'),
       render: (status: SqlManageStatusEnum) => {
-        if (!status) return '--';
+        if (!status) return '-';
         return <StatusTag status={status} />;
       }
     },
@@ -290,7 +290,7 @@ ${
       width: 160,
       title: () => t('sqlManagement.table.column.comment'),
       render: (remark: string, record) => {
-        if (!actionPermission) return remark ?? '--';
+        if (!actionPermission) return remark || '-';
         return (
           <EditText
             value={remark}
