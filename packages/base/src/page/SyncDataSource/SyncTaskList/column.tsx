@@ -7,6 +7,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { NavigateFunction } from 'react-router-dom';
 import { BasicTag, BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
+import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 
 export const SyncTaskListActions: (params: {
   navigate: NavigateFunction;
@@ -65,6 +66,7 @@ export const SyncTaskListActions: (params: {
 
 export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDatabaseSourceService> =
   () => {
+    const { getLogoUrlByDbType } = useDbServiceDriver();
     return [
       {
         dataIndex: 'name',
@@ -90,7 +92,12 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDa
             return '--';
           }
 
-          return <DatabaseTypeLogo dbType={type} logoUrl={''} />;
+          return (
+            <DatabaseTypeLogo
+              dbType={type}
+              logoUrl={getLogoUrlByDbType(type)}
+            />
+          );
         }
       },
       {
