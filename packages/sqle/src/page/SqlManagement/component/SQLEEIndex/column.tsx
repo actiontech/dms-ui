@@ -27,6 +27,10 @@ import { AvatarCom, EditText } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { Avatar } from 'antd5';
 import StatusTag from './StatusTag';
+import {
+  SQLAuditRecordIDValuesSplit,
+  SQLAuditRecordListUrlParamsKey
+} from './index.data';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListParams,
@@ -190,15 +194,16 @@ const SqlManagementColumn: (
           source.type &&
           source.type === SourceTypeEnum.sql_audit_record
         ) {
-          // todo: sqle 审核 路径有问题 -> 新增的的页面
-          /**
-${
+          return (
+            <Link
+              to={`/sqle/project/${projectID}/sqlAudit?${
+                SQLAuditRecordListUrlParamsKey.SQLAuditRecordID
+              }=${
                 source.sql_audit_record_ids?.join(
                   SQLAuditRecordIDValuesSplit
                 ) ?? ''
-              }`} */
-          return (
-            <Link to={`/sqle/project/${projectID}/sqlAudit/`}>
+              }`}
+            >
               {t(sourceDictionary[source.type])}
             </Link>
           );
