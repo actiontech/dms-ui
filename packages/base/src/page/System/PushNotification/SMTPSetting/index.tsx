@@ -70,7 +70,6 @@ const SMTPSetting = () => {
 
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      enable: smtpInfo?.enable_smtp_notify ?? false,
       host: smtpInfo?.smtp_host,
       port: smtpInfo?.smtp_port
         ? Number.parseInt(smtpInfo.smtp_port, 10)
@@ -80,10 +79,10 @@ const SMTPSetting = () => {
     });
   }, [form, smtpInfo]);
 
-  const handelClickModify = () => {
+  const handleClickModify = useCallback(() => {
     startModify();
     setFormDefaultValue();
-  };
+  }, [startModify, setFormDefaultValue]);
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldValue(switchFieldName, false);
     modifyFinish();
@@ -131,9 +130,9 @@ const SMTPSetting = () => {
     isConfigClosed,
     switchOpen,
     modifyFlag,
-    startModify,
     startSubmit,
     submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateSMTPConfiguration({
         smtp_configuration: {
@@ -281,7 +280,7 @@ const SMTPSetting = () => {
                   </ConfigTestPopoverForm>
                 }
               />
-              <ConfigModifyBtn onClick={handelClickModify} />
+              <ConfigModifyBtn onClick={handleClickModify} />
             </Space>
           ),
           configSwitchNode: (

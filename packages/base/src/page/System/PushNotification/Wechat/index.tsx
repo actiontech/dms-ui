@@ -93,7 +93,6 @@ const Wechat = () => {
 
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      enable_wechat_notify: wechatConfig?.enable_wechat_notify ?? false,
       corp_id: wechatConfig?.corp_id ?? '',
       agent_id: String(wechatConfig?.agent_id ?? 0),
       safe_enabled: wechatConfig?.safe_enabled ?? false,
@@ -101,7 +100,7 @@ const Wechat = () => {
     });
   }, [form, wechatConfig]);
 
-  const handelClickModify = () => {
+  const handleClickModify = () => {
     setFormDefaultValue();
     startModify();
   };
@@ -125,9 +124,9 @@ const Wechat = () => {
     isConfigClosed,
     switchOpen,
     modifyFlag,
-    startModify,
     startSubmit,
     submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateWeChatConfiguration({
         update_wechat_configuration: {
@@ -266,7 +265,7 @@ const Wechat = () => {
                 }
                 testingRef={testTing}
               />
-              <ConfigModifyBtn onClick={handelClickModify} />
+              <ConfigModifyBtn onClick={handleClickModify} />
             </Space>
           ),
           configSwitchNode: (

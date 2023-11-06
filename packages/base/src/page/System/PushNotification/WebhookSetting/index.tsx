@@ -105,9 +105,8 @@ const WebHook: React.FC = () => {
       });
   };
 
-  const handelClickModify = () => {
+  const handleClickModify = () => {
     form.setFieldsValue({
-      enable: !!webhookConfig?.enable,
       token: webhookConfig?.token,
       maxRetryTimes:
         webhookConfig?.max_retry_times ?? DEFAULT_CONSTANT.maxRetryTimes,
@@ -139,9 +138,9 @@ const WebHook: React.FC = () => {
     isConfigClosed,
     switchOpen,
     modifyFlag,
-    startModify,
     startSubmit,
     submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateWebHookConfiguration({
         webhook_config: {
@@ -221,7 +220,7 @@ const WebHook: React.FC = () => {
                   }}
                 />
               </BasicToolTips>
-              <ConfigModifyBtn onClick={handelClickModify} />
+              <ConfigModifyBtn onClick={handleClickModify} />
             </Space>
           ),
           configSwitchNode: (
