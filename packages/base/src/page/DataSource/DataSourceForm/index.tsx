@@ -109,7 +109,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     onAuditRequiredPopupOpenChange,
     clearRuleTemplate,
     changeAuditRequired
-  } = useAuditRequired(props.form);
+  } = useAuditRequired<FormInstance<DataSourceFormField>>(props.form);
 
   useEffect(() => {
     if (!!props.defaultData) {

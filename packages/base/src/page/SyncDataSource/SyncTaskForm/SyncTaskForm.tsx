@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SyncTaskFormProps } from '.';
+import { SyncTaskFormFields, SyncTaskFormProps } from '.';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import useGlobalRuleTemplate from 'sqle/src/hooks/useGlobalRuleTemplate';
@@ -22,7 +22,7 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInputCom';
-import { Popconfirm, Spin } from 'antd5';
+import { FormInstance, Popconfirm, Spin } from 'antd5';
 import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
 import useAuditRequired from '../../../hooks/useAuditRequired';
 
@@ -87,7 +87,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     onAuditRequiredPopupOpenChange,
     clearRuleTemplate,
     changeAuditRequired
-  } = useAuditRequired(form);
+  } = useAuditRequired<FormInstance<SyncTaskFormFields>>(form);
 
   useEffect(() => {
     updateTaskSourceList();
@@ -166,7 +166,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                 {
                   required: true,
                   message: t('common.form.rule.require', {
-                    name: t('dmsDataSource.dataSourceForm.name')
+                    name: t('dmsSyncDataSource.syncTaskForm.name')
                   })
                 },
                 ...nameRule()
@@ -177,7 +177,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               <FormInputBotBorder
                 disabled={isUpdate}
                 placeholder={t('common.form.placeholder.input', {
-                  name: t('dmsDataSource.dataSourceForm.name')
+                  name: t('dmsSyncDataSource.syncTaskForm.name')
                 })}
               ></FormInputBotBorder>
             </FormItemNoLabel>
@@ -284,6 +284,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               name="ruleTemplateName"
               label={t('dmsSyncDataSource.syncTaskForm.ruleTemplateName')}
               className="has-required-style"
+              hidden={!auditRequired}
               rules={[{ required: auditRequired }]}
             >
               <BasicSelect
