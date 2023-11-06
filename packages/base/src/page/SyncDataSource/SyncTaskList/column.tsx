@@ -8,6 +8,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { NavigateFunction } from 'react-router-dom';
 import { BasicTag, BasicToolTips } from '@actiontech/shared';
+import { Space } from 'antd5';
 
 export const SyncTaskListActions: (params: {
   navigate: NavigateFunction;
@@ -15,18 +16,20 @@ export const SyncTaskListActions: (params: {
   deleteAction: (taskId: string) => void;
   projectID: string;
   isArchive: boolean;
+  actionPermission: boolean;
 }) => ActiontechTableActionMeta<IListDatabaseSourceService>[] = ({
   navigate,
   syncAction,
   deleteAction,
   projectID,
-  isArchive
+  isArchive,
+  actionPermission
 }) => {
   return [
     {
       key: 'edit',
       text: t('common.edit'),
-      permissions: () => !isArchive,
+      permissions: () => !isArchive && actionPermission,
       buttonProps: (record) => {
         return {
           onClick: () =>
@@ -39,6 +42,7 @@ export const SyncTaskListActions: (params: {
     {
       key: 'sync',
       text: t('dmsSyncDataSource.syncTaskList.columns.sync'),
+      permissions: () => actionPermission,
       buttonProps: (record) => {
         return {
           onClick: () => syncAction(record?.uid ?? '')
@@ -48,7 +52,7 @@ export const SyncTaskListActions: (params: {
     {
       key: 'delete',
       text: t('common.delete'),
-      permissions: () => !isArchive,
+      permissions: () => !isArchive && actionPermission,
       buttonProps: () => {
         return {
           danger: true
@@ -99,7 +103,9 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDa
         title: () => t('dmsSyncDataSource.syncTaskList.columns.lastSyncResult'),
         render: (lastSyncErr) => {
           return !lastSyncErr ? (
-            <BasicTag color="green">{t('common.success')}</BasicTag>
+            <Space>
+              <BasicTag color="green">{t('common.success')}</BasicTag>
+            </Space>
           ) : (
             <BasicToolTips title={lastSyncErr}>
               <BasicTag color="red">{t('common.fail')}</BasicTag>
