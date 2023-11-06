@@ -1,22 +1,24 @@
-import { Outlet } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { Typography, Image } from 'antd5';
-import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
+import { useTranslation } from 'react-i18next';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
+import SQLEEIndex from './component/SQLEEIndex';
 
-const SyncDataSource: React.FC = () => {
+// todo: 替换示例图片
+const SqlManagement = () => {
   const { t } = useTranslation();
 
   return (
     <article>
-      {/* IFTRUE_isCE  */}
-      <PageHeader title={t('dmsSyncDataSource.syncTaskList.title')} />
+      {/* IFTRUE_isCE */}
+      <PageHeader title={t('sqlManagement.pageTitle')} />
       {/* FITRUE_isCE */}
       <EnterpriseFeatureDisplay
-        featureName={t('dmsSyncDataSource.pageTitle')}
+        featureName={t('sqlManagement.pageTitle')}
         eeFeatureDescription={
           <>
             <Typography.Paragraph className="paragraph">
-              {t('dmsSyncDataSource.ceTips')}
+              {t('sqlManagement.ceTips')}
             </Typography.Paragraph>
             <Image
               width="100%"
@@ -27,10 +29,10 @@ const SyncDataSource: React.FC = () => {
           </>
         }
       >
-        <Outlet />
+        <SQLEEIndex />
       </EnterpriseFeatureDisplay>
     </article>
   );
 };
 
-export default SyncDataSource;
+export default SqlManagement;

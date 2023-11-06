@@ -163,6 +163,10 @@ const WorkflowTemplateDetail = React.lazy(
     )
 );
 
+const SQLManagement = React.lazy(
+  () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
+);
+
 export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[] =
   [
     {
@@ -356,6 +360,12 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
       role: [SystemRole.admin]
     },
     /* FITRUE_isEE */
+    {
+      path: `${PROJECT_ROUTER_PARAM}/sqlManagement`,
+      label: 'menu.sqlManagement',
+      key: 'sqlManagement',
+      element: <SQLManagement />
+    },
     {
       path: '*',
       key: 'projectRedirect',
