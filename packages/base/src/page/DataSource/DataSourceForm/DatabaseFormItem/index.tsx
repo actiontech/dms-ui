@@ -99,7 +99,6 @@ const DatabaseFormItem: React.FC<{
             ''
           );
 
-          console.log('connectErrorMessage: ', connectErrorMessage);
           setConnectAble(isConnectable);
           setConnectErrorMessage(connectErrorMessage);
         }
