@@ -9,6 +9,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { getWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { StaticEnumDictionary } from './index.type';
+import { GetSqlManageListFilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 
 export const execStatusDictionary: StaticEnumDictionary<getAuditTaskSQLsV2FilterExecStatusEnum> =
   {
@@ -79,4 +80,16 @@ export const auditLevelDictionary: StaticEnumDictionary<WorkflowTemplateDetailRe
       'workflowTemplate.auditLevel.warn',
     [WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum.error]:
       'workflowTemplate.auditLevel.error'
+  };
+
+export const sqlManagementDictionary: StaticEnumDictionary<GetSqlManageListFilterStatusEnum> =
+  {
+    [GetSqlManageListFilterStatusEnum.unhandled]:
+      'sqlManagement.table.filter.status.unhandled',
+    [GetSqlManageListFilterStatusEnum.solved]:
+      'sqlManagement.table.filter.status.solved',
+    [GetSqlManageListFilterStatusEnum.ignored]:
+      'sqlManagement.table.filter.status.ignored',
+    [GetSqlManageListFilterStatusEnum.manual_audited]:
+      'sqlManagement.table.filter.status.manual_audited'
   };
