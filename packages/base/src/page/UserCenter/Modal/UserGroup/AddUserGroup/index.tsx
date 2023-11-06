@@ -67,7 +67,8 @@ const AddUserGroup = () => {
     }
   };
 
-  const { usernameList } = useUserGroupFormOption(visible);
+  const { loading: getUserListLoading, usernameList } =
+    useUserGroupFormOption(visible);
 
   return (
     <BasicDrawer
@@ -90,7 +91,11 @@ const AddUserGroup = () => {
       }
     >
       {contextHolder}
-      <UserGroupForm form={form} userList={usernameList} />
+      <UserGroupForm
+        form={form}
+        userList={usernameList}
+        getUserListLoading={getUserListLoading}
+      />
     </BasicDrawer>
   );
 };

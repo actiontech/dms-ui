@@ -16,6 +16,7 @@ import projectManage from './projectManage';
 import operationRecord from './operationRecord';
 import customRule from './customRule';
 import ruleManager from './ruleManager';
+import sqlManagement from './sqlManagement';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -37,6 +38,7 @@ export default {
     projectManage,
     operationRecord,
     customRule,
-    ruleManager
+    ruleManager,
+    sqlManagement
   }
 };

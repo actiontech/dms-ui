@@ -14,11 +14,13 @@ export interface IGetSQLAuditRecordsV1Params {
 
   filter_sql_audit_status?: getSQLAuditRecordsV1FilterSqlAuditStatusEnum;
 
-  filter_instance_name?: string;
+  filter_instance_id?: number;
 
   filter_create_time_from?: string;
 
   filter_create_time_to?: string;
+
+  filter_sql_audit_record_ids?: string;
 
   page_index: number;
 

@@ -4,7 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { SyncTaskListActions, SyncTaskListTableColumnFactory } from './column';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -13,10 +16,15 @@ import {
   useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
+import { useMemo } from 'react';
 
 const SyncTaskList: React.FC = () => {
   const { t } = useTranslation();
-  const { projectID, projectArchive } = useCurrentProject();
+  const { projectID, projectArchive, projectName } = useCurrentProject();
+  const { isAdmin, isProjectManager } = useCurrentUser();
+  const actionPermission = useMemo(() => {
+    return isAdmin || isProjectManager(projectName);
+  }, [isAdmin, isProjectManager, projectName]);
   const navigate = useNavigate();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -110,7 +118,8 @@ const SyncTaskList: React.FC = () => {
           syncAction,
           projectID,
           deleteAction,
-          isArchive: projectArchive
+          isArchive: projectArchive,
+          actionPermission
         })}
       />
     </>

@@ -15,7 +15,11 @@ const MemberGroupForm: React.FC<IMemberGroupFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const { updateUsernameList, generateUsernameSelectOption } = useUsername();
+  const {
+    loading: getUsernameListLoading,
+    updateUsernameList,
+    generateUsernameSelectOption
+  } = useUsername();
 
   const isProjectAdmin = Form.useWatch('isProjectAdmin', form);
 
@@ -57,6 +61,7 @@ const MemberGroupForm: React.FC<IMemberGroupFormProps> = ({
       >
         <BasicSelect
           showSearch={true}
+          loading={getUsernameListLoading}
           mode="multiple"
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsMember.memberGroupList.columns.users')

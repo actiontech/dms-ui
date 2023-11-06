@@ -16,7 +16,7 @@ import { useRequest } from 'ahooks';
 import { BasicSegmented } from '@actiontech/shared';
 import {
   DashboardCommonListStyleWrapper,
-  NoBorderedPageHeaderWrapper,
+  NoBorderedPageHeaderStyleWrapper,
   TableTitleStyleWrapper
 } from '../CommonTable/style';
 import { IconWaitForOrderList } from '../../../icon/Dashboard';
@@ -78,17 +78,14 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
 
   return (
     <DashboardCommonListStyleWrapper>
-      <NoBorderedPageHeaderWrapper>
+      <NoBorderedPageHeaderStyleWrapper>
         <TableTitleStyleWrapper>
           <IconWaitForOrderList />
           {t('dashboard.title.pendingOrder')}
         </TableTitleStyleWrapper>
-      </NoBorderedPageHeaderWrapper>
+      </NoBorderedPageHeaderStyleWrapper>
 
-      <CustomToolbar
-        loading={loading}
-        refreshButton={{ refresh, disabled: loading }}
-      >
+      <CustomToolbar refreshButton={{ refresh, disabled: loading }}>
         <BasicSegmented
           options={[
             {

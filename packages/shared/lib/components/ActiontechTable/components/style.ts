@@ -130,7 +130,12 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
   }
 
   .${ANTD_PREFIX_STR}-picker-input {
+    input {
+      font-weight: 600;
+    }
+
     input::placeholder {
+      font-weight: 400;
       color: ${({ theme }) =>
         theme.sharedTheme.components.customFilter.rangePicker.placeholder
           .color} !important;
