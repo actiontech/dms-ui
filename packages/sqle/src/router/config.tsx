@@ -95,13 +95,6 @@ const OrderSqlAnalyze = React.lazy(
     import(/* webpackChunkName: "OrderSqlAnalyze" */ '../page/SqlAnalyze/Order')
 );
 
-const ReportStatistics = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ReportStatistics" */ '../page/ReportStatistics'
-    )
-);
-
 const ProjectOverview = React.lazy(
   () =>
     import(
@@ -161,6 +154,9 @@ const WorkflowTemplateDetail = React.lazy(
     import(
       /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
+);
+const SQLManagement = React.lazy(
+  () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
 
 const SqlAudit = React.lazy(
@@ -396,6 +392,12 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
     },
     /* FITRUE_isEE */
     {
+      path: `${PROJECT_ROUTER_PARAM}/sqlManagement`,
+      label: 'menu.sqlManagement',
+      key: 'sqlManagement',
+      element: <SQLManagement />
+    },
+    {
       path: '*',
       key: 'projectRedirect',
       element: <Navigate to="/" />,
@@ -405,6 +407,12 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
   ];
 
 // sqle 的全局页面, 迁移至 base 下 router/sqle.tsx
+// const ReportStatistics = React.lazy(
+//   () =>
+//     import(
+//       /* webpackChunkName: "ReportStatistics" */ '../page/ReportStatistics'
+//     )
+// );
 // export const globalRouterConfig: RouterConfigItem<
 //   GlobalRouterItemKeyLiteral | ProjectDetailRouterItemKeyLiteral
 // >[] = [

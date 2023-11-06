@@ -48,7 +48,8 @@ export type ProjectDetailRouterItemKeyLiteral =
   | 'sqlAudit'
   | 'sqlAuditList'
   | 'sqlAuditCreate'
-  | 'sqlAuditDetail';
+  | 'sqlAuditDetail'
+  | 'sqlManagement';
 
 export type RouterConfigItem<T extends string> = {
   role?: Array<SystemRole | ''>;
