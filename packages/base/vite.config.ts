@@ -59,7 +59,7 @@ export default defineConfig((config) => {
         '^(/v|/sqle/v)': {
           target: 'http://10.186.62.13:27601'
         },
-        '/logo': {
+        '^/logo': {
           target: 'http://10.186.62.13:27601'
         }
       },
