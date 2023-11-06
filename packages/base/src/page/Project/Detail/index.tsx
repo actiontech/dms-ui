@@ -2,7 +2,10 @@
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundRecentlyProject from './NotFoundRecentlyProject';
 /* FITRUE_isEE */
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useDispatch } from 'react-redux';
@@ -23,6 +26,7 @@ const ProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
   const [projectDetailFetched, setProjectDetailFetched] = useState(false);
+  const { loading: getDriverMetaLoading, getDriverMeta } = useDbServiceDriver();
 
   useRequest(
     () => dms.ListProjects({ page_size: 10, filter_by_uid: nextProjectID }),
@@ -41,6 +45,15 @@ const ProjectDetail: React.FC = () => {
       }
     }
   );
+
+  /*
+   * PS: 由于数据源logo存储方式的问题，现在项目入口处增加获取数据源logo并存入redux的逻辑
+   */
+  useEffect(() => {
+    if (nextProjectID) {
+      getDriverMeta(nextProjectID);
+    }
+  }, [nextProjectID, getDriverMeta]);
   /* IFTRUE_isEE */
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
@@ -78,7 +91,7 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <EmptyBox
-      if={projectDetailFetched || !nextProjectID}
+      if={projectDetailFetched || !nextProjectID || getDriverMetaLoading}
       defaultNode={<HeaderProgress />}
     >
       {/* IFTRUE_isEE */}

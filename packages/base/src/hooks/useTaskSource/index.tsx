@@ -1,11 +1,14 @@
-import { useBoolean } from 'ahooks';
-import { Select } from 'antd';
 import React from 'react';
-import DatabaseTypeLogo from 'sqle/src/components/DatabaseTypeLogo';
+import { useBoolean } from 'ahooks';
+import { Select } from 'antd5';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDatabaseSource } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  useCurrentProject,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 const useTaskSource = () => {
   const [taskSourceList, setTaskSourceList] = React.useState<IDatabaseSource[]>(
@@ -14,6 +17,7 @@ const useTaskSource = () => {
   const [loading, { setTrue, setFalse }] = useBoolean();
 
   const { projectID } = useCurrentProject();
+  const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const updateTaskSourceList = React.useCallback(() => {
     setTrue();
@@ -51,12 +55,15 @@ const useTaskSource = () => {
       return dbTypes.map((type) => {
         return (
           <Select.Option key={type} value={type ?? ''}>
-            <DatabaseTypeLogo dbType={type} />
+            <DatabaseTypeLogo
+              dbType={type}
+              logoUrl={getLogoUrlByDbType(type ?? '')}
+            />
           </Select.Option>
         );
       });
     },
-    [taskSourceList]
+    [getLogoUrlByDbType, taskSourceList]
   );
 
   return {

@@ -27,8 +27,9 @@ export { default as BasicInfoList } from './components/BasicInfoList';
 export { default as BasicChart } from './components/BasicChart';
 export { default as BasicTag } from './components/BasicTag';
 export { default as BasicDatePicker } from './components/BasicDatePicker';
-
 export { default as AvatarCom } from './components/AvatarCom';
+export { default as DatabaseTypeLogo } from './components/DatabaseTypeLogo';
+
 export { default as Copy } from './utils/Copy';
 export { default as Download } from './utils/Download';
 export { default as LocalStorageWrapper } from './utils/LocalStorageWrapper';
