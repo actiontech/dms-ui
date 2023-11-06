@@ -8,6 +8,7 @@ export type SyncTaskFormFields = {
   version: string;
   url: string;
   instanceType: string;
+  needSqlAuditService?: boolean;
   ruleTemplateId?: string;
   ruleTemplateName?: string;
   syncInterval: string;
