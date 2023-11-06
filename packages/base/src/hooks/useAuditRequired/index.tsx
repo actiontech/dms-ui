@@ -1,7 +1,7 @@
 import { Form, FormInstance } from 'antd5';
 import { useState } from 'react';
 
-const useAuditRequired = (form: FormInstance) => {
+const useAuditRequired = <T extends FormInstance>(form: T) => {
   const auditRequired = Form.useWatch('needSqlAuditService', form);
   const [auditRequiredPopupVisible, setAuditRequiredPopupVisible] =
     useState<boolean>(false);
