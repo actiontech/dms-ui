@@ -3,7 +3,9 @@ import DatabaseTypeLogo from '.';
 
 describe('test DatabaseTypeLogo', () => {
   test('should match snapshot', () => {
-    const { container, rerender } = render(<DatabaseTypeLogo dbType="mysql" />);
+    const { container, rerender } = render(
+      <DatabaseTypeLogo dbType="mysql" logoUrl="" />
+    );
 
     expect(container).toMatchSnapshot();
 

@@ -18,8 +18,15 @@ interface IEmptyStyleWrapperProps extends EmptyProps {
 
 const BasicEmpty = (props: IEmptyStyleWrapperProps) => {
   const { t } = useTranslation();
-  const { loading, emptyCont, errorInfo, onRefresh, dataLength, errorTitle } =
-    props;
+  const {
+    loading,
+    emptyCont,
+    errorInfo,
+    onRefresh,
+    dataLength,
+    errorTitle,
+    children
+  } = props;
 
   const { type, iconCom, noteTip, noteTitle } = useMemo(() => {
     if (loading) {
@@ -90,6 +97,7 @@ const BasicEmpty = (props: IEmptyStyleWrapperProps) => {
           {t('common.refresh')}
         </BasicButton>
       )}
+      {!loading && children}
     </EmptyStyleWrapper>
   );
 };
