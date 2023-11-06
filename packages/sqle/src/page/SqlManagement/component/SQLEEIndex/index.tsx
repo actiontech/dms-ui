@@ -59,7 +59,7 @@ const SQLEEIndex = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
 
   // api
-  const { projectID, projectName } = useCurrentProject();
+  const { projectID, projectName, projectArchive } = useCurrentProject();
   const { isAdmin, username, isProjectManager, uid } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -149,8 +149,8 @@ const SQLEEIndex = () => {
   }, [openModal]);
 
   const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
+    return !projectArchive && (isAdmin || isProjectManager(projectName));
+  }, [isAdmin, isProjectManager, projectName, projectArchive]);
   const { instanceOptions, updateInstanceList } = useInstance();
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
   const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
@@ -296,9 +296,6 @@ const SQLEEIndex = () => {
     { setFalse: finishExport, setTrue: startExport }
   ] = useBoolean(false);
   const handleExport = () => {
-    if (!actionPermission) {
-      return;
-    }
     startExport();
     const hideLoading = messageApi.loading(
       t('sqlManagement.pageHeader.action.exporting')
@@ -341,23 +338,20 @@ const SQLEEIndex = () => {
       <PageHeader
         title={t('sqlManagement.pageTitle')}
         extra={
-          actionPermission ? (
-            <BasicButton
-              onClick={handleExport}
-              icon={<IconDownload />}
-              disabled={exportButtonDisabled}
-            >
-              {t('sqlManagement.pageHeader.action.export')}
-            </BasicButton>
-          ) : null
+          <BasicButton
+            onClick={handleExport}
+            icon={<IconDownload />}
+            disabled={exportButtonDisabled}
+          >
+            {t('sqlManagement.pageHeader.action.export')}
+          </BasicButton>
         }
       />
       {/* page */}
       {/* page - total */}
       <SQLStatistics
         data={SQLNum}
-        // loading={getListLoading}
-        loading={false}
+        loading={getListLoading}
         errorMessage={getListError}
       />
       {/* table  */}
@@ -425,7 +419,20 @@ const SQLEEIndex = () => {
                   }
                 }
               ]
-            : false
+            : [
+                {
+                  key: 'assignment-self',
+                  text: t('sqlManagement.table.filter.assignee'),
+                  buttonProps: {
+                    className: isAssigneeSelf
+                      ? 'switch-btn-active'
+                      : 'switch-btn-default',
+                    onClick: () => {
+                      setAssigneeSelf(!isAssigneeSelf);
+                    }
+                  }
+                }
+              ]
         }
         filterButton={{
           filterButtonMeta,
@@ -434,16 +441,14 @@ const SQLEEIndex = () => {
         searchInput={{
           onSearch
         }}
-        // loading={getListLoading}
-        loading={false}
+        loading={getListLoading}
       >
         <StatusFilter status={filterStatus} onChange={setFilterStatus} />
       </TableToolbar>
       <TableFilterContainer
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
-        // disabled={getListLoading}
-        disabled={false}
+        disabled={getListLoading}
         filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
@@ -461,7 +466,7 @@ const SQLEEIndex = () => {
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={actionPermission ? actions : []}
+        actions={!actionPermission ? [] : actions}
       />
       {/* modal & drawer */}
       <SqleManagementModal />
