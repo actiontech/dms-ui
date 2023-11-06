@@ -33,6 +33,7 @@ import {
   WorkflowStepResV1TypeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum,
   AuditResDataV2AuditLevelEnum,
+  DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
   GetWorkflowTasksItemV2StatusEnum,
   WorkflowRecordResV2StatusEnum,
@@ -174,6 +175,8 @@ export interface IAuditResDataV1 {
 }
 
 export interface IAuditResult {
+  db_type?: string;
+
   level?: string;
 
   message?: string;
@@ -1548,7 +1551,7 @@ export interface ISQLQueryConfigResV1 {
 export interface ISource {
   audit_plan_name?: string;
 
-  sql_audit_record_id?: string;
+  sql_audit_record_ids?: string[];
 
   type?: SourceTypeEnum;
 }
@@ -2135,6 +2138,20 @@ export interface ICreateWorkflowResV2 {
 
 export interface ICreateWorkflowResV2Data {
   workflow_id?: string;
+}
+
+export interface IDirectAuditFileReqV2 {
+  file_contents?: string[];
+
+  instance_name?: string;
+
+  instance_type?: string;
+
+  project_name?: string;
+
+  schema_name?: string;
+
+  sql_type?: DirectAuditFileReqV2SqlTypeEnum;
 }
 
 export interface IDirectAuditReqV2 {
