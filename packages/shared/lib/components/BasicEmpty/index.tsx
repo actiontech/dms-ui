@@ -97,7 +97,6 @@ const BasicEmpty = (props: IEmptyStyleWrapperProps) => {
           {t('common.refresh')}
         </BasicButton>
       )}
-
       {!loading && children}
     </EmptyStyleWrapper>
   );

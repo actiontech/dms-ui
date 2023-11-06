@@ -1,43 +1,39 @@
-import React, { useCallback, useEffect } from 'react';
-import { useBoolean } from 'ahooks';
-import useCurrentProject from '../useCurrentProject';
+import React, { useCallback } from 'react';
+import { useRequest } from 'ahooks';
 import dms from '../../api/base/service/dms';
 import { ResponseCode } from '../../enum';
-import { IDatabaseDriverOption } from '../../api/base/service/common';
+import { useDispatch } from 'react-redux';
+import { updateDriverMeta } from '../../../../base/src/store/database';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../../base/src/store';
 
 const useDbServiceDriver = () => {
-  const [driverNameList, setDriverNameList] = React.useState<string[]>([]);
-  const [driverMeta, setDriverMeta] = React.useState<IDatabaseDriverOption[]>(
-    []
+  const dispatch = useDispatch();
+  const driverMeta = useSelector(
+    (state: IReduxState) => state.database.driverMeta
   );
-  const [loading, { setTrue: startLoading, setFalse: loadFinish }] =
-    useBoolean();
+  const [driverNameList, setDriverNameList] = React.useState<string[]>([]);
 
-  const { projectID } = useCurrentProject();
-
-  const updateDriverNameList = React.useCallback(() => {
-    startLoading();
-    dms
-      .ListDBServiceDriverOption({
-        project_uid: projectID
-      })
-      .then((res) => {
+  const { loading, run: getDriverMeta } = useRequest(
+    (projectId: string) =>
+      dms.ListDBServiceDriverOption({ project_uid: projectId }),
+    {
+      manual: true,
+      onSuccess: (res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          setDriverMeta(res.data.data ?? []);
+          dispatch(updateDriverMeta(res.data.data ?? []));
           setDriverNameList(res.data.data?.map((v) => v.db_type ?? '') ?? []);
         } else {
+          dispatch(updateDriverMeta([]));
           setDriverNameList([]);
-          setDriverMeta([]);
         }
-      })
-      .catch(() => {
-        setDriverMeta([]);
+      },
+      onError: () => {
+        dispatch(updateDriverMeta([]));
         setDriverNameList([]);
-      })
-      .finally(() => {
-        loadFinish();
-      });
-  }, [loadFinish, startLoading, projectID]);
+      }
+    }
+  );
 
   const getLogoUrlByDbType = useCallback(
     (dbType: string) => {
@@ -50,17 +46,11 @@ const useDbServiceDriver = () => {
     [driverMeta]
   );
 
-  useEffect(() => {
-    if (projectID) {
-      updateDriverNameList();
-    }
-  }, [projectID, updateDriverNameList]);
-
   return {
     driverNameList,
     loading,
-    updateDriverNameList,
     driverMeta,
+    getDriverMeta,
     getLogoUrlByDbType
   };
 };
