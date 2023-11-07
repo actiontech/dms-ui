@@ -103,7 +103,7 @@ const AuthAudit: React.FC = () => {
         }}
         searchInput={{
           onSearch: (value) => {
-            console.log('search--->', value);
+            // todo 待后端提供搜索接口
           }
         }}
       />
