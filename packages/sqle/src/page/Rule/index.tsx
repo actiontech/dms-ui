@@ -1,17 +1,18 @@
-import { useRequest } from 'ahooks';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useRequest } from 'ahooks';
+import { Spin } from 'antd5';
 import { PageHeader } from '@actiontech/shared';
 import { RuleStatus, RuleList, RuleTypes } from '../../components/RuleList';
-import useRuleFilterForm from './useRuleFilterForm';
-import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import {
   TableFilterContainer,
   useTableFilterContainer,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { GetRuleListV1Params, RuleFilterContainerMeta } from './index.data';
-import { Spin } from 'antd5';
 import useRuleList from '../../components/RuleList/useRuleList';
+import useRuleFilterForm from './useRuleFilterForm';
+import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
+import { GetRuleListV1Params, RuleFilterContainerMeta } from './index.data';
 import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const Rule = () => {
@@ -77,6 +78,9 @@ const Rule = () => {
 
   const {
     ruleFilterContainerCustomProps,
+    getDriverNameListLoading,
+    getProjectRuleTemplateListLoading,
+    getGlobalRuleTemplateListLoading,
     dbType,
     setDbType,
     projectName,
@@ -91,21 +95,34 @@ const Rule = () => {
         })
         .then((res) => res.data?.data ?? []),
     {
-      ready: !!dbType,
       refreshDeps: [dbType]
     }
   );
 
+  const apiLoading = useMemo(() => {
+    return projectName
+      ? getProjectTemplateRulesLoading ||
+          getProjectRuleTemplateListLoading ||
+          getAllRulesLoading ||
+          getDriverNameListLoading
+      : getGlobalTemplateRulesLoading ||
+          getGlobalRuleTemplateListLoading ||
+          getAllRulesLoading ||
+          getDriverNameListLoading;
+  }, [
+    projectName,
+    getGlobalTemplateRulesLoading,
+    getGlobalRuleTemplateListLoading,
+    getAllRulesLoading,
+    getDriverNameListLoading,
+    getProjectTemplateRulesLoading,
+    getProjectRuleTemplateListLoading
+  ]);
+
   return (
     <>
       <PageHeader title={t('rule.pageTitle')} />
-      <Spin
-        spinning={
-          getAllRulesLoading ||
-          getGlobalTemplateRulesLoading ||
-          getProjectTemplateRulesLoading
-        }
-      >
+      <Spin spinning={apiLoading}>
         <RuleStatusWrapperStyleWrapper className="flex-space-between flex-align-center">
           <TableFilterContainer
             updateTableFilterInfo={updateTableFilterInfo}

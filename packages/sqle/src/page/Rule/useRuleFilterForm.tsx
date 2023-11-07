@@ -29,10 +29,21 @@ const useRuleFilterForm = (
   const { bindProjects } = useCurrentUser();
 
   const [dbType, setDbType] = useState<string | undefined>(undefined);
-  const { updateDriverNameList, driverNameList } = useDatabaseType();
-  const { ruleTemplateList, updateRuleTemplateList } = useRuleTemplate();
-  const { globalRuleTemplateList, updateGlobalRuleTemplateList } =
-    useGlobalRuleTemplate();
+  const {
+    loading: getDriverNameListLoading,
+    driverNameList,
+    updateDriverNameList
+  } = useDatabaseType();
+  const {
+    loading: getProjectRuleTemplateListLoading,
+    ruleTemplateList,
+    updateRuleTemplateList
+  } = useRuleTemplate();
+  const {
+    loading: getGlobalRuleTemplateListLoading,
+    globalRuleTemplateList,
+    updateGlobalRuleTemplateList
+  } = useGlobalRuleTemplate();
   const [projectName, setProjectName] = useState<string>();
   const [ruleTemplateName, setRuleTemplateName] = useState<string>();
 
@@ -173,6 +184,9 @@ const useRuleFilterForm = (
   return {
     projectName,
     ruleFilterContainerCustomProps,
+    getDriverNameListLoading,
+    getProjectRuleTemplateListLoading,
+    getGlobalRuleTemplateListLoading,
     dbType,
     setDbType,
     ruleTemplateName
