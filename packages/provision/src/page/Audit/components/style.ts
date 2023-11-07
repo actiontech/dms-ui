@@ -41,6 +41,7 @@ export const AuthAuditDetailItemStyleWrapper = styled('div')`
 
   & .audit-info-item-value {
     flex: 1;
+
     .antd-v5-space-item:first-of-type {
       display: inline-flex;
       align-items: center;
