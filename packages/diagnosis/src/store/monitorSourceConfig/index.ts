@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+// to add diagnosis theme in base ThemeOption
+import { ModalStatus } from '../../types/common.type';
 import { commonModalReducer } from '../common';
 import {
   IViewMonitorConfigReply,
