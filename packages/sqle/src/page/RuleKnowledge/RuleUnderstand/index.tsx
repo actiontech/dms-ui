@@ -1,4 +1,12 @@
-import { Card, Empty, Modal, Space, Typography, Spin, message } from 'antd5';
+import {
+  Card,
+  Empty,
+  Space,
+  Typography,
+  Spin,
+  message,
+  Popconfirm
+} from 'antd5';
 import { RuleUnderstandProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { EmptyBox, BasicButton } from '@actiontech/shared';
@@ -31,33 +39,8 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
 
-  const [messageApi, messageContextHolder] = message.useMessage();
+  const [messageApi, contextHolder] = message.useMessage();
 
-  const [modal, contextHolder] = Modal.useModal();
-
-  const cancel = () => {
-    if (hasDirtyData) {
-      modal.warning({
-        content: t('ruleKnowledge.hasDirtyDataTips'),
-        centered: true,
-        onOk: () => {
-          modifyFinish();
-          setHasDirtyData(false);
-          setEditValue(content);
-        },
-        okCancel: true,
-        okText: t('common.ok'),
-        okButtonProps: {
-          size: 'small'
-        },
-        cancelButtonProps: {
-          size: 'small'
-        }
-      });
-    } else {
-      modifyFinish();
-    }
-  };
   const submit = () => {
     startSubmit();
     const request = isCustomRule
@@ -96,7 +79,6 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   return (
     <>
       {contextHolder}
-      {messageContextHolder}
       <Card
         title={t('ruleKnowledge.ruleUnderstanding')}
         extra={
@@ -112,9 +94,29 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
             </EmptyBox>
           ) : (
             <Space>
-              <BasicButton disabled={submitLoading} onClick={cancel}>
-                {t('common.cancel')}
-              </BasicButton>
+              <EmptyBox
+                if={hasDirtyData}
+                defaultNode={
+                  <BasicButton disabled={submitLoading} onClick={modifyFinish}>
+                    {t('common.cancel')}
+                  </BasicButton>
+                }
+              >
+                <Popconfirm
+                  title={t('ruleKnowledge.hasDirtyDataTips')}
+                  okText={t('common.ok')}
+                  cancelText={t('common.cancel')}
+                  onConfirm={() => {
+                    modifyFinish();
+                    setHasDirtyData(false);
+                    setEditValue(content);
+                  }}
+                >
+                  <BasicButton disabled={submitLoading}>
+                    {t('common.cancel')}
+                  </BasicButton>
+                </Popconfirm>
+              </EmptyBox>
               <BasicButton
                 disabled={submitLoading}
                 type="primary"

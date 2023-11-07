@@ -30,7 +30,6 @@ const RuleBaseInfo: React.FC<{
           {dataSource?.annotation}
         </RuleDetailItemStyleWrapper>
       </Form.Item>
-      {/* IFTRUE_isEE */}
       <EmptyBox if={showKnowledge}>
         <Form.Item label={t('rule.ruleDetail.knowledge')} name="knowledge">
           <RuleDetailItemStyleWrapper>
@@ -45,7 +44,6 @@ const RuleBaseInfo: React.FC<{
           </RuleDetailItemStyleWrapper>
         </Form.Item>
       </EmptyBox>
-      {/* FITRUE_isEE */}
       <Form.Item label={t('ruleTemplate.editModal.ruleTypeLabel')} name="type">
         <RuleDetailItemStyleWrapper>
           {dataSource?.type}
