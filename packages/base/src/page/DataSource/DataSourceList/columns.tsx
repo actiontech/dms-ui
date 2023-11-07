@@ -5,14 +5,25 @@ import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn,
-  InlineActiontechTableMoreActionsButtonMeta
+  InlineActiontechTableMoreActionsButtonMeta,
+  PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+
+/*
+ *PS：
+ * 没有使用PageInfoWithoutIndexAndSize<IListDBServicesParams>的原因：
+ * IAuthListDataOperationSetsParams里的page_index 是可选项，和TablePagination类型不匹配，期望后续后端可以修改。
+ */
+
+export type DataSourceListParamType =
+  PageInfoWithoutIndexAndSize<IListDBServicesParams>;
 
 export const DataSourceColumns = (): ActiontechTableColumn<
   IListDBService,
   undefined,
-  'address'
+  'address' | 'rule_template'
 > => {
   return [
     {
@@ -49,6 +60,21 @@ export const DataSourceColumns = (): ActiontechTableColumn<
       dataIndex: 'business',
       title: () => t('dmsDataSource.databaseList.business')
     },
+    // {
+    //   dataIndex: 'rule_template',
+    //   title: () => t('dmsDataSource.databaseList.ruleTemplate'),
+    //   render(_, record) {
+    //     if (!record?.sqle_config) {
+    //       return '';
+    //     }
+
+    // const path = ruleTemplate.is_global_rule_template
+    //   ? `rule?${RuleUrlParamKey.ruleTemplateName}=${ruleTemplate.name}`
+    //   : `rule?${RuleUrlParamKey.projectName}=${projectName}&${RuleUrlParamKey.ruleTemplateName}=${ruleTemplate.name}`;
+
+    // return <Link to={path}>{ruleTemplate.name}</Link>;
+    //   }
+    // },
     {
       dataIndex: 'maintenance_times',
       title: () => t('dmsDataSource.databaseList.maintenanceTime'),

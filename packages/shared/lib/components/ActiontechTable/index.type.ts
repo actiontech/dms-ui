@@ -15,10 +15,14 @@ type ComponentBaseType = {
 /**
  * 用于移除后端提供的表格筛选类型中的 page_size 以及 page_index, 同时可以传入第二个泛型, 来移除自己不需要的类型
  */
+type DMSTablePagination = {
+  page_size: number;
+  page_index?: number;
+};
 export type PageInfoWithoutIndexAndSize<
-  T extends TablePagination & Record<string, any>,
+  T extends DMSTablePagination & Record<string, any>,
   Other extends keyof T = ''
-> = Omit<T, keyof TablePagination | Other>;
+> = Omit<T, keyof DMSTablePagination | Other>;
 
 //=======================================
 

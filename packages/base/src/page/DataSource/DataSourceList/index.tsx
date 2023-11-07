@@ -145,6 +145,8 @@ const DataSourceList = () => {
     [messageApi, modalApi, projectID, t]
   );
 
+  const columns = useMemo(() => DataSourceColumns(), []);
+
   const actions = useMemo(() => {
     return DataSourceListActions(
       navigateToUpdatePage,
@@ -194,7 +196,7 @@ const DataSourceList = () => {
           total: dataSourceList?.total ?? 0
         }}
         loading={loading}
-        columns={DataSourceColumns()}
+        columns={columns}
         actions={actions}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
