@@ -1,8 +1,5 @@
-import { Form } from 'antd5';
-import {
-  RuleDetailItemStyleWrapper,
-  RuleDetailKnowledgeLinkStyleWrapper
-} from './style';
+import { Form, Typography } from 'antd5';
+import { RuleDetailItemStyleWrapper } from './style';
 import { useTranslation } from 'react-i18next';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
@@ -33,14 +30,12 @@ const RuleBaseInfo: React.FC<{
       <EmptyBox if={showKnowledge}>
         <Form.Item label={t('rule.ruleDetail.knowledge')} name="knowledge">
           <RuleDetailItemStyleWrapper>
-            <RuleDetailKnowledgeLinkStyleWrapper
-              type="link"
-              size="small"
+            <Typography.Link
               href={`/sqle/rule/knowledge/${dataSource?.rule_name}/${dataSource?.db_type}`}
               target="_blank"
             >
               {t('common.showMore')}
-            </RuleDetailKnowledgeLinkStyleWrapper>
+            </Typography.Link>
           </RuleDetailItemStyleWrapper>
         </Form.Item>
       </EmptyBox>
