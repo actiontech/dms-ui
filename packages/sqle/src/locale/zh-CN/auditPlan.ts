@@ -89,22 +89,7 @@ export default {
     cronName: {
       label: '任务审核周期',
       tip: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择'
-    },
-    // --- 待删除
-    name: '任务名称',
-    dbType: '数据库类型',
-    databaseName: '数据源名称',
-    cron: '任务审核周期',
-    schema: '数据库',
-
-    taskType: '任务类型',
-
-    ruleTemplateName: '审核规则模版',
-    ruleTemplateNameTips: '如果未指定此项会优先使用数据源绑定的模板',
-
-    databaseNameTips:
-      '如果您没有指定数据源，那么该扫描任务将使用您所选择的数据库类型的默认规则模版进行静态审核'
-    // --- 待删除
+    }
   },
 
   detail: {
@@ -153,8 +138,6 @@ export default {
 
   report: {
     time: '报告生成时间: {{time}}',
-    source: '审核报告评分: {{source}}', // 待删除
-    passRage: '审核通过率: {{rage}}', // 待删除
     sourceLabel: '审核报告评分',
     passRageLabel: '审核通过率',
     rule_template: '规则模板: {{name}}',
@@ -167,6 +150,7 @@ export default {
         sql: 'SQL语句'
       }
     },
+    exportBtnText: '下载扫描任务报告',
 
     table: {
       sql: 'SQL语句',

@@ -9,15 +9,13 @@ import {
   IAuditPlanResV2,
   IAuditPlanMetaV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
-
 import { Link } from 'react-router-dom';
 import { t } from '../../../locale';
-import DatabaseTypeLogo from '../../../components/DatabaseTypeLogo';
 import { IconOrderId } from '../../../icon/Order';
 import { RuleUrlParamKey } from '../../Rule/useRuleFilterForm';
 import TokenCom from './TableTaskTypeFilter/component/TokenCom';
 import { ModalName } from '../../../data/ModalName';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
@@ -144,7 +142,12 @@ const PlanListColumn: (
           return '--';
         }
 
-        return <DatabaseTypeLogo dbType={type} />;
+        return (
+          <DatabaseTypeLogo
+            dbType={type}
+            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+          />
+        );
       }
     },
     {
