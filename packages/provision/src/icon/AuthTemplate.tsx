@@ -1,8 +1,4 @@
-import {
-  CommonIconStyleWrapper,
-  CustomIconProps
-} from '@actiontech/shared/lib/Icon';
-import classnames from 'classnames';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
 
 export const IconAuthTemplateName: React.FC = () => {
   return (
