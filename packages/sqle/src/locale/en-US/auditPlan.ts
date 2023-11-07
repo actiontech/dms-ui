@@ -2,7 +2,7 @@
 export default {
   pageTitle: '智能扫描',
   pageDesc:
-    '你可以在这个查看/创建智能扫描任务，并配置审核周期去定期生成审核报告来检测SQL质量',
+    '您可以使用智能扫描功能生成扫描任务报告，以便监测和评估 SQL 的质量。',
 
   list: {
     title: '扫描任务列表',
@@ -25,6 +25,7 @@ export default {
       audit_plan_instance_name: '数据源名称',
       audit_plan_name: '任务名称',
       audit_plan_token: '访问凭证',
+      audit_plan_token_tips: '用于审核任务上传凭证',
       audit_plan_type: '任务类型',
       audit_rule_template: '审核规则模板'
     },
@@ -57,7 +58,8 @@ export default {
       customTaskAuditCycle: '自定义任务审核周期'
     },
     successTitle: '创建扫描任务成功',
-    successGuide: '到扫描任务列表查看刚刚添加的扫描任务'
+    successGuide: '查看扫描任务详情',
+    clonePlan: '克隆扫描任务'
   },
 
   update: {
@@ -87,21 +89,7 @@ export default {
     cronName: {
       label: '任务审核周期',
       tip: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择'
-    },
-    name: '任务名称',
-    dbType: '数据库类型',
-    databaseName: '数据源名称',
-    cron: '任务审核周期',
-    schema: '数据库',
-
-    taskType: '任务类型',
-
-    ruleTemplateName: '审核规则模版',
-    ruleTemplateNameTips:
-      '如果未指定此项会优先使用数据源绑定的模板, 如果数据源也未指定则使用数据类型默认模板',
-
-    databaseNameTips:
-      '如果您没有指定数据源，那么该扫描任务将使用您所选择的数据库类型的默认规则模版进行静态审核'
+    }
   },
 
   detail: {
@@ -150,8 +138,6 @@ export default {
 
   report: {
     time: '报告生成时间: {{time}}',
-    source: '审核报告评分: {{source}}', // 待删除
-    passRage: '审核通过率: {{rage}}', // 待删除
     sourceLabel: '审核报告评分',
     passRageLabel: '审核通过率',
     rule_template: '规则模板: {{name}}',
@@ -164,6 +150,7 @@ export default {
         sql: 'SQL语句'
       }
     },
+    exportBtnText: '下载扫描任务报告',
 
     table: {
       sql: 'SQL语句',
