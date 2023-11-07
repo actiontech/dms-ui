@@ -1,25 +1,34 @@
 import { useRequest } from 'ahooks';
 import { message, Modal, Space } from 'antd5';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { DataSourceColumns, DataSourceListActions } from './columns';
+import {
+  DataSourceColumns,
+  DataSourceListActions,
+  DataSourceListParamType
+} from './columns';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import {
   ActiontechTable,
-  TableRefreshButton,
   useTableRequestError,
-  useTableRequestParams
+  useTableRequestParams,
+  useTableFilterContainer,
+  FilterCustomProps,
+  TableToolbar,
+  TableFilterContainer
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
+import useDbService from '../../../hooks/useDbService';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -31,7 +40,19 @@ const DataSourceList = () => {
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
-  const { tableChange, pagination } = useTableRequestParams<IListDBService>();
+  const {
+    dbDriverOptions,
+    loading: getDriveOptionsLoading,
+    getDriverMeta
+  } = useDbServiceDriver();
+  const {
+    dbServiceOptions,
+    loading: getDbServiceOptionsLoading,
+    updateDbServiceList
+  } = useDbService();
+
+  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
+    useTableRequestParams<IListDBService, DataSourceListParamType>();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
@@ -42,6 +63,7 @@ const DataSourceList = () => {
     () => {
       return handleTableRequestError(
         dms.ListDBServices({
+          ...tableFilterInfo,
           page_index: pagination.page_index,
           page_size: pagination.page_size,
           project_uid: projectID
@@ -49,7 +71,7 @@ const DataSourceList = () => {
       );
     },
     {
-      refreshDeps: [pagination],
+      refreshDeps: [pagination, tableFilterInfo],
       ready: !!projectID
     }
   );
@@ -147,6 +169,24 @@ const DataSourceList = () => {
 
   const columns = useMemo(() => DataSourceColumns(), []);
 
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(columns, updateTableFilterInfo);
+
+  const filterCustomProps = useMemo(() => {
+    return new Map<keyof IListDBService, FilterCustomProps>([
+      [
+        'name',
+        { options: dbServiceOptions, loading: getDbServiceOptionsLoading }
+      ],
+      ['db_type', { options: dbDriverOptions, loading: getDriveOptionsLoading }]
+    ]);
+  }, [
+    dbDriverOptions,
+    dbServiceOptions,
+    getDbServiceOptionsLoading,
+    getDriveOptionsLoading
+  ]);
+
   const actions = useMemo(() => {
     return DataSourceListActions(
       navigateToUpdatePage,
@@ -163,6 +203,13 @@ const DataSourceList = () => {
     actionPermission
   ]);
 
+  useEffect(() => {
+    if (projectID) {
+      getDriverMeta(projectID);
+      updateDbServiceList(projectID);
+    }
+  }, [getDriverMeta, projectID, updateDbServiceList]);
+
   return (
     <>
       {modalContextHolder}
@@ -171,7 +218,7 @@ const DataSourceList = () => {
         title={
           <Space>
             {t('dmsDataSource.databaseListTitle')}
-            <TableRefreshButton refresh={refresh} />
+            {/* <TableRefreshButton refresh={refresh} /> */}
           </Space>
         }
         extra={[
@@ -186,6 +233,22 @@ const DataSourceList = () => {
             </Link>
           </EmptyBox>
         ]}
+      />
+      <TableToolbar
+        refreshButton={{ refresh, disabled: loading }}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
+        // searchInput={{
+        //   onSearch
+        // }}
+      />
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        disabled={loading}
+        filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
         dataSource={dataSourceList?.list}
