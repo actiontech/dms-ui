@@ -75,7 +75,11 @@ const ReportDrawer = ({
                         }}
                         showAnnotation
                         showMoreBtn
-                        moreBtnLink={`/sqle/rule/knowledge/${item?.rule_name}/${dbType}`}
+                        moreBtnLink={
+                          item?.rule_name
+                            ? `/sqle/rule/knowledge/${item?.rule_name}/${dbType}`
+                            : ''
+                        }
                       />
                     );
                   }
