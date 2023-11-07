@@ -110,10 +110,13 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
               <IconOrderCreateTitleStyleWrapper />
               <span>{t('sqlAudit.create.title')}</span>
             </FormItemBigTitle>
-            <FormItemLabel label={t('sqlAudit.create.form.tags')} name="tags">
+            <FormItemLabel
+              label={t('sqlAudit.create.baseInfoForm.tags')}
+              name="tags"
+            >
               <BasicSelect
                 placeholder={t('common.form.placeholder.select', {
-                  name: t('sqlAudit.create.form.tagsPlaceholder')
+                  name: t('sqlAudit.create.baseInfoForm.tagsPlaceholder')
                 })}
                 allowClear
                 showSearch
