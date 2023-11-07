@@ -114,6 +114,9 @@ const useRuleFilterForm = (
         'filter_rule_names',
         {
           options: ruleTemplateOptions,
+          loading: projectName
+            ? getProjectRuleTemplateListLoading
+            : getGlobalRuleTemplateListLoading,
           value: ruleTemplateName,
           onChange: ruleTemplateNameChangeHandle,
           style: { width: 300 }
@@ -123,6 +126,7 @@ const useRuleFilterForm = (
         'filter_db_type',
         {
           options: dbTypeOptions,
+          loading: getDriverNameListLoading,
           value: dbType,
           onChange: setDbType,
           disabled: !!ruleTemplateName,
@@ -133,7 +137,10 @@ const useRuleFilterForm = (
   }, [
     dbType,
     dbTypeOptions,
+    getDriverNameListLoading,
+    getGlobalRuleTemplateListLoading,
     getGlobalTemplateRules,
+    getProjectRuleTemplateListLoading,
     getProjectTemplateRules,
     projectName,
     projectOptions,

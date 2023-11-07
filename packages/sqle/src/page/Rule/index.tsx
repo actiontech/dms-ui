@@ -37,31 +37,24 @@ const Rule = () => {
     RuleFilterContainerMeta()
   );
 
-  const {
-    data: projectTemplateRules,
-    loading: getProjectTemplateRulesLoading,
-    run: getProjectTemplateRules
-  } = useRequest(
-    (project?: string, ruleTemplate?: string) =>
-      rule_template
-        .getProjectRuleTemplateV1({
-          rule_template_name: ruleTemplate ?? '',
-          project_name: project ?? ''
-        })
-        .then((res) => {
-          setDbType(res.data.data?.db_type ?? '');
-          return res.data?.data?.rule_list ?? [];
-        }),
-    {
-      manual: true
-    }
-  );
+  const { data: projectTemplateRules, run: getProjectTemplateRules } =
+    useRequest(
+      (project?: string, ruleTemplate?: string) =>
+        rule_template
+          .getProjectRuleTemplateV1({
+            rule_template_name: ruleTemplate ?? '',
+            project_name: project ?? ''
+          })
+          .then((res) => {
+            setDbType(res.data.data?.db_type ?? '');
+            return res.data?.data?.rule_list ?? [];
+          }),
+      {
+        manual: true
+      }
+    );
 
-  const {
-    data: globalTemplateRules,
-    loading: getGlobalTemplateRulesLoading,
-    run: getGlobalTemplateRules
-  } = useRequest(
+  const { data: globalTemplateRules, run: getGlobalTemplateRules } = useRequest(
     (ruleTemplate?: string) =>
       rule_template
         .getRuleTemplateV1({
@@ -79,8 +72,6 @@ const Rule = () => {
   const {
     ruleFilterContainerCustomProps,
     getDriverNameListLoading,
-    getProjectRuleTemplateListLoading,
-    getGlobalRuleTemplateListLoading,
     dbType,
     setDbType,
     projectName,
@@ -100,24 +91,8 @@ const Rule = () => {
   );
 
   const apiLoading = useMemo(() => {
-    return projectName
-      ? getProjectTemplateRulesLoading ||
-          getProjectRuleTemplateListLoading ||
-          getAllRulesLoading ||
-          getDriverNameListLoading
-      : getGlobalTemplateRulesLoading ||
-          getGlobalRuleTemplateListLoading ||
-          getAllRulesLoading ||
-          getDriverNameListLoading;
-  }, [
-    projectName,
-    getGlobalTemplateRulesLoading,
-    getGlobalRuleTemplateListLoading,
-    getAllRulesLoading,
-    getDriverNameListLoading,
-    getProjectTemplateRulesLoading,
-    getProjectRuleTemplateListLoading
-  ]);
+    return getAllRulesLoading || getDriverNameListLoading;
+  }, [getAllRulesLoading, getDriverNameListLoading]);
 
   return (
     <>
