@@ -4,32 +4,29 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useDispatch } from 'react-redux';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { useRequest, useToggle } from 'ahooks';
+import { useRequest } from 'ahooks';
 import db from '@actiontech/shared/lib/api/diagnosis/service/db';
 import { IV1ListMonitorDBsParams } from '@actiontech/shared/lib/api/diagnosis/service/db/index.d';
 import { IViewDatabaseReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
-import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { DatabaseMonitorActions, DatabaseMonitorColumns } from './column';
-import {
-  updateMonitorSourceConfigModalStatus,
-  updateSelectDatabaseMonitorData
-} from '../../../../store/monitorSourceConfig';
 import DatabaseMonitorModal from './components/Modal';
+import { message } from 'antd5';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useTranslation } from 'react-i18next';
 
 interface IDatabaseMonitorProps {
   setLoading: (loading: boolean) => void;
   searchValue: string;
 }
 const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
-  const dispatch = useDispatch();
+  const { t } = useTranslation();
 
-  const { projectID, projectArchive } = useCurrentProject();
+  const [messageApi, contextHolder] = message.useMessage();
 
-  const [refreshFlag, { toggle: toggleRefreshFlag }] = useToggle(false);
+  const { projectID } = useCurrentProject();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -39,7 +36,11 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
     IV1ListMonitorDBsParams
   >();
 
-  const { data: databaseMonitorList, loading } = useRequest(
+  const {
+    data: databaseMonitorList,
+    loading,
+    refresh
+  } = useRequest(
     () => {
       const params: IV1ListMonitorDBsParams = {
         ...pagination,
@@ -49,7 +50,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
       return handleTableRequestError(db.V1ListMonitorDBs(params));
     },
     {
-      refreshDeps: [pagination, refreshFlag, projectID, props.searchValue]
+      refreshDeps: [pagination, projectID, props.searchValue]
     }
   );
 
@@ -58,24 +59,33 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  const onEditDatabaseMonitor = useCallback(
-    (record: IViewDatabaseReply | undefined) => {
-      if (record) {
-        dispatch(updateSelectDatabaseMonitorData(record));
-        dispatch(
-          updateMonitorSourceConfigModalStatus({
-            modalName: ModalName.Update_Database_Monitor,
-            status: true
-          })
-        );
-      }
+  const deleteDatabaseMonitor = useCallback(
+    (record?: IViewDatabaseReply) => {
+      if (!record) return;
+      db.V1DeleteDB({
+        project_uid: projectID,
+        db_monitor_names: [record?.monitor_name]
+      }).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.open({
+            type: 'success',
+            content: t(
+              'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceTip',
+              {
+                name: record?.monitor_name
+              }
+            )
+          });
+          refresh();
+        }
+      });
     },
-    [dispatch]
+    [refresh, t, messageApi, projectID]
   );
 
   const actions = useMemo(() => {
-    return DatabaseMonitorActions(onEditDatabaseMonitor);
-  }, [onEditDatabaseMonitor]);
+    return DatabaseMonitorActions(deleteDatabaseMonitor);
+  }, [deleteDatabaseMonitor]);
 
   const columns = useMemo(() => {
     return DatabaseMonitorColumns;
@@ -84,17 +94,18 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Database_Monitor,
-      toggleRefreshFlag
+      refresh
     );
 
     return unsubscribe;
-  }, [toggleRefreshFlag]);
+  }, [refresh]);
 
   return (
     <>
+      {contextHolder}
       <ActiontechTable
         rowKey={(record: IViewDatabaseReply) => {
-          return `${record?.createdAt}-${record.host}`;
+          return `${record?.created_at}-${record.host}`;
         }}
         dataSource={databaseMonitorList?.list}
         pagination={{
@@ -104,7 +115,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={!projectArchive ? actions : undefined}
+        actions={actions}
       />
       <DatabaseMonitorModal />
     </>

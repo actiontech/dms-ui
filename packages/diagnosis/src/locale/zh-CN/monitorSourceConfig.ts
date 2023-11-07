@@ -23,9 +23,9 @@ export default {
     databaseType: '数据库类型',
     creationTime: '创建时间',
     addDatabaseMonitorSource: '添加数据库监控源',
-    updateDatabaseMonitorSource: '修改数据库监控源',
+    deleteDatabaseMonitorSource: '确认删除数据库监控源{{name}}?',
     addDatabaseMonitorSourceTip: '添加数据库监控源{{name}}成功！',
-    updateDatabaseMonitorSourceTip: '添加数据库监控源{{name}}成功！'
+    deleteDatabaseMonitorSourceTip: '删除数据库监控源{{name}}成功！'
   },
   status: {
     normal: '正常',

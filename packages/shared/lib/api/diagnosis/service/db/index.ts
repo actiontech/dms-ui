@@ -22,7 +22,7 @@ class DbService extends ServiceBase {
     delete paramsData.project_uid;
 
     return this.post<IV1AddDBReturn>(
-      `/diagno/v1/${project_uid}/db/add`,
+      `/diagno/v1/projects/${project_uid}/db/add`,
       paramsData,
       options
     );
@@ -34,7 +34,7 @@ class DbService extends ServiceBase {
     delete paramsData.project_uid;
 
     return this.post<IV1DeleteDBReturn>(
-      `/diagno/v1/${project_uid}/db/delete`,
+      `/diagno/v1/projects/${project_uid}/db/delete`,
       paramsData,
       options
     );
@@ -49,7 +49,7 @@ class DbService extends ServiceBase {
     delete paramsData.project_uid;
 
     return this.get<IV1ListMonitorDBsReturn>(
-      `/diagno/v1/${project_uid}/db/list`,
+      `/diagno/v1/projects/${project_uid}/db/list`,
       paramsData,
       options
     );

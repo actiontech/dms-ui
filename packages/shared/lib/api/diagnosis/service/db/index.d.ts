@@ -5,11 +5,15 @@ import {
   IListDBsReply
 } from '../common.d';
 
-export interface IV1AddDBParams extends ISaveDBsReq {}
+export interface IV1AddDBParams extends ISaveDBsReq {
+  project_uid: string;
+}
 
 export interface IV1AddDBReturn extends IGenericResp {}
 
-export interface IV1DeleteDBParams extends IDeleteDBsReq {}
+export interface IV1DeleteDBParams extends IDeleteDBsReq {
+  project_uid: string;
+}
 
 export interface IV1DeleteDBReturn extends IGenericResp {}
 

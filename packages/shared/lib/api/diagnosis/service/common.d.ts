@@ -1,23 +1,26 @@
 import {
   ViewDatabaseReplyStatusEnum,
-  ViewServerStatusEnum,
   ViewServerReplyStatusEnum
 } from './common.enum';
 
 export interface IDeleteDBsReq {
   db_monitor_names: string[];
-
-  project_uid: string;
 }
 
 export interface IDeleteServersReq {
-  project_uid: string;
-
-  serverNames?: string[];
+  server_names?: string[];
 }
 
 export interface IGenericResp {
   code?: number;
+
+  message?: string;
+}
+
+export interface IGetServerHostnameReply {
+  code?: number;
+
+  hostname?: string;
 
   message?: string;
 }
@@ -29,7 +32,27 @@ export interface IListDBsReply {
 
   message?: string;
 
-  total?: number;
+  total_nums?: number;
+}
+
+export interface IListMonitorRoutineReply {
+  code?: number;
+
+  data?: IViewMonitorConfigReply[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListRoutineMetricsReply {
+  code?: number;
+
+  data?: IRoutienMetrics;
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IListServersReply {
@@ -39,19 +62,25 @@ export interface IListServersReply {
 
   message?: string;
 
-  total?: number;
+  total_nums?: number;
+}
+
+export interface IRoutienMetrics {
+  metrics?: Array<{
+    desc?: string;
+
+    metric_key?: string;
+  }>;
+
+  routine_id?: number;
 }
 
 export interface ISaveDBsReq {
   dbs: IViewDatabase[];
-
-  project_uid: string;
 }
 
-export interface ISaveServersReq {
-  project_uid: string;
-
-  servers: IViewServer[];
+export interface IViewAddServerRequest {
+  servers?: IViewServer[];
 }
 
 export interface IViewDatabase {
@@ -69,7 +98,7 @@ export interface IViewDatabase {
 }
 
 export interface IViewDatabaseReply {
-  createdAt?: string;
+  created_at?: string;
 
   datasource_name: string;
 
@@ -86,9 +115,21 @@ export interface IViewDatabaseReply {
   status?: ViewDatabaseReplyStatusEnum;
 }
 
-export interface IViewServer {
-  createdAt?: string;
+export interface IViewMonitorConfigReply {
+  desc?: string;
 
+  enable?: boolean;
+
+  id?: number;
+
+  interval?: number;
+
+  routine_name?: string;
+
+  via?: string;
+}
+
+export interface IViewServer {
   host: string;
 
   name: string;
@@ -97,15 +138,15 @@ export interface IViewServer {
 
   port?: number;
 
-  status?: ViewServerStatusEnum;
-
   user: string;
 }
 
 export interface IViewServerReply {
-  createdAt?: string;
+  created_at?: string;
 
   host: string;
+
+  id?: number;
 
   name: string;
 
@@ -116,4 +157,10 @@ export interface IViewServerReply {
   status?: ViewServerReplyStatusEnum;
 
   user: string;
+}
+
+export interface IViewUpdateServerRequest {
+  id?: number;
+
+  server?: IViewServer;
 }

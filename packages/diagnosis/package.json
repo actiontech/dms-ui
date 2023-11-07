@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prebuild": "node ./scripts/moveAntdCss.js && node ./scripts/getGitVersion.js",
+    "prebuild": "node ./scripts/getGitVersion.js",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",
     "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"

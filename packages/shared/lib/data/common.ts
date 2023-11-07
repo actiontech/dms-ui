@@ -83,7 +83,7 @@ export const SQLE_BASE_URL = '/sqle/';
 
 export const PROVISION_BASE_URL = '/provision/';
 
-export const DIAGNOSIS_BASE_URL = '/diagnosis/';
+export const DIAGNOSIS_BASE_URL = '/';
 
 export const DrawerFormLayout = {
   labelCol: { span: 24 },
@@ -96,13 +96,9 @@ export const SystemFormLayout = {
 };
 
 const ALL_TITLE = [
-  /* IFTRUE_isDIAGNOSIS */
-  /* IFTRUE_isPROVISION */
-  /* IFTRUE_isSQLE */
+  /* IFTRUE_isDMS */
   'DMS',
-  /* FITRUE_isSQLE */
-  /* FITRUE_isPROVISION */
-  /* FITRUE_isDIAGNOSIS */
+  /* FITRUE_isDMS */
 
   /* IFTRUE_isSQLE */
   'SQLE',
@@ -117,8 +113,7 @@ const ALL_TITLE = [
   /* FITRUE_isDIAGNOSIS */
 ];
 
-export const DMS_DEFAULT_WEB_TITLE =
-  ALL_TITLE[0] ?? ALL_TITLE[1] ?? ALL_TITLE[2] ?? 'DMS';
+export const DMS_DEFAULT_WEB_TITLE = ALL_TITLE[0] ?? 'DMS';
 
 export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';

@@ -24,7 +24,8 @@ import DatabaseMonitor from './components/DatabaseMonitor';
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();
 
-  const [searchValue, setSearchValue] = useState<string>();
+  const [searchServerValue, setSearchServerValue] = useState<string>();
+  const [searchDatabaseValue, setSearchDatabaseValue] = useState<string>();
 
   const [tableLoading, setTableLoading] = useState<boolean>(false);
 
@@ -37,7 +38,8 @@ const MonitorSourceConfig: React.FC = () => {
 
   const onChange = (key: SegmentedValue) => {
     setListType(key as MonitorSourceConfigTypeEnum);
-    setSearchValue(undefined);
+    setSearchServerValue('');
+    setSearchDatabaseValue('');
   };
 
   const onAddMonitorSource = (type: MonitorSourceConfigTypeEnum) => {
@@ -58,14 +60,14 @@ const MonitorSourceConfig: React.FC = () => {
       return (
         <ServerMonitor
           setLoading={setTableLoading}
-          searchValue={searchValue ?? ''}
+          searchValue={searchServerValue ?? ''}
         />
       );
     }
     return (
       <DatabaseMonitor
         setLoading={setTableLoading}
-        searchValue={searchValue ?? ''}
+        searchValue={searchDatabaseValue ?? ''}
       />
     );
   };
@@ -104,13 +106,25 @@ const MonitorSourceConfig: React.FC = () => {
       />
       <TableToolbar
         refreshButton={{ refresh: onRefreshTable, disabled: tableLoading }}
-        searchInput={{
-          placeholder: t('common.actiontechTable.searchInput.placeholder'),
-          value: searchValue,
-          onSearch: (value) => {
-            setSearchValue(value);
-          }
-        }}
+        searchInput={
+          listType === MonitorSourceConfigTypeEnum.server_monitor
+            ? {
+                placeholder: t(
+                  'common.actiontechTable.searchInput.placeholder'
+                ),
+                onSearch: (value) => {
+                  setSearchServerValue(value);
+                }
+              }
+            : {
+                placeholder: t(
+                  'common.actiontechTable.searchInput.placeholder'
+                ),
+                onSearch: (value) => {
+                  setSearchDatabaseValue(value);
+                }
+              }
+        }
       >
         <BasicSegmented
           value={listType}

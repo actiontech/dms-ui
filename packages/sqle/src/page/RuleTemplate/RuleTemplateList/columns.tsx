@@ -7,7 +7,6 @@ import {
 import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';
-import DatabaseTypeLogo from '../../../components/DatabaseTypeLogo';
 import { Link } from 'react-router-dom';
 import {
   IconCloneRule,
@@ -16,6 +15,7 @@ import {
 } from '../../../icon/Rule';
 import { Space } from 'antd5';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 
 export type RuleTemplateTableParamType =
   PageInfoWithoutIndexAndSize<IGetProjectRuleTemplateListV1Params>;
@@ -143,7 +143,7 @@ export const RuleTemplateTableColumn: (
       title: () => t('ruleTemplate.ruleTemplateList.table.desc'),
       className: 'ellipsis-column-width',
       render: (desc: string) => {
-        if (!desc) return '';
+        if (!desc) return '-';
         return <BasicTypographyEllipsis textCont={desc} />;
       }
     },
@@ -152,9 +152,14 @@ export const RuleTemplateTableColumn: (
       title: () => t('ruleTemplate.ruleTemplateList.table.dbType'),
       render(type: string) {
         if (!type) {
-          return '--';
+          return '-';
         }
-        return <DatabaseTypeLogo dbType={type} />;
+        return (
+          <DatabaseTypeLogo
+            dbType={type}
+            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+          />
+        );
       }
     }
   ];

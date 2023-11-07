@@ -26,11 +26,7 @@ import {
   RuleTemplateDetailStyleWrapper
 } from './style';
 
-export type IRuleTemplateDetail = {
-  //
-};
-
-const RuleDetail = (props: IRuleTemplateDetail) => {
+const RuleDetail = () => {
   const { t } = useTranslation();
   const { goBack } = useBack();
 

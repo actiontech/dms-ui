@@ -37,7 +37,7 @@ export const DatabaseMonitorColumns: ActiontechTableColumn<IViewDatabaseReply> =
       title: t('monitorSourceConfig.databaseMonitor.databaseType')
     },
     {
-      dataIndex: 'createdAt',
+      dataIndex: 'created_at',
       title: t('monitorSourceConfig.databaseMonitor.creationTime')
     },
     {
@@ -51,17 +51,34 @@ export const DatabaseMonitorColumns: ActiontechTableColumn<IViewDatabaseReply> =
   ];
 
 export const DatabaseMonitorActions = (
-  onEditDatabaseMonitor: (record: IViewDatabaseReply | undefined) => void
-): ActiontechTableActionMeta<IViewDatabaseReply>[] => [
-  {
-    text: t('common.edit'),
-    key: 'editDatabaseMonitor',
-    buttonProps: (record) => {
-      return {
-        onClick: () => {
-          onEditDatabaseMonitor(record);
+  deleteDatabaseMonitor: (record?: IViewDatabaseReply) => void
+): {
+  buttons: ActiontechTableActionMeta<IViewDatabaseReply>[];
+  width: number;
+} => {
+  return {
+    width: 70,
+    buttons: [
+      {
+        text: t('common.delete'),
+        buttonProps: () => ({
+          danger: true
+        }),
+        key: 'deleteDatabaseMonitor',
+        confirm: (record) => {
+          return {
+            title: t(
+              'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSource',
+              {
+                name: record?.monitor_name
+              }
+            ),
+            onConfirm: () => {
+              deleteDatabaseMonitor(record);
+            }
+          };
         }
-      };
-    }
-  }
-];
+      }
+    ]
+  };
+};

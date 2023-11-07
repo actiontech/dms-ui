@@ -1,13 +1,17 @@
-import { BasicInput } from '@actiontech/shared';
+import { BasicInput, BasicInputNumber } from '@actiontech/shared';
 import { Form, FormInstance } from 'antd5';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface IServerMonitorFormProps {
   form: FormInstance;
+  isUpdate?: boolean;
 }
 
-const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
+const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
+  form,
+  isUpdate
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -25,10 +29,10 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
             }
           ]}
         >
-          <BasicInput />
+          <BasicInput disabled={!!isUpdate} />
         </Form.Item>
         <Form.Item
-          name="name"
+          name="host"
           label={t('monitorSourceConfig.serverMonitor.serverIp')}
           rules={[
             {
@@ -39,10 +43,10 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
             }
           ]}
         >
-          <BasicInput />
+          <BasicInput disabled={!!isUpdate} />
         </Form.Item>
         <Form.Item
-          name="name"
+          name="port"
           label={t('monitorSourceConfig.serverMonitor.sshPort')}
           rules={[
             {
@@ -53,10 +57,13 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
             }
           ]}
         >
-          <BasicInput />
+          <BasicInputNumber
+            placeholder={t('common.form.placeholder.input')}
+            disabled={!!isUpdate}
+          />
         </Form.Item>
         <Form.Item
-          name="name"
+          name="user"
           label={t('monitorSourceConfig.serverMonitor.sshUser')}
           rules={[
             {
@@ -70,7 +77,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
           <BasicInput />
         </Form.Item>
         <Form.Item
-          name="name"
+          name="password"
           label={t('monitorSourceConfig.serverMonitor.sshPassword')}
           rules={[
             {

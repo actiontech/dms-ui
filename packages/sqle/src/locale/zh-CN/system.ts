@@ -71,7 +71,7 @@ export default {
     orderExpiredHours: '已完成的工单自动过期时间',
     operationRecordExpiredHours: '操作记录过期时间',
     urlAddressPrefix: 'URL地址前缀',
-    urlAddressPrefixTips: '配置能访问sqle的url地址信息',
+    urlAddressPrefixTips: '配置能访问SQLE的url地址信息',
     urlAddressFormatTips: '格式为 http(s)://ip:port'
   },
 
@@ -146,7 +146,7 @@ export default {
     clientSecret: '应用密钥',
     clientSecretTips:
       'appid对应的密钥，访问用户资源时用来验证应用的合法性。在OAuth2.0认证过程中，appkey的值即为oauth_consumer_secret的值。如果之前配置过该项，更新时不填写该项代表不更新密钥。',
-    clientHost: '外部访问sqle的地址',
+    clientHost: '外部访问SQLE的地址',
     clientHostTips: '格式为 http(s)://ip:port',
 
     serverAuthUrl: 'oauth2登录授权页面地址',
@@ -163,11 +163,11 @@ export default {
 
     accessTokenKeyName: 'access_token Key名称',
     accessTokenKeyNameTips:
-      'sqle会在获取用户ID时将access_token放在这个key对应的value中, 此参数会作为get请求的参数发送给用户ID获取地址',
+      'SQLE会在获取用户ID时将access_token放在这个key对应的value中, 此参数会作为get请求的参数发送给用户ID获取地址',
 
     userIdKeyName: 'user_id Key名称',
     userIdKeyNameTips:
-      'sqle会尝试使用此key从第三方平台的响应中解析出用户ID,用户ID应当为唯一ID',
+      'SQLE会尝试使用此key从第三方平台的响应中解析出用户ID,用户ID应当为唯一ID',
 
     loginButtonText: '登录按钮文字',
     loginButtonTextTips: 'login页面oauth登录按钮文字'
