@@ -106,7 +106,7 @@ const TemplateAudit: React.FC = () => {
         }}
         searchInput={{
           onSearch: (value) => {
-            console.log('search--->', value);
+            // todo 需后端提供筛选接口
           }
         }}
       />
