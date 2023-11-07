@@ -19,6 +19,7 @@ import {
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -109,8 +110,14 @@ const DataSourceList = () => {
               (connection) => !!connection?.is_connectable
             );
             const connectErrorMessage = connections.reduce(
-              (acc, cur) =>
-                acc + `${cur.component}: ${cur.connect_error_message} \n\r`,
+              (acc, cur, curIndex) =>
+                !!cur?.is_connectable
+                  ? acc
+                  : acc +
+                    `${cur.component}: ${cur?.connect_error_message?.replace(
+                      /\n$/,
+                      ''
+                    )} ${curIndex < connections.length - 1 ? '\n\r' : ''}`,
               ''
             );
             if (isConnectable) {
@@ -123,9 +130,9 @@ const DataSourceList = () => {
                   dbServiceName
                 }),
                 content: (
-                  <span style={{ whiteSpace: 'pre-wrap' }}>
+                  <TestConnectDisableReasonStyleWrapper>
                     {connectErrorMessage ?? t('common.unknownError')}
-                  </span>
+                  </TestConnectDisableReasonStyleWrapper>
                 )
               });
             }

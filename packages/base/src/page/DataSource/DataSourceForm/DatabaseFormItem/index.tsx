@@ -88,10 +88,17 @@ const DatabaseFormItem: React.FC<{
             (connection) => !!connection?.is_connectable
           );
           const connectErrorMessage = connections.reduce(
-            (acc, cur) =>
-              acc + `${cur.component}: ${cur.connect_error_message} \n\r`,
+            (acc, cur, curIndex) =>
+              !!cur?.is_connectable
+                ? acc
+                : acc +
+                  `${cur.component}: ${cur?.connect_error_message?.replace(
+                    /\n$/,
+                    ''
+                  )} ${curIndex < connections.length - 1 ? '\n\r' : ''}`,
             ''
           );
+
           setConnectAble(isConnectable);
           setConnectErrorMessage(connectErrorMessage);
         }
