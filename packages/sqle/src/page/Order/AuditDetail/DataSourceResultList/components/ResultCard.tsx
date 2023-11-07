@@ -34,7 +34,7 @@ const ResultCard: React.FC<
   const [loading, { set }] = useBoolean();
 
   const onCopyExecSql = () => {
-    Copy.copyText(props.exec_sql ?? '');
+    Copy.copyTextByTextarea(props.exec_sql ?? '');
     messageApi.success(t('common.copied'));
   };
 
