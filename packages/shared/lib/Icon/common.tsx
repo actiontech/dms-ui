@@ -1514,3 +1514,45 @@ export const IconTimeLine: React.FC<CustomIconProps> = ({ className }) => {
     </CommonIconStyleWrapper>
   );
 };
+
+export const IconFormListDelete: React.FC<CustomIconProps> = ({
+  width = 16,
+  height = 16,
+  color
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.00016 14.6667C4.31816 14.6667 1.3335 11.682 1.3335 8.00004C1.3335 4.31804 4.31816 1.33337 8.00016 1.33337C11.6822 1.33337 14.6668 4.31804 14.6668 8.00004C14.6668 11.682 11.6822 14.6667 8.00016 14.6667ZM4.66683 7.33337V8.66671H11.3335V7.33337H4.66683Z"
+        fill={color ? color : '#F66074'}
+      />
+    </svg>
+  );
+};
+
+export const IconFormListAdd: React.FC<CustomIconProps> = ({
+  width = 16,
+  height = 16,
+  color
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.00016 13.6667C3.31816 13.6667 0.333496 10.682 0.333496 7.00004C0.333496 3.31804 3.31816 0.333374 7.00016 0.333374C10.6822 0.333374 13.6668 3.31804 13.6668 7.00004C13.6668 10.682 10.6822 13.6667 7.00016 13.6667ZM6.3335 6.33337H3.66683V7.66671H6.3335V10.3334H7.66683V7.66671H10.3335V6.33337H7.66683V3.66671H6.3335V6.33337Z"
+        fill={color ? color : '#4583FF'}
+      />
+    </svg>
+  );
+};

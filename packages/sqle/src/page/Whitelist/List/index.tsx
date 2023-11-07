@@ -16,7 +16,7 @@ import {
 } from '@actiontech/shared/lib/global';
 import { WhitelistColumn } from './columns';
 import { ModalName } from '../../../data/ModalName';
-import { Space, Typography, message, Image } from 'antd5';
+import { Space, message } from 'antd5';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   updateSelectWhitelist,
@@ -24,12 +24,7 @@ import {
 } from '../../../store/whitelist';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import {
-  BasicButton,
-  EmptyBox,
-  EnterpriseFeatureDisplay,
-  PageHeader
-} from '@actiontech/shared';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon/common';
 import WhitelistDrawer from '../Drawer';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -79,10 +74,7 @@ const WhitelistList = () => {
       );
     },
     {
-      refreshDeps: [pagination],
-      /* IFTRUE_isCE */
-      ready: false
-      /* FITRUE_isCE */
+      refreshDeps: [pagination]
     }
   );
 
@@ -181,12 +173,9 @@ const WhitelistList = () => {
           <Space>
             {t('whitelist.pageTitle')}
 
-            {/* IFTRUE_isEE */}
             <TableRefreshButton refresh={refresh} />
-            {/* FITRUE_isEE */}
           </Space>
         }
-        /* IFTRUE_isEE */
         extra={[
           <EmptyBox
             if={actionPermission && !projectArchive}
@@ -201,45 +190,28 @@ const WhitelistList = () => {
             </BasicButton>
           </EmptyBox>
         ]}
-        /* FITRUE_isEE */
       />
-      <EnterpriseFeatureDisplay
-        featureName={t('whitelist.pageTitle')}
-        eeFeatureDescription={
-          <Space direction="vertical">
-            <Typography.Paragraph className="paragraph">
-              {t('whitelist.ceTips')}
-            </Typography.Paragraph>
-            <Image
-              width="100%"
-              className="ce_img"
-              alt="white_list_preview"
-              src="/static/image/ce_white_list_preview.png"
-            />
-          </Space>
+
+      <ActiontechTable
+        setting={tableSetting}
+        dataSource={whitelistList?.list}
+        rowKey={(record: IAuditWhitelistResV1) => {
+          return `${record?.audit_whitelist_id}`;
+        }}
+        pagination={{
+          total: whitelistList?.total ?? 0
+        }}
+        loading={loading}
+        columns={columns}
+        actions={
+          !projectArchive && actionPermission
+            ? whitelistActionsInTable
+            : undefined
         }
-      >
-        <ActiontechTable
-          setting={tableSetting}
-          dataSource={whitelistList?.list}
-          rowKey={(record: IAuditWhitelistResV1) => {
-            return `${record?.audit_whitelist_id}`;
-          }}
-          pagination={{
-            total: whitelistList?.total ?? 0
-          }}
-          loading={loading}
-          columns={columns}
-          actions={
-            !projectArchive && actionPermission
-              ? whitelistActionsInTable
-              : undefined
-          }
-          errorMessage={requestErrorMessage}
-          onChange={tableChange}
-        />
-        <WhitelistDrawer />
-      </EnterpriseFeatureDisplay>
+        errorMessage={requestErrorMessage}
+        onChange={tableChange}
+      />
+      <WhitelistDrawer />
     </>
   );
 };

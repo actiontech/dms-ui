@@ -5,7 +5,10 @@ import EmptyBox from '../EmptyBox';
 import { TestDatabaseConnectButtonProps } from './index.type';
 import BasicButton from '../BasicButton';
 import { IconFailed, IconSucceeded } from '../../Icon/common';
-import { TestConnectResultStyleWrapper } from './style';
+import {
+  TestConnectDisableReasonStyleWrapper,
+  TestConnectResultStyleWrapper
+} from './style';
 import BasicToolTips from '../BasicToolTips';
 
 const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
@@ -39,7 +42,13 @@ const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
           </TestConnectResultStyleWrapper>
         )}
         {!props.loading && !props.connectAble && (
-          <BasicToolTips title={props.connectDisableReason}>
+          <BasicToolTips
+            title={
+              <TestConnectDisableReasonStyleWrapper>
+                {props.connectDisableReason}
+              </TestConnectDisableReasonStyleWrapper>
+            }
+          >
             <TestConnectResultStyleWrapper success={false}>
               <IconFailed />
               {t('common.testDatabaseConnectButton.testFailed')}
