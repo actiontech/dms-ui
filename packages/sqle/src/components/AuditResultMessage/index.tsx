@@ -71,14 +71,22 @@ const AuditResultMessage = ({
         <span className="icon-wrapper">{renderIcon}</span>
         <span className="text-wrapper">{renderMessage}</span>
       </AuditResultMessageStyleWrapper>
-      <EmptyBox if={showAnnotation && visible}>
+      <EmptyBox
+        if={
+          showAnnotation &&
+          visible &&
+          (!!auditResult.annotation || !!moreBtnLink)
+        }
+      >
         <div className="annotation-wrapper">
           {auditResult.annotation}
-          <EmptyBox if={showMoreBtn}>
+          {/* IFTRUE_isEE */}
+          <EmptyBox if={showMoreBtn && !!moreBtnLink}>
             <Typography.Link target="_blank" href={moreBtnLink}>
               {t('common.showMore')}
             </Typography.Link>
           </EmptyBox>
+          {/* FITRUE_isEE */}
         </div>
       </EmptyBox>
     </AuditResultMessageWithAnnotationStyleWrapper>
