@@ -1,6 +1,6 @@
 import { useBoolean, useRequest } from 'ahooks';
 import { Form, message, Space, Spin } from 'antd5';
-import { useMemo, useRef } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -105,7 +105,7 @@ const WebHook: React.FC = () => {
       });
   };
 
-  const handleClickModify = () => {
+  const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
       token: webhookConfig?.token,
       maxRetryTimes:
@@ -116,11 +116,16 @@ const WebHook: React.FC = () => {
         DEFAULT_CONSTANT.retryIntervalSeconds,
       url: webhookConfig?.url
     });
+  }, [form, webhookConfig]);
+
+  const handleClickModify = () => {
+    setFormDefaultValue();
     startModify();
   };
 
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldsValue({ [switchFieldName]: false });
+    setFormDefaultValue();
     modifyFinish();
   };
   const handleToggleSwitch = (open: boolean) => {

@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { Form, message, Space, Spin, Typography } from 'antd5';
@@ -65,14 +65,20 @@ const DingTalkSetting: React.FC = () => {
     return !dingTalkInfo?.is_enable_ding_talk_notify;
   }, [dingTalkInfo]);
 
-  const handleClickModify = () => {
-    startModify();
+  const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      appKey: dingTalkInfo?.app_key
+      appKey: dingTalkInfo?.app_key,
+      appSecret: undefined
     });
+  }, [form, dingTalkInfo]);
+
+  const handleClickModify = () => {
+    setFormDefaultValue();
+    startModify();
   };
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldValue(switchFieldName, false);
+    setFormDefaultValue();
     modifyFinish();
   };
 

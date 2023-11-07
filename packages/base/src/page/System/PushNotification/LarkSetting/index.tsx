@@ -9,7 +9,7 @@ import {
   Typography
 } from 'antd5';
 import { useForm } from 'antd5/es/form/Form';
-import { useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormFields, TestFormFields } from './index.type';
 import { BasicButton, BasicInput, EmptyBox } from '@actiontech/shared';
@@ -73,14 +73,20 @@ const LarkSetting: React.FC = () => {
     return !larkInfo?.is_feishu_notification_enabled;
   }, [larkInfo]);
 
-  const handleClickModify = () => {
-    startModify();
+  const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      appKey: larkInfo?.app_id
+      appKey: larkInfo?.app_id,
+      appSecret: undefined
     });
+  }, [form, larkInfo]);
+
+  const handleClickModify = () => {
+    setFormDefaultValue();
+    startModify();
   };
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldsValue({ [switchFieldName]: false });
+    setFormDefaultValue();
     modifyFinish();
   };
   const handleToggleSwitch = (open: boolean) => {
