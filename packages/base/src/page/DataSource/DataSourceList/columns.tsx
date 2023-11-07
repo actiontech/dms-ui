@@ -11,24 +11,22 @@ import {
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 
-/*
- *PS：
- * 没有使用PageInfoWithoutIndexAndSize<IListDBServicesParams>的原因：
- * IAuthListDataOperationSetsParams里的page_index 是可选项，和TablePagination类型不匹配，期望后续后端可以修改。
- */
-
-export type DataSourceListParamType =
-  PageInfoWithoutIndexAndSize<IListDBServicesParams>;
+export type DataSourceListParamType = PageInfoWithoutIndexAndSize<
+  IListDBServicesParams,
+  'project_uid'
+>;
 
 export const DataSourceColumns = (): ActiontechTableColumn<
   IListDBService,
-  undefined,
+  DataSourceListParamType,
   'address' | 'rule_template'
 > => {
   return [
     {
       dataIndex: 'name',
-      title: () => t('dmsDataSource.databaseList.instanceName')
+      title: () => t('dmsDataSource.databaseList.instanceName'),
+      filterCustomType: 'select',
+      filterKey: 'filter_by_name'
     },
     {
       dataIndex: 'address',
@@ -54,7 +52,9 @@ export const DataSourceColumns = (): ActiontechTableColumn<
     },
     {
       dataIndex: 'db_type',
-      title: () => t('dmsDataSource.databaseList.type')
+      title: () => t('dmsDataSource.databaseList.type'),
+      filterCustomType: 'select',
+      filterKey: 'filter_by_db_type'
     },
     {
       dataIndex: 'business',

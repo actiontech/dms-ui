@@ -46,10 +46,17 @@ const useDbServiceDriver = () => {
     [driverMeta]
   );
 
+  const dbDriverOptions = driverNameList.map((item, index) => ({
+    value: index,
+    text: item,
+    label: item
+  }));
+
   return {
     driverNameList,
     loading,
     driverMeta,
+    dbDriverOptions,
     getDriverMeta,
     getLogoUrlByDbType
   };
