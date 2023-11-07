@@ -5,7 +5,6 @@ import { lazy } from 'react';
 
 /* IFTRUE_isEE */
 const Project = lazy(() => import('../../page/Project'));
-const RuleKnowledge = lazy(() => import('sqle/src/page/RuleKnowledge'));
 /* FITRUE_isEE */
 
 const Home = lazy(() => import('../../page/Home'));
@@ -66,11 +65,6 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     path: 'project',
     key: 'project',
     element: <Project />
-  },
-  {
-    path: 'sqle/rule/knowledge/:ruleName/:dbType',
-    key: 'ruleKnowledge',
-    element: <RuleKnowledge />
   },
   /* FITRUE_isEE */
 

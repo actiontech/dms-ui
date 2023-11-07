@@ -165,7 +165,8 @@ const RuleList: React.FC<RuleListProps> = ({
   const [scrollData, setScrollData] = useState<IRuleResV1[]>([]);
   const stepRef = useRef(0);
   const [currentRuleDetail, setCurrentRuleDetail] = useState<IRuleResV1>();
-  const [visible, { set: setVisible }] = useBoolean();
+  const [visible, { setTrue: showRuleDetail, setFalse: hideRuleDetail }] =
+    useBoolean();
 
   const onScroll = () => {
     setRulesRenderData();
@@ -248,7 +249,7 @@ const RuleList: React.FC<RuleListProps> = ({
                     onClick={() => {
                       if (enableCheckDetail) {
                         setCurrentRuleDetail(v);
-                        setVisible(true);
+                        showRuleDetail();
                       }
                     }}
                   >
@@ -270,9 +271,7 @@ const RuleList: React.FC<RuleListProps> = ({
       <RuleDetailModal
         visible={visible}
         dataSource={currentRuleDetail}
-        onClosed={() => {
-          setVisible(false);
-        }}
+        onClosed={hideRuleDetail}
       />
     </>
   );

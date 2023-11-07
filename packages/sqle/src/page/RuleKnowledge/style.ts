@@ -38,11 +38,13 @@ export const RuleKnowledgeEditorStyleWrapper = styled(MDEditor)`
   }
 
   & .w-md-editor-toolbar {
-    border-bottom: 1px solid #e8e7e6;
+    border-bottom: 1px solid
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   }
 
   & .w-md-editor-preview {
-    box-shadow: inset 1px 0 0 0 #e8e7e6;
+    box-shadow: inset 1px 0 0 0
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   }
 `;
 

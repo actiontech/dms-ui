@@ -14,7 +14,7 @@ import {
 } from './style';
 import { EmptyBox } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
-import { Button } from 'antd5';
+import { Typography } from 'antd5';
 
 const passStatusLevelData = ['normal', 'UNKNOWN'];
 
@@ -65,10 +65,7 @@ const AuditResultMessage = ({
   return (
     <AuditResultMessageWithAnnotationStyleWrapper
       className={classNames([styleClass])}
-      style={{
-        cursor:
-          showAnnotation && !!auditResult.annotation ? 'pointer' : 'default'
-      }}
+      showAnnotation={showAnnotation}
     >
       <AuditResultMessageStyleWrapper onClick={() => set(!visible)}>
         <span className="icon-wrapper">{renderIcon}</span>
@@ -77,13 +74,11 @@ const AuditResultMessage = ({
       <EmptyBox if={showAnnotation && visible}>
         <div className="annotation-wrapper">
           {auditResult.annotation}
-          {/* IFTRUE_isEE */}
           <EmptyBox if={showMoreBtn}>
-            <Button type="link" size="small" target="_blank" href={moreBtnLink}>
+            <Typography.Link target="_blank" href={moreBtnLink}>
               {t('common.showMore')}
-            </Button>
+            </Typography.Link>
           </EmptyBox>
-          {/* FITRUE_isEE */}
         </div>
       </EmptyBox>
     </AuditResultMessageWithAnnotationStyleWrapper>

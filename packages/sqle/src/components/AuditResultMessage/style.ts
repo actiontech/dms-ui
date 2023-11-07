@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+import { AuditResultMessageProps } from './index.type';
 
 export const AuditResultMessageStyleWrapper = styled('div')`
   display: flex;
@@ -22,7 +23,11 @@ export const AuditResultMessageStyleWrapper = styled('div')`
   }
 `;
 
-export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')`
+export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
+  showAnnotation: AuditResultMessageProps['showAnnotation'];
+}>`
+  cursor: ${(showAnnotation) => (showAnnotation ? 'pointer' : 'default')};
+
   .annotation-wrapper {
     width: 100%;
     margin-bottom: 0;
@@ -33,7 +38,8 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')`
     margin-top: 8px;
   }
 
-  & .annotation-wrapper .${ANTD_PREFIX_STR}-btn.${ANTD_PREFIX_STR}-btn-sm {
-    font-size: 12px;
+  & .annotation-wrapper .${ANTD_PREFIX_STR}-typography {
+    display: inline-block;
+    margin-left: 8px;
   }
 `;
