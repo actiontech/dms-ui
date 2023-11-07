@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SyncTaskFormProps } from '.';
+import { SyncTaskFormFields, SyncTaskFormProps } from '.';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import useGlobalRuleTemplate from 'sqle/src/hooks/useGlobalRuleTemplate';
-import { BasicInput, BasicSelect } from '@actiontech/shared';
+import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
 import { checkCron } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
 import useTaskSource from '../../../hooks/useTaskSource';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
@@ -22,8 +22,9 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInputCom';
-import { Spin } from 'antd5';
+import { FormInstance, Popconfirm, Spin } from 'antd5';
 import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
+import useAuditRequired from '../../../hooks/useAuditRequired';
 
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   form,
@@ -80,6 +81,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     });
   };
 
+  const {
+    auditRequired,
+    auditRequiredPopupVisible,
+    onAuditRequiredPopupOpenChange,
+    clearRuleTemplate,
+    changeAuditRequired
+  } = useAuditRequired<FormInstance<SyncTaskFormFields>>(form);
+
   useEffect(() => {
     updateTaskSourceList();
     updateGlobalRuleTemplateList();
@@ -126,9 +135,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
         version: defaultValue.version,
         url: defaultValue.url,
         instanceType: defaultValue.db_type,
+        needSqlAuditService: !!defaultValue.sqle_config?.rule_template_id,
         ruleTemplateId: defaultValue.sqle_config?.rule_template_id ?? '',
         ruleTemplateName: defaultValue.sqle_config?.rule_template_name ?? '',
         syncInterval: defaultValue.cron_express
+      });
+    } else {
+      form.setFieldsValue({
+        needSqlAuditService: true
       });
     }
   }, [defaultValue, form]);
@@ -152,7 +166,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                 {
                   required: true,
                   message: t('common.form.rule.require', {
-                    name: t('dmsDataSource.syncTaskForm.name')
+                    name: t('dmsSyncDataSource.syncTaskForm.name')
                   })
                 },
                 ...nameRule()
@@ -163,7 +177,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               <FormInputBotBorder
                 disabled={isUpdate}
                 placeholder={t('common.form.placeholder.input', {
-                  name: t('dmsDataSource.dataSourceForm.name')
+                  name: t('dmsSyncDataSource.syncTaskForm.name')
                 })}
               ></FormInputBotBorder>
             </FormItemNoLabel>
@@ -243,12 +257,35 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             <FormItemSubTitle>
               {t('dmsSyncDataSource.syncTaskForm.sqlConfig')}
             </FormItemSubTitle>
+            <FormItemLabel
+              label={t('dmsDataSource.dataSourceForm.needAuditSqlService')}
+              name="needSqlAuditService"
+              valuePropName="checked"
+            >
+              <Popconfirm
+                title={t(
+                  'dmsDataSource.dataSourceForm.closeAuditSqlServiceTips'
+                )}
+                overlayClassName="popconfirm-small"
+                open={auditRequiredPopupVisible}
+                onOpenChange={onAuditRequiredPopupOpenChange}
+                onConfirm={clearRuleTemplate}
+              >
+                <BasicSwitch
+                  checked={auditRequired}
+                  onChange={changeAuditRequired}
+                />
+              </Popconfirm>
+            </FormItemLabel>
             <FormItemLabel name="ruleTemplateId" hidden={true}>
               <BasicInput />
             </FormItemLabel>
             <FormItemLabel
               name="ruleTemplateName"
               label={t('dmsSyncDataSource.syncTaskForm.ruleTemplateName')}
+              className="has-required-style"
+              hidden={!auditRequired}
+              rules={[{ required: auditRequired }]}
             >
               <BasicSelect
                 allowClear
