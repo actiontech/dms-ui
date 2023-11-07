@@ -3,11 +3,11 @@ import { BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import DmsService from '@actiontech/shared/lib/api/base/service/dms';
 import { Space, Typography } from 'antd5';
-import { UI_VERSION } from '../../../scripts/version';
+import { UI_VERSION } from '../../../../scripts/version';
 import {
   VersionModalDescribeTextStyleWrapper,
   VersionModalStyleWrapper
-} from './style';
+} from '../style';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 
 const VersionModal: React.FC<{

@@ -26,8 +26,9 @@ export default {
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
-    notRecentlyOpenedProjects: '暂无最近打开的项目',
-    showMoreProject: '查看更多项目'
+    showMoreProjects: '查看更多项目',
+    belongProjects: '您所属的项目',
+    emptyDesc: '暂无项目'
   },
 
   groupLabel: {
