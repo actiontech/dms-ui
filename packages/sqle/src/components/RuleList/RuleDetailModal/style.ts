@@ -1,6 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { Button } from 'antd5';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 export const RuleDetailItemStyleWrapper = styled('section')`
   font-weight: 400;
@@ -11,10 +9,4 @@ export const RuleDetailItemStyleWrapper = styled('section')`
   padding-bottom: 24px;
   border-bottom: 1px solid
     ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
-`;
-
-export const RuleDetailKnowledgeLinkStyleWrapper = styled(Button)`
-  &.${ANTD_PREFIX_STR}-btn.${ANTD_PREFIX_STR}-btn-sm.${ANTD_PREFIX_STR}-btn-link {
-    padding: 0;
-  }
 `;
