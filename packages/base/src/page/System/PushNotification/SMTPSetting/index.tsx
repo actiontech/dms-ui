@@ -75,16 +75,19 @@ const SMTPSetting = () => {
         ? Number.parseInt(smtpInfo.smtp_port, 10)
         : undefined,
       username: smtpInfo?.smtp_username,
-      isSkipVerify: smtpInfo?.is_skip_verify ?? false
+      isSkipVerify: smtpInfo?.is_skip_verify ?? false,
+      password: undefined,
+      passwordConfirm: undefined
     });
   }, [form, smtpInfo]);
 
   const handleClickModify = useCallback(() => {
-    startModify();
     setFormDefaultValue();
+    startModify();
   }, [startModify, setFormDefaultValue]);
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldValue(switchFieldName, false);
+    setFormDefaultValue();
     modifyFinish();
   };
 

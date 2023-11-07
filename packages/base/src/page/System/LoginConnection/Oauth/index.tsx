@@ -71,11 +71,12 @@ const Oauth = () => {
 
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldValue(switchFieldName, false);
+    setFormDefaultValue();
     modifyFinish();
   };
   const handleClickModify = () => {
-    startModify();
     setFormDefaultValue();
+    startModify();
   };
 
   const handleToggleSwitch = (open: boolean) => {
@@ -122,6 +123,7 @@ const Oauth = () => {
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
       clientId: oauthConfig?.client_id,
+      clientSecret: undefined,
       clientHost: oauthConfig?.client_host,
       serverAuthUrl: oauthConfig?.server_auth_url,
       serverTokenUrl: oauthConfig?.server_token_url,

@@ -58,6 +58,7 @@ const LDAPSetting = () => {
       ldap_server_host: ldapSetting?.ldap_server_host,
       ldap_server_port: ldapSetting?.ldap_server_port,
       ldap_connect_dn: ldapSetting?.ldap_connect_dn,
+      ldap_connect_pwd: undefined,
       ldap_search_base_dn: ldapSetting?.ldap_search_base_dn,
       ldap_user_name_rdn_key: ldapSetting?.ldap_user_name_rdn_key,
       ldap_user_email_rdn_key: ldapSetting?.ldap_user_email_rdn_key
@@ -93,12 +94,13 @@ const LDAPSetting = () => {
   };
 
   const handleClickModify = () => {
-    startModify();
     setFormDefaultValue();
+    startModify();
   };
 
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldValue(switchFieldName, false);
+    setFormDefaultValue();
     modifyFinish();
   };
 

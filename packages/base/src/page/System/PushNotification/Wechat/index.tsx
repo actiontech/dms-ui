@@ -94,6 +94,7 @@ const Wechat = () => {
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
       corp_id: wechatConfig?.corp_id ?? '',
+      corp_secret: undefined,
       agent_id: String(wechatConfig?.agent_id ?? 0),
       safe_enabled: wechatConfig?.safe_enabled ?? false,
       proxy_ip: wechatConfig?.proxy_ip ?? ''
@@ -106,6 +107,7 @@ const Wechat = () => {
   };
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldsValue({ [switchFieldName]: false });
+    setFormDefaultValue();
     modifyFinish();
   };
 
