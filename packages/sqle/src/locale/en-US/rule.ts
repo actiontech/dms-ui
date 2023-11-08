@@ -10,5 +10,9 @@ export default {
   disableRules: 'Disable rules of {{name}}',
   form: {
     instance: 'Select Instance'
+  },
+  ruleDetail: {
+    title: '查看规则',
+    knowledge: '规则知识库'
   }
 };
