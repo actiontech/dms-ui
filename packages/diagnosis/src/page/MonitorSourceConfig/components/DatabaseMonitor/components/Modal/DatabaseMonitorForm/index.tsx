@@ -6,11 +6,13 @@ import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSele
 
 interface IServerMonitorFormProps {
   form: FormInstance;
+  dbLoading: boolean;
   dbServiceOption: React.ReactNode;
 }
 
 const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
   form,
+  dbLoading,
   dbServiceOption
 }) => {
   const { t } = useTranslation();
@@ -49,6 +51,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
             allowClear
             optionFilterProp="children"
             filterOption={filterOptionByLabel}
+            loading={dbLoading}
           >
             {dbServiceOption}
           </BasicSelect>

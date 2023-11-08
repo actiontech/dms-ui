@@ -11,7 +11,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import { updateMonitorSourceConfigModalStatus } from '../../../../../../../store/monitorSourceConfig';
-import useDbService from '../../../../../../../../../base/src/hooks/useDbService';
+import useDbService from '../../../../../../../hooks/useDbService';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import DatabaseMonitorForm from '../DatabaseMonitorForm';
 import { useEffect } from 'react';
@@ -36,8 +36,12 @@ const AddDatabaseMonitor = () => {
 
   const { projectID } = useCurrentProject();
 
-  const { dbServiceList, updateDbServiceList, generateDbServiceSelectOption } =
-    useDbService();
+  const {
+    dbServiceList,
+    loading,
+    updateDbServiceList,
+    generateDbServiceSelectOption
+  } = useDbService();
 
   useEffect(() => {
     if (visible) updateDbServiceList(projectID);
@@ -119,6 +123,7 @@ const AddDatabaseMonitor = () => {
         {contextHolder}
         <DatabaseMonitorForm
           form={form}
+          dbLoading={loading}
           dbServiceOption={generateDbServiceSelectOption()}
         />
       </BasicDrawer>
