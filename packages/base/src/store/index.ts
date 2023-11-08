@@ -16,6 +16,7 @@ import ruleTemplate from 'sqle/src/store/ruleTemplate';
 import whitelist from 'sqle/src/store/whitelist';
 import projectManage from 'sqle/src/store/projectManage';
 import sqleManagement from 'sqle/src/store/sqleManagement';
+import { diagnosisStoreData } from './diagnosis';
 
 const store = configureStore({
   reducer: {
@@ -33,7 +34,8 @@ const store = configureStore({
     ruleTemplate,
     whitelist,
     projectManage,
-    sqleManagement
+    sqleManagement,
+    ...diagnosisStoreData
   }
 });
 
