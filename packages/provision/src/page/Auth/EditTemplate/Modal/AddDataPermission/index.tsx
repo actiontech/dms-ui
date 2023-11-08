@@ -241,7 +241,11 @@ const AddDataPermission: FC<IAddDataPermission> = ({
 
   return (
     <BasicDrawer
-      title={t('auth.button.addDataPermission')}
+      title={
+        editIndex !== undefined
+          ? t('auth.button.editDataPermission')
+          : t('auth.button.addDataPermission')
+      }
       width={640}
       open={visible}
       onClose={closeModal}

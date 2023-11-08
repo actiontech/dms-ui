@@ -103,7 +103,7 @@ export default {
     extraEmptyTips: '您还没有为当前模板添加数据权限',
     addTitle: '添加权限模板',
     detailTitle: '权限模板详情',
-    addSuccessTips: '模板"{{name}}"添加成功！',
+    addSuccessTips: '创建权限模板成功！',
     editSuccessTips: '模板"{{name}}"修改成功！',
     removeConfirmTips: '是否确认删除当前数据权限信息?',
     clearConfirmTips: '是否确认清除当前模板中的数据权限信息？',
@@ -153,6 +153,9 @@ export default {
     addList: '加入到数据权限',
     addTemplate: '添加模板',
     addDataPermission: '添加数据权限',
-    addUser: '创建用户'
+    editDataPermission: '编辑数据权限',
+    addUser: '创建用户',
+    checkAuthTemplateDetail: '查看权限模板详情',
+    toAuthList: '去授权'
   }
 };
