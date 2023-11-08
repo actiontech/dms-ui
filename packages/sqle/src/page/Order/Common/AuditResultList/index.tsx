@@ -129,6 +129,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         auditLevelFilterValue={auditLevelFilterValue}
         projectID={projectID}
         updateTaskRecordTotalNum={updateTaskRecordTotalNum}
+        dbType={currentTask?.instance_db_type}
       />
     </AuditResultForCreateOrderStyleWrapper>
   );
