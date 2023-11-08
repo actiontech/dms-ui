@@ -30,7 +30,8 @@ const EditText: React.FC<EditTypeProps> = ({
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
             },
-            icon: <IconEdit />
+            icon: <IconEdit />,
+            tooltip: false
           }}
         >
           {value}
@@ -69,7 +70,8 @@ const EditText: React.FC<EditTypeProps> = ({
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
               setShowEdit(false);
-            }
+            },
+            tooltip: false
           }}
         />
       </EmptyBox>
