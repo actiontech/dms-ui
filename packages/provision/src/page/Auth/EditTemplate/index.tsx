@@ -1,26 +1,37 @@
-import { Box } from '@mui/system';
-import { Card, Button, Space, Input, Typography, Form, message } from 'antd';
-import { useEffect, useState } from 'react';
+import { Space, Typography, Form, message } from 'antd5';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSearchParams } from 'react-router-dom';
-import ProvisionTable from '~/components/ProvisionTable';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import { IDataPermissionsTable } from './Modal/AddDataPermission/index.d';
 import { AuthDataPermissionListModalStatus } from '~/store/auth/templateList';
-import { authTableColumns } from './TableColumns';
+import { AuthTableActions, AuthTableColumns } from './TableColumns';
 import AddDataPermission from './Modal/AddDataPermission';
 import { useBoolean, useRequest } from 'ahooks';
 import { cloneDeep } from 'lodash';
 import { ResponseCode } from '~/data/common';
 import { AxiosResponse } from 'axios';
 import { generateDataPermissionValueByDataPermission } from './index.utils';
-import useNavigate from '../../../hooks/useNavigate';
-import { Link } from '../../../components/Link';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IDataPermission } from '@actiontech/shared/lib/api/provision/service/common';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BasicButton, BasicInput, PageHeader } from '@actiontech/shared';
+import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
+import {
+  AuthTemplateFormStyleWrapper,
+  EditAuthTemplateStyleWrapper
+} from './style';
+import classNames from 'classnames';
+import { IconSelectedBusiness } from '~/icon/AuthTemplate';
+import {
+  ActiontechTable,
+  TableToolbar,
+  useTableRequestError
+} from '@actiontech/shared/lib/components/ActiontechTable';
+import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 
 interface IEditTemplateFormFields {
   name: string;
@@ -55,17 +66,22 @@ const EditTemplate = () => {
       refreshDeps: [projectID]
     }
   );
+
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
   const { loading: getPermissionLoading } = useRequest(
     () =>
-      auth.AuthGetDataPermissionsInDataPermissionTemplate({
-        data_permission_template_uid: id ?? templateId ?? ''
-      }),
+      handleTableRequestError(
+        auth.AuthGetDataPermissionsInDataPermissionTemplate({
+          data_permission_template_uid: id ?? templateId ?? ''
+        })
+      ),
     {
       ready: !!id || !!templateId,
       onSuccess: (res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
+        if (res.list && res.list.length > 0) {
           const permissions = generateDataPermissionValueByDataPermission(
-            res.data.data ?? []
+            res.list
           );
           setDataPermissions(permissions);
         }
@@ -85,11 +101,6 @@ const EditTemplate = () => {
     setIsUpdated(true);
     toggleModal(name, true);
   };
-  useEffect(() => {
-    initModalStatus({
-      [ModalName.DataPermissionModal]: false
-    });
-  }, [initModalStatus]);
 
   const [dataPermissions, setDataPermissions] = useState<
     IDataPermissionsTable[]
@@ -97,6 +108,10 @@ const EditTemplate = () => {
   const [editIndex, setEditIndex] = useState<number>();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
+  const hasSelectedBusiness = useMemo(
+    () => dataPermissions.length > 0,
+    [dataPermissions]
+  );
 
   const handleSubmit = async () => {
     setIsUpdated(false);
@@ -137,13 +152,14 @@ const EditTemplate = () => {
     }
   };
 
-  const editTemplate = (index: number) => {
+  const editTemplate = (index?: number) => {
     setEditIndex(index);
     openModal(ModalName.DataPermissionModal);
   };
   const removeTemplate = (index: number) => {
     const data = cloneDeep(dataPermissions);
     const removed = data.splice(index, 1);
+
     setDataPermissions(data);
     setIsUpdated(true);
     return removed[0];
@@ -154,6 +170,12 @@ const EditTemplate = () => {
   };
 
   const [isUpdated, setIsUpdated] = useState<boolean>(false);
+
+  useEffect(() => {
+    initModalStatus({
+      [ModalName.DataPermissionModal]: false
+    });
+  }, [initModalStatus]);
 
   useEffect(() => {
     const beforeunload = (e: any) => {
@@ -169,96 +191,138 @@ const EditTemplate = () => {
   usePrompt(t('auth.editTemplate.leaveTip'), isUpdated);
 
   return (
-    <Box
-      sx={{
-        padding: (theme) => theme.layout.padding
-      }}
-    >
-      <Card
-        title={
-          name
-            ? t('auth.editTemplate.detailTitle')
-            : t('auth.editTemplate.addTitle')
-        }
-        extra={
-          <Link to={`${projectID}/auth/template`}>
-            <Button type="primary">{t('auth.addAuth.back')}</Button>
-          </Link>
-        }
-        className="add-auth-card"
-      >
-        <Form form={form} wrapperCol={{ span: 5 }}>
-          <Form.Item
-            name="name"
-            label={t('auth.editTemplate.templateName')}
-            rules={[{ required: true }]}
-          >
-            <Input
-              disabled={name !== null}
-              placeholder={t('auth.editTemplate.templateNamePlaceholder')}
-              onChange={() => setIsUpdated(true)}
-            />
-          </Form.Item>
-        </Form>
-        <Space direction="vertical" className="full-width-element" size={20}>
-          <Card
-            className="edit-template"
-            title={
-              <Space size={30}>
-                {t('auth.addAuth.baseForm.overview')}
-                <Typography.Text>
-                  {t('auth.addAuth.baseForm.selected')}
-                  <Input
-                    readOnly={true}
-                    className="selected-business"
-                    value={Array.from(
-                      new Set(dataPermissions.map((item) => item.business))
-                    )}
-                  />
-                </Typography.Text>
-              </Space>
-            }
-            extra={
-              <Space>
-                <Button danger={true} type="text" onClick={removeAllTemplate}>
-                  {t('auth.addAuth.baseForm.reset')}
-                </Button>
-                <Button
-                  type="primary"
-                  onClick={() => openModal(ModalName.DataPermissionModal)}
-                >
-                  {t('auth.button.addDataPermission')}
-                </Button>
-              </Space>
-            }
-          >
-            <ProvisionTable
-              rowKey={(record) =>
-                `${record.serviceLabel}${record.objectsLabel}`
+    <EditAuthTemplateStyleWrapper>
+      <PageLayoutHasFixedHeaderStyleWrapper>
+        <PageHeader
+          fixed
+          title={
+            <BasicButton
+              onClick={() =>
+                navigate(`/provision/project/${projectID}/auth/template`)
               }
-              loading={getIdLoading || getPermissionLoading}
-              columns={authTableColumns(editTemplate, removeTemplate)}
-              dataSource={dataPermissions}
-              scroll={{ x: 'max-content' }}
-            />
-          </Card>
-          <Button
-            style={{ float: 'right' }}
-            type="primary"
-            onClick={handleSubmit}
-            loading={submitLoading}
-          >
-            {t('common.save')}
-          </Button>
-        </Space>
-      </Card>
-      <AddDataPermission
-        editIndex={editIndex}
-        setEditIndex={setEditIndex}
-        dataPermissions={dataPermissions}
-        setDataPermissions={setDataPermissions}
-      />
-    </Box>
+              icon={<IconLeftArrow />}
+            >
+              {t('auth.backToAuthTemplateList')}
+            </BasicButton>
+          }
+          extra={
+            <BasicButton
+              type="primary"
+              loading={submitLoading}
+              onClick={handleSubmit}
+            >
+              {t('common.save')}
+            </BasicButton>
+          }
+        />
+        <AuthTemplateFormStyleWrapper>
+          <Form form={form}>
+            <Form.Item
+              name="name"
+              rules={[
+                {
+                  required: true,
+                  message: t('common.form.rule.require', {
+                    name: t('auth.template.columns.name')
+                  })
+                }
+              ]}
+            >
+              <BasicInput
+                disabled={!!name}
+                placeholder={t('auth.editTemplate.templateNamePlaceholder')}
+                onChange={() => setIsUpdated(true)}
+                size="large"
+                bordered={false}
+              />
+            </Form.Item>
+          </Form>
+          <Space>
+            <section className="tag-wrapper">
+              <IconSelectedBusiness />
+              <Typography.Text
+                className={classNames('selected-business-text', {
+                  'has-selected': hasSelectedBusiness
+                })}
+              >
+                {t('auth.addAuth.baseForm.selected')}
+                {hasSelectedBusiness
+                  ? Array.from(
+                      new Set(dataPermissions.map((item) => item.business))
+                    )
+                  : '-'}
+              </Typography.Text>
+            </section>
+          </Space>
+        </AuthTemplateFormStyleWrapper>
+        <TableToolbar
+          actions={
+            hasSelectedBusiness
+              ? [
+                  {
+                    key: 'remove-all-permission',
+                    text: t('auth.addAuth.baseForm.reset'),
+                    buttonProps: {
+                      danger: true
+                    },
+                    confirm: {
+                      title: t('auth.editTemplate.clearConfirmTips'),
+                      onConfirm: removeAllTemplate
+                    }
+                  },
+                  {
+                    key: 'add-data-permission',
+                    text: t('auth.button.addDataPermission'),
+                    buttonProps: {
+                      onClick: () => openModal(ModalName.DataPermissionModal)
+                    }
+                  }
+                ]
+              : undefined
+          }
+        >
+          <span className="table-toolbar-title">
+            {t('auth.addAuth.baseForm.overview')}
+          </span>
+        </TableToolbar>
+        <ActiontechTable
+          rowKey={(record) => `${record.serviceLabel}${record.objectsLabel}`}
+          loading={getIdLoading || getPermissionLoading}
+          dataSource={dataPermissions}
+          columns={AuthTableColumns()}
+          actions={AuthTableActions(editTemplate, removeTemplate)}
+          errorMessage={requestErrorMessage}
+          locale={{
+            emptyText: (
+              <BasicEmpty>
+                {!getPermissionLoading && (
+                  <>
+                    <Typography.Paragraph className="extra-tips">
+                      {t('auth.editTemplate.extraEmptyTips')}
+                    </Typography.Paragraph>
+                    <BasicButton
+                      type="primary"
+                      onClick={() => openModal(ModalName.DataPermissionModal)}
+                    >
+                      {t('auth.button.addDataPermission')}
+                    </BasicButton>
+                  </>
+                )}
+              </BasicEmpty>
+            )
+          }}
+          pagination={false}
+          scroll={{ x: 'max-content' }}
+        />
+
+        <AddDataPermission
+          editIndex={editIndex}
+          setEditIndex={setEditIndex}
+          dataPermissions={dataPermissions}
+          setDataPermissions={setDataPermissions}
+        />
+      </PageLayoutHasFixedHeaderStyleWrapper>
+    </EditAuthTemplateStyleWrapper>
   );
 };
 
