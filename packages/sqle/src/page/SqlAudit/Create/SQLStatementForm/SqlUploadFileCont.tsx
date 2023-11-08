@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useContext } from 'react';
 
 import {
   SQLStatementFields,
@@ -14,9 +14,11 @@ import {
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+import { FormSubmitStatusContext } from '..';
 
 const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
   const { t } = useTranslation();
+  const submitLoading = useContext(FormSubmitStatusContext);
 
   const uploadType = Form.useWatch('uploadType', form);
 
@@ -55,7 +57,8 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             language="sql"
             onMount={editorDidMount}
             options={{
-              automaticLayout: true
+              automaticLayout: true,
+              readOnly: submitLoading
             }}
           />
         </FormItemNoLabel>
@@ -80,6 +83,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, 'sqlFile')}
             title={t('sqlAudit.create.sqlInfo.uploadFileTip.sqlFile')}
+            disabled={submitLoading}
           />
         </FormItemNoLabel>
       </EmptyBox>
@@ -103,6 +107,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, 'xmlFile')}
             title={t('sqlAudit.create.sqlInfo.uploadFileTip.xmlFile')}
+            disabled={submitLoading}
           />
         </FormItemNoLabel>
       </EmptyBox>
@@ -127,6 +132,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
               beforeUpload={() => false}
               onRemove={removeFile.bind(null, 'zipFile')}
               title={t('sqlAudit.create.sqlInfo.uploadFileTip.zipFile')}
+              disabled={submitLoading}
             />
           </FormItemNoLabel>
         </FormItemNoLabel>

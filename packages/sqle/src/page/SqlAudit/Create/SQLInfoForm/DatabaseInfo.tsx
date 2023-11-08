@@ -6,7 +6,7 @@ import {
   FormItemLabel,
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/FormCom';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useContext, useMemo, useState } from 'react';
 import { Form, Space } from 'antd5';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import {
@@ -25,6 +25,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { RuleUrlParamKey } from '../../../Rule/useRuleFilterForm';
 import { Link } from 'react-router-dom';
+import { FormSubmitStatusContext } from '..';
 
 const DatabaseInfo = ({
   form,
@@ -34,6 +35,7 @@ const DatabaseInfo = ({
 }: DatabaseInfoProps) => {
   const { t } = useTranslation();
   const { projectID, projectName } = useCurrentProject();
+  const submitLoading = useContext(FormSubmitStatusContext);
 
   const isDynamic = useMemo(
     () => auditType === AuditTypeEnum.dynamic,
@@ -121,12 +123,12 @@ const DatabaseInfo = ({
             prefix={<IconDatabase />}
             valuePrefix={<IconDatabaseActive />}
             size="middle"
+            disabled={submitLoading}
             loading={instanceLoading}
             options={instanceOptions}
             onChange={(value) => handleInstanceNameChange(value)}
           />
         </FormItemNoLabel>
-        {/* todo: 选择后 instanceSchema 图标不见了 */}
         <FormItemNoLabel
           name="instanceSchema"
           rules={[
@@ -141,7 +143,7 @@ const DatabaseInfo = ({
           <CustomSelect
             className="data-source-row-select"
             size="middle"
-            disabled={!instanceName}
+            disabled={submitLoading || !instanceName}
             prefix={<IconDatabaseSchema />}
             valuePrefix={<IconDatabaseSchemaActive />}
             loading={getInstanceSchemaListLoading}

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 import {
   AuditTypeEnum,
@@ -8,10 +8,7 @@ import {
 } from './index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 
 import { Form, Radio, RadioGroupProps, Space } from 'antd5';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
@@ -26,10 +23,16 @@ import {
   formatterSQL
 } from '../../../../utils/FormatterSQL';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { FormSubmitStatusContext } from '..';
 
-const SQLInfoFormItem = ({ form, submit }: SQLInfoFormItemProps) => {
+const SQLInfoFormItem = ({
+  form,
+  submit,
+  setAuditLoading
+}: SQLInfoFormItemProps) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
+  const submitLoading = useContext(FormSubmitStatusContext);
 
   const auditType = Form.useWatch('auditType', form);
   const uploadType = Form.useWatch('uploadType', form);
@@ -79,12 +82,14 @@ const SQLInfoFormItem = ({ form, submit }: SQLInfoFormItemProps) => {
 
   const internalSubmit = async () => {
     const params = await form.validateFields();
-    submit(params);
+    setAuditLoading(true);
+    submit(params).finally(() => {
+      setAuditLoading(false);
+    });
   };
 
   return (
     <>
-      {/* 审核方式 */}
       <FormItemLabel
         className="has-required-style"
         name="auditType"
@@ -98,7 +103,7 @@ const SQLInfoFormItem = ({ form, submit }: SQLInfoFormItemProps) => {
         ]}
         initialValue={AuditTypeEnum.dynamic}
       >
-        <Radio.Group onChange={auditTypeChange}>
+        <Radio.Group onChange={auditTypeChange} disabled={submitLoading}>
           <Radio value={AuditTypeEnum.static}>
             {t('sqlAudit.create.sqlInfo.form.staticAudit')}
           </Radio>
@@ -107,7 +112,6 @@ const SQLInfoFormItem = ({ form, submit }: SQLInfoFormItemProps) => {
           </Radio>
         </Radio.Group>
       </FormItemLabel>
-      {/* 数据库类型 */}
       <FormItemLabel
         hidden={auditType === AuditTypeEnum.dynamic}
         className="has-required-style"
@@ -120,45 +124,37 @@ const SQLInfoFormItem = ({ form, submit }: SQLInfoFormItemProps) => {
         ]}
         {...formItemLayout.spaceBetween}
       >
-        <BasicSelect loading={getDriverMetaLoading}>
+        <BasicSelect loading={getDriverMetaLoading} disabled={submitLoading}>
           {generateDriverSelectOptions()}
         </BasicSelect>
       </FormItemLabel>
-      {/* 数据源 ｜ 数据库 */}
       <DatabaseInfo
         form={form}
         auditType={auditType}
         instanceLoading={instanceLoading}
         instanceOptions={instanceOptions}
       />
-      {/* sql语句 */}
       <SQLStatementForm form={form} />
-      {/* 按钮 */}
-      <FormItemNoLabel>
-        <Space size={12}>
-          <BasicButton
-            onClick={internalSubmit}
-            type="primary"
-            // loading={auditLoading}
-          >
-            {t('order.sqlInfo.audit')}
+      <Space size={12}>
+        <BasicButton
+          onClick={internalSubmit}
+          type="primary"
+          loading={submitLoading}
+        >
+          {t('order.sqlInfo.audit')}
+        </BasicButton>
+        <Space hidden={uploadType !== UploadTypeEnum.sql}>
+          <BasicButton onClick={formatSql} loading={submitLoading}>
+            {t('order.sqlInfo.format')}
           </BasicButton>
-          <Space hidden={uploadType !== UploadTypeEnum.sql}>
-            <BasicButton
-              onClick={formatSql}
-              // loading={auditLoading}
-            >
-              {t('order.sqlInfo.format')}
-            </BasicButton>
-            <BasicToolTips
-              prefixIcon={<IconTipGray />}
-              title={t('order.sqlInfo.formatTips', {
-                supportType: Object.keys(FormatLanguageSupport).join('、')
-              })}
-            />
-          </Space>
+          <BasicToolTips
+            prefixIcon={<IconTipGray />}
+            title={t('order.sqlInfo.formatTips', {
+              supportType: Object.keys(FormatLanguageSupport).join('、')
+            })}
+          />
         </Space>
-      </FormItemNoLabel>
+      </Space>
     </>
   );
 };

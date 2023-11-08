@@ -1,11 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import React, { ReactNode, useEffect, useState } from 'react';
-import { Form } from 'antd5';
+import { ReactNode, useContext, useEffect, useState } from 'react';
 
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 
 import {
   SQLStatementFormProps,
@@ -26,6 +22,7 @@ import { SettingOutlined } from '@ant-design/icons';
 import { BasicInput, EmptyBox } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { FormSubmitStatusContext } from '..';
 
 const uploadItemIcon: {
   [key in TypeUploadKeys]: ReactNode;
@@ -39,12 +36,16 @@ const uploadItemIcon: {
 
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
+  const submitLoading = useContext(FormSubmitStatusContext);
 
   const [currentSQLInputType, setCurrentSQLInputTYpe] = useState(
     UploadTypeEnum.sql
   );
 
   const currentSQLInputTypeChange = (value: UploadTypeEnum) => {
+    if (submitLoading) {
+      return;
+    }
     setCurrentSQLInputTYpe(value);
     form.resetFields([
       'sql',
@@ -66,6 +67,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
       <FormItemLabel
         className="has-required-style"
         required={true}
+        name="uploadType"
         label={
           <>
             <IconEllipse />
@@ -74,7 +76,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
         }
         style={{ marginBottom: 16 }}
       />
-      <FormItemNoLabel name="uploadType">
+      <div style={{ marginBottom: 16 }}>
         <UploadTypeStyleWrapper>
           {SQLUploadTypeKeys.slice(0, 3).map((type) => {
             return (
@@ -112,7 +114,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
           })}
           <UploadItemTypeSpaceOccupyingStyleWrapper />
         </UploadTypeStyleWrapper>
-      </FormItemNoLabel>
+      </div>
       <EmptyBox
         if={currentSQLInputType === UploadTypeEnum.git}
         defaultNode={<SqlUploadFileCont form={form} />}
@@ -130,6 +132,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
           label={t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')}
         >
           <BasicInput
+            disabled={submitLoading}
             placeholder={t('common.form.placeholder.input', {
               name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')
             })}
@@ -141,6 +144,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
           {...formItemLayout.spaceBetween}
         >
           <BasicInput
+            disabled={submitLoading}
             placeholder={t('common.form.placeholder.input', {
               name: t('common.username')
             })}
@@ -152,6 +156,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
           {...formItemLayout.spaceBetween}
         >
           <BasicInput.Password
+            disabled={submitLoading}
             placeholder={t('common.form.placeholder.input', {
               name: t('common.password')
             })}
