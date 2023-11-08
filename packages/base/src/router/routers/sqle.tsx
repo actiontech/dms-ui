@@ -28,8 +28,9 @@ const UpdateCustomRule = lazy(
   () => import('sqle/src/page/CustomRule/UpdateCustomRule')
 );
 const ReportStatistics = lazy(() => import('sqle/src/page/ReportStatistics'));
+/* IFTRUE_isEE */
 const RuleKnowledge = lazy(() => import('sqle/src/page/RuleKnowledge'));
-
+/* FITRUE_isEE */
 export const SQLERouterConfig: RouterConfigItem[] = [
   //====== 这部分路由为sqle特有的全局页面, 所以无法放在 projectDetailRouterConfig, 其内容为 sqle 中 globalRouterConfig 的展开项
   {
@@ -93,9 +94,11 @@ export const SQLERouterConfig: RouterConfigItem[] = [
     element: <ProjectDetail />,
     children: projectDetailRouterConfig
   },
+  /* IFTRUE_isEE */
   {
     path: 'sqle/rule/knowledge/:ruleName/:dbType',
     key: 'ruleKnowledge',
     element: <RuleKnowledge />
   }
+  /* FITRUE_isEE */
 ];
