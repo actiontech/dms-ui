@@ -19,11 +19,13 @@ import EmitterKey from '../../data/EmitterKey';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { MonitorSourceConfigTypeEnum } from './index.type';
 import ServerMonitor from './components/ServerMonitor';
+import DatabaseMonitor from './components/DatabaseMonitor';
 
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();
 
   const [searchServerValue, setSearchServerValue] = useState<string>();
+  const [searchDatabaseValue, setSearchDatabaseValue] = useState<string>();
 
   const [tableLoading, setTableLoading] = useState<boolean>(false);
 
@@ -37,6 +39,7 @@ const MonitorSourceConfig: React.FC = () => {
   const onChange = (key: SegmentedValue) => {
     setListType(key as MonitorSourceConfigTypeEnum);
     setSearchServerValue('');
+    setSearchDatabaseValue('');
   };
 
   const onAddMonitorSource = (type: MonitorSourceConfigTypeEnum) => {
@@ -61,7 +64,12 @@ const MonitorSourceConfig: React.FC = () => {
         />
       );
     }
-    return null;
+    return (
+      <DatabaseMonitor
+        setLoading={setTableLoading}
+        searchValue={searchDatabaseValue ?? ''}
+      />
+    );
   };
 
   const onRefreshTable = () => {
@@ -108,7 +116,14 @@ const MonitorSourceConfig: React.FC = () => {
                   setSearchServerValue(value);
                 }
               }
-            : undefined
+            : {
+                placeholder: t(
+                  'common.actiontechTable.searchInput.placeholder'
+                ),
+                onSearch: (value) => {
+                  setSearchDatabaseValue(value);
+                }
+              }
         }
       >
         <BasicSegmented

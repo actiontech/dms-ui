@@ -2,6 +2,7 @@ import {
   IViewAddServerRequest,
   IGenericResp,
   IDeleteServersReq,
+  IGetServerHostnameReply,
   IListServersReply,
   IViewUpdateServerRequest
 } from '../common.d';
@@ -17,6 +18,20 @@ export interface IV1DeleteServerParams extends IDeleteServersReq {
 }
 
 export interface IV1DeleteServerReturn extends IGenericResp {}
+
+export interface IV1GetServerHostnameParams {
+  host: string;
+
+  password: string;
+
+  port?: number;
+
+  user: string;
+
+  project_uid: string;
+}
+
+export interface IV1GetServerHostnameReturn extends IGetServerHostnameReply {}
 
 export interface IV1ListServersParams {
   fuzzy_search_keyword?: string;

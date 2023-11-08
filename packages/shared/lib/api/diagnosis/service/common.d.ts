@@ -17,10 +17,38 @@ export interface IGenericResp {
   message?: string;
 }
 
+export interface IGetServerHostnameReply {
+  code?: number;
+
+  hostname?: string;
+
+  message?: string;
+}
+
 export interface IListDBsReply {
   code?: number;
 
   data?: IViewDatabaseReply[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListMonitorRoutineReply {
+  code?: number;
+
+  data?: IViewMonitorConfigReply[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListRoutineMetricsReply {
+  code?: number;
+
+  data?: IRoutienMetrics;
 
   message?: string;
 
@@ -35,6 +63,16 @@ export interface IListServersReply {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IRoutienMetrics {
+  metrics?: Array<{
+    desc?: string;
+
+    metric_key?: string;
+  }>;
+
+  routine_id?: number;
 }
 
 export interface ISaveDBsReq {
@@ -75,6 +113,20 @@ export interface IViewDatabaseReply {
   port: number;
 
   status?: ViewDatabaseReplyStatusEnum;
+}
+
+export interface IViewMonitorConfigReply {
+  desc?: string;
+
+  enable?: boolean;
+
+  id?: number;
+
+  interval?: number;
+
+  routine_name?: string;
+
+  via?: string;
 }
 
 export interface IViewServer {
