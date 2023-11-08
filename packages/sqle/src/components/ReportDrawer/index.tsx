@@ -74,7 +74,6 @@ const ReportDrawer = ({
                           annotation: item.annotation ?? ''
                         }}
                         showAnnotation
-                        showMoreBtn
                         moreBtnLink={
                           item?.rule_name
                             ? `/sqle/rule/knowledge/${item?.rule_name}/${dbType}`

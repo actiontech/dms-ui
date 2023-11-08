@@ -22,7 +22,6 @@ const AuditResultMessage = ({
   auditResult,
   styleClass,
   showAnnotation,
-  showMoreBtn,
   moreBtnLink
 }: AuditResultMessageProps) => {
   const { t } = useTranslation();
@@ -81,7 +80,7 @@ const AuditResultMessage = ({
         <div className="annotation-wrapper">
           {auditResult.annotation}
           {/* IFTRUE_isEE */}
-          <EmptyBox if={showMoreBtn && !!moreBtnLink}>
+          <EmptyBox if={!!moreBtnLink}>
             <Typography.Link target="_blank" href={moreBtnLink}>
               {t('common.showMore')}
             </Typography.Link>
