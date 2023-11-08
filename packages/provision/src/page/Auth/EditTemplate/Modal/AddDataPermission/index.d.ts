@@ -13,6 +13,7 @@ export interface IFormFields {
 }
 
 export interface IDataPermissionsTable {
+  index?: number;
   business: string;
   serviceValue: string;
   objectsValue?: IDataObjects[];

@@ -26,7 +26,7 @@ export const ServerMonitorColumns = (
       title: t('monitorSourceConfig.monitorSourceName'),
       render: (name, record) => (
         <Link
-          to={`/diagnosis/project/${projectId}/${record?.name}/${record?.id}/${MonitorSourceConfigTypeEnum.server_monitor}/monitorConfigList`}
+          to={`/diagnosis/project/${projectId}/${record?.name}/${record?.id}/${MonitorSourceConfigTypeEnum.server_monitor}/monitorItemList`}
         >
           {name}
         </Link>

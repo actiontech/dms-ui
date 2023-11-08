@@ -11,6 +11,8 @@ import {
   IV1AddServerReturn,
   IV1DeleteServerParams,
   IV1DeleteServerReturn,
+  IV1GetServerHostnameParams,
+  IV1GetServerHostnameReturn,
   IV1ListServersParams,
   IV1ListServersReturn,
   IV1UpdateServerParams,
@@ -40,6 +42,21 @@ class ServerService extends ServiceBase {
 
     return this.post<IV1DeleteServerReturn>(
       `/diagno/v1/projects/${project_uid}/server/delete`,
+      paramsData,
+      options
+    );
+  }
+
+  public V1GetServerHostname(
+    params: IV1GetServerHostnameParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IV1GetServerHostnameReturn>(
+      `/diagno/v1/projects/${project_uid}/server/hostname`,
       paramsData,
       options
     );

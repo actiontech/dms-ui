@@ -1,59 +1,75 @@
 import { IDataPermissionsTable } from './Modal/AddDataPermission/index.d';
-import { TableColumn } from '~/components/ProvisionTable';
-import { Button, Tag } from 'antd';
-import i18n from 'i18next';
+import {
+  ActiontechTableActionMeta,
+  ActiontechTableColumn
+} from '@actiontech/shared/lib/components/ActiontechTable';
+import { Space } from 'antd5';
+import { BasicTag } from '@actiontech/shared';
+import { t } from '../../../locale';
 
-export const authTableColumns = (
-  handleEditAuth: (index: number) => void,
-  handleRemoveAuth: (index: number) => IDataPermissionsTable
-): TableColumn<IDataPermissionsTable, 'operator'> => {
+export const AuthTableColumns =
+  (): ActiontechTableColumn<IDataPermissionsTable> => {
+    return [
+      {
+        title: () => <>{t('auth.addAuth.baseForm.baseFormTable.service')}</>,
+        dataIndex: 'serviceLabel',
+        fixed: true
+      },
+      {
+        title: () => <>{t('auth.addAuth.baseForm.baseFormTable.objects')}</>,
+        dataIndex: 'objectsLabel',
+        render: (objects: IDataPermissionsTable['objectsLabel']) => {
+          return (
+            <Space size={0}>
+              {objects.map((item) => {
+                return <BasicTag key={item}>{item}</BasicTag>;
+              })}
+            </Space>
+          );
+        }
+      },
+      {
+        title: () => <>{t('auth.addAuth.baseForm.baseFormTable.operation')}</>,
+        dataIndex: 'operationsLabel',
+        render: (operations: IDataPermissionsTable['operationsLabel']) => {
+          return (
+            <Space size={0}>
+              {operations.map((item) => {
+                return <BasicTag key={item}>{item}</BasicTag>;
+              })}
+            </Space>
+          );
+        }
+      }
+    ];
+  };
+
+export const AuthTableActions = (
+  onEditAuth: (index: number) => void,
+  onRemoveAuth: (index: number) => IDataPermissionsTable
+): ActiontechTableActionMeta<IDataPermissionsTable>[] => {
   return [
     {
-      title: () => <>{i18n.t('auth.addAuth.baseForm.baseFormTable.service')}</>,
-      dataIndex: 'serviceLabel',
-      fixed: true
-    },
-    {
-      title: () => <>{i18n.t('auth.addAuth.baseForm.baseFormTable.objects')}</>,
-      dataIndex: 'objectsLabel',
-      render: (objects: IDataPermissionsTable['objectsLabel']) => {
-        return objects.map((item) => {
-          return <Tag key={item}>{item}</Tag>;
-        });
+      key: 'edit',
+      text: t('common.edit'),
+      buttonProps: (record) => {
+        return {
+          onClick: onEditAuth.bind(null, record?.index ?? 0)
+        };
       }
     },
     {
-      title: () => (
-        <>{i18n.t('auth.addAuth.baseForm.baseFormTable.operation')}</>
-      ),
-      dataIndex: 'operationsLabel',
-      render: (operations: IDataPermissionsTable['operationsLabel']) => {
-        return operations.map((item) => {
-          return <Tag key={item}>{item}</Tag>;
-        });
-      }
-    },
-    {
-      title: () => <>{i18n.t('common.operate')}</>,
-      dataIndex: 'operator',
-      fixed: 'right',
-      width: 160,
-      render: (value, record, index: number) => {
-        return (
-          <>
-            <Button type="link" onClick={handleEditAuth.bind(null, index)}>
-              <>{i18n.t('common.edit')}</>
-            </Button>
-            <Button
-              type="text"
-              onClick={handleRemoveAuth.bind(null, index)}
-              danger
-            >
-              <>{i18n.t('common.delete')}</>
-            </Button>
-          </>
-        );
-      }
+      key: 'delete',
+      text: t('common.delete'),
+      buttonProps: () => {
+        return {
+          danger: true
+        };
+      },
+      confirm: (record) => ({
+        title: t('auth.editTemplate.removeConfirmTips'),
+        onConfirm: onRemoveAuth.bind(null, record?.index ?? 0)
+      })
     }
   ];
 };

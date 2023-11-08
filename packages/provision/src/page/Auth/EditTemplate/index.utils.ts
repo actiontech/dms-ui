@@ -36,7 +36,7 @@ export const generateDataPermissionValueByDataPermission = (
   dataPermissions: IGetDataPermissionsInDataPermissionTemplate[]
 ): IDataPermissionsTable[] => {
   return (
-    dataPermissions.map((item) => {
+    dataPermissions.map((item, permissionIndex) => {
       const objectsLabel: string[] = [];
       const objectsValue: IDataObjects[] = [];
       item.data_objects?.forEach((object) => {
@@ -79,6 +79,7 @@ export const generateDataPermissionValueByDataPermission = (
           })
           .flat() ?? [];
       return {
+        index: permissionIndex,
         business: item.business ?? '',
         serviceLabel: item.service_name ?? '',
         objectsLabel,

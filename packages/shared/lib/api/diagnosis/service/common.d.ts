@@ -17,6 +17,14 @@ export interface IGenericResp {
   message?: string;
 }
 
+export interface IGetServerHostnameReply {
+  code?: number;
+
+  hostname?: string;
+
+  message?: string;
+}
+
 export interface IListDBsReply {
   code?: number;
 

@@ -49,7 +49,7 @@ const MonitorConfig = () => {
 
   const {
     loading,
-    data: monitorConfigList,
+    data: monitorItemList,
     refresh
   } = useRequest(
     () => {
@@ -133,10 +133,10 @@ const MonitorConfig = () => {
             columns={columns}
             onChange={tableChange}
             pagination={{
-              total: monitorConfigList?.total ?? 0
+              total: monitorItemList?.total ?? 0
             }}
             rowKey="routine_name"
-            dataSource={monitorConfigList?.list ?? []}
+            dataSource={monitorItemList?.list ?? []}
             errorMessage={requestErrorMessage}
             actions={actions}
           />
