@@ -4,6 +4,5 @@ export type AuditResultMessageProps = {
   auditResult?: IAuditResult & { annotation?: string };
   styleClass?: string;
   showAnnotation?: boolean;
-  showMoreBtn?: boolean;
   moreBtnLink?: string;
 };
