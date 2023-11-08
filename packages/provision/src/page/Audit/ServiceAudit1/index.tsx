@@ -22,13 +22,22 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import ServiceAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
+import useServiceOptions from '~/hooks/useServiceOptions';
+import useBusinessOptions from '~/hooks/userBusinessOptions';
 
 const ServiceAudit: React.FC = () => {
   const { t } = useTranslation();
 
   const { projectID } = useCurrentProject();
 
-  const [open, { set }] = useBoolean();
+  const [
+    open,
+    { setTrue: setShowDetailDrawer, setFalse: setHideDetailDrawer }
+  ] = useBoolean();
+
+  const [searchValue, setSearchValue] = useState<string>();
+
+  const [currentBusiness, setCurrentBusiness] = useState<string>();
 
   const [currentDetail, setCurrentDetail] =
     useState<IListDataObjectServiceEvent>();
@@ -47,19 +56,24 @@ const ServiceAudit: React.FC = () => {
       const params: IAuditListDataObjectServiceEventsParams = {
         ...pagination,
         ...tableFilterInfo,
-        filter_by_namespace_uid: projectID
+        filter_by_namespace_uid: projectID,
+        keyword: searchValue
       };
       return handleTableRequestError(
         auth.AuditListDataObjectServiceEvents(params)
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, projectID]
+      refreshDeps: [pagination, tableFilterInfo, projectID, searchValue]
     }
   );
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(ServiceAuditTableColumns, updateTableFilterInfo);
+
+  const { serviceNameOptions } = useServiceOptions(currentBusiness);
+
+  const { businessOptions } = useBusinessOptions();
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IListDataObjectServiceEvent, FilterCustomProps>([
@@ -68,16 +82,29 @@ const ServiceAudit: React.FC = () => {
         {
           showTime: true
         }
+      ],
+      [
+        'business',
+        {
+          options: businessOptions,
+          onChange: (v: string) => setCurrentBusiness(v)
+        }
+      ],
+      [
+        'data_object_service_name',
+        {
+          options: serviceNameOptions
+        }
       ]
     ]);
-  }, []);
+  }, [serviceNameOptions, businessOptions]);
 
   const gotoDetail = useCallback(
     (record?: IListDataObjectServiceEvent) => {
       setCurrentDetail(record);
-      set(true);
+      setShowDetailDrawer();
     },
-    [set]
+    [setShowDetailDrawer]
   );
 
   const actions = useMemo(() => {
@@ -94,9 +121,7 @@ const ServiceAudit: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch: (value) => {
-            // todo 需后端提供接口
-          }
+          onSearch: setSearchValue
         }}
       />
       <TableFilterContainer
@@ -120,7 +145,7 @@ const ServiceAudit: React.FC = () => {
       <ServiceAuditDetailDrawer
         open={open}
         data={currentDetail}
-        onClose={() => set(false)}
+        onClose={() => setHideDetailDrawer()}
       />
     </div>
   );

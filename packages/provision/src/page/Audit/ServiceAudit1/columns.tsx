@@ -29,12 +29,16 @@ export const ServiceAuditTableColumns: ActiontechTableColumn<
     ]
   },
   {
-    dataIndex: 'data_object_service_name',
-    title: t('provisionAudit.serviceAudit.columns.service')
+    dataIndex: 'business',
+    title: t('provisionAudit.serviceAudit.columns.business'),
+    filterCustomType: 'select',
+    filterKey: 'filter_by_business'
   },
   {
-    dataIndex: 'business',
-    title: t('provisionAudit.serviceAudit.columns.business')
+    dataIndex: 'data_object_service_name',
+    title: t('provisionAudit.serviceAudit.columns.service'),
+    filterCustomType: 'select',
+    filterKey: 'filter_by_data_object_service_name'
   },
   {
     dataIndex: 'operation',
