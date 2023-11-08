@@ -31,6 +31,7 @@ export type RuleListProps = {
   isShowEndText?: boolean;
   activeDataKeys?: string[];
   onActionHandle?: (record: IRuleResV1, type: typeActionType) => void;
+  enableCheckDetail?: boolean;
 };
 
 export type RuleTypesProps = {

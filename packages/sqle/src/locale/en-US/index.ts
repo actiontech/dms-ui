@@ -10,6 +10,7 @@ import whitelist from './whitelist';
 import system from './system';
 import reportStatistics from './reportStatistics';
 import projectManage from './projectManage';
+import ruleKnowledge from './ruleKnowledge';
 import sqlManagement from './sqlManagement';
 import sqlAudit from './sqlAudit';
 
@@ -28,6 +29,7 @@ export default {
     system,
     reportStatistics,
     projectManage,
+    ruleKnowledge,
     sqlManagement,
     sqlAudit
   }

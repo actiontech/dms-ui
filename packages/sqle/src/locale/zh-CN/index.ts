@@ -16,6 +16,7 @@ import projectManage from './projectManage';
 import operationRecord from './operationRecord';
 import customRule from './customRule';
 import ruleManager from './ruleManager';
+import ruleKnowledge from './ruleKnowledge';
 import sqlManagement from './sqlManagement';
 import sqlAudit from './sqlAudit';
 
@@ -40,6 +41,7 @@ export default {
     operationRecord,
     customRule,
     ruleManager,
+    ruleKnowledge,
     sqlManagement,
     sqlAudit
   }
