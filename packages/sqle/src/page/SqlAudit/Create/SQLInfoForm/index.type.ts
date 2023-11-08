@@ -38,6 +38,7 @@ export type SQLInfoFormFields = {
 export type SQLInfoFormProps = {
   form: FormInstance<SQLInfoFormFields>;
   submit: (values: SQLInfoFormFields) => Promise<void>;
+  setAuditLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type SQLInfoFormItemProps = SQLInfoFormProps;

@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
+import { message } from 'antd5';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { useForm } from 'antd5/es/form/Form';
@@ -13,9 +15,9 @@ import { SqlAuditBaseInfoFormFields } from './BaseInfoForm/index.type';
 import { SQLInfoFormFields, SQLInfoFormProps } from './SQLInfoForm/index.type';
 import { ICreateSQLAuditRecordV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { message } from 'antd5';
 import { ISQLAuditRecordResData } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useEffect, useState } from 'react';
+
+export const FormSubmitStatusContext = React.createContext<boolean>(false);
 
 const SqlAuditCreate = () => {
   const { t } = useTranslation();
@@ -25,8 +27,8 @@ const SqlAuditCreate = () => {
 
   const [baseForm] = useForm<SqlAuditBaseInfoFormFields>();
   const [sqlInfoForm] = useForm<SQLInfoFormFields>();
-  // sql_audit_record_id
   const [auditId, setAuditId] = useState<string>('');
+  const [auditLoading, setAuditLoading] = useState(false);
 
   const auditSQL: SQLInfoFormProps['submit'] = async (values) => {
     const baseValues = await baseForm.validateFields();
@@ -39,9 +41,11 @@ const SqlAuditCreate = () => {
       instance_name: values.instanceName,
       instance_schema: values.instanceSchema,
       db_type: values.dbType,
-      git_http_url: values.gitHttpUrl,
-      git_user_name: values.gitUserName,
+      git_http_url: values.gitHttpUrl ? values.gitHttpUrl.trim() : undefined,
+      git_user_name: values.gitUserName ? values.gitUserName.trim() : undefined,
       git_user_password: values.gitUserPassword
+        ? values.gitUserPassword.trim()
+        : undefined
     };
 
     return sql_audit_record.CreateSQLAuditRecordV1(params).then((res) => {
@@ -101,8 +105,14 @@ const SqlAuditCreate = () => {
           <BasicButton onClick={onResetForm}>{t('common.reset')}</BasicButton>
         }
       />
-      <BaseInfoForm form={baseForm} />
-      <SQLInfoForm form={sqlInfoForm} submit={auditSQL} />
+      <FormSubmitStatusContext.Provider value={auditLoading}>
+        <BaseInfoForm form={baseForm} />
+        <SQLInfoForm
+          form={sqlInfoForm}
+          submit={auditSQL}
+          setAuditLoading={setAuditLoading}
+        />
+      </FormSubmitStatusContext.Provider>
     </>
   );
 };

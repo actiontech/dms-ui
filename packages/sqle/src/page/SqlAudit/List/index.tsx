@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { message } from 'antd5';
@@ -32,9 +32,11 @@ import SqlAuditListColumn, {
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
+import { SQLAuditRecordListUrlParamsKey } from '../../SqlManagement/component/SQLEEIndex/index.data';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
@@ -43,6 +45,15 @@ const SqlAuditList = () => {
     useTableRequestError();
   const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
     useTableRequestParams<ISQLAuditRecord, SqlAuditListTableFilterParamType>();
+  const filterDataFromUrl = useMemo(() => {
+    const searchStr = new URLSearchParams(location.search);
+    if (searchStr.has(SQLAuditRecordListUrlParamsKey.SQLAuditRecordID)) {
+      return (
+        searchStr.get(SQLAuditRecordListUrlParamsKey.SQLAuditRecordID) ?? ''
+      );
+    }
+    return '';
+  }, [location.search]);
   const [searchKeyword, setSearchKeyword] = useState<string>('');
   const [filterStatus, setFilterStatus] = useState<
     getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all'
@@ -60,14 +71,14 @@ const SqlAuditList = () => {
     refresh
   } = useRequest(
     () => {
-      // filter_sql_audit_record_ids???? 管控跳转到 审核的
       const params: IGetSQLAuditRecordsV1Params = {
         ...tableFilterInfo,
         ...pagination,
         filter_sql_audit_status:
           filterStatus === 'all' ? undefined : filterStatus,
         project_name: projectName,
-        fuzzy_search_tags: searchKeyword
+        fuzzy_search_tags: searchKeyword,
+        filter_sql_audit_record_ids: filterDataFromUrl
       };
 
       return handleTableRequestError(
@@ -75,7 +86,13 @@ const SqlAuditList = () => {
       );
     },
     {
-      refreshDeps: [tableFilterInfo, pagination, filterStatus, searchKeyword]
+      refreshDeps: [
+        tableFilterInfo,
+        pagination,
+        filterStatus,
+        searchKeyword,
+        filterDataFromUrl
+      ]
     }
   );
 

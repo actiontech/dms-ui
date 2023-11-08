@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState, useRef, useMemo } from 'react';
+import { useEffect, useState, useRef, useMemo, useContext } from 'react';
 
 import {
   FormAreaBlockStyleWrapper,
@@ -23,10 +23,12 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useSQLAuditRecordTag from '../../../../hooks/useSQLAuditRecordTag';
 import { useForm } from 'antd5/es/form/Form';
 import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';
+import { FormSubmitStatusContext } from '..';
 
 const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
+  const submitLoading = useContext(FormSubmitStatusContext);
 
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading, updateSQLAuditRecordTag, auditRecordTags } =
@@ -121,6 +123,7 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
                 allowClear
                 showSearch
                 mode="multiple"
+                disabled={submitLoading}
                 loading={loading}
                 options={customTagsOptionData}
                 dropdownRender={(menu) => (
