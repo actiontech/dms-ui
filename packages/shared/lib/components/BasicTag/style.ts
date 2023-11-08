@@ -20,6 +20,11 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
       margin-left: 6px;
       margin-right: 2px !important;
     }
+
+    &.basic-large-tag-wrapper,
+    &.basic-default-tag-wrapper {
+      font-size: 13px !important;
+    }
   }
 
   &.basic-tag-wrapper.basic-small-tag-wrapper.${ANTD_PREFIX_STR}-tag {
@@ -27,13 +32,6 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
     line-height: 22px;
     padding: 0 6px;
     font-size: 12px !important;
-  }
-
-  &.basic-tag-wrapper.${ANTD_PREFIX_STR}-tag {
-    &.basic-large-tag-wrapper,
-    &.basic-default-tag-wrapper {
-      font-size: 13px !important;
-    }
   }
 
   &.basic-tag-wrapper.basic-large-tag-wrapper.${ANTD_PREFIX_STR}-tag {
