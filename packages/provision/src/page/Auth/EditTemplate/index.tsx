@@ -1,7 +1,7 @@
 import { Space, Typography, Form, message } from 'antd5';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import { IDataPermissionsTable } from './Modal/AddDataPermission/index.d';
