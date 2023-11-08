@@ -23,15 +23,21 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import AuthAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
+import useProvisionUser from '~/hooks/uerProvisionUser';
 
 const AuthAudit: React.FC = () => {
   const { t } = useTranslation();
 
   const { projectID } = useCurrentProject();
 
-  const [open, { set }] = useBoolean();
+  const [
+    open,
+    { setTrue: setShowDetailDrawer, setFalse: setHideDetailDrawer }
+  ] = useBoolean();
 
   const [currentDetail, setCurrentDetail] = useState<IListAuthorizationEvent>();
+
+  const [searchValue, setSearchValue] = useState<string>();
 
   const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
     useTableRequestParams<
@@ -47,17 +53,20 @@ const AuthAudit: React.FC = () => {
       const params: IAuditListAuthorizationEventsParams = {
         ...pagination,
         ...tableFilterInfo,
-        filter_by_namespace_uid: projectID
+        filter_by_namespace_uid: projectID,
+        keyword: searchValue
       };
       return handleTableRequestError(auth.AuditListAuthorizationEvents(params));
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, projectID]
+      refreshDeps: [pagination, tableFilterInfo, projectID, searchValue]
     }
   );
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(AuthAuditTableColumns, updateTableFilterInfo);
+
+  const { userNameOptions } = useProvisionUser();
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IListAuthorizationEvent, FilterCustomProps>([
@@ -76,16 +85,28 @@ const AuthAudit: React.FC = () => {
           })),
           allowClear: true
         }
+      ],
+      [
+        'permission_user_name',
+        {
+          options: userNameOptions
+        }
+      ],
+      [
+        'executing_user_name',
+        {
+          options: userNameOptions
+        }
       ]
     ]);
-  }, []);
+  }, [userNameOptions]);
 
   const gotoDetail = useCallback(
     (record?: IListAuthorizationEvent) => {
       setCurrentDetail(record);
-      set(true);
+      setShowDetailDrawer();
     },
-    [set]
+    [setShowDetailDrawer]
   );
 
   const actions = useMemo(() => {
@@ -102,9 +123,7 @@ const AuthAudit: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch: (value) => {
-            // todo 待后端提供搜索接口
-          }
+          onSearch: setSearchValue
         }}
       />
       <TableFilterContainer
@@ -128,7 +147,7 @@ const AuthAudit: React.FC = () => {
       <AuthAuditDetailDrawer
         open={open}
         data={currentDetail}
-        onClose={() => set(false)}
+        onClose={() => setHideDetailDrawer()}
       />
     </div>
   );

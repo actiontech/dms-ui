@@ -54,7 +54,9 @@ export const AuthAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'permission_user_name',
     title: t('provisionAudit.authAudit.columns.permissionUser'),
-    render: commonUserRender
+    render: commonUserRender,
+    filterCustomType: 'select',
+    filterKey: 'filter_by_permission_user'
   },
   {
     dataIndex: 'purpose',
@@ -76,7 +78,9 @@ export const AuthAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'executing_user_name',
     title: t('provisionAudit.authAudit.columns.actionUser'),
-    render: commonUserRender
+    render: commonUserRender,
+    filterCustomType: 'select',
+    filterKey: 'filter_by_create_user'
   },
   {
     dataIndex: 'event_type',
