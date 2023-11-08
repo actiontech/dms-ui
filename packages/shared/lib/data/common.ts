@@ -83,7 +83,7 @@ export const SQLE_BASE_URL = '/sqle/';
 
 export const PROVISION_BASE_URL = '/provision/';
 
-export const DIAGNOSIS_BASE_URL = '/diagnosis/';
+export const DIAGNOSIS_BASE_URL = '/';
 
 export const DrawerFormLayout = {
   labelCol: { span: 24 },

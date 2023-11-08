@@ -19,7 +19,9 @@ export {
   IconRightArrowSelectSuffix,
   IconImport,
   IconCommonEdit,
-  IconCommonSelected
+  IconCommonSelected,
+  IconFormListDelete,
+  IconFormListAdd
 } from './common';
 
 export { type CustomIconProps } from './index.type';

@@ -8,15 +8,24 @@ import {
   IconStatusWarning,
   IconStatusError
 } from '../../icon/AuditPlan';
-import { AuditResultMessageStyleWrapper } from './style';
+import {
+  AuditResultMessageStyleWrapper,
+  AuditResultMessageWithAnnotationStyleWrapper
+} from './style';
+import { EmptyBox } from '@actiontech/shared';
+import { useBoolean } from 'ahooks';
+import { Typography } from 'antd5';
 
 const passStatusLevelData = ['normal', 'UNKNOWN'];
 
 const AuditResultMessage = ({
   auditResult,
-  styleClass
+  styleClass,
+  showAnnotation,
+  moreBtnLink
 }: AuditResultMessageProps) => {
   const { t } = useTranslation();
+  const [visible, { set }] = useBoolean(true);
 
   const renderIcon = useMemo(() => {
     const { level } = auditResult || {};
@@ -53,10 +62,33 @@ const AuditResultMessage = ({
     );
 
   return (
-    <AuditResultMessageStyleWrapper className={classNames([styleClass])}>
-      <span className="icon-wrapper">{renderIcon}</span>
-      <span className="text-wrapper">{renderMessage}</span>
-    </AuditResultMessageStyleWrapper>
+    <AuditResultMessageWithAnnotationStyleWrapper
+      className={classNames([styleClass])}
+      showAnnotation={showAnnotation}
+    >
+      <AuditResultMessageStyleWrapper onClick={() => set(!visible)}>
+        <span className="icon-wrapper">{renderIcon}</span>
+        <span className="text-wrapper">{renderMessage}</span>
+      </AuditResultMessageStyleWrapper>
+      <EmptyBox
+        if={
+          showAnnotation &&
+          visible &&
+          (!!auditResult.annotation || !!moreBtnLink)
+        }
+      >
+        <div className="annotation-wrapper">
+          {auditResult.annotation}
+          {/* IFTRUE_isEE */}
+          <EmptyBox if={!!moreBtnLink}>
+            <Typography.Link target="_blank" href={moreBtnLink}>
+              {t('common.showMore')}
+            </Typography.Link>
+          </EmptyBox>
+          {/* FITRUE_isEE */}
+        </div>
+      </EmptyBox>
+    </AuditResultMessageWithAnnotationStyleWrapper>
   );
 };
 

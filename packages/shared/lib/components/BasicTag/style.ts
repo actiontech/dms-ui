@@ -37,8 +37,8 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
 
   &.basic-tag-wrapper.${ANTD_PREFIX_STR}-tag:not(.basic-default-tag-wrapper) {
     color: ${({ color, theme }) =>
-      theme.sharedTheme.components.basicTag[color].color};
+      theme.sharedTheme.components.basicTag[color].color} !important;
     background: ${({ color, theme }) =>
-      theme.sharedTheme.components.basicTag[color].backgroundColor};
+      theme.sharedTheme.components.basicTag[color].backgroundColor} !important;
   }
 `;

@@ -4,6 +4,7 @@ import userCenter from './userCenter';
 import member from './member';
 import project from './project';
 import system from './system';
+import database from './database';
 
 //sqle redux
 import auditPlan from 'sqle/src/store/auditPlan';
@@ -13,8 +14,9 @@ import nav from 'sqle/src/store/nav';
 import reportStatistics from 'sqle/src/store/reportStatistics';
 import ruleTemplate from 'sqle/src/store/ruleTemplate';
 import whitelist from 'sqle/src/store/whitelist';
-// import system from 'sqle/src/store/system';
 import projectManage from 'sqle/src/store/projectManage';
+import sqleManagement from 'sqle/src/store/sqleManagement';
+import { diagnosisStoreData } from './diagnosis';
 
 const store = configureStore({
   reducer: {
@@ -23,6 +25,7 @@ const store = configureStore({
     member,
     project,
     system,
+    database,
     nav,
     auditPlan,
     globalRuleTemplate,
@@ -30,7 +33,9 @@ const store = configureStore({
     reportStatistics,
     ruleTemplate,
     whitelist,
-    projectManage
+    projectManage,
+    sqleManagement,
+    ...diagnosisStoreData
   }
 });
 

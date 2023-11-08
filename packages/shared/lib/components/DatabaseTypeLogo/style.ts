@@ -1,4 +1,6 @@
-.database-type-logo-wrapper {
+import { styled } from '@mui/material/styles';
+
+export const DatabaseTypeLogoStyleWrapper = styled('div')`
   white-space: nowrap;
   overflow: hidden;
   display: flex;
@@ -13,4 +15,4 @@
   span {
     margin-left: 4px;
   }
-}
+`;
