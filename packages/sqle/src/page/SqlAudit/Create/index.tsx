@@ -102,7 +102,9 @@ const SqlAuditCreate = () => {
           </Link>
         }
         extra={
-          <BasicButton onClick={onResetForm}>{t('common.reset')}</BasicButton>
+          <BasicButton disabled={auditLoading} onClick={onResetForm}>
+            {t('common.reset')}
+          </BasicButton>
         }
       />
       <FormSubmitStatusContext.Provider value={auditLoading}>
