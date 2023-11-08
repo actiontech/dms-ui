@@ -5,8 +5,6 @@ import {
 import { IViewDatabaseReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
 import { t } from '../../../../locale';
 import { ViewDatabaseReplyStatusEnum } from '@actiontech/shared/lib/api/diagnosis/service/common.enum';
-import { Link } from 'react-router-dom';
-import { MonitorSourceConfigTypeEnum } from '../../index.type';
 
 const databaseMonitorStatusDictionary = {
   [ViewDatabaseReplyStatusEnum.healthy]: t('monitorSourceConfig.status.normal'),
@@ -22,14 +20,6 @@ export const DatabaseMonitorColumns = (
   {
     dataIndex: 'monitor_name',
     title: t('monitorSourceConfig.monitorSourceName')
-    // todo: IViewDatabaseReply miss id
-    // render: (name, record) => (
-    //   <Link
-    //     to={`/diagnosis/project/${projectId}/${record?.monitor_name}/${record?.id}/${MonitorSourceConfigTypeEnum.database_monitor}/monitorItemList`}
-    //   >
-    //     {name}
-    //   </Link>
-    // )
   },
   {
     dataIndex: 'datasource_name',
