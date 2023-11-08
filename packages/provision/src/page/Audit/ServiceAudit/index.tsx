@@ -30,7 +30,7 @@ const AuthAudit = () => {
           filter_by_business: params.get('filter_by_business') ?? undefined,
           filter_by_data_object_service_name:
             params.get('filter_by_data_object_service_name') ?? undefined,
-          filter_by_operation: params.get('filter_by_operation') ?? undefined,
+          // filter_by_operation: params.get('filter_by_operation') ?? undefined,
           filter_by_generated_time_start:
             params.get('filter_by_generated_time_start') ?? undefined,
           filter_by_generated_time_end:

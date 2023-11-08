@@ -29,8 +29,8 @@ const TemplateAudit = () => {
           page_size: pageSize,
           filter_by_create_user:
             params.get('filter_by_create_user') ?? undefined,
-          filter_by_data_permission_template_name:
-            params.get('filter_by_data_permission_template_name') ?? undefined,
+          // filter_by_data_permission_template_name:
+          //   params.get('filter_by_data_permission_template_name') ?? undefined,
           filter_by_data_object_service_name:
             params.get('filter_by_data_object_service_name') ?? undefined,
           filter_by_event_type: params.get('filter_by_event_type') ?? undefined,
