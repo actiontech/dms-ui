@@ -21,6 +21,7 @@ const EditText: React.FC<EditTypeProps> = ({
         <EditTextStyleWrapper
           {...props}
           editable={{
+            triggerType: ['icon', 'text'],
             ...editable,
             onChange: (value) => {
               internalValue.current = value;
@@ -58,6 +59,7 @@ const EditText: React.FC<EditTypeProps> = ({
         <EditTextStyleWrapper
           {...props}
           editable={{
+            triggerType: ['icon', 'text'],
             ...editable,
             editing: showEdit,
             onChange: (value) => {
