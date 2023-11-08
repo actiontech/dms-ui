@@ -37,24 +37,31 @@ const Rule = () => {
     RuleFilterContainerMeta()
   );
 
-  const { data: projectTemplateRules, run: getProjectTemplateRules } =
-    useRequest(
-      (project?: string, ruleTemplate?: string) =>
-        rule_template
-          .getProjectRuleTemplateV1({
-            rule_template_name: ruleTemplate ?? '',
-            project_name: project ?? ''
-          })
-          .then((res) => {
-            setDbType(res.data.data?.db_type ?? '');
-            return res.data?.data?.rule_list ?? [];
-          }),
-      {
-        manual: true
-      }
-    );
+  const {
+    data: projectTemplateRules,
+    loading: getProjectTemplateRulesLoading,
+    run: getProjectTemplateRules
+  } = useRequest(
+    (project?: string, ruleTemplate?: string) =>
+      rule_template
+        .getProjectRuleTemplateV1({
+          rule_template_name: ruleTemplate ?? '',
+          project_name: project ?? ''
+        })
+        .then((res) => {
+          setDbType(res.data.data?.db_type ?? '');
+          return res.data?.data?.rule_list ?? [];
+        }),
+    {
+      manual: true
+    }
+  );
 
-  const { data: globalTemplateRules, run: getGlobalTemplateRules } = useRequest(
+  const {
+    data: globalTemplateRules,
+    loading: getGlobalTemplateRulesLoading,
+    run: getGlobalTemplateRules
+  } = useRequest(
     (ruleTemplate?: string) =>
       rule_template
         .getRuleTemplateV1({
@@ -86,13 +93,26 @@ const Rule = () => {
         })
         .then((res) => res.data?.data ?? []),
     {
+      ready: !!dbType,
       refreshDeps: [dbType]
     }
   );
 
   const apiLoading = useMemo(() => {
-    return getAllRulesLoading || getDriverNameListLoading;
-  }, [getAllRulesLoading, getDriverNameListLoading]);
+    return projectName
+      ? getProjectTemplateRulesLoading ||
+          getAllRulesLoading ||
+          getDriverNameListLoading
+      : getGlobalTemplateRulesLoading ||
+          getAllRulesLoading ||
+          getDriverNameListLoading;
+  }, [
+    getAllRulesLoading,
+    getDriverNameListLoading,
+    getGlobalTemplateRulesLoading,
+    getProjectTemplateRulesLoading,
+    projectName
+  ]);
 
   return (
     <>

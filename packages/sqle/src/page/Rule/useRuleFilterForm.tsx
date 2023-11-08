@@ -11,6 +11,9 @@ import {
   TableFilterContainerProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { GetRuleListV1Params } from './index.data';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
+import { RuleListProjectFilterStyleWrapper } from './style';
 
 export enum RuleUrlParamKey {
   projectID = 'projectID',
@@ -31,6 +34,7 @@ const useRuleFilterForm = (
   const [dbType, setDbType] = useState<string | undefined>(undefined);
   const {
     loading: getDriverNameListLoading,
+    dbTypeOptions,
     driverNameList,
     updateDriverNameList
   } = useDatabaseType();
@@ -49,31 +53,34 @@ const useRuleFilterForm = (
 
   const projectOptions: SelectProps['options'] = useMemo(() => {
     return bindProjects.map((v) => ({
-      label: v.project_name,
+      label: (
+        <RuleListProjectFilterStyleWrapper>
+          <TableColumnWithIconStyleWrapper>
+            <IconProjectFlag />
+            <span> {v.project_name} </span>
+          </TableColumnWithIconStyleWrapper>
+        </RuleListProjectFilterStyleWrapper>
+      ),
       value: v.project_name
     }));
   }, [bindProjects]);
-  const dbTypeOptions: SelectProps['options'] = useMemo(() => {
-    return driverNameList.map((v) => ({
-      label: v,
-      value: v
-    }));
-  }, [driverNameList]);
 
   const ruleTemplateOptions: SelectProps['options'] = useMemo(() => {
     const list = projectName ? ruleTemplateList : globalRuleTemplateList;
     const groupLabel = projectName
       ? t('rule.projectRuleTemplate')
       : t('rule.globalRuleTemplate');
-    return [
-      {
-        label: groupLabel,
-        options: list.map((v) => ({
-          label: v.rule_template_name,
-          value: v.rule_template_name
-        }))
-      }
-    ];
+    return list.length > 0
+      ? [
+          {
+            label: groupLabel,
+            options: list.map((v) => ({
+              label: v.rule_template_name,
+              value: v.rule_template_name
+            }))
+          }
+        ]
+      : [];
   }, [globalRuleTemplateList, projectName, ruleTemplateList, t]);
 
   const ruleFilterContainerCustomProps: TableFilterContainerProps<
@@ -129,6 +136,7 @@ const useRuleFilterForm = (
           loading: getDriverNameListLoading,
           value: dbType,
           onChange: setDbType,
+          allowClear: false,
           disabled: !!ruleTemplateName,
           style: { width: 300 }
         }
