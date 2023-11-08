@@ -9,7 +9,7 @@ module.exports = {
     '!src/**/*.d.{ts,tsx}',
     '!src/**/*.type.{ts,tsx}',
     '!src/locale/**/*.{ts,tsx}',
-    '!src/testUtil/**/*.{ts,tsx}',
+    '!src/testUtils/**/*.{ts,tsx}',
     '!src/data/**/*.{ts,tsx}',
     '!src/index.tsx',
     '!src/router/router.tsx'

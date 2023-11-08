@@ -23,13 +23,20 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import TemplateAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
+import useProvisionUser from '~/hooks/uerProvisionUser';
+import useServiceOptions from '~/hooks/useServiceOptions';
 
 const TemplateAudit: React.FC = () => {
   const { t } = useTranslation();
 
   const { projectID } = useCurrentProject();
 
-  const [open, { set }] = useBoolean();
+  const [
+    open,
+    { setTrue: setShowDetailDrawer, setFalse: setHideDetailDrawer }
+  ] = useBoolean();
+
+  const [searchValue, setSearchValue] = useState<string>();
 
   const [currentDetail, setCurrentDetail] =
     useState<IListDataPermissionTemplateEvent>();
@@ -48,19 +55,24 @@ const TemplateAudit: React.FC = () => {
       const params: IAuditListDataPermissionTemplateEventsParams = {
         ...pagination,
         ...tableFilterInfo,
-        filter_by_namespace_uid: projectID
+        filter_by_namespace_uid: projectID,
+        keyword: searchValue
       };
       return handleTableRequestError(
         auth.AuditListDataPermissionTemplateEvents(params)
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, projectID]
+      refreshDeps: [pagination, tableFilterInfo, projectID, searchValue]
     }
   );
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(TemplateAuditTableColumns, updateTableFilterInfo);
+
+  const { userNameOptions } = useProvisionUser();
+
+  const { serviceNameOptions } = useServiceOptions();
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IListDataPermissionTemplateEvent, FilterCustomProps>([
@@ -79,16 +91,28 @@ const TemplateAudit: React.FC = () => {
           })),
           allowClear: true
         }
+      ],
+      [
+        'executing_user_name',
+        {
+          options: userNameOptions
+        }
+      ],
+      [
+        'data_permissions',
+        {
+          options: serviceNameOptions
+        }
       ]
     ]);
-  }, []);
+  }, [userNameOptions, serviceNameOptions]);
 
   const gotoDetail = useCallback(
     (record?: IListDataPermissionTemplateEvent) => {
       setCurrentDetail(record);
-      set(true);
+      setShowDetailDrawer();
     },
-    [set]
+    [setShowDetailDrawer]
   );
 
   const actions = useMemo(() => {
@@ -105,9 +129,7 @@ const TemplateAudit: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch: (value) => {
-            // todo 需后端提供筛选接口
-          }
+          onSearch: setSearchValue
         }}
       />
       <TableFilterContainer
@@ -131,7 +153,7 @@ const TemplateAudit: React.FC = () => {
       <TemplateAuditDetailDrawer
         open={open}
         data={currentDetail}
-        onClose={() => set(false)}
+        onClose={() => setHideDetailDrawer()}
       />
     </div>
   );

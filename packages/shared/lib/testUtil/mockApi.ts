@@ -33,8 +33,8 @@ export const createSuccessResponse = (ctx: RestContext, data?: any) => {
     ctx.status(200),
     ctx.json({
       code: 0,
-      msg: 'ok',
-      payload: data
+      message: 'ok',
+      ...data
     })
   ];
 };
@@ -53,8 +53,8 @@ export const createSpySuccessResponse = (
         statusText,
         data: {
           code: 0,
-          msg: 'ok',
-          payload: data
+          message: 'ok',
+          ...data
         }
       });
     }, 3000);
@@ -74,8 +74,8 @@ export const createSpyFailResponse = (
         statusText,
         data: {
           code: 100,
-          msg: 'error',
-          payload: data
+          message: 'error',
+          ...data
         }
       });
     }, 3000);
@@ -95,8 +95,8 @@ export const createSpyErrorResponse = (
         statusText,
         data: {
           code: 100,
-          msg: 'error',
-          payload: data
+          message: 'error',
+          ...data
         }
       });
     }, 3000);

@@ -77,14 +77,18 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
           </BasicToolTips>
         </EmptyBox>
       );
-    }
+    },
+    filterCustomType: 'select',
+    filterKey: 'filter_by_data_object_service_name'
   },
   {
     dataIndex: 'executing_user_name',
     title: t('provisionAudit.authAudit.columns.actionUser'),
     render: (value: string) => {
       return <AvatarCom name={value} />;
-    }
+    },
+    filterCustomType: 'select',
+    filterKey: 'filter_by_create_user'
   },
   {
     dataIndex: 'event_type',

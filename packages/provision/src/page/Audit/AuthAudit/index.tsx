@@ -30,12 +30,12 @@ const AuthAudit = () => {
           page_size: pageSize,
           filter_by_create_user:
             params.get('filter_by_create_user') ?? undefined,
-          filter_by_data_permission_template_name:
-            params.get('filter_by_data_permission_template_name') ?? undefined,
+          // filter_by_data_permission_template_name:
+          //   params.get('filter_by_data_permission_template_name') ?? undefined,
           filter_by_event_type: params.get('filter_by_event_type') ?? undefined,
           filter_by_permission_user:
             params.get('filter_by_permission_user') ?? undefined,
-          filter_by_purpose: params.get('filter_by_purpose') ?? undefined,
+          // filter_by_purpose: params.get('filter_by_purpose') ?? undefined,
           filter_by_generated_time_start:
             params.get('filter_by_generated_time_start') ?? undefined,
           filter_by_generated_time_end:
