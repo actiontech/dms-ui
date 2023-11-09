@@ -5,35 +5,39 @@ import { IListService } from '@actiontech/shared/lib/api/provision/service/commo
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
 
-const useServiceOptions = (business?: string) => {
+const useServiceOptions = () => {
   const { projectID } = useCurrentProject();
 
   const [serviceList, setServiceList] = useState<IListService[]>([]);
 
   const [loading, { setTrue, setFalse }] = useBoolean();
 
-  const updateServiceList = useCallback(() => {
-    setTrue();
-    auth
-      .AuthListService({
-        page_index: 1,
-        page_size: 999,
-        filter_by_namespace: projectID
-      })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setServiceList(res.data?.data ?? []);
-        } else {
+  const updateServiceList = useCallback(
+    (business?: string) => {
+      setTrue();
+      auth
+        .AuthListService({
+          page_index: 1,
+          page_size: 999,
+          filter_by_namespace: projectID,
+          business
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            setServiceList(res.data?.data ?? []);
+          } else {
+            setServiceList([]);
+          }
+        })
+        .catch(() => {
           setServiceList([]);
-        }
-      })
-      .catch(() => {
-        setServiceList([]);
-      })
-      .finally(() => {
-        setFalse();
-      });
-  }, [setFalse, setTrue, projectID]);
+        })
+        .finally(() => {
+          setFalse();
+        });
+    },
+    [setFalse, setTrue, projectID]
+  );
 
   const serviceOptions = useMemo(() => {
     return serviceList?.map((service) => {

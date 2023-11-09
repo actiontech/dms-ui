@@ -4,7 +4,7 @@ import {
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IListDataObjectServiceEvent } from '@actiontech/shared/lib/api/provision/service/common';
-import { formatTime } from '~/utils/Common';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '~/locale';
 import { IAuditListDataObjectServiceEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 

@@ -1,25 +1,51 @@
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { useRequest } from 'ahooks';
+import { useMemo, useCallback, useState } from 'react';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useBoolean } from 'ahooks';
 
 const useBusinessOptions = () => {
   const { projectID } = useCurrentProject();
 
-  const { data: businessOptions } = useRequest(() =>
+  const [businessList, setBusinessList] = useState<string[]>([]);
+
+  const [loading, { setTrue, setFalse }] = useBoolean();
+
+  const updateBusinessList = useCallback(() => {
+    setTrue();
     auth
       .AuthListBusiness({
         namespace_uid: projectID
       })
       .then((res) => {
-        return res.data.data?.businesses?.map((item) => ({
-          value: item ?? '',
-          label: item ?? ''
-        }));
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setBusinessList(res.data.data?.businesses ?? []);
+        } else {
+          setBusinessList([]);
+        }
       })
-  );
+      .catch(() => {
+        setBusinessList([]);
+      })
+      .finally(() => {
+        setFalse();
+      });
+  }, [setFalse, setTrue, projectID]);
+
+  const businessOptions = useMemo(() => {
+    return businessList?.map((business) => {
+      return {
+        value: business,
+        label: business
+      };
+    });
+  }, [businessList]);
 
   return {
-    businessOptions
+    loading,
+    businessOptions,
+    businessList,
+    updateBusinessList
   };
 };
 

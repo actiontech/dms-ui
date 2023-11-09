@@ -1,80 +1,162 @@
-import { SyncOutlined } from '@ant-design/icons';
-import { Box } from '@mui/system';
-import { useRequest } from 'ahooks';
-import { Card, Space, Button } from 'antd';
+import { useMemo, useCallback, useState, useEffect } from 'react';
+import { PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import ProvisionTable from '~/components/ProvisionTable';
-import useTablePagination from '~/components/ProvisionTable/hooks/useTablePagination';
-import { serviceAuditTableColumns } from './TableColumns';
-import AuthAuditFilterForm from './ServiceAuditFilterForm';
-import { useSearchParams } from 'react-router-dom';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  ActiontechTable,
+  useTableRequestParams,
+  useTableRequestError,
+  TableFilterContainer,
+  useTableFilterContainer,
+  FilterCustomProps,
+  TableToolbar
+} from '@actiontech/shared/lib/components/ActiontechTable';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
+import { IAuditListDataObjectServiceEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
+import { IListDataObjectServiceEvent } from '@actiontech/shared/lib/api/provision/service/common';
+import { useRequest } from 'ahooks';
+import {
+  ServiceAuditTableFilterParamType,
+  ServiceAuditTableColumns,
+  ServiceAuditTableActions
+} from './columns';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import ServiceAuditDetailDrawer from './DetailDrawer';
+import { useBoolean } from 'ahooks';
+import useServiceOptions from '~/hooks/useServiceOptions';
+import useBusinessOptions from '~/hooks/userBusinessOptions';
 
-const AuthAudit = () => {
+const ServiceAudit: React.FC = () => {
   const { t } = useTranslation();
-  const { pageIndex, pageSize, total, setTotal, handleTablePaginationChange } =
-    useTablePagination();
-  const [params] = useSearchParams();
+
   const { projectID } = useCurrentProject();
-  const {
-    data: dataSource,
-    loading,
-    refresh
-  } = useRequest(
-    () =>
-      auth
-        .AuditListDataObjectServiceEvents({
-          page_index: pageIndex,
-          page_size: pageSize,
-          filter_by_business: params.get('filter_by_business') ?? undefined,
-          filter_by_data_object_service_name:
-            params.get('filter_by_data_object_service_name') ?? undefined,
-          // filter_by_operation: params.get('filter_by_operation') ?? undefined,
-          filter_by_generated_time_start:
-            params.get('filter_by_generated_time_start') ?? undefined,
-          filter_by_generated_time_end:
-            params.get('filter_by_generated_time_end') ?? undefined,
-          filter_by_namespace_uid: projectID
-        })
-        .then((res) => {
-          setTotal(res.data.total_nums ?? 0);
-          return res.data.data;
-        }),
+
+  const [
+    open,
+    { setTrue: setShowDetailDrawer, setFalse: setHideDetailDrawer }
+  ] = useBoolean();
+
+  const [searchValue, setSearchValue] = useState<string>();
+
+  const [currentBusiness, setCurrentBusiness] = useState<string>();
+
+  const [currentDetail, setCurrentDetail] =
+    useState<IListDataObjectServiceEvent>();
+
+  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
+    useTableRequestParams<
+      IListDataObjectServiceEvent,
+      ServiceAuditTableFilterParamType
+    >();
+
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
+
+  const { data, loading, refresh } = useRequest(
+    () => {
+      const params: IAuditListDataObjectServiceEventsParams = {
+        ...pagination,
+        ...tableFilterInfo,
+        filter_by_namespace_uid: projectID,
+        keyword: searchValue
+      };
+      return handleTableRequestError(
+        auth.AuditListDataObjectServiceEvents(params)
+      );
+    },
     {
-      refreshDeps: [pageIndex, pageSize, params, projectID]
+      refreshDeps: [pagination, tableFilterInfo, projectID, searchValue]
     }
   );
 
-  return (
-    <Box
-      sx={{
-        padding: (theme) => theme.layout.padding
-      }}
-    >
-      <Card
-        title={
-          <Space>
-            {t('provisionAudit.serviceAudit.title')}
-            <Button onClick={refresh} data-testid="refresh">
-              <SyncOutlined spin={loading} />
-            </Button>
-          </Space>
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(ServiceAuditTableColumns, updateTableFilterInfo);
+
+  const { serviceNameOptions, updateServiceList } = useServiceOptions();
+
+  const { businessOptions, updateBusinessList } = useBusinessOptions();
+
+  const filterCustomProps = useMemo(() => {
+    return new Map<keyof IListDataObjectServiceEvent, FilterCustomProps>([
+      [
+        'generated_time',
+        {
+          showTime: true
         }
-      >
-        <AuthAuditFilterForm />
-        <ProvisionTable
-          rowKey="event_uid"
-          loading={loading}
-          columns={serviceAuditTableColumns(projectID ?? '')}
-          dataSource={dataSource ?? []}
-          pagination={{ total }}
-          onChange={handleTablePaginationChange}
-          scroll={{ x: 'max-content' }}
-        />
-      </Card>
-    </Box>
+      ],
+      [
+        'business',
+        {
+          options: businessOptions,
+          onChange: (v: string) => setCurrentBusiness(v)
+        }
+      ],
+      [
+        'data_object_service_name',
+        {
+          options: serviceNameOptions
+        }
+      ]
+    ]);
+  }, [serviceNameOptions, businessOptions]);
+
+  const gotoDetail = useCallback(
+    (record?: IListDataObjectServiceEvent) => {
+      setCurrentDetail(record);
+      setShowDetailDrawer();
+    },
+    [setShowDetailDrawer]
+  );
+
+  const actions = useMemo(() => {
+    return ServiceAuditTableActions(gotoDetail);
+  }, [gotoDetail]);
+
+  useEffect(() => {
+    updateServiceList(currentBusiness);
+  }, [currentBusiness, updateServiceList]);
+
+  useEffect(() => {
+    updateBusinessList();
+  }, [updateBusinessList]);
+
+  return (
+    <div>
+      <PageHeader title={t('provisionAudit.serviceAudit.title')} />
+      <TableToolbar
+        refreshButton={{ refresh, disabled: loading }}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
+        searchInput={{
+          onSearch: setSearchValue
+        }}
+      />
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        disabled={loading}
+        filterCustomProps={filterCustomProps}
+      />
+      <ActiontechTable
+        rowKey="event_uid"
+        dataSource={data?.list}
+        pagination={{
+          total: data?.total ?? 0
+        }}
+        loading={loading}
+        columns={ServiceAuditTableColumns}
+        onChange={tableChange}
+        errorMessage={requestErrorMessage}
+        actions={actions}
+      />
+      <ServiceAuditDetailDrawer
+        open={open}
+        data={currentDetail}
+        onClose={() => setHideDetailDrawer()}
+      />
+    </div>
   );
 };
 
-export default AuthAudit;
+export default ServiceAudit;
