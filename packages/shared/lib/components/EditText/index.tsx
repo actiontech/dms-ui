@@ -30,9 +30,6 @@ const EditText: React.FC<EditTypeProps> = ({
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
             },
-            onCancel: () => {
-              setShowEdit(false);
-            },
             icon: <IconEdit />,
             tooltip: false
           }}
