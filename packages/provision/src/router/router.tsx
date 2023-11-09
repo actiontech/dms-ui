@@ -15,9 +15,6 @@ const ExternalDataSource = React.lazy(
 const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
-const TemplateAuditDetail = React.lazy(
-  () => import('~/page/Audit/TemplateAuditDetail')
-);
 const ServiceAuditDetail = React.lazy(
   () => import('~/page/Audit/ServiceAuditDetail')
 );
@@ -122,12 +119,6 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         key: 'serviceAudit',
         label: 'provisionNav.menu.serviceAudit',
         element: <ServiceAudit />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/audit/template/:id`,
-        key: 'templateAuditDetail',
-        hideInMenu: true,
-        element: <TemplateAuditDetail />
       },
       {
         path: `${PROJECT_ROUTER_PARAM}/audit/service/:id`,
