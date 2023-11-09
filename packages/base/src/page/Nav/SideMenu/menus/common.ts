@@ -2,10 +2,25 @@ import { MenuProps } from 'antd5';
 import { ItemType, SubMenuType } from 'antd5/es/menu/hooks/useItems';
 import { NavigateFunction } from 'react-router-dom';
 
+export type MenuItemWithOrder = ItemType & {
+  order: number;
+};
+
+export type CustomMenuItemType = MenuItemWithOrder & {
+  conflict?: {
+    id: string;
+    transform: (
+      isConflict: boolean,
+      _self: MenuItemWithOrder,
+      other: MenuItemWithOrder[]
+    ) => MenuItemWithOrder | null;
+  };
+};
+
 export type GenerateMenuItemsType = (arg: {
   navigate: NavigateFunction;
   projectID?: string;
-}) => Array<ItemType & { order: number }>;
+}) => Array<CustomMenuItemType>;
 
 export const SIDE_MENU_DATA_PLACEHOLDER_KEY = 'projectID';
 

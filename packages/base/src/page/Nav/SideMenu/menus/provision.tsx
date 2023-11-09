@@ -10,16 +10,15 @@ import {
 import Icon from '@ant-design/icons';
 import {
   GenerateMenuItemsType,
-  SIDE_MENU_DATA_PLACEHOLDER_KEY
+  MenuItemWithOrder,
+  SIDE_MENU_DATA_PLACEHOLDER_KEY,
+  isAdminKeys
 } from './common';
-import { BaseMenuItems } from './base';
 
 export const ProvisionMenuItems: GenerateMenuItemsType = ({
   navigate,
   projectID = ''
 }) => [
-  ...BaseMenuItems({ navigate, projectID }),
-
   {
     order: 5,
     label: t('dmsMenu.operateAndAudit'),
@@ -48,11 +47,11 @@ export const ProvisionMenuItems: GenerateMenuItemsType = ({
     ]
   },
   {
-    order: 7,
+    order: 9,
     type: 'divider'
   },
   {
-    order: 8,
+    order: 10,
     type: 'group',
     label: t('dmsMenu.groupLabel.dataSecurity'),
     children: [

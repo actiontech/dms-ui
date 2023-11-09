@@ -13,16 +13,15 @@ import {
 import Icon from '@ant-design/icons';
 import {
   GenerateMenuItemsType,
+  MenuItemWithOrder,
   SIDE_MENU_DATA_PLACEHOLDER_KEY,
   isAdminKeys
 } from './common';
-import { BaseMenuItems } from './base';
 
 export const SQLEMenuItems: GenerateMenuItemsType = ({
   navigate,
   projectID = ''
 }) => [
-  ...BaseMenuItems({ navigate, projectID }),
   {
     order: 1,
     label: t('dmsMenu.projectOverview'),
@@ -49,7 +48,17 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
     label: t('dmsMenu.operateAndAudit'),
     icon: <Icon component={IconOperateAndAudit} />,
     key: isAdminKeys.operate,
-    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`)
+    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`),
+    conflict: {
+      id: 'test',
+      transform: (isConflict: boolean, _self: MenuItemWithOrder) => {
+        if (isConflict) {
+          return null;
+        }
+
+        return _self;
+      }
+    }
   },
   /* FITRUE_isEE */
   {

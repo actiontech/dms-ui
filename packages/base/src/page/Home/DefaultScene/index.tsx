@@ -10,13 +10,6 @@ import {
 } from './menus/sqle';
 /* FITRUE_isSQLE */
 
-/* IFTRUE_isDMS */
-import {
-  genDMSAdminUserDevopsSteps,
-  genDMSNormalUserDevopsSteps
-} from './menus/dms';
-/* FITRUE_isDMS */
-
 /* IFTRUE_isPROVISION */
 import {
   genProvisionAdminUserDevopsSteps,
@@ -37,10 +30,6 @@ export const AdminUserDevopsSteps: (
     genSQLEAdminUserDevopsSteps({ navigate, projectID }),
     /* FITRUE_isSQLE */
 
-    /* IFTRUE_isDMS */
-    genDMSAdminUserDevopsSteps({ navigate, projectID }),
-    /* FITRUE_isDMS */
-
     /* IFTRUE_isPROVISION */
     genProvisionAdminUserDevopsSteps({ navigate, projectID })
     /* FITRUE_isPROVISION */
@@ -56,10 +45,6 @@ export const NormalUserDevopsSteps: (
     /* IFTRUE_isSQLE */
     genSQLENormalUserDevopsSteps({ navigate, projectID }),
     /* FITRUE_isSQLE */
-
-    /* IFTRUE_isDMS */
-    genDMSNormalUserDevopsSteps({ navigate, projectID }),
-    /* FITRUE_isDMS */
 
     /* IFTRUE_isPROVISION */
     genProvisionNormalUserDevopsSteps({ navigate, projectID })

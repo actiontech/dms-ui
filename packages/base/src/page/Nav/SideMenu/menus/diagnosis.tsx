@@ -5,19 +5,17 @@ import {
   GenerateMenuItemsType,
   SIDE_MENU_DATA_PLACEHOLDER_KEY
 } from './common';
-import { BaseMenuItems } from './base';
 
 export const DiagnosisMenuItems: GenerateMenuItemsType = ({
   navigate,
   projectID = ''
 }) => [
-  ...BaseMenuItems({ navigate, projectID }),
   {
-    order: 5,
+    order: 11,
     type: 'divider'
   },
   {
-    order: 7,
+    order: 12,
     type: 'group',
     label: t('dmsMenu.inspectionAndDiagnosis'),
     children: [
