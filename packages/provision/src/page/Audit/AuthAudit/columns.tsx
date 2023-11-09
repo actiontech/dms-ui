@@ -7,7 +7,7 @@ import {
   IListAuthorizationEvent,
   IDataPermissionTemplateReply
 } from '@actiontech/shared/lib/api/provision/service/common';
-import { formatTime } from '~/utils/Common';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '~/locale';
 import { IAuditListAuthorizationEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { Space } from 'antd5';
