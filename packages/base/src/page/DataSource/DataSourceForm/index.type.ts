@@ -20,6 +20,7 @@ export type DataSourceFormField = {
   password: string;
   business: string;
   maintenanceTime: MaintenanceTimeValue[];
+  needSqlAuditService?: boolean;
   ruleTemplateId?: string;
   ruleTemplateName?: string;
   allowQueryWhenLessThanAuditLevel?: SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum;

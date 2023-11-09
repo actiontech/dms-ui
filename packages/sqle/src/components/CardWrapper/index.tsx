@@ -1,9 +1,7 @@
 import { ReactNode } from 'react';
-import { NavigateOptions, To } from 'react-router-dom';
+import { NavigateOptions, To, useNavigate } from 'react-router-dom';
 import { CardProps, Tooltip } from 'antd5';
 import Icon from '@ant-design/icons/lib/components/Icon';
-import useThemeStyleData from '../../hooks/useThemeStyleData';
-import { useNavigate } from '@actiontech/shared/lib/hooks';
 import { CardWrapperStyleWrapper } from './style';
 import { IconTipOrange, IconTitleMore } from '@actiontech/shared/lib/Icon';
 
@@ -19,7 +17,6 @@ interface ICardWrapper extends CardProps {
 const CardWrapper = (props: ICardWrapper) => {
   const { enabledLoading, title, moreRouteLink, titleToolTips, extraNode } =
     props;
-  const { sqleTheme } = useThemeStyleData();
   const navigate = useNavigate();
 
   const onSkipPage = () => {
@@ -33,21 +30,9 @@ const CardWrapper = (props: ICardWrapper) => {
       bordered={false}
       loading={enabledLoading}
     >
-      <header
-        className="card-header"
-        style={{
-          borderColor: sqleTheme.reportStatistics.CardWrapper.titleBorderColor
-        }}
-      >
+      <header className="card-header">
         <div className="title">
-          <div
-            className="title-cont"
-            style={{
-              color: sqleTheme.reportStatistics.CardWrapper.titleColor
-            }}
-          >
-            {title}
-          </div>
+          <div className="title-cont">{title}</div>
           {titleToolTips && (
             <Tooltip title={titleToolTips}>
               <Icon component={IconTipOrange} className="icon-tip" />

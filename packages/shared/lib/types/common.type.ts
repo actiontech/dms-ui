@@ -1,6 +1,9 @@
 import { SharedTheme } from './theme.type';
 import { RuleObject } from 'antd/es/form';
 import { ColumnGroupType, ColumnType, TableProps } from 'antd/es/table';
+import { ReactNode } from 'react';
+import { RouteObject } from 'react-router-dom';
+import { SystemRole } from '../enum';
 
 export type Dictionary = {
   [key: string]: string | number | boolean | Dictionary | string[] | undefined;
@@ -43,7 +46,23 @@ export interface IStore {
   [key: string]: any;
 }
 
+export type RouterConfigItem = RouteObject & {
+  label?: string;
+  icon?: ReactNode;
+  hideInMenu?: boolean;
+  key: string;
+  children?: RouterConfigItem[];
+  role?: Array<SystemRole | ''>;
+};
+
+//todo: sqle后端已删除这个定义，dms暂时还需要保留，所以在此暂存，之后再改
+export interface IManagementPermissionResV1 {
+  code?: number;
+
+  desc?: string;
+}
 interface ThemeCustom {
+  // provision 重构完后移除
   common: {
     padding: number;
     color: {
@@ -91,7 +110,7 @@ interface ThemeCustom {
     border: string;
     color: string;
   };
-  // antd v5 && demo ui props
+  // antd v5
   sharedTheme: SharedTheme;
 }
 declare module '@mui/system' {

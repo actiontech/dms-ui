@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance } from 'antd5';
+import { FormInstance, Popconfirm } from 'antd5';
 import Select, { BaseOptionType } from 'antd5/es/select';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import { useRequest } from 'ahooks';
@@ -35,6 +35,7 @@ import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { turnDataSourceAsyncFormToCommon } from '../tool';
 import useDatabaseType from '../../../hooks/useDatabaseType';
 import { FormItem } from 'sqle/src/components/BackendForm';
+import useAuditRequired from '../../../hooks/useAuditRequired';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -48,8 +49,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
   const { projectName } = useCurrentProject();
-  const { driverMeta, updateDriverNameList, generateDriverSelectOptions } =
-    useDatabaseType();
+  const {
+    driverMeta,
+    loading: getDriverMetaLoading,
+    updateDriverNameList,
+    generateDriverSelectOptions
+  } = useDatabaseType();
 
   const databaseTypeChange = useCallback(
     (value: string) => {
@@ -68,14 +73,18 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     [props.form]
   );
 
-  const { data: ruleTemplateList = [] } = useRequest(() =>
-    rule_template
-      .getProjectRuleTemplateTipsV1({
-        project_name: projectName
-      })
-      .then((res) => res.data.data ?? [])
-  );
-  const { data: globalRuleTemplateList = [] } = useRequest(() =>
+  const { data: ruleTemplateList = [], loading: ruleTemplateLoading } =
+    useRequest(() =>
+      rule_template
+        .getProjectRuleTemplateTipsV1({
+          project_name: projectName
+        })
+        .then((res) => res.data.data ?? [])
+    );
+  const {
+    data: globalRuleTemplateList = [],
+    loading: globalRuleTemplateLoading
+  } = useRequest(() =>
     rule_template.getRuleTemplateTipsV1({}).then((res) => res.data.data ?? [])
   );
   const { generateFormValueByParams, dmsMergeFromValueIntoParams } =
@@ -94,6 +103,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return turnDataSourceAsyncFormToCommon(temp.params ?? []);
   }, [databaseType, driverMeta]);
 
+  const {
+    auditRequired,
+    auditRequiredPopupVisible,
+    onAuditRequiredPopupOpenChange,
+    clearRuleTemplate,
+    changeAuditRequired
+  } = useAuditRequired<FormInstance<DataSourceFormField>>(props.form);
+
   useEffect(() => {
     if (!!props.defaultData) {
       props.form.setFieldsValue({
@@ -105,6 +122,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         user: props.defaultData.user,
         ruleTemplateId: props.defaultData.sqle_config?.rule_template_id,
         ruleTemplateName: props.defaultData.sqle_config?.rule_template_name,
+        needSqlAuditService: !!props.defaultData.sqle_config?.rule_template_id,
         params: generateFormValueByParams(
           turnDataSourceAsyncFormToCommon(
             props.defaultData.additional_params ?? []
@@ -128,6 +146,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         !!props.defaultData.sqle_config?.sql_query_config?.audit_enabled
       );
     } else {
+      props.form.setFieldsValue({
+        needSqlAuditService: true
+      });
       if (params.length > 0) {
         props.form.setFieldsValue({
           params: generateFormValueByParams(params)
@@ -169,6 +190,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   const submit = useCallback(async () => {
     const values = await props.form.validateFields();
+    delete values.needSqlAuditService;
     if (values.params) {
       values.asyncParams = dmsMergeFromValueIntoParams(values.params, params);
       delete values.params;
@@ -262,6 +284,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             form={props.form}
             databaseTypeChange={databaseTypeChange}
             generateDriverSelectOptions={generateDriverSelectOptions}
+            getDriverMetaLoading={getDriverMetaLoading}
             currentAsyncParams={params}
             isExternalInstance={isExternalInstance}
           />
@@ -295,16 +318,39 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           <FormItemSubTitle>
             {t('dmsDataSource.dataSourceForm.sqlConfig')}
           </FormItemSubTitle>
+
+          <FormItemLabel
+            label={t('dmsDataSource.dataSourceForm.needAuditSqlService')}
+            name="needSqlAuditService"
+            valuePropName="checked"
+          >
+            <Popconfirm
+              title={t('dmsDataSource.dataSourceForm.closeAuditSqlServiceTips')}
+              overlayClassName="popconfirm-small"
+              open={auditRequiredPopupVisible}
+              onOpenChange={onAuditRequiredPopupOpenChange}
+              onConfirm={clearRuleTemplate}
+            >
+              <BasicSwitch
+                checked={auditRequired}
+                onChange={changeAuditRequired}
+              />
+            </Popconfirm>
+          </FormItemLabel>
           <FormItemLabel name="ruleTemplateId" hidden={true}>
             <BasicInput />
           </FormItemLabel>
           <FormItemLabel
+            hidden={!auditRequired}
             label={t('dmsDataSource.dataSourceForm.ruleTemplate')}
             name="ruleTemplateName"
+            className="has-required-style"
+            rules={[{ required: auditRequired }]}
           >
             <BasicSelect
               showSearch
               allowClear
+              loading={ruleTemplateLoading || globalRuleTemplateLoading}
               placeholder={t('common.form.placeholder.select', {
                 name: t('dmsDataSource.dataSourceForm.ruleTemplate')
               })}

@@ -6,8 +6,8 @@ const tagTheme: BasicTagTheme = {
     backgroundColor: '#fffff'
   },
   gray: {
-    color: '#7d8ca8',
-    backgroundColor: 'rgba(125, 140, 168, 0.1)'
+    color: '#7D8CA8',
+    backgroundColor: 'rgba(125, 140, 168, 0.10)'
   },
   red: {
     color: '#F66074',

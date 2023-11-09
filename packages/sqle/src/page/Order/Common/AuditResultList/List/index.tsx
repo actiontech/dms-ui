@@ -20,7 +20,8 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
   taskID,
   auditLevelFilterValue,
   projectID,
-  updateTaskRecordTotalNum
+  updateTaskRecordTotalNum,
+  dbType
 }) => {
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IAuditTaskSQLResV2>();
@@ -112,6 +113,7 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
         open={auditResultDrawerVisibility}
         onClose={closeAuditResultDrawer}
         auditResultRecord={currentAuditResultRecord}
+        dbType={dbType}
       />
     </>
   );

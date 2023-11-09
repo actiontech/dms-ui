@@ -13,9 +13,8 @@ export default defineConfig((config) => {
   /*
    * ee and ce mode used to support sqle
    */
-  const isEE = buildTypes.includes('ee');
-  const isCE = buildTypes.includes('ce');
-
+  const isCE = buildTypes.includes('ce') && buildTypes.includes('SQLE');
+  const isEE = !isCE;
   const isSQLE = buildTypes.includes('SQLE');
 
   const title = 'Action SQLE';
@@ -57,6 +56,9 @@ export default defineConfig((config) => {
       open: true,
       proxy: {
         '^(/v|/sqle/v)': {
+          target: 'http://10.186.62.13:27601'
+        },
+        '^/logo': {
           target: 'http://10.186.62.13:27601'
         }
       },

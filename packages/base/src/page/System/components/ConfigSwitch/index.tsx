@@ -5,31 +5,43 @@ import { BasicSwitch } from '@actiontech/shared';
 
 interface ConfigSwitchParams {
   switchFieldName: string;
-  disabled: boolean;
+  switchOpen?: boolean;
+  modifyFlag: boolean;
+  submitLoading: boolean;
   popoverVisible: boolean;
   onConfirm: () => void;
-  onCancel: () => void;
   onSwitchChange: (open: boolean) => void;
+  onSwitchPopoverOpen: (open: boolean) => void;
 }
 
 const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
   switchFieldName,
-  disabled,
+  switchOpen,
+  modifyFlag,
+  submitLoading,
   popoverVisible,
   onConfirm,
-  onCancel,
-  onSwitchChange
+  onSwitchChange,
+  onSwitchPopoverOpen
 }) => {
   const { t } = useTranslation();
   return (
     <Popconfirm
-      title={t('dmsSystem.cancelConfigConfirm')}
+      title={
+        modifyFlag
+          ? t('dmsSystem.confirmResetConfigTips')
+          : t('dmsSystem.confirmCloseConfigTips')
+      }
       open={popoverVisible}
+      onOpenChange={onSwitchPopoverOpen}
       onConfirm={onConfirm}
-      onCancel={onCancel}
     >
       <FormItemLabel name={switchFieldName} valuePropName="checked">
-        <BasicSwitch disabled={disabled} onChange={onSwitchChange} />
+        <BasicSwitch
+          checked={switchOpen}
+          disabled={submitLoading}
+          onChange={onSwitchChange}
+        />
       </FormItemLabel>
     </Popconfirm>
   );

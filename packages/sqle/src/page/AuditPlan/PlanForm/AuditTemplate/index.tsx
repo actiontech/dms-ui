@@ -10,7 +10,7 @@ import { FormSubmitStatusContext } from '..';
 const AuditTemplate = (props: IAuditTemplateProps) => {
   const { t } = useTranslation();
 
-  const { dbType, templateList } = props;
+  const { dbType, templateList, getRuleTemplateListLoading } = props;
   const submitLoading = useContext(FormSubmitStatusContext);
 
   const ruleTemplateOptions = useMemo(() => {
@@ -43,6 +43,7 @@ const AuditTemplate = (props: IAuditTemplateProps) => {
           disabled={submitLoading}
           options={ruleTemplateOptions}
           allowClear
+          loading={getRuleTemplateListLoading}
         ></BasicSelect>
       </FormItemLabel>
     </>

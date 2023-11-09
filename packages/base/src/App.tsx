@@ -1,10 +1,6 @@
 import { Suspense, useEffect, useMemo } from 'react';
 import { useRoutes } from 'react-router-dom';
-import {
-  AuthRouterConfig,
-  RouterConfigItem,
-  unAuthRouterConfig
-} from './router/router';
+import { AuthRouterConfig, unAuthRouterConfig } from './router/router';
 import { IReduxState } from './store';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
@@ -37,6 +33,7 @@ import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import useSystemConfig from './hooks/useSystemConfig.tsx';
+import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 
 Spin.setDefaultIndicator(<IconSpin />);
 

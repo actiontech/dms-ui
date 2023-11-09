@@ -6,14 +6,14 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import OrderDesc from './components/OrderDesc';
 import OrderStatus from './components/OrderStatus';
 import { OrderNameStyleWrapper } from './style';
 import { IconOrderId } from '../../../icon/Order';
-import { OrderIdStyleWrapper } from '../../../style/order';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { AvatarCom } from '@actiontech/shared';
+import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export type OrderListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetWorkflowsV1Params,
@@ -72,10 +72,10 @@ const OrderListColumn: (
       title: () => t('order.order.id'),
       render: (id: string) => {
         return (
-          <OrderIdStyleWrapper>
+          <TableColumnWithIconStyleWrapper>
             <IconOrderId />
             <span>{id}</span>
-          </OrderIdStyleWrapper>
+          </TableColumnWithIconStyleWrapper>
         );
       },
       fixed: 'left'
@@ -95,10 +95,14 @@ const OrderListColumn: (
       className: 'order-list-table-desc-column',
       render: (desc: string, record: IWorkflowDetailResV1) =>
         desc ? (
-          <OrderDesc
-            desc={desc}
-            projectID={projectID}
-            orderID={record.workflow_id ?? ''}
+          <BasicTypographyEllipsis
+            textCont={desc}
+            linkData={{
+              route: `/sqle/project/${projectID}/order/${
+                record.workflow_id ?? ''
+              }`,
+              text: t('order.create.viewOrderDetail')
+            }}
           />
         ) : (
           '-'

@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 
-export const RuleTemplateFormStyleWrapper = styled('section')`
+export const RuleDetailItemStyleWrapper = styled('section')`
   font-weight: 400;
   line-height: 20px;
   color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};

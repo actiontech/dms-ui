@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { ButtonProps, ConfigProvider } from 'antd5';
 import { BasicButtonStyleWrapper } from './style';
 
-interface IBasicButton extends ButtonProps {
+export interface IBasicButton extends ButtonProps {
   noBorderIcon?: boolean;
 }
 

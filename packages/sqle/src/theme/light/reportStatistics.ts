@@ -18,7 +18,7 @@ export const reportStatisticsTheme: ReportStatisticsTheme = {
   },
   CardWrapper: {
     titleColor: '#575C66',
-    titleBorderColor: lightThemeUI.uiToken.colorBorder
+    titleBorderColor: lightThemeUI.uiToken.colorBorderSecondary
   },
   TableTopList: {
     titleColor: lightThemeUI.uiToken.colorTextTertiary,
