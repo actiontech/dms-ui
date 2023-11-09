@@ -36,7 +36,7 @@ const SqlAuditList = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { projectName, projectID } = useCurrentProject();
+  const { projectName, projectID, projectArchive } = useCurrentProject();
   const { username } = useCurrentUser();
 
   const { requestErrorMessage, handleTableRequestError } =
@@ -158,11 +158,13 @@ const SqlAuditList = () => {
       <PageHeader
         title={t('sqlAudit.list.pageTitle')}
         extra={
-          <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
-            <BasicButton type="primary" icon={<IconAdd />}>
-              {t('sqlAudit.list.action.create')}
-            </BasicButton>
-          </Link>
+          !projectArchive ? (
+            <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
+              <BasicButton type="primary" icon={<IconAdd />}>
+                {t('sqlAudit.list.action.create')}
+              </BasicButton>
+            </Link>
+          ) : null
         }
       />
       {/* table */}
