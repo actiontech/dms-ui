@@ -86,8 +86,8 @@ const CustomRuleList: React.FC = () => {
           <BasicButton
             shape="circle"
             danger
-            className="action-circle-btn disabled-rule-item"
-            key={`${item.rule_id}-disable-item`}
+            className="action-circle-btn disabled-rule-item custom-rule-item-operator"
+            key={`${item.rule_id}-remove-item`}
             icon={<IconDisabledRule className="icon-disabled" />}
           />
         </BasicToolTips>
