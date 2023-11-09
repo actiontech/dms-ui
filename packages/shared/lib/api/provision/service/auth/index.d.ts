@@ -69,9 +69,7 @@ export interface IAuditListAuthorizationEventsParams {
 
   filter_by_permission_user?: string;
 
-  filter_by_purpose?: string;
-
-  filter_by_data_permission_template_name?: string;
+  keyword?: string;
 
   filter_by_create_user?: string;
 
@@ -100,7 +98,7 @@ export interface IAuditListDataObjectServiceEventsParams {
 
   filter_by_data_object_service_name?: string;
 
-  filter_by_operation?: string;
+  keyword?: string;
 
   filter_by_generated_time_start?: string;
 
@@ -121,7 +119,7 @@ export interface IAuditListDataPermissionTemplateEventsParams {
 
   order_by?: AuditListDataPermissionTemplateEventsOrderByEnum;
 
-  filter_by_data_permission_template_name?: string;
+  keyword?: string;
 
   filter_by_data_object_service_name?: string;
 
@@ -395,6 +393,8 @@ export interface IAuthListDBAccountParams {
   order_by?: AuthListDBAccountOrderByEnum;
 
   keyword?: string;
+
+  owner_user_id?: string;
 }
 
 export interface IAuthListDBAccountReturn extends IListDBAccountReply {}

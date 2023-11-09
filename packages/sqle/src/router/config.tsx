@@ -152,10 +152,15 @@ const WorkflowTemplateDetail = React.lazy(
       /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
 );
-
 const SQLManagement = React.lazy(
   () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
+
+const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
+
+const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
+
+const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
 
 /* IFTRUE_isEE */
 const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
@@ -222,6 +227,30 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'orderAnalyze'
       }
       /* FITRUE_isEE */
+    ] as RouterConfigItem[]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sqlAudit`,
+    key: 'sqlAudit',
+    label: 'menu.sqlAudit',
+    icon: <NodeIndexOutlined />,
+    element: <WorkflowTemplate />,
+    children: [
+      {
+        index: true,
+        element: <SqlAudit />,
+        key: 'sqlAuditList'
+      },
+      {
+        path: 'create',
+        element: <SqlAuditCreate />,
+        key: 'sqlAuditCreate'
+      },
+      {
+        path: 'detail/:sql_audit_record_id',
+        element: <SqlAuditDetail />,
+        key: 'sqlAuditDetail'
+      }
     ] as RouterConfigItem[]
   },
   {

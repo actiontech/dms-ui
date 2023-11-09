@@ -1,5 +1,3 @@
-import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { resolveThreeSecond } from '../../../testUtils/mockRequest';
 import { IGetProjectStatisticsResDataV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export const projectStatisticsData: IGetProjectStatisticsResDataV1 = {
@@ -9,10 +7,4 @@ export const projectStatisticsData: IGetProjectStatisticsResDataV1 = {
   member_total: 22,
   rule_template_total: 12,
   whitelist_total: 3
-};
-
-export const mockGetProjectStatistics = () => {
-  const spy = jest.spyOn(statistic, 'getProjectStatisticsV1');
-  spy.mockImplementation(() => resolveThreeSecond(projectStatisticsData));
-  return spy;
 };

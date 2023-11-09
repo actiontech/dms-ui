@@ -2,26 +2,33 @@ import { AxiosResponse } from 'axios';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IGenericResp } from '@actiontech/shared/lib/api/base/service/common';
+import { useCallback } from 'react';
 
 interface IUseConfigSwitchProps {
-  isInitialForm: boolean;
+  isConfigClosed: boolean;
+  switchOpen: boolean;
   modifyFlag: boolean;
-  startModify: () => void;
+  handleClickModify: () => void;
+  startSubmit: () => void;
+  submitFinish: () => void;
   handleUpdateConfig: () => Promise<AxiosResponse<IGenericResp, any>>;
   handleClickCancel: () => void;
   refreshConfig: () => void;
-  handleOpenSwitch: () => void;
+  handleToggleSwitch: (open: boolean) => void;
 }
 
 const useConfigSwitch = (props: IUseConfigSwitchProps) => {
   const {
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
-    startModify,
+    handleClickModify,
+    startSubmit,
+    submitFinish,
     handleUpdateConfig,
     handleClickCancel,
     refreshConfig,
-    handleOpenSwitch
+    handleToggleSwitch
   } = props;
   const [
     configSwitchPopoverVisible,
@@ -29,35 +36,58 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
   ] = useBoolean(false);
 
   const onConfigSwitchPopoverConfirm = async () => {
-    handleUpdateConfig()
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          handleClickCancel();
-          refreshConfig();
-        }
-      })
-      .finally(() => {
-        hideConfigSwitchPopover();
-      });
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshConfig();
+      hideConfigSwitchPopover();
+    } else {
+      startSubmit();
+      handleUpdateConfig()
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshConfig();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hideConfigSwitchPopover();
+        });
+    }
   };
 
   const onConfigSwitchPopoverCancel = () => {
-    handleOpenSwitch();
     hideConfigSwitchPopover();
+    if (modifyFlag) {
+      handleToggleSwitch(true);
+    }
   };
 
   const onConfigSwitchChange = (open: boolean) => {
-    if (isInitialForm && open) {
-      startModify();
-    }
-
-    if (!open) {
-      !modifyFlag ? showConfigSwitchPopover() : handleClickCancel();
+    if (open) {
+      handleClickModify();
     }
   };
 
+  const onConfigSwitchPopoverOpen = useCallback(
+    (open: boolean) => {
+      if (!switchOpen) return;
+
+      handleToggleSwitch(true);
+
+      open ? showConfigSwitchPopover() : hideConfigSwitchPopover();
+    },
+    [
+      handleToggleSwitch,
+      hideConfigSwitchPopover,
+      showConfigSwitchPopover,
+      switchOpen
+    ]
+  );
+
   return {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
     onConfigSwitchPopoverCancel,
     onConfigSwitchChange
