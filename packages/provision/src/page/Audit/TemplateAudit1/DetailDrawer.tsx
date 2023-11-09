@@ -6,7 +6,7 @@ import { formatTime } from '~/utils/Common';
 import { eventType } from './columns';
 import { BasicTag } from '@actiontech/shared';
 
-const AuthAuditDetailDrawer: React.FC<{
+const TemplateAuditDetailDrawer: React.FC<{
   open: boolean;
   onClose: () => void;
   data: IListDataPermissionTemplateEvent | undefined;
@@ -99,4 +99,4 @@ const AuthAuditDetailDrawer: React.FC<{
   );
 };
 
-export default AuthAuditDetailDrawer;
+export default TemplateAuditDetailDrawer;
