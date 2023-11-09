@@ -1,41 +1,65 @@
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { useRequest } from 'ahooks';
-import { useMemo } from 'react';
+import { useMemo, useCallback, useState } from 'react';
+import { IListService } from '@actiontech/shared/lib/api/provision/service/common';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useBoolean } from 'ahooks';
 
 const useServiceOptions = (business?: string) => {
   const { projectID } = useCurrentProject();
 
-  const { data: serviceOptions } = useRequest(
-    () =>
-      auth
-        .AuthListService({
-          page_index: 1,
-          page_size: 999,
-          filter_by_namespace: projectID,
-          business
-        })
-        .then((res) => {
-          return res.data.data?.map((item) => ({
-            value: item.uid ?? '',
-            label: item.name
-          }));
-        }),
-    {
-      refreshDeps: [business]
-    }
-  );
+  const [serviceList, setServiceList] = useState<IListService[]>([]);
 
-  const serviceNameOptions = useMemo(() => {
-    return serviceOptions?.map((user) => {
+  const [loading, { setTrue, setFalse }] = useBoolean();
+
+  const updateServiceList = useCallback(() => {
+    setTrue();
+    auth
+      .AuthListService({
+        page_index: 1,
+        page_size: 999,
+        filter_by_namespace: projectID
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setServiceList(res.data?.data ?? []);
+        } else {
+          setServiceList([]);
+        }
+      })
+      .catch(() => {
+        setServiceList([]);
+      })
+      .finally(() => {
+        setFalse();
+      });
+  }, [setFalse, setTrue, projectID]);
+
+  const serviceOptions = useMemo(() => {
+    return serviceList?.map((service) => {
       return {
-        value: user.label,
-        label: user.label
+        value: service.uid,
+        label: service.name
       };
     });
-  }, [serviceOptions]);
+  }, [serviceList]);
 
-  return { serviceOptions, serviceNameOptions };
+  const serviceNameOptions = useMemo(() => {
+    return serviceList?.map((service) => {
+      return {
+        value: service.name,
+        label: service.name
+      };
+    });
+  }, [serviceList]);
+
+  return {
+    loading,
+    serviceList,
+    updateServiceList,
+    serviceOptions,
+    serviceNameOptions
+  };
 };
 
 export default useServiceOptions;

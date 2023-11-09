@@ -2,7 +2,7 @@ import { AuthAuditDetailDrawerStyleWrapper } from '../components/style';
 import { useTranslation } from 'react-i18next';
 import { IListDataPermissionTemplateEvent } from '@actiontech/shared/lib/api/provision/service/common';
 import AuditDetailItem from '../components/AuditDetailItem';
-import { formatTime } from '~/utils/Common';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { eventType } from './columns';
 import { BasicTag } from '@actiontech/shared';
 
