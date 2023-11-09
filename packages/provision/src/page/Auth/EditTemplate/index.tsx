@@ -246,20 +246,7 @@ const EditTemplate = () => {
             title={t('auth.editTemplate.addSuccessTips', {
               name: form.getFieldValue('name')
             })}
-            // subTitle={
-            //   <Link to={`/provision/project/${projectID}/auth/template`}>
-            //     {t('dmsDataSource.addDatabaseSuccessGuide')} {'>'}
-            //   </Link>
-            // }
             extra={[
-              <BasicButton
-                key="backToAuthTemplateList"
-                onClick={() =>
-                  navigate(`/provision/project/${projectID}/auth/template`)
-                }
-              >
-                {t('auth.backToAuthTemplateList')}
-              </BasicButton>,
               <BasicButton
                 type="primary"
                 key="checkAuthTemplateDetail"
