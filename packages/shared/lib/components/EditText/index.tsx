@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState, useRef } from 'react';
 import { EditTypeProps } from './index.type';
 import EmptyBox from '../EmptyBox';
 import BasicButton from '../BasicButton';
@@ -29,6 +29,9 @@ const EditText: React.FC<EditTypeProps> = ({
             },
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
+            },
+            onCancel: () => {
+              setShowEdit(false);
             },
             icon: <IconEdit />,
             tooltip: false
@@ -66,9 +69,13 @@ const EditText: React.FC<EditTypeProps> = ({
             onChange: (value) => {
               internalValue.current = value;
               editable?.onChange?.(value);
+              setShowEdit(false);
             },
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
+              setShowEdit(false);
+            },
+            onCancel: () => {
               setShowEdit(false);
             },
             tooltip: false
