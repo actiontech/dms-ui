@@ -112,7 +112,9 @@ const SqlAuditCreate = () => {
         <SQLInfoForm
           form={sqlInfoForm}
           submit={auditSQL}
-          setAuditLoading={setAuditLoading}
+          setAuditLoading={(submitStatus: boolean) => {
+            setAuditLoading(submitStatus);
+          }}
         />
       </FormSubmitStatusContext.Provider>
     </>

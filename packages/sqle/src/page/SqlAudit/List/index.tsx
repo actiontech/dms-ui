@@ -204,7 +204,6 @@ const SqlAuditList = () => {
         filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
-        className="table-row-cursor"
         setting={tableSetting}
         dataSource={dataList?.list}
         rowKey={(record: ISQLAuditRecord) => {

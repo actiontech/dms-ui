@@ -87,7 +87,6 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
     });
 
     setTimeout(() => {
-      inputRef.current?.focus();
       extraTagForm.resetFields();
     }, 0);
   };
