@@ -120,6 +120,7 @@ const CustomRuleList: React.FC = () => {
         </TableToolbar>
 
         <RuleList
+          enableCheckDetail
           isAction={true}
           actionType={RuleStatusEnum.enabled}
           renderDisableNode={(rule) =>
