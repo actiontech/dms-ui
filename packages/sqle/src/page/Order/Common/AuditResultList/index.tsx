@@ -24,7 +24,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
 }) => {
   const { t } = useTranslation();
   const { mode = 'order' } = props;
-  const isNotOrder = useMemo(() => mode !== 'order', [mode]);
+  const isOrder = useMemo(() => mode === 'order', [mode]);
 
   const [currentTaskID, setCurrentTaskID] = useState<string>();
   const [duplicate, setDuplicate] = useState(false);
@@ -77,7 +77,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   return (
     <AuditResultForCreateOrderStyleWrapper>
       <SegmentedRowStyleWrapper justify={'space-between'}>
-        {!isNotOrder ? (
+        {isOrder ? (
           <BasicSegmented
             value={currentTaskID}
             onChange={(v) => handleChangeCurrentTask(v as string)}
@@ -109,7 +109,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
       <AuditResultFilterContainer<AuditResultLevelFilterType>
         passRate={currentTask?.pass_rate}
         score={currentTask?.score}
-        instanceSchemaName={isNotOrder ? '' : currentTask?.instance_schema}
+        instanceSchemaName={isOrder ? currentTask?.instance_schema : ''}
         filterOptions={[
           {
             value: 'all',

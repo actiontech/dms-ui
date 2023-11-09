@@ -30,8 +30,6 @@ import SqlAuditListColumn, {
   type SqlAuditListTableFilterParamType
 } from './column';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
-import EmitterKey from '../../../data/EmitterKey';
-import EventEmitter from '../../../utils/EventEmitter';
 import { SQLAuditRecordListUrlParamsKey } from '../../SqlManagement/component/SQLEEIndex/index.data';
 
 const SqlAuditList = () => {
@@ -153,17 +151,6 @@ const SqlAuditList = () => {
       project_name: projectName
     });
   }, [projectName, updateInstanceList]);
-
-  useEffect(() => {
-    EventEmitter.subscribe(EmitterKey.Refresh_Sql_Audit_Record_List, refresh);
-    return () => {
-      EventEmitter.unsubscribe(
-        EmitterKey.Refresh_Sql_Audit_Record_List,
-        refresh
-      );
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <>

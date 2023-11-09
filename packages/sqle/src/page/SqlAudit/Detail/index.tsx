@@ -4,7 +4,7 @@ import { useRequest } from 'ahooks';
 
 import { Spin } from 'antd5';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
+import { IconAdd, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import BasicInfoWrapper from './BasicInfoWrapper';
 
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -45,6 +45,7 @@ const SqlAuditDetail = () => {
     <>
       <Spin spinning={dataLoading}>
         <PageHeader
+          fixed
           title={
             <Link to={`/sqle/project/${projectID}/sqlAudit`}>
               <BasicButton icon={<IconLeftArrow />}>
@@ -52,6 +53,17 @@ const SqlAuditDetail = () => {
               </BasicButton>
             </Link>
           }
+          extra={
+            <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
+              <BasicButton type="primary" icon={<IconAdd />}>
+                {t('sqlAudit.list.action.create')}
+              </BasicButton>
+            </Link>
+          }
+        />
+        <div
+          className="hasTopHeader clearPaddingBottom"
+          style={{ height: '60px' }}
         />
         <BasicInfoWrapper {...basicInfoData} />
         <AuditResultList

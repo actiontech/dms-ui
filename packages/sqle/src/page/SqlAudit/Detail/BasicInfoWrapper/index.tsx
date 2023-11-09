@@ -13,7 +13,7 @@ interface IBasicInfoWrapper {
   task?: IAuditTaskResV1;
 }
 
-const BasicInfoWrapper = ({ id, tags, status, task }: IBasicInfoWrapper) => {
+const BasicInfoWrapper = ({ id, tags, status }: IBasicInfoWrapper) => {
   const { t } = useTranslation();
 
   return (
