@@ -10,6 +10,11 @@ export const UploadTypeStyleWrapper = styled('div')`
   }
 `;
 
+export const UploadItemTypeSpaceOccupyingStyleWrapper = styled('div')`
+  flex: 1 0 30%;
+  margin-left: 12px;
+`;
+
 export const UploadItemTypeStyleWrapper = styled('div')<{ active?: boolean }>`
   flex: 1 0 30%;
   background-color: ${({ theme }) =>

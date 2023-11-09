@@ -81,6 +81,10 @@ export const AuditResultFilterContainerStyleWrapper = styled('div')`
     border-bottom: 0;
   }
 
+  &.no-padding-style {
+    padding: 0;
+  }
+
   .audit-result-info {
     &-item {
       display: flex;
