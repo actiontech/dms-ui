@@ -234,6 +234,7 @@ export const RuleItemStyleWrapper = styled('div')`
         display: block;
         color: pink !important;
       }
+
       .action-circle-btn.custom-rule-item-operator {
         display: block;
       }
