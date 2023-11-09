@@ -42,7 +42,7 @@ const OrderDetailAuditResultList: React.FC<OrderDetailAuditResultListProps> = ({
       refreshDeps: [workflowID, refreshOverviewFlag],
       ready: !!workflowID,
       onSuccess: ({ list }) => {
-        return getOverviewListSuccessHandle(list ?? []);
+        return getOverviewListSuccessHandle?.(list ?? []);
       }
     }
   );

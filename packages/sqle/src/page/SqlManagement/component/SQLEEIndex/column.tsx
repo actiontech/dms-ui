@@ -241,7 +241,10 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'instance_name',
-      title: () => t('sqlManagement.table.column.instanceName')
+      title: () => t('sqlManagement.table.column.instanceName'),
+      render: (instance_name) => {
+        return instance_name || '-';
+      }
     },
     {
       dataIndex: 'first_appear_time',

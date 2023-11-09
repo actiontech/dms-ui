@@ -102,12 +102,36 @@ const useInstance = () => {
     });
   }, [instanceList]);
 
+  //todo: 筛选项 val 为 id
+  const instanceIDOptions = useMemo(() => {
+    const instanceTypeList: string[] = Array.from(
+      new Set(instanceList.map((v) => v.instance_type ?? ''))
+    );
+    return instanceTypeList.map((type) => {
+      return {
+        label: (
+          <DatabaseTypeLogo
+            dbType={type}
+            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+          />
+        ),
+        options: instanceList
+          .filter((v) => v.instance_type === type)
+          .map((v) => ({
+            value: v.instance_id,
+            label: `${v.instance_name}(${v.host}:${v.port})`
+          }))
+      };
+    });
+  }, [instanceList]);
+
   return {
     instanceList,
     loading,
     updateInstanceList,
     generateInstanceSelectOption,
-    instanceOptions
+    instanceOptions,
+    instanceIDOptions
   };
 };
 
