@@ -95,13 +95,6 @@ const OrderSqlAnalyze = React.lazy(
     import(/* webpackChunkName: "OrderSqlAnalyze" */ '../page/SqlAnalyze/Order')
 );
 
-const ReportStatistics = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ReportStatistics" */ '../page/ReportStatistics'
-    )
-);
-
 const ProjectOverview = React.lazy(
   () =>
     import(
