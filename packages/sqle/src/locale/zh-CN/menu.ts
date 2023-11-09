@@ -29,5 +29,6 @@ export default {
   allInstanceType: '所有数据库类型',
   syncDataSource: '外部数据源同步',
   operationRecord: 'SQLE操作记录',
-  sqlManagement: 'SQL管控'
+  sqlManagement: 'SQL管控',
+  sqlAudit: 'SQL审核'
 };
