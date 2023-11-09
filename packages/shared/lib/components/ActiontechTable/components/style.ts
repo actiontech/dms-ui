@@ -121,7 +121,7 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
     border-radius: 4px;
   }
 
-  .${ANTD_PREFIX_STR}-picker-input:first-child {
+  .${ANTD_PREFIX_STR}-picker-input:first-of-type {
     width: 88%;
   }
 
