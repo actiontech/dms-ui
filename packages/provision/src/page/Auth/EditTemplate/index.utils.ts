@@ -12,7 +12,7 @@ export const getObjectsLabelByDataObjects = (
 ) => {
   const list = dataObjects?.filter((item) => !!item.database) ?? [];
   if (!list?.length) {
-    return ['*'];
+    return ['*.*'];
   }
   const newTableOptions = tableOptions?.flat();
   const objects = list.map((item) => {
