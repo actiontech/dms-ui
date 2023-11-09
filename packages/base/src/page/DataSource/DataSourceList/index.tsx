@@ -42,6 +42,7 @@ const DataSourceList = () => {
   }, [isAdmin, isProjectManager, projectName]);
   const {
     dbDriverOptions,
+    getLogoUrlByDbType,
     loading: getDriveOptionsLoading,
     getDriverMeta
   } = useDbServiceDriver();
@@ -167,7 +168,7 @@ const DataSourceList = () => {
     [messageApi, modalApi, projectID, t]
   );
 
-  const columns = useMemo(() => DataSourceColumns(), []);
+  const columns = useMemo(() => DataSourceColumns(getLogoUrlByDbType), []);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
@@ -215,12 +216,7 @@ const DataSourceList = () => {
       {modalContextHolder}
       {messageContextHolder}
       <PageHeader
-        title={
-          <Space>
-            {t('dmsDataSource.databaseListTitle')}
-            {/* <TableRefreshButton refresh={refresh} /> */}
-          </Space>
-        }
+        title={t('dmsDataSource.databaseListTitle')}
         extra={[
           <EmptyBox
             if={!projectArchive && actionPermission}

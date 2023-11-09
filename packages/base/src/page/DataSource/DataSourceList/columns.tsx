@@ -10,13 +10,16 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 
 export type DataSourceListParamType = PageInfoWithoutIndexAndSize<
   IListDBServicesParams,
   'project_uid'
 >;
 
-export const DataSourceColumns = (): ActiontechTableColumn<
+export const DataSourceColumns = (
+  getLogoUrlByDbType: (dbType: string) => string
+): ActiontechTableColumn<
   IListDBService,
   DataSourceListParamType,
   'address' | 'rule_template'
@@ -54,27 +57,22 @@ export const DataSourceColumns = (): ActiontechTableColumn<
       dataIndex: 'db_type',
       title: () => t('dmsDataSource.databaseList.type'),
       filterCustomType: 'select',
-      filterKey: 'filter_by_db_type'
+      filterKey: 'filter_by_db_type',
+      render: (dbType: string) => {
+        if (!dbType) return '-';
+
+        return (
+          <DatabaseTypeLogo
+            dbType={dbType}
+            logoUrl={getLogoUrlByDbType(dbType)}
+          />
+        );
+      }
     },
     {
       dataIndex: 'business',
       title: () => t('dmsDataSource.databaseList.business')
     },
-    // {
-    //   dataIndex: 'rule_template',
-    //   title: () => t('dmsDataSource.databaseList.ruleTemplate'),
-    //   render(_, record) {
-    //     if (!record?.sqle_config) {
-    //       return '';
-    //     }
-
-    // const path = ruleTemplate.is_global_rule_template
-    //   ? `rule?${RuleUrlParamKey.ruleTemplateName}=${ruleTemplate.name}`
-    //   : `rule?${RuleUrlParamKey.projectName}=${projectName}&${RuleUrlParamKey.ruleTemplateName}=${ruleTemplate.name}`;
-
-    // return <Link to={path}>{ruleTemplate.name}</Link>;
-    //   }
-    // },
     {
       dataIndex: 'maintenance_times',
       title: () => t('dmsDataSource.databaseList.maintenanceTime'),
