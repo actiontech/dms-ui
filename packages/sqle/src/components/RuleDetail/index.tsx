@@ -205,6 +205,7 @@ const RuleDetail = () => {
           <RuleList
             pageHeaderHeight={130}
             rules={getCurrentTypeRules(allRules, ruleData, templateName)}
+            enableCheckDetail
           />
         </EmptyBox>
       </Spin>
