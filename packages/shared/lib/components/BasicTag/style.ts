@@ -15,12 +15,23 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
     span:first-of-type {
       margin-right: 6px;
     }
+
+    .${ANTD_PREFIX_STR}-tag-close-icon {
+      margin-left: 6px;
+      margin-right: 2px !important;
+    }
+
+    &.basic-large-tag-wrapper,
+    &.basic-default-tag-wrapper {
+      font-size: 13px !important;
+    }
   }
 
   &.basic-tag-wrapper.basic-small-tag-wrapper.${ANTD_PREFIX_STR}-tag {
     height: 22px;
     line-height: 22px;
     padding: 0 6px;
+    font-size: 12px !important;
   }
 
   &.basic-tag-wrapper.basic-large-tag-wrapper.${ANTD_PREFIX_STR}-tag {
