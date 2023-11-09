@@ -94,19 +94,17 @@ const CustomRuleList: React.FC = () => {
         }}
         okText={t('common.ok')}
       >
-        <BasicToolTips title={t('customRule.deleteRule')}>
-          <BasicButton
-            shape="circle"
-            danger
-            className="action-circle-btn disabled-rule-item custom-rule-item-operator"
-            key={`${item.rule_id}-remove-item`}
-            icon={<IconDisabledRule className="icon-disabled" />}
-            onClick={(e) => {
-              e.stopPropagation();
-              openDeleteConfirmPopup();
-            }}
-          />
-        </BasicToolTips>
+        <BasicButton
+          shape="circle"
+          danger
+          className="action-circle-btn disabled-rule-item custom-rule-item-operator"
+          key={`${item.rule_id}-remove-item`}
+          icon={<IconDisabledRule className="icon-disabled" />}
+          onClick={(e) => {
+            e.stopPropagation();
+            openDeleteConfirmPopup();
+          }}
+        />
       </Popconfirm>
     );
   };
