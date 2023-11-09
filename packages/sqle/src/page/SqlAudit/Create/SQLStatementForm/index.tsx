@@ -74,6 +74,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
             <span>{t('sqlAudit.create.sqlInfo.form.uploadType')}</span>
           </>
         }
+        initialValue={UploadTypeEnum.sql}
         style={{ marginBottom: 16 }}
       />
       <div style={{ marginBottom: 16 }}>
