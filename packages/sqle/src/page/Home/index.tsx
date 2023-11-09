@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <>
-      <PageHeader title={t('dmsMenu.todoList')} />
+      <PageHeader title={t('dashboard.pageTitle')} />
 
       <DBAPanel
         workflowStatistics={workflowStatistics}

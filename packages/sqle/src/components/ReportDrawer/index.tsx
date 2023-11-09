@@ -12,7 +12,9 @@ const ReportDrawer = ({
   title,
   data,
   onClose,
-  footer
+  footer,
+  dbType,
+  showAnnotation
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
 
@@ -44,8 +46,11 @@ const ReportDrawer = ({
                 <AuditResultMessage styleClass="result-item" />
               ) : (
                 (data?.auditResult ?? [])?.map(
-                  (item: IAuditResult, index: number) => {
-                    return (
+                  (
+                    item: IAuditResult & { annotation?: string },
+                    index: number
+                  ) => {
+                    if (!showAnnotation) {
                       <AuditResultMessage
                         styleClass="result-item"
                         key={`${item.rule_name ?? ''}${
@@ -55,6 +60,25 @@ const ReportDrawer = ({
                           level: item?.level ?? '',
                           message: item?.message ?? ''
                         }}
+                      />;
+                    }
+                    return (
+                      <AuditResultMessage
+                        styleClass="result-item"
+                        key={`${item.rule_name ?? ''}${
+                          item.message ?? ''
+                        }-${index}`}
+                        auditResult={{
+                          level: item?.level ?? '',
+                          message: item?.message ?? '',
+                          annotation: item.annotation ?? ''
+                        }}
+                        showAnnotation
+                        moreBtnLink={
+                          item?.rule_name
+                            ? `/sqle/rule/knowledge/${item?.rule_name}/${dbType}`
+                            : ''
+                        }
                       />
                     );
                   }

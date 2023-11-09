@@ -1,5 +1,4 @@
 import { t } from '../../../locale';
-import DatabaseTypeLogo from '../../../components/DatabaseTypeLogo';
 import {
   IconCloneRule,
   IconRuleItem,
@@ -14,6 +13,7 @@ import {
 import { Link } from 'react-router-dom';
 import { Space } from 'antd5';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 
 export const RuleTemplateColumns =
   (): ActiontechTableColumn<IRuleTemplateResV1> => {
@@ -58,7 +58,12 @@ export const RuleTemplateColumns =
             return '-';
           }
 
-          return <DatabaseTypeLogo dbType={type} />;
+          return (
+            <DatabaseTypeLogo
+              dbType={type}
+              logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+            />
+          );
         }
       }
     ];

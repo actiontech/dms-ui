@@ -1,19 +1,32 @@
-// import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { Col, Form, Input, Row } from 'antd5';
-import { BasicSelect, BasicButton } from '@actiontech/shared';
+import { BasicSelect } from '@actiontech/shared';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import useRole from '../../../hooks/useRole';
 import useDbService from '../../../hooks/useDbService';
 import { MemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import FormListDeleteIcon from '../components/FormListDeleteIcon';
-import { IconFormListAdd } from '../../../icon/member';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import {
+  DrawerFormIconWrapper,
+  FormListAddButtonWrapper
+} from '@actiontech/shared/lib/styleWrapper/element';
+import {
+  IconFormListDelete,
+  IconFormListAdd
+} from '@actiontech/shared/lib/Icon';
 
 const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
   const { t } = useTranslation();
-  const { updateRoleList, generateRoleSelectOption } = useRole();
-  const { updateDbServiceList, generateDbServiceSelectOption } = useDbService();
+  const {
+    loading: getRoleListLoading,
+    updateRoleList,
+    generateRoleSelectOption
+  } = useRole();
+  const {
+    loading: getDbServiceListLoading,
+    updateDbServiceList,
+    generateDbServiceSelectOption
+  } = useDbService();
   useEffect(() => {
     updateRoleList();
     updateDbServiceList(projectID);
@@ -35,6 +48,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                   <BasicSelect<string>
                     popupMatchSelectWidth={false}
                     showSearch
+                    loading={getRoleListLoading}
                     optionFilterProp="children"
                     filterOption={filterOptionByLabel}
                     placeholder={t('common.form.placeholder.select', {
@@ -59,6 +73,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                     mode="multiple"
                     showSearch
                     allowClear
+                    loading={getDbServiceListLoading}
                     optionFilterProp="children"
                     filterOption={filterOptionByLabel}
                   >
@@ -77,17 +92,18 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
               </Col>
               <Col span={1} offset={1}>
                 <Form.Item label=" " colon={false}>
-                  <FormListDeleteIcon
+                  <DrawerFormIconWrapper
                     onClick={() => {
                       remove(index);
                     }}
+                    icon={<IconFormListDelete />}
                   />
                 </Form.Item>
               </Col>
             </Row>
           ))}
           <Form.Item label="" colon={false}>
-            <BasicButton
+            <FormListAddButtonWrapper
               icon={<IconFormListAdd />}
               onClick={() => {
                 add();
@@ -95,7 +111,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
               className="member-form-add-button"
             >
               {t('dmsMember.roleSelector.addRoleAndOpRange')}
-            </BasicButton>
+            </FormListAddButtonWrapper>
           </Form.Item>
         </>
       )}

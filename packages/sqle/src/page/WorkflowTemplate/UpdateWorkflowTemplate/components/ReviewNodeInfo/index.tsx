@@ -184,6 +184,7 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
               onChange={updateNodeUsername}
               mode="multiple"
               showSearch
+              loading={props.getUsernameListLoading}
               placeholder={t('common.form.placeholder.select')}
               data-testid="exec-user-select"
               size="middle"

@@ -6,6 +6,7 @@ import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/sty
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import {
   IconArrowRight,
+  IconDownload,
   IconLeftArrow,
   IconTagBookMark
 } from '@actiontech/shared/lib/Icon/common';
@@ -17,7 +18,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 
 import { useNavigate, useParams } from 'react-router-dom';
-import { useRequest } from 'ahooks';
+import { useBoolean, useRequest } from 'ahooks';
 import classNames from 'classnames';
 import { cloneDeep } from 'lodash';
 import { useDispatch } from 'react-redux';
@@ -46,24 +47,26 @@ import {
 } from '../../../../store/auditPlan';
 import DetailReportDrawer from './Drawer';
 import { RuleUrlParamKey } from '../../../../page/Rule/useRuleFilterForm';
+import { Spin, message } from 'antd5';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 type typeIAuditPlanReportResV1 = keyof IAuditPlanReportResV1;
 
 const DetailReport = () => {
   const { t } = useTranslation();
+  const [messageApi, contextMessageHolder] = message.useMessage();
 
   const { goBack } = useBack();
 
   const urlParams = useParams<AuditPlanReportUrlParams>();
   const { projectID, projectName } = useCurrentProject();
   const navigate = useNavigate();
-  const [downloadLoading, setDownloadLoading] = useState(false); // 待处理
   const dispatch = useDispatch();
 
   const {
-    data: auditTask
+    data: auditTask,
     // run: getTaskInfo,
-    // loading: taskLoading
+    loading: taskLoading
   } = useRequest(() => {
     return audit_plan
       .getAuditPlanV1({
@@ -73,7 +76,7 @@ const DetailReport = () => {
       .then((res) => res.data);
   });
 
-  const { data: reportInfo } = useRequest(() =>
+  const { data: reportInfo, loading: reportInfoLoading } = useRequest(() =>
     audit_plan
       .getAuditPlanReportV1({
         audit_plan_report_id: urlParams.reportId ?? '',
@@ -234,13 +237,38 @@ const DetailReport = () => {
     );
   };
 
-  // todo: 下载的功能
-  const onDownload = () => {
-    setDownloadLoading(true);
+  const [
+    exportButtonDisabled,
+    { setFalse: finishExport, setTrue: startExport }
+  ] = useBoolean(false);
+  const exportReport = () => {
+    startExport();
+    const hideLoading = messageApi.loading(
+      t('auditPlan.report.export.exporting')
+    );
+    audit_plan
+      .exportAuditPlanReportV1(
+        {
+          project_name: projectName,
+          audit_plan_name: urlParams.auditPlanName ?? '',
+          audit_plan_report_id: urlParams.reportId ?? ''
+        },
+        { responseType: 'blob' }
+      )
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(t('auditPlan.report.export.exportSuccessTips'));
+        }
+      })
+      .finally(() => {
+        hideLoading();
+        finishExport();
+      });
   };
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
+      {contextMessageHolder}
       <PageHeader
         fixed
         title={
@@ -248,56 +276,60 @@ const DetailReport = () => {
             {t('auditPlan.action.backDetail')}
           </BasicButton>
         }
-        // todo
-        // extra={
-        //   <BasicButton
-        //     htmlType="submit"
-        //     onClick={onDownload}
-        //     loading={downloadLoading}
-        //     icon={<IconDownload />}
-        //   >
-        //     {'下载扫描任务报告'}
-        //   </BasicButton>
-        // }
+        extra={
+          <BasicButton
+            htmlType="submit"
+            onClick={exportReport}
+            icon={<IconDownload />}
+            loading={exportButtonDisabled}
+          >
+            {t('auditPlan.report.exportBtnText')}
+          </BasicButton>
+        }
       />
       <DetailReportStyleWrapper>
-        <div className="header-wrapper">
-          <div className="left-header">
-            <h3 className="header-cont-text">
-              {t('auditPlan.report.time', {
-                time: formatTime(reportInfo?.audit_plan_report_timestamp, '--')
-              })}
-            </h3>
-            <section className="tag-wrapper">
-              <div className="custom-tag-item">
-                <IconTagBookMark className="custom-tag-icon bookmark-icon" />
-                <div>
-                  {t('auditPlan.detailPage.auditTaskType', {
-                    type:
-                      auditTask?.data?.audit_plan_meta?.audit_plan_type_desc ??
-                      '--'
-                  })}
-                </div>
-              </div>
-              <div
-                className={classNames('custom-tag-item', {
-                  'custom-tag-primary': !!auditTask?.data?.rule_template_name
+        <Spin spinning={taskLoading || reportInfoLoading}>
+          <div className="header-wrapper">
+            <div className="left-header">
+              <h3 className="header-cont-text">
+                {t('auditPlan.report.time', {
+                  time: formatTime(
+                    reportInfo?.audit_plan_report_timestamp,
+                    '--'
+                  )
                 })}
-                onClick={onSkipRule}
-              >
-                <div>
-                  {t('auditPlan.report.rule_template', {
-                    name: auditTask?.data?.rule_template_name ?? '--'
-                  })}
+              </h3>
+              <section className="tag-wrapper">
+                <div className="custom-tag-item">
+                  <IconTagBookMark className="custom-tag-icon bookmark-icon" />
+                  <div>
+                    {t('auditPlan.detailPage.auditTaskType', {
+                      type:
+                        auditTask?.data?.audit_plan_meta
+                          ?.audit_plan_type_desc ?? '--'
+                    })}
+                  </div>
                 </div>
-                <IconArrowRight className="custom-tag-right-icon" />
-              </div>
-            </section>
+                <div
+                  className={classNames('custom-tag-item', {
+                    'custom-tag-primary': !!auditTask?.data?.rule_template_name
+                  })}
+                  onClick={onSkipRule}
+                >
+                  <div>
+                    {t('auditPlan.report.rule_template', {
+                      name: auditTask?.data?.rule_template_name ?? '--'
+                    })}
+                  </div>
+                  <IconArrowRight className="custom-tag-right-icon" />
+                </div>
+              </section>
+            </div>
+            <div className="right-header">
+              {renderScoreItem(reportInfo ?? {})}
+            </div>
           </div>
-          <div className="right-header">
-            {renderScoreItem(reportInfo ?? {})}
-          </div>
-        </div>
+        </Spin>
         <ActiontechTable
           loading={tableLoading}
           rowClassName={(record: IAuditPlanReportSQLResV2, index: number) => {

@@ -72,6 +72,15 @@ class ApiBase {
         return config;
       }
 
+      if (config.data || config.params) {
+        const trimDataSource = config.data || config.params;
+        Object.keys(trimDataSource).forEach((key) => {
+          if (typeof trimDataSource[key] === 'string') {
+            trimDataSource[key] = trimDataSource[key].trim();
+          }
+        });
+      }
+
       return {
         ...config,
         headers: {

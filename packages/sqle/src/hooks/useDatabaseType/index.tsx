@@ -1,10 +1,10 @@
 import React from 'react';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '../../data/common';
-import { Select } from 'antd';
-import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
-import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
+import { Select } from 'antd5';
 import { IDriverMeta } from '@actiontech/shared/lib/api/sqle/service/common';
+import { DatabaseTypeLogo } from '@actiontech/shared';
+import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 
 const useDatabaseType = () => {
   const [driverNameList, setDriverNameList] = React.useState<string[]>([]);

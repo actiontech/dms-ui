@@ -34,6 +34,14 @@ import {
   ICloneProjectRuleTemplateV1Params,
   ICloneProjectRuleTemplateV1Return,
   IExportProjectRuleTemplateV1Params,
+  IGetCustomRuleKnowledgeV1Params,
+  IGetCustomRuleKnowledgeV1Return,
+  IUpdateCustomRuleKnowledgeParams,
+  IUpdateCustomRuleKnowledgeReturn,
+  IGetRuleKnowledgeV1Params,
+  IGetRuleKnowledgeV1Return,
+  IUpdateRuleKnowledgeParams,
+  IUpdateRuleKnowledgeReturn,
   IGetRuleTemplateTipsV1Params,
   IGetRuleTemplateTipsV1Return,
   IGetRuleTemplateListV1Params,
@@ -270,6 +278,78 @@ class RuleTemplateService extends ServiceBase {
 
     return this.get<any>(
       `/v1/projects/${project_name}/rule_templates/${rule_template_name}/export`,
+      paramsData,
+      options
+    );
+  }
+
+  public getCustomRuleKnowledgeV1(
+    params: IGetCustomRuleKnowledgeV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const db_type = paramsData.db_type;
+    delete paramsData.db_type;
+
+    const rule_name = paramsData.rule_name;
+    delete paramsData.rule_name;
+
+    return this.get<IGetCustomRuleKnowledgeV1Return>(
+      `/v1/rule_knowledge/db_types/${db_type}/custom_rules/${rule_name}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public updateCustomRuleKnowledge(
+    params: IUpdateCustomRuleKnowledgeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const db_type = paramsData.db_type;
+    delete paramsData.db_type;
+
+    const rule_name = paramsData.rule_name;
+    delete paramsData.rule_name;
+
+    return this.patch<IUpdateCustomRuleKnowledgeReturn>(
+      `/v1/rule_knowledge/db_types/${db_type}/custom_rules/${rule_name}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public getRuleKnowledgeV1(
+    params: IGetRuleKnowledgeV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const db_type = paramsData.db_type;
+    delete paramsData.db_type;
+
+    const rule_name = paramsData.rule_name;
+    delete paramsData.rule_name;
+
+    return this.get<IGetRuleKnowledgeV1Return>(
+      `/v1/rule_knowledge/db_types/${db_type}/rules/${rule_name}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public updateRuleKnowledge(
+    params: IUpdateRuleKnowledgeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const db_type = paramsData.db_type;
+    delete paramsData.db_type;
+
+    const rule_name = paramsData.rule_name;
+    delete paramsData.rule_name;
+
+    return this.patch<IUpdateRuleKnowledgeReturn>(
+      `/v1/rule_knowledge/db_types/${db_type}/rules/${rule_name}/`,
       paramsData,
       options
     );

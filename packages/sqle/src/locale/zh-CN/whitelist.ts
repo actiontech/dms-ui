@@ -15,7 +15,7 @@ export default {
 
   matchType: {
     exact: '字符串匹配',
-    fingerPrint: 'sql指纹匹配'
+    fingerPrint: 'SQL指纹匹配'
   },
 
   operate: {

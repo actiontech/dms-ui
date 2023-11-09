@@ -7,6 +7,7 @@ import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
+  BatchUpdateSqlManageReqStatusEnum,
   CreateAuditWhitelistReqV1MatchTypeEnum,
   CreateCustomRuleReqV1LevelEnum,
   CustomRuleResV1LevelEnum,
@@ -17,6 +18,8 @@ import {
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
+  SourceTypeEnum,
+  SqlManageStatusEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
   UpdateAuditWhitelistReqV1MatchTypeEnum,
   UpdateCustomRuleReqV1LevelEnum,
@@ -30,6 +33,7 @@ import {
   WorkflowStepResV1TypeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum,
   AuditResDataV2AuditLevelEnum,
+  DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
   GetWorkflowTasksItemV2StatusEnum,
   WorkflowRecordResV2StatusEnum,
@@ -134,6 +138,14 @@ export interface IAuditPlanSQLReqV1 {
   audit_plan_sql_last_receive_timestamp?: string;
 
   audit_plan_sql_schema?: string;
+
+  db_user?: string;
+
+  first_query_at?: string;
+
+  query_time_avg?: number;
+
+  query_time_max?: number;
 }
 
 export interface IAuditPlanSQLResV1 {
@@ -160,6 +172,16 @@ export interface IAuditResDataV1 {
   score?: number;
 
   sql_results?: IAuditSQLResV1[];
+}
+
+export interface IAuditResult {
+  db_type?: string;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
 }
 
 export interface IAuditSQLResV1 {
@@ -274,6 +296,16 @@ export interface IBatchGetInstanceConnectionsResV1 {
   message?: string;
 }
 
+export interface IBatchUpdateSqlManageReq {
+  assignees?: string[];
+
+  remark?: string;
+
+  sql_manage_id_list?: number[];
+
+  status?: BatchUpdateSqlManageReqStatusEnum;
+}
+
 export interface ICheckLicenseResV1 {
   code?: number;
 
@@ -366,6 +398,14 @@ export interface ICreateRuleTemplateReqV1 {
   rule_list?: IRuleReqV1[];
 
   rule_template_name?: string;
+}
+
+export interface ICreateSQLAuditRecordResV1 {
+  code?: number;
+
+  data?: ISQLAuditRecordResData;
+
+  message?: string;
 }
 
 export interface ICreateWorkflowReqV1 {
@@ -824,6 +864,14 @@ export interface IGetRoleUserCountResV1 {
   message?: string;
 }
 
+export interface IGetRuleKnowledgeResV1 {
+  code?: number;
+
+  data?: IRuleKnowledgeResV1;
+
+  message?: string;
+}
+
 export interface IGetRuleTemplateResV1 {
   code?: number;
 
@@ -872,6 +920,32 @@ export interface IGetSQLAnalysisDataResItemV1 {
   table_metas?: ITableMeta[];
 }
 
+export interface IGetSQLAuditRecordResV1 {
+  code?: number;
+
+  data?: ISQLAuditRecord;
+
+  message?: string;
+}
+
+export interface IGetSQLAuditRecordTagTipsResV1 {
+  code?: number;
+
+  data?: string[];
+
+  message?: string;
+}
+
+export interface IGetSQLAuditRecordsResV1 {
+  code?: number;
+
+  data?: ISQLAuditRecord[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IGetSQLEInfoResDataV1 {
   logo_url?: string;
 
@@ -902,6 +976,20 @@ export interface IGetSqlExecutionFailPercentResV1 {
   data?: ISqlExecutionFailPercent[];
 
   message?: string;
+}
+
+export interface IGetSqlManageListResp {
+  code?: number;
+
+  data?: ISqlManage[];
+
+  message?: string;
+
+  sql_manage_bad_num?: number;
+
+  sql_manage_optimized_num?: number;
+
+  sql_manage_total_num?: number;
 }
 
 export interface IGetSystemVariablesResV1 {
@@ -1133,6 +1221,8 @@ export interface IInstanceTableMeta {
 export interface IInstanceTipResV1 {
   host?: string;
 
+  instance_id?: string;
+
   instance_name?: string;
 
   instance_type?: string;
@@ -1312,6 +1402,18 @@ export interface IRoleUserCount {
   role?: string;
 }
 
+export interface IRuleInfo {
+  annotation?: string;
+
+  desc?: string;
+}
+
+export interface IRuleKnowledgeResV1 {
+  knowledge_content?: string;
+
+  rule?: IRuleInfo;
+}
+
 export interface IRuleParamReqV1 {
   key?: string;
 
@@ -1400,6 +1502,34 @@ export interface IRuleTypeV1 {
   rule_type?: string;
 }
 
+export interface ISQLAuditRecord {
+  created_at?: string;
+
+  creator?: string;
+
+  instance?: ISQLAuditRecordInstance;
+
+  sql_audit_record_id?: string;
+
+  sql_audit_status?: string;
+
+  tags?: string[];
+
+  task?: IAuditTaskResV1;
+}
+
+export interface ISQLAuditRecordInstance {
+  db_host?: string;
+
+  db_port?: string;
+}
+
+export interface ISQLAuditRecordResData {
+  sql_audit_record_id?: string;
+
+  task?: IAuditTaskResV1;
+}
+
 export interface ISQLExplain {
   classic_result?: IExplainClassicResult;
 
@@ -1416,6 +1546,14 @@ export interface ISQLQueryConfigResV1 {
   max_pre_query_rows?: number;
 
   query_timeout_second?: number;
+}
+
+export interface ISource {
+  audit_plan_name?: string;
+
+  sql_audit_record_ids?: string[];
+
+  type?: SourceTypeEnum;
 }
 
 export interface ISqlAnalysisResDataV1 {
@@ -1438,6 +1576,34 @@ export interface ISqlExecutionFailPercent {
   instance_name?: string;
 
   percent?: number;
+}
+
+export interface ISqlManage {
+  appear_num?: number;
+
+  assignees?: string[];
+
+  audit_result?: IAuditResult[];
+
+  first_appear_time?: string;
+
+  id?: number;
+
+  instance_name?: string;
+
+  last_appear_time?: string;
+
+  remark?: string;
+
+  schema_name?: string;
+
+  source?: ISource;
+
+  sql?: string;
+
+  sql_fingerprint?: string;
+
+  status?: SqlManageStatusEnum;
 }
 
 export interface IStatisticAuditPlanResV1 {
@@ -1620,10 +1786,18 @@ export interface IUpdateProjectRuleTemplateReqV1 {
   rule_list?: IRuleReqV1[];
 }
 
+export interface IUpdateRuleKnowledgeReq {
+  knowledge_content?: string;
+}
+
 export interface IUpdateRuleTemplateReqV1 {
   desc?: string;
 
   rule_list?: IRuleReqV1[];
+}
+
+export interface IUpdateSQLAuditRecordReqV1 {
+  tags?: string[];
 }
 
 export interface IUpdateSystemVariablesReqV1 {
@@ -1908,14 +2082,6 @@ export interface IAuditResDataV2 {
   sql_results?: IAuditSQLResV2[];
 }
 
-export interface IAuditResult {
-  level?: string;
-
-  message?: string;
-
-  rule_name?: string;
-}
-
 export interface IAuditSQLResV2 {
   audit_level?: string;
 
@@ -1972,6 +2138,20 @@ export interface ICreateWorkflowResV2 {
 
 export interface ICreateWorkflowResV2Data {
   workflow_id?: string;
+}
+
+export interface IDirectAuditFileReqV2 {
+  file_contents?: string[];
+
+  instance_name?: string;
+
+  instance_type?: string;
+
+  project_name?: string;
+
+  schema_name?: string;
+
+  sql_type?: DirectAuditFileReqV2SqlTypeEnum;
 }
 
 export interface IDirectAuditReqV2 {

@@ -104,3 +104,69 @@ export const PopconfirmMessageStyleWrapper = styled('span')`
   font-weight: 400;
   line-height: 22px;
 `;
+
+/**
+ * 功能: 用于带有合并行的表格，处理被合并行第一列的样式问题
+ * PS：合并列的情况暂时还没遇到，之后有使用场景了可再补充
+ */
+export const ConsolidatedListStyleWrapper = styled('section')`
+  .${ANTD_PREFIX_STR}-table-wrapper.actiontech-table-namespace
+    .${ANTD_PREFIX_STR}-table-tbody
+    .${ANTD_PREFIX_STR}-table-row {
+    .${ANTD_PREFIX_STR}-table-cell:first-of-type {
+      padding-left: 16px;
+    }
+    .${ANTD_PREFIX_STR}-table-cell .consolidated-column {
+      padding-left: 24px;
+    }
+  }
+`;
+
+/**
+ * 功能: 用于带Icon的表格列，如工单号
+ */
+export const TableColumnWithIconStyleWrapper = styled('div')`
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`;
+
+/**
+ * 功能: 用于抽屉内表单的图标样式， 如RoleSelector的删除Icon
+ */
+export const DrawerFormIconWrapper = styled(BasicButton)`
+  &.${ANTD_PREFIX_STR}-btn-default.${ANTD_PREFIX_STR}-btn-icon-only.basic-button-wrapper {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: ${({ theme }) =>
+      theme.sharedTheme.components.basicSelect.default.border};
+    box-shadow: none;
+
+    &:hover {
+      border: ${({ theme }) =>
+        theme.sharedTheme.components.basicSelect.hover.border};
+    }
+  }
+`;
+
+/**
+ * 功能: 用于FormList中的添加按钮
+ */
+export const FormListAddButtonWrapper = styled(BasicButton)`
+  &.${ANTD_PREFIX_STR}-btn-default.basic-button-wrapper.form-list-add {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.basic.colorPrimaryBgHover} !important;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
+  }
+`;
