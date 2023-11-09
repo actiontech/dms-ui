@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { useRequest } from 'ahooks';
+import { useBoolean, useRequest } from 'ahooks';
 import { Spin, message, Space, Popconfirm } from 'antd5';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
@@ -24,6 +24,10 @@ const CustomRuleList: React.FC = () => {
   const navigate = useNavigate();
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [messageApi, messageContextHolder] = message.useMessage();
+  const [
+    deleteConfirmPopupVisible,
+    { setTrue: openDeleteConfirmPopup, setFalse: closeDeleteConfirmPopup }
+  ] = useBoolean();
   const {
     data: ruleList,
     run: getCustomRuleList,
@@ -79,7 +83,15 @@ const CustomRuleList: React.FC = () => {
         disabled={deleteLoading}
         placement="topLeft"
         title={t('customRule.deleteConfirm')}
-        onConfirm={deleteRule.bind(null, item as ICustomRuleResV1)}
+        open={deleteConfirmPopupVisible}
+        onConfirm={(e) => {
+          e?.stopPropagation();
+          deleteRule(item);
+        }}
+        onCancel={(e) => {
+          e?.stopPropagation();
+          closeDeleteConfirmPopup();
+        }}
         okText={t('common.ok')}
       >
         <BasicToolTips title={t('customRule.deleteRule')}>
@@ -89,6 +101,10 @@ const CustomRuleList: React.FC = () => {
             className="action-circle-btn disabled-rule-item custom-rule-item-operator"
             key={`${item.rule_id}-remove-item`}
             icon={<IconDisabledRule className="icon-disabled" />}
+            onClick={(e) => {
+              e.stopPropagation();
+              openDeleteConfirmPopup();
+            }}
           />
         </BasicToolTips>
       </Popconfirm>
