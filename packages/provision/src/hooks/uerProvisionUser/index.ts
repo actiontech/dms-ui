@@ -1,12 +1,19 @@
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { useRequest } from 'ahooks';
-import { useMemo } from 'react';
+import { useBoolean } from 'ahooks';
+import { useMemo, useCallback, useState } from 'react';
+import { IListInternalUser } from '@actiontech/shared/lib/api/provision/service/common';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const useProvisionUser = () => {
   const { projectID } = useCurrentProject();
 
-  const { data: userOptions } = useRequest(() =>
+  const [userList, setUserList] = useState<IListInternalUser[]>([]);
+
+  const [loading, { setTrue, setFalse }] = useBoolean();
+
+  const updateUserList = useCallback(() => {
+    setTrue();
     auth
       .AuthListUser({
         page_index: 1,
@@ -14,25 +21,39 @@ const useProvisionUser = () => {
         namespace_uid: projectID
       })
       .then((res) => {
-        return (
-          res.data.data?.map((item) => ({
-            value: item.user_uid ?? '',
-            label: item.name ?? ''
-          })) ?? []
-        );
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setUserList(res.data?.data ?? []);
+        } else {
+          setUserList([]);
+        }
       })
-  );
+      .catch(() => {
+        setUserList([]);
+      })
+      .finally(() => {
+        setFalse();
+      });
+  }, [setFalse, setTrue, projectID]);
 
-  const userNameOptions = useMemo(() => {
-    return userOptions?.map((user) => {
+  const userOptions = useMemo(() => {
+    return userList?.map((user) => {
       return {
-        value: user.label,
-        label: user.label
+        value: user.user_uid,
+        label: user.name
       };
     });
-  }, [userOptions]);
+  }, [userList]);
 
-  return { userOptions, userNameOptions };
+  const userNameOptions = useMemo(() => {
+    return userList?.map((user) => {
+      return {
+        value: user.name,
+        label: user.name
+      };
+    });
+  }, [userList]);
+
+  return { loading, userList, userOptions, userNameOptions, updateUserList };
 };
 
 export default useProvisionUser;
