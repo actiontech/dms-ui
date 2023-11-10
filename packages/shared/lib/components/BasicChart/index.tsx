@@ -28,7 +28,7 @@ const BasicChart: React.FC<BasicChartProps> = (props) => {
     ) : (
       <Column {...(config as ColumnConfig)} theme={theme} locale={language} />
     );
-  }, [type, config, theme, language]);
+  }, [type, config]);
 
   return (
     <BasicLineChartStyleWrapper>

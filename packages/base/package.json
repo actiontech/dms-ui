@@ -3,10 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "cross-env buildType=ce,SQLE vite --port=3020",
-    "start:ee": "cross-env buildType=ee,SQLE vite --port=3020",
-    "build": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=ce,SQLE vite build",
-    "build:ee": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=ee,SQLE vite build",
+    "start": "cross-env buildType=SQLE,PROVISION,DIAGNOSIS vite --port=3020",
+    "start:ce": "cross-env buildType=ce,SQLE vite --port=3020",
+    "start:ee:sqle": "cross-env buildType=SQLE vite  --port=3020",
+    "start:provision": "cross-env buildType=PROVISION vite --port=3020",
+    "start:diagnosis": "cross-env buildType=DIAGNOSIS vite --port=3020",
+    "build": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=SQLE,PROVISION,DIAGNOSIS vite build",
+    "build:ce:sqle": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=ce,SQLE vite build",
+    "build:ee:sqle": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=SQLE vite build",
+    "build:provision": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=PROVISION vite build",
+    "build:diagnosis": "node ../../scripts/getGitVersion.mjs && tsc && cross-env buildType=DIAGNOSIS vite build",
     "preview": "vite preview",
     "test": "jest --watchAll=true",
     "test:c": "jest --coverage",
@@ -15,7 +21,9 @@
   "dependencies": {
     "@actiontech/shared": "workspace:^",
     "babel-preset-react-app": "^10.0.1",
-    "sqle": "workspace:^"
+    "provision": "workspace:^",
+    "sqle": "workspace:^",
+    "diagnosis": "workspace:^"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"

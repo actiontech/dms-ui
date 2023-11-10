@@ -16,7 +16,10 @@ const oldLightTheme = {
     background: '#001529',
     color: '#fff'
   },
-
+  provisionHeader: {
+    background: '#fff',
+    color: '#fff'
+  },
   editor: {
     border: '1px solid #d9d9d9'
   },

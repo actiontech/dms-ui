@@ -1,7 +1,9 @@
 import { SideMenuStyleWrapper } from './style';
 import ProjectSelector from './ProjectSelector';
-import { useNavigate } from 'react-router-dom';
-import { useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useCallback, useMemo } from 'react';
+import { useBoolean } from 'ahooks';
+import { sideMenuData } from './menus/menu.data';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
 import { SelectProps } from 'antd5';
 import { useCurrentUser } from '@actiontech/shared/lib/global';

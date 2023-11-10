@@ -1,0 +1,45 @@
+import { useCallback, useMemo } from 'react';
+import { RecoilState, useRecoilState } from 'recoil';
+import { ModalName } from '~/data/enum';
+import { ModalStatus } from '~/types/common.type';
+
+const useModalStatus = (state: RecoilState<ModalStatus>, name?: ModalName) => {
+  const [modalStatus, updateModalStatus] = useRecoilState(state);
+
+  const toggleModal = (modalName: ModalName, status: boolean) => {
+    if (!Reflect.has(modalStatus, modalName)) {
+      return;
+    }
+    updateModalStatus({
+      ...modalStatus,
+      [modalName]: status
+    });
+  };
+
+  const initModalStatus = useCallback(
+    (modalStatus: ModalStatus) => {
+      updateModalStatus(modalStatus);
+    },
+    [updateModalStatus]
+  );
+
+  const getModalStatus = (modalName: ModalName) => {
+    return modalStatus[modalName];
+  };
+
+  const visible = useMemo(() => {
+    if (!name) {
+      return false;
+    }
+    return modalStatus[name] ?? false;
+  }, [modalStatus, name]);
+
+  return {
+    visible,
+    toggleModal,
+    initModalStatus,
+    getModalStatus
+  };
+};
+
+export default useModalStatus;
