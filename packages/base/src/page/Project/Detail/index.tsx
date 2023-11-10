@@ -54,6 +54,7 @@ const ProjectDetail: React.FC = () => {
       getDriverMeta(nextProjectID);
     }
   }, [nextProjectID, getDriverMeta]);
+
   /* IFTRUE_isEE */
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();

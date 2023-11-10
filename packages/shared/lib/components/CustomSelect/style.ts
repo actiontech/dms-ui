@@ -128,4 +128,8 @@ export const CustomSelectSearchInputStyleWrapper = styled(BasicInput)`
 export const CustomSelectPopupMenuStyleWrapper = styled('div')`
   padding: 4px 6px 6px;
   width: 100%;
+
+  .custom-select-options-group-label {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+  }
 `;
