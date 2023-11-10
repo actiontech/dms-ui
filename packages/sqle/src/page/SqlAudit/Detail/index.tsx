@@ -16,7 +16,7 @@ const SqlAuditDetail = () => {
   const { t } = useTranslation();
 
   const { sql_audit_record_id } = useParams<{ sql_audit_record_id: string }>();
-  const { projectID, projectName } = useCurrentProject();
+  const { projectID, projectName, projectArchive } = useCurrentProject();
 
   // api
   const { data: auditRecord, loading: dataLoading } = useRequest(() =>
@@ -54,11 +54,13 @@ const SqlAuditDetail = () => {
             </Link>
           }
           extra={
-            <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
-              <BasicButton type="primary" icon={<IconAdd />}>
-                {t('sqlAudit.list.action.create')}
-              </BasicButton>
-            </Link>
+            !projectArchive ? (
+              <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
+                <BasicButton type="primary" icon={<IconAdd />}>
+                  {t('sqlAudit.list.action.create')}
+                </BasicButton>
+              </Link>
+            ) : null
           }
         />
         <div
