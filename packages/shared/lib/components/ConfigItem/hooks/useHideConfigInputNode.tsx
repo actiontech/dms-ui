@@ -1,4 +1,4 @@
-const findAllParentNodes = (element: HTMLElement) => {
+export const findAllParentNodes = (element: HTMLElement) => {
   const parentNodes: Node[] = [];
   let currentNode: Node | null = element?.parentNode;
 
