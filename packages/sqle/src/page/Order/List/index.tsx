@@ -233,7 +233,7 @@ const OrderList: React.FC = () => {
     updateInstanceList({
       project_name: projectName
     });
-  }, [projectID, projectName, updateInstanceList, updateUsernameList]);
+  }, [projectName, updateInstanceList, updateUsernameList]);
 
   return (
     <OrderListStyleWrapper>
