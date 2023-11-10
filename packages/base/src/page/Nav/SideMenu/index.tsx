@@ -23,6 +23,7 @@ import {
 } from '@actiontech/shared/lib/data/common';
 import useSystemConfig from '../../../hooks/useSystemConfig.tsx';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
+import { LockOutlined } from '@ant-design/icons';
 
 export const SideMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -50,7 +51,9 @@ export const SideMenu: React.FC = () => {
         value: v.project_id,
         label: (
           <ProjectSelectorLabelStyleWrapper>
-            <IconProjectFlag />
+            {/* <IconProjectFlag /> */}
+            <LockOutlined size={18} />
+
             <span className="project-selector-label-text">
               {v.project_name}
             </span>
