@@ -8,3 +8,5 @@ export const ProjectDescStyledWrapper = styled(Typography.Paragraph)`
     margin-bottom: 0;
   }
 `;
+
+export const ProjectArchiveStyledWrapper = styled('div')``;

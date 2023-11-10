@@ -10,6 +10,7 @@ import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelec
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
+import { LockOutlined } from '@ant-design/icons';
 
 const ProjectSelector: React.FC<CustomSelectProps> = ({
   value,
@@ -41,7 +42,8 @@ const ProjectSelector: React.FC<CustomSelectProps> = ({
   return (
     <ProjectSelectorStyleWrapper
       open={open}
-      prefix={<IconProjectFlag />}
+      // prefix={<IconProjectFlag />}
+      prefix={<LockOutlined />}
       size="large"
       className="custom-project-selector"
       placement="bottomLeft"

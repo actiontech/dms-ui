@@ -10,6 +10,13 @@ import {
   ActiontechTableColumn
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { LockOutlined } from '@ant-design/icons';
+import {
+  IconProjectArchived,
+  IconProjectFlag
+} from '@actiontech/shared/lib/Icon/common';
+import { ProjectArchiveStyledWrapper } from './style';
 
 const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProject> => {
@@ -37,9 +44,22 @@ const ProjectListTableColumnFactory =
         dataIndex: 'archived',
         title: () => t('dmsProject.projectList.columns.status'),
         render(archived: boolean) {
-          return archived
-            ? t('dmsProject.projectList.columns.unavailable')
-            : t('dmsProject.projectList.columns.available');
+          return (
+            <ProjectArchiveStyledWrapper>
+              {archived ? (
+                <TableColumnWithIconStyleWrapper>
+                  <IconProjectArchived />
+                  {/* <LockOutlined className='icon' /> */}
+                  <span>{t('dmsProject.projectList.columns.unavailable')}</span>
+                </TableColumnWithIconStyleWrapper>
+              ) : (
+                <TableColumnWithIconStyleWrapper>
+                  <IconProjectFlag />
+                  <span>{t('dmsProject.projectList.columns.available')}</span>
+                </TableColumnWithIconStyleWrapper>
+              )}
+            </ProjectArchiveStyledWrapper>
+          );
         }
       },
       /* FITRUE_isEE */
