@@ -1,5 +1,5 @@
 import { Popover } from 'antd5';
-import { PopoverInnerStyleWrapper } from './style';
+import { PopoverInnerStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -12,10 +12,10 @@ import {
   IconReportStatistics,
   IconRuleManage
   /* FITRUE_isSQLE */
-} from '../../../icon/sideMenu';
+} from '../../../../icon/sideMenu';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
-import useThemeStyleData from '../../../hooks/useThemeStyleData';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { EmptyBox } from '@actiontech/shared';
 
 const GlobalSetting: React.FC<{
