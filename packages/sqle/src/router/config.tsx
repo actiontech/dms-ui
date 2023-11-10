@@ -26,7 +26,6 @@ const CreateOrder = React.lazy(
   () => import(/* webpackChunkName: "CreateOrder" */ '../page/Order/Create')
 );
 
-//重构中
 const OrderDetail = React.lazy(
   () => import(/* webpackChunkName: "OrderDetail" */ '../page/Order/Detail')
 );
@@ -78,18 +77,6 @@ const AuditPlanReport = React.lazy(
     import(
       /* webpackChunkName: "AuditPlanReport" */ '../page/AuditPlan/PlanDetail/DetailReport'
     )
-);
-
-const AuditPlanSqlAnalyze = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "AuditPlanSqlAnalyze" */ '../page/SqlAnalyze/AuditPlan'
-    )
-);
-
-const OrderSqlAnalyze = React.lazy(
-  () =>
-    import(/* webpackChunkName: "OrderSqlAnalyze" */ '../page/SqlAnalyze/Order')
 );
 
 const ProjectOverview = React.lazy(
@@ -164,6 +151,10 @@ const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
 
 /* IFTRUE_isEE */
 const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
+const OrderSqlAnalyze = React.lazy(() => import('../page/SqlAnalyze/Order'));
+const AuditPlanSqlAnalyze = React.lazy(
+  () => import('../page/SqlAnalyze/AuditPlan')
+);
 /* FITRUE_isEE */
 
 //sqle global page
@@ -378,7 +369,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     element: <Whitelist />,
     icon: <ProfileOutlined />
   },
-  /* IFTRUE_isEE */
   {
     path: `${PROJECT_ROUTER_PARAM}/operationRecord`,
     label: 'menu.operationRecord',
@@ -386,7 +376,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     element: <OperationRecord />,
     role: [SystemRole.admin]
   },
-  /* FITRUE_isEE */
   {
     path: `${PROJECT_ROUTER_PARAM}/sqlManagement`,
     label: 'menu.sqlManagement',

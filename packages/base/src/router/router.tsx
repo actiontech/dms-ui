@@ -1,7 +1,7 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
-import { BaseRouterConfig } from './routers/base';
+import { BaseRouterConfig } from './router.base';
 
 /* IFTRUE_isSQLE */
 import {

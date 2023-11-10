@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import monitorSourceConfig from './monitorSourceConfig';
 
+export const diagnosisStoreData = {
+  monitorSourceConfig
+};
+
 const store = configureStore({
-  reducer: {
-    monitorSourceConfig
-  }
+  reducer: diagnosisStoreData
 });
 
 export type IReduxState = ReturnType<typeof store.getState>;

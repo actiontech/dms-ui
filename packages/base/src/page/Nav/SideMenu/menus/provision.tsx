@@ -1,8 +1,5 @@
 import { t } from '../../../../locale';
 import {
-  IconSubmenuExpandDown,
-  IconSubmenuExpandTop,
-  IconOperateAndAudit,
   IconPermissionGroup,
   IconPermissionTemplate,
   IconAuthList
@@ -10,42 +7,13 @@ import {
 import Icon from '@ant-design/icons';
 import {
   GenerateMenuItemsType,
-  MenuItemWithOrder,
-  SIDE_MENU_DATA_PLACEHOLDER_KEY,
-  isAdminKeys
+  SIDE_MENU_DATA_PLACEHOLDER_KEY
 } from './common';
 
 export const ProvisionMenuItems: GenerateMenuItemsType = ({
   navigate,
   projectID = ''
 }) => [
-  {
-    order: 5,
-    label: t('dmsMenu.operateAndAudit'),
-    expandIcon({ isOpen }) {
-      return isOpen ? <IconSubmenuExpandTop /> : <IconSubmenuExpandDown />;
-    },
-    icon: <Icon component={IconOperateAndAudit} />,
-    key: 'operate',
-    children: [
-      {
-        label: t('dmsMenu.authAudit'),
-        key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/auth`,
-        onClick: () => navigate(`/provision/project/${projectID}/audit/auth`)
-      },
-      {
-        label: t('dmsMenu.templateAudit'),
-        key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/template`,
-        onClick: () =>
-          navigate(`/provision/project/${projectID}/audit/template`)
-      },
-      {
-        label: t('dmsMenu.instanceAudit'),
-        key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/service`,
-        onClick: () => navigate(`/provision/project/${projectID}/audit/service`)
-      }
-    ]
-  },
   {
     order: 9,
     type: 'divider'
@@ -75,5 +43,26 @@ export const ProvisionMenuItems: GenerateMenuItemsType = ({
         onClick: () => navigate(`/provision/project/${projectID}/auth/list`)
       }
     ]
+  }
+];
+
+export const ProvisionOperateConflictMenuItems: GenerateMenuItemsType = ({
+  navigate,
+  projectID = ''
+}) => [
+  {
+    label: t('dmsMenu.authAudit'),
+    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/auth`,
+    onClick: () => navigate(`/provision/project/${projectID}/audit/auth`)
+  },
+  {
+    label: t('dmsMenu.templateAudit'),
+    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/template`,
+    onClick: () => navigate(`/provision/project/${projectID}/audit/template`)
+  },
+  {
+    label: t('dmsMenu.instanceAudit'),
+    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/service`,
+    onClick: () => navigate(`/provision/project/${projectID}/audit/service`)
   }
 ];

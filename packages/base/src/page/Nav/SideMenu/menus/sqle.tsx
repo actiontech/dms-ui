@@ -13,7 +13,6 @@ import {
 import Icon from '@ant-design/icons';
 import {
   GenerateMenuItemsType,
-  MenuItemWithOrder,
   SIDE_MENU_DATA_PLACEHOLDER_KEY,
   isAdminKeys
 } from './common';
@@ -42,25 +41,6 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
     key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/dashboard`,
     onClick: () => navigate(`/sqle/project/${projectID}/dashboard`)
   },
-  /* IFTRUE_isEE */
-  {
-    order: 5,
-    label: t('dmsMenu.operateAndAudit'),
-    icon: <Icon component={IconOperateAndAudit} />,
-    key: isAdminKeys.operate,
-    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`),
-    conflict: {
-      id: 'test',
-      transform: (isConflict: boolean, _self: MenuItemWithOrder) => {
-        if (isConflict) {
-          return null;
-        }
-
-        return _self;
-      }
-    }
-  },
-  /* FITRUE_isEE */
   {
     order: 7,
     type: 'divider'
@@ -113,5 +93,18 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
         onClick: () => navigate(`/sqle/project/${projectID}/auditPlan`)
       }
     ]
+  }
+];
+
+export const SQLEOperateConflictMenuItems: GenerateMenuItemsType = ({
+  navigate,
+  projectID = ''
+}) => [
+  {
+    order: 5,
+    label: t('dmsMenu.operateAndAudit'),
+    icon: <Icon component={IconOperateAndAudit} />,
+    key: isAdminKeys.operate,
+    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`)
   }
 ];
