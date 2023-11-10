@@ -8,10 +8,7 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
-import {
-  DBServiceDbTypeEnum,
-  SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
-} from '@actiontech/shared/lib/api/base/service/common.enum';
+import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
@@ -116,7 +113,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       props.form.setFieldsValue({
         name: props.defaultData.name,
         describe: props.defaultData.desc,
-        type: props.defaultData.db_type as DBServiceDbTypeEnum | undefined,
+        type: props.defaultData.db_type,
         ip: props.defaultData.host,
         port: Number.parseInt(props.defaultData.port ?? ''),
         user: props.defaultData.user,

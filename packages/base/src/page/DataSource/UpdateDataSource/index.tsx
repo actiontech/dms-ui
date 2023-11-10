@@ -9,7 +9,6 @@ import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { IUpdateDBServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import { UpdateDBServiceDbTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
@@ -40,7 +39,7 @@ const UpdateDataSource = () => {
       db_service_uid: urlParams.dbServiceUid ?? '',
       db_service: {
         business: values.business,
-        db_type: values.type as unknown as UpdateDBServiceDbTypeEnum,
+        db_type: values.type,
         desc: values.describe,
         host: values.ip,
         maintenance_times:
