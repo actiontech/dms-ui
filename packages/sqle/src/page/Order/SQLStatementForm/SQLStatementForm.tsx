@@ -144,9 +144,9 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
           getValueFromEvent={getFileFromUploadChangeEvent}
         >
           <CustomDraggerUpload
-            accept=".sql"
+            accept=".xml"
             beforeUpload={() => false}
-            onRemove={removeFile.bind(null, 'sqlFile')}
+            onRemove={removeFile.bind(null, 'mybatisFile')}
             title={t('order.sqlInfo.mybatisFileTips')}
           />
         </FormItemNoLabel>
