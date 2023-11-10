@@ -216,8 +216,7 @@ export const RuleItemStyleWrapper = styled('div')`
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
       }
 
-      &.edit-rule-item,
-      &.custom-rule-item-operator {
+      &.edit-rule-item {
         display: none;
       }
     }
@@ -233,10 +232,6 @@ export const RuleItemStyleWrapper = styled('div')`
       .action-circle-btn.edit-rule-item {
         display: block;
         color: pink !important;
-      }
-
-      .action-circle-btn.custom-rule-item-operator {
-        display: block;
       }
     }
   }

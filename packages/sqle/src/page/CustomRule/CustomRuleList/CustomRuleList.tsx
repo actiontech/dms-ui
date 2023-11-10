@@ -18,16 +18,13 @@ import {
 import { IconDisabledRule } from '../../../icon/Rule';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import useCustomOperatorButtonVisible from '../../../components/RuleList/hooks/useCustomOperatorButtonVisible';
 
 const CustomRuleList: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [messageApi, messageContextHolder] = message.useMessage();
-  const [
-    deleteConfirmPopupVisible,
-    { setTrue: openDeleteConfirmPopup, setFalse: closeDeleteConfirmPopup }
-  ] = useBoolean();
   const {
     data: ruleList,
     run: getCustomRuleList,
@@ -83,14 +80,12 @@ const CustomRuleList: React.FC = () => {
         disabled={deleteLoading}
         placement="topLeft"
         title={t('customRule.deleteConfirm')}
-        open={deleteConfirmPopupVisible}
+        onOpenChange={(open: boolean, e) => {
+          e?.stopPropagation();
+        }}
         onConfirm={(e) => {
           e?.stopPropagation();
           deleteRule(item);
-        }}
-        onCancel={(e) => {
-          e?.stopPropagation();
-          closeDeleteConfirmPopup();
         }}
         okText={t('common.ok')}
       >
@@ -102,7 +97,6 @@ const CustomRuleList: React.FC = () => {
           icon={<IconDisabledRule className="icon-disabled" />}
           onClick={(e) => {
             e.stopPropagation();
-            openDeleteConfirmPopup();
           }}
         />
       </Popconfirm>
