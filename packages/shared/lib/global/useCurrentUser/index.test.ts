@@ -2,9 +2,8 @@ import useCurrentUser from '.';
 import { renderHook } from '@testing-library/react-hooks';
 import { useSelector } from 'react-redux';
 import { SupportTheme, SystemRole } from '../../enum';
-import { IManagementPermissionResV1 } from '../../types/common.type';
 import { useDispatch } from 'react-redux';
-import { IUserBindProject } from '../../api/base/service/common';
+import { IUidWithName, IUserBindProject } from '../../api/base/service/common';
 
 export const mockBindProjects: IUserBindProject[] = [
   {
@@ -19,10 +18,10 @@ export const mockBindProjects: IUserBindProject[] = [
   }
 ];
 
-export const mockManagementPermissions: IManagementPermissionResV1[] = [
+export const mockManagementPermissions: IUidWithName[] = [
   {
-    code: 1,
-    desc: '创建项目'
+    uid: '700001',
+    name: '创建项目'
   }
 ];
 
