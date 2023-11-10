@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
-import { message, Modal, Space } from 'antd5';
-import { useCallback, useEffect, useMemo } from 'react';
+import { message, Modal } from 'antd5';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   DataSourceColumns,
@@ -37,6 +37,8 @@ const DataSourceList = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectID, projectArchive, projectName } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
+  const [searchKeyword, setSearchKeyword] = useState<string>('');
+
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
@@ -67,12 +69,13 @@ const DataSourceList = () => {
           ...tableFilterInfo,
           page_index: pagination.page_index,
           page_size: pagination.page_size,
-          project_uid: projectID
+          project_uid: projectID,
+          fuzzy_keyword: searchKeyword
         })
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo],
+      refreshDeps: [pagination, tableFilterInfo, searchKeyword],
       ready: !!projectID
     }
   );
@@ -188,6 +191,10 @@ const DataSourceList = () => {
     getDriveOptionsLoading
   ]);
 
+  const onSearch = (value: string) => {
+    setSearchKeyword(value);
+  };
+
   const actions = useMemo(() => {
     return DataSourceListActions(
       navigateToUpdatePage,
@@ -236,9 +243,9 @@ const DataSourceList = () => {
           filterButtonMeta,
           updateAllSelectedFilterItem
         }}
-        // searchInput={{
-        //   onSearch
-        // }}
+        searchInput={{
+          onSearch
+        }}
       />
       <TableFilterContainer
         filterContainerMeta={filterContainerMeta}
