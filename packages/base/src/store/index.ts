@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { baseStoreData } from './base';
 import { SQLEStoreData } from 'sqle/src/store';
+import { findDuplicateKeys } from '../utils/findDuplicateKeys';
 
 // IFTRUE_isDebug
-const getKeysLen = (obj: Record<string, any>) => Object.keys(obj).length;
-if (
-  getKeysLen({ ...baseStoreData, ...SQLEStoreData }) !==
-  getKeysLen(baseStoreData) + getKeysLen(SQLEStoreData)
-) {
-  throw new Error('Redux store error: The same key exists');
+const dupKeys = findDuplicateKeys([baseStoreData, SQLEStoreData]);
+if (dupKeys.length > 0) {
+  throw new Error(
+    `Redux store error: The same key exists: ${dupKeys.toString()}`
+  );
 }
 // FITRUE_isDebug
 
