@@ -19,9 +19,12 @@ import { AuditResultForCreateOrderStyleWrapper } from './style';
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   projectID,
-  updateTaskRecordTotalNum
+  updateTaskRecordTotalNum,
+  ...props
 }) => {
   const { t } = useTranslation();
+  const { mode = 'order' } = props;
+  const isOrder = useMemo(() => mode === 'order', [mode]);
 
   const [currentTaskID, setCurrentTaskID] = useState<string>();
   const [duplicate, setDuplicate] = useState(false);
@@ -74,15 +77,19 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   return (
     <AuditResultForCreateOrderStyleWrapper>
       <SegmentedRowStyleWrapper justify={'space-between'}>
-        <BasicSegmented
-          value={currentTaskID}
-          onChange={(v) => handleChangeCurrentTask(v as string)}
-          options={tasks.map((v) => ({
-            label: generateCurrentTaskLabel(v.instance_name, v.audit_level),
-            value: !!v?.task_id ? `${v.task_id}` : '',
-            key: v.task_id
-          }))}
-        />
+        {isOrder ? (
+          <BasicSegmented
+            value={currentTaskID}
+            onChange={(v) => handleChangeCurrentTask(v as string)}
+            options={tasks.map((v) => ({
+              label: generateCurrentTaskLabel(v.instance_name, v.audit_level),
+              value: !!v?.task_id ? `${v.task_id}` : '',
+              key: v.task_id
+            }))}
+          />
+        ) : (
+          <div />
+        )}
         <Space size={4}>
           <ToggleButtonStyleWrapper
             active={duplicate}
@@ -102,7 +109,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
       <AuditResultFilterContainer<AuditResultLevelFilterType>
         passRate={currentTask?.pass_rate}
         score={currentTask?.score}
-        instanceSchemaName={currentTask?.instance_schema}
+        instanceSchemaName={isOrder ? currentTask?.instance_schema : ''}
         filterOptions={[
           {
             value: 'all',

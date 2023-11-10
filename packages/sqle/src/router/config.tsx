@@ -95,13 +95,6 @@ const OrderSqlAnalyze = React.lazy(
     import(/* webpackChunkName: "OrderSqlAnalyze" */ '../page/SqlAnalyze/Order')
 );
 
-const ReportStatistics = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ReportStatistics" */ '../page/ReportStatistics'
-    )
-);
-
 const ProjectOverview = React.lazy(
   () =>
     import(
@@ -162,9 +155,22 @@ const WorkflowTemplateDetail = React.lazy(
       /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
 );
-
 const SQLManagement = React.lazy(
   () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
+);
+
+const SqlAudit = React.lazy(
+  () => import(/* webpackChunkName: "SqlAudit" */ '../page/SqlAudit')
+);
+
+const SqlAuditCreate = React.lazy(
+  () =>
+    import(/* webpackChunkName: "SqlAuditCreate" */ '../page/SqlAudit/Create')
+);
+
+const SqlAuditDetail = React.lazy(
+  () =>
+    import(/* webpackChunkName: "SqlAuditDetail" */ '../page/SqlAudit/Detail')
 );
 
 export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[] =
@@ -345,6 +351,31 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
       ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
     },
     {
+      path: `${PROJECT_ROUTER_PARAM}/sqlAudit`,
+      key: 'sqlAudit',
+      label: 'menu.sqlAudit',
+      icon: <NodeIndexOutlined />,
+      element: <WorkflowTemplate />,
+      hideChildrenInSliderMenu: true,
+      children: [
+        {
+          index: true,
+          element: <SqlAudit />,
+          key: 'sqlAuditList'
+        },
+        {
+          path: 'create',
+          element: <SqlAuditCreate />,
+          key: 'sqlAuditCreate'
+        },
+        {
+          path: 'detail/:sql_audit_record_id',
+          element: <SqlAuditDetail />,
+          key: 'sqlAuditDetail'
+        }
+      ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
+    },
+    {
       path: `${PROJECT_ROUTER_PARAM}/whitelist`,
       key: 'Whitelist',
       label: 'menu.whitelist',
@@ -376,6 +407,12 @@ export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItem
   ];
 
 // sqle 的全局页面, 迁移至 base 下 router/sqle.tsx
+// const ReportStatistics = React.lazy(
+//   () =>
+//     import(
+//       /* webpackChunkName: "ReportStatistics" */ '../page/ReportStatistics'
+//     )
+// );
 // export const globalRouterConfig: RouterConfigItem<
 //   GlobalRouterItemKeyLiteral | ProjectDetailRouterItemKeyLiteral
 // >[] = [

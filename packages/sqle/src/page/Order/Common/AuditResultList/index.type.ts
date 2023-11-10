@@ -4,4 +4,5 @@ export type AuditResultListProps = {
   tasks: IAuditTaskResV1[];
   projectID: string;
   updateTaskRecordTotalNum?: (taskId: string, sqlNumber: number) => void;
+  mode?: 'order' | 'sql-audit';
 };

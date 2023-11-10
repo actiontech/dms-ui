@@ -23,7 +23,7 @@ export const PageHeaderStyleWrapper = styled('div')`
     position: fixed;
     width: calc(100% - 220px);
     left: 220px;
-    z-index: 2;
+    z-index: 9;
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.pageHeader.background};
   }

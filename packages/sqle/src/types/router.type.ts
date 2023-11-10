@@ -45,6 +45,10 @@ export type ProjectDetailRouterItemKeyLiteral =
   | 'dashboard'
   | 'rule'
   | 'operationRecord'
+  | 'sqlAudit'
+  | 'sqlAuditList'
+  | 'sqlAuditCreate'
+  | 'sqlAuditDetail'
   | 'sqlManagement';
 
 export type RouterConfigItem<T extends string> = {
