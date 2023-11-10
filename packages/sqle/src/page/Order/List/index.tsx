@@ -229,11 +229,11 @@ const OrderList: React.FC = () => {
   }, [selectedRowKeys, orderList?.list, projectName, refresh, messageApi, t]);
 
   useEffect(() => {
-    updateUsernameList();
+    updateUsernameList({ filter_project: projectName });
     updateInstanceList({
       project_name: projectName
     });
-  }, [projectName, updateInstanceList, updateUsernameList]);
+  }, [projectID, projectName, updateInstanceList, updateUsernameList]);
 
   return (
     <OrderListStyleWrapper>

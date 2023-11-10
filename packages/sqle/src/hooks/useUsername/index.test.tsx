@@ -29,6 +29,10 @@ describe('useUsername', () => {
     return spy;
   };
 
+  const param = {
+    filter_project: 'test1'
+  };
+
   test('should get username data from request', async () => {
     const requestSpy = mockRequest();
     requestSpy.mockImplementation(() =>
@@ -43,14 +47,12 @@ describe('useUsername', () => {
     expect(baseElement).toMatchSnapshot();
 
     act(() => {
-      result.current.updateUsernameList('test1');
+      result.current.updateUsernameList(param);
     });
 
     expect(result.current.loading).toBe(true);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
-      filter_project: 'test1'
-    });
+    expect(requestSpy).toBeCalledWith(param);
     expect(result.current.usernameList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
@@ -87,7 +89,7 @@ describe('useUsername', () => {
     expect(result.current.usernameList).toEqual([]);
 
     act(() => {
-      result.current.updateUsernameList();
+      result.current.updateUsernameList(param);
     });
 
     expect(result.current.loading).toBe(true);
@@ -106,7 +108,7 @@ describe('useUsername', () => {
     );
 
     act(() => {
-      result.current.updateUsernameList();
+      result.current.updateUsernameList(param);
     });
     expect(result.current.loading).toBe(true);
     expect(requestSpy).toBeCalledTimes(1);
@@ -134,7 +136,7 @@ describe('useUsername', () => {
     expect(result.current.usernameList).toEqual([]);
 
     act(() => {
-      result.current.updateUsernameList();
+      result.current.updateUsernameList(param);
     });
 
     expect(result.current.loading).toBe(true);
@@ -153,7 +155,7 @@ describe('useUsername', () => {
     );
 
     act(() => {
-      result.current.updateUsernameList();
+      result.current.updateUsernameList(param);
     });
     expect(result.current.loading).toBe(true);
     expect(requestSpy).toBeCalledTimes(1);
