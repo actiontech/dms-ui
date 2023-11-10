@@ -19,7 +19,7 @@ export default defineConfig((config) => {
   const isSQLE = buildTypes.includes('SQLE');
   const isPROVISION = buildTypes.includes('PROVISION');
   const isDIAGNOSIS = buildTypes.includes('DIAGNOSIS');
-  const isDMS = buildTypes.includes('DMS');
+  const isDMS = isSQLE && isPROVISION && isDIAGNOSIS;
 
   const genTitle = () => {
     if (isDMS) {

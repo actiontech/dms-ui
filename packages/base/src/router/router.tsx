@@ -1,42 +1,56 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
-import { BaseRouterConfig } from './routers/base';
+import { BaseRouterConfig } from './router.base';
 
 /* IFTRUE_isSQLE */
-import { SQLERouterConfig } from './routers/sqle';
+import {
+  projectDetailRouterConfig as SQLEProjectDetailRouterConfig,
+  globalRouterConfig as SQLEGlobalRouterConfig
+} from 'sqle/src/router/config';
 /* FITRUE_isSQLE */
 
-/* IFTRUE_isDMS */
-import { DMSRouterConfig } from './routers/dms';
-/* FITRUE_isDMS */
-
 /* IFTRUE_isPROVISION */
-import { ProvisionRouterConfig } from './routers/provision';
+import { AuthRouterConfig as ProvisionAuthRouterConfig } from 'provision/src/router/router';
 /* FITRUE_isPROVISION */
 
 /* IFTRUE_isDIAGNOSIS */
-import { DiagnosisRouterConfig } from './routers/diagnosis';
+import { DiagnosisRouterConfig } from 'diagnosis/src/router/router';
 /* FITRUE_isDIAGNOSIS */
+
+const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 
 export const AuthRouterConfig: RouterConfigItem[] = [
   ...BaseRouterConfig,
 
   /* IFTRUE_isSQLE */
-  ...SQLERouterConfig,
+  ...SQLEGlobalRouterConfig,
+  {
+    key: 'projectDetail',
+    path: 'sqle/project/*',
+    element: <ProjectDetail />,
+    children: SQLEProjectDetailRouterConfig
+  },
   /* FITRUE_isSQLE */
 
-  /* IFTRUE_isDMS */
-  ...DMSRouterConfig,
-  /* FITRUE_isDMS */
-
   /* IFTRUE_isPROVISION */
-  ...ProvisionRouterConfig,
+  {
+    path: 'provision/project/*',
+    key: 'provision',
+    element: <ProjectDetail />,
+    children: ProvisionAuthRouterConfig
+  },
   /* FITRUE_isPROVISION */
 
   /* IFTRUE_isDIAGNOSIS */
-  ...DiagnosisRouterConfig,
+  {
+    path: 'diagnosis/project/*',
+    key: 'diagnosis',
+    element: <ProjectDetail />,
+    children: DiagnosisRouterConfig
+  },
   /* FITRUE_isDIAGNOSIS */
+
   {
     path: '*',
     hideInMenu: true,
