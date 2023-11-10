@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { useBoolean, useRequest } from 'ahooks';
+import { useRequest } from 'ahooks';
 import { Spin, message, Space, Popconfirm } from 'antd5';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/shared';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useCustomRuleFilterForm from './useCustomRuleFilterForm';
@@ -18,7 +18,6 @@ import {
 import { IconDisabledRule } from '../../../icon/Rule';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import useCustomOperatorButtonVisible from '../../../components/RuleList/hooks/useCustomOperatorButtonVisible';
 
 const CustomRuleList: React.FC = () => {
   const { t } = useTranslation();
