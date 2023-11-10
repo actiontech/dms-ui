@@ -12,7 +12,7 @@ import ProjectManageModal from './Modal';
 import { ProjectListStyledWrapper } from './style';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useMemo } from 'react';
-import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 
 const Project: React.FC = () => {
   const { t } = useTranslation();
@@ -23,9 +23,7 @@ const Project: React.FC = () => {
     return (
       isAdmin ||
       managementPermissions.some(
-        (v) =>
-          OpPermissionItemOpPermissionTypeEnum['create_project'] ===
-          (v?.name ?? '')
+        (v) => OpPermissionTypeUid['create_project'] === (v?.uid ?? '')
       )
     );
   }, [isAdmin, managementPermissions]);
