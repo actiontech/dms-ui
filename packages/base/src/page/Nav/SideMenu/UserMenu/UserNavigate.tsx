@@ -1,6 +1,6 @@
 import { Popover } from 'antd5';
-import { PopoverInnerStyleWrapper } from './style';
-import { IconAccount } from '../../../icon/sideMenu';
+import { PopoverInnerStyleWrapper } from '../style';
+import { IconAccount } from '../../../../icon/sideMenu';
 import { useTranslation } from 'react-i18next';
 import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
 import { useState } from 'react';
