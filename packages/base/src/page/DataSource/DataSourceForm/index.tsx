@@ -270,7 +270,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             {...formItemLayout.spaceBetween}
           >
             <BasicInput.TextArea
-              disabled={isExternalInstance}
               placeholder={t('common.form.placeholder.input', {
                 name: t('dmsDataSource.dataSourceForm.describe')
               })}
