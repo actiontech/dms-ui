@@ -4,16 +4,13 @@ import {
   BackendFormValues
 } from 'sqle/src/components/BackendForm';
 import { MaintenanceTimeValue } from './MaintenanceTimePicker';
-import {
-  DBServiceDbTypeEnum,
-  SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
-} from '@actiontech/shared/lib/api/base/service/common.enum';
+import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 
 export type DataSourceFormField = {
   name: string;
   describe?: string;
-  type: DBServiceDbTypeEnum;
+  type: string;
   ip: string;
   port: number;
   user: string;
