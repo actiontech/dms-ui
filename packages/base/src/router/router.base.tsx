@@ -4,32 +4,28 @@ import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
 
 /* IFTRUE_isEE */
-const Project = lazy(() => import('../../page/Project'));
+const Project = lazy(() => import('../page/Project'));
 /* FITRUE_isEE */
 
-const Home = lazy(() => import('../../page/Home'));
-const UserCenter = lazy(() => import('../../page/UserCenter'));
-const DataSource = lazy(() => import('../../page/DataSource'));
-const AddDataSource = lazy(() => import('../../page/DataSource/AddDataSource'));
-const DataSourceList = lazy(
-  () => import('../../page/DataSource/DataSourceList')
-);
+const Home = lazy(() => import('../page/Home'));
+const UserCenter = lazy(() => import('../page/UserCenter'));
+const DataSource = lazy(() => import('../page/DataSource'));
+const AddDataSource = lazy(() => import('../page/DataSource/AddDataSource'));
+const DataSourceList = lazy(() => import('../page/DataSource/DataSourceList'));
 const UpdateDataSource = lazy(
-  () => import('../../page/DataSource/UpdateDataSource')
+  () => import('../page/DataSource/UpdateDataSource')
 );
-const Member = lazy(() => import('../../page/Member'));
-const ProjectDetail = lazy(() => import('../../page/Project/Detail'));
-const System = lazy(() => import('../../page/System'));
-const CloudBeaver = lazy(() => import('../../page/CloudBeaver'));
-const SyncDataSource = lazy(() => import('../../page/SyncDataSource'));
-const SyncTaskList = lazy(
-  () => import('../../page/SyncDataSource/SyncTaskList')
-);
-const AddSyncTask = lazy(() => import('../../page/SyncDataSource/AddSyncTask'));
+const Member = lazy(() => import('../page/Member'));
+const ProjectDetail = lazy(() => import('../page/Project/Detail'));
+const System = lazy(() => import('../page/System'));
+const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
+const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
+const SyncTaskList = lazy(() => import('../page/SyncDataSource/SyncTaskList'));
+const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddSyncTask'));
 const UpdateSyncTask = lazy(
-  () => import('../../page/SyncDataSource/UpdateSyncTask')
+  () => import('../page/SyncDataSource/UpdateSyncTask')
 );
-const Account = lazy(() => import('../../page/Account'));
+const Account = lazy(() => import('../page/Account'));
 
 export const BaseRouterConfig: RouterConfigItem[] = [
   {

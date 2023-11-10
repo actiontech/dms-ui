@@ -2,7 +2,7 @@ import { t } from '../../../../locale';
 import { IconStepDatabase, IconStepMember } from '../../../../icon/home';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../index.type';
 
-export const databaseTarget: (
+export const getDatabaseManagerSteps: (
   arg: DevopsStepsProps
 ) => UserDevopsStepsFactory[0] = ({ navigate, projectID }) => {
   return {
@@ -67,7 +67,7 @@ export const databaseTarget: (
   };
 };
 
-export const memberAndPermission: (
+export const getMemberAndPermissionSteps: (
   arg: DevopsStepsProps
 ) => UserDevopsStepsFactory[0] = ({ navigate, projectID }) => {
   return {
@@ -97,7 +97,7 @@ export const memberAndPermission: (
   };
 };
 
-export const sqlEditor: (
+export const getSqlEditorStep: (
   arg: DevopsStepsProps
 ) => UserDevopsStepsFactory[0]['children'][0] = ({ navigate }) => {
   return {
