@@ -245,7 +245,9 @@ const RuleList: React.FC<RuleListProps> = ({
                       cursor:
                         isAction || enableCheckDetail ? 'pointer' : 'default'
                     }}
-                    className={classNames({ 'has-top-margin': isAction })}
+                    className={classNames({
+                      'has-top-margin': isAction
+                    })}
                     onClick={() => {
                       if (enableCheckDetail) {
                         setCurrentRuleDetail(v);
