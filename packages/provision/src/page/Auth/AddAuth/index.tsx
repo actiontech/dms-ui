@@ -34,7 +34,7 @@ import {
   IconSuccessResult,
   IconLeftArrow
 } from '@actiontech/shared/lib/Icon/common';
-import { RuleObject } from 'antd/es/form';
+import { FormValidatorRule } from '@actiontech/shared/lib/types/common.type';
 
 const AddAuth: React.FC = () => {
   const { t } = useTranslation();
@@ -130,7 +130,7 @@ const AddAuth: React.FC = () => {
     }
   );
 
-  const userValidator: RuleObject['validator'] = async (_, value: string) => {
+  const userValidator: FormValidatorRule = async (_, value: string) => {
     const { data_permission_template_uid, username, hostname } =
       form.getFieldsValue([
         'data_permission_template_uid',

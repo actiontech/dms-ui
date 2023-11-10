@@ -1,10 +1,8 @@
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
-
-import Copy from '../../utils/Copy';
 import { PasswordProps } from 'antd/lib/input';
-import { BasicToolTips, BasicButton } from '@actiontech/shared';
+import { BasicToolTips, BasicButton, Copy } from '@actiontech/shared';
 import { IconCommonSelected } from '@actiontech/shared/lib/Icon';
 import { Space } from 'antd5';
 import { PasswordWidthGenerateStyleWrapper } from './style';
@@ -46,7 +44,6 @@ const InputPassword: FC<IInputPassword> = ({
           )}
           <BasicToolTips
             open={tipVisible}
-            titleWidth={300}
             placement="topRight"
             title={
               <Space>

@@ -129,7 +129,6 @@ const UpdateUserInAuth = () => {
           label={
             <BasicToolTips
               suffixIcon
-              titleWidth={440}
               title={t('auth.updateUser.modifyPasswordTip')}
             >
               {t('auth.updateUser.modifyPassword')}
