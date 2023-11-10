@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState, useRef } from 'react';
 import { EditTypeProps } from './index.type';
 import EmptyBox from '../EmptyBox';
 import BasicButton from '../BasicButton';
@@ -21,6 +21,7 @@ const EditText: React.FC<EditTypeProps> = ({
         <EditTextStyleWrapper
           {...props}
           editable={{
+            triggerType: ['icon', 'text'],
             ...editable,
             onChange: (value) => {
               internalValue.current = value;
@@ -29,7 +30,8 @@ const EditText: React.FC<EditTypeProps> = ({
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
             },
-            icon: <IconEdit />
+            icon: <IconEdit />,
+            tooltip: false
           }}
         >
           {value}
@@ -58,16 +60,22 @@ const EditText: React.FC<EditTypeProps> = ({
         <EditTextStyleWrapper
           {...props}
           editable={{
+            triggerType: ['icon', 'text'],
             ...editable,
             editing: showEdit,
             onChange: (value) => {
               internalValue.current = value;
               editable?.onChange?.(value);
+              setShowEdit(false);
             },
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
               setShowEdit(false);
-            }
+            },
+            onCancel: () => {
+              setShowEdit(false);
+            },
+            tooltip: false
           }}
         />
       </EmptyBox>

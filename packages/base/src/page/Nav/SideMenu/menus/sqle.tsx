@@ -86,6 +86,12 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
         onClick: () => navigate(`/sqle/project/${projectID}/sqlManagement`)
       },
       {
+        label: t('dmsMenu.sqlAudit'),
+        key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sqlAudit`,
+        icon: <Icon component={IconSQLOrder} />,
+        onClick: () => navigate(`/sqle/project/${projectID}/sqlAudit`)
+      },
+      {
         label: t('dmsMenu.SQLOrder'),
         key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/order`,
         icon: <Icon component={IconSQLOrder} />,

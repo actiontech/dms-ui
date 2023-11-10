@@ -38,6 +38,16 @@ export const workflowNameRule = (): FormValidatorRule => {
   };
 };
 
+export const tagNameRule = (): FormValidatorRule => {
+  return (_, value) => {
+    const reg = /^[\u4e00-\u9fa5_a-zA-Z0-9_-]*$/;
+    if (!reg.test(value)) {
+      return Promise.reject(i18n.t('common.form.rule.onlyWordsAndNumber'));
+    }
+    return Promise.resolve();
+  };
+};
+
 export const nameRuleValidator = (): FormValidatorRule => {
   return (_, value) => {
     const startReg = /^[a-zA-Z]/;
