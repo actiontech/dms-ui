@@ -1,18 +1,11 @@
 import { Dictionary } from '../types/common.type';
-import locale from '../store/locale';
 import whitelist from '../store/whitelist';
-import nav from '../store/nav';
-import projectManage from '../store/projectManage';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 const reducers = combineReducers({
-  locale,
-  whitelist,
-  nav,
-  // system,
-  projectManage
+  whitelist
 });
 
 export const storeFactory = (initStore: Dictionary = {}) => {

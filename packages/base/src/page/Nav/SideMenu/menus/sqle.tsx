@@ -16,13 +16,11 @@ import {
   SIDE_MENU_DATA_PLACEHOLDER_KEY,
   isAdminKeys
 } from './common';
-import { BaseMenuItems } from './base';
 
 export const SQLEMenuItems: GenerateMenuItemsType = ({
   navigate,
   projectID = ''
 }) => [
-  ...BaseMenuItems({ navigate, projectID }),
   {
     order: 1,
     label: t('dmsMenu.projectOverview'),
@@ -43,15 +41,6 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
     key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/dashboard`,
     onClick: () => navigate(`/sqle/project/${projectID}/dashboard`)
   },
-  /* IFTRUE_isEE */
-  {
-    order: 5,
-    label: t('dmsMenu.operateAndAudit'),
-    icon: <Icon component={IconOperateAndAudit} />,
-    key: isAdminKeys.operate,
-    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`)
-  },
-  /* FITRUE_isEE */
   {
     order: 7,
     type: 'divider'
@@ -104,5 +93,18 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
         onClick: () => navigate(`/sqle/project/${projectID}/auditPlan`)
       }
     ]
+  }
+];
+
+export const SQLEOperateConflictMenuItems: GenerateMenuItemsType = ({
+  navigate,
+  projectID = ''
+}) => [
+  {
+    order: 5,
+    label: t('dmsMenu.operateAndAudit'),
+    icon: <Icon component={IconOperateAndAudit} />,
+    key: isAdminKeys.operate,
+    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`)
   }
 ];

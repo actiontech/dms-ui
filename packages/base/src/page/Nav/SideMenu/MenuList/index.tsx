@@ -1,10 +1,10 @@
 import { MenuProps, Menu } from 'antd5';
 import { SubMenuType } from 'antd/lib/menu/hooks/useItems';
 import { useMemo, useCallback } from 'react';
-import { sideMenuData } from '../menu.data';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from '../menus/common';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MenuListProps } from './index.type';
+import { sideMenuData } from '../menus/menu.data';
 
 const MenuList: React.FC<MenuListProps> = ({ isAdmin, projectID }) => {
   const navigate = useNavigate();
