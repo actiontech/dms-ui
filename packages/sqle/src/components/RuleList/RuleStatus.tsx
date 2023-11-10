@@ -1,22 +1,27 @@
 import { RuleStatusSegmentedStyleWrapper } from './style';
 import { RuleStatusEnum, RuleStatusProps } from './index.type';
-import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useControllableValue } from 'ahooks';
 
 const RuleStatus: React.FC<RuleStatusProps> = ({
   currentRuleStatus,
   ruleStatusChange
 }) => {
   const { t } = useTranslation();
-  const [internalRuleStatus, setInternalRuleStatus] = useState<RuleStatusEnum>(
-    currentRuleStatus ?? RuleStatusEnum.enabled
-  );
 
-  useEffect(() => {
-    if (currentRuleStatus) {
-      setInternalRuleStatus(currentRuleStatus);
-    }
-  }, [currentRuleStatus]);
+  const [internalRuleStatus, setInternalRuleStatus] =
+    useControllableValue<RuleStatusEnum>(
+      typeof currentRuleStatus !== 'undefined' && ruleStatusChange
+        ? {
+            value: currentRuleStatus,
+            onChange: ruleStatusChange,
+            defaultValue: RuleStatusEnum.enabled
+          }
+        : {
+            defaultValue: RuleStatusEnum.enabled
+          }
+    );
+
   return (
     <RuleStatusSegmentedStyleWrapper
       value={internalRuleStatus}

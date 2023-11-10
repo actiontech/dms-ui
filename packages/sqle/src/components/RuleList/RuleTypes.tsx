@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { RuleTypesProps } from './index.type';
 import { RuleTypeItemStyleWrapper, RuleTypeStyleWrapper } from './style';
 import useRuleType from '../../hooks/useRuleType';
+import { useControllableValue } from 'ahooks';
 
 export const ALL_RULE_TYPE_CONSTANT = 'ALL';
 
@@ -13,19 +14,21 @@ const RuleTypes: React.FC<RuleTypesProps> = ({
 }) => {
   const { getRuleTypeDataSource, ruleTypeData } = useRuleType();
 
-  const [internalRuleType, setInternalRuleType] = useState<string>(
-    currentRuleType ?? ALL_RULE_TYPE_CONSTANT
+  const [internalRuleType, setInternalRuleType] = useControllableValue<string>(
+    typeof currentRuleType !== undefined && ruleTypeChange
+      ? {
+          value: currentRuleType,
+          onChange: ruleTypeChange,
+          defaultValue: ALL_RULE_TYPE_CONSTANT
+        }
+      : {
+          defaultValue: ALL_RULE_TYPE_CONSTANT
+        }
   );
 
   useEffect(() => {
     getRuleTypeDataSource(allRulesData, rules);
   }, [allRulesData, rules, getRuleTypeDataSource]);
-
-  useEffect(() => {
-    if (currentRuleType) {
-      setInternalRuleType(currentRuleType);
-    }
-  }, [currentRuleType]);
 
   return (
     <RuleTypeStyleWrapper>
