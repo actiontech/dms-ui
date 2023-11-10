@@ -5,16 +5,21 @@ import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn,
-  InlineActiontechTableMoreActionsButtonMeta,
-  PageInfoWithoutIndexAndSize
+  InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 
-export type DataSourceListParamType = PageInfoWithoutIndexAndSize<
+/*
+ *PS：
+ * 没有使用PageInfoWithoutIndexAndSize<IListDBServicesParams>的原因：
+ * IAuthListDataOperationSetsParams里的page_index 是可选项，和TablePagination类型不匹配，期望后续后端可以修改。
+ */
+
+export type DataSourceListParamType = Omit<
   IListDBServicesParams,
-  'project_uid'
+  'page_index' | 'page_size' | 'project_uid'
 >;
 
 export const DataSourceColumns = (
@@ -22,7 +27,7 @@ export const DataSourceColumns = (
 ): ActiontechTableColumn<
   IListDBService,
   DataSourceListParamType,
-  'address' | 'rule_template'
+  'address'
 > => {
   return [
     {

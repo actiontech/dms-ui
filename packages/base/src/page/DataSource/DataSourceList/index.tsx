@@ -46,7 +46,7 @@ const DataSourceList = () => {
     dbDriverOptions,
     getLogoUrlByDbType,
     loading: getDriveOptionsLoading,
-    getDriverMeta
+    updateDriverList
   } = useDbServiceDriver();
   const {
     dbServiceOptions,
@@ -171,7 +171,10 @@ const DataSourceList = () => {
     [messageApi, modalApi, projectID, t]
   );
 
-  const columns = useMemo(() => DataSourceColumns(getLogoUrlByDbType), []);
+  const columns = useMemo(
+    () => DataSourceColumns(getLogoUrlByDbType),
+    [getLogoUrlByDbType]
+  );
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
@@ -213,10 +216,10 @@ const DataSourceList = () => {
 
   useEffect(() => {
     if (projectID) {
-      getDriverMeta(projectID);
+      updateDriverList(projectID);
       updateDbServiceList(projectID);
     }
-  }, [getDriverMeta, projectID, updateDbServiceList]);
+  }, [updateDriverList, projectID, updateDbServiceList]);
 
   return (
     <>

@@ -6,7 +6,10 @@ import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import { useRequest } from 'ahooks';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
@@ -30,7 +33,6 @@ import { IconInstanceManager } from '../../../icon/sideMenu';
 import { SQLE_INSTANCE_SOURCE_NAME } from 'sqle/src/data/common';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { turnDataSourceAsyncFormToCommon } from '../tool';
-import useDatabaseType from '../../../hooks/useDatabaseType';
 import { FormItem } from 'sqle/src/components/BackendForm';
 import useAuditRequired from '../../../hooks/useAuditRequired';
 
@@ -48,10 +50,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { projectID, projectName } = useCurrentProject();
   const {
     driverMeta,
-    loading: getDriverMetaLoading,
-    getDriverMeta,
+    loading: updateDriverListLoading,
+    updateDriverList,
     generateDriverSelectOptions
-  } = useDatabaseType();
+  } = useDbServiceDriver();
 
   const databaseTypeChange = useCallback(
     (value: string) => {
@@ -213,8 +215,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [submit]);
 
   useEffect(() => {
-    getDriverMeta(projectID);
-  }, [getDriverMeta, projectID]);
+    updateDriverList(projectID);
+  }, [updateDriverList, projectID]);
 
   return (
     <FormStyleWrapper
@@ -280,7 +282,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             form={props.form}
             databaseTypeChange={databaseTypeChange}
             generateDriverSelectOptions={generateDriverSelectOptions}
-            getDriverMetaLoading={getDriverMetaLoading}
+            updateDriverListLoading={updateDriverListLoading}
             currentAsyncParams={params}
             isExternalInstance={isExternalInstance}
           />
