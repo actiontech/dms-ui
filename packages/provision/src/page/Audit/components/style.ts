@@ -8,12 +8,21 @@ export const AuthAuditDetailDrawerStyleWrapper = styled(BasicDrawer)`
     padding: 0 24px;
   }
 
+  .audit-info-wrapper {
+    padding: 24px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid
+        ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+    }
+  }
+
   .audit-info-wrapper .audit-info-title {
     height: 20px;
     font-size: 13px;
     line-height: 20px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
-    margin: 24px 0 16px;
+    margin-bottom: 16px;
     font-weight: bold;
   }
 
@@ -34,7 +43,7 @@ export const AuthAuditDetailItemStyleWrapper = styled('div')`
   align-items: center;
 
   & .audit-info-item-label {
-    width: 120px;
+    width: 100px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
     font-weight: 400;
   }

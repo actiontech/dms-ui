@@ -43,7 +43,6 @@ const AuthAuditDetailDrawer: React.FC<{
           </div>
           <AuditDetailItem
             label={t('provisionAudit.authAuditDetail.authUser')}
-            type="user"
             value={data?.permission_user_name}
           />
           <AuditDetailItem
@@ -52,7 +51,6 @@ const AuthAuditDetailDrawer: React.FC<{
           />
 
           <AuditDetailItem
-            type="user"
             label={t('provisionAudit.authAuditDetail.actionUser')}
             value={data?.executing_user_name}
           />

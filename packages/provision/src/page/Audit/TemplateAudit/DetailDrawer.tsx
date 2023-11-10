@@ -47,7 +47,6 @@ const TemplateAuditDetailDrawer: React.FC<{
           />
           <AuditDetailItem
             label={t('provisionAudit.authAudit.columns.actionUser')}
-            type="user"
             value={data?.executing_user_name}
           />
           <AuditDetailItem
