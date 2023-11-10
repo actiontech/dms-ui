@@ -9,8 +9,8 @@ import {
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetOperationRecordListV1Params } from '@actiontech/shared/lib/api/sqle/service/OperationRecord/index.d';
-import { t } from '../../locale';
-import OperationStatus from './components/OperationStatus';
+import { t } from '../../../locale';
+import OperationStatus from '../components/OperationStatus';
 
 export type OperationRecordListFilterParamType = PageInfoWithoutIndexAndSize<
   IGetOperationRecordListV1Params,
