@@ -1,27 +1,30 @@
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
-import { Button, Form, Input, message, Modal, Switch } from 'antd';
+import { Form, message, Space } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 import InputPassword from '~/components/PasswordWithGenerate';
-import { ModalFormLayout, ModalSize, ResponseCode } from '~/data/common';
+import { ResponseCode } from '~/data/common';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import UserSelect from '~/page/Auth/AddAuth/UserSelect';
 import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
 import EventEmitter from '~/utils/EventEmitter';
 import Password from '~/utils/Password';
-
-interface IUpdateUserInAuthFormFields {
-  permission_user_uid: string;
-  userValue: string;
-  db_account_password: string;
-  confirm_db_account_password: string;
-}
+import {
+  BasicDrawer,
+  BasicInput,
+  BasicButton,
+  BasicSwitch,
+  BasicToolTips
+} from '@actiontech/shared';
+import { IUpdateUserInAuthFormFields } from '../index.type';
 
 const UpdateUserInAuth = () => {
   const { t } = useTranslation();
+
+  const [messageApi, contextHolder] = message.useMessage();
 
   const { toggleModal, visible } = useModalStatus(
     AuthListModalStatus,
@@ -32,6 +35,7 @@ const UpdateUserInAuth = () => {
   const [selectData, updateSelectData] = useRecoilState(AuthListSelectData);
 
   const [form] = Form.useForm<IUpdateUserInAuthFormFields>();
+
   const isModifyPassword = Form.useWatch('isModifyPassword', form);
 
   const [updateLoading, { setTrue: startUpdate, setFalse: updateFinish }] =
@@ -61,7 +65,7 @@ const UpdateUserInAuth = () => {
         }
       });
       if (res.data.code === ResponseCode.SUCCESS) {
-        message.success(t('auth.updateTemplateSuccess'));
+        messageApi.success(t('auth.updateTemplateSuccess'));
         closeAndReset();
         EventEmitter.emit(EventEmitterKey.Refresh_Auth_List_Table);
       }
@@ -90,6 +94,7 @@ const UpdateUserInAuth = () => {
       ready: !!selectData
     }
   );
+
   const generatePassword = () => {
     const password = Password.generateMySQLPassword(16);
     form.setFieldsValue({
@@ -98,32 +103,40 @@ const UpdateUserInAuth = () => {
     });
     return password;
   };
+
   return (
-    <Modal
-      closable={false}
+    <BasicDrawer
       title={t('auth.updateUserTitle')}
       open={visible}
-      width={ModalSize.mid}
       footer={
-        <>
-          <Button disabled={updateLoading} onClick={closeAndReset}>
+        <Space>
+          <BasicButton disabled={updateLoading} onClick={closeAndReset}>
             {t('common.close')}
-          </Button>
-          <Button type="primary" loading={updateLoading} onClick={submit}>
+          </BasicButton>
+          <BasicButton type="primary" loading={updateLoading} onClick={submit}>
             {t('common.submit')}
-          </Button>
-        </>
+          </BasicButton>
+        </Space>
       }
+      onClose={closeAndReset}
     >
-      <Form {...ModalFormLayout} form={form}>
-        <UserSelect form={form} />
+      {contextHolder}
+      <Form layout="vertical" form={form}>
+        <UserSelect />
         <Form.Item
           name="isModifyPassword"
-          label={t('auth.updateUser.modifyPassword')}
           valuePropName="checked"
-          tooltip={t('auth.updateUser.modifyPasswordTip')}
+          label={
+            <BasicToolTips
+              suffixIcon
+              titleWidth={440}
+              title={t('auth.updateUser.modifyPasswordTip')}
+            >
+              {t('auth.updateUser.modifyPassword')}
+            </BasicToolTips>
+          }
         >
-          <Switch />
+          <BasicSwitch />
         </Form.Item>
         {isModifyPassword && (
           <>
@@ -139,12 +152,12 @@ const UpdateUserInAuth = () => {
               label={t('auth.updateUser.confirmPassword')}
               rules={[{ required: true }]}
             >
-              <Input.Password />
+              <BasicInput.Password />
             </Form.Item>
           </>
         )}
       </Form>
-    </Modal>
+    </BasicDrawer>
   );
 };
 

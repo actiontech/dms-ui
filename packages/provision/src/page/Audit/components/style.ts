@@ -24,6 +24,12 @@ export const AuthAuditDetailDrawerStyleWrapper = styled(BasicDrawer)`
       ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
     background-color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
     margin-bottom: 12px;
+
+    &-action {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+    }
   }
 `;
 

@@ -1,15 +1,13 @@
 import { FC, useState } from 'react';
-import { Input, Button, Tooltip } from 'antd';
 import { useTranslation } from 'react-i18next';
-import {
-  CheckOutlined,
-  EyeInvisibleOutlined,
-  EyeOutlined
-} from '@ant-design/icons';
+import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
 
 import Copy from '../../utils/Copy';
 import { PasswordProps } from 'antd/lib/input';
-import { Box } from '@mui/system';
+import { BasicToolTips, BasicButton } from '@actiontech/shared';
+import { IconCommonSelected } from '@actiontech/shared/lib/Icon';
+import { Space } from 'antd5';
+import { PasswordWidthGenerateStyleWrapper } from './style';
 
 interface IInputPassword extends PasswordProps {
   clickGeneratePassword: () => string;
@@ -29,40 +27,43 @@ const InputPassword: FC<IInputPassword> = ({
   };
   const [isEye, setIsEye] = useState(false);
   return (
-    <Input.Password
+    <PasswordWidthGenerateStyleWrapper
       className="action-password-input"
       {...otherProps}
       visibilityToggle={{ visible: isEye }}
       iconRender={(visible) => (
         <>
           {visible ? (
-            <EyeOutlined onClick={() => setIsEye(false)} />
+            <EyeOutlined
+              className="suffix-icon"
+              onClick={() => setIsEye(false)}
+            />
           ) : (
-            <EyeInvisibleOutlined onClick={() => setIsEye(true)} />
+            <EyeInvisibleOutlined
+              className="suffix-icon"
+              onClick={() => setIsEye(true)}
+            />
           )}
-          <Tooltip
+          <BasicToolTips
             open={tipVisible}
+            titleWidth={300}
+            placement="topRight"
             title={
-              <>
-                <Box
-                  component="span"
-                  sx={(theme) => ({ color: theme.color.success })}
-                >
-                  <CheckOutlined />
-                </Box>
+              <Space>
+                <IconCommonSelected />
                 {t('common.generatePasswordSuccess')}
-              </>
+              </Space>
             }
           >
-            <Button
+            <BasicButton
               type="primary"
               size="small"
               onClick={handleGenerateClick}
               onMouseLeave={() => setTipVisible(false)}
             >
               {t('common.generate')}
-            </Button>
-          </Tooltip>
+            </BasicButton>
+          </BasicToolTips>
         </>
       )}
     />

@@ -1,19 +1,18 @@
-import { useRequest } from 'ahooks';
-import { Button, Modal } from 'antd';
-import { FC, useMemo, useState } from 'react';
+import { useRequest, useBoolean } from 'ahooks';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ModalSize, ResponseCode } from '~/data/common';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { MonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { IAuthGetStatementByDataPermissionTemplatesParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
-import { IAddAuthorization } from '@actiontech/shared/lib/api/provision/service/common';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-export interface IPreviewModal {
-  params?: IAddAuthorization;
-  onSuccess: () => void;
-  setParams: (params?: IAddAuthorization) => void;
-}
+import { BasicModal, BasicButton } from '@actiontech/shared';
+import { PreviewModalProps } from '../index.type';
 
-const PreviewModal: FC<IPreviewModal> = ({ params, setParams, onSuccess }) => {
+const PreviewModal: React.FC<PreviewModalProps> = ({
+  params,
+  setParams,
+  onSuccess
+}) => {
   const { t } = useTranslation();
 
   const previewParams: IAuthGetStatementByDataPermissionTemplatesParams =
@@ -48,14 +47,15 @@ const PreviewModal: FC<IPreviewModal> = ({ params, setParams, onSuccess }) => {
     }
   );
 
-  const [createLoading, setCreateLoading] = useState(false);
+  const [createLoading, { setTrue, setFalse }] = useBoolean();
 
   const closeModal = () => {
     setParams();
   };
-  const create = () => {
+
+  const onCreate = () => {
     if (params) {
-      setCreateLoading(true);
+      setTrue();
       auth
         .AuthAddAuthorization({
           authorization: params
@@ -66,30 +66,34 @@ const PreviewModal: FC<IPreviewModal> = ({ params, setParams, onSuccess }) => {
           }
         })
         .finally(() => {
-          setCreateLoading(false);
+          setFalse();
         });
     }
   };
 
   return (
-    <Modal
+    <BasicModal
       closable={false}
-      width={ModalSize.mid}
       open={!!params}
       title={t('auth.addAuth.previewModal.title')}
+      size="large"
       footer={
         <>
-          <Button disabled={createLoading} onClick={closeModal}>
+          <BasicButton disabled={createLoading} onClick={closeModal}>
             {t('common.close')}
-          </Button>
-          <Button type="primary" loading={createLoading} onClick={create}>
+          </BasicButton>
+          <BasicButton
+            type="primary"
+            loading={createLoading}
+            onClick={onCreate}
+          >
             {t('common.submit')}
-          </Button>
+          </BasicButton>
         </>
       }
     >
       <MonacoEditor height="300px" value={sql} language="sql" />
-    </Modal>
+    </BasicModal>
   );
 };
 export default PreviewModal;

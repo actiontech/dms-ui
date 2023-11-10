@@ -1,53 +1,54 @@
-import {
-  Form,
-  Button,
-  Card,
-  Col,
-  Row,
-  Input,
-  Divider,
-  Select,
-  Space,
-  Result,
-  Typography
-} from 'antd';
+import { Form, Space, Typography } from 'antd5';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSearchParams } from 'react-router-dom';
-import './index.less';
-import { Box } from '@mui/system';
-import { formLayout, timeDayOptions } from './index.data';
-import { useRequest } from 'ahooks';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { timeDayOptions } from './index.data';
+import { useRequest, useBoolean } from 'ahooks';
 import PreviewModal from './PreviewModal';
 import UserSelect from './UserSelect';
-import { ResponseCode } from '~/data/common';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 import InputPassword from '~/components/PasswordWithGenerate';
 import Password from '~/utils/Password';
-import { BackButton, EmptyBox } from '@actiontech/shared';
-import { Link } from '../../../components/Link';
+import {
+  PageHeader,
+  BasicButton,
+  BasicSelect,
+  BasicInput,
+  BasicResult
+} from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IAddAuthorization } from '@actiontech/shared/lib/api/provision/service/common';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
+import {
+  FormAreaBlockStyleWrapper,
+  FormStyleWrapper,
+  formItemLayout
+} from '@actiontech/shared/lib/components/FormCom/style';
+import {
+  FormItemLabel,
+  FormItemSubTitle,
+  FormItemBigTitle
+} from '@actiontech/shared/lib/components/FormCom';
+import { AddAuthFormFields } from './index.type';
+import {
+  IconSuccessResult,
+  IconLeftArrow
+} from '@actiontech/shared/lib/Icon/common';
+import { RuleObject } from 'antd/es/form';
 
-export interface IFormFields {
-  data_permission_template_uid: string;
-  hostname: string;
-  password: string;
-  confirm_password: string;
-  username: string;
-  effective_time_day: number;
-  memo: string;
-  permission_user_uid: string;
-  purpose: string;
-  userValue: string;
-}
-
-const AddAuth = () => {
+const AddAuth: React.FC = () => {
   const { t } = useTranslation();
-  const [form] = Form.useForm<IFormFields>();
+
+  const [form] = Form.useForm<AddAuthFormFields>();
+
   const [urlParams] = useSearchParams();
+
+  const navigate = useNavigate();
+
   const id = urlParams.get('id');
+
   const { projectID } = useCurrentProject();
+
   useEffect(() => {
     if (id) {
       form.setFieldsValue({
@@ -57,7 +58,12 @@ const AddAuth = () => {
   }, [id, form]);
 
   const [params, setParams] = useState<IAddAuthorization>();
-  const [success, setSuccess] = useState(false);
+
+  const [
+    submitSuccess,
+    { setTrue: setSubmitSuccess, setFalse: setSubmitFailed }
+  ] = useBoolean();
+
   const { data: authTemplateOptions } = useRequest(
     () =>
       auth
@@ -82,7 +88,7 @@ const AddAuth = () => {
   const resetFields = () => {
     form.resetFields();
     setParams(undefined);
-    setSuccess(false);
+    setSubmitFailed();
     setValidateSuccess(false);
     if (id) {
       form.setFieldsValue({
@@ -90,6 +96,7 @@ const AddAuth = () => {
       });
     }
   };
+
   const onSave = () =>
     form.validateFields().then((values) => {
       setParams({
@@ -108,7 +115,7 @@ const AddAuth = () => {
 
   const onSuccess = () => {
     setParams(undefined);
-    setSuccess(true);
+    setSubmitSuccess();
   };
 
   const [validateSuccess, setValidateSuccess] = useState(false);
@@ -123,7 +130,7 @@ const AddAuth = () => {
     }
   );
 
-  const userValidator = async (_: any, value: string) => {
+  const userValidator: RuleObject['validator'] = async (_, value: string) => {
     const { data_permission_template_uid, username, hostname } =
       form.getFieldsValue([
         'data_permission_template_uid',
@@ -143,6 +150,7 @@ const AddAuth = () => {
     }
     return Promise.reject(res.data.message);
   };
+
   const generatePassword = () => {
     const password = Password.generateMySQLPassword(16);
     form.setFieldsValue({
@@ -151,55 +159,75 @@ const AddAuth = () => {
     });
     return password;
   };
+
   return (
-    <Box
-      sx={{
-        padding: (theme) => theme.layout.padding
-      }}
-    >
-      <Card
-        title={t('auth.addAuth.title')}
-        extra={<BackButton />}
-        className="add-auth-card"
-      >
-        <EmptyBox if={!success}>
-          <Form form={form} {...formLayout}>
-            <Divider orientation="left">
+    <div>
+      <PageHeader
+        title={
+          <BasicButton onClick={() => navigate(-1)} icon={<IconLeftArrow />}>
+            {t('auth.addAuth.backAuthList')}
+          </BasicButton>
+        }
+        extra={
+          <Space hidden={submitSuccess}>
+            <BasicButton onClick={resetFields}>{t('common.reset')}</BasicButton>
+            <BasicButton type="primary" onClick={onSave}>
+              {t('common.ok')}
+            </BasicButton>
+          </Space>
+        }
+      />
+      {!submitSuccess ? (
+        <FormStyleWrapper
+          form={form}
+          colon={false}
+          labelAlign="left"
+          {...formItemLayout.spaceBetween}
+        >
+          <FormAreaBlockStyleWrapper>
+            <FormItemBigTitle>{t('auth.addAuth.title')}</FormItemBigTitle>
+            <FormItemSubTitle>
               {t('auth.addAuth.templateFormTitle')}
-            </Divider>
-            <Form.Item
+            </FormItemSubTitle>
+            <FormItemLabel
               label={t('auth.addAuth.baseForm.template')}
               name="data_permission_template_uid"
               rules={[{ required: true }]}
+              className="has-required-style"
             >
-              <Select options={authTemplateOptions} />
-            </Form.Item>
-            <Form.Item
+              <BasicSelect options={authTemplateOptions} />
+            </FormItemLabel>
+            <FormItemLabel
               label={t('auth.addAuth.baseForm.effectiveTimeDay')}
               name="effective_time_day"
               initialValue={-1}
               required={true}
+              className="has-required-style"
             >
-              <Select options={timeDayOptions} />
-            </Form.Item>
-            <Divider orientation="left">
+              <BasicSelect options={timeDayOptions} />
+            </FormItemLabel>
+            <FormItemSubTitle>
               {t('auth.addAuth.steps.purpose')}
-            </Divider>
-            <UserSelect form={form} />
-            <Form.Item
+            </FormItemSubTitle>
+            <UserSelect className="has-required-style" />
+            <FormItemLabel
               name="purpose"
               label={t('auth.addAuth.purposeForm.purpose')}
               rules={[{ required: true }]}
+              className="has-required-style"
             >
-              <Input />
-            </Form.Item>
-            <Form.Item name="memo" label={t('auth.addAuth.purposeForm.memo')}>
-              <Input.TextArea />
-            </Form.Item>
-            <Divider orientation="left">
+              <BasicInput />
+            </FormItemLabel>
+            <FormItemLabel
+              name="memo"
+              label={t('auth.addAuth.purposeForm.memo')}
+            >
+              <BasicInput.TextArea />
+            </FormItemLabel>
+            <FormItemSubTitle>
               {t('auth.addAuth.steps.account')}
-            </Divider>
-            <Form.Item
+            </FormItemSubTitle>
+            <FormItemLabel
               name="username"
               label={t('auth.addAuth.accountForm.username')}
               rules={[{ required: true, validator: userValidator }]}
@@ -211,24 +239,27 @@ const AddAuth = () => {
                   </Typography.Text>
                 )
               }
+              className="has-required-style"
             >
-              <Input />
-            </Form.Item>
-            <Form.Item
+              <BasicInput />
+            </FormItemLabel>
+            <FormItemLabel
               name="hostname"
               label={t('auth.addAuth.accountForm.hostname')}
               rules={[{ required: true }]}
+              className="has-required-style"
             >
-              <Input />
-            </Form.Item>
-            <Form.Item
+              <BasicInput />
+            </FormItemLabel>
+            <FormItemLabel
               name="password"
               label={t('auth.addAuth.accountForm.password')}
               rules={[{ required: true }]}
+              className="has-required-style"
             >
               <InputPassword clickGeneratePassword={generatePassword} />
-            </Form.Item>
-            <Form.Item
+            </FormItemLabel>
+            <FormItemLabel
               name="confirm_password"
               label={t('auth.addAuth.accountForm.confirm_password')}
               rules={[
@@ -245,53 +276,38 @@ const AddAuth = () => {
                 })
               ]}
               dependencies={['password']}
+              className="has-required-style"
             >
-              <Input.Password />
-            </Form.Item>
-          </Form>
-          <Row>
-            <Col span={17}>
-              <Space className="footer-button">
-                <Button onClick={resetFields}>{t('common.reset')}</Button>
-                <Button type="primary" onClick={onSave}>
-                  {t('common.ok')}
-                </Button>
-              </Space>
-            </Col>
-          </Row>
-        </EmptyBox>
-        <EmptyBox if={success}>
-          <>
-            <Result
-              status="success"
-              title={t('auth.addAuth.result.success')}
-              subTitle={
-                <>
-                  {t('auth.addAuth.result.jumpDetailPrefix')}
-                  {t('auth.addAuth.result.viewString')}
-                  {t('auth.addAuth.result.jumpDetailSuffix')}
-                </>
-              }
-            />
-            <Row justify="center">
-              <Link to={`${projectID}/auth/list`}>
-                <Button type="link">
-                  {t('auth.addAuth.result.jumpAuthList')}
-                </Button>
-              </Link>
-              <Button type="link" onClick={resetFields}>
+              <BasicInput.Password />
+            </FormItemLabel>
+          </FormAreaBlockStyleWrapper>
+        </FormStyleWrapper>
+      ) : (
+        <BasicResult
+          icon={<IconSuccessResult />}
+          title={t('auth.addAuth.result.success')}
+          subTitle={
+            <>
+              {t('auth.addAuth.result.jumpDetailPrefix')}
+              {t('auth.addAuth.result.viewString')}
+              {t('auth.addAuth.result.jumpDetailSuffix')}
+            </>
+          }
+          extra={
+            <Space>
+              <BasicButton type="primary" onClick={resetFields}>
                 {t('auth.addAuth.result.continue')}
-              </Button>
-            </Row>
-          </>
-        </EmptyBox>
-        <PreviewModal
-          params={params}
-          setParams={setParams}
-          onSuccess={onSuccess}
+              </BasicButton>
+            </Space>
+          }
         />
-      </Card>
-    </Box>
+      )}
+      <PreviewModal
+        params={params}
+        setParams={setParams}
+        onSuccess={onSuccess}
+      />
+    </div>
   );
 };
 

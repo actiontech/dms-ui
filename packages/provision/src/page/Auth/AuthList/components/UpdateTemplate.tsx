@@ -1,22 +1,22 @@
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
-import { Button, Form, message, Modal, Select } from 'antd';
+import { Form, message } from 'antd5';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
-import { ModalFormLayout, ResponseCode } from '~/data/common';
+import { ResponseCode } from '~/data/common';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
 import EventEmitter from '~/utils/EventEmitter';
-
-interface IUpdateTemplateFormFields {
-  data_permission_template_uid: string;
-}
+import { BasicModal, BasicButton, BasicSelect } from '@actiontech/shared';
+import { IUpdateTemplateFormFields } from '../index.type';
 
 const UpdateTemplate = () => {
   const { t } = useTranslation();
+
+  const [messageApi, contextHolder] = message.useMessage();
 
   const { projectID } = useCurrentProject();
   const { toggleModal, visible } = useModalStatus(
@@ -51,7 +51,7 @@ const UpdateTemplate = () => {
         }
       });
       if (res.data.code === ResponseCode.SUCCESS) {
-        message.success(t('auth.updateTemplateSuccess'));
+        messageApi.success(t('auth.updateTemplateSuccess'));
         closeAndReset();
         EventEmitter.emit(EventEmitterKey.Refresh_Auth_List_Table);
       }
@@ -94,32 +94,34 @@ const UpdateTemplate = () => {
       form.setFieldValue('data_permission_template_uid', cur.value);
     }
   }, [authTemplateOptions, form, selectData?.data_permission_template_names]);
+
   return (
-    <Modal
-      closable={false}
+    <BasicModal
       title={t('auth.updateTemplateTitle')}
       open={visible}
       footer={
         <>
-          <Button disabled={updateLoading} onClick={closeAndReset}>
+          <BasicButton disabled={updateLoading} onClick={closeAndReset}>
             {t('common.close')}
-          </Button>
-          <Button type="primary" loading={updateLoading} onClick={submit}>
+          </BasicButton>
+          <BasicButton type="primary" loading={updateLoading} onClick={submit}>
             {t('common.submit')}
-          </Button>
+          </BasicButton>
         </>
       }
+      onCancel={closeAndReset}
     >
-      <Form {...ModalFormLayout} form={form}>
+      {contextHolder}
+      <Form layout="vertical" form={form}>
         <Form.Item
           name="data_permission_template_uid"
           label={t('auth.addAuth.baseForm.template')}
           required={true}
         >
-          <Select options={authTemplateOptions} />
+          <BasicSelect options={authTemplateOptions} />
         </Form.Item>
       </Form>
-    </Modal>
+    </BasicModal>
   );
 };
 
