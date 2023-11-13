@@ -13,6 +13,7 @@ export const BasicModalStyleWrapper = styled(Modal)`
       .ant-modal-close {
         top: 22px;
       }
+
       .ant-modal-header {
         display: flex;
         align-items: center;

@@ -8,6 +8,7 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
     border: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.border} !important;
   }
+
   &.ant-select-borderless.custom-select-namespace.ant-select-disabled {
     border-radius: 4px;
     border: ${({ theme }) =>
@@ -15,6 +16,7 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.disabled.background};
   }
+
   &.ant-select.custom-select-namespace {
     .ant-select-selector {
       border-radius: 4px;

@@ -14,6 +14,7 @@ export const BasicDrawerStyleWrapper = styled(Drawer)`
       .ant-drawer-header {
         padding: 18px 24px 17px;
       }
+
       .ant-drawer-body {
         .ant-form {
           .ant-form-item {
