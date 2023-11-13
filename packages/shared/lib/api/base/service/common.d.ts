@@ -1,9 +1,6 @@
 import {
-  DBServiceDbTypeEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
-  IPluginDBServiceDBTypeEnum,
-  ListDBServiceDbTypeEnum,
   ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListOpPermissionRangeTypeEnum,
   ListRoleStatEnum,
@@ -14,8 +11,7 @@ import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
-  TestFeishuConfigurationAccountTypeEnum,
-  UpdateDBServiceDbTypeEnum
+  TestFeishuConfigurationAccountTypeEnum
 } from './common.enum';
 
 export interface IAddDBServicePreCheckReply {
@@ -191,7 +187,7 @@ export interface IDBService {
 
   business: string;
 
-  db_type: DBServiceDbTypeEnum;
+  db_type: string;
 
   desc?: string;
 
@@ -513,7 +509,7 @@ export interface IGetWebHookConfigurationReplyItem {
 export interface IIPluginDBService {
   Business?: string;
 
-  DBType?: IPluginDBServiceDBTypeEnum;
+  DBType?: string;
 
   Host?: string;
 
@@ -571,7 +567,7 @@ export interface IListDBService {
 
   business?: string;
 
-  db_type?: ListDBServiceDbTypeEnum;
+  db_type?: string;
 
   desc?: string;
 
@@ -1093,7 +1089,7 @@ export interface IUpdateDBService {
 
   business: string;
 
-  db_type: UpdateDBServiceDbTypeEnum;
+  db_type: string;
 
   desc?: string;
 

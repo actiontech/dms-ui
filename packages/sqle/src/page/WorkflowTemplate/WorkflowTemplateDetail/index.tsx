@@ -30,7 +30,7 @@ const WorkflowTemplateDetail: React.FC = () => {
   } = useUsername();
 
   React.useEffect(() => {
-    updateUsernameList(projectName);
+    updateUsernameList({ filter_project: projectName });
   }, [projectName, updateUsernameList]);
 
   const actionPermission = useMemo(() => {
