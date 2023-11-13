@@ -29,7 +29,7 @@ const DatabaseFormItem: React.FC<{
   isUpdate?: boolean;
   databaseTypeChange?: (values: string) => void;
   generateDriverSelectOptions?: () => JSX.Element[];
-  getDriverMetaLoading: boolean;
+  updateDriverListLoading: boolean;
   currentAsyncParams?: FormItem[];
   isExternalInstance?: boolean;
 }> = (props) => {
@@ -145,7 +145,7 @@ const DatabaseFormItem: React.FC<{
           allowClear
           showSearch
           disabled={props.isUpdate}
-          loading={props.getDriverMetaLoading}
+          loading={props.updateDriverListLoading}
           onChange={props.databaseTypeChange}
         >
           {props.generateDriverSelectOptions?.()}

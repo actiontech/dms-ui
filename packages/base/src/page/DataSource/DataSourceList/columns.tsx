@@ -8,16 +8,33 @@ import {
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 
-export const DataSourceColumns = (): ActiontechTableColumn<
+/*
+ *PS：
+ * 没有使用PageInfoWithoutIndexAndSize<IListDBServicesParams>的原因：
+ * IAuthListDataOperationSetsParams里的page_index 是可选项，和TablePagination类型不匹配，期望后续后端可以修改。
+ */
+
+export type DataSourceListParamType = Omit<
+  IListDBServicesParams,
+  'page_index' | 'page_size' | 'project_uid'
+>;
+
+export const DataSourceColumns = (
+  getLogoUrlByDbType: (dbType: string) => string
+): ActiontechTableColumn<
   IListDBService,
-  undefined,
+  DataSourceListParamType,
   'address'
 > => {
   return [
     {
       dataIndex: 'name',
-      title: () => t('dmsDataSource.databaseList.instanceName')
+      title: () => t('dmsDataSource.databaseList.instanceName'),
+      filterCustomType: 'select',
+      filterKey: 'filter_by_name'
     },
     {
       dataIndex: 'address',
@@ -43,7 +60,19 @@ export const DataSourceColumns = (): ActiontechTableColumn<
     },
     {
       dataIndex: 'db_type',
-      title: () => t('dmsDataSource.databaseList.type')
+      title: () => t('dmsDataSource.databaseList.type'),
+      filterCustomType: 'select',
+      filterKey: 'filter_by_db_type',
+      render: (dbType: string) => {
+        if (!dbType) return '-';
+
+        return (
+          <DatabaseTypeLogo
+            dbType={dbType}
+            logoUrl={getLogoUrlByDbType(dbType)}
+          />
+        );
+      }
     },
     {
       dataIndex: 'business',

@@ -6,12 +6,12 @@ import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import { useRequest } from 'ahooks';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
 import {
-  DBServiceDbTypeEnum,
-  SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
-} from '@actiontech/shared/lib/api/base/service/common.enum';
+  useCurrentProject,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
+import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
+import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
@@ -33,7 +33,6 @@ import { IconInstanceManager } from '../../../icon/sideMenu';
 import { SQLE_INSTANCE_SOURCE_NAME } from 'sqle/src/data/common';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { turnDataSourceAsyncFormToCommon } from '../tool';
-import useDatabaseType from '../../../hooks/useDatabaseType';
 import { FormItem } from 'sqle/src/components/BackendForm';
 import useAuditRequired from '../../../hooks/useAuditRequired';
 
@@ -48,13 +47,13 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
-  const { projectName } = useCurrentProject();
+  const { projectID, projectName } = useCurrentProject();
   const {
     driverMeta,
-    loading: getDriverMetaLoading,
-    updateDriverNameList,
+    loading: updateDriverListLoading,
+    updateDriverList,
     generateDriverSelectOptions
-  } = useDatabaseType();
+  } = useDbServiceDriver();
 
   const databaseTypeChange = useCallback(
     (value: string) => {
@@ -116,7 +115,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       props.form.setFieldsValue({
         name: props.defaultData.name,
         describe: props.defaultData.desc,
-        type: props.defaultData.db_type as DBServiceDbTypeEnum | undefined,
+        type: props.defaultData.db_type,
         ip: props.defaultData.host,
         port: Number.parseInt(props.defaultData.port ?? ''),
         user: props.defaultData.user,
@@ -216,8 +215,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [submit]);
 
   useEffect(() => {
-    updateDriverNameList();
-  }, [updateDriverNameList]);
+    updateDriverList(projectID);
+  }, [updateDriverList, projectID]);
 
   return (
     <FormStyleWrapper
@@ -273,7 +272,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             {...formItemLayout.spaceBetween}
           >
             <BasicInput.TextArea
-              disabled={isExternalInstance}
               placeholder={t('common.form.placeholder.input', {
                 name: t('dmsDataSource.dataSourceForm.describe')
               })}
@@ -284,7 +282,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             form={props.form}
             databaseTypeChange={databaseTypeChange}
             generateDriverSelectOptions={generateDriverSelectOptions}
-            getDriverMetaLoading={getDriverMetaLoading}
+            updateDriverListLoading={updateDriverListLoading}
             currentAsyncParams={params}
             isExternalInstance={isExternalInstance}
           />
