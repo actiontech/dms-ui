@@ -215,4 +215,13 @@ export const InlineTableActionMoreButtonPopoverStyleWrapper = styled('div')`
       justify-content: center;
     }
   }
+
+  .more-button-item-disabled {
+    cursor: not-allowed;
+    color: ${({ theme }) => theme.sharedTheme.basic.colorFontGrayByWhite};
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
 `;
