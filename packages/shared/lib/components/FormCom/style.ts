@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Form } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Form } from 'antd';
 
 export const formItemLayout = {
   spaceBetween: {
@@ -14,19 +13,19 @@ export const formItemLayout = {
 };
 
 export const FormStyleWrapper = styled(Form)`
-  &.${ANTD_PREFIX_STR}-form {
+  &.ant-form {
     padding-bottom: 80px !important;
   }
 
-  &.${ANTD_PREFIX_STR}-form.hasTopHeader {
+  &.ant-form.hasTopHeader {
     padding-top: 60px;
   }
 
-  &.${ANTD_PREFIX_STR}-form.hasTopGap {
+  &.ant-form.hasTopGap {
     padding-top: 24px;
   }
 
-  &.${ANTD_PREFIX_STR}-form.clearPaddingBottom {
+  &.ant-form.clearPaddingBottom {
     padding-bottom: 0 !important;
   }
 `;

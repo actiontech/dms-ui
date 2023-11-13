@@ -12,7 +12,7 @@ import { t } from '../../../locale';
 import generateTag from '../Common/generateTag';
 import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
 import { UserStatusStyledWrapper } from '../style';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 
 export const UserListColumns: ActiontechTableColumn<IListUser> = [
   {

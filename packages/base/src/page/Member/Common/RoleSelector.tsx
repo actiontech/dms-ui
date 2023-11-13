@@ -1,4 +1,4 @@
-import { Col, Form, Input, Row } from 'antd5';
+import { Col, Form, Input, Row } from 'antd';
 import { BasicSelect } from '@actiontech/shared';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';

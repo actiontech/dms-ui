@@ -1,15 +1,14 @@
 import { styled } from '@mui/material/styles';
-import { Empty } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Empty } from 'antd';
 
 export const EmptyStyleWrapper = styled(Empty)`
   &.is-icon-tips {
-    .${ANTD_PREFIX_STR}-empty-image {
+    .ant-empty-image {
       height: auto !important;
       margin-bottom: 0 !important;
     }
 
-    .${ANTD_PREFIX_STR}-empty-description {
+    .ant-empty-description {
       display: flex;
       flex-direction: column;
 

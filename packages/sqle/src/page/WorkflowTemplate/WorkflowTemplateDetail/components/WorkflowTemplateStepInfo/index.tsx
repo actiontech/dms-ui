@@ -1,7 +1,7 @@
 import React from 'react';
 import { IWorkflowTemplateStepInfoProps } from './index.type';
 import { stepInfo } from '../../../components/StepCard/stepInfo';
-import { Col, Row } from 'antd5';
+import { Col, Row } from 'antd';
 import StepCard from '../../../components/StepCard';
 import { IconNextStep } from '../../../../../icon/WorkflowTemplate';
 import {

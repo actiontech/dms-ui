@@ -8,7 +8,7 @@ import {
   EmptyBox
 } from '@actiontech/shared';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Form, Space } from 'antd5';
+import { Form, Space } from 'antd';
 import useStaticStatus from '../../../hooks/useStaticStatus';
 import AutoCreatedFormItemByApi from '../../../components/BackendForm/AutoCreatedFormItemByApi';
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';

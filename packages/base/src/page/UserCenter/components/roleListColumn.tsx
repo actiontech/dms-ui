@@ -13,7 +13,7 @@ import UserDesc from './UserDesc';
 import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
 import { UserStatusStyledWrapper } from '../style';
 import generateTag from '../Common/generateTag';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 
 export const RoleListColumns: ActiontechTableColumn<IListRole> = [
   {

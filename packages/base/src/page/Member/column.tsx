@@ -1,4 +1,4 @@
-import { Typography, Space } from 'antd5';
+import { Typography, Space } from 'antd';
 import {
   ActiontechTableColumn,
   ActiontechTableActionMeta

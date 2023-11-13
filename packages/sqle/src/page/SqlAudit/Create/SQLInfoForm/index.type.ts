@@ -1,4 +1,4 @@
-import { FormInstance, SelectProps } from 'antd5';
+import { FormInstance, SelectProps } from 'antd';
 
 export enum AuditTypeEnum {
   static,

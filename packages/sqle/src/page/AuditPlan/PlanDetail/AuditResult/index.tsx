@@ -4,7 +4,7 @@ import { useRequest } from 'ahooks';
 import { useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames';
 
-import { Empty, Spin } from 'antd5';
+import { Empty, Spin } from 'antd';
 import { SyncOutlined } from '@ant-design/icons';
 import { BasicToolTips, EmptyBox } from '@actiontech/shared';
 import {

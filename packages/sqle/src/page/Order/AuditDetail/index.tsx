@@ -13,7 +13,7 @@ import {
   useTableFilterContainer,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { Space, Divider } from 'antd5';
+import { Space, Divider } from 'antd';
 import DownloadRecord from '../Common/DownloadRecord';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { AuditTaskExtraFilterMeta } from './index.data';

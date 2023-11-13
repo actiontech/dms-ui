@@ -5,7 +5,7 @@ import useDatabaseType from '../../hooks/useDatabaseType';
 import useGlobalRuleTemplate from '../../hooks/useGlobalRuleTemplate';
 import useRuleTemplate from '../../hooks/useRuleTemplate';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
-import { SelectProps } from 'antd5';
+import { SelectProps } from 'antd';
 import {
   FilterCustomProps,
   TableFilterContainerProps

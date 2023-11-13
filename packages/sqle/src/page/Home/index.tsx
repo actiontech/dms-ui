@@ -6,7 +6,6 @@ import DEVPanel from './DEVPanel';
 import AuditPlanRiskList from './AuditPlanRiskList';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import dashboard from '@actiontech/shared/lib/api/sqle/service/dashboard';
-import './index.less';
 
 export const ALL_PROJECT_NAME = '';
 

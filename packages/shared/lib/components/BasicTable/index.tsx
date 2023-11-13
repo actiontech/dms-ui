@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Result, ConfigProvider, TableProps } from 'antd5';
+import { Result, ConfigProvider, TableProps } from 'antd';
 import classnames from 'classnames';
 
 import {

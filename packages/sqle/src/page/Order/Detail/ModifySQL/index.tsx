@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
-import { Space, Spin, message } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+import { Space, Spin, message } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import React, {
   useCallback,
   useEffect,

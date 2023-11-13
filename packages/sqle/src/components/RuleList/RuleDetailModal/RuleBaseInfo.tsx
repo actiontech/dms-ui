@@ -1,4 +1,4 @@
-import { Form, Typography } from 'antd5';
+import { Form, Typography } from 'antd';
 import { RuleDetailItemStyleWrapper } from './style';
 import { useTranslation } from 'react-i18next';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';

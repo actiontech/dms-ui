@@ -8,7 +8,7 @@ import {
 import { NavigateFunction } from 'react-router-dom';
 import { BasicTag, BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 
 export const SyncTaskListActions: (params: {
   navigate: NavigateFunction;

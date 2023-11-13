@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Typography } from 'antd5';
+import { Typography } from 'antd';
 import ChartWrapper from '../../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../../components/CardWrapper';
 import { BasicButton } from '@actiontech/shared';

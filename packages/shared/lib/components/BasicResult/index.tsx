@@ -1,4 +1,4 @@
-import { Result, ResultProps } from 'antd5';
+import { Result, ResultProps } from 'antd';
 import { BasicResultStyleWrapper } from './style';
 import classNames from 'classnames';
 

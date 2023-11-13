@@ -1,4 +1,3 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 
 export const WorkflowTemplateDetailRightContentStyleWrapper = styled('div')`
@@ -18,7 +17,7 @@ export const WorkflowTemplateAuthLevelStyleWrapper = styled('div')`
     margin-bottom: 12px;
   }
 
-  .${ANTD_PREFIX_STR}-typography.auth-level-text {
+  .ant-typography.auth-level-text {
     font-weight: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.workflowTemplateAuthInfo
         .authLevelFontWeight};
@@ -27,15 +26,15 @@ export const WorkflowTemplateAuthLevelStyleWrapper = styled('div')`
         .authLevelFontSize};
   }
 
-  .${ANTD_PREFIX_STR}-progress-steps-outer {
+  .ant-progress-steps-outer {
     position: relative;
     top: -10px;
 
-    .${ANTD_PREFIX_STR}-progress-steps-item:first-of-type {
+    .ant-progress-steps-item:first-of-type {
       border-radius: 50px 0 0 50px;
     }
 
-    .${ANTD_PREFIX_STR}-progress-steps-item:last-of-type {
+    .ant-progress-steps-item:last-of-type {
       border-radius: 0 50px 50px 0;
     }
   }
@@ -46,7 +45,7 @@ export const WorkflowTemplateAuthInfoStyleWrapper = styled('div')`
   border-bottom: ${({ theme }) =>
     theme.sqleTheme.workflowTemplate.workflowTemplateAuthInfo.borderBottom};
 
-  .${ANTD_PREFIX_STR}-typography.auth-info-title {
+  .ant-typography.auth-info-title {
     font-weight: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.workflowTemplateAuthInfo
         .topLevelFontWeight};
@@ -55,7 +54,7 @@ export const WorkflowTemplateAuthInfoStyleWrapper = styled('div')`
     flex: 1 0 0;
   }
 
-  .${ANTD_PREFIX_STR}-typography.auth-info-item {
+  .ant-typography.auth-info-item {
     margin: 12px 0 0;
     color: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.workflowTemplateAuthInfo.authInfoColor};

@@ -13,8 +13,8 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useThemeStyleData from '../../../../..//hooks/useThemeStyleData';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { floatRound } from '@actiontech/shared/lib/utils/Math';
-import useChangeTheme from '../../../../../hooks/useChangeTheme';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 enum EnumLevel {
   dangerous = 'dangerous',

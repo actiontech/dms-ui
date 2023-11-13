@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { message, Space, Form } from 'antd5';
+import { message, Space, Form } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,5 +1,5 @@
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { ModalStatus } from '../../types/common.type';
 
 export const commonModalReducer = <
   T extends { modalStatus: ModalStatus }

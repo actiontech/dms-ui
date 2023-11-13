@@ -1,20 +1,19 @@
 import { styled } from '@mui/material/styles';
-import { Modal } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Modal } from 'antd';
 
 export const BasicModalStyleWrapper = styled(Modal)`
-  &.basic-modal-wrapper.${ANTD_PREFIX_STR}-modal {
-    .${ANTD_PREFIX_STR}-modal-content {
+  &.basic-modal-wrapper.ant-modal {
+    .ant-modal-content {
       padding: 0;
       background: ${({ theme }) =>
         theme.sharedTheme.components.basicModal.content.backgroundColor};
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicModal.content.border};
 
-      .${ANTD_PREFIX_STR}-modal-close {
+      .ant-modal-close {
         top: 22px;
       }
-      .${ANTD_PREFIX_STR}-modal-header {
+      .ant-modal-header {
         display: flex;
         align-items: center;
         border-radius: 8px 8px 0 0;
@@ -23,7 +22,7 @@ export const BasicModalStyleWrapper = styled(Modal)`
         border-bottom: ${({ theme }) =>
           theme.sharedTheme.components.basicModal.content.header.border};
 
-        .${ANTD_PREFIX_STR}-modal-title {
+        .ant-modal-title {
           color: ${({ theme }) =>
             theme.sharedTheme.components.basicModal.content.header.title.color};
           font-size: 20px;
@@ -33,7 +32,7 @@ export const BasicModalStyleWrapper = styled(Modal)`
         }
       }
 
-      .${ANTD_PREFIX_STR}-modal-body {
+      .ant-modal-body {
         padding: 24px;
         color: ${({ theme }) =>
           theme.sharedTheme.components.basicModal.content.body.color};
@@ -42,17 +41,17 @@ export const BasicModalStyleWrapper = styled(Modal)`
         font-weight: 500;
         line-height: 22px;
 
-        .${ANTD_PREFIX_STR}-form {
-          .${ANTD_PREFIX_STR}-form-item {
-            .${ANTD_PREFIX_STR}-form-item-row {
-              .${ANTD_PREFIX_STR}-form-item-label {
+        .ant-form {
+          .ant-form-item {
+            .ant-form-item-row {
+              .ant-form-item-label {
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 22px;
               }
 
-              .${ANTD_PREFIX_STR}-form-item-required {
+              .ant-form-item-required {
                 &::before {
                   display: none !important;
                 }
@@ -73,7 +72,7 @@ export const BasicModalStyleWrapper = styled(Modal)`
         }
       }
 
-      .${ANTD_PREFIX_STR}-modal-footer {
+      .ant-modal-footer {
         margin-top: 0;
         padding: 24px;
         display: flex;
@@ -84,8 +83,7 @@ export const BasicModalStyleWrapper = styled(Modal)`
             .backgroundColor};
         border-radius: 0 0 8px 8px;
 
-        .${ANTD_PREFIX_STR}-btn
-          + .${ANTD_PREFIX_STR}-btn:not(.${ANTD_PREFIX_STR}-dropdown-trigger) {
+        .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
           margin-left: 12px;
         }
       }

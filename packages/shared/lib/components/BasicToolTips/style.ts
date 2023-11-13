@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Tooltip } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Tooltip } from 'antd';
 
 export const PopoverInnerContentStyleWrapper = styled('div')<{
   width?: number;
@@ -26,7 +25,7 @@ export const ToolTipsStyleWrapper = styled(Tooltip)`
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorWarning};
   }
 
-  .${ANTD_PREFIX_STR}-space-item {
+  .ant-space-item {
     display: inline-flex;
     align-items: center;
   }

@@ -1,4 +1,4 @@
-import { FormItemProps } from 'antd5';
+import { FormItemProps } from 'antd';
 import { FormItemLabelStyleWrapper } from './style';
 
 interface IFormItemLabel extends FormItemProps {}

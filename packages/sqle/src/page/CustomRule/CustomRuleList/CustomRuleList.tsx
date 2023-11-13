@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useRequest } from 'ahooks';
-import { Spin, message, Space, Popconfirm } from 'antd5';
+import { Spin, message, Space, Popconfirm } from 'antd';
 import { BasicButton } from '@actiontech/shared';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

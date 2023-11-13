@@ -11,7 +11,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useCurrentUser, useUserInfo } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
-import { message } from 'antd5';
+import { message } from 'antd';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';

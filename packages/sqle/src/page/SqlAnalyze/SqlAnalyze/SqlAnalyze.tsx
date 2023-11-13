@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import React, { useMemo, useState } from 'react';
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   EmptyBox,

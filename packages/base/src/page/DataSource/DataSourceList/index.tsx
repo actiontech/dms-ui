@@ -1,5 +1,5 @@
 import { useRequest } from 'ahooks';
-import { message, Modal } from 'antd5';
+import { message, Modal } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {

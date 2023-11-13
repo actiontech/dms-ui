@@ -1,5 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 export const SystemStyleWrapper = styled('section')`
   .segmented-wrapper {
@@ -31,18 +30,20 @@ export const SystemStyleWrapper = styled('section')`
       border-top: 1px solid
         ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
-      .${ANTD_PREFIX_STR}-form {
+      .ant-form {
         .switch-field-wrapper {
           padding: 32px 0;
 
-          .${ANTD_PREFIX_STR}-form-item {
+          .ant-form-item {
             margin-bottom: 0;
           }
         }
-        > .${ANTD_PREFIX_STR}-form-item {
+
+        > .ant-form-item {
           margin-bottom: 32px;
         }
-        .${ANTD_PREFIX_STR}-form-item-control-input-content {
+
+        .ant-form-item-control-input-content {
           display: flex;
           justify-content: end;
         }
@@ -59,9 +60,10 @@ export const SystemStyleWrapper = styled('section')`
         border-top: 1px solid
           ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
-        .${ANTD_PREFIX_STR}-descriptions-item-container {
+        .ant-descriptions-item-container {
           height: 20px;
-          .${ANTD_PREFIX_STR}-descriptions-item-label {
+
+          .ant-descriptions-item-label {
             width: 240px;
           }
         }

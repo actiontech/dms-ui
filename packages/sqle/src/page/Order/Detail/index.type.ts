@@ -2,7 +2,7 @@ import {
   WorkflowStepResV1StateEnum,
   WorkflowStepResV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { TimelineItemProps } from 'antd5';
+import { TimelineItemProps } from 'antd';
 import { I18nKey } from '../../../locale';
 
 export type StepStateStatus = {

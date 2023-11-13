@@ -13,7 +13,7 @@ import {
   IconExportRule,
   IconRuleItem
 } from '../../../icon/Rule';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 

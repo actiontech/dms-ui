@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { Space } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+import { Space } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import { useBoolean } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';

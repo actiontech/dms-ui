@@ -1,5 +1,5 @@
 import { useBoolean, useRequest } from 'ahooks';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -7,7 +7,7 @@ import EmitterKey from '../../../data/EmitterKey';
 import { updateSystemModalStatus } from '../../../store/system';
 import EventEmitter from '../../../utils/EventEmitter';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { Row } from 'antd5';
+import { Row } from 'antd';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { LicenseColumn } from './index.data';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';

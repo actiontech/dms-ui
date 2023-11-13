@@ -1,27 +1,26 @@
-import { ANTD_PREFIX_STR } from '../../data/common';
 import { styled } from '@mui/material/styles';
 import BasicSelect from '../BasicSelect';
 import BasicInput from '../BasicInput/Input';
 
 export const CustomSelectStyleWrapper = styled(BasicSelect)`
-  &.${ANTD_PREFIX_STR}-select-borderless.custom-select-namespace {
+  &.ant-select-borderless.custom-select-namespace {
     border-radius: 4px;
     border: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.border} !important;
   }
-  &.${ANTD_PREFIX_STR}-select-borderless.custom-select-namespace.antd-v5-select-disabled {
+  &.ant-select-borderless.custom-select-namespace.ant-select-disabled {
     border-radius: 4px;
     border: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.disabled.border};
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.disabled.background};
   }
-  &.${ANTD_PREFIX_STR}-select.custom-select-namespace {
-    .${ANTD_PREFIX_STR}-select-selector {
+  &.ant-select.custom-select-namespace {
+    .ant-select-selector {
       border-radius: 4px;
       min-width: 130px;
 
-      .${ANTD_PREFIX_STR}-select-selection-placeholder {
+      .ant-select-selection-placeholder {
         .custom-select-placeholder {
           display: inline-flex;
           align-items: center;
@@ -32,7 +31,7 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
         }
       }
 
-      .${ANTD_PREFIX_STR}-select-selection-item {
+      .ant-select-selection-item {
         .custom-select-option-content {
           display: inline-flex;
           align-items: center;
@@ -42,22 +41,22 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
     }
   }
 
-  &:not(.${ANTD_PREFIX_STR}-select-multiple).custom-select-namespace {
-    .${ANTD_PREFIX_STR}-select-selector {
+  &:not(.ant-select-multiple).custom-select-namespace {
+    .ant-select-selector {
       display: flex;
       align-items: center;
       padding: 0 8px;
     }
   }
 
-  &.${ANTD_PREFIX_STR}-select-multiple.custom-select-namespace {
-    .${ANTD_PREFIX_STR}-select-selector {
+  &.ant-select-multiple.custom-select-namespace {
+    .ant-select-selector {
       display: flex;
       align-items: center;
       padding: 3px 8px;
       padding-inline-end: 24px;
 
-      .${ANTD_PREFIX_STR}-select-selection-overflow {
+      .ant-select-selection-overflow {
         &-item:not(:first-of-type) {
           margin-left: 2px;
         }
@@ -75,7 +74,7 @@ export const CustomSelectStyleWrapper = styled(BasicSelect)`
       theme.sharedTheme.components.customSelect.hoverBackgroundColor};
   }
 
-  &.${ANTD_PREFIX_STR}-select-focused {
+  &.ant-select-focused {
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.focusBackGroundColor};
   }
@@ -106,7 +105,7 @@ export const CustomSelectPlaceholderStyleWrapper = styled('span')`
 `;
 
 export const CustomSelectSearchInputStyleWrapper = styled(BasicInput)`
-  &.${ANTD_PREFIX_STR}-input-affix-wrapper.basic-input-wrapper {
+  &.ant-input-affix-wrapper.basic-input-wrapper {
     width: 100%;
     border-radius: 0;
     font-weight: 500;

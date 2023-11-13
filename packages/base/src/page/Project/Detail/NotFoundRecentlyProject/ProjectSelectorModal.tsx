@@ -1,4 +1,4 @@
-import { InputRef, SelectProps, Space } from 'antd5';
+import { InputRef, SelectProps, Space } from 'antd';
 import { BasicButton, BasicModal } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { SelectProjectModalContentStyleWrapper } from './style';

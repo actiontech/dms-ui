@@ -1,4 +1,4 @@
-import { TooltipProps } from 'antd5';
+import { TooltipProps } from 'antd';
 import { ReactNode } from 'react';
 
 export type RenderSQLProps = {

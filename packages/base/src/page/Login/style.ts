@@ -1,5 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 export const LoginPageStyleWrapper = styled('section')`
   width: 100vw;
@@ -78,7 +77,7 @@ export const LoginPageRightStyleWrapper = styled('div')`
     }
   }
 
-  & .${ANTD_PREFIX_STR}-btn.login-btn {
+  & .ant-btn.login-btn {
     width: 100%;
     height: 56px;
     font-size: 14px;
@@ -87,7 +86,7 @@ export const LoginPageRightStyleWrapper = styled('div')`
     border-radius: 6px !important;
   }
 
-  & .${ANTD_PREFIX_STR}-btn.other-login-btn {
+  & .ant-btn.other-login-btn {
     width: 100%;
     height: 56px;
     font-size: 14px;
@@ -107,12 +106,13 @@ export const LoginPageRightStyleWrapper = styled('div')`
     background-color: ${({ theme }) =>
       theme.sharedTheme.uiToken.colorBgLayout} !important;
 
-    &.${ANTD_PREFIX_STR}-input-affix-wrapper-lg {
+    &.ant-input-affix-wrapper-lg {
       padding: 5px 16px;
     }
 
     border-radius: 6px !important;
-    .${ANTD_PREFIX_STR}-input {
+
+    .ant-input {
       background-color: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorBgLayout} !important;
       margin-left: 12px;

@@ -10,7 +10,7 @@ import AuditDetail from '../AuditDetail';
 import OrderDetailPageHeaderExtra from './PageHeaderExtra';
 import BasicInfoWrapper from '../Common/BasicInfoWrapper';
 import useInitDataWithRequest from './hooks/useInitDataWithRequest';
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import useGenerateOrderStepsProps from './hooks/useGenerateOrderStepsProps';
 import RejectReason from './RejectReason';
 import {

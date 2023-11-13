@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ConfigProvider, Space, Row, Col } from 'antd5';
+import { ConfigProvider, Space, Row, Col } from 'antd';
 import { PageHeader } from '@actiontech/shared';
 import { SyncOutlined } from '@ant-design/icons';
 

@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 
-import { Space, message, Form, Radio } from 'antd5';
+import { Space, message, Form, Radio } from 'antd';
 import { useDispatch } from 'react-redux';
 import { useBoolean } from 'ahooks';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../base/src/store';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { BasicButton, BasicModal } from '@actiontech/shared';
 import { ModalName } from '../../../../../../data/ModalName';
 import {

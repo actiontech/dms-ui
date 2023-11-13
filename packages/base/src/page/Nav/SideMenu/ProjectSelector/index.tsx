@@ -1,4 +1,4 @@
-import { InputRef, SelectProps } from 'antd5';
+import { InputRef, SelectProps } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { IconRightArrowSelectSuffix } from '@actiontech/shared/lib/Icon';
 import {
