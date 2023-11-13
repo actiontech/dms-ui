@@ -1,9 +1,3 @@
-export enum DBServiceDbTypeEnum {
-  'MySQL' = 'MySQL',
-
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
-}
-
 export enum GetUserAuthenticationTypeEnum {
   'ldap' = 'ldap',
 
@@ -20,18 +14,6 @@ export enum GetUserStatEnum {
   '被禁用' = '被禁用',
 
   '未知' = '未知'
-}
-
-export enum IPluginDBServiceDBTypeEnum {
-  'MySQL' = 'MySQL',
-
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
-}
-
-export enum ListDBServiceDbTypeEnum {
-  'MySQL' = 'MySQL',
-
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
 }
 
 export enum ListMemberRoleWithOpRangeOpRangeTypeEnum {
@@ -146,10 +128,4 @@ export enum TestFeishuConfigurationAccountTypeEnum {
   'email' = 'email',
 
   'phone' = 'phone'
-}
-
-export enum UpdateDBServiceDbTypeEnum {
-  'MySQL' = 'MySQL',
-
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
 }
