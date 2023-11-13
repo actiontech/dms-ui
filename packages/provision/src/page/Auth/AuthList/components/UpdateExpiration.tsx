@@ -1,21 +1,22 @@
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useBoolean } from 'ahooks';
-import { Button, Form, message, Modal, Select } from 'antd';
+import { Form, message } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
-import { ModalFormLayout, ResponseCode } from '~/data/common';
+import { ResponseCode } from '~/data/common';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import { timeDayOptions } from '~/page/Auth/AddAuth/index.data';
 import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
 import EventEmitter from '~/utils/EventEmitter';
+import { BasicButton, BasicModal, BasicSelect } from '@actiontech/shared';
+import { FormItemWithExtraStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { IUpdateExpirationInAuthFormFields } from '../index.type';
 
-interface IUpdateExpirationInAuthFormFields {
-  renewal_effective_time_day: string;
-}
-
-const UpdateExpirationInAuth = () => {
+const UpdateExpiration = () => {
   const { t } = useTranslation();
+
+  const [messageApi, contextHolder] = message.useMessage();
 
   const { toggleModal, visible } = useModalStatus(
     AuthListModalStatus,
@@ -49,7 +50,7 @@ const UpdateExpirationInAuth = () => {
         }
       });
       if (res.data.code === ResponseCode.SUCCESS) {
-        message.success(t('auth.updateTemplateSuccess'));
+        messageApi.success(t('auth.updateTemplateSuccess'));
         closeAndReset();
         EventEmitter.emit(EventEmitterKey.Refresh_Auth_List_Table);
       }
@@ -59,33 +60,34 @@ const UpdateExpirationInAuth = () => {
   };
 
   return (
-    <Modal
-      closable={false}
+    <BasicModal
       title={t('auth.updateExpirationTitle')}
       open={visible}
       footer={
         <>
-          <Button disabled={updateLoading} onClick={closeAndReset}>
+          <BasicButton disabled={updateLoading} onClick={closeAndReset}>
             {t('common.close')}
-          </Button>
-          <Button type="primary" loading={updateLoading} onClick={submit}>
+          </BasicButton>
+          <BasicButton type="primary" loading={updateLoading} onClick={submit}>
             {t('common.submit')}
-          </Button>
+          </BasicButton>
         </>
       }
+      onCancel={closeAndReset}
     >
-      <Form {...ModalFormLayout} form={form}>
-        <Form.Item
+      {contextHolder}
+      <Form layout="vertical" form={form}>
+        <FormItemWithExtraStyleWrapper
           name="renewal_effective_time_day"
           label={t('auth.updateExpirationField')}
           required={true}
           extra={t('auth.updateExpirationExtra')}
         >
-          <Select options={timeDayOptions} />
-        </Form.Item>
+          <BasicSelect options={timeDayOptions} />
+        </FormItemWithExtraStyleWrapper>
       </Form>
-    </Modal>
+    </BasicModal>
   );
 };
 
-export default UpdateExpirationInAuth;
+export default UpdateExpiration;

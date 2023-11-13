@@ -30,6 +30,7 @@ export default {
     expiration: '到期时间'
   },
   addAuth: {
+    backAuthList: '返回授权清单列表',
     title: '授权',
     back: '返回',
     steps: {
@@ -157,5 +158,8 @@ export default {
     addUser: '创建用户',
     checkAuthTemplateDetail: '查看权限模板详情',
     toAuthList: '去授权'
+  },
+  authDetail: {
+    baseInfo: '基础信息'
   }
 };
