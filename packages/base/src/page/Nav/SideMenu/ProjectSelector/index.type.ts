@@ -9,6 +9,5 @@ export type RecentlyProjectsRecordType = Record<
 export type IBindProject = { archived: boolean } & IUserBindProject;
 
 export type ProjectSelectorProps = {
-  isArchived: boolean;
   bindProjects?: IBindProject[];
 } & CustomSelectProps;

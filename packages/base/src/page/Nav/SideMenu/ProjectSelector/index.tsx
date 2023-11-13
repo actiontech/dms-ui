@@ -8,10 +8,6 @@ import {
 import { BasicButton, EmptyBox } from '@actiontech/shared';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  IconProjectArchived,
-  IconProjectFlag
-} from '@actiontech/shared/lib/Icon/common';
 import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
@@ -20,7 +16,7 @@ import { ProjectSelectorProps } from './index.type';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
-  isArchived,
+  prefix,
   onChange,
   options,
   bindProjects,
@@ -90,7 +86,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   return (
     <ProjectSelectorStyleWrapper
       open={open}
-      prefix={isArchived ? <IconProjectArchived /> : <IconProjectFlag />}
+      prefix={prefix}
       size="large"
       className="custom-project-selector"
       placement="bottomLeft"

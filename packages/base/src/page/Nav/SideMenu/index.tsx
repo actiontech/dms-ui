@@ -90,7 +90,13 @@ const SideMenu: React.FC = () => {
 
         <ProjectSelector
           value={currentProjectID}
-          isArchived={isCurrentProjectArchived}
+          prefix={
+            isCurrentProjectArchived ? (
+              <IconProjectArchived />
+            ) : (
+              <IconProjectFlag />
+            )
+          }
           onChange={projectSelectorChangeHandle}
           options={projectSelectorOptions}
           bindProjects={bindProjectsWithArchiveStatus}
