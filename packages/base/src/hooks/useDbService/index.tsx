@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd5';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
@@ -79,8 +79,17 @@ const useDbService = () => {
     });
   }, [dbServiceList, getLogoUrlByDbType]);
 
+  const dbServiceOptions = useMemo(() => {
+    return dbServiceList.map((item) => ({
+      value: item.uid,
+      text: item.name,
+      label: item.name
+    }));
+  }, [dbServiceList]);
+
   return {
     dbServiceList,
+    dbServiceOptions,
     loading,
     updateDbServiceList,
     generateDbServiceSelectOption
