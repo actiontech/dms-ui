@@ -1,26 +1,22 @@
+import { useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { SelectProps } from 'antd5';
+import { useRequest } from 'ahooks';
 import { SideMenuStyleWrapper } from './style';
 import ProjectSelector from './ProjectSelector';
-import { useNavigate } from 'react-router-dom';
-import { useMemo } from 'react';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
-import { Menu, MenuProps, SelectProps, Typography } from 'antd5';
-import {
-  useCurrentProject,
-  useCurrentUser
-} from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
-import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
 import {
-  DEFAULT_PROJECT_ID,
-  DEFAULT_PROJECT_NAME
-} from '@actiontech/shared/lib/data/common';
-import useSystemConfig from '../../../hooks/useSystemConfig.tsx';
-import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
-import { LockOutlined } from '@ant-design/icons';
+  IconProjectFlag,
+  IconProjectArchived
+} from '@actiontech/shared/lib/Icon/common';
 import UserMenu from './UserMenu';
 import ProjectTitle from './ProjectTitle';
 import MenuList from './MenuList';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IBindProject } from './ProjectSelector/index.type';
 
 const SideMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -34,14 +30,26 @@ const SideMenu: React.FC = () => {
 
   currentProjectID = id ?? '';
 
+  const { data: projectList } = useRequest(() =>
+    dms.ListProjects({ page_size: 9999 }).then((res) => res?.data?.data ?? [])
+  );
+
+  const getProjectArchived = useCallback(
+    (itemProjectId: string) =>
+      (projectList ?? []).find((project) => project.uid === itemProjectId)
+        ?.archived ?? false,
+    [projectList]
+  );
+
   const projectSelectorOptions = useMemo<SelectProps['options']>(() => {
     return recentlyProjects.map((v) => {
+      const isProjectArchived = getProjectArchived(v?.project_id ?? '');
+
       return {
         value: v.project_id,
         label: (
           <ProjectSelectorLabelStyleWrapper>
-            <IconProjectFlag />
-            {/* <LockOutlined size={18} /> */}
+            {isProjectArchived ? <IconProjectArchived /> : <IconProjectFlag />}
 
             <span className="project-selector-label-text">
               {v.project_name}
@@ -51,7 +59,25 @@ const SideMenu: React.FC = () => {
         text: v.project_name
       };
     });
-  }, [recentlyProjects]);
+  }, [getProjectArchived, recentlyProjects]);
+
+  const bindProjectsWithArchiveStatus = useMemo<IBindProject[]>(
+    () =>
+      bindProjects.map((v) => {
+        const isProjectArchived = getProjectArchived(v?.project_id ?? '');
+
+        return {
+          ...v,
+          archived: isProjectArchived
+        };
+      }),
+    [bindProjects, getProjectArchived]
+  );
+
+  const isCurrentProjectArchived = useMemo(
+    () => getProjectArchived(currentProjectID),
+    [currentProjectID, getProjectArchived]
+  );
 
   const projectSelectorChangeHandle: CustomSelectProps['onChange'] = (id) => {
     navigate(`/sqle/project/${id}/overview`);
@@ -64,9 +90,10 @@ const SideMenu: React.FC = () => {
 
         <ProjectSelector
           value={currentProjectID}
+          isArchived={isCurrentProjectArchived}
           onChange={projectSelectorChangeHandle}
           options={projectSelectorOptions}
-          bindProjects={bindProjects}
+          bindProjects={bindProjectsWithArchiveStatus}
         />
 
         <MenuList projectID={currentProjectID} isAdmin={isAdmin} />
