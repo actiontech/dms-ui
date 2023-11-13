@@ -5,6 +5,7 @@ export const BasicInfoListStyleWrapper = styled(Card)`
   &.ant-card.ant-card-bordered {
     border-radius: ${({ theme }) =>
       theme.sharedTheme.components.basicInfoList.borderRadius};
+
     .ant-card-body .ant-card-grid.info-item-wrapper {
       padding: 0;
       display: flex;
