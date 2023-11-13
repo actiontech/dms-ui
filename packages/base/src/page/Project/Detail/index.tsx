@@ -26,7 +26,8 @@ const ProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
   const [projectDetailFetched, setProjectDetailFetched] = useState(false);
-  const { loading: getDriverMetaLoading, getDriverMeta } = useDbServiceDriver();
+  const { loading: updateDriverListLoading, updateDriverList } =
+    useDbServiceDriver();
 
   useRequest(
     () => dms.ListProjects({ page_size: 10, filter_by_uid: nextProjectID }),
@@ -51,10 +52,9 @@ const ProjectDetail: React.FC = () => {
    */
   useEffect(() => {
     if (nextProjectID) {
-      getDriverMeta(nextProjectID);
+      updateDriverList(nextProjectID);
     }
-  }, [nextProjectID, getDriverMeta]);
-
+  }, [nextProjectID, updateDriverList]);
   /* IFTRUE_isEE */
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
@@ -92,7 +92,7 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <EmptyBox
-      if={projectDetailFetched || !nextProjectID || getDriverMetaLoading}
+      if={projectDetailFetched || !nextProjectID || updateDriverListLoading}
       defaultNode={<HeaderProgress />}
     >
       {/* IFTRUE_isEE */}

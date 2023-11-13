@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import { updateDriverMeta } from '../../../../base/src/store/database';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../base/src/store';
+import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
+import { Select } from 'antd5';
 
 const useDbServiceDriver = () => {
   const dispatch = useDispatch();
@@ -14,7 +16,7 @@ const useDbServiceDriver = () => {
   );
   const [driverNameList, setDriverNameList] = React.useState<string[]>([]);
 
-  const { loading, run: getDriverMeta } = useRequest(
+  const { loading, run: updateDriverList } = useRequest(
     (projectId: string) =>
       dms.ListDBServiceDriverOption({ project_uid: projectId }),
     {
@@ -46,12 +48,33 @@ const useDbServiceDriver = () => {
     [driverMeta]
   );
 
+  const dbDriverOptions = driverNameList.map((item) => ({
+    value: item,
+    text: item,
+    label: <DatabaseTypeLogo dbType={item} logoUrl={getLogoUrlByDbType(item)} />
+  }));
+
+  const generateDriverSelectOptions = React.useCallback(() => {
+    return driverMeta.map((v) => {
+      return (
+        <Select.Option key={v.db_type} value={v.db_type}>
+          <DatabaseTypeLogo
+            dbType={v.db_type ?? ''}
+            logoUrl={v.logo_path ?? ''}
+          />
+        </Select.Option>
+      );
+    });
+  }, [driverMeta]);
+
   return {
     driverNameList,
     loading,
     driverMeta,
-    getDriverMeta,
-    getLogoUrlByDbType
+    dbDriverOptions,
+    updateDriverList,
+    getLogoUrlByDbType,
+    generateDriverSelectOptions
   };
 };
 export default useDbServiceDriver;
