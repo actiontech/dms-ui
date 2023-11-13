@@ -7,13 +7,13 @@ import {
   TimePicker,
   Typography
 } from 'antd';
-import moment from 'moment';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cronOptions } from './index.data';
 import './index.less';
 import { CronInputProps, CronMode } from './index.type';
 import useCron from './useCron';
+import dayjs, { Dayjs } from 'dayjs';
 
 const CronInput: React.FC<CronInputProps> = (props) => {
   const {
@@ -58,10 +58,10 @@ const CronInput: React.FC<CronInputProps> = (props) => {
   };
 
   const time = useMemo(() => {
-    return moment(`${hour ?? 0}:${minute ?? 0}`, 'HH:mm');
+    return dayjs(`${hour ?? 0}:${minute ?? 0}`, 'HH:mm');
   }, [hour, minute]);
 
-  const handleTimeChange = (time: moment.Moment | null) => {
+  const handleTimeChange = (time: Dayjs | null) => {
     const hour = time?.hour() ?? 0;
     const minute = time?.minute() ?? 0;
     updateTime(hour, minute);

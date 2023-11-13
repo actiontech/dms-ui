@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '../../data/common';
-import { Select, SelectProps } from 'antd5';
+import { Select, SelectProps } from 'antd';
 import { IDriverMeta } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';

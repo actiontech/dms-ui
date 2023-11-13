@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { NavigateOptions, To, useNavigate } from 'react-router-dom';
-import { CardProps, Tooltip } from 'antd5';
+import { CardProps, Tooltip } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { CardWrapperStyleWrapper } from './style';
 import { IconTipOrange, IconTitleMore } from '@actiontech/shared/lib/Icon';

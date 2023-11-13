@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import {
   CustomRuleFormBaseInfoFields,
   EditRuleScriptFields

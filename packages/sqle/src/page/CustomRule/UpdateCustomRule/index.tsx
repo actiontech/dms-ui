@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Spin, Space } from 'antd5';
+import { Spin, Space } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import classNames from 'classnames';
 import CustomRuleForm from '../CustomRuleForm/CustomRuleForm';

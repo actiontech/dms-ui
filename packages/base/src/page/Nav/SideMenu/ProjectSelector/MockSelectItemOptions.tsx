@@ -1,5 +1,5 @@
 import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+
 import { ProjectSelectorLabelStyleWrapper } from './style';
 import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
@@ -29,15 +29,11 @@ const MockSelectItemOptions: React.FC<{
               closeSelectDropdown();
             }}
             key={v.project_id}
-            className={classNames(
-              `${ANTD_PREFIX_STR}-select-item ${ANTD_PREFIX_STR}-select-item-option`,
-              {
-                [`${ANTD_PREFIX_STR}-select-item-option-active`]:
-                  activeId === v.project_id
-              }
-            )}
+            className={classNames(`ant-select-item ant-select-item-option`, {
+              [`ant-select-item-option-active`]: activeId === v.project_id
+            })}
           >
-            <div className={`${ANTD_PREFIX_STR}-select-item-option-content`}>
+            <div className={`ant-select-item-option-content`}>
               <ProjectSelectorLabelStyleWrapper>
                 <IconProjectFlag />
 

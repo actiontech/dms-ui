@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Row } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Row } from 'antd';
 
 export const ConfigItemStyledWrapper = styled(Row)`
   width: 100%;
@@ -8,7 +7,7 @@ export const ConfigItemStyledWrapper = styled(Row)`
   border-bottom: 1px solid
     ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
-  .${ANTD_PREFIX_STR}-btn.config-item-filed-edit-button {
+  .ant-btn.config-item-filed-edit-button {
     width: 40px !important;
     height: 24px;
     border-radius: 100px;
@@ -34,13 +33,12 @@ export const ConfigItemStyledWrapper = styled(Row)`
     min-height: 36px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
 
-    .${ANTD_PREFIX_STR}-input-number-affix-wrapper
-      .${ANTD_PREFIX_STR}-input-number-handler-wrap {
+    .ant-input-number-affix-wrapper .ant-input-number-handler-wrap {
       display: none;
     }
   }
 
-  .${ANTD_PREFIX_STR}-upload.${ANTD_PREFIX_STR}-upload-select {
+  .ant-upload.ant-upload-select {
     width: 120;
     height: 120;
     margin: 0;

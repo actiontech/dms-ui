@@ -1,4 +1,4 @@
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { BasicSelect, BasicInput, BasicSwitch } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { IMemberGroupFormProps } from './index.type';

@@ -7,7 +7,7 @@ import {
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/FormCom';
 import { useCallback, useContext, useMemo, useState } from 'react';
-import { Form, Space } from 'antd5';
+import { Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import {
   IconDatabase,

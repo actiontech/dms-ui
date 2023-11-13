@@ -1,4 +1,4 @@
-import { Alert, Table, Typography } from 'antd5';
+import { Alert, Table, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { variableData } from './index.data';
 

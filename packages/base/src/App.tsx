@@ -2,38 +2,31 @@ import { Suspense, useEffect, useMemo } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { AuthRouterConfig, unAuthRouterConfig } from './router/router';
 import { IReduxState } from './store';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import { EmptyBox, HeaderProgress } from '@actiontech/shared';
-import { ConfigProvider } from 'antd';
-import zhCN from 'antd/es/locale/zh_CN';
-import zhCN5 from 'antd5/locale/zh_CN';
+import zhCN from 'antd/locale/zh_CN';
 import {
   useChangeTheme,
   useNotificationContext
 } from '@actiontech/shared/lib/hooks';
-import { updateTheme } from './store/user';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
-import {
-  ConfigProvider as ConfigProviderV5,
-  theme as antdTheme,
-  Spin
-} from 'antd5';
-import './index.less';
+import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
 import { IconSpin } from '@actiontech/shared/lib/Icon/common';
 import { ThemeData } from './theme';
 import {
   StyleProvider,
   legacyLogicalPropertiesTransformer
 } from '@ant-design/cssinjs';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import useSystemConfig from './hooks/useSystemConfig.tsx';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
+
+import './index.less';
 
 Spin.setDefaultIndicator(<IconSpin />);
 
@@ -46,8 +39,6 @@ function App() {
   }));
 
   const { notificationContextHolder } = useNotificationContext();
-
-  const dispatch = useDispatch();
 
   const { getUserBySession } = useSessionUser();
 
@@ -110,11 +101,7 @@ function App() {
   }, [role]);
 
   const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
-  useChangeTheme({
-    theme,
-    updateTheme: (_theme: SupportTheme) =>
-      dispatch(updateTheme({ theme: _theme }))
-  });
+  useChangeTheme();
 
   const themeData = useMemo(() => {
     return ThemeData[theme];
@@ -143,9 +130,8 @@ function App() {
       hashPriority="high"
       transformers={[legacyLogicalPropertiesTransformer]}
     >
-      <ConfigProviderV5
-        locale={zhCN5}
-        prefixCls={ANTD_PREFIX_STR}
+      <ConfigProvider
+        locale={zhCN}
         theme={{
           algorithm:
             theme === SupportTheme.DARK
@@ -185,17 +171,15 @@ function App() {
           }
         }}
       >
-        <ConfigProvider locale={zhCN}>
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={themeData}>
-              {notificationContextHolder}
-              <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
-                {body}
-              </EmptyBox>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        </ConfigProvider>
-      </ConfigProviderV5>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={themeData}>
+            {notificationContextHolder}
+            <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
+              {body}
+            </EmptyBox>
+          </ThemeProvider>
+        </StyledEngineProvider>
+      </ConfigProvider>
     </StyleProvider>
   );
 }

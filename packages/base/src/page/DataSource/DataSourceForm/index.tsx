@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance, Popconfirm } from 'antd5';
-import Select, { BaseOptionType } from 'antd5/es/select';
+import { FormInstance, Popconfirm } from 'antd';
+import Select, { BaseOptionType } from 'antd/es/select';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import { useRequest } from 'ahooks';
 import EventEmitter from '../../../utils/EventEmitter';

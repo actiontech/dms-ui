@@ -1,4 +1,3 @@
-import { ANTD_PREFIX_STR } from '../../data/common';
 import { styled } from '@mui/material/styles';
 
 export const BasicDatePickerFieldStyleWrapper = styled('div')`
@@ -7,8 +6,8 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
   position: relative;
 
   &.basic-date-picker-hide-super-icon {
-    .${ANTD_PREFIX_STR}-picker-header-super-prev-btn,
-      .${ANTD_PREFIX_STR}-picker-header-super-next-btn {
+    .ant-picker-header-super-prev-btn,
+    .ant-picker-header-super-next-btn {
       display: none;
     }
   }
@@ -20,43 +19,36 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
     z-index: 99;
   }
 
-  &
-    .${ANTD_PREFIX_STR}-picker:not(.${ANTD_PREFIX_STR}-picker-borderless):not(
-      .${ANTD_PREFIX_STR}-picker-focused
-    ) {
+  & .ant-picker:not(.ant-picker-borderless):not(.ant-picker-focused) {
     border: 1px solid
       ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   }
 
-  & .${ANTD_PREFIX_STR}-picker {
+  & .ant-picker {
     width: 100%;
     padding-left: 40px !important;
     border-radius: 4px !important;
-    &:hover:not(:focus):not(.${ANTD_PREFIX_STR}-picker-status-error):not(
-        .${ANTD_PREFIX_STR}-picker-disabled
-      ):not(.${ANTD_PREFIX_STR}-picker-focused):not(
-        .${ANTD_PREFIX_STR}-picker-borderless
-      ) {
+    &:hover:not(:focus):not(.ant-picker-status-error):not(
+        .ant-picker-disabled
+      ):not(.ant-picker-focused):not(.ant-picker-borderless) {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicRangePicker.hover.border};
     }
   }
 
-  .${ANTD_PREFIX_STR}-picker-dropdown {
-    .${ANTD_PREFIX_STR}-picker-panel-layout
-      .${ANTD_PREFIX_STR}-picker-panel
-      .${ANTD_PREFIX_STR}-picker-header {
+  .ant-picker-dropdown {
+    .ant-picker-panel-layout .ant-picker-panel .ant-picker-header {
       padding: 6px;
 
-      .${ANTD_PREFIX_STR}-picker-header-super-prev-btn,
-        .${ANTD_PREFIX_STR}-picker-header-super-next-btn {
+      .ant-picker-header-super-prev-btn,
+      .ant-picker-header-super-next-btn {
         height: 22px;
         line-height: 22px;
         padding: 4px;
       }
 
-      .${ANTD_PREFIX_STR}-picker-header-prev-btn,
-        .${ANTD_PREFIX_STR}-picker-header-next-btn {
+      .ant-picker-header-prev-btn,
+      .ant-picker-header-next-btn {
         height: 28px;
         background-color: ${({ theme }) =>
           theme.sharedTheme.uiToken.colorBgLayout};
@@ -76,17 +68,17 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
         }
       }
 
-      .${ANTD_PREFIX_STR}-picker-header-prev-btn {
+      .ant-picker-header-prev-btn {
         border-radius: 6px 0 0 6px;
         margin-right: -2px;
       }
 
-      .${ANTD_PREFIX_STR}-picker-header-next-btn {
+      .ant-picker-header-next-btn {
         border-radius: 0 6px 6px 0;
         margin-left: -2px;
       }
 
-      .${ANTD_PREFIX_STR}-picker-header-view {
+      .ant-picker-header-view {
         background-color: ${({ theme }) =>
           theme.sharedTheme.uiToken.colorBgLayout};
         height: 28px;
@@ -101,26 +93,26 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
       }
     }
 
-    .${ANTD_PREFIX_STR}-picker-panel-layout
-      .${ANTD_PREFIX_STR}-picker-panel
-      .${ANTD_PREFIX_STR}-picker-content
-      .${ANTD_PREFIX_STR}-picker-time-panel-cell-selected
-      .${ANTD_PREFIX_STR}-picker-time-panel-cell-inner {
+    .ant-picker-panel-layout
+      .ant-picker-panel
+      .ant-picker-content
+      .ant-picker-time-panel-cell-selected
+      .ant-picker-time-panel-cell-inner {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
     }
 
-    & .${ANTD_PREFIX_STR}-picker-footer {
+    & .ant-picker-footer {
       height: 52px;
 
-      .${ANTD_PREFIX_STR}-picker-ranges {
+      .ant-picker-ranges {
         height: 100%;
         padding: 12px 16px;
 
-        .${ANTD_PREFIX_STR}-picker-now-btn {
+        .ant-picker-now-btn {
           font-size: 13px;
         }
 
-        .${ANTD_PREFIX_STR}-btn {
+        .ant-btn {
           height: 28px;
         }
       }

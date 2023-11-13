@@ -1,5 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '../../data/common';
 
 export const BasicResultStyleWrapper = styled('section')`
   &.basic-result-wrapper {
@@ -9,14 +8,14 @@ export const BasicResultStyleWrapper = styled('section')`
     justify-content: center;
     align-items: center;
 
-    .${ANTD_PREFIX_STR}-result {
+    .ant-result {
       padding: 0;
 
-      .${ANTD_PREFIX_STR}-result-icon {
+      .ant-result-icon {
         margin-bottom: 0;
       }
 
-      .${ANTD_PREFIX_STR}-result-title {
+      .ant-result-title {
         margin: 16px 0;
         line-height: 32px;
         font-weight: 500;
@@ -24,14 +23,14 @@ export const BasicResultStyleWrapper = styled('section')`
           theme.sharedTheme.components.basicResult.title.color};
       }
 
-      .${ANTD_PREFIX_STR}-result-subTitle {
+      .ant-result-subTitle {
         max-width: 560px;
         line-height: 22px;
         color: ${({ theme }) =>
           theme.sharedTheme.components.basicResult.subTitle.color};
       }
 
-      .${ANTD_PREFIX_STR}-result-extra {
+      .ant-result-extra {
         margin-top: 32px;
 
         > * {

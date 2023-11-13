@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useBoolean, useKeyPress } from 'ahooks';
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import { IconCommonSelected } from '../../../Icon';
 import { IConfigItemEditInputNumberProps } from '../index.type';
 import BasicInputNumber from '../../BasicInputNumber';

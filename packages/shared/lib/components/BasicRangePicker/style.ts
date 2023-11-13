@@ -1,10 +1,9 @@
 import { styled } from '@mui/material/styles';
-import { DatePicker } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { DatePicker } from 'antd';
 
 export const BasicRangePickerStyleWrapper = styled(DatePicker.RangePicker)`
-  &.${ANTD_PREFIX_STR}-picker-range.basic-range-picker-wrapper {
-    .${ANTD_PREFIX_STR}-picker-clear {
+  &.ant-picker-range.basic-range-picker-wrapper {
+    .ant-picker-clear {
       background-color: transparent;
       opacity: 1;
 
@@ -13,7 +12,7 @@ export const BasicRangePickerStyleWrapper = styled(DatePicker.RangePicker)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-picker-range-separator {
+    .ant-picker-range-separator {
       .custom-icon-arrow-right {
         color: ${({ theme }) => theme.sharedTheme.basic.colorDefaultIcon};
       }
@@ -21,20 +20,20 @@ export const BasicRangePickerStyleWrapper = styled(DatePicker.RangePicker)`
   }
 
   &.custom-picker-prefix.basic-range-picker-wrapper {
-    .${ANTD_PREFIX_STR}-picker-suffix {
+    .ant-picker-suffix {
       margin-left: 1px;
       margin-right: 10px;
       order: -1;
     }
   }
 
-  &.${ANTD_PREFIX_STR}-picker-range:not(.${ANTD_PREFIX_STR}-picker-borderless) {
+  &.ant-picker-range:not(.ant-picker-borderless) {
     border: ${({ theme }) =>
       theme.sharedTheme.components.basicRangePicker.default.border};
     border-radius: 4px;
   }
 
-  .${ANTD_PREFIX_STR}-picker-input {
+  .ant-picker-input {
     input::placeholder {
       color: ${({ theme }) =>
         theme.sharedTheme.components.basicRangePicker.default.placeholder
@@ -42,26 +41,24 @@ export const BasicRangePickerStyleWrapper = styled(DatePicker.RangePicker)`
     }
   }
 
-  &.${ANTD_PREFIX_STR}-picker-range:hover:not(.${ANTD_PREFIX_STR}-picker-focused):not(
-      .${ANTD_PREFIX_STR}-picker-borderless
-    ):not(.${ANTD_PREFIX_STR}-picker-status-error):not(
-      .${ANTD_PREFIX_STR}-picker-disabled
-    ) {
+  &.ant-picker-range:hover:not(.ant-picker-focused):not(
+      .ant-picker-borderless
+    ):not(.ant-picker-status-error):not(.ant-picker-disabled) {
     border: ${({ theme }) =>
       theme.sharedTheme.components.basicRangePicker.hover.border};
   }
 
-  &.${ANTD_PREFIX_STR}-picker-focused:not(.${ANTD_PREFIX_STR}-picker-borderless) {
+  &.ant-picker-focused:not(.ant-picker-borderless) {
     border: ${({ theme }) =>
       theme.sharedTheme.components.basicRangePicker.active.border};
   }
 
-  &.${ANTD_PREFIX_STR}-picker-status-error:not(.${ANTD_PREFIX_STR}-picker-borderless) {
+  &.ant-picker-status-error:not(.ant-picker-borderless) {
     border: ${({ theme }) =>
       theme.sharedTheme.components.basicRangePicker.error.border};
   }
 
-  &.${ANTD_PREFIX_STR}-picker-disabled:not(.${ANTD_PREFIX_STR}-picker-borderless) {
+  &.ant-picker-disabled:not(.ant-picker-borderless) {
     border: ${({ theme }) =>
       theme.sharedTheme.components.basicRangePicker.disabled.border};
   }

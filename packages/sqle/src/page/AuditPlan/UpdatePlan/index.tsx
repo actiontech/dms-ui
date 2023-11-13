@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { PlanFormField } from '../PlanForm/index.type';
 import { UpdateAuditPlanUrlParams } from './index.type';
 
@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 
-import { Space, Spin } from 'antd5';
+import { Space, Spin } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import PlanForm from '../PlanForm';

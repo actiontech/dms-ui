@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import { PageHeader } from '@actiontech/shared';
 import { RuleStatus, RuleList, RuleTypes } from '../../components/RuleList';
 import {

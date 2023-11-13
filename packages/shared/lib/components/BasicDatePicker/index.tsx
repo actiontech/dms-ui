@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { BasicDatePickerFieldStyleWrapper } from './style';
-import type { DatePickerProps } from 'antd5/es/date-picker';
+import type { DatePickerProps } from 'antd/es/date-picker';
 import {
   IconDatePickerPrefix,
   IconDatePickerDown,
@@ -9,7 +9,7 @@ import {
   IconDatePickerRight
 } from '../../Icon/common';
 import { useBoolean } from 'ahooks';
-import { DatePicker, ConfigProvider } from 'antd5';
+import { DatePicker, ConfigProvider } from 'antd';
 import classnames from 'classnames';
 import { ComponentControlHeight } from '../../data/common';
 

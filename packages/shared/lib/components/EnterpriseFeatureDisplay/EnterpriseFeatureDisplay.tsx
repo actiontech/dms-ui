@@ -1,4 +1,4 @@
-import { Card, Space, Typography, Col, Row } from 'antd5';
+import { Card, Space, Typography, Col, Row } from 'antd';
 import { EnterpriseFeatureDisplayProps } from '.';
 import { useTranslation } from 'react-i18next';
 import { CEIndexStyleWrapper } from './style';

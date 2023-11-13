@@ -25,7 +25,7 @@ import { sourceDictionary } from './hooks/useStaticStatus';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { AvatarCom, EditText } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
-import { Avatar } from 'antd5';
+import { Avatar } from 'antd';
 import StatusTag from './StatusTag';
 import {
   SQLAuditRecordIDValuesSplit,

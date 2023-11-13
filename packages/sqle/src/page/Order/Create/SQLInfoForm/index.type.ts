@@ -1,4 +1,4 @@
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 import { IRuleTemplateV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SQLStatementFields } from '../../SQLStatementForm';
 import { CreateOrderFormStateType } from '../index.type';

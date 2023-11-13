@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { Typography, Form, notification } from 'antd5';
+import { Typography, Form, notification } from 'antd';
 import { OauthLoginFormFields } from './index.type';
 import { updateToken } from '../../store/user';
 import { useNavigate } from 'react-router-dom';

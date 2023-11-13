@@ -1,6 +1,5 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Typography } from 'antd5';
+import { Typography } from 'antd';
 import { BasicModal } from '@actiontech/shared';
 
 export const SideMenuStyleWrapper = styled('div')`
@@ -65,14 +64,14 @@ export const SideMenuStyleWrapper = styled('div')`
         );
       }
 
-      .custom-menu.${ANTD_PREFIX_STR}-menu.${ANTD_PREFIX_STR}-menu-inline {
+      .custom-menu.ant-menu.ant-menu-inline {
         width: calc(
           ${({ theme }) => theme.baseTheme.sideMenu.width}px -
             ${({ theme }) => theme.baseTheme.sideMenu.padding * 2}px
         );
         border-inline-end: 0;
 
-        .${ANTD_PREFIX_STR}-menu-item {
+        .ant-menu-item {
           display: flex;
           align-items: center;
           padding: 0 8px;
@@ -84,14 +83,14 @@ export const SideMenuStyleWrapper = styled('div')`
             background-color: ${({ theme }) =>
               theme.baseTheme.sideMenu.menu.hoverBackgroundColor};
 
-            .${ANTD_PREFIX_STR}-menu-title-content {
+            .ant-menu-title-content {
               font-weight: 500;
               color: ${({ theme }) =>
                 theme.baseTheme.sideMenu.menu.hoverLabelColor};
             }
           }
 
-          .${ANTD_PREFIX_STR}-menu-title-content {
+          .ant-menu-title-content {
             color: ${({ theme }) => theme.baseTheme.sideMenu.menu.labelColor};
             font-size: 13px;
             font-style: normal;
@@ -101,8 +100,8 @@ export const SideMenuStyleWrapper = styled('div')`
           }
         }
 
-        .${ANTD_PREFIX_STR}-menu-item.menu-todo-list-item {
-          .${ANTD_PREFIX_STR}-menu-title-content {
+        .ant-menu-item.menu-todo-list-item {
+          .ant-menu-title-content {
             display: inline-flex;
             width: 100%;
             justify-content: space-between;
@@ -110,10 +109,10 @@ export const SideMenuStyleWrapper = styled('div')`
           }
         }
 
-        .${ANTD_PREFIX_STR}-menu-submenu {
+        .ant-menu-submenu {
           padding: 0;
 
-          .${ANTD_PREFIX_STR}-menu-submenu-title {
+          .ant-menu-submenu-title {
             display: flex;
             align-items: center;
             height: 36px;
@@ -129,7 +128,7 @@ export const SideMenuStyleWrapper = styled('div')`
               color: ${({ theme }) =>
                 theme.baseTheme.sideMenu.menu.hoverLabelColor};
 
-              .${ANTD_PREFIX_STR}-menu-title-content {
+              .ant-menu-title-content {
                 font-weight: 500;
                 color: ${({ theme }) =>
                   theme.baseTheme.sideMenu.menu.hoverLabelColor};
@@ -137,7 +136,7 @@ export const SideMenuStyleWrapper = styled('div')`
             }
           }
 
-          .${ANTD_PREFIX_STR}-menu-title-content {
+          .ant-menu-title-content {
             color: ${({ theme }) => theme.baseTheme.sideMenu.menu.labelColor};
             font-size: 13px;
             font-style: normal;
@@ -146,46 +145,50 @@ export const SideMenuStyleWrapper = styled('div')`
             margin-inline-start: 12px;
           }
 
-          .${ANTD_PREFIX_STR}-menu.${ANTD_PREFIX_STR}-menu-sub.${ANTD_PREFIX_STR}-menu-inline {
-            .${ANTD_PREFIX_STR}-menu-item {
+          .ant-menu.ant-menu-sub.ant-menu-inline {
+            .ant-menu-item {
               padding: 0 8px 0 26px !important;
             }
           }
         }
 
-        .${ANTD_PREFIX_STR}-menu-submenu-selected {
-          .${ANTD_PREFIX_STR}-menu-submenu-title {
-            .${ANTD_PREFIX_STR}-menu-item-icon, > svg {
+        .ant-menu-submenu-selected {
+          .ant-menu-submenu-title {
+            .ant-menu-item-icon,
+            > svg {
               filter: brightness(0.3);
             }
-            .${ANTD_PREFIX_STR}-menu-title-content, > svg {
+
+            .ant-menu-title-content,
+            > svg {
               font-weight: 500;
               color: ${({ theme }) =>
                 theme.baseTheme.sideMenu.menu.hoverLabelColor};
             }
           }
         }
-        .${ANTD_PREFIX_STR}-menu-item-selected {
+
+        .ant-menu-item-selected {
           background-color: ${({ theme }) =>
             theme.baseTheme.sideMenu.menu.hoverBackgroundColor};
 
-          .${ANTD_PREFIX_STR}-menu-item-icon {
+          .ant-menu-item-icon {
             filter: brightness(0.3);
           }
 
-          .${ANTD_PREFIX_STR}-menu-title-content {
+          .ant-menu-title-content {
             font-weight: 500;
             color: ${({ theme }) =>
               theme.baseTheme.sideMenu.menu.hoverLabelColor};
           }
         }
 
-        .${ANTD_PREFIX_STR}-menu-item-divider {
+        .ant-menu-item-divider {
           color: ${({ theme }) => theme.baseTheme.sideMenu.menu.dividerColor};
         }
 
-        .${ANTD_PREFIX_STR}-menu-item-group {
-          .${ANTD_PREFIX_STR}-menu-item-group-title {
+        .ant-menu-item-group {
+          .ant-menu-item-group-title {
             padding: 8px 8px 0;
             color: ${({ theme }) =>
               theme.baseTheme.sideMenu.menu.groupLabelColor};
@@ -362,7 +365,7 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
       theme.baseTheme.sideMenu.projectSelector.dropdown.activeIconColor};
   }
 
-  .${ANTD_PREFIX_STR}-typography.default-project-name {
+  .ant-typography.default-project-name {
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 13px;

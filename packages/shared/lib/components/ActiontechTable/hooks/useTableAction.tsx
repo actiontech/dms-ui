@@ -7,7 +7,7 @@ import {
 } from '../index.type';
 import BasicButton from '../../BasicButton';
 import { useTranslation } from 'react-i18next';
-import { Popconfirm, Popover, Space } from 'antd5';
+import { Popconfirm, Popover, Space } from 'antd';
 import classnames from 'classnames';
 import { useCallback, useState } from 'react';
 import {

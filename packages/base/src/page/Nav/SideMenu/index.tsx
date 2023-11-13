@@ -3,7 +3,7 @@ import ProjectSelector from './ProjectSelector';
 import { useNavigate } from 'react-router-dom';
 import { useMemo } from 'react';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
-import { SelectProps } from 'antd5';
+import { SelectProps } from 'antd';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';

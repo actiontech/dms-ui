@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Typography, Image } from 'antd5';
+import { Typography, Image } from 'antd';
 import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
 
 const SyncDataSource: React.FC = () => {

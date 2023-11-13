@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react';
-import { message, Space, Form } from 'antd5';
+import { message, Space, Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
