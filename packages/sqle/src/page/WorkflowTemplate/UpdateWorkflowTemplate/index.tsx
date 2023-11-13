@@ -61,7 +61,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
   } = useUsername();
 
   React.useEffect(() => {
-    updateUsernameList(projectName);
+    updateUsernameList({ filter_project: projectName });
   }, [projectName, updateUsernameList]);
 
   const updateBaseInfo = (
