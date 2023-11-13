@@ -9,7 +9,10 @@ import { useBoolean } from 'ahooks';
 import { sideMenuData } from './menu.data';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
 import { Menu, MenuProps, SelectProps, Typography } from 'antd5';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
 import { SubMenuType } from 'antd5/es/menu/hooks/useItems';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
@@ -51,8 +54,8 @@ export const SideMenu: React.FC = () => {
         value: v.project_id,
         label: (
           <ProjectSelectorLabelStyleWrapper>
-            {/* <IconProjectFlag /> */}
-            <LockOutlined size={18} />
+            <IconProjectFlag />
+            {/* <LockOutlined size={18} /> */}
 
             <span className="project-selector-label-text">
               {v.project_name}

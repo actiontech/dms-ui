@@ -11,7 +11,6 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { LockOutlined } from '@ant-design/icons';
 import {
   IconProjectArchived,
   IconProjectFlag
@@ -49,7 +48,6 @@ const ProjectListTableColumnFactory =
               {archived ? (
                 <TableColumnWithIconStyleWrapper>
                   <IconProjectArchived />
-                  {/* <LockOutlined className='icon' /> */}
                   <span>{t('dmsProject.projectList.columns.unavailable')}</span>
                 </TableColumnWithIconStyleWrapper>
               ) : (

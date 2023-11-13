@@ -9,4 +9,9 @@ export const ProjectDescStyledWrapper = styled(Typography.Paragraph)`
   }
 `;
 
-export const ProjectArchiveStyledWrapper = styled('div')``;
+export const ProjectArchiveStyledWrapper = styled('div')`
+  .project-flag-icon {
+    color: ${({ theme }) =>
+      theme.baseTheme.sideMenu.projectSelector.dropdown.activeIconColor};
+  }
+`;
