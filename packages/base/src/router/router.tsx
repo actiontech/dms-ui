@@ -1,17 +1,28 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
-import { BaseRouterConfig } from './routers/base';
+import { BaseRouterConfig } from './router.base';
 
 /* IFTRUE_isSQLE */
-import { SQLERouterConfig } from './routers/sqle';
+import {
+  projectDetailRouterConfig as SQLEProjectDetailRouterConfig,
+  globalRouterConfig as SQLEGlobalRouterConfig
+} from 'sqle/src/router/config';
 /* FITRUE_isSQLE */
+
+const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 
 export const AuthRouterConfig: RouterConfigItem[] = [
   ...BaseRouterConfig,
 
   /* IFTRUE_isSQLE */
-  ...SQLERouterConfig,
+  ...SQLEGlobalRouterConfig,
+  {
+    key: 'projectDetail',
+    path: 'sqle/project/*',
+    element: <ProjectDetail />,
+    children: SQLEProjectDetailRouterConfig
+  },
   /* FITRUE_isSQLE */
 
   {
