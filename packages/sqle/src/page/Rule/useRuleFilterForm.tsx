@@ -23,9 +23,13 @@ export enum RuleUrlParamKey {
 const useRuleFilterForm = (
   getProjectTemplateRules: (
     projectName?: string,
-    ruleTemplateName?: string
+    ruleTemplateName?: string,
+    filter_fuzzy_text?: string
   ) => void,
-  getGlobalTemplateRules: (ruleTemplateName?: string) => void
+  getGlobalTemplateRules: (
+    ruleTemplateName?: string,
+    filter_fuzzy_text?: string
+  ) => void
 ) => {
   const { t } = useTranslation();
   const location = useLocation();
@@ -50,6 +54,7 @@ const useRuleFilterForm = (
   } = useGlobalRuleTemplate();
   const [projectName, setProjectName] = useState<string>();
   const [ruleTemplateName, setRuleTemplateName] = useState<string>();
+  const [filterFuzzyCont, setFilterFuzzyCont] = useState<string>();
 
   const projectOptions: SelectProps['options'] = useMemo(() => {
     return bindProjects.map((v) => ({
@@ -93,9 +98,9 @@ const useRuleFilterForm = (
         return;
       }
       if (projectName) {
-        getProjectTemplateRules(projectName, name);
+        getProjectTemplateRules(projectName, name, filterFuzzyCont);
       } else {
-        getGlobalTemplateRules(name);
+        getGlobalTemplateRules(name, filterFuzzyCont);
       }
     };
 
@@ -107,7 +112,25 @@ const useRuleFilterForm = (
       }
     };
 
+    const fuzzyContChangeHandle = (fuzzyText: string) => {
+      setFilterFuzzyCont(fuzzyText);
+      if (projectName) {
+        getProjectTemplateRules(projectName, ruleTemplateName, fuzzyText);
+      } else {
+        getGlobalTemplateRules(ruleTemplateName, fuzzyText);
+      }
+    };
+
     return new Map<keyof GetRuleListV1Params, FilterCustomProps>([
+      [
+        'filter_fuzzy_text',
+        {
+          value: filterFuzzyCont,
+          onCustomPressEnter: fuzzyContChangeHandle,
+          style: { width: 300 },
+          allowClear: true
+        }
+      ],
       [
         'project_name',
         {
@@ -154,7 +177,8 @@ const useRuleFilterForm = (
     projectOptions,
     ruleTemplateName,
     ruleTemplateOptions,
-    updateRuleTemplateList
+    updateRuleTemplateList,
+    filterFuzzyCont
   ]);
 
   useEffect(() => {
@@ -204,7 +228,8 @@ const useRuleFilterForm = (
     getGlobalRuleTemplateListLoading,
     dbType,
     setDbType,
-    ruleTemplateName
+    ruleTemplateName,
+    filterFuzzyCont
   };
 };
 

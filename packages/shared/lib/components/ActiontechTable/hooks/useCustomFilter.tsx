@@ -8,9 +8,38 @@ import dayjs from 'dayjs';
 import { RangePickerProps } from 'antd5/es/date-picker';
 import { useTranslation } from 'react-i18next';
 import { CustomFilterRangePickerStyleWrapper } from '../components/style';
+import CustomInput from '../../CustomInput';
 
 const useCustomFilter = () => {
   const { t } = useTranslation();
+
+  const generateInputFilter = <
+    T extends Record<string, any>,
+    F extends Record<string, any>
+  >(
+    meta: ActiontechTableFilterContainerMeta<T, F>[0],
+    updateTableFilterInfo: UpdateTableFilterInfoType,
+    filterCustomProps?: Map<keyof T, FilterCustomProps<'input'>>
+  ) => {
+    const props = filterCustomProps?.get(meta.dataIndex);
+    const onPressEnter = (value: string) => {
+      props?.onCustomPressEnter?.(value);
+      if (typeof meta.filterKey === 'string') {
+        const key = meta.filterKey;
+        updateTableFilterInfo((filterInfo: F) => {
+          return { ...filterInfo, [key]: value };
+        });
+      }
+    };
+    return (
+      <CustomInput
+        key={meta.dataIndex as string}
+        {...props}
+        onCustomPressEnter={onPressEnter}
+        prefix={meta.filterLabel}
+      />
+    );
+  };
 
   const generateSelectFilter = <
     T extends Record<string, any>,
@@ -109,7 +138,8 @@ const useCustomFilter = () => {
 
   return {
     generateSelectFilter,
-    generateDataRangeFilter
+    generateDataRangeFilter,
+    generateInputFilter
   };
 };
 

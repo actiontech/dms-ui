@@ -14,7 +14,8 @@ const FilterContainer = <
   style,
   className
 }: TableFilterContainerProps<T, F>) => {
-  const { generateSelectFilter, generateDataRangeFilter } = useCustomFilter();
+  const { generateSelectFilter, generateDataRangeFilter, generateInputFilter } =
+    useCustomFilter();
 
   return (
     <ConfigProvider
@@ -49,6 +50,14 @@ const FilterContainer = <
               value,
               updateTableFilterInfo,
               filterCustomProps as Map<keyof T, FilterCustomProps<'date-range'>>
+            );
+          }
+
+          if (value.filterCustomType === 'input') {
+            return generateInputFilter(
+              value,
+              updateTableFilterInfo,
+              filterCustomProps as Map<keyof T, FilterCustomProps<'input'>>
             );
           }
 
