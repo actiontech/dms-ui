@@ -131,10 +131,6 @@ export const StepNodeAlertStyleWrapper = styled('div')`
     theme.sqleTheme.workflowTemplate.updateWorkflowTemplateStepInfo
       .stepNodeAlert.backgroundColor};
 
-  .text-orange {
-    margin-right: 6px;
-  }
-
   .ant-typography.step-alert-title {
     font-weight: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.updateWorkflowTemplateStepInfo
@@ -149,9 +145,10 @@ export const StepNodeAlertStyleWrapper = styled('div')`
       theme.sqleTheme.workflowTemplate.updateWorkflowTemplateStepInfo
         .stepNodeAlert.alertTitleColor};
 
-    /* &-tips-icon {
+    .step-alert-title-tips-icon {
+      margin-right: 6px;
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorWarning};
-    } */
+    }
   }
 
   .ant-typography.step-alert-content {
