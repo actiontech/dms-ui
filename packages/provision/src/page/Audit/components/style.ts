@@ -1,10 +1,11 @@
 import { styled } from '@mui/material/styles';
 import { BasicDrawer } from '@actiontech/shared';
+import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 export const AuthAuditDetailDrawerStyleWrapper = styled(BasicDrawer)`
-  &.basic-drawer-wrapper.antd-v5-drawer-content
-    .antd-v5-drawer-wrapper-body
-    .antd-v5-drawer-body {
+  &.basic-drawer-wrapper.${ANTD_PREFIX_STR}-drawer-content
+    .${ANTD_PREFIX_STR}-drawer-wrapper-body
+    .${ANTD_PREFIX_STR}-drawer-body {
     padding: 0 24px;
   }
 
@@ -57,7 +58,11 @@ export const AuthAuditDetailItemStyleWrapper = styled('div')`
   & .audit-info-item-value {
     flex: 1;
 
-    .antd-v5-space-item:first-of-type {
+    .${ANTD_PREFIX_STR}-space-item {
+      word-break: break-word;
+    }
+
+    .${ANTD_PREFIX_STR}-space-item:first-of-type {
       display: inline-flex;
       align-items: center;
     }
