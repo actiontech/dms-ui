@@ -1,6 +1,6 @@
 import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Space } from 'antd5';
+import { Space, Row } from 'antd5';
 import { BasicDrawer } from '@actiontech/shared';
 
 export const ProjectMemberStyleWrapper = styled('section')`
@@ -38,5 +38,11 @@ export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
 export const MemberListIsAdminStyledWrapper = styled(Space)`
   .${ANTD_PREFIX_STR}-space-item:first-of-type {
     display: flex;
+  }
+`;
+
+export const MemberRoleSelectorRowStyleWrapper = styled(Row)`
+  .${ANTD_PREFIX_STR}-col {
+    height: 100%;
   }
 `;
