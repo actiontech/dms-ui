@@ -9,10 +9,8 @@ import {
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { orderBy } from 'lodash';
 import { t } from '../../../locale';
-import generateTag from '../Common/generateTag';
 import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
 import { UserStatusStyledWrapper } from '../style';
-import { Space } from 'antd5';
 
 export const UserListColumns: ActiontechTableColumn<IListUser> = [
   {
@@ -52,16 +50,6 @@ export const UserListColumns: ActiontechTableColumn<IListUser> = [
   {
     dataIndex: 'authentication_type',
     title: () => t('dmsUserCenter.user.userList.columns.authenticationType')
-  },
-  {
-    dataIndex: 'user_groups',
-    title: () => t('dmsUserCenter.user.userForm.userGroups'),
-    render: (userGroupList?: IUidWithName[]) => {
-      if (!Array.isArray(userGroupList)) {
-        return '-';
-      }
-      return <Space wrap>{generateTag(userGroupList)}</Space>;
-    }
   },
   {
     dataIndex: 'op_permissions',
