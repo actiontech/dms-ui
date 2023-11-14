@@ -46,7 +46,7 @@ import {
   updateSqlIdList
 } from '../../../../store/sqleManagement';
 import { ModalName } from '../../../../data/ModalName';
-import { TableRowSelection } from 'antd5/es/table/interface';
+import { SorterResult, TableRowSelection } from 'antd5/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { message } from 'antd5';
 import SqleManagementModal from './Modal';
@@ -68,13 +68,24 @@ const SQLEEIndex = () => {
   );
   const [searchKeyword, setSearchKeyword] = useState<string>('');
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    sortInfo
+  } = useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
   const [SQLNum, setSQLNum] = useState<ISQLStatisticsProps['data']>({
     SQLTotalNum: 0,
     problemSQlNum: 0,
     optimizedSQLNum: 0
   });
+
+  const getCurrentSortParams = (
+    sortData: SorterResult<ISqlManage> | SorterResult<ISqlManage>[]
+  ) => {
+    return {};
+  };
 
   const {
     data: sqlList,
@@ -83,9 +94,11 @@ const SQLEEIndex = () => {
     error: getListError
   } = useRequest(
     () => {
+      const currentSortInfo = getCurrentSortParams(sortInfo);
       const params: IGetSqlManageListParams = {
         ...tableFilterInfo,
         ...pagination,
+        ...currentSortInfo,
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
         project_name: projectName,
@@ -100,7 +113,8 @@ const SQLEEIndex = () => {
         filterStatus,
         searchKeyword,
         isAssigneeSelf,
-        tableFilterInfo
+        tableFilterInfo,
+        sortInfo
       ],
       onFinally: (params, data) => {
         setSQLNum({
@@ -212,13 +226,15 @@ const SQLEEIndex = () => {
         filter_instance_name: string;
         filter_audit_level: string;
         time: string;
+        filter_rule: string;
       }),
       FilterCustomProps
     >([
       ['filter_source', { options: generateSourceSelectOptions }],
       ['filter_instance_name', { options: instanceOptions }],
       ['filter_audit_level', { options: generateAuditLevelSelectOptions }],
-      ['time', { showTime: true }]
+      ['time', { showTime: true }],
+      ['filter_rule', { options: [] }]
     ]);
   }, [
     instanceOptions,
