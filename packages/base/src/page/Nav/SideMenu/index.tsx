@@ -20,15 +20,11 @@ import { IBindProject } from './ProjectSelector/index.type';
 
 const SideMenu: React.FC = () => {
   const navigate = useNavigate();
-  let currentProjectID = '';
 
   const { username, theme, updateTheme, isAdmin, bindProjects } =
     useCurrentUser();
 
-  const { recentlyProjects, currentProjectID: id } =
-    useRecentlyOpenedProjects();
-
-  currentProjectID = id ?? '';
+  const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
 
   const { data: projectList } = useRequest(() =>
     dms.ListProjects({ page_size: 9999 }).then((res) => res?.data?.data ?? [])
@@ -75,7 +71,7 @@ const SideMenu: React.FC = () => {
   );
 
   const isCurrentProjectArchived = useMemo(
-    () => getProjectArchived(currentProjectID),
+    () => getProjectArchived(currentProjectID ?? ''),
     [currentProjectID, getProjectArchived]
   );
 
@@ -102,7 +98,7 @@ const SideMenu: React.FC = () => {
           bindProjects={bindProjectsWithArchiveStatus}
         />
 
-        <MenuList projectID={currentProjectID} isAdmin={isAdmin} />
+        <MenuList projectID={currentProjectID ?? ''} isAdmin={isAdmin} />
       </div>
 
       <UserMenu
