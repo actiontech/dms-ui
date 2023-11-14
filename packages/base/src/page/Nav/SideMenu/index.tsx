@@ -37,8 +37,8 @@ const SideMenu: React.FC = () => {
         .ListProjects({ page_size: 9999 })
         .then((res) => res?.data?.data ?? []),
     {
+      refreshDeps: [currentProjectID],
       onSuccess: (res) => {
-        if (bindProjects.length < 1) return;
         const newBindProjects = bindProjects.map((item) => {
           const archived =
             res.find((project) => project.uid === item.project_id)?.archived ??
