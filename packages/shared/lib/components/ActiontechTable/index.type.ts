@@ -298,6 +298,7 @@ export type InlineActiontechTableMoreActionsButtonMeta<
   T = Record<string, any>
 > = {
   icon?: ReactNode;
+  disabled?: boolean | ((record?: T) => boolean);
   onClick?: (record?: T) => void;
 } & Pick<
   ActiontechTableActionMeta<T>,
