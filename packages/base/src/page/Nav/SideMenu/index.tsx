@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SelectProps } from 'antd5';
 import { useRequest } from 'ahooks';
@@ -17,6 +17,8 @@ import ProjectTitle from './ProjectTitle';
 import MenuList from './MenuList';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IBindProject } from './ProjectSelector/index.type';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const SideMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ const SideMenu: React.FC = () => {
 
   const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
 
-  const { data: projectList } = useRequest(() =>
+  const { data: projectList, refresh: refreshProjectList } = useRequest(() =>
     dms.ListProjects({ page_size: 9999 }).then((res) => res?.data?.data ?? [])
   );
 
@@ -78,6 +80,15 @@ const SideMenu: React.FC = () => {
   const projectSelectorChangeHandle: CustomSelectProps['onChange'] = (id) => {
     navigate(`/sqle/project/${id}/overview`);
   };
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.DMS_Sync_Project_Archived_Status,
+      refreshProjectList
+    );
+
+    return unsubscribe;
+  }, [refreshProjectList]); // 防止刷新时，项目列表未更新，导致项目列表不显示
 
   return (
     <SideMenuStyleWrapper className="dms-layout-side">
