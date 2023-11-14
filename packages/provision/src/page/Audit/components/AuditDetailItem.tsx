@@ -1,11 +1,11 @@
 import { AuthAuditDetailItemStyleWrapper } from './style';
-import { AvatarCom } from '@actiontech/shared';
+import { AvatarCom, EmptyBox } from '@actiontech/shared';
 import { IconTimeLine } from '@actiontech/shared/lib/Icon/common';
 import { Space } from 'antd5';
 import AuditActionIcon from './AuditActionIcon';
 
 export const AuditDetailItem: React.FC<{
-  label: string;
+  label?: string;
   children?: React.ReactNode;
   value?: string;
   type?: 'date' | 'user' | 'action';
@@ -25,7 +25,10 @@ export const AuditDetailItem: React.FC<{
 
   return (
     <AuthAuditDetailItemStyleWrapper>
-      <div className="audit-info-item-label">{label}</div>
+      <EmptyBox if={!!label}>
+        <div className="audit-info-item-label">{label}</div>
+      </EmptyBox>
+
       <Space wrap align="center" className="audit-info-item-value">
         {iconRender()}
         {children || value || '-'}

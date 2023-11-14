@@ -191,7 +191,7 @@ const AuthDetailDrawer: React.FC = () => {
                 label={t('auth.connectionDetails.explanation')}
                 value={i.explanation}
               />
-              <AuditDetailItem label="">
+              <AuditDetailItem>
                 <BasicButton
                   type="primary"
                   size="small"

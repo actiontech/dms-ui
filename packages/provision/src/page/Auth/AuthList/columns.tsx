@@ -94,8 +94,6 @@ export const AuthTableColumns = (
       filterCustomType: 'select',
       filterKey: 'filter_by_data_object_service_dns',
       render: (service?: IDataObjectService[]) => {
-        // todo 跳转dms数据源 数据源列表根据传参进行筛选
-        // todo 跳转路径（参数）备份 href={`${projectID}/data/object?address=${item.data_object_service_dns}&user=${item.data_object_service_user}`}
         return (
           <EmptyBox if={!!service && service.length !== 0}>
             <BasicToolTips
@@ -107,7 +105,11 @@ export const AuthTableColumns = (
                       <Typography.Link
                         key={item.data_object_service_uid}
                         onClick={() =>
-                          navigate(`/project/${projectID}/db-services`)
+                          navigate(
+                            `/project/${projectID}/db-services?address=${
+                              item.data_object_service_dns?.split(':')[0]
+                            }`
+                          )
                         }
                       >
                         {`${item.data_object_service_dns}(${item.data_object_service_user})`}
@@ -119,7 +121,13 @@ export const AuthTableColumns = (
               }
             >
               <Typography.Link
-                onClick={() => navigate(`/project/${projectID}/db-services`)}
+                onClick={() =>
+                  navigate(
+                    `/project/${projectID}/db-services?address=${
+                      service?.[0].data_object_service_dns?.split(':')[0]
+                    }`
+                  )
+                }
               >
                 {`${service?.[0].data_object_service_dns}(${service?.[0].data_object_service_user})`}
               </Typography.Link>
@@ -198,8 +206,8 @@ export const AuthTableActions = (
       key: 'expiration',
       text: t('auth.updateExpirationField'),
       onClick: (record) => openModal(record!, ModalName.UpdateExpirationInAuth),
-      permissions: (record) => {
-        return record?.expiration !== -1;
+      disabled: (record) => {
+        return record?.expiration === -1;
       }
     }
   ]
