@@ -6,11 +6,7 @@ import {
   useCurrentProject,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
-import { useRequest } from 'ahooks';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useDispatch } from 'react-redux';
-import { updateCurrentProjectArchive } from '../../../store/project';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useEffect, useState } from 'react';
 import {
   Outlet,
@@ -22,30 +18,11 @@ import {
 import { EmptyBox, HeaderProgress } from '@actiontech/shared';
 
 const ProjectDetail: React.FC = () => {
-  const dispatch = useDispatch();
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
   const [projectDetailFetched, setProjectDetailFetched] = useState(false);
   const { loading: updateDriverListLoading, updateDriverList } =
     useDbServiceDriver();
-
-  useRequest(
-    () => dms.ListProjects({ page_size: 10, filter_by_uid: nextProjectID }),
-    {
-      ready: !!nextProjectID,
-      refreshDeps: [nextProjectID],
-      onSuccess: (res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          dispatch(
-            updateCurrentProjectArchive(res.data?.data?.[0]?.archived ?? false)
-          );
-        }
-      },
-      onFinally: () => {
-        setProjectDetailFetched(true);
-      }
-    }
-  );
 
   /*
    * PS: 由于数据源logo存储方式的问题，现在项目入口处增加获取数据源logo并存入redux的逻辑
@@ -53,6 +30,7 @@ const ProjectDetail: React.FC = () => {
   useEffect(() => {
     if (nextProjectID) {
       updateDriverList(nextProjectID);
+      setProjectDetailFetched(true);
     }
   }, [nextProjectID, updateDriverList]);
   /* IFTRUE_isEE */

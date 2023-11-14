@@ -19,17 +19,41 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IBindProject } from './ProjectSelector/index.type';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import { useDispatch } from 'react-redux';
+import { updateBindProjects } from '../../../store/user';
 
 const SideMenu: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { username, theme, updateTheme, isAdmin, bindProjects } =
     useCurrentUser();
 
   const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
 
-  const { data: projectList, refresh: refreshProjectList } = useRequest(() =>
-    dms.ListProjects({ page_size: 9999 }).then((res) => res?.data?.data ?? [])
+  const { data: projectList, refresh: refreshProjectList } = useRequest(
+    () =>
+      dms
+        .ListProjects({ page_size: 9999 })
+        .then((res) => res?.data?.data ?? []),
+    {
+      onSuccess: (res) => {
+        if (bindProjects.length < 1) return;
+        const newBindProjects = bindProjects.map((item) => {
+          const archived =
+            res.find((project) => project.uid === item.project_id)?.archived ??
+            false;
+
+          return { ...item, archived };
+        });
+
+        dispatch(
+          updateBindProjects({
+            bindProjects: newBindProjects
+          })
+        );
+      }
+    }
   );
 
   const getProjectArchived = useCallback(

@@ -45,17 +45,21 @@ const ProjectListTableColumnFactory =
         render(archived: boolean) {
           return (
             <ProjectArchiveStyledWrapper>
-              {archived ? (
-                <TableColumnWithIconStyleWrapper>
-                  <IconProjectArchived />
-                  <span>{t('dmsProject.projectList.columns.unavailable')}</span>
-                </TableColumnWithIconStyleWrapper>
-              ) : (
-                <TableColumnWithIconStyleWrapper>
-                  <IconProjectFlag />
-                  <span>{t('dmsProject.projectList.columns.available')}</span>
-                </TableColumnWithIconStyleWrapper>
-              )}
+              <TableColumnWithIconStyleWrapper>
+                {archived ? (
+                  <>
+                    <IconProjectArchived />
+                    <span>
+                      {t('dmsProject.projectList.columns.unavailable')}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <IconProjectFlag />
+                    <span>{t('dmsProject.projectList.columns.available')}</span>
+                  </>
+                )}
+              </TableColumnWithIconStyleWrapper>
             </ProjectArchiveStyledWrapper>
           );
         }
