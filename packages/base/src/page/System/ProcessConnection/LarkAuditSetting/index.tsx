@@ -88,8 +88,8 @@ const LarkAuditSetting: React.FC = () => {
 
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      enabled: !!larkAuditInfo?.is_feishu_notification_enabled,
-      appKey: larkAuditInfo?.app_id
+      appKey: larkAuditInfo?.app_id,
+      appSecret: undefined
     });
   }, [form, larkAuditInfo]);
 
@@ -164,8 +164,8 @@ const LarkAuditSetting: React.FC = () => {
       return;
     }
     testing.current = true;
-    const hide = message.loading(t('system.larkAudit.testing'), 0);
-
+    toggleTestPopoverVisible(false);
+    const hide = message.loading(t('dmsSystem.larkAudit.testing'), 0);
     const values = await testForm.validateFields();
 
     configuration
@@ -178,12 +178,12 @@ const LarkAuditSetting: React.FC = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          if (res.data.data?.is_message_sent_normally) {
-            message.success(t('system.larkAudit.testSuccess'));
+          const resData = res.data?.data;
+
+          if (resData?.is_message_sent_normally) {
+            message.success(t('dmsSystem.larkAudit.testSuccess'));
           } else {
-            message.error(
-              res.data.data?.error_message ?? t('common.unknownError')
-            );
+            message.error(resData?.error_message ?? t('common.unknownError'));
           }
         }
       })
