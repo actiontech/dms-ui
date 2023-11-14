@@ -15,6 +15,7 @@ import {
   formItemLayout
 } from '@actiontech/shared/lib/components/FormCom/style';
 import {
+  CustomLabelContent,
   FormInputBotBorder,
   FormItemBigTitle,
   FormItemLabel,
@@ -317,12 +318,10 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               className="has-required-style has-label-tip"
               name="syncInterval"
               label={
-                <div className="label-cont-custom">
-                  <div>{t('dmsSyncDataSource.syncTaskForm.syncInterval')}</div>
-                  <div className="tip-content-box">
-                    {t('dmsSyncDataSource.syncTaskForm.cronTips')}
-                  </div>
-                </div>
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.syncInterval')}
+                  tips={t('dmsSyncDataSource.syncTaskForm.cronTips')}
+                />
               }
               initialValue="0 0 * * *"
               rules={[
