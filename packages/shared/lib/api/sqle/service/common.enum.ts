@@ -198,6 +198,12 @@ export enum SqlManageStatusEnum {
   'manual_audited' = 'manual_audited'
 }
 
+export enum TestFeishuConfigurationReqV1AccountTypeEnum {
+  'email' = 'email',
+
+  'phone' = 'phone'
+}
+
 export enum UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum {
   'normal' = 'normal',
 
