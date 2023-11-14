@@ -5,6 +5,7 @@ import { EmptyBox } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const useRole = () => {
   const [roleList, setRoleList] = React.useState<IListRole[]>([]);
@@ -32,9 +33,12 @@ const useRole = () => {
   }, [setFalse, setTrue]);
 
   const generateRoleSelectOption = React.useCallback(
-    (params?: { showTooltip?: boolean }) => {
-      const { showTooltip = false } = params ?? {};
-      return roleList.map((role) => {
+    (params?: { showTooltip?: boolean; excludeDisabled?: boolean }) => {
+      const { showTooltip = false, excludeDisabled = false } = params ?? {};
+      const newList = excludeDisabled
+        ? roleList.filter((i) => i.stat !== ListRoleStatEnum.被禁用)
+        : roleList;
+      return newList.map((role) => {
         return (
           <Select.Option
             key={role.uid}
