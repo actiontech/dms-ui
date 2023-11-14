@@ -6,7 +6,6 @@ import {
   useCurrentProject,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
-import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import {
   Outlet,
