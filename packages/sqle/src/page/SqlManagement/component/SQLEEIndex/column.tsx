@@ -42,6 +42,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     filter_source?: string;
     filter_instance_name?: string;
     filter_audit_level?: string;
+    filter_rule?: string;
     time?: string;
   },
   SqlManagementTableFilterParamType
@@ -51,6 +52,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       filter_source?: string;
       filter_instance_name?: string;
       filter_audit_level?: string;
+      filter_rule?: string;
       time?: string;
     }),
     ActiontechTableFilterMetaValue<SqlManagementTableFilterParamType>
@@ -91,6 +93,15 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
           'filter_last_audit_start_time_to'
         ],
         filterLabel: t('sqlManagement.table.filter.time'),
+        checked: false
+      }
+    ],
+    [
+      'filter_rule',
+      {
+        filterCustomType: 'select',
+        filterKey: 'filter_rule',
+        filterLabel: t('sqlManagement.table.filter.rule'),
         checked: false
       }
     ]
@@ -251,19 +262,22 @@ const SqlManagementColumn: (
       title: () => t('sqlManagement.table.column.firstOccurrence'),
       render: (first_appear_time) => {
         return formatTime(first_appear_time, '-');
-      }
+      },
+      sorter: true
     },
     {
       dataIndex: 'last_appear_time',
       title: () => t('sqlManagement.table.column.lastOccurrence'),
       render: (last_appear_time) => {
         return formatTime(last_appear_time, '-');
-      }
+      },
+      sorter: true
     },
     {
       dataIndex: 'appear_num',
       align: 'right',
-      title: () => t('sqlManagement.table.column.occurrenceCount')
+      title: () => t('sqlManagement.table.column.occurrenceCount'),
+      sorter: true
     },
     {
       dataIndex: 'assignees',
