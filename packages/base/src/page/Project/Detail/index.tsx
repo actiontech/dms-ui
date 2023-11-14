@@ -69,7 +69,7 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <EmptyBox
-      if={projectDetailFetched || !nextProjectID || updateDriverListLoading}
+      if={(projectDetailFetched && !nextProjectID) || !updateDriverListLoading}
       defaultNode={<HeaderProgress />}
     >
       {/* IFTRUE_isEE */}
