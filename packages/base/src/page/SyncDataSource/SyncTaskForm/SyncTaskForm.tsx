@@ -23,9 +23,10 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInputCom';
-import { FormInstance, Popconfirm, Spin } from 'antd5';
+import { FormInstance, Popconfirm, Space, Spin } from 'antd5';
 import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
 import useAuditRequired from '../../../hooks/useAuditRequired';
+import { Link } from 'react-router-dom';
 
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   form,
@@ -188,9 +189,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             </FormItemSubTitle>
 
             <FormItemLabel
-              className="has-required-style"
+              className="has-required-style has-label-tip"
               name="source"
-              label={t('dmsSyncDataSource.syncTaskForm.source')}
+              label={
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.source')}
+                  tips={t('dmsSyncDataSource.syncTaskForm.sourceTips')}
+                />
+              }
               rules={[{ required: true }]}
             >
               <BasicSelect
@@ -207,9 +213,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             </FormItemLabel>
 
             <FormItemLabel
-              className="has-required-style"
+              className="has-required-style  has-label-tip"
               name="version"
-              label={t('dmsSyncDataSource.syncTaskForm.version')}
+              label={
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.version')}
+                  tips={t('dmsSyncDataSource.syncTaskForm.versionTips')}
+                />
+              }
               rules={[{ required: true }]}
             >
               <BasicInput
@@ -220,9 +231,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             </FormItemLabel>
 
             <FormItemLabel
-              className="has-required-style"
+              className="has-required-style has-label-tip"
               name="url"
-              label={t('dmsSyncDataSource.syncTaskForm.url')}
+              label={
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.url')}
+                  tips={t('dmsSyncDataSource.syncTaskForm.urlTips')}
+                />
+              }
               rules={[{ required: true }]}
             >
               <BasicInput
@@ -233,9 +249,29 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             </FormItemLabel>
 
             <FormItemLabel
-              className="has-required-style"
+              className="has-required-style has-label-tip"
               name="instanceType"
-              label={t('dmsSyncDataSource.syncTaskForm.instanceType')}
+              label={
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.instanceType')}
+                  tips={
+                    <>
+                      <span>
+                        {`${t(
+                          'dmsSyncDataSource.syncTaskForm.instanceTypeTips'
+                        )}`}
+                      </span>
+                      <Link
+                        to="https://actiontech.github.io/sqle-docs/docs/user-manual/project/instance_syn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {t('dmsSyncDataSource.pageTitle')}
+                      </Link>
+                    </>
+                  }
+                />
+              }
               rules={[{ required: true }]}
             >
               <BasicSelect<string>

@@ -39,9 +39,13 @@ export default {
   syncTaskForm: {
     name: '数据源名称',
     source: '来源',
+    sourceTips: '支持同步ActionDMP平台',
     version: '版本',
+    versionTips: '支持5.23.04.0及以上版本',
     url: '地址',
+    urlTips: '默认格式为 http(s)://ip:port',
     instanceType: '数据源类型',
+    instanceTypeTips: '请参考',
     ruleTemplateName: '审核规则模板',
     syncInterval: '同步间隔',
     baseConfig: '基础配置',
