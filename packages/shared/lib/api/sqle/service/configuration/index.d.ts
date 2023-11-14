@@ -4,6 +4,10 @@ import {
   IBaseRes,
   ITestDingTalkConfigResV1,
   IGetDriversResV1,
+  IGetFeishuAuditConfigurationResV1,
+  IUpdateFeishuConfigurationReqV1,
+  ITestFeishuConfigurationReqV1,
+  ITestFeishuConfigResV1,
   IGetLicenseResV1,
   ICheckLicenseResV1,
   IPersonaliseReqV1,
@@ -24,6 +28,20 @@ export interface IUpdateDingTalkConfigurationV1Return extends IBaseRes {}
 export interface ITestDingTalkConfigV1Return extends ITestDingTalkConfigResV1 {}
 
 export interface IGetDriversV1Return extends IGetDriversResV1 {}
+
+export interface IGetFeishuAuditConfigurationV1Return
+  extends IGetFeishuAuditConfigurationResV1 {}
+
+export interface IUpdateFeishuAuditConfigurationV1Params
+  extends IUpdateFeishuConfigurationReqV1 {}
+
+export interface IUpdateFeishuAuditConfigurationV1Return extends IBaseRes {}
+
+export interface ITestFeishuAuditConfigV1Params
+  extends ITestFeishuConfigurationReqV1 {}
+
+export interface ITestFeishuAuditConfigV1Return
+  extends ITestFeishuConfigResV1 {}
 
 export interface IGetSQLELicenseV1Return extends IGetLicenseResV1 {}
 
