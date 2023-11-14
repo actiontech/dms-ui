@@ -4,6 +4,7 @@ import { ColumnGroupType, ColumnType } from 'antd5/es/table';
 import { CSSProperties, ReactNode } from 'react';
 import { CustomSelectProps } from '../CustomSelect';
 import { IBasicButton } from '../BasicButton';
+import { ICustomInputProps } from '../CustomInput';
 
 //======================================= utils
 
@@ -78,7 +79,7 @@ export type ActiontechTableFilterContainerMeta<
 export type TableFilterContainerProps<
   T = Record<string, any>,
   F = Record<string, any>,
-  C = 'select' | 'date-range'
+  C = 'select' | 'date-range' | 'input'
 > = {
   /**
    * FilterContainer 中筛选项的数据源
@@ -101,18 +102,21 @@ export type TableFilterContainerProps<
   disabled?: boolean;
 } & ComponentBaseType;
 
-export type FilterCustomProps<C = 'select' | 'date-range'> = C extends 'select'
-  ? CustomSelectProps
-  : C extends 'date-range'
-  ? RangePickerProps
-  : never;
+export type FilterCustomProps<C = 'select' | 'date-range' | 'input'> =
+  C extends 'select'
+    ? CustomSelectProps
+    : C extends 'date-range'
+    ? RangePickerProps
+    : C extends 'input'
+    ? ICustomInputProps
+    : never;
 
 /**
  * 表格筛选信息中 value 的数据格式
  */
 export type ActiontechTableFilterMetaValue<
   F = Record<string, any>,
-  C = 'select' | 'date-range'
+  C = 'select' | 'date-range' | 'input'
 > = {
   /**
    * 是否在筛选按钮中选中该项
@@ -120,7 +124,7 @@ export type ActiontechTableFilterMetaValue<
   checked?: boolean;
 
   /**
-   * 筛选项类型, 是一个 select 或者 date-range
+   * 筛选项类型, 'select', 'date-range', 'input'
    */
   filterCustomType?: C;
 

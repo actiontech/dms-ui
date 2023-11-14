@@ -37,16 +37,18 @@ const Rule = () => {
     RuleFilterContainerMeta()
   );
 
+  // 项目规则
   const {
     data: projectTemplateRules,
     loading: getProjectTemplateRulesLoading,
     run: getProjectTemplateRules
   } = useRequest(
-    (project?: string, ruleTemplate?: string) =>
+    (project?: string, ruleTemplate?: string, filter_fuzzy_text?: string) =>
       rule_template
         .getProjectRuleTemplateV1({
           rule_template_name: ruleTemplate ?? '',
-          project_name: project ?? ''
+          project_name: project ?? '',
+          filter_fuzzy_text: filter_fuzzy_text ?? ''
         })
         .then((res) => {
           setDbType(res.data.data?.db_type ?? '');
@@ -57,15 +59,17 @@ const Rule = () => {
     }
   );
 
+  // 全局规则
   const {
     data: globalTemplateRules,
     loading: getGlobalTemplateRulesLoading,
     run: getGlobalTemplateRules
   } = useRequest(
-    (ruleTemplate?: string) =>
+    (ruleTemplate?: string, filter_fuzzy_text?: string) =>
       rule_template
         .getRuleTemplateV1({
-          rule_template_name: ruleTemplate ?? ''
+          rule_template_name: ruleTemplate ?? '',
+          filter_fuzzy_text: filter_fuzzy_text ?? ''
         })
         .then((res) => {
           setDbType(res.data.data?.db_type ?? '');
@@ -148,7 +152,7 @@ const Rule = () => {
 
         <RuleList
           enableCheckDetail
-          pageHeaderHeight={110}
+          pageHeaderHeight={68}
           rules={getCurrentTypeRules(
             allRules,
             projectName ? projectTemplateRules : globalTemplateRules,
