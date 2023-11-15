@@ -51,6 +51,7 @@ export default {
     sqlConfig: 'SQL审核配置',
     cronConfig: '自定义任务同步周期',
     cronTips: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择',
-    helpTips: '更多使用说明请参考'
+    helpTips:
+      '创建同步任务前后，用户必须去数据来源平台进行配置，更多使用说明请参考'
   }
 };
