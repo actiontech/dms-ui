@@ -6,7 +6,7 @@ import {
   useCurrentProject,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {
   Outlet,
   /* IFTRUE_isCE */
@@ -19,7 +19,6 @@ import { EmptyBox, HeaderProgress } from '@actiontech/shared';
 const ProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
-  const [projectDetailFetched, setProjectDetailFetched] = useState(false);
   const { loading: updateDriverListLoading, updateDriverList } =
     useDbServiceDriver();
 
@@ -29,7 +28,6 @@ const ProjectDetail: React.FC = () => {
   useEffect(() => {
     if (nextProjectID) {
       updateDriverList(nextProjectID);
-      setProjectDetailFetched(true);
     }
   }, [nextProjectID, updateDriverList]);
   /* IFTRUE_isEE */
@@ -69,7 +67,7 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <EmptyBox
-      if={(projectDetailFetched && !nextProjectID) || !updateDriverListLoading}
+      if={!!nextProjectID && !updateDriverListLoading}
       defaultNode={<HeaderProgress />}
     >
       {/* IFTRUE_isEE */}

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SelectProps } from 'antd5';
+import { SelectProps, Spin } from 'antd5';
 import { useRequest } from 'ahooks';
 import { SideMenuStyleWrapper } from './style';
 import ProjectSelector from './ProjectSelector';
@@ -31,7 +31,11 @@ const SideMenu: React.FC = () => {
 
   const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
 
-  const { data: projectList, refresh: refreshProjectList } = useRequest(
+  const {
+    data: projectList,
+    loading: getProjectListLoading,
+    refresh: refreshProjectList
+  } = useRequest(
     () =>
       dms
         .ListProjects({ page_size: 9999 })
@@ -115,34 +119,36 @@ const SideMenu: React.FC = () => {
   }, [refreshProjectList]); // 防止刷新时，项目列表未更新，导致项目列表不显示
 
   return (
-    <SideMenuStyleWrapper className="dms-layout-side">
-      <div className="dms-layout-side-start">
-        <ProjectTitle />
+    <Spin spinning={getProjectListLoading}>
+      <SideMenuStyleWrapper className="dms-layout-side">
+        <div className="dms-layout-side-start">
+          <ProjectTitle />
 
-        <ProjectSelector
-          value={currentProjectID}
-          prefix={
-            isCurrentProjectArchived ? (
-              <IconProjectArchived />
-            ) : (
-              <IconProjectFlag />
-            )
-          }
-          onChange={projectSelectorChangeHandle}
-          options={projectSelectorOptions}
-          bindProjects={bindProjectsWithArchiveStatus}
+          <ProjectSelector
+            value={currentProjectID}
+            prefix={
+              isCurrentProjectArchived ? (
+                <IconProjectArchived />
+              ) : (
+                <IconProjectFlag />
+              )
+            }
+            onChange={projectSelectorChangeHandle}
+            options={projectSelectorOptions}
+            bindProjects={bindProjectsWithArchiveStatus}
+          />
+
+          <MenuList projectID={currentProjectID ?? ''} isAdmin={isAdmin} />
+        </div>
+
+        <UserMenu
+          username={username}
+          updateTheme={updateTheme}
+          isAdmin={isAdmin}
+          theme={theme}
         />
-
-        <MenuList projectID={currentProjectID ?? ''} isAdmin={isAdmin} />
-      </div>
-
-      <UserMenu
-        username={username}
-        updateTheme={updateTheme}
-        isAdmin={isAdmin}
-        theme={theme}
-      />
-    </SideMenuStyleWrapper>
+      </SideMenuStyleWrapper>
+    </Spin>
   );
 };
 
