@@ -12,6 +12,11 @@ import {
   IUpdateDingTalkConfigurationV1Return,
   ITestDingTalkConfigV1Return,
   IGetDriversV1Return,
+  IGetFeishuAuditConfigurationV1Return,
+  IUpdateFeishuAuditConfigurationV1Params,
+  IUpdateFeishuAuditConfigurationV1Return,
+  ITestFeishuAuditConfigV1Params,
+  ITestFeishuAuditConfigV1Return,
   IGetSQLELicenseV1Return,
   ISetSQLELicenseV1Params,
   ISetSQLELicenseV1Return,
@@ -56,6 +61,38 @@ class ConfigurationService extends ServiceBase {
     return this.get<IGetDriversV1Return>(
       '/v1/configurations/drivers',
       undefined,
+      options
+    );
+  }
+
+  public getFeishuAuditConfigurationV1(options?: AxiosRequestConfig) {
+    return this.get<IGetFeishuAuditConfigurationV1Return>(
+      '/v1/configurations/feishu_audit',
+      undefined,
+      options
+    );
+  }
+
+  public updateFeishuAuditConfigurationV1(
+    params: IUpdateFeishuAuditConfigurationV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateFeishuAuditConfigurationV1Return>(
+      '/v1/configurations/feishu_audit',
+      paramsData,
+      options
+    );
+  }
+
+  public testFeishuAuditConfigV1(
+    params: ITestFeishuAuditConfigV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ITestFeishuAuditConfigV1Return>(
+      '/v1/configurations/feishu_audit/test',
+      paramsData,
       options
     );
   }
