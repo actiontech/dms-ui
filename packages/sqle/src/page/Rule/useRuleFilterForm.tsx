@@ -115,9 +115,10 @@ const useRuleFilterForm = (
     const fuzzyContChangeHandle = (fuzzyText: string) => {
       setFilterFuzzyCont(fuzzyText);
       if (projectName) {
-        getProjectTemplateRules(projectName, ruleTemplateName, fuzzyText);
+        ruleTemplateName &&
+          getProjectTemplateRules(projectName, ruleTemplateName, fuzzyText);
       } else {
-        getGlobalTemplateRules(ruleTemplateName, fuzzyText);
+        ruleTemplateName && getGlobalTemplateRules(ruleTemplateName, fuzzyText);
       }
     };
 
