@@ -61,6 +61,7 @@ const DatabaseFormItem: React.FC<{
       'type',
       'params'
     ]);
+
     if (values.params && props.currentAsyncParams) {
       values.asyncParams = dmsMergeFromValueIntoParams(
         values.params,
@@ -77,7 +78,8 @@ const DatabaseFormItem: React.FC<{
           port: `${values.port}`,
           user: values.user,
           db_type: values.type,
-          password: values.password
+          password: values.password,
+          additional_params: values.asyncParams ?? []
         },
         project_uid: projectID
       })
