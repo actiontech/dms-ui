@@ -180,7 +180,8 @@ const useRuleFilterForm = (
     ruleTemplateName,
     ruleTemplateOptions,
     updateRuleTemplateList,
-    filterFuzzyCont
+    filterFuzzyCont,
+    t
   ]);
 
   useEffect(() => {
