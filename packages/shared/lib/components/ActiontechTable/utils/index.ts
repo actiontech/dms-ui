@@ -58,3 +58,18 @@ export const checkButtonPermissions = <T extends Record<string, any>>(
   // 当没有 permissions 时, 默认显示按钮
   return true;
 };
+
+export const checkButtonDisabled = <T extends Record<string, any>>(
+  disabled: ((record?: T) => boolean) | boolean | undefined,
+  record?: T
+): boolean => {
+  if (typeof disabled === 'function') {
+    return disabled(record);
+  }
+
+  if (typeof disabled === 'boolean') {
+    return disabled;
+  }
+
+  return false;
+};

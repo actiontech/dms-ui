@@ -23,6 +23,8 @@ const AddMember: React.FC = () => {
 
   const [form] = Form.useForm<IMemberFormFields>();
 
+  const [messageApi, contextHolder] = message.useMessage();
+
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
 
@@ -47,7 +49,7 @@ const AddMember: React.FC = () => {
       .AddMember(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsMember.addMember.successTips', {
               name: ''
             })
@@ -89,6 +91,7 @@ const AddMember: React.FC = () => {
         </Space>
       }
     >
+      {contextHolder}
       <MemberForm form={form} projectID={projectID} />
     </MemberDrawerStyledWrapper>
   );
