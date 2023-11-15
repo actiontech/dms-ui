@@ -21,6 +21,7 @@ export const LoginPageLeftStyleWrapper = styled('div')`
     height: 100%;
     filter: blur(0.2px);
   }
+
   .login-background-img {
     width: 100%;
     height: 100%;
