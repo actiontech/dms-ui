@@ -24,6 +24,14 @@ export type PageInfoWithoutIndexAndSize<
 //=======================================
 
 //======================================= filter
+export type TypeFilterElement =
+  | 'select'
+  | 'date-range'
+  | 'input'
+  | 'search-input';
+
+export type ICustomSearchInputProps = ICustomInputProps;
+
 /**
  * 更新表格筛选数据的方法, 一般为 useTableRequestParams 导出的 updateTableFilterInfo
  */
@@ -38,7 +46,10 @@ export type UpdateTableFilterInfoType<F = Record<string, any>> = (
  */
 export type ActiontechTableFilterButtonMeta<T = Record<string, any>> = Map<
   keyof T,
-  Pick<Required<ActiontechTableFilterMetaValue>, 'checked' | 'filterLabel'>
+  Pick<
+    Required<ActiontechTableFilterMetaValue>,
+    'checked' | 'filterLabel' | 'filterCustomType'
+  >
 >;
 
 /**
@@ -79,7 +90,7 @@ export type ActiontechTableFilterContainerMeta<
 export type TableFilterContainerProps<
   T = Record<string, any>,
   F = Record<string, any>,
-  C = 'select' | 'date-range' | 'input'
+  C = TypeFilterElement
 > = {
   /**
    * FilterContainer 中筛选项的数据源
@@ -102,21 +113,22 @@ export type TableFilterContainerProps<
   disabled?: boolean;
 } & ComponentBaseType;
 
-export type FilterCustomProps<C = 'select' | 'date-range' | 'input'> =
-  C extends 'select'
-    ? CustomSelectProps
-    : C extends 'date-range'
-    ? RangePickerProps
-    : C extends 'input'
-    ? ICustomInputProps
-    : never;
+export type FilterCustomProps<C = TypeFilterElement> = C extends 'select'
+  ? CustomSelectProps
+  : C extends 'date-range'
+  ? RangePickerProps
+  : C extends 'input'
+  ? ICustomInputProps
+  : C extends 'search-input'
+  ? ICustomSearchInputProps
+  : never;
 
 /**
  * 表格筛选信息中 value 的数据格式
  */
 export type ActiontechTableFilterMetaValue<
   F = Record<string, any>,
-  C = 'select' | 'date-range' | 'input'
+  C = TypeFilterElement
 > = {
   /**
    * 是否在筛选按钮中选中该项

@@ -129,7 +129,8 @@ const useRuleFilterForm = (
           value: filterFuzzyCont,
           onCustomPressEnter: fuzzyContChangeHandle,
           style: { width: 300 },
-          allowClear: true
+          allowClear: true,
+          placeholder: t('rule.form.fuzzy_text_placeholder')
         }
       ],
       [
