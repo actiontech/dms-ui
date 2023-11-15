@@ -116,6 +116,7 @@ export default {
     manualInput: '输入SQL语句',
     uploadFile: '上传SQL文件',
     updateMybatisFile: '上传Mybatis的XML文件',
+    uploadZipFile: '上传ZIP文件',
 
     audit: '审核'
   },
