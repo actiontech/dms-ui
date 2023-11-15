@@ -222,6 +222,8 @@ export interface IExportRuleTemplateV1Params {
 export interface IGetRuleListV1Params {
   filter_db_type?: string;
 
+  fuzzy_keyword?: string;
+
   filter_global_rule_template_name?: string;
 
   filter_rule_names?: string;
