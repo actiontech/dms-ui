@@ -446,12 +446,6 @@ export interface IDBTypeHealth {
   unhealth_instance_names?: string[];
 }
 
-export interface IDashboardProjectTipV1 {
-  project_name?: string;
-
-  unfinished_workflow_count?: number;
-}
-
 export interface IDashboardResV1 {
   workflow_statistics?: IWorkflowStatisticsResV1;
 }
@@ -672,14 +666,6 @@ export interface IGetCustomRulesResV1 {
   code?: number;
 
   data?: ICustomRuleResV1[];
-
-  message?: string;
-}
-
-export interface IGetDashboardProjectTipsResV1 {
-  code?: number;
-
-  data?: IDashboardProjectTipV1[];
 
   message?: string;
 }
@@ -944,22 +930,6 @@ export interface IGetSQLAuditRecordsResV1 {
   message?: string;
 
   total_nums?: number;
-}
-
-export interface IGetSQLEInfoResDataV1 {
-  logo_url?: string;
-
-  title?: string;
-
-  version?: string;
-}
-
-export interface IGetSQLEInfoResV1 {
-  code?: number;
-
-  data?: IGetSQLEInfoResDataV1;
-
-  message?: string;
 }
 
 export interface IGetSqlAverageExecutionTimeResV1 {
@@ -1350,10 +1320,6 @@ export interface IParseProjectRuleTemplateFileResV1 {
 
 export interface IPartialSyncAuditPlanSQLsReqV1 {
   audit_plan_sql_list?: IAuditPlanSQLReqV1[];
-}
-
-export interface IPersonaliseReqV1 {
-  title?: string;
 }
 
 export interface IProjectRuleTemplateResV1 {
@@ -1822,18 +1788,6 @@ export interface IUpdateWorkflowTemplateReqV1 {
   desc?: string;
 
   workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
-}
-
-export interface IUploadLogoResDataV1 {
-  logo_url?: string;
-}
-
-export interface IUploadLogoResV1 {
-  code?: number;
-
-  data?: IUploadLogoResDataV1;
-
-  message?: string;
 }
 
 export interface IUserTipResV1 {

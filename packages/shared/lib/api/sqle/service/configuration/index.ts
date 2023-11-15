@@ -17,14 +17,9 @@ import {
   ISetSQLELicenseV1Return,
   ICheckSQLELicenseV1Params,
   ICheckSQLELicenseV1Return,
-  IPersonaliseParams,
-  IPersonaliseReturn,
-  IUploadLogoParams,
-  IUploadLogoReturn,
   IGetSystemVariablesV1Return,
   IUpdateSystemVariablesV1Params,
   IUpdateSystemVariablesV1Return,
-  IGetLogoParams,
   IGetDriversV2Return
 } from './index.d';
 
@@ -127,37 +122,6 @@ class ConfigurationService extends ServiceBase {
     return this.get<any>('/v1/configurations/license/info', undefined, options);
   }
 
-  public personalise(params: IPersonaliseParams, options?: AxiosRequestConfig) {
-    const paramsData = this.cloneDeep(params);
-    return this.patch<IPersonaliseReturn>(
-      '/v1/configurations/personalise',
-      paramsData,
-      options
-    );
-  }
-
-  public uploadLogo(params: IUploadLogoParams, options?: AxiosRequestConfig) {
-    const config = options || {};
-    const headers = config.headers ? config.headers : {};
-    config.headers = {
-      ...headers,
-
-      'Content-Type': 'multipart/form-data'
-    };
-
-    const paramsData = new FormData();
-
-    if (params.logo != undefined) {
-      paramsData.append('logo', params.logo as any);
-    }
-
-    return this.post<IUploadLogoReturn>(
-      '/v1/configurations/personalise/logo',
-      paramsData,
-      config
-    );
-  }
-
   public getSystemVariablesV1(options?: AxiosRequestConfig) {
     return this.get<IGetSystemVariablesV1Return>(
       '/v1/configurations/system_variables',
@@ -176,11 +140,6 @@ class ConfigurationService extends ServiceBase {
       paramsData,
       options
     );
-  }
-
-  public getLogo(params: IGetLogoParams, options?: AxiosRequestConfig) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<any>('/v1/static/logo', paramsData, options);
   }
 
   public getDriversV2(options?: AxiosRequestConfig) {
