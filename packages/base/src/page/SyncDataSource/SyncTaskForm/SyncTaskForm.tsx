@@ -249,29 +249,9 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             </FormItemLabel>
 
             <FormItemLabel
-              className="has-required-style has-label-tip"
+              className="has-required-style"
               name="instanceType"
-              label={
-                <CustomLabelContent
-                  title={t('dmsSyncDataSource.syncTaskForm.instanceType')}
-                  tips={
-                    <>
-                      <span>
-                        {`${t(
-                          'dmsSyncDataSource.syncTaskForm.instanceTypeTips'
-                        )}`}
-                      </span>
-                      <Link
-                        to="https://actiontech.github.io/sqle-docs/docs/user-manual/project/instance_syn"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {t('dmsSyncDataSource.pageTitle')}
-                      </Link>
-                    </>
-                  }
-                />
-              }
+              label={t('dmsSyncDataSource.syncTaskForm.instanceType')}
               rules={[{ required: true }]}
             >
               <BasicSelect<string>
