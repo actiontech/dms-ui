@@ -61,6 +61,9 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
           <CustomSelectPopupMenuStyleWrapper
             onMouseLeave={(e) => {
               console.log(e.target);
+              const allSelectItems = document.querySelectorAll(
+                'antd-v5-select-item antd-v5-select-item-option'
+              );
             }}
           >
             {menu}
