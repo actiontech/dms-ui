@@ -37,7 +37,6 @@ const Rule = () => {
     RuleFilterContainerMeta()
   );
 
-  // 项目规则
   const {
     data: projectTemplateRules,
     loading: getProjectTemplateRulesLoading,
@@ -59,7 +58,6 @@ const Rule = () => {
     }
   );
 
-  // 全局规则
   const {
     data: globalTemplateRules,
     loading: getGlobalTemplateRulesLoading,

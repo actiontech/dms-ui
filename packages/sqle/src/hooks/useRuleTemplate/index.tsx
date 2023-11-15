@@ -14,7 +14,6 @@ const useRuleTemplate = () => {
   );
   const [loading, { setTrue, setFalse }] = useBoolean();
 
-  // todo: filter fuzzy text 没看懂干撒的
   const updateRuleTemplateList = useCallback(
     (projectName: string, dbType?: string) => {
       setTrue();
