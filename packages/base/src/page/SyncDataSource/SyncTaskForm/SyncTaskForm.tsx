@@ -23,7 +23,7 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInputCom';
-import { FormInstance, Popconfirm, Space, Spin } from 'antd5';
+import { Alert, FormInstance, Popconfirm, Space, Spin } from 'antd5';
 import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
 import useAuditRequired from '../../../hooks/useAuditRequired';
 import { Link } from 'react-router-dom';
@@ -266,6 +266,22 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                 {generateTaskSourceDbTypesSelectOption(source)}
               </BasicSelect>
             </FormItemLabel>
+
+            <Alert
+              message={
+                <div style={{ fontSize: '12px' }}>
+                  {t('dmsSyncDataSource.syncTaskForm.helpTips')}
+                  <Link
+                    to="https://actiontech.github.io/sqle-docs/docs/user-manual/project/instance_syn"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {t('dmsSyncDataSource.pageTitle')}
+                  </Link>
+                </div>
+              }
+              type="info"
+            />
           </FormAreaBlockStyleWrapper>
         </FormAreaLineStyleWrapper>
 

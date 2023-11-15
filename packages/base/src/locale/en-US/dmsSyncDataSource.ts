@@ -50,6 +50,7 @@ export default {
     baseConfig: '基础配置',
     sqlConfig: 'SQL审核配置',
     cronConfig: '自定义任务同步周期',
-    cronTips: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择'
+    cronTips: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择',
+    helpTips: '更多使用说明请参考'
   }
 };
