@@ -6,8 +6,6 @@ import {
   IGetDriversResV1,
   IGetLicenseResV1,
   ICheckLicenseResV1,
-  IPersonaliseReqV1,
-  IUploadLogoResV1,
   IGetSystemVariablesResV1,
   IUpdateSystemVariablesReqV1,
   IGetDriversRes
@@ -39,25 +37,11 @@ export interface ICheckSQLELicenseV1Params {
 
 export interface ICheckSQLELicenseV1Return extends ICheckLicenseResV1 {}
 
-export interface IPersonaliseParams extends IPersonaliseReqV1 {}
-
-export interface IPersonaliseReturn extends IBaseRes {}
-
-export interface IUploadLogoParams {
-  logo: any;
-}
-
-export interface IUploadLogoReturn extends IUploadLogoResV1 {}
-
 export interface IGetSystemVariablesV1Return extends IGetSystemVariablesResV1 {}
 
 export interface IUpdateSystemVariablesV1Params
   extends IUpdateSystemVariablesReqV1 {}
 
 export interface IUpdateSystemVariablesV1Return extends IBaseRes {}
-
-export interface IGetLogoParams {
-  timestamp?: string;
-}
 
 export interface IGetDriversV2Return extends IGetDriversRes {}
