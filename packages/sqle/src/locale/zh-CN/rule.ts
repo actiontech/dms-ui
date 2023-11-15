@@ -16,7 +16,7 @@ export default {
     dbType: '数据库类型',
     ruleTemplateTips:
       '当未选择项目时, 当前规则模板为全局规则模板, 选择后为项目下的规则模板',
-    fuzzy_text: '模糊搜索'
+    fuzzy_text_placeholder: '请输入规则关键词搜索'
   },
   ruleLevelIcon: {
     normal: '普通',

@@ -6,7 +6,7 @@ import {
 import { t } from '../../locale';
 export type GetRuleListV1Params = IGetRuleListV1Params & {
   project_name?: string;
-  filter_fuzzy_text?: string; // todo: 筛选项
+  filter_fuzzy_text?: string;
 };
 
 export const RuleFilterContainerMeta: () => ActiontechTableFilterMeta<
@@ -20,9 +20,8 @@ export const RuleFilterContainerMeta: () => ActiontechTableFilterMeta<
     [
       'filter_fuzzy_text',
       {
-        filterCustomType: 'input',
+        filterCustomType: 'search-input',
         filterKey: 'filter_fuzzy_text',
-        filterLabel: t('rule.form.fuzzy_text'),
         checked: true
       }
     ],
