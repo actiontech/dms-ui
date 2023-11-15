@@ -1,18 +1,19 @@
-import { InputRef, SelectProps } from 'antd5';
+import { Children, cloneElement, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { InputRef, SelectProps } from 'antd5';
+import { BasicButton, EmptyBox } from '@actiontech/shared';
+import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import { IconRightArrowSelectSuffix } from '@actiontech/shared/lib/Icon';
 import {
   ProjectSelectorPopupMenuStyleWrapper,
   ProjectSelectorStyleWrapper
 } from './style';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
-import { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import MockSelectItemOptions from './MockSelectItemOptions';
 import { ProjectSelectorProps } from './index.type';
+import { render } from '@testing-library/react';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
@@ -27,12 +28,25 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   const searchInputRef = useRef<InputRef>(null);
   const [searchValue, setSearchValue] = useState('');
 
+  const renderMenuItem = (menuItem: React.ReactElement) => {
+    console.log('menuItem', menuItem);
+    return cloneElement(menuItem, {
+      onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
+        console.log('mouse enter', e.target);
+      },
+      onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
+        console.log('mouse leave', e.target);
+      }
+    });
+  };
+
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     const filterBindProjects = (bindProjects ?? []).filter((v) =>
       v.project_name
         ?.toLocaleLowerCase()
         .includes(searchValue.toLocaleLowerCase())
     );
+    // console.log(menu);
     return (
       <>
         <ProjectSelectorPopupMenuStyleWrapper>
@@ -44,7 +58,11 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
           <div className="select-options-group-label">
             {t('dmsMenu.projectSelector.recentlyOpenedProjects')}
           </div>
-          <CustomSelectPopupMenuStyleWrapper>
+          <CustomSelectPopupMenuStyleWrapper
+            onMouseLeave={(e) => {
+              console.log(e.target);
+            }}
+          >
             {menu}
           </CustomSelectPopupMenuStyleWrapper>
 
