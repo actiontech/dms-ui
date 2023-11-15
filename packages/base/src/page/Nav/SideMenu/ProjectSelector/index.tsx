@@ -1,4 +1,4 @@
-import { Children, cloneElement, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { InputRef, SelectProps } from 'antd5';
@@ -13,7 +13,6 @@ import {
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
 import MockSelectItemOptions from './MockSelectItemOptions';
 import { ProjectSelectorProps } from './index.type';
-import { render } from '@testing-library/react';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
@@ -27,18 +26,9 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   const [open, setOpen] = useState(false);
   const searchInputRef = useRef<InputRef>(null);
   const [searchValue, setSearchValue] = useState('');
-
-  const renderMenuItem = (menuItem: React.ReactElement) => {
-    console.log('menuItem', menuItem);
-    return cloneElement(menuItem, {
-      onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
-        console.log('mouse enter', e.target);
-      },
-      onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
-        console.log('mouse leave', e.target);
-      }
-    });
-  };
+  const [lastActiveMenuItem, setLastActiveMenuItem] = useState<
+    Element | undefined
+  >();
 
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     const filterBindProjects = (bindProjects ?? []).filter((v) =>
@@ -46,7 +36,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
         ?.toLocaleLowerCase()
         .includes(searchValue.toLocaleLowerCase())
     );
-    // console.log(menu);
+
     return (
       <>
         <ProjectSelectorPopupMenuStyleWrapper>
@@ -59,10 +49,22 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
             {t('dmsMenu.projectSelector.recentlyOpenedProjects')}
           </div>
           <CustomSelectPopupMenuStyleWrapper
-            onMouseLeave={(e) => {
-              console.log(e.target);
-              const allSelectItems = document.querySelectorAll(
-                'antd-v5-select-item antd-v5-select-item-option'
+            onMouseEnter={() => {
+              // 当移入menu范围时，如果原本有hover active的选项，还原active类
+              if (lastActiveMenuItem) {
+                lastActiveMenuItem?.classList.add(
+                  'antd-v5-select-item-option-active'
+                );
+              }
+            }}
+            onMouseLeave={() => {
+              // 当移出menu范围时，移除所有‘antd-v5-select-item-option-active’，避免出现同时有2个hover类的option
+              const activeSelectItem = document.querySelectorAll(
+                '.antd-v5-select-item.antd-v5-select-item-option.antd-v5-select-item-option-active'
+              )[0];
+              setLastActiveMenuItem(activeSelectItem);
+              activeSelectItem?.classList.remove(
+                'antd-v5-select-item-option-active'
               );
             }}
           >
