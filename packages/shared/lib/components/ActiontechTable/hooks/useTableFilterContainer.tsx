@@ -4,7 +4,8 @@ import {
   ActiontechTableFilterContainerMeta,
   ActiontechTableFilterMeta,
   UpdateTableFilterInfoType,
-  ActiontechTableColumn
+  ActiontechTableColumn,
+  TypeFilterElement
 } from '../index.type';
 import { getColumnsLabel } from '../utils';
 
@@ -22,7 +23,8 @@ const mergeFilterButtonMeta = <
     if (cur.filterCustomType) {
       result.set(cur.dataIndex, {
         checked: false,
-        filterLabel: getColumnsLabel(cur.title)
+        filterLabel: getColumnsLabel(cur.title),
+        filterCustomType: cur.filterCustomType
       });
     }
     return result;
@@ -31,11 +33,12 @@ const mergeFilterButtonMeta = <
   if (extraFilterMeta) {
     Array.from(extraFilterMeta).reduce<ActiontechTableFilterButtonMeta<T>>(
       (result, [dataIndex, value]) => {
-        const { checked, filterLabel } = value;
+        const { checked, filterLabel, filterCustomType } = value;
 
         result.set(dataIndex, {
           checked: !!checked,
-          filterLabel: filterLabel ?? ''
+          filterLabel: filterLabel ?? '',
+          filterCustomType: filterCustomType as TypeFilterElement
         });
         return result;
       },
@@ -44,7 +47,12 @@ const mergeFilterButtonMeta = <
   }
 
   // IFTRUE_isDebug
-  if (Array.from(map).some(([_, value]) => value.filterLabel === '')) {
+  if (
+    Array.from(map).some(
+      ([_, value]) =>
+        value.filterLabel === '' && value.filterCustomType !== 'search-input'
+    )
+  ) {
     throw new Error('Filter label cannot be empty');
   }
   // FITRUE_isDebug

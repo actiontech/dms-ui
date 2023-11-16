@@ -6,6 +6,7 @@ import {
 import { t } from '../../locale';
 export type GetRuleListV1Params = IGetRuleListV1Params & {
   project_name?: string;
+  filter_fuzzy_text?: string;
 };
 
 export const RuleFilterContainerMeta: () => ActiontechTableFilterMeta<
@@ -16,6 +17,14 @@ export const RuleFilterContainerMeta: () => ActiontechTableFilterMeta<
     keyof GetRuleListV1Params,
     ActiontechTableFilterMetaValue<GetRuleListV1Params>
   >([
+    [
+      'filter_fuzzy_text',
+      {
+        filterCustomType: 'search-input',
+        filterKey: 'filter_fuzzy_text',
+        checked: true
+      }
+    ],
     [
       'project_name',
       {
