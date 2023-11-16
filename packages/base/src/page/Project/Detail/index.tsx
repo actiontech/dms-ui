@@ -66,10 +66,7 @@ const ProjectDetail: React.FC = () => {
   /* FITRUE_isCE */
 
   return (
-    <EmptyBox
-      if={!!nextProjectID && !updateDriverListLoading}
-      defaultNode={<HeaderProgress />}
-    >
+    <EmptyBox if={!updateDriverListLoading} defaultNode={<HeaderProgress />}>
       {/* IFTRUE_isEE */}
       {renderProjectDetail()}
       {/* FITRUE_isEE */}
