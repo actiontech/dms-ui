@@ -39,14 +39,19 @@ export default {
   syncTaskForm: {
     name: '数据源名称',
     source: '来源',
+    sourceTips: '支持同步ActionDMP平台',
     version: '版本',
+    versionTips: '支持DMP5.23.04.0及以上版本',
     url: '地址',
+    urlTips: '填写DMP平台地址，默认格式为 http(s)://ip:port',
     instanceType: '数据源类型',
     ruleTemplateName: '审核规则模板',
     syncInterval: '同步间隔',
     baseConfig: '基础配置',
     sqlConfig: 'SQL审核配置',
     cronConfig: '自定义任务同步周期',
-    cronTips: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择'
+    cronTips: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择',
+    helpTips:
+      '创建同步任务前后，用户必须去数据来源平台进行配置，更多使用说明请参考'
   }
 };

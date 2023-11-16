@@ -142,6 +142,8 @@ export interface IAuditPlanSQLReqV1 {
 
   db_user?: string;
 
+  end_point?: string;
+
   first_query_at?: string;
 
   query_time_avg?: number;
@@ -327,6 +329,10 @@ export interface ICloneRuleTemplateReqV1 {
   desc?: string;
 
   new_rule_template_name?: string;
+}
+
+export interface ICompanyNotice {
+  notice_str?: string;
 }
 
 export interface ICreateAuditPlanReqV1 {
@@ -661,6 +667,14 @@ export interface IGetAuditWhitelistResV1 {
   total_nums?: number;
 }
 
+export interface IGetCompanyNoticeResp {
+  code?: number;
+
+  data?: ICompanyNotice;
+
+  message?: string;
+}
+
 export interface IGetCustomRuleResV1 {
   code?: number;
 
@@ -975,6 +989,14 @@ export interface IGetSqlManageListResp {
   sql_manage_optimized_num?: number;
 
   sql_manage_total_num?: number;
+}
+
+export interface IGetSqlManageRuleTipsResp {
+  code?: number;
+
+  data?: IRuleTips[];
+
+  message?: string;
 }
 
 export interface IGetSystemVariablesResV1 {
@@ -1449,6 +1471,12 @@ export interface IRuleResV1 {
   type?: string;
 }
 
+export interface IRuleRespV1 {
+  desc?: string;
+
+  rule_name?: string;
+}
+
 export interface IRuleTemplateDetailResV1 {
   db_type?: string;
 
@@ -1473,6 +1501,12 @@ export interface IRuleTemplateTipResV1 {
   rule_template_id?: string;
 
   rule_template_name?: string;
+}
+
+export interface IRuleTips {
+  db_type?: string;
+
+  rule?: IRuleRespV1[];
 }
 
 export interface IRuleTypeV1 {
@@ -1565,6 +1599,8 @@ export interface ISqlManage {
   assignees?: string[];
 
   audit_result?: IAuditResult[];
+
+  endpoint?: string;
 
   first_appear_time?: string;
 
@@ -1759,6 +1795,10 @@ export interface IUpdateAuditWhitelistReqV1 {
   match_type?: UpdateAuditWhitelistReqV1MatchTypeEnum;
 
   value?: string;
+}
+
+export interface IUpdateCompanyNoticeReq {
+  notice_str?: string;
 }
 
 export interface IUpdateCustomRuleReqV1 {

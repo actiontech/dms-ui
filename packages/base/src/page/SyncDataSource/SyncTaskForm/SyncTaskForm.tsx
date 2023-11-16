@@ -15,6 +15,7 @@ import {
   formItemLayout
 } from '@actiontech/shared/lib/components/FormCom/style';
 import {
+  CustomLabelContent,
   FormInputBotBorder,
   FormItemBigTitle,
   FormItemLabel,
@@ -22,9 +23,10 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInputCom';
-import { FormInstance, Popconfirm, Spin } from 'antd5';
+import { Alert, FormInstance, Popconfirm, Spin } from 'antd5';
 import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
 import useAuditRequired from '../../../hooks/useAuditRequired';
+import { Link } from 'react-router-dom';
 
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   form,
@@ -187,9 +189,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             </FormItemSubTitle>
 
             <FormItemLabel
-              className="has-required-style"
+              className="has-required-style has-label-tip"
               name="source"
-              label={t('dmsSyncDataSource.syncTaskForm.source')}
+              label={
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.source')}
+                  tips={t('dmsSyncDataSource.syncTaskForm.sourceTips')}
+                />
+              }
               rules={[{ required: true }]}
             >
               <BasicSelect
@@ -206,9 +213,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             </FormItemLabel>
 
             <FormItemLabel
-              className="has-required-style"
+              className="has-required-style  has-label-tip"
               name="version"
-              label={t('dmsSyncDataSource.syncTaskForm.version')}
+              label={
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.version')}
+                  tips={t('dmsSyncDataSource.syncTaskForm.versionTips')}
+                />
+              }
               rules={[{ required: true }]}
             >
               <BasicInput
@@ -219,9 +231,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             </FormItemLabel>
 
             <FormItemLabel
-              className="has-required-style"
+              className="has-required-style has-label-tip"
               name="url"
-              label={t('dmsSyncDataSource.syncTaskForm.url')}
+              label={
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.url')}
+                  tips={t('dmsSyncDataSource.syncTaskForm.urlTips')}
+                />
+              }
               rules={[{ required: true }]}
             >
               <BasicInput
@@ -249,6 +266,22 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                 {generateTaskSourceDbTypesSelectOption(source)}
               </BasicSelect>
             </FormItemLabel>
+
+            <Alert
+              message={
+                <div style={{ fontSize: '12px' }}>
+                  {t('dmsSyncDataSource.syncTaskForm.helpTips')}
+                  <Link
+                    to="https://actiontech.github.io/sqle-docs/docs/user-manual/project/instance_syn"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {t('dmsSyncDataSource.pageTitle')}
+                  </Link>
+                </div>
+              }
+              type="info"
+            />
           </FormAreaBlockStyleWrapper>
         </FormAreaLineStyleWrapper>
 
@@ -317,12 +350,10 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               className="has-required-style has-label-tip"
               name="syncInterval"
               label={
-                <div className="label-cont-custom">
-                  <div>{t('dmsSyncDataSource.syncTaskForm.syncInterval')}</div>
-                  <div className="tip-content-box">
-                    {t('dmsSyncDataSource.syncTaskForm.cronTips')}
-                  </div>
-                </div>
+                <CustomLabelContent
+                  title={t('dmsSyncDataSource.syncTaskForm.syncInterval')}
+                  tips={t('dmsSyncDataSource.syncTaskForm.cronTips')}
+                />
               }
               initialValue="0 0 * * *"
               rules={[
