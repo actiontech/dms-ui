@@ -1,22 +1,18 @@
 import { ANTD_PREFIX_STR } from '../../data/common';
 import { styled } from '@mui/material/styles';
 
-export const BasicDatePickerFieldStyleWrapper = styled('div')`
+export const BasicDatePickerFieldStyleWrapper = styled('div')<{
+  hideSuperIcon: boolean;
+}>`
   display: flex;
   align-items: center;
   position: relative;
 
-  &.basic-date-picker-hide-super-icon {
-    .${ANTD_PREFIX_STR}-picker-header-super-prev-btn,
-      .${ANTD_PREFIX_STR}-picker-header-super-next-btn {
-      display: none;
-    }
-  }
-
   .prefix-icon {
     position: absolute;
     left: 12px;
-    top: 7px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 99;
   }
 
@@ -53,6 +49,7 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
         height: 22px;
         line-height: 22px;
         padding: 4px;
+        display: ${({ hideSuperIcon }) => (hideSuperIcon ? 'none' : 'initial')};
       }
 
       .${ANTD_PREFIX_STR}-picker-header-prev-btn,
@@ -67,12 +64,15 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
         .prev-icon {
           height: 22px;
           width: 22px;
-          background-color: var(--color-white-100, #fff);
+          background-color: ${({ theme }) =>
+            theme.sharedTheme.basic.colorWhite};
           border-radius: 4px;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 1px 4px 0 rgba(51, 44, 31, 0.12);
+          box-shadow: ${({ theme }) =>
+            theme.sharedTheme.components.basicRangePicker.dropdown.icon
+              .boxShadow};
         }
       }
 

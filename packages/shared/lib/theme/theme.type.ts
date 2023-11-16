@@ -109,6 +109,11 @@ export type BasicRangePickerTheme = {
     border: string;
     background: string;
   };
+  dropdown: {
+    icon: {
+      boxShadow: string;
+    };
+  };
 };
 
 export type BasicDrawerTheme = {

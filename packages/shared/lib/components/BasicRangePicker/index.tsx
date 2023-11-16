@@ -5,13 +5,22 @@ import classnames from 'classnames';
 import { ReactNode } from 'react';
 import { BasicRangePickerStyleWrapper } from './style';
 import { ComponentControlHeight } from '../../data/common';
+import { IconDatePickerLeft, IconDatePickerRight } from '../../Icon/common';
 
 export type BasicRangePickerProps = RangePickerProps & {
   prefix?: ReactNode;
+  hideSuperIcon?: boolean;
 };
 
 const BasicRangePicker = (props: BasicRangePickerProps) => {
-  const { className, suffixIcon, prefix, size, ...otherParams } = props;
+  const {
+    className,
+    suffixIcon,
+    prefix,
+    size,
+    hideSuperIcon = true,
+    ...otherParams
+  } = props;
 
   return (
     <ConfigProvider
@@ -29,7 +38,7 @@ const BasicRangePicker = (props: BasicRangePickerProps) => {
         className={classnames('basic-range-picker-wrapper', className, {
           'custom-picker-prefix': !suffixIcon && !!prefix
         })}
-        size="middle"
+        size={size}
         {...otherParams}
         /**
          * when both suffixIcon and prefix exist, the former will force the latter to be overwritten
@@ -38,6 +47,12 @@ const BasicRangePicker = (props: BasicRangePickerProps) => {
         //todo allowClear={{clearIcon: <IconClose />}} need antd 5.8.0
         clearIcon={<IconClose />}
         separator={<IconArrowRight />}
+        getPopupContainer={(trigger) => {
+          return trigger;
+        }}
+        nextIcon={<IconDatePickerRight className="next-icon" />}
+        prevIcon={<IconDatePickerLeft className="prev-icon" />}
+        hideSuperIcon={hideSuperIcon}
       />
     </ConfigProvider>
   );

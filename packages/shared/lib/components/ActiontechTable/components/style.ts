@@ -113,7 +113,7 @@ export const ToolbarStyleWrapper = styled(Space)`
 `;
 
 export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
-  &.${ANTD_PREFIX_STR}-picker.${ANTD_PREFIX_STR}-picker-borderless.basic-range-picker-wrapper {
+  &.${ANTD_PREFIX_STR}-picker.${ANTD_PREFIX_STR}-picker.basic-range-picker-wrapper {
     border: 1px solid
       ${({ theme }) =>
         theme.sharedTheme.components.customFilter.rangePicker
@@ -142,7 +142,7 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
     }
   }
 
-  &.${ANTD_PREFIX_STR}-picker-range:hover {
+  &.${ANTD_PREFIX_STR}-picker-range:not(.${ANTD_PREFIX_STR}-picker-focused):hover {
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customFilter.rangePicker
         .hoverBackgroundColor} !important;
@@ -151,7 +151,11 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
   &.${ANTD_PREFIX_STR}-picker-focused {
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customFilter.rangePicker
-        .focusBackgroundColor};
+        .focusBackgroundColor} !important;
+    border: 1px solid
+      ${({ theme }) =>
+        theme.sharedTheme.components.customFilter.rangePicker
+          .borderColor} !important;
   }
 
   & .custom-range-picker-filter-label {
