@@ -4,19 +4,17 @@ export const UploadTypeStyleWrapper = styled('div')`
   width: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 
-  .update-type-item-wrapper:not(:first-of-type) {
-    margin-left: 12px;
+  .update-type-item-wrapper {
+    margin: 5px;
   }
 `;
 
-export const UploadItemTypeSpaceOccupyingStyleWrapper = styled('div')`
-  flex: 1 0 30%;
-  margin-left: 12px;
-`;
-
 export const UploadItemTypeStyleWrapper = styled('div')<{ active?: boolean }>`
-  flex: 1 0 30%;
+  width: 31.5%;
+  box-sizing: border-box;
   background-color: ${({ theme }) =>
     theme.sharedTheme.uiToken.colorFillQuaternary};
   border: 1px solid
