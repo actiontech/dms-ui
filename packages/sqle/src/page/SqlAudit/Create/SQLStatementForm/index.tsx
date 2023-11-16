@@ -23,6 +23,7 @@ import { BasicInput, EmptyBox } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormSubmitStatusContext } from '..';
+import { Form } from 'antd5';
 
 const uploadItemIcon: {
   [key in TypeUploadKeys]: ReactNode;
@@ -38,7 +39,8 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useContext(FormSubmitStatusContext);
 
-  const [currentSQLInputType, setCurrentSQLInputTYpe] = useState(
+  const uploadType = Form.useWatch('uploadType', form);
+  const [currentSQLInputType, setCurrentSQLInputType] = useState(
     UploadTypeEnum.sql
   );
 
@@ -46,7 +48,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
     if (submitLoading) {
       return;
     }
-    setCurrentSQLInputTYpe(value);
+    setCurrentSQLInputType(value);
     form.resetFields([
       'sql',
       'sqlFile',
@@ -61,6 +63,16 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   useEffect(() => {
     form.setFieldsValue({ uploadType: currentSQLInputType });
   }, [currentSQLInputType, form]);
+
+  useEffect(() => {
+    if (
+      uploadType === UploadTypeEnum.sql &&
+      currentSQLInputType !== UploadTypeEnum.sql
+    ) {
+      setCurrentSQLInputType(UploadTypeEnum.sql);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uploadType]);
 
   return (
     <>
