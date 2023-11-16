@@ -12,19 +12,19 @@ import {
   IUpdateDingTalkConfigurationV1Return,
   ITestDingTalkConfigV1Return,
   IGetDriversV1Return,
+  IGetFeishuAuditConfigurationV1Return,
+  IUpdateFeishuAuditConfigurationV1Params,
+  IUpdateFeishuAuditConfigurationV1Return,
+  ITestFeishuAuditConfigV1Params,
+  ITestFeishuAuditConfigV1Return,
   IGetSQLELicenseV1Return,
   ISetSQLELicenseV1Params,
   ISetSQLELicenseV1Return,
   ICheckSQLELicenseV1Params,
   ICheckSQLELicenseV1Return,
-  IPersonaliseParams,
-  IPersonaliseReturn,
-  IUploadLogoParams,
-  IUploadLogoReturn,
   IGetSystemVariablesV1Return,
   IUpdateSystemVariablesV1Params,
   IUpdateSystemVariablesV1Return,
-  IGetLogoParams,
   IGetDriversV2Return
 } from './index.d';
 
@@ -61,6 +61,38 @@ class ConfigurationService extends ServiceBase {
     return this.get<IGetDriversV1Return>(
       '/v1/configurations/drivers',
       undefined,
+      options
+    );
+  }
+
+  public getFeishuAuditConfigurationV1(options?: AxiosRequestConfig) {
+    return this.get<IGetFeishuAuditConfigurationV1Return>(
+      '/v1/configurations/feishu_audit',
+      undefined,
+      options
+    );
+  }
+
+  public updateFeishuAuditConfigurationV1(
+    params: IUpdateFeishuAuditConfigurationV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateFeishuAuditConfigurationV1Return>(
+      '/v1/configurations/feishu_audit',
+      paramsData,
+      options
+    );
+  }
+
+  public testFeishuAuditConfigV1(
+    params: ITestFeishuAuditConfigV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ITestFeishuAuditConfigV1Return>(
+      '/v1/configurations/feishu_audit/test',
+      paramsData,
       options
     );
   }
@@ -127,37 +159,6 @@ class ConfigurationService extends ServiceBase {
     return this.get<any>('/v1/configurations/license/info', undefined, options);
   }
 
-  public personalise(params: IPersonaliseParams, options?: AxiosRequestConfig) {
-    const paramsData = this.cloneDeep(params);
-    return this.patch<IPersonaliseReturn>(
-      '/v1/configurations/personalise',
-      paramsData,
-      options
-    );
-  }
-
-  public uploadLogo(params: IUploadLogoParams, options?: AxiosRequestConfig) {
-    const config = options || {};
-    const headers = config.headers ? config.headers : {};
-    config.headers = {
-      ...headers,
-
-      'Content-Type': 'multipart/form-data'
-    };
-
-    const paramsData = new FormData();
-
-    if (params.logo != undefined) {
-      paramsData.append('logo', params.logo as any);
-    }
-
-    return this.post<IUploadLogoReturn>(
-      '/v1/configurations/personalise/logo',
-      paramsData,
-      config
-    );
-  }
-
   public getSystemVariablesV1(options?: AxiosRequestConfig) {
     return this.get<IGetSystemVariablesV1Return>(
       '/v1/configurations/system_variables',
@@ -176,11 +177,6 @@ class ConfigurationService extends ServiceBase {
       paramsData,
       options
     );
-  }
-
-  public getLogo(params: IGetLogoParams, options?: AxiosRequestConfig) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<any>('/v1/static/logo', paramsData, options);
   }
 
   public getDriversV2(options?: AxiosRequestConfig) {
