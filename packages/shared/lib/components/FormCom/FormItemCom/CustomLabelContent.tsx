@@ -1,8 +1,6 @@
-import { ReactNode } from 'react';
-
 interface CustomLabelContentProps {
-  title: ReactNode;
-  tips: ReactNode;
+  title: string;
+  tips: string;
 }
 
 const CustomLabelContent: React.FC<CustomLabelContentProps> = (props) => {
