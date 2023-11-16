@@ -30,6 +30,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
 import {
   GetSqlManageListFilterStatusEnum,
+  GetSqlManageListSortFieldEnum,
+  GetSqlManageListSortOrderEnum,
   exportSqlManageV1FilterStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import useInstance from '../../../../hooks/useInstance';
@@ -53,6 +55,7 @@ import SqleManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import useRuleTips from './hooks/useRuleTips';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -83,8 +86,23 @@ const SQLEEIndex = () => {
 
   const getCurrentSortParams = (
     sortData: SorterResult<ISqlManage> | SorterResult<ISqlManage>[]
-  ) => {
-    return {};
+  ): Pick<IGetSqlManageListParams, 'sort_field' | 'sort_order'> => {
+    if (Array.isArray(sortData)) {
+      return {};
+    }
+    const orderDesc = {
+      descend: GetSqlManageListSortOrderEnum.desc,
+      ascend: GetSqlManageListSortOrderEnum.asc
+    };
+
+    return {
+      sort_field:
+        (sortData.field as unknown as GetSqlManageListSortFieldEnum) ??
+        undefined,
+      sort_order: sortData?.order
+        ? orderDesc[sortData?.order] ?? undefined
+        : undefined
+    };
   };
 
   const {
@@ -94,11 +112,10 @@ const SQLEEIndex = () => {
     error: getListError
   } = useRequest(
     () => {
-      const currentSortInfo = getCurrentSortParams(sortInfo);
       const params: IGetSqlManageListParams = {
         ...tableFilterInfo,
         ...pagination,
-        ...currentSortInfo,
+        ...getCurrentSortParams(sortInfo),
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
         project_name: projectName,
@@ -165,7 +182,16 @@ const SQLEEIndex = () => {
   const actionPermission = useMemo(() => {
     return !projectArchive && (isAdmin || isProjectManager(projectName));
   }, [isAdmin, isProjectManager, projectName, projectArchive]);
-  const { instanceOptions, updateInstanceList } = useInstance();
+  const {
+    instanceOptions,
+    updateInstanceList,
+    loading: instanceLoading
+  } = useInstance();
+  const {
+    generateRuleTipsSelectOptions,
+    updateRuleTips,
+    loading: ruleTipsLoading
+  } = useRuleTips();
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
   const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
   const selectedRowKeysNum = useMemo(
@@ -175,6 +201,7 @@ const SQLEEIndex = () => {
 
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
+    updateRuleTips(projectName);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectName]);
 
@@ -226,20 +253,33 @@ const SQLEEIndex = () => {
         filter_instance_name: string;
         filter_audit_level: string;
         time: string;
-        filter_rule: string;
+        filter_rule_name: string;
       }),
       FilterCustomProps
     >([
       ['filter_source', { options: generateSourceSelectOptions }],
-      ['filter_instance_name', { options: instanceOptions }],
+      [
+        'filter_instance_name',
+        { options: instanceOptions, loading: instanceLoading }
+      ],
       ['filter_audit_level', { options: generateAuditLevelSelectOptions }],
       ['time', { showTime: true }],
-      ['filter_rule', { options: [] }]
+      [
+        'filter_rule_name',
+        {
+          options: generateRuleTipsSelectOptions,
+          loading: ruleTipsLoading,
+          popupMatchSelectWidth: 400
+        }
+      ]
     ]);
   }, [
+    instanceLoading,
     instanceOptions,
     generateSourceSelectOptions,
-    generateAuditLevelSelectOptions
+    generateAuditLevelSelectOptions,
+    generateRuleTipsSelectOptions,
+    ruleTipsLoading
   ]);
 
   const onSearch = (value: string) => {
