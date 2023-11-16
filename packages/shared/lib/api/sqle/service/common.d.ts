@@ -20,6 +20,7 @@ import {
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
   SourceTypeEnum,
   SqlManageStatusEnum,
+  TestFeishuConfigurationReqV1AccountTypeEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
   UpdateAuditWhitelistReqV1MatchTypeEnum,
   UpdateCustomRuleReqV1LevelEnum,
@@ -140,6 +141,8 @@ export interface IAuditPlanSQLReqV1 {
   audit_plan_sql_schema?: string;
 
   db_user?: string;
+
+  end_point?: string;
 
   first_query_at?: string;
 
@@ -328,6 +331,10 @@ export interface ICloneRuleTemplateReqV1 {
   new_rule_template_name?: string;
 }
 
+export interface ICompanyNotice {
+  notice_str?: string;
+}
+
 export interface ICreateAuditPlanReqV1 {
   audit_plan_cron?: string;
 
@@ -446,12 +453,6 @@ export interface IDBTypeHealth {
   unhealth_instance_names?: string[];
 }
 
-export interface IDashboardProjectTipV1 {
-  project_name?: string;
-
-  unfinished_workflow_count?: number;
-}
-
 export interface IDashboardResV1 {
   workflow_statistics?: IWorkflowStatisticsResV1;
 }
@@ -516,6 +517,12 @@ export interface IExplainClassicResult {
   rows?: Array<{
     [key: string]: string;
   }>;
+}
+
+export interface IFeishuConfigurationV1 {
+  app_id?: string;
+
+  is_feishu_notification_enabled?: boolean;
 }
 
 export interface IFullSyncAuditPlanSQLsReqV1 {
@@ -660,6 +667,14 @@ export interface IGetAuditWhitelistResV1 {
   total_nums?: number;
 }
 
+export interface IGetCompanyNoticeResp {
+  code?: number;
+
+  data?: ICompanyNotice;
+
+  message?: string;
+}
+
 export interface IGetCustomRuleResV1 {
   code?: number;
 
@@ -672,14 +687,6 @@ export interface IGetCustomRulesResV1 {
   code?: number;
 
   data?: ICustomRuleResV1[];
-
-  message?: string;
-}
-
-export interface IGetDashboardProjectTipsResV1 {
-  code?: number;
-
-  data?: IDashboardProjectTipV1[];
 
   message?: string;
 }
@@ -704,6 +711,14 @@ export interface IGetDriversResV1 {
   code?: number;
 
   data?: IDriversResV1;
+
+  message?: string;
+}
+
+export interface IGetFeishuAuditConfigurationResV1 {
+  code?: number;
+
+  data?: IFeishuConfigurationV1;
 
   message?: string;
 }
@@ -946,22 +961,6 @@ export interface IGetSQLAuditRecordsResV1 {
   total_nums?: number;
 }
 
-export interface IGetSQLEInfoResDataV1 {
-  logo_url?: string;
-
-  title?: string;
-
-  version?: string;
-}
-
-export interface IGetSQLEInfoResV1 {
-  code?: number;
-
-  data?: IGetSQLEInfoResDataV1;
-
-  message?: string;
-}
-
 export interface IGetSqlAverageExecutionTimeResV1 {
   code?: number;
 
@@ -990,6 +989,14 @@ export interface IGetSqlManageListResp {
   sql_manage_optimized_num?: number;
 
   sql_manage_total_num?: number;
+}
+
+export interface IGetSqlManageRuleTipsResp {
+  code?: number;
+
+  data?: IRuleTips[];
+
+  message?: string;
 }
 
 export interface IGetSystemVariablesResV1 {
@@ -1352,10 +1359,6 @@ export interface IPartialSyncAuditPlanSQLsReqV1 {
   audit_plan_sql_list?: IAuditPlanSQLReqV1[];
 }
 
-export interface IPersonaliseReqV1 {
-  title?: string;
-}
-
 export interface IProjectRuleTemplateResV1 {
   db_type?: string;
 
@@ -1468,6 +1471,12 @@ export interface IRuleResV1 {
   type?: string;
 }
 
+export interface IRuleRespV1 {
+  desc?: string;
+
+  rule_name?: string;
+}
+
 export interface IRuleTemplateDetailResV1 {
   db_type?: string;
 
@@ -1492,6 +1501,12 @@ export interface IRuleTemplateTipResV1 {
   rule_template_id?: string;
 
   rule_template_name?: string;
+}
+
+export interface IRuleTips {
+  db_type?: string;
+
+  rule?: IRuleRespV1[];
 }
 
 export interface IRuleTypeV1 {
@@ -1584,6 +1599,8 @@ export interface ISqlManage {
   assignees?: string[];
 
   audit_result?: IAuditResult[];
+
+  endpoint?: string;
 
   first_appear_time?: string;
 
@@ -1708,6 +1725,26 @@ export interface ITestDingTalkConfigResV1 {
   message?: string;
 }
 
+export interface ITestFeishuConfigResDataV1 {
+  error_message?: string;
+
+  is_message_sent_normally?: boolean;
+}
+
+export interface ITestFeishuConfigResV1 {
+  code?: number;
+
+  data?: ITestFeishuConfigResDataV1;
+
+  message?: string;
+}
+
+export interface ITestFeishuConfigurationReqV1 {
+  account?: string;
+
+  account_type?: TestFeishuConfigurationReqV1AccountTypeEnum;
+}
+
 export interface ITimeResV1 {
   hour?: number;
 
@@ -1760,6 +1797,10 @@ export interface IUpdateAuditWhitelistReqV1 {
   value?: string;
 }
 
+export interface IUpdateCompanyNoticeReq {
+  notice_str?: string;
+}
+
 export interface IUpdateCustomRuleReqV1 {
   annotation?: string;
 
@@ -1778,6 +1819,14 @@ export interface IUpdateDingTalkConfigurationReqV1 {
   app_secret: string;
 
   is_enable_ding_talk_notify: boolean;
+}
+
+export interface IUpdateFeishuConfigurationReqV1 {
+  app_id: string;
+
+  app_secret: string;
+
+  is_feishu_notification_enabled: boolean;
 }
 
 export interface IUpdateProjectRuleTemplateReqV1 {
@@ -1822,18 +1871,6 @@ export interface IUpdateWorkflowTemplateReqV1 {
   desc?: string;
 
   workflow_step_template_list?: IWorkFlowStepTemplateReqV1[];
-}
-
-export interface IUploadLogoResDataV1 {
-  logo_url?: string;
-}
-
-export interface IUploadLogoResV1 {
-  code?: number;
-
-  data?: IUploadLogoResDataV1;
-
-  message?: string;
 }
 
 export interface IUserTipResV1 {
