@@ -6,11 +6,7 @@
 import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
-import {
-  IGetDashboardV1Params,
-  IGetDashboardV1Return,
-  IGetDashboardProjectTipsV1Return
-} from './index.d';
+import { IGetDashboardV1Params, IGetDashboardV1Return } from './index.d';
 
 class DashboardService extends ServiceBase {
   public getDashboardV1(
@@ -21,14 +17,6 @@ class DashboardService extends ServiceBase {
     return this.get<IGetDashboardV1Return>(
       '/v1/dashboard',
       paramsData,
-      options
-    );
-  }
-
-  public getDashboardProjectTipsV1(options?: AxiosRequestConfig) {
-    return this.get<IGetDashboardProjectTipsV1Return>(
-      '/v1/dashboard/project_tips',
-      undefined,
       options
     );
   }
