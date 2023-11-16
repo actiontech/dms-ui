@@ -79,10 +79,6 @@ export interface IGetTableMetadataParams {
 
 export interface IGetTableMetadataReturn extends IGetTableMetadataResV1 {}
 
-export interface IGetInstanceTypeLogoParams {
-  instance_type: string;
-}
-
 export interface IGetInstanceV2Params {
   project_name: string;
 
