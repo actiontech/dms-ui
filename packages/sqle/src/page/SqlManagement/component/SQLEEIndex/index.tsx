@@ -476,7 +476,7 @@ const SQLEEIndex = () => {
         }}
         rowSelection={rowSelection as TableRowSelection<ISqlManage>}
         pagination={{
-          total: sqlList?.total ?? 0
+          total: SQLNum.SQLTotalNum
         }}
         loading={getListLoading}
         columns={columns}

@@ -2,15 +2,20 @@ import {
   GetSqlManageListFilterSourceEnum,
   GetSqlManageListFilterAuditLevelEnum,
   GetSqlManageListFilterStatusEnum,
+  GetSqlManageListSortFieldEnum,
+  GetSqlManageListSortOrderEnum,
   exportSqlManageV1FilterSourceEnum,
   exportSqlManageV1FilterAuditLevelEnum,
-  exportSqlManageV1FilterStatusEnum
+  exportSqlManageV1FilterStatusEnum,
+  exportSqlManageV1SortFieldEnum,
+  exportSqlManageV1SortOrderEnum
 } from './index.enum';
 
 import {
   IGetSqlManageListResp,
   IBatchUpdateSqlManageReq,
-  IBaseRes
+  IBaseRes,
+  IGetSqlManageRuleTipsResp
 } from '../common.d';
 
 export interface IGetSqlManageListParams {
@@ -31,6 +36,16 @@ export interface IGetSqlManageListParams {
   filter_last_audit_start_time_to?: string;
 
   filter_status?: GetSqlManageListFilterStatusEnum;
+
+  filter_rule_name?: string;
+
+  filter_db_type?: string;
+
+  filter_endpoint?: string;
+
+  sort_field?: GetSqlManageListSortFieldEnum;
+
+  sort_order?: GetSqlManageListSortOrderEnum;
 
   page_index: number;
 
@@ -63,4 +78,21 @@ export interface IExportSqlManageV1Params {
   filter_last_audit_start_time_to?: string;
 
   filter_status?: exportSqlManageV1FilterStatusEnum;
+
+  filter_db_type?: string;
+
+  filter_rule_name?: string;
+
+  filter_endpoint?: string;
+
+  sort_field?: exportSqlManageV1SortFieldEnum;
+
+  sort_order?: exportSqlManageV1SortOrderEnum;
 }
+
+export interface IGetSqlManageRuleTipsParams {
+  project_name: string;
+}
+
+export interface IGetSqlManageRuleTipsReturn
+  extends IGetSqlManageRuleTipsResp {}
