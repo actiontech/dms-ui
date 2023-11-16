@@ -90,6 +90,8 @@ export interface IGetProjectRuleTemplateV1Params {
   project_name: string;
 
   rule_template_name: string;
+
+  fuzzy_keyword?: string;
 }
 
 export interface IGetProjectRuleTemplateV1Return
@@ -189,6 +191,8 @@ export interface IImportProjectRuleTemplateV1Return
 
 export interface IGetRuleTemplateV1Params {
   rule_template_name: string;
+
+  fuzzy_keyword?: string;
 }
 
 export interface IGetRuleTemplateV1Return extends IGetRuleTemplateResV1 {}
@@ -217,6 +221,8 @@ export interface IExportRuleTemplateV1Params {
 
 export interface IGetRuleListV1Params {
   filter_db_type?: string;
+
+  fuzzy_keyword?: string;
 
   filter_global_rule_template_name?: string;
 
