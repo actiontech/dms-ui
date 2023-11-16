@@ -34,6 +34,13 @@ const UploadType: React.FC<{
         <IconOrderFileUpload />
         <span className="text">{t('order.sqlInfo.updateMybatisFile')}</span>
       </UploadTypeItem>
+      <UploadTypeItem
+        active={value === SQLInputType.zipFile}
+        onClick={() => onChange?.(SQLInputType.zipFile)}
+      >
+        <IconOrderFileUpload />
+        <span className="text">{t('order.sqlInfo.uploadZipFile')}</span>
+      </UploadTypeItem>
     </UploadTypeStyleWrapper>
   );
 };

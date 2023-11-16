@@ -173,6 +173,8 @@ export default {
     sqlFileTips: '点击选择SQL文件或将文件拖拽到此区域',
     mybatisFile: 'Mybatis的XML文件',
     mybatisFileTips: '点击选择XML文件或将文件拖拽到此区域',
+    zipFile: 'zip文件',
+    zipFileTips: '点击选择zip文件或将文件拖拽到此区域',
 
     addInstance: '添加数据源',
 
