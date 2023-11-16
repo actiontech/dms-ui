@@ -51,16 +51,18 @@ const ReportDrawer = ({
                     index: number
                   ) => {
                     if (!showAnnotation) {
-                      <AuditResultMessage
-                        styleClass="result-item"
-                        key={`${item.rule_name ?? ''}${
-                          item.message ?? ''
-                        }-${index}`}
-                        auditResult={{
-                          level: item?.level ?? '',
-                          message: item?.message ?? ''
-                        }}
-                      />;
+                      return (
+                        <AuditResultMessage
+                          styleClass="result-item"
+                          key={`${item.rule_name ?? ''}${
+                            item.message ?? ''
+                          }-${index}`}
+                          auditResult={{
+                            level: item?.level ?? '',
+                            message: item?.message ?? ''
+                          }}
+                        />
+                      );
                     }
                     return (
                       <AuditResultMessage
