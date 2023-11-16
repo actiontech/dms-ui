@@ -7,6 +7,6 @@ export const customFilterRangePickerTheme: CustomFilterRangePickerTheme = {
     color: lightThemeUI.uiToken.colorTextTertiary
   },
   hoverBackgroundColor: lightThemeUI.uiToken.colorFillTertiary,
-  focusBackgroundColor: lightThemeUI.uiToken.colorFillTertiary,
+  focusBackgroundColor: lightThemeUI.uiToken.colorFillSecondary,
   filterLabelColor: lightThemeUI.uiToken.colorTextTertiary
 };

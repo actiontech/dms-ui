@@ -34,9 +34,8 @@ const BasicDatePicker: React.FC<
     >
       <BasicDatePickerFieldStyleWrapper
         ref={ref}
-        className={classnames('basic-date-picker-wrapper', className, {
-          'basic-date-picker-hide-super-icon': hideSuperIcon
-        })}
+        hideSuperIcon={hideSuperIcon}
+        className={classnames('basic-date-picker-wrapper', className)}
       >
         <IconDatePickerPrefix className="prefix-icon" />
         <DatePicker
