@@ -15,11 +15,13 @@ const LoginLayout: React.FC<{
   return (
     <LoginPageStyleWrapper>
       <LoginPageLeftStyleWrapper>
-        <img
-          src={leftBackgroundImg}
-          className="login-background-img"
-          alt="left_bg"
-        />
+        <div className="banner">
+          <img
+            src={leftBackgroundImg}
+            className="login-background-img"
+            alt="left_bg"
+          />
+        </div>
       </LoginPageLeftStyleWrapper>
       <LoginPageRightStyleWrapper>
         <div className="login-page-right-content">
