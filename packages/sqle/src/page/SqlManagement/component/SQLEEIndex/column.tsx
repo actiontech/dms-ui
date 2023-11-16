@@ -42,7 +42,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     filter_source?: string;
     filter_instance_name?: string;
     filter_audit_level?: string;
-    filter_rule?: string;
+    filter_rule_name?: string;
     time?: string;
   },
   SqlManagementTableFilterParamType
@@ -52,7 +52,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       filter_source?: string;
       filter_instance_name?: string;
       filter_audit_level?: string;
-      filter_rule?: string;
+      filter_rule_name?: string;
       time?: string;
     }),
     ActiontechTableFilterMetaValue<SqlManagementTableFilterParamType>
@@ -97,10 +97,10 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       }
     ],
     [
-      'filter_rule',
+      'filter_rule_name',
       {
         filterCustomType: 'select',
-        filterKey: 'filter_rule',
+        filterKey: 'filter_rule_name',
         filterLabel: t('sqlManagement.table.filter.rule'),
         checked: false
       }

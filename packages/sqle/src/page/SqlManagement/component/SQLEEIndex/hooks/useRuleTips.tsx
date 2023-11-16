@@ -1,16 +1,17 @@
 import { useBoolean } from 'ahooks';
-import { Select, Typography } from 'antd';
-import React from 'react';
-import SqlManage from '../../../../api/SqlManage';
-import { IRuleTips } from '../../../../api/common';
-import { ResponseCode } from '../../../../data/common';
-import DatabaseTypeLogo from '../../../../components/DatabaseTypeLogo';
+import React, { useMemo } from 'react';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { IRuleTips } from '@actiontech/shared/lib/api/sqle/service/common';
+import { DatabaseTypeLogo } from '@actiontech/shared';
+import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 
 export const DB_TYPE_RULE_NAME_SEPARATOR = '_DB_TYPE_RULE_NAME_SEPARATOR_';
 
 const useRuleTips = () => {
   const [ruleTips, setRuleTips] = React.useState<IRuleTips[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
+  const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const updateRuleTips = React.useCallback(
     (projectName: string) => {
@@ -35,38 +36,24 @@ const useRuleTips = () => {
     [setFalse, setTrue]
   );
 
-  const generateRuleTipsSelectOptions = React.useCallback(() => {
-    return ruleTips.map((v) => {
-      return (
-        <Select.OptGroup
-          label={<DatabaseTypeLogo dbType={v.db_type ?? ''} />}
-          key={v.db_type}
-        >
-          {v.rule?.map((rule) => {
-            return (
-              <Select.Option
-                value={`${v.db_type}${DB_TYPE_RULE_NAME_SEPARATOR}${rule.rule_name}`}
-                label={rule.desc}
-                key={rule.rule_name}
-              >
-                <Typography.Paragraph
-                  className="clear-margin-bottom"
-                  ellipsis={{
-                    tooltip: {
-                      overlay: rule.desc
-                    },
-                    rows: 1
-                  }}
-                >
-                  {rule.desc}
-                </Typography.Paragraph>
-              </Select.Option>
-            );
-          })}
-        </Select.OptGroup>
-      );
+  const generateRuleTipsSelectOptions = useMemo(() => {
+    return ruleTips.map((value) => {
+      return {
+        label: (
+          <DatabaseTypeLogo
+            dbType={value.db_type ?? ''}
+            logoUrl={getLogoUrlByDbType(value.db_type ?? '')}
+          />
+        ),
+        options: (value?.rule ?? []).map((rule) => {
+          return {
+            label: rule.desc,
+            value: `${value.db_type}${DB_TYPE_RULE_NAME_SEPARATOR}${rule.rule_name}`
+          };
+        })
+      };
     });
-  }, [ruleTips]);
+  }, [ruleTips, getLogoUrlByDbType]);
 
   return {
     ruleTips,
