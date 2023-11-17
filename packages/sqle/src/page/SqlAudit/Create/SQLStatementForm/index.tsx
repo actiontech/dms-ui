@@ -8,10 +8,7 @@ import {
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
-import {
-  UploadItemTypeSpaceOccupyingStyleWrapper,
-  UploadTypeStyleWrapper
-} from '../../../Order/SQLStatementForm/style';
+import { UploadTypeStyleWrapper } from '../../../Order/SQLStatementForm/style';
 import UploadTypeItem from '../../../Order/SQLStatementForm/UploadTypeItem';
 import {
   IconOrderFileUpload,
@@ -91,7 +88,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
       />
       <div style={{ marginBottom: 16 }}>
         <UploadTypeStyleWrapper>
-          {SQLUploadTypeKeys.slice(0, 3).map((type) => {
+          {SQLUploadTypeKeys.map((type) => {
             return (
               <UploadTypeItem
                 key={`upload-item-${type}`}
@@ -107,25 +104,6 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
               </UploadTypeItem>
             );
           })}
-        </UploadTypeStyleWrapper>
-        <UploadTypeStyleWrapper style={{ marginTop: '12px' }}>
-          {SQLUploadTypeKeys.slice(3).map((type) => {
-            return (
-              <UploadTypeItem
-                key={`upload-item-${type}`}
-                onClick={() =>
-                  currentSQLInputTypeChange?.(UploadTypeEnum[type])
-                }
-                active={currentSQLInputType === UploadTypeEnum[type]}
-              >
-                {uploadItemIcon[type]}
-                <span className="text">
-                  {t(`sqlAudit.create.sqlInfo.uploadTypeEnum.${type}`)}
-                </span>
-              </UploadTypeItem>
-            );
-          })}
-          <UploadItemTypeSpaceOccupyingStyleWrapper />
         </UploadTypeStyleWrapper>
       </div>
       <EmptyBox
