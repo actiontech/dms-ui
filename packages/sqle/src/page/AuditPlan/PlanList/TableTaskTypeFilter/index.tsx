@@ -151,6 +151,12 @@ const TableTaskTypeFilter = (props: ITableTaskTypeFilter) => {
       return !enableData.includes(value as AuditPlanTypesV1InstanceTypeEnum);
     }
     if (type === enumComputedEnabledType.task) {
+      if (
+        dataSourceType === enumPageDefault.allTypeVal &&
+        taskType !== enumPageDefault.allTypeVal
+      ) {
+        return false;
+      }
       const currentRelationalData = Array.isArray(
         relationalData[dataSourceType]
       )
