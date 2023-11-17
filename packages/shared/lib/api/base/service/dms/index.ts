@@ -8,6 +8,9 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IGetBasicInfoReturn,
+  IGetCompanyNoticeReturn,
+  IUpdateCompanyNoticeParams,
+  IUpdateCompanyNoticeReturn,
   IGetFeishuConfigurationReturn,
   IUpdateFeishuConfigurationParams,
   IUpdateFeishuConfigurationReturn,
@@ -149,6 +152,26 @@ class DmsService extends ServiceBase {
     return this.get<IGetBasicInfoReturn>(
       '/v1/dms/basic_info',
       undefined,
+      options
+    );
+  }
+
+  public GetCompanyNotice(options?: AxiosRequestConfig) {
+    return this.get<IGetCompanyNoticeReturn>(
+      '/v1/dms/company_notice',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateCompanyNotice(
+    params: IUpdateCompanyNoticeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateCompanyNoticeReturn>(
+      '/v1/dms/company_notice',
+      paramsData,
       options
     );
   }
