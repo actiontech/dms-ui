@@ -10,6 +10,7 @@ import {
   FilterButtonLabelStyleWrapper
 } from '@actiontech/shared/lib/styleWrapper/element';
 
+import { AuditPlanTypesV1InstanceTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import useAuditPlanTypes from '../../../../hooks/useAuditPlanTypes';
 import { IAuditPlanTypesV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
@@ -46,60 +47,127 @@ const TableTaskTypeFilter = (props: ITableTaskTypeFilter) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    updateParams({
-      dataSourceType,
-      taskType
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dataSourceType, taskType]);
-
-  const { allDataSource, allTaskType, dataSourceGroupByTaskType, globalTask } =
-    useMemo(() => {
-      if (!auditPlanTypes.length) {
-        return {
-          allDataSource: [],
-          allTaskType: [],
-          dataSourceGroupByTaskType: {},
-          globalTask: []
-        };
-      }
-      const auditPlanTypesDictionary = groupBy(auditPlanTypes, 'instance_type');
-      const allDataSource = Object.keys(auditPlanTypesDictionary);
-      const dataKeysDictionary: { [key: string]: string[] } = {};
-      allDataSource.forEach((item: string) => {
-        dataKeysDictionary[item] = auditPlanTypesDictionary[item].map(
-          (subItem) => subItem.type ?? ''
-        );
-      });
-
+  const { allDataSource, allTaskType, relationalData } = useMemo(() => {
+    if (!auditPlanTypes.length) {
       return {
-        allDataSource,
-        allTaskType: auditPlanTypes,
-        dataSourceGroupByTaskType: dataKeysDictionary,
-        globalTask: dataKeysDictionary['']
+        allDataSource: [],
+        allTaskType: [],
+        relationalData: {}
       };
-    }, [auditPlanTypes]);
+    }
+    const auditPlanTypesDictionary = groupBy(auditPlanTypes, 'instance_type');
+    const allDataSource = Object.keys(auditPlanTypesDictionary);
 
-  const renderTaskTypeItem = () => {
-    return allTaskType.map((item: IAuditPlanTypesV1) => {
-      return (
-        <FilterButtonStyleWrapper
-          key={item.type}
-          size="small"
-          className={classNames('filter-btn', {
-            'checked-item': item.type === taskType
-          })}
-          onClick={() => onUpdateTaskType(item.type ?? '')}
-          disabled={computedEnabled(
-            item.type ?? '',
-            enumComputedEnabledType.task
-          )}
-        >
-          {item.desc}
-        </FilterButtonStyleWrapper>
-      );
+    const dataTypeSource: Set<string> = new Set();
+    const relationalData: {
+      [key: string]: {
+        desc?: string;
+        instance_type?: AuditPlanTypesV1InstanceTypeEnum;
+        type?: string;
+        showDesc?: IAuditPlanTypesV1['desc'];
+      }[];
+    } = {};
+    auditPlanTypes.forEach((item: IAuditPlanTypesV1) => {
+      const { instance_type, desc } = item;
+      // tidy type
+      const currentDesc =
+        desc && /Top\s+SQL$/i.test(desc)
+          ? 'Top SQL'
+          : desc ?? 'custom_action_desc';
+      currentDesc && dataTypeSource.add(currentDesc);
+      if (typeof instance_type === undefined) {
+        return;
+      }
+      const mainCateKey = instance_type ?? 'custom_action_main_cate';
+      if (!relationalData[mainCateKey]) {
+        relationalData[mainCateKey] = [
+          {
+            ...item,
+            showDesc: currentDesc
+          }
+        ];
+      } else {
+        relationalData[mainCateKey].push({
+          ...item,
+          showDesc: currentDesc
+        });
+      }
+      // child cate -> main cate
+      const typeCate = currentDesc ?? 'custom_action_type';
+      if (!relationalData[typeCate]) {
+        relationalData[typeCate] = [
+          {
+            ...item,
+            showDesc: currentDesc
+          }
+        ];
+      } else {
+        relationalData[typeCate].push({
+          ...item,
+          showDesc: currentDesc
+        });
+      }
     });
+
+    return {
+      allDataSource: allDataSource,
+      allTaskType: Array.from(dataTypeSource),
+      relationalData
+    };
+  }, [auditPlanTypes]);
+
+  const onUpdateDataSourceType = (value: string) => {
+    setDataSourceType(value === dataSourceType ? '' : value);
+  };
+
+  const onUpdateTaskType = (value: string) => {
+    setTaskType(value === taskType ? '' : value);
+  };
+
+  const computedEnabled = (value: string, type: string) => {
+    if (!value) {
+      return false;
+    }
+    if (
+      dataSourceType === enumPageDefault.allTypeVal &&
+      taskType === enumPageDefault.allTypeVal
+    ) {
+      return false;
+    }
+    if (type === enumComputedEnabledType.dataSource) {
+      const currentRelationalData = Array.isArray(relationalData[taskType])
+        ? relationalData[taskType]
+        : undefined;
+      if (!currentRelationalData) {
+        return false;
+      }
+      const enableData =
+        currentRelationalData.length === 1
+          ? [currentRelationalData[0]?.instance_type]
+          : currentRelationalData.map((item) => item?.instance_type);
+      if (enableData[0] === '') {
+        return false;
+      }
+      return !enableData.includes(value as AuditPlanTypesV1InstanceTypeEnum);
+    }
+    if (type === enumComputedEnabledType.task) {
+      const currentRelationalData = Array.isArray(
+        relationalData[dataSourceType]
+      )
+        ? relationalData[dataSourceType]
+        : undefined;
+      const globalRelationalData = Array.isArray(relationalData[''])
+        ? relationalData[''].map((item) => item.showDesc)
+        : [];
+      if (!currentRelationalData && !globalRelationalData.length) {
+        return false;
+      }
+      return ![
+        ...(currentRelationalData ?? []).map((item) => item.showDesc),
+        ...globalRelationalData
+      ].includes(value);
+    }
+    return false;
   };
 
   const renderDataSourceItem = () => {
@@ -122,63 +190,37 @@ const TableTaskTypeFilter = (props: ITableTaskTypeFilter) => {
       });
   };
 
-  const onUpdateTaskType = (value: string) => {
-    setTaskType(value === taskType ? '' : value);
-  };
-
-  const onUpdateDataSourceType = (value: string) => {
-    setDataSourceType(value === dataSourceType ? '' : value);
-  };
-
-  const computedEnabled = (value: string, type: string) => {
-    if (
-      type === enumComputedEnabledType.dataSource &&
-      globalTask.includes(taskType)
-    ) {
-      return false;
-    }
-    const compareData =
-      type === enumComputedEnabledType.dataSource
-        ? canClickData.dataType
-        : canClickData.taskType;
-    if (
-      typeof compareData === 'string' &&
-      compareData === enumPageDefault.computedEnabledVal
-    ) {
-      return false;
-    }
-    return !compareData.includes(value);
-  };
-
-  const canClickData = useMemo(() => {
-    let dataTypeData: string | string[] = enumPageDefault.computedEnabledVal;
-    let taskTypeData: string | string[] = enumPageDefault.computedEnabledVal;
-    if (dataSourceType) {
-      taskTypeData = (dataSourceGroupByTaskType[dataSourceType] ?? []).concat(
-        globalTask
+  const renderTaskTypeItem = () => {
+    return allTaskType.map((type) => {
+      return (
+        <FilterButtonStyleWrapper
+          key={type}
+          size="small"
+          className={classNames('filter-btn', {
+            'checked-item': type === taskType
+          })}
+          onClick={() => onUpdateTaskType(type ?? '')}
+          disabled={computedEnabled(type ?? '', enumComputedEnabledType.task)}
+        >
+          {type}
+        </FilterButtonStyleWrapper>
       );
-    } else {
-      taskTypeData = enumPageDefault.computedEnabledVal;
-    }
-    if (taskType) {
-      const filterIndex = Object.values(dataSourceGroupByTaskType).findIndex(
-        (type) => type.includes(taskType)
-      );
-      filterIndex !== -1 && (dataTypeData = allDataSource[filterIndex]);
-    } else {
-      dataTypeData = enumPageDefault.computedEnabledVal;
-    }
-    return {
-      dataType: dataTypeData,
-      taskType: taskTypeData
-    };
-  }, [
-    dataSourceType,
-    taskType,
-    dataSourceGroupByTaskType,
-    allDataSource,
-    globalTask
-  ]);
+    });
+  };
+
+  useEffect(() => {
+    const comTaskType =
+      taskType && taskType !== enumPageDefault.allTypeVal
+        ? Array.isArray(relationalData[taskType])
+          ? relationalData[taskType][0]?.type ?? ''
+          : ''
+        : '';
+    updateParams({
+      dataSourceType,
+      taskType: comTaskType
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dataSourceType, taskType]);
 
   return (
     <TableTaskTypeFilterStyleWrapper>
