@@ -1,0 +1,483 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyTemplate should match open modal when modal status is true 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal"
+          role="dialog"
+          style="width: 520px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                类似创建
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <form
+                class="ant-form ant-form-horizontal"
+              >
+                <div
+                  class="ant-form-item ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-col-xs-24 ant-col-sm-7"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="data_permission_template_name"
+                        title="权限模版"
+                      >
+                        权限模版
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control ant-col-xs-24 ant-col-sm-13"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            aria-required="true"
+                            class="ant-input ant-input-status-success"
+                            id="data_permission_template_name"
+                            readonly=""
+                            type="text"
+                            value="temp-1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-col-xs-24 ant-col-sm-7"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="name"
+                        title="权限模版名称"
+                      >
+                        权限模版名称
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control ant-col-xs-24 ant-col-sm-13"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            aria-required="true"
+                            class="ant-input"
+                            id="name"
+                            placeholder="请输入模版名称"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <button
+                class="ant-btn ant-btn-default"
+                type="button"
+              >
+                <span>
+                  关 闭
+                </span>
+              </button>
+              <button
+                class="ant-btn ant-btn-primary"
+                type="button"
+              >
+                <span>
+                  提 交
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`CopyTemplate should reset all fields when user close modal 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal"
+          role="dialog"
+          style="width: 520px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                类似创建
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <form
+                class="ant-form ant-form-horizontal"
+              >
+                <div
+                  class="ant-form-item ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-col-xs-24 ant-col-sm-7"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="data_permission_template_name"
+                        title="权限模版"
+                      >
+                        权限模版
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control ant-col-xs-24 ant-col-sm-13"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            aria-required="true"
+                            class="ant-input ant-input-status-success"
+                            id="data_permission_template_name"
+                            readonly=""
+                            type="text"
+                            value="temp-1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-col-xs-24 ant-col-sm-7"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="name"
+                        title="权限模版名称"
+                      >
+                        权限模版名称
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control ant-col-xs-24 ant-col-sm-13"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            aria-required="true"
+                            class="ant-input ant-input-status-success"
+                            id="name"
+                            placeholder="请输入模版名称"
+                            type="text"
+                            value="new-temp-1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <button
+                class="ant-btn ant-btn-default"
+                type="button"
+              >
+                <span>
+                  关 闭
+                </span>
+              </button>
+              <button
+                class="ant-btn ant-btn-primary"
+                type="button"
+              >
+                <span>
+                  提 交
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`CopyTemplate should reset all fields when user close modal 2`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-wrap"
+        style="display: none;"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal"
+          role="dialog"
+          style="width: 520px; display: none;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                类似创建
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <form
+                class="ant-form ant-form-horizontal"
+              >
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-col-xs-24 ant-col-sm-7"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="data_permission_template_name"
+                        title="权限模版"
+                      >
+                        权限模版
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control ant-col-xs-24 ant-col-sm-13"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            aria-required="true"
+                            class="ant-input"
+                            id="data_permission_template_name"
+                            readonly=""
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label ant-col-xs-24 ant-col-sm-7"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="name"
+                        title="权限模版名称"
+                      >
+                        权限模版名称
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control ant-col-xs-24 ant-col-sm-13"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            aria-required="true"
+                            class="ant-input"
+                            id="name"
+                            placeholder="请输入模版名称"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <button
+                ant-click-animating-without-extra-node="true"
+                class="ant-btn ant-btn-default"
+                type="button"
+              >
+                <span>
+                  关 闭
+                </span>
+              </button>
+              <button
+                class="ant-btn ant-btn-primary"
+                type="button"
+              >
+                <span>
+                  提 交
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <style
+    data-rc-order="append"
+    rc-util-key="antd-wave"
+  >
+    
+      [ant-click-animating-without-extra-node='true']::after, .ant-click-animating-node {
+        --antd-wave-shadow-color: buttonface;
+      }
+  </style>
+</body>
+`;
