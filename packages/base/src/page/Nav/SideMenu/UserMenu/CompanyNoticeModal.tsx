@@ -101,7 +101,6 @@ const CompanyNoticeModal: React.FC = () => {
     }
   }, [visible]);
 
-  /* IFTRUE_isEE */
   useEffect(() => {
     dispatch(
       initNavModalStatus({
@@ -111,7 +110,6 @@ const CompanyNoticeModal: React.FC = () => {
       })
     );
   }, [dispatch]);
-  /* FITRUE_isEE */
 
   return (
     <CompanyNoticeModalStyleWrapper
