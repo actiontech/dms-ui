@@ -1,43 +1,9 @@
 import { ANTD_PREFIX_STR } from '../../data/common';
 import { styled } from '@mui/material/styles';
 
-export const BasicDatePickerFieldStyleWrapper = styled('div')<{
+export const BasicDatePickerDropDownStyleWrapper = styled('div')<{
   hideSuperIcon: boolean;
 }>`
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  .prefix-icon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 99;
-  }
-
-  &
-    .${ANTD_PREFIX_STR}-picker:not(.${ANTD_PREFIX_STR}-picker-borderless):not(
-      .${ANTD_PREFIX_STR}-picker-focused
-    ) {
-    border: 1px solid
-      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
-  }
-
-  & .${ANTD_PREFIX_STR}-picker {
-    width: 100%;
-    padding-left: 40px !important;
-    border-radius: 4px !important;
-    &:hover:not(:focus):not(.${ANTD_PREFIX_STR}-picker-status-error):not(
-        .${ANTD_PREFIX_STR}-picker-disabled
-      ):not(.${ANTD_PREFIX_STR}-picker-focused):not(
-        .${ANTD_PREFIX_STR}-picker-borderless
-      ) {
-      border: ${({ theme }) =>
-        theme.sharedTheme.components.basicRangePicker.hover.border};
-    }
-  }
-
   .${ANTD_PREFIX_STR}-picker-dropdown {
     .${ANTD_PREFIX_STR}-picker-panel-layout
       .${ANTD_PREFIX_STR}-picker-panel
@@ -124,6 +90,46 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')<{
           height: 28px;
         }
       }
+    }
+  }
+`;
+
+export const BasicDatePickerFieldStyleWrapper = styled(
+  BasicDatePickerDropDownStyleWrapper
+)<{
+  hideSuperIcon: boolean;
+}>`
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .prefix-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+  }
+
+  &
+    .${ANTD_PREFIX_STR}-picker:not(.${ANTD_PREFIX_STR}-picker-borderless):not(
+      .${ANTD_PREFIX_STR}-picker-focused
+    ) {
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+  }
+
+  & .${ANTD_PREFIX_STR}-picker {
+    width: 100%;
+    padding-left: 40px !important;
+    border-radius: 4px !important;
+    &:hover:not(:focus):not(.${ANTD_PREFIX_STR}-picker-status-error):not(
+        .${ANTD_PREFIX_STR}-picker-disabled
+      ):not(.${ANTD_PREFIX_STR}-picker-focused):not(
+        .${ANTD_PREFIX_STR}-picker-borderless
+      ) {
+      border: ${({ theme }) =>
+        theme.sharedTheme.components.basicRangePicker.hover.border};
     }
   }
 `;
