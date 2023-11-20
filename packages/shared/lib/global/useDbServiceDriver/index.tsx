@@ -15,6 +15,7 @@ const useDbServiceDriver = () => {
     (state: IReduxState) => state.database.driverMeta
   );
   const [driverNameList, setDriverNameList] = React.useState<string[]>([]);
+  const [requestFetched, setRequestFetched] = React.useState(false);
 
   const { loading, run: updateDriverList } = useRequest(
     (projectId: string) =>
@@ -33,6 +34,9 @@ const useDbServiceDriver = () => {
       onError: () => {
         dispatch(updateDriverMeta([]));
         setDriverNameList([]);
+      },
+      onFinally: () => {
+        setRequestFetched(true);
       }
     }
   );
@@ -74,7 +78,9 @@ const useDbServiceDriver = () => {
     dbDriverOptions,
     updateDriverList,
     getLogoUrlByDbType,
-    generateDriverSelectOptions
+    generateDriverSelectOptions,
+    requestFetched,
+    setRequestFetched
   };
 };
 export default useDbServiceDriver;
