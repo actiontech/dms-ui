@@ -8,3 +8,10 @@ export const ProjectDescStyledWrapper = styled(Typography.Paragraph)`
     margin-bottom: 0;
   }
 `;
+
+export const ProjectArchiveStyledWrapper = styled('div')`
+  .project-flag-icon {
+    color: ${({ theme }) =>
+      theme.baseTheme.sideMenu.projectSelector.dropdown.activeIconColor};
+  }
+`;

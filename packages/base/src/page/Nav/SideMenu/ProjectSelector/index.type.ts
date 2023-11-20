@@ -6,6 +6,8 @@ export type RecentlyProjectsRecordType = Record<
   Pick<IUserBindProject, 'project_id' | 'project_name'>[]
 >;
 
+export type IBindProject = { archived: boolean } & IUserBindProject;
+
 export type ProjectSelectorProps = {
-  bindProjects?: IUserBindProject[];
+  bindProjects?: IBindProject[];
 } & CustomSelectProps;
