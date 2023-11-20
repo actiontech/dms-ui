@@ -5,8 +5,7 @@ import { projectList } from '../../testUtils/mockApi/project/data';
 describe('store/project', () => {
   const state: IReduxState['project'] = {
     selectProject: null,
-    modalStatus: {},
-    currentProjectArchive: false
+    modalStatus: {}
   };
 
   it('should create action', () => {

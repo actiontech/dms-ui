@@ -99,7 +99,8 @@ const useAuditOrder = () => {
           task_group_id: taskGroupInfo.data.data?.task_group_id,
           sql: sqlStatementInfo.sql,
           input_sql_file: sqlStatementInfo.sqlFile?.[0],
-          input_mybatis_xml_file: sqlStatementInfo.mybatisFile?.[0]
+          input_mybatis_xml_file: sqlStatementInfo.mybatisFile?.[0],
+          input_zip_file: sqlStatementInfo.zipFile?.[0]
         };
         const res = await task.auditTaskGroupIdV1(auditTaskPrams);
         if (res && res.data.code === ResponseCode.SUCCESS) {
@@ -143,7 +144,8 @@ const useAuditOrder = () => {
             instance_schema: instanceSchemaName,
             sql: sqlStatementInfo.sql,
             input_sql_file: sqlStatementInfo.sqlFile?.[0],
-            input_mybatis_xml_file: sqlStatementInfo.mybatisFile?.[0]
+            input_mybatis_xml_file: sqlStatementInfo.mybatisFile?.[0],
+            input_zip_file: sqlStatementInfo.zipFile?.[0]
           };
         });
 
