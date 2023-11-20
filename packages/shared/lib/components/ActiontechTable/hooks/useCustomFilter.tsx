@@ -159,7 +159,6 @@ const useCustomFilter = () => {
         }}
         disabledDate={disabledDate}
         {...props}
-        bordered={false}
         onChange={onChange}
         allowClear
         placeholder={[

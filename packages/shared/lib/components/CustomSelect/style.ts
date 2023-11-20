@@ -4,7 +4,8 @@ import BasicSelect from '../BasicSelect';
 import BasicInput from '../BasicInput/Input';
 
 export const CustomSelectStyleWrapper = styled(BasicSelect)`
-  &.${ANTD_PREFIX_STR}-select-borderless.custom-select-namespace {
+  &.${ANTD_PREFIX_STR}-select-borderless.custom-select-namespace
+    .${ANTD_PREFIX_STR}-select-selector {
     border-radius: 4px;
     border: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.border} !important;
