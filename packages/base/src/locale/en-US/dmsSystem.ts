@@ -196,5 +196,11 @@ export default {
         2. 提供运维专家团队多年的技术沉淀，并支持规则知识库的自主沉淀。
         3. 提供慢日志等十几种的 SQL智能扫描，覆盖事前事后 SQL 采集需求。
         4. 提供SQL全流程的管控视角，追踪问题SQL解决进度、并提供快捷优化。`
+  },
+  notification: {
+    title: '系统公告',
+    hasDirtyDataTips: '当前内容已经发生更改，是否确认取消修改？',
+    successMessage: '成功发布系统公告!',
+    notData: '暂无公告信息'
   }
 };
