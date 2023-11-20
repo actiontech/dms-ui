@@ -22,6 +22,7 @@ import {
   IUpdateWeChatConfiguration,
   ITestWeChatConfiguration,
   ITestWeChatConfigurationReply,
+  IListDBServiceDriverOptionReply,
   INotification,
   INotificationReply,
   IGetOauth2TipsReply,
@@ -42,7 +43,6 @@ import {
   IAddDBServiceReply,
   ICheckDbConnectable,
   ICheckDBServiceIsConnectableReply,
-  IListDBServiceDriverOptionReply,
   IUpdateDBService,
   IListMemberGroupsReply,
   IMemberGroup,
@@ -177,6 +177,9 @@ export interface ITestWeChatConfigurationParams {
 
 export interface ITestWeChatConfigurationReturn
   extends ITestWeChatConfigurationReply {}
+
+export interface IListDBServiceDriverOptionReturn
+  extends IListDBServiceDriverOptionReply {}
 
 export interface INotificationParams {
   notification?: INotification;
@@ -362,9 +365,6 @@ export interface ICheckDBServiceIsConnectableParams {
 
 export interface ICheckDBServiceIsConnectableReturn
   extends ICheckDBServiceIsConnectableReply {}
-
-export interface IListDBServiceDriverOptionReturn
-  extends IListDBServiceDriverOptionReply {}
 
 export interface IUpdateDBServiceParams {
   project_uid: string;
