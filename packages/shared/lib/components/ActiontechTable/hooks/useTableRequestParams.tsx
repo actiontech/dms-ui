@@ -64,7 +64,6 @@ const useTableRequestParams = <
 
   const tableChange = useCallback<Required<TableProps<R>>['onChange']>(
     (newPagination, _, sort) => {
-      console.log('sort', sort);
       setSortInfo(sort);
       if (
         newPagination.current !== pagination.page_index ||
