@@ -6,4 +6,5 @@ export type AuditResultForCreateListProps = {
   auditLevelFilterValue: AuditResultLevelFilterType;
   projectID: string;
   updateTaskRecordTotalNum?: (taskId: string, sqlNumber: number) => void;
+  dbType?: string;
 };

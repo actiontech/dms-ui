@@ -77,10 +77,9 @@ const useUserInfo = () => {
             })
           );
 
-          //todo
           dispatch(
             updateManagementPermissions({
-              managementPermissions: []
+              managementPermissions: data?.op_permissions ?? []
             })
           );
 

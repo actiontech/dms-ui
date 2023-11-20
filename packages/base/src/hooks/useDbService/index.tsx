@@ -1,10 +1,11 @@
+import React, { useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd5';
-import React from 'react';
+import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-import DatabaseTypeLogo from 'sqle/src/components/DatabaseTypeLogo';
 
 const useDbService = () => {
   const [dbServiceList, setDbServiceList] = React.useState<IListDBService[]>(
@@ -12,6 +13,7 @@ const useDbService = () => {
   );
 
   const [loading, { setTrue, setFalse }] = useBoolean();
+  const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const updateDbServiceList = React.useCallback(
     (project_uid: string) => {
@@ -45,7 +47,12 @@ const useDbService = () => {
     return dbTypeList.map((type) => {
       return (
         <Select.OptGroup
-          label={<DatabaseTypeLogo dbType={type ?? ''} />}
+          label={
+            <DatabaseTypeLogo
+              dbType={type ?? ''}
+              logoUrl={getLogoUrlByDbType(type ?? '')}
+            />
+          }
           key={type}
         >
           {dbServiceList
@@ -70,10 +77,19 @@ const useDbService = () => {
         </Select.OptGroup>
       );
     });
+  }, [dbServiceList, getLogoUrlByDbType]);
+
+  const dbServiceOptions = useMemo(() => {
+    return dbServiceList.map((item) => ({
+      value: item.uid,
+      text: item.name,
+      label: item.name
+    }));
   }, [dbServiceList]);
 
   return {
     dbServiceList,
+    dbServiceOptions,
     loading,
     updateDbServiceList,
     generateDbServiceSelectOption

@@ -16,6 +16,8 @@ export default {
   ruleTemplate: '规则模板',
   whitelist: '白名单',
   workflowTemplate: '流程模板',
+  sqlAudit: 'SQL审核',
+  sqlManagement: 'SQL管控',
   SQLOrder: 'SQL工单',
   auditPlan: '扫描任务',
   permissionGroup: '权限组',
@@ -25,8 +27,9 @@ export default {
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
-    notRecentlyOpenedProjects: '暂无最近打开的项目',
-    showMoreProject: '查看更多项目'
+    showMoreProjects: '查看更多项目',
+    belongProjects: '您所属的项目',
+    emptyDesc: '暂无项目'
   },
 
   groupLabel: {

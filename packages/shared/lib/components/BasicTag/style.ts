@@ -15,12 +15,23 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
     span:first-of-type {
       margin-right: 6px;
     }
+
+    .${ANTD_PREFIX_STR}-tag-close-icon {
+      margin-left: 6px;
+      margin-right: 2px !important;
+    }
+
+    &.basic-large-tag-wrapper,
+    &.basic-default-tag-wrapper {
+      font-size: 13px !important;
+    }
   }
 
   &.basic-tag-wrapper.basic-small-tag-wrapper.${ANTD_PREFIX_STR}-tag {
     height: 22px;
     line-height: 22px;
     padding: 0 6px;
+    font-size: 12px !important;
   }
 
   &.basic-tag-wrapper.basic-large-tag-wrapper.${ANTD_PREFIX_STR}-tag {
@@ -37,8 +48,8 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
 
   &.basic-tag-wrapper.${ANTD_PREFIX_STR}-tag:not(.basic-default-tag-wrapper) {
     color: ${({ color, theme }) =>
-      theme.sharedTheme.components.basicTag[color].color};
+      theme.sharedTheme.components.basicTag[color].color} !important;
     background: ${({ color, theme }) =>
-      theme.sharedTheme.components.basicTag[color].backgroundColor};
+      theme.sharedTheme.components.basicTag[color].backgroundColor} !important;
   }
 `;

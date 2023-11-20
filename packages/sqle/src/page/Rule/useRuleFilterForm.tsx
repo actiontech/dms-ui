@@ -11,6 +11,9 @@ import {
   TableFilterContainerProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { GetRuleListV1Params } from './index.data';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
+import { RuleListProjectFilterStyleWrapper } from './style';
 
 export enum RuleUrlParamKey {
   projectID = 'projectID',
@@ -20,49 +23,69 @@ export enum RuleUrlParamKey {
 const useRuleFilterForm = (
   getProjectTemplateRules: (
     projectName?: string,
-    ruleTemplateName?: string
+    ruleTemplateName?: string,
+    filter_fuzzy_text?: string
   ) => void,
-  getGlobalTemplateRules: (ruleTemplateName?: string) => void
+  getGlobalTemplateRules: (
+    ruleTemplateName?: string,
+    filter_fuzzy_text?: string
+  ) => void
 ) => {
   const { t } = useTranslation();
   const location = useLocation();
   const { bindProjects } = useCurrentUser();
 
   const [dbType, setDbType] = useState<string | undefined>(undefined);
-  const { updateDriverNameList, driverNameList } = useDatabaseType();
-  const { ruleTemplateList, updateRuleTemplateList } = useRuleTemplate();
-  const { globalRuleTemplateList, updateGlobalRuleTemplateList } =
-    useGlobalRuleTemplate();
+  const {
+    loading: getDriverNameListLoading,
+    dbTypeOptions,
+    driverNameList,
+    updateDriverNameList
+  } = useDatabaseType();
+  const {
+    loading: getProjectRuleTemplateListLoading,
+    ruleTemplateList,
+    updateRuleTemplateList
+  } = useRuleTemplate();
+  const {
+    loading: getGlobalRuleTemplateListLoading,
+    globalRuleTemplateList,
+    updateGlobalRuleTemplateList
+  } = useGlobalRuleTemplate();
   const [projectName, setProjectName] = useState<string>();
   const [ruleTemplateName, setRuleTemplateName] = useState<string>();
+  const [filterFuzzyCont, setFilterFuzzyCont] = useState<string>();
 
   const projectOptions: SelectProps['options'] = useMemo(() => {
     return bindProjects.map((v) => ({
-      label: v.project_name,
+      label: (
+        <RuleListProjectFilterStyleWrapper>
+          <TableColumnWithIconStyleWrapper>
+            <IconProjectFlag />
+            <span> {v.project_name} </span>
+          </TableColumnWithIconStyleWrapper>
+        </RuleListProjectFilterStyleWrapper>
+      ),
       value: v.project_name
     }));
   }, [bindProjects]);
-  const dbTypeOptions: SelectProps['options'] = useMemo(() => {
-    return driverNameList.map((v) => ({
-      label: v,
-      value: v
-    }));
-  }, [driverNameList]);
 
   const ruleTemplateOptions: SelectProps['options'] = useMemo(() => {
     const list = projectName ? ruleTemplateList : globalRuleTemplateList;
     const groupLabel = projectName
       ? t('rule.projectRuleTemplate')
       : t('rule.globalRuleTemplate');
-    return [
-      {
-        label: groupLabel,
-        options: list.map((v) => ({
-          label: v.rule_template_name,
-          value: v.rule_template_name
-        }))
-      }
-    ];
+    return list.length > 0
+      ? [
+          {
+            label: groupLabel,
+            options: list.map((v) => ({
+              label: v.rule_template_name,
+              value: v.rule_template_name
+            }))
+          }
+        ]
+      : [];
   }, [globalRuleTemplateList, projectName, ruleTemplateList, t]);
 
   const ruleFilterContainerCustomProps: TableFilterContainerProps<
@@ -75,9 +98,9 @@ const useRuleFilterForm = (
         return;
       }
       if (projectName) {
-        getProjectTemplateRules(projectName, name);
+        getProjectTemplateRules(projectName, name, filterFuzzyCont);
       } else {
-        getGlobalTemplateRules(name);
+        getGlobalTemplateRules(name, filterFuzzyCont);
       }
     };
 
@@ -89,7 +112,27 @@ const useRuleFilterForm = (
       }
     };
 
+    const fuzzyContChangeHandle = (fuzzyText: string) => {
+      setFilterFuzzyCont(fuzzyText);
+      if (projectName) {
+        ruleTemplateName &&
+          getProjectTemplateRules(projectName, ruleTemplateName, fuzzyText);
+      } else {
+        ruleTemplateName && getGlobalTemplateRules(ruleTemplateName, fuzzyText);
+      }
+    };
+
     return new Map<keyof GetRuleListV1Params, FilterCustomProps>([
+      [
+        'filter_fuzzy_text',
+        {
+          value: filterFuzzyCont,
+          onCustomPressEnter: fuzzyContChangeHandle,
+          style: { width: 300 },
+          allowClear: true,
+          placeholder: t('rule.form.fuzzy_text_placeholder')
+        }
+      ],
       [
         'project_name',
         {
@@ -103,6 +146,9 @@ const useRuleFilterForm = (
         'filter_rule_names',
         {
           options: ruleTemplateOptions,
+          loading: projectName
+            ? getProjectRuleTemplateListLoading
+            : getGlobalRuleTemplateListLoading,
           value: ruleTemplateName,
           onChange: ruleTemplateNameChangeHandle,
           style: { width: 300 }
@@ -112,8 +158,10 @@ const useRuleFilterForm = (
         'filter_db_type',
         {
           options: dbTypeOptions,
+          loading: getDriverNameListLoading,
           value: dbType,
           onChange: setDbType,
+          allowClear: false,
           disabled: !!ruleTemplateName,
           style: { width: 300 }
         }
@@ -122,13 +170,18 @@ const useRuleFilterForm = (
   }, [
     dbType,
     dbTypeOptions,
+    getDriverNameListLoading,
+    getGlobalRuleTemplateListLoading,
     getGlobalTemplateRules,
+    getProjectRuleTemplateListLoading,
     getProjectTemplateRules,
     projectName,
     projectOptions,
     ruleTemplateName,
     ruleTemplateOptions,
-    updateRuleTemplateList
+    updateRuleTemplateList,
+    filterFuzzyCont,
+    t
   ]);
 
   useEffect(() => {
@@ -173,9 +226,13 @@ const useRuleFilterForm = (
   return {
     projectName,
     ruleFilterContainerCustomProps,
+    getDriverNameListLoading,
+    getProjectRuleTemplateListLoading,
+    getGlobalRuleTemplateListLoading,
     dbType,
     setDbType,
-    ruleTemplateName
+    ruleTemplateName,
+    filterFuzzyCont
   };
 };
 
