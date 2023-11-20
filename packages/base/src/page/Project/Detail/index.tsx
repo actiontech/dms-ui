@@ -19,17 +19,18 @@ import { EmptyBox, HeaderProgress } from '@actiontech/shared';
 const ProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
-  const { loading: updateDriverListLoading, updateDriverList } =
+  const { requestFetched, setRequestFetched, updateDriverList } =
     useDbServiceDriver();
 
   /*
    * PS: 由于数据源logo存储方式的问题，现在项目入口处增加获取数据源logo并存入redux的逻辑
    */
   useEffect(() => {
+    setRequestFetched(false);
     if (nextProjectID) {
       updateDriverList(nextProjectID);
     }
-  }, [nextProjectID, updateDriverList]);
+  }, [nextProjectID, setRequestFetched, updateDriverList]);
   /* IFTRUE_isEE */
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
@@ -67,7 +68,7 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <EmptyBox
-      if={!!nextProjectID && !updateDriverListLoading}
+      if={requestFetched || !nextProjectID}
       defaultNode={<HeaderProgress />}
     >
       {/* IFTRUE_isEE */}

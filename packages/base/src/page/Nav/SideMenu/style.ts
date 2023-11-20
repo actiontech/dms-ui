@@ -41,7 +41,6 @@ export const SideMenuStyleWrapper = styled('div')`
         .label {
           text-align: center;
           font-feature-settings: 'case' on;
-          font-family: 'Plus Jakarta Sans';
           font-size: 18px;
           font-style: normal;
           font-weight: 700;
@@ -189,7 +188,6 @@ export const SideMenuStyleWrapper = styled('div')`
             padding: 8px 8px 0;
             color: ${({ theme }) =>
               theme.baseTheme.sideMenu.menu.groupLabelColor};
-            font-family: 'Plus Jakarta Sans';
             font-size: 12px;
             font-style: normal;
             font-weight: 500;

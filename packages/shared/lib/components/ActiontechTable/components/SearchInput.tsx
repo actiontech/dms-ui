@@ -17,6 +17,7 @@ const SearchInput: React.FC<TableSearchInputProps> = ({
   useKeyPress('enter', () => onSearch?.(searchValue), {
     target: () => document.getElementById('actiontech-table-search-input')
   });
+
   return (
     <SearchInputStyleWrapper
       id="actiontech-table-search-input"
@@ -26,7 +27,9 @@ const SearchInput: React.FC<TableSearchInputProps> = ({
         className
       )}
       placeholder={t('common.actiontechTable.searchInput.placeholder')}
-      onChange={(e) => setSearchValue(e.target.value)}
+      onChange={(e) => {
+        setSearchValue(e.target.value);
+      }}
       suffix={<IconSearch onClick={() => onSearch?.(searchValue)} />}
       {...props}
     />
