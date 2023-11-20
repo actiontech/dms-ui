@@ -15,7 +15,10 @@ import {
 import { updateTheme } from './store/user';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import {
+  useCurrentUser,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import {
   ConfigProvider as ConfigProviderV5,
@@ -37,6 +40,16 @@ import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import useSystemConfig from './hooks/useSystemConfig.tsx';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import updateLocale from 'dayjs/plugin/updateLocale';
+
+dayjs.extend(updateLocale);
+dayjs.updateLocale('zh-cn', {
+  weekStart: 0
+});
+
+Spin.setDefaultIndicator(<IconSpin />);
 
 //fix  https://github.com/actiontech/sqle/issues/1350
 export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -58,8 +71,6 @@ export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
   return <>{!initRenderApp && children}</>;
 };
 
-Spin.setDefaultIndicator(<IconSpin />);
-
 function App() {
   const { token, theme, role } = useSelector((state: IReduxState) => ({
     token: state.user.token,
@@ -75,6 +86,7 @@ function App() {
   const { getUserBySession } = useSessionUser();
 
   const { useInfoFetched } = useCurrentUser();
+  const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
 
   /* IFTRUE_isEE */
   const { syncWebTitleAndLogo } = useSystemConfig();
@@ -144,7 +156,7 @@ function App() {
   }, [theme]);
 
   const body = useMemo(() => {
-    if (!useInfoFetched) {
+    if (!useInfoFetched || !driverInfoFetched) {
       return <HeaderProgress />;
     }
 
@@ -153,13 +165,14 @@ function App() {
         <Suspense fallback={<HeaderProgress />}>{elements}</Suspense>
       </Nav>
     );
-  }, [useInfoFetched, elements]);
+  }, [useInfoFetched, driverInfoFetched, elements]);
 
   useEffect(() => {
     if (token) {
       getUserBySession({});
+      updateDriverList();
     }
-  }, [getUserBySession, token]);
+  }, [getUserBySession, token, updateDriverList]);
 
   return (
     <Wrapper>

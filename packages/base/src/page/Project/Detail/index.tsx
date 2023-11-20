@@ -2,10 +2,7 @@
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundRecentlyProject from './NotFoundRecentlyProject';
 /* FITRUE_isEE */
-import {
-  useCurrentProject,
-  useDbServiceDriver
-} from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useEffect } from 'react';
 import {
   Outlet,
@@ -14,23 +11,11 @@ import {
   useNavigate
   /* FITRUE_isCE */
 } from 'react-router-dom';
-import { EmptyBox, HeaderProgress } from '@actiontech/shared';
 
 const ProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
-  const { requestFetched, setRequestFetched, updateDriverList } =
-    useDbServiceDriver();
 
-  /*
-   * PS: 由于数据源logo存储方式的问题，现在项目入口处增加获取数据源logo并存入redux的逻辑
-   */
-  useEffect(() => {
-    setRequestFetched(false);
-    if (nextProjectID) {
-      updateDriverList(nextProjectID);
-    }
-  }, [nextProjectID, setRequestFetched, updateDriverList]);
   /* IFTRUE_isEE */
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
@@ -67,10 +52,7 @@ const ProjectDetail: React.FC = () => {
   /* FITRUE_isCE */
 
   return (
-    <EmptyBox
-      if={requestFetched || !nextProjectID}
-      defaultNode={<HeaderProgress />}
-    >
+    <>
       {/* IFTRUE_isEE */}
       {renderProjectDetail()}
       {/* FITRUE_isEE */}
@@ -78,7 +60,7 @@ const ProjectDetail: React.FC = () => {
       {/* IFTRUE_isCE */}
       <Outlet />
       {/* FITRUE_isCE */}
-    </EmptyBox>
+    </>
   );
 };
 
