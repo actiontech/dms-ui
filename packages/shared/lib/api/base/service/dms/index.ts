@@ -8,6 +8,9 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IGetBasicInfoReturn,
+  IGetCompanyNoticeReturn,
+  IUpdateCompanyNoticeParams,
+  IUpdateCompanyNoticeReturn,
   IGetFeishuConfigurationReturn,
   IUpdateFeishuConfigurationParams,
   IUpdateFeishuConfigurationReturn,
@@ -74,7 +77,6 @@ import {
   IAddDBServiceReturn,
   ICheckDBServiceIsConnectableParams,
   ICheckDBServiceIsConnectableReturn,
-  IListDBServiceDriverOptionParams,
   IListDBServiceDriverOptionReturn,
   IUpdateDBServiceParams,
   IUpdateDBServiceReturn,
@@ -149,6 +151,26 @@ class DmsService extends ServiceBase {
     return this.get<IGetBasicInfoReturn>(
       '/v1/dms/basic_info',
       undefined,
+      options
+    );
+  }
+
+  public GetCompanyNotice(options?: AxiosRequestConfig) {
+    return this.get<IGetCompanyNoticeReturn>(
+      '/v1/dms/company_notice',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateCompanyNotice(
+    params: IUpdateCompanyNoticeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateCompanyNoticeReturn>(
+      '/v1/dms/company_notice',
+      paramsData,
       options
     );
   }
@@ -614,17 +636,10 @@ class DmsService extends ServiceBase {
     );
   }
 
-  public ListDBServiceDriverOption(
-    params: IListDBServiceDriverOptionParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
+  public ListDBServiceDriverOption(options?: AxiosRequestConfig) {
     return this.get<IListDBServiceDriverOptionReturn>(
       `/v1/dms/projects/${project_uid}/db_services/driver_options`,
-      paramsData,
+      undefined,
       options
     );
   }

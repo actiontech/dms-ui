@@ -1,8 +1,10 @@
 import {
   IGetBasicInfoReply,
+  IGetCompanyNoticeReply,
+  IUpdateCompanyNotice,
+  IGenericResp,
   IGetFeishuConfigurationReply,
   IUpdateFeishuConfiguration,
-  IGenericResp,
   ITestFeishuConfiguration,
   ITestFeishuConfigurationReply,
   IGetLDAPConfigurationResDataReply,
@@ -89,6 +91,14 @@ import {
 } from './index.enum';
 
 export interface IGetBasicInfoReturn extends IGetBasicInfoReply {}
+
+export interface IGetCompanyNoticeReturn extends IGetCompanyNoticeReply {}
+
+export interface IUpdateCompanyNoticeParams {
+  company_notice?: IUpdateCompanyNotice;
+}
+
+export interface IUpdateCompanyNoticeReturn extends IGenericResp {}
 
 export interface IGetFeishuConfigurationReturn
   extends IGetFeishuConfigurationReply {}
@@ -352,10 +362,6 @@ export interface ICheckDBServiceIsConnectableParams {
 
 export interface ICheckDBServiceIsConnectableReturn
   extends ICheckDBServiceIsConnectableReply {}
-
-export interface IListDBServiceDriverOptionParams {
-  project_uid: string;
-}
 
 export interface IListDBServiceDriverOptionReturn
   extends IListDBServiceDriverOptionReply {}

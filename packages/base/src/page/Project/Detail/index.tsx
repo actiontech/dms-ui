@@ -51,10 +51,8 @@ const ProjectDetail: React.FC = () => {
    * PS: 由于数据源logo存储方式的问题，现在项目入口处增加获取数据源logo并存入redux的逻辑
    */
   useEffect(() => {
-    if (nextProjectID) {
-      updateDriverList(nextProjectID);
-    }
-  }, [nextProjectID, updateDriverList]);
+    updateDriverList();
+  }, [updateDriverList]);
   /* IFTRUE_isEE */
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
