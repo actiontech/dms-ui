@@ -18,7 +18,6 @@ const BasicRangePicker = (props: BasicRangePickerProps) => {
     className,
     suffixIcon,
     prefix,
-    size,
     hideSuperIcon = true,
     ...otherParams
   } = props;
@@ -40,7 +39,6 @@ const BasicRangePicker = (props: BasicRangePickerProps) => {
           className={classnames('basic-range-picker-wrapper', className, {
             'custom-picker-prefix': !suffixIcon && !!prefix
           })}
-          size={size}
           {...otherParams}
           /**
            * when both suffixIcon and prefix exist, the former will force the latter to be overwritten

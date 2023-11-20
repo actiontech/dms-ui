@@ -47,7 +47,7 @@ const Rule = () => {
         .getProjectRuleTemplateV1({
           rule_template_name: ruleTemplate ?? '',
           project_name: project ?? '',
-          fuzzy_keyword: filter_fuzzy_text ?? ''
+          fuzzy_rule_keyword: filter_fuzzy_text ?? ''
         })
         .then((res) => {
           setDbType(res.data.data?.db_type ?? '');
@@ -67,7 +67,7 @@ const Rule = () => {
       return rule_template
         .getRuleTemplateV1({
           rule_template_name: ruleTemplate ?? '',
-          fuzzy_keyword: filter_fuzzy_text ?? ''
+          fuzzy_rule_keyword: filter_fuzzy_text ?? ''
         })
         .then((res) => {
           setDbType(res.data.data?.db_type ?? '');
@@ -94,7 +94,7 @@ const Rule = () => {
       return rule_template
         .getRuleListV1({
           filter_db_type: dbType,
-          fuzzy_keyword: filterFuzzyCont
+          fuzzy_rule_keyword: filterFuzzyCont
         })
         .then((res) => res.data?.data ?? []);
     },

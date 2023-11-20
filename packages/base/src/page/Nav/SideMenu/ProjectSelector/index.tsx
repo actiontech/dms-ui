@@ -8,15 +8,15 @@ import {
 import { BasicButton, EmptyBox } from '@actiontech/shared';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
 import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
-import { ProjectSelectorProps } from './index.type';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import MockSelectItemOptions from './MockSelectItemOptions';
+import { ProjectSelectorProps } from './index.type';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
+  prefix,
   onChange,
   options,
   bindProjects,
@@ -86,7 +86,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   return (
     <ProjectSelectorStyleWrapper
       open={open}
-      prefix={<IconProjectFlag />}
+      prefix={prefix}
       size="large"
       className="custom-project-selector"
       placement="bottomLeft"
