@@ -39,6 +39,31 @@ const useRuleTemplate = () => {
     [setFalse, setTrue]
   );
 
+  const updateRuleTemplateListAsync = useCallback(
+    async (projectName: string, dbType?: string) => {
+      setTrue();
+      try {
+        const res = await rule_template.getProjectRuleTemplateTipsV1({
+          project_name: projectName,
+          filter_db_type: dbType
+        });
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setRuleTemplate(res.data?.data ?? []);
+          return res.data.data;
+        } else {
+          setRuleTemplate([]);
+          return [];
+        }
+      } catch (error) {
+        setRuleTemplate([]);
+        return [];
+      } finally {
+        setFalse();
+      }
+    },
+    [setFalse, setTrue]
+  );
+
   const generateRuleTemplateSelectOption = useCallback(
     (db_type: string = ruleTemplateListDefaultKey) => {
       let filterRuleTemplateList: IRuleTemplateTipResV1[] = [];
@@ -63,11 +88,33 @@ const useRuleTemplate = () => {
     [ruleTemplateList]
   );
 
+  const ruleTemplateTipsOptions = useCallback(
+    (dbType?: string) => {
+      let filterRuleTemplateList: IRuleTemplateTipResV1[] = [];
+      if (dbType !== ruleTemplateListDefaultKey) {
+        filterRuleTemplateList = ruleTemplateList.filter(
+          (i) => i.db_type === dbType
+        );
+      } else {
+        filterRuleTemplateList = ruleTemplateList;
+      }
+      return filterRuleTemplateList.map((template) => {
+        return {
+          label: template.rule_template_name,
+          value: template.rule_template_name
+        };
+      });
+    },
+    [ruleTemplateList]
+  );
+
   return {
     ruleTemplateList,
     loading,
     updateRuleTemplateList,
-    generateRuleTemplateSelectOption
+    generateRuleTemplateSelectOption,
+    updateRuleTemplateListAsync,
+    ruleTemplateTipsOptions
   };
 };
 

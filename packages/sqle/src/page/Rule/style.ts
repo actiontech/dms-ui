@@ -7,3 +7,12 @@ export const RuleListProjectFilterStyleWrapper = styled('div')`
     margin-right: 8px;
   }
 `;
+
+export const RuleListStyleWrapper = styled('section')`
+  .no-project-rule-template-empty-content {
+    .link-create-project-rule-template-btn {
+      color: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorPrimary} !important;
+    }
+  }
+`;

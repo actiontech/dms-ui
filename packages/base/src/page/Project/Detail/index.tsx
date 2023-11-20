@@ -52,7 +52,7 @@ const ProjectDetail: React.FC = () => {
    */
   useEffect(() => {
     if (nextProjectID) {
-      updateDriverList(nextProjectID);
+      updateDriverList();
     }
   }, [nextProjectID, updateDriverList]);
   /* IFTRUE_isEE */

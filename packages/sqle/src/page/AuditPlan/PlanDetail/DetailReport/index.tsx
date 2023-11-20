@@ -46,7 +46,6 @@ import {
   updateAuditPlanModalStatus
 } from '../../../../store/auditPlan';
 import DetailReportDrawer from './Drawer';
-import { RuleUrlParamKey } from '../../../../page/Rule/useRuleFilterForm';
 import { Spin, message } from 'antd5';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
@@ -231,9 +230,14 @@ const DetailReport = () => {
   const columns = useMemo(() => DetailReportListColumn(), []);
 
   const onSkipRule = () => {
-    if (!auditTask?.data?.rule_template_name) return;
+    if (
+      !auditTask?.data?.rule_template_name ||
+      !auditTask.data.audit_plan_db_type
+    )
+      return;
+
     navigate(
-      `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${auditTask?.data?.rule_template_name}&${RuleUrlParamKey.projectID}=${projectID}`
+      `/sqle/project/${projectID}/rule/template/detail/${auditTask.data.rule_template_name}/${auditTask.data.audit_plan_db_type}`
     );
   };
 
