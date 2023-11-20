@@ -6,6 +6,8 @@ import {
   IconProjectOverview,
   IconRuleTemplate,
   IconSQLOrder,
+  IconSqlAudit,
+  IconSqlManagement,
   IconTodoList,
   IconWhitelist,
   IconWorkflowTemplate
@@ -70,14 +72,14 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
       },
       {
         label: t('dmsMenu.sqlManagement'),
-        icon: <Icon component={IconSQLOrder} />,
+        icon: <Icon component={IconSqlManagement} />,
         key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sqlManagement`,
         onClick: () => navigate(`/sqle/project/${projectID}/sqlManagement`)
       },
       {
         label: t('dmsMenu.sqlAudit'),
         key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sqlAudit`,
-        icon: <Icon component={IconSQLOrder} />,
+        icon: <Icon component={IconSqlAudit} />,
         onClick: () => navigate(`/sqle/project/${projectID}/sqlAudit`)
       },
       {
