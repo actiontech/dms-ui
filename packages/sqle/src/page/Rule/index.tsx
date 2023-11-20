@@ -14,10 +14,6 @@ import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapp
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import { Link } from 'react-router-dom';
 import { RuleListStyleWrapper } from './style';
-import { useEffect } from 'react';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useCreateRuleTemplatePermission from './hooks/useCreateRuleTemplatePermission';
 
 const Rule = () => {

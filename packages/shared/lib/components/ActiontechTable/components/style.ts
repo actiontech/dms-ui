@@ -10,6 +10,11 @@ export const FilterContainerStyleWrapper = styled(Space)`
   background-color: ${({ theme }) =>
     theme.sharedTheme.components.filterContainer.backgroundColor};
   padding: 10px 40px;
+  margin-bottom: 0 !important;
+
+  & .${ANTD_PREFIX_STR}-space-item {
+    padding-bottom: 0 !important;
+  }
 `;
 
 export const SearchInputStyleWrapper = styled(BasicInput)`
@@ -106,6 +111,7 @@ export const ToolbarStyleWrapper = styled(Space)`
   background-color: ${({ theme }) =>
     theme.sharedTheme.components.toolbar.backgroundColor};
   padding: 14px 40px;
+  margin-bottom: 0 !important;
 
   .${ANTD_PREFIX_STR}-space-item {
     padding-bottom: 0 !important;

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
-import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInputCom';
+import CronInputCom from '@actiontech/shared/lib/components/CronInput';
 
 import { checkCron } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
 import { FormSubmitStatusContext } from '..';

@@ -11,7 +11,7 @@ export type BasicRangePickerProps = RangePickerProps & {
 };
 
 const BasicRangePicker = (props: BasicRangePickerProps) => {
-  const { className, suffixIcon, prefix, size, ...otherParams } = props;
+  const { className, suffixIcon, prefix, ...otherParams } = props;
 
   return (
     <ConfigProvider

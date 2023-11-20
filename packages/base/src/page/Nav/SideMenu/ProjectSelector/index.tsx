@@ -1,22 +1,23 @@
-import { InputRef, SelectProps } from 'antd5';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { InputRef, SelectProps } from 'antd5';
+import { BasicButton, EmptyBox } from '@actiontech/shared';
+import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import { IconRightArrowSelectSuffix } from '@actiontech/shared/lib/Icon';
 import {
   ProjectSelectorPopupMenuStyleWrapper,
   ProjectSelectorStyleWrapper
 } from './style';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
-import { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
-import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
-import { ProjectSelectorProps } from './index.type';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import MockSelectItemOptions from './MockSelectItemOptions';
+import { ProjectSelectorProps } from './index.type';
+import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
+  prefix,
   onChange,
   options,
   bindProjects,
@@ -26,6 +27,9 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   const [open, setOpen] = useState(false);
   const searchInputRef = useRef<InputRef>(null);
   const [searchValue, setSearchValue] = useState('');
+  const [lastActiveMenuItem, setLastActiveMenuItem] = useState<
+    Element | undefined
+  >();
 
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     const filterBindProjects = (bindProjects ?? []).filter((v) =>
@@ -33,6 +37,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
         ?.toLocaleLowerCase()
         .includes(searchValue.toLocaleLowerCase())
     );
+
     return (
       <>
         <ProjectSelectorPopupMenuStyleWrapper>
@@ -44,7 +49,26 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
           <div className="select-options-group-label">
             {t('dmsMenu.projectSelector.recentlyOpenedProjects')}
           </div>
-          <CustomSelectPopupMenuStyleWrapper>
+          <CustomSelectPopupMenuStyleWrapper
+            onMouseEnter={() => {
+              // 当移入menu范围时，如果原本有hover active的选项，还原active类
+              if (lastActiveMenuItem) {
+                lastActiveMenuItem?.classList.add(
+                  `${ANTD_PREFIX_STR}-select-item-option-active`
+                );
+              }
+            }}
+            onMouseLeave={() => {
+              // 当移出menu范围时，移除所有‘antd-v5-select-item-option-active’，避免出现同时有2个hover类的option
+              const activeSelectItem = document.querySelectorAll(
+                `.${ANTD_PREFIX_STR}-select-item.${ANTD_PREFIX_STR}-select-item-option.${ANTD_PREFIX_STR}-select-item-option-active`
+              )[0];
+              setLastActiveMenuItem(activeSelectItem);
+              activeSelectItem?.classList.remove(
+                `${ANTD_PREFIX_STR}-select-item-option-active`
+              );
+            }}
+          >
             {menu}
           </CustomSelectPopupMenuStyleWrapper>
 
@@ -86,7 +110,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   return (
     <ProjectSelectorStyleWrapper
       open={open}
-      prefix={<IconProjectFlag />}
+      prefix={prefix}
       size="large"
       className="custom-project-selector"
       placement="bottomLeft"

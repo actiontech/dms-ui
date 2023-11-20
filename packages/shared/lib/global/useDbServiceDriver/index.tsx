@@ -15,30 +15,31 @@ const useDbServiceDriver = () => {
     (state: IReduxState) => state.database.driverMeta
   );
   const [driverNameList, setDriverNameList] = React.useState<string[]>([]);
+  const [driverInfoFetched, setDriverInfoFetched] = React.useState(false);
 
   const {
     loading,
     run: updateDriverList,
     runAsync: updateDriverListSync
-  } = useRequest(
-    () => dms.ListDBServiceDriverOption({ project_uid: '700200' }),
-    {
-      manual: true,
-      onSuccess: (res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          dispatch(updateDriverMeta(res.data.data ?? []));
-          setDriverNameList(res.data.data?.map((v) => v.db_type ?? '') ?? []);
-        } else {
-          dispatch(updateDriverMeta([]));
-          setDriverNameList([]);
-        }
-      },
-      onError: () => {
+  } = useRequest(() => dms.ListDBServiceDriverOption(), {
+    manual: true,
+    onSuccess: (res) => {
+      if (res.data.code === ResponseCode.SUCCESS) {
+        dispatch(updateDriverMeta(res.data.data ?? []));
+        setDriverNameList(res.data.data?.map((v) => v.db_type ?? '') ?? []);
+      } else {
         dispatch(updateDriverMeta([]));
         setDriverNameList([]);
       }
+    },
+    onError: () => {
+      dispatch(updateDriverMeta([]));
+      setDriverNameList([]);
+    },
+    onFinally: () => {
+      setDriverInfoFetched(true);
     }
-  );
+  });
 
   const getLogoUrlByDbType = useCallback(
     (dbType: string) => {
@@ -78,7 +79,9 @@ const useDbServiceDriver = () => {
     updateDriverList,
     updateDriverListSync,
     getLogoUrlByDbType,
-    generateDriverSelectOptions
+    generateDriverSelectOptions,
+    driverInfoFetched,
+    setDriverInfoFetched
   };
 };
 export default useDbServiceDriver;
