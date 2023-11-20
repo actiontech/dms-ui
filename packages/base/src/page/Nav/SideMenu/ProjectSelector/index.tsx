@@ -13,6 +13,7 @@ import {
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
 import MockSelectItemOptions from './MockSelectItemOptions';
 import { ProjectSelectorProps } from './index.type';
+import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
@@ -53,18 +54,18 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
               // 当移入menu范围时，如果原本有hover active的选项，还原active类
               if (lastActiveMenuItem) {
                 lastActiveMenuItem?.classList.add(
-                  'antd-v5-select-item-option-active'
+                  `${ANTD_PREFIX_STR}-select-item-option-active`
                 );
               }
             }}
             onMouseLeave={() => {
               // 当移出menu范围时，移除所有‘antd-v5-select-item-option-active’，避免出现同时有2个hover类的option
               const activeSelectItem = document.querySelectorAll(
-                '.antd-v5-select-item.antd-v5-select-item-option.antd-v5-select-item-option-active'
+                `.${ANTD_PREFIX_STR}-select-item.${ANTD_PREFIX_STR}-select-item-option.${ANTD_PREFIX_STR}-select-item-option-active`
               )[0];
               setLastActiveMenuItem(activeSelectItem);
               activeSelectItem?.classList.remove(
-                'antd-v5-select-item-option-active'
+                `${ANTD_PREFIX_STR}-select-item-option-active`
               );
             }}
           >
