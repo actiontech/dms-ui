@@ -42,11 +42,12 @@ const Rule = () => {
     loading: getProjectTemplateRulesLoading,
     run: getProjectTemplateRules
   } = useRequest(
-    (project?: string, ruleTemplate?: string) =>
+    (project?: string, ruleTemplate?: string, filter_fuzzy_text?: string) =>
       rule_template
         .getProjectRuleTemplateV1({
           rule_template_name: ruleTemplate ?? '',
-          project_name: project ?? ''
+          project_name: project ?? '',
+          fuzzy_keyword: filter_fuzzy_text ?? ''
         })
         .then((res) => {
           setDbType(res.data.data?.db_type ?? '');
@@ -62,15 +63,17 @@ const Rule = () => {
     loading: getGlobalTemplateRulesLoading,
     run: getGlobalTemplateRules
   } = useRequest(
-    (ruleTemplate?: string) =>
-      rule_template
+    (ruleTemplate?: string, filter_fuzzy_text?: string) => {
+      return rule_template
         .getRuleTemplateV1({
-          rule_template_name: ruleTemplate ?? ''
+          rule_template_name: ruleTemplate ?? '',
+          fuzzy_keyword: filter_fuzzy_text ?? ''
         })
         .then((res) => {
           setDbType(res.data.data?.db_type ?? '');
           return res.data?.data?.rule_list ?? [];
-        }),
+        });
+    },
     {
       manual: true
     }
@@ -82,19 +85,22 @@ const Rule = () => {
     dbType,
     setDbType,
     projectName,
-    ruleTemplateName
+    ruleTemplateName,
+    filterFuzzyCont
   } = useRuleFilterForm(getProjectTemplateRules, getGlobalTemplateRules);
 
   const { data: allRules, loading: getAllRulesLoading } = useRequest(
-    () =>
-      rule_template
+    () => {
+      return rule_template
         .getRuleListV1({
-          filter_db_type: dbType
+          filter_db_type: dbType,
+          fuzzy_keyword: filterFuzzyCont
         })
-        .then((res) => res.data?.data ?? []),
+        .then((res) => res.data?.data ?? []);
+    },
     {
       ready: !!dbType,
-      refreshDeps: [dbType]
+      refreshDeps: [dbType, filterFuzzyCont]
     }
   );
 

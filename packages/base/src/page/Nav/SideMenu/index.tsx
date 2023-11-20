@@ -119,11 +119,10 @@ const SideMenu: React.FC = () => {
   }, [refreshProjectList]); // 防止刷新时，项目列表未更新，导致项目列表不显示
 
   return (
-    <Spin spinning={getProjectListLoading}>
-      <SideMenuStyleWrapper className="dms-layout-side">
-        <div className="dms-layout-side-start">
-          <ProjectTitle />
-
+    <SideMenuStyleWrapper className="dms-layout-side">
+      <div className="dms-layout-side-start">
+        <ProjectTitle />
+        <Spin spinning={getProjectListLoading}>
           <ProjectSelector
             value={currentProjectID}
             prefix={
@@ -137,18 +136,18 @@ const SideMenu: React.FC = () => {
             options={projectSelectorOptions}
             bindProjects={bindProjectsWithArchiveStatus}
           />
+        </Spin>
 
-          <MenuList projectID={currentProjectID ?? ''} isAdmin={isAdmin} />
-        </div>
+        <MenuList projectID={currentProjectID ?? ''} isAdmin={isAdmin} />
+      </div>
 
-        <UserMenu
-          username={username}
-          updateTheme={updateTheme}
-          isAdmin={isAdmin}
-          theme={theme}
-        />
-      </SideMenuStyleWrapper>
-    </Spin>
+      <UserMenu
+        username={username}
+        updateTheme={updateTheme}
+        isAdmin={isAdmin}
+        theme={theme}
+      />
+    </SideMenuStyleWrapper>
   );
 };
 
