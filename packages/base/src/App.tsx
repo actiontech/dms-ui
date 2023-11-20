@@ -36,6 +36,15 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 import useSystemConfig from './hooks/useSystemConfig.tsx';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import updateLocale from 'dayjs/plugin/updateLocale';
+
+dayjs.extend(updateLocale);
+dayjs.updateLocale('zh-cn', {
+  weekStart: 0
+});
+
 Spin.setDefaultIndicator(<IconSpin />);
 
 function App() {
