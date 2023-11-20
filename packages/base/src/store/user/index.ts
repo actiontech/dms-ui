@@ -10,12 +10,14 @@ import {
   IUserBindProject
 } from '@actiontech/shared/lib/api/base/service/common';
 
+export type IBindProject = { archived?: boolean } & IUserBindProject;
+
 type UserReduxState = {
   username: string;
   role: SystemRole | '';
   token: string;
   theme: SupportTheme;
-  bindProjects: Array<IUserBindProject>;
+  bindProjects: Array<IBindProject>;
   managementPermissions: IUidWithName[];
   uid: string;
   useInfoFetched: boolean;
@@ -66,7 +68,7 @@ const user = createSlice({
       state,
       {
         payload: { bindProjects }
-      }: PayloadAction<{ bindProjects: IUserBindProject[] }>
+      }: PayloadAction<{ bindProjects: IBindProject[] }>
     ) => {
       state.bindProjects = bindProjects;
     },
