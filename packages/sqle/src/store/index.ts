@@ -5,6 +5,7 @@ import auditPlan from './auditPlan';
 import reportStatistics from './reportStatistics';
 import globalRuleTemplate from './globalRuleTemplate';
 import sqleManagement from './sqleManagement';
+import database from '../../../base/src/store/database';
 
 export const SQLEStoreData = {
   whitelist,
@@ -16,7 +17,7 @@ export const SQLEStoreData = {
 };
 
 const store = configureStore({
-  reducer: SQLEStoreData
+  reducer: { ...SQLEStoreData, database }
 });
 
 export type IReduxState = ReturnType<typeof store.getState>;

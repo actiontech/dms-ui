@@ -36,6 +36,7 @@ import {
   IUpdateWeChatConfigurationReturn,
   ITestWeChatConfigurationParams,
   ITestWeChatConfigurationReturn,
+  IListDBServiceDriverOptionReturn,
   INotificationParams,
   INotificationReturn,
   IGetOauth2TipsReturn,
@@ -77,7 +78,6 @@ import {
   IAddDBServiceReturn,
   ICheckDBServiceIsConnectableParams,
   ICheckDBServiceIsConnectableReturn,
-  IListDBServiceDriverOptionReturn,
   IUpdateDBServiceParams,
   IUpdateDBServiceReturn,
   IDelDBServiceParams,
@@ -335,6 +335,14 @@ class DmsService extends ServiceBase {
     return this.post<ITestWeChatConfigurationReturn>(
       '/v1/dms/configurations/wechat/test',
       paramsData,
+      options
+    );
+  }
+
+  public ListDBServiceDriverOption(options?: AxiosRequestConfig) {
+    return this.get<IListDBServiceDriverOptionReturn>(
+      '/v1/dms/db_services/driver_options',
+      undefined,
       options
     );
   }
@@ -632,14 +640,6 @@ class DmsService extends ServiceBase {
     return this.post<ICheckDBServiceIsConnectableReturn>(
       `/v1/dms/projects/${project_uid}/db_services/connection`,
       paramsData,
-      options
-    );
-  }
-
-  public ListDBServiceDriverOption(options?: AxiosRequestConfig) {
-    return this.get<IListDBServiceDriverOptionReturn>(
-      `/v1/dms/projects/${project_uid}/db_services/driver_options`,
-      undefined,
       options
     );
   }
