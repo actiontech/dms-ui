@@ -5,16 +5,13 @@ import { Select, SelectProps } from 'antd5';
 import { IDriverMeta } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { useSelector } from 'react-redux';
-import { IReduxState } from '../../store';
+import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 
 const useDatabaseType = () => {
   const [driverNameList, setDriverNameList] = useState<string[]>([]);
   const [driverMeta, setDriverMeta] = useState<IDriverMeta[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
-  const dbServiceDrivers = useSelector(
-    (state: IReduxState) => state.database.driverMeta
-  );
+  const { driverMeta: dbServiceDrivers } = useDbServiceDriver();
 
   const getLogoUrlByDbType = useCallback(
     (dbType: string) => {
