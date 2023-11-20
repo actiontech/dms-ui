@@ -6,13 +6,11 @@ import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
 type ProjectReduxState = {
   modalStatus: ModalStatus;
   selectProject: IListProject | null;
-  currentProjectArchive: boolean;
 };
 
 const initialState: ProjectReduxState = {
   modalStatus: {},
-  selectProject: null,
-  currentProjectArchive: false
+  selectProject: null
 };
 
 const project = createSlice({
@@ -25,16 +23,12 @@ const project = createSlice({
     ) {
       state.selectProject = project;
     },
-    updateCurrentProjectArchive(state, { payload }: PayloadAction<boolean>) {
-      state.currentProjectArchive = payload;
-    },
     ...commonModalReducer()
   }
 });
 
 export const {
   updateSelectProject,
-  updateCurrentProjectArchive,
   initModalStatus: initProjectModalStatus,
   updateModalStatus: updateProjectModalStatus
 } = project.actions;
