@@ -93,9 +93,11 @@ export const PlanListAction = (
 };
 
 const PlanListColumn: (
-  projectID: string
+  projectID: string,
+  getLogoUrlByDbType: (dbType: string) => string
 ) => ActiontechTableColumn<IAuditPlanResV2, PlanListTableFilterParamType> = (
-  projectID
+  projectID,
+  getLogoUrlByDbType
 ) => {
   return [
     {
@@ -142,10 +144,7 @@ const PlanListColumn: (
         }
 
         return (
-          <DatabaseTypeLogo
-            dbType={type}
-            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
-          />
+          <DatabaseTypeLogo dbType={type} logoUrl={getLogoUrlByDbType(type)} />
         );
       }
     },

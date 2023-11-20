@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '../../../data/common';
+import { ANTD_PREFIX_STR } from '../../data/common';
 
 export const CronSelectStyleWrapper = styled('section')`
   border: 1px solid
