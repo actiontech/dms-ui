@@ -176,6 +176,12 @@ export interface ICheckDbConnectable {
   user: string;
 }
 
+export interface ICompanyNotice {
+  notice_str?: string;
+
+  read_by_current_user?: boolean;
+}
+
 export interface IComponentNameWithVersion {
   name?: string;
 
@@ -290,6 +296,14 @@ export interface IGetBasicInfoReply {
   code?: number;
 
   data?: IBasicInfo;
+
+  message?: string;
+}
+
+export interface IGetCompanyNoticeReply {
+  code?: number;
+
+  data?: ICompanyNotice;
 
   message?: string;
 }
@@ -1070,6 +1084,10 @@ export interface IUidWithName {
   name?: string;
 
   uid?: string;
+}
+
+export interface IUpdateCompanyNotice {
+  notice_str?: string;
 }
 
 export interface IUpdateCurrentUser {

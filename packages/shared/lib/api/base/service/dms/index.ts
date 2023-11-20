@@ -8,6 +8,9 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IGetBasicInfoReturn,
+  IGetCompanyNoticeReturn,
+  IUpdateCompanyNoticeParams,
+  IUpdateCompanyNoticeReturn,
   IGetFeishuConfigurationReturn,
   IUpdateFeishuConfigurationParams,
   IUpdateFeishuConfigurationReturn,
@@ -33,6 +36,7 @@ import {
   IUpdateWeChatConfigurationReturn,
   ITestWeChatConfigurationParams,
   ITestWeChatConfigurationReturn,
+  IListDBServiceDriverOptionReturn,
   INotificationParams,
   INotificationReturn,
   IGetOauth2TipsReturn,
@@ -74,8 +78,6 @@ import {
   IAddDBServiceReturn,
   ICheckDBServiceIsConnectableParams,
   ICheckDBServiceIsConnectableReturn,
-  IListDBServiceDriverOptionParams,
-  IListDBServiceDriverOptionReturn,
   IUpdateDBServiceParams,
   IUpdateDBServiceReturn,
   IDelDBServiceParams,
@@ -116,6 +118,7 @@ import {
   IDelRoleReturn,
   IAddSessionParams,
   IAddSessionReturn,
+  IDelSessionReturn,
   IGetUserBySessionParams,
   IGetUserBySessionReturn,
   IListUserGroupsParams,
@@ -149,6 +152,26 @@ class DmsService extends ServiceBase {
     return this.get<IGetBasicInfoReturn>(
       '/v1/dms/basic_info',
       undefined,
+      options
+    );
+  }
+
+  public GetCompanyNotice(options?: AxiosRequestConfig) {
+    return this.get<IGetCompanyNoticeReturn>(
+      '/v1/dms/company_notice',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateCompanyNotice(
+    params: IUpdateCompanyNoticeParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateCompanyNoticeReturn>(
+      '/v1/dms/company_notice',
+      paramsData,
       options
     );
   }
@@ -313,6 +336,14 @@ class DmsService extends ServiceBase {
     return this.post<ITestWeChatConfigurationReturn>(
       '/v1/dms/configurations/wechat/test',
       paramsData,
+      options
+    );
+  }
+
+  public ListDBServiceDriverOption(options?: AxiosRequestConfig) {
+    return this.get<IListDBServiceDriverOptionReturn>(
+      '/v1/dms/db_services/driver_options',
+      undefined,
       options
     );
   }
@@ -614,21 +645,6 @@ class DmsService extends ServiceBase {
     );
   }
 
-  public ListDBServiceDriverOption(
-    params: IListDBServiceDriverOptionParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
-    return this.get<IListDBServiceDriverOptionReturn>(
-      `/v1/dms/projects/${project_uid}/db_services/driver_options`,
-      paramsData,
-      options
-    );
-  }
-
   public UpdateDBService(
     params: IUpdateDBServiceParams,
     options?: AxiosRequestConfig
@@ -905,6 +921,14 @@ class DmsService extends ServiceBase {
     return this.post<IAddSessionReturn>(
       '/v1/dms/sessions',
       paramsData,
+      options
+    );
+  }
+
+  public DelSession(options?: AxiosRequestConfig) {
+    return this.delete<IDelSessionReturn>(
+      '/v1/dms/sessions',
+      undefined,
       options
     );
   }
