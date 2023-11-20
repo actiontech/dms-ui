@@ -2,6 +2,7 @@ import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 import { Typography } from 'antd5';
 import { BasicModal } from '@actiontech/shared';
+import { NotificationFilled } from '@ant-design/icons';
 
 export const SideMenuStyleWrapper = styled('div')`
   &.dms-layout-side {
@@ -373,4 +374,19 @@ export const VersionModalStyleWrapper = styled(BasicModal)`
   &.version-modal {
     width: 720px !important;
   }
+`;
+
+export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
+  &.company-notice-modal {
+    width: 720px !important;
+
+    .${ANTD_PREFIX_STR}-modal-body {
+      max-height: 600px;
+    }
+  }
+`;
+
+export const CompanyNoticeIconStyleWrapper = styled(NotificationFilled)`
+  color: ${({ theme }) =>
+    theme.sharedTheme.basic.colorFontGrayByWhite} !important;
 `;

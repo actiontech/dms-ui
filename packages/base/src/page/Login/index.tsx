@@ -10,6 +10,13 @@ import { BasicInput, BasicButton } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
+/* IFTRUE_isEE */
+import { LocalStorageWrapper } from '@actiontech/shared';
+import {
+  StorageKey,
+  CompanyNoticeDisplayStatusEnum
+} from '@actiontech/shared/lib/enum';
+/* FITRUE_isEE */
 
 const Login = () => {
   const { t } = useTranslation();
@@ -46,6 +53,12 @@ const Login = () => {
             })
           );
         }
+        /* IFTRUE_isEE */
+        LocalStorageWrapper.set(
+          StorageKey.SHOW_COMPANY_NOTICE,
+          CompanyNoticeDisplayStatusEnum.NotDisplayed
+        );
+        /* FITRUE_isEE */
       })
       .finally(() => {
         setFalse();
