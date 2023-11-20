@@ -26,7 +26,6 @@ const useDbServiceDriver = () => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateDriverMeta(res.data.data ?? []));
           setDriverNameList(res.data.data?.map((v) => v.db_type ?? '') ?? []);
-          setRequestFetched(true);
         } else {
           dispatch(updateDriverMeta([]));
           setDriverNameList([]);
@@ -35,6 +34,9 @@ const useDbServiceDriver = () => {
       onError: () => {
         dispatch(updateDriverMeta([]));
         setDriverNameList([]);
+      },
+      onFinally: () => {
+        setRequestFetched(true);
       }
     }
   );
