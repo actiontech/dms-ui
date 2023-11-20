@@ -16,9 +16,12 @@ const useDbServiceDriver = () => {
   );
   const [driverNameList, setDriverNameList] = React.useState<string[]>([]);
 
-  const { loading, run: updateDriverList } = useRequest(
-    (projectId: string) =>
-      dms.ListDBServiceDriverOption({ project_uid: projectId }),
+  const {
+    loading,
+    run: updateDriverList,
+    runAsync: updateDriverListSync
+  } = useRequest(
+    () => dms.ListDBServiceDriverOption({ project_uid: '700200' }),
     {
       manual: true,
       onSuccess: (res) => {
@@ -73,6 +76,7 @@ const useDbServiceDriver = () => {
     driverMeta,
     dbDriverOptions,
     updateDriverList,
+    updateDriverListSync,
     getLogoUrlByDbType,
     generateDriverSelectOptions
   };

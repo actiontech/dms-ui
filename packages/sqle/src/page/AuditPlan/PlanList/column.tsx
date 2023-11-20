@@ -12,7 +12,6 @@ import {
 import { Link } from 'react-router-dom';
 import { t } from '../../../locale';
 import { IconOrderId } from '../../../icon/Order';
-import { RuleUrlParamKey } from '../../Rule/useRuleFilterForm';
 import TokenCom from './TableTaskTypeFilter/component/TokenCom';
 import { ModalName } from '../../../data/ModalName';
 import { BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
@@ -153,14 +152,14 @@ const PlanListColumn: (
     {
       dataIndex: 'rule_template',
       title: () => t('auditPlan.list.table.audit_rule_template'),
-      render(ruleTemplate: IAuditPlanResV2['rule_template']) {
+      render(ruleTemplate: IAuditPlanResV2['rule_template'], record) {
         if (!ruleTemplate?.name) {
           return '';
         }
 
         const path = ruleTemplate.is_global_rule_template
-          ? `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${ruleTemplate.name}`
-          : `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${ruleTemplate.name}&${RuleUrlParamKey.projectID}=${projectID}`;
+          ? `/sqle/ruleManager/globalDetail/${ruleTemplate.name}/${record.audit_plan_db_type}}`
+          : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}}`;
 
         return <Link to={path}>{ruleTemplate.name}</Link>;
       }

@@ -25,7 +25,6 @@ import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { Link } from 'react-router-dom';
-import { RuleUrlParamKey } from '../../../Rule/useRuleFilterForm';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import useTestDatabaseConnect from '../hooks/useTestDatabaseConnect';
@@ -110,7 +109,10 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
         if (res.data.code === ResponseCode.SUCCESS) {
           setRuleTemplates((values) => {
             const cloneValue = cloneDeep(values);
-            cloneValue.set(fieldKey, res.data.data?.rule_template);
+            cloneValue.set(fieldKey, {
+              dbType: res.data.data?.db_type ?? '',
+              ...res.data.data?.rule_template
+            });
             return cloneValue;
           });
         }
@@ -170,13 +172,9 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
         );
       }
 
-      let path = '';
-
-      if (rule.is_global_rule_template) {
-        path = `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${rule.name}`;
-      } else {
-        path = `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${rule.name}&${RuleUrlParamKey.projectID}=${projectID}`;
-      }
+      const path = rule.is_global_rule_template
+        ? `/sqle/ruleManager/globalDetail/${rule.name}/${rule.dbType}`
+        : `/sqle/project/${projectID}/rule/template/detail/${rule.name}/${rule.dbType}`;
 
       return (
         <BasicToolTips
