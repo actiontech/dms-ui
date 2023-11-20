@@ -12,9 +12,9 @@ import { Form, Space } from 'antd5';
 import useStaticStatus from '../../../hooks/useStaticStatus';
 import AutoCreatedFormItemByApi from '../../../components/BackendForm/AutoCreatedFormItemByApi';
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
-import { RuleTemplateFormStyleWrapper } from './style';
 import { IRuleTemplateForm } from './index.type';
 import { IRuleParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import RuleBaseInfo from '../../../components/RuleList/RuleDetailModal/RuleBaseInfo';
 
 export type IEditRuleTemplate = {
   visible: boolean;
@@ -119,35 +119,7 @@ const EditRuleTemplate = (props: IEditRuleTemplate) => {
         <Form.Item hidden={true} name="rule_name">
           <BasicInput />
         </Form.Item>
-        <Form.Item label={t('ruleTemplate.editModal.rule')} name="desc">
-          <RuleTemplateFormStyleWrapper>
-            {dataSource?.desc}
-          </RuleTemplateFormStyleWrapper>
-        </Form.Item>
-        <Form.Item
-          label={t('ruleTemplate.editModal.annotation')}
-          name="annotation"
-        >
-          <RuleTemplateFormStyleWrapper>
-            {dataSource?.annotation}
-          </RuleTemplateFormStyleWrapper>
-        </Form.Item>
-        <Form.Item
-          label={t('ruleTemplate.editModal.ruleTypeLabel')}
-          name="type"
-        >
-          <RuleTemplateFormStyleWrapper>
-            {dataSource?.type}
-          </RuleTemplateFormStyleWrapper>
-        </Form.Item>
-        <Form.Item
-          label={t('ruleTemplate.editModal.ruleDbType')}
-          name="db_type"
-        >
-          <RuleTemplateFormStyleWrapper>
-            {dataSource?.db_type}
-          </RuleTemplateFormStyleWrapper>
-        </Form.Item>
+        <RuleBaseInfo dataSource={props.dataSource} />
         <Form.Item
           label={t('ruleTemplate.editModal.ruleLevelLabel')}
           name="level"

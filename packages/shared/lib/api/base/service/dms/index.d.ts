@@ -330,6 +330,8 @@ export interface IListDBServicesParams {
   filter_by_db_type?: string;
 
   project_uid: string;
+
+  fuzzy_keyword?: string;
 }
 
 export interface IListDBServicesReturn extends IListDBServiceReply {}

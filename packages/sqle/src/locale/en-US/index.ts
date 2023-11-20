@@ -10,6 +10,9 @@ import whitelist from './whitelist';
 import system from './system';
 import reportStatistics from './reportStatistics';
 import projectManage from './projectManage';
+import ruleKnowledge from './ruleKnowledge';
+import sqlManagement from './sqlManagement';
+import sqlAudit from './sqlAudit';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -25,6 +28,9 @@ export default {
     whitelist,
     system,
     reportStatistics,
-    projectManage
+    projectManage,
+    ruleKnowledge,
+    sqlManagement,
+    sqlAudit
   }
 };

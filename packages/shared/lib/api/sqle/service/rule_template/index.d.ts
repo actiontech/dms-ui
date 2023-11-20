@@ -90,6 +90,8 @@ export interface IGetProjectRuleTemplateV1Params {
   project_name: string;
 
   rule_template_name: string;
+
+  fuzzy_rule_keyword?: string;
 }
 
 export interface IGetProjectRuleTemplateV1Return
@@ -126,6 +128,24 @@ export interface IExportProjectRuleTemplateV1Params {
 
   rule_template_name: string;
 }
+
+export interface IGetCustomRuleKnowledgeV1Params {
+  rule_name: string;
+
+  db_type: string;
+}
+
+export interface IGetCustomRuleKnowledgeV1Return
+  extends IGetRuleKnowledgeResV1 {}
+
+export interface IUpdateCustomRuleKnowledgeParams
+  extends IUpdateRuleKnowledgeReq {
+  rule_name: string;
+
+  db_type: string;
+}
+
+export interface IUpdateCustomRuleKnowledgeReturn extends IBaseRes {}
 
 export interface IGetRuleKnowledgeV1Params {
   rule_name: string;
@@ -171,6 +191,8 @@ export interface IImportProjectRuleTemplateV1Return
 
 export interface IGetRuleTemplateV1Params {
   rule_template_name: string;
+
+  fuzzy_rule_keyword?: string;
 }
 
 export interface IGetRuleTemplateV1Return extends IGetRuleTemplateResV1 {}
@@ -199,6 +221,8 @@ export interface IExportRuleTemplateV1Params {
 
 export interface IGetRuleListV1Params {
   filter_db_type?: string;
+
+  fuzzy_rule_keyword?: string;
 
   filter_global_rule_template_name?: string;
 

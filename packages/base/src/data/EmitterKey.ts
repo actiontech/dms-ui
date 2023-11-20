@@ -12,7 +12,8 @@ enum EmitterKey {
   DMS_SYNC_TASK_RESET_FORM = 'DMS_SYNC_TASK_RESET_FORM',
   Update_Recently_Opened_Projects = 'Update_Recently_Opened_Projects',
   Update_Current_Project_ID = 'Update_Current_Project_ID',
-  DMS_Refresh_License_List = 'DMS_REFRESH_LICENSE_LIST'
+  DMS_Refresh_License_List = 'DMS_REFRESH_LICENSE_LIST',
+  DMS_Sync_Project_Archived_Status = 'DMS_Sync_Project_Archived_Status'
 }
 
 export default EmitterKey;

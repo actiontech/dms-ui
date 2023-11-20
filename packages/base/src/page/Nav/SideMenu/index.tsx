@@ -1,56 +1,82 @@
-import {
-  CEModeProjectWrapperStyleWrapper,
-  SideMenuStyleWrapper
-} from './style';
+import { useCallback, useEffect, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { SelectProps, Spin } from 'antd5';
+import { useRequest } from 'ahooks';
+import { SideMenuStyleWrapper } from './style';
 import ProjectSelector from './ProjectSelector';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useCallback, useMemo } from 'react';
-import { useBoolean } from 'ahooks';
-import { sideMenuData } from './menu.data';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
-import { Menu, MenuProps, SelectProps, Typography } from 'antd5';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
-import { SubMenuType } from 'antd5/es/menu/hooks/useItems';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
-import UserNavigate from './UserNavigate';
-import GlobalSetting from './GlobalSetting';
-import VersionModal from './VersionModal';
-import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
 import {
-  DEFAULT_PROJECT_ID,
-  DEFAULT_PROJECT_NAME
-} from '@actiontech/shared/lib/data/common';
-import useSystemConfig from '../../../hooks/useSystemConfig.tsx';
-import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
+  IconProjectFlag,
+  IconProjectArchived
+} from '@actiontech/shared/lib/Icon/common';
+import UserMenu from './UserMenu';
+import ProjectTitle from './ProjectTitle';
+import MenuList from './MenuList';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IBindProject } from './ProjectSelector/index.type';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+import { useDispatch } from 'react-redux';
+import { updateBindProjects } from '../../../store/user';
 
-export const SideMenu: React.FC = () => {
+const SideMenu: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  let currentProjectID = '';
+  const dispatch = useDispatch();
 
-  const [
-    versionModalOpen,
-    { setTrue: setVersionModalOpen, setFalse: setVersionModalClose }
-  ] = useBoolean();
+  const { username, theme, updateTheme, isAdmin, bindProjects } =
+    useCurrentUser();
 
-  const { renderWebTitle } = useSystemConfig();
+  const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
 
-  const { username, theme, updateTheme, isAdmin } = useCurrentUser();
+  const {
+    data: projectList,
+    loading: getProjectListLoading,
+    refresh: refreshProjectList
+  } = useRequest(
+    () =>
+      dms
+        .ListProjects({ page_size: 9999 })
+        .then((res) => res?.data?.data ?? []),
+    {
+      refreshDeps: [currentProjectID],
+      onSuccess: (res) => {
+        const newBindProjects = bindProjects.map((item) => {
+          const archived =
+            res.find((project) => project.uid === item.project_id)?.archived ??
+            false;
 
-  /* IFTRUE_isEE */
-  const { recentlyProjects, currentProjectID: id } =
-    useRecentlyOpenedProjects();
+          return { ...item, archived };
+        });
 
-  currentProjectID = id ?? '';
+        dispatch(
+          updateBindProjects({
+            bindProjects: newBindProjects
+          })
+        );
+      }
+    }
+  );
+
+  const getProjectArchived = useCallback(
+    (itemProjectId: string) =>
+      (projectList ?? []).find((project) => project.uid === itemProjectId)
+        ?.archived ?? false,
+    [projectList]
+  );
 
   const projectSelectorOptions = useMemo<SelectProps['options']>(() => {
     return recentlyProjects.map((v) => {
+      const isProjectArchived = getProjectArchived(v?.project_id ?? '');
+
       return {
         value: v.project_id,
         label: (
           <ProjectSelectorLabelStyleWrapper>
-            <IconProjectFlag />
+            {isProjectArchived ? <IconProjectArchived /> : <IconProjectFlag />}
+
             <span className="project-selector-label-text">
               {v.project_name}
             </span>
@@ -59,117 +85,67 @@ export const SideMenu: React.FC = () => {
         text: v.project_name
       };
     });
-  }, [recentlyProjects]);
+  }, [getProjectArchived, recentlyProjects]);
+
+  const bindProjectsWithArchiveStatus = useMemo<IBindProject[]>(
+    () =>
+      bindProjects.map((v) => {
+        const isProjectArchived = getProjectArchived(v?.project_id ?? '');
+
+        return {
+          ...v,
+          archived: isProjectArchived
+        };
+      }),
+    [bindProjects, getProjectArchived]
+  );
+
+  const isCurrentProjectArchived = useMemo(
+    () => getProjectArchived(currentProjectID ?? ''),
+    [currentProjectID, getProjectArchived]
+  );
 
   const projectSelectorChangeHandle: CustomSelectProps['onChange'] = (id) => {
     navigate(`/sqle/project/${id}/overview`);
   };
-  /* FITRUE_isEE */
 
-  /* IFTRUE_isCE */
-  currentProjectID = DEFAULT_PROJECT_ID;
-  /* FITRUE_isCE */
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.DMS_Sync_Project_Archived_Status,
+      refreshProjectList
+    );
 
-  const menuItems = useMemo(
-    () => sideMenuData(navigate, isAdmin, currentProjectID),
-    [navigate, isAdmin, currentProjectID]
-  );
-
-  const selectMenu = useCallback(
-    (config: MenuProps['items'] = [], pathname: string): string[] => {
-      for (const route of config) {
-        if (!route) {
-          return [];
-        }
-        const realPath = `/${route?.key}`.replace(
-          SIDE_MENU_DATA_PLACEHOLDER_KEY,
-          currentProjectID ?? ''
-        );
-        if (realPath === pathname) {
-          return [(route.key as string) ?? ''];
-        }
-        if (route) {
-          const children = (route as SubMenuType).children;
-          if (children) {
-            const keys = selectMenu(children, pathname);
-            if (keys.length > 0) {
-              return keys;
-            }
-          }
-        }
-      }
-      return [];
-    },
-    [currentProjectID]
-  );
-
-  const selectMenuWrapper = useMemo((): string[] => {
-    let pathname = location.pathname;
-    let selectKey: string[] = [];
-    while (pathname.length > 0) {
-      selectKey = selectMenu(menuItems, pathname);
-      if (selectKey.length !== 0) {
-        return selectKey;
-      } else {
-        const temp = pathname.split('/');
-        temp.pop();
-        pathname = temp.join('/');
-      }
-    }
-    return selectKey;
-  }, [location.pathname, menuItems, selectMenu]);
+    return unsubscribe;
+  }, [refreshProjectList]); // 防止刷新时，项目列表未更新，导致项目列表不显示
 
   return (
     <SideMenuStyleWrapper className="dms-layout-side">
       <div className="dms-layout-side-start">
-        <div
-          onClick={() => {
-            navigate('/');
-          }}
-        >
-          {renderWebTitle()}
-        </div>
+        <ProjectTitle />
+        <Spin spinning={getProjectListLoading}>
+          <ProjectSelector
+            value={currentProjectID}
+            prefix={
+              isCurrentProjectArchived ? (
+                <IconProjectArchived />
+              ) : (
+                <IconProjectFlag />
+              )
+            }
+            onChange={projectSelectorChangeHandle}
+            options={projectSelectorOptions}
+            bindProjects={bindProjectsWithArchiveStatus}
+          />
+        </Spin>
 
-        {/* IFTRUE_isEE */}
-        <ProjectSelector
-          value={currentProjectID}
-          onChange={projectSelectorChangeHandle}
-          options={projectSelectorOptions}
-        />
-        {/* FITRUE_isEE */}
-
-        {/* IFTRUE_isCE */}
-        <CEModeProjectWrapperStyleWrapper>
-          <IconProjectFlag />
-          <Typography.Text className="default-project-name">
-            {DEFAULT_PROJECT_NAME}
-          </Typography.Text>
-        </CEModeProjectWrapperStyleWrapper>
-        {/* FITRUE_isCE */}
-
-        <Menu
-          className="custom-menu"
-          mode="inline"
-          items={menuItems}
-          selectedKeys={selectMenuWrapper}
-        />
+        <MenuList projectID={currentProjectID ?? ''} isAdmin={isAdmin} />
       </div>
 
-      <div className="dms-layout-side-end">
-        <UserNavigate
-          username={username}
-          setVersionModalOpen={setVersionModalOpen}
-        />
-        <GlobalSetting
-          theme={theme}
-          updateTheme={updateTheme}
-          isAdmin={isAdmin}
-        />
-      </div>
-
-      <VersionModal
-        open={versionModalOpen}
-        setVersionModalClose={setVersionModalClose}
+      <UserMenu
+        username={username}
+        updateTheme={updateTheme}
+        isAdmin={isAdmin}
+        theme={theme}
       />
     </SideMenuStyleWrapper>
   );

@@ -15,7 +15,8 @@ export default {
     ruleTemplate: '规则模板',
     dbType: '数据库类型',
     ruleTemplateTips:
-      '当未选择项目时, 当前规则模板为全局规则模板, 选择后为项目下的规则模板'
+      '当未选择项目时, 当前规则模板为全局规则模板, 选择后为项目下的规则模板',
+    fuzzy_text_placeholder: '请输入规则关键词搜索'
   },
   ruleLevelIcon: {
     normal: '普通',
@@ -23,5 +24,9 @@ export default {
     warn: '告警',
     error: '错误',
     toolTipsTitle: '告警等级: {{ruleLevel}}({{text}})'
+  },
+  ruleDetail: {
+    title: '查看规则',
+    knowledge: '规则知识库'
   }
 };

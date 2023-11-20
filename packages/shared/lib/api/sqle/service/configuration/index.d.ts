@@ -4,10 +4,12 @@ import {
   IBaseRes,
   ITestDingTalkConfigResV1,
   IGetDriversResV1,
+  IGetFeishuAuditConfigurationResV1,
+  IUpdateFeishuConfigurationReqV1,
+  ITestFeishuConfigurationReqV1,
+  ITestFeishuConfigResV1,
   IGetLicenseResV1,
   ICheckLicenseResV1,
-  IPersonaliseReqV1,
-  IUploadLogoResV1,
   IGetSystemVariablesResV1,
   IUpdateSystemVariablesReqV1,
   IGetDriversRes
@@ -25,6 +27,20 @@ export interface ITestDingTalkConfigV1Return extends ITestDingTalkConfigResV1 {}
 
 export interface IGetDriversV1Return extends IGetDriversResV1 {}
 
+export interface IGetFeishuAuditConfigurationV1Return
+  extends IGetFeishuAuditConfigurationResV1 {}
+
+export interface IUpdateFeishuAuditConfigurationV1Params
+  extends IUpdateFeishuConfigurationReqV1 {}
+
+export interface IUpdateFeishuAuditConfigurationV1Return extends IBaseRes {}
+
+export interface ITestFeishuAuditConfigV1Params
+  extends ITestFeishuConfigurationReqV1 {}
+
+export interface ITestFeishuAuditConfigV1Return
+  extends ITestFeishuConfigResV1 {}
+
 export interface IGetSQLELicenseV1Return extends IGetLicenseResV1 {}
 
 export interface ISetSQLELicenseV1Params {
@@ -39,25 +55,11 @@ export interface ICheckSQLELicenseV1Params {
 
 export interface ICheckSQLELicenseV1Return extends ICheckLicenseResV1 {}
 
-export interface IPersonaliseParams extends IPersonaliseReqV1 {}
-
-export interface IPersonaliseReturn extends IBaseRes {}
-
-export interface IUploadLogoParams {
-  logo: any;
-}
-
-export interface IUploadLogoReturn extends IUploadLogoResV1 {}
-
 export interface IGetSystemVariablesV1Return extends IGetSystemVariablesResV1 {}
 
 export interface IUpdateSystemVariablesV1Params
   extends IUpdateSystemVariablesReqV1 {}
 
 export interface IUpdateSystemVariablesV1Return extends IBaseRes {}
-
-export interface IGetLogoParams {
-  timestamp?: string;
-}
 
 export interface IGetDriversV2Return extends IGetDriversRes {}

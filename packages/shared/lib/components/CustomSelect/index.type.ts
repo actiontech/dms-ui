@@ -1,7 +1,15 @@
-import { SelectProps } from 'antd5';
+import { InputRef, SelectProps } from 'antd5';
+import { RefObject } from 'react';
 
 export type CustomSelectProps = {
   prefix?: React.ReactNode;
   valuePrefix?: React.ReactNode;
-  dropdownSlot?: React.ReactNode;
+  searchInputRef?: RefObject<CustomSelectSearchInputRefType>;
 } & SelectProps;
+
+export type CustomSelectSearchInputProps = {
+  value?: string;
+  onChange?: (val: string) => void;
+};
+
+export type CustomSelectSearchInputRefType = InputRef;

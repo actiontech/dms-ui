@@ -10,6 +10,11 @@ export const FilterContainerStyleWrapper = styled(Space)`
   background-color: ${({ theme }) =>
     theme.sharedTheme.components.filterContainer.backgroundColor};
   padding: 10px 40px;
+  margin-bottom: 0 !important;
+
+  & .${ANTD_PREFIX_STR}-space-item {
+    padding-bottom: 0 !important;
+  }
 `;
 
 export const SearchInputStyleWrapper = styled(BasicInput)`
@@ -106,6 +111,7 @@ export const ToolbarStyleWrapper = styled(Space)`
   background-color: ${({ theme }) =>
     theme.sharedTheme.components.toolbar.backgroundColor};
   padding: 14px 40px;
+  margin-bottom: 0 !important;
 
   .${ANTD_PREFIX_STR}-space-item {
     padding-bottom: 0 !important;
@@ -121,7 +127,7 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
     border-radius: 4px;
   }
 
-  .${ANTD_PREFIX_STR}-picker-input:first-child {
+  .${ANTD_PREFIX_STR}-picker-input:first-of-type {
     width: 88%;
   }
 
@@ -213,6 +219,15 @@ export const InlineTableActionMoreButtonPopoverStyleWrapper = styled('div')`
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+
+  .more-button-item-disabled {
+    cursor: not-allowed;
+    color: ${({ theme }) => theme.sharedTheme.basic.colorFontGrayByWhite};
+
+    &:hover {
+      background-color: inherit;
     }
   }
 `;

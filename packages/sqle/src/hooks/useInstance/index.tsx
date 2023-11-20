@@ -1,11 +1,11 @@
 import { useBoolean } from 'ahooks';
-import { Select } from 'antd';
+import { Select } from 'antd5';
 import { useMemo, useState, useCallback } from 'react';
 import { ResponseCode } from '../../data/common';
 import { instanceListDefaultKey } from '../../data/common';
-import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
 import { IGetInstanceTipListV1Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
 import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { DatabaseTypeLogo } from '@actiontech/shared';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 
 const useInstance = () => {
@@ -51,7 +51,12 @@ const useInstance = () => {
       return instanceTypeList.map((type) => {
         return (
           <Select.OptGroup
-            label={<DatabaseTypeLogo dbType={type} />}
+            label={
+              <DatabaseTypeLogo
+                dbType={type}
+                logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+              />
+            }
             key={type}
           >
             {filterInstanceList
@@ -81,11 +86,39 @@ const useInstance = () => {
     );
     return instanceTypeList.map((type) => {
       return {
-        label: <DatabaseTypeLogo dbType={type} />,
+        label: (
+          <DatabaseTypeLogo
+            dbType={type}
+            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+          />
+        ),
         options: instanceList
           .filter((v) => v.instance_type === type)
           .map((v) => ({
             value: v.instance_name,
+            label: `${v.instance_name}(${v.host}:${v.port})`
+          }))
+      };
+    });
+  }, [instanceList]);
+
+  //todo: 筛选项 val 为 id
+  const instanceIDOptions = useMemo(() => {
+    const instanceTypeList: string[] = Array.from(
+      new Set(instanceList.map((v) => v.instance_type ?? ''))
+    );
+    return instanceTypeList.map((type) => {
+      return {
+        label: (
+          <DatabaseTypeLogo
+            dbType={type}
+            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+          />
+        ),
+        options: instanceList
+          .filter((v) => v.instance_type === type)
+          .map((v) => ({
+            value: v.instance_id,
             label: `${v.instance_name}(${v.host}:${v.port})`
           }))
       };
@@ -97,7 +130,8 @@ const useInstance = () => {
     loading,
     updateInstanceList,
     generateInstanceSelectOption,
-    instanceOptions
+    instanceOptions,
+    instanceIDOptions
   };
 };
 

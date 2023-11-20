@@ -21,4 +21,4 @@ export type BackendFormProps = {
   isFullLine?: boolean;
 };
 
-export { default } from './BackendForm';
+export { default } from './AutoCreatedFormItemByApi';

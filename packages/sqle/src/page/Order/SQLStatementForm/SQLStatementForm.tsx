@@ -13,6 +13,8 @@ import {
 import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import UploadType from './UploadType';
+import EmitterKey from '../../../data/EmitterKey';
+import EventEmitter from '../../../utils/EventEmitter';
 
 const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   form,
@@ -33,8 +35,10 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
       form.resetFields([
         generateFieldName('sql'),
         generateFieldName('sqlFile'),
-        generateFieldName('mybatisFile')
+        generateFieldName('mybatisFile'),
+        generateFieldName('zipFile')
       ]);
+      // setCurrentSQLInputTYpe(SQLInputType.manualInput);
     }
   };
 
@@ -66,6 +70,17 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
       });
     }
   }, [fieldName, form, sqlStatement]);
+
+  useEffect(() => {
+    const reset = () => {
+      setCurrentSQLInputTYpe(SQLInputType.manualInput);
+    };
+    EventEmitter.subscribe(EmitterKey.Reset_Create_Order_Form, reset);
+    return () => {
+      EventEmitter.unsubscribe(EmitterKey.Reset_Create_Order_Form, reset);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -144,10 +159,32 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
           getValueFromEvent={getFileFromUploadChangeEvent}
         >
           <CustomDraggerUpload
-            accept=".sql"
+            accept=".xml"
             beforeUpload={() => false}
-            onRemove={removeFile.bind(null, 'sqlFile')}
+            onRemove={removeFile.bind(null, 'mybatisFile')}
             title={t('order.sqlInfo.mybatisFileTips')}
+          />
+        </FormItemNoLabel>
+      </EmptyBox>
+      <EmptyBox if={currentSQLInputType === SQLInputType.zipFile}>
+        <FormItemNoLabel
+          valuePropName="fileList"
+          name={generateFieldName('zipFile')}
+          rules={[
+            {
+              required: true,
+              message: t('common.form.placeholder.select', {
+                name: t('order.sqlInfo.zipFile')
+              })
+            }
+          ]}
+          getValueFromEvent={getFileFromUploadChangeEvent}
+        >
+          <CustomDraggerUpload
+            accept=".zip"
+            beforeUpload={() => false}
+            onRemove={removeFile.bind(null, 'zipFile')}
+            title={t('order.sqlInfo.zipFileTips')}
           />
         </FormItemNoLabel>
       </EmptyBox>

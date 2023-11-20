@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import DingTalkSetting from './DingTalkSetting';
+import LarkAuditSetting from './LarkAuditSetting';
 
 const ProcessConnection = () => {
   const { t } = useTranslation();
@@ -10,6 +11,7 @@ const ProcessConnection = () => {
         {t('dmsSystem.tabPaneTitle.processConnection')}
       </div>
       <DingTalkSetting />
+      <LarkAuditSetting />
     </section>
   );
 };

@@ -1,17 +1,18 @@
-import { useRequest } from 'ahooks';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useRequest } from 'ahooks';
+import { Spin } from 'antd5';
 import { PageHeader } from '@actiontech/shared';
 import { RuleStatus, RuleList, RuleTypes } from '../../components/RuleList';
-import useRuleFilterForm from './useRuleFilterForm';
-import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import {
   TableFilterContainer,
   useTableFilterContainer,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { GetRuleListV1Params, RuleFilterContainerMeta } from './index.data';
-import { Spin } from 'antd5';
 import useRuleList from '../../components/RuleList/useRuleList';
+import useRuleFilterForm from './useRuleFilterForm';
+import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
+import { GetRuleListV1Params, RuleFilterContainerMeta } from './index.data';
 import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const Rule = () => {
@@ -41,11 +42,12 @@ const Rule = () => {
     loading: getProjectTemplateRulesLoading,
     run: getProjectTemplateRules
   } = useRequest(
-    (project?: string, ruleTemplate?: string) =>
+    (project?: string, ruleTemplate?: string, filter_fuzzy_text?: string) =>
       rule_template
         .getProjectRuleTemplateV1({
           rule_template_name: ruleTemplate ?? '',
-          project_name: project ?? ''
+          project_name: project ?? '',
+          fuzzy_rule_keyword: filter_fuzzy_text ?? ''
         })
         .then((res) => {
           setDbType(res.data.data?.db_type ?? '');
@@ -61,15 +63,17 @@ const Rule = () => {
     loading: getGlobalTemplateRulesLoading,
     run: getGlobalTemplateRules
   } = useRequest(
-    (ruleTemplate?: string) =>
-      rule_template
+    (ruleTemplate?: string, filter_fuzzy_text?: string) => {
+      return rule_template
         .getRuleTemplateV1({
-          rule_template_name: ruleTemplate ?? ''
+          rule_template_name: ruleTemplate ?? '',
+          fuzzy_rule_keyword: filter_fuzzy_text ?? ''
         })
         .then((res) => {
           setDbType(res.data.data?.db_type ?? '');
           return res.data?.data?.rule_list ?? [];
-        }),
+        });
+    },
     {
       manual: true
     }
@@ -77,35 +81,49 @@ const Rule = () => {
 
   const {
     ruleFilterContainerCustomProps,
+    getDriverNameListLoading,
     dbType,
     setDbType,
     projectName,
-    ruleTemplateName
+    ruleTemplateName,
+    filterFuzzyCont
   } = useRuleFilterForm(getProjectTemplateRules, getGlobalTemplateRules);
 
   const { data: allRules, loading: getAllRulesLoading } = useRequest(
-    () =>
-      rule_template
+    () => {
+      return rule_template
         .getRuleListV1({
-          filter_db_type: dbType
+          filter_db_type: dbType,
+          fuzzy_rule_keyword: filterFuzzyCont
         })
-        .then((res) => res.data?.data ?? []),
+        .then((res) => res.data?.data ?? []);
+    },
     {
       ready: !!dbType,
-      refreshDeps: [dbType]
+      refreshDeps: [dbType, filterFuzzyCont]
     }
   );
+
+  const apiLoading = useMemo(() => {
+    return projectName
+      ? getProjectTemplateRulesLoading ||
+          getAllRulesLoading ||
+          getDriverNameListLoading
+      : getGlobalTemplateRulesLoading ||
+          getAllRulesLoading ||
+          getDriverNameListLoading;
+  }, [
+    getAllRulesLoading,
+    getDriverNameListLoading,
+    getGlobalTemplateRulesLoading,
+    getProjectTemplateRulesLoading,
+    projectName
+  ]);
 
   return (
     <>
       <PageHeader title={t('rule.pageTitle')} />
-      <Spin
-        spinning={
-          getAllRulesLoading ||
-          getGlobalTemplateRulesLoading ||
-          getProjectTemplateRulesLoading
-        }
-      >
+      <Spin spinning={apiLoading}>
         <RuleStatusWrapperStyleWrapper className="flex-space-between flex-align-center">
           <TableFilterContainer
             updateTableFilterInfo={updateTableFilterInfo}
@@ -135,6 +153,7 @@ const Rule = () => {
         )}
 
         <RuleList
+          enableCheckDetail
           pageHeaderHeight={110}
           rules={getCurrentTypeRules(
             allRules,

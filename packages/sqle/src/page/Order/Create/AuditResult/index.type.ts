@@ -20,4 +20,5 @@ export type AuditResultDrawerProps = {
   open: boolean;
   onClose: () => void;
   auditResultRecord?: IAuditTaskSQLResV2;
+  dbType?: string;
 };
