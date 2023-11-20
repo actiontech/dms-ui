@@ -55,7 +55,7 @@ import SqleManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import useRuleTips from './hooks/useRuleTips';
+import useRuleTips, { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -112,10 +112,17 @@ const SQLEEIndex = () => {
     error: getListError
   } = useRequest(
     () => {
+      const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
       const params: IGetSqlManageListParams = {
-        ...tableFilterInfo,
+        ...otherTableFilterInfo,
         ...pagination,
         ...getCurrentSortParams(sortInfo),
+        filter_db_type: filter_rule_name?.split(
+          DB_TYPE_RULE_NAME_SEPARATOR
+        )?.[0],
+        filter_rule_name: filter_rule_name?.split(
+          DB_TYPE_RULE_NAME_SEPARATOR
+        )?.[1],
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
         project_name: projectName,
