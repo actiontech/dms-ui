@@ -363,15 +363,20 @@ const SQLEEIndex = () => {
     const hideLoading = messageApi.loading(
       t('sqlManagement.pageHeader.action.exporting')
     );
+    const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
     const params = {
-      ...tableFilterInfo,
+      ...otherTableFilterInfo,
       filter_status:
         filterStatus === 'all'
           ? undefined
           : (filterStatus as unknown as exportSqlManageV1FilterStatusEnum),
       fuzzy_search_sql_fingerprint: searchKeyword,
       project_name: projectName,
-      filter_assignee: isAssigneeSelf ? uid : undefined
+      filter_assignee: isAssigneeSelf ? uid : undefined,
+      filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
+      filter_rule_name: filter_rule_name?.split(
+        DB_TYPE_RULE_NAME_SEPARATOR
+      )?.[1]
     } as IExportSqlManageV1Params;
     SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {
