@@ -42,7 +42,8 @@ export enum StorageKey {
   Theme = 'THEME',
   Token = 'TOKEN',
   DMS_Project_Catch = 'DMS_Project_Catch',
-  USER_UID = 'DMS_USER_UID'
+  USER_UID = 'DMS_USER_UID',
+  SHOW_COMPANY_NOTICE = 'SHOW_COMPANY_NOTICE'
 }
 
 /**
@@ -59,4 +60,9 @@ export enum OpPermissionTypeUid {
   'view_other_audit_plan' = '700008', // 查看其他扫描任务权限 700008
   'save_audit_plan' = '700009', // 创建扫描任务权限；拥有该权限的用户可以创建/更新扫描任务 700009
   'sql_query' = '700010' //SQL查询；SQL查询权限 700010
+}
+
+export enum CompanyNoticeDisplayStatusEnum {
+  Displayed = '1',
+  NotDisplayed = '0'
 }

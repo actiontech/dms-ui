@@ -20,5 +20,8 @@ export enum ModalName {
   DMS_Update_Project = 'DMS_UPDATE_PROJECT',
 
   // system config
-  DMS_Import_License = 'DMS_IMPORT_LICENSE'
+  DMS_Import_License = 'DMS_IMPORT_LICENSE',
+
+  // header
+  Company_Notice = 'Company_Notice'
 }

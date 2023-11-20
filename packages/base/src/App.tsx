@@ -16,7 +16,10 @@ import {
 import { updateTheme } from './store/user';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import {
+  useCurrentUser,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import {
   ConfigProvider as ConfigProviderV5,
@@ -62,6 +65,7 @@ function App() {
   const { getUserBySession } = useSessionUser();
 
   const { useInfoFetched } = useCurrentUser();
+  const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
 
   /* IFTRUE_isEE */
   const { syncWebTitleAndLogo } = useSystemConfig();
@@ -131,7 +135,7 @@ function App() {
   }, [theme]);
 
   const body = useMemo(() => {
-    if (!useInfoFetched) {
+    if (!useInfoFetched || !driverInfoFetched) {
       return <HeaderProgress />;
     }
 
@@ -140,13 +144,14 @@ function App() {
         <Suspense fallback={<HeaderProgress />}>{elements}</Suspense>
       </Nav>
     );
-  }, [useInfoFetched, elements]);
+  }, [useInfoFetched, driverInfoFetched, elements]);
 
   useEffect(() => {
     if (token) {
       getUserBySession({});
+      updateDriverList();
     }
-  }, [getUserBySession, token]);
+  }, [getUserBySession, token, updateDriverList]);
 
   return (
     <StyleProvider

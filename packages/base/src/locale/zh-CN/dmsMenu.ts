@@ -42,7 +42,8 @@ export default {
   userNavigate: {
     account: '个人中心',
     viewVersion: '查看版本号',
-    logout: '退出登录'
+    logout: '退出登录',
+    notice: '系统公告'
   },
 
   globalSettings: {

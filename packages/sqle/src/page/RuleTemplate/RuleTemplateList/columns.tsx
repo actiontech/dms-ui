@@ -108,11 +108,12 @@ export const RuleTemplateTableActions = (
 
 export const RuleTemplateTableColumn: (
   projectID: string,
+  getLogoUrlByDbType: (dbType: string) => string,
   isGlobal?: boolean
 ) => ActiontechTableColumn<
   IProjectRuleTemplateResV1,
   RuleTemplateTableParamType
-> = (projectID, isGlobal) => {
+> = (projectID, getLogoUrlByDbType, isGlobal) => {
   return [
     {
       dataIndex: 'rule_template_name',
@@ -155,10 +156,7 @@ export const RuleTemplateTableColumn: (
           return '-';
         }
         return (
-          <DatabaseTypeLogo
-            dbType={type}
-            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
-          />
+          <DatabaseTypeLogo dbType={type} logoUrl={getLogoUrlByDbType(type)} />
         );
       }
     }

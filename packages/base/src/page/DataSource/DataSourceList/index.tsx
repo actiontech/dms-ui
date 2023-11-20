@@ -219,7 +219,7 @@ const DataSourceList = () => {
 
   useEffect(() => {
     if (projectID) {
-      updateDriverList(projectID);
+      updateDriverList();
       updateDbServiceList(projectID);
     }
   }, [updateDriverList, projectID, updateDbServiceList]);
