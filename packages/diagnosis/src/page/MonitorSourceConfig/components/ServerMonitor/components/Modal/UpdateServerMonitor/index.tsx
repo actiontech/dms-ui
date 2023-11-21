@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../store';
 import { ModalName } from '../../../../../../../data/ModalName';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { updateMonitorSourceConfigModalStatus } from '../../../../../../../store/monitorSourceConfig';
 import { useEffect } from 'react';
 import server from '@actiontech/shared/lib/api/diagnosis/service/server';
@@ -49,8 +48,6 @@ const UpdateServerMonitor = () => {
     }
   }, [visible, selectData, form]);
 
-  const { projectID } = useCurrentProject();
-
   const submit = async () => {
     try {
       const values = await form.validateFields();
@@ -62,8 +59,7 @@ const UpdateServerMonitor = () => {
           port: Number(values.port),
           user: values.user
         },
-        id: Number(selectData?.id),
-        project_uid: projectID
+        id: Number(selectData?.id)
       };
       startSubmit();
       server

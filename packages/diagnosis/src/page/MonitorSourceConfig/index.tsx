@@ -16,7 +16,6 @@ import { ModalName } from '../../data/ModalName';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { MonitorSourceConfigTypeEnum } from './index.type';
 import ServerMonitor from './components/ServerMonitor';
 import DatabaseMonitor from './components/DatabaseMonitor';
@@ -30,7 +29,6 @@ const MonitorSourceConfig: React.FC = () => {
   const [tableLoading, setTableLoading] = useState<boolean>(false);
 
   const dispatch = useDispatch();
-  const { projectArchive } = useCurrentProject();
 
   const [listType, setListType] = useState<MonitorSourceConfigTypeEnum>(
     MonitorSourceConfigTypeEnum.server_monitor
@@ -85,7 +83,7 @@ const MonitorSourceConfig: React.FC = () => {
       <PageHeader
         title={<Space size={12}>{t('monitorSourceConfig.title')}</Space>}
         extra={
-          <EmptyBox if={!projectArchive}>
+          <EmptyBox>
             <Space size={12}>
               <BasicButton
                 onClick={() => onAddMonitorSource(listType)}

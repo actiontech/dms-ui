@@ -14,10 +14,6 @@ import {
 import { AuthRouterConfig as ProvisionAuthRouterConfig } from 'provision/src/router/router';
 /* FITRUE_isPROVISION */
 
-/* IFTRUE_isDIAGNOSIS */
-import { DiagnosisRouterConfig } from 'diagnosis/src/router/router';
-/* FITRUE_isDIAGNOSIS */
-
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 
 export const AuthRouterConfig: RouterConfigItem[] = [
@@ -41,15 +37,6 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     children: ProvisionAuthRouterConfig
   },
   /* FITRUE_isPROVISION */
-
-  /* IFTRUE_isDIAGNOSIS */
-  {
-    path: 'diagnosis/project/*',
-    key: 'diagnosis',
-    element: <ProjectDetail />,
-    children: DiagnosisRouterConfig
-  },
-  /* FITRUE_isDIAGNOSIS */
 
   {
     path: '*',

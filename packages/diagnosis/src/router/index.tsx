@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, RouteObject } from 'react-router-dom';
 import { SolutionOutlined } from '@ant-design/icons';
-import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 
+const Login = React.lazy(() => import('../page/Login'));
 const MonitorSourceConfig = React.lazy(
   () => import('../page/MonitorSourceConfig')
 );
@@ -17,24 +17,29 @@ export type RouterConfigItem = {
   element?: ReactNode;
 };
 
-export const DiagnosisRouterConfig: RouterConfigItem[] = [
+export const diagnosisAuthRouterConfig: RouterConfigItem[] = [
   {
-    label: 'dmsMenu.monitorSourceConfig',
-    key: 'diagnosisWrapper',
+    path: '/monitorSourceConfig',
+    label: 'menu.monitorSourceConfig',
+    key: 'monitorSourceConfig',
     icon: <SolutionOutlined />,
-    children: [
-      {
-        path: `${PROJECT_ROUTER_PARAM}/monitorSourceConfig`,
-        key: 'monitorSourceConfig',
-        label: 'dmsMenu.monitorSourceConfig',
-        element: <MonitorSourceConfig />
-      }
-    ]
+    element: <MonitorSourceConfig />
   },
   {
     path: '*',
     hideInMenu: true,
     key: 'null',
     element: <Navigate to="/" />
+  }
+];
+
+export const diagnosisUnAuthRouterConfig: RouteObject[] = [
+  {
+    path: '/login',
+    element: <Login />
+  },
+  {
+    path: '*',
+    element: <Navigate to="/login" />
   }
 ];

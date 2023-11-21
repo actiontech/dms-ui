@@ -12,7 +12,7 @@ module.exports = {
     '!src/testUtils/**/*.{ts,tsx}',
     '!src/data/**/*.{ts,tsx}',
     '!src/index.tsx',
-    '!src/router/router.tsx'
+    '!src/router/index.tsx'
   ],
   setupFilesAfterEnv: ['<rootDir>/src/jest-setup.ts'],
   moduleNameMapper: {

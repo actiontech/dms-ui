@@ -22,14 +22,7 @@ import {
 class ServerService extends ServiceBase {
   public V1AddServer(params: IV1AddServerParams, options?: AxiosRequestConfig) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
-    return this.post<IV1AddServerReturn>(
-      `/diagno/v1/projects/${project_uid}/server/add`,
-      paramsData,
-      options
-    );
+    return this.post<IV1AddServerReturn>('/v1/server/add', paramsData, options);
   }
 
   public V1DeleteServer(
@@ -37,11 +30,8 @@ class ServerService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
     return this.post<IV1DeleteServerReturn>(
-      `/diagno/v1/projects/${project_uid}/server/delete`,
+      '/v1/server/delete',
       paramsData,
       options
     );
@@ -52,11 +42,8 @@ class ServerService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
     return this.get<IV1GetServerHostnameReturn>(
-      `/diagno/v1/projects/${project_uid}/server/hostname`,
+      '/v1/server/hostname',
       paramsData,
       options
     );
@@ -67,11 +54,8 @@ class ServerService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
     return this.get<IV1ListServersReturn>(
-      `/diagno/v1/projects/${project_uid}/server/list`,
+      '/v1/server/list',
       paramsData,
       options
     );
@@ -82,11 +66,8 @@ class ServerService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
     return this.post<IV1UpdateServerReturn>(
-      `/diagno/v1/projects/${project_uid}/server/update`,
+      '/v1/server/update',
       paramsData,
       options
     );

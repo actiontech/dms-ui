@@ -13,6 +13,7 @@
     "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
   },
   "dependencies": {
-    "@actiontech/shared": "workspace:^1.0.0"
+    "@actiontech/shared": "workspace:^1.0.0",
+    "vite": "^3.0.0"
   }
 }

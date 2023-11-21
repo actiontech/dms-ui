@@ -3,16 +3,24 @@ import {
   ViewServerReplyStatusEnum
 } from './common.enum';
 
+export interface IGenericResp {
+  code?: number;
+
+  message?: string;
+}
+
 export interface IDeleteDBsReq {
-  db_monitor_names: string[];
+  db_monitor_ids: number[];
 }
 
 export interface IDeleteServersReq {
-  server_names?: string[];
+  server_ids?: number[];
 }
 
-export interface IGenericResp {
+export interface IGetRoleReply {
   code?: number;
+
+  data?: IViewRoleReply;
 
   message?: string;
 }
@@ -21,6 +29,14 @@ export interface IGetServerHostnameReply {
   code?: number;
 
   hostname?: string;
+
+  message?: string;
+}
+
+export interface IGetUserReply {
+  code?: number;
+
+  data?: IViewUserReply;
 
   message?: string;
 }
@@ -45,10 +61,30 @@ export interface IListMonitorRoutineReply {
   total_nums?: number;
 }
 
+export interface IListRolesReply {
+  code?: number;
+
+  data?: IViewRoleReply[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListRoutineMetricsReply {
   code?: number;
 
   data?: IRoutienMetrics;
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListScopesReply {
+  code?: number;
+
+  data?: IViewScope[];
 
   message?: string;
 
@@ -65,6 +101,38 @@ export interface IListServersReply {
   total_nums?: number;
 }
 
+export interface IListUsersReply {
+  code?: number;
+
+  data?: IViewUserReply[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IRoleCreateRequest {
+  role_desc?: string;
+
+  role_name?: string;
+}
+
+export interface IRoleDeleteRequest {
+  role_id?: number;
+}
+
+export interface IRoleScopeCreateRequest {
+  role_id?: number;
+
+  scope_name?: string;
+}
+
+export interface IRoleScopeDeleteRequest {
+  role_id?: number;
+
+  scope_name?: string;
+}
+
 export interface IRoutienMetrics {
   metrics?: Array<{
     desc?: string;
@@ -77,6 +145,36 @@ export interface IRoutienMetrics {
 
 export interface ISaveDBsReq {
   dbs: IViewDatabase[];
+}
+
+export interface IUserCreateRequest {
+  password?: string;
+
+  role_id?: number;
+
+  username?: string;
+}
+
+export interface IUserDeleteRequest {
+  user_id?: number;
+}
+
+export interface IUserLoginRequest {
+  password?: string;
+
+  username?: string;
+}
+
+export interface IUserUpdatePasswordRequest {
+  password?: string;
+
+  user_id?: number;
+}
+
+export interface IUserUpdateRoleRequest {
+  role_id?: number;
+
+  user_id?: number;
 }
 
 export interface IViewAddServerRequest {
@@ -129,6 +227,20 @@ export interface IViewMonitorConfigReply {
   via?: string;
 }
 
+export interface IViewRoleReply {
+  id?: number;
+
+  role_desc?: string;
+
+  role_name?: string;
+}
+
+export interface IViewScope {
+  scope_desc?: string;
+
+  scope_name?: string;
+}
+
 export interface IViewServer {
   host: string;
 
@@ -163,4 +275,12 @@ export interface IViewUpdateServerRequest {
   id?: number;
 
   server?: IViewServer;
+}
+
+export interface IViewUserReply {
+  role_id?: number;
+
+  user_id?: number;
+
+  username?: string;
 }

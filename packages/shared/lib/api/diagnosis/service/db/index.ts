@@ -18,26 +18,12 @@ import {
 class DbService extends ServiceBase {
   public V1AddDB(params: IV1AddDBParams, options?: AxiosRequestConfig) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
-    return this.post<IV1AddDBReturn>(
-      `/diagno/v1/projects/${project_uid}/db/add`,
-      paramsData,
-      options
-    );
+    return this.post<IV1AddDBReturn>('/v1/db/add', paramsData, options);
   }
 
   public V1DeleteDB(params: IV1DeleteDBParams, options?: AxiosRequestConfig) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
-    return this.post<IV1DeleteDBReturn>(
-      `/diagno/v1/projects/${project_uid}/db/delete`,
-      paramsData,
-      options
-    );
+    return this.post<IV1DeleteDBReturn>('/v1/db/delete', paramsData, options);
   }
 
   public V1ListMonitorDBs(
@@ -45,11 +31,8 @@ class DbService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
     return this.get<IV1ListMonitorDBsReturn>(
-      `/diagno/v1/projects/${project_uid}/db/list`,
+      '/v1/db/list',
       paramsData,
       options
     );

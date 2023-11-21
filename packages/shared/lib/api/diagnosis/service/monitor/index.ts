@@ -19,11 +19,8 @@ class MonitorService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
     return this.get<IV1ListMonitorRoutineReturn>(
-      `/diagno/v1/projects/${project_uid}/monitor/list`,
+      '/v1/monitor/list',
       paramsData,
       options
     );
@@ -34,11 +31,8 @@ class MonitorService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
     return this.get<IV1ListRoutineMetricsReturn>(
-      `/diagno/v1/projects/${project_uid}/monitor/metrics`,
+      '/v1/monitor/metrics',
       paramsData,
       options
     );

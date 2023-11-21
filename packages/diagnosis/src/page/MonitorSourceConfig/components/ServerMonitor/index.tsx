@@ -6,7 +6,6 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import server from '@actiontech/shared/lib/api/diagnosis/service/server';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -24,8 +23,6 @@ import ServerMonitorModal from './components/Modal';
 const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   const dispatch = useDispatch();
 
-  const { projectID } = useCurrentProject();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
@@ -42,13 +39,12 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
     () => {
       const params: IV1ListServersParams = {
         ...pagination,
-        project_uid: projectID,
         fuzzy_search_keyword: props.searchValue
       };
       return handleTableRequestError(server.V1ListServers(params));
     },
     {
-      refreshDeps: [pagination, projectID, props.searchValue]
+      refreshDeps: [pagination, props.searchValue]
     }
   );
 

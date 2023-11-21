@@ -1,7 +1,6 @@
 export enum PackageNameEnum {
   SQLE = 'sqle',
-  PROVISION = 'provision',
-  DIAGNOSIS = 'diagnosis'
+  PROVISION = 'provision'
 }
 
 export enum SupportLanguage {
