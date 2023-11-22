@@ -10,13 +10,13 @@ import { BasicInput, BasicButton } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
-/* IFTRUE_isEE */
+// #if [prod_version=ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
-/* FITRUE_isEE */
+// #endif
 
 const Login = () => {
   const { t } = useTranslation();
@@ -28,12 +28,12 @@ const Login = () => {
   const [loading, { setTrue, setFalse }] = useBoolean();
 
   const login = (formData: LoginFormFieldValue) => {
-    /* IFTRUE_isEE */
+    // #if [prod_version=ee]
     if (!formData.userAgreement) {
       messageApi.error(t('dmsLogin.errorMessage.userAgreement'));
       return;
     }
-    /* FITRUE_isEE */
+    // #endif
     setTrue();
     dms
       .AddSession({
@@ -53,12 +53,12 @@ const Login = () => {
             })
           );
         }
-        /* IFTRUE_isEE */
+        // #if [prod_version=ee]
         LocalStorageWrapper.set(
           StorageKey.SHOW_COMPANY_NOTICE,
           CompanyNoticeDisplayStatusEnum.NotDisplayed
         );
-        /* FITRUE_isEE */
+        // #endif
       })
       .finally(() => {
         setFalse();
@@ -72,12 +72,12 @@ const Login = () => {
     }
   );
 
-  // /* IFTRUE_isEE */
+  // #if [prod_version=ee]
   useEffect(() => {
     getOauth2Tips();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  /* FITRUE_isEE */
+  // #endif
   return (
     <LoginLayout>
       {contextHolder}
@@ -122,7 +122,7 @@ const Login = () => {
             prefix={<IconCommonPassword />}
           />
         </Form.Item>
-        {/* IFTRUE_isEE */}
+        {/* #if [prod_version=ee] */}
         <Form.Item name="userAgreement" valuePropName="checked">
           <Checkbox>
             <Space>
@@ -133,7 +133,7 @@ const Login = () => {
             </Space>
           </Checkbox>
         </Form.Item>
-        {/* FITRUE_isEE */}
+        {/* #endif */}
         <BasicButton
           type="primary"
           className="login-btn"

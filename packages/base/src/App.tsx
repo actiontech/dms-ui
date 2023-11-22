@@ -66,7 +66,7 @@ function App() {
   const { useInfoFetched } = useCurrentUser();
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
 
-  /* IFTRUE_isEE */
+  // #if [prod_version=ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
   useRequest(
     () =>
@@ -79,7 +79,7 @@ function App() {
       ready: !!token
     }
   );
-  /* FITRUE_isEE */
+  // #endif
 
   const filterRoutesByRole: (
     routes: RouterConfigItem[],

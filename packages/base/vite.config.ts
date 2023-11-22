@@ -9,20 +9,12 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig((config) => {
-  const buildTypes = process.env.buildType?.split(',') ?? [];
-  /*
-   * ee and ce mode used to support sqle
-   */
-  const isCE = buildTypes.includes('ce') && buildTypes.includes('SQLE');
-  const isEE = !isCE;
-  const isSQLE = buildTypes.includes('SQLE');
-
   const title = 'Action SQLE';
 
   return {
     plugins: [
       vitePluginConditionalCompile({
-        expand: { isCE, isEE, isSQLE }
+        include: [/^.+\/packages\/.+\/.+.(ts|tsx)$/]
       }),
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']

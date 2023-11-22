@@ -13,7 +13,7 @@ import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUserInfo } from '@actiontech/shared/lib/global';
-/* IFTRUE_isEE */
+// #if [prod_version=ee]
 import { useDispatch } from 'react-redux';
 import { updateNavModalStatus } from '../../../../store/nav';
 import { ModalName } from '../../../../data/ModalName';
@@ -25,7 +25,7 @@ import {
 } from '@actiontech/shared/lib/enum';
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-/* FITRUE_isEE */
+// #endif
 
 const UserNavigate: React.FC<{
   username: string;
@@ -35,15 +35,13 @@ const UserNavigate: React.FC<{
   const { clearUserInfo } = useUserInfo();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  /* IFTRUE_isEE */
-  const dispatch = useDispatch();
-  /* FITRUE_isEE */
 
   const logout = () => {
     clearUserInfo();
   };
 
-  /* IFTRUE_isEE */
+  // #if [prod_version=ee]
+  const dispatch = useDispatch();
   useRequest(
     () =>
       dms.GetCompanyNotice().then((res) => {
@@ -65,7 +63,7 @@ const UserNavigate: React.FC<{
         CompanyNoticeDisplayStatusEnum.NotDisplayed
     }
   );
-  /* FITRUE_isEE */
+  // #endif
 
   return (
     <Popover
@@ -90,7 +88,8 @@ const UserNavigate: React.FC<{
                 {t('dmsMenu.userNavigate.account')}
               </span>
             </div>
-            {/* IFTRUE_isEE */}
+
+            {/* #if [prod_version=ee] */}
             <div
               className="content-item"
               onClick={() => {
@@ -108,7 +107,8 @@ const UserNavigate: React.FC<{
                 {t('dmsMenu.userNavigate.notice')}
               </span>
             </div>
-            {/* FITRUE_isEE */}
+            {/* #endif */}
+
             <div
               className="content-item"
               onClick={() => {

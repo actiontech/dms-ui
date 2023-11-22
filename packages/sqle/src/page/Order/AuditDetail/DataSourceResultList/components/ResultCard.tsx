@@ -85,11 +85,11 @@ const ResultCard: React.FC<
           <BasicButton size="small" onClick={onCopyExecSql}>
             {t('audit.copyExecSql')}
           </BasicButton>
-          {/* IFTRUE_isEE */}
+          {/* #if [prod_version=ee] */}
           <BasicButton size="small" onClick={onClickAnalyze}>
             {t('audit.table.analyze')}
           </BasicButton>
-          {/* FITRUE_isEE */}
+          {/* #endif */}
         </Space>
       </div>
       <div className="result-card-content">

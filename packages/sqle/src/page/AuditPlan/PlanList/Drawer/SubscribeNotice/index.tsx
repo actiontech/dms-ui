@@ -81,11 +81,11 @@ const SubscribeNotice = () => {
           level:
             config?.notify_level as UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
           emailEnable: config?.enable_email_notify,
-          /* IFTRUE_isEE */
+          // #if [prod_version=ee]
           webhooksEnable: config?.enable_web_hook_notify,
           webhooksUrl: config?.web_hook_url,
           template: config?.web_hook_template
-          /* FITRUE_isEE */
+          // #endif
         });
         if (config?.enable_web_hook_notify) {
           toggleWebhooksEnable(true);
@@ -263,7 +263,7 @@ const SubscribeNotice = () => {
             >
               <BasicSwitch />
             </Form.Item>
-            {/* IFTRUE_isEE */}
+            {/* #if [prod_version=ee] */}
             <Form.Item
               label={t('auditPlan.subscribeNotice.form.webhooksEnable')}
               name="webhooksEnable"
@@ -305,14 +305,14 @@ const SubscribeNotice = () => {
                 />
               </Form.Item>
             </EmptyBox>
-            {/* FITRUE_isEE */}
-            {/* IFTRUE_isCE */}
+
+            {/* #else */}
             <Form.Item
               label={t('auditPlan.subscribeNotice.form.webhooksEnable')}
             >
               <> {t('auditPlan.subscribeNotice.form.webhooksEnableCe')}</>
             </Form.Item>
-            {/* FITRUE_isCE */}
+            {/* #endif */}
             <Form.Item label=" " colon={false} style={{ marginTop: 10 }}>
               <BasicToolTips
                 title={t('auditPlan.subscribeNotice.form.testTips')}

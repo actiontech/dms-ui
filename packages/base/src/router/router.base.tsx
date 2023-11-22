@@ -3,9 +3,9 @@ import { SystemRole } from '@actiontech/shared/lib/enum';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
 
-/* IFTRUE_isEE */
+// #if [prod_version=ee]
 const Project = lazy(() => import('../page/Project'));
-/* FITRUE_isEE */
+// #endif
 
 const Home = lazy(() => import('../page/Home'));
 const UserCenter = lazy(() => import('../page/UserCenter'));
@@ -56,13 +56,13 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     key: 'account',
     element: <Account />
   },
-  /* IFTRUE_isEE */
+  // #if [prod_version=ee]
   {
     path: 'project',
     key: 'project',
     element: <Project />
   },
-  /* FITRUE_isEE */
+  // #endif
 
   {
     key: 'projectDetail',

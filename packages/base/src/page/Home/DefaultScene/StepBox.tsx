@@ -12,13 +12,11 @@ const StepBox: React.FC = () => {
   const navigate = useNavigate();
   let currentProjectID = '';
 
-  /* IFTRUE_isEE */
+  // #if [prod_version=ee]
   currentProjectID = useRecentlyOpenedProjects()?.currentProjectID ?? '';
-  /* FITRUE_isEE */
-
-  /* IFTRUE_isCE */
+  // #else
   currentProjectID = DEFAULT_PROJECT_ID;
-  /* FITRUE_isCE */
+  // #endif
 
   const steps = isAdmin
     ? AdminUserDevopsSteps({
