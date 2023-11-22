@@ -1,26 +1,27 @@
 import { LocalStorageWrapper } from '@actiontech/shared';
-import {
-  StorageKey,
-  SupportTheme,
-  SystemRole
-} from '@actiontech/shared/lib/enum';
+import { IViewScope } from '../../api/common';
+import { StorageKey, SupportTheme } from '@actiontech/shared/lib/enum';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type UserReduxState = {
   username: string;
-  role: SystemRole | '';
+  userId: number | null;
+  roleId: number | null;
   token: string;
   theme: SupportTheme;
+  userScope: IViewScope[];
 };
 
 const initialState: UserReduxState = {
   username: '',
-  role: '',
+  userId: null,
+  roleId: null,
   token: LocalStorageWrapper.getOrDefault(StorageKey.Token, ''),
   theme: LocalStorageWrapper.getOrDefault(
     StorageKey.Theme,
     SupportTheme.LIGHT
-  ) as SupportTheme
+  ) as SupportTheme,
+  userScope: []
 };
 
 const user = createSlice({
@@ -30,11 +31,16 @@ const user = createSlice({
     updateUser: (
       state,
       {
-        payload: { username, role }
-      }: PayloadAction<{ username: string; role: SystemRole | '' }>
+        payload: { username, userId, roleId }
+      }: PayloadAction<{
+        username: string;
+        userId: number | null;
+        roleId: number | null;
+      }>
     ) => {
       state.username = username;
-      state.role = role;
+      state.userId = userId;
+      state.roleId = roleId;
     },
     updateTheme: (
       state,
@@ -49,10 +55,17 @@ const user = createSlice({
     ) => {
       state.token = token;
       LocalStorageWrapper.set(StorageKey.Token, token);
+    },
+    updateUserScope: (
+      state,
+      { payload: { userScope } }: PayloadAction<{ userScope: IViewScope[] }>
+    ) => {
+      state.userScope = userScope;
     }
   }
 });
 
-export const { updateUser, updateTheme, updateToken } = user.actions;
+export const { updateUser, updateTheme, updateToken, updateUserScope } =
+  user.actions;
 
 export default user.reducer;

@@ -50,7 +50,7 @@ const MenuList: React.FC<MenuListProps> = () => {
     }
     return selectKey;
   }, [location.pathname, menuItems, selectMenu]);
-  console.log(menuItems);
+
   return (
     <Menu
       className="custom-menu"

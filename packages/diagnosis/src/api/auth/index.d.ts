@@ -1,7 +1,8 @@
 import {
   IUserLoginRequest,
-  IGenericResp,
+  IUserLoginReply,
   IRoleCreateRequest,
+  IGenericResp,
   IRoleDeleteRequest,
   IListRolesReply,
   IListScopesReply,
@@ -18,7 +19,7 @@ import {
 
 export interface IV1LoginParams extends IUserLoginRequest {}
 
-export interface IV1LoginReturn extends IGenericResp {}
+export interface IV1LoginReturn extends IUserLoginReply {}
 
 export interface IV1CreateRoleParams extends IRoleCreateRequest {}
 

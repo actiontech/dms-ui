@@ -5,9 +5,9 @@ import {
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useRequest } from 'ahooks';
-import db from '@actiontech/shared/lib/api/diagnosis/service/db';
-import { IV1ListMonitorDBsParams } from '@actiontech/shared/lib/api/diagnosis/service/db/index.d';
-import { IViewDatabaseReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
+import db from '../../../../api/db';
+import { IV1ListMonitorDBsParams } from '../../../../api/db/index.d';
+import { IViewDatabaseReply } from '../../../../api/common';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { DatabaseMonitorActions, DatabaseMonitorColumns } from './column';

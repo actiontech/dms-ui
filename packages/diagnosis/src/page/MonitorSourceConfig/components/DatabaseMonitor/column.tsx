@@ -2,9 +2,9 @@ import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
-import { IViewDatabaseReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
+import { IViewDatabaseReply } from '../../../../api/common';
 import { t } from '../../../../locale';
-import { ViewDatabaseReplyStatusEnum } from '@actiontech/shared/lib/api/diagnosis/service/common.enum';
+import { ViewDatabaseReplyStatusEnum } from '../../../../api/common.enum';
 
 const databaseMonitorStatusDictionary = {
   [ViewDatabaseReplyStatusEnum.healthy]: t('monitorSourceConfig.status.normal'),

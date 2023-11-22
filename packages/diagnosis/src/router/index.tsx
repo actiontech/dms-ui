@@ -18,6 +18,14 @@ export type RouterConfigItem = {
 };
 
 export const diagnosisAuthRouterConfig: RouterConfigItem[] = [
+  // todo: 首页添加后修改
+  {
+    path: '/',
+    label: 'menu.monitorSourceConfig',
+    key: 'monitorSourceConfig',
+    icon: <SolutionOutlined />,
+    element: <MonitorSourceConfig />
+  },
   {
     path: '/monitorSourceConfig',
     label: 'menu.monitorSourceConfig',

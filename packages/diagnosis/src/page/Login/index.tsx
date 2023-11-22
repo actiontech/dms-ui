@@ -1,13 +1,13 @@
 import { Form } from 'antd5';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { updateToken } from '../../store/user';
+import { updateToken, updateUser } from '../../store/user';
 import LoginLayout from './components/LoginLayout';
 import { BasicInput, BasicButton } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
-import auth from '@actiontech/shared/lib/api/diagnosis/service/auth';
+import auth from '../../api/auth';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -24,17 +24,21 @@ const Login = () => {
         password: formData.password
       })
       .then((res) => {
-        // todo: 待后端修改后添加token逻辑
-        // const token = res.data.data?.token
-        //   ? `Bearer ${res.data.data.token}`
-        //   : '';
-        // if (token) {
-        //   dispatch(
-        //     updateToken({
-        //       token
-        //     })
-        //   );
-        // }
+        const token = res.data?.token ? `Bearer ${res.data.token}` : '';
+        if (token) {
+          dispatch(
+            updateToken({
+              token
+            })
+          );
+          dispatch(
+            updateUser({
+              username: formData.username,
+              userId: res.data?.user_id ?? null,
+              roleId: null
+            })
+          );
+        }
       })
       .finally(() => {
         setFalse();

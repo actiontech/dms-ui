@@ -2,8 +2,8 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import server from '@actiontech/shared/lib/api/diagnosis/service/server';
-import db from '@actiontech/shared/lib/api/diagnosis/service/db';
+import server from '../../../api/server';
+import db from '../../../api/db';
 import { databaseMonitorListData, serverMonitorListData } from './data';
 
 class MockMonitorSourceConfigApi implements MockSpyApy {

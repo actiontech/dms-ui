@@ -1,4 +1,4 @@
-import { Suspense, useMemo } from 'react';
+import { Suspense, useEffect, useMemo } from 'react';
 import { useRoutes } from 'react-router-dom';
 import {
   diagnosisAuthRouterConfig,
@@ -31,24 +31,30 @@ import {
   legacyLogicalPropertiesTransformer
 } from '@ant-design/cssinjs';
 import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+import useGetUserInfo from './hooks/useGetUserInfo';
 
 Spin.setDefaultIndicator(<IconSpin />);
 
 function App() {
-  const { token, theme, role } = useSelector((state: IReduxState) => ({
+  const { token, theme, userId } = useSelector((state: IReduxState) => ({
     token: state.user.token,
     theme: state.user.theme,
-    role: state.user.role
+    userId: state.user.userId
   }));
 
-  // const { notificationContextHolder } = useNotificationContext();
+  const { notificationContextHolder } = useNotificationContext();
+
+  const { getUserInfo } = useGetUserInfo();
 
   const dispatch = useDispatch();
 
-  const elements = useRoutes(diagnosisAuthRouterConfig);
-  // const elements = useRoutes(
-  //   token ? diagnosisAuthRouterConfig : diagnosisUnAuthRouterConfig
-  // );
+  const elements = useRoutes(
+    token ? diagnosisAuthRouterConfig : diagnosisUnAuthRouterConfig
+  );
+
+  useEffect(() => {
+    if (token && userId) getUserInfo({ user_id: userId?.toString() });
+  }, [token, userId]);
 
   useChangeTheme({
     theme,
@@ -118,8 +124,8 @@ function App() {
         <ConfigProvider locale={zhCN}>
           <StyledEngineProvider injectFirst>
             <ThemeProvider theme={themeData}>
-              <EmptyBox if={!token} defaultNode={<>{elements}</>}>
-                {/* <EmptyBox if={!!token} defaultNode={<>{elements}</>}> */}
+              {notificationContextHolder}
+              <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
                 {body}
               </EmptyBox>
             </ThemeProvider>

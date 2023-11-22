@@ -1,4 +1,4 @@
-import { ViewServerReplyStatusEnum } from '@actiontech/shared/lib/api/diagnosis/service/common.enum';
+import { ViewServerReplyStatusEnum } from '../../../api/common.enum';
 
 export const searchServerMonitorListData = [
   {

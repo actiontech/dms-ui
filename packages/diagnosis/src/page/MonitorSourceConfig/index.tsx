@@ -83,7 +83,7 @@ const MonitorSourceConfig: React.FC = () => {
       <PageHeader
         title={<Space size={12}>{t('monitorSourceConfig.title')}</Space>}
         extra={
-          <EmptyBox>
+          <EmptyBox if={true}>
             <Space size={12}>
               <BasicButton
                 onClick={() => onAddMonitorSource(listType)}

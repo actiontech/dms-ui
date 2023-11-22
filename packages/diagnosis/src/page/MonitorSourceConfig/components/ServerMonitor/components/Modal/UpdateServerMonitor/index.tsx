@@ -8,11 +8,11 @@ import { IReduxState } from '../../../../../../../store';
 import { ModalName } from '../../../../../../../data/ModalName';
 import { updateMonitorSourceConfigModalStatus } from '../../../../../../../store/monitorSourceConfig';
 import { useEffect } from 'react';
-import server from '@actiontech/shared/lib/api/diagnosis/service/server';
+import server from '../../../../../../../api/server';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
-import { IV1UpdateServerParams } from '@actiontech/shared/lib/api/diagnosis/service/server/index.d';
+import { IV1UpdateServerParams } from '../../../../../../../api/server/index.d';
 import { IServerMonitorFormField } from '../ServerMonitorForm/index.type';
 
 const UpdateServerMonitor = () => {

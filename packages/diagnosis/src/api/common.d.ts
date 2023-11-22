@@ -159,6 +159,16 @@ export interface IUserDeleteRequest {
   user_id?: number;
 }
 
+export interface IUserLoginReply {
+  code?: number;
+
+  message?: string;
+
+  token?: string;
+
+  user_id?: number;
+}
+
 export interface IUserLoginRequest {
   password?: string;
 
