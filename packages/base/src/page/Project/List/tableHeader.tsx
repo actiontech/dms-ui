@@ -38,7 +38,7 @@ const ProjectListTableColumnFactory =
           return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
         }
       },
-      /* IFTRUE_isEE */
+      // #if [prod_version=ee]
       {
         dataIndex: 'archived',
         title: () => t('dmsProject.projectList.columns.status'),
@@ -64,7 +64,7 @@ const ProjectListTableColumnFactory =
           );
         }
       },
-      /* FITRUE_isEE */
+      // #endif
       {
         dataIndex: 'create_time',
         ellipsis: true,
@@ -130,7 +130,7 @@ export const ProjectListActions = (
           };
         }
       },
-      /* IFTRUE_isEE */
+      // #if [prod_version=ee]
       {
         text: t('dmsProject.projectList.columns.archive'),
         key: 'archiveName',
@@ -163,7 +163,7 @@ export const ProjectListActions = (
         },
         permissions: (record) => !!record?.archived
       }
-      /* FITRUE_isEE */
+      // #endif
     ]
   };
 };

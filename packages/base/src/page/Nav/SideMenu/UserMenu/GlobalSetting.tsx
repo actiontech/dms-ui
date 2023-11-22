@@ -7,11 +7,11 @@ import {
   IconSystem,
   IconUserCenter,
 
-  /* IFTRUE_isSQLE */
+  // #if [feature=sqle]
   IconViewRule,
   IconReportStatistics,
   IconRuleManage
-  /* FITRUE_isSQLE */
+  // #endif
 } from '../../../../icon/sideMenu';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
@@ -45,7 +45,7 @@ const GlobalSetting: React.FC<{
           <div className="header">{t('dmsMenu.globalSettings.title')}</div>
           <EmptyBox if={!isAdmin}>
             <div className="content">
-              {/* IFTRUE_isSQLE */}
+              {/* #if [feature=sqle]*/}
               <div
                 className="content-item"
                 onClick={() => handleClickItem(`/sqle/rule`)}
@@ -55,7 +55,7 @@ const GlobalSetting: React.FC<{
                   {t('dmsMenu.globalSettings.viewRule')}
                 </span>
               </div>
-              {/* FITRUE_isSQLE */}
+              {/* #endif */}
             </div>
           </EmptyBox>
           <EmptyBox if={isAdmin}>
@@ -69,7 +69,7 @@ const GlobalSetting: React.FC<{
                   {t('dmsMenu.globalSettings.userCenter')}
                 </span>
               </div>
-              {/* IFTRUE_isSQLE */}
+              {/* #if [feature=sqle] */}
               <div
                 className="content-item"
                 onClick={() => handleClickItem('/sqle/reportStatistics')}
@@ -97,7 +97,7 @@ const GlobalSetting: React.FC<{
                   {t('dmsMenu.globalSettings.ruleManage')}
                 </span>
               </div>
-              {/* FITRUE_isSQLE */}
+              {/* #endif */}
               <div
                 className="content-item"
                 onClick={() => handleClickItem(`/system`)}

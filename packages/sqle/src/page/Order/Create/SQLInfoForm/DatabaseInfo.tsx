@@ -320,7 +320,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
 
                     {renderRuleTemplateDisplay(field.key)}
 
-                    {/* IFTRUE_isEE */}
+                    {/* #if [prod_version=ee] */}
                     <BasicButton
                       className="data-source-row-button data-source-col-delete-button"
                       onClick={() => removeItem(field, index)}
@@ -331,14 +331,14 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
                         <IconDelete />
                       )}
                     </BasicButton>
-                    {/* FITRUE_isEE */}
+                    {/* #endif */}
                   </Space>
                 );
               })}
 
               <FormItemNoLabel>
                 <Space size={12} align="start">
-                  {/* IFTRUE_isEE */}
+                  {/* #if [prod_version=ee] */}
                   <BasicButton
                     onClick={() => addDataSource(fields)}
                     type="primary"
@@ -346,7 +346,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
                   >
                     {t('order.sqlInfo.addInstance')}
                   </BasicButton>
-                  {/* FITRUE_isEE */}
+                  {/* #endif */}
 
                   <BasicButton
                     loading={testLoading}

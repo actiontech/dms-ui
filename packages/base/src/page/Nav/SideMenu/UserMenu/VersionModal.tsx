@@ -18,9 +18,9 @@ const VersionModal: React.FC<{
 
   const [dmsVersion, setDmsVersion] = useState<string | undefined>('');
 
-  /* IFTRUE_isSQLE */
+  // #if [feature=sqle]
   const [sqleVersion, setSqleVersion] = useState<string | undefined>('');
-  /* FITRUE_isSQLE */
+  // #endif
 
   useEffect(() => {
     if (open) {
@@ -30,13 +30,13 @@ const VersionModal: React.FC<{
         )?.version;
         setDmsVersion(formatServerVersion(dms));
 
-        /* IFTRUE_isSQLE */
+        // #if [feature=sqle]
         const sqle = res.data.data?.components?.find(
           (i) => i.name === 'sqle'
         )?.version;
         setSqleVersion(formatServerVersion(sqle));
 
-        /* FITRUE_isSQLE */
+        // #endif
       });
     }
   }, [open]);
@@ -87,9 +87,9 @@ const VersionModal: React.FC<{
             <Typography>UI: {UI_VERSION}</Typography>
             <Typography>DMS: {dmsVersion || '-'}</Typography>
 
-            {/* IFTRUE_isSQLE */}
+            {/* #if [feature=sqle] */}
             <Typography>SQLE: {sqleVersion || '-'}</Typography>
-            {/* FITRUE_isSQLE */}
+            {/* #endif */}
           </Space>
         </Space>
         <Space align="start" direction="vertical">

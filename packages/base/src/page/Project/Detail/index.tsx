@@ -1,22 +1,23 @@
-/* IFTRUE_isEE */
+// #if [prod_version=ee]
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundRecentlyProject from './NotFoundRecentlyProject';
-/* FITRUE_isEE */
+// #endif
+
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useEffect } from 'react';
 import {
   Outlet,
-  /* IFTRUE_isCE */
+  // #if [prod_version!=ee]
   useLocation,
   useNavigate
-  /* FITRUE_isCE */
+  // #endif
 } from 'react-router-dom';
 
 const ProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
 
-  /* IFTRUE_isEE */
+  // #if [prod_version=ee]
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
 
@@ -38,9 +39,8 @@ const ProjectDetail: React.FC = () => {
       updateRecentlyProject(nextProjectID, nextProjectName);
     }
   }, [currentProjectID, nextProjectID, nextProjectName, updateRecentlyProject]);
-  /* FITRUE_isEE */
 
-  /* IFTRUE_isCE */
+  // #else
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
@@ -49,17 +49,15 @@ const ProjectDetail: React.FC = () => {
       navigate('/', { replace: true });
     }
   }, [location.pathname, navigate]);
-  /* FITRUE_isCE */
+  // #endif
 
   return (
     <>
-      {/* IFTRUE_isEE */}
+      {/* #if [prod_version=ee] */}
       {renderProjectDetail()}
-      {/* FITRUE_isEE */}
-
-      {/* IFTRUE_isCE */}
+      {/* #else */}
       <Outlet />
-      {/* FITRUE_isCE */}
+      {/* #endif */}
     </>
   );
 };

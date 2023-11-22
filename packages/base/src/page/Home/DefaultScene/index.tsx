@@ -32,7 +32,7 @@ export const AdminUserDevopsSteps: (
   getDatabaseManagerSteps({ navigate, projectID }),
   getMemberAndPermissionSteps({ navigate, projectID }),
 
-  /* IFTRUE_isSQLE */
+  // #if [feature=sqle]
   {
     key: 'safetyRule',
     title: t('dmsHome.defaultScene.steps.safetyRule.title'),
@@ -42,7 +42,7 @@ export const AdminUserDevopsSteps: (
       getAuditProgressStep({ navigate, projectID })
     ]
   },
-  /* FITRUE_isSQLE */
+  // #endif
 
   {
     key: 'queryAndModify',
@@ -51,13 +51,13 @@ export const AdminUserDevopsSteps: (
     children: [
       getSqlEditorStep({ navigate }),
 
-      /* IFTRUE_isSQLE */
+      // #if [feature=sqle]
       getDataModifyStep({ navigate, projectID })
-      /* FITRUE_isSQLE */
+      // #endif
     ]
   },
 
-  /* IFTRUE_isSQLE */
+  // #if [feature=sqle]
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
@@ -75,7 +75,7 @@ export const AdminUserDevopsSteps: (
       }
     ]
   }
-  /* FITRUE_isSQLE */
+  // #endif
 ];
 
 export const NormalUserDevopsSteps: (
@@ -88,9 +88,9 @@ export const NormalUserDevopsSteps: (
     children: [
       getSqlEditorStep({ navigate }),
 
-      /* IFTRUE_isSQLE */
+      // #if [feature=sqle]
       getDataModifyStep({ navigate, projectID })
-      /* FITRUE_isSQLE */
+      // #endif
     ]
   }
 ];

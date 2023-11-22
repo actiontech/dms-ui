@@ -72,7 +72,7 @@ const RuleManager: React.FC = () => {
             <CustomRuleList />
           </EnterpriseFeatureDisplay>
         ),
-        /* IFTRUE_isEE */
+        // #if [prod_version!=ee]
         toolbarActions: (
           <BasicButton
             type="primary"
@@ -81,7 +81,7 @@ const RuleManager: React.FC = () => {
             {t('customRule.filterForm.add')}
           </BasicButton>
         )
-        /* FITRUE_isEE */
+        // #endif
       }
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps

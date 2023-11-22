@@ -3,9 +3,9 @@ import { NavigateFunction } from 'react-router-dom';
 import { filterAdminMenusWithKey } from './common';
 import { BaseMenuItems } from './base';
 
-/* IFTRUE_isSQLE */
+// #if [feature=sqle]
 import { SQLEOperateConflictMenuItems, SQLEMenuItems } from './sqle';
-/* FITRUE_isSQLE */
+// #endif
 
 export const sideMenuData: (
   navigate: NavigateFunction,
@@ -15,10 +15,10 @@ export const sideMenuData: (
   const allMenus = [
     ...BaseMenuItems({ navigate, projectID }),
 
-    /* IFTRUE_isSQLE */
+    // #if [feature=sqle]
     ...SQLEMenuItems({ navigate, projectID }),
     ...SQLEOperateConflictMenuItems({ navigate, projectID })
-    /* FITRUE_isSQLE */
+    // #endif
   ];
 
   if (!isAdmin) {

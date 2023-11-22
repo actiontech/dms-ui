@@ -7,18 +7,18 @@ import { ModalName } from '../../data/ModalName';
 import { initSystemModalStatus } from '../../store/system';
 import { SystemStyleWrapper } from './style';
 
-/* IFTRUE_isSQLE */
+// #if [feature=sqle]
 import PushNotification from './PushNotification';
 import ProcessConnection from './ProcessConnection';
 import GlobalSetting from './GlobalSetting';
-/* FITRUE_isSQLE */
+// #endif
 
 import LoginConnection from './LoginConnection/index';
 
-/* IFTRUE_isEE */
+// #if [prod_version=ee]
 import License from './License';
 import PersonalizeSetting from './PersonalizeSetting';
-/* FITRUE_isEE */
+// #endif
 
 enum SystemSegmentedKeyEnum {
   PushNotification = 'push_notification',
@@ -35,7 +35,7 @@ const System = () => {
 
   const options = useMemo(
     () => [
-      /* IFTRUE_isSQLE */
+      // #if [feature=sqle]
       {
         label: t('dmsSystem.tabPaneTitle.pushNotification'),
         value: 'push_notification',
@@ -46,7 +46,7 @@ const System = () => {
         value: 'process_connection',
         components: <ProcessConnection />
       },
-      /* FITRUE_isSQLE */
+      // #endif
 
       {
         label: t('dmsSystem.tabPaneTitle.loginConnection'),
@@ -54,15 +54,15 @@ const System = () => {
         components: <LoginConnection />
       },
 
-      /* IFTRUE_isSQLE */
+      // #if [feature=sqle]
       {
         label: t('dmsSystem.tabPaneTitle.globalConfiguration'),
         value: 'global_configuration',
         components: <GlobalSetting />
       },
-      /* FITRUE_isSQLE */
+      // #endif
 
-      /* IFTRUE_isEE */
+      // #if [prod_version=ee]
       {
         label: t('dmsSystem.tabPaneTitle.license'),
         value: 'license',
@@ -73,7 +73,7 @@ const System = () => {
         value: 'personalize',
         components: <PersonalizeSetting />
       }
-      /* FITRUE_isEE */
+      // #endif
     ],
     [t]
   );
@@ -86,7 +86,7 @@ const System = () => {
     return options.find((item) => item.value === activeTabKey)?.components;
   }, [activeTabKey, options]);
 
-  /* IFTRUE_isSQLE */
+  // #if [feature=sqle]
   useEffect(() => {
     dispatch(
       initSystemModalStatus({
@@ -97,7 +97,7 @@ const System = () => {
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  /* FITRUE_isSQLE */
+  // #endif
 
   return (
     <SystemStyleWrapper>
