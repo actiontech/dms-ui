@@ -1,3 +1,4 @@
+import { RuleUrlParamKey } from 'sqle/src/page/Rule/hooks/useRuleFilterFormItem';
 import { t } from '../../../../locale';
 import {
   DevopsStepsProps,
@@ -7,7 +8,11 @@ import {
 
 export const getAuditManageStep: (
   arg: DevopsStepsProps
-) => UserDevopsStepChildren = ({ navigate, projectID }) => {
+) => UserDevopsStepChildren = ({
+  navigate,
+  projectID,
+  setOpenRulePageProjectSelectorModal
+}) => {
   return {
     key: 'auditRule',
     title: t('dmsHome.defaultScene.steps.safetyRule.innerContents.title_0'),
@@ -18,7 +23,13 @@ export const getAuditManageStep: (
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_0_0'
         ),
-        action: () => navigate(`/sqle/rule`)
+        action: () => {
+          if (projectID) {
+            navigate(`/sqle/rule?${RuleUrlParamKey.projectID}=${projectID}`);
+          } else {
+            setOpenRulePageProjectSelectorModal?.(true);
+          }
+        }
       },
       {
         key: 'template-rule-list',
