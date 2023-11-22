@@ -30,7 +30,7 @@ const useRuleFilterFormItem = (
   //filter rule template name
   const {
     loading: getRuleTemplateLoading,
-    updateRuleTemplateListAsync,
+    updateRuleTemplateListSync,
     ruleTemplateTipsOptions
   } = useRuleTemplate();
   const {
@@ -108,7 +108,7 @@ const useRuleFilterFormItem = (
         setFilterRuleTemplate(undefined);
         setShowNorRuleTemplatePage(false);
       } else {
-        updateRuleTemplateListAsync(projectName).then((res) => {
+        updateRuleTemplateListSync(projectName).then((res) => {
           const ruleTemplateListByProjectName = res ?? [];
           if (ruleTemplateListByProjectName.length > 0) {
             setShowNorRuleTemplatePage(false);
@@ -128,7 +128,7 @@ const useRuleFilterFormItem = (
         });
       }
     },
-    [filterFuzzyCont, getTemplateRules, updateRuleTemplateListAsync]
+    [filterFuzzyCont, getTemplateRules, updateRuleTemplateListSync]
   );
   const projectID = useMemo(() => {
     return bindProjects.find((v) => v.project_name === filterProjectName)

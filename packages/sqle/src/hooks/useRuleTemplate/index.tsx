@@ -39,7 +39,7 @@ const useRuleTemplate = () => {
     [setFalse, setTrue]
   );
 
-  const updateRuleTemplateListAsync = useCallback(
+  const updateRuleTemplateListSync = useCallback(
     async (projectName: string, dbType?: string) => {
       setTrue();
       try {
@@ -113,7 +113,7 @@ const useRuleTemplate = () => {
     loading,
     updateRuleTemplateList,
     generateRuleTemplateSelectOption,
-    updateRuleTemplateListAsync,
+    updateRuleTemplateListSync,
     ruleTemplateTipsOptions
   };
 };
