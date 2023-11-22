@@ -55,7 +55,6 @@ declare module '@mui/material' {
     noUse?: string;
   }
 }
-// @ts-ignore
 declare module '@mui/styles' {
   interface DefaultTheme extends Theme {}
 }
