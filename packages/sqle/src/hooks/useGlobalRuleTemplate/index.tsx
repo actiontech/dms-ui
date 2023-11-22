@@ -58,11 +58,32 @@ const useGlobalRuleTemplate = () => {
     [globalRuleTemplateList]
   );
 
+  const globalRuleTemplateTipsOptions = useCallback(
+    (dbType?: string) => {
+      let filterRuleTemplateList: IRuleTemplateTipResV1[] = [];
+      if (dbType !== ruleTemplateListDefaultKey) {
+        filterRuleTemplateList = globalRuleTemplateList.filter(
+          (i) => i.db_type === dbType
+        );
+      } else {
+        filterRuleTemplateList = globalRuleTemplateList;
+      }
+      return filterRuleTemplateList.map((template) => {
+        return {
+          label: template.rule_template_name,
+          value: template.rule_template_name
+        };
+      });
+    },
+    [globalRuleTemplateList]
+  );
+
   return {
     globalRuleTemplateList,
     loading,
     updateGlobalRuleTemplateList,
-    generateGlobalRuleTemplateSelectOption
+    generateGlobalRuleTemplateSelectOption,
+    globalRuleTemplateTipsOptions
   };
 };
 

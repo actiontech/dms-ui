@@ -3,7 +3,7 @@ import {
   useMonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   SQLInputType,
@@ -15,6 +15,7 @@ import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import UploadType from './UploadType';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
+import { Form } from 'antd5';
 
 const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   form,
@@ -25,12 +26,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const [currentSQLInputType, setCurrentSQLInputTYpe] = useState(
-    SQLInputType.manualInput
-  );
-
   const currentSQLInputTypeChange = (value: SQLInputType) => {
-    setCurrentSQLInputTYpe(value);
     if (isClearFormWhenChangeSqlType) {
       form.resetFields([
         generateFieldName('sql'),
@@ -57,6 +53,12 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
     return [fieldName ?? '0', name];
   };
 
+  const sqlInputTypeName = useMemo(() => {
+    return [fieldName ?? '0', 'sqlInputType'];
+  }, [fieldName]);
+
+  const currentSQLInputType = Form.useWatch(sqlInputTypeName, form);
+
   const { editorDidMount } = useMonacoEditor(form, {
     formName: generateFieldName('sql')
   });
@@ -73,7 +75,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
 
   useEffect(() => {
     const reset = () => {
-      setCurrentSQLInputTYpe(SQLInputType.manualInput);
+      form.setFieldValue(sqlInputTypeName, SQLInputType.manualInput);
     };
     EventEmitter.subscribe(EmitterKey.Reset_Create_Order_Form, reset);
     return () => {
@@ -85,7 +87,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   return (
     <>
       <FormItemNoLabel
-        name={generateFieldName('sqlInputType')}
+        name={sqlInputTypeName}
         initialValue={SQLInputType.manualInput}
       >
         <UploadType
