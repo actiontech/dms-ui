@@ -28,7 +28,11 @@ export const UserTypeDictionary: StringDictionary = {
 
 export const AdminUserDevopsSteps: (
   arg: DevopsStepsProps
-) => UserDevopsStepsFactory = ({ navigate, projectID = '' }) => [
+) => UserDevopsStepsFactory = ({
+  navigate,
+  projectID = '',
+  setOpenRulePageProjectSelectorModal
+}) => [
   getDatabaseManagerSteps({ navigate, projectID }),
   getMemberAndPermissionSteps({ navigate, projectID }),
 
@@ -38,7 +42,11 @@ export const AdminUserDevopsSteps: (
     title: t('dmsHome.defaultScene.steps.safetyRule.title'),
     icon: <IconStepSafetyRule />,
     children: [
-      getAuditManageStep({ navigate, projectID }),
+      getAuditManageStep({
+        navigate,
+        projectID,
+        setOpenRulePageProjectSelectorModal
+      }),
       getAuditProgressStep({ navigate, projectID })
     ]
   },

@@ -10,6 +10,12 @@ import { BasicInput, BasicButton } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
+import {
+  DMS_REDIRECT_KEY_PARAMS_NAME,
+  OPEN_CLOUD_BEAVER_URL_PARAM_NAME
+} from '@actiontech/shared/lib/data/common';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 // #if [prod_version=ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
@@ -27,6 +33,8 @@ const Login = () => {
 
   const [loading, { setTrue, setFalse }] = useBoolean();
 
+  const navigate = useNavigate();
+  const location = useLocation();
   const login = (formData: LoginFormFieldValue) => {
     // #if [prod_version=ee]
     if (!formData.userAgreement) {
@@ -52,6 +60,16 @@ const Login = () => {
               token
             })
           );
+
+          const params = new URLSearchParams(location.search);
+          const target = params.get(DMS_REDIRECT_KEY_PARAMS_NAME);
+          if (target) {
+            if (target === '/cloudBeaver') {
+              navigate(`/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+            } else {
+              navigate(target);
+            }
+          }
         }
         // #if [prod_version=ee]
         LocalStorageWrapper.set(

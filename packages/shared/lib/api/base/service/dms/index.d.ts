@@ -542,6 +542,8 @@ export interface IAddSessionParams {
 
 export interface IAddSessionReturn extends IAddSessionReply {}
 
+export interface IDelSessionReturn extends IGenericResp {}
+
 export interface IGetUserBySessionParams {
   user_uid?: string;
 }
