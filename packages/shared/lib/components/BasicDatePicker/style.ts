@@ -1,47 +1,9 @@
 import { ANTD_PREFIX_STR } from '../../data/common';
 import { styled } from '@mui/material/styles';
 
-export const BasicDatePickerFieldStyleWrapper = styled('div')`
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  &.basic-date-picker-hide-super-icon {
-    .${ANTD_PREFIX_STR}-picker-header-super-prev-btn,
-      .${ANTD_PREFIX_STR}-picker-header-super-next-btn {
-      display: none;
-    }
-  }
-
-  .prefix-icon {
-    position: absolute;
-    left: 12px;
-    top: 7px;
-    z-index: 99;
-  }
-
-  &
-    .${ANTD_PREFIX_STR}-picker:not(.${ANTD_PREFIX_STR}-picker-borderless):not(
-      .${ANTD_PREFIX_STR}-picker-focused
-    ) {
-    border: 1px solid
-      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
-  }
-
-  & .${ANTD_PREFIX_STR}-picker {
-    width: 100%;
-    padding-left: 40px !important;
-    border-radius: 4px !important;
-    &:hover:not(:focus):not(.${ANTD_PREFIX_STR}-picker-status-error):not(
-        .${ANTD_PREFIX_STR}-picker-disabled
-      ):not(.${ANTD_PREFIX_STR}-picker-focused):not(
-        .${ANTD_PREFIX_STR}-picker-borderless
-      ) {
-      border: ${({ theme }) =>
-        theme.sharedTheme.components.basicRangePicker.hover.border};
-    }
-  }
-
+export const BasicDatePickerDropDownStyleWrapper = styled('div')<{
+  hideSuperIcon: boolean;
+}>`
   .${ANTD_PREFIX_STR}-picker-dropdown {
     .${ANTD_PREFIX_STR}-picker-panel-layout
       .${ANTD_PREFIX_STR}-picker-panel
@@ -53,6 +15,7 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
         height: 22px;
         line-height: 22px;
         padding: 4px;
+        display: ${({ hideSuperIcon }) => (hideSuperIcon ? 'none' : 'initial')};
       }
 
       .${ANTD_PREFIX_STR}-picker-header-prev-btn,
@@ -67,12 +30,15 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
         .prev-icon {
           height: 22px;
           width: 22px;
-          background-color: var(--color-white-100, #fff);
+          background-color: ${({ theme }) =>
+            theme.sharedTheme.basic.colorWhite};
           border-radius: 4px;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 1px 4px 0 rgba(51, 44, 31, 0.12);
+          box-shadow: ${({ theme }) =>
+            theme.sharedTheme.components.basicRangePicker.dropdown.icon
+              .boxShadow};
         }
       }
 
@@ -124,6 +90,46 @@ export const BasicDatePickerFieldStyleWrapper = styled('div')`
           height: 28px;
         }
       }
+    }
+  }
+`;
+
+export const BasicDatePickerFieldStyleWrapper = styled(
+  BasicDatePickerDropDownStyleWrapper
+)<{
+  hideSuperIcon: boolean;
+}>`
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .prefix-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+  }
+
+  &
+    .${ANTD_PREFIX_STR}-picker:not(.${ANTD_PREFIX_STR}-picker-borderless):not(
+      .${ANTD_PREFIX_STR}-picker-focused
+    ) {
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+  }
+
+  & .${ANTD_PREFIX_STR}-picker {
+    width: 100%;
+    padding-left: 40px !important;
+    border-radius: 4px !important;
+    &:hover:not(:focus):not(.${ANTD_PREFIX_STR}-picker-status-error):not(
+        .${ANTD_PREFIX_STR}-picker-disabled
+      ):not(.${ANTD_PREFIX_STR}-picker-focused):not(
+        .${ANTD_PREFIX_STR}-picker-borderless
+      ) {
+      border: ${({ theme }) =>
+        theme.sharedTheme.components.basicRangePicker.hover.border};
     }
   }
 `;
