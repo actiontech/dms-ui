@@ -15,6 +15,13 @@ import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME
 } from '@actiontech/shared/lib/data/common';
 import { useLocation, useNavigate } from 'react-router-dom';
+/* IFTRUE_isEE */
+import { LocalStorageWrapper } from '@actiontech/shared';
+import {
+  StorageKey,
+  CompanyNoticeDisplayStatusEnum
+} from '@actiontech/shared/lib/enum';
+/* FITRUE_isEE */
 
 const Login = () => {
   const { t } = useTranslation();
@@ -63,6 +70,12 @@ const Login = () => {
             }
           }
         }
+        /* IFTRUE_isEE */
+        LocalStorageWrapper.set(
+          StorageKey.SHOW_COMPANY_NOTICE,
+          CompanyNoticeDisplayStatusEnum.NotDisplayed
+        );
+        /* FITRUE_isEE */
       })
       .finally(() => {
         setFalse();
