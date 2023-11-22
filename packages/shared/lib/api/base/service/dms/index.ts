@@ -118,6 +118,7 @@ import {
   IDelRoleReturn,
   IAddSessionParams,
   IAddSessionReturn,
+  IDelSessionReturn,
   IGetUserBySessionParams,
   IGetUserBySessionReturn,
   IListUserGroupsParams,
@@ -920,6 +921,14 @@ class DmsService extends ServiceBase {
     return this.post<IAddSessionReturn>(
       '/v1/dms/sessions',
       paramsData,
+      options
+    );
+  }
+
+  public DelSession(options?: AxiosRequestConfig) {
+    return this.delete<IDelSessionReturn>(
+      '/v1/dms/sessions',
+      undefined,
       options
     );
   }
