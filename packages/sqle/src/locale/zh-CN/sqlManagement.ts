@@ -71,7 +71,8 @@ export default {
         warn: '告警',
         notice: '提示'
       },
-      assignee: '与我相关'
+      assignee: '与我相关',
+      rule: '审核规则'
     },
     statusReport: {
       title: 'SQL审核结果'

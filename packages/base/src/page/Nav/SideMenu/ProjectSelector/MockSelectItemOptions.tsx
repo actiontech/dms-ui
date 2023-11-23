@@ -1,14 +1,16 @@
-import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
-
-import { ProjectSelectorLabelStyleWrapper } from './style';
-import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
-import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
+import { ProjectSelectorLabelStyleWrapper } from './style';
+import {
+  IconProjectArchived,
+  IconProjectFlag
+} from '@actiontech/shared/lib/Icon/common';
+import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
+import { IBindProject } from './index.type';
 
 const MockSelectItemOptions: React.FC<{
-  list: IUserBindProject[];
+  list: IBindProject[];
   closeSelectDropdown: () => void;
 }> = ({ list, closeSelectDropdown }) => {
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ const MockSelectItemOptions: React.FC<{
           >
             <div className={`ant-select-item-option-content`}>
               <ProjectSelectorLabelStyleWrapper>
-                <IconProjectFlag />
+                {v.archived ? <IconProjectArchived /> : <IconProjectFlag />}
 
                 <span className="project-selector-label-text">
                   {v.project_name}

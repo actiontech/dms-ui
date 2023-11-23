@@ -50,6 +50,7 @@ export const BasicDrawerStyleWrapper = styled(Drawer)`
 
     .closed-icon-custom {
       position: absolute;
+      z-index: 99;
       top: 48px;
       left: -12px;
       width: 24px;

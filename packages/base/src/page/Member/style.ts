@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Space } from 'antd';
+import { Space, Row } from 'antd';
 import { BasicDrawer } from '@actiontech/shared';
 
 export const ProjectMemberStyleWrapper = styled('section')`
@@ -37,5 +37,11 @@ export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
 export const MemberListIsAdminStyledWrapper = styled(Space)`
   .ant-space-item:first-of-type {
     display: flex;
+  }
+`;
+
+export const MemberRoleSelectorRowStyleWrapper = styled(Row)`
+  .ant-col {
+    height: 100%;
   }
 `;

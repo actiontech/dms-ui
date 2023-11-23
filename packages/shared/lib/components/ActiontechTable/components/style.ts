@@ -9,6 +9,11 @@ export const FilterContainerStyleWrapper = styled(Space)`
   background-color: ${({ theme }) =>
     theme.sharedTheme.components.filterContainer.backgroundColor};
   padding: 10px 40px;
+  margin-bottom: 0 !important;
+
+  & .ant-space-item {
+    padding-bottom: 0 !important;
+  }
 `;
 
 export const SearchInputStyleWrapper = styled(BasicInput)`
@@ -105,6 +110,7 @@ export const ToolbarStyleWrapper = styled(Space)`
   background-color: ${({ theme }) =>
     theme.sharedTheme.components.toolbar.backgroundColor};
   padding: 14px 40px;
+  margin-bottom: 0 !important;
 
   .ant-space-item {
     padding-bottom: 0 !important;
@@ -112,7 +118,7 @@ export const ToolbarStyleWrapper = styled(Space)`
 `;
 
 export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
-  &.ant-picker.ant-picker-borderless.basic-range-picker-wrapper {
+  &.ant-picker.ant-picker.basic-range-picker-wrapper {
     border: 1px solid
       ${({ theme }) =>
         theme.sharedTheme.components.customFilter.rangePicker
@@ -141,7 +147,7 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
     }
   }
 
-  &.ant-picker-range:hover {
+  &.ant-picker-range:not(.ant-picker-focused):hover {
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customFilter.rangePicker
         .hoverBackgroundColor} !important;
@@ -150,7 +156,11 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
   &.ant-picker-focused {
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customFilter.rangePicker
-        .focusBackgroundColor};
+        .focusBackgroundColor} !important;
+    border: 1px solid
+      ${({ theme }) =>
+        theme.sharedTheme.components.customFilter.rangePicker
+          .borderColor} !important;
   }
 
   & .custom-range-picker-filter-label {
@@ -212,6 +222,15 @@ export const InlineTableActionMoreButtonPopoverStyleWrapper = styled('div')`
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+
+  .more-button-item-disabled {
+    cursor: not-allowed;
+    color: ${({ theme }) => theme.sharedTheme.basic.colorFontGrayByWhite};
+
+    &:hover {
+      background-color: inherit;
     }
   }
 `;

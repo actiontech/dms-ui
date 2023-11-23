@@ -1,11 +1,13 @@
-import { IGetRuleListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
 import {
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../locale';
-export type GetRuleListV1Params = IGetRuleListV1Params & {
+export type GetRuleListV1Params = {
   project_name?: string;
+  filter_fuzzy_text?: string;
+  filter_rule_template?: string;
+  filter_db_type?: string;
 };
 
 export const RuleFilterContainerMeta: () => ActiontechTableFilterMeta<
@@ -17,6 +19,14 @@ export const RuleFilterContainerMeta: () => ActiontechTableFilterMeta<
     ActiontechTableFilterMetaValue<GetRuleListV1Params>
   >([
     [
+      'filter_fuzzy_text',
+      {
+        filterCustomType: 'search-input',
+        filterKey: 'filter_fuzzy_text',
+        checked: true
+      }
+    ],
+    [
       'project_name',
       {
         filterCustomType: 'select',
@@ -26,10 +36,10 @@ export const RuleFilterContainerMeta: () => ActiontechTableFilterMeta<
       }
     ],
     [
-      'filter_rule_names',
+      'filter_rule_template',
       {
         filterCustomType: 'select',
-        filterKey: ['filter_global_rule_template_name', 'filter_rule_names'],
+        filterKey: 'filter_rule_template',
         filterLabel: t('rule.form.ruleTemplate'),
         checked: true
       }

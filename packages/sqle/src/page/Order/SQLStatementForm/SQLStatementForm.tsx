@@ -3,7 +3,7 @@ import {
   useMonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   SQLInputType,
@@ -13,6 +13,9 @@ import {
 import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import UploadType from './UploadType';
+import EmitterKey from '../../../data/EmitterKey';
+import EventEmitter from '../../../utils/EventEmitter';
+import { Form } from 'antd';
 
 const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   form,
@@ -23,18 +26,15 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const [currentSQLInputType, setCurrentSQLInputTYpe] = useState(
-    SQLInputType.manualInput
-  );
-
   const currentSQLInputTypeChange = (value: SQLInputType) => {
-    setCurrentSQLInputTYpe(value);
     if (isClearFormWhenChangeSqlType) {
       form.resetFields([
         generateFieldName('sql'),
         generateFieldName('sqlFile'),
-        generateFieldName('mybatisFile')
+        generateFieldName('mybatisFile'),
+        generateFieldName('zipFile')
       ]);
+      // setCurrentSQLInputTYpe(SQLInputType.manualInput);
     }
   };
 
@@ -53,6 +53,12 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
     return [fieldName ?? '0', name];
   };
 
+  const sqlInputTypeName = useMemo(() => {
+    return [fieldName ?? '0', 'sqlInputType'];
+  }, [fieldName]);
+
+  const currentSQLInputType = Form.useWatch(sqlInputTypeName, form);
+
   const { editorDidMount } = useMonacoEditor(form, {
     formName: generateFieldName('sql')
   });
@@ -67,10 +73,21 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
     }
   }, [fieldName, form, sqlStatement]);
 
+  useEffect(() => {
+    const reset = () => {
+      form.setFieldValue(sqlInputTypeName, SQLInputType.manualInput);
+    };
+    EventEmitter.subscribe(EmitterKey.Reset_Create_Order_Form, reset);
+    return () => {
+      EventEmitter.unsubscribe(EmitterKey.Reset_Create_Order_Form, reset);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <FormItemNoLabel
-        name={generateFieldName('sqlInputType')}
+        name={sqlInputTypeName}
         initialValue={SQLInputType.manualInput}
       >
         <UploadType
@@ -148,6 +165,28 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
             beforeUpload={() => false}
             onRemove={removeFile.bind(null, 'mybatisFile')}
             title={t('order.sqlInfo.mybatisFileTips')}
+          />
+        </FormItemNoLabel>
+      </EmptyBox>
+      <EmptyBox if={currentSQLInputType === SQLInputType.zipFile}>
+        <FormItemNoLabel
+          valuePropName="fileList"
+          name={generateFieldName('zipFile')}
+          rules={[
+            {
+              required: true,
+              message: t('common.form.placeholder.select', {
+                name: t('order.sqlInfo.zipFile')
+              })
+            }
+          ]}
+          getValueFromEvent={getFileFromUploadChangeEvent}
+        >
+          <CustomDraggerUpload
+            accept=".zip"
+            beforeUpload={() => false}
+            onRemove={removeFile.bind(null, 'zipFile')}
+            title={t('order.sqlInfo.zipFileTips')}
           />
         </FormItemNoLabel>
       </EmptyBox>

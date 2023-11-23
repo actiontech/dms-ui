@@ -47,7 +47,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
-  const { projectID, projectName } = useCurrentProject();
+  const { projectName } = useCurrentProject();
   const {
     driverMeta,
     loading: updateDriverListLoading,
@@ -215,8 +215,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [submit]);
 
   useEffect(() => {
-    updateDriverList(projectID);
-  }, [updateDriverList, projectID]);
+    updateDriverList();
+  }, [updateDriverList]);
 
   return (
     <FormStyleWrapper

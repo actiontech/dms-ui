@@ -7,10 +7,12 @@ import { IGetInstanceTipListV1Params } from '@actiontech/shared/lib/api/sqle/ser
 import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
+import useDatabaseType from '../useDatabaseType';
 
 const useInstance = () => {
   const [instanceList, setInstanceList] = useState<IInstanceTipResV1[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
+  const { getLogoUrlByDbType } = useDatabaseType();
 
   const updateInstanceList = useCallback(
     (params: IGetInstanceTipListV1Params) => {
@@ -54,7 +56,7 @@ const useInstance = () => {
             label={
               <DatabaseTypeLogo
                 dbType={type}
-                logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+                logoUrl={getLogoUrlByDbType(type)}
               />
             }
             key={type}
@@ -77,7 +79,7 @@ const useInstance = () => {
         );
       });
     },
-    [instanceList]
+    [getLogoUrlByDbType, instanceList]
   );
 
   const instanceOptions = useMemo(() => {
@@ -87,10 +89,7 @@ const useInstance = () => {
     return instanceTypeList.map((type) => {
       return {
         label: (
-          <DatabaseTypeLogo
-            dbType={type}
-            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
-          />
+          <DatabaseTypeLogo dbType={type} logoUrl={getLogoUrlByDbType(type)} />
         ),
         options: instanceList
           .filter((v) => v.instance_type === type)
@@ -100,7 +99,7 @@ const useInstance = () => {
           }))
       };
     });
-  }, [instanceList]);
+  }, [getLogoUrlByDbType, instanceList]);
 
   //todo: 筛选项 val 为 id
   const instanceIDOptions = useMemo(() => {
@@ -110,10 +109,7 @@ const useInstance = () => {
     return instanceTypeList.map((type) => {
       return {
         label: (
-          <DatabaseTypeLogo
-            dbType={type}
-            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
-          />
+          <DatabaseTypeLogo dbType={type} logoUrl={getLogoUrlByDbType(type)} />
         ),
         options: instanceList
           .filter((v) => v.instance_type === type)
@@ -123,7 +119,7 @@ const useInstance = () => {
           }))
       };
     });
-  }, [instanceList]);
+  }, [getLogoUrlByDbType, instanceList]);
 
   return {
     instanceList,

@@ -7,18 +7,11 @@ import { Rule } from 'antd/es/form';
 import { nameRule, phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmptyBox from '@actiontech/shared/lib/components/EmptyBox';
 import { BasicToolTips } from '@actiontech/shared';
-import useUserGroup from '../../../../../hooks/useUserGroup';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 
 const UserForm: React.FC<IUserFormProps> = (props) => {
   const { t } = useTranslation();
-
-  const {
-    loading: getUserGroupListLoading,
-    userGroupList,
-    updateUserGroupList
-  } = useUserGroup();
 
   const {
     loading: getOpPermissionListLoading,
@@ -43,10 +36,9 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
 
   useEffect(() => {
     if (props.visible) {
-      updateUserGroupList();
       updateOpPermissionList();
     }
-  }, [updateOpPermissionList, updateUserGroupList, props.visible]);
+  }, [updateOpPermissionList, props.visible]);
 
   return (
     <Form form={props.form} layout="vertical">
@@ -188,25 +180,6 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
               value={v?.op_permission?.uid ?? ''}
             >
               {v?.op_permission?.name}
-            </Select.Option>
-          ))}
-        </BasicSelect>
-      </Form.Item>
-      <Form.Item
-        name="userGroupUids"
-        label={t('dmsUserCenter.user.userForm.userGroups')}
-      >
-        <BasicSelect
-          mode="multiple"
-          showSearch
-          loading={getUserGroupListLoading}
-          placeholder={t('common.form.placeholder.select', {
-            name: t('dmsUserCenter.user.userForm.userGroups')
-          })}
-        >
-          {userGroupList.map((group) => (
-            <Select.Option key={group.uid} value={group.uid ?? ''}>
-              {group.name}
             </Select.Option>
           ))}
         </BasicSelect>

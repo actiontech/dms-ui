@@ -22,7 +22,8 @@ export default {
     lark: '飞书配置',
     webhook: 'Webhook配置',
     ldap: 'LDAP',
-    oauth: 'Oauth2.0配置'
+    oauth: 'Oauth2.0配置',
+    larkAudit: '飞书审批'
   },
 
   smtp: {
@@ -118,11 +119,11 @@ export default {
 
     accessTokenKeyName: 'access_token Key名称',
     accessTokenKeyNameTips:
-      'SQLE会在获取用户ID时将access_token放在这个key对应的value中, 此参数会作为get请求的参数发送给用户ID获取地址',
+      'sqle会在获取用户ID时将access_token放在这个key对应的value中, 此参数会作为get请求的参数发送给用户ID获取地址',
 
     userIdKeyName: 'user_id Key名称',
     userIdKeyNameTips:
-      'SQLE会尝试使用此key从第三方平台的响应中解析出用户ID,用户ID应当为唯一ID',
+      'sqle会尝试使用此key从第三方平台的响应中解析出用户ID,用户ID应当为唯一ID',
 
     loginButtonText: '登录按钮文字',
     loginButtonTextTips: 'login页面oauth登录按钮文字',
@@ -134,6 +135,19 @@ export default {
     enable: '启用钉钉审批',
     test: '测试',
     testSuccess: '当前AppKey和AppSecret验证通过'
+  },
+
+  larkAudit: {
+    enable: '启用飞书审批',
+    test: '测试',
+    titleTips: '审批信息将根据审核人的手机号发送到相应的飞书账号',
+    testSuccess: '已成功将审批消息推送至指定账号',
+    testing: '正在向飞书推送消息...',
+    receiveType: '接收方式',
+    email: '邮箱',
+    phone: '手机号',
+    ceTips:
+      '如果您使用飞书作为协作平台，并且希望在飞书上进行工单审批，您可以启用飞书审批功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。    '
   },
 
   license: {
@@ -182,5 +196,11 @@ export default {
         2. 提供运维专家团队多年的技术沉淀，并支持规则知识库的自主沉淀。
         3. 提供慢日志等十几种的 SQL智能扫描，覆盖事前事后 SQL 采集需求。
         4. 提供SQL全流程的管控视角，追踪问题SQL解决进度、并提供快捷优化。`
+  },
+  notification: {
+    title: '系统公告',
+    hasDirtyDataTips: '当前内容已经发生更改，是否确认取消修改？',
+    successMessage: '成功发布系统公告!',
+    notData: '暂无公告信息'
   }
 };

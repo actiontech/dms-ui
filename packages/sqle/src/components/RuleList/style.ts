@@ -134,7 +134,6 @@ export const RuleItemStyleWrapper = styled('div')`
     .level-icon-text {
       color: ${({ theme }) =>
         theme.sharedTheme.components.ruleComponent.ruleList.levelIconTextColor};
-      font-family: 'Plus Jakarta Sans';
       font-size: 12px;
       font-weight: 500;
       line-height: 19px;
@@ -180,7 +179,6 @@ export const RuleItemStyleWrapper = styled('div')`
           .paramsBackgroundColor};
 
       &-item {
-        font-family: 'Plus Jakarta Sans';
         font-size: 12px;
         font-style: normal;
         font-weight: 600;
