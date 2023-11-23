@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import { useCallback, useMemo, useState } from 'react';
 
-import { Select } from 'antd5';
+import { Select } from 'antd';
 import { BasicTag } from '@actiontech/shared';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

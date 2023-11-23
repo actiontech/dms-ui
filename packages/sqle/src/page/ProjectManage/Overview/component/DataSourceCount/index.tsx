@@ -13,9 +13,9 @@ import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import ChartTooltip from '../../../../../components/ChartCom/ChartTooltip';
-import useChangeTheme from '../../../../../hooks/useChangeTheme';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { IDBTypeHealth } from '@actiontech/shared/lib/api/sqle/service/common';
+import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 export enum DBHealthEnum {
   health = 'health',

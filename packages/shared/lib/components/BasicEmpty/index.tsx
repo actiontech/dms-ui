@@ -1,7 +1,7 @@
 import { ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-import { EmptyProps, Spin } from 'antd5';
+import { EmptyProps, Spin } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { IconEmpty, IconError } from '../../Icon/common';
 import BasicButton from '../BasicButton';

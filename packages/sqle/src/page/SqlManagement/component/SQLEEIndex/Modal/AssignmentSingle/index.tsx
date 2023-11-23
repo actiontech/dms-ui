@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../data/ModalName';
 
-import { Space, message } from 'antd5';
+import { Space, message } from 'antd';
 import AssignmentForm from '../AssignmentForm';
 
 import { useBoolean } from 'ahooks';
@@ -12,7 +12,7 @@ import {
   updateSqleManagementModalStatus,
   updateSqleManagement
 } from '../../../../../../store/sqleManagement';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { BasicButton, BasicModal } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IBatchUpdateSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';

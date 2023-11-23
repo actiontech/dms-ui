@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { Space, Typography } from 'antd5';
+import { Space, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import EmptyBox from '../EmptyBox';
 import { TestDatabaseConnectButtonProps } from './index.type';

@@ -5,7 +5,7 @@ import {
   WorkflowTemplateAuthLevelStyleWrapper,
   WorkflowTemplateDetailRightContentStyleWrapper
 } from './style';
-import { Progress, Typography } from 'antd5';
+import { Progress, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import { useGetLevelData } from '../../../useGetLevelData';

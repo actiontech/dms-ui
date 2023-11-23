@@ -9,8 +9,8 @@ import {
 } from '@actiontech/shared';
 import { PlusOutlined } from '@ant-design/icons';
 import { SqlAuditTagsButton, SqlAuditTagsPopoverCont } from './style';
-import { Divider, Form, InputRef, Popover, Space, Spin, message } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+import { Divider, Form, InputRef, Popover, Space, Spin, message } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import useSQLAuditRecordTag from '../../../../../hooks/useSQLAuditRecordTag';
 import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
 import { BasicSelect } from '@actiontech/shared';
 

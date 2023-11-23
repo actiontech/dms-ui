@@ -1,4 +1,4 @@
-import { Row, Col, Popover } from 'antd5';
+import { Row, Col, Popover } from 'antd';
 import { OrderStateBarStyleWrapper } from './style';
 import { ChartTooltipStyleWrapper } from '../ChartTooltip/style';
 

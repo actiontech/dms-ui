@@ -1,4 +1,4 @@
-import { UploadProps } from 'antd5';
+import { UploadProps } from 'antd';
 
 export type ConfigItemProps = {
   label: string | React.ReactNode;

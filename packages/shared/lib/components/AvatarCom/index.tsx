@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps } from 'antd5';
+import { Avatar, AvatarProps } from 'antd';
 import { useMemo } from 'react';
 import { AvatarStyleWrapper } from './style';
 import BasicToolTips from '../BasicToolTips';

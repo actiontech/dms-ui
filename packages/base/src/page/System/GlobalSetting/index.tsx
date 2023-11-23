@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import { Spin, message } from 'antd5';
+import { Spin, message } from 'antd';
 import { ConfigItem } from '@actiontech/shared';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

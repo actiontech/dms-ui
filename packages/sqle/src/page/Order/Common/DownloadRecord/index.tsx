@@ -1,4 +1,4 @@
-import { Popover, Space } from 'antd5';
+import { Popover, Space } from 'antd';
 import { DownloadRecordProps } from './index.type';
 import { BasicButton } from '@actiontech/shared';
 import {

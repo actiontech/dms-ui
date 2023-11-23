@@ -1,5 +1,5 @@
 import { ICreateWorkflowV2Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 
 export type OrderBaseInfoFormFields = Pick<
   ICreateWorkflowV2Params,

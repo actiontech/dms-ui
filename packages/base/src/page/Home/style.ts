@@ -1,4 +1,3 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 
 export const DefaultSceneSegmentedWrapper = styled('section')`
@@ -81,7 +80,7 @@ export const DefaultSceneStepContainerWrapper = styled('section')`
     border: ${({ theme }) => theme.baseTheme.guidance.steps.step.border};
     border-radius: 8px;
 
-    .${ANTD_PREFIX_STR}-row {
+    .ant-row {
       flex: 1;
     }
 

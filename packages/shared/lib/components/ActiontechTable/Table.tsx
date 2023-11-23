@@ -1,4 +1,4 @@
-import { Result, ConfigProvider } from 'antd5';
+import { Result, ConfigProvider } from 'antd';
 import { ActiontechTableProps } from './index.type';
 import ToolBar from './components/Toolbar';
 import FilterContainer from './components/FilterContainer';

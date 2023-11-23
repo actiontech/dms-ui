@@ -1,4 +1,4 @@
-import { Popover, Spin } from 'antd5';
+import { Popover, Spin } from 'antd';
 import {
   PopoverInnerStyleWrapper,
   CompanyNoticeIconStyleWrapper

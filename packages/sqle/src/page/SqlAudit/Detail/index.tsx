@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconAdd, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import BasicInfoWrapper from './BasicInfoWrapper';

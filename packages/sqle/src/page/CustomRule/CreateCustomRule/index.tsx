@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { useBoolean } from 'ahooks';
 import classNames from 'classnames';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

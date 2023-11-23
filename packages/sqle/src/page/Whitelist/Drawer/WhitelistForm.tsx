@@ -1,4 +1,4 @@
-import { Form, Radio } from 'antd5';
+import { Form, Radio } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { WhitelistFormProps } from './index.type';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';

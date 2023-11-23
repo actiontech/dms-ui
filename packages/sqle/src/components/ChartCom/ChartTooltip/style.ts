@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Popover } from 'antd5';
+import { Popover } from 'antd';
 
 export const ChartTooltipStyleWrapper = styled('div')`
   &.tooltip-box-wrapper {

@@ -1,5 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 export const DetailReportStyleWrapper = styled('section')`
   padding-top: 60px;
@@ -157,7 +156,7 @@ export const DetailReportStyleWrapper = styled('section')`
     }
   }
 
-  .${ANTD_PREFIX_STR}-table-wrapper {
+  .ant-table-wrapper {
     padding-bottom: 62px;
 
     .sql-cont-width {

@@ -1,4 +1,4 @@
-import { Col, Row, Spin } from 'antd5';
+import { Col, Row, Spin } from 'antd';
 import React, { useEffect, useMemo, useState } from 'react';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useRequest } from 'ahooks';

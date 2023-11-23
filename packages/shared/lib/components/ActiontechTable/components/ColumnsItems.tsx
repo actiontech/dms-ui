@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxProps, Typography } from 'antd5';
+import { Checkbox, CheckboxProps, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { IconDraggable } from '../../../Icon';
 

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { BasicDrawer, EmptyBox } from '@actiontech/shared';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import useRuleParams from '../../BackendForm/useRuleParams';
 import { RuleDetailItemStyleWrapper } from './style';
 import RuleBaseInfo from './RuleBaseInfo';

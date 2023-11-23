@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { message, Form, Space } from 'antd5';
+import { message, Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

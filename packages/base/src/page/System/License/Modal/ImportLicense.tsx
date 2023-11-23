@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { Form, message, Upload } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
-import { RcFile } from 'antd5/es/upload';
+import { Form, message, Upload } from 'antd';
+import { useForm } from 'antd/es/form/Form';
+import { RcFile } from 'antd/es/upload';
 import { useDispatch, useSelector } from 'react-redux';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { BasicButton, BasicModal } from '@actiontech/shared';

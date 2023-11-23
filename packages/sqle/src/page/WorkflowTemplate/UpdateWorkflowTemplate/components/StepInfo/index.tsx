@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Col, Row } from 'antd5';
+import { Col, Row } from 'antd';
 import StepCard from '../../../components/StepCard';
 import { stepInfo } from '../../../components/StepCard/stepInfo';
 import {

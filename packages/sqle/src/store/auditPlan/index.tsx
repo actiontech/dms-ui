@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ModalStatus } from '../../types/common.type';
 import { commonModalReducer } from '../common';
 import {
   IAuditPlanResV2,
   IAuditPlanReportSQLResV2
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 type AuditPlanReduxState = {
   modalStatus: ModalStatus;
   selectAuditPlan: IAuditPlanResV2 | null;

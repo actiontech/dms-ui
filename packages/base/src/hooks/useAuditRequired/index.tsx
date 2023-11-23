@@ -1,4 +1,4 @@
-import { Form, FormInstance } from 'antd5';
+import { Form, FormInstance } from 'antd';
 import { useState } from 'react';
 
 const useAuditRequired = <T extends FormInstance>(form: T) => {

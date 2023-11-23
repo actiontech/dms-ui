@@ -6,14 +6,14 @@ import {
   EditOrderFormTitleStyleWrapper,
   EditSQLInfoFormStyleWrapper
 } from './style';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { OrderBaseInfoFormFields } from '../BaseInfoForm/index.type';
 import { SQLInfoFormFields, SQLInfoFormProps } from '../SQLInfoForm/index.type';
 import { useTranslation } from 'react-i18next';
 import BaseInfoFormItem from '../BaseInfoForm/BaseInfoFormItem';
 import BaseInfoTag from './BaseInfoTag';
 import { useRef } from 'react';
-import { Divider, Spin } from 'antd5';
+import { Divider, Spin } from 'antd';
 
 const EditSQLInfoDrawer: React.FC<EditSQLInfoDrawerProps> = ({
   open,

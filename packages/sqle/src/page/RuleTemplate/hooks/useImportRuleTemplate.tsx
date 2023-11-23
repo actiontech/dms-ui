@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { FormInstance, useForm } from 'antd5/es/form/Form';
-import { MessageInstance } from 'antd5/es/message/interface';
+import { FormInstance, useForm } from 'antd/es/form/Form';
+import { MessageInstance } from 'antd/es/message/interface';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

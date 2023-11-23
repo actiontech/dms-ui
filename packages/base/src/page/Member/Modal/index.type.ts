@@ -1,4 +1,4 @@
-import type { FormInstance } from 'antd5/es/form';
+import type { FormInstance } from 'antd/es/form';
 import { IMemberRoleWithOpRange } from '@actiontech/shared/lib/api/base/service/common';
 
 export interface IMemberFormFields {

@@ -1,7 +1,7 @@
 import { t } from '../../../locale';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { Typography } from 'antd5';
+import { Typography } from 'antd';
 import { DashboardNameStyleWrapper } from '../CommonTable/style';
 import { IconAuditTaskName } from '../../../icon/Dashboard';
 import { Link } from 'react-router-dom';

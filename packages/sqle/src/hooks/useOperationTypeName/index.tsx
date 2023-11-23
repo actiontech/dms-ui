@@ -1,7 +1,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '../../data/common';
-import { Select } from 'antd5';
+import { Select } from 'antd';
 import { IOperationTypeNameList } from '@actiontech/shared/lib/api/sqle/service/common';
 import OperationRecord from '@actiontech/shared/lib/api/sqle/service/OperationRecord';
 

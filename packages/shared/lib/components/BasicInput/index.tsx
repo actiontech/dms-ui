@@ -1,6 +1,6 @@
 import InternalInput from './Input';
 import TextArea from './TextArea';
-import { InputProps, InputRef } from 'antd5';
+import { InputProps, InputRef } from 'antd';
 import Password from './Password';
 
 type CompoundedComponent = React.ForwardRefExoticComponent<

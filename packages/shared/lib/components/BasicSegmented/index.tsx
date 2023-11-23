@@ -1,4 +1,4 @@
-import { SegmentedProps } from 'antd5';
+import { SegmentedProps } from 'antd';
 import classnames from 'classnames';
 import { SegmentedStyleWrapper } from './style';
 

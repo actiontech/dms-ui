@@ -10,12 +10,9 @@ import dmsCloudBeaver from './dmsCloudBeaver';
 import dmsSyncDataSource from './dmsSyncDataSource';
 import dmsMenu from './dmsMenu';
 
-import common from '@actiontech/shared/lib/locale/zh-CN/common';
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   translation: {
-    common,
     dmsLogin,
     dmsHome,
     dmsLayout,

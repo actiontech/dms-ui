@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import ProjectSelectorModal from './ProjectSelectorModal';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useMemo, useState } from 'react';
-import { SelectProps } from 'antd5';
+import { SelectProps } from 'antd';
 import { ProjectSelectorLabelStyleWrapper } from '../../../Nav/SideMenu/ProjectSelector/style';
 import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
 

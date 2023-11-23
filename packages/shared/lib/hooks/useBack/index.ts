@@ -1,5 +1,5 @@
 import React from 'react';
-import useNavigate from '../useNavigate';
+import { useNavigate } from 'react-router-dom';
 
 const useBack = () => {
   const navigate = useNavigate();

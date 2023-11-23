@@ -1,14 +1,15 @@
 import { BasicSegmented } from '@actiontech/shared';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+
 import { styled } from '@mui/material/styles';
 
 export const RuleStatusSegmentedStyleWrapper = styled(BasicSegmented)`
-  .${ANTD_PREFIX_STR}-segmented-item-selected.enabled-rule {
+  .ant-segmented-item-selected.enabled-rule {
     color: ${({ theme }) =>
       theme.sharedTheme.components.ruleComponent.ruleStatus
         .enableColor} !important;
   }
-  .${ANTD_PREFIX_STR}-segmented-item-selected.disabled-rule {
+
+  .ant-segmented-item-selected.disabled-rule {
     color: ${({ theme }) =>
       theme.sharedTheme.components.ruleComponent.ruleStatus
         .disabledColor} !important;
@@ -147,12 +148,12 @@ export const RuleItemStyleWrapper = styled('div')`
     justify-content: space-between;
     font-size: 13px;
 
-    &-desc.${ANTD_PREFIX_STR}-typography {
+    &-desc.ant-typography {
       font-weight: 500;
       margin-bottom: 4px;
     }
 
-    &-annotation.${ANTD_PREFIX_STR}-typography {
+    &-annotation.ant-typography {
       width: 100%;
       margin-bottom: 0;
       color: ${({ theme }) =>

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { InputRef, SelectProps } from 'antd5';
+import { InputRef, SelectProps } from 'antd';
 import { BasicButton, EmptyBox } from '@actiontech/shared';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
@@ -13,7 +13,6 @@ import {
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
 import MockSelectItemOptions from './MockSelectItemOptions';
 import { ProjectSelectorProps } from './index.type';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
@@ -54,18 +53,18 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
               // 当移入menu范围时，如果原本有hover active的选项，还原active类
               if (lastActiveMenuItem) {
                 lastActiveMenuItem?.classList.add(
-                  `${ANTD_PREFIX_STR}-select-item-option-active`
+                  `ant-select-item-option-active`
                 );
               }
             }}
             onMouseLeave={() => {
-              // 当移出menu范围时，移除所有‘antd-v5-select-item-option-active’，避免出现同时有2个hover类的option
+              // 当移出menu范围时，移除所有‘ant-select-item-option-active’，避免出现同时有2个hover类的option
               const activeSelectItem = document.querySelectorAll(
-                `.${ANTD_PREFIX_STR}-select-item.${ANTD_PREFIX_STR}-select-item-option.${ANTD_PREFIX_STR}-select-item-option-active`
+                `.ant-select-item.ant-select-item-option.ant-select-item-option-active`
               )[0];
               setLastActiveMenuItem(activeSelectItem);
               activeSelectItem?.classList.remove(
-                `${ANTD_PREFIX_STR}-select-item-option-active`
+                `ant-select-item-option-active`
               );
             }}
           >

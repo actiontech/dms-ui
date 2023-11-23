@@ -1,5 +1,5 @@
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { OrderPageHeaderExtraProps } from './index.type';
 
