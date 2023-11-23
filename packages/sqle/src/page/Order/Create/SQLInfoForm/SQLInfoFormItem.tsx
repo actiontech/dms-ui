@@ -13,7 +13,7 @@ import {
   BasicToolTips,
   EmptyBox
 } from '@actiontech/shared';
-import { Space, SwitchProps } from 'antd5';
+import { Space, SwitchProps } from 'antd';
 import SQLStatementFormTabs from '../../SQLStatementForm/SQLStatementFormTabs';
 import {
   SQLInputType,

@@ -1,9 +1,8 @@
 import { styled } from '@mui/material/styles';
 import BasicInput from '../BasicInput';
-import { ANTD_PREFIX_STR } from '../../data/common';
 
 export const CustomInputStyleWrapper = styled(BasicInput)`
-  &.${ANTD_PREFIX_STR}-input-affix-wrapper-borderless.custom-input-namespace {
+  &.ant-input-affix-wrapper-borderless.custom-input-namespace {
     border-radius: 4px;
     border: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.border} !important;
@@ -14,25 +13,25 @@ export const CustomInputStyleWrapper = styled(BasicInput)`
     }
   }
 
-  &.${ANTD_PREFIX_STR}-input-affix-wrapper.custom-input-namespace {
-    &.${ANTD_PREFIX_STR}-input-affix-wrapper-focused {
+  &.ant-input-affix-wrapper.custom-input-namespace {
+    &.ant-input-affix-wrapper-focused {
       box-shadow: none !important;
     }
 
-    .${ANTD_PREFIX_STR}-input-prefix {
+    .ant-input-prefix {
       margin-right: 8px !important;
       color: ${({ theme }) =>
         theme.sharedTheme.components.customSelect.content.prefixColor};
       font-size: 13px;
     }
 
-    &:not(.${ANTD_PREFIX_STR}-input-affix-wrapper-borderless) {
+    &:not(.ant-input-affix-wrapper-borderless) {
       border: ${({ theme }) =>
         theme.sharedTheme.components.customSelect.border} !important;
 
       &:focus {
         &,
-        .${ANTD_PREFIX_STR}-input {
+        .ant-input {
           background-color: ${({ theme }) =>
             theme.sharedTheme.components.customSelect.focusBackGroundColor};
         }
@@ -40,7 +39,7 @@ export const CustomInputStyleWrapper = styled(BasicInput)`
 
       &:hover {
         &,
-        .${ANTD_PREFIX_STR}-input {
+        .ant-input {
           background-color: ${({ theme }) =>
             theme.sharedTheme.components.customSelect.hoverBackgroundColor};
         }
@@ -48,7 +47,7 @@ export const CustomInputStyleWrapper = styled(BasicInput)`
     }
   }
 
-  .${ANTD_PREFIX_STR}-input-clear-icon {
+  .ant-input-clear-icon {
     display: flex;
     align-items: center;
 

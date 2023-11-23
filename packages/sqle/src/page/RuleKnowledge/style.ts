@@ -17,7 +17,7 @@ export const RuleKnowledgeContentStyleWrapper = styled('div')`
     box-shadow: none;
   }
 
-  .card-editing-status.antd-v5-card .antd-v5-card-body {
+  .card-editing-status.ant-card .ant-card-body {
     padding: 0;
   }
 `;

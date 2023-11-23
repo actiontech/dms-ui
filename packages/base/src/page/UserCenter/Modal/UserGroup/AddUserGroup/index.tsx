@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { Space, Form, message } from 'antd5';
+import { Space, Form, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import EmitterKey from '../../../../../data/EmitterKey';

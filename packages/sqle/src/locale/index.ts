@@ -3,12 +3,37 @@ import { SupportLanguage } from '@actiontech/shared/lib/enum';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { StorageKey } from '@actiontech/shared/lib/enum';
-import { Dictionary } from '../types/common.type';
 import enUS from './en-US';
 import zhCN from './zh-CN';
 import commonEnUS from '@actiontech/shared/lib/locale/en-US';
 import commonZhCN from '@actiontech/shared/lib/locale/zh-CN';
-import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
+import {
+  Dictionary,
+  TemplateKeyPath
+} from '@actiontech/shared/lib/types/common.type';
+import { findDuplicateKeys } from '../../../base/src/utils/findDuplicateKeys';
+
+// IFTRUE_isDebug
+const zh_dupKeys = findDuplicateKeys([
+  commonZhCN.translation,
+  zhCN.translation
+]);
+if (zh_dupKeys.length > 0) {
+  throw new Error(
+    `SQLE ZhCN_Locale error: The same key exists: ${zh_dupKeys.toString()}`
+  );
+}
+
+const en_dupKeys = findDuplicateKeys([
+  commonEnUS.translation,
+  enUS.translation
+]);
+if (en_dupKeys.length > 0) {
+  throw new Error(
+    `SQLE EnUS_Locale error: The same key exists: ${en_dupKeys.toString()}`
+  );
+}
+// FITRUE_isDebug
 
 const allZhCN = {
   translation: { ...commonZhCN.translation, ...zhCN.translation }

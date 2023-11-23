@@ -1,10 +1,10 @@
-import { InputRef, SelectProps } from 'antd5';
+import { InputRef, SelectProps } from 'antd';
 import { CustomSelectProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { useMemo, useRef, useState } from 'react';
 import CustomPlaceholder from './CustomPlaceholder';
 import CustomOptionLabel from './CustomOptionLabel';
-import { DefaultOptionType } from 'antd5/es/select';
+import { DefaultOptionType } from 'antd/es/select';
 import {
   CustomSelectStyleWrapper,
   CustomSelectPopupMenuStyleWrapper

@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { Select } from 'antd5';
+import { Select } from 'antd';
 import { useMemo, useState, useCallback } from 'react';
 import { ResponseCode } from '../../data/common';
 import { instanceListDefaultKey } from '../../data/common';

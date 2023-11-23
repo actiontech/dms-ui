@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, Space, Spin, Tag } from 'antd5';
+import { Form, Space, Spin, Tag } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   BasicButton,

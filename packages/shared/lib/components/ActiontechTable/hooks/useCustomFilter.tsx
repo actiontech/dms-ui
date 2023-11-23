@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import dayjs from 'dayjs';
-import { RangePickerProps } from 'antd5/es/date-picker';
+import { RangePickerProps } from 'antd/es/date-picker';
 import { useTranslation } from 'react-i18next';
 import {
   ActiontechTableFilterContainerMeta,

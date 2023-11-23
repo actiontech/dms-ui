@@ -1,6 +1,5 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Card, Pagination } from 'antd5';
+import { Card, Pagination } from 'antd';
 
 export const AuditResultStyleWrapper = styled('section')`
   height: 100%;
@@ -64,11 +63,11 @@ export const AuditResultStyleWrapper = styled('section')`
 `;
 
 export const PaginationStyleWrapper = styled(Pagination)`
-  &.${ANTD_PREFIX_STR}-pagination {
+  &.ant-pagination {
     display: flex;
     justify-content: center;
 
-    .${ANTD_PREFIX_STR}-pagination-item {
+    .ant-pagination-item {
       &,
       a {
         color: ${({ theme }) =>
@@ -82,7 +81,7 @@ export const PaginationStyleWrapper = styled(Pagination)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-pagination-item-active {
+    .ant-pagination-item-active {
       border-color: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorBorderSecondary} !important;
       background: ${({ theme }) =>
@@ -101,7 +100,7 @@ export const AuditItemStyleWrapper = styled(Card)`
     margin: 0 24px 16px !important;
   }
 
-  .${ANTD_PREFIX_STR}-card-body {
+  .ant-card-body {
     background: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
     padding: 20px 16px;
 

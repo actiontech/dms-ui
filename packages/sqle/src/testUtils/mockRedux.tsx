@@ -1,8 +1,8 @@
-import { Dictionary } from '../types/common.type';
 import whitelist from '../store/whitelist';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { Dictionary } from '@actiontech/shared/lib/types/common.type';
 
 const reducers = combineReducers({
   whitelist

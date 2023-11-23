@@ -1,5 +1,5 @@
 import { useRequest } from 'ahooks';
-import { message, Space } from 'antd5';
+import { message, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SyncTaskListActions, SyncTaskListTableColumnFactory } from './column';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';

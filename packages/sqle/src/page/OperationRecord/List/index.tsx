@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Space, message } from 'antd5';
+import { Space, message } from 'antd';
 import { useRequest, useBoolean } from 'ahooks';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconDownload } from '@actiontech/shared/lib/Icon';

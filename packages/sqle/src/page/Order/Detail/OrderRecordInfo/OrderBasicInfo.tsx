@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { OrderBasicInfoProps } from './index.type';
 import { AvatarCom } from '@actiontech/shared';
 import { IconTimeLine } from '@actiontech/shared/lib/Icon/common';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import OrderStatus from '../../List/components/OrderStatus';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 

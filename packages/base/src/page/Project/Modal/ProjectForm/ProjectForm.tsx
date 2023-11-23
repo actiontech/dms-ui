@@ -1,4 +1,4 @@
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ProjectFormFields, ProjectFormProps } from '.';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';

@@ -1,5 +1,5 @@
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 
 export enum NodeTypeEnum {
   review = 'review',

@@ -1,4 +1,4 @@
-import { Popconfirm } from 'antd5';
+import { Popconfirm } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { BasicSwitch } from '@actiontech/shared';

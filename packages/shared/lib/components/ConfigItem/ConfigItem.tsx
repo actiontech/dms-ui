@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
 import { ConfigItemStyledWrapper } from './style';
-import { Col, Space } from 'antd5';
+import { Col, Space } from 'antd';
 import { IconCommonEdit } from '../../Icon/common';
 import { ConfigItemProps } from './index.type';
 import BasicButton from '../BasicButton';

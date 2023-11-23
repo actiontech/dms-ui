@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
-import { Space, message } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+import { Space, message } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';

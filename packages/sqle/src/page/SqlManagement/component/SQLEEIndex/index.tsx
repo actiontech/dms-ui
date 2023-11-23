@@ -48,9 +48,9 @@ import {
   updateSqlIdList
 } from '../../../../store/sqleManagement';
 import { ModalName } from '../../../../data/ModalName';
-import { SorterResult, TableRowSelection } from 'antd5/es/table/interface';
+import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { message } from 'antd5';
+import { message } from 'antd';
 import SqleManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';

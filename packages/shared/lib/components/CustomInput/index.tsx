@@ -1,4 +1,4 @@
-import { InputProps } from 'antd5';
+import { InputProps } from 'antd';
 import { CustomInputStyleWrapper } from './style';
 import classNames from 'classnames';
 

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import classNames from 'classnames';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
