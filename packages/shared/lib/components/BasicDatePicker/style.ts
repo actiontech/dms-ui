@@ -117,6 +117,7 @@ export const BasicDatePickerFieldStyleWrapper = styled(
     width: 100%;
     padding-left: 40px !important;
     border-radius: 4px !important;
+
     &:hover:not(:focus):not(.ant-picker-status-error):not(
         .ant-picker-disabled
       ):not(.ant-picker-focused):not(.ant-picker-borderless) {
