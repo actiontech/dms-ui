@@ -4,11 +4,10 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
-import db from '@actiontech/shared/lib/api/diagnosis/service/db';
-import { IV1ListMonitorDBsParams } from '@actiontech/shared/lib/api/diagnosis/service/db/index.d';
-import { IViewDatabaseReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
+import db from '../../../../api/db';
+import { IV1ListMonitorDBsParams } from '../../../../api/db/index.d';
+import { IViewDatabaseReply } from '../../../../api/common';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { DatabaseMonitorActions, DatabaseMonitorColumns } from './column';
@@ -26,8 +25,6 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const { projectID } = useCurrentProject();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
@@ -44,13 +41,12 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
     () => {
       const params: IV1ListMonitorDBsParams = {
         ...pagination,
-        project_uid: projectID,
         fuzzy_search_keyword: props.searchValue
       };
       return handleTableRequestError(db.V1ListMonitorDBs(params));
     },
     {
-      refreshDeps: [pagination, projectID, props.searchValue]
+      refreshDeps: [pagination, props.searchValue]
     }
   );
 
@@ -63,8 +59,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
     (record?: IViewDatabaseReply) => {
       if (!record) return;
       db.V1DeleteDB({
-        project_uid: projectID,
-        db_monitor_names: [record?.monitor_name]
+        db_monitor_ids: [record?.monitor_name as unknown as number]
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.open({
@@ -80,7 +75,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
         }
       });
     },
-    [refresh, t, messageApi, projectID]
+    [refresh, t, messageApi]
   );
 
   const actions = useMemo(() => {

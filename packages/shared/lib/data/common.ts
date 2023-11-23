@@ -105,12 +105,8 @@ const ALL_TITLE = [
   /* FITRUE_isSQLE */
 
   /* IFTRUE_isPROVISION */
-  'provision',
+  'provision'
   /* FITRUE_isPROVISION */
-
-  /* IFTRUE_isDIAGNOSIS */
-  'Diagnosis'
-  /* FITRUE_isDIAGNOSIS */
 ];
 
 export const DMS_DEFAULT_WEB_TITLE = ALL_TITLE[0] ?? 'DMS';

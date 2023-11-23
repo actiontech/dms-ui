@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "src/App.tsx",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port=3020",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prebuild": "node ./scripts/getGitVersion.js",
@@ -13,6 +13,7 @@
     "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
   },
   "dependencies": {
-    "@actiontech/shared": "workspace:^1.0.0"
+    "@actiontech/shared": "workspace:^1.0.0",
+    "vite": "^3.0.0"
   }
 }

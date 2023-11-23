@@ -4,14 +4,12 @@ import user from '../../../base/src/store/user';
 import userCenter from '../../../base/src/store/userCenter';
 import member from '../../../base/src/store/member';
 import project from '../../../base/src/store/project';
-import monitorSourceConfig from '../../../diagnosis/src/store/monitorSourceConfig';
 
 const reducers = combineReducers({
   user,
   userCenter,
   member,
-  project,
-  monitorSourceConfig
+  project
 });
 
 export const storeFactory = (initStore: Dictionary = {}) => {

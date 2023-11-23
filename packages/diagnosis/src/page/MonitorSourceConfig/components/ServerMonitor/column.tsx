@@ -2,9 +2,9 @@ import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
-import { IViewServerReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
+import { IViewServerReply } from '../../../../api/common';
 import { t } from '../../../../locale';
-import { ViewServerReplyStatusEnum } from '@actiontech/shared/lib/api/diagnosis/service/common.enum';
+import { ViewServerReplyStatusEnum } from '../../../../api/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 const serverMonitorStatusDictionary = {

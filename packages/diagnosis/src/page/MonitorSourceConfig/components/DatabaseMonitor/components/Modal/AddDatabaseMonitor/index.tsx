@@ -4,9 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../store';
 import { ModalName } from '../../../../../../../data/ModalName';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import db from '@actiontech/shared/lib/api/diagnosis/service/db';
-import { IV1AddDBParams } from '@actiontech/shared/lib/api/diagnosis/service/db/index.d';
+import db from '../../../../../../../api/db';
+import { IV1AddDBParams } from '../../../../../../../api/db/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
@@ -34,8 +33,6 @@ const AddDatabaseMonitor = () => {
       state.monitorSourceConfig.modalStatus[ModalName.Add_Database_Monitor]
   );
 
-  const { projectID } = useCurrentProject();
-
   const {
     dbServiceList,
     loading,
@@ -44,8 +41,8 @@ const AddDatabaseMonitor = () => {
   } = useDbService();
 
   useEffect(() => {
-    if (visible) updateDbServiceList(projectID);
-  }, [visible, projectID, updateDbServiceList]);
+    if (visible) updateDbServiceList();
+  }, [visible, updateDbServiceList]);
 
   const submit = async () => {
     const values = await form.validateFields();
@@ -62,8 +59,7 @@ const AddDatabaseMonitor = () => {
           monitor_name: values.monitor_name,
           port: Number(values.port)
         }
-      ],
-      project_uid: projectID
+      ]
     };
     startSubmit();
     db.V1AddDB(params)

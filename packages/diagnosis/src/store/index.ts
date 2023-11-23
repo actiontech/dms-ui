@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import monitorSourceConfig from './monitorSourceConfig';
+import user from './user';
 
 export const diagnosisStoreData = {
-  monitorSourceConfig
+  monitorSourceConfig,
+  user
 };
 
 const store = configureStore({

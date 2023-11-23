@@ -6,10 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../store';
 import { ModalName } from '../../../../../../../data/ModalName';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import server from '@actiontech/shared/lib/api/diagnosis/service/server';
+import server from '../../../../../../../api/server';
 import { updateMonitorSourceConfigModalStatus } from '../../../../../../../store/monitorSourceConfig';
-import { IV1AddServerParams } from '@actiontech/shared/lib/api/diagnosis/service/server/index.d';
+import { IV1AddServerParams } from '../../../../../../../api/server/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
@@ -32,8 +31,6 @@ const AddServerMonitor = () => {
       state.monitorSourceConfig.modalStatus[ModalName.Add_Server_Monitor]
   );
 
-  const { projectID } = useCurrentProject();
-
   const submit = async () => {
     try {
       const values = await form.validateFields();
@@ -46,8 +43,7 @@ const AddServerMonitor = () => {
             port: Number(values.port),
             user: values.user
           }
-        ],
-        project_uid: projectID
+        ]
       };
       startSubmit();
       server

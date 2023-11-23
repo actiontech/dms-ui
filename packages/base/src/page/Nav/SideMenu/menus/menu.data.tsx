@@ -14,10 +14,6 @@ import {
 } from './provision';
 /* FITRUE_isPROVISION */
 
-/* IFTRUE_isDIAGNOSIS */
-import { DiagnosisMenuItems } from './diagnosis';
-/* FITRUE_isDIAGNOSIS */
-
 export const sideMenuData: (
   navigate: NavigateFunction,
   isAdmin: boolean,
@@ -48,12 +44,8 @@ export const sideMenuData: (
     /* FITRUE_isSQLE */
 
     /* IFTRUE_isPROVISION */
-    ...ProvisionMenuItems({ navigate, projectID }),
+    ...ProvisionMenuItems({ navigate, projectID })
     /* FITRUE_isPROVISION */
-
-    /* IFTRUE_isDIAGNOSIS */
-    ...DiagnosisMenuItems({ navigate, projectID })
-    /* FITRUE_isDIAGNOSIS */
   ];
 
   if (!isAdmin) {

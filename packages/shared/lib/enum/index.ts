@@ -1,7 +1,6 @@
 export enum PackageNameEnum {
   SQLE = 'sqle',
-  PROVISION = 'provision',
-  DIAGNOSIS = 'diagnosis'
+  PROVISION = 'provision'
 }
 
 export enum SupportLanguage {
@@ -43,7 +42,9 @@ export enum StorageKey {
   Token = 'TOKEN',
   DMS_Project_Catch = 'DMS_Project_Catch',
   USER_UID = 'DMS_USER_UID',
-  SHOW_COMPANY_NOTICE = 'SHOW_COMPANY_NOTICE'
+  SHOW_COMPANY_NOTICE = 'SHOW_COMPANY_NOTICE',
+  // diagnosis user id
+  DIAGNOSIS_USER_ID = 'DIAGNOSIS_USER_ID'
 }
 
 /**
