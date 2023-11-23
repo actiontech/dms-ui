@@ -1,5 +1,7 @@
 export enum PackageNameEnum {
-  SQLE = 'sqle'
+  SQLE = 'sqle',
+  PROVISION = 'provision',
+  DIAGNOSIS = 'diagnosis'
 }
 
 export enum SupportLanguage {
@@ -63,4 +65,8 @@ export enum OpPermissionTypeUid {
 export enum CompanyNoticeDisplayStatusEnum {
   Displayed = '1',
   NotDisplayed = '0'
+}
+
+export enum KeyboardType {
+  Enter = 'Enter'
 }

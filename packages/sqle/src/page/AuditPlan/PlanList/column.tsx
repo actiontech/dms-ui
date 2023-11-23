@@ -12,9 +12,8 @@ import {
 import { Link } from 'react-router-dom';
 import { t } from '../../../locale';
 import { IconOrderId } from '../../../icon/Order';
-import TokenCom from './TableTaskTypeFilter/component/TokenCom';
 import { ModalName } from '../../../data/ModalName';
-import { BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
+import { BasicToolTips, DatabaseTypeLogo, TokenCom } from '@actiontech/shared';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
