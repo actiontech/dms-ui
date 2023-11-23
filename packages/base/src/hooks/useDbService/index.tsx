@@ -40,10 +40,12 @@ const useDbService = () => {
     [setFalse, setTrue]
   );
 
+  const dbTypeList: string[] = useMemo(
+    () => Array.from(new Set(dbServiceList.map((v) => v.db_type ?? ''))),
+    [dbServiceList]
+  );
+
   const generateDbServiceSelectOption = React.useCallback(() => {
-    const dbTypeList: string[] = Array.from(
-      new Set(dbServiceList.map((v) => v.db_type ?? ''))
-    );
     return dbTypeList.map((type) => {
       return (
         <Select.OptGroup
@@ -77,15 +79,27 @@ const useDbService = () => {
         </Select.OptGroup>
       );
     });
-  }, [dbServiceList, getLogoUrlByDbType]);
+  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
 
   const dbServiceOptions = useMemo(() => {
-    return dbServiceList.map((item) => ({
-      value: item.uid,
-      text: item.name,
-      label: item.name
+    return dbTypeList.map((type) => ({
+      label: (
+        <DatabaseTypeLogo
+          dbType={type ?? ''}
+          logoUrl={getLogoUrlByDbType(type ?? '')}
+        />
+      ),
+      options: dbServiceList
+        .filter((db) => db.db_type === type)
+        .map((db) => ({
+          value: db?.name ?? '',
+          label:
+            !!db.host && !!db.port
+              ? `${db.name} (${db.host}:${db.port})`
+              : db.name
+        }))
     }));
-  }, [dbServiceList]);
+  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
 
   return {
     dbServiceList,
