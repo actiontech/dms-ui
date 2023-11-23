@@ -81,7 +81,7 @@ const SubscribeNotice = () => {
           level:
             config?.notify_level as UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
           emailEnable: config?.enable_email_notify,
-          // #if [prod_version=ee]
+          // #if [ee]
           webhooksEnable: config?.enable_web_hook_notify,
           webhooksUrl: config?.web_hook_url,
           template: config?.web_hook_template
@@ -263,7 +263,7 @@ const SubscribeNotice = () => {
             >
               <BasicSwitch />
             </Form.Item>
-            {/* #if [prod_version=ee] */}
+            {/* #if [ee] */}
             <Form.Item
               label={t('auditPlan.subscribeNotice.form.webhooksEnable')}
               name="webhooksEnable"

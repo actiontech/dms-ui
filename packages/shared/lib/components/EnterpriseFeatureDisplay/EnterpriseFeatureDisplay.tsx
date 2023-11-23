@@ -95,7 +95,7 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
 
   return (
     <>
-      {/* #if [prod_version=ce] */}
+      {/* #if [ce] */}
       <CEIndexStyleWrapper>
         {isConfigPage ? (
           <section className="config-mode-wrapper">
@@ -111,7 +111,7 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
         )}
       </CEIndexStyleWrapper>
 
-      {/* #elif [prod_version=ee] */}
+      {/* #elif [ee] */}
       {children}
 
       {/* #endif */}

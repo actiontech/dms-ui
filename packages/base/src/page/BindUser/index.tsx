@@ -12,7 +12,7 @@ import { BasicButton, BasicInput } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 
-// #if [prod_version=ee]
+// #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
@@ -63,7 +63,7 @@ const BindUser = () => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateToken({ token: concatToken(res.data.data?.token) }));
           navigate('/');
-          // #if [prod_version=ee]
+          // #if [ee]
           LocalStorageWrapper.set(
             StorageKey.SHOW_COMPANY_NOTICE,
             CompanyNoticeDisplayStatusEnum.NotDisplayed

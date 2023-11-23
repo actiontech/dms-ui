@@ -34,7 +34,7 @@ const ReportStatistics = () => {
             title={
               <Space size={10}>
                 <div>{t('reportStatistics.title')}</div>
-                {/* #if [prod_version=ee] */}
+                {/* #if [ee] */}
                 <SyncOutlined
                   onClick={onRefreshPage}
                   className="refresh-icon"

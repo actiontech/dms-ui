@@ -16,7 +16,7 @@ import { useUserInfo } from '@actiontech/shared/lib/global';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-// #if [prod_version=ee]
+// #if [ee]
 import { useDispatch } from 'react-redux';
 import { updateNavModalStatus } from '../../../../store/nav';
 import { ModalName } from '../../../../data/ModalName';
@@ -53,7 +53,7 @@ const UserNavigate: React.FC<{
       });
   };
 
-  // #if [prod_version=ee]
+  // #if [ee]
   const dispatch = useDispatch();
   useRequest(
     () =>
@@ -102,7 +102,7 @@ const UserNavigate: React.FC<{
                   {t('dmsMenu.userNavigate.account')}
                 </span>
               </div>
-              {/* #if [prod_version=ee] */}
+              {/* #if [ee] */}
               <div
                 className="content-item"
                 onClick={() => {

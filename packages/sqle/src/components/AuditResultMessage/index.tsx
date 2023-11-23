@@ -79,7 +79,7 @@ const AuditResultMessage = ({
       >
         <div className="annotation-wrapper">
           {auditResult.annotation}
-          {/* #if [prod_version=ee] */}
+          {/* #if [ee] */}
           <EmptyBox if={!!moreBtnLink}>
             <Typography.Link target="_blank" href={moreBtnLink}>
               {t('common.showMore')}

@@ -132,7 +132,7 @@ const OrderList: React.FC = () => {
     setSearchKeyword(value);
   };
 
-  // #if [prod_version=ee]
+  // #if [ee]
   const [
     exportButtonDisabled,
     { setFalse: finishExport, setTrue: startExport }
@@ -242,7 +242,7 @@ const OrderList: React.FC = () => {
         title={t('order.orderList.pageTitle')}
         extra={
           <Space size={12}>
-            {/* #if [prod_version=ee] */}
+            {/* #if [ee] */}
             <BasicButton
               onClick={exportOrder}
               disabled={exportButtonDisabled}

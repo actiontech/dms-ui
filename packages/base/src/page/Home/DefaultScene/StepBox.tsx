@@ -6,7 +6,7 @@ import GuidanceButton from '../components/GuidanceButton';
 import { DEFAULT_PROJECT_ID } from '@actiontech/shared/lib/data/common';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 
-// #if [prod_version=ee]
+// #if [ee]
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundProject from './NotFoundProject';
 import { useState } from 'react';
@@ -17,7 +17,7 @@ const StepBox: React.FC = () => {
   const navigate = useNavigate();
   let currentProjectID = '';
 
-  // #if [prod_version=ee]
+  // #if [ee]
   const [
     openRulePageProjectSelectorModal,
     setOpenRulePageProjectSelectorModal
@@ -35,17 +35,17 @@ const StepBox: React.FC = () => {
         navigate,
         projectID: currentProjectID,
 
-        /* IFTRUE_isEE */
+        // #if [ee]
         setOpenRulePageProjectSelectorModal
-        /* FITRUE_isEE */
+        // #endif
       })
     : NormalUserDevopsSteps({
         navigate,
         projectID: currentProjectID,
 
-        /* IFTRUE_isEE */
+        // #if [ee]
         setOpenRulePageProjectSelectorModal
-        /* FITRUE_isEE */
+        // #endif
       });
 
   return (
@@ -91,14 +91,14 @@ const StepBox: React.FC = () => {
         ))}
       </DefaultSceneStepContainerWrapper>
 
-      {/* IFTRUE_isEE */}
+      {/* #if [ee] */}
       <NotFoundProject
         open={openRulePageProjectSelectorModal}
         setOpen={setOpenRulePageProjectSelectorModal}
         bindProjects={bindProjects}
         updateRecentlyProject={updateRecentlyProject}
       />
-      {/* FITRUE_isEE */}
+      {/* #endif */}
     </>
   );
 };

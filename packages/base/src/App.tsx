@@ -77,7 +77,7 @@ function App() {
   const { useInfoFetched } = useCurrentUser();
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
 
-  // #if [prod_version=ee]
+  // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
   useRequest(
     () =>

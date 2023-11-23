@@ -9,7 +9,7 @@ const SqlManagement = () => {
 
   return (
     <article>
-      {/* #if [prod_version=ce] */}
+      {/* #if [ce] */}
       <PageHeader title={t('sqlManagement.pageTitle')} />
       {/* #endif */}
       <EnterpriseFeatureDisplay

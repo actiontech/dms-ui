@@ -59,7 +59,7 @@ const Oauth = () => {
           });
         }
       },
-      // #if [prod_version=ce]
+      // #if [ce]
       ready: false
       // #endif
     }

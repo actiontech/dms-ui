@@ -9,12 +9,21 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig((config) => {
+  const buildTypes = process.env.buildType?.split(',') ?? [];
+  /*
+   * ee and ce mode used to support sqle
+   */
+  const isCE = buildTypes.includes('ce') && buildTypes.includes('SQLE');
+  const isEE = !isCE;
+  const isSQLE = buildTypes.includes('SQLE');
+
   const title = 'Action SQLE';
 
   return {
     plugins: [
       vitePluginConditionalCompile({
-        include: [/^.+\/packages\/.+\/.+.(ts|tsx)$/]
+        include: [/^.+\/packages\/.+\/.+.(ts|tsx)$/],
+        env: { ee: isEE, ce: isCE, sqle: isSQLE }
       }),
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
@@ -33,6 +42,17 @@ export default defineConfig((config) => {
         less: {
           // 支持内联 JavaScript
           javascriptEnabled: true
+        }
+      }
+    },
+    build: {
+      rollupOptions: {
+        // resolve css in js 'use client' warn
+        onwarn(warning, warn) {
+          if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+            return;
+          }
+          warn(warning);
         }
       }
     },

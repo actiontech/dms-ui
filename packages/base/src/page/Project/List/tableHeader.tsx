@@ -38,7 +38,7 @@ const ProjectListTableColumnFactory =
           return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
         }
       },
-      // #if [prod_version=ee]
+      // #if [ee]
       {
         dataIndex: 'archived',
         title: () => t('dmsProject.projectList.columns.status'),
@@ -130,7 +130,7 @@ export const ProjectListActions = (
           };
         }
       },
-      // #if [prod_version=ee]
+      // #if [ee]
       {
         text: t('dmsProject.projectList.columns.archive'),
         key: 'archiveName',

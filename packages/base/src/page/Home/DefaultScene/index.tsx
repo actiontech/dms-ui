@@ -36,7 +36,7 @@ export const AdminUserDevopsSteps: (
   getDatabaseManagerSteps({ navigate, projectID }),
   getMemberAndPermissionSteps({ navigate, projectID }),
 
-  // #if [feature=sqle]
+  // #if [sqle]
   {
     key: 'safetyRule',
     title: t('dmsHome.defaultScene.steps.safetyRule.title'),
@@ -59,13 +59,13 @@ export const AdminUserDevopsSteps: (
     children: [
       getSqlEditorStep({ navigate }),
 
-      // #if [feature=sqle]
+      // #if [sqle]
       getDataModifyStep({ navigate, projectID })
       // #endif
     ]
   },
 
-  // #if [feature=sqle]
+  // #if [sqle]
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
@@ -96,7 +96,7 @@ export const NormalUserDevopsSteps: (
     children: [
       getSqlEditorStep({ navigate }),
 
-      // #if [feature=sqle]
+      // #if [sqle]
       getDataModifyStep({ navigate, projectID })
       // #endif
     ]

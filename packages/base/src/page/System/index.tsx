@@ -7,7 +7,7 @@ import { ModalName } from '../../data/ModalName';
 import { initSystemModalStatus } from '../../store/system';
 import { SystemStyleWrapper } from './style';
 
-// #if [feature=sqle]
+// #if [sqle]
 import PushNotification from './PushNotification';
 import ProcessConnection from './ProcessConnection';
 import GlobalSetting from './GlobalSetting';
@@ -15,7 +15,7 @@ import GlobalSetting from './GlobalSetting';
 
 import LoginConnection from './LoginConnection/index';
 
-// #if [prod_version=ee]
+// #if [ee]
 import License from './License';
 import PersonalizeSetting from './PersonalizeSetting';
 // #endif
@@ -35,7 +35,7 @@ const System = () => {
 
   const options = useMemo(
     () => [
-      // #if [feature=sqle]
+      // #if [sqle]
       {
         label: t('dmsSystem.tabPaneTitle.pushNotification'),
         value: 'push_notification',
@@ -54,7 +54,7 @@ const System = () => {
         components: <LoginConnection />
       },
 
-      // #if [feature=sqle]
+      // #if [sqle]
       {
         label: t('dmsSystem.tabPaneTitle.globalConfiguration'),
         value: 'global_configuration',
@@ -62,7 +62,7 @@ const System = () => {
       },
       // #endif
 
-      // #if [prod_version=ee]
+      // #if [ee]
       {
         label: t('dmsSystem.tabPaneTitle.license'),
         value: 'license',
@@ -86,7 +86,7 @@ const System = () => {
     return options.find((item) => item.value === activeTabKey)?.components;
   }, [activeTabKey, options]);
 
-  // #if [feature=sqle]
+  // #if [sqle]
   useEffect(() => {
     dispatch(
       initSystemModalStatus({
