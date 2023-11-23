@@ -3,8 +3,8 @@ import { ModalName } from '~/data/enum';
 import { UserModalStatus } from '~/store/user';
 import { superRenderHooks } from '~/testUtil/customRender';
 import RecoilObservable from '~/testUtil/RecoilObservable';
-import { ModalStatus } from '~/types/common.type';
 import useModalStatus from '.';
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 
 describe('useModalStatus', () => {
   const customRender = (initModalStatus?: ModalStatus, name?: ModalName) => {

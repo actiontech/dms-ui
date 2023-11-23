@@ -5,8 +5,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type UserReduxState = {
   username: string;
-  userId: number | null;
-  roleId: number | null;
+  userId: string | null;
+  roleId: string | null;
   token: string;
   theme: SupportTheme;
   userScope: IViewScope[];
@@ -14,7 +14,7 @@ type UserReduxState = {
 
 const initialState: UserReduxState = {
   username: '',
-  userId: null,
+  userId: LocalStorageWrapper.getOrDefault(StorageKey.DIAGNOSIS_USER_ID, ''),
   roleId: null,
   token: LocalStorageWrapper.getOrDefault(StorageKey.Token, ''),
   theme: LocalStorageWrapper.getOrDefault(
@@ -34,13 +34,14 @@ const user = createSlice({
         payload: { username, userId, roleId }
       }: PayloadAction<{
         username: string;
-        userId: number | null;
-        roleId: number | null;
+        userId: string | null;
+        roleId: string | null;
       }>
     ) => {
       state.username = username;
       state.userId = userId;
       state.roleId = roleId;
+      LocalStorageWrapper.set(StorageKey.DIAGNOSIS_USER_ID, userId ?? '');
     },
     updateTheme: (
       state,

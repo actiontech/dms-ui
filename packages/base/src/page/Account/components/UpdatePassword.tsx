@@ -1,5 +1,5 @@
 import { BasicDrawer, BasicInput, BasicButton } from '@actiontech/shared';
-import { Form, Space } from 'antd5';
+import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { PasswordFormFields } from '../types';

@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';
-import { message as messageApi } from 'antd5';
+import { message as messageApi } from 'antd';
 import { useRef } from 'react';
-import { ResponseCode } from '~/data/common';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const useRemoveTemplate = (refreshList: () => void) => {
   const removeLoading = useRef(false);

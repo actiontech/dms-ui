@@ -1,5 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '../../data/common';
 
 export const CronSelectStyleWrapper = styled('section')`
   border: 1px solid
@@ -23,7 +22,7 @@ export const CronSelectStyleWrapper = styled('section')`
   .week-wrapper {
     margin-top: 12px;
 
-    .${ANTD_PREFIX_STR}-col:nth-of-type(1) {
+    .ant-col:nth-of-type(1) {
       border-right: 1px solid
         ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
     }
@@ -56,7 +55,7 @@ export const CronSelectStyleWrapper = styled('section')`
       margin-top: 8px;
     }
 
-    .number-btn.${ANTD_PREFIX_STR}-btn {
+    .number-btn.ant-btn {
       text-align: center !important;
       line-height: 28px !important;
       width: 28px;

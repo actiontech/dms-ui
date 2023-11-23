@@ -1,9 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { Drawer } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Drawer } from 'antd';
 
 export const BasicDrawerStyleWrapper = styled(Drawer)`
-  &.basic-drawer-wrapper.${ANTD_PREFIX_STR}-drawer-content {
+  &.basic-drawer-wrapper.ant-drawer-content {
     color: ${({ theme }) =>
       theme.sharedTheme.components.basicDrawer.color} !important;
     background-color: ${({ theme }) =>
@@ -11,22 +10,23 @@ export const BasicDrawerStyleWrapper = styled(Drawer)`
     box-shadow: ${({ theme }) =>
       theme.sharedTheme.components.basicDrawer.boxShadow};
 
-    .${ANTD_PREFIX_STR}-drawer-wrapper-body {
-      .${ANTD_PREFIX_STR}-drawer-header {
+    .ant-drawer-wrapper-body {
+      .ant-drawer-header {
         padding: 18px 24px 17px;
       }
-      .${ANTD_PREFIX_STR}-drawer-body {
-        .${ANTD_PREFIX_STR}-form {
-          .${ANTD_PREFIX_STR}-form-item {
-            .${ANTD_PREFIX_STR}-form-item-row {
-              .${ANTD_PREFIX_STR}-form-item-label {
+
+      .ant-drawer-body {
+        .ant-form {
+          .ant-form-item {
+            .ant-form-item-row {
+              .ant-form-item-label {
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 22px;
               }
 
-              .${ANTD_PREFIX_STR}-form-item-required {
+              .ant-form-item-required {
                 &::before {
                   display: none !important;
                 }
@@ -72,7 +72,7 @@ export const BasicDrawerStyleWrapper = styled(Drawer)`
     }
   }
 
-  &.drawer-wrapper-no-padding .${ANTD_PREFIX_STR}-drawer-body {
+  &.drawer-wrapper-no-padding .ant-drawer-body {
     padding: 0 !important;
   }
 `;

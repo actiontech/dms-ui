@@ -7,7 +7,7 @@ import { IListDataPermissionTemplateEvent } from '@actiontech/shared/lib/api/pro
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '~/locale';
 import { IAuditListDataPermissionTemplateEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { AvatarCom, EmptyBox, BasicToolTips } from '@actiontech/shared';
 import AuditActionIcon from '../components/AuditActionIcon';
 import { uniqBy } from 'lodash';

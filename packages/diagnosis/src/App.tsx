@@ -5,24 +5,18 @@ import {
   diagnosisUnAuthRouterConfig
 } from './router';
 import { IReduxState } from './store';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
-import { EmptyBox, HeaderProgress } from '@actiontech/shared';
-import { ConfigProvider } from 'antd';
+import {
+  EmptyBox,
+  HeaderProgress,
+  LocalStorageWrapper
+} from '@actiontech/shared';
 import zhCN from 'antd/es/locale/zh_CN';
-import zhCN5 from 'antd5/locale/zh_CN';
-import {
-  useChangeTheme,
-  useNotificationContext
-} from '@actiontech/shared/lib/hooks';
-import { updateTheme } from './store/user';
-import { SupportTheme } from '@actiontech/shared/lib/enum';
+import { useNotificationContext } from '@actiontech/shared/lib/hooks';
+import { StorageKey, SupportTheme } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
-import {
-  ConfigProvider as ConfigProviderV5,
-  theme as antdTheme,
-  Spin
-} from 'antd5';
+import { ConfigProvider, theme as antdTheme, Spin } from 'antd';
 import './index.less';
 import { IconSpin } from '@actiontech/shared/lib/Icon/common';
 import { ThemeData } from './theme';
@@ -30,8 +24,8 @@ import {
   StyleProvider,
   legacyLogicalPropertiesTransformer
 } from '@ant-design/cssinjs';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import useGetUserInfo from './hooks/useGetUserInfo';
+import useChangeTheme from './hooks/useChangeTheme';
 
 Spin.setDefaultIndicator(<IconSpin />);
 
@@ -46,21 +40,18 @@ function App() {
 
   const { getUserInfo } = useGetUserInfo();
 
-  const dispatch = useDispatch();
-
   const elements = useRoutes(
     token ? diagnosisAuthRouterConfig : diagnosisUnAuthRouterConfig
   );
 
   useEffect(() => {
-    if (token && userId) getUserInfo({ user_id: userId?.toString() });
+    const currentUserId =
+      userId ??
+      LocalStorageWrapper.getOrDefault(StorageKey.DIAGNOSIS_USER_ID, '');
+    if (token && currentUserId) getUserInfo({ user_id: currentUserId });
   }, [token, userId]);
 
-  useChangeTheme({
-    theme,
-    updateTheme: (_theme: SupportTheme) =>
-      dispatch(updateTheme({ theme: _theme }))
-  });
+  useChangeTheme();
 
   const themeData = useMemo(() => {
     return ThemeData[theme];
@@ -79,9 +70,8 @@ function App() {
       hashPriority="high"
       transformers={[legacyLogicalPropertiesTransformer]}
     >
-      <ConfigProviderV5
-        locale={zhCN5}
-        prefixCls={ANTD_PREFIX_STR}
+      <ConfigProvider
+        locale={zhCN}
         theme={{
           algorithm:
             theme === SupportTheme.DARK
@@ -121,17 +111,15 @@ function App() {
           }
         }}
       >
-        <ConfigProvider locale={zhCN}>
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={themeData}>
-              {notificationContextHolder}
-              <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
-                {body}
-              </EmptyBox>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        </ConfigProvider>
-      </ConfigProviderV5>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={themeData}>
+            {notificationContextHolder}
+            <EmptyBox if={!!token} defaultNode={<>{elements}</>}>
+              {body}
+            </EmptyBox>
+          </ThemeProvider>
+        </StyledEngineProvider>
+      </ConfigProvider>
     </StyleProvider>
   );
 }

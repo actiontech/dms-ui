@@ -1,4 +1,4 @@
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { updateToken, updateUser } from '../../store/user';
@@ -34,7 +34,7 @@ const Login = () => {
           dispatch(
             updateUser({
               username: formData.username,
-              userId: res.data?.user_id ?? null,
+              userId: res.data?.user_id?.toString() ?? null,
               roleId: null
             })
           );

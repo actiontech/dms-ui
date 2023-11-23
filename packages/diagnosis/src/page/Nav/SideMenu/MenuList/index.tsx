@@ -1,4 +1,4 @@
-import { MenuProps, Menu } from 'antd5';
+import { MenuProps, Menu } from 'antd';
 import { SubMenuType } from 'antd/lib/menu/hooks/useItems';
 import { useMemo, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';

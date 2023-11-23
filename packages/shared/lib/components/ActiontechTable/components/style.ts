@@ -1,7 +1,6 @@
 import { styled } from '@mui/material/styles';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import BasicInput from '../../BasicInput/Input';
-import { ANTD_PREFIX_STR } from '../../../data/common';
 import BasicRangePicker from '../../BasicRangePicker';
 
 export const FilterContainerStyleWrapper = styled(Space)`
@@ -12,13 +11,13 @@ export const FilterContainerStyleWrapper = styled(Space)`
   padding: 10px 40px;
   margin-bottom: 0 !important;
 
-  & .${ANTD_PREFIX_STR}-space-item {
+  & .ant-space-item {
     padding-bottom: 0 !important;
   }
 `;
 
 export const SearchInputStyleWrapper = styled(BasicInput)`
-  .${ANTD_PREFIX_STR}-input-suffix.basic-input-wrapper {
+  .ant-input-suffix.basic-input-wrapper {
     margin-left: 0;
     padding: 0 4px;
 
@@ -113,13 +112,13 @@ export const ToolbarStyleWrapper = styled(Space)`
   padding: 14px 40px;
   margin-bottom: 0 !important;
 
-  .${ANTD_PREFIX_STR}-space-item {
+  .ant-space-item {
     padding-bottom: 0 !important;
   }
 `;
 
 export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
-  &.${ANTD_PREFIX_STR}-picker.${ANTD_PREFIX_STR}-picker.basic-range-picker-wrapper {
+  &.ant-picker.ant-picker.basic-range-picker-wrapper {
     border: 1px solid
       ${({ theme }) =>
         theme.sharedTheme.components.customFilter.rangePicker
@@ -127,15 +126,15 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
     border-radius: 4px;
   }
 
-  .${ANTD_PREFIX_STR}-picker-input:first-of-type {
+  .ant-picker-input:first-of-type {
     width: 88%;
   }
 
-  .${ANTD_PREFIX_STR}-picker-active-bar {
+  .ant-picker-active-bar {
     display: none;
   }
 
-  .${ANTD_PREFIX_STR}-picker-input {
+  .ant-picker-input {
     input {
       font-weight: 600;
     }
@@ -148,13 +147,13 @@ export const CustomFilterRangePickerStyleWrapper = styled(BasicRangePicker)`
     }
   }
 
-  &.${ANTD_PREFIX_STR}-picker-range:not(.${ANTD_PREFIX_STR}-picker-focused):hover {
+  &.ant-picker-range:not(.ant-picker-focused):hover {
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customFilter.rangePicker
         .hoverBackgroundColor} !important;
   }
 
-  &.${ANTD_PREFIX_STR}-picker-focused {
+  &.ant-picker-focused {
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.customFilter.rangePicker
         .focusBackgroundColor} !important;

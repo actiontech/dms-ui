@@ -12,12 +12,12 @@ import { t } from '~/locale';
 import { IAuthListAuthorizationParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { EmptyBox, BasicToolTips, BasicTag } from '@actiontech/shared';
 import { EditOutlined } from '@ant-design/icons';
-import { Space, Typography } from 'antd5';
+import { Space, Typography } from 'antd';
 import { ListAuthorizationStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
-import { formatTime } from '~/utils/Common';
 import dayjs from 'dayjs';
 import { NavigateFunction } from 'react-router-dom';
 import { ModalName } from '~/data/enum';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 export type AuthListFilterParamType = PageInfoWithoutIndexAndSize<
   Omit<IAuthListAuthorizationParams, 'filter_by_namespace_uid'> & {

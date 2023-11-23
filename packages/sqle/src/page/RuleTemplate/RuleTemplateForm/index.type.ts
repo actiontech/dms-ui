@@ -1,4 +1,4 @@
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 import { RuleTemplateBaseInfoFields } from './BaseInfoForm/index.type';
 import {
   IRuleProjectTemplateDetailResV1,

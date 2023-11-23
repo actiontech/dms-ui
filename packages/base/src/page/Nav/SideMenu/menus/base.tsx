@@ -10,7 +10,7 @@ import {
 } from '../../../../icon/sideMenu';
 import Icon from '@ant-design/icons';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
-import { ItemType } from 'antd5/es/menu/hooks/useItems';
+import { ItemType } from 'antd/es/menu/hooks/useItems';
 
 export const BaseMenuItems: GenerateMenuItemsType = ({
   navigate,

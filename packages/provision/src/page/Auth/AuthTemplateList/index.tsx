@@ -27,7 +27,7 @@ import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provisio
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { Link, useNavigate } from 'react-router-dom';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 
 const AuthTemplateList = () => {
   const { t } = useTranslation();

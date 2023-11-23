@@ -1,6 +1,6 @@
-import { TableProps, ButtonProps, PopconfirmProps, InputProps } from 'antd5';
-import { RangePickerProps } from 'antd5/es/date-picker';
-import { ColumnGroupType, ColumnType } from 'antd5/es/table';
+import { TableProps, ButtonProps, PopconfirmProps, InputProps } from 'antd';
+import { RangePickerProps } from 'antd/es/date-picker';
+import { ColumnGroupType, ColumnType } from 'antd/es/table';
 import { CSSProperties, ReactNode } from 'react';
 import { CustomSelectProps } from '../CustomSelect';
 import { IBasicButton } from '../BasicButton';

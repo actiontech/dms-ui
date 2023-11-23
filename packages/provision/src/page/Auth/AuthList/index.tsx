@@ -35,7 +35,7 @@ import UpdateTemplate from './components/UpdateTemplate';
 import UpdateExpiration from './components/UpdateExpiration';
 import AuthDetailDrawer from './components/AuthDetailDrawer';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { message } from 'antd5';
+import { message } from 'antd';
 
 const AuthList: React.FC = () => {
   const { t } = useTranslation();

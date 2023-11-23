@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { SegmentedValue } from 'antd5/es/segmented';
+import { SegmentedValue } from 'antd/es/segmented';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import {
   BasicButton,
   PageHeader,
@@ -52,7 +52,7 @@ const MonitorSourceConfig: React.FC = () => {
       })
     );
   };
-
+  console.log(searchServerValue);
   const renderTable = () => {
     if (listType === MonitorSourceConfigTypeEnum.server_monitor) {
       return (
@@ -112,6 +112,9 @@ const MonitorSourceConfig: React.FC = () => {
                 ),
                 onSearch: (value) => {
                   setSearchServerValue(value);
+                },
+                onChange: (e) => {
+                  setSearchServerValue(e.target.value);
                 }
               }
             : {

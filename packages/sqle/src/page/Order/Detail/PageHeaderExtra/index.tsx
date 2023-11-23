@@ -1,5 +1,5 @@
 import { BasicButton, EmptyBox } from '@actiontech/shared';
-import { Divider, Popconfirm, Space } from 'antd5';
+import { Divider, Popconfirm, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { OrderDetailPageHeaderExtraStyleWrapper } from './style';
 import useOrderDetailActions from './useOrderDetailActions';

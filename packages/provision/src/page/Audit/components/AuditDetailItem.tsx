@@ -1,7 +1,7 @@
 import { AuthAuditDetailItemStyleWrapper } from './style';
 import { AvatarCom, EmptyBox } from '@actiontech/shared';
 import { IconTimeLine } from '@actiontech/shared/lib/Icon/common';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import AuditActionIcon from './AuditActionIcon';
 
 export const AuditDetailItem: React.FC<{

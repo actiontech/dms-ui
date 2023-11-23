@@ -4,7 +4,7 @@ import {
   IconClock,
   IconUser
 } from '@actiontech/shared/lib/Icon/common';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { BaseInfoTagProps } from './index.type';
 import dayjs from 'dayjs';
 

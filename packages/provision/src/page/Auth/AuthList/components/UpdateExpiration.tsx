@@ -1,9 +1,8 @@
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useBoolean } from 'ahooks';
-import { Form, message } from 'antd5';
+import { Form, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
-import { ResponseCode } from '~/data/common';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import { timeDayOptions } from '~/page/Auth/AddAuth/index.data';
@@ -12,6 +11,7 @@ import EventEmitter from '~/utils/EventEmitter';
 import { BasicButton, BasicModal, BasicSelect } from '@actiontech/shared';
 import { FormItemWithExtraStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { IUpdateExpirationInAuthFormFields } from '../index.type';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const UpdateExpiration = () => {
   const { t } = useTranslation();

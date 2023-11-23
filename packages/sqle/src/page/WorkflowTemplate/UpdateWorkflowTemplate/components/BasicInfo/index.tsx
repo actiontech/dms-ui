@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { UpdateWorkflowTemplateStyleWrapper } from '../../style';
 import { useTranslation } from 'react-i18next';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { BasicSelect } from '@actiontech/shared';
 import { BaseFormProps } from './index.type';
 import useStaticStatus from '../../../../../hooks/useStaticStatus';

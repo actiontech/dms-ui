@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { BasicButton } from '@actiontech/shared';
-import { Col, Row, Space } from 'antd5';
+import { Col, Row, Space } from 'antd';
 
 interface ConfigTestPopoverFormProps {
   handleTest: () => void;

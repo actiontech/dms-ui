@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useRequest } from 'ahooks';
-import { message } from 'antd5';
+import { message } from 'antd';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../data/EmitterKey';

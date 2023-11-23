@@ -1,6 +1,5 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Steps } from 'antd5';
+import { Steps } from 'antd';
 
 export const OrderStepsStyleWrapper = styled('div')`
   width: 360px;
@@ -69,7 +68,7 @@ export const OrderStepsStyleWrapper = styled('div')`
         line-height: 20px;
 
         .action-avatar {
-          .${ANTD_PREFIX_STR}-avatar-string {
+          .ant-avatar-string {
             font-size: 8px !important;
           }
         }
@@ -117,7 +116,7 @@ export const OrderStepsItemStyleWrapper = styled('div')`
     font-weight: 500;
     line-height: 19px;
 
-    .${ANTD_PREFIX_STR}-divider {
+    .ant-divider {
       margin: 0 !important;
     }
 
@@ -144,20 +143,20 @@ export const OrderStepsItemStyleWrapper = styled('div')`
 `;
 
 export const CustomSteps = styled(Steps)`
-  &.${ANTD_PREFIX_STR}-steps {
-    .${ANTD_PREFIX_STR}-steps-item:not(:last-of-type) {
+  &.ant-steps {
+    .ant-steps-item:not(:last-of-type) {
       margin-bottom: 42px;
     }
 
-    .${ANTD_PREFIX_STR}-steps-item {
+    .ant-steps-item {
       &-container {
-        .${ANTD_PREFIX_STR}-steps-item-icon {
+        .ant-steps-item-icon {
           margin-top: 20px;
           color: ${({ theme }) =>
             theme.sharedTheme.uiToken.colorTextQuaternary} !important;
         }
 
-        .${ANTD_PREFIX_STR}-steps-item-tail {
+        .ant-steps-item-tail {
           margin-top: 20px;
           width: 1.5px !important;
           height: 71px !important;
@@ -170,11 +169,11 @@ export const CustomSteps = styled(Steps)`
           }
         }
 
-        .antd-v5-steps-item-content {
+        .ant-steps-item-content {
           width: 260px;
           margin-right: 0 !important;
 
-          .antd-v5-steps-item-title {
+          .ant-steps-item-title {
             padding-right: 0 !important;
             width: 100%;
           }
@@ -182,20 +181,20 @@ export const CustomSteps = styled(Steps)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-steps-item-active {
-      .${ANTD_PREFIX_STR}-steps-icon {
+    .ant-steps-item-active {
+      .ant-steps-icon {
         color: ${({ theme }) =>
           theme.sharedTheme.uiToken.colorTextQuaternary} !important;
       }
     }
 
-    .${ANTD_PREFIX_STR}-steps-item-finish {
-      .${ANTD_PREFIX_STR}-steps-icon {
+    .ant-steps-item-finish {
+      .ant-steps-icon {
         color: ${({ theme }) =>
           theme.sharedTheme.uiToken.colorSuccess} !important;
       }
 
-      .${ANTD_PREFIX_STR}-steps-item-tail {
+      .ant-steps-item-tail {
         &::after {
           background-color: ${({ theme }) =>
             theme.sharedTheme.uiToken.colorSuccess} !important;
@@ -203,8 +202,8 @@ export const CustomSteps = styled(Steps)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-steps-item-finish.prev-rejected-step {
-      .${ANTD_PREFIX_STR}-steps-item-tail {
+    .ant-steps-item-finish.prev-rejected-step {
+      .ant-steps-item-tail {
         &::after {
           background-color: ${({ theme }) =>
             theme.sharedTheme.uiToken.colorWarning} !important;

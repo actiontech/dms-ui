@@ -8,7 +8,7 @@ import {
   Spin,
   Typography,
   message as messageApi
-} from 'antd5';
+} from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import {
   BasicButton,

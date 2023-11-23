@@ -1,4 +1,4 @@
-import { ConfigProvider, SelectProps } from 'antd5';
+import { ConfigProvider, SelectProps } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { IconClose } from '../../Icon';
 import classnames from 'classnames';

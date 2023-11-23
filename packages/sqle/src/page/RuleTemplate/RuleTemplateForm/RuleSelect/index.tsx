@@ -3,7 +3,7 @@ import { useBoolean } from 'ahooks';
 import { useMemo, useState, useCallback } from 'react';
 import { BasicButton } from '@actiontech/shared';
 import { RuleSelectProps } from './index.type';
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import {
   RuleList,
   RuleStatus,

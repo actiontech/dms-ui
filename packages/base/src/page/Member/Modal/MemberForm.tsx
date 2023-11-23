@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { BasicSelect, BasicSwitch } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { IMemberFormProps } from './index.type';

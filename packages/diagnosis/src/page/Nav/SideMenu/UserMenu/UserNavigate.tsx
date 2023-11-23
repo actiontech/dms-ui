@@ -1,4 +1,4 @@
-import { Popover } from 'antd5';
+import { Popover } from 'antd';
 import { PopoverInnerStyleWrapper } from '../style';
 import { IconAccount } from '../../../../icon';
 import { useTranslation } from 'react-i18next';

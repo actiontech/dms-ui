@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo, useState } from 'react';
-import { Space, Popover } from 'antd5';
+import { Space, Popover } from 'antd';
 
 import { IconArrowDown, IconArrowUp, IconSetting } from '../../../Icon';
 import BasicButton from '../../BasicButton';

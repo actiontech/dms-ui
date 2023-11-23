@@ -21,8 +21,8 @@ const useGetUserInfo = () => {
         dispatch(
           updateUser({
             username: info?.username ?? '',
-            userId: info?.user_id ?? null,
-            roleId: info?.role_id ?? null
+            userId: info?.user_id?.toString() ?? null,
+            roleId: info?.role_id?.toString() ?? null
           })
         );
         getUserScopeByRoleId({ role_id: 0 });

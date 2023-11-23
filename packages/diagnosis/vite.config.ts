@@ -4,11 +4,6 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build: {
-    rollupOptions: {
-      external: ['../sqle/src/types/common.type.ts']
-    }
-  },
   css: {
     preprocessorOptions: {
       less: {
@@ -25,7 +20,7 @@ export default defineConfig({
         target: 'http://10.186.60.59:7603'
       },
       '^/logo': {
-        target: 'http://10.186.60.59:7603'
+        target: 'http://10.186.62.77:27601'
       }
     },
     cors: true

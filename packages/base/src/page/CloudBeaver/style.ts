@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { WarningOutlined } from '@ant-design/icons';
 
 export const CloudBeaverContentStyleWrapper = styled('section')`

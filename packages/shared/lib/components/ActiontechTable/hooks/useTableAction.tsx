@@ -7,7 +7,7 @@ import {
 } from '../index.type';
 import BasicButton from '../../BasicButton';
 import { useTranslation } from 'react-i18next';
-import { Popconfirm, Popover, Space } from 'antd5';
+import { Popconfirm, Popover, Space } from 'antd';
 import classnames from 'classnames';
 import { useCallback, useState } from 'react';
 import {
@@ -103,7 +103,7 @@ const useTableAction = () => {
     <T extends Record<string, any>>(
       actions: ActiontechTableProps<T>['actions']
     ): ActiontechTableColumn<T>[0] | undefined => {
-      const actionButtonWidth = 70;
+      const actionButtonWidth = 76;
       const moreButtonWidth = 40;
       if (Array.isArray(actions)) {
         if (actions.length === 0) {

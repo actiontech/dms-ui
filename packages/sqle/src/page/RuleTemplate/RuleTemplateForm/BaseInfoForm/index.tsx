@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo, useCallback, useEffect, useState } from 'react';
 import { BasicButton, BasicInput, BasicSelect } from '@actiontech/shared';
-import { Rule } from 'antd5/es/form';
+import { Rule } from 'antd/es/form';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { RuleTemplateBaseInfoFormProps } from './index.type';
 import useDatabaseType from '../../../../hooks/useDatabaseType';

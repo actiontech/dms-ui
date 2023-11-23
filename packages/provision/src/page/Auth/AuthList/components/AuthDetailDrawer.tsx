@@ -1,5 +1,5 @@
 import { useRequest } from 'ahooks';
-import { message, Space, Spin } from 'antd5';
+import { message, Space, Spin } from 'antd';
 import json2md, { DataObject } from 'json2md';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '~/data/enum';

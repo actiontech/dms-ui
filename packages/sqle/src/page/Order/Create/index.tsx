@@ -6,7 +6,7 @@ import {
   useCurrentUser
 } from '@actiontech/shared/lib/global';
 import BaseInfoForm from './BaseInfoForm';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { OrderBaseInfoFormFields } from './BaseInfoForm/index.type';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import SQLInfoForm from './SQLInfoForm';
@@ -17,7 +17,7 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import moment from 'moment';
 import { useBoolean } from 'ahooks';
-import { Spin, message } from 'antd5';
+import { Spin, message } from 'antd';
 import AuditResultForCreateOrder from './AuditResult';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import EditSQLInfoDrawer from './EditSQLInfoDrawer';

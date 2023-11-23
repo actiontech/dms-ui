@@ -1,8 +1,7 @@
-import { StorageKey } from '@actiontech/shared/lib/enum';
+import { LocalStorageWrapper } from '@actiontech/shared';
+import { StorageKey, SupportTheme } from '@actiontech/shared/lib/enum';
 import { atom, selector } from 'recoil';
-import { SupportTheme } from '~/data/enum';
 import { recoilIsInstanceOfDefaultValue, StoreKey } from '~/store';
-import LocalStorageWrapper from '~/utils/LocalStorageWrapper';
 
 const GlobalTokenState = atom({
   key: StoreKey.Global_Token,

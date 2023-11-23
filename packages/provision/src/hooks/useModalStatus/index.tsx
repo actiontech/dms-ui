@@ -1,7 +1,7 @@
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 import { useCallback, useMemo } from 'react';
 import { RecoilState, useRecoilState } from 'recoil';
 import { ModalName } from '~/data/enum';
-import { ModalStatus } from '~/types/common.type';
 
 const useModalStatus = (state: RecoilState<ModalStatus>, name?: ModalName) => {
   const [modalStatus, updateModalStatus] = useRecoilState(state);

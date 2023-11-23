@@ -7,9 +7,9 @@ import { IReduxState } from '../../../store';
 import { ModalName } from '../../../data/ModalName';
 import { updateRuleTemplateListModalStatus } from '../../../store/ruleTemplate';
 
-import { Col, Form, message, Row, Space, Typography } from 'antd5';
+import { Col, Form, message, Row, Space, Typography } from 'antd';
 import { BasicButton, BasicDrawer, BasicInput } from '@actiontech/shared';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 import { CloneRuleTemplateFormFields } from './index.type';

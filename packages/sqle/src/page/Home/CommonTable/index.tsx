@@ -1,6 +1,6 @@
 import { DBAPanelFilterKey } from '../DBAPanel/index.type';
 import { ReactNode } from 'react';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import {
   IWorkflowDetailResV1,
   IWorkflowStatisticsResV1

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { DetailComStyleWrapper } from './style';
 import { SyncOutlined } from '@ant-design/icons';
 import { IconTagBookMark } from '@actiontech/shared/lib/Icon/common';
-import { ColumnType, TableProps } from 'antd5/es/table';
+import { ColumnType, TableProps } from 'antd/es/table';
 import { BasicTable } from '@actiontech/shared';
 
 import { useParams } from 'react-router-dom';
@@ -17,7 +17,7 @@ import { IAuditPlanSQLHeadV1 } from '@actiontech/shared/lib/api/sqle/service/com
 import { AuditPlanSQLHeadV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import HighlightCode from '../../../../utils/HighlightCode';
-import useTable from '../../../../hooks/useTable';
+import { useTableRequestParams } from '@actiontech/shared/lib/components/ActiontechTable';
 
 const DetailCom = () => {
   const { t } = useTranslation();
@@ -38,7 +38,7 @@ const DetailCom = () => {
       .then((res) => res.data);
   });
 
-  const { pagination, tableChange } = useTable();
+  const { pagination, tableChange } = useTableRequestParams();
   const [columns, setColumns] = useState<ColumnType<any>[]>([]);
 
   const {
@@ -51,8 +51,8 @@ const DetailCom = () => {
         .getAuditPlanSQLsV1({
           project_name: projectName,
           audit_plan_name: urlParams.auditPlanName ?? '',
-          page_index: pagination.pageIndex,
-          page_size: pagination.pageSize
+          page_index: pagination.page_index,
+          page_size: pagination.page_size
         })
         .then((res) => {
           return {

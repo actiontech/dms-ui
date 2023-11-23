@@ -1,4 +1,4 @@
-import { Space, Typography } from 'antd5';
+import { Space, Typography } from 'antd';
 import { t } from '../../../locale';
 import { IOperationData } from '.';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';

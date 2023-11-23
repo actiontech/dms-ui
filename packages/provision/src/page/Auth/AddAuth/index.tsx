@@ -1,4 +1,4 @@
-import { Form, Space, Typography } from 'antd5';
+import { Form, Space, Typography } from 'antd';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams, useNavigate } from 'react-router-dom';

@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, message, Space, Spin, Typography } from 'antd5';
+import { Form, message, Space, Spin, Typography } from 'antd';
 import { BasicToolTips, BasicButton, BasicInput } from '@actiontech/shared';
 import useConfigRender, {
   ReadOnlyConfigColumnsType

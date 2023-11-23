@@ -1,8 +1,3 @@
-export enum SupportTheme {
-  DARK = 'dark',
-  LIGHT = 'light'
-}
-
 export enum ModalName {
   AddUser = 'ADD_USER',
 
@@ -32,12 +27,6 @@ export enum ModalName {
 }
 
 export enum EventEmitterKey {
-  Refresh_User_List_Table = 'Refresh_User_List_Table',
-
-  Refresh_Data_Object_List_Table = 'Refresh_Data_Object_List_Table',
-
-  Refresh_External_Data_Source_List_Table = 'Refresh_External_Data_Source_List_Table',
-
   Refresh_Auth_List_Table = 'Refresh_Auth_List_Table',
 
   Refresh_Auth_Template_List_Table = 'Refresh_Auth_Template_List_Table'

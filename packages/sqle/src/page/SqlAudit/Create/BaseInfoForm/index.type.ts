@@ -1,4 +1,4 @@
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 
 export type SqlAuditBaseInfoFormFields = {
   tags: string[];

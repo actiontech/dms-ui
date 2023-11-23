@@ -12,7 +12,7 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { DatabaseMonitorActions, DatabaseMonitorColumns } from './column';
 import DatabaseMonitorModal from './components/Modal';
-import { message } from 'antd5';
+import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useTranslation } from 'react-i18next';
 

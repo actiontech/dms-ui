@@ -11,6 +11,31 @@ import enUS from './en-US';
 import { TOptions } from 'i18next';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
+import { findDuplicateKeys } from '../utils/findDuplicateKeys';
+
+// IFTRUE_isDebug
+const zh_dupKeys = findDuplicateKeys([
+  commonZhCN.translation,
+  zhCN.translation,
+  sqleZhCN.translation
+]);
+if (zh_dupKeys.length > 0) {
+  throw new Error(
+    `DMS ZhCN_Locale error: The same key exists: ${zh_dupKeys.toString()}`
+  );
+}
+
+const en_dupKeys = findDuplicateKeys([
+  commonEnUS.translation,
+  enUS.translation,
+  sqleEnUS.translation
+]);
+if (en_dupKeys.length > 0) {
+  throw new Error(
+    `DMS EnUS_Locale error: The same key exists: ${en_dupKeys.toString()}`
+  );
+}
+// FITRUE_isDebug
 
 const allZhCN = {
   translation: {

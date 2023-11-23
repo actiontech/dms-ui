@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
-import { ModalStatus } from '~/types/common.type';
 import { StoreKey } from '..';
 import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 
 export const AuthDataPermissionListModalStatus = atom<ModalStatus>({
   key: StoreKey.Auth_Data_Permission_List_Modal_Status,
