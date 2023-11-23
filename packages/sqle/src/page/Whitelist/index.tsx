@@ -8,9 +8,10 @@ const Whitelist = () => {
 
   return (
     <>
-      {/* IFTRUE_isCE  */}
+      {/* #if [ce] */}
       <PageHeader title={t('whitelist.pageTitle')} />
-      {/* FITRUE_isCE */}
+      {/* #endif */}
+
       <EnterpriseFeatureDisplay
         featureName={t('whitelist.pageTitle')}
         eeFeatureDescription={

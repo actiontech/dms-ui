@@ -8,9 +8,10 @@ const SyncDataSource: React.FC = () => {
 
   return (
     <article>
-      {/* IFTRUE_isCE  */}
+      {/* #if [ce] */}
       <PageHeader title={t('dmsSyncDataSource.syncTaskList.title')} />
-      {/* FITRUE_isCE */}
+      {/* #endif */}
+
       <EnterpriseFeatureDisplay
         featureName={t('dmsSyncDataSource.pageTitle')}
         eeFeatureDescription={

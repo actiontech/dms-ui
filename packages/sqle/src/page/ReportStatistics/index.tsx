@@ -34,12 +34,12 @@ const ReportStatistics = () => {
             title={
               <Space size={10}>
                 <div>{t('reportStatistics.title')}</div>
-                {/* IFTRUE_isEE */}
+                {/* #if [ee] */}
                 <SyncOutlined
                   onClick={onRefreshPage}
                   className="refresh-icon"
                 />
-                {/* FITRUE_isEE */}
+                {/* #endif */}
               </Space>
             }
           />

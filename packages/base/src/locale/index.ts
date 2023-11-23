@@ -12,7 +12,7 @@ import { LocalStorageWrapper } from '@actiontech/shared';
 import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
 import { findDuplicateKeys } from '../utils/findDuplicateKeys';
 
-// IFTRUE_isDebug
+// #if [DEV]
 const zh_dupKeys = findDuplicateKeys([
   commonZhCN.translation,
   zhCN.translation,
@@ -34,7 +34,7 @@ if (en_dupKeys.length > 0) {
     `DMS EnUS_Locale error: The same key exists: ${en_dupKeys.toString()}`
   );
 }
-// FITRUE_isDebug
+// endif
 
 const allZhCN = {
   translation: {
