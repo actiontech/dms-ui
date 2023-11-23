@@ -19,6 +19,7 @@ import { MemberDrawerStyledWrapper } from '../style';
 const AddMemberGroup: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const [messageApi, contextHolder] = message.useMessage();
   const { projectID } = useCurrentProject();
   const [form] = Form.useForm<IMemberGroupFormFields>();
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
@@ -44,7 +45,7 @@ const AddMemberGroup: React.FC = () => {
       .AddMemberGroup(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsMember.addMemberGroup.successTips', {
               name: params?.member_group?.name ?? ''
             })
@@ -86,6 +87,7 @@ const AddMemberGroup: React.FC = () => {
         </Space>
       }
     >
+      {contextHolder}
       <MemberGroupForm form={form} projectID={projectID} />
     </MemberDrawerStyledWrapper>
   );

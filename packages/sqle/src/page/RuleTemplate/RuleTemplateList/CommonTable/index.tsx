@@ -1,17 +1,17 @@
 import { useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo } from 'react';
-
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-
 import {
   useTableRequestError,
   ActiontechTable,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { RuleTemplateTableColumn } from '../columns';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-
+import {
+  useCurrentProject,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { TemplateTableProps } from '../index.type';
 import { IRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -19,8 +19,8 @@ import { IGetRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/se
 
 const CommonTable = (props: TemplateTableProps) => {
   const { hidden } = props;
-
   const { projectID } = useCurrentProject();
+  const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const { tableChange, pagination } =
     useTableRequestParams<IRuleTemplateResV1>();
@@ -65,8 +65,8 @@ const CommonTable = (props: TemplateTableProps) => {
   }, [refreshTable]);
 
   const columns = useMemo(
-    () => RuleTemplateTableColumn(projectID, true),
-    [projectID]
+    () => RuleTemplateTableColumn(projectID, getLogoUrlByDbType, true),
+    [getLogoUrlByDbType, projectID]
   );
 
   return (

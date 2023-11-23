@@ -3,7 +3,7 @@ import BasicSelect from '../BasicSelect';
 import BasicInput from '../BasicInput/Input';
 
 export const CustomSelectStyleWrapper = styled(BasicSelect)`
-  &.ant-select-borderless.custom-select-namespace {
+  &.ant-select-borderless.custom-select-namespace .ant-select-selector {
     border-radius: 4px;
     border: ${({ theme }) =>
       theme.sharedTheme.components.customSelect.border} !important;

@@ -103,6 +103,7 @@ const ProjectList: React.FC = () => {
             })
           });
           refresh();
+          EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
         }
       });
     },
@@ -124,6 +125,7 @@ const ProjectList: React.FC = () => {
             })
           });
           refresh();
+          EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
         }
       });
     },

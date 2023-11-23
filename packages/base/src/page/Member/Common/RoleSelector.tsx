@@ -1,5 +1,5 @@
-import { Col, Form, Input, Row } from 'antd';
-import { BasicSelect } from '@actiontech/shared';
+import { Col, Form } from 'antd';
+import { BasicSelect, BasicInput } from '@actiontech/shared';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import useRole from '../../../hooks/useRole';
@@ -14,6 +14,7 @@ import {
   IconFormListDelete,
   IconFormListAdd
 } from '@actiontech/shared/lib/Icon';
+import { MemberRoleSelectorRowStyleWrapper } from '../style';
 
 const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
   const { t } = useTranslation();
@@ -37,10 +38,10 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
       {(fields, { add, remove }) => (
         <>
           {fields.map((field, index) => (
-            <Row key={field.key}>
+            <MemberRoleSelectorRowStyleWrapper key={field.key}>
               <Col span={8}>
                 <Form.Item
-                  label={t('dmsMember.roleSelector.role')}
+                  label={index === 0 ? t('dmsMember.roleSelector.role') : ''}
                   {...field}
                   name={[field.name, 'role_uid']}
                   rules={[{ required: true }]}
@@ -55,7 +56,10 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                       name: t('dmsMember.roleSelector.role')
                     })}
                   >
-                    {generateRoleSelectOption({ showTooltip: true })}
+                    {generateRoleSelectOption({
+                      showTooltip: true,
+                      excludeDisabled: true
+                    })}
                   </BasicSelect>
                 </Form.Item>
               </Col>
@@ -63,7 +67,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                 <Form.Item
                   {...field}
                   name={[field.name, 'range_uids']}
-                  label={t('dmsMember.roleSelector.opRange')}
+                  label={index === 0 ? t('dmsMember.roleSelector.opRange') : ''}
                   rules={[{ required: true }]}
                 >
                   <BasicSelect
@@ -87,11 +91,11 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                   initialValue={MemberRoleWithOpRangeOpRangeTypeEnum.db_service}
                   noStyle
                 >
-                  <Input />
+                  <BasicInput />
                 </Form.Item>
               </Col>
               <Col span={1} offset={1}>
-                <Form.Item label=" " colon={false}>
+                <Form.Item label={index === 0 ? ' ' : ''} colon={false}>
                   <DrawerFormIconWrapper
                     onClick={() => {
                       remove(index);
@@ -100,7 +104,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                   />
                 </Form.Item>
               </Col>
-            </Row>
+            </MemberRoleSelectorRowStyleWrapper>
           ))}
           <Form.Item label="" colon={false}>
             <FormListAddButtonWrapper

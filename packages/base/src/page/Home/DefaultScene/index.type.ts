@@ -25,4 +25,5 @@ export type DevopsStepsProps = {
   navigate: NavigateFunction;
   projectID?: string;
   iconColor?: string;
+  setOpenRulePageProjectSelectorModal?: (v: boolean) => void;
 };

@@ -9,10 +9,22 @@ export const LoginPageStyleWrapper = styled('section')`
 export const LoginPageLeftStyleWrapper = styled('div')`
   width: 50%;
   height: 100%;
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+
+  .banner {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 50%;
+    height: 100%;
+    filter: blur(0.2px);
+  }
 
   .login-background-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -58,7 +70,6 @@ export const LoginPageRightStyleWrapper = styled('div')`
         .label {
           text-align: center;
           font-feature-settings: 'case' on;
-          font-family: 'Plus Jakarta Sans';
           font-size: 32px;
           font-style: normal;
           font-weight: 700;

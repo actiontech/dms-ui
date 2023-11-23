@@ -14,9 +14,11 @@ import { Link } from 'react-router-dom';
 import { Space } from 'antd';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { DatabaseTypeLogo } from '@actiontech/shared';
+import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 
 export const RuleTemplateColumns =
   (): ActiontechTableColumn<IRuleTemplateResV1> => {
+    const { getLogoUrlByDbType } = useDbServiceDriver();
     return [
       {
         dataIndex: 'rule_template_name',
@@ -61,7 +63,7 @@ export const RuleTemplateColumns =
           return (
             <DatabaseTypeLogo
               dbType={type}
-              logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
+              logoUrl={getLogoUrlByDbType(type)}
             />
           );
         }

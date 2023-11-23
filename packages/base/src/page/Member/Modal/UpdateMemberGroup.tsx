@@ -23,6 +23,8 @@ const UpdateMemberGroup: React.FC = () => {
 
   const dispatch = useDispatch();
 
+  const [messageApi, contextHolder] = message.useMessage();
+
   const { projectID } = useCurrentProject();
 
   const [form] = Form.useForm<IMemberGroupFormFields>();
@@ -51,7 +53,7 @@ const UpdateMemberGroup: React.FC = () => {
       .UpdateMemberGroup(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsMember.updateMemberGroup.successTips', {
               name: values?.name
             })
@@ -106,6 +108,7 @@ const UpdateMemberGroup: React.FC = () => {
         </Space>
       }
     >
+      {contextHolder}
       <MemberGroupForm form={form} isUpdate={true} projectID={projectID} />
     </MemberDrawerStyledWrapper>
   );
