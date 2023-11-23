@@ -9,7 +9,7 @@ import { typeTaskItem } from '.';
 import { limitDataLength, defaultItemKey } from '../../index.data';
 
 import useThemeStyleData from '../../../../../../../hooks/useThemeStyleData';
-import useChangeTheme from '../../../../../../../hooks/useChangeTheme';
+import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 interface IBarChat {
   onReady: BarConfig['onReady'];

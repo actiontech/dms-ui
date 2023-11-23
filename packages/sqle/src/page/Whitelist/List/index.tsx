@@ -16,7 +16,7 @@ import {
 } from '@actiontech/shared/lib/global';
 import { WhitelistColumn } from './columns';
 import { ModalName } from '../../../data/ModalName';
-import { Space, message } from 'antd5';
+import { Space, message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   updateSelectWhitelist,

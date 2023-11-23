@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
-import { Space, Typography, Image } from 'antd5';
+import { Space, Typography, Image } from 'antd';
 import OperationRecordList from './List';
 
 const OperationRecord = () => {

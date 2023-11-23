@@ -6,7 +6,7 @@ import {
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { useTranslation } from 'react-i18next';
-import { Space, message, Divider, Spin } from 'antd5';
+import { Space, message, Divider, Spin } from 'antd';
 import { BasicButton, Copy } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
 import HighlightCode from '../../../../../utils/HighlightCode';

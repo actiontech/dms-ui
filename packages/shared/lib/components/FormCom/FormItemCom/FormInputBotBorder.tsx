@@ -1,4 +1,4 @@
-import { InputProps } from 'antd5';
+import { InputProps } from 'antd';
 import { FormInputBotBorderStyleWrapper } from './style';
 
 interface IFormInputBotBorder extends InputProps {}

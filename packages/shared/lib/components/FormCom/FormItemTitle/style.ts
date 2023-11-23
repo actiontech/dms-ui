@@ -1,9 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { Typography } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../../data/common';
+import { Typography } from 'antd';
 
 export const FormItemBigTitleStyleWrapper = styled(Typography.Title)`
-  &.${ANTD_PREFIX_STR}-typography {
+  &.ant-typography {
     display: flex;
     align-items: center;
     padding-top: 40px;
@@ -26,7 +25,7 @@ export const FormItemBigTitleStyleWrapper = styled(Typography.Title)`
 `;
 
 export const FormItemSubTitleStyleWrapper = styled(Typography.Title)`
-  &.${ANTD_PREFIX_STR}-typography {
+  &.ant-typography {
     font-size: 18px !important;
     margin-bottom: 0 !important;
     height: 58px !important;

@@ -1,4 +1,4 @@
-import { Row, Col, Space } from 'antd5';
+import { Row, Col, Space } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { AdminUserDevopsSteps, NormalUserDevopsSteps } from '.';
 import { DefaultSceneStepContainerWrapper } from '../style';

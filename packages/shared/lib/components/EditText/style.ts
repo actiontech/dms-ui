@@ -1,11 +1,10 @@
 import { styled } from '@mui/material/styles';
-import { Typography } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Typography } from 'antd';
 
 export const EditTextStyleWrapper = styled(Typography.Paragraph)`
   max-width: 100%;
 
-  &.${ANTD_PREFIX_STR}-typography {
+  &.ant-typography {
     display: flex;
     align-items: center;
     margin-bottom: 0 !important;
@@ -18,7 +17,7 @@ export const EditTextStyleWrapper = styled(Typography.Paragraph)`
       max-width: 96% !important;
     }
 
-    .${ANTD_PREFIX_STR}-typography-edit {
+    .ant-typography-edit {
       display: inline-flex !important;
       right: 8px;
       position: absolute;

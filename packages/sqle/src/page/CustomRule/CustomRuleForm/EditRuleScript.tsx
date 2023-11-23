@@ -10,7 +10,7 @@ import {
   FormStyleWrapper,
   formItemLayout
 } from '@actiontech/shared/lib/components/FormCom/style';
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 
 const EditRuleScript: React.FC<EditRuleScriptProps> = (props) => {

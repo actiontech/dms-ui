@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Row } from 'antd5';
+import { Row } from 'antd';
 import { BasicSegmented, PageHeader } from '@actiontech/shared';
 import { ModalName } from '../../data/ModalName';
 import { initSystemModalStatus } from '../../store/system';

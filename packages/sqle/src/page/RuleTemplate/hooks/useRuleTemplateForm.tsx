@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRequest } from 'ahooks';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { RuleTemplateBaseInfoFields } from '../RuleTemplateForm/BaseInfoForm/index.type';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';

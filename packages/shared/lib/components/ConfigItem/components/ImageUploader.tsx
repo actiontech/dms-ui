@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { LoadingOutlined, UploadOutlined } from '@ant-design/icons';
 import { useBoolean } from 'ahooks';
-import { Space, Upload } from 'antd5';
+import { Space, Upload } from 'antd';
 import { IConfigItemImageUploaderProps } from '../index.type';
 
 const ImageUploader: React.FC<IConfigItemImageUploaderProps> = ({

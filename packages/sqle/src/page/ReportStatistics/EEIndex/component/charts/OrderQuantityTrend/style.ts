@@ -1,4 +1,3 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 
 export const OrderQuantityTrendExtraStyleWrapper = styled('div')`
@@ -10,7 +9,7 @@ export const OrderQuantityTrendExtraStyleWrapper = styled('div')`
   }
 
   .orderQuantityTrend-range {
-    .${ANTD_PREFIX_STR}-picker-suffix {
+    .ant-picker-suffix {
       display: none;
     }
   }

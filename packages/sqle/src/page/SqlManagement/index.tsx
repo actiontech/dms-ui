@@ -1,4 +1,4 @@
-import { Typography, Image } from 'antd5';
+import { Typography, Image } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { PageHeader } from '@actiontech/shared';

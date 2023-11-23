@@ -1,12 +1,11 @@
 import { styled } from '@mui/material/styles';
-import { Upload } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Upload } from 'antd';
 
 export const CustomUploadDraggerStyleWrapper = styled(Upload.Dragger)<{
   hiddenContainer: boolean;
 }>`
-  &.${ANTD_PREFIX_STR}-upload-wrapper {
-    .${ANTD_PREFIX_STR}-upload-drag {
+  &.ant-upload-wrapper {
+    .ant-upload-drag {
       display: ${({ hiddenContainer }) => (hiddenContainer ? 'none' : 'block')};
       background: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorFillTertiary} !important;

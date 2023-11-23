@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Col, Row, Space, Typography, Image } from 'antd5';
+import { Col, Row, Space, Typography, Image } from 'antd';
 import {
   BasicButton,
   BasicSegmented,

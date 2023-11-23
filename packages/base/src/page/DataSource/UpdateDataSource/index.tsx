@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Button, message, Empty, Typography, Spin } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+import { Button, message, Empty, Typography, Spin } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useBoolean } from 'ahooks';

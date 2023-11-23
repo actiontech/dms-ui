@@ -1,19 +1,19 @@
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+
 import { styled } from '@mui/material/styles';
 
 export const ProjectSelectorStyleWrapper = styled(CustomSelect)`
-  &.${ANTD_PREFIX_STR}-select-lg.${ANTD_PREFIX_STR}-select.custom-project-selector {
+  &.ant-select-lg.ant-select.custom-project-selector {
     margin: 4px 0;
 
-    .${ANTD_PREFIX_STR}-select-selector {
+    .ant-select-selector {
       font-size: 13px;
       overflow: hidden;
       background-color: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorFillTertiary} !important;
 
-      .${ANTD_PREFIX_STR}-select-selection-placeholder,
-        .${ANTD_PREFIX_STR}-select-selection-item {
+      .ant-select-selection-placeholder,
+      .ant-select-selection-item {
         height: 34px;
       }
 
@@ -28,7 +28,7 @@ export const ProjectSelectorStyleWrapper = styled(CustomSelect)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-select-arrow {
+    .ant-select-arrow {
       .custom-icon-right-arrow-select-suffix {
         color: ${({ theme }) => theme.baseTheme.sideMenu.suffixIconColor};
       }
@@ -73,12 +73,12 @@ export const ProjectSelectorPopupMenuStyleWrapper = styled('div')`
       theme.baseTheme.sideMenu.projectSelector.dropdown.groupLabelColor};
   }
 
-  .${ANTD_PREFIX_STR}-select-item-option-grouped {
+  .ant-select-item-option-grouped {
     padding-inline-start: 12px;
   }
 
-  .${ANTD_PREFIX_STR}-select-item-option-selected {
-    .${ANTD_PREFIX_STR}-select-item-option-content {
+  .ant-select-item-option-selected {
+    .ant-select-item-option-content {
       .project-flag-icon {
         color: ${({ theme }) =>
           theme.baseTheme.sideMenu.projectSelector.dropdown.activeIconColor};
@@ -92,7 +92,7 @@ export const ProjectSelectorPopupMenuStyleWrapper = styled('div')`
     display: flex;
     justify-content: center;
 
-    .${ANTD_PREFIX_STR}-btn {
+    .ant-btn {
       width: 208px;
       min-width: 64px;
       padding: 0 12px;

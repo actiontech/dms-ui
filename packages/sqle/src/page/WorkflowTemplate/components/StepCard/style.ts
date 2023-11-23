@@ -1,7 +1,7 @@
 import { BasicButton } from '@actiontech/shared';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+
 import { styled } from '@mui/material/styles';
-import { Card } from 'antd5';
+import { Card } from 'antd';
 
 export const StepCardStyleWrapper = styled(Card)`
   display: flex;
@@ -11,13 +11,13 @@ export const StepCardStyleWrapper = styled(Card)`
   align-items: flex-start;
   border-radius: 8px;
 
-  &.${ANTD_PREFIX_STR}-card.step-card-style {
+  &.ant-card.step-card-style {
     box-shadow: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.stepCard.boxShadow};
     background-color: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.stepCard.backgroundColor};
 
-    &.${ANTD_PREFIX_STR}-card-hoverable:hover {
+    &.ant-card-hoverable:hover {
       box-shadow: ${({ theme }) =>
         theme.sqleTheme.workflowTemplate.stepCard.hoverBoxShadow};
     }
@@ -35,7 +35,7 @@ export const StepCardStyleWrapper = styled(Card)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-card-body {
+    .ant-card-body {
       width: 100%;
       position: relative;
     }
@@ -83,7 +83,8 @@ export const StepCardStyleWrapper = styled(Card)`
 
       .work-flow-auth-avatar-wrapper:not(:last-child) {
         margin-right: -5px;
-        .${ANTD_PREFIX_STR}-avatar {
+
+        .ant-avatar {
           border: ${({ theme }) =>
             theme.sqleTheme.workflowTemplate.stepCard.userAvatarBorder};
         }
@@ -97,7 +98,7 @@ export const WorkflowTemplateStepInfoStyleWrapper = styled('div')`
   display: flex;
   flex-direction: column;
 
-  .${ANTD_PREFIX_STR}-row.next-step-icon {
+  .ant-row.next-step-icon {
     flex-direction: column;
     align-items: center;
     margin: 12px 0 12px 40px;
@@ -176,7 +177,7 @@ export const WorkflowTemplateStepInfoStyleWrapper = styled('div')`
     padding: 0 0 0 16px;
     border-radius: 8px;
 
-    .${ANTD_PREFIX_STR}-row {
+    .ant-row {
       flex: 1;
     }
 
@@ -228,7 +229,7 @@ export const TemplateLevelStyleWrapper = styled('div')`
 `;
 
 export const ReviewNodeCloseButton = styled(BasicButton)`
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn.${ANTD_PREFIX_STR}-btn-circle.${ANTD_PREFIX_STR}-btn-icon-only {
+  &.basic-button-wrapper.ant-btn.ant-btn-circle.ant-btn-icon-only {
     width: 24px;
     height: 24px;
     position: absolute;

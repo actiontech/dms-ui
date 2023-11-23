@@ -1,11 +1,10 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 export const SQLStatisticsWrapper = styled('div')`
   padding: 20px 40px 4px;
 
   .card-wrapper {
-    .${ANTD_PREFIX_STR}-card-body {
+    .ant-card-body {
       padding: 20px !important;
       display: flex;
 

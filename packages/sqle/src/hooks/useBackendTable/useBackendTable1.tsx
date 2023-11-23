@@ -1,5 +1,5 @@
-import { Tooltip, Typography } from 'antd5';
-import { ColumnType } from 'antd5/es/table';
+import { Tooltip, Typography } from 'antd';
+import { ColumnType } from 'antd/es/table';
 
 const useBackendTable = () => {
   const tableCellRenderWithEllipsisAndTooltipAndCopyable = (

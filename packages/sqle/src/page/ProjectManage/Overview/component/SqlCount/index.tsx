@@ -14,8 +14,8 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useThemeStyleData from '../../../../..//hooks/useThemeStyleData';
 import ChartTooltip from '../../../../../components/ChartCom/ChartTooltip';
 import { PopoverTooltipStyleWrapper } from '../../../../../components/ChartCom/ChartTooltip/style';
-import useChangeTheme from '../../../../../hooks/useChangeTheme';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 const SqlCount = () => {
   const { t } = useTranslation();

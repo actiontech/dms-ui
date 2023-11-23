@@ -1,5 +1,5 @@
 import { IUidWithName } from '@actiontech/shared/lib/api/base/service/common';
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 
 export type UserGroupFormProps = {
   form?: FormInstance<UserGroupFormField>;

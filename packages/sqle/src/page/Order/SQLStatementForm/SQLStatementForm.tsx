@@ -15,7 +15,7 @@ import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import UploadType from './UploadType';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 
 const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   form,

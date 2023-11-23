@@ -1,5 +1,5 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
-import { Tag } from 'antd5';
+import { Tag } from 'antd';
 import { t } from '../../../locale';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
