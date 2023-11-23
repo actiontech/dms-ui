@@ -72,7 +72,7 @@ const RuleManager: React.FC = () => {
             <CustomRuleList />
           </EnterpriseFeatureDisplay>
         ),
-        // #if [prod_version!=ee]
+        // #if [ee]
         toolbarActions: (
           <BasicButton
             type="primary"

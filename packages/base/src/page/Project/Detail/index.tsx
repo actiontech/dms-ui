@@ -1,4 +1,4 @@
-// #if [prod_version=ee]
+// #if [ee]
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundRecentlyProject from './NotFoundRecentlyProject';
 // #endif
@@ -7,7 +7,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useEffect } from 'react';
 import {
   Outlet,
-  // #if [prod_version!=ee]
+  // #if [ce]
   useLocation,
   useNavigate
   // #endif
@@ -17,7 +17,7 @@ const ProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
 
-  // #if [prod_version=ee]
+  // #if [ee]
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
 
@@ -53,7 +53,7 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <>
-      {/* #if [prod_version=ee] */}
+      {/* #if [ee] */}
       {renderProjectDetail()}
       {/* #else */}
       <Outlet />

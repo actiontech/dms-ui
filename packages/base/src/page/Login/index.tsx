@@ -16,7 +16,7 @@ import {
 } from '@actiontech/shared/lib/data/common';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-// #if [prod_version=ee]
+// #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
@@ -36,7 +36,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const login = (formData: LoginFormFieldValue) => {
-    // #if [prod_version=ee]
+    // #if [ee]
     if (!formData.userAgreement) {
       messageApi.error(t('dmsLogin.errorMessage.userAgreement'));
       return;
@@ -71,7 +71,7 @@ const Login = () => {
             }
           }
         }
-        // #if [prod_version=ee]
+        // #if [ee]
         LocalStorageWrapper.set(
           StorageKey.SHOW_COMPANY_NOTICE,
           CompanyNoticeDisplayStatusEnum.NotDisplayed
@@ -90,7 +90,7 @@ const Login = () => {
     }
   );
 
-  // #if [prod_version=ee]
+  // #if [ee]
   useEffect(() => {
     getOauth2Tips();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -140,7 +140,7 @@ const Login = () => {
             prefix={<IconCommonPassword />}
           />
         </Form.Item>
-        {/* #if [prod_version=ee] */}
+        {/* #if [ee] */}
         <Form.Item name="userAgreement" valuePropName="checked">
           <Checkbox>
             <Space>

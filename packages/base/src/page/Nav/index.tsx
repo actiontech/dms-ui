@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { LayoutStyleWrapper } from './style';
 
-// #if [prod_version=ee]
+// #if [ee]
 import EESideMenu from './SideMenu';
 // #else
 import CESideMenu from './SideMenu/index.ce';
@@ -10,7 +10,7 @@ import CESideMenu from './SideMenu/index.ce';
 const Nav: React.FC<{ children?: ReactNode }> = (props) => {
   return (
     <LayoutStyleWrapper>
-      {/* #if [prod_version=ee] */}
+      {/* #if [ee] */}
       <EESideMenu />
       {/* #else */}
       <CESideMenu />

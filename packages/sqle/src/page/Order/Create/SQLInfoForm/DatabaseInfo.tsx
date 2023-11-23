@@ -318,7 +318,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
 
                     {renderRuleTemplateDisplay(field.key)}
 
-                    {/* #if [prod_version=ee] */}
+                    {/* #if [ee] */}
                     <BasicButton
                       className="data-source-row-button data-source-col-delete-button"
                       onClick={() => removeItem(field, index)}
@@ -336,7 +336,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
 
               <FormItemNoLabel>
                 <Space size={12} align="start">
-                  {/* #if [prod_version=ee] */}
+                  {/* #if [ee] */}
                   <BasicButton
                     onClick={() => addDataSource(fields)}
                     type="primary"

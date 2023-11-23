@@ -18,7 +18,7 @@ const VersionModal: React.FC<{
 
   const [dmsVersion, setDmsVersion] = useState<string | undefined>('');
 
-  // #if [feature=sqle]
+  // #if [sqle]
   const [sqleVersion, setSqleVersion] = useState<string | undefined>('');
   // #endif
 
@@ -30,7 +30,7 @@ const VersionModal: React.FC<{
         )?.version;
         setDmsVersion(formatServerVersion(dms));
 
-        // #if [feature=sqle]
+        // #if [sqle]
         const sqle = res.data.data?.components?.find(
           (i) => i.name === 'sqle'
         )?.version;
@@ -87,7 +87,7 @@ const VersionModal: React.FC<{
             <Typography>UI: {UI_VERSION}</Typography>
             <Typography>DMS: {dmsVersion || '-'}</Typography>
 
-            {/* #if [feature=sqle] */}
+            {/* #if [sqle] */}
             <Typography>SQLE: {sqleVersion || '-'}</Typography>
             {/* #endif */}
           </Space>

@@ -7,7 +7,7 @@ import {
   IconSystem,
   IconUserCenter,
 
-  // #if [feature=sqle]
+  // #if [sqle]
   IconViewRule,
   IconReportStatistics,
   IconRuleManage
@@ -45,7 +45,7 @@ const GlobalSetting: React.FC<{
           <div className="header">{t('dmsMenu.globalSettings.title')}</div>
           <EmptyBox if={!isAdmin}>
             <div className="content">
-              {/* #if [feature=sqle]*/}
+              {/* #if [sqle]*/}
               <div
                 className="content-item"
                 onClick={() => handleClickItem(`/sqle/rule`)}
@@ -69,7 +69,7 @@ const GlobalSetting: React.FC<{
                   {t('dmsMenu.globalSettings.userCenter')}
                 </span>
               </div>
-              {/* #if [feature=sqle] */}
+              {/* #if [sqle] */}
               <div
                 className="content-item"
                 onClick={() => handleClickItem('/sqle/reportStatistics')}

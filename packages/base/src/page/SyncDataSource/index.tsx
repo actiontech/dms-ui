@@ -8,7 +8,7 @@ const SyncDataSource: React.FC = () => {
 
   return (
     <article>
-      {/* #if [prod_version=ce] */}
+      {/* #if [ce] */}
       <PageHeader title={t('dmsSyncDataSource.syncTaskList.title')} />
       {/* #endif */}
 

@@ -27,7 +27,7 @@ const RuleBaseInfo: React.FC<{
           {dataSource?.annotation}
         </RuleDetailItemStyleWrapper>
       </Form.Item>
-      {/* #if [prod_version=ee] */}
+      {/* #if [ee] */}
       <EmptyBox if={showKnowledge}>
         <Form.Item label={t('rule.ruleDetail.knowledge')} name="knowledge">
           <RuleDetailItemStyleWrapper>

@@ -8,7 +8,7 @@ const OperationRecord = () => {
 
   return (
     <>
-      {/* #if [prod_version=ce] */}
+      {/* #if [ce] */}
       <PageHeader title={t('operationRecord.pageTitle')} />
       {/* #endif */}
 

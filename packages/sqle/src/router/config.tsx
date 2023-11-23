@@ -149,7 +149,7 @@ const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
 
-// #if [prod_version=ee]
+// #if [ee]
 const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
 const OrderSqlAnalyze = React.lazy(() => import('../page/SqlAnalyze/Order'));
 const AuditPlanSqlAnalyze = React.lazy(
@@ -210,7 +210,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <OrderDetail />,
         key: 'orderDetail'
       },
-      // #if [prod_version=ee]
+      // #if [ee]
       {
         path: ':taskId/:sqlNum/analyze',
         label: 'menu.orderSqlAnalyze',
@@ -291,7 +291,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
             label: 'menu.auditPlane',
             element: <AuditPlanReport />
           },
-          // #if [prod_version=ee]
+          // #if [ee]
           {
             path: ':reportId/:sqlNum/:auditPlanName/analyze',
             key: 'auditPlanDetail',
@@ -445,7 +445,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
       }
     ] as RouterConfigItem[]
   },
-  // #if [prod_version=ee]
+  // #if [ee]
   {
     path: 'sqle/rule/knowledge/:ruleName/:dbType',
     key: 'ruleKnowledge',

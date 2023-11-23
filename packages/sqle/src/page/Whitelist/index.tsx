@@ -8,7 +8,7 @@ const Whitelist = () => {
 
   return (
     <>
-      {/* #if [prod_version=ce] */}
+      {/* #if [ce] */}
       <PageHeader title={t('whitelist.pageTitle')} />
       {/* #endif */}
 

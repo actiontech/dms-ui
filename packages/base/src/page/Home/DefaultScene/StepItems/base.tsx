@@ -51,7 +51,7 @@ export const getDatabaseManagerSteps: (
             ),
             action: () => navigate(`/project/${projectID}/syncDataSource`)
           },
-          // #if [prod_version=ee]
+          // #if [ee]
           {
             key: 'syncDataSource-create',
             label: t(

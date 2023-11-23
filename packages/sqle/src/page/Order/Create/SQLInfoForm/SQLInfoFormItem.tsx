@@ -182,7 +182,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         {...otherProps}
       />
       <FormItemLabel
-        // #if [prod_version=ce]
+        // #if [ce]
         hidden={true}
         // #endif
         name="isSameSqlOrder"
@@ -219,7 +219,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         style={{ marginBottom: 16 }}
       />
 
-      {/* #if [prod_version=ee] */}
+      {/* #if [ee] */}
       <EmptyBox
         if={WorkflowResV2ModeEnum.same_sqls === currentSqlMode}
         defaultNode={

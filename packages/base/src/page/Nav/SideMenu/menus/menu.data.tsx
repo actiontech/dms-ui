@@ -3,7 +3,7 @@ import { NavigateFunction } from 'react-router-dom';
 import { filterAdminMenusWithKey } from './common';
 import { BaseMenuItems } from './base';
 
-// #if [feature=sqle]
+// #if [sqle]
 import { SQLEOperateConflictMenuItems, SQLEMenuItems } from './sqle';
 // #endif
 
@@ -15,7 +15,7 @@ export const sideMenuData: (
   const allMenus = [
     ...BaseMenuItems({ navigate, projectID }),
 
-    // #if [feature=sqle]
+    // #if [sqle]
     ...SQLEMenuItems({ navigate, projectID }),
     ...SQLEOperateConflictMenuItems({ navigate, projectID })
     // #endif

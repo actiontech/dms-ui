@@ -351,7 +351,7 @@ const DetailReport = () => {
           columns={columns}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
-          // #if [prod_version=ee]
+          // #if [ee]
           actions={actions}
           // #endif
           onRow={(record) => {

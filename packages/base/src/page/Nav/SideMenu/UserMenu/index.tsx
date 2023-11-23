@@ -3,7 +3,7 @@ import { useBoolean } from 'ahooks';
 import GlobalSetting from './GlobalSetting';
 import VersionModal from './VersionModal';
 import { UserMenuProps } from './index.type';
-// #if [prod_version=ee]
+// #if [ee]
 import CompanyNoticeModal from './CompanyNoticeModal';
 // #endif
 
@@ -36,7 +36,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
         open={versionModalOpen}
         setVersionModalClose={setVersionModalClose}
       />
-      {/* #if [prod_version=ee] */}
+      {/* #if [ee] */}
       <CompanyNoticeModal />
       {/* #endif */}
     </>
