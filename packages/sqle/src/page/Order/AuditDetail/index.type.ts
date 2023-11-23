@@ -8,7 +8,7 @@ import { IGetAuditTaskSQLsV2Params } from '@actiontech/shared/lib/api/sqle/servi
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TablePagination } from '@actiontech/shared/lib/components/ActiontechTable';
-import { TableProps } from 'antd5';
+import { TableProps } from 'antd';
 
 export type OrderDetailAuditResultProps = {
   taskInfos: IAuditTaskResV1[];

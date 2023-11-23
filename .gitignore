@@ -8,10 +8,7 @@
 .pnp.js
 .vscode
 .eslintcache
-/packages/*/scripts/api-modeling/node_modules
-/packages/*/scripts/api-modeling/dist
-/packages/*/scripts/api-modeling/yarn.lock
-/packages/*/scripts/api-modeling/package-lock.json
+
 dist
 **/dist/*
 

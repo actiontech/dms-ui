@@ -1,6 +1,6 @@
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Col, Row, Space } from 'antd5';
+import { Col, Row, Space } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import BasicInfo from './components/BasicInfo';
@@ -29,7 +29,7 @@ import {
 import { cloneDeep } from 'lodash';
 import { useBoolean } from 'ahooks';
 import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { WorkflowTemplateStyleWrapper } from '../WorkflowTemplateDetail/style';
 import useUsername from '../../../hooks/useUsername';
 

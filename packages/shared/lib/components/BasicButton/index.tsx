@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { ButtonProps, ConfigProvider } from 'antd5';
+import { ButtonProps, ConfigProvider } from 'antd';
 import { BasicButtonStyleWrapper } from './style';
 
 export interface IBasicButton extends ButtonProps {

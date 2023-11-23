@@ -1,5 +1,5 @@
 import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 
 export type WhitelistFormFields = {
   desc?: string;

@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd5';
+import { Col, Row } from 'antd';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { IStepInfoDataProps } from '../StepCard/index.type';

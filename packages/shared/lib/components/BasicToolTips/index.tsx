@@ -1,4 +1,4 @@
-import { Space, TooltipProps } from 'antd5';
+import { Space, TooltipProps } from 'antd';
 import classNames from 'classnames';
 import { PopoverInnerContentStyleWrapper, ToolTipsStyleWrapper } from './style';
 import { InfoCircleOutlined } from '@ant-design/icons';

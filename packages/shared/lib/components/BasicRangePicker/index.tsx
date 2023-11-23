@@ -1,6 +1,6 @@
-import { ConfigProvider } from 'antd5';
+import { ConfigProvider } from 'antd';
 import { IconArrowRight, IconClose } from '../../Icon';
-import { RangePickerProps } from 'antd5/es/date-picker';
+import { RangePickerProps } from 'antd/es/date-picker';
 import classnames from 'classnames';
 import { ReactNode } from 'react';
 import { BasicRangePickerStyleWrapper } from './style';

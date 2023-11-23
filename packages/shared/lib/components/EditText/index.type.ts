@@ -1,5 +1,5 @@
-import { ButtonProps } from 'antd5';
-import { ParagraphProps } from 'antd5/es/typography/Paragraph';
+import { ButtonProps } from 'antd';
+import { ParagraphProps } from 'antd/es/typography/Paragraph';
 
 export type EditTypeProps = {
   value: string;

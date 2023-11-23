@@ -1,9 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { Segmented } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Segmented } from 'antd';
 
 export const SegmentedStyleWrapper = styled(Segmented)`
-  &.${ANTD_PREFIX_STR}-segmented.basic-segmented-wrapper {
+  &.ant-segmented.basic-segmented-wrapper {
     display: flex;
     height: 28px;
     align-items: center;
@@ -14,8 +13,8 @@ export const SegmentedStyleWrapper = styled(Segmented)`
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.basicSegmented.backgroundColor};
 
-    .${ANTD_PREFIX_STR}-segmented-group {
-      .${ANTD_PREFIX_STR}-segmented-item:not(.${ANTD_PREFIX_STR}-segmented-item-selected) {
+    .ant-segmented-group {
+      .ant-segmented-item:not(.ant-segmented-item-selected) {
         &:hover {
           color: ${({ theme }) =>
             theme.sharedTheme.components.basicSegmented.color};
@@ -24,13 +23,13 @@ export const SegmentedStyleWrapper = styled(Segmented)`
         }
       }
 
-      .${ANTD_PREFIX_STR}-segmented-item:hover:not(.${ANTD_PREFIX_STR}-segmented-item-selected):not(
-          .${ANTD_PREFIX_STR}-segmented-item-disabled
+      .ant-segmented-item:hover:not(.ant-segmented-item-selected):not(
+          .ant-segmented-item-disabled
         )::after {
         background-color: transparent !important;
       }
 
-      .${ANTD_PREFIX_STR}-segmented-item-selected {
+      .ant-segmented-item-selected {
         color: ${({ theme }) =>
           theme.sharedTheme.components.basicSegmented.active.color};
         border: ${({ theme }) =>
@@ -40,7 +39,7 @@ export const SegmentedStyleWrapper = styled(Segmented)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-segmented-item-label {
+    .ant-segmented-item-label {
       font-size: 13px;
 
       .notice-count {

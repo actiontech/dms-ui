@@ -1,6 +1,6 @@
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';

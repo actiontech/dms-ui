@@ -1,5 +1,5 @@
-import { MenuProps } from 'antd5';
-import { ItemType, SubMenuType } from 'antd5/es/menu/hooks/useItems';
+import { MenuProps } from 'antd';
+import { ItemType, SubMenuType } from 'antd/es/menu/hooks/useItems';
 import { NavigateFunction } from 'react-router-dom';
 
 export type CustomMenuItemType =

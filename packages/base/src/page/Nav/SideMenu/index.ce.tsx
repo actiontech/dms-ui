@@ -2,7 +2,7 @@ import {
   DEFAULT_PROJECT_ID,
   DEFAULT_PROJECT_NAME
 } from '@actiontech/shared/lib/data/common';
-import { Typography } from 'antd5';
+import { Typography } from 'antd';
 import { IconProjectFlag } from 'sqle/src/icon/Rule';
 import ProjectTitle from './ProjectTitle';
 import UserMenu from './UserMenu';

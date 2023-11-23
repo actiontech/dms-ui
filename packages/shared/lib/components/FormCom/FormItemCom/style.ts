@@ -1,11 +1,10 @@
 import { styled } from '@mui/material/styles';
-import { Form } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../../data/common';
+import { Form } from 'antd';
 import BasicInput from '../../BasicInput';
 
 export const FormItemNoLabelStyleWrapper = styled(Form.Item)`
-  .${ANTD_PREFIX_STR}-row {
-    .${ANTD_PREFIX_STR}-col:nth-of-type(1) {
+  .ant-row {
+    .ant-col:nth-of-type(1) {
       label {
         display: none;
       }
@@ -14,7 +13,7 @@ export const FormItemNoLabelStyleWrapper = styled(Form.Item)`
 `;
 
 export const FormInputBotBorderStyleWrapper = styled(BasicInput)`
-  &.${ANTD_PREFIX_STR}-input {
+  &.ant-input {
     border-top: 0 !important;
     border-left: 0 !important;
     border-right: 0 !important;
@@ -37,7 +36,7 @@ export const FormInputBotBorderStyleWrapper = styled(BasicInput)`
     }
   }
 
-  &.basic-input-wrapper.${ANTD_PREFIX_STR}-input::placeholder {
+  &.basic-input-wrapper.ant-input::placeholder {
     font-size: 18px !important;
     line-height: 18px !important;
     font-weight: 600 !important;

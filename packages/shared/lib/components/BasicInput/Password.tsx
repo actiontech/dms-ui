@@ -1,10 +1,10 @@
-import { ConfigProvider } from 'antd5';
+import { ConfigProvider } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { forwardRef } from 'react';
 import classnames from 'classnames';
 import { StyleComponent } from './style';
 import { ComponentControlHeight } from '../../data/common';
-import { InputRef, PasswordProps } from 'antd5/es/input';
+import { InputRef, PasswordProps } from 'antd/es/input';
 
 const Wrapper = StyleComponent('Password');
 

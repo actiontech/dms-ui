@@ -46,7 +46,7 @@ import {
   updateAuditPlanModalStatus
 } from '../../../../store/auditPlan';
 import DetailReportDrawer from './Drawer';
-import { Spin, message } from 'antd5';
+import { Spin, message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 type typeIAuditPlanReportResV1 = keyof IAuditPlanReportResV1;

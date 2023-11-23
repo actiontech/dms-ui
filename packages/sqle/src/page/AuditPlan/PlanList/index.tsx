@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useMemo, useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Space, message } from 'antd5';
+import { Space, message } from 'antd';
 import { IconTaskType } from '../../../icon/AuditPlan';
 import { IconArrowUp, IconArrowDown } from '@actiontech/shared/lib/Icon';
 import {

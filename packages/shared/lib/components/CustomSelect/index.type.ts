@@ -1,4 +1,4 @@
-import { InputRef, SelectProps } from 'antd5';
+import { InputRef, SelectProps } from 'antd';
 import { RefObject } from 'react';
 
 export type CustomSelectProps = {

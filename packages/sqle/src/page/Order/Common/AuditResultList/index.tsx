@@ -1,6 +1,6 @@
 import { BasicSegmented, EmptyBox } from '@actiontech/shared';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { Divider, Space } from 'antd5';
+import { Divider, Space } from 'antd';
 import { ToggleButtonStyleWrapper } from '../style';
 import DownloadRecord from '../DownloadRecord';
 import AuditResultFilterContainer from '../AuditResultFilterContainer';

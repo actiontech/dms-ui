@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react';
-import { Form, message, Space } from 'antd5';
+import { Form, message, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../store';

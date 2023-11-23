@@ -1,4 +1,4 @@
-import { ConfigProvider } from 'antd5';
+import { ConfigProvider } from 'antd';
 import { FilterCustomProps, TableFilterContainerProps } from '../index.type';
 import useCustomFilter from '../hooks/useCustomFilter';
 import { FilterContainerStyleWrapper } from './style';

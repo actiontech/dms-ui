@@ -1,4 +1,4 @@
-import { Form, message, Typography, Space, Checkbox } from 'antd5';
+import { Form, message, Typography, Space, Checkbox } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';

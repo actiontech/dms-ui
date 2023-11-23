@@ -1,11 +1,11 @@
-import { ConfigProvider } from 'antd5';
+import { ConfigProvider } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { forwardRef } from 'react';
 import classnames from 'classnames';
 import { StyleComponent } from './style';
 import { ComponentControlHeight } from '../../data/common';
-import { TextAreaProps } from 'antd5/es/input';
-import { TextAreaRef } from 'antd5/es/input/TextArea';
+import { TextAreaProps } from 'antd/es/input';
+import { TextAreaRef } from 'antd/es/input/TextArea';
 
 const Wrapper = StyleComponent('TextArea');
 

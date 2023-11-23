@@ -1,4 +1,4 @@
-import { SegmentedProps } from 'antd5';
+import { SegmentedProps } from 'antd';
 import { RuleManagerSegmentedKey } from './index.type';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateRuleManagerActiveSegmentedKey } from '../../store/globalRuleTemplate';

@@ -4,7 +4,7 @@ import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames';
 
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicButton, PageHeader, BasicResult } from '@actiontech/shared';
 import {
@@ -15,7 +15,7 @@ import RuleTemplateForm from '../RuleTemplateForm';
 
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { RuleTemplateBaseInfoFields } from '../RuleTemplateForm/BaseInfoForm/index.type';
 
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';

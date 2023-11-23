@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { useBoolean } from 'ahooks';
 
-import { Space, message, Form, Spin } from 'antd5';
+import { Space, message, Form, Spin } from 'antd';
 import {
   BasicDrawer,
   BasicButton,
@@ -14,7 +14,7 @@ import {
   BasicInputNumber,
   BasicSwitch
 } from '@actiontech/shared';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { MonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import WebhooksTemplateHelp from './WebhooksTemplateHelp';
 

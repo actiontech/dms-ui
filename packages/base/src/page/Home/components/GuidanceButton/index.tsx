@@ -1,5 +1,5 @@
 import { GuidanceButtonStyleWrapper } from './style';
-import { ButtonProps, ConfigProvider, Space } from 'antd5';
+import { ButtonProps, ConfigProvider, Space } from 'antd';
 
 const GuidanceButton = (props: ButtonProps) => {
   const { children, ...otherProps } = props;

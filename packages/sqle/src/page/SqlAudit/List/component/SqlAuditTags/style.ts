@@ -1,9 +1,8 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Button } from 'antd5';
+import { Button } from 'antd';
 
 export const SqlAuditTagsButton = styled(Button)`
-  &.${ANTD_PREFIX_STR}-btn-circle.${ANTD_PREFIX_STR}-btn-sm {
+  &.ant-btn-circle.ant-btn-sm {
     &.add-tag-focus-btn {
       padding: 0;
       width: 18px;
@@ -15,7 +14,7 @@ export const SqlAuditTagsButton = styled(Button)`
       justify-content: center;
       align-items: center;
 
-      .${ANTD_PREFIX_STR}-btn-icon {
+      .ant-btn-icon {
         .anticon {
           font-size: 9px;
           font-weight: 500;

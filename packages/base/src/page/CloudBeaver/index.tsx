@@ -1,5 +1,5 @@
 import { useRequest } from 'ahooks';
-import { Card, Space, Typography, Spin } from 'antd5';
+import { Card, Space, Typography, Spin } from 'antd';
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';

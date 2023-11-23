@@ -12,7 +12,7 @@ import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Commo
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-import { Upload, message, Space, Spin } from 'antd5';
+import { Upload, message, Space, Spin } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   BasicButton,

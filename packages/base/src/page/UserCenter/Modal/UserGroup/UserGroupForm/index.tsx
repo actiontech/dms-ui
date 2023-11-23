@@ -1,5 +1,5 @@
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
-import { Form, Select, Switch } from 'antd5';
+import { Form, Select, Switch } from 'antd';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { UserGroupFormProps } from './index.type';

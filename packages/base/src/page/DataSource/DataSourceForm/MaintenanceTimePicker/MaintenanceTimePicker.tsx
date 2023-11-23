@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { Col, message, Popover, Space, Typography } from 'antd5';
+import { Col, message, Popover, Space, Typography } from 'antd';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MaintenanceTimePickerProps, MaintenanceTimeValue } from '.';

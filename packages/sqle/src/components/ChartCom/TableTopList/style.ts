@@ -1,4 +1,3 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 
 export const TableTopListStyleWrapper = styled('div')`
@@ -14,18 +13,12 @@ export const TableTopListStyleWrapper = styled('div')`
     }
 
     .no-table-data-style,
-    .no-table-data-style
-      .${ANTD_PREFIX_STR}-spin-nested-loading,
-      .no-table-data-style
-      .${ANTD_PREFIX_STR}-spin-container,
-      .no-table-data-style
-      .${ANTD_PREFIX_STR}-table,
-      .no-table-data-style
-      .${ANTD_PREFIX_STR}-table-container,
-      .no-table-data-style
-      .${ANTD_PREFIX_STR}-table-content,
-      .no-table-data-style
-      table {
+    .no-table-data-style .ant-spin-nested-loading,
+    .no-table-data-style .ant-spin-container,
+    .no-table-data-style .ant-table,
+    .no-table-data-style .ant-table-container,
+    .no-table-data-style .ant-table-content,
+    .no-table-data-style table {
       height: 100%;
     }
 
@@ -76,8 +69,8 @@ export const TableTopListStyleWrapper = styled('div')`
         }
       }
 
-      thead.${ANTD_PREFIX_STR}-table-thead > tr {
-        > th.${ANTD_PREFIX_STR}-table-cell {
+      thead.ant-table-thead > tr {
+        > th.ant-table-cell {
           height: 40px;
           padding: 0 16px;
           font-size: 14px;
@@ -96,11 +89,11 @@ export const TableTopListStyleWrapper = styled('div')`
         }
       }
 
-      tbody.${ANTD_PREFIX_STR}-table-tbody {
+      tbody.ant-table-tbody {
         > tr {
           margin: 10px 0;
 
-          > td.${ANTD_PREFIX_STR}-table-cell {
+          > td.ant-table-cell {
             height: 52px;
             padding: 0 16px;
             font-size: 14px;

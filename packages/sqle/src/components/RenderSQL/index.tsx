@@ -1,4 +1,4 @@
-import { Typography } from 'antd5';
+import { Typography } from 'antd';
 import { RenderSQLProps } from './index.type';
 import CopyIcon from '@actiontech/shared/lib/components/CopyIcon';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';

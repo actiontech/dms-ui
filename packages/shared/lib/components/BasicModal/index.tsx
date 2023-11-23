@@ -1,4 +1,4 @@
-import { ModalProps } from 'antd5';
+import { ModalProps } from 'antd';
 import { BasicModalStyleWrapper } from './style';
 import classNames from 'classnames';
 import { IconClose } from '../../Icon';

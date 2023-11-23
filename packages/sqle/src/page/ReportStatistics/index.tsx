@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ConfigProvider, Space, Typography, Image } from 'antd5';
+import { ConfigProvider, Space, Typography, Image } from 'antd';
 import { PageHeaderStyleWrapper } from '../../style/layout';
 import EEIndex from './EEIndex';
 import useThemeStyleData from '../../hooks/useThemeStyleData';

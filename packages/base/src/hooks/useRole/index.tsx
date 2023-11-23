@@ -1,6 +1,6 @@
 import React from 'react';
 import { useBoolean } from 'ahooks';
-import { Select, Tooltip } from 'antd5';
+import { Select, Tooltip } from 'antd';
 import { EmptyBox } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
