@@ -16,6 +16,8 @@ import UploadType from './UploadType';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import { Form } from 'antd';
+import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
+import { SqlFiledInitialValue } from '../../../data/common';
 
 const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   form,
@@ -98,14 +100,15 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
       <EmptyBox if={currentSQLInputType === SQLInputType.manualInput}>
         <FormItemNoLabel
           name={generateFieldName('sql')}
-          initialValue="/* input your sql */"
+          initialValue={SqlFiledInitialValue}
           rules={[
             {
               required: true,
               message: t('common.form.placeholder.input', {
-                name: t('order.sqlInfo.sql')
+                name: t('common.sqlStatements')
               })
-            }
+            },
+            ...whiteSpaceSql()
           ]}
         >
           <MonacoEditor
