@@ -1,55 +1,11 @@
 export type SideMenuTheme = {
-  width: number;
-  padding: number;
-  backgroundColor: string;
-  boxShadow: string;
-  border: string;
   suffixIconColor: string;
-  title: {
-    color: string[];
-  };
   projectSelector: {
     dropdown: {
       labelColor: string;
       iconColor: string;
       activeIconColor: string;
       groupLabelColor: string;
-    };
-  };
-  menu: {
-    hoverBackgroundColor: string;
-    labelColor: string;
-    hoverLabelColor: string;
-    dividerColor: string;
-    groupLabelColor: string;
-  };
-  globalSystem: {
-    backgroundColor: string;
-  };
-  userNavigate: {
-    border: string;
-    boxShadow: string;
-    backgroundColor: string;
-    title: {
-      border: string;
-      color: string;
-    };
-    content: {
-      hoverBackgroundColor: string;
-      color: string;
-    };
-    footer: {
-      text: {
-        color: string;
-      };
-
-      iconWrapper: {
-        border: string;
-        backgroundColor: string;
-        activeBackgroundColor: string;
-        color: string;
-        activeColor: string;
-      };
     };
   };
 };
