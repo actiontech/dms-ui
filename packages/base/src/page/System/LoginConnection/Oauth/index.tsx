@@ -59,9 +59,9 @@ const Oauth = () => {
           });
         }
       },
-      /* IFTRUE_isCE */
+      // #if [ce]
       ready: false
-      /* FITRUE_isCE */
+      // #endif
     }
   );
 

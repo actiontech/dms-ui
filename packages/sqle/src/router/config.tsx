@@ -149,13 +149,13 @@ const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
 
-/* IFTRUE_isEE */
+// #if [ee]
 const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
 const OrderSqlAnalyze = React.lazy(() => import('../page/SqlAnalyze/Order'));
 const AuditPlanSqlAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/AuditPlan')
 );
-/* FITRUE_isEE */
+// #endif
 
 //sqle global page
 const Rule = React.lazy(() => import('../page/Rule'));
@@ -210,14 +210,14 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <OrderDetail />,
         key: 'orderDetail'
       },
-      /* IFTRUE_isEE */
+      // #if [ee]
       {
         path: ':taskId/:sqlNum/analyze',
         label: 'menu.orderSqlAnalyze',
         element: <OrderSqlAnalyze />,
         key: 'orderAnalyze'
       }
-      /* FITRUE_isEE */
+      // #endif
     ] as RouterConfigItem[]
   },
   {
@@ -291,7 +291,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
             label: 'menu.auditPlane',
             element: <AuditPlanReport />
           },
-          /* IFTRUE_isEE */
+          // #if [ee]
           {
             path: ':reportId/:sqlNum/:auditPlanName/analyze',
             key: 'auditPlanDetail',
@@ -299,7 +299,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
             element: <AuditPlanSqlAnalyze />,
             hideInSliderMenu: true
           }
-          /* FITRUE_isEE */
+          // #endif
         ]
       }
     ] as RouterConfigItem[]
@@ -445,11 +445,11 @@ export const globalRouterConfig: RouterConfigItem[] = [
       }
     ] as RouterConfigItem[]
   },
-  /* IFTRUE_isEE */
+  // #if [ee]
   {
     path: 'sqle/rule/knowledge/:ruleName/:dbType',
     key: 'ruleKnowledge',
     element: <RuleKnowledge />
   }
-  /* FITRUE_isEE */
+  // #endif
 ];

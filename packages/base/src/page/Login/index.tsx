@@ -15,13 +15,14 @@ import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME
 } from '@actiontech/shared/lib/data/common';
 import { useLocation, useNavigate } from 'react-router-dom';
-/* IFTRUE_isEE */
+
+// #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
-/* FITRUE_isEE */
+// #endif
 
 const Login = () => {
   const { t } = useTranslation();
@@ -35,12 +36,12 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const login = (formData: LoginFormFieldValue) => {
-    /* IFTRUE_isEE */
+    // #if [ee]
     if (!formData.userAgreement) {
       messageApi.error(t('dmsLogin.errorMessage.userAgreement'));
       return;
     }
-    /* FITRUE_isEE */
+    // #endif
     setTrue();
     dms
       .AddSession({
@@ -70,12 +71,12 @@ const Login = () => {
             }
           }
         }
-        /* IFTRUE_isEE */
+        // #if [ee]
         LocalStorageWrapper.set(
           StorageKey.SHOW_COMPANY_NOTICE,
           CompanyNoticeDisplayStatusEnum.NotDisplayed
         );
-        /* FITRUE_isEE */
+        // #endif
       })
       .finally(() => {
         setFalse();
@@ -89,12 +90,12 @@ const Login = () => {
     }
   );
 
-  // /* IFTRUE_isEE */
+  // #if [ee]
   useEffect(() => {
     getOauth2Tips();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  /* FITRUE_isEE */
+  // #endif
   return (
     <LoginLayout>
       {contextHolder}
@@ -139,7 +140,7 @@ const Login = () => {
             prefix={<IconCommonPassword />}
           />
         </Form.Item>
-        {/* IFTRUE_isEE */}
+        {/* #if [ee] */}
         <Form.Item name="userAgreement" valuePropName="checked">
           <Checkbox>
             <Space>
@@ -150,7 +151,7 @@ const Login = () => {
             </Space>
           </Checkbox>
         </Form.Item>
-        {/* FITRUE_isEE */}
+        {/* #endif */}
         <BasicButton
           type="primary"
           className="login-btn"

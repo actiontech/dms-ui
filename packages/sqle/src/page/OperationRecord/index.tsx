@@ -8,9 +8,9 @@ const OperationRecord = () => {
 
   return (
     <>
-      {/* IFTRUE_isCE  */}
+      {/* #if [ce] */}
       <PageHeader title={t('operationRecord.pageTitle')} />
-      {/* FITRUE_isCE */}
+      {/* #endif */}
 
       <EnterpriseFeatureDisplay
         featureName={t('operationRecord.pageTitle')}

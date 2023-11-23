@@ -3,19 +3,19 @@ import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
 import { BaseRouterConfig } from './router.base';
 
-/* IFTRUE_isSQLE */
+// #if [sqle]
 import {
   projectDetailRouterConfig as SQLEProjectDetailRouterConfig,
   globalRouterConfig as SQLEGlobalRouterConfig
 } from 'sqle/src/router/config';
-/* FITRUE_isSQLE */
+// #endif
 
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 
 export const AuthRouterConfig: RouterConfigItem[] = [
   ...BaseRouterConfig,
 
-  /* IFTRUE_isSQLE */
+  // #if [sqle]
   ...SQLEGlobalRouterConfig,
   {
     key: 'projectDetail',
@@ -23,7 +23,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     element: <ProjectDetail />,
     children: SQLEProjectDetailRouterConfig
   },
-  /* FITRUE_isSQLE */
+  // #endif
 
   {
     path: '*',

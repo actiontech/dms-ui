@@ -11,13 +11,14 @@ import LoginLayout from '../Login/components/LoginLayout';
 import { BasicButton, BasicInput } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
-/* IFTRUE_isEE */
+
+// #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
-/* FITRUE_isEE */
+// #endif
 
 const BindUser = () => {
   const navigate = useNavigate();
@@ -62,12 +63,12 @@ const BindUser = () => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateToken({ token: concatToken(res.data.data?.token) }));
           navigate('/');
-          /* IFTRUE_isEE */
+          // #if [ee]
           LocalStorageWrapper.set(
             StorageKey.SHOW_COMPANY_NOTICE,
             CompanyNoticeDisplayStatusEnum.NotDisplayed
           );
-          /* FITRUE_isEE */
+          // #endif
         }
       })
       .finally(() => {

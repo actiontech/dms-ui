@@ -46,7 +46,7 @@ const mergeFilterButtonMeta = <
     );
   }
 
-  // IFTRUE_isDebug
+  // #if [DEV]
   if (
     Array.from(map).some(
       ([_, value]) =>
@@ -55,7 +55,7 @@ const mergeFilterButtonMeta = <
   ) {
     throw new Error('Filter label cannot be empty');
   }
-  // FITRUE_isDebug
+  // #endif
 
   return map;
 };
@@ -99,11 +99,11 @@ const useTableFilterContainer = <
       }
     });
 
-    // IFTRUE_isDebug
+    // #if [DEV]
     if (meta.some((v) => !v.filterKey)) {
       throw new Error('Filter key cannot be empty');
     }
-    // FITRUE_isDebug
+    // #endif
     return meta;
   }, [columns, extraFilterMeta, filterButtonMeta]);
 

@@ -182,9 +182,9 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         {...otherProps}
       />
       <FormItemLabel
-        /* IFTRUE_isCE */
+        // #if [ce]
         hidden={true}
-        /* FITRUE_isCE */
+        // #endif
         name="isSameSqlOrder"
         valuePropName="checked"
         initialValue={!changeSqlModeDisabled}
@@ -219,7 +219,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         style={{ marginBottom: 16 }}
       />
 
-      {/* IFTRUE_isEE */}
+      {/* #if [ee] */}
       <EmptyBox
         if={WorkflowResV2ModeEnum.same_sqls === currentSqlMode}
         defaultNode={
@@ -231,13 +231,13 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
           />
         }
       >
-        {/* FITRUE_isEE */}
-
         <SQLStatementForm form={form} isClearFormWhenChangeSqlType={true} />
-
-        {/* IFTRUE_isEE */}
       </EmptyBox>
-      {/* FITRUE_isEE */}
+
+      {/* #else */}
+      <SQLStatementForm form={form} isClearFormWhenChangeSqlType={true} />
+
+      {/* #endif */}
 
       <FormItemNoLabel>
         <Space size={12}>

@@ -132,7 +132,7 @@ const OrderList: React.FC = () => {
     setSearchKeyword(value);
   };
 
-  // IFTRUE_isEE
+  // #if [ee]
   const [
     exportButtonDisabled,
     { setFalse: finishExport, setTrue: startExport }
@@ -182,7 +182,7 @@ const OrderList: React.FC = () => {
         finishExport();
       });
   };
-  // FITRUE_isEE
+  // #endif
 
   const rowSelection = {
     selectedRowKeys,
@@ -242,7 +242,7 @@ const OrderList: React.FC = () => {
         title={t('order.orderList.pageTitle')}
         extra={
           <Space size={12}>
-            {/* IFTRUE_isEE */}
+            {/* #if [ee] */}
             <BasicButton
               onClick={exportOrder}
               disabled={exportButtonDisabled}
@@ -250,7 +250,7 @@ const OrderList: React.FC = () => {
             >
               {t('order.exportOrder.buttonText')}
             </BasicButton>
-            {/* FITRUE_isEE */}
+            {/* #endif */}
 
             <EmptyBox if={!projectArchive}>
               <Link to={`/sqle/project/${projectID}/order/create`}>

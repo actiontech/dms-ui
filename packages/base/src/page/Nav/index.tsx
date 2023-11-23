@@ -1,24 +1,20 @@
 import { ReactNode } from 'react';
 import { LayoutStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 
-/* IFTRUE_isEE */
+// #if [ee]
 import EESideMenu from './SideMenu';
-/* FITRUE_isEE */
-
-/* IFTRUE_isCE */
+// #else
 import CESideMenu from './SideMenu/index.ce';
-/* FITRUE_isCE */
+// #endif
 
 const Nav: React.FC<{ children?: ReactNode }> = (props) => {
   return (
     <LayoutStyleWrapper>
-      {/* IFTRUE_isEE */}
+      {/* #if [ee] */}
       <EESideMenu />
-      {/* FITRUE_isEE */}
-
-      {/* IFTRUE_isCE */}
+      {/* #else */}
       <CESideMenu />
-      {/* FITRUE_isCE */}
+      {/* #endif */}
 
       <div className="dms-layout-content">{props.children}</div>
     </LayoutStyleWrapper>

@@ -3,14 +3,14 @@ import { baseStoreData } from './base';
 import { SQLEStoreData } from 'sqle/src/store';
 import { findDuplicateKeys } from '../utils/findDuplicateKeys';
 
-// IFTRUE_isDebug
+// #if [DEV]
 const dupKeys = findDuplicateKeys([baseStoreData, SQLEStoreData]);
 if (dupKeys.length > 0) {
   throw new Error(
     `Redux store error: The same key exists: ${dupKeys.toString()}`
   );
 }
-// FITRUE_isDebug
+// #endif
 
 const store = configureStore({
   reducer: {
