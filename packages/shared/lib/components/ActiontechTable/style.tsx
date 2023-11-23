@@ -1,8 +1,7 @@
-import { ANTD_PREFIX_STR } from '../../data/common';
-import { ConfigProviderProps } from 'antd5/es/config-provider';
+import { ConfigProviderProps } from 'antd/es/config-provider';
 import { ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS } from './hooks/useTableAction';
 import { styled } from '@mui/material/styles';
-import { Table } from 'antd5';
+import { Table } from 'antd';
 
 export const tableToken: ConfigProviderProps['theme'] = {
   token: {
@@ -17,18 +16,18 @@ export const tableToken: ConfigProviderProps['theme'] = {
 };
 
 export const ActiontechTableStyleWrapper = styled(Table)`
-  &.${ANTD_PREFIX_STR}-table-wrapper.table-row-cursor {
-    .${ANTD_PREFIX_STR}-table-tbody {
+  &.ant-table-wrapper.table-row-cursor {
+    .ant-table-tbody {
       tr {
         cursor: pointer;
       }
     }
   }
-  &.${ANTD_PREFIX_STR}-table-wrapper.actiontech-table-namespace {
+  &.ant-table-wrapper.actiontech-table-namespace {
     padding-bottom: 60px;
-    .${ANTD_PREFIX_STR}-table-thead {
+    .ant-table-thead {
       tr {
-        .${ANTD_PREFIX_STR}-table-cell {
+        .ant-table-cell {
           color: ${({ theme }) =>
             theme.sharedTheme.components.table.thead.color};
           border-bottom: ${({ theme }) =>
@@ -38,18 +37,18 @@ export const ActiontechTableStyleWrapper = styled(Table)`
           line-height: 20px;
         }
 
-        .${ANTD_PREFIX_STR}-table-cell:first-of-type {
+        .ant-table-cell:first-of-type {
           padding-left: 40px;
         }
 
-        .${ANTD_PREFIX_STR}-table-cell:last-of-type {
+        .ant-table-cell:last-of-type {
           padding-right: 40px;
         }
       }
     }
 
-    .${ANTD_PREFIX_STR}-table-row {
-      .${ANTD_PREFIX_STR}-table-cell {
+    .ant-table-row {
+      .ant-table-cell {
         color: ${({ theme }) => theme.sharedTheme.components.table.row.color};
         border-bottom: ${({ theme }) =>
           theme.sharedTheme.components.table.row.border};
@@ -58,11 +57,11 @@ export const ActiontechTableStyleWrapper = styled(Table)`
         line-height: 20px;
       }
 
-      .${ANTD_PREFIX_STR}-table-cell:first-of-type {
+      .ant-table-cell:first-of-type {
         padding-left: 40px;
       }
 
-      .${ANTD_PREFIX_STR}-table-cell:last-of-type {
+      .ant-table-cell:last-of-type {
         padding-right: 40px;
       }
 
@@ -71,9 +70,9 @@ export const ActiontechTableStyleWrapper = styled(Table)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-checkbox-wrapper {
-      .${ANTD_PREFIX_STR}-checkbox {
-        .${ANTD_PREFIX_STR}-checkbox-inner {
+    .ant-checkbox-wrapper {
+      .ant-checkbox {
+        .ant-checkbox-inner {
           width: 15px;
           height: 15px;
           border-radius: 3px;
@@ -81,7 +80,7 @@ export const ActiontechTableStyleWrapper = styled(Table)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-table-pagination {
+    .ant-table-pagination {
       justify-content: space-between;
       margin: 0 !important;
       padding: 16px 40px;
@@ -100,15 +99,15 @@ export const ActiontechTableStyleWrapper = styled(Table)`
         flex: 1;
       }
 
-      .${ANTD_PREFIX_STR}-pagination-total-text {
+      .ant-pagination-total-text {
         color: ${({ theme }) =>
           theme.sharedTheme.components.table.pagination.total.color};
         order: -1;
       }
-      .${ANTD_PREFIX_STR}-pagination-prev {
+      .ant-pagination-prev {
         margin-inline-end: 8px;
       }
-      .${ANTD_PREFIX_STR}-pagination-item {
+      .ant-pagination-item {
         margin-inline-end: 8px;
         &:hover {
           background-color: ${({ theme }) =>
@@ -120,7 +119,7 @@ export const ActiontechTableStyleWrapper = styled(Table)`
             theme.sharedTheme.components.table.pagination.item.color};
         }
       }
-      .${ANTD_PREFIX_STR}-pagination-item-active {
+      .ant-pagination-item-active {
         border: ${({ theme }) =>
           theme.sharedTheme.components.table.pagination.item.activeBorder};
         background-color: ${({ theme }) =>
@@ -133,16 +132,16 @@ export const ActiontechTableStyleWrapper = styled(Table)`
         }
       }
 
-      .${ANTD_PREFIX_STR}-pagination-options {
-        .${ANTD_PREFIX_STR}-pagination-options-size-changer {
-          &:not(.${ANTD_PREFIX_STR}-select-focused) {
-            .${ANTD_PREFIX_STR}-select-selector:hover {
+      .ant-pagination-options {
+        .ant-pagination-options-size-changer {
+          &:not(.ant-select-focused) {
+            .ant-select-selector:hover {
               border: ${({ theme }) =>
                 theme.sharedTheme.components.table.pagination.options
                   .hoverBorder};
             }
           }
-          .${ANTD_PREFIX_STR}-select-selector {
+          .ant-select-selector {
             height: 28px;
             line-height: 28px;
             padding: 0 8px;
@@ -155,7 +154,7 @@ export const ActiontechTableStyleWrapper = styled(Table)`
             box-shadow: ${({ theme }) =>
               theme.sharedTheme.components.table.pagination.options.boxShadow};
 
-            .${ANTD_PREFIX_STR}-select-selection-item {
+            .ant-select-selection-item {
               padding-inline-start: 4px;
               padding-inline-end: 0;
               display: flex;
@@ -165,7 +164,7 @@ export const ActiontechTableStyleWrapper = styled(Table)`
                   .itemColor};
             }
 
-            .${ANTD_PREFIX_STR}-select-selection-search {
+            .ant-select-selection-search {
               input {
                 height: 28px;
               }
@@ -176,7 +175,7 @@ export const ActiontechTableStyleWrapper = styled(Table)`
     }
   }
 
-  &.${ANTD_PREFIX_STR}-table-wrapper.actiontech-table-namespace.clear-padding-bottom {
+  &.ant-table-wrapper.actiontech-table-namespace.clear-padding-bottom {
     padding-bottom: 0;
   }
 `;

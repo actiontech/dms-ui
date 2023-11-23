@@ -1,5 +1,5 @@
-import { Empty, message, Space, Typography } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+import { Empty, message, Space, Typography } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useParams } from 'react-router-dom';

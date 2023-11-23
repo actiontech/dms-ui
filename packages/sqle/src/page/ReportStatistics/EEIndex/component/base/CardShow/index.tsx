@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { CardProps, Statistic, ConfigProvider } from 'antd5';
+import { CardProps, Statistic, ConfigProvider } from 'antd';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import { CardShowStyleWrapper } from './style';
 

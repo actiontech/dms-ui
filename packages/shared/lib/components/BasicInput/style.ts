@@ -1,8 +1,7 @@
 import { styled } from '@mui/material/styles';
-import { Input } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
-import TextArea from 'antd5/es/input/TextArea';
-import Password from 'antd5/es/input/Password';
+import { Input } from 'antd';
+import TextArea from 'antd/es/input/TextArea';
+import Password from 'antd/es/input/Password';
 
 const ComponentType = {
   Input,
@@ -14,7 +13,7 @@ export const StyleComponent = (type: keyof typeof ComponentType) => {
   const Component = ComponentType[type] as any;
   return styled(Component)`
     .basic-input-wrapper {
-      .${ANTD_PREFIX_STR}-input-clear-icon {
+      .ant-input-clear-icon {
         font-size: 14px !important;
         background-color: transparent !important;
 
@@ -24,12 +23,12 @@ export const StyleComponent = (type: keyof typeof ComponentType) => {
       }
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input:not(.${ANTD_PREFIX_STR}-input-borderless):not(
-        .${ANTD_PREFIX_STR}-input-affix-wrapper-borderless
+    &.basic-input-wrapper.ant-input:not(.ant-input-borderless):not(
+        .ant-input-affix-wrapper-borderless
       ),
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-affix-wrapper:not(.${ANTD_PREFIX_STR}-input-affix-wrapper-focused):not(
-        .${ANTD_PREFIX_STR}-input-affix-wrapper-borderless
-      ) {
+    &.basic-input-wrapper.ant-input-affix-wrapper:not(
+        .ant-input-affix-wrapper-focused
+      ):not(.ant-input-affix-wrapper-borderless) {
       border-radius: 4px;
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.default.border};
@@ -40,24 +39,22 @@ export const StyleComponent = (type: keyof typeof ComponentType) => {
         theme.sharedTheme.components.basicInput.default.placeholder.color};
     }
 
-    &.basic-input-wrapper:hover:not(:focus):not(
-        .${ANTD_PREFIX_STR}-input-status-error
-      ):not(.${ANTD_PREFIX_STR}-input-affix-wrapper-status-error):not(
-        .${ANTD_PREFIX_STR}-input-disabled
-      ):not(.${ANTD_PREFIX_STR}-input-affix-wrapper-disabled):not(
-        .${ANTD_PREFIX_STR}-input-affix-wrapper-focused
-      ):not(.${ANTD_PREFIX_STR}-input-borderless):not(
-        .${ANTD_PREFIX_STR}-input-affix-wrapper-borderless
-      ):not(.${ANTD_PREFIX_STR}-input-group-wrapper) {
+    &.basic-input-wrapper:hover:not(:focus):not(.ant-input-status-error):not(
+        .ant-input-affix-wrapper-status-error
+      ):not(.ant-input-disabled):not(.ant-input-affix-wrapper-disabled):not(
+        .ant-input-affix-wrapper-focused
+      ):not(.ant-input-borderless):not(.ant-input-affix-wrapper-borderless):not(
+        .ant-input-group-wrapper
+      ) {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.hover.border};
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-group-wrapper:hover {
+    &.basic-input-wrapper.ant-input-group-wrapper:hover {
       border: none;
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input:not(.${ANTD_PREFIX_STR}-input-borderless):focus {
+    &.basic-input-wrapper.ant-input:not(.ant-input-borderless):focus {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.focus.border};
       caret-color: ${({ theme }) =>
@@ -69,53 +66,55 @@ export const StyleComponent = (type: keyof typeof ComponentType) => {
         theme.sharedTheme.components.basicInput.disabled.background};
     }
 
-    &.basic-input-wrapper[disabled]:not(
-        .${ANTD_PREFIX_STR}-input-borderless
-      ):not(.${ANTD_PREFIX_STR}-input-affix-wrapper-borderless) {
+    &.basic-input-wrapper[disabled]:not(.ant-input-borderless):not(
+        .ant-input-affix-wrapper-borderless
+      ) {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.disabled.border};
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-status-error:not(.${ANTD_PREFIX_STR}-input-borderless) {
+    &.basic-input-wrapper.ant-input-status-error:not(.ant-input-borderless) {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.error.border};
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-affix-wrapper-focused {
+    &.basic-input-wrapper.ant-input-affix-wrapper-focused {
       caret-color: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.focus.caretColor};
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-affix-wrapper-focused:not(.${ANTD_PREFIX_STR}-input-affix-wrapper-borderless) {
+    &.basic-input-wrapper.ant-input-affix-wrapper-focused:not(
+        .ant-input-affix-wrapper-borderless
+      ) {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.focus.border};
       border-radius: 4px;
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-affix-wrapper-status-error:not(.${ANTD_PREFIX_STR}-input-affix-wrapper-borderless) {
+    &.basic-input-wrapper.ant-input-affix-wrapper-status-error:not(
+        .ant-input-affix-wrapper-borderless
+      ) {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.error.border};
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-status-error:not(.${ANTD_PREFIX_STR}-input-disabled):not(
-        .${ANTD_PREFIX_STR}-input-borderless
-      ).${ANTD_PREFIX_STR}-input:hover {
+    &.basic-input-wrapper.ant-input-status-error:not(.ant-input-disabled):not(
+        .ant-input-borderless
+      ).ant-input:hover {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.error.border};
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-affix-wrapper-status-error:not(
-      .${ANTD_PREFIX_STR}-input-affix-wrapper-disabled
-    ):not(
-        .${ANTD_PREFIX_STR}-input-affix-wrapper-borderless
-      ).${ANTD_PREFIX_STR}-input-affix-wrapper:hover {
+    &.basic-input-wrapper.ant-input-affix-wrapper-status-error:not(
+        .ant-input-affix-wrapper-disabled
+      ):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper:hover {
       border: ${({ theme }) =>
         theme.sharedTheme.components.basicInput.error.border};
     }
 
-    &.basic-input-wrapper.${ANTD_PREFIX_STR}-input-affix-wrapper {
-      .${ANTD_PREFIX_STR}-input-suffix {
-        .${ANTD_PREFIX_STR}-input-data-count {
+    &.basic-input-wrapper.ant-input-affix-wrapper {
+      .ant-input-suffix {
+        .ant-input-data-count {
           color: ${({ theme }) =>
             theme.sharedTheme.components.basicInput.default.dataCountColor};
           text-align: right;

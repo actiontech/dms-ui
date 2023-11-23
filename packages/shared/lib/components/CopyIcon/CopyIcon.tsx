@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
-import { Tooltip } from 'antd';
 import { CheckOutlined, CopyOutlined } from '@ant-design/icons';
 import { CopyIconProps } from '.';
 import Copy from '../../utils/Copy';
-import './index.less';
+import { CopyIconStyleWrapper } from './style';
+import BasicToolTips from '../BasicToolTips';
 
 const CopyIcon: React.FC<CopyIconProps> = ({
   text,
@@ -50,14 +50,11 @@ const CopyIcon: React.FC<CopyIconProps> = ({
   }, [copied, t, tooltips]);
 
   return (
-    <Tooltip key="copy" title={tooltipsTitle}>
-      <div
-        onClick={onCopyClick}
-        className={`actiontech-copy ${copied ? `actiontech-copy-success` : ''}`}
-      >
+    <BasicToolTips key="copy" title={tooltipsTitle}>
+      <CopyIconStyleWrapper onClick={onCopyClick} copied={copied}>
         {copied ? <CheckOutlined /> : <CopyOutlined />}
-      </div>
-    </Tooltip>
+      </CopyIconStyleWrapper>
+    </BasicToolTips>
   );
 };
 

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import { groupBy } from 'lodash';
 
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import { TableTaskTypeFilterStyleWrapper } from './style';
 import {
   FilterButtonStyleWrapper,

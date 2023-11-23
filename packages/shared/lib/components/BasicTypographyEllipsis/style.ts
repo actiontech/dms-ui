@@ -1,11 +1,10 @@
 import { styled } from '@mui/material/styles';
-import { Typography } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Typography } from 'antd';
 
 export const TypographyStyleWrapper = styled(Typography.Paragraph)`
   max-width: 100%;
 
-  &.${ANTD_PREFIX_STR}-typography.${ANTD_PREFIX_STR}-typography-ellipsis {
+  &.ant-typography.ant-typography-ellipsis {
     margin-bottom: 0;
     display: flex;
     align-items: center;
@@ -16,7 +15,7 @@ export const TypographyStyleWrapper = styled(Typography.Paragraph)`
       word-break: keep-all;
     }
 
-    .${ANTD_PREFIX_STR}-typography-copy {
+    .ant-typography-copy {
       height: 18px;
       width: 18px;
       opacity: 0;
@@ -32,7 +31,7 @@ export const TypographyStyleWrapper = styled(Typography.Paragraph)`
     }
 
     &:hover {
-      .${ANTD_PREFIX_STR}-typography-copy {
+      .ant-typography-copy {
         opacity: 1;
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
       }

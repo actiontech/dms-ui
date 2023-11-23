@@ -1,5 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '../../data/common';
 
 export const CEIndexStyleWrapper = styled('section')`
   background: ${({ theme }) => theme.sharedTheme.basic.colorBgLayoutGray};
@@ -7,7 +6,7 @@ export const CEIndexStyleWrapper = styled('section')`
   .common-mode-wrapper {
     height: calc(100vh - 60px);
 
-    .${ANTD_PREFIX_STR}-col {
+    .ant-col {
       padding: 40px;
       height: calc(100vh - 60px);
     }
@@ -23,7 +22,7 @@ export const CEIndexStyleWrapper = styled('section')`
     border-right: 0.5 solid
       ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
-    .paragraph.${ANTD_PREFIX_STR}-typography {
+    .paragraph.ant-typography {
       margin: 16px 0;
       font-size: 14px;
       color: ${({ theme }) => theme.sharedTheme.basic.colorDefaultIcon};
@@ -31,7 +30,7 @@ export const CEIndexStyleWrapper = styled('section')`
       word-wrap: break-word;
     }
 
-    .${ANTD_PREFIX_STR}-image {
+    .ant-image {
       border-radius: 8px;
     }
   }
@@ -42,7 +41,7 @@ export const CEIndexStyleWrapper = styled('section')`
       position: relative;
       margin-top: 16px;
 
-      .${ANTD_PREFIX_STR}-card-body {
+      .ant-card-body {
         padding: 16px 24px 20px;
       }
 

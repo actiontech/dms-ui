@@ -4,7 +4,7 @@ import {
   UpdateWorkflowTemplateStyleWrapper
 } from '../../style';
 import { useTranslation } from 'react-i18next';
-import { Divider, Form, Typography } from 'antd5';
+import { Divider, Form, Typography } from 'antd';
 import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
 import {
   ReviewAndExecUserTypeEnum,
@@ -202,7 +202,7 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
         <Divider className="step-info-divider" />
         <StepNodeAlertStyleWrapper>
           <Typography.Text className="step-alert-title">
-            <InfoCircleOutlined className="text-orange" />
+            <InfoCircleOutlined className="step-alert-title-tips-icon" />
             {t('workflowTemplate.progressConfig.ruler.title')}
           </Typography.Text>
           <Typography.Paragraph className="step-alert-content">

@@ -1,6 +1,5 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Typography } from 'antd5';
+import { Typography } from 'antd';
 
 export const OrderListStyleWrapper = styled('section')`
   .order-list-table-desc-column {
@@ -14,7 +13,8 @@ export const OrderListStyleWrapper = styled('section')`
 
 export const OrderNameStyleWrapper = styled(Typography.Paragraph)`
   max-width: 100%;
-  &.${ANTD_PREFIX_STR}-typography.${ANTD_PREFIX_STR}-typography-ellipsis {
+
+  &.ant-typography.ant-typography-ellipsis {
     margin-bottom: 0;
   }
 `;

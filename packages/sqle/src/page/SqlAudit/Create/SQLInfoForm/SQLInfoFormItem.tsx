@@ -10,7 +10,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 
-import { Form, Radio, RadioGroupProps, Space } from 'antd5';
+import { Form, Radio, RadioGroupProps, Space } from 'antd';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { BasicButton, BasicSelect, BasicToolTips } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';

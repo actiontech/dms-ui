@@ -1,4 +1,4 @@
-import { TitleProps } from 'antd5/es/typography/Title';
+import { TitleProps } from 'antd/es/typography/Title';
 import { FormItemSubTitleStyleWrapper } from './style';
 
 interface IFormItemSubTitle extends TitleProps {}

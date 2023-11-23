@@ -1,4 +1,4 @@
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 import { RuleTemplateFormProps } from '../index.type';
 import { IRuleProjectTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 

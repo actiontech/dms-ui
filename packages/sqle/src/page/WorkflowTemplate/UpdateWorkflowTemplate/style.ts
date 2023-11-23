@@ -1,5 +1,5 @@
 import { BasicButton } from '@actiontech/shared';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+
 import { styled } from '@mui/material/styles';
 
 export const UpdateWorkflowTemplateStyleWrapper = styled('div')`
@@ -54,20 +54,20 @@ export const UpdateWorkflowTemplateStyleWrapper = styled('div')`
     }
 
     .authorized-item-switch {
-      .${ANTD_PREFIX_STR}-form-item-row {
+      .ant-form-item-row {
         flex-direction: row;
 
-        .${ANTD_PREFIX_STR}-form-item-label {
+        .ant-form-item-label {
           padding: 0;
           height: 24px;
           line-height: 24px;
         }
 
-        .${ANTD_PREFIX_STR}-form-item-control {
+        .ant-form-item-control {
           width: auto;
           text-align: right;
 
-          .${ANTD_PREFIX_STR}-form-item-control-input {
+          .ant-form-item-control-input {
             min-height: 24px;
           }
         }
@@ -78,14 +78,14 @@ export const UpdateWorkflowTemplateStyleWrapper = styled('div')`
       min-height: 64px;
     }
 
-    .${ANTD_PREFIX_STR}-form-item .${ANTD_PREFIX_STR}-form-item-label > label {
+    .ant-form-item .ant-form-item-label > label {
       font-weight: 500;
     }
   }
 `;
 
 export const StepInfoStyleWrapper = styled(BasicButton)`
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn {
+  &.basic-button-wrapper.ant-btn {
     width: 480px;
     display: flex;
     min-width: 64px;
@@ -107,8 +107,7 @@ export const StepInfoStyleWrapper = styled(BasicButton)`
     cursor: pointer;
     height: auto;
 
-    &.${ANTD_PREFIX_STR}-btn:not(.${ANTD_PREFIX_STR}-btn-icon-only)
-      > .${ANTD_PREFIX_STR}-btn-icon:not(:last-child) {
+    &.ant-btn:not(.ant-btn-icon-only) > .ant-btn-icon:not(:last-child) {
       margin-right: 5px;
     }
   }
@@ -120,7 +119,7 @@ export const StepButtonStyleWrapper = styled('div')`
   align-items: center;
   align-self: stretch;
 
-  .basic-button-wrapper.${ANTD_PREFIX_STR}-btn:first-of-type {
+  .basic-button-wrapper.ant-btn:first-of-type {
     margin-right: 12px;
   }
 `;
@@ -132,11 +131,7 @@ export const StepNodeAlertStyleWrapper = styled('div')`
     theme.sqleTheme.workflowTemplate.updateWorkflowTemplateStepInfo
       .stepNodeAlert.backgroundColor};
 
-  .text-orange {
-    margin-right: 6px;
-  }
-
-  .${ANTD_PREFIX_STR}-typography.step-alert-title {
+  .ant-typography.step-alert-title {
     font-weight: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.updateWorkflowTemplateStepInfo
         .titleFontWeight};
@@ -149,9 +144,14 @@ export const StepNodeAlertStyleWrapper = styled('div')`
     color: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.updateWorkflowTemplateStepInfo
         .stepNodeAlert.alertTitleColor};
+
+    .step-alert-title-tips-icon {
+      margin-right: 6px;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorWarning};
+    }
   }
 
-  .${ANTD_PREFIX_STR}-typography.step-alert-content {
+  .ant-typography.step-alert-content {
     margin: 8px 0 0;
     color: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.updateWorkflowTemplateStepInfo

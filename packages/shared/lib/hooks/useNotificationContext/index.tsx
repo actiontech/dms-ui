@@ -1,8 +1,8 @@
-import { notification } from 'antd5';
+import { notification } from 'antd';
 import {
   ArgsProps,
   NotificationInstance
-} from 'antd5/es/notification/interface';
+} from 'antd/es/notification/interface';
 import { useCallback, useEffect } from 'react';
 import { eventEmitter } from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';

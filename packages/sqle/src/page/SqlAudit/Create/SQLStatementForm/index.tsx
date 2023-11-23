@@ -20,7 +20,7 @@ import { BasicInput, EmptyBox } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormSubmitStatusContext } from '..';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 
 const uploadItemIcon: {
   [key in TypeUploadKeys]: ReactNode;

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
-import { Table, ConfigProvider, TableProps } from 'antd5';
+import { Table, ConfigProvider, TableProps } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { TableTopListStyleWrapper } from './style';

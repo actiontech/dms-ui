@@ -71,8 +71,6 @@ export const FilterFormRowLayout = {
   gutter: 24
 };
 
-export const ANTD_PREFIX_STR = 'antd-v5';
-
 export const ComponentControlHeight = {
   default: 36,
   lg: 36,

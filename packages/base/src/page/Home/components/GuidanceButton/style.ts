@@ -1,14 +1,13 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Button } from 'antd5';
+import { Button } from 'antd';
 
 export const GuidanceButtonStyleWrapper = styled(Button)`
-  &.guidance-button-wrapper.${ANTD_PREFIX_STR}-btn.${ANTD_PREFIX_STR}-btn-sm {
+  &.guidance-button-wrapper.ant-btn.ant-btn-sm {
     padding: 0 10px;
   }
 
   /* default */
-  &.guidance-button-wrapper.${ANTD_PREFIX_STR}-btn.${ANTD_PREFIX_STR}-btn-default {
+  &.guidance-button-wrapper.ant-btn.ant-btn-default {
     border: none;
     background: ${({ theme }) =>
       theme.baseTheme.guidance.guidanceButton.default.background};
@@ -22,7 +21,8 @@ export const GuidanceButtonStyleWrapper = styled(Button)`
         theme.baseTheme.guidance.guidanceButton.hover.background};
       color: ${({ theme }) =>
         theme.baseTheme.guidance.guidanceButton.hover.color};
-      .${ANTD_PREFIX_STR}-space-item {
+
+      .ant-space-item {
         color: ${({ theme }) =>
           theme.baseTheme.guidance.guidanceButton.hover.color};
       }

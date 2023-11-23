@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Row } from 'antd5';
+import { Row } from 'antd';
 
 export const MaintenanceTimePickerPopoverWrapper = styled(Row)`
   width: 300px;

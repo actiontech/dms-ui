@@ -1,5 +1,5 @@
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, message, Space, Spin } from 'antd5';
+import { Form, message, Space, Spin } from 'antd';
 import { useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';

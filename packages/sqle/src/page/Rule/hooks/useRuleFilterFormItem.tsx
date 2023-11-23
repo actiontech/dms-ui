@@ -1,7 +1,7 @@
 import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { SelectProps } from 'antd5';
+import { SelectProps } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { RuleListProjectFilterStyleWrapper } from '../style';
 import useRuleTemplate from '../../../hooks/useRuleTemplate';

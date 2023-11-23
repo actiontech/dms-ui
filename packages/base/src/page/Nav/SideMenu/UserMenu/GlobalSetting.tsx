@@ -1,4 +1,4 @@
-import { Popover } from 'antd5';
+import { Popover } from 'antd';
 import { PopoverInnerStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';

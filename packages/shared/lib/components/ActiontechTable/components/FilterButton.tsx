@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconArrowDown, IconArrowUp } from '../../../Icon/common';
 import BasicButton from '../../BasicButton';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 
 const FilterButton = <T extends Record<string, any>>({
   filterButtonMeta = new Map(),

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ModalStatus } from '../../types/common.type';
 import { commonModalReducer } from '../common';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 
 type RuleTemplateListState = {
   selectRuleTemplate: null | IProjectRuleTemplateResV1;
