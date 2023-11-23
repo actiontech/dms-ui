@@ -4,7 +4,7 @@ import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
 import { PasswordProps } from 'antd/lib/input';
 import { BasicToolTips, BasicButton, Copy } from '@actiontech/shared';
 import { IconCommonSelected } from '@actiontech/shared/lib/Icon';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { PasswordWidthGenerateStyleWrapper } from './style';
 
 interface IInputPassword extends PasswordProps {

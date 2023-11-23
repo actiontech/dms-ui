@@ -1,4 +1,3 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 
 export const AuthTemplateFormStyleWrapper = styled('div')`
@@ -6,17 +5,17 @@ export const AuthTemplateFormStyleWrapper = styled('div')`
   border-bottom: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
 
-  .${ANTD_PREFIX_STR}-input-lg.basic-input-wrapper {
+  .ant-input-lg.basic-input-wrapper {
     padding: 0;
     font-size: 24px;
 
-    &.${ANTD_PREFIX_STR}-input[disabled] {
+    &.ant-input[disabled] {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
       cursor: default;
     }
   }
 
-  .${ANTD_PREFIX_STR}-typography.selected-business-text {
+  .ant-typography.selected-business-text {
     font-size: 13px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextQuaternary};
 
@@ -48,8 +47,8 @@ export const EditAuthTemplateStyleWrapper = styled('section')`
     line-height: 24px;
   }
 
-  .${ANTD_PREFIX_STR}-empty.is-icon-tips {
-    .${ANTD_PREFIX_STR}-empty-description .no-data-cont {
+  .ant-empty.is-icon-tips {
+    .ant-empty-description .no-data-cont {
       color: ${({ theme }) =>
         theme.sharedTheme.components.basicEmpty.title.color};
       font-size: ${({ theme }) =>
@@ -58,10 +57,10 @@ export const EditAuthTemplateStyleWrapper = styled('section')`
         theme.sharedTheme.components.basicEmpty.title.fontWeight};
     }
 
-    .${ANTD_PREFIX_STR}-empty-footer {
+    .ant-empty-footer {
       margin-top: 0;
 
-      .${ANTD_PREFIX_STR}-typography.extra-tips {
+      .ant-typography.extra-tips {
         color: ${({ theme }) =>
           theme.sharedTheme.components.basicEmpty.info.color};
         font-size: ${({ theme }) =>

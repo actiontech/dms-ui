@@ -1,4 +1,4 @@
-import { InputProps, ConfigProvider } from 'antd5';
+import { InputProps, ConfigProvider } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { InputRef } from 'antd';
 import { forwardRef } from 'react';

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { Upload, message, Space, Spin } from 'antd5';
+import { Upload, message, Space, Spin } from 'antd';
 import classNames from 'classnames';
 import {
   BasicButton,

@@ -7,8 +7,8 @@ import {
   Space,
   Spin,
   Typography
-} from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+} from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormFields, TestFormFields } from './index.type';

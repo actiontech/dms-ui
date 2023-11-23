@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import ServerMonitorForm from '../ServerMonitorForm';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
-import { Form, Space, message } from 'antd5';
+import { Form, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../store';

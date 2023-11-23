@@ -1,12 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { ReactNode, useEffect, useMemo, useState } from 'react';
-
-import { Col, Divider, Row } from 'antd5';
+import { Col, Divider, Row } from 'antd';
 import BasicInput from '../BasicInput';
 import BasicButton from '../BasicButton';
 import { IconDate } from '../../Icon/common';
-import { ButtonType } from 'antd5/es/button';
-
+import { ButtonType } from 'antd/es/button';
 import { isEqual } from 'lodash';
 import {
   enumWeek,
@@ -17,7 +15,6 @@ import {
   typeHourMinute
 } from './index.type';
 import { CronSelectStyleWrapper } from './style';
-
 import { CronInputProps, CronMode, typeCronMode } from './index.type';
 import useCron from './useCron';
 import classNames from 'classnames';

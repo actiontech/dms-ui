@@ -7,7 +7,7 @@ import {
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/FormCom';
 import { useCallback, useContext, useMemo, useState } from 'react';
-import { Form, Space } from 'antd5';
+import { Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import {
   IconDatabase,
@@ -18,12 +18,11 @@ import {
   IconFillListActive
 } from '@actiontech/shared/lib/Icon/common';
 import useInstanceSchema from '../../../../hooks/useInstanceSchema';
-import { IRuleTemplateV2 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IInstanceResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
-import { RuleUrlParamKey } from '../../../Rule/useRuleFilterForm';
 import { Link } from 'react-router-dom';
 import { FormSubmitStatusContext } from '..';
 
@@ -41,20 +40,20 @@ const DatabaseInfo = ({
     () => auditType === AuditTypeEnum.dynamic,
     [auditType]
   );
-  const [ruleTemplate, setRuleTemplate] = useState<IRuleTemplateV2>();
+  const [instanceInfo, setInstanceInfo] = useState<IInstanceResV2>();
   const instanceName = Form.useWatch('instanceName', form);
   const { loading: getInstanceSchemaListLoading, schemaList } =
     useInstanceSchema(projectName, instanceName);
 
   const updateRuleTemplateName = (name: string) => {
     if (!name) {
-      setRuleTemplate(undefined);
+      setInstanceInfo(undefined);
     }
     instance
       .getInstanceV2({ instance_name: name, project_name: projectName })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          setRuleTemplate(res.data.data?.rule_template);
+          setInstanceInfo(res.data.data);
         }
       });
   };
@@ -65,8 +64,7 @@ const DatabaseInfo = ({
   };
 
   const renderRuleTemplateDisplay = useCallback(() => {
-    const rule = ruleTemplate;
-    if (!rule) {
+    if (!instanceInfo || !instanceInfo.rule_template) {
       return (
         <BasicButton style={{ width: 36, height: 36 }}>
           <IconFillList />
@@ -74,19 +72,15 @@ const DatabaseInfo = ({
       );
     }
 
-    let path = '';
-
-    if (rule.is_global_rule_template) {
-      path = `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${rule.name}`;
-    } else {
-      path = `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${rule.name}&${RuleUrlParamKey.projectID}=${projectID}`;
-    }
+    const path = instanceInfo.rule_template?.is_global_rule_template
+      ? `/sqle/ruleManager/globalDetail/${instanceInfo.rule_template.name}/${instanceInfo.db_type}`
+      : `/sqle/project/${projectID}/rule/template/detail/${instanceInfo.rule_template.name}/${instanceInfo.db_type}`;
 
     return (
       <BasicToolTips
         title={
           <Link to={path}>
-            {t('rule.form.ruleTemplate')}: {rule.name}
+            {t('rule.form.ruleTemplate')}: {instanceInfo.rule_template.name}
           </Link>
         }
       >
@@ -95,7 +89,7 @@ const DatabaseInfo = ({
         </BasicButton>
       </BasicToolTips>
     );
-  }, [projectID, ruleTemplate, t]);
+  }, [instanceInfo, projectID, t]);
 
   return (
     <div hidden={!isDynamic}>

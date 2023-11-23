@@ -1,7 +1,7 @@
 import { DataSourceResultWaterfallListProps } from '../index.type';
 import ResultCard from './components/ResultCard';
 import { DataSourceResultListStyleWrapper } from '../style';
-import { List } from 'antd5';
+import { List } from 'antd';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 

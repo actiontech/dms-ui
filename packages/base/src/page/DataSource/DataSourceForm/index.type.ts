@@ -1,4 +1,4 @@
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 import {
   BackendFormRequestParams,
   BackendFormValues

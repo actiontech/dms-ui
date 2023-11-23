@@ -1,9 +1,9 @@
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useRequest } from 'ahooks';
 import { ListTipsByAuthorizationKeyKeyEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
-import { ResponseCode } from '~/data/common';
 import { AxiosResponse } from 'axios';
 import { IListTipsByAuthorizationKeyReturn } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const useListTipsByAuthKey = () => {
   const generateSelectOptions = (

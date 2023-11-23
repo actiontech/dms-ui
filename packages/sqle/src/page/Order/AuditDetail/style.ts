@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Tree } from 'antd5';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+import { Tree } from 'antd';
 
 export const OrderDetailAuditResultStyleWrapper = styled('section')`
   margin-top: 40px;
@@ -13,8 +12,8 @@ export const OrderDetailAuditResultStyleWrapper = styled('section')`
     padding: 0 40px;
   }
 
-  .${ANTD_PREFIX_STR}-space.audit-result-actions-wrap {
-    .${ANTD_PREFIX_STR}-divider.audit-result-actions-divider {
+  .ant-space.audit-result-actions-wrap {
+    .ant-divider.audit-result-actions-divider {
       margin: 0;
       height: 28px;
     }
@@ -33,12 +32,11 @@ export const DataSourceResultListStyleWrapper = styled('div')`
     margin-bottom: 0;
   }
 
-  & .${ANTD_PREFIX_STR}-list-items .${ANTD_PREFIX_STR}-list-item {
+  & .ant-list-items .ant-list-item {
     padding: 0;
   }
 
-  &
-    .data-source-result-list-pagination.result-list-pagination.${ANTD_PREFIX_STR}-pagination {
+  & .data-source-result-list-pagination.result-list-pagination.ant-pagination {
     justify-content: space-between;
     margin: 0 !important;
     padding: 16px 40px;
@@ -58,15 +56,17 @@ export const DataSourceResultListStyleWrapper = styled('div')`
       flex: 1;
     }
 
-    .${ANTD_PREFIX_STR}-pagination-total-text {
+    .ant-pagination-total-text {
       color: ${({ theme }) =>
         theme.sharedTheme.components.table.pagination.total.color};
       order: -1;
     }
-    .${ANTD_PREFIX_STR}-pagination-prev {
+
+    .ant-pagination-prev {
       margin-inline-end: 8px;
     }
-    .${ANTD_PREFIX_STR}-pagination-item {
+
+    .ant-pagination-item {
       margin-inline-end: 8px;
 
       &:hover {
@@ -81,7 +81,7 @@ export const DataSourceResultListStyleWrapper = styled('div')`
       }
     }
 
-    .${ANTD_PREFIX_STR}-pagination-item-active {
+    .ant-pagination-item-active {
       border: ${({ theme }) =>
         theme.sharedTheme.components.table.pagination.item.activeBorder};
       background-color: ${({ theme }) =>
@@ -94,17 +94,17 @@ export const DataSourceResultListStyleWrapper = styled('div')`
       }
     }
 
-    .${ANTD_PREFIX_STR}-pagination-options {
-      .${ANTD_PREFIX_STR}-pagination-options-size-changer {
-        &:not(.${ANTD_PREFIX_STR}-select-focused) {
-          .${ANTD_PREFIX_STR}-select-selector:hover {
+    .ant-pagination-options {
+      .ant-pagination-options-size-changer {
+        &:not(.ant-select-focused) {
+          .ant-select-selector:hover {
             border: ${({ theme }) =>
               theme.sharedTheme.components.table.pagination.options
                 .hoverBorder};
           }
         }
 
-        .${ANTD_PREFIX_STR}-select-selector {
+        .ant-select-selector {
           height: 28px;
           line-height: 28px;
           padding: 0 8px;
@@ -117,7 +117,7 @@ export const DataSourceResultListStyleWrapper = styled('div')`
           box-shadow: ${({ theme }) =>
             theme.sharedTheme.components.table.pagination.options.boxShadow};
 
-          .${ANTD_PREFIX_STR}-select-selection-item {
+          .ant-select-selection-item {
             padding-inline-start: 4px;
             padding-inline-end: 0;
             display: flex;
@@ -126,7 +126,7 @@ export const DataSourceResultListStyleWrapper = styled('div')`
               theme.sharedTheme.components.table.pagination.options.itemColor};
           }
 
-          .${ANTD_PREFIX_STR}-select-selection-search {
+          .ant-select-selection-search {
             input {
               height: 28px;
             }
@@ -195,12 +195,10 @@ export const DataSourceResultCardStyleWrapper = styled('div')`
       }
     }
 
-    &
-      .${ANTD_PREFIX_STR}-collapse.result-record-collapse
-      .${ANTD_PREFIX_STR}-collapse-header {
+    & .ant-collapse.result-record-collapse .ant-collapse-header {
       padding: 8px 0;
 
-      .${ANTD_PREFIX_STR}-collapse-header-text {
+      .ant-collapse-header-text {
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
         font-weight: 500;
       }
@@ -215,17 +213,16 @@ export const DataSourceResultCardStyleWrapper = styled('div')`
 `;
 
 export const DataSourceAuditResultTreeStyleWrapper = styled(Tree)`
-  &.${ANTD_PREFIX_STR}-tree {
-    .${ANTD_PREFIX_STR}-tree-indent {
+  &.ant-tree {
+    .ant-tree-indent {
       display: none;
     }
 
-    .${ANTD_PREFIX_STR}-tree-node-selected {
+    .ant-tree-node-selected {
       background-color: transparent !important;
     }
 
-    .${ANTD_PREFIX_STR}-tree-switcher
-      .${ANTD_PREFIX_STR}-tree-switcher-leaf-line {
+    .ant-tree-switcher .ant-tree-switcher-leaf-line {
       &::before {
         border-right: 1px solid
           ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
@@ -238,27 +235,27 @@ export const DataSourceAuditResultTreeStyleWrapper = styled(Tree)`
       }
     }
 
-    .${ANTD_PREFIX_STR}-tree-treenode.${ANTD_PREFIX_STR}-tree-treenode-leaf-last
-      .${ANTD_PREFIX_STR}-tree-switcher-leaf-line:before {
+    .ant-tree-treenode.ant-tree-treenode-leaf-last
+      .ant-tree-switcher-leaf-line::before {
       height: 20px !important;
     }
 
-    .${ANTD_PREFIX_STR}-tree-switcher {
+    .ant-tree-switcher {
       display: flex;
       align-items: center;
       justify-content: center;
 
-      .${ANTD_PREFIX_STR}-tree-switcher-icon {
+      .ant-tree-switcher-icon {
         margin-bottom: 2px;
       }
     }
 
-    .${ANTD_PREFIX_STR}-tree-treenode {
+    .ant-tree-treenode {
       height: 36px;
       padding: 0;
       line-height: 36px;
 
-      .${ANTD_PREFIX_STR}-tree-node-content-wrapper {
+      .ant-tree-node-content-wrapper {
         line-height: 36px;
       }
     }
@@ -277,7 +274,7 @@ export const DataSourceResultDescribeStyleWrapper = styled('div')`
   display: flex;
   align-items: center;
 
-  & .result-describe-input.${ANTD_PREFIX_STR}-input {
+  & .result-describe-input.ant-input {
     border: none !important;
     box-shadow: none !important;
     padding-left: 0;

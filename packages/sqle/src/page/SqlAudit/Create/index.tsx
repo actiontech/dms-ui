@@ -2,10 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
-import { message } from 'antd5';
+import { message } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
 

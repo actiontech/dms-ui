@@ -9,7 +9,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 
 const AuditResultTag: React.FC<{ auditResult?: IAuditResult[] }> = ({
   auditResult

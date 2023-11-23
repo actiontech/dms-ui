@@ -1,4 +1,4 @@
-import { Space, Typography, Form, message } from 'antd5';
+import { Space, Typography, Form, message } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -10,7 +10,6 @@ import { AuthTableActions, AuthTableColumns } from './TableColumns';
 import AddDataPermission from './Modal/AddDataPermission';
 import { useBoolean, useRequest } from 'ahooks';
 import { cloneDeep } from 'lodash';
-import { ResponseCode } from '~/data/common';
 import { AxiosResponse } from 'axios';
 import { generateDataPermissionValueByDataPermission } from './index.utils';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -40,6 +39,7 @@ import {
   useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 interface IEditTemplateFormFields {
   name: string;

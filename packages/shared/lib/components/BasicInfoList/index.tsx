@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { BasicInfoListStyleWrapper } from './style';
-import { Card, CardProps, Row, Col } from 'antd5';
+import { Card, CardProps, Row, Col } from 'antd';
 import BasicEmpty from '../BasicEmpty';
 
 type DataType = { key: React.ReactNode; value: React.ReactNode };

@@ -2,9 +2,9 @@ import { act, cleanup } from '@testing-library/react';
 import mockDMSGlobalApi from '../../testUtils/mockApi/global';
 import useSessionUser from '.';
 import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
-import { useNavigate } from '@actiontech/shared/lib/hooks';
 import { useDispatch } from 'react-redux';
 import { UserInfo } from '../../testUtils/mockApi/global/data';
+import { useNavigate } from 'react-router-dom';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

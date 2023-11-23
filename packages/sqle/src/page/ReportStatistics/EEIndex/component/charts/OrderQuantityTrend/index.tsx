@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { useEffect, useMemo, useState } from 'react';
 import { Area } from '@ant-design/plots';
 import { AreaConfig } from '@ant-design/plots';
-import { RangePickerProps } from 'antd5/es/date-picker';
+import { RangePickerProps } from 'antd/es/date-picker';
 
 import CardWrapper from '../../../../../../components/CardWrapper';
 import Icon from '@ant-design/icons/lib/components/Icon';
@@ -13,7 +13,6 @@ import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
-import useChangeTheme from '../../../../../../hooks/useChangeTheme';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import eventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
@@ -29,6 +28,7 @@ import {
   IGetWorkflowCreatedCountEachDayV1Return
 } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 const dateFormat = 'YYYY-MM-DD';
 type RangeValue = [Dayjs | null, Dayjs | null] | null;

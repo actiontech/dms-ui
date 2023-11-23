@@ -6,7 +6,7 @@ import {
   Spin,
   message,
   Popconfirm
-} from 'antd5';
+} from 'antd';
 import { RuleUnderstandProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { EmptyBox, BasicButton } from '@actiontech/shared';

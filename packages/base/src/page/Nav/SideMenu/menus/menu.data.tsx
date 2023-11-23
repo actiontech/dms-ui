@@ -1,4 +1,4 @@
-import { MenuProps } from 'antd5';
+import { MenuProps } from 'antd';
 import { NavigateFunction } from 'react-router-dom';
 import { filterAdminMenusWithKey } from './common';
 import { BaseOperateConflictMenuItemsWrapper, BaseMenuItems } from './base';

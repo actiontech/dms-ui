@@ -10,7 +10,7 @@ import {
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '~/locale';
 import { IAuditListAuthorizationEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { BasicTag, AvatarCom } from '@actiontech/shared';
 import AuditActionIcon from '../components/AuditActionIcon';
 

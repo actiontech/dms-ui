@@ -1,7 +1,7 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
 import { useBoolean } from 'ahooks';
-import { Form } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+import { Form } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import { range } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import {

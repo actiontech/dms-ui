@@ -2,7 +2,7 @@ import {
   IListMemberRoleWithOpRange,
   IUidWithName
 } from '@actiontech/shared/lib/api/base/service/common';
-import { Space, Typography } from 'antd5';
+import { Space, Typography } from 'antd';
 
 const renderRolesInfo = (
   roles: IListMemberRoleWithOpRange[],

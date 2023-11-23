@@ -1,4 +1,3 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 
 export const DetailComStyleWrapper = styled('section')`
@@ -106,21 +105,21 @@ export const DetailComStyleWrapper = styled('section')`
     position: relative;
     padding-bottom: 61px;
 
-    .${ANTD_PREFIX_STR}-spin-nested-loading {
+    .ant-spin-nested-loading {
       width: 100%;
     }
 
     .actiontech-table-namespace,
-    .${ANTD_PREFIX_STR}-spin-container,
-      .${ANTD_PREFIX_STR}-spin-nested-loading {
+    .ant-spin-container,
+    .ant-spin-nested-loading {
       height: 100%;
     }
 
-    .${ANTD_PREFIX_STR}-spin-container {
+    .ant-spin-container {
       position: relative;
     }
 
-    .${ANTD_PREFIX_STR}-pagination {
+    .ant-pagination {
       left: 220px !important;
       right: none !important;
       width: calc(100% - 220px - 360px) !important;

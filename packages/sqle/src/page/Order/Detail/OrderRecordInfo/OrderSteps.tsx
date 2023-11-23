@@ -1,4 +1,4 @@
-import { Divider, StepProps } from 'antd5';
+import { Divider, StepProps } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { OrderStepsProps } from './index.type';
 import { useCallback, useMemo } from 'react';

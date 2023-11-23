@@ -1,6 +1,6 @@
 import { extractTextFromReactNode } from '../../ActiontechTable/utils';
-import { SelectProps } from 'antd5';
-import { DefaultOptionType } from 'antd5/es/select';
+import { SelectProps } from 'antd';
+import { DefaultOptionType } from 'antd/es/select';
 
 export const filterOptionByLabel: SelectProps['filterOption'] = (
   input: string,

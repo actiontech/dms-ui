@@ -1,5 +1,5 @@
 import { BasicInput, BasicInputNumber, BasicSelect } from '@actiontech/shared';
-import { Form, FormInstance } from 'antd5';
+import { Form, FormInstance } from 'antd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';

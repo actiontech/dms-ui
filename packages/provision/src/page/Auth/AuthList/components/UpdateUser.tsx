@@ -1,11 +1,10 @@
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, message, Space } from 'antd5';
+import { Form, message, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 import InputPassword from '~/components/PasswordWithGenerate';
-import { ResponseCode } from '~/data/common';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import UserSelect from '~/page/Auth/AddAuth/UserSelect';
@@ -20,6 +19,7 @@ import {
   BasicToolTips
 } from '@actiontech/shared';
 import { IUpdateUserInAuthFormFields } from '../index.type';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const UpdateUserInAuth = () => {
   const { t } = useTranslation();

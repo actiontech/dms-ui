@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { t } from '../../../locale';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { BasicTag } from '@actiontech/shared';
 import { ModalName } from '~/data/enum';
 import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';

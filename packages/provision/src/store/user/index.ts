@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
-import { ModalStatus } from '~/types/common.type';
 import { StoreKey } from '..';
 import { IListUser } from '@actiontech/shared/lib/api/provision/service/common';
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 
 export const UserModalStatus = atom<ModalStatus>({
   key: StoreKey.User_Modal_Status,

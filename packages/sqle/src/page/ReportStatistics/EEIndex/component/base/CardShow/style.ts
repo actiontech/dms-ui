@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Card } from 'antd5';
+import { Card } from 'antd';
 
 export const CardShowStyleWrapper = styled(Card)`
   height: 100%;

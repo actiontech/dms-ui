@@ -7,7 +7,7 @@ import { useBack } from '@actiontech/shared/lib/hooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import {
   PageHeader,
   BasicButton,

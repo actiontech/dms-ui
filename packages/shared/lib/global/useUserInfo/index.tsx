@@ -1,7 +1,7 @@
 import { useRequest } from 'ahooks';
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { IReduxState } from '../../../../base/src/store';
 import {
   updateBindProjects,
@@ -13,10 +13,12 @@ import {
 } from '../../../../base/src/store/user';
 import { ResponseCode, SystemRole } from '../../enum';
 import dms from '../../api/base/service/dms';
+import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../data/common';
 
 const useUserInfo = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
   const userId = useSelector((state: IReduxState) => state.user.uid);
 
   const clearUserInfo = useCallback(() => {
@@ -84,14 +86,20 @@ const useUserInfo = () => {
           dispatch(updateUserInfoFetchStatus(true));
         } else {
           clearUserInfo();
-          navigate(`/login`, { replace: true });
+          navigate(
+            `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${location.pathname}`,
+            { replace: true }
+          );
         }
       },
       onError: () => {
         clearUserInfo();
-        navigate(`/login`, {
-          replace: true
-        });
+        navigate(
+          `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${location.pathname}`,
+          {
+            replace: true
+          }
+        );
       }
     }
   );

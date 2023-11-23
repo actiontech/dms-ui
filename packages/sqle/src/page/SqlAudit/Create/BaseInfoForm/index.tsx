@@ -16,12 +16,12 @@ import {
   BasicTag
 } from '@actiontech/shared';
 import { IconOrderCreateTitleStyleWrapper } from '../../../Order/Create/BaseInfoForm/style';
-import { Divider, Form, InputRef, SelectProps, message } from 'antd5';
+import { Divider, Form, InputRef, SelectProps, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useSQLAuditRecordTag from '../../../../hooks/useSQLAuditRecordTag';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { FormSubmitStatusContext } from '..';
 

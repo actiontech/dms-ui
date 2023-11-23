@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { Form, Space, message as messageApi } from 'antd5';
+import { Form, Space, message as messageApi } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';

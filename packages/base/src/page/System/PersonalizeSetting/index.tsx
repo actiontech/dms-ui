@@ -1,7 +1,7 @@
 import { useBoolean, useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 import { ConfigItem } from '@actiontech/shared';
 import {
   EditInput,

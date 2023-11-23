@@ -1,17 +1,17 @@
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, message } from 'antd5';
+import { Form, message } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
-import { ResponseCode } from '~/data/common';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
 import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
 import EventEmitter from '~/utils/EventEmitter';
 import { BasicModal, BasicButton, BasicSelect } from '@actiontech/shared';
 import { IUpdateTemplateFormFields } from '../index.type';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const UpdateTemplate = () => {
   const { t } = useTranslation();
