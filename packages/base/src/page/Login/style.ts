@@ -77,12 +77,12 @@ export const LoginPageRightStyleWrapper = styled('div')`
         }
 
         .label-primary {
-          color: ${({ theme }) => theme.baseTheme.sideMenu.title.color[0]};
+          color: ${({ theme }) => theme.sharedTheme.nav.title.color[0]};
           margin-right: 10px;
         }
 
         .label-base {
-          color: ${({ theme }) => theme.baseTheme.sideMenu.title.color[1]};
+          color: ${({ theme }) => theme.sharedTheme.nav.title.color[1]};
         }
       }
     }

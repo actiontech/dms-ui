@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { LayoutStyleWrapper } from './style';
+import { LayoutStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 
 /* IFTRUE_isEE */
 import EESideMenu from './SideMenu';
