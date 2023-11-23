@@ -1,8 +1,6 @@
 import { Popover, Spin } from 'antd';
-import {
-  PopoverInnerStyleWrapper,
-  CompanyNoticeIconStyleWrapper
-} from '../style';
+import { CompanyNoticeIconStyleWrapper } from '../style';
+import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import {
   IconAccount,
   IconViewVersion,
