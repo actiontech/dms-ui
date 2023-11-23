@@ -9,11 +9,11 @@ import {
   useLocation
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { Dictionary } from '../types/common.type';
 import { storeFactory } from './mockRedux';
 import lightTheme from '../theme/light';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { mount, shallow } from 'enzyme';
+import { Dictionary } from '@actiontech/shared/lib/types/common.type';
 
 type RenderParams = Parameters<typeof render>;
 type MountParams = Parameters<typeof mount>;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Space } from 'antd5';
-import { SegmentedValue } from 'antd5/es/segmented';
+import { Space } from 'antd';
+import { SegmentedValue } from 'antd/es/segmented';
 import { BasicButton, PageHeader, BasicSegmented } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import {

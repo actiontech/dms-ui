@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, message, Space, Spin } from 'antd5';
+import { Form, message, Space, Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { WechatFormFields } from './index.type';

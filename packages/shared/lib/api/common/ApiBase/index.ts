@@ -6,7 +6,7 @@ import store from '../../../../../base/src/store';
 import { getErrorMessage } from '../../../utils/Common';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
-import { ArgsProps } from 'antd5/es/notification/interface';
+import { ArgsProps } from 'antd/es/notification/interface';
 import EmitterKey from '../../../data/EmitterKey';
 
 class ApiBase {

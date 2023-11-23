@@ -1,18 +1,9 @@
-import { useBoolean } from 'ahooks';
 import React from 'react';
 import { SupportTheme } from '../../enum';
-import { changeThemeStyle } from './ChangeThemeStyle';
+import { useCurrentUser } from '../../global';
 
-export type ChangeThemeParams = {
-  theme: SupportTheme;
-  updateTheme: (theme: SupportTheme) => void;
-};
-
-const useChangeTheme = ({ theme, updateTheme }: ChangeThemeParams) => {
-  const [
-    changeLoading,
-    { setTrue: startChangeTheme, setFalse: finishChangeTheme }
-  ] = useBoolean();
+const useChangeTheme = () => {
+  const { theme, updateTheme } = useCurrentUser();
 
   const currentEditorTheme = React.useMemo(() => {
     switch (theme) {
@@ -26,10 +17,9 @@ const useChangeTheme = ({ theme, updateTheme }: ChangeThemeParams) => {
 
   const changeTheme = React.useCallback(
     (theme: SupportTheme) => {
-      changeThemeStyle({ theme, startChangeTheme, finishChangeTheme });
       updateTheme(theme);
     },
-    [finishChangeTheme, startChangeTheme, updateTheme]
+    [updateTheme]
   );
 
   //TODO: implements in backend
@@ -41,7 +31,6 @@ const useChangeTheme = ({ theme, updateTheme }: ChangeThemeParams) => {
   }, []);
 
   return {
-    changeLoading,
     currentTheme: theme,
     currentEditorTheme,
     changeTheme

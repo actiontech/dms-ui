@@ -1,4 +1,4 @@
-import { SelectProps } from 'antd5';
+import { SelectProps } from 'antd';
 
 export type ProjectSelectorModalProps = {
   open: boolean;

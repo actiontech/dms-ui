@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useBoolean } from 'ahooks';
-import { Form, message, Space } from 'antd5';
+import { Form, message, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';

@@ -6,7 +6,7 @@ import { useBoolean } from 'ahooks';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { IconFailed, IconSucceeded } from '@actiontech/shared/lib/Icon/common';
 import { useTranslation } from 'react-i18next';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { TestConnectResultStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import { BasicToolTips } from '@actiontech/shared';
 import EmitterKey from '../../../../data/EmitterKey';

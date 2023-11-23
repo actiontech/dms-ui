@@ -6,7 +6,7 @@ import {
   IconStatusWarning,
   IconStatusError
 } from '../../icon/AuditPlan';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 
 type IResultIconRender = {
   iconLevels: string[];

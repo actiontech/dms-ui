@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Form, Select, Switch } from 'antd5';
+import { Form, Select, Switch } from 'antd';
 import { EmptyBox, BasicInput, BasicSelect } from '@actiontech/shared';
 import { roleNameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { IRoleFormProps } from './index.type';

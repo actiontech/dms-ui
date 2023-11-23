@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { Select, Avatar, Space, Typography } from 'antd5';
+import { Select, Avatar, Space, Typography } from 'antd';
 import React, { useMemo } from 'react';
 import { ResponseCode } from '../../data/common';
 import user from '@actiontech/shared/lib/api/sqle/service/user';

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SelectProps, Spin } from 'antd5';
+import { SelectProps, Spin } from 'antd';
 import { useRequest } from 'ahooks';
 import { SideMenuStyleWrapper } from './style';
 import ProjectSelector from './ProjectSelector';

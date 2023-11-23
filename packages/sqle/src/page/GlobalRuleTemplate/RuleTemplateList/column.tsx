@@ -11,7 +11,7 @@ import {
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { Link } from 'react-router-dom';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';

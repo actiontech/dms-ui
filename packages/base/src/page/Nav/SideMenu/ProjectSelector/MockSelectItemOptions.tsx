@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import { ProjectSelectorLabelStyleWrapper } from './style';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import {
   IconProjectArchived,
   IconProjectFlag
@@ -32,15 +31,11 @@ const MockSelectItemOptions: React.FC<{
               closeSelectDropdown();
             }}
             key={v.project_id}
-            className={classNames(
-              `${ANTD_PREFIX_STR}-select-item ${ANTD_PREFIX_STR}-select-item-option`,
-              {
-                [`${ANTD_PREFIX_STR}-select-item-option-active`]:
-                  activeId === v.project_id
-              }
-            )}
+            className={classNames(`ant-select-item ant-select-item-option`, {
+              [`ant-select-item-option-active`]: activeId === v.project_id
+            })}
           >
-            <div className={`${ANTD_PREFIX_STR}-select-item-option-content`}>
+            <div className={`ant-select-item-option-content`}>
               <ProjectSelectorLabelStyleWrapper>
                 {v.archived ? <IconProjectArchived /> : <IconProjectFlag />}
 

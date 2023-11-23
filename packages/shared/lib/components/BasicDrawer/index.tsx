@@ -1,4 +1,4 @@
-import { DrawerProps } from 'antd5';
+import { DrawerProps } from 'antd';
 import classNames from 'classnames';
 
 import { BasicDrawerStyleWrapper } from './style';

@@ -6,14 +6,14 @@ import {
   IconLeftArrow,
   IconSuccessResult
 } from '@actiontech/shared/lib/Icon/common';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { RuleTemplateContStyleWrapper } from './style';
 import RuleTemplateForm from '../RuleTemplateForm';
 
 import { cloneDeep } from 'lodash';
 import { useBoolean, useRequest } from 'ahooks';
 import { useState, useCallback, useMemo } from 'react';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import {

@@ -1,4 +1,4 @@
-import { SwitchProps } from 'antd5';
+import { SwitchProps } from 'antd';
 import classnames from 'classnames';
 import { BasicSwitchStyleWrapper } from './style';
 

@@ -14,7 +14,7 @@ import {
 } from './style';
 import { EmptyBox } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
-import { Typography } from 'antd5';
+import { Typography } from 'antd';
 
 const passStatusLevelData = ['normal', 'UNKNOWN'];
 

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { DatabaseInfoProps } from './index.type';
-import { Divider, Form, FormListFieldData, Space } from 'antd5';
+import { Divider, Form, FormListFieldData, Space } from 'antd';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import {

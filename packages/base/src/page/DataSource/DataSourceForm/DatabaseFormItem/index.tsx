@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';

@@ -1,5 +1,5 @@
 import { MutableRefObject } from 'react';
-import { Popover } from 'antd5';
+import { Popover } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { IconTest } from '../../../../icon/system';

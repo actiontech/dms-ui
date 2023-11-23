@@ -1,4 +1,4 @@
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import {
   AuditResultFilterContainerStyleWrapper,
   AuditResultFilterOptionsStyleWrapper

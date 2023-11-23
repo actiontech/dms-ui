@@ -1,4 +1,4 @@
-import { Divider, Form, InputRef, Space, FormInstance } from 'antd5';
+import { Divider, Form, InputRef, Space, FormInstance } from 'antd';
 import { BaseInfoFormProps, CustomRuleFormBaseInfoFields } from '.';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo, useRef } from 'react';

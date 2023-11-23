@@ -11,7 +11,7 @@ import { IGetUser } from '@actiontech/shared/lib/api/base/service/common';
 import UpdatePassword from './components/UpdatePassword';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { Spin, message } from 'antd5';
+import { Spin, message } from 'antd';
 import { emailValidate } from '@actiontech/shared/lib/utils/Common';
 import { CurrentUpdateDataTypeLabel, BaseUpdateDataType } from './types';
 import {

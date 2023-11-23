@@ -1,9 +1,9 @@
 import { IUserFormProps } from './index.type';
-import { Form, Select, Switch } from 'antd5';
+import { Form, Select, Switch } from 'antd';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Rule } from 'antd5/es/form';
+import { Rule } from 'antd/es/form';
 import { nameRule, phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmptyBox from '@actiontech/shared/lib/components/EmptyBox';
 import { BasicToolTips } from '@actiontech/shared';

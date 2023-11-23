@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 import { useBoolean } from 'ahooks';
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import audit_whitelist from '@actiontech/shared/lib/api/sqle/service/audit_whitelist';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

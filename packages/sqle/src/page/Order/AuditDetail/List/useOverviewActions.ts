@@ -7,7 +7,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
-import useMessage from 'antd5/es/message/useMessage';
+import useMessage from 'antd/es/message/useMessage';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { OrderDetailAuditResultListActionsParams } from './index.type';

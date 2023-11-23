@@ -1,5 +1,5 @@
 import { BasicButton, BasicInput, BasicModal } from '@actiontech/shared';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
   RejectOrderModalFormFields,

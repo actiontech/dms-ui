@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
+
 import { AuditResultMessageProps } from './index.type';
 
 export const AuditResultMessageStyleWrapper = styled('div')`
@@ -38,7 +38,7 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
     margin-top: 8px;
   }
 
-  & .annotation-wrapper .${ANTD_PREFIX_STR}-typography {
+  & .annotation-wrapper .ant-typography {
     display: inline-block;
     margin-left: 8px;
   }

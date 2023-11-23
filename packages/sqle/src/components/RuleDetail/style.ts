@@ -1,6 +1,5 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 
 export const HeaderSpaceTagStyleWrapper = styled(Space)`
   .tag-icon {
@@ -50,7 +49,7 @@ export const RuleTemplateDetailStyleWrapper = styled('section')`
     }
 
     .toolbar-wrapper {
-      .${ANTD_PREFIX_STR}-row {
+      .ant-row {
         border: none;
         padding: 0;
       }

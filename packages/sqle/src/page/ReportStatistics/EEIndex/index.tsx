@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Col, Row } from 'antd5';
+import { Col, Row } from 'antd';
 
 import { EEIndexStyleWrapper } from '../style';
 import CardWrapper from '../../../components/CardWrapper';

@@ -1,4 +1,4 @@
-import { InputNumberProps, ConfigProvider } from 'antd5';
+import { InputNumberProps, ConfigProvider } from 'antd';
 import classnames from 'classnames';
 import { BasicInputNumberStyleWrapper } from './style';
 import { ComponentControlHeight } from '../../data/common';

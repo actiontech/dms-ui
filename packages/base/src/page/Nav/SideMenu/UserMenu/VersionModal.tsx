@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import DmsService from '@actiontech/shared/lib/api/base/service/dms';
-import { Space, Typography } from 'antd5';
+import { Space, Typography } from 'antd';
 import { UI_VERSION } from '../../../../scripts/version';
 import {
   VersionModalDescribeTextStyleWrapper,

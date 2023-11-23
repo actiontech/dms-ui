@@ -1,4 +1,4 @@
-import { UploadProps } from 'antd5';
+import { UploadProps } from 'antd';
 import { CustomUploadDraggerStyleWrapper } from './style';
 import { IconUploadCloud } from '../../Icon/common';
 import { useTranslation } from 'react-i18next';

@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Form, Space, Spin } from 'antd5';
+import { Form, Space, Spin } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import { BasicButton, BasicInput, BasicSwitch } from '@actiontech/shared';
 import { LDAPFormFields } from './index.type';

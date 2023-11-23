@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { Empty, Popconfirm, Space, Spin, message } from 'antd5';
+import { Empty, Popconfirm, Space, Spin, message } from 'antd';
 import {
   LocalStorageWrapper,
   EmptyBox,

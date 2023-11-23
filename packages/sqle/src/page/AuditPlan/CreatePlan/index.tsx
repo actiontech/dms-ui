@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { useState } from 'react';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 
-import { useForm } from 'antd5/es/form/Form';
+import { useForm } from 'antd/es/form/Form';
 import { useNavigate } from 'react-router-dom';
 import { PlanFormField } from '../PlanForm/index.type';
 import PlanForm from '../PlanForm';

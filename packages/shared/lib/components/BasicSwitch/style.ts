@@ -1,9 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { Switch } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Switch } from 'antd';
 
 export const BasicSwitchStyleWrapper = styled(Switch)`
-  &.basic-switch-wrapper.${ANTD_PREFIX_STR}-switch {
+  &.basic-switch-wrapper.ant-switch {
     background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorFill};
 
     &:focus {
@@ -11,7 +10,7 @@ export const BasicSwitchStyleWrapper = styled(Switch)`
     }
   }
 
-  &.basic-switch-wrapper.${ANTD_PREFIX_STR}-switch-disabled {
+  &.basic-switch-wrapper.ant-switch-disabled {
     background-color: ${({ theme }) =>
       theme.sharedTheme.uiToken.colorFillSecondary};
   }
