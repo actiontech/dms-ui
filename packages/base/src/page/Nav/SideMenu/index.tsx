@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SelectProps, Spin } from 'antd';
 import { useRequest } from 'ahooks';
-import { SideMenuStyleWrapper } from './style';
+import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import ProjectSelector from './ProjectSelector';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
