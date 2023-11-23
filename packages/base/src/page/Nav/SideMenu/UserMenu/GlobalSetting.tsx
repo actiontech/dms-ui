@@ -1,5 +1,5 @@
 import { Popover } from 'antd';
-import { PopoverInnerStyleWrapper } from '../style';
+import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import {
