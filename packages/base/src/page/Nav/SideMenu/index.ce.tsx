@@ -6,10 +6,8 @@ import { Typography } from 'antd';
 import { IconProjectFlag } from 'sqle/src/icon/Rule';
 import ProjectTitle from './ProjectTitle';
 import UserMenu from './UserMenu';
-import {
-  CEModeProjectWrapperStyleWrapper,
-  SideMenuStyleWrapper
-} from './style';
+import { CEModeProjectWrapperStyleWrapper } from './style';
+import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import MenuList from './MenuList';
 
