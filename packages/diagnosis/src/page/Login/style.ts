@@ -77,12 +77,12 @@ export const LoginPageRightStyleWrapper = styled('div')`
         }
 
         .label-primary {
-          color: ${({ theme }) => theme.diagnosisTheme.sideMenu.title.color[0]};
+          color: ${({ theme }) => theme.sharedTheme.nav.title.color[0]};
           margin-right: 10px;
         }
 
         .label-base {
-          color: ${({ theme }) => theme.diagnosisTheme.sideMenu.title.color[1]};
+          color: ${({ theme }) => theme.sharedTheme.nav.title.color[1]};
         }
       }
     }
@@ -122,6 +122,7 @@ export const LoginPageRightStyleWrapper = styled('div')`
     }
 
     border-radius: 6px !important;
+
     .ant-input {
       background-color: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorBgLayout} !important;
