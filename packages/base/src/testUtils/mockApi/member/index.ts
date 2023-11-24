@@ -11,6 +11,11 @@ class MockMemberApi implements MockSpyApy {
     this.addMember();
     this.updateMember();
     this.deleteMember();
+    this.getMemberGroupList();
+    this.getMemberGroup();
+    this.addMemberGroup();
+    this.updateMemberGroup();
+    this.deleteMemberGroup();
   }
 
   public getMemberList() {
@@ -59,6 +64,26 @@ class MockMemberApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: { id: '10023412' } })
     );
+    return spy;
+  }
+
+  public getMemberGroup() {
+    const spy = jest.spyOn(dms, 'GetMemberGroup');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: memberGroupList[0] })
+    );
+    return spy;
+  }
+
+  public updateMemberGroup() {
+    const spy = jest.spyOn(dms, 'UpdateMemberGroup');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public deleteMemberGroup() {
+    const spy = jest.spyOn(dms, 'DeleteMemberGroup');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
