@@ -3,11 +3,11 @@
 exports[`test DatabaseTypeLogo should match snapshot 1`] = `
 <div>
   <div
-    class="database-type-logo-wrapper"
+    class="css-1uw16ge"
   >
     <img
       alt=""
-      src="/v1/static/instance_logo?instance_type=mysql"
+      src=""
     />
     <span
       title="mysql"
@@ -21,7 +21,7 @@ exports[`test DatabaseTypeLogo should match snapshot 1`] = `
 exports[`test DatabaseTypeLogo should match snapshot 2`] = `
 <div>
   <div
-    class="database-type-logo-wrapper"
+    class="css-1uw16ge"
   >
     <img
       alt=""
