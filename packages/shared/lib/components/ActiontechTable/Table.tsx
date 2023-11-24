@@ -19,6 +19,7 @@ const ActiontechTable = <
   errorMessage,
   filterContainerProps,
   columns = [],
+  isPaginationFixed = true,
   ...props
 }: ActiontechTableProps<T, F, OtherColumnKeys>) => {
   const { t } = useTranslation();
@@ -98,7 +99,9 @@ const ActiontechTable = <
                       })}
                     </span>
                   ),
-                  className: 'actiontech-table-pagination',
+                  className: classnames('actiontech-table-pagination', {
+                    'actiontech-table-pagination-fixed': isPaginationFixed
+                  }),
                   ...props.pagination
                 }
           }
