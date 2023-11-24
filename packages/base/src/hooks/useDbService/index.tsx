@@ -46,7 +46,7 @@ const useDbService = () => {
   );
 
   /**
-   * 生成RoleSelector中的操作范围下拉列表
+   * 提供 value 为 id 的 数据源options
    */
   const generateDbServiceIDSelectOptions = React.useCallback(() => {
     return dbTypeList.map((type) => {
