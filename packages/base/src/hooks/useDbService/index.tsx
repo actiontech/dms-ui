@@ -40,10 +40,15 @@ const useDbService = () => {
     [setFalse, setTrue]
   );
 
-  const generateDbServiceSelectOption = React.useCallback(() => {
-    const dbTypeList: string[] = Array.from(
-      new Set(dbServiceList.map((v) => v.db_type ?? ''))
-    );
+  const dbTypeList: string[] = useMemo(
+    () => Array.from(new Set(dbServiceList.map((v) => v.db_type ?? ''))),
+    [dbServiceList]
+  );
+
+  /**
+   * 提供 value 为 id 的 数据源options
+   */
+  const generateDbServiceIDSelectOptions = React.useCallback(() => {
     return dbTypeList.map((type) => {
       return (
         <Select.OptGroup
@@ -77,22 +82,70 @@ const useDbService = () => {
         </Select.OptGroup>
       );
     });
-  }, [dbServiceList, getLogoUrlByDbType]);
+  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
+  const generateDbServiceSelectOptions = React.useCallback(() => {
+    return dbTypeList.map((type) => {
+      return (
+        <Select.OptGroup
+          label={
+            <DatabaseTypeLogo
+              dbType={type ?? ''}
+              logoUrl={getLogoUrlByDbType(type ?? '')}
+            />
+          }
+          key={type}
+        >
+          {dbServiceList
+            .filter((db) => db.db_type === type)
+            .map((db) => {
+              return (
+                <Select.Option
+                  key={db.uid}
+                  value={db.name ?? ''}
+                  label={
+                    !!db.host && !!db.port
+                      ? `${db.name} (${db.host}:${db.port})`
+                      : db.name
+                  }
+                >
+                  {!!db.host && !!db.port
+                    ? `${db.name} (${db.host}:${db.port})`
+                    : db.name}
+                </Select.Option>
+              );
+            })}
+        </Select.OptGroup>
+      );
+    });
+  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
 
   const dbServiceOptions = useMemo(() => {
-    return dbServiceList.map((item) => ({
-      value: item.uid,
-      text: item.name,
-      label: item.name
+    return dbTypeList.map((type) => ({
+      label: (
+        <DatabaseTypeLogo
+          dbType={type ?? ''}
+          logoUrl={getLogoUrlByDbType(type ?? '')}
+        />
+      ),
+      options: dbServiceList
+        .filter((db) => db.db_type === type)
+        .map((db) => ({
+          value: db?.name ?? '',
+          label:
+            !!db.host && !!db.port
+              ? `${db.name} (${db.host}:${db.port})`
+              : db.name
+        }))
     }));
-  }, [dbServiceList]);
+  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
 
   return {
     dbServiceList,
     dbServiceOptions,
     loading,
     updateDbServiceList,
-    generateDbServiceSelectOption
+    generateDbServiceSelectOptions,
+    generateDbServiceIDSelectOptions
   };
 };
 

@@ -86,13 +86,16 @@ export const ActiontechTableStyleWrapper = styled(Table)`
       padding: 16px 40px;
       background-color: ${({ theme }) =>
         theme.sharedTheme.components.table.pagination.backgroundColor};
-      border-top: ${({ theme }) =>
-        theme.sharedTheme.components.table.pagination.border};
-      position: fixed;
-      z-index: 999;
-      right: 0;
-      bottom: 0;
-      width: calc(100% - 220px);
+
+      &.actiontech-table-pagination-fixed {
+        border-top: ${({ theme }) =>
+          theme.sharedTheme.components.table.pagination.border};
+        position: fixed;
+        z-index: 999;
+        right: 0;
+        bottom: 0;
+        width: calc(100% - 220px);
+      }
 
       &::before {
         content: '';
