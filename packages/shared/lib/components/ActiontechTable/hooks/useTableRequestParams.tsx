@@ -2,7 +2,7 @@ import { TableProps } from 'antd';
 import { useCallback, useState } from 'react';
 import { TablePagination, UseTableRequestParamsOptions } from '../index.type';
 import { SorterResult } from 'antd/es/table/interface';
-import { isEmpty } from 'lodash';
+import { isEmpty, isEqual } from 'lodash';
 
 const useTableRequestParams = <
   R extends Record<string, any>,
@@ -16,12 +16,23 @@ const useTableRequestParams = <
     defaultFilterInfo = {} as F
   } = option ?? {};
 
-  const [tableFilterInfo, updateTableFilterInfo] =
-    useState<F>(defaultFilterInfo);
+  const [tableFilterInfo, setTableFilterInfo] = useState<F>(defaultFilterInfo);
   const [pagination, setPagination] = useState<TablePagination>({
     page_index: defaultPageIndex,
     page_size: defaultPageSize
   });
+
+  const updateTableFilterInfo = (filterInfo: F) => {
+    if (!isEqual(filterInfo, tableFilterInfo)) {
+      setPagination((prevPage) => {
+        return {
+          page_index: defaultPageIndex,
+          page_size: prevPage.page_size
+        };
+      });
+    }
+    setTableFilterInfo(filterInfo);
+  };
 
   const [sortInfo, setSortInfo] = useState<SorterResult<R> | SorterResult<R>[]>(
     {}

@@ -25,3 +25,5 @@ export enum LoginTypeEnum {
 }
 
 export const SQLE_INSTANCE_SOURCE_NAME = 'SQLE';
+
+export const SqlFiledInitialValue = '/* input your sql */';

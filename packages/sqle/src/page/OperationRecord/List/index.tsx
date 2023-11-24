@@ -192,7 +192,8 @@ const OperationRecordList: React.FC = () => {
         rowKey="id"
         dataSource={operationRecordList?.list}
         pagination={{
-          total: operationRecordList?.total ?? 0
+          total: operationRecordList?.total ?? 0,
+          current: pagination.page_index
         }}
         loading={loading}
         columns={columns}

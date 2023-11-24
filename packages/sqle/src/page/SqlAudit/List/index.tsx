@@ -157,6 +157,7 @@ const SqlAuditList = () => {
       {messageContextHolder}
       <PageHeader
         title={t('sqlAudit.list.pageTitle')}
+        fixed
         extra={
           !projectArchive ? (
             <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
@@ -167,6 +168,7 @@ const SqlAuditList = () => {
           ) : null
         }
       />
+      <div className="margin-top-60" />
       {/* table */}
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
@@ -199,7 +201,8 @@ const SqlAuditList = () => {
           return `${record?.sql_audit_record_id}`;
         }}
         pagination={{
-          total: dataList?.total ?? 0
+          total: dataList?.total ?? 0,
+          current: pagination.page_index
         }}
         loading={loading}
         columns={columns}
