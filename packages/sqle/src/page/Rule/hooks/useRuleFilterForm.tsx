@@ -32,11 +32,11 @@ const useRuleFilterForm = () => {
         ? rule_template.getProjectRuleTemplateV1({
             rule_template_name: ruleTemplateName ?? '',
             project_name: projectName,
-            fuzzy_rule_keyword: filterFuzzyCont
+            fuzzy_keyword_rule: filterFuzzyCont
           })
         : rule_template.getRuleTemplateV1({
             rule_template_name: ruleTemplateName ?? '',
-            fuzzy_rule_keyword: filterFuzzyCont
+            fuzzy_keyword_rule: filterFuzzyCont
           })
       ).then((res) => {
         if (ResponseCode.SUCCESS === res.data.code) {
@@ -71,7 +71,7 @@ const useRuleFilterForm = () => {
       return rule_template
         .getRuleListV1({
           filter_db_type: filterDbType,
-          fuzzy_rule_keyword: filterFuzzyCont
+          fuzzy_keyword_rule: filterFuzzyCont
         })
         .then((res) => res.data?.data ?? []);
     },
