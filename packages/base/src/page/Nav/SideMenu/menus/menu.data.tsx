@@ -1,6 +1,9 @@
 import { MenuProps } from 'antd';
 import { NavigateFunction } from 'react-router-dom';
-import { filterAdminMenusWithKey } from './common';
+import {
+  filterAdminMenusWithKey,
+  rearrangeMenuItemsByParentKey
+} from './common';
 import { BaseMenuItems } from './base';
 
 // #if [sqle]
@@ -16,17 +19,17 @@ export const sideMenuData: (
   isAdmin: boolean,
   projectID?: string
 ) => MenuProps['items'] = (navigate, isAdmin, projectID = '') => {
-  const allMenus = [
+  const allMenus = rearrangeMenuItemsByParentKey([
     ...BaseMenuItems({ navigate, projectID }),
 
-    /* IFTRUE_isSQLE */
+    // #if [sqle]
     ...SQLEMenuItems({ navigate, projectID }),
-    /* FITRUE_isSQLE */
+    // #endif
 
-    /* IFTRUE_isPROVISION */
+    // #if [provision]
     ...ProvisionMenuItems({ navigate, projectID })
-    /* FITRUE_isPROVISION */
-  ];
+    // #endif
+  ]);
 
   if (!isAdmin) {
     return filterAdminMenusWithKey(allMenus).sort(

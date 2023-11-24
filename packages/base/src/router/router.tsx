@@ -10,9 +10,9 @@ import {
 } from 'sqle/src/router/config';
 // #endif
 
-/* IFTRUE_isPROVISION */
+// #if [provision]
 import { AuthRouterConfig as ProvisionAuthRouterConfig } from 'provision/src/router/router';
-/* FITRUE_isPROVISION */
+// #endif
 
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 
@@ -29,14 +29,14 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   },
   // #endif
 
-  /* IFTRUE_isPROVISION */
+  // #if [provision]
   {
     path: 'provision/project/*',
     key: 'provision',
     element: <ProjectDetail />,
     children: ProvisionAuthRouterConfig
   },
-  /* FITRUE_isPROVISION */
+  // #endif
 
   {
     path: '*',
