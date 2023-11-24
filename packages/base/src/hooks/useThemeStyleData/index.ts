@@ -11,8 +11,7 @@ const useThemeStyleData = () => {
   return {
     baseTheme: themeData.baseTheme,
     sharedTheme: themeData.sharedTheme,
-    sqleTheme: themeData.sqleTheme,
-    diagnosisTheme: themeData.diagnosisTheme
+    sqleTheme: themeData.sqleTheme
   };
 };
 
