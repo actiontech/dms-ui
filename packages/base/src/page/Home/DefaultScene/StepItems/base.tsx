@@ -51,7 +51,7 @@ export const getDatabaseManagerSteps: (
             ),
             action: () => navigate(`/project/${projectID}/syncDataSource`)
           },
-          /* IFTRUE_isEE */
+          // #if [ee]
           {
             key: 'syncDataSource-create',
             label: t(
@@ -60,7 +60,7 @@ export const getDatabaseManagerSteps: (
             action: () =>
               navigate(`/project/${projectID}/syncDataSource/create`)
           }
-          /* FITRUE_isEE */
+          // #endif
         ]
       }
     ]

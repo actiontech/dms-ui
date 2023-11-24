@@ -19,6 +19,24 @@ export const ProvisionMenuItems: GenerateMenuItemsType = ({
     type: 'divider'
   },
   {
+    label: t('dmsMenu.authAudit'),
+    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/auth`,
+    onClick: () => navigate(`/provision/project/${projectID}/audit/auth`),
+    parentKey: 'operateAndAudit'
+  },
+  {
+    label: t('dmsMenu.templateAudit'),
+    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/template`,
+    onClick: () => navigate(`/provision/project/${projectID}/audit/template`),
+    parentKey: 'operateAndAudit'
+  },
+  {
+    label: t('dmsMenu.instanceAudit'),
+    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/service`,
+    onClick: () => navigate(`/provision/project/${projectID}/audit/service`),
+    parentKey: 'operateAndAudit'
+  },
+  {
     order: 10,
     type: 'group',
     label: t('dmsMenu.groupLabel.dataSecurity'),
@@ -43,26 +61,5 @@ export const ProvisionMenuItems: GenerateMenuItemsType = ({
         onClick: () => navigate(`/provision/project/${projectID}/auth/list`)
       }
     ]
-  }
-];
-
-export const ProvisionOperateConflictMenuItems: GenerateMenuItemsType = ({
-  navigate,
-  projectID = ''
-}) => [
-  {
-    label: t('dmsMenu.authAudit'),
-    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/auth`,
-    onClick: () => navigate(`/provision/project/${projectID}/audit/auth`)
-  },
-  {
-    label: t('dmsMenu.templateAudit'),
-    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/template`,
-    onClick: () => navigate(`/provision/project/${projectID}/audit/template`)
-  },
-  {
-    label: t('dmsMenu.instanceAudit'),
-    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/service`,
-    onClick: () => navigate(`/provision/project/${projectID}/audit/service`)
   }
 ];

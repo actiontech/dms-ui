@@ -9,9 +9,9 @@ const SqlManagement = () => {
 
   return (
     <article>
-      {/* IFTRUE_isCE */}
+      {/* #if [ce] */}
       <PageHeader title={t('sqlManagement.pageTitle')} />
-      {/* FITRUE_isCE */}
+      {/* #endif */}
       <EnterpriseFeatureDisplay
         featureName={t('sqlManagement.pageTitle')}
         eeFeatureDescription={

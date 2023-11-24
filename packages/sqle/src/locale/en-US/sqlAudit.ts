@@ -43,5 +43,46 @@ export default {
     auditID: '审核ID',
     auditRating: '审核评分',
     auditPassRate: '审核通过率'
+  },
+  create: {
+    title: '创建SQL审核',
+    createTagErrorTips: '当前标签已存在',
+    successTips: '创建审核成功',
+    baseInfoForm: {
+      tags: '业务标签',
+      tagsPlaceholder: '要搜索的业务标签'
+    },
+    sqlInfo: {
+      title: '审核SQL语句信息',
+      form: {
+        auditType: '审核方式',
+        dbType: '数据库类型',
+        instanceName: '数据源',
+        instanceSchema: '数据库',
+        staticAudit: '静态审核',
+        dynamicAudit: '动态审核',
+        uploadType: '选择SQL语句上传方式'
+      },
+      uploadTypeEnum: {
+        sql: '输入SQL语句',
+        sqlFile: '上传SQL文件',
+        xmlFile: '上传Mybatis的XML文件',
+        zipFile: '上传ZIP文件',
+        git: '配置GIT仓库'
+      },
+      uploadLabelEnum: {
+        sql: 'SQL语句',
+        sqlFile: 'SQL文件',
+        xmlFile: 'Mybatis的XML文件',
+        zipFile: 'ZIP文件',
+        gitUrl: 'GIT地址',
+        gitUrlTips: '若为私有GIT仓库，则必须输入有读权限的账号密码'
+      },
+      uploadFileTip: {
+        sqlFile: '点击选择SQL文件或将文件拖拽到此区域',
+        xmlFile: '点击选择Mybatis的XML文件或将文件拖拽到此区域',
+        zipFile: '点击选择ZIP文件或将文件拖拽到此区域'
+      }
+    }
   }
 };

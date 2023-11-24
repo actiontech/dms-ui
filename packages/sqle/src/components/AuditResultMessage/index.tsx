@@ -79,13 +79,13 @@ const AuditResultMessage = ({
       >
         <div className="annotation-wrapper">
           {auditResult.annotation}
-          {/* IFTRUE_isEE */}
+          {/* #if [ee] */}
           <EmptyBox if={!!moreBtnLink}>
             <Typography.Link target="_blank" href={moreBtnLink}>
               {t('common.showMore')}
             </Typography.Link>
           </EmptyBox>
-          {/* FITRUE_isEE */}
+          {/* #endif */}
         </div>
       </EmptyBox>
     </AuditResultMessageWithAnnotationStyleWrapper>

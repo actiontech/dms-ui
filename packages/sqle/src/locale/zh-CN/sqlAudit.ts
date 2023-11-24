@@ -68,7 +68,7 @@ export default {
         sqlFile: '上传SQL文件',
         xmlFile: '上传Mybatis的XML文件',
         zipFile: '上传ZIP文件',
-        git: '配置git仓库'
+        git: '配置GIT仓库'
       },
       uploadLabelEnum: {
         sql: 'SQL语句',

@@ -27,7 +27,6 @@ const CheckMonitorConfig = () => {
     (state: IReduxState) =>
       state.monitorSourceConfig.modalStatus[ModalName.Check_Monitor_Config]
   );
-  console.log(visible);
 
   const {
     loading,
@@ -79,7 +78,6 @@ const CheckMonitorConfig = () => {
           dataSource={monitorConfigData ?? []}
           errorMessage={getErrorMessage(error ?? '')}
           className="monitor-item-routine-table"
-          isPaginationFixed={false}
         />
       </CheckMonitorConfigStyleWrapper>
     </>
