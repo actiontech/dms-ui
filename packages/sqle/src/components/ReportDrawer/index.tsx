@@ -1,11 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
-import { BasicDrawer } from '@actiontech/shared';
+import {
+  BasicDrawer,
+  BasicTag,
+  EmptyBox,
+  BasicToolTips
+} from '@actiontech/shared';
 import { MonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DetailReportDrawerProps } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
+import { IconFillListActive } from '@actiontech/shared/lib/Icon/common';
 
 const ReportDrawer = ({
   open,
@@ -14,7 +20,8 @@ const ReportDrawer = ({
   onClose,
   footer,
   dbType,
-  showAnnotation
+  showAnnotation,
+  showSourceFile
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
 
@@ -89,7 +96,27 @@ const ReportDrawer = ({
             </div>
           </section>
           <section className="wrapper-item">
-            <h3>{t('auditPlan.report.drawer.subTitle.sql')}</h3>
+            <div className="title-wrap">
+              <h3>{t('auditPlan.report.drawer.subTitle.sql')}</h3>
+              <EmptyBox if={showSourceFile}>
+                <EmptyBox
+                  if={!!data?.sqlSourceFile}
+                  defaultNode={
+                    <BasicToolTips
+                      title={t('auditPlan.report.drawer.sourceTip')}
+                    >
+                      <BasicTag icon={<IconFillListActive />}>
+                        {t('auditPlan.report.drawer.source')}： -
+                      </BasicTag>
+                    </BasicToolTips>
+                  }
+                >
+                  <BasicTag icon={<IconFillListActive />}>
+                    {t('auditPlan.report.drawer.source')}：{data?.sqlSourceFile}
+                  </BasicTag>
+                </EmptyBox>
+              </EmptyBox>
+            </div>
             <div className="wrapper-cont">
               <MonacoEditor
                 value={data?.sql ?? ''}

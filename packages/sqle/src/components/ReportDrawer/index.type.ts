@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 export type typeData = {
   auditResult: Array<{ annotation?: string } & IAuditResult>;
   sql: string;
+  sqlSourceFile?: string;
 };
 
 export interface DetailReportDrawerProps {
@@ -14,4 +15,5 @@ export interface DetailReportDrawerProps {
   footer?: ReactNode;
   dbType?: string;
   showAnnotation?: boolean;
+  showSourceFile?: boolean;
 }

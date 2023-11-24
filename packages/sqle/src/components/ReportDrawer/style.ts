@@ -33,6 +33,13 @@ export const AuditReportStyleWrapper = styled('div')`
           }
         }
       }
+
+      .title-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 24px;
+      }
     }
   }
 `;

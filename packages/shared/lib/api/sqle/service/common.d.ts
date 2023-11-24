@@ -142,7 +142,7 @@ export interface IAuditPlanSQLReqV1 {
 
   db_user?: string;
 
-  end_point?: string;
+  endpoint?: string;
 
   first_query_at?: string;
 
@@ -2147,6 +2147,8 @@ export interface IAuditTaskSQLResV2 {
   number?: number;
 
   rollback_sql?: string;
+
+  sql_source_file?: string;
 }
 
 export interface IBatchCancelWorkflowsReqV2 {
