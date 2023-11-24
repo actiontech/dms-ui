@@ -74,7 +74,7 @@ describe('useDbService', () => {
     const { result } = renderHook(() => useDbService());
     const { baseElement: baseElementWithOptions } = render(
       <Select data-testid="testId" value="123123">
-        {result.current.generateDbServiceSelectOption()}
+        {result.current.generateDbServiceIDSelectOptions()}
       </Select>
     );
 

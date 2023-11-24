@@ -31,6 +31,7 @@ import {
   SQLAuditRecordIDValuesSplit,
   SQLAuditRecordListUrlParamsKey
 } from './index.data';
+import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListParams,
@@ -309,10 +310,11 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'remark',
-      width: 160,
       title: () => t('sqlManagement.table.column.comment'),
+      className: 'ellipsis-column-width',
       render: (remark: string, record) => {
-        if (!actionPermission) return remark || '-';
+        if (!actionPermission)
+          return remark ? <BasicTypographyEllipsis textCont={remark} /> : '-';
         return (
           <EditText
             value={remark}
@@ -326,7 +328,7 @@ const SqlManagementColumn: (
               expandable: false,
               tooltip: {
                 arrow: false,
-                ...tooltipsCommonProps(remark, 100)
+                ...tooltipsCommonProps(remark, 250)
               },
               rows: 1
             }}
