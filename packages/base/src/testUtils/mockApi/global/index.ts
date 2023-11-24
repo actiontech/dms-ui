@@ -15,6 +15,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getCurrentUser();
     this.addSession();
+    this.delSession();
     this.getUserBySession();
     this.bindUser();
     this.getOauth2Tips();
@@ -41,6 +42,12 @@ class MockDMSGlobalApi implements MockSpyApy {
         user_uid: UserInfo.userUid
       })
     );
+    return spy;
+  }
+
+  public delSession() {
+    const spy = jest.spyOn(dms, 'DelSession');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 

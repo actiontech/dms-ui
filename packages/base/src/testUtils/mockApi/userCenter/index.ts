@@ -20,6 +20,7 @@ class MockUserCenterApi implements MockSpyApy {
     this.updateRole();
     this.deleteRole();
     this.getOpPermissionsList();
+    this.updateCurrentUser();
   }
 
   public getUserList() {
@@ -144,6 +145,12 @@ class MockUserCenterApi implements MockSpyApy {
         op_permissions: opPermissionList
       })
     );
+    return spy;
+  }
+
+  public updateCurrentUser() {
+    const spy = jest.spyOn(dms, 'UpdateCurrentUser');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
