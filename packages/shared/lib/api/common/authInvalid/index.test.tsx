@@ -14,6 +14,20 @@ describe('globalAuthInvalid', () => {
   const scopeDispatch = jest.fn();
   const createBrowserHistorySpy = jest.spyOn(history, 'createBrowserHistory');
   const historyPushSpy = jest.fn();
+  const assignMock = jest.fn();
+  const originLocation = window.location;
+  Object.defineProperty(window, 'location', {
+    value: {
+      ...originLocation,
+      hash: {
+        endsWith: assignMock,
+        includes: assignMock
+      },
+      assign: assignMock,
+      reload: jest.fn()
+    },
+    writable: true
+  });
 
   beforeEach(() => {
     store.dispatch = scopeDispatch;
@@ -26,13 +40,14 @@ describe('globalAuthInvalid', () => {
     jest.clearAllMocks();
     jest.useRealTimers();
     jest.clearAllTimers();
+    assignMock.mockClear();
   });
   it('should work', async () => {
     act(() => {
       globalAuthInvalid();
     });
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(scopeDispatch).toBeCalledTimes(5);
+    expect(scopeDispatch).toBeCalledTimes(6);
     expect(scopeDispatch).nthCalledWith(1, {
       payload: { token: '' },
       type: 'user/updateToken'
@@ -53,6 +68,6 @@ describe('globalAuthInvalid', () => {
       payload: { bindProjects: [] },
       type: 'user/updateBindProjects'
     });
-    expect(historyPushSpy).toBeCalledWith('/login');
+    expect(window.location.href).toBe('/login?target=/');
   });
 });

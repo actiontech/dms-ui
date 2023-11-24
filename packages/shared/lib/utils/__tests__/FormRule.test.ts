@@ -68,7 +68,7 @@ describe('utils/FormRule', () => {
     } catch (error: any) {
       message = error;
     }
-    expect(message).toBe('必须填写sql语句');
+    expect(message).toBe('必须填写SQL语句');
   });
 
   it('should check prot is between min and max', async () => {
