@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';
@@ -29,7 +29,7 @@ const DatabaseFormItem: React.FC<{
   isUpdate?: boolean;
   databaseTypeChange?: (values: string) => void;
   generateDriverSelectOptions?: () => JSX.Element[];
-  getDriverMetaLoading: boolean;
+  updateDriverListLoading: boolean;
   currentAsyncParams?: FormItem[];
   isExternalInstance?: boolean;
 }> = (props) => {
@@ -61,6 +61,7 @@ const DatabaseFormItem: React.FC<{
       'type',
       'params'
     ]);
+
     if (values.params && props.currentAsyncParams) {
       values.asyncParams = dmsMergeFromValueIntoParams(
         values.params,
@@ -77,7 +78,8 @@ const DatabaseFormItem: React.FC<{
           port: `${values.port}`,
           user: values.user,
           db_type: values.type,
-          password: values.password
+          password: values.password,
+          additional_params: values.asyncParams ?? []
         },
         project_uid: projectID
       })
@@ -145,7 +147,7 @@ const DatabaseFormItem: React.FC<{
           allowClear
           showSearch
           disabled={props.isUpdate}
-          loading={props.getDriverMetaLoading}
+          loading={props.updateDriverListLoading}
           onChange={props.databaseTypeChange}
         >
           {props.generateDriverSelectOptions?.()}

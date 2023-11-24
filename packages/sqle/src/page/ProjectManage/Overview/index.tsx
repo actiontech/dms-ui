@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ConfigProvider, Space, Row, Col } from 'antd5';
+import { ConfigProvider, Space, Row, Col } from 'antd';
 import { PageHeader } from '@actiontech/shared';
 import { SyncOutlined } from '@ant-design/icons';
 
@@ -17,14 +17,21 @@ import ScanTask from './component/ScanTask';
 
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import { useCallback, useEffect } from 'react';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 const Overview = () => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
+  const { projectID } = useCurrentProject();
 
-  const onRefreshPage = () => {
+  const onRefreshPage = useCallback(() => {
     eventEmitter.emit(EmitterKey.Refresh_Project_Overview);
-  };
+  }, []);
+
+  useEffect(() => {
+    onRefreshPage();
+  }, [onRefreshPage, projectID]);
 
   return (
     <ConfigProvider

@@ -1,4 +1,3 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
 
 export const OrderStateBarStyleWrapper = styled('section')`
@@ -123,7 +122,7 @@ export const OrderStateBarStyleWrapper = styled('section')`
     min-width: 170px;
     padding: 0;
 
-    .${ANTD_PREFIX_STR}-popover-inner {
+    .ant-popover-inner {
       padding: 2px 12px;
     }
   }

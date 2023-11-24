@@ -1,8 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import { Space, Spin, Tag } from 'antd5';
-import { isEqual } from 'lodash';
+import { Form, Space, Spin, Tag } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   BasicButton,
@@ -23,11 +22,7 @@ import {
   FormItemNoLabel,
   CustomLabelContent
 } from '@actiontech/shared/lib/components/FormCom';
-import {
-  defaultFormData,
-  serviceInitialData,
-  switchFieldName
-} from './index.data';
+import { switchFieldName } from './index.data';
 import { OauthFormField } from './index.type';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import {
@@ -70,20 +65,22 @@ const Oauth = () => {
     }
   );
 
-  const isInitialForm = useMemo(() => {
-    return (
-      isEqual(oauthConfig, defaultFormData) ||
-      isEqual(oauthConfig, serviceInitialData)
-    );
+  const isConfigClosed = useMemo(() => {
+    return !oauthConfig?.enable_oauth2;
   }, [oauthConfig]);
 
   const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed) form.setFieldValue(switchFieldName, false);
+    setFormDefaultValue();
     modifyFinish();
   };
   const handleClickModify = () => {
-    startModify();
     setFormDefaultValue();
+    startModify();
+  };
+
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
   };
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -125,8 +122,8 @@ const Oauth = () => {
 
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      enable: oauthConfig?.enable_oauth2,
       clientId: oauthConfig?.client_id,
+      clientSecret: undefined,
       clientHost: oauthConfig?.client_host,
       serverAuthUrl: oauthConfig?.server_auth_url,
       serverTokenUrl: oauthConfig?.server_token_url,
@@ -138,25 +135,30 @@ const Oauth = () => {
     });
   }, [form, oauthConfig]);
 
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
-    startModify,
+    startSubmit,
+    submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateOauth2Configuration({
         oauth2: {
-          ...defaultFormData,
+          ...oauthConfig,
           enable_oauth2: false
         }
       }),
     handleClickCancel,
     refreshConfig: refreshOauthConfig,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IGetOauth2ConfigurationResData> =
@@ -271,18 +273,20 @@ const Oauth = () => {
               data: oauthConfig ?? {},
               columns: readonlyColumnsConfig,
               configExtraButtons: (
-                <Space hidden={isInitialForm || !extraButtonsVisible}>
+                <Space hidden={isConfigClosed || !extraButtonsVisible}>
                   <ConfigModifyBtn onClick={handleClickModify} />
                 </Space>
               ),
               configSwitchNode: (
                 <ConfigSwitch
                   switchFieldName={switchFieldName}
-                  disabled={modifyFlag}
+                  switchOpen={switchOpen}
+                  modifyFlag={modifyFlag}
+                  submitLoading={submitLoading}
                   popoverVisible={configSwitchPopoverVisible}
                   onConfirm={onConfigSwitchPopoverConfirm}
-                  onCancel={onConfigSwitchPopoverCancel}
                   onSwitchChange={onConfigSwitchChange}
+                  onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
                 />
               ),
               configField: (

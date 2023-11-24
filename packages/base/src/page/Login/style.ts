@@ -1,5 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 
 export const LoginPageStyleWrapper = styled('section')`
   width: 100vw;
@@ -10,10 +9,22 @@ export const LoginPageStyleWrapper = styled('section')`
 export const LoginPageLeftStyleWrapper = styled('div')`
   width: 50%;
   height: 100%;
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+
+  .banner {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 50%;
+    height: 100%;
+    filter: blur(0.2px);
+  }
 
   .login-background-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -59,7 +70,6 @@ export const LoginPageRightStyleWrapper = styled('div')`
         .label {
           text-align: center;
           font-feature-settings: 'case' on;
-          font-family: 'Plus Jakarta Sans';
           font-size: 32px;
           font-style: normal;
           font-weight: 700;
@@ -67,18 +77,18 @@ export const LoginPageRightStyleWrapper = styled('div')`
         }
 
         .label-primary {
-          color: ${({ theme }) => theme.baseTheme.sideMenu.title.color[0]};
+          color: ${({ theme }) => theme.sharedTheme.nav.title.color[0]};
           margin-right: 10px;
         }
 
         .label-base {
-          color: ${({ theme }) => theme.baseTheme.sideMenu.title.color[1]};
+          color: ${({ theme }) => theme.sharedTheme.nav.title.color[1]};
         }
       }
     }
   }
 
-  & .${ANTD_PREFIX_STR}-btn.login-btn {
+  & .ant-btn.login-btn {
     width: 100%;
     height: 56px;
     font-size: 14px;
@@ -87,7 +97,7 @@ export const LoginPageRightStyleWrapper = styled('div')`
     border-radius: 6px !important;
   }
 
-  & .${ANTD_PREFIX_STR}-btn.other-login-btn {
+  & .ant-btn.other-login-btn {
     width: 100%;
     height: 56px;
     font-size: 14px;
@@ -107,12 +117,13 @@ export const LoginPageRightStyleWrapper = styled('div')`
     background-color: ${({ theme }) =>
       theme.sharedTheme.uiToken.colorBgLayout} !important;
 
-    &.${ANTD_PREFIX_STR}-input-affix-wrapper-lg {
+    &.ant-input-affix-wrapper-lg {
       padding: 5px 16px;
     }
 
     border-radius: 6px !important;
-    .${ANTD_PREFIX_STR}-input {
+
+    .ant-input {
       background-color: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorBgLayout} !important;
       margin-left: 12px;

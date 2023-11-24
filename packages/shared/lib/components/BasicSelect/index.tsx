@@ -1,4 +1,4 @@
-import { ConfigProvider, SelectProps } from 'antd5';
+import { ConfigProvider, SelectProps } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { IconClose } from '../../Icon';
 import classnames from 'classnames';
@@ -25,13 +25,13 @@ const BasicSelect = <V = any,>(props: SelectProps<V>) => {
       <BasicSelectStyleWrapper
         className={classnames('basic-select-wrapper', className)}
         placeholder={t('common.form.placeholder.select')}
+        notFoundContent={
+          loading ? <BasicEmpty loading={loading} /> : <BasicEmpty />
+        }
         {...otherParams}
         clearIcon={<IconClose />}
         allowClear={allowClear}
         loading={loading}
-        notFoundContent={
-          loading ? <BasicEmpty loading={loading} /> : <BasicEmpty />
-        }
         //ts checker error
         // allowClear={
         //   !!allowClear

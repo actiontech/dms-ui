@@ -1,7 +1,7 @@
 import { cloneDeep, isEqual } from 'lodash';
 import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Col, Form, Row, Select, Typography, Space } from 'antd5';
+import { Col, Form, Row, Select, Typography, Space } from 'antd';
 import { IDataObjects, IFormFields, IAddDataPermission } from './index.d';
 import { DefaultOptionType } from 'antd/es/select';
 import { ModalName } from '~/data/enum';
@@ -241,7 +241,11 @@ const AddDataPermission: FC<IAddDataPermission> = ({
 
   return (
     <BasicDrawer
-      title={t('auth.button.addDataPermission')}
+      title={
+        editIndex !== undefined
+          ? t('auth.button.editDataPermission')
+          : t('auth.button.addDataPermission')
+      }
       width={640}
       open={visible}
       onClose={closeModal}

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useMemo, useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Space, message } from 'antd5';
+import { Space, message } from 'antd';
 import { IconTaskType } from '../../../icon/AuditPlan';
 import { IconArrowUp, IconArrowDown } from '@actiontech/shared/lib/Icon';
 import {
@@ -27,7 +27,8 @@ import PlanListColumn, {
 } from './column';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import TableTaskTypeFilter from './TableTaskTypeFilter';
 
@@ -64,6 +65,8 @@ const AuditPlanList = () => {
     taskTypeShowStatus ? setTaskTypeHide() : setTaskTypeShow();
   };
 
+  const { getLogoUrlByDbType } = useDbServiceDriver();
+
   // about table
   const {
     data: planList,
@@ -99,7 +102,10 @@ const AuditPlanList = () => {
     refreshApi();
   };
 
-  const columns = useMemo(() => PlanListColumn(projectID), [projectID]);
+  const columns = useMemo(
+    () => PlanListColumn(projectID, getLogoUrlByDbType),
+    [getLogoUrlByDbType, projectID]
+  );
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
       tableName: 'audit_plan_list',

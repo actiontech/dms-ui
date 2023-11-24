@@ -4,7 +4,6 @@ import i18n from 'sqle/src/locale';
 import sqleZhCN from 'sqle/src/locale/zh-CN';
 import sqleEnUS from 'sqle/src/locale/en-US';
 import provisionZhCN from 'provision/src/locale/zh-CN';
-import diagnosisZhCN from 'diagnosis/src/locale/zh-CN';
 import commonZhCN from '@actiontech/shared/lib/locale/zh-CN';
 import commonEnUS from '@actiontech/shared/lib/locale/en-US';
 import zhCN from './zh-CN';
@@ -12,12 +11,36 @@ import enUS from './en-US';
 import { TOptions } from 'i18next';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
+import { findDuplicateKeys } from '../utils/findDuplicateKeys';
+
+// IFTRUE_isDebug
+const zh_dupKeys = findDuplicateKeys([
+  commonZhCN.translation,
+  zhCN.translation,
+  sqleZhCN.translation
+]);
+if (zh_dupKeys.length > 0) {
+  throw new Error(
+    `DMS ZhCN_Locale error: The same key exists: ${zh_dupKeys.toString()}`
+  );
+}
+
+const en_dupKeys = findDuplicateKeys([
+  commonEnUS.translation,
+  enUS.translation,
+  sqleEnUS.translation
+]);
+if (en_dupKeys.length > 0) {
+  throw new Error(
+    `DMS EnUS_Locale error: The same key exists: ${en_dupKeys.toString()}`
+  );
+}
+// FITRUE_isDebug
 
 const allZhCN = {
   translation: {
     ...sqleZhCN.translation,
     ...provisionZhCN.translation,
-    ...diagnosisZhCN.translation,
     ...commonZhCN.translation,
     ...zhCN.translation
   }

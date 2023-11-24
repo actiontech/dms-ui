@@ -1,4 +1,4 @@
-import { Empty } from 'antd5';
+import { Empty } from 'antd';
 import {
   forwardRef,
   useCallback,

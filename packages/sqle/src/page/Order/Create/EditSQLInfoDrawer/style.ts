@@ -1,6 +1,5 @@
-import { ANTD_PREFIX_STR } from '@actiontech/shared/lib/data/common';
 import { styled } from '@mui/material/styles';
-import { Form } from 'antd5';
+import { Form } from 'antd';
 
 export const EditOrderFormTitleStyleWrapper = styled('div')`
   color: ${({ theme }) =>
@@ -14,14 +13,15 @@ export const EditOrderFormTitleStyleWrapper = styled('div')`
 export const EditBaseInfoFormStyleWrapper = styled(Form)`
   padding: 24px 24px 0 !important;
 
-  .${ANTD_PREFIX_STR}-input.basic-input-wrapper.workflow-name-input-wrapper {
+  .ant-input.basic-input-wrapper.workflow-name-input-wrapper {
     border: none !important;
     padding: 0 0 16px !important;
   }
 
   .order-base-info-desc-form-item {
     margin-bottom: 0 !important;
-    .${ANTD_PREFIX_STR}-input-affix-wrapper {
+
+    .ant-input-affix-wrapper {
       border: none !important;
 
       &:focus {
@@ -39,8 +39,8 @@ export const EditBaseInfoFormStyleWrapper = styled(Form)`
     }
   }
 
-  .${ANTD_PREFIX_STR}-form-item {
-    .${ANTD_PREFIX_STR}-form-item-label {
+  .ant-form-item {
+    .ant-form-item-label {
       display: none !important;
     }
   }

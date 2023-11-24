@@ -12,7 +12,7 @@ import generateTag from '../Common/generateTag';
 import UserDesc from './UserDesc';
 import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
 import { UserStatusStyledWrapper } from '../style';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 
 export const userGroupListColumns: ActiontechTableColumn<IListUserGroup> = [
   {

@@ -1,84 +1,159 @@
-import { SyncOutlined } from '@ant-design/icons';
-import { Box } from '@mui/system';
-import { useRequest } from 'ahooks';
-import { Card, Space, Button } from 'antd';
+import { useMemo, useCallback, useState, useEffect } from 'react';
+import { PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import ProvisionTable from '~/components/ProvisionTable';
-import useTablePagination from '~/components/ProvisionTable/hooks/useTablePagination';
-import { authAuditTableColumns } from './TableColumns';
-import AuthAuditFilterForm from './AuthAuditFilterForm';
-import { useSearchParams } from 'react-router-dom';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  ActiontechTable,
+  useTableRequestParams,
+  useTableRequestError,
+  TableFilterContainer,
+  useTableFilterContainer,
+  FilterCustomProps,
+  TableToolbar
+} from '@actiontech/shared/lib/components/ActiontechTable';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
+import { IAuditListAuthorizationEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
+import { IListAuthorizationEvent } from '@actiontech/shared/lib/api/provision/service/common';
+import { useRequest } from 'ahooks';
+import {
+  AuthAuditTableFilterParamType,
+  AuthAuditTableColumns,
+  eventType,
+  AuthAuditTableActions
+} from './columns';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import AuthAuditDetailDrawer from './DetailDrawer';
+import { useBoolean } from 'ahooks';
+import useProvisionUser from '~/hooks/uerProvisionUser';
 
-const AuthAudit = () => {
+const AuthAudit: React.FC = () => {
   const { t } = useTranslation();
-  const { pageIndex, pageSize, total, setTotal, handleTablePaginationChange } =
-    useTablePagination();
-  const [params] = useSearchParams();
+
   const { projectID } = useCurrentProject();
 
-  const {
-    data: dataSource,
-    loading,
-    refresh
-  } = useRequest(
-    () =>
-      auth
-        .AuditListAuthorizationEvents({
-          page_index: pageIndex,
-          page_size: pageSize,
-          filter_by_create_user:
-            params.get('filter_by_create_user') ?? undefined,
-          filter_by_data_permission_template_name:
-            params.get('filter_by_data_permission_template_name') ?? undefined,
-          filter_by_event_type: params.get('filter_by_event_type') ?? undefined,
-          filter_by_permission_user:
-            params.get('filter_by_permission_user') ?? undefined,
-          filter_by_purpose: params.get('filter_by_purpose') ?? undefined,
-          filter_by_generated_time_start:
-            params.get('filter_by_generated_time_start') ?? undefined,
-          filter_by_generated_time_end:
-            params.get('filter_by_generated_time_end') ?? undefined,
-          filter_by_namespace_uid: projectID
-        })
-        .then((res) => {
-          setTotal(res.data?.total_nums ?? 0);
-          return res.data.data;
-        }),
+  const [
+    open,
+    { setTrue: setShowDetailDrawer, setFalse: setHideDetailDrawer }
+  ] = useBoolean();
+
+  const [currentDetail, setCurrentDetail] = useState<IListAuthorizationEvent>();
+
+  const [searchValue, setSearchValue] = useState<string>();
+
+  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
+    useTableRequestParams<
+      IListAuthorizationEvent,
+      AuthAuditTableFilterParamType
+    >();
+
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
+
+  const { data, loading, refresh } = useRequest(
+    () => {
+      const params: IAuditListAuthorizationEventsParams = {
+        ...pagination,
+        ...tableFilterInfo,
+        filter_by_namespace_uid: projectID,
+        keyword: searchValue
+      };
+      return handleTableRequestError(auth.AuditListAuthorizationEvents(params));
+    },
     {
-      refreshDeps: [pageIndex, pageSize, params, projectID]
+      refreshDeps: [pagination, tableFilterInfo, projectID, searchValue]
     }
   );
 
-  return (
-    <Box
-      sx={{
-        padding: (theme) => theme.layout.padding
-      }}
-    >
-      <Card
-        title={
-          <Space>
-            {t('provisionAudit.authAudit.title')}
-            <Button onClick={refresh} data-testid="refresh">
-              <SyncOutlined spin={loading} />
-            </Button>
-          </Space>
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(AuthAuditTableColumns, updateTableFilterInfo);
+
+  const { userNameOptions, updateUserList } = useProvisionUser();
+
+  const filterCustomProps = useMemo(() => {
+    return new Map<keyof IListAuthorizationEvent, FilterCustomProps>([
+      [
+        'generated_time',
+        {
+          showTime: true
         }
-      >
-        <AuthAuditFilterForm />
-        <ProvisionTable
-          rowKey="event_uid"
-          loading={loading}
-          columns={authAuditTableColumns(projectID ?? '')}
-          dataSource={dataSource ?? []}
-          pagination={{ total }}
-          onChange={handleTablePaginationChange}
-          scroll={{ x: 'max-content' }}
-        />
-      </Card>
-    </Box>
+      ],
+      [
+        'event_type',
+        {
+          options: Object.entries(eventType).map(([value, label]) => ({
+            value,
+            label
+          })),
+          allowClear: true
+        }
+      ],
+      [
+        'permission_user_name',
+        {
+          options: userNameOptions
+        }
+      ],
+      [
+        'executing_user_name',
+        {
+          options: userNameOptions
+        }
+      ]
+    ]);
+  }, [userNameOptions]);
+
+  const gotoDetail = useCallback(
+    (record?: IListAuthorizationEvent) => {
+      setCurrentDetail(record);
+      setShowDetailDrawer();
+    },
+    [setShowDetailDrawer]
+  );
+
+  const actions = useMemo(() => {
+    return AuthAuditTableActions(gotoDetail);
+  }, [gotoDetail]);
+
+  useEffect(() => {
+    updateUserList();
+  }, [updateUserList]);
+
+  return (
+    <div>
+      <PageHeader title={t('provisionAudit.authAudit.title')} />
+      <TableToolbar
+        refreshButton={{ refresh, disabled: loading }}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
+        searchInput={{
+          onSearch: setSearchValue
+        }}
+      />
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        disabled={loading}
+        filterCustomProps={filterCustomProps}
+      />
+      <ActiontechTable
+        rowKey="event_uid"
+        dataSource={data?.list}
+        pagination={{
+          total: data?.total ?? 0
+        }}
+        loading={loading}
+        columns={AuthAuditTableColumns}
+        onChange={tableChange}
+        errorMessage={requestErrorMessage}
+        actions={actions}
+      />
+      <AuthAuditDetailDrawer
+        open={open}
+        data={currentDetail}
+        onClose={() => setHideDetailDrawer()}
+      />
+    </div>
   );
 };
 

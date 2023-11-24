@@ -12,7 +12,7 @@ import {
   RulesStyleWrapper
 } from './style';
 import { useTranslation } from 'react-i18next';
-import { FloatButton, Space, Spin, Typography } from 'antd5';
+import { FloatButton, Space, Spin, Typography } from 'antd';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   IconLevelError,
@@ -245,7 +245,9 @@ const RuleList: React.FC<RuleListProps> = ({
                       cursor:
                         isAction || enableCheckDetail ? 'pointer' : 'default'
                     }}
-                    className={classNames({ 'has-top-margin': isAction })}
+                    className={classNames({
+                      'has-top-margin': isAction
+                    })}
                     onClick={() => {
                       if (enableCheckDetail) {
                         setCurrentRuleDetail(v);

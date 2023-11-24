@@ -8,9 +8,9 @@ import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import ChartTooltip from '../../../../../../../components/ChartCom/ChartTooltip';
 import ChartWrapper from '../../../../../../../components/ChartCom/ChartWrapper';
 import { typeChartChildrenProps } from '../..';
-import useChangeTheme from '../../../../../../../hooks/useChangeTheme';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 import { IDBTypeAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
+import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 interface ITaskDetail extends typeChartChildrenProps {
   dataSource: IDBTypeAuditPlan;

@@ -1,10 +1,7 @@
-import { BasicModal } from '@actiontech/shared';
-import monitor from '@actiontech/shared/lib/api/diagnosis/service/monitor';
+import monitor from '../../../../../../../api/monitor';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import { useSelector } from 'react-redux';
-import { IReduxState } from '../../../../../../../../../base/src/store';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import { CheckMonitorConfigColumns } from './column';
 import { useTranslation } from 'react-i18next';
@@ -14,13 +11,13 @@ import {
   updateMonitorSourceConfigModalStatus,
   updateSelectMonitorConfigData
 } from '../../../../../../../store/monitorSourceConfig';
+import { IReduxState } from '../../../../../../../store';
+import { CheckMonitorConfigStyleWrapper } from './style';
 
 const CheckMonitorConfig = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-
-  const { projectID } = useCurrentProject();
 
   const selectMonitorConfigData = useSelector(
     (state: IReduxState) => state.monitorSourceConfig.selectMonitorConfigDta
@@ -30,6 +27,7 @@ const CheckMonitorConfig = () => {
     (state: IReduxState) =>
       state.monitorSourceConfig.modalStatus[ModalName.Check_Monitor_Config]
   );
+  console.log(visible);
 
   const {
     loading,
@@ -39,8 +37,7 @@ const CheckMonitorConfig = () => {
     () => {
       return monitor
         .V1ListRoutineMetrics({
-          routine_id: Number(selectMonitorConfigData?.id),
-          project_uid: projectID
+          routine_id: Number(selectMonitorConfigData?.id)
         })
         .then((res) => {
           return res.data?.data?.metrics ?? [];
@@ -64,9 +61,13 @@ const CheckMonitorConfig = () => {
 
   return (
     <>
-      <BasicModal
+      <CheckMonitorConfigStyleWrapper
         title={t('monitorSourceConfig.monitorConfig.monitorKey')}
         onCancel={onCloseModal}
+        open={visible}
+        footer={null}
+        size="large"
+        className="monitor-item-routine-modal"
       >
         <ActiontechTable
           loading={loading}
@@ -77,8 +78,10 @@ const CheckMonitorConfig = () => {
           rowKey="routine_name"
           dataSource={monitorConfigData ?? []}
           errorMessage={getErrorMessage(error ?? '')}
+          className="monitor-item-routine-table"
+          isPaginationFixed={false}
         />
-      </BasicModal>
+      </CheckMonitorConfigStyleWrapper>
     </>
   );
 };

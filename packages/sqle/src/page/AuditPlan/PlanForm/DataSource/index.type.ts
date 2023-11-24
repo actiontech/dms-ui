@@ -1,4 +1,4 @@
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 import { PlanFormField } from '../index.type';
 import { IAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 

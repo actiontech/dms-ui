@@ -1,10 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { commonModalReducer } from '../common';
-import {
-  IViewMonitorConfigReply,
-  IViewServerReply
-} from '@actiontech/shared/lib/api/diagnosis/service/common';
 import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+import { IViewMonitorConfigReply, IViewServerReply } from '../../api/common';
 
 type MonitorSourceConfigState = {
   modalStatus: ModalStatus;

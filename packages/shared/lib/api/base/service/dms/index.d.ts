@@ -1,8 +1,10 @@
 import {
   IGetBasicInfoReply,
+  IGetCompanyNoticeReply,
+  IUpdateCompanyNotice,
+  IGenericResp,
   IGetFeishuConfigurationReply,
   IUpdateFeishuConfiguration,
-  IGenericResp,
   ITestFeishuConfiguration,
   ITestFeishuConfigurationReply,
   IGetLDAPConfigurationResDataReply,
@@ -20,6 +22,7 @@ import {
   IUpdateWeChatConfiguration,
   ITestWeChatConfiguration,
   ITestWeChatConfigurationReply,
+  IListDBServiceDriverOptionReply,
   INotification,
   INotificationReply,
   IGetOauth2TipsReply,
@@ -40,7 +43,6 @@ import {
   IAddDBServiceReply,
   ICheckDbConnectable,
   ICheckDBServiceIsConnectableReply,
-  IListDBServiceDriverOptionReply,
   IUpdateDBService,
   IListMemberGroupsReply,
   IMemberGroup,
@@ -89,6 +91,14 @@ import {
 } from './index.enum';
 
 export interface IGetBasicInfoReturn extends IGetBasicInfoReply {}
+
+export interface IGetCompanyNoticeReturn extends IGetCompanyNoticeReply {}
+
+export interface IUpdateCompanyNoticeParams {
+  company_notice?: IUpdateCompanyNotice;
+}
+
+export interface IUpdateCompanyNoticeReturn extends IGenericResp {}
 
 export interface IGetFeishuConfigurationReturn
   extends IGetFeishuConfigurationReply {}
@@ -167,6 +177,9 @@ export interface ITestWeChatConfigurationParams {
 
 export interface ITestWeChatConfigurationReturn
   extends ITestWeChatConfigurationReply {}
+
+export interface IListDBServiceDriverOptionReturn
+  extends IListDBServiceDriverOptionReply {}
 
 export interface INotificationParams {
   notification?: INotification;
@@ -330,6 +343,8 @@ export interface IListDBServicesParams {
   filter_by_db_type?: string;
 
   project_uid: string;
+
+  fuzzy_keyword?: string;
 }
 
 export interface IListDBServicesReturn extends IListDBServiceReply {}
@@ -350,13 +365,6 @@ export interface ICheckDBServiceIsConnectableParams {
 
 export interface ICheckDBServiceIsConnectableReturn
   extends ICheckDBServiceIsConnectableReply {}
-
-export interface IListDBServiceDriverOptionParams {
-  project_uid: string;
-}
-
-export interface IListDBServiceDriverOptionReturn
-  extends IListDBServiceDriverOptionReply {}
 
 export interface IUpdateDBServiceParams {
   project_uid: string;
@@ -533,6 +541,8 @@ export interface IAddSessionParams {
 }
 
 export interface IAddSessionReturn extends IAddSessionReply {}
+
+export interface IDelSessionReturn extends IGenericResp {}
 
 export interface IGetUserBySessionParams {
   user_uid?: string;

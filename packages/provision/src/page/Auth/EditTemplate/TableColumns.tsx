@@ -3,7 +3,7 @@ import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { BasicTag } from '@actiontech/shared';
 import { t } from '../../../locale';
 

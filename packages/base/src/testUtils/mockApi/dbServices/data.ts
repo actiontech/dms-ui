@@ -1,13 +1,10 @@
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
-import {
-  ListDBServiceDbTypeEnum,
-  SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
-} from '@actiontech/shared/lib/api/base/service/common.enum';
+import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const dbServices: IListDBService[] = [
   {
     business: 'business',
-    db_type: ListDBServiceDbTypeEnum.MySQL,
+    db_type: 'MySQL',
     host: '127.0.0.1',
     maintenance_times: [],
     name: 'test',
@@ -27,7 +24,7 @@ export const dbServices: IListDBService[] = [
   },
   {
     business: 'business',
-    db_type: ListDBServiceDbTypeEnum.MySQL,
+    db_type: 'MySQL',
     host: 'localhost',
     maintenance_times: [],
     name: 'test2',

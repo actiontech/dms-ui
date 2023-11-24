@@ -3,7 +3,6 @@ import { AxiosResponse } from 'axios';
 import { Pie, PieConfig } from '@ant-design/plots';
 import { useTranslation } from 'react-i18next';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
-import useChangeTheme from '../../../../../../hooks/useChangeTheme';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
@@ -14,6 +13,7 @@ import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import { IGetInstancesTypePercentV1Return } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import { IInstanceTypePercent } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 const DatabaseSourceOrder = () => {
   const { t } = useTranslation();

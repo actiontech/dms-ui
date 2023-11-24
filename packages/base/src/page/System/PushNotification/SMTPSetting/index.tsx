@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, message, Space, Spin } from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
+import { Form, message, Space, Spin } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { SMTPSettingFormFields } from './index.type';
@@ -11,7 +11,6 @@ import {
   BasicSwitch,
   BasicToolTips
 } from '@actiontech/shared';
-import { isEqual } from 'lodash';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
 import {
@@ -24,7 +23,7 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
-import { defaultFormData, switchFieldName } from './index.data';
+import { switchFieldName } from './index.data';
 import ConfigModifyBtn from '../../components/ConfigModifyBtn';
 import ConfigTestBtn from '../../components/ConfigTestBtn';
 import ConfigSwitch from '../../components/ConfigSwitch';
@@ -65,30 +64,36 @@ const SMTPSetting = () => {
       }
     }
   );
-  const isInitialForm = useMemo(() => {
-    return isEqual(smtpInfo, defaultFormData);
+
+  const isConfigClosed = useMemo(() => {
+    return !smtpInfo?.enable_smtp_notify;
   }, [smtpInfo]);
 
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      enable: smtpInfo?.enable_smtp_notify ?? false,
       host: smtpInfo?.smtp_host,
       port: smtpInfo?.smtp_port
         ? Number.parseInt(smtpInfo.smtp_port, 10)
         : undefined,
       username: smtpInfo?.smtp_username,
-      isSkipVerify: smtpInfo?.is_skip_verify ?? false
+      isSkipVerify: smtpInfo?.is_skip_verify ?? false,
+      password: undefined,
+      passwordConfirm: undefined
     });
   }, [form, smtpInfo]);
 
-  const handelClickModify = () => {
-    startModify();
+  const handleClickModify = useCallback(() => {
     setFormDefaultValue();
+    startModify();
+  }, [startModify, setFormDefaultValue]);
+  const handleClickCancel = () => {
+    if (isConfigClosed) form.setFieldValue(switchFieldName, false);
+    setFormDefaultValue();
+    modifyFinish();
   };
 
-  const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
-    modifyFinish();
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
   };
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -118,25 +123,30 @@ const SMTPSetting = () => {
       });
   };
 
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
-    startModify,
+    startSubmit,
+    submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateSMTPConfiguration({
         smtp_configuration: {
-          ...defaultFormData,
+          ...smtpInfo,
           enable_smtp_notify: false
         }
       }),
     handleClickCancel,
     refreshConfig: refreshSMTPInfo,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
@@ -232,14 +242,14 @@ const SMTPSetting = () => {
 
   return (
     <div className="config-form-wrapper">
-      <Spin spinning={loading}>
+      <Spin spinning={loading || submitLoading}>
         {messageContextHolder}
 
         {renderConfigForm({
           data: smtpInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isInitialForm || !extraButtonsVisible}>
+            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
               <ConfigTestBtn
                 testingRef={testTing}
                 popoverOpen={testPopoverVisible}
@@ -274,17 +284,19 @@ const SMTPSetting = () => {
                   </ConfigTestPopoverForm>
                 }
               />
-              <ConfigModifyBtn onClick={handelClickModify} />
+              <ConfigModifyBtn onClick={handleClickModify} />
             </Space>
           ),
           configSwitchNode: (
             <ConfigSwitch
               switchFieldName={switchFieldName}
-              disabled={modifyFlag}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
           configField: (
@@ -399,7 +411,6 @@ const SMTPSetting = () => {
                   htmlType="submit"
                   type="primary"
                   disabled={submitLoading}
-                  loading={submitLoading}
                 >
                   {t('common.submit')}
                 </BasicButton>

@@ -1,17 +1,17 @@
-import { InputRef, SelectProps } from 'antd5';
+import { InputRef, SelectProps } from 'antd';
 import { CustomSelectProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { useMemo, useRef, useState } from 'react';
-import { Box } from '@mui/system';
 import CustomPlaceholder from './CustomPlaceholder';
 import CustomOptionLabel from './CustomOptionLabel';
-import { DefaultOptionType } from 'antd5/es/select';
+import { DefaultOptionType } from 'antd/es/select';
 import {
   CustomSelectStyleWrapper,
-  CustomSelectSearchInputStyleWrapper,
   CustomSelectPopupMenuStyleWrapper
 } from './style';
 import classnames from 'classnames';
+import CustomSelectSearchInput from './CustomSelectSearchInput';
+import { useControllableValue } from 'ahooks';
 
 const CustomSelect: React.FC<CustomSelectProps> = ({
   className,
@@ -19,11 +19,20 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   popupClassName,
   valuePrefix = prefix,
   onDropdownVisibleChange,
+  searchValue,
+  onSearch,
   ...props
 }) => {
   const { t } = useTranslation();
   const searchInputRef = useRef<InputRef>(null);
-  const [searchValue, setSearchValue] = useState('');
+  const [innerSearchValue, setInnerSearchValue] = useControllableValue<string>(
+    typeof searchValue !== 'undefined' && onSearch
+      ? {
+          value: searchValue,
+          onChange: onSearch
+        }
+      : { defaultValue: '' }
+  );
   const [selectValue, setSelectValue] = useState<string | string[]>();
 
   const options = useMemo<SelectProps['options']>(() => {
@@ -33,7 +42,9 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
           ? option.label
           : option.text ?? option.value;
 
-      if (!showLabel.toLowerCase().includes(searchValue.toLowerCase())) {
+      if (
+        !showLabel.toLowerCase().includes(innerSearchValue?.toLowerCase() ?? '')
+      ) {
         return null;
       }
       return {
@@ -51,13 +62,9 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         if (v.options) {
           return {
             label: (
-              <Box
-                sx={{
-                  color: (theme) => theme.sharedTheme.uiToken.colorPrimary
-                }}
-              >
-                <span>{v.label}</span>
-              </Box>
+              <span className="custom-select-options-group-label">
+                {v.label}
+              </span>
             ),
             options: v.options
               .map(calcOptions)
@@ -68,22 +75,18 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         }
       })
       .filter((v) => !!v) as SelectProps['options'];
-  }, [props.mode, props.options, searchValue, valuePrefix]);
+  }, [props.mode, props.options, innerSearchValue, valuePrefix]);
 
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     const customMenu = (
       <>
-        <CustomSelectSearchInputStyleWrapper
-          size="large"
-          ref={searchInputRef}
-          className="custom-select-popup-search-input"
-          bordered={false}
-          placeholder={t('common.search')}
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-          allowClear
+        <CustomSelectSearchInput
+          value={innerSearchValue}
+          onChange={(val) => {
+            setInnerSearchValue(val);
+          }}
+          ref={props.searchInputRef ?? searchInputRef}
         />
-        {props.dropdownSlot}
         <CustomSelectPopupMenuStyleWrapper>
           {menu}
         </CustomSelectPopupMenuStyleWrapper>
@@ -101,10 +104,10 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
     onDropdownVisibleChange?.(open);
     if (open) {
       setTimeout(() => {
-        searchInputRef.current?.focus();
+        (props.searchInputRef ?? searchInputRef).current?.focus();
       }, 200);
     } else {
-      setSearchValue('');
+      setInnerSearchValue('');
     }
   };
 
@@ -136,8 +139,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       className={classnames('custom-select-namespace', className)}
       allowClear
       popupMatchSelectWidth={false}
-      {...props}
       dropdownRender={renderDropdown}
+      {...props}
       onDropdownVisibleChange={innerOnDropdownVisibleChange}
       optionLabelProp="optionLabel"
       options={options}

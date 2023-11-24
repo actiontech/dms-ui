@@ -1,7 +1,7 @@
-import { TableProps } from 'antd5';
+import { TableProps } from 'antd';
 import { useCallback, useState } from 'react';
 import { TablePagination, UseTableRequestParamsOptions } from '../index.type';
-import { SorterResult } from 'antd5/es/table/interface';
+import { SorterResult } from 'antd/es/table/interface';
 import { isEmpty } from 'lodash';
 
 const useTableRequestParams = <

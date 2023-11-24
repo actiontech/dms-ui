@@ -20,7 +20,7 @@ import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IOperationInfo } from '@actiontech/shared/lib/api/provision/service/common';
 import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { ConsolidatedListStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { Spin } from 'antd5';
+import { Spin } from 'antd';
 export interface IOperationData extends IOperationInfo {
   uid?: string;
   name?: string;

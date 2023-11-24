@@ -2,7 +2,7 @@ import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
-import { IViewMonitorConfigReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
+import { IViewMonitorConfigReply } from '../../../../api/common';
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { MonitorSourceConfigTypeEnum } from '../../index.type';

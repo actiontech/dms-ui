@@ -7,7 +7,7 @@ import {
 } from '../index.type';
 import BasicButton from '../../BasicButton';
 import { useTranslation } from 'react-i18next';
-import { Popconfirm, Popover, Space } from 'antd5';
+import { Popconfirm, Popover, Space } from 'antd';
 import classnames from 'classnames';
 import { useCallback, useState } from 'react';
 import {
@@ -16,8 +16,9 @@ import {
 } from '../components/style';
 import { IconMoreFill } from '../../../Icon';
 import EmptyBox from '../../EmptyBox';
-import { checkButtonPermissions } from '../utils';
+import { checkButtonPermissions, checkButtonDisabled } from '../utils';
 import { PopconfirmMessageStyleWrapper } from '../../../styleWrapper/element';
+import classNames from 'classnames';
 
 export const ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS =
   'actiontech-table-actions-column';
@@ -102,7 +103,7 @@ const useTableAction = () => {
     <T extends Record<string, any>>(
       actions: ActiontechTableProps<T>['actions']
     ): ActiontechTableColumn<T>[0] | undefined => {
-      const actionButtonWidth = 70;
+      const actionButtonWidth = 76;
       const moreButtonWidth = 40;
       if (Array.isArray(actions)) {
         if (actions.length === 0) {
@@ -193,22 +194,54 @@ const MoreButtons = <T extends Record<string, any>>({
         <InlineTableActionMoreButtonPopoverStyleWrapper>
           {moreButtons.map((v) => {
             const isShow = checkButtonPermissions(v.permissions, record);
+            const isDisabled = checkButtonDisabled(v.disabled, record);
+
             const handleClick = () => {
-              v.onClick?.(record);
-              setOpen(false);
+              if (!isDisabled) {
+                v.onClick?.(record);
+                setOpen(false);
+              }
             };
 
-            const renderItem = v.confirm ? (
-              <Popconfirm {...v.confirm?.(record)}>
-                <div className="more-button-item" onClick={handleClick}>
-                  <span className="more-button-item-icon">{v.icon}</span>
-                  <span className="more-button-item-text">{v.text}</span>
-                </div>
-              </Popconfirm>
-            ) : (
-              <div className="more-button-item" onClick={handleClick}>
+            const buttonChildren = (
+              <>
                 <span className="more-button-item-icon">{v.icon}</span>
                 <span className="more-button-item-text">{v.text}</span>
+              </>
+            );
+
+            const confirmButton = (
+              <div
+                className={classNames('more-button-item', {
+                  'more-button-item-disabled': isDisabled
+                })}
+              >
+                {buttonChildren}
+              </div>
+            );
+
+            const onConfirm = v.confirm ? v.confirm?.(record)?.onConfirm : null;
+
+            const renderItem = v.confirm ? (
+              <EmptyBox if={!isDisabled} defaultNode={confirmButton}>
+                <Popconfirm
+                  {...v.confirm?.(record)}
+                  onConfirm={() => {
+                    onConfirm?.();
+                    setOpen(false);
+                  }}
+                >
+                  {confirmButton}
+                </Popconfirm>
+              </EmptyBox>
+            ) : (
+              <div
+                className={classNames('more-button-item', {
+                  'more-button-item-disabled': isDisabled
+                })}
+                onClick={handleClick}
+              >
+                {buttonChildren}
               </div>
             );
 

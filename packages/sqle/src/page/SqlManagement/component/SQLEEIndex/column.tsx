@@ -25,7 +25,7 @@ import { sourceDictionary } from './hooks/useStaticStatus';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { AvatarCom, EditText } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
-import { Avatar } from 'antd5';
+import { Avatar } from 'antd';
 import StatusTag from './StatusTag';
 import {
   SQLAuditRecordIDValuesSplit,
@@ -42,6 +42,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     filter_source?: string;
     filter_instance_name?: string;
     filter_audit_level?: string;
+    filter_rule_name?: string;
     time?: string;
   },
   SqlManagementTableFilterParamType
@@ -51,6 +52,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       filter_source?: string;
       filter_instance_name?: string;
       filter_audit_level?: string;
+      filter_rule_name?: string;
       time?: string;
     }),
     ActiontechTableFilterMetaValue<SqlManagementTableFilterParamType>
@@ -91,6 +93,15 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
           'filter_last_audit_start_time_to'
         ],
         filterLabel: t('sqlManagement.table.filter.time'),
+        checked: false
+      }
+    ],
+    [
+      'filter_rule_name',
+      {
+        filterCustomType: 'select',
+        filterKey: 'filter_rule_name',
+        filterLabel: t('sqlManagement.table.filter.rule'),
         checked: false
       }
     ]
@@ -241,26 +252,32 @@ const SqlManagementColumn: (
     },
     {
       dataIndex: 'instance_name',
-      title: () => t('sqlManagement.table.column.instanceName')
+      title: () => t('sqlManagement.table.column.instanceName'),
+      render: (instance_name) => {
+        return instance_name || '-';
+      }
     },
     {
       dataIndex: 'first_appear_time',
       title: () => t('sqlManagement.table.column.firstOccurrence'),
       render: (first_appear_time) => {
         return formatTime(first_appear_time, '-');
-      }
+      },
+      sorter: true
     },
     {
       dataIndex: 'last_appear_time',
       title: () => t('sqlManagement.table.column.lastOccurrence'),
       render: (last_appear_time) => {
         return formatTime(last_appear_time, '-');
-      }
+      },
+      sorter: true
     },
     {
       dataIndex: 'appear_num',
       align: 'right',
-      title: () => t('sqlManagement.table.column.occurrenceCount')
+      title: () => t('sqlManagement.table.column.occurrenceCount'),
+      sorter: true
     },
     {
       dataIndex: 'assignees',

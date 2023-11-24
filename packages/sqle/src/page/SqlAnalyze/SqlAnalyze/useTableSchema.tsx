@@ -1,4 +1,4 @@
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import { cloneDeep } from 'lodash';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';

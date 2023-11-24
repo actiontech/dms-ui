@@ -1,4 +1,4 @@
-import { ConfigProvider } from 'antd5';
+import { ConfigProvider } from 'antd';
 import { FilterCustomProps, TableFilterContainerProps } from '../index.type';
 import useCustomFilter from '../hooks/useCustomFilter';
 import { FilterContainerStyleWrapper } from './style';
@@ -14,7 +14,12 @@ const FilterContainer = <
   style,
   className
 }: TableFilterContainerProps<T, F>) => {
-  const { generateSelectFilter, generateDataRangeFilter } = useCustomFilter();
+  const {
+    generateSelectFilter,
+    generateDataRangeFilter,
+    generateInputFilter,
+    generateSearchInputFilter
+  } = useCustomFilter();
 
   return (
     <ConfigProvider
@@ -49,6 +54,25 @@ const FilterContainer = <
               value,
               updateTableFilterInfo,
               filterCustomProps as Map<keyof T, FilterCustomProps<'date-range'>>
+            );
+          }
+
+          if (value.filterCustomType === 'input') {
+            return generateInputFilter(
+              value,
+              updateTableFilterInfo,
+              filterCustomProps as Map<keyof T, FilterCustomProps<'input'>>
+            );
+          }
+
+          if (value.filterCustomType === 'search-input') {
+            return generateSearchInputFilter(
+              value,
+              updateTableFilterInfo,
+              filterCustomProps as Map<
+                keyof T,
+                FilterCustomProps<'search-input'>
+              >
             );
           }
 

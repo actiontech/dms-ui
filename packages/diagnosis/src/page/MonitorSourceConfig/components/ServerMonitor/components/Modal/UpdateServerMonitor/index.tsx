@@ -1,19 +1,18 @@
 import { useBoolean } from 'ahooks';
 import ServerMonitorForm from '../ServerMonitorForm';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
-import { Form, Space, message } from 'antd5';
+import { Form, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../store';
 import { ModalName } from '../../../../../../../data/ModalName';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { updateMonitorSourceConfigModalStatus } from '../../../../../../../store/monitorSourceConfig';
 import { useEffect } from 'react';
-import server from '@actiontech/shared/lib/api/diagnosis/service/server';
+import server from '../../../../../../../api/server';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
-import { IV1UpdateServerParams } from '@actiontech/shared/lib/api/diagnosis/service/server/index.d';
+import { IV1UpdateServerParams } from '../../../../../../../api/server/index.d';
 import { IServerMonitorFormField } from '../ServerMonitorForm/index.type';
 
 const UpdateServerMonitor = () => {
@@ -49,8 +48,6 @@ const UpdateServerMonitor = () => {
     }
   }, [visible, selectData, form]);
 
-  const { projectID } = useCurrentProject();
-
   const submit = async () => {
     try {
       const values = await form.validateFields();
@@ -62,8 +59,7 @@ const UpdateServerMonitor = () => {
           port: Number(values.port),
           user: values.user
         },
-        id: Number(selectData?.id),
-        project_uid: projectID
+        id: Number(selectData?.id)
       };
       startSubmit();
       server

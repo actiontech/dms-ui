@@ -14,7 +14,7 @@ import {
   IconLeftArrow,
   IconSuccessResult
 } from '@actiontech/shared/lib/Icon/common';
-import { Space, Spin } from 'antd5';
+import { Space, Spin } from 'antd';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import classNames from 'classnames';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';

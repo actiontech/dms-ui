@@ -15,13 +15,13 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import useUsername from '../../../hooks/useUsername';
-import { Space, message } from 'antd5';
+import { Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import useInstance from '../../../hooks/useInstance';
 import OrderStatusFilter from './components/OrderStatusFilter';
 import { ResponseCode } from '../../../data/common';
-import { TableRowSelection } from 'antd5/es/table/interface';
+import { TableRowSelection } from 'antd/es/table/interface';
 import { OrderListStyleWrapper } from './style';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { IconAdd, IconDownload } from '@actiontech/shared/lib/Icon';
@@ -229,7 +229,7 @@ const OrderList: React.FC = () => {
   }, [selectedRowKeys, orderList?.list, projectName, refresh, messageApi, t]);
 
   useEffect(() => {
-    updateUsernameList();
+    updateUsernameList({ filter_project: projectName });
     updateInstanceList({
       project_name: projectName
     });

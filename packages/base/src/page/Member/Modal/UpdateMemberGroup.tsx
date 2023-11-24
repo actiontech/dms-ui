@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { message, Space, Form } from 'antd5';
+import { message, Space, Form } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,6 +22,8 @@ const UpdateMemberGroup: React.FC = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
+
+  const [messageApi, contextHolder] = message.useMessage();
 
   const { projectID } = useCurrentProject();
 
@@ -51,7 +53,7 @@ const UpdateMemberGroup: React.FC = () => {
       .UpdateMemberGroup(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsMember.updateMemberGroup.successTips', {
               name: values?.name
             })
@@ -106,6 +108,7 @@ const UpdateMemberGroup: React.FC = () => {
         </Space>
       }
     >
+      {contextHolder}
       <MemberGroupForm form={form} isUpdate={true} projectID={projectID} />
     </MemberDrawerStyledWrapper>
   );

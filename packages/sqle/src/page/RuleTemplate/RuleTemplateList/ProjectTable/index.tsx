@@ -1,11 +1,14 @@
 import { useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { message } from 'antd5';
+import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
@@ -31,6 +34,7 @@ import { ModalName } from '../../../../data/ModalName';
 
 const ProjectTable = (props: TemplateTableProps) => {
   const { hidden, actionPermission } = props;
+  const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -185,8 +189,8 @@ const ProjectTable = (props: TemplateTableProps) => {
     return RuleTemplateTableActions(onAction, projectArchive);
   }, [onAction, actionPermission, projectArchive]);
   const columns = useMemo(
-    () => RuleTemplateTableColumn(projectID),
-    [projectID]
+    () => RuleTemplateTableColumn(projectID, getLogoUrlByDbType),
+    [getLogoUrlByDbType, projectID]
   );
 
   useEffect(() => {

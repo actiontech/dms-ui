@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useRequest } from 'ahooks';
-import { Spin, message, Space, Popconfirm } from 'antd5';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { Spin, message, Space, Popconfirm } from 'antd';
+import { BasicButton } from '@actiontech/shared';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useCustomRuleFilterForm from './useCustomRuleFilterForm';
@@ -79,18 +79,25 @@ const CustomRuleList: React.FC = () => {
         disabled={deleteLoading}
         placement="topLeft"
         title={t('customRule.deleteConfirm')}
-        onConfirm={deleteRule.bind(null, item as ICustomRuleResV1)}
+        onOpenChange={(open: boolean, e) => {
+          e?.stopPropagation();
+        }}
+        onConfirm={(e) => {
+          e?.stopPropagation();
+          deleteRule(item);
+        }}
         okText={t('common.ok')}
       >
-        <BasicToolTips title={t('customRule.deleteRule')}>
-          <BasicButton
-            shape="circle"
-            danger
-            className="action-circle-btn disabled-rule-item"
-            key={`${item.rule_id}-disable-item`}
-            icon={<IconDisabledRule className="icon-disabled" />}
-          />
-        </BasicToolTips>
+        <BasicButton
+          shape="circle"
+          danger
+          className="action-circle-btn disabled-rule-item custom-rule-item-operator"
+          key={`${item.rule_id}-remove-item`}
+          icon={<IconDisabledRule className="icon-disabled" />}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        />
       </Popconfirm>
     );
   };
@@ -120,6 +127,7 @@ const CustomRuleList: React.FC = () => {
         </TableToolbar>
 
         <RuleList
+          enableCheckDetail
           isAction={true}
           actionType={RuleStatusEnum.enabled}
           renderDisableNode={(rule) =>

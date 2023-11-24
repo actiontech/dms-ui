@@ -24,12 +24,14 @@ import {
   BasicEmptyTheme,
   BasicChartTheme,
   BasicInfoListTheme,
-  BasicTagTheme
+  BasicTagTheme,
+  NavTheme
 } from '../theme/theme.type';
 
 export interface SharedTheme {
   uiToken: UITokenTheme;
   basic: BasicTheme;
+  nav: NavTheme;
   components: {
     basicButton: BasicButtonTheme;
     basicInput: BasicInputTheme;
@@ -58,4 +60,27 @@ export interface SharedTheme {
     basicInfoList: BasicInfoListTheme;
     basicTag: BasicTagTheme;
   };
+}
+
+interface ThemeCustom {
+  sharedTheme: SharedTheme;
+}
+declare module '@mui/system' {
+  interface Theme extends ThemeCustom {
+    noUse: string;
+  }
+  // 允许配置文件使用 `createTheme`
+  interface ThemeOptions extends Partial<ThemeCustom> {
+    noUse?: string;
+  }
+}
+
+declare module '@mui/material/styles' {
+  interface Theme extends ThemeCustom {
+    noUse: string;
+  }
+  // 允许配置文件使用 `createTheme`
+  interface ThemeOptions extends Partial<ThemeCustom> {
+    noUse?: string;
+  }
 }

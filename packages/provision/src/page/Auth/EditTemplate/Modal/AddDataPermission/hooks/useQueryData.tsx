@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useRequest } from 'ahooks';
-import { Select, message as messageApi } from 'antd5';
+import { Select, message as messageApi } from 'antd';
 import qs from 'query-string';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import {

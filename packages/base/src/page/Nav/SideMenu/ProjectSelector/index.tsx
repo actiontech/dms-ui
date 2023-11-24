@@ -1,35 +1,103 @@
-import { SelectProps } from 'antd5';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { InputRef, SelectProps } from 'antd';
+import { BasicButton, EmptyBox } from '@actiontech/shared';
+import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import { IconRightArrowSelectSuffix } from '@actiontech/shared/lib/Icon';
 import {
   ProjectSelectorPopupMenuStyleWrapper,
   ProjectSelectorStyleWrapper
 } from './style';
-import { BasicButton } from '@actiontech/shared';
-import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
+import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
+import MockSelectItemOptions from './MockSelectItemOptions';
+import { ProjectSelectorProps } from './index.type';
 
-const ProjectSelector: React.FC<CustomSelectProps> = ({
+const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
+  prefix,
   onChange,
   options,
+  bindProjects,
   ...props
 }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const searchInputRef = useRef<InputRef>(null);
+  const [searchValue, setSearchValue] = useState('');
+  const [lastActiveMenuItem, setLastActiveMenuItem] = useState<
+    Element | undefined
+  >();
 
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
+    const filterBindProjects = (bindProjects ?? []).filter((v) =>
+      v.project_name
+        ?.toLocaleLowerCase()
+        .includes(searchValue.toLocaleLowerCase())
+    );
+
     return (
       <>
         <ProjectSelectorPopupMenuStyleWrapper>
-          {menu}
+          <CustomSelectSearchInput
+            value={searchValue}
+            onChange={setSearchValue}
+            ref={searchInputRef}
+          />
+          <div className="select-options-group-label">
+            {t('dmsMenu.projectSelector.recentlyOpenedProjects')}
+          </div>
+          <CustomSelectPopupMenuStyleWrapper
+            onMouseEnter={() => {
+              // 当移入menu范围时，如果原本有hover active的选项，还原active类
+              if (lastActiveMenuItem) {
+                lastActiveMenuItem?.classList.add(
+                  `ant-select-item-option-active`
+                );
+              }
+            }}
+            onMouseLeave={() => {
+              // 当移出menu范围时，移除所有‘ant-select-item-option-active’，避免出现同时有2个hover类的option
+              const activeSelectItem = document.querySelectorAll(
+                `.ant-select-item.ant-select-item-option.ant-select-item-option-active`
+              )[0];
+              setLastActiveMenuItem(activeSelectItem);
+              activeSelectItem?.classList.remove(
+                `ant-select-item-option-active`
+              );
+            }}
+          >
+            {menu}
+          </CustomSelectPopupMenuStyleWrapper>
+
+          <EmptyBox if={!!bindProjects}>
+            <div className="select-options-group-label">
+              {t('dmsMenu.projectSelector.belongProjects')}
+            </div>
+            {filterBindProjects.length === 0 ? (
+              <BasicEmpty emptyCont={t('dmsMenu.projectSelector.emptyDesc')} />
+            ) : (
+              <MockSelectItemOptions
+                closeSelectDropdown={() => {
+                  setOpen(false);
+                  setSearchValue('');
+                }}
+                list={filterBindProjects?.slice(0, 3) ?? []}
+              />
+            )}
+          </EmptyBox>
 
           <div className="show-more-project-wrapper">
-            <Link to="/project" onClick={() => setOpen(false)}>
+            <Link
+              to="/project"
+              onClick={() => {
+                setOpen(false);
+                setSearchValue('');
+              }}
+            >
               <BasicButton type="primary">
-                {t('dmsMenu.projectSelector.showMoreProject')}
+                {t('dmsMenu.projectSelector.showMoreProjects')}
               </BasicButton>
             </Link>
           </div>
@@ -41,7 +109,7 @@ const ProjectSelector: React.FC<CustomSelectProps> = ({
   return (
     <ProjectSelectorStyleWrapper
       open={open}
-      prefix={<IconProjectFlag />}
+      prefix={prefix}
       size="large"
       className="custom-project-selector"
       placement="bottomLeft"
@@ -60,16 +128,21 @@ const ProjectSelector: React.FC<CustomSelectProps> = ({
       }}
       allowClear={false}
       dropdownRender={renderDropdown}
-      onDropdownVisibleChange={(visible) => setOpen(visible)}
+      onDropdownVisibleChange={(visible) => {
+        setOpen(visible);
+
+        if (!visible) {
+          setSearchValue('');
+        }
+      }}
       options={options}
       suffixIcon={<IconRightArrowSelectSuffix />}
-      dropdownSlot={
-        <div className="select-options-group-label">
-          {t('dmsMenu.projectSelector.recentlyOpenedProjects')}
-        </div>
-      }
       popupMatchSelectWidth={240}
       bordered={false}
+      notFoundContent={
+        <BasicEmpty emptyCont={t('dmsMenu.projectSelector.emptyDesc')} />
+      }
+      searchInputRef={searchInputRef}
       {...props}
     />
   );

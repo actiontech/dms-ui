@@ -1,11 +1,9 @@
 import React from 'react';
 import { useBoolean } from 'ahooks';
-import { Select } from 'antd5';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { Select } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 const useDbService = () => {
   const [dbServiceList, setDbServiceList] = React.useState<IListDBService[]>(
@@ -13,32 +11,10 @@ const useDbService = () => {
   );
 
   const [loading, { setTrue, setFalse }] = useBoolean();
-  const { getLogoUrlByDbType } = useDbServiceDriver();
 
-  const updateDbServiceList = React.useCallback(
-    (project_uid: string) => {
-      setTrue();
-      dms
-        .ListDBServices({
-          page_size: 9999,
-          project_uid
-        })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            setDbServiceList(res.data?.data ?? []);
-          } else {
-            setDbServiceList([]);
-          }
-        })
-        .catch(() => {
-          setDbServiceList([]);
-        })
-        .finally(() => {
-          setFalse();
-        });
-    },
-    [setFalse, setTrue]
-  );
+  const updateDbServiceList = React.useCallback(() => {
+    // todo: 需要后端提供接口
+  }, [setFalse, setTrue]);
 
   const generateDbServiceSelectOption = React.useCallback(() => {
     const dbTypeList: string[] = Array.from(
@@ -47,12 +23,7 @@ const useDbService = () => {
     return dbTypeList.map((type) => {
       return (
         <Select.OptGroup
-          label={
-            <DatabaseTypeLogo
-              dbType={type ?? ''}
-              logoUrl={getLogoUrlByDbType(type ?? '')}
-            />
-          }
+          label={<DatabaseTypeLogo dbType={type ?? ''} logoUrl={type ?? ''} />}
           key={type}
         >
           {dbServiceList
@@ -77,7 +48,7 @@ const useDbService = () => {
         </Select.OptGroup>
       );
     });
-  }, [dbServiceList, getLogoUrlByDbType]);
+  }, [dbServiceList]);
 
   return {
     dbServiceList,

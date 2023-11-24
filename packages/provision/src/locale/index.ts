@@ -1,10 +1,10 @@
 import { StorageKey, SupportLanguage } from '@actiontech/shared/lib/enum';
 import i18n, { TOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LocalStorageWrapper from '~/utils/LocalStorageWrapper';
 import zhCN from './zh-CN';
 import commonZhCN from '@actiontech/shared/lib/locale/zh-CN';
 import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
+import { LocalStorageWrapper } from '@actiontech/shared';
 
 const allZhCN = {
   translation: { ...commonZhCN.translation, ...zhCN.translation }

@@ -1,12 +1,11 @@
 import { styled } from '@mui/material/styles';
-import { Button } from 'antd5';
-import { ANTD_PREFIX_STR } from '../../data/common';
+import { Button } from 'antd';
 
 export const BasicButtonStyleWrapper = styled(Button)`
   /* size */
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn,
-    &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-lg,
-    &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-sm {
+  &.basic-button-wrapper.ant-btn,
+  &.basic-button-wrapper.ant-btn-lg,
+  &.basic-button-wrapper.ant-btn-sm {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -17,21 +16,21 @@ export const BasicButtonStyleWrapper = styled(Button)`
       theme.sharedTheme.basic.borderRadius4 + 'px'};
   }
 
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-lg {
+  &.basic-button-wrapper.ant-btn-lg {
     padding: 0 16px;
   }
 
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-sm {
+  &.basic-button-wrapper.ant-btn-sm {
     padding: 0 8px;
   }
 
-  &.basic-button-wrapper:not(.${ANTD_PREFIX_STR}-btn-icon-only)
-    > .${ANTD_PREFIX_STR}-btn-icon:not(:last-child) {
+  &.basic-button-wrapper:not(.ant-btn-icon-only)
+    > .ant-btn-icon:not(:last-child) {
     margin-inline-end: 5px;
   }
 
   /* default */
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn {
+  &.basic-button-wrapper.ant-btn {
     padding: 0 12px;
     background: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.default.default.background};
@@ -59,7 +58,7 @@ export const BasicButtonStyleWrapper = styled(Button)`
   }
 
   /* primary */
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-primary {
+  &.basic-button-wrapper.ant-btn-primary {
     color: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.primary.default.color};
     background: ${({ theme }) =>
@@ -86,9 +85,7 @@ export const BasicButtonStyleWrapper = styled(Button)`
   }
 
   /* dashed */
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-dashed:not(:disabled):not(
-      .${ANTD_PREFIX_STR}-btn-disabled
-    ) {
+  &.basic-button-wrapper.ant-btn-dashed:not(:disabled):not(.ant-btn-disabled) {
     background: none;
     border: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.dashed.default.border};
@@ -108,14 +105,14 @@ export const BasicButtonStyleWrapper = styled(Button)`
     }
   }
 
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-dashed:disabled {
+  &.basic-button-wrapper.ant-btn-dashed:disabled {
     background: none;
     border: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.dashed.default.border};
   }
 
   /* dangerous */
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-dangerous {
+  &.basic-button-wrapper.ant-btn-dangerous {
     color: ${({ theme }) =>
       theme.sharedTheme.components.basicButton.dangerous.default.color};
 
@@ -126,7 +123,7 @@ export const BasicButtonStyleWrapper = styled(Button)`
   }
 
   /* btn-icon-no-border */
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-default.btn-icon-no-border {
+  &.basic-button-wrapper.ant-btn-default.btn-icon-no-border {
     background: none;
     box-shadow: none;
 
@@ -152,17 +149,17 @@ export const BasicButtonStyleWrapper = styled(Button)`
   }
 
   /* switch button */
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-default.switch-btn-default {
+  &.basic-button-wrapper.ant-btn-default.switch-btn-default {
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
     background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
   }
 
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-default.switch-btn-active {
+  &.basic-button-wrapper.ant-btn-default.switch-btn-active {
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
     background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryBgActive};
   }
 
-  &.basic-button-wrapper.${ANTD_PREFIX_STR}-btn-default.has-icon-primary {
+  &.basic-button-wrapper.ant-btn-default.has-icon-primary {
     .custom-icon {
       color: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorPrimary} !important;

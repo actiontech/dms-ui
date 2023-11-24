@@ -1,10 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import {
-  ProjectDetailRouterItemKeyLiteral,
-  RouterConfigItem
-} from '../types/router.type';
-import {
   PieChartOutlined,
   DesktopOutlined,
   AuditOutlined,
@@ -16,6 +12,7 @@ import {
 } from '@ant-design/icons';
 import { SystemRole } from '../data/common';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
+import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: "Home" */ '../page/Home')
@@ -29,7 +26,6 @@ const CreateOrder = React.lazy(
   () => import(/* webpackChunkName: "CreateOrder" */ '../page/Order/Create')
 );
 
-//重构中
 const OrderDetail = React.lazy(
   () => import(/* webpackChunkName: "OrderDetail" */ '../page/Order/Detail')
 );
@@ -80,25 +76,6 @@ const AuditPlanReport = React.lazy(
   () =>
     import(
       /* webpackChunkName: "AuditPlanReport" */ '../page/AuditPlan/PlanDetail/DetailReport'
-    )
-);
-
-const AuditPlanSqlAnalyze = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "AuditPlanSqlAnalyze" */ '../page/SqlAnalyze/AuditPlan'
-    )
-);
-
-const OrderSqlAnalyze = React.lazy(
-  () =>
-    import(/* webpackChunkName: "OrderSqlAnalyze" */ '../page/SqlAnalyze/Order')
-);
-
-const ReportStatistics = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ReportStatistics" */ '../page/ReportStatistics'
     )
 );
 
@@ -162,275 +139,317 @@ const WorkflowTemplateDetail = React.lazy(
       /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
 );
-
 const SQLManagement = React.lazy(
   () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
 
-export const projectDetailRouterConfig: RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[] =
-  [
-    {
-      label: 'menu.projectOverview',
-      key: 'projectOverview',
-      icon: <ProjectOutlined />,
-      path: `${PROJECT_ROUTER_PARAM}/overview`,
-      element: <ProjectOverview />
-    },
-    {
-      label: 'menu.order',
-      key: 'order',
-      icon: <ConsoleSqlOutlined />,
-      hideChildrenInSliderMenu: true,
-      path: `${PROJECT_ROUTER_PARAM}/order`,
-      children: [
-        {
-          index: true,
-          element: <OrderList />,
-          key: 'orderList'
-        },
-        //重构中
-        {
-          path: 'create',
-          element: <CreateOrder />,
-          icon: <DesktopOutlined />,
-          key: 'orderCreate'
-        },
-        {
-          path: ':orderId',
-          element: <OrderDetail />,
-          key: 'orderDetail'
-        },
-        /* IFTRUE_isEE */
-        {
-          path: ':taskId/:sqlNum/analyze',
-          label: 'menu.orderSqlAnalyze',
-          hideInSliderMenu: true,
-          element: <OrderSqlAnalyze />,
-          key: 'orderAnalyze'
-        }
-        /* FITRUE_isEE */
-      ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
-    },
-    {
-      path: `${PROJECT_ROUTER_PARAM}/dashboard`,
-      label: 'menu.dashboard',
-      element: <Home />,
-      icon: <PieChartOutlined />,
-      key: 'dashboard'
-    },
-    {
-      key: 'plane',
-      label: 'menu.auditPlane',
-      icon: <CiCircleOutlined />,
-      element: <AuditPlan />,
-      children: [
-        {
-          key: 'auditPlan',
-          label: 'menu.auditPlaneList',
-          path: `${PROJECT_ROUTER_PARAM}/auditPlan`,
-          children: [
-            {
-              index: true,
-              element: <AuditPlanList />,
-              key: 'auditPlanList'
-            },
-            {
-              path: 'create',
-              label: 'menu.rule',
-              element: <CreateAuditPlan />,
-              key: 'auditPlanCreate'
-            },
-            {
-              path: 'update/:auditPlanName',
-              label: 'menu.rule',
-              element: <UpdateAuditPlan />,
-              key: 'auditPlanUpdate'
-            },
-            {
-              path: 'detail/:auditPlanName',
-              key: 'auditPlanDetail',
-              label: 'menu.auditPlane',
-              element: <AuditPlanDetail />
-            },
-            {
-              path: 'detail/:auditPlanName/report/:reportId',
-              key: 'auditPlanDetailReport',
-              label: 'menu.auditPlane',
-              element: <AuditPlanReport />
-            },
-            /* IFTRUE_isEE */
-            {
-              path: ':reportId/:sqlNum/:auditPlanName/analyze',
-              key: 'auditPlanDetail',
-              label: 'menu.auditPlanSqlAnalyze',
-              element: <AuditPlanSqlAnalyze />,
-              hideInSliderMenu: true
-            }
-            /* FITRUE_isEE */
-          ],
-          groups: [
-            {
-              title: '',
-              values: [
-                {
-                  path: 'auditPlan',
-                  key: 'auditPlan',
-                  label: 'menu.auditPlane',
-                  element: <AuditPlan />
-                }
-              ]
-            }
-          ]
-        }
-      ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
-    },
-    {
-      path: `${PROJECT_ROUTER_PARAM}/rule/template`,
-      key: 'ruleTemplate',
-      label: 'menu.ruleTemplate',
-      icon: <AuditOutlined />,
-      element: <RuleTemplate />,
-      hideChildrenInSliderMenu: true,
-      children: [
-        {
-          index: true,
-          element: <RuleTemplateList />,
-          key: 'ruleTemplate'
-        },
-        {
-          path: 'list',
-          element: <RuleTemplateList />,
-          key: 'ruleTemplate'
-        },
-        {
-          path: 'create',
-          element: <CreateRuleTemplate />,
-          key: 'ruleTemplateCreate'
-        },
-        {
-          path: 'import',
-          element: <ImportRuleTemplate />,
-          key: 'ruleTemplateImport'
-        },
-        {
-          path: 'detail/:templateName/:dbType',
-          element: <RuleTemplateDetail />,
-          key: 'ruleTemplateDetail'
-        },
-        {
-          path: 'update/:templateName',
-          element: <UpdateRuleTemplate />,
-          key: 'ruleTemplateImport'
-        }
-      ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
-    },
-    {
-      path: `${PROJECT_ROUTER_PARAM}/progress`,
-      key: 'progress',
-      label: 'menu.progressManage',
-      icon: <NodeIndexOutlined />,
-      element: <WorkflowTemplate />,
-      hideChildrenInSliderMenu: true,
-      children: [
-        {
-          index: true,
-          element: <WorkflowTemplateDetail />,
-          key: 'progressDetail'
-        },
-        {
-          path: 'update/:workflowName',
-          element: <UpdateWorkflowTemplate />,
-          key: 'progressUpdate'
-        }
-      ] as RouterConfigItem<ProjectDetailRouterItemKeyLiteral>[]
-    },
-    {
-      path: `${PROJECT_ROUTER_PARAM}/whitelist`,
-      key: 'Whitelist',
-      label: 'menu.whitelist',
-      element: <Whitelist />,
-      icon: <ProfileOutlined />
-    },
-    /* IFTRUE_isEE */
-    {
-      path: `${PROJECT_ROUTER_PARAM}/operationRecord`,
-      label: 'menu.operationRecord',
-      key: 'operationRecord',
-      element: <OperationRecord />,
-      role: [SystemRole.admin]
-    },
-    /* FITRUE_isEE */
-    {
-      path: `${PROJECT_ROUTER_PARAM}/sqlManagement`,
-      label: 'menu.sqlManagement',
-      key: 'sqlManagement',
-      element: <SQLManagement />
-    },
-    {
-      path: '*',
-      key: 'projectRedirect',
-      element: <Navigate to="/" />,
-      hideInSliderMenu: true,
-      label: 'menu.projectOverview'
-    }
-  ];
+const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
 
-// sqle 的全局页面, 迁移至 base 下 router/sqle.tsx
-// export const globalRouterConfig: RouterConfigItem<
-//   GlobalRouterItemKeyLiteral | ProjectDetailRouterItemKeyLiteral
-// >[] = [
-//   {
-//     path: 'reportStatistics',
-//     label: 'menu.reportStatistics',
-//     element: <ReportStatistics />,
-//     icon: <BarChartOutlined />,
-//     key: 'reportStatistics',
-//     role: [SystemRole.admin]
-//   },
-//   {
-//     key: 'ruleManager',
-//     path: 'sqle/ruleManager',
-//     element: <RuleManager />,
-//     children: [
-//       {
-//         index: true,
-//         element: <RuleManager />
-//       },
-//       {
-//         path: 'globalCreate',
-//         key: 'globalRuleTemplateCreate',
-//         element: <GlobalCreateRuleTemplate />
-//       },
-//       {
-//         path: 'globalImport',
-//         key: 'globalRuleTemplateImport',
-//         element: <GlobalImportRuleTemplate />
-//       },
-//       {
-//         path: 'globalUpdate/:templateName',
-//         key: 'globalRuleTemplateUpdate',
-//         element: <GlobalUpdateRuleTemplate />
-//       },
-//       /* IFTRUE_isEE */
-//       {
-//         path: 'customCreate',
-//         key: 'createCustomRule',
-//         element: <CreateCustomRule />
-//       },
-//       {
-//         path: 'customUpdate/:ruleID',
-//         key: 'updateCustomRule',
-//         element: <UpdateCustomRule />
-//       }
-//       /* FITRUE_isEE */
-//     ] as RouterConfigItem<GlobalRouterItemKeyLiteral>[]
-//   },
-//   /* FITRUE_isEE */
-//   {
-//     path: '*',
-//     key: 'redirect',
-//     element: <Navigate to="/" />,
-//     hideInSliderMenu: true,
-//     label: 'menu.dashboard'
-//   }
-// ];
+const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
+
+const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
+
+/* IFTRUE_isEE */
+const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
+const OrderSqlAnalyze = React.lazy(() => import('../page/SqlAnalyze/Order'));
+const AuditPlanSqlAnalyze = React.lazy(
+  () => import('../page/SqlAnalyze/AuditPlan')
+);
+/* FITRUE_isEE */
+
+//sqle global page
+const Rule = React.lazy(() => import('../page/Rule'));
+const RuleManager = React.lazy(() => import('../page/RuleManager'));
+const GlobalRuleTemplateDetail = React.lazy(
+  () => import('../page/GlobalRuleTemplate/RuleTemplateDetail')
+);
+const GlobalImportRuleTemplate = React.lazy(
+  () => import('../page/GlobalRuleTemplate/ImportRuleTemplate')
+);
+const GlobalUpdateRuleTemplate = React.lazy(
+  () => import('../page/GlobalRuleTemplate/UpdateRuleTemplate')
+);
+const GlobalCreateRuleTemplate = React.lazy(
+  () => import('../page/GlobalRuleTemplate/CreateRuleTemplate')
+);
+const CreateCustomRule = React.lazy(
+  () => import('../page/CustomRule/CreateCustomRule')
+);
+const UpdateCustomRule = React.lazy(
+  () => import('../page/CustomRule/UpdateCustomRule')
+);
+const ReportStatistics = React.lazy(() => import('../page/ReportStatistics'));
+
+export const projectDetailRouterConfig: RouterConfigItem[] = [
+  {
+    label: 'menu.projectOverview',
+    key: 'projectOverview',
+    icon: <ProjectOutlined />,
+    path: `${PROJECT_ROUTER_PARAM}/overview`,
+    element: <ProjectOverview />
+  },
+  {
+    label: 'menu.order',
+    key: 'order',
+    icon: <ConsoleSqlOutlined />,
+    path: `${PROJECT_ROUTER_PARAM}/order`,
+    children: [
+      {
+        index: true,
+        element: <OrderList />,
+        key: 'orderList'
+      },
+      {
+        path: 'create',
+        element: <CreateOrder />,
+        icon: <DesktopOutlined />,
+        key: 'orderCreate'
+      },
+      {
+        path: ':orderId',
+        element: <OrderDetail />,
+        key: 'orderDetail'
+      },
+      /* IFTRUE_isEE */
+      {
+        path: ':taskId/:sqlNum/analyze',
+        label: 'menu.orderSqlAnalyze',
+        element: <OrderSqlAnalyze />,
+        key: 'orderAnalyze'
+      }
+      /* FITRUE_isEE */
+    ] as RouterConfigItem[]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sqlAudit`,
+    key: 'sqlAudit',
+    label: 'menu.sqlAudit',
+    icon: <NodeIndexOutlined />,
+    element: <WorkflowTemplate />,
+    children: [
+      {
+        index: true,
+        element: <SqlAudit />,
+        key: 'sqlAuditList'
+      },
+      {
+        path: 'create',
+        element: <SqlAuditCreate />,
+        key: 'sqlAuditCreate'
+      },
+      {
+        path: 'detail/:sql_audit_record_id',
+        element: <SqlAuditDetail />,
+        key: 'sqlAuditDetail'
+      }
+    ] as RouterConfigItem[]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/dashboard`,
+    label: 'menu.dashboard',
+    element: <Home />,
+    icon: <PieChartOutlined />,
+    key: 'dashboard'
+  },
+  {
+    key: 'plane',
+    label: 'menu.auditPlane',
+    icon: <CiCircleOutlined />,
+    element: <AuditPlan />,
+    children: [
+      {
+        key: 'auditPlan',
+        label: 'menu.auditPlaneList',
+        path: `${PROJECT_ROUTER_PARAM}/auditPlan`,
+        children: [
+          {
+            index: true,
+            element: <AuditPlanList />,
+            key: 'auditPlanList'
+          },
+          {
+            path: 'create',
+            label: 'menu.rule',
+            element: <CreateAuditPlan />,
+            key: 'auditPlanCreate'
+          },
+          {
+            path: 'update/:auditPlanName',
+            label: 'menu.rule',
+            element: <UpdateAuditPlan />,
+            key: 'auditPlanUpdate'
+          },
+          {
+            path: 'detail/:auditPlanName',
+            key: 'auditPlanDetail',
+            label: 'menu.auditPlane',
+            element: <AuditPlanDetail />
+          },
+          {
+            path: 'detail/:auditPlanName/report/:reportId',
+            key: 'auditPlanDetailReport',
+            label: 'menu.auditPlane',
+            element: <AuditPlanReport />
+          },
+          /* IFTRUE_isEE */
+          {
+            path: ':reportId/:sqlNum/:auditPlanName/analyze',
+            key: 'auditPlanDetail',
+            label: 'menu.auditPlanSqlAnalyze',
+            element: <AuditPlanSqlAnalyze />,
+            hideInSliderMenu: true
+          }
+          /* FITRUE_isEE */
+        ]
+      }
+    ] as RouterConfigItem[]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/rule/template`,
+    key: 'ruleTemplate',
+    label: 'menu.ruleTemplate',
+    icon: <AuditOutlined />,
+    element: <RuleTemplate />,
+    children: [
+      {
+        index: true,
+        element: <RuleTemplateList />,
+        key: 'ruleTemplate'
+      },
+      {
+        path: 'list',
+        element: <RuleTemplateList />,
+        key: 'ruleTemplate'
+      },
+      {
+        path: 'create',
+        element: <CreateRuleTemplate />,
+        key: 'ruleTemplateCreate'
+      },
+      {
+        path: 'import',
+        element: <ImportRuleTemplate />,
+        key: 'ruleTemplateImport'
+      },
+      {
+        path: 'detail/:templateName/:dbType',
+        element: <RuleTemplateDetail />,
+        key: 'ruleTemplateDetail'
+      },
+      {
+        path: 'update/:templateName',
+        element: <UpdateRuleTemplate />,
+        key: 'ruleTemplateImport'
+      }
+    ] as RouterConfigItem[]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/progress`,
+    key: 'progress',
+    label: 'menu.progressManage',
+    icon: <NodeIndexOutlined />,
+    element: <WorkflowTemplate />,
+    children: [
+      {
+        index: true,
+        element: <WorkflowTemplateDetail />,
+        key: 'progressDetail'
+      },
+      {
+        path: 'update/:workflowName',
+        element: <UpdateWorkflowTemplate />,
+        key: 'progressUpdate'
+      }
+    ] as RouterConfigItem[]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/whitelist`,
+    key: 'Whitelist',
+    label: 'menu.whitelist',
+    element: <Whitelist />,
+    icon: <ProfileOutlined />
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/operationRecord`,
+    label: 'menu.operationRecord',
+    key: 'operationRecord',
+    element: <OperationRecord />,
+    role: [SystemRole.admin]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sqlManagement`,
+    label: 'menu.sqlManagement',
+    key: 'sqlManagement',
+    element: <SQLManagement />
+  },
+  {
+    path: '*',
+    key: 'projectRedirect',
+    element: <Navigate to="/" />,
+    label: 'menu.projectOverview'
+  }
+];
+
+export const globalRouterConfig: RouterConfigItem[] = [
+  {
+    path: 'sqle/reportStatistics',
+    label: 'menu.reportStatistics',
+    element: <ReportStatistics />,
+    key: 'reportStatistics',
+    role: [SystemRole.admin]
+  },
+  {
+    path: 'sqle/rule',
+    label: 'menu.rule',
+    element: <Rule />,
+    key: 'rule'
+  },
+  {
+    key: 'ruleManager',
+    path: 'sqle/ruleManager',
+    role: [SystemRole.admin],
+    children: [
+      {
+        index: true,
+        element: <RuleManager />
+      },
+      {
+        path: 'globalCreate',
+        key: 'globalRuleTemplateCreate',
+        element: <GlobalCreateRuleTemplate />
+      },
+      {
+        path: 'globalImport',
+        key: 'globalRuleTemplateImport',
+        element: <GlobalImportRuleTemplate />
+      },
+      {
+        path: 'globalUpdate/:templateName',
+        key: 'globalRuleTemplateUpdate',
+        element: <GlobalUpdateRuleTemplate />
+      },
+      {
+        path: 'globalDetail/:templateName/:dbType',
+        key: 'globalRuleTemplateDetail',
+        element: <GlobalRuleTemplateDetail />
+      },
+      {
+        path: 'customCreate',
+        key: 'createCustomRule',
+        element: <CreateCustomRule />
+      },
+      {
+        path: 'customUpdate/:ruleID',
+        key: 'updateCustomRule',
+        element: <UpdateCustomRule />
+      }
+    ] as RouterConfigItem[]
+  },
+  /* IFTRUE_isEE */
+  {
+    path: 'sqle/rule/knowledge/:ruleName/:dbType',
+    key: 'ruleKnowledge',
+    element: <RuleKnowledge />
+  }
+  /* FITRUE_isEE */
+];

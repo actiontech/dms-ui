@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { message, Form, Space } from 'antd5';
+import { message, Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -22,6 +22,8 @@ const AddMember: React.FC = () => {
   const dispatch = useDispatch();
 
   const [form] = Form.useForm<IMemberFormFields>();
+
+  const [messageApi, contextHolder] = message.useMessage();
 
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
@@ -47,7 +49,7 @@ const AddMember: React.FC = () => {
       .AddMember(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsMember.addMember.successTips', {
               name: ''
             })
@@ -89,6 +91,7 @@ const AddMember: React.FC = () => {
         </Space>
       }
     >
+      {contextHolder}
       <MemberForm form={form} projectID={projectID} />
     </MemberDrawerStyledWrapper>
   );

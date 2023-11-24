@@ -1,4 +1,4 @@
-import { Form, message, Typography, Space, Checkbox } from 'antd5';
+import { Form, message, Typography, Space, Checkbox } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -10,6 +10,18 @@ import { BasicInput, BasicButton } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
+import {
+  DMS_REDIRECT_KEY_PARAMS_NAME,
+  OPEN_CLOUD_BEAVER_URL_PARAM_NAME
+} from '@actiontech/shared/lib/data/common';
+import { useLocation, useNavigate } from 'react-router-dom';
+/* IFTRUE_isEE */
+import { LocalStorageWrapper } from '@actiontech/shared';
+import {
+  StorageKey,
+  CompanyNoticeDisplayStatusEnum
+} from '@actiontech/shared/lib/enum';
+/* FITRUE_isEE */
 
 const Login = () => {
   const { t } = useTranslation();
@@ -20,6 +32,8 @@ const Login = () => {
 
   const [loading, { setTrue, setFalse }] = useBoolean();
 
+  const navigate = useNavigate();
+  const location = useLocation();
   const login = (formData: LoginFormFieldValue) => {
     /* IFTRUE_isEE */
     if (!formData.userAgreement) {
@@ -45,7 +59,23 @@ const Login = () => {
               token
             })
           );
+
+          const params = new URLSearchParams(location.search);
+          const target = params.get(DMS_REDIRECT_KEY_PARAMS_NAME);
+          if (target) {
+            if (target === '/cloudBeaver') {
+              navigate(`/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+            } else {
+              navigate(target);
+            }
+          }
         }
+        /* IFTRUE_isEE */
+        LocalStorageWrapper.set(
+          StorageKey.SHOW_COMPANY_NOTICE,
+          CompanyNoticeDisplayStatusEnum.NotDisplayed
+        );
+        /* FITRUE_isEE */
       })
       .finally(() => {
         setFalse();

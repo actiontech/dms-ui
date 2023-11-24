@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Form } from 'antd5';
+import { Form } from 'antd';
 import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
 import { BasicSelect } from '@actiontech/shared';
 
@@ -18,7 +18,7 @@ const AssignmentForm = ({ form, submitLoading, ...props }: IAssignmentForm) => {
 
   useEffect(() => {
     if (props.init) {
-      updateUsernameList(projectName);
+      updateUsernameList({ filter_project: projectName });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.init]);

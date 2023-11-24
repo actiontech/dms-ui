@@ -11,7 +11,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useCurrentUser, useUserInfo } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
-import { message } from 'antd5';
+import { message } from 'antd';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -34,6 +34,7 @@ const ProjectList: React.FC = () => {
   const dispatch = useDispatch();
   const { isAdmin, isProjectManager } = useCurrentUser();
   const { updateUserInfo } = useUserInfo();
+
   const allowOperateProject = useCallback(
     (projectName: string) => isAdmin || isProjectManager(projectName),
     [isAdmin, isProjectManager]
@@ -102,6 +103,7 @@ const ProjectList: React.FC = () => {
             })
           });
           refresh();
+          EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
         }
       });
     },
@@ -123,6 +125,7 @@ const ProjectList: React.FC = () => {
             })
           });
           refresh();
+          EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
         }
       });
     },

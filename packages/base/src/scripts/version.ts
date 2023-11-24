@@ -1,1 +1,1 @@
-export const UI_VERSION = 'feature/DMS-391   b73bbfbf';
+export const UI_VERSION = 'feature/add-miss-file-for-diagnosis   39e78cac';

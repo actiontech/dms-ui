@@ -1,10 +1,12 @@
-import { SelectProps, Space } from 'antd5';
+import { InputRef, SelectProps, Space } from 'antd';
 import { BasicButton, BasicModal } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { SelectProjectModalContentStyleWrapper } from './style';
 import ProjectSelector from '../../../Nav/SideMenu/ProjectSelector';
 import { ProjectSelectorPopupMenuStyleWrapper } from '../../../Nav/SideMenu/ProjectSelector/style';
 import { ProjectSelectorModalProps } from './index.type';
+import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
+import { useRef, useState } from 'react';
 
 const ProjectSelectorModal: React.FC<ProjectSelectorModalProps> = ({
   onModalOk,
@@ -15,14 +17,24 @@ const ProjectSelectorModal: React.FC<ProjectSelectorModalProps> = ({
   onModalCancel
 }) => {
   const { t } = useTranslation();
+  const searchInputRef = useRef<InputRef>(null);
+  const [searchValue, setSearchValue] = useState('');
 
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     return (
-      <>
+      <ProjectSelectorPopupMenuStyleWrapper>
+        <CustomSelectSearchInput
+          value={searchValue}
+          onChange={setSearchValue}
+          ref={searchInputRef}
+        />
+        <div className="select-options-group-label">
+          {t('dmsProject.detail.projectSelectorDropdownSlot')}
+        </div>
         <ProjectSelectorPopupMenuStyleWrapper>
           {menu}
         </ProjectSelectorPopupMenuStyleWrapper>
-      </>
+      </ProjectSelectorPopupMenuStyleWrapper>
     );
   };
 
@@ -52,14 +64,12 @@ const ProjectSelectorModal: React.FC<ProjectSelectorModalProps> = ({
           value={projectSelectorValue}
           onChange={setProjectSelectorValue}
           options={projectSelectorOptions}
-          dropdownSlot={
-            <div className="select-options-group-label">
-              {t('dmsProject.detail.projectSelectorDropdownSlot')}
-            </div>
-          }
           dropdownRender={renderDropdown}
           placement="bottomLeft"
           builtinPlacements={undefined}
+          searchValue={searchValue}
+          onSearch={setSearchValue}
+          searchInputRef={searchInputRef}
         />
       </SelectProjectModalContentStyleWrapper>
     </BasicModal>

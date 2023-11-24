@@ -5,16 +5,20 @@ import {
   SystemRole
 } from '@actiontech/shared/lib/enum';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IManagementPermissionResV1 } from '@actiontech/shared/lib/types/common.type';
-import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  IUidWithName,
+  IUserBindProject
+} from '@actiontech/shared/lib/api/base/service/common';
+
+export type IBindProject = { archived?: boolean } & IUserBindProject;
 
 type UserReduxState = {
   username: string;
   role: SystemRole | '';
   token: string;
   theme: SupportTheme;
-  bindProjects: Array<IUserBindProject>;
-  managementPermissions: IManagementPermissionResV1[];
+  bindProjects: Array<IBindProject>;
+  managementPermissions: IUidWithName[];
   uid: string;
   useInfoFetched: boolean;
 };
@@ -64,7 +68,7 @@ const user = createSlice({
       state,
       {
         payload: { bindProjects }
-      }: PayloadAction<{ bindProjects: IUserBindProject[] }>
+      }: PayloadAction<{ bindProjects: IBindProject[] }>
     ) => {
       state.bindProjects = bindProjects;
     },
@@ -72,7 +76,7 @@ const user = createSlice({
       state,
       {
         payload: { managementPermissions }
-      }: PayloadAction<{ managementPermissions: IManagementPermissionResV1[] }>
+      }: PayloadAction<{ managementPermissions: IUidWithName[] }>
     ) => {
       state.managementPermissions = managementPermissions;
     },

@@ -1,7 +1,7 @@
 import { StorageKey } from '@actiontech/shared/lib/enum';
 import { GlobalToken } from '.';
 import { ResetRecoilState, snapshot_UNSTABLE } from 'recoil';
-import LocalStorageWrapper from '~/utils/LocalStorageWrapper';
+import { LocalStorageWrapper } from '@actiontech/shared';
 
 jest.mock('~/utils/LocalStorageWrapper', () => {
   return {

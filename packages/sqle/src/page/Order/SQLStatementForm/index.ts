@@ -1,4 +1,4 @@
-import { FormInstance } from 'antd5';
+import { FormInstance } from 'antd';
 
 export interface SQLStatementFormProps {
   form: FormInstance;
@@ -29,7 +29,8 @@ export type SQLStatementInfoType = {
 export enum SQLInputType {
   manualInput,
   uploadFile,
-  uploadMybatisFile
+  uploadMybatisFile,
+  zipFile
 }
 
 export type SQLStatementFields = {
@@ -37,4 +38,5 @@ export type SQLStatementFields = {
   sql: string;
   sqlFile: File[];
   mybatisFile: File[];
+  zipFile: File[];
 };

@@ -1,9 +1,6 @@
 import {
-  DBServiceDbTypeEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
-  IPluginDBServiceDBTypeEnum,
-  ListDBServiceDbTypeEnum,
   ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListOpPermissionRangeTypeEnum,
   ListRoleStatEnum,
@@ -14,8 +11,7 @@ import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
-  TestFeishuConfigurationAccountTypeEnum,
-  UpdateDBServiceDbTypeEnum
+  TestFeishuConfigurationAccountTypeEnum
 } from './common.enum';
 
 export interface IAddDBServicePreCheckReply {
@@ -180,6 +176,12 @@ export interface ICheckDbConnectable {
   user: string;
 }
 
+export interface ICompanyNotice {
+  notice_str?: string;
+
+  read_by_current_user?: boolean;
+}
+
 export interface IComponentNameWithVersion {
   name?: string;
 
@@ -191,7 +193,7 @@ export interface IDBService {
 
   business: string;
 
-  db_type: DBServiceDbTypeEnum;
+  db_type: string;
 
   desc?: string;
 
@@ -294,6 +296,14 @@ export interface IGetBasicInfoReply {
   code?: number;
 
   data?: IBasicInfo;
+
+  message?: string;
+}
+
+export interface IGetCompanyNoticeReply {
+  code?: number;
+
+  data?: ICompanyNotice;
 
   message?: string;
 }
@@ -513,7 +523,7 @@ export interface IGetWebHookConfigurationReplyItem {
 export interface IIPluginDBService {
   Business?: string;
 
-  DBType?: IPluginDBServiceDBTypeEnum;
+  DBType?: string;
 
   Host?: string;
 
@@ -571,7 +581,7 @@ export interface IListDBService {
 
   business?: string;
 
-  db_type?: ListDBServiceDbTypeEnum;
+  db_type?: string;
 
   desc?: string;
 
@@ -1076,6 +1086,10 @@ export interface IUidWithName {
   uid?: string;
 }
 
+export interface IUpdateCompanyNotice {
+  notice_str?: string;
+}
+
 export interface IUpdateCurrentUser {
   email?: string;
 
@@ -1093,7 +1107,7 @@ export interface IUpdateDBService {
 
   business: string;
 
-  db_type: UpdateDBServiceDbTypeEnum;
+  db_type: string;
 
   desc?: string;
 

@@ -430,6 +430,8 @@ export interface IListDBAccount {
 
   datasource_dns?: string;
 
+  db_service_uid?: string;
+
   explanation?: string;
 
   hostname?: string;

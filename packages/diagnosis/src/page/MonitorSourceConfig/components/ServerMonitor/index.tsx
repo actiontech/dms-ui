@@ -6,8 +6,7 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import server from '@actiontech/shared/lib/api/diagnosis/service/server';
+import server from '../../../../api/server';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -17,14 +16,12 @@ import {
   updateSelectServerMonitorData
 } from '../../../../store/monitorSourceConfig';
 import { IServerMonitorProps } from './index.type';
-import { IViewServerReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
-import { IV1ListServersParams } from '@actiontech/shared/lib/api/diagnosis/service/server/index.d';
+import { IViewServerReply } from '../../../../api/common';
+import { IV1ListServersParams } from '../../../../api/server/index.d';
 import ServerMonitorModal from './components/Modal';
 
 const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   const dispatch = useDispatch();
-
-  const { projectID } = useCurrentProject();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -42,13 +39,12 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
     () => {
       const params: IV1ListServersParams = {
         ...pagination,
-        project_uid: projectID,
         fuzzy_search_keyword: props.searchValue
       };
       return handleTableRequestError(server.V1ListServers(params));
     },
     {
-      refreshDeps: [pagination, projectID, props.searchValue]
+      refreshDeps: [pagination, props.searchValue]
     }
   );
 
@@ -98,7 +94,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
           total: serverMonitorList?.total ?? 0
         }}
         loading={loading}
-        columns={columns(projectID)}
+        columns={columns()}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}

@@ -12,10 +12,8 @@ import {
 import { Link } from 'react-router-dom';
 import { t } from '../../../locale';
 import { IconOrderId } from '../../../icon/Order';
-import { RuleUrlParamKey } from '../../Rule/useRuleFilterForm';
-import TokenCom from './TableTaskTypeFilter/component/TokenCom';
 import { ModalName } from '../../../data/ModalName';
-import { BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
+import { BasicToolTips, DatabaseTypeLogo, TokenCom } from '@actiontech/shared';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
@@ -94,9 +92,11 @@ export const PlanListAction = (
 };
 
 const PlanListColumn: (
-  projectID: string
+  projectID: string,
+  getLogoUrlByDbType: (dbType: string) => string
 ) => ActiontechTableColumn<IAuditPlanResV2, PlanListTableFilterParamType> = (
-  projectID
+  projectID,
+  getLogoUrlByDbType
 ) => {
   return [
     {
@@ -143,24 +143,21 @@ const PlanListColumn: (
         }
 
         return (
-          <DatabaseTypeLogo
-            dbType={type}
-            logoUrl={`/sqle/v1/static/instance_logo?instance_type=${type}`}
-          />
+          <DatabaseTypeLogo dbType={type} logoUrl={getLogoUrlByDbType(type)} />
         );
       }
     },
     {
       dataIndex: 'rule_template',
       title: () => t('auditPlan.list.table.audit_rule_template'),
-      render(ruleTemplate: IAuditPlanResV2['rule_template']) {
+      render(ruleTemplate: IAuditPlanResV2['rule_template'], record) {
         if (!ruleTemplate?.name) {
           return '';
         }
 
         const path = ruleTemplate.is_global_rule_template
-          ? `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${ruleTemplate.name}`
-          : `/sqle/rule?${RuleUrlParamKey.ruleTemplateName}=${ruleTemplate.name}&${RuleUrlParamKey.projectID}=${projectID}`;
+          ? `/sqle/ruleManager/globalDetail/${ruleTemplate.name}/${record.audit_plan_db_type}}`
+          : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}}`;
 
         return <Link to={path}>{ruleTemplate.name}</Link>;
       }

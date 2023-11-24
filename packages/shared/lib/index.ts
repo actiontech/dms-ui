@@ -4,9 +4,7 @@ export { default as CronInput } from './components/CronInput';
 export { default as BackButton } from './components/BackButton';
 export { default as IconTipsLabel } from './components/IconTipsLabel';
 export { default as TestDatabaseConnectButton } from './components/TestDatabaseConnectButton';
-export { default as Link } from './components/Link/Link';
 export { default as EnterpriseFeatureDisplay } from './components/EnterpriseFeatureDisplay/EnterpriseFeatureDisplay';
-export { default as FooterButtonWrapper } from './components/FooterButtonWrapper';
 export { default as BasicInput } from './components/BasicInput';
 export { default as BasicButton } from './components/BasicButton';
 export { default as BasicRangePicker } from './components/BasicRangePicker';
@@ -29,6 +27,7 @@ export { default as BasicTag } from './components/BasicTag';
 export { default as BasicDatePicker } from './components/BasicDatePicker';
 export { default as AvatarCom } from './components/AvatarCom';
 export { default as DatabaseTypeLogo } from './components/DatabaseTypeLogo';
+export { default as TokenCom } from './components/TokenCom';
 
 export { default as Copy } from './utils/Copy';
 export { default as Download } from './utils/Download';

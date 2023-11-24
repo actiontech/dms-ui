@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { SegmentedValue } from 'antd5/es/segmented';
+import { SegmentedValue } from 'antd/es/segmented';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { Space } from 'antd5';
+import { Space } from 'antd';
 import {
   BasicButton,
   PageHeader,
@@ -16,7 +16,6 @@ import { ModalName } from '../../data/ModalName';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { MonitorSourceConfigTypeEnum } from './index.type';
 import ServerMonitor from './components/ServerMonitor';
 import DatabaseMonitor from './components/DatabaseMonitor';
@@ -30,7 +29,6 @@ const MonitorSourceConfig: React.FC = () => {
   const [tableLoading, setTableLoading] = useState<boolean>(false);
 
   const dispatch = useDispatch();
-  const { projectArchive } = useCurrentProject();
 
   const [listType, setListType] = useState<MonitorSourceConfigTypeEnum>(
     MonitorSourceConfigTypeEnum.server_monitor
@@ -54,7 +52,7 @@ const MonitorSourceConfig: React.FC = () => {
       })
     );
   };
-
+  console.log(searchServerValue);
   const renderTable = () => {
     if (listType === MonitorSourceConfigTypeEnum.server_monitor) {
       return (
@@ -85,7 +83,7 @@ const MonitorSourceConfig: React.FC = () => {
       <PageHeader
         title={<Space size={12}>{t('monitorSourceConfig.title')}</Space>}
         extra={
-          <EmptyBox if={!projectArchive}>
+          <EmptyBox if={true}>
             <Space size={12}>
               <BasicButton
                 onClick={() => onAddMonitorSource(listType)}
@@ -114,6 +112,9 @@ const MonitorSourceConfig: React.FC = () => {
                 ),
                 onSearch: (value) => {
                   setSearchServerValue(value);
+                },
+                onChange: (e) => {
+                  setSearchServerValue(e.target.value);
                 }
               }
             : {

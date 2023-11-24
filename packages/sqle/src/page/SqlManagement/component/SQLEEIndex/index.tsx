@@ -30,6 +30,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
 import {
   GetSqlManageListFilterStatusEnum,
+  GetSqlManageListSortFieldEnum,
+  GetSqlManageListSortOrderEnum,
   exportSqlManageV1FilterStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import useInstance from '../../../../hooks/useInstance';
@@ -46,13 +48,14 @@ import {
   updateSqlIdList
 } from '../../../../store/sqleManagement';
 import { ModalName } from '../../../../data/ModalName';
-import { TableRowSelection } from 'antd5/es/table/interface';
+import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { message } from 'antd5';
+import { message } from 'antd';
 import SqleManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import useRuleTips, { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -68,13 +71,39 @@ const SQLEEIndex = () => {
   );
   const [searchKeyword, setSearchKeyword] = useState<string>('');
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    sortInfo
+  } = useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
   const [SQLNum, setSQLNum] = useState<ISQLStatisticsProps['data']>({
     SQLTotalNum: 0,
     problemSQlNum: 0,
     optimizedSQLNum: 0
   });
+
+  const getCurrentSortParams = (
+    sortData: SorterResult<ISqlManage> | SorterResult<ISqlManage>[]
+  ): Pick<IGetSqlManageListParams, 'sort_field' | 'sort_order'> => {
+    if (Array.isArray(sortData)) {
+      return {};
+    }
+    const orderDesc = {
+      descend: GetSqlManageListSortOrderEnum.desc,
+      ascend: GetSqlManageListSortOrderEnum.asc
+    };
+
+    return {
+      sort_field:
+        (sortData.field as unknown as GetSqlManageListSortFieldEnum) ??
+        undefined,
+      sort_order: sortData?.order
+        ? orderDesc[sortData?.order] ?? undefined
+        : undefined
+    };
+  };
 
   const {
     data: sqlList,
@@ -83,9 +112,17 @@ const SQLEEIndex = () => {
     error: getListError
   } = useRequest(
     () => {
+      const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
       const params: IGetSqlManageListParams = {
-        ...tableFilterInfo,
+        ...otherTableFilterInfo,
         ...pagination,
+        ...getCurrentSortParams(sortInfo),
+        filter_db_type: filter_rule_name?.split(
+          DB_TYPE_RULE_NAME_SEPARATOR
+        )?.[0],
+        filter_rule_name: filter_rule_name?.split(
+          DB_TYPE_RULE_NAME_SEPARATOR
+        )?.[1],
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
         project_name: projectName,
@@ -100,7 +137,8 @@ const SQLEEIndex = () => {
         filterStatus,
         searchKeyword,
         isAssigneeSelf,
-        tableFilterInfo
+        tableFilterInfo,
+        sortInfo
       ],
       onFinally: (params, data) => {
         setSQLNum({
@@ -151,7 +189,16 @@ const SQLEEIndex = () => {
   const actionPermission = useMemo(() => {
     return !projectArchive && (isAdmin || isProjectManager(projectName));
   }, [isAdmin, isProjectManager, projectName, projectArchive]);
-  const { instanceOptions, updateInstanceList } = useInstance();
+  const {
+    instanceOptions,
+    updateInstanceList,
+    loading: instanceLoading
+  } = useInstance();
+  const {
+    generateRuleTipsSelectOptions,
+    updateRuleTips,
+    loading: ruleTipsLoading
+  } = useRuleTips();
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
   const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
   const selectedRowKeysNum = useMemo(
@@ -161,6 +208,7 @@ const SQLEEIndex = () => {
 
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
+    updateRuleTips(projectName);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectName]);
 
@@ -212,18 +260,33 @@ const SQLEEIndex = () => {
         filter_instance_name: string;
         filter_audit_level: string;
         time: string;
+        filter_rule_name: string;
       }),
       FilterCustomProps
     >([
       ['filter_source', { options: generateSourceSelectOptions }],
-      ['filter_instance_name', { options: instanceOptions }],
+      [
+        'filter_instance_name',
+        { options: instanceOptions, loading: instanceLoading }
+      ],
       ['filter_audit_level', { options: generateAuditLevelSelectOptions }],
-      ['time', { showTime: true }]
+      ['time', { showTime: true }],
+      [
+        'filter_rule_name',
+        {
+          options: generateRuleTipsSelectOptions,
+          loading: ruleTipsLoading,
+          popupMatchSelectWidth: 400
+        }
+      ]
     ]);
   }, [
+    instanceLoading,
     instanceOptions,
     generateSourceSelectOptions,
-    generateAuditLevelSelectOptions
+    generateAuditLevelSelectOptions,
+    generateRuleTipsSelectOptions,
+    ruleTipsLoading
   ]);
 
   const onSearch = (value: string) => {
@@ -300,15 +363,20 @@ const SQLEEIndex = () => {
     const hideLoading = messageApi.loading(
       t('sqlManagement.pageHeader.action.exporting')
     );
+    const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
     const params = {
-      ...tableFilterInfo,
+      ...otherTableFilterInfo,
       filter_status:
         filterStatus === 'all'
           ? undefined
           : (filterStatus as unknown as exportSqlManageV1FilterStatusEnum),
       fuzzy_search_sql_fingerprint: searchKeyword,
       project_name: projectName,
-      filter_assignee: isAssigneeSelf ? uid : undefined
+      filter_assignee: isAssigneeSelf ? uid : undefined,
+      filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
+      filter_rule_name: filter_rule_name?.split(
+        DB_TYPE_RULE_NAME_SEPARATOR
+      )?.[1]
     } as IExportSqlManageV1Params;
     SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {
@@ -460,7 +528,7 @@ const SQLEEIndex = () => {
         }}
         rowSelection={rowSelection as TableRowSelection<ISqlManage>}
         pagination={{
-          total: sqlList?.total ?? 0
+          total: SQLNum.SQLTotalNum
         }}
         loading={getListLoading}
         columns={columns}

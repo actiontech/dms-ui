@@ -7,16 +7,15 @@ import {
   Space,
   Spin,
   Typography
-} from 'antd5';
-import { useForm } from 'antd5/es/form/Form';
-import { useMemo, useRef, useState } from 'react';
+} from 'antd';
+import { useForm } from 'antd/es/form/Form';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormFields, TestFormFields } from './index.type';
 import { BasicButton, BasicInput, EmptyBox } from '@actiontech/shared';
 import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { TestFeishuConfigurationAccountTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { isEqual } from 'lodash';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
@@ -32,7 +31,7 @@ import {
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IFeishuConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
-import { defaultFormData, switchFieldName } from './index.data';
+import { switchFieldName } from './index.data';
 
 const LarkSetting: React.FC = () => {
   const { t } = useTranslation();
@@ -70,20 +69,28 @@ const LarkSetting: React.FC = () => {
       }
     }
   );
-  const isInitialForm = useMemo(() => {
-    return isEqual(larkInfo, defaultFormData);
+  const isConfigClosed = useMemo(() => {
+    return !larkInfo?.is_feishu_notification_enabled;
   }, [larkInfo]);
 
-  const handelClickModify = () => {
-    startModify();
+  const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      enabled: !!larkInfo?.is_feishu_notification_enabled,
-      appKey: larkInfo?.app_id
+      appKey: larkInfo?.app_id,
+      appSecret: undefined
     });
+  }, [form, larkInfo]);
+
+  const handleClickModify = () => {
+    setFormDefaultValue();
+    startModify();
   };
   const handleClickCancel = () => {
-    if (isInitialForm) form.setFieldValue(switchFieldName, false);
+    if (isConfigClosed) form.setFieldsValue({ [switchFieldName]: false });
+    setFormDefaultValue();
     modifyFinish();
+  };
+  const handleToggleSwitch = (open: boolean) => {
+    form.setFieldValue(switchFieldName, open);
   };
 
   const submitLarkConfig = (values: FormFields) => {
@@ -108,25 +115,30 @@ const LarkSetting: React.FC = () => {
       });
   };
 
+  const switchOpen = Form.useWatch(switchFieldName, form);
+
   const {
     configSwitchPopoverVisible,
+    onConfigSwitchPopoverOpen,
     onConfigSwitchPopoverConfirm,
-    onConfigSwitchPopoverCancel,
     onConfigSwitchChange
   } = useConfigSwitch({
-    isInitialForm,
+    isConfigClosed,
+    switchOpen,
     modifyFlag,
-    startModify,
+    startSubmit,
+    submitFinish,
+    handleClickModify,
     handleUpdateConfig: () =>
       dms.UpdateFeishuConfiguration({
         update_feishu_configuration: {
-          ...defaultFormData,
+          ...larkInfo,
           is_feishu_notification_enabled: false
         }
       }),
     handleClickCancel,
     refreshConfig: refreshLarkInfo,
-    handleOpenSwitch: () => form.setFieldValue(switchFieldName, true)
+    handleToggleSwitch
   });
 
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
@@ -212,14 +224,14 @@ const LarkSetting: React.FC = () => {
 
   return (
     <div className="config-form-wrapper">
-      <Spin spinning={loading}>
+      <Spin spinning={loading || submitLoading}>
         {messageContextHolder}
 
         {renderConfigForm({
           data: larkInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isInitialForm || !extraButtonsVisible}>
+            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
               <ConfigTestBtn
                 testingRef={testing}
                 popoverOpen={testPopoverVisible}
@@ -311,17 +323,19 @@ const LarkSetting: React.FC = () => {
                   </ConfigTestPopoverForm>
                 }
               />
-              <ConfigModifyBtn onClick={handelClickModify} />
+              <ConfigModifyBtn onClick={handleClickModify} />
             </Space>
           ),
           configSwitchNode: (
             <ConfigSwitch
               switchFieldName={switchFieldName}
-              disabled={modifyFlag}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
               popoverVisible={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
-              onCancel={onConfigSwitchPopoverCancel}
               onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
           configField: (
@@ -364,7 +378,7 @@ const LarkSetting: React.FC = () => {
                 <BasicButton
                   htmlType="submit"
                   type="primary"
-                  loading={submitLoading}
+                  disabled={submitLoading}
                 >
                   {t('common.submit')}
                 </BasicButton>

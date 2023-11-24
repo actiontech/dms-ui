@@ -1,5 +1,4 @@
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ArrowLeftOutlined, SyncOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
@@ -10,9 +9,9 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import monitor from '@actiontech/shared/lib/api/diagnosis/service/monitor';
-import { IV1ListMonitorRoutineParams } from '@actiontech/shared/lib/api/diagnosis/service/monitor/index.d';
-import { IViewMonitorConfigReply } from '@actiontech/shared/lib/api/diagnosis/service/common';
+import monitor from '../../../../api/monitor';
+import { IV1ListMonitorRoutineParams } from '../../../../api/monitor/index.d';
+import { IViewMonitorConfigReply } from '../../../../api/common';
 import { useRequest } from 'ahooks';
 import { IconTagBookMark } from '@actiontech/shared/lib/Icon/common';
 import {
@@ -35,8 +34,6 @@ const MonitorConfig = () => {
 
   const { t } = useTranslation();
 
-  const { projectID } = useCurrentProject();
-
   const urlParams = useParams<MonitorConfigUrlParams>();
 
   const { requestErrorMessage, handleTableRequestError } =
@@ -56,8 +53,7 @@ const MonitorConfig = () => {
       return handleTableRequestError(
         monitor.V1ListMonitorRoutine({
           ...pagination,
-          source_id: Number(urlParams.id),
-          project_uid: projectID
+          source_id: Number(urlParams.id)
         })
       );
     },
@@ -95,10 +91,7 @@ const MonitorConfig = () => {
       <MonitorConfigStyleWrapper>
         <PageHeader
           title={
-            <Link
-              to={`/diagnosis/project/${projectID}/monitorSourceConfig`}
-              key="go-back"
-            >
+            <Link to={`/monitorSourceConfig`} key="go-back">
               <BasicButton icon={<ArrowLeftOutlined />}>
                 {t('monitorSourceConfig.monitorConfig.returnMonitorSource')}
               </BasicButton>

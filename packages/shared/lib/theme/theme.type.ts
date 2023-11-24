@@ -109,6 +109,11 @@ export type BasicRangePickerTheme = {
     border: string;
     background: string;
   };
+  dropdown: {
+    icon: {
+      boxShadow: string;
+    };
+  };
 };
 
 export type BasicDrawerTheme = {
@@ -413,3 +418,50 @@ export type BasicTagTheme = Record<
   BasicTagColor,
   { color?: string; backgroundColor?: string }
 >;
+
+export type NavTheme = {
+  width: number;
+  padding: number;
+  backgroundColor: string;
+  boxShadow: string;
+  border: string;
+  title: {
+    color: string[];
+  };
+  menu: {
+    hoverBackgroundColor: string;
+    labelColor: string;
+    hoverLabelColor: string;
+    dividerColor: string;
+    groupLabelColor: string;
+  };
+  globalSystem: {
+    backgroundColor: string;
+  };
+  userNavigate: {
+    border: string;
+    boxShadow: string;
+    backgroundColor: string;
+    title: {
+      border: string;
+      color: string;
+    };
+    content: {
+      hoverBackgroundColor: string;
+      color: string;
+    };
+    footer: {
+      text: {
+        color: string;
+      };
+
+      iconWrapper: {
+        border: string;
+        backgroundColor: string;
+        activeBackgroundColor: string;
+        color: string;
+        activeColor: string;
+      };
+    };
+  };
+};

@@ -71,13 +71,13 @@ export const FilterFormRowLayout = {
   gutter: 24
 };
 
-export const ANTD_PREFIX_STR = 'antd-v5';
-
 export const ComponentControlHeight = {
   default: 36,
   lg: 36,
   sm: 28
 };
+
+export const NOT_TIME = '0001-01-01T08:05:43.000+08:05';
 
 export const SQLE_BASE_URL = '/sqle/';
 
@@ -105,12 +105,8 @@ const ALL_TITLE = [
   /* FITRUE_isSQLE */
 
   /* IFTRUE_isPROVISION */
-  'provision',
+  'provision'
   /* FITRUE_isPROVISION */
-
-  /* IFTRUE_isDIAGNOSIS */
-  'Diagnosis'
-  /* FITRUE_isDIAGNOSIS */
 ];
 
 export const DMS_DEFAULT_WEB_TITLE = ALL_TITLE[0] ?? 'DMS';
@@ -118,3 +114,5 @@ export const DMS_DEFAULT_WEB_TITLE = ALL_TITLE[0] ?? 'DMS';
 export const DEFAULT_PROJECT_ID = '700300';
 export const DEFAULT_PROJECT_NAME = 'default';
 export const DMS_DEFAULT_WEB_LOGO_URL = '/logo.png';
+export const DMS_REDIRECT_KEY_PARAMS_NAME = 'target';
+export const OPEN_CLOUD_BEAVER_URL_PARAM_NAME = 'open_cloud_beaver';

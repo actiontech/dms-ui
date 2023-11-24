@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { useParams } from 'react-router-dom';
 import useCurrentProject from '.';
-import { DEFAULT_PROJECT_NAME } from './index.type';
+import { DEFAULT_PROJECT_NAME } from '../../data/common';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

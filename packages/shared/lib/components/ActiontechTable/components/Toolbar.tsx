@@ -1,6 +1,6 @@
 import { TableToolbarProps } from '../index.type';
 import ColumnsSetting from './ColumnsSetting';
-import { Space, Spin, ConfigProvider } from 'antd5';
+import { Space, Spin, ConfigProvider } from 'antd';
 import useTableAction from '../hooks/useTableAction';
 import FilterButton from './FilterButton';
 import RefreshButton from './RefreshButton';

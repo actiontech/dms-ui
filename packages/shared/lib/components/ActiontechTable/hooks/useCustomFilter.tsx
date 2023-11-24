@@ -1,16 +1,86 @@
+import { useState } from 'react';
+import dayjs from 'dayjs';
+import { RangePickerProps } from 'antd/es/date-picker';
+import { useTranslation } from 'react-i18next';
 import {
   ActiontechTableFilterContainerMeta,
   FilterCustomProps,
   UpdateTableFilterInfoType
 } from '../index.type';
 import { CustomSelect, CustomSelectProps } from '../../CustomSelect';
-import dayjs from 'dayjs';
-import { RangePickerProps } from 'antd5/es/date-picker';
-import { useTranslation } from 'react-i18next';
 import { CustomFilterRangePickerStyleWrapper } from '../components/style';
+import CustomInput from '../../CustomInput';
+import { IconSearch } from '../../../Icon';
 
 const useCustomFilter = () => {
   const { t } = useTranslation();
+  const [searchValue, setSearchValue] = useState('');
+
+  const generateInputFilter = <
+    T extends Record<string, any>,
+    F extends Record<string, any>
+  >(
+    meta: ActiontechTableFilterContainerMeta<T, F>[0],
+    updateTableFilterInfo: UpdateTableFilterInfoType,
+    filterCustomProps?: Map<keyof T, FilterCustomProps<'input'>>
+  ) => {
+    const props = filterCustomProps?.get(meta.dataIndex);
+    const onPressEnter = (value: string) => {
+      props?.onCustomPressEnter?.(value);
+      if (typeof meta.filterKey === 'string') {
+        const key = meta.filterKey;
+        updateTableFilterInfo((filterInfo: F) => {
+          return { ...filterInfo, [key]: value };
+        });
+      }
+    };
+    return (
+      <CustomInput
+        key={meta.dataIndex as string}
+        {...props}
+        onCustomPressEnter={onPressEnter}
+        prefix={meta.filterLabel}
+      />
+    );
+  };
+
+  const generateSearchInputFilter = <
+    T extends Record<string, any>,
+    F extends Record<string, any>
+  >(
+    meta: ActiontechTableFilterContainerMeta<T, F>[0],
+    updateTableFilterInfo: UpdateTableFilterInfoType,
+    filterCustomProps?: Map<keyof T, FilterCustomProps<'search-input'>>
+  ) => {
+    const props = filterCustomProps?.get(meta.dataIndex);
+    const onPressEnter = (value: string) => {
+      props?.onCustomPressEnter?.(value);
+      if (typeof meta.filterKey === 'string') {
+        const key = meta.filterKey;
+        updateTableFilterInfo((filterInfo: F) => {
+          return { ...filterInfo, [key]: value };
+        });
+      }
+    };
+
+    return (
+      <CustomInput
+        key={meta.dataIndex as string}
+        {...props}
+        onCustomPressEnter={onPressEnter}
+        className="filter-search-input"
+        onChange={(e) => {
+          setSearchValue(e.target.value);
+        }}
+        suffix={
+          <IconSearch
+            className="pointer"
+            onClick={() => onPressEnter?.(searchValue)}
+          />
+        }
+      />
+    );
+  };
 
   const generateSelectFilter = <
     T extends Record<string, any>,
@@ -89,7 +159,6 @@ const useCustomFilter = () => {
         }}
         disabledDate={disabledDate}
         {...props}
-        bordered={false}
         onChange={onChange}
         allowClear
         placeholder={[
@@ -109,7 +178,9 @@ const useCustomFilter = () => {
 
   return {
     generateSelectFilter,
-    generateDataRangeFilter
+    generateDataRangeFilter,
+    generateInputFilter,
+    generateSearchInputFilter
   };
 };
 

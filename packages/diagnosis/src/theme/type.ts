@@ -28,3 +28,9 @@ export type MonitorSourceConfigTheme = {
     };
   };
 };
+
+export type LoginTheme = {
+  logo: {
+    boxShadow: string;
+  };
+};

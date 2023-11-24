@@ -1,4 +1,4 @@
-import { getErrorMessage } from '~/utils/Common';
+import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import Password from '../Password';
 
 describe('Password', () => {

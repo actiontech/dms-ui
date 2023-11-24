@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { message, Form, Space } from 'antd5';
+import { message, Form, Space } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,6 +21,7 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 const UpdateMember: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const [messageApi, contextHolder] = message.useMessage();
   const [form] = Form.useForm<IMemberFormFields>();
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
@@ -45,7 +46,7 @@ const UpdateMember: React.FC = () => {
       .UpdateMember(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          message.success(
+          messageApi.success(
             t('dmsMember.updateMember.successTips', {
               name: ''
             })
@@ -97,6 +98,7 @@ const UpdateMember: React.FC = () => {
         </Space>
       }
     >
+      {contextHolder}
       <MemberForm form={form} isUpdate={true} projectID={projectID} />
     </MemberDrawerStyledWrapper>
   );

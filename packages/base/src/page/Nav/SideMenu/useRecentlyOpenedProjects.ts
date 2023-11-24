@@ -7,7 +7,7 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { RecentlyProjectsRecordType } from './ProjectSelector/index.type';
 
-export const DEFAULT_MAX_SHOW_PROJECT_NUMBER = 5;
+export const DEFAULT_MAX_SHOW_PROJECT_NUMBER = 3;
 
 export const useRecentlyOpenedProjects = () => {
   const { bindProjects, username } = useCurrentUser();

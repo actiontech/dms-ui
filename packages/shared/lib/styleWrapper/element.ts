@@ -1,13 +1,12 @@
-import { Row } from 'antd5';
+import { Form, Row } from 'antd';
 import { BasicButton } from '../';
-import { ANTD_PREFIX_STR } from '../data/common';
 import { styled } from '@mui/material/styles';
 
 /**
  * 使用介绍: packages/sqle/src/page/AuditPlan/PlanList/TableTaskTypeFilter/index.tsx
  */
 export const FilterButtonStyleWrapper = styled(BasicButton)`
-  &.${ANTD_PREFIX_STR}-btn-default.basic-button-wrapper.filter-btn {
+  &.ant-btn-default.basic-button-wrapper.filter-btn {
     background-color: ${({ theme }) =>
       theme.sharedTheme.uiToken.colorFillTertiary};
     border-color: ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
@@ -110,13 +109,14 @@ export const PopconfirmMessageStyleWrapper = styled('span')`
  * PS：合并列的情况暂时还没遇到，之后有使用场景了可再补充
  */
 export const ConsolidatedListStyleWrapper = styled('section')`
-  .${ANTD_PREFIX_STR}-table-wrapper.actiontech-table-namespace
-    .${ANTD_PREFIX_STR}-table-tbody
-    .${ANTD_PREFIX_STR}-table-row {
-    .${ANTD_PREFIX_STR}-table-cell:first-of-type {
+  .ant-table-wrapper.actiontech-table-namespace
+    .ant-table-tbody
+    .ant-table-row {
+    .ant-table-cell:first-of-type {
       padding-left: 16px;
     }
-    .${ANTD_PREFIX_STR}-table-cell .consolidated-column {
+
+    .ant-table-cell .consolidated-column {
       padding-left: 24px;
     }
   }
@@ -142,7 +142,7 @@ export const TableColumnWithIconStyleWrapper = styled('div')`
  * 功能: 用于抽屉内表单的图标样式， 如RoleSelector的删除Icon
  */
 export const DrawerFormIconWrapper = styled(BasicButton)`
-  &.${ANTD_PREFIX_STR}-btn-default.${ANTD_PREFIX_STR}-btn-icon-only.basic-button-wrapper {
+  &.ant-btn-default.ant-btn-icon-only.basic-button-wrapper {
     height: 36px;
     width: 36px;
     display: flex;
@@ -164,9 +164,23 @@ export const DrawerFormIconWrapper = styled(BasicButton)`
  * 功能: 用于FormList中的添加按钮
  */
 export const FormListAddButtonWrapper = styled(BasicButton)`
-  &.${ANTD_PREFIX_STR}-btn-default.basic-button-wrapper.form-list-add {
+  &.ant-btn-default.basic-button-wrapper.form-list-add {
     background-color: ${({ theme }) =>
       theme.sharedTheme.basic.colorPrimaryBgHover} !important;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
+  }
+`;
+
+/**
+ * 功能: 用于Modal中带有提示信息的FormItem 如provision授权清单中的续期弹窗
+ */
+export const FormItemWithExtraStyleWrapper = styled(Form.Item)`
+  &.ant-form-item .ant-form-item-extra {
+    margin-top: 16px;
+    padding: 4px 8px;
+    border: 1px solid ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
+    font-size: 12px;
+    line-height: 20px;
   }
 `;

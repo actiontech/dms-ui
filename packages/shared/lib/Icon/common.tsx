@@ -1233,6 +1233,27 @@ export const IconProjectFlag: React.FC<CustomIconProps> = ({
   );
 };
 
+export const IconProjectArchived: React.FC<CustomIconProps> = ({
+  width = 18,
+  height = 18
+}) => {
+  return (
+    <CommonIconStyleWrapper>
+      <svg
+        viewBox="64 64 896 896"
+        focusable="false"
+        data-icon="lock"
+        width={width}
+        height={height}
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 10-56 0z"></path>
+      </svg>
+    </CommonIconStyleWrapper>
+  );
+};
+
 export const IconClock: React.FC<CustomIconProps> = ({
   width = 18,
   height = 18
@@ -1552,6 +1573,23 @@ export const IconFormListAdd: React.FC<CustomIconProps> = ({
       <path
         d="M7.00016 13.6667C3.31816 13.6667 0.333496 10.682 0.333496 7.00004C0.333496 3.31804 3.31816 0.333374 7.00016 0.333374C10.6822 0.333374 13.6668 3.31804 13.6668 7.00004C13.6668 10.682 10.6822 13.6667 7.00016 13.6667ZM6.3335 6.33337H3.66683V7.66671H6.3335V10.3334H7.66683V7.66671H10.3335V6.33337H7.66683V3.66671H6.3335V6.33337Z"
         fill={color ? color : '#4583FF'}
+      />
+    </svg>
+  );
+};
+
+export const IconToken = () => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.3333 9.33333H8.43906C7.88992 10.8869 6.40828 12 4.66666 12C2.45752 12 0.666656 10.2091 0.666656 8C0.666656 5.79086 2.45752 4 4.66666 4C6.40828 4 7.88992 5.11308 8.43906 6.66667H15.3333V9.33333H14V12H11.3333V9.33333ZM4.66666 9.33333C5.40304 9.33333 5.99999 8.7364 5.99999 8C5.99999 7.2636 5.40304 6.66667 4.66666 6.66667C3.93028 6.66667 3.33332 7.2636 3.33332 8C3.33332 8.7364 3.93028 9.33333 4.66666 9.33333Z"
+        fill="#8A8F99"
       />
     </svg>
   );

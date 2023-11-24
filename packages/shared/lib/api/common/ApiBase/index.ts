@@ -6,7 +6,7 @@ import store from '../../../../../base/src/store';
 import { getErrorMessage } from '../../../utils/Common';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
-import { ArgsProps } from 'antd5/es/notification/interface';
+import { ArgsProps } from 'antd/es/notification/interface';
 import EmitterKey from '../../../data/EmitterKey';
 
 class ApiBase {
@@ -70,6 +70,15 @@ class ApiBase {
     return (config: AxiosRequestConfig) => {
       if (!token || doNotAddAuthRequest.some((url) => config.url === url)) {
         return config;
+      }
+
+      if (config.data || config.params) {
+        const trimDataSource = config.data || config.params;
+        Object.keys(trimDataSource).forEach((key) => {
+          if (typeof trimDataSource[key] === 'string') {
+            trimDataSource[key] = trimDataSource[key].trim();
+          }
+        });
       }
 
       return {

@@ -1,6 +1,7 @@
-import { MonitorSourceConfigTheme } from '../theme/type';
+import { LoginTheme, MonitorSourceConfigTheme } from '../theme/type';
 
 export interface DiagnosisTheme {
+  login: LoginTheme;
   monitorSourceConfig: MonitorSourceConfigTheme;
 }
 interface ThemeCustom {

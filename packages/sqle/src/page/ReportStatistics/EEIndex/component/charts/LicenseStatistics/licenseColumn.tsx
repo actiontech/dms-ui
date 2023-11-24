@@ -4,9 +4,9 @@ import { memo, useEffect, useMemo, useState, useRef } from 'react';
 import { Column, ColumnConfig, Plot } from '@ant-design/plots';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
-import useChangeTheme from '../../../../../../hooks/useChangeTheme';
 import useGetConfig from '../../../../../../components/ChartCom/ChartTooltip/useGetConfig';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
+import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 interface ILicenseColumn {
   data: ColumnConfig['data'];
@@ -46,6 +46,7 @@ const LicenseColumn = memo(
       return () => {
         window.removeEventListener('resize', handleResize);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {

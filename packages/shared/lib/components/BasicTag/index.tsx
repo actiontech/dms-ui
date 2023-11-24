@@ -1,4 +1,4 @@
-import { TagProps } from 'antd5';
+import { TagProps } from 'antd';
 import { BasicTagStyleWrapper } from './style';
 import classNames from 'classnames';
 import { BasicTagColor } from '../../theme/theme.type';

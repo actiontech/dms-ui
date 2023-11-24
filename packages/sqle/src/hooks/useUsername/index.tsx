@@ -1,21 +1,20 @@
 import { useBoolean } from 'ahooks';
-import { Select, Avatar, Space, Typography } from 'antd5';
+import { Select, Avatar, Space, Typography } from 'antd';
 import React, { useMemo } from 'react';
 import { ResponseCode } from '../../data/common';
 import user from '@actiontech/shared/lib/api/sqle/service/user';
 import { IUserTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IGetUserTipListV1Params } from '@actiontech/shared/lib/api/sqle/service/user/index.d';
 
 const useUsername = () => {
   const [usernameList, setUsernameList] = React.useState<IUserTipResV1[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
 
   const updateUsernameList = React.useCallback(
-    (projectName?: string) => {
+    (params: IGetUserTipListV1Params) => {
       setTrue();
       user
-        .getUserTipListV1({
-          filter_project: projectName
-        })
+        .getUserTipListV1(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setUsernameList(res.data?.data ?? []);

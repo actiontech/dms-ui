@@ -1,62 +1,143 @@
-import { useEffect, useState } from 'react';
-import { useSetRecoilState } from 'recoil';
-import { Box } from '@mui/system';
-import useTablePagination from '~/components/ProvisionTable/hooks/useTablePagination';
-import { useRequest } from 'ahooks';
-import { SyncOutlined } from '@ant-design/icons';
-import { Button, Card, Space } from 'antd';
+import { useCallback, useMemo, useState, useEffect } from 'react';
+import { PageHeader, BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import ProvisionTable from '~/components/ProvisionTable';
-import { authListTableColumns } from './TableColumns';
-import AuthListModal from './Modal';
-import useModalStatus from '~/hooks/useModalStatus';
-import useRemoveAuth from './hooks/useRemoveAuth';
-import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
-import { EventEmitterKey, ModalName } from '~/data/enum';
-import AuthListFilterForm from '~/page/Auth/AuthList/AuthListFilterForm';
-import EventEmitter from '~/utils/EventEmitter';
-import { IFilteredInfo } from './AuthListFilterForm';
-import { Link } from '../../../components/Link';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  ActiontechTable,
+  useTableFilterContainer,
+  useTableRequestError,
+  TableFilterContainer,
+  TableToolbar,
+  FilterCustomProps,
+  useTableRequestParams
+} from '@actiontech/shared/lib/components/ActiontechTable';
+import { useRequest } from 'ahooks';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { IListAuthorization } from '@actiontech/shared/lib/api/provision/service/common';
+import { IAuthListAuthorizationParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
+import { IListAuthorization } from '@actiontech/shared/lib/api/provision/service/common.d';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  AuthListFilterParamType,
+  AuthTableColumns,
+  AuthTableActions
+} from './columns';
+import useListTipsByAuthKey from '~/hooks/useListTipsByAuthKey';
+import { useParams, useNavigate } from 'react-router-dom';
+import AuthStatusFilter from './components/AuthStatusFilter';
+import { AuthListAuthorizationFilterByStatusEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
+import { AuthListStyleWrapper } from './style';
+import useModalStatus from '~/hooks/useModalStatus';
+import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
+import { useSetRecoilState } from 'recoil';
+import { EventEmitterKey, ModalName } from '~/data/enum';
+import EventEmitter from '~/utils/EventEmitter';
+import UpdateUserInAuth from './components/UpdateUser';
+import UpdateTemplate from './components/UpdateTemplate';
+import UpdateExpiration from './components/UpdateExpiration';
+import AuthDetailDrawer from './components/AuthDetailDrawer';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { message } from 'antd';
 
-const AuthList = () => {
+const AuthList: React.FC = () => {
   const { t } = useTranslation();
-  const { pageIndex, pageSize, total, setTotal, handleTablePaginationChange } =
-    useTablePagination();
-  const [filteredInfo, setFilteredInfo] = useState<IFilteredInfo | null>(null);
+
   const { projectID } = useCurrentProject();
-  const {
-    data: dataSource,
-    loading,
-    refresh
-  } = useRequest(
-    () =>
-      auth
-        .AuthListAuthorization({
-          page_index: pageIndex,
-          page_size: pageSize,
-          filter_by_namespace_uid: projectID ?? '',
-          ...filteredInfo
-        })
-        .then((res) => {
-          setTotal(res.data.total_nums ?? 0);
-          return res.data.data;
-        }),
+
+  const [authStatus, setAuthStatus] = useState<
+    AuthListAuthorizationFilterByStatusEnum | 'all'
+  >('all');
+
+  const { purpose: defaultPurpose } = useParams();
+
+  const navigate = useNavigate();
+
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
+
+  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
+    useTableRequestParams<IListAuthorization, AuthListFilterParamType>();
+
+  const { data, loading, refresh } = useRequest(
+    () => {
+      const params: IAuthListAuthorizationParams = {
+        ...tableFilterInfo,
+        ...pagination,
+        filter_by_status: authStatus === 'all' ? undefined : authStatus,
+        filter_by_namespace_uid: projectID
+      };
+      return handleTableRequestError(auth.AuthListAuthorization(params));
+    },
     {
-      refreshDeps: [pageIndex, pageSize, filteredInfo, projectID]
+      refreshDeps: [projectID, tableFilterInfo, pagination, authStatus]
     }
   );
 
-  const { toggleModal, initModalStatus } = useModalStatus(AuthListModalStatus);
-  const updateSelectData = useSetRecoilState(AuthListSelectData);
-  const openModal = (record: IListAuthorization, name: ModalName) => {
-    toggleModal(name, true);
-    updateSelectData(record);
-  };
+  const { purposeOptions, businessOptions, serviceOptions } =
+    useListTipsByAuthKey();
 
-  const { removeAuth } = useRemoveAuth(refresh);
+  const filterCustomProps = useMemo(() => {
+    return new Map<keyof IListAuthorization, FilterCustomProps>([
+      [
+        'purpose',
+        {
+          options: purposeOptions,
+          defaultValue: defaultPurpose
+        }
+      ],
+      [
+        'businesses',
+        {
+          options: businessOptions
+        }
+      ],
+      [
+        'data_object_service',
+        {
+          options: serviceOptions
+        }
+      ]
+    ]);
+  }, [purposeOptions, businessOptions, serviceOptions, defaultPurpose]);
+
+  const { toggleModal, initModalStatus } = useModalStatus(AuthListModalStatus);
+
+  const updateSelectData = useSetRecoilState(AuthListSelectData);
+
+  const openModal = useCallback(
+    (record: IListAuthorization, name: ModalName) => {
+      toggleModal(name, true);
+      updateSelectData(record);
+    },
+    [toggleModal, updateSelectData]
+  );
+
+  const columns = useMemo(() => {
+    return AuthTableColumns(projectID, navigate, openModal);
+  }, [projectID, navigate, openModal]);
+
+  const onRecovery = useCallback(
+    (record?: IListAuthorization) => {
+      auth
+        .AuthDelAuthorization({
+          authorization_uid: record?.uid ?? ''
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(t('auth.deleteAuth.success'));
+            refresh();
+          }
+        });
+    },
+    [messageApi, t, refresh]
+  );
+
+  const actions = useMemo(() => {
+    return AuthTableActions(onRecovery, openModal);
+  }, [onRecovery, openModal]);
+
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(columns, updateTableFilterInfo);
 
   useEffect(() => {
     initModalStatus({
@@ -76,46 +157,64 @@ const AuthList = () => {
     );
     return unsubscribe;
   }, [refresh]);
+
+  useEffect(() => {
+    if (!!defaultPurpose) {
+      updateAllSelectedFilterItem(true);
+      updateTableFilterInfo({
+        filter_by_purpose: defaultPurpose
+      });
+    }
+  }, [updateTableFilterInfo, defaultPurpose, updateAllSelectedFilterItem]);
+
   return (
-    <Box
-      sx={{
-        padding: (theme) => theme.layout.padding
-      }}
-    >
-      <Card
-        title={
-          <Space>
-            {t('auth.list.title')}
-            <Button onClick={refresh} data-testid="refresh">
-              <SyncOutlined spin={loading} />
-            </Button>
-          </Space>
-        }
+    <AuthListStyleWrapper>
+      {contextHolder}
+      <PageHeader
+        title={t('auth.list.title')}
         extra={
-          <Link to={`${projectID}/auth/list/add`}>
-            <Button type="primary">{t('auth.button.addAuth')}</Button>
-          </Link>
+          <BasicButton
+            type="primary"
+            onClick={() => {
+              navigate(`/provision/project/${projectID}/auth/list/add`);
+            }}
+          >
+            {t('auth.button.addAuth')}
+          </BasicButton>
         }
+      />
+      <TableToolbar
+        refreshButton={{ refresh, disabled: loading }}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
       >
-        <Space direction="vertical" className="full-width-element">
-          <AuthListFilterForm setFilteredInfo={setFilteredInfo} />
-          <ProvisionTable
-            rowKey="uid"
-            loading={loading}
-            columns={authListTableColumns(
-              openModal,
-              removeAuth,
-              projectID ?? ''
-            )}
-            dataSource={dataSource ?? []}
-            pagination={{ total }}
-            onChange={handleTablePaginationChange}
-            scroll={{ x: 'max-content' }}
-          />
-        </Space>
-        <AuthListModal />
-      </Card>
-    </Box>
+        <AuthStatusFilter status={authStatus} onChange={setAuthStatus} />
+      </TableToolbar>
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        disabled={loading}
+        filterCustomProps={filterCustomProps}
+      />
+      <ActiontechTable
+        rowKey="event_uid"
+        dataSource={data?.list}
+        pagination={{
+          total: data?.total ?? 0
+        }}
+        loading={loading}
+        columns={columns}
+        onChange={tableChange}
+        errorMessage={requestErrorMessage}
+        actions={actions}
+      />
+      <UpdateUserInAuth />
+      <UpdateTemplate />
+      <UpdateExpiration />
+      <AuthDetailDrawer />
+    </AuthListStyleWrapper>
   );
 };
 
