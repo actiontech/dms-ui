@@ -41,7 +41,7 @@ export interface IGetSqlManageListParams {
 
   filter_db_type?: string;
 
-  filter_endpoint?: string;
+  fuzzy_search_endpoint?: string;
 
   sort_field?: GetSqlManageListSortFieldEnum;
 
@@ -83,7 +83,7 @@ export interface IExportSqlManageV1Params {
 
   filter_rule_name?: string;
 
-  filter_endpoint?: string;
+  fuzzy_search_endpoint?: string;
 
   sort_field?: exportSqlManageV1SortFieldEnum;
 
