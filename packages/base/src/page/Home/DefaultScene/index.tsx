@@ -45,21 +45,21 @@ export const AdminUserDevopsSteps: (
     title: t('dmsHome.defaultScene.steps.safetyRule.title'),
     icon: <IconStepSafetyRule />,
     children: [
-      /* IFTRUE_isSQLE */
+      // #if [sqle]
       getAuditManageStep({
         navigate,
         projectID,
         setOpenRulePageProjectSelectorModal
       }),
-      /* FITRUE_isSQLE */
+      // #endif
 
-      /* IFTRUE_isPROVISION */
+      // #if [provision]
       getDatabaseAuthStep({ navigate, projectID }),
-      /* FITRUE_isPROVISION */
+      // #endif
 
-      /* IFTRUE_isSQLE */
+      // #if [sqle]
       getAuditProgressStep({ navigate, projectID })
-      /* FITRUE_isSQLE */
+      // #endif
     ]
   },
 
@@ -70,9 +70,9 @@ export const AdminUserDevopsSteps: (
     children: [
       getSqlEditorStep({ navigate }),
 
-      /* IFTRUE_isSQLE */
+      // #if [sqle]
       getDataModifyStep({ navigate, projectID })
-      /* FITRUE_isSQLE */
+      // #endif
     ]
   },
 
@@ -90,13 +90,13 @@ export const AdminUserDevopsSteps: (
           'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
         ),
         buttons: [
-          /* IFTRUE_isPROVISION */
+          // #if [provision]
           ...getAuthAuditStepItems({ navigate, projectID }),
-          /* FITRUE_isPROVISION */
+          // #endif
 
-          /* IFTRUE_isSQLE */
+          // #if [sqle]
           ...getSQLEOperateStepItem({ navigate, projectID })
-          /* FITRUE_isSQLE */
+          // #endif
         ]
       }
     ]
@@ -113,13 +113,13 @@ export const NormalUserDevopsSteps: (
     children: [
       getSqlEditorStep({ navigate }),
 
-      /* IFTRUE_isSQLE */
+      // #if [sqle]
       getDataModifyStep({ navigate, projectID })
-      /* FITRUE_isSQLE */
+      // #endif
     ]
   },
 
-  /* IFTRUE_isPROVISION */
+  // #if [provision]
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
@@ -137,7 +137,7 @@ export const NormalUserDevopsSteps: (
       }
     ]
   }
-  /* FITRUE_isPROVISION */
+  // #endif
 ];
 
 export default DefaultScene;

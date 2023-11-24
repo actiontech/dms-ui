@@ -6,18 +6,18 @@ import GuidanceButton from '../components/GuidanceButton';
 import { DEFAULT_PROJECT_ID } from '@actiontech/shared/lib/data/common';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 
-/* IFTRUE_isEE */
+// #if [ee]
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundProject from './NotFoundProject';
 import { useState } from 'react';
-/* FITRUE_isEE */
+// #endif
 
 const StepBox: React.FC = () => {
   const { isAdmin, bindProjects } = useCurrentUser();
   const navigate = useNavigate();
   let currentProjectID = '';
 
-  /* IFTRUE_isEE */
+  // #if [ee]
   const [
     openRulePageProjectSelectorModal,
     setOpenRulePageProjectSelectorModal
@@ -25,28 +25,27 @@ const StepBox: React.FC = () => {
   const { currentProjectID: id = '', updateRecentlyProject } =
     useRecentlyOpenedProjects();
   currentProjectID = id;
-  /* FITRUE_isEE */
 
-  /* IFTRUE_isCE */
+  // #else
   currentProjectID = DEFAULT_PROJECT_ID;
-  /* FITRUE_isCE */
+  // #endif
 
   const steps = isAdmin
     ? AdminUserDevopsSteps({
         navigate,
         projectID: currentProjectID,
 
-        /* IFTRUE_isEE */
+        // #if [ee]
         setOpenRulePageProjectSelectorModal
-        /* FITRUE_isEE */
+        // #endif
       })
     : NormalUserDevopsSteps({
         navigate,
         projectID: currentProjectID,
 
-        /* IFTRUE_isEE */
+        // #if [ee]
         setOpenRulePageProjectSelectorModal
-        /* FITRUE_isEE */
+        // #endif
       });
 
   return (
@@ -92,14 +91,14 @@ const StepBox: React.FC = () => {
         ))}
       </DefaultSceneStepContainerWrapper>
 
-      {/* IFTRUE_isEE */}
+      {/* #if [ee] */}
       <NotFoundProject
         open={openRulePageProjectSelectorModal}
         setOpen={setOpenRulePageProjectSelectorModal}
         bindProjects={bindProjects}
         updateRecentlyProject={updateRecentlyProject}
       />
-      {/* FITRUE_isEE */}
+      {/* #endif */}
     </>
   );
 };

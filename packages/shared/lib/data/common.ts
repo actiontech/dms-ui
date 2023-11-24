@@ -96,17 +96,17 @@ export const SystemFormLayout = {
 };
 
 const ALL_TITLE = [
-  /* IFTRUE_isDMS */
+  //#if [dms]
   'DMS',
-  /* FITRUE_isDMS */
+  // #endif
 
-  /* IFTRUE_isSQLE */
+  // #if [sqle]
   'SQLE',
-  /* FITRUE_isSQLE */
+  // #endif
 
-  /* IFTRUE_isPROVISION */
+  // #if [provision]
   'provision'
-  /* FITRUE_isPROVISION */
+  // #endif
 ];
 
 export const DMS_DEFAULT_WEB_TITLE = ALL_TITLE[0] ?? 'DMS';

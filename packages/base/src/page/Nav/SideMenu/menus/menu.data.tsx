@@ -1,52 +1,35 @@
 import { MenuProps } from 'antd';
 import { NavigateFunction } from 'react-router-dom';
-import { filterAdminMenusWithKey } from './common';
-import { BaseOperateConflictMenuItemsWrapper, BaseMenuItems } from './base';
-
-/* IFTRUE_isSQLE */
-import { SQLEOperateConflictMenuItems, SQLEMenuItems } from './sqle';
-/* FITRUE_isSQLE */
-
-/* IFTRUE_isPROVISION */
 import {
-  ProvisionOperateConflictMenuItems,
-  ProvisionMenuItems
-} from './provision';
-/* FITRUE_isPROVISION */
+  filterAdminMenusWithKey,
+  rearrangeMenuItemsByParentKey
+} from './common';
+import { BaseMenuItems } from './base';
+
+// #if [sqle]
+import { SQLEMenuItems } from './sqle';
+// #endif
+
+// #if [provision]
+import { ProvisionMenuItems } from './provision';
+// #endif
 
 export const sideMenuData: (
   navigate: NavigateFunction,
   isAdmin: boolean,
   projectID?: string
 ) => MenuProps['items'] = (navigate, isAdmin, projectID = '') => {
-  const allMenus = [
+  const allMenus = rearrangeMenuItemsByParentKey([
     ...BaseMenuItems({ navigate, projectID }),
 
-    ...BaseOperateConflictMenuItemsWrapper(
-      [
-        /* IFTRUE_isPROVISION */
-        ...ProvisionOperateConflictMenuItems({ navigate, projectID }),
-        /* FITRUE_isPROVISION */
-
-        /* IFTRUE_isSQLE */
-        ...SQLEOperateConflictMenuItems({ navigate, projectID })
-        /* FITRUE_isSQLE */
-      ],
-      /* IFTRUE_isPROVISION */
-      /* IFTRUE_isSQLE */
-      true
-      /* FITRUE_isSQLE */
-      /* FITRUE_isPROVISION */
-    ),
-
-    /* IFTRUE_isSQLE */
+    // #if [sqle]
     ...SQLEMenuItems({ navigate, projectID }),
-    /* FITRUE_isSQLE */
+    // #endif
 
-    /* IFTRUE_isPROVISION */
+    // #if [provision]
     ...ProvisionMenuItems({ navigate, projectID })
-    /* FITRUE_isPROVISION */
-  ];
+    // #endif
+  ]);
 
   if (!isAdmin) {
     return filterAdminMenusWithKey(allMenus).sort(

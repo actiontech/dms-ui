@@ -41,7 +41,14 @@ export default defineConfig((config) => {
   return {
     plugins: [
       vitePluginConditionalCompile({
-        expand: { isCE, isEE, isSQLE, isPROVISION, isDMS }
+        include: [/^.+\/packages\/.+\/.+.(ts|tsx)$/],
+        env: {
+          ee: isEE,
+          ce: isCE,
+          sqle: isSQLE,
+          provision: isPROVISION,
+          dms: isDMS
+        }
       }),
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
@@ -65,6 +72,17 @@ export default defineConfig((config) => {
         less: {
           // 支持内联 JavaScript
           javascriptEnabled: true
+        }
+      }
+    },
+    build: {
+      rollupOptions: {
+        // resolve css in js 'use client' warn
+        onwarn(warning, warn) {
+          if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+            return;
+          }
+          warn(warning);
         }
       }
     },

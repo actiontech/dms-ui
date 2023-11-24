@@ -1,6 +1,6 @@
 packages/*/src/**/*.test.ts
 packages/*/src/**/*.test.tsx
-packages/*/src/api/*
+packages/shared/lib/api/*
 prettier.config.js
 node_modules/*
 packages/*/node_modules/*
