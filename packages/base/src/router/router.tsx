@@ -10,6 +10,10 @@ import {
 } from 'sqle/src/router/config';
 // #endif
 
+/* IFTRUE_isPROVISION */
+import { AuthRouterConfig as ProvisionAuthRouterConfig } from 'provision/src/router/router';
+/* FITRUE_isPROVISION */
+
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 
 export const AuthRouterConfig: RouterConfigItem[] = [
@@ -24,6 +28,15 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     children: SQLEProjectDetailRouterConfig
   },
   // #endif
+
+  /* IFTRUE_isPROVISION */
+  {
+    path: 'provision/project/*',
+    key: 'provision',
+    element: <ProjectDetail />,
+    children: ProvisionAuthRouterConfig
+  },
+  /* FITRUE_isPROVISION */
 
   {
     path: '*',

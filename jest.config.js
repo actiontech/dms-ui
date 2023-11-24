@@ -4,6 +4,7 @@ const path = require('path');
 const baseJestConfig = require('./packages/base/jest.config');
 const sharedJestConfig = require('./packages/shared/jest.config');
 const sqleJestConfig = require('./packages/sqle/jest.config');
+const provisionJestConfig = require('./packages/provision/jest.config');
 const { compilerOptions } = require('./tsconfig.json');
 const { pathsToModuleNameMapper } = require('ts-jest');
 
@@ -45,7 +46,8 @@ module.exports = {
   collectCoverageFrom: [
     ...addPrefix(baseJestConfig.collectCoverageFrom, 'base'),
     ...addPrefix(sharedJestConfig.collectCoverageFrom, 'shared'),
-    ...addPrefix(sqleJestConfig.collectCoverageFrom, 'sqle')
+    ...addPrefix(sqleJestConfig.collectCoverageFrom, 'sqle'),
+    ...addPrefix(provisionJestConfig.collectCoverageFrom, 'provision')
   ],
 
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts']
