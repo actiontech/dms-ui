@@ -40,6 +40,7 @@ module.exports = {
     'monaco-editor': '<rootDir>/packages/sqle/src/testUtils/mockEditor.jsx',
     '@monaco-editor/react':
       '<rootDir>/packages/sqle/src/testUtils/mockEditor.jsx',
+    '@actiontech/(.*)': '<rootDir>/packages/$1',
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },
   collectCoverageFrom: [

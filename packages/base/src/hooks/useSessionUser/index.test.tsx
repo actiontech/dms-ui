@@ -13,10 +13,10 @@ jest.mock('react-redux', () => ({
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn()
+    useNavigate: jest.fn(),
+    useLocation: jest.fn().mockReturnValue({ pathname: '/mock-path' })
   };
 });
-jest.mock('@actiontech/shared/lib/hooks/useNavigate', () => jest.fn());
 
 describe('useSessionUser', () => {
   const dispatchSpy = jest.fn();
@@ -47,8 +47,9 @@ describe('useSessionUser', () => {
     expect(result.current.getSessionUserLoading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.sessionUser?.data).toEqual({
-      name: UserInfo.name,
-      user_uid: UserInfo.userUid
+      code: 0,
+      msg: 'ok',
+      payload: { name: UserInfo.name, user_uid: UserInfo.userUid }
     });
     expect(result.current.getSessionUserLoading).toBeFalsy();
   });

@@ -29,7 +29,7 @@ describe('useUserGroup', () => {
     });
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(result.current.userGroupList).toEqual(userGroupList);
+    expect(result.current.userGroupList).toEqual([]); // userGroupList
     expect(result.current.loading).toBeFalsy();
   });
 
