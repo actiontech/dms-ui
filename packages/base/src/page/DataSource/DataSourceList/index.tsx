@@ -266,7 +266,8 @@ const DataSourceList = () => {
           return `${record?.uid}`;
         }}
         pagination={{
-          total: dataSourceList?.total ?? 0
+          total: dataSourceList?.total ?? 0,
+          current: pagination.page_index
         }}
         loading={loading}
         columns={columns}
