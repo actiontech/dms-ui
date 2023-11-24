@@ -45,7 +45,10 @@ const useDbService = () => {
     [dbServiceList]
   );
 
-  const generateDbServiceSelectOption = React.useCallback(() => {
+  /**
+   * 生成RoleSelector中的操作范围下拉列表
+   */
+  const generateDbServiceIDSelectOptions = React.useCallback(() => {
     return dbTypeList.map((type) => {
       return (
         <Select.OptGroup
@@ -64,6 +67,41 @@ const useDbService = () => {
                 <Select.Option
                   key={db.uid}
                   value={db.uid ?? ''}
+                  label={
+                    !!db.host && !!db.port
+                      ? `${db.name} (${db.host}:${db.port})`
+                      : db.name
+                  }
+                >
+                  {!!db.host && !!db.port
+                    ? `${db.name} (${db.host}:${db.port})`
+                    : db.name}
+                </Select.Option>
+              );
+            })}
+        </Select.OptGroup>
+      );
+    });
+  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
+  const generateDbServiceSelectOptions = React.useCallback(() => {
+    return dbTypeList.map((type) => {
+      return (
+        <Select.OptGroup
+          label={
+            <DatabaseTypeLogo
+              dbType={type ?? ''}
+              logoUrl={getLogoUrlByDbType(type ?? '')}
+            />
+          }
+          key={type}
+        >
+          {dbServiceList
+            .filter((db) => db.db_type === type)
+            .map((db) => {
+              return (
+                <Select.Option
+                  key={db.uid}
+                  value={db.name ?? ''}
                   label={
                     !!db.host && !!db.port
                       ? `${db.name} (${db.host}:${db.port})`
@@ -106,7 +144,8 @@ const useDbService = () => {
     dbServiceOptions,
     loading,
     updateDbServiceList,
-    generateDbServiceSelectOption
+    generateDbServiceSelectOptions,
+    generateDbServiceIDSelectOptions
   };
 };
 
