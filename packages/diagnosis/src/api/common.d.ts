@@ -192,10 +192,6 @@ export interface IViewAddServerRequest {
 }
 
 export interface IViewDatabase {
-  datasource_name: string;
-
-  datasource_uid: string;
-
   db_type: string;
 
   host: string;
@@ -208,13 +204,11 @@ export interface IViewDatabase {
 export interface IViewDatabaseReply {
   created_at?: string;
 
-  datasource_name: string;
-
-  datasource_uid: string;
-
   db_type: string;
 
   host: string;
+
+  id?: number;
 
   monitor_name: string;
 

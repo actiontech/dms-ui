@@ -78,6 +78,7 @@ const CheckMonitorConfig = () => {
           dataSource={monitorConfigData ?? []}
           errorMessage={getErrorMessage(error ?? '')}
           className="monitor-item-routine-table"
+          isPaginationFixed={false}
         />
       </CheckMonitorConfigStyleWrapper>
     </>

@@ -1,21 +1,22 @@
 import { BasicInput, BasicInputNumber, BasicSelect } from '@actiontech/shared';
-import { Form, FormInstance } from 'antd';
+import { Form, FormInstance, Select } from 'antd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 
 interface IServerMonitorFormProps {
   form: FormInstance;
-  dbLoading: boolean;
-  dbServiceOption: React.ReactNode;
 }
 
-const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
-  form,
-  dbLoading,
-  dbServiceOption
-}) => {
+const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({ form }) => {
   const { t } = useTranslation();
+
+  const renderDbTypeOption = () => {
+    return ['MySQL'].map((item) => (
+      <Select.Option key={item} value={item} label={item}>
+        {item}
+      </Select.Option>
+    ));
+  };
 
   return (
     <>
@@ -35,25 +36,19 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
           <BasicInput />
         </Form.Item>
         <Form.Item
-          name="datasource_uid"
-          label={t('monitorSourceConfig.databaseMonitor.dataSourceName')}
+          name="db_type"
+          label={t('monitorSourceConfig.databaseMonitor.databaseType')}
           rules={[
             {
               required: true,
               message: t('common.form.rule.require', {
-                name: t('monitorSourceConfig.databaseMonitor.dataSourceName')
+                name: t('monitorSourceConfig.databaseMonitor.databaseType')
               })
             }
           ]}
         >
-          <BasicSelect
-            showSearch
-            allowClear
-            optionFilterProp="children"
-            filterOption={filterOptionByLabel}
-            loading={dbLoading}
-          >
-            {dbServiceOption}
+          <BasicSelect showSearch allowClear>
+            {renderDbTypeOption()}
           </BasicSelect>
         </Form.Item>
         <Form.Item

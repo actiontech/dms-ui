@@ -7,6 +7,7 @@ import { t } from '../../../../locale';
 import { ViewDatabaseReplyStatusEnum } from '../../../../api/common.enum';
 import { Link } from 'react-router-dom';
 import { MonitorSourceConfigTypeEnum } from '../../index.type';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 const databaseMonitorStatusDictionary = {
   [ViewDatabaseReplyStatusEnum.healthy]: t('monitorSourceConfig.status.normal'),
@@ -20,11 +21,14 @@ export const DatabaseMonitorColumns =
   (): ActiontechTableColumn<IViewDatabaseReply> => [
     {
       dataIndex: 'monitor_name',
-      title: t('monitorSourceConfig.monitorSourceName')
-    },
-    {
-      dataIndex: 'datasource_name',
-      title: t('monitorSourceConfig.databaseMonitor.dataSourceName')
+      title: t('monitorSourceConfig.monitorSourceName'),
+      render: (name, record) => (
+        <Link
+          to={`/${record?.monitor_name}/${record?.id}/${MonitorSourceConfigTypeEnum.database_monitor}/monitorItemList`}
+        >
+          {name}
+        </Link>
+      )
     },
     {
       dataIndex: 'host',
@@ -40,7 +44,8 @@ export const DatabaseMonitorColumns =
     },
     {
       dataIndex: 'created_at',
-      title: t('monitorSourceConfig.databaseMonitor.creationTime')
+      title: t('monitorSourceConfig.databaseMonitor.creationTime'),
+      render: (time) => formatTime(time, '-')
     },
     {
       dataIndex: 'status',

@@ -1,6 +1,6 @@
 export interface IDatabaseMonitorFormField {
   monitor_name: string;
-  datasource_uid: string;
+  db_type: string;
   host: string;
   port: number;
 }
