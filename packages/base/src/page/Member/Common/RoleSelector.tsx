@@ -26,7 +26,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
   const {
     loading: getDbServiceListLoading,
     updateDbServiceList,
-    generateDbServiceSelectOption
+    generateDbServiceIDSelectOptions
   } = useDbService();
   useEffect(() => {
     updateRoleList();
@@ -81,7 +81,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                     optionFilterProp="children"
                     filterOption={filterOptionByLabel}
                   >
-                    {generateDbServiceSelectOption()}
+                    {generateDbServiceIDSelectOptions()}
                   </BasicSelect>
                 </Form.Item>
               </Col>
