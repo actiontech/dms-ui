@@ -2,7 +2,7 @@ import {
   createSpySuccessResponse,
   MockSpyApy
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { GetUserPayload, oauth2Tips, UserInfo } from './data';
+import { BasicInfo, GetUserPayload, oauth2Tips, UserInfo } from './data';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 class MockDMSGlobalApi implements MockSpyApy {
@@ -12,6 +12,7 @@ class MockDMSGlobalApi implements MockSpyApy {
     this.getUserBySession();
     this.bindUser();
     this.getOauth2Tips();
+    this.getBasicInfo();
   }
 
   public getCurrentUser() {
@@ -63,6 +64,16 @@ class MockDMSGlobalApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: oauth2Tips
+      })
+    );
+    return spy;
+  }
+
+  public getBasicInfo() {
+    const spy = jest.spyOn(dms, 'GetBasicInfo');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: BasicInfo
       })
     );
     return spy;
