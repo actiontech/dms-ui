@@ -56,7 +56,6 @@ import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import useRuleTips, { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
-import { SqlManagementListStyleWrapper } from './style';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -402,7 +401,7 @@ const SQLEEIndex = () => {
   }, []);
 
   return (
-    <SqlManagementListStyleWrapper>
+    <>
       {messageContextHolder}
       <PageHeader
         title={t('sqlManagement.pageTitle')}
@@ -539,7 +538,7 @@ const SQLEEIndex = () => {
       />
       {/* modal & drawer */}
       <SqleManagementModal />
-    </SqlManagementListStyleWrapper>
+    </>
   );
 };
 
