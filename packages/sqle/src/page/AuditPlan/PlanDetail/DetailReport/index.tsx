@@ -363,7 +363,10 @@ const DetailReport = () => {
           }}
         />
       </DetailReportStyleWrapper>
-      <DetailReportDrawer actionMethod={onClickAnalyze} />
+      <DetailReportDrawer
+        actionMethod={onClickAnalyze}
+        dbType={auditTask?.data?.audit_plan_db_type}
+      />
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
