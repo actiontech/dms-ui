@@ -36,6 +36,7 @@ class MockSystemApi implements MockSpyApy {
     this.getWebhookConfig();
     this.updateWebhookConfig();
     this.testWebhookConfig();
+    this.updatePersonalizationConfig();
   }
 
   public getLDAPConfig() {
@@ -181,6 +182,12 @@ class MockSystemApi implements MockSpyApy {
         data: successWebhookTestReturn
       })
     );
+    return spy;
+  };
+
+  public updatePersonalizationConfig = () => {
+    const spy = jest.spyOn(dms, 'Personalization');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   };
 }
