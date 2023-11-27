@@ -8,7 +8,7 @@ import {
   DataSourceListParamType
 } from './columns';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import {
   useCurrentProject,
   useCurrentUser,
@@ -33,11 +33,14 @@ import useDbService from '../../../hooks/useDbService';
 const DataSourceList = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectID, projectArchive, projectName } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
-  const [searchKeyword, setSearchKeyword] = useState<string>('');
+  const [searchKeyword, setSearchKeyword] = useState<string>(
+    searchParams.get('address') || ''
+  );
 
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
@@ -247,7 +250,8 @@ const DataSourceList = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch
+          onSearch,
+          defaultValue: searchKeyword
         }}
       />
       <TableFilterContainer
