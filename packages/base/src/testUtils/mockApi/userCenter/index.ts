@@ -25,12 +25,7 @@ class MockUserCenterApi implements MockSpyApy {
 
   public getUserList() {
     const spy = jest.spyOn(dms, 'ListUsers');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: userList.length,
-        users: userList
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(userList));
     return spy;
   }
 
