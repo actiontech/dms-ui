@@ -29,7 +29,7 @@ describe('test useManagerPermission', () => {
     });
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(result.current.opPermissionList).toEqual([]); // opPermissionList
+    expect(result.current.opPermissionList).toEqual(opPermissionList);
     expect(result.current.loading).toBeFalsy();
   });
 
