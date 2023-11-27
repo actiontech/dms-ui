@@ -26,9 +26,12 @@ import {
   updateSelectProject
 } from '../../../store/project';
 import { ModalName } from '../../../data/ModalName';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectList: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
   const [messageApi, contextHolder] = message.useMessage();
 
   const dispatch = useDispatch();
@@ -147,7 +150,13 @@ const ProjectList: React.FC = () => {
     [allowOperateProject, dispatch]
   );
 
-  const columns = useMemo(() => ProjectListTableColumnFactory(), []);
+  const columns = useMemo(() => {
+    const onNavigate = (id: string) => {
+      navigate(`/sqle/project/${id}/overview`);
+      EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
+    };
+    return ProjectListTableColumnFactory(onNavigate);
+  }, [navigate]);
 
   const actions = useMemo(() => {
     return ProjectListActions(
