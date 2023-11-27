@@ -45,6 +45,7 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
         </AuditResultDrawerTitleStyleWrapper>
       }
       dbType={dbType}
+      showAnnotation
     />
   );
 };
