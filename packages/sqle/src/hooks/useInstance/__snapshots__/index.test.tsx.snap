@@ -4,7 +4,7 @@ exports[`useInstance should be group instance by database type 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -66,186 +66,182 @@ exports[`useInstance should be group instance by database type 1`] = `
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="presentation"
+          />
+          <div
+            aria-label="mysql_instance_test_name_1"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
           >
-            <div
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="presentation"
-            />
-            <div
-              aria-label="mysql_instance_test_name_1"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_1"
-              role="option"
-            >
-              mysql_instance_test_name_1
-            </div>
-            <div
-              aria-label="mysql_instance_test_name_2"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_2"
-              role="option"
-            >
-              mysql_instance_test_name_2
-            </div>
+            mysql_instance_test_name_1
           </div>
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            aria-label="mysql_instance_test_name_2"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_2"
+            role="option"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            mysql_instance_test_name_2
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  class="ant-select-item ant-select-item-group"
                 >
                   <div
-                    class="ant-select-item ant-select-item-group"
+                    class="css-1uw16ge"
                   >
-                    <div
-                      class="database-type-logo-wrapper"
-                    >
-                      <img
-                        alt=""
-                        src="/v1/static/instance_logo?instance_type=mysql"
-                      />
-                      <span
-                        title="mysql"
-                      >
-                        mysql
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active"
-                    title="mysql_instance_test_name_1"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      mysql_instance_test_name_1
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
+                    <img
+                      alt=""
+                      src=""
                     />
-                  </div>
-                  <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
-                    title="mysql_instance_test_name_2"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      mysql_instance_test_name_2
-                    </div>
                     <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
+                      title="mysql"
+                    >
+                      mysql
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active"
+                  title="mysql_instance_test_name_1"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    mysql_instance_test_name_1
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="mysql_instance_test_name_2"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    mysql_instance_test_name_2
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
                     />
-                  </div>
-                  <div
-                    class="ant-select-item ant-select-item-group"
-                  >
-                    <div
-                      class="database-type-logo-wrapper"
-                    >
-                      <img
-                        alt=""
-                        src="/v1/static/instance_logo?instance_type=oracle"
-                      />
-                      <span
-                        title="oracle"
-                      >
-                        oracle
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
-                    title="oracle_instance_test_name"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      oracle_instance_test_name
-                    </div>
                     <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
+                      title="oracle"
+                    >
+                      oracle
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="oracle_instance_test_name"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    oracle_instance_test_name
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
                     />
-                  </div>
-                  <div
-                    class="ant-select-item ant-select-item-group"
-                  >
-                    <div
-                      class="database-type-logo-wrapper"
-                    >
-                      <img
-                        alt=""
-                        src="/v1/static/instance_logo?instance_type=sqlserver"
-                      />
-                      <span
-                        title="sqlserver"
-                      >
-                        sqlserver
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
-                    title="sqlserver_instance_test_name"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      sqlserver_instance_test_name
-                    </div>
                     <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                      title="sqlserver"
+                    >
+                      sqlserver
+                    </span>
                   </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="sqlserver_instance_test_name"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    sqlserver_instance_test_name
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
@@ -258,7 +254,7 @@ exports[`useInstance should get instance data from request 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
     >
       <div
         class="ant-select-selector"
@@ -270,6 +266,7 @@ exports[`useInstance should get instance data from request 1`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -322,7 +319,7 @@ exports[`useInstance should get instance data from request 2`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
       data-testid="testId"
     >
       <div
@@ -335,6 +332,7 @@ exports[`useInstance should get instance data from request 2`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -390,7 +388,7 @@ exports[`useInstance should get instance data from request 3`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -452,93 +450,89 @@ exports[`useInstance should get instance data from request 3`] = `
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="presentation"
+          />
+          <div
+            aria-label="instance_test_name (127.0.0.1:8081)"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
           >
-            <div
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="presentation"
-            />
-            <div
-              aria-label="instance_test_name (127.0.0.1:8081)"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_1"
-              role="option"
-            >
-              instance_test_name
-            </div>
+            instance_test_name
           </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  class="ant-select-item ant-select-item-group"
                 >
                   <div
-                    class="ant-select-item ant-select-item-group"
+                    class="css-1uw16ge"
                   >
-                    <div
-                      class="database-type-logo-wrapper"
-                    >
-                      <img
-                        alt=""
-                        src="/v1/static/instance_logo?instance_type=mysql"
-                      />
-                      <span
-                        title="mysql"
-                      >
-                        mysql
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active"
-                    title="instance_test_name (127.0.0.1:8081)"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      instance_test_name (127.0.0.1:8081)
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
+                    <img
+                      alt=""
+                      src=""
                     />
+                    <span
+                      title="mysql"
+                    >
+                      mysql
+                    </span>
                   </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active"
+                  title="instance_test_name (127.0.0.1:8081)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    instance_test_name (127.0.0.1:8081)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
@@ -551,7 +545,7 @@ exports[`useInstance should show one database type which your choose 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
       data-testid="testId"
     >
       <div
@@ -564,6 +558,7 @@ exports[`useInstance should show one database type which your choose 1`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -619,7 +614,7 @@ exports[`useInstance should show one database type which your choose 2`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -681,93 +676,89 @@ exports[`useInstance should show one database type which your choose 2`] = `
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="presentation"
+          />
+          <div
+            aria-label="oracle_instance_test_name"
+            aria-selected="true"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
           >
-            <div
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="presentation"
-            />
-            <div
-              aria-label="oracle_instance_test_name"
-              aria-selected="true"
-              id="rc_select_TEST_OR_SSR_list_1"
-              role="option"
-            >
-              oracle_instance_test_name
-            </div>
+            oracle_instance_test_name
           </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  class="ant-select-item ant-select-item-group"
                 >
                   <div
-                    class="ant-select-item ant-select-item-group"
+                    class="css-1uw16ge"
                   >
-                    <div
-                      class="database-type-logo-wrapper"
-                    >
-                      <img
-                        alt=""
-                        src="/v1/static/instance_logo?instance_type=oracle"
-                      />
-                      <span
-                        title="oracle"
-                      >
-                        oracle
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    aria-selected="true"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
-                    title="oracle_instance_test_name"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      oracle_instance_test_name
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
+                    <img
+                      alt=""
+                      src=""
                     />
+                    <span
+                      title="oracle"
+                    >
+                      oracle
+                    </span>
                   </div>
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  title="oracle_instance_test_name"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    oracle_instance_test_name
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
