@@ -216,7 +216,9 @@ exports[`useUsername should get username data from request 3`] = `
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_0"
             role="option"
-          />
+          >
+            user_id1
+          </div>
         </div>
         <div
           class="rc-virtual-list"
