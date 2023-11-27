@@ -376,4 +376,9 @@ export interface ActiontechTableProps<
   errorMessage?: string;
 
   columns?: ActiontechTableColumn<T, F, OtherColumnKeys>;
+
+  /**
+   * 控制表格的分页器是否固定于页面底部，默认为true，固定在页面底部，注意：只有在表格有pagination时，设置isPaginationFixed才有意义
+   */
+  isPaginationFixed?: boolean;
 }

@@ -314,7 +314,8 @@ const OrderList: React.FC = () => {
             : undefined
         }
         pagination={{
-          total: orderList?.total ?? 0
+          total: orderList?.total ?? 0,
+          current: pagination.page_index
         }}
         loading={loading}
         columns={columns}
