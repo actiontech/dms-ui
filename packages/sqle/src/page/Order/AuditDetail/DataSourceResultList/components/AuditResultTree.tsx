@@ -2,7 +2,7 @@ import { DataSourceAuditResultTreeStyleWrapper } from '../../style';
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import type { DataNode } from 'antd/es/tree';
 import { IconArrowDown } from '@actiontech/shared/lib/Icon';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template/index';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -31,12 +31,11 @@ const AuditResultTree: React.FC<{ auditResult?: IAuditResult[] }> = ({
     }
   ]);
 
-  const filterRuleNames = useMemo(
-    () => (auditResult?.map((v) => v.rule_name ?? '') ?? []).filter((v) => !!v),
-    [auditResult]
-  );
-
   const onLoadData = (node: DataNode) => {
+    const filterRuleNames = (
+      auditResult?.map((v) => v.rule_name ?? '') ?? []
+    ).filter((v) => !!v);
+
     if (!filterRuleNames.length) {
       return Promise.resolve();
     }
