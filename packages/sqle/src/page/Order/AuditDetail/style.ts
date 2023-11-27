@@ -231,13 +231,7 @@ export const DataSourceAuditResultTreeStyleWrapper = styled(Tree)`
       &::after {
         border-bottom: 1px solid
           ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
-        height: 20px;
       }
-    }
-
-    .ant-tree-treenode.ant-tree-treenode-leaf-last
-      .ant-tree-switcher-leaf-line::before {
-      height: 20px !important;
     }
 
     .ant-tree-switcher {
@@ -247,16 +241,6 @@ export const DataSourceAuditResultTreeStyleWrapper = styled(Tree)`
 
       .ant-tree-switcher-icon {
         margin-bottom: 2px;
-      }
-    }
-
-    .ant-tree-treenode {
-      height: 36px;
-      padding: 0;
-      line-height: 36px;
-
-      .ant-tree-node-content-wrapper {
-        line-height: 36px;
       }
     }
 
