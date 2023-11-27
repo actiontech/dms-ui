@@ -2,16 +2,26 @@ import {
   createSpySuccessResponse,
   MockSpyApy
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { GetUserPayload, oauth2Tips, UserInfo } from './data';
+import {
+  BasicInfo,
+  CompanyNotice,
+  GetUserPayload,
+  oauth2Tips,
+  UserInfo
+} from './data';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 class MockDMSGlobalApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getCurrentUser();
     this.addSession();
+    this.delSession();
     this.getUserBySession();
     this.bindUser();
     this.getOauth2Tips();
+    this.getBasicInfo();
+    this.getCompanyNotice();
+    this.updateCompanyNotice();
   }
 
   public getCurrentUser() {
@@ -32,6 +42,12 @@ class MockDMSGlobalApi implements MockSpyApy {
         user_uid: UserInfo.userUid
       })
     );
+    return spy;
+  }
+
+  public delSession() {
+    const spy = jest.spyOn(dms, 'DelSession');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
@@ -65,6 +81,30 @@ class MockDMSGlobalApi implements MockSpyApy {
         data: oauth2Tips
       })
     );
+    return spy;
+  }
+
+  public getBasicInfo() {
+    const spy = jest.spyOn(dms, 'GetBasicInfo');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: BasicInfo
+      })
+    );
+    return spy;
+  }
+
+  public getCompanyNotice() {
+    const spy = jest.spyOn(dms, 'GetCompanyNotice');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: CompanyNotice })
+    );
+    return spy;
+  }
+
+  public updateCompanyNotice() {
+    const spy = jest.spyOn(dms, 'UpdateCompanyNotice');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
