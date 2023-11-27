@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { TableSearchInputProps } from '../index.type';
 import { IconSearch } from '../../../Icon/common';
-import { useState } from 'react';
 import classnames from 'classnames';
 import { SearchInputStyleWrapper } from './style';
 import { useKeyPress } from 'ahooks';
@@ -9,12 +8,12 @@ import { useKeyPress } from 'ahooks';
 const SearchInput: React.FC<TableSearchInputProps> = ({
   onSearch,
   className,
+  onRefresh,
   ...props
 }) => {
   const { t } = useTranslation();
-  const [searchValue, setSearchValue] = useState('');
 
-  useKeyPress('enter', () => onSearch?.(searchValue), {
+  useKeyPress('enter', () => onRefresh?.(), {
     target: () => document.getElementById('actiontech-table-search-input')
   });
 
@@ -28,9 +27,9 @@ const SearchInput: React.FC<TableSearchInputProps> = ({
       )}
       placeholder={t('common.actiontechTable.searchInput.placeholder')}
       onChange={(e) => {
-        setSearchValue(e.target.value);
+        onSearch?.(e.target.value);
       }}
-      suffix={<IconSearch onClick={() => onSearch?.(searchValue)} />}
+      suffix={<IconSearch onClick={() => onRefresh?.()} />}
       {...props}
     />
   );

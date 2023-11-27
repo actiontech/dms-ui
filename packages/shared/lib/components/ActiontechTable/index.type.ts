@@ -165,9 +165,10 @@ export type ActiontechTableFilterMeta<
 > = Map<keyof RecordType, ActiontechTableFilterMetaValue<F>>;
 
 export type UseTableRequestParamsOptions<F = Record<string, any>> = {
-  defaultPageSize: number;
-  defaultPageIndex: number;
-  defaultFilterInfo: F;
+  defaultPageSize?: number;
+  defaultPageIndex?: number;
+  defaultFilterInfo?: F;
+  defaultSearchKeyword?: string;
 };
 
 export type TablePagination = {
@@ -184,6 +185,7 @@ export type TablePagination = {
  */
 export type TableSearchInputProps = {
   onSearch?: (value: string) => void;
+  onRefresh?: () => void;
 } & InputProps;
 
 /**
