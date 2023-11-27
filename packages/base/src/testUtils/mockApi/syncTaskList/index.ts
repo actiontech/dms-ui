@@ -67,12 +67,7 @@ class MockTaskSourceApi implements MockSpyApy {
 
   public getTaskSourceListTips() {
     const spy = jest.spyOn(dms, 'ListDatabaseSourceServiceTips');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: taskListTips.length,
-        database_sources: taskListTips
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(taskListTips));
     return spy;
   }
 }

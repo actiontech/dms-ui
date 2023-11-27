@@ -5,7 +5,7 @@ exports[`useTaskSource should generate dbTypes select options with source 1`] = 
   <div />
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
     >
       <div
         class="ant-select-selector"
@@ -66,81 +66,77 @@ exports[`useTaskSource should generate dbTypes select options with source 1`] = 
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="option"
           >
-            <div
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="option"
-            >
-              mysql
-            </div>
+            mysql
           </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
                 >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                    class="ant-select-item-option-content"
                   >
                     <div
-                      class="ant-select-item-option-content"
+                      class="css-1uw16ge"
                     >
-                      <div
-                        class="database-type-logo-wrapper"
+                      <img
+                        alt=""
+                        src=""
+                      />
+                      <span
+                        title="mysql"
                       >
-                        <img
-                          alt=""
-                          src="/v1/static/instance_logo?instance_type=mysql"
-                        />
-                        <span
-                          title="mysql"
-                        >
-                          mysql
-                        </span>
-                      </div>
+                        mysql
+                      </span>
                     </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
@@ -154,7 +150,7 @@ exports[`useTaskSource should generate dbTypes select options with source 2`] = 
   <div />
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
     >
       <div
         class="ant-select-selector"
@@ -215,81 +211,77 @@ exports[`useTaskSource should generate dbTypes select options with source 2`] = 
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="option"
           >
-            <div
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="option"
-            >
-              oracle
-            </div>
+            oracle
           </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
                 >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                    class="ant-select-item-option-content"
                   >
                     <div
-                      class="ant-select-item-option-content"
+                      class="css-1uw16ge"
                     >
-                      <div
-                        class="database-type-logo-wrapper"
+                      <img
+                        alt=""
+                        src=""
+                      />
+                      <span
+                        title="oracle"
                       >
-                        <img
-                          alt=""
-                          src="/v1/static/instance_logo?instance_type=oracle"
-                        />
-                        <span
-                          title="oracle"
-                        >
-                          oracle
-                        </span>
-                      </div>
+                        oracle
+                      </span>
                     </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
@@ -303,7 +295,7 @@ exports[`useTaskSource should generate dbTypes select options with source 3`] = 
   <div />
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
     >
       <div
         class="ant-select-selector"
@@ -364,66 +356,61 @@ exports[`useTaskSource should generate dbTypes select options with source 3`] = 
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown ant-select-dropdown-empty"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-empty ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          class="ant-select-item-empty"
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style=""
+        >
           <div
-            class="ant-select-item-empty"
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style=""
+            class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal ant-empty-small"
           >
             <div
-              class="ant-empty ant-empty-normal ant-empty-small"
+              class="ant-empty-image"
             >
-              <div
-                class="ant-empty-image"
+              <svg
+                height="41"
+                viewBox="0 0 64 41"
+                width="64"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  class="ant-empty-img-simple"
-                  height="41"
-                  viewBox="0 0 64 41"
-                  width="64"
-                  xmlns="http://www.w3.org/2000/svg"
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                  transform="translate(0 1)"
                 >
+                  <ellipse
+                    cx="32"
+                    cy="33"
+                    fill="#f5f5f5"
+                    rx="32"
+                    ry="7"
+                  />
                   <g
-                    fill="none"
-                    fill-rule="evenodd"
-                    transform="translate(0 1)"
+                    fill-rule="nonzero"
+                    stroke="#d9d9d9"
                   >
-                    <ellipse
-                      class="ant-empty-img-simple-ellipse"
-                      cx="32"
-                      cy="33"
-                      rx="32"
-                      ry="7"
+                    <path
+                      d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
                     />
-                    <g
-                      class="ant-empty-img-simple-g"
-                      fill-rule="nonzero"
-                    >
-                      <path
-                        d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
-                      />
-                      <path
-                        class="ant-empty-img-simple-path"
-                        d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
-                      />
-                    </g>
+                    <path
+                      d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
+                      fill="#fafafa"
+                    />
                   </g>
-                </svg>
-              </div>
-              <div
-                class="ant-empty-description"
-              >
-                No data
-              </div>
+                </g>
+              </svg>
+            </div>
+            <div
+              class="ant-empty-description"
+            >
+              No data
             </div>
           </div>
         </div>
@@ -438,7 +425,7 @@ exports[`useTaskSource should get task source from request 1`] = `
   <div />
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
     >
       <div
         class="ant-select-selector"
@@ -450,6 +437,7 @@ exports[`useTaskSource should get task source from request 1`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -502,7 +490,7 @@ exports[`useTaskSource should get task source from request 2`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
       data-testid="testId"
     >
       <div
@@ -515,6 +503,7 @@ exports[`useTaskSource should get task source from request 2`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -570,7 +559,7 @@ exports[`useTaskSource should get task source from request 3`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -632,96 +621,92 @@ exports[`useTaskSource should get task source from request 3`] = `
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-label="source1"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="option"
           >
-            <div
-              aria-label="source1"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="option"
-            >
-              source1
-            </div>
-            <div
-              aria-label="source2"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_1"
-              role="option"
-            >
-              source2
-            </div>
+            source1
           </div>
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            aria-label="source2"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            source2
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="source1"
                 >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                    title="source1"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      source1
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    source1
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="source2"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="source2"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      source2
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    source2
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
