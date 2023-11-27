@@ -38,7 +38,7 @@ describe('useRole', () => {
 
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(result.current.roleList).toEqual([]);
+    expect(result.current.roleList).toEqual(roleList);
     expect(result.current.loading).toBeFalsy();
   });
 
