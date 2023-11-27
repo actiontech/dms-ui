@@ -1,6 +1,8 @@
 import {
   IGetUser,
-  IGetOauth2TipsResData
+  IGetOauth2TipsResData,
+  IBasicInfo,
+  ICompanyNotice
 } from '@actiontech/shared/lib/api/base/service/common';
 import { GetUserAuthenticationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
@@ -28,4 +30,15 @@ export const GetUserPayload: IGetUser = {
 export const oauth2Tips: IGetOauth2TipsResData = {
   enable_oauth2: true,
   login_tip: 'Login With Oauth2'
+};
+
+export const BasicInfo: IBasicInfo = {
+  components: [],
+  logo_url: '/v1/dms/personalization/logo',
+  title: 'Actiontech'
+};
+
+export const CompanyNotice: ICompanyNotice = {
+  notice_str: 'notice',
+  read_by_current_user: false
 };
