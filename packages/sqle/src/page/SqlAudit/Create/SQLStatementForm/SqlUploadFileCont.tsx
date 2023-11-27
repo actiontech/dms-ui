@@ -15,6 +15,8 @@ import {
 import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { FormSubmitStatusContext } from '..';
+import { SqlFiledInitialValue } from '../../../../data/common';
+import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
 
 const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
   const { t } = useTranslation();
@@ -45,11 +47,12 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             {
               required: uploadType === UploadTypeEnum.sql,
               message: t('common.form.placeholder.input', {
-                name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.sql')
+                name: t('common.sqlStatements')
               })
-            }
+            },
+            ...whiteSpaceSql()
           ]}
-          initialValue="/* input your sql */"
+          initialValue={SqlFiledInitialValue}
         >
           <MonacoEditor
             width="100%"
