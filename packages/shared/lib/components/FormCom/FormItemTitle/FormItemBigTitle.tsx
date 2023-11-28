@@ -3,7 +3,7 @@ import { TitleProps } from 'antd/es/typography/Title';
 
 import { FormItemBigTitleStyleWrapper } from './style';
 
-interface IFormItemBigTitle extends TitleProps {
+export interface IFormItemBigTitle extends TitleProps {
   children: ReactNode;
 }
 
