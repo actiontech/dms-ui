@@ -24,7 +24,8 @@ describe('store user', () => {
     bindProjects: [],
     managementPermissions: [],
     role: '',
-    useInfoFetched: false
+    useInfoFetched: false,
+    bindProjectsFetched: false
   };
 
   it('should update token when dispatch updateToken action', () => {

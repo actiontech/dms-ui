@@ -5,7 +5,8 @@ import {
   updateToken,
   updateUser,
   updateUserUid,
-  updateUserInfoFetchStatus
+  updateUserInfoFetchStatus,
+  updateBindProjectsFetchStatus
 } from '../../../../../base/src/store/user';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../../data/common';
 
@@ -21,6 +22,7 @@ const globalAuthInvalid = () => {
   store.dispatch(updateManagementPermissions({ managementPermissions: [] }));
   store.dispatch(updateBindProjects({ bindProjects: [] }));
   store.dispatch(updateUserInfoFetchStatus(false));
+  store.dispatch(updateBindProjectsFetchStatus(false));
 };
 
 export default globalAuthInvalid;

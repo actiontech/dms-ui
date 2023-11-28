@@ -4,6 +4,7 @@ import {
   IListProject,
   IUidWithName
 } from '@actiontech/shared/lib/api/base/service/common';
+import { Link } from 'react-router-dom';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
@@ -15,77 +16,75 @@ import {
   IconProjectFlag
 } from '@actiontech/shared/lib/Icon/common';
 import { ProjectArchiveStyledWrapper } from './style';
-import { Typography } from 'antd';
 
-const ProjectListTableColumnFactory = (
-  onNavigate: (id: string) => void
-): ActiontechTableColumn<IListProject> => {
-  const columns: ActiontechTableColumn<IListProject> = [
-    {
-      dataIndex: 'name',
-      title: () => t('dmsProject.projectForm.name'),
-      render(name: string, record) {
-        return (
-          <Typography.Link onClick={() => onNavigate(record?.uid ?? '')}>
-            {name}
-          </Typography.Link>
-        );
+const ProjectListTableColumnFactory =
+  (): ActiontechTableColumn<IListProject> => {
+    const columns: ActiontechTableColumn<IListProject> = [
+      {
+        dataIndex: 'name',
+        title: () => t('dmsProject.projectForm.name'),
+        render(name: string, record) {
+          return (
+            <Link to={`/sqle/project/${record.uid}/overview`}>{name}</Link>
+          );
+        }
+      },
+      {
+        dataIndex: 'desc',
+        ellipsis: true,
+        title: () => t('dmsProject.projectForm.desc'),
+        className: 'project-table-desc-column',
+        render: (desc: string) => {
+          return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
+        }
+      },
+      // #if [ee]
+      {
+        dataIndex: 'archived',
+        title: () => t('dmsProject.projectList.columns.status'),
+        render(archived: boolean) {
+          return (
+            <ProjectArchiveStyledWrapper>
+              <TableColumnWithIconStyleWrapper>
+                {archived ? (
+                  <>
+                    <IconProjectArchived />
+                    <span>
+                      {t('dmsProject.projectList.columns.unavailable')}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <IconProjectFlag />
+                    <span>{t('dmsProject.projectList.columns.available')}</span>
+                  </>
+                )}
+              </TableColumnWithIconStyleWrapper>
+            </ProjectArchiveStyledWrapper>
+          );
+        }
+      },
+      // #endif
+      {
+        dataIndex: 'create_time',
+        ellipsis: true,
+        title: () => t('dmsProject.projectList.columns.createTime'),
+        render: (time) => {
+          return formatTime(time);
+        }
+      },
+      {
+        dataIndex: 'create_user',
+        ellipsis: true,
+        title: () => t('dmsProject.projectList.columns.createUser'),
+        render: (userInfo: IUidWithName) => {
+          return userInfo?.name ?? '';
+        }
       }
-    },
-    {
-      dataIndex: 'desc',
-      ellipsis: true,
-      title: () => t('dmsProject.projectForm.desc'),
-      className: 'project-table-desc-column',
-      render: (desc: string) => {
-        return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
-      }
-    },
-    // #if [ee]
-    {
-      dataIndex: 'archived',
-      title: () => t('dmsProject.projectList.columns.status'),
-      render(archived: boolean) {
-        return (
-          <ProjectArchiveStyledWrapper>
-            <TableColumnWithIconStyleWrapper>
-              {archived ? (
-                <>
-                  <IconProjectArchived />
-                  <span>{t('dmsProject.projectList.columns.unavailable')}</span>
-                </>
-              ) : (
-                <>
-                  <IconProjectFlag />
-                  <span>{t('dmsProject.projectList.columns.available')}</span>
-                </>
-              )}
-            </TableColumnWithIconStyleWrapper>
-          </ProjectArchiveStyledWrapper>
-        );
-      }
-    },
-    // #endif
-    {
-      dataIndex: 'create_time',
-      ellipsis: true,
-      title: () => t('dmsProject.projectList.columns.createTime'),
-      render: (time) => {
-        return formatTime(time);
-      }
-    },
-    {
-      dataIndex: 'create_user',
-      ellipsis: true,
-      title: () => t('dmsProject.projectList.columns.createUser'),
-      render: (userInfo: IUidWithName) => {
-        return userInfo?.name ?? '';
-      }
-    }
-  ];
+    ];
 
-  return columns;
-};
+    return columns;
+  };
 
 export const ProjectListActions = (
   deleteProject: (record: IListProject) => void,
