@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/CustomOptionLabel render ui when has prefix 1`] = `
+<div>
+  <span
+    class="custom-select-option-content css-vgjuov"
+  >
+    <span
+      class="custom-select-option-content-prefix"
+    >
+      prefix string
+    </span>
+    <span
+      class="custom-select-option-content-label"
+    >
+      label string
+    </span>
+  </span>
+</div>
+`;
+
+exports[`lib/CustomOptionLabel render ui when no prefix 1`] = `
+<div>
+  <span
+    class="custom-select-option-content css-vgjuov"
+  >
+    <span
+      class="custom-select-option-content-label"
+    >
+      label string
+    </span>
+  </span>
+</div>
+`;

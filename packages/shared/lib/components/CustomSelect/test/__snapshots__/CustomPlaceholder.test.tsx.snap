@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/CustomPlaceholder render ui when has prefix 1`] = `
+<div>
+  <span
+    class="custom-select-placeholder css-qly0fu"
+  >
+    <span
+      class="custom-select-placeholder-prefix"
+    >
+      prefix string
+    </span>
+    <span
+      class="custom-select-placeholder-value"
+    >
+      placeholder string
+    </span>
+  </span>
+</div>
+`;
+
+exports[`lib/CustomPlaceholder render ui when no prefix 1`] = `
+<div>
+  <span
+    class="custom-select-placeholder css-qly0fu"
+  >
+    <span
+      class="custom-select-placeholder-value"
+    >
+      placeholder string
+    </span>
+  </span>
+</div>
+`;
