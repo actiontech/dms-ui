@@ -45,7 +45,6 @@ const SideMenu: React.FC = () => {
         .then((res) => res?.data?.data ?? []),
     {
       refreshDeps: [currentProjectID],
-      loadingDelay: 3000,
       onBefore: () => {
         dispatch(updateBindProjectsFetchStatus(false));
       },
