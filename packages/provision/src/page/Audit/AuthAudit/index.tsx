@@ -37,13 +37,17 @@ const AuthAudit: React.FC = () => {
 
   const [currentDetail, setCurrentDetail] = useState<IListAuthorizationEvent>();
 
-  const [searchValue, setSearchValue] = useState<string>();
-
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<
-      IListAuthorizationEvent,
-      AuthAuditTableFilterParamType
-    >();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<
+    IListAuthorizationEvent,
+    AuthAuditTableFilterParamType
+  >();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -54,12 +58,12 @@ const AuthAudit: React.FC = () => {
         ...pagination,
         ...tableFilterInfo,
         filter_by_namespace_uid: projectID,
-        keyword: searchValue
+        keyword: searchKeyword
       };
       return handleTableRequestError(auth.AuditListAuthorizationEvents(params));
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, projectID, searchValue]
+      refreshDeps: [pagination, tableFilterInfo, projectID]
     }
   );
 
@@ -127,7 +131,8 @@ const AuthAudit: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch: setSearchValue
+          onChange: setSearchKeyword,
+          onRefresh: refresh
         }}
       />
       <TableFilterContainer
