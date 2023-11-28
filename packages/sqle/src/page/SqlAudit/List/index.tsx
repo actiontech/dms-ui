@@ -41,8 +41,17 @@ const SqlAuditList = () => {
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<ISQLAuditRecord, SqlAuditListTableFilterParamType>();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<
+    ISQLAuditRecord,
+    SqlAuditListTableFilterParamType
+  >();
   const filterDataFromUrl = useMemo(() => {
     const searchStr = new URLSearchParams(location.search);
     if (searchStr.has(SQLAuditRecordListUrlParamsKey.SQLAuditRecordID)) {
@@ -52,7 +61,6 @@ const SqlAuditList = () => {
     }
     return '';
   }, [location.search]);
-  const [searchKeyword, setSearchKeyword] = useState<string>('');
   const [filterStatus, setFilterStatus] = useState<
     getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all'
   >('all');
@@ -88,7 +96,6 @@ const SqlAuditList = () => {
         tableFilterInfo,
         pagination,
         filterStatus,
-        searchKeyword,
         filterDataFromUrl
       ]
     }
@@ -178,7 +185,8 @@ const SqlAuditList = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch,
+          onChange: onSearch,
+          onRefresh: refresh,
           placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
         }}
         loading={loading}
