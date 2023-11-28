@@ -7,7 +7,7 @@ import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 const useRuleFilterForm = (getCustomRuleList: (dbType: string) => void) => {
   const { t } = useTranslation();
   const { updateDriverNameList, driverNameList } = useDatabaseType();
-  const [ruleName, setRuleName] = useState('');
+  const [searchRuleName, setSearchRuleName] = useState('');
 
   const dbTypeOptions: SelectProps['options'] = useMemo(() => {
     return driverNameList.map((v: string) => ({
@@ -18,9 +18,6 @@ const useRuleFilterForm = (getCustomRuleList: (dbType: string) => void) => {
 
   const changeDbType = (type: string) => {
     getCustomRuleList(type);
-  };
-  const ruleNameSearch = (name: string) => {
-    setRuleName(name);
   };
 
   const DbFilter = () => (
@@ -37,9 +34,9 @@ const useRuleFilterForm = (getCustomRuleList: (dbType: string) => void) => {
   }, [updateDriverNameList]);
 
   return {
-    ruleName,
+    searchRuleName,
     DbFilter,
-    ruleNameSearch
+    setSearchRuleName
   };
 };
 
