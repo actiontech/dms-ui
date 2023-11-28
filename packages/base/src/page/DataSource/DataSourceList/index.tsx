@@ -8,7 +8,7 @@ import {
   DataSourceListParamType
 } from './columns';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import {
   useCurrentProject,
   useCurrentUser,
@@ -33,6 +33,7 @@ import useDbService from '../../../hooks/useDbService';
 const DataSourceList = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectID, projectArchive, projectName } = useCurrentProject();
@@ -60,7 +61,9 @@ const DataSourceList = () => {
     pagination,
     searchKeyword,
     setSearchKeyword
-  } = useTableRequestParams<IListDBService, DataSourceListParamType>();
+  } = useTableRequestParams<IListDBService, DataSourceListParamType>({
+    defaultSearchKeyword: searchParams.get('address') || ''
+  });
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
@@ -253,7 +256,8 @@ const DataSourceList = () => {
         }}
         searchInput={{
           onChange: onSearch,
-          onRefresh: refresh
+          onRefresh: refresh,
+          defaultValue: searchKeyword
         }}
       />
       <TableFilterContainer
