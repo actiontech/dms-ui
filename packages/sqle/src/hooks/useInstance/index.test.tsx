@@ -32,12 +32,12 @@ describe('useInstance', () => {
   const mockDispatch = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
-(useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
-(useSelector as jest.Mock).mockImplementation((selector) => {
-  return selector({
-    database: { driverMeta: driverMeta }
-  });
-});
+    (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        database: { driverMeta: driverMeta }
+      });
+    });
   });
 
   afterEach(() => {

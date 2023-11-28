@@ -31,10 +31,7 @@ describe('useDbService', () => {
   });
 
   it('should get dbService data from request', async () => {
-    const { result } = renderHooksWithRedux(
-      () => useDbService(),
-      {}
-    );
+    const { result } = renderHooksWithRedux(() => useDbService(), {});
     expect(result.current.loading).toBeFalsy();
     expect(result.current.dbServiceList).toEqual([]);
     act(() => result.current.updateDbServiceList(projectID));
@@ -76,7 +73,7 @@ describe('useDbService', () => {
   });
 
   it('should render options when use generateRoleSelectOption', async () => {
-    const { result } = renderHooksWithRedux(() => useDbService(),{});
+    const { result } = renderHooksWithRedux(() => useDbService(), {});
     const { baseElement: baseElementWithOptions } = render(
       <Select data-testid="testId" value="123123">
         {result.current.generateDbServiceIDSelectOptions()}
