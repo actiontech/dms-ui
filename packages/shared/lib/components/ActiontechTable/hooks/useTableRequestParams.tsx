@@ -4,6 +4,10 @@ import { TablePagination, UseTableRequestParamsOptions } from '../index.type';
 import { SorterResult } from 'antd/es/table/interface';
 import { isEmpty, isEqual } from 'lodash';
 
+/**
+ * @notice 为了控制 Table 的 page_index，含有 TableFilterContainer 组件的 Table, pagination.current 需要可控，数据源为 当前 hooks 的 pagination.page_index, 需要 size 也可使用 pagination.page_size
+ * 示例：packages/sqle/src/page/SqlManagement/component/SQLEEIndex/index.tsx
+ */
 const useTableRequestParams = <
   R extends Record<string, any>,
   F = Record<string, any>
