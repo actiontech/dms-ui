@@ -3,11 +3,25 @@ import useGetUserScope from '../useGetUserScope';
 import { useRequest } from 'ahooks';
 import auth from '../../api/auth';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { updateUser } from '../../store/user';
+import { updateToken, updateUser, updateUserScope } from '../../store/user';
+import { useNavigate } from 'react-router-dom';
 
 const useGetUserInfo = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { getUserScopeByRoleId } = useGetUserScope();
+
+  const clearUserInfo = () => {
+    dispatch(
+      updateUser({
+        username: '',
+        userId: null,
+        roleId: null
+      })
+    );
+    dispatch(updateToken({ token: '' }));
+    dispatch(updateUserScope({ userScope: [] }));
+  };
 
   const {
     data: userInfo,
@@ -26,14 +40,22 @@ const useGetUserInfo = () => {
           })
         );
         getUserScopeByRoleId({ role_id: 0 });
+      } else {
+        clearUserInfo();
+        navigate('/login', { replace: true });
       }
+    },
+    onError: () => {
+      clearUserInfo();
+      navigate('/login', { replace: true });
     }
   });
 
   return {
     userInfo,
     getUserInfoLoading,
-    getUserInfo
+    getUserInfo,
+    clearUserInfo
   };
 };
 
