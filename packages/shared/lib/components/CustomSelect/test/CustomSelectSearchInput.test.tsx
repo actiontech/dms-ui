@@ -1,4 +1,4 @@
-import { fireEvent, act, cleanup, screen } from '@testing-library/react';
+import { fireEvent, act, cleanup } from '@testing-library/react';
 
 import CustomSelectSearchInput from '../CustomSelectSearchInput';
 import { renderWithTheme } from '../../../testUtil/customRender';
