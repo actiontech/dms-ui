@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/CustomInput should be trigger onCustomPressEnter 1`] = `
+<div>
+  <span
+    class="ant-input-affix-wrapper basic-input-wrapper custom-input-namespace css-1v8xzxw ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+  >
+    <span
+      class="ant-input-prefix"
+    >
+      自定义前缀
+    </span>
+    <input
+      class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+      placeholder="自定义placeholder"
+      type="text"
+      value="test-val"
+    />
+  </span>
+</div>
+`;
+
+exports[`lib/CustomInput should render ui snap by default params 1`] = `
+<div>
+  <span
+    class="ant-input-affix-wrapper basic-input-wrapper custom-input-namespace css-1v8xzxw ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+  >
+    <span
+      class="ant-input-prefix"
+    >
+      自定义前缀
+    </span>
+    <input
+      class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+      placeholder="请输入{{name}}"
+      type="text"
+      value=""
+    />
+  </span>
+</div>
+`;
