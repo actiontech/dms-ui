@@ -252,7 +252,7 @@ const DataSourceList = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch,
+          onChange: onSearch,
           onRefresh: refresh
         }}
       />

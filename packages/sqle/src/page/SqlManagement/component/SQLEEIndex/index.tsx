@@ -508,7 +508,7 @@ const SQLEEIndex = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch,
+          onChange: onSearch,
           onRefresh: refresh
         }}
         loading={getListLoading}

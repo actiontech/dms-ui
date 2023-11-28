@@ -116,7 +116,7 @@ const CustomRuleList: React.FC = () => {
       <Space direction="vertical" size={24} className="full-width-element">
         <TableToolbar
           searchInput={{
-            onSearch: ruleNameSearch,
+            onChange: ruleNameSearch,
             onRefresh: refresh,
             placeholder: t('common.form.placeholder.searchInput', {
               name: t('customRule.filterForm.ruleName')

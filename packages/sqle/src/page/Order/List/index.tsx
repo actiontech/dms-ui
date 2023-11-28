@@ -293,7 +293,7 @@ const OrderList: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch,
+          onChange: onSearch,
           onRefresh: refresh
         }}
         loading={loading}
