@@ -6,7 +6,6 @@ import App from './App';
 import store from './store';
 import { RecoilRoot } from 'recoil';
 import { initReactI18n } from './locale';
-import '@actiontech/shared/lib/components/MonacoEditor/monacoEditorConfig';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
