@@ -41,5 +41,6 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
   & .annotation-wrapper .ant-typography {
     display: inline-block;
     margin-left: 8px;
+    font-size: 12px;
   }
 `;
