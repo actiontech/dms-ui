@@ -38,8 +38,6 @@ const OperationRecordList: React.FC = () => {
   const [currentOperationTypeName, setCurrentOperationTypeName] =
     useState<string>();
 
-  const [searchOperateUserName, setSearchOperateUserName] = useState<string>();
-
   const [
     exportButtonEnableStatus,
     { setFalse: finishExport, setTrue: startExport }
@@ -51,11 +49,17 @@ const OperationRecordList: React.FC = () => {
   const { updateOperationActions, operationActionOptions } =
     useOperationActions();
 
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<
-      IOperationRecordList,
-      OperationRecordListFilterParamType
-    >();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<
+    IOperationRecordList,
+    OperationRecordListFilterParamType
+  >();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -70,14 +74,14 @@ const OperationRecordList: React.FC = () => {
         ...pagination,
         ...tableFilterInfo,
         filter_operate_project_name: projectName,
-        fuzzy_search_operate_user_name: searchOperateUserName
+        fuzzy_search_operate_user_name: searchKeyword
       };
       return handleTableRequestError(
         operationRecord.getOperationRecordListV1(params)
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, searchOperateUserName]
+      refreshDeps: [pagination, tableFilterInfo]
     }
   );
 
@@ -132,7 +136,7 @@ const OperationRecordList: React.FC = () => {
     const param: IGetExportOperationRecordListV1Params = {
       ...tableFilterInfo,
       filter_operate_project_name: projectName,
-      fuzzy_search_operate_user_name: searchOperateUserName
+      fuzzy_search_operate_user_name: searchKeyword
     };
     operationRecord
       .getExportOperationRecordListV1(param, {
@@ -177,9 +181,10 @@ const OperationRecordList: React.FC = () => {
           placeholder: t('common.form.placeholder.searchInput', {
             name: t('operationRecord.list.filterForm.operator')
           }),
-          onSearch: (value) => {
-            setSearchOperateUserName(value);
-          }
+          onChange: (value) => {
+            setSearchKeyword(value);
+          },
+          onRefresh: refresh
         }}
       />
       <TableFilterContainer
