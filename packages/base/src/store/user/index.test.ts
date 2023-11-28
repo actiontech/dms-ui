@@ -110,10 +110,7 @@ describe('store user', () => {
   });
 
   it('should update user useInfoFetched when dispatch updateUserInfoFetchStatus action', () => {
-    const newState = reducers(
-      state,
-      updateUserInfoFetchStatus(true)
-    );
+    const newState = reducers(state, updateUserInfoFetchStatus(true));
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
       username: '',

@@ -68,7 +68,7 @@ describe('useTaskSource', () => {
   });
 
   test('should set list to empty array when response code is not equal success code', async () => {
-    const { result } = renderHooksWithRedux(() => useTaskSource(),{});
+    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.taskSourceList).toEqual([]);
 
