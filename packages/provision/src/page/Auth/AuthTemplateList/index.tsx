@@ -33,11 +33,10 @@ const AuthTemplateList = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { projectID } = useCurrentProject();
-  const { tableChange, pagination } =
+  const { tableChange, pagination, searchKeyword, setSearchKeyword } =
     useTableRequestParams<IListDataPermissionTemplate>();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-  const [searchKeyword, setSearchKeyword] = useState<string>('');
 
   const {
     data: dataSource,
@@ -55,7 +54,7 @@ const AuthTemplateList = () => {
       );
     },
     {
-      refreshDeps: [pagination, projectID, searchKeyword]
+      refreshDeps: [pagination, projectID]
     }
   );
 
@@ -119,7 +118,8 @@ const AuthTemplateList = () => {
         <TableToolbar
           refreshButton={{ refresh, disabled: loading }}
           searchInput={{
-            onSearch
+            onChange: onSearch,
+            onRefresh: refresh
           }}
         />
         <ActiontechTable

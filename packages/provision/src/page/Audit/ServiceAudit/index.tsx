@@ -35,18 +35,22 @@ const ServiceAudit: React.FC = () => {
     { setTrue: setShowDetailDrawer, setFalse: setHideDetailDrawer }
   ] = useBoolean();
 
-  const [searchValue, setSearchValue] = useState<string>();
-
   const [currentBusiness, setCurrentBusiness] = useState<string>();
 
   const [currentDetail, setCurrentDetail] =
     useState<IListDataObjectServiceEvent>();
 
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<
-      IListDataObjectServiceEvent,
-      ServiceAuditTableFilterParamType
-    >();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<
+    IListDataObjectServiceEvent,
+    ServiceAuditTableFilterParamType
+  >();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -57,14 +61,14 @@ const ServiceAudit: React.FC = () => {
         ...pagination,
         ...tableFilterInfo,
         filter_by_namespace_uid: projectID,
-        keyword: searchValue
+        keyword: searchKeyword
       };
       return handleTableRequestError(
         auth.AuditListDataObjectServiceEvents(params)
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, projectID, searchValue]
+      refreshDeps: [pagination, tableFilterInfo, projectID]
     }
   );
 
@@ -129,7 +133,8 @@ const ServiceAudit: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch: setSearchValue
+          onChange: setSearchKeyword,
+          onRefresh: refresh
         }}
       />
       <TableFilterContainer
