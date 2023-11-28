@@ -184,9 +184,9 @@ export type TablePagination = {
  * 表格模糊查询
  */
 export type TableSearchInputProps = {
-  onSearch?: (value: string) => void;
+  onChange?: (value: string) => void;
   onRefresh?: () => void;
-} & InputProps;
+} & Omit<InputProps, 'onChange'>;
 
 /**
  * 表格刷新

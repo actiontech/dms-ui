@@ -185,7 +185,7 @@ const SqlAuditList = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch,
+          onChange: onSearch,
           onRefresh: refresh,
           placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
         }}

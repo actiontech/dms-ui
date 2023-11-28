@@ -6,7 +6,7 @@ import { SearchInputStyleWrapper } from './style';
 import { useKeyPress } from 'ahooks';
 
 const SearchInput: React.FC<TableSearchInputProps> = ({
-  onSearch,
+  onChange,
   className,
   onRefresh,
   ...props
@@ -27,7 +27,7 @@ const SearchInput: React.FC<TableSearchInputProps> = ({
       )}
       placeholder={t('common.actiontechTable.searchInput.placeholder')}
       onChange={(e) => {
-        onSearch?.(e.target.value);
+        onChange?.(e.target.value);
       }}
       suffix={<IconSearch onClick={() => onRefresh?.()} />}
       {...props}

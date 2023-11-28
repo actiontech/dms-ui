@@ -229,7 +229,7 @@ const AuditPlanList = () => {
             }
           }
         ]}
-        searchInput={{ onSearch, onRefresh }}
+        searchInput={{ onChange: onSearch, onRefresh }}
       />
       {taskTypeShowStatus && (
         <TableTaskTypeFilter
