@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/PageHeader should render full params 1`] = `
+<div>
+  <div
+    class="actiontech-page-header-namespace fixed-style css-14fwawz"
+  >
+    <div
+      class="title"
+    >
+      这是一个标题
+    </div>
+    <div
+      class="extra"
+    >
+      这是一个extra
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/PageHeader should render no fixed 1`] = `
+<div>
+  <div
+    class="actiontech-page-header-namespace css-14fwawz"
+  >
+    <div
+      class="title"
+    >
+      这是一个标题
+    </div>
+    <div
+      class="extra"
+    >
+      这是一个extra
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/PageHeader should render title 1`] = `
+<div>
+  <div
+    class="actiontech-page-header-namespace css-14fwawz"
+  >
+    <div
+      class="title"
+    >
+      这是一个标题
+    </div>
+    <div
+      class="extra"
+    />
+  </div>
+</div>
+`;
+
+exports[`lib/PageHeader should render title 2`] = `
+<div>
+  <div
+    class="actiontech-page-header-namespace fixed-style css-14fwawz"
+  >
+    <div
+      class="title"
+    >
+      这是一个标题
+    </div>
+    <div
+      class="extra"
+    />
+  </div>
+</div>
+`;
