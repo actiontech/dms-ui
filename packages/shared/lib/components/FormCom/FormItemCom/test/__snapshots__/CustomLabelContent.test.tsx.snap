@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/CustomLabelContent should render label has tip 1`] = `
+<div>
+  <div
+    class="label-cont-custom"
+  >
+    <div>
+      这是一个标题
+    </div>
+    <div
+      class="tip-content-box"
+    >
+      这是需要提示的信息
+    </div>
+  </div>
+</div>
+`;
