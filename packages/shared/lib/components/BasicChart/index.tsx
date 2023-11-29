@@ -8,7 +8,7 @@ export enum ChartTypeEnum {
   column = 'column'
 }
 
-interface BasicChartProps {
+export interface BasicChartProps {
   type: ChartTypeEnum;
   loading?: boolean;
   errorInfo?: string | React.ReactNode;
