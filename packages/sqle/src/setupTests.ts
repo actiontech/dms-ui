@@ -7,6 +7,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Enzyme from 'enzyme';
 import Adapter from '@cfaester/enzyme-adapter-react-18';
+import 'jest-canvas-mock';
 
 Enzyme.configure({ adapter: new Adapter() });
 jest.setTimeout(10 * 1000);
