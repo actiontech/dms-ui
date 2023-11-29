@@ -42,24 +42,10 @@ const DetailReportDrawer = (props: typeDetailReportDrawer) => {
     );
   };
 
-  const { ruleInfo } = useAuditResultRuleInfo(
+  const { auditResultRuleInfo } = useAuditResultRuleInfo(
     recordData?.audit_plan_report_sql_audit_result ?? [],
     dbType ?? ''
   );
-
-  const result = useMemo(() => {
-    return (
-      recordData?.audit_plan_report_sql_audit_result?.map((item) => {
-        return {
-          annotation:
-            ruleInfo?.find(
-              (i) => i.rule_name === item.rule_name && i.db_type === dbType
-            )?.annotation ?? '',
-          ...item
-        };
-      }) ?? []
-    );
-  }, [ruleInfo, dbType, recordData?.audit_plan_report_sql_audit_result]);
 
   return (
     <ReportDrawer
@@ -76,11 +62,10 @@ const DetailReportDrawer = (props: typeDetailReportDrawer) => {
         </div>
       }
       data={{
-        auditResult: result,
+        auditResult: auditResultRuleInfo,
         sql: recordData?.audit_plan_report_sql ?? ''
       }}
       onClose={onClose}
-      dbType={props.dbType}
       showAnnotation
     />
   );
