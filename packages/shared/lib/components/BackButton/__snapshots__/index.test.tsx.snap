@@ -3,7 +3,7 @@
 exports[`BackButton should render a button 1`] = `
 <div>
   <button
-    class="ant-btn ant-btn-primary"
+    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary"
     type="button"
   >
     <span>

@@ -2,7 +2,6 @@ import {
   render,
   fireEvent,
   screen,
-  renderHook,
   act,
   cleanup,
   waitFor
@@ -15,6 +14,7 @@ import {
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { taskListTips } from '../../testUtils/mockApi/syncTaskList/data';
+import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
 
 describe('useTaskSource', () => {
   let requestSpy: jest.SpyInstance;
@@ -28,7 +28,7 @@ describe('useTaskSource', () => {
   });
 
   test('should get task source from request', async () => {
-    const { result } = renderHook(() => useTaskSource());
+    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.taskSourceList).toEqual([]);
     const { baseElement } = render(
@@ -68,7 +68,7 @@ describe('useTaskSource', () => {
   });
 
   test('should set list to empty array when response code is not equal success code', async () => {
-    const { result } = renderHook(() => useTaskSource());
+    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.taskSourceList).toEqual([]);
 
@@ -114,7 +114,7 @@ describe('useTaskSource', () => {
   });
 
   test('should set list to empty array when response throw error', async () => {
-    const { result } = renderHook(() => useTaskSource());
+    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.taskSourceList).toEqual([]);
 
@@ -160,7 +160,7 @@ describe('useTaskSource', () => {
   });
 
   test('should generate dbTypes select options with source', async () => {
-    const { result } = renderHook(() => useTaskSource());
+    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
     act(() => {
       result.current.updateTaskSourceList();
     });

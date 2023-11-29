@@ -2,7 +2,6 @@ export { default as EmptyBox } from './components/EmptyBox';
 export { default as HeaderProgress } from './components/HeaderProgress';
 export { default as CronInput } from './components/CronInput';
 export { default as BackButton } from './components/BackButton';
-export { default as IconTipsLabel } from './components/IconTipsLabel';
 export { default as TestDatabaseConnectButton } from './components/TestDatabaseConnectButton';
 export { default as EnterpriseFeatureDisplay } from './components/EnterpriseFeatureDisplay/EnterpriseFeatureDisplay';
 export { default as BasicInput } from './components/BasicInput';
