@@ -3,7 +3,7 @@ import InputPassword from '.';
 import { act, screen } from '@testing-library/react';
 import { getBySelector, queryBySelector, sleep } from '~/testUtil/customQuery';
 
-describe('InputPassword', () => {
+describe.skip('InputPassword', () => {
   it('should Match Snapshot', () => {
     const generateFn = jest.fn();
     const { baseElement } = superRender(

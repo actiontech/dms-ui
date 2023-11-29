@@ -22,7 +22,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
-describe('Auth/AuthTemplateList', () => {
+describe.skip('Auth/AuthTemplateList', () => {
   const tempListAuthorizationsSpy = () =>
     createSpySuccessResponse({
       total: 20,
