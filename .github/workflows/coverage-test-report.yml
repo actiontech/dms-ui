@@ -1,0 +1,24 @@
+name: TEST
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  pull_request:
+    branches: [main, 'main-ee', release*, 'temporary/**']
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  jobs:
+  cache-and-install:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        name: Coverage test report
+        with:
+          github-token: ${{ secrets.SECRET_TOKEN }}
+          test-script: pnpm test:ci
+          package-manager: pnpm
