@@ -14,6 +14,7 @@ import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
+import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
 
 const projectID = '7200';
 
@@ -30,26 +31,27 @@ describe('useDbService', () => {
   });
 
   it('should get dbService data from request', async () => {
-    const { result } = renderHook(() => useDbService());
+    const { result } = renderHooksWithRedux(() => useDbService(), {});
     expect(result.current.loading).toBeFalsy();
     expect(result.current.dbServiceList).toEqual([]);
     act(() => result.current.updateDbServiceList(projectID));
     expect(listDbServicesSpy).toBeCalled();
     expect(listDbServicesSpy).toBeCalledWith({
       page_size: 9999,
-      filter_by_namespace_uid: projectID
+      project_uid: projectID
     });
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.loading).toBeFalsy();
     expect(result.current.dbServiceList).toEqual(dbServicesList);
   });
+
   it('should set list to empty array when response code is not equal success code', async () => {
     listDbServicesSpy.mockClear();
     listDbServicesSpy.mockImplementation(() =>
       createSpyFailResponse({ total: 0, users: [] })
     );
-    const { result } = renderHook(() => useDbService());
+    const { result } = renderHooksWithRedux(() => useDbService(), {});
     act(() => {
       result.current.updateDbServiceList(projectID);
     });
@@ -62,7 +64,7 @@ describe('useDbService', () => {
     listDbServicesSpy.mockImplementation(() =>
       createSpyErrorResponse({ total: 0, users: [] })
     );
-    const { result } = renderHook(() => useDbService());
+    const { result } = renderHooksWithRedux(() => useDbService(), {});
     act(() => {
       result.current.updateDbServiceList(projectID);
     });
@@ -71,7 +73,7 @@ describe('useDbService', () => {
   });
 
   it('should render options when use generateRoleSelectOption', async () => {
-    const { result } = renderHook(() => useDbService());
+    const { result } = renderHooksWithRedux(() => useDbService(), {});
     const { baseElement: baseElementWithOptions } = render(
       <Select data-testid="testId" value="123123">
         {result.current.generateDbServiceIDSelectOptions()}

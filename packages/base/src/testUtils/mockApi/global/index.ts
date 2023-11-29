@@ -22,15 +22,12 @@ class MockDMSGlobalApi implements MockSpyApy {
     this.getBasicInfo();
     this.getCompanyNotice();
     this.updateCompanyNotice();
+    this.getListDBServiceDriverOption();
   }
 
   public getCurrentUser() {
     const spy = jest.spyOn(dms, 'GetUser');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        user: GetUserPayload
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(GetUserPayload));
     return spy;
   }
 
@@ -105,6 +102,22 @@ class MockDMSGlobalApi implements MockSpyApy {
   public updateCompanyNotice() {
     const spy = jest.spyOn(dms, 'UpdateCompanyNotice');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getListDBServiceDriverOption() {
+    const spy = jest.spyOn(dms, 'ListDBServiceDriverOption');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            db_type: 'mysql',
+            logo_path: 'logo_path_mock',
+            params: [{ description: 'description', name: 'cc' }]
+          }
+        ]
+      })
+    );
     return spy;
   }
 }

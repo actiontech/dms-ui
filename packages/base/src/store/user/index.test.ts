@@ -2,7 +2,8 @@ import reducers, {
   updateToken,
   updateTheme,
   updateUser,
-  updateUserUid
+  updateUserUid,
+  updateUserInfoFetchStatus
 } from '.';
 import { IReduxState } from '..';
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -43,7 +44,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      projectID: ''
+      useInfoFetched: false
     });
   });
 
@@ -63,7 +64,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      projectID: ''
+      useInfoFetched: false
     });
   });
 
@@ -84,7 +85,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: SystemRole.admin,
-      projectID: ''
+      useInfoFetched: false
     });
   });
 
@@ -104,7 +105,22 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      projectID: ''
+      useInfoFetched: false
+    });
+  });
+
+  it('should update user useInfoFetched when dispatch updateUserInfoFetchStatus action', () => {
+    const newState = reducers(state, updateUserInfoFetchStatus(true));
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      username: '',
+      uid: '',
+      token: '',
+      theme: SupportTheme.LIGHT,
+      bindProjects: [],
+      managementPermissions: [],
+      role: '',
+      useInfoFetched: true
     });
   });
 });
