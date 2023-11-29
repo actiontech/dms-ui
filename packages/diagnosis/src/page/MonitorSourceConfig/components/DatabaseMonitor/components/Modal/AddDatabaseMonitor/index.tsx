@@ -10,10 +10,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import { updateMonitorSourceConfigModalStatus } from '../../../../../../../store/monitorSourceConfig';
-import useDbService from '../../../../../../../hooks/useDbService';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import DatabaseMonitorForm from '../DatabaseMonitorForm';
-import { useEffect } from 'react';
 import { IDatabaseMonitorFormField } from '../DatabaseMonitorForm/index.type';
 
 const AddDatabaseMonitor = () => {
@@ -33,28 +31,12 @@ const AddDatabaseMonitor = () => {
       state.monitorSourceConfig.modalStatus[ModalName.Add_Database_Monitor]
   );
 
-  const {
-    dbServiceList,
-    loading,
-    updateDbServiceList,
-    generateDbServiceSelectOption
-  } = useDbService();
-
-  useEffect(() => {
-    if (visible) updateDbServiceList();
-  }, [visible, updateDbServiceList]);
-
   const submit = async () => {
     const values = await form.validateFields();
-    const sourceData = dbServiceList.find(
-      (item) => item?.uid === values.datasource_uid
-    );
     const params: IV1AddDBParams = {
       dbs: [
         {
-          datasource_name: sourceData?.name ?? '',
-          datasource_uid: values.datasource_uid,
-          db_type: sourceData?.db_type ?? '',
+          db_type: values.db_type,
           host: values.host,
           monitor_name: values.monitor_name,
           port: Number(values.port)
@@ -117,11 +99,7 @@ const AddDatabaseMonitor = () => {
         }
       >
         {contextHolder}
-        <DatabaseMonitorForm
-          form={form}
-          dbLoading={loading}
-          dbServiceOption={generateDbServiceSelectOption()}
-        />
+        <DatabaseMonitorForm form={form} />
       </BasicDrawer>
     </>
   );

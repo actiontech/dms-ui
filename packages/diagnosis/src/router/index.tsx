@@ -6,6 +6,9 @@ const Login = React.lazy(() => import('../page/Login'));
 const MonitorSourceConfig = React.lazy(
   () => import('../page/MonitorSourceConfig')
 );
+const MonitorItemConfig = React.lazy(
+  () => import('../page/MonitorSourceConfig/components/MonitorItemConfig')
+);
 
 export type RouterConfigItem = {
   path?: string;
@@ -32,6 +35,12 @@ export const diagnosisAuthRouterConfig: RouterConfigItem[] = [
     key: 'monitorSourceConfig',
     icon: <SolutionOutlined />,
     element: <MonitorSourceConfig />
+  },
+  {
+    path: `/:name/:id/:type/monitorItemList`,
+    key: 'monitorItemList',
+    element: <MonitorItemConfig />,
+    hideInMenu: true
   },
   {
     path: '*',

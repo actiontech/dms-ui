@@ -83,7 +83,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
   }, [deleteDatabaseMonitor]);
 
   const columns = useMemo(() => {
-    return DatabaseMonitorColumns;
+    return DatabaseMonitorColumns();
   }, []);
 
   useEffect(() => {

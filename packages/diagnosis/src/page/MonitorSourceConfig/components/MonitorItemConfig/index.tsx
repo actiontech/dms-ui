@@ -1,0 +1,143 @@
+import { BasicButton, PageHeader } from '@actiontech/shared';
+import { ArrowLeftOutlined, SyncOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
+import { Link, useParams } from 'react-router-dom';
+import { MonitorConfigStyleWrapper } from './style';
+import { MonitorConfigUrlParams } from './index.type';
+import {
+  ActiontechTable,
+  useTableRequestError,
+  useTableRequestParams
+} from '@actiontech/shared/lib/components/ActiontechTable';
+import monitor from '../../../../api/monitor';
+import { IV1ListMonitorRoutineParams } from '../../../../api/monitor/index.d';
+import { IViewMonitorConfigReply } from '../../../../api/common';
+import { useRequest } from 'ahooks';
+import { IconTagBookMark } from '@actiontech/shared/lib/Icon/common';
+import {
+  MonitorConfigActions,
+  MonitorConfigColumns,
+  monitorSourceDictionary
+} from './column';
+import { MonitorSourceConfigTypeEnum } from '../../index.type';
+import { useDispatch } from 'react-redux';
+import { useCallback, useMemo } from 'react';
+import {
+  updateMonitorSourceConfigModalStatus,
+  updateSelectMonitorConfigData
+} from '../../../../store/monitorSourceConfig';
+import { ModalName } from '../../../../data/ModalName';
+import MonitorConfigModal from './components/Modal';
+
+const MonitorConfig = () => {
+  const dispatch = useDispatch();
+
+  const { t } = useTranslation();
+
+  const urlParams = useParams<MonitorConfigUrlParams>();
+
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
+
+  const { pagination, tableChange } = useTableRequestParams<
+    IViewMonitorConfigReply,
+    IV1ListMonitorRoutineParams
+  >();
+
+  const {
+    loading,
+    data: monitorItemList,
+    refresh
+  } = useRequest(
+    () => {
+      return handleTableRequestError(
+        monitor.V1ListMonitorRoutine({
+          ...pagination,
+          source_id: Number(urlParams.id)
+        })
+      );
+    },
+    {
+      ready: !!urlParams.id,
+      refreshDeps: [urlParams.id, pagination]
+    }
+  );
+
+  const onCheckMonitorConfig = useCallback(
+    (record: IViewMonitorConfigReply | undefined) => {
+      if (record) {
+        dispatch(updateSelectMonitorConfigData(record));
+        dispatch(
+          updateMonitorSourceConfigModalStatus({
+            modalName: ModalName.Check_Monitor_Config,
+            status: true
+          })
+        );
+      }
+    },
+    [dispatch]
+  );
+
+  const actions = useMemo(() => {
+    return MonitorConfigActions(onCheckMonitorConfig);
+  }, [onCheckMonitorConfig]);
+
+  const columns = useMemo(() => {
+    return MonitorConfigColumns();
+  }, []);
+
+  return (
+    <>
+      <MonitorConfigStyleWrapper>
+        <PageHeader
+          title={
+            <Link to={`/monitorSourceConfig`} key="go-back">
+              <BasicButton icon={<ArrowLeftOutlined />}>
+                {t('monitorSourceConfig.monitorConfig.returnMonitorSource')}
+              </BasicButton>
+            </Link>
+          }
+        />
+        <section className="header-wrapper">
+          <section className="header">
+            <h3 className="header-cont-text">{urlParams.name}</h3>
+            <SyncOutlined
+              onClick={refresh}
+              spin={loading}
+              className="refresh-icon"
+            />
+          </section>
+          <section className="tag-wrapper">
+            <div className="custom-tag-item">
+              <IconTagBookMark className="custom-tag-icon bookmark-icon" />
+              <div>
+                {t('monitorSourceConfig.sourceType.typeLabel', {
+                  type: monitorSourceDictionary[
+                    urlParams.type ?? MonitorSourceConfigTypeEnum.server_monitor
+                  ]
+                })}
+              </div>
+            </div>
+          </section>
+        </section>
+        <section className="detail-table-wrapper">
+          <ActiontechTable
+            loading={loading}
+            columns={columns}
+            onChange={tableChange}
+            pagination={{
+              total: monitorItemList?.total ?? 0
+            }}
+            rowKey="routine_name"
+            dataSource={monitorItemList?.list ?? []}
+            errorMessage={requestErrorMessage}
+            actions={actions}
+          />
+        </section>
+      </MonitorConfigStyleWrapper>
+      <MonitorConfigModal />
+    </>
+  );
+};
+
+export default MonitorConfig;
