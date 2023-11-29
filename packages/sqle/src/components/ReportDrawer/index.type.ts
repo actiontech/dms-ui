@@ -12,6 +12,5 @@ export interface DetailReportDrawerProps {
   data: typeData | null;
   onClose: () => void;
   footer?: ReactNode;
-  dbType?: string;
   showAnnotation?: boolean;
 }
