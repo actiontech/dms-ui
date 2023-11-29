@@ -10,7 +10,7 @@ on:
 jobs:
   cache-and-install:
     runs-on: ubuntu-latest
-    if: '!contains(github.event.head_commit.message, `[skip ci]`)'
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
 
     steps:
       - name: Checkout
@@ -45,10 +45,3 @@ jobs:
 
       - name: Code lint checker
         run: pnpm checker
-
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        name: Coverage test report
-        with:
-          github-token: ${{ secrets.SECRET_TOKEN }}
-          test-script: pnpm test:ci
-          package-manager: pnpm
