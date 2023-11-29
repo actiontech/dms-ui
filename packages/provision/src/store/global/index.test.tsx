@@ -3,7 +3,7 @@ import { GlobalToken } from '.';
 import { ResetRecoilState, snapshot_UNSTABLE } from 'recoil';
 import { LocalStorageWrapper } from '@actiontech/shared';
 
-jest.mock('~/utils/LocalStorageWrapper', () => {
+jest.mock('@actiontech/shared/lib/utils/LocalStorageWrapper', () => {
   return {
     getOrDefault: jest.fn().mockReturnValue('token1'),
     set: jest.fn()
