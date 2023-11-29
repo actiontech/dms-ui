@@ -74,7 +74,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
           rules={[
             {
               required: true,
-              message: t('common.form.placeholder.select', {
+              message: t('common.form.placeholder.upload', {
                 name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.sqlFile')
               })
             }
@@ -98,7 +98,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
           rules={[
             {
               required: true,
-              message: t('common.form.placeholder.select', {
+              message: t('common.form.placeholder.upload', {
                 name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.xmlFile')
               })
             }
@@ -123,7 +123,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             rules={[
               {
                 required: true,
-                message: t('common.form.placeholder.select', {
+                message: t('common.form.placeholder.upload', {
                   name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.zipFile')
                 })
               }
