@@ -3,7 +3,9 @@ import { BasicModalStyleWrapper } from './style';
 import classNames from 'classnames';
 import { IconClose } from '../../Icon';
 
-const BasicModal: React.FC<ModalProps & { size?: 'small' | 'large' }> = ({
+export type IBasicModal = ModalProps & { size?: 'small' | 'large' };
+
+const BasicModal: React.FC<IBasicModal> = ({
   className,
   size = 'small',
   ...props
