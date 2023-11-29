@@ -129,7 +129,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
           rules={[
             {
               required: true,
-              message: t('common.form.placeholder.select', {
+              message: t('common.form.placeholder.upload', {
                 name: t('order.sqlInfo.sqlFile')
               })
             }
@@ -156,7 +156,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
           rules={[
             {
               required: true,
-              message: t('common.form.placeholder.select', {
+              message: t('common.form.placeholder.upload', {
                 name: t('order.sqlInfo.mybatisFile')
               })
             }
@@ -178,7 +178,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
           rules={[
             {
               required: true,
-              message: t('common.form.placeholder.select', {
+              message: t('common.form.placeholder.upload', {
                 name: t('order.sqlInfo.zipFile')
               })
             }
