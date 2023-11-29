@@ -13,9 +13,14 @@ import { DatePicker, ConfigProvider } from 'antd';
 import classnames from 'classnames';
 import { ComponentControlHeight } from '../../data/common';
 
-const BasicDatePicker: React.FC<
-  DatePickerProps & { hideSuperIcon?: boolean }
-> = ({ className, onOpenChange, hideSuperIcon = true, ...otherProps }) => {
+export type IBasicDatePicker = DatePickerProps & { hideSuperIcon?: boolean };
+
+const BasicDatePicker: React.FC<IBasicDatePicker> = ({
+  className,
+  onOpenChange,
+  hideSuperIcon = true,
+  ...otherProps
+}) => {
   const [open, { set }] = useBoolean();
 
   const ref = useRef<HTMLDivElement | null>(null);
