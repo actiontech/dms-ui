@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/BasicSegmented render segmented ui 1`] = `
+<div>
+  <div
+    class="ant-segmented basic-segmented-wrapper custom-segmented-class css-192b3m1 css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-segmented-group"
+    >
+      <label
+        class="ant-segmented-item ant-segmented-item-selected"
+      >
+        <input
+          checked=""
+          class="ant-segmented-item-input"
+          type="radio"
+        />
+        <div
+          class="ant-segmented-item-label"
+          title="选项一"
+        >
+          选项一
+        </div>
+      </label>
+      <label
+        class="ant-segmented-item"
+      >
+        <input
+          class="ant-segmented-item-input"
+          type="radio"
+        />
+        <div
+          class="ant-segmented-item-label"
+          title="选项二"
+        >
+          选项二
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
