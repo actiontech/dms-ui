@@ -17,7 +17,8 @@ const useTableRequestParams = <
   const {
     defaultPageSize = 20,
     defaultPageIndex = 1,
-    defaultFilterInfo = {} as F
+    defaultFilterInfo = {} as F,
+    defaultSearchKeyword = ''
   } = option ?? {};
 
   const [tableFilterInfo, setTableFilterInfo] = useState<F>(defaultFilterInfo);
@@ -41,6 +42,11 @@ const useTableRequestParams = <
   const [sortInfo, setSortInfo] = useState<SorterResult<R> | SorterResult<R>[]>(
     {}
   );
+
+  const [searchKeyword, setSearchKeyword] = useState<string>(
+    defaultSearchKeyword ?? ''
+  );
+
   /**
    * TODO:
    * 暂时没有确认模糊查询字段名
@@ -106,7 +112,9 @@ const useTableRequestParams = <
     tableChange,
     sortInfo,
     createSortParams,
-    setPagination
+    setPagination,
+    searchKeyword,
+    setSearchKeyword
   };
 };
 

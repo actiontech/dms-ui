@@ -3,13 +3,11 @@ import {
   LoginPageLeftStyleWrapper,
   LoginPageRightStyleWrapper
 } from '../style';
-import leftBg from '../../../assets/img/login-left-bg.png';
 import useSystemConfig from '../../../hooks/useSystemConfig.tsx';
 
 const LoginLayout: React.FC<{
-  leftBackgroundImg?: string;
   children?: React.ReactNode;
-}> = ({ leftBackgroundImg = leftBg, children }) => {
+}> = ({ children }) => {
   const { logoSrc, renderWebTitle } = useSystemConfig();
 
   return (
@@ -17,7 +15,7 @@ const LoginLayout: React.FC<{
       <LoginPageLeftStyleWrapper>
         <div className="banner">
           <img
-            src={leftBackgroundImg}
+            src="/static/image/login-left-bg.png"
             className="login-background-img"
             alt="left_bg"
           />

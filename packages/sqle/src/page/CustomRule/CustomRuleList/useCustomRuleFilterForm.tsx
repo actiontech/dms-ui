@@ -4,12 +4,9 @@ import { SelectProps } from 'antd';
 import useDatabaseType from '../../../hooks/useDatabaseType';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 
-const useRuleFilterForm = (
-  getCustomRuleList: (dbType: string, ruleName: string) => void
-) => {
+const useRuleFilterForm = (getCustomRuleList: (dbType: string) => void) => {
   const { t } = useTranslation();
   const { updateDriverNameList, driverNameList } = useDatabaseType();
-  const [dbType, setDbType] = useState('');
   const [ruleName, setRuleName] = useState('');
 
   const dbTypeOptions: SelectProps['options'] = useMemo(() => {
@@ -20,12 +17,10 @@ const useRuleFilterForm = (
   }, [driverNameList]);
 
   const changeDbType = (type: string) => {
-    setDbType(type);
-    getCustomRuleList(type, ruleName);
+    getCustomRuleList(type);
   };
   const ruleNameSearch = (name: string) => {
     setRuleName(name);
-    getCustomRuleList(dbType, name);
   };
 
   const DbFilter = () => (
@@ -42,6 +37,7 @@ const useRuleFilterForm = (
   }, [updateDriverNameList]);
 
   return {
+    ruleName,
     DbFilter,
     ruleNameSearch
   };

@@ -165,9 +165,10 @@ export type ActiontechTableFilterMeta<
 > = Map<keyof RecordType, ActiontechTableFilterMetaValue<F>>;
 
 export type UseTableRequestParamsOptions<F = Record<string, any>> = {
-  defaultPageSize: number;
-  defaultPageIndex: number;
-  defaultFilterInfo: F;
+  defaultPageSize?: number;
+  defaultPageIndex?: number;
+  defaultFilterInfo?: F;
+  defaultSearchKeyword?: string;
 };
 
 export type TablePagination = {
@@ -183,8 +184,9 @@ export type TablePagination = {
  * 表格模糊查询
  */
 export type TableSearchInputProps = {
-  onSearch?: (value: string) => void;
-} & InputProps;
+  onChange?: (value: string) => void;
+  onRefresh?: () => void;
+} & Omit<InputProps, 'onChange'>;
 
 /**
  * 表格刷新

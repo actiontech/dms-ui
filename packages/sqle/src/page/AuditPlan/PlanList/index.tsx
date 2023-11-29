@@ -45,15 +45,17 @@ const AuditPlanList = () => {
   const { username } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-  const { tableFilterInfo, tableChange, pagination } = useTableRequestParams<
-    IAuditPlanResV2,
-    PlanListTableFilterParamType
-  >();
+  const {
+    tableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<IAuditPlanResV2, PlanListTableFilterParamType>();
   const [filterCustomData, setFilterCustomData] = useState({
     filter_audit_plan_db_type: '',
     filter_audit_plan_type: ''
   });
-  const [planName, setPlanName] = useState('');
 
   // task type
   const [
@@ -78,24 +80,18 @@ const AuditPlanList = () => {
         ...tableFilterInfo,
         ...pagination,
         ...filterCustomData,
-        fuzzy_search_audit_plan_name: planName,
+        fuzzy_search_audit_plan_name: searchKeyword,
         project_name: projectName
       };
       return handleTableRequestError(audit_plan.getAuditPlansV2(params));
     },
     {
-      refreshDeps: [
-        tableFilterInfo,
-        pagination,
-        filterCustomData,
-        planName,
-        projectName
-      ]
+      refreshDeps: [tableFilterInfo, pagination, filterCustomData, projectName]
     }
   );
 
   const onSearch = (val: string) => {
-    setPlanName(val);
+    setSearchKeyword(val);
   };
 
   const onRefresh = () => {
@@ -233,7 +229,7 @@ const AuditPlanList = () => {
             }
           }
         ]}
-        searchInput={{ onSearch }}
+        searchInput={{ onChange: onSearch, onRefresh }}
       />
       {taskTypeShowStatus && (
         <TableTaskTypeFilter
