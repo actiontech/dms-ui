@@ -19,9 +19,16 @@ import { IServerMonitorProps } from './index.type';
 import { IViewServerReply } from '../../../../api/common';
 import { IV1ListServersParams } from '../../../../api/server/index.d';
 import ServerMonitorModal from './components/Modal';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useTranslation } from 'react-i18next';
+import { message } from 'antd';
 
 const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
+
+  const [messageApi, messageContextHolder] = message.useMessage();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -68,9 +75,45 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
     [dispatch]
   );
 
+  const onDeleteServerMonitor = useCallback(
+    (id?: number, name?: string) => {
+      if (!id) return;
+      const hideLoading = messageApi.loading(
+        t(
+          'monitorSourceConfig.serverMonitor.deleteServerMonitorSourceLoading',
+          {
+            name
+          }
+        ),
+        0
+      );
+      server
+        .V1DeleteServer({
+          server_ids: [id]
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(
+              t(
+                'monitorSourceConfig.serverMonitor.deleteServerMonitorSourceTip',
+                {
+                  name
+                }
+              )
+            );
+            refresh();
+          }
+        })
+        .finally(() => {
+          hideLoading();
+        });
+    },
+    [refresh, t, messageApi]
+  );
+
   const actions = useMemo(() => {
-    return ServerMonitorActions(onEditServerMonitor);
-  }, [onEditServerMonitor]);
+    return ServerMonitorActions(onEditServerMonitor, onDeleteServerMonitor);
+  }, [onEditServerMonitor, onDeleteServerMonitor]);
 
   const columns = useMemo(() => {
     return ServerMonitorColumns;
@@ -87,6 +130,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
 
   return (
     <>
+      {messageContextHolder}
       <ActiontechTable
         rowKey="name"
         dataSource={serverMonitorList?.list ?? []}

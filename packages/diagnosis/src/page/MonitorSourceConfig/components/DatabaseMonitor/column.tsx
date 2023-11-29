@@ -50,15 +50,16 @@ export const DatabaseMonitorColumns =
     {
       dataIndex: 'status',
       title: t('common.status'),
-      render: (record: IViewDatabaseReply) => {
-        if (!record.status) return '-';
-        return databaseMonitorStatusDictionary[record.status];
+      render: (status: ViewDatabaseReplyStatusEnum) => {
+        if (!status) return '-';
+        return databaseMonitorStatusDictionary[status];
       }
     }
   ];
 
 export const DatabaseMonitorActions = (
-  deleteDatabaseMonitor: (record?: IViewDatabaseReply) => void
+  onEditDatabaseMonitor: (record?: IViewDatabaseReply) => void,
+  onDeleteDatabaseMonitor: (record?: IViewDatabaseReply) => void
 ): {
   buttons: ActiontechTableActionMeta<IViewDatabaseReply>[];
   width: number;
@@ -66,6 +67,17 @@ export const DatabaseMonitorActions = (
   return {
     width: 70,
     buttons: [
+      {
+        text: t('common.edit'),
+        key: 'editDatabaseMonitor',
+        buttonProps: (record) => {
+          return {
+            onClick: () => {
+              onEditDatabaseMonitor(record);
+            }
+          };
+        }
+      },
       {
         text: t('common.delete'),
         buttonProps: () => ({
@@ -81,7 +93,7 @@ export const DatabaseMonitorActions = (
               }
             ),
             onConfirm: () => {
-              deleteDatabaseMonitor(record);
+              onDeleteDatabaseMonitor(record);
             }
           };
         }

@@ -1,7 +1,11 @@
 import { BasicInput, BasicInputNumber } from '@actiontech/shared';
+import { useRequest } from 'ahooks';
 import { Form, FormInstance } from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import server from '../../../../../../../api/server';
+import { IV1GetServerHostnameParams } from '../../../../../../../api/server/index.d';
+import { LoadingOutlined } from '@ant-design/icons';
 
 interface IServerMonitorFormProps {
   form: FormInstance;
@@ -14,23 +18,39 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
+  const {
+    data: hostName,
+    loading,
+    run: getServerHostName
+  } = useRequest(
+    (params) => {
+      return server.V1GetServerHostname(params);
+    },
+    {
+      manual: true
+    }
+  );
+
+  useEffect(() => {
+    const name = hostName?.data?.hostname;
+    if (!!name) form.setFieldValue('name', name);
+  }, [hostName, form]);
+
+  const handleGetHostName = () => {
+    form.validateFields(['host', 'password', 'port', 'user']).then((res) => {
+      const params: IV1GetServerHostnameParams = {
+        host: res.host,
+        password: res.password,
+        port: res.port,
+        user: res.user
+      };
+      if (!loading) getServerHostName(params);
+    });
+  };
+
   return (
     <>
       <Form form={form} layout="vertical">
-        <Form.Item
-          name="name"
-          label={t('monitorSourceConfig.monitorSourceName')}
-          rules={[
-            {
-              required: true,
-              message: t('common.form.rule.require', {
-                name: t('monitorSourceConfig.monitorSourceName')
-              })
-            }
-          ]}
-        >
-          <BasicInput disabled={!!isUpdate} />
-        </Form.Item>
         <Form.Item
           name="host"
           label={t('monitorSourceConfig.serverMonitor.serverIp')}
@@ -89,6 +109,24 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
           ]}
         >
           <BasicInput.Password />
+        </Form.Item>
+        <Form.Item
+          name="name"
+          label={t('monitorSourceConfig.monitorSourceName')}
+          rules={[
+            {
+              required: true,
+              message: t('common.form.rule.require', {
+                name: t('monitorSourceConfig.monitorSourceName')
+              })
+            }
+          ]}
+        >
+          <BasicInput
+            onFocus={handleGetHostName}
+            disabled={!!isUpdate}
+            suffix={loading ? <LoadingOutlined /> : <span />}
+          />
         </Form.Item>
       </Form>
     </>
