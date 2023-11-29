@@ -2,7 +2,10 @@ import { renderHook } from '@testing-library/react';
 import useBack from '.';
 import { useNavigate } from 'react-router-dom';
 
-jest.mock('../useNavigate', () => jest.fn());
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: jest.fn()
+}));
 
 describe('useBack', () => {
   test('should jump to last path in history when call goBack', () => {

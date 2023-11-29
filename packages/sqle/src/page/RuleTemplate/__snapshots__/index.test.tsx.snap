@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RuleTemplate should render page header and describe 1`] = `<Outlet />`;

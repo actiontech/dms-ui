@@ -15,12 +15,29 @@ import {
 } from '../../testUtils/mockRequest';
 import { Select } from 'antd';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
+import { useDispatch, useSelector } from 'react-redux';
+import { driverMeta } from '../useDatabaseType/index.test.data';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn(),
+    useDispatch: jest.fn()
+  };
+});
 
 const projectName = 'default';
 
 describe('useInstance', () => {
+  const mockDispatch = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
+    (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        database: { driverMeta: driverMeta }
+      });
+    });
   });
 
   afterEach(() => {

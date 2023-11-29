@@ -36,7 +36,7 @@ describe('useUsername', () => {
   test('should get username data from request', async () => {
     const requestSpy = mockRequest();
     requestSpy.mockImplementation(() =>
-      resolveThreeSecond([{ user_name: 'user_name1' }])
+      resolveThreeSecond([{ user_name: 'user_name1', user_id: 'user_id1' }])
     );
     const { result, waitForNextUpdate } = renderHook(() => useUsername());
     expect(result.current.loading).toBe(false);
@@ -60,7 +60,9 @@ describe('useUsername', () => {
 
     expect(result.current.loading).toBe(false);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.usernameList).toEqual([{ user_name: 'user_name1' }]);
+    expect(result.current.usernameList).toEqual([
+      { user_name: 'user_name1', user_id: 'user_id1' }
+    ]);
     cleanup();
 
     const { baseElement: baseElementWithOptions } = render(
