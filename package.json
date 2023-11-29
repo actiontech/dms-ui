@@ -18,7 +18,7 @@
     "checker": "pnpm ts-check && pnpm eslint && pnpm stylelint && pnpm prettier:c",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults --outputFile='report.json'"
+    "test:ci": "jest --ci --watchAll=false --json --coverage --colors --silent --testLocationInResults --outputFile='report.json'"
   },
   "keywords": [],
   "author": "",
