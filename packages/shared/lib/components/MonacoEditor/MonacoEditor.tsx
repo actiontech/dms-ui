@@ -2,6 +2,8 @@ import { EditorProps } from '@monaco-editor/react';
 import { MonacoEditorStyleWrapper } from './style';
 import classNames from 'classnames';
 
+import './monacoEditorConfig';
+
 const CustomMonacoEditor: React.FC<Omit<EditorProps, 'theme'>> = ({
   options,
   className,
