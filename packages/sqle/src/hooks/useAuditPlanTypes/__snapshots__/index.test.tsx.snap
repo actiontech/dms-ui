@@ -4,7 +4,7 @@ exports[`useAuditPlanTypes should get audit plan types data from request 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
     >
       <div
         class="ant-select-selector"
@@ -16,6 +16,7 @@ exports[`useAuditPlanTypes should get audit plan types data from request 1`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -68,7 +69,7 @@ exports[`useAuditPlanTypes should get audit plan types data from request 2`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
       data-testid="testId"
     >
       <div
@@ -81,6 +82,7 @@ exports[`useAuditPlanTypes should get audit plan types data from request 2`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -136,7 +138,7 @@ exports[`useAuditPlanTypes should get audit plan types data from request 3`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -198,251 +200,247 @@ exports[`useAuditPlanTypes should get audit plan types data from request 3`] = `
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-label="自定义"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="option"
           >
-            <div
-              aria-label="自定义"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="option"
-            >
-              default
-            </div>
-            <div
-              aria-label="慢日志"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_1"
-              role="option"
-            >
-              mysql_slow_log
-            </div>
+            default
           </div>
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            aria-label="慢日志"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
+          >
+            mysql_slow_log
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
           >
             <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
+              style="height: 264px; position: relative; overflow: hidden;"
             >
               <div
-                style="height: 264px; position: relative; overflow: hidden;"
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
               >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="自定义"
                 >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                    title="自定义"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      自定义
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    自定义
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="慢日志"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="慢日志"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      慢日志
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    慢日志
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Mybatis 扫描"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="Mybatis 扫描"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      Mybatis 扫描
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    Mybatis 扫描
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="库表元数据"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="库表元数据"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      库表元数据
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    库表元数据
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="阿里RDS MySQL慢日志"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="阿里RDS MySQL慢日志"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      阿里RDS MySQL慢日志
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    阿里RDS MySQL慢日志
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="阿里RDS MySQL审计日志"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="阿里RDS MySQL审计日志"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      阿里RDS MySQL审计日志
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    阿里RDS MySQL审计日志
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Oracle TOP SQL"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="Oracle TOP SQL"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      Oracle TOP SQL
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    Oracle TOP SQL
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="应用程序SQL抓取"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="应用程序SQL抓取"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      应用程序SQL抓取
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    应用程序SQL抓取
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="TiDB审计日志"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="TiDB审计日志"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      TiDB审计日志
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    TiDB审计日志
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Mybatis 扫描"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="Mybatis 扫描"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      Mybatis 扫描
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    Mybatis 扫描
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Top SQL"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="Top SQL"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      Top SQL
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    Top SQL
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute;"
+          >
             <div
-              class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>

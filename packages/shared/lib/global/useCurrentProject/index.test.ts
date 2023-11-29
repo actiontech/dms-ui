@@ -1,7 +1,7 @@
-import { renderHook } from '@testing-library/react-hooks';
 import { useParams } from 'react-router-dom';
 import useCurrentProject from '.';
 import { DEFAULT_PROJECT_NAME } from '../../data/common';
+import { renderHooksWithRedux } from '../../testUtil/customRender';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -17,13 +17,31 @@ describe('useCurrentProject', () => {
   });
 
   test('should have default value when params is undefined', () => {
-    const { result } = renderHook(() => useCurrentProject());
+    const { result } = renderHooksWithRedux(() => useCurrentProject(), {
+      user: {
+        bindProjects: [
+          {
+            project_id: '',
+            project_name: DEFAULT_PROJECT_NAME
+          }
+        ]
+      }
+    });
     expect(result.current.projectName).toBe(DEFAULT_PROJECT_NAME);
   });
 
   test('should return value when params is defined', () => {
     useParamsMock.mockReturnValue({ projectName: 'testSpace' });
-    const { result } = renderHook(() => useCurrentProject());
+    const { result } = renderHooksWithRedux(() => useCurrentProject(), {
+      user: {
+        bindProjects: [
+          {
+            project_id: '',
+            project_name: 'testSpace'
+          }
+        ]
+      }
+    });
     expect(result.current.projectName).toBe('testSpace');
   });
 });

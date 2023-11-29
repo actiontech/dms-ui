@@ -1,10 +1,12 @@
 import ApiBase from '.';
 import Download from '../../../utils/Download';
-import { notification } from 'antd';
 import axios from 'axios';
 
+import { eventEmitter } from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+
 const downloadSpy = jest.spyOn(Download, 'downloadByCreateElementA');
-const notificationSpy = jest.spyOn(notification, 'error');
+const emitSpy = jest.spyOn(eventEmitter, 'emit');
 const token = 'token1';
 
 const authInvalid = jest.fn();
@@ -29,12 +31,12 @@ apiInstance.interceptors.response.use(
 describe('Api', () => {
   afterEach(() => {
     downloadSpy.mockClear();
-    notificationSpy.mockClear();
+    emitSpy.mockClear();
   });
 
   afterAll(() => {
     downloadSpy.mockRestore();
-    notificationSpy.mockRestore();
+    emitSpy.mockRestore();
   });
 
   test('should execute authInvalid  when request return 401', async () => {
@@ -79,11 +81,15 @@ describe('Api', () => {
         msg: 'error message'
       });
       expect(result?.response?.status).toBe(500);
-      expect(notificationSpy).toBeCalledTimes(1);
-      expect(notificationSpy).toBeCalledWith({
-        message: '请求错误',
-        description: 'error message'
-      });
+      expect(emitSpy).toBeCalledTimes(1);
+      expect(emitSpy).toBeCalledWith(
+        EmitterKey.OPEN_GLOBAL_NOTIFICATION,
+        'error',
+        {
+          message: '请求错误',
+          description: 'error message'
+        }
+      );
     }
   });
 
@@ -94,11 +100,15 @@ describe('Api', () => {
       token = res.data.token;
     } finally {
       expect(token).toBe(token);
-      expect(notificationSpy).toBeCalledTimes(1);
-      expect(notificationSpy).toBeCalledWith({
-        message: '请求错误',
-        description: 'error message'
-      });
+      expect(emitSpy).toBeCalledTimes(1);
+      expect(emitSpy).toBeCalledWith(
+        EmitterKey.OPEN_GLOBAL_NOTIFICATION,
+        'error',
+        {
+          message: '请求错误',
+          description: 'error message'
+        }
+      );
     }
   });
 

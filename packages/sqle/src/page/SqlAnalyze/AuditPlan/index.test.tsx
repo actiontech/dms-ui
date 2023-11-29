@@ -8,6 +8,7 @@ import {
 import { AuditPlanSqlAnalyzeData } from '../__testData__';
 import { getAllBySelector } from '../../../testUtils/customQuery';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
+import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
 jest.mock('react-router', () => {
   return {
@@ -67,7 +68,20 @@ describe('SqlAnalyze/AuditPlan', () => {
 
   test('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
-    const { container } = render(<AuditPlanSqlAnalyze />);
+    const { container, baseElement } = renderWithReduxAndTheme(
+      <AuditPlanSqlAnalyze />,
+      undefined,
+      {
+        user: {
+          bindProjects: [
+            {
+              project_id: '',
+              project_name: projectName
+            }
+          ]
+        } as any
+      }
+    );
     expect(spy).toBeCalledTimes(1);
     expect(spy).toBeCalledWith({
       project_name: projectName,
@@ -76,10 +90,10 @@ describe('SqlAnalyze/AuditPlan', () => {
       audit_plan_name: 'api_test_1'
     });
     expect(container).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3500));
 
-    fireEvent.click(getAllBySelector('.ant-tabs-tab-btn')[1]);
-    fireEvent.click(getAllBySelector('.ant-tabs-tab-btn')[2]);
+    fireEvent.click(getAllBySelector('.ant-segmented-item', baseElement)[1]);
+    fireEvent.click(getAllBySelector('.ant-segmented-item', baseElement)[2]);
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(container).toMatchSnapshot();
@@ -94,7 +108,20 @@ describe('SqlAnalyze/AuditPlan', () => {
         }
       })
     );
-    const { container } = render(<AuditPlanSqlAnalyze />);
+    const { container } = renderWithReduxAndTheme(
+      <AuditPlanSqlAnalyze />,
+      undefined,
+      {
+        user: {
+          bindProjects: [
+            {
+              project_id: '',
+              project_name: projectName
+            }
+          ]
+        } as any
+      }
+    );
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
