@@ -44,7 +44,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
       return handleTableRequestError(server.V1ListServers(params));
     },
     {
-      refreshDeps: [pagination, props.searchValue]
+      refreshDeps: [pagination]
     }
   );
 
@@ -91,7 +91,8 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
         rowKey="name"
         dataSource={serverMonitorList?.list ?? []}
         pagination={{
-          total: serverMonitorList?.total ?? 0
+          total: serverMonitorList?.total ?? 0,
+          current: pagination.page_index
         }}
         loading={loading}
         columns={columns()}
