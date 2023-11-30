@@ -185,7 +185,7 @@ export type TablePagination = {
  */
 export type TableSearchInputProps = {
   onChange?: (value: string) => void;
-  onRefresh?: () => void;
+  onSearch?: () => void;
 } & Omit<InputProps, 'onChange'>;
 
 /**

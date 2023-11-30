@@ -290,10 +290,6 @@ const SQLEEIndex = () => {
     ruleTipsLoading
   ]);
 
-  const onSearch = (value: string) => {
-    setSearchKeyword(value);
-  };
-
   const rowSelection: TableRowSelection<ISqlManage> = {
     selectedRowKeys,
     onChange: (selectedRowKeys, data) => {
@@ -508,8 +504,8 @@ const SQLEEIndex = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onChange: onSearch,
-          onRefresh: refresh
+          onChange: setSearchKeyword,
+          onSearch: refresh
         }}
         loading={getListLoading}
       >
