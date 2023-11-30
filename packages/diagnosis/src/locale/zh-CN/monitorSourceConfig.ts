@@ -21,7 +21,8 @@ export default {
     updateServerMonitorSourceTip: '修改服务器监控源{{name}}成功！',
     deleteServerMonitorSource: '确认删除服务器监控源{{name}}?',
     deleteServerMonitorSourceLoading: '正在删除服务器监控源{{name}}...',
-    deleteServerMonitorSourceTip: '删除服务器监控源{{name}}成功！'
+    deleteServerMonitorSourceTip: '删除服务器监控源{{name}}成功！',
+    getHostNameFailedTip: '未连接上目标服务器，请检查配置是否正确！'
   },
   databaseMonitor: {
     databaseMonitorSource: '数据库监控源',

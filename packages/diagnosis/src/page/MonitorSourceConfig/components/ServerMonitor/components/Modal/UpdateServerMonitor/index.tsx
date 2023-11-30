@@ -119,7 +119,7 @@ const UpdateServerMonitor = () => {
         }
       >
         {contextHolder}
-        <ServerMonitorForm form={form} isUpdate={true} />
+        <ServerMonitorForm form={form} isUpdate={true} visible={visible} />
       </BasicDrawer>
     </>
   );

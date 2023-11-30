@@ -1,7 +1,7 @@
 import { BasicInput, BasicInputNumber } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import { Form, FormInstance } from 'antd';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import server from '../../../../../../../api/server';
 import { IV1GetServerHostnameParams } from '../../../../../../../api/server/index.d';
@@ -9,14 +9,18 @@ import { LoadingOutlined } from '@ant-design/icons';
 
 interface IServerMonitorFormProps {
   form: FormInstance;
+  visible: boolean;
   isUpdate?: boolean;
 }
 
 const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
   form,
+  visible,
   isUpdate
 }) => {
   const { t } = useTranslation();
+
+  const [getHostNameFailed, setGetHostNameFailed] = useState<boolean>(false);
 
   const {
     data: hostName,
@@ -27,9 +31,15 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
       return server.V1GetServerHostname(params);
     },
     {
-      manual: true
+      manual: true,
+      onBefore: () => setGetHostNameFailed(false),
+      onError: () => setGetHostNameFailed(true)
     }
   );
+
+  useEffect(() => {
+    if (!visible) setGetHostNameFailed(false);
+  }, [visible]);
 
   useEffect(() => {
     const name = hostName?.data?.hostname;
@@ -121,6 +131,12 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
               })
             }
           ]}
+          validateStatus={getHostNameFailed ? 'error' : ''}
+          help={
+            getHostNameFailed
+              ? t('monitorSourceConfig.serverMonitor.getHostNameFailedTip')
+              : ''
+          }
         >
           <BasicInput
             onFocus={handleGetHostName}

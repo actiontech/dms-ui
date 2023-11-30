@@ -100,7 +100,7 @@ const AddServerMonitor = () => {
         }
       >
         {contextHolder}
-        <ServerMonitorForm form={form} />
+        <ServerMonitorForm form={form} visible={visible} />
       </BasicDrawer>
     </>
   );
