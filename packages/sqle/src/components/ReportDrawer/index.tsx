@@ -12,7 +12,6 @@ const ReportDrawer = ({
   title,
   data,
   onClose,
-  footer,
   showAnnotation
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
