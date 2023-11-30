@@ -21,7 +21,10 @@ const apiBase = new ApiBase();
 const { successFn, errorFn } = apiBase.interceptorsResponse(authInvalid);
 
 apiInstance.interceptors.request.use((config) =>
-  apiBase.interceptorsRequest(doNotAddAuthRequest)(config)
+  apiBase.interceptorsRequest(
+    doNotAddAuthRequest,
+    store.getState().user.token
+  )(config)
 );
 
 apiInstance.interceptors.response.use(

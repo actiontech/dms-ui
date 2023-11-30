@@ -20,16 +20,12 @@ class MockUserCenterApi implements MockSpyApy {
     this.updateRole();
     this.deleteRole();
     this.getOpPermissionsList();
+    this.updateCurrentUser();
   }
 
   public getUserList() {
     const spy = jest.spyOn(dms, 'ListUsers');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: userList.length,
-        users: userList
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(userList));
     return spy;
   }
 
@@ -57,12 +53,7 @@ class MockUserCenterApi implements MockSpyApy {
 
   public getUserGroupList() {
     const spy = jest.spyOn(dms, 'ListUserGroups');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: userGroupList.length,
-        user_groups: userGroupList
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(userGroupList));
     return spy;
   }
 
@@ -107,12 +98,7 @@ class MockUserCenterApi implements MockSpyApy {
 
   public getRoleList() {
     const spy = jest.spyOn(dms, 'ListRoles');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: roleList.length,
-        roles: roleList
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(roleList));
     return spy;
   }
 
@@ -138,12 +124,13 @@ class MockUserCenterApi implements MockSpyApy {
 
   public getOpPermissionsList() {
     const spy = jest.spyOn(dms, 'ListOpPermissions');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: opPermissionList.length,
-        op_permissions: opPermissionList
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(opPermissionList));
+    return spy;
+  }
+
+  public updateCurrentUser() {
+    const spy = jest.spyOn(dms, 'UpdateCurrentUser');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

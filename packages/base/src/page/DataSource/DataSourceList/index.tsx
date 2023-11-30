@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { message, Modal } from 'antd';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   DataSourceColumns,
@@ -38,9 +38,6 @@ const DataSourceList = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectID, projectArchive, projectName } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
-  const [searchKeyword, setSearchKeyword] = useState<string>(
-    searchParams.get('address') || ''
-  );
 
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
@@ -57,8 +54,16 @@ const DataSourceList = () => {
     updateDbServiceList
   } = useDbService();
 
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<IListDBService, DataSourceListParamType>();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<IListDBService, DataSourceListParamType>({
+    defaultSearchKeyword: searchParams.get('address') || ''
+  });
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
@@ -78,7 +83,7 @@ const DataSourceList = () => {
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, searchKeyword],
+      refreshDeps: [pagination, tableFilterInfo],
       ready: !!projectID
     }
   );
@@ -250,7 +255,8 @@ const DataSourceList = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch,
+          onChange: onSearch,
+          onRefresh: refresh,
           defaultValue: searchKeyword
         }}
       />

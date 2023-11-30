@@ -36,16 +36,20 @@ const TemplateAudit: React.FC = () => {
     { setTrue: setShowDetailDrawer, setFalse: setHideDetailDrawer }
   ] = useBoolean();
 
-  const [searchValue, setSearchValue] = useState<string>();
-
   const [currentDetail, setCurrentDetail] =
     useState<IListDataPermissionTemplateEvent>();
 
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<
-      IListDataPermissionTemplateEvent,
-      TemplateAuditTableFilterParamType
-    >();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<
+    IListDataPermissionTemplateEvent,
+    TemplateAuditTableFilterParamType
+  >();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -56,14 +60,14 @@ const TemplateAudit: React.FC = () => {
         ...pagination,
         ...tableFilterInfo,
         filter_by_namespace_uid: projectID,
-        keyword: searchValue
+        keyword: searchKeyword
       };
       return handleTableRequestError(
         auth.AuditListDataPermissionTemplateEvents(params)
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, projectID, searchValue]
+      refreshDeps: [pagination, tableFilterInfo, projectID]
     }
   );
 
@@ -134,7 +138,8 @@ const TemplateAudit: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch: setSearchValue
+          onChange: setSearchKeyword,
+          onRefresh: refresh
         }}
       />
       <TableFilterContainer

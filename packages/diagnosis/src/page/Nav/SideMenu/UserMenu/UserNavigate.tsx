@@ -4,13 +4,13 @@ import { IconAccount } from '../../../../icon';
 import { useTranslation } from 'react-i18next';
 import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
 import { useState } from 'react';
-import { useUserInfo } from '@actiontech/shared/lib/global';
+import useGetUserInfo from '../../../../hooks/useGetUserInfo';
 
 const UserNavigate: React.FC<{
   username: string;
 }> = ({ username }) => {
   const { t } = useTranslation();
-  const { clearUserInfo } = useUserInfo();
+  const { clearUserInfo } = useGetUserInfo();
   const [open, setOpen] = useState(false);
   const logout = () => {
     clearUserInfo();

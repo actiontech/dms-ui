@@ -29,13 +29,20 @@ export interface IOperationData extends IOperationInfo {
 const Operation = () => {
   const { t } = useTranslation();
 
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<IOperationData, OperationListTableFilterParamType>();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<
+    IOperationData,
+    OperationListTableFilterParamType
+  >();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
-  const [searchKeyword, setSearchKeyword] = useState<string>('');
 
   const { data, loading, refresh } = useRequest(
     () => {
@@ -49,7 +56,7 @@ const Operation = () => {
       return handleTableRequestError(auth.AuthListDataOperationSets(params));
     },
     {
-      refreshDeps: [tableFilterInfo, pagination, searchKeyword]
+      refreshDeps: [tableFilterInfo, pagination]
     }
   );
   const dataSource = useMemo(() => {
@@ -95,7 +102,8 @@ const Operation = () => {
             updateAllSelectedFilterItem
           }}
           searchInput={{
-            onSearch
+            onChange: onSearch,
+            onRefresh: refresh
           }}
         />
         <TableFilterContainer

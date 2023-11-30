@@ -110,20 +110,19 @@ const MonitorSourceConfig: React.FC = () => {
                 placeholder: t(
                   'common.actiontechTable.searchInput.placeholder'
                 ),
-                onSearch: (value) => {
+                onChange: (value) => {
                   setSearchServerValue(value);
                 },
-                onChange: (e) => {
-                  setSearchServerValue(e.target.value);
-                }
+                onRefresh: onRefreshTable
               }
             : {
                 placeholder: t(
                   'common.actiontechTable.searchInput.placeholder'
                 ),
-                onSearch: (value) => {
+                onChange: (value) => {
                   setSearchDatabaseValue(value);
-                }
+                },
+                onRefresh: onRefreshTable
               }
         }
       >

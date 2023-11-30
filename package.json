@@ -24,7 +24,7 @@
     "checker": "pnpm ts-check && pnpm eslint && pnpm stylelint && pnpm prettier:c",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+    "test:ci": "jest --ci --watchAll=false --json --coverage --colors --silent --testLocationInResults --outputFile='report.json'"
   },
   "keywords": [],
   "author": "",
@@ -74,7 +74,6 @@
     "typescript": "^5.0.2",
     "vite": "^3.0.0",
     "vite-plugin-conditional-compile": "^1.4.1",
-    "vite-plugin-dynamic-base": "^0.4.8",
     "vite-plugin-eslint": "^1.6.1",
     "vite-plugin-html": "^3.2.0"
   },

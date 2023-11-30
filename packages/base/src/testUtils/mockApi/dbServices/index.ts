@@ -1,12 +1,12 @@
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { resolveThreeSecond } from 'sqle/src/testUtils/mockRequest';
-import { dbServices } from './data';
-import auth from '@actiontech/shared/lib/api/provision/service/auth';
+import { checkConnectableReply, dbServices } from './data';
 
 class MockDbServicesApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -14,16 +14,13 @@ class MockDbServicesApi implements MockSpyApy {
     this.AddDBService();
     this.UpdateDBService();
     this.DelDBService();
+    this.checkDbServiceIsConnectable();
+    this.checkDBServiceIsConnectableById();
   }
 
   public ListDBServices() {
     const spy = jest.spyOn(dms, 'ListDBServices');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: dbServices.length,
-        db_services: dbServices
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(dbServices));
     return spy;
   }
 
@@ -63,20 +60,22 @@ class MockDbServicesApi implements MockSpyApy {
     );
     return spy;
   }
-  public checkInstanceIsConnectableV1() {
+
+  public checkDbServiceIsConnectable() {
     const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectable');
     spy.mockImplementation(() =>
-      resolveThreeSecond({
-        connections: [
-          {
-            component: 'provision-router',
-            is_connectable: true
-          },
-          {
-            component: 'sqle-api',
-            is_connectable: true
-          }
-        ]
+      createSpySuccessResponse({
+        data: checkConnectableReply
+      })
+    );
+    return spy;
+  }
+
+  public checkDBServiceIsConnectableById() {
+    const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectableById');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: checkConnectableReply
       })
     );
     return spy;
