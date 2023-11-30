@@ -3,6 +3,11 @@ export default {
   title: '监控源配置',
   monitorSourceName: '监控源名',
   monitorSourceType: '监控源类型',
+  sourceType: {
+    typeLabel: '监控源类型: {{type}}',
+    serverMonitorSource: '服务器监控',
+    databaseMonitorSource: '数据库监控'
+  },
   serverMonitor: {
     serverMonitorSource: '服务器监控源',
     serverIp: '主机IP',
@@ -30,6 +35,17 @@ export default {
   status: {
     normal: '正常',
     abnormal: '异常',
-    unknown: '未知'
+    unknown: '未知',
+    enable: '启用',
+    disable: '禁用'
+  },
+  monitorConfig: {
+    returnMonitorSource: '返回监控源配置',
+    monitorItem: '监控项',
+    monitorInterval: '监控周期(ms)',
+    monitorVia: '监控命令',
+    monitorDesc: '描述',
+    checkMonitorConfig: '查看',
+    monitorKey: '监控指标'
   }
 };

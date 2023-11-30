@@ -52,7 +52,7 @@ const MonitorSourceConfig: React.FC = () => {
       })
     );
   };
-  console.log(searchServerValue);
+
   const renderTable = () => {
     if (listType === MonitorSourceConfigTypeEnum.server_monitor) {
       return (
