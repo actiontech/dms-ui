@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/ConfigItem-ImageUploader render loading is false 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw ant-upload-picture-card-wrapper"
+    >
+      <div
+        class="ant-upload ant-upload-select"
+      >
+        <span
+          class="ant-upload"
+          role="button"
+          tabindex="0"
+        >
+          <input
+            accept="image/*"
+            data-testid="upload-logo"
+            style="display: none;"
+            type="file"
+          />
+          <div
+            class="upload-content-wrapper"
+          >
+            <img
+              alt="logo"
+              src="http://mock.com?temp=1701330955274"
+            />
+          </div>
+        </span>
+      </div>
+    </span>
+  </div>
+</body>
+`;
+
+exports[`lib/ConfigItem-ImageUploader render loading is true 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw ant-upload-picture-card-wrapper"
+    >
+      <div
+        class="ant-upload ant-upload-select ant-upload-disabled"
+      >
+        <span
+          class="ant-upload ant-upload-disabled"
+          role="button"
+        >
+          <input
+            accept="image/*"
+            data-testid="upload-logo"
+            style="display: none;"
+            type="file"
+          />
+          <span
+            aria-label="loading"
+            class="anticon anticon-loading anticon-spin"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="loading"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 1024 1024"
+              width="1em"
+            >
+              <path
+                d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+    </span>
+  </div>
+</body>
+`;
+
+exports[`lib/ConfigItem-ImageUploader render mask ui 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw ant-upload-picture-card-wrapper"
+    >
+      <div
+        class="ant-upload ant-upload-select"
+      >
+        <span
+          class="ant-upload"
+          role="button"
+          tabindex="0"
+        >
+          <input
+            accept="image/*"
+            data-testid="upload-logo"
+            style="display: none;"
+            type="file"
+          />
+          <div
+            class="upload-content-wrapper"
+          >
+            <img
+              alt="logo"
+              src="http://mock.com?temp=1701330955640"
+            />
+            <div
+              class="mask"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 4px;"
+                >
+                  <span
+                    aria-label="upload"
+                    class="anticon anticon-upload"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="upload"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  system.personalize.uploadAndUpdate
+                </div>
+              </div>
+            </div>
+          </div>
+        </span>
+      </div>
+    </span>
+  </div>
+</body>
+`;
+
+exports[`lib/ConfigItem-ImageUploader render mask ui 2`] = `
+<body>
+  <div>
+    <span
+      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw ant-upload-picture-card-wrapper"
+    >
+      <div
+        class="ant-upload ant-upload-select"
+      >
+        <span
+          class="ant-upload"
+          role="button"
+          tabindex="0"
+        >
+          <input
+            accept="image/*"
+            data-testid="upload-logo"
+            style="display: none;"
+            type="file"
+          />
+          <div
+            class="upload-content-wrapper"
+          >
+            <img
+              alt="logo"
+              src="http://mock.com?temp=1701330955940"
+            />
+          </div>
+        </span>
+      </div>
+    </span>
+  </div>
+</body>
+`;
