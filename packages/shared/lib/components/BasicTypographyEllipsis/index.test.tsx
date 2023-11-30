@@ -1,0 +1,45 @@
+import BasicTypographyEllipsis, { IBasicTypographyEllipsis } from '.';
+import { renderWithTheme } from '../../testUtil/customRender';
+
+describe('lib/BasicTypographyEllipsis', () => {
+  const customRender = (params: IBasicTypographyEllipsis) => {
+    return renderWithTheme(
+      <div className="ellipsis-column-width">
+        <BasicTypographyEllipsis {...params} />
+      </div>
+    );
+  };
+
+  it('render less than tooltipLimitLengthVal', () => {
+    const { baseElement } = customRender({
+      textCont:
+        '这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。',
+      linkData: {
+        route: '/',
+        text: '查看更多'
+      }
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render more than tooltipLimitLengthVal', () => {
+    const { baseElement } = customRender({
+      tooltipLimitLength: 100,
+      textCont:
+        '这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。'
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render link for tool tip', () => {
+    const { baseElement } = customRender({
+      tooltipLimitLength: 10,
+      textCont: '这是一个非常长的tool tip信息。这是一个非常长的tool tip信息。',
+      linkData: {
+        route: '/',
+        text: '查看更多'
+      }
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+});
