@@ -11,6 +11,5 @@ export interface DetailReportDrawerProps {
   title: ReactNode | string;
   data: typeData | null;
   onClose: () => void;
-  footer?: ReactNode;
   showAnnotation?: boolean;
 }
