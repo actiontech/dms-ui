@@ -3,6 +3,8 @@ import BasicSelect from '.';
 
 import { fireEvent, act, cleanup } from '@testing-library/react';
 import { renderWithTheme } from '../../testUtil/customRender';
+import { filterOptionByLabel } from './utils';
+import { getAllBySelector, getBySelector } from '../../testUtil/customQuery';
 
 describe('lib/BasicSelect', () => {
   beforeEach(() => {
@@ -58,5 +60,52 @@ describe('lib/BasicSelect', () => {
       value: 'a'
     });
     expect(container).toMatchSnapshot();
+  });
+
+  it('render custom filter fn', async () => {
+    const { baseElement } = customRender({
+      options: [
+        {
+          label: 'a-b-c',
+          value: 'val1'
+        },
+        {
+          label: 'd-e-f',
+          value: 'val2'
+        }
+      ],
+      showSearch: true,
+      filterOption: filterOptionByLabel,
+      placeholder: '可以搜索'
+    });
+
+    const searchInputEle = getBySelector(
+      '.ant-select-selection-search input',
+      baseElement
+    );
+    await act(async () => {
+      fireEvent.mouseDown(searchInputEle);
+      await jest.advanceTimersByTime(300);
+    });
+    expect(
+      getAllBySelector('.ant-select-item-option', baseElement).length
+    ).toBe(2);
+    await act(async () => {
+      fireEvent.change(searchInputEle, {
+        target: {
+          value: 'e-f'
+        }
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    await act(async () => {
+      fireEvent.mouseDown(searchInputEle);
+      await jest.advanceTimersByTime(300);
+    });
+
+    expect(
+      getAllBySelector('.ant-select-item-option', baseElement).length
+    ).toBe(1);
+    expect(baseElement).toMatchSnapshot();
   });
 });
