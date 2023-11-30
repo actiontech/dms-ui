@@ -11,6 +11,7 @@ import {
   updateSqleManagement
 } from '../../../../../../store/sqleManagement';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
+import useAuditResultRuleInfo from '../../../../../../page/Order/hooks/useAuditResultRuleInfo';
 
 const StatusDrawer = () => {
   const { t } = useTranslation();
@@ -21,6 +22,10 @@ const StatusDrawer = () => {
   );
   const selectedData = useSelector<IReduxState, ISqlManage | null>(
     (state) => state.sqleManagement.selectSqleManagement
+  );
+
+  const { auditResultRuleInfo } = useAuditResultRuleInfo(
+    selectedData?.audit_result ?? []
   );
 
   const closeModal = () => {
@@ -39,10 +44,11 @@ const StatusDrawer = () => {
         open={visible}
         title={t('sqlManagement.table.statusReport.title')}
         data={{
-          auditResult: selectedData?.audit_result ?? [],
+          auditResult: auditResultRuleInfo,
           sql: selectedData?.sql_fingerprint ?? ''
         }}
         onClose={closeModal}
+        showAnnotation
       />
     </>
   );
