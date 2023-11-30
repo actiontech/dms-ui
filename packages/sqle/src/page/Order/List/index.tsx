@@ -133,10 +133,6 @@ const OrderList: React.FC = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const onSearch = (value: string) => {
-    setSearchKeyword(value);
-  };
-
   // #if [ee]
   const [
     exportButtonDisabled,
@@ -293,8 +289,8 @@ const OrderList: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onChange: onSearch,
-          onRefresh: refresh
+          onChange: setSearchKeyword,
+          onSearch: refresh
         }}
         loading={loading}
       >

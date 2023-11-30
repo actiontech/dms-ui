@@ -181,10 +181,8 @@ const OperationRecordList: React.FC = () => {
           placeholder: t('common.form.placeholder.searchInput', {
             name: t('operationRecord.list.filterForm.operator')
           }),
-          onChange: (value) => {
-            setSearchKeyword(value);
-          },
-          onRefresh: refresh
+          onChange: setSearchKeyword,
+          onSearch: refresh
         }}
       />
       <TableFilterContainer
