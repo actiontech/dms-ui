@@ -7,7 +7,7 @@ import {
   ActiontechTableStyleWrapper
 } from '../ActiontechTable/style';
 
-interface IBasicTable<T = Record<string, any>> extends TableProps<T> {
+export interface IBasicTable<T = Record<string, any>> extends TableProps<T> {
   errorMessage?: string;
 }
 
