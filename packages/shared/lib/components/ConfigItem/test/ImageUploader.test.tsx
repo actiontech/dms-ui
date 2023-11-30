@@ -7,7 +7,7 @@ import { getBySelector } from '../../../testUtil/customQuery';
 describe('lib/ConfigItem-ImageUploader', () => {
   beforeEach(() => {
     jest.useFakeTimers();
-    Date.now = () => 1612148800;
+    jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1612148800);
   });
 
   afterEach(() => {

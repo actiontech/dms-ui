@@ -25,7 +25,7 @@ exports[`lib/ConfigItem-ImageUploader render loading is false 1`] = `
           >
             <img
               alt="logo"
-              src="http://mock.com?temp=1701330955274"
+              src="http://mock.com?temp=1612148800"
             />
           </div>
         </span>
@@ -105,7 +105,7 @@ exports[`lib/ConfigItem-ImageUploader render mask ui 1`] = `
           >
             <img
               alt="logo"
-              src="http://mock.com?temp=1701330955640"
+              src="http://mock.com?temp=1612148800"
             />
             <div
               class="mask"
@@ -177,7 +177,7 @@ exports[`lib/ConfigItem-ImageUploader render mask ui 2`] = `
           >
             <img
               alt="logo"
-              src="http://mock.com?temp=1701330955940"
+              src="http://mock.com?temp=1612148800"
             />
           </div>
         </span>
