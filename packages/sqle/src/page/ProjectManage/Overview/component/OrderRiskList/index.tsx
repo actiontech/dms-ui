@@ -54,7 +54,7 @@ const OrderRiskList = () => {
             <TableColumnWithIconStyleWrapper>
               <IconOrderId />
               <Link
-                to={`sqle/project/${projectID}/order/${record.workflow_id}`}
+                to={`/sqle/project/${projectID}/order/${record.workflow_id}`}
               >
                 {name}
               </Link>
