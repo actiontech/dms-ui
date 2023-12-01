@@ -140,16 +140,6 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
                 name: t('monitorSourceConfig.monitorSourceName')
               })
             }
-            // {
-            //   validator: () => {
-            //     if (getHostNameFailed) {
-            //       return Promise.reject(
-            //         t('monitorSourceConfig.serverMonitor.getHostNameFailedTip')
-            //       );
-            //     }
-            //     return Promise.resolve();
-            //   }
-            // }
           ]}
           validateStatus={getHostNameFailed ? 'error' : undefined}
           help={
