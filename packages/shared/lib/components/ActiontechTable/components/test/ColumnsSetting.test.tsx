@@ -8,7 +8,6 @@ import ColumnsSetting from '../ColumnsSetting';
 describe('lib/ActiontechTable-ColumnsSetting', () => {
   beforeEach(() => {
     jest.useFakeTimers();
-    jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1612148800);
   });
 
   afterEach(() => {
