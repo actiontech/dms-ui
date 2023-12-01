@@ -22,7 +22,9 @@ describe('lib/ActiontechTable-SearchInput', () => {
 
   it('render search input ui', () => {
     const { baseElement } = customRender({
-      className: 'custom-search-input-box'
+      className: 'custom-search-input-box',
+      onChange: jest.fn(),
+      onRefresh: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -56,7 +58,8 @@ describe('lib/ActiontechTable-SearchInput', () => {
   it('render enter key fn', async () => {
     const onRefreshFn = jest.fn();
     const { baseElement } = customRender({
-      onRefresh: onRefreshFn
+      onRefresh: onRefreshFn,
+      onChange: jest.fn()
     });
     const inputEle = getBySelector('.ant-input', baseElement);
     await act(async () => {
