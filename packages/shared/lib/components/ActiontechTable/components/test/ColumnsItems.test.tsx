@@ -15,7 +15,7 @@ const columnsData = {
   }
 };
 
-describe('lib/ColumnsItems', () => {
+describe('lib/ActiontechTable-ColumnsItems', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1612148800);

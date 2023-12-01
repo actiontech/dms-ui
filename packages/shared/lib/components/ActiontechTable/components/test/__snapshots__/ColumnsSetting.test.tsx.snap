@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lib/ColumnsSetting render setting button 1`] = `
+exports[`lib/ActiontechTable-ColumnsSetting render setting button 1`] = `
 <body>
   <div>
     <button
@@ -64,7 +64,7 @@ exports[`lib/ColumnsSetting render setting button 1`] = `
 </body>
 `;
 
-exports[`lib/ColumnsSetting render ui change when click setting btn 1`] = `
+exports[`lib/ActiontechTable-ColumnsSetting render ui change when click setting btn 1`] = `
 <body>
   <div>
     <button

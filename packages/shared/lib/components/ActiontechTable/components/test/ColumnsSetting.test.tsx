@@ -5,7 +5,7 @@ import { fireEvent, act, cleanup } from '@testing-library/react';
 import { ColumnsSettingProps } from '../../index.type';
 import ColumnsSetting from '../ColumnsSetting';
 
-describe('lib/ColumnsSetting', () => {
+describe('lib/ActiontechTable-ColumnsSetting', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1612148800);

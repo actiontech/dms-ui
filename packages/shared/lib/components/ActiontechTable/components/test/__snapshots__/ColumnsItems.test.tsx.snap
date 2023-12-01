@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lib/ColumnsItems render column item left | right 1`] = `
+exports[`lib/ActiontechTable-ColumnsItems render column item left | right 1`] = `
 <body>
   <div>
     <div
@@ -160,7 +160,7 @@ exports[`lib/ColumnsItems render column item left | right 1`] = `
 </body>
 `;
 
-exports[`lib/ColumnsItems render column item left | right 2`] = `
+exports[`lib/ActiontechTable-ColumnsItems render column item left | right 2`] = `
 <body>
   <div>
     <div
@@ -475,7 +475,7 @@ exports[`lib/ColumnsItems render column item left | right 2`] = `
 </body>
 `;
 
-exports[`lib/ColumnsItems render column item no-fixed 1`] = `
+exports[`lib/ActiontechTable-ColumnsItems render column item no-fixed 1`] = `
 <body>
   <div>
     <div
@@ -635,7 +635,7 @@ exports[`lib/ColumnsItems render column item no-fixed 1`] = `
 </body>
 `;
 
-exports[`lib/ColumnsItems render type left fn click call back 1`] = `
+exports[`lib/ActiontechTable-ColumnsItems render type left fn click call back 1`] = `
 <body>
   <div>
     <div
@@ -795,7 +795,7 @@ exports[`lib/ColumnsItems render type left fn click call back 1`] = `
 </body>
 `;
 
-exports[`lib/ColumnsItems render type no-fixed fn click call back 1`] = `
+exports[`lib/ActiontechTable-ColumnsItems render type no-fixed fn click call back 1`] = `
 <body>
   <div>
     <div
@@ -955,7 +955,7 @@ exports[`lib/ColumnsItems render type no-fixed fn click call back 1`] = `
 </body>
 `;
 
-exports[`lib/ColumnsItems render type right fn click call back 1`] = `
+exports[`lib/ActiontechTable-ColumnsItems render type right fn click call back 1`] = `
 <body>
   <div>
     <div

@@ -5,7 +5,7 @@ import FilterButton from '../FilterButton';
 import { TableFilterButtonProps } from '../../index.type';
 import { getBySelector } from '../../../../testUtil/customQuery';
 
-describe('lib/FilterButton', () => {
+describe('lib/ActiontechTable-FilterButton', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1612148800);
