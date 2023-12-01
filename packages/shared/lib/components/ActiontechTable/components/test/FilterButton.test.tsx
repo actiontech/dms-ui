@@ -1,0 +1,91 @@
+import { renderWithTheme } from '../../../../testUtil/customRender';
+import { fireEvent, act, cleanup } from '@testing-library/react';
+
+import FilterButton from '../FilterButton';
+import { TableFilterButtonProps } from '../../index.type';
+import { getBySelector } from '../../../../testUtil/customQuery';
+
+describe('lib/FilterButton', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1612148800);
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    jest.clearAllTimers();
+    cleanup();
+  });
+
+  it('render hasSelectedFilter', () => {
+    const params: TableFilterButtonProps = {
+      filterButtonMeta: new Map([
+        [
+          'demo',
+          {
+            dataIndex: 'demo',
+            filterCustomType: 'select',
+            filterKey: 'a1',
+            filterLabel: 'label名称',
+            checked: false
+          }
+        ]
+      ]),
+      updateAllSelectedFilterItem: jest.fn()
+    };
+    const { baseElement } = renderWithTheme(<FilterButton {...params} />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render disabled filter button', () => {
+    const params: TableFilterButtonProps = {
+      filterButtonMeta: new Map([
+        [
+          'demo',
+          {
+            dataIndex: 'demo',
+            filterCustomType: 'select',
+            filterKey: 'a1',
+            filterLabel: 'label名称',
+            checked: false
+          }
+        ]
+      ]),
+      updateAllSelectedFilterItem: jest.fn(),
+      disabled: true
+    };
+    const { baseElement } = renderWithTheme(<FilterButton {...params} />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render click filter btn', async () => {
+    const updateAllSelectedFilterItemFn = jest.fn();
+    const params: TableFilterButtonProps = {
+      filterButtonMeta: new Map([
+        [
+          'demo',
+          {
+            dataIndex: 'demo',
+            filterCustomType: 'select',
+            filterKey: 'a1',
+            filterLabel: 'label名称',
+            checked: true
+          }
+        ]
+      ]),
+      updateAllSelectedFilterItem: updateAllSelectedFilterItemFn
+    };
+    const { baseElement } = renderWithTheme(<FilterButton {...params} />);
+    expect(baseElement).toMatchSnapshot();
+    const filterBtn = getBySelector(
+      '.actiontech-filter-button-namespace',
+      baseElement
+    );
+    await act(async () => {
+      fireEvent.click(filterBtn);
+      await jest.advanceTimersByTime(300);
+    });
+    expect(updateAllSelectedFilterItemFn).toBeCalledTimes(1);
+    expect(baseElement).toMatchSnapshot();
+  });
+});
