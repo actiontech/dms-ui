@@ -23,15 +23,18 @@ describe('lib/ActiontechTable-SearchInput', () => {
   it('render search input ui', () => {
     const { baseElement } = customRender({
       className: 'custom-search-input-box',
-      onChange: jest.fn()
+      onChange: jest.fn(),
+      onSearch: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render change & refresh fn', async () => {
     const onChangeFn = jest.fn();
+    const onSearchFn = jest.fn();
     const { baseElement } = customRender({
-      onChange: onChangeFn
+      onChange: onChangeFn,
+      onSearch: onSearchFn
     });
     const inputEle = getBySelector('.ant-input', baseElement);
     await act(async () => {
@@ -49,11 +52,14 @@ describe('lib/ActiontechTable-SearchInput', () => {
       fireEvent.click(iconSearch);
       await jest.advanceTimersByTime(300);
     });
+    expect(onSearchFn).toBeCalledTimes(1);
   });
 
   it('render enter key fn', async () => {
+    const onSearchFn = jest.fn();
     const { baseElement } = customRender({
-      onChange: jest.fn()
+      onChange: jest.fn(),
+      onSearch: onSearchFn
     });
     const inputEle = getBySelector('.ant-input', baseElement);
     await act(async () => {
@@ -73,5 +79,6 @@ describe('lib/ActiontechTable-SearchInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
+    expect(onSearchFn).toBeCalledTimes(1);
   });
 });
