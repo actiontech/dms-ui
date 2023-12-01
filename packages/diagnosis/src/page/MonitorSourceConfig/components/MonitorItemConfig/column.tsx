@@ -20,7 +20,7 @@ export const MonitorConfigColumns =
   (): ActiontechTableColumn<IViewMonitorConfigReply> => {
     return [
       {
-        dataIndex: 'routine_name',
+        dataIndex: 'monitor_name',
         title: t('monitorSourceConfig.monitorConfig.monitorItem')
       },
       {
@@ -33,8 +33,7 @@ export const MonitorConfigColumns =
       },
       {
         dataIndex: 'desc',
-        title: t('monitorSourceConfig.monitorConfig.monitorDesc'),
-        render: (time) => formatTime(time, '-')
+        title: t('monitorSourceConfig.monitorConfig.monitorDesc')
       },
       {
         dataIndex: 'enable',

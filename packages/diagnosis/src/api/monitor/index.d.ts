@@ -1,6 +1,6 @@
 import {
-  IListMonitorRoutineReply,
-  IListRoutineMetricsReply
+  IListMonitorRoutinesReply,
+  IListMonitorMetricsReply
 } from '../common.d';
 
 export interface IV1ListMonitorRoutineParams {
@@ -8,17 +8,18 @@ export interface IV1ListMonitorRoutineParams {
 
   page_size?: number;
 
-  source_id: number;
+  source_id: string;
 }
 
-export interface IV1ListMonitorRoutineReturn extends IListMonitorRoutineReply {}
+export interface IV1ListMonitorRoutineReturn
+  extends IListMonitorRoutinesReply {}
 
 export interface IV1ListRoutineMetricsParams {
+  monitor_id: number;
+
   page_index?: number;
 
   page_size?: number;
-
-  routine_id: number;
 }
 
-export interface IV1ListRoutineMetricsReturn extends IListRoutineMetricsReply {}
+export interface IV1ListRoutineMetricsReturn extends IListMonitorMetricsReply {}

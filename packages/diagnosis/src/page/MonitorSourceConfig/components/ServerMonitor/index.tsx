@@ -76,7 +76,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   );
 
   const onDeleteServerMonitor = useCallback(
-    (id?: number, name?: string) => {
+    (id?: string, name?: string) => {
       if (!id) return;
       const hideLoading = messageApi.loading(
         t(

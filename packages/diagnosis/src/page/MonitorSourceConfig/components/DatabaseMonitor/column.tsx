@@ -39,7 +39,7 @@ export const DatabaseMonitorColumns =
       title: t('monitorSourceConfig.databaseMonitor.databasePort')
     },
     {
-      dataIndex: 'db_type',
+      dataIndex: 'monitor_type',
       title: t('monitorSourceConfig.databaseMonitor.databaseType')
     },
     {
@@ -56,7 +56,7 @@ export const DatabaseMonitorColumns =
       }
     }
   ];
-
+// todo: add permission
 export const DatabaseMonitorActions = (
   onEditDatabaseMonitor: (record?: IViewDatabaseReply) => void,
   onDeleteDatabaseMonitor: (record?: IViewDatabaseReply) => void

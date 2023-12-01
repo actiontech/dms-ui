@@ -10,11 +10,11 @@ export interface IGenericResp {
 }
 
 export interface IDeleteDBsReq {
-  db_monitor_ids: number[];
+  db_monitor_ids: string[];
 }
 
 export interface IDeleteServersReq {
-  server_ids?: number[];
+  server_ids?: string[];
 }
 
 export interface IGetRoleReply {
@@ -51,7 +51,17 @@ export interface IListDBsReply {
   total_nums?: number;
 }
 
-export interface IListMonitorRoutineReply {
+export interface IListMonitorMetricsReply {
+  code?: number;
+
+  data?: IMonitorMetrics;
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListMonitorRoutinesReply {
   code?: number;
 
   data?: IViewMonitorConfigReply[];
@@ -65,16 +75,6 @@ export interface IListRolesReply {
   code?: number;
 
   data?: IViewRoleReply[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
-export interface IListRoutineMetricsReply {
-  code?: number;
-
-  data?: IRoutienMetrics;
 
   message?: string;
 
@@ -111,6 +111,16 @@ export interface IListUsersReply {
   total_nums?: number;
 }
 
+export interface IMonitorMetrics {
+  metrics?: Array<{
+    desc?: string;
+
+    metric_key?: string;
+  }>;
+
+  monitor_id?: number;
+}
+
 export interface IRoleCreateRequest {
   role_desc?: string;
 
@@ -118,29 +128,19 @@ export interface IRoleCreateRequest {
 }
 
 export interface IRoleDeleteRequest {
-  role_id?: number;
+  role_id?: string;
 }
 
 export interface IRoleScopeCreateRequest {
-  role_id?: number;
+  role_id?: string;
 
   scope_name?: string;
 }
 
 export interface IRoleScopeDeleteRequest {
-  role_id?: number;
+  role_id?: string;
 
   scope_name?: string;
-}
-
-export interface IRoutienMetrics {
-  metrics?: Array<{
-    desc?: string;
-
-    metric_key?: string;
-  }>;
-
-  routine_id?: number;
 }
 
 export interface ISaveDBsReq {
@@ -150,13 +150,13 @@ export interface ISaveDBsReq {
 export interface IUserCreateRequest {
   password?: string;
 
-  role_id?: number;
+  role_id?: string;
 
   username?: string;
 }
 
 export interface IUserDeleteRequest {
-  user_id?: number;
+  user_id?: string;
 }
 
 export interface IUserLoginReply {
@@ -166,7 +166,7 @@ export interface IUserLoginReply {
 
   token?: string;
 
-  user_id?: number;
+  user_id?: string;
 }
 
 export interface IUserLoginRequest {
@@ -178,13 +178,13 @@ export interface IUserLoginRequest {
 export interface IUserUpdatePasswordRequest {
   password?: string;
 
-  user_id?: number;
+  user_id?: string;
 }
 
 export interface IUserUpdateRoleRequest {
-  role_id?: number;
+  role_id?: string;
 
-  user_id?: number;
+  user_id?: string;
 }
 
 export interface IViewAddServerRequest {
@@ -192,29 +192,35 @@ export interface IViewAddServerRequest {
 }
 
 export interface IViewDatabase {
-  db_type: string;
-
   host: string;
 
   monitor_name: string;
 
+  monitor_type: string;
+
+  password: string;
+
   port: number;
+
+  username: string;
 }
 
 export interface IViewDatabaseReply {
   created_at?: string;
 
-  db_type: string;
-
   host: string;
 
-  id?: number;
+  id?: string;
 
   monitor_name: string;
+
+  monitor_type: string;
 
   port: number;
 
   status?: ViewDatabaseReplyStatusEnum;
+
+  username: string;
 }
 
 export interface IViewMonitorConfigReply {
@@ -222,17 +228,19 @@ export interface IViewMonitorConfigReply {
 
   enable?: boolean;
 
-  id?: number;
+  id?: string;
 
   interval?: number;
 
-  routine_name?: string;
+  monitor_id?: number;
+
+  monitor_name?: string;
 
   via?: string;
 }
 
 export interface IViewRoleReply {
-  id?: number;
+  id?: string;
 
   role_desc?: string;
 
@@ -260,31 +268,37 @@ export interface IViewServer {
 export interface IViewServerReply {
   created_at?: string;
 
-  host: string;
+  host?: string;
 
-  id?: number;
+  id?: string;
 
-  name: string;
-
-  password: string;
+  name?: string;
 
   port?: number;
 
   status?: ViewServerReplyStatusEnum;
 
-  user: string;
+  user?: string;
+}
+
+export interface IViewUpdateDBRequest {
+  id?: string;
+
+  password: string;
+
+  username: string;
 }
 
 export interface IViewUpdateServerRequest {
-  id?: number;
+  id?: string;
 
   server?: IViewServer;
 }
 
 export interface IViewUserReply {
-  role_id?: number;
+  role_id?: string;
 
-  user_id?: number;
+  user_id?: string;
 
   username?: string;
 }

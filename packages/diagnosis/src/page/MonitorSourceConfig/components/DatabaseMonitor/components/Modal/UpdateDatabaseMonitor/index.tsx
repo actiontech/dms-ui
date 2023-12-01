@@ -12,7 +12,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import db from '../../../../../../../api/db';
-import { IV1AddDBParams } from '../../../../../../../api/db/index.d';
+import { IV1UpdateDBParams } from '../../../../../../../api/db/index.d';
 import { IDatabaseMonitorFormField } from '../DatabaseMonitorForm/index.type';
 
 const UpdateDatabaseMonitor = () => {
@@ -39,28 +39,24 @@ const UpdateDatabaseMonitor = () => {
   useEffect(() => {
     if (visible && selectData) {
       form.setFieldsValue({
-        db_type: selectData?.db_type,
+        monitor_type: selectData?.monitor_type,
         host: selectData?.host,
         monitor_name: selectData?.monitor_name,
-        port: selectData?.port
+        port: selectData?.port,
+        username: selectData?.username
       });
     }
   }, [visible, selectData, form]);
 
   const submit = async () => {
     const values = await form.validateFields();
-    const params: IV1AddDBParams = {
-      dbs: [
-        {
-          db_type: values.db_type,
-          host: values.host,
-          monitor_name: values.monitor_name,
-          port: Number(values.port)
-        }
-      ]
+    const params: IV1UpdateDBParams = {
+      id: selectData?.id,
+      username: values.username,
+      password: values.password
     };
     startSubmit();
-    db.V1AddDB(params)
+    db.V1UpdateDB(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

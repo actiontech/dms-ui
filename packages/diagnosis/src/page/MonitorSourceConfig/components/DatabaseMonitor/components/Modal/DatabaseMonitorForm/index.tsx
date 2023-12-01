@@ -40,7 +40,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
           <BasicInput disabled={!!isUpdate} />
         </Form.Item>
         <Form.Item
-          name="db_type"
+          name="monitor_type"
           label={t('monitorSourceConfig.databaseMonitor.databaseType')}
           rules={[
             {

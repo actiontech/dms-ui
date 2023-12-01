@@ -36,15 +36,15 @@ const CheckMonitorConfig = () => {
     () => {
       return monitor
         .V1ListRoutineMetrics({
-          routine_id: Number(selectMonitorConfigData?.id)
+          monitor_id: Number(selectMonitorConfigData?.monitor_id)
         })
         .then((res) => {
           return res.data?.data?.metrics ?? [];
         });
     },
     {
-      ready: !!selectMonitorConfigData?.id && visible,
-      refreshDeps: [selectMonitorConfigData?.id]
+      ready: !!selectMonitorConfigData?.monitor_id && visible,
+      refreshDeps: [selectMonitorConfigData?.monitor_id]
     }
   );
 
@@ -74,7 +74,7 @@ const CheckMonitorConfig = () => {
           pagination={{
             total: monitorConfigData?.length ?? 0
           }}
-          rowKey="routine_name"
+          rowKey="metric_key"
           dataSource={monitorConfigData ?? []}
           errorMessage={getErrorMessage(error ?? '')}
           className="monitor-item-routine-table"

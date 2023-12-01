@@ -6,16 +6,19 @@ import { useTranslation } from 'react-i18next';
 import server from '../../../../../../../api/server';
 import { IV1GetServerHostnameParams } from '../../../../../../../api/server/index.d';
 import { LoadingOutlined } from '@ant-design/icons';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 interface IServerMonitorFormProps {
   form: FormInstance;
   visible: boolean;
+  signal?: AbortSignal;
   isUpdate?: boolean;
 }
 
 const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
   form,
   visible,
+  signal,
   isUpdate
 }) => {
   const { t } = useTranslation();
@@ -28,17 +31,24 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
     run: getServerHostName
   } = useRequest(
     (params) => {
-      return server.V1GetServerHostname(params);
+      return server.V1GetServerHostname(params, { signal });
     },
     {
       manual: true,
       onBefore: () => setGetHostNameFailed(false),
-      onError: () => setGetHostNameFailed(true)
+      onSuccess: (data) => {
+        if (data.data?.code !== ResponseCode.SUCCESS) {
+          setGetHostNameFailed(true);
+        }
+      },
+      onError: () => visible && setGetHostNameFailed(true)
     }
   );
 
   useEffect(() => {
-    if (!visible) setGetHostNameFailed(false);
+    if (!visible) {
+      setGetHostNameFailed(false);
+    }
   }, [visible]);
 
   useEffect(() => {
@@ -130,18 +140,31 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
                 name: t('monitorSourceConfig.monitorSourceName')
               })
             }
+            // {
+            //   validator: () => {
+            //     if (getHostNameFailed) {
+            //       return Promise.reject(
+            //         t('monitorSourceConfig.serverMonitor.getHostNameFailedTip')
+            //       );
+            //     }
+            //     return Promise.resolve();
+            //   }
+            // }
           ]}
-          validateStatus={getHostNameFailed ? 'error' : ''}
+          validateStatus={getHostNameFailed ? 'error' : undefined}
           help={
             getHostNameFailed
               ? t('monitorSourceConfig.serverMonitor.getHostNameFailedTip')
-              : ''
+              : null
           }
         >
           <BasicInput
             onFocus={handleGetHostName}
             disabled={!!isUpdate}
             suffix={loading ? <LoadingOutlined /> : <span />}
+            placeholder={t('common.form.placeholder.input', {
+              name: t('monitorSourceConfig.monitorSourceName')
+            })}
           />
         </Form.Item>
       </Form>

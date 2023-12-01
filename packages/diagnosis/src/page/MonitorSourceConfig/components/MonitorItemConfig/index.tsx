@@ -53,7 +53,7 @@ const MonitorConfig = () => {
       return handleTableRequestError(
         monitor.V1ListMonitorRoutine({
           ...pagination,
-          source_id: Number(urlParams.id)
+          source_id: urlParams.id ?? ''
         })
       );
     },
@@ -129,7 +129,7 @@ const MonitorConfig = () => {
               total: monitorItemList?.total ?? 0,
               current: pagination.page_index
             }}
-            rowKey="routine_name"
+            rowKey="monitor_name"
             dataSource={monitorItemList?.list ?? []}
             errorMessage={requestErrorMessage}
             actions={actions}

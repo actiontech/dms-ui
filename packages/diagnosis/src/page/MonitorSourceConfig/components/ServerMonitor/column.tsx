@@ -61,9 +61,10 @@ export const ServerMonitorColumns =
     ];
   };
 
+// todo: add permission
 export const ServerMonitorActions = (
   onEditServerMonitor: (record: IViewServerReply | undefined) => void,
-  onDeleteServerMonitor: (id?: number, name?: string) => void
+  onDeleteServerMonitor: (id?: string, name?: string) => void
 ): ActiontechTableActionMeta<IViewServerReply>[] => [
   {
     text: t('common.edit'),

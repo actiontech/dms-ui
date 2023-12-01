@@ -44,7 +44,7 @@ export interface IV1ListRoleScopesParams {
 
   page_size?: number;
 
-  role_id?: number;
+  role_id?: string;
 }
 
 export interface IV1ListRoleScopesReturn extends IListScopesReply {}

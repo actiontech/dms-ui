@@ -67,7 +67,12 @@ const AddServerMonitor = () => {
     }
   };
 
+  const controller = new AbortController();
+
+  const signal = controller.signal;
+
   const closeModal = () => {
+    controller.abort();
     form.resetFields();
     dispatch(
       updateMonitorSourceConfigModalStatus({
@@ -100,7 +105,7 @@ const AddServerMonitor = () => {
         }
       >
         {contextHolder}
-        <ServerMonitorForm form={form} visible={visible} />
+        <ServerMonitorForm form={form} visible={visible} signal={signal} />
       </BasicDrawer>
     </>
   );

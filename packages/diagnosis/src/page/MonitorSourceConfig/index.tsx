@@ -85,6 +85,7 @@ const MonitorSourceConfig: React.FC = () => {
         extra={
           <EmptyBox if={true}>
             <Space size={12}>
+              {/* todo: add permission */}
               <BasicButton
                 onClick={() => onAddMonitorSource(listType)}
                 type="primary"

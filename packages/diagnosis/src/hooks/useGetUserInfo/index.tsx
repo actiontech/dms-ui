@@ -39,7 +39,7 @@ const useGetUserInfo = () => {
             roleId: info?.role_id?.toString() ?? null
           })
         );
-        getUserScopeByRoleId({ role_id: 0 });
+        getUserScopeByRoleId({ role_id: info?.role_id });
       } else {
         clearUserInfo();
         navigate('/login', { replace: true });

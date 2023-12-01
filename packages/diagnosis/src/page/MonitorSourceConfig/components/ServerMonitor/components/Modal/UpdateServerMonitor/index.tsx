@@ -41,7 +41,6 @@ const UpdateServerMonitor = () => {
       form.setFieldsValue({
         host: selectData.host,
         name: selectData.name,
-        password: selectData.password,
         port: selectData.port,
         user: selectData.user
       });
@@ -59,7 +58,7 @@ const UpdateServerMonitor = () => {
           port: Number(values.port),
           user: values.user
         },
-        id: Number(selectData?.id)
+        id: selectData?.id
       };
       startSubmit();
       server

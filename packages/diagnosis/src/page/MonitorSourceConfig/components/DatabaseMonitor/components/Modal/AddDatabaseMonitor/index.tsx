@@ -36,10 +36,12 @@ const AddDatabaseMonitor = () => {
     const params: IV1AddDBParams = {
       dbs: [
         {
-          db_type: values.db_type,
+          monitor_type: values.monitor_type,
           host: values.host,
           monitor_name: values.monitor_name,
-          port: Number(values.port)
+          port: Number(values.port),
+          username: values.username,
+          password: values.password
         }
       ]
     };

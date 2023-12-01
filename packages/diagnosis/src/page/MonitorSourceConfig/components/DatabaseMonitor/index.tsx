@@ -80,7 +80,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
 
   const deleteDatabaseMonitor = useCallback(
     (record?: IViewDatabaseReply) => {
-      if (!record) return;
+      if (!record || !record.id) return;
       const hideLoading = messageApi.loading(
         t(
           'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceLoading',
@@ -91,7 +91,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
         0
       );
       db.V1DeleteDB({
-        db_monitor_ids: [record?.monitor_name as unknown as number]
+        db_monitor_ids: [record?.id]
       })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
