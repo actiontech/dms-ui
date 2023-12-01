@@ -33,7 +33,7 @@ const CustomRuleList: React.FC = () => {
     rule_template
       .getCustomRulesV1({
         filter_db_type: dbType,
-        filter_desc: ruleName
+        filter_desc: searchRuleName
       })
       .then(
         (res) =>
@@ -44,7 +44,7 @@ const CustomRuleList: React.FC = () => {
       )
   );
 
-  const { ruleName, DbFilter, ruleNameSearch } =
+  const { searchRuleName, DbFilter, setSearchRuleName } =
     useCustomRuleFilterForm(getCustomRuleList);
 
   const deleteRule = (item: ICustomRuleResV1) => {
@@ -116,8 +116,8 @@ const CustomRuleList: React.FC = () => {
       <Space direction="vertical" size={24} className="full-width-element">
         <TableToolbar
           searchInput={{
-            onChange: ruleNameSearch,
-            onRefresh: refresh,
+            onChange: setSearchRuleName,
+            onSearch: refresh,
             placeholder: t('common.form.placeholder.searchInput', {
               name: t('customRule.filterForm.ruleName')
             }),
