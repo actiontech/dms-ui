@@ -8,12 +8,12 @@ import { useKeyPress } from 'ahooks';
 const SearchInput: React.FC<TableSearchInputProps> = ({
   onChange,
   className,
-  onRefresh,
+  onSearch,
   ...props
 }) => {
   const { t } = useTranslation();
 
-  useKeyPress('enter', () => onRefresh?.(), {
+  useKeyPress('enter', () => onSearch?.(), {
     target: () => document.getElementById('actiontech-table-search-input')
   });
 
@@ -29,7 +29,7 @@ const SearchInput: React.FC<TableSearchInputProps> = ({
       onChange={(e) => {
         onChange?.(e.target.value);
       }}
-      suffix={<IconSearch onClick={() => onRefresh?.()} />}
+      suffix={<IconSearch onClick={() => onSearch?.()} />}
       {...props}
     />
   );

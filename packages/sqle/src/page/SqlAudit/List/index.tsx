@@ -67,10 +67,6 @@ const SqlAuditList = () => {
 
   const { instanceIDOptions, updateInstanceList } = useInstance();
 
-  const onSearch = (value: string) => {
-    setSearchKeyword(value);
-  };
-
   const {
     data: dataList,
     loading,
@@ -185,8 +181,8 @@ const SqlAuditList = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onChange: onSearch,
-          onRefresh: refresh,
+          onChange: setSearchKeyword,
+          onSearch: refresh,
           placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
         }}
         loading={loading}

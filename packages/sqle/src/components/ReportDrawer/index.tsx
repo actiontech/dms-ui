@@ -12,8 +12,6 @@ const ReportDrawer = ({
   title,
   data,
   onClose,
-  footer,
-  dbType,
   showAnnotation
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
@@ -77,8 +75,8 @@ const ReportDrawer = ({
                         }}
                         showAnnotation
                         moreBtnLink={
-                          item?.rule_name
-                            ? `/sqle/rule/knowledge/${item?.rule_name}/${dbType}`
+                          item?.rule_name && item?.db_type
+                            ? `/sqle/rule/knowledge/${item?.rule_name}/${item?.db_type}`
                             : ''
                         }
                       />
