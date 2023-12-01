@@ -58,10 +58,6 @@ const AuthTemplateList = () => {
     }
   );
 
-  const onSearch = (value: string) => {
-    setSearchKeyword(value);
-  };
-
   const { toggleModal, initModalStatus } = useModalStatus(
     AuthTemplateModalStatus
   );
@@ -118,8 +114,8 @@ const AuthTemplateList = () => {
         <TableToolbar
           refreshButton={{ refresh, disabled: loading }}
           searchInput={{
-            onChange: onSearch,
-            onRefresh: refresh
+            onChange: setSearchKeyword,
+            onSearch: refresh
           }}
         />
         <ActiontechTable

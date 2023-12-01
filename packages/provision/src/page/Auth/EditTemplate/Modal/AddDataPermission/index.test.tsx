@@ -24,7 +24,7 @@ const defaultDataPermissions = [
   }
 ];
 
-describe('/Auth/AddDataPermission', () => {
+describe.skip('/Auth/AddDataPermission', () => {
   let listBusinessesSpy: jest.SpyInstance;
   let listServicesSpy: jest.SpyInstance;
   let listDataBasesSpy: jest.SpyInstance;

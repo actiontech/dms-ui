@@ -54,7 +54,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
       return handleTableRequestError(db.V1ListMonitorDBs(params));
     },
     {
-      refreshDeps: [pagination, props.searchValue]
+      refreshDeps: [pagination]
     }
   );
 
@@ -140,7 +140,8 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
         }}
         dataSource={databaseMonitorList?.list}
         pagination={{
-          total: databaseMonitorList?.total ?? 0
+          total: databaseMonitorList?.total ?? 0,
+          current: pagination.page_index
         }}
         loading={loading}
         columns={columns}

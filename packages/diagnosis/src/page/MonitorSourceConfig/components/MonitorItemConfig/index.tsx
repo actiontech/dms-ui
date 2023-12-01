@@ -126,7 +126,8 @@ const MonitorConfig = () => {
             columns={columns}
             onChange={tableChange}
             pagination={{
-              total: monitorItemList?.total ?? 0
+              total: monitorItemList?.total ?? 0,
+              current: pagination.page_index
             }}
             rowKey="routine_name"
             dataSource={monitorItemList?.list ?? []}
