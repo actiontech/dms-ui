@@ -9,6 +9,7 @@ describe('lib/BasicDatePicker', () => {
   ignoreComponentCustomAttr();
   beforeEach(() => {
     jest.useFakeTimers();
+    Date.now = () => 1612148800;
   });
 
   afterEach(() => {
