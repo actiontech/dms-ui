@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/ActiontechTable-hooks render use generateDataRangeFilter 1`] = `
+<Styled(BasicRangePicker)
+  allowClear={true}
+  disabledDate={[Function]}
+  onChange={[Function]}
+  placeholder={
+    Array [
+      "开始时间",
+      "结束时间",
+    ]
+  }
+  prefix={
+    <span
+      className="custom-range-picker-filter-label"
+    >
+      这是一个日期下拉选择框
+    </span>
+  }
+  size="small"
+  style={
+    Object {
+      "minWidth": 320,
+    }
+  }
+/>
+`;
+
+exports[`lib/ActiontechTable-hooks render use generateInputFilter 1`] = `
+<CustomInput
+  onCustomPressEnter={[Function]}
+  prefix="这是一个输入框"
+/>
+`;
+
+exports[`lib/ActiontechTable-hooks render use generateInputFilter 2`] = `
+<CustomInput
+  className="input-demo"
+  onCustomPressEnter={[Function]}
+  prefix="这是一个输入框"
+/>
+`;
+
+exports[`lib/ActiontechTable-hooks render use generateSearchInputFilter 1`] = `
+<CustomInput
+  className="filter-search-input"
+  onChange={[Function]}
+  onCustomPressEnter={[Function]}
+  suffix={
+    <IconSearch
+      className="pointer"
+      onClick={[Function]}
+    />
+  }
+/>
+`;
+
+exports[`lib/ActiontechTable-hooks render use generateSelectFilter 1`] = `
+<CustomSelect
+  bordered={false}
+  onChange={[Function]}
+  prefix="这是一个下拉选择框"
+  suffixIcon={null}
+/>
+`;
+
+exports[`lib/ActiontechTable-hooks render use generateSelectFilter 2`] = `
+<CustomSelect
+  bordered={false}
+  onChange={[Function]}
+  prefix="这是一个下拉选择框"
+  suffixIcon={null}
+/>
+`;
