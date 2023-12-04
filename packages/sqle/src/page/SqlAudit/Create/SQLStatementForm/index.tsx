@@ -49,7 +49,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
     form.resetFields([
       'sql',
       'sqlFile',
-      'xmlFile',
+      'mybatisFile',
       'zipFile',
       'gitHttpUrl',
       'gitUserName',
