@@ -90,10 +90,6 @@ const AuditPlanList = () => {
     }
   );
 
-  const onSearch = (val: string) => {
-    setSearchKeyword(val);
-  };
-
   const onRefresh = () => {
     refreshApi();
   };
@@ -229,7 +225,10 @@ const AuditPlanList = () => {
             }
           }
         ]}
-        searchInput={{ onChange: onSearch, onRefresh }}
+        searchInput={{
+          onChange: setSearchKeyword,
+          onSearch: onRefresh
+        }}
       />
       {taskTypeShowStatus && (
         <TableTaskTypeFilter

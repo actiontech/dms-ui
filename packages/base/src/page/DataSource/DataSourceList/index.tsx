@@ -202,10 +202,6 @@ const DataSourceList = () => {
     getDriveOptionsLoading
   ]);
 
-  const onSearch = (value: string) => {
-    setSearchKeyword(value);
-  };
-
   const actions = useMemo(() => {
     return DataSourceListActions(
       navigateToUpdatePage,
@@ -255,8 +251,8 @@ const DataSourceList = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onChange: onSearch,
-          onRefresh: refresh,
+          onChange: setSearchKeyword,
+          onSearch: refresh,
           defaultValue: searchKeyword
         }}
       />

@@ -139,7 +139,7 @@ const TemplateAudit: React.FC = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
-          onRefresh: refresh
+          onSearch: refresh
         }}
       />
       <TableFilterContainer

@@ -87,10 +87,6 @@ const Operation = () => {
     ]);
   }, []);
 
-  const onSearch = (value: string) => {
-    setSearchKeyword(value);
-  };
-
   return (
     <ConsolidatedListStyleWrapper>
       <PageHeader title={t('operation.title')} />
@@ -102,8 +98,8 @@ const Operation = () => {
             updateAllSelectedFilterItem
           }}
           searchInput={{
-            onChange: onSearch,
-            onRefresh: refresh
+            onChange: setSearchKeyword,
+            onSearch: refresh
           }}
         />
         <TableFilterContainer
