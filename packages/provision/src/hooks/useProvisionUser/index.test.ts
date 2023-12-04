@@ -11,8 +11,8 @@ import {
 describe('provision/hooks/useProvisionUser', () => {
   let authListUserSpy: jest.SpyInstance;
   const mockUserOptions = userList.map((i) => ({
-      value: i.user_uid,
-      label: i.name
+    value: i.user_uid,
+    label: i.name
   }));
   const mockUserNameOptions = userList.map((i) => ({
     value: i.name,
@@ -31,7 +31,7 @@ describe('provision/hooks/useProvisionUser', () => {
 
   it('should get provision user data from request', async () => {
     const { result } = renderHooksWithRedux(() => useProvisionUser(), {});
-    
+
     expect(result.current.loading).toBeFalsy();
     expect(result.current.userList).toEqual([]);
     expect(result.current.userNameOptions).toEqual([]);
@@ -50,19 +50,17 @@ describe('provision/hooks/useProvisionUser', () => {
     expect(result.current.userNameOptions).toEqual(mockUserNameOptions);
   });
 
-  it(
-    'should set userList to empty array when response code is not equal success code', async () => {
-       authListUserSpy.mockClear();
-       authListUserSpy.mockImplementation(() =>
-         createSpyFailResponse({ data: [] })
-       );
-      
-      const { result } = renderHooksWithRedux(() => useProvisionUser(), {});
-      act(() => result.current.updateUserList());
-      await act(async () => jest.advanceTimersByTime(3000));
-      expect(result.current.userList).toEqual([]);
-    }
-  );
+  it('should set userList to empty array when response code is not equal success code', async () => {
+    authListUserSpy.mockClear();
+    authListUserSpy.mockImplementation(() =>
+      createSpyFailResponse({ data: [] })
+    );
+
+    const { result } = renderHooksWithRedux(() => useProvisionUser(), {});
+    act(() => result.current.updateUserList());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.userList).toEqual([]);
+  });
 
   it('should set userList to empty array when response throw error', async () => {
     authListUserSpy.mockClear();

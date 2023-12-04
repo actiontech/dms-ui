@@ -10,7 +10,7 @@ import {
 
 describe('provision/hooks/useListTipsByAuthKey', () => {
   let listTipsByAuthKeySpy: jest.SpyInstance;
-  const tipOptions = tipsList.map((i) => ({label: i, value: i}));
+  const tipOptions = tipsList.map((i) => ({ label: i, value: i }));
   beforeEach(() => {
     jest.useFakeTimers();
     listTipsByAuthKeySpy = auth.listTipsByAuthorizationKeyReq();
@@ -56,7 +56,7 @@ describe('provision/hooks/useListTipsByAuthKey', () => {
     listTipsByAuthKeySpy.mockImplementation(() =>
       createSpyErrorResponse({ tips: [] })
     );
-    
+
     const { result } = renderHooksWithRedux(() => useListTipsByAuthKey(), {});
 
     await act(async () => jest.advanceTimersByTime(3000));

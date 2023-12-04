@@ -8,7 +8,6 @@ import {
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 
-
 describe('provision/hooks/useServiceOptions', () => {
   let authListServicesSpy: jest.SpyInstance;
   const serviceOptions = instanceList.map((i) => ({
@@ -47,7 +46,7 @@ describe('provision/hooks/useServiceOptions', () => {
     expect(authListServicesSpy).toBeCalledWith({
       page_index: 1,
       page_size: 999,
-      filter_by_namespace:'',
+      filter_by_namespace: '',
       business
     });
 

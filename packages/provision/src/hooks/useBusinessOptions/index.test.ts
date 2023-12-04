@@ -22,7 +22,7 @@ describe('provision/hooks/useBusinessOptions', () => {
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
-  })
+  });
 
   it('should get business data from request', async () => {
     const { result } = renderHooksWithRedux(useBusinessOptions, {});
@@ -60,7 +60,7 @@ describe('provision/hooks/useBusinessOptions', () => {
   it('should set businessList to empty array when response throw error', async () => {
     authListBusinessSpy.mockClear();
     authListBusinessSpy.mockImplementation(() =>
-      createSpyErrorResponse({ data: { business: []} })
+      createSpyErrorResponse({ data: { business: [] } })
     );
     const { result } = renderHooksWithRedux(useBusinessOptions, {});
     act(() => result.current.updateBusinessList());

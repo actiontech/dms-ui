@@ -6,7 +6,7 @@ describe('/provision/Audit/AuditDetailItem', () => {
   it('render audit detail item with value', () => {
     const props: AuditDetailItemProps = {
       label: 'test label',
-      value: 'test value',
+      value: 'test value'
     };
 
     const { baseElement } = renderWithTheme(<AuditDetailItem {...props} />);
@@ -30,11 +30,10 @@ describe('/provision/Audit/AuditDetailItem', () => {
       const props: AuditDetailItemProps = {
         label: 'test label',
         value: 'test value',
-        type,
-      }
-      return renderWithTheme(<AuditDetailItem {...props} />)
-    }
-    
+        type
+      };
+      return renderWithTheme(<AuditDetailItem {...props} />);
+    };
 
     const { baseElement } = customRender('action');
     expect(baseElement).toMatchSnapshot();
@@ -44,5 +43,5 @@ describe('/provision/Audit/AuditDetailItem', () => {
 
     const { baseElement: baseElement2 } = customRender('user');
     expect(baseElement2).toMatchSnapshot();
-  })
+  });
 });

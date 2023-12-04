@@ -3,16 +3,22 @@ import AuditActionIcon from './AuditActionIcon';
 
 describe('/provision/Audit/AuditActionIcon', () => {
   it('render action icon', () => {
-    const { baseElement } = renderWithTheme(<AuditActionIcon value="test_created" />);
+    const { baseElement } = renderWithTheme(
+      <AuditActionIcon value="test_created" />
+    );
 
     expect(baseElement).toMatchSnapshot();
 
-    const { baseElement: baseElement2 } = renderWithTheme(<AuditActionIcon value="test_deleted" />);
+    const { baseElement: baseElement2 } = renderWithTheme(
+      <AuditActionIcon value="test_deleted" />
+    );
 
     expect(baseElement2).toMatchSnapshot();
 
-    const { baseElement: baseElement3 } = renderWithTheme(<AuditActionIcon value="test_updated" />);
+    const { baseElement: baseElement3 } = renderWithTheme(
+      <AuditActionIcon value="test_updated" />
+    );
 
     expect(baseElement3).toMatchSnapshot();
-  })
-})
+  });
+});
