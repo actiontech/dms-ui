@@ -28,7 +28,7 @@ const uploadItemIcon: {
   sql: <IconOrderSQLUpload />,
   git: <SettingOutlined style={{ color: '#c3c6cd' }} />,
   sqlFile: <IconOrderFileUpload />,
-  xmlFile: <IconOrderFileUpload />,
+  mybatisFile: <IconOrderFileUpload />,
   zipFile: <IconOrderFileUpload />
 };
 

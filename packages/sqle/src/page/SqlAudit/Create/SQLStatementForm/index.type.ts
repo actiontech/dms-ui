@@ -1,7 +1,7 @@
 export enum SQLUploadType {
   sql,
   sqlFile,
-  xmlFile,
+  mybatisFile,
   zipFile,
   git
 }

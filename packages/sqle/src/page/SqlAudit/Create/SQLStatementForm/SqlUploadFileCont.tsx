@@ -90,8 +90,8 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
           />
         </FormItemNoLabel>
       </EmptyBox>
-      {/* xmlFile */}
-      <EmptyBox if={uploadType === UploadTypeEnum.xmlFile}>
+      {/* mybatisFile */}
+      <EmptyBox if={uploadType === UploadTypeEnum.mybatisFile}>
         <FormItemNoLabel
           name="mybatisFile"
           valuePropName="fileList"
@@ -99,7 +99,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             {
               required: true,
               message: t('common.form.placeholder.upload', {
-                name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.xmlFile')
+                name: t('sqlAudit.create.sqlInfo.uploadLabelEnum.mybatisFile')
               })
             }
           ]}
@@ -108,8 +108,8 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
           <CustomDraggerUpload
             accept=".xml"
             beforeUpload={() => false}
-            onRemove={removeFile.bind(null, 'xmlFile')}
-            title={t('sqlAudit.create.sqlInfo.uploadFileTip.xmlFile')}
+            onRemove={removeFile.bind(null, 'mybatisFile')}
+            title={t('sqlAudit.create.sqlInfo.uploadFileTip.mybatisFile')}
             disabled={submitLoading}
           />
         </FormItemNoLabel>
