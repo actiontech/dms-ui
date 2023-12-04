@@ -23,7 +23,6 @@ import {
   ITestWeChatConfiguration,
   ITestWeChatConfigurationReply,
   IListDBServiceDriverOptionReply,
-  ICheckLicenseReply,
   INotification,
   INotificationReply,
   IGetOauth2TipsReply,
@@ -126,8 +125,6 @@ export interface IUpdateLDAPConfigurationParams {
 
 export interface IUpdateLDAPConfigurationReturn extends IGenericResp {}
 
-export interface ISetLicenseReturn extends IGenericResp {}
-
 export interface IGetOauth2ConfigurationReturn
   extends IGetOauth2ConfigurationResDataReply {}
 
@@ -183,8 +180,6 @@ export interface ITestWeChatConfigurationReturn
 
 export interface IListDBServiceDriverOptionReturn
   extends IListDBServiceDriverOptionReply {}
-
-export interface ILicense_fileReturn extends ICheckLicenseReply {}
 
 export interface INotificationParams {
   notification?: INotification;
@@ -546,6 +541,8 @@ export interface IAddSessionParams {
 }
 
 export interface IAddSessionReturn extends IAddSessionReply {}
+
+export interface IDelSessionReturn extends IGenericResp {}
 
 export interface IGetUserBySessionParams {
   user_uid?: string;

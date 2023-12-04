@@ -19,7 +19,6 @@ import {
   IGetLDAPConfigurationReturn,
   IUpdateLDAPConfigurationParams,
   IUpdateLDAPConfigurationReturn,
-  ISetLicenseReturn,
   IGetOauth2ConfigurationReturn,
   IUpdateOauth2ConfigurationParams,
   IUpdateOauth2ConfigurationReturn,
@@ -38,7 +37,6 @@ import {
   ITestWeChatConfigurationParams,
   ITestWeChatConfigurationReturn,
   IListDBServiceDriverOptionReturn,
-  ILicense_fileReturn,
   INotificationParams,
   INotificationReturn,
   IGetOauth2TipsReturn,
@@ -120,6 +118,7 @@ import {
   IDelRoleReturn,
   IAddSessionParams,
   IAddSessionReturn,
+  IDelSessionReturn,
   IGetUserBySessionParams,
   IGetUserBySessionReturn,
   IListUserGroupsParams,
@@ -227,18 +226,6 @@ class DmsService extends ServiceBase {
       paramsData,
       options
     );
-  }
-
-  public SetLicense(options?: AxiosRequestConfig) {
-    return this.get<ISetLicenseReturn>(
-      '/v1/dms/configurations/license',
-      undefined,
-      options
-    );
-  }
-
-  public GetLicenseInfo(options?: AxiosRequestConfig) {
-    return this.get('/v1/dms/configurations/license/info', undefined, options);
   }
 
   public GetOauth2Configuration(options?: AxiosRequestConfig) {
@@ -356,14 +343,6 @@ class DmsService extends ServiceBase {
   public ListDBServiceDriverOption(options?: AxiosRequestConfig) {
     return this.get<IListDBServiceDriverOptionReturn>(
       '/v1/dms/db_services/driver_options',
-      undefined,
-      options
-    );
-  }
-
-  public license_file(options?: AxiosRequestConfig) {
-    return this.post<ILicense_fileReturn>(
-      '/v1/dms/license/check',
       undefined,
       options
     );
@@ -942,6 +921,14 @@ class DmsService extends ServiceBase {
     return this.post<IAddSessionReturn>(
       '/v1/dms/sessions',
       paramsData,
+      options
+    );
+  }
+
+  public DelSession(options?: AxiosRequestConfig) {
+    return this.delete<IDelSessionReturn>(
+      '/v1/dms/sessions',
+      undefined,
       options
     );
   }

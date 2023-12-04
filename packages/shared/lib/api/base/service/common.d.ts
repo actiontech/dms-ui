@@ -176,16 +176,6 @@ export interface ICheckDbConnectable {
   user: string;
 }
 
-export interface ICheckLicenseReply {
-  code?: number;
-
-  content?: string;
-
-  license?: ILicenseItem[];
-
-  message?: string;
-}
-
 export interface ICompanyNotice {
   notice_str?: string;
 
@@ -358,16 +348,6 @@ export interface IGetLDAPConfigurationResDataReply {
   code?: number;
 
   data?: ILDAPConfigurationResData;
-
-  message?: string;
-}
-
-export interface IGetLicenseReply {
-  code?: number;
-
-  content?: string;
-
-  license?: ILicenseItem[];
 
   message?: string;
 }
@@ -594,14 +574,6 @@ export interface ILDAPConfigurationResData {
   ldap_user_email_rdn_key?: string;
 
   ldap_user_name_rdn_key?: string;
-}
-
-export interface ILicenseItem {
-  description?: string;
-
-  limit?: string;
-
-  name?: string;
 }
 
 export interface IListDBService {
