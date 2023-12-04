@@ -23,7 +23,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import ServiceAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
 import useServiceOptions from '~/hooks/useServiceOptions';
-import useBusinessOptions from '~/hooks/userBusinessOptions';
+import useBusinessOptions from '~/hooks/useBusinessOptions';
 
 const ServiceAudit: React.FC = () => {
   const { t } = useTranslation();
