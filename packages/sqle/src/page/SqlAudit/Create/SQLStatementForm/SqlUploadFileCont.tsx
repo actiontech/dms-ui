@@ -93,7 +93,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
       {/* xmlFile */}
       <EmptyBox if={uploadType === UploadTypeEnum.xmlFile}>
         <FormItemNoLabel
-          name="xmlFile"
+          name="mybatisFile"
           valuePropName="fileList"
           rules={[
             {
