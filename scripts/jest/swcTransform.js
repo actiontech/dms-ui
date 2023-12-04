@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const vitePlugin = require('../../../../vite-plugin-conditional-compile/dist/index.cjs');
+const vitePlugin = require('vite-plugin-conditional-compile');
 const swcJest = require('@swc/jest');
 const swcJestConfig = swcJest.createTransformer();
 
