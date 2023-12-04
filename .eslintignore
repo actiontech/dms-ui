@@ -13,6 +13,4 @@ packages/*/dist
 packages/*/scripts
 # config
 vite.config.ts
-jest.config.js
-jest-setup.ts
 .eslintrc.json

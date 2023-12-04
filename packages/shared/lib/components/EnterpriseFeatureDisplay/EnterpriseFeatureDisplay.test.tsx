@@ -9,7 +9,7 @@ describe('test EnterpriseFeatureDisplay', () => {
     const { container } = renderWithTheme(
       <EnterpriseFeatureDisplay
         featureName="featureName"
-        eeFeatureDescription="eeFeatureDescription"
+        eeFeatureDescription="eeFeatureDescription1"
       >
         {children}
       </EnterpriseFeatureDisplay>

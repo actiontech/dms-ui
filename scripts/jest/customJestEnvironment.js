@@ -12,4 +12,8 @@ module.exports = class CustomEnvironment extends Environment {
   async setup() {
     await super.setup();
   }
+
+  getVmContext() {
+    return super.getVmContext();
+  }
 };
