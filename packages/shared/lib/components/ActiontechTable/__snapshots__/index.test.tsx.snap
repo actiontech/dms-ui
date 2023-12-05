@@ -1,0 +1,2594 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/ActiontechTable -composite table render table has tool 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name1"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name2"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name3"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name4"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name5"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name6"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name7"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name8"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name9"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name10"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name11"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name12"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name13"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name14"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name15"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name16"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name17"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name18"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name19"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name20"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <ul
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+          >
+            <li
+              class="ant-pagination-total-text"
+            >
+              <span>
+                共 50 条数据
+              </span>
+            </li>
+            <li
+              aria-disabled="true"
+              class="ant-pagination-prev ant-pagination-disabled"
+              title="Previous Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="left"
+                  class="anticon anticon-left"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="left"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+              tabindex="0"
+              title="1"
+            >
+              <a
+                rel="nofollow"
+              >
+                1
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-2"
+              tabindex="0"
+              title="2"
+            >
+              <a
+                rel="nofollow"
+              >
+                2
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-3"
+              tabindex="0"
+              title="3"
+            >
+              <a
+                rel="nofollow"
+              >
+                3
+              </a>
+            </li>
+            <li
+              aria-disabled="false"
+              class="ant-pagination-next"
+              tabindex="0"
+              title="Next Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="right"
+                  class="anticon anticon-right"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="right"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-options"
+            >
+              <div
+                aria-label="Page Size"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-label="Page Size"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      role="combobox"
+                      type="search"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-item"
+                    title="20 / page"
+                  >
+                    20 / page
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down ant-select-suffix"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -composite table render table has toolbar children 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+              >
+                tool children node
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 8px;"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      <span
+                        class="custom-icon custom-icon-setting css-u3jcp4"
+                        role="img"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.166687 8.50004H4.25002V9.66671H0.166687V8.50004ZM0.166687 4.41671H5.41669V5.58337H0.166687V4.41671ZM0.166687 0.333374H11.8334V1.50004H0.166687V0.333374ZM11.0599 5.59796L11.7342 5.36987L12.3175 6.38021L11.7832 6.84979C11.8504 7.16867 11.8504 7.49808 11.7832 7.81696L12.3175 8.28654L11.7342 9.29687L11.0599 9.06879C10.8207 9.28463 10.536 9.45088 10.2228 9.55296L10.0834 10.25H8.91669L8.77669 9.55237C8.46709 9.4512 8.18213 9.28627 7.94019 9.06821L7.26585 9.29687L6.68252 8.28654L7.21685 7.81696C7.1496 7.49808 7.1496 7.16867 7.21685 6.84979L6.68252 6.38021L7.26585 5.36987L7.94019 5.59796C8.17935 5.38212 8.46402 5.21587 8.77727 5.11379L8.91669 4.41671H10.0834L10.2234 5.11437C10.536 5.21587 10.8207 5.38271 11.0599 5.59854V5.59796ZM9.50002 8.50004C9.80944 8.50004 10.1062 8.37712 10.325 8.15833C10.5438 7.93954 10.6667 7.64279 10.6667 7.33337C10.6667 7.02396 10.5438 6.72721 10.325 6.50842C10.1062 6.28962 9.80944 6.16671 9.50002 6.16671C9.1906 6.16671 8.89386 6.28962 8.67506 6.50842C8.45627 6.72721 8.33335 7.02396 8.33335 7.33337C8.33335 7.64279 8.45627 7.93954 8.67506 8.15833C8.89386 8.37712 9.1906 8.50004 9.50002 8.50004Z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      表格设置
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="custom-icon custom-icon-arrow-down css-u3jcp4"
+                        role="img"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name1"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name2"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name3"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name4"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name5"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name6"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name7"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name8"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name9"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name10"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name11"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name12"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name13"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name14"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name15"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name16"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name17"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name18"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name19"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name20"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <ul
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+          >
+            <li
+              class="ant-pagination-total-text"
+            >
+              <span>
+                共 50 条数据
+              </span>
+            </li>
+            <li
+              aria-disabled="true"
+              class="ant-pagination-prev ant-pagination-disabled"
+              title="Previous Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="left"
+                  class="anticon anticon-left"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="left"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+              tabindex="0"
+              title="1"
+            >
+              <a
+                rel="nofollow"
+              >
+                1
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-2"
+              tabindex="0"
+              title="2"
+            >
+              <a
+                rel="nofollow"
+              >
+                2
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-3"
+              tabindex="0"
+              title="3"
+            >
+              <a
+                rel="nofollow"
+              >
+                3
+              </a>
+            </li>
+            <li
+              aria-disabled="false"
+              class="ant-pagination-next"
+              tabindex="0"
+              title="Next Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="right"
+                  class="anticon anticon-right"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="right"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-options"
+            >
+              <div
+                aria-label="Page Size"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-label="Page Size"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      role="combobox"
+                      type="search"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-item"
+                    title="20 / page"
+                  >
+                    20 / page
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down ant-select-suffix"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -composite table render table with class name 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace custom-class-table-test css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-placeholder"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-table-expanded-row-fixed"
+                          style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -composite table render table with filter 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-de5ds5"
+      style="flex-wrap: wrap; margin-bottom: -12px;"
+    >
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 12px;"
+      >
+        <div
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+        >
+          <div
+            class="ant-select-selector"
+          >
+            <span
+              class="ant-select-selection-search"
+            >
+              <input
+                aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                aria-autocomplete="list"
+                aria-controls="rc_select_TEST_OR_SSR_list"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-owns="rc_select_TEST_OR_SSR_list"
+                autocomplete="off"
+                class="ant-select-selection-search-input"
+                id="rc_select_TEST_OR_SSR"
+                readonly=""
+                role="combobox"
+                style="opacity: 0;"
+                type="search"
+                unselectable="on"
+                value=""
+              />
+            </span>
+            <span
+              class="ant-select-selection-placeholder"
+            >
+              <span
+                class="custom-select-placeholder css-qly0fu"
+              >
+                <span
+                  class="custom-select-placeholder-prefix"
+                >
+                  下拉
+                </span>
+                <span
+                  class="custom-select-placeholder-value"
+                >
+                  请选择{{name}}
+                </span>
+              </span>
+            </span>
+          </div>
+          <span
+            aria-hidden="true"
+            class="ant-select-arrow"
+            style="user-select: none;"
+            unselectable="on"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name1"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name2"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name3"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name4"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name5"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name6"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name7"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name8"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name9"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name10"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name11"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name12"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name13"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name14"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name15"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name16"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name17"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name18"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name19"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name20"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <ul
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+          >
+            <li
+              class="ant-pagination-total-text"
+            >
+              <span>
+                共 50 条数据
+              </span>
+            </li>
+            <li
+              aria-disabled="true"
+              class="ant-pagination-prev ant-pagination-disabled"
+              title="Previous Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="left"
+                  class="anticon anticon-left"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="left"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+              tabindex="0"
+              title="1"
+            >
+              <a
+                rel="nofollow"
+              >
+                1
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-2"
+              tabindex="0"
+              title="2"
+            >
+              <a
+                rel="nofollow"
+              >
+                2
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-3"
+              tabindex="0"
+              title="3"
+            >
+              <a
+                rel="nofollow"
+              >
+                3
+              </a>
+            </li>
+            <li
+              aria-disabled="false"
+              class="ant-pagination-next"
+              tabindex="0"
+              title="Next Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="right"
+                  class="anticon anticon-right"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="right"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-options"
+            >
+              <div
+                aria-label="Page Size"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-label="Page Size"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      role="combobox"
+                      type="search"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-item"
+                    title="20 / page"
+                  >
+                    20 / page
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down ant-select-suffix"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -normal table render normal table is empty 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-placeholder"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-table-expanded-row-fixed"
+                          style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -normal table render normal table is error info 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-placeholder"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-table-expanded-row-fixed"
+                          style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -normal table render normal table is loading 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div>
+          <div
+            aria-busy="true"
+            aria-live="polite"
+            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+          >
+            <span
+              class="ant-spin-dot ant-spin-dot-spin"
+            >
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-spin-container ant-spin-blur"
+        >
+          <div
+            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-placeholder"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-table-expanded-row-fixed"
+                          style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -normal table render table with no pagination 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        名称
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        年龄
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="a"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="b"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="c"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -normal table render table with pagination 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name1"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name2"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name3"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name4"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name5"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name6"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name7"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name8"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name9"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name10"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name11"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name12"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name13"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name14"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name15"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name16"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name17"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name18"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name19"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name20"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <ul
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+          >
+            <li
+              class="ant-pagination-total-text"
+            >
+              <span>
+                共 50 条数据
+              </span>
+            </li>
+            <li
+              aria-disabled="true"
+              class="ant-pagination-prev ant-pagination-disabled"
+              title="Previous Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="left"
+                  class="anticon anticon-left"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="left"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+              tabindex="0"
+              title="1"
+            >
+              <a
+                rel="nofollow"
+              >
+                1
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-2"
+              tabindex="0"
+              title="2"
+            >
+              <a
+                rel="nofollow"
+              >
+                2
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-3"
+              tabindex="0"
+              title="3"
+            >
+              <a
+                rel="nofollow"
+              >
+                3
+              </a>
+            </li>
+            <li
+              aria-disabled="false"
+              class="ant-pagination-next"
+              tabindex="0"
+              title="Next Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="right"
+                  class="anticon anticon-right"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="right"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-options"
+            >
+              <div
+                aria-label="Page Size"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-label="Page Size"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      role="combobox"
+                      type="search"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-item"
+                    title="20 / page"
+                  >
+                    20 / page
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down ant-select-suffix"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable -normal table render table with pagination 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup />
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name21"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name22"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name23"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name24"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name25"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name26"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name27"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name28"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name29"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name30"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name31"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name32"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name33"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name34"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name35"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name36"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name37"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name38"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name39"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="name40"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <ul
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+          >
+            <li
+              class="ant-pagination-total-text"
+            >
+              <span>
+                共 50 条数据
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              class="ant-pagination-prev"
+              tabindex="0"
+              title="Previous Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="left"
+                  class="anticon anticon-left"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="left"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-1"
+              tabindex="0"
+              title="1"
+            >
+              <a
+                rel="nofollow"
+              >
+                1
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-2 ant-pagination-item-active"
+              tabindex="0"
+              title="2"
+            >
+              <a
+                rel="nofollow"
+              >
+                2
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-3"
+              tabindex="0"
+              title="3"
+            >
+              <a
+                rel="nofollow"
+              >
+                3
+              </a>
+            </li>
+            <li
+              aria-disabled="false"
+              class="ant-pagination-next"
+              tabindex="0"
+              title="Next Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="right"
+                  class="anticon anticon-right"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="right"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-options"
+            >
+              <div
+                aria-label="Page Size"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-label="Page Size"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      role="combobox"
+                      type="search"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-item"
+                    title="20 / page"
+                  >
+                    20 / page
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                >
+                  <span
+                    aria-label="down"
+                    class="anticon anticon-down ant-select-suffix"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="down"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
