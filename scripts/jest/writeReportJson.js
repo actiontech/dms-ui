@@ -21,6 +21,5 @@ fs.writeFile(reportJSONFilePath, JSON.stringify(coverageJsonReport), (err) => {
     console.error(err);
     process.exit(1);
   }
-
   console.log('Coverage report appended to ' + reportJSONFilePath);
 });
