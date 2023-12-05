@@ -1,5 +1,6 @@
 import EnterpriseFeatureDisplay from '../EnterpriseFeatureDisplay';
 import { renderWithTheme } from '../../../testUtil/customRender';
+import { screen } from '@testing-library/react';
 
 const children = <>ee version display</>;
 
@@ -14,6 +15,7 @@ describe('test ce EnterpriseFeatureDisplay', () => {
       </EnterpriseFeatureDisplay>
     );
     expect(container).toMatchSnapshot();
+    expect(screen.queryByText('更多关注')).toBeInTheDocument();
   });
 
   it('should match snapshot when isConfigPage is equal true', () => {
@@ -27,5 +29,6 @@ describe('test ce EnterpriseFeatureDisplay', () => {
       </EnterpriseFeatureDisplay>
     );
     expect(container).toMatchSnapshot();
+    expect(screen.queryByText('更多关注')).not.toBeInTheDocument();
   });
 });
