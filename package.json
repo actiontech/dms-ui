@@ -16,13 +16,14 @@
     "stylelint": "stylelint packages/*/{src,lib}/**/{*.less,style.ts,element.ts}",
     "ts-check": "tsc --noEmit",
     "checker": "pnpm ts-check && pnpm eslint && pnpm stylelint && pnpm prettier:c",
+    "test:report": "node ./scripts/jest/writeReportJson.js",
     "test": "jest --watchAll=true",
     "test:clear": "jest --clearCache",
     "test:ce": "pnpm test:clear && cross-env testEnv=SQLE jest --testPathPattern=.*\\\\/packages\\\\/.*\\\\/__tests_ce__\\\\/.*tsx? --watchAll=false --coverage --coverageDirectory='ce_coverage'",
     "test:ee": "pnpm test:clear && cross-env testEnv=ee,SQLE jest --testPathIgnorePatterns=.*\\\\/packages\\\\/.*\\\\/__tests_ce__\\\\/.*tsx? --watchAll=false --coverage --coverageDirectory='ee_coverage'",
     "test:merge": "istanbul-merge --out report.json ce_coverage/coverage-final.json ee_coverage/coverage-final.json",
     "test:c": "pnpm test:ce && pnpm test:ee",
-    "test:ci": "pnpm test:clear && cross-env testEnv=SQLE jest --testPathPattern=.*\\\\/packages\\\\/.*\\\\/__tests_ce__\\\\/.*tsx? --watchAll=false --coverage --coverageDirectory='ce_coverage' --ci --silent && pnpm test:clear && cross-env testEnv=ee,SQLE jest --testPathIgnorePatterns=.*\\\\/packages\\\\/.*\\\\/__tests_ce__\\\\/.*tsx? --watchAll=false --coverage --coverageDirectory='ee_coverage' --ci --silent && pnpm test:merge"
+    "test:ci": "pnpm test:clear && cross-env testEnv=SQLE jest --testPathPattern=.*\\\\/packages\\\\/.*\\\\/__tests_ce__\\\\/.*tsx? --watchAll=false --coverage --coverageDirectory='ce_coverage' --ci --silent && pnpm test:clear && cross-env testEnv=ee,SQLE jest --testPathIgnorePatterns=.*\\\\/packages\\\\/.*\\\\/__tests_ce__\\\\/.*tsx? --watchAll=false --coverage --coverageDirectory='ee_coverage' --ci --silent && pnpm test:merge && pnpm test:report"
   },
   "keywords": [],
   "author": "",

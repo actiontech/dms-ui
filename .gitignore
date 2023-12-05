@@ -15,7 +15,7 @@ dist
 # testing
 /ee_coverage
 /ce_coverage
-
+report.json
 /coverage
 /packages/*/coverage
 
