@@ -8,7 +8,7 @@ export enum AuditTypeEnum {
 export enum UploadTypeEnum {
   sql,
   sqlFile,
-  xmlFile,
+  mybatisFile,
   zipFile,
   git
 }
@@ -16,7 +16,7 @@ export enum UploadTypeEnum {
 export type SQLStatementFields = {
   sql: string;
   sqlFile: File[];
-  xmlFile: File[];
+  mybatisFile: File[];
   zipFile: File[];
 };
 
