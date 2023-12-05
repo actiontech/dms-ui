@@ -46,7 +46,7 @@ jobs:
       - name: Code lint checker
         run: pnpm checker
 
-      - uses: ArtiomTr/jest-coverage-report-action@v2
+      - uses: ArtiomTr/jest-coverage-report-action@v2.26
         name: Coverage test report
         with:
           skip-step: install

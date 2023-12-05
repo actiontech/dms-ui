@@ -41,23 +41,3 @@ i18n.use(initReactI18next).init({
 });
 
 jest.setTimeout(60 * 1000);
-
-// if (isBase) {
-//   (globalThis as any).ASYNC_VALIDATOR_NO_WARNING = 1;
-// } else {
-//   (globalThis as any).ASYNC_VALIDATOR_NO_WARNING = undefined;
-// }
-
-// const api = TestMockApi.getServer();
-// // mock api
-// beforeAll(() => {
-//   api.listen();
-// });
-
-// afterEach(() => {
-//   api.resetHandlers();
-// });
-
-// afterAll(() => {
-//   api.close();
-// });
