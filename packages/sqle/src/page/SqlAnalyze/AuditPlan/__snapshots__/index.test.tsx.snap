@@ -57,7 +57,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-p9ikj9"
+              class="css-1idhdmh"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
@@ -339,7 +339,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-p9ikj9"
+              class="css-1idhdmh"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
