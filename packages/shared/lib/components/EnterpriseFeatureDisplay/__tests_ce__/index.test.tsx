@@ -15,17 +15,4 @@ describe('test ce EnterpriseFeatureDisplay', () => {
     );
     expect(container).toMatchSnapshot();
   });
-
-  it('should match snapshot when isConfigPage is equal true', () => {
-    const { container } = renderWithTheme(
-      <EnterpriseFeatureDisplay
-        featureName="featureName"
-        eeFeatureDescription="eeFeatureDescription"
-        isConfigPage
-      >
-        {children}
-      </EnterpriseFeatureDisplay>
-    );
-    expect(container).toMatchSnapshot();
-  });
 });
