@@ -15,6 +15,7 @@ dist
 # testing
 /ee_coverage
 /ce_coverage
+
 /coverage
 /packages/*/coverage
 
