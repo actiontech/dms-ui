@@ -49,6 +49,7 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2
         name: Coverage test report
         with:
+          skip-step: install
           github-token: ${{ secrets.GITHUB_TOKEN }}
           test-script: pnpm test:ci
           package-manager: pnpm
