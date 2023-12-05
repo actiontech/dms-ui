@@ -148,7 +148,9 @@ export default {
       subTitle: {
         result: '审核结果',
         sql: 'SQL语句'
-      }
+      },
+      source: '来源',
+      sourceTip: '当前仅支持查看ZIP/GIT文件中的SQL来源'
     },
     exportBtnText: '下载扫描任务报告',
 
