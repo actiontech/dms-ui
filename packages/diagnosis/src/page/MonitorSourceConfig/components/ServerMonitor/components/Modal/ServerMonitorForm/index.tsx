@@ -11,14 +11,12 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 interface IServerMonitorFormProps {
   form: FormInstance;
   visible: boolean;
-  signal?: AbortSignal;
   isUpdate?: boolean;
 }
 
 const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
   form,
   visible,
-  signal,
   isUpdate
 }) => {
   const { t } = useTranslation();
@@ -31,7 +29,7 @@ const ServerMonitorForm: React.FC<IServerMonitorFormProps> = ({
     run: getServerHostName
   } = useRequest(
     (params) => {
-      return server.V1GetServerHostname(params, { signal });
+      return server.V1GetServerHostname(params);
     },
     {
       manual: true,

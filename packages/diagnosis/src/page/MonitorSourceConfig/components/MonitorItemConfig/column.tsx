@@ -39,7 +39,6 @@ export const MonitorConfigColumns =
         dataIndex: 'enable',
         title: t('common.status'),
         render: (status) => {
-          if (!status) return '-';
           return status
             ? t('monitorSourceConfig.status.enable')
             : t('monitorSourceConfig.status.disable');

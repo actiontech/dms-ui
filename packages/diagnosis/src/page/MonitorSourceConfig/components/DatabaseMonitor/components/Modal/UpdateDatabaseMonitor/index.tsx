@@ -49,31 +49,35 @@ const UpdateDatabaseMonitor = () => {
   }, [visible, selectData, form]);
 
   const submit = async () => {
-    const values = await form.validateFields();
-    const params: IV1UpdateDBParams = {
-      id: selectData?.id,
-      username: values.username,
-      password: values.password
-    };
-    startSubmit();
-    db.V1UpdateDB(params)
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(
-            t(
-              'monitorSourceConfig.databaseMonitor.updateDatabaseMonitorSourceTip',
-              {
-                name: values.monitor_name
-              }
-            )
-          );
-          closeModal();
-          EventEmitter.emit(EmitterKey.Refresh_Database_Monitor);
-        }
-      })
-      .finally(() => {
-        submitFinish();
-      });
+    try {
+      const values = await form.validateFields();
+      const params: IV1UpdateDBParams = {
+        id: selectData?.id,
+        username: values.username,
+        password: values.password
+      };
+      startSubmit();
+      db.V1UpdateDB(params)
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(
+              t(
+                'monitorSourceConfig.databaseMonitor.updateDatabaseMonitorSourceTip',
+                {
+                  name: values.monitor_name
+                }
+              )
+            );
+            closeModal();
+            EventEmitter.emit(EmitterKey.Refresh_Database_Monitor);
+          }
+        })
+        .finally(() => {
+          submitFinish();
+        });
+    } catch (error) {
+      return;
+    }
   };
 
   const closeModal = () => {
