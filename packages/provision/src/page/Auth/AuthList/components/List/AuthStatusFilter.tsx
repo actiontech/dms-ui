@@ -1,4 +1,4 @@
-import { AuthStatusDictionary } from '../index.data';
+import { AuthStatusDictionary } from './index.data';
 import { AuthListAuthorizationFilterByStatusEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
 import { useTranslation } from 'react-i18next';
 import { BasicSegmented } from '@actiontech/shared';

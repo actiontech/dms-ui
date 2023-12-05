@@ -4,6 +4,7 @@ import {
   ActiontechTableActionMeta,
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
+import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import {
   IListAuthorization,
   IDataObjectService
@@ -33,7 +34,7 @@ export const AuthTableColumns = (
   return [
     {
       dataIndex: 'permission_user',
-      title: t('auth.columns.permissionUser'),
+      title: () => <>{t('auth.columns.permissionUser')}</>,
       render: (user: string, record) => (
         <Space className="auth-action-column">
           <Typography.Link onClick={() => navigate('/userCenter')}>
@@ -50,13 +51,13 @@ export const AuthTableColumns = (
     },
     {
       dataIndex: 'purpose',
-      title: t('auth.columns.purpose'),
+      title: () => <>{t('auth.columns.purpose')}</>,
       filterCustomType: 'select',
       filterKey: 'filter_by_purpose'
     },
     {
       dataIndex: 'businesses',
-      title: t('auth.columns.businesses'),
+      title: () => <>{t('auth.columns.businesses')}</>,
       filterCustomType: 'select',
       filterKey: 'filter_by_business'
     },
@@ -90,7 +91,7 @@ export const AuthTableColumns = (
     },
     {
       dataIndex: 'data_object_service',
-      title: t('auth.columns.dataObjectService'),
+      title: () => <>{t('auth.columns.dataObjectService')}</>,
       filterCustomType: 'select',
       filterKey: 'filter_by_data_object_service_dns',
       render: (service?: IDataObjectService[]) => {
@@ -155,8 +156,14 @@ export const AuthTableColumns = (
     },
     {
       dataIndex: 'memo',
+      className: 'ellipsis-column-width',
       title: () => <>{t('auth.columns.memo')}</>,
-      render: (memo?: string) => (memo ? memo : '-')
+      render: (memo?: string) => {
+        if (!memo) return '-';
+        return (
+          <BasicTypographyEllipsis textCont={memo} tooltipLimitLength={200} />
+        );
+      }
     },
     {
       dataIndex: 'last_update_at',

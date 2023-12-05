@@ -1,5 +1,5 @@
 import { AuthListAuthorizationFilterByStatusEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
-import { I18nKey } from '../../../locale';
+import { I18nKey } from '../../../../../locale';
 
 export const AuthStatusDictionary: {
   [k in AuthListAuthorizationFilterByStatusEnum]: I18nKey;

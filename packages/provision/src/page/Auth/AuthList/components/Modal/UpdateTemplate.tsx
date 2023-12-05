@@ -10,7 +10,7 @@ import useModalStatus from '~/hooks/useModalStatus';
 import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
 import EventEmitter from '~/utils/EventEmitter';
 import { BasicModal, BasicButton, BasicSelect } from '@actiontech/shared';
-import { IUpdateTemplateFormFields } from '../index.type';
+import { IUpdateTemplateFormFields } from '../List/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const UpdateTemplate = () => {
