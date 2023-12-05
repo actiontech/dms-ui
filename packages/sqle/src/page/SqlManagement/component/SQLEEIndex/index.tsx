@@ -69,14 +69,16 @@ const SQLEEIndex = () => {
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
     GetSqlManageListFilterStatusEnum.unhandled
   );
-  const [searchKeyword, setSearchKeyword] = useState<string>('');
+
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
   const {
     tableFilterInfo,
     updateTableFilterInfo,
     tableChange,
     pagination,
-    sortInfo
+    sortInfo,
+    searchKeyword,
+    setSearchKeyword
   } = useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
   const [SQLNum, setSQLNum] = useState<ISQLStatisticsProps['data']>({
     SQLTotalNum: 0,
@@ -135,7 +137,6 @@ const SQLEEIndex = () => {
         pagination,
         projectName,
         filterStatus,
-        searchKeyword,
         isAssigneeSelf,
         tableFilterInfo,
         sortInfo
@@ -288,10 +289,6 @@ const SQLEEIndex = () => {
     generateRuleTipsSelectOptions,
     ruleTipsLoading
   ]);
-
-  const onSearch = (value: string) => {
-    setSearchKeyword(value);
-  };
 
   const rowSelection: TableRowSelection<ISqlManage> = {
     selectedRowKeys,
@@ -507,7 +504,8 @@ const SQLEEIndex = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch
+          onChange: setSearchKeyword,
+          onSearch: refresh
         }}
         loading={getListLoading}
       >

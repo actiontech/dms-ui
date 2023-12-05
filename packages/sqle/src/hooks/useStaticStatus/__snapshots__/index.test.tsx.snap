@@ -4,7 +4,7 @@ exports[`useRuleTemplate should render static option for audit status 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
       data-testid="testId"
     >
       <div
@@ -17,6 +17,7 @@ exports[`useRuleTemplate should render static option for audit status 1`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -72,7 +73,7 @@ exports[`useRuleTemplate should render static option for audit status 2`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -134,113 +135,109 @@ exports[`useRuleTemplate should render static option for audit status 2`] = `
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-label="audit.auditStatus.initialized"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="option"
           >
-            <div
-              aria-label="audit.auditStatus.initialized"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="option"
-            >
-              initialized
-            </div>
-            <div
-              aria-label="audit.auditStatus.doing"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_1"
-              role="option"
-            >
-              doing
-            </div>
+            initialized
           </div>
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            aria-label="audit.auditStatus.doing"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            doing
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="audit.auditStatus.initialized"
                 >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                    title="audit.auditStatus.initialized"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.auditStatus.initialized
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.auditStatus.initialized
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.auditStatus.doing"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.auditStatus.doing"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.auditStatus.doing
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.auditStatus.doing
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.auditStatus.finished"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.auditStatus.finished"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.auditStatus.finished
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.auditStatus.finished
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
@@ -253,7 +250,7 @@ exports[`useRuleTemplate should render static option for exec status 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
       data-testid="testId"
     >
       <div
@@ -266,6 +263,7 @@ exports[`useRuleTemplate should render static option for exec status 1`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -321,7 +319,7 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -383,198 +381,194 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-label="audit.execStatus.initialized"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="option"
           >
-            <div
-              aria-label="audit.execStatus.initialized"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="option"
-            >
-              initialized
-            </div>
-            <div
-              aria-label="audit.execStatus.doing"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_1"
-              role="option"
-            >
-              doing
-            </div>
+            initialized
           </div>
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            aria-label="audit.execStatus.doing"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            doing
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="audit.execStatus.initialized"
                 >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                    title="audit.execStatus.initialized"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.execStatus.initialized
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.execStatus.initialized
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.execStatus.doing"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.execStatus.doing"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.execStatus.doing
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.execStatus.doing
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.execStatus.succeeded"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.execStatus.succeeded"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.execStatus.succeeded
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.execStatus.succeeded
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.execStatus.failed"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.execStatus.failed"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.execStatus.failed
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.execStatus.failed
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.execStatus.manually_executed"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.execStatus.manually_executed"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.execStatus.manually_executed
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.execStatus.manually_executed
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.execStatus.terminating"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.execStatus.terminating"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.execStatus.terminating
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.execStatus.terminating
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.execStatus.terminate_succ"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.execStatus.terminate_succ"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.execStatus.terminate_succ
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.execStatus.terminate_succ
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="audit.execStatus.terminate_fail"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="audit.execStatus.terminate_fail"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      audit.execStatus.terminate_fail
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    audit.execStatus.terminate_fail
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
@@ -587,7 +581,7 @@ exports[`useRuleTemplate should render static option for order status 1`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
       data-testid="testId"
     >
       <div
@@ -600,6 +594,7 @@ exports[`useRuleTemplate should render static option for order status 1`] = `
             aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
             aria-haspopup="listbox"
             aria-owns="rc_select_TEST_OR_SSR_list"
             autocomplete="off"
@@ -655,7 +650,7 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
 <body>
   <div>
     <div
-      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -717,181 +712,177 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
       </span>
     </div>
   </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <div>
-      <div
-        class="ant-select-dropdown"
-        style="opacity: 0; min-width: 0; width: 0px;"
-      >
-        <div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
           <div
-            id="rc_select_TEST_OR_SSR_list"
-            role="listbox"
-            style="height: 0px; width: 0px; overflow: hidden;"
+            aria-label="order.status.wait_for_audit"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="option"
           >
-            <div
-              aria-label="order.status.wait_for_audit"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_0"
-              role="option"
-            >
-              wait_for_audit
-            </div>
-            <div
-              aria-label="order.status.wait_for_execution"
-              aria-selected="false"
-              id="rc_select_TEST_OR_SSR_list_1"
-              role="option"
-            >
-              wait_for_execution
-            </div>
+            wait_for_audit
           </div>
           <div
-            class="rc-virtual-list"
-            style="position: relative;"
+            aria-label="order.status.wait_for_execution"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
           >
-            <div
-              class="rc-virtual-list-holder"
-              style="max-height: 256px; overflow-y: hidden;"
-            >
-              <div>
+            wait_for_execution
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
                 <div
-                  class="rc-virtual-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="order.status.wait_for_audit"
                 >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                    title="order.status.wait_for_audit"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      order.status.wait_for_audit
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    order.status.wait_for_audit
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="order.status.wait_for_execution"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="order.status.wait_for_execution"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      order.status.wait_for_execution
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    order.status.wait_for_execution
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="order.status.executing"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="order.status.executing"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      order.status.executing
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    order.status.executing
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="order.status.finished"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="order.status.finished"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      order.status.finished
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    order.status.finished
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="order.status.reject"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="order.status.reject"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      order.status.reject
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    order.status.reject
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="order.status.exec_failed"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="order.status.exec_failed"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      order.status.exec_failed
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    order.status.exec_failed
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="order.status.canceled"
+                >
                   <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    title="order.status.canceled"
+                    class="ant-select-item-option-content"
                   >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      order.status.canceled
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
+                    order.status.canceled
                   </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
                 </div>
               </div>
             </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
             <div
-              class="rc-virtual-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="rc-virtual-list-scrollbar-thumb"
-                style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>

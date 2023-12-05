@@ -5,7 +5,7 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { resolveThreeSecond } from 'sqle/src/testUtils/mockRequest';
-import { dbServices } from './data';
+import { checkConnectableReply, dbServices } from './data';
 
 class MockDbServicesApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -13,16 +13,13 @@ class MockDbServicesApi implements MockSpyApy {
     this.AddDBService();
     this.UpdateDBService();
     this.DelDBService();
+    this.checkDbServiceIsConnectable();
+    this.checkDBServiceIsConnectableById();
   }
 
   public ListDBServices() {
     const spy = jest.spyOn(dms, 'ListDBServices');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: dbServices.length,
-        db_services: dbServices
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(dbServices));
     return spy;
   }
 
@@ -53,6 +50,26 @@ class MockDbServicesApi implements MockSpyApy {
     spy.mockImplementation(() =>
       resolveThreeSecond({
         is_instance_connectable: true
+      })
+    );
+    return spy;
+  }
+
+  public checkDbServiceIsConnectable() {
+    const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectable');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: checkConnectableReply
+      })
+    );
+    return spy;
+  }
+
+  public checkDBServiceIsConnectableById() {
+    const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectableById');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: checkConnectableReply
       })
     );
     return spy;
