@@ -36,8 +36,11 @@ const UpdateTemplate = () => {
   };
 
   const closeAndReset = () => {
-    form.resetFields();
     closeModal();
+    const timeId = setTimeout(() => {
+      form.resetFields();
+      clearTimeout(timeId);
+    }, 300);
   };
 
   const submit = async () => {

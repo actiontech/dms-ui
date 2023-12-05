@@ -36,7 +36,10 @@ const UpdateExpiration = () => {
 
   const closeAndReset = () => {
     closeModal();
-    form.resetFields();
+    const timeId = setTimeout(() => {
+      form.resetFields();
+      clearTimeout(timeId);
+    }, 300);
   };
 
   const submit = async () => {
