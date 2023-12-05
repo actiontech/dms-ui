@@ -66,21 +66,21 @@ export default {
       uploadTypeEnum: {
         sql: '输入SQL语句',
         sqlFile: '上传SQL文件',
-        xmlFile: '上传Mybatis的XML文件',
+        mybatisFile: '上传Mybatis的XML文件',
         zipFile: '上传ZIP文件',
         git: '配置GIT仓库'
       },
       uploadLabelEnum: {
         sql: 'SQL语句',
         sqlFile: 'SQL文件',
-        xmlFile: 'Mybatis的XML文件',
+        mybatisFile: 'Mybatis的XML文件',
         zipFile: 'ZIP文件',
         gitUrl: 'GIT地址',
         gitUrlTips: '若为私有GIT仓库，则必须输入有读权限的账号密码'
       },
       uploadFileTip: {
         sqlFile: '点击选择SQL文件或将文件拖拽到此区域',
-        xmlFile: '点击选择Mybatis的XML文件或将文件拖拽到此区域',
+        mybatisFile: '点击选择Mybatis的XML文件或将文件拖拽到此区域',
         zipFile: '点击选择ZIP文件或将文件拖拽到此区域'
       }
     }
