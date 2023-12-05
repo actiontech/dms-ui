@@ -54,13 +54,18 @@ const OrderList: React.FC = () => {
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceOptions, updateInstanceList } = useInstance();
   const { isAdmin, username } = useCurrentUser();
-  const [searchKeyword, setSearchKeyword] = useState<string>('');
 
-  const { tableFilterInfo, updateTableFilterInfo, tableChange, pagination } =
-    useTableRequestParams<
-      IWorkflowDetailResV1,
-      OrderListTableFilterParamType
-    >();
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword
+  } = useTableRequestParams<
+    IWorkflowDetailResV1,
+    OrderListTableFilterParamType
+  >();
 
   const {
     data: orderList,
@@ -78,7 +83,7 @@ const OrderList: React.FC = () => {
       return handleTableRequestError(workflow.getWorkflowsV1(params));
     },
     {
-      refreshDeps: [tableFilterInfo, pagination, filterStatus, searchKeyword]
+      refreshDeps: [tableFilterInfo, pagination, filterStatus]
     }
   );
 
@@ -127,10 +132,6 @@ const OrderList: React.FC = () => {
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-
-  const onSearch = (value: string) => {
-    setSearchKeyword(value);
-  };
 
   // #if [ee]
   const [
@@ -288,7 +289,8 @@ const OrderList: React.FC = () => {
           updateAllSelectedFilterItem
         }}
         searchInput={{
-          onSearch
+          onChange: setSearchKeyword,
+          onSearch: refresh
         }}
         loading={loading}
       >

@@ -1,4 +1,4 @@
-import reducers, { updateSelectAuditPlan } from '.';
+import reducers, { updateSelectAuditPlan, updateSelectAuditReport } from '.';
 import { IReduxState } from '..';
 
 const AuditPlanList = [
@@ -22,6 +22,18 @@ const AuditPlanList = [
       'wkpjrnbuneufaljqxijggisjedhpwlhippscklduloxbgymgvwkvhuurmyjiqbaiufvadmkncenueesmbqjqeudkbqdhvihiwzrsdrqbluhashusgzemonxivbsrz'
   }
 ];
+const AuditPlanReportRes = {
+  audit_plan_report_sql: '',
+  audit_plan_report_sql_audit_result: [
+    {
+      db_type: 'db_type',
+      level: 'level',
+      message: 'message',
+      rule_name: 'rule_name'
+    }
+  ],
+  number: 1
+};
 
 describe('store/auditPlan', () => {
   test('should create action', () => {
@@ -64,7 +76,21 @@ describe('store/auditPlan', () => {
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
       modalStatus: {},
-      selectAuditPlan: AuditPlanList[0]
+      selectAuditPlan: AuditPlanList[0],
+      selectAuditReport: null
+    });
+  });
+
+  test('should update select data when dispatch updateSelectAuditReport action', () => {
+    const newState = reducers(
+      state,
+      updateSelectAuditReport(AuditPlanReportRes)
+    );
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      modalStatus: {},
+      selectAuditPlan: null,
+      selectAuditReport: AuditPlanReportRes
     });
   });
 });

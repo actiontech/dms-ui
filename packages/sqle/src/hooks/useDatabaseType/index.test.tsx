@@ -15,10 +15,27 @@ import {
 import { Select } from 'antd';
 import useDatabaseType from '.';
 import { driverMeta } from './index.test.data';
+import { useDispatch, useSelector } from 'react-redux';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn(),
+    useDispatch: jest.fn()
+  };
+});
 
 describe('hooks/useDatabaseType', () => {
+  const mockDispatch = jest.fn();
+
   beforeEach(() => {
     jest.useFakeTimers();
+    (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        database: { driverMeta: driverMeta }
+      });
+    });
   });
   afterEach(() => {
     jest.useRealTimers();

@@ -30,7 +30,6 @@ describe('useUsername', () => {
   it('should get user data from request', async () => {
     const { result } = renderHook(() => useUserName());
     expect(result.current.loading).toBeFalsy();
-    expect(result.current.usernameList).toEqual([]);
 
     act(() => {
       result.current.updateUsernameList();

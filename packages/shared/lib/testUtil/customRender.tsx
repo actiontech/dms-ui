@@ -12,6 +12,7 @@ import { storeFactory } from './mockRedux';
 import userEvent from '@testing-library/user-event';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import { mount } from 'enzyme';
+
 import lightTheme from '../theme/light';
 
 type MountParams = Parameters<typeof mount>;
@@ -63,6 +64,19 @@ export const renderHooksWithRedux = <TProps, TResult>(
   return renderHook(hooks, {
     wrapper: ({ children }) => (
       <Provider store={storeFactory(storeState)}>{children}</Provider>
+    )
+  });
+};
+
+export const renderHooksWithReduxAndRouter = <TProps, TResult>(
+  hooks: (props: TProps) => TResult,
+  storeState: IStore
+) => {
+  return renderHook(hooks, {
+    wrapper: ({ children }) => (
+      <Provider store={storeFactory(storeState)}>
+        <BrowserRouter>{children}</BrowserRouter>
+      </Provider>
     )
   });
 };

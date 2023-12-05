@@ -53,6 +53,17 @@ export default defineConfig((config) => {
             return;
           }
           warn(warning);
+        },
+        output: {
+          minifyInternalExports: true,
+          manualChunks: {
+            'antd.module': ['antd'],
+            'react.module': ['react'],
+            'lodash.module': ['lodash'],
+            'antd.icon.module': ['@ant-design/icons'],
+            'antd.plots': ['@ant-design/plots'],
+            'actiontech.shared': ['@actiontech/shared']
+          }
         }
       }
     },

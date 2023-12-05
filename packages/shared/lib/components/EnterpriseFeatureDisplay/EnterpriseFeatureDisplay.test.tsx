@@ -1,12 +1,13 @@
 import { render } from '@testing-library/react';
 import EnterpriseFeatureDisplay from './EnterpriseFeatureDisplay';
 import { Space } from 'antd';
+import { renderWithTheme } from '../../testUtil/customRender';
 
 const children = <>ee version display</>;
 
 describe('test EnterpriseFeatureDisplay', () => {
   test('should match snapshot', () => {
-    const { container, rerender } = render(
+    const { container } = renderWithTheme(
       <EnterpriseFeatureDisplay
         featureName="featureName"
         eeFeatureDescription="eeFeatureDescription"
@@ -14,10 +15,9 @@ describe('test EnterpriseFeatureDisplay', () => {
         {children}
       </EnterpriseFeatureDisplay>
     );
-
     expect(container).toMatchSnapshot();
 
-    rerender(
+    const { container: container1 } = renderWithTheme(
       <EnterpriseFeatureDisplay
         featureName="featureName"
         eeFeatureDescription={
@@ -30,7 +30,6 @@ describe('test EnterpriseFeatureDisplay', () => {
         {children}
       </EnterpriseFeatureDisplay>
     );
-
-    expect(container).toMatchSnapshot();
+    expect(container1).toMatchSnapshot();
   });
 });

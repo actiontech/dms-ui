@@ -1,4 +1,7 @@
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  ICheckDBServiceIsConnectableReplyItem,
+  IListDBService
+} from '@actiontech/shared/lib/api/base/service/common';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const dbServices: IListDBService[] = [
@@ -32,5 +35,16 @@ export const dbServices: IListDBService[] = [
     port: '3306',
     uid: '300123',
     user: 'test1'
+  }
+];
+
+export const checkConnectableReply: ICheckDBServiceIsConnectableReplyItem[] = [
+  {
+    component: 'sqle',
+    is_connectable: true
+  },
+  {
+    component: 'provision',
+    is_connectable: false
   }
 ];

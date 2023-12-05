@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { BasicButton } from '@actiontech/shared';
@@ -7,12 +7,15 @@ import { updateAuditPlanModalStatus } from '../../../../../store/auditPlan';
 import { ModalName } from '../../../../../data/ModalName';
 import { IAuditPlanReportSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import ReportDrawer from '../../../../../components/ReportDrawer';
+import useAuditResultRuleInfo from '../../../../Order/hooks/useAuditResultRuleInfo';
 
 type typeDetailReportDrawer = {
   actionMethod: (data: IAuditPlanReportSQLResV2) => void;
+  dbType?: string;
 };
 
 const DetailReportDrawer = (props: typeDetailReportDrawer) => {
+  const { dbType } = props;
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
@@ -39,6 +42,11 @@ const DetailReportDrawer = (props: typeDetailReportDrawer) => {
     );
   };
 
+  const { auditResultRuleInfo } = useAuditResultRuleInfo(
+    recordData?.audit_plan_report_sql_audit_result ?? [],
+    dbType ?? ''
+  );
+
   return (
     <ReportDrawer
       open={open}
@@ -54,10 +62,11 @@ const DetailReportDrawer = (props: typeDetailReportDrawer) => {
         </div>
       }
       data={{
-        auditResult: recordData?.audit_plan_report_sql_audit_result ?? [],
+        auditResult: auditResultRuleInfo,
         sql: recordData?.audit_plan_report_sql ?? ''
       }}
       onClose={onClose}
+      showAnnotation
     />
   );
 };

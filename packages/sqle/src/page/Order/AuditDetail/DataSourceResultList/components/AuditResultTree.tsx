@@ -2,60 +2,95 @@ import { DataSourceAuditResultTreeStyleWrapper } from '../../style';
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import type { DataNode } from 'antd/es/tree';
 import { IconArrowDown } from '@actiontech/shared/lib/Icon';
-import { useMemo, ReactNode } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  IconOrderAuditResultNotice,
-  IconOrderAuditResultWarning,
-  IconOrderAuditResultError,
-  IconOrderAuditResultSuccess
-} from '../../../../../icon/Order';
-import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
-const auditStatusMap: {
-  [key in RuleResV1LevelEnum]: ReactNode;
-} = {
-  [RuleResV1LevelEnum.error]: <IconOrderAuditResultError />,
-  [RuleResV1LevelEnum.notice]: <IconOrderAuditResultNotice />,
-  [RuleResV1LevelEnum.warn]: <IconOrderAuditResultWarning />,
-  [RuleResV1LevelEnum.normal]: <IconOrderAuditResultSuccess />
-};
+import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template/index';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import AuditResultMessage from '../../../../../components/AuditResultMessage';
 
 const AuditResultTree: React.FC<{ auditResult?: IAuditResult[] }> = ({
   auditResult
 }) => {
   const { t } = useTranslation();
 
-  const treeData: DataNode[] = useMemo(() => {
-    return [
-      {
-        title: (
-          <span className="audit-result-tree-title">
-            {t('audit.table.auditResult')}
-          </span>
-        ),
-        key: 'audit_tree_title',
-        children: auditResult?.map((result, index) => {
-          return {
-            title: (
-              <span>
-                {auditStatusMap[result.level as RuleResV1LevelEnum]}{' '}
-                <span className="audit-result-text-describe">
-                  {result.message}
-                </span>
-              </span>
-            ),
-            key: index
-          };
-        }) || [
-          {
-            title: '-',
-            key: 'empty_tree'
+  const [treeData, setTreeData] = useState<DataNode[]>([
+    {
+      title: (
+        <span className="audit-result-tree-title">
+          {t('audit.table.auditResult')}
+        </span>
+      ),
+      key: 'audit_tree_title',
+      children: [
+        {
+          title: '-',
+          key: 'empty_tree',
+          isLeaf: true
+        }
+      ]
+    }
+  ]);
+
+  const onLoadData = (node: DataNode) => {
+    const filterRuleNames = (
+      auditResult?.map((v) => v.rule_name ?? '') ?? []
+    ).filter((v) => !!v);
+
+    if (!filterRuleNames.length) {
+      return Promise.resolve();
+    }
+    return rule_template
+      .getRuleListV1({
+        filter_rule_names: filterRuleNames.join(',')
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          const { data } = res.data;
+          const newResult = auditResult?.map((item) => {
+            return {
+              annotation:
+                data?.find(
+                  (i) =>
+                    i.rule_name === item.rule_name && i.db_type === item.db_type
+                )?.annotation ?? '',
+              ...item
+            };
+          });
+
+          if (newResult) {
+            setTreeData([
+              {
+                ...node,
+                children: newResult.map((item, index) => {
+                  return {
+                    title: (
+                      <AuditResultMessage
+                        key={`${item.rule_name ?? ''}${
+                          item.message ?? ''
+                        }-${index}`}
+                        auditResult={{
+                          level: item?.level ?? '',
+                          message: item?.message ?? '',
+                          annotation: item.annotation ?? ''
+                        }}
+                        showAnnotation
+                        moreBtnLink={
+                          item?.rule_name
+                            ? `/sqle/rule/knowledge/${item?.rule_name}/${item.db_type}`
+                            : ''
+                        }
+                      />
+                    ),
+                    key: index,
+                    isLeaf: true
+                  };
+                })
+              }
+            ]);
           }
-        ]
-      }
-    ];
-  }, [auditResult, t]);
+        }
+      });
+  };
 
   return (
     <DataSourceAuditResultTreeStyleWrapper
@@ -63,6 +98,7 @@ const AuditResultTree: React.FC<{ auditResult?: IAuditResult[] }> = ({
       switcherIcon={<IconArrowDown width={16} height={16} color="#C3C6CD" />}
       treeData={treeData}
       selectable={false}
+      loadData={onLoadData}
     ></DataSourceAuditResultTreeStyleWrapper>
   );
 };
