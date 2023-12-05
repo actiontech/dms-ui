@@ -12,6 +12,7 @@ import { DetailReportDrawerProps } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
 import { IconFillListActive } from '@actiontech/shared/lib/Icon/common';
+import { Typography } from 'antd';
 
 const ReportDrawer = ({
   open,
@@ -45,7 +46,9 @@ const ReportDrawer = ({
       >
         <AuditReportStyleWrapper className="audit-report-wrapper">
           <section className="wrapper-item">
-            <h3>{t('auditPlan.report.drawer.subTitle.result')}</h3>
+            <Typography.Title level={3}>
+              {t('auditPlan.report.drawer.subTitle.result')}
+            </Typography.Title>
             <div className="wrapper-cont">
               {resultDataIsEmpty ? (
                 <AuditResultMessage styleClass="result-item" />
@@ -95,7 +98,9 @@ const ReportDrawer = ({
           </section>
           <section className="wrapper-item">
             <div className="title-wrap">
-              <h3>{t('auditPlan.report.drawer.subTitle.sql')}</h3>
+              <Typography.Title level={3}>
+                {t('auditPlan.report.drawer.subTitle.sql')}
+              </Typography.Title>
               <EmptyBox if={showSourceFile}>
                 <EmptyBox
                   if={!!data?.sqlSourceFile}
