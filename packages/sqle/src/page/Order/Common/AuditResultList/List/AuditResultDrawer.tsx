@@ -20,8 +20,10 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
       onClose={onClose}
       data={{
         auditResult: auditResultRuleInfo,
-        sql: auditResultRecord?.exec_sql ?? ''
+        sql: auditResultRecord?.exec_sql ?? '',
+        sqlSourceFile: auditResultRecord?.sql_source_file ?? ''
       }}
+      showSourceFile
       title={
         <AuditResultDrawerTitleStyleWrapper>
           <span className="audit-result-drawer-number">
