@@ -5,7 +5,7 @@ import BasicEmpty from '../BasicEmpty';
 
 type DataType = { key: React.ReactNode; value: React.ReactNode };
 
-interface IBasicInfoListProps extends CardProps {
+export interface IBasicInfoListProps extends CardProps {
   data: DataType[];
   columnNumber?: number;
   errorInfo?: string | React.ReactNode;

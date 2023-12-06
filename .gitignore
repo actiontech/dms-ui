@@ -15,6 +15,7 @@ dist
 # testing
 /coverage
 /packages/*/coverage
+/report.json
 
 # production
 /build

@@ -1,10 +1,12 @@
 import { ReactNode } from 'react';
 import { CustomSelectOptionLabelStyleWrapper } from './style';
 
-const CustomOptionLabel: React.FC<{
+export interface ICustomOptionLabel {
   prefix?: ReactNode;
   label: ReactNode;
-}> = ({ prefix, label }) => {
+}
+
+const CustomOptionLabel: React.FC<ICustomOptionLabel> = ({ prefix, label }) => {
   return (
     <CustomSelectOptionLabelStyleWrapper className="custom-select-option-content">
       {prefix && (

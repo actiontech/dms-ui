@@ -23,13 +23,13 @@ export const tooltipsCommonProps: (
   };
 };
 
-const BasicToolTips: React.FC<
-  TooltipProps & {
-    prefixIcon?: boolean | React.ReactNode;
-    suffixIcon?: boolean | React.ReactNode;
-    titleWidth?: number;
-  }
-> = ({
+export type IBasicToolTips = TooltipProps & {
+  prefixIcon?: boolean | React.ReactNode;
+  suffixIcon?: boolean | React.ReactNode;
+  titleWidth?: number;
+};
+
+const BasicToolTips: React.FC<IBasicToolTips> = ({
   className,
   title,
   children,

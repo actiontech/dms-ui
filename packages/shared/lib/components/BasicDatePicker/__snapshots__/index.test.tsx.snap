@@ -1,0 +1,1609 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/BasicDatePicker render diff size date picker 1`] = `
+<div>
+  <div
+    class="basic-date-picker-wrapper css-1d7co14"
+  >
+    <span
+      class="custom-icon prefix-icon css-u3jcp4"
+    >
+      <svg
+        fill="none"
+        height="18"
+        viewBox="0 0 18 18"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="time-fill"
+        >
+          <path
+            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
+            fill="#C3C6CD"
+            id="Vector"
+          />
+        </g>
+      </svg>
+    </span>
+    <div
+      class="ant-picker ant-picker-large css-dev-only-do-not-override-1xo6ltj"
+    >
+      <div
+        class="ant-picker-input"
+      >
+        <input
+          autocomplete="off"
+          placeholder="Select date"
+          readonly=""
+          size="12"
+          title=""
+          value=""
+        />
+        <span
+          class="ant-picker-suffix"
+        >
+          <span
+            class="custom-icon css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="arrow-m-down-line"
+              >
+                <path
+                  d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
+                  fill="#C3C6CD"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/BasicDatePicker render diff size date picker 2`] = `
+<div>
+  <div
+    class="basic-date-picker-wrapper css-1d7co14"
+  >
+    <span
+      class="custom-icon prefix-icon css-u3jcp4"
+    >
+      <svg
+        fill="none"
+        height="18"
+        viewBox="0 0 18 18"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="time-fill"
+        >
+          <path
+            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
+            fill="#C3C6CD"
+            id="Vector"
+          />
+        </g>
+      </svg>
+    </span>
+    <div
+      class="ant-picker ant-picker-small css-dev-only-do-not-override-1xo6ltj"
+    >
+      <div
+        class="ant-picker-input"
+      >
+        <input
+          autocomplete="off"
+          placeholder="Select date"
+          readonly=""
+          size="12"
+          title=""
+          value=""
+        />
+        <span
+          class="ant-picker-suffix"
+        >
+          <span
+            class="custom-icon css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="arrow-m-down-line"
+              >
+                <path
+                  d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
+                  fill="#C3C6CD"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/BasicDatePicker render diff size date picker 3`] = `
+<div>
+  <div
+    class="basic-date-picker-wrapper css-1d7co14"
+  >
+    <span
+      class="custom-icon prefix-icon css-u3jcp4"
+    >
+      <svg
+        fill="none"
+        height="18"
+        viewBox="0 0 18 18"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="time-fill"
+        >
+          <path
+            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
+            fill="#C3C6CD"
+            id="Vector"
+          />
+        </g>
+      </svg>
+    </span>
+    <div
+      class="ant-picker ant-picker-middle css-dev-only-do-not-override-1xo6ltj"
+    >
+      <div
+        class="ant-picker-input"
+      >
+        <input
+          autocomplete="off"
+          placeholder="Select date"
+          readonly=""
+          size="12"
+          title=""
+          value=""
+        />
+        <span
+          class="ant-picker-suffix"
+        >
+          <span
+            class="custom-icon css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="arrow-m-down-line"
+              >
+                <path
+                  d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
+                  fill="#C3C6CD"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/BasicDatePicker render open date picker when hideSuperIcon false 1`] = `
+<div>
+  <div
+    class="basic-date-picker-wrapper css-r62yr2"
+  >
+    <span
+      class="custom-icon prefix-icon css-u3jcp4"
+    >
+      <svg
+        fill="none"
+        height="18"
+        viewBox="0 0 18 18"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="time-fill"
+        >
+          <path
+            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
+            fill="#C3C6CD"
+            id="Vector"
+          />
+        </g>
+      </svg>
+    </span>
+    <div
+      class="ant-picker ant-picker-middle css-dev-only-do-not-override-1xo6ltj"
+    >
+      <div
+        class="ant-picker-input"
+      >
+        <input
+          autocomplete="off"
+          placeholder="Select date"
+          size="12"
+          title=""
+          value=""
+        />
+        <span
+          class="ant-picker-suffix"
+        >
+          <span
+            class="custom-icon css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="arrow-m-up-line"
+              >
+                <path
+                  d="M8.00048 7.21871L4.70048 10.5187L3.75781 9.57604L8.00048 5.33337L12.2431 9.57604L11.3005 10.5187L8.00048 7.21871Z"
+                  fill="#C3C6CD"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="ant-picker-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-1xo6ltj ant-picker-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-picker-panel-container"
+      >
+        <div
+          class="ant-picker-panel-layout"
+        >
+          <div
+            class="ant-picker-panel"
+            tabindex="-1"
+          >
+            <div
+              class="ant-picker-date-panel"
+            >
+              <div
+                class="ant-picker-header"
+              >
+                <button
+                  class="ant-picker-header-super-prev-btn"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="ant-picker-super-prev-icon"
+                  />
+                </button>
+                <button
+                  class="ant-picker-header-prev-btn"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="custom-icon prev-icon css-u3jcp4"
+                  >
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        id="arrow-m-left-line"
+                      >
+                        <path
+                          d="M6.31617 7.00005L9.20367 9.88755L8.37884 10.7124L4.6665 7.00005L8.37884 3.28772L9.20367 4.11255L6.31617 7.00005Z"
+                          fill="#292C33"
+                          id="Vector"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  class="ant-picker-header-view"
+                >
+                  <button
+                    class="ant-picker-month-btn"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    Dec
+                  </button>
+                  <button
+                    class="ant-picker-year-btn"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    2023
+                  </button>
+                </div>
+                <button
+                  class="ant-picker-header-next-btn"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="custom-icon next-icon css-u3jcp4"
+                  >
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        id="arrow-m-right-line"
+                      >
+                        <path
+                          d="M7.68389 7.00005L4.79639 4.11255L5.62122 3.28772L9.33355 7.00005L5.62122 10.7124L4.79639 9.88755L7.68389 7.00005Z"
+                          fill="#292C33"
+                          id="Vector"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                </button>
+                <button
+                  class="ant-picker-header-super-next-btn"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="ant-picker-super-next-icon"
+                  />
+                </button>
+              </div>
+              <div
+                class="ant-picker-body"
+              >
+                <table
+                  class="ant-picker-content"
+                >
+                  <thead>
+                    <tr>
+                      <th>
+                        Su
+                      </th>
+                      <th>
+                        Mo
+                      </th>
+                      <th>
+                        Tu
+                      </th>
+                      <th>
+                        We
+                      </th>
+                      <th>
+                        Th
+                      </th>
+                      <th>
+                        Fr
+                      </th>
+                      <th>
+                        Sa
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        class="ant-picker-cell"
+                        title="2023-11-26"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          26
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2023-11-27"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          27
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2023-11-28"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          28
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2023-11-29"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          29
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-end"
+                        title="2023-11-30"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          30
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-start ant-picker-cell-in-view"
+                        title="2023-12-01"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          1
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-02"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          2
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-03"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          3
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today"
+                        title="2023-12-04"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          4
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-05"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          5
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-06"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          6
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-07"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          7
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-08"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          8
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-09"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          9
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-10"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          10
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-11"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          11
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-12"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          12
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-13"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          13
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-14"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          14
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-15"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          15
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-16"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          16
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-17"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          17
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-18"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          18
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-19"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          19
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-20"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          20
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-21"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          21
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-22"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          22
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-23"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          23
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-24"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          24
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-25"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          25
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-26"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          26
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-27"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          27
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-28"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          28
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-29"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          29
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-30"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          30
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-end ant-picker-cell-in-view"
+                        title="2023-12-31"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          31
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-start"
+                        title="2024-01-01"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          1
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-02"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          2
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-03"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          3
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-04"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          4
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-05"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          5
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-06"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          6
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div
+              class="ant-picker-footer"
+            >
+              <a
+                class="ant-picker-today-btn"
+              >
+                Today
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/BasicDatePicker render open date picker when hideSuperIcon true 1`] = `
+<div>
+  <div
+    class="basic-date-picker-wrapper css-1d7co14"
+  >
+    <span
+      class="custom-icon prefix-icon css-u3jcp4"
+    >
+      <svg
+        fill="none"
+        height="18"
+        viewBox="0 0 18 18"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="time-fill"
+        >
+          <path
+            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
+            fill="#C3C6CD"
+            id="Vector"
+          />
+        </g>
+      </svg>
+    </span>
+    <div
+      class="ant-picker ant-picker-middle css-dev-only-do-not-override-1xo6ltj"
+    >
+      <div
+        class="ant-picker-input"
+      >
+        <input
+          autocomplete="off"
+          placeholder="Select date"
+          size="12"
+          title=""
+          value=""
+        />
+        <span
+          class="ant-picker-suffix"
+        >
+          <span
+            class="custom-icon css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="arrow-m-up-line"
+              >
+                <path
+                  d="M8.00048 7.21871L4.70048 10.5187L3.75781 9.57604L8.00048 5.33337L12.2431 9.57604L11.3005 10.5187L8.00048 7.21871Z"
+                  fill="#C3C6CD"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="ant-picker-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-1xo6ltj ant-picker-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-picker-panel-container"
+      >
+        <div
+          class="ant-picker-panel-layout"
+        >
+          <div
+            class="ant-picker-panel"
+            tabindex="-1"
+          >
+            <div
+              class="ant-picker-date-panel"
+            >
+              <div
+                class="ant-picker-header"
+              >
+                <button
+                  class="ant-picker-header-super-prev-btn"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="ant-picker-super-prev-icon"
+                  />
+                </button>
+                <button
+                  class="ant-picker-header-prev-btn"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="custom-icon prev-icon css-u3jcp4"
+                  >
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        id="arrow-m-left-line"
+                      >
+                        <path
+                          d="M6.31617 7.00005L9.20367 9.88755L8.37884 10.7124L4.6665 7.00005L8.37884 3.28772L9.20367 4.11255L6.31617 7.00005Z"
+                          fill="#292C33"
+                          id="Vector"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  class="ant-picker-header-view"
+                >
+                  <button
+                    class="ant-picker-month-btn"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    Dec
+                  </button>
+                  <button
+                    class="ant-picker-year-btn"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    2023
+                  </button>
+                </div>
+                <button
+                  class="ant-picker-header-next-btn"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="custom-icon next-icon css-u3jcp4"
+                  >
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        id="arrow-m-right-line"
+                      >
+                        <path
+                          d="M7.68389 7.00005L4.79639 4.11255L5.62122 3.28772L9.33355 7.00005L5.62122 10.7124L4.79639 9.88755L7.68389 7.00005Z"
+                          fill="#292C33"
+                          id="Vector"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                </button>
+                <button
+                  class="ant-picker-header-super-next-btn"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    class="ant-picker-super-next-icon"
+                  />
+                </button>
+              </div>
+              <div
+                class="ant-picker-body"
+              >
+                <table
+                  class="ant-picker-content"
+                >
+                  <thead>
+                    <tr>
+                      <th>
+                        Su
+                      </th>
+                      <th>
+                        Mo
+                      </th>
+                      <th>
+                        Tu
+                      </th>
+                      <th>
+                        We
+                      </th>
+                      <th>
+                        Th
+                      </th>
+                      <th>
+                        Fr
+                      </th>
+                      <th>
+                        Sa
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        class="ant-picker-cell"
+                        title="2023-11-26"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          26
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2023-11-27"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          27
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2023-11-28"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          28
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2023-11-29"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          29
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-end"
+                        title="2023-11-30"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          30
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-start ant-picker-cell-in-view"
+                        title="2023-12-01"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          1
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-02"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          2
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-03"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          3
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today"
+                        title="2023-12-04"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          4
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-05"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          5
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-06"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          6
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-07"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          7
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-08"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          8
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-09"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          9
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-10"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          10
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-11"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          11
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-12"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          12
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-13"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          13
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-14"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          14
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-15"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          15
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-16"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          16
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-17"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          17
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-18"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          18
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-19"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          19
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-20"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          20
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-21"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          21
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-22"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          22
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-23"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          23
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-24"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          24
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-25"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          25
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-26"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          26
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-27"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          27
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-28"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          28
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-29"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          29
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-in-view"
+                        title="2023-12-30"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          30
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-end ant-picker-cell-in-view"
+                        title="2023-12-31"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          31
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell ant-picker-cell-start"
+                        title="2024-01-01"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          1
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-02"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          2
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-03"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          3
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-04"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          4
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-05"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          5
+                        </div>
+                      </td>
+                      <td
+                        class="ant-picker-cell"
+                        title="2024-01-06"
+                      >
+                        <div
+                          class="ant-picker-cell-inner"
+                        >
+                          6
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div
+              class="ant-picker-footer"
+            >
+              <a
+                class="ant-picker-today-btn"
+              >
+                Today
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/BasicDatePicker render params hideSuperIcon val 1`] = `
+<div>
+  <div
+    class="basic-date-picker-wrapper css-r62yr2"
+  >
+    <span
+      class="custom-icon prefix-icon css-u3jcp4"
+    >
+      <svg
+        fill="none"
+        height="18"
+        viewBox="0 0 18 18"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="time-fill"
+        >
+          <path
+            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
+            fill="#C3C6CD"
+            id="Vector"
+          />
+        </g>
+      </svg>
+    </span>
+    <div
+      class="ant-picker css-dev-only-do-not-override-1xo6ltj"
+    >
+      <div
+        class="ant-picker-input"
+      >
+        <input
+          autocomplete="off"
+          placeholder="Select date"
+          readonly=""
+          size="12"
+          title=""
+          value=""
+        />
+        <span
+          class="ant-picker-suffix"
+        >
+          <span
+            class="custom-icon css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="arrow-m-down-line"
+              >
+                <path
+                  d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
+                  fill="#C3C6CD"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

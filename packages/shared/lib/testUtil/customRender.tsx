@@ -7,6 +7,8 @@ import {
   MemoryRouter,
   MemoryRouterProps
 } from 'react-router-dom';
+import { ConfigProvider, theme as antdTheme } from 'antd';
+import zhCN from 'antd/locale/zh_CN';
 import { Dictionary, IStore } from '../types/common.type';
 import { storeFactory } from './mockRedux';
 import userEvent from '@testing-library/user-event';
@@ -77,6 +79,23 @@ export const renderHooksWithReduxAndRouter = <TProps, TResult>(
       <Provider store={storeFactory(storeState)}>
         <BrowserRouter>{children}</BrowserRouter>
       </Provider>
+    )
+  });
+};
+
+export const renderHooksWithTheme = <TProps, TResult>(
+  hooks: (props: TProps) => TResult
+) => {
+  return renderHook(hooks, {
+    wrapper: ({ children }) => (
+      <ConfigProvider
+        locale={zhCN}
+        theme={{ algorithm: antdTheme.defaultAlgorithm }}
+      >
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+        </StyledEngineProvider>
+      </ConfigProvider>
     )
   });
 };

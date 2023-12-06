@@ -1,4 +1,4 @@
-interface CustomLabelContentProps {
+export interface CustomLabelContentProps {
   title: string;
   tips: string;
 }
