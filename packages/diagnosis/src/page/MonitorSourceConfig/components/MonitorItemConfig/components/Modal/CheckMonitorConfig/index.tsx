@@ -1,32 +1,24 @@
 import monitor from '../../../../../../../api/monitor';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useRequest } from 'ahooks';
-import { useSelector } from 'react-redux';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import { CheckMonitorConfigColumns } from './column';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../../data/ModalName';
-import { useDispatch } from 'react-redux';
-import {
-  updateMonitorSourceConfigModalStatus,
-  updateSelectMonitorConfigData
-} from '../../../../../../../store/monitorSourceConfig';
-import { IReduxState } from '../../../../../../../store';
 import { CheckMonitorConfigStyleWrapper } from './style';
+import useMonitorSourceConfigRedux from '../../../../../hooks/useMonitorSourceConfigRedux';
 
 const CheckMonitorConfig = () => {
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const modalName = ModalName.Check_Monitor_Config;
 
-  const selectMonitorConfigData = useSelector(
-    (state: IReduxState) => state.monitorSourceConfig.selectMonitorConfigDta
-  );
-
-  const visible = useSelector(
-    (state: IReduxState) =>
-      state.monitorSourceConfig.modalStatus[ModalName.Check_Monitor_Config]
-  );
+  const {
+    visible,
+    selectMonitorConfigData,
+    setMonitorConfigSelectData,
+    setModalStatus
+  } = useMonitorSourceConfigRedux(modalName);
 
   const {
     loading,
@@ -49,13 +41,8 @@ const CheckMonitorConfig = () => {
   );
 
   const onCloseModal = () => {
-    dispatch(
-      updateMonitorSourceConfigModalStatus({
-        modalName: ModalName.Check_Monitor_Config,
-        status: false
-      })
-    );
-    dispatch(updateSelectMonitorConfigData(null));
+    setModalStatus(modalName, false);
+    setMonitorConfigSelectData(null);
   };
 
   return (

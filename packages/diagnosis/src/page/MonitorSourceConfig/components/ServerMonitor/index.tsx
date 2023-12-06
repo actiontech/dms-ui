@@ -1,5 +1,4 @@
 import { useMemo, useEffect, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 import { useRequest } from 'ahooks';
 import {
   ActiontechTable,
@@ -11,10 +10,6 @@ import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ServerMonitorActions, ServerMonitorColumns } from './column';
-import {
-  updateMonitorSourceConfigModalStatus,
-  updateSelectServerMonitorData
-} from '../../../../store/monitorSourceConfig';
 import { IServerMonitorProps } from './index.type';
 import { IViewServerReply } from '../../../../api/common';
 import { IV1ListServersParams } from '../../../../api/server/index.d';
@@ -22,11 +17,12 @@ import ServerMonitorModal from './components/Modal';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
+import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
 
 const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const { setModalStatus, setServerSelectData } = useMonitorSourceConfigRedux();
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -63,16 +59,11 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   const onEditServerMonitor = useCallback(
     (record: IViewServerReply | undefined) => {
       if (record) {
-        dispatch(updateSelectServerMonitorData(record));
-        dispatch(
-          updateMonitorSourceConfigModalStatus({
-            modalName: ModalName.Update_Server_Monitor,
-            status: true
-          })
-        );
+        setServerSelectData(record);
+        setModalStatus(ModalName.Update_Server_Monitor, true);
       }
     },
-    [dispatch]
+    []
   );
 
   const onDeleteServerMonitor = useCallback(

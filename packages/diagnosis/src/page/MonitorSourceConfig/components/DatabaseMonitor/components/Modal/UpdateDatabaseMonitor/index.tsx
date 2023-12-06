@@ -3,10 +3,7 @@ import DatabaseMonitorForm from '../DatabaseMonitorForm';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import { Form, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { IReduxState } from '../../../../../../../store';
 import { ModalName } from '../../../../../../../data/ModalName';
-import { updateMonitorSourceConfigModalStatus } from '../../../../../../../store/monitorSourceConfig';
 import { useEffect } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
@@ -14,11 +11,10 @@ import EmitterKey from '../../../../../../../data/EmitterKey';
 import db from '../../../../../../../api/db';
 import { IV1UpdateDBParams } from '../../../../../../../api/db/index.d';
 import { IDatabaseMonitorFormField } from '../DatabaseMonitorForm/index.type';
+import useMonitorSourceConfigRedux from '../../../../../hooks/useMonitorSourceConfigRedux';
 
 const UpdateDatabaseMonitor = () => {
   const { t } = useTranslation();
-
-  const dispatch = useDispatch();
 
   const [form] = Form.useForm<IDatabaseMonitorFormField>();
 
@@ -27,14 +23,13 @@ const UpdateDatabaseMonitor = () => {
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
 
-  const visible = useSelector(
-    (state: IReduxState) =>
-      state.monitorSourceConfig.modalStatus[ModalName.Update_Database_Monitor]
-  );
+  const modalName = ModalName.Update_Database_Monitor;
 
-  const selectData = useSelector(
-    (state: IReduxState) => state.monitorSourceConfig.selectDatabaseMonitor
-  );
+  const {
+    visible,
+    selectDatabaseData: selectData,
+    setModalStatus
+  } = useMonitorSourceConfigRedux(modalName);
 
   useEffect(() => {
     if (visible && selectData) {
@@ -49,45 +44,36 @@ const UpdateDatabaseMonitor = () => {
   }, [visible, selectData, form]);
 
   const submit = async () => {
-    try {
-      const values = await form.validateFields();
-      const params: IV1UpdateDBParams = {
-        id: selectData?.id,
-        username: values.username,
-        password: values.password
-      };
-      startSubmit();
-      db.V1UpdateDB(params)
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.success(
-              t(
-                'monitorSourceConfig.databaseMonitor.updateDatabaseMonitorSourceTip',
-                {
-                  name: values.monitor_name
-                }
-              )
-            );
-            closeModal();
-            EventEmitter.emit(EmitterKey.Refresh_Database_Monitor);
-          }
-        })
-        .finally(() => {
-          submitFinish();
-        });
-    } catch (error) {
-      return;
-    }
+    const values = await form.validateFields();
+    const params: IV1UpdateDBParams = {
+      id: selectData?.id,
+      username: values.username,
+      password: values.password
+    };
+    startSubmit();
+    db.V1UpdateDB(params)
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(
+            t(
+              'monitorSourceConfig.databaseMonitor.updateDatabaseMonitorSourceTip',
+              {
+                name: values.monitor_name
+              }
+            )
+          );
+          closeModal();
+          EventEmitter.emit(EmitterKey.Refresh_Database_Monitor);
+        }
+      })
+      .finally(() => {
+        submitFinish();
+      });
   };
 
   const closeModal = () => {
     form.resetFields();
-    dispatch(
-      updateMonitorSourceConfigModalStatus({
-        modalName: ModalName.Update_Database_Monitor,
-        status: false
-      })
-    );
+    setModalStatus(modalName, false);
   };
 
   return (

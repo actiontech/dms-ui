@@ -1,23 +1,18 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { initMonitorSourceConfigModalStatus } from '../../../../../../store/monitorSourceConfig';
 import { ModalName } from '../../../../../../data/ModalName';
 import AddServerMonitor from './AddServerMonitor';
 import UpdateServerMonitor from './UpdateServerMonitor';
+import useMonitorSourceConfigRedux from '../../../../hooks/useMonitorSourceConfigRedux';
 
 const ServerMonitorModal: React.FC = () => {
-  const dispatch = useDispatch();
+  const { initModalStatus } = useMonitorSourceConfigRedux();
 
   useEffect(() => {
-    dispatch(
-      initMonitorSourceConfigModalStatus({
-        modalStatus: {
-          [ModalName.Add_Server_Monitor]: false,
-          [ModalName.Update_Server_Monitor]: false
-        }
-      })
-    );
-  }, [dispatch]);
+    initModalStatus({
+      [ModalName.Add_Server_Monitor]: false,
+      [ModalName.Update_Server_Monitor]: false
+    });
+  }, []);
 
   return (
     <>

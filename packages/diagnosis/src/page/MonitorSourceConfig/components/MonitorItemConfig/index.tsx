@@ -20,19 +20,16 @@ import {
   monitorSourceDictionary
 } from './column';
 import { MonitorSourceConfigTypeEnum } from '../../index.type';
-import { useDispatch } from 'react-redux';
 import { useCallback, useMemo } from 'react';
-import {
-  updateMonitorSourceConfigModalStatus,
-  updateSelectMonitorConfigData
-} from '../../../../store/monitorSourceConfig';
 import { ModalName } from '../../../../data/ModalName';
 import MonitorConfigModal from './components/Modal';
+import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
 
 const MonitorConfig = () => {
-  const dispatch = useDispatch();
-
   const { t } = useTranslation();
+
+  const { setModalStatus, setMonitorConfigSelectData } =
+    useMonitorSourceConfigRedux();
 
   const urlParams = useParams<MonitorConfigUrlParams>();
 
@@ -66,16 +63,11 @@ const MonitorConfig = () => {
   const onCheckMonitorConfig = useCallback(
     (record: IViewMonitorConfigReply | undefined) => {
       if (record) {
-        dispatch(updateSelectMonitorConfigData(record));
-        dispatch(
-          updateMonitorSourceConfigModalStatus({
-            modalName: ModalName.Check_Monitor_Config,
-            status: true
-          })
-        );
+        setMonitorConfigSelectData(record);
+        setModalStatus(ModalName.Check_Monitor_Config, true);
       }
     },
-    [dispatch]
+    []
   );
 
   const actions = useMemo(() => {

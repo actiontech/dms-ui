@@ -15,12 +15,8 @@ import DatabaseMonitorModal from './components/Modal';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
-import {
-  updateMonitorSourceConfigModalStatus,
-  updateSelectDatabaseMonitorData
-} from '../../../../store/monitorSourceConfig';
 import { ModalName } from '../../../../data/ModalName';
+import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
 
 interface IDatabaseMonitorProps {
   setLoading: (loading: boolean) => void;
@@ -29,7 +25,8 @@ interface IDatabaseMonitorProps {
 const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const { setModalStatus, setDatabaseSelectData } =
+    useMonitorSourceConfigRedux();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -63,24 +60,16 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  const updateDatabaseMonitor = useCallback(
-    (record?: IViewDatabaseReply) => {
-      if (record) {
-        dispatch(updateSelectDatabaseMonitorData(record));
-        dispatch(
-          updateMonitorSourceConfigModalStatus({
-            modalName: ModalName.Update_Database_Monitor,
-            status: true
-          })
-        );
-      }
-    },
-    [dispatch]
-  );
+  const updateDatabaseMonitor = useCallback((record?: IViewDatabaseReply) => {
+    if (record) {
+      setDatabaseSelectData(record);
+      setModalStatus(ModalName.Update_Database_Monitor, true);
+    }
+  }, []);
 
   const deleteDatabaseMonitor = useCallback(
     (record?: IViewDatabaseReply) => {
-      if (!record || !record.id) return;
+      if (!record) return;
       const hideLoading = messageApi.loading(
         t(
           'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceLoading',
@@ -91,7 +80,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
         0
       );
       db.V1DeleteDB({
-        db_monitor_ids: [record?.id]
+        db_monitor_ids: [record?.id ?? '']
       })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {

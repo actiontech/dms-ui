@@ -4,7 +4,6 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { IViewMonitorConfigReply } from '../../../../api/common';
 import { t } from '../../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { MonitorSourceConfigTypeEnum } from '../../index.type';
 
 export const monitorSourceDictionary = {

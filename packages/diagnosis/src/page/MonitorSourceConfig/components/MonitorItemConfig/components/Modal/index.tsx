@@ -1,21 +1,16 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { initMonitorSourceConfigModalStatus } from '../../../../../../store/monitorSourceConfig';
 import { ModalName } from '../../../../../../data/ModalName';
 import CheckMonitorConfig from './CheckMonitorConfig';
+import useMonitorSourceConfigRedux from '../../../../hooks/useMonitorSourceConfigRedux';
 
 const MonitorConfigModal: React.FC = () => {
-  const dispatch = useDispatch();
+  const { initModalStatus } = useMonitorSourceConfigRedux();
 
   useEffect(() => {
-    dispatch(
-      initMonitorSourceConfigModalStatus({
-        modalStatus: {
-          [ModalName.Check_Monitor_Config]: false
-        }
-      })
-    );
-  }, [dispatch]);
+    initModalStatus({
+      [ModalName.Check_Monitor_Config]: false
+    });
+  }, []);
 
   return (
     <>
