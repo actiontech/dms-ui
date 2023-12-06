@@ -59,3 +59,49 @@ export const ignoreComponentUncontrolled = () => {
     console.error = error;
   });
 };
+
+// 当为原生的 html 添加大驼峰、小驼峰之类的自定义属性，会出现报错
+export const ignoreComponentCustomAttr = () => {
+  const error = console.error;
+  beforeAll(() => {
+    console.error = (...arg) => {
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes(
+          'prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase'
+        )
+      ) {
+        return;
+      }
+      error(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.error = error;
+  });
+};
+
+/**
+ * @description: 在选择 date-range-pick 组件的结束日期 input 元素时，实际选择到了，报此 warning
+ */
+export const ignoreComponentWarnExpDatePickChooseElement = () => {
+  const warn = console.warn;
+  beforeAll(() => {
+    console.warn = (...arg) => {
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes(
+          'Not match any format. Please help to fire a issue about this.'
+        )
+      ) {
+        return;
+      }
+      warn(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.warn = warn;
+  });
+};

@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click confirm 1`] = `
+<Space>
+  <EmptyBox
+    if={true}
+  >
+    <BasicButton
+      block={true}
+      className="actiontech-table-actions-button"
+      confirm={[Function]}
+      size="middle"
+    >
+      <span>
+        删除
+      </span>
+    </BasicButton>
+  </EmptyBox>
+</Space>
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click fn 1`] = `
+<Space>
+  <EmptyBox
+    if={true}
+  >
+    <BasicButton
+      block={true}
+      className="actiontech-table-actions-button test-btn-click"
+      onClick={[MockFunction]}
+      size="middle"
+    >
+      <span>
+        增加
+      </span>
+    </BasicButton>
+  </EmptyBox>
+</Space>
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn is disabled 1`] = `
+<Space>
+  <EmptyBox
+    if={true}
+  >
+    <BasicButton
+      block={true}
+      className="actiontech-table-actions-button"
+      disabled={true}
+      size="middle"
+    >
+      <span>
+        增加
+      </span>
+    </BasicButton>
+  </EmptyBox>
+</Space>
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render use renderAction 1`] = `
+<Space>
+  <EmptyBox
+    if={true}
+  >
+    <BasicButton
+      block={true}
+      className="actiontech-table-actions-button"
+      size="middle"
+    >
+      <span>
+        增加
+      </span>
+    </BasicButton>
+  </EmptyBox>
+  <EmptyBox
+    if={true}
+  >
+    <Popconfirm
+      cancelText="取消"
+      okText="确认"
+      onConfirm={[MockFunction]}
+      title={
+        <Styled(span)>
+          删除确认
+        </Styled(span)>
+      }
+    >
+      <BasicButton
+        className="actiontech-table-actions-button"
+        danger={true}
+        size="small"
+      >
+        <span>
+          删除
+        </span>
+      </BasicButton>
+    </Popconfirm>
+  </EmptyBox>
+</Space>
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render action when actions is empty 1`] = `undefined`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render button & moreButtons 1`] = `
+Object {
+  "className": "actiontech-table-actions-column",
+  "dataIndex": "operator",
+  "fixed": "right",
+  "render": [Function],
+  "title": [Function],
+  "width": 116,
+}
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render buttons | moreButtons is empty 1`] = `undefined`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render buttons 1`] = `
+Object {
+  "className": "actiontech-table-actions-column",
+  "dataIndex": "operator",
+  "fixed": "right",
+  "render": [Function],
+  "title": [Function],
+  "width": 116,
+}
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render moreButtons 1`] = `
+Object {
+  "className": "actiontech-table-actions-column",
+  "dataIndex": "operator",
+  "fixed": "right",
+  "render": [Function],
+  "title": [Function],
+  "width": 40,
+}
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render normal columns 1`] = `
+Object {
+  "className": "actiontech-table-actions-column",
+  "dataIndex": "operator",
+  "fixed": "right",
+  "render": [Function],
+  "title": [Function],
+  "width": 76,
+}
+`;

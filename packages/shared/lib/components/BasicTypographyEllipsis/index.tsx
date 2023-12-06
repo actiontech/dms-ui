@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { TypographyStyleWrapper } from './style';
 import { tooltipsCommonProps } from '../BasicToolTips';
 
-interface IBasicTypographyEllipsis {
+export interface IBasicTypographyEllipsis {
   textCont: string;
   tooltipLimitLength?: number;
   limitMaxLength?: number;
