@@ -2,6 +2,7 @@ import { CopyIconProps } from '.';
 import { getBySelector } from '../../testUtil/customQuery';
 import { renderWithTheme } from '../../testUtil/customRender';
 import CopyIcon from './CopyIcon';
+import Copy from '../../utils/Copy';
 
 import { fireEvent, act, cleanup } from '@testing-library/react';
 
@@ -56,5 +57,25 @@ describe('lib/CopyIcon', () => {
     expect(execCommandFn).toBeCalledTimes(1);
     expect(container).toMatchSnapshot();
     execCommandFn.mockRestore();
+  });
+
+  it('should render more line text when click copy btn', async () => {
+    const mockCopyTextByTextarea = jest.fn();
+    jest
+      .spyOn(Copy, 'copyTextByTextarea')
+      .mockImplementation(mockCopyTextByTextarea);
+    const textVal = 'sql select *\n from user_table\n left join users.id';
+    const { baseElement } = customRender({
+      text: textVal
+    });
+
+    const copyEle = getBySelector('.anticon-copy', baseElement);
+    await act(async () => {
+      fireEvent.click(copyEle);
+      await jest.advanceTimersByTime(300);
+    });
+    expect(mockCopyTextByTextarea).toBeCalledTimes(1);
+    expect(mockCopyTextByTextarea).toBeCalledWith(textVal);
+    mockCopyTextByTextarea.mockRestore();
   });
 });
