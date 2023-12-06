@@ -12,6 +12,7 @@ const ServerMonitorModal: React.FC = () => {
       [ModalName.Add_Server_Monitor]: false,
       [ModalName.Update_Server_Monitor]: false
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

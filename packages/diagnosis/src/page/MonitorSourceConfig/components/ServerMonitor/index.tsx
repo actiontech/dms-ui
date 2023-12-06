@@ -63,6 +63,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
         setModalStatus(ModalName.Update_Server_Monitor, true);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 

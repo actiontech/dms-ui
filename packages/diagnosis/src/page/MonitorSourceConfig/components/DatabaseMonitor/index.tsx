@@ -65,6 +65,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
       setDatabaseSelectData(record);
       setModalStatus(ModalName.Update_Database_Monitor, true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const deleteDatabaseMonitor = useCallback(

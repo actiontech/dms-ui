@@ -10,6 +10,7 @@ const MonitorConfigModal: React.FC = () => {
     initModalStatus({
       [ModalName.Check_Monitor_Config]: false
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

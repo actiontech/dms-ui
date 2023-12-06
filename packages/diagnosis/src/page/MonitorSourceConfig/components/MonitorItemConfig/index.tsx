@@ -67,6 +67,7 @@ const MonitorConfig = () => {
         setModalStatus(ModalName.Check_Monitor_Config, true);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 

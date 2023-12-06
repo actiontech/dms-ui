@@ -12,6 +12,7 @@ const DatabaseMonitorModal: React.FC = () => {
       [ModalName.Add_Database_Monitor]: false,
       [ModalName.Update_Database_Monitor]: false
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
