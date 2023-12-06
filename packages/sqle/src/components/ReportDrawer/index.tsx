@@ -1,18 +1,26 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
-import { BasicDrawer } from '@actiontech/shared';
+import {
+  BasicDrawer,
+  BasicTag,
+  EmptyBox,
+  BasicToolTips
+} from '@actiontech/shared';
 import { MonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DetailReportDrawerProps } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
+import { IconFillListActive } from '@actiontech/shared/lib/Icon/common';
+import { Typography } from 'antd';
 
 const ReportDrawer = ({
   open,
   title,
   data,
   onClose,
-  showAnnotation
+  showAnnotation,
+  showSourceFile
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
 
@@ -38,7 +46,9 @@ const ReportDrawer = ({
       >
         <AuditReportStyleWrapper className="audit-report-wrapper">
           <section className="wrapper-item">
-            <h3>{t('auditPlan.report.drawer.subTitle.result')}</h3>
+            <Typography.Title level={3}>
+              {t('auditPlan.report.drawer.subTitle.result')}
+            </Typography.Title>
             <div className="wrapper-cont">
               {resultDataIsEmpty ? (
                 <AuditResultMessage styleClass="result-item" />
@@ -87,7 +97,29 @@ const ReportDrawer = ({
             </div>
           </section>
           <section className="wrapper-item">
-            <h3>{t('auditPlan.report.drawer.subTitle.sql')}</h3>
+            <div className="title-wrap">
+              <Typography.Title level={3}>
+                {t('auditPlan.report.drawer.subTitle.sql')}
+              </Typography.Title>
+              <EmptyBox if={showSourceFile}>
+                <EmptyBox
+                  if={!!data?.sqlSourceFile}
+                  defaultNode={
+                    <BasicToolTips
+                      title={t('auditPlan.report.drawer.sourceTip')}
+                    >
+                      <BasicTag icon={<IconFillListActive />}>
+                        {t('auditPlan.report.drawer.source')}： -
+                      </BasicTag>
+                    </BasicToolTips>
+                  }
+                >
+                  <BasicTag icon={<IconFillListActive />}>
+                    {t('auditPlan.report.drawer.source')}：{data?.sqlSourceFile}
+                  </BasicTag>
+                </EmptyBox>
+              </EmptyBox>
+            </div>
             <div className="wrapper-cont">
               <MonacoEditor
                 value={data?.sql ?? ''}
