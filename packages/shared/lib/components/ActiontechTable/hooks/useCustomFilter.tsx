@@ -95,13 +95,13 @@ const useCustomFilter = () => {
       props?.onChange?.(value, option);
       if (Array.isArray(meta.filterKey)) {
         updateTableFilterInfo((filterInfo: F) => {
-          const value = (meta.filterKey as (keyof F)[]).reduce(
-            (acc, cur) => ({ ...acc, [cur]: undefined }),
+          const targetFilterVal = (meta.filterKey as (keyof F)[]).reduce(
+            (acc, cur) => ({ ...acc, [cur]: value }),
             {}
           );
           return {
             ...filterInfo,
-            ...value
+            ...targetFilterVal
           };
         });
       } else if (typeof meta.filterKey === 'string') {
