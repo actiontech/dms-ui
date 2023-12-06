@@ -28,6 +28,7 @@ import { Link } from 'react-router-dom';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import useTestDatabaseConnect from '../hooks/useTestDatabaseConnect';
+import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 
 const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   form,
@@ -205,7 +206,11 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   };
 
   useEffect(() => {
-    updateInstanceList({ project_name: projectName });
+    updateInstanceList({
+      project_name: projectName,
+      functional_module:
+        getInstanceTipListV1FunctionalModuleEnum.create_workflow
+    });
   }, [projectName, updateInstanceList]);
 
   useEffect(() => {
