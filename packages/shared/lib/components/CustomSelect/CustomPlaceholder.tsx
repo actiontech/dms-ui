@@ -1,10 +1,15 @@
 import { ReactNode } from 'react';
 import { CustomSelectPlaceholderStyleWrapper } from './style';
 
-const CustomPlaceholder: React.FC<{
+export interface ICustomPlaceholder {
   prefix?: ReactNode;
   placeholder: ReactNode;
-}> = ({ prefix, placeholder }) => {
+}
+
+const CustomPlaceholder: React.FC<ICustomPlaceholder> = ({
+  prefix,
+  placeholder
+}) => {
   return (
     <CustomSelectPlaceholderStyleWrapper className="custom-select-placeholder">
       {!!prefix && (

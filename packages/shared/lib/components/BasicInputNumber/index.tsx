@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { BasicInputNumberStyleWrapper } from './style';
 import { ComponentControlHeight } from '../../data/common';
 
-interface IBasicInputNumber extends InputNumberProps {}
+export interface IBasicInputNumber extends InputNumberProps {}
 
 const BasicInputNumber = (props: IBasicInputNumber) => {
   const { className, ...params } = props;

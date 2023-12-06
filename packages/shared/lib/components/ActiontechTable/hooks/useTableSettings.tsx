@@ -34,6 +34,7 @@ const useTableSettings = <
         try {
           const localStr = LocalStorageWrapper.get(tableName);
           const localData = localStr ? JSON.parse(localStr) : undefined;
+
           if (localData?.[username]) {
             return;
           }

@@ -2,7 +2,7 @@ import { SwitchProps } from 'antd';
 import classnames from 'classnames';
 import { BasicSwitchStyleWrapper } from './style';
 
-interface IBasicSwitch extends SwitchProps {}
+export interface IBasicSwitch extends SwitchProps {}
 
 const BasicSwitch = (props: IBasicSwitch) => {
   const { className, ...params } = props;

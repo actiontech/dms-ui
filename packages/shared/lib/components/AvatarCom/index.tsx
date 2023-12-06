@@ -4,7 +4,7 @@ import { AvatarStyleWrapper } from './style';
 import BasicToolTips from '../BasicToolTips';
 import classNames from 'classnames';
 
-type IAvatarCom = {
+export type IAvatarCom = {
   name?: string;
   src?: string;
   noTips?: boolean;

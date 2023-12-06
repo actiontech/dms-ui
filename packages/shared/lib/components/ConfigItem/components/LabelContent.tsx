@@ -1,4 +1,4 @@
-interface IConfigItemLabelContentProps {
+export interface IConfigItemLabelContentProps {
   children: React.ReactNode;
   tips?: string;
 }
