@@ -1,56 +1,69 @@
 import { useBoolean } from 'ahooks';
-import ServerMonitorForm from '../ServerMonitorForm';
+import DatabaseMonitorForm from '../DatabaseMonitorForm';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import { Form, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../../data/ModalName';
-import server from '../../../../../../../api/server';
-import { IV1AddServerParams } from '../../../../../../../api/server/index.d';
+import { useEffect } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
-import { IServerMonitorFormField } from '../ServerMonitorForm/index.type';
+import db from '../../../../../../../api/db';
+import { IV1UpdateDBParams } from '../../../../../../../api/db/index.d';
+import { IDatabaseMonitorFormField } from '../DatabaseMonitorForm/index.type';
 import useMonitorSourceConfigRedux from '../../../../../hooks/useMonitorSourceConfigRedux';
 
-const AddServerMonitor = () => {
+const UpdateDatabaseMonitor = () => {
   const { t } = useTranslation();
 
-  const modalName = ModalName.Add_Server_Monitor;
-
-  const { visible, setModalStatus } = useMonitorSourceConfigRedux(modalName);
-
-  const [form] = Form.useForm<IServerMonitorFormField>();
+  const [form] = Form.useForm<IDatabaseMonitorFormField>();
 
   const [messageApi, contextHolder] = message.useMessage();
 
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
 
+  const modalName = ModalName.Update_Database_Monitor;
+
+  const {
+    visible,
+    selectDatabaseData: selectData,
+    setModalStatus
+  } = useMonitorSourceConfigRedux(modalName);
+
+  useEffect(() => {
+    if (visible && selectData) {
+      form.setFieldsValue({
+        monitor_type: selectData?.monitor_type,
+        host: selectData?.host,
+        monitor_name: selectData?.monitor_name,
+        port: selectData?.port,
+        username: selectData?.username
+      });
+    }
+  }, [visible, selectData, form]);
+
   const submit = async () => {
     const values = await form.validateFields();
-    const params: IV1AddServerParams = {
-      servers: [
-        {
-          host: values.host,
-          name: values.name,
-          password: values.password,
-          port: Number(values.port),
-          user: values.user
-        }
-      ]
+    const params: IV1UpdateDBParams = {
+      id: selectData?.id,
+      username: values.username,
+      password: values.password
     };
     startSubmit();
-    server
-      .V1AddServer(params)
+    db.V1UpdateDB(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
-            t('monitorSourceConfig.serverMonitor.addServerMonitorSourceTip', {
-              name: values.name
-            })
+            t(
+              'monitorSourceConfig.databaseMonitor.updateDatabaseMonitorSourceTip',
+              {
+                name: values.monitor_name
+              }
+            )
           );
           closeModal();
-          EventEmitter.emit(EmitterKey.Refresh_Server_Monitor);
+          EventEmitter.emit(EmitterKey.Refresh_Database_Monitor);
         }
       })
       .finally(() => {
@@ -68,7 +81,9 @@ const AddServerMonitor = () => {
       <BasicDrawer
         open={visible}
         placement="right"
-        title={t('monitorSourceConfig.serverMonitor.addServerMonitorSource')}
+        title={t(
+          'monitorSourceConfig.databaseMonitor.updateDatabaseMonitorSource'
+        )}
         onClose={closeModal}
         footer={
           <Space>
@@ -86,10 +101,10 @@ const AddServerMonitor = () => {
         }
       >
         {contextHolder}
-        <ServerMonitorForm form={form} visible={visible} />
+        <DatabaseMonitorForm form={form} isUpdate={true} />
       </BasicDrawer>
     </>
   );
 };
 
-export default AddServerMonitor;
+export default UpdateDatabaseMonitor;

@@ -2,7 +2,8 @@ import {
   ISaveDBsReq,
   IGenericResp,
   IDeleteDBsReq,
-  IListDBsReply
+  IListDBsReply,
+  IViewUpdateDBRequest
 } from '../common.d';
 
 export interface IV1AddDBParams extends ISaveDBsReq {}
@@ -24,3 +25,7 @@ export interface IV1ListMonitorDBsParams {
 }
 
 export interface IV1ListMonitorDBsReturn extends IListDBsReply {}
+
+export interface IV1UpdateDBParams extends IViewUpdateDBRequest {}
+
+export interface IV1UpdateDBReturn extends IGenericResp {}

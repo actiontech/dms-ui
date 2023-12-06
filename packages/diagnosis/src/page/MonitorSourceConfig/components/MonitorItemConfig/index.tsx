@@ -20,19 +20,16 @@ import {
   monitorSourceDictionary
 } from './column';
 import { MonitorSourceConfigTypeEnum } from '../../index.type';
-import { useDispatch } from 'react-redux';
 import { useCallback, useMemo } from 'react';
-import {
-  updateMonitorSourceConfigModalStatus,
-  updateSelectMonitorConfigData
-} from '../../../../store/monitorSourceConfig';
 import { ModalName } from '../../../../data/ModalName';
 import MonitorConfigModal from './components/Modal';
+import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
 
 const MonitorConfig = () => {
-  const dispatch = useDispatch();
-
   const { t } = useTranslation();
+
+  const { setModalStatus, setMonitorConfigSelectData } =
+    useMonitorSourceConfigRedux();
 
   const urlParams = useParams<MonitorConfigUrlParams>();
 
@@ -53,7 +50,7 @@ const MonitorConfig = () => {
       return handleTableRequestError(
         monitor.V1ListMonitorRoutine({
           ...pagination,
-          source_id: Number(urlParams.id)
+          source_id: urlParams.id ?? ''
         })
       );
     },
@@ -66,16 +63,12 @@ const MonitorConfig = () => {
   const onCheckMonitorConfig = useCallback(
     (record: IViewMonitorConfigReply | undefined) => {
       if (record) {
-        dispatch(updateSelectMonitorConfigData(record));
-        dispatch(
-          updateMonitorSourceConfigModalStatus({
-            modalName: ModalName.Check_Monitor_Config,
-            status: true
-          })
-        );
+        setMonitorConfigSelectData(record);
+        setModalStatus(ModalName.Check_Monitor_Config, true);
       }
     },
-    [dispatch]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
 
   const actions = useMemo(() => {
@@ -129,7 +122,7 @@ const MonitorConfig = () => {
               total: monitorItemList?.total ?? 0,
               current: pagination.page_index
             }}
-            rowKey="routine_name"
+            rowKey="monitor_name"
             dataSource={monitorItemList?.list ?? []}
             errorMessage={requestErrorMessage}
             actions={actions}

@@ -12,7 +12,9 @@ import {
   IV1DeleteDBParams,
   IV1DeleteDBReturn,
   IV1ListMonitorDBsParams,
-  IV1ListMonitorDBsReturn
+  IV1ListMonitorDBsReturn,
+  IV1UpdateDBParams,
+  IV1UpdateDBReturn
 } from './index.d';
 
 class DbService extends ServiceBase {
@@ -36,6 +38,11 @@ class DbService extends ServiceBase {
       paramsData,
       options
     );
+  }
+
+  public V1UpdateDB(params: IV1UpdateDBParams, options?: AxiosRequestConfig) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IV1UpdateDBReturn>('/v1/db/update', paramsData, options);
   }
 }
 

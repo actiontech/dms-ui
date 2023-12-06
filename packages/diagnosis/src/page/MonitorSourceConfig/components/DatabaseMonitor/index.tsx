@@ -15,6 +15,8 @@ import DatabaseMonitorModal from './components/Modal';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useTranslation } from 'react-i18next';
+import { ModalName } from '../../../../data/ModalName';
+import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
 
 interface IDatabaseMonitorProps {
   setLoading: (loading: boolean) => void;
@@ -22,6 +24,9 @@ interface IDatabaseMonitorProps {
 }
 const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
   const { t } = useTranslation();
+
+  const { setModalStatus, setDatabaseSelectData } =
+    useMonitorSourceConfigRedux();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -55,32 +60,53 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
+  const updateDatabaseMonitor = useCallback((record?: IViewDatabaseReply) => {
+    if (record) {
+      setDatabaseSelectData(record);
+      setModalStatus(ModalName.Update_Database_Monitor, true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const deleteDatabaseMonitor = useCallback(
     (record?: IViewDatabaseReply) => {
       if (!record) return;
+      const hideLoading = messageApi.loading(
+        t(
+          'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceLoading',
+          {
+            name: record?.monitor_name
+          }
+        ),
+        0
+      );
       db.V1DeleteDB({
-        db_monitor_ids: [record?.monitor_name as unknown as number]
-      }).then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.open({
-            type: 'success',
-            content: t(
-              'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceTip',
-              {
-                name: record?.monitor_name
-              }
-            )
-          });
-          refresh();
-        }
-      });
+        db_monitor_ids: [record?.id ?? '']
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.open({
+              type: 'success',
+              content: t(
+                'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceTip',
+                {
+                  name: record?.monitor_name
+                }
+              )
+            });
+            refresh();
+          }
+        })
+        .finally(() => {
+          hideLoading();
+        });
     },
     [refresh, t, messageApi]
   );
 
   const actions = useMemo(() => {
-    return DatabaseMonitorActions(deleteDatabaseMonitor);
-  }, [deleteDatabaseMonitor]);
+    return DatabaseMonitorActions(updateDatabaseMonitor, deleteDatabaseMonitor);
+  }, [deleteDatabaseMonitor, updateDatabaseMonitor]);
 
   const columns = useMemo(() => {
     return DatabaseMonitorColumns();

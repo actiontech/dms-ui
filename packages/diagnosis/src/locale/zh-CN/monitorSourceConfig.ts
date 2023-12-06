@@ -18,7 +18,11 @@ export default {
     addServerMonitorSource: '添加服务器监控源',
     updateServerMonitorSource: '修改服务器监控源',
     addServerMonitorSourceTip: '添加服务器监控源{{name}}成功！',
-    updateServerMonitorSourceTip: '修改服务器监控源{{name}}成功！'
+    updateServerMonitorSourceTip: '修改服务器监控源{{name}}成功！',
+    deleteServerMonitorSource: '确认删除服务器监控源{{name}}?',
+    deleteServerMonitorSourceLoading: '正在删除服务器监控源{{name}}...',
+    deleteServerMonitorSourceTip: '删除服务器监控源{{name}}成功！',
+    getHostNameFailedTip: '未连接上目标服务器，请检查配置是否正确！'
   },
   databaseMonitor: {
     databaseMonitorSource: '数据库监控源',
@@ -28,8 +32,11 @@ export default {
     databaseType: '数据库类型',
     creationTime: '创建时间',
     addDatabaseMonitorSource: '添加数据库监控源',
-    deleteDatabaseMonitorSource: '确认删除数据库监控源{{name}}?',
     addDatabaseMonitorSourceTip: '添加数据库监控源{{name}}成功！',
+    updateDatabaseMonitorSource: '修改数据库监控源',
+    updateDatabaseMonitorSourceTip: '修改数据库监控源{{name}}成功！',
+    deleteDatabaseMonitorSource: '确认删除数据库监控源{{name}}?',
+    deleteDatabaseMonitorSourceLoading: '正在删除数据库监控源{{name}}...',
     deleteDatabaseMonitorSourceTip: '删除数据库监控源{{name}}成功！'
   },
   status: {

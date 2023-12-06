@@ -4,7 +4,6 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { IViewMonitorConfigReply } from '../../../../api/common';
 import { t } from '../../../../locale';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { MonitorSourceConfigTypeEnum } from '../../index.type';
 
 export const monitorSourceDictionary = {
@@ -20,7 +19,7 @@ export const MonitorConfigColumns =
   (): ActiontechTableColumn<IViewMonitorConfigReply> => {
     return [
       {
-        dataIndex: 'routine_name',
+        dataIndex: 'monitor_name',
         title: t('monitorSourceConfig.monitorConfig.monitorItem')
       },
       {
@@ -33,14 +32,12 @@ export const MonitorConfigColumns =
       },
       {
         dataIndex: 'desc',
-        title: t('monitorSourceConfig.monitorConfig.monitorDesc'),
-        render: (time) => formatTime(time, '-')
+        title: t('monitorSourceConfig.monitorConfig.monitorDesc')
       },
       {
         dataIndex: 'enable',
         title: t('common.status'),
         render: (status) => {
-          if (!status) return '-';
           return status
             ? t('monitorSourceConfig.status.enable')
             : t('monitorSourceConfig.status.disable');
