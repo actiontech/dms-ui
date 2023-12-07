@@ -48,6 +48,7 @@ export default {
   generatePasswordSuccess: '已生成16位密码并复制在剪贴板中',
   test: '测试',
   download: '下载',
+  uploadAndUpdate: '上传并更新',
 
   prevStep: '上一步',
   nextStep: '下一步',

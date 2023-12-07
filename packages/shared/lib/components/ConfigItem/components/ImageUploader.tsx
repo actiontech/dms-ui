@@ -35,7 +35,7 @@ const ImageUploader: React.FC<IConfigItemImageUploaderProps> = ({
             <div className="mask">
               <Space direction="vertical" align="center" size={4}>
                 <UploadOutlined />
-                {t('system.personalize.uploadAndUpdate')}
+                {t('common.uploadAndUpdate')}
               </Space>
             </div>
           )}

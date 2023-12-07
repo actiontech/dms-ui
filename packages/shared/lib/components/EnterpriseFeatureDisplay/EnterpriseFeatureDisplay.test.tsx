@@ -4,7 +4,7 @@ import { renderWithTheme } from '../../testUtil/customRender';
 
 const children = <>ee version display</>;
 
-describe('test EnterpriseFeatureDisplay', () => {
+describe('test ee EnterpriseFeatureDisplay', () => {
   test('should match snapshot', () => {
     const { container } = renderWithTheme(
       <EnterpriseFeatureDisplay
@@ -14,6 +14,7 @@ describe('test EnterpriseFeatureDisplay', () => {
         {children}
       </EnterpriseFeatureDisplay>
     );
+
     expect(container).toMatchSnapshot();
 
     const { container: container1 } = renderWithTheme(
@@ -29,6 +30,7 @@ describe('test EnterpriseFeatureDisplay', () => {
         {children}
       </EnterpriseFeatureDisplay>
     );
+
     expect(container1).toMatchSnapshot();
   });
 });

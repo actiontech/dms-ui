@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test EnterpriseFeatureDisplay should match snapshot 1`] = `
+exports[`test ee EnterpriseFeatureDisplay should match snapshot 1`] = `
 <div>
   ee version display
 </div>
 `;
 
-exports[`test EnterpriseFeatureDisplay should match snapshot 2`] = `
+exports[`test ee EnterpriseFeatureDisplay should match snapshot 2`] = `
 <div>
   ee version display
 </div>

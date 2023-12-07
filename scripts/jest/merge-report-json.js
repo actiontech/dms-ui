@@ -13,23 +13,20 @@ const ceReportJSONFilePath = path.resolve(
   process.cwd(),
   'ce_coverage/report.json'
 );
-const eeReportJSONFilePath = path.resolve(
-  process.cwd(),
-  'ee_coverage/report.json'
-);
+const reportJSONFilePath = path.resolve(process.cwd(), 'coverage/report.json');
 
 if (!fs.existsSync(ceReportJSONFilePath)) {
   console.error('not found ce report.json');
   process.exit(1);
 }
 
-if (!fs.existsSync(eeReportJSONFilePath)) {
+if (!fs.existsSync(reportJSONFilePath)) {
   console.error('not found ee report.json');
   process.exit(1);
 }
 
 const ceCoverageReport = require(ceReportJSONFilePath);
-const eeCoverageReport = require(eeReportJSONFilePath);
+const eeCoverageReport = require(reportJSONFilePath);
 
 const numFailedTestSuites =
   ceCoverageReport.numFailedTestSuites + eeCoverageReport.numFailedTestSuites;
@@ -67,7 +64,7 @@ fs.writeFile(
 );
 
 fs.writeFile(
-  eeReportJSONFilePath,
+  reportJSONFilePath,
   JSON.stringify(eeCoverageReport.coverageMap),
   (err) => {
     if (err) {
@@ -75,7 +72,7 @@ fs.writeFile(
       process.exit(1);
     }
 
-    console.log('Coverage report appended to ' + eeReportJSONFilePath);
+    console.log('Coverage report appended to ' + reportJSONFilePath);
   }
 );
 
@@ -90,6 +87,8 @@ exec(command, (error, stdout, stderr) => {
     console.error(`exec command error: ${stderr}`);
     return;
   }
+  console.log(stdout);
+
   const mergeCoverageReport = require(finalReportJSONFilePath);
 
   const coverageJsonReport = {

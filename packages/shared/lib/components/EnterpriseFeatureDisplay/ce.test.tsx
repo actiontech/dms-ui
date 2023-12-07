@@ -1,6 +1,10 @@
-import EnterpriseFeatureDisplay from '../EnterpriseFeatureDisplay';
-import { renderWithTheme } from '../../../testUtil/customRender';
+/**
+ * @test_version ce
+ */
+
 import { screen } from '@testing-library/react';
+import { renderWithTheme } from '../../testUtil/customRender';
+import EnterpriseFeatureDisplay from './EnterpriseFeatureDisplay';
 
 const children = <>ee version display</>;
 
