@@ -48,6 +48,78 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
         expect(elementResult).toMatchSnapshot();
       });
     });
+
+    it('render btn is disabled', async () => {
+      const { result } = renderHooksWithTheme(() => useTableAction());
+      await act(async () => {
+        const elementResult = result.current.renderAction(
+          [
+            {
+              key: 'add-btn',
+              text: <span>增加</span>,
+              buttonProps: () =>
+                ({
+                  size: 'middle',
+                  block: true,
+                  disabled: true
+                } as Omit<ButtonProps, 'children'>)
+            }
+          ],
+          mockRecord
+        );
+        expect(elementResult).toMatchSnapshot();
+      });
+    });
+
+    it('render btn click fn', async () => {
+      const { result } = renderHooksWithTheme(() => useTableAction());
+      await act(async () => {
+        const elementResult = result.current.renderAction(
+          [
+            {
+              key: 'add-btn',
+              text: <span>增加</span>,
+              buttonProps: () =>
+                ({
+                  size: 'middle',
+                  block: true,
+                  onClick: jest.fn(),
+                  className: 'test-btn-click'
+                } as Omit<ButtonProps, 'children'>)
+            }
+          ],
+          mockRecord
+        );
+        expect(elementResult).toMatchSnapshot();
+      });
+    });
+
+    it('render btn click confirm', async () => {
+      const { result } = renderHooksWithTheme(() => useTableAction());
+      await act(async () => {
+        const elementResult = result.current.renderAction(
+          [
+            {
+              key: 'delete-btn',
+              text: <span>删除</span>,
+              buttonProps: () =>
+                ({
+                  size: 'middle',
+                  block: true,
+                  confirm: () => {
+                    return {
+                      title: 'confirm的标题',
+                      onConfirm: jest.fn()
+                    };
+                  }
+                } as Omit<ButtonProps, 'children'>)
+            }
+          ],
+          mockRecord
+        );
+        expect(elementResult).toMatchSnapshot();
+      });
+    });
   });
 
   describe('-renderActionInTable', () => {

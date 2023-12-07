@@ -57,7 +57,8 @@ describe('utils/Copy', () => {
       .spyOn(document.body, 'removeChild')
       .mockImplementation((textarea) => textarea);
 
-    copy.copyTextByTextarea('123');
+    const normalStr = '123';
+    copy.copyTextByTextarea(normalStr);
     expect(textarea.style).toEqual({
       position: 'fixed',
       left: '-9999px',
@@ -65,8 +66,15 @@ describe('utils/Copy', () => {
       opacity: '0'
     });
     expect(appendChildSpy).toBeCalledWith(textarea);
-    expect(textarea.value).toBe('123');
+    expect(textarea.value).toBe(normalStr);
     expect(textarea.select).toBeCalledTimes(1);
+    expect(removeChildSpy).toBeCalledWith(textarea);
+
+    const moreLineStr = 'sql select *\n from user_table\n left join users.id';
+    copy.copyTextByTextarea(moreLineStr);
+    expect(textarea).toMatchSnapshot();
+    expect(textarea.value).toBe(moreLineStr);
+    expect(textarea.select).toBeCalled();
     expect(removeChildSpy).toBeCalledWith(textarea);
   });
 });
