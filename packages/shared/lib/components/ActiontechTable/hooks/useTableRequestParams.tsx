@@ -28,7 +28,15 @@ const useTableRequestParams = <
   });
 
   const updateTableFilterInfo = (filterInfo: F) => {
-    if (!isEqual(filterInfo, tableFilterInfo)) {
+    const filterInfoData =
+      typeof filterInfo === 'function' ? filterInfo() : filterInfo;
+    if (
+      JSON.stringify(filterInfoData) === '{}' &&
+      JSON.stringify(tableFilterInfo) === '{}'
+    ) {
+      return;
+    }
+    if (!isEqual(filterInfoData, tableFilterInfo)) {
       setPagination((prevPage) => {
         return {
           page_index: defaultPageIndex,
