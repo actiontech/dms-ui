@@ -4,5 +4,4 @@ export type UserMenuProps = {
   username: string;
   theme: SupportTheme;
   updateTheme: (theme: SupportTheme) => void;
-  isAdmin: boolean;
 };

@@ -1,0 +1,814 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagnosis/login render login page 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1zkush"
+    >
+      <div
+        class="css-9y19rd"
+      >
+        <div
+          class="banner"
+        >
+          <img
+            alt="left_bg"
+            class="login-background-img"
+            src="login-left-bg.png"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1pqzecc"
+      >
+        <div
+          class="login-page-right-content"
+        >
+          <div
+            class="content-header"
+          >
+            <div
+              class="logo"
+            >
+              <img
+                alt="logo_img"
+                src="/logo.png"
+              />
+            </div>
+            <div
+              class="title"
+            >
+              <span
+                class="label label-primary"
+              >
+                Action
+              </span>
+              <span
+                class="label label-base"
+              >
+                Diagnosis
+              </span>
+            </div>
+          </div>
+          <form
+            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <span
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                      >
+                        <span
+                          class="ant-input-prefix"
+                        >
+                          <svg
+                            fill="none"
+                            height="19"
+                            viewBox="0 0 18 19"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="user-4-fill"
+                            >
+                              <g
+                                id="Vector"
+                              >
+                                <path
+                                  d="M6.47462 7.34681C5.80485 6.67704 5.42857 5.76863 5.42857 4.82143C5.42857 3.87423 5.80485 2.96582 6.47462 2.29605C7.14439 1.62627 8.0528 1.25 9 1.25C9.9472 1.25 10.8556 1.62627 11.5254 2.29605C12.1952 2.96582 12.5714 3.87423 12.5714 4.82143C12.5714 5.76863 12.1952 6.67704 11.5254 7.34681C10.8556 8.01658 9.9472 8.39286 9 8.39286C8.0528 8.39286 7.14439 8.01658 6.47462 7.34681Z"
+                                  fill="#C3C6CD"
+                                />
+                                <path
+                                  d="M16.5 15.1785C16.5 12.0225 13.9418 9.46426 10.7857 9.46426H7.21429C4.05821 9.46426 1.5 12.0225 1.5 15.1785V15.5357C1.5 15.9146 1.65051 16.2779 1.91842 16.5458C2.18633 16.8137 2.54969 16.9643 2.92857 16.9643H15.0714C15.4503 16.9643 15.8137 16.8137 16.0816 16.5458C16.3495 16.2779 16.5 15.9146 16.5 15.5357V15.1785Z"
+                                  fill="#C3C6CD"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </span>
+                        <input
+                          aria-required="true"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          id="username"
+                          placeholder="用户名"
+                          type="text"
+                          value=""
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <span
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-input-prefix"
+                        >
+                          <svg
+                            fill="none"
+                            height="19"
+                            viewBox="0 0 18 19"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="lock-password-fill"
+                            >
+                              <path
+                                d="M13.5 6.5H15C15.1989 6.5 15.3897 6.57902 15.5303 6.71967C15.671 6.86032 15.75 7.05109 15.75 7.25V16.25C15.75 16.4489 15.671 16.6397 15.5303 16.7803C15.3897 16.921 15.1989 17 15 17H3C2.80109 17 2.61032 16.921 2.46967 16.7803C2.32902 16.6397 2.25 16.4489 2.25 16.25V7.25C2.25 7.05109 2.32902 6.86032 2.46967 6.71967C2.61032 6.57902 2.80109 6.5 3 6.5H4.5V5.75C4.5 4.55653 4.97411 3.41193 5.81802 2.56802C6.66193 1.72411 7.80653 1.25 9 1.25C10.1935 1.25 11.3381 1.72411 12.182 2.56802C13.0259 3.41193 13.5 4.55653 13.5 5.75V6.5ZM12 6.5V5.75C12 4.95435 11.6839 4.19129 11.1213 3.62868C10.5587 3.06607 9.79565 2.75 9 2.75C8.20435 2.75 7.44129 3.06607 6.87868 3.62868C6.31607 4.19129 6 4.95435 6 5.75V6.5H12ZM8.25 11V12.5H9.75V11H8.25ZM5.25 11V12.5H6.75V11H5.25ZM11.25 11V12.5H12.75V11H11.25Z"
+                                fill="#C3C6CD"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <input
+                          aria-required="true"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          id="password"
+                          placeholder="密码"
+                          type="password"
+                          value=""
+                        />
+                        <span
+                          class="ant-input-suffix"
+                        >
+                          <span
+                            aria-label="eye-invisible"
+                            class="anticon anticon-eye-invisible ant-input-password-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="eye-invisible"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                              />
+                              <path
+                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <label
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                        >
+                          <input
+                            checked=""
+                            class="ant-checkbox-input"
+                            id="userAgreement"
+                            type="checkbox"
+                          />
+                          <span
+                            class="ant-checkbox-inner"
+                          />
+                        </span>
+                        <span>
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              已阅读并同意
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                href="/user-agreement.html"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
+                                用户协议
+                              </a>
+                            </div>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              type="submit"
+            >
+              <span>
+                登 录
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`diagnosis/login show tip when not check user agreement 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1zkush"
+    >
+      <div
+        class="css-9y19rd"
+      >
+        <div
+          class="banner"
+        >
+          <img
+            alt="left_bg"
+            class="login-background-img"
+            src="login-left-bg.png"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1pqzecc"
+      >
+        <div
+          class="login-page-right-content"
+        >
+          <div
+            class="content-header"
+          >
+            <div
+              class="logo"
+            >
+              <img
+                alt="logo_img"
+                src="/logo.png"
+              />
+            </div>
+            <div
+              class="title"
+            >
+              <span
+                class="label label-primary"
+              >
+                Action
+              </span>
+              <span
+                class="label label-base"
+              >
+                Diagnosis
+              </span>
+            </div>
+          </div>
+          <form
+            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <span
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                      >
+                        <span
+                          class="ant-input-prefix"
+                        >
+                          <svg
+                            fill="none"
+                            height="19"
+                            viewBox="0 0 18 19"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="user-4-fill"
+                            >
+                              <g
+                                id="Vector"
+                              >
+                                <path
+                                  d="M6.47462 7.34681C5.80485 6.67704 5.42857 5.76863 5.42857 4.82143C5.42857 3.87423 5.80485 2.96582 6.47462 2.29605C7.14439 1.62627 8.0528 1.25 9 1.25C9.9472 1.25 10.8556 1.62627 11.5254 2.29605C12.1952 2.96582 12.5714 3.87423 12.5714 4.82143C12.5714 5.76863 12.1952 6.67704 11.5254 7.34681C10.8556 8.01658 9.9472 8.39286 9 8.39286C8.0528 8.39286 7.14439 8.01658 6.47462 7.34681Z"
+                                  fill="#C3C6CD"
+                                />
+                                <path
+                                  d="M16.5 15.1785C16.5 12.0225 13.9418 9.46426 10.7857 9.46426H7.21429C4.05821 9.46426 1.5 12.0225 1.5 15.1785V15.5357C1.5 15.9146 1.65051 16.2779 1.91842 16.5458C2.18633 16.8137 2.54969 16.9643 2.92857 16.9643H15.0714C15.4503 16.9643 15.8137 16.8137 16.0816 16.5458C16.3495 16.2779 16.5 15.9146 16.5 15.5357V15.1785Z"
+                                  fill="#C3C6CD"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </span>
+                        <input
+                          aria-required="true"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          id="username"
+                          placeholder="用户名"
+                          type="text"
+                          value=""
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <span
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-input-prefix"
+                        >
+                          <svg
+                            fill="none"
+                            height="19"
+                            viewBox="0 0 18 19"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="lock-password-fill"
+                            >
+                              <path
+                                d="M13.5 6.5H15C15.1989 6.5 15.3897 6.57902 15.5303 6.71967C15.671 6.86032 15.75 7.05109 15.75 7.25V16.25C15.75 16.4489 15.671 16.6397 15.5303 16.7803C15.3897 16.921 15.1989 17 15 17H3C2.80109 17 2.61032 16.921 2.46967 16.7803C2.32902 16.6397 2.25 16.4489 2.25 16.25V7.25C2.25 7.05109 2.32902 6.86032 2.46967 6.71967C2.61032 6.57902 2.80109 6.5 3 6.5H4.5V5.75C4.5 4.55653 4.97411 3.41193 5.81802 2.56802C6.66193 1.72411 7.80653 1.25 9 1.25C10.1935 1.25 11.3381 1.72411 12.182 2.56802C13.0259 3.41193 13.5 4.55653 13.5 5.75V6.5ZM12 6.5V5.75C12 4.95435 11.6839 4.19129 11.1213 3.62868C10.5587 3.06607 9.79565 2.75 9 2.75C8.20435 2.75 7.44129 3.06607 6.87868 3.62868C6.31607 4.19129 6 4.95435 6 5.75V6.5H12ZM8.25 11V12.5H9.75V11H8.25ZM5.25 11V12.5H6.75V11H5.25ZM11.25 11V12.5H12.75V11H11.25Z"
+                                fill="#C3C6CD"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <input
+                          aria-required="true"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          id="password"
+                          placeholder="密码"
+                          type="password"
+                          value=""
+                        />
+                        <span
+                          class="ant-input-suffix"
+                        >
+                          <span
+                            aria-label="eye-invisible"
+                            class="anticon anticon-eye-invisible ant-input-password-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="eye-invisible"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                              />
+                              <path
+                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <label
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                        >
+                          <input
+                            checked=""
+                            class="ant-checkbox-input"
+                            id="userAgreement"
+                            type="checkbox"
+                          />
+                          <span
+                            class="ant-checkbox-inner"
+                          />
+                        </span>
+                        <span>
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              已阅读并同意
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                href="/user-agreement.html"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
+                                用户协议
+                              </a>
+                            </div>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              type="submit"
+            >
+              <span>
+                登 录
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`diagnosis/login submit user info from login page 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1zkush"
+    >
+      <div
+        class="css-9y19rd"
+      >
+        <div
+          class="banner"
+        >
+          <img
+            alt="left_bg"
+            class="login-background-img"
+            src="login-left-bg.png"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1pqzecc"
+      >
+        <div
+          class="login-page-right-content"
+        >
+          <div
+            class="content-header"
+          >
+            <div
+              class="logo"
+            >
+              <img
+                alt="logo_img"
+                src="/logo.png"
+              />
+            </div>
+            <div
+              class="title"
+            >
+              <span
+                class="label label-primary"
+              >
+                Action
+              </span>
+              <span
+                class="label label-base"
+              >
+                Diagnosis
+              </span>
+            </div>
+          </div>
+          <form
+            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <span
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                      >
+                        <span
+                          class="ant-input-prefix"
+                        >
+                          <svg
+                            fill="none"
+                            height="19"
+                            viewBox="0 0 18 19"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="user-4-fill"
+                            >
+                              <g
+                                id="Vector"
+                              >
+                                <path
+                                  d="M6.47462 7.34681C5.80485 6.67704 5.42857 5.76863 5.42857 4.82143C5.42857 3.87423 5.80485 2.96582 6.47462 2.29605C7.14439 1.62627 8.0528 1.25 9 1.25C9.9472 1.25 10.8556 1.62627 11.5254 2.29605C12.1952 2.96582 12.5714 3.87423 12.5714 4.82143C12.5714 5.76863 12.1952 6.67704 11.5254 7.34681C10.8556 8.01658 9.9472 8.39286 9 8.39286C8.0528 8.39286 7.14439 8.01658 6.47462 7.34681Z"
+                                  fill="#C3C6CD"
+                                />
+                                <path
+                                  d="M16.5 15.1785C16.5 12.0225 13.9418 9.46426 10.7857 9.46426H7.21429C4.05821 9.46426 1.5 12.0225 1.5 15.1785V15.5357C1.5 15.9146 1.65051 16.2779 1.91842 16.5458C2.18633 16.8137 2.54969 16.9643 2.92857 16.9643H15.0714C15.4503 16.9643 15.8137 16.8137 16.0816 16.5458C16.3495 16.2779 16.5 15.9146 16.5 15.5357V15.1785Z"
+                                  fill="#C3C6CD"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </span>
+                        <input
+                          aria-required="true"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          id="username"
+                          placeholder="用户名"
+                          type="text"
+                          value=""
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <span
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-input-prefix"
+                        >
+                          <svg
+                            fill="none"
+                            height="19"
+                            viewBox="0 0 18 19"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="lock-password-fill"
+                            >
+                              <path
+                                d="M13.5 6.5H15C15.1989 6.5 15.3897 6.57902 15.5303 6.71967C15.671 6.86032 15.75 7.05109 15.75 7.25V16.25C15.75 16.4489 15.671 16.6397 15.5303 16.7803C15.3897 16.921 15.1989 17 15 17H3C2.80109 17 2.61032 16.921 2.46967 16.7803C2.32902 16.6397 2.25 16.4489 2.25 16.25V7.25C2.25 7.05109 2.32902 6.86032 2.46967 6.71967C2.61032 6.57902 2.80109 6.5 3 6.5H4.5V5.75C4.5 4.55653 4.97411 3.41193 5.81802 2.56802C6.66193 1.72411 7.80653 1.25 9 1.25C10.1935 1.25 11.3381 1.72411 12.182 2.56802C13.0259 3.41193 13.5 4.55653 13.5 5.75V6.5ZM12 6.5V5.75C12 4.95435 11.6839 4.19129 11.1213 3.62868C10.5587 3.06607 9.79565 2.75 9 2.75C8.20435 2.75 7.44129 3.06607 6.87868 3.62868C6.31607 4.19129 6 4.95435 6 5.75V6.5H12ZM8.25 11V12.5H9.75V11H8.25ZM5.25 11V12.5H6.75V11H5.25ZM11.25 11V12.5H12.75V11H11.25Z"
+                                fill="#C3C6CD"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <input
+                          aria-required="true"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          id="password"
+                          placeholder="密码"
+                          type="password"
+                          value=""
+                        />
+                        <span
+                          class="ant-input-suffix"
+                        >
+                          <span
+                            aria-label="eye-invisible"
+                            class="anticon anticon-eye-invisible ant-input-password-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="eye-invisible"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                              />
+                              <path
+                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <label
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                        >
+                          <input
+                            checked=""
+                            class="ant-checkbox-input"
+                            id="userAgreement"
+                            type="checkbox"
+                          />
+                          <span
+                            class="ant-checkbox-inner"
+                          />
+                        </span>
+                        <span>
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              已阅读并同意
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                href="/user-agreement.html"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
+                                用户协议
+                              </a>
+                            </div>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              type="submit"
+            >
+              <span>
+                登 录
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;

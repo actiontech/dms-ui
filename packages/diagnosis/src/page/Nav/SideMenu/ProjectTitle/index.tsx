@@ -8,6 +8,7 @@ const ProjectTitle: React.FC = () => {
       onClick={() => {
         navigate('/');
       }}
+      className="home-page-shortcut"
     >
       <div className="title">
         <span className="label label-primary">Action</span>
