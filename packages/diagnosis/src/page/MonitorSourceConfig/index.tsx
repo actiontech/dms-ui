@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { SegmentedValue } from 'antd/es/segmented';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
 import {
   BasicButton,
@@ -11,7 +10,6 @@ import {
 } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { MonitorSourceConfigStyleWrapper } from './style';
-import { updateMonitorSourceConfigModalStatus } from '../../store/monitorSourceConfig';
 import { ModalName } from '../../data/ModalName';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
@@ -19,6 +17,7 @@ import EmitterKey from '../../data/EmitterKey';
 import { MonitorSourceConfigTypeEnum } from './index.type';
 import ServerMonitor from './components/ServerMonitor';
 import DatabaseMonitor from './components/DatabaseMonitor';
+import useMonitorSourceConfigRedux from './hooks/useMonitorSourceConfigRedux';
 
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();
@@ -28,11 +27,11 @@ const MonitorSourceConfig: React.FC = () => {
 
   const [tableLoading, setTableLoading] = useState<boolean>(false);
 
-  const dispatch = useDispatch();
-
   const [listType, setListType] = useState<MonitorSourceConfigTypeEnum>(
     MonitorSourceConfigTypeEnum.server_monitor
   );
+
+  const { setModalStatus } = useMonitorSourceConfigRedux();
 
   const onChange = (key: SegmentedValue) => {
     setListType(key as MonitorSourceConfigTypeEnum);
@@ -45,12 +44,7 @@ const MonitorSourceConfig: React.FC = () => {
       type === MonitorSourceConfigTypeEnum.server_monitor
         ? ModalName.Add_Server_Monitor
         : ModalName.Add_Database_Monitor;
-    dispatch(
-      updateMonitorSourceConfigModalStatus({
-        modalName: name,
-        status: true
-      })
-    );
+    setModalStatus(name, true);
   };
 
   const renderTable = () => {
@@ -85,6 +79,7 @@ const MonitorSourceConfig: React.FC = () => {
         extra={
           <EmptyBox if={true}>
             <Space size={12}>
+              {/* todo: add permission */}
               <BasicButton
                 onClick={() => onAddMonitorSource(listType)}
                 type="primary"
@@ -111,14 +106,16 @@ const MonitorSourceConfig: React.FC = () => {
                   'common.actiontechTable.searchInput.placeholder'
                 ),
                 onChange: setSearchServerValue,
-                onSearch: onRefreshTable
+                onSearch: onRefreshTable,
+                value: searchServerValue
               }
             : {
                 placeholder: t(
                   'common.actiontechTable.searchInput.placeholder'
                 ),
                 onChange: setSearchDatabaseValue,
-                onSearch: onRefreshTable
+                onSearch: onRefreshTable,
+                value: searchDatabaseValue
               }
         }
       >

@@ -61,8 +61,10 @@ export const ServerMonitorColumns =
     ];
   };
 
+// todo: add permission
 export const ServerMonitorActions = (
-  onEditServerMonitor: (record: IViewServerReply | undefined) => void
+  onEditServerMonitor: (record: IViewServerReply | undefined) => void,
+  onDeleteServerMonitor: (id?: string, name?: string) => void
 ): ActiontechTableActionMeta<IViewServerReply>[] => [
   {
     text: t('common.edit'),
@@ -74,5 +76,16 @@ export const ServerMonitorActions = (
         }
       };
     }
+  },
+  {
+    key: 'removeServerMonitor',
+    text: t('common.delete'),
+    buttonProps: () => ({ danger: true }),
+    confirm: (record) => ({
+      title: t('monitorSourceConfig.serverMonitor.deleteServerMonitorSource', {
+        name: record?.name
+      }),
+      onConfirm: onDeleteServerMonitor.bind(null, record?.id, record?.name)
+    })
   }
 ];

@@ -25,7 +25,7 @@ const useChangeTheme = () => {
     (theme: SupportTheme) => {
       dispatch(updateTheme({ theme }));
     },
-    [updateTheme, dispatch]
+    [dispatch]
   );
 
   //TODO: implements in backend

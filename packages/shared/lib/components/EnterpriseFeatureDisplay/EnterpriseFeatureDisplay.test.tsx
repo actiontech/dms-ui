@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import EnterpriseFeatureDisplay from './EnterpriseFeatureDisplay';
 import { Space } from 'antd';
 import { renderWithTheme } from '../../testUtil/customRender';

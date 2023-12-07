@@ -7,7 +7,7 @@ import { IconEmpty, IconError } from '../../Icon/common';
 import BasicButton from '../BasicButton';
 import { EmptyStyleWrapper } from './style';
 
-interface IEmptyStyleWrapperProps extends EmptyProps {
+export interface IEmptyStyleWrapperProps extends EmptyProps {
   loading?: boolean;
   dataLength?: number;
   errorInfo?: string | ReactNode;

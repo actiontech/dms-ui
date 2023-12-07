@@ -1,5 +1,4 @@
 import { useMemo, useEffect, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 import { useRequest } from 'ahooks';
 import {
   ActiontechTable,
@@ -11,17 +10,21 @@ import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ServerMonitorActions, ServerMonitorColumns } from './column';
-import {
-  updateMonitorSourceConfigModalStatus,
-  updateSelectServerMonitorData
-} from '../../../../store/monitorSourceConfig';
 import { IServerMonitorProps } from './index.type';
 import { IViewServerReply } from '../../../../api/common';
 import { IV1ListServersParams } from '../../../../api/server/index.d';
 import ServerMonitorModal from './components/Modal';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useTranslation } from 'react-i18next';
+import { message } from 'antd';
+import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
 
 const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
-  const dispatch = useDispatch();
+  const { t } = useTranslation();
+
+  const { setModalStatus, setServerSelectData } = useMonitorSourceConfigRedux();
+
+  const [messageApi, messageContextHolder] = message.useMessage();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -56,21 +59,53 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   const onEditServerMonitor = useCallback(
     (record: IViewServerReply | undefined) => {
       if (record) {
-        dispatch(updateSelectServerMonitorData(record));
-        dispatch(
-          updateMonitorSourceConfigModalStatus({
-            modalName: ModalName.Update_Server_Monitor,
-            status: true
-          })
-        );
+        setServerSelectData(record);
+        setModalStatus(ModalName.Update_Server_Monitor, true);
       }
     },
-    [dispatch]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
+  const onDeleteServerMonitor = useCallback(
+    (id?: string, name?: string) => {
+      if (!id) return;
+      const hideLoading = messageApi.loading(
+        t(
+          'monitorSourceConfig.serverMonitor.deleteServerMonitorSourceLoading',
+          {
+            name
+          }
+        ),
+        0
+      );
+      server
+        .V1DeleteServer({
+          server_ids: [id]
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(
+              t(
+                'monitorSourceConfig.serverMonitor.deleteServerMonitorSourceTip',
+                {
+                  name
+                }
+              )
+            );
+            refresh();
+          }
+        })
+        .finally(() => {
+          hideLoading();
+        });
+    },
+    [refresh, t, messageApi]
   );
 
   const actions = useMemo(() => {
-    return ServerMonitorActions(onEditServerMonitor);
-  }, [onEditServerMonitor]);
+    return ServerMonitorActions(onEditServerMonitor, onDeleteServerMonitor);
+  }, [onEditServerMonitor, onDeleteServerMonitor]);
 
   const columns = useMemo(() => {
     return ServerMonitorColumns;
@@ -87,6 +122,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
 
   return (
     <>
+      {messageContextHolder}
       <ActiontechTable
         rowKey="name"
         dataSource={serverMonitorList?.list ?? []}

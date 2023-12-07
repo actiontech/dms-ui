@@ -5,7 +5,7 @@ import { BasicDrawerStyleWrapper } from './style';
 import { CloseOutlined } from '@ant-design/icons';
 import { useMemo } from 'react';
 
-interface BasicDrawerProps extends DrawerProps {
+export interface BasicDrawerProps extends DrawerProps {
   showClosedIcon?: boolean;
   noBodyPadding?: boolean;
 }

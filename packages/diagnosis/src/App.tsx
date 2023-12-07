@@ -49,7 +49,7 @@ function App() {
       userId ??
       LocalStorageWrapper.getOrDefault(StorageKey.DIAGNOSIS_USER_ID, '');
     if (token && currentUserId) getUserInfo({ user_id: currentUserId });
-  }, [token, userId]);
+  }, [token, userId, getUserInfo]);
 
   useChangeTheme();
 

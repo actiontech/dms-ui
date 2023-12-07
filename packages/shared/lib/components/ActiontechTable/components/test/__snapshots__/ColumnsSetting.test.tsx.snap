@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/ActiontechTable-ColumnsSetting render setting button 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+      style="padding: 0px 6px 0px 8px;"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon custom-icon-setting css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="11"
+              viewBox="0 0 13 11"
+              width="13"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.166687 8.50004H4.25002V9.66671H0.166687V8.50004ZM0.166687 4.41671H5.41669V5.58337H0.166687V4.41671ZM0.166687 0.333374H11.8334V1.50004H0.166687V0.333374ZM11.0599 5.59796L11.7342 5.36987L12.3175 6.38021L11.7832 6.84979C11.8504 7.16867 11.8504 7.49808 11.7832 7.81696L12.3175 8.28654L11.7342 9.29687L11.0599 9.06879C10.8207 9.28463 10.536 9.45088 10.2228 9.55296L10.0834 10.25H8.91669L8.77669 9.55237C8.46709 9.4512 8.18213 9.28627 7.94019 9.06821L7.26585 9.29687L6.68252 8.28654L7.21685 7.81696C7.1496 7.49808 7.1496 7.16867 7.21685 6.84979L6.68252 6.38021L7.26585 5.36987L7.94019 5.59796C8.17935 5.38212 8.46402 5.21587 8.77727 5.11379L8.91669 4.41671H10.0834L10.2234 5.11437C10.536 5.21587 10.8207 5.38271 11.0599 5.59854V5.59796ZM9.50002 8.50004C9.80944 8.50004 10.1062 8.37712 10.325 8.15833C10.5438 7.93954 10.6667 7.64279 10.6667 7.33337C10.6667 7.02396 10.5438 6.72721 10.325 6.50842C10.1062 6.28962 9.80944 6.16671 9.50002 6.16671C9.1906 6.16671 8.89386 6.28962 8.67506 6.50842C8.45627 6.72721 8.33335 7.02396 8.33335 7.33337C8.33335 7.64279 8.45627 7.93954 8.67506 8.15833C8.89386 8.37712 9.1906 8.50004 9.50002 8.50004Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          表格设置
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-down css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable-ColumnsSetting render ui change when click setting btn 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-setting-namespace ant-popover-open basic-button-wrapper css-geipcv"
+      style="padding: 0px 6px 0px 8px;"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon custom-icon-setting css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="11"
+              viewBox="0 0 13 11"
+              width="13"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.166687 8.50004H4.25002V9.66671H0.166687V8.50004ZM0.166687 4.41671H5.41669V5.58337H0.166687V4.41671ZM0.166687 0.333374H11.8334V1.50004H0.166687V0.333374ZM11.0599 5.59796L11.7342 5.36987L12.3175 6.38021L11.7832 6.84979C11.8504 7.16867 11.8504 7.49808 11.7832 7.81696L12.3175 8.28654L11.7342 9.29687L11.0599 9.06879C10.8207 9.28463 10.536 9.45088 10.2228 9.55296L10.0834 10.25H8.91669L8.77669 9.55237C8.46709 9.4512 8.18213 9.28627 7.94019 9.06821L7.26585 9.29687L6.68252 8.28654L7.21685 7.81696C7.1496 7.49808 7.1496 7.16867 7.21685 6.84979L6.68252 6.38021L7.26585 5.36987L7.94019 5.59796C8.17935 5.38212 8.46402 5.21587 8.77727 5.11379L8.91669 4.41671H10.0834L10.2234 5.11437C10.536 5.21587 10.8207 5.38271 11.0599 5.59854V5.59796ZM9.50002 8.50004C9.80944 8.50004 10.1062 8.37712 10.325 8.15833C10.5438 7.93954 10.6667 7.64279 10.6667 7.33337C10.6667 7.02396 10.5438 6.72721 10.325 6.50842C10.1062 6.28962 9.80944 6.16671 9.50002 6.16671C9.1906 6.16671 8.89386 6.28962 8.67506 6.50842C8.45627 6.72721 8.33335 7.02396 8.33335 7.33337C8.33335 7.64279 8.45627 7.93954 8.67506 8.15833C8.89386 8.37712 9.1906 8.50004 9.50002 8.50004Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          表格设置
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-up css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big actiontech-setting-button-overlay-namespace css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-45kc3h"
+            >
+              <div
+                class="actiontech-table-setting-fixed-left"
+                hidden=""
+              >
+                <div
+                  class="actiontech-table-setting-fixed-title"
+                >
+                  固定在左侧
+                </div>
+              </div>
+              <div
+                class="actiontech-table-setting-not-fixed"
+                hidden=""
+              >
+                <div
+                  class="actiontech-table-setting-fixed-title"
+                >
+                  不固定
+                </div>
+              </div>
+              <div
+                class="actiontech-table-setting-fixed-right"
+                hidden=""
+              >
+                <div
+                  class="actiontech-table-setting-fixed-title"
+                >
+                  固定在右侧
+                </div>
+              </div>
+              <div
+                id="DndDescribedBy-0"
+                style="display: none;"
+              >
+                
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+              </div>
+              <div
+                aria-atomic="true"
+                aria-live="assertive"
+                id="DndLiveRegion-0"
+                role="status"
+                style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
