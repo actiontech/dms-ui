@@ -48,6 +48,21 @@ const useTableRequestParams = <
   );
 
   /**
+   * @description:
+   * 情景：用于TableToolbar 的 search-input的值发生改变时，将page_index 重置为 1
+   * 方法依赖数据：pagination, searchKeyword
+   * 注意: 数据请求的方法，需要 deps 依赖 pagination.因 search-input组件的值是实时更新到searchKeyword， 所以可以拿到最新的搜索 text
+   */
+  const refreshBySearchKeyword = () => {
+    setPagination((prevPage) => {
+      return {
+        page_index: defaultPageIndex,
+        page_size: prevPage.page_size
+      };
+    });
+  };
+
+  /**
    * TODO:
    * 暂时没有确认模糊查询字段名
    */
@@ -114,7 +129,8 @@ const useTableRequestParams = <
     createSortParams,
     setPagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   };
 };
 

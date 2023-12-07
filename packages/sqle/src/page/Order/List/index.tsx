@@ -61,7 +61,8 @@ const OrderList: React.FC = () => {
     tableChange,
     pagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<
     IWorkflowDetailResV1,
     OrderListTableFilterParamType
@@ -290,7 +291,9 @@ const OrderList: React.FC = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
-          onSearch: refresh
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
         }}
         loading={loading}
       >

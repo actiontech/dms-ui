@@ -50,7 +50,8 @@ const AuditPlanList = () => {
     tableChange,
     pagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<IAuditPlanResV2, PlanListTableFilterParamType>();
   const [filterCustomData, setFilterCustomData] = useState({
     filter_audit_plan_db_type: '',
@@ -227,7 +228,9 @@ const AuditPlanList = () => {
         ]}
         searchInput={{
           onChange: setSearchKeyword,
-          onSearch: onRefresh
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
         }}
       />
       {taskTypeShowStatus && (

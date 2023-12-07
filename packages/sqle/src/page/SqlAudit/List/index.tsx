@@ -47,7 +47,8 @@ const SqlAuditList = () => {
     tableChange,
     pagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<
     ISQLAuditRecord,
     SqlAuditListTableFilterParamType
@@ -182,7 +183,9 @@ const SqlAuditList = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
-          onSearch: refresh,
+          onSearch: () => {
+            refreshBySearchKeyword();
+          },
           placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
         }}
         loading={loading}
