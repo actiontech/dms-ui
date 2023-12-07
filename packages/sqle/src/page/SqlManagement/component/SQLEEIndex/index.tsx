@@ -78,7 +78,8 @@ const SQLEEIndex = () => {
     pagination,
     sortInfo,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<ISqlManage, SqlManagementTableFilterParamType>();
   const [SQLNum, setSQLNum] = useState<ISQLStatisticsProps['data']>({
     SQLTotalNum: 0,
@@ -505,7 +506,9 @@ const SQLEEIndex = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
-          onSearch: refresh
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
         }}
         loading={getListLoading}
       >

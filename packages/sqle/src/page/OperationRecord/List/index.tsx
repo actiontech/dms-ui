@@ -55,7 +55,8 @@ const OperationRecordList: React.FC = () => {
     tableChange,
     pagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<
     IOperationRecordList,
     OperationRecordListFilterParamType
@@ -182,7 +183,9 @@ const OperationRecordList: React.FC = () => {
             name: t('operationRecord.list.filterForm.operator')
           }),
           onChange: setSearchKeyword,
-          onSearch: refresh
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
         }}
       />
       <TableFilterContainer
