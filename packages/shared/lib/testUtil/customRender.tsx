@@ -1,5 +1,6 @@
 import { render, renderHook } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { MutableSnapshot, RecoilRoot } from 'recoil';
 import {
   BrowserRouter,
   Router,
@@ -18,6 +19,10 @@ import lightTheme from '../theme/light';
 
 type MountParams = Parameters<typeof mount>;
 type RenderParams = Parameters<typeof render>;
+type RecoilRootPropsCustom = {
+  initializeState?: (mutableSnapshot: MutableSnapshot) => void;
+  override?: boolean;
+};
 
 export const renderWithRouter = (...[ui, option]: [...RenderParams]) => {
   return render(<BrowserRouter>{ui}</BrowserRouter>, option);
@@ -121,19 +126,20 @@ export const superRender = (
     {
       routerProps?: MemoryRouterProps;
       initStore?: any;
+      recoilRootProps?: RecoilRootPropsCustom;
     }?
   ]
 ) => {
   const renderReturn = render(ui, {
     wrapper: ({ children }) => {
       return (
-        <ThemeProvider theme={lightTheme}>
-          <MemoryRouter {...otherProps?.routerProps}>
-            <Provider store={storeFactory(otherProps?.initStore)}>
-              {children}
-            </Provider>
-          </MemoryRouter>
-        </ThemeProvider>
+        <RecoilRoot {...otherProps?.recoilRootProps}>
+          <Provider store={storeFactory(otherProps?.initStore)}>
+            <MemoryRouter {...otherProps?.routerProps}>
+              <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+            </MemoryRouter>
+          </Provider>
+        </RecoilRoot>
       );
     },
     ...option
