@@ -1,25 +1,50 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const vitePlugin = require('vite-plugin-conditional-compile');
-const swcJest = require('@swc/jest');
-
-const swcJestConfig = swcJest.createTransformer();
 
 const testEnv = process.env?.JEST_TEST_VERSION_ENV;
 
 const { transform } = vitePlugin({
   env: {
-    sqle: process.env.JEST_TEST_PROD_VERSION_ENV === 'sqle',
+    sqle: true,
     ee: testEnv === 'ee',
     ce: testEnv === 'ce'
   }
 });
 
+const babelJest = require('babel-jest');
+
+const hasJsxRuntime = (() => {
+  if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
+    return false;
+  }
+
+  try {
+    require.resolve('react/jsx-runtime');
+    return true;
+  } catch (e) {
+    return false;
+  }
+})();
+
+const babelJestConfig = babelJest.createTransformer({
+  presets: [
+    [
+      require.resolve('babel-preset-react-app'),
+      {
+        runtime: hasJsxRuntime ? 'automatic' : 'classic'
+      }
+    ],
+    ['@babel/preset-env', { targets: { node: 'current' } }],
+    '@babel/preset-typescript'
+  ]
+});
+
 const config = {
-  ...swcJestConfig,
+  ...babelJestConfig,
   process: (src, filename, options) => {
     const code = transform(src, filename);
 
-    return swcJestConfig.process(code, filename, options);
+    return babelJestConfig.process(code, filename, options);
   }
 };
 module.exports = config;

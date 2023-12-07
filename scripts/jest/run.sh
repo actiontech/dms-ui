@@ -1,7 +1,5 @@
 #!/bin/sh
 
-export JEST_TEST_PROD_VERSION_ENV="sqle"
-
 test_version=${2:-ee}
 echo "current test version: $test_version"
 
