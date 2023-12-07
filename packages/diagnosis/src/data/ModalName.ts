@@ -1,0 +1,7 @@
+export enum ModalName {
+  Add_Server_Monitor = 'Add_Server_Monitor',
+  Update_Server_Monitor = 'Update_Server_Monitor',
+  Add_Database_Monitor = 'Add_Database_Monitor',
+  Update_Database_Monitor = 'Update_Database_Monitor',
+  Check_Monitor_Config = 'Check_Monitor_Config'
+}

@@ -1,0 +1,36 @@
+<svg fill="none" viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        .css-1etwi8y.antd-v5-avatar.action-avatar {
+          position: relative;
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          background: #c3c6cd;
+          border: 1px solid transparent;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: #fde3cf;
+          color: #f56a00;
+          cursor: pointer;
+        }
+
+        .antd-v5-avatar-string {
+          position: absolute;
+          left: 50%;
+          transform-origin: 0 center;
+          transform: scale(1) translateX(-50%);
+          font-size: 22px;
+        }
+      </style>
+
+      <span
+        class="antd-v5-avatar antd-v5-avatar-circle action-avatar antd-v5-popover-open css-1etwi8y css-dev-only-do-not-override-1thf7qv"><span
+          class="antd-v5-avatar-string">A</span></span>
+    </div>
+  </foreignObject>
+</svg>

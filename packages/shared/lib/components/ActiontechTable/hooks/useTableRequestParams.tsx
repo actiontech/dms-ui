@@ -27,6 +27,9 @@ const useTableRequestParams = <
     page_size: defaultPageSize
   });
 
+  /**
+   * @notice: filterInfo 期望 筛选数据的不同，重置 page_index 为 1, 还需要考虑
+   */
   const updateTableFilterInfo = (filterInfo: F) => {
     const filterInfoData =
       typeof filterInfo === 'function' ? filterInfo() : filterInfo;

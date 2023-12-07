@@ -18,6 +18,11 @@ const VersionModal: React.FC<{
 
   const [dmsVersion, setDmsVersion] = useState<string | undefined>('');
 
+  // #if [provision]
+  const [provisionVersion, setProvisionVersion] = useState<string | undefined>(
+    ''
+  );
+  // #endif
   // #if [sqle]
   const [sqleVersion, setSqleVersion] = useState<string | undefined>('');
   // #endif
@@ -30,12 +35,17 @@ const VersionModal: React.FC<{
         )?.version;
         setDmsVersion(formatServerVersion(dms));
 
+        // #if [provision]
+        const provision = res.data.data?.components?.find(
+          (i) => i.name === 'provision'
+        )?.version;
+        setProvisionVersion(formatServerVersion(provision));
+        // #endif
         // #if [sqle]
         const sqle = res.data.data?.components?.find(
           (i) => i.name === 'sqle'
         )?.version;
         setSqleVersion(formatServerVersion(sqle));
-
         // #endif
       });
     }
@@ -86,7 +96,9 @@ const VersionModal: React.FC<{
           <Space direction="vertical">
             <Typography>UI: {UI_VERSION}</Typography>
             <Typography>DMS: {dmsVersion || '-'}</Typography>
-
+            {/* #if [provision] */}
+            <Typography>PROVISION: {provisionVersion || '-'}</Typography>
+            {/* #endif */}
             {/* #if [sqle] */}
             <Typography>SQLE: {sqleVersion || '-'}</Typography>
             {/* #endif */}
@@ -96,15 +108,25 @@ const VersionModal: React.FC<{
           <Typography.Title level={5}>
             {t('dmsSystem.version.productIntroduction')}
           </Typography.Title>
+          {/* #if [dms || provision] */}
           <Typography.Text>{t('dmsSystem.version.dms_desc')}</Typography.Text>
+          {/* #elif [sqle] */}
+          <Typography.Text>{t('dmsSystem.version.sqle_desc')}</Typography.Text>
+          {/* #endif */}
         </Space>
         <Space align="start" direction="vertical">
           <Typography.Title level={5}>
             {t('dmsSystem.version.productFeatures')}
           </Typography.Title>
+          {/* #if [dms || provision] */}
           <VersionModalDescribeTextStyleWrapper>
             {t('dmsSystem.version.dms_feature')}
           </VersionModalDescribeTextStyleWrapper>
+          {/* #elif [sqle] */}
+          <VersionModalDescribeTextStyleWrapper>
+            {t('dmsSystem.version.sqle_feature')}
+          </VersionModalDescribeTextStyleWrapper>
+          {/* #endif */}
         </Space>
       </Space>
     </VersionModalStyleWrapper>
