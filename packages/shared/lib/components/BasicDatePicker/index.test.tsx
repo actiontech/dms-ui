@@ -5,16 +5,23 @@ import { getBySelector } from '../../testUtil/customQuery';
 import { renderWithTheme } from '../../testUtil/customRender';
 import { ignoreComponentCustomAttr } from '../../testUtil/common';
 
+import dayjs from 'dayjs';
+import 'dayjs/locale/mk';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import MockDate from 'mockdate';
+
+dayjs.extend(customParseFormat);
+
 describe('lib/BasicDatePicker', () => {
   ignoreComponentCustomAttr();
+
   beforeEach(() => {
+    MockDate.set(dayjs('2023-12-04').valueOf());
     jest.useFakeTimers();
-    Date.now = () => 1612148800;
   });
 
   afterEach(() => {
-    jest.useRealTimers();
-    jest.clearAllTimers();
+    MockDate.reset();
     cleanup();
   });
 

@@ -81,3 +81,27 @@ export const ignoreComponentCustomAttr = () => {
     console.error = error;
   });
 };
+
+/**
+ * @description: 在选择 date-range-pick 组件的结束日期 input 元素时，实际选择到了，报此 warning
+ */
+export const ignoreComponentWarnExpDatePickChooseElement = () => {
+  const warn = console.warn;
+  beforeAll(() => {
+    console.warn = (...arg) => {
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes(
+          'Not match any format. Please help to fire a issue about this.'
+        )
+      ) {
+        return;
+      }
+      warn(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.warn = warn;
+  });
+};

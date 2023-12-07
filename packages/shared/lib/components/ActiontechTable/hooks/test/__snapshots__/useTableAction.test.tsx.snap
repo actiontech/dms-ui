@@ -1,5 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click confirm 1`] = `
+<Space>
+  <EmptyBox
+    if={true}
+  >
+    <BasicButton
+      block={true}
+      className="actiontech-table-actions-button"
+      confirm={[Function]}
+      size="middle"
+    >
+      <span>
+        删除
+      </span>
+    </BasicButton>
+  </EmptyBox>
+</Space>
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click fn 1`] = `
+<Space>
+  <EmptyBox
+    if={true}
+  >
+    <BasicButton
+      block={true}
+      className="actiontech-table-actions-button test-btn-click"
+      onClick={[MockFunction]}
+      size="middle"
+    >
+      <span>
+        增加
+      </span>
+    </BasicButton>
+  </EmptyBox>
+</Space>
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn is disabled 1`] = `
+<Space>
+  <EmptyBox
+    if={true}
+  >
+    <BasicButton
+      block={true}
+      className="actiontech-table-actions-button"
+      disabled={true}
+      size="middle"
+    >
+      <span>
+        增加
+      </span>
+    </BasicButton>
+  </EmptyBox>
+</Space>
+`;
+
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render use renderAction 1`] = `
 <Space>
   <EmptyBox

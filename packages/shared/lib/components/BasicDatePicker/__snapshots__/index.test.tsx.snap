@@ -506,7 +506,7 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon false 1`
                         </div>
                       </td>
                       <td
-                        class="ant-picker-cell ant-picker-cell-in-view"
+                        class="ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today"
                         title="2023-12-04"
                       >
                         <div
@@ -536,7 +536,7 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon false 1`
                         </div>
                       </td>
                       <td
-                        class="ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today"
+                        class="ant-picker-cell ant-picker-cell-in-view"
                         title="2023-12-07"
                       >
                         <div
@@ -1168,7 +1168,7 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon true 1`]
                         </div>
                       </td>
                       <td
-                        class="ant-picker-cell ant-picker-cell-in-view"
+                        class="ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today"
                         title="2023-12-04"
                       >
                         <div
@@ -1198,7 +1198,7 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon true 1`]
                         </div>
                       </td>
                       <td
-                        class="ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today"
+                        class="ant-picker-cell ant-picker-cell-in-view"
                         title="2023-12-07"
                       >
                         <div
