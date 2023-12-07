@@ -11,7 +11,6 @@ import { ConfigProvider, theme as antdTheme } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import { Dictionary, IStore } from '../types/common.type';
 import { storeFactory } from './mockRedux';
-import userEvent from '@testing-library/user-event';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import { mount } from 'enzyme';
 
@@ -19,7 +18,6 @@ import lightTheme from '../theme/light';
 
 type MountParams = Parameters<typeof mount>;
 type RenderParams = Parameters<typeof render>;
-type UserEventOptions = Required<Parameters<typeof userEvent.setup>>[0];
 
 export const renderWithRouter = (...[ui, option]: [...RenderParams]) => {
   return render(<BrowserRouter>{ui}</BrowserRouter>, option);
@@ -122,16 +120,10 @@ export const superRender = (
     ...RenderParams,
     {
       routerProps?: MemoryRouterProps;
-      userEventProps?: UserEventOptions;
       initStore?: any;
     }?
   ]
 ) => {
-  const userEventReturn = userEvent.setup({
-    advanceTimers: jest.advanceTimersByTime,
-    ...otherProps?.userEventProps
-  });
-
   const renderReturn = render(ui, {
     wrapper: ({ children }) => {
       return (
@@ -146,10 +138,7 @@ export const superRender = (
     },
     ...option
   });
-  return {
-    ...renderReturn,
-    userEvent: userEventReturn
-  };
+  return renderReturn;
 };
 
 export const mountWithTheme = (...[ui, option]: [...MountParams]) => {
