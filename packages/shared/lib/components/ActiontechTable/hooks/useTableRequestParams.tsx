@@ -27,8 +27,19 @@ const useTableRequestParams = <
     page_size: defaultPageSize
   });
 
+  /**
+   * @notice: filterInfo 期望 筛选数据的不同，重置 page_index 为 1, 还需要考虑
+   */
   const updateTableFilterInfo = (filterInfo: F) => {
-    if (!isEqual(filterInfo, tableFilterInfo)) {
+    const filterInfoData =
+      typeof filterInfo === 'function' ? filterInfo() : filterInfo;
+    if (
+      JSON.stringify(filterInfoData) === '{}' &&
+      JSON.stringify(tableFilterInfo) === '{}'
+    ) {
+      return;
+    }
+    if (!isEqual(filterInfoData, tableFilterInfo)) {
       setPagination((prevPage) => {
         return {
           page_index: defaultPageIndex,
