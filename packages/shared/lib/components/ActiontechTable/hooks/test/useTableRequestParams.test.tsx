@@ -49,4 +49,87 @@ describe('lib/ActiontechTable-hooks-useTableRequestParams', () => {
       expect(sortInfo).toEqual({});
     });
   });
+
+  describe('render reset page index 1 when filter ui info data change ', () => {
+    it('render use refreshBySearchKeyword when fuzzy text onEnter', async () => {
+      const { result } = renderHook(() => useTableRequestParams());
+      expect(result.current.pagination).toEqual({
+        page_index: 1,
+        page_size: 20
+      });
+      await act(async () => {
+        result.current.setPagination({
+          page_index: 10,
+          page_size: 50
+        });
+      });
+      expect(result.current.pagination).toEqual({
+        page_index: 10,
+        page_size: 50
+      });
+      await act(async () => {
+        result.current.refreshBySearchKeyword();
+      });
+      await act(async () => {
+        result.current.setPagination({
+          page_index: 1,
+          page_size: 50
+        });
+      });
+    });
+
+    it('render use updateTableFilterInfo when filter info change', async () => {
+      const { result } = renderHook(() => useTableRequestParams());
+      expect(result.current.pagination).toEqual({
+        page_index: 1,
+        page_size: 20
+      });
+      expect(result.current.tableFilterInfo).toEqual({});
+      await act(async () => {
+        result.current.updateTableFilterInfo({});
+      });
+      expect(result.current.pagination).toEqual({
+        page_index: 1,
+        page_size: 20
+      });
+
+      await act(async () => {
+        result.current.setPagination({
+          page_index: 10,
+          page_size: 50
+        });
+      });
+      expect(result.current.pagination).toEqual({
+        page_index: 10,
+        page_size: 50
+      });
+      await act(async () => {
+        result.current.updateTableFilterInfo(() => ({ a: 1 }));
+      });
+      expect(result.current.pagination).toEqual({
+        page_index: 1,
+        page_size: 50
+      });
+      expect(result.current.tableFilterInfo).toEqual({ a: 1 });
+
+      await act(async () => {
+        result.current.setPagination({
+          page_index: 9,
+          page_size: 50
+        });
+      });
+      expect(result.current.pagination).toEqual({
+        page_index: 9,
+        page_size: 50
+      });
+      await act(async () => {
+        result.current.updateTableFilterInfo({ b: 2 });
+      });
+      expect(result.current.pagination).toEqual({
+        page_index: 1,
+        page_size: 50
+      });
+      expect(result.current.tableFilterInfo).toEqual({ b: 2 });
+    });
+  });
 });
