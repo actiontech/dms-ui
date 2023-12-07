@@ -46,7 +46,8 @@ const ServiceAudit: React.FC = () => {
     tableChange,
     pagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<
     IListDataObjectServiceEvent,
     ServiceAuditTableFilterParamType
@@ -134,7 +135,9 @@ const ServiceAudit: React.FC = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
-          onSearch: refresh
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
         }}
       />
       <TableFilterContainer

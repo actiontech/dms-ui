@@ -43,7 +43,8 @@ const AuthAudit: React.FC = () => {
     tableChange,
     pagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<
     IListAuthorizationEvent,
     AuthAuditTableFilterParamType
@@ -132,7 +133,9 @@ const AuthAudit: React.FC = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
-          onSearch: refresh
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
         }}
       />
       <TableFilterContainer

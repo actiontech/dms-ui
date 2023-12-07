@@ -59,6 +59,7 @@ const DataSourceList = () => {
     updateTableFilterInfo,
     tableChange,
     pagination,
+    refreshBySearchKeyword,
     searchKeyword,
     setSearchKeyword
   } = useTableRequestParams<IListDBService, DataSourceListParamType>({
@@ -252,8 +253,10 @@ const DataSourceList = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
-          onSearch: refresh,
-          defaultValue: searchKeyword
+          defaultValue: searchKeyword,
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
         }}
       />
       <TableFilterContainer
