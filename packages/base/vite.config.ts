@@ -15,15 +15,40 @@ export default defineConfig((config) => {
    */
   const isCE = buildTypes.includes('ce') && buildTypes.includes('SQLE');
   const isEE = !isCE;
-  const isSQLE = buildTypes.includes('SQLE');
 
-  const title = 'Action SQLE';
+  const isSQLE = buildTypes.includes('SQLE');
+  const isPROVISION = buildTypes.includes('PROVISION');
+  const isDMS = isSQLE && isPROVISION;
+
+  const genTitle = () => {
+    if (isDMS) {
+      return 'DMS';
+    }
+
+    if (isSQLE) {
+      return 'SQLE';
+    }
+
+    if (isPROVISION) {
+      return 'provision';
+    }
+
+    return 'DMS';
+  };
+
+  const title = `Action ${genTitle()}`;
 
   return {
     plugins: [
       vitePluginConditionalCompile({
         include: [/^.+\/packages\/.+\/.+.(ts|tsx)$/],
-        env: { ee: isEE, ce: isCE, sqle: isSQLE }
+        env: {
+          ee: isEE,
+          ce: isCE,
+          sqle: isSQLE,
+          provision: isPROVISION,
+          dms: isDMS
+        }
       }),
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
@@ -37,6 +62,11 @@ export default defineConfig((config) => {
         }
       })
     ],
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, '../provision/src')
+      }
+    },
     css: {
       preprocessorOptions: {
         less: {
@@ -72,14 +102,15 @@ export default defineConfig((config) => {
       watch: {
         ignored: [
           '!**/node_modules/sqle/**',
+          '!**/node_modules/provision/**',
           '!**/node_modules/@actiontech/shared/**'
         ]
       },
       host: '0.0.0.0',
       open: true,
       proxy: {
-        '^(/v|/sqle/v)': {
-          target: 'http://10.186.62.51:27601'
+        '^(/v|/sqle/v|/provision/v)': {
+          target: 'http://10.186.62.13:27601'
         },
         '^/logo': {
           target: 'http://10.186.62.13:27601'
