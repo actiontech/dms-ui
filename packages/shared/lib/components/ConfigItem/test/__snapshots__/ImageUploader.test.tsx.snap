@@ -140,7 +140,7 @@ exports[`lib/ConfigItem-ImageUploader render mask ui 1`] = `
                 <div
                   class="ant-space-item"
                 >
-                  system.personalize.uploadAndUpdate
+                  上传并更新
                 </div>
               </div>
             </div>

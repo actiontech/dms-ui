@@ -1,37 +1,25 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 process.env.TZ = 'Asia/Shanghai';
 
 const path = require('path');
-const baseJestConfig = require('./packages/base/jest.config');
-const sharedJestConfig = require('./packages/shared/jest.config');
-const sqleJestConfig = require('./packages/sqle/jest.config');
+
 const { compilerOptions } = require('./tsconfig.json');
 const { pathsToModuleNameMapper } = require('ts-jest');
 
 compilerOptions.paths['~/*'][0] = path.resolve(compilerOptions.paths['~/*'][0]);
 
-const addPrefix = (paths, prefix) => {
-  return paths.map((v) => {
-    if (v.startsWith('!')) {
-      return `!${path.join(`./packages/${prefix}`, v.slice(1))}`;
-    }
-    return path.join(`./packages/${prefix}`, v);
-  });
-};
-
 module.exports = {
-  preset: 'ts-jest',
   transform: {
-    '^.+\\.(ts|tsx|js|jsx)$': '<rootDir>/scripts/jest/babelTransform.js',
-    '^.+\\.(png|jpg|jpeg|css|json)$': '<rootDir>/scripts/jest/fileTransform.js'
+    '^.+\\.(ts|tsx|js|jsx)$': '<rootDir>/scripts/jest/custom-transform.js',
+    '^.+\\.(png|jpg|jpeg|css|json)$': '<rootDir>/scripts/jest/file-transform.js'
   },
   transformIgnorePatterns: [
     '/dist/',
     // Ignore modules without es dir.
-    // Update: @babel/runtime should also be transformed
-    'node_modules/(?!(?:.pnpm/)?(.+/es))(?!.*@(babel|ant-design))(?!array-move)[^/]+?/(?!(es|node_modules)/)'
+    'node_modules/(?!(?:.pnpm/)?(.+/es))[^/]+?/(?!(es|node_modules)/)'
   ],
-  moduleFileExtensions: ['js', 'ts', 'tsx', 'json', 'jsx', 'node'],
-  testEnvironment: '<rootDir>/scripts/jest/customJestEnvironment.js',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx', 'node'],
+  testEnvironment: 'jest-environment-jsdom',
   resetMocks: true,
   moduleNameMapper: {
     '.+\\.(css|style|less|sass|scss|ttf|woff|woff2)$': 'identity-obj-proxy',
@@ -44,10 +32,21 @@ module.exports = {
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },
   collectCoverageFrom: [
-    ...addPrefix(baseJestConfig.collectCoverageFrom, 'base'),
-    ...addPrefix(sharedJestConfig.collectCoverageFrom, 'shared'),
-    ...addPrefix(sqleJestConfig.collectCoverageFrom, 'sqle')
+    'packages/**/{src,lib}/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
+    'packages/**/src/App.tsx'
   ],
-
-  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts']
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+  reporters: [
+    'default',
+    [
+      'jest-slow-test-reporter',
+      {
+        numTests: 8,
+        outputDirectory: 'reports',
+        outputName: 'report.xml',
+        color: true,
+        warnSlowerThan: 300
+      }
+    ]
+  ]
 };
