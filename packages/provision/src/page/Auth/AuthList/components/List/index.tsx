@@ -179,10 +179,10 @@ const AuthListItem = () => {
         filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
-        rowKey="event_uid"
-        dataSource={data?.list}
+        rowKey="uid"
+        dataSource={data?.list ?? []}
         pagination={{
-          total: data?.total ?? 0
+          total: data?.total || 0
         }}
         loading={loading}
         columns={columns}

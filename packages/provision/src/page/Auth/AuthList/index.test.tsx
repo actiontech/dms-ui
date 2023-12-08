@@ -8,7 +8,6 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 
 import AuthList from '.';
 
-
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
