@@ -16,39 +16,47 @@ const ceReportJSONFilePath = path.resolve(
 const reportJSONFilePath = path.resolve(process.cwd(), 'coverage/report.json');
 
 if (!fs.existsSync(ceReportJSONFilePath)) {
-  console.error('not found ce report.json');
+  console.error(`not found ce report.json ${ceReportJSONFilePath}`);
   process.exit(1);
 }
 
 if (!fs.existsSync(reportJSONFilePath)) {
-  console.error('not found ee report.json');
+  console.error(`not found report.json: ${reportJSONFilePath}`);
   process.exit(1);
 }
 
 const ceCoverageReport = require(ceReportJSONFilePath);
-const eeCoverageReport = require(reportJSONFilePath);
+const coverageReport = require(reportJSONFilePath);
 
 const numFailedTestSuites =
-  ceCoverageReport.numFailedTestSuites + eeCoverageReport.numFailedTestSuites;
+  ceCoverageReport.numFailedTestSuites + coverageReport.numFailedTestSuites;
 const numFailedTests =
-  ceCoverageReport.numFailedTests + eeCoverageReport.numFailedTests;
+  ceCoverageReport.numFailedTests + coverageReport.numFailedTests;
 const numPassedTestSuites =
-  ceCoverageReport.numPassedTestSuites + eeCoverageReport.numPassedTestSuites;
+  ceCoverageReport.numPassedTestSuites + coverageReport.numPassedTestSuites;
 const numPassedTests =
-  ceCoverageReport.numPassedTests + eeCoverageReport.numPassedTests;
+  ceCoverageReport.numPassedTests + coverageReport.numPassedTests;
 const numPendingTestSuites =
-  ceCoverageReport.numPendingTestSuites + eeCoverageReport.numPendingTestSuites;
+  ceCoverageReport.numPendingTestSuites + coverageReport.numPendingTestSuites;
 const numPendingTests =
-  ceCoverageReport.numPendingTests + eeCoverageReport.numPendingTests;
+  ceCoverageReport.numPendingTests + coverageReport.numPendingTests;
 const numRuntimeErrorTestSuites =
   ceCoverageReport.numRuntimeErrorTestSuites +
-  eeCoverageReport.numRuntimeErrorTestSuites;
+  coverageReport.numRuntimeErrorTestSuites;
 const numTodoTests =
-  ceCoverageReport.numTodoTests + eeCoverageReport.numTodoTests;
+  ceCoverageReport.numTodoTests + coverageReport.numTodoTests;
 const numTotalTestSuites =
-  ceCoverageReport.numTotalTestSuites + eeCoverageReport.numTotalTestSuites;
+  ceCoverageReport.numTotalTestSuites + coverageReport.numTotalTestSuites;
 const numTotalTests =
-  ceCoverageReport.numTotalTests + eeCoverageReport.numTotalTests;
+  ceCoverageReport.numTotalTests + coverageReport.numTotalTests;
+const snapshot = Object.keys(ceCoverageReport.snapshot ?? {}).reduce(
+  (acc, key) => ({
+    ...acc,
+    [key]: (ceCoverageReport[key] ?? 0) + (coverageReport[key] ?? 0)
+  }),
+  {}
+);
+const success = ceCoverageReport.success && coverageReport.success;
 
 fs.writeFile(
   ceReportJSONFilePath,
@@ -65,7 +73,7 @@ fs.writeFile(
 
 fs.writeFile(
   reportJSONFilePath,
-  JSON.stringify(eeCoverageReport.coverageMap),
+  JSON.stringify(coverageReport.coverageMap),
   (err) => {
     if (err) {
       console.error(err);
@@ -102,6 +110,8 @@ exec(command, (error, stdout, stderr) => {
     numTodoTests,
     numTotalTestSuites,
     numTotalTests,
+    success,
+    snapshot,
     coverageMap: mergeCoverageReport
   };
 
