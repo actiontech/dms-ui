@@ -44,7 +44,6 @@ export const createSpySuccessResponse = (
   { status = 200, headers = {}, config = {}, statusText = '' } = {}
 ) => {
   return new Promise<AxiosResponse<any>>((res) => {
-    // console.log('data', data);
     setTimeout(() => {
       res({
         status,
@@ -53,8 +52,8 @@ export const createSpySuccessResponse = (
         statusText,
         data: {
           code: 0,
-          msg: 'ok',
-          data // ??？ 之前是 payload
+          message: 'ok',
+          ...data // ??？ 之前是 payload
         }
       });
     }, 3000);

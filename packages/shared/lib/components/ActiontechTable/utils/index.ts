@@ -73,3 +73,21 @@ export const checkButtonDisabled = <T extends Record<string, any>>(
 
   return false;
 };
+
+export const setClassNameForColumns = <
+  T,
+  F,
+  OtherColumnKeys extends string = ''
+>(
+  columns: ActiontechTableColumn<T, F, OtherColumnKeys>
+) => {
+  return columns.map((column, i) => {
+    if (i === 0) {
+      return { ...column, className: 'first-col' };
+    }
+    if (i === columns.length - 1) {
+      return { ...column, className: 'last-col' };
+    }
+    return column;
+  });
+};
