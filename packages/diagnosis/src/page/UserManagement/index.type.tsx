@@ -3,6 +3,7 @@ import EmitterKey from '../../data/EmitterKey';
 import { ModalName } from '../../data/ModalName';
 import { t } from '../../locale';
 import UserList from './components/UserList';
+import RoleList from './components/RoleList';
 
 export enum UserManagementTypeEnum {
   'user_list' = 'user_list',
@@ -29,7 +30,7 @@ export const UserManagementDataSource: Record<
     refresh: EmitterKey.Refresh_Role_List,
     modalName: ModalName.Add_Role,
     extraText: t('userManagement.button.addRole'),
-    tableRender: () => <></>
+    tableRender: () => <RoleList />
   },
   [UserManagementTypeEnum.permission_list]: {
     refresh: EmitterKey.Refresh_Permission_List,

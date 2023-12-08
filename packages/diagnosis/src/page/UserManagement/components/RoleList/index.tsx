@@ -11,16 +11,16 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { UserListColumns, UserListActions } from './index.data';
+import { RoleListColumns, RoleListActions } from './index.data';
 import useUserManagementRedux from '../../hooks/useUserManagementRedux';
 import auth from '../../../../api/auth';
-import { IV1ListUsersParams } from '../../../../api/auth/index.d';
-import { IViewUserReply } from '../../../../api/common';
+import { IV1ListRolesParams } from '../../../../api/auth/index.d';
+import { IViewRoleReply } from '../../../../api/common';
 
-const UserList: React.FC = () => {
+const RoleList: React.FC = () => {
   const { t } = useTranslation();
 
-  const { setModalStatus, setSelectUserData } = useUserManagementRedux();
+  const { setModalStatus, setSelectRoleData } = useUserManagementRedux();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -28,47 +28,47 @@ const UserList: React.FC = () => {
     useTableRequestError();
 
   const { pagination, tableChange } = useTableRequestParams<
-    IViewUserReply,
-    IV1ListUsersParams
+    IViewRoleReply,
+    IV1ListRolesParams
   >();
 
   const {
-    data: userList,
+    data: roleList,
     loading,
     refresh
   } = useRequest(
     () => {
-      const params: IV1ListUsersParams = {
+      const params: IV1ListRolesParams = {
         ...pagination
       };
-      return handleTableRequestError(auth.V1ListUsers(params));
+      return handleTableRequestError(auth.V1ListRoles(params));
     },
     {
       refreshDeps: [pagination]
     }
   );
 
-  const onEditUser = useCallback((record?: IViewUserReply) => {
-    setSelectUserData(record ?? null);
-    setModalStatus(ModalName.Update_User, true);
+  const onEditRole = useCallback((record?: IViewRoleReply) => {
+    setSelectRoleData(record ?? null);
+    setModalStatus(ModalName.Update_Role, true);
   }, []);
 
-  const onDeleteUser = useCallback(
-    (record: IViewUserReply | undefined) => {
+  const onDeleteRole = useCallback(
+    (record: IViewRoleReply | undefined) => {
       const hideLoading = messageApi.loading(
-        t('userManagement.user.deleteUser.deleting', {
-          name: record?.username
+        t('userManagement.role.deleteRole.deleting', {
+          name: record?.role_name
         }),
         0
       );
       auth
-        .V1DeleteUser({ user_id: record?.user_id ?? '' })
+        .V1DeleteRole({ role_id: record?.id ?? '' })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.open({
               type: 'success',
-              content: t('userManagement.user.deleteUser.deleteSuccess', {
-                name: record?.username ?? ''
+              content: t('userManagement.role.deleteRole.deleteSuccessTips', {
+                name: record?.role_name ?? ''
               })
             });
             refresh();
@@ -80,16 +80,16 @@ const UserList: React.FC = () => {
   );
 
   const actions = useMemo(() => {
-    return UserListActions(onEditUser, onDeleteUser);
-  }, [onEditUser, onDeleteUser]);
+    return RoleListActions(onEditRole, onDeleteRole);
+  }, [onEditRole, onDeleteRole]);
 
   const columns = useMemo(() => {
-    return UserListColumns;
+    return RoleListColumns;
   }, []);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.Refresh_User_List,
+      EmitterKey.Refresh_Role_List,
       refresh
     );
 
@@ -100,10 +100,10 @@ const UserList: React.FC = () => {
     <>
       {contextHolder}
       <ActiontechTable
-        rowKey="user_id"
-        dataSource={userList?.list ?? []}
+        rowKey="role_id"
+        dataSource={roleList?.list ?? []}
         pagination={{
-          total: userList?.total ?? 0
+          total: roleList?.total ?? 0
         }}
         loading={loading}
         columns={columns}
@@ -115,4 +115,4 @@ const UserList: React.FC = () => {
   );
 };
 
-export default UserList;
+export default RoleList;
