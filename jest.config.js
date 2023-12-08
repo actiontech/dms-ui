@@ -2,7 +2,6 @@
 process.env.TZ = 'Asia/Shanghai';
 
 const path = require('path');
-
 const { compilerOptions } = require('./tsconfig.json');
 const { pathsToModuleNameMapper } = require('ts-jest');
 
