@@ -10,7 +10,8 @@ import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common
 import { orderBy } from 'lodash';
 import { t } from '../../../locale';
 import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
-import { UserStatusStyledWrapper } from '../style';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { UserNameEnum } from '@actiontech/shared/lib/enum';
 
 export const UserListColumns: ActiontechTableColumn<IListUser> = [
   {
@@ -36,14 +37,14 @@ export const UserListColumns: ActiontechTableColumn<IListUser> = [
     title: () => t('dmsUserCenter.user.userList.columns.status'),
     render: (status: ListUserStatEnum) => {
       return (
-        <UserStatusStyledWrapper>
+        <TableColumnWithIconStyleWrapper>
           {status === ListUserStatEnum.被禁用 ? (
             <IconMemberNotAdmin />
           ) : (
             <IconMemberIsAdmin />
           )}
-          {status}
-        </UserStatusStyledWrapper>
+          <span>{status}</span>
+        </TableColumnWithIconStyleWrapper>
       );
     }
   },
@@ -98,7 +99,7 @@ export const UserListActions = (
         };
       },
       permissions: (record) => {
-        return record?.name !== 'admin';
+        return record?.name !== UserNameEnum.admin;
       }
     }
   ];

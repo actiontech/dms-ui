@@ -35,7 +35,7 @@ const UpdateRole = () => {
     (state) => state.userCenter.selectRole
   );
 
-  const close = useCallback(() => {
+  const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
       updateUserManageModalStatus({
@@ -59,20 +59,19 @@ const UpdateRole = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          close();
-          messageApi.open({
-            type: 'success',
-            content: t('dmsUserCenter.role.updateRole.updateSuccessTips', {
+          onClose();
+          messageApi.success(
+            t('dmsUserCenter.role.updateRole.updateSuccessTips', {
               name: values.name
             })
-          });
-          EventEmitter.emit(EmitterKey.DMS_Refresh_Role_List);
+          );
+          EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
         }
       })
       .finally(() => {
         setFalse();
       });
-  }, [close, currentRole?.uid, form, setFalse, setTrue, t, messageApi]);
+  }, [onClose, currentRole?.uid, form, setFalse, setTrue, t, messageApi]);
 
   useEffect(() => {
     if (visible) {
@@ -89,10 +88,10 @@ const UpdateRole = () => {
     <BasicDrawer
       title={t('dmsUserCenter.role.updateRole.modalTitle')}
       open={visible}
-      onClose={close}
+      onClose={onClose}
       footer={
         <Space>
-          <BasicButton onClick={close} disabled={updateLoading}>
+          <BasicButton onClick={onClose} disabled={updateLoading}>
             {t('common.close')}
           </BasicButton>
           <BasicButton
