@@ -27,7 +27,11 @@ class MockDMSGlobalApi implements MockSpyApy {
 
   public getCurrentUser() {
     const spy = jest.spyOn(dms, 'GetUser');
-    spy.mockImplementation(() => createSpySuccessResponse(GetUserPayload));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: GetUserPayload
+      })
+    );
     return spy;
   }
 
