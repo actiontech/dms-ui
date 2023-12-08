@@ -1,10 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import MenuList from '.';
-import {
-  renderWithRouter,
-  renderWithThemeAndRouter,
-  superRender
-} from '../../../../testUtils/customRender';
+import { renderWithThemeAndRouter } from '../../../../testUtils/customRender';
 import { act, fireEvent, screen } from '@testing-library/react';
 import {
   getAllBySelector,
@@ -29,7 +25,7 @@ describe('diagnosis/MenuList', () => {
       search: '',
       hash: '',
       state: null,
-      key: '3ffr23g4'
+      key: '5nvxpbdafa'
     });
   });
 
@@ -40,13 +36,19 @@ describe('diagnosis/MenuList', () => {
   });
 
   it('should match snapshot', async () => {
-    const { baseElement } = superRender(<MenuList />);
+    const { baseElement } = renderWithThemeAndRouter(<MenuList />);
+    await act(async () => {
+      jest.runOnlyPendingTimers();
+    });
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render menu list', async () => {
     renderWithThemeAndRouter(<MenuList />, undefined, {
       initialEntries: ['/']
+    });
+    await act(async () => {
+      jest.runOnlyPendingTimers();
     });
     expect(screen.getByText('监控源配置')).toBeInTheDocument();
     expect(getBySelector('.ant-menu-item-divider')).toBeInTheDocument();
@@ -55,6 +57,9 @@ describe('diagnosis/MenuList', () => {
   it('click menu and render selected menu', async () => {
     renderWithThemeAndRouter(<MenuList />, undefined, {
       initialEntries: ['/']
+    });
+    await act(async () => {
+      jest.runOnlyPendingTimers();
     });
     fireEvent.click(getAllBySelector('.ant-menu-item')?.[0]);
 
