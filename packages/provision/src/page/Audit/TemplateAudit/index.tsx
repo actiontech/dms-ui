@@ -45,7 +45,8 @@ const TemplateAudit: React.FC = () => {
     tableChange,
     pagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<
     IListDataPermissionTemplateEvent,
     TemplateAuditTableFilterParamType
@@ -139,7 +140,9 @@ const TemplateAudit: React.FC = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
-          onSearch: refresh
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
         }}
       />
       <TableFilterContainer

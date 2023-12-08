@@ -16,7 +16,7 @@ import {
 import BasicToolTips from '../../BasicToolTips';
 
 export type typeFixed = 'left' | 'right' | 'no-fixed';
-interface IColumnsItems<T> {
+export interface IColumnsItems<T> {
   type: typeFixed;
   data: CatchTableColumnValueType<T>[keyof T] & {
     dataIndex: string;

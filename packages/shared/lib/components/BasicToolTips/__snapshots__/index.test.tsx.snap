@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/BasicToolTips render custom class name 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open custom-tool-tip-name basic-tooltips-wrapper css-4jbtl9"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="custom-children-name"
+        >
+          tool tip
+        </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-19kgj31"
+          >
+            this is a tip
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/BasicToolTips render icon for tool 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <span
+          aria-label="info-circle"
+          class="anticon anticon-info-circle tooltips-default-icon"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="info-circle"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+            />
+            <path
+              d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="custom-children-name"
+        >
+          tool tip
+        </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-1fhqh23"
+            width="300"
+          >
+            this is a tip
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

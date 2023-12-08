@@ -27,8 +27,19 @@ const useTableRequestParams = <
     page_size: defaultPageSize
   });
 
+  /**
+   * @notice: filterInfo 期望 筛选数据的不同，重置 page_index 为 1, 还需要考虑
+   */
   const updateTableFilterInfo = (filterInfo: F) => {
-    if (!isEqual(filterInfo, tableFilterInfo)) {
+    const filterInfoData =
+      typeof filterInfo === 'function' ? filterInfo() : filterInfo;
+    if (
+      JSON.stringify(filterInfoData) === '{}' &&
+      JSON.stringify(tableFilterInfo) === '{}'
+    ) {
+      return;
+    }
+    if (!isEqual(filterInfoData, tableFilterInfo)) {
       setPagination((prevPage) => {
         return {
           page_index: defaultPageIndex,
@@ -46,6 +57,21 @@ const useTableRequestParams = <
   const [searchKeyword, setSearchKeyword] = useState<string>(
     defaultSearchKeyword ?? ''
   );
+
+  /**
+   * @description:
+   * 情景：用于TableToolbar 的 search-input的值发生改变时，将page_index 重置为 1
+   * 方法依赖数据：pagination, searchKeyword
+   * 注意: 数据请求的方法，需要 deps 依赖 pagination.因 search-input组件的值是实时更新到searchKeyword， 所以可以拿到最新的搜索 text
+   */
+  const refreshBySearchKeyword = () => {
+    setPagination((prevPage) => {
+      return {
+        page_index: defaultPageIndex,
+        page_size: prevPage.page_size
+      };
+    });
+  };
 
   /**
    * TODO:
@@ -114,7 +140,8 @@ const useTableRequestParams = <
     createSortParams,
     setPagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   };
 };
 

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/FormItemLabel should render ui 1`] = `
+<div>
+  <div
+    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-form-item-control-input"
+        >
+          <div
+            class="ant-form-item-control-input-content"
+          >
+            <span>
+              FormItemLabel children
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

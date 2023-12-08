@@ -35,7 +35,8 @@ const Operation = () => {
     tableChange,
     pagination,
     searchKeyword,
-    setSearchKeyword
+    setSearchKeyword,
+    refreshBySearchKeyword
   } = useTableRequestParams<
     IOperationData,
     OperationListTableFilterParamType
@@ -99,7 +100,9 @@ const Operation = () => {
           }}
           searchInput={{
             onChange: setSearchKeyword,
-            onSearch: refresh
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
           }}
         />
         <TableFilterContainer

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils/Copy should create element textarea for copy textarea text 1`] = `
+Object {
+  "select": [MockFunction] {
+    "calls": Array [
+      Array [],
+      Array [],
+    ],
+    "results": Array [
+      Object {
+        "type": "return",
+        "value": undefined,
+      },
+      Object {
+        "type": "return",
+        "value": undefined,
+      },
+    ],
+  },
+  "setAttribute": [Function],
+  "style": Object {
+    "left": "-9999px",
+    "opacity": "0",
+    "position": "fixed",
+    "top": "-9999px",
+  },
+  "value": "sql select *
+ from user_table
+ left join users.id",
+}
+`;

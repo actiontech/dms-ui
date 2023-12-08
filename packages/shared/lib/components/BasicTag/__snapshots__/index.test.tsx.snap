@@ -1,0 +1,497 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/BasicTag render diff color tag 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 2`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 3`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 4`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 5`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 6`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-default-tag-wrapper css-1q0cei1 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 7`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-default-tag-wrapper css-1q0cei1 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-blue basic-tag-wrapper basic-default-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 8`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-default-tag-wrapper css-1q0cei1 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-blue basic-tag-wrapper basic-default-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 9`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-default-tag-wrapper css-1q0cei1 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-blue basic-tag-wrapper basic-default-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-purple basic-tag-wrapper basic-default-tag-wrapper css-12bs0g2 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 10`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-default-tag-wrapper css-1q0cei1 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-blue basic-tag-wrapper basic-default-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-purple basic-tag-wrapper basic-default-tag-wrapper css-12bs0g2 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-has-color basic-tag-wrapper basic-default-tag-wrapper css-fez8qy css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 11`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-default-tag-wrapper css-1q0cei1 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-blue basic-tag-wrapper basic-default-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-purple basic-tag-wrapper basic-default-tag-wrapper css-12bs0g2 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-has-color basic-tag-wrapper basic-default-tag-wrapper css-fez8qy css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-has-color basic-tag-wrapper basic-default-tag-wrapper css-1uyocuu css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff color tag 12`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-default-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-orange basic-tag-wrapper basic-default-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-default-tag-wrapper css-1q0cei1 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-blue basic-tag-wrapper basic-default-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-default-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-purple basic-tag-wrapper basic-default-tag-wrapper css-12bs0g2 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-has-color basic-tag-wrapper basic-default-tag-wrapper css-fez8qy css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-has-color basic-tag-wrapper basic-default-tag-wrapper css-1uyocuu css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-has-color basic-tag-wrapper basic-default-tag-wrapper css-1u3lh6f css-dev-only-do-not-override-txh9fw"
+      style="background-color: gray;"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff size tag 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff size tag 2`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;
+
+exports[`lib/BasicTag render diff size tag 3`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+  <div>
+    <span
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+    />
+  </div>
+</body>
+`;

@@ -1,7 +1,7 @@
 import { FormItemProps } from 'antd';
 import { FormItemNoLabelStyleWrapper } from './style';
 
-interface IFormItemNoLabel extends FormItemProps {}
+export interface IFormItemNoLabel extends FormItemProps {}
 
 const FormItemNoLabel = (props: IFormItemNoLabel) => {
   const { children, ...params } = props;
