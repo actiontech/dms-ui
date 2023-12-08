@@ -66,19 +66,18 @@ const RoleList: React.FC = () => {
   );
 
   const onDeleteRole = useCallback(
-    (role: IListRole | undefined) => {
+    (role?: IListRole) => {
       dms
         .DelRole({
           role_uid: role?.uid || ''
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.open({
-              type: 'success',
-              content: t('dmsUserCenter.role.deleteRole.deleteSuccessTips', {
+            messageApi.success(
+              t('dmsUserCenter.role.deleteRole.deleteSuccessTips', {
                 name: role?.name
               })
-            });
+            );
             refresh();
           }
         });
@@ -96,7 +95,7 @@ const RoleList: React.FC = () => {
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.DMS_Refresh_Role_List,
+      EmitterKey.DMS_Refresh_User_Center_List,
       refresh
     );
 

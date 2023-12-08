@@ -1,42 +1,67 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { Select } from 'antd';
 
-const useOpPermission = (
-  filterBy: ListOpPermissionsFilterByTargetEnum = ListOpPermissionsFilterByTargetEnum.all
-) => {
+const useOpPermission = () => {
   const [opPermissionList, setOpPermissionList] = useState<IListOpPermission[]>(
     []
   );
   const [loading, { setTrue, setFalse }] = useBoolean();
 
-  const updateOpPermissionList = useCallback(() => {
-    setTrue();
-    dms
-      .ListOpPermissions({
-        page_size: 9999,
-        filter_by_target: filterBy
-      })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setOpPermissionList(res.data?.data ?? []);
-        } else {
+  const updateOpPermissionList = useCallback(
+    (
+      filterBy: ListOpPermissionsFilterByTargetEnum = ListOpPermissionsFilterByTargetEnum.all
+    ) => {
+      setTrue();
+      dms
+        .ListOpPermissions({
+          page_size: 9999,
+          filter_by_target: filterBy
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            setOpPermissionList(res.data?.data ?? []);
+          } else {
+            setOpPermissionList([]);
+          }
+        })
+        .catch(() => {
           setOpPermissionList([]);
-        }
-      })
-      .catch(() => {
-        setOpPermissionList([]);
-      })
-      .finally(() => {
-        setFalse();
-      });
-  }, [filterBy, setFalse, setTrue]);
+        })
+        .finally(() => {
+          setFalse();
+        });
+    },
+    [setFalse, setTrue]
+  );
+
+  const opPermissionOptions = useMemo(() => {
+    return opPermissionList.map((i) => {
+      return {
+        label: i.op_permission?.name,
+        value: i.op_permission?.uid
+      };
+    });
+  }, [opPermissionList]);
+
+  const generateOpPermissionSelectOptions = useCallback(() => {
+    return opPermissionList.map((i) => {
+      return (
+        <Select.Option key={i.op_permission?.uid} value={i.op_permission?.uid}>
+          {i.op_permission?.name}
+        </Select.Option>
+      );
+    });
+  }, [opPermissionList]);
 
   return {
     opPermissionList,
+    opPermissionOptions,
+    generateOpPermissionSelectOptions,
     loading,
     updateOpPermissionList
   };

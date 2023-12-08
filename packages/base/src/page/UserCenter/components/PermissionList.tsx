@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRequest } from 'ahooks';
 import {
   ActiontechTable,
@@ -39,13 +39,9 @@ const PermissionList: React.FC = () => {
     }
   );
 
-  const columns = useMemo(() => {
-    return PermissionListColumns;
-  }, []);
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.DMS_Refresh_User_Permission_list,
+      EmitterKey.DMS_Refresh_User_Center_List,
       refresh
     );
 
@@ -60,7 +56,7 @@ const PermissionList: React.FC = () => {
         total: permissionList?.total ?? 0
       }}
       loading={loading}
-      columns={columns}
+      columns={PermissionListColumns}
       errorMessage={requestErrorMessage}
       onChange={tableChange}
     />

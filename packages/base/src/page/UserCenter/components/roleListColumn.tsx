@@ -9,11 +9,11 @@ import {
 import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { orderBy } from 'lodash';
 import { t } from '../../../locale';
-import UserDesc from './UserDesc';
 import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
-import { UserStatusStyledWrapper } from '../style';
 import generateTag from '../Common/generateTag';
 import { Space } from 'antd';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export const RoleListColumns: ActiontechTableColumn<IListRole> = [
   {
@@ -23,28 +23,26 @@ export const RoleListColumns: ActiontechTableColumn<IListRole> = [
   {
     dataIndex: 'desc',
     title: () => t('dmsUserCenter.role.roleForm.desc'),
-    className: 'user-center-table-desc-column',
+    className: 'ellipsis-column-width',
     render: (desc: string) => {
-      return desc ? <UserDesc desc={desc} /> : '-';
-    },
-    width: 400
+      return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
+    }
   },
   {
     dataIndex: 'stat',
     title: () => t('common.status'),
     render: (stat: ListRoleStatEnum) => {
       return (
-        <UserStatusStyledWrapper>
+        <TableColumnWithIconStyleWrapper>
           {stat === ListRoleStatEnum.被禁用 ? (
             <IconMemberNotAdmin />
           ) : (
             <IconMemberIsAdmin />
           )}
-          {stat}
-        </UserStatusStyledWrapper>
+          <span>{stat}</span>
+        </TableColumnWithIconStyleWrapper>
       );
-    },
-    width: 120
+    }
   },
   {
     dataIndex: 'op_permissions',
@@ -56,7 +54,7 @@ export const RoleListColumns: ActiontechTableColumn<IListRole> = [
       orderBy(list, ['name'], ['asc']);
       return <Space wrap>{generateTag(list)}</Space>;
     },
-    width: 400
+    width: 500
   }
 ];
 
