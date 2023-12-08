@@ -8,8 +8,8 @@ import {
   IconBookMark,
   IconCustomService
 } from '../Icons/EnterpriseFeatureDisplay';
-import EmptyBox from '../EmptyBox';
 import { DMS_DEFAULT_WEB_TITLE } from '../../data/common';
+import EmptyBox from '../EmptyBox';
 
 const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
   children,
@@ -18,6 +18,8 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
   isConfigPage = false
 }) => {
   const { t } = useTranslation();
+
+  // #if [ce]
   const renderFeatureDescNode = () => (
     <div className="left">
       <EmptyBox if={!isConfigPage}>
@@ -92,6 +94,7 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
       {renderBookMarkCard()}
     </div>
   );
+  // #endif
 
   return (
     <>

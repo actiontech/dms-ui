@@ -16,8 +16,5 @@
     "@actiontech/shared": "workspace:^",
     "babel-preset-react-app": "^10.0.1",
     "sqle": "workspace:^"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3"
   }
 }
