@@ -147,10 +147,12 @@ class MockAuthApi implements MockSpyApy {
   public listDataBases() {
     const spy = jest.spyOn(auth, 'AuthListDatabase');
     spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: databaseList.length,
-        databases: databaseList
-      })
+      createSpySuccessResponse(
+        ...{
+          total: databaseList.length,
+          databases: databaseList
+        }
+      )
     );
     return spy;
   }
