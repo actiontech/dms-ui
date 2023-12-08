@@ -12,7 +12,7 @@ export const UserListColumns: ActiontechTableColumn<IViewUserReply> = [
   },
   {
     dataIndex: 'role_id',
-    title: () => t('userManagement.user.roleName')
+    title: () => t('userManagement.roleName')
   }
 ];
 

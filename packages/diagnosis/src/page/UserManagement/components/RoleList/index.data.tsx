@@ -8,11 +8,11 @@ import { IViewRoleReply } from '../../../../api/common';
 export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
   {
     dataIndex: 'role_name',
-    title: () => t('userManagement.user.roleName')
+    title: () => t('userManagement.roleName')
   },
   {
     dataIndex: 'role_desc',
-    title: () => t('userManagement.role.roleDesc')
+    title: () => t('userManagement.desc')
   },
   {
     // todo: change after api update

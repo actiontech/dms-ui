@@ -4,6 +4,7 @@ import { ModalName } from '../../data/ModalName';
 import { t } from '../../locale';
 import UserList from './components/UserList';
 import RoleList from './components/RoleList';
+import PermissionList from './components/PermissionList';
 
 export enum UserManagementTypeEnum {
   'user_list' = 'user_list',
@@ -36,6 +37,6 @@ export const UserManagementDataSource: Record<
     refresh: EmitterKey.Refresh_Permission_List,
     modalName: '',
     extraText: '',
-    tableRender: () => <></>
+    tableRender: () => <PermissionList />
   }
 };
