@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Navigate, RouteObject } from 'react-router-dom';
 import { SolutionOutlined } from '@ant-design/icons';
+import { IconUserCenter } from '../icon';
 
 const Login = React.lazy(() => import('../page/Login'));
 const MonitorSourceConfig = React.lazy(
@@ -9,6 +10,7 @@ const MonitorSourceConfig = React.lazy(
 const MonitorItemConfig = React.lazy(
   () => import('../page/MonitorSourceConfig/components/MonitorItemConfig')
 );
+const UserManagement = React.lazy(() => import('../page/UserManagement'));
 
 export type RouterConfigItem = {
   path?: string;
@@ -41,6 +43,13 @@ export const diagnosisAuthRouterConfig: RouterConfigItem[] = [
     key: 'monitorItemList',
     element: <MonitorItemConfig />,
     hideInMenu: true
+  },
+  {
+    path: '/userManagement',
+    label: 'menu.userManagement',
+    key: 'userManagement',
+    icon: <IconUserCenter />,
+    element: <UserManagement />
   },
   {
     path: '*',
