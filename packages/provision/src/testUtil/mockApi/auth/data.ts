@@ -1,3 +1,4 @@
+import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import {
   IDataObjectSource,
   IDataOperationSet,
@@ -25,86 +26,86 @@ import {
   OperationInfoDbTypeEnum
 } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
-export const userList: IListInternalUser[] = [
+export const userList: IListUser[] = [
   {
     name: 'Dewey Connelly',
-    user_uid: '85315'
+    uid: '85315'
   },
   {
     name: 'Edwin Schneider III',
-    user_uid: '48548'
+    uid: '48548'
   },
   {
     name: 'Javier Beier IV',
-    user_uid: '28060'
+    uid: '28060'
   },
   {
     name: 'Glenda Goyette',
-    user_uid: '56796'
+    uid: '56796'
   },
   {
     name: 'Valerie Gerhold',
-    user_uid: '4066'
+    uid: '4066'
   },
   {
     name: 'Mona Reinger',
-    user_uid: '64872'
+    uid: '64872'
   },
   {
     name: 'Kari Bode',
-    user_uid: '67483'
+    uid: '67483'
   },
   {
     name: 'Bryan Emard',
-    user_uid: '39891'
+    uid: '39891'
   },
   {
     name: 'Clinton Gleason III',
-    user_uid: '42706'
+    uid: '42706'
   },
   {
     name: 'Thelma Keeling',
-    user_uid: '80115'
+    uid: '80115'
   },
   {
     name: 'Duane Hyatt',
-    user_uid: '34369'
+    uid: '34369'
   },
   {
     name: 'Mr. Nancy Yundt',
-    user_uid: '63949'
+    uid: '63949'
   },
   {
     name: 'Kristi Dickinson',
-    user_uid: '47815'
+    uid: '47815'
   },
   {
     name: 'Cecelia Grimes',
-    user_uid: '36601'
+    uid: '36601'
   },
   {
     name: 'Dr. Miriam Brekke',
-    user_uid: '19951'
+    uid: '19951'
   },
   {
     name: 'Karen Herzog',
-    user_uid: '97690'
+    uid: '97690'
   },
   {
     name: 'Mr. Taylor Rempel',
-    user_uid: '27809'
+    uid: '27809'
   },
   {
     name: 'Kristina Hessel',
-    user_uid: '56330'
+    uid: '56330'
   },
   {
     name: 'Delores Rowe IV',
-    user_uid: '15376'
+    uid: '15376'
   },
   {
     name: 'Tammy Prosacco',
-    user_uid: '61209'
+    uid: '61209'
   }
 ];
 

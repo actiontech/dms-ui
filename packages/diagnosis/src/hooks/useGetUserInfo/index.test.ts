@@ -54,12 +54,10 @@ describe('diagnosis/useGetUserInfo', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.userInfo?.data).toStrictEqual({
       code: 0,
-      msg: 'ok',
-      data: {
-        role_id: 10000,
-        user_id: 1,
-        username: 'admin'
-      }
+      message: 'ok',
+      role_id: 10000,
+      user_id: 1,
+      username: 'admin'
     });
     expect(mockDispatch).toBeCalledTimes(1);
     expect(mockDispatch).toBeCalledWith({

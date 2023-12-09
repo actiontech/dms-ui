@@ -10,7 +10,10 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import auth from '../../../../../../testUtil/mockApi/auth';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { getBySelector } from '~/testUtil/customQuery';
-import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '~/utils/EventEmitter';
 
 jest.mock('~/utils/Password', () => {
@@ -50,6 +53,15 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
     mockUseCurrentProject();
     jest.useFakeTimers();
     auth.mockAllApi();
+    const requestUserList = auth.listUsers();
+    requestUserList.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: userList.map((item) => ({
+          name: item.name,
+          user_uid: item.uid
+        }))
+      })
+    );
   });
 
   afterEach(() => {
