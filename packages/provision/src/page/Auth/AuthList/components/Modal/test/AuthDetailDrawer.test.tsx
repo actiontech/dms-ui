@@ -9,10 +9,7 @@ import auth from '../../../../../../testUtil/mockApi/auth';
 import { authorizationList } from '~/testUtil/mockApi/auth/data';
 import { getBySelector } from '~/testUtil/customQuery';
 
-jest.mock;
-
 describe('page/Auth/AuthList/AuthDetailDrawer', () => {
-  const modalStatusChangeSpy = jest.fn();
   const selectData = authorizationList[0];
 
   const customRender = (defaultVisible = true) => {
