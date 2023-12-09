@@ -13,10 +13,12 @@ class MockLoginApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'V1Login');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        code: 0,
-        message: 'ok',
-        token: 'login',
-        user_id: 1
+        data: {
+          code: 0,
+          message: 'ok',
+          token: 'login',
+          user_id: 1
+        }
       })
     );
     return spy;
