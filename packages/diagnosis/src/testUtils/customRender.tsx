@@ -1,15 +1,8 @@
-import { render, renderHook } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import {
-  BrowserRouter,
-  Router,
-  RouterProps,
-  MemoryRouter,
-  MemoryRouterProps
-} from 'react-router-dom';
-import { Dictionary, IStore } from '@actiontech/shared/lib/types/common.type';
+import { MemoryRouter, MemoryRouterProps } from 'react-router-dom';
+import { Dictionary } from '@actiontech/shared/lib/types/common.type';
 import { storeFactory } from './mockRedux';
-import userEvent from '@testing-library/user-event';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import { mount } from 'enzyme';
 import { ConfigProvider } from 'antd';
