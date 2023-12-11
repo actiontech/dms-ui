@@ -147,7 +147,7 @@ exports[`useRuleTemplate should render static option for audit status 2`] = `
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="audit.auditStatus.initialized"
+            aria-label="准备审核"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_0"
             role="option"
@@ -155,7 +155,7 @@ exports[`useRuleTemplate should render static option for audit status 2`] = `
             initialized
           </div>
           <div
-            aria-label="audit.auditStatus.doing"
+            aria-label="正在审核"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -179,12 +179,12 @@ exports[`useRuleTemplate should render static option for audit status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                  title="audit.auditStatus.initialized"
+                  title="准备审核"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.auditStatus.initialized
+                    准备审核
                   </div>
                   <span
                     aria-hidden="true"
@@ -196,12 +196,12 @@ exports[`useRuleTemplate should render static option for audit status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.auditStatus.doing"
+                  title="正在审核"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.auditStatus.doing
+                    正在审核
                   </div>
                   <span
                     aria-hidden="true"
@@ -213,12 +213,12 @@ exports[`useRuleTemplate should render static option for audit status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.auditStatus.finished"
+                  title="审核完毕"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.auditStatus.finished
+                    审核完毕
                   </div>
                   <span
                     aria-hidden="true"
@@ -393,7 +393,7 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="audit.execStatus.initialized"
+            aria-label="准备执行"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_0"
             role="option"
@@ -401,7 +401,7 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
             initialized
           </div>
           <div
-            aria-label="audit.execStatus.doing"
+            aria-label="正在执行"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -425,12 +425,12 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                  title="audit.execStatus.initialized"
+                  title="准备执行"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.execStatus.initialized
+                    准备执行
                   </div>
                   <span
                     aria-hidden="true"
@@ -442,12 +442,12 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.execStatus.doing"
+                  title="正在执行"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.execStatus.doing
+                    正在执行
                   </div>
                   <span
                     aria-hidden="true"
@@ -459,12 +459,12 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.execStatus.succeeded"
+                  title="执行成功"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.execStatus.succeeded
+                    执行成功
                   </div>
                   <span
                     aria-hidden="true"
@@ -476,12 +476,12 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.execStatus.failed"
+                  title="执行失败"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.execStatus.failed
+                    执行失败
                   </div>
                   <span
                     aria-hidden="true"
@@ -493,12 +493,12 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.execStatus.manually_executed"
+                  title="人工执行"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.execStatus.manually_executed
+                    人工执行
                   </div>
                   <span
                     aria-hidden="true"
@@ -510,12 +510,12 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.execStatus.terminating"
+                  title="正在中止"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.execStatus.terminating
+                    正在中止
                   </div>
                   <span
                     aria-hidden="true"
@@ -527,12 +527,12 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.execStatus.terminate_succ"
+                  title="中止成功"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.execStatus.terminate_succ
+                    中止成功
                   </div>
                   <span
                     aria-hidden="true"
@@ -544,12 +544,12 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="audit.execStatus.terminate_fail"
+                  title="中止失败"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    audit.execStatus.terminate_fail
+                    中止失败
                   </div>
                   <span
                     aria-hidden="true"
@@ -724,7 +724,7 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="order.status.wait_for_audit"
+            aria-label="待审核"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_0"
             role="option"
@@ -732,7 +732,7 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
             wait_for_audit
           </div>
           <div
-            aria-label="order.status.wait_for_execution"
+            aria-label="待上线"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -756,12 +756,12 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                  title="order.status.wait_for_audit"
+                  title="待审核"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    order.status.wait_for_audit
+                    待审核
                   </div>
                   <span
                     aria-hidden="true"
@@ -773,12 +773,12 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="order.status.wait_for_execution"
+                  title="待上线"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    order.status.wait_for_execution
+                    待上线
                   </div>
                   <span
                     aria-hidden="true"
@@ -790,12 +790,12 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="order.status.executing"
+                  title="正在上线"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    order.status.executing
+                    正在上线
                   </div>
                   <span
                     aria-hidden="true"
@@ -807,12 +807,12 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="order.status.finished"
+                  title="上线成功"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    order.status.finished
+                    上线成功
                   </div>
                   <span
                     aria-hidden="true"
@@ -824,12 +824,12 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="order.status.reject"
+                  title="已驳回"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    order.status.reject
+                    已驳回
                   </div>
                   <span
                     aria-hidden="true"
@@ -841,12 +841,12 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="order.status.exec_failed"
+                  title="上线失败"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    order.status.exec_failed
+                    上线失败
                   </div>
                   <span
                     aria-hidden="true"
@@ -858,12 +858,12 @@ exports[`useRuleTemplate should render static option for order status 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="order.status.canceled"
+                  title="已关闭"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    order.status.canceled
+                    已关闭
                   </div>
                   <span
                     aria-hidden="true"

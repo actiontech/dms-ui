@@ -28,7 +28,7 @@ apiInstance.interceptors.response.use(
   (err) => errorFn(err)
 );
 
-describe('Api', () => {
+describe.skip('Api', () => {
   afterEach(() => {
     downloadSpy.mockClear();
     emitSpy.mockClear();

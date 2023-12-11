@@ -33,7 +33,7 @@ describe('useRuleTemplate', () => {
       jest.runAllTimers();
     });
 
-    await screen.findAllByText('audit.auditStatus.initialized');
+    await screen.findAllByText('准备审核');
     expect(baseElementWithOptions).toMatchSnapshot();
   });
 
@@ -52,7 +52,7 @@ describe('useRuleTemplate', () => {
       jest.runAllTimers();
     });
 
-    await screen.findAllByText('audit.execStatus.initialized');
+    await screen.findAllByText('准备执行');
     expect(baseElementWithOptions).toMatchSnapshot();
   });
 
@@ -71,7 +71,7 @@ describe('useRuleTemplate', () => {
       jest.runAllTimers();
     });
 
-    await screen.findAllByText('order.status.wait_for_audit');
+    await screen.findAllByText('待审核');
     expect(baseElementWithOptions).toMatchSnapshot();
   });
 });
