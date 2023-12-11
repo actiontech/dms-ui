@@ -82,11 +82,9 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
     const spy = jest.spyOn(server, 'V1GetServerHostname');
     spy.mockImplementation(() =>
       createSpySuccessResponseWithoutDataParams({
-        data: {
-          code: 0,
-          hostname: 'host1',
-          message: 'ok'
-        }
+        code: 0,
+        hostname: 'host1',
+        message: 'ok'
       })
     );
     return spy;

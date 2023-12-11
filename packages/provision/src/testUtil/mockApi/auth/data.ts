@@ -1,4 +1,3 @@
-import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import {
   IDataObjectSource,
   IDataOperationSet,
@@ -11,7 +10,7 @@ import {
   IListDataObjectServiceEvent,
   IListDataPermissionTemplate,
   IListDataPermissionTemplateEvent,
-  IListInternalUser,
+  IListUser,
   IListService,
   IOperation,
   IStatement,
@@ -27,6 +26,7 @@ import {
   OperationInfoDbTypeEnum
 } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
+// ?? IListUser IListInternalUser
 export const userList: IListInternalUser[] = [
   {
     name: 'Dewey Connelly',
