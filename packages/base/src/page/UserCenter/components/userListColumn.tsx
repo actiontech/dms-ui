@@ -11,7 +11,7 @@ import { orderBy } from 'lodash';
 import { t } from '../../../locale';
 import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { UserNameEnum } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 export const UserListColumns: ActiontechTableColumn<IListUser> = [
   {
@@ -99,7 +99,7 @@ export const UserListActions = (
         };
       },
       permissions: (record) => {
-        return record?.name !== UserNameEnum.admin;
+        return record?.name !== SystemRole.admin;
       }
     }
   ];

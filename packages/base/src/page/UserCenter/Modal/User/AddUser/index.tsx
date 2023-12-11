@@ -57,7 +57,7 @@ const AddUser = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           onClose();
-          messageApi.open(
+          messageApi.success(
             t('dmsUserCenter.user.createUser.createSuccessTips', {
               name: values.username
             })
