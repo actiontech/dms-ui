@@ -83,10 +83,16 @@ export const setClassNameForColumns = <
 ) => {
   return columns.map((column, i) => {
     if (i === 0) {
-      return { ...column, className: 'first-col' };
+      return {
+        ...column,
+        className: `${column.className ?? ''} first-col`.trim()
+      };
     }
     if (i === columns.length - 1) {
-      return { ...column, className: 'last-col' };
+      return {
+        ...column,
+        className: `${column.className ?? ''} last-col`.trim()
+      };
     }
     return column;
   });
