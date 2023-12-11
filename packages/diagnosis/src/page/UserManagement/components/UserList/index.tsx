@@ -16,6 +16,7 @@ import useUserManagementRedux from '../../hooks/useUserManagementRedux';
 import auth from '../../../../api/auth';
 import { IV1ListUsersParams } from '../../../../api/auth/index.d';
 import { IViewUserReply } from '../../../../api/common';
+import UserModal from './components/Modal';
 
 const UserList: React.FC = () => {
   const { t } = useTranslation();
@@ -111,6 +112,7 @@ const UserList: React.FC = () => {
         onChange={tableChange}
         actions={actions}
       />
+      <UserModal />
     </>
   );
 };
