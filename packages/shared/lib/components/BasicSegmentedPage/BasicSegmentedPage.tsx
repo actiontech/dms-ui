@@ -7,12 +7,12 @@ const BasicSegmentedPage: React.FC<BasicSegmentedPageProps> = ({
   ...otherProps
 }) => {
   return (
-    <div>
+    <>
       <TableToolbar>
         <BasicSegmented {...otherProps} />
       </TableToolbar>
       {renderContent()}
-    </div>
+    </>
   );
 };
 

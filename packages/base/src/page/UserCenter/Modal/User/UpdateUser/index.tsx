@@ -18,7 +18,7 @@ import {
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
-import { UserNameEnum } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
@@ -126,7 +126,7 @@ const UpdateUser = () => {
         form={form}
         visible={visible}
         isUpdate={true}
-        isAdmin={currentUser?.name === UserNameEnum.admin}
+        isAdmin={currentUser?.name === SystemRole.admin}
       />
     </BasicDrawer>
   );

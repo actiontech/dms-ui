@@ -64,7 +64,3 @@ export enum CompanyNoticeDisplayStatusEnum {
   Displayed = '1',
   NotDisplayed = '0'
 }
-
-export enum UserNameEnum {
-  admin = 'admin'
-}
