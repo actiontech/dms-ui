@@ -66,10 +66,9 @@ const UserList: React.FC = () => {
         .V1DeleteUser({ user_id: record?.user_id ?? '' })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.open({
-              type: 'success',
+            messageApi.success({
               content: t('userManagement.user.deleteUser.deleteSuccess', {
-                username: record?.username ?? ''
+                name: record?.username ?? ''
               })
             });
             refresh();
@@ -83,10 +82,6 @@ const UserList: React.FC = () => {
   const actions = useMemo(() => {
     return UserListActions(onEditUser, onDeleteUser);
   }, [onEditUser, onDeleteUser]);
-
-  const columns = useMemo(() => {
-    return UserListColumns;
-  }, []);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -107,7 +102,7 @@ const UserList: React.FC = () => {
           total: userList?.total ?? 0
         }}
         loading={loading}
-        columns={columns}
+        columns={UserListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}
