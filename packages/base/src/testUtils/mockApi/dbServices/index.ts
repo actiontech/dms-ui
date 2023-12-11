@@ -19,7 +19,11 @@ class MockDbServicesApi implements MockSpyApy {
 
   public ListDBServices() {
     const spy = jest.spyOn(dms, 'ListDBServices');
-    spy.mockImplementation(() => createSpySuccessResponse(dbServices));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: dbServices
+      })
+    );
     return spy;
   }
 
