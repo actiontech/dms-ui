@@ -2,10 +2,9 @@ import { MenuProps, Menu } from 'antd';
 import { SubMenuType } from 'antd/lib/menu/hooks/useItems';
 import { useMemo, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { MenuListProps } from './index.type';
 import { sideMenuData } from '../menus/menu.data';
 
-const MenuList: React.FC<MenuListProps> = () => {
+const MenuList = () => {
   const navigate = useNavigate();
   const location = useLocation();
 

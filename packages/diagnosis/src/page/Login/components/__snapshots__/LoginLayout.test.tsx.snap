@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagnosis/LoginLayout render login layout with props 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1zkush"
+    >
+      <div
+        class="css-9y19rd"
+      >
+        <div
+          class="banner"
+        >
+          <img
+            alt="left_bg"
+            class="login-background-img"
+            src="login-left-bg.png"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1pqzecc"
+      >
+        <div
+          class="login-page-right-content"
+        >
+          <div
+            class="content-header"
+          >
+            <div
+              class="logo"
+            >
+              <img
+                alt="logo_img"
+                src="/logo.png"
+              />
+            </div>
+            <div
+              class="title"
+            >
+              <span
+                class="label label-primary"
+              >
+                Action
+              </span>
+              <span
+                class="label label-base"
+              >
+                Diagnosis
+              </span>
+            </div>
+          </div>
+          登录
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`diagnosis/LoginLayout render login layout without props 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1zkush"
+    >
+      <div
+        class="css-9y19rd"
+      >
+        <div
+          class="banner"
+        >
+          <img
+            alt="left_bg"
+            class="login-background-img"
+            src="login-left-bg.png"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1pqzecc"
+      >
+        <div
+          class="login-page-right-content"
+        >
+          <div
+            class="content-header"
+          >
+            <div
+              class="logo"
+            >
+              <img
+                alt="logo_img"
+                src="/logo.png"
+              />
+            </div>
+            <div
+              class="title"
+            >
+              <span
+                class="label label-primary"
+              >
+                Action
+              </span>
+              <span
+                class="label label-base"
+              >
+                Diagnosis
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
