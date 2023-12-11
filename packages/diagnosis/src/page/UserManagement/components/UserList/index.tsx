@@ -55,17 +55,26 @@ const UserList: React.FC = () => {
 
   const onDeleteUser = useCallback(
     (record: IViewUserReply | undefined) => {
-      auth.V1DeleteUser({ user_id: record?.user_id ?? '' }).then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.open({
-            type: 'success',
-            content: t('userManagement.deleteUser.deleteSuccess', {
-              username: record?.username ?? ''
-            })
-          });
-          refresh();
-        }
-      });
+      const hideLoading = messageApi.loading(
+        t('userManagement.user.deleteUser.deleting', {
+          name: record?.username
+        }),
+        0
+      );
+      auth
+        .V1DeleteUser({ user_id: record?.user_id ?? '' })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.open({
+              type: 'success',
+              content: t('userManagement.user.deleteUser.deleteSuccess', {
+                username: record?.username ?? ''
+              })
+            });
+            refresh();
+          }
+        })
+        .finally(() => hideLoading());
     },
     [refresh, t, messageApi]
   );

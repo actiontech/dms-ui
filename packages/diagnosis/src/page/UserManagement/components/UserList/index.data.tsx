@@ -12,7 +12,7 @@ export const UserListColumns: ActiontechTableColumn<IViewUserReply> = [
   },
   {
     dataIndex: 'role_id',
-    title: () => t('userManagement.user.roleName')
+    title: () => t('userManagement.roleName')
   }
 ];
 
@@ -40,8 +40,8 @@ export const UserListActions = (
       key: 'removeUser',
       confirm: (record) => {
         return {
-          title: t('userManagement.deleteUser.confirmTitle', {
-            username: record?.username ?? ''
+          title: t('userManagement.user.deleteUser.confirmTitle', {
+            name: record?.username ?? ''
           }),
           onConfirm: () => {
             onDeleteUser(record);
