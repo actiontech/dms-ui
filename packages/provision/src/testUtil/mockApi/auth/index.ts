@@ -19,7 +19,8 @@ import {
   templateAuditList,
   serviceAuditList,
   userList,
-  accountListByService
+  accountListByService,
+  tipsList
 } from './data';
 import { AxiosResponse } from 'axios';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
@@ -74,12 +75,7 @@ class MockAuthApi implements MockSpyApy {
 
   public listServices() {
     const spy = jest.spyOn(auth, 'AuthListService');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total: instanceList.length,
-        services: instanceList
-      })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse(instanceList));
     return spy;
   }
 
@@ -354,17 +350,13 @@ class MockAuthApi implements MockSpyApy {
 
   public listTipsByAuthorizationKeyReq() {
     const spy = jest.spyOn(auth, 'ListTipsByAuthorizationKey');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({ tips: ['tips1', 'tips2'] })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse({ tips: tipsList }));
     return spy;
   }
 
   public listBusinesses() {
     const spy = jest.spyOn(auth, 'AuthListBusiness');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({ total: businesses.length, businesses })
-    );
+    spy.mockImplementation(() => createSpySuccessResponse({ businesses }));
     return spy;
   }
 }
