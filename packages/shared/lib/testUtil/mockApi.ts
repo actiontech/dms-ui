@@ -33,7 +33,7 @@ export const createSuccessResponse = (ctx: RestContext, data?: any) => {
     ctx.status(200),
     ctx.json({
       code: 0,
-      msg: 'ok',
+      message: 'ok',
       payload: data
     })
   ];
@@ -73,7 +73,7 @@ export const createSpyFailResponse = (
         statusText,
         data: {
           code: 100,
-          msg: 'error',
+          message: 'error',
           payload: data
         }
       });
@@ -94,7 +94,7 @@ export const createSpyErrorResponse = (
         statusText,
         data: {
           code: 100,
-          msg: 'error',
+          message: 'error',
           payload: data
         }
       });
