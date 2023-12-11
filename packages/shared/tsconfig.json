@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["lib", "./jest-setup.ts", "../sqle/src/service"],
+  "include": ["./lib"],
   "compilerOptions": {
     "paths": {
       "~/*": ["./src/*"]
