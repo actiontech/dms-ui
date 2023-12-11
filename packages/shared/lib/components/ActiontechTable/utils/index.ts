@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActiontechTableColumn } from '../index.type';
+import classNames from 'classnames';
 
 export const extractTextFromReactNode = (node: React.ReactNode): string => {
   if (typeof node === 'string') {
@@ -85,13 +86,13 @@ export const setClassNameForColumns = <
     if (i === 0) {
       return {
         ...column,
-        className: `${column.className ?? ''} first-col`.trim()
+        className: classNames(column.className, 'first-col')
       };
     }
     if (i === columns.length - 1) {
       return {
         ...column,
-        className: `${column.className ?? ''} last-col`.trim()
+        className: classNames(column.className, 'last-col')
       };
     }
     return column;
