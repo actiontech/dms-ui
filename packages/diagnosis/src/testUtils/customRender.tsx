@@ -20,32 +20,6 @@ import sharedTheme from '@actiontech/shared/lib/theme/light';
 
 type MountParams = Parameters<typeof mount>;
 type RenderParams = Parameters<typeof render>;
-type UserEventOptions = Required<Parameters<typeof userEvent.setup>>[0];
-
-export const renderWithRouter = (...[ui, option]: [...RenderParams]) => {
-  return render(<BrowserRouter>{ui}</BrowserRouter>, option);
-};
-
-export const renderWithServerRouter = (
-  ...[ui, option, props]: [...RenderParams, RouterProps]
-) => {
-  return render(<Router {...props}>{ui}</Router>, option);
-};
-
-export const renderWithMemoryRouter = (
-  ...[ui, option, props]: [...RenderParams, MemoryRouterProps?]
-) => {
-  return render(<MemoryRouter {...props}>{ui}</MemoryRouter>, option);
-};
-
-export const renderWithRedux = (
-  ...[ui, option, initStore]: [...RenderParams, Dictionary?]
-) => {
-  return render(
-    <Provider store={storeFactory(initStore)}>{ui}</Provider>,
-    option
-  );
-};
 
 export const renderWithReduxAndTheme = (
   ...[ui, option, initStore]: [...RenderParams, Dictionary?]
@@ -57,30 +31,6 @@ export const renderWithReduxAndTheme = (
       </ThemeProvider>
     ),
     ...Option
-  });
-};
-
-export const renderHooksWithRedux = <TProps, TResult>(
-  hooks: (props: TProps) => TResult,
-  storeState: IStore
-) => {
-  return renderHook(hooks, {
-    wrapper: ({ children }) => (
-      <Provider store={storeFactory(storeState)}>{children}</Provider>
-    )
-  });
-};
-
-export const renderHooksWithReduxAndRouter = <TProps, TResult>(
-  hooks: (props: TProps) => TResult,
-  storeState: IStore
-) => {
-  return renderHook(hooks, {
-    wrapper: ({ children }) => (
-      <Provider store={storeFactory(storeState)}>
-        <BrowserRouter>{children}</BrowserRouter>
-      </Provider>
-    )
   });
 };
 
@@ -113,16 +63,10 @@ export const superRender = (
     ...RenderParams,
     {
       routerProps?: MemoryRouterProps;
-      userEventProps?: UserEventOptions;
       initStore?: any;
     }?
   ]
 ) => {
-  const userEventReturn = userEvent.setup({
-    advanceTimers: jest.advanceTimersByTime,
-    ...otherProps?.userEventProps
-  });
-
   const renderReturn = render(ui, {
     wrapper: ({ children }) => {
       return (
@@ -139,10 +83,7 @@ export const superRender = (
     },
     ...option
   });
-  return {
-    ...renderReturn,
-    userEvent: userEventReturn
-  };
+  return renderReturn;
 };
 
 export const mountWithTheme = (...[ui, option]: [...MountParams]) => {

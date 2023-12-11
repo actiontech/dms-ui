@@ -53,15 +53,6 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
     mockUseCurrentProject();
     jest.useFakeTimers();
     auth.mockAllApi();
-    const requestUserList = auth.listUsers();
-    requestUserList.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: userList.map((item) => ({
-          name: item.name,
-          user_uid: item.uid
-        }))
-      })
-    );
   });
 
   afterEach(() => {

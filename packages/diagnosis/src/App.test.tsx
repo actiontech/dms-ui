@@ -3,7 +3,7 @@ import { act } from '@testing-library/react';
 import App from './App';
 import user from './testUtils/mockApi/user';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
-import { superRender } from './testUtils/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { userScopeData } from './testUtils/mockApi/user/data';
 import monitorSourceConfig from './testUtils/mockApi/monitorSourceConfig';
 

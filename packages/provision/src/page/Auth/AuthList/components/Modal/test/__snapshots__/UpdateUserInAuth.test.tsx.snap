@@ -1841,9 +1841,10 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                                 />
                               </span>
                               <span
-                                class="ant-select-selection-placeholder"
+                                class="ant-select-selection-item"
+                                title="Kari Bode"
                               >
-                                请选择{{name}}
+                                Kari Bode
                               </span>
                             </div>
                             <span

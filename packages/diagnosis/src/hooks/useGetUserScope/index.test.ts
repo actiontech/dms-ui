@@ -1,4 +1,4 @@
-import { renderHooksWithReduxAndRouter } from '../../testUtils/customRender';
+import { renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
 import { act } from '@testing-library/react';
 import useGetUserScope from '.';
 import { useDispatch } from 'react-redux';
