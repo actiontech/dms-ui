@@ -51,6 +51,7 @@ const UserList: React.FC = () => {
   const onEditUser = useCallback((record?: IViewUserReply) => {
     setSelectUserData(record ?? null);
     setModalStatus(ModalName.Update_User, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onDeleteUser = useCallback(
