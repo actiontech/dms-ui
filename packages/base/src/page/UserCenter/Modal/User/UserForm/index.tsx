@@ -1,5 +1,5 @@
 import { IUserFormProps } from './index.type';
-import { Form, Select, Switch } from 'antd';
+import { Form, Switch } from 'antd';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -15,9 +15,9 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
 
   const {
     loading: getOpPermissionListLoading,
-    opPermissionList,
+    opPermissionOptions,
     updateOpPermissionList
-  } = useOpPermission(ListOpPermissionsFilterByTargetEnum.user);
+  } = useOpPermission();
 
   const userNameRules = (): Rule[] => {
     const baseRules = [
@@ -36,7 +36,7 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
 
   useEffect(() => {
     if (props.visible) {
-      updateOpPermissionList();
+      updateOpPermissionList(ListOpPermissionsFilterByTargetEnum.user);
     }
   }, [updateOpPermissionList, props.visible]);
 
@@ -173,16 +173,9 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.user.userForm.opPermissions')
           })}
-        >
-          {opPermissionList.map((v) => (
-            <Select.Option
-              key={v?.op_permission?.uid}
-              value={v?.op_permission?.uid ?? ''}
-            >
-              {v?.op_permission?.name}
-            </Select.Option>
-          ))}
-        </BasicSelect>
+          options={opPermissionOptions}
+          optionFilterProp="label"
+        />
       </Form.Item>
       <EmptyBox if={props.isUpdate && !props.isAdmin}>
         <Form.Item
