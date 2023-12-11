@@ -18,6 +18,7 @@ import {
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 const UpdateUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
@@ -38,7 +39,7 @@ const UpdateUser = () => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const close = useCallback(() => {
+  const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
       updateUserManageModalStatus({
@@ -69,14 +70,13 @@ const UpdateUser = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          close();
-          messageApi.open({
-            type: 'success',
-            content: t('dmsUserCenter.user.updateUser.updateSuccessTips', {
+          onClose();
+          messageApi.success(
+            t('dmsUserCenter.user.updateUser.updateSuccessTips', {
               name: values.username
             })
-          });
-          EventEmitter.emit(EmitterKey.DMS_Refresh_User_List);
+          );
+          EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
         }
       })
       .finally(() => {
@@ -105,10 +105,10 @@ const UpdateUser = () => {
       title={t('dmsUserCenter.user.updateUser.title')}
       open={visible}
       placement="right"
-      onClose={close}
+      onClose={onClose}
       footer={
         <Space>
-          <BasicButton onClick={close} disabled={updateLoading}>
+          <BasicButton onClick={onClose} disabled={updateLoading}>
             {t('common.close')}
           </BasicButton>
           <BasicButton
@@ -126,7 +126,7 @@ const UpdateUser = () => {
         form={form}
         visible={visible}
         isUpdate={true}
-        isAdmin={currentUser?.name === 'admin'}
+        isAdmin={currentUser?.name === SystemRole.admin}
       />
     </BasicDrawer>
   );
