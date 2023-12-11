@@ -34,7 +34,7 @@ export const createSuccessResponse = (ctx: RestContext, data?: any) => {
     ctx.json({
       code: 0,
       message: 'ok',
-      payload: data
+      ...data
     })
   ];
 };
@@ -44,7 +44,6 @@ export const createSpySuccessResponse = (
   { status = 200, headers = {}, config = {}, statusText = '' } = {}
 ) => {
   return new Promise<AxiosResponse<any>>((res) => {
-    // console.log('data', data);
     setTimeout(() => {
       res({
         status,
@@ -75,7 +74,7 @@ export const createSpyFailResponse = (
         data: {
           code: 100,
           message: 'error',
-          payload: data
+          ...data
         }
       });
     }, 3000);
@@ -96,7 +95,7 @@ export const createSpyErrorResponse = (
         data: {
           code: 100,
           message: 'error',
-          payload: data
+          ...data
         }
       });
     }, 3000);
