@@ -1,6 +1,5 @@
 import {
   MockSpyApy,
-  createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import server from '../../../api/server';
