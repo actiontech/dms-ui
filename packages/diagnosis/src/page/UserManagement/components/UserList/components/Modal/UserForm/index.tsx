@@ -6,7 +6,12 @@ import { t } from '../../../../../../../locale';
 import auth from '../../../../../../../api/auth';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
 
-const UserForm: React.FC<IUserFormProps> = ({ form, visible, isUpdate }) => {
+const UserForm: React.FC<IUserFormProps> = ({
+  form,
+  visible,
+  isUpdate,
+  isAdmin
+}) => {
   const {
     data: roleList,
     loading,
@@ -23,6 +28,7 @@ const UserForm: React.FC<IUserFormProps> = ({ form, visible, isUpdate }) => {
   useEffect(() => {
     if (visible) getRoleList({ page_size: 9999 });
   }, [visible]);
+
   return (
     <>
       <Form form={form} layout="vertical">
@@ -121,7 +127,12 @@ const UserForm: React.FC<IUserFormProps> = ({ form, visible, isUpdate }) => {
             }
           ]}
         >
-          <BasicSelect showSearch allowClear loading={loading}>
+          <BasicSelect
+            showSearch
+            allowClear
+            loading={loading}
+            disabled={isAdmin}
+          >
             {(roleList?.data?.data ?? []).map((item) => (
               <Select.Option
                 key={item.id}

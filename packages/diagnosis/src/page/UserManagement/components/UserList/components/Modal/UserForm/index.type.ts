@@ -12,4 +12,5 @@ export interface IUserFormProps {
   form: FormInstance;
   visible: boolean;
   isUpdate?: boolean;
+  isAdmin?: boolean;
 }

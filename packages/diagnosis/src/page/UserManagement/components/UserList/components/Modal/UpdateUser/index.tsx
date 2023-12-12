@@ -5,13 +5,14 @@ import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import { Form, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../../data/ModalName';
-import { IV1CreateUserParams } from '../../../../../../../api/auth/index.d';
+import { IV1UpdateUserParams } from '../../../../../../../api/auth/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import useUserManagementRedux from '../../../../../hooks/useUserManagementRedux';
 import { IUserFormField } from '../UserForm/index.type';
 import auth from '../../../../../../../api/auth';
+import { AdminUser } from '../../../../../../../data/enum';
 
 const UpdateUser = () => {
   const { t } = useTranslation();
@@ -40,18 +41,18 @@ const UpdateUser = () => {
 
   const submit = async () => {
     const values = await form.validateFields();
-    const params: IV1CreateUserParams = {
-      username: values.username,
+    const params: IV1UpdateUserParams = {
+      user_id: selectUserData?.user_id,
       password: values.password,
       role_id: values.role_id
     };
     startSubmit();
     auth
-      .V1CreateUser(params)
+      .V1UpdateUser(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
-            t('userManagement.user.createUser.createSuccessTips', {
+            t('userManagement.user.updateUser.updateSuccessTips', {
               name: values.username
             })
           );
@@ -92,7 +93,12 @@ const UpdateUser = () => {
         }
       >
         {contextHolder}
-        <UserForm form={form} visible={visible} isUpdate={true} />
+        <UserForm
+          form={form}
+          visible={visible}
+          isUpdate={true}
+          isAdmin={selectUserData?.username === AdminUser.admin}
+        />
       </BasicDrawer>
     </>
   );

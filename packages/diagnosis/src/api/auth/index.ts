@@ -17,6 +17,8 @@ import {
   IV1ListRolesReturn,
   IV1ListRoleScopesParams,
   IV1ListRoleScopesReturn,
+  IV1UpdateRoleParams,
+  IV1UpdateRoleReturn,
   IV1GetRoleParams,
   IV1GetRoleReturn,
   IV1CreateRoleScopeParams,
@@ -30,10 +32,10 @@ import {
   IV1DeleteUserReturn,
   IV1ListUsersParams,
   IV1ListUsersReturn,
+  IV1UpdateUserParams,
+  IV1UpdateUserReturn,
   IV1UpdateUserPasswordParams,
   IV1UpdateUserPasswordReturn,
-  IV1UpdateUserRoleParams,
-  IV1UpdateUserRoleReturn,
   IV1GetUserParams,
   IV1GetUserReturn
 } from './index.d';
@@ -84,6 +86,18 @@ class AuthService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IV1ListRoleScopesReturn>(
       '/v1/auth/role/list_scopes',
+      paramsData,
+      options
+    );
+  }
+
+  public V1UpdateRole(
+    params: IV1UpdateRoleParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IV1UpdateRoleReturn>(
+      '/v1/auth/role/update',
       paramsData,
       options
     );
@@ -166,6 +180,18 @@ class AuthService extends ServiceBase {
     );
   }
 
+  public V1UpdateUser(
+    params: IV1UpdateUserParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IV1UpdateUserReturn>(
+      '/v1/auth/user/update',
+      paramsData,
+      options
+    );
+  }
+
   public V1UpdateUserPassword(
     params: IV1UpdateUserPasswordParams,
     options?: AxiosRequestConfig
@@ -173,18 +199,6 @@ class AuthService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.post<IV1UpdateUserPasswordReturn>(
       '/v1/auth/user/update_password',
-      paramsData,
-      options
-    );
-  }
-
-  public V1UpdateUserRole(
-    params: IV1UpdateUserRoleParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.post<IV1UpdateUserRoleReturn>(
-      '/v1/auth/user/update_role',
       paramsData,
       options
     );
