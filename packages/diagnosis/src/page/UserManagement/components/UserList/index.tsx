@@ -85,7 +85,7 @@ const UserList: React.FC = () => {
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.Refresh_User_List,
+      EmitterKey.Refresh_User_Management,
       refresh
     );
 
