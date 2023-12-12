@@ -75,10 +75,6 @@ const MonitorConfig = () => {
     return MonitorConfigActions(onCheckMonitorConfig);
   }, [onCheckMonitorConfig]);
 
-  const columns = useMemo(() => {
-    return MonitorConfigColumns();
-  }, []);
-
   return (
     <>
       <MonitorConfigStyleWrapper>
@@ -116,7 +112,7 @@ const MonitorConfig = () => {
         <section className="detail-table-wrapper">
           <ActiontechTable
             loading={loading}
-            columns={columns}
+            columns={MonitorConfigColumns()}
             onChange={tableChange}
             pagination={{
               total: monitorItemList?.total ?? 0,

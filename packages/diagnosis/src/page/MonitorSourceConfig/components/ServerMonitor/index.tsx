@@ -107,10 +107,6 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
     return ServerMonitorActions(onEditServerMonitor, onDeleteServerMonitor);
   }, [onEditServerMonitor, onDeleteServerMonitor]);
 
-  const columns = useMemo(() => {
-    return ServerMonitorColumns;
-  }, []);
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Server_Monitor,
@@ -131,7 +127,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
           current: pagination.page_index
         }}
         loading={loading}
-        columns={columns()}
+        columns={ServerMonitorColumns()}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}

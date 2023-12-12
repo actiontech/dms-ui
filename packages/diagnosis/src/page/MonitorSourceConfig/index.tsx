@@ -2,14 +2,8 @@ import { useState } from 'react';
 import { SegmentedValue } from 'antd/es/segmented';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import {
-  BasicButton,
-  PageHeader,
-  BasicSegmented,
-  EmptyBox
-} from '@actiontech/shared';
+import { BasicButton, PageHeader, BasicSegmented } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
-import { MonitorSourceConfigStyleWrapper } from './style';
 import { ModalName } from '../../data/ModalName';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
@@ -73,28 +67,24 @@ const MonitorSourceConfig: React.FC = () => {
   };
 
   return (
-    <MonitorSourceConfigStyleWrapper>
+    <section>
       <PageHeader
         title={<Space size={12}>{t('monitorSourceConfig.title')}</Space>}
         extra={
-          <EmptyBox if={true}>
-            <Space size={12}>
-              {/* todo: add permission */}
-              <BasicButton
-                onClick={() => onAddMonitorSource(listType)}
-                type="primary"
-                icon={<IconAdd />}
-              >
-                {listType === MonitorSourceConfigTypeEnum.server_monitor
-                  ? t(
-                      'monitorSourceConfig.serverMonitor.addServerMonitorSource'
-                    )
-                  : t(
-                      'monitorSourceConfig.databaseMonitor.addDatabaseMonitorSource'
-                    )}
-              </BasicButton>
-            </Space>
-          </EmptyBox>
+          <Space size={12}>
+            {/* todo: add permission */}
+            <BasicButton
+              onClick={() => onAddMonitorSource(listType)}
+              type="primary"
+              icon={<IconAdd />}
+            >
+              {listType === MonitorSourceConfigTypeEnum.server_monitor
+                ? t('monitorSourceConfig.serverMonitor.addServerMonitorSource')
+                : t(
+                    'monitorSourceConfig.databaseMonitor.addDatabaseMonitorSource'
+                  )}
+            </BasicButton>
+          </Space>
         }
       />
       <TableToolbar
@@ -137,7 +127,7 @@ const MonitorSourceConfig: React.FC = () => {
         />
       </TableToolbar>
       {renderTable()}
-    </MonitorSourceConfigStyleWrapper>
+    </section>
   );
 };
 

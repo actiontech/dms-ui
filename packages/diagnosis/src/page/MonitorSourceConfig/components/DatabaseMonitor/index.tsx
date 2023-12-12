@@ -85,8 +85,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
       })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.open({
-              type: 'success',
+            messageApi.success({
               content: t(
                 'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceTip',
                 {
@@ -107,10 +106,6 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
   const actions = useMemo(() => {
     return DatabaseMonitorActions(updateDatabaseMonitor, deleteDatabaseMonitor);
   }, [deleteDatabaseMonitor, updateDatabaseMonitor]);
-
-  const columns = useMemo(() => {
-    return DatabaseMonitorColumns();
-  }, []);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -134,7 +129,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
           current: pagination.page_index
         }}
         loading={loading}
-        columns={columns}
+        columns={DatabaseMonitorColumns()}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}

@@ -1,5 +1,4 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import ServerMonitor from './';
 import monitorSourceConfig from '../../../../testUtils/mockApi/monitorSourceConfig';
 import {
   getAllBySelector,
@@ -10,6 +9,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { useDispatch, useSelector } from 'react-redux';
 import { superRender } from '../../../../testUtils/customRender';
 import { ModalName } from '../../../../data/ModalName';
+import ServerMonitor from './';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
