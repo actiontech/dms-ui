@@ -124,9 +124,7 @@ exports[`test diagnosis App should render App 1`] = `
     <div
       class="dms-layout-content"
     >
-      <section
-        class="css-1pyzu59"
-      >
+      <section>
         <div
           class="actiontech-page-header-namespace css-14fwawz"
         >
