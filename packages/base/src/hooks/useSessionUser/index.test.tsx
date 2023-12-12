@@ -49,8 +49,8 @@ describe('useSessionUser', () => {
     expect(result.current.sessionUser?.data).toEqual({
       code: 0,
       message: 'ok',
-      name: 'test',
-      user_uid: '300123'
+      name: UserInfo.name,
+      user_uid: UserInfo.userUid
     });
     expect(result.current.getSessionUserLoading).toBeFalsy();
   });
