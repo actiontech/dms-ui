@@ -1,4 +1,4 @@
-import { Form } from 'antd';
+import { Checkbox, Form, Space, Typography, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { updateToken, updateUser } from '../../store/user';
@@ -14,9 +14,15 @@ const Login = () => {
 
   const dispatch = useDispatch();
 
+  const [messageApi, contextHolder] = message.useMessage();
+
   const [loading, { setTrue, setFalse }] = useBoolean();
 
   const login = (formData: LoginFormFieldValue) => {
+    if (!formData.userAgreement) {
+      messageApi.error(t('login.errorMessage.userAgreement'));
+      return;
+    }
     setTrue();
     auth
       .V1Login({
@@ -47,6 +53,7 @@ const Login = () => {
 
   return (
     <LoginLayout>
+      {contextHolder}
       <Form
         onFinish={login}
         initialValues={{
@@ -88,16 +95,16 @@ const Login = () => {
             prefix={<IconCommonPassword />}
           />
         </Form.Item>
-        {/* <Form.Item name="userAgreement" valuePropName="checked">
+        <Form.Item name="userAgreement" valuePropName="checked">
           <Checkbox>
             <Space>
-              {t('dmsLogin.userAgreementTips')}
+              {t('login.userAgreementTips')}
               <Typography.Link href="/user-agreement.html" target="_blank">
-                {t('dmsLogin.userAgreement')}
+                {t('login.userAgreement')}
               </Typography.Link>
             </Space>
           </Checkbox>
-        </Form.Item> */}
+        </Form.Item>
         <BasicButton
           type="primary"
           className="login-btn"

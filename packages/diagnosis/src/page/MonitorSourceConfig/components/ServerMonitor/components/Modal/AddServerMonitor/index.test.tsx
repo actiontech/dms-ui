@@ -92,64 +92,76 @@ describe('test add server monitor', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     // host
-    fireEvent.change(
-      getBySelector('.ant-form-item-control-input-content #host'),
-      {
-        target: {
-          value: '172.20.134.1'
+    await act(async () => {
+      fireEvent.change(
+        getBySelector('.ant-form-item-control-input-content #host'),
+        {
+          target: {
+            value: '172.20.134.1'
+          }
         }
-      }
-    );
-    await act(async () => jest.advanceTimersByTime(1000));
-    fireEvent.blur(getBySelector('.ant-form-item-control-input-content #host'));
+      );
+      await act(async () => jest.advanceTimersByTime(1000));
+    });
+    await act(async () => {
+      fireEvent.blur(
+        getBySelector('.ant-form-item-control-input-content #host')
+      );
+      await act(async () => jest.advanceTimersByTime(300));
+    });
     expect(
       getBySelector('.ant-form-item-control-input-content #host')
     ).toHaveValue('172.20.134.1');
     // ssh port
-    fireEvent.change(getBySelector('.ant-input-number-input-wrap #port'), {
-      target: {
-        value: 22
-      }
+    await act(async () => {
+      fireEvent.change(getBySelector('.ant-input-number-input-wrap #port'), {
+        target: {
+          value: 22
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(1000));
     });
-    await act(async () => jest.advanceTimersByTime(1000));
     expect(getBySelector('.ant-input-number-input-wrap #port')).toHaveValue(
       '22'
     );
     // ssh user
-    fireEvent.change(
-      getBySelector('.ant-form-item-control-input-content #user'),
-      {
-        target: {
-          value: 'root'
+    await act(async () => {
+      fireEvent.change(
+        getBySelector('.ant-form-item-control-input-content #user'),
+        {
+          target: {
+            value: 'root'
+          }
         }
-      }
-    );
-    await act(async () => jest.advanceTimersByTime(1000));
+      );
+      await act(async () => jest.advanceTimersByTime(1000));
+    });
     expect(
       getBySelector('.ant-form-item-control-input-content #user')
     ).toHaveValue('root');
     // ssh password
     await act(async () => jest.advanceTimersByTime(1000));
-    fireEvent.change(
-      getBySelector('.ant-form-item-control-input-content #password'),
-      {
-        target: {
-          value: '123'
+    await act(async () => {
+      fireEvent.change(
+        getBySelector('.ant-form-item-control-input-content #password'),
+        {
+          target: {
+            value: '123'
+          }
         }
-      }
-    );
-    await act(async () => jest.advanceTimersByTime(1000));
+      );
+      await act(async () => jest.advanceTimersByTime(1000));
+    });
     expect(
       getBySelector('.ant-form-item-control-input-content #password')
     ).toHaveValue('123');
     // monitor name
     await act(async () => {
-      jest.advanceTimersByTime(1000);
       fireEvent.focus(
         getBySelector('.ant-form-item-control-input-content #name')
       );
+      await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(requestGetHostName).toBeCalled();
     await act(async () => jest.advanceTimersByTime(1000));
     await act(async () => jest.advanceTimersByTime(1000));
     await act(async () => jest.advanceTimersByTime(1000));

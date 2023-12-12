@@ -1,4 +1,4 @@
-import { IAuthDetailCustomConfig } from '../index.type';
+import { IAuthDetailCustomConfig } from '../List/index.type';
 import { t } from '~/locale';
 
 export const authDetailCustomConfig: IAuthDetailCustomConfig[] = [

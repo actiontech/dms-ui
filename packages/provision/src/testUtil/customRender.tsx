@@ -12,12 +12,10 @@ import {
 } from 'react-router-dom';
 import { MutableSnapshot, RecoilRoot } from 'recoil';
 import SyncRecoil from '~/utils/SyncRecoil';
-import userEvent from '@testing-library/user-event';
 import { JSXElementConstructor } from 'react';
 import lightTheme from '@actiontech/shared/lib/theme/light';
 
 type RenderParams = Parameters<typeof render>;
-type UserEventOptions = Required<Parameters<typeof userEvent.setup>>[0];
 type RecoilRootPropsCustom = {
   initializeState?: (mutableSnapshot: MutableSnapshot) => void;
   override?: boolean;
@@ -89,34 +87,6 @@ export const renderWithRecoilRootAndMemoRouterAndTheme = (
     </ThemeProvider>,
     option
   );
-};
-
-export const superRender = (
-  ...[ui, option, otherProps]: [
-    ...RenderParams,
-    {
-      routerProps?: MemoryRouterProps;
-      recoilRootProps?: RecoilRootPropsCustom;
-      userEventProps?: UserEventOptions;
-    }?
-  ]
-) => {
-  const userEventReturn = userEvent.setup(otherProps?.userEventProps);
-  const renderReturn = render(
-    <ThemeProvider theme={lightTheme}>
-      <MemoryRouter {...otherProps?.routerProps}>
-        <RecoilRoot {...otherProps?.recoilRootProps}>
-          <SyncRecoil />
-          {ui}
-        </RecoilRoot>
-      </MemoryRouter>
-    </ThemeProvider>,
-    option
-  );
-  return {
-    ...renderReturn,
-    userEvent: userEventReturn
-  };
 };
 
 export const superRenderHooksWrapperFactory = (

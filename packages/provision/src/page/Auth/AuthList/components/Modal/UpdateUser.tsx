@@ -18,7 +18,7 @@ import {
   BasicSwitch,
   BasicToolTips
 } from '@actiontech/shared';
-import { IUpdateUserInAuthFormFields } from '../index.type';
+import { IUpdateUserInAuthFormFields } from '../List/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const UpdateUserInAuth = () => {
@@ -47,8 +47,11 @@ const UpdateUserInAuth = () => {
   };
 
   const closeAndReset = () => {
-    form.resetFields();
     closeModal();
+    const timeId = setTimeout(() => {
+      form.resetFields();
+      clearTimeout(timeId);
+    }, 300);
   };
 
   const submit = async () => {

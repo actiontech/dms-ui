@@ -1,8 +1,8 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import Operation from '.';
-import { superRender } from '~/testUtil/customRender';
 import { getBySelector } from '~/testUtil/customQuery';
 import auth from '~/testUtil/mockApi/auth';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 
 describe.skip('Data/Operation', () => {
   let listOperationSetsSpy: jest.SpyInstance;

@@ -25,7 +25,11 @@ class MockUserCenterApi implements MockSpyApy {
 
   public getUserList() {
     const spy = jest.spyOn(dms, 'ListUsers');
-    spy.mockImplementation(() => createSpySuccessResponse(userList));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: userList
+      })
+    );
     return spy;
   }
 
@@ -53,7 +57,11 @@ class MockUserCenterApi implements MockSpyApy {
 
   public getUserGroupList() {
     const spy = jest.spyOn(dms, 'ListUserGroups');
-    spy.mockImplementation(() => createSpySuccessResponse(userGroupList));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: userGroupList
+      })
+    );
     return spy;
   }
 
@@ -98,7 +106,11 @@ class MockUserCenterApi implements MockSpyApy {
 
   public getRoleList() {
     const spy = jest.spyOn(dms, 'ListRoles');
-    spy.mockImplementation(() => createSpySuccessResponse(roleList));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: roleList
+      })
+    );
     return spy;
   }
 
@@ -124,7 +136,11 @@ class MockUserCenterApi implements MockSpyApy {
 
   public getOpPermissionsList() {
     const spy = jest.spyOn(dms, 'ListOpPermissions');
-    spy.mockImplementation(() => createSpySuccessResponse(opPermissionList));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: opPermissionList
+      })
+    );
     return spy;
   }
 

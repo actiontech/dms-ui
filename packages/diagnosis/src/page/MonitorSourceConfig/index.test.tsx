@@ -88,7 +88,9 @@ describe('test monitor source config', () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const request = monitorSourceConfig.serverMonitorList();
     request.mockImplementation(() =>
-      createSpySuccessResponse(searchServerMonitorListData)
+      createSpySuccessResponse({
+        data: searchServerMonitorListData
+      })
     );
     const { baseElement } = superRender(<MonitorSourceConfig />);
     await act(async () => jest.advanceTimersByTime(3300));
@@ -127,7 +129,9 @@ describe('test monitor source config', () => {
   it('should render search result for database table ', async () => {
     const request = monitorSourceConfig.databaseMonitorList();
     request.mockImplementation(() =>
-      createSpySuccessResponse([{ ...databaseMonitorListData[0] }])
+      createSpySuccessResponse({
+        data: [{ ...databaseMonitorListData[0] }]
+      })
     );
     const { baseElement } = superRender(<MonitorSourceConfig />);
     await act(async () => jest.advanceTimersByTime(1000));

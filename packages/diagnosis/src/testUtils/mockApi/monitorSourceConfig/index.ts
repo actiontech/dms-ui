@@ -1,6 +1,5 @@
 import {
   MockSpyApy,
-  createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import server from '../../../api/server';
@@ -32,7 +31,9 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
   public serverMonitorList() {
     const spy = jest.spyOn(server, 'V1ListServers');
     spy.mockImplementation(() =>
-      createSpySuccessResponse(serverMonitorListData)
+      createSpySuccessResponse({
+        data: serverMonitorListData
+      })
     );
     return spy;
   }
@@ -41,8 +42,10 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
     const spy = jest.spyOn(server, 'V1AddServer');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        code: 0,
-        message: 'ok'
+        data: {
+          code: 0,
+          message: 'ok'
+        }
       })
     );
     return spy;
@@ -52,8 +55,10 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
     const spy = jest.spyOn(server, 'V1UpdateServer');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        code: 0,
-        message: 'ok'
+        data: {
+          code: 0,
+          message: 'ok'
+        }
       })
     );
     return spy;
@@ -63,8 +68,10 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
     const spy = jest.spyOn(server, 'V1DeleteServer');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        code: 0,
-        message: 'ok'
+        data: {
+          code: 0,
+          message: 'ok'
+        }
       })
     );
     return spy;
@@ -85,7 +92,9 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
   public databaseMonitorList() {
     const spy = jest.spyOn(db, 'V1ListMonitorDBs');
     spy.mockImplementation(() =>
-      createSpySuccessResponse(databaseMonitorListData)
+      createSpySuccessResponse({
+        data: databaseMonitorListData
+      })
     );
     return spy;
   }
@@ -94,8 +103,10 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
     const spy = jest.spyOn(db, 'V1AddDB');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        code: 0,
-        message: 'ok'
+        data: {
+          code: 0,
+          message: 'ok'
+        }
       })
     );
     return spy;
@@ -105,8 +116,10 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
     const spy = jest.spyOn(db, 'V1UpdateDB');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        code: 0,
-        message: 'ok'
+        data: {
+          code: 0,
+          message: 'ok'
+        }
       })
     );
     return spy;
@@ -116,8 +129,10 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
     const spy = jest.spyOn(db, 'V1DeleteDB');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        code: 0,
-        message: 'ok'
+        data: {
+          code: 0,
+          message: 'ok'
+        }
       })
     );
     return spy;
@@ -126,7 +141,9 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
   public getMonitorRoutineList() {
     const spy = jest.spyOn(monitor, 'V1ListMonitorRoutine');
     spy.mockImplementation(() =>
-      createSpySuccessResponse(monitorRoutineListData)
+      createSpySuccessResponse({
+        data: monitorRoutineListData
+      })
     );
     return spy;
   }
@@ -135,8 +152,10 @@ class MockMonitorSourceConfigApi implements MockSpyApy {
     const spy = jest.spyOn(monitor, 'V1ListRoutineMetrics');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        metrics: monitorRoutineMetricsListData,
-        routine_id: 1
+        data: {
+          metrics: monitorRoutineMetricsListData,
+          routine_id: 1
+        }
       })
     );
     return spy;
