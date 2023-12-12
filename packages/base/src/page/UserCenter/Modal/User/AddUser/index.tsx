@@ -29,7 +29,7 @@ const AddUser = () => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const close = useCallback(() => {
+  const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
       updateUserManageModalStatus({
@@ -56,30 +56,29 @@ const AddUser = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          close();
-          messageApi.open({
-            type: 'success',
-            content: t('dmsUserCenter.user.createUser.createSuccessTips', {
+          onClose();
+          messageApi.success(
+            t('dmsUserCenter.user.createUser.createSuccessTips', {
               name: values.username
             })
-          });
-          EventEmitter.emit(EmitterKey.DMS_Refresh_User_List);
+          );
+          EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
         }
       })
       .finally(() => {
         setFalse();
       });
-  }, [close, form, setFalse, setTrue, t, messageApi]);
+  }, [onClose, form, setFalse, setTrue, t, messageApi]);
 
   return (
     <BasicDrawer
       title={t('dmsUserCenter.user.userList.addUserButton')}
       placement="right"
       open={visible}
-      onClose={close}
+      onClose={onClose}
       footer={
         <Space>
-          <BasicButton onClick={close} disabled={createLoading}>
+          <BasicButton onClick={onClose} disabled={createLoading}>
             {t('common.close')}
           </BasicButton>
           <BasicButton type="primary" onClick={addUser} loading={createLoading}>

@@ -1,8 +1,5 @@
 enum EmitterKey {
-  DMS_Refresh_User_List = 'DMS_REFRESH_USER_LIST',
-  DMS_Refresh_Role_List = 'DMS_REFRESH_ROLE_LIST',
-  DMS_Refresh_User_Group_List = 'DMS_REFRESH_USER_GROUP_LIST',
-  DMS_Refresh_User_Permission_list = 'DMS_Refresh_User_Permission_list',
+  DMS_Refresh_User_Center_List = 'DMS_REFRESH_USER_CENTER_LIST',
   Reset_Test_Data_Source_Connect = 'DMS_Reset_Test_Data_Source_Connect',
   DMS_Reset_DataSource_Form = 'DMS_Reset_DataSource_Form',
   DMS_Submit_DataSource_Form = 'DMS_Submit_DataSource_Form',
