@@ -14,11 +14,13 @@ describe('provision/hooks/useListTipsByAuthKey', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     listTipsByAuthKeySpy = auth.listTipsByAuthorizationKeyReq();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
+    (console.error as jest.Mock).mockRestore();
   });
 
   it('should get tips data from request', async () => {

@@ -1,7 +1,10 @@
 import { Space, Typography } from 'antd';
 import { t } from '../../../locale';
 import { IOperationData } from '.';
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import {
+  ActiontechTableColumn,
+  FilterCustomProps
+} from '@actiontech/shared/lib/components/ActiontechTable';
 import { BasicTag } from '@actiontech/shared';
 import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { AuthListDataOperationSetsFilterByDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
@@ -20,7 +23,7 @@ export type OperationListTableFilterParamType = Omit<
 /**
  * dbType筛选项因后端不提供接口，故前端暂时写成固定选项
  */
-export const dbTypeOptions = [
+const dbTypeOptions = [
   {
     value: AuthListDataOperationSetsFilterByDbTypeEnum.MySQL,
     label: 'MySQL'
@@ -30,6 +33,11 @@ export const dbTypeOptions = [
     label: 'OceanBaseMySQL'
   }
 ];
+
+export const filterCustomProps = new Map<
+  keyof IOperationData,
+  FilterCustomProps
+>([['db_type', { options: dbTypeOptions }]]);
 
 export const operationTableColumns = (): ActiontechTableColumn<
   IOperationData,
@@ -43,11 +51,7 @@ export const operationTableColumns = (): ActiontechTableColumn<
       onCell: (record) => ({
         rowSpan: record.rowSpan
       }),
-      render: (name: string) => (
-        <Typography.Text className="consolidated-column">
-          {name}
-        </Typography.Text>
-      )
+      render: (name: string) => <Typography.Text>{name}</Typography.Text>
     },
     {
       dataIndex: 'db_type',
