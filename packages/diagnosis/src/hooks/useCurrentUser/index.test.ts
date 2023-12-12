@@ -1,5 +1,5 @@
 import useCurrentUser from '.';
-import { renderHooksWithReduxAndRouter } from '../../testUtils/customRender';
+import { renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
 
 describe('diagnosis/userCurrentUser', () => {
   it('get current user info', () => {

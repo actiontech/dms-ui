@@ -1,4 +1,4 @@
-import { renderHooksWithReduxAndRouter } from '../../testUtils/customRender';
+import { renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
 import { act } from '@testing-library/react';
 import useGetUserScope from '.';
 import { useDispatch } from 'react-redux';
@@ -41,7 +41,7 @@ describe('diagnosis/useGetUserScope', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.userScope?.data).toStrictEqual({
       code: 0,
-      msg: 'ok',
+      message: 'ok',
       data: userScopeData
     });
     expect(mockDispatch).toBeCalledTimes(1);

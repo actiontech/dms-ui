@@ -15,9 +15,7 @@ class MockUserApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'V1GetUser');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        role_id: 10000,
-        user_id: 1,
-        username: 'admin'
+        data: { role_id: 10000, user_id: 1, username: 'admin' }
       })
     );
     return spy;
@@ -25,7 +23,11 @@ class MockUserApi implements MockSpyApy {
 
   public getUserScope() {
     const spy = jest.spyOn(auth, 'V1ListRoleScopes');
-    spy.mockImplementation(() => createSpySuccessResponse(userScopeData));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: userScopeData
+      })
+    );
     return spy;
   }
 }

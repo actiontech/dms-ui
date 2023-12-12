@@ -9,8 +9,8 @@ import { useRecoilState } from 'recoil';
 import { useEffect } from 'react';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { BasicButton, BasicTag, Copy, TokenCom } from '@actiontech/shared';
-import { AuthAuditDetailDrawerStyleWrapper } from '../../../Audit/components/style';
-import AuditDetailItem from '../../../Audit/components/AuditDetailItem';
+import { AuthAuditDetailDrawerStyleWrapper } from '../../../../Audit/components/style';
+import AuditDetailItem from '../../../../Audit/components/AuditDetailItem';
 import { authDetailCustomConfig } from './authDetailCustomConfig';
 
 const AuthDetailDrawer: React.FC = () => {
@@ -137,16 +137,16 @@ const AuthDetailDrawer: React.FC = () => {
           <div className="audit-info-title">
             {t('auth.template.columns.template_details')}
           </div>
-          {authDetails?.data_permissions?.map((i) => (
-            <div className="audit-card" key={i.service_uid}>
+          {authDetails?.data_permissions?.map((permission) => (
+            <div className="audit-card" key={permission.service_uid}>
               <AuditDetailItem
                 label={t('auth.addAuth.baseForm.baseFormTable.service')}
-                value={i.service_name}
+                value={permission.service_name}
               />
               <AuditDetailItem
                 label={t('auth.addAuth.baseForm.baseFormTable.objects')}
               >
-                {i.data_objects?.map((obj) => {
+                {permission.data_objects?.map((obj) => {
                   return (
                     <BasicTag key={`${obj.database_uid}${obj.table_uid}`}>
                       {obj.name}
@@ -157,7 +157,7 @@ const AuthDetailDrawer: React.FC = () => {
               <AuditDetailItem
                 label={t('auth.addAuth.baseForm.baseFormTable.operation')}
               >
-                {i.data_operation_sets?.map((operation) => {
+                {permission.data_operation_sets?.map((operation) => {
                   return (
                     <BasicTag key={operation.uid}>{operation.name}</BasicTag>
                   );
@@ -170,33 +170,33 @@ const AuthDetailDrawer: React.FC = () => {
           <div className="audit-info-title">
             {t('auth.connectionDetails.accountInfo')}
           </div>
-          {authDetails?.db_accounts?.map((i) => (
-            <div className="audit-card" key={i.uid}>
+          {authDetails?.db_accounts?.map((dbAccount) => (
+            <div className="audit-card" key={dbAccount.uid}>
               <AuditDetailItem
                 label={t('auth.connectionDetails.dns')}
-                value={i.data_object_service_dns}
+                value={dbAccount.data_object_service_dns}
               />
               <AuditDetailItem
                 label={t('auth.addAuth.accountForm.username')}
-                value={i?.user}
+                value={dbAccount?.user}
               />
               <AuditDetailItem
                 label={t('auth.addAuth.accountForm.hostname')}
-                value={i.hostname}
+                value={dbAccount.hostname}
               />
               <AuditDetailItem label={t('auth.addAuth.accountForm.password')}>
-                <TokenCom text={i.password ?? ''} />
+                <TokenCom text={dbAccount.password ?? ''} />
               </AuditDetailItem>
               <AuditDetailItem
                 label={t('auth.connectionDetails.explanation')}
-                value={i.explanation}
+                value={dbAccount.explanation}
               />
               <AuditDetailItem>
                 <BasicButton
                   type="primary"
                   size="small"
                   onClick={() => {
-                    Copy.copyTextByTextarea(i.connection_cmd ?? '');
+                    Copy.copyTextByTextarea(dbAccount.connection_cmd ?? '');
                     messageApi.success(t('common.copySuccess'));
                   }}
                 >

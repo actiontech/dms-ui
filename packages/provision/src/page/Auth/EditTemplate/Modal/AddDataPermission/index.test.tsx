@@ -1,13 +1,13 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { ModalName } from '~/data/enum';
 import { AuthDataPermissionListModalStatus } from '~/store/auth/templateList';
-import { getAllBySelector, getBySelector, sleep } from '~/testUtil/customQuery';
-import { superRender } from '~/testUtil/customRender';
+import { getAllBySelector, getBySelector } from '~/testUtil/customQuery';
 import AddDataPermission from '.';
 import { IAddDataPermission } from './index.d';
 import auth from '~/testUtil/mockApi/auth';
 import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 
 const defaultDataPermissions = [
   {

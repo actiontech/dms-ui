@@ -10,7 +10,7 @@ import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
 import EventEmitter from '~/utils/EventEmitter';
 import { BasicButton, BasicModal, BasicSelect } from '@actiontech/shared';
 import { FormItemWithExtraStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IUpdateExpirationInAuthFormFields } from '../index.type';
+import { IUpdateExpirationInAuthFormFields } from '../List/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const UpdateExpiration = () => {
@@ -35,8 +35,11 @@ const UpdateExpiration = () => {
   };
 
   const closeAndReset = () => {
-    form.resetFields();
     closeModal();
+    const timeId = setTimeout(() => {
+      form.resetFields();
+      clearTimeout(timeId);
+    }, 300);
   };
 
   const submit = async () => {

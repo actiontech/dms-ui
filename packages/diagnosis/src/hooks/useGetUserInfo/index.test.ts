@@ -1,4 +1,4 @@
-import { renderHooksWithReduxAndRouter } from '../../testUtils/customRender';
+import { renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
 import { act } from '@testing-library/react';
 import useGetUserInfo from '.';
 import { useDispatch } from 'react-redux';
@@ -54,12 +54,12 @@ describe('diagnosis/useGetUserInfo', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.userInfo?.data).toStrictEqual({
       code: 0,
-      msg: 'ok',
       data: {
         role_id: 10000,
         user_id: 1,
         username: 'admin'
-      }
+      },
+      message: 'ok'
     });
     expect(mockDispatch).toBeCalledTimes(1);
     expect(mockDispatch).toBeCalledWith({

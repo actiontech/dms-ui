@@ -1,14 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import ProjectTitle from '.';
-import {
-  renderWithRouter,
-  renderWithThemeAndRouter
-} from '../../../../testUtils/customRender';
-import { act, fireEvent, screen } from '@testing-library/react';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { renderWithRouter } from '@actiontech/shared/lib/testUtil/customRender';
+import { fireEvent, screen } from '@testing-library/react';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
