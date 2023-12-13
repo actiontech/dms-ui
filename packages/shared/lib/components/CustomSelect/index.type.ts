@@ -5,6 +5,7 @@ export type CustomSelectProps = {
   prefix?: React.ReactNode;
   valuePrefix?: React.ReactNode;
   searchInputRef?: RefObject<CustomSelectSearchInputRefType>;
+  isRenderLabel?: boolean;
 } & SelectProps;
 
 export type CustomSelectSearchInputProps = {
