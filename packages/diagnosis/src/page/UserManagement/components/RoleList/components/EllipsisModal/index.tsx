@@ -2,7 +2,6 @@ import React from 'react';
 import { BasicToolTips, BasicTag } from '@actiontech/shared';
 import { Space } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
-import { EllipsisModalStyleWrapper } from './style';
 import { IScopeReply } from '../../../../../../api/common';
 
 interface IEllipsisModalProps {
