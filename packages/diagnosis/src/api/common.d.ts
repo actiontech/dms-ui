@@ -157,6 +157,12 @@ export interface ISaveDBsReq {
   dbs: IViewDatabase[];
 }
 
+export interface IScopeReply {
+  scope_desc?: string;
+
+  scope_name?: string;
+}
+
 export interface IUserCreateRequest {
   password?: string;
 
@@ -258,7 +264,7 @@ export interface IViewRoleReply {
 
   role_name?: string;
 
-  scopes?: string[];
+  scopes?: IScopeReply[];
 }
 
 export interface IViewScope {
