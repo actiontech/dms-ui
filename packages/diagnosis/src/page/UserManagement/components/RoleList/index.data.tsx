@@ -4,6 +4,9 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../../locale';
 import { IViewRoleReply } from '../../../../api/common';
+import { BasicTag } from '@actiontech/shared';
+import EllipsisModal from './components/EllipsisModal';
+import { Space } from 'antd';
 
 export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
   {
@@ -15,9 +18,19 @@ export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
     title: () => t('userManagement.role.roleDesc')
   },
   {
-    // todo: change after api update
-    dataIndex: 'role_desc',
-    title: () => t('userManagement.role.operationPermission')
+    dataIndex: 'scopes',
+    width: 400,
+    title: () => t('userManagement.role.operationPermission'),
+    render: (scope: string[]) => {
+      return (
+        <Space wrap>
+          {scope.slice(0, 3).map((item) => (
+            <BasicTag key={item}>{item}</BasicTag>
+          ))}
+          {scope.length > 3 ? <EllipsisModal data={scope} /> : null}
+        </Space>
+      );
+    }
   }
 ];
 

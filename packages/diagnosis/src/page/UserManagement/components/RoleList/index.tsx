@@ -51,6 +51,7 @@ const RoleList: React.FC = () => {
   const onEditRole = useCallback((record?: IViewRoleReply) => {
     setSelectRoleData(record ?? null);
     setModalStatus(ModalName.Update_Role, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onDeleteRole = useCallback(
@@ -65,8 +66,7 @@ const RoleList: React.FC = () => {
         .V1DeleteRole({ role_id: record?.id ?? '' })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.open({
-              type: 'success',
+            messageApi.success({
               content: t('userManagement.role.deleteRole.deleteSuccessTips', {
                 name: record?.role_name ?? ''
               })
@@ -82,10 +82,6 @@ const RoleList: React.FC = () => {
   const actions = useMemo(() => {
     return RoleListActions(onEditRole, onDeleteRole);
   }, [onEditRole, onDeleteRole]);
-
-  const columns = useMemo(() => {
-    return RoleListColumns;
-  }, []);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -106,7 +102,7 @@ const RoleList: React.FC = () => {
           total: roleList?.total ?? 0
         }}
         loading={loading}
-        columns={columns}
+        columns={RoleListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}
