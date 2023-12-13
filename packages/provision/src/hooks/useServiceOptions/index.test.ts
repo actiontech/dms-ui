@@ -10,14 +10,6 @@ import {
 
 describe('provision/hooks/useServiceOptions', () => {
   let authListServicesSpy: jest.SpyInstance;
-  const serviceOptions = instanceList.map((i) => ({
-    label: i.name,
-    value: i.uid
-  }));
-  const serviceNameOptions = instanceList.map((i) => ({
-    label: i.name,
-    value: i.name
-  }));
   const business = 'business-1';
   beforeEach(() => {
     jest.useFakeTimers();
@@ -54,8 +46,8 @@ describe('provision/hooks/useServiceOptions', () => {
 
     expect(result.current.loading).toBeFalsy();
     expect(result.current.serviceList).toEqual(instanceList);
-    expect(result.current.serviceOptions).toEqual(serviceOptions);
-    expect(result.current.serviceNameOptions).toEqual(serviceNameOptions);
+    expect(result.current.serviceOptions).toMatchSnapshot();
+    expect(result.current.serviceNameOptions).toMatchSnapshot();
   });
 
   it('should set serviceList to empty array when response code is not equal success code', async () => {

@@ -17,7 +17,7 @@ const ServiceAuditDetailDrawer: React.FC<{
       title={t('provisionAudit.authAuditDetail.title')}
       onClose={onClose}
     >
-      <div>
+      <>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
             {t('provisionAudit.authAuditDetail.subTitle.actionInfo')}
@@ -49,7 +49,7 @@ const ServiceAuditDetailDrawer: React.FC<{
             value="success"
           />
         </div>
-      </div>
+      </>
     </AuthAuditDetailDrawerStyleWrapper>
   );
 };
