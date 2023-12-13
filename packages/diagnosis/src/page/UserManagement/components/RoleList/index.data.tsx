@@ -3,7 +3,7 @@ import {
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../../locale';
-import { IViewRoleReply } from '../../../../api/common';
+import { IScopeReply, IViewRoleReply } from '../../../../api/common';
 import { BasicTag } from '@actiontech/shared';
 import EllipsisModal from './components/EllipsisModal';
 import { Space } from 'antd';
@@ -21,11 +21,11 @@ export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
     dataIndex: 'scopes',
     width: 400,
     title: () => t('userManagement.role.operationPermission'),
-    render: (scope: string[]) => {
+    render: (scope: IScopeReply[]) => {
       return (
         <Space wrap>
           {scope.slice(0, 3).map((item) => (
-            <BasicTag key={item}>{item}</BasicTag>
+            <BasicTag key={item.scope_name}>{item.scope_desc}</BasicTag>
           ))}
           {scope.length > 3 ? <EllipsisModal data={scope} /> : null}
         </Space>

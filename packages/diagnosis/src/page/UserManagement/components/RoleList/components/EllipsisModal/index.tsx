@@ -3,9 +3,10 @@ import { BasicToolTips, BasicTag } from '@actiontech/shared';
 import { Space } from 'antd';
 import { EllipsisOutlined } from '@ant-design/icons';
 import { EllipsisModalStyleWrapper } from './style';
+import { IScopeReply } from '../../../../../../api/common';
 
 interface IEllipsisModalProps {
-  data: string[];
+  data: IScopeReply[];
 }
 
 const EllipsisModal: React.FC<IEllipsisModalProps> = ({ data }) => {
@@ -14,7 +15,7 @@ const EllipsisModal: React.FC<IEllipsisModalProps> = ({ data }) => {
       title={
         <Space wrap>
           {data.map((item) => (
-            <BasicTag key={item}>{item}</BasicTag>
+            <BasicTag key={item.scope_name}>{item.scope_desc}</BasicTag>
           ))}
         </Space>
       }

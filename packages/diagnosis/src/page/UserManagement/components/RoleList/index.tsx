@@ -16,6 +16,7 @@ import useUserManagementRedux from '../../hooks/useUserManagementRedux';
 import auth from '../../../../api/auth';
 import { IV1ListRolesParams } from '../../../../api/auth/index.d';
 import { IViewRoleReply } from '../../../../api/common';
+import RoleModal from './components';
 
 const RoleList: React.FC = () => {
   const { t } = useTranslation();
@@ -107,6 +108,7 @@ const RoleList: React.FC = () => {
         onChange={tableChange}
         actions={actions}
       />
+      <RoleModal />
     </>
   );
 };
