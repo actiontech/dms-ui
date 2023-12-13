@@ -6,14 +6,15 @@ import {
   IRoleDeleteRequest,
   IListRolesReply,
   IListScopesReply,
+  IRoleUpdateRequest,
   IGetRoleReply,
   IRoleScopeCreateRequest,
   IRoleScopeDeleteRequest,
   IUserCreateRequest,
   IUserDeleteRequest,
   IListUsersReply,
+  IUserUpdateRequest,
   IUserUpdatePasswordRequest,
-  IUserUpdateRoleRequest,
   IGetUserReply
 } from '../common.d';
 
@@ -49,6 +50,10 @@ export interface IV1ListRoleScopesParams {
 
 export interface IV1ListRoleScopesReturn extends IListScopesReply {}
 
+export interface IV1UpdateRoleParams extends IRoleUpdateRequest {}
+
+export interface IV1UpdateRoleReturn extends IGenericResp {}
+
 export interface IV1GetRoleParams {
   role_id: string;
 }
@@ -83,14 +88,14 @@ export interface IV1ListUsersParams {
 
 export interface IV1ListUsersReturn extends IListUsersReply {}
 
+export interface IV1UpdateUserParams extends IUserUpdateRequest {}
+
+export interface IV1UpdateUserReturn extends IGenericResp {}
+
 export interface IV1UpdateUserPasswordParams
   extends IUserUpdatePasswordRequest {}
 
 export interface IV1UpdateUserPasswordReturn extends IGenericResp {}
-
-export interface IV1UpdateUserRoleParams extends IUserUpdateRoleRequest {}
-
-export interface IV1UpdateUserRoleReturn extends IGenericResp {}
 
 export interface IV1GetUserParams {
   user_id: string;
