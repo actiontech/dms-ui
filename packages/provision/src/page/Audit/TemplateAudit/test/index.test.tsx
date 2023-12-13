@@ -11,6 +11,7 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { templateAuditList } from '~/testUtil/mockApi/auth/data';
+import { EventTypeEnum } from '../components/EventType';
 
 describe('page/Auth/TemplateAudit', () => {
   const projectID = mockProjectInfo.projectID;
@@ -133,10 +134,52 @@ describe('page/Auth/TemplateAudit', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
+    it('render action when click event type', async () => {
+      const singleData = templateAuditList[1];
+      const requestListFn = auth.listDataPermissionTemplateEvents();
+      requestListFn.mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          total_nums: 1,
+          data: [singleData]
+        })
+      );
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(9300));
+      expect(requestListFn).toBeCalledTimes(1);
+
+      fireEvent.click(screen.getByText('筛选'));
+      await act(async () => jest.advanceTimersByTime(300));
+      const searchInputEle = getAllBySelector(
+        '.ant-select-selection-search-input',
+        baseElement
+      );
+      expect(searchInputEle.length).toBe(4);
+      await act(async () => {
+        fireEvent.mouseDown(searchInputEle[2]);
+        jest.runAllTimers();
+      });
+      await screen.findAllByText('创建权限模版');
+      expect(baseElement).toMatchSnapshot();
+      await act(async () => {
+        fireEvent.click(screen.getByText('创建权限模版'));
+        await act(async () => jest.advanceTimersByTime(300));
+      });
+      expect(baseElement).toMatchSnapshot();
+      await act(async () => jest.advanceTimersByTime(3300));
+      expect(requestListFn).toBeCalled();
+      expect(requestListFn).nthCalledWith(2, {
+        filter_by_event_type: EventTypeEnum.data_permission_template_created,
+        filter_by_namespace_uid: projectID,
+        keyword: '',
+        page_index: 1,
+        page_size: 20
+      });
+    });
+
     it('render action click refresh', async () => {
       const requestListFn = auth.listDataPermissionTemplateEvents();
       const { baseElement } = customRender();
-      await act(async () => jest.advanceTimersByTime(3300));
+      await act(async () => jest.advanceTimersByTime(9300));
       expect(requestListFn).toBeCalledTimes(1);
 
       const refreshBtn = getBySelector('.custom-icon-refresh', baseElement);

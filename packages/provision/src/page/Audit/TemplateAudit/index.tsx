@@ -17,7 +17,6 @@ import { useRequest } from 'ahooks';
 import {
   TemplateAuditTableFilterParamType,
   TemplateAuditTableColumns,
-  eventType,
   TemplateAuditTableActions
 } from './columns';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -25,6 +24,7 @@ import TemplateAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
 import useProvisionUser from '~/hooks/useProvisionUser';
 import useServiceOptions from '~/hooks/useServiceOptions';
+import { EventTypeOptions } from './components/EventType';
 
 const TemplateAudit: React.FC = () => {
   const { t } = useTranslation();
@@ -75,9 +75,17 @@ const TemplateAudit: React.FC = () => {
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(TemplateAuditTableColumns, updateTableFilterInfo);
 
-  const { userNameOptions, updateUserList } = useProvisionUser();
+  const {
+    userNameOptions,
+    updateUserList,
+    loading: provisionUserLoading
+  } = useProvisionUser();
 
-  const { serviceNameOptions, updateServiceList } = useServiceOptions();
+  const {
+    serviceNameOptions,
+    updateServiceList,
+    loading: serviceUserLoading
+  } = useServiceOptions();
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IListDataPermissionTemplateEvent, FilterCustomProps>([
@@ -90,27 +98,32 @@ const TemplateAudit: React.FC = () => {
       [
         'event_type',
         {
-          options: Object.entries(eventType).map(([value, label]) => ({
-            value,
-            label
-          })),
-          allowClear: true
+          options: EventTypeOptions,
+          allowClear: true,
+          isRenderLabel: true
         }
       ],
       [
         'executing_user_name',
         {
-          options: userNameOptions
+          options: userNameOptions,
+          loading: provisionUserLoading
         }
       ],
       [
         'data_permissions',
         {
-          options: serviceNameOptions
+          options: serviceNameOptions,
+          loading: serviceUserLoading
         }
       ]
     ]);
-  }, [userNameOptions, serviceNameOptions]);
+  }, [
+    userNameOptions,
+    serviceNameOptions,
+    provisionUserLoading,
+    serviceUserLoading
+  ]);
 
   const gotoDetail = useCallback(
     (record?: IListDataPermissionTemplateEvent) => {
@@ -119,10 +132,6 @@ const TemplateAudit: React.FC = () => {
     },
     [setShowDetailDrawer]
   );
-
-  const actions = useMemo(() => {
-    return TemplateAuditTableActions(gotoDetail);
-  }, [gotoDetail]);
 
   useEffect(() => {
     updateServiceList();
@@ -161,7 +170,7 @@ const TemplateAudit: React.FC = () => {
         columns={TemplateAuditTableColumns}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
-        actions={actions}
+        actions={TemplateAuditTableActions(gotoDetail)}
       />
       <TemplateAuditDetailDrawer
         open={open}

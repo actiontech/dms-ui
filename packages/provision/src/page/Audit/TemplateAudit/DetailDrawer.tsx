@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { IListDataPermissionTemplateEvent } from '@actiontech/shared/lib/api/provision/service/common';
 import AuditDetailItem from '../components/AuditDetailItem';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { eventType } from './columns';
 import { BasicTag } from '@actiontech/shared';
+import EventType, { EventTypeEnum } from './components/EventType';
 
 const TemplateAuditDetailDrawer: React.FC<{
   open: boolean;
@@ -19,7 +19,7 @@ const TemplateAuditDetailDrawer: React.FC<{
       title={t('provisionAudit.authAuditDetail.title')}
       onClose={onClose}
     >
-      <div>
+      <>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
             {t('provisionAudit.authAuditDetail.subTitle.actionInfo')}
@@ -34,7 +34,7 @@ const TemplateAuditDetailDrawer: React.FC<{
             value={data?.event_type}
             type="action"
           >
-            {eventType[data?.event_type ?? '']}
+            <EventType val={data?.event_type as EventTypeEnum} />
           </AuditDetailItem>
         </div>
         <div className="audit-info-wrapper">
@@ -93,7 +93,7 @@ const TemplateAuditDetailDrawer: React.FC<{
             })}
           </div>
         </div>
-      </div>
+      </>
     </AuthAuditDetailDrawerStyleWrapper>
   );
 };
