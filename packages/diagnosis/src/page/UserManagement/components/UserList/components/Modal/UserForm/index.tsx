@@ -1,10 +1,10 @@
 import { useRequest } from 'ahooks';
-import React, { useEffect } from 'react';
-import { Form, Select, Switch } from 'antd';
+import React from 'react';
+import { Form, Select } from 'antd';
 import { IUserFormProps } from './index.type';
 import { t } from '../../../../../../../locale';
 import auth from '../../../../../../../api/auth';
-import { BasicInput, BasicSelect } from '@actiontech/shared';
+import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
 
 const UserForm: React.FC<IUserFormProps> = ({
   form,
@@ -12,22 +12,14 @@ const UserForm: React.FC<IUserFormProps> = ({
   isUpdate,
   isAdmin
 }) => {
-  const {
-    data: roleList,
-    loading,
-    run: getRoleList
-  } = useRequest(
-    (params) => {
-      return auth.V1ListRoles(params);
+  const { data: roleList, loading } = useRequest(
+    () => {
+      return auth.V1ListRoles({ page_size: 9999 });
     },
     {
-      manual: true
+      ready: visible
     }
   );
-
-  useEffect(() => {
-    if (visible) getRoleList({ page_size: 9999 });
-  }, [visible]);
 
   return (
     <>
@@ -52,7 +44,7 @@ const UserForm: React.FC<IUserFormProps> = ({
             valuePropName="checked"
             name="isNeedUpdatePassword"
           >
-            <Switch />
+            <BasicSwitch />
           </Form.Item>
         ) : null}
         <Form.Item
