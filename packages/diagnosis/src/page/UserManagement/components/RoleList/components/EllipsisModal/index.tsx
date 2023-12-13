@@ -20,9 +20,9 @@ const EllipsisModal: React.FC<IEllipsisModalProps> = ({ data }) => {
         </Space>
       }
     >
-      <EllipsisModalStyleWrapper>
+      <span>
         <EllipsisOutlined />
-      </EllipsisModalStyleWrapper>
+      </span>
     </BasicToolTips>
   );
 };

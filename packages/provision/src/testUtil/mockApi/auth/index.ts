@@ -19,7 +19,8 @@ import {
   templateAuditList,
   serviceAuditList,
   userList,
-  accountListByService
+  accountListByService,
+  tipsList
 } from './data';
 import { AxiosResponse } from 'axios';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
@@ -66,8 +67,7 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListUser');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: userList.length,
-        users: userList
+        data: userList
       })
     );
     return spy;
@@ -77,8 +77,7 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListService');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: instanceList.length,
-        services: instanceList
+        data: instanceList
       })
     );
     return spy;
@@ -104,8 +103,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListDataOperationSets');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: operationSetList.length,
-        data_operation_sets: operationSetList
+        total_nums: operationSetList.length,
+        data: operationSetList
       })
     );
     return spy;
@@ -115,8 +114,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListAuthorization');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: authorizationList.length,
-        authorizations: authorizationList
+        total_nums: authorizationList.length,
+        data: authorizationList
       })
     );
     return spy;
@@ -195,8 +194,7 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListDataPermissionTemplate');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: templateList.length,
-        templates: templateList
+        data: templateList
       })
     );
     return spy;
@@ -355,7 +353,7 @@ class MockAuthApi implements MockSpyApy {
   public listTipsByAuthorizationKeyReq() {
     const spy = jest.spyOn(auth, 'ListTipsByAuthorizationKey');
     spy.mockImplementation(() =>
-      createSpySuccessResponse({ tips: ['tips1', 'tips2'] })
+      createSpySuccessResponse({ data: { tips: tipsList } })
     );
     return spy;
   }
@@ -363,7 +361,7 @@ class MockAuthApi implements MockSpyApy {
   public listBusinesses() {
     const spy = jest.spyOn(auth, 'AuthListBusiness');
     spy.mockImplementation(() =>
-      createSpySuccessResponse({ total: businesses.length, businesses })
+      createSpySuccessResponse({ data: { businesses } })
     );
     return spy;
   }

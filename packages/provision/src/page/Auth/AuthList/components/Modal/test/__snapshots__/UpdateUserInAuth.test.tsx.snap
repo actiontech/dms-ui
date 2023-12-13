@@ -1,0 +1,2016 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/Auth/AuthList/UpdateUserInAuth render init snap render snap when has select data 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  更换使用人
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="permission_user_uid"
+                        title="使用人"
+                      >
+                        使用人
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="permission_user_uid_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="permission_user_uid_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="permission_user_uid_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="permission_user_uid"
+                                  role="combobox"
+                                  type="search"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class=""
+                        for="isModifyPassword"
+                        title=""
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            是否修改数据库连接密码
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="isModifyPassword"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/UpdateUserInAuth render init snap render snap when no select data 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  更换使用人
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="permission_user_uid"
+                        title="使用人"
+                      >
+                        使用人
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="permission_user_uid_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="permission_user_uid_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="permission_user_uid_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="permission_user_uid"
+                                  role="combobox"
+                                  type="search"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class=""
+                        for="isModifyPassword"
+                        title=""
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            是否修改数据库连接密码
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="isModifyPassword"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/UpdateUserInAuth render init snap render snap when visible is false 1`] = `
+<body>
+  <div />
+</body>
+`;
+
+exports[`page/Auth/AuthList/UpdateUserInAuth render submit data render click submit api success 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw"
+      tabindex="-1"
+    >
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper ant-drawer-content-wrapper-hidden"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  更换使用人
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="permission_user_uid"
+                        title="使用人"
+                      >
+                        使用人
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="permission_user_uid_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="permission_user_uid_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="permission_user_uid_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="permission_user_uid"
+                                  role="combobox"
+                                  type="search"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="Kari Bode"
+                              >
+                                Kari Bode
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class=""
+                        for="isModifyPassword"
+                        title=""
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            是否修改数据库连接密码
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="isModifyPassword"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="ant-message ant-message-top css-dev-only-do-not-override-txh9fw"
+    style="left: 50%; transform: translateX(-50%); top: 8px;"
+  >
+    <div
+      class="ant-message-notice ant-message-notice-success css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-message-notice-content"
+      >
+        <div
+          class="ant-message-custom-content ant-message-success"
+        >
+          <span
+            aria-label="check-circle"
+            class="anticon anticon-check-circle"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="check-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+              />
+            </svg>
+          </span>
+          <span>
+            更新成功
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render click closed text 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  更换使用人
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="permission_user_uid"
+                        title="使用人"
+                      >
+                        使用人
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="permission_user_uid_list_6"
+                                  aria-autocomplete="list"
+                                  aria-controls="permission_user_uid_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="permission_user_uid_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="permission_user_uid"
+                                  role="combobox"
+                                  type="search"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="Dewey Connelly"
+                              >
+                                Dewey Connelly
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class=""
+                        for="isModifyPassword"
+                        title=""
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            是否修改数据库连接密码
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            id="isModifyPassword"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="db_account_password"
+                        title="数据库连接密码"
+                      >
+                        数据库连接密码
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <span
+                            class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password basic-input-wrapper action-password-input css-1x7fd4z css-dev-only-do-not-override-txh9fw"
+                          >
+                            <input
+                              aria-required="true"
+                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              id="db_account_password"
+                              placeholder="请输入{{name}}"
+                              type="password"
+                            />
+                            <span
+                              class="ant-input-suffix"
+                            >
+                              <span
+                                aria-label="eye-invisible"
+                                class="anticon anticon-eye-invisible suffix-icon"
+                                role="img"
+                                tabindex="-1"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="eye-invisible"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                  />
+                                  <path
+                                    d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                  />
+                                </svg>
+                              </span>
+                              <div
+                                class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-hcs8ws ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      生 成
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="confirm_db_account_password"
+                        title="确认数据库连接密码"
+                      >
+                        确认数据库连接密码
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <span
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                          >
+                            <input
+                              aria-required="true"
+                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              id="confirm_db_account_password"
+                              placeholder="请输入{{name}}"
+                              type="password"
+                            />
+                            <span
+                              class="ant-input-suffix"
+                            >
+                              <span
+                                aria-label="eye-invisible"
+                                class="anticon anticon-eye-invisible ant-input-password-icon"
+                                role="img"
+                                tabindex="-1"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="eye-invisible"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                  />
+                                  <path
+                                    d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="permission_user_uid_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="Mona Reinger"
+            aria-selected="false"
+            id="permission_user_uid_list_5"
+            role="option"
+          >
+            64872
+          </div>
+          <div
+            aria-label="Kari Bode"
+            aria-selected="false"
+            id="permission_user_uid_list_6"
+            role="option"
+          >
+            67483
+          </div>
+          <div
+            aria-label="Bryan Emard"
+            aria-selected="false"
+            id="permission_user_uid_list_7"
+            role="option"
+          >
+            39891
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div
+              style="height: 480px; position: relative; overflow: hidden;"
+            >
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
+              >
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="Dewey Connelly"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Dewey Connelly
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Edwin Schneider III"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Edwin Schneider III
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Javier Beier IV"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Javier Beier IV
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Glenda Goyette"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Glenda Goyette
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Valerie Gerhold"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Valerie Gerhold
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Mona Reinger"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Mona Reinger
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="Kari Bode"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Kari Bode
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Bryan Emard"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Bryan Emard
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Clinton Gleason III"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Clinton Gleason III
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Thelma Keeling"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Thelma Keeling
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Duane Hyatt"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Duane Hyatt
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="Mr. Nancy Yundt"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Mr. Nancy Yundt
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-ywkr0o ant-tooltip-placement-topRight"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-19kgj31"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
+                <span
+                  class="custom-icon custom-icon-selected css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="selected"
+                    >
+                      <path
+                        d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669"
+                        id="Vector"
+                        stroke="#4583FF"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </g>
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                已生成16位密码并复制在剪贴板中
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render click icon closed 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  更换使用人
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="permission_user_uid"
+                        title="使用人"
+                      >
+                        使用人
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="permission_user_uid_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="permission_user_uid_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="permission_user_uid_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="permission_user_uid"
+                                  role="combobox"
+                                  type="search"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="Kari Bode"
+                              >
+                                Kari Bode
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class=""
+                        for="isModifyPassword"
+                        title=""
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            是否修改数据库连接密码
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="isModifyPassword"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;

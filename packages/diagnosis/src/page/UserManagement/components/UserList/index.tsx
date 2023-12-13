@@ -16,6 +16,7 @@ import useUserManagementRedux from '../../hooks/useUserManagementRedux';
 import auth from '../../../../api/auth';
 import { IV1ListUsersParams } from '../../../../api/auth/index.d';
 import { IViewUserReply } from '../../../../api/common';
+import UserModal from './components/Modal';
 
 const UserList: React.FC = () => {
   const { t } = useTranslation();
@@ -51,6 +52,7 @@ const UserList: React.FC = () => {
   const onEditUser = useCallback((record?: IViewUserReply) => {
     setSelectUserData(record ?? null);
     setModalStatus(ModalName.Update_User, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onDeleteUser = useCallback(
@@ -65,8 +67,7 @@ const UserList: React.FC = () => {
         .V1DeleteUser({ user_id: record?.user_id ?? '' })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.open({
-              type: 'success',
+            messageApi.success({
               content: t('userManagement.user.deleteUser.deleteSuccess', {
                 name: record?.username ?? ''
               })
@@ -82,10 +83,6 @@ const UserList: React.FC = () => {
   const actions = useMemo(() => {
     return UserListActions(onEditUser, onDeleteUser);
   }, [onEditUser, onDeleteUser]);
-
-  const columns = useMemo(() => {
-    return UserListColumns;
-  }, []);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -106,11 +103,12 @@ const UserList: React.FC = () => {
           total: userList?.total ?? 0
         }}
         loading={loading}
-        columns={columns}
+        columns={UserListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}
       />
+      <UserModal />
     </>
   );
 };

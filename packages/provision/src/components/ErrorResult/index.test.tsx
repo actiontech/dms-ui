@@ -1,4 +1,4 @@
-import { superRender } from '~/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import ErrorResult from '.';
 
 describe.skip('ErrorResult', () => {

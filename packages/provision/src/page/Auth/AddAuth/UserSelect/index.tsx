@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { BasicSelect } from '@actiontech/shared';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { UserSelectProps } from '../index.type';
-import useProvisionUser from '~/hooks/uerProvisionUser';
+import useProvisionUser from '~/hooks/useProvisionUser';
 
 const UserSelect: React.FC<UserSelectProps> = ({ className }) => {
   const { t } = useTranslation();

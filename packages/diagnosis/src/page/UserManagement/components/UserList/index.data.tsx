@@ -4,6 +4,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../../locale';
 import { IViewUserReply } from '../../../../api/common';
+import { AdminUser } from '../../../../data/enum';
 
 export const UserListColumns: ActiontechTableColumn<IViewUserReply> = [
   {
@@ -11,8 +12,8 @@ export const UserListColumns: ActiontechTableColumn<IViewUserReply> = [
     title: () => t('common.username')
   },
   {
-    dataIndex: 'role_id',
-    title: () => t('userManagement.user.roleName')
+    dataIndex: 'role_name',
+    title: () => t('userManagement.roleName')
   }
 ];
 
@@ -47,7 +48,8 @@ export const UserListActions = (
             onDeleteUser(record);
           }
         };
-      }
+      },
+      permissions: (record) => record?.username !== AdminUser.admin
     }
   ];
 };

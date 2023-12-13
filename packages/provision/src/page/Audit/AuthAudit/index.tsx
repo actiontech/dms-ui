@@ -23,7 +23,7 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import AuthAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
-import useProvisionUser from '~/hooks/uerProvisionUser';
+import useProvisionUser from '~/hooks/useProvisionUser';
 
 const AuthAudit: React.FC = () => {
   const { t } = useTranslation();

@@ -105,24 +105,6 @@ export const PopconfirmMessageStyleWrapper = styled('span')`
 `;
 
 /**
- * 功能: 用于带有合并行的表格，处理被合并行第一列的样式问题
- * PS：合并列的情况暂时还没遇到，之后有使用场景了可再补充
- */
-export const ConsolidatedListStyleWrapper = styled('section')`
-  .ant-table-wrapper.actiontech-table-namespace
-    .ant-table-tbody
-    .ant-table-row {
-    .ant-table-cell:first-of-type {
-      padding-left: 16px;
-    }
-
-    .ant-table-cell .consolidated-column {
-      padding-left: 24px;
-    }
-  }
-`;
-
-/**
  * 功能: 用于带Icon的表格列，如工单号
  */
 export const TableColumnWithIconStyleWrapper = styled('div')`

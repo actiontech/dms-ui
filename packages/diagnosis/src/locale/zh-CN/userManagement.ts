@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: '用户管理',
   userList: '用户列表',
@@ -7,13 +8,20 @@ export default {
     addUser: '添加用户',
     addRole: '添加角色'
   },
+  userName: '用户名',
+  roleName: '角色名',
+  confirmPassword: '确认密码',
+  isNeedUpdatePassword: '是否需要更新密码',
+  operationPermissionName: '操作权限名称',
+  desc: '描述',
   user: {
     userName: '用户名',
     roleName: '角色名',
     confirmPassword: '确认密码',
     isNeedUpdatePassword: '是否需要更新密码',
     createUser: {
-      createSuccessTips: '添加用户 "{{name}}" 成功'
+      createSuccessTips: '添加用户 "{{name}}" 成功',
+      confirmPasswordTips: '密码不一致，请重新输入！'
     },
     updateUser: {
       title: '编辑用户',

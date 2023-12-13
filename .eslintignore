@@ -13,9 +13,4 @@ packages/*/dist
 packages/*/scripts
 # config
 vite.config.ts
-tailwind.config.js
-tailwind-plugins/*
-postcss.config.js
-jest.config.js
-jest-setup.ts
 .eslintrc.json

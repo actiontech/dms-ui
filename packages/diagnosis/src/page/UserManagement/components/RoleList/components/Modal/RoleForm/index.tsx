@@ -1,7 +1,7 @@
 import { BasicInput, BasicSelect } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import { Form, Select } from 'antd';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { IRoleFormProps } from './index.type';
 import auth from '../../../../../../../api/auth';
@@ -9,24 +9,14 @@ import auth from '../../../../../../../api/auth';
 const RoleForm: React.FC<IRoleFormProps> = ({ form, visible, isUpdate }) => {
   const { t } = useTranslation();
 
-  const {
-    data: scopeList,
-    loading,
-    run: getScopeList
-  } = useRequest(
+  const { data: scopeList, loading } = useRequest(
     () => {
       return auth.V1ListExistingScopes();
     },
     {
-      manual: true
+      ready: visible
     }
   );
-
-  useEffect(() => {
-    if (visible) {
-      getScopeList();
-    }
-  }, [visible]);
 
   return (
     <>

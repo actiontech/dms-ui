@@ -8,6 +8,7 @@ import useTableAction from './hooks/useTableAction';
 import classnames from 'classnames';
 import { useEffect, useMemo } from 'react';
 import useTableSettings from './hooks/useTableSettings';
+import { setClassNameForColumns } from './utils';
 
 const ActiontechTable = <
   T extends Record<string, any>,
@@ -41,17 +42,18 @@ const ActiontechTable = <
   }, [columns, props.actions, renderActionInTable]);
 
   const innerColumns = useMemo(() => {
-    if (!props.setting) {
-      return mergerColumns;
+    let temp = mergerColumns;
+    if (props.setting) {
+      temp = temp
+        .filter((v) => localColumns?.[v.dataIndex]?.show)
+        .map((v) => ({
+          ...v,
+          fixed: localColumns?.[v.dataIndex]?.fixed,
+          order: localColumns?.[v.dataIndex]?.order
+        }))
+        .sort((prev, current) => prev.order - current.order);
     }
-    return mergerColumns
-      .filter((v) => localColumns?.[v.dataIndex]?.show)
-      .map((v) => ({
-        ...v,
-        fixed: localColumns?.[v.dataIndex]?.fixed,
-        order: localColumns?.[v.dataIndex]?.order
-      }))
-      .sort((prev, current) => prev.order - current.order);
+    return setClassNameForColumns(temp);
   }, [localColumns, mergerColumns, props.setting]);
 
   useEffect(() => {
