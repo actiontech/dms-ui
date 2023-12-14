@@ -1,8 +1,18 @@
 export const userScopeData = [
   {
-    group: '',
-    scope_desc: '',
-    scope_name: ''
+    group: '用户',
+    scope_desc: '更新任何用户的密码',
+    scope_name: 'auth.UpdatePassword'
+  },
+  {
+    group: '权限',
+    scope_desc: '访问操作权限列表',
+    scope_name: 'auth.ListScopes'
+  },
+  {
+    group: '服务器',
+    scope_desc: '添加服务器',
+    scope_name: 'server.AddServer'
   }
 ];
 

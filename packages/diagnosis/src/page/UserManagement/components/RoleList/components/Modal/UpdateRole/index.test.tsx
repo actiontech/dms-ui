@@ -1,13 +1,16 @@
 import { useDispatch } from 'react-redux';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import UpdateUser from './index';
+import UpdateRole from './index';
 import { superRender } from '../../../../../../../testUtils/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import userManagement from '../../../../../../../testUtils/mockApi/userManagement';
-import { userListData } from '../../../../../../../testUtils/mockApi/userManagement/data';
+import { roleListData } from '../../../../../../../testUtils/mockApi/userManagement/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -16,7 +19,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-describe('diagnosis/update user modal', () => {
+describe('diagnosis/update role modal', () => {
   const mockDispatch = jest.fn();
 
   beforeEach(() => {
@@ -33,14 +36,14 @@ describe('diagnosis/update user modal', () => {
     cleanup();
   });
 
-  const customRender = (status = true, selectData = userListData[1]) => {
-    return superRender(<UpdateUser />, undefined, {
+  const customRender = (status = true) => {
+    return superRender(<UpdateRole />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {
-            [ModalName.Update_User]: status
+            [ModalName.Update_Role]: status
           },
-          selectUserData: selectData
+          selectRoleData: roleListData[1]
         }
       }
     });
@@ -56,10 +59,11 @@ describe('diagnosis/update user modal', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('编辑用户')).toBeInTheDocument();
-    expect(screen.getByText('用户名')).toBeInTheDocument();
-    expect(screen.getByText('是否需要更新密码')).toBeInTheDocument();
+    expect(screen.getByText('编辑角色')).toBeInTheDocument();
     expect(screen.getByText('角色名')).toBeInTheDocument();
+    expect(screen.getByText('描述')).toBeInTheDocument();
+    expect(screen.getByText('操作权限')).toBeInTheDocument();
+    expect(getBySelector('#role_name')).toHaveClass('ant-input-disabled');
   });
 
   it('close modal by click close button', async () => {
@@ -72,78 +76,57 @@ describe('diagnosis/update user modal', () => {
     expect(mockDispatch).toBeCalledTimes(1);
     expect(mockDispatch).toBeCalledWith({
       payload: {
-        modalName: ModalName.Update_User,
+        modalName: ModalName.Update_Role,
         status: false
       },
       type: 'userManagement/updateModalStatus'
     });
   });
 
-  it('should disabled role select when user name is admin', async () => {
-    const { baseElement } = customRender(true, userListData[0]);
-    await act(async () => jest.advanceTimersByTime(1000));
-    expect(baseElement).toMatchSnapshot();
-    expect(getBySelector('#username')).toHaveClass('ant-input-disabled');
-    expect(getBySelector('#role_id')).toHaveAttribute('disabled');
-  });
-
-  it('should not disabled role select when user name is not admin', async () => {
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(1000));
-    expect(baseElement).toMatchSnapshot();
-    expect(getBySelector('#username')).toHaveClass('ant-input-disabled');
-    expect(getBySelector('#role_id')).not.toHaveAttribute('disabled');
-  });
-
   it('should send request when input correct fields info', async () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
-    const updateUserRequest = userManagement.updateUser();
-    const getRoleRequest = userManagement.getRoleList();
+    const updateRoleRequest = userManagement.updateRole();
+    const getScopeRequest = userManagement.getScopeList();
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(1000));
-    expect(getRoleRequest).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getScopeRequest).toBeCalled();
     expect(baseElement).toMatchSnapshot();
-    // isNeedUpdatePassword
-    fireEvent.click(getBySelector('#isNeedUpdatePassword'));
-    await act(async () => jest.advanceTimersByTime(1000));
-    await expect(screen.getByText('密码')).toBeInTheDocument();
-    // password
-    fireEvent.change(getBySelector('#password'), {
+    // desc
+    fireEvent.change(getBySelector('#role_desc'), {
       target: {
-        value: '123'
+        value: 'role desc'
       }
     });
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(getBySelector('#password')).toHaveValue('123');
-    // confirm password
-    fireEvent.change(getBySelector('#confirmPassword'), {
-      target: {
-        value: '123'
-      }
+    expect(getBySelector('#role_desc')).toHaveValue('role desc');
+    // scope
+    fireEvent.mouseDown(getBySelector('#scopes'));
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[1]);
+      await act(async () => jest.advanceTimersByTime(300));
     });
-    await act(async () => jest.advanceTimersByTime(1000));
-    expect(getBySelector('#confirmPassword')).toHaveValue('123');
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateUserRequest).toBeCalled();
-    expect(updateUserRequest).toBeCalledWith({
-      user_id: '1735126216567947264',
-      password: '123',
-      role_id: '10000'
+    expect(updateRoleRequest).toBeCalled();
+    expect(updateRoleRequest).toBeCalledWith({
+      role_desc: 'role desc',
+      role_id: '1735188490427039744',
+      scopes: ['auth.UpdatePassword']
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('编辑用户 "test" 成功')).toBeInTheDocument();
+    expect(screen.queryByText('编辑角色 "test" 成功')).toBeInTheDocument();
     expect(mockDispatch).toBeCalledTimes(1);
     expect(mockDispatch).toBeCalledWith({
       payload: {
-        modalName: ModalName.Update_User,
+        modalName: ModalName.Update_Role,
         status: false
       },
       type: 'userManagement/updateModalStatus'
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_List);
+    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Role_List);
   });
 });
