@@ -70,15 +70,14 @@ const UserList: React.FC = () => {
   );
 
   const onDeleteUser = useCallback(
-    (record: IListUser | undefined) => {
+    (record?: IListUser) => {
       dms.DelUser({ user_uid: record?.uid ?? '' }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.open({
-            type: 'success',
-            content: t('dmsUserCenter.user.deleteUser.deleteSuccess', {
+          messageApi.success(
+            t('dmsUserCenter.user.deleteUser.deleteSuccess', {
               username: record?.name ?? ''
             })
-          });
+          );
           refresh();
         }
       });
@@ -96,7 +95,7 @@ const UserList: React.FC = () => {
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.DMS_Refresh_User_List,
+      EmitterKey.DMS_Refresh_User_Center_List,
       refresh
     );
 

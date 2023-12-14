@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActiontechTableColumn } from '../index.type';
+import classNames from 'classnames';
 
 export const extractTextFromReactNode = (node: React.ReactNode): string => {
   if (typeof node === 'string') {
@@ -72,4 +73,28 @@ export const checkButtonDisabled = <T extends Record<string, any>>(
   }
 
   return false;
+};
+
+export const setClassNameForColumns = <
+  T,
+  F,
+  OtherColumnKeys extends string = ''
+>(
+  columns: ActiontechTableColumn<T, F, OtherColumnKeys>
+) => {
+  return columns.map((column, i) => {
+    if (i === 0) {
+      return {
+        ...column,
+        className: classNames(column.className, 'first-col')
+      };
+    }
+    if (i === columns.length - 1) {
+      return {
+        ...column,
+        className: classNames(column.className, 'last-col')
+      };
+    }
+    return column;
+  });
 };

@@ -3,13 +3,14 @@ import { AvatarCom, EmptyBox } from '@actiontech/shared';
 import { IconTimeLine } from '@actiontech/shared/lib/Icon/common';
 import { Space } from 'antd';
 import AuditActionIcon from './AuditActionIcon';
+import { AuditDetailItemProps } from './AuditDetailItem.d';
 
-export const AuditDetailItem: React.FC<{
-  label?: string;
-  children?: React.ReactNode;
-  value?: string;
-  type?: 'date' | 'user' | 'action';
-}> = ({ label, value, type, children }) => {
+export const AuditDetailItem: React.FC<AuditDetailItemProps> = ({
+  label,
+  value,
+  type,
+  children
+}) => {
   const iconRender = () => {
     switch (type) {
       case 'date':

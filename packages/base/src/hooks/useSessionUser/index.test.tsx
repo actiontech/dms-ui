@@ -48,8 +48,9 @@ describe('useSessionUser', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.sessionUser?.data).toEqual({
       code: 0,
-      msg: 'ok',
-      data: { name: UserInfo.name, user_uid: UserInfo.userUid }
+      message: 'ok',
+      name: UserInfo.name,
+      user_uid: UserInfo.userUid
     });
     expect(result.current.getSessionUserLoading).toBeFalsy();
   });

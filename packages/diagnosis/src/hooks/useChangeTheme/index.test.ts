@@ -1,4 +1,5 @@
-import { renderHooksWithRedux } from '../../testUtils/customRender';
+import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+
 import { act } from '@testing-library/react';
 import useChangeTheme from '.';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
