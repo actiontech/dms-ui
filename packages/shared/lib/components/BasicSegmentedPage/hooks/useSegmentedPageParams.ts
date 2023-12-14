@@ -1,5 +1,5 @@
 import { useCallback, useState, useRef } from 'react';
-import { BasicSegmentedPageOptions } from '../index.d';
+import { BasicSegmentedPageOptions } from '../index.type';
 import { SegmentedProps } from 'antd';
 
 const useSegmentedPageParams = <T extends string>() => {

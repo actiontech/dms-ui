@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/BasicSegmentedPage should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-37l2vb"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-segmented-group"
+          >
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="test1"
+              >
+                test1
+              </div>
+            </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="test2"
+              >
+                test2
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    test content
+  </div>
+</body>
+`;

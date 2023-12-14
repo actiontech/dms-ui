@@ -4,7 +4,7 @@ import { Space } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { UserCenterListType } from './index.d';
+import { UserCenterListType } from './index.type';
 import { useTranslation } from 'react-i18next';
 import EventEmitter from '../../utils/EventEmitter';
 import UserManageModal from './Modal';
@@ -77,8 +77,7 @@ const UserCenter: React.FC = () => {
       {
         value: UserCenterListType.operate_permission_list,
         label: t('dmsUserCenter.role.opPermissionList.title'),
-        content: <OperatePermissionList />,
-        extraButton: null
+        content: <OperatePermissionList />
       }
     ]);
   }, [updateSegmentedPageData, t, dispatch]);

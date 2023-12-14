@@ -50,8 +50,7 @@ const AddUser = () => {
           email: values.email ?? '',
           phone: values.phone ?? '',
           wxid: values.wxid ?? '',
-          op_permission_uids: values.opPermissionUids ?? [],
-          user_group_uids: values.userGroupUids ?? []
+          op_permission_uids: values.opPermissionUids ?? []
         }
       })
       .then((res) => {

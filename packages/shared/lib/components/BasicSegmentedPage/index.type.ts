@@ -4,7 +4,7 @@ export type BasicSegmentedPageOptions<T> = {
   label: React.ReactNode;
   value: T;
   content: React.ReactNode;
-  extraButton: React.ReactNode;
+  extraButton?: React.ReactNode;
 };
 
 export type BasicSegmentedPageProps = SegmentedProps & {
