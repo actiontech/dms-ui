@@ -17,10 +17,7 @@ export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
   {
     dataIndex: 'role_desc',
     title: () => t('userManagement.role.roleDesc'),
-    className: 'ellipsis-column-width',
-    render: (desc: string) => {
-      return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
-    }
+    render: (desc: string) => desc || '-'
   },
   {
     dataIndex: 'scopes',
