@@ -1,6 +1,6 @@
 import BasicSegmented from '../BasicSegmented';
-import { BasicSegmentedPageProps } from './index.d';
-import { TableToolbar } from '../ActiontechTable';
+import { BasicSegmentedPageProps } from './index.type';
+import { SegmentedPageStyleWrapper } from './style';
 
 const BasicSegmentedPage: React.FC<BasicSegmentedPageProps> = ({
   renderContent,
@@ -8,9 +8,9 @@ const BasicSegmentedPage: React.FC<BasicSegmentedPageProps> = ({
 }) => {
   return (
     <>
-      <TableToolbar>
+      <SegmentedPageStyleWrapper>
         <BasicSegmented {...otherProps} />
-      </TableToolbar>
+      </SegmentedPageStyleWrapper>
       {renderContent()}
     </>
   );
