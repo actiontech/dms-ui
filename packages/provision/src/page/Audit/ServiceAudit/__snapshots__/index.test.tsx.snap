@@ -153,7 +153,7 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -188,7 +188,7 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           产生时间
@@ -212,7 +212,7 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                           语句
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -279,7 +279,7 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                         data-row-key="8"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -299,7 +299,7 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                           select * 
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -856,7 +856,7 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -891,7 +891,7 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           产生时间
@@ -915,7 +915,7 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
                           语句
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -982,7 +982,7 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
                         data-row-key="7"
                       >
                         <td
-                          class="ant-table-cell ant-table-cell-row-hover"
+                          class="ant-table-cell first-col ant-table-cell-row-hover"
                         >
                           2022-12-29 17:20:53
                         </td>
@@ -1002,7 +1002,7 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
                           select * 
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first ant-table-cell-row-hover"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first ant-table-cell-row-hover"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1344,7 +1344,7 @@ exports[`page/Audit/ServiceAudit render init snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1403,7 +1403,7 @@ exports[`page/Audit/ServiceAudit render init snap 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           产生时间
@@ -1427,7 +1427,7 @@ exports[`page/Audit/ServiceAudit render init snap 1`] = `
                           语句
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1668,7 +1668,7 @@ exports[`page/Audit/ServiceAudit render init snap 2`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1703,7 +1703,7 @@ exports[`page/Audit/ServiceAudit render init snap 2`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           产生时间
@@ -1727,7 +1727,7 @@ exports[`page/Audit/ServiceAudit render init snap 2`] = `
                           语句
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1968,7 +1968,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2003,7 +2003,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           产生时间
@@ -2027,7 +2027,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                           语句
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -2094,7 +2094,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                         data-row-key="7"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           2022-12-29 17:20:53
                         </td>
@@ -2114,7 +2114,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                           select * 
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2144,7 +2144,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                         data-row-key="8"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -2164,7 +2164,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                           select * 
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2194,7 +2194,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                         data-row-key="9"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           2022-12-29 17:22:53
                         </td>
@@ -2214,7 +2214,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                           select * 
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2555,7 +2555,7 @@ exports[`page/Audit/ServiceAudit render table list when api return error 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2590,7 +2590,7 @@ exports[`page/Audit/ServiceAudit render table list when api return error 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           产生时间
@@ -2614,7 +2614,7 @@ exports[`page/Audit/ServiceAudit render table list when api return error 1`] = `
                           语句
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
