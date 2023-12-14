@@ -4,7 +4,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../../locale';
 import { IScopeReply, IViewRoleReply } from '../../../../api/common';
-import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/shared';
 import EllipsisModal from './components/EllipsisModal';
 import { Space } from 'antd';
 import { AdminRole } from '../../../../data/enum';

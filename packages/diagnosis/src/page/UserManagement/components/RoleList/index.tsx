@@ -56,7 +56,7 @@ const RoleList: React.FC = () => {
   }, []);
 
   const onDeleteRole = useCallback(
-    (record: IViewRoleReply | undefined) => {
+    (record?: IViewRoleReply) => {
       const hideLoading = messageApi.loading(
         t('userManagement.role.deleteRole.deleting', {
           name: record?.role_name
@@ -80,10 +80,6 @@ const RoleList: React.FC = () => {
     [refresh, t, messageApi]
   );
 
-  const actions = useMemo(() => {
-    return RoleListActions(onEditRole, onDeleteRole);
-  }, [onEditRole, onDeleteRole]);
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Role_List,
@@ -106,7 +102,7 @@ const RoleList: React.FC = () => {
         columns={RoleListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={actions}
+        actions={RoleListActions(onEditRole, onDeleteRole)}
       />
       <RoleModal />
     </>

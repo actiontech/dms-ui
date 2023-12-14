@@ -56,7 +56,7 @@ const UserList: React.FC = () => {
   }, []);
 
   const onDeleteUser = useCallback(
-    (record: IViewUserReply | undefined) => {
+    (record?: IViewUserReply) => {
       const hideLoading = messageApi.loading(
         t('userManagement.user.deleteUser.deleting', {
           name: record?.username
@@ -80,10 +80,6 @@ const UserList: React.FC = () => {
     [refresh, t, messageApi]
   );
 
-  const actions = useMemo(() => {
-    return UserListActions(onEditUser, onDeleteUser);
-  }, [onEditUser, onDeleteUser]);
-
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_User_List,
@@ -106,7 +102,7 @@ const UserList: React.FC = () => {
         columns={UserListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={actions}
+        actions={UserListActions(onEditUser, onDeleteUser)}
       />
       <UserModal />
     </>
