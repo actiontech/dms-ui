@@ -8,6 +8,7 @@ export enum EventTypeEnum {
   data_permission_template_updated = 'data_permission_template_updated',
   data_permission_template_deleted = 'data_permission_template_deleted'
 }
+
 const eventTypeMap = () => {
   return new Map<EventTypeEnum, ReactNode>([
     [
@@ -45,14 +46,5 @@ const EventType: React.FC<{ val?: EventTypeEnum }> = ({ val }) => {
     <Space align="center">{val ? eventTypeMap().get(val) : 'unknown'}</Space>
   );
 };
-
-export const EventTypeOptions = Array.from(eventTypeMap()).map(
-  ([itemKeys, itemNode]) => {
-    return {
-      label: <Space align="center">{itemNode}</Space>,
-      value: itemKeys
-    };
-  }
-);
 
 export default EventType;

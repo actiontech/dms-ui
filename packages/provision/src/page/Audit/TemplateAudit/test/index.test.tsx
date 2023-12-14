@@ -130,7 +130,7 @@ describe('page/Auth/TemplateAudit', () => {
         '.actiontech-table-filter-container-namespace .ant-space-item',
         baseElement
       );
-      expect(filterItems.length).toBe(4);
+      expect(filterItems.length).toBe(3);
       expect(baseElement).toMatchSnapshot();
     });
 
@@ -147,19 +147,6 @@ describe('page/Auth/TemplateAudit', () => {
       await act(async () => jest.advanceTimersByTime(9300));
       expect(requestListFn).toBeCalledTimes(1);
 
-      fireEvent.click(screen.getByText('筛选'));
-      await act(async () => jest.advanceTimersByTime(300));
-      const searchInputEle = getAllBySelector(
-        '.ant-select-selection-search-input',
-        baseElement
-      );
-      expect(searchInputEle.length).toBe(4);
-      await act(async () => {
-        fireEvent.mouseDown(searchInputEle[2]);
-        jest.runAllTimers();
-      });
-      await screen.findAllByText('创建权限模版');
-      expect(baseElement).toMatchSnapshot();
       await act(async () => {
         fireEvent.click(screen.getByText('创建权限模版'));
         await act(async () => jest.advanceTimersByTime(300));

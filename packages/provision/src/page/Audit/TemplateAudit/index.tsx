@@ -24,7 +24,8 @@ import TemplateAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
 import useProvisionUser from '~/hooks/useProvisionUser';
 import useServiceOptions from '~/hooks/useServiceOptions';
-import { EventTypeOptions } from './components/EventType';
+import { EventTypeEnum } from './components/EventType';
+import EventTypeFilter from './components/EventTypeFilter';
 
 const TemplateAudit: React.FC = () => {
   const { t } = useTranslation();
@@ -39,6 +40,9 @@ const TemplateAudit: React.FC = () => {
   const [currentDetail, setCurrentDetail] =
     useState<IListDataPermissionTemplateEvent>();
 
+  const [filterStatus, setFilterStatus] = useState<EventTypeEnum | 'all'>(
+    'all'
+  );
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -61,14 +65,18 @@ const TemplateAudit: React.FC = () => {
         ...pagination,
         ...tableFilterInfo,
         filter_by_namespace_uid: projectID,
-        keyword: searchKeyword
+        keyword: searchKeyword,
+        filter_by_event_type:
+          filterStatus === 'all'
+            ? undefined
+            : (filterStatus as unknown as EventTypeEnum)
       };
       return handleTableRequestError(
         auth.AuditListDataPermissionTemplateEvents(params)
       );
     },
     {
-      refreshDeps: [pagination, tableFilterInfo, projectID]
+      refreshDeps: [pagination, tableFilterInfo, projectID, filterStatus]
     }
   );
 
@@ -93,14 +101,6 @@ const TemplateAudit: React.FC = () => {
         'generated_time',
         {
           showTime: true
-        }
-      ],
-      [
-        'event_type',
-        {
-          options: EventTypeOptions,
-          allowClear: true,
-          isRenderLabel: true
         }
       ],
       [
@@ -153,7 +153,9 @@ const TemplateAudit: React.FC = () => {
             refreshBySearchKeyword();
           }
         }}
-      />
+      >
+        <EventTypeFilter eventType={filterStatus} onChange={setFilterStatus} />
+      </TableToolbar>
       <TableFilterContainer
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
@@ -164,7 +166,8 @@ const TemplateAudit: React.FC = () => {
         rowKey="event_uid"
         dataSource={data?.list}
         pagination={{
-          total: data?.total ?? 0
+          total: data?.total ?? 0,
+          current: pagination.page_index
         }}
         loading={loading}
         columns={TemplateAuditTableColumns}

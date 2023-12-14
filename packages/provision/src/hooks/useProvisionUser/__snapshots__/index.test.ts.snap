@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/hooks/useProvisionUser should get provision user data from request 1`] = `
+Array [
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        D
+      </Avatar>
+      <ForwardRef(Text)>
+        Dewey Connelly
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Dewey Connelly",
+    "value": "Dewey Connelly",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        E
+      </Avatar>
+      <ForwardRef(Text)>
+        Edwin Schneider III
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Edwin Schneider III",
+    "value": "Edwin Schneider III",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        J
+      </Avatar>
+      <ForwardRef(Text)>
+        Javier Beier IV
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Javier Beier IV",
+    "value": "Javier Beier IV",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        G
+      </Avatar>
+      <ForwardRef(Text)>
+        Glenda Goyette
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Glenda Goyette",
+    "value": "Glenda Goyette",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        V
+      </Avatar>
+      <ForwardRef(Text)>
+        Valerie Gerhold
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Valerie Gerhold",
+    "value": "Valerie Gerhold",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        M
+      </Avatar>
+      <ForwardRef(Text)>
+        Mona Reinger
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Mona Reinger",
+    "value": "Mona Reinger",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        K
+      </Avatar>
+      <ForwardRef(Text)>
+        Kari Bode
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Kari Bode",
+    "value": "Kari Bode",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        B
+      </Avatar>
+      <ForwardRef(Text)>
+        Bryan Emard
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Bryan Emard",
+    "value": "Bryan Emard",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        C
+      </Avatar>
+      <ForwardRef(Text)>
+        Clinton Gleason III
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Clinton Gleason III",
+    "value": "Clinton Gleason III",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        T
+      </Avatar>
+      <ForwardRef(Text)>
+        Thelma Keeling
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Thelma Keeling",
+    "value": "Thelma Keeling",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        D
+      </Avatar>
+      <ForwardRef(Text)>
+        Duane Hyatt
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Duane Hyatt",
+    "value": "Duane Hyatt",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        M
+      </Avatar>
+      <ForwardRef(Text)>
+        Mr. Nancy Yundt
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Mr. Nancy Yundt",
+    "value": "Mr. Nancy Yundt",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        K
+      </Avatar>
+      <ForwardRef(Text)>
+        Kristi Dickinson
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Kristi Dickinson",
+    "value": "Kristi Dickinson",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        C
+      </Avatar>
+      <ForwardRef(Text)>
+        Cecelia Grimes
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Cecelia Grimes",
+    "value": "Cecelia Grimes",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        D
+      </Avatar>
+      <ForwardRef(Text)>
+        Dr. Miriam Brekke
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Dr. Miriam Brekke",
+    "value": "Dr. Miriam Brekke",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        K
+      </Avatar>
+      <ForwardRef(Text)>
+        Karen Herzog
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Karen Herzog",
+    "value": "Karen Herzog",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        M
+      </Avatar>
+      <ForwardRef(Text)>
+        Mr. Taylor Rempel
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Mr. Taylor Rempel",
+    "value": "Mr. Taylor Rempel",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        K
+      </Avatar>
+      <ForwardRef(Text)>
+        Kristina Hessel
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Kristina Hessel",
+    "value": "Kristina Hessel",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        D
+      </Avatar>
+      <ForwardRef(Text)>
+        Delores Rowe IV
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Delores Rowe IV",
+    "value": "Delores Rowe IV",
+  },
+  Object {
+    "label": <Space>
+      <Avatar
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "#fde3cf",
+            "color": "#f56a00",
+          }
+        }
+      >
+        T
+      </Avatar>
+      <ForwardRef(Text)>
+        Tammy Prosacco
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Tammy Prosacco",
+    "value": "Tammy Prosacco",
+  },
+]
+`;

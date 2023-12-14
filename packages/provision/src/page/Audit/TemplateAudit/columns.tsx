@@ -84,9 +84,7 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
     title: t('provisionAudit.authAudit.columns.actionType'),
     render: (val: IListDataPermissionTemplateEvent['event_type']) => {
       return <EventType val={val as EventTypeEnum} />;
-    },
-    filterCustomType: 'select',
-    filterKey: 'filter_by_event_type'
+    }
   }
 ];
 
