@@ -4,7 +4,10 @@ import userManagement, {
   updateSelectUserData,
   updateSelectRoleData
 } from '.';
-import { roleListData, userListData } from '../../testUtils/mockApi/user/data';
+import {
+  roleListData,
+  userListData
+} from '../../testUtils/mockApi/userManagement/data';
 
 const initStore = {
   modalStatus: {},
