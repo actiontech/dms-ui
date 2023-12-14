@@ -4,10 +4,10 @@ import {
   AuthTemplateListSelectData,
   AuthTemplateModalStatus
 } from '~/store/auth/templateList';
-import { superRender } from '~/testUtil/customRender';
 import auth from '~/testUtil/mockApi/auth';
 import { setRecoil } from '~/utils/SyncRecoil';
 import CopyTemplate from '.';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 
 describe.skip('CopyTemplate', () => {
   const customRender = (defaultVisible = true) => {

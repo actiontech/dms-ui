@@ -12,7 +12,6 @@ import {
   AuthTemplateModalStatus
 } from '~/store/auth/templateList';
 import { getBySelector, queryBySelector } from '~/testUtil/customQuery';
-import { superRender } from '~/testUtil/customRender';
 import auth from '~/testUtil/mockApi/auth';
 import { templateList } from '~/testUtil/mockApi/auth/data';
 import RecoilObservable from '~/testUtil/RecoilObservable';
@@ -21,6 +20,7 @@ import AuthTemplateList from '.';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 
 describe.skip('Auth/AuthTemplateList', () => {
   const tempListAuthorizationsSpy = () =>
@@ -149,7 +149,7 @@ describe.skip('Auth/AuthTemplateList', () => {
   it("should open 'copy_template' modal when user click copy template button", async () => {
     const TemplateListModalStatusChangeSpy = jest.fn();
     const AuthListUpdateSelectDataSpy = jest.fn();
-    const { userEvent } = superRender(
+    superRender(
       <>
         <AuthTemplateList />
         <RecoilObservable

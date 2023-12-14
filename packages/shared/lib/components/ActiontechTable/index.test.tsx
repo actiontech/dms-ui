@@ -1,4 +1,4 @@
-import { getBySelector } from '../../testUtil/customQuery';
+import { getAllBySelector, getBySelector } from '../../testUtil/customQuery';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../testUtil/customRender';
 
@@ -67,6 +67,8 @@ describe('lib/ActiontechTable', () => {
           }
         ]
       });
+      const firstTdDom = getAllBySelector('.first-col');
+      expect(firstTdDom.length).toBe(4);
       expect(baseElement).toMatchSnapshot();
     });
 

@@ -16,7 +16,7 @@ const useUserManagementRedux = (modalName?: ModalName) => {
   const modalState = useSelector((state: IReduxState) => ({
     visible: state.userManagement.modalStatus[modalName!],
     selectUserData: state.userManagement.selectUserData,
-    selectMonitorConfigData: state.userManagement.selectRoleData
+    selectRoleData: state.userManagement.selectRoleData
   }));
 
   const initModalStatus = (modalStatus: ModalStatus) => {

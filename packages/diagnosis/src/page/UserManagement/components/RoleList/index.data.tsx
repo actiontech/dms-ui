@@ -3,7 +3,11 @@ import {
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../../locale';
-import { IViewRoleReply } from '../../../../api/common';
+import { IScopeReply, IViewRoleReply } from '../../../../api/common';
+import { BasicTag } from '@actiontech/shared';
+import EllipsisModal from './components/EllipsisModal';
+import { Space } from 'antd';
+import { AdminRole } from '../../../../data/enum';
 
 export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
   {
@@ -15,9 +19,19 @@ export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
     title: () => t('userManagement.desc')
   },
   {
-    // todo: change after api update
-    dataIndex: 'role_desc',
-    title: () => t('userManagement.role.operationPermission')
+    dataIndex: 'scopes',
+    width: 450,
+    title: () => t('userManagement.role.operationPermission'),
+    render: (scope: IScopeReply[]) => {
+      return (
+        <Space wrap>
+          {scope.slice(0, 3).map((item) => (
+            <BasicTag key={item.scope_name}>{item.scope_desc}</BasicTag>
+          ))}
+          {scope.length > 3 ? <EllipsisModal data={scope} /> : null}
+        </Space>
+      );
+    }
   }
 ];
 
@@ -35,7 +49,8 @@ export const RoleListActions = (
             onEditRole(record);
           }
         };
-      }
+      },
+      permissions: (record) => record?.role_name !== AdminRole.admin
     },
     {
       text: t('common.delete'),
@@ -52,7 +67,8 @@ export const RoleListActions = (
             onDeleteRole(record);
           }
         };
-      }
+      },
+      permissions: (record) => record?.role_name !== AdminRole.admin
     }
   ];
 };

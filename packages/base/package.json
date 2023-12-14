@@ -21,8 +21,5 @@
     "babel-preset-react-app": "^10.0.1",
     "provision": "workspace:^",
     "sqle": "workspace:^"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3"
   }
 }

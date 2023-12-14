@@ -11,7 +11,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
       <div
         class="title"
       >
-        sqlAnalyze.pageTitle
+        SQL分析
       </div>
       <div
         class="extra"
@@ -45,9 +45,9 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="sqlAnalyze.sqlExplain"
+                    title="SQL解析"
                   >
-                    sqlAnalyze.sqlExplain
+                    SQL解析
                   </div>
                 </label>
               </div>
@@ -69,7 +69,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.executePlan.sql
+                    SQL语句
                   </h3>
                 </div>
                 <div
@@ -89,7 +89,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.executePlan.sqlExplain
+                    执行计划
                   </h3>
                 </div>
                 <div
@@ -97,7 +97,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
                   style="margin-bottom: 0px;"
                 >
                   <div
-                    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                    class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
                   >
                     <div
                       class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -174,7 +174,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.executePlan.performanceStatistics
+                    性能统计
                   </h3>
                 </div>
                 <div
@@ -227,12 +227,12 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
                           class="line-desc"
                         >
                           <h3>
-                            sqlQuery.executePlan.affectRows
+                            影响行数
                           </h3>
                           <p
                             class="line-text"
                           >
-                            sqlQuery.executePlan.affectRowTips
+                            区别于执行计划的rows列，显示SQL的实际影响行数
                           </p>
                         </div>
                       </div>
@@ -265,7 +265,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
       <div
         class="title"
       >
-        sqlAnalyze.pageTitle
+        SQL分析
       </div>
       <div
         class="extra"
@@ -299,9 +299,9 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="sqlAnalyze.sqlExplain"
+                    title="SQL解析"
                   >
-                    sqlAnalyze.sqlExplain
+                    SQL解析
                   </div>
                 </label>
                 <label
@@ -313,9 +313,9 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="sqlAnalyze.tableTitle"
+                    title="global_configuration_ldap表"
                   >
-                    sqlAnalyze.tableTitle
+                    global_configuration_ldap表
                   </div>
                 </label>
                 <label
@@ -327,9 +327,9 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="sqlAnalyze.tableTitle"
+                    title="execute_sql_detail表"
                   >
-                    sqlAnalyze.tableTitle
+                    execute_sql_detail表
                   </div>
                 </label>
               </div>
@@ -352,7 +352,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.databaseTables.columns
+                    列信息
                   </h3>
                 </div>
                 <div
@@ -360,7 +360,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   style="margin-bottom: 0px;"
                 >
                   <div
-                    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                    class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
                   >
                     <div
                       class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1781,7 +1781,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.databaseTables.index
+                    索引信息
                   </h3>
                 </div>
                 <div
@@ -1789,7 +1789,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   style="margin-bottom: 0px;"
                 >
                   <div
-                    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                    class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
                   >
                     <div
                       class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2232,7 +2232,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.databaseTables.createdTableSql
+                    建表语句
                   </h3>
                 </div>
                 <div
@@ -2643,7 +2643,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.databaseTables.columns
+                    列信息
                   </h3>
                 </div>
                 <div
@@ -2651,7 +2651,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   style="margin-bottom: 0px;"
                 >
                   <div
-                    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                    class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
                   >
                     <div
                       class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -4661,7 +4661,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.databaseTables.index
+                    索引信息
                   </h3>
                 </div>
                 <div
@@ -4669,7 +4669,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   style="margin-bottom: 0px;"
                 >
                   <div
-                    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                    class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
                   >
                     <div
                       class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -5382,7 +5382,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                   <h3
                     class="header-title"
                   >
-                    sqlQuery.databaseTables.createdTableSql
+                    建表语句
                   </h3>
                 </div>
                 <div
@@ -5900,7 +5900,7 @@ exports[`SqlAnalyze/AuditPlan should render error result of type "info" when res
       <div
         class="title"
       >
-        sqlAnalyze.pageTitle
+        SQL分析
       </div>
       <div
         class="extra"

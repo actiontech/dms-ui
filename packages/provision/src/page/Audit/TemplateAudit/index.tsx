@@ -23,7 +23,7 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import TemplateAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
-import useProvisionUser from '~/hooks/uerProvisionUser';
+import useProvisionUser from '~/hooks/useProvisionUser';
 import useServiceOptions from '~/hooks/useServiceOptions';
 
 const TemplateAudit: React.FC = () => {

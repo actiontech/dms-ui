@@ -11,11 +11,11 @@ import {
   IListDataPermissionTemplate,
   IListDataPermissionTemplateEvent,
   IListService,
-  IListUser,
   IOperation,
   IStatement,
   ITable,
-  IUserInfo
+  IUserInfo,
+  IListInternalUser
 } from '@actiontech/shared/lib/api/provision/service/common';
 import {
   DataObjectSourceNameEnum,
@@ -25,88 +25,90 @@ import {
   OperationInfoDbTypeEnum
 } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
-export const userList: IListUser[] = [
+export const userList: IListInternalUser[] = [
   {
     name: 'Dewey Connelly',
-    uid: '85315'
+    user_uid: '85315'
   },
   {
     name: 'Edwin Schneider III',
-    uid: '48548'
+    user_uid: '48548'
   },
   {
     name: 'Javier Beier IV',
-    uid: '28060'
+    user_uid: '28060'
   },
   {
     name: 'Glenda Goyette',
-    uid: '56796'
+    user_uid: '56796'
   },
   {
     name: 'Valerie Gerhold',
-    uid: '4066'
+    user_uid: '4066'
   },
   {
     name: 'Mona Reinger',
-    uid: '64872'
+    user_uid: '64872'
   },
   {
     name: 'Kari Bode',
-    uid: '67483'
+    user_uid: '67483'
   },
   {
     name: 'Bryan Emard',
-    uid: '39891'
+    user_uid: '39891'
   },
   {
     name: 'Clinton Gleason III',
-    uid: '42706'
+    user_uid: '42706'
   },
   {
     name: 'Thelma Keeling',
-    uid: '80115'
+    user_uid: '80115'
   },
   {
     name: 'Duane Hyatt',
-    uid: '34369'
+    user_uid: '34369'
   },
   {
     name: 'Mr. Nancy Yundt',
-    uid: '63949'
+    user_uid: '63949'
   },
   {
     name: 'Kristi Dickinson',
-    uid: '47815'
+    user_uid: '47815'
   },
   {
     name: 'Cecelia Grimes',
-    uid: '36601'
+    user_uid: '36601'
   },
   {
     name: 'Dr. Miriam Brekke',
-    uid: '19951'
+    user_uid: '19951'
   },
   {
     name: 'Karen Herzog',
-    uid: '97690'
+    user_uid: '97690'
   },
   {
     name: 'Mr. Taylor Rempel',
-    uid: '27809'
+    user_uid: '27809'
   },
   {
     name: 'Kristina Hessel',
-    uid: '56330'
+    user_uid: '56330'
   },
   {
     name: 'Delores Rowe IV',
-    uid: '15376'
+    user_uid: '15376'
   },
   {
     name: 'Tammy Prosacco',
-    uid: '61209'
+    user_uid: '61209'
   }
 ];
+
+export const tipsList: string[] = ['tips1', 'tips2'];
 
 export const instanceList: IListService[] = [
   {

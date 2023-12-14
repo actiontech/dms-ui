@@ -1,48 +1,90 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
-import { SegmentedValue } from 'antd/es/segmented';
-import { BasicButton, PageHeader, BasicSegmented } from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
-import {
-  TableToolbar,
-  TableRefreshButton
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { UserCenterListType, UserCenterListDataSource } from './types';
+import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import { UserCenterListType } from './index.d';
 import { useTranslation } from 'react-i18next';
 import EventEmitter from '../../utils/EventEmitter';
 import UserManageModal from './Modal';
 import { updateUserManageModalStatus } from '../../store/userCenter';
-import { UserCenterStyledWrapper } from './style';
+import {
+  useSegmentedPageParams,
+  BasicSegmentedPage
+} from '@actiontech/shared/lib/components/BasicSegmentedPage';
+import UserList from './components/UserList';
+import RoleList from './components/RoleList';
+import OperatePermissionList from './components/PermissionList';
+import { ModalName } from '../../data/ModalName';
+import EmitterKey from '../../data/EmitterKey';
 
 const UserCenter: React.FC = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
-  const [listType, setListType] = useState<UserCenterListType>(
-    UserCenterListType.user_list
-  );
-
-  const onChange = (v: SegmentedValue) => {
-    setListType(v as UserCenterListType);
-  };
-
   const onRefreshTable = () => {
-    EventEmitter.emit(UserCenterListDataSource[listType].refresh);
+    EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
   };
 
-  const onClick = () => {
-    dispatch(
-      updateUserManageModalStatus({
-        modalName: UserCenterListDataSource[listType].modalName,
-        status: true
-      })
-    );
-  };
+  const { updateSegmentedPageData, renderExtraButton, ...otherProps } =
+    useSegmentedPageParams<UserCenterListType>();
+
+  useEffect(() => {
+    const onClick = (modalName: ModalName) => {
+      dispatch(
+        updateUserManageModalStatus({
+          modalName,
+          status: true
+        })
+      );
+    };
+
+    updateSegmentedPageData([
+      {
+        value: UserCenterListType.user_list,
+        label: t('dmsUserCenter.user.userList.title'),
+        content: <UserList />,
+        extraButton: (
+          <BasicButton
+            type="primary"
+            icon={<IconAdd />}
+            onClick={() => {
+              onClick(ModalName.DMS_Add_User);
+            }}
+          >
+            {t('dmsUserCenter.user.userList.addUserButton')}
+          </BasicButton>
+        )
+      },
+      {
+        value: UserCenterListType.role_list,
+        label: t('dmsUserCenter.role.roleList.title'),
+        content: <RoleList />,
+        extraButton: (
+          <BasicButton
+            type="primary"
+            icon={<IconAdd />}
+            onClick={() => {
+              onClick(ModalName.DMS_Add_Role);
+            }}
+          >
+            {t('dmsUserCenter.role.createRole.button')}
+          </BasicButton>
+        )
+      },
+      {
+        value: UserCenterListType.operate_permission_list,
+        label: t('dmsUserCenter.role.opPermissionList.title'),
+        content: <OperatePermissionList />,
+        extraButton: null
+      }
+    ]);
+  }, [updateSegmentedPageData, t, dispatch]);
 
   return (
-    <UserCenterStyledWrapper>
+    <section>
       <PageHeader
         title={
           <Space size={12}>
@@ -50,37 +92,11 @@ const UserCenter: React.FC = () => {
             <TableRefreshButton refresh={onRefreshTable} />
           </Space>
         }
-        extra={
-          listType !== UserCenterListType.operate_permission_list ? (
-            <BasicButton type="primary" icon={<IconAdd />} onClick={onClick}>
-              {UserCenterListDataSource[listType].extraText}
-            </BasicButton>
-          ) : null
-        }
+        extra={renderExtraButton()}
       ></PageHeader>
-      <TableToolbar>
-        <BasicSegmented
-          value={listType}
-          onChange={onChange}
-          options={[
-            {
-              value: UserCenterListType.user_list,
-              label: t('dmsUserCenter.user.userList.title')
-            },
-            {
-              value: UserCenterListType.role_list,
-              label: t('dmsUserCenter.role.roleList.title')
-            },
-            {
-              value: UserCenterListType.operate_permission_list,
-              label: t('dmsUserCenter.role.opPermissionList.title')
-            }
-          ]}
-        />
-      </TableToolbar>
-      {UserCenterListDataSource[listType].tableRender()}
+      <BasicSegmentedPage {...otherProps} />
       <UserManageModal />
-    </UserCenterStyledWrapper>
+    </section>
   );
 };
 

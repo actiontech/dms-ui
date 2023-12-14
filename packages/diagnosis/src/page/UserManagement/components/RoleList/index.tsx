@@ -16,6 +16,7 @@ import useUserManagementRedux from '../../hooks/useUserManagementRedux';
 import auth from '../../../../api/auth';
 import { IV1ListRolesParams } from '../../../../api/auth/index.d';
 import { IViewRoleReply } from '../../../../api/common';
+import RoleModal from './components';
 
 const RoleList: React.FC = () => {
   const { t } = useTranslation();
@@ -51,10 +52,11 @@ const RoleList: React.FC = () => {
   const onEditRole = useCallback((record?: IViewRoleReply) => {
     setSelectRoleData(record ?? null);
     setModalStatus(ModalName.Update_Role, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onDeleteRole = useCallback(
-    (record: IViewRoleReply | undefined) => {
+    (record?: IViewRoleReply) => {
       const hideLoading = messageApi.loading(
         t('userManagement.role.deleteRole.deleting', {
           name: record?.role_name
@@ -65,8 +67,7 @@ const RoleList: React.FC = () => {
         .V1DeleteRole({ role_id: record?.id ?? '' })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.open({
-              type: 'success',
+            messageApi.success({
               content: t('userManagement.role.deleteRole.deleteSuccessTips', {
                 name: record?.role_name ?? ''
               })
@@ -78,14 +79,6 @@ const RoleList: React.FC = () => {
     },
     [refresh, t, messageApi]
   );
-
-  const actions = useMemo(() => {
-    return RoleListActions(onEditRole, onDeleteRole);
-  }, [onEditRole, onDeleteRole]);
-
-  const columns = useMemo(() => {
-    return RoleListColumns;
-  }, []);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -100,17 +93,18 @@ const RoleList: React.FC = () => {
     <>
       {contextHolder}
       <ActiontechTable
-        rowKey="role_id"
+        rowKey="id"
         dataSource={roleList?.list ?? []}
         pagination={{
           total: roleList?.total ?? 0
         }}
         loading={loading}
-        columns={columns}
+        columns={RoleListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={actions}
+        actions={RoleListActions(onEditRole, onDeleteRole)}
       />
+      <RoleModal />
     </>
   );
 };

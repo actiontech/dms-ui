@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: '用户管理',
   userList: '用户列表',
@@ -15,7 +16,8 @@ export default {
   desc: '描述',
   user: {
     createUser: {
-      createSuccessTips: '添加用户 "{{name}}" 成功'
+      createSuccessTips: '添加用户 "{{name}}" 成功',
+      confirmPasswordTips: '密码不一致，请重新输入！'
     },
     updateUser: {
       title: '编辑用户',
