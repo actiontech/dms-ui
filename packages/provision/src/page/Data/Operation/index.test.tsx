@@ -4,7 +4,7 @@ import { getBySelector } from '~/testUtil/customQuery';
 import auth from '~/testUtil/mockApi/auth';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 
-describe.skip('Data/Operation', () => {
+describe('Data/Operation', () => {
   let listOperationSetsSpy: jest.SpyInstance;
   beforeEach(() => {
     listOperationSetsSpy = auth.listOperationSets();
@@ -29,7 +29,7 @@ describe.skip('Data/Operation', () => {
     await screen.findByText('权限组');
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listOperationSetsSpy).toBeCalledTimes(1);
-    fireEvent.click(screen.getByTestId('refresh'));
+    fireEvent.click(getBySelector('.custom-icon-refresh'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('.ant-spin-spinning')).toBeInTheDocument();
     expect(listOperationSetsSpy).toBeCalledTimes(2);

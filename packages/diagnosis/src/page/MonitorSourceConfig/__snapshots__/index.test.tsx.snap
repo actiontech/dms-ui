@@ -201,7 +201,7 @@ exports[`test monitor source config should open model when click add button 1`] 
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -238,7 +238,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           监控源名
@@ -274,7 +274,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                           状态
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -359,7 +359,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                         data-row-key="test"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/test/1/server_monitor/monitorItemList"
@@ -393,7 +393,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                           正常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -436,7 +436,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                         data-row-key="test12"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/test12/2/server_monitor/monitorItemList"
@@ -470,7 +470,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                           异常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -513,7 +513,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                         data-row-key="udp"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/udp/3/server_monitor/monitorItemList"
@@ -547,7 +547,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                           未知
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -949,7 +949,7 @@ exports[`test monitor source config should render normal server monitor table 1`
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -986,7 +986,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           监控源名
@@ -1022,7 +1022,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                           状态
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1107,7 +1107,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                         data-row-key="test"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/test/1/server_monitor/monitorItemList"
@@ -1141,7 +1141,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                           正常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1184,7 +1184,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                         data-row-key="test12"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/test12/2/server_monitor/monitorItemList"
@@ -1218,7 +1218,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                           异常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1261,7 +1261,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                         data-row-key="udp"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/udp/3/server_monitor/monitorItemList"
@@ -1295,7 +1295,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                           未知
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1697,7 +1697,7 @@ exports[`test monitor source config should render search result for database tab
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1734,7 +1734,7 @@ exports[`test monitor source config should render search result for database tab
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           监控源名
@@ -1770,7 +1770,7 @@ exports[`test monitor source config should render search result for database tab
                           状态
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1855,7 +1855,7 @@ exports[`test monitor source config should render search result for database tab
                         data-row-key="2023-11-03T10:02:51.132+08:00-172.20.134.1"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/first/1731574922989273088/database_monitor/monitorItemList"
@@ -1889,7 +1889,7 @@ exports[`test monitor source config should render search result for database tab
                           正常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2291,7 +2291,7 @@ exports[`test monitor source config should render search result for table and re
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2328,7 +2328,7 @@ exports[`test monitor source config should render search result for table and re
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           监控源名
@@ -2364,7 +2364,7 @@ exports[`test monitor source config should render search result for table and re
                           状态
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -2449,7 +2449,7 @@ exports[`test monitor source config should render search result for table and re
                         data-row-key="test12"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/test12/2/server_monitor/monitorItemList"
@@ -2483,7 +2483,7 @@ exports[`test monitor source config should render search result for table and re
                           异常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2885,7 +2885,7 @@ exports[`test monitor source config should render server monitor table for defau
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2922,7 +2922,7 @@ exports[`test monitor source config should render server monitor table for defau
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           监控源名
@@ -2958,7 +2958,7 @@ exports[`test monitor source config should render server monitor table for defau
                           状态
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -3043,7 +3043,7 @@ exports[`test monitor source config should render server monitor table for defau
                         data-row-key="test"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/test/1/server_monitor/monitorItemList"
@@ -3077,7 +3077,7 @@ exports[`test monitor source config should render server monitor table for defau
                           正常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3120,7 +3120,7 @@ exports[`test monitor source config should render server monitor table for defau
                         data-row-key="test12"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/test12/2/server_monitor/monitorItemList"
@@ -3154,7 +3154,7 @@ exports[`test monitor source config should render server monitor table for defau
                           异常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3197,7 +3197,7 @@ exports[`test monitor source config should render server monitor table for defau
                         data-row-key="udp"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/udp/3/server_monitor/monitorItemList"
@@ -3231,7 +3231,7 @@ exports[`test monitor source config should render server monitor table for defau
                           未知
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3633,7 +3633,7 @@ exports[`test monitor source config should reset search input when click segment
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -3670,7 +3670,7 @@ exports[`test monitor source config should reset search input when click segment
                     >
                       <tr>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                           scope="col"
                         >
                           监控源名
@@ -3706,7 +3706,7 @@ exports[`test monitor source config should reset search input when click segment
                           状态
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -3791,7 +3791,7 @@ exports[`test monitor source config should reset search input when click segment
                         data-row-key="2023-11-03T10:02:51.132+08:00-172.20.134.1"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/first/1731574922989273088/database_monitor/monitorItemList"
@@ -3825,7 +3825,7 @@ exports[`test monitor source config should reset search input when click segment
                           正常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3868,7 +3868,7 @@ exports[`test monitor source config should reset search input when click segment
                         data-row-key="2023-11-03T10:02:51.132+08:00-172.20.134.2"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/second/1731574922989273089/database_monitor/monitorItemList"
@@ -3902,7 +3902,7 @@ exports[`test monitor source config should reset search input when click segment
                           异常
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3945,7 +3945,7 @@ exports[`test monitor source config should reset search input when click segment
                         data-row-key="2023-11-03T10:02:51.132+08:00-172.20.134.3"
                       >
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell first-col"
                         >
                           <a
                             href="/third/1731574922989273090/database_monitor/monitorItemList"
@@ -3979,7 +3979,7 @@ exports[`test monitor source config should reset search input when click segment
                           未知
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div

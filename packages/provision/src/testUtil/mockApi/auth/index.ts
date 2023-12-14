@@ -103,8 +103,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListDataOperationSets');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: operationSetList.length,
-        data_operation_sets: operationSetList
+        total_nums: operationSetList.length,
+        data: operationSetList
       })
     );
     return spy;
