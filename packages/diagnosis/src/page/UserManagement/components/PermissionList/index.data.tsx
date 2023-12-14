@@ -4,11 +4,7 @@ import { IViewScope } from '../../../../api/common';
 
 export const PermissionListColumns: ActiontechTableColumn<IViewScope> = [
   {
-    dataIndex: 'scope_name',
-    title: () => t('userManagement.operationPermissionName')
-  },
-  {
     dataIndex: 'scope_desc',
-    title: () => t('userManagement.desc')
+    title: () => t('userManagement.operationPermissionName')
   }
 ];
