@@ -1,4 +1,5 @@
 import { SegmentedProps } from 'antd';
+import { TableSearchInputProps } from '../ActiontechTable';
 
 export type BasicSegmentedPageOptions<T> = {
   label: React.ReactNode;
@@ -9,4 +10,8 @@ export type BasicSegmentedPageOptions<T> = {
 
 export type BasicSegmentedPageProps = SegmentedProps & {
   renderContent: () => React.ReactNode;
+  /**
+   * 同ActiontechTable/Toolbar中的searchInput
+   */
+  searchInput?: TableSearchInputProps | false;
 };

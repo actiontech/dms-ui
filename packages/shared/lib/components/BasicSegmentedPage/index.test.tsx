@@ -19,6 +19,9 @@ describe('lib/BasicSegmentedPage', () => {
           }
         ]}
         renderContent={() => 'test content'}
+        searchInput={{
+          onChange: jest.fn()
+        }}
       />
     );
     expect(baseElement).toMatchSnapshot();
