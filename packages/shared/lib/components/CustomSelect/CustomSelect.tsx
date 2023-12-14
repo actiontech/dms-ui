@@ -21,7 +21,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   onDropdownVisibleChange,
   searchValue,
   onSearch,
-  isRenderLabel,
+  optionCustomLabel,
   ...props
 }) => {
   const { t } = useTranslation();
@@ -54,7 +54,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         ) : (
           <CustomOptionLabel
             prefix={valuePrefix}
-            label={isRenderLabel ? option.label : showLabel}
+            label={optionCustomLabel ? optionCustomLabel(option) : showLabel}
           />
         )
       };
@@ -78,7 +78,13 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         }
       })
       .filter((v) => !!v) as SelectProps['options'];
-  }, [props.mode, props.options, innerSearchValue, valuePrefix, isRenderLabel]);
+  }, [
+    props.mode,
+    props.options,
+    innerSearchValue,
+    valuePrefix,
+    optionCustomLabel
+  ]);
 
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     const customMenu = (

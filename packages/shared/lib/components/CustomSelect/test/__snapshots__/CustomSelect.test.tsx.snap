@@ -340,7 +340,7 @@ exports[`lib/CustomSelect should render default select 4`] = `
 </div>
 `;
 
-exports[`lib/CustomSelect should render when isRenderLabel is true 1`] = `
+exports[`lib/CustomSelect should render when optionCustomLabel is true 1`] = `
 <body>
   <div>
     <div
@@ -368,7 +368,7 @@ exports[`lib/CustomSelect should render when isRenderLabel is true 1`] = `
                 <span
                   class="custom-select-option-content-label"
                 >
-                  value1
+                  111
                 </span>
               </span>
             </span>

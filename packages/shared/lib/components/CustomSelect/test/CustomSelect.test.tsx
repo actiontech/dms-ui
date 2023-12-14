@@ -100,18 +100,24 @@ describe('lib/CustomSelect', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should render when isRenderLabel is true', async () => {
+  it('should render when optionCustomLabel is true', async () => {
     const { baseElement } = customRender({
       className: 'custom-select-class',
       placeholder: '自定义placeholder',
       prefix: 'isRenderLabel',
       allowClear: false,
-      isRenderLabel: true,
+      optionCustomLabel: (optionVal) => (
+        <span>
+          {optionVal.text}
+          {optionVal.value}
+        </span>
+      ),
       size: 'middle',
       mode: 'tags',
       options: [
         {
           label: <span style={{ color: 'red' }}>label-test</span>,
+          text: '111',
           value: 'value1'
         }
       ]

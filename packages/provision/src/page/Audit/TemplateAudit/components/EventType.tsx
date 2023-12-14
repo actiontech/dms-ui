@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { Space } from 'antd';
 import AuditActionIcon from '../../components/AuditActionIcon';
 import { t } from '~/locale';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export enum EventTypeEnum {
   data_permission_template_created = 'data_permission_template_created',
@@ -43,7 +44,9 @@ const eventTypeMap = () => {
 
 const EventType: React.FC<{ val?: EventTypeEnum }> = ({ val }) => {
   return (
-    <Space align="center">{val ? eventTypeMap().get(val) : 'unknown'}</Space>
+    <TableColumnWithIconStyleWrapper>
+      {val ? eventTypeMap().get(val) : 'unknown'}
+    </TableColumnWithIconStyleWrapper>
   );
 };
 

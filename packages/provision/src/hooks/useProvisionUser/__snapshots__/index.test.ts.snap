@@ -4,17 +4,9 @@ exports[`provision/hooks/useProvisionUser should get provision user data from re
 Array [
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        D
-      </Avatar>
+      <AvatarCom
+        name="D"
+      />
       <ForwardRef(Text)>
         Dewey Connelly
       </ForwardRef(Text)>
@@ -24,17 +16,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        E
-      </Avatar>
+      <AvatarCom
+        name="E"
+      />
       <ForwardRef(Text)>
         Edwin Schneider III
       </ForwardRef(Text)>
@@ -44,17 +28,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        J
-      </Avatar>
+      <AvatarCom
+        name="J"
+      />
       <ForwardRef(Text)>
         Javier Beier IV
       </ForwardRef(Text)>
@@ -64,17 +40,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        G
-      </Avatar>
+      <AvatarCom
+        name="G"
+      />
       <ForwardRef(Text)>
         Glenda Goyette
       </ForwardRef(Text)>
@@ -84,17 +52,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        V
-      </Avatar>
+      <AvatarCom
+        name="V"
+      />
       <ForwardRef(Text)>
         Valerie Gerhold
       </ForwardRef(Text)>
@@ -104,17 +64,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        M
-      </Avatar>
+      <AvatarCom
+        name="M"
+      />
       <ForwardRef(Text)>
         Mona Reinger
       </ForwardRef(Text)>
@@ -124,17 +76,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        K
-      </Avatar>
+      <AvatarCom
+        name="K"
+      />
       <ForwardRef(Text)>
         Kari Bode
       </ForwardRef(Text)>
@@ -144,17 +88,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        B
-      </Avatar>
+      <AvatarCom
+        name="B"
+      />
       <ForwardRef(Text)>
         Bryan Emard
       </ForwardRef(Text)>
@@ -164,17 +100,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        C
-      </Avatar>
+      <AvatarCom
+        name="C"
+      />
       <ForwardRef(Text)>
         Clinton Gleason III
       </ForwardRef(Text)>
@@ -184,17 +112,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        T
-      </Avatar>
+      <AvatarCom
+        name="T"
+      />
       <ForwardRef(Text)>
         Thelma Keeling
       </ForwardRef(Text)>
@@ -204,17 +124,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        D
-      </Avatar>
+      <AvatarCom
+        name="D"
+      />
       <ForwardRef(Text)>
         Duane Hyatt
       </ForwardRef(Text)>
@@ -224,17 +136,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        M
-      </Avatar>
+      <AvatarCom
+        name="M"
+      />
       <ForwardRef(Text)>
         Mr. Nancy Yundt
       </ForwardRef(Text)>
@@ -244,17 +148,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        K
-      </Avatar>
+      <AvatarCom
+        name="K"
+      />
       <ForwardRef(Text)>
         Kristi Dickinson
       </ForwardRef(Text)>
@@ -264,17 +160,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        C
-      </Avatar>
+      <AvatarCom
+        name="C"
+      />
       <ForwardRef(Text)>
         Cecelia Grimes
       </ForwardRef(Text)>
@@ -284,17 +172,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        D
-      </Avatar>
+      <AvatarCom
+        name="D"
+      />
       <ForwardRef(Text)>
         Dr. Miriam Brekke
       </ForwardRef(Text)>
@@ -304,17 +184,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        K
-      </Avatar>
+      <AvatarCom
+        name="K"
+      />
       <ForwardRef(Text)>
         Karen Herzog
       </ForwardRef(Text)>
@@ -324,17 +196,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        M
-      </Avatar>
+      <AvatarCom
+        name="M"
+      />
       <ForwardRef(Text)>
         Mr. Taylor Rempel
       </ForwardRef(Text)>
@@ -344,17 +208,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        K
-      </Avatar>
+      <AvatarCom
+        name="K"
+      />
       <ForwardRef(Text)>
         Kristina Hessel
       </ForwardRef(Text)>
@@ -364,17 +220,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        D
-      </Avatar>
+      <AvatarCom
+        name="D"
+      />
       <ForwardRef(Text)>
         Delores Rowe IV
       </ForwardRef(Text)>
@@ -384,17 +232,9 @@ Array [
   },
   Object {
     "label": <Space>
-      <Avatar
-        size="small"
-        style={
-          Object {
-            "backgroundColor": "#fde3cf",
-            "color": "#f56a00",
-          }
-        }
-      >
-        T
-      </Avatar>
+      <AvatarCom
+        name="T"
+      />
       <ForwardRef(Text)>
         Tammy Prosacco
       </ForwardRef(Text)>

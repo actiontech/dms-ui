@@ -1,10 +1,11 @@
-import { Space, Avatar, Typography } from 'antd';
+import { Space, Typography } from 'antd';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useBoolean } from 'ahooks';
 import { useMemo, useCallback, useState } from 'react';
 import { IListInternalUser } from '@actiontech/shared/lib/api/provision/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { AvatarCom } from '@actiontech/shared';
 
 const useProvisionUser = () => {
   const { projectID } = useCurrentProject();
@@ -52,13 +53,7 @@ const useProvisionUser = () => {
         text: user.name,
         label: (
           <Space>
-            <Avatar
-              size="small"
-              //todo
-              style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
-            >
-              {(user.name?.[0] ?? '').toUpperCase()}
-            </Avatar>
+            <AvatarCom name={user.name?.[0] ?? ''} />
             <Typography.Text>{user.name}</Typography.Text>
           </Space>
         )
