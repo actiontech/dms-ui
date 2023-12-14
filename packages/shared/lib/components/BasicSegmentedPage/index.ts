@@ -1,4 +1,4 @@
-export { type BasicSegmentedPageOptions } from './index.d';
+export { type BasicSegmentedPageOptions } from './index.type';
 
 export { default as BasicSegmentedPage } from './BasicSegmentedPage';
 
