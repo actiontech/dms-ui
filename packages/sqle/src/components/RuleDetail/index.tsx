@@ -25,6 +25,8 @@ import {
   HeaderSpaceTagStyleWrapper,
   RuleTemplateDetailStyleWrapper
 } from './style';
+import { TableFilterContainer } from '@actiontech/shared/lib/components/ActiontechTable';
+import useRuleDetailFilter from './hooks/useRuleDetailFilter';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
@@ -45,6 +47,13 @@ const RuleDetail = () => {
   } = useRuleList();
 
   const {
+    fuzzyKeyword,
+    filterContainerMeta,
+    ruleFilterContainerCustomProps,
+    updateTableFilterInfo
+  } = useRuleDetailFilter();
+
+  const {
     data: projectRuleData,
     loading: projectRuleLoading,
     run: getProjectTemplateRules,
@@ -54,7 +63,8 @@ const RuleDetail = () => {
       rule_template
         .getProjectRuleTemplateV1({
           rule_template_name: ruleTemplate ?? '',
-          project_name: project ?? ''
+          project_name: project ?? '',
+          fuzzy_keyword_rule: fuzzyKeyword
         })
         .then((res) => {
           return res.data?.data?.rule_list ?? [];
@@ -73,7 +83,8 @@ const RuleDetail = () => {
     (ruleTemplate?: string) =>
       rule_template
         .getRuleTemplateV1({
-          rule_template_name: ruleTemplate ?? ''
+          rule_template_name: ruleTemplate ?? '',
+          fuzzy_keyword_rule: fuzzyKeyword
         })
         .then((res) => {
           return res.data?.data?.rule_list ?? [];
@@ -91,12 +102,13 @@ const RuleDetail = () => {
     () =>
       rule_template
         .getRuleListV1({
-          filter_db_type: dbType
+          filter_db_type: dbType,
+          fuzzy_keyword_rule: fuzzyKeyword
         })
         .then((res) => res.data?.data ?? []),
     {
       ready: !!dbType,
-      refreshDeps: [dbType]
+      refreshDeps: [dbType, fuzzyKeyword]
     }
   );
 
@@ -134,7 +146,8 @@ const RuleDetail = () => {
     getProjectTemplateRules,
     getGlobalTemplateRules,
     projectName,
-    templateName
+    templateName,
+    fuzzyKeyword
   ]);
 
   return (
@@ -194,6 +207,11 @@ const RuleDetail = () => {
               </section>
             </section>
           </DetailComStyleWrapper>
+          <TableFilterContainer
+            updateTableFilterInfo={updateTableFilterInfo}
+            filterContainerMeta={filterContainerMeta}
+            filterCustomProps={ruleFilterContainerCustomProps}
+          />
           {dbType && (
             <RuleTypes
               ruleTypeChange={setRuleType}
