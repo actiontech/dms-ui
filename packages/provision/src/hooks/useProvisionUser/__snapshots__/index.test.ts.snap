@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/hooks/useProvisionUser should get provision user data from request 1`] = `
+Array [
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="D"
+      />
+      <ForwardRef(Text)>
+        Dewey Connelly
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Dewey Connelly",
+    "value": "Dewey Connelly",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="E"
+      />
+      <ForwardRef(Text)>
+        Edwin Schneider III
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Edwin Schneider III",
+    "value": "Edwin Schneider III",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="J"
+      />
+      <ForwardRef(Text)>
+        Javier Beier IV
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Javier Beier IV",
+    "value": "Javier Beier IV",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="G"
+      />
+      <ForwardRef(Text)>
+        Glenda Goyette
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Glenda Goyette",
+    "value": "Glenda Goyette",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="V"
+      />
+      <ForwardRef(Text)>
+        Valerie Gerhold
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Valerie Gerhold",
+    "value": "Valerie Gerhold",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="M"
+      />
+      <ForwardRef(Text)>
+        Mona Reinger
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Mona Reinger",
+    "value": "Mona Reinger",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="K"
+      />
+      <ForwardRef(Text)>
+        Kari Bode
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Kari Bode",
+    "value": "Kari Bode",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="B"
+      />
+      <ForwardRef(Text)>
+        Bryan Emard
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Bryan Emard",
+    "value": "Bryan Emard",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="C"
+      />
+      <ForwardRef(Text)>
+        Clinton Gleason III
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Clinton Gleason III",
+    "value": "Clinton Gleason III",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="T"
+      />
+      <ForwardRef(Text)>
+        Thelma Keeling
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Thelma Keeling",
+    "value": "Thelma Keeling",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="D"
+      />
+      <ForwardRef(Text)>
+        Duane Hyatt
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Duane Hyatt",
+    "value": "Duane Hyatt",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="M"
+      />
+      <ForwardRef(Text)>
+        Mr. Nancy Yundt
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Mr. Nancy Yundt",
+    "value": "Mr. Nancy Yundt",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="K"
+      />
+      <ForwardRef(Text)>
+        Kristi Dickinson
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Kristi Dickinson",
+    "value": "Kristi Dickinson",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="C"
+      />
+      <ForwardRef(Text)>
+        Cecelia Grimes
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Cecelia Grimes",
+    "value": "Cecelia Grimes",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="D"
+      />
+      <ForwardRef(Text)>
+        Dr. Miriam Brekke
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Dr. Miriam Brekke",
+    "value": "Dr. Miriam Brekke",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="K"
+      />
+      <ForwardRef(Text)>
+        Karen Herzog
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Karen Herzog",
+    "value": "Karen Herzog",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="M"
+      />
+      <ForwardRef(Text)>
+        Mr. Taylor Rempel
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Mr. Taylor Rempel",
+    "value": "Mr. Taylor Rempel",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="K"
+      />
+      <ForwardRef(Text)>
+        Kristina Hessel
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Kristina Hessel",
+    "value": "Kristina Hessel",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="D"
+      />
+      <ForwardRef(Text)>
+        Delores Rowe IV
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Delores Rowe IV",
+    "value": "Delores Rowe IV",
+  },
+  Object {
+    "label": <Space>
+      <AvatarCom
+        name="T"
+      />
+      <ForwardRef(Text)>
+        Tammy Prosacco
+      </ForwardRef(Text)>
+    </Space>,
+    "text": "Tammy Prosacco",
+    "value": "Tammy Prosacco",
+  },
+]
+`;

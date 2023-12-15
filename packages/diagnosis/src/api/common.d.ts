@@ -125,6 +125,8 @@ export interface IRoleCreateRequest {
   role_desc?: string;
 
   role_name?: string;
+
+  scopes?: string[];
 }
 
 export interface IRoleDeleteRequest {
@@ -140,11 +142,25 @@ export interface IRoleScopeCreateRequest {
 export interface IRoleScopeDeleteRequest {
   role_id?: string;
 
-  scope_name?: string;
+  scope_names?: string[];
+}
+
+export interface IRoleUpdateRequest {
+  role_desc?: string;
+
+  role_id?: string;
+
+  scopes?: string[];
 }
 
 export interface ISaveDBsReq {
   dbs: IViewDatabase[];
+}
+
+export interface IScopeReply {
+  scope_desc?: string;
+
+  scope_name?: string;
 }
 
 export interface IUserCreateRequest {
@@ -181,7 +197,9 @@ export interface IUserUpdatePasswordRequest {
   user_id?: string;
 }
 
-export interface IUserUpdateRoleRequest {
+export interface IUserUpdateRequest {
+  password?: string;
+
   role_id?: string;
 
   user_id?: string;
@@ -245,9 +263,13 @@ export interface IViewRoleReply {
   role_desc?: string;
 
   role_name?: string;
+
+  scopes?: IScopeReply[];
 }
 
 export interface IViewScope {
+  group?: string;
+
   scope_desc?: string;
 
   scope_name?: string;
@@ -297,6 +319,8 @@ export interface IViewUpdateServerRequest {
 
 export interface IViewUserReply {
   role_id?: string;
+
+  role_name?: string;
 
   user_id?: string;
 

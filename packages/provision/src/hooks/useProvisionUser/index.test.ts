@@ -47,7 +47,7 @@ describe('provision/hooks/useProvisionUser', () => {
     expect(result.current.loading).toBeFalsy();
     expect(result.current.userList).toEqual(userList);
     expect(result.current.userOptions).toEqual(mockUserOptions);
-    expect(result.current.userNameOptions).toEqual(mockUserNameOptions);
+    expect(result.current.userNameOptions).toMatchSnapshot();
   });
 
   it('should set userList to empty array when response code is not equal success code', async () => {

@@ -35,8 +35,6 @@ const ServiceAudit: React.FC = () => {
     { setTrue: setShowDetailDrawer, setFalse: setHideDetailDrawer }
   ] = useBoolean();
 
-  const [currentBusiness, setCurrentBusiness] = useState<string>();
-
   const [currentDetail, setCurrentDetail] =
     useState<IListDataObjectServiceEvent>();
 
@@ -92,7 +90,9 @@ const ServiceAudit: React.FC = () => {
         'business',
         {
           options: businessOptions,
-          onChange: (v: string) => setCurrentBusiness(v)
+          onChange: (business: string) => {
+            updateServiceList(business);
+          }
         }
       ],
       [
@@ -102,7 +102,7 @@ const ServiceAudit: React.FC = () => {
         }
       ]
     ]);
-  }, [serviceNameOptions, businessOptions]);
+  }, [businessOptions, serviceNameOptions, updateServiceList]);
 
   const gotoDetail = useCallback(
     (record?: IListDataObjectServiceEvent) => {
@@ -112,17 +112,10 @@ const ServiceAudit: React.FC = () => {
     [setShowDetailDrawer]
   );
 
-  const actions = useMemo(() => {
-    return ServiceAuditTableActions(gotoDetail);
-  }, [gotoDetail]);
-
   useEffect(() => {
-    updateServiceList(currentBusiness);
-  }, [currentBusiness, updateServiceList]);
-
-  useEffect(() => {
+    updateServiceList();
     updateBusinessList();
-  }, [updateBusinessList]);
+  }, [updateBusinessList, updateServiceList]);
 
   return (
     <div>
@@ -150,13 +143,14 @@ const ServiceAudit: React.FC = () => {
         rowKey="event_uid"
         dataSource={data?.list}
         pagination={{
-          total: data?.total ?? 0
+          total: data?.total ?? 0,
+          current: pagination.page_index
         }}
         loading={loading}
         columns={ServiceAuditTableColumns}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
-        actions={actions}
+        actions={ServiceAuditTableActions(gotoDetail)}
       />
       <ServiceAuditDetailDrawer
         open={open}
