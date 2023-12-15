@@ -1,9 +1,11 @@
+import { Space, Typography } from 'antd';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useBoolean } from 'ahooks';
 import { useMemo, useCallback, useState } from 'react';
 import { IListInternalUser } from '@actiontech/shared/lib/api/provision/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { AvatarCom } from '@actiontech/shared';
 
 const useProvisionUser = () => {
   const { projectID } = useCurrentProject();
@@ -48,7 +50,13 @@ const useProvisionUser = () => {
     return userList?.map((user) => {
       return {
         value: user.name,
-        label: user.name
+        text: user.name,
+        label: (
+          <Space>
+            <AvatarCom name={user.name?.[0] ?? ''} />
+            <Typography.Text>{user.name}</Typography.Text>
+          </Space>
+        )
       };
     });
   }, [userList]);
