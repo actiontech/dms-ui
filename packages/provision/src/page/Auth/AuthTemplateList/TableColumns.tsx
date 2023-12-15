@@ -5,9 +5,8 @@ import { BasicTag } from '@actiontech/shared';
 import { ModalName } from '~/data/enum';
 import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';
 import {
-  ActiontechTableActionMeta,
   ActiontechTableColumn,
-  InlineActiontechTableMoreActionsButtonMeta
+  ActiontechTableProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IconAuthTemplateName } from '../../../icon/AuthTemplate';
 import Icon from '@ant-design/icons';
@@ -52,11 +51,7 @@ export const AuthTemplateListActions = (
   onRemoveTemplate: (record: IListDataPermissionTemplate) => void,
   onNavigateToAuthList: (record: IListDataPermissionTemplate) => void,
   onOpenModal: (name: ModalName, record?: IListDataPermissionTemplate) => void
-): {
-  title?: ActiontechTableColumn<IListDataPermissionTemplate>[0]['title'];
-  moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IListDataPermissionTemplate>[];
-  buttons: ActiontechTableActionMeta<IListDataPermissionTemplate>[];
-} => {
+): ActiontechTableProps<IListDataPermissionTemplate>['actions'] => {
   return {
     buttons: [
       {

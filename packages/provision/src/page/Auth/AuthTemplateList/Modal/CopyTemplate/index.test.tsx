@@ -5,14 +5,17 @@ import {
   AuthTemplateModalStatus
 } from '~/store/auth/templateList';
 import auth from '~/testUtil/mockApi/auth';
-import { setRecoil } from '~/utils/SyncRecoil';
+import SyncRecoil, { setRecoil } from '~/utils/SyncRecoil';
 import CopyTemplate from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 
-describe.skip('CopyTemplate', () => {
+describe('CopyTemplate', () => {
   const customRender = (defaultVisible = true) => {
     return superRender(
-      <CopyTemplate />,
+      <>
+        <SyncRecoil />
+        <CopyTemplate />,
+      </>,
       {},
       {
         recoilRootProps: {
@@ -43,7 +46,11 @@ describe.skip('CopyTemplate', () => {
   });
   it('should match close modal when modal status is false', async () => {
     const { container } = customRender(false);
-    expect(container).toMatchInlineSnapshot(`<div />`);
+    expect(container).toMatchInlineSnapshot(`
+      <div>
+        ,
+      </div>
+    `);
   });
 
   it('should match open modal when modal status is true', async () => {
@@ -55,7 +62,7 @@ describe.skip('CopyTemplate', () => {
   it('should reset all fields when user close modal', async () => {
     const { baseElement } = customRender();
     await act(() => jest.advanceTimersByTime(1000));
-    fireEvent.input(screen.getByLabelText('权限模版名称'), {
+    fireEvent.input(screen.getByLabelText('权限模板名称'), {
       target: { value: 'new-temp-1' }
     });
     await act(() => jest.advanceTimersByTime(100));
@@ -68,7 +75,7 @@ describe.skip('CopyTemplate', () => {
   it('should add template when user input all fields and click submit button', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(1000));
-    fireEvent.input(screen.getByLabelText('权限模版名称'), {
+    fireEvent.input(screen.getByLabelText('权限模板名称'), {
       target: { value: 'new-temp-1' }
     });
     await act(() => jest.advanceTimersByTime(300));
@@ -85,7 +92,7 @@ describe.skip('CopyTemplate', () => {
       'ant-btn-loading'
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    await screen.findByText(`模版"new-temp-1"添加成功！`);
+    await screen.findByText(`创建权限模板成功！`);
 
     // modal visible 变为false之后，不会再响应update，所以必须重新打开modal之后下面这两个btn才会变成可用状态
     act(() => {
