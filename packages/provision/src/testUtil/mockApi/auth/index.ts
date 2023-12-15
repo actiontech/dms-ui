@@ -147,8 +147,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListDatabase');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: databaseList.length,
-        databases: databaseList
+        total_nums: databaseList.length,
+        data: databaseList
       })
     );
     return spy;
@@ -158,8 +158,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListTable');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: tableList.length,
-        tables: tableList
+        total_nums: tableList.length,
+        data: tableList
       })
     );
     return spy;
@@ -172,8 +172,8 @@ class MockAuthApi implements MockSpyApy {
     );
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data_permissions: DataPermissionList,
-        total: DataPermissionList.length
+        data: DataPermissionList,
+        total_nums: DataPermissionList.length
       })
     );
     return spy;

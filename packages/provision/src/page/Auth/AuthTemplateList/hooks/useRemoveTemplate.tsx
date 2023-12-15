@@ -20,10 +20,10 @@ const useRemoveTemplate = (refreshList: () => void) => {
       0
     );
     try {
-      const val = await auth.AuthDelDataPermissionTemplate({
+      const res = await auth.AuthDelDataPermissionTemplate({
         data_permission_template_uid: template.uid ?? ''
       });
-      if (val.data.code === ResponseCode.SUCCESS) {
+      if (res.data.code === ResponseCode.SUCCESS) {
         message.success(
           t('auth.removeTemplate.deleteSuccessTips', { name: template.name })
         );

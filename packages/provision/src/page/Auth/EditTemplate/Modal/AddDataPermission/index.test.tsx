@@ -1,9 +1,15 @@
-import { act, cleanup, fireEvent, screen } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  screen,
+  waitFor
+} from '@testing-library/react';
 import { ModalName } from '~/data/enum';
 import { AuthDataPermissionListModalStatus } from '~/store/auth/templateList';
 import { getAllBySelector, getBySelector } from '~/testUtil/customQuery';
 import AddDataPermission from '.';
-import { IAddDataPermission } from './index.d';
+import { IAddDataPermission } from './index.type';
 import auth from '~/testUtil/mockApi/auth';
 import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -24,7 +30,7 @@ const defaultDataPermissions = [
   }
 ];
 
-describe.skip('/Auth/AddDataPermission', () => {
+describe('/Auth/AddDataPermission', () => {
   let listBusinessesSpy: jest.SpyInstance;
   let listServicesSpy: jest.SpyInstance;
   let listDataBasesSpy: jest.SpyInstance;
@@ -118,21 +124,28 @@ describe.skip('/Auth/AddDataPermission', () => {
     expect(listDataBasesSpy).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(
-      getBySelector('.database-form-item .ant-col-8 .ant-select-selector input')
+      getBySelector(
+        '.ant-select-selection-search-input',
+        screen.getByTestId('database-form-item-database-0')
+      )
     );
-    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByTestId('database-form-item-database-0')).toHaveClass(
+      'ant-select-open'
+    );
+    await screen.findByText('database-1');
     await act(() => fireEvent.click(screen.getByText('database-1')));
-    await act(async () => jest.advanceTimersByTime(300));
     expect(listTablesSpy).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(
       getBySelector(
-        '.database-form-item .ant-col-15 .ant-select-selector input'
+        '.ant-select-selection-search-input',
+        screen.getByTestId('database-form-item-schema-0')
       )
     );
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.queryByText('table-1')).toBeInTheDocument();
   });
+
   it('should push dataPermissions when click add button', async () => {
     const setDataPermissions = jest.fn();
     customRender(true, {
@@ -149,7 +162,10 @@ describe.skip('/Auth/AddDataPermission', () => {
     await act(async () => jest.advanceTimersByTime(200));
 
     fireEvent.mouseDown(
-      getBySelector('.database-form-item .ant-col-8 .ant-select-selector input')
+      getBySelector(
+        '.ant-select-selection-search-input',
+        screen.getByTestId('database-form-item-database-0')
+      )
     );
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getAllByText('database-2')[1]);
@@ -157,17 +173,17 @@ describe.skip('/Auth/AddDataPermission', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(
       getBySelector(
-        '.database-form-item .ant-col-15 .ant-select-selector input'
+        '.ant-select-selection-search-input',
+        screen.getByTestId('database-form-item-schema-0')
       )
     );
     await act(async () => jest.advanceTimersByTime(300));
     await act(() => fireEvent.click(screen.getByText('table-1')));
     await act(() => fireEvent.click(getBySelector('.add-object-button')));
-    await act(() =>
-      fireEvent.click(
-        getAllBySelector(
-          '.database-form-item .ant-col-8 .ant-select-selector input'
-        )[1]
+    fireEvent.mouseDown(
+      getBySelector(
+        '.ant-select-selection-search-input',
+        screen.getByTestId('database-form-item-database-1')
       )
     );
     await act(() => fireEvent.click(screen.getAllByText('database-2')[1]));
@@ -186,7 +202,8 @@ describe.skip('/Auth/AddDataPermission', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(
       getBySelector(
-        '.database-form-item .ant-col-15 .ant-select-selector input'
+        '.ant-select-selection-search-input',
+        screen.getByTestId('database-form-item-schema-0')
       )
     );
     await act(async () => jest.advanceTimersByTime(300));
@@ -195,12 +212,6 @@ describe.skip('/Auth/AddDataPermission', () => {
     expect(el).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-select-clear'));
     await act(async () => jest.advanceTimersByTime(300));
-    // fireEvent.mouseDown(
-    //   getBySelector('.database-form-item .ant-col-8 .ant-select-selector input')
-    // );
-    // expect(screen.queryByText('table-1')).not.toBeInTheDocument();
-    // const emptyElement = await getBySelector('.ant-select-item-empty');
-    // expect(emptyElement).toBeInTheDocument();
   });
 
   it('remove data_objects field when click remove field button', async () => {

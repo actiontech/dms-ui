@@ -10,7 +10,7 @@ import {
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../../locale';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { IDataObjects } from '../index.d';
+import { IDataObjects } from '../index.type';
 
 const defaultParams = {
   page_index: 1,
