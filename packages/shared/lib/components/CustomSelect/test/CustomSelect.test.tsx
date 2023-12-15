@@ -113,7 +113,6 @@ describe('lib/CustomSelect', () => {
         </span>
       ),
       size: 'middle',
-      mode: 'tags',
       options: [
         {
           label: <span style={{ color: 'red' }}>label-test</span>,
