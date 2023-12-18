@@ -3,40 +3,40 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StaticEnumDictionary } from '../../../../../hooks/useStaticStatus/index.type';
 import {
-  GetSqlManageListFilterAuditLevelEnum,
-  GetSqlManageListFilterSourceEnum,
-  GetSqlManageListFilterStatusEnum
+  GetSqlManageListV2FilterAuditLevelEnum,
+  GetSqlManageListV2FilterSourceEnum,
+  GetSqlManageListV2FilterStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 
-export const sourceDictionary: StaticEnumDictionary<GetSqlManageListFilterSourceEnum> =
+export const sourceDictionary: StaticEnumDictionary<GetSqlManageListV2FilterSourceEnum> =
   {
-    [GetSqlManageListFilterSourceEnum.sql_audit_record]:
+    [GetSqlManageListV2FilterSourceEnum.sql_audit_record]:
       'sqlManagement.table.filter.source.apiAudit',
-    [GetSqlManageListFilterSourceEnum.audit_plan]:
+    [GetSqlManageListV2FilterSourceEnum.audit_plan]:
       'sqlManagement.table.filter.source.auditPlan'
   };
 
-export const auditLevelDictionary: StaticEnumDictionary<GetSqlManageListFilterAuditLevelEnum> =
+export const auditLevelDictionary: StaticEnumDictionary<GetSqlManageListV2FilterAuditLevelEnum> =
   {
-    [GetSqlManageListFilterAuditLevelEnum.normal]:
+    [GetSqlManageListV2FilterAuditLevelEnum.normal]:
       'sqlManagement.table.filter.auditLevel.normal',
-    [GetSqlManageListFilterAuditLevelEnum.notice]:
+    [GetSqlManageListV2FilterAuditLevelEnum.notice]:
       'sqlManagement.table.filter.auditLevel.notice',
-    [GetSqlManageListFilterAuditLevelEnum.warn]:
+    [GetSqlManageListV2FilterAuditLevelEnum.warn]:
       'sqlManagement.table.filter.auditLevel.warn',
-    [GetSqlManageListFilterAuditLevelEnum.error]:
+    [GetSqlManageListV2FilterAuditLevelEnum.error]:
       'sqlManagement.table.filter.auditLevel.error'
   };
 
-export const statusDictionary: StaticEnumDictionary<GetSqlManageListFilterStatusEnum> =
+export const statusDictionary: StaticEnumDictionary<GetSqlManageListV2FilterStatusEnum> =
   {
-    [GetSqlManageListFilterStatusEnum.unhandled]:
+    [GetSqlManageListV2FilterStatusEnum.unhandled]:
       'sqlManagement.table.filter.status.unhandled',
-    [GetSqlManageListFilterStatusEnum.solved]:
+    [GetSqlManageListV2FilterStatusEnum.solved]:
       'sqlManagement.table.filter.status.solved',
-    [GetSqlManageListFilterStatusEnum.ignored]:
+    [GetSqlManageListV2FilterStatusEnum.ignored]:
       'sqlManagement.table.filter.status.ignored',
-    [GetSqlManageListFilterStatusEnum.manual_audited]:
+    [GetSqlManageListV2FilterStatusEnum.manual_audited]:
       'sqlManagement.table.filter.status.manual_audited'
   };
 
@@ -46,7 +46,7 @@ const useStaticStatus = () => {
   const generateSourceSelectOptions: SelectProps['options'] = useMemo(() => {
     return Object.keys(sourceDictionary).map((key) => ({
       label: t(
-        sourceDictionary[key as keyof typeof GetSqlManageListFilterSourceEnum]
+        sourceDictionary[key as keyof typeof GetSqlManageListV2FilterSourceEnum]
       ),
       value: key
     }));
@@ -57,7 +57,7 @@ const useStaticStatus = () => {
       return Object.keys(auditLevelDictionary).map((key) => ({
         label: t(
           auditLevelDictionary[
-            key as keyof typeof GetSqlManageListFilterAuditLevelEnum
+            key as keyof typeof GetSqlManageListV2FilterAuditLevelEnum
           ]
         ),
         value: key
