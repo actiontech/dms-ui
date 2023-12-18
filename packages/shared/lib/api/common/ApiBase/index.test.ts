@@ -1,7 +1,7 @@
 import ApiBase from '.';
 import Download from '../../../utils/Download';
 import axios from 'axios';
-
+import TestMockApi from '../../../testUtil/mockApi';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 
@@ -28,15 +28,21 @@ apiInstance.interceptors.response.use(
   (err) => errorFn(err)
 );
 
-describe.skip('Api', () => {
+describe('Api', () => {
+  const api = TestMockApi.getServer();
+  beforeAll(() => {
+    api.listen();
+  });
   afterEach(() => {
     downloadSpy.mockClear();
     emitSpy.mockClear();
+    api.resetHandlers();
   });
 
   afterAll(() => {
     downloadSpy.mockRestore();
     emitSpy.mockRestore();
+    api.close();
   });
 
   test('should execute authInvalid  when request return 401', async () => {

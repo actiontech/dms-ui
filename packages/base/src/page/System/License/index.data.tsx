@@ -1,6 +1,7 @@
-import { ILicenseItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../locale';
+import { ILicenseItem } from '@actiontech/shared/lib/api/base/service/common';
+import { BasicTypographyEllipsis } from '@actiontech/shared';
 
 export const LicenseColumn: ActiontechTableColumn<ILicenseItem> = [
   {
@@ -10,16 +11,13 @@ export const LicenseColumn: ActiontechTableColumn<ILicenseItem> = [
   {
     dataIndex: 'limit',
     title: t('system.license.table.limit'),
-    render: (text) => {
-      return (
-        <span
-          style={{
-            wordBreak: 'break-all'
-          }}
-        >
-          {text}
-        </span>
-      );
+    className: 'ellipsis-column-width',
+    render: (text = '-', record) => {
+      if (record.name === 'info') {
+        return <BasicTypographyEllipsis textCont={text} />;
+      }
+
+      return text;
     }
   }
 ];
