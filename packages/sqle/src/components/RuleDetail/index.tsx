@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
 
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -25,12 +25,13 @@ import {
   HeaderSpaceTagStyleWrapper,
   RuleTemplateDetailStyleWrapper
 } from './style';
-import { TableFilterContainer } from '@actiontech/shared/lib/components/ActiontechTable';
-import useRuleDetailFilter from './hooks/useRuleDetailFilter';
+import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
+import CustomSearchInput from './components/CustomSearchInput';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
   const { goBack } = useBack();
+  const [fuzzyKeyword, setFuzzyKeyword] = useState<string>();
 
   const { templateName, dbType } = useParams<{
     templateName: string;
@@ -45,13 +46,6 @@ const RuleDetail = () => {
     getCurrentStatusRules,
     getCurrentTypeRules
   } = useRuleList();
-
-  const {
-    fuzzyKeyword,
-    filterContainerMeta,
-    ruleFilterContainerCustomProps,
-    updateTableFilterInfo
-  } = useRuleDetailFilter();
 
   const {
     data: projectRuleData,
@@ -207,11 +201,13 @@ const RuleDetail = () => {
               </section>
             </section>
           </DetailComStyleWrapper>
-          <TableFilterContainer
-            updateTableFilterInfo={updateTableFilterInfo}
-            filterContainerMeta={filterContainerMeta}
-            filterCustomProps={ruleFilterContainerCustomProps}
-          />
+          <FilterContainerStyleWrapper>
+            <CustomSearchInput
+              onCustomPressEnter={setFuzzyKeyword}
+              placeholder={t('rule.form.fuzzy_text_placeholder')}
+              allowClear
+            />
+          </FilterContainerStyleWrapper>
           {dbType && (
             <RuleTypes
               ruleTypeChange={setRuleType}
