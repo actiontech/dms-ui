@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src", "../shared/lib/testUtil/mockAntDesignPlots.jsx", "../shared/lib/testUtil/mockEditor.jsx"],
+  "include": ["src"],
   "compilerOptions": {
     "paths": {
       "~/*": ["./src/*"]
