@@ -20,7 +20,7 @@ import {
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import {
   IExportSqlManageV1Params,
-  IGetSqlManageListParams
+  IGetSqlManageListV2Params
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   useCurrentProject,
@@ -29,9 +29,9 @@ import {
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
 import {
-  GetSqlManageListFilterStatusEnum,
-  GetSqlManageListSortFieldEnum,
-  GetSqlManageListSortOrderEnum,
+  GetSqlManageListV2FilterStatusEnum,
+  GetSqlManageListV2SortFieldEnum,
+  GetSqlManageListV2SortOrderEnum,
   exportSqlManageV1FilterStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import useInstance from '../../../../hooks/useInstance';
@@ -67,7 +67,7 @@ const SQLEEIndex = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
-    GetSqlManageListFilterStatusEnum.unhandled
+    GetSqlManageListV2FilterStatusEnum.unhandled
   );
 
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
@@ -89,18 +89,18 @@ const SQLEEIndex = () => {
 
   const getCurrentSortParams = (
     sortData: SorterResult<ISqlManage> | SorterResult<ISqlManage>[]
-  ): Pick<IGetSqlManageListParams, 'sort_field' | 'sort_order'> => {
+  ): Pick<IGetSqlManageListV2Params, 'sort_field' | 'sort_order'> => {
     if (Array.isArray(sortData)) {
       return {};
     }
     const orderDesc = {
-      descend: GetSqlManageListSortOrderEnum.desc,
-      ascend: GetSqlManageListSortOrderEnum.asc
+      descend: GetSqlManageListV2SortOrderEnum.desc,
+      ascend: GetSqlManageListV2SortOrderEnum.asc
     };
 
     return {
       sort_field:
-        (sortData.field as unknown as GetSqlManageListSortFieldEnum) ??
+        (sortData.field as unknown as GetSqlManageListV2SortFieldEnum) ??
         undefined,
       sort_order: sortData?.order
         ? orderDesc[sortData?.order] ?? undefined
@@ -116,7 +116,7 @@ const SQLEEIndex = () => {
   } = useRequest(
     () => {
       const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
-      const params: IGetSqlManageListParams = {
+      const params: IGetSqlManageListV2Params = {
         ...otherTableFilterInfo,
         ...pagination,
         ...getCurrentSortParams(sortInfo),
@@ -131,7 +131,7 @@ const SQLEEIndex = () => {
         project_name: projectName,
         filter_assignee: isAssigneeSelf ? uid : undefined // filter_assignee 需要用 id
       };
-      return handleTableRequestError(SqlManage.GetSqlManageList(params));
+      return handleTableRequestError(SqlManage.GetSqlManageListV2(params));
     },
     {
       refreshDeps: [
