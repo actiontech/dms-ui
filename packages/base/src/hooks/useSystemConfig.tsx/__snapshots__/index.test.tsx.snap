@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hooks/useSystemConfig render func renderWebTitle render has custom title 1`] = `
+<div
+  className="title"
+>
+  <span
+    className="label label-base"
+  >
+    DMS-自定义标题
+  </span>
+</div>
+`;
+
+exports[`hooks/useSystemConfig render func renderWebTitle render no custom web title 1`] = `
+<div
+  className="title"
+>
+  <span
+    className="label label-primary"
+  >
+    Action
+  </span>
+  <span
+    className="label label-base"
+  >
+    SQLE
+  </span>
+</div>
+`;
