@@ -9,6 +9,8 @@ import {
   ITestFeishuConfigurationReply,
   IGetLDAPConfigurationResDataReply,
   ILDAPConfiguration,
+  IGetLicenseReply,
+  ICheckLicenseReply,
   IGetOauth2ConfigurationResDataReply,
   IOauth2Configuration,
   IGetSMTPConfigurationReply,
@@ -124,6 +126,20 @@ export interface IUpdateLDAPConfigurationParams {
 }
 
 export interface IUpdateLDAPConfigurationReturn extends IGenericResp {}
+
+export interface IGetLicenseReturn extends IGetLicenseReply {}
+
+export interface ISetLicenseParams {
+  license_file?: any;
+}
+
+export interface ISetLicenseReturn extends IGenericResp {}
+
+export interface ICheckLicenseParams {
+  license_file?: any;
+}
+
+export interface ICheckLicenseReturn extends ICheckLicenseReply {}
 
 export interface IGetOauth2ConfigurationReturn
   extends IGetOauth2ConfigurationResDataReply {}
