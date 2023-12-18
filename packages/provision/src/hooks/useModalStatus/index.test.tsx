@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 import { ModalName } from '~/data/enum';
-import { UserModalStatus } from '~/store/user';
+import { AuthListModalStatus } from '~/store/auth/list';
 import { superRenderHooks } from '~/testUtil/customRender';
 import RecoilObservable from '~/testUtil/RecoilObservable';
 import useModalStatus from '.';
@@ -8,20 +8,20 @@ import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 
 describe('useModalStatus', () => {
   const customRender = (initModalStatus?: ModalStatus, name?: ModalName) => {
-    const userModalStatusChange = jest.fn();
+    const authListModalStatusChange = jest.fn();
     const renderReturn = superRenderHooks(
-      () => useModalStatus(UserModalStatus, name),
+      () => useModalStatus(AuthListModalStatus, name),
       {
         otherChildren: (
           <RecoilObservable
-            state={UserModalStatus}
-            onChange={userModalStatusChange}
+            state={AuthListModalStatus}
+            onChange={authListModalStatusChange}
           />
         ),
         recoilRootProps: {
           initializeState({ set }) {
             if (initModalStatus) {
-              set(UserModalStatus, initModalStatus);
+              set(AuthListModalStatus, initModalStatus);
             }
           }
         }
@@ -29,12 +29,12 @@ describe('useModalStatus', () => {
     );
     return {
       ...renderReturn,
-      userModalStatusChange
+      authListModalStatusChange
     };
   };
 
   it('should init modal status by initModal method', async () => {
-    const { result, userModalStatusChange } = customRender();
+    const { result, authListModalStatusChange } = customRender();
     act(() => {
       result.current.initModalStatus({
         a: true,
@@ -42,8 +42,8 @@ describe('useModalStatus', () => {
       });
     });
 
-    expect(userModalStatusChange).toBeCalledTimes(1);
-    expect(userModalStatusChange).toBeCalledWith({
+    expect(authListModalStatusChange).toBeCalledTimes(1);
+    expect(authListModalStatusChange).toBeCalledWith({
       a: true,
       b: false
     });
@@ -51,26 +51,26 @@ describe('useModalStatus', () => {
   });
 
   it('should update modal status by toggleModal method', async () => {
-    const { result, userModalStatusChange } = customRender({
-      [ModalName.AddUser]: false
+    const { result, authListModalStatusChange } = customRender({
+      [ModalName.UpdateUserInAuth]: false
     });
 
     act(() => {
-      result.current.toggleModal(ModalName.AddUser, true);
+      result.current.toggleModal(ModalName.UpdateUserInAuth, true);
     });
 
-    expect(userModalStatusChange).toBeCalledTimes(1);
-    expect(userModalStatusChange).toBeCalledWith({
-      ADD_USER: true
+    expect(authListModalStatusChange).toBeCalledTimes(1);
+    expect(authListModalStatusChange).toBeCalledWith({
+      UPDATE_USER_IN_AUTH: true
     });
   });
 
   it('should get visible by getModalStatus method', async () => {
     const { result } = customRender({
-      [ModalName.AddUser]: false
+      [ModalName.UpdateUserInAuth]: false
     });
 
-    const visible = result.current.getModalStatus(ModalName.AddUser);
+    const visible = result.current.getModalStatus(ModalName.UpdateUserInAuth);
 
     expect(visible).toBe(false);
   });
@@ -78,9 +78,9 @@ describe('useModalStatus', () => {
   it('should match visible by modal status', async () => {
     const { result } = customRender(
       {
-        [ModalName.AddUser]: true
+        [ModalName.UpdateUserInAuth]: true
       },
-      ModalName.AddUser
+      ModalName.UpdateUserInAuth
     );
 
     expect(result.current.visible).toBe(true);
