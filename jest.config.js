@@ -24,7 +24,7 @@ module.exports = {
   moduleNameMapper: {
     '.+\\.(css|style|less|sass|scss|ttf|woff|woff2)$': 'identity-obj-proxy',
     '@ant-design/plots':
-      '<rootDir>packages/shared/lib/testUtil/mockAntDesignPlots.jsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockAntDesignPlots.jsx',
     'monaco-editor': '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
     '@monaco-editor/react':
       '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
