@@ -122,16 +122,10 @@ export const superRender = (
     ...RenderParams,
     {
       routerProps?: MemoryRouterProps;
-      userEventProps?: UserEventOptions;
       initStore?: any;
     }?
   ]
 ) => {
-  const userEventReturn = userEvent.setup({
-    advanceTimers: jest.advanceTimersByTime,
-    ...otherProps?.userEventProps
-  });
-
   const renderReturn = render(ui, {
     wrapper: ({ children }) => {
       return (
@@ -146,10 +140,7 @@ export const superRender = (
     },
     ...option
   });
-  return {
-    ...renderReturn,
-    userEvent: userEventReturn
-  };
+  return renderReturn;
 };
 
 export const mountWithTheme = (...[ui, option]: [...MountParams]) => {

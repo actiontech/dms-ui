@@ -96,6 +96,7 @@ const Login = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // #endif
+
   return (
     <LoginLayout>
       {contextHolder}
