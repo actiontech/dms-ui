@@ -201,7 +201,7 @@ const RuleDetail = () => {
               </section>
             </section>
           </DetailComStyleWrapper>
-          <FilterContainerStyleWrapper>
+          <FilterContainerStyleWrapper className="full-width-element">
             <CustomSearchInput
               onCustomPressEnter={setFuzzyKeyword}
               placeholder={t('rule.form.fuzzy_text_placeholder')}
@@ -217,7 +217,7 @@ const RuleDetail = () => {
             />
           )}
           <RuleList
-            pageHeaderHeight={130}
+            pageHeaderHeight={180}
             rules={getCurrentTypeRules(allRules, ruleData, templateName)}
             enableCheckDetail
           />
