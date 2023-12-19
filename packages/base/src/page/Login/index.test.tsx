@@ -11,7 +11,10 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { LocalStorageWrapper } from '@actiontech/shared';
 
 import Login from '.';
-import { CompanyNoticeDisplayStatusEnum, StorageKey } from '@actiontech/shared/lib/enum';
+import {
+  CompanyNoticeDisplayStatusEnum,
+  StorageKey
+} from '@actiontech/shared/lib/enum';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
 
 jest.mock('react-router-dom', () => {
@@ -61,10 +64,7 @@ describe('page/Login-ee', () => {
     expect(baseElement).toMatchSnapshot();
 
     const otherLoginBtn = getBySelector('.other-login-btn', baseElement);
-    fireEvent.click(otherLoginBtn);
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(window.location.href).toBe('http://localhost/');
-    expect(baseElement).toMatchSnapshot();
+    expect(otherLoginBtn).toHaveAttribute('href', '/v1/dms/oauth2/link');
   });
 
   it('render login when return no auth', async () => {
@@ -200,7 +200,9 @@ describe('page/Login-ee', () => {
         }
       });
       expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith(`/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+      expect(navigateSpy).toBeCalledWith(
+        `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
+      );
       expect(LocalStorageWrapperSet).toBeCalled();
       expect(LocalStorageWrapperSet).toBeCalledWith(
         StorageKey.SHOW_COMPANY_NOTICE,
@@ -208,5 +210,4 @@ describe('page/Login-ee', () => {
       );
     });
   });
-
 });
