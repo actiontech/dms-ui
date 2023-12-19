@@ -2,19 +2,19 @@ import { useBoolean } from 'ahooks';
 import { message, Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import EmitterKey from '../../../data/EmitterKey';
-import { ModalName } from '../../../data/ModalName';
-import { IReduxState } from '../../../store';
-import { updateMemberModalStatus } from '../../../store/member';
-import EventEmitter from '../../../utils/EventEmitter';
-import { IMemberGroupFormFields } from './index.type';
+import EmitterKey from '../../../../data/EmitterKey';
+import { ModalName } from '../../../../data/ModalName';
+import { IReduxState } from '../../../../store';
+import { updateMemberModalStatus } from '../../../../store/member';
+import EventEmitter from '../../../../utils/EventEmitter';
+import { IMemberGroupFormFields } from '../index.type';
 import MemberGroupForm from './MemberGroupForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IAddMemberGroupParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { BasicButton } from '@actiontech/shared';
-import { MemberDrawerStyledWrapper } from '../style';
+import { MemberDrawerStyledWrapper } from '../../style';
 
 const AddMemberGroup: React.FC = () => {
   const { t } = useTranslation();
@@ -50,8 +50,8 @@ const AddMemberGroup: React.FC = () => {
               name: params?.member_group?.name ?? ''
             })
           );
-          closeModal();
-          EventEmitter.emit(EmitterKey.DMS_Refresh_Member_Group_List);
+          onClose();
+          EventEmitter.emit(EmitterKey.DMS_Refresh_Member_List);
         }
       })
       .finally(() => {
@@ -59,7 +59,7 @@ const AddMemberGroup: React.FC = () => {
       });
   };
 
-  const closeModal = () => {
+  const onClose = () => {
     form.resetFields();
     dispatch(
       updateMemberModalStatus({
@@ -75,10 +75,10 @@ const AddMemberGroup: React.FC = () => {
       size="large"
       placement="right"
       title={t('dmsMember.addMemberGroup.modalTitle')}
-      onClose={closeModal}
+      onClose={onClose}
       footer={
         <Space>
-          <BasicButton onClick={closeModal} disabled={submitLoading}>
+          <BasicButton onClick={onClose} disabled={submitLoading}>
             {t('common.close')}
           </BasicButton>
           <BasicButton type="primary" onClick={submit} loading={submitLoading}>

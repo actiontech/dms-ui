@@ -1,10 +1,10 @@
 import { Form } from 'antd';
 import { BasicSelect, BasicInput, BasicSwitch } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { IMemberGroupFormProps } from './index.type';
-import RoleSelector from '../Common/RoleSelector';
+import { IMemberGroupFormProps } from '../index.type';
+import RoleSelector from '../../components/RoleSelector';
 import { useEffect } from 'react';
-import useUsername from '../../../hooks/useUsername';
+import useUsername from '../../../../hooks/useUsername';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 
