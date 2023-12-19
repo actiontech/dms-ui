@@ -24,10 +24,10 @@ module.exports = {
   moduleNameMapper: {
     '.+\\.(css|style|less|sass|scss|ttf|woff|woff2)$': 'identity-obj-proxy',
     '@ant-design/plots':
-      '<rootDir>/packages/sqle/src/testUtils/mockAntDesignPlots.jsx',
-    'monaco-editor': '<rootDir>/packages/sqle/src/testUtils/mockEditor.jsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockAntDesignPlots.jsx',
+    'monaco-editor': '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
     '@monaco-editor/react':
-      '<rootDir>/packages/sqle/src/testUtils/mockEditor.jsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
     '@actiontech/(.*)': '<rootDir>/packages/$1',
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },
@@ -45,7 +45,7 @@ module.exports = {
         outputDirectory: 'reports',
         outputName: 'report.xml',
         color: true,
-        warnSlowerThan: 300
+        warnSlowerThan: 6000
       }
     ]
   ]
