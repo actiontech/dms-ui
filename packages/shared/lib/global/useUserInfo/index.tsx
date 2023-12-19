@@ -109,7 +109,7 @@ const useUserInfo = () => {
     getUserInfo,
     updateUserInfo,
     clearUserInfo,
-    userInfo
+    userInfo: userInfo?.data.data
   };
 };
 
