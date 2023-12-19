@@ -13,12 +13,8 @@ import { IAuditListAuthorizationEventsParams } from '@actiontech/shared/lib/api/
 import { Space } from 'antd';
 import { BasicTag, AvatarCom } from '@actiontech/shared';
 import AuditActionIcon from '../components/AuditActionIcon';
-
-export const eventType: Record<string, string> = {
-  auth_created: t('provisionAudit.authAudit.type.authCreated'),
-  auth_updated: t('provisionAudit.authAudit.type.authUpdated'),
-  auth_deleted: t('provisionAudit.authAudit.type.authDeleted')
-};
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { AuthAuditEventTypeEnum, AuthAuditEventDictionary } from './index.type';
 
 export type AuthAuditTableFilterParamType = PageInfoWithoutIndexAndSize<
   IAuditListAuthorizationEventsParams & {
@@ -43,7 +39,8 @@ export const AuthAuditTableColumns: ActiontechTableColumn<
     filterKey: [
       'filter_by_generated_time_start',
       'filter_by_generated_time_end'
-    ]
+    ],
+    width: 300
   },
   {
     dataIndex: 'permission_user_name',
@@ -63,7 +60,7 @@ export const AuthAuditTableColumns: ActiontechTableColumn<
       return (
         <Space>
           {templates.map((template) => (
-            <BasicTag key={template.name}>{template.name}</BasicTag>
+            <BasicTag key={template.uid}>{template.name}</BasicTag>
           ))}
         </Space>
       );
@@ -79,16 +76,17 @@ export const AuthAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'event_type',
     title: t('provisionAudit.authAudit.columns.actionType'),
-    render: (val) => {
+    render: (val: AuthAuditEventTypeEnum) => {
       return (
-        <Space>
-          <AuditActionIcon value={val} />
-          {eventType[val] ?? '--'}
-        </Space>
+        <TableColumnWithIconStyleWrapper>
+          <AuditActionIcon value={AuthAuditEventTypeEnum[val]} />
+          <span>{t(AuthAuditEventDictionary[val]) ?? '-'}</span>
+        </TableColumnWithIconStyleWrapper>
       );
     },
     filterCustomType: 'select',
-    filterKey: 'filter_by_event_type'
+    filterKey: 'filter_by_event_type',
+    width: 200
   }
 ];
 

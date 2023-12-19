@@ -3,242 +3,262 @@
 exports[`provision/hooks/useProvisionUser should get provision user data from request 1`] = `
 Array [
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="D"
+        size="small"
       />
       <ForwardRef(Text)>
         Dewey Connelly
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Dewey Connelly",
     "value": "Dewey Connelly",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="E"
+        size="small"
       />
       <ForwardRef(Text)>
         Edwin Schneider III
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Edwin Schneider III",
     "value": "Edwin Schneider III",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="J"
+        size="small"
       />
       <ForwardRef(Text)>
         Javier Beier IV
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Javier Beier IV",
     "value": "Javier Beier IV",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="G"
+        size="small"
       />
       <ForwardRef(Text)>
         Glenda Goyette
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Glenda Goyette",
     "value": "Glenda Goyette",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="V"
+        size="small"
       />
       <ForwardRef(Text)>
         Valerie Gerhold
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Valerie Gerhold",
     "value": "Valerie Gerhold",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="M"
+        size="small"
       />
       <ForwardRef(Text)>
         Mona Reinger
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Mona Reinger",
     "value": "Mona Reinger",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="K"
+        size="small"
       />
       <ForwardRef(Text)>
         Kari Bode
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Kari Bode",
     "value": "Kari Bode",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="B"
+        size="small"
       />
       <ForwardRef(Text)>
         Bryan Emard
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Bryan Emard",
     "value": "Bryan Emard",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="C"
+        size="small"
       />
       <ForwardRef(Text)>
         Clinton Gleason III
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Clinton Gleason III",
     "value": "Clinton Gleason III",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="T"
+        size="small"
       />
       <ForwardRef(Text)>
         Thelma Keeling
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Thelma Keeling",
     "value": "Thelma Keeling",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="D"
+        size="small"
       />
       <ForwardRef(Text)>
         Duane Hyatt
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Duane Hyatt",
     "value": "Duane Hyatt",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="M"
+        size="small"
       />
       <ForwardRef(Text)>
         Mr. Nancy Yundt
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Mr. Nancy Yundt",
     "value": "Mr. Nancy Yundt",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="K"
+        size="small"
       />
       <ForwardRef(Text)>
         Kristi Dickinson
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Kristi Dickinson",
     "value": "Kristi Dickinson",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="C"
+        size="small"
       />
       <ForwardRef(Text)>
         Cecelia Grimes
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Cecelia Grimes",
     "value": "Cecelia Grimes",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="D"
+        size="small"
       />
       <ForwardRef(Text)>
         Dr. Miriam Brekke
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Dr. Miriam Brekke",
     "value": "Dr. Miriam Brekke",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="K"
+        size="small"
       />
       <ForwardRef(Text)>
         Karen Herzog
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Karen Herzog",
     "value": "Karen Herzog",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="M"
+        size="small"
       />
       <ForwardRef(Text)>
         Mr. Taylor Rempel
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Mr. Taylor Rempel",
     "value": "Mr. Taylor Rempel",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="K"
+        size="small"
       />
       <ForwardRef(Text)>
         Kristina Hessel
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Kristina Hessel",
     "value": "Kristina Hessel",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="D"
+        size="small"
       />
       <ForwardRef(Text)>
         Delores Rowe IV
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Delores Rowe IV",
     "value": "Delores Rowe IV",
   },
   Object {
-    "label": <Space>
+    "label": <Styled(Space)>
       <AvatarCom
         name="T"
+        size="small"
       />
       <ForwardRef(Text)>
         Tammy Prosacco
       </ForwardRef(Text)>
-    </Space>,
+    </Styled(Space)>,
     "text": "Tammy Prosacco",
     "value": "Tammy Prosacco",
   },

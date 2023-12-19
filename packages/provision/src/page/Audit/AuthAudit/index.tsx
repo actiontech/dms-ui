@@ -17,13 +17,13 @@ import { useRequest } from 'ahooks';
 import {
   AuthAuditTableFilterParamType,
   AuthAuditTableColumns,
-  eventType,
   AuthAuditTableActions
 } from './columns';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import AuthAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
 import useProvisionUser from '~/hooks/useProvisionUser';
+import useStaticStatus from '~/hooks/useStaticStatus';
 
 const AuthAudit: React.FC = () => {
   const { t } = useTranslation();
@@ -36,6 +36,8 @@ const AuthAudit: React.FC = () => {
   ] = useBoolean();
 
   const [currentDetail, setCurrentDetail] = useState<IListAuthorizationEvent>();
+
+  const { authAuditEventTypeOptions } = useStaticStatus();
 
   const {
     tableFilterInfo,
@@ -84,10 +86,7 @@ const AuthAudit: React.FC = () => {
       [
         'event_type',
         {
-          options: Object.entries(eventType).map(([value, label]) => ({
-            value,
-            label
-          })),
+          options: authAuditEventTypeOptions,
           allowClear: true
         }
       ],
@@ -104,7 +103,7 @@ const AuthAudit: React.FC = () => {
         }
       ]
     ]);
-  }, [userNameOptions]);
+  }, [userNameOptions, authAuditEventTypeOptions]);
 
   const gotoDetail = useCallback(
     (record?: IListAuthorizationEvent) => {
