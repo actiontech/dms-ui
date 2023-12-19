@@ -28,3 +28,31 @@ exports[`hooks/useSystemConfig render func renderWebTitle render no custom web t
   </span>
 </div>
 `;
+
+exports[`hooks/useSystemConfig render func syncWebTitleAndLogo render with custom basicInfo 1`] = `
+<body>
+  <div>
+    <link
+      href="logo_url_demo?temp=1612148800"
+      id="dms-logo-favicon"
+      rel="icon"
+    />
+  </div>
+</body>
+`;
+
+exports[`hooks/useSystemConfig render func syncWebTitleAndLogo render with default info 1`] = `
+<body>
+  <div>
+    <link
+      href="/logo.png"
+      id="dms-logo-favicon"
+      rel="icon"
+    />
+  </div>
+</body>
+`;
+
+exports[`hooks/useSystemConfig render logoSrc render logoSrc default 1`] = `""`;
+
+exports[`hooks/useSystemConfig render logoSrc render logoSrc default 2`] = `"webLogoUrl_value"`;
