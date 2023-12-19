@@ -39,18 +39,16 @@ const StatusDrawer = () => {
   };
 
   return (
-    <>
-      <ReportDrawer
-        open={visible}
-        title={t('sqlManagement.table.statusReport.title')}
-        data={{
-          auditResult: auditResultRuleInfo,
-          sql: selectedData?.sql_fingerprint ?? ''
-        }}
-        onClose={closeModal}
-        showAnnotation
-      />
-    </>
+    <ReportDrawer
+      open={visible}
+      title={t('sqlManagement.table.statusReport.title')}
+      data={{
+        auditResult: auditResultRuleInfo,
+        sql: selectedData?.sql ?? ''
+      }}
+      onClose={closeModal}
+      showAnnotation
+    />
   );
 };
 
