@@ -29,7 +29,7 @@ const useSegmentedPageParams = <T extends string>() => {
         };
       });
       setOptions(options);
-      setValue(options[0]?.value);
+      setValue(value ?? options[0]?.value);
       dataSource.current = list.reduce((prev, next) => {
         return {
           ...prev,
@@ -40,7 +40,7 @@ const useSegmentedPageParams = <T extends string>() => {
         };
       }, {});
     },
-    []
+    [value]
   );
 
   const renderExtraButton = useCallback(() => {
