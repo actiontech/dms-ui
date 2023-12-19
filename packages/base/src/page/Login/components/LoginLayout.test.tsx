@@ -1,21 +1,26 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '../../../testUtils/customRender';
 import LoginLayout from './LoginLayout';
 
 describe('page/Login/LoginLayout', () => {
-  const customRender = () => {
+  const customRender = (params = {}) => {
     return superRender(<LoginLayout />, undefined, {
       initStore: {
-        system: {
-          webTitle: 'DMS-Base Title',
-          webLogoUrl: 'default-url'
-        }
+        system: params
       }
     });
   }
-  
+
   it('render ui snap', () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
   });
-  
+
+it('render ui snap redux has data', () => {
+    const { baseElement } = customRender({
+      webTitle: 'DMS-Base Title',
+      webLogoUrl: 'default-url'
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
 });
