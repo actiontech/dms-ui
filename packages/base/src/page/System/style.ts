@@ -17,13 +17,13 @@ export const SystemStyleWrapper = styled('section')`
       font-weight: 500;
       line-height: 32px;
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+      border-bottom: 1px solid
+        ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
       &.has-border {
         border-bottom: 1px solid
           ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
       }
-      border-bottom: 1px solid
-        ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
     }
 
     .config-form-wrapper {
