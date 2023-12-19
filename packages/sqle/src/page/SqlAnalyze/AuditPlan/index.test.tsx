@@ -6,9 +6,9 @@ import {
   resolveThreeSecond
 } from '../../../testUtils/mockRequest';
 import { AuditPlanSqlAnalyzeData } from '../__testData__';
-import { getAllBySelector } from '../../../testUtils/customQuery';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-router', () => {
   return {
