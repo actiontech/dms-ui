@@ -1,5 +1,6 @@
-import { renderHooksWithRedux, renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
-import { fireEvent, act, cleanup } from '@testing-library/react';
+import { renderHooksWithRedux, superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { cleanup } from '@testing-library/react';
+import { useEffect } from 'react';
 
 import useSystemConfig from '.';
 
@@ -13,6 +14,20 @@ describe('hooks/useSystemConfig', () => {
       }
     });
   };
+
+  describe('render logoSrc', () => {
+    it('render logoSrc default', () => {
+      const { result } = customRender();
+      expect(result.current.logoSrc).toMatchSnapshot();
+    });
+
+    it('render logoSrc default', () => {
+      const { result } = customRender({
+        webLogoUrl: 'webLogoUrl_value'
+      });
+      expect(result.current.logoSrc).toMatchSnapshot();
+    });
+  });
 
   describe('render func renderWebTitle', () => {
     it('render no custom web title', () => {
@@ -31,11 +46,6 @@ describe('hooks/useSystemConfig', () => {
   });
 
   describe('render func syncWebTitleAndLogo', () => {
-    const Component = () => {
-      return <>
-        <link id="dms-logo-favicon" rel="icon" href="/logo.png" />
-      </>
-    }
     beforeEach(() => {
       jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1612148800);
     });
@@ -45,15 +55,38 @@ describe('hooks/useSystemConfig', () => {
     });
 
     it('render with default info', () => {
-      const customUIforHooks = renderHooksWithReduxAndRouter(() =>
-        useSystemConfig(),
-        {}
-      );
-      const { result } = customRender();
-      result.current.syncWebTitleAndLogo({});
+      const Component = () => {
+        const { syncWebTitleAndLogo } = useSystemConfig();
+        useEffect(() => {
+          syncWebTitleAndLogo({});
+        }, []);
+        return (
+          <>
+            <link id="dms-logo-favicon" rel="icon" href="/logo.png" />
+          </>
+        );
+      };
+      const { baseElement } = superRender(<Component />, undefined, { initStore: {} });
+      expect(baseElement).toMatchSnapshot();
     })
 
+    it('render with custom basicInfo', () => {
+      const Component = () => {
+        const { syncWebTitleAndLogo } = useSystemConfig();
+        useEffect(() => {
+          syncWebTitleAndLogo({ title: 'title1', logo_url: 'logo_url_demo' });
+        }, []);
+        return (
+          <>
+            <link id="dms-logo-favicon" rel="icon" href="/logo.png" />
+          </>
+        );
+      };
+      const { baseElement } = superRender(<Component />, undefined, {
+        initStore: {}
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
   });
-
 
 });
