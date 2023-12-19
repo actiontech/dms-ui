@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Space, Row } from 'antd';
+import { Row } from 'antd';
 import { BasicDrawer } from '@actiontech/shared';
 
 export const ProjectMemberStyleWrapper = styled('section')`
@@ -31,12 +31,6 @@ export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
     background-color: ${({ theme }) =>
       theme.sharedTheme.basic.colorPrimaryBgHover} !important;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
-  }
-`;
-
-export const MemberListIsAdminStyledWrapper = styled(Space)`
-  .ant-space-item:first-of-type {
-    display: flex;
   }
 `;
 
