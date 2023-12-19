@@ -25,7 +25,7 @@ import {
 import CronInputCom from '@actiontech/shared/lib/components/CronInput';
 import { Alert, FormInstance, Popconfirm, Spin } from 'antd';
 import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
-import useAuditRequired from '../../../hooks/useAuditRequired';
+import useSqlReviewTemplateToggle from '../../../hooks/useSqlReviewTemplateToggle';
 import { Link } from 'react-router-dom';
 
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
@@ -89,7 +89,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     onAuditRequiredPopupOpenChange,
     clearRuleTemplate,
     changeAuditRequired
-  } = useAuditRequired<FormInstance<SyncTaskFormFields>>(form);
+  } = useSqlReviewTemplateToggle<FormInstance<SyncTaskFormFields>>(form);
 
   useEffect(() => {
     updateTaskSourceList();
