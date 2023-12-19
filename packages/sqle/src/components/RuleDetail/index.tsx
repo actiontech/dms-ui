@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
 
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -25,10 +25,13 @@ import {
   HeaderSpaceTagStyleWrapper,
   RuleTemplateDetailStyleWrapper
 } from './style';
+import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
+import CustomSearchInput from './components/CustomSearchInput';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
   const { goBack } = useBack();
+  const [fuzzyKeyword, setFuzzyKeyword] = useState<string>();
 
   const { templateName, dbType } = useParams<{
     templateName: string;
@@ -54,7 +57,8 @@ const RuleDetail = () => {
       rule_template
         .getProjectRuleTemplateV1({
           rule_template_name: ruleTemplate ?? '',
-          project_name: project ?? ''
+          project_name: project ?? '',
+          fuzzy_keyword_rule: fuzzyKeyword
         })
         .then((res) => {
           return res.data?.data?.rule_list ?? [];
@@ -73,7 +77,8 @@ const RuleDetail = () => {
     (ruleTemplate?: string) =>
       rule_template
         .getRuleTemplateV1({
-          rule_template_name: ruleTemplate ?? ''
+          rule_template_name: ruleTemplate ?? '',
+          fuzzy_keyword_rule: fuzzyKeyword
         })
         .then((res) => {
           return res.data?.data?.rule_list ?? [];
@@ -91,12 +96,13 @@ const RuleDetail = () => {
     () =>
       rule_template
         .getRuleListV1({
-          filter_db_type: dbType
+          filter_db_type: dbType,
+          fuzzy_keyword_rule: fuzzyKeyword
         })
         .then((res) => res.data?.data ?? []),
     {
       ready: !!dbType,
-      refreshDeps: [dbType]
+      refreshDeps: [dbType, fuzzyKeyword]
     }
   );
 
@@ -134,7 +140,8 @@ const RuleDetail = () => {
     getProjectTemplateRules,
     getGlobalTemplateRules,
     projectName,
-    templateName
+    templateName,
+    fuzzyKeyword
   ]);
 
   return (
@@ -194,6 +201,13 @@ const RuleDetail = () => {
               </section>
             </section>
           </DetailComStyleWrapper>
+          <FilterContainerStyleWrapper className="full-width-element">
+            <CustomSearchInput
+              onCustomPressEnter={setFuzzyKeyword}
+              placeholder={t('rule.form.fuzzy_text_placeholder')}
+              allowClear
+            />
+          </FilterContainerStyleWrapper>
           {dbType && (
             <RuleTypes
               ruleTypeChange={setRuleType}
@@ -203,7 +217,7 @@ const RuleDetail = () => {
             />
           )}
           <RuleList
-            pageHeaderHeight={130}
+            pageHeaderHeight={180}
             rules={getCurrentTypeRules(allRules, ruleData, templateName)}
             enableCheckDetail
           />
