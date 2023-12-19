@@ -4,7 +4,6 @@ enum EmitterKey {
   DMS_Reset_DataSource_Form = 'DMS_Reset_DataSource_Form',
   DMS_Submit_DataSource_Form = 'DMS_Submit_DataSource_Form',
   DMS_Refresh_Member_List = 'DMS_REFRESH_MEMBER_LIST',
-  DMS_Refresh_Member_Group_List = 'DMS_Refresh_Member_Group_List',
   DMS_Refresh_Project_List = 'DMS_REFRESH_PROJECT_LIST',
   DMS_SYNC_TASK_RESET_FORM = 'DMS_SYNC_TASK_RESET_FORM',
   Update_Recently_Opened_Projects = 'Update_Recently_Opened_Projects',
