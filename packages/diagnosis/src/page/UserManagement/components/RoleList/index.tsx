@@ -1,4 +1,4 @@
-import { useMemo, useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
@@ -17,11 +17,16 @@ import auth from '../../../../api/auth';
 import { IV1ListRolesParams } from '../../../../api/auth/index.d';
 import { IViewRoleReply } from '../../../../api/common';
 import RoleModal from './components';
+import { SegmentedValue } from 'antd/es/segmented';
+import { UserManagementTypeEnum } from '../../index.type';
 
-const RoleList: React.FC = () => {
+const RoleList: React.FC<{ handleChange: (key: SegmentedValue) => void }> = ({
+  handleChange
+}) => {
   const { t } = useTranslation();
 
-  const { setModalStatus, setSelectRoleData } = useUserManagementRedux();
+  const { setModalStatus, setSelectRoleData, setPermissionRoleId } =
+    useUserManagementRedux();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -82,12 +87,19 @@ const RoleList: React.FC = () => {
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.Refresh_Role_List,
+      EmitterKey.Refresh_User_Management,
       refresh
     );
 
     return unsubscribe;
   }, [refresh]);
+
+  const onCheckRolePermission = (id?: string) => {
+    if (id) {
+      setPermissionRoleId(id);
+      handleChange(UserManagementTypeEnum.permission_list);
+    }
+  };
 
   return (
     <>
@@ -99,7 +111,7 @@ const RoleList: React.FC = () => {
           total: roleList?.total ?? 0
         }}
         loading={loading}
-        columns={RoleListColumns}
+        columns={RoleListColumns(onCheckRolePermission)}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={RoleListActions(onEditRole, onDeleteRole)}

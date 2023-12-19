@@ -68,6 +68,10 @@ export interface IV1DeleteRoleScopeParams extends IRoleScopeDeleteRequest {}
 
 export interface IV1DeleteRoleScopeReturn extends IGenericResp {}
 
+export interface IV1ListExistingScopesParams {
+  role_id?: string;
+}
+
 export interface IV1ListExistingScopesReturn extends IListScopesReply {}
 
 export interface IV1CreateUserParams extends IUserCreateRequest {}

@@ -4,7 +4,6 @@ export const OperationTypeStyleWrapper = styled('div')`
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 20px 40px;
   align-content: center;
   align-self: stretch;
   width: 100%;

@@ -5,11 +5,13 @@ import {
 import { t } from '../../../../locale';
 import { IScopeReply, IViewRoleReply } from '../../../../api/common';
 import { BasicTag } from '@actiontech/shared';
-import EllipsisModal from './components/EllipsisModal';
 import { Space } from 'antd';
 import { AdminRole } from '../../../../data/enum';
+import { EllipsisOutlined } from '@ant-design/icons';
 
-export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
+export const RoleListColumns = (
+  onCheckRolePermission: (id?: string) => void
+): ActiontechTableColumn<IViewRoleReply> => [
   {
     dataIndex: 'role_name',
     title: () => t('userManagement.roleName')
@@ -22,13 +24,17 @@ export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
     dataIndex: 'scopes',
     width: 450,
     title: () => t('userManagement.role.operationPermission'),
-    render: (scope: IScopeReply[]) => {
+    render: (scope: IScopeReply[], record: IViewRoleReply) => {
       return (
         <Space wrap>
           {scope.slice(0, 3).map((item) => (
             <BasicTag key={item.scope_name}>{item.scope_desc}</BasicTag>
           ))}
-          {scope.length > 3 ? <EllipsisModal data={scope} /> : null}
+          {scope.length > 3 ? (
+            <span onClick={() => onCheckRolePermission(record?.id)}>
+              <EllipsisOutlined />
+            </span>
+          ) : null}
         </Space>
       );
     }
