@@ -1,11 +1,9 @@
-import { act, screen, cleanup } from '@testing-library/react';
-import { sleep } from '~/testUtil/customQuery';
-import { superRenderHooks } from '~/testUtil/customRender';
-import mockApi from '~/testUtil/mockApi';
+import { act, screen, cleanup, render } from '@testing-library/react';
 import useRemoveTemplate from './useRemoveTemplate';
 import auth from '~/testUtil/mockApi/auth';
+import { useEffect } from 'react';
 
-describe.skip('useRemoveTemplate', () => {
+describe('useRemoveTemplate', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -15,41 +13,42 @@ describe.skip('useRemoveTemplate', () => {
     jest.clearAllMocks();
     cleanup();
   });
+
+  /**
+   * 使用 render 而不是用 renderHooks 的原因:
+   * https://github.com/ant-design/ant-design/blob/e0534a1e852e0011e31ba88cc076cc2d08acda88/components/message/__tests__/hooks.test.tsx#L233C23-L233C23
+   */
   it('should send remove user request when user call removeDataPermissionTemplate method', async () => {
     const removeDataPermissionTemplateSpy = auth.removeDataPermissionTemplate();
     const refresh = jest.fn();
-    const { result } = superRenderHooks(() => useRemoveTemplate(refresh));
 
-    act(() => {
-      result.current.removeTemplate({
-        uid: '123',
-        name: '123'
-      });
+    const Component = () => {
+      const { removeTemplate, messageContextHolder } =
+        useRemoveTemplate(refresh);
+      useEffect(() => {
+        removeTemplate({
+          uid: '123',
+          name: '123'
+        });
+      }, []);
+      return <>{messageContextHolder}</>;
+    };
 
-      result.current.removeTemplate({
-        uid: '123',
-        name: '123'
-      });
-    });
+    render(<Component />);
+
     expect(removeDataPermissionTemplateSpy).toBeCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(300));
-
-    expect(screen.queryByText('正在删除模版 "123"...')).toBeInTheDocument();
+    expect(removeDataPermissionTemplateSpy).toBeCalledWith({
+      data_permission_template_uid: '123'
+    });
+    expect(screen.queryByText('正在删除模板 "123"...')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(screen.queryByText('正在删除模版 "123"...')).not.toBeInTheDocument();
-    const successEl = await screen.findByText(`模版 "123" 删除成功`);
+    expect(screen.queryByText('正在删除模板 "123"...')).not.toBeInTheDocument();
+    const successEl = await screen.findByText(`模板 "123" 删除成功`);
 
     expect(refresh).toBeCalledTimes(1);
     expect(successEl).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText(`模版 "123" 删除成功`)).not.toBeInTheDocument();
-
-    await act(() => {
-      result.current.removeTemplate({
-        uid: '123'
-      });
-    });
-    expect(removeDataPermissionTemplateSpy).toBeCalledTimes(2);
+    expect(screen.queryByText(`模板 "123" 删除成功`)).not.toBeInTheDocument();
   });
 });

@@ -50,7 +50,8 @@ export default {
       occurrenceCount: '出现数量',
       personInCharge: '负责人',
       status: '状态',
-      comment: '备注'
+      comment: '备注',
+      endpoints: '端点信息'
     },
     filter: {
       time: '时间范围',

@@ -23,16 +23,17 @@ module.exports = {
   moduleNameMapper: {
     '.+\\.(css|style|less|sass|scss|ttf|woff|woff2)$': 'identity-obj-proxy',
     '@ant-design/plots':
-      '<rootDir>/packages/sqle/src/testUtils/mockAntDesignPlots.jsx',
-    'monaco-editor': '<rootDir>/packages/sqle/src/testUtils/mockEditor.jsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockAntDesignPlots.jsx',
+    'monaco-editor': '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
     '@monaco-editor/react':
-      '<rootDir>/packages/sqle/src/testUtils/mockEditor.jsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
     '@actiontech/(.*)': '<rootDir>/packages/$1',
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },
   collectCoverageFrom: [
     'packages/**/{src,lib}/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
-    'packages/**/src/App.tsx'
+    'packages/**/src/App.tsx',
+    '!packages/provision/src/store/**/*.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   reporters: [
@@ -44,7 +45,7 @@ module.exports = {
         outputDirectory: 'reports',
         outputName: 'report.xml',
         color: true,
-        warnSlowerThan: 300
+        warnSlowerThan: 6000
       }
     ]
   ]

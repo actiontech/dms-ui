@@ -2,7 +2,7 @@ import { DefaultOptionType } from 'antd/es/select';
 import {
   IDataObjects,
   IDataPermissionsTable
-} from './Modal/AddDataPermission/index.d';
+} from './Modal/AddDataPermission/index.type';
 import { IGetDataPermissionsInDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';
 
 export const getObjectsLabelByDataObjects = (

@@ -2,7 +2,7 @@ import { cloneDeep, isEqual } from 'lodash';
 import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Form, Row, Select, Typography, Space } from 'antd';
-import { IDataObjects, IFormFields, IAddDataPermission } from './index.d';
+import { IDataObjects, IFormFields, IAddDataPermission } from './index.type';
 import { DefaultOptionType } from 'antd/es/select';
 import { ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
@@ -343,6 +343,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
                         noStyle
                       >
                         <BasicSelect
+                          data-testid={`database-form-item-database-${index}`}
                           placeholder="*"
                           loading={databaseOptionsLoading}
                           onChange={handleDatabaseChange.bind(null, index)}
@@ -367,6 +368,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
                         noStyle
                       >
                         <BasicSelect
+                          data-testid={`database-form-item-schema-${index}`}
                           loading={tableOptionLoading}
                           options={tableOptions[index]}
                           placeholder="*"
@@ -396,7 +398,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
                   onClick={() => {
                     add();
                   }}
-                  className="form-list-add"
+                  className="form-list-add add-object-button"
                 >
                   {t('auth.addAuth.baseForm.addDatabaseTable')}
                 </FormListAddButtonWrapper>
