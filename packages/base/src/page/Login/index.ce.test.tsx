@@ -1,6 +1,6 @@
 /**
  * @test_version ce
-*/
+ */
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import global from '../../testUtils/mockApi/global';
@@ -25,7 +25,7 @@ describe('page/Login-ce', () => {
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     jest.useFakeTimers();
-    global.mockAllApi()
+    global.mockAllApi();
   });
 
   afterEach(() => {
@@ -55,7 +55,7 @@ describe('page/Login-ce', () => {
       }
     });
     await act(async () => jest.advanceTimersByTime(300));
-    
+
     fireEvent.click(screen.getByText('登 录'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
@@ -80,7 +80,7 @@ describe('page/Login-ce', () => {
   it('render login when api return fail', async () => {
     const requestLogin = global.addSession();
     requestLogin.mockImplementation(() =>
-      createSpyFailResponse({message: 'error info'})
+      createSpyFailResponse({ message: 'error info' })
     );
     const { baseElement } = customRender();
 
@@ -109,5 +109,4 @@ describe('page/Login-ce', () => {
     });
     expect(baseElement).toMatchSnapshot();
   });
-
 });
