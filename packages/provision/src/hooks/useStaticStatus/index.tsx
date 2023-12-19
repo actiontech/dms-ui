@@ -1,11 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import {
-  AuthAuditEventTypeEnum,
-  AuthAuditEventDictionary
-} from '../index.type';
+import { AuthAuditEventDictionary } from './index.data';
 import { useMemo } from 'react';
+import { AuthAuditEventTypeEnum } from '~/page/Audit/AuthAudit/index.type';
 
-const useEventType = () => {
+const useStaticStatus = () => {
   const { t } = useTranslation();
 
   const authAuditEventTypeOptions = useMemo(() => {
@@ -23,4 +21,4 @@ const useEventType = () => {
   };
 };
 
-export default useEventType;
+export default useStaticStatus;

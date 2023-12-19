@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`page/auth/AuthAudit/useEventType should return event type options 1`] = `
+exports[`provision/hooks/useStaticStatus should return event type options 1`] = `
 <body>
   <div />
   <div>

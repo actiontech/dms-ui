@@ -23,7 +23,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import AuthAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
 import useProvisionUser from '~/hooks/useProvisionUser';
-import useEventType from './hooks/useEventType';
+import useStaticStatus from '~/hooks/useStaticStatus';
 
 const AuthAudit: React.FC = () => {
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ const AuthAudit: React.FC = () => {
 
   const [currentDetail, setCurrentDetail] = useState<IListAuthorizationEvent>();
 
-  const { authAuditEventTypeOptions } = useEventType();
+  const { authAuditEventTypeOptions } = useStaticStatus();
 
   const {
     tableFilterInfo,

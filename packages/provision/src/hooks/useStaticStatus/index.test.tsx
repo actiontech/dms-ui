@@ -1,11 +1,11 @@
 import { Select } from 'antd';
 import { render } from '@testing-library/react';
-import useEventType from './useEventType';
+import useStaticStatus from '.';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
-describe('page/auth/AuthAudit/useEventType', () => {
+describe('provision/hooks/useStaticStatus', () => {
   it('should return event type options', async () => {
-    const { result } = renderHooksWithTheme(useEventType);
+    const { result } = renderHooksWithTheme(useStaticStatus);
     expect(result.current.authAuditEventTypeOptions).toHaveLength(3);
     const { baseElement } = render(
       <Select options={result.current.authAuditEventTypeOptions} />
