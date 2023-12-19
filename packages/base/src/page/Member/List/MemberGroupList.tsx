@@ -3,28 +3,29 @@ import { message } from 'antd';
 import { useToggle } from 'ahooks';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useRequest } from 'ahooks';
 import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableActionMeta } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import {
   useCurrentProject,
   useCurrentUser
 } from '@actiontech/shared/lib/global';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IListMember } from '@actiontech/shared/lib/api/base/service/common';
-import { IListMembersParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { useRequest } from 'ahooks';
+import { IListMemberGroup } from '@actiontech/shared/lib/api/base/service/common';
+import { IListMemberGroupsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { MemberGroupListColumns, MemberGroupListActions } from './column';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import {
+  updateMemberModalStatus,
+  updateSelectMemberGroup
+} from '../../../store/member';
 import { ModalName } from '../../../data/ModalName';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { MemberListColumns, MemberListActions } from '../column';
-import {
-  updateMemberModalStatus,
-  updateSelectMember
-} from '../../../store/member';
 
 const MemberList: React.FC = () => {
   const { t } = useTranslation();
@@ -47,8 +48,8 @@ const MemberList: React.FC = () => {
     useTableRequestError();
 
   const { pagination, tableChange } = useTableRequestParams<
-    IListMember,
-    IListMembersParams
+    IListMemberGroup,
+    IListMemberGroupsParams
   >();
 
   const {
@@ -57,26 +58,26 @@ const MemberList: React.FC = () => {
     refresh
   } = useRequest(
     () => {
-      const params: IListMembersParams = {
+      const params: IListMemberGroupsParams = {
         ...pagination,
         project_uid: projectID
       };
-      return handleTableRequestError(dms.ListMembers(params));
+      return handleTableRequestError(dms.ListMemberGroups(params));
     },
     {
       refreshDeps: [pagination, refreshFlag, projectID]
     }
   );
 
-  const onEditMember = useCallback(
-    (record: IListMember | undefined) => {
+  const onEditMemberGroup = useCallback(
+    (record?: IListMemberGroup) => {
       if (!actionPermission) {
         return;
       }
-      dispatch(updateSelectMember({ member: record ?? null }));
+      dispatch(updateSelectMemberGroup({ memberGroup: record ?? null }));
       dispatch(
         updateMemberModalStatus({
-          modalName: ModalName.DMS_Update_Member,
+          modalName: ModalName.DMS_Update_Member_Group,
           status: true
         })
       );
@@ -84,36 +85,33 @@ const MemberList: React.FC = () => {
     [dispatch, actionPermission]
   );
 
-  const onDeleteMember = useCallback(
-    async (record: IListMember | undefined) => {
+  const onDeleteMemberGroup = useCallback(
+    async (record?: IListMemberGroup) => {
       if (!actionPermission) {
         return;
       }
-      const res = await dms.DelMember({
-        member_uid: record?.uid ?? '',
+      const res = await dms.DeleteMemberGroup({
+        member_group_uid: record?.uid ?? '',
         project_uid: projectID
       });
 
       if (res.data.code === ResponseCode.SUCCESS) {
-        messageApi.open({
-          type: 'success',
-          content: t('dmsMember.memberList.deleteSuccessTips', {
-            name: record?.user?.name ?? ''
+        messageApi.success(
+          t('dmsMember.memberGroupList.deleteSuccessTips', {
+            name: record?.name ?? ''
           })
-        });
+        );
         refresh();
       }
     },
     [messageApi, refresh, t, projectID, actionPermission]
   );
 
-  const actions = useMemo(() => {
-    return MemberListActions(onEditMember, onDeleteMember);
-  }, [onEditMember, onDeleteMember]);
-
-  const columns = useMemo(() => {
-    return MemberListColumns;
-  }, []);
+  const memberGroupListActions = useMemo<
+    ActiontechTableActionMeta<IListMemberGroup>[]
+  >(() => {
+    return MemberGroupListActions(onEditMemberGroup, onDeleteMemberGroup);
+  }, [onEditMemberGroup, onDeleteMemberGroup]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -134,10 +132,14 @@ const MemberList: React.FC = () => {
           total: memberList?.total ?? 0
         }}
         loading={loading}
-        columns={columns}
+        columns={MemberGroupListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={!projectArchive && actionPermission ? actions : undefined}
+        actions={
+          !projectArchive && actionPermission
+            ? memberGroupListActions
+            : undefined
+        }
       />
     </>
   );
