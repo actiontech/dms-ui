@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
-import { MemberListIsAdminStyledWrapper } from '../style';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
-const IsAdmin: React.FC<{ value: boolean }> = ({ value }) => {
+const IsProjectAdmin: React.FC<{ value: boolean }> = ({ value }) => {
   const { t } = useTranslation();
 
   return (
-    <MemberListIsAdminStyledWrapper>
+    <TableColumnWithIconStyleWrapper>
       {value ? (
         <>
           <IconMemberIsAdmin />
@@ -18,8 +18,8 @@ const IsAdmin: React.FC<{ value: boolean }> = ({ value }) => {
           <span>{t('common.false')}</span>
         </>
       )}
-    </MemberListIsAdminStyledWrapper>
+    </TableColumnWithIconStyleWrapper>
   );
 };
 
-export default IsAdmin;
+export default IsProjectAdmin;

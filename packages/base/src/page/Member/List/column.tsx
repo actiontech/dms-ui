@@ -3,16 +3,17 @@ import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
-import { t } from '../../locale';
+import { t } from '../../../locale';
 import {
   IListMember,
   IListMemberRoleWithOpRange,
   IUidWithName,
   IListMemberGroup
 } from '@actiontech/shared/lib/api/base/service/common';
-import renderRolesInfo from './Common/renderRolesInfo';
-import IsAdmin from './components/IsAdmin';
+import renderRolesInfo from '../Common/renderRolesInfo';
+import IsProjectAdmin from '../components/IsProjectAdmin';
 import { BasicToolTips } from '@actiontech/shared';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 const commonRoleOperateRangesRender = (
   roles: IListMemberRoleWithOpRange[],
@@ -76,7 +77,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
       if (typeof isAdmin !== 'boolean') {
         return t('common.unknownStatus');
       }
-      return <IsAdmin value={isAdmin} />;
+      return <IsProjectAdmin value={isAdmin} />;
     }
   }
 ];
@@ -113,7 +114,7 @@ export const MemberListActions = (
       };
     },
     permissions: (record) => {
-      return record?.user?.name !== 'admin';
+      return record?.user?.name !== SystemRole.admin;
     }
   }
 ];
@@ -166,7 +167,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
       if (typeof isAdmin !== 'boolean') {
         return t('common.unknownStatus');
       }
-      return <IsAdmin value={isAdmin} />;
+      return <IsProjectAdmin value={isAdmin} />;
     }
   }
 ];
