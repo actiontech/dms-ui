@@ -10,14 +10,21 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { storeFactory } from './mockRedux';
-import lightTheme from '../theme/light';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { mount, shallow } from 'enzyme';
 import { Dictionary } from '@actiontech/shared/lib/types/common.type';
 
+import sharedTheme from '@actiontech/shared/lib/theme/light';
+import lightTheme from '../theme/light';
+
 type RenderParams = Parameters<typeof render>;
 type MountParams = Parameters<typeof mount>;
 type ShallowParams = Parameters<typeof shallow>;
+
+const themeData = {
+  ...sharedTheme,
+  ...lightTheme
+};
 
 export const renderWithRouter = (...[ui, option]: [...RenderParams]) => {
   return render(<BrowserRouter>{ui}</BrowserRouter>, option);
@@ -55,22 +62,10 @@ export const renderHooksWithRedux = <TProps, TResult>(
   } as any);
 };
 
-export const renderWithServerRouter = (
-  ...[ui, option, props]: [...RenderParams, RouterProps]
-) => {
-  return render(<Router {...props}>{ui}</Router>, option);
-};
-
-export const renderWithMemoryRouter = (
-  ...[ui, option, props]: [...RenderParams, MemoryRouterProps?]
-) => {
-  return render(<MemoryRouter {...props}>{ui}</MemoryRouter>, option);
-};
-
 export const renderWithTheme = (...[ui, option]: [...RenderParams]) => {
   return render(
     <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>
+      <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
     </StyledEngineProvider>,
     option
   );
@@ -82,7 +77,7 @@ export const renderWithThemeAndRedux = (
   return render(
     <Provider store={storeFactory(initStore)}>
       <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>
+        <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
       </StyledEngineProvider>
     </Provider>,
     option
@@ -95,7 +90,7 @@ export const renderWithThemeAndServerRouter = (
   return render(
     <Router {...props}>
       <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>
+        <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
       </StyledEngineProvider>
     </Router>,
     option
@@ -108,7 +103,7 @@ export const renderWithThemeAndRouter = (
   return render(
     <MemoryRouter {...props}>
       <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>
+        <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
       </StyledEngineProvider>
     </MemoryRouter>,
     option
@@ -120,7 +115,7 @@ export const mountWithTheme = (...[ui, option]: [...MountParams]) => {
     ...option,
     wrappingComponent: ThemeProvider,
     wrappingComponentProps: {
-      theme: lightTheme
+      theme: themeData
     }
   });
 };
