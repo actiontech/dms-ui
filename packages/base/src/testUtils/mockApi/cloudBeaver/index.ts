@@ -13,7 +13,9 @@ class MockCloudBeaverApi implements MockSpyApy {
   public getSqlQueryUrl() {
     const spy = jest.spyOn(cloudbeaver, 'GetSQLQueryConfiguration');
     spy.mockImplementation(() =>
-      createSpySuccessResponse(disableSqlQueryUrlData)
+      createSpySuccessResponse({
+        data: disableSqlQueryUrlData
+      })
     );
     return spy;
   }
