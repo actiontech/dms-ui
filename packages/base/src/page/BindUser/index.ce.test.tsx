@@ -201,5 +201,5 @@ describe('page/BindUser-ce', () => {
       expect(navigateSpy).toBeCalled();
       expect(navigateSpy).toBeCalledWith('/');
     });
-  })
+  });
 });

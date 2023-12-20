@@ -144,9 +144,7 @@ describe('page/BindUser-ee', () => {
         }
       });
       expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith(
-        '/'
-      );
+      expect(navigateSpy).toBeCalledWith('/');
       expect(LocalStorageWrapperSet).toBeCalled();
       expect(LocalStorageWrapperSet).toBeCalledWith(
         StorageKey.SHOW_COMPANY_NOTICE,
