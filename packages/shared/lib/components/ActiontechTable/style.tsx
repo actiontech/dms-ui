@@ -57,11 +57,11 @@ export const ActiontechTableStyleWrapper = styled(Table)`
         line-height: 20px;
       }
 
-      .ant-table-cell.first-col {
+      .ant-table-cell:first-of-type {
         padding-left: 40px;
       }
 
-      .ant-table-cell.last-col {
+      .ant-table-cell:last-of-type {
         padding-right: 40px;
       }
 

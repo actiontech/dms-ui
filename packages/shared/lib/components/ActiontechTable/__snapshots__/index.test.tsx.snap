@@ -4,7 +4,7 @@ exports[`lib/ActiontechTable -composite table render table has tool 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -498,7 +498,7 @@ exports[`lib/ActiontechTable -composite table render table has toolbar children 
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -895,7 +895,7 @@ exports[`lib/ActiontechTable -composite table render table with class name 1`] =
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace custom-class-table-test css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace custom-class-table-test css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1035,7 +1035,7 @@ exports[`lib/ActiontechTable -composite table render table with filter 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1432,7 +1432,7 @@ exports[`lib/ActiontechTable -normal table render normal table is empty 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1509,7 +1509,7 @@ exports[`lib/ActiontechTable -normal table render normal table is error info 1`]
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1586,7 +1586,7 @@ exports[`lib/ActiontechTable -normal table render normal table is loading 1`] = 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1687,7 +1687,7 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1714,13 +1714,13 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         名称
                       </th>
                       <th
-                        class="ant-table-cell last-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         年龄
@@ -1759,10 +1759,10 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
                       data-row-key="a"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell last-col"
+                        class="ant-table-cell"
                       />
                     </tr>
                     <tr
@@ -1770,10 +1770,10 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
                       data-row-key="b"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell last-col"
+                        class="ant-table-cell"
                       />
                     </tr>
                     <tr
@@ -1781,10 +1781,10 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
                       data-row-key="c"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell last-col"
+                        class="ant-table-cell"
                       />
                     </tr>
                   </tbody>
@@ -1803,7 +1803,7 @@ exports[`lib/ActiontechTable -normal table render table with pagination 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2200,7 +2200,7 @@ exports[`lib/ActiontechTable -normal table render table with pagination 2`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

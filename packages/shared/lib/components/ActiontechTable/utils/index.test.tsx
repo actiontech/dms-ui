@@ -2,10 +2,8 @@ import {
   checkButtonDisabled,
   checkButtonPermissions,
   extractTextFromReactNode,
-  getColumnsLabel,
-  setClassNameForColumns
+  getColumnsLabel
 } from '.';
-import { ActiontechTableColumn } from '../index.type';
 
 type typeData = { status: string };
 
@@ -131,60 +129,6 @@ describe('lib/ActiontechTable-utils', () => {
         status: 'ok'
       });
       expect(result).toBeFalsy();
-    });
-  });
-  describe('setClassNameForColumns', () => {
-    it('check setClassNameForColumns function', () => {
-      const columns: ActiontechTableColumn = [
-        {
-          dataIndex: 'name',
-          title: 'name'
-        },
-        {
-          dataIndex: 'age',
-          title: 'age'
-        },
-        {
-          dataIndex: 'hobby',
-          title: 'hobby'
-        }
-      ];
-      const newColumns = setClassNameForColumns(columns);
-      expect(newColumns).toEqual([
-        {
-          dataIndex: 'name',
-          title: 'name',
-          className: 'first-col'
-        },
-        {
-          dataIndex: 'age',
-          title: 'age'
-        },
-        {
-          dataIndex: 'hobby',
-          title: 'hobby',
-          className: 'last-col'
-        }
-      ]);
-      columns[0].className = 'name-class';
-      columns[2].className = 'hobby-class';
-      const newColumns1 = setClassNameForColumns(columns);
-      expect(newColumns1).toEqual([
-        {
-          dataIndex: 'name',
-          title: 'name',
-          className: 'name-class first-col'
-        },
-        {
-          dataIndex: 'age',
-          title: 'age'
-        },
-        {
-          dataIndex: 'hobby',
-          title: 'hobby',
-          className: 'hobby-class last-col'
-        }
-      ]);
     });
   });
 });
