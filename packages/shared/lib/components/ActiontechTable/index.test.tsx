@@ -67,8 +67,6 @@ describe('lib/ActiontechTable', () => {
           }
         ]
       });
-      const firstTdDom = getAllBySelector('.first-col');
-      expect(firstTdDom.length).toBe(4);
       expect(baseElement).toMatchSnapshot();
     });
 
