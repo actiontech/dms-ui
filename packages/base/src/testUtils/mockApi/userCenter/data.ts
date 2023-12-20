@@ -26,8 +26,7 @@ export const userList: IListUser[] = [
         name: '创建项目',
         uid: '700001'
       }
-    ],
-    user_groups: []
+    ]
   },
   {
     uid: '1647895752866795520',
@@ -37,8 +36,7 @@ export const userList: IListUser[] = [
     email: '',
     phone: '',
     wxid: '',
-    op_permissions: [],
-    user_groups: []
+    op_permissions: []
   },
   {
     uid: '700200',
@@ -48,8 +46,7 @@ export const userList: IListUser[] = [
     email: '',
     phone: '',
     wxid: '',
-    op_permissions: [],
-    user_groups: []
+    op_permissions: []
   }
 ];
 

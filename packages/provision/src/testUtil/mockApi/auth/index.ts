@@ -147,8 +147,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListDatabase');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: databaseList.length,
-        databases: databaseList
+        total_nums: databaseList.length,
+        data: databaseList
       })
     );
     return spy;
@@ -158,8 +158,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListTable');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: tableList.length,
-        tables: tableList
+        total_nums: tableList.length,
+        data: tableList
       })
     );
     return spy;
@@ -172,8 +172,8 @@ class MockAuthApi implements MockSpyApy {
     );
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data_permissions: DataPermissionList,
-        total: DataPermissionList.length
+        data: DataPermissionList,
+        total_nums: DataPermissionList.length
       })
     );
     return spy;
@@ -321,8 +321,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuditListAuthorizationEvents');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: authAuditList.length,
-        events: authAuditList
+        total_nums: authAuditList.length,
+        data: authAuditList
       })
     );
     return spy;
@@ -332,8 +332,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuditListDataObjectServiceEvents');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: serviceAuditList.length,
-        events: serviceAuditList
+        total_nums: serviceAuditList.length,
+        data: serviceAuditList
       })
     );
     return spy;
@@ -343,8 +343,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuditListDataPermissionTemplateEvents');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: templateAuditList.length,
-        events: templateAuditList
+        total_nums: templateAuditList.length,
+        data: templateAuditList
       })
     );
     return spy;
