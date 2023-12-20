@@ -1,20 +1,16 @@
+/**
+ * @test_version ce
+ */
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { superRender } from '../../testUtils/customRender';
 import global from '../../testUtils/mockApi/global';
-
+import BindUser from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
-import { LocalStorageWrapper } from '@actiontech/shared';
-import {
-  CompanyNoticeDisplayStatusEnum,
-  StorageKey
-} from '@actiontech/shared/lib/enum';
-
-import BindUser from '.';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -28,7 +24,7 @@ jest.mock('react-redux', () => ({
   useDispatch: jest.fn()
 }));
 
-describe('page/BindUser-ee', () => {
+describe('page/BindUser-ce', () => {
   const navigateSpy = jest.fn();
   const dispatchSpy = jest.fn();
   const customRender = (params = {}) => {
@@ -103,7 +99,6 @@ describe('page/BindUser-ee', () => {
     });
 
     it('render oauth2_token params submit', async () => {
-      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       const search = `oauth2_token=oauth2_token_val`;
       window.history.pushState({}, 'Test Page Title', `/user/bind?${search}`);
       const requestFn = global.bindUser();
@@ -135,7 +130,6 @@ describe('page/BindUser-ee', () => {
         user_name: 'oauth2_admin',
         pwd: 'oauth2_admin'
       });
-      await act(async () => jest.advanceTimersByTime(300));
       expect(dispatchSpy).toBeCalledTimes(1);
       expect(dispatchSpy).toBeCalledWith({
         type: 'user/updateToken',
@@ -144,14 +138,7 @@ describe('page/BindUser-ee', () => {
         }
       });
       expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith(
-        '/'
-      );
-      expect(LocalStorageWrapperSet).toBeCalled();
-      expect(LocalStorageWrapperSet).toBeCalledWith(
-        StorageKey.SHOW_COMPANY_NOTICE,
-        CompanyNoticeDisplayStatusEnum.NotDisplayed
-      );
+      expect(navigateSpy).toBeCalledWith('/');
     });
   });
 
