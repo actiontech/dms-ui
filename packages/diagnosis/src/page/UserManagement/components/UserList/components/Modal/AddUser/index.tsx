@@ -44,7 +44,7 @@ const AddUser = () => {
             })
           );
           closeModal();
-          EventEmitter.emit(EmitterKey.Refresh_User_List);
+          EventEmitter.emit(EmitterKey.Refresh_User_Management);
         }
       })
       .finally(() => {

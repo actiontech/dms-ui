@@ -8,6 +8,7 @@ import { BasicTag } from '@actiontech/shared';
 import { Space } from 'antd';
 import { AdminRole } from '../../../../data/enum';
 import { EllipsisOutlined } from '@ant-design/icons';
+import { CheckPermissionEllipsisStyleWrapper } from './style';
 
 export const RoleListColumns = (
   onCheckRolePermission: (id?: string) => void
@@ -31,9 +32,11 @@ export const RoleListColumns = (
             <BasicTag key={item.scope_name}>{item.scope_desc}</BasicTag>
           ))}
           {scope.length > 3 ? (
-            <span onClick={() => onCheckRolePermission(record?.id)}>
+            <CheckPermissionEllipsisStyleWrapper
+              onClick={() => onCheckRolePermission(record?.id)}
+            >
               <EllipsisOutlined />
-            </span>
+            </CheckPermissionEllipsisStyleWrapper>
           ) : null}
         </Space>
       );

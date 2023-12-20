@@ -51,7 +51,7 @@ const PermissionList: React.FC = () => {
     refresh
   } = useRequest(
     () => {
-      const params: any = {
+      const params: IV1ListExistingScopesParams = {
         ...tableFilterInfo
       };
       return handleTableRequestError(auth.V1ListExistingScopes(params));

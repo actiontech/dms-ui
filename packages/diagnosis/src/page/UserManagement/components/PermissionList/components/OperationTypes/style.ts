@@ -7,7 +7,6 @@ export const OperationTypeStyleWrapper = styled('div')`
   align-content: center;
   align-self: stretch;
   width: 100%;
-  border-bottom: 1px solid #e8e7e6;
 `;
 
 export const OperationTypeItemStyleWrapper = styled('div')<{
@@ -20,16 +19,15 @@ export const OperationTypeItemStyleWrapper = styled('div')<{
   cursor: pointer;
   border-radius: 4px;
   border: ${({ theme }) =>
-    theme.sharedTheme.components.ruleComponent.ruleType.border};
+    theme.diagnosisTheme.userManagement.permissionType.border};
   background: ${({ theme, active }) =>
     !!active
-      ? theme.sharedTheme.components.ruleComponent.ruleType
-          .activeBackgroundColor
-      : theme.sharedTheme.components.ruleComponent.ruleType.backgroundColor};
+      ? theme.diagnosisTheme.userManagement.permissionType.activeBackgroundColor
+      : theme.diagnosisTheme.userManagement.permissionType.backgroundColor};
   color: ${({ theme, active }) =>
     !!active
-      ? theme.sharedTheme.components.ruleComponent.ruleType.activeColor
-      : theme.sharedTheme.components.ruleComponent.ruleType.color};
+      ? theme.diagnosisTheme.userManagement.permissionType.activeColor
+      : theme.diagnosisTheme.userManagement.permissionType.color};
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
