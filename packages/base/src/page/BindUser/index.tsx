@@ -41,9 +41,6 @@ const BindUser = () => {
   const login = (values: OauthLoginFormFields) => {
     const urlParams = new URLSearchParams(window.location.search);
     const oauth2Token = urlParams.get('oauth2_token');
-    if (loginLock.current) {
-      return;
-    }
     loginLock.current = true;
     if (!oauth2Token) {
       eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
@@ -54,7 +51,6 @@ const BindUser = () => {
       loginLock.current = false;
       return;
     }
-
     dms
       .BindOauth2User({
         oauth2_token: oauth2Token,
@@ -106,7 +102,7 @@ const BindUser = () => {
 
   return (
     <LoginLayout>
-      <Form onFinish={login}>
+      <Form onFinish={login} disabled={loginLock.current}>
         <Form.Item
           name="username"
           rules={[
@@ -154,6 +150,7 @@ const BindUser = () => {
           block
           htmlType="submit"
           className="login-btn"
+          loading={loginLock.current}
         >
           {t('dmsLogin.oauth.submitButton')}
         </BasicButton>

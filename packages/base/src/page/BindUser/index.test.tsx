@@ -1,0 +1,3 @@
+describe('page/BindUser-ee', () => {
+
+});
