@@ -1,7 +1,7 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import Router, { useNavigate } from 'react-router-dom';
 
 import AuthListItem from '.';
 
@@ -46,6 +46,9 @@ describe('page/Auth/AuthList/List', () => {
     mockUseCurrentProject();
     (useDispatch as jest.Mock).mockReturnValue(mockDispatch);
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+    jest.spyOn(Router, 'useParams').mockReturnValue({
+      purpose: ''
+    });
     jest.useFakeTimers();
     auth.mockAllApi();
   });
@@ -165,6 +168,43 @@ describe('page/Auth/AuthList/List', () => {
       );
       expect(filterItems.length).toBe(3);
       expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render get list api when has url purpose', async () => {
+      jest.spyOn(Router, 'useParams').mockReturnValue({
+        purpose: 'purpose_val'
+      });
+      const requestListFn = auth.listAuthorizationReq();
+      const requestListTipsByAuthorizationKeyFn =
+        auth.listTipsByAuthorizationKeyReq();
+      requestListTipsByAuthorizationKeyFn.mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          data: { tips: ['purpose_val', 'purpose_val2'] }
+        })
+      );
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(3300));
+      expect(requestListTipsByAuthorizationKeyFn).toBeCalled();
+      expect(baseElement).toMatchSnapshot();
+
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(baseElement).toMatchSnapshot();
+      await act(async () => jest.advanceTimersByTime(3300));
+      expect(requestListFn).toBeCalledTimes(2);
+      expect(requestListFn).toHaveBeenNthCalledWith(1, {
+        filter_by_namespace_uid: projectID,
+        filter_by_status: undefined,
+        page_index: 1,
+        page_size: 20
+      });
+      expect(requestListFn).toHaveBeenNthCalledWith(2, {
+        filter_by_namespace_uid: projectID,
+        filter_by_purpose: 'purpose_val',
+        filter_by_status: undefined,
+        page_index: 1,
+        page_size: 20
+      });
+      // jest.clearAllMocks();
     });
   });
 
