@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import EmitterKey from '../../../data/EmitterKey';
 import { updateSystemModalStatus } from '../../../store/system';
 import EventEmitter from '../../../utils/EventEmitter';
-import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { Row } from 'antd';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { LicenseColumn } from './index.data';
@@ -14,6 +13,7 @@ import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ModalName } from '../../../data/ModalName';
 import ImportLicense from './Modal/ImportLicense';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 const License = () => {
   const { t } = useTranslation();
@@ -28,16 +28,12 @@ const License = () => {
     loading,
     refresh: refreshLicenseList
   } = useRequest(() => {
-    return configuration
-      .getSQLELicenseV1()
-      .then((res) => ({ list: res?.data?.license ?? [] }));
+    return dms.GetLicense().then((res) => ({ list: res?.data?.license ?? [] }));
   });
 
   const collectLicense = () => {
     startCollect();
-    configuration
-      .GetSQLELicenseInfoV1({ responseType: 'blob' })
-      .finally(() => collectFinish());
+    dms.GetLicenseInfo({ responseType: 'blob' }).finally(() => collectFinish());
   };
 
   const importLicense = () => {
@@ -89,6 +85,7 @@ const License = () => {
         columns={LicenseColumn}
         dataSource={data?.list}
         loading={loading}
+        className="clear-padding-bottom"
       />
       <ImportLicense />
     </section>
