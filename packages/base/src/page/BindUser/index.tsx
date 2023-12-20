@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { Typography, Form, notification } from 'antd';
+import { Typography, Form } from 'antd';
 import { OauthLoginFormFields } from './index.type';
 import { updateToken } from '../../store/user';
 import { useNavigate } from 'react-router-dom';
@@ -11,6 +11,8 @@ import LoginLayout from '../Login/components/LoginLayout';
 import { BasicButton, BasicInput } from '@actiontech/shared';
 import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
+import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 
 // #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -44,7 +46,7 @@ const BindUser = () => {
     }
     loginLock.current = true;
     if (!oauth2Token) {
-      notification.error({
+      eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
         message: t('dmsLogin.oauth.errorTitle'),
         description: t('dmsLogin.oauth.lostOauth2Token'),
         duration: 0
@@ -79,26 +81,27 @@ const BindUser = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const error = urlParams.get('error');
-    const userExist = urlParams.get('user_exist') === 'true';
-    const token = urlParams.get('dms_token');
     if (error) {
-      notification.error({
+      eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
         message: t('dmsLogin.oauth.errorTitle'),
         description: error,
         duration: 0
       });
-    } else if (userExist) {
-      if (!token) {
-        notification.error({
-          message: t('dmsLogin.oauth.errorTitle'),
-          description: t('dmsLogin.oauth.lostToken'),
-          duration: 0
-        });
-      } else {
-        dispatch(updateToken({ token: concatToken(token) }));
-        navigate('/');
-      }
+      return;
     }
+    const userExist = urlParams.get('user_exist') === 'true';
+    if (!userExist) return;
+    const token = urlParams.get('dms_token');
+    if (!token) {
+      eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
+        message: t('dmsLogin.oauth.errorTitle'),
+        description: t('dmsLogin.oauth.lostToken'),
+        duration: 0
+      });
+      return;
+    }
+    dispatch(updateToken({ token: concatToken(token) }));
+    navigate('/');
   }, [dispatch, navigate, t]);
 
   return (
