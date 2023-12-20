@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { Card, Space, Typography, Spin } from 'antd';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import cloudBeaver from '@actiontech/shared/lib/api/base/service/cloudbeaver';
@@ -17,34 +17,20 @@ const CloudBeaver = () => {
   const location = useLocation();
   const cloudBeaverUrl = useRef('');
 
-  const {
-    data,
-    loading,
-    runAsync: getSqlQueryUrl
-  } = useRequest(
-    () => {
-      return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
-        return res.data.data;
-      });
-    },
-    {
-      manual: true
-    }
-  );
+  const { data, loading } = useRequest(() => {
+    return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
+      if (res?.data.data?.enable_sql_query) {
+        cloudBeaverUrl.current = res?.data.data.sql_query_root_uri as string;
 
-  useEffect(() => {
-    getSqlQueryUrl().then((res) => {
-      if (res?.enable_sql_query) {
-        cloudBeaverUrl.current = res.sql_query_root_uri as string;
+        const params = new URLSearchParams(location.search);
+
+        if (params.get(OPEN_CLOUD_BEAVER_URL_PARAM_NAME) === 'true') {
+          window.open(cloudBeaverUrl.current);
+        }
       }
-
-      const params = new URLSearchParams(location.search);
-
-      if (params.get(OPEN_CLOUD_BEAVER_URL_PARAM_NAME) === 'true') {
-        window.open(cloudBeaverUrl.current);
-      }
+      return res.data.data;
     });
-  }, [getSqlQueryUrl, location.search]);
+  });
 
   const openCloudBeaver = () => {
     window.open(cloudBeaverUrl.current);
