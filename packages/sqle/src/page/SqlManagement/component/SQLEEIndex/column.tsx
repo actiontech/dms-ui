@@ -35,6 +35,7 @@ import {
   BasicToolTips,
   BasicTypographyEllipsis
 } from '@actiontech/shared';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -265,23 +266,26 @@ const SqlManagementColumn: (
       dataIndex: 'first_appear_timestamp',
       title: () => t('sqlManagement.table.column.firstOccurrence'),
       render: (value) => {
-        return value || '-';
+        return formatTime(value, '-');
       },
-      sorter: true
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
     },
     {
       dataIndex: 'last_receive_timestamp',
       title: () => t('sqlManagement.table.column.lastOccurrence'),
       render: (value) => {
-        return value || '-';
+        return formatTime(value, '-');
       },
-      sorter: true
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
     },
     {
       dataIndex: 'fp_count',
       align: 'right',
       title: () => t('sqlManagement.table.column.occurrenceCount'),
-      sorter: true
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
     },
     {
       dataIndex: 'assignees',

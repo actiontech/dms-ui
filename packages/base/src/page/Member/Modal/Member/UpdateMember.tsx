@@ -4,17 +4,17 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import EmitterKey from '../../../data/EmitterKey';
-import { ModalName } from '../../../data/ModalName';
-import { IReduxState } from '../../../store';
-import { updateMemberModalStatus } from '../../../store/member';
-import EventEmitter from '../../../utils/EventEmitter';
-import { IMemberFormFields } from './index.type';
+import EmitterKey from '../../../../data/EmitterKey';
+import { ModalName } from '../../../../data/ModalName';
+import { IReduxState } from '../../../../store';
+import { updateMemberModalStatus } from '../../../../store/member';
+import EventEmitter from '../../../../utils/EventEmitter';
+import { IMemberFormFields } from '../index.type';
 import MemberForm from './MemberForm';
-import formatMemberRole from '../Common/formatMemberRole';
+import formatMemberRole from '../../Common/formatMemberRole';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { BasicButton } from '@actiontech/shared';
-import { MemberDrawerStyledWrapper } from '../style';
+import { MemberDrawerStyledWrapper } from '../../style';
 import { IUpdateMemberParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 
@@ -48,10 +48,10 @@ const UpdateMember: React.FC = () => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('dmsMember.updateMember.successTips', {
-              name: ''
+              name: selectMember?.user?.name
             })
           );
-          closeModal();
+          onClose();
           EventEmitter.emit(EmitterKey.DMS_Refresh_Member_List);
         }
       })
@@ -60,7 +60,7 @@ const UpdateMember: React.FC = () => {
       });
   };
 
-  const closeModal = () => {
+  const onClose = () => {
     form.resetFields();
     dispatch(
       updateMemberModalStatus({
@@ -86,10 +86,10 @@ const UpdateMember: React.FC = () => {
       size="large"
       placement="right"
       title={t('dmsMember.updateMember.modalTitle')}
-      onClose={closeModal}
+      onClose={onClose}
       footer={
         <Space>
-          <BasicButton onClick={closeModal} disabled={submitLoading}>
+          <BasicButton onClick={onClose} disabled={submitLoading}>
             {t('common.close')}
           </BasicButton>
           <BasicButton type="primary" onClick={submit} loading={submitLoading}>

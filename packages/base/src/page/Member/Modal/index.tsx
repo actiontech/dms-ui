@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { initMemberModalStatus } from '../../../store/member';
-import AddMember from './AddMember';
-import UpdateMember from './UpdateMember';
-import AddMemberGroup from './AddMemberGroup';
-import UpdateMemberGroup from './UpdateMemberGroup';
+import AddMember from './Member/AddMember';
+import UpdateMember from './Member/UpdateMember';
+import AddMemberGroup from './MemberGroup/AddMemberGroup';
+import UpdateMemberGroup from './MemberGroup/UpdateMemberGroup';
 
 const MemberModal: React.FC = () => {
   const dispatch = useDispatch();
