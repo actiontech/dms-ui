@@ -1,32 +1,27 @@
-import { useState, useMemo } from 'react';
-import { SegmentedValue } from 'antd/es/segmented';
+import { useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import MemberModal from './Modal';
 import { Space } from 'antd';
-import {
-  BasicButton,
-  PageHeader,
-  BasicSegmented,
-  EmptyBox
-} from '@actiontech/shared';
+import { BasicButton, PageHeader, EmptyBox } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { ProjectMemberStyleWrapper } from './style';
-import { MemberListTypeEnum } from './types';
-import MemberList from './components/MemberList';
-import MemberGroupList from './components/MemberGroupList';
+import { MemberListTypeEnum } from './index.enum';
+import MemberList from './List/MemberList';
+import MemberGroupList from './List/MemberGroupList';
 import { updateMemberModalStatus } from '../../store/member';
 import { ModalName } from '../../data/ModalName';
-import {
-  TableToolbar,
-  TableRefreshButton
-} from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import {
   useCurrentProject,
   useCurrentUser
 } from '@actiontech/shared/lib/global';
+import {
+  BasicSegmentedPage,
+  useSegmentedPageParams
+} from '@actiontech/shared/lib/components/BasicSegmentedPage';
 
 const Member: React.FC = () => {
   const { t } = useTranslation();
@@ -40,52 +35,59 @@ const Member: React.FC = () => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
 
-  const [listType, setListType] = useState<MemberListTypeEnum>(
-    MemberListTypeEnum.member_list
-  );
-
-  const onChange = (key: SegmentedValue) => {
-    setListType(key as MemberListTypeEnum);
-  };
-
-  const onAddMember = () => {
-    if (!actionPermission) {
-      return;
-    }
-    dispatch(
-      updateMemberModalStatus({
-        modalName: ModalName.DMS_Add_Member,
-        status: true
-      })
-    );
-  };
-
-  const onAddMemberGroup = () => {
-    if (!actionPermission) {
-      return;
-    }
-    dispatch(
-      updateMemberModalStatus({
-        modalName: ModalName.DMS_Add_Member_Group,
-        status: true
-      })
-    );
-  };
-
-  const renderTable = () => {
-    if (listType === MemberListTypeEnum.member_list) {
-      return <MemberList />;
-    }
-    return <MemberGroupList />;
-  };
+  const { updateSegmentedPageData, renderExtraButton, ...otherProps } =
+    useSegmentedPageParams<MemberListTypeEnum>();
 
   const onRefreshTable = () => {
-    if (listType === MemberListTypeEnum.member_list) {
-      EventEmitter.emit(EmitterKey.DMS_Refresh_Member_List);
-      return;
-    }
-    EventEmitter.emit(EmitterKey.DMS_Refresh_Member_Group_List);
+    EventEmitter.emit(EmitterKey.DMS_Refresh_Member_List);
   };
+
+  useEffect(() => {
+    const onOpenMemberModal = (modalName: ModalName) => {
+      if (!actionPermission) {
+        return;
+      }
+      dispatch(
+        updateMemberModalStatus({
+          modalName,
+          status: true
+        })
+      );
+    };
+
+    const buttonRender = (text: React.ReactNode, modalName: ModalName) => (
+      <EmptyBox if={!projectArchive && actionPermission}>
+        <BasicButton
+          onClick={() => onOpenMemberModal(modalName)}
+          type="primary"
+          icon={<IconAdd />}
+        >
+          {text}
+        </BasicButton>
+      </EmptyBox>
+    );
+
+    updateSegmentedPageData([
+      {
+        value: MemberListTypeEnum.member_list,
+        label: t('dmsMember.memberList.title'),
+        content: <MemberList />,
+        extraButton: buttonRender(
+          t('dmsMember.addMember.modalTitle'),
+          ModalName.DMS_Add_Member
+        )
+      },
+      {
+        value: MemberListTypeEnum.member_group_list,
+        label: t('dmsMember.memberGroupList.title'),
+        content: <MemberGroupList />,
+        extraButton: buttonRender(
+          t('dmsMember.addMemberGroup.modalTitle'),
+          ModalName.DMS_Add_Member_Group
+        )
+      }
+    ]);
+  }, [updateSegmentedPageData, t, actionPermission, dispatch, projectArchive]);
 
   return (
     <ProjectMemberStyleWrapper>
@@ -96,47 +98,9 @@ const Member: React.FC = () => {
             <TableRefreshButton refresh={onRefreshTable} />
           </Space>
         }
-        extra={
-          <EmptyBox if={!projectArchive && actionPermission}>
-            <Space size={12}>
-              {listType === MemberListTypeEnum.member_list ? (
-                <BasicButton
-                  onClick={onAddMember}
-                  type="primary"
-                  icon={<IconAdd />}
-                >
-                  {t('dmsMember.addMember.modalTitle')}
-                </BasicButton>
-              ) : (
-                <BasicButton
-                  onClick={onAddMemberGroup}
-                  type="primary"
-                  icon={<IconAdd />}
-                >
-                  {t('dmsMember.addMemberGroup.modalTitle')}
-                </BasicButton>
-              )}
-            </Space>
-          </EmptyBox>
-        }
+        extra={renderExtraButton()}
       />
-      <TableToolbar>
-        <BasicSegmented
-          value={listType}
-          onChange={onChange}
-          options={[
-            {
-              value: MemberListTypeEnum.member_list,
-              label: t('dmsMember.memberList.title')
-            },
-            {
-              value: MemberListTypeEnum.member_group_list,
-              label: t('dmsMember.memberGroupList.title')
-            }
-          ]}
-        />
-      </TableToolbar>
-      {renderTable()}
+      <BasicSegmentedPage {...otherProps} />
       <MemberModal />
     </ProjectMemberStyleWrapper>
   );

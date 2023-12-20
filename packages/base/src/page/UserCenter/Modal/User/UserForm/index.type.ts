@@ -8,7 +8,6 @@ export interface IUserFormFields {
   email?: string;
   phone?: string;
   wxid?: string;
-  userGroupUids?: string[];
   opPermissionUids?: string[];
   isDisabled: boolean;
 }

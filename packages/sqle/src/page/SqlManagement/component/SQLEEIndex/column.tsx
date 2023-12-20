@@ -7,7 +7,7 @@ import {
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
-import { IGetSqlManageListParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
+import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   IAuditResult,
   ISource,
@@ -22,19 +22,23 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Link } from 'react-router-dom';
 import { sourceDictionary } from './hooks/useStaticStatus';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { AvatarCom, EditText } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
-import { Avatar } from 'antd';
+import { Avatar, Space } from 'antd';
 import StatusTag from './StatusTag';
 import {
   SQLAuditRecordIDValuesSplit,
   SQLAuditRecordListUrlParamsKey
 } from './index.data';
-import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import {
+  BasicTag,
+  BasicToolTips,
+  BasicTypographyEllipsis
+} from '@actiontech/shared';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
-  IGetSqlManageListParams,
+  IGetSqlManageListV2Params,
   'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
 >;
 
@@ -259,26 +263,29 @@ const SqlManagementColumn: (
       }
     },
     {
-      dataIndex: 'first_appear_time',
+      dataIndex: 'first_appear_timestamp',
       title: () => t('sqlManagement.table.column.firstOccurrence'),
-      render: (first_appear_time) => {
-        return formatTime(first_appear_time, '-');
+      render: (value) => {
+        return formatTime(value, '-');
       },
-      sorter: true
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
     },
     {
-      dataIndex: 'last_appear_time',
+      dataIndex: 'last_receive_timestamp',
       title: () => t('sqlManagement.table.column.lastOccurrence'),
-      render: (last_appear_time) => {
-        return formatTime(last_appear_time, '-');
+      render: (value) => {
+        return formatTime(value, '-');
       },
-      sorter: true
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
     },
     {
-      dataIndex: 'appear_num',
+      dataIndex: 'fp_count',
       align: 'right',
       title: () => t('sqlManagement.table.column.occurrenceCount'),
-      sorter: true
+      sorter: true,
+      sortDirections: ['descend', 'ascend']
     },
     {
       dataIndex: 'assignees',
@@ -297,6 +304,32 @@ const SqlManagementColumn: (
               <AvatarCom key={v} name={v} />
             ))}
           </Avatar.Group>
+        );
+      }
+    },
+    {
+      dataIndex: 'endpoints',
+      title: () => t('sqlManagement.table.column.endpoints'),
+      render: (endpoints: ISqlManage['endpoints']) => {
+        if (!Array.isArray(endpoints) || endpoints.length === 0) {
+          return '-';
+        }
+
+        return (
+          <BasicToolTips
+            title={
+              endpoints.length > 1 ? (
+                <Space wrap>
+                  {endpoints.map((v) => (
+                    <BasicTag key={v}>{v}</BasicTag>
+                  ))}
+                </Space>
+              ) : null
+            }
+          >
+            <BasicTag style={{ marginRight: 0 }}>{endpoints[0]}</BasicTag>
+            {endpoints.length > 1 ? '...' : null}
+          </BasicToolTips>
         );
       }
     },

@@ -101,6 +101,15 @@ export const createSpyErrorResponse = (
     }, 3000);
   });
 };
+
+export const throwErrorThreeSecond = (
+  error = 'error',
+  { status = 500, headers = {}, config = {}, statusText = '' } = {}
+) => {
+  return new Promise((res) => {
+    throw new Error(error);
+  });
+};
 export type MockServer = ReturnType<typeof setupServer>;
 
 export default new TestMockApi();
