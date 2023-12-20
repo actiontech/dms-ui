@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { Form } from 'antd';
 import { BasicSelect, BasicSwitch } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { IMemberFormProps } from './index.type';
-import useUsername from '../../../hooks/useUsername';
-import RoleSelector from '../Common/RoleSelector';
+import { IMemberFormProps } from '../index.type';
+import useUsername from '../../../../hooks/useUsername';
+import RoleSelector from '../../components/RoleSelector';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 
 const MemberForm: React.FC<IMemberFormProps> = ({

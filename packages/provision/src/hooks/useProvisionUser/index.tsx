@@ -1,4 +1,4 @@
-import { Space, Typography } from 'antd';
+import { Typography } from 'antd';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useBoolean } from 'ahooks';
@@ -6,6 +6,7 @@ import { useMemo, useCallback, useState } from 'react';
 import { IListInternalUser } from '@actiontech/shared/lib/api/provision/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { AvatarCom } from '@actiontech/shared';
+import { UserSelectOptionLabelStyleWrapper } from './style';
 
 const useProvisionUser = () => {
   const { projectID } = useCurrentProject();
@@ -52,10 +53,10 @@ const useProvisionUser = () => {
         value: user.name,
         text: user.name,
         label: (
-          <Space>
-            <AvatarCom name={user.name?.[0] ?? ''} />
+          <UserSelectOptionLabelStyleWrapper>
+            <AvatarCom size="small" name={user.name?.[0] ?? ''} />
             <Typography.Text>{user.name}</Typography.Text>
-          </Space>
+          </UserSelectOptionLabelStyleWrapper>
         )
       };
     });

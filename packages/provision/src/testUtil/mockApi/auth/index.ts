@@ -321,8 +321,8 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuditListAuthorizationEvents');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: authAuditList.length,
-        events: authAuditList
+        total_nums: authAuditList.length,
+        data: authAuditList
       })
     );
     return spy;
