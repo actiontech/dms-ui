@@ -3,7 +3,6 @@ import {
   fireEvent,
   screen,
   act,
-  renderHook,
   cleanup
 } from '@testing-library/react';
 import useDbService from '.';
