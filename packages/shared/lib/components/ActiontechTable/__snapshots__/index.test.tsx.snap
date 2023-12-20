@@ -1714,13 +1714,13 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         名称
                       </th>
                       <th
-                        class="ant-table-cell last-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         年龄
@@ -1759,10 +1759,10 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
                       data-row-key="a"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell last-col"
+                        class="ant-table-cell"
                       />
                     </tr>
                     <tr
@@ -1770,10 +1770,10 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
                       data-row-key="b"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell last-col"
+                        class="ant-table-cell"
                       />
                     </tr>
                     <tr
@@ -1781,10 +1781,10 @@ exports[`lib/ActiontechTable -normal table render table with no pagination 1`] =
                       data-row-key="c"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell last-col"
+                        class="ant-table-cell"
                       />
                     </tr>
                   </tbody>
