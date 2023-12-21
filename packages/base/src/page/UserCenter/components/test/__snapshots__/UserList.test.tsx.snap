@@ -4,7 +4,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -41,7 +41,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         用户名
@@ -77,7 +77,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         平台管理权限
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -162,7 +162,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       data-row-key="11132422"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test
                       </td>
@@ -221,7 +221,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -264,7 +264,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       data-row-key="1647895752866795520"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test666
                       </td>
@@ -327,7 +327,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -370,7 +370,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       data-row-key="700200"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         admin
                       </td>
@@ -427,7 +427,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -622,7 +622,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -659,7 +659,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         用户名
@@ -695,7 +695,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         平台管理权限
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -780,7 +780,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679550"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6660
                       </td>
@@ -835,7 +835,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -878,7 +878,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679551"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6661
                       </td>
@@ -933,7 +933,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -976,7 +976,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679552"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6662
                       </td>
@@ -1031,7 +1031,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1074,7 +1074,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679553"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6663
                       </td>
@@ -1129,7 +1129,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1172,7 +1172,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679554"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6664
                       </td>
@@ -1227,7 +1227,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1270,7 +1270,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679555"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6665
                       </td>
@@ -1325,7 +1325,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1368,7 +1368,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679556"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6666
                       </td>
@@ -1423,7 +1423,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1466,7 +1466,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679557"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6667
                       </td>
@@ -1521,7 +1521,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1564,7 +1564,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679558"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6668
                       </td>
@@ -1619,7 +1619,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1662,7 +1662,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="164789575286679559"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6669
                       </td>
@@ -1717,7 +1717,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1760,7 +1760,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795510"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66610
                       </td>
@@ -1815,7 +1815,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1858,7 +1858,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795511"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66611
                       </td>
@@ -1913,7 +1913,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1956,7 +1956,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795512"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66612
                       </td>
@@ -2011,7 +2011,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2054,7 +2054,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795513"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66613
                       </td>
@@ -2109,7 +2109,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2152,7 +2152,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795514"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66614
                       </td>
@@ -2207,7 +2207,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2250,7 +2250,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795515"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66615
                       </td>
@@ -2305,7 +2305,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2348,7 +2348,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795516"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66616
                       </td>
@@ -2403,7 +2403,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2446,7 +2446,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795517"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66617
                       </td>
@@ -2501,7 +2501,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2544,7 +2544,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795518"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66618
                       </td>
@@ -2599,7 +2599,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2642,7 +2642,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795519"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66619
                       </td>
@@ -2697,7 +2697,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2912,7 +2912,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2949,7 +2949,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         用户名
@@ -2985,7 +2985,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         平台管理权限
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -3070,7 +3070,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795520"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66620
                       </td>
@@ -3125,7 +3125,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3168,7 +3168,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795521"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66621
                       </td>
@@ -3223,7 +3223,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3266,7 +3266,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795522"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66622
                       </td>
@@ -3321,7 +3321,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3364,7 +3364,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795523"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66623
                       </td>
@@ -3419,7 +3419,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3462,7 +3462,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795524"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66624
                       </td>
@@ -3517,7 +3517,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3560,7 +3560,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795525"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66625
                       </td>
@@ -3615,7 +3615,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3658,7 +3658,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795526"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66626
                       </td>
@@ -3713,7 +3713,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3756,7 +3756,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795527"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66627
                       </td>
@@ -3811,7 +3811,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3854,7 +3854,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795528"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66628
                       </td>
@@ -3909,7 +3909,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3952,7 +3952,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795529"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66629
                       </td>
@@ -4007,7 +4007,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4050,7 +4050,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795530"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66630
                       </td>
@@ -4105,7 +4105,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4148,7 +4148,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795531"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66631
                       </td>
@@ -4203,7 +4203,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4246,7 +4246,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795532"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66632
                       </td>
@@ -4301,7 +4301,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4344,7 +4344,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795533"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66633
                       </td>
@@ -4399,7 +4399,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4442,7 +4442,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795534"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66634
                       </td>
@@ -4497,7 +4497,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4540,7 +4540,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795535"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66635
                       </td>
@@ -4595,7 +4595,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4638,7 +4638,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795536"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66636
                       </td>
@@ -4693,7 +4693,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4736,7 +4736,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795537"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66637
                       </td>
@@ -4791,7 +4791,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4834,7 +4834,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795538"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66638
                       </td>
@@ -4889,7 +4889,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4932,7 +4932,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       data-row-key="1647895752866795539"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test66639
                       </td>
@@ -4987,7 +4987,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         创建项目
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -5202,7 +5202,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -5239,7 +5239,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         用户名
@@ -5275,7 +5275,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                         平台管理权限
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
