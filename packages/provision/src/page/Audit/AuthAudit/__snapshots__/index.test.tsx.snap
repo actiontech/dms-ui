@@ -153,7 +153,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -194,7 +194,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -230,7 +230,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -315,7 +315,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
                         data-row-key="2"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -420,7 +420,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1366,7 +1366,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1407,7 +1407,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -1443,7 +1443,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1528,7 +1528,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                         data-row-key="1"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:20:53
                         </td>
@@ -1633,7 +1633,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1663,7 +1663,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                         data-row-key="2"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -1768,7 +1768,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1798,7 +1798,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                         data-row-key="3"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:22:53
                         </td>
@@ -1907,7 +1907,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2249,7 +2249,7 @@ exports[`page/auth/AuthAudit render init snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2314,7 +2314,7 @@ exports[`page/auth/AuthAudit render init snap 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -2350,7 +2350,7 @@ exports[`page/auth/AuthAudit render init snap 1`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -2609,7 +2609,7 @@ exports[`page/auth/AuthAudit render init snap 2`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2650,7 +2650,7 @@ exports[`page/auth/AuthAudit render init snap 2`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -2686,7 +2686,7 @@ exports[`page/auth/AuthAudit render init snap 2`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -2945,7 +2945,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2986,7 +2986,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -3022,7 +3022,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -3107,7 +3107,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                         data-row-key="1"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:20:53
                         </td>
@@ -3212,7 +3212,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3242,7 +3242,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                         data-row-key="2"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -3347,7 +3347,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3377,7 +3377,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                         data-row-key="3"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:22:53
                         </td>
@@ -3486,7 +3486,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3827,7 +3827,7 @@ exports[`page/auth/AuthAudit render table list when api return error 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -3868,7 +3868,7 @@ exports[`page/auth/AuthAudit render table list when api return error 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -3904,7 +3904,7 @@ exports[`page/auth/AuthAudit render table list when api return error 1`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
