@@ -24,6 +24,5 @@ export default {
   updateWechatSuccess: '微信号更新成功',
   updatePhoneSuccess: '手机号更新成功',
   wechat: '企业微信UserID',
-  phone: '手机号',
-  updateSuccess: '{{type}}更新成功'
+  phone: '手机号'
 };
