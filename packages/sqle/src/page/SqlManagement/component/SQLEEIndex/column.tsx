@@ -169,7 +169,7 @@ const SqlManagementColumn: (
             onClick={() =>
               openModal(ModalName.View_Audit_Result_Drawer, record)
             }
-            tooltip={false}
+            tooltip={true}
             sql={sql_fingerprint}
             rows={2}
           />
