@@ -66,11 +66,8 @@ const PermissionList: React.FC = () => {
   const listData = useMemo(() => {
     if (currentType === ALL_Operation) {
       return permissionList ?? [];
-    } else {
-      return (permissionList ?? []).filter(
-        (item) => item?.group === currentType
-      );
     }
+    return (permissionList ?? []).filter((item) => item?.group === currentType);
   }, [permissionList, currentType]);
 
   useEffect(() => {
