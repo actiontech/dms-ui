@@ -11,7 +11,7 @@ const RoleForm: React.FC<IRoleFormProps> = ({ form, visible, isUpdate }) => {
 
   const { data: scopeList, loading } = useRequest(
     () => {
-      return auth.V1ListExistingScopes();
+      return auth.V1ListExistingScopes({});
     },
     {
       ready: visible
@@ -23,22 +23,22 @@ const RoleForm: React.FC<IRoleFormProps> = ({ form, visible, isUpdate }) => {
       <Form form={form} layout="vertical">
         <Form.Item
           name="role_name"
-          label={t('userManagement.user.roleName')}
+          label={t('userManagement.roleName')}
           rules={[
             {
               required: true,
               message: t('common.form.rule.require', {
-                name: t('userManagement.user.roleName')
+                name: t('userManagement.roleName')
               })
             }
           ]}
         >
           <BasicInput disabled={!!isUpdate} />
         </Form.Item>
-        <Form.Item name="role_desc" label={t('userManagement.role.roleDesc')}>
+        <Form.Item name="role_desc" label={t('userManagement.desc')}>
           <BasicInput.TextArea
             placeholder={t('common.form.placeholder.input', {
-              name: t('userManagement.role.roleDesc')
+              name: t('userManagement.desc')
             })}
           />
         </Form.Item>

@@ -158,6 +158,8 @@ export interface ISaveDBsReq {
 }
 
 export interface IScopeReply {
+  group?: string;
+
   scope_desc?: string;
 
   scope_name?: string;
