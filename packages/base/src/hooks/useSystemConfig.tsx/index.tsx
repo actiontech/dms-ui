@@ -14,6 +14,7 @@ const DefaultWebTitle = () => (
     <span className="label label-base">{DMS_DEFAULT_WEB_TITLE}</span>
   </div>
 );
+
 const useSystemConfig = () => {
   const webTitle = useSelector((state: IReduxState) => state.system.webTitle);
   const webLogoUrl = useSelector(
