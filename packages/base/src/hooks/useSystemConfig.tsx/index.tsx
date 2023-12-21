@@ -8,7 +8,7 @@ import { IBasicInfo } from '@actiontech/shared/lib/api/base/service/common';
 import { useDispatch } from 'react-redux';
 import { updateWebTitleAndLogo } from '../../store/system';
 
-const DefaultWebTitle = () => (
+const DefaultWebTitle: React.FC = () => (
   <div className="title">
     <span className="label label-primary">Action</span>
     <span className="label label-base">{DMS_DEFAULT_WEB_TITLE}</span>
@@ -16,17 +16,17 @@ const DefaultWebTitle = () => (
 );
 
 const useSystemConfig = () => {
-  const webTitle = useSelector((state: IReduxState) => state.system.webTitle);
-  const webLogoUrl = useSelector(
-    (state: IReduxState) => state.system.webLogoUrl
-  );
+  const { webTitle, webLogoUrl } = useSelector((state: IReduxState) => ({
+    webTitle: state.system.webTitle,
+    webLogoUrl: state.system.webLogoUrl
+  }));
 
   const logoSrc = webLogoUrl ?? DMS_DEFAULT_WEB_LOGO_URL;
   const dispatch = useDispatch();
 
   const renderWebTitle = () =>
     webTitle === DMS_DEFAULT_WEB_TITLE ? (
-      DefaultWebTitle()
+      <DefaultWebTitle />
     ) : (
       <div className="title">
         <span className="label label-base">{webTitle}</span>
