@@ -175,7 +175,7 @@ exports[`Auth/AuthTemplateList should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -208,7 +208,7 @@ exports[`Auth/AuthTemplateList should match snapshot 1`] = `
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             权限模板名称
@@ -220,7 +220,7 @@ exports[`Auth/AuthTemplateList should match snapshot 1`] = `
                             关联的授权清单
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -441,7 +441,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -474,7 +474,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             权限模板名称
@@ -486,7 +486,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                             关联的授权清单
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -535,7 +535,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                           data-row-key="69"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             <div
                               class="css-q547fy"
@@ -601,7 +601,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -669,7 +669,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                           data-row-key="55"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             <div
                               class="css-q547fy"
@@ -786,7 +786,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -854,7 +854,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                           data-row-key="46"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             <div
                               class="css-q547fy"
@@ -937,7 +937,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -1314,7 +1314,7 @@ exports[`Auth/AuthTemplateList should refresh table when eventEmitter receive 'R
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1347,7 +1347,7 @@ exports[`Auth/AuthTemplateList should refresh table when eventEmitter receive 'R
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             权限模板名称
@@ -1359,7 +1359,7 @@ exports[`Auth/AuthTemplateList should refresh table when eventEmitter receive 'R
                             关联的授权清单
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -1580,7 +1580,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1613,7 +1613,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             权限模板名称
@@ -1625,7 +1625,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
                             关联的授权清单
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -1846,7 +1846,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1879,7 +1879,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             权限模板名称
@@ -1891,7 +1891,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
                             关联的授权清单
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -2112,7 +2112,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2145,7 +2145,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             权限模板名称
@@ -2157,7 +2157,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                             关联的授权清单
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -2206,7 +2206,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                           data-row-key="69"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             <div
                               class="css-q547fy"
@@ -2272,7 +2272,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -2340,7 +2340,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                           data-row-key="55"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             <div
                               class="css-q547fy"
@@ -2457,7 +2457,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -2525,7 +2525,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                           data-row-key="46"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             <div
                               class="css-q547fy"
@@ -2608,7 +2608,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div

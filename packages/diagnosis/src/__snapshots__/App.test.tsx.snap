@@ -323,7 +323,7 @@ exports[`test diagnosis App should render App 1`] = `
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-1c67sbi"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-1c67sbi"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-1c67sbi"
@@ -479,7 +479,7 @@ exports[`test diagnosis App should render App 1`] = `
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             监控源名
@@ -515,7 +515,7 @@ exports[`test diagnosis App should render App 1`] = `
                             状态
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
