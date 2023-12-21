@@ -5,6 +5,7 @@ import { IUserFormProps } from './index.type';
 import { t } from '../../../../../../../locale';
 import auth from '../../../../../../../api/auth';
 import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
+import useGetRoleData from '../../../../../hooks/useGetRoleData';
 
 const UserForm: React.FC<IUserFormProps> = ({
   form,
@@ -12,14 +13,7 @@ const UserForm: React.FC<IUserFormProps> = ({
   isUpdate,
   isAdmin
 }) => {
-  const { data: roleList, loading } = useRequest(
-    () => {
-      return auth.V1ListRoles({ page_size: 9999 });
-    },
-    {
-      ready: visible
-    }
-  );
+  const { roleList, loading } = useGetRoleData(visible);
 
   return (
     <>

@@ -6,7 +6,8 @@ import {
   initUserManagementModalStatus,
   updateSelectRoleData,
   updateSelectUserData,
-  updateUserManagementModalStatus
+  updateUserManagementModalStatus,
+  updatePermissionRoleId
 } from '../../../store/userManagement';
 import { IViewRoleReply, IViewUserReply } from '../../../api/common';
 
@@ -16,7 +17,8 @@ const useUserManagementRedux = (modalName?: ModalName) => {
   const modalState = useSelector((state: IReduxState) => ({
     visible: state.userManagement.modalStatus[modalName!],
     selectUserData: state.userManagement.selectUserData,
-    selectRoleData: state.userManagement.selectRoleData
+    selectRoleData: state.userManagement.selectRoleData,
+    permissionRoleId: state.userManagement.permissionRoleId
   }));
 
   const initModalStatus = (modalStatus: ModalStatus) => {
@@ -40,12 +42,17 @@ const useUserManagementRedux = (modalName?: ModalName) => {
     dispatch(updateSelectRoleData(record));
   };
 
+  const setPermissionRoleId = (id: string | undefined) => {
+    dispatch(updatePermissionRoleId(id));
+  };
+
   return {
     ...modalState,
     initModalStatus,
     setModalStatus,
     setSelectUserData,
-    setSelectRoleData
+    setSelectRoleData,
+    setPermissionRoleId
   };
 };
 

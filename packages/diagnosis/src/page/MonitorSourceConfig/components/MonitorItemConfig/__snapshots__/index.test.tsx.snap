@@ -116,7 +116,7 @@ exports[`test monitor item config table should open check model when click check
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -152,7 +152,7 @@ exports[`test monitor item config table should open check model when click check
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             监控项
@@ -182,7 +182,7 @@ exports[`test monitor item config table should open check model when click check
                             状态
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -258,7 +258,7 @@ exports[`test monitor item config table should open check model when click check
                           data-row-key="mysql_status"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             mysql_status
                           </td>
@@ -283,7 +283,7 @@ exports[`test monitor item config table should open check model when click check
                             启用
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -313,7 +313,7 @@ exports[`test monitor item config table should open check model when click check
                           data-row-key="mysql_mem"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             mysql_mem
                           </td>
@@ -338,7 +338,7 @@ exports[`test monitor item config table should open check model when click check
                             禁用
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -643,7 +643,7 @@ exports[`test monitor item config table should refresh table when change paginat
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -679,7 +679,7 @@ exports[`test monitor item config table should refresh table when change paginat
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             监控项
@@ -709,7 +709,7 @@ exports[`test monitor item config table should refresh table when change paginat
                             状态
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -785,7 +785,7 @@ exports[`test monitor item config table should refresh table when change paginat
                           data-row-key="mysql_status"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             mysql_status
                           </td>
@@ -810,7 +810,7 @@ exports[`test monitor item config table should refresh table when change paginat
                             启用
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -840,7 +840,7 @@ exports[`test monitor item config table should refresh table when change paginat
                           data-row-key="mysql_mem"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             mysql_mem
                           </td>
@@ -865,7 +865,7 @@ exports[`test monitor item config table should refresh table when change paginat
                             禁用
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -1170,7 +1170,7 @@ exports[`test monitor item config table should render normal table 1`] = `
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1206,7 +1206,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             监控项
@@ -1236,7 +1236,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                             状态
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >
@@ -1312,7 +1312,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                           data-row-key="mysql_status"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             mysql_status
                           </td>
@@ -1337,7 +1337,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                             启用
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -1367,7 +1367,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                           data-row-key="mysql_mem"
                         >
                           <td
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                           >
                             mysql_mem
                           </td>
@@ -1392,7 +1392,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                             禁用
                           </td>
                           <td
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             style="position: sticky; right: 0px;"
                           >
                             <div
@@ -1697,7 +1697,7 @@ exports[`test monitor item config table should render table when api return null
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1733,7 +1733,7 @@ exports[`test monitor item config table should render table when api return null
                       >
                         <tr>
                           <th
-                            class="ant-table-cell first-col"
+                            class="ant-table-cell"
                             scope="col"
                           >
                             监控项
@@ -1763,7 +1763,7 @@ exports[`test monitor item config table should render table when api return null
                             状态
                           </th>
                           <th
-                            class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                             scope="col"
                             style="position: sticky; right: 0px;"
                           >

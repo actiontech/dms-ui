@@ -42,7 +42,7 @@ const AddRole = () => {
             })
           );
           closeModal();
-          EventEmitter.emit(EmitterKey.Refresh_Role_List);
+          EventEmitter.emit(EmitterKey.Refresh_User_Management);
         }
       })
       .finally(() => {
