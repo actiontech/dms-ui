@@ -1,4 +1,4 @@
-import { fireEvent, act, cleanup } from '@testing-library/react';
+import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../testUtil/customRender';
 
 import { ConfigItemProps } from './index.type';
@@ -34,11 +34,26 @@ describe('lib/ConfigItem', () => {
     expect(baseElement1).toMatchSnapshot();
   });
 
-  it('only render desc no button', () => {
+  it('only render desc no button', async () => {
     const { baseElement } = customRender({
       label: 'label',
       descNode: 'descNode',
       needEditButton: false
+    });
+    expect(baseElement).toMatchSnapshot();
+
+    const configItemWrapper = getBySelector(
+      '.ant-row,.ant-row-space-between.ant-row-middle',
+      baseElement
+    );
+    await act(async () => {
+      fireEvent.mouseEnter(configItemWrapper);
+      await jest.advanceTimersByTime(300);
+    });
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => {
+      fireEvent.mouseLeave(configItemWrapper);
+      await jest.advanceTimersByTime(300);
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -86,5 +101,41 @@ describe('lib/ConfigItem', () => {
     });
     expect(showFieldFn).toBeCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should execute "hideField" when clicking outside', () => {
+    const hideField = jest.fn();
+
+    renderWithTheme(
+      <>
+        <span>outside</span>
+        <ConfigItem label="label" hideField={hideField} />
+      </>
+    );
+
+    fireEvent.mouseDown(screen.getByText('outside'));
+    expect(hideField).not.toBeCalled();
+
+    cleanup();
+    renderWithTheme(
+      <>
+        <span>outside</span>
+        <ConfigItem label="label" hideField={hideField} fieldVisible />
+      </>
+    );
+    fireEvent.mouseDown(screen.getByText('outside'));
+    expect(hideField).toBeCalledTimes(1);
+
+    cleanup();
+    renderWithTheme(
+      <>
+        <div className="config-item-filed">
+          <span>outside</span>
+        </div>
+        <ConfigItem label="label" hideField={hideField} fieldVisible />
+      </>
+    );
+    fireEvent.mouseDown(screen.getByText('outside'));
+    expect(hideField).toBeCalledTimes(1);
   });
 });

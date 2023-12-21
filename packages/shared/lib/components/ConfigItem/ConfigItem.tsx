@@ -4,13 +4,15 @@ import { Col, Space } from 'antd';
 import { IconCommonEdit } from '../../Icon/common';
 import { ConfigItemProps } from './index.type';
 import BasicButton from '../BasicButton';
+import useHideConfigInputNode from './hooks/useHideConfigInputNode';
 
 const ConfigItem: React.FC<ConfigItemProps> = ({
   label,
   inputNode,
   descNode,
-  fieldVisible,
+  fieldVisible = false,
   showField,
+  hideField,
   needEditButton = true
 }) => {
   const [
@@ -26,6 +28,8 @@ const ConfigItem: React.FC<ConfigItemProps> = ({
     if (!needEditButton) return;
     hideEditButton();
   };
+
+  useHideConfigInputNode(fieldVisible, hideField);
 
   return (
     <ConfigItemStyledWrapper
