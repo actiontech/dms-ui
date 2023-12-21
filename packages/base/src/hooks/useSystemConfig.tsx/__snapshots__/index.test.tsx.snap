@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/hooks/useSystemConfig.tsx render custom web title 1`] = `
+<div>
+  <div
+    class="title"
+  >
+    <span
+      class="label label-base"
+    >
+      test_web_title
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test base/hooks/useSystemConfig.tsx render default web title and logo 1`] = `
+<div>
+  <div
+    class="title"
+  >
+    <span
+      class="label label-primary"
+    >
+      Action
+    </span>
+    <span
+      class="label label-base"
+    >
+      SQLE
+    </span>
+  </div>
+</div>
+`;

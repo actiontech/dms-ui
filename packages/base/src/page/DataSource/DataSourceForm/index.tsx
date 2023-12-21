@@ -34,7 +34,7 @@ import { SQLE_INSTANCE_SOURCE_NAME } from 'sqle/src/data/common';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { turnDataSourceAsyncFormToCommon } from '../tool';
 import { FormItem } from 'sqle/src/components/BackendForm';
-import useAuditRequired from '../../../hooks/useAuditRequired';
+import useSqlReviewTemplateToggle from '../../../hooks/useSqlReviewTemplateToggle';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -108,7 +108,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     onAuditRequiredPopupOpenChange,
     clearRuleTemplate,
     changeAuditRequired
-  } = useAuditRequired<FormInstance<DataSourceFormField>>(props.form);
+  } = useSqlReviewTemplateToggle<FormInstance<DataSourceFormField>>(props.form);
 
   useEffect(() => {
     if (!!props.defaultData) {
