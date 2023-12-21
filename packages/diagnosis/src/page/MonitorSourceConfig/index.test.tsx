@@ -122,7 +122,7 @@ describe('test monitor source config', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Server_Monitor);
+    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
     expect(request).toBeCalled();
   });
 
@@ -193,7 +193,7 @@ describe('test monitor source config', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Database_Monitor);
+    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
     expect(request).toBeCalled();
 
     mockDispatch.mockClear();

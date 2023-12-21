@@ -109,7 +109,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.Refresh_Server_Monitor,
+      EmitterKey.Refresh_Monitor_Source_Config,
       refresh
     );
 

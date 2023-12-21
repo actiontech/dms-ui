@@ -109,7 +109,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.Refresh_Database_Monitor,
+      EmitterKey.Refresh_Monitor_Source_Config,
       refresh
     );
 
