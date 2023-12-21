@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { superRender } from '../../testUtils/customRender';
-import global from '../../testUtils/mockApi/global';
+import dms from '../../testUtils/mockApi/global';
 import { UserInfo } from '../../testUtils/mockApi/global/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -44,7 +44,7 @@ describe('page/Login-ee', () => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
-    global.mockAllApi();
+    dms.mockAllApi();
   });
 
   afterEach(() => {
@@ -54,7 +54,7 @@ describe('page/Login-ee', () => {
   });
 
   it('render login snap', async () => {
-    const requestGetOauth2Tip = global.getOauth2Tips();
+    const requestGetOauth2Tip = dms.getOauth2Tips();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetOauth2Tip).toBeCalledTimes(1);
@@ -68,7 +68,7 @@ describe('page/Login-ee', () => {
   });
 
   it('render login when return no auth', async () => {
-    const requestGetOauth2Tip = global.getOauth2Tips();
+    const requestGetOauth2Tip = dms.getOauth2Tips();
     requestGetOauth2Tip.mockImplementation(() =>
       createSpySuccessResponse({
         data: { enable_oauth2: false, login_tip: 'Login no Oauth2' }
@@ -101,8 +101,8 @@ describe('page/Login-ee', () => {
 
   describe('render login success when has location search val', () => {
     it('render with other search val', async () => {
-      const requestGetOauth2Tip = global.getOauth2Tips();
-      const requestLogin = global.addSession();
+      const requestGetOauth2Tip = dms.getOauth2Tips();
+      const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useLocationMock.mockReturnValue({
         pathname: '/',
@@ -155,8 +155,8 @@ describe('page/Login-ee', () => {
     });
 
     it('render with other search val', async () => {
-      const requestGetOauth2Tip = global.getOauth2Tips();
-      const requestLogin = global.addSession();
+      const requestGetOauth2Tip = dms.getOauth2Tips();
+      const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useLocationMock.mockReturnValue({
         pathname: '/',

@@ -3,7 +3,7 @@
  */
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
-import global from '../../testUtils/mockApi/global';
+import dms from '../../testUtils/mockApi/global';
 import { UserInfo } from '../../testUtils/mockApi/global/data';
 import { superRender } from '../../testUtils/customRender';
 
@@ -25,7 +25,7 @@ describe('page/Login-ce', () => {
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     jest.useFakeTimers();
-    global.mockAllApi();
+    dms.mockAllApi();
   });
 
   afterEach(() => {
@@ -39,7 +39,7 @@ describe('page/Login-ce', () => {
   });
 
   it('render login when api return success', async () => {
-    const requestLogin = global.addSession();
+    const requestLogin = dms.addSession();
     const { baseElement } = customRender();
 
     fireEvent.change(getBySelector('#username', baseElement), {
@@ -78,7 +78,7 @@ describe('page/Login-ce', () => {
   });
 
   it('render login when api return fail', async () => {
-    const requestLogin = global.addSession();
+    const requestLogin = dms.addSession();
     requestLogin.mockImplementation(() =>
       createSpyFailResponse({ message: 'error info' })
     );
