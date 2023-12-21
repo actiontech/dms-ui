@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRequest } from 'ahooks';
 import {
   ActiontechTable,
@@ -11,12 +11,11 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { PermissionListColumns } from './index.data';
+import { PermissionListColumns, ExtraFilterMeta } from './index.data';
 import auth from '../../../../api/auth';
 import OperationTypes, { ALL_Operation } from './components/OperationTypes';
 import { IViewScope } from '../../../../api/common';
 import { uniq } from 'lodash';
-import { ExtraFilterMeta } from './index.type';
 import useGetRoleData from '../../hooks/useGetRoleData';
 import useUserManagementRedux from '../../hooks/useUserManagementRedux';
 import { IV1ListExistingScopesParams } from '../../../../api/auth/index.d';
@@ -25,9 +24,6 @@ const PermissionList: React.FC = () => {
   const [currentType, setCurrentType] = useState<string>(ALL_Operation);
 
   const [typeData, setTypeData] = useState<string[]>([]);
-
-  const [dataSource, setDataSource] = useState<IViewScope[]>([]);
-  const [filterData, setFilterData] = useState<IViewScope[]>([]);
 
   const { permissionRoleId, setPermissionRoleId } = useUserManagementRedux();
 
@@ -54,37 +50,28 @@ const PermissionList: React.FC = () => {
       const params: IV1ListExistingScopesParams = {
         ...tableFilterInfo
       };
-      return handleTableRequestError(auth.V1ListExistingScopes(params));
+      return handleTableRequestError(auth.V1ListExistingScopes(params)).then(
+        (res) => {
+          const groupData = (res?.list ?? []).map((item) => item?.group ?? '');
+          setTypeData(uniq(groupData));
+          return res?.list;
+        }
+      );
     },
     {
       refreshDeps: [tableFilterInfo]
     }
   );
 
-  useEffect(() => {
-    if (Object.keys(tableFilterInfo).length === 0) {
-      setPermissionRoleId('');
-    }
-  }, [tableFilterInfo]);
-
-  useEffect(() => {
-    setDataSource(permissionList?.list ?? []);
-    setFilterData(permissionList?.list ?? []);
-    const groupData = (permissionList?.list ?? []).map(
-      (item) => item?.group ?? ''
-    );
-    setTypeData(uniq(groupData));
-  }, [permissionList]);
-
-  useEffect(() => {
-    let filterResult = [];
+  const listData = useMemo(() => {
     if (currentType === ALL_Operation) {
-      filterResult = dataSource;
+      return permissionList ?? [];
     } else {
-      filterResult = dataSource.filter((item) => item?.group === currentType);
+      return (permissionList ?? []).filter(
+        (item) => item?.group === currentType
+      );
     }
-    setFilterData(filterResult);
-  }, [currentType, dataSource]);
+  }, [permissionList, currentType]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -102,6 +89,14 @@ const PermissionList: React.FC = () => {
       ExtraFilterMeta(!!permissionRoleId)
     );
 
+  const customUpdateAllSelectedFilterItem = useCallback(
+    (checked: boolean) => {
+      if (!checked) setPermissionRoleId(undefined);
+      updateAllSelectedFilterItem(checked);
+    },
+    [updateAllSelectedFilterItem]
+  );
+
   const filterCustomProps = useMemo(() => {
     return new Map<
       keyof (IViewScope & {
@@ -114,8 +109,8 @@ const PermissionList: React.FC = () => {
         {
           options: roleOptions,
           loading: roleLoading,
-          defaultValue: permissionRoleId || null,
-          onChange: () => setPermissionRoleId('')
+          value: permissionRoleId,
+          onChange: setPermissionRoleId
         }
       ]
     ]);
@@ -126,7 +121,7 @@ const PermissionList: React.FC = () => {
       <TableToolbar
         filterButton={{
           filterButtonMeta,
-          updateAllSelectedFilterItem
+          updateAllSelectedFilterItem: customUpdateAllSelectedFilterItem
         }}
         loading={loading}
       >
@@ -144,9 +139,9 @@ const PermissionList: React.FC = () => {
       />
       <ActiontechTable
         rowKey="scope_name"
-        dataSource={filterData}
+        dataSource={listData}
         pagination={{
-          total: filterData.length ?? 0
+          total: listData.length ?? 0
         }}
         loading={loading}
         columns={PermissionListColumns}

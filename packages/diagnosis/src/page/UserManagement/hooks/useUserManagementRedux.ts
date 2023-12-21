@@ -42,7 +42,7 @@ const useUserManagementRedux = (modalName?: ModalName) => {
     dispatch(updateSelectRoleData(record));
   };
 
-  const setPermissionRoleId = (id: string) => {
+  const setPermissionRoleId = (id: string | undefined) => {
     dispatch(updatePermissionRoleId(id));
   };
 
