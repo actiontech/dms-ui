@@ -61,7 +61,6 @@ const BindUser = () => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateToken({ token: concatToken(res.data.data?.token) }));
           navigate('/');
-
           // #if [ee]
           LocalStorageWrapper.set(
             StorageKey.SHOW_COMPANY_NOTICE,
