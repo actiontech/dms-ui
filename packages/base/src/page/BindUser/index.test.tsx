@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { superRender } from '../../testUtils/customRender';
-import global from '../../testUtils/mockApi/global';
+import dms from '../../testUtils/mockApi/global';
 
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -39,7 +39,7 @@ describe('page/BindUser-ee', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     jest.useFakeTimers();
-    global.mockAllApi();
+    dms.mockAllApi();
   });
 
   afterEach(() => {
@@ -106,7 +106,7 @@ describe('page/BindUser-ee', () => {
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       const search = `oauth2_token=oauth2_token_val`;
       window.history.pushState({}, 'Test Page Title', `/user/bind?${search}`);
-      const requestFn = global.bindUser();
+      const requestFn = dms.bindUser();
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(300));
 
