@@ -4,7 +4,7 @@ exports[`test database monitor table should open model when click edit button 1`
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-pgdey6 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -554,7 +554,7 @@ exports[`test database monitor table should open query popover when click delete
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-pgdey6 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1104,7 +1104,7 @@ exports[`test database monitor table should refresh table when change pagination
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-pgdey6 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1654,7 +1654,7 @@ exports[`test database monitor table should render normal table 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-pgdey6 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2204,7 +2204,7 @@ exports[`test database monitor table should render table when api return null 1`
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-pgdey6 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
