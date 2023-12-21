@@ -11,7 +11,7 @@ const RoleForm: React.FC<IRoleFormProps> = ({ form, visible, isUpdate }) => {
 
   const { data: scopeList, loading } = useRequest(
     () => {
-      return auth.V1ListExistingScopes();
+      return auth.V1ListExistingScopes({});
     },
     {
       ready: visible
