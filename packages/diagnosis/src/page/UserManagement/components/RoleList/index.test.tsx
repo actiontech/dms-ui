@@ -33,7 +33,7 @@ describe('diagnosis/test role table', () => {
   });
 
   const customRender = () => {
-    return superRender(<RoleList />, undefined, {
+    return superRender(<RoleList handleChange={jest.fn()} />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {}
@@ -63,10 +63,13 @@ describe('diagnosis/test role table', () => {
     expect(screen.queryAllByText('删 除').length).toBe(1);
     expect(getBySelector('.anticon-ellipsis')).toBeInTheDocument();
     expect(getAllBySelector('.anticon-ellipsis').length).toBe(1);
-    fireEvent.mouseOver(getBySelector('.anticon-ellipsis'));
+    fireEvent.click(getBySelector('.anticon-ellipsis'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(getBySelector('.ant-tooltip')).toBeInTheDocument();
-    expect(screen.getByText('删除服务器')).toBeInTheDocument();
+    expect(mockDispatch).toBeCalled();
+    expect(mockDispatch).toBeCalledWith({
+      payload: roleListData?.[0].id,
+      type: 'userManagement/updatePermissionRoleId'
+    });
   });
 
   it('should open model when click edit button', async () => {

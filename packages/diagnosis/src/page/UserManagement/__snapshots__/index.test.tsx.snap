@@ -3,9 +3,7 @@
 exports[`test user management should open model when click add button 1`] = `
 <body>
   <div>
-    <section
-      class="css-1pyzu59"
-    >
+    <section>
       <div
         class="actiontech-page-header-namespace css-14fwawz"
       >
@@ -86,92 +84,82 @@ exports[`test user management should open model when click add button 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-c38ntt"
       >
         <div
-          class="ant-spin-container"
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-            style="flex-wrap: wrap; margin-bottom: -8px;"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
-              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-space-item"
+                  class="ant-segmented-group"
                 >
-                  <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
                   >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
                     <div
-                      class="ant-segmented-group"
+                      class="ant-segmented-item-label"
+                      title="用户列表"
                     >
-                      <label
-                        class="ant-segmented-item ant-segmented-item-selected"
-                      >
-                        <input
-                          checked=""
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="用户列表"
-                        >
-                          用户列表
-                        </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="角色列表"
-                        >
-                          角色列表
-                        </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="操作权限列表"
-                        >
-                          操作权限列表
-                        </div>
-                      </label>
+                      用户列表
                     </div>
-                  </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="角色列表"
+                    >
+                      角色列表
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="操作权限列表"
+                    >
+                      操作权限列表
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
-            <div
-              class="ant-space-item"
-              style="padding-bottom: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
-              />
-            </div>
           </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          />
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -204,7 +192,7 @@ exports[`test user management should open model when click add button 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           用户名
@@ -216,7 +204,7 @@ exports[`test user management should open model when click add button 1`] = `
                           角色名
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -265,7 +253,7 @@ exports[`test user management should open model when click add button 1`] = `
                         data-row-key="1735126052121870336"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           admin
                         </td>
@@ -275,7 +263,7 @@ exports[`test user management should open model when click add button 1`] = `
                           admin
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -309,7 +297,7 @@ exports[`test user management should open model when click add button 1`] = `
                         data-row-key="1735126216567947264"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           test
                         </td>
@@ -319,7 +307,7 @@ exports[`test user management should open model when click add button 1`] = `
                           admin
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -523,9 +511,7 @@ exports[`test user management should open model when click add button 1`] = `
 exports[`test user management should render normal user list table 1`] = `
 <body>
   <div>
-    <section
-      class="css-1pyzu59"
-    >
+    <section>
       <div
         class="actiontech-page-header-namespace css-14fwawz"
       >
@@ -606,92 +592,82 @@ exports[`test user management should render normal user list table 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-c38ntt"
       >
         <div
-          class="ant-spin-container"
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-            style="flex-wrap: wrap; margin-bottom: -8px;"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
-              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-space-item"
+                  class="ant-segmented-group"
                 >
-                  <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
                   >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
                     <div
-                      class="ant-segmented-group"
+                      class="ant-segmented-item-label"
+                      title="用户列表"
                     >
-                      <label
-                        class="ant-segmented-item ant-segmented-item-selected"
-                      >
-                        <input
-                          checked=""
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="用户列表"
-                        >
-                          用户列表
-                        </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="角色列表"
-                        >
-                          角色列表
-                        </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="操作权限列表"
-                        >
-                          操作权限列表
-                        </div>
-                      </label>
+                      用户列表
                     </div>
-                  </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="角色列表"
+                    >
+                      角色列表
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="操作权限列表"
+                    >
+                      操作权限列表
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
-            <div
-              class="ant-space-item"
-              style="padding-bottom: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
-              />
-            </div>
           </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          />
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -724,7 +700,7 @@ exports[`test user management should render normal user list table 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           用户名
@@ -736,7 +712,7 @@ exports[`test user management should render normal user list table 1`] = `
                           角色名
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -785,7 +761,7 @@ exports[`test user management should render normal user list table 1`] = `
                         data-row-key="1735126052121870336"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           admin
                         </td>
@@ -795,7 +771,7 @@ exports[`test user management should render normal user list table 1`] = `
                           admin
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -829,7 +805,7 @@ exports[`test user management should render normal user list table 1`] = `
                         data-row-key="1735126216567947264"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           test
                         </td>
@@ -839,7 +815,7 @@ exports[`test user management should render normal user list table 1`] = `
                           admin
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1043,9 +1019,7 @@ exports[`test user management should render normal user list table 1`] = `
 exports[`test user management should render user list table for default 1`] = `
 <body>
   <div>
-    <section
-      class="css-1pyzu59"
-    >
+    <section>
       <div
         class="actiontech-page-header-namespace css-14fwawz"
       >
@@ -1126,92 +1100,82 @@ exports[`test user management should render user list table for default 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-c38ntt"
       >
         <div
-          class="ant-spin-container"
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-            style="flex-wrap: wrap; margin-bottom: -8px;"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
-              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-space-item"
+                  class="ant-segmented-group"
                 >
-                  <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
                   >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
                     <div
-                      class="ant-segmented-group"
+                      class="ant-segmented-item-label"
+                      title="用户列表"
                     >
-                      <label
-                        class="ant-segmented-item ant-segmented-item-selected"
-                      >
-                        <input
-                          checked=""
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="用户列表"
-                        >
-                          用户列表
-                        </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="角色列表"
-                        >
-                          角色列表
-                        </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="操作权限列表"
-                        >
-                          操作权限列表
-                        </div>
-                      </label>
+                      用户列表
                     </div>
-                  </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="角色列表"
+                    >
+                      角色列表
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="操作权限列表"
+                    >
+                      操作权限列表
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
-            <div
-              class="ant-space-item"
-              style="padding-bottom: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
-              />
-            </div>
           </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          />
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1244,7 +1208,7 @@ exports[`test user management should render user list table for default 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           用户名
@@ -1256,7 +1220,7 @@ exports[`test user management should render user list table for default 1`] = `
                           角色名
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1305,7 +1269,7 @@ exports[`test user management should render user list table for default 1`] = `
                         data-row-key="1735126052121870336"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           admin
                         </td>
@@ -1315,7 +1279,7 @@ exports[`test user management should render user list table for default 1`] = `
                           admin
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1349,7 +1313,7 @@ exports[`test user management should render user list table for default 1`] = `
                         data-row-key="1735126216567947264"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           test
                         </td>
@@ -1359,7 +1323,7 @@ exports[`test user management should render user list table for default 1`] = `
                           admin
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1563,9 +1527,7 @@ exports[`test user management should render user list table for default 1`] = `
 exports[`test user management should send request when click refresh button 1`] = `
 <body>
   <div>
-    <section
-      class="css-1pyzu59"
-    >
+    <section>
       <div
         class="actiontech-page-header-namespace css-14fwawz"
       >
@@ -1646,92 +1608,82 @@ exports[`test user management should send request when click refresh button 1`] 
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-c38ntt"
       >
         <div
-          class="ant-spin-container"
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-            style="flex-wrap: wrap; margin-bottom: -8px;"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
-              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-space-item"
+                  class="ant-segmented-group"
                 >
-                  <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
                   >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
                     <div
-                      class="ant-segmented-group"
+                      class="ant-segmented-item-label"
+                      title="用户列表"
                     >
-                      <label
-                        class="ant-segmented-item ant-segmented-item-selected"
-                      >
-                        <input
-                          checked=""
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="用户列表"
-                        >
-                          用户列表
-                        </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="角色列表"
-                        >
-                          角色列表
-                        </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
-                        <div
-                          class="ant-segmented-item-label"
-                          title="操作权限列表"
-                        >
-                          操作权限列表
-                        </div>
-                      </label>
+                      用户列表
                     </div>
-                  </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="角色列表"
+                    >
+                      角色列表
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="操作权限列表"
+                    >
+                      操作权限列表
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
-            <div
-              class="ant-space-item"
-              style="padding-bottom: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
-              />
-            </div>
           </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          />
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1788,7 +1740,7 @@ exports[`test user management should send request when click refresh button 1`] 
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           用户名
@@ -1800,7 +1752,7 @@ exports[`test user management should send request when click refresh button 1`] 
                           角色名
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >

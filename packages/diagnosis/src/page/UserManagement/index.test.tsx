@@ -86,7 +86,7 @@ describe('test user management', () => {
     fireEvent.click(getBySelector('.title .basic-button-wrapper'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_List);
+    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
     expect(request).toBeCalled();
   });
 });

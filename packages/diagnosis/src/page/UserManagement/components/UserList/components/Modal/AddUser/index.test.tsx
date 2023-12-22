@@ -141,6 +141,6 @@ describe('diagnosis/add user modal', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_List);
+    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
   });
 });

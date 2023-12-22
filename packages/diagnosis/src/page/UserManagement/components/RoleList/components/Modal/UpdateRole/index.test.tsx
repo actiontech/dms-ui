@@ -127,6 +127,6 @@ describe('diagnosis/update role modal', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Role_List);
+    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
   });
 });
