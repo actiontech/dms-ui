@@ -31,4 +31,14 @@ describe('lib/BasicModal', () => {
     });
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('render has width prop modal', () => {
+    const { baseElement } = customRender({
+      title: '基础modal480',
+      open: true,
+      children: <>内容区域</>,
+      width: 720
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
 });
