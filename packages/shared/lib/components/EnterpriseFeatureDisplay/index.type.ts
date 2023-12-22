@@ -1,3 +1,5 @@
+import { I18nKey } from '../../locale';
+
 export type EnterpriseFeatureDisplayProps = {
   children: React.ReactNode;
   eeFeatureDescription: React.ReactNode;
@@ -7,8 +9,8 @@ export type EnterpriseFeatureDisplayProps = {
 
 export type VersionComparisonItem = {
   key: string;
-  title: string;
+  title: I18nKey;
   applyLink: string;
   contactLink: string;
-  contentDesc: string;
+  contentDesc: I18nKey;
 };

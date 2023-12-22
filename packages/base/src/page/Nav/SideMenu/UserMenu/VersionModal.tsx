@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton, BasicModal } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import DmsService from '@actiontech/shared/lib/api/base/service/dms';
 import { Space, Typography } from 'antd';
 import { UI_VERSION } from '../../../../scripts/version';
-import {
-  VersionModalDescribeTextStyleWrapper,
-  VersionModalStyleWrapper
-} from '../style';
+import { VersionModalDescribeTextStyleWrapper } from '../style';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import VersionComparison from '@actiontech/shared/lib/components/EnterpriseFeatureDisplay/components/VersionComparison';
 
@@ -53,18 +50,12 @@ const VersionModal: React.FC<{
     return `${versionArr[0]} ${versionArr[1].slice(0, 10)}`;
   };
 
-  const getIsEE = () => {
-    // #if [ee && !demo]
-    return true;
-    // #else
-    return false;
-    // #endif
-  };
-
   return (
-    <VersionModalStyleWrapper
-      isEE={getIsEE()}
+    <BasicModal
       size="large"
+      // #if [ee && !demo]
+      width={720}
+      // #endif
       className="version-modal"
       open={open}
       onCancel={setVersionModalClose}
@@ -121,7 +112,7 @@ const VersionModal: React.FC<{
         <VersionComparison />
         {/* #endif */}
       </Space>
-    </VersionModalStyleWrapper>
+    </BasicModal>
   );
 };
 
