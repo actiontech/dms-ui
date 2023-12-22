@@ -1,12 +1,23 @@
 import { Form, FormInstance } from 'antd';
 import { useState } from 'react';
 
-const useAuditRequired = <T extends FormInstance>(form: T) => {
-  const auditRequired = Form.useWatch('needSqlAuditService', form);
+const useSqlReviewTemplateToggle = <
+  T extends FormInstance<{
+    needSqlAuditService?: boolean;
+    ruleTemplateId?: string;
+    ruleTemplateName?: string;
+  }>
+>(
+  form: T
+) => {
+  const auditRequired = Form.useWatch<T>('needSqlAuditService', form);
   const [auditRequiredPopupVisible, setAuditRequiredPopupVisible] =
     useState<boolean>(false);
+
   const onAuditRequiredPopupOpenChange = (open: boolean) => {
-    if (!auditRequired) return;
+    if (!auditRequired) {
+      return;
+    }
     setAuditRequiredPopupVisible(open);
   };
   const clearRuleTemplate = () => {
@@ -18,10 +29,11 @@ const useAuditRequired = <T extends FormInstance>(form: T) => {
   };
 
   const changeAuditRequired = (check: boolean) => {
-    if (check)
+    if (check) {
       form.setFieldsValue({
         needSqlAuditService: check
       });
+    }
   };
 
   return {
@@ -33,4 +45,4 @@ const useAuditRequired = <T extends FormInstance>(form: T) => {
   };
 };
 
-export default useAuditRequired;
+export default useSqlReviewTemplateToggle;

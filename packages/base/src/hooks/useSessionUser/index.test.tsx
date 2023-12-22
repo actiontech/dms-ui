@@ -3,7 +3,6 @@ import mockDMSGlobalApi from '../../testUtils/mockApi/global';
 import useSessionUser from '.';
 import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
 import { useDispatch } from 'react-redux';
-import { UserInfo } from '../../testUtils/mockApi/global/data';
 import { useNavigate } from 'react-router-dom';
 
 jest.mock('react-redux', () => ({
@@ -49,8 +48,8 @@ describe('useSessionUser', () => {
     expect(result.current.sessionUser?.data).toEqual({
       code: 0,
       message: 'ok',
-      name: UserInfo.name,
-      user_uid: UserInfo.userUid
+      name: 'test',
+      user_uid: '300123'
     });
     expect(result.current.getSessionUserLoading).toBeFalsy();
   });
