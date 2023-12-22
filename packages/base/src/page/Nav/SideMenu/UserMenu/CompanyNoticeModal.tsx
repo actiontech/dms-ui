@@ -113,6 +113,7 @@ const CompanyNoticeModal: React.FC = () => {
 
   return (
     <CompanyNoticeModalStyleWrapper
+      width={720}
       maskClosable={false}
       title={t('dmsSystem.notification.title')}
       onCancel={handleCloseModal}
