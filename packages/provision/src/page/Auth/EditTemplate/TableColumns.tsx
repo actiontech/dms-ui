@@ -1,4 +1,4 @@
-import { IDataPermissionsTable } from './Modal/AddDataPermission/index.d';
+import { IDataPermissionsTable } from './Modal/AddDataPermission/index.type';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn

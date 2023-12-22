@@ -158,7 +158,7 @@ const AuthListItem = () => {
         filter_by_purpose: defaultPurpose
       });
     }
-  }, [updateTableFilterInfo, defaultPurpose, updateAllSelectedFilterItem]);
+  }, [defaultPurpose]);
 
   return (
     <>

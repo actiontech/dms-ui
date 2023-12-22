@@ -4,35 +4,40 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../../locale';
 import { IScopeReply, IViewRoleReply } from '../../../../api/common';
-import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
-import EllipsisModal from './components/EllipsisModal';
+import { BasicTag } from '@actiontech/shared';
 import { Space } from 'antd';
 import { AdminRole } from '../../../../data/enum';
+import { EllipsisOutlined } from '@ant-design/icons';
+import { CheckPermissionEllipsisStyleWrapper } from './style';
 
-export const RoleListColumns: ActiontechTableColumn<IViewRoleReply> = [
+export const RoleListColumns = (
+  onCheckRolePermission: (id?: string) => void
+): ActiontechTableColumn<IViewRoleReply> => [
   {
     dataIndex: 'role_name',
-    title: () => t('userManagement.user.roleName')
+    title: () => t('userManagement.roleName')
   },
   {
     dataIndex: 'role_desc',
-    title: () => t('userManagement.role.roleDesc'),
-    className: 'ellipsis-column-width',
-    render: (desc: string) => {
-      return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
-    }
+    title: () => t('userManagement.desc')
   },
   {
     dataIndex: 'scopes',
     width: 450,
     title: () => t('userManagement.role.operationPermission'),
-    render: (scope: IScopeReply[]) => {
+    render: (scope: IScopeReply[], record: IViewRoleReply) => {
       return (
         <Space wrap>
           {scope.slice(0, 3).map((item) => (
             <BasicTag key={item.scope_name}>{item.scope_desc}</BasicTag>
           ))}
-          {scope.length > 3 ? <EllipsisModal data={scope} /> : null}
+          {scope.length > 3 ? (
+            <CheckPermissionEllipsisStyleWrapper
+              onClick={() => onCheckRolePermission(record?.id)}
+            >
+              <EllipsisOutlined />
+            </CheckPermissionEllipsisStyleWrapper>
+          ) : null}
         </Space>
       );
     }

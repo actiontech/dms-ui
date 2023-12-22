@@ -14,9 +14,9 @@ import { IReduxState } from '../../../../store';
 import { updateSystemModalStatus } from '../../../../store/system';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { ILicenseItem } from '@actiontech/shared/lib/api/sqle/service/common';
-import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ModalSize, ResponseCode } from '@actiontech/shared/lib/enum';
 import { LicenseColumn } from '../index.data';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 const ImportModal = () => {
   const { t } = useTranslation();
@@ -35,8 +35,8 @@ const ImportModal = () => {
 
   const fileChange = (currentFile: RcFile) => {
     startPrepare();
-    configuration
-      .checkSQLELicenseV1({
+    dms
+      .CheckLicense({
         license_file: currentFile
       })
       .then((res) => {
@@ -72,7 +72,7 @@ const ImportModal = () => {
     const values = await form.validateFields();
     startImport();
     try {
-      const res = await configuration.setSQLELicenseV1({
+      const res = await dms.SetLicense({
         license_file: values.file?.[0]
       });
       if (res.data.code === ResponseCode.SUCCESS) {

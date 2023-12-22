@@ -50,7 +50,7 @@ const AddServerMonitor = () => {
             })
           );
           closeModal();
-          EventEmitter.emit(EmitterKey.Refresh_Server_Monitor);
+          EventEmitter.emit(EmitterKey.Refresh_Monitor_Source_Config);
         }
       })
       .finally(() => {

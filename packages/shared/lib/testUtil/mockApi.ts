@@ -53,7 +53,7 @@ export const createSpySuccessResponse = (
         data: {
           code: 0,
           message: 'ok',
-          ...data // ??？ 之前是 payload
+          ...data
         }
       });
     }, 3000);
@@ -99,6 +99,15 @@ export const createSpyErrorResponse = (
         }
       });
     }, 3000);
+  });
+};
+
+export const throwErrorThreeSecond = (
+  error = 'error',
+  { status = 500, headers = {}, config = {}, statusText = '' } = {}
+) => {
+  return new Promise((res) => {
+    throw new Error(error);
   });
 };
 export type MockServer = ReturnType<typeof setupServer>;

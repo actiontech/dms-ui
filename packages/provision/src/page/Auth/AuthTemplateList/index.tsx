@@ -25,7 +25,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { Spin } from 'antd';
 
@@ -33,6 +33,7 @@ const AuthTemplateList = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { projectID } = useCurrentProject();
+  const { name } = useParams<{ name: string }>();
   const {
     tableChange,
     pagination,
@@ -54,7 +55,8 @@ const AuthTemplateList = () => {
           page_index: pagination.page_index,
           page_size: pagination.page_size,
           filter_by_namespace_uid: projectID ?? '',
-          keyword: searchKeyword
+          keyword: searchKeyword,
+          filter_by_name: name
         })
       );
     },
@@ -129,7 +131,10 @@ const AuthTemplateList = () => {
           rowKey="uid"
           dataSource={dataSource?.list ?? []}
           columns={AuthTemplateListTableColumns(projectID)}
-          pagination={{ total: dataSource?.total ?? 0 }}
+          pagination={{
+            total: dataSource?.total ?? 0,
+            current: pagination.page_index
+          }}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
           actions={AuthTemplateListActions(

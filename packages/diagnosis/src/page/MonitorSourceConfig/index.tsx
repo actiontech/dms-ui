@@ -1,23 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SegmentedValue } from 'antd/es/segmented';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import {
-  BasicButton,
-  PageHeader,
-  BasicSegmented,
-  EmptyBox
-} from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
-import { MonitorSourceConfigStyleWrapper } from './style';
 import { ModalName } from '../../data/ModalName';
-import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { MonitorSourceConfigTypeEnum } from './index.type';
 import ServerMonitor from './components/ServerMonitor';
 import DatabaseMonitor from './components/DatabaseMonitor';
 import useMonitorSourceConfigRedux from './hooks/useMonitorSourceConfigRedux';
+import {
+  BasicSegmentedPage,
+  useSegmentedPageParams
+} from '@actiontech/shared/lib/components/BasicSegmentedPage';
 
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();
@@ -27,80 +24,90 @@ const MonitorSourceConfig: React.FC = () => {
 
   const [tableLoading, setTableLoading] = useState<boolean>(false);
 
-  const [listType, setListType] = useState<MonitorSourceConfigTypeEnum>(
-    MonitorSourceConfigTypeEnum.server_monitor
-  );
-
   const { setModalStatus } = useMonitorSourceConfigRedux();
 
-  const onChange = (key: SegmentedValue) => {
-    setListType(key as MonitorSourceConfigTypeEnum);
+  const {
+    updateSegmentedPageData,
+    renderExtraButton,
+    onChange,
+    value,
+    ...otherProps
+  } = useSegmentedPageParams<MonitorSourceConfigTypeEnum>();
+
+  useEffect(() => {
+    const onClick = (modalName: ModalName) => {
+      setModalStatus(modalName, true);
+    };
+
+    updateSegmentedPageData([
+      {
+        value: MonitorSourceConfigTypeEnum.server_monitor,
+        label: t('monitorSourceConfig.serverMonitor.serverMonitorSource'),
+        content: (
+          <ServerMonitor
+            setLoading={setTableLoading}
+            searchValue={searchServerValue ?? ''}
+          />
+        ),
+        extraButton: (
+          <BasicButton
+            type="primary"
+            icon={<IconAdd />}
+            onClick={() => {
+              onClick(ModalName.Add_Server_Monitor);
+            }}
+          >
+            {t('monitorSourceConfig.serverMonitor.addServerMonitorSource')}
+          </BasicButton>
+        )
+      },
+      {
+        value: MonitorSourceConfigTypeEnum.database_monitor,
+        label: t('monitorSourceConfig.databaseMonitor.databaseMonitorSource'),
+        content: (
+          <DatabaseMonitor
+            setLoading={setTableLoading}
+            searchValue={searchDatabaseValue ?? ''}
+          />
+        ),
+        extraButton: (
+          <BasicButton
+            type="primary"
+            icon={<IconAdd />}
+            onClick={() => {
+              onClick(ModalName.Add_Database_Monitor);
+            }}
+          >
+            {t('monitorSourceConfig.databaseMonitor.addDatabaseMonitorSource')}
+          </BasicButton>
+        )
+      }
+    ]);
+  }, [updateSegmentedPageData, t, searchServerValue, searchDatabaseValue]);
+
+  const onChangeListType = (key: SegmentedValue) => {
+    onChange(key as MonitorSourceConfigTypeEnum);
     setSearchServerValue('');
     setSearchDatabaseValue('');
   };
 
-  const onAddMonitorSource = (type: MonitorSourceConfigTypeEnum) => {
-    const name =
-      type === MonitorSourceConfigTypeEnum.server_monitor
-        ? ModalName.Add_Server_Monitor
-        : ModalName.Add_Database_Monitor;
-    setModalStatus(name, true);
-  };
-
-  const renderTable = () => {
-    if (listType === MonitorSourceConfigTypeEnum.server_monitor) {
-      return (
-        <ServerMonitor
-          setLoading={setTableLoading}
-          searchValue={searchServerValue ?? ''}
-        />
-      );
-    }
-    return (
-      <DatabaseMonitor
-        setLoading={setTableLoading}
-        searchValue={searchDatabaseValue ?? ''}
-      />
-    );
-  };
-
   const onRefreshTable = () => {
-    if (listType === MonitorSourceConfigTypeEnum.server_monitor) {
-      EventEmitter.emit(EmitterKey.Refresh_Server_Monitor);
-      return;
-    }
-    EventEmitter.emit(EmitterKey.Refresh_Database_Monitor);
+    EventEmitter.emit(EmitterKey.Refresh_Monitor_Source_Config);
   };
 
   return (
-    <MonitorSourceConfigStyleWrapper>
+    <section>
       <PageHeader
         title={<Space size={12}>{t('monitorSourceConfig.title')}</Space>}
-        extra={
-          <EmptyBox if={true}>
-            <Space size={12}>
-              {/* todo: add permission */}
-              <BasicButton
-                onClick={() => onAddMonitorSource(listType)}
-                type="primary"
-                icon={<IconAdd />}
-              >
-                {listType === MonitorSourceConfigTypeEnum.server_monitor
-                  ? t(
-                      'monitorSourceConfig.serverMonitor.addServerMonitorSource'
-                    )
-                  : t(
-                      'monitorSourceConfig.databaseMonitor.addDatabaseMonitorSource'
-                    )}
-              </BasicButton>
-            </Space>
-          </EmptyBox>
-        }
+        extra={renderExtraButton()}
       />
-      <TableToolbar
+      <BasicSegmentedPage
+        {...otherProps}
         refreshButton={{ refresh: onRefreshTable, disabled: tableLoading }}
+        value={value}
+        onChange={onChangeListType}
         searchInput={
-          listType === MonitorSourceConfigTypeEnum.server_monitor
+          value === MonitorSourceConfigTypeEnum.server_monitor
             ? {
                 placeholder: t(
                   'common.actiontechTable.searchInput.placeholder'
@@ -118,26 +125,8 @@ const MonitorSourceConfig: React.FC = () => {
                 value: searchDatabaseValue
               }
         }
-      >
-        <BasicSegmented
-          value={listType}
-          onChange={onChange}
-          options={[
-            {
-              value: MonitorSourceConfigTypeEnum.server_monitor,
-              label: t('monitorSourceConfig.serverMonitor.serverMonitorSource')
-            },
-            {
-              value: MonitorSourceConfigTypeEnum.database_monitor,
-              label: t(
-                'monitorSourceConfig.databaseMonitor.databaseMonitorSource'
-              )
-            }
-          ]}
-        />
-      </TableToolbar>
-      {renderTable()}
-    </MonitorSourceConfigStyleWrapper>
+      />
+    </section>
   );
 };
 

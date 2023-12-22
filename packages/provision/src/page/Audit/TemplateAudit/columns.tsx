@@ -1,3 +1,4 @@
+import { uniqBy } from 'lodash';
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize,
@@ -7,22 +8,8 @@ import { IListDataPermissionTemplateEvent } from '@actiontech/shared/lib/api/pro
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '~/locale';
 import { IAuditListDataPermissionTemplateEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
-import { Space } from 'antd';
 import { AvatarCom, EmptyBox, BasicToolTips } from '@actiontech/shared';
-import AuditActionIcon from '../components/AuditActionIcon';
-import { uniqBy } from 'lodash';
-
-export const eventType: Record<string, string> = {
-  data_permission_template_created: t(
-    'provisionAudit.templateAudit.type.templateCreated'
-  ),
-  data_permission_template_updated: t(
-    'provisionAudit.templateAudit.type.templateUpdated'
-  ),
-  data_permission_template_deleted: t(
-    'provisionAudit.templateAudit.type.templateDeleted'
-  )
-};
+import EventType, { EventTypeEnum } from './components/EventType';
 
 export type TemplateAuditTableFilterParamType = PageInfoWithoutIndexAndSize<
   IAuditListDataPermissionTemplateEventsParams & {
@@ -37,7 +24,9 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'generated_time',
     title: t('provisionAudit.authAudit.columns.time'),
-    render: (time: string) => formatTime(time),
+    render: (time: string) => {
+      return formatTime(time, '-');
+    },
     filterCustomType: 'date-range',
     filterKey: [
       'filter_by_generated_time_start',
@@ -93,16 +82,9 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'event_type',
     title: t('provisionAudit.authAudit.columns.actionType'),
-    render: (val) => {
-      return (
-        <Space>
-          <AuditActionIcon value={val} />
-          {eventType[val] ?? '--'}
-        </Space>
-      );
-    },
-    filterCustomType: 'select',
-    filterKey: 'filter_by_event_type'
+    render: (val: IListDataPermissionTemplateEvent['event_type']) => {
+      return <EventType val={val as EventTypeEnum} />;
+    }
   }
 ];
 

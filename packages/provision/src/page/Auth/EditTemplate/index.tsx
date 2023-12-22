@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ModalName } from '~/data/enum';
 import useModalStatus from '~/hooks/useModalStatus';
-import { IDataPermissionsTable } from './Modal/AddDataPermission/index.d';
+import { IDataPermissionsTable } from './Modal/AddDataPermission/index.type';
 import { AuthDataPermissionListModalStatus } from '~/store/auth/templateList';
 import { AuthTableActions, AuthTableColumns } from './TableColumns';
 import AddDataPermission from './Modal/AddDataPermission';
@@ -40,25 +40,23 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-
-interface IEditTemplateFormFields {
-  name: string;
-}
+import { IEditTemplateFormFields } from './index.type';
 
 const EditTemplate = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [params] = useSearchParams();
-  const id = params.get('id');
-  const name = params.get('name');
+  const templateIdFormUrl = params.get('id');
+  const templateNameFormUrl = params.get('name');
   const [form] = Form.useForm<IEditTemplateFormFields>();
   const { projectID } = useCurrentProject();
+  const [messageApi, messageContextHolder] = message.useMessage();
 
   const { loading: getIdLoading, data: templateId } = useRequest(
     () =>
       auth
         .AuthListDataPermissionTemplate({
-          filter_by_name: name ?? '',
+          filter_by_name: templateNameFormUrl ?? '',
           page_size: 1,
           page_index: 1,
           filter_by_namespace_uid: projectID ?? ''
@@ -69,22 +67,21 @@ const EditTemplate = () => {
           }
         }),
     {
-      ready: !!name && !id,
+      ready: !!templateNameFormUrl && !templateIdFormUrl,
       refreshDeps: [projectID]
     }
   );
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const { loading: getPermissionLoading } = useRequest(
     () =>
       handleTableRequestError(
         auth.AuthGetDataPermissionsInDataPermissionTemplate({
-          data_permission_template_uid: id ?? templateId ?? ''
+          data_permission_template_uid: templateIdFormUrl ?? templateId ?? ''
         })
       ),
     {
-      ready: !!id || !!templateId,
+      ready: !!templateIdFormUrl || !!templateId,
       onSuccess: (res) => {
         if (res.list && res.list.length > 0) {
           const permissions = generateDataPermissionValueByDataPermission(
@@ -97,9 +94,9 @@ const EditTemplate = () => {
   );
 
   useEffect(() => {
-    if (!name) return;
-    form.setFieldsValue({ name });
-  }, [form, name]);
+    if (!templateNameFormUrl) return;
+    form.setFieldsValue({ name: templateNameFormUrl });
+  }, [form, templateNameFormUrl]);
 
   const { toggleModal, initModalStatus } = useModalStatus(
     AuthDataPermissionListModalStatus
@@ -132,7 +129,7 @@ const EditTemplate = () => {
     }));
     startSubmit();
     try {
-      const uid = id ?? templateId;
+      const uid = templateIdFormUrl ?? templateId;
       let res: AxiosResponse;
       if (!uid) {
         res = await auth.AuthAddDataPermissionTemplate({
@@ -152,7 +149,7 @@ const EditTemplate = () => {
       }
       if (res.data.code === ResponseCode.SUCCESS) {
         if (uid) {
-          message.success(
+          messageApi.success(
             t('auth.editTemplate.editSuccessTips', { name: values.name })
           );
           navigate(`/provision/project/${projectID}/auth/template`);
@@ -214,6 +211,7 @@ const EditTemplate = () => {
 
   return (
     <EditAuthTemplateStyleWrapper>
+      {messageContextHolder}
       <PageLayoutHasFixedHeaderStyleWrapper>
         <PageHeader
           fixed
@@ -228,7 +226,7 @@ const EditTemplate = () => {
             </BasicButton>
           }
           extra={
-            <Space hidden={!id && resultVisible}>
+            <Space hidden={!templateIdFormUrl && resultVisible}>
               <BasicButton
                 type="primary"
                 loading={submitLoading}
@@ -256,7 +254,9 @@ const EditTemplate = () => {
               </BasicButton>,
               <BasicButton
                 key="toAuthList"
-                onClick={() => navigate(`/provision/project/${projectID}/auth`)}
+                onClick={() =>
+                  navigate(`/provision/project/${projectID}/auth/list/add`)
+                }
               >
                 {t('auth.button.toAuthList')}
               </BasicButton>
@@ -278,7 +278,7 @@ const EditTemplate = () => {
                   ]}
                 >
                   <BasicInput
-                    disabled={!!name}
+                    disabled={!!templateNameFormUrl}
                     placeholder={t('auth.editTemplate.templateNamePlaceholder')}
                     onChange={() => setIsUpdated(true)}
                     size="large"

@@ -21,8 +21,9 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
-describe.skip('Auth/AuthTemplateList', () => {
+describe('Auth/AuthTemplateList', () => {
   const tempListAuthorizationsSpy = () =>
     createSpySuccessResponse({
       total: 20,
@@ -57,7 +58,7 @@ describe.skip('Auth/AuthTemplateList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listDataPermissionTemplateSpy).toBeCalledTimes(1);
     expect(container).toMatchSnapshot();
-    fireEvent.click(screen.getByTestId('refresh'));
+    fireEvent.click(getBySelector('.custom-icon-refresh'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('.ant-spin-spinning')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -101,7 +102,8 @@ describe.skip('Auth/AuthTemplateList', () => {
       page_index: 1,
       page_size: 20,
       filter_by_name: 'asd',
-      filter_by_namespace_uid: mockProjectInfo.projectID
+      filter_by_namespace_uid: mockProjectInfo.projectID,
+      keyword: ''
     });
   });
 
@@ -110,10 +112,10 @@ describe.skip('Auth/AuthTemplateList', () => {
     const { container } = superRender(<AuthTemplateList />);
     await act(async () => jest.advanceTimersByTime(3000));
     await screen.findByText('template-1');
-    fireEvent.click(screen.getAllByText('删除')[0]);
+    fireEvent.click(screen.getAllByText('删 除')[0]);
     await act(async () => jest.advanceTimersByTime(300));
 
-    const el = await screen.findByText(`确认要移除模版"template-1"?`);
+    const el = await screen.findByText(`确认要移除模板"template-1"?`);
     expect(el).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('确 认'));
@@ -124,20 +126,20 @@ describe.skip('Auth/AuthTemplateList', () => {
     });
     await act(async () => jest.advanceTimersByTime(100));
 
-    const loadingEl = await screen.findByText(`正在删除模版 "template-1"...`);
+    const loadingEl = await screen.findByText(`正在删除模板 "template-1"...`);
     expect(loadingEl).toBeInTheDocument();
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
-      screen.queryByText('正在删除模版 "template-1"...')
+      screen.queryByText('正在删除模板 "template-1"...')
     ).not.toBeInTheDocument();
 
-    const successEl = await screen.findByText(`模版 "template-1" 删除成功`);
+    const successEl = await screen.findByText(`模板 "template-1" 删除成功`);
     expect(successEl).toBeInTheDocument();
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
-      screen.queryByText(`模版 "template-1" 删除成功`)
+      screen.queryByText(`模板 "template-1" 删除成功`)
     ).not.toBeInTheDocument();
     if (queryBySelector('.ant-spin-spinning')) {
       await waitForElementToBeRemoved(queryBySelector('.ant-spin-spinning'));
@@ -164,7 +166,9 @@ describe.skip('Auth/AuthTemplateList', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     await screen.findByText('template-1');
-    fireEvent.click(screen.getAllByText('更多')[0]);
+    fireEvent.click(
+      getAllBySelector('.actiontech-table-actions-more-button')[0]
+    );
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('类似创建'));
 

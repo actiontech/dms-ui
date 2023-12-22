@@ -69,7 +69,7 @@ exports[`test check monitor config modal should close model when click close ico
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -96,13 +96,13 @@ exports[`test check monitor config modal should close model when click close ico
                             >
                               <tr>
                                 <th
-                                  class="ant-table-cell first-col"
+                                  class="ant-table-cell"
                                   scope="col"
                                 >
                                   监控指标
                                 </th>
                                 <th
-                                  class="ant-table-cell last-col"
+                                  class="ant-table-cell"
                                   scope="col"
                                 >
                                   描述
@@ -141,12 +141,12 @@ exports[`test check monitor config modal should close model when click close ico
                                 data-row-key="mysql:server_status:commands"
                               >
                                 <td
-                                  class="ant-table-cell first-col"
+                                  class="ant-table-cell"
                                 >
                                   mysql:server_status:commands
                                 </td>
                                 <td
-                                  class="ant-table-cell last-col"
+                                  class="ant-table-cell"
                                 >
                                   mysql状态值Com_*/mysql status value Com_
                                 </td>
@@ -392,7 +392,7 @@ exports[`test check monitor config modal should match snapshot when modal state 
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -419,13 +419,13 @@ exports[`test check monitor config modal should match snapshot when modal state 
                             >
                               <tr>
                                 <th
-                                  class="ant-table-cell first-col"
+                                  class="ant-table-cell"
                                   scope="col"
                                 >
                                   监控指标
                                 </th>
                                 <th
-                                  class="ant-table-cell last-col"
+                                  class="ant-table-cell"
                                   scope="col"
                                 >
                                   描述
@@ -464,12 +464,12 @@ exports[`test check monitor config modal should match snapshot when modal state 
                                 data-row-key="mysql:server_status:commands"
                               >
                                 <td
-                                  class="ant-table-cell first-col"
+                                  class="ant-table-cell"
                                 >
                                   mysql:server_status:commands
                                 </td>
                                 <td
-                                  class="ant-table-cell last-col"
+                                  class="ant-table-cell"
                                 >
                                   mysql状态值Com_*/mysql status value Com_
                                 </td>
@@ -715,7 +715,7 @@ exports[`test check monitor config modal should refresh table when change pagina
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -742,13 +742,13 @@ exports[`test check monitor config modal should refresh table when change pagina
                             >
                               <tr>
                                 <th
-                                  class="ant-table-cell first-col"
+                                  class="ant-table-cell"
                                   scope="col"
                                 >
                                   监控指标
                                 </th>
                                 <th
-                                  class="ant-table-cell last-col"
+                                  class="ant-table-cell"
                                   scope="col"
                                 >
                                   描述
@@ -787,12 +787,12 @@ exports[`test check monitor config modal should refresh table when change pagina
                                 data-row-key="mysql:server_status:commands"
                               >
                                 <td
-                                  class="ant-table-cell first-col"
+                                  class="ant-table-cell"
                                 >
                                   mysql:server_status:commands
                                 </td>
                                 <td
-                                  class="ant-table-cell last-col"
+                                  class="ant-table-cell"
                                 >
                                   mysql状态值Com_*/mysql status value Com_
                                 </td>
@@ -1038,7 +1038,7 @@ exports[`test check monitor config modal should render normal table 1`] = `
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1065,13 +1065,13 @@ exports[`test check monitor config modal should render normal table 1`] = `
                             >
                               <tr>
                                 <th
-                                  class="ant-table-cell first-col"
+                                  class="ant-table-cell"
                                   scope="col"
                                 >
                                   监控指标
                                 </th>
                                 <th
-                                  class="ant-table-cell last-col"
+                                  class="ant-table-cell"
                                   scope="col"
                                 >
                                   描述
@@ -1110,12 +1110,12 @@ exports[`test check monitor config modal should render normal table 1`] = `
                                 data-row-key="mysql:server_status:commands"
                               >
                                 <td
-                                  class="ant-table-cell first-col"
+                                  class="ant-table-cell"
                                 >
                                   mysql:server_status:commands
                                 </td>
                                 <td
-                                  class="ant-table-cell last-col"
+                                  class="ant-table-cell"
                                 >
                                   mysql状态值Com_*/mysql status value Com_
                                 </td>

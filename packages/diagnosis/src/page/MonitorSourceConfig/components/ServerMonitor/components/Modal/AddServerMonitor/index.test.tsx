@@ -209,7 +209,7 @@ describe('test add server monitor', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Server_Monitor);
+    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
   }, 40000);
 
   it('show error info when get host name failed', async () => {
