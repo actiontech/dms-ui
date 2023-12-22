@@ -34,12 +34,6 @@ export enum GetUserStatEnum {
   '未知' = '未知'
 }
 
-export enum IPluginDBServiceDBTypeEnum {
-  'MySQL' = 'MySQL',
-
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
-}
-
 export enum ListAuthorizationStatusEnum {
   'expired' = 'expired',
 
@@ -51,7 +45,9 @@ export enum ListAuthorizationStatusEnum {
 export enum ListServiceDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'DB2' = 'DB2'
 }
 
 export enum ListServiceTypeEnum {
@@ -129,13 +125,27 @@ export enum OperationInfoDataObjectTypesEnum {
 export enum OperationInfoDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'DB2' = 'DB2'
+}
+
+export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
+  'normal' = 'normal',
+
+  'notice' = 'notice',
+
+  'warn' = 'warn',
+
+  'error' = 'error'
 }
 
 export enum ServiceDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'DB2' = 'DB2'
 }
 
 export enum SyncRuleFieldNameEnum {
