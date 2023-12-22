@@ -17,6 +17,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../data/ModalName';
 import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
+import useCurrentUser from '../../../../hooks/useCurrentUser';
+import { AdminRolePermission } from '../../../../data/enum';
 
 interface IDatabaseMonitorProps {
   setLoading: (loading: boolean) => void;
@@ -24,6 +26,8 @@ interface IDatabaseMonitorProps {
 }
 const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
   const { t } = useTranslation();
+
+  const { hasActionPermission } = useCurrentUser();
 
   const { setModalStatus, setDatabaseSelectData } =
     useMonitorSourceConfigRedux();
@@ -104,8 +108,17 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
   );
 
   const actions = useMemo(() => {
-    return DatabaseMonitorActions(updateDatabaseMonitor, deleteDatabaseMonitor);
-  }, [deleteDatabaseMonitor, updateDatabaseMonitor]);
+    const hasEditPermission = hasActionPermission(AdminRolePermission.UpdateDB);
+    const hasDeletePermission = hasActionPermission(
+      AdminRolePermission.DeleteDB
+    );
+    return DatabaseMonitorActions(
+      updateDatabaseMonitor,
+      deleteDatabaseMonitor,
+      hasEditPermission,
+      hasDeletePermission
+    );
+  }, [deleteDatabaseMonitor, updateDatabaseMonitor, hasActionPermission]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -115,6 +128,10 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
 
     return unsubscribe;
   }, [refresh]);
+
+  const hasCheckMonitorPermission = hasActionPermission(
+    AdminRolePermission.ListConfigs
+  );
 
   return (
     <>
@@ -129,7 +146,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
           current: pagination.page_index
         }}
         loading={loading}
-        columns={DatabaseMonitorColumns()}
+        columns={DatabaseMonitorColumns(hasCheckMonitorPermission)}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}

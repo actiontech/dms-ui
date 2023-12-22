@@ -3,15 +3,15 @@ import CheckMonitorConfig from './';
 import monitorSourceConfig from '../../../../testUtils/mockApi/monitorSourceConfig';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { superRender } from '../../../../testUtils/customRender';
 import { ModalName } from '../../../../data/ModalName';
 import { monitorRoutineListData } from '../../../../testUtils/mockApi/monitorSourceConfig/data';
 import Router from 'react-router-dom';
+import { adminPermission } from '../../../../testUtils/mockApi/userManagement/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
-  useSelector: jest.fn(),
   useDispatch: jest.fn()
 }));
 
@@ -25,13 +25,6 @@ describe('test monitor item config table', () => {
 
   beforeEach(() => {
     (useDispatch as jest.Mock).mockReturnValue(mockDispatch);
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        monitorSourceConfig: {
-          modalStatus: {}
-        }
-      });
-    });
     jest.useFakeTimers();
     monitorSourceConfig.mockAllApi();
     jest.spyOn(Router, 'useParams').mockReturnValue({
@@ -48,10 +41,29 @@ describe('test monitor item config table', () => {
     cleanup();
   });
 
+  const customRender = (data = adminPermission) => {
+    return superRender(<CheckMonitorConfig />, undefined, {
+      initStore: {
+        user: {
+          userScope: data
+        },
+        monitorSourceConfig: {
+          modalStatus: {}
+        }
+      }
+    });
+  };
+
+  it('render without permission', async () => {
+    const { baseElement } = customRender([]);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('should render table when api return null', async () => {
     const request = monitorSourceConfig.getMonitorRoutineList();
     request.mockImplementation(() => createSpySuccessResponse([]));
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('返回监控源配置')).toBeInTheDocument();
     expect(screen.getByText('first')).toBeInTheDocument();
@@ -65,7 +77,7 @@ describe('test monitor item config table', () => {
 
   it('should render normal table', async () => {
     const request = monitorSourceConfig.getMonitorRoutineList();
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toBeCalled();
@@ -82,7 +94,7 @@ describe('test monitor item config table', () => {
 
   it('should open check model when click check button', async () => {
     const request = monitorSourceConfig.getMonitorRoutineList();
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -108,7 +120,7 @@ describe('test monitor item config table', () => {
 
   it('should refresh table when change pagination info', async () => {
     const request = monitorSourceConfig.getMonitorRoutineList();
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));

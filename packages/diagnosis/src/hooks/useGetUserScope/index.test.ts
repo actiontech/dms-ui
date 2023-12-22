@@ -3,7 +3,7 @@ import { act } from '@testing-library/react';
 import useGetUserScope from '.';
 import { useDispatch } from 'react-redux';
 import user from '../../testUtils/mockApi/userManagement';
-import { userScopeData } from '../../testUtils/mockApi/userManagement/data';
+import { adminPermission } from '../../testUtils/mockApi/userManagement/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -42,12 +42,12 @@ describe('diagnosis/useGetUserScope', () => {
     expect(result.current.userScope?.data).toStrictEqual({
       code: 0,
       message: 'ok',
-      data: userScopeData
+      data: adminPermission
     });
     expect(mockDispatch).toBeCalledTimes(1);
     expect(mockDispatch).toBeCalledWith({
       payload: {
-        userScope: userScopeData
+        userScope: adminPermission
       },
       type: 'user/updateUserScope'
     });

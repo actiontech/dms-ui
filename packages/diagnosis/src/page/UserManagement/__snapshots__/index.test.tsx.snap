@@ -1,5 +1,457 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test user management render without permission 1`] = `
+<body>
+  <div>
+    <section>
+      <div
+        class="actiontech-page-header-namespace css-14fwawz"
+      >
+        <div
+          class="title"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 12px;"
+            >
+              用户管理
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
+                >
+                  <span
+                    class="custom-icon custom-icon-refresh css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="extra"
+        />
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-c38ntt"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="用户列表"
+                    >
+                      用户列表
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="角色列表"
+                    >
+                      角色列表
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="操作权限列表"
+                    >
+                      操作权限列表
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            >
+              <div
+                class="ant-table-container"
+              >
+                <div
+                  class="ant-table-content"
+                  style="overflow-x: auto; overflow-y: hidden;"
+                >
+                  <table
+                    style="min-width: 100%; table-layout: auto;"
+                  >
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col
+                        style="width: 152px;"
+                      />
+                    </colgroup>
+                    <thead
+                      class="ant-table-thead"
+                    >
+                      <tr>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          用户名
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          角色名
+                        </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ant-table-tbody"
+                    >
+                      <tr
+                        aria-hidden="true"
+                        class="ant-table-measure-row"
+                        style="height: 0px; font-size: 0px;"
+                      >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="1735126052121870336"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          admin
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          admin
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              />
+                              <div
+                                class="ant-space-item"
+                              />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="1735126216567947264"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          test
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                        >
+                          admin
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              />
+                              <div
+                                class="ant-space-item"
+                              />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <ul
+              class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            >
+              <li
+                class="ant-pagination-total-text"
+              >
+                <span>
+                  共 2 条数据
+                </span>
+              </li>
+              <li
+                aria-disabled="true"
+                class="ant-pagination-prev ant-pagination-disabled"
+                title="上一页"
+              >
+                <button
+                  class="ant-pagination-item-link"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="left"
+                    class="anticon anticon-left"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="left"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </li>
+              <li
+                class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+                tabindex="0"
+                title="1"
+              >
+                <a
+                  rel="nofollow"
+                >
+                  1
+                </a>
+              </li>
+              <li
+                aria-disabled="true"
+                class="ant-pagination-next ant-pagination-disabled"
+                title="下一页"
+              >
+                <button
+                  class="ant-pagination-item-link"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span
+                    aria-label="right"
+                    class="anticon anticon-right"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="right"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </li>
+              <li
+                class="ant-pagination-options"
+              >
+                <div
+                  aria-label="页码"
+                  class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                >
+                  <div
+                    class="ant-select-selector"
+                  >
+                    <span
+                      class="ant-select-selection-search"
+                    >
+                      <input
+                        aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                        aria-autocomplete="list"
+                        aria-controls="rc_select_TEST_OR_SSR_list"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-label="页码"
+                        aria-owns="rc_select_TEST_OR_SSR_list"
+                        autocomplete="off"
+                        class="ant-select-selection-search-input"
+                        id="rc_select_TEST_OR_SSR"
+                        role="combobox"
+                        type="search"
+                        value=""
+                      />
+                    </span>
+                    <span
+                      class="ant-select-selection-item"
+                      title="20 条/页"
+                    >
+                      20 条/页
+                    </span>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-arrow"
+                    style="user-select: none;"
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="down"
+                      class="anticon anticon-down ant-select-suffix"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="down"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
 exports[`test user management should open model when click add button 1`] = `
 <body>
   <div>

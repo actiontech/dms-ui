@@ -5,7 +5,10 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { useDispatch } from 'react-redux';
 import { superRender } from '../../../../testUtils/customRender';
 import { ModalName } from '../../../../data/ModalName';
-import { userListData } from '../../../../testUtils/mockApi/userManagement/data';
+import {
+  adminPermission,
+  userListData
+} from '../../../../testUtils/mockApi/userManagement/data';
 import UserList from './';
 
 jest.mock('react-redux', () => ({
@@ -29,15 +32,24 @@ describe('diagnosis/test user table', () => {
     cleanup();
   });
 
-  const customRender = () => {
+  const customRender = (data = adminPermission) => {
     return superRender(<UserList />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {}
+        },
+        user: {
+          userScope: data
         }
       }
     });
   };
+
+  it('render without permission', async () => {
+    const { baseElement } = customRender([]);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
 
   it('should render table when api return null', async () => {
     const request = userManagement.getUserList();

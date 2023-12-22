@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { SegmentedValue } from 'antd/es/segmented';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { ModalName } from '../../data/ModalName';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
@@ -17,9 +17,13 @@ import {
   useSegmentedPageParams
 } from '@actiontech/shared/lib/components/BasicSegmentedPage';
 import EmitterKey from '../../data/EmitterKey';
+import { AdminRolePermission } from '../../data/enum';
+import useCurrentUser from '../../hooks/useCurrentUser';
 
 const UserManagement: React.FC = () => {
   const { t } = useTranslation();
+
+  const { hasActionPermission } = useCurrentUser();
 
   const { setModalStatus, setPermissionRoleId } = useUserManagementRedux();
 
@@ -52,15 +56,20 @@ const UserManagement: React.FC = () => {
         label: t('userManagement.userList'),
         content: <UserList />,
         extraButton: (
-          <BasicButton
-            type="primary"
-            icon={<IconAdd />}
-            onClick={() => {
-              onAddOperate(ModalName.Add_User);
-            }}
+          <EmptyBox
+            if={hasActionPermission(AdminRolePermission.CreateUser)}
+            key={AdminRolePermission.CreateUser}
           >
-            {t('userManagement.button.addUser')}
-          </BasicButton>
+            <BasicButton
+              type="primary"
+              icon={<IconAdd />}
+              onClick={() => {
+                onAddOperate(ModalName.Add_User);
+              }}
+            >
+              {t('userManagement.button.addUser')}
+            </BasicButton>
+          </EmptyBox>
         )
       },
       {
@@ -68,15 +77,20 @@ const UserManagement: React.FC = () => {
         label: t('userManagement.roleList'),
         content: <RoleList handleChange={onChangeListType} />,
         extraButton: (
-          <BasicButton
-            type="primary"
-            icon={<IconAdd />}
-            onClick={() => {
-              onAddOperate(ModalName.Add_Role);
-            }}
+          <EmptyBox
+            if={hasActionPermission(AdminRolePermission.CreateRole)}
+            key={AdminRolePermission.CreateRole}
           >
-            {t('userManagement.button.addRole')}
-          </BasicButton>
+            <BasicButton
+              type="primary"
+              icon={<IconAdd />}
+              onClick={() => {
+                onAddOperate(ModalName.Add_Role);
+              }}
+            >
+              {t('userManagement.button.addRole')}
+            </BasicButton>
+          </EmptyBox>
         )
       },
       {
@@ -85,7 +99,7 @@ const UserManagement: React.FC = () => {
         content: <PermissionList />
       }
     ]);
-  }, [updateSegmentedPageData, t]);
+  }, [updateSegmentedPageData, t, hasActionPermission]);
 
   return (
     <section>

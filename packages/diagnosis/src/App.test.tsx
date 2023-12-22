@@ -3,7 +3,7 @@ import { act } from '@testing-library/react';
 import App from './App';
 import user from './testUtils/mockApi/userManagement';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
-import { userScopeData } from './testUtils/mockApi/userManagement/data';
+import { adminPermission } from './testUtils/mockApi/userManagement/data';
 import monitorSourceConfig from './testUtils/mockApi/monitorSourceConfig';
 import { superRender } from './testUtils/customRender';
 
@@ -30,7 +30,8 @@ describe('test diagnosis App', () => {
         user: {
           token: 'w1qe2343r12wq23',
           theme: SupportTheme.LIGHT,
-          userId: '1'
+          userId: '1',
+          userScope: adminPermission
         },
         monitorSourceConfig: { modalStatus: {} }
       });
@@ -68,7 +69,7 @@ describe('test diagnosis App', () => {
     expect(mockDispatch).toBeCalledTimes(3);
     expect(mockDispatch).toBeCalledWith({
       payload: {
-        userScope: userScopeData
+        userScope: adminPermission
       },
       type: 'user/updateUserScope'
     });

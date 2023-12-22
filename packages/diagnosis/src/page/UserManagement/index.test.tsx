@@ -7,6 +7,7 @@ import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import userManagement from '../../testUtils/mockApi/userManagement';
 import UserManagement from '.';
+import { adminPermission } from '../../testUtils/mockApi/userManagement/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -29,8 +30,24 @@ describe('test user management', () => {
     cleanup();
   });
 
+  const customRender = (data = adminPermission) => {
+    return superRender(<UserManagement />, undefined, {
+      initStore: {
+        user: {
+          userScope: data
+        }
+      }
+    });
+  };
+
+  it('render without permission', async () => {
+    const { baseElement } = customRender([]);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('should render user list table for default', async () => {
-    const { baseElement } = superRender(<UserManagement />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('用户管理')).toBeInTheDocument();
@@ -43,7 +60,7 @@ describe('test user management', () => {
 
   it('should render normal user list table', async () => {
     const request = userManagement.getUserList();
-    const { baseElement } = superRender(<UserManagement />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -56,7 +73,7 @@ describe('test user management', () => {
 
   it('should open model when click add button', async () => {
     const request = userManagement.getUserList();
-    const { baseElement } = superRender(<UserManagement />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -78,7 +95,7 @@ describe('test user management', () => {
   it('should send request when click refresh button', async () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const request = userManagement.getUserList();
-    const { baseElement } = superRender(<UserManagement />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(300));

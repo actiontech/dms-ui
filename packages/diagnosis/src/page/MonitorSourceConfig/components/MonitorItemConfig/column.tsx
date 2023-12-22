@@ -47,7 +47,8 @@ export const MonitorConfigColumns =
   };
 
 export const MonitorConfigActions = (
-  onCheckMonitorConfig: (record: IViewMonitorConfigReply | undefined) => void
+  onCheckMonitorConfig: (record: IViewMonitorConfigReply | undefined) => void,
+  hasCheckMetricsPermission: boolean
 ): ActiontechTableActionMeta<IViewMonitorConfigReply>[] => [
   {
     text: t('monitorSourceConfig.monitorConfig.checkMonitorConfig'),
@@ -58,6 +59,7 @@ export const MonitorConfigActions = (
           onCheckMonitorConfig(record);
         }
       };
-    }
+    },
+    permissions: () => hasCheckMetricsPermission
   }
 ];

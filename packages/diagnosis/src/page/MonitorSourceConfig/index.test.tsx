@@ -12,11 +12,11 @@ import { superRender } from '../../testUtils/customRender';
 import { ModalName } from '../../data/ModalName';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
+import { adminPermission } from '../../testUtils/mockApi/userManagement/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
-  useDispatch: jest.fn(),
-  useSelector: jest.fn()
+  useDispatch: jest.fn()
 }));
 
 describe('test monitor source config', () => {
@@ -35,8 +35,24 @@ describe('test monitor source config', () => {
     cleanup();
   });
 
+  const customRender = (data = adminPermission) => {
+    return superRender(<MonitorSourceConfig />, undefined, {
+      initStore: {
+        user: {
+          userScope: data
+        }
+      }
+    });
+  };
+
+  it('render without permission', async () => {
+    const { baseElement } = customRender([]);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('should render server monitor table for default', async () => {
-    const { baseElement } = superRender(<MonitorSourceConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('监控源配置')).toBeInTheDocument();
@@ -49,7 +65,7 @@ describe('test monitor source config', () => {
 
   it('should render normal server monitor table', async () => {
     const request = monitorSourceConfig.serverMonitorList();
-    const { baseElement } = superRender(<MonitorSourceConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -65,7 +81,7 @@ describe('test monitor source config', () => {
 
   it('should open model when click add button', async () => {
     const request = monitorSourceConfig.serverMonitorList();
-    const { baseElement } = superRender(<MonitorSourceConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -92,7 +108,7 @@ describe('test monitor source config', () => {
         data: searchServerMonitorListData
       })
     );
-    const { baseElement } = superRender(<MonitorSourceConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -133,7 +149,7 @@ describe('test monitor source config', () => {
         data: [{ ...databaseMonitorListData[0] }]
       })
     );
-    const { baseElement } = superRender(<MonitorSourceConfig />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(1000));
     fireEvent.click(screen.getByText('数据库监控源'));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -166,7 +182,7 @@ describe('test monitor source config', () => {
   it('should reset search input when click segment button', async () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const request = monitorSourceConfig.databaseMonitorList();
-    const { baseElement } = superRender(<MonitorSourceConfig />);
+    const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
     fireEvent.change(getBySelector('#actiontech-table-search-input'), {
