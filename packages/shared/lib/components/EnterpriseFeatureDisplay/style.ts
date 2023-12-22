@@ -119,6 +119,7 @@ export const VersionComparisonStyleWrapper = styled('div')`
 
   .version-item {
     width: 100%;
+
     & > .ant-space-item {
       width: 100%;
       display: flex;
