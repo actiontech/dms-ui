@@ -89,3 +89,73 @@ export const CEIndexStyleWrapper = styled('section')`
     }
   }
 `;
+
+export const VersionComparisonStyleWrapper = styled('div')`
+  width: 100%;
+
+  & .ant-tag.ant-tag-geekblue.basic-tag-wrapper {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .content-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .ant-card {
+      width: 32%;
+    }
+  }
+
+  & .ant-card.ant-card-hoverable .ant-card-body {
+    padding: 24px 0;
+  }
+
+  & .ant-row .ant-col {
+    padding-top: 0;
+    height: 100%;
+  }
+
+  .version-item {
+    width: 100%;
+    & > .ant-space-item {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .ant-divider {
+        margin: 0;
+      }
+
+      &:last-child {
+        padding: 0 12px;
+      }
+    }
+
+    .contact-link {
+      text-decoration: underline;
+    }
+
+    h5.ant-typography {
+      margin: 0;
+    }
+
+    .apply-button {
+      width: 80%;
+    }
+  }
+
+  .content-list .ant-typography {
+    padding-left: 18px;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: '•';
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+      position: absolute;
+      left: 0;
+    }
+  }
+`;
