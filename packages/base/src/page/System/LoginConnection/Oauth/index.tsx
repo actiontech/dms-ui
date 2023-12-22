@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, Space, Spin, Tag } from 'antd';
+import { Form, Space, Spin, Tag, Typography } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   BasicButton,
@@ -265,7 +265,11 @@ const Oauth = () => {
       <Spin spinning={getConfigLoading}>
         <EnterpriseFeatureDisplay
           featureName={t('dmsSystem.oauth.featureName')}
-          eeFeatureDescription={t('dmsSystem.oauth.ceTips')}
+          eeFeatureDescription={
+            <Typography.Paragraph className="paragraph">
+              {t('dmsSystem.oauth.ceTips')}
+            </Typography.Paragraph>
+          }
           isConfigPage={true}
         >
           <>

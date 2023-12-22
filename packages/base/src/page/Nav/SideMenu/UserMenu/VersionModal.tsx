@@ -9,6 +9,7 @@ import {
   VersionModalStyleWrapper
 } from '../style';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
+import VersionComparison from '@actiontech/shared/lib/components/EnterpriseFeatureDisplay/components/VersionComparison';
 
 const VersionModal: React.FC<{
   open: boolean;
@@ -52,8 +53,17 @@ const VersionModal: React.FC<{
     return `${versionArr[0]} ${versionArr[1].slice(0, 10)}`;
   };
 
+  const getIsEE = () => {
+    // #if [ee && !demo]
+    return true;
+    // #else
+    return false;
+    // #endif
+  };
+
   return (
     <VersionModalStyleWrapper
+      isEE={getIsEE()}
       size="large"
       className="version-modal"
       open={open}
@@ -98,6 +108,7 @@ const VersionModal: React.FC<{
           </Typography.Title>
           <Typography.Text>{t('dmsSystem.version.dms_desc')}</Typography.Text>
         </Space>
+        {/* #if [ee && !demo] */}
         <Space align="start" direction="vertical">
           <Typography.Title level={5}>
             {t('dmsSystem.version.productFeatures')}
@@ -106,6 +117,9 @@ const VersionModal: React.FC<{
             {t('dmsSystem.version.dms_feature')}
           </VersionModalDescribeTextStyleWrapper>
         </Space>
+        {/* #else */}
+        <VersionComparison />
+        {/* #endif */}
       </Space>
     </VersionModalStyleWrapper>
   );

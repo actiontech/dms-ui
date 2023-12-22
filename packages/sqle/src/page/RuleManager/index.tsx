@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Col, Row, Space, Typography, Image } from 'antd';
+import { Col, Row, Space, Typography } from 'antd';
 import {
   BasicButton,
   BasicSegmented,
@@ -56,17 +56,9 @@ const RuleManager: React.FC = () => {
           <EnterpriseFeatureDisplay
             featureName={t('customRule.title')}
             eeFeatureDescription={
-              <Space direction="vertical">
-                <Typography.Paragraph className="paragraph">
-                  {t('customRule.ceTips')}
-                </Typography.Paragraph>
-                <Image
-                  width="100%"
-                  className="ce_img"
-                  alt="white_list_preview"
-                  src="/static/image/ce_custom_rule_preview.png"
-                />
-              </Space>
+              <Typography.Paragraph className="paragraph">
+                {t('customRule.ceTips')}
+              </Typography.Paragraph>
             }
           >
             <CustomRuleList />

@@ -239,7 +239,11 @@ const LarkAuditSetting: React.FC = () => {
 
         <EnterpriseFeatureDisplay
           featureName={t('dmsSystem.title.larkAudit')}
-          eeFeatureDescription={t('dmsSystem.larkAudit.ceTips')}
+          eeFeatureDescription={
+            <Typography.Paragraph className="paragraph">
+              {t('dmsSystem.larkAudit.ceTips')}
+            </Typography.Paragraph>
+          }
           isConfigPage={true}
         >
           <>

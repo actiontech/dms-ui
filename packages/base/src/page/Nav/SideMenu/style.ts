@@ -36,9 +36,9 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
   }
 `;
 
-export const VersionModalStyleWrapper = styled(BasicModal)`
+export const VersionModalStyleWrapper = styled(BasicModal)<{ isEE: boolean }>`
   &.version-modal {
-    width: 720px !important;
+    width: ${({ isEE }) => (isEE ? '720px' : '960px')} !important;
   }
 `;
 
@@ -55,4 +55,6 @@ export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
 export const CompanyNoticeIconStyleWrapper = styled(NotificationFilled)`
   color: ${({ theme }) =>
     theme.sharedTheme.basic.colorFontGrayByWhite} !important;
+  width: 16px;
+  height: 16px;
 `;
