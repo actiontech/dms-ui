@@ -5,11 +5,12 @@ import { VersionComparisonStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
 import BasicTag from '../../BasicTag';
 import { versionList } from '../index.data';
+import { I18nKey } from '../../../locale';
 
 const VersionComparison: React.FC = () => {
   const { t } = useTranslation();
 
-  const renderHeader = (title: string, buttonLink: string, aLink: string) => {
+  const renderHeader = (title: I18nKey, buttonLink: string, aLink: string) => {
     return (
       <>
         <Typography.Title level={5}>{t(title)}</Typography.Title>

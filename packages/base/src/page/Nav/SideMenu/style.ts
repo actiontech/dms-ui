@@ -36,16 +36,8 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
   }
 `;
 
-export const VersionModalStyleWrapper = styled(BasicModal)<{ isEE: boolean }>`
-  &.version-modal {
-    width: ${({ isEE }) => (isEE ? '720px' : '960px')} !important;
-  }
-`;
-
 export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
   &.company-notice-modal {
-    width: 720px !important;
-
     .ant-modal-body {
       max-height: 600px;
     }
