@@ -21,7 +21,7 @@ exports[`test ce EnterpriseFeatureDisplay should match snapshot 1`] = `
           </h5>
           eeFeatureDescription
           <div
-            class="full-width-element css-vmcbbf"
+            class="full-width-element css-g2rnzt"
           >
             <span
               class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-large-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
@@ -844,7 +844,7 @@ exports[`test ce EnterpriseFeatureDisplay should match snapshot when isConfigPag
       >
         eeFeatureDescription
         <div
-          class="full-width-element css-vmcbbf"
+          class="full-width-element css-g2rnzt"
         >
           <span
             class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-large-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
