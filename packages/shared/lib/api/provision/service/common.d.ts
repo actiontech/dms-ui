@@ -4,7 +4,6 @@ import {
   DelDataObjectSourceDeleteModEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
-  IPluginDBServiceDBTypeEnum,
   ListAuthorizationStatusEnum,
   ListServiceDbTypeEnum,
   ListServiceTypeEnum,
@@ -14,6 +13,7 @@ import {
   OpPermissionItemRangeTypeEnum,
   OperationInfoDataObjectTypesEnum,
   OperationInfoDbTypeEnum,
+  SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
   ServiceDbTypeEnum,
   SyncRuleFieldNameEnum,
   SyncRuleRuleNameEnum
@@ -99,6 +99,16 @@ export interface IAddServiceReply {
   };
 
   message?: string;
+}
+
+export interface IAdditionalParam {
+  description?: string;
+
+  name?: string;
+
+  type?: string;
+
+  value?: string;
 }
 
 export interface ICopyDataPermissionTemplate {
@@ -330,7 +340,7 @@ export interface IGetUsersFromDBServiceReply {
 export interface IIPluginDBService {
   Business?: string;
 
-  DBType?: IPluginDBServiceDBTypeEnum;
+  DBType?: string;
 
   Host?: string;
 
@@ -473,6 +483,46 @@ export interface IListDBAccountReply {
   code?: number;
 
   data?: IListDBAccount[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListDBService {
+  additional_params?: IAdditionalParam[];
+
+  business?: string;
+
+  db_type?: string;
+
+  desc?: string;
+
+  host?: string;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  password?: string;
+
+  port?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  user?: string;
+}
+
+export interface IListDBServiceReply {
+  code?: number;
+
+  data?: IListDBService[];
 
   message?: string;
 
@@ -743,6 +793,12 @@ export interface IListUserReply {
   total_nums?: number;
 }
 
+export interface IMaintenanceTime {
+  maintenance_start_time?: ITime;
+
+  maintenance_stop_time?: ITime;
+}
+
 export interface INotification {
   notification_body?: string;
 
@@ -811,6 +867,24 @@ export interface IRegisterDMSProxyTargetReply {
   message?: string;
 }
 
+export interface ISQLEConfig {
+  rule_template_id?: string;
+
+  rule_template_name?: string;
+
+  sql_query_config?: ISQLQueryConfig;
+}
+
+export interface ISQLQueryConfig {
+  allow_query_when_less_than_audit_level?: SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum;
+
+  audit_enabled?: boolean;
+
+  max_pre_query_rows?: number;
+
+  query_timeout_second?: number;
+}
+
 export interface IService {
   address: string;
 
@@ -845,6 +919,12 @@ export interface ITable {
   name?: string;
 
   uid?: string;
+}
+
+export interface ITime {
+  hour?: number;
+
+  minute?: number;
 }
 
 export interface IUidWithName {
