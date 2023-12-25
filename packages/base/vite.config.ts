@@ -26,7 +26,11 @@ export default defineConfig((config) => {
         env: { ee: isEE, ce: isCE, sqle: isSQLE, demo: isDemo }
       }),
       eslint({
-        exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
+        exclude: [
+          '**/node_modules/**',
+          '**/packages/**/lib/api/**',
+          '!**/packages/**/lib/api/common/**'
+        ]
       }),
       react(),
       createHtmlPlugin({
