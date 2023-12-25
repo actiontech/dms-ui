@@ -21,6 +21,7 @@ type UserReduxState = {
   managementPermissions: IUidWithName[];
   uid: string;
   useInfoFetched: boolean;
+  bindProjectsFetched?: boolean;
 };
 
 const initialState: UserReduxState = {
@@ -34,7 +35,8 @@ const initialState: UserReduxState = {
   bindProjects: [],
   managementPermissions: [],
   uid: LocalStorageWrapper.getOrDefault(StorageKey.USER_UID, ''),
-  useInfoFetched: false
+  useInfoFetched: false,
+  bindProjectsFetched: false
 };
 
 const user = createSlice({
@@ -89,6 +91,12 @@ const user = createSlice({
     },
     updateUserInfoFetchStatus: (state, { payload }: PayloadAction<boolean>) => {
       state.useInfoFetched = payload;
+    },
+    updateBindProjectsFetchStatus: (
+      state,
+      { payload }: PayloadAction<boolean>
+    ) => {
+      state.bindProjectsFetched = payload;
     }
   }
 });
@@ -100,7 +108,8 @@ export const {
   updateBindProjects,
   updateManagementPermissions,
   updateUserUid,
-  updateUserInfoFetchStatus
+  updateUserInfoFetchStatus,
+  updateBindProjectsFetchStatus
 } = user.actions;
 
 export default user.reducer;

@@ -29,6 +29,7 @@ import { ModalName } from '../../../data/ModalName';
 
 const ProjectList: React.FC = () => {
   const { t } = useTranslation();
+
   const [messageApi, contextHolder] = message.useMessage();
 
   const dispatch = useDispatch();
@@ -147,7 +148,9 @@ const ProjectList: React.FC = () => {
     [allowOperateProject, dispatch]
   );
 
-  const columns = useMemo(() => ProjectListTableColumnFactory(), []);
+  const columns = useMemo(() => {
+    return ProjectListTableColumnFactory();
+  }, []);
 
   const actions = useMemo(() => {
     return ProjectListActions(

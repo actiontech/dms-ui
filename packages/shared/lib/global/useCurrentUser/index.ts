@@ -13,7 +13,8 @@ const useCurrentUser = () => {
     username,
     theme,
     useInfoFetched,
-    uid
+    uid,
+    bindProjectsFetched
   } = useSelector((state: IReduxState) => {
     return {
       username: state.user.username,
@@ -22,7 +23,8 @@ const useCurrentUser = () => {
       managementPermissions: state.user.managementPermissions,
       theme: state.user.theme,
       useInfoFetched: state.user.useInfoFetched,
-      uid: state.user.uid
+      uid: state.user.uid,
+      bindProjectsFetched: state.user.bindProjectsFetched
     };
   });
 
@@ -51,7 +53,8 @@ const useCurrentUser = () => {
     theme,
     updateTheme,
     useInfoFetched,
-    uid
+    uid,
+    bindProjectsFetched
   };
 };
 export default useCurrentUser;

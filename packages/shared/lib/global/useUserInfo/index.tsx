@@ -9,7 +9,8 @@ import {
   updateToken,
   updateUser,
   updateUserInfoFetchStatus,
-  updateUserUid
+  updateUserUid,
+  updateBindProjectsFetchStatus
 } from '../../../../base/src/store/user';
 import { ResponseCode, SystemRole } from '../../enum';
 import dms from '../../api/base/service/dms';
@@ -50,6 +51,7 @@ const useUserInfo = () => {
       })
     );
     dispatch(updateUserInfoFetchStatus(false));
+    dispatch(updateBindProjectsFetchStatus(false));
   }, [dispatch]);
 
   const {
@@ -84,6 +86,7 @@ const useUserInfo = () => {
           );
 
           dispatch(updateUserInfoFetchStatus(true));
+          dispatch(updateBindProjectsFetchStatus(true));
         } else {
           clearUserInfo();
           navigate(

@@ -20,7 +20,10 @@ import { IBindProject } from './ProjectSelector/index.type';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { useDispatch } from 'react-redux';
-import { updateBindProjects } from '../../../store/user';
+import {
+  updateBindProjects,
+  updateBindProjectsFetchStatus
+} from '../../../store/user';
 
 const SideMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -42,6 +45,9 @@ const SideMenu: React.FC = () => {
         .then((res) => res?.data?.data ?? []),
     {
       refreshDeps: [currentProjectID],
+      onBefore: () => {
+        dispatch(updateBindProjectsFetchStatus(false));
+      },
       onSuccess: (res) => {
         const newBindProjects = bindProjects.map((item) => {
           const archived =
@@ -56,6 +62,7 @@ const SideMenu: React.FC = () => {
             bindProjects: newBindProjects
           })
         );
+        dispatch(updateBindProjectsFetchStatus(true));
       }
     }
   );
