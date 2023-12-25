@@ -105,7 +105,6 @@ const AddAuth: React.FC = () => {
 
   const onSave = () => {
     form.validateFields().then((values) => {
-      console.log('222222222', values);
       setParams({
         data_permission_template_uid: values.data_permission_template_uid,
         db_account: {
