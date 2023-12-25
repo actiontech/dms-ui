@@ -3,4 +3,9 @@ const mockEditor = (props) => {
   return <input {...otherProps} />;
 };
 
+export const loader = {
+  config: () => {},
+  init: async () => {}
+};
+
 export default mockEditor;
