@@ -2,8 +2,8 @@ import { renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/c
 import { act } from '@testing-library/react';
 import useGetUserScope from '.';
 import { useDispatch } from 'react-redux';
-import user from '../../testUtils/mockApi/user';
-import { userScopeData } from '../../testUtils/mockApi/user/data';
+import user from '../../testUtils/mockApi/userManagement';
+import { userScopeData } from '../../testUtils/mockApi/userManagement/data';
 
 jest.mock('react-redux', () => {
   return {

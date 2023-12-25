@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { act } from '@testing-library/react';
 import App from './App';
-import user from './testUtils/mockApi/user';
+import user from './testUtils/mockApi/userManagement';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
-import { userScopeData } from './testUtils/mockApi/user/data';
+import { userScopeData } from './testUtils/mockApi/userManagement/data';
 import monitorSourceConfig from './testUtils/mockApi/monitorSourceConfig';
 import { superRender } from './testUtils/customRender';
 
