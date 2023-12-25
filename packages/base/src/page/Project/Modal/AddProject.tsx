@@ -53,12 +53,11 @@ const AddProject: React.FC = () => {
       .AddProject(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.open({
-            type: 'success',
-            content: t('dmsProject.createProject.createSuccessTips', {
+          messageApi.success(
+            t('dmsProject.createProject.createSuccessTips', {
               name: params.project?.name ?? ''
             })
-          });
+          );
           closeModal();
           EventEmitter.emit(EmitterKey.DMS_Refresh_Project_List);
         }

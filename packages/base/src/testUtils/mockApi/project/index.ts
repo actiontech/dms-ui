@@ -2,7 +2,7 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { projectList } from './data';
+import { mockProjectList } from './data';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 class MockProjectApi implements MockSpyApy {
@@ -19,8 +19,8 @@ class MockProjectApi implements MockSpyApy {
     const spy = jest.spyOn(dms, 'ListProjects');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: projectList.length,
-        projects: projectList
+        total_nums: mockProjectList.length,
+        data: mockProjectList
       })
     );
     return spy;
@@ -30,7 +30,9 @@ class MockProjectApi implements MockSpyApy {
     const spy = jest.spyOn(dms, 'AddProject');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        uid: '123'
+        data: {
+          uid: '123'
+        }
       })
     );
     return spy;
@@ -52,7 +54,9 @@ class MockProjectApi implements MockSpyApy {
     const spy = jest.spyOn(dms, 'ArchiveProject');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        uid: '123'
+        data: {
+          uid: '123'
+        }
       })
     );
     return spy;
@@ -62,7 +66,9 @@ class MockProjectApi implements MockSpyApy {
     const spy = jest.spyOn(dms, 'UnarchiveProject');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        uid: '123'
+        data: {
+          uid: '123'
+        }
       })
     );
     return spy;
