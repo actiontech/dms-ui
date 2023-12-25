@@ -103,8 +103,9 @@ const AddAuth: React.FC = () => {
     }
   };
 
-  const onSave = () =>
+  const onSave = () => {
     form.validateFields().then((values) => {
+      console.log('222222222', values);
       setParams({
         data_permission_template_uid: values.data_permission_template_uid,
         db_account: {
@@ -118,6 +119,7 @@ const AddAuth: React.FC = () => {
         purpose: values.purpose
       });
     });
+  };
 
   const onSuccess = () => {
     setParams(undefined);
@@ -149,6 +151,7 @@ const AddAuth: React.FC = () => {
         'username',
         'hostname'
       ]);
+
     if (!data_permission_template_uid || !username || !hostname) {
       return Promise.resolve();
     }
