@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
-import { UserManagementStyleWrapper } from './style';
 import { ModalName } from '../../data/ModalName';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
@@ -89,7 +88,7 @@ const UserManagement: React.FC = () => {
   }, [updateSegmentedPageData, t]);
 
   return (
-    <UserManagementStyleWrapper>
+    <section>
       <PageHeader
         title={
           <Space size={12}>
@@ -100,7 +99,7 @@ const UserManagement: React.FC = () => {
         extra={renderExtraButton()}
       />
       <BasicSegmentedPage {...otherProps} onChange={onChangeListType} />
-    </UserManagementStyleWrapper>
+    </section>
   );
 };
 

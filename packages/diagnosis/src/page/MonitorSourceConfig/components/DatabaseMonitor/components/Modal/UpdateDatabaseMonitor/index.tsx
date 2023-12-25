@@ -63,7 +63,7 @@ const UpdateDatabaseMonitor = () => {
             )
           );
           closeModal();
-          EventEmitter.emit(EmitterKey.Refresh_Database_Monitor);
+          EventEmitter.emit(EmitterKey.Refresh_Monitor_Source_Config);
         }
       })
       .finally(() => {
