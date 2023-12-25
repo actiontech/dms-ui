@@ -20,6 +20,607 @@ exports[`test ce EnterpriseFeatureDisplay should match snapshot 1`] = `
             功能说明
           </h5>
           eeFeatureDescription
+          <div
+            class="full-width-element css-g2rnzt"
+          >
+            <span
+              class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-large-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+            >
+              当前版本
+              : 
+              SQLE
+              社区版
+            </span>
+            <div
+              class="content-wrap"
+            >
+              <div
+                class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        社区版
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <a
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                        href="http://demo.sqle.actionsky.com/"
+                        target="_blank"
+                      >
+                        <span>
+                          开始试用
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <a
+                        class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                        href="https://actiontech.github.io/sqle-docs/docs/support/community-support"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        联系我们
+                      </a>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            MySQL插件
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            100+规则
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQL快捷审核
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            创建工单时支持单数据源审核
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            支持库表元数据、MyBatis等扫描任务
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            单一项目
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            自定义审批流程模板
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            自定义审核规则模板
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            钉钉审批
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            邮件、企业微信、飞书推送告警
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            免费
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        企业体验版
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <a
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                        href="https://jinshuju.net/f/daLFaG"
+                        target="_blank"
+                      >
+                        <span>
+                          开始试用
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <a
+                        class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                        href="https://actiontech.github.io/sqle-docs/docs/support/community-support"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        联系我们
+                      </a>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            全量数据库插件
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            每种插件15+规则
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQL快捷审核
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            创建工单时支持多数据源审核
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            白名单审核
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQL下钻分析
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            在社区版基础上，支持慢日志扫描
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQL管控
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            多项目
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            自定义审批流程模板
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            自定义审核规则模板
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            钉钉、飞书审批
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            在社区版基础上，支持webhook告警
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            免费
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        企业版
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <a
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                        href="http://demo.sqle.actionsky.com:8889/"
+                        target="_blank"
+                      >
+                        <span>
+                          开始试用
+                        </span>
+                      </a>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 16px;"
+                    >
+                      <a
+                        class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                        href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        联系我们
+                      </a>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            全量数据库插件
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            900+规则
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQL快捷审核
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            创建工单时支持多数据源审核
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            白名单审核
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQL下钻分析
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            在社区版基础上，支持慢日志扫描
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQL管控
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            多项目
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            自定义审批流程模板
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            自定义审核规则模板
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            钉钉、飞书审批
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            在社区版基础上，支持webhook告警
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            付费
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -242,6 +843,607 @@ exports[`test ce EnterpriseFeatureDisplay should match snapshot when isConfigPag
         class="left"
       >
         eeFeatureDescription
+        <div
+          class="full-width-element css-g2rnzt"
+        >
+          <span
+            class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-large-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+          >
+            当前版本
+            : 
+            SQLE
+            社区版
+          </span>
+          <div
+            class="content-wrap"
+          >
+            <div
+              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <h5
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      社区版
+                    </h5>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <div
+                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                      role="separator"
+                    />
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <a
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                      href="http://demo.sqle.actionsky.com/"
+                      target="_blank"
+                    >
+                      <span>
+                        开始试用
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <a
+                      class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                      href="https://actiontech.github.io/sqle-docs/docs/support/community-support"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      联系我们
+                    </a>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          MySQL插件
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          100+规则
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          SQL快捷审核
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          创建工单时支持单数据源审核
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          支持库表元数据、MyBatis等扫描任务
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          单一项目
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          自定义审批流程模板
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          自定义审核规则模板
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          钉钉审批
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          邮件、企业微信、飞书推送告警
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          免费
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <h5
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      企业体验版
+                    </h5>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <div
+                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                      role="separator"
+                    />
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <a
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                      href="https://jinshuju.net/f/daLFaG"
+                      target="_blank"
+                    >
+                      <span>
+                        开始试用
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <a
+                      class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                      href="https://actiontech.github.io/sqle-docs/docs/support/community-support"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      联系我们
+                    </a>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          全量数据库插件
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          每种插件15+规则
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          SQL快捷审核
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          创建工单时支持多数据源审核
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          白名单审核
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          SQL下钻分析
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          在社区版基础上，支持慢日志扫描
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          SQL管控
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          多项目
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          自定义审批流程模板
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          自定义审核规则模板
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          钉钉、飞书审批
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          在社区版基础上，支持webhook告警
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          免费
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <h5
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      企业版
+                    </h5>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <div
+                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                      role="separator"
+                    />
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <a
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                      href="http://demo.sqle.actionsky.com:8889/"
+                      target="_blank"
+                    >
+                      <span>
+                        开始试用
+                      </span>
+                    </a>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <a
+                      class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                      href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      联系我们
+                    </a>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          全量数据库插件
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          900+规则
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          SQL快捷审核
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          创建工单时支持多数据源审核
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          白名单审核
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          SQL下钻分析
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          在社区版基础上，支持慢日志扫描
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          SQL管控
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          多项目
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          自定义审批流程模板
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          自定义审核规则模板
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          钉钉、飞书审批
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-bottom: 8px;"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          在社区版基础上，支持webhook告警
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        >
+                          付费
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div
         class="right"
