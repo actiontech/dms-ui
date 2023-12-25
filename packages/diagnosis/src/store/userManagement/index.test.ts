@@ -2,7 +2,8 @@ import userManagement, {
   initUserManagementModalStatus,
   updateUserManagementModalStatus,
   updateSelectUserData,
-  updateSelectRoleData
+  updateSelectRoleData,
+  updatePermissionRoleId
 } from '.';
 import {
   roleListData,
@@ -12,7 +13,8 @@ import {
 const initStore = {
   modalStatus: {},
   selectUserData: null,
-  selectRoleData: null
+  selectRoleData: null,
+  permissionRoleId: undefined
 };
 
 describe('store/userManagement', () => {
@@ -44,6 +46,10 @@ describe('store/userManagement', () => {
       payload: null,
       type: 'userManagement/updateSelectRoleData'
     });
+    expect(updatePermissionRoleId(undefined)).toEqual({
+      payload: undefined,
+      type: 'userManagement/updatePermissionRoleId'
+    });
   });
 
   test('should update select user data', async () => {
@@ -55,6 +61,7 @@ describe('store/userManagement', () => {
     expect(newStore).not.toBe(store);
     expect(newStore.selectUserData).toEqual(userListData[0]);
   });
+
   test('should update select role data', () => {
     const store = { ...initStore };
     const newStore = userManagement(
@@ -63,5 +70,12 @@ describe('store/userManagement', () => {
     );
     expect(newStore).not.toBe(store);
     expect(newStore.selectRoleData).toEqual(roleListData[0]);
+  });
+
+  test('should update permission role id', () => {
+    const store = { ...initStore };
+    const newStore = userManagement(store, updatePermissionRoleId('10000'));
+    expect(newStore).not.toBe(store);
+    expect(newStore.permissionRoleId).toEqual('10000');
   });
 });
