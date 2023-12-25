@@ -15,10 +15,6 @@ export default {
   operationPermissionName: '操作权限名称',
   desc: '描述',
   user: {
-    userName: '用户名',
-    roleName: '角色名',
-    confirmPassword: '确认密码',
-    isNeedUpdatePassword: '是否需要更新密码',
     createUser: {
       createSuccessTips: '添加用户 "{{name}}" 成功',
       confirmPasswordTips: '密码不一致，请重新输入！'
@@ -34,7 +30,6 @@ export default {
     }
   },
   role: {
-    roleDesc: '描述',
     operationPermission: '操作权限',
     createRole: {
       button: '添加角色',
