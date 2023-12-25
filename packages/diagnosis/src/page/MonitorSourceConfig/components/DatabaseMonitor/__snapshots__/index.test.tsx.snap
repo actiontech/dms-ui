@@ -692,7 +692,16 @@ exports[`test database monitor table should open model when click edit button 1`
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -760,7 +769,16 @@ exports[`test database monitor table should open model when click edit button 1`
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -828,7 +846,16 @@ exports[`test database monitor table should open model when click edit button 1`
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -1215,7 +1242,16 @@ exports[`test database monitor table should open query popover when click delete
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -1283,7 +1319,16 @@ exports[`test database monitor table should open query popover when click delete
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -1351,7 +1396,16 @@ exports[`test database monitor table should open query popover when click delete
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -1738,7 +1792,16 @@ exports[`test database monitor table should refresh table when change pagination
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -1806,7 +1869,16 @@ exports[`test database monitor table should refresh table when change pagination
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -1874,7 +1946,16 @@ exports[`test database monitor table should refresh table when change pagination
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -2261,7 +2342,16 @@ exports[`test database monitor table should render normal table 1`] = `
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -2329,7 +2419,16 @@ exports[`test database monitor table should render normal table 1`] = `
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >
@@ -2397,7 +2496,16 @@ exports[`test database monitor table should render normal table 1`] = `
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                             >

@@ -164,6 +164,11 @@ export const adminPermission = [
     scope_desc: '访问数据库实例列表'
   },
   {
+    group: '数据库',
+    scope_desc: '更新数据库用户名以及密码',
+    scope_name: 'db.UpdateDB'
+  },
+  {
     scope_name: 'monitor.ListConfigs',
     group: '监控',
     scope_desc: '访问监控源监控项配置列表'
