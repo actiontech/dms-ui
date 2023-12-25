@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ConfigProvider, Space, Typography, Image } from 'antd';
+import { ConfigProvider, Space, Typography } from 'antd';
 import { PageHeaderStyleWrapper } from '../../style/layout';
 import EEIndex from './EEIndex';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
@@ -46,18 +46,9 @@ const ReportStatistics = () => {
           <EnterpriseFeatureDisplay
             featureName={t('reportStatistics.title')}
             eeFeatureDescription={
-              <>
-                <Typography.Paragraph className="paragraph">
-                  {t('reportStatistics.ce.feature.desc')}
-                </Typography.Paragraph>
-                <Image
-                  width="100%"
-                  className="ce_img"
-                  style={{ borderRadius: '8px' }}
-                  alt="reportStatisticsPreview"
-                  src="/static/image/ce_report_statistics_img.png"
-                />
-              </>
+              <Typography.Paragraph className="paragraph">
+                {t('reportStatistics.ce.feature.desc')}
+              </Typography.Paragraph>
             }
           >
             <EEIndex />

@@ -16,14 +16,14 @@ export default defineConfig((config) => {
   const isCE = buildTypes.includes('ce') && buildTypes.includes('SQLE');
   const isEE = !isCE;
   const isSQLE = buildTypes.includes('SQLE');
-
+  const isDemo = buildTypes.includes('DEMO');
   const title = 'Action SQLE';
 
   return {
     plugins: [
       vitePluginConditionalCompile({
         include: [/^.+\/packages\/.+\/.+.(ts|tsx)$/],
-        env: { ee: isEE, ce: isCE, sqle: isSQLE }
+        env: { ee: isEE, ce: isCE, sqle: isSQLE, demo: isDemo }
       }),
       eslint({
         exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']

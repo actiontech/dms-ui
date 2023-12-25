@@ -1,4 +1,4 @@
-import { Typography, Image } from 'antd';
+import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { PageHeader } from '@actiontech/shared';
@@ -15,17 +15,9 @@ const SqlManagement = () => {
       <EnterpriseFeatureDisplay
         featureName={t('sqlManagement.pageTitle')}
         eeFeatureDescription={
-          <>
-            <Typography.Paragraph className="paragraph">
-              {t('sqlManagement.ceTips')}
-            </Typography.Paragraph>
-            <Image
-              width="100%"
-              className="ce_img"
-              alt="reportStatisticsPreview"
-              src="/static/image/ce_sql_management.png"
-            />
-          </>
+          <Typography.Paragraph className="paragraph">
+            {t('sqlManagement.ceTips')}
+          </Typography.Paragraph>
         }
       >
         <SQLEEIndex />
