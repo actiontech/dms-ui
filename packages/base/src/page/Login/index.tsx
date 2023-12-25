@@ -60,7 +60,6 @@ const Login = () => {
               token
             })
           );
-
           const params = new URLSearchParams(location.search);
           const target = params.get(DMS_REDIRECT_KEY_PARAMS_NAME);
           if (target) {
@@ -84,7 +83,9 @@ const Login = () => {
   };
 
   const { run: getOauth2Tips, data: oauthConfig } = useRequest(
-    () => dms.GetOauth2Tips().then((res) => res.data?.data ?? {}),
+    () => {
+      return dms.GetOauth2Tips().then((res) => res.data?.data ?? {});
+    },
     {
       manual: true
     }
@@ -96,6 +97,7 @@ const Login = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // #endif
+
   return (
     <LoginLayout>
       {contextHolder}

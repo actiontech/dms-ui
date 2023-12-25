@@ -33,6 +33,7 @@ module.exports = {
   collectCoverageFrom: [
     'packages/**/{src,lib}/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
     'packages/**/src/App.tsx',
+    'packages/shared/api/common/**',
     '!packages/provision/src/store/**/*.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
