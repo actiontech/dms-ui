@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { Space } from 'antd';
 import AuditActionIcon from '../../components/AuditActionIcon';
 import { t } from '~/locale';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
