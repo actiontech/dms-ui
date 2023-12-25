@@ -78,6 +78,7 @@ export default {
       username: '连接账号名',
       usernameExtra: '账号名检测通过',
       hostname: '连接域',
+      hostnameTips: 'MySQL/OB必填参数',
       password: '连接密码',
       confirm_password: '确认连接密码',
       password_error: '您输入的两个密码不匹配'
