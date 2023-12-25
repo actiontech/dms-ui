@@ -1,0 +1,545 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/page/project/detail/notFoundRecentlyProject should execute "navigate" when clicked cancel button 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-wrap"
+        style="display: none;"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          role="dialog"
+          style="width: 480px; display: none;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <span
+                  class="custom-icon custom-icon-close css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                选择项目
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="css-1ifzt15"
+              >
+                <span
+                  class="modal-tips"
+                >
+                   暂无最近打开的项目, 请选择一个项目!
+                </span>
+                <div
+                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                  searchinputref="[object Object]"
+                >
+                  <div
+                    class="ant-select-selector"
+                  >
+                    <span
+                      class="ant-select-selection-search"
+                    >
+                      <input
+                        aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                        aria-autocomplete="list"
+                        aria-controls="rc_select_TEST_OR_SSR_list"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-owns="rc_select_TEST_OR_SSR_list"
+                        autocomplete="off"
+                        class="ant-select-selection-search-input"
+                        id="rc_select_TEST_OR_SSR"
+                        readonly=""
+                        role="combobox"
+                        style="opacity: 0;"
+                        type="search"
+                        unselectable="on"
+                        value=""
+                      />
+                    </span>
+                    <span
+                      class="ant-select-selection-item"
+                      title=""
+                    />
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-arrow"
+                    style="user-select: none;"
+                    unselectable="on"
+                  >
+                    <span
+                      class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      取 消
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
+                  >
+                    <span>
+                      确 认
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`test base/page/project/detail/notFoundRecentlyProject should match snapshot 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 480px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <span
+                  class="custom-icon custom-icon-close css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                选择项目
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="css-1ifzt15"
+              >
+                <span
+                  class="modal-tips"
+                >
+                   暂无最近打开的项目, 请选择一个项目!
+                </span>
+                <div
+                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                  searchinputref="[object Object]"
+                >
+                  <div
+                    class="ant-select-selector"
+                  >
+                    <span
+                      class="ant-select-selection-search"
+                    >
+                      <input
+                        aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                        aria-autocomplete="list"
+                        aria-controls="rc_select_TEST_OR_SSR_list"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-owns="rc_select_TEST_OR_SSR_list"
+                        autocomplete="off"
+                        class="ant-select-selection-search-input"
+                        id="rc_select_TEST_OR_SSR"
+                        readonly=""
+                        role="combobox"
+                        style="opacity: 0;"
+                        type="search"
+                        unselectable="on"
+                        value=""
+                      />
+                    </span>
+                    <span
+                      class="ant-select-selection-item"
+                      title=""
+                    />
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-arrow"
+                    style="user-select: none;"
+                    unselectable="on"
+                  >
+                    <span
+                      class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      取 消
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
+                  >
+                    <span>
+                      确 认
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`test base/page/project/detail/notFoundRecentlyProject should match snapshot 2`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 480px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <span
+                  class="custom-icon custom-icon-close css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                选择项目
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="css-1ifzt15"
+              >
+                <span
+                  class="modal-tips"
+                >
+                   暂无最近打开的项目, 请选择一个项目!
+                </span>
+                <div
+                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                  searchinputref="[object Object]"
+                >
+                  <div
+                    class="ant-select-selector"
+                  >
+                    <span
+                      class="ant-select-selection-search"
+                    >
+                      <input
+                        aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                        aria-autocomplete="list"
+                        aria-controls="rc_select_TEST_OR_SSR_list"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-owns="rc_select_TEST_OR_SSR_list"
+                        autocomplete="off"
+                        class="ant-select-selection-search-input"
+                        id="rc_select_TEST_OR_SSR"
+                        readonly=""
+                        role="combobox"
+                        style="opacity: 0;"
+                        type="search"
+                        unselectable="on"
+                        value=""
+                      />
+                    </span>
+                    <span
+                      class="ant-select-selection-item"
+                      title=""
+                    />
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-arrow"
+                    style="user-select: none;"
+                    unselectable="on"
+                  >
+                    <span
+                      class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      取 消
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
+                  >
+                    <span>
+                      确 认
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
