@@ -1,11 +1,11 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import auth from '../../../testUtil/mockApi/auth';
-import AddAuth from '.';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+
+import AddAuth from '.';
 
 describe('page/Auth/AddAuth', () => {
   const customRender = () => {
