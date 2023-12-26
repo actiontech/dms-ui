@@ -4,10 +4,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { useDispatch } from 'react-redux';
 import { superRender } from '../../../../testUtils/customRender';
 import PermissionList from './';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { roleListData } from '../../../../testUtils/mockApi/userManagement/data';
 
 jest.mock('react-redux', () => ({
@@ -143,5 +140,16 @@ describe('diagnosis/test user table', () => {
       payload: undefined,
       type: 'userManagement/updatePermissionRoleId'
     });
+  });
+
+  it('render empty table when api return error', async () => {
+    const request = userManagement.getScopeList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({ code: 300, message: 'error' })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('ALL')).toBeInTheDocument();
   });
 });

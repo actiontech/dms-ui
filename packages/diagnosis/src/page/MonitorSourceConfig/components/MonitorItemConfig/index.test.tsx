@@ -133,4 +133,25 @@ describe('test monitor item config table', () => {
     expect(request).toBeCalled();
     expect(screen.getByText('共 2 条数据')).toBeInTheDocument();
   });
+
+  it('return error when no params in url', async () => {
+    jest.spyOn(Router, 'useParams').mockReturnValue({
+      name: 'first',
+      id: undefined,
+      type: undefined
+    });
+    const request = monitorSourceConfig.getMonitorRoutineList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({ code: 300, message: 'error' })
+    );
+    const { baseElement } = customRender();
+    expect(screen.getByText('返回监控源配置')).toBeInTheDocument();
+    expect(screen.getByText('first')).toBeInTheDocument();
+    expect(screen.getByText('监控源类型: 服务器监控')).toBeInTheDocument();
+    expect(getBySelector('.title a')).toHaveAttribute(
+      'href',
+      '/monitorSourceConfig'
+    );
+    expect(baseElement).toMatchSnapshot();
+  });
 });

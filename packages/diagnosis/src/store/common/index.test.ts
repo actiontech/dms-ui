@@ -59,4 +59,13 @@ describe('store/common', () => {
     expect(newStore2).not.toBe(store);
     expect(newStore2).toEqual({ modalStatus: { test: true } });
   });
+
+  test('should not modify status when set wrong modal name', () => {
+    const store = { modalStatus: { test: false } };
+    testStore.reducer(
+      store,
+      testStore.actions.updateModalStatus({ modalName: 'test1', status: true })
+    );
+    expect(store).toEqual({ modalStatus: { test: false } });
+  });
 });

@@ -139,7 +139,9 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
     <>
       {messageContextHolder}
       <ActiontechTable
-        rowKey="name"
+        rowKey={(record: IViewServerReply) => {
+          return `${record?.name ?? record?.id}`;
+        }}
         dataSource={serverMonitorList?.list ?? []}
         pagination={{
           total: serverMonitorList?.total ?? 0,

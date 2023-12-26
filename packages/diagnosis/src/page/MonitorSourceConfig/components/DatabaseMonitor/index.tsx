@@ -79,7 +79,7 @@ const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
         t(
           'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceLoading',
           {
-            name: record?.monitor_name
+            name: record?.monitor_name ?? ''
           }
         ),
         0

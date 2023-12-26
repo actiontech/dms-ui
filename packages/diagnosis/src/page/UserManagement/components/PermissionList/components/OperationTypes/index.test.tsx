@@ -30,5 +30,7 @@ describe('diagnosis/OperationTypes', () => {
     expect(screen.getByText('3')).toBeInTheDocument();
     fireEvent.click(screen.getByText('1'));
     expect(clickMock).toBeCalled();
+    fireEvent.click(screen.getByText('ALL'));
+    expect(clickMock).toBeCalled();
   });
 });

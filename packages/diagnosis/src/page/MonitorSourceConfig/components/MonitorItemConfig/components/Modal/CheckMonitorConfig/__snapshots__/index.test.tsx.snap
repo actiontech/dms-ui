@@ -1,5 +1,176 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test check monitor config modal render empty table when request return error 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw monitor-item-routine-modal basic-modal-wrapper css-15pdf7m"
+          role="dialog"
+          style="width: 960px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <span
+                  class="custom-icon custom-icon-close css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                监控指标
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              >
+                <div
+                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <div
+                      class="ant-table ant-table-empty ant-table-scroll-horizontal"
+                    >
+                      <div
+                        class="ant-table-container"
+                      >
+                        <div
+                          class="ant-table-content"
+                          style="overflow-x: auto; overflow-y: hidden;"
+                        >
+                          <table
+                            style="min-width: 100%; table-layout: auto;"
+                          >
+                            <colgroup />
+                            <thead
+                              class="ant-table-thead"
+                            >
+                              <tr>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  监控指标
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  描述
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ant-table-tbody"
+                            >
+                              <tr
+                                aria-hidden="true"
+                                class="ant-table-measure-row"
+                                style="height: 0px; font-size: 0px;"
+                              >
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ant-table-placeholder"
+                              >
+                                <td
+                                  class="ant-table-cell"
+                                  colspan="2"
+                                >
+                                  <div
+                                    class="ant-table-expanded-row-fixed"
+                                    style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                                  />
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`test check monitor config modal should close model when click close icon 1`] = `
 <body>
   <div />

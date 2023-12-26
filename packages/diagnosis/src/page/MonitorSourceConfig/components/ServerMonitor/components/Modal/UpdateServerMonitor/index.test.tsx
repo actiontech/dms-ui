@@ -8,6 +8,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -176,5 +177,58 @@ describe('test update server monitor', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
+  });
+
+  it('should send request failed', async () => {
+    const requestUpdateServerMonitor =
+      monitorSourceConfig.updateServerMonitor();
+    requestUpdateServerMonitor.mockImplementation(() =>
+      createSpySuccessResponse({ code: 300, message: 'error' })
+    );
+    const { baseElement } = superRender(<UpdateServerMonitor />);
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(baseElement).toMatchSnapshot();
+    // user
+    fireEvent.change(
+      getBySelector('.ant-form-item-control-input-content #user'),
+      {
+        target: {
+          value: 'test12'
+        }
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(
+      getBySelector('.ant-form-item-control-input-content #user')
+    ).toHaveValue('test12');
+    // password
+    fireEvent.change(
+      getBySelector('.ant-form-item-control-input-content #password'),
+      {
+        target: {
+          value: '123'
+        }
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(
+      getBySelector('.ant-form-item-control-input-content #password')
+    ).toHaveValue('123');
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    await fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestUpdateServerMonitor).toBeCalled();
+    expect(requestUpdateServerMonitor).toBeCalledWith({
+      server: {
+        host: '172.20.134.1',
+        name: 'test',
+        password: '123',
+        port: 22,
+        user: 'test12'
+      },
+      id: '1'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
   });
 });

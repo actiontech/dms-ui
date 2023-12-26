@@ -11,6 +11,7 @@ import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import { databaseMonitorListData } from '../../../../../../../testUtils/mockApi/monitorSourceConfig/data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -141,4 +142,52 @@ describe('test update database monitor', () => {
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
   }, 40000);
+
+  it('send update request failed', async () => {
+    const requestUpdateDatabaseMonitor =
+      monitorSourceConfig.updateDatabaseMonitor();
+    requestUpdateDatabaseMonitor.mockImplementation(() =>
+      createSpySuccessResponse({ code: 300, message: 'error' })
+    );
+    const { baseElement } = superRender(<UpdateDatabaseMonitor />);
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(baseElement).toMatchSnapshot();
+    // monitor name
+    expect(getAllBySelector('.basic-input-wrapper')?.[0]).toHaveValue('first');
+    // monitor type
+    expect(getAllBySelector('.ant-select-selection-item')?.[0]).toHaveAttribute(
+      'title',
+      'MySQL'
+    );
+    // host
+    expect(getAllBySelector('.basic-input-wrapper')?.[1]).toHaveValue(
+      '172.20.134.1'
+    );
+    // port
+    expect(getBySelector('.ant-input-number-input-wrap #port')).toHaveValue(
+      '22'
+    );
+    // username
+    expect(getBySelector('#username')).toHaveValue('root');
+    // password
+    expect(getBySelector('#password')).toHaveValue('');
+    fireEvent.change(getBySelector('#password'), {
+      target: {
+        value: '123456789'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#password')).toHaveValue('123456789');
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestUpdateDatabaseMonitor).toBeCalled();
+    expect(requestUpdateDatabaseMonitor).toBeCalledWith({
+      username: 'root',
+      password: '123456789',
+      id: '1731574922989273088'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+  });
 });

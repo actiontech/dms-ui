@@ -100,7 +100,7 @@ export const DatabaseMonitorActions = (
             title: t(
               'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSource',
               {
-                name: record?.monitor_name
+                name: record?.monitor_name ?? ''
               }
             ),
             onConfirm: () => {

@@ -8,6 +8,7 @@ import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import userManagement from '../../../../../../../testUtils/mockApi/userManagement';
 import { userListData } from '../../../../../../../testUtils/mockApi/userManagement/data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -145,5 +146,47 @@ describe('diagnosis/update user modal', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
+  });
+
+  it('should send request failed', async () => {
+    const updateUserRequest = userManagement.updateUser();
+    updateUserRequest.mockImplementation(() =>
+      createSpySuccessResponse({ code: 500, message: 'error' })
+    );
+    const getRoleRequest = userManagement.getRoleList();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getRoleRequest).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
+    // isNeedUpdatePassword
+    fireEvent.click(getBySelector('#isNeedUpdatePassword'));
+    await act(async () => jest.advanceTimersByTime(1000));
+    await expect(screen.getByText('密码')).toBeInTheDocument();
+    // password
+    fireEvent.change(getBySelector('#password'), {
+      target: {
+        value: '123'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#password')).toHaveValue('123');
+    // confirm password
+    fireEvent.change(getBySelector('#confirmPassword'), {
+      target: {
+        value: '123'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#confirmPassword')).toHaveValue('123');
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateUserRequest).toBeCalled();
+    expect(updateUserRequest).toBeCalledWith({
+      user_id: '1735126216567947264',
+      password: '123',
+      role_id: '10000'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
   });
 });

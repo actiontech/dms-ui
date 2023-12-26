@@ -73,7 +73,7 @@ const UserList: React.FC = () => {
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.success({
               content: t('userManagement.user.deleteUser.deleteSuccess', {
-                name: record?.username ?? ''
+                name: record?.username
               })
             });
             refresh();

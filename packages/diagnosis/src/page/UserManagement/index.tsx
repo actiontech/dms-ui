@@ -41,7 +41,7 @@ const UserManagement: React.FC = () => {
   const onChangeListType = (key: SegmentedValue) => {
     onChange(key);
     if (key !== UserManagementTypeEnum.permission_list) {
-      setPermissionRoleId('');
+      setPermissionRoleId(undefined);
     }
   };
 

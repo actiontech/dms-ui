@@ -35,6 +35,7 @@ const AddRole = () => {
     auth
       .V1CreateRole(params)
       .then((res) => {
+        console.log(res.data.code === ResponseCode.SUCCESS);
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('userManagement.role.createRole.createSuccessTips', {

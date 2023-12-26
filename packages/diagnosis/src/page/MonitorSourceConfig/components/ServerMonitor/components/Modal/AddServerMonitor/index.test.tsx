@@ -7,7 +7,10 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
-import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -86,7 +89,6 @@ describe('test add server monitor', () => {
 
   it('should send request when input correct fields info', async () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
-    const requestGetHostName = monitorSourceConfig.getServerMonitorHostName();
     const requestAddServerMonitor = monitorSourceConfig.addServerMonitor();
     const { baseElement } = superRender(<AddServerMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
@@ -210,6 +212,110 @@ describe('test add server monitor', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
+  }, 40000);
+
+  it('should send request failed', async () => {
+    const requestAddServerMonitor = monitorSourceConfig.addServerMonitor();
+    requestAddServerMonitor.mockImplementation(() =>
+      createSpySuccessResponse({ code: 300, message: 'error' })
+    );
+    const { baseElement } = superRender(<AddServerMonitor />);
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(baseElement).toMatchSnapshot();
+    // host
+    await act(async () => {
+      fireEvent.change(
+        getBySelector('.ant-form-item-control-input-content #host'),
+        {
+          target: {
+            value: '172.20.134.1'
+          }
+        }
+      );
+      await act(async () => jest.advanceTimersByTime(1000));
+    });
+    await act(async () => {
+      fireEvent.blur(
+        getBySelector('.ant-form-item-control-input-content #host')
+      );
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    expect(
+      getBySelector('.ant-form-item-control-input-content #host')
+    ).toHaveValue('172.20.134.1');
+    // ssh port
+    await act(async () => {
+      fireEvent.change(getBySelector('.ant-input-number-input-wrap #port'), {
+        target: {
+          value: 22
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(1000));
+    });
+    expect(getBySelector('.ant-input-number-input-wrap #port')).toHaveValue(
+      '22'
+    );
+    // ssh user
+    await act(async () => {
+      fireEvent.change(
+        getBySelector('.ant-form-item-control-input-content #user'),
+        {
+          target: {
+            value: 'root'
+          }
+        }
+      );
+      await act(async () => jest.advanceTimersByTime(1000));
+    });
+    expect(
+      getBySelector('.ant-form-item-control-input-content #user')
+    ).toHaveValue('root');
+    // ssh password
+    await act(async () => jest.advanceTimersByTime(1000));
+    await act(async () => {
+      fireEvent.change(
+        getBySelector('.ant-form-item-control-input-content #password'),
+        {
+          target: {
+            value: '123'
+          }
+        }
+      );
+      await act(async () => jest.advanceTimersByTime(1000));
+    });
+    expect(
+      getBySelector('.ant-form-item-control-input-content #password')
+    ).toHaveValue('123');
+    // monitor name
+    await act(async () => {
+      fireEvent.focus(
+        getBySelector('.ant-form-item-control-input-content #name')
+      );
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    await act(async () => jest.advanceTimersByTime(1000));
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(
+      getBySelector('.ant-form-item-control-input-content #name')
+    ).toHaveValue('host1');
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    await fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(requestAddServerMonitor).toBeCalled();
+    expect(requestAddServerMonitor).toBeCalledWith({
+      servers: [
+        {
+          host: '172.20.134.1',
+          name: 'host1',
+          password: '123',
+          port: 22,
+          user: 'root'
+        }
+      ]
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
   }, 40000);
 
   it('show error info when get host name failed', async () => {
