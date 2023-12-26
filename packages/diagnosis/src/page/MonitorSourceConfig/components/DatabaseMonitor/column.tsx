@@ -17,49 +17,58 @@ const databaseMonitorStatusDictionary = {
   [ViewDatabaseReplyStatusEnum.unknown]: t('monitorSourceConfig.status.unknown')
 };
 
-export const DatabaseMonitorColumns =
-  (): ActiontechTableColumn<IViewDatabaseReply> => [
-    {
-      dataIndex: 'monitor_name',
-      title: t('monitorSourceConfig.monitorSourceName'),
-      render: (name, record) => (
-        <Link
-          to={`/${record?.monitor_name}/${record?.id}/${MonitorSourceConfigTypeEnum.database_monitor}/monitorItemList`}
-        >
-          {name}
-        </Link>
-      )
-    },
-    {
-      dataIndex: 'host',
-      title: t('monitorSourceConfig.databaseMonitor.databaseIp')
-    },
-    {
-      dataIndex: 'port',
-      title: t('monitorSourceConfig.databaseMonitor.databasePort')
-    },
-    {
-      dataIndex: 'monitor_type',
-      title: t('monitorSourceConfig.databaseMonitor.databaseType')
-    },
-    {
-      dataIndex: 'created_at',
-      title: t('monitorSourceConfig.databaseMonitor.creationTime'),
-      render: (time) => formatTime(time, '-')
-    },
-    {
-      dataIndex: 'status',
-      title: t('common.status'),
-      render: (status: ViewDatabaseReplyStatusEnum) => {
-        if (!status) return '-';
-        return databaseMonitorStatusDictionary[status];
-      }
+export const DatabaseMonitorColumns = (
+  hasCheckMonitorPermission: boolean
+): ActiontechTableColumn<IViewDatabaseReply> => [
+  {
+    dataIndex: 'monitor_name',
+    title: t('monitorSourceConfig.monitorSourceName'),
+    render: (name, record) => (
+      <>
+        {hasCheckMonitorPermission ? (
+          <Link
+            to={`/${record?.monitor_name}/${record?.id}/${MonitorSourceConfigTypeEnum.database_monitor}/monitorItemList`}
+          >
+            {name}
+          </Link>
+        ) : (
+          name
+        )}
+      </>
+    )
+  },
+  {
+    dataIndex: 'host',
+    title: t('monitorSourceConfig.databaseMonitor.databaseIp')
+  },
+  {
+    dataIndex: 'port',
+    title: t('monitorSourceConfig.databaseMonitor.databasePort')
+  },
+  {
+    dataIndex: 'monitor_type',
+    title: t('monitorSourceConfig.databaseMonitor.databaseType')
+  },
+  {
+    dataIndex: 'created_at',
+    title: t('monitorSourceConfig.databaseMonitor.creationTime'),
+    render: (time) => formatTime(time, '-')
+  },
+  {
+    dataIndex: 'status',
+    title: t('common.status'),
+    render: (status: ViewDatabaseReplyStatusEnum) => {
+      if (!status) return '-';
+      return databaseMonitorStatusDictionary[status];
     }
-  ];
-// todo: add permission
+  }
+];
+
 export const DatabaseMonitorActions = (
   onEditDatabaseMonitor: (record?: IViewDatabaseReply) => void,
-  onDeleteDatabaseMonitor: (record?: IViewDatabaseReply) => void
+  onDeleteDatabaseMonitor: (record?: IViewDatabaseReply) => void,
+  hasEditPermission: boolean,
+  hasDeletePermission: boolean
 ): {
   buttons: ActiontechTableActionMeta<IViewDatabaseReply>[];
   width: number;
@@ -76,13 +85,15 @@ export const DatabaseMonitorActions = (
               onEditDatabaseMonitor(record);
             }
           };
-        }
+        },
+        permissions: () => hasEditPermission
       },
       {
         text: t('common.delete'),
         buttonProps: () => ({
           danger: true
         }),
+        permissions: () => hasDeletePermission,
         key: 'deleteDatabaseMonitor',
         confirm: (record) => {
           return {

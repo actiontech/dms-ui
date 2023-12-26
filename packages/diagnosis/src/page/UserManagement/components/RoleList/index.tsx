@@ -19,11 +19,15 @@ import { IViewRoleReply } from '../../../../api/common';
 import RoleModal from './components';
 import { SegmentedValue } from 'antd/es/segmented';
 import { UserManagementTypeEnum } from '../../index.type';
+import { AdminRolePermission } from '../../../../data/enum';
+import useCurrentUser from '../../../../hooks/useCurrentUser';
 
 const RoleList: React.FC<{ handleChange: (key: SegmentedValue) => void }> = ({
   handleChange
 }) => {
   const { t } = useTranslation();
+
+  const { hasActionPermission } = useCurrentUser();
 
   const { setModalStatus, setSelectRoleData, setPermissionRoleId } =
     useUserManagementRedux();
@@ -101,6 +105,12 @@ const RoleList: React.FC<{ handleChange: (key: SegmentedValue) => void }> = ({
     }
   };
 
+  const hasEditPermission = hasActionPermission(AdminRolePermission.UpdateRole);
+
+  const hasDeletePermission = hasActionPermission(
+    AdminRolePermission.DeleteRole
+  );
+
   return (
     <>
       {contextHolder}
@@ -114,7 +124,12 @@ const RoleList: React.FC<{ handleChange: (key: SegmentedValue) => void }> = ({
         columns={RoleListColumns(onCheckRolePermission)}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={RoleListActions(onEditRole, onDeleteRole)}
+        actions={RoleListActions(
+          onEditRole,
+          onDeleteRole,
+          hasEditPermission,
+          hasDeletePermission
+        )}
       />
       <RoleModal />
     </>

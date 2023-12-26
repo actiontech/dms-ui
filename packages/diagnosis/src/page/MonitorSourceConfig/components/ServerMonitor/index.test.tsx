@@ -6,14 +6,14 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { serverMonitorListData } from '../../../../testUtils/mockApi/monitorSourceConfig/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { superRender } from '../../../../testUtils/customRender';
 import { ModalName } from '../../../../data/ModalName';
 import ServerMonitor from './';
+import { adminPermission } from '../../../../testUtils/mockApi/userManagement/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
-  useSelector: jest.fn(),
   useDispatch: jest.fn()
 }));
 
@@ -25,13 +25,6 @@ describe('test server monitor table', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        monitorSourceConfig: {
-          modalStatus: {}
-        }
-      });
-    });
     monitorSourceConfig.mockAllApi();
   });
 
@@ -42,21 +35,40 @@ describe('test server monitor table', () => {
     cleanup();
   });
 
+  const customRender = (data = adminPermission) => {
+    return superRender(
+      <ServerMonitor setLoading={mockSetLoading} searchValue="" />,
+      undefined,
+      {
+        initStore: {
+          user: {
+            userScope: data
+          },
+          monitorSourceConfig: {
+            modalStatus: {}
+          }
+        }
+      }
+    );
+  };
+
+  it('render without permission', async () => {
+    const { baseElement } = customRender([]);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('should render table when api return null', async () => {
     const request = monitorSourceConfig.serverMonitorList();
     request.mockImplementation(() => createSpySuccessResponse([]));
-    const { baseElement } = superRender(
-      <ServerMonitor setLoading={mockSetLoading} searchValue="" />
-    );
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should render normal table', async () => {
     const request = monitorSourceConfig.serverMonitorList();
-    const { baseElement } = superRender(
-      <ServerMonitor setLoading={mockSetLoading} searchValue="" />
-    );
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -72,9 +84,7 @@ describe('test server monitor table', () => {
 
   it('should open model when click edit button', async () => {
     const request = monitorSourceConfig.serverMonitorList();
-    const { baseElement } = superRender(
-      <ServerMonitor setLoading={mockSetLoading} searchValue="" />
-    );
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -110,9 +120,7 @@ describe('test server monitor table', () => {
   it('should open query popover when click delete button', async () => {
     const request = monitorSourceConfig.serverMonitorList();
     const deleteRequest = monitorSourceConfig.deleteServerMonitor();
-    const { baseElement } = superRender(
-      <ServerMonitor setLoading={mockSetLoading} searchValue="" />
-    );
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -134,9 +142,7 @@ describe('test server monitor table', () => {
 
   it('should refresh table when change pagination info', async () => {
     const request = monitorSourceConfig.serverMonitorList();
-    const { baseElement } = superRender(
-      <ServerMonitor setLoading={mockSetLoading} searchValue="" />
-    );
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3300));

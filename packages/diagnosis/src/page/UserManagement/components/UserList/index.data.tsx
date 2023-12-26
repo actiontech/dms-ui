@@ -19,7 +19,9 @@ export const UserListColumns: ActiontechTableColumn<IViewUserReply> = [
 
 export const UserListActions = (
   onEditUser: (record?: IViewUserReply) => void,
-  onDeleteUser: (record?: IViewUserReply) => void
+  onDeleteUser: (record?: IViewUserReply) => void,
+  hasEditPermission: boolean,
+  hasDeletePermission: boolean
 ): ActiontechTableActionMeta<IViewUserReply>[] => {
   return [
     {
@@ -31,7 +33,8 @@ export const UserListActions = (
             onEditUser(record);
           }
         };
-      }
+      },
+      permissions: () => hasEditPermission
     },
     {
       text: t('common.delete'),
@@ -49,7 +52,8 @@ export const UserListActions = (
           }
         };
       },
-      permissions: (record) => record?.username !== AdminUser.admin
+      permissions: (record) =>
+        record?.username !== AdminUser.admin && hasDeletePermission
     }
   ];
 };

@@ -18,9 +18,13 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
 import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
+import useCurrentUser from '../../../../hooks/useCurrentUser';
+import { AdminRolePermission } from '../../../../data/enum';
 
 const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   const { t } = useTranslation();
+
+  const { hasActionPermission } = useCurrentUser();
 
   const { setModalStatus, setServerSelectData } = useMonitorSourceConfigRedux();
 
@@ -104,8 +108,19 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
   );
 
   const actions = useMemo(() => {
-    return ServerMonitorActions(onEditServerMonitor, onDeleteServerMonitor);
-  }, [onEditServerMonitor, onDeleteServerMonitor]);
+    const hasEditPermission = hasActionPermission(
+      AdminRolePermission.UpdateServer
+    );
+    const hasDeletePermission = hasActionPermission(
+      AdminRolePermission.UpdateServer
+    );
+    return ServerMonitorActions(
+      onEditServerMonitor,
+      onDeleteServerMonitor,
+      hasEditPermission,
+      hasDeletePermission
+    );
+  }, [onEditServerMonitor, onDeleteServerMonitor, hasActionPermission]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -115,6 +130,10 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
 
     return unsubscribe;
   }, [refresh]);
+
+  const hasCheckMonitorPermission = hasActionPermission(
+    AdminRolePermission.ListConfigs
+  );
 
   return (
     <>
@@ -127,7 +146,7 @@ const ServerMonitor: React.FC<IServerMonitorProps> = (props) => {
           current: pagination.page_index
         }}
         loading={loading}
-        columns={ServerMonitorColumns()}
+        columns={ServerMonitorColumns(hasCheckMonitorPermission)}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={actions}

@@ -17,9 +17,13 @@ import auth from '../../../../api/auth';
 import { IV1ListUsersParams } from '../../../../api/auth/index.d';
 import { IViewUserReply } from '../../../../api/common';
 import UserModal from './components/Modal';
+import useCurrentUser from '../../../../hooks/useCurrentUser';
+import { AdminRolePermission } from '../../../../data/enum';
 
 const UserList: React.FC = () => {
   const { t } = useTranslation();
+
+  const { hasActionPermission } = useCurrentUser();
 
   const { setModalStatus, setSelectUserData } = useUserManagementRedux();
 
@@ -89,6 +93,12 @@ const UserList: React.FC = () => {
     return unsubscribe;
   }, [refresh]);
 
+  const hasEditPermission = hasActionPermission(AdminRolePermission.UpdateUser);
+
+  const hasDeletePermission = hasActionPermission(
+    AdminRolePermission.DeleteUser
+  );
+
   return (
     <>
       {contextHolder}
@@ -102,7 +112,12 @@ const UserList: React.FC = () => {
         columns={UserListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={UserListActions(onEditUser, onDeleteUser)}
+        actions={UserListActions(
+          onEditUser,
+          onDeleteUser,
+          hasEditPermission,
+          hasDeletePermission
+        )}
       />
       <UserModal />
     </>

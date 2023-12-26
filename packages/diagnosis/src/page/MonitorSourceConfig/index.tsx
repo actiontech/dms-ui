@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { SegmentedValue } from 'antd/es/segmented';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { ModalName } from '../../data/ModalName';
 import EventEmitter from '../../utils/EventEmitter';
@@ -15,9 +15,13 @@ import {
   BasicSegmentedPage,
   useSegmentedPageParams
 } from '@actiontech/shared/lib/components/BasicSegmentedPage';
+import useCurrentUser from '../../hooks/useCurrentUser';
+import { AdminRolePermission } from '../../data/enum';
 
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();
+
+  const { hasActionPermission } = useCurrentUser();
 
   const [searchServerValue, setSearchServerValue] = useState<string>();
   const [searchDatabaseValue, setSearchDatabaseValue] = useState<string>();
@@ -50,15 +54,20 @@ const MonitorSourceConfig: React.FC = () => {
           />
         ),
         extraButton: (
-          <BasicButton
-            type="primary"
-            icon={<IconAdd />}
-            onClick={() => {
-              onClick(ModalName.Add_Server_Monitor);
-            }}
+          <EmptyBox
+            if={hasActionPermission(AdminRolePermission.AddServer)}
+            key={AdminRolePermission.AddServer}
           >
-            {t('monitorSourceConfig.serverMonitor.addServerMonitorSource')}
-          </BasicButton>
+            <BasicButton
+              type="primary"
+              icon={<IconAdd />}
+              onClick={() => {
+                onClick(ModalName.Add_Server_Monitor);
+              }}
+            >
+              {t('monitorSourceConfig.serverMonitor.addServerMonitorSource')}
+            </BasicButton>
+          </EmptyBox>
         )
       },
       {
@@ -71,19 +80,32 @@ const MonitorSourceConfig: React.FC = () => {
           />
         ),
         extraButton: (
-          <BasicButton
-            type="primary"
-            icon={<IconAdd />}
-            onClick={() => {
-              onClick(ModalName.Add_Database_Monitor);
-            }}
+          <EmptyBox
+            if={hasActionPermission(AdminRolePermission.AddDB)}
+            key={AdminRolePermission.AddDB}
           >
-            {t('monitorSourceConfig.databaseMonitor.addDatabaseMonitorSource')}
-          </BasicButton>
+            <BasicButton
+              type="primary"
+              icon={<IconAdd />}
+              onClick={() => {
+                onClick(ModalName.Add_Database_Monitor);
+              }}
+            >
+              {t(
+                'monitorSourceConfig.databaseMonitor.addDatabaseMonitorSource'
+              )}
+            </BasicButton>
+          </EmptyBox>
         )
       }
     ]);
-  }, [updateSegmentedPageData, t, searchServerValue, searchDatabaseValue]);
+  }, [
+    updateSegmentedPageData,
+    t,
+    searchServerValue,
+    searchDatabaseValue,
+    hasActionPermission
+  ]);
 
   const onChangeListType = (key: SegmentedValue) => {
     onChange(key as MonitorSourceConfigTypeEnum);

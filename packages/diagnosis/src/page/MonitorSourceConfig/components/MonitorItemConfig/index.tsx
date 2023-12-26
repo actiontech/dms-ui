@@ -24,9 +24,13 @@ import { useCallback, useMemo } from 'react';
 import { ModalName } from '../../../../data/ModalName';
 import MonitorConfigModal from './components/Modal';
 import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
+import useCurrentUser from '../../../../hooks/useCurrentUser';
+import { AdminRolePermission } from '../../../../data/enum';
 
 const MonitorConfig = () => {
   const { t } = useTranslation();
+
+  const { hasActionPermission } = useCurrentUser();
 
   const { setModalStatus, setMonitorConfigSelectData } =
     useMonitorSourceConfigRedux();
@@ -72,8 +76,14 @@ const MonitorConfig = () => {
   );
 
   const actions = useMemo(() => {
-    return MonitorConfigActions(onCheckMonitorConfig);
-  }, [onCheckMonitorConfig]);
+    const hasCheckMetricsPermission = hasActionPermission(
+      AdminRolePermission.ListMetrics
+    );
+    return MonitorConfigActions(
+      onCheckMonitorConfig,
+      hasCheckMetricsPermission
+    );
+  }, [onCheckMonitorConfig, hasActionPermission]);
 
   return (
     <>

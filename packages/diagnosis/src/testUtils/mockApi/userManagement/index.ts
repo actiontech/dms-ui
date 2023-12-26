@@ -3,7 +3,12 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import auth from '../../../api/auth';
-import { roleListData, userListData, userScopeData } from './data';
+import {
+  adminPermission,
+  roleListData,
+  userListData,
+  userScopeData
+} from './data';
 
 class MockUserApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -34,7 +39,7 @@ class MockUserApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'V1ListRoleScopes');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: userScopeData
+        data: adminPermission
       })
     );
     return spy;

@@ -8,7 +8,10 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { useDispatch } from 'react-redux';
 import { superRender } from '../../../../testUtils/customRender';
 import { ModalName } from '../../../../data/ModalName';
-import { roleListData } from '../../../../testUtils/mockApi/userManagement/data';
+import {
+  adminPermission,
+  roleListData
+} from '../../../../testUtils/mockApi/userManagement/data';
 import RoleList from './';
 
 jest.mock('react-redux', () => ({
@@ -32,15 +35,24 @@ describe('diagnosis/test role table', () => {
     cleanup();
   });
 
-  const customRender = () => {
+  const customRender = (data = adminPermission) => {
     return superRender(<RoleList handleChange={jest.fn()} />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {}
+        },
+        user: {
+          userScope: data
         }
       }
     });
   };
+
+  it('render without permission', async () => {
+    const { baseElement } = customRender([]);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
 
   it('should render table when api return null', async () => {
     const request = userManagement.getRoleList();

@@ -46,7 +46,9 @@ export const RoleListColumns = (
 
 export const RoleListActions = (
   onEditRole: (record?: IViewRoleReply) => void,
-  onDeleteRole: (record?: IViewRoleReply) => void
+  onDeleteRole: (record?: IViewRoleReply) => void,
+  hasEditPermission: boolean,
+  hasDeletePermission: boolean
 ): ActiontechTableActionMeta<IViewRoleReply>[] => {
   return [
     {
@@ -59,7 +61,8 @@ export const RoleListActions = (
           }
         };
       },
-      permissions: (record) => record?.role_name !== AdminRole.admin
+      permissions: (record) =>
+        record?.role_name !== AdminRole.admin && hasEditPermission
     },
     {
       text: t('common.delete'),
@@ -77,7 +80,8 @@ export const RoleListActions = (
           }
         };
       },
-      permissions: (record) => record?.role_name !== AdminRole.admin
+      permissions: (record) =>
+        record?.role_name !== AdminRole.admin && hasDeletePermission
     }
   ];
 };
