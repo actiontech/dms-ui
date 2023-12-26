@@ -1,5 +1,7 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { useNavigate } from 'react-router-dom';
+
 import auth from '../../../testUtil/mockApi/auth';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -7,13 +9,24 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 
 import AddAuth from '.';
 
+jest.mock('react-router-dom', () => {
+  const mockUrlParams = new Map();
+  mockUrlParams.set('id', '');
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: jest.fn()
+  };
+});
+
 describe('page/Auth/AddAuth', () => {
-  const customRender = () => {
-    return superRender(<AddAuth />, undefined, {});
+  const navigateSpy = jest.fn();
+  const customRender = (params = {}) => {
+    return superRender(<AddAuth />, undefined, params);
   };
 
   beforeEach(() => {
     mockUseCurrentProject();
+    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
     auth.mockAllApi();
   });
@@ -62,6 +75,40 @@ describe('page/Auth/AddAuth', () => {
       'value',
       ''
     );
+  });
+
+  it('render click return list btn', async () => {
+    customRender();
+    expect(screen.getByText('返回授权清单列表')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('返回授权清单列表'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(navigateSpy).toBeCalled();
+    expect(navigateSpy).toBeCalledWith(-1);
+  });
+
+  it('render location search has id', async () => {
+    const requestTemplateListFn = auth.listDataPermissionTemplate();
+    requestTemplateListFn.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            authorization_purpose: ['sed', 'ut occaecat culpa'],
+            create_user: 'dolor magna ipsum',
+            memo: 'consectetur commodo dolore',
+            uid: '69',
+            name: 'template-useSearchParams',
+            created_at: '1993-09-20 03:09:39'
+          }
+        ]
+      })
+    );
+    const { baseElement } = customRender({
+      routerProps: { initialEntries: ['?id=69'] }
+    });
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestTemplateListFn).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
   });
 
   describe('render VerifyDBAccount', () => {
