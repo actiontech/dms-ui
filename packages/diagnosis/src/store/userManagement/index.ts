@@ -7,12 +7,14 @@ type UserManagementState = {
   modalStatus: ModalStatus;
   selectUserData: IViewUserReply | null;
   selectRoleData: IViewRoleReply | null;
+  permissionRoleId: string | undefined;
 };
 
 const initialState: UserManagementState = {
   modalStatus: {},
   selectUserData: null,
-  selectRoleData: null
+  selectRoleData: null,
+  permissionRoleId: undefined
 };
 
 const userManagement = createSlice({
@@ -31,6 +33,12 @@ const userManagement = createSlice({
       { payload: selectRoleData }: PayloadAction<IViewRoleReply | null>
     ) => {
       state.selectRoleData = selectRoleData;
+    },
+    updatePermissionRoleId: (
+      state,
+      { payload: permissionRoleId }: PayloadAction<string | undefined>
+    ) => {
+      state.permissionRoleId = permissionRoleId;
     }
   }
 });
@@ -39,7 +47,8 @@ export const {
   initModalStatus: initUserManagementModalStatus,
   updateModalStatus: updateUserManagementModalStatus,
   updateSelectUserData,
-  updateSelectRoleData
+  updateSelectRoleData,
+  updatePermissionRoleId
 } = userManagement.actions;
 
 export default userManagement.reducer;

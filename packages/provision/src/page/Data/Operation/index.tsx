@@ -2,13 +2,6 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import {
-  ActiontechTable,
-  useTableFilterContainer,
-  TableFilterContainer,
-  TableToolbar,
-  useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import {
   OperationListTableFilterParamType,
   filterCustomProps,
   operationTableColumns
@@ -19,6 +12,15 @@ import { IOperationInfo } from '@actiontech/shared/lib/api/provision/service/com
 import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { Spin } from 'antd';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
+import { ConsolidatedListStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import {
+  ActiontechTable,
+  useTableFilterContainer,
+  TableFilterContainer,
+  TableToolbar,
+  useTableRequestParams
+} from '@actiontech/shared/lib/components/ActiontechTable';
+
 export interface IOperationData extends IOperationInfo {
   uid?: string;
   name?: string;
@@ -81,7 +83,7 @@ const Operation = () => {
     useTableFilterContainer(columns, updateTableFilterInfo);
 
   return (
-    <>
+    <ConsolidatedListStyleWrapper>
       <PageHeader title={t('operation.title')} />
       <Spin spinning={getOperationDataLoading}>
         <TableToolbar
@@ -119,7 +121,7 @@ const Operation = () => {
           onChange={tableChange}
         />
       </Spin>
-    </>
+    </ConsolidatedListStyleWrapper>
   );
 };
 

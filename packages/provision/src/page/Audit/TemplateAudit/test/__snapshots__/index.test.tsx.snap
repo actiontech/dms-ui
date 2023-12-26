@@ -224,7 +224,7 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -284,7 +284,7 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -314,7 +314,7 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -634,7 +634,7 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -670,7 +670,7 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -700,7 +700,7 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1021,7 +1021,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1057,7 +1057,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -1087,7 +1087,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1163,7 +1163,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         data-row-key="5"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -1234,7 +1234,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -1835,7 +1835,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1871,7 +1871,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -1901,7 +1901,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -1977,7 +1977,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         data-row-key="4"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:20:53
                         </td>
@@ -2062,7 +2062,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2092,7 +2092,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         data-row-key="5"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -2163,7 +2163,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2193,7 +2193,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         data-row-key="6"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:22:53
                         </td>
@@ -2268,7 +2268,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2679,7 +2679,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2715,7 +2715,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -2745,7 +2745,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -2821,7 +2821,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                         data-row-key="4"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:20:53
                         </td>
@@ -2906,7 +2906,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -2936,7 +2936,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                         data-row-key="5"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -3007,7 +3007,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3037,7 +3037,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                         data-row-key="6"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:22:53
                         </td>
@@ -3112,7 +3112,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -3523,7 +3523,7 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -3559,7 +3559,7 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -3589,7 +3589,7 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -3909,7 +3909,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -3945,7 +3945,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -3975,7 +3975,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -4051,7 +4051,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                         data-row-key="5"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -4122,7 +4122,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -4875,7 +4875,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -4911,7 +4911,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -4941,7 +4941,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -5017,7 +5017,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                         data-row-key="4"
                       >
                         <td
-                          class="ant-table-cell first-col ant-table-cell-row-hover"
+                          class="ant-table-cell ant-table-cell-row-hover"
                         >
                           2022-12-29 17:20:53
                         </td>
@@ -5102,7 +5102,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                           </div>
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first ant-table-cell-row-hover"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first ant-table-cell-row-hover"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -5546,7 +5546,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -5582,7 +5582,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -5612,7 +5612,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -5688,7 +5688,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                         data-row-key="4"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:20:53
                         </td>
@@ -5746,7 +5746,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                           />
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div
@@ -6157,7 +6157,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -6193,7 +6193,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                     >
                       <tr>
                         <th
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                           scope="col"
                         >
                           产生时间
@@ -6223,7 +6223,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                           操作类型
                         </th>
                         <th
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           scope="col"
                           style="position: sticky; right: 0px;"
                         >
@@ -6299,7 +6299,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                         data-row-key="5"
                       >
                         <td
-                          class="ant-table-cell first-col"
+                          class="ant-table-cell"
                         >
                           2022-12-29 17:21:53
                         </td>
@@ -6343,7 +6343,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                           />
                         </td>
                         <td
-                          class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                           style="position: sticky; right: 0px;"
                         >
                           <div

@@ -3,7 +3,7 @@ import { act } from '@testing-library/react';
 import useGetUserInfo from '.';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import user from '../../testUtils/mockApi/user';
+import user from '../../testUtils/mockApi/userManagement';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {

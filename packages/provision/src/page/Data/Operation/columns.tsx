@@ -31,6 +31,10 @@ const dbTypeOptions = [
   {
     value: AuthListDataOperationSetsFilterByDbTypeEnum.OceanBaseMySQL,
     label: 'OceanBaseMySQL'
+  },
+  {
+    value: AuthListDataOperationSetsFilterByDbTypeEnum.DB2,
+    label: 'DB2'
   }
 ];
 
@@ -51,7 +55,11 @@ export const operationTableColumns = (): ActiontechTableColumn<
       onCell: (record) => ({
         rowSpan: record.rowSpan
       }),
-      render: (name: string) => <Typography.Text>{name}</Typography.Text>
+      render: (name: string) => (
+        <Typography.Text className="consolidated-column">
+          {name}
+        </Typography.Text>
+      )
     },
     {
       dataIndex: 'db_type',

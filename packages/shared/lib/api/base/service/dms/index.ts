@@ -19,6 +19,11 @@ import {
   IGetLDAPConfigurationReturn,
   IUpdateLDAPConfigurationParams,
   IUpdateLDAPConfigurationReturn,
+  IGetLicenseReturn,
+  ISetLicenseParams,
+  ISetLicenseReturn,
+  ICheckLicenseParams,
+  ICheckLicenseReturn,
   IGetOauth2ConfigurationReturn,
   IUpdateOauth2ConfigurationParams,
   IUpdateOauth2ConfigurationReturn,
@@ -226,6 +231,65 @@ class DmsService extends ServiceBase {
       paramsData,
       options
     );
+  }
+
+  public GetLicense(options?: AxiosRequestConfig) {
+    return this.get<IGetLicenseReturn>(
+      '/v1/dms/configurations/license',
+      undefined,
+      options
+    );
+  }
+
+  public SetLicense(params: ISetLicenseParams, options?: AxiosRequestConfig) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.license_file != undefined) {
+      paramsData.append('license_file', params.license_file as any);
+    }
+
+    return this.post<ISetLicenseReturn>(
+      '/v1/dms/configurations/license',
+      paramsData,
+      config
+    );
+  }
+
+  public CheckLicense(
+    params: ICheckLicenseParams,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.license_file != undefined) {
+      paramsData.append('license_file', params.license_file as any);
+    }
+
+    return this.post<ICheckLicenseReturn>(
+      '/v1/dms/configurations/license/check',
+      paramsData,
+      config
+    );
+  }
+
+  public GetLicenseInfo(options?: AxiosRequestConfig) {
+    return this.get('/v1/dms/configurations/license/info', undefined, options);
   }
 
   public GetOauth2Configuration(options?: AxiosRequestConfig) {

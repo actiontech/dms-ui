@@ -4,7 +4,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -41,7 +41,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         角色名
@@ -65,7 +65,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         操作权限
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -132,7 +132,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                       data-row-key="1001"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test role 1
                       </td>
@@ -254,7 +254,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -297,7 +297,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                       data-row-key="1002"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test role 2
                       </td>
@@ -425,7 +425,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -468,7 +468,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                       data-row-key="7001"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         default role
                       </td>
@@ -592,7 +592,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -796,7 +796,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -833,7 +833,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         角色名
@@ -857,7 +857,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         操作权限
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -924,7 +924,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10010"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test0
                       </td>
@@ -971,7 +971,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1014,7 +1014,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10011"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test1
                       </td>
@@ -1061,7 +1061,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1104,7 +1104,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10012"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test2
                       </td>
@@ -1151,7 +1151,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1194,7 +1194,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10013"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test3
                       </td>
@@ -1241,7 +1241,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1284,7 +1284,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10014"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test4
                       </td>
@@ -1331,7 +1331,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1374,7 +1374,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10015"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test5
                       </td>
@@ -1421,7 +1421,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1464,7 +1464,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10016"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test6
                       </td>
@@ -1511,7 +1511,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1554,7 +1554,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10017"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test7
                       </td>
@@ -1601,7 +1601,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1644,7 +1644,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10018"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test8
                       </td>
@@ -1691,7 +1691,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1734,7 +1734,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="10019"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test9
                       </td>
@@ -1781,7 +1781,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1824,7 +1824,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100110"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test10
                       </td>
@@ -1871,7 +1871,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1914,7 +1914,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100111"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test11
                       </td>
@@ -1961,7 +1961,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2004,7 +2004,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100112"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test12
                       </td>
@@ -2051,7 +2051,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2094,7 +2094,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100113"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test13
                       </td>
@@ -2141,7 +2141,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2184,7 +2184,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100114"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test14
                       </td>
@@ -2231,7 +2231,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2274,7 +2274,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100115"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test15
                       </td>
@@ -2321,7 +2321,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2364,7 +2364,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100116"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test16
                       </td>
@@ -2411,7 +2411,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2454,7 +2454,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100117"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test17
                       </td>
@@ -2501,7 +2501,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2544,7 +2544,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100118"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test18
                       </td>
@@ -2591,7 +2591,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2634,7 +2634,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100119"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test19
                       </td>
@@ -2681,7 +2681,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2896,7 +2896,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2933,7 +2933,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         角色名
@@ -2957,7 +2957,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         操作权限
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -3024,7 +3024,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100120"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test20
                       </td>
@@ -3071,7 +3071,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3114,7 +3114,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100121"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test21
                       </td>
@@ -3161,7 +3161,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3204,7 +3204,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100122"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test22
                       </td>
@@ -3251,7 +3251,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3294,7 +3294,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100123"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test23
                       </td>
@@ -3341,7 +3341,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3384,7 +3384,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100124"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test24
                       </td>
@@ -3431,7 +3431,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3474,7 +3474,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100125"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test25
                       </td>
@@ -3521,7 +3521,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3564,7 +3564,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100126"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test26
                       </td>
@@ -3611,7 +3611,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3654,7 +3654,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100127"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test27
                       </td>
@@ -3701,7 +3701,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3744,7 +3744,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100128"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test28
                       </td>
@@ -3791,7 +3791,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3834,7 +3834,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100129"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test29
                       </td>
@@ -3881,7 +3881,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -3924,7 +3924,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100130"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test30
                       </td>
@@ -3971,7 +3971,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4014,7 +4014,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100131"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test31
                       </td>
@@ -4061,7 +4061,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4104,7 +4104,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100132"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test32
                       </td>
@@ -4151,7 +4151,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4194,7 +4194,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100133"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test33
                       </td>
@@ -4241,7 +4241,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4284,7 +4284,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100134"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test34
                       </td>
@@ -4331,7 +4331,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4374,7 +4374,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100135"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test35
                       </td>
@@ -4421,7 +4421,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4464,7 +4464,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100136"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test36
                       </td>
@@ -4511,7 +4511,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4554,7 +4554,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100137"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test37
                       </td>
@@ -4601,7 +4601,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4644,7 +4644,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100138"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test38
                       </td>
@@ -4691,7 +4691,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4734,7 +4734,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       data-row-key="100139"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         test39
                       </td>
@@ -4781,7 +4781,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                         -
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -4996,7 +4996,7 @@ exports[`base/UserCenter/RoleList should render empty tips when request not succ
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-ahcs1h css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -5033,7 +5033,7 @@ exports[`base/UserCenter/RoleList should render empty tips when request not succ
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         角色名
@@ -5057,7 +5057,7 @@ exports[`base/UserCenter/RoleList should render empty tips when request not succ
                         操作权限
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >

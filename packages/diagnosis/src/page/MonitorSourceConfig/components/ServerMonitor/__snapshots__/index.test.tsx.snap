@@ -4,7 +4,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-11zkoa5 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -41,7 +41,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         监控源名
@@ -77,7 +77,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                         状态
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -162,7 +162,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                       data-row-key="test"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/test/1/server_monitor/monitorItemList"
@@ -196,7 +196,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                         正常
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -239,7 +239,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                       data-row-key="test12"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/test12/2/server_monitor/monitorItemList"
@@ -273,7 +273,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                         异常
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -316,7 +316,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                       data-row-key="udp"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/udp/3/server_monitor/monitorItemList"
@@ -350,7 +350,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                         未知
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -554,7 +554,7 @@ exports[`test server monitor table should open query popover when click delete b
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-11zkoa5 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -591,7 +591,7 @@ exports[`test server monitor table should open query popover when click delete b
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         监控源名
@@ -627,7 +627,7 @@ exports[`test server monitor table should open query popover when click delete b
                         状态
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -712,7 +712,7 @@ exports[`test server monitor table should open query popover when click delete b
                       data-row-key="test"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/test/1/server_monitor/monitorItemList"
@@ -746,7 +746,7 @@ exports[`test server monitor table should open query popover when click delete b
                         正常
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -789,7 +789,7 @@ exports[`test server monitor table should open query popover when click delete b
                       data-row-key="test12"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/test12/2/server_monitor/monitorItemList"
@@ -823,7 +823,7 @@ exports[`test server monitor table should open query popover when click delete b
                         异常
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -866,7 +866,7 @@ exports[`test server monitor table should open query popover when click delete b
                       data-row-key="udp"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/udp/3/server_monitor/monitorItemList"
@@ -900,7 +900,7 @@ exports[`test server monitor table should open query popover when click delete b
                         未知
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1104,7 +1104,7 @@ exports[`test server monitor table should refresh table when change pagination i
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-11zkoa5 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1141,7 +1141,7 @@ exports[`test server monitor table should refresh table when change pagination i
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         监控源名
@@ -1177,7 +1177,7 @@ exports[`test server monitor table should refresh table when change pagination i
                         状态
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -1262,7 +1262,7 @@ exports[`test server monitor table should refresh table when change pagination i
                       data-row-key="test"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/test/1/server_monitor/monitorItemList"
@@ -1296,7 +1296,7 @@ exports[`test server monitor table should refresh table when change pagination i
                         正常
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1339,7 +1339,7 @@ exports[`test server monitor table should refresh table when change pagination i
                       data-row-key="test12"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/test12/2/server_monitor/monitorItemList"
@@ -1373,7 +1373,7 @@ exports[`test server monitor table should refresh table when change pagination i
                         异常
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1416,7 +1416,7 @@ exports[`test server monitor table should refresh table when change pagination i
                       data-row-key="udp"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/udp/3/server_monitor/monitorItemList"
@@ -1450,7 +1450,7 @@ exports[`test server monitor table should refresh table when change pagination i
                         未知
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1654,7 +1654,7 @@ exports[`test server monitor table should render normal table 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-11zkoa5 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1691,7 +1691,7 @@ exports[`test server monitor table should render normal table 1`] = `
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         监控源名
@@ -1727,7 +1727,7 @@ exports[`test server monitor table should render normal table 1`] = `
                         状态
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >
@@ -1812,7 +1812,7 @@ exports[`test server monitor table should render normal table 1`] = `
                       data-row-key="test"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/test/1/server_monitor/monitorItemList"
@@ -1846,7 +1846,7 @@ exports[`test server monitor table should render normal table 1`] = `
                         正常
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1889,7 +1889,7 @@ exports[`test server monitor table should render normal table 1`] = `
                       data-row-key="test12"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/test12/2/server_monitor/monitorItemList"
@@ -1923,7 +1923,7 @@ exports[`test server monitor table should render normal table 1`] = `
                         异常
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -1966,7 +1966,7 @@ exports[`test server monitor table should render normal table 1`] = `
                       data-row-key="udp"
                     >
                       <td
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/udp/3/server_monitor/monitorItemList"
@@ -2000,7 +2000,7 @@ exports[`test server monitor table should render normal table 1`] = `
                         未知
                       </td>
                       <td
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
                         <div
@@ -2204,7 +2204,7 @@ exports[`test server monitor table should render table when api return null 1`] 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-11zkoa5 css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2241,7 +2241,7 @@ exports[`test server monitor table should render table when api return null 1`] 
                   >
                     <tr>
                       <th
-                        class="ant-table-cell first-col"
+                        class="ant-table-cell"
                         scope="col"
                       >
                         监控源名
@@ -2277,7 +2277,7 @@ exports[`test server monitor table should render table when api return null 1`] 
                         状态
                       </th>
                       <th
-                        class="ant-table-cell actiontech-table-actions-column last-col ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         scope="col"
                         style="position: sticky; right: 0px;"
                       >

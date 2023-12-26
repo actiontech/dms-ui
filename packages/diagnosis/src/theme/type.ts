@@ -34,3 +34,13 @@ export type LoginTheme = {
     boxShadow: string;
   };
 };
+
+export type UserManagementTheme = {
+  permissionType: {
+    border: string;
+    backgroundColor: string;
+    color: string;
+    activeBackgroundColor: string;
+    activeColor: string;
+  };
+};

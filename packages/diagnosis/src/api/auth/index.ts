@@ -25,6 +25,7 @@ import {
   IV1CreateRoleScopeReturn,
   IV1DeleteRoleScopeParams,
   IV1DeleteRoleScopeReturn,
+  IV1ListExistingScopesParams,
   IV1ListExistingScopesReturn,
   IV1CreateUserParams,
   IV1CreateUserReturn,
@@ -139,10 +140,14 @@ class AuthService extends ServiceBase {
     );
   }
 
-  public V1ListExistingScopes(options?: AxiosRequestConfig) {
+  public V1ListExistingScopes(
+    params: IV1ListExistingScopesParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
     return this.get<IV1ListExistingScopesReturn>(
       '/v1/auth/scope/list',
-      undefined,
+      paramsData,
       options
     );
   }

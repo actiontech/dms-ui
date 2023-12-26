@@ -1,8 +1,13 @@
-import { LoginTheme, MonitorSourceConfigTheme } from '../theme/type';
+import {
+  LoginTheme,
+  MonitorSourceConfigTheme,
+  UserManagementTheme
+} from '../theme/type';
 
 export interface DiagnosisTheme {
   login: LoginTheme;
   monitorSourceConfig: MonitorSourceConfigTheme;
+  userManagement: UserManagementTheme;
 }
 interface ThemeCustom {
   diagnosisTheme: DiagnosisTheme;

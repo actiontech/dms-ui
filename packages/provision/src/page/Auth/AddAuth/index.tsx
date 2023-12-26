@@ -28,7 +28,8 @@ import {
 import {
   FormItemLabel,
   FormItemSubTitle,
-  FormItemBigTitle
+  FormItemBigTitle,
+  CustomLabelContent
 } from '@actiontech/shared/lib/components/FormCom';
 import { AddAuthFormFields } from './index.type';
 import {
@@ -263,9 +264,13 @@ const AddAuth: React.FC = () => {
               </FormItemLabel>
               <FormItemLabel
                 name="hostname"
-                label={t('auth.addAuth.accountForm.hostname')}
-                rules={[{ required: true }]}
-                className="has-required-style"
+                className="has-label-tip"
+                label={
+                  <CustomLabelContent
+                    title={t('auth.addAuth.accountForm.hostname')}
+                    tips={t('auth.addAuth.accountForm.hostnameTips')}
+                  />
+                }
               >
                 <BasicInput />
               </FormItemLabel>

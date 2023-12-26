@@ -10,8 +10,6 @@ export const SystemStyleWrapper = styled('section')`
 
   .system-form-wrapper {
     width: 640px;
-    border-bottom: 1px solid
-      ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
     .config-title-wrapper {
       padding: 60px 0 32px;
@@ -19,6 +17,8 @@ export const SystemStyleWrapper = styled('section')`
       font-weight: 500;
       line-height: 32px;
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+      border-bottom: 1px solid
+        ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
       &.has-border {
         border-bottom: 1px solid
@@ -27,7 +27,7 @@ export const SystemStyleWrapper = styled('section')`
     }
 
     .config-form-wrapper {
-      border-top: 1px solid
+      border-bottom: 1px solid
         ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
       .ant-form {

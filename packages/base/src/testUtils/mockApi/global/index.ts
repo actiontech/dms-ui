@@ -37,12 +37,14 @@ class MockDMSGlobalApi implements MockSpyApy {
 
   public addSession() {
     const spy = jest.spyOn(dms, 'AddSession');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        token: UserInfo.token,
-        user_uid: UserInfo.userUid
-      })
-    );
+    spy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: {
+          token: UserInfo.token,
+          user_uid: UserInfo.userUid
+        }
+      });
+    });
     return spy;
   }
 
