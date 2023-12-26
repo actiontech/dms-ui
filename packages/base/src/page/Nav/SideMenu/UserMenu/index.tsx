@@ -3,14 +3,9 @@ import { useBoolean } from 'ahooks';
 import GlobalSetting from './components/GlobalSetting';
 import { UserMenuProps } from './index.type';
 // #if [ee]
-import CompanyNoticeModal from './components/CompanyNoticeModal';
+import CompanyNoticeModal from './Modal/CompanyNoticeModal';
 // #endif
-
-// #if [ee && !demo && sqle ]
-import SQLEVersionModalEE from './Modal/VersionModal.sqle.ee';
-// #else
-import SQLEVersionModalCE from './Modal/VersionModal.sqle.ce';
-// #endif
+import VersionModal from './Modal/VersionModal';
 
 const UserMenu: React.FC<UserMenuProps> = ({
   username,
@@ -36,17 +31,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
           isAdmin={isAdmin}
         />
       </div>
-      {/* #if [ee && !demo && sqle ] */}
-      <SQLEVersionModalEE
+      <VersionModal
         open={versionModalOpen}
         setVersionModalClose={setVersionModalClose}
       />
-      {/* #else */}
-      <SQLEVersionModalCE
-        open={versionModalOpen}
-        setVersionModalClose={setVersionModalClose}
-      />
-      {/* #endif */}
       {/* #if [ee] */}
       <CompanyNoticeModal />
       {/* #endif */}
