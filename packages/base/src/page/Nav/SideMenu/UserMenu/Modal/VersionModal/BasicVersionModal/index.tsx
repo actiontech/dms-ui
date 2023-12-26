@@ -4,7 +4,7 @@ import { Space } from 'antd';
 
 const BasicVersionModal: React.FC<{
   open: boolean;
-  width?: number;
+  width?: number | string;
   setVersionModalClose: () => void;
   children?: React.ReactNode;
 }> = ({ open, width, setVersionModalClose, children }) => {
