@@ -4,8 +4,8 @@ import { FormInstance, Popconfirm } from 'antd';
 import Select, { BaseOptionType } from 'antd/es/select';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import { useRequest } from 'ahooks';
-import EventEmitter from '../../../utils/EventEmitter';
-import EmitterKey from '../../../data/EmitterKey';
+import EventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 import {
   useCurrentProject,
   useDbServiceDriver
@@ -27,14 +27,14 @@ import {
 } from '@actiontech/shared/lib/components/FormCom';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import DatabaseFormItem from './DatabaseFormItem';
+import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
-import { IconInstanceManager } from '../../../icon/sideMenu';
+import { IconInstanceManager } from '../../../../icon/sideMenu';
 import { SQLE_INSTANCE_SOURCE_NAME } from 'sqle/src/data/common';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
-import { turnDataSourceAsyncFormToCommon } from '../tool';
+import { turnDataSourceAsyncFormToCommon } from '../../tool';
 import { FormItem } from 'sqle/src/components/BackendForm';
-import useSqlReviewTemplateToggle from '../../../hooks/useSqlReviewTemplateToggle';
+import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateToggle';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();

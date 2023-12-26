@@ -1,20 +1,23 @@
-import { useRequest } from 'ahooks';
-import { message, Modal } from 'antd';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  DataSourceColumns,
-  DataSourceListActions,
-  DataSourceListParamType
-} from './columns';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+
 import { Link, useNavigate } from 'react-router-dom';
+import { message, Modal } from 'antd';
+import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import { IconAdd } from '@actiontech/shared/lib/Icon';
+import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
+
 import {
   useCurrentProject,
   useCurrentUser,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
+import useDbService from '../../../../hooks/useDbService';
+
+import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+
 import {
   ActiontechTable,
   useTableRequestError,
@@ -24,17 +27,20 @@ import {
   TableToolbar,
   TableFilterContainer
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
-import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
-import useDbService from '../../../hooks/useDbService';
+import {
+  DataSourceColumns,
+  DataSourceListActions,
+  DataSourceListParamType
+} from './columns';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
+
   const navigate = useNavigate();
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
+
   const { projectID, projectArchive, projectName } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
 
@@ -90,7 +96,8 @@ const DataSourceList = () => {
     (dbServiceUid: string) => {
       navigate(`/project/${projectID}/db-services/update/${dbServiceUid}`);
     },
-    [navigate, projectID]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [projectID]
   );
 
   const deleteDatabase = useCallback(
@@ -221,7 +228,8 @@ const DataSourceList = () => {
       updateDriverList();
       updateDbServiceList(projectID);
     }
-  }, [updateDriverList, projectID, updateDbServiceList]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [projectID]);
 
   return (
     <>
