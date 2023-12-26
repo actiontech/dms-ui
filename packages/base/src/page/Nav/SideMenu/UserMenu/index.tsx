@@ -1,10 +1,15 @@
-import UserNavigate from './UserNavigate';
+import UserNavigate from './components/UserNavigate';
 import { useBoolean } from 'ahooks';
-import GlobalSetting from './GlobalSetting';
-import VersionModal from './VersionModal';
+import GlobalSetting from './components/GlobalSetting';
 import { UserMenuProps } from './index.type';
 // #if [ee]
-import CompanyNoticeModal from './CompanyNoticeModal';
+import CompanyNoticeModal from './components/CompanyNoticeModal';
+// #endif
+
+// #if [ee && !demo && sqle ]
+import SQLEVersionModalEE from './Modal/VersionModal.sqle.ee';
+// #else
+import SQLEVersionModalCE from './Modal/VersionModal.sqle.ce';
 // #endif
 
 const UserMenu: React.FC<UserMenuProps> = ({
@@ -31,11 +36,17 @@ const UserMenu: React.FC<UserMenuProps> = ({
           isAdmin={isAdmin}
         />
       </div>
-
-      <VersionModal
+      {/* #if [ee && !demo && sqle ] */}
+      <SQLEVersionModalEE
         open={versionModalOpen}
         setVersionModalClose={setVersionModalClose}
       />
+      {/* #else */}
+      <SQLEVersionModalCE
+        open={versionModalOpen}
+        setVersionModalClose={setVersionModalClose}
+      />
+      {/* #endif */}
       {/* #if [ee] */}
       <CompanyNoticeModal />
       {/* #endif */}
