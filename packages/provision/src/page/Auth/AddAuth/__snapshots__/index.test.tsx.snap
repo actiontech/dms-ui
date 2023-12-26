@@ -501,7 +501,7 @@ exports[`page/Auth/AddAuth render VerifyDBAccount render no pass db account 1`] 
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -510,11 +510,22 @@ exports[`page/Auth/AddAuth render VerifyDBAccount render no pass db account 1`] 
                 class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
               >
                 <label
-                  class="ant-form-item-required ant-form-item-no-colon"
+                  class="ant-form-item-no-colon"
                   for="hostname"
-                  title="连接域"
+                  title=""
                 >
-                  连接域
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接域
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      MySQL/OB必填参数
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -527,7 +538,6 @@ exports[`page/Auth/AddAuth render VerifyDBAccount render no pass db account 1`] 
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      aria-required="true"
                       class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                       id="hostname"
                       placeholder="请输入{{name}}"
@@ -1297,7 +1307,7 @@ exports[`page/Auth/AddAuth render add auth snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1306,11 +1316,22 @@ exports[`page/Auth/AddAuth render add auth snap 1`] = `
                 class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
               >
                 <label
-                  class="ant-form-item-required ant-form-item-no-colon"
+                  class="ant-form-item-no-colon"
                   for="hostname"
-                  title="连接域"
+                  title=""
                 >
-                  连接域
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接域
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      MySQL/OB必填参数
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -1323,7 +1344,6 @@ exports[`page/Auth/AddAuth render add auth snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      aria-required="true"
                       class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                       id="hostname"
                       placeholder="请输入{{name}}"
@@ -1988,7 +2008,7 @@ exports[`page/Auth/AddAuth render location search has id 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1997,11 +2017,22 @@ exports[`page/Auth/AddAuth render location search has id 1`] = `
                 class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
               >
                 <label
-                  class="ant-form-item-required ant-form-item-no-colon"
+                  class="ant-form-item-no-colon"
                   for="hostname"
-                  title="连接域"
+                  title=""
                 >
-                  连接域
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接域
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      MySQL/OB必填参数
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -2014,7 +2045,6 @@ exports[`page/Auth/AddAuth render location search has id 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      aria-required="true"
                       class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                       id="hostname"
                       placeholder="请输入{{name}}"
@@ -2676,7 +2706,7 @@ exports[`page/Auth/AddAuth render pwd form item render pwd not same 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2685,11 +2715,22 @@ exports[`page/Auth/AddAuth render pwd form item render pwd not same 1`] = `
                 class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
               >
                 <label
-                  class="ant-form-item-required ant-form-item-no-colon"
+                  class="ant-form-item-no-colon"
                   for="hostname"
-                  title="连接域"
+                  title=""
                 >
-                  连接域
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接域
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      MySQL/OB必填参数
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -2702,7 +2743,6 @@ exports[`page/Auth/AddAuth render pwd form item render pwd not same 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      aria-required="true"
                       class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                       id="hostname"
                       placeholder="请输入{{name}}"
