@@ -3,7 +3,7 @@ import BasicVersionModal from './BasicVersionModal';
 import { useTranslation } from 'react-i18next';
 import { VersionEnum } from '../../index.enum';
 
-const SQLVersionModalCE: React.FC<{
+const SQLEVersionModalCE: React.FC<{
   open: boolean;
   setVersionModalClose: () => void;
 }> = ({ open, setVersionModalClose }) => {
@@ -20,4 +20,4 @@ const SQLVersionModalCE: React.FC<{
   );
 };
 
-export default SQLVersionModalCE;
+export default SQLEVersionModalCE;
