@@ -1,7 +1,7 @@
 // #if [demo || ce]
-import SQLModalCE from './SQLModalCE';
+import SQLEVersionModalCE from './index.sqle.ce';
 // #else
-import SQLEModalEE from './SQLEModalEE';
+import SQLEVersionModalEE from './index.sqle.ee';
 // #endif
 
 const VersionModal: React.FC<{
@@ -11,9 +11,15 @@ const VersionModal: React.FC<{
   return (
     <>
       {/* #if [demo || ce] */}
-      <SQLModalCE open={open} setVersionModalClose={setVersionModalClose} />
+      <SQLEVersionModalCE
+        open={open}
+        setVersionModalClose={setVersionModalClose}
+      />
       {/* #else */}
-      <SQLEModalEE open={open} setVersionModalClose={setVersionModalClose} />
+      <SQLEVersionModalEE
+        open={open}
+        setVersionModalClose={setVersionModalClose}
+      />
       {/* #endif */}
     </>
   );

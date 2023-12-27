@@ -1,12 +1,12 @@
 import { Space, Typography } from 'antd';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
-import { UI_VERSION } from '../../../../../../../scripts/version';
+import { UI_VERSION } from '../../../../../../scripts/version';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
-import useVersionInfo from '../../../hooks/useVersionInfo';
-import { VersionModalFeatureContentStyleWrapper } from '../../../../style';
+import useVersionInfo from '../../hooks/useVersionInfo';
+import { VersionModalFeatureContentStyleWrapper } from '../../../style';
 
-const SQLEVersionContent: React.FC<{
+const VersionContent: React.FC<{
   open: boolean;
   children: React.ReactNode;
 }> = ({ open, children }) => {
@@ -55,4 +55,4 @@ const SQLEVersionContent: React.FC<{
   );
 };
 
-export default SQLEVersionContent;
+export default VersionContent;

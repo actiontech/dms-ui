@@ -3,9 +3,6 @@ import DmsService from '@actiontech/shared/lib/api/base/service/dms';
 
 const useVersionInfo = () => {
   const [dmsVersion, setDmsVersion] = useState<string | undefined>('');
-  const [provisionVersion, setProvisionVersion] = useState<string | undefined>(
-    ''
-  );
   const [sqleVersion, setSqleVersion] = useState<string | undefined>('');
 
   const formatServerVersion = (version?: string): string => {
@@ -26,10 +23,6 @@ const useVersionInfo = () => {
       )?.version;
       setDmsVersion(formatServerVersion(dms));
 
-      const provision = res.data.data?.components?.find(
-        (i) => i.name === 'provision'
-      )?.version;
-      setProvisionVersion(formatServerVersion(provision));
       const sqle = res.data.data?.components?.find(
         (i) => i.name === 'sqle'
       )?.version;
@@ -40,8 +33,7 @@ const useVersionInfo = () => {
   return {
     updateVersionInfo,
     dmsVersion,
-    sqleVersion,
-    provisionVersion
+    sqleVersion
   };
 };
 
