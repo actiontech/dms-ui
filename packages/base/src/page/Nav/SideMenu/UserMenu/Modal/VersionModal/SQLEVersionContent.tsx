@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import useVersionInfo from '../../hooks/useVersionInfo';
 import { VersionModalFeatureContentStyleWrapper } from '../../../style';
 
-const VersionContent: React.FC<{
+const SQLEVersionContent: React.FC<{
   open: boolean;
   children: React.ReactNode;
 }> = ({ open, children }) => {
@@ -55,4 +55,4 @@ const VersionContent: React.FC<{
   );
 };
 
-export default VersionContent;
+export default SQLEVersionContent;
