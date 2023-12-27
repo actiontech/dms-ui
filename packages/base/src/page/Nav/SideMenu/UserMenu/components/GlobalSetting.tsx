@@ -12,10 +12,10 @@ import {
   IconReportStatistics,
   IconRuleManage
   // #endif
-} from '../../../../icon/sideMenu';
+} from '../../../../../icon/sideMenu';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
-import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import { EmptyBox } from '@actiontech/shared';
 
 const GlobalSetting: React.FC<{
