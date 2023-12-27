@@ -1,0 +1,159 @@
+import React, { useCallback, useEffect, useMemo } from 'react';
+import {
+  ActiontechTable,
+  useTableRequestError,
+  useTableRequestParams
+} from '@actiontech/shared/lib/components/ActiontechTable';
+import { useRequest } from 'ahooks';
+import db from '../../../../api/db';
+import { IV1ListMonitorDBsParams } from '../../../../api/db/index.d';
+import { IViewDatabaseReply } from '../../../../api/common';
+import EventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
+import { DatabaseMonitorActions, DatabaseMonitorColumns } from './column';
+import DatabaseMonitorModal from './components/Modal';
+import { message } from 'antd';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useTranslation } from 'react-i18next';
+import { ModalName } from '../../../../data/ModalName';
+import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
+import useCurrentUser from '../../../../hooks/useCurrentUser';
+import { AdminRolePermission } from '../../../../data/enum';
+
+interface IDatabaseMonitorProps {
+  setLoading: (loading: boolean) => void;
+  searchValue: string;
+}
+const DatabaseMonitor: React.FC<IDatabaseMonitorProps> = (props) => {
+  const { t } = useTranslation();
+
+  const { hasActionPermission } = useCurrentUser();
+
+  const { setModalStatus, setDatabaseSelectData } =
+    useMonitorSourceConfigRedux();
+
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
+
+  const { pagination, tableChange } = useTableRequestParams<
+    IViewDatabaseReply,
+    IV1ListMonitorDBsParams
+  >();
+
+  const {
+    data: databaseMonitorList,
+    loading,
+    refresh
+  } = useRequest(
+    () => {
+      const params: IV1ListMonitorDBsParams = {
+        ...pagination,
+        fuzzy_search_keyword: props.searchValue
+      };
+      return handleTableRequestError(db.V1ListMonitorDBs(params));
+    },
+    {
+      refreshDeps: [pagination]
+    }
+  );
+
+  useEffect(() => {
+    props.setLoading(loading);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
+
+  const updateDatabaseMonitor = useCallback((record?: IViewDatabaseReply) => {
+    if (record) {
+      setDatabaseSelectData(record);
+      setModalStatus(ModalName.Update_Database_Monitor, true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const deleteDatabaseMonitor = useCallback(
+    (record?: IViewDatabaseReply) => {
+      if (!record) return;
+      const hideLoading = messageApi.loading(
+        t(
+          'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceLoading',
+          {
+            name: record?.monitor_name
+          }
+        ),
+        0
+      );
+      db.V1DeleteDB({
+        db_monitor_ids: [record?.id ?? '']
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success({
+              content: t(
+                'monitorSourceConfig.databaseMonitor.deleteDatabaseMonitorSourceTip',
+                {
+                  name: record?.monitor_name
+                }
+              )
+            });
+            refresh();
+          }
+        })
+        .finally(() => {
+          hideLoading();
+        });
+    },
+    [refresh, t, messageApi]
+  );
+
+  const actions = useMemo(() => {
+    const hasEditPermission = hasActionPermission(AdminRolePermission.UpdateDB);
+    const hasDeletePermission = hasActionPermission(
+      AdminRolePermission.DeleteDB
+    );
+    return DatabaseMonitorActions(
+      updateDatabaseMonitor,
+      deleteDatabaseMonitor,
+      hasEditPermission,
+      hasDeletePermission
+    );
+  }, [deleteDatabaseMonitor, updateDatabaseMonitor, hasActionPermission]);
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Refresh_Monitor_Source_Config,
+      refresh
+    );
+
+    return unsubscribe;
+  }, [refresh]);
+
+  const hasCheckMonitorPermission = hasActionPermission(
+    AdminRolePermission.ListConfigs
+  );
+
+  return (
+    <>
+      {contextHolder}
+      <ActiontechTable
+        rowKey={(record: IViewDatabaseReply) => {
+          return `${record?.created_at}-${record.host}`;
+        }}
+        dataSource={databaseMonitorList?.list}
+        pagination={{
+          total: databaseMonitorList?.total ?? 0,
+          current: pagination.page_index
+        }}
+        loading={loading}
+        columns={DatabaseMonitorColumns(hasCheckMonitorPermission)}
+        errorMessage={requestErrorMessage}
+        onChange={tableChange}
+        actions={actions}
+      />
+      <DatabaseMonitorModal />
+    </>
+  );
+};
+
+export default DatabaseMonitor;
