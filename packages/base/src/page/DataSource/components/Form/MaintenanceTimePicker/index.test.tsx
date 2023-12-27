@@ -3,8 +3,10 @@ import { superRender } from '../../../../../testUtils/customRender';
 
 import { MaintenanceTimeValue } from '.';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
-import { getAllBySelector, getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('page/DataSource/MaintenanceTimePicker', () => {
   const onChangeFn = jest.fn();
@@ -23,16 +25,16 @@ describe('page/DataSource/MaintenanceTimePicker', () => {
     jest.clearAllMocks();
     cleanup();
   });
-  
+
   it('render add time', async () => {
     const { baseElement } = customRender();
-    
+
     expect(screen.getByText('请选择时间段')).toBeInTheDocument();
     expect(screen.getByText('添 加')).toBeInTheDocument();
-    
+
     fireEvent.click(screen.getByText('添 加'));
     await act(async () => jest.advanceTimersByTime(300));
-    
+
     const inputEle = getAllBySelector('.ant-picker-input input', baseElement);
     expect(inputEle.length).toBe(2);
 

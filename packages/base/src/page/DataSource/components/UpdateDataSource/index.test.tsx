@@ -11,7 +11,10 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 import UpdateDataSource from '.';
-import { createSpyFailResponse, createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import rule_template from 'sqle/src/testUtils/mockApi/rule_template';
 
 jest.mock('react-router-dom', () => {
@@ -20,7 +23,6 @@ jest.mock('react-router-dom', () => {
     useNavigate: jest.fn()
   };
 });
-
 
 describe('page/DataSource/UpdateDataSource', () => {
   const navigateSpy = jest.fn();
@@ -74,7 +76,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     expect(requestDriverOptions).toBeCalled();
 
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 
   it('render edit data when has all value', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
