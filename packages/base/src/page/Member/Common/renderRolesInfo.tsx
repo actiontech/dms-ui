@@ -13,15 +13,18 @@ const renderRolesInfo = (
 
   return (
     <Space direction="vertical">
-      {roles.map((v) => {
+      {roles.map((v, index) => {
         const roleName = v?.role_uid?.name ?? '';
         const rangeUids = v?.range_uids ?? [];
         return ellipsis ? (
-          <Typography.Text ellipsis={ellipsis} key={v.role_uid?.uid ?? ''}>
+          <Typography.Text
+            ellipsis={ellipsis}
+            key={`${v.role_uid?.uid ?? ''}${index}`}
+          >
             {genContent(roleName, rangeUids)}
           </Typography.Text>
         ) : (
-          <div key={v.role_uid?.uid ?? ''}>
+          <div key={`${v.role_uid?.uid ?? ''}${index}`}>
             {genContent(roleName, rangeUids)}
           </div>
         );
