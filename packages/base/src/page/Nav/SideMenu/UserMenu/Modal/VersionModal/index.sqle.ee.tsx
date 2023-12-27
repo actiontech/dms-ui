@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import SQLEVersionContent from './SQLEVersionContent';
 import { Typography } from 'antd';
 import BasicVersionModal from './BasicVersionModal';
+import { VersionEnum } from '../../index.enum';
 
-const SQLEModalEE: React.FC<{
+const SQLEVersionModalEE: React.FC<{
   open: boolean;
   setVersionModalClose: () => void;
 }> = ({ open, setVersionModalClose }) => {
@@ -14,14 +14,15 @@ const SQLEModalEE: React.FC<{
       open={open}
       setVersionModalClose={setVersionModalClose}
       width={720}
-    >
-      <SQLEVersionContent open={open}>
+      versions={[VersionEnum.DMS, VersionEnum.SQLE]}
+      desc={t('dmsSystem.version.sqle_desc')}
+      feature={
         <Typography.Text className="whitespace-pre-line">
           {t('dmsSystem.version.sqle_feature')}
         </Typography.Text>
-      </SQLEVersionContent>
-    </BasicVersionModal>
+      }
+    />
   );
 };
 
-export default SQLEModalEE;
+export default SQLEVersionModalEE;
