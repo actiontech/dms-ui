@@ -1,10 +1,12 @@
 import { styled } from '@mui/material/styles';
-import { Typography } from 'antd';
+import { Space } from 'antd';
 import { BasicModal } from '@actiontech/shared';
 import { NotificationFilled } from '@ant-design/icons';
 
-export const VersionModalDescribeTextStyleWrapper = styled(Typography.Text)`
-  white-space: pre-line;
+export const VersionModalFeatureContentStyleWrapper = styled(Space)`
+  & .ant-space-item {
+    width: 100%;
+  }
 `;
 
 export const CEModeProjectWrapperStyleWrapper = styled('div')`

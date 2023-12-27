@@ -1,11 +1,11 @@
-import UserNavigate from './UserNavigate';
+import UserNavigate from './components/UserNavigate';
 import { useBoolean } from 'ahooks';
-import GlobalSetting from './GlobalSetting';
-import VersionModal from './VersionModal';
+import GlobalSetting from './components/GlobalSetting';
 import { UserMenuProps } from './index.type';
 // #if [ee]
-import CompanyNoticeModal from './CompanyNoticeModal';
+import CompanyNoticeModal from './Modal/CompanyNoticeModal';
 // #endif
+import VersionModal from './Modal/VersionModal';
 
 const UserMenu: React.FC<UserMenuProps> = ({
   username,
@@ -31,7 +31,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
           isAdmin={isAdmin}
         />
       </div>
-
       <VersionModal
         open={versionModalOpen}
         setVersionModalClose={setVersionModalClose}
