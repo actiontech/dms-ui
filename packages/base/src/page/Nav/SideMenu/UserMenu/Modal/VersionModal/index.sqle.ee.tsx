@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import SQLEContent from '../SQLEContent';
+import SQLEVersionContent from './SQLEVersionContent';
 import { Typography } from 'antd';
-import BasicVersionModal from '../BasicVersionModal';
+import BasicVersionModal from './BasicVersionModal';
 
 const SQLEModalEE: React.FC<{
   open: boolean;
@@ -15,11 +15,11 @@ const SQLEModalEE: React.FC<{
       setVersionModalClose={setVersionModalClose}
       width={720}
     >
-      <SQLEContent open={open}>
+      <SQLEVersionContent open={open}>
         <Typography.Text className="whitespace-pre-line">
           {t('dmsSystem.version.sqle_feature')}
         </Typography.Text>
-      </SQLEContent>
+      </SQLEVersionContent>
     </BasicVersionModal>
   );
 };
