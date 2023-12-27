@@ -20,9 +20,9 @@ const PreviewModal: React.FC<PreviewModalProps> = ({
       return {
         data_permission_template_uid:
           params?.data_permission_template_uid ?? '',
-        db_account_hostname: params?.db_account.hostname ?? '',
-        db_account_username: params?.db_account.username ?? '',
-        db_account_password: params?.db_account.password ?? ''
+        db_account_hostname: params?.db_account?.hostname ?? '',
+        db_account_username: params?.db_account?.username ?? '',
+        db_account_password: params?.db_account?.password ?? ''
       };
     }, [params]);
 

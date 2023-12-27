@@ -113,9 +113,10 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
         await act(() => jest.advanceTimersByTime(300));
       });
 
-      expect(screen.getByText(userNameData.name!)).toBeInTheDocument();
       await act(async () => {
-        fireEvent.click(screen.getByText(userNameData.name!));
+        fireEvent.click(
+          getBySelector('#permission_user_uid_list_0', baseElement)
+        );
         await act(() => jest.advanceTimersByTime(300));
       });
       await act(async () => {
@@ -150,9 +151,10 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
         fireEvent.mouseDown(selectInputEl);
         await act(() => jest.advanceTimersByTime(300));
       });
-      expect(screen.getByText('Dewey Connelly')).toBeInTheDocument();
       await act(async () => {
-        fireEvent.click(screen.getByText('Dewey Connelly'));
+        fireEvent.click(
+          getBySelector('#permission_user_uid_list_0', baseElement)
+        );
         await act(() => jest.advanceTimersByTime(300));
       });
       await act(async () => {
@@ -190,7 +192,7 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
         authorization_uid: selectData.uid,
         authorization: {
           update_authorization_user: {
-            permission_user_uid: '85315',
+            permission_user_uid: '67483',
             db_account_password: '123'
           }
         }

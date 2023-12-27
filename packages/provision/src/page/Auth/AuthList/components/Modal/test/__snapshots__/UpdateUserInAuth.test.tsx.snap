@@ -99,7 +99,7 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render init snap render snap when h
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -131,26 +131,26 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render init snap render snap when h
                             </div>
                             <span
                               aria-hidden="true"
-                              class="ant-select-arrow"
+                              class="ant-select-arrow ant-select-arrow-loading"
                               style="user-select: none;"
                               unselectable="on"
                             >
                               <span
-                                aria-label="down"
-                                class="anticon anticon-down ant-select-suffix"
+                                aria-label="loading"
+                                class="anticon anticon-loading anticon-spin"
                                 role="img"
                               >
                                 <svg
                                   aria-hidden="true"
-                                  data-icon="down"
+                                  data-icon="loading"
                                   fill="currentColor"
                                   focusable="false"
                                   height="1em"
-                                  viewBox="64 64 896 896"
+                                  viewBox="0 0 1024 1024"
                                   width="1em"
                                 >
                                   <path
-                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
                                   />
                                 </svg>
                               </span>
@@ -396,7 +396,7 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render init snap render snap when n
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -428,26 +428,26 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render init snap render snap when n
                             </div>
                             <span
                               aria-hidden="true"
-                              class="ant-select-arrow"
+                              class="ant-select-arrow ant-select-arrow-loading"
                               style="user-select: none;"
                               unselectable="on"
                             >
                               <span
-                                aria-label="down"
-                                class="anticon anticon-down ant-select-suffix"
+                                aria-label="loading"
+                                class="anticon anticon-loading anticon-spin"
                                 role="img"
                               >
                                 <svg
                                   aria-hidden="true"
-                                  data-icon="down"
+                                  data-icon="loading"
                                   fill="currentColor"
                                   focusable="false"
                                   height="1em"
-                                  viewBox="64 64 896 896"
+                                  viewBox="0 0 1024 1024"
                                   width="1em"
                                 >
                                   <path
-                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
                                   />
                                 </svg>
                               </span>
@@ -722,9 +722,9 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render submit data render click sub
                               </span>
                               <span
                                 class="ant-select-selection-item"
-                                title="Kari Bode"
+                                title="67483"
                               >
-                                Kari Bode
+                                67483
                               </span>
                             </div>
                             <span
@@ -1006,7 +1006,7 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                 class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1033,7 +1033,7 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-open ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1042,10 +1042,10 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                                 class="ant-select-selection-search"
                               >
                                 <input
-                                  aria-activedescendant="permission_user_uid_list_6"
+                                  aria-activedescendant="permission_user_uid_list_0"
                                   aria-autocomplete="list"
                                   aria-controls="permission_user_uid_list"
-                                  aria-expanded="false"
+                                  aria-expanded="true"
                                   aria-haspopup="listbox"
                                   aria-owns="permission_user_uid_list"
                                   aria-required="true"
@@ -1059,9 +1059,9 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                               </span>
                               <span
                                 class="ant-select-selection-item"
-                                title="Dewey Connelly"
+                                title="67483"
                               >
-                                Dewey Connelly
+                                67483
                               </span>
                             </div>
                             <span
@@ -1071,13 +1071,13 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                               unselectable="on"
                             >
                               <span
-                                aria-label="down"
-                                class="anticon anticon-down ant-select-suffix"
+                                aria-label="search"
+                                class="anticon anticon-search ant-select-suffix"
                                 role="img"
                               >
                                 <svg
                                   aria-hidden="true"
-                                  data-icon="down"
+                                  data-icon="search"
                                   fill="currentColor"
                                   focusable="false"
                                   height="1em"
@@ -1085,7 +1085,7 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                                   width="1em"
                                 >
                                   <path
-                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
                                   />
                                 </svg>
                               </span>
@@ -1385,8 +1385,8 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+      class="ant-select-dropdown css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
     >
       <div>
         <div
@@ -1395,28 +1395,18 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="Mona Reinger"
             aria-selected="false"
-            id="permission_user_uid_list_5"
+            id="permission_user_uid_list_0"
             role="option"
           >
-            64872
+            Dewey Connelly
           </div>
           <div
-            aria-label="Kari Bode"
             aria-selected="false"
-            id="permission_user_uid_list_6"
+            id="permission_user_uid_list_1"
             role="option"
           >
-            67483
-          </div>
-          <div
-            aria-label="Bryan Emard"
-            aria-selected="false"
-            id="permission_user_uid_list_7"
-            role="option"
-          >
-            39891
+            Edwin Schneider III
           </div>
         </div>
         <div
@@ -1435,116 +1425,48 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                 style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
               >
                 <div
-                  aria-selected="true"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
-                  title="Dewey Connelly"
-                >
-                  <div
-                    class="ant-select-item-option-content"
-                  >
-                    Dewey Connelly
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    class="ant-select-item-option-state"
-                    style="user-select: none;"
-                    unselectable="on"
-                  />
-                </div>
-                <div
-                  aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
-                  title="Edwin Schneider III"
-                >
-                  <div
-                    class="ant-select-item-option-content"
-                  >
-                    Edwin Schneider III
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    class="ant-select-item-option-state"
-                    style="user-select: none;"
-                    unselectable="on"
-                  />
-                </div>
-                <div
-                  aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
-                  title="Javier Beier IV"
-                >
-                  <div
-                    class="ant-select-item-option-content"
-                  >
-                    Javier Beier IV
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    class="ant-select-item-option-state"
-                    style="user-select: none;"
-                    unselectable="on"
-                  />
-                </div>
-                <div
-                  aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
-                  title="Glenda Goyette"
-                >
-                  <div
-                    class="ant-select-item-option-content"
-                  >
-                    Glenda Goyette
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    class="ant-select-item-option-state"
-                    style="user-select: none;"
-                    unselectable="on"
-                  />
-                </div>
-                <div
-                  aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
-                  title="Valerie Gerhold"
-                >
-                  <div
-                    class="ant-select-item-option-content"
-                  >
-                    Valerie Gerhold
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    class="ant-select-item-option-state"
-                    style="user-select: none;"
-                    unselectable="on"
-                  />
-                </div>
-                <div
-                  aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
-                  title="Mona Reinger"
-                >
-                  <div
-                    class="ant-select-item-option-content"
-                  >
-                    Mona Reinger
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    class="ant-select-item-option-state"
-                    style="user-select: none;"
-                    unselectable="on"
-                  />
-                </div>
-                <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                  title="Kari Bode"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    Kari Bode
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                D
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Dewey Connelly
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1556,12 +1478,46 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="Bryan Emard"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    Bryan Emard
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                E
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Edwin Schneider III
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1573,12 +1529,46 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="Clinton Gleason III"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    Clinton Gleason III
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                J
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Javier Beier IV
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1590,12 +1580,46 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="Thelma Keeling"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    Thelma Keeling
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                G
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Glenda Goyette
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1607,12 +1631,46 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="Duane Hyatt"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    Duane Hyatt
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                V
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Valerie Gerhold
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1624,12 +1682,352 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="Mr. Nancy Yundt"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    Mr. Nancy Yundt
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                M
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Mona Reinger
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                K
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Kari Bode
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                B
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Bryan Emard
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                C
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Clinton Gleason III
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                T
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Thelma Keeling
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                D
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Duane Hyatt
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                M
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="ant-typography css-dev-only-do-not-override-v9sov3"
+                        >
+                          Mr. Nancy Yundt
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <span
                     aria-hidden="true"
@@ -1842,9 +2240,9 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                               </span>
                               <span
                                 class="ant-select-selection-item"
-                                title="Kari Bode"
+                                title="67483"
                               >
-                                Kari Bode
+                                67483
                               </span>
                             </div>
                             <span

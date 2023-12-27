@@ -14,7 +14,8 @@ import {
   BasicButton,
   BasicSelect,
   BasicInput,
-  BasicResult
+  BasicResult,
+  EmptyBox
 } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IAddAuthorization } from '@actiontech/shared/lib/api/provision/service/common';
@@ -36,19 +37,24 @@ import {
   IconLeftArrow
 } from '@actiontech/shared/lib/Icon/common';
 import { FormValidatorRule } from '@actiontech/shared/lib/types/common.type';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const AddAuth: React.FC = () => {
   const { t } = useTranslation();
 
   const [form] = Form.useForm<AddAuthFormFields>();
 
-  const [urlParams] = useSearchParams();
-
   const navigate = useNavigate();
+
+  const { projectID } = useCurrentProject();
+
+  const [urlParams] = useSearchParams();
 
   const id = urlParams.get('id');
 
-  const { projectID } = useCurrentProject();
+  const template_uid = Form.useWatch('data_permission_template_uid', form);
+  const username = Form.useWatch('username', form);
+  const hostname = Form.useWatch('hostname', form);
 
   useEffect(() => {
     if (id) {
@@ -98,7 +104,7 @@ const AddAuth: React.FC = () => {
     }
   };
 
-  const onSave = () =>
+  const onSave = () => {
     form.validateFields().then((values) => {
       setParams({
         data_permission_template_uid: values.data_permission_template_uid,
@@ -113,6 +119,7 @@ const AddAuth: React.FC = () => {
         purpose: values.purpose
       });
     });
+  };
 
   const onSuccess = () => {
     setParams(undefined);
@@ -131,6 +138,12 @@ const AddAuth: React.FC = () => {
     }
   );
 
+  useEffect(() => {
+    if (template_uid && username && hostname) {
+      setValidateSuccess(false);
+    }
+  }, [template_uid, username, hostname, form]);
+
   const userValidator: FormValidatorRule = async (_, value: string) => {
     const { data_permission_template_uid, username, hostname } =
       form.getFieldsValue([
@@ -138,6 +151,7 @@ const AddAuth: React.FC = () => {
         'username',
         'hostname'
       ]);
+
     if (!data_permission_template_uid || !username || !hostname) {
       return Promise.resolve();
     }
@@ -162,8 +176,9 @@ const AddAuth: React.FC = () => {
   };
 
   return (
-    <div>
+    <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
+        fixed
         title={
           <BasicButton onClick={() => navigate(-1)} icon={<IconLeftArrow />}>
             {t('auth.addAuth.backAuthList')}
@@ -178,116 +193,120 @@ const AddAuth: React.FC = () => {
           </Space>
         }
       />
-      {!submitSuccess ? (
-        <FormStyleWrapper
-          form={form}
-          colon={false}
-          labelAlign="left"
-          {...formItemLayout.spaceBetween}
-        >
-          <FormAreaBlockStyleWrapper>
-            <FormItemBigTitle>{t('auth.addAuth.title')}</FormItemBigTitle>
-            <FormItemSubTitle>
-              {t('auth.addAuth.templateFormTitle')}
-            </FormItemSubTitle>
-            <FormItemLabel
-              label={t('auth.addAuth.baseForm.template')}
-              name="data_permission_template_uid"
-              rules={[{ required: true }]}
-              className="has-required-style"
-            >
-              <BasicSelect options={authTemplateOptions} />
-            </FormItemLabel>
-            <FormItemLabel
-              label={t('auth.addAuth.baseForm.effectiveTimeDay')}
-              name="effective_time_day"
-              initialValue={-1}
-              required={true}
-              className="has-required-style"
-            >
-              <BasicSelect options={timeDayOptions} />
-            </FormItemLabel>
-            <FormItemSubTitle>
-              {t('auth.addAuth.steps.purpose')}
-            </FormItemSubTitle>
-            <UserSelect className="has-required-style" />
-            <FormItemLabel
-              name="purpose"
-              label={t('auth.addAuth.purposeForm.purpose')}
-              rules={[{ required: true }]}
-              className="has-required-style"
-            >
-              <BasicInput />
-            </FormItemLabel>
-            <FormItemLabel
-              name="memo"
-              label={t('auth.addAuth.purposeForm.memo')}
-            >
-              <BasicInput.TextArea />
-            </FormItemLabel>
-            <FormItemSubTitle>
-              {t('auth.addAuth.steps.account')}
-            </FormItemSubTitle>
-            <FormItemLabel
-              name="username"
-              label={t('auth.addAuth.accountForm.username')}
-              rules={[{ required: true, validator: userValidator }]}
-              dependencies={['data_permission_template_uid', 'hostname']}
-              extra={
-                validateSuccess && (
-                  <Typography.Text type="success">
-                    {t('auth.addAuth.accountForm.usernameExtra')}
-                  </Typography.Text>
-                )
-              }
-              className="has-required-style"
-            >
-              <BasicInput />
-            </FormItemLabel>
-            <FormItemLabel
-              name="hostname"
-              className="has-label-tip"
-              label={
-                <CustomLabelContent
-                  title={t('auth.addAuth.accountForm.hostname')}
-                  tips={t('auth.addAuth.accountForm.hostnameTips')}
-                />
-              }
-            >
-              <BasicInput />
-            </FormItemLabel>
-            <FormItemLabel
-              name="password"
-              label={t('auth.addAuth.accountForm.password')}
-              rules={[{ required: true }]}
-              className="has-required-style"
-            >
-              <InputPassword clickGeneratePassword={generatePassword} />
-            </FormItemLabel>
-            <FormItemLabel
-              name="confirm_password"
-              label={t('auth.addAuth.accountForm.confirm_password')}
-              rules={[
-                { required: true },
-                ({ getFieldValue }) => ({
-                  validator(_, value) {
-                    if (!value || getFieldValue('password') === value) {
-                      return Promise.resolve();
+      <EmptyBox
+        if={submitSuccess}
+        defaultNode={
+          <FormStyleWrapper
+            form={form}
+            colon={false}
+            labelAlign="left"
+            className="hasTopHeader"
+            {...formItemLayout.spaceBetween}
+          >
+            <FormAreaBlockStyleWrapper>
+              <FormItemBigTitle>{t('auth.addAuth.title')}</FormItemBigTitle>
+              <FormItemSubTitle>
+                {t('auth.addAuth.templateFormTitle')}
+              </FormItemSubTitle>
+              <FormItemLabel
+                label={t('auth.addAuth.baseForm.template')}
+                name="data_permission_template_uid"
+                rules={[{ required: true }]}
+                className="has-required-style"
+              >
+                <BasicSelect options={authTemplateOptions} />
+              </FormItemLabel>
+              <FormItemLabel
+                label={t('auth.addAuth.baseForm.effectiveTimeDay')}
+                name="effective_time_day"
+                initialValue={-1}
+                required={true}
+                className="has-required-style"
+              >
+                <BasicSelect options={timeDayOptions} />
+              </FormItemLabel>
+              <FormItemSubTitle>
+                {t('auth.addAuth.steps.purpose')}
+              </FormItemSubTitle>
+              <UserSelect className="has-required-style" />
+              <FormItemLabel
+                name="purpose"
+                label={t('auth.addAuth.purposeForm.purpose')}
+                rules={[{ required: true }]}
+                className="has-required-style"
+              >
+                <BasicInput />
+              </FormItemLabel>
+              <FormItemLabel
+                name="memo"
+                label={t('auth.addAuth.purposeForm.memo')}
+              >
+                <BasicInput.TextArea />
+              </FormItemLabel>
+              <FormItemSubTitle>
+                {t('auth.addAuth.steps.account')}
+              </FormItemSubTitle>
+              <FormItemLabel
+                name="username"
+                label={t('auth.addAuth.accountForm.username')}
+                rules={[{ required: true, validator: userValidator }]}
+                dependencies={['data_permission_template_uid', 'hostname']}
+                extra={
+                  validateSuccess && (
+                    <Typography.Text type="success">
+                      {t('auth.addAuth.accountForm.usernameExtra')}
+                    </Typography.Text>
+                  )
+                }
+                className="has-required-style"
+              >
+                <BasicInput />
+              </FormItemLabel>
+              <FormItemLabel
+                name="hostname"
+                className="has-label-tip"
+                label={
+                  <CustomLabelContent
+                    title={t('auth.addAuth.accountForm.hostname')}
+                    tips={t('auth.addAuth.accountForm.hostnameTips')}
+                  />
+                }
+              >
+                <BasicInput />
+              </FormItemLabel>
+              <FormItemLabel
+                name="password"
+                label={t('auth.addAuth.accountForm.password')}
+                rules={[{ required: true }]}
+                className="has-required-style"
+              >
+                <InputPassword clickGeneratePassword={generatePassword} />
+              </FormItemLabel>
+              <FormItemLabel
+                name="confirm_password"
+                label={t('auth.addAuth.accountForm.confirm_password')}
+                rules={[
+                  { required: true },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (!value || getFieldValue('password') === value) {
+                        return Promise.resolve();
+                      }
+                      return Promise.reject(
+                        new Error(t('auth.addAuth.accountForm.password_error'))
+                      );
                     }
-                    return Promise.reject(
-                      new Error(t('auth.addAuth.accountForm.password_error'))
-                    );
-                  }
-                })
-              ]}
-              dependencies={['password']}
-              className="has-required-style"
-            >
-              <BasicInput.Password />
-            </FormItemLabel>
-          </FormAreaBlockStyleWrapper>
-        </FormStyleWrapper>
-      ) : (
+                  })
+                ]}
+                dependencies={['password']}
+                className="has-required-style"
+              >
+                <BasicInput.Password />
+              </FormItemLabel>
+            </FormAreaBlockStyleWrapper>
+          </FormStyleWrapper>
+        }
+      >
         <BasicResult
           icon={<IconSuccessResult />}
           title={t('auth.addAuth.result.success')}
@@ -306,13 +325,13 @@ const AddAuth: React.FC = () => {
             </Space>
           }
         />
-      )}
+      </EmptyBox>
       <PreviewModal
         params={params}
         setParams={setParams}
         onSuccess={onSuccess}
       />
-    </div>
+    </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
 

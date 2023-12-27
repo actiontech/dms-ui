@@ -32,7 +32,6 @@ const TemplateAuditDetailDrawer: React.FC<{
           <AuditDetailItem
             label={t('provisionAudit.authAuditDetail.type')}
             value={data?.event_type}
-            type="action"
           >
             <EventType val={data?.event_type as EventTypeEnum} />
           </AuditDetailItem>
