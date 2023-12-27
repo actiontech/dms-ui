@@ -1,8 +1,7 @@
 import { superRender } from '../../../../../testUtils/customRender';
-import { act, cleanup, fireEvent, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent } from '@testing-library/react';
 
 import { Form, Select } from 'antd';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { FormItem } from 'sqle/src/components/BackendForm';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -53,7 +52,6 @@ describe('page/DataSource/DatabaseFormItem', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    mockUseCurrentProject();
   });
 
   afterEach(() => {
