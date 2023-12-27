@@ -56,6 +56,7 @@ const UpdateDataSource = () => {
             maintenance_stop_time: t.endTime
           })) ?? [],
         port: `${values.port}`,
+        // #if [!provision]
         sqle_config: {
           rule_template_id: values.ruleTemplateId,
           rule_template_name: values.ruleTemplateName,
@@ -65,6 +66,7 @@ const UpdateDataSource = () => {
             audit_enabled: values.needAuditForSqlQuery
           }
         },
+        // #endif
         additional_params: values.asyncParams,
         user: values.user
       },
@@ -84,7 +86,10 @@ const UpdateDataSource = () => {
               name: values.name
             })
           );
-          navigate(`/project/${projectID}/db-services`, { replace: true });
+          const timeId = setTimeout(() => {
+            clearTimeout(timeId);
+            navigate(`/project/${projectID}/db-services`, { replace: true });
+          }, 600);
         }
       })
       .finally(() => {

@@ -57,6 +57,7 @@ const AddDataSource = () => {
           maintenance_start_time: t.startTime,
           maintenance_stop_time: t.endTime
         })) ?? [],
+      // #if [!provision]
       sqle_config: {
         rule_template_id: values.ruleTemplateId,
         rule_template_name: values.ruleTemplateName,
@@ -66,6 +67,7 @@ const AddDataSource = () => {
           audit_enabled: values.needAuditForSqlQuery
         }
       },
+      // #endif
       additional_params: values.asyncParams
     };
     return dms

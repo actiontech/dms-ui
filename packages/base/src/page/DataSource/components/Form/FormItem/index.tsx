@@ -34,17 +34,16 @@ const DatabaseFormItem: React.FC<{
   isExternalInstance?: boolean;
 }> = (props) => {
   const { t } = useTranslation();
+  const { projectID } = useCurrentProject();
+
   const [loading, { setTrue: setLoadingTrue, setFalse: setLoadingFalse }] =
     useBoolean();
-
   const [connectAble, setConnectAble] = useState(false);
   const [connectErrorMessage, setConnectErrorMessage] = useState('');
   const [initHide, { setFalse: setInitHideFalse, setTrue: setInitHideTrue }] =
     useBoolean(true);
+
   const [needUpdatePassword, setNeedUpdatePassword] = useState(false);
-
-  const { projectID } = useCurrentProject();
-
   const changeNeedUpdatePassword = (check: boolean) => {
     setNeedUpdatePassword(check);
     props.form.setFieldsValue({ needUpdatePassword: check });
@@ -177,6 +176,7 @@ const DatabaseFormItem: React.FC<{
         label={t('dmsDataSource.dataSourceForm.port')}
         initialValue={3306}
         name="port"
+        validateFirst
         rules={[
           {
             required: true,
