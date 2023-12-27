@@ -1,4 +1,6 @@
-// #if [demo || ce]
+// #if [!sqle]
+import DMSVersionModal from './index.dms';
+// #elif [demo || ce]
 import SQLEVersionModalCE from './index.sqle.ce';
 // #else
 import SQLEVersionModalEE from './index.sqle.ee';
@@ -10,7 +12,12 @@ const VersionModal: React.FC<{
 }> = ({ open, setVersionModalClose }) => {
   return (
     <>
-      {/* #if [demo || ce] */}
+      {/* #if [!sqle] */}
+      <DMSVersionModal
+        open={open}
+        setVersionModalClose={setVersionModalClose}
+      />
+      {/* #elif [demo || ce] */}
       <SQLEVersionModalCE
         open={open}
         setVersionModalClose={setVersionModalClose}
