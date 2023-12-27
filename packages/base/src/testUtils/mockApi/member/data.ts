@@ -36,6 +36,21 @@ export const memberList = [
       uid: '102393',
       name: 'test2'
     }
+  },
+  {
+    is_project_admin: false,
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [{ uid: '123123', name: 'mysql-1' }],
+        role_uid: { uid: '1001', name: 'test role 1' }
+      }
+    ],
+    uid: '10029389',
+    user: {
+      uid: '11132422',
+      name: 'test'
+    }
   }
 ];
 
@@ -83,6 +98,26 @@ export const memberGroupList: IListMemberGroup[] = [
     users: [
       { uid: '138291', name: 'test3' },
       { uid: '138214', name: 'test4' }
+    ]
+  },
+  {
+    is_project_admin: false,
+    name: 'member-group3',
+
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [{ uid: '123123', name: 'mysql-1' }],
+        role_uid: { uid: '1001', name: 'test role 1' }
+      }
+    ],
+    uid: '10039483',
+    users: [
+      {
+        uid: '11132422',
+        name: 'test'
+      },
+      { uid: '1647895752866795520', name: 'test666' }
     ]
   }
 ];
