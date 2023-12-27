@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/Home/CommonTable render segment label with badgeCount 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 4px;"
+      >
+        <span>
+          test
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="notice-count"
+        >
+          5
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;

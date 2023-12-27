@@ -2,11 +2,11 @@ import { t } from '../../../locale';
 import { EmptyBox } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { DashboardNameStyleWrapper } from './style';
 import { IconOrderName } from '../../../icon/Dashboard';
 import { Link } from 'react-router-dom';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export const commonColumn: (
   projectID: string
@@ -19,14 +19,14 @@ export const commonColumn: (
       render: (text, record) => {
         return (
           <EmptyBox if={!!text && !!record.project_name} defaultNode={text}>
-            <DashboardNameStyleWrapper>
+            <TableColumnWithIconStyleWrapper>
               <IconOrderName />
               <Link
                 to={`/sqle/project/${record.project_name}/order/${record.workflow_id}`}
               >
                 {text}
               </Link>
-            </DashboardNameStyleWrapper>
+            </TableColumnWithIconStyleWrapper>
           </EmptyBox>
         );
       }
