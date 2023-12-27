@@ -1,10 +1,12 @@
 import { styled } from '@mui/material/styles';
-import { Typography } from 'antd';
+import { Space } from 'antd';
 import { BasicModal } from '@actiontech/shared';
 import { NotificationFilled } from '@ant-design/icons';
 
-export const VersionModalDescribeTextStyleWrapper = styled(Typography.Text)`
-  white-space: pre-line;
+export const VersionModalFeatureContentStyleWrapper = styled(Space)`
+  & .ant-space-item {
+    width: 100%;
+  }
 `;
 
 export const CEModeProjectWrapperStyleWrapper = styled('div')`
@@ -36,16 +38,8 @@ export const CEModeProjectWrapperStyleWrapper = styled('div')`
   }
 `;
 
-export const VersionModalStyleWrapper = styled(BasicModal)`
-  &.version-modal {
-    width: 720px !important;
-  }
-`;
-
 export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
   &.company-notice-modal {
-    width: 720px !important;
-
     .ant-modal-body {
       max-height: 600px;
     }
@@ -55,4 +49,6 @@ export const CompanyNoticeModalStyleWrapper = styled(BasicModal)`
 export const CompanyNoticeIconStyleWrapper = styled(NotificationFilled)`
   color: ${({ theme }) =>
     theme.sharedTheme.basic.colorFontGrayByWhite} !important;
+  width: 16px;
+  height: 16px;
 `;

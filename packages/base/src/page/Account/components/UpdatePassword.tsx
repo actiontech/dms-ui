@@ -2,7 +2,7 @@ import { BasicDrawer, BasicInput, BasicButton } from '@actiontech/shared';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { PasswordFormFields } from '../types';
+import { PasswordFormFields } from '../index.type';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useDispatch } from 'react-redux';
@@ -41,14 +41,19 @@ export const UpdatePassword: React.FC<{
       });
   };
 
+  const internalCloseHandle = () => {
+    form.resetFields();
+    onClose();
+  };
+
   return (
     <BasicDrawer
       title={t('dmsAccount.modifyPassword.title')}
       open={open}
-      onClose={onClose}
+      onClose={internalCloseHandle}
       footer={
         <Space>
-          <BasicButton onClick={onClose} disabled={submitLoading}>
+          <BasicButton onClick={internalCloseHandle} disabled={submitLoading}>
             {t('common.close')}
           </BasicButton>
           <BasicButton

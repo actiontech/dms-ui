@@ -16,11 +16,11 @@ import {
   CompanyNoticeDisplayStatusEnum,
   StorageKey
 } from '@actiontech/shared/lib/enum';
-import { initNavModalStatus } from '../../../../store/nav';
-import { ModalName } from '../../../../data/ModalName';
-import { IReduxState } from '../../../../store';
-import { updateNavModalStatus } from '../../../../store/nav';
-import { CompanyNoticeModalStyleWrapper } from '../style';
+import { initNavModalStatus } from '../../../../../../store/nav';
+import { ModalName } from '../../../../../../data/ModalName';
+import { IReduxState } from '../../../../../../store';
+import { updateNavModalStatus } from '../../../../../../store/nav';
+import { CompanyNoticeModalStyleWrapper } from '../../../style';
 
 const CompanyNoticeModal: React.FC = () => {
   const { t } = useTranslation();
@@ -113,6 +113,7 @@ const CompanyNoticeModal: React.FC = () => {
 
   return (
     <CompanyNoticeModalStyleWrapper
+      width={720}
       maskClosable={false}
       title={t('dmsSystem.notification.title')}
       onCancel={handleCloseModal}

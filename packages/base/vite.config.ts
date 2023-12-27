@@ -17,6 +17,7 @@ export default defineConfig((config) => {
   const isEE = !isCE;
 
   const isSQLE = buildTypes.includes('SQLE');
+  const isDemo = buildTypes.includes('DEMO');
   const isPROVISION = buildTypes.includes('PROVISION');
   const isDMS = isSQLE && isPROVISION;
 
@@ -47,11 +48,16 @@ export default defineConfig((config) => {
           ce: isCE,
           sqle: isSQLE,
           provision: isPROVISION,
-          dms: isDMS
+          dms: isDMS,
+          demo: isDemo
         }
       }),
       eslint({
-        exclude: ['**/node_modules/**', '**/packages/**/src/api/**/*.ts']
+        exclude: [
+          '**/node_modules/**',
+          '**/packages/**/lib/api/**',
+          '!**/packages/**/lib/api/common/**'
+        ]
       }),
       react(),
       createHtmlPlugin({
