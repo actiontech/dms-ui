@@ -44,10 +44,6 @@ const WorkflowTemplate = React.lazy(
     )
 );
 
-const AuditPlan = React.lazy(
-  () => import(/* webpackChunkName: "AuditPlan" */ '../page/AuditPlan')
-);
-
 const AuditPlanList = React.lazy(
   () =>
     import(/* webpackChunkName: "AuditPlanList" */ '../page/AuditPlan/PlanList')
@@ -155,6 +151,9 @@ const OrderSqlAnalyze = React.lazy(() => import('../page/SqlAnalyze/Order'));
 const AuditPlanSqlAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/AuditPlan')
 );
+const SQLManagementAnalyze = React.lazy(
+  () => import('../page/SqlAnalyze/SqlManage')
+);
 // #endif
 
 //sqle global page
@@ -202,7 +201,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         path: 'create',
         element: <CreateOrder />,
-        icon: <DesktopOutlined />,
         key: 'orderCreate'
       },
       {
@@ -213,12 +211,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       // #if [ee]
       {
         path: ':taskId/:sqlNum/analyze',
-        label: 'menu.orderSqlAnalyze',
         element: <OrderSqlAnalyze />,
         key: 'orderAnalyze'
       }
       // #endif
-    ] as RouterConfigItem[]
+    ]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/sqlAudit`,
@@ -242,7 +239,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <SqlAuditDetail />,
         key: 'sqlAuditDetail'
       }
-    ] as RouterConfigItem[]
+    ]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/dashboard`,
@@ -255,54 +252,41 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     key: 'plane',
     label: 'menu.auditPlane',
     icon: <CiCircleOutlined />,
-    element: <AuditPlan />,
+    path: `${PROJECT_ROUTER_PARAM}/auditPlan`,
     children: [
       {
-        key: 'auditPlan',
-        label: 'menu.auditPlaneList',
-        path: `${PROJECT_ROUTER_PARAM}/auditPlan`,
-        children: [
-          {
-            index: true,
-            element: <AuditPlanList />,
-            key: 'auditPlanList'
-          },
-          {
-            path: 'create',
-            label: 'menu.rule',
-            element: <CreateAuditPlan />,
-            key: 'auditPlanCreate'
-          },
-          {
-            path: 'update/:auditPlanName',
-            label: 'menu.rule',
-            element: <UpdateAuditPlan />,
-            key: 'auditPlanUpdate'
-          },
-          {
-            path: 'detail/:auditPlanName',
-            key: 'auditPlanDetail',
-            label: 'menu.auditPlane',
-            element: <AuditPlanDetail />
-          },
-          {
-            path: 'detail/:auditPlanName/report/:reportId',
-            key: 'auditPlanDetailReport',
-            label: 'menu.auditPlane',
-            element: <AuditPlanReport />
-          },
-          // #if [ee]
-          {
-            path: ':reportId/:sqlNum/:auditPlanName/analyze',
-            key: 'auditPlanDetail',
-            label: 'menu.auditPlanSqlAnalyze',
-            element: <AuditPlanSqlAnalyze />,
-            hideInSliderMenu: true
-          }
-          // #endif
-        ]
+        index: true,
+        element: <AuditPlanList />,
+        key: 'auditPlanList'
+      },
+      {
+        path: 'create',
+        element: <CreateAuditPlan />,
+        key: 'auditPlanCreate'
+      },
+      {
+        path: 'update/:auditPlanName',
+        element: <UpdateAuditPlan />,
+        key: 'auditPlanUpdate'
+      },
+      {
+        path: 'detail/:auditPlanName',
+        key: 'auditPlanDetail',
+        element: <AuditPlanDetail />
+      },
+      {
+        path: 'detail/:auditPlanName/report/:reportId',
+        key: 'auditPlanDetailReport',
+        element: <AuditPlanReport />
+      },
+      // #if [ee]
+      {
+        path: ':reportId/:sqlNum/:auditPlanName/analyze',
+        key: 'auditPlanDetail',
+        element: <AuditPlanSqlAnalyze />
       }
-    ] as RouterConfigItem[]
+      // #endif
+    ]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/rule/template`,
@@ -341,7 +325,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <UpdateRuleTemplate />,
         key: 'ruleTemplateImport'
       }
-    ] as RouterConfigItem[]
+    ]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/progress`,
@@ -360,7 +344,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <UpdateWorkflowTemplate />,
         key: 'progressUpdate'
       }
-    ] as RouterConfigItem[]
+    ]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/whitelist`,
@@ -380,7 +364,21 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     path: `${PROJECT_ROUTER_PARAM}/sqlManagement`,
     label: 'menu.sqlManagement',
     key: 'sqlManagement',
-    element: <SQLManagement />
+    children: [
+      {
+        index: true,
+        element: <SQLManagement />,
+        key: 'SQLManagement'
+      },
+      // #if [ee]
+      {
+        path: ':sqlManageId/analyze',
+        hideInSliderMenu: true,
+        element: <SQLManagementAnalyze />,
+        key: 'SQLManagementAnalyze'
+      }
+      // #endif
+    ]
   },
   {
     path: '*',

@@ -33,7 +33,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                       style="width: 500px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -825,7 +825,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       style="width: 500px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2925,7 +2925,7 @@ exports[`base/UserCenter/RoleList should refresh role table when change current 
                       style="width: 500px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -5025,7 +5025,7 @@ exports[`base/UserCenter/RoleList should render empty tips when request not succ
                       style="width: 500px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead

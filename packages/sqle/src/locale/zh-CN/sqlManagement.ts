@@ -38,7 +38,8 @@ export default {
           manualAudit: '人工审核',
           signalUpdateStatusSuccessTips: '更新SQL状态成功'
         }
-      }
+      },
+      analyze: '分析'
     },
     column: {
       SQLFingerprint: 'SQL指纹',
