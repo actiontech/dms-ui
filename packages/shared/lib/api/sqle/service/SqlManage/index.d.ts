@@ -20,7 +20,8 @@ import {
   IGetSqlManageListResp,
   IBatchUpdateSqlManageReq,
   IBaseRes,
-  IGetSqlManageRuleTipsResp
+  IGetSqlManageRuleTipsResp,
+  IGetSqlManageSqlAnalysisResp
 } from '../common.d';
 
 export interface IGetSqlManageListParams {
@@ -47,6 +48,8 @@ export interface IGetSqlManageListParams {
   filter_db_type?: string;
 
   fuzzy_search_endpoint?: string;
+
+  fuzzy_search_schema_name?: string;
 
   sort_field?: GetSqlManageListSortFieldEnum;
 
@@ -90,6 +93,8 @@ export interface IExportSqlManageV1Params {
 
   fuzzy_search_endpoint?: string;
 
+  fuzzy_search_schema_name?: string;
+
   sort_field?: exportSqlManageV1SortFieldEnum;
 
   sort_order?: exportSqlManageV1SortOrderEnum;
@@ -101,6 +106,15 @@ export interface IGetSqlManageRuleTipsParams {
 
 export interface IGetSqlManageRuleTipsReturn
   extends IGetSqlManageRuleTipsResp {}
+
+export interface IGetSqlManageSqlAnalysisV1Params {
+  project_name: string;
+
+  sql_manage_id: string;
+}
+
+export interface IGetSqlManageSqlAnalysisV1Return
+  extends IGetSqlManageSqlAnalysisResp {}
 
 export interface IGetSqlManageListV2Params {
   project_name: string;
@@ -126,6 +140,8 @@ export interface IGetSqlManageListV2Params {
   filter_db_type?: string;
 
   fuzzy_search_endpoint?: string;
+
+  fuzzy_search_schema_name?: string;
 
   sort_field?: GetSqlManageListV2SortFieldEnum;
 
