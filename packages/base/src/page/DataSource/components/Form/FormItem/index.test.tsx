@@ -13,7 +13,7 @@ jest.mock('antd', () => {
     ...actualAntd,
     Form: {
       ...actualAntd.Form,
-      useForm: jest.fn(),
+      useForm: jest.fn()
     }
   };
 });
@@ -30,7 +30,8 @@ describe('page/DataSource/DatabaseFormItem', () => {
 
   const customRender = (
     isUpdate = false,
-    currentAsyncParams = [] as FormItem[]) => {
+    currentAsyncParams = [] as FormItem[]
+  ) => {
     const mockedForm = {
       setFieldsValue: mockSetFieldsForm
     };
@@ -69,19 +70,19 @@ describe('page/DataSource/DatabaseFormItem', () => {
     const { baseElement } = customRender(true);
     expect(baseElement).toMatchSnapshot();
   });
-  
+
   it('render async params', async () => {
     const { baseElement } = customRender(false, [
       { desc: 'desc', key: 'c1', type: 'bool' }
     ]);
     expect(baseElement).toMatchSnapshot();
   });
-  
+
   it('render port validator', async () => {
     const { baseElement } = customRender();
-    
+
     const portEle = getBySelector('#port', baseElement);
-    
+
     fireEvent.change(portEle, {
       target: { value: '' }
     });
@@ -100,10 +101,10 @@ describe('page/DataSource/DatabaseFormItem', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
   });
-  
+
   it('render need pwd', async () => {
     const { baseElement } = customRender(true);
-    
+
     const needUpdatePassword = getBySelector(
       '#needUpdatePassword',
       baseElement

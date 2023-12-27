@@ -1,11 +1,14 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { superRender } from '../../../../testUtils/customRender';
-import { getAllBySelector, getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 import dms from '../../../../testUtils/mockApi/global';
 import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
-import {  mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
@@ -20,7 +23,6 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('page/DataSource/DataSourceList', () => {
-
   const projectID = mockProjectInfo.projectID;
   const navigateSpy = jest.fn();
   const useParamsMock: jest.Mock = useParams as jest.Mock;
@@ -211,10 +213,8 @@ describe('page/DataSource/DataSourceList', () => {
                 }
               },
               {
-                maintenance_start_time: {
-                },
-                maintenance_stop_time: {
-                }
+                maintenance_start_time: {},
+                maintenance_stop_time: {}
               }
             ],
             desc: 'desc cont',
@@ -238,7 +238,7 @@ describe('page/DataSource/DataSourceList', () => {
     await act(async () => jest.advanceTimersByTime(9300));
     expect(baseElement).toMatchSnapshot();
   });
-  
+
   describe('render table for action btn', () => {
     it('render table for edit action', async () => {
       const requestTableList = dms.getListDBServices();
@@ -251,7 +251,7 @@ describe('page/DataSource/DataSourceList', () => {
 
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      
+
       const actionBtn = getAllBySelector(
         '.actiontech-table-actions-button',
         baseElement
@@ -265,7 +265,7 @@ describe('page/DataSource/DataSourceList', () => {
         `/project/${projectID}/db-services/update/${DBServicesList[0].uid}`
       );
     });
-    
+
     it('render table for del action', async () => {
       const requestDelDBService = dms.DelDBService();
       const requestTableList = dms.getListDBServices();
@@ -296,7 +296,7 @@ describe('page/DataSource/DataSourceList', () => {
       await act(async () => jest.advanceTimersByTime(3300));
       expect(requestTableList).toBeCalled();
     });
-    
+
     it('render table for test connect action success', async () => {
       const requestTestConnect = dms.CheckDBServiceIsConnectable();
       requestTestConnect.mockImplementationOnce(() =>
@@ -325,12 +325,14 @@ describe('page/DataSource/DataSourceList', () => {
       expect(requestTestConnect).toBeCalled();
       expect(screen.getByText('数据库连通性测试成功')).toBeInTheDocument();
     });
-    
+
     it('render table for test connect action error', async () => {
       const requestTestConnect = dms.CheckDBServiceIsConnectable();
       requestTestConnect.mockImplementationOnce(() =>
         createSpySuccessResponse({
-          connections: [{ is_connectable: false, connect_error_message: 'error' }]
+          connections: [
+            { is_connectable: false, connect_error_message: 'error' }
+          ]
         })
       );
       const requestTableList = dms.getListDBServices();
@@ -354,7 +356,7 @@ describe('page/DataSource/DataSourceList', () => {
       expect(requestTestConnect).toBeCalled();
       expect(baseElement).toMatchSnapshot();
     });
-    
+
     it('render table for test connect action error no msg', async () => {
       const requestTestConnect = dms.CheckDBServiceIsConnectable();
       requestTestConnect.mockImplementationOnce(() =>

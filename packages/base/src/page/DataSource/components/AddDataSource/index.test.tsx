@@ -1,16 +1,16 @@
-import { act, cleanup, fireEvent, getByText, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { superRender } from '../../../../testUtils/customRender';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import dms from '../../../../testUtils/mockApi/global';
-import ruleTemplate from '@actiontech/sqle/src/testUtils/mockApi/rule_template';
+import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 import AddDataSource from '.';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-router-dom', () => {
   return {
