@@ -1,11 +1,11 @@
 import { Popover, Spin } from 'antd';
-import { CompanyNoticeIconStyleWrapper } from '../style';
+import { CompanyNoticeIconStyleWrapper } from '../../style';
 import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import {
   IconAccount,
   IconViewVersion,
   IconLogout
-} from '../../../../icon/sideMenu';
+} from '../../../../../icon/sideMenu';
 import { useTranslation } from 'react-i18next';
 import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
 import { useState } from 'react';
@@ -16,8 +16,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 // #if [ee]
 import { useDispatch } from 'react-redux';
-import { updateNavModalStatus } from '../../../../store/nav';
-import { ModalName } from '../../../../data/ModalName';
+import { updateNavModalStatus } from '../../../../../store/nav';
+import { ModalName } from '../../../../../data/ModalName';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   CompanyNoticeDisplayStatusEnum,
