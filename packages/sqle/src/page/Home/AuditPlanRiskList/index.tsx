@@ -13,6 +13,7 @@ import { CustomToolbar } from '../CommonTable/CustomToolbar';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { IGetRiskAuditPlanV1Params } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
+import { DASHBOARD_COMMON_GET_ORDER_NUMBER } from '../CommonTable';
 
 const AuditPlanRiskList: React.FC<IAuditPlanRiskProps> = ({
   projectName,
@@ -43,7 +44,7 @@ const AuditPlanRiskList: React.FC<IAuditPlanRiskProps> = ({
         </TableTitleStyleWrapper>
       </CustomToolbar>
       <ActiontechTable
-        dataSource={data?.list?.slice(0, 5)}
+        dataSource={data?.list?.slice(0, DASHBOARD_COMMON_GET_ORDER_NUMBER)}
         rowKey={(record: IRiskAuditPlan) => {
           return `${record?.audit_plan_report_id}`;
         }}
