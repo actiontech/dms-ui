@@ -7,8 +7,6 @@ import AuditPlanRiskList from './AuditPlanRiskList';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import dashboard from '@actiontech/shared/lib/api/sqle/service/dashboard';
 
-export const ALL_PROJECT_NAME = '';
-
 const Home = () => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();

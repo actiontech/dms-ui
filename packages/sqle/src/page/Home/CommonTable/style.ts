@@ -1,14 +1,5 @@
 import { styled } from '@mui/material/styles';
 
-export const DashboardNameStyleWrapper = styled('div')`
-  display: flex;
-  align-items: center;
-
-  .custom-icon {
-    margin-right: 12px;
-  }
-`;
-
 export const TableTitleStyleWrapper = styled('header')`
   display: flex;
   align-items: center;

@@ -20,6 +20,9 @@ import { checkButtonPermissions, checkButtonDisabled } from '../utils';
 import { PopconfirmMessageStyleWrapper } from '../../../styleWrapper/element';
 import classNames from 'classnames';
 
+export const ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH = 82;
+export const ACTIONTECH_TABLE_MORE_BUTTON_WIDTH = 40;
+
 export const ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS =
   'actiontech-table-actions-column';
 export const ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX = 'operator';
@@ -103,8 +106,6 @@ const useTableAction = () => {
     <T extends Record<string, any>>(
       actions: ActiontechTableProps<T>['actions']
     ): ActiontechTableColumn<T>[0] | undefined => {
-      const actionButtonWidth = 76;
-      const moreButtonWidth = 40;
       if (Array.isArray(actions)) {
         if (actions.length === 0) {
           return;
@@ -114,7 +115,7 @@ const useTableAction = () => {
           className: ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS,
           title: () => t('common.operate'),
           fixed: 'right',
-          width: actions.length * actionButtonWidth,
+          width: actions.length * ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH,
           render: (_, record: T) => {
             return (
               <InlineTableActionButtonsStyleWrapper
@@ -143,8 +144,9 @@ const useTableAction = () => {
         fixed: actions?.fixed ?? 'right',
         width:
           actions?.width ??
-          (actions?.buttons.length ?? 0) * actionButtonWidth +
-            (!!actions?.moreButtons ? moreButtonWidth : 0),
+          (actions?.buttons.length ?? 0) *
+            ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH +
+            (!!actions?.moreButtons ? ACTIONTECH_TABLE_MORE_BUTTON_WIDTH : 0),
         render: (_, record: T) => {
           return (
             <InlineTableActionButtonsStyleWrapper
