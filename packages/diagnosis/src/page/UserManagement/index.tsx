@@ -99,6 +99,7 @@ const UserManagement: React.FC = () => {
         content: <PermissionList />
       }
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [updateSegmentedPageData, t, hasActionPermission]);
 
   return (
