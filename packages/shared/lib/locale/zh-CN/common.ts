@@ -139,7 +139,8 @@ export default {
       onlyNumber: '只能包含数字',
       portRange: '端口号范围为{{min}}-{{max}}',
       integer: '只能输入正整数',
-      numberRange: '{{name}}范围是{{min}}-{{max}}间的正整数'
+      numberRange: '{{name}}范围是{{min}}-{{max}}间的正整数',
+      maxLength: '至多 {{max}} 个字符'
     }
   },
   cron: {
