@@ -55,12 +55,11 @@ const UpdateProject: React.FC = () => {
       .UpdateProject(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.open({
-            type: 'success',
-            content: t('dmsProject.updateProject.updateSuccessTips', {
+          messageApi.success(
+            t('dmsProject.updateProject.updateSuccessTips', {
               name: selectProjectItem?.name
             })
-          });
+          );
           closeModal();
           EventEmitter.emit(EmitterKey.DMS_Refresh_Project_List);
         }

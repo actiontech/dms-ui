@@ -1,12 +1,13 @@
 import * as useCurrentProject from '../../global/useCurrentProject';
 import { mockProjectInfo } from './data';
 
-export const mockUseCurrentProject = () => {
+export const mockUseCurrentProject = (
+  data?: Partial<typeof mockProjectInfo>
+) => {
   const spy = jest.spyOn(useCurrentProject, 'default');
   spy.mockImplementation(() => ({
-    projectName: mockProjectInfo.projectName,
-    projectID: mockProjectInfo.projectID,
-    projectArchive: mockProjectInfo.projectArchive
+    ...mockProjectInfo,
+    ...data
   }));
   return spy;
 };

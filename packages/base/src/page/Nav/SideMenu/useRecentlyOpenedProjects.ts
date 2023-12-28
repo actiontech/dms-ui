@@ -9,7 +9,7 @@ import { RecentlyProjectsRecordType } from './ProjectSelector/index.type';
 
 export const DEFAULT_MAX_SHOW_PROJECT_NUMBER = 3;
 
-export const useRecentlyOpenedProjects = () => {
+const useRecentlyOpenedProjects = () => {
   const { bindProjects, username } = useCurrentUser();
   const [recentlyProjectsRecord, setRecentlyProjectsRecord] =
     useState<RecentlyProjectsRecordType>(() => {
