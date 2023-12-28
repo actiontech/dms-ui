@@ -10,6 +10,7 @@ import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import userManagement from '../../../../../../../testUtils/mockApi/userManagement';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -142,5 +143,58 @@ describe('diagnosis/add user modal', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
+  });
+
+  it('should send request failed', async () => {
+    const addUserRequest = userManagement.addUser();
+    addUserRequest.mockImplementation(() =>
+      createSpySuccessResponse({ code: 500, message: 'error' })
+    );
+    const getRoleRequest = userManagement.getRoleList();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getRoleRequest).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
+    // user name
+    fireEvent.change(getBySelector('#username'), {
+      target: {
+        value: 'test'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#username')).toHaveValue('test');
+    // password
+    fireEvent.change(getBySelector('#password'), {
+      target: {
+        value: '123456'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#password')).toHaveValue('123456');
+    // confirm password
+    fireEvent.change(getBySelector('#confirmPassword'), {
+      target: {
+        value: '123456'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#confirmPassword')).toHaveValue('123456');
+    // role name
+    fireEvent.mouseDown(getBySelector('#role_id'));
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(addUserRequest).toBeCalled();
+    expect(addUserRequest).toBeCalledWith({
+      username: 'test',
+      password: '123456',
+      role_id: '10000'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
   });
 });

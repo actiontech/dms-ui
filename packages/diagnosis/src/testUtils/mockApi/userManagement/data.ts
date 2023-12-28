@@ -31,6 +31,14 @@ export const userListData = [
   }
 ];
 
+export const roleListDataWithoutScope = [
+  {
+    id: '10000',
+    role_desc: 'administrator role has unlimited privileges',
+    role_name: 'admin'
+  }
+];
+
 export const roleListData = [
   {
     id: '10000',

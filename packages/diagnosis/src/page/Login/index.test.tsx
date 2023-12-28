@@ -7,6 +7,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import login from '../../testUtils/mockApi/login';
 import { useDispatch } from 'react-redux';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -114,5 +115,102 @@ describe('diagnosis/login', () => {
     await act(async () => jest.advanceTimersByTime(300));
     await screen.findByText('请先阅读并同意用户协议');
     expect(screen.getByText('请先阅读并同意用户协议')).toBeInTheDocument();
+  });
+
+  it('not return token when login page', async () => {
+    const loginRequest = login.login();
+    loginRequest.mockImplementation(() =>
+      createSpySuccessResponse({
+        code: 0,
+        message: 'ok',
+        token: '',
+        user_id: 1
+      })
+    );
+    const { baseElement } = superRender(<Login />);
+    expect(baseElement).toMatchSnapshot();
+    // username
+    fireEvent.change(getBySelector('#username'), {
+      target: {
+        value: 'root'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#username')).toHaveValue('root');
+    // password
+    fireEvent.change(getBySelector('#password'), {
+      target: {
+        value: '123456'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#password')).toHaveValue('123456');
+    fireEvent.click(getBySelector('.login-btn'));
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('.ant-btn-loading-icon')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(loginRequest).toBeCalled();
+    expect(loginRequest).toBeCalledWith({
+      username: 'root',
+      password: '123456'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockDispatch).not.toBeCalled();
+  });
+
+  it('not return user id when login', async () => {
+    const loginRequest = login.login();
+    loginRequest.mockImplementation(() =>
+      createSpySuccessResponse({
+        code: 0,
+        message: 'ok',
+        token: 'login',
+        user_id: undefined
+      })
+    );
+    const { baseElement } = superRender(<Login />);
+    expect(baseElement).toMatchSnapshot();
+    // username
+    fireEvent.change(getBySelector('#username'), {
+      target: {
+        value: 'root'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#username')).toHaveValue('root');
+    // password
+    fireEvent.change(getBySelector('#password'), {
+      target: {
+        value: '123456'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#password')).toHaveValue('123456');
+    fireEvent.click(getBySelector('.login-btn'));
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('.ant-btn-loading-icon')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(loginRequest).toBeCalled();
+    expect(loginRequest).toBeCalledWith({
+      username: 'root',
+      password: '123456'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(mockDispatch).toBeCalledTimes(2);
+    expect(mockDispatch).toBeCalledWith({
+      payload: {
+        token: 'Bearer login'
+      },
+      type: 'user/updateToken'
+    });
+    expect(mockDispatch).toBeCalledWith({
+      payload: {
+        username: 'root',
+        userId: null,
+        roleId: null
+      },
+      type: 'user/updateUser'
+    });
   });
 });

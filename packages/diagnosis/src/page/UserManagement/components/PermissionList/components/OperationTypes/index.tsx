@@ -26,7 +26,7 @@ const OperationTypes: React.FC<IOperationTypesProps> = ({
         <OperationTypeItemStyleWrapper
           key={type}
           onClick={() => {
-            setOperationType(type ?? '');
+            setOperationType(type);
           }}
           active={type === currentType}
         >

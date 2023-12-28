@@ -91,6 +91,7 @@ const PermissionList: React.FC = () => {
       if (!checked) setPermissionRoleId(undefined);
       updateAllSelectedFilterItem(checked);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [updateAllSelectedFilterItem]
   );
 
@@ -111,6 +112,7 @@ const PermissionList: React.FC = () => {
         }
       ]
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roleOptions, roleLoading, permissionRoleId]);
 
   return (

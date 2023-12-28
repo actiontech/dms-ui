@@ -10,7 +10,11 @@ import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import userManagement from '../../../../../../../testUtils/mockApi/userManagement';
-import { roleListData } from '../../../../../../../testUtils/mockApi/userManagement/data';
+import {
+  roleListData,
+  roleListDataWithoutScope
+} from '../../../../../../../testUtils/mockApi/userManagement/data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -36,14 +40,16 @@ describe('diagnosis/update role modal', () => {
     cleanup();
   });
 
-  const customRender = (status = true) => {
+  const customRender = (status = true, isNormal = true) => {
     return superRender(<UpdateRole />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {
             [ModalName.Update_Role]: status
           },
-          selectRoleData: roleListData[1]
+          selectRoleData: isNormal
+            ? roleListData[1]
+            : { ...roleListDataWithoutScope[1], scopes: undefined }
         }
       }
     });
@@ -55,7 +61,13 @@ describe('diagnosis/update role modal', () => {
     expect(container).toMatchInlineSnapshot('<div />');
   });
 
-  it('should match snapshot when modal state is true ', async () => {
+  it('render select data with no permission', async () => {
+    const { baseElement } = customRender(true, false);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should match snapshot when modal state is true', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -128,5 +140,42 @@ describe('diagnosis/update role modal', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
+  });
+
+  it('should send request failed', async () => {
+    const updateRoleRequest = userManagement.updateRole();
+    updateRoleRequest.mockImplementation(() =>
+      createSpySuccessResponse({ code: 500, message: 'error' })
+    );
+    const getScopeRequest = userManagement.getScopeList();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getScopeRequest).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
+    // desc
+    fireEvent.change(getBySelector('#role_desc'), {
+      target: {
+        value: 'role desc'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#role_desc')).toHaveValue('role desc');
+    // scope
+    fireEvent.mouseDown(getBySelector('#scopes'));
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[1]);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateRoleRequest).toBeCalled();
+    expect(updateRoleRequest).toBeCalledWith({
+      role_desc: 'role desc',
+      role_id: '1735188490427039744',
+      scopes: ['auth.UpdatePassword']
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
   });
 });

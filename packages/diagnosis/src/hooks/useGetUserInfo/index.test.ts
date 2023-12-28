@@ -4,7 +4,10 @@ import useGetUserInfo from '.';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import user from '../../testUtils/mockApi/userManagement';
-import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -71,6 +74,30 @@ describe('diagnosis/useGetUserInfo', () => {
       type: 'user/updateUser'
     });
     expect(getScopeRequest).toBeCalled();
+  });
+
+  it('request get user info success but nothing return', async () => {
+    const request = user.getUserInfo();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: undefined
+      })
+    );
+    const { result } = customRender();
+    act(() => {
+      result.current.getUserInfo({ user_id: '1' });
+    });
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockDispatch).toBeCalledTimes(1);
+    expect(mockDispatch).toBeCalledWith({
+      payload: {
+        username: '',
+        userId: null,
+        roleId: null
+      },
+      type: 'user/updateUser'
+    });
   });
 
   it('request get user info success but return error', async () => {

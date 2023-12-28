@@ -71,7 +71,7 @@ describe('test user management', () => {
     expect(screen.queryAllByText('管 理').length).toBe(2);
   });
 
-  it('should open model when click add button', async () => {
+  it('should open add user model when click add button', async () => {
     const request = userManagement.getUserList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -92,6 +92,29 @@ describe('test user management', () => {
     });
   });
 
+  it('should open add role model when click add button', async () => {
+    const request = userManagement.getRoleList();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('角色列表'));
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(baseElement).toMatchSnapshot();
+
+    mockDispatch.mockClear();
+    expect(mockDispatch).toBeCalledTimes(0);
+    fireEvent.click(screen.getByText('添加角色'));
+    expect(mockDispatch).toBeCalledTimes(1);
+    expect(mockDispatch).toBeCalledWith({
+      payload: {
+        modalName: ModalName.Add_Role,
+        status: true
+      },
+      type: 'userManagement/updateModalStatus'
+    });
+  });
+
   it('should send request when click refresh button', async () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const request = userManagement.getUserList();
@@ -105,5 +128,23 @@ describe('test user management', () => {
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
     expect(request).toBeCalled();
+  });
+
+  it('should reset select permission id', async () => {
+    const request = userManagement.getUserList();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('操作权限列表'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('角色列表'));
+
+    expect(mockDispatch).toBeCalled();
+    expect(mockDispatch).toBeCalledWith({
+      payload: undefined,
+      type: 'userManagement/updatePermissionRoleId'
+    });
   });
 });

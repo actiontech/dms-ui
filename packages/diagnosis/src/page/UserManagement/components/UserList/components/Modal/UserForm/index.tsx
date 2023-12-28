@@ -1,9 +1,7 @@
-import { useRequest } from 'ahooks';
 import React from 'react';
 import { Form, Select } from 'antd';
 import { IUserFormProps } from './index.type';
 import { t } from '../../../../../../../locale';
-import auth from '../../../../../../../api/auth';
 import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
 import useGetRoleData from '../../../../../hooks/useGetRoleData';
 

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { superRender } from '../../../../../../../testUtils/customRender';
 import { ModalName } from '../../../../../../../data/ModalName';
 import { monitorRoutineListData } from '../../../../../../../testUtils/mockApi/monitorSourceConfig/data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -115,5 +116,15 @@ describe('test check monitor config modal', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toBeCalled();
     expect(screen.getByText('共 1 条数据')).toBeInTheDocument();
+  });
+
+  it('render empty table when request return error', async () => {
+    const request = monitorSourceConfig.getMonitorRoutineMetrics();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({ code: 500, message: 'error' })
+    );
+    const { baseElement } = superRender(<CheckMonitorConfig />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
   });
 });

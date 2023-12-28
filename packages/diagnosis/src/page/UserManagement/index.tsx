@@ -41,7 +41,7 @@ const UserManagement: React.FC = () => {
   const onChangeListType = (key: SegmentedValue) => {
     onChange(key);
     if (key !== UserManagementTypeEnum.permission_list) {
-      setPermissionRoleId('');
+      setPermissionRoleId(undefined);
     }
   };
 
@@ -99,6 +99,7 @@ const UserManagement: React.FC = () => {
         content: <PermissionList />
       }
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [updateSegmentedPageData, t, hasActionPermission]);
 
   return (

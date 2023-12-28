@@ -78,7 +78,7 @@ const RoleList: React.FC<{ handleChange: (key: SegmentedValue) => void }> = ({
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.success({
               content: t('userManagement.role.deleteRole.deleteSuccessTips', {
-                name: record?.role_name ?? ''
+                name: record?.role_name
               })
             });
             refresh();

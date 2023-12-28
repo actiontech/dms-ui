@@ -10,6 +10,7 @@ import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../../data/EmitterKey';
 import userManagement from '../../../../../../../testUtils/mockApi/userManagement';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -133,5 +134,50 @@ describe('diagnosis/add role modal', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
+  });
+
+  it('should send request failed', async () => {
+    const addRoleRequest = userManagement.addRole();
+    addRoleRequest.mockImplementation(() =>
+      createSpySuccessResponse({ code: 500, message: 'error' })
+    );
+    const getScopeRequest = userManagement.getScopeList();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getScopeRequest).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
+    // role name
+    fireEvent.change(getBySelector('#role_name'), {
+      target: {
+        value: 'test'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#role_name')).toHaveValue('test');
+    // desc
+    fireEvent.change(getBySelector('#role_desc'), {
+      target: {
+        value: 'this is role desc'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(getBySelector('#role_desc')).toHaveValue('this is role desc');
+    // scope
+    fireEvent.mouseDown(getBySelector('#scopes'));
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(addRoleRequest).toBeCalled();
+    expect(addRoleRequest).toBeCalledWith({
+      role_desc: 'this is role desc',
+      role_name: 'test',
+      scopes: ['auth.UpdatePassword']
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
   });
 });

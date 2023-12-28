@@ -141,6 +141,53 @@ describe('test database monitor table', () => {
     expect(request).toBeCalled();
   });
 
+  it('delete database monitor failed', async () => {
+    const request = monitorSourceConfig.databaseMonitorList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [{ ...databaseMonitorListData[0], monitor_name: undefined }]
+      })
+    );
+    const deleteRequest = monitorSourceConfig.deleteDatabaseMonitor();
+    deleteRequest.mockImplementation(() =>
+      createSpySuccessResponse({ code: 500, message: 'error' })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getAllByText('删 除')[0]);
+    expect(screen.getByText('确认删除数据库监控源?')).toBeInTheDocument();
+    expect(screen.getAllByText('确 认')[0]).toBeInTheDocument();
+    fireEvent.click(screen.getAllByText('确 认')[0]);
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(screen.getByText('正在删除数据库监控源...')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(deleteRequest).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(1000));
+  });
+
+  it('can not delete by no id and no status data', async () => {
+    const request = monitorSourceConfig.databaseMonitorList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          { ...databaseMonitorListData[0], id: undefined, status: undefined }
+        ]
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('-')).toBeInTheDocument();
+    fireEvent.click(screen.getAllByText('删 除')[0]);
+    await act(async () => jest.advanceTimersByTime(3000));
+  });
+
   it('should refresh table when change pagination info', async () => {
     const request = monitorSourceConfig.databaseMonitorList();
     const { baseElement } = customRender();

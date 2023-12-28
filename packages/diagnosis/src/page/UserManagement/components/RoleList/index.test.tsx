@@ -84,6 +84,25 @@ describe('diagnosis/test role table', () => {
     });
   });
 
+  it('can not check permission for no id', async () => {
+    const request = userManagement.getRoleList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [{ ...roleListData[0], role_name: undefined, id: undefined }]
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('共 1 条数据')).toBeInTheDocument();
+    expect(getBySelector('.anticon-ellipsis')).toBeInTheDocument();
+    expect(getAllBySelector('.anticon-ellipsis').length).toBe(1);
+    fireEvent.click(getBySelector('.anticon-ellipsis'));
+    await act(async () => jest.advanceTimersByTime(300));
+  });
+
   it('should open model when click edit button', async () => {
     const request = userManagement.getRoleList();
     const { baseElement } = customRender();
@@ -132,6 +151,34 @@ describe('diagnosis/test role table', () => {
     expect(screen.getByText('删除角色 "test" 成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toBeCalled();
+  });
+
+  it('delete role failed', async () => {
+    const request = userManagement.getRoleList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [{ ...roleListData[1], role_name: undefined, id: undefined }]
+      })
+    );
+    const deleteRequest = userManagement.deleteRole();
+    deleteRequest.mockImplementation(() =>
+      createSpySuccessResponse({ code: 300, message: 'error' })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getAllByText('删 除')[0]);
+    expect(screen.getByText('确认要删除角色 ""?')).toBeInTheDocument();
+    expect(screen.getAllByText('确 认')[0]).toBeInTheDocument();
+    fireEvent.click(screen.getAllByText('确 认')[0]);
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(screen.getByText('正在删除角色 ""...')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(deleteRequest).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(1000));
   });
 
   it('should refresh table when change pagination info', async () => {

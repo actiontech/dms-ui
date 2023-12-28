@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
@@ -73,7 +73,7 @@ const UserList: React.FC = () => {
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.success({
               content: t('userManagement.user.deleteUser.deleteSuccess', {
-                name: record?.username ?? ''
+                name: record?.username
               })
             });
             refresh();
