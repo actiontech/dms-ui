@@ -1,6 +1,6 @@
 import reducers, { updateSelectProject } from '.';
 import { IReduxState } from '..';
-import { projectList } from '../../testUtils/mockApi/project/data';
+import { mockProjectList } from '../../testUtils/mockApi/project/data';
 
 describe('store/project', () => {
   const state: IReduxState['project'] = {
@@ -9,10 +9,10 @@ describe('store/project', () => {
   };
 
   it('should create action', () => {
-    expect(updateSelectProject({ project: projectList[0] })).toEqual({
+    expect(updateSelectProject({ project: mockProjectList[0] })).toEqual({
       type: 'project/updateSelectProject',
       payload: {
-        project: projectList[0]
+        project: mockProjectList[0]
       }
     });
   });
@@ -21,12 +21,12 @@ describe('store/project', () => {
     const newState = reducers(
       state,
       updateSelectProject({
-        project: projectList[0]
+        project: mockProjectList[0]
       })
     );
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
-      selectProject: projectList[0],
+      selectProject: mockProjectList[0],
       modalStatus: {}
     });
   });

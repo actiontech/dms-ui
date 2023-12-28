@@ -9,17 +9,24 @@ import EmitterKey from '../../data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import userCenter from '../../testUtils/mockApi/userCenter';
+import dbServices from '../../testUtils/mockApi/dbServices';
 
 describe('base/Member', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     member.mockAllApi();
     mockUseCurrentProject();
+    userCenter.getUserList();
+    dbServices.ListDBServices();
+    userCenter.getRoleList();
   });
 
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
+    jest.clearAllMocks();
+    jest.clearAllTimers();
   });
 
   it('should render member list when it first entered the member page', async () => {

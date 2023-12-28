@@ -6,8 +6,8 @@ import {
 } from '@actiontech/shared/lib/api/base/service/common';
 import { Link } from 'react-router-dom';
 import {
-  ActiontechTableActionMeta,
-  ActiontechTableColumn
+  ActiontechTableColumn,
+  ActiontechTableProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -16,8 +16,9 @@ import {
   IconProjectFlag
 } from '@actiontech/shared/lib/Icon/common';
 import { ProjectArchiveStyledWrapper } from './style';
+import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 
-const ProjectListTableColumnFactory =
+export const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProject> => {
     const columns: ActiontechTableColumn<IListProject> = [
       {
@@ -33,12 +34,11 @@ const ProjectListTableColumnFactory =
         dataIndex: 'desc',
         ellipsis: true,
         title: () => t('dmsProject.projectForm.desc'),
-        className: 'project-table-desc-column',
+        className: 'ellipsis-column-width',
         render: (desc: string) => {
           return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
         }
       },
-      // #if [ee]
       {
         dataIndex: 'archived',
         title: () => t('dmsProject.projectList.columns.status'),
@@ -64,13 +64,12 @@ const ProjectListTableColumnFactory =
           );
         }
       },
-      // #endif
       {
         dataIndex: 'create_time',
         ellipsis: true,
         title: () => t('dmsProject.projectList.columns.createTime'),
         render: (time) => {
-          return formatTime(time);
+          return formatTime(time, '-');
         }
       },
       {
@@ -92,12 +91,9 @@ export const ProjectListActions = (
   archiveProject: (record: IListProject) => void,
   unarchiveProject: (record: IListProject) => void,
   allowOperateProject: (name: string) => boolean
-): {
-  buttons: ActiontechTableActionMeta<IListProject>[];
-  width: number;
-} => {
+): ActiontechTableProps<IListProject>['actions'] => {
   return {
-    width: 200,
+    width: ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3,
     buttons: [
       {
         text: t('common.edit'),
@@ -114,8 +110,9 @@ export const ProjectListActions = (
       },
       {
         text: t('common.delete'),
-        buttonProps: () => ({
-          danger: true
+        buttonProps: (record) => ({
+          danger: true,
+          disabled: !allowOperateProject(record?.name ?? '') || record?.archived
         }),
         key: 'projectDelete',
         confirm: (record) => {
@@ -130,10 +127,12 @@ export const ProjectListActions = (
           };
         }
       },
-      // #if [ee]
       {
         text: t('dmsProject.projectList.columns.archive'),
         key: 'archiveName',
+        buttonProps: (record) => ({
+          disabled: !allowOperateProject(record?.name ?? '')
+        }),
         confirm: (record) => {
           return {
             title: t('dmsProject.projectList.columns.archiveProjectTips', {
@@ -150,6 +149,9 @@ export const ProjectListActions = (
       {
         text: t('dmsProject.projectList.columns.unarchive'),
         key: 'unarchiveProject',
+        buttonProps: (record) => ({
+          disabled: !allowOperateProject(record?.name ?? '')
+        }),
         confirm: (record) => {
           return {
             title: t('dmsProject.projectList.columns.unarchiveProjectTips', {
@@ -163,9 +165,6 @@ export const ProjectListActions = (
         },
         permissions: (record) => !!record?.archived
       }
-      // #endif
     ]
   };
 };
-
-export default ProjectListTableColumnFactory;

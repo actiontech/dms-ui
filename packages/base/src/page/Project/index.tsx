@@ -9,7 +9,6 @@ import { useDispatch } from 'react-redux';
 import { updateProjectModalStatus } from '../../store/project';
 import { ModalName } from '../../data/ModalName';
 import ProjectManageModal from './Modal';
-import { ProjectListStyledWrapper } from './style';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useMemo } from 'react';
 import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
@@ -43,7 +42,7 @@ const Project: React.FC = () => {
   };
 
   return (
-    <ProjectListStyledWrapper>
+    <section>
       <PageHeader
         title={
           <Space size={12}>
@@ -61,7 +60,7 @@ const Project: React.FC = () => {
       />
       <ProjectList />
       <ProjectManageModal />
-    </ProjectListStyledWrapper>
+    </section>
   );
 };
 
