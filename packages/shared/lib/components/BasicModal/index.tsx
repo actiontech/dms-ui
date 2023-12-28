@@ -22,8 +22,8 @@ const BasicModal: React.FC<IBasicModal> = ({
     <BasicModalStyleWrapper
       className={classNames(className, 'basic-modal-wrapper')}
       closeIcon={<IconClose width={16} height={16} />}
-      width={width}
       {...props}
+      width={width}
     />
   );
 };

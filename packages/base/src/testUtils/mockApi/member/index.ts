@@ -22,8 +22,8 @@ class MockMemberApi implements MockSpyApy {
     const spy = jest.spyOn(dms, 'ListMembers');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total: memberList.length,
-        members: memberList
+        total_nums: memberList.length,
+        data: memberList
       })
     );
     return spy;

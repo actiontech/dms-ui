@@ -68,3 +68,22 @@ export const mockUserInfo = {
     wxid: 'wx_test_id'
   }
 };
+
+export const mockDBServiceDriverInfo = {
+  driverNameList: ['MySQL'],
+  loading: false,
+  driverMeta: [
+    {
+      db_type: 'MySQL',
+      logo_path: '',
+      params: []
+    }
+  ],
+  dbDriverOptions: [],
+  updateDriverList: jest.fn(),
+  updateDriverListSync: jest.fn(),
+  getLogoUrlByDbType: jest.fn(),
+  generateDriverSelectOptions: jest.fn(),
+  driverInfoFetched: true,
+  setDriverInfoFetched: jest.fn
+};
