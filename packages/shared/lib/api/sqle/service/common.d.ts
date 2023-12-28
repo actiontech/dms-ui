@@ -49,6 +49,12 @@ export interface IBaseRes {
   message?: string;
 }
 
+export interface IAffectRows {
+  count?: number;
+
+  err_message?: string;
+}
+
 export interface IAuditPlanCount {
   audit_plan_count?: number;
 
@@ -999,6 +1005,14 @@ export interface IGetSqlManageRuleTipsResp {
   message?: string;
 }
 
+export interface IGetSqlManageSqlAnalysisResp {
+  code?: number;
+
+  data?: ISqlAnalysis;
+
+  message?: string;
+}
+
 export interface IGetSystemVariablesResV1 {
   code?: number;
 
@@ -1359,6 +1373,10 @@ export interface IPartialSyncAuditPlanSQLsReqV1 {
   audit_plan_sql_list?: IAuditPlanSQLReqV1[];
 }
 
+export interface IPerformanceStatistics {
+  affect_rows?: IAffectRows;
+}
+
 export interface IProjectRuleTemplateResV1 {
   db_type?: string;
 
@@ -1571,6 +1589,14 @@ export interface ISource {
   type?: SourceTypeEnum;
 }
 
+export interface ISqlAnalysis {
+  performance_statistics?: IPerformanceStatistics;
+
+  sql_explain?: ISQLExplain;
+
+  table_metas?: ITableMetas;
+}
+
 export interface ISqlAnalysisResDataV1 {
   sql_explain?: ISQLExplain;
 
@@ -1695,6 +1721,12 @@ export interface ITableMetaItemHeadResV1 {
   desc?: string;
 
   field_name?: string;
+}
+
+export interface ITableMetas {
+  err_message?: string;
+
+  table_meta_items?: ITableMeta[];
 }
 
 export interface ITestAuditPlanNotifyConfigResDataV1 {
@@ -2077,12 +2109,6 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_template_name?: string;
 }
 
-export interface IAffectRows {
-  count?: number;
-
-  err_message?: string;
-}
-
 export interface IAuditPlanReportSQLResV2 {
   audit_plan_report_sql?: string;
 
@@ -2107,6 +2133,28 @@ export interface IAuditPlanResV2 {
   audit_plan_token?: string;
 
   rule_template?: IRuleTemplateV2;
+}
+
+export interface IAuditPlanSQLReqV2 {
+  audit_plan_sql_counter?: string;
+
+  audit_plan_sql_fingerprint?: string;
+
+  audit_plan_sql_last_receive_text?: string;
+
+  audit_plan_sql_last_receive_timestamp?: string;
+
+  audit_plan_sql_schema?: string;
+
+  db_user?: string;
+
+  endpoints?: string[];
+
+  first_query_at?: string;
+
+  query_time_avg?: number;
+
+  query_time_max?: number;
 }
 
 export interface IAuditResDataV2 {
@@ -2215,6 +2263,10 @@ export interface IDriverMeta {
   driver_name?: string;
 
   logo_url?: string;
+}
+
+export interface IFullSyncAuditPlanSQLsReqV2 {
+  audit_plan_sql_list?: IAuditPlanSQLReqV2[];
 }
 
 export interface IGetAuditPlanAnalysisDataResV2 {
@@ -2343,8 +2395,8 @@ export interface IInstanceResV2 {
   sql_query_config?: ISQLQueryConfigResV1;
 }
 
-export interface IPerformanceStatistics {
-  affect_rows?: IAffectRows;
+export interface IPartialSyncAuditPlanSQLsReqV2 {
+  audit_plan_sql_list?: IAuditPlanSQLReqV2[];
 }
 
 export interface IRejectWorkflowReqV2 {
@@ -2355,12 +2407,6 @@ export interface IRuleTemplateV2 {
   is_global_rule_template?: boolean;
 
   name?: string;
-}
-
-export interface ITableMetas {
-  err_message?: string;
-
-  table_meta_items?: ITableMeta[];
 }
 
 export interface ITaskAnalysisDataV2 {

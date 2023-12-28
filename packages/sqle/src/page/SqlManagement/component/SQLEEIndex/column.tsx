@@ -2,9 +2,9 @@ import { t } from '../../../../locale';
 import {
   ActiontechTableColumn,
   ActiontechTableFilterMeta,
-  ActiontechTableActionMeta,
   ActiontechTableFilterMetaValue,
-  PageInfoWithoutIndexAndSize
+  PageInfoWithoutIndexAndSize,
+  ActiontechTableProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
@@ -36,6 +36,7 @@ import {
   BasicTypographyEllipsis
 } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -114,11 +115,14 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 };
 
 export const SqlManagementRowAction = (
-  openModal: (name: ModalName, row?: ISqlManage) => void
-): {
-  buttons: ActiontechTableActionMeta<ISqlManage>[];
-} => {
+  openModal: (name: ModalName, row?: ISqlManage) => void,
+  jumpToAnalyze: (sqlManageID: string) => void,
+  operationPermission: boolean
+): ActiontechTableProps<ISqlManage>['actions'] => {
   return {
+    width: operationPermission
+      ? ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3
+      : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH,
     buttons: [
       {
         text: t('sqlManagement.table.action.single.assignment'),
@@ -129,7 +133,8 @@ export const SqlManagementRowAction = (
               openModal(ModalName.Assignment_Member_Single, record);
             }
           };
-        }
+        },
+        permissions: () => operationPermission
       },
       {
         text: t('sqlManagement.table.action.single.updateStatus.triggerText'),
@@ -138,6 +143,18 @@ export const SqlManagementRowAction = (
           return {
             onClick: () => {
               openModal(ModalName.Change_Status_Single, record);
+            }
+          };
+        },
+        permissions: () => operationPermission
+      },
+      {
+        text: t('sqlManagement.table.action.analyze'),
+        key: 'change-status-single',
+        buttonProps: (record) => {
+          return {
+            onClick: () => {
+              jumpToAnalyze(record?.id?.toString() ?? '');
             }
           };
         }
@@ -260,6 +277,13 @@ const SqlManagementColumn: (
       title: () => t('sqlManagement.table.column.instanceName'),
       render: (instance_name) => {
         return instance_name || '-';
+      }
+    },
+    {
+      dataIndex: 'schema_name',
+      title: () => 'Schema',
+      render: (schemaName) => {
+        return schemaName || '-';
       }
     },
     {

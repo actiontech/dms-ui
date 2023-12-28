@@ -108,7 +108,7 @@ Object {
   "fixed": "right",
   "render": [Function],
   "title": [Function],
-  "width": 116,
+  "width": 122,
 }
 `;
 
@@ -121,7 +121,7 @@ Object {
   "fixed": "right",
   "render": [Function],
   "title": [Function],
-  "width": 116,
+  "width": 122,
 }
 `;
 
@@ -143,6 +143,6 @@ Object {
   "fixed": "right",
   "render": [Function],
   "title": [Function],
-  "width": 76,
+  "width": 82,
 }
 `;
