@@ -33,7 +33,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -651,7 +651,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2941,7 +2941,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -5231,7 +5231,7 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead

@@ -60,7 +60,6 @@ import useRuleTips, { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
 const SQLEEIndex = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-
   // api
   const { projectID, projectName, projectArchive } = useCurrentProject();
   const { isAdmin, username, isProjectManager, uid } = useCurrentUser();
@@ -184,9 +183,23 @@ const SQLEEIndex = () => {
     [dispatch]
   );
 
+  const jumpToAnalyze = useCallback(
+    (sqlManageID: string) => {
+      window.open(
+        `/sqle/project/${projectID}/sqlManagement/${sqlManageID}/analyze`,
+        '_blank'
+      );
+    },
+    [projectID]
+  );
+
   const actions = useMemo(() => {
-    return SqlManagementRowAction(openModal);
-  }, [openModal]);
+    return SqlManagementRowAction(
+      openModal,
+      jumpToAnalyze,
+      isAdmin || isProjectManager(projectName)
+    );
+  }, [isAdmin, isProjectManager, jumpToAnalyze, openModal, projectName]);
 
   const actionPermission = useMemo(() => {
     return !projectArchive && (isAdmin || isProjectManager(projectName));
@@ -536,7 +549,7 @@ const SQLEEIndex = () => {
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={!actionPermission ? [] : actions}
+        actions={projectArchive ? undefined : actions}
       />
       {/* modal & drawer */}
       <SqleManagementModal />

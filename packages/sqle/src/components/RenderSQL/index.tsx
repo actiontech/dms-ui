@@ -20,17 +20,19 @@ const RenderSQL: React.FC<RenderSQLProps> = ({
       <Typography.Paragraph
         ellipsis={{
           expandable: false,
-          tooltip: tooltip ?? {
-            arrow: false,
-            ...tooltipsCommonProps(
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: HighlightCode.highlightSql(sql)
-                }}
-              />,
-              640
-            )
-          },
+          tooltip: tooltip
+            ? {
+                arrow: false,
+                ...tooltipsCommonProps(
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: HighlightCode.highlightSql(sql)
+                    }}
+                  />,
+                  640
+                )
+              }
+            : false,
           rows
         }}
         className="margin-bottom-0"
