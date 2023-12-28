@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import {
   PieChartOutlined,
-  DesktopOutlined,
   AuditOutlined,
   ConsoleSqlOutlined,
   ProfileOutlined,

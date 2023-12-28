@@ -30,7 +30,7 @@ exports[`base/MemberList render member table 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -698,7 +698,7 @@ exports[`base/MemberList should render empty tips when request not success 1`] =
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead

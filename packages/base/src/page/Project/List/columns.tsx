@@ -16,6 +16,7 @@ import {
   IconProjectFlag
 } from '@actiontech/shared/lib/Icon/common';
 import { ProjectArchiveStyledWrapper } from './style';
+import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 
 export const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProject> => {
@@ -92,7 +93,7 @@ export const ProjectListActions = (
   allowOperateProject: (name: string) => boolean
 ): ActiontechTableProps<IListProject>['actions'] => {
   return {
-    width: 200,
+    width: ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3,
     buttons: [
       {
         text: t('common.edit'),
