@@ -55,7 +55,7 @@ exports[`test base/project/list should be get data from the request to render th
                   <col />
                   <col />
                   <col
-                    style="width: 200px;"
+                    style="width: 246px;"
                   />
                 </colgroup>
                 <thead
@@ -222,7 +222,7 @@ exports[`test base/project/list should be get data from the request to render th
                   <col />
                   <col />
                   <col
-                    style="width: 200px;"
+                    style="width: 246px;"
                   />
                 </colgroup>
                 <thead
