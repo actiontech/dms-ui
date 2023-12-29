@@ -39,7 +39,7 @@ const CreateRuleTemplate = () => {
   const {
     data: allRules,
     loading: getAllRulesLoading,
-    run
+    run: getAllRules
   } = useRequest((keyword?: string) =>
     rule_template
       .getRuleListV1({
@@ -138,11 +138,11 @@ const CreateRuleTemplate = () => {
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Search_Rule_Template_Rule_Select_List,
-      run
+      getAllRules
     );
 
     return unsubscribe;
-  }, [run]);
+  }, [getAllRules]);
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
