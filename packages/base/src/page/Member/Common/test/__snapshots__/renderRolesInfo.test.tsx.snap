@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/Member/Common/renderRolesInfo should match snapshot when ellipsis is falsy 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div>
+          Role1: [ Range1,Range2 ]
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/Common/renderRolesInfo should match snapshot when ellipsis is truthy 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+        >
+          Role1: [ Range1,Range2 ]
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;

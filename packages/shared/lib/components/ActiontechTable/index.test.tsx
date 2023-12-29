@@ -1,4 +1,4 @@
-import { getAllBySelector, getBySelector } from '../../testUtil/customQuery';
+import { getBySelector } from '../../testUtil/customQuery';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../testUtil/customRender';
 

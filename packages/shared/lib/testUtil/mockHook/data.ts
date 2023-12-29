@@ -2,7 +2,7 @@ import {
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum
 } from '../../api/base/service/common.enum';
-import { SupportTheme, SystemRole } from '../../enum';
+import { OpPermissionTypeUid, SupportTheme, SystemRole } from '../../enum';
 
 export const mockCurrentUserReturn = {
   isAdmin: true,
@@ -24,7 +24,7 @@ export const mockCurrentUserReturn = {
   ],
   managementPermissions: [
     {
-      uid: '400300',
+      uid: OpPermissionTypeUid.create_project,
       name: '创建项目'
     }
   ],
@@ -67,4 +67,23 @@ export const mockUserInfo = {
     user_groups: [],
     wxid: 'wx_test_id'
   }
+};
+
+export const mockDBServiceDriverInfo = {
+  driverNameList: ['MySQL'],
+  loading: false,
+  driverMeta: [
+    {
+      db_type: 'MySQL',
+      logo_path: '',
+      params: []
+    }
+  ],
+  dbDriverOptions: [],
+  updateDriverList: jest.fn(),
+  updateDriverListSync: jest.fn(),
+  getLogoUrlByDbType: jest.fn(),
+  generateDriverSelectOptions: jest.fn(),
+  driverInfoFetched: true,
+  setDriverInfoFetched: jest.fn
 };

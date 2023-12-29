@@ -2,10 +2,10 @@ import { t } from '../../../locale';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { Typography } from 'antd';
-import { DashboardNameStyleWrapper } from '../CommonTable/style';
 import { IconAuditTaskName } from '../../../icon/Dashboard';
 import { Link } from 'react-router-dom';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export const AuditPlanRiskColumns: (
   projectID: string
@@ -20,7 +20,7 @@ export const AuditPlanRiskColumns: (
           '-'
         )}`;
         return (
-          <DashboardNameStyleWrapper>
+          <TableColumnWithIconStyleWrapper>
             <IconAuditTaskName />
             <Link
               data-testid="report-time"
@@ -28,7 +28,7 @@ export const AuditPlanRiskColumns: (
             >
               {text}
             </Link>
-          </DashboardNameStyleWrapper>
+          </TableColumnWithIconStyleWrapper>
         );
       }
     },

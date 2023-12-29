@@ -1,9 +1,9 @@
 import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
 
-export const projectList: IListProject[] = [
+export const mockProjectList: IListProject[] = [
   {
     uid: '100121',
-    name: 'test project 1',
+    name: 'test_project_1',
     desc: 'test project 1 desc',
     archived: true,
     create_time: '2023-06-01T10:00:00.000Z',
@@ -14,7 +14,7 @@ export const projectList: IListProject[] = [
   },
   {
     uid: '100122',
-    name: 'test project 2',
+    name: 'test_project_2',
     desc: 'test project 2 desc',
     archived: false,
     create_time: '2023-05-31T12:21:55.000Z',
@@ -25,7 +25,7 @@ export const projectList: IListProject[] = [
   },
   {
     uid: '100133',
-    name: 'test project 3',
+    name: 'test_project_3',
     desc: 'test project 3 desc',
     archived: true,
     create_time: '2023-05-21T15:43:10.000Z',

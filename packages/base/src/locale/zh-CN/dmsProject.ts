@@ -5,7 +5,7 @@ export default {
     '从项目维度组织管理DMS平台的资源和功能，以项目为入口支持各种审核功能，不同项目之间资源隔离。',
   projectList: {
     title: '项目列表',
-    deleteSuccessTips: '删除项目{{name}}成功',
+    deleteSuccessTips: '删除项目"{{name}}"成功',
     archiveProjectSuccessTips: '冻结项目"{{name}}"成功',
     unarchiveProjectSuccessTips: '启用项目"{{name}}"成功',
     columns: {

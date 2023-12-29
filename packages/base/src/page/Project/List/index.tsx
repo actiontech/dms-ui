@@ -12,12 +12,10 @@ import {
 import { useCurrentUser, useUserInfo } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import { message } from 'antd';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import ProjectListTableColumnFactory, {
-  ProjectListActions
-} from './tableHeader';
+import { ProjectListActions, ProjectListTableColumnFactory } from './columns';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -72,15 +70,13 @@ const ProjectList: React.FC = () => {
       if (!allowOperateProject(record?.name ?? '')) return;
 
       const { uid = '', name = '' } = record;
-      if (!uid || !name) return;
       dms.DelProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.open({
-            type: 'success',
-            content: t('dmsProject.projectList.deleteSuccessTips', {
+          messageApi.success(
+            t('dmsProject.projectList.deleteSuccessTips', {
               name
             })
-          });
+          );
           refresh();
         }
       });
@@ -93,15 +89,13 @@ const ProjectList: React.FC = () => {
       if (!allowOperateProject(record?.name ?? '')) return;
 
       const { uid = '', name = '' } = record;
-      if (!uid || !name) return;
       dms.ArchiveProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.open({
-            type: 'success',
-            content: t('dmsProject.projectList.archiveProjectSuccessTips', {
+          messageApi.success(
+            t('dmsProject.projectList.archiveProjectSuccessTips', {
               name
             })
-          });
+          );
           refresh();
           EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
         }
@@ -115,15 +109,13 @@ const ProjectList: React.FC = () => {
       if (!allowOperateProject(record?.name ?? '')) return;
 
       const { uid = '', name = '' } = record;
-      if (!uid || !name) return;
       dms.UnarchiveProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.open({
-            type: 'success',
-            content: t('dmsProject.projectList.unarchiveProjectSuccessTips', {
+          messageApi.success(
+            t('dmsProject.projectList.unarchiveProjectSuccessTips', {
               name
             })
-          });
+          );
           refresh();
           EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
         }
@@ -147,24 +139,6 @@ const ProjectList: React.FC = () => {
     [allowOperateProject, dispatch]
   );
 
-  const columns = useMemo(() => ProjectListTableColumnFactory(), []);
-
-  const actions = useMemo(() => {
-    return ProjectListActions(
-      deleteProject,
-      updateProject,
-      archiveProject,
-      unarchiveProject,
-      allowOperateProject
-    );
-  }, [
-    deleteProject,
-    updateProject,
-    archiveProject,
-    unarchiveProject,
-    allowOperateProject
-  ]);
-
   useEffect(() => {
     EventEmitter.subscribe(EmitterKey.DMS_Refresh_Project_List, refresh);
 
@@ -179,14 +153,21 @@ const ProjectList: React.FC = () => {
       <ActiontechTable
         dataSource={projectListData?.list}
         pagination={{
-          total: projectListData?.total ?? 0
+          total: projectListData?.total ?? 0,
+          current: pagination.page_index
         }}
         rowKey="uid"
         loading={loading}
-        columns={columns}
+        columns={ProjectListTableColumnFactory()}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={actions}
+        actions={ProjectListActions(
+          deleteProject,
+          updateProject,
+          archiveProject,
+          unarchiveProject,
+          allowOperateProject
+        )}
       />
     </>
   );
