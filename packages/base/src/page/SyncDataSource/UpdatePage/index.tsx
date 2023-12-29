@@ -1,42 +1,42 @@
-import { Empty, message, Space, Typography } from 'antd';
-import { useForm } from 'antd/es/form/Form';
-import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useBoolean } from 'ahooks';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import SyncTaskForm, { SyncTaskFormFields } from '../SyncTaskForm';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useCallback, useEffect, useState } from 'react';
+import { Empty, message, Space, Typography } from 'antd';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
+import { IconInstanceManager } from '../../../icon/sideMenu';
+
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { useForm } from 'antd/es/form/Form';
+import SyncTaskForm, { SyncTaskFormFields } from '../Form';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IListDatabaseSourceService } from '@actiontech/shared/lib/api/base/service/common';
 import { IUpdateDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { useBoolean } from 'ahooks';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
-import { IconInstanceManager } from '../../../icon/sideMenu';
 
 const UpdateSyncTask: React.FC = () => {
   const { t } = useTranslation();
-  const [form] = useForm<SyncTaskFormFields>();
+  const navigate = useNavigate();
 
-  const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
-    useBoolean();
+  const { projectID, projectName } = useCurrentProject();
+  const [messageApi, contextHoler] = message.useMessage();
+  const [form] = useForm<SyncTaskFormFields>();
 
   const { taskId } = useParams<{ taskId: string }>();
   const [initError, setInitError] = useState('');
-  const navigate = useNavigate();
-  const [retryLoading, setRetryLoading] = useState(false);
-  const { projectID, projectName } = useCurrentProject();
-  const [finishGetSyncInstanceTask, setFinishGetSyncInstanceTask] =
-    useState(false);
+  const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
+    useBoolean();
+  const [taskInfoLoading, setTaskInfoLoading] = useState(false);
   const [syncInstanceTask, setSyncInstanceTask] = useState<
     IListDatabaseSourceService | undefined
   >();
-  const [messageApi, contextHoler] = message.useMessage();
 
-  const submit = async () => {
+  const onSubmit = async () => {
     const values: SyncTaskFormFields = await form.validateFields();
     startSubmit();
     const params: IUpdateDatabaseSourceServiceParams = {
@@ -45,10 +45,12 @@ const UpdateSyncTask: React.FC = () => {
         name: values.name,
         source: values.source,
         db_type: values.instanceType,
+        // #if [!provision]
         sqle_config: {
           rule_template_id: values.ruleTemplateId,
           rule_template_name: values.ruleTemplateName
         },
+        // #endif
         cron_express: values.syncInterval,
         url: values.url,
         version: values.version
@@ -59,18 +61,28 @@ const UpdateSyncTask: React.FC = () => {
       .UpdateDatabaseSourceService(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('dmsSyncDataSource.updateSyncTask.successTips'));
-          navigate(`/project/${projectID}/syncDataSource`, { replace: true });
+          messageApi.success(
+            t('dmsSyncDataSource.updateSyncTask.successTips'),
+            3,
+            () => {
+              navigate(`/project/${projectID}/syncDataSource`, {
+                replace: true
+              });
+            }
+          );
         }
       })
       .finally(() => {
         submitFinish();
       });
   };
-  const getSyncInstanceTask = useCallback(() => {
-    if (!taskId) return;
 
-    setRetryLoading(true);
+  const getSyncInstanceTask = useCallback(() => {
+    if (!taskId) {
+      setInitError(t('common.unknownError'));
+      return;
+    }
+    setTaskInfoLoading(true);
     dms
       .GetDatabaseSourceService({
         database_source_service_uid: taskId,
@@ -85,8 +97,7 @@ const UpdateSyncTask: React.FC = () => {
         }
       })
       .finally(() => {
-        setRetryLoading(false);
-        setFinishGetSyncInstanceTask(true);
+        setTaskInfoLoading(false);
       });
   }, [projectID, t, taskId]);
 
@@ -112,10 +123,12 @@ const UpdateSyncTask: React.FC = () => {
         }
         extra={
           <Space>
-            <BasicButton onClick={reset}>{t('common.reset')}</BasicButton>
+            <BasicButton onClick={reset} disabled={submitLoading}>
+              {t('common.reset')}
+            </BasicButton>
             <BasicButton
               type="primary"
-              onClick={submit}
+              onClick={onSubmit}
               loading={submitLoading}
             >
               {t('common.submit')}
@@ -139,7 +152,7 @@ const UpdateSyncTask: React.FC = () => {
             <BasicButton
               type="primary"
               onClick={getSyncInstanceTask}
-              loading={retryLoading}
+              loading={taskInfoLoading}
             >
               {t('common.retry')}
             </BasicButton>
@@ -147,7 +160,7 @@ const UpdateSyncTask: React.FC = () => {
         }
       >
         <SyncTaskForm
-          loading={!finishGetSyncInstanceTask || submitLoading}
+          loading={taskInfoLoading || submitLoading}
           defaultValue={syncInstanceTask}
           form={form}
           projectName={projectName}

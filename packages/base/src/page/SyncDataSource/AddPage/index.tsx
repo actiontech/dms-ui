@@ -1,41 +1,46 @@
+import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
+import { useCallback } from 'react';
+
+import { Link } from 'react-router-dom';
 import { Space } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import EmitterKey from '../../../data/EmitterKey';
-import EventEmitter from '../../../utils/EventEmitter';
-import SyncTaskForm, { SyncTaskFormFields } from '../SyncTaskForm';
+import SyncTaskForm, { SyncTaskFormFields } from '../Form';
 import {
   BasicButton,
   BasicResult,
   EmptyBox,
   PageHeader
 } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { IAddDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { Link } from 'react-router-dom';
 import {
   IconLeftArrow,
   IconSuccessResult
 } from '@actiontech/shared/lib/Icon/common';
 import { IconInstanceManager } from '../../../icon/sideMenu';
 
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { IAddDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+
+import EmitterKey from '../../../data/EmitterKey';
+import EventEmitter from '../../../utils/EventEmitter';
+
 const AddSyncTask: React.FC = () => {
   const { t } = useTranslation();
+
+  const { projectID, projectName } = useCurrentProject();
   const [form] = useForm<SyncTaskFormFields>();
+
   const [
     submitResultVisibility,
     { setTrue: showResult, setFalse: hiddenResult }
   ] = useBoolean();
-  const { projectID, projectName } = useCurrentProject();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
 
-  const submit = async () => {
+  const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
 
@@ -44,10 +49,12 @@ const AddSyncTask: React.FC = () => {
         name: values.name,
         db_type: values.instanceType,
         source: values.source,
+        // #if [!provision]
         sqle_config: {
           rule_template_id: values.ruleTemplateId,
           rule_template_name: values.ruleTemplateName
         },
+        // #endif
         cron_express: values.syncInterval,
         url: values.url,
         version: values.version
@@ -85,12 +92,15 @@ const AddSyncTask: React.FC = () => {
         extra={
           <EmptyBox if={!submitResultVisibility}>
             <Space>
-              <BasicButton onClick={resetAndHideResult}>
+              <BasicButton
+                onClick={resetAndHideResult}
+                disabled={submitLoading}
+              >
                 {t('common.reset')}
               </BasicButton>
               <BasicButton
                 type="primary"
-                onClick={submit}
+                onClick={onSubmit}
                 loading={submitLoading}
               >
                 {t('common.submit')}
@@ -99,7 +109,26 @@ const AddSyncTask: React.FC = () => {
           </EmptyBox>
         }
       />
-      <div hidden={!submitResultVisibility}>
+      <EmptyBox
+        if={submitResultVisibility}
+        defaultNode={
+          <SyncTaskForm
+            projectName={projectName}
+            loading={submitLoading}
+            form={form}
+            title={
+              <>
+                <IconInstanceManager
+                  className="title-icon"
+                  width={32}
+                  height={32}
+                />
+                <span>{t('dmsSyncDataSource.addSyncTask.title')}</span>
+              </>
+            }
+          />
+        }
+      >
         <BasicResult
           icon={<IconSuccessResult />}
           title={t('dmsSyncDataSource.addSyncTask.successTips')}
@@ -121,25 +150,7 @@ const AddSyncTask: React.FC = () => {
             </BasicButton>
           ]}
         />
-      </div>
-
-      <div hidden={submitResultVisibility}>
-        <SyncTaskForm
-          projectName={projectName}
-          loading={submitLoading}
-          form={form}
-          title={
-            <>
-              <IconInstanceManager
-                className="title-icon"
-                width={32}
-                height={32}
-              />
-              <span>{t('dmsSyncDataSource.addSyncTask.title')}</span>
-            </>
-          }
-        />
-      </div>
+      </EmptyBox>
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };
