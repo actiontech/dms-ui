@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { FormInstance, useForm } from 'antd/es/form/Form';
@@ -9,6 +9,9 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { SelectFileFormFields } from '../ImportRuleTemplate/index.type';
 import { RuleTemplateFormProps } from '../RuleTemplateForm/index.type';
 import { RuleTemplateBaseInfoFields } from '../RuleTemplateForm/BaseInfoForm/index.type';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+import { useEffect } from 'react';
 
 interface IUseImportRuleTemplateProps {
   ruleTemplateForm: FormInstance<RuleTemplateBaseInfoFields>;
@@ -41,26 +44,33 @@ const useImportRuleTemplate = ({
     IRuleResV1[]
   >([]);
 
+  const importRulesRef = useRef<IRuleResV1[]>();
+  const importDBTypeRef = useRef<string>();
+
   const getAllRulesByDbTypeAndFilterActiveRuleList = (
     importRuleList: IRuleResV1[],
-    dbType?: string
+    dbType?: string,
+    keyword?: string,
+    isSearchEvent?: boolean
   ) => {
     startGetAllRules();
-
     rule_template
       .getRuleListV1({
-        filter_db_type: dbType
+        filter_db_type: dbType,
+        fuzzy_keyword_rule: keyword
       })
       .then((res) => {
         if (ResponseCode.SUCCESS === res.data.code) {
           setAllRules(res.data.data ?? []);
-          setImportActiveRuleData(
-            importRuleList.filter((rule) => {
-              return res.data.data?.some(
-                (allRule) => allRule.rule_name === rule.rule_name
-              );
-            })
-          );
+          const activeRules = importRuleList.filter((rule) => {
+            return res.data.data?.some(
+              (allRule) => allRule.rule_name === rule.rule_name
+            );
+          });
+          setImportActiveRuleData(activeRules);
+          if (isSearchEvent) {
+            setActiveRule(activeRules);
+          }
         }
       })
       .finally(() => {
@@ -89,6 +99,8 @@ const useImportRuleTemplate = ({
               parseFileData.rule_list ?? [],
               parseFileData.db_type
             );
+            importRulesRef.current = parseFileData.rule_list ?? [];
+            importDBTypeRef.current = parseFileData.db_type;
             ruleTemplateForm.setFieldsValue({
               templateDesc: parseFileData.desc,
               templateName: parseFileData.name,
@@ -101,6 +113,24 @@ const useImportRuleTemplate = ({
         hideLoading();
       });
   };
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Search_Rule_Template_Rule_Select_List,
+      (value: string) => {
+        getAllRulesByDbTypeAndFilterActiveRuleList(
+          importRulesRef.current ?? [],
+          importDBTypeRef.current,
+          value,
+          true
+        );
+      }
+    );
+
+    return unsubscribe;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return {
     ruleTemplateFormVisibility,
     selectFileForm,

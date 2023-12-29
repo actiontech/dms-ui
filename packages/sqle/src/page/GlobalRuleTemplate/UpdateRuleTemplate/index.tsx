@@ -1,12 +1,9 @@
 import { useBoolean } from 'ahooks';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
-import {
-  IRuleTemplateDetailResV1,
-  IRuleReqV1
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useRuleTemplateForm from '../../RuleTemplate/hooks/useRuleTemplateForm';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -38,8 +35,10 @@ const UpdateRuleTemplate = () => {
     nextStep,
     baseInfoFormSubmit,
     resetAll,
-    onGoToGlobalRuleTemplateList
-  } = useRuleTemplateForm();
+    onGoToGlobalRuleTemplateList,
+    ruleTemplate,
+    setRuleTemplate
+  } = useRuleTemplateForm(false, true);
   const [
     updateTemplateFormLoading,
     { setTrue: startLoad, setFalse: finishLoad }
@@ -48,9 +47,7 @@ const UpdateRuleTemplate = () => {
     updateTemplateLoading,
     { setTrue: startSubmit, setFalse: finishSubmit }
   ] = useBoolean();
-  const [ruleTemplate, setRuleTemplate] = useState<
-    IRuleTemplateDetailResV1 | undefined
-  >();
+
   const urlParams = useParams<{ templateName: string }>();
   const { projectName } = useCurrentProject();
 
@@ -99,7 +96,13 @@ const UpdateRuleTemplate = () => {
       .finally(() => {
         finishLoad();
       });
-  }, [finishLoad, setActiveRule, startLoad, urlParams.templateName]);
+  }, [
+    finishLoad,
+    setActiveRule,
+    startLoad,
+    urlParams.templateName,
+    setRuleTemplate
+  ]);
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
