@@ -22,7 +22,10 @@ enum EmitterKey {
   Refresh_Report_Statistics = 'Refresh_Report_Statistics',
   Refresh_Project_Overview = 'Refresh_Project_Overview',
 
-  Refresh_SQL_Management = 'Refresh_SQL_Management'
+  Refresh_SQL_Management = 'Refresh_SQL_Management',
+
+  Search_Rule_Template_Rule_Select_List = 'Search_Rule_Template_Rule_Select_List',
+  Search_Rule_Template_Rule_Clear_Value = 'Search_Rule_Template_Rule_Clear_Value'
 }
 
 export default EmitterKey;

@@ -12,7 +12,7 @@ import RuleTemplateForm from '../RuleTemplateForm';
 
 import { cloneDeep } from 'lodash';
 import { useBoolean, useRequest } from 'ahooks';
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useForm } from 'antd/es/form/Form';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
@@ -23,6 +23,8 @@ import {
 import { RuleTemplateBaseInfoFields } from '../RuleTemplateForm/BaseInfoForm/index.type';
 import { ResponseCode } from '../../../data/common';
 import classNames from 'classnames';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -34,8 +36,16 @@ const CreateRuleTemplate = () => {
   const [activeRule, setActiveRule] = useState<IRuleResV1[]>([]);
   const [databaseRule, setDatabaseRule] = useState<IRuleResV1[]>([]);
   const [dbType, setDbType] = useState<string>('');
-  const { data: allRules, loading: getAllRulesLoading } = useRequest(() =>
-    rule_template.getRuleListV1({}).then((res) => res.data.data ?? [])
+  const {
+    data: allRules,
+    loading: getAllRulesLoading,
+    run: getAllRules
+  } = useRequest((keyword?: string) =>
+    rule_template
+      .getRuleListV1({
+        fuzzy_keyword_rule: keyword
+      })
+      .then((res) => res.data.data ?? [])
   );
 
   const [form] = useForm<RuleTemplateBaseInfoFields>();
@@ -53,8 +63,9 @@ const CreateRuleTemplate = () => {
   const resetAll = useCallback(() => {
     setStep(0);
     form.resetFields();
-    setActiveRule([...(allRules ?? [])]);
-  }, [allRules, form]);
+    setDbType('');
+    EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);
+  }, [form]);
 
   const onReCreateRuleTem = () => {
     resetAll();
@@ -112,6 +123,26 @@ const CreateRuleTemplate = () => {
         finishSubmit();
       });
   }, [activeRule, finishSubmit, form, projectName, startSubmit, step]);
+
+  useEffect(() => {
+    if (dbType) {
+      const tempAllRules = allRules?.filter((e) => e.db_type === dbType) ?? [];
+      setDatabaseRule(tempAllRules);
+      setActiveRule(
+        cloneDeep(tempAllRules.filter((item) => !item.is_custom_rule))
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allRules]);
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Search_Rule_Template_Rule_Select_List,
+      getAllRules
+    );
+
+    return unsubscribe;
+  }, [getAllRules]);
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>

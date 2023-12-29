@@ -25,6 +25,8 @@ import {
   IRuleReqV1,
   IRuleResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -33,8 +35,14 @@ const UpdateRuleTemplate = () => {
   const [step, setStep] = useState(0);
   const { projectName, projectID } = useCurrentProject();
   const urlParams = useParams<{ templateName: string }>();
-  const { data: allRules, loading: getAllRulesLoading } = useRequest(() =>
-    rule_template.getRuleListV1({}).then((res) => res.data.data ?? [])
+  const {
+    data: allRules,
+    loading: getAllRulesLoading,
+    run
+  } = useRequest((keyword?: string) =>
+    rule_template
+      .getRuleListV1({ fuzzy_keyword_rule: keyword })
+      .then((res) => res.data.data ?? [])
   );
 
   const [form] = useForm<RuleTemplateBaseInfoFields>();
@@ -79,20 +87,28 @@ const UpdateRuleTemplate = () => {
     setStep(step - 1);
   }, [step]);
 
+  const getRuleTemplate = useCallback(
+    (fuzzyKeyword?: string) => {
+      rule_template
+        .getProjectRuleTemplateV1({
+          rule_template_name: urlParams.templateName ?? '',
+          project_name: projectName,
+          fuzzy_keyword_rule: fuzzyKeyword
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            const template = res.data.data ?? {};
+            setRuleTemplate(template);
+            setActiveRule(template?.rule_list ?? []);
+          }
+        });
+    },
+    [projectName, urlParams.templateName]
+  );
+
   useEffect(() => {
-    rule_template
-      .getProjectRuleTemplateV1({
-        rule_template_name: urlParams.templateName ?? '',
-        project_name: projectName
-      })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          const template = res.data.data ?? {};
-          setRuleTemplate(template);
-          setActiveRule(template?.rule_list ?? []);
-        }
-      });
-  }, [projectName, urlParams.templateName]);
+    getRuleTemplate();
+  }, [getRuleTemplate]);
 
   const resetAll = () => {
     if (!ruleTemplate) return;
@@ -103,6 +119,8 @@ const UpdateRuleTemplate = () => {
     });
     setStep(0);
     setActiveRule([...(ruleTemplate?.rule_list ?? [])]);
+    setDbType('');
+    EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);
   };
 
   const submit = useCallback(() => {
@@ -134,6 +152,26 @@ const UpdateRuleTemplate = () => {
         finishSubmit();
       });
   }, [activeRule, finishSubmit, form, projectName, startSubmit, step]);
+
+  useEffect(() => {
+    if (dbType) {
+      const tempAllRules = allRules?.filter((e) => e.db_type === dbType) ?? [];
+      setDatabaseRule(tempAllRules);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allRules]);
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Search_Rule_Template_Rule_Select_List,
+      (value) => {
+        run(value);
+        getRuleTemplate(value);
+      }
+    );
+
+    return unsubscribe;
+  }, [run, getRuleTemplate]);
 
   return (
     <>

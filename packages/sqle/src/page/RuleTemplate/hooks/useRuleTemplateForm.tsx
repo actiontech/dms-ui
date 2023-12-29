@@ -4,15 +4,21 @@ import { useRequest } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { RuleTemplateBaseInfoFields } from '../RuleTemplateForm/BaseInfoForm/index.type';
-import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IRuleResV1,
+  IRuleTemplateDetailResV1
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import { cloneDeep } from 'lodash';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+import { useEffect } from 'react';
 
 const successStepNum = 2;
 
 // todo: hooks 需要重构。。。
-const useRuleTemplateForm = (isImport = false) => {
+const useRuleTemplateForm = (isImport = false, filterTemplateRule = false) => {
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const submitSuccessStatus = useMemo(() => step === successStepNum, [step]);
@@ -34,6 +40,9 @@ const useRuleTemplateForm = (isImport = false) => {
   const [dbType, setDbType] = useState<string>('');
   const [baseInfoFormSubmitLoading, setBaseInfoFormSubmitLoading] =
     useState(false);
+  const [ruleTemplate, setRuleTemplate] = useState<
+    IRuleTemplateDetailResV1 | undefined
+  >();
 
   const [form] = useForm<RuleTemplateBaseInfoFields>();
   const { updateActiveSegmentedKey } = useRuleManagerSegmented();
@@ -80,15 +89,62 @@ const useRuleTemplateForm = (isImport = false) => {
 
   const resetAll = useCallback(() => {
     setStep(0);
-    form.resetFields();
-    !isImport && setActiveRule([...(allRules ?? [])]);
-  }, [allRules, form, isImport]);
+    if (ruleTemplate) {
+      form.setFieldsValue({
+        templateDesc: ruleTemplate?.desc
+      });
+    } else {
+      form.resetFields();
+    }
+
+    setDbType('');
+    EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);
+  }, [form, ruleTemplate]);
 
   const onGoToGlobalRuleTemplateList = () => {
     updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
 
     navigate('/sqle/ruleManager');
   };
+
+  useEffect(() => {
+    if (dbType && !isImport) {
+      const tempAllRules = allRules?.filter((e) => e.db_type === dbType) ?? [];
+      setDatabaseRule(tempAllRules);
+      if (filterTemplateRule) {
+        const templateRule = ruleTemplate?.rule_list ?? [];
+        setActiveRule(
+          cloneDeep(
+            templateRule.filter((item) => {
+              return tempAllRules.some(
+                (allRule) => allRule.rule_name === item.rule_name
+              );
+            })
+          )
+        );
+      } else {
+        setActiveRule(
+          cloneDeep(tempAllRules.filter((item) => !item.is_custom_rule))
+        );
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allRules]);
+
+  useEffect(() => {
+    if (!isImport) {
+      const { unsubscribe } = EventEmitter.subscribe(
+        EmitterKey.Search_Rule_Template_Rule_Select_List,
+        (value) => {
+          getAllRules({
+            fuzzy_keyword_rule: value
+          });
+        }
+      );
+      return unsubscribe;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return {
     form,
@@ -105,7 +161,9 @@ const useRuleTemplateForm = (isImport = false) => {
     nextStep,
     baseInfoFormSubmit,
     resetAll,
-    onGoToGlobalRuleTemplateList
+    onGoToGlobalRuleTemplateList,
+    ruleTemplate,
+    setRuleTemplate
   };
 };
 

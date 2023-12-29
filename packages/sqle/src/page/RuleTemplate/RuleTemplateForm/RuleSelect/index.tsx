@@ -19,6 +19,10 @@ import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ALL_RULE_TYPE_CONSTANT } from '../../../../components/RuleList/RuleTypes';
 import EditRuleTemplate from '../../EditRuleTemplate';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import CustomSearchInput from '../../../../components/RuleDetail/components/CustomSearchInput';
+import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
+import EventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 
 const RuleSelect = (props: RuleSelectProps) => {
   const { t } = useTranslation();
@@ -146,6 +150,18 @@ const RuleSelect = (props: RuleSelectProps) => {
         />
         {renderBatchAction()}
       </SegmentedRowStyleWrapper>
+      <FilterContainerStyleWrapper className="full-width-element">
+        <CustomSearchInput
+          onCustomPressEnter={(value) => {
+            EventEmitter.emit(
+              EmitterKey.Search_Rule_Template_Rule_Select_List,
+              value
+            );
+          }}
+          placeholder={t('rule.form.fuzzy_text_placeholder')}
+          allowClear
+        />
+      </FilterContainerStyleWrapper>
       <Spin spinning={props.listLoading || props.formSubmitLoading}>
         {props.dbType && (
           <RuleTypes
@@ -161,7 +177,7 @@ const RuleSelect = (props: RuleSelectProps) => {
           rules={rulesData}
           activeDataKeys={rulesData.map((item) => item?.rule_name ?? '')}
           onActionHandle={(record, type) => onAction(record, type)}
-          pageHeaderHeight={70}
+          pageHeaderHeight={118}
         />
       </Spin>
       <EditRuleTemplate
