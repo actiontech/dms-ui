@@ -20,11 +20,9 @@ const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 const System = lazy(() => import('../page/System'));
 const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
 const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
-const SyncTaskList = lazy(() => import('../page/SyncDataSource/SyncTaskList'));
-const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddSyncTask'));
-const UpdateSyncTask = lazy(
-  () => import('../page/SyncDataSource/UpdateSyncTask')
-);
+const SyncTaskList = lazy(() => import('../page/SyncDataSource/List'));
+const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddPage'));
+const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
 const Account = lazy(() => import('../page/Account'));
 
 export const BaseRouterConfig: RouterConfigItem[] = [
