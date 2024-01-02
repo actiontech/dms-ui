@@ -276,6 +276,11 @@ describe('page/Auth/AddAuth', () => {
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(3300));
       expect(requestVerifyDBAccountFn).toBeCalled();
+      expect(requestVerifyDBAccountFn).toBeCalledWith({
+        data_permission_template_uid: '69',
+        hostname: '1.1.1.1',
+        username: 'test'
+      });
     });
   });
 });
