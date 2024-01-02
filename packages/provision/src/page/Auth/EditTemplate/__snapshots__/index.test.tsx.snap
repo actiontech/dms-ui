@@ -196,7 +196,7 @@ exports[`Auth/EditTemplate should match snapshot 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -533,7 +533,7 @@ exports[`Auth/EditTemplate should match snapshot 2`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -990,7 +990,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -1447,7 +1447,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 2`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -1904,7 +1904,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 1`] = 
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -2361,7 +2361,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 2`] = 
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -2783,7 +2783,7 @@ exports[`Auth/EditTemplate should match snapshot when the url not contain an id 
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -3086,7 +3086,7 @@ exports[`Auth/EditTemplate should match snapshot when the url not contain an id 
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead

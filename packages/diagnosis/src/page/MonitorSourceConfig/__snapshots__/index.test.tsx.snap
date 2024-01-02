@@ -181,7 +181,7 @@ exports[`test monitor source config render without permission 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -843,7 +843,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -1571,7 +1571,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -2873,7 +2873,7 @@ exports[`test monitor source config should render search result for table and re
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead
@@ -3447,7 +3447,7 @@ exports[`test monitor source config should render server monitor table for defau
                       <col />
                       <col />
                       <col
-                        style="width: 152px;"
+                        style="width: 164px;"
                       />
                     </colgroup>
                     <thead

@@ -232,7 +232,7 @@ exports[`page/Auth/AuthList/List render init snap 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -618,7 +618,7 @@ exports[`page/Auth/AuthList/List render init snap 2`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -1004,7 +1004,7 @@ exports[`page/Auth/AuthList/List render table list when action filter render act
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -7549,7 +7549,7 @@ exports[`page/Auth/AuthList/List render table list when action filter render act
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -14108,7 +14108,7 @@ exports[`page/Auth/AuthList/List render table list when action filter render get
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -20667,7 +20667,7 @@ exports[`page/Auth/AuthList/List render table list when action filter render get
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -27024,7 +27024,7 @@ exports[`page/Auth/AuthList/List render table list when api return data 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -33381,7 +33381,7 @@ exports[`page/Auth/AuthList/List render table row action render click auth templ
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -34184,7 +34184,7 @@ exports[`page/Auth/AuthList/List render table row action render click user text 
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -34998,7 +34998,7 @@ exports[`page/Auth/AuthList/List render table row action render expiration toolt
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead

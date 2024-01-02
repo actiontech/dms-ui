@@ -256,7 +256,7 @@ exports[`page/Auth/AuthList render init snap 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 192px;"
+                        style="width: 204px;"
                       />
                     </colgroup>
                     <thead

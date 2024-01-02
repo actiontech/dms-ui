@@ -276,7 +276,7 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -662,7 +662,7 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -1049,7 +1049,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -1863,7 +1863,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -2707,7 +2707,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -3551,7 +3551,7 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -3937,7 +3937,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -4903,7 +4903,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -5574,7 +5574,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -6185,7 +6185,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                       <col />
                       <col />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead

@@ -32,7 +32,7 @@ exports[`diagnosis/test role table can not check permission for no id 1`] = `
                       style="width: 450px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -422,7 +422,7 @@ exports[`diagnosis/test role table delete role failed 1`] = `
                       style="width: 450px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -774,7 +774,7 @@ exports[`diagnosis/test role table render without permission 1`] = `
                       style="width: 450px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1213,7 +1213,7 @@ exports[`diagnosis/test role table should open model when click edit button 1`] 
                       style="width: 450px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1670,7 +1670,7 @@ exports[`diagnosis/test role table should open query popover when click delete b
                       style="width: 450px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2127,7 +2127,7 @@ exports[`diagnosis/test role table should refresh table when change pagination i
                       style="width: 450px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2584,7 +2584,7 @@ exports[`diagnosis/test role table should render normal table 1`] = `
                       style="width: 450px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -3065,7 +3065,7 @@ exports[`diagnosis/test role table should render table when api return null 1`] 
                       style="width: 450px;"
                     />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead

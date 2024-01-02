@@ -8,7 +8,7 @@ import useProvisionUser from '~/hooks/useProvisionUser';
 const UserSelect: React.FC<UserSelectProps> = ({ className }) => {
   const { t } = useTranslation();
 
-  const { updateUserList, userNameOptions, loading } = useProvisionUser();
+  const { updateUserList, userIDOptions, loading } = useProvisionUser();
 
   useEffect(() => {
     updateUserList();
@@ -25,7 +25,7 @@ const UserSelect: React.FC<UserSelectProps> = ({ className }) => {
         showSearch={true}
         optionFilterProp="label"
         loading={loading}
-        options={userNameOptions}
+        options={userIDOptions}
       />
     </FormItemLabel>
   );

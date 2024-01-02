@@ -47,22 +47,40 @@ const useProvisionUser = () => {
     });
   }, [userList]);
 
-  const userNameOptions = useMemo(() => {
-    return userList?.map((user) => {
-      return {
-        value: user.name,
-        text: user.name,
-        label: (
-          <UserSelectOptionLabelStyleWrapper>
-            <AvatarCom size="small" name={user.name?.[0] ?? ''} />
-            <Typography.Text>{user.name}</Typography.Text>
-          </UserSelectOptionLabelStyleWrapper>
-        )
-      };
-    });
-  }, [userList]);
+  const generateOption = useCallback(
+    (isValueId = false) => {
+      return userList?.map((user) => {
+        return {
+          value: isValueId ? user.user_uid : user.name,
+          text: user.name,
+          label: (
+            <UserSelectOptionLabelStyleWrapper>
+              <AvatarCom size="small" name={user.name?.[0] ?? ''} />
+              <Typography.Text>{user.name}</Typography.Text>
+            </UserSelectOptionLabelStyleWrapper>
+          )
+        };
+      });
+    },
+    [userList]
+  );
 
-  return { loading, userList, userOptions, userNameOptions, updateUserList };
+  const userIDOptions = useMemo(() => {
+    return generateOption(true);
+  }, [generateOption]);
+
+  const userNameOptions = useMemo(() => {
+    return generateOption();
+  }, [generateOption]);
+
+  return {
+    loading,
+    userList,
+    userOptions,
+    userNameOptions,
+    userIDOptions,
+    updateUserList
+  };
 };
 
 export default useProvisionUser;
