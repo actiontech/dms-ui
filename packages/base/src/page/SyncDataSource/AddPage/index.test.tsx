@@ -1,5 +1,4 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { useNavigate } from 'react-router-dom';
 import { superRender } from '../../../testUtils/customRender';
 import { getAllBySelector, getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
