@@ -240,7 +240,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -644,7 +644,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -1144,7 +1144,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -1886,7 +1886,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -2591,7 +2591,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -3296,7 +3296,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -4063,7 +4063,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -4805,7 +4805,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -5184,7 +5184,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
@@ -5563,7 +5563,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 192px;"
+                      style="width: 204px;"
                     />
                   </colgroup>
                   <thead
