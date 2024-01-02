@@ -186,7 +186,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
                         style="width: 200px;"
                       />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -1399,7 +1399,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                         style="width: 200px;"
                       />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -2306,7 +2306,7 @@ exports[`page/auth/AuthAudit render init snap 1`] = `
                         style="width: 200px;"
                       />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -2642,7 +2642,7 @@ exports[`page/auth/AuthAudit render init snap 2`] = `
                         style="width: 200px;"
                       />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -2978,7 +2978,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                         style="width: 200px;"
                       />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -3860,7 +3860,7 @@ exports[`page/auth/AuthAudit render table list when api return error 1`] = `
                         style="width: 200px;"
                       />
                       <col
-                        style="width: 76px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead

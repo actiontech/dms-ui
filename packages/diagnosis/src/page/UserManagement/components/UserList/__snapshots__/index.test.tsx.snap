@@ -29,7 +29,7 @@ exports[`diagnosis/test user table delete user failed 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -334,7 +334,7 @@ exports[`diagnosis/test user table render without permission 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -659,7 +659,7 @@ exports[`diagnosis/test user table should open model when click edit button 1`] 
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1011,7 +1011,7 @@ exports[`diagnosis/test user table should open query popover when click delete b
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1363,7 +1363,7 @@ exports[`diagnosis/test user table should refresh table when change pagination i
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1715,7 +1715,7 @@ exports[`diagnosis/test user table should render normal table 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2067,7 +2067,7 @@ exports[`diagnosis/test user table should render table when api return null 1`] 
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead

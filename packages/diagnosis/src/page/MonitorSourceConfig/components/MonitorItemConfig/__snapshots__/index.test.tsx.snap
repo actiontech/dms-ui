@@ -144,7 +144,7 @@ exports[`test monitor item config table render without permission 1`] = `
                         <col />
                         <col />
                         <col
-                          style="width: 76px;"
+                          style="width: 82px;"
                         />
                       </colgroup>
                       <thead
@@ -653,7 +653,7 @@ exports[`test monitor item config table return error when no params in url 1`] =
                         <col />
                         <col />
                         <col
-                          style="width: 76px;"
+                          style="width: 82px;"
                         />
                       </colgroup>
                       <thead
@@ -933,7 +933,7 @@ exports[`test monitor item config table should open check model when click check
                         <col />
                         <col />
                         <col
-                          style="width: 76px;"
+                          style="width: 82px;"
                         />
                       </colgroup>
                       <thead
@@ -1460,7 +1460,7 @@ exports[`test monitor item config table should refresh table when change paginat
                         <col />
                         <col />
                         <col
-                          style="width: 76px;"
+                          style="width: 82px;"
                         />
                       </colgroup>
                       <thead
@@ -1987,7 +1987,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                         <col />
                         <col />
                         <col
-                          style="width: 76px;"
+                          style="width: 82px;"
                         />
                       </colgroup>
                       <thead
@@ -2514,7 +2514,7 @@ exports[`test monitor item config table should render table when api return null
                         <col />
                         <col />
                         <col
-                          style="width: 76px;"
+                          style="width: 82px;"
                         />
                       </colgroup>
                       <thead

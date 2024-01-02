@@ -33,7 +33,7 @@ exports[`test server monitor table can not delete by no id and no status data 1`
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -429,7 +429,7 @@ exports[`test server monitor table delete server monitor failed 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -823,7 +823,7 @@ exports[`test server monitor table render without permission 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1307,7 +1307,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1857,7 +1857,7 @@ exports[`test server monitor table should open query popover when click delete b
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2407,7 +2407,7 @@ exports[`test server monitor table should refresh table when change pagination i
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2957,7 +2957,7 @@ exports[`test server monitor table should render normal table 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -3507,7 +3507,7 @@ exports[`test server monitor table should render table when api return null 1`] 
                     <col />
                     <col />
                     <col
-                      style="width: 152px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead

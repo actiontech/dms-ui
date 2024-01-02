@@ -4,7 +4,6 @@ import auth from '../../../../testUtil/mockApi/auth';
 
 import UserSelect from '.';
 import { UserSelectProps } from '../index.type';
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
 import { Form } from 'antd';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';

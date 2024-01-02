@@ -200,7 +200,7 @@ exports[`Auth/AuthTemplateList should match snapshot 1`] = `
                         <col />
                         <col />
                         <col
-                          style="width: 192px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -466,7 +466,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                         <col />
                         <col />
                         <col
-                          style="width: 192px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -1339,7 +1339,7 @@ exports[`Auth/AuthTemplateList should refresh table when eventEmitter receive 'R
                         <col />
                         <col />
                         <col
-                          style="width: 192px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -1605,7 +1605,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
                         <col />
                         <col />
                         <col
-                          style="width: 192px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -1871,7 +1871,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
                         <col />
                         <col />
                         <col
-                          style="width: 192px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -2137,7 +2137,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                         <col />
                         <col />
                         <col
-                          style="width: 192px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead

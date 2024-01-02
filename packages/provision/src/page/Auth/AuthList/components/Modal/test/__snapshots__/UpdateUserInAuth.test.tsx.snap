@@ -722,9 +722,43 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render submit data render click sub
                               </span>
                               <span
                                 class="ant-select-selection-item"
-                                title="67483"
                               >
-                                67483
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                                        >
+                                          <span
+                                            class="ant-avatar-string"
+                                            style="transform: scale(1) translateX(-50%);"
+                                          >
+                                            K
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <span
+                                      class="ant-typography css-dev-only-do-not-override-v9sov3"
+                                    >
+                                      Kari Bode
+                                    </span>
+                                  </div>
+                                </div>
                               </span>
                             </div>
                             <span
@@ -1042,7 +1076,7 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                                 class="ant-select-selection-search"
                               >
                                 <input
-                                  aria-activedescendant="permission_user_uid_list_0"
+                                  aria-activedescendant="permission_user_uid_list_6"
                                   aria-autocomplete="list"
                                   aria-controls="permission_user_uid_list"
                                   aria-expanded="true"
@@ -1059,9 +1093,43 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                               </span>
                               <span
                                 class="ant-select-selection-item"
-                                title="67483"
                               >
-                                67483
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                                        >
+                                          <span
+                                            class="ant-avatar-string"
+                                            style="transform: scale(1) translateX(-50%);"
+                                          >
+                                            K
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <span
+                                      class="ant-typography css-dev-only-do-not-override-v9sov3"
+                                    >
+                                      Kari Bode
+                                    </span>
+                                  </div>
+                                </div>
                               </span>
                             </div>
                             <span
@@ -1396,17 +1464,24 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
         >
           <div
             aria-selected="false"
-            id="permission_user_uid_list_0"
+            id="permission_user_uid_list_5"
             role="option"
           >
-            Dewey Connelly
+            64872
+          </div>
+          <div
+            aria-selected="true"
+            id="permission_user_uid_list_6"
+            role="option"
+          >
+            67483
           </div>
           <div
             aria-selected="false"
-            id="permission_user_uid_list_1"
+            id="permission_user_uid_list_7"
             role="option"
           >
-            Edwin Schneider III
+            39891
           </div>
         </div>
         <div
@@ -1426,7 +1501,7 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
               >
                 <div
                   aria-selected="false"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  class="ant-select-item ant-select-item-option"
                 >
                   <div
                     class="ant-select-item-option-content"
@@ -1731,8 +1806,8 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                   />
                 </div>
                 <div
-                  aria-selected="false"
-                  class="ant-select-item ant-select-item-option"
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
                 >
                   <div
                     class="ant-select-item-option-content"
@@ -2240,9 +2315,43 @@ exports[`page/Auth/AuthList/UpdateUserInAuth render when closed modal render cli
                               </span>
                               <span
                                 class="ant-select-selection-item"
-                                title="67483"
                               >
-                                67483
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center css-16588br"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <span
+                                          class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-v9sov3"
+                                        >
+                                          <span
+                                            class="ant-avatar-string"
+                                            style="transform: scale(1) translateX(-50%);"
+                                          >
+                                            K
+                                          </span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <span
+                                      class="ant-typography css-dev-only-do-not-override-v9sov3"
+                                    >
+                                      Kari Bode
+                                    </span>
+                                  </div>
+                                </div>
                               </span>
                             </div>
                             <span
