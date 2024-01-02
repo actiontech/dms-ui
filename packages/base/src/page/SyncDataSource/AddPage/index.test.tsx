@@ -1,6 +1,9 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../testUtils/customRender';
-import { getAllBySelector, getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
