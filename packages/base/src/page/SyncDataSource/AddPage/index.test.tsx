@@ -12,7 +12,6 @@ import EventEmitter from '../../../utils/EventEmitter';
 import AddSyncTask from '.';
 
 describe('page/SyncDataSource/AddPage', () => {
-
   const projectID = mockProjectInfo.projectID;
 
   const customRender = () => {
@@ -75,7 +74,7 @@ describe('page/SyncDataSource/AddPage', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(300));
-    })
+    });
     expect(getBySelector('#version', baseElement)).toHaveAttribute(
       'value',
       '5.23.04.0'
@@ -201,5 +200,5 @@ describe('page/SyncDataSource/AddPage', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(300));
-  })
+  });
 });
