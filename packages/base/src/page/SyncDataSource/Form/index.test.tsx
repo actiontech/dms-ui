@@ -1,8 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../testUtils/customRender';
-import {
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import { Form } from 'antd';
 import { IListDatabaseSourceService } from '@actiontech/shared/lib/api/base/service/common';
@@ -16,7 +14,7 @@ describe('page/SyncDataSource/SyncTaskForm', () => {
   const projectName = mockProjectInfo.projectName;
 
   const customRender = (params?: {
-    loading?: boolean,
+    loading?: boolean;
     defaultValue?: IListDatabaseSourceService;
   }) => {
     const { result } = renderHooksWithTheme(() =>
