@@ -20,15 +20,16 @@ import { useMemo } from 'react';
 
 const SyncTaskList: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [messageApi, contextHoler] = message.useMessage();
+
   const { projectID, projectArchive, projectName } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
-  const navigate = useNavigate();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-  const [messageApi, contextHoler] = message.useMessage();
 
   const syncAction = (taskId: string) => {
     const hideLoading = messageApi.loading(
@@ -42,13 +43,16 @@ const SyncTaskList: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
-            t('dmsSyncDataSource.syncTaskList.syncTaskSuccessTips')
+            t('dmsSyncDataSource.syncTaskList.syncTaskSuccessTips'),
+            3,
+            () => {
+              refresh();
+            }
           );
         }
       })
       .finally(() => {
         hideLoading();
-        refresh();
       });
   };
   const deleteAction = (taskId: string) => {
@@ -63,9 +67,12 @@ const SyncTaskList: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
-            t('dmsSyncDataSource.syncTaskList.deleteTaskSuccessTips')
+            t('dmsSyncDataSource.syncTaskList.deleteTaskSuccessTips'),
+            3,
+            () => {
+              refresh();
+            }
           );
-          refresh();
         }
       })
       .finally(() => {

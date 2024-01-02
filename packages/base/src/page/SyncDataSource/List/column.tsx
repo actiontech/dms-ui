@@ -124,7 +124,7 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDa
         title: () =>
           t('dmsSyncDataSource.syncTaskList.columns.lastSyncSuccessTime'),
         render: (time) => {
-          return formatTime(time);
+          return formatTime(time, '-');
         }
       }
     ];
