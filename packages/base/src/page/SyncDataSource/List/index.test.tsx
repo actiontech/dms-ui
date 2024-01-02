@@ -1,10 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../testUtils/customRender';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 import syncTaskList from '../../../testUtils/mockApi/syncTaskList';

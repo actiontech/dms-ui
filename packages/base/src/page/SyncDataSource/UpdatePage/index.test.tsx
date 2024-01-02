@@ -124,5 +124,5 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
     expect(navigateSpy).toBeCalledWith(`/project/${projectID}/syncDataSource`, {
       replace: true
     });
-  })
+  });
 });
