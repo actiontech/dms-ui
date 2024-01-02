@@ -1,17 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormInstance, Popconfirm } from 'antd';
-import Select, { BaseOptionType } from 'antd/es/select';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
-import { useRequest } from 'ahooks';
-import EventEmitter from '../../../utils/EventEmitter';
-import EmitterKey from '../../../data/EmitterKey';
+import EventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 import {
   useCurrentProject,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
-import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
@@ -26,15 +23,20 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
-import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import DatabaseFormItem from './DatabaseFormItem';
+import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
-import { IconInstanceManager } from '../../../icon/sideMenu';
-import { SQLE_INSTANCE_SOURCE_NAME } from 'sqle/src/data/common';
-import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
-import { turnDataSourceAsyncFormToCommon } from '../tool';
+import { IconInstanceManager } from '../../../../icon/sideMenu';
+import { turnDataSourceAsyncFormToCommon } from '../../tool';
 import { FormItem } from 'sqle/src/components/BackendForm';
-import useSqlReviewTemplateToggle from '../../../hooks/useSqlReviewTemplateToggle';
+import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
+import { SQLE_INSTANCE_SOURCE_NAME } from 'sqle/src/data/common';
+// #if [!provision]
+import Select, { BaseOptionType } from 'antd/es/select';
+import { useRequest } from 'ahooks';
+import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
+import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateToggle';
+// #endif
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -47,7 +49,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
-  const { projectName } = useCurrentProject();
+
   const {
     driverMeta,
     loading: updateDriverListLoading,
@@ -58,6 +60,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const databaseTypeChange = useCallback(
     (value: string) => {
       setDatabaseType(value);
+      // #if [!provision]
       props.form.setFields([
         {
           name: 'ruleTemplateName',
@@ -68,10 +71,15 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           value: undefined
         }
       ]);
+      // #endif
     },
     [props.form]
   );
+  const { generateFormValueByParams, dmsMergeFromValueIntoParams } =
+    useAsyncParams();
 
+  // #if [!provision]
+  const { projectName } = useCurrentProject();
   const { data: ruleTemplateList = [], loading: ruleTemplateLoading } =
     useRequest(() =>
       rule_template
@@ -86,8 +94,36 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   } = useRequest(() =>
     rule_template.getRuleTemplateTipsV1({}).then((res) => res.data.data ?? [])
   );
-  const { generateFormValueByParams, dmsMergeFromValueIntoParams } =
-    useAsyncParams();
+  const {
+    auditRequired,
+    auditRequiredPopupVisible,
+    onAuditRequiredPopupOpenChange,
+    clearRuleTemplate,
+    changeAuditRequired
+  } = useSqlReviewTemplateToggle<FormInstance<DataSourceFormField>>(props.form);
+  const changeAuditEnabled = (check: boolean) => {
+    setAuditEnabled(check);
+    if (!check) {
+      props.form.setFieldsValue({
+        allowQueryWhenLessThanAuditLevel: undefined
+      });
+    } else {
+      if (props.defaultData) {
+        props.form.setFieldsValue({
+          allowQueryWhenLessThanAuditLevel:
+            props.defaultData.sqle_config?.sql_query_config
+              ?.allow_query_when_less_than_audit_level
+        });
+      }
+    }
+  };
+
+  const changeRuleTemplate = (value: string, option: BaseOptionType) => {
+    props.form.setFieldsValue({
+      ruleTemplateId: option.key
+    });
+  };
+  // #endif
 
   const params = useMemo<FormItem[]>(() => {
     if (!driverMeta || !databaseType) {
@@ -102,14 +138,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     return turnDataSourceAsyncFormToCommon(temp.params ?? []);
   }, [databaseType, driverMeta]);
 
-  const {
-    auditRequired,
-    auditRequiredPopupVisible,
-    onAuditRequiredPopupOpenChange,
-    clearRuleTemplate,
-    changeAuditRequired
-  } = useSqlReviewTemplateToggle<FormInstance<DataSourceFormField>>(props.form);
-
   useEffect(() => {
     if (!!props.defaultData) {
       props.form.setFieldsValue({
@@ -119,9 +147,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         ip: props.defaultData.host,
         port: Number.parseInt(props.defaultData.port ?? ''),
         user: props.defaultData.user,
-        ruleTemplateId: props.defaultData.sqle_config?.rule_template_id,
-        ruleTemplateName: props.defaultData.sqle_config?.rule_template_name,
-        needSqlAuditService: !!props.defaultData.sqle_config?.rule_template_id,
         params: generateFormValueByParams(
           turnDataSourceAsyncFormToCommon(
             props.defaultData.additional_params ?? []
@@ -131,11 +156,16 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           startTime: item.maintenance_start_time,
           endTime: item.maintenance_stop_time
         })),
+        // #if [!provision]
+        needSqlAuditService: !!props.defaultData.sqle_config?.rule_template_id,
+        ruleTemplateId: props.defaultData.sqle_config?.rule_template_id,
+        ruleTemplateName: props.defaultData.sqle_config?.rule_template_name,
         needAuditForSqlQuery:
           !!props.defaultData.sqle_config?.sql_query_config?.audit_enabled,
         allowQueryWhenLessThanAuditLevel:
           props.defaultData.sqle_config?.sql_query_config
             ?.allow_query_when_less_than_audit_level,
+        // #endif
         needUpdatePassword: false,
         business: props.defaultData.business,
         password: props.defaultData.password
@@ -163,29 +193,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     setAuditEnabled(false);
     setDatabaseType('');
   }, [props.form]);
-
-  const changeAuditEnabled = (check: boolean) => {
-    setAuditEnabled(check);
-    if (!check) {
-      props.form.setFieldsValue({
-        allowQueryWhenLessThanAuditLevel: undefined
-      });
-    } else {
-      if (props.defaultData) {
-        props.form.setFieldsValue({
-          allowQueryWhenLessThanAuditLevel:
-            props.defaultData.sqle_config?.sql_query_config
-              ?.allow_query_when_less_than_audit_level
-        });
-      }
-    }
-  };
-
-  const changeRuleTemplate = (value: string, option: BaseOptionType) => {
-    props.form.setFieldsValue({
-      ruleTemplateId: option.key
-    });
-  };
 
   const submit = useCallback(async () => {
     const values = await props.form.validateFields();
@@ -310,13 +317,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           </FormItemLabel>
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
-
+      {/* #if [!provision] */}
       <FormAreaLineStyleWrapper>
         <FormAreaBlockStyleWrapper>
           <FormItemSubTitle>
             {t('dmsDataSource.dataSourceForm.sqlConfig')}
           </FormItemSubTitle>
-
           <FormItemLabel
             label={t('dmsDataSource.dataSourceForm.needAuditSqlService')}
             name="needSqlAuditService"
@@ -398,6 +404,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           </FormItemLabel>
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
+      {/* #endif */}
     </FormStyleWrapper>
   );
 };

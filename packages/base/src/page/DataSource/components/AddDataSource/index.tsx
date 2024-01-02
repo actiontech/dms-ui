@@ -1,29 +1,40 @@
-import { useCallback } from 'react';
-import { Space } from 'antd';
-import { useForm } from 'antd/es/form/Form';
-import { useBoolean } from 'ahooks';
 import { useTranslation } from 'react-i18next';
+import { useBoolean } from 'ahooks';
+import { useCallback } from 'react';
+
 import { Link, useNavigate } from 'react-router-dom';
-import { BasicButton, PageHeader, BasicResult } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { useForm } from 'antd/es/form/Form';
+import { Space } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import {
+  BasicButton,
+  PageHeader,
+  BasicResult,
+  EmptyBox
+} from '@actiontech/shared';
 import {
   IconLeftArrow,
   IconSuccessResult
 } from '@actiontech/shared/lib/Icon/common';
-import EmitterKey from '../../../data/EmitterKey';
-import EventEmitter from '../../../utils/EventEmitter';
-import DataSourceForm from '../DataSourceForm';
-import { DataSourceFormField } from '../DataSourceForm/index.type';
+import DataSourceForm from '../Form';
+
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import EmitterKey from '../../../../data/EmitterKey';
+import EventEmitter from '../../../../utils/EventEmitter';
+
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { DataSourceFormField } from '../Form/index.type';
 
 const AddDataSource = () => {
   const { t } = useTranslation();
-  const [form] = useForm<DataSourceFormField>();
-  const { projectID } = useCurrentProject();
+
   const navigate = useNavigate();
+
+  const { projectID } = useCurrentProject();
+
+  const [form] = useForm<DataSourceFormField>();
 
   const [resultVisible, { setTrue: showResult, setFalse: hideResult }] =
     useBoolean();
@@ -46,6 +57,7 @@ const AddDataSource = () => {
           maintenance_start_time: t.startTime,
           maintenance_stop_time: t.endTime
         })) ?? [],
+      // #if [!provision]
       sqle_config: {
         rule_template_id: values.ruleTemplateId,
         rule_template_name: values.ruleTemplateName,
@@ -55,6 +67,7 @@ const AddDataSource = () => {
           audit_enabled: values.needAuditForSqlQuery
         }
       },
+      // #endif
       additional_params: values.asyncParams
     };
     return dms
@@ -72,11 +85,13 @@ const AddDataSource = () => {
   const resetAndHideResult = useCallback(() => {
     hideResult();
     form.resetFields();
-  }, [form, hideResult]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [form]);
 
   const onReset = () => {
     EventEmitter.emit(EmitterKey.DMS_Reset_DataSource_Form);
   };
+
   const onSubmit = async () => {
     EventEmitter.emit(EmitterKey.DMS_Submit_DataSource_Form);
   };
@@ -106,7 +121,10 @@ const AddDataSource = () => {
           </Space>
         }
       />
-      {resultVisible ? (
+      <EmptyBox
+        if={resultVisible}
+        defaultNode={<DataSourceForm form={form} submit={addDatabase} />}
+      >
         <BasicResult
           icon={<IconSuccessResult />}
           title={t('dmsDataSource.addDatabaseSuccess')}
@@ -125,9 +143,7 @@ const AddDataSource = () => {
             </BasicButton>
           ]}
         />
-      ) : (
-        <DataSourceForm form={form} submit={addDatabase} />
-      )}
+      </EmptyBox>
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };

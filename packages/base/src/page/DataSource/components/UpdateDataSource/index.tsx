@@ -1,37 +1,45 @@
+import { useTranslation } from 'react-i18next';
+import { useBoolean } from 'ahooks';
+import { useNavigate, useParams } from 'react-router-dom';
+
 import { useCallback, useEffect, useState } from 'react';
 import { Button, message, Empty, Typography, Spin } from 'antd';
-import { useForm } from 'antd/es/form/Form';
-import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useBoolean } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
-import { IUpdateDBServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
-import { DataSourceFormField } from '../DataSourceForm/index.type';
+import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import DataSourceForm from '../Form';
+
+import { useForm } from 'antd/es/form/Form';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import EmitterKey from '../../../../data/EmitterKey';
+import EventEmitter from '../../../../utils/EventEmitter';
+
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { DataSourceFormField } from '../Form/index.type';
+import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { UpdateDataSourceUrlParams } from './index.type';
-import DataSourceForm from '../DataSourceForm';
-import EmitterKey from '../../../data/EmitterKey';
-import EventEmitter from '../../../utils/EventEmitter';
+import { IUpdateDBServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 
 const UpdateDataSource = () => {
   const { t } = useTranslation();
-  const [form] = useForm<DataSourceFormField>();
-  const [messageApi, messageContextHolder] = message.useMessage();
+
   const navigate = useNavigate();
-  const urlParams = useParams<UpdateDataSourceUrlParams>();
+  const [messageApi, messageContextHolder] = message.useMessage();
+
   const { projectID } = useCurrentProject();
+
   const [initError, setInitError] = useState('');
+  const [form] = useForm<DataSourceFormField>();
+  const urlParams = useParams<UpdateDataSourceUrlParams>();
+
   const [retryLoading, setRetryLoading] = useState(false);
+  const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
+    useBoolean();
   const [instanceInfo, setInstanceInfo] = useState<
     IListDBService | undefined
   >();
-  const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
-    useBoolean();
 
   const updateDatabase = async (values: DataSourceFormField) => {
     startSubmit();
@@ -48,6 +56,7 @@ const UpdateDataSource = () => {
             maintenance_stop_time: t.endTime
           })) ?? [],
         port: `${values.port}`,
+        // #if [!provision]
         sqle_config: {
           rule_template_id: values.ruleTemplateId,
           rule_template_name: values.ruleTemplateName,
@@ -57,6 +66,7 @@ const UpdateDataSource = () => {
             audit_enabled: values.needAuditForSqlQuery
           }
         },
+        // #endif
         additional_params: values.asyncParams,
         user: values.user
       },
@@ -76,7 +86,10 @@ const UpdateDataSource = () => {
               name: values.name
             })
           );
-          navigate(`/project/${projectID}/db-services`, { replace: true });
+          const timeId = setTimeout(() => {
+            clearTimeout(timeId);
+            navigate(`/project/${projectID}/db-services`, { replace: true });
+          }, 600);
         }
       })
       .finally(() => {
