@@ -10,11 +10,13 @@ const Project = lazy(() => import('../page/Project'));
 const Home = lazy(() => import('../page/Home'));
 const UserCenter = lazy(() => import('../page/UserCenter'));
 const DataSource = lazy(() => import('../page/DataSource'));
-const AddDataSource = lazy(() => import('../page/DataSource/AddDataSource'));
-const DataSourceList = lazy(() => import('../page/DataSource/DataSourceList'));
-const UpdateDataSource = lazy(
-  () => import('../page/DataSource/UpdateDataSource')
+const AddDataSource = lazy(
+  () => import('../page/DataSource/components/AddDataSource')
 );
+const UpdateDataSource = lazy(
+  () => import('../page/DataSource/components/UpdateDataSource')
+);
+const DataSourceList = lazy(() => import('../page/DataSource/components/List'));
 const Member = lazy(() => import('../page/Member'));
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 const System = lazy(() => import('../page/System'));

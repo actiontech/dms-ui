@@ -1,6 +1,6 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
 import { Tag } from 'antd';
-import { t } from '../../../locale';
+import { t } from '../../../../locale';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionMeta,
@@ -16,7 +16,6 @@ import { DatabaseTypeLogo } from '@actiontech/shared';
  * 没有使用PageInfoWithoutIndexAndSize<IListDBServicesParams>的原因：
  * IAuthListDataOperationSetsParams里的page_index 是可选项，和TablePagination类型不匹配，期望后续后端可以修改。
  */
-
 export type DataSourceListParamType = Omit<
   IListDBServicesParams,
   'page_index' | 'page_size' | 'project_uid'
