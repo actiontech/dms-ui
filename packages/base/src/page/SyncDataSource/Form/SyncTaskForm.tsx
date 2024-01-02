@@ -224,7 +224,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                   tips={t('dmsSyncDataSource.syncTaskForm.sourceTips')}
                 />
               }
-              rules={[{ required: true }]}
+              rules={[
+                {
+                  required: true,
+                  message: t('common.form.placeholder.select', {
+                    name: t('dmsSyncDataSource.syncTaskForm.source')
+                  })
+                }
+              ]}
             >
               <BasicSelect
                 disabled={isUpdate}
@@ -248,7 +255,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                   tips={t('dmsSyncDataSource.syncTaskForm.versionTips')}
                 />
               }
-              rules={[{ required: true }]}
+              rules={[
+                {
+                  required: true,
+                  message: t('common.form.placeholder.input', {
+                    name: t('dmsSyncDataSource.syncTaskForm.version')
+                  })
+                }
+              ]}
             >
               <BasicInput
                 placeholder={t('common.form.placeholder.input', {
@@ -266,7 +280,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                   tips={t('dmsSyncDataSource.syncTaskForm.urlTips')}
                 />
               }
-              rules={[{ required: true }]}
+              rules={[
+                {
+                  required: true,
+                  message: t('common.form.placeholder.input', {
+                    name: t('dmsSyncDataSource.syncTaskForm.url')
+                  })
+                }
+              ]}
             >
               <BasicInput
                 placeholder={t('common.form.placeholder.input', {
@@ -279,7 +300,14 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               className="has-required-style"
               name="instanceType"
               label={t('dmsSyncDataSource.syncTaskForm.instanceType')}
-              rules={[{ required: true }]}
+              rules={[
+                {
+                  required: true,
+                  message: t('common.form.placeholder.select', {
+                    name: t('dmsSyncDataSource.syncTaskForm.instanceType')
+                  })
+                }
+              ]}
             >
               <BasicSelect<string>
                 disabled={isUpdate}
