@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Space } from 'antd';
-import CustomInput from '@actiontech/shared/lib/components/CustomInput';
+import { CustomInputStyleWrapper } from '@actiontech/shared/lib/components/CustomInput/style';
 
 export const HeaderSpaceTagStyleWrapper = styled(Space)`
   .tag-icon {
@@ -58,7 +58,9 @@ export const RuleTemplateDetailStyleWrapper = styled('section')`
   }
 `;
 
-export const RuleDetailCustomSearchInputStyleWrapper = styled(CustomInput)`
+export const RuleDetailCustomSearchInputStyleWrapper = styled(
+  CustomInputStyleWrapper
+)`
   &.ant-input-affix-wrapper.custom-search-input {
     width: 280px;
   }
