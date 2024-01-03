@@ -1,11 +1,3 @@
-import {
-  ActiontechTable,
-  ActiontechTableActionMeta,
-  ColumnsSettingProps,
-  TableRefreshButton,
-  useTableRequestError,
-  useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
@@ -30,6 +22,14 @@ import WhitelistDrawer from '../Drawer';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
 import audit_whitelist from '@actiontech/shared/lib/api/sqle/service/audit_whitelist';
+import {
+  ActiontechTable,
+  ActiontechTableActionMeta,
+  ColumnsSettingProps,
+  TableRefreshButton,
+  useTableRequestError,
+  useTableRequestParams
+} from '@actiontech/shared/lib/components/ActiontechTable';
 
 const WhitelistList = () => {
   const { t } = useTranslation();
