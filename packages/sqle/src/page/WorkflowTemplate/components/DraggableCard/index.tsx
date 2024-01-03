@@ -4,12 +4,12 @@ import { CSS } from '@dnd-kit/utilities';
 import { IStepInfoDataProps } from '../StepCard/index.type';
 import StepCard from '../StepCard';
 
-interface NodeCardProps extends IStepInfoDataProps {
+interface DraggableCardProps extends IStepInfoDataProps {
   rowKey: string;
   indexNumber: number;
 }
 
-const NodeCard = (step: NodeCardProps) => {
+const DraggableCard = (step: DraggableCardProps) => {
   const {
     attributes,
     listeners,
@@ -55,4 +55,4 @@ const NodeCard = (step: NodeCardProps) => {
   );
 };
 
-export default NodeCard;
+export default DraggableCard;
