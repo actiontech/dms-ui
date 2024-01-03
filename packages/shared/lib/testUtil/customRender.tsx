@@ -16,6 +16,7 @@ import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import { mount } from 'enzyme';
 
 import lightTheme from '../theme/light';
+import baseLightTheme from '../../../base/src/theme/light';
 
 type MountParams = Parameters<typeof mount>;
 type RenderParams = Parameters<typeof render>;
@@ -136,7 +137,9 @@ export const superRender = (
         <RecoilRoot {...otherProps?.recoilRootProps}>
           <Provider store={storeFactory(otherProps?.initStore)}>
             <MemoryRouter {...otherProps?.routerProps}>
-              <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+              <ThemeProvider theme={{ ...lightTheme, ...baseLightTheme }}>
+                {children}
+              </ThemeProvider>
             </MemoryRouter>
           </Provider>
         </RecoilRoot>
