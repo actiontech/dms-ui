@@ -56,7 +56,7 @@ const UpdateDataSource = () => {
             maintenance_stop_time: t.endTime
           })) ?? [],
         port: `${values.port}`,
-        // #if [!provision]
+        // #if [sqle]
         sqle_config: {
           rule_template_id: values.ruleTemplateId,
           rule_template_name: values.ruleTemplateName,

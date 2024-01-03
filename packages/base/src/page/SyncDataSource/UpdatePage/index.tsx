@@ -45,7 +45,7 @@ const UpdateSyncTask: React.FC = () => {
         name: values.name,
         source: values.source,
         db_type: values.instanceType,
-        // #if [!provision]
+        // #if [sqle]
         sqle_config: {
           rule_template_id: values.ruleTemplateId,
           rule_template_name: values.ruleTemplateName
