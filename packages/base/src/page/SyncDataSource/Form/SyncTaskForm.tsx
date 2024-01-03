@@ -27,7 +27,7 @@ import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 
-// #if [!provision]
+// #if [sqle]
 import useGlobalRuleTemplate from 'sqle/src/hooks/useGlobalRuleTemplate';
 import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
 import useSqlReviewTemplateToggle from '../../../hooks/useSqlReviewTemplateToggle';
@@ -54,7 +54,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
 
   const dbTypeChange = (type: string) => {
     setDbType(type);
-    // #if [!provision]
+    // #if [sqle]
     form.setFieldsValue({
       ruleTemplateId: undefined,
       ruleTemplateName: undefined
@@ -71,7 +71,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     });
   };
 
-  // #if [!provision]
+  // #if [sqle]
   const {
     loading: getGlobalRuleTemplateListLoading,
     updateGlobalRuleTemplateList,
@@ -103,7 +103,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
 
   useEffect(() => {
     updateTaskSourceList();
-    // #if [!provision]
+    // #if [sqle]
     updateGlobalRuleTemplateList();
     updateRuleTemplateList(projectName);
     // #endif
@@ -113,7 +113,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
         form.resetFields([
           'version',
           'url',
-          // #if [!provision]
+          // #if [sqle]
           'ruleTemplateId',
           'ruleTemplateName',
           // #endif
@@ -121,7 +121,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
         ]);
       } else {
         form.resetFields();
-        // #if [!provision]
+        // #if [sqle]
         form.setFieldsValue({
           needSqlAuditService: true
         });
@@ -129,7 +129,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
       }
       setDbType('');
       setSource('');
-      // #if [!provision]
+      // #if [sqle]
       updateGlobalRuleTemplateList();
       updateRuleTemplateList(projectName);
       // #endif
@@ -145,7 +145,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     form,
     isUpdate,
     projectName,
-    // #if [!provision]
+    // #if [sqle]
     updateGlobalRuleTemplateList,
     updateRuleTemplateList,
     // #endif
@@ -160,7 +160,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
         version: defaultValue.version,
         url: defaultValue.url,
         instanceType: defaultValue.db_type,
-        // #if [!provision]
+        // #if [sqle]
         needSqlAuditService: !!defaultValue.sqle_config?.rule_template_id,
         ruleTemplateId: defaultValue.sqle_config?.rule_template_id ?? '',
         ruleTemplateName: defaultValue.sqle_config?.rule_template_name ?? '',
@@ -168,7 +168,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
         syncInterval: defaultValue.cron_express
       });
     } else {
-      // #if [!provision]
+      // #if [sqle]
       form.setFieldsValue({
         needSqlAuditService: true
       });
@@ -340,7 +340,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
           </FormAreaBlockStyleWrapper>
         </FormAreaLineStyleWrapper>
 
-        {/* #if [!provision] */}
+        {/* #if [sqle] */}
         <FormAreaLineStyleWrapper className="has-border">
           <FormAreaBlockStyleWrapper>
             <FormItemSubTitle>

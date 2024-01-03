@@ -30,7 +30,7 @@ import { turnDataSourceAsyncFormToCommon } from '../../tool';
 import { FormItem } from 'sqle/src/components/BackendForm';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { SQLE_INSTANCE_SOURCE_NAME } from 'sqle/src/data/common';
-// #if [!provision]
+// #if [sqle]
 import Select, { BaseOptionType } from 'antd/es/select';
 import { useRequest } from 'ahooks';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
@@ -60,7 +60,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const databaseTypeChange = useCallback(
     (value: string) => {
       setDatabaseType(value);
-      // #if [!provision]
+      // #if [sqle]
       props.form.setFields([
         {
           name: 'ruleTemplateName',
@@ -78,7 +78,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { generateFormValueByParams, dmsMergeFromValueIntoParams } =
     useAsyncParams();
 
-  // #if [!provision]
+  // #if [sqle]
   const { projectName } = useCurrentProject();
   const { data: ruleTemplateList = [], loading: ruleTemplateLoading } =
     useRequest(() =>
@@ -156,7 +156,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           startTime: item.maintenance_start_time,
           endTime: item.maintenance_stop_time
         })),
-        // #if [!provision]
+        // #if [sqle]
         needSqlAuditService: !!props.defaultData.sqle_config?.rule_template_id,
         ruleTemplateId: props.defaultData.sqle_config?.rule_template_id,
         ruleTemplateName: props.defaultData.sqle_config?.rule_template_name,
@@ -317,7 +317,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
           </FormItemLabel>
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
-      {/* #if [!provision] */}
+      {/* #if [sqle] */}
       <FormAreaLineStyleWrapper>
         <FormAreaBlockStyleWrapper>
           <FormItemSubTitle>

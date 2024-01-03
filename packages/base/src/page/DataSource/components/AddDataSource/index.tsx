@@ -57,7 +57,7 @@ const AddDataSource = () => {
           maintenance_start_time: t.startTime,
           maintenance_stop_time: t.endTime
         })) ?? [],
-      // #if [!provision]
+      // #if [sqle]
       sqle_config: {
         rule_template_id: values.ruleTemplateId,
         rule_template_name: values.ruleTemplateName,
