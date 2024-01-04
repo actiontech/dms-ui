@@ -3,14 +3,11 @@ import { renderHooksWithTheme } from '../../../../testUtils/customRender';
 
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { tableSchemas } from '../../__testData__';
-import {
-  resolveThreeSecond
-} from '../../../../testUtils/mockRequest';
+import { resolveThreeSecond } from '../../../../testUtils/mockRequest';
 
 import useTableSchema from '../useTableSchema';
 
 describe('SqlAnalyze/useTableSchema', () => {
-
   describe('render generateTableSchemaContent', () => {
     it('render ele when isShow is false', async () => {
       const { result } = renderHooksWithTheme(() => useTableSchema());
@@ -99,9 +96,7 @@ describe('SqlAnalyze/useTableSchema', () => {
     });
 
     it('it render table Schemas data when have not options data', async () => {
-      const { result } = renderHooksWithTheme(() =>
-        useTableSchema({})
-      );
+      const { result } = renderHooksWithTheme(() => useTableSchema({}));
 
       await act(async () => {
         result.current.getTableSchemas('table-test-name', 'default-name');
@@ -135,8 +130,7 @@ describe('SqlAnalyze/useTableSchema', () => {
       await act(async () => {
         result.current.closeTableSchema('1');
         expect(result.current.tableSchemas).toMatchSnapshot();
-      })
+      });
     });
   });
-
 });
