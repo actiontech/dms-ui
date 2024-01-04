@@ -10,12 +10,7 @@ describe('page/WorkflowTemplate/StepCard', () => {
   });
 
   const customRender = (data?: {
-    [key: string]:
-      | string
-      | boolean
-      | undefined
-      | (() => void)
-      | ((index: number) => void);
+    [key: string]: string | boolean | undefined | ((index?: number) => void);
   }) => {
     return superRender(
       <StepCard {...workflowTemplateCardProps} {...(data ?? {})} />

@@ -3,12 +3,15 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { workflowTemplateData } from './data';
+import { userTipListData, workflowTemplateData } from './data';
+import user from '@actiontech/shared/lib/api/sqle/service/user';
 
-class MockAccountApi implements MockSpyApy {
+const tempList = workflowTemplateData.workflow_step_template_list;
+class MockWorkflowTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
     this.updateWorkflowTemplate();
     this.getWorkflowTemplate();
+    this.getUserTip();
   }
 
   public updateWorkflowTemplate() {
@@ -19,13 +22,23 @@ class MockAccountApi implements MockSpyApy {
 
   public getWorkflowTemplate() {
     const spy = jest.spyOn(workflow, 'getWorkflowTemplateV1');
+    spy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: { ...workflowTemplateData, workflow_step_template_list: tempList }
+      });
+    });
+    return spy;
+  }
+
+  public getUserTip() {
+    const spy = jest.spyOn(user, 'getUserTipListV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: workflowTemplateData
+        data: userTipListData
       })
     );
     return spy;
   }
 }
 
-export default new MockAccountApi();
+export default new MockWorkflowTemplateApi();
