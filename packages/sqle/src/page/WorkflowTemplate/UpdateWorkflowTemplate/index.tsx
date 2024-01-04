@@ -73,7 +73,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
   const submitProgress = async (): Promise<
     AxiosResponse<IUpdateWorkflowTemplateV1Return>
   > => {
-    await form.validateFields();
+    await form?.validateFields();
     const reviewTempData = reviewSteps.map((item) => ({
       ...item,
       type: WorkFlowStepTemplateReqV1TypeEnum.sql_review

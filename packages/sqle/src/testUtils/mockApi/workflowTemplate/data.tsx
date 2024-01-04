@@ -27,7 +27,7 @@ export const workflowTemplateData = {
       approved_by_authorized: false,
       assignee_user_id_list: [],
       execute_by_authorized: true,
-      number: 2,
+      number: 3,
       type: 'sql_execute'
     }
   ],
@@ -50,3 +50,13 @@ export const workflowTemplateCardProps = {
   desc: '',
   ...workflowTemplateData.workflow_step_template_list[0]
 };
+
+export const userTipListData = [
+  {
+    user_id: '1739544663515205632',
+    user_name: 'test'
+  },
+  { user_id: '700200', user_name: 'admin' },
+  { user_id: '700201', user_name: 'one' },
+  { user_id: '700202', user_name: 'two' }
+];
