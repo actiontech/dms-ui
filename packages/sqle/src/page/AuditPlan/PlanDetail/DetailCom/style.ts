@@ -103,7 +103,6 @@ export const DetailComStyleWrapper = styled('section')`
   .detail-table-wrapper {
     height: 100%;
     position: relative;
-    padding-bottom: 61px;
 
     .ant-spin-nested-loading {
       width: 100%;
@@ -115,6 +114,10 @@ export const DetailComStyleWrapper = styled('section')`
       height: 100%;
     }
 
+    .actiontech-table-namespace {
+      padding-bottom: 0;
+    }
+
     .ant-spin-container {
       position: relative;
     }
@@ -122,7 +125,7 @@ export const DetailComStyleWrapper = styled('section')`
     .ant-pagination {
       left: 220px !important;
       right: none !important;
-      width: calc(100% - 220px - 360px) !important;
+      min-width: 730px;
     }
   }
 `;
