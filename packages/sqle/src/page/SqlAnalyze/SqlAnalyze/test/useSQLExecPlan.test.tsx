@@ -15,7 +15,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
 
     await act(async () => {
       const elementError = result.current.generateSQLExecPlanContent({
-        err_message: 'sql_explain err_message',
+        err_message: 'sql_explain err_message'
       });
       expect(elementError).toMatchSnapshot();
     });
@@ -58,6 +58,5 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
         });
       expect(elementPerformanceStatistics).toMatchSnapshot();
     });
-
   });
 });

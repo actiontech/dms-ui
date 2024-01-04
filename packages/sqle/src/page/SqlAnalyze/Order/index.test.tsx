@@ -30,7 +30,7 @@ describe('SqlAnalyze/Order', () => {
     jest.useFakeTimers();
     useParamsMock.mockReturnValue({
       taskId: 'taskId1',
-      sqlNum: '123',
+      sqlNum: '123'
     });
   });
 
@@ -77,9 +77,7 @@ describe('SqlAnalyze/Order', () => {
         }
       })
     );
-    const { container } = renderWithReduxAndTheme(
-      <OrderSqlAnalyze />
-    );
+    const { container } = renderWithReduxAndTheme(<OrderSqlAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();

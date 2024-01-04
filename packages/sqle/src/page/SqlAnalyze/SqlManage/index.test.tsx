@@ -125,4 +125,3 @@ describe('SqlAnalyze/SQLManage', () => {
     expect(container).toMatchSnapshot();
   });
 });
-
