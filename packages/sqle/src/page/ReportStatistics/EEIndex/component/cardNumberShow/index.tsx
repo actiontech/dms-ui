@@ -25,13 +25,13 @@ import {
   IGetWorkflowDurationOfWaitingForAuditV1Return
 } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 const defaultVal = 0;
-const dateFormat = 'YYYY-MM-DD HH:mm:ss';
 
 /**
- * todo: 数据不全
- *  ？noteCont
+ * todo: 与设计图相比数据不全
+ *  noteCont相关数据暂时注释
  */
 const CardNumberShow = () => {
   const { t } = useTranslation();
@@ -44,7 +44,7 @@ const CardNumberShow = () => {
   const onSuccess = (res: AxiosResponse<IGetWorkflowCountV1Return>) => {
     setTotalOrder(res.data.data?.total ?? defaultVal);
     setNewOrder(res.data.data?.today_count ?? defaultVal);
-    setTimeNow(dayjs().format(dateFormat));
+    setTimeNow(formatTime(new Date().toString()));
   };
 
   const { loading, errorMessage } = usePanelCommonRequest(

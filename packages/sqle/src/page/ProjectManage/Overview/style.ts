@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 
 export const OverviewStyleWrapper = styled('section')`
-  padding: 30px 40px;
+  padding: 80px 40px 30px;
   min-width: 880px;
   background-color: ${({ theme }) =>
     theme.sharedTheme.uiToken.colorFillTertiary};
