@@ -1,4 +1,4 @@
-import { act, fireEvent, render } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
 import AuditPlanSqlAnalyze from '.';
 import {
@@ -9,6 +9,7 @@ import { AuditPlanSqlAnalyzeData } from '../__testData__';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router', () => {
   return {
@@ -20,22 +21,7 @@ jest.mock('react-router', () => {
 const projectName = 'default';
 
 describe('SqlAnalyze/AuditPlan', () => {
-  // eslint-disable-next-line no-console
-  const error = console.error;
-
-  beforeAll(() => {
-    // eslint-disable-next-line no-console
-    console.error = jest.fn();
-    // eslint-disable-next-line no-console
-    (console.error as any).mockImplementation((message: any) => {
-      if (
-        message.includes('Each child in a list should have a unique "key" prop')
-      ) {
-        return;
-      }
-      error(message);
-    });
-  });
+  ignoreComponentAutoCreatedListNoKey();
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
@@ -53,11 +39,6 @@ describe('SqlAnalyze/AuditPlan', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
-  });
-
-  afterAll(() => {
-    // eslint-disable-next-line no-console
-    console.error = error;
   });
 
   const mockGetAnalyzeData = () => {
