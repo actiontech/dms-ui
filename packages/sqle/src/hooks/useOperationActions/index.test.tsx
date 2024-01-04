@@ -6,53 +6,29 @@ import {
   act as reactAct,
   cleanup
 } from '@testing-library/react';
-import {
-  rejectThreeSecond,
-  resolveErrorThreeSecond,
-  resolveThreeSecond
-} from '../../testUtils/mockRequest';
 import { Select } from 'antd';
-import useOperationContents from '.';
-import OperationRecord from '@actiontech/shared/lib/api/sqle/service/OperationRecord';
-import { IOperationActionList } from '@actiontech/shared/lib/api/sqle/service/common';
+import useOperationActions from '.';
+import operationRecord from '../../testUtils/mockApi/operationRecord';
+import { operationActionMockData } from '../../testUtils/mockApi/operationRecord/data';
+import {
+  createSpyErrorResponse,
+  createSpyFailResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 
-describe('useOperationContents', () => {
+describe('sqle/hooks/useOperationActions', () => {
+  let requestSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
+    requestSpy = operationRecord.getOperationActionList();
   });
 
   afterEach(() => {
     jest.useRealTimers();
   });
 
-  const mockRequest = () => {
-    const spy = jest.spyOn(OperationRecord, 'getOperationActionList');
-    return spy;
-  };
-
-  const mockList: IOperationActionList[] = [
-    {
-      operation_type: 'project',
-      operation_action: 'create_project',
-      desc: '创建项目'
-    },
-    {
-      operation_type: 'instance',
-      operation_action: 'delete_instance',
-      desc: '删除数据源'
-    },
-    {
-      operation_type: 'audit_plan',
-      operation_action: 'create_audit_plan',
-      desc: '创建智能扫描任务'
-    }
-  ];
-
-  test('should get group data from request', async () => {
-    const requestSpy = mockRequest();
-    requestSpy.mockImplementation(() => resolveThreeSecond(mockList));
+  test('should get operation actions data from request', async () => {
     const { result, waitForNextUpdate } = renderHook(() =>
-      useOperationContents()
+      useOperationActions()
     );
     expect(result.current.loading).toBe(false);
     expect(result.current.operationActions).toEqual([]);
@@ -74,7 +50,7 @@ describe('useOperationContents', () => {
 
     expect(result.current.loading).toBe(false);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationActions).toEqual(mockList);
+    expect(result.current.operationActions).toEqual(operationActionMockData);
     cleanup();
 
     const { baseElement: baseElementWithOptions } = render(
@@ -94,10 +70,8 @@ describe('useOperationContents', () => {
   });
 
   test('should set list to empty array when response code is not equal success code', async () => {
-    const requestSpy = mockRequest();
-    requestSpy.mockImplementation(() => resolveThreeSecond(mockList));
     const { result, waitForNextUpdate } = renderHook(() =>
-      useOperationContents()
+      useOperationActions()
     );
     expect(result.current.loading).toBe(false);
     expect(result.current.operationActions).toEqual([]);
@@ -115,16 +89,18 @@ describe('useOperationContents', () => {
 
     expect(result.current.loading).toBe(false);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationActions).toEqual(mockList);
+    expect(result.current.operationActions).toEqual(operationActionMockData);
     requestSpy.mockClear();
-    requestSpy.mockImplementation(() => resolveErrorThreeSecond(mockList));
+    requestSpy.mockImplementation(() =>
+      createSpyErrorResponse(operationActionMockData)
+    );
 
     act(() => {
       result.current.updateOperationActions();
     });
     expect(result.current.loading).toBe(true);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationActions).toEqual(mockList);
+    expect(result.current.operationActions).toEqual(operationActionMockData);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
@@ -135,10 +111,8 @@ describe('useOperationContents', () => {
   });
 
   test('should set list to empty array when response throw error', async () => {
-    const requestSpy = mockRequest();
-    requestSpy.mockImplementation(() => resolveThreeSecond(mockList));
     const { result, waitForNextUpdate } = renderHook(() =>
-      useOperationContents()
+      useOperationActions()
     );
     expect(result.current.loading).toBe(false);
     expect(result.current.operationActions).toEqual([]);
@@ -156,16 +130,18 @@ describe('useOperationContents', () => {
 
     expect(result.current.loading).toBe(false);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationActions).toEqual(mockList);
+    expect(result.current.operationActions).toEqual(operationActionMockData);
     requestSpy.mockClear();
-    requestSpy.mockImplementation(() => rejectThreeSecond(mockList));
+    requestSpy.mockImplementation(() =>
+      createSpyFailResponse(operationActionMockData)
+    );
 
     act(() => {
       result.current.updateOperationActions();
     });
     expect(result.current.loading).toBe(true);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationActions).toEqual(mockList);
+    expect(result.current.operationActions).toEqual(operationActionMockData);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();

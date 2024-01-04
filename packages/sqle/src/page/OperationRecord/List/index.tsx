@@ -86,10 +86,6 @@ const OperationRecordList: React.FC = () => {
     }
   );
 
-  const columns = useMemo(() => {
-    return OperationRecordListColumn();
-  }, []);
-
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IOperationRecordList, FilterCustomProps>([
       [
@@ -121,7 +117,7 @@ const OperationRecordList: React.FC = () => {
   ]);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo);
+    useTableFilterContainer(OperationRecordListColumn, updateTableFilterInfo);
 
   useEffect(() => {
     updateOperationTypeNameList();
@@ -202,7 +198,7 @@ const OperationRecordList: React.FC = () => {
           current: pagination.page_index
         }}
         loading={loading}
-        columns={columns}
+        columns={OperationRecordListColumn}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
       />
