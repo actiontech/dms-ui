@@ -1,4 +1,4 @@
-import { act, cleanup } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import { renderHooksWithTheme } from '../../../../testUtils/customRender';
 
 import useSQLExecPlan from '../useSQLExecPlan';
