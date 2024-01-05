@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode } from 'react';
 import { ChartContTitleStyleWrapper } from './style';
 
-interface IChartTitle {
+export interface IChartTitle {
   mainText: string | ReactNode | JSX.Element;
   noteText: string | ReactNode | JSX.Element;
   color?: string;
