@@ -268,9 +268,26 @@ importers:
       babel-preset-react-app:
         specifier: ^10.0.1
         version: registry.npm.taobao.org/babel-preset-react-app@10.0.1
+      provision:
+        specifier: workspace:^
+        version: link:../provision
       sqle:
         specifier: workspace:^
         version: link:../sqle
+  packages/diagnosis:
+    dependencies:
+      '@actiontech/shared':
+        specifier: workspace:^1.0.0
+        version: link:../shared
+      vite:
+        specifier: ^3.0.0
+        version: registry.npm.taobao.org/vite@3.0.0(less@4.1.3)
+
+  packages/provision:
+    dependencies:
+      '@actiontech/shared':
+        specifier: workspace:^1.0.0
+        version: link:../shared
 
   packages/shared: {}
 
