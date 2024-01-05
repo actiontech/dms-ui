@@ -11,7 +11,7 @@ import { WorkflowTemplateStepInfoStyleWrapper } from '../../../components/StepCa
 import { StepInfoStyleWrapper } from '../../style';
 import { PlusOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { useGetLevelData } from '../../../useGetLevelData';
+import { useGetLevelData } from '../../../hooks/useGetLevelData';
 import type { DragEndEvent, DragMoveEvent } from '@dnd-kit/core';
 import {
   DndContext,
@@ -71,6 +71,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
   );
 
   const onDragEnd = ({ active, over }: DragEndEvent) => {
+    console.log('drag end');
     if (active.id !== over?.id) {
       setStepData((prev) => {
         const activeIndex = prev.findIndex((i) => i.key === active.id);
@@ -85,6 +86,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
   };
 
   const onDragMove = ({ activatorEvent }: DragMoveEvent) => {
+    console.log('move');
     activatorEvent.preventDefault();
     activatorEvent.stopPropagation();
   };
