@@ -1,6 +1,4 @@
 import { useState } from 'react';
-// import type { Dayjs } from 'dayjs';
-import dayjs from 'dayjs';
 import { Row, Col } from 'antd';
 import { useTranslation } from 'react-i18next';
 import CardShow from '../base/CardShow';
