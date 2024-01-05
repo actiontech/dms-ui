@@ -42,7 +42,7 @@ const CardNumberShow = () => {
   const onSuccess = (res: AxiosResponse<IGetWorkflowCountV1Return>) => {
     setTotalOrder(res.data.data?.total ?? defaultVal);
     setNewOrder(res.data.data?.today_count ?? defaultVal);
-    setTimeNow(formatTime(new Date().toString()));
+    setTimeNow(formatTime(new Date()));
   };
 
   const { loading, errorMessage } = usePanelCommonRequest(
