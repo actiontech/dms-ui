@@ -1,4 +1,4 @@
-import { screen, cleanup, act } from '@testing-library/react';
+import { cleanup, act } from '@testing-library/react';
 import { renderWithTheme } from '../../../../../testUtils/customRender';
 import { mockThemeStyleData } from '../../../../../testUtils/mockHooks/mockThemeStyleData';
 
