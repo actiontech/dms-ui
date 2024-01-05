@@ -31,7 +31,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateStepInfo', () => {
     return superRender(<WorkflowTemplateStepInfo {...data} />);
   };
 
-  it('render step info and change review node number', async () => {
+  it('render step info detail', async () => {
     const { baseElement } = customRender(stepInfoProps);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('工单发起/工单更新SQL语句')).toBeInTheDocument();

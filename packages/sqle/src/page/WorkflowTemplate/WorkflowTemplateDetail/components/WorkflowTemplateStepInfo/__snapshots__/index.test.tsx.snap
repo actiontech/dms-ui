@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`page/WorkflowTemplate/WorkflowTemplateStepInfo render step info and change review node number 1`] = `
+exports[`page/WorkflowTemplate/WorkflowTemplateStepInfo render step info detail 1`] = `
 <body>
   <div>
     <div

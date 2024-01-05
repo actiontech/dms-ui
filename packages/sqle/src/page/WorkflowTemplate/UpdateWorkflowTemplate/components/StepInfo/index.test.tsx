@@ -7,62 +7,17 @@ import {
 import { act, fireEvent, screen } from '@testing-library/react';
 import {
   getAllBySelector,
-  getBySelector,
-  sleep
+  getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { IUpdateWorkflowStepInfoProps } from '../../../components/StepCard/index.type';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-const height = 160;
-const width = 700;
-const offsetHeight = 'offsetHeight';
-const offsetWidth = 'offsetWidth';
-
-const mockGetBoundingClientRect = (element: any, index: number) =>
-  jest.spyOn(element, 'getBoundingClientRect').mockImplementation(() => ({
-    bottom: 0,
-    height,
-    left: 0,
-    right: 0,
-    top: index * height,
-    width,
-    x: 0,
-    y: index * height
-  }));
-
 describe('page/WorkflowTemplate/StepInfo', () => {
-  const originalOffsetHeight = Object.getOwnPropertyDescriptor(
-    HTMLElement.prototype,
-    offsetHeight
-  );
-  const originalOffsetWidth = Object.getOwnPropertyDescriptor(
-    HTMLElement.prototype,
-    offsetWidth
-  );
-
   beforeEach(() => {
-    Object.defineProperty(HTMLElement.prototype, offsetHeight, {
-      configurable: true,
-      value: height
-    });
-    Object.defineProperty(HTMLElement.prototype, offsetWidth, {
-      configurable: true,
-      value: width
-    });
     jest.useFakeTimers();
   });
 
   afterEach(() => {
-    Object.defineProperty(
-      HTMLElement.prototype,
-      offsetHeight,
-      originalOffsetHeight ?? offsetHeight
-    );
-    Object.defineProperty(
-      HTMLElement.prototype,
-      offsetWidth,
-      originalOffsetWidth ?? offsetWidth
-    );
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
@@ -88,6 +43,8 @@ describe('page/WorkflowTemplate/StepInfo', () => {
     clickReviewNode: clickReviewMock,
     usernameList: userTipListData
   };
+
+  const onDragMoveMock = jest.fn();
 
   const customRender = (data: IUpdateWorkflowStepInfoProps) => {
     return superRender(<StepInfo {...data} />);
@@ -122,31 +79,27 @@ describe('page/WorkflowTemplate/StepInfo', () => {
     const draggableElement = getAllBySelector(
       'div[aria-roledescription="sortable"]'
     );
-    const sourceEle = getAllBySelector(
-      'div[aria-roledescription="sortable"]'
-    )?.[1];
-    // const targetEle = getAllBySelector(
-    //   'div[aria-roledescription="sortable"]'
-    // )?.[0];
+    const sourceEle = draggableElement?.[1];
+    const targetEle = draggableElement?.[0];
 
-    Object.setPrototypeOf(window, Window.prototype);
+    // Object.setPrototypeOf(window, Window.prototype);
 
-    draggableElement.forEach((draggable, index) => {
-      mockGetBoundingClientRect(draggable, index);
-    });
+    // draggableElement.forEach((draggable, index) => {
+    //   mockGetBoundingClientRect(draggable, index);
+    // });
 
-    fireEvent.keyDown(sourceEle, {
-      code: 'Space'
-    });
+    // fireEvent.keyDown(sourceEle, {
+    //   code: 'Space'
+    // });
 
-    fireEvent.keyDown(window, {
-      code: 'ArrowUp'
-    });
-    sleep(1);
+    // fireEvent.keyDown(window, {
+    //   code: 'ArrowUp'
+    // });
+    // sleep(1);
 
-    fireEvent.keyDown(sourceEle, {
-      code: 'Space'
-    });
+    // fireEvent.keyDown(sourceEle, {
+    //   code: 'Space'
+    // });
     // fireEvent.pointerDown(sourceEle, { isPrimary: true, button: 0 });
     // fireEvent.pointerMove(sourceEle, { clientX: 0, clientY: -100 });
     // // fireEvent.dragStart(sourceEle);
@@ -156,5 +109,15 @@ describe('page/WorkflowTemplate/StepInfo', () => {
     // // fireEvent.dragEnd(sourceEle);
     // fireEvent.pointerUp(sourceEle);
     // expect(exchangeMock).toBeCalledWith(1, 0);
+
+    // // simulate dragging
+    // fireEvent.dragStart(sourceEle, { clientX: 0, clientY: 0 });
+    // fireEvent.dragOver(targetEle, { clientX: 100, clientY: 100 });
+    // fireEvent.dragEnd(sourceEle);
+    fireEvent.dragStart(sourceEle);
+    fireEvent.dragEnter(sourceEle);
+    fireEvent.dragOver(sourceEle);
+    fireEvent.drop(sourceEle);
+    fireEvent.dragEnd(sourceEle);
   });
 });

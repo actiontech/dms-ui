@@ -134,6 +134,7 @@ exports[`page/WorkflowTemplate/StepInfo drag to change step card order 1`] = `
         aria-disabled="false"
         aria-roledescription="sortable"
         class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        data-testid="review-step-0"
         role="button"
         style="cursor: move;"
         tabindex="0"
@@ -242,6 +243,7 @@ exports[`page/WorkflowTemplate/StepInfo drag to change step card order 1`] = `
         aria-disabled="false"
         aria-roledescription="sortable"
         class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        data-testid="review-step-1"
         role="button"
         style="cursor: move;"
         tabindex="0"
@@ -327,7 +329,7 @@ exports[`page/WorkflowTemplate/StepInfo drag to change step card order 1`] = `
                         >
                           <span
                             class="ant-avatar-string"
-                            style="transform: scale(0.9885714285714285) translateX(-50%);"
+                            style="transform: scale(1) translateX(-50%);"
                           >
                             T
                           </span>
@@ -656,6 +658,7 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
         aria-disabled="false"
         aria-roledescription="sortable"
         class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        data-testid="review-step-0"
         role="button"
         style="cursor: move;"
         tabindex="0"
@@ -764,6 +767,7 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
         aria-disabled="false"
         aria-roledescription="sortable"
         class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        data-testid="review-step-1"
         role="button"
         style="cursor: move;"
         tabindex="0"
@@ -849,7 +853,7 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
                         >
                           <span
                             class="ant-avatar-string"
-                            style="transform: scale(0.9885714285714285) translateX(-50%);"
+                            style="transform: scale(1) translateX(-50%);"
                           >
                             T
                           </span>
