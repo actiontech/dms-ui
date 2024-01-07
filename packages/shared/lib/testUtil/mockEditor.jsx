@@ -4,8 +4,8 @@ const mockEditor = (props) => {
 };
 
 export const loader = {
-  config: () => {},
-  init: async () => {}
+  config: jest.fn(),
+  init: jest.fn(() => Promise.resolve())
 };
 
 export default mockEditor;

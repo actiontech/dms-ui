@@ -32,7 +32,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
     "@stylelint/postcss-css-in-js": "^0.38.0",
