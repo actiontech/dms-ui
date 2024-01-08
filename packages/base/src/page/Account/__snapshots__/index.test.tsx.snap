@@ -5,7 +5,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -283,7 +283,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -885,7 +885,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
