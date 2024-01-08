@@ -1,23 +1,38 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
-import { workflowTemplateCardProps } from '../../../../testUtils/mockApi/workflowTemplate/data';
 import StepCard from '.';
 import { fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { workflowTemplateData } from '../../../../testUtils/mockApi/workflowTemplate/data';
+import { IStepCardProps, StepInfoArrowEnum } from './index.type';
+import { IconHonour } from '../../../../icon/WorkflowTemplate';
+
+export const workflowTemplateCardProps = {
+  rowKey: '1',
+  key: '1',
+  title: 'test',
+  indexNumber: 1,
+  show: true,
+  disabled: false,
+  icon: (
+    <span className="honour-icon">
+      <IconHonour />
+    </span>
+  ),
+  arrow: StepInfoArrowEnum.none,
+  desc: '',
+  ...workflowTemplateData.workflow_step_template_list[0]
+};
 
 describe('page/WorkflowTemplate/StepCard', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  const customRender = (data?: {
-    [key: string]: string | boolean | undefined | ((index?: number) => void);
-  }) => {
-    return superRender(
-      <StepCard {...workflowTemplateCardProps} {...(data ?? {})} />
-    );
+  const customRender = (data: IStepCardProps) => {
+    return superRender(<StepCard {...data} />);
   };
   it('render step card with no operator and not active', async () => {
-    const { baseElement } = customRender();
+    const { baseElement } = customRender({ ...workflowTemplateCardProps });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('-').length).toBe(1);
     expect(screen.getByText('test')).toBeInTheDocument();
@@ -25,6 +40,7 @@ describe('page/WorkflowTemplate/StepCard', () => {
 
   it('render step card with disabled', async () => {
     const { baseElement } = customRender({
+      ...workflowTemplateCardProps,
       disabled: true,
       operator: 'admin',
       operatorTitle: 'testCard'
@@ -39,6 +55,7 @@ describe('page/WorkflowTemplate/StepCard', () => {
     const clickMock = jest.fn();
     const closeMock = jest.fn();
     const { baseElement } = customRender({
+      ...workflowTemplateCardProps,
       active: true,
       indexNumber: undefined,
       click: clickMock,

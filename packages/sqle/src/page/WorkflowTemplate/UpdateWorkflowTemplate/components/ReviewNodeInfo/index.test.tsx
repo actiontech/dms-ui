@@ -14,6 +14,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
   beforeEach(() => {
@@ -40,7 +41,9 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
   };
 
   const { result } = renderHooksWithTheme(() => Form.useForm());
-  const customRender = (data?: { [key: string]: any }) => {
+  const customRender = (data?: {
+    [key: string]: NodeTypeEnum | IWorkFlowStepTemplateResV1;
+  }) => {
     return superRender(
       <ReviewAndExecNodeInfo
         form={result.current[0]}

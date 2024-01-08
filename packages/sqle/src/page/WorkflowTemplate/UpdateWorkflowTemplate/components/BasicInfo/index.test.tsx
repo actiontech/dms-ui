@@ -27,7 +27,7 @@ describe('page/WorkflowTemplate/BasicInfo', () => {
   const updateMock = jest.fn();
 
   const { result } = renderHooksWithTheme(() => Form.useForm());
-  const customRender = (data?: { [key: string]: any }) => {
+  const customRender = (data?: { [key: string]: undefined }) => {
     return superRender(
       <BasicInfo
         form={result.current[0]}

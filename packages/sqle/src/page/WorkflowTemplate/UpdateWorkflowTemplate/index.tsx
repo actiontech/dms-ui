@@ -1,19 +1,17 @@
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Col, Row, Space } from 'antd';
-import React, { useEffect, useState } from 'react';
+import { Col, Row, Space, Spin } from 'antd';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import BasicInfo from './components/BasicInfo';
 import StepInfo from './components/StepInfo';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import {
   IWorkFlowStepTemplateReqV1,
-  IWorkFlowStepTemplateResV1,
-  IWorkflowTemplateDetailResV1
+  IWorkFlowStepTemplateResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Link, useParams } from 'react-router-dom';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { BaseFormFields } from './components/BasicInfo/index.type';
 import { AxiosResponse } from 'axios';
 import {
@@ -27,7 +25,7 @@ import {
   ReviewNodeField
 } from './components/ReviewNodeInfo/index.type';
 import { cloneDeep } from 'lodash';
-import { useBoolean } from 'ahooks';
+import { useBoolean, useRequest } from 'ahooks';
 import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { useForm } from 'antd/es/form/Form';
 import { WorkflowTemplateStyleWrapper } from '../WorkflowTemplateDetail/style';
@@ -41,9 +39,6 @@ const UpdateWorkflowTemplate: React.FC = () => {
 
   const [selectLevel, setSelectLevel] =
     useState<BaseFormFields['allowSubmitWhenLessAuditLevel']>(undefined);
-
-  const [workflowTemplate, setWorkflowTemplate] =
-    useState<IWorkflowTemplateDetailResV1>();
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean(false);
@@ -98,30 +93,32 @@ const UpdateWorkflowTemplate: React.FC = () => {
       .finally(() => submitFinish());
   };
 
-  useEffect(() => {
-    const getWorkflowProgress = () => {
-      workflow
-        .getWorkflowTemplateV1({ project_name: projectName })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
+  const { data: workflowTemplate, loading: getWorkflowTemplateLoading } =
+    useRequest(
+      () =>
+        workflow
+          .getWorkflowTemplateV1({
+            project_name: projectName
+          })
+          .then((res) => {
             const temp = res.data.data;
             if (temp?.workflow_step_template_list) {
-              temp.workflow_step_template_list =
-                temp.workflow_step_template_list.map((e) => {
-                  if (e.approved_by_authorized) {
-                    e.assignee_user_id_list = [];
-                  }
-                  return e;
-                });
+              const stepList = temp?.workflow_step_template_list ?? [];
+              setSelectLevel(temp?.allow_submit_when_less_audit_level);
+              if (stepList.length <= 1) {
+                setExecSteps(stepList[0]);
+              } else {
+                const execStep = stepList.pop();
+                setReviewSteps(stepList);
+                if (execStep) setExecSteps(execStep);
+              }
             }
-            setWorkflowTemplate(res.data.data);
-          }
-        });
-    };
-    if (!!urlParams.workflowName) {
-      getWorkflowProgress();
-    }
-  }, [projectName, urlParams]);
+            return res.data.data;
+          }),
+      {
+        ready: !!projectName && !!urlParams.workflowName
+      }
+    );
 
   const [currentStep, setCurrentStep] = useState<number>(0);
 
@@ -133,22 +130,6 @@ const UpdateWorkflowTemplate: React.FC = () => {
     assignee_user_id_list: [],
     desc: ''
   });
-
-  useEffect(() => {
-    if (!!workflowTemplate) {
-      const stepList = workflowTemplate?.workflow_step_template_list ?? [];
-      setSelectLevel(workflowTemplate?.allow_submit_when_less_audit_level);
-      if (stepList.length <= 1) {
-        setExecSteps(stepList[0]);
-        return;
-      }
-      const execStep = stepList.pop();
-      setReviewSteps(stepList);
-      if (execStep) {
-        setExecSteps(execStep);
-      }
-    }
-  }, [workflowTemplate]);
 
   const nextStep = () => {
     setCurrentStep(currentStep + 1);
@@ -264,73 +245,75 @@ const UpdateWorkflowTemplate: React.FC = () => {
 
   return (
     <WorkflowTemplateStyleWrapper>
-      <PageHeader
-        title={
-          <Link to={`/sqle/project/${projectID}/progress`} key="go-back">
-            <BasicButton icon={<ArrowLeftOutlined />}>
-              {t('workflowTemplate.create.title.returnButton')}
-            </BasicButton>
-          </Link>
-        }
-        extra={
-          !updateSuccess ? (
-            <Space>
-              <BasicButton onClick={handleReset}>
-                {t('common.reset')}
-              </BasicButton>
-              <BasicButton
-                type="primary"
-                loading={submitLoading}
-                onClick={submitProgress}
-              >
-                {t('common.save')}
-              </BasicButton>
-            </Space>
-          ) : null
-        }
-      />
-      {!updateSuccess ? (
-        <Row
-          key="update-workflow-template-wrapper"
-          className="workflow-template-wrapper"
-        >
-          <Col key="update-workflow-template-left-wrapper" flex="auto">
-            <StepInfo
-              currentStep={currentStep}
-              authLevel={selectLevel}
-              reviewStepData={reviewSteps}
-              execStepData={execSteps}
-              addReviewNode={handleAddReviewNode}
-              removeReviewNode={handleRemoveReviewNode}
-              exchangeReviewNode={handleExchangeReviewNode}
-              clickReviewNode={handleClickReviewNode}
-              usernameList={usernameList}
-            />
-          </Col>
-          <Col
-            key="update-workflow-template-right-wrapper"
-            flex="360px"
-            className="workflow-template-right-module"
-          >
-            {renderLeftStepInfo(currentStep)}
-          </Col>
-        </Row>
-      ) : (
-        <BasicResult
-          icon={<IconSuccessResult />}
-          title={t('workflowTemplate.update.result.title')}
-          extra={[
-            <Link
-              key="back-to-workflow-template"
-              to={`/sqle/project/${projectID}/progress`}
-            >
-              <BasicButton type="primary">
-                {t('workflowTemplate.update.result.showNow')}
+      <Spin spinning={getWorkflowTemplateLoading}>
+        <PageHeader
+          title={
+            <Link to={`/sqle/project/${projectID}/progress`} key="go-back">
+              <BasicButton icon={<ArrowLeftOutlined />}>
+                {t('workflowTemplate.create.title.returnButton')}
               </BasicButton>
             </Link>
-          ]}
+          }
+          extra={
+            !updateSuccess ? (
+              <Space>
+                <BasicButton onClick={handleReset}>
+                  {t('common.reset')}
+                </BasicButton>
+                <BasicButton
+                  type="primary"
+                  loading={submitLoading}
+                  onClick={submitProgress}
+                >
+                  {t('common.save')}
+                </BasicButton>
+              </Space>
+            ) : null
+          }
         />
-      )}
+        {!updateSuccess ? (
+          <Row
+            key="update-workflow-template-wrapper"
+            className="workflow-template-wrapper"
+          >
+            <Col key="update-workflow-template-left-wrapper" flex="auto">
+              <StepInfo
+                currentStep={currentStep}
+                authLevel={selectLevel}
+                reviewStepData={reviewSteps}
+                execStepData={execSteps}
+                addReviewNode={handleAddReviewNode}
+                removeReviewNode={handleRemoveReviewNode}
+                exchangeReviewNode={handleExchangeReviewNode}
+                clickReviewNode={handleClickReviewNode}
+                usernameList={usernameList}
+              />
+            </Col>
+            <Col
+              key="update-workflow-template-right-wrapper"
+              flex="360px"
+              className="workflow-template-right-module"
+            >
+              {renderLeftStepInfo(currentStep)}
+            </Col>
+          </Row>
+        ) : (
+          <BasicResult
+            icon={<IconSuccessResult />}
+            title={t('workflowTemplate.update.result.title')}
+            extra={[
+              <Link
+                key="back-to-workflow-template"
+                to={`/sqle/project/${projectID}/progress`}
+              >
+                <BasicButton type="primary">
+                  {t('workflowTemplate.update.result.showNow')}
+                </BasicButton>
+              </Link>
+            ]}
+          />
+        )}
+      </Spin>
     </WorkflowTemplateStyleWrapper>
   );
 };

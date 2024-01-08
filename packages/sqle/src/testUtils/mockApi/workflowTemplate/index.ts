@@ -5,8 +5,8 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { userTipListData, workflowTemplateData } from './data';
 import user from '@actiontech/shared/lib/api/sqle/service/user';
+import { cloneDeep } from 'lodash';
 
-const tempList = workflowTemplateData.workflow_step_template_list;
 class MockWorkflowTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
     this.updateWorkflowTemplate();
@@ -24,7 +24,7 @@ class MockWorkflowTemplateApi implements MockSpyApy {
     const spy = jest.spyOn(workflow, 'getWorkflowTemplateV1');
     spy.mockImplementation(() => {
       return createSpySuccessResponse({
-        data: { ...workflowTemplateData, workflow_step_template_list: tempList }
+        data: cloneDeep(workflowTemplateData)
       });
     });
     return spy;

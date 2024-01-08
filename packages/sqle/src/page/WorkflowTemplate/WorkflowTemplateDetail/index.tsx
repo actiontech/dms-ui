@@ -1,5 +1,5 @@
 import { Col, Row, Spin } from 'antd';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useRequest } from 'ahooks';
 import {
@@ -53,26 +53,21 @@ const WorkflowTemplateDetail: React.FC = () => {
           .getWorkflowTemplateV1({
             project_name: projectName
           })
-          .then((res) => res.data.data),
+          .then((res) => {
+            const stepList = res.data.data?.workflow_step_template_list ?? [];
+            if (stepList.length <= 1) {
+              setExecSteps(stepList[0]);
+            } else {
+              const execStep = stepList.pop();
+              setReviewSteps(stepList);
+              if (execStep) setExecSteps(execStep);
+            }
+            return res.data.data;
+          }),
       {
         ready: !!projectName
       }
     );
-
-  useEffect(() => {
-    if (!!workflowTemplate) {
-      const stepList = workflowTemplate?.workflow_step_template_list ?? [];
-      if (stepList.length <= 1) {
-        setExecSteps(stepList[0]);
-        return;
-      }
-      const execStep = stepList.pop();
-      setReviewSteps(stepList);
-      if (execStep) {
-        setExecSteps(execStep);
-      }
-    }
-  }, [workflowTemplate]);
 
   return (
     <WorkflowTemplateStyleWrapper>

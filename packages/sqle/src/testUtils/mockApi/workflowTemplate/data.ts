@@ -1,6 +1,4 @@
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { IconHonour } from '../../../icon/WorkflowTemplate';
-import { StepInfoArrowEnum } from '../../../page/WorkflowTemplate/components/StepCard/index.type';
 
 export const workflowTemplateData = {
   allow_submit_when_less_audit_level:
@@ -32,23 +30,6 @@ export const workflowTemplateData = {
     }
   ],
   workflow_template_name: '700300-WorkflowTemplate'
-};
-
-export const workflowTemplateCardProps = {
-  rowKey: '1',
-  key: '1',
-  title: 'test',
-  indexNumber: 1,
-  show: true,
-  disabled: false,
-  icon: (
-    <span className="honour-icon">
-      <IconHonour />
-    </span>
-  ),
-  arrow: StepInfoArrowEnum.none,
-  desc: '',
-  ...workflowTemplateData.workflow_step_template_list[0]
 };
 
 export const userTipListData = [

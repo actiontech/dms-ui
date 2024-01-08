@@ -44,8 +44,6 @@ describe('page/WorkflowTemplate/StepInfo', () => {
     usernameList: userTipListData
   };
 
-  const onDragMoveMock = jest.fn();
-
   const customRender = (data: IUpdateWorkflowStepInfoProps) => {
     return superRender(<StepInfo {...data} />);
   };
@@ -68,56 +66,5 @@ describe('page/WorkflowTemplate/StepInfo', () => {
     expect(getAllBySelector('.ant-card').length).toBe(5);
     fireEvent.click(getAllBySelector('.ant-card')?.[0]);
     expect(clickReviewMock).toBeCalledWith(0);
-  });
-
-  it('drag to change step card order', () => {
-    const { baseElement } = customRender(stepInfoProps);
-    expect(baseElement).toMatchSnapshot();
-    expect(getAllBySelector('.ant-card').length).toBe(5);
-    expect(screen.getByText('#1')).toBeInTheDocument();
-    expect(screen.getByText('#2')).toBeInTheDocument();
-    const draggableElement = getAllBySelector(
-      'div[aria-roledescription="sortable"]'
-    );
-    const sourceEle = draggableElement?.[1];
-    const targetEle = draggableElement?.[0];
-
-    // Object.setPrototypeOf(window, Window.prototype);
-
-    // draggableElement.forEach((draggable, index) => {
-    //   mockGetBoundingClientRect(draggable, index);
-    // });
-
-    // fireEvent.keyDown(sourceEle, {
-    //   code: 'Space'
-    // });
-
-    // fireEvent.keyDown(window, {
-    //   code: 'ArrowUp'
-    // });
-    // sleep(1);
-
-    // fireEvent.keyDown(sourceEle, {
-    //   code: 'Space'
-    // });
-    // fireEvent.pointerDown(sourceEle, { isPrimary: true, button: 0 });
-    // fireEvent.pointerMove(sourceEle, { clientX: 0, clientY: -100 });
-    // // fireEvent.dragStart(sourceEle);
-    // // fireEvent.dragOver(targetEle);
-    // sleep(1);
-    // // fireEvent.drop(targetEle);
-    // // fireEvent.dragEnd(sourceEle);
-    // fireEvent.pointerUp(sourceEle);
-    // expect(exchangeMock).toBeCalledWith(1, 0);
-
-    // // simulate dragging
-    // fireEvent.dragStart(sourceEle, { clientX: 0, clientY: 0 });
-    // fireEvent.dragOver(targetEle, { clientX: 100, clientY: 100 });
-    // fireEvent.dragEnd(sourceEle);
-    fireEvent.dragStart(sourceEle);
-    fireEvent.dragEnter(sourceEle);
-    fireEvent.dragOver(sourceEle);
-    fireEvent.drop(sourceEle);
-    fireEvent.dragEnd(sourceEle);
   });
 });
