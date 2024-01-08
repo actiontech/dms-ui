@@ -7,7 +7,7 @@ exports[`base/Member should render member list when it first entered the member 
       class="css-1pyzu59"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -624,7 +624,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
       class="css-1pyzu59"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"

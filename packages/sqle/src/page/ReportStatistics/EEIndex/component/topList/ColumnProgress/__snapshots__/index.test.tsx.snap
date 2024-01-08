@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/topList/ColumnProgress render snap when barWidth is 0 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1vln14b"
+    >
+      <div
+        class="progress-line"
+      >
+        <div
+          class="progress-bar"
+          style="width: 0%;"
+        />
+      </div>
+      <div
+        class="progress-text"
+      >
+        0%
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/topList/ColumnProgress render snap when barWidth val is float 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1vln14b"
+    >
+      <div
+        class="progress-line"
+      >
+        <div
+          class="progress-bar"
+          style="width: 60.94%;"
+        />
+      </div>
+      <div
+        class="progress-text"
+      >
+        60.94%
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/topList/ColumnProgress render snap when barWidth val less than 0 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1vln14b"
+    >
+      <div
+        class="progress-line"
+      >
+        <div
+          class="progress-bar"
+          style="width: 0%;"
+        />
+      </div>
+      <div
+        class="progress-text"
+      >
+        0%
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/topList/ColumnProgress render snap when barWidth val more than 100 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1vln14b"
+    >
+      <div
+        class="progress-line"
+      >
+        <div
+          class="progress-bar"
+          style="width: 100%;"
+        />
+      </div>
+      <div
+        class="progress-text"
+      >
+        100%
+      </div>
+    </div>
+  </div>
+</body>
+`;

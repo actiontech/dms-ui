@@ -27,6 +27,17 @@ describe('utils/Common', () => {
     expect(emailValidate('')).toBe(false);
   });
 
+  test('should format date now to YYYY-MM-DD HH:mm:ss', () => {
+    const mockDate = new Date('2010-01-01T00:00:00Z');
+    const spy = jest
+      .spyOn(global, 'Date')
+      .mockImplementation(() => mockDate as any);
+
+    expect(formatTime(new Date())).toBe('2010-01-01 08:00:00');
+
+    spy.mockRestore();
+  });
+
   test('should format moment to YYYY-MM-DD HH:mm:ss', () => {
     expect(formatTime('2021-06-09T08:11:52Z')).toBe('2021-06-09 16:11:52');
     expect(formatTime('2021-06-09T08:11:52Z', '--')).toBe(
