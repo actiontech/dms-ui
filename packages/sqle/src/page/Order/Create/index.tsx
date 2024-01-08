@@ -122,14 +122,14 @@ const Create: React.FC = () => {
 
   const create = async () => {
     const baseInfo = await baseForm.validateFields();
-    if (
-      taskInfos?.some(
-        (v) => v.sql_source === AuditTaskResV1SqlSourceEnum.mybatis_xml_file
-      )
-    ) {
-      messageApi.error(t('order.createOrder.unsupportMybatisTips'));
-      return;
-    }
+    // if (
+    //   taskInfos?.some(
+    //     (v) => v.sql_source === AuditTaskResV1SqlSourceEnum.mybatis_xml_file
+    //   )
+    // ) {
+    //   messageApi.error(t('order.createOrder.unsupportMybatisTips'));
+    //   return;
+    // }
     if (!taskInfos?.length) {
       messageApi.error(t('order.createOrder.mustAuditTips'));
       return;

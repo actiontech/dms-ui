@@ -3,4 +3,9 @@ const mockEditor = (props) => {
   return <input {...otherProps} />;
 };
 
+export const loader = {
+  config: jest.fn(),
+  init: jest.fn(() => Promise.resolve())
+};
+
 export default mockEditor;

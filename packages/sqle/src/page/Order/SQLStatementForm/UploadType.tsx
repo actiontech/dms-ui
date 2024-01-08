@@ -26,6 +26,7 @@ const UploadType: React.FC<{
         <IconOrderFileUpload />
         <span className="text">{t('order.sqlInfo.uploadFile')}</span>
       </UploadTypeItem>
+      {/* 暂时隐藏 sql 工单中通过 mybatis 上传 sql 语句的方式 
       <UploadTypeItem
         active={value === SQLInputType.uploadMybatisFile}
         onClick={() => onChange?.(SQLInputType.uploadMybatisFile)}
@@ -33,7 +34,7 @@ const UploadType: React.FC<{
       >
         <IconOrderFileUpload />
         <span className="text">{t('order.sqlInfo.updateMybatisFile')}</span>
-      </UploadTypeItem>
+      </UploadTypeItem> */}
       <UploadTypeItem
         active={value === SQLInputType.zipFile}
         onClick={() => onChange?.(SQLInputType.zipFile)}
