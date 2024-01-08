@@ -9,7 +9,6 @@ import { mockThemeStyleData } from '../../testUtils/mockHooks/mockThemeStyleData
 import ReportStatistics from '.';
 
 describe('sqle/ReportStatistics CE', () => {
-
   beforeEach(() => {
     jest.useFakeTimers();
     mockThemeStyleData();
