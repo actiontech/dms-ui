@@ -13,7 +13,7 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
   let requestPlotsData: jest.SpyInstance;
   const customRender = () => {
     return renderWithThemeAndRedux(<DatabaseSourceOrder />);
-  }
+  };
   beforeEach(() => {
     jest.useFakeTimers();
     requestPlotsData = statistic.getInstancesTypePercent();
@@ -41,5 +41,5 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(requestPlotsData).toBeCalled();
-  })
+  });
 });

@@ -4,7 +4,6 @@ import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockTh
 import CardShow, { ICardShowProps } from '.';
 
 describe('ReportStatistics/CardShow', () => {
-
   const customRender = (params: ICardShowProps) => {
     return renderWithThemeAndRedux(<CardShow {...params} />);
   };

@@ -13,7 +13,9 @@ describe('ReportStatistics/topList/ColumnProgress', () => {
   });
 
   it('render snap when barWidth val more than 100', () => {
-    const { baseElement } = renderWithTheme(<ColumnProgress barWidth={120.9} />);
+    const { baseElement } = renderWithTheme(
+      <ColumnProgress barWidth={120.9} />
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
