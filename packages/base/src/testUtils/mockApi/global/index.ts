@@ -5,6 +5,7 @@ import {
 import {
   BasicInfo,
   CompanyNotice,
+  DBServicesList,
   GetUserPayload,
   oauth2Tips,
   UserInfo
@@ -23,6 +24,11 @@ class MockDMSGlobalApi implements MockSpyApy {
     this.getCompanyNotice();
     this.updateCompanyNotice();
     this.getListDBServiceDriverOption();
+    this.getListDBServices();
+    this.AddDBService();
+    this.UpdateDBService();
+    this.DelDBService();
+    this.CheckDBServiceIsConnectable();
   }
 
   public getCurrentUser() {
@@ -124,6 +130,41 @@ class MockDMSGlobalApi implements MockSpyApy {
         ]
       })
     );
+    return spy;
+  }
+
+  public getListDBServices() {
+    const spy = jest.spyOn(dms, 'ListDBServices');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        total_nums: DBServicesList.length,
+        data: DBServicesList
+      })
+    );
+    return spy;
+  }
+
+  public AddDBService() {
+    const spy = jest.spyOn(dms, 'AddDBService');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public DelDBService() {
+    const spy = jest.spyOn(dms, 'DelDBService');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public UpdateDBService() {
+    const spy = jest.spyOn(dms, 'UpdateDBService');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public CheckDBServiceIsConnectable() {
+    const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectableById');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
