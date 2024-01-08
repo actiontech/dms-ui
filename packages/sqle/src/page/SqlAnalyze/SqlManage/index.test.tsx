@@ -1,15 +1,17 @@
 import { act, fireEvent } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
-import AuditPlanSqlAnalyze from '.';
+
+import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
 import {
   resolveErrorThreeSecond,
   resolveThreeSecond
 } from '../../../testUtils/mockRequest';
-import { AuditPlanSqlAnalyzeData } from '../__testData__';
-import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
+
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import { SQLManageSqlAnalyzeData } from '../__testData__';
+import SQLManageAnalyze from '.';
 
 jest.mock('react-router', () => {
   return {
@@ -20,7 +22,7 @@ jest.mock('react-router', () => {
 
 const projectName = 'default';
 
-describe('SqlAnalyze/AuditPlan', () => {
+describe('SqlAnalyze/SQLManage', () => {
   ignoreComponentAutoCreatedListNoKey();
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
@@ -28,10 +30,9 @@ describe('SqlAnalyze/AuditPlan', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     useParamsMock.mockReturnValue({
-      reportId: 'reportId1',
+      sqlManageId: 'sqlManageId1',
       sqlNum: '123',
-      projectName,
-      auditPlanName: 'api_test_1'
+      projectName
     });
   });
 
@@ -42,15 +43,15 @@ describe('SqlAnalyze/AuditPlan', () => {
   });
 
   const mockGetAnalyzeData = () => {
-    const spy = jest.spyOn(audit_plan, 'getAuditPlantAnalysisDataV2');
-    spy.mockImplementation(() => resolveThreeSecond(AuditPlanSqlAnalyzeData));
+    const spy = jest.spyOn(SqlManage, 'GetSqlManageSqlAnalysisV1');
+    spy.mockImplementation(() => resolveThreeSecond(SQLManageSqlAnalyzeData));
     return spy;
   };
 
-  test('should get analyze data from origin', async () => {
+  it('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
     const { container, baseElement } = renderWithReduxAndTheme(
-      <AuditPlanSqlAnalyze />,
+      <SQLManageAnalyze />,
       undefined,
       {
         user: {
@@ -66,12 +67,13 @@ describe('SqlAnalyze/AuditPlan', () => {
     expect(spy).toBeCalledTimes(1);
     expect(spy).toBeCalledWith({
       project_name: projectName,
-      audit_plan_report_id: 'reportId1',
-      number: '123',
-      audit_plan_name: 'api_test_1'
+      sql_manage_id: 'sqlManageId1'
     });
+
+    await act(async () => jest.advanceTimersByTime(300));
     expect(container).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3500));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(container).toMatchSnapshot();
 
     fireEvent.click(getAllBySelector('.ant-segmented-item', baseElement)[1]);
     fireEvent.click(getAllBySelector('.ant-segmented-item', baseElement)[2]);
@@ -80,17 +82,32 @@ describe('SqlAnalyze/AuditPlan', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('should render error result of type "info" when response code is 8001', async () => {
+  it('should render error result of type "info" when response code is 8001', async () => {
     const spy = mockGetAnalyzeData();
     spy.mockImplementation(() =>
-      resolveErrorThreeSecond(AuditPlanSqlAnalyzeData, {
-        otherData: {
-          code: 8001
+      resolveErrorThreeSecond(
+        {
+          sql_explain: {
+            err_message: 'error: sql_explain'
+          },
+          table_metas: {
+            err_message: 'error: table_metas'
+          },
+          performance_statistics: {
+            affect_rows: {
+              err_message: 'error: affect_rows'
+            }
+          }
+        },
+        {
+          otherData: {
+            code: 8001
+          }
         }
-      })
+      )
     );
     const { container } = renderWithReduxAndTheme(
-      <AuditPlanSqlAnalyze />,
+      <SQLManageAnalyze />,
       undefined,
       {
         user: {

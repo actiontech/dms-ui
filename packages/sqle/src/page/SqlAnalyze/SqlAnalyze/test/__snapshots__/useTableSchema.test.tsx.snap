@@ -1,0 +1,573 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele when has data 1`] = `
+<EmptyBox
+  if={true}
+>
+  <Space
+    className="full-width-element"
+    direction="vertical"
+    hidden={false}
+    size={0}
+  >
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        列信息
+      </h3>
+      <BasicTable
+        columns={
+          Array [
+            Object {
+              "dataIndex": "COLUMN_NAME",
+              "render": [Function],
+              "title": "列名",
+            },
+            Object {
+              "dataIndex": "COLUMN_TYPE",
+              "render": [Function],
+              "title": "列类型",
+            },
+            Object {
+              "dataIndex": "CHARACTER_SET_NAME",
+              "render": [Function],
+              "title": "列字符集",
+            },
+            Object {
+              "dataIndex": "IS_NULLABLE",
+              "render": [Function],
+              "title": "是否可以为空",
+            },
+            Object {
+              "dataIndex": "COLUMN_KEY",
+              "render": [Function],
+              "title": "列索引",
+            },
+            Object {
+              "dataIndex": "COLUMN_DEFAULT",
+              "render": [Function],
+              "title": "默认值",
+            },
+            Object {
+              "dataIndex": "EXTRA",
+              "render": [Function],
+              "title": "拓展信息",
+            },
+            Object {
+              "dataIndex": "COLUMN_COMMENT",
+              "render": [Function],
+              "title": "列说明",
+            },
+          ]
+        }
+        dataSource={
+          Array [
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "PRI",
+              "COLUMN_NAME": "id",
+              "COLUMN_TYPE": "int(10) unsigned",
+              "EXTRA": "auto_increment",
+              "IS_NULLABLE": "NO",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "CURRENT_TIMESTAMP",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "created_at",
+              "COLUMN_TYPE": "datetime",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "CURRENT_TIMESTAMP",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "updated_at",
+              "COLUMN_TYPE": "datetime",
+              "EXTRA": "on update CURRENT_TIMESTAMP",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "MUL",
+              "COLUMN_NAME": "deleted_at",
+              "COLUMN_TYPE": "datetime",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "MUL",
+              "COLUMN_NAME": "task_id",
+              "COLUMN_TYPE": "int(10) unsigned",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "number",
+              "COLUMN_TYPE": "int(10) unsigned",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "content",
+              "COLUMN_TYPE": "longtext",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "description",
+              "COLUMN_TYPE": "text",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "start_binlog_file",
+              "COLUMN_TYPE": "varchar(255)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "start_binlog_pos",
+              "COLUMN_TYPE": "bigint(20)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "end_binlog_file",
+              "COLUMN_TYPE": "varchar(255)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "end_binlog_pos",
+              "COLUMN_TYPE": "bigint(20)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "row_affects",
+              "COLUMN_TYPE": "bigint(20)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "initialized",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "exec_status",
+              "COLUMN_TYPE": "varchar(255)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "exec_result",
+              "COLUMN_TYPE": "text",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "initialized",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "audit_status",
+              "COLUMN_TYPE": "varchar(255)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "audit_result",
+              "COLUMN_TYPE": "text",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "MUL",
+              "COLUMN_NAME": "audit_fingerprint",
+              "COLUMN_TYPE": "char(32)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+            Object {
+              "CHARACTER_SET_NAME": "utf8mb4",
+              "COLUMN_COMMENT": "",
+              "COLUMN_DEFAULT": "",
+              "COLUMN_KEY": "",
+              "COLUMN_NAME": "audit_level",
+              "COLUMN_TYPE": "varchar(255)",
+              "EXTRA": "",
+              "IS_NULLABLE": "YES",
+            },
+          ]
+        }
+        pagination={false}
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        索引信息
+      </h3>
+      <BasicTable
+        columns={
+          Array [
+            Object {
+              "dataIndex": "Column_name",
+              "render": [Function],
+              "title": "列名",
+            },
+            Object {
+              "dataIndex": "Key_name",
+              "render": [Function],
+              "title": "索引名",
+            },
+            Object {
+              "dataIndex": "Unique",
+              "render": [Function],
+              "title": "唯一性",
+            },
+            Object {
+              "dataIndex": "Seq_in_index",
+              "render": [Function],
+              "title": "列序列",
+            },
+            Object {
+              "dataIndex": "Cardinality",
+              "render": [Function],
+              "title": "基数",
+            },
+            Object {
+              "dataIndex": "Null",
+              "render": [Function],
+              "title": "是否可以为空",
+            },
+            Object {
+              "dataIndex": "Index_type",
+              "render": [Function],
+              "title": "索引类型",
+            },
+            Object {
+              "dataIndex": "Comment",
+              "render": [Function],
+              "title": "备注",
+            },
+          ]
+        }
+        dataSource={
+          Array [
+            Object {
+              "Cardinality": "3",
+              "Column_name": "id",
+              "Comment": "",
+              "Index_type": "BTREE",
+              "Key_name": "PRIMARY",
+              "Null": "NO",
+              "Seq_in_index": "1",
+              "Unique": "YES",
+            },
+            Object {
+              "Cardinality": "1",
+              "Column_name": "deleted_at",
+              "Comment": "",
+              "Index_type": "BTREE",
+              "Key_name": "idx_execute_sql_detail_deleted_at",
+              "Null": "YES",
+              "Seq_in_index": "1",
+              "Unique": "NO",
+            },
+            Object {
+              "Cardinality": "1",
+              "Column_name": "task_id",
+              "Comment": "",
+              "Index_type": "BTREE",
+              "Key_name": "idx_execute_sql_detail_task_id",
+              "Null": "YES",
+              "Seq_in_index": "1",
+              "Unique": "NO",
+            },
+            Object {
+              "Cardinality": "3",
+              "Column_name": "audit_fingerprint",
+              "Comment": "",
+              "Index_type": "BTREE",
+              "Key_name": "idx_execute_sql_detail_audit_fingerprint",
+              "Null": "YES",
+              "Seq_in_index": "1",
+              "Unique": "NO",
+            },
+          ]
+        }
+        pagination={false}
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        建表语句
+      </h3>
+      <section
+        className="basic-cont-wrapper sql-cont"
+      >
+        <pre
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<span class=\\"hljs-keyword\\">CREATE</span> <span class=\\"hljs-keyword\\">TABLE</span> \`execute_sql_detail\` (
+  \`id\` <span class=\\"hljs-type\\">int</span>(<span class=\\"hljs-number\\">10</span>) unsigned <span class=\\"hljs-keyword\\">NOT</span> <span class=\\"hljs-keyword\\">NULL</span> AUTO_INCREMENT,
+  \`created_at\` datetime <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span>,
+  \`updated_at\` datetime <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span> <span class=\\"hljs-keyword\\">ON</span> <span class=\\"hljs-keyword\\">UPDATE</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span>,
+  \`deleted_at\` datetime <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`task_id\` <span class=\\"hljs-type\\">int</span>(<span class=\\"hljs-number\\">10</span>) unsigned <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`number\` <span class=\\"hljs-type\\">int</span>(<span class=\\"hljs-number\\">10</span>) unsigned <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`content\` longtext <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci,
+  \`description\` text <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci,
+  \`start_binlog_file\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`start_binlog_pos\` <span class=\\"hljs-type\\">bigint</span>(<span class=\\"hljs-number\\">20</span>) <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`end_binlog_file\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`end_binlog_pos\` <span class=\\"hljs-type\\">bigint</span>(<span class=\\"hljs-number\\">20</span>) <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`row_affects\` <span class=\\"hljs-type\\">bigint</span>(<span class=\\"hljs-number\\">20</span>) <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`exec_status\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-string\\">&#x27;initialized&#x27;</span>,
+  \`exec_result\` text <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci,
+  \`audit_status\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-string\\">&#x27;initialized&#x27;</span>,
+  \`audit_result\` text <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci,
+  \`audit_fingerprint\` <span class=\\"hljs-type\\">char</span>(<span class=\\"hljs-number\\">32</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  \`audit_level\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
+  <span class=\\"hljs-keyword\\">PRIMARY</span> KEY (\`id\`),
+  KEY \`idx_execute_sql_detail_deleted_at\` (\`deleted_at\`),
+  KEY \`idx_execute_sql_detail_task_id\` (\`task_id\`),
+  KEY \`idx_execute_sql_detail_audit_fingerprint\` (\`audit_fingerprint\`)
+) ENGINE<span class=\\"hljs-operator\\">=</span>InnoDB AUTO_INCREMENT<span class=\\"hljs-operator\\">=</span><span class=\\"hljs-number\\">4</span> <span class=\\"hljs-keyword\\">DEFAULT</span> CHARSET<span class=\\"hljs-operator\\">=</span>utf8mb4 <span class=\\"hljs-keyword\\">COLLATE</span><span class=\\"hljs-operator\\">=</span>utf8mb4_unicode_ci",
+            }
+          }
+        />
+      </section>
+    </React.Fragment>
+  </Space>
+</EmptyBox>
+`;
+
+exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele when hasError info 1`] = `
+<EmptyBox
+  defaultNode={
+    <BasicResult
+      status="error"
+      subTitle="tableSchemas ERROR"
+      title="请求错误"
+    />
+  }
+  if={false}
+>
+  <Space
+    className="full-width-element"
+    direction="vertical"
+    hidden={false}
+    size={0}
+  >
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        列信息
+      </h3>
+      <BasicTable
+        columns={Array []}
+        pagination={false}
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        索引信息
+      </h3>
+      <BasicTable
+        columns={Array []}
+        pagination={false}
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        建表语句
+      </h3>
+      <section
+        className="basic-cont-wrapper sql-cont"
+      >
+        <pre
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "",
+            }
+          }
+        />
+      </section>
+    </React.Fragment>
+  </Space>
+</EmptyBox>
+`;
+
+exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele when isShow is false 1`] = `
+<EmptyBox
+  defaultNode={<React.Fragment />}
+  if={true}
+>
+  <Space
+    className="full-width-element"
+    direction="vertical"
+    hidden={true}
+    size={0}
+  >
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        列信息
+      </h3>
+      <BasicTable
+        columns={Array []}
+        pagination={false}
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        索引信息
+      </h3>
+      <BasicTable
+        columns={Array []}
+        pagination={false}
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        建表语句
+      </h3>
+      <section
+        className="basic-cont-wrapper sql-cont"
+      >
+        <pre
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "",
+            }
+          }
+        />
+      </section>
+    </React.Fragment>
+  </Space>
+</EmptyBox>
+`;
+
+exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 1`] = `Array []`;
+
+exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 2`] = `Array []`;
+
+exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 3`] = `
+Array [
+  Object {
+    "errorMessage": "",
+    "id": "table-test-name-test-schema-name-dataSource-name",
+    "tableMeta": Object {
+      "columns": Object {
+        "head": Array [
+          Object {
+            "desc": "",
+            "field_name": "id",
+          },
+          Object {
+            "desc": "",
+            "field_name": "select_type",
+          },
+        ],
+        "rows": Array [
+          Object {
+            "id": "1",
+            "select_type": "SIMPLE",
+          },
+        ],
+      },
+      "create_table_sql": "select * user",
+      "indexes": Object {
+        "head": Array [
+          Object {
+            "desc": "",
+            "field_name": "id",
+          },
+          Object {
+            "desc": "",
+            "field_name": "select_type",
+          },
+        ],
+        "rows": Array [
+          Object {
+            "id": "1",
+            "select_type": "SIMPLE",
+          },
+        ],
+      },
+      "name": "name1",
+      "schema": "schema1",
+    },
+  },
+]
+`;
