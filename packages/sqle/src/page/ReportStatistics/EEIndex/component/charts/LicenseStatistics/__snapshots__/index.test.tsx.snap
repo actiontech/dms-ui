@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/LicenseStatistics render chart snap 1`] = `
+<body>
+  <div>
+    <div
+      class="chart-wrapper css-1hgbe7b"
+    >
+      <div
+        class="icon-center-wrapper MuiBox-root css-0"
+      >
+        <div
+          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+        >
+          <div
+            class="ant-empty-image"
+          >
+            <div
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            >
+              <span
+                class="ant-spin-dot ant-spin-dot-spin"
+              >
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-empty-description"
+          />
+          <div
+            class="ant-empty-footer"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/LicenseStatistics render chart snap 2`] = `
+<body>
+  <div>
+    <div
+      class="chart-wrapper css-1hgbe7b"
+    >
+      <div
+        class="chart-box"
+      >
+        <section
+          class="css-v04253"
+        >
+          <div
+            class="line-block"
+            style="background: rgb(96, 148, 252);"
+          />
+          <div
+            class="line-cont"
+          >
+            <div
+              class="line1-main"
+            >
+              5
+              <span
+                class="sub-cont"
+              >
+                / 10
+              </span>
+            </div>
+            <div
+              class="line1-main-sub"
+            >
+              resource_type_desc 实例数量
+              <span
+                class="sub-cont"
+                hidden=""
+              />
+            </div>
+          </div>
+        </section>
+        <section
+          style="height: 190px; margin-top: 40px;"
+        >
+          <div>
+            mock licenseColumn
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/LicenseStatistics render chart snap when api return empty 1`] = `
+<body>
+  <div>
+    <div
+      class="chart-wrapper css-1hgbe7b"
+    >
+      <div
+        class="chart-box"
+      >
+        <section
+          class="css-v04253"
+        >
+          <div
+            class="line-block"
+            style="background: rgb(96, 148, 252);"
+          />
+          <div
+            class="line-cont"
+          >
+            <div
+              class="line1-main"
+            >
+              0
+              <span
+                class="sub-cont"
+                hidden=""
+              />
+            </div>
+            <div
+              class="line1-main-sub"
+            >
+              用户数量 实例数量
+              <span
+                class="sub-cont"
+                hidden=""
+              />
+            </div>
+          </div>
+        </section>
+        <section
+          style="height: 190px; margin-top: 40px;"
+        >
+          <div>
+            mock licenseColumn
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;

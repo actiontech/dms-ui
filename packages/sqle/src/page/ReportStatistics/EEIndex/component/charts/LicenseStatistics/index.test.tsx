@@ -2,22 +2,27 @@ import { cleanup, act } from '@testing-library/react';
 import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
-import DatabaseSourceOrder from '.';
+import LicenseStatistics from '.';
 
-describe('ReportStatistics/DatabaseSourceOrder', () => {
+jest.mock('./licenseColumn.tsx', () => () => <div>mock licenseColumn</div>);
+
+describe('ReportStatistics/LicenseStatistics', () => {
   ignoreAntdPlotsAttr();
   let requestPlotsData: jest.SpyInstance;
   const customRender = () => {
-    return renderWithThemeAndRedux(<DatabaseSourceOrder />);
-  }
+    return renderWithThemeAndRedux(<LicenseStatistics />);
+  };
+
   beforeEach(() => {
     jest.useFakeTimers();
-    requestPlotsData = statistic.getInstancesTypePercent();
+    requestPlotsData = statistic.getLicenseUsage();
     mockUseCurrentUser();
+    mockThemeStyleData();
   });
 
   afterEach(() => {
@@ -25,7 +30,6 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     jest.clearAllTimers();
     cleanup();
   });
-
   it('render chart snap', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(300));
@@ -41,5 +45,5 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(requestPlotsData).toBeCalled();
-  })
+  });
 });
