@@ -1,4 +1,4 @@
-import { Space, Typography } from 'antd';
+import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { EmptyBox, BasicTable, BasicResult } from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable1';
@@ -67,9 +67,10 @@ const useSQLExecPlan = () => {
             <EmptyBox
               if={!affect_rows?.err_message}
               defaultNode={
-                <Typography.Text type="danger">
-                  ERROR: {affect_rows?.err_message}
-                </Typography.Text>
+                <BasicResult
+                  status="error"
+                  title={`Error: ${affect_rows?.err_message}`}
+                />
               }
             >
               <div className="line-wrapper">
