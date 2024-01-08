@@ -15,10 +15,6 @@ interface ILicenseColumn {
 
 const labelFontSize = 12;
 
-/**
- * todo
-  动画效果：label 默认么得，经过的时候才显示
- */
 const LicenseColumn = memo(
   ({ data, onReady }: ILicenseColumn) => {
     const { t } = useTranslation();

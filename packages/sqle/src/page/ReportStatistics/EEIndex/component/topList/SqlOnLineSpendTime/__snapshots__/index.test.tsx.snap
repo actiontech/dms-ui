@@ -253,6 +253,166 @@ exports[`ReportStatistics/topList/SqlOnLineSpendTime render snap loading 1`] = `
 </body>
 `;
 
+exports[`ReportStatistics/topList/SqlOnLineSpendTime render snap when api return data 1`] = `
+<body>
+  <div>
+    <div
+      class="report-base-table-wrapper css-dyc61v"
+    >
+      <div
+        class="ant-table-wrapper report-base-table has-table-cont-style css-dev-only-do-not-override-1ror0i4"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-1ror0i4"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-table"
+            >
+              <div
+                class="ant-table-container"
+              >
+                <div
+                  class="ant-table-content"
+                >
+                  <table
+                    style="table-layout: auto;"
+                  >
+                    <colgroup />
+                    <thead
+                      class="ant-table-thead"
+                    >
+                      <tr>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          数据源名称
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                          style="text-align: right;"
+                        >
+                          平均上线耗时
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                          style="text-align: right;"
+                        >
+                          最长上线耗时
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                          style="text-align: right;"
+                        >
+                          最短上线耗时
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ant-table-tbody"
+                    >
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="0"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="css-2dr1r5"
+                          >
+                            <span
+                              class="index-box"
+                            >
+                              1
+                            </span>
+                            <span>
+                              instance_1
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          15s
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          30s
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          10s
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="1"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="css-2dr1r5"
+                          >
+                            <span
+                              class="index-box"
+                            >
+                              2
+                            </span>
+                            <span>
+                              instance_2
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          7.5s
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          15s
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          10s
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="data-bottom-tip"
+      >
+        暂无更多数据
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`ReportStatistics/topList/SqlOnLineSpendTime render snap when api return empty 1`] = `
 <body>
   <div>
