@@ -1,9 +1,6 @@
-import {
-  renderHooksWithTheme,
-  superRender
-} from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '../../../../../testUtils/customRender';
 import BasicInfo from '.';
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen, renderHook } from '@testing-library/react';
 import {
   getAllBySelector,
   getBySelector
@@ -26,7 +23,7 @@ describe('page/WorkflowTemplate/BasicInfo', () => {
   const nextStepMock = jest.fn();
   const updateMock = jest.fn();
 
-  const { result } = renderHooksWithTheme(() => Form.useForm());
+  const { result } = renderHook(() => Form.useForm());
   const customRender = (data?: { [key: string]: undefined }) => {
     return superRender(
       <BasicInfo

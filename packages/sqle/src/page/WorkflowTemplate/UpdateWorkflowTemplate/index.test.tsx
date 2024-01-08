@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '../../../testUtils/customRender';
 import UpdateWorkflowTemplate from '.';
 import { workflowTemplateData } from '../../../testUtils/mockApi/workflowTemplate/data';
 import { act, fireEvent, screen, cleanup } from '@testing-library/react';

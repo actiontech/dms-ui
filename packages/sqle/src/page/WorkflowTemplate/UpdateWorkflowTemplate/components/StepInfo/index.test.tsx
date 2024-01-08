@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '../../../../../testUtils/customRender';
 import StepInfo from '.';
 import {
   userTipListData,
