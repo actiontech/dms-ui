@@ -14,6 +14,7 @@ import { useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { cloneDeep } from 'lodash';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -51,6 +52,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
       workflowName: workflowTemplateData.workflow_template_name
     });
     mockUseCurrentProject();
+    mockUseCurrentUser();
     jest.useFakeTimers();
     workflowTemplate.mockAllApi();
   });

@@ -11,10 +11,12 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { IUpdateWorkflowStepInfoProps } from '../../../components/StepCard/index.type';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('page/WorkflowTemplate/StepInfo', () => {
   beforeEach(() => {
     jest.useFakeTimers();
+    mockUseCurrentUser();
   });
 
   afterEach(() => {

@@ -3,8 +3,13 @@ import WorkflowTemplateAuthInfo from '.';
 import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
 import { screen } from '@testing-library/react';
 import { WorkflowTemplateAuthInfoProps } from './index.type';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('page/WorkflowTemplate/WorkflowTemplateAuthInfo', () => {
+  beforeEach(() => {
+    mockUseCurrentUser();
+  });
+
   const authInfoProps = {
     time: workflowTemplateData.update_time,
     level: workflowTemplateData.allow_submit_when_less_audit_level
