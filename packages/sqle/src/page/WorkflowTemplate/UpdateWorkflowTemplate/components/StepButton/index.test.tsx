@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '../../../../../testUtils/customRender';
 import StepButton from '.';
 import { fireEvent, screen } from '@testing-library/react';
 

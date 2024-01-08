@@ -1,7 +1,4 @@
-import {
-  renderHooksWithTheme,
-  superRender
-} from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '../../../../../testUtils/customRender';
 import ReviewAndExecNodeInfo from '.';
 import { Form, Select } from 'antd';
 import { NodeTypeEnum } from './index.type';
@@ -9,7 +6,7 @@ import {
   userTipListData,
   workflowTemplateData
 } from '../../../../../testUtils/mockApi/workflowTemplate/data';
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen, renderHook } from '@testing-library/react';
 import {
   getAllBySelector,
   getBySelector
@@ -40,7 +37,7 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
     });
   };
 
-  const { result } = renderHooksWithTheme(() => Form.useForm());
+  const { result } = renderHook(() => Form.useForm());
   const customRender = (data?: {
     [key: string]: NodeTypeEnum | IWorkFlowStepTemplateResV1;
   }) => {
