@@ -849,7 +849,28 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                             <div
                               class="operator-content"
                             >
-                              -
+                              <svg
+                                fill="none"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g
+                                  id="account-circle-fill"
+                                >
+                                  <path
+                                    d="M9 1.5C13.14 1.5 16.5 4.86 16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5ZM4.51725 11.562C5.61825 13.2045 7.27125 14.25 9.12 14.25C10.968 14.25 12.6217 13.2052 13.722 11.562C12.4738 10.3954 10.8285 9.74761 9.12 9.75C7.41128 9.74742 5.76563 10.3953 4.51725 11.562ZM9 8.25C9.59674 8.25 10.169 8.01295 10.591 7.59099C11.0129 7.16903 11.25 6.59674 11.25 6C11.25 5.40326 11.0129 4.83097 10.591 4.40901C10.169 3.98705 9.59674 3.75 9 3.75C8.40326 3.75 7.83097 3.98705 7.40901 4.40901C6.98705 4.83097 6.75 5.40326 6.75 6C6.75 6.59674 6.98705 7.16903 7.40901 7.59099C7.83097 8.01295 8.40326 8.25 9 8.25Z"
+                                    fill="#1CB889"
+                                    id="Vector"
+                                  />
+                                </g>
+                              </svg>
+                              <span
+                                class="review-exec-auth-text"
+                              >
+                                匹配拥有数据源上线权限的成员
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1144,6 +1165,259 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                   </svg>
                 </div>
                 <div
+                  class="ant-row ant-row-no-wrap workflow-step-container  css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="audit-icon"
+                    >
+                      <svg
+                        fill="none"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          id="audit-fill"
+                        >
+                          <g
+                            id="Vector"
+                          >
+                            <path
+                              d="M8.16667 5.83334C8.16667 5.27914 8.49673 4.7902 8.83836 4.35381C9.14847 3.95768 9.33333 3.45877 9.33333 2.91668C9.33333 1.62801 8.28866 0.583344 7 0.583344C5.71134 0.583344 4.66667 1.62801 4.66667 2.91668C4.66667 3.45877 4.85153 3.95768 5.16164 4.35381C5.50327 4.7902 5.83333 5.27914 5.83333 5.83334H2.91667C2.27233 5.83334 1.75 6.35568 1.75 7.00001V9.33334C1.75 9.65551 2.01117 9.91668 2.33333 9.91668H11.6667C11.9888 9.91668 12.25 9.65551 12.25 9.33334V7.00001C12.25 6.35568 11.7277 5.83334 11.0833 5.83334H8.16667Z"
+                              fill="white"
+                            />
+                            <path
+                              d="M12.25 12.25V11.0833H1.75V12.25H12.25Z"
+                              fill="white"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-card-body"
+                        >
+                          <span
+                            class="step-card-title"
+                          >
+                            审核节点
+                            <span
+                              class="review-index-text"
+                            >
+                              #1
+                            </span>
+                          </span>
+                          <div
+                            class="step-card-desc"
+                          >
+                            -
+                          </div>
+                          <div
+                            class="step-card-operator"
+                          >
+                            <div
+                              class="operator-title"
+                            >
+                              审核人
+                            </div>
+                            <div
+                              class="operator-content"
+                            >
+                              <svg
+                                fill="none"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g
+                                  id="account-circle-fill"
+                                >
+                                  <path
+                                    d="M9 1.5C13.14 1.5 16.5 4.86 16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5ZM4.51725 11.562C5.61825 13.2045 7.27125 14.25 9.12 14.25C10.968 14.25 12.6217 13.2052 13.722 11.562C12.4738 10.3954 10.8285 9.74761 9.12 9.75C7.41128 9.74742 5.76563 10.3953 4.51725 11.562ZM9 8.25C9.59674 8.25 10.169 8.01295 10.591 7.59099C11.0129 7.16903 11.25 6.59674 11.25 6C11.25 5.40326 11.0129 4.83097 10.591 4.40901C10.169 3.98705 9.59674 3.75 9 3.75C8.40326 3.75 7.83097 3.98705 7.40901 4.40901C6.98705 4.83097 6.75 5.40326 6.75 6C6.75 6.59674 6.98705 7.16903 7.40901 7.59099C7.83097 8.01295 8.40326 8.25 9 8.25Z"
+                                    fill="#1CB889"
+                                    id="Vector"
+                                  />
+                                </g>
+                              </svg>
+                              <span
+                                class="review-exec-auth-text"
+                              >
+                                匹配拥有数据源审核权限的成员
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-row next-step-icon css-dev-only-do-not-override-txh9fw"
+                >
+                  <svg
+                    fill="none"
+                    height="6"
+                    viewBox="0 0 18 6"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L9 5L17 1"
+                      stroke="#E6E4E3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="ant-row ant-row-no-wrap workflow-step-container  css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="audit-icon"
+                    >
+                      <svg
+                        fill="none"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          id="audit-fill"
+                        >
+                          <g
+                            id="Vector"
+                          >
+                            <path
+                              d="M8.16667 5.83334C8.16667 5.27914 8.49673 4.7902 8.83836 4.35381C9.14847 3.95768 9.33333 3.45877 9.33333 2.91668C9.33333 1.62801 8.28866 0.583344 7 0.583344C5.71134 0.583344 4.66667 1.62801 4.66667 2.91668C4.66667 3.45877 4.85153 3.95768 5.16164 4.35381C5.50327 4.7902 5.83333 5.27914 5.83333 5.83334H2.91667C2.27233 5.83334 1.75 6.35568 1.75 7.00001V9.33334C1.75 9.65551 2.01117 9.91668 2.33333 9.91668H11.6667C11.9888 9.91668 12.25 9.65551 12.25 9.33334V7.00001C12.25 6.35568 11.7277 5.83334 11.0833 5.83334H8.16667Z"
+                              fill="white"
+                            />
+                            <path
+                              d="M12.25 12.25V11.0833H1.75V12.25H12.25Z"
+                              fill="white"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-card-body"
+                        >
+                          <span
+                            class="step-card-title"
+                          >
+                            审核节点
+                            <span
+                              class="review-index-text"
+                            >
+                              #2
+                            </span>
+                          </span>
+                          <div
+                            class="step-card-desc"
+                          >
+                            step desc
+                          </div>
+                          <div
+                            class="step-card-operator"
+                          >
+                            <div
+                              class="operator-title"
+                            >
+                              审核人
+                            </div>
+                            <div
+                              class="operator-content"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce css-dev-only-do-not-override-txh9fw"
+                                  >
+                                    <span
+                                      class="ant-avatar-string"
+                                      style="transform: scale(1) translateX(-50%);"
+                                    >
+                                      T
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-row next-step-icon css-dev-only-do-not-override-txh9fw"
+                >
+                  <svg
+                    fill="none"
+                    height="6"
+                    viewBox="0 0 18 6"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L9 5L17 1"
+                      stroke="#E6E4E3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </svg>
+                  <svg
+                    fill="none"
+                    height="6"
+                    viewBox="0 0 18 6"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L9 5L17 1"
+                      stroke="#E6E4E3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+                <div
                   class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
                 >
                   <div
@@ -1204,7 +1478,28 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                             <div
                               class="operator-content"
                             >
-                              -
+                              <svg
+                                fill="none"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g
+                                  id="account-circle-fill"
+                                >
+                                  <path
+                                    d="M9 1.5C13.14 1.5 16.5 4.86 16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5ZM4.51725 11.562C5.61825 13.2045 7.27125 14.25 9.12 14.25C10.968 14.25 12.6217 13.2052 13.722 11.562C12.4738 10.3954 10.8285 9.74761 9.12 9.75C7.41128 9.74742 5.76563 10.3953 4.51725 11.562ZM9 8.25C9.59674 8.25 10.169 8.01295 10.591 7.59099C11.0129 7.16903 11.25 6.59674 11.25 6C11.25 5.40326 11.0129 4.83097 10.591 4.40901C10.169 3.98705 9.59674 3.75 9 3.75C8.40326 3.75 7.83097 3.98705 7.40901 4.40901C6.98705 4.83097 6.75 5.40326 6.75 6C6.75 6.59674 6.98705 7.16903 7.40901 7.59099C7.83097 8.01295 8.40326 8.25 9 8.25Z"
+                                    fill="#1CB889"
+                                    id="Vector"
+                                  />
+                                </g>
+                              </svg>
+                              <span
+                                class="review-exec-auth-text"
+                              >
+                                匹配拥有数据源上线权限的成员
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1582,6 +1877,123 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                       stroke-width="2"
                     />
                   </svg>
+                </div>
+                <div
+                  class="ant-row ant-row-no-wrap workflow-step-container  css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="audit-icon"
+                    >
+                      <svg
+                        fill="none"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          id="audit-fill"
+                        >
+                          <g
+                            id="Vector"
+                          >
+                            <path
+                              d="M8.16667 5.83334C8.16667 5.27914 8.49673 4.7902 8.83836 4.35381C9.14847 3.95768 9.33333 3.45877 9.33333 2.91668C9.33333 1.62801 8.28866 0.583344 7 0.583344C5.71134 0.583344 4.66667 1.62801 4.66667 2.91668C4.66667 3.45877 4.85153 3.95768 5.16164 4.35381C5.50327 4.7902 5.83333 5.27914 5.83333 5.83334H2.91667C2.27233 5.83334 1.75 6.35568 1.75 7.00001V9.33334C1.75 9.65551 2.01117 9.91668 2.33333 9.91668H11.6667C11.9888 9.91668 12.25 9.65551 12.25 9.33334V7.00001C12.25 6.35568 11.7277 5.83334 11.0833 5.83334H8.16667Z"
+                              fill="white"
+                            />
+                            <path
+                              d="M12.25 12.25V11.0833H1.75V12.25H12.25Z"
+                              fill="white"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-card-body"
+                        >
+                          <span
+                            class="step-card-title"
+                          >
+                            审核节点
+                            <span
+                              class="review-index-text"
+                            >
+                              #2
+                            </span>
+                          </span>
+                          <div
+                            class="step-card-desc"
+                          >
+                            step desc
+                          </div>
+                          <div
+                            class="step-card-operator"
+                          >
+                            <div
+                              class="operator-title"
+                            >
+                              审核人
+                            </div>
+                            <div
+                              class="operator-content"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce css-dev-only-do-not-override-txh9fw"
+                                  >
+                                    <span
+                                      class="ant-avatar-string"
+                                      style="transform: scale(1) translateX(-50%);"
+                                    >
+                                      T
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-row next-step-icon css-dev-only-do-not-override-txh9fw"
+                >
+                  <svg
+                    fill="none"
+                    height="6"
+                    viewBox="0 0 18 6"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L9 5L17 1"
+                      stroke="#E6E4E3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </svg>
                   <svg
                     fill="none"
                     height="6"
@@ -1646,7 +2058,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                           <div
                             class="step-card-desc"
                           >
-                            step desc
+                            -
                           </div>
                           <div
                             class="step-card-operator"
@@ -1659,24 +2071,28 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                             <div
                               class="operator-content"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
+                              <svg
+                                fill="none"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <div
-                                  class="ant-space-item"
+                                <g
+                                  id="account-circle-fill"
                                 >
-                                  <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce css-dev-only-do-not-override-txh9fw"
-                                  >
-                                    <span
-                                      class="ant-avatar-string"
-                                      style="transform: scale(1) translateX(-50%);"
-                                    >
-                                      T
-                                    </span>
-                                  </span>
-                                </div>
-                              </div>
+                                  <path
+                                    d="M9 1.5C13.14 1.5 16.5 4.86 16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5ZM4.51725 11.562C5.61825 13.2045 7.27125 14.25 9.12 14.25C10.968 14.25 12.6217 13.2052 13.722 11.562C12.4738 10.3954 10.8285 9.74761 9.12 9.75C7.41128 9.74742 5.76563 10.3953 4.51725 11.562ZM9 8.25C9.59674 8.25 10.169 8.01295 10.591 7.59099C11.0129 7.16903 11.25 6.59674 11.25 6C11.25 5.40326 11.0129 4.83097 10.591 4.40901C10.169 3.98705 9.59674 3.75 9 3.75C8.40326 3.75 7.83097 3.98705 7.40901 4.40901C6.98705 4.83097 6.75 5.40326 6.75 6C6.75 6.59674 6.98705 7.16903 7.40901 7.59099C7.83097 8.01295 8.40326 8.25 9 8.25Z"
+                                    fill="#1CB889"
+                                    id="Vector"
+                                  />
+                                </g>
+                              </svg>
+                              <span
+                                class="review-exec-auth-text"
+                              >
+                                匹配拥有数据源上线权限的成员
+                              </span>
                             </div>
                           </div>
                         </div>

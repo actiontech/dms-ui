@@ -71,7 +71,6 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
   );
 
   const onDragEnd = ({ active, over }: DragEndEvent) => {
-    console.log('drag end');
     if (active.id !== over?.id) {
       setStepData((prev) => {
         const activeIndex = prev.findIndex((i) => i.key === active.id);
@@ -86,7 +85,6 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
   };
 
   const onDragMove = ({ activatorEvent }: DragMoveEvent) => {
-    console.log('move');
     activatorEvent.preventDefault();
     activatorEvent.stopPropagation();
   };

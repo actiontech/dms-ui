@@ -13,6 +13,7 @@ import { UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum } from '@a
 import { useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { cloneDeep } from 'lodash';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -40,16 +41,23 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
   });
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
+
+  const customRender = () => {
+    return superRender(<UpdateWorkflowTemplate />);
+  };
+
   beforeEach(() => {
     useParamsMock.mockReturnValue({
       workflowName: workflowTemplateData.workflow_template_name
     });
-    workflowTemplate.mockAllApi();
     mockUseCurrentProject();
     jest.useFakeTimers();
+    workflowTemplate.mockAllApi();
   });
 
   afterEach(() => {
+    jest.clearAllMocks();
+    jest.clearAllTimers();
     jest.useRealTimers();
     cleanup();
   });
@@ -58,13 +66,6 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     // eslint-disable-next-line no-console
     console.error = error;
   });
-
-  const tempList: IWorkFlowStepTemplateResV1[] =
-    workflowTemplateData.workflow_step_template_list;
-
-  const customRender = () => {
-    return superRender(<UpdateWorkflowTemplate />);
-  };
 
   it('render update workflow template and submit success', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
@@ -91,10 +92,10 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
       fireEvent.click(screen.getByText('保 存'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-
     expect(updateInfoRequest).toBeCalledWith({
       project_name: mockProjectInfo.projectName,
-      workflow_step_template_list: tempList,
+      workflow_step_template_list:
+        workflowTemplateData.workflow_step_template_list,
       allow_submit_when_less_audit_level:
         UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum.warn
     });
@@ -131,7 +132,8 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     });
     expect(updateInfoRequest).toBeCalledWith({
       project_name: mockProjectInfo.projectName,
-      workflow_step_template_list: tempList,
+      workflow_step_template_list:
+        workflowTemplateData.workflow_step_template_list,
       allow_submit_when_less_audit_level:
         UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum.warn
     });
@@ -177,6 +179,8 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     expect(screen.getAllByText('admin')?.[0]).toBeInTheDocument();
     fireEvent.click(screen.getByText('保 存'));
     await act(async () => jest.advanceTimersByTime(3000));
+    const tempList: IWorkFlowStepTemplateResV1[] =
+      cloneDeep(workflowTemplateData).workflow_step_template_list;
     tempList.splice(tempList.length - 1, 0, {
       approved_by_authorized: false,
       assignee_user_id_list: ['700200'],
@@ -193,7 +197,6 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
 
   it('change workflow template node number and reset template', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
-    const updateInfoRequest = workflowTemplate.updateWorkflowTemplate();
     const userInfoRequest = workflowTemplate.getUserTip();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -215,7 +218,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
       fireEvent.click(getBySelector('.ant-btn-circle'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(getAllBySelector('.ant-card').length).toBe(5);
+    expect(getAllBySelector('.ant-card').length).toBe(4);
     expect(screen.getByText('重 置')).toBeInTheDocument();
     fireEvent.click(screen.getByText('重 置'));
     await act(async () => jest.advanceTimersByTime(3000));

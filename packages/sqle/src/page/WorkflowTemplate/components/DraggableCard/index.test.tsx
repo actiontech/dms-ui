@@ -1,27 +1,46 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
-import { workflowTemplateCardProps } from '../../../../testUtils/mockApi/workflowTemplate/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { fireEvent, screen } from '@testing-library/react';
-import DraggableCard from '.';
+import DraggableCard, { DraggableCardProps } from '.';
+import { IconHonour } from '../../../../icon/WorkflowTemplate';
+import { StepInfoArrowEnum } from '../StepCard/index.type';
+import { workflowTemplateData } from '../../../../testUtils/mockApi/workflowTemplate/data';
+
+const workflowTemplateCardProps = {
+  rowKey: '1',
+  key: '1',
+  title: 'test',
+  indexNumber: 1,
+  show: true,
+  disabled: false,
+  icon: (
+    <span className="honour-icon">
+      <IconHonour />
+    </span>
+  ),
+  arrow: StepInfoArrowEnum.none,
+  desc: '',
+  ...workflowTemplateData.workflow_step_template_list[0]
+};
 
 describe('page/WorkflowTemplate/DraggableCard', () => {
   const removeMock = jest.fn();
-  const customRender = (data?: {
-    [key: string]: string | boolean | string[] | (() => void);
-  }) => {
-    return superRender(
-      <DraggableCard {...workflowTemplateCardProps} {...(data ?? {})} />
-    );
+  const customRender = (data: DraggableCardProps) => {
+    return superRender(<DraggableCard {...data} />);
   };
 
   it('render no card', async () => {
-    const { baseElement } = customRender({ show: false });
+    const { baseElement } = customRender({
+      ...workflowTemplateCardProps,
+      show: false
+    });
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('.step-box')).toBeInTheDocument();
   });
 
   it('render draggable card with empty desc', async () => {
     const { baseElement } = customRender({
+      ...workflowTemplateCardProps,
       operator: 'admin',
       operatorTitle: 'review'
     });
@@ -36,8 +55,7 @@ describe('page/WorkflowTemplate/DraggableCard', () => {
   it('render draggable card with desc and remove icon', async () => {
     const descText = 'test desc';
     const { baseElement } = customRender({
-      approved_by_authorized: false,
-      assignee_user_id_list: ['1739544663515205632'],
+      ...workflowTemplateCardProps,
       desc: descText,
       active: true,
       removeReviewNode: removeMock

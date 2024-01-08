@@ -4,7 +4,7 @@ import { CSS } from '@dnd-kit/utilities';
 import { IStepInfoDataProps } from '../StepCard/index.type';
 import StepCard from '../StepCard';
 
-interface DraggableCardProps extends IStepInfoDataProps {
+export interface DraggableCardProps extends IStepInfoDataProps {
   rowKey: string;
   indexNumber: number;
 }
