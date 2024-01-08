@@ -3,7 +3,7 @@
 exports[`test base/page/CloudBeaver should match snapshot when sql query is disabled 1`] = `
 <div>
   <div
-    class="actiontech-page-header-namespace css-14fwawz"
+    class="actiontech-page-header-namespace css-1xspr0w"
   >
     <div
       class="title"
@@ -116,7 +116,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
 exports[`test base/page/CloudBeaver should match snapshot when sql query is disabled 2`] = `
 <div>
   <div
-    class="actiontech-page-header-namespace css-14fwawz"
+    class="actiontech-page-header-namespace css-1xspr0w"
   >
     <div
       class="title"
@@ -205,7 +205,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
 exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql query is enable 1`] = `
 <div>
   <div
-    class="actiontech-page-header-namespace css-14fwawz"
+    class="actiontech-page-header-namespace css-1xspr0w"
   >
     <div
       class="title"
