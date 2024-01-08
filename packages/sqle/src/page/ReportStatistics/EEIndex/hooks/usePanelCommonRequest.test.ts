@@ -2,7 +2,10 @@ import { AxiosResponse } from 'axios';
 import { cleanup, act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { createSpyFailResponse, createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 
 import usePanelCommonRequest from './usePanelCommonRequest';
 
@@ -14,7 +17,7 @@ describe('ReportStatistics/usePanelCommonRequest', () => {
       url.includes('success')
         ? resolve(createSpySuccessResponse({ data: {} }))
         : resolve(createSpyFailResponse({ message: 'error-info' }));
-  });
+    });
   };
 
   beforeEach(() => {
@@ -50,5 +53,5 @@ describe('ReportStatistics/usePanelCommonRequest', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.errorMessage).toBe('error-info');
     expect(result.current.loading).toBeFalsy();
-  })
+  });
 });

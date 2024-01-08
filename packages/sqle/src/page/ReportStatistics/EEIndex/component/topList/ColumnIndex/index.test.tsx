@@ -4,7 +4,9 @@ import ColumnIndex from '.';
 
 describe('ReportStatistics/topList/ColumnIndex', () => {
   it('render snap ColumnIndex', () => {
-    const { baseElement } = renderWithTheme(<ColumnIndex index={1} children={'children string'} />);
+    const { baseElement } = renderWithTheme(
+      <ColumnIndex index={1} children={'children string'} />
+    );
     expect(baseElement).toMatchSnapshot();
   });
 

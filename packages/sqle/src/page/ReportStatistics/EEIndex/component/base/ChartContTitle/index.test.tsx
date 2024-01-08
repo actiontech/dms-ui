@@ -42,7 +42,7 @@ describe('ReportStatistics/ChartContTitle', () => {
       mainSubText: 'mainSubText',
       mainSubStyleAttr: { color: 'red' },
       noteSubText: 'noteSubText',
-      noteSubStyleAttr: { color: '#000' },
+      noteSubStyleAttr: { color: '#000' }
     });
     expect(baseElement).toMatchSnapshot();
   });

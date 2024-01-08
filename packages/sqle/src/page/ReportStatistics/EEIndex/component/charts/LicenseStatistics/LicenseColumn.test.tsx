@@ -22,13 +22,13 @@ describe('ReportStatistics/LicenseStatistics/LicenseColumn', () => {
           return;
         }
         error(...arg);
-      }
+      };
     });
 
     afterAll(() => {
       console.error = error;
     });
-  }
+  };
   ignoreAntdPlotsAttrAndFCRef();
   const customRender = (data?: ILicenseColumn['data']) => {
     return renderWithThemeAndRedux(

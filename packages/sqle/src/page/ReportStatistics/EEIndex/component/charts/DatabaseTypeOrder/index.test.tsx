@@ -38,8 +38,7 @@ describe('ReportStatistics/DatabaseTypeOrder', () => {
   });
 
   it('render chart snap when api return empty', async () => {
-    requestPlotsData.mockImplementation(() => createSpySuccessResponse({})
-    );
+    requestPlotsData.mockImplementation(() => createSpySuccessResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();

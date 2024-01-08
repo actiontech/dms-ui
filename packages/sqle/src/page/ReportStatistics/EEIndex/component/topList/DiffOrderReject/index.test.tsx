@@ -2,7 +2,11 @@ import { cleanup, act } from '@testing-library/react';
 import { renderWithTheme } from '../../../../../../testUtils/customRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
-import { createSpyFailResponse, createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 import DiffOrderReject from '.';
 
@@ -14,6 +18,7 @@ describe('ReportStatistics/topList/DiffOrderReject', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     statistic.mockAllApi();
+    mockUseCurrentUser();
   });
 
   afterEach(() => {
@@ -29,7 +34,8 @@ describe('ReportStatistics/topList/DiffOrderReject', () => {
   });
 
   it('render snap when api return empty', async () => {
-    const requestInstance = statistic.getWorkflowRejectedPercentGroupByCreator();
+    const requestInstance =
+      statistic.getWorkflowRejectedPercentGroupByCreator();
     requestInstance.mockImplementation(() =>
       createSpySuccessResponse({ message: 'error-getWorkflowCount' })
     );
@@ -56,5 +62,5 @@ describe('ReportStatistics/topList/DiffOrderReject', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });
