@@ -76,9 +76,7 @@ const AuditPlanReport = React.lazy(
 
 const ProjectOverview = React.lazy(
   () =>
-    import(
-      /* webpackChunkName: "ProjectOverview" */ '../page/ProjectManage/Overview'
-    )
+    import(/* webpackChunkName: "ProjectOverview" */ '../page/ProjectOverview')
 );
 
 const OperationRecord = React.lazy(
