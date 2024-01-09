@@ -175,7 +175,7 @@ exports[`Auth/AuthTemplateList should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -441,7 +441,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -619,7 +619,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                                     type="button"
                                   >
                                     <span>
-                                      详 情
+                                      编 辑
                                     </span>
                                   </button>
                                 </div>
@@ -804,7 +804,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                                     type="button"
                                   >
                                     <span>
-                                      详 情
+                                      编 辑
                                     </span>
                                   </button>
                                 </div>
@@ -955,7 +955,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
                                     type="button"
                                   >
                                     <span>
-                                      详 情
+                                      编 辑
                                     </span>
                                   </button>
                                 </div>
@@ -1314,7 +1314,7 @@ exports[`Auth/AuthTemplateList should refresh table when eventEmitter receive 'R
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1580,7 +1580,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1846,7 +1846,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2112,7 +2112,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2290,7 +2290,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                                     type="button"
                                   >
                                     <span>
-                                      详 情
+                                      编 辑
                                     </span>
                                   </button>
                                 </div>
@@ -2475,7 +2475,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                                     type="button"
                                   >
                                     <span>
-                                      详 情
+                                      编 辑
                                     </span>
                                   </button>
                                 </div>
@@ -2626,7 +2626,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
                                     type="button"
                                   >
                                     <span>
-                                      详 情
+                                      编 辑
                                     </span>
                                   </button>
                                 </div>

@@ -11,6 +11,7 @@ import {
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { IEditTemplateActionTypeEnum } from './index.type';
 
 describe('Auth/EditTemplate', () => {
   let listDataPermissionTemplateSpy: jest.SpyInstance;
@@ -85,6 +86,28 @@ describe('Auth/EditTemplate', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(detailsContainer).toMatchSnapshot();
+  });
+
+  it('should match snapshot when the url contain view action', async () => {
+    const { container: addContainer } = superRender(<EditTemplate />);
+    expect(addContainer).toMatchSnapshot();
+
+    const { container: detailsContainer } = superRender(
+      <EditTemplate />,
+      {},
+      {
+        routerProps: {
+          initialEntries: [
+            `/auth/template/edit_template?id=1588045966282330112&name=aaa&action=${IEditTemplateActionTypeEnum.view}`
+          ]
+        }
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(detailsContainer).toMatchSnapshot();
+    expect(screen.queryByText('保存')).not.toBeInTheDocument();
+    expect(screen.queryByText('清楚所有权限')).not.toBeInTheDocument();
+    expect(screen.queryByText('添加数据权限')).not.toBeInTheDocument();
   });
 
   it('should init modal status when page init', async () => {

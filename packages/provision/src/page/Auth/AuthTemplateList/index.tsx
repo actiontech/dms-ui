@@ -28,6 +28,7 @@ import { BasicButton, PageHeader } from '@actiontech/shared';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { Spin } from 'antd';
+import { IEditTemplateActionTypeEnum } from '../EditTemplate/index.type';
 
 const AuthTemplateList = () => {
   const { t } = useTranslation();
@@ -129,6 +130,7 @@ const AuthTemplateList = () => {
         />
         <ActiontechTable
           rowKey="uid"
+          className="table-row-cursor"
           dataSource={dataSource?.list ?? []}
           columns={AuthTemplateListTableColumns(projectID)}
           pagination={{
@@ -143,6 +145,15 @@ const AuthTemplateList = () => {
             onNavigateToAuthList,
             openModal
           )}
+          onRow={(record) => {
+            return {
+              onClick() {
+                navigate(
+                  `/provision/project/${projectID}/auth/template/edit_template/?id=${record?.uid}&name=${record.name}&action=${IEditTemplateActionTypeEnum.view}`
+                );
+              }
+            };
+          }}
         />
       </Spin>
 

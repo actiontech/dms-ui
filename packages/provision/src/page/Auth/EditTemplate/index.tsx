@@ -40,7 +40,10 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IEditTemplateFormFields } from './index.type';
+import {
+  IEditTemplateFormFields,
+  IEditTemplateActionTypeEnum
+} from './index.type';
 
 const EditTemplate = () => {
   const { t } = useTranslation();
@@ -48,6 +51,7 @@ const EditTemplate = () => {
   const [params] = useSearchParams();
   const templateIdFormUrl = params.get('id');
   const templateNameFormUrl = params.get('name');
+  const isView = params.get('action') === IEditTemplateActionTypeEnum.view;
   const [form] = Form.useForm<IEditTemplateFormFields>();
   const { projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -226,7 +230,7 @@ const EditTemplate = () => {
             </BasicButton>
           }
           extra={
-            <Space hidden={!templateIdFormUrl && resultVisible}>
+            <Space hidden={isView || (!templateIdFormUrl && resultVisible)}>
               <BasicButton
                 type="primary"
                 loading={submitLoading}
@@ -306,7 +310,7 @@ const EditTemplate = () => {
             </AuthTemplateFormStyleWrapper>
             <TableToolbar
               actions={
-                hasSelectedBusiness
+                hasSelectedBusiness && !isView
                   ? [
                       {
                         key: 'remove-all-permission',
@@ -342,7 +346,9 @@ const EditTemplate = () => {
               loading={getIdLoading || getPermissionLoading}
               dataSource={dataPermissions}
               columns={AuthTableColumns()}
-              actions={AuthTableActions(editTemplate, removeTemplate)}
+              actions={
+                isView ? [] : AuthTableActions(editTemplate, removeTemplate)
+              }
               errorMessage={requestErrorMessage}
               locale={{
                 emptyText: (
