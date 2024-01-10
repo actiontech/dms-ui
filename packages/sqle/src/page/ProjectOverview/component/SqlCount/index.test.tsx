@@ -10,11 +10,7 @@ import EmitterKey from '../../../../data/EmitterKey';
 import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
-import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import {
-  riskAuditPlanData,
-  statisticRiskWorkflowData
-} from '../../../../testUtils/mockApi/projectOverview/data';
+import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -24,6 +20,8 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('page/ProjectOverview/SqlCount', () => {
+  ignoreAntdPlotsAttr();
+
   const navigateSpy = jest.fn();
 
   beforeEach(() => {

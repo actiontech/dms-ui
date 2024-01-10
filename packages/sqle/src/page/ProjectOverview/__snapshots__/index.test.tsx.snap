@@ -1,0 +1,790 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/ProjectOverview render over view and refresh page 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1odtbz"
+    >
+      <div
+        class="actiontech-page-header-namespace css-14fwawz"
+      >
+        <div
+          class="title"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 10px;"
+            >
+              <div>
+                项目概览
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <span
+                aria-label="sync"
+                class="anticon anticon-sync refresh-icon"
+                role="img"
+                tabindex="-1"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="sync"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M168 504.2c1-43.7 10-86.1 26.9-126 17.3-41 42.1-77.7 73.7-109.4S337 212.3 378 195c42.4-17.9 87.4-27 133.9-27s91.5 9.1 133.8 27A341.5 341.5 0 01755 268.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 003 14.1l175.7 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c0-6.7-7.7-10.5-12.9-6.3l-56.4 44.1C765.8 155.1 646.2 92 511.8 92 282.7 92 96.3 275.6 92 503.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8zm756 7.8h-60c-4.4 0-7.9 3.5-8 7.8-1 43.7-10 86.1-26.9 126-17.3 41-42.1 77.8-73.7 109.4A342.45 342.45 0 01512.1 856a342.24 342.24 0 01-243.2-100.8c-9.9-9.9-19.2-20.4-27.8-31.4l60.2-47a8 8 0 00-3-14.1l-175.7-43c-5-1.2-9.9 2.6-9.9 7.7l-.7 181c0 6.7 7.7 10.5 12.9 6.3l56.4-44.1C258.2 868.9 377.8 932 512.2 932c229.2 0 415.5-183.7 419.8-411.8a8 8 0 00-8-8.2z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="extra"
+        />
+      </div>
+    </section>
+    <section
+      class="css-1qdwkdp"
+    >
+      <div
+        class="ant-row ant-row-center ant-row-top chart-area-overview css-dev-only-do-not-override-oz76h1"
+        style="margin-left: -10px; margin-right: -10px;"
+      >
+        <div
+          class="ant-col ant-col-6 css-dev-only-do-not-override-oz76h1"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="ant-row css-dev-only-do-not-override-oz76h1"
+          >
+            <div
+              class="ant-col ant-col-24 css-dev-only-do-not-override-oz76h1"
+            >
+              <div
+                class="item-wrapper height344 project-score"
+              >
+                <div
+                  class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-oz76h1"
+                >
+                  <div
+                    class="ant-card-body"
+                  >
+                    <header
+                      class="card-header"
+                    >
+                      <div
+                        class="title"
+                      >
+                        <div
+                          class="title-cont"
+                        >
+                          项目评分
+                        </div>
+                      </div>
+                      <div
+                        class="extra"
+                      />
+                    </header>
+                    <section
+                      class="card-cont"
+                    >
+                      <div
+                        class="chart-wrapper css-1hgbe7b"
+                      >
+                        <div
+                          class="icon-center-wrapper MuiBox-root css-0"
+                        >
+                          <div
+                            class="css-dev-only-do-not-override-oz76h1 ant-empty is-icon-loading css-1hr7xjo"
+                          >
+                            <div
+                              class="ant-empty-image"
+                            >
+                              <div
+                                aria-busy="true"
+                                aria-live="polite"
+                                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-oz76h1"
+                              >
+                                <span
+                                  class="ant-spin-dot ant-spin-dot-spin"
+                                >
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-empty-description"
+                            />
+                            <div
+                              class="ant-empty-footer"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-row marginTop20 css-dev-only-do-not-override-oz76h1"
+          >
+            <div
+              class="ant-col ant-col-24 css-dev-only-do-not-override-oz76h1"
+            >
+              <div
+                class="item-wrapper height352 sql-count"
+              >
+                <div
+                  class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-oz76h1"
+                >
+                  <div
+                    class="ant-card-body"
+                  >
+                    <header
+                      class="card-header"
+                    >
+                      <div
+                        class="title"
+                      >
+                        <div
+                          class="title-cont"
+                        >
+                          SQL统计
+                        </div>
+                      </div>
+                      <div
+                        class="extra"
+                      />
+                    </header>
+                    <section
+                      class="card-cont"
+                    >
+                      <div
+                        class="chart-wrapper css-1hgbe7b"
+                      >
+                        <div
+                          class="icon-center-wrapper MuiBox-root css-0"
+                        >
+                          <div
+                            class="css-dev-only-do-not-override-oz76h1 ant-empty is-icon-loading css-1hr7xjo"
+                          >
+                            <div
+                              class="ant-empty-image"
+                            >
+                              <div
+                                aria-busy="true"
+                                aria-live="polite"
+                                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-oz76h1"
+                              >
+                                <span
+                                  class="ant-spin-dot ant-spin-dot-spin"
+                                >
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-empty-description"
+                            />
+                            <div
+                              class="ant-empty-footer"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-12 css-dev-only-do-not-override-oz76h1"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="ant-row css-dev-only-do-not-override-oz76h1"
+          >
+            <div
+              class="ant-col ant-col-24 css-dev-only-do-not-override-oz76h1"
+            >
+              <div
+                class="item-wrapper height344 data-source-count"
+              >
+                <div
+                  class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-oz76h1"
+                >
+                  <div
+                    class="ant-card-body"
+                  >
+                    <header
+                      class="card-header"
+                    >
+                      <div
+                        class="title"
+                      >
+                        <div
+                          class="title-cont"
+                        >
+                          数据源
+                        </div>
+                        <span
+                          class="anticon icon-tip"
+                          role="img"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
+                              fill="#EDB054"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                      <div
+                        class="extra"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            查看更多
+                          </span>
+                        </button>
+                      </div>
+                    </header>
+                    <section
+                      class="card-cont"
+                    >
+                      <div
+                        class="chart-wrapper css-1hgbe7b"
+                      >
+                        <div
+                          class="icon-center-wrapper MuiBox-root css-0"
+                        >
+                          <div
+                            class="css-dev-only-do-not-override-oz76h1 ant-empty is-icon-loading css-1hr7xjo"
+                          >
+                            <div
+                              class="ant-empty-image"
+                            >
+                              <div
+                                aria-busy="true"
+                                aria-live="polite"
+                                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-oz76h1"
+                              >
+                                <span
+                                  class="ant-spin-dot ant-spin-dot-spin"
+                                >
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-empty-description"
+                            />
+                            <div
+                              class="ant-empty-footer"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-row marginTop20 css-dev-only-do-not-override-oz76h1"
+          >
+            <div
+              class="ant-col ant-col-24 css-dev-only-do-not-override-oz76h1"
+            >
+              <div
+                class="item-wrapper height352 order"
+              >
+                <div
+                  class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-oz76h1"
+                >
+                  <div
+                    class="ant-card-body"
+                  >
+                    <header
+                      class="card-header"
+                    >
+                      <div
+                        class="title"
+                      >
+                        <div
+                          class="title-cont"
+                        >
+                          工单
+                        </div>
+                      </div>
+                      <div
+                        class="extra"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            创建工单
+                          </span>
+                        </button>
+                      </div>
+                    </header>
+                    <section
+                      class="card-cont"
+                    >
+                      <div
+                        class="chart-wrapper css-1hgbe7b"
+                      >
+                        <div
+                          class="icon-center-wrapper MuiBox-root css-0"
+                        >
+                          <div
+                            class="css-dev-only-do-not-override-oz76h1 ant-empty is-icon-loading css-1hr7xjo"
+                          >
+                            <div
+                              class="ant-empty-image"
+                            >
+                              <div
+                                aria-busy="true"
+                                aria-live="polite"
+                                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-oz76h1"
+                              >
+                                <span
+                                  class="ant-spin-dot ant-spin-dot-spin"
+                                >
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-empty-description"
+                            />
+                            <div
+                              class="ant-empty-footer"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-6 right-chart css-dev-only-do-not-override-oz76h1"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-oz76h1"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <header
+                class="card-header"
+              >
+                <div
+                  class="title"
+                >
+                  <div
+                    class="title-cont"
+                  >
+                    扫描任务
+                  </div>
+                </div>
+                <div
+                  class="extra"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      创建扫描任务
+                    </span>
+                  </button>
+                </div>
+              </header>
+              <section
+                class="card-cont"
+              >
+                <section
+                  class="css-15q4mqn"
+                >
+                  <section
+                    class="task-list-wrapper"
+                  >
+                    <div
+                      class="chart-wrapper css-1hgbe7b"
+                    >
+                      <div
+                        class="icon-center-wrapper MuiBox-root css-0"
+                      >
+                        <div
+                          class="css-dev-only-do-not-override-oz76h1 ant-empty is-icon-loading css-1hr7xjo"
+                        >
+                          <div
+                            class="ant-empty-image"
+                          >
+                            <div
+                              aria-busy="true"
+                              aria-live="polite"
+                              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-oz76h1"
+                            >
+                              <span
+                                class="ant-spin-dot ant-spin-dot-spin"
+                              >
+                                <i
+                                  class="ant-spin-dot-item"
+                                />
+                                <i
+                                  class="ant-spin-dot-item"
+                                />
+                                <i
+                                  class="ant-spin-dot-item"
+                                />
+                                <i
+                                  class="ant-spin-dot-item"
+                                />
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="ant-empty-description"
+                          />
+                          <div
+                            class="ant-empty-footer"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <section
+                    class="task-detail-wrapper"
+                  >
+                    <header
+                      class="title"
+                    >
+                      扫描任务详情
+                    </header>
+                    <div
+                      class="chart-detail-wrapper"
+                    >
+                      <div
+                        class="chart-wrapper css-1hgbe7b"
+                      >
+                        <div
+                          class="icon-center-wrapper MuiBox-root css-0"
+                        >
+                          <div
+                            class="css-dev-only-do-not-override-oz76h1 ant-empty is-icon-loading css-1hr7xjo"
+                          >
+                            <div
+                              class="ant-empty-image"
+                            >
+                              <div
+                                aria-busy="true"
+                                aria-live="polite"
+                                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-oz76h1"
+                              >
+                                <span
+                                  class="ant-spin-dot ant-spin-dot-spin"
+                                >
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-empty-description"
+                            />
+                            <div
+                              class="ant-empty-footer"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </section>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-24 css-dev-only-do-not-override-oz76h1"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="ant-row marginTop20 css-dev-only-do-not-override-oz76h1"
+            style="margin-left: -10px; margin-right: -10px;"
+          >
+            <div
+              class="ant-col ant-col-12 css-dev-only-do-not-override-oz76h1"
+              style="padding-left: 10px; padding-right: 10px;"
+            >
+              <div
+                class="item-wrapper height668 order-risk"
+              >
+                <div
+                  class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-oz76h1"
+                >
+                  <div
+                    class="ant-card-body"
+                  >
+                    <header
+                      class="card-header"
+                    >
+                      <div
+                        class="title"
+                      >
+                        <div
+                          class="title-cont"
+                        >
+                          工单潜在风险
+                        </div>
+                      </div>
+                      <div
+                        class="extra"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            查看更多
+                          </span>
+                        </button>
+                      </div>
+                    </header>
+                    <section
+                      class="card-cont"
+                    >
+                      <div
+                        class="chart-wrapper css-1hgbe7b"
+                      >
+                        <div
+                          class="icon-center-wrapper MuiBox-root css-0"
+                        >
+                          <div
+                            class="css-dev-only-do-not-override-oz76h1 ant-empty is-icon-loading css-1hr7xjo"
+                          >
+                            <div
+                              class="ant-empty-image"
+                            >
+                              <div
+                                aria-busy="true"
+                                aria-live="polite"
+                                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-oz76h1"
+                              >
+                                <span
+                                  class="ant-spin-dot ant-spin-dot-spin"
+                                >
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-empty-description"
+                            />
+                            <div
+                              class="ant-empty-footer"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-col ant-col-12 css-dev-only-do-not-override-oz76h1"
+              style="padding-left: 10px; padding-right: 10px;"
+            >
+              <div
+                class="item-wrapper height668 scan-risk"
+              >
+                <div
+                  class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-oz76h1"
+                >
+                  <div
+                    class="ant-card-body"
+                  >
+                    <header
+                      class="card-header"
+                    >
+                      <div
+                        class="title"
+                      >
+                        <div
+                          class="title-cont"
+                        >
+                          扫描任务潜在风险
+                        </div>
+                      </div>
+                      <div
+                        class="extra"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            查看更多
+                          </span>
+                        </button>
+                      </div>
+                    </header>
+                    <section
+                      class="card-cont"
+                    >
+                      <div
+                        class="chart-wrapper css-1hgbe7b"
+                      >
+                        <div
+                          class="icon-center-wrapper MuiBox-root css-0"
+                        >
+                          <div
+                            class="css-dev-only-do-not-override-oz76h1 ant-empty is-icon-loading css-1hr7xjo"
+                          >
+                            <div
+                              class="ant-empty-image"
+                            >
+                              <div
+                                aria-busy="true"
+                                aria-live="polite"
+                                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-oz76h1"
+                              >
+                                <span
+                                  class="ant-spin-dot ant-spin-dot-spin"
+                                >
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                  <i
+                                    class="ant-spin-dot-item"
+                                  />
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-empty-description"
+                            />
+                            <div
+                              class="ant-empty-footer"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;

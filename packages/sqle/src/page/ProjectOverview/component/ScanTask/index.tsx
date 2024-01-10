@@ -39,11 +39,11 @@ const ScanTask = () => {
     const { data: clickData } = sourceData;
     // {type: 'default-custom-bar0', value: 0} 默认空数据
     setDetailData(
-      clickData?.type.startsWith(defaultItemKey)
+      clickData?.type?.startsWith(defaultItemKey)
         ? {}
         : data.filter(
             (item: IDBTypeAuditPlan) => clickData?.type === item.db_type
-          )[0] ?? {}
+          )?.[0] ?? {}
     );
   };
 

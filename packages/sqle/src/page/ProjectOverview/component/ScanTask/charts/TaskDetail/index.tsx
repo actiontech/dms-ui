@@ -12,7 +12,7 @@ import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 import { IDBTypeAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
-interface ITaskDetail extends typeChartChildrenProps {
+export interface ITaskDetail extends typeChartChildrenProps {
   dataSource: IDBTypeAuditPlan;
 }
 
