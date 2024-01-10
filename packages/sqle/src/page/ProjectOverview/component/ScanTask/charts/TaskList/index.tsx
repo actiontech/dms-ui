@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { BarConfig } from '@ant-design/plots';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
-import { typeChartChildrenProps } from '../..';
+import { typeChartChildrenProps } from '../../index';
 import { defaultItemKey, limitDataLength } from '../../index.data';
 import BarChat from './BarChat';
 import { IDBTypeAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -14,7 +14,7 @@ export type typeTaskItem = {
   value: number;
 };
 
-interface ITaskList extends typeChartChildrenProps {
+export interface ITaskList extends typeChartChildrenProps {
   onReady: BarConfig['onReady'];
   dataSource: IDBTypeAuditPlan[];
 }
@@ -49,9 +49,13 @@ const TaskList = (props: ITaskList) => {
   };
 
   useEffect(() => {
+    // console.log(dataSource);
+    // console.log(comEmptyLine(dataSource));
     setData(comEmptyLine(dataSource));
   }, [dataSource]);
-
+  // console.log(dataLength);
+  // console.log(dataSource);
+  // console.log(comEmptyLine(dataSource));
   return (
     <ChartWrapper
       loading={apiLoading}
@@ -62,7 +66,9 @@ const TaskList = (props: ITaskList) => {
         refreshFuc();
       }}
     >
-      <BarChat onReady={onReady} data={data} />
+      <>
+        <BarChat onReady={onReady} data={comEmptyLine(dataSource)} />
+      </>
     </ChartWrapper>
   );
 };

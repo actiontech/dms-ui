@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -20,6 +21,8 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('page/ProjectOverview/DataSourceCount', () => {
+  ignoreAntdPlotsAttr();
+
   const navigateSpy = jest.fn();
 
   beforeEach(() => {
@@ -81,21 +84,4 @@ describe('page/ProjectOverview/DataSourceCount', () => {
     expect(eventEmitSpy).toBeCalledTimes(1);
     expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Project_Overview);
   });
-
-  // it('show tooltip when mouse move', async () => {
-  //   const request = projectOverview.getInstanceHealth();
-  //   const { baseElement } = customRender();
-  //   await act(async () =>
-  //     EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
-  //   );
-  //   await act(async () => jest.advanceTimersByTime(3000));
-  //   expect(request).toBeCalled();
-  //   expect(baseElement).toMatchSnapshot();
-  //   expect(getBySelector('canvas')).toBeInTheDocument();
-  //   fireEvent.mouseMove(getBySelector('canvas'));
-  //   await act(async () => jest.advanceTimersByTime(3000));
-  //   expect(
-  //     getBySelector('.tooltip-box-database-source-order')
-  //   ).toBeInTheDocument();
-  // });
 });

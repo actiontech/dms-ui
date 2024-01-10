@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Bar, BarConfig } from '@ant-design/plots';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 
-import { typeTaskItem } from '.';
+import { typeTaskItem } from './index';
 import { limitDataLength, defaultItemKey } from '../../index.data';
 
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';

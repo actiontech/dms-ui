@@ -158,7 +158,6 @@ const DataSourceCount = () => {
         itemName: {
           spacing: 8,
           formatter: (text: string) => {
-            console.log(text);
             return text === DBHealthEnum.health
               ? t('projectManage.projectOverview.dataSourceCount.health')
               : t('projectManage.projectOverview.dataSourceCount.risk');

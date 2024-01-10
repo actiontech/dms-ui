@@ -75,9 +75,129 @@ export const statisticAuditPlanData = [
         audit_plan_count: 1,
         audit_plan_desc: '自定义',
         audit_plan_type: 'default'
+      },
+      {
+        audit_plan_count: 2,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default1'
+      },
+      {
+        audit_plan_count: 3,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default2'
       }
     ],
     db_type: 'MySQL'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '1'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '2'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '3'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '4'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '5'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '6'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '7'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '8'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '9'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '10'
+  },
+  {
+    data: [
+      {
+        audit_plan_count: 1,
+        audit_plan_desc: '自定义',
+        audit_plan_type: 'default'
+      }
+    ],
+    db_type: '11'
   }
 ];
 

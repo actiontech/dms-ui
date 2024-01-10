@@ -33,7 +33,6 @@ const useChatsDataByAPI = <
     startGetData();
     server()
       .then((res) => {
-        console.log(res);
         if (res.data.code !== ResponseCode.SUCCESS) {
           setErrorMessage(res.data.message ?? t('common.unknownError'));
         } else {
@@ -42,7 +41,6 @@ const useChatsDataByAPI = <
         }
       })
       .catch((error) => {
-        console.log(error);
         setErrorMessage(error?.toString() ?? t('common.unknownError'));
       })
       .finally(() => {

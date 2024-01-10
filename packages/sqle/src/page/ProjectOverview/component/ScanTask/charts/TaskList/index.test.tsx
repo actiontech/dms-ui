@@ -1,19 +1,22 @@
 import { superRender } from '../../../../../../testUtils/customRender';
-import TaskDetail, { ITaskDetail } from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { statisticAuditPlanData } from '../../../../../../testUtils/mockApi/projectOverview/data';
+import TaskList, { ITaskList } from './index';
+import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 
-describe('page/ProjectOverview/TaskDetail', () => {
+describe('page/ProjectOverview/TaskList', () => {
+  ignoreAntdPlotsAttr();
+
   const mockRefresh = jest.fn();
-
-  const taskDetailProps = {
+  const taskListProps = {
     apiLoading: false,
     errorInfo: '',
-    dataLength: statisticAuditPlanData.length,
+    dataLength: 1,
     refreshFuc: mockRefresh,
-    dataSource: statisticAuditPlanData[0]
+    onReady: jest.fn(),
+    dataSource: [{ ...statisticAuditPlanData[0] }]
   };
 
   beforeEach(() => {
@@ -28,21 +31,31 @@ describe('page/ProjectOverview/TaskDetail', () => {
     cleanup();
   });
 
-  const customRender = (data?: ITaskDetail) => {
-    return superRender(<TaskDetail {...taskDetailProps} {...data} />);
+  const customRender = (data?: ITaskList) => {
+    return superRender(<TaskList {...taskListProps} {...data} />);
   };
 
-  it('render task detail', async () => {
-    const { baseElement } = customRender();
+  it('render task list', async () => {
+    const { baseElement } = customRender({ ...taskListProps });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render task list more than 11', async () => {
+    const { baseElement } = customRender({
+      ...taskListProps,
+      dataLength: statisticAuditPlanData.length,
+      dataSource: statisticAuditPlanData
+    });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render empty and refresh', async () => {
     const { baseElement } = customRender({
-      ...taskDetailProps,
+      ...taskListProps,
       dataLength: 0,
-      dataSource: {}
+      dataSource: []
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -55,7 +68,7 @@ describe('page/ProjectOverview/TaskDetail', () => {
   it('render error info', async () => {
     const errorInfo = 'error message';
     const { baseElement } = customRender({
-      ...taskDetailProps,
+      ...taskListProps,
       errorInfo
     });
     await act(async () => jest.advanceTimersByTime(3000));

@@ -65,7 +65,6 @@ exports[`page/ProjectOverview/DataSourceCount render data source count and check
                 columnstyle="{\\"radius\\":[4,4,0,0]}"
                 columnwidthratio="0.8"
                 data="[{\\"type\\":\\"MySQL\\",\\"value\\":1,\\"category\\":\\"health\\",\\"instanceNames\\":\\"mysql-1\\"},{\\"type\\":\\"MySQL\\",\\"value\\":1,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"mysql-2\\"},{\\"type\\":\\"Redis\\",\\"value\\":0,\\"category\\":\\"health\\",\\"instanceNames\\":\\"\\"},{\\"type\\":\\"Redis\\",\\"value\\":0,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"\\"},{\\"type\\":\\"\\",\\"value\\":0,\\"category\\":\\"health\\",\\"instanceNames\\":\\"\\"},{\\"type\\":\\"\\",\\"value\\":0,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"\\"},{\\"type\\":\\"PostgreSQL\\",\\"value\\":1,\\"category\\":\\"health\\",\\"instanceNames\\":\\"progres-1\\"},{\\"type\\":\\"PostgreSQL\\",\\"value\\":0,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"\\"}]"
-                legend="{\\"layout\\":\\"horizontal\\",\\"position\\":\\"top-left\\",\\"itemName\\":{\\"spacing\\":8,\\"style\\":{\\"fontSize\\":12,\\"lineHeight\\":20,\\"fontWeight\\":\\"normal\\",\\"fill\\":\\"#8a8f99\\"}}}"
                 maxcolumnwidth="12"
                 mincolumnwidth="12"
                 seriesfield="category"

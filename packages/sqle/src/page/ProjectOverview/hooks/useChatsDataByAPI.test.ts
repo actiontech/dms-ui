@@ -1,13 +1,15 @@
 import { cleanup, renderHook } from '@testing-library/react-hooks';
 import useChatsDataByAPI from './useChatsDataByAPI';
-import { sqleLightTheme } from '../../../theme/light';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import projectOverview from '../../../testUtils/mockApi/projectOverview';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyErrorResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
+import { act } from '@testing-library/react';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
-describe.skip('useChatsDataByAPI', () => {
+describe('useChatsDataByAPI', () => {
   beforeEach(() => {
     mockUseCurrentUser();
     jest.useFakeTimers();
@@ -18,54 +20,120 @@ describe.skip('useChatsDataByAPI', () => {
     cleanup();
   });
 
-  test('should send request', async () => {
-    const request = projectOverview.getStatisticsAuditedSQL();
+  const mockSuccess = jest.fn();
+
+  const successData = { code: 0, message: 'ok', data: '12' };
+  const errorMessage = 'error info';
+  const failedData = { code: 500, message: errorMessage };
+  const unknownError = '未知错误...';
+
+  const responseDataObject = {
+    status: 200,
+    headers: {},
+    config: {},
+    statusText: '',
+    data: successData
+  };
+
+  test('request success', async () => {
+    const { result } = renderHook(() =>
+      useChatsDataByAPI(() => createSpySuccessResponse(successData), {
+        onSuccess: mockSuccess
+      })
+    );
+    await act(async () =>
+      EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
+    );
+    expect(result.current.loading).toBe(true);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.loading).toBe(false);
+    expect(mockSuccess).toBeCalledWith(responseDataObject);
+    expect(result.current.errorMessage).toBe('');
+
+    await act(async () => result.current.getApiData());
+    expect(result.current.loading).toBe(true);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.loading).toBe(false);
+  });
+
+  test('request success with failed code', async () => {
+    const { result } = renderHook(() =>
+      useChatsDataByAPI(() => createSpySuccessResponse(failedData), {
+        onSuccess: mockSuccess
+      })
+    );
+    await act(async () =>
+      EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
+    );
+    expect(result.current.loading).toBe(true);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.loading).toBe(false);
+    expect(result.current.errorMessage).toBe(errorMessage);
+  });
+
+  test('request success with failed code and return unknown error', async () => {
     const { result } = renderHook(() =>
       useChatsDataByAPI(
-        () =>
-          statistic.statisticsAuditedSQLV1({
-            project_name: mockProjectInfo.projectName
-          }),
+        () => createSpySuccessResponse({ ...failedData, message: undefined }),
         {
-          onSuccess: (res) => {
-            return res;
-          }
+          onSuccess: mockSuccess
         }
       )
     );
-    request.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: []
-      })
+    await act(async () =>
+      EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
     );
-    expect(result.current.getApiData).toBeCalledWith({
-      project_name: mockProjectInfo.projectName
-    });
+    expect(result.current.loading).toBe(true);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.loading).toBe(false);
+    expect(result.current.errorMessage).toBe(unknownError);
   });
 
   test('request failed', async () => {
-    const request = projectOverview.getStatisticsAuditedSQL();
     const { result } = renderHook(() =>
       useChatsDataByAPI(
         () =>
-          statistic.statisticsAuditedSQLV1({
-            project_name: mockProjectInfo.projectName
-          }),
+          createSpyErrorResponse(failedData).catch((error) =>
+            Promise.reject(error?.data?.message)
+          ),
         {
-          onSuccess: (res) => {
-            console.log(res);
-            return res;
-          }
+          onSuccess: mockSuccess
         }
       )
     );
-    request.mockImplementation(() => Promise.reject('error'));
-    // request.mockImplementation(() =>
-    //   createSpySuccessResponse({
-    //     code: 500,
-    //     message: 'error'
-    //   })
-    // );
-    expect(result.current.errorMessage).toBe('error');
+    await act(async () => result.current.getApiData());
+    expect(result.current.loading).toBe(true);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.loading).toBe(false);
+    expect(result.current.errorMessage).toBe(errorMessage);
+  });
+
+  test('request failed and return unknown error', async () => {
+    const { result } = renderHook(() =>
+      useChatsDataByAPI(
+        () =>
+          createSpyErrorResponse({ ...failedData, message: undefined }).catch(
+            (error) => Promise.reject(error?.data?.message)
+          ),
+        {
+          onSuccess: mockSuccess
+        }
+      )
+    );
+    await act(async () => result.current.getApiData());
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.errorMessage).toBe(unknownError);
   });
 });
