@@ -3,7 +3,6 @@ import { renderHook, act } from '@testing-library/react';
 import useCreateOrderSteps from '../useCreateOrderSteps';
 
 describe('sqle/Order/Create/hooks/useCreateOrderSteps', () => {
-
   const customRender = () => {
     return renderHook(() => useCreateOrderSteps());
   };
@@ -34,5 +33,5 @@ describe('sqle/Order/Create/hooks/useCreateOrderSteps', () => {
     expect(result.current.showForm).toBeTruthy();
     expect(result.current.showTasks).toBeFalsy();
     expect(result.current.showResult).toBeFalsy();
-  })
+  });
 });

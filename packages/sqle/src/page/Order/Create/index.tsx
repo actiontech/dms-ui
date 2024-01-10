@@ -22,7 +22,6 @@ import AuditResultForCreateOrder from './AuditResult';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import EditSQLInfoDrawer from './EditSQLInfoDrawer';
 import useCreateOrderFormState from './hooks/useCreateOrderFormState';
-import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ICreateWorkflowV2Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

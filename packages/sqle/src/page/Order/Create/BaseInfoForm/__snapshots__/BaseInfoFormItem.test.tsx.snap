@@ -1,0 +1,372 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/Order/CreateOrder/BaseInfoFormItem render snap when render default item 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="workflow_subject"
+              title=""
+            />
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-required="true"
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                  id="workflow_subject"
+                  placeholder="请输入工单名称"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item order-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="desc"
+              title="工单描述"
+            >
+              工单描述
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count css-dev-only-do-not-override-txh9fw ant-input-show-count"
+                  data-count="0 / 3000"
+                >
+                  <textarea
+                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    id="desc"
+                    placeholder="点此添加工单描述（选填）"
+                    style="overflow-y: hidden; resize: none;"
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <span
+                      class="ant-input-data-count"
+                    >
+                      0 / 3000
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+</body>
+`;
+
+exports[`sqle/Order/CreateOrder/BaseInfoFormItem render workflow_subject check validator 1`] = `
+<body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="workflow_subject"
+              title=""
+            />
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-describedby="workflow_subject_help"
+                  aria-invalid="true"
+                  aria-required="true"
+                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                  id="workflow_subject"
+                  placeholder="请输入工单名称"
+                  type="text"
+                  value="1234"
+                />
+              </div>
+            </div>
+            <div
+              style="display: flex; flex-wrap: nowrap;"
+            >
+              <div
+                style="width: 0px; height: 24px;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item-margin-offset"
+          style="margin-bottom: -24px;"
+        />
+      </div>
+      <div
+        class="ant-form-item order-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="desc"
+              title="工单描述"
+            >
+              工单描述
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count css-dev-only-do-not-override-txh9fw ant-input-show-count"
+                  data-count="0 / 3000"
+                >
+                  <textarea
+                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    id="desc"
+                    placeholder="点此添加工单描述（选填）"
+                    style="overflow-y: hidden; resize: none;"
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <span
+                      class="ant-input-data-count"
+                    >
+                      0 / 3000
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/CreateOrder/BaseInfoFormItem render workflow_subject check validator 2`] = `
+<body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="workflow_subject"
+              title=""
+            />
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-describedby="workflow_subject_help"
+                  aria-invalid="true"
+                  aria-required="true"
+                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                  id="workflow_subject"
+                  placeholder="请输入工单名称"
+                  type="text"
+                  value="="
+                />
+              </div>
+            </div>
+            <div
+              style="display: flex; flex-wrap: nowrap;"
+            >
+              <div
+                style="width: 0px; height: 24px;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item-margin-offset"
+          style="margin-bottom: -24px;"
+        />
+      </div>
+      <div
+        class="ant-form-item order-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="desc"
+              title="工单描述"
+            >
+              工单描述
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count css-dev-only-do-not-override-txh9fw ant-input-show-count"
+                  data-count="0 / 3000"
+                >
+                  <textarea
+                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    id="desc"
+                    placeholder="点此添加工单描述（选填）"
+                    style="overflow-y: hidden; resize: none;"
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <span
+                      class="ant-input-data-count"
+                    >
+                      0 / 3000
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
