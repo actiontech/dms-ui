@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/ChartContTitle render snap when has fixed params 1`] = `
+<body>
+  <div>
+    <section
+      class="css-v04253"
+    >
+      <div
+        class="line-block"
+        hidden=""
+        style="background: none;"
+      />
+      <div
+        class="line-cont"
+      >
+        <div
+          class="line1-main"
+        >
+          主标题
+          <span
+            class="sub-cont"
+            hidden=""
+          />
+        </div>
+        <div
+          class="line1-main-sub"
+        >
+          提示信息
+          <span
+            class="sub-cont"
+            hidden=""
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/ChartContTitle render snap when set clearMainTextMargin params 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1d5zczu"
+    >
+      <div
+        class="line-block"
+        hidden=""
+        style="background: none;"
+      />
+      <div
+        class="line-cont"
+      >
+        <div
+          class="line1-main"
+        >
+          主标题
+          <span
+            class="sub-cont"
+            hidden=""
+          />
+        </div>
+        <div
+          class="line1-main-sub"
+        >
+          提示信息
+          <span
+            class="sub-cont"
+            hidden=""
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/ChartContTitle render snap when set other params 1`] = `
+<body>
+  <div>
+    <section
+      class="css-v04253"
+    >
+      <div
+        class="line-block"
+        style="background: blue;"
+      />
+      <div
+        class="line-cont"
+      >
+        <div
+          class="line1-main"
+        >
+          主标题
+          <span
+            class="sub-cont"
+            style="color: red;"
+          >
+            mainSubText
+          </span>
+        </div>
+        <div
+          class="line1-main-sub"
+        >
+          提示信息
+          <span
+            class="sub-cont"
+            style="color: rgb(0, 0, 0);"
+          >
+            noteSubText
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/ChartContTitle render snap when set style params 1`] = `
+<body>
+  <div>
+    <section
+      class="css-v04253"
+      style="background: rgb(255, 255, 255);"
+    >
+      <div
+        class="line-block"
+        hidden=""
+        style="background: none;"
+      />
+      <div
+        class="line-cont"
+      >
+        <div
+          class="line1-main"
+        >
+          主标题
+          <span
+            class="sub-cont"
+            hidden=""
+          />
+        </div>
+        <div
+          class="line1-main-sub"
+        >
+          提示信息
+          <span
+            class="sub-cont"
+            hidden=""
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
