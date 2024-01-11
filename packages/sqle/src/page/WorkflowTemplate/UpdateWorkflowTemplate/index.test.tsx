@@ -15,6 +15,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { cloneDeep } from 'lodash';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { ignoreAntdUseFormNotConnectedError } from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -22,24 +23,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
-  // eslint-disable-next-line no-console
-  const error = console.error;
-
-  beforeAll(() => {
-    // eslint-disable-next-line no-console
-    console.error = jest.fn();
-    // eslint-disable-next-line no-console
-    (console.error as any).mockImplementation((message: any) => {
-      if (
-        message.includes(
-          'Instance created by `useForm` is not connected to any Form element. Forget to pass `form` prop?'
-        )
-      ) {
-        return;
-      }
-      error(message);
-    });
-  });
+  ignoreAntdUseFormNotConnectedError();
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
@@ -62,11 +46,6 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     jest.clearAllTimers();
     jest.useRealTimers();
     cleanup();
-  });
-
-  afterAll(() => {
-    // eslint-disable-next-line no-console
-    console.error = error;
   });
 
   it('render update workflow template and submit success', async () => {
