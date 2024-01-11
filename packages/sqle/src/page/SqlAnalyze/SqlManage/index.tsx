@@ -4,15 +4,16 @@ import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ResponseCode } from '../../../data/common';
-import SqlAnalyze from '../SqlAnalyze';
+import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+
+import SqlAnalyze from '../SqlAnalyze';
 
 const SQLManageAnalyze = () => {
   const urlParams = useParams<SQLManageAnalyzeUrlParams>();

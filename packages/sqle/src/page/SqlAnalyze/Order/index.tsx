@@ -4,14 +4,15 @@ import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ResponseCode } from '../../../data/common';
-import SqlAnalyze from '../SqlAnalyze';
+import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { OrderSqlAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import task from '@actiontech/shared/lib/api/sqle/service/task';
+
+import SqlAnalyze from '../SqlAnalyze';
 
 const OrderSqlAnalyze = () => {
   const urlParams = useParams<OrderSqlAnalyzeUrlParams>();

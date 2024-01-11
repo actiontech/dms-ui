@@ -116,7 +116,12 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
         </>
       );
     };
+
+    const hasError = !!item.errorMessage || !!item.tableMeta.message;
+    const hiddenVal = typeof item.isShow === 'boolean' ? !item.isShow : false;
+
     const renderErrorMessage = () => {
+      if (hiddenVal) return <></>;
       if (!!item.tableMeta.message) {
         return (
           <BasicResult
@@ -138,15 +143,13 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
       return undefined;
     };
 
-    const hasError = !!item.errorMessage || !!item.tableMeta.message;
-
     return (
       <EmptyBox if={!hasError} defaultNode={renderErrorMessage()}>
         <Space
           size={0}
           direction="vertical"
           className="full-width-element"
-          hidden={typeof item.isShow === 'boolean' ? !item.isShow : false}
+          hidden={hiddenVal}
         >
           {renderTableColumnTable()}
           {renderTableIndexTable()}
