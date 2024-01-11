@@ -121,9 +121,15 @@ export default {
     accessTokenKeyNameTips:
       'sqle会在获取用户ID时将access_token放在这个key对应的value中, 此参数会作为get请求的参数发送给用户ID获取地址',
 
-    userIdKeyName: 'user_id Key名称',
+    userIdKeyName: '用户UID的JSON路径',
     userIdKeyNameTips:
-      'sqle会尝试使用此key从第三方平台的响应中解析出用户ID,用户ID应当为唯一ID',
+      'sqle会尝试使用此路径，从第三方平台获取用户信息的响应中解析出用户ID，用户ID应当为唯一ID',
+    userEmailTagName: '用户邮箱的JSON路径',
+    userEmailTagNameTips:
+      'sqle会尝试使用此路径，从第三方平台获取用户信息的响应中解析出用户邮箱',
+    userWechatTagName: '用户微信ID的JSON路径',
+    userWechatTagNameTips:
+      'sqle会尝试使用此路径，从第三方平台获取用户信息的响应中解析出用户微信ID',
 
     loginButtonText: '登录按钮文字',
     loginButtonTextTips: 'login页面oauth登录按钮文字',
