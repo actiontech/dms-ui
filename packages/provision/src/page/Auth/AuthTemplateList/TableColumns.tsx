@@ -56,7 +56,7 @@ export const AuthTemplateListActions = (
     buttons: [
       {
         key: 'edit-AuthTemplate',
-        text: t('auth.columns.details'),
+        text: t('common.edit'),
         buttonProps: (record) => ({
           onClick: onNavigateUpdateTemplate.bind(null, record ?? {})
         })
