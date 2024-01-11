@@ -162,3 +162,27 @@ export const renderLocationDisplay = (): [
 
   return [() => renderWithRouter(<LocationComponent />), LocationComponent];
 };
+
+export const superRender = (
+  ...[ui, option, otherProps]: [
+    ...RenderParams,
+    {
+      routerProps?: MemoryRouterProps;
+      initStore?: any;
+    }?
+  ]
+) => {
+  const renderReturn = render(ui, {
+    wrapper: ({ children }) => {
+      return (
+        <Provider store={storeFactory(otherProps?.initStore)}>
+          <MemoryRouter {...otherProps?.routerProps}>
+            <ThemeProvider theme={themeData}>{children}</ThemeProvider>
+          </MemoryRouter>
+        </Provider>
+      );
+    },
+    ...option
+  });
+  return renderReturn;
+};
