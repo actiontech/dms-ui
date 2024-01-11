@@ -1,4 +1,4 @@
-import { screen, cleanup, act, fireEvent } from '@testing-library/react';
+import { cleanup, act, fireEvent } from '@testing-library/react';
 import { renderWithTheme } from '../../../../testUtils/customRender';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
