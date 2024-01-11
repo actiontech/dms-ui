@@ -3,7 +3,7 @@ import { CardProps, Statistic, ConfigProvider } from 'antd';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import { CardShowStyleWrapper } from './style';
 
-interface ICardShowProps extends CardProps {
+export interface ICardShowProps extends CardProps {
   titleCont: string | ReactNode;
   numberCont: string | number | ReactNode;
   noteCont: string | ReactNode;
