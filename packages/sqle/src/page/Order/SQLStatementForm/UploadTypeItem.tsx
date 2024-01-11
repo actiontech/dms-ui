@@ -2,12 +2,19 @@ import { ReactNode } from 'react';
 import { UploadItemTypeStyleWrapper } from './style';
 import { IconOrderUploadTypeChecked } from '../../../icon/Order';
 
-const UploadTypeItem: React.FC<{
+export interface UploadTypeItemProps {
   active: boolean;
   onClick: () => void;
   children: ReactNode;
   hidden?: boolean;
-}> = ({ active, onClick, children, hidden }) => {
+}
+
+const UploadTypeItem: React.FC<UploadTypeItemProps> = ({
+  active,
+  onClick,
+  children,
+  hidden
+}) => {
   return (
     <UploadItemTypeStyleWrapper
       active={active}
