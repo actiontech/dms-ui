@@ -10,6 +10,11 @@ class MockRuleTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getRuleTemplateTips();
     this.getProjectRuleTemplateTips();
+    this.getCustomRuleKnowledge();
+    this.getRuleKnowledge();
+    this.getRuleList();
+    this.updateCustomRuleKnowledge();
+    this.updateRuleKnowledge();
   }
 
   public getRuleTemplateTips() {
@@ -29,6 +34,48 @@ class MockRuleTemplateApi implements MockSpyApy {
         data: projectRuleTemplateList
       })
     );
+    return spy;
+  }
+
+  public getCustomRuleKnowledge() {
+    const spy = jest.spyOn(rule_template, 'getCustomRuleKnowledgeV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {}
+      })
+    );
+    return spy;
+  }
+
+  public getRuleKnowledge() {
+    const spy = jest.spyOn(rule_template, 'getRuleKnowledgeV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {}
+      })
+    );
+    return spy;
+  }
+
+  public getRuleList() {
+    const spy = jest.spyOn(rule_template, 'getRuleListV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: []
+      })
+    );
+    return spy;
+  }
+
+  public updateCustomRuleKnowledge() {
+    const spy = jest.spyOn(rule_template, 'updateCustomRuleKnowledge');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateRuleKnowledge() {
+    const spy = jest.spyOn(rule_template, 'updateRuleKnowledge');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
