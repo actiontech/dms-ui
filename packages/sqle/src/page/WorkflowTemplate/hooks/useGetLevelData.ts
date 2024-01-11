@@ -1,8 +1,8 @@
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
-import useThemeStyleData from '../../hooks/useThemeStyleData';
+import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { useTranslation } from 'react-i18next';
-import { auditLevelDictionary } from '../../hooks/useStaticStatus/index.data';
+import { auditLevelDictionary } from '../../../hooks/useStaticStatus/index.data';
 
 export const useGetLevelData = (
   level:
