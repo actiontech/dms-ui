@@ -105,3 +105,23 @@ export const ignoreComponentWarnExpDatePickChooseElement = () => {
     console.warn = warn;
   });
 };
+
+export const ignoreComponentAutoCreatedListNoKey = () => {
+  const error = console.error;
+
+  beforeAll(() => {
+    console.error = (...arg) => {
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes('Each child in a list should have a unique "key" prop')
+      ) {
+        return;
+      }
+      error(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.error = error;
+  });
+};
