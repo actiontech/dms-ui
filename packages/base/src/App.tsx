@@ -40,6 +40,8 @@ dayjs.updateLocale('zh-cn', {
   weekStart: 0
 });
 
+console.log('test robot');
+
 Spin.setDefaultIndicator(<IconSpin />);
 
 //fix  https://github.com/actiontech/sqle/issues/1350
