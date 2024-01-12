@@ -11,7 +11,10 @@ import { InstanceTipList } from '../../../../../testUtils/mockApi/instance/data'
 
 import { DatabaseInfoProps, SQLInfoFormFields } from '../index.type';
 import DatabaseInfo from '../DatabaseInfo';
-import { getAllBySelector, getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 
 jest.mock('react-redux', () => {
@@ -164,5 +167,5 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestConnectCheck).toBeCalled();
-  })
+  });
 });

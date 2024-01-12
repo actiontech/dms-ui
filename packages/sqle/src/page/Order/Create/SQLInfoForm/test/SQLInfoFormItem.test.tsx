@@ -64,7 +64,7 @@ describe('sqle/Order/Create/SQLInfoFormItem', () => {
         database: { driverMeta: driverMeta }
       });
     });
-  })
+  });
 
   afterEach(() => {
     jest.clearAllMocks();

@@ -9,7 +9,10 @@ describe('sqle/Order/Create/AuditResultForCreateOrder', () => {
   const projectID = mockProjectInfo.projectID;
   const customRender = (params: AuditResultForCreateOrderProps) => {
     return renderWithTheme(
-      <AuditResultForCreateOrder updateTaskRecordTotalNum={jest.fn()} {...params} />
+      <AuditResultForCreateOrder
+        updateTaskRecordTotalNum={jest.fn()}
+        {...params}
+      />
     );
   };
 

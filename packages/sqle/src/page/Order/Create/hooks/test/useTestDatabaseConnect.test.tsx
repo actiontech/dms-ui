@@ -1,9 +1,5 @@
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import {
-  renderHook,
-  cleanup,
-  act,
-} from '@testing-library/react';
+import { renderHook, cleanup, act } from '@testing-library/react';
 import { Form } from 'antd';
 
 import instance from '../../../../../testUtils/mockApi/instance';
@@ -16,9 +12,7 @@ describe('sqle/Order/Create/useTestDatabaseConnect', () => {
   let requestConnectCheck: jest.SpyInstance;
 
   const customRender = () => {
-    const { result } = renderHooksWithTheme(() =>
-      Form.useForm<any>()
-    );
+    const { result } = renderHooksWithTheme(() => Form.useForm<any>());
     return renderHook(() =>
       useTestDatabaseConnect({
         projectName: 'project name',
@@ -53,7 +47,8 @@ describe('sqle/Order/Create/useTestDatabaseConnect', () => {
     expect(requestConnectCheck).toBeCalled();
 
     await act(async () => {
-      const DatabasesConnectInfo = result.current.renderTestDatabasesConnectInfo('mysql-1');
+      const DatabasesConnectInfo =
+        result.current.renderTestDatabasesConnectInfo('mysql-1');
       expect(DatabasesConnectInfo).toMatchSnapshot();
     });
   });
