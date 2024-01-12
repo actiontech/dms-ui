@@ -1,0 +1,346 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        知识库
+      </div>
+      <div
+        class="extra"
+      />
+    </div>
+    <div
+      class="css-1vnfydc"
+    >
+      <div
+        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <h4
+                class="ant-typography css-dev-only-do-not-override-txh9fw"
+              >
+                绑定的变量个数不建议超过阈值
+              </h4>
+              <span
+                class="ant-typography css-dev-only-do-not-override-txh9fw"
+              >
+                因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="next-icon-wrap"
+      >
+        <svg
+          fill="none"
+          height="6"
+          viewBox="0 0 18 6"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L9 5L17 1"
+            stroke="#E6E4E3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-card-head"
+        >
+          <div
+            class="ant-card-head-wrapper"
+          >
+            <div
+              class="ant-card-head-title"
+            >
+              规则理解
+            </div>
+            <div
+              class="ant-card-extra"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  编 辑
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <div
+                class="css-1pkzawh"
+                rehypeplugins="() => jest.fn()"
+              >
+                123
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        知识库
+      </div>
+      <div
+        class="extra"
+      />
+    </div>
+    <div
+      class="css-1vnfydc"
+    >
+      <div
+        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <h4
+                class="ant-typography css-dev-only-do-not-override-txh9fw"
+              >
+                绑定的变量个数不建议超过阈值
+              </h4>
+              <span
+                class="ant-typography css-dev-only-do-not-override-txh9fw"
+              >
+                因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="next-icon-wrap"
+      >
+        <svg
+          fill="none"
+          height="6"
+          viewBox="0 0 18 6"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L9 5L17 1"
+            stroke="#E6E4E3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-card-head"
+        >
+          <div
+            class="ant-card-head-wrapper"
+          >
+            <div
+              class="ant-card-head-title"
+            >
+              规则理解
+            </div>
+            <div
+              class="ant-card-extra"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  编 辑
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <div
+                class="css-1pkzawh"
+                rehypeplugins="() => jest.fn()"
+              >
+                123
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/RuleKnowledge update rule and refresh 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        知识库
+      </div>
+      <div
+        class="extra"
+      />
+    </div>
+    <div
+      class="css-1vnfydc"
+    >
+      <div
+        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <h4
+                class="ant-typography css-dev-only-do-not-override-txh9fw"
+              >
+                绑定的变量个数不建议超过阈值
+              </h4>
+              <span
+                class="ant-typography css-dev-only-do-not-override-txh9fw"
+              >
+                因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="next-icon-wrap"
+      >
+        <svg
+          fill="none"
+          height="6"
+          viewBox="0 0 18 6"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L9 5L17 1"
+            stroke="#E6E4E3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-card-head"
+        >
+          <div
+            class="ant-card-head-wrapper"
+          >
+            <div
+              class="ant-card-head-title"
+            >
+              规则理解
+            </div>
+            <div
+              class="ant-card-extra"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  编 辑
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <div
+                class="css-1pkzawh"
+                rehypeplugins="() => jest.fn()"
+              >
+                123
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
