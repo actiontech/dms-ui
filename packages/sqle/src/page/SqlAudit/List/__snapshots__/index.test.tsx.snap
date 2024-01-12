@@ -4,7 +4,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -1116,7 +1116,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -2096,7 +2096,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"

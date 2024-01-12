@@ -4,7 +4,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -1323,7 +1323,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -2364,7 +2364,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                     height="400px"
                     id="sql"
                     language="sql"
-                    options="[object Object]"
+                    options="{\\"automaticLayout\\":true,\\"readOnly\\":false,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                     value="/* input your sql */"
                     width="100%"
                   />
@@ -2629,7 +2629,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -3672,7 +3672,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                     height="400px"
                     id="sql"
                     language="sql"
-                    options="[object Object]"
+                    options="{\\"automaticLayout\\":true,\\"readOnly\\":false,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                     value="/* input your sql */"
                     width="100%"
                   />
@@ -3753,7 +3753,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -5006,7 +5006,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -6259,7 +6259,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
