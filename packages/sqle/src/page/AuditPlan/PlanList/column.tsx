@@ -157,8 +157,8 @@ const PlanListColumn: (
         }
 
         const path = ruleTemplate.is_global_rule_template
-          ? `/sqle/ruleManager/globalDetail/${ruleTemplate.name}/${record.audit_plan_db_type}}`
-          : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}}`;
+          ? `/sqle/ruleManager/globalDetail/${ruleTemplate.name}/${record.audit_plan_db_type}`
+          : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
 
         return <Link to={path}>{ruleTemplate.name}</Link>;
       }

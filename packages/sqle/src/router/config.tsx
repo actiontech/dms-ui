@@ -5,7 +5,6 @@ import {
   AuditOutlined,
   ConsoleSqlOutlined,
   ProfileOutlined,
-  NodeIndexOutlined,
   CiCircleOutlined,
   ProjectOutlined
 } from '@ant-design/icons';
@@ -34,13 +33,6 @@ const OrderList = React.lazy(
 );
 const Whitelist = React.lazy(
   () => import(/* webpackChunkName: "Whitelist" */ '../page/Whitelist')
-);
-
-const WorkflowTemplate = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "WorkflowTemplate" */ '../page/WorkflowTemplate'
-    )
 );
 
 const AuditPlanList = React.lazy(
@@ -217,9 +209,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: `${PROJECT_ROUTER_PARAM}/sqlAudit`,
     key: 'sqlAudit',
-    label: 'menu.sqlAudit',
-    icon: <NodeIndexOutlined />,
-    element: <WorkflowTemplate />,
     children: [
       {
         index: true,
@@ -327,9 +316,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: `${PROJECT_ROUTER_PARAM}/progress`,
     key: 'progress',
-    label: 'menu.progressManage',
-    icon: <NodeIndexOutlined />,
-    element: <WorkflowTemplate />,
     children: [
       {
         index: true,

@@ -5,7 +5,6 @@ import { SyncOutlined } from '@ant-design/icons';
 
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { OverviewStyleWrapper } from './style';
-import { PageHeaderStyleWrapper } from '../../style/layout';
 
 import ProjectScore from './component/ProjectScore';
 import SqlCount from './component/SqlCount';
@@ -45,16 +44,15 @@ const Overview = () => {
         }
       }}
     >
-      <PageHeaderStyleWrapper>
-        <PageHeader
-          title={
-            <Space size={10}>
-              <div>{t('projectManage.projectOverview.pageTitle')}</div>
-              <SyncOutlined onClick={onRefreshPage} className="refresh-icon" />
-            </Space>
-          }
-        />
-      </PageHeaderStyleWrapper>
+      <PageHeader
+        fixed
+        title={
+          <Space size={10}>
+            <div>{t('projectManage.projectOverview.pageTitle')}</div>
+            <SyncOutlined onClick={onRefreshPage} className="refresh-icon" />
+          </Space>
+        }
+      />
       <OverviewStyleWrapper>
         <Row
           justify="center"

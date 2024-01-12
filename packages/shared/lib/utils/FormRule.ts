@@ -8,7 +8,8 @@ export const nameRule = (): Rule[] => {
       validator: nameRuleValidator()
     },
     {
-      max: 59
+      max: 59,
+      message: i18n.t('common.form.rule.maxLength', { max: 59 })
     }
   ];
 };
@@ -19,7 +20,8 @@ export const roleNameRule = (): Rule[] => {
       validator: roleNameRuleValidator()
     },
     {
-      max: 59
+      max: 59,
+      message: i18n.t('common.form.rule.maxLength', { max: 59 })
     }
   ];
 };

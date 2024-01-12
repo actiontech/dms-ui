@@ -19,8 +19,7 @@ type typeDctItem = {
 };
 
 /**
- * todo
-  接口没调通: 接口数据类型中没有
+ * 实际与设计图不相符的地方，因为：
   resource_type_desc 太长了
   柱形数量太多的时候，柱形下面的类型描述 会间隔隐藏
  */
@@ -45,7 +44,7 @@ const LicenseStatistics = () => {
   const [data, setData] = useState<typeDctItem[] | []>([]);
 
   const onSuccess = (res: AxiosResponse<IGetLicenseUsageV1Return>) => {
-    // ??? todo: 暂时注释 有效期
+    // ??? todo: 暂时注释 有效期， 设计图有，但是数据接口暂时没有返回
     // const validityData: typeDctItem = {
     //   type: t('reportStatistics.licenseStatistics.charts.validity'),
     //   value: 0,

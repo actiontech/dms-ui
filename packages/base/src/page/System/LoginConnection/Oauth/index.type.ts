@@ -10,4 +10,6 @@ export type OauthFormField = {
   accessTokenKeyName: string;
   userIdKeyName: string;
   loginButtonText: string;
+  userEmailTag: string;
+  userWechatTag: string;
 };
