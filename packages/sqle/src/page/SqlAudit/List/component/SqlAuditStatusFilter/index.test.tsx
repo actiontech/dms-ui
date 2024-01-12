@@ -21,5 +21,4 @@ describe('sqle/SqlAudit/SqlAuditStatusFilter', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
   });
-  
 });

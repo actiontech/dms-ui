@@ -88,7 +88,7 @@ describe('sqle/SqlAudit/SqlAuditTags', () => {
     const { baseElement } = customRender();
     fireEvent.click(queryBySelector('.add-tag-focus-btn', baseElement)!);
     await act(async () => jest.advanceTimersByTime(3000));
-   
+
     const searchInputEle = getBySelector('#extraTag', baseElement);
     await act(async () => {
       fireEvent.input(searchInputEle, {
