@@ -1,4 +1,3 @@
-
 import { renderWithTheme } from '../../../../testUtils/customRender';
 
 import OrderPageHeaderExtra from '.';
@@ -39,7 +38,7 @@ describe('sqle/Order/Create/PageHeaderExtra', () => {
   it('render when is not created', () => {
     const { baseElement } = customRender({
       showCreateOrderForm: false,
-      createdResultVisibility: false,
+      createdResultVisibility: false
     });
     expect(baseElement).toMatchSnapshot();
   });

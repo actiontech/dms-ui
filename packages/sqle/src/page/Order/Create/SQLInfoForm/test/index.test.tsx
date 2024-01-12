@@ -1,4 +1,4 @@
-import { screen, cleanup } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
@@ -22,9 +22,7 @@ describe('sqle/Order/Create/SQLInfoForm', () => {
   const projectName = mockProjectInfo.projectName;
   const projectID = mockProjectInfo.projectID;
   const customRender = () => {
-    const { result } = renderHooksWithTheme(() =>
-      Form.useForm<any>()
-    );
+    const { result } = renderHooksWithTheme(() => Form.useForm<any>());
     const params: Omit<SQLInfoFormItemProps, 'form'> = {
       submit: jest.fn(),
       instanceNameChange: jest.fn(),
@@ -45,7 +43,7 @@ describe('sqle/Order/Create/SQLInfoForm', () => {
     return superRender(
       <Form>
         <SQLInfoForm form={result.current[0]} {...params} />
-      </Form>,
+      </Form>
     );
   };
 
@@ -70,5 +68,5 @@ describe('sqle/Order/Create/SQLInfoForm', () => {
   it('render snap', () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });

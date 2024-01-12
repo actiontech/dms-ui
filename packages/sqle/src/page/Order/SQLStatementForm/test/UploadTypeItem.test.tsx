@@ -43,7 +43,9 @@ describe('sqle/Order/UploadTypeItem', () => {
   });
 
   it('render has children', async () => {
-    const { baseElement } = customRender({ children: <span>children node</span> });
+    const { baseElement } = customRender({
+      children: <span>children node</span>
+    });
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('children node'));
     await act(async () => jest.advanceTimersByTime(300));
