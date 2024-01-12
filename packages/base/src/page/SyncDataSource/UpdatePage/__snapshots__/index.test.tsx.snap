@@ -7,7 +7,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -1478,7 +1478,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -2954,7 +2954,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -4425,7 +4425,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -4595,7 +4595,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"

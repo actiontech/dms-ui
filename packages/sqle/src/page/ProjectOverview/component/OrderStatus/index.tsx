@@ -33,12 +33,18 @@ const OrderStatus = () => {
   );
 
   const { countTotal, otherData } = useMemo(() => {
+    if (!data) {
+      return {
+        countTotal: 0,
+        otherData: null
+      };
+    }
     const orderTotalNum = Object.values(data).reduce((prevNum, currentNum) => {
       return prevNum + currentNum;
     }, 0);
     return {
       countTotal: orderTotalNum,
-      otherData: data
+      otherData: data ?? {}
     };
   }, [data]);
 

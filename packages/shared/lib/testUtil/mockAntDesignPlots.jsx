@@ -15,6 +15,7 @@ const MockPlots = (props) => {
       othersParams[key] = JSON.stringify(othersParams[key]);
     }
   });
+
   return <div {...othersParams} />;
 };
 
@@ -53,5 +54,5 @@ export default {
   RadialBar,
   Gauge,
   Column,
-  G2,
+  G2
 };

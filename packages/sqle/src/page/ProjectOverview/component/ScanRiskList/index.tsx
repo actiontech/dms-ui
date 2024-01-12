@@ -40,7 +40,7 @@ const ScanRiskList = () => {
     apiLoading: loading,
     rowKey: 'audit_plan_report_id',
     errorCont: errorMessage,
-    dataSource: data?.slice(0, 10) // todo: 数据回来为什么是大于 10 条的
+    dataSource: data?.slice(0, 10) // todo: 数据回来为什么是大于 10 条的（由于接口在其他地方有使用，后端暂时未修改接口返回数量，该处仅需展示10条）
   };
 
   const columnData: () => ITableTopList<IRiskAuditPlan>['columns'] = () => {
