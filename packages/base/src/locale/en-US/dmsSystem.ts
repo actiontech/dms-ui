@@ -94,7 +94,7 @@ export default {
       '如果用户已有一套公司内的通用账号密码，想要用这套通用账号密码来登录SQLE时，用户可使用平台的OAuth2.0对接功能，开启并正确配置OAuth2.0，即可在SQLE登录界面使用第三方登录。\n由此，用户可以使用通用账号密码登录，无需额外再记录一套SQLE密码，可提高企业用户工作效率。',
     featureName: '用户对接OAuth2.0',
 
-    enable: '是否启用oauth登录',
+    enable: '是否启用OAuth2.0登录',
     clientId: '应用 ID',
     clientIdTips:
       '应用的唯一标识, 从要对接的平台申请 , 在OAuth2.0认证过程中，appid的值即为oauth_consumer_key的值。',
@@ -105,13 +105,13 @@ export default {
     clientHost: '外部访问SQLE的地址',
     clientHostTips: '格式为 http(s)://ip:port',
 
-    serverAuthUrl: 'oauth2登录授权页面地址',
+    serverAuthUrl: 'OAuth2.0登录授权页面地址',
     serverAuthUrlTips: '格式类似于 http(s)://ip:port/xxx',
 
-    serverTokenUrl: 'oauth2 access_token 获取地址',
+    serverTokenUrl: 'OAuth2.0 access_token 获取地址',
     serverTokenUrlTips: '格式类似于 http(s)://ip:port/xxx',
 
-    serverUserIdUrl: 'oauth2 user id 获取地址',
+    serverUserIdUrl: 'OAuth2.0 user id 获取地址',
     serverUserIdUrlTips: '格式类似于 http(s)://ip:port/xxx',
 
     scopes: '请求资源范围',
@@ -132,7 +132,7 @@ export default {
       'sqle会尝试使用此路径，从第三方平台获取用户信息的响应中解析出用户微信ID',
 
     loginButtonText: '登录按钮文字',
-    loginButtonTextTips: 'login页面oauth登录按钮文字',
+    loginButtonTextTips: 'login页面OAuth2.0登录按钮文字',
     loginButtonTextValidateMessage: '最多输入28个字符'
   },
 
