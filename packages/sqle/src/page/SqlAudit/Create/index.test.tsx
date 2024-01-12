@@ -125,7 +125,9 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('上传SQL文件'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.queryByText('点击选择SQL文件或将文件拖拽到此区域')).not.toBeInTheDocument();
+    expect(
+      screen.queryByText('点击选择SQL文件或将文件拖拽到此区域')
+    ).not.toBeInTheDocument();
     await act(async () => {
       await jest.advanceTimersByTime(2800);
     });
