@@ -5,6 +5,7 @@ import {
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export interface IStepCardProps {
+  stepCardKey?: string;
   key: string;
   disabled: boolean;
   title: React.ReactNode;

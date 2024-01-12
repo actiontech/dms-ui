@@ -22,9 +22,9 @@ const WorkflowTemplateStepInfo: React.FC<IWorkflowTemplateStepInfoProps> = (
         usernameList: props.usernameList
       }).map((step) =>
         step.show ? (
-          <>
+          <React.Fragment key={`${step.key}-wrapper`}>
             <Row
-              key={step.key}
+              key={`${step.key}-row`}
               className={`workflow-step-container ${
                 step.arrow === StepInfoArrowEnum.none
                   ? 'workflow-card-space'
@@ -37,7 +37,7 @@ const WorkflowTemplateStepInfo: React.FC<IWorkflowTemplateStepInfoProps> = (
               </Col>
               <Col key={`${step.key}-box`} className="step-box">
                 <Row key={`${step.key}-card`} wrap={false}>
-                  <StepCard {...step} />
+                  <StepCard {...step} stepCardKey={step.key} />
                 </Row>
               </Col>
             </Row>
@@ -49,7 +49,7 @@ const WorkflowTemplateStepInfo: React.FC<IWorkflowTemplateStepInfoProps> = (
                 ) : null}
               </Row>
             ) : null}
-          </>
+          </React.Fragment>
         ) : null
       )}
     </WorkflowTemplateStepInfoStyleWrapper>

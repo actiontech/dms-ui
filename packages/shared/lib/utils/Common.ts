@@ -18,11 +18,14 @@ export const integerValidate = (value: string): boolean => {
   return reg.test(value);
 };
 
-export const formatTime = (timeString?: string, defaultVal = ''): string => {
-  if (!timeString) {
+export const formatTime = (
+  timeVal?: string | Date,
+  defaultVal = ''
+): string => {
+  if (!timeVal) {
     return defaultVal;
   }
-  return moment(timeString).format('YYYY-MM-DD HH:mm:ss');
+  return moment(timeVal).format('YYYY-MM-DD HH:mm:ss');
 };
 
 export function translateTimeForRequest(time: undefined): undefined;

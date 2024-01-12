@@ -11,7 +11,7 @@ import { WorkflowTemplateStepInfoStyleWrapper } from '../../../components/StepCa
 import { StepInfoStyleWrapper } from '../../style';
 import { PlusOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { useGetLevelData } from '../../../useGetLevelData';
+import { useGetLevelData } from '../../../hooks/useGetLevelData';
 import type { DragEndEvent, DragMoveEvent } from '@dnd-kit/core';
 import {
   DndContext,
@@ -106,7 +106,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
         <WorkflowTemplateStepInfoStyleWrapper>
           {stepData.map((step, index) =>
             step.show ? (
-              <>
+              <React.Fragment key={`${step.key}-step-wrapper`}>
                 {step.key === 'send-plane-step' ? (
                   <Row
                     className="add-review-node-icon workflow-step-container"
@@ -132,7 +132,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
                   />
                 ) : (
                   <Row
-                    key={step.key}
+                    key={`${step.key}-row`}
                     className={`workflow-step-container workflow-card-space`}
                     wrap={false}
                   >
@@ -151,7 +151,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
                     </Col>
                   </Row>
                 )}
-              </>
+              </React.Fragment>
             ) : null
           )}
         </WorkflowTemplateStepInfoStyleWrapper>

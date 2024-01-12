@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/WorkflowTemplate/DraggableCard render draggable card with desc and remove icon 1`] = `
+<body>
+  <div>
+    <div
+      aria-describedby=""
+      aria-disabled="false"
+      aria-roledescription="sortable"
+      class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+      role="button"
+      style="cursor: move;"
+      tabindex="0"
+    >
+      <div
+        class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="honour-icon"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="honour-fill"
+            >
+              <path
+                d="M12.25 2.33341V10.9207C12.2501 10.9773 12.2337 11.0327 12.2028 11.0801C12.172 11.1275 12.1279 11.165 12.0762 11.1878L7.00001 13.4342L1.92384 11.1884C1.87189 11.1655 1.82776 11.1279 1.79688 11.0802C1.766 11.0325 1.74971 10.9769 1.75001 10.9201V2.33341H0.583344V1.16675H13.4167V2.33341H12.25ZM4.66668 7.00008V8.16675H9.33334V7.00008H4.66668ZM4.66668 4.66675V5.83341H9.33334V4.66675H4.66668Z"
+                fill="white"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <span
+                class="step-card-title"
+              >
+                test
+              </span>
+              <div
+                class="step-card-desc"
+              >
+                test desc
+              </div>
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1kuwm0s"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
+                >
+                  <span
+                    aria-label="close"
+                    class="anticon anticon-close"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/WorkflowTemplate/DraggableCard render draggable card with empty desc 1`] = `
+<body>
+  <div>
+    <div
+      aria-describedby=""
+      aria-disabled="false"
+      aria-roledescription="sortable"
+      class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+      role="button"
+      style="cursor: move;"
+      tabindex="0"
+    >
+      <div
+        class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="honour-icon"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="honour-fill"
+            >
+              <path
+                d="M12.25 2.33341V10.9207C12.2501 10.9773 12.2337 11.0327 12.2028 11.0801C12.172 11.1275 12.1279 11.165 12.0762 11.1878L7.00001 13.4342L1.92384 11.1884C1.87189 11.1655 1.82776 11.1279 1.79688 11.0802C1.766 11.0325 1.74971 10.9769 1.75001 10.9201V2.33341H0.583344V1.16675H13.4167V2.33341H12.25ZM4.66668 7.00008V8.16675H9.33334V7.00008H4.66668ZM4.66668 4.66675V5.83341H9.33334V4.66675H4.66668Z"
+                fill="white"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <span
+                class="step-card-title"
+              >
+                test
+              </span>
+              <div
+                class="step-card-desc"
+              >
+                -
+              </div>
+              <div
+                class="step-card-operator"
+              >
+                <div
+                  class="operator-title"
+                >
+                  review
+                </div>
+                <div
+                  class="operator-content"
+                >
+                  admin
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/WorkflowTemplate/DraggableCard render no card 1`] = `
+<body>
+  <div>
+    <div
+      aria-describedby=""
+      aria-disabled="false"
+      aria-roledescription="sortable"
+      class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+      role="button"
+      style="cursor: move;"
+      tabindex="0"
+    >
+      <div
+        class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="honour-icon"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="honour-fill"
+            >
+              <path
+                d="M12.25 2.33341V10.9207C12.2501 10.9773 12.2337 11.0327 12.2028 11.0801C12.172 11.1275 12.1279 11.165 12.0762 11.1878L7.00001 13.4342L1.92384 11.1884C1.87189 11.1655 1.82776 11.1279 1.79688 11.0802C1.766 11.0325 1.74971 10.9769 1.75001 10.9201V2.33341H0.583344V1.16675H13.4167V2.33341H12.25ZM4.66668 7.00008V8.16675H9.33334V7.00008H4.66668ZM4.66668 4.66675V5.83341H9.33334V4.66675H4.66668Z"
+                fill="white"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <span
+                class="step-card-title"
+              >
+                test
+              </span>
+              <div
+                class="step-card-desc"
+              >
+                -
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
