@@ -26,6 +26,8 @@ const Gauge = MockPlots;
 const Column = MockPlots;
 const Treemap = MockPlots;
 const Area = MockPlots;
+const Bar = MockPlots;
+const RingProgress = MockPlots;
 const mockRegisterShape = jest.fn();
 const G2 = {
   registerShape: jest.fn()
@@ -40,7 +42,9 @@ export {
   G2,
   mockRegisterShape,
   Treemap,
-  Area
+  Area,
+  Bar,
+  RingProgress
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
