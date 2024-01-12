@@ -1130,7 +1130,7 @@ exports[`sqle/Order/Create/EditSQLInfoDrawer render snap when open & audit 1`] =
                                 height="400px"
                                 id="0_sql"
                                 language="sql"
-                                options="[object Object]"
+                                options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                                 value="/* input your sql */"
                                 width="100%"
                               />
@@ -2399,7 +2399,7 @@ exports[`sqle/Order/Create/EditSQLInfoDrawer render snap when open 1`] = `
                                   height="400px"
                                   id="0_sql"
                                   language="sql"
-                                  options="[object Object]"
+                                  options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                                   value="/* input your sql */"
                                   width="100%"
                                 />
