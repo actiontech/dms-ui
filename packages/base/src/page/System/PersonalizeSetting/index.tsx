@@ -17,7 +17,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useMemo } from 'react';
 import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
-import useSystemConfig from '../../../hooks/useSystemConfig.tsx';
+import useSystemConfig from '../../../hooks/useSystemConfig';
 
 const PersonalizeSetting: React.FC = () => {
   const { t } = useTranslation();
