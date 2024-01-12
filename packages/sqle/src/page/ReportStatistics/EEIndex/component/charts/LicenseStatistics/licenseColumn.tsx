@@ -8,17 +8,13 @@ import useGetConfig from '../../../../../../components/ChartCom/ChartTooltip/use
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
-interface ILicenseColumn {
+export interface ILicenseColumn {
   data: ColumnConfig['data'];
   onReady: ColumnConfig['onReady'];
 }
 
 const labelFontSize = 12;
 
-/**
- * todo
-  动画效果：label 默认么得，经过的时候才显示
- */
 const LicenseColumn = memo(
   ({ data, onReady }: ILicenseColumn) => {
     const { t } = useTranslation();

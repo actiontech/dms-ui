@@ -11,7 +11,7 @@ import {
   workflowMockData
 } from './data';
 
-class MockAccountApi implements MockSpyApy {
+class MockHomeApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getRiskAuditPlan();
     this.getWorkflows();
@@ -49,4 +49,4 @@ class MockAccountApi implements MockSpyApy {
   }
 }
 
-export default new MockAccountApi();
+export default new MockHomeApi();

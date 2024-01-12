@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/topList/ColumnIndex render snap ColumnIndex 1`] = `
+<body>
+  <div>
+    <div
+      class="css-2dr1r5"
+    >
+      <span
+        class="index-box"
+      >
+        1
+      </span>
+      <span>
+        children string
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/topList/ColumnIndex render snap ColumnIndex when children node 1`] = `
+<body>
+  <div>
+    <div
+      class="css-2dr1r5"
+    >
+      <span
+        class="index-box"
+      >
+        1
+      </span>
+      <span>
+        <span>
+          children node
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;

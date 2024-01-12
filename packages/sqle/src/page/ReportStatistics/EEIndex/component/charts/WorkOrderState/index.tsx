@@ -14,7 +14,7 @@ import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 
 /**
- * todo
+ * 注意：
   - api：请求还是在这个页面， 因为上线成功的数据是 全部状态中的数据
       数据返回工单总数，每个状态的工单百分比值
         前端算百分比的时候，需要注意所有百分比加起来等于 100%
