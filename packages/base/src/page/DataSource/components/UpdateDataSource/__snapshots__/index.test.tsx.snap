@@ -7,7 +7,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -1112,7 +1112,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -2241,7 +2241,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -3235,7 +3235,7 @@ exports[`page/DataSource/UpdateDataSource render get default val error 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -3381,7 +3381,7 @@ exports[`page/DataSource/UpdateDataSource render get default val error 2`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -3550,7 +3550,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"

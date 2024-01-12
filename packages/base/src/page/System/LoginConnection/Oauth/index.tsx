@@ -97,7 +97,9 @@ const Oauth = () => {
       server_user_id_url: value.serverUserIdUrl,
       access_token_tag: value.accessTokenKeyName,
       login_tip: value.loginButtonText,
-      user_id_tag: value.userIdKeyName
+      user_id_tag: value.userIdKeyName,
+      user_email_tag: value.userEmailTag,
+      user_wechat_tag: value.userWechatTag
     };
 
     if (!!value.scopes) {
@@ -131,7 +133,9 @@ const Oauth = () => {
       scopes: oauthConfig?.scopes?.join(','),
       accessTokenKeyName: oauthConfig?.access_token_tag,
       loginButtonText: oauthConfig?.login_tip,
-      userIdKeyName: oauthConfig?.user_id_tag
+      userIdKeyName: oauthConfig?.user_id_tag,
+      userEmailTag: oauthConfig?.user_email_tag,
+      userWechatTag: oauthConfig?.user_wechat_tag
     });
   }, [form, oauthConfig]);
 
@@ -242,6 +246,32 @@ const Oauth = () => {
           ),
           span: 3,
           dataIndex: 'user_id_tag',
+          hidden: !oauthConfig?.enable_oauth2
+        },
+        {
+          label: (
+            <BasicToolTips
+              title={t('dmsSystem.oauth.userEmailTagNameTips')}
+              suffixIcon={<IconTipGray />}
+            >
+              {t('dmsSystem.oauth.userEmailTagName')}
+            </BasicToolTips>
+          ),
+          span: 3,
+          dataIndex: 'user_email_tag',
+          hidden: !oauthConfig?.enable_oauth2
+        },
+        {
+          label: (
+            <BasicToolTips
+              title={t('dmsSystem.oauth.userWechatTagNameTips')}
+              suffixIcon={<IconTipGray />}
+            >
+              {t('dmsSystem.oauth.userWechatTagName')}
+            </BasicToolTips>
+          ),
+          span: 3,
+          dataIndex: 'user_wechat_tag',
           hidden: !oauthConfig?.enable_oauth2
         },
         {
@@ -456,6 +486,30 @@ const Oauth = () => {
                         })
                       }
                     ]}
+                  >
+                    <BasicInput />
+                  </FormItemLabel>
+                  <FormItemLabel
+                    className="has-label-tip"
+                    label={
+                      <CustomLabelContent
+                        title={t('dmsSystem.oauth.userEmailTagName')}
+                        tips={t('dmsSystem.oauth.userEmailTagNameTips')}
+                      />
+                    }
+                    name="userEmailTag"
+                  >
+                    <BasicInput />
+                  </FormItemLabel>
+                  <FormItemLabel
+                    className="has-label-tip"
+                    label={
+                      <CustomLabelContent
+                        title={t('dmsSystem.oauth.userWechatTagName')}
+                        tips={t('dmsSystem.oauth.userWechatTagNameTips')}
+                      />
+                    }
+                    name="userWechatTag"
                   >
                     <BasicInput />
                   </FormItemLabel>

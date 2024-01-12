@@ -14,6 +14,7 @@ const StepCard: React.FC<IStepCardProps> = (props) => {
       hoverable={!props.disabled}
       className={`step-card-style ${props.disabled ? 'disable-step-card' : ''}`}
       onClick={() => props?.click?.(props?.indexNumber ?? 0)}
+      key={`${props.stepCardKey}-wrapper`}
     >
       <span className="step-card-title">{props.title}</span>
       <div className="step-card-desc">{props.desc || '-'}</div>

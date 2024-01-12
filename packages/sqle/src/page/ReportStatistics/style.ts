@@ -6,7 +6,7 @@ export const ReportStatisticsEEIndexStyleWrapper = styled('section')`
 `;
 
 export const EEIndexStyleWrapper = styled('section')`
-  padding: 30px 40px;
+  padding: 60px 40px 30px;
   min-width: 880px;
 
   .marginTop20 {

@@ -8,7 +8,6 @@ import dayjs from 'dayjs';
 import { renderHook } from '@testing-library/react-hooks';
 import useSystemConfig from '.';
 import { render } from '@testing-library/react';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

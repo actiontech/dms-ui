@@ -33,10 +33,6 @@ import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 const dateFormat = 'YYYY-MM-DD';
 type RangeValue = [Dayjs | null, Dayjs | null] | null;
 
-/* todo:
-  图表：hover y 实线，circle 的 hover 样式,
-  api： tooltip 数据 新增工单？？？
-*/
 const OrderQuantityTrend = () => {
   const { t } = useTranslation();
   const { currentTheme } = useChangeTheme();
