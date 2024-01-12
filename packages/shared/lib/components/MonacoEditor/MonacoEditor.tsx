@@ -1,6 +1,6 @@
 import { EditorProps } from '@monaco-editor/react';
-import { MonacoEditorStyleWrapper } from './style';
 import classNames from 'classnames';
+import { MonacoEditorStyleWrapper } from './style';
 
 import './monacoEditorConfig';
 
