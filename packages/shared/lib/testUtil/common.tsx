@@ -29,6 +29,15 @@ export const ignoreAntdUseFormNotConnectedError = () => {
       ) {
         return;
       }
+
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes(
+          '[antd: Form.Item] `name` is only used for validate React element. If you are using Form.Item as layout display, please remove `name` instead.'
+        )
+      ) {
+        return;
+      }
       error(...arg);
     };
   });
