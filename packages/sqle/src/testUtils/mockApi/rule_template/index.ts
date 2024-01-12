@@ -4,7 +4,12 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { projectRuleTemplateList, ruleTemplateList } from './data';
+import {
+  projectRuleTemplateList,
+  ruleKnowledgeData,
+  ruleListData,
+  ruleTemplateList
+} from './data';
 
 class MockRuleTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -41,7 +46,7 @@ class MockRuleTemplateApi implements MockSpyApy {
     const spy = jest.spyOn(rule_template, 'getCustomRuleKnowledgeV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: {}
+        data: ruleKnowledgeData
       })
     );
     return spy;
@@ -51,7 +56,7 @@ class MockRuleTemplateApi implements MockSpyApy {
     const spy = jest.spyOn(rule_template, 'getRuleKnowledgeV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: {}
+        data: ruleKnowledgeData
       })
     );
     return spy;
@@ -61,7 +66,7 @@ class MockRuleTemplateApi implements MockSpyApy {
     const spy = jest.spyOn(rule_template, 'getRuleListV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: []
+        data: ruleListData
       })
     );
     return spy;

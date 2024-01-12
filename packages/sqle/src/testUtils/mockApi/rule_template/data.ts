@@ -23,3 +23,28 @@ export const projectRuleTemplateList = [
     db_type: 'mysql'
   }
 ];
+
+export const ruleListData = [
+  {
+    annotation:
+      '因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100',
+    db_type: 'MySQL',
+    desc: '绑定的变量个数不建议超过阈值',
+    is_custom_rule: false,
+    level: 'error',
+    params: [
+      { key: 'first_key', value: '100', desc: '最大绑定变量数量', type: 'int' }
+    ],
+    rule_name: 'all_check_prepare_statement_placeholders',
+    type: '使用建议'
+  }
+];
+
+export const ruleKnowledgeData = {
+  knowledge_content: '123',
+  rule: {
+    desc: '绑定的变量个数不建议超过阈值',
+    annotation:
+      '因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100'
+  }
+};
