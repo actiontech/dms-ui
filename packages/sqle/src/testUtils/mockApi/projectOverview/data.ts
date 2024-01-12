@@ -96,17 +96,10 @@ export const statisticAuditPlanData = [
         audit_plan_desc: '自定义',
         audit_plan_type: 'default'
       }
-    ],
-    db_type: '1'
+    ]
   },
   {
-    data: [
-      {
-        audit_plan_count: 1,
-        audit_plan_desc: '自定义',
-        audit_plan_type: 'default'
-      }
-    ],
+    data: [],
     db_type: '2'
   },
   {

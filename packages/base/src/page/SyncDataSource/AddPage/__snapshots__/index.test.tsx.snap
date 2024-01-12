@@ -7,7 +7,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -495,7 +495,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -1942,7 +1942,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"

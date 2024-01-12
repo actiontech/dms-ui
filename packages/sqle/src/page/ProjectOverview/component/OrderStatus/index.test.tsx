@@ -63,7 +63,7 @@ describe('page/ProjectOverview/OrderStatus', () => {
     const request = projectOverview.getStatisticWorkflowStatus();
     request.mockImplementation(() =>
       createSpySuccessResponse({
-        data: null
+        data: ''
       })
     );
     const { baseElement } = customRender();
