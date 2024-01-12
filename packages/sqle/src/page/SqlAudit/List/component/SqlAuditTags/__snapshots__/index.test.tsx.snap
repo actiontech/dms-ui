@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/SqlAudit/SqlAuditTags add tag 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+        >
+          test
+          <span
+            aria-label="close"
+            class="anticon anticon-close ant-tag-close-icon"
+            role="img"
+            tabindex="-1"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="close"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only add-tag-focus-btn ant-popover-open css-1g5ngt8"
+          type="button"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <span
+              aria-label="plus"
+              class="anticon anticon-plus"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="plus"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <defs>
+                  <style />
+                </defs>
+                <path
+                  d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
+                />
+                <path
+                  d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-popover custom-tags-box css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; width: 360px; padding-top: 0px;"
+    >
+      <div
+        class="ant-popover-arrow"
+        style="position: absolute; bottom: 0px; left: 0px;"
+      />
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-spin-container"
+              >
+                <div
+                  class="tag-content-wrapper css-1fboka5"
+                >
+                  <div
+                    class="custom-tag-item"
+                  >
+                    <span
+                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+                    >
+                      test
+                    </span>
+                  </div>
+                  <div
+                    class="custom-tag-item"
+                  >
+                    <span
+                      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+                    >
+                      test1
+                    </span>
+                  </div>
+                  <div
+                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                    role="separator"
+                    style="margin-top: 2px; margin-bottom: 8px;"
+                  />
+                  <form
+                    class="ant-form ant-form-inline css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <input
+                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                id="extraTag"
+                                placeholder="请输入新增的业务标签"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <span
+                                    aria-label="plus"
+                                    class="anticon anticon-plus"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="plus"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <defs>
+                                        <style />
+                                      </defs>
+                                      <path
+                                        d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
+                                      />
+                                      <path
+                                        d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                                <span>
+                                  新增业务标签
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/SqlAudit/SqlAuditTags should match snap shot 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+        >
+          test
+          <span
+            aria-label="close"
+            class="anticon anticon-close ant-tag-close-icon"
+            role="img"
+            tabindex="-1"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="close"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only add-tag-focus-btn css-1g5ngt8"
+          type="button"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <span
+              aria-label="plus"
+              class="anticon anticon-plus"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="plus"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <defs>
+                  <style />
+                </defs>
+                <path
+                  d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
+                />
+                <path
+                  d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
