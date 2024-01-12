@@ -19,6 +19,7 @@ import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 /**
  * todo: 图表的多行 label
+  - 从antd plots的自有属性上，多行文本居中对齐并未解决
  */
 const DatabaseTypeOrder = () => {
   const { t } = useTranslation();

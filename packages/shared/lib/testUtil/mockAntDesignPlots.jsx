@@ -32,7 +32,19 @@ const G2 = {
   registerShape: jest.fn()
 };
 
-export { Line, Pie, RadialBar, Gauge, Column, G2, mockRegisterShape, Treemap, Area, Bar, RingProgress };
+export {
+  Line,
+  Pie,
+  RadialBar,
+  Gauge,
+  Column,
+  G2,
+  mockRegisterShape,
+  Treemap,
+  Area,
+  Bar,
+  RingProgress
+};
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

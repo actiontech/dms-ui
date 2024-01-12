@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/WorkflowTemplate/StepButton render step button with no button 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1uvv7g7"
+    />
+  </div>
+</body>
+`;
+
+exports[`page/WorkflowTemplate/StepButton render step button with no prev button 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1uvv7g7"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          下一步
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/WorkflowTemplate/StepButton render step button with prev button and next button 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1uvv7g7"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          上一步
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          下一步
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;

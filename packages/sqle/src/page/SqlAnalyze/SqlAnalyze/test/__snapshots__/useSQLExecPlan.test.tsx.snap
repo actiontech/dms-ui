@@ -1,0 +1,615 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have data 1`] = `
+<Space
+  className="full-width-element"
+  direction="vertical"
+  size={0}
+>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      SQL语句
+    </h3>
+    <section
+      className="basic-cont-wrapper sql-cont"
+    >
+      <pre
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<span class=\\"hljs-keyword\\">CREATE</span> <span class=\\"hljs-keyword\\">TABLE</span> IF <span class=\\"hljs-keyword\\">NOT</span> <span class=\\"hljs-keyword\\">EXISTS</span> task (  id <span class=\\"hljs-type\\">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class=\\"hljs-keyword\\">PRIMARY</span> KEY,  title <span class=\\"hljs-type\\">VARCHAR</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">NOT</span> <span class=\\"hljs-keyword\\">NULL</span> <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-string\\">&#x27;&#x27;</span>,  description TEXT,  status ENUM(<span class=\\"hljs-string\\">&#x27;pending&#x27;</span>, <span class=\\"hljs-string\\">&#x27;completed&#x27;</span>) <span class=\\"hljs-keyword\\">NOT</span> <span class=\\"hljs-keyword\\">NULL</span> <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-string\\">&#x27;pending&#x27;</span>,  created_at <span class=\\"hljs-type\\">TIMESTAMP</span> <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span>,  updated_at <span class=\\"hljs-type\\">TIMESTAMP</span> <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span> <span class=\\"hljs-keyword\\">ON</span> <span class=\\"hljs-keyword\\">UPDATE</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span>);",
+          }
+        }
+      />
+    </section>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      执行计划
+    </h3>
+    <EmptyBox
+      defaultNode={
+        <BasicResult
+          status="error"
+        />
+      }
+      if={true}
+    >
+      <BasicTable
+        columns={Array []}
+        dataSource={Array []}
+        pagination={false}
+      />
+    </EmptyBox>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      性能统计
+    </h3>
+    <section
+      className="basic-cont-wrapper"
+    >
+      <EmptyBox
+        defaultNode={
+          <BasicResult
+            status="error"
+            title="Error: undefined"
+          />
+        }
+        if={true}
+      >
+        <div
+          className="line-wrapper"
+        >
+          <div
+            className="line-left"
+          >
+            <IconSqlLine
+              className="icon-line"
+            />
+            <div
+              className="line-desc"
+            >
+              <h3>
+                影响行数
+              </h3>
+              <p
+                className="line-text"
+              >
+                区别于执行计划的rows列，显示SQL的实际影响行数
+              </p>
+            </div>
+          </div>
+          <div
+            className="number-cont"
+          >
+            --
+          </div>
+        </div>
+      </EmptyBox>
+    </section>
+  </React.Fragment>
+</Space>
+`;
+
+exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have data 2`] = `
+<Space
+  className="full-width-element"
+  direction="vertical"
+  size={0}
+>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      SQL语句
+    </h3>
+    <section
+      className="basic-cont-wrapper sql-cont"
+    >
+      <pre
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+      />
+    </section>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      执行计划
+    </h3>
+    <EmptyBox
+      defaultNode={
+        <BasicResult
+          status="error"
+        />
+      }
+      if={true}
+    >
+      <BasicTable
+        columns={
+          Array [
+            Object {
+              "dataIndex": "id",
+              "render": [Function],
+              "title": "id",
+            },
+            Object {
+              "dataIndex": "select_type",
+              "render": [Function],
+              "title": "select_type",
+            },
+            Object {
+              "dataIndex": "table",
+              "render": [Function],
+              "title": "table",
+            },
+            Object {
+              "dataIndex": "partitions",
+              "render": [Function],
+              "title": "partitions",
+            },
+            Object {
+              "dataIndex": "type",
+              "render": [Function],
+              "title": "type",
+            },
+            Object {
+              "dataIndex": "possible_keys",
+              "render": [Function],
+              "title": "possible_keys",
+            },
+            Object {
+              "dataIndex": "key",
+              "render": [Function],
+              "title": "key",
+            },
+            Object {
+              "dataIndex": "key_len",
+              "render": [Function],
+              "title": "key_len",
+            },
+            Object {
+              "dataIndex": "ref",
+              "render": [Function],
+              "title": "ref",
+            },
+            Object {
+              "dataIndex": "rows",
+              "render": [Function],
+              "title": "rows",
+            },
+            Object {
+              "dataIndex": "filtered",
+              "render": [Function],
+              "title": "filtered",
+            },
+            Object {
+              "dataIndex": "Extra",
+              "render": [Function],
+              "title": "Extra",
+            },
+          ]
+        }
+        dataSource={
+          Array [
+            Object {
+              "Extra": "",
+              "filtered": "100.00",
+              "id": "1",
+              "key": "",
+              "key_len": "",
+              "partitions": "",
+              "possible_keys": "",
+              "ref": "",
+              "rows": "1",
+              "select_type": "SIMPLE",
+              "table": "users",
+              "type": "ALL",
+            },
+          ]
+        }
+        pagination={false}
+      />
+    </EmptyBox>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      性能统计
+    </h3>
+    <section
+      className="basic-cont-wrapper"
+    >
+      <EmptyBox
+        defaultNode={
+          <BasicResult
+            status="error"
+            title="Error: undefined"
+          />
+        }
+        if={true}
+      >
+        <div
+          className="line-wrapper"
+        >
+          <div
+            className="line-left"
+          >
+            <IconSqlLine
+              className="icon-line"
+            />
+            <div
+              className="line-desc"
+            >
+              <h3>
+                影响行数
+              </h3>
+              <p
+                className="line-text"
+              >
+                区别于执行计划的rows列，显示SQL的实际影响行数
+              </p>
+            </div>
+          </div>
+          <div
+            className="number-cont"
+          >
+            --
+          </div>
+        </div>
+      </EmptyBox>
+    </section>
+  </React.Fragment>
+</Space>
+`;
+
+exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have data 3`] = `
+<Space
+  className="full-width-element"
+  direction="vertical"
+  size={0}
+>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      SQL语句
+    </h3>
+    <section
+      className="basic-cont-wrapper sql-cont"
+    >
+      <pre
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+      />
+    </section>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      执行计划
+    </h3>
+    <EmptyBox
+      defaultNode={
+        <BasicResult
+          status="error"
+        />
+      }
+      if={true}
+    >
+      <BasicTable
+        columns={Array []}
+        dataSource={Array []}
+        pagination={false}
+      />
+    </EmptyBox>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      性能统计
+    </h3>
+    <section
+      className="basic-cont-wrapper"
+    >
+      <EmptyBox
+        defaultNode={
+          <BasicResult
+            status="error"
+            title="Error: affect_rows error"
+          />
+        }
+        if={false}
+      >
+        <div
+          className="line-wrapper"
+        >
+          <div
+            className="line-left"
+          >
+            <IconSqlLine
+              className="icon-line"
+            />
+            <div
+              className="line-desc"
+            >
+              <h3>
+                影响行数
+              </h3>
+              <p
+                className="line-text"
+              >
+                区别于执行计划的rows列，显示SQL的实际影响行数
+              </p>
+            </div>
+          </div>
+          <div
+            className="number-cont"
+          >
+            --
+          </div>
+        </div>
+      </EmptyBox>
+    </section>
+  </React.Fragment>
+</Space>
+`;
+
+exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have data 4`] = `
+<Space
+  className="full-width-element"
+  direction="vertical"
+  size={0}
+>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      SQL语句
+    </h3>
+    <section
+      className="basic-cont-wrapper sql-cont"
+    >
+      <pre
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+      />
+    </section>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      执行计划
+    </h3>
+    <EmptyBox
+      defaultNode={
+        <BasicResult
+          status="error"
+        />
+      }
+      if={true}
+    >
+      <BasicTable
+        columns={Array []}
+        dataSource={Array []}
+        pagination={false}
+      />
+    </EmptyBox>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      性能统计
+    </h3>
+    <section
+      className="basic-cont-wrapper"
+    >
+      <EmptyBox
+        defaultNode={
+          <BasicResult
+            status="error"
+            title="Error: "
+          />
+        }
+        if={true}
+      >
+        <div
+          className="line-wrapper"
+        >
+          <div
+            className="line-left"
+          >
+            <IconSqlLine
+              className="icon-line"
+            />
+            <div
+              className="line-desc"
+            >
+              <h3>
+                影响行数
+              </h3>
+              <p
+                className="line-text"
+              >
+                区别于执行计划的rows列，显示SQL的实际影响行数
+              </p>
+            </div>
+          </div>
+          <div
+            className="number-cont"
+          >
+            10
+          </div>
+        </div>
+      </EmptyBox>
+    </section>
+  </React.Fragment>
+</Space>
+`;
+
+exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have err_message 1`] = `
+<Space
+  className="full-width-element"
+  direction="vertical"
+  size={0}
+>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      SQL语句
+    </h3>
+    <section
+      className="basic-cont-wrapper sql-cont"
+    >
+      <pre
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+      />
+    </section>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      执行计划
+    </h3>
+    <EmptyBox
+      defaultNode={
+        <BasicResult
+          status="error"
+        />
+      }
+      if={true}
+    >
+      <BasicTable
+        columns={Array []}
+        dataSource={Array []}
+        pagination={false}
+      />
+    </EmptyBox>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      性能统计
+    </h3>
+    <section
+      className="basic-cont-wrapper"
+    >
+      <EmptyBox
+        defaultNode={
+          <BasicResult
+            status="error"
+            title="Error: undefined"
+          />
+        }
+        if={true}
+      >
+        <div
+          className="line-wrapper"
+        >
+          <div
+            className="line-left"
+          >
+            <IconSqlLine
+              className="icon-line"
+            />
+            <div
+              className="line-desc"
+            >
+              <h3>
+                影响行数
+              </h3>
+              <p
+                className="line-text"
+              >
+                区别于执行计划的rows列，显示SQL的实际影响行数
+              </p>
+            </div>
+          </div>
+          <div
+            className="number-cont"
+          >
+            --
+          </div>
+        </div>
+      </EmptyBox>
+    </section>
+  </React.Fragment>
+</Space>
+`;
+
+exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have err_message 2`] = `
+<Space
+  className="full-width-element"
+  direction="vertical"
+  size={0}
+>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      SQL语句
+    </h3>
+    <section
+      className="basic-cont-wrapper sql-cont"
+    >
+      <pre
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+      />
+    </section>
+  </React.Fragment>
+  <React.Fragment>
+    <h3
+      className="header-title"
+    >
+      执行计划
+    </h3>
+    <EmptyBox
+      defaultNode={
+        <BasicResult
+          status="error"
+          title="sql_explain err_message"
+        />
+      }
+      if={false}
+    >
+      <BasicTable
+        columns={Array []}
+        dataSource={Array []}
+        pagination={false}
+      />
+    </EmptyBox>
+  </React.Fragment>
+</Space>
+`;

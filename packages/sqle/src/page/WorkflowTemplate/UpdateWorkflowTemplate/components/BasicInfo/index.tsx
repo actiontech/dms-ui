@@ -7,8 +7,6 @@ import { BaseFormProps } from './index.type';
 import useStaticStatus from '../../../../../hooks/useStaticStatus';
 import StepButton from '../StepButton';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import EventEmitter from '../../../../../utils/EventEmitter';
-import EmitterKey from '../../../../../data/EmitterKey';
 
 const BasicInfo: React.FC<BaseFormProps> = (props) => {
   const { t } = useTranslation();
@@ -22,23 +20,6 @@ const BasicInfo: React.FC<BaseFormProps> = (props) => {
     props.updateBaseInfo(value?.allowSubmitWhenLessAuditLevel);
     props.nextStep();
   };
-
-  useEffect(() => {
-    const resetAllForm = () => {
-      form.resetFields();
-    };
-    EventEmitter.subscribe(
-      EmitterKey.Reset_Workflow_Template_Form,
-      resetAllForm
-    );
-    return () => {
-      EventEmitter.unsubscribe(
-        EmitterKey.Reset_Workflow_Template_Form,
-        resetAllForm
-      );
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     if (!!props.defaultData) {
