@@ -412,6 +412,10 @@ export interface IGetOauth2ConfigurationResData {
   server_user_id_url?: string;
 
   user_id_tag?: string;
+
+  user_email_tag?: string;
+
+  user_wechat_tag?: string;
 }
 
 export interface IGetOauth2ConfigurationResDataReply {
@@ -946,6 +950,10 @@ export interface IOauth2Configuration {
   server_user_id_url?: string;
 
   user_id_tag?: string;
+
+  user_email_tag?: string;
+
+  user_wechat_tag?: string;
 }
 
 export interface IOpPermissionItem {
