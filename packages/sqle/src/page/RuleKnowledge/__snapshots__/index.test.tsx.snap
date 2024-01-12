@@ -4,7 +4,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -119,7 +119,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -234,7 +234,7 @@ exports[`page/RuleKnowledge update rule and refresh 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
