@@ -1,7 +1,7 @@
 import { cloneDeep, isObject } from 'lodash';
 
 const mockEditor = (props) => {
-  const { onMount, onChange, ...otherProps } = props;
+  const { onMount, onChange, value, ...otherProps } = props;
 
   const cloneProps = cloneDeep(otherProps);
 
@@ -10,12 +10,18 @@ const mockEditor = (props) => {
       cloneProps[key] = JSON.stringify(cloneProps[key]);
     }
   });
-  return <input onChange={(e) => onChange(e.target.value)} {...cloneProps} />;
+  return (
+    <input
+      onChange={(e) => onChange(e.target.value)}
+      value={value ?? ''}
+      {...cloneProps}
+    />
+  );
 };
 
 mockEditor.Markdown = (props) => {
-  const { onMount, ...otherProps } = props;
-  return <input {...otherProps} />;
+  const { source, ...otherProps } = props;
+  return <div {...otherProps}>{source}</div>;
 };
 
 export const loader = {
