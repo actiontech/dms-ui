@@ -10,6 +10,7 @@ import EmitterKey from '../../../../data/EmitterKey';
 import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
+import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -19,6 +20,8 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('page/ProjectOverview/ProjectScore', () => {
+  ignoreAntdPlotsAttr();
+
   const navigateSpy = jest.fn();
   let request: jest.SpyInstance;
 

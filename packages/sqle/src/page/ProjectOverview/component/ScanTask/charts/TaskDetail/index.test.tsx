@@ -4,8 +4,11 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { statisticAuditPlanData } from '../../../../../../testUtils/mockApi/projectOverview/data';
+import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 
 describe('page/ProjectOverview/TaskDetail', () => {
+  ignoreAntdPlotsAttr();
+
   const mockRefresh = jest.fn();
 
   const taskDetailProps = {
