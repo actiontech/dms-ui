@@ -9,9 +9,7 @@ exports[`lib/BasicChart render type is column 1`] = `
       class="ant-card-body"
     >
       <div
-        data="[{\\"x\\":1}]"
-        locale="zh-cn"
-        theme="dark"
+        data-custom-params="{\\"data\\":[{\\"x\\":1}],\\"theme\\":\\"dark\\",\\"locale\\":\\"zh-cn\\"}"
       />
     </div>
   </div>
@@ -238,8 +236,7 @@ exports[`lib/BasicChart render type is line 4`] = `
       class="ant-card-body"
     >
       <div
-        data="[{\\"x\\":1}]"
-        theme="dark"
+        data-custom-params="{\\"data\\":[{\\"x\\":1}],\\"theme\\":\\"dark\\"}"
       />
     </div>
   </div>

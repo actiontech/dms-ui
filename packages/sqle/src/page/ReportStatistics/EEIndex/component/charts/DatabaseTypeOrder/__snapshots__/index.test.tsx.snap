@@ -61,13 +61,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render chart snap 2`] = `
         class="chart-box"
       >
         <div
-          class="database-type-order-charts"
-          color="[\\"#7470ED\\",\\"#6094FC\\",\\"#3DB5F1\\",\\"#1ACEDB\\",\\"#4BCCA6\\"]"
-          colorfield="value"
-          data="{\\"name\\":\\"root\\",\\"children\\":[{\\"name\\":\\"mysql\\",\\"value\\":2},{\\"name\\":\\"oracle\\",\\"value\\":10000}]}"
-          rectstyle="{\\"lineWidth\\":4,\\"radius\\":4,\\"radiusTopLeft\\":4,\\"radiusTopRight\\":4,\\"radiusBottomRight\\":4,\\"radiusBottomLeft\\":4,\\"lineCap\\":\\"round\\",\\"lineJoin\\":\\"round\\",\\"fontSize\\":16}"
-          theme="light"
-          tooltip="{\\"fields\\":[\\"name\\",\\"value\\"],\\"domStyles\\":{\\"g2-tooltip\\":{\\"width\\":\\"170px\\",\\"height\\":\\"auto\\",\\"borderRadius\\":\\"8px\\",\\"background\\":\\"#fcfbf9\\",\\"border\\":\\"1px solid #ebe9e8\\",\\"boxShadow\\":\\"0 3px 12px 0 #332c1f1a\\",\\"padding\\":\\"0 12px\\"}}}"
+          data-custom-params="{\\"className\\":\\"database-type-order-charts\\",\\"data\\":{\\"name\\":\\"root\\",\\"children\\":[{\\"name\\":\\"mysql\\",\\"value\\":2},{\\"name\\":\\"oracle\\",\\"value\\":10000}]},\\"legend\\":false,\\"colorField\\":\\"value\\",\\"color\\":[\\"#7470ED\\",\\"#6094FC\\",\\"#3DB5F1\\",\\"#1ACEDB\\",\\"#4BCCA6\\"],\\"rectStyle\\":{\\"lineWidth\\":4,\\"radius\\":4,\\"radiusTopLeft\\":4,\\"radiusTopRight\\":4,\\"radiusBottomRight\\":4,\\"radiusBottomLeft\\":4,\\"lineCap\\":\\"round\\",\\"lineJoin\\":\\"round\\",\\"fontSize\\":16},\\"label\\":{\\"style\\":{\\"fontFamily\\":\\"PlusJakartaSans Medium\\",\\"textAlign\\":\\"center\\",\\"fontSize\\":12,\\"fontWeight\\":600,\\"lineHeight\\":19,\\"opacity\\":0.8,\\"fill\\":\\"#fff\\"},\\"fields\\":[\\"name\\",\\"value\\"]},\\"tooltip\\":{\\"fields\\":[\\"name\\",\\"value\\"],\\"domStyles\\":{\\"g2-tooltip\\":{\\"width\\":\\"170px\\",\\"height\\":\\"auto\\",\\"borderRadius\\":\\"8px\\",\\"background\\":\\"#fcfbf9\\",\\"border\\":\\"1px solid #ebe9e8\\",\\"boxShadow\\":\\"0 3px 12px 0 #332c1f1a\\",\\"padding\\":\\"0 12px\\"}}},\\"theme\\":\\"light\\"}"
         />
       </div>
     </div>
