@@ -756,7 +756,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                     class="css-8qroj2"
                   >
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -809,7 +809,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -862,7 +862,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -915,7 +915,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -968,13 +968,12 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1vefa11"
+                      class="update-type-item-wrapper css-16nz79o"
                     >
                       <span
                         aria-label="setting"
-                        class="anticon anticon-setting"
+                        class="anticon anticon-setting custom-icon"
                         role="img"
-                        style="color: rgb(195, 198, 205);"
                       >
                         <svg
                           aria-hidden="true"
@@ -2061,7 +2060,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                     class="css-8qroj2"
                   >
                     <div
-                      class="update-type-item-wrapper css-1vefa11"
+                      class="update-type-item-wrapper css-16nz79o"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -2113,7 +2112,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -2166,7 +2165,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -2219,7 +2218,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -2272,13 +2271,12 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         aria-label="setting"
-                        class="anticon anticon-setting"
+                        class="anticon anticon-setting custom-icon"
                         role="img"
-                        style="color: rgb(195, 198, 205);"
                       >
                         <svg
                           aria-hidden="true"
@@ -3369,7 +3367,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                     class="css-8qroj2"
                   >
                     <div
-                      class="update-type-item-wrapper css-1vefa11"
+                      class="update-type-item-wrapper css-16nz79o"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -3421,7 +3419,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -3474,7 +3472,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -3527,7 +3525,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -3580,13 +3578,12 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         aria-label="setting"
-                        class="anticon anticon-setting"
+                        class="anticon anticon-setting custom-icon"
                         role="img"
-                        style="color: rgb(195, 198, 205);"
                       >
                         <svg
                           aria-hidden="true"
@@ -4505,7 +4502,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                     class="css-8qroj2"
                   >
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -4558,7 +4555,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1vefa11"
+                      class="update-type-item-wrapper css-16nz79o"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -4610,7 +4607,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -4663,7 +4660,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -4716,13 +4713,12 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         aria-label="setting"
-                        class="anticon anticon-setting"
+                        class="anticon anticon-setting custom-icon"
                         role="img"
-                        style="color: rgb(195, 198, 205);"
                       >
                         <svg
                           aria-hidden="true"
@@ -5758,7 +5754,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                     class="css-8qroj2"
                   >
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -5811,7 +5807,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -5864,7 +5860,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1vefa11"
+                      class="update-type-item-wrapper css-16nz79o"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -5916,7 +5912,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -5969,13 +5965,12 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         aria-label="setting"
-                        class="anticon anticon-setting"
+                        class="anticon anticon-setting custom-icon"
                         role="img"
-                        style="color: rgb(195, 198, 205);"
                       >
                         <svg
                           aria-hidden="true"
@@ -7011,7 +7006,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                     class="css-8qroj2"
                   >
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -7064,7 +7059,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -7117,7 +7112,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -7170,7 +7165,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1vefa11"
+                      class="update-type-item-wrapper css-16nz79o"
                     >
                       <span
                         class="custom-icon  css-u3jcp4"
@@ -7222,13 +7217,12 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-gyzc3a"
+                      class="update-type-item-wrapper css-1xajf28"
                     >
                       <span
                         aria-label="setting"
-                        class="anticon anticon-setting"
+                        class="anticon anticon-setting custom-icon"
                         role="img"
-                        style="color: rgb(195, 198, 205);"
                       >
                         <svg
                           aria-hidden="true"

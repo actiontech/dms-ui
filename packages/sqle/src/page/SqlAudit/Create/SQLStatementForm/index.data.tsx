@@ -17,7 +17,7 @@ export const uploadItem: {
     title: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sql')
   },
   git: {
-    icon: <SettingOutlined style={{ color: '#c3c6cd' }} />,
+    icon: <SettingOutlined className="custom-icon" />,
     title: t('sqlAudit.create.sqlInfo.uploadTypeEnum.git')
   },
   sqlFile: {
