@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test base/hooks/useSystemConfig.tsx render custom web title 1`] = `
+exports[`test base/hooks/useSystemConfig render custom web title 1`] = `
 <div>
   <div
     class="title"
@@ -14,7 +14,7 @@ exports[`test base/hooks/useSystemConfig.tsx render custom web title 1`] = `
 </div>
 `;
 
-exports[`test base/hooks/useSystemConfig.tsx render default web title and logo 1`] = `
+exports[`test base/hooks/useSystemConfig render default web title and logo 1`] = `
 <div>
   <div
     class="title"
