@@ -14,7 +14,7 @@ jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
   useSelector: jest.fn()
 }));
-describe('test base/hooks/useSystemConfig.tsx', () => {
+describe('test base/hooks/useSystemConfig', () => {
   const scopeDispatch = jest.fn();
 
   beforeEach(() => {
