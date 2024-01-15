@@ -6,7 +6,7 @@ exports[`Data/Operation should match snapshot 1`] = `
     class="css-ksegv2"
   >
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -328,7 +328,7 @@ exports[`Data/Operation should match snapshot 2`] = `
     class="css-ksegv2"
   >
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -1230,7 +1230,7 @@ exports[`Data/Operation should refresh table when user click refresh button 1`] 
     class="css-ksegv2"
   >
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"

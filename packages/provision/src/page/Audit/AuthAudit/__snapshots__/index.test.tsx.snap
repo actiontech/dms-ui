@@ -5,7 +5,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -970,7 +970,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2100,7 +2100,7 @@ exports[`page/auth/AuthAudit render init snap 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2461,7 +2461,7 @@ exports[`page/auth/AuthAudit render init snap 2`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2797,7 +2797,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -3679,7 +3679,7 @@ exports[`page/auth/AuthAudit render table list when api return error 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
