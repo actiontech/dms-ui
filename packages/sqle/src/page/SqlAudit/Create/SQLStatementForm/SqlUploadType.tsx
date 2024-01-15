@@ -10,15 +10,34 @@ import { UploadTypeEnum } from '../SQLInfoForm/index.type';
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { FormSubmitStatusContext } from '..';
+import { I18nKey } from '../../../../locale';
 
-const uploadItemIcon: {
-  [key in TypeUploadKeys]: React.ReactNode;
+const uploadItem: {
+  [key in TypeUploadKeys]: {
+    icon: React.ReactNode;
+    title: I18nKey;
+  };
 } = {
-  sql: <IconOrderSQLUpload />,
-  git: <SettingOutlined style={{ color: '#c3c6cd' }} />,
-  sqlFile: <IconOrderFileUpload />,
-  mybatisFile: <IconOrderFileUpload />,
-  zipFile: <IconOrderFileUpload />
+  sql: {
+    icon: <IconOrderSQLUpload />,
+    title: 'sqlAudit.create.sqlInfo.uploadTypeEnum.sql'
+  },
+  git: {
+    icon: <SettingOutlined style={{ color: '#c3c6cd' }} />,
+    title: 'sqlAudit.create.sqlInfo.uploadTypeEnum.git'
+  },
+  sqlFile: {
+    icon: <IconOrderFileUpload />,
+    title: 'sqlAudit.create.sqlInfo.uploadTypeEnum.sqlFile'
+  },
+  mybatisFile: {
+    icon: <IconOrderFileUpload />,
+    title: 'sqlAudit.create.sqlInfo.uploadTypeEnum.mybatisFile'
+  },
+  zipFile: {
+    icon: <IconOrderFileUpload />,
+    title: 'sqlAudit.create.sqlInfo.uploadTypeEnum.zipFile'
+  }
 };
 
 const SqlUploadType: React.FC<{
@@ -42,10 +61,8 @@ const SqlUploadType: React.FC<{
             }}
             active={value === UploadTypeEnum[type]}
           >
-            {uploadItemIcon[type]}
-            <span className="text">
-              {t(`sqlAudit.create.sqlInfo.uploadTypeEnum.${type}`)}
-            </span>
+            {uploadItem[type].icon}
+            <span className="text">{t(uploadItem[type].title)}</span>
           </UploadTypeItem>
         );
       })}
