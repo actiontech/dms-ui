@@ -1,4 +1,8 @@
-import { RenderResult, render } from '@testing-library/react';
+import {
+  RenderResult,
+  render,
+  renderHook as renderHookByReact
+} from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import {
   BrowserRouter,
@@ -10,8 +14,10 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { storeFactory } from './mockRedux';
+import { ConfigProvider, theme as antdTheme } from 'antd';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { mount, shallow } from 'enzyme';
+import zhCN from 'antd/locale/zh_CN';
 import { Dictionary } from '@actiontech/shared/lib/types/common.type';
 
 import sharedTheme from '@actiontech/shared/lib/theme/light';
@@ -60,6 +66,23 @@ export const renderHooksWithRedux = <TProps, TResult>(
       store: storeFactory(storeState)
     }
   } as any);
+};
+
+export const renderHooksWithTheme = <TProps, TResult>(
+  hooks: (props: TProps) => TResult
+) => {
+  return renderHookByReact(hooks, {
+    wrapper: ({ children }) => (
+      <ConfigProvider
+        locale={zhCN}
+        theme={{ algorithm: antdTheme.defaultAlgorithm }}
+      >
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+        </StyledEngineProvider>
+      </ConfigProvider>
+    )
+  });
 };
 
 export const renderWithTheme = (...[ui, option]: [...RenderParams]) => {
@@ -138,4 +161,28 @@ export const renderLocationDisplay = (): [
   };
 
   return [() => renderWithRouter(<LocationComponent />), LocationComponent];
+};
+
+export const superRender = (
+  ...[ui, option, otherProps]: [
+    ...RenderParams,
+    {
+      routerProps?: MemoryRouterProps;
+      initStore?: any;
+    }?
+  ]
+) => {
+  const renderReturn = render(ui, {
+    wrapper: ({ children }) => {
+      return (
+        <Provider store={storeFactory(otherProps?.initStore)}>
+          <MemoryRouter {...otherProps?.routerProps}>
+            <ThemeProvider theme={themeData}>{children}</ThemeProvider>
+          </MemoryRouter>
+        </Provider>
+      );
+    },
+    ...option
+  });
+  return renderReturn;
 };

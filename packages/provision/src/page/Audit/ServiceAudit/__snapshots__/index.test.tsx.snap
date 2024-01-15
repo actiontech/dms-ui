@@ -5,7 +5,7 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -708,7 +708,7 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1195,7 +1195,7 @@ exports[`page/Audit/ServiceAudit render init snap 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1520,7 +1520,7 @@ exports[`page/Audit/ServiceAudit render init snap 2`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1820,7 +1820,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2407,7 +2407,7 @@ exports[`page/Audit/ServiceAudit render table list when api return error 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"

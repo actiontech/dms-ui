@@ -7,7 +7,7 @@ exports[`page/Auth/AddAuth render VerifyDBAccount render no pass db account 1`] 
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -825,7 +825,7 @@ exports[`page/Auth/AddAuth render add auth snap 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -1525,7 +1525,7 @@ exports[`page/Auth/AddAuth render form submit render submit when all form item i
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -3126,7 +3126,7 @@ exports[`page/Auth/AddAuth render location search has id 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"
@@ -3825,7 +3825,7 @@ exports[`page/Auth/AddAuth render pwd form item render pwd not same 1`] = `
       class="css-doq0dk"
     >
       <div
-        class="actiontech-page-header-namespace fixed-style css-14fwawz"
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
       >
         <div
           class="title"

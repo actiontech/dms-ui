@@ -5,7 +5,7 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -416,7 +416,7 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -802,7 +802,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1427,7 +1427,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2461,7 +2461,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -3305,7 +3305,7 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -3691,7 +3691,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -4657,7 +4657,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -5328,7 +5328,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -5939,7 +5939,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
   <div>
     <div>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"

@@ -151,7 +151,7 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
                   height="500px"
                   id="sql"
                   language="sql"
-                  options="[object Object]"
+                  options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                   value="/* input your sql */"
                   width="100%"
                 />

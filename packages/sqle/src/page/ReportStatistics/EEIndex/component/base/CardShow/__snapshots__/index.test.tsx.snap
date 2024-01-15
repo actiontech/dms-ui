@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReportStatistics/CardShow render snap when has default val 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <header
+          class="card-title"
+        >
+          <span
+            class="title-cont"
+          >
+            title
+          </span>
+          <span
+            class="title-extra"
+          />
+        </header>
+        <section
+          class="card-cont"
+        >
+          <div
+            class="number-cont"
+          >
+            1
+          </div>
+          <div
+            class="note-cont"
+          >
+            note content
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/CardShow render snap when has default val 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <header
+          class="card-title"
+        >
+          <span
+            class="title-cont"
+          >
+            title
+          </span>
+          <span
+            class="title-extra"
+          />
+        </header>
+        <section
+          class="card-cont"
+        >
+          <div
+            class="number-cont"
+          />
+          <div
+            class="note-cont"
+          >
+            note content
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ReportStatistics/CardShow render snap when has extraIcon val 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <header
+          class="card-title"
+        >
+          <span
+            class="title-cont"
+          >
+            <span>
+              title
+            </span>
+          </span>
+          <span
+            class="title-extra"
+          >
+            <span>
+              extraIcon
+            </span>
+          </span>
+        </header>
+        <section
+          class="card-cont"
+        >
+          <div
+            class="number-cont"
+          >
+            <span>
+              11
+            </span>
+          </div>
+          <div
+            class="note-cont"
+          >
+            <span>
+              note content
+            </span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;

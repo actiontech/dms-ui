@@ -5,7 +5,7 @@ exports[`test monitor source config render without permission 1`] = `
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -638,7 +638,7 @@ exports[`test monitor source config should open model when click add button 1`] 
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1366,7 +1366,7 @@ exports[`test monitor source config should render normal server monitor table 1`
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2094,7 +2094,7 @@ exports[`test monitor source config should render search result for database tab
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2668,7 +2668,7 @@ exports[`test monitor source config should render search result for table and re
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -3242,7 +3242,7 @@ exports[`test monitor source config should render server monitor table for defau
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -3970,7 +3970,7 @@ exports[`test monitor source config should reset search input when click segment
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"

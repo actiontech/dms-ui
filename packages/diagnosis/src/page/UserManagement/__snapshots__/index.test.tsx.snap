@@ -5,7 +5,7 @@ exports[`test user management render without permission 1`] = `
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -457,7 +457,7 @@ exports[`test user management should open add role model when click add button 1
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1070,7 +1070,7 @@ exports[`test user management should open add user model when click add button 1
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1578,7 +1578,7 @@ exports[`test user management should render normal user list table 1`] = `
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2086,7 +2086,7 @@ exports[`test user management should render user list table for default 1`] = `
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2594,7 +2594,7 @@ exports[`test user management should reset select permission id 1`] = `
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -3102,7 +3102,7 @@ exports[`test user management should send request when click refresh button 1`] 
   <div>
     <section>
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"

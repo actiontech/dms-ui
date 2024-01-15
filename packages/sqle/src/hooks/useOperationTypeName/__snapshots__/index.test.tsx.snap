@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`useOperationTypeName should get group data from request 1`] = `
+exports[`sqle/hooks/useOperationTypeName should get operation type name data from request 1`] = `
 <body>
   <div>
     <div
@@ -65,7 +65,7 @@ exports[`useOperationTypeName should get group data from request 1`] = `
 </body>
 `;
 
-exports[`useOperationTypeName should get group data from request 2`] = `
+exports[`sqle/hooks/useOperationTypeName should get operation type name data from request 2`] = `
 <body>
   <div>
     <div
@@ -134,7 +134,7 @@ exports[`useOperationTypeName should get group data from request 2`] = `
 </body>
 `;
 
-exports[`useOperationTypeName should get group data from request 3`] = `
+exports[`sqle/hooks/useOperationTypeName should get operation type name data from request 3`] = `
 <body>
   <div>
     <div

@@ -46,7 +46,7 @@ exports[`page/Auth/AddAuth/PreviewModal render submit data for api return error 
                 class="custom-monaco-editor css-baixa9"
                 height="300px"
                 language="sql"
-                options="[object Object]"
+                options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                 value=""
               />
             </div>
@@ -129,7 +129,7 @@ exports[`page/Auth/AddAuth/PreviewModal render submit data for api return succes
                 class="custom-monaco-editor css-baixa9"
                 height="300px"
                 language="sql"
-                options="[object Object]"
+                options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                 value=""
               />
             </div>
@@ -236,7 +236,7 @@ exports[`page/Auth/AddAuth/PreviewModal render when has params and ready format 
                 class="custom-monaco-editor css-baixa9"
                 height="300px"
                 language="sql"
-                options="[object Object]"
+                options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                 value=""
               />
             </div>
@@ -319,7 +319,7 @@ exports[`page/Auth/AddAuth/PreviewModal render when params is undefined 1`] = `
                 class="custom-monaco-editor css-baixa9"
                 height="300px"
                 language="sql"
-                options="[object Object]"
+                options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
                 value=""
               />
             </div>

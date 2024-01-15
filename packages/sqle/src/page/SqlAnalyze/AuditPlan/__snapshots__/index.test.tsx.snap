@@ -6,7 +6,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
     class="css-doq0dk"
   >
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -260,7 +260,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
     class="css-doq0dk"
   >
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"
@@ -5895,7 +5895,7 @@ exports[`SqlAnalyze/AuditPlan should render error result of type "info" when res
     class="css-doq0dk"
   >
     <div
-      class="actiontech-page-header-namespace fixed-style css-14fwawz"
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
     >
       <div
         class="title"

@@ -22,7 +22,7 @@ const param: IGetSqlAverageExecutionTimeV1Params = {
 /**
  *
   todo：
-    aoi 接口还不支持传其他参数[排序]
+    api 接口还不支持传其他参数[排序], 设计图是想要指定排序的
  */
 const SqlOnLineSpendTime = () => {
   const { t } = useTranslation();

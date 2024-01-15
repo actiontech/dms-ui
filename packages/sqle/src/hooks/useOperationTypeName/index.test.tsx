@@ -6,36 +6,28 @@ import {
   act as reactAct,
   cleanup
 } from '@testing-library/react';
-import {
-  rejectThreeSecond,
-  resolveErrorThreeSecond,
-  resolveThreeSecond
-} from '../../testUtils/mockRequest';
 import { Select } from 'antd';
 import useOperationTypeName from '.';
-import OperationRecord from '@actiontech/shared/lib/api/sqle/service/OperationRecord';
+import operationRecord from '../../testUtils/mockApi/operationRecord';
+import { operationTypeNameMockData } from '../../testUtils/mockApi/operationRecord/data';
+import {
+  createSpyErrorResponse,
+  createSpyFailResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 
-describe('useOperationTypeName', () => {
+describe('sqle/hooks/useOperationTypeName', () => {
+  let requestSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
+    requestSpy = operationRecord.getOperationTypeNameList();
   });
 
   afterEach(() => {
     jest.useRealTimers();
+    cleanup();
   });
 
-  const mockRequest = () => {
-    const spy = jest.spyOn(OperationRecord, 'GetOperationTypeNameList');
-    return spy;
-  };
-
-  test('should get group data from request', async () => {
-    const requestSpy = mockRequest();
-    requestSpy.mockImplementation(() =>
-      resolveThreeSecond([
-        { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-      ])
-    );
+  test('should get operation type name data from request', async () => {
     const { result, waitForNextUpdate } = renderHook(() =>
       useOperationTypeName()
     );
@@ -59,9 +51,9 @@ describe('useOperationTypeName', () => {
 
     expect(result.current.loading).toBe(false);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationTypeNameList).toEqual([
-      { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-    ]);
+    expect(result.current.operationTypeNameList).toEqual(
+      operationTypeNameMockData
+    );
     cleanup();
 
     const { baseElement: baseElementWithOptions } = render(
@@ -81,12 +73,6 @@ describe('useOperationTypeName', () => {
   });
 
   test('should set list to empty array when response code is not equal success code', async () => {
-    const requestSpy = mockRequest();
-    requestSpy.mockImplementation(() =>
-      resolveThreeSecond([
-        { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-      ])
-    );
     const { result, waitForNextUpdate } = renderHook(() =>
       useOperationTypeName()
     );
@@ -106,12 +92,12 @@ describe('useOperationTypeName', () => {
 
     expect(result.current.loading).toBe(false);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationTypeNameList).toEqual([
-      { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-    ]);
+    expect(result.current.operationTypeNameList).toEqual(
+      operationTypeNameMockData
+    );
     requestSpy.mockClear();
     requestSpy.mockImplementation(() =>
-      resolveErrorThreeSecond([{ operation_type_name: 'operation_type_name1' }])
+      createSpyErrorResponse([{ operation_type_name: 'operation_type_name1' }])
     );
 
     act(() => {
@@ -119,9 +105,9 @@ describe('useOperationTypeName', () => {
     });
     expect(result.current.loading).toBe(true);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationTypeNameList).toEqual([
-      { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-    ]);
+    expect(result.current.operationTypeNameList).toEqual(
+      operationTypeNameMockData
+    );
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
@@ -132,12 +118,6 @@ describe('useOperationTypeName', () => {
   });
 
   test('should set list to empty array when response throw error', async () => {
-    const requestSpy = mockRequest();
-    requestSpy.mockImplementation(() =>
-      resolveThreeSecond([
-        { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-      ])
-    );
     const { result, waitForNextUpdate } = renderHook(() =>
       useOperationTypeName()
     );
@@ -157,14 +137,12 @@ describe('useOperationTypeName', () => {
 
     expect(result.current.loading).toBe(false);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationTypeNameList).toEqual([
-      { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-    ]);
+    expect(result.current.operationTypeNameList).toEqual(
+      operationTypeNameMockData
+    );
     requestSpy.mockClear();
     requestSpy.mockImplementation(() =>
-      rejectThreeSecond([
-        { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-      ])
+      createSpyFailResponse(operationTypeNameMockData)
     );
 
     act(() => {
@@ -172,9 +150,9 @@ describe('useOperationTypeName', () => {
     });
     expect(result.current.loading).toBe(true);
     expect(requestSpy).toBeCalledTimes(1);
-    expect(result.current.operationTypeNameList).toEqual([
-      { operation_type_name: 'operation_type_name1', desc: '操作类型' }
-    ]);
+    expect(result.current.operationTypeNameList).toEqual(
+      operationTypeNameMockData
+    );
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();

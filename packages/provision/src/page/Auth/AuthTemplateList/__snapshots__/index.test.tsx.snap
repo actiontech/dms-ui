@@ -4,7 +4,7 @@ exports[`Auth/AuthTemplateList should match snapshot 1`] = `
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -295,7 +295,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -1168,7 +1168,7 @@ exports[`Auth/AuthTemplateList should refresh table when eventEmitter receive 'R
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -1434,7 +1434,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -1700,7 +1700,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
@@ -1966,7 +1966,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
 <div>
   <section>
     <div
-      class="actiontech-page-header-namespace css-14fwawz"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"

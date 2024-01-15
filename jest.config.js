@@ -27,6 +27,8 @@ module.exports = {
     'monaco-editor': '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
     '@monaco-editor/react':
       '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
+    '@uiw/react-md-editor':
+      '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
     '@actiontech/(.*)': '<rootDir>/packages/$1',
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },

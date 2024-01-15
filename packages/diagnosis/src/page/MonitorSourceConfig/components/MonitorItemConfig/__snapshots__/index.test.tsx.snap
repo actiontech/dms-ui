@@ -7,7 +7,7 @@ exports[`test monitor item config table render without permission 1`] = `
       class="css-1whylnh"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -516,7 +516,7 @@ exports[`test monitor item config table return error when no params in url 1`] =
       class="css-1whylnh"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -796,7 +796,7 @@ exports[`test monitor item config table should open check model when click check
       class="css-1whylnh"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1323,7 +1323,7 @@ exports[`test monitor item config table should refresh table when change paginat
       class="css-1whylnh"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1850,7 +1850,7 @@ exports[`test monitor item config table should render normal table 1`] = `
       class="css-1whylnh"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -2377,7 +2377,7 @@ exports[`test monitor item config table should render table when api return null
       class="css-1whylnh"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"

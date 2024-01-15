@@ -82,6 +82,27 @@ export const ignoreComponentCustomAttr = () => {
   });
 };
 
+export const ignoreAntdPlotsAttr = () => {
+  const error = console.error;
+  beforeAll(() => {
+    console.error = (...arg) => {
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes(
+          'If you accidentally passed it from a parent component, remove it from the DOM element.'
+        )
+      ) {
+        return;
+      }
+      error(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.error = error;
+  });
+};
+
 /**
  * @description: 在选择 date-range-pick 组件的结束日期 input 元素时，实际选择到了，报此 warning
  */
@@ -103,5 +124,25 @@ export const ignoreComponentWarnExpDatePickChooseElement = () => {
 
   afterAll(() => {
     console.warn = warn;
+  });
+};
+
+export const ignoreComponentAutoCreatedListNoKey = () => {
+  const error = console.error;
+
+  beforeAll(() => {
+    console.error = (...arg) => {
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes('Each child in a list should have a unique "key" prop')
+      ) {
+        return;
+      }
+      error(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.error = error;
   });
 };
