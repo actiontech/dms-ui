@@ -7,7 +7,7 @@ exports[`sqle/Order/List render click batch cancel btn when has not closed  1`] 
       class="css-1eeiefi"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
@@ -1665,7 +1665,7 @@ exports[`sqle/Order/List render click batch cancel when action success 1`] = `
       class="css-1eeiefi"
     >
       <div
-        class="actiontech-page-header-namespace css-14fwawz"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"

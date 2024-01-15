@@ -192,16 +192,7 @@ exports[`page/ProjectOverview/ProjectScore render order status and click create 
                 style="height: 200px;"
               >
                 <div
-                  appendpadding="[10,0,40,0]"
-                  endangle="0.7"
-                  indicator="{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}}"
-                  innerradius="0.8"
-                  percent="1"
-                  radius="0.9"
-                  range="{\\"color\\":\\"#4BCCA6\\",\\"width\\":20}"
-                  startangle="15"
-                  statistic="{\\"content\\":{\\"offsetY\\":20,\\"style\\":{\\"height\\":\\"28px\\",\\"lineHeight\\":28,\\"fontWeight\\":300,\\"fontSize\\":\\"13px\\",\\"color\\":\\"#4BCCA6\\",\\"background\\":\\"#4BCCA610\\",\\"borderRadius\\":\\"100px\\",\\"padding\\":\\"0 16px\\"}}}"
-                  theme="light"
+                  data-custom-params="{\\"percent\\":1,\\"range\\":{\\"color\\":\\"#4BCCA6\\",\\"width\\":20},\\"autoFit\\":true,\\"appendPadding\\":[10,0,40,0],\\"radius\\":0.9,\\"innerRadius\\":0.8,\\"startAngle\\":15,\\"endAngle\\":0.7,\\"indicator\\":{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}},\\"axis\\":false,\\"statistic\\":{\\"content\\":{\\"offsetY\\":20,\\"style\\":{\\"height\\":\\"28px\\",\\"lineHeight\\":28,\\"fontWeight\\":300,\\"fontSize\\":\\"13px\\",\\"color\\":\\"#4BCCA6\\",\\"background\\":\\"#4BCCA610\\",\\"borderRadius\\":\\"100px\\",\\"padding\\":\\"0 16px\\"}}},\\"theme\\":\\"light\\"}"
                 />
               </section>
             </div>
@@ -282,16 +273,7 @@ exports[`page/ProjectOverview/ProjectScore render score between 40-60 1`] = `
                 style="height: 200px;"
               >
                 <div
-                  appendpadding="[10,0,40,0]"
-                  endangle="0.7"
-                  indicator="{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}}"
-                  innerradius="0.8"
-                  percent="0.5"
-                  radius="0.9"
-                  range="{\\"color\\":\\"#EBAD1C\\",\\"width\\":20}"
-                  startangle="15"
-                  statistic="{\\"content\\":{\\"offsetY\\":20,\\"style\\":{\\"height\\":\\"28px\\",\\"lineHeight\\":28,\\"fontWeight\\":300,\\"fontSize\\":\\"13px\\",\\"color\\":\\"#EBAD1C\\",\\"background\\":\\"#EBAD1C10\\",\\"borderRadius\\":\\"100px\\",\\"padding\\":\\"0 16px\\"}}}"
-                  theme="light"
+                  data-custom-params="{\\"percent\\":0.5,\\"range\\":{\\"color\\":\\"#EBAD1C\\",\\"width\\":20},\\"autoFit\\":true,\\"appendPadding\\":[10,0,40,0],\\"radius\\":0.9,\\"innerRadius\\":0.8,\\"startAngle\\":15,\\"endAngle\\":0.7,\\"indicator\\":{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}},\\"axis\\":false,\\"statistic\\":{\\"content\\":{\\"offsetY\\":20,\\"style\\":{\\"height\\":\\"28px\\",\\"lineHeight\\":28,\\"fontWeight\\":300,\\"fontSize\\":\\"13px\\",\\"color\\":\\"#EBAD1C\\",\\"background\\":\\"#EBAD1C10\\",\\"borderRadius\\":\\"100px\\",\\"padding\\":\\"0 16px\\"}}},\\"theme\\":\\"light\\"}"
                 />
               </section>
             </div>
@@ -372,16 +354,7 @@ exports[`page/ProjectOverview/ProjectScore render score between 60-80 1`] = `
                 style="height: 200px;"
               >
                 <div
-                  appendpadding="[10,0,40,0]"
-                  endangle="0.7"
-                  indicator="{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}}"
-                  innerradius="0.8"
-                  percent="0.7"
-                  radius="0.9"
-                  range="{\\"color\\":\\"#6094FC\\",\\"width\\":20}"
-                  startangle="15"
-                  statistic="{\\"content\\":{\\"offsetY\\":20,\\"style\\":{\\"height\\":\\"28px\\",\\"lineHeight\\":28,\\"fontWeight\\":300,\\"fontSize\\":\\"13px\\",\\"color\\":\\"#6094FC\\",\\"background\\":\\"#6094FC10\\",\\"borderRadius\\":\\"100px\\",\\"padding\\":\\"0 16px\\"}}}"
-                  theme="light"
+                  data-custom-params="{\\"percent\\":0.7,\\"range\\":{\\"color\\":\\"#6094FC\\",\\"width\\":20},\\"autoFit\\":true,\\"appendPadding\\":[10,0,40,0],\\"radius\\":0.9,\\"innerRadius\\":0.8,\\"startAngle\\":15,\\"endAngle\\":0.7,\\"indicator\\":{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}},\\"axis\\":false,\\"statistic\\":{\\"content\\":{\\"offsetY\\":20,\\"style\\":{\\"height\\":\\"28px\\",\\"lineHeight\\":28,\\"fontWeight\\":300,\\"fontSize\\":\\"13px\\",\\"color\\":\\"#6094FC\\",\\"background\\":\\"#6094FC10\\",\\"borderRadius\\":\\"100px\\",\\"padding\\":\\"0 16px\\"}}},\\"theme\\":\\"light\\"}"
                 />
               </section>
             </div>
@@ -462,16 +435,7 @@ exports[`page/ProjectOverview/ProjectScore render score less than 40 1`] = `
                 style="height: 200px;"
               >
                 <div
-                  appendpadding="[10,0,40,0]"
-                  endangle="0.7"
-                  indicator="{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}}"
-                  innerradius="0.8"
-                  percent="0.3"
-                  radius="0.9"
-                  range="{\\"color\\":\\"#F66074\\",\\"width\\":20}"
-                  startangle="15"
-                  statistic="{\\"content\\":{\\"offsetY\\":20,\\"style\\":{\\"height\\":\\"28px\\",\\"lineHeight\\":28,\\"fontWeight\\":300,\\"fontSize\\":\\"13px\\",\\"color\\":\\"#F66074\\",\\"background\\":\\"#F6607410\\",\\"borderRadius\\":\\"100px\\",\\"padding\\":\\"0 16px\\"}}}"
-                  theme="light"
+                  data-custom-params="{\\"percent\\":0.3,\\"range\\":{\\"color\\":\\"#F66074\\",\\"width\\":20},\\"autoFit\\":true,\\"appendPadding\\":[10,0,40,0],\\"radius\\":0.9,\\"innerRadius\\":0.8,\\"startAngle\\":15,\\"endAngle\\":0.7,\\"indicator\\":{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}},\\"axis\\":false,\\"statistic\\":{\\"content\\":{\\"offsetY\\":20,\\"style\\":{\\"height\\":\\"28px\\",\\"lineHeight\\":28,\\"fontWeight\\":300,\\"fontSize\\":\\"13px\\",\\"color\\":\\"#F66074\\",\\"background\\":\\"#F6607410\\",\\"borderRadius\\":\\"100px\\",\\"padding\\":\\"0 16px\\"}}},\\"theme\\":\\"light\\"}"
                 />
               </section>
             </div>
