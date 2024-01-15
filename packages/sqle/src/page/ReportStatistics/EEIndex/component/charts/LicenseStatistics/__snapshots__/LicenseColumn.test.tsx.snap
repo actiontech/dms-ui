@@ -4,6 +4,7 @@ exports[`ReportStatistics/LicenseStatistics/LicenseColumn render snap LicenseCol
 <body>
   <div>
     <div
+      autofit="true"
       columnbackground="{\\"style\\":{\\"fill\\":\\"#F7F6F4\\",\\"fillOpacity\\":1}}"
       columnstyle="{\\"radius\\":4,\\"fill\\":\\"#6094FC\\",\\"strokeOpacity\\":0}"
       data="[{\\"type\\":\\"User\\",\\"value\\":0,\\"desc\\":\\"desc1\\",\\"limit\\":0}]"
@@ -24,6 +25,7 @@ exports[`ReportStatistics/LicenseStatistics/LicenseColumn render snap LicenseCol
 <body>
   <div>
     <div
+      autofit="true"
       columnbackground="{\\"style\\":{\\"fill\\":\\"#F7F6F4\\",\\"fillOpacity\\":1}}"
       columnstyle="{\\"radius\\":4,\\"fill\\":\\"#6094FC\\",\\"strokeOpacity\\":0}"
       data="[{\\"type\\":\\"name1\\",\\"value\\":1,\\"desc\\":\\"desc1\\",\\"limit\\":1},{\\"type\\":\\"name2\\",\\"value\\":10,\\"desc\\":\\"desc2\\",\\"limit\\":10}]"

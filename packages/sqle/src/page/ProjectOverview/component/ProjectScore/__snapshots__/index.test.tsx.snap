@@ -193,6 +193,8 @@ exports[`page/ProjectOverview/ProjectScore render order status and click create 
               >
                 <div
                   appendpadding="[10,0,40,0]"
+                  autofit="true"
+                  axis="false"
                   endangle="0.7"
                   indicator="{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}}"
                   innerradius="0.8"
@@ -283,6 +285,8 @@ exports[`page/ProjectOverview/ProjectScore render score between 40-60 1`] = `
               >
                 <div
                   appendpadding="[10,0,40,0]"
+                  autofit="true"
+                  axis="false"
                   endangle="0.7"
                   indicator="{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}}"
                   innerradius="0.8"
@@ -373,6 +377,8 @@ exports[`page/ProjectOverview/ProjectScore render score between 60-80 1`] = `
               >
                 <div
                   appendpadding="[10,0,40,0]"
+                  autofit="true"
+                  axis="false"
                   endangle="0.7"
                   indicator="{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}}"
                   innerradius="0.8"
@@ -463,6 +469,8 @@ exports[`page/ProjectOverview/ProjectScore render score less than 40 1`] = `
               >
                 <div
                   appendpadding="[10,0,40,0]"
+                  autofit="true"
+                  axis="false"
                   endangle="0.7"
                   indicator="{\\"pointer\\":{\\"style\\":{\\"stroke\\":\\"#c3c6cd\\",\\"lineWidth\\":3}},\\"pin\\":{\\"style\\":{\\"r\\":6,\\"fill\\":\\"#fcfbf9\\",\\"lineWidth\\":3,\\"stroke\\":\\"#c3c6cd\\"}}}"
                   innerradius="0.8"

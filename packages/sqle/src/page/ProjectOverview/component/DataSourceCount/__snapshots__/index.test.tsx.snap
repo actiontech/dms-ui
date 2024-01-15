@@ -65,6 +65,7 @@ exports[`page/ProjectOverview/DataSourceCount render data source count and check
                 columnstyle="{\\"radius\\":[4,4,0,0]}"
                 columnwidthratio="0.8"
                 data="[{\\"type\\":\\"MySQL\\",\\"value\\":1,\\"category\\":\\"health\\",\\"instanceNames\\":\\"mysql-1\\"},{\\"type\\":\\"MySQL\\",\\"value\\":1,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"mysql-2\\"},{\\"type\\":\\"Redis\\",\\"value\\":0,\\"category\\":\\"health\\",\\"instanceNames\\":\\"\\"},{\\"type\\":\\"Redis\\",\\"value\\":0,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"\\"},{\\"type\\":\\"\\",\\"value\\":0,\\"category\\":\\"health\\",\\"instanceNames\\":\\"\\"},{\\"type\\":\\"\\",\\"value\\":0,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"\\"},{\\"type\\":\\"PostgreSQL\\",\\"value\\":1,\\"category\\":\\"health\\",\\"instanceNames\\":\\"progres-1\\"},{\\"type\\":\\"PostgreSQL\\",\\"value\\":0,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"\\"}]"
+                isgroup="true"
                 maxcolumnwidth="12"
                 mincolumnwidth="12"
                 seriesfield="category"
@@ -72,6 +73,7 @@ exports[`page/ProjectOverview/DataSourceCount render data source count and check
                 tooltip="{\\"showMarkers\\":false,\\"fields\\":[\\"type\\",\\"value\\"]}"
                 xaxis="{\\"animate\\":false,\\"line\\":null,\\"label\\":{\\"autoEllipsis\\":true,\\"autoHide\\":false,\\"style\\":{\\"fill\\":\\"#8a8f99\\",\\"lineHeight\\":20,\\"textAlign\\":\\"center\\",\\"textBaseline\\":\\"middle\\",\\"width\\":20}}}"
                 xfield="type"
+                yaxis="false"
                 yfield="value"
               />
             </div>

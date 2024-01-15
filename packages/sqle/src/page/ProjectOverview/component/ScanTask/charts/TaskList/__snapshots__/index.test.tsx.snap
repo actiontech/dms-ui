@@ -190,6 +190,7 @@ exports[`page/ProjectOverview/TaskList render task list 1`] = `
       >
         <div
           appendpadding="[0,0,20,0]"
+          autofit="true"
           barbackground="{\\"style\\":{\\"fill\\":\\"#f7f6f4\\",\\"fillOpacity\\":1}}"
           barstyle="{\\"radius\\":4,\\"fill\\":\\"#6094FC\\",\\"strokeOpacity\\":0}"
           data="[{\\"type\\":\\"MySQL\\",\\"value\\":3},{\\"type\\":\\"default-custom-bar0\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar1\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar2\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar3\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar4\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar5\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar6\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar7\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar8\\",\\"value\\":0},{\\"type\\":\\"default-custom-bar9\\",\\"value\\":0}]"
@@ -200,7 +201,9 @@ exports[`page/ProjectOverview/TaskList render task list 1`] = `
           state="{\\"active\\":{}}"
           theme="light"
           tooltip="{\\"showMarkers\\":false,\\"showNil\\":false,\\"fields\\":[\\"type\\",\\"value\\"]}"
+          xaxis="false"
           xfield="value"
+          yaxis="false"
           yfield="type"
         />
       </div>
@@ -220,6 +223,7 @@ exports[`page/ProjectOverview/TaskList render task list more than 11 1`] = `
       >
         <div
           appendpadding="[0,0,20,0]"
+          autofit="true"
           barbackground="{\\"style\\":{\\"fill\\":\\"#f7f6f4\\",\\"fillOpacity\\":1}}"
           barstyle="{\\"radius\\":4,\\"fill\\":\\"#6094FC\\",\\"strokeOpacity\\":0}"
           data="[{\\"type\\":\\"MySQL\\",\\"value\\":3},{\\"type\\":\\"default-custom-bar1\\",\\"value\\":1},{\\"type\\":\\"2\\",\\"value\\":0},{\\"type\\":\\"3\\",\\"value\\":1},{\\"type\\":\\"4\\",\\"value\\":1},{\\"type\\":\\"5\\",\\"value\\":1},{\\"type\\":\\"6\\",\\"value\\":1},{\\"type\\":\\"7\\",\\"value\\":1},{\\"type\\":\\"8\\",\\"value\\":1},{\\"type\\":\\"9\\",\\"value\\":1},{\\"type\\":\\"10\\",\\"value\\":1},{\\"type\\":\\"11\\",\\"value\\":1}]"
@@ -231,7 +235,9 @@ exports[`page/ProjectOverview/TaskList render task list more than 11 1`] = `
           state="{\\"active\\":{}}"
           theme="light"
           tooltip="{\\"showMarkers\\":false,\\"showNil\\":false,\\"fields\\":[\\"type\\",\\"value\\"]}"
+          xaxis="false"
           xfield="value"
+          yaxis="false"
           yfield="type"
         />
       </div>

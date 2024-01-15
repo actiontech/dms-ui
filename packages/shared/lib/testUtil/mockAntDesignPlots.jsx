@@ -1,4 +1,4 @@
-import { cloneDeep, isObject } from 'lodash';
+import { cloneDeep, isObject, isBoolean } from 'lodash';
 
 // 不适合作为 html 属性元素出现的 key 的数据集合
 const customDomKeyData = ['label', 'legend'];
@@ -11,7 +11,7 @@ const MockPlots = (props) => {
       delete othersParams[key];
       return;
     }
-    if (isObject(othersParams[key])) {
+    if (isObject(othersParams[key]) || isBoolean(othersParams[key])) {
       othersParams[key] = JSON.stringify(othersParams[key]);
     }
   });

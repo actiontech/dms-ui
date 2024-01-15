@@ -191,6 +191,7 @@ exports[`page/ProjectOverview/SqlCount render sql count 1`] = `
               >
                 <div
                   appendpadding="[16,0,8,0]"
+                  autofit="true"
                   color="[\\"#EBAD1C\\",\\"#f2f1f0\\"]"
                   innerradius="0.75"
                   percent="10"
