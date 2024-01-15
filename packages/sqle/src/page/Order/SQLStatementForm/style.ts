@@ -39,7 +39,7 @@ export const UploadItemTypeStyleWrapper = styled('div')<{ active?: boolean }>`
     color: ${({ theme, active }) =>
       active
         ? theme.sharedTheme.uiToken.colorPrimary
-        : theme.sharedTheme.uiToken.colorTextQuaternary};
+        : theme.sharedTheme.uiToken.colorTextQuaternary} !important;
   }
 
   .text {
