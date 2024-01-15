@@ -25,7 +25,11 @@ class MockSqlManageApi implements MockSpyApy {
 
   public batchUpdateSqlManage() {
     const spy = jest.spyOn(SqlManage, 'BatchUpdateSqlManage');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        code: 0
+      })
+    );
     return spy;
   }
 
