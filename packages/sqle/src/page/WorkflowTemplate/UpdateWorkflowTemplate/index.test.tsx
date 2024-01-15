@@ -16,6 +16,7 @@ import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/serv
 import { cloneDeep } from 'lodash';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { ignoreAntdUseFormNotConnectedError } from '@actiontech/shared/lib/testUtil/common';
+import user from '../../../testUtils/mockApi/user';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -51,7 +52,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
   it('render update workflow template and submit success', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
     const updateInfoRequest = workflowTemplate.updateWorkflowTemplate();
-    const userInfoRequest = workflowTemplate.getUserTip();
+    const userInfoRequest = user.getUserTip();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userInfoRequest).toBeCalledWith({
@@ -98,7 +99,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
         message: 'error'
       })
     );
-    const userInfoRequest = workflowTemplate.getUserTip();
+    const userInfoRequest = user.getUserTip();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userInfoRequest).toBeCalledWith({
@@ -123,7 +124,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
   it('update workflow template info', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
     const updateInfoRequest = workflowTemplate.updateWorkflowTemplate();
-    const userInfoRequest = workflowTemplate.getUserTip();
+    const userInfoRequest = user.getUserTip();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userInfoRequest).toBeCalledWith({
@@ -178,7 +179,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
 
   it('change workflow template node number and reset template', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
-    const userInfoRequest = workflowTemplate.getUserTip();
+    const userInfoRequest = user.getUserTip();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userInfoRequest).toBeCalledWith({

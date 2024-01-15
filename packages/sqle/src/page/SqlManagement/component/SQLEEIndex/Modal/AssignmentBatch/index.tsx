@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../base/src/store';
 import {
   updateSqleManagementModalStatus,
-  updateSqleManagement
+  updateSqlIdList
 } from '../../../../../../store/sqleManagement';
 import { useForm } from 'antd/es/form/Form';
 import { BasicButton, BasicModal } from '@actiontech/shared';
@@ -53,7 +53,7 @@ const AssignmentBatch = () => {
         status: false
       })
     );
-    dispatch(updateSqleManagement(null));
+    dispatch(updateSqlIdList(null));
   };
 
   const onSubmit = async () => {
