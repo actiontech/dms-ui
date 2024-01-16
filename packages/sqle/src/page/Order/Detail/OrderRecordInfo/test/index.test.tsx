@@ -9,7 +9,6 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { orderListData } from '../../../../../testUtils/mockApi/order/data';
 
-
 describe('sqle/Order/Detail/OrderRecordInfo', () => {
   const closeFn = jest.fn();
   const customRender = (params: OrderRecordInfoProps) => {
@@ -60,5 +59,5 @@ describe('sqle/Order/Detail/OrderRecordInfo', () => {
       }
     });
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });

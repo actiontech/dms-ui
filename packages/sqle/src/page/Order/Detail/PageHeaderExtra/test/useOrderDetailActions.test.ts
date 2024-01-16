@@ -17,10 +17,12 @@ describe('sqle/Order/Detail/useOrderDetailActions', () => {
   const openOrderStepFn = jest.fn();
 
   const customRender = (
-    params: Partial<Pick<
-      OrderDetailPageHeaderExtraProps,
-      'canRejectOrder' | 'orderStepVisibility' | 'isArchive'
-    >> = {}
+    params: Partial<
+      Pick<
+        OrderDetailPageHeaderExtraProps,
+        'canRejectOrder' | 'orderStepVisibility' | 'isArchive'
+      >
+    > = {}
   ) => {
     return renderHooksWithRedux(() =>
       useOrderDetailActions({
@@ -70,5 +72,5 @@ describe('sqle/Order/Detail/useOrderDetailActions', () => {
       result.current.closeOrderButtonMeta.action();
       await act(async () => jest.advanceTimersByTime(500));
     });
-  })
+  });
 });

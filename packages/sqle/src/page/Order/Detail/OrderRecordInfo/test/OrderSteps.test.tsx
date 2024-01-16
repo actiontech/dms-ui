@@ -4,7 +4,11 @@ import { OrderStepsProps } from '../index.type';
 import { renderWithTheme } from '../../../../../testUtils/customRender';
 import { cleanup } from '@testing-library/react';
 import { mockThemeStyleData } from '../../../../../testUtils/mockHooks/mockThemeStyleData';
-import { WorkflowRecordResV2StatusEnum, WorkflowStepResV2StateEnum, WorkflowStepResV2TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  WorkflowRecordResV2StatusEnum,
+  WorkflowStepResV2StateEnum,
+  WorkflowStepResV2TypeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const workflowSteps = [
   {
