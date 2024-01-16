@@ -88,7 +88,7 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.mouseDown(getBySelector('#instanceName', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(
-      getBySelector('div[title="mysql-1(11.182.61.13:3000)"]', baseElement)
+      getBySelector('div[title="mysql-1(10.186.62.13:33061)"]', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(3000));
 

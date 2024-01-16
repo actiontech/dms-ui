@@ -2,6 +2,7 @@ import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import SqlAuditList from '.';
 import sqlAuditRecord from '../../../testUtils/mockApi/sqlAuditRecord';
+import instance from '../../../testUtils/mockApi/instance';
 import { sqlAuditRecordMockData } from '../../../testUtils/mockApi/sqlAuditRecord/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -27,6 +28,7 @@ describe('sqle/SqlAudit/List', () => {
   let mockUseCurrentProjectSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
+    instance.mockAllApi();
     sqlAuditRecordsSpy = sqlAuditRecord.getSQLAuditRecords();
     mockUseCurrentProjectSpy = mockUseCurrentProject();
     mockUseCurrentUser();

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/Order/Create/hooks/useCreateOrderFormState render instanceInfo 1`] = `
+Map {
+  0 => Object {
+    "instanceName": "",
+  },
+}
+`;
+
+exports[`sqle/Order/Create/hooks/useCreateOrderFormState render instanceInfo 2`] = `
+Map {
+  0 => Object {
+    "instanceName": "instance name 1",
+  },
+}
+`;
+
+exports[`sqle/Order/Create/hooks/useCreateOrderFormState render ruleTemplates 1`] = `
+Map {
+  0 => undefined,
+}
+`;
+
+exports[`sqle/Order/Create/hooks/useCreateOrderFormState render ruleTemplates 2`] = `
+Map {
+  0 => Object {
+    "dbType": "dbType1",
+  },
+}
+`;
+
+exports[`sqle/Order/Create/hooks/useCreateOrderFormState render schemaList 1`] = `
+Map {
+  0 => Array [],
+}
+`;
+
+exports[`sqle/Order/Create/hooks/useCreateOrderFormState render schemaList 2`] = `
+Map {
+  0 => Array [
+    "schema1",
+  ],
+}
+`;

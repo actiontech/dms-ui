@@ -252,6 +252,7 @@ const OrderSteps: React.FC<OrderStepsProps> = ({
     renderTitle,
     workflowSteps
   ]);
+
   return (
     <div className="custom-steps-wrapper">
       <div className="custom-steps-wrapper-title">
