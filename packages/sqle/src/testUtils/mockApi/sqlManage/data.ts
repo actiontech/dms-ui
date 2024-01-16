@@ -31,7 +31,7 @@ export const sqlManageListData = {
       source: {
         type: 'audit_plan',
         audit_plan_name: 'audit-plan-task1',
-        sql_audit_record_ids: null
+        sql_audit_record_ids: []
       },
       instance_name: 'mysql',
       schema_name: 'dms',
@@ -126,7 +126,6 @@ export const sqlManageListData = {
       id: 248,
       sql_fingerprint:
         'CREATE TABLE `plugins` (\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `add_db_service_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_db_service_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_user_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_user_group_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `operate_data_resource_handle_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  PRIMARY KEY (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
-      sql: 'CREATE TABLE `plugins` (\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `add_db_service_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_db_service_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_user_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_user_group_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `operate_data_resource_handle_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  PRIMARY KEY (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       source: {
         type: 'audit_plan',
         audit_plan_name: 'audit-plan-task1',
@@ -134,70 +133,6 @@ export const sqlManageListData = {
       },
       instance_name: 'mysql',
       schema_name: 'dms',
-      audit_result: [
-        {
-          level: 'error',
-          message: '主键建议使用自增',
-          rule_name: 'ddl_check_pk_without_auto_increment'
-        },
-        {
-          level: 'error',
-          message: '主键建议使用 BIGINT 无符号类型，即 BIGINT UNSIGNED',
-          rule_name: 'ddl_check_pk_without_bigint_unsigned'
-        },
-        {
-          level: 'error',
-          message: '新建表建议加入 IF NOT EXISTS，保证重复执行不报错',
-          rule_name: 'ddl_check_table_without_if_not_exists'
-        },
-        {
-          level: 'error',
-          message: '除了自增列及大字段列之外，每个列都必须添加默认值',
-          rule_name: 'ddl_check_column_without_default'
-        },
-        {
-          level: 'warn',
-          message:
-            '建表DDL需要包含UPDATE_TIME字段且默认值为CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
-          rule_name: 'ddl_check_update_time_column'
-        },
-        {
-          level: 'warn',
-          message: '建议建表DDL包含CREATE_TIME字段且默认值为CURRENT_TIMESTAMP',
-          rule_name: 'ddl_check_create_time_column'
-        },
-        {
-          level: 'warn',
-          message: '建议字段约束为NOT NULL时带默认值，以下字段不规范:name',
-          rule_name: 'ddl_check_field_not_null_must_contain_default_value'
-        },
-        {
-          level: 'notice',
-          message: '建议使用规定的数据库排序规则为utf8mb4_0900_ai_ci',
-          rule_name: 'ddl_check_collation_database'
-        },
-        {
-          level: 'notice',
-          message:
-            '建议字段add_db_service_pre_check_url,del_db_service_pre_check_url,del_user_pre_check_url,del_user_group_pre_check_url,operate_data_resource_handle_url设置NOT NULL约束',
-          rule_name: 'ddl_check_column_not_null'
-        },
-        {
-          level: 'notice',
-          message: '列建议添加注释',
-          rule_name: 'ddl_check_column_without_comment'
-        },
-        {
-          level: 'notice',
-          message: '建议主键命名为"PK_表名"',
-          rule_name: 'ddl_check_pk_name'
-        },
-        {
-          level: 'notice',
-          message: '表建议添加注释',
-          rule_name: 'ddl_check_table_without_comment'
-        }
-      ],
       first_appear_timestamp: '',
       last_receive_timestamp: '',
       fp_count: 0,

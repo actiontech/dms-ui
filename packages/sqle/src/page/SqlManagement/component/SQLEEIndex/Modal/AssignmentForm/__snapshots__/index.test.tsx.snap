@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`page/SqlManagement/AssignmentBatch disable select 1`] = `
+exports[`page/SqlManagement/AssignmentForm disable select 1`] = `
 <body>
   <div />
   <div>
@@ -111,7 +111,7 @@ exports[`page/SqlManagement/AssignmentBatch disable select 1`] = `
 </body>
 `;
 
-exports[`page/SqlManagement/AssignmentBatch render form when init 1`] = `
+exports[`page/SqlManagement/AssignmentForm render form when init 1`] = `
 <body>
   <div />
   <div>
@@ -221,7 +221,7 @@ exports[`page/SqlManagement/AssignmentBatch render form when init 1`] = `
 </body>
 `;
 
-exports[`page/SqlManagement/AssignmentBatch render form when not init 1`] = `
+exports[`page/SqlManagement/AssignmentForm render form when not init 1`] = `
 <body>
   <div />
   <div>

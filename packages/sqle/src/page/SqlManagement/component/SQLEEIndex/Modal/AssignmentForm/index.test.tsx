@@ -14,9 +14,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { userTipListData } from '../../../../../../testUtils/mockApi/user/data';
 
-describe('page/SqlManagement/AssignmentBatch', () => {
-  const dispatchSpy = jest.fn();
-
+describe('page/SqlManagement/AssignmentForm', () => {
   beforeEach(() => {
     mockUseCurrentProject();
     user.mockAllApi();
