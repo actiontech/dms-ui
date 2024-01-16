@@ -1,14 +1,13 @@
 import { renderWithThemeAndRedux } from '../../../../testUtils/customRender';
-import { useSelector } from 'react-redux';
-import { screen, cleanup, act, fireEvent } from '@testing-library/react';
+import { cleanup, act, fireEvent } from '@testing-library/react';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 
 import EditSQLInfoDrawer from '.';
 import { EditSQLInfoDrawerProps } from './index.type';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { driverMeta } from '../../../../hooks/useDatabaseType/index.test.data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 
 jest.mock('react-redux', () => {
   return {
@@ -58,11 +57,7 @@ describe('sqle/Order/Create/EditSQLInfoDrawer', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        database: { driverMeta: driverMeta }
-      });
-    });
+    mockDatabaseType();
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

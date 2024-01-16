@@ -1,21 +1,13 @@
 import { Form } from 'antd';
-import { useSelector } from 'react-redux';
 import { screen, cleanup } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { renderWithThemeAndRedux } from '../../../../../testUtils/customRender';
-import { driverMeta } from '../../../../../hooks/useDatabaseType/index.test.data';
+import { mockDatabaseType } from '../../../../../testUtils/mockHooks/mockDatabaseType';
 
 import SQLInfoFormItem from '../SQLInfoFormItem';
 import { SQLInfoFormFields, SQLInfoFormItemProps } from '../index.type';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
-jest.mock('react-redux', () => {
-  return {
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn()
-  };
-});
 
 describe('sqle/Order/Create/SQLInfoFormItem', () => {
   const projectName = mockProjectInfo.projectName;
@@ -59,11 +51,7 @@ describe('sqle/Order/Create/SQLInfoFormItem', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        database: { driverMeta: driverMeta }
-      });
-    });
+    mockDatabaseType();
   });
 
   afterEach(() => {

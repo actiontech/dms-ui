@@ -1725,7 +1725,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -1822,7 +1821,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -4037,7 +4035,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -4134,7 +4131,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -6349,7 +6345,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -6446,7 +6441,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -9947,7 +9941,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -10044,7 +10037,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -13179,7 +13171,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -13276,7 +13267,6 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -17885,7 +17875,6 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 2`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -17982,7 +17971,6 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 2`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -19811,7 +19799,6 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 3`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -19908,7 +19895,6 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 3`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -21767,7 +21753,6 @@ from
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -21864,7 +21849,6 @@ from
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"

@@ -1,3 +1,10 @@
+import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  AuditTaskResV1AuditLevelEnum,
+  AuditTaskResV1SqlSourceEnum,
+  AuditTaskResV1StatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
 export const orderListData = [
   {
     project_name: '700300',
@@ -63,3 +70,32 @@ export const WorkflowTemplateData = {
   ],
   update_time: '2024-01-09T11:00:33Z'
 };
+
+export const AuditTaskResData: IAuditTaskResV1[] = [
+  {
+    audit_level: AuditTaskResV1AuditLevelEnum.error,
+    exec_end_time: '2024-01-09T11:00:33Z',
+    exec_start_time: '2024-01-08T11:00:33Z',
+    instance_db_type: 'mysql',
+    instance_name: 'instance_name b',
+    instance_schema: 'instance_schema',
+    pass_rate: 20,
+    score: 30,
+    sql_source: AuditTaskResV1SqlSourceEnum.form_data,
+    status: AuditTaskResV1StatusEnum.exec_failed,
+    task_id: 1
+  },
+  {
+    audit_level: AuditTaskResV1AuditLevelEnum.warn,
+    exec_end_time: '2024-01-06T11:00:33Z',
+    exec_start_time: '2024-01-05T11:00:33Z',
+    instance_db_type: 'mysql',
+    instance_name: 'instance_name a',
+    instance_schema: 'instance_schema 1',
+    pass_rate: 30,
+    score: 40,
+    sql_source: AuditTaskResV1SqlSourceEnum.form_data,
+    status: AuditTaskResV1StatusEnum.exec_failed,
+    task_id: 2
+  }
+];
