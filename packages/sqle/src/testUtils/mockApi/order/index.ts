@@ -5,6 +5,7 @@ import {
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { WorkflowTemplateData, orderListData } from './data';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 class MockOrderApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -16,6 +17,9 @@ class MockOrderApi implements MockSpyApy {
     this.getWorkflowTemplate();
     this.createAuditTasks();
     this.auditTaskGroupId();
+    this.updateWorkflow();
+    this.getAuditTaskSQLContent();
+    this.cancelWorkflow();
   }
 
   public getWorkflows() {
@@ -109,6 +113,37 @@ class MockOrderApi implements MockSpyApy {
         }
       })
     );
+    return spy;
+  }
+
+  public updateWorkflow() {
+    const spy = jest.spyOn(workflow, 'updateWorkflowV2');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          code: ResponseCode.SUCCESS
+        }
+      })
+    );
+    return spy;
+  }
+
+  public getAuditTaskSQLContent() {
+    const spy = jest.spyOn(task, 'getAuditTaskSQLContentV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          sql: `INSERT INTO your_table_name (telephone_number, email_address, china_id_card, debit_card_account_number, credit_card, name, mac_address, bitcoin, age)
+VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '1234567890123456', 'John Doe', '00:11:22:33:44:55', '1AbC2dEfG3hI4jK5mN6pQ7rStU8vW9xY0z', 30);`
+        }
+      })
+    );
+    return spy;
+  }
+
+  public cancelWorkflow() {
+    const spy = jest.spyOn(workflow, 'cancelWorkflowV2');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

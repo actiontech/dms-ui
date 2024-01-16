@@ -3,20 +3,12 @@ import { superRender } from '../../../../../testUtils/customRender';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
 import { Form } from 'antd';
-import { useSelector } from 'react-redux';
 
 import SQLInfoForm from '..';
 import { SQLInfoFormItemProps } from '../index.type';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { driverMeta } from '../../../../../hooks/useDatabaseType/index.test.data';
-
-jest.mock('react-redux', () => {
-  return {
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn()
-  };
-});
+import { mockDatabaseType } from '../../../../../testUtils/mockHooks/mockDatabaseType';
 
 describe('sqle/Order/Create/SQLInfoForm', () => {
   const projectName = mockProjectInfo.projectName;
@@ -49,11 +41,7 @@ describe('sqle/Order/Create/SQLInfoForm', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        database: { driverMeta: driverMeta }
-      });
-    });
+    mockDatabaseType();
     // Warning: validateDOMNesting(...): <form> cannot appear as a descendant of <form>
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });

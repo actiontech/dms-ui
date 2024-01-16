@@ -1,7 +1,6 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import { useSelector } from 'react-redux';
 import { superRender } from '../../../testUtils/customRender';
 import {
   getAllBySelector,
@@ -13,21 +12,14 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 
 import order from '../../../testUtils/mockApi/order';
 import instance from '../../../testUtils/mockApi/instance';
-import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockDatabaseType } from '../../../testUtils/mockHooks/mockDatabaseType';
 import { InstanceTipList } from '../../../testUtils/mockApi/instance/data';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 
 import CreateOrder from '.';
-
-jest.mock('react-redux', () => {
-  return {
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn()
-  };
-});
 
 describe('sqle/Order/CreateOrder', () => {
   const projectName = mockProjectInfo.projectName;
@@ -45,12 +37,8 @@ describe('sqle/Order/CreateOrder', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        database: { driverMeta: driverMeta }
-      });
-    });
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
+    mockDatabaseType();
     mockUseCurrentProject();
     mockUseCurrentUser();
     order.mockAllApi();

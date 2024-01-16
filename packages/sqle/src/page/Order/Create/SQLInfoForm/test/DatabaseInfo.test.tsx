@@ -1,13 +1,12 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import { Form } from 'antd';
-import { useSelector } from 'react-redux';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { renderWithThemeAndRedux } from '../../../../../testUtils/customRender';
 
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { driverMeta } from '../../../../../hooks/useDatabaseType/index.test.data';
 import instance from '../../../../../testUtils/mockApi/instance';
 import { InstanceTipList } from '../../../../../testUtils/mockApi/instance/data';
+import { mockDatabaseType } from '../../../../../testUtils/mockHooks/mockDatabaseType';
 
 import { DatabaseInfoProps, SQLInfoFormFields } from '../index.type';
 import DatabaseInfo from '../DatabaseInfo';
@@ -16,13 +15,6 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-
-jest.mock('react-redux', () => {
-  return {
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn()
-  };
-});
 
 describe('sqle/Order/Create/DatabaseInfo', () => {
   const projectName = mockProjectInfo.projectName;
@@ -61,11 +53,7 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        database: { driverMeta: driverMeta }
-      });
-    });
+    mockDatabaseType();
     requestConnectCheck = instance.batchCheckInstanceIsConnectableByName();
     requestInstanceTip = instance.getInstanceTipList();
     requestInstanceSchemas = instance.getInstanceSchemas();

@@ -4,7 +4,6 @@
 
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -13,7 +12,7 @@ import { superRender } from '../../../testUtils/customRender';
 import order from '../../../testUtils/mockApi/order';
 import user from '../../../testUtils/mockApi/user';
 import instance from '../../../testUtils/mockApi/instance';
-import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
+import { mockDatabaseType } from '../../../testUtils/mockHooks/mockDatabaseType';
 
 import OrderList from '.';
 import {
@@ -29,13 +28,6 @@ jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
     useNavigate: jest.fn()
-  };
-});
-
-jest.mock('react-redux', () => {
-  return {
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn()
   };
 });
 
@@ -55,11 +47,7 @@ describe('sqle/Order/List', () => {
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        database: { driverMeta: driverMeta }
-      });
-    });
+    mockDatabaseType();
     RequestUserTipList = user.getUserTipList();
     RequestInstanceTipList = instance.getInstanceTipList();
     RequestOrderList = order.getWorkflows();

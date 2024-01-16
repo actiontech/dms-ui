@@ -5,16 +5,15 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import { useSelector } from 'react-redux';
 import { superRender } from '../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockDatabaseType } from '../../../testUtils/mockHooks/mockDatabaseType';
 
 import order from '../../../testUtils/mockApi/order';
 import instance from '../../../testUtils/mockApi/instance';
-import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { InstanceTipList } from '../../../testUtils/mockApi/instance/data';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
@@ -22,13 +21,6 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 
 import CreateOrder from '.';
-
-jest.mock('react-redux', () => {
-  return {
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn()
-  };
-});
 
 describe('sqle/Order/CreateOrder', () => {
   const projectName = mockProjectInfo.projectName;
@@ -46,12 +38,8 @@ describe('sqle/Order/CreateOrder', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        database: { driverMeta: driverMeta }
-      });
-    });
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
+    mockDatabaseType();
     mockUseCurrentProject();
     mockUseCurrentUser();
     order.mockAllApi();
@@ -169,119 +157,6 @@ describe('sqle/Order/CreateOrder', () => {
     fireEvent.click(screen.getByText('SQL美化'));
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestInstance).toBeCalled();
-    expect(baseElement).toMatchSnapshot();
-
-    // isSameSqlOrder
-    const isSameSqlOrder = getBySelector('#isSameSqlOrder', baseElement);
-    fireEvent.click(isSameSqlOrder);
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(screen.getByText('SQL美化'));
-    await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render form for click audit btn for diff same sql', async () => {
-    const { baseElement } = customRender();
-
-    await act(async () => jest.advanceTimersByTime(3300));
-    // workflow_subject
-    const orderName = getBySelector('#workflow_subject', baseElement);
-    fireEvent.change(orderName, {
-      target: {
-        value: 'order_name_2'
-      }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-    // desc
-    fireEvent.change(getBySelector('#desc', baseElement), {
-      target: {
-        value: 'order desc'
-      }
-    });
-
-    // isSameSqlOrder
-    const isSameSqlOrder = getBySelector('#isSameSqlOrder', baseElement);
-    fireEvent.click(isSameSqlOrder);
-    await act(async () => jest.advanceTimersByTime(300));
-
-    // data source
-    const instanceNameEle = getBySelector(
-      '#dataBaseInfo_0_instanceName',
-      baseElement
-    );
-    fireEvent.mouseDown(instanceNameEle);
-    await act(async () => jest.advanceTimersByTime(600));
-    const instanceNameLabel = `${InstanceTipList[1].instance_name}(${InstanceTipList[1].host}:${InstanceTipList[1].port})`;
-    await act(async () => {
-      fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
-      await act(async () => jest.advanceTimersByTime(3300));
-    });
-    expect(requestInstanceSchemas).toBeCalled();
-    await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
-    const SchemaNameEle = getBySelector(
-      '#dataBaseInfo_0_instanceSchema',
-      baseElement
-    );
-    fireEvent.mouseDown(SchemaNameEle);
-    await act(async () => jest.advanceTimersByTime(600));
-    await act(async () => {
-      fireEvent.click(getBySelector(`div[title="sqle"]`));
-      await act(async () => jest.advanceTimersByTime(300));
-    });
-
-    await act(async () => jest.advanceTimersByTime(300));
-    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
-    fireEvent.change(monacoEditor, {
-      target: { value: 'select * from user' }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-
-    // audit btn
-    await act(async () => {
-      fireEvent.click(screen.getByText('审 核'));
-      await act(async () => jest.advanceTimersByTime(600));
-    });
-    expect(screen.getByText('审 核').parentNode).toHaveClass('ant-btn-loading');
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestAudit).toBeCalled();
-    expect(requestAudit).toBeCalledWith({
-      input_mybatis_xml_file: undefined,
-      input_sql_file: undefined,
-      input_zip_file: undefined,
-      instance_name: 'mysql-2',
-      instance_schema: 'sqle',
-      project_name: 'default',
-      sql: 'select * from user'
-    });
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-
-    // 编辑工单信息
-    fireEvent.click(screen.getByText('编辑工单信息'));
-    await act(async () => jest.advanceTimersByTime(400));
-    expect(baseElement).toMatchSnapshot();
-
-    await act(async () => {
-      fireEvent.click(screen.getAllByText('审 核')[1]);
-      await act(async () => jest.advanceTimersByTime(600));
-    });
-
-    // 提交工单
-    fireEvent.click(screen.getByText('提交工单'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3300));
-
-    expect(RequestCreateOrder).toBeCalled();
-    expect(RequestCreateOrder).toBeCalledWith({
-      desc: 'order desc',
-      project_name: projectName,
-      task_ids: [undefined],
-      workflow_subject: 'order_name_2'
-    });
     expect(baseElement).toMatchSnapshot();
   });
 

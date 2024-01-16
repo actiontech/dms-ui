@@ -1445,7 +1445,6 @@ exports[`sqle/Order/Create/DatabaseInfo render data source select change 1`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -1542,7 +1541,6 @@ exports[`sqle/Order/Create/DatabaseInfo render data source select change 1`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -2107,7 +2105,6 @@ exports[`sqle/Order/Create/DatabaseInfo render data source select change 2`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -2204,7 +2201,6 @@ exports[`sqle/Order/Create/DatabaseInfo render data source select change 2`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"
@@ -2769,7 +2765,6 @@ exports[`sqle/Order/Create/DatabaseInfo render data source select change 3`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="MySQL"
@@ -2866,7 +2861,6 @@ exports[`sqle/Order/Create/DatabaseInfo render data source select change 3`] = `
                       >
                         <img
                           alt=""
-                          src=""
                         />
                         <span
                           title="PostgreSQL"

@@ -37,9 +37,9 @@ const useOrderDetailActions = ({
   manualExecuteOrderButtonMeta: OrderDetailActionMeta;
   terminateOrderButtonMeta: OrderDetailActionMeta;
 } => {
+  const { t } = useTranslation();
   const [messageApi, contextHolder] = message.useMessage();
   const { username } = useCurrentUser();
-  const { t } = useTranslation();
 
   const currentStep = useMemo(() => {
     return orderInfo?.record?.workflow_step_list?.find(
