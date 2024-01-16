@@ -1,20 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import { Spin } from 'antd';
+import { Spin, Form } from 'antd';
 import { EmptyBox, PageHeader } from '@actiontech/shared';
 import { RuleStatus, RuleList, RuleTypes } from '../../components/RuleList';
-import {
-  TableFilterContainer,
-  useTableFilterContainer,
-  useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
 import useRuleList from '../../components/RuleList/useRuleList';
-import useRuleFilterForm from './hooks/useRuleFilterForm';
-import { GetRuleListV1Params, RuleFilterContainerMeta } from './index.data';
 import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import { Link } from 'react-router-dom';
 import { RuleListStyleWrapper } from './style';
 import useCreateRuleTemplatePermission from './hooks/useCreateRuleTemplatePermission';
+
+import RuleListFilter from './RuleListFilter';
+import useRuleListFilter from './hooks/useRuleListFilter';
+import { RuleListFilterForm } from './index.type';
 
 const Rule = () => {
   const { t } = useTranslation();
@@ -27,32 +24,26 @@ const Rule = () => {
     getCurrentTypeRules
   } = useRuleList();
 
+  const [form] = Form.useForm<RuleListFilterForm>();
+
   const {
-    filterDbType,
-    filterRuleTemplate,
-    templateRules,
-    loading,
     showNotRuleTemplatePage,
-    ruleFilterContainerCustomProps,
+    setShowNorRuleTemplatePage,
+    getTemplateRules,
+    bindProjects,
+    loading,
     projectID,
+    projectName,
+    filterRuleTemplate,
+    filterDbType,
     allRules,
-    filterProjectName
-  } = useRuleFilterForm();
-
-  const { updateTableFilterInfo } = useTableRequestParams<
-    GetRuleListV1Params,
-    GetRuleListV1Params
-  >();
-
-  const { filterContainerMeta } = useTableFilterContainer(
-    [],
-    updateTableFilterInfo,
-    RuleFilterContainerMeta()
-  );
+    templateRules,
+    getAllRules
+  } = useRuleListFilter(form);
 
   const { allowCreateRuleTemplate } = useCreateRuleTemplatePermission({
     projectID,
-    projectName: filterProjectName,
+    projectName,
     showNotRuleTemplatePage
   });
 
@@ -61,11 +52,12 @@ const Rule = () => {
       <PageHeader title={t('rule.pageTitle')} />
       <Spin spinning={loading} delay={400}>
         <RuleStatusWrapperStyleWrapper className="flex-space-between flex-align-center">
-          <TableFilterContainer
-            updateTableFilterInfo={updateTableFilterInfo}
-            filterContainerMeta={filterContainerMeta}
-            filterCustomProps={ruleFilterContainerCustomProps}
-            style={{ borderBottom: 0 }}
+          <RuleListFilter
+            form={form}
+            setShowNorRuleTemplatePage={setShowNorRuleTemplatePage}
+            getTemplateRules={getTemplateRules}
+            bindProjects={bindProjects}
+            getAllRules={getAllRules}
           />
           {filterRuleTemplate && (
             <RuleStatus
