@@ -13,6 +13,7 @@ import user from '../../../testUtils/mockApi/user';
 describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
   beforeEach(() => {
     workflowTemplate.mockAllApi();
+    user.mockAllApi();
     mockUseCurrentProject();
     mockUseCurrentUser();
     jest.useFakeTimers();
