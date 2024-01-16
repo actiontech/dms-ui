@@ -61,19 +61,7 @@ exports[`ReportStatistics/DatabaseSourceOrder render chart snap 2`] = `
         class="chart-box"
       >
         <div
-          anglefield="value"
-          appendpadding="20"
-          color="[\\"#7470ED\\",\\"#6094FC\\",\\"#3DB5F1\\",\\"#1ACEDB\\",\\"#4BCCA6\\"]"
-          colorfield="name"
-          data="[{\\"name\\":\\"\\",\\"value\\":1}]"
-          innerradius="0.85"
-          interactions="[{\\"type\\":\\"element-selected\\"},{\\"type\\":\\"element-active\\"}]"
-          piestyle="{\\"stroke\\":\\"#fff\\",\\"strokeOpacity\\":1,\\"lineWidth\\":4,\\"lineCap\\":\\"round\\"}"
-          radius="0.9"
-          state="{\\"active\\":{\\"style\\":{\\"lineWidth\\":5,\\"stroke\\":\\"#fff\\",\\"offsetY\\":4}}}"
-          statistic="{\\"title\\":{\\"content\\":\\"98\\",\\"style\\":{\\"fontSize\\":\\"24px\\",\\"lineHeight\\":\\"32px\\",\\"height\\":\\"32px\\",\\"color\\":\\"#292C33\\",\\"fontWeight\\":700,\\"fontFamily\\":\\"PlusJakartaSans Medium\\",\\"marginTop\\":\\"10px\\"}},\\"content\\":{\\"style\\":{\\"fontSize\\":\\"12px\\",\\"lineHeight\\":\\"20px\\",\\"height\\":\\"20px\\",\\"color\\":\\"#8a8f99\\",\\"fontWeight\\":400,\\"marginTop\\":\\"14px\\"},\\"content\\":\\"数据源总计\\"}}"
-          theme="light"
-          tooltip="{\\"fields\\":[\\"name\\",\\"value\\"],\\"domStyles\\":{\\"g2-tooltip\\":{\\"width\\":\\"170px\\",\\"height\\":\\"auto\\",\\"borderRadius\\":\\"8px\\",\\"background\\":\\"#fcfbf9\\",\\"border\\":\\"1px solid #ebe9e8\\",\\"boxShadow\\":\\"0 3px 12px 0 #332c1f1a\\",\\"padding\\":\\"0 12px\\"}}}"
+          data-custom-params="{\\"data\\":[{\\"name\\":\\"\\",\\"value\\":1}],\\"appendPadding\\":20,\\"angleField\\":\\"value\\",\\"colorField\\":\\"name\\",\\"color\\":[\\"#7470ED\\",\\"#6094FC\\",\\"#3DB5F1\\",\\"#1ACEDB\\",\\"#4BCCA6\\"],\\"radius\\":0.9,\\"innerRadius\\":0.85,\\"pieStyle\\":{\\"stroke\\":\\"#fff\\",\\"strokeOpacity\\":1,\\"lineWidth\\":4,\\"lineCap\\":\\"round\\"},\\"label\\":false,\\"legend\\":{\\"layout\\":\\"horizontal\\",\\"position\\":\\"bottom\\",\\"flipPage\\":false,\\"reversed\\":false,\\"animate\\":false,\\"itemSpacing\\":16,\\"offsetY\\":-10,\\"textAlign\\":\\"center\\",\\"itemName\\":{\\"style\\":{\\"fill\\":\\"#8a8f99\\",\\"fontSize\\":12,\\"fontWeight\\":500,\\"fontFamily\\":\\"PlusJakartaSans Medium\\"}},\\"marker\\":{\\"symbol\\":\\"circle\\",\\"style\\":{\\"lineWidth\\":5,\\"shadowBlur\\":5,\\"stroke\\":\\"rgba(26, 206, 219, 0.2)\\",\\"shadowColor\\":\\"rgba(26, 206, 219, 0.2)\\",\\"textAlign\\":\\"center\\"}}},\\"statistic\\":{\\"title\\":{\\"content\\":\\"98\\",\\"style\\":{\\"fontSize\\":\\"24px\\",\\"lineHeight\\":\\"32px\\",\\"height\\":\\"32px\\",\\"color\\":\\"#292C33\\",\\"fontWeight\\":700,\\"fontFamily\\":\\"PlusJakartaSans Medium\\",\\"marginTop\\":\\"10px\\"}},\\"content\\":{\\"style\\":{\\"fontSize\\":\\"12px\\",\\"lineHeight\\":\\"20px\\",\\"height\\":\\"20px\\",\\"color\\":\\"#8a8f99\\",\\"fontWeight\\":400,\\"marginTop\\":\\"14px\\"},\\"content\\":\\"数据源总计\\"}},\\"tooltip\\":{\\"fields\\":[\\"name\\",\\"value\\"],\\"domStyles\\":{\\"g2-tooltip\\":{\\"width\\":\\"170px\\",\\"height\\":\\"auto\\",\\"borderRadius\\":\\"8px\\",\\"background\\":\\"#fcfbf9\\",\\"border\\":\\"1px solid #ebe9e8\\",\\"boxShadow\\":\\"0 3px 12px 0 #332c1f1a\\",\\"padding\\":\\"0 12px\\"}}},\\"interactions\\":[{\\"type\\":\\"element-selected\\"},{\\"type\\":\\"element-active\\"}],\\"state\\":{\\"active\\":{\\"style\\":{\\"lineWidth\\":5,\\"stroke\\":\\"#fff\\",\\"offsetY\\":4}}},\\"theme\\":\\"light\\"}"
         />
       </div>
     </div>

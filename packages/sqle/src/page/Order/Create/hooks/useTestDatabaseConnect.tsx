@@ -36,7 +36,7 @@ const useTestDatabaseConnect = ({
   const testDatabaseConnect = useCallback(async () => {
     testStart();
     const instances =
-      databaseInfo
+      (databaseInfo ?? [])
         .map((v) => ({
           name: v.instanceName
         }))

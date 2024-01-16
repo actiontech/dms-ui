@@ -12,6 +12,7 @@ const OrderBasicInfo: React.FC<OrderBasicInfoProps> = ({
   orderStatus
 }) => {
   const { t } = useTranslation();
+
   return (
     <div className="order-steps-basic-info">
       <div className="order-steps-basic-info-title">

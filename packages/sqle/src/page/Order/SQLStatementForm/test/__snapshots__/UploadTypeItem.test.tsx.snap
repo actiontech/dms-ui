@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/Order/UploadTypeItem render default upload type active item 1`] = `
+<body>
+  <div>
+    <div
+      class="update-type-item-wrapper css-16nz79o"
+    >
+      <div
+        class="active-icon-wrapper"
+      >
+        <span
+          class="icon-order-upload-checked active-icon css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="Frame"
+            >
+              <path
+                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                id="Vector"
+                stroke="#FCFBF9"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/UploadTypeItem render default upload type item 1`] = `
+<body>
+  <div>
+    <div
+      class="update-type-item-wrapper css-1xajf28"
+    >
+      <div
+        class="active-icon-wrapper"
+        hidden=""
+      >
+        <span
+          class="icon-order-upload-checked active-icon css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="Frame"
+            >
+              <path
+                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                id="Vector"
+                stroke="#FCFBF9"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/UploadTypeItem render has children 1`] = `
+<body>
+  <div>
+    <div
+      class="update-type-item-wrapper css-1xajf28"
+    >
+      <span>
+        children node
+      </span>
+      <div
+        class="active-icon-wrapper"
+        hidden=""
+      >
+        <span
+          class="icon-order-upload-checked active-icon css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="Frame"
+            >
+              <path
+                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                id="Vector"
+                stroke="#FCFBF9"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/UploadTypeItem render hidden default upload type item 1`] = `
+<body>
+  <div>
+    <div
+      class="update-type-item-wrapper css-1xajf28"
+      hidden=""
+    >
+      <div
+        class="active-icon-wrapper"
+        hidden=""
+      >
+        <span
+          class="icon-order-upload-checked active-icon css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="Frame"
+            >
+              <path
+                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                id="Vector"
+                stroke="#FCFBF9"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
