@@ -6,7 +6,6 @@ import { OrderBasicInfoProps } from '../index.type';
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('sqle/Order/Detail/OrderBasicInfo', () => {
-
   const customRender = (orderStatus?: WorkflowRecordResV2StatusEnum) => {
     const params: OrderBasicInfoProps = {
       createTime: '2024-01-05T11:00:33Z',

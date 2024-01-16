@@ -36,14 +36,17 @@ describe('sqle/Order/Detail/OrderHistorySteps', () => {
         {
           current_step_number: 1,
           status: WorkflowRecordResV2StatusEnum.executing,
-          tasks: [{ task_id : 8}],
+          tasks: [{ task_id: 8 }],
           workflow_step_list: []
         }
       ]
     });
     expect(baseElement).toMatchSnapshot();
 
-    const stepBtn = getBySelector('.history-steps-trigger-wrapper', baseElement);
+    const stepBtn = getBySelector(
+      '.history-steps-trigger-wrapper',
+      baseElement
+    );
     fireEvent.click(stepBtn);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
@@ -51,5 +54,5 @@ describe('sqle/Order/Detail/OrderHistorySteps', () => {
     fireEvent.click(stepBtn);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });

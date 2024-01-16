@@ -40,13 +40,13 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     order.mockAllApi();
-  })
+  });
 
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();
     cleanup();
-  })
+  });
 
   it('render snap when open is false', () => {
     const { baseElement } = customRender();
@@ -65,5 +65,5 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });

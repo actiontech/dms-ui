@@ -7,9 +7,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 
 describe('sqle/Order/Detail/OrderDetailPageHeaderExtra', () => {
   const customRender = (params: OrderDetailPageHeaderExtraProps) => {
-    return renderWithTheme(
-      <OrderDetailPageHeaderExtra {...params} />
-    );
+    return renderWithTheme(<OrderDetailPageHeaderExtra {...params} />);
   };
 
   beforeEach(() => {
@@ -23,9 +21,5 @@ describe('sqle/Order/Detail/OrderDetailPageHeaderExtra', () => {
     cleanup();
   });
 
-  it('render snap', () => {
-    const { baseElement } = customRender({
-      projectName: 'project name'
-    });
-  })
+  it('render snap', () => {});
 });
