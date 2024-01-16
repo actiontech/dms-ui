@@ -14,7 +14,7 @@ import order from '../../../testUtils/mockApi/order';
 import instance from '../../../testUtils/mockApi/instance';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockDatabaseType } from '../../../testUtils/mockHooks/mockDatabaseType';
-import { InstanceTipList } from '../../../testUtils/mockApi/instance/data';
+import { instanceTipsMockData } from '../../../testUtils/mockApi/instance/data';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -137,7 +137,7 @@ describe('sqle/Order/CreateOrder', () => {
     );
     fireEvent.mouseDown(instanceNameEle);
     await act(async () => jest.advanceTimersByTime(600));
-    const instanceNameLabel = `${InstanceTipList[0].instance_name}(${InstanceTipList[0].host}:${InstanceTipList[0].port})`;
+    const instanceNameLabel = `${instanceTipsMockData[0].instance_name}(${instanceTipsMockData[0].host}:${instanceTipsMockData[0].port})`;
     expect(screen.getByText(instanceNameLabel)).toBeInTheDocument();
     await act(async () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
@@ -145,13 +145,13 @@ describe('sqle/Order/CreateOrder', () => {
     });
     expect(requestInstanceSchemas).toBeCalled();
     expect(requestInstanceSchemas).toBeCalledWith({
-      instance_name: InstanceTipList[0].instance_name,
+      instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestInstance).toBeCalled();
     expect(requestInstance).toBeCalledWith({
-      instance_name: InstanceTipList[0].instance_name,
+      instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
     const SchemaNameEle = getBySelector(
@@ -220,7 +220,7 @@ describe('sqle/Order/CreateOrder', () => {
     );
     fireEvent.mouseDown(instanceNameEle);
     await act(async () => jest.advanceTimersByTime(600));
-    const instanceNameLabel = `${InstanceTipList[1].instance_name}(${InstanceTipList[1].host}:${InstanceTipList[1].port})`;
+    const instanceNameLabel = `${instanceTipsMockData[1].instance_name}(${instanceTipsMockData[1].host}:${instanceTipsMockData[1].port})`;
     await act(async () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3300));
@@ -314,7 +314,7 @@ describe('sqle/Order/CreateOrder', () => {
     );
     fireEvent.mouseDown(instanceNameEle);
     await act(async () => jest.advanceTimersByTime(600));
-    const instanceNameLabel = `${InstanceTipList[2].instance_name}(${InstanceTipList[2].host}:${InstanceTipList[2].port})`;
+    const instanceNameLabel = `${instanceTipsMockData[2].instance_name}(${instanceTipsMockData[2].host}:${instanceTipsMockData[2].port})`;
     expect(screen.getByText(instanceNameLabel)).toBeInTheDocument();
     await act(async () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));

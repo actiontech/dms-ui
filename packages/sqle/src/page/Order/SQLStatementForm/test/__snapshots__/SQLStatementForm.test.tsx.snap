@@ -35,7 +35,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for input sqle code 1`] 
                   class="css-8qroj2"
                 >
                   <div
-                    class="update-type-item-wrapper css-1vefa11"
+                    class="update-type-item-wrapper css-16nz79o"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -87,7 +87,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for input sqle code 1`] 
                     </div>
                   </div>
                   <div
-                    class="update-type-item-wrapper css-gyzc3a"
+                    class="update-type-item-wrapper css-1xajf28"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -140,7 +140,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for input sqle code 1`] 
                     </div>
                   </div>
                   <div
-                    class="update-type-item-wrapper css-gyzc3a"
+                    class="update-type-item-wrapper css-1xajf28"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -238,7 +238,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for upload sqle file 1`]
                   class="css-8qroj2"
                 >
                   <div
-                    class="update-type-item-wrapper css-gyzc3a"
+                    class="update-type-item-wrapper css-1xajf28"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -291,7 +291,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for upload sqle file 1`]
                     </div>
                   </div>
                   <div
-                    class="update-type-item-wrapper css-1vefa11"
+                    class="update-type-item-wrapper css-16nz79o"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -343,7 +343,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for upload sqle file 1`]
                     </div>
                   </div>
                   <div
-                    class="update-type-item-wrapper css-gyzc3a"
+                    class="update-type-item-wrapper css-1xajf28"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -441,7 +441,7 @@ exports[`sqle/Order/SQLStatementForm render click hideUpdateMybatisFile & isClea
                   class="css-8qroj2"
                 >
                   <div
-                    class="update-type-item-wrapper css-1vefa11"
+                    class="update-type-item-wrapper css-16nz79o"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -493,7 +493,7 @@ exports[`sqle/Order/SQLStatementForm render click hideUpdateMybatisFile & isClea
                     </div>
                   </div>
                   <div
-                    class="update-type-item-wrapper css-gyzc3a"
+                    class="update-type-item-wrapper css-1xajf28"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -546,7 +546,7 @@ exports[`sqle/Order/SQLStatementForm render click hideUpdateMybatisFile & isClea
                     </div>
                   </div>
                   <div
-                    class="update-type-item-wrapper css-gyzc3a"
+                    class="update-type-item-wrapper css-1xajf28"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -644,7 +644,7 @@ exports[`sqle/Order/SQLStatementForm render snap 1`] = `
                   class="css-8qroj2"
                 >
                   <div
-                    class="update-type-item-wrapper css-1vefa11"
+                    class="update-type-item-wrapper css-16nz79o"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -696,7 +696,7 @@ exports[`sqle/Order/SQLStatementForm render snap 1`] = `
                     </div>
                   </div>
                   <div
-                    class="update-type-item-wrapper css-gyzc3a"
+                    class="update-type-item-wrapper css-1xajf28"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
@@ -749,7 +749,7 @@ exports[`sqle/Order/SQLStatementForm render snap 1`] = `
                     </div>
                   </div>
                   <div
-                    class="update-type-item-wrapper css-gyzc3a"
+                    class="update-type-item-wrapper css-1xajf28"
                   >
                     <span
                       class="custom-icon  css-u3jcp4"
