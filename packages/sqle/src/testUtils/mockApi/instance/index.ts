@@ -4,7 +4,11 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { InstanceInfo, InstanceSchemas, InstanceTipList } from './data';
+import {
+  instanceTipsMockData,
+  instanceSchemasMockData,
+  instanceInfoMockData
+} from './data';
 
 class MockInstanceApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -18,17 +22,8 @@ class MockInstanceApi implements MockSpyApy {
     const spy = jest.spyOn(instance, 'getInstanceTipListV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: InstanceTipList
-      })
-    );
-    return spy;
-  }
-
-  public getInstanceSchemas() {
-    const spy = jest.spyOn(instance, 'getInstanceSchemasV1');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: InstanceSchemas
+        data: instanceTipsMockData,
+        total_nums: instanceTipsMockData.length
       })
     );
     return spy;
@@ -38,7 +33,17 @@ class MockInstanceApi implements MockSpyApy {
     const spy = jest.spyOn(instance, 'getInstanceV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: InstanceInfo
+        data: instanceInfoMockData
+      })
+    );
+    return spy;
+  }
+
+  public getInstanceSchemas() {
+    const spy = jest.spyOn(instance, 'getInstanceSchemasV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: { schema_name_list: instanceSchemasMockData }
       })
     );
     return spy;

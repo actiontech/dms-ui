@@ -635,7 +635,7 @@ exports[`sqle/Order/Create/SQLInfoForm render snap 1`] = `
                       class="css-8qroj2"
                     >
                       <div
-                        class="update-type-item-wrapper css-1vefa11"
+                        class="update-type-item-wrapper css-16nz79o"
                       >
                         <span
                           class="custom-icon  css-u3jcp4"
@@ -687,7 +687,7 @@ exports[`sqle/Order/Create/SQLInfoForm render snap 1`] = `
                         </div>
                       </div>
                       <div
-                        class="update-type-item-wrapper css-gyzc3a"
+                        class="update-type-item-wrapper css-1xajf28"
                       >
                         <span
                           class="custom-icon  css-u3jcp4"
@@ -740,7 +740,7 @@ exports[`sqle/Order/Create/SQLInfoForm render snap 1`] = `
                         </div>
                       </div>
                       <div
-                        class="update-type-item-wrapper css-gyzc3a"
+                        class="update-type-item-wrapper css-1xajf28"
                       >
                         <span
                           class="custom-icon  css-u3jcp4"

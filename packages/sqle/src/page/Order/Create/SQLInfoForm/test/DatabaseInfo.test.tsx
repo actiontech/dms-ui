@@ -5,7 +5,7 @@ import { renderWithThemeAndRedux } from '../../../../../testUtils/customRender';
 
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import instance from '../../../../../testUtils/mockApi/instance';
-import { InstanceTipList } from '../../../../../testUtils/mockApi/instance/data';
+import { instanceTipsMockData } from '../../../../../testUtils/mockApi/instance/data';
 import { mockDatabaseType } from '../../../../../testUtils/mockHooks/mockDatabaseType';
 
 import { DatabaseInfoProps, SQLInfoFormFields } from '../index.type';
@@ -107,7 +107,7 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
     fireEvent.mouseDown(instanceNameEle);
     await act(async () => jest.advanceTimersByTime(600));
     expect(baseElement).toMatchSnapshot();
-    const instanceNameLabel = `${InstanceTipList[0].instance_name}(${InstanceTipList[0].host}:${InstanceTipList[0].port})`;
+    const instanceNameLabel = `${instanceTipsMockData[0].instance_name}(${instanceTipsMockData[0].host}:${instanceTipsMockData[0].port})`;
     expect(screen.getByText(instanceNameLabel)).toBeInTheDocument();
     await act(async () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
@@ -116,13 +116,13 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
 
     expect(requestInstanceSchemas).toBeCalled();
     expect(requestInstanceSchemas).toBeCalledWith({
-      instance_name: InstanceTipList[0].instance_name,
+      instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestInstance).toBeCalled();
     expect(requestInstance).toBeCalledWith({
-      instance_name: InstanceTipList[0].instance_name,
+      instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
     expect(baseElement).toMatchSnapshot();

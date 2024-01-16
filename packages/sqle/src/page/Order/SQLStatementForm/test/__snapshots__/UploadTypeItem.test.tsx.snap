@@ -4,7 +4,7 @@ exports[`sqle/Order/UploadTypeItem render default upload type active item 1`] = 
 <body>
   <div>
     <div
-      class="update-type-item-wrapper css-1vefa11"
+      class="update-type-item-wrapper css-16nz79o"
     >
       <div
         class="active-icon-wrapper"
@@ -42,7 +42,7 @@ exports[`sqle/Order/UploadTypeItem render default upload type item 1`] = `
 <body>
   <div>
     <div
-      class="update-type-item-wrapper css-gyzc3a"
+      class="update-type-item-wrapper css-1xajf28"
     >
       <div
         class="active-icon-wrapper"
@@ -81,7 +81,7 @@ exports[`sqle/Order/UploadTypeItem render has children 1`] = `
 <body>
   <div>
     <div
-      class="update-type-item-wrapper css-gyzc3a"
+      class="update-type-item-wrapper css-1xajf28"
     >
       <span>
         children node
@@ -123,7 +123,7 @@ exports[`sqle/Order/UploadTypeItem render hidden default upload type item 1`] = 
 <body>
   <div>
     <div
-      class="update-type-item-wrapper css-gyzc3a"
+      class="update-type-item-wrapper css-1xajf28"
       hidden=""
     >
       <div
