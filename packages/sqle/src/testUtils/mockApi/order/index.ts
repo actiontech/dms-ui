@@ -30,6 +30,7 @@ class MockOrderApi implements MockSpyApy {
     this.terminateSingleTaskByWorkflow();
     this.updateWorkflowSchedule();
     this.getAuditTaskSQLs();
+    this.updateAuditTaskSQLs();
   }
 
   public getWorkflows() {
@@ -193,6 +194,12 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
         total_nums: AuditTaskSQLsData.length
       })
     );
+    return spy;
+  }
+
+  public updateAuditTaskSQLs() {
+    const spy = jest.spyOn(task, 'updateAuditTaskSQLsV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
