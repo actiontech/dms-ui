@@ -32,7 +32,7 @@ describe('sqle/Order/Common/AuditResultFilterContainer', () => {
   it('render snap when no optional parameters', () => {
     const { baseElement } = customRender({
       filterOptions: filterOptionsData,
-      filterValue: 'a',
+      filterValue: 'a'
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -88,8 +88,8 @@ describe('sqle/Order/Common/AuditResultFilterContainer', () => {
       filterValue: '',
       passRate: 1,
       score: 9,
-      instanceSchemaName: 'schema name',
+      instanceSchemaName: 'schema name'
     });
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });
