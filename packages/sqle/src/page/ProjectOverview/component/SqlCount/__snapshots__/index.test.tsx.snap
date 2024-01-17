@@ -190,13 +190,7 @@ exports[`page/ProjectOverview/SqlCount render sql count 1`] = `
                 style="height: 200px;"
               >
                 <div
-                  appendpadding="[16,0,8,0]"
-                  color="[\\"#EBAD1C\\",\\"#f2f1f0\\"]"
-                  innerradius="0.75"
-                  percent="10"
-                  radius="0.9"
-                  statistic="{\\"title\\":{\\"style\\":{\\"color\\":\\"#292c33\\",\\"fontSize\\":\\"20px\\",\\"fontWeight\\":700,\\"lineHeight\\":\\"28px\\",\\"textAlign\\":\\"center\\"}},\\"content\\":{\\"style\\":{\\"fontSize\\":\\"12px\\",\\"fontWeight\\":300,\\"color\\":\\"#8a8f99\\",\\"lineHeight\\":\\"20px\\"},\\"content\\":\\"风险率\\"}}"
-                  theme="light"
+                  data-custom-params="{\\"autoFit\\":true,\\"appendPadding\\":[16,0,8,0],\\"percent\\":10,\\"color\\":[\\"#EBAD1C\\",\\"#f2f1f0\\"],\\"radius\\":0.9,\\"innerRadius\\":0.75,\\"statistic\\":{\\"title\\":{\\"style\\":{\\"color\\":\\"#292c33\\",\\"fontSize\\":\\"20px\\",\\"fontWeight\\":700,\\"lineHeight\\":\\"28px\\",\\"textAlign\\":\\"center\\"}},\\"content\\":{\\"style\\":{\\"fontSize\\":\\"12px\\",\\"fontWeight\\":300,\\"color\\":\\"#8a8f99\\",\\"lineHeight\\":\\"20px\\"},\\"content\\":\\"风险率\\"}},\\"theme\\":\\"light\\"}"
                 />
               </section>
             </div>

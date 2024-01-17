@@ -15,6 +15,7 @@ const OrderRecordInfo: React.FC<OrderRecordInfoProps> = ({
   tasksStatusNumber
 }) => {
   const { t } = useTranslation();
+
   return (
     <OrderStepsStyleWrapper hidden={!open}>
       <div className="order-record-info-header">
