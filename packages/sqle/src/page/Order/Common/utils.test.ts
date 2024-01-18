@@ -1,4 +1,4 @@
-import { fireEvent, act, cleanup, screen } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
