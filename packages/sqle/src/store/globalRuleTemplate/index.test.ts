@@ -41,6 +41,5 @@ describe('store/globalRuleTemplate', () => {
     );
 
     expect(newState).toEqual(newState);
-
   });
 });

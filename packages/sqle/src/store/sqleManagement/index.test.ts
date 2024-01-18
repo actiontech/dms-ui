@@ -1,5 +1,9 @@
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import reducers, { SqleManagementState, updateSqlIdList, updateSqleManagement } from '.';
+import reducers, {
+  SqleManagementState,
+  updateSqlIdList,
+  updateSqleManagement
+} from '.';
 
 const initialState: SqleManagementState = {
   modalStatus: {},
