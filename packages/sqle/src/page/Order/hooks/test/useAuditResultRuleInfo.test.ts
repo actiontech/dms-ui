@@ -13,7 +13,6 @@ const auditResultData = [
 ];
 
 describe('sqle/order/hooks/useAuditResultRuleInfo', () => {
-
   let requestGetRuleList: jest.SpyInstance;
 
   beforeEach(() => {
@@ -32,7 +31,9 @@ describe('sqle/order/hooks/useAuditResultRuleInfo', () => {
   });
 
   it('render when auditResult', async () => {
-    const { result } = renderHook(() => useAuditResultRuleInfo(auditResultData));
+    const { result } = renderHook(() =>
+      useAuditResultRuleInfo(auditResultData)
+    );
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetRuleList).toBeCalled();
     expect(requestGetRuleList).toBeCalledWith({

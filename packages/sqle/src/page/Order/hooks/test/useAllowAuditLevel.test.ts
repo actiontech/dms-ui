@@ -7,7 +7,7 @@ import order from '../../../../testUtils/mockApi/order';
 describe('sqle/order/hooks/useAllowAuditLevel', () => {
   const customRender = () => {
     return renderHook(() => useAllowAuditLevel());
-  }
+  };
 
   let requestGetWorkflowTemplate: jest.SpyInstance;
 
@@ -30,7 +30,7 @@ describe('sqle/order/hooks/useAllowAuditLevel', () => {
     expect(result.current.disabledOperatorOrderBtnTips).toBe('');
     await act(async () => {
       result.current.setDisabledOperatorOrderBtnTips('text');
-    })
+    });
     expect(result.current.disabledOperatorOrderBtnTips).toBe('text');
 
     await act(async () => {
