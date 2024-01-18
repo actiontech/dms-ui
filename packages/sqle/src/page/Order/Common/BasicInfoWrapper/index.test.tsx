@@ -25,5 +25,5 @@ describe('sqle/Order/BasicInfoWrapper', () => {
       gap: 10
     });
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });

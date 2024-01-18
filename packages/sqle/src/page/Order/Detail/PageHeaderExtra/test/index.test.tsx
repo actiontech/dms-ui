@@ -52,7 +52,10 @@ describe('sqle/Order/Detail/OrderDetailPageHeaderExtra', () => {
   });
 
   it('render snap', () => {
-    const { baseElement } = customRender({ orderStepVisibility: true, isArchive: false });
+    const { baseElement } = customRender({
+      orderStepVisibility: true,
+      isArchive: false
+    });
     expect(baseElement).toMatchSnapshot();
   });
 

@@ -2,7 +2,10 @@ import RejectReason from '.';
 
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../../../testUtils/customRender';
-import { WorkflowStepResV2StateEnum, WorkflowStepResV2TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  WorkflowStepResV2StateEnum,
+  WorkflowStepResV2TypeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const stepInfoData = {
   assignee_user_name_list: ['a', 'b', 'c'],
@@ -49,5 +52,5 @@ describe('sqle/Order/Detail/RejectReason', () => {
     fireEvent.click(screen.getByText('修改审核语句'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(openModifySqlModalFn).toBeCalled();
-  })
+  });
 });
