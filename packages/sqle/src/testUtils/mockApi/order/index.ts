@@ -31,6 +31,8 @@ class MockOrderApi implements MockSpyApy {
     this.updateWorkflowSchedule();
     this.getAuditTaskSQLs();
     this.updateAuditTaskSQLs();
+    this.downloadAuditTaskSQLFile();
+    this.downloadAuditTaskSQLReport();
   }
 
   public getWorkflows() {
@@ -199,6 +201,18 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
 
   public updateAuditTaskSQLs() {
     const spy = jest.spyOn(task, 'updateAuditTaskSQLsV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public downloadAuditTaskSQLFile() {
+    const spy = jest.spyOn(task, 'downloadAuditTaskSQLFileV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public downloadAuditTaskSQLReport() {
+    const spy = jest.spyOn(task, 'downloadAuditTaskSQLReportV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
