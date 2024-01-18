@@ -1,11 +1,14 @@
-
 import AuditResultList from '.';
 import { AuditResultListProps } from './index.type';
 
 import { superRender } from '../../../../testUtils/customRender';
 import { act, cleanup } from '@testing-library/react';
 import order from '../../../../testUtils/mockApi/order';
-import { AuditTaskResV1AuditLevelEnum, AuditTaskResV1SqlSourceEnum, AuditTaskResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  AuditTaskResV1AuditLevelEnum,
+  AuditTaskResV1SqlSourceEnum,
+  AuditTaskResV1StatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const projectID = 'project ID';
 const tasksData = [
@@ -38,8 +41,10 @@ const tasksData = [
 ];
 
 describe('sqle/Order/Common/AuditResultList', () => {
-  const updateTaskRecordTotalNumFn = jest.fn()
-  const customRender = (params: Pick<AuditResultListProps, 'tasks'| 'mode'>) => {
+  const updateTaskRecordTotalNumFn = jest.fn();
+  const customRender = (
+    params: Pick<AuditResultListProps, 'tasks' | 'mode'>
+  ) => {
     return superRender(
       <AuditResultList
         projectID={projectID}
@@ -51,7 +56,7 @@ describe('sqle/Order/Common/AuditResultList', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-order.mockAllApi();
+    order.mockAllApi();
   });
 
   afterEach(() => {
@@ -62,12 +67,12 @@ order.mockAllApi();
 
   it('render snap when mode is order', async () => {
     const { baseElement } = customRender({
-      tasks:[]
+      tasks: []
     });
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3200));
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 
   it('render snap has task when mode is order', async () => {
     const { baseElement } = customRender({

@@ -5,7 +5,6 @@ import dayjs from 'dayjs';
 import { checkTimeInWithMaintenanceTime } from './utils';
 
 describe('sqle/Order/Common/utils', () => {
-
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-18 12:34:00').valueOf());
   });
@@ -73,7 +72,7 @@ describe('sqle/Order/Common/utils', () => {
             hour: 10
           },
           maintenance_stop_time: {
-            hour: 15,
+            hour: 15
           }
         }
       ])

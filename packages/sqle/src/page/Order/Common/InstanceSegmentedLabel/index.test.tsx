@@ -1,4 +1,3 @@
-
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import InstanceSegmentedLabel, { InstanceSegmentedLabelProps } from '.';
 import { renderWithTheme } from '../../../../testUtils/customRender';

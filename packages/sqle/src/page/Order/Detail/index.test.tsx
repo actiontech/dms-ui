@@ -8,7 +8,6 @@ import order from '../../../testUtils/mockApi/order';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
-
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
@@ -23,7 +22,7 @@ describe('sqle/Order/Detail', () => {
 
   const customRender = () => {
     return superRender(<OrderDetail />);
-  }
+  };
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -51,5 +50,5 @@ describe('sqle/Order/Detail', () => {
       project_name: 'default',
       workflow_id: 'orderId'
     });
-  })
-})
+  });
+});

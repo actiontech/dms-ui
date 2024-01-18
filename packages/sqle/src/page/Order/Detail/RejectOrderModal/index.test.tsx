@@ -19,7 +19,9 @@ describe('sqle/Order/Detail/RejectOrderModal', () => {
     cleanup();
   });
 
-  const customRender = (params?: Pick<RejectOrderModalProps, 'open' | 'loading'>) => {
+  const customRender = (
+    params?: Pick<RejectOrderModalProps, 'open' | 'loading'>
+  ) => {
     return renderWithTheme(
       <RejectOrderModal
         open={params?.open || false}
@@ -65,5 +67,5 @@ describe('sqle/Order/Detail/RejectOrderModal', () => {
     fireEvent.click(screen.getByText('取 消'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(closeFn).toBeCalled();
-  })
+  });
 });
