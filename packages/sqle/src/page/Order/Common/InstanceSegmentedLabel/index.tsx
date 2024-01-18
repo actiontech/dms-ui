@@ -7,10 +7,15 @@ import {
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { InstanceSegmentedLabelStyleWrapper } from '../style';
 
-const InstanceSegmentedLabel: React.FC<{
+export type InstanceSegmentedLabelProps = {
   auditLevel?: AuditTaskResV1AuditLevelEnum;
   instanceName: string;
-}> = ({ auditLevel, instanceName }) => {
+};
+
+const InstanceSegmentedLabel: React.FC<InstanceSegmentedLabelProps> = ({
+  auditLevel,
+  instanceName
+}) => {
   const levelIcon = () => {
     if (auditLevel === AuditTaskResV1AuditLevelEnum.error) {
       return <IconLevelError width={14} height={14} />;
