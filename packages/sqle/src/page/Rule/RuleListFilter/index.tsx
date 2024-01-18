@@ -1,4 +1,4 @@
-import { Form, Space, FormInstance } from 'antd';
+import { Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import CustomSearchInput from '../../../components/RuleDetail/components/CustomSearchInput';
 import { useTranslation } from 'react-i18next';
@@ -12,23 +12,12 @@ import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
 import useRuleTemplate from '../../../hooks/useRuleTemplate';
 import useGlobalRuleTemplate from '../../../hooks/useGlobalRuleTemplate';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
-import { RuleListFilterForm } from '../index.type';
+import { RuleListFilterProps } from '../index.type';
 import { useLocation } from 'react-router-dom';
-import { IBindProject } from '../../../../../base/src/store/user';
 import CustomSelectField from './CustomSelectFiled';
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 
-const RuleListFilter: React.FC<{
-  form: FormInstance<RuleListFilterForm>;
-  getTemplateRules: (
-    projectName?: string | undefined,
-    ruleTemplateName?: string | undefined,
-    fuzzyKeyword?: string | undefined
-  ) => void;
-  setShowNorRuleTemplatePage: (v: boolean) => void;
-  bindProjects: IBindProject[];
-  getAllRules: () => void;
-}> = ({
+const RuleListFilter: React.FC<RuleListFilterProps> = ({
   setShowNorRuleTemplatePage,
   form,
   getTemplateRules,

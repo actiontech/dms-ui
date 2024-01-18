@@ -8,7 +8,8 @@ import {
   projectRuleTemplateList,
   ruleKnowledgeData,
   ruleListData,
-  ruleTemplateList
+  ruleTemplateList,
+  projectRulesMockData
 } from './data';
 
 class MockRuleTemplateApi implements MockSpyApy {
@@ -20,6 +21,8 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.getRuleList();
     this.updateCustomRuleKnowledge();
     this.updateRuleKnowledge();
+    this.getProjectRuleTemplate();
+    this.getRuleTemplate();
   }
 
   public getRuleTemplateTips() {
@@ -81,6 +84,26 @@ class MockRuleTemplateApi implements MockSpyApy {
   public updateRuleKnowledge() {
     const spy = jest.spyOn(rule_template, 'updateRuleKnowledge');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'getProjectRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: projectRulesMockData
+      })
+    );
+    return spy;
+  }
+
+  public getRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'getRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: projectRulesMockData
+      })
+    );
     return spy;
   }
 }
