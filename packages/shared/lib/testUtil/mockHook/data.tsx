@@ -3,6 +3,7 @@ import {
   GetUserStatEnum
 } from '../../api/base/service/common.enum';
 import { OpPermissionTypeUid, SupportTheme, SystemRole } from '../../enum';
+import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
 
 export const mockCurrentUserReturn = {
   isAdmin: true,
@@ -79,11 +80,17 @@ export const mockDBServiceDriverInfo = {
       params: []
     }
   ],
-  dbDriverOptions: [],
+  dbDriverOptions: [
+    {
+      text: 'MySQL',
+      value: 'MysQL',
+      label: <DatabaseTypeLogo dbType="MySQL" logoUrl="" />
+    }
+  ],
   updateDriverList: jest.fn(),
   updateDriverListSync: jest.fn(),
   getLogoUrlByDbType: jest.fn(),
   generateDriverSelectOptions: jest.fn(),
   driverInfoFetched: true,
-  setDriverInfoFetched: jest.fn
+  setDriverInfoFetched: jest.fn()
 };
