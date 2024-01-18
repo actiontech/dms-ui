@@ -8,7 +8,7 @@ import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/a
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
-describe('sqle/Order/Common/AuditResultList', () => {
+describe('sqle/Order/Common/AuditResultList/List', () => {
   let requestUpdateAuditTaskSQLs: jest.SpyInstance;
   let requestGetAuditTaskSQLs: jest.SpyInstance;
 
