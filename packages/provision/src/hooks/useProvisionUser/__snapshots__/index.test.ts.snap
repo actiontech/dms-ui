@@ -1,0 +1,531 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/hooks/useProvisionUser should get provision user data from request 1`] = `
+Array [
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="D"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Dewey Connelly
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Dewey Connelly",
+    "value": "Dewey Connelly",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="E"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Edwin Schneider III
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Edwin Schneider III",
+    "value": "Edwin Schneider III",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="J"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Javier Beier IV
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Javier Beier IV",
+    "value": "Javier Beier IV",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="G"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Glenda Goyette
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Glenda Goyette",
+    "value": "Glenda Goyette",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="V"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Valerie Gerhold
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Valerie Gerhold",
+    "value": "Valerie Gerhold",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="M"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Mona Reinger
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Mona Reinger",
+    "value": "Mona Reinger",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="K"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Kari Bode
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Kari Bode",
+    "value": "Kari Bode",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="B"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Bryan Emard
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Bryan Emard",
+    "value": "Bryan Emard",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="C"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Clinton Gleason III
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Clinton Gleason III",
+    "value": "Clinton Gleason III",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="T"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Thelma Keeling
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Thelma Keeling",
+    "value": "Thelma Keeling",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="D"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Duane Hyatt
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Duane Hyatt",
+    "value": "Duane Hyatt",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="M"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Mr. Nancy Yundt
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Mr. Nancy Yundt",
+    "value": "Mr. Nancy Yundt",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="K"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Kristi Dickinson
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Kristi Dickinson",
+    "value": "Kristi Dickinson",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="C"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Cecelia Grimes
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Cecelia Grimes",
+    "value": "Cecelia Grimes",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="D"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Dr. Miriam Brekke
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Dr. Miriam Brekke",
+    "value": "Dr. Miriam Brekke",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="K"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Karen Herzog
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Karen Herzog",
+    "value": "Karen Herzog",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="M"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Mr. Taylor Rempel
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Mr. Taylor Rempel",
+    "value": "Mr. Taylor Rempel",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="K"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Kristina Hessel
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Kristina Hessel",
+    "value": "Kristina Hessel",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="D"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Delores Rowe IV
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Delores Rowe IV",
+    "value": "Delores Rowe IV",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="T"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Tammy Prosacco
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Tammy Prosacco",
+    "value": "Tammy Prosacco",
+  },
+]
+`;
+
+exports[`provision/hooks/useProvisionUser should get provision user data from request 2`] = `
+Array [
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="D"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Dewey Connelly
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Dewey Connelly",
+    "value": "85315",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="E"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Edwin Schneider III
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Edwin Schneider III",
+    "value": "48548",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="J"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Javier Beier IV
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Javier Beier IV",
+    "value": "28060",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="G"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Glenda Goyette
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Glenda Goyette",
+    "value": "56796",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="V"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Valerie Gerhold
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Valerie Gerhold",
+    "value": "4066",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="M"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Mona Reinger
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Mona Reinger",
+    "value": "64872",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="K"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Kari Bode
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Kari Bode",
+    "value": "67483",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="B"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Bryan Emard
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Bryan Emard",
+    "value": "39891",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="C"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Clinton Gleason III
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Clinton Gleason III",
+    "value": "42706",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="T"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Thelma Keeling
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Thelma Keeling",
+    "value": "80115",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="D"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Duane Hyatt
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Duane Hyatt",
+    "value": "34369",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="M"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Mr. Nancy Yundt
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Mr. Nancy Yundt",
+    "value": "63949",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="K"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Kristi Dickinson
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Kristi Dickinson",
+    "value": "47815",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="C"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Cecelia Grimes
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Cecelia Grimes",
+    "value": "36601",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="D"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Dr. Miriam Brekke
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Dr. Miriam Brekke",
+    "value": "19951",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="K"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Karen Herzog
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Karen Herzog",
+    "value": "97690",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="M"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Mr. Taylor Rempel
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Mr. Taylor Rempel",
+    "value": "27809",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="K"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Kristina Hessel
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Kristina Hessel",
+    "value": "56330",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="D"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Delores Rowe IV
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Delores Rowe IV",
+    "value": "15376",
+  },
+  Object {
+    "label": <Styled(Space)>
+      <AvatarCom
+        name="T"
+        size="small"
+      />
+      <ForwardRef(Text)>
+        Tammy Prosacco
+      </ForwardRef(Text)>
+    </Styled(Space)>,
+    "text": "Tammy Prosacco",
+    "value": "61209",
+  },
+]
+`;
