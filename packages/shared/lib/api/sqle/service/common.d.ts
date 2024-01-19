@@ -2197,6 +2197,8 @@ export interface IAuditTaskSQLResV2 {
   rollback_sql?: string;
 
   sql_source_file?: string;
+
+  sql_start_line?: number;
 }
 
 export interface IBatchCancelWorkflowsReqV2 {
