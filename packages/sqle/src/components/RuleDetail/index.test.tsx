@@ -62,9 +62,7 @@ describe('sqle/components/RuleDetail', () => {
   });
 
   it('render error snap', async () => {
-    requestGetProjectRule.mockImplementation(() =>
-      createSpyFailResponse({})
-    );
+    requestGetProjectRule.mockImplementation(() => createSpyFailResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
@@ -96,7 +94,10 @@ describe('sqle/components/RuleDetail', () => {
   });
 
   it('render snap when has params', async () => {
-    useParamsMock.mockReturnValue({ templateName: 'template-a', dbType: 'mysql' });
+    useParamsMock.mockReturnValue({
+      templateName: 'template-a',
+      dbType: 'mysql'
+    });
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetProjectRule).nthCalledWith(1, {
@@ -105,5 +106,5 @@ describe('sqle/components/RuleDetail', () => {
       fuzzy_keyword_rule: undefined
     });
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });

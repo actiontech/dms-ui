@@ -59,5 +59,5 @@ describe('sqle/components/ReportDrawer', () => {
       onClose: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });

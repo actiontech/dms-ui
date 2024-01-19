@@ -31,5 +31,5 @@ describe('sqle/components/RenderSQL', () => {
       onClick: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });
