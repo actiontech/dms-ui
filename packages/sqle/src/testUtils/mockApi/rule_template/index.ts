@@ -5,6 +5,8 @@ import {
 
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import {
+  getRuleTemplate,
+  projectRuleTemplate,
   projectRuleTemplateList,
   ruleKnowledgeData,
   ruleListData,
@@ -20,6 +22,8 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.getRuleList();
     this.updateCustomRuleKnowledge();
     this.updateRuleKnowledge();
+    this.getProjectRuleTemplate();
+    this.getRuleTemplate();
   }
 
   public getRuleTemplateTips() {
@@ -81,6 +85,28 @@ class MockRuleTemplateApi implements MockSpyApy {
   public updateRuleKnowledge() {
     const spy = jest.spyOn(rule_template, 'updateRuleKnowledge');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'getProjectRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: projectRuleTemplate,
+        total_nums: projectRuleTemplate.length
+      })
+    );
+    return spy;
+  }
+
+  public getRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'getRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: getRuleTemplate,
+        total_nums: getRuleTemplate.length
+      })
+    );
     return spy;
   }
 }
