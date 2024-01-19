@@ -18,13 +18,18 @@ import ResultDescribe from './ResultDescribe';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-const ResultCard: React.FC<
-  IAuditTaskSQLResV2 & {
-    projectName: string;
-    taskId: string;
-    onUpdateDescription?: () => void;
-  }
-> = ({ projectName, taskId, onUpdateDescription, ...props }) => {
+export type ResultCardProps = IAuditTaskSQLResV2 & {
+  projectName: string;
+  taskId: string;
+  onUpdateDescription?: () => void;
+};
+
+const ResultCard: React.FC<ResultCardProps> = ({
+  projectName,
+  taskId,
+  onUpdateDescription,
+  ...props
+}) => {
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();

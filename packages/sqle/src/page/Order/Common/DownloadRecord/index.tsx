@@ -52,6 +52,7 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
       </DownloadDropdownStyleWrapper>
     );
   };
+
   return (
     <Popover
       open={open}
