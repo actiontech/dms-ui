@@ -11,8 +11,11 @@ import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DetailReportDrawerProps } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
-import { IconFillListActive } from '@actiontech/shared/lib/Icon/common';
-import { Typography } from 'antd';
+import {
+  IconFillListActive,
+  IconPosition
+} from '@actiontech/shared/lib/Icon/common';
+import { Typography, Space } from 'antd';
 
 const ReportDrawer = ({
   open,
@@ -102,22 +105,38 @@ const ReportDrawer = ({
                 {t('auditPlan.report.drawer.subTitle.sql')}
               </Typography.Title>
               <EmptyBox if={showSourceFile}>
-                <EmptyBox
-                  if={!!data?.sqlSourceFile}
-                  defaultNode={
-                    <BasicToolTips
-                      title={t('auditPlan.report.drawer.sourceTip')}
-                    >
-                      <BasicTag icon={<IconFillListActive />}>
-                        {t('auditPlan.report.drawer.source')}： -
-                      </BasicTag>
-                    </BasicToolTips>
-                  }
-                >
-                  <BasicTag icon={<IconFillListActive />}>
-                    {t('auditPlan.report.drawer.source')}：{data?.sqlSourceFile}
+                <Space>
+                  <EmptyBox
+                    if={!!data?.sqlSourceFile}
+                    defaultNode={
+                      <BasicToolTips
+                        title={t('auditPlan.report.drawer.sourceTip')}
+                      >
+                        <Space>
+                          <BasicTag icon={<IconFillListActive />}>
+                            <span className="sql-source-title">
+                              {t('auditPlan.report.drawer.source')}
+                            </span>{' '}
+                            -
+                          </BasicTag>
+                        </Space>
+                      </BasicToolTips>
+                    }
+                  >
+                    <BasicTag icon={<IconFillListActive />}>
+                      <span className="sql-source-title">
+                        {t('auditPlan.report.drawer.source')}
+                      </span>
+                      {data?.sqlSourceFile}
+                    </BasicTag>
+                  </EmptyBox>
+                  <BasicTag icon={<IconPosition />}>
+                    <span className="sql-source-title">
+                      {t('auditPlan.report.drawer.fileLine')}
+                    </span>
+                    {data?.sqlStartLine || '-'}
                   </BasicTag>
-                </EmptyBox>
+                </Space>
               </EmptyBox>
             </div>
             <div className="wrapper-cont">
