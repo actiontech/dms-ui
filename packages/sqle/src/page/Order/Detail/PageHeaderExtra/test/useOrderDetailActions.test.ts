@@ -1,6 +1,6 @@
 import { orderListData } from '../../../../../testUtils/mockApi/order/data';
 import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
-import { cleanup, fireEvent, act } from '@testing-library/react';
+import { cleanup, act } from '@testing-library/react';
 
 import useOrderDetailActions from '../useOrderDetailActions';
 import { OrderDetailPageHeaderExtraProps } from '../index.type';
