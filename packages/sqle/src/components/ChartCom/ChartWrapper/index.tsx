@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import { ChartWrapperStyleWrapper } from './style';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 
-interface IChartWrapper {
+export interface IChartWrapper {
   loading: boolean;
   children: ReactNode;
   dataLength?: number;
