@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/components/RenderSQL render snap when no sql 1`] = `
+<body>
+  <div>
+    <span>
+      -
+    </span>
+  </div>
+</body>
+`;
