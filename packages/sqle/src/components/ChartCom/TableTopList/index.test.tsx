@@ -1,4 +1,3 @@
-
 import TableTopList, { ITableTopList } from '.';
 
 import { act, cleanup, fireEvent } from '@testing-library/react';
@@ -6,9 +5,9 @@ import { renderWithTheme } from '../../../testUtils/customRender';
 import { mockThemeStyleData } from '../../../testUtils/mockHooks/mockThemeStyleData';
 
 type typeTableItem = {
-  key: string,
-  a: string
-}
+  key: string;
+  a: string;
+};
 
 describe('sqle/components/ChartCom/TableTopList', () => {
   const customRender = (params: ITableTopList<typeTableItem>) => {
@@ -17,7 +16,7 @@ describe('sqle/components/ChartCom/TableTopList', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    mockThemeStyleData()
+    mockThemeStyleData();
   });
 
   afterEach(() => {

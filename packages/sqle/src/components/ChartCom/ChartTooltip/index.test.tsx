@@ -46,10 +46,10 @@ describe('sqle/components/ChartCom/ChartTooltip', () => {
         {
           label: 'label text',
           value: 'value text',
-          dotColor: 'red',
+          dotColor: 'red'
         }
       ]
     });
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });

@@ -8,10 +8,10 @@ const themeData = ThemeData[SupportTheme.LIGHT];
 describe('sqle/components/ChartCom/ChartTooltip/useGetConfig', () => {
   const customRender = () => {
     return renderHook(() => useGetConfig(themeData.sqleTheme));
-  }
+  };
 
   it('render useGetConfig when width is 200', () => {
     const { result } = customRender();
-    expect(result.current.getDomStyles(200)).toMatchSnapshot()
+    expect(result.current.getDomStyles(200)).toMatchSnapshot();
   });
 });

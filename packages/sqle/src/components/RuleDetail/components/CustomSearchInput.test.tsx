@@ -70,6 +70,6 @@ describe('sqle/components/RuleDetail/CustomSearchInput', () => {
     await act(async () => {
       EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);
       await act(async () => jest.advanceTimersByTime(500));
-    })
-  })
+    });
+  });
 });

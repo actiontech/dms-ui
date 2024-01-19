@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn(),
+    useNavigate: jest.fn()
   };
 });
 
@@ -59,5 +59,5 @@ describe('sqle/components/CardWrapper', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(screen.getByText('a tips')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });
