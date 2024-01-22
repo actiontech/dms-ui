@@ -1,23 +1,19 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { message, Modal } from 'antd';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
-
 import {
   useCurrentProject,
   useCurrentUser,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import useDbService from '../../../../hooks/useDbService';
-
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-
 import {
   ActiontechTable,
   useTableRequestError,
@@ -38,6 +34,7 @@ const DataSourceList = () => {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -67,7 +64,9 @@ const DataSourceList = () => {
     refreshBySearchKeyword,
     searchKeyword,
     setSearchKeyword
-  } = useTableRequestParams<IListDBService, DataSourceListParamType>();
+  } = useTableRequestParams<IListDBService, DataSourceListParamType>({
+    defaultSearchKeyword: searchParams.get('address') || ''
+  });
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
@@ -258,6 +257,7 @@ const DataSourceList = () => {
         }}
         searchInput={{
           onChange: setSearchKeyword,
+          defaultValue: searchKeyword,
           onSearch: () => {
             refreshBySearchKeyword();
           }
