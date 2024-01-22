@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Row } from 'antd';
 import { BasicSegmented, PageHeader } from '@actiontech/shared';
 import { ModalName } from '../../data/ModalName';
-import { initSystemModalStatus } from '../../store/system';
 import { SystemStyleWrapper } from './style';
+import { initSystemModalStatus } from '../../store/system';
 
 // #if [sqle]
 import PushNotification from './PushNotification';
@@ -86,7 +86,7 @@ const System = () => {
     return options.find((item) => item.value === activeTabKey)?.components;
   }, [activeTabKey, options]);
 
-  // #if [sqle]
+  // #if [ee]
   useEffect(() => {
     dispatch(
       initSystemModalStatus({
