@@ -1,0 +1,454 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/Order/Common/DownloadRecord render snap download btn 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon custom-icon-download css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          下载
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-down css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/Common/DownloadRecord render snap when click down file 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon custom-icon-download css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          下载
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-down css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-887nqg"
+            >
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14 6V13.9953C14.0006 14.0829 13.984 14.1697 13.951 14.2508C13.9181 14.3319 13.8695 14.4058 13.808 14.4681C13.7466 14.5304 13.6734 14.5801 13.5928 14.6141C13.5121 14.6482 13.4255 14.6661 13.338 14.6667H2.662C2.48654 14.6667 2.31826 14.597 2.19413 14.473C2.07 14.349 2.00018 14.1808 2 14.0053V1.99466C2 1.63666 2.298 1.33333 2.66533 1.33333H9.33333V5.33333C9.33333 5.51014 9.40357 5.67971 9.52859 5.80473C9.65362 5.92976 9.82319 6 10 6H14ZM14 4.66666H10.6667V1.33533L14 4.66666ZM5.33333 4.66666V6H7.33333V4.66666H5.33333ZM5.33333 7.33333V8.66666H10.6667V7.33333H5.33333ZM5.33333 10V11.3333H10.6667V10H5.33333Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                下载审核报告
+              </div>
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon css-u3jcp4"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.333 6.66667H2.66634V12.6667H13.333V6.66667ZM1.99967 2H13.9997C14.3679 2 14.6663 2.29848 14.6663 2.66667V13.3333C14.6663 13.7015 14.3679 14 13.9997 14H1.99967C1.63149 14 1.33301 13.7015 1.33301 13.3333V2.66667C1.33301 2.29848 1.63149 2 1.99967 2ZM3.33301 4V5.33333H4.66634V4H3.33301ZM5.99967 4V5.33333H7.33301V4H5.99967ZM3.33301 7.33333H5.33301V10.6667H3.33301V7.33333Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                下载SQL语句
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/Common/DownloadRecord render snap when click down report 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon custom-icon-download css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          下载
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-down css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-887nqg"
+            >
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14 6V13.9953C14.0006 14.0829 13.984 14.1697 13.951 14.2508C13.9181 14.3319 13.8695 14.4058 13.808 14.4681C13.7466 14.5304 13.6734 14.5801 13.5928 14.6141C13.5121 14.6482 13.4255 14.6661 13.338 14.6667H2.662C2.48654 14.6667 2.31826 14.597 2.19413 14.473C2.07 14.349 2.00018 14.1808 2 14.0053V1.99466C2 1.63666 2.298 1.33333 2.66533 1.33333H9.33333V5.33333C9.33333 5.51014 9.40357 5.67971 9.52859 5.80473C9.65362 5.92976 9.82319 6 10 6H14ZM14 4.66666H10.6667V1.33533L14 4.66666ZM5.33333 4.66666V6H7.33333V4.66666H5.33333ZM5.33333 7.33333V8.66666H10.6667V7.33333H5.33333ZM5.33333 10V11.3333H10.6667V10H5.33333Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                下载审核报告
+              </div>
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon css-u3jcp4"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.333 6.66667H2.66634V12.6667H13.333V6.66667ZM1.99967 2H13.9997C14.3679 2 14.6663 2.29848 14.6663 2.66667V13.3333C14.6663 13.7015 14.3679 14 13.9997 14H1.99967C1.63149 14 1.33301 13.7015 1.33301 13.3333V2.66667C1.33301 2.29848 1.63149 2 1.99967 2ZM3.33301 4V5.33333H4.66634V4H3.33301ZM5.99967 4V5.33333H7.33301V4H5.99967ZM3.33301 7.33333H5.33301V10.6667H3.33301V7.33333Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                下载SQL语句
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/Common/DownloadRecord render snap when click down show dropdown 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars ant-popover-open basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon custom-icon-download css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          下载
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-up css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-887nqg"
+            >
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14 6V13.9953C14.0006 14.0829 13.984 14.1697 13.951 14.2508C13.9181 14.3319 13.8695 14.4058 13.808 14.4681C13.7466 14.5304 13.6734 14.5801 13.5928 14.6141C13.5121 14.6482 13.4255 14.6661 13.338 14.6667H2.662C2.48654 14.6667 2.31826 14.597 2.19413 14.473C2.07 14.349 2.00018 14.1808 2 14.0053V1.99466C2 1.63666 2.298 1.33333 2.66533 1.33333H9.33333V5.33333C9.33333 5.51014 9.40357 5.67971 9.52859 5.80473C9.65362 5.92976 9.82319 6 10 6H14ZM14 4.66666H10.6667V1.33533L14 4.66666ZM5.33333 4.66666V6H7.33333V4.66666H5.33333ZM5.33333 7.33333V8.66666H10.6667V7.33333H5.33333ZM5.33333 10V11.3333H10.6667V10H5.33333Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                下载审核报告
+              </div>
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon css-u3jcp4"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.333 6.66667H2.66634V12.6667H13.333V6.66667ZM1.99967 2H13.9997C14.3679 2 14.6663 2.29848 14.6663 2.66667V13.3333C14.6663 13.7015 14.3679 14 13.9997 14H1.99967C1.63149 14 1.33301 13.7015 1.33301 13.3333V2.66667C1.33301 2.29848 1.63149 2 1.99967 2ZM3.33301 4V5.33333H4.66634V4H3.33301ZM5.99967 4V5.33333H7.33301V4H5.99967ZM3.33301 7.33333H5.33301V10.6667H3.33301V7.33333Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                下载SQL语句
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

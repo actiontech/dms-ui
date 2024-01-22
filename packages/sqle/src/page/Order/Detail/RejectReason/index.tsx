@@ -11,6 +11,7 @@ const RejectReason: React.FC<RejectReasonProps> = ({
   createOrderUserName
 }) => {
   const { t } = useTranslation();
+
   return (
     <RejectReasonStyleWrapper>
       <IconOrderRejectReason />
