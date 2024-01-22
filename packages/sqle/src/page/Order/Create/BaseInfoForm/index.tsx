@@ -11,6 +11,7 @@ import BaseInfoFormItem from './BaseInfoFormItem';
 
 const BaseInfoForm: React.FC<OrderBaseInfoFormProps> = ({ form }) => {
   const { t } = useTranslation();
+
   return (
     <FormStyleWrapper
       form={form}

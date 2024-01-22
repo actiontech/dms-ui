@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import useSystemConfig from '../../../../hooks/useSystemConfig.tsx';
+import useSystemConfig from '../../../../hooks/useSystemConfig';
 
 const ProjectTitle: React.FC = () => {
   const navigate = useNavigate();

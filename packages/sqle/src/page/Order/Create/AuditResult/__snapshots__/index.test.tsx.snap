@@ -1,0 +1,675 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/Order/Create/AuditResultForCreateOrder render snap when has base info 1`] = `
+<body>
+  <div>
+    <div
+      class=" css-zrvn1k"
+    >
+      <div
+        class="order-base-info-title"
+      >
+        baseInfo workflow_subject
+      </div>
+      <div
+        class="order-base-info-desc"
+      >
+        baseInfo desc
+      </div>
+    </div>
+    <section
+      class="css-zgknaj"
+    >
+      <div
+        class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-segmented-group"
+          >
+            <label
+              class="ant-segmented-item ant-segmented-item-selected"
+            >
+              <input
+                checked=""
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="-"
+              >
+                -
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px;"
+          >
+            <div
+              class="css-rf9vxh"
+            >
+              数据去重
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px;"
+          >
+            <div
+              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              role="separator"
+              style="height: 28px;"
+            />
+          </div>
+          <div
+            class="ant-space-item"
+          />
+        </div>
+      </div>
+      <div
+        class=" css-1x9vax"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-filter-options"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <div
+              class="css-cl7oyl"
+            >
+              <span
+                class="text"
+              >
+                全部等级
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <div
+              class="css-1bvs5o7"
+            >
+              <span
+                class="text"
+              >
+                普通(Normal)
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <div
+              class="css-1bvs5o7"
+            >
+              <span
+                class="text"
+              >
+                提示(Notice)
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <div
+              class="css-1bvs5o7"
+            >
+              <span
+                class="text"
+              >
+                告警(Warning)
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="css-1bvs5o7"
+            >
+              <span
+                class="text"
+              >
+                错误(Error)
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 20px;"
+          >
+            <div
+              class="audit-result-info-item"
+            >
+              -
+              <span
+                class="audit-result-info-item-text"
+              >
+                审核通过率
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 20px;"
+          >
+            <div
+              class="audit-result-info-item"
+            >
+              -
+              <span
+                class="audit-result-info-item-text"
+              >
+                审核结果评分
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            >
+              <div
+                class="ant-table-container"
+              >
+                <div
+                  class="ant-table-content"
+                  style="overflow-x: auto; overflow-y: hidden;"
+                >
+                  <table
+                    style="min-width: 100%; table-layout: auto;"
+                  >
+                    <colgroup>
+                      <col
+                        style="width: 100px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 82px;"
+                      />
+                    </colgroup>
+                    <thead
+                      class="ant-table-thead"
+                    >
+                      <tr>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          序号
+                        </th>
+                        <th
+                          class="ant-table-cell audit-result-exec-sql-column"
+                          scope="col"
+                        >
+                          执行语句
+                        </th>
+                        <th
+                          class="ant-table-cell audit-result-column"
+                          scope="col"
+                        >
+                          审核结果
+                        </th>
+                        <th
+                          class="ant-table-cell audit-result-describe-column"
+                          scope="col"
+                        >
+                          说明
+                        </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ant-table-tbody"
+                    >
+                      <tr
+                        aria-hidden="true"
+                        class="ant-table-measure-row"
+                        style="height: 0px; font-size: 0px;"
+                      >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-placeholder"
+                      >
+                        <td
+                          class="ant-table-cell"
+                          colspan="5"
+                        >
+                          <div
+                            class="ant-table-expanded-row-fixed"
+                            style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/Create/AuditResultForCreateOrder render snap when has base info 2`] = `
+<body>
+  <div>
+    <div
+      class=" css-zrvn1k"
+    >
+      <div
+        class="order-base-info-title"
+      />
+      <div
+        class="order-base-info-desc"
+      >
+        -
+      </div>
+    </div>
+    <section
+      class="css-zgknaj"
+    >
+      <div
+        class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-segmented-group"
+          >
+            <label
+              class="ant-segmented-item ant-segmented-item-selected"
+            >
+              <input
+                checked=""
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="-"
+              >
+                -
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px;"
+          >
+            <div
+              class="css-rf9vxh"
+            >
+              数据去重
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 4px;"
+          >
+            <div
+              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              role="separator"
+              style="height: 28px;"
+            />
+          </div>
+          <div
+            class="ant-space-item"
+          />
+        </div>
+      </div>
+      <div
+        class=" css-1x9vax"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-filter-options"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <div
+              class="css-cl7oyl"
+            >
+              <span
+                class="text"
+              >
+                全部等级
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <div
+              class="css-1bvs5o7"
+            >
+              <span
+                class="text"
+              >
+                普通(Normal)
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <div
+              class="css-1bvs5o7"
+            >
+              <span
+                class="text"
+              >
+                提示(Notice)
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <div
+              class="css-1bvs5o7"
+            >
+              <span
+                class="text"
+              >
+                告警(Warning)
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="css-1bvs5o7"
+            >
+              <span
+                class="text"
+              >
+                错误(Error)
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 20px;"
+          >
+            <div
+              class="audit-result-info-item"
+            >
+              -
+              <span
+                class="audit-result-info-item-text"
+              >
+                审核通过率
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 20px;"
+          >
+            <div
+              class="audit-result-info-item"
+            >
+              -
+              <span
+                class="audit-result-info-item-text"
+              >
+                审核结果评分
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            >
+              <div
+                class="ant-table-container"
+              >
+                <div
+                  class="ant-table-content"
+                  style="overflow-x: auto; overflow-y: hidden;"
+                >
+                  <table
+                    style="min-width: 100%; table-layout: auto;"
+                  >
+                    <colgroup>
+                      <col
+                        style="width: 100px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 82px;"
+                      />
+                    </colgroup>
+                    <thead
+                      class="ant-table-thead"
+                    >
+                      <tr>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          序号
+                        </th>
+                        <th
+                          class="ant-table-cell audit-result-exec-sql-column"
+                          scope="col"
+                        >
+                          执行语句
+                        </th>
+                        <th
+                          class="ant-table-cell audit-result-column"
+                          scope="col"
+                        >
+                          审核结果
+                        </th>
+                        <th
+                          class="ant-table-cell audit-result-describe-column"
+                          scope="col"
+                        >
+                          说明
+                        </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ant-table-tbody"
+                    >
+                      <tr
+                        aria-hidden="true"
+                        class="ant-table-measure-row"
+                        style="height: 0px; font-size: 0px;"
+                      >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-placeholder"
+                      >
+                        <td
+                          class="ant-table-cell"
+                          colspan="5"
+                        >
+                          <div
+                            class="ant-table-expanded-row-fixed"
+                            style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;

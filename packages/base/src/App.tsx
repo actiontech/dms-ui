@@ -28,7 +28,7 @@ import {
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/common';
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-import useSystemConfig from './hooks/useSystemConfig.tsx';
+import useSystemConfig from './hooks/useSystemConfig';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
