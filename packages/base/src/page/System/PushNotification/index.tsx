@@ -3,21 +3,20 @@ import SMTPSetting from './SMTPSetting';
 import Wechat from './Wechat';
 import LarkSetting from './LarkSetting';
 import WebHook from './WebhookSetting';
+import SystemBasicTitle from '../components/BasicTitle';
 
 const PushNotification = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="system-form-wrapper">
-      <div className="config-title-wrapper">
-        {t('dmsSystem.tabPaneTitle.pushNotification')}
-      </div>
-
-      <SMTPSetting />
-      <Wechat />
-      <LarkSetting />
-      <WebHook />
-    </section>
+    <SystemBasicTitle title={t('dmsSystem.tabPaneTitle.pushNotification')}>
+      <>
+        <SMTPSetting />
+        <Wechat />
+        <LarkSetting />
+        <WebHook />
+      </>
+    </SystemBasicTitle>
   );
 };
 
