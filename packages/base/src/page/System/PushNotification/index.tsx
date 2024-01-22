@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
+
+import SystemBasicTitle from '../components/BasicTitle';
 import SMTPSetting from './SMTPSetting';
 import Wechat from './Wechat';
 import LarkSetting from './LarkSetting';
 import WebHook from './WebhookSetting';
-import SystemBasicTitle from '../components/BasicTitle';
 
 const PushNotification = () => {
   const { t } = useTranslation();
