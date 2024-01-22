@@ -1,18 +1,18 @@
+import { AuditResultForCreateListProps } from './index.type';
+import { useBoolean, useRequest } from 'ahooks';
+import task from '@actiontech/shared/lib/api/sqle/service/task';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useRef, useState } from 'react';
+import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTable,
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { AuditResultForCreateListProps } from './index.type';
-import { useBoolean, useRequest } from 'ahooks';
-import task from '@actiontech/shared/lib/api/sqle/service/task';
 import {
   AuditResultForCreateOrderActions,
   AuditResultForCreateOrderColumn
 } from './column';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useRef, useState } from 'react';
-import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import AuditResultDrawer from './AuditResultDrawer';
 
 const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({

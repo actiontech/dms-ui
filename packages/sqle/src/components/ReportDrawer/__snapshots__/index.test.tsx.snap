@@ -69,7 +69,7 @@ exports[`sqle/components/ReportDrawer render snap is empty 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-e4g1pi"
+                class="audit-report-wrapper css-14msg9y"
               >
                 <section
                   class="wrapper-item"
@@ -225,7 +225,7 @@ exports[`sqle/components/ReportDrawer render snap when has data 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-e4g1pi"
+                class="audit-report-wrapper css-14msg9y"
               >
                 <section
                   class="wrapper-item"
