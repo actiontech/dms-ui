@@ -104,7 +104,6 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
           </EmptyBox>
         </Space>
       </SegmentedRowStyleWrapper>
-
       {/* todo: 数据需要后端接口支持 http://10.186.18.11/jira/browse/DMS-424*/}
       <AuditResultFilterContainer<AuditResultLevelFilterType>
         passRate={currentTask?.pass_rate}
@@ -122,7 +121,6 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         filterValueChange={setAuditLevelFilterValue}
         auditLevel={currentTask?.audit_level}
       />
-
       <AuditResultTable
         taskID={currentTaskID}
         duplicate={duplicate}
