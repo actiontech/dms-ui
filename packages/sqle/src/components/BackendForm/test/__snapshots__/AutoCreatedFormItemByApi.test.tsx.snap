@@ -1,0 +1,464 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/components/BackendForm render type is bool render layout has desc 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="params_bool3"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  desc 
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  desc1
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <button
+                  aria-checked="false"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                  disabled=""
+                  id="params_bool3"
+                  role="switch"
+                  type="button"
+                >
+                  <div
+                    class="ant-switch-handle"
+                  />
+                  <span
+                    class="ant-switch-inner"
+                  >
+                    <span
+                      class="ant-switch-inner-checked"
+                    />
+                    <span
+                      class="ant-switch-inner-unchecked"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/BackendForm render type is bool render layout is fullLine 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="params_bool1"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  this is a tip
+                </div>
+                <div
+                  class="tip-content-box"
+                  hidden=""
+                />
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <button
+                  aria-checked="false"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  id="params_bool1"
+                  role="switch"
+                  type="button"
+                >
+                  <div
+                    class="ant-switch-handle"
+                  />
+                  <span
+                    class="ant-switch-inner"
+                  >
+                    <span
+                      class="ant-switch-inner-checked"
+                    />
+                    <span
+                      class="ant-switch-inner-unchecked"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/BackendForm render type is bool render layout is spaceBetween & no desc 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="params_bool2"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  this is a tip
+                </div>
+                <div
+                  class="tip-content-box"
+                  hidden=""
+                />
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <button
+                  aria-checked="false"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  id="params_bool2"
+                  role="switch"
+                  type="button"
+                >
+                  <div
+                    class="ant-switch-handle"
+                  />
+                  <span
+                    class="ant-switch-inner"
+                  >
+                    <span
+                      class="ant-switch-inner-checked"
+                    />
+                    <span
+                      class="ant-switch-inner-unchecked"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/BackendForm render type is input render layout is fullLine 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="params_input1"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  desc 
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  desc1
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="params_input1"
+                  placeholder="请输入{{name}}"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/BackendForm render type is input render layout is spaceBetween & no desc 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="params_input2"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  desc 
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  desc2
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  disabled=""
+                  id="params_input2"
+                  placeholder="请输入{{name}}"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/BackendForm render type is spaceBetween render layout is fullLine 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="params_int1"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  desc 
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  desc1
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="params_int1"
+                  placeholder="请输入{{name}}"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/BackendForm render type is spaceBetween render layout is spaceBetween & no desc 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="params_int2"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  desc 
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  desc2
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  disabled=""
+                  id="params_int2"
+                  placeholder="请输入{{name}}"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
