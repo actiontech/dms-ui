@@ -39,6 +39,10 @@ export const AuditReportStyleWrapper = styled('div')`
         justify-content: space-between;
         align-items: center;
         padding-right: 24px;
+
+        .sql-source-title {
+          color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+        }
       }
     }
   }

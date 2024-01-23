@@ -17,9 +17,11 @@ const execStatusMap: {
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminating]: 'geekblue'
 };
 
-const ExecStatusTag: React.FC<{
+export interface ExecStatusTagProps {
   status: getAuditTaskSQLsV2FilterExecStatusEnum;
-}> = ({ status }) => {
+}
+
+const ExecStatusTag: React.FC<ExecStatusTagProps> = ({ status }) => {
   const { t } = useTranslation();
 
   return (
