@@ -20,7 +20,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { TestFormFields } from '../index.type';
 import { TestFeishuConfigurationAccountTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
-interface ConfigExtraButtonsProps {
+export interface ConfigExtraButtonsProps {
   enabled: string | boolean;
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
