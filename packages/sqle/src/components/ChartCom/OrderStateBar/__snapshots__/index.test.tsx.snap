@@ -1,0 +1,439 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 1`] = `
+<body>
+  <div>
+    <section
+      class="order-state-bar-wrapper css-1o2g0dc"
+    >
+      <div
+        class="bar-wrapper"
+      >
+        <div
+          class="bar"
+        >
+          <table
+            class="bar-line"
+            width="100%"
+          >
+            <tbody>
+              <tr>
+                <td
+                  style="background-color: red;"
+                  width="20"
+                />
+                <td
+                  style="background-color: green;"
+                  width="30"
+                />
+                <td
+                  style="background-color: blue;"
+                  width="auto"
+                />
+                <td
+                  style="background-color: black;"
+                  width="60"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="legend-wrapper"
+      >
+        <div
+          class="ant-row css-dev-only-do-not-override-txh9fw"
+          style="margin-left: -10px; margin-right: -10px;"
+        >
+          <div
+            class="ant-col css-dev-only-do-not-override-txh9fw"
+            style="padding-left: 10px; padding-right: 10px; width: 25%;"
+          >
+            <div
+              class="state-item"
+            >
+              <header
+                class="state-item-header"
+              >
+                第一部分
+              </header>
+              <div
+                class="state-item-cont"
+              >
+                <em
+                  class="num-val"
+                >
+                  10
+                </em>
+                <span
+                  class="rate-val"
+                  style="color: red;"
+                >
+                  20
+                </span>
+              </div>
+              <div
+                class="line"
+                style="background: red;"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-col css-dev-only-do-not-override-txh9fw"
+            style="padding-left: 10px; padding-right: 10px; width: 25%;"
+          >
+            <div
+              class="state-item"
+            >
+              <header
+                class="state-item-header"
+              >
+                第二部分
+              </header>
+              <div
+                class="state-item-cont"
+              >
+                <em
+                  class="num-val"
+                >
+                  20
+                </em>
+                <span
+                  class="rate-val"
+                  style="color: green;"
+                >
+                  30
+                </span>
+              </div>
+              <div
+                class="line"
+                style="background: green;"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-col css-dev-only-do-not-override-txh9fw"
+            style="padding-left: 10px; padding-right: 10px; width: 25%;"
+          >
+            <div
+              class="state-item"
+            >
+              <header
+                class="state-item-header"
+              >
+                第三部分
+              </header>
+              <div
+                class="state-item-cont"
+              >
+                <em
+                  class="num-val"
+                >
+                  40
+                </em>
+                <span
+                  class="rate-val"
+                  style="color: blue;"
+                >
+                  50
+                </span>
+              </div>
+              <div
+                class="line"
+                style="background: blue;"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-col css-dev-only-do-not-override-txh9fw"
+            style="padding-left: 10px; padding-right: 10px; width: 25%;"
+          >
+            <div
+              class="state-item"
+            >
+              <header
+                class="state-item-header"
+              >
+                第四部分
+              </header>
+              <div
+                class="state-item-cont"
+              >
+                <em
+                  class="num-val"
+                >
+                  50
+                </em>
+                <span
+                  class="rate-val"
+                  style="color: black;"
+                >
+                  60
+                </span>
+              </div>
+              <div
+                class="line"
+                style="background: black;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 2`] = `
+<body>
+  <div>
+    <section
+      class="order-state-bar-wrapper css-1o2g0dc"
+    >
+      <div
+        class="bar-wrapper"
+      >
+        <div
+          class="bar"
+        >
+          <table
+            class="bar-line"
+            width="100%"
+          >
+            <tbody>
+              <tr>
+                <td
+                  class="ant-popover-open"
+                  style="background-color: red;"
+                  width="20"
+                />
+                <td
+                  style="background-color: green;"
+                  width="30"
+                />
+                <td
+                  style="background-color: blue;"
+                  width="auto"
+                />
+                <td
+                  style="background-color: black;"
+                  width="60"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="legend-wrapper"
+      >
+        <div
+          class="ant-row css-dev-only-do-not-override-txh9fw"
+          style="margin-left: -10px; margin-right: -10px;"
+        >
+          <div
+            class="ant-col css-dev-only-do-not-override-txh9fw"
+            style="padding-left: 10px; padding-right: 10px; width: 25%;"
+          >
+            <div
+              class="state-item"
+            >
+              <header
+                class="state-item-header"
+              >
+                第一部分
+              </header>
+              <div
+                class="state-item-cont"
+              >
+                <em
+                  class="num-val"
+                >
+                  10
+                </em>
+                <span
+                  class="rate-val"
+                  style="color: red;"
+                >
+                  20
+                </span>
+              </div>
+              <div
+                class="line"
+                style="background: red;"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-col css-dev-only-do-not-override-txh9fw"
+            style="padding-left: 10px; padding-right: 10px; width: 25%;"
+          >
+            <div
+              class="state-item"
+            >
+              <header
+                class="state-item-header"
+              >
+                第二部分
+              </header>
+              <div
+                class="state-item-cont"
+              >
+                <em
+                  class="num-val"
+                >
+                  20
+                </em>
+                <span
+                  class="rate-val"
+                  style="color: green;"
+                >
+                  30
+                </span>
+              </div>
+              <div
+                class="line"
+                style="background: green;"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-col css-dev-only-do-not-override-txh9fw"
+            style="padding-left: 10px; padding-right: 10px; width: 25%;"
+          >
+            <div
+              class="state-item"
+            >
+              <header
+                class="state-item-header"
+              >
+                第三部分
+              </header>
+              <div
+                class="state-item-cont"
+              >
+                <em
+                  class="num-val"
+                >
+                  40
+                </em>
+                <span
+                  class="rate-val"
+                  style="color: blue;"
+                >
+                  50
+                </span>
+              </div>
+              <div
+                class="line"
+                style="background: blue;"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-col css-dev-only-do-not-override-txh9fw"
+            style="padding-left: 10px; padding-right: 10px; width: 25%;"
+          >
+            <div
+              class="state-item"
+            >
+              <header
+                class="state-item-header"
+              >
+                第四部分
+              </header>
+              <div
+                class="state-item-cont"
+              >
+                <em
+                  class="num-val"
+                >
+                  50
+                </em>
+                <span
+                  class="rate-val"
+                  style="color: black;"
+                >
+                  60
+                </span>
+              </div>
+              <div
+                class="line"
+                style="background: black;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big order-state-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-topRight"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="tooltip-box-wrapper css-4m33fd"
+            >
+              <header
+                class="tooltip-title"
+              >
+                <span
+                  class="dot"
+                  style="background: red;"
+                />
+                第一部分
+              </header>
+              <dl
+                class="tooltip-list"
+              >
+                <dt
+                  class="tooltip-name"
+                >
+                  num state title
+                </dt>
+                <dd
+                  class="tooltip-value"
+                >
+                  10
+                </dd>
+              </dl>
+              <dl
+                class="tooltip-list"
+              >
+                <dt
+                  class="tooltip-name"
+                >
+                  num state title
+                </dt>
+                <dd
+                  class="tooltip-value"
+                >
+                  20
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/ChartCom/OrderStateBar render snap when is empty true 1`] = `
+<body>
+  <div />
+</body>
+`;
