@@ -2,17 +2,17 @@ import { SelectProps } from 'antd';
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IconProjectFlag } from 'sqle/src/icon/Rule';
-import { ProjectSelectorLabelStyleWrapper } from '../../Nav/SideMenu/ProjectSelector/style';
-import ProjectSelectorModal from '../../Project/Detail/NotFoundRecentlyProject/ProjectSelectorModal';
+import { ProjectSelectorLabelStyleWrapper } from '../../../../Nav/SideMenu/ProjectSelector/style';
+import ProjectSelectorModal from '../../../../Project/Detail/NotFoundRecentlyProject/ProjectSelectorModal';
 import { RuleUrlParamKey } from 'sqle/src/page/Rule/hooks/useRuleFilterFormItem';
-import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
+import { NotFoundProjectProps } from './index.type';
 
-const NotFoundProject: React.FC<{
-  open: boolean;
-  setOpen: (v: boolean) => void;
-  bindProjects: IUserBindProject[];
-  updateRecentlyProject: (id: string, name: string) => void;
-}> = ({ open, setOpen, bindProjects, updateRecentlyProject }) => {
+const NotFoundProject: React.FC<NotFoundProjectProps> = ({
+  open,
+  setOpen,
+  bindProjects,
+  updateRecentlyProject
+}) => {
   const [projectSelectorValue, setProjectSelectorValue] = useState('');
   const navigate = useNavigate();
   const onModalOk = () => {

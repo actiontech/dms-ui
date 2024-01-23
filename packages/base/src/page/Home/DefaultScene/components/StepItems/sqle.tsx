@@ -1,10 +1,10 @@
 import { RuleUrlParamKey } from 'sqle/src/page/Rule/hooks/useRuleFilterFormItem';
-import { t } from '../../../../locale';
+import { t } from '../../../../../locale';
 import {
   DevopsStepsProps,
   UserDevopsStepButtonItem,
   UserDevopsStepChildren
-} from '../index.type';
+} from '../../index.type';
 
 export const getAuditManageStep: (
   arg: DevopsStepsProps
