@@ -11,9 +11,11 @@ import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/comm
 import { useMemo } from 'react';
 import { Space } from 'antd';
 
-const AuditResultTag: React.FC<{ auditResult?: IAuditResult[] }> = ({
-  auditResult
-}) => {
+export interface AuditResultTagProps {
+  auditResult?: IAuditResult[];
+}
+
+const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
   const { t } = useTranslation();
 
   const noticeResult = useMemo(() => {

@@ -1577,3 +1577,23 @@ export const IconFormListAdd: React.FC<CustomIconProps> = ({
     </svg>
   );
 };
+
+export const IconPosition = () => {
+  return (
+    <CommonIconStyleWrapper role="img" className="custom-icon">
+      <svg
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        id="mx_n_1705397970752"
+        width="18"
+        height="18"
+      >
+        <path
+          d="M512 938.666667c-53.333333 0-384-257.258667-384-469.333334S299.925333 85.333333 512 85.333333s384 171.925333 384 384-330.666667 469.333333-384 469.333334z m0-352c64.8 0 117.333333-52.533333 117.333333-117.333334s-52.533333-117.333333-117.333333-117.333333-117.333333 52.533333-117.333333 117.333333 52.533333 117.333333 117.333333 117.333334z"
+          fill="#4583FF"
+        ></path>
+      </svg>
+    </CommonIconStyleWrapper>
+  );
+};

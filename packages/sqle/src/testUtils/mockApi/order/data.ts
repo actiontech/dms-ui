@@ -1,8 +1,18 @@
-import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IAuditTaskResV1,
+  IGetWorkflowTasksItemV2
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
-  AuditTaskResV1StatusEnum
+  AuditTaskResV1StatusEnum,
+  GetWorkflowTasksItemV2StatusEnum,
+  WorkflowRecordResV2StatusEnum,
+  WorkflowResV2ModeEnum,
+  WorkflowStepResV1StateEnum,
+  WorkflowStepResV1TypeEnum,
+  WorkflowStepResV2StateEnum,
+  WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const orderListData = [
@@ -99,3 +109,124 @@ export const AuditTaskResData: IAuditTaskResV1[] = [
     task_id: 2
   }
 ];
+
+export const WorkflowTasksItemData: IGetWorkflowTasksItemV2[] = [
+  {
+    task_id: 40,
+    instance_name: 'mysql',
+    status: GetWorkflowTasksItemV2StatusEnum.exec_succeeded,
+    exec_start_time: '2024-01-17T05:23:32Z',
+    exec_end_time: '2024-01-17T05:23:32Z',
+    task_pass_rate: 1,
+    task_score: 100,
+    instance_maintenance_times: [],
+    execution_user_name: 'admin'
+  },
+  {
+    task_id: 41,
+    instance_name: 'mysql2',
+    status: GetWorkflowTasksItemV2StatusEnum.exec_succeeded,
+    exec_start_time: '2024-01-17T05:23:32Z',
+    exec_end_time: '2024-01-17T05:23:32Z',
+    task_pass_rate: 1,
+    task_score: 100,
+    instance_maintenance_times: [],
+    execution_user_name: 'admin'
+  }
+];
+
+export const getTasksInfoData = {
+  task_id: 40,
+  instance_name: 'mysql',
+  instance_db_type: 'MySQL',
+  instance_schema: 'dms',
+  audit_level: '',
+  score: 100,
+  pass_rate: 1,
+  status: 'exec_succeeded',
+  sql_source: 'form_data',
+  exec_start_time: '2024-01-17T05:23:32Z',
+  exec_end_time: '2024-01-17T05:23:32Z'
+};
+
+export const AuditTaskSQLsData = [
+  {
+    number: 1,
+    exec_sql: 'SELECT * ',
+    sql_source_file: '',
+    audit_result: null,
+    audit_level: '',
+    audit_status: 'finished',
+    exec_result: '',
+    exec_status: 'initialized',
+    description: ''
+  }
+];
+
+export const workflowsOverviewListData = {
+  workflow_name: 'workflow_name',
+  workflow_id: '1747444197486497792',
+  desc: 'this is a desc',
+  mode: WorkflowResV2ModeEnum.different_sqls,
+  create_user_name: 'admin',
+  create_time: '2024-01-17T02:22:17Z',
+  record: {
+    tasks: [
+      {
+        task_id: 40
+      },
+      {
+        task_id: 41
+      }
+    ],
+    status: WorkflowRecordResV2StatusEnum.finished,
+    workflow_step_list: [
+      {
+        number: 1,
+        type: WorkflowStepResV1TypeEnum.update_workflow,
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T02:58:37Z'
+      },
+      {
+        workflow_step_id: 23,
+        number: 2,
+        type: WorkflowStepResV1TypeEnum.sql_review,
+        assignee_user_name_list: ['admin'],
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T03:36:25Z',
+        state: WorkflowStepResV1StateEnum.approved
+      },
+      {
+        workflow_step_id: 24,
+        number: 3,
+        type: WorkflowStepResV1TypeEnum.sql_execute,
+        assignee_user_name_list: ['admin'],
+        state: WorkflowStepResV1StateEnum.approved
+      }
+    ]
+  },
+  record_history_list: [
+    {
+      tasks: [],
+      status: WorkflowRecordResV2StatusEnum.rejected,
+      workflow_step_list: [
+        {
+          number: 1,
+          type: WorkflowStepResV2TypeEnum.create_workflow,
+          operation_user_name: 'admin',
+          operation_time: '2024-01-17T02:22:17Z'
+        },
+        {
+          workflow_step_id: 21,
+          number: 2,
+          type: 'sql_review',
+          assignee_user_name_list: ['700200'],
+          operation_user_name: 'admin',
+          operation_time: '2024-01-17T02:58:16Z',
+          state: WorkflowStepResV2StateEnum.rejected,
+          reason: 'reason cont'
+        }
+      ]
+    }
+  ]
+};

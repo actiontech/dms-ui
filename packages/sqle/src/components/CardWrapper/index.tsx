@@ -5,7 +5,7 @@ import Icon from '@ant-design/icons/lib/components/Icon';
 import { CardWrapperStyleWrapper } from './style';
 import { IconTipOrange, IconTitleMore } from '@actiontech/shared/lib/Icon';
 
-interface ICardWrapper extends CardProps {
+export interface ICardWrapper extends CardProps {
   enabledLoading?: boolean;
   title: string | ReactNode;
   moreRouteLink?: { to: To; options?: NavigateOptions };

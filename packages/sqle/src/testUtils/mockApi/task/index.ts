@@ -8,6 +8,7 @@ import { AuditTaskSQLsMockData } from './data';
 class TaskMockApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getAuditTaskSQLs();
+    this.updateAuditTaskSQLs();
   }
 
   public getAuditTaskSQLs() {
@@ -18,6 +19,12 @@ class TaskMockApi implements MockSpyApy {
         total_nums: AuditTaskSQLsMockData.length
       })
     );
+    return spy;
+  }
+
+  public updateAuditTaskSQLs() {
+    const spy = jest.spyOn(task, 'updateAuditTaskSQLsV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
