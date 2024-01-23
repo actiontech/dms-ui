@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, act, screen } from '@testing-library/react';
+import { cleanup, fireEvent, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
 import ConfigTestPopoverForm from '.';
