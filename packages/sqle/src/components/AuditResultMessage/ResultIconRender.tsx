@@ -8,7 +8,7 @@ import {
 } from '../../icon/AuditPlan';
 import { Space } from 'antd';
 
-type IResultIconRender = {
+export type IResultIconRender = {
   iconLevels: string[];
 };
 

@@ -67,3 +67,24 @@ export const ruleKnowledgeData = {
       '因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100'
   }
 };
+
+export const projectRuleTemplate = [
+  {
+    rule_template_name: 'mysql',
+    desc: '',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: 'mysql-aa',
+    desc: 'aa',
+    db_type: 'MySQL'
+  }
+];
+
+export const getRuleTemplate = [
+  {
+    rule_template_name: 'default_MySQL',
+    desc: '默认规则模板',
+    db_type: 'MySQL'
+  }
+];
