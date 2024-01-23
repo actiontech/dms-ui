@@ -1,46 +1,29 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  Form,
-  Radio,
-  RadioGroupProps,
-  Space,
-  Spin,
-  Typography,
-  message as messageApi
-} from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
-import {
-  BasicButton,
-  BasicInput,
-  EmptyBox,
-  EnterpriseFeatureDisplay
-} from '@actiontech/shared';
-import {
-  CustomLabelContent,
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+import { useCallback, useMemo } from 'react';
+
+import { Form, Spin, Typography, message as messageApi } from 'antd';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
+import ConfigSwitch from '../../components/ConfigSwitch';
+import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
+import ConfigField from './components/ConfigField';
+import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
+import ConfigExtraButtons from './components/ConfigExtraButtons';
+
+import useConfigSwitch from '../../hooks/useConfigSwitch';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
-import ConfigTestBtn from '../../components/ConfigTestBtn';
-import ConfigTestPopoverForm from '../../components/ConfigTestPopoverForm';
-import ConfigModifyBtn from '../../components/ConfigModifyBtn';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { FormFields, TestFormFields } from './index.type';
-import { TestFeishuConfigurationReqV1AccountTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { defaultFormData, switchFieldName } from './index.data';
+
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
+import { FormFields } from './index.type';
+import { defaultFormData, switchFieldName } from './index.data';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IFeishuConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
-import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 
 const LarkAuditSetting: React.FC = () => {
   const { t } = useTranslation();
-  const [message, messageContextHolder] = messageApi.useMessage();
+
   const {
     form,
     renderConfigForm,
@@ -151,72 +134,6 @@ const LarkAuditSetting: React.FC = () => {
     handleToggleSwitch
   });
 
-  const [testForm] = Form.useForm<TestFormFields>();
-  const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
-  const [receiveType, setReceiveType] =
-    useState<TestFeishuConfigurationReqV1AccountTypeEnum>(
-      TestFeishuConfigurationReqV1AccountTypeEnum.email
-    );
-  const testing = useRef(false);
-
-  const testLarkAuditConfiguration = async () => {
-    if (testing.current) {
-      return;
-    }
-    testing.current = true;
-    toggleTestPopoverVisible(false);
-    const hide = message.loading(t('dmsSystem.larkAudit.testing'), 0);
-    const values = await testForm.validateFields();
-
-    configuration
-      .testFeishuAuditConfigV1({
-        account:
-          receiveType === TestFeishuConfigurationReqV1AccountTypeEnum.email
-            ? values.receiveEmail
-            : values.receivePhone,
-        account_type: values.receiveType
-      })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          const resData = res.data?.data;
-
-          if (resData?.is_message_sent_normally) {
-            message.success(t('dmsSystem.larkAudit.testSuccess'));
-          } else {
-            message.error(resData?.error_message ?? t('common.unknownError'));
-          }
-        }
-      })
-      .finally(() => {
-        hide();
-        testing.current = false;
-        testForm.resetFields();
-        setReceiveType(TestFeishuConfigurationReqV1AccountTypeEnum.email);
-      });
-  };
-
-  const handleChangeReceiveType: RadioGroupProps['onChange'] = (e) => {
-    const receiveType = e.target.value;
-    setReceiveType(receiveType);
-
-    if (receiveType === TestFeishuConfigurationReqV1AccountTypeEnum.email) {
-      testForm.resetFields(['receivePhone']);
-    } else {
-      testForm.resetFields(['receiveEmail']);
-    }
-  };
-
-  const onTestPopoverOpen = (open: boolean) => {
-    if (!enabled) {
-      return;
-    }
-    if (!open) {
-      testForm.resetFields();
-      setReceiveType(TestFeishuConfigurationReqV1AccountTypeEnum.email);
-    }
-    toggleTestPopoverVisible(open);
-  };
-
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IFeishuConfigurationV1> =
     useMemo(() => {
       return [
@@ -235,8 +152,6 @@ const LarkAuditSetting: React.FC = () => {
   return (
     <div className="config-form-wrapper">
       <Spin spinning={getLarkAuditInfoLoading || submitLoading}>
-        {messageContextHolder}
-
         <EnterpriseFeatureDisplay
           featureName={t('dmsSystem.title.larkAudit')}
           eeFeatureDescription={
@@ -251,95 +166,12 @@ const LarkAuditSetting: React.FC = () => {
               data: larkAuditInfo ?? {},
               columns: readonlyColumnsConfig,
               configExtraButtons: (
-                <Space
-                  size={12}
-                  hidden={isConfigClosed || !extraButtonsVisible}
-                >
-                  <ConfigTestBtn
-                    testingRef={testing}
-                    popoverOpen={testPopoverVisible}
-                    onPopoverOpenChange={onTestPopoverOpen}
-                    popoverForm={
-                      <ConfigTestPopoverForm
-                        handleTest={testLarkAuditConfiguration}
-                        handleCancel={() => toggleTestPopoverVisible(false)}
-                      >
-                        <Form
-                          form={testForm}
-                          colon={false}
-                          {...formItemLayout.fullLine}
-                        >
-                          <FormItemLabel
-                            name="receiveType"
-                            label={t('dmsSystem.larkAudit.receiveType')}
-                            initialValue={
-                              TestFeishuConfigurationReqV1AccountTypeEnum.email
-                            }
-                            style={{ marginBottom: 0 }}
-                          >
-                            <Radio.Group
-                              size="small"
-                              onChange={handleChangeReceiveType}
-                            >
-                              <Radio.Button
-                                value={
-                                  TestFeishuConfigurationReqV1AccountTypeEnum.email
-                                }
-                              >
-                                {t('dmsSystem.larkAudit.email')}
-                              </Radio.Button>
-                              <Radio.Button
-                                value={
-                                  TestFeishuConfigurationReqV1AccountTypeEnum.phone
-                                }
-                              >
-                                {t('dmsSystem.larkAudit.phone')}
-                              </Radio.Button>
-                            </Radio.Group>
-                          </FormItemLabel>
-                          <EmptyBox
-                            if={
-                              receiveType ===
-                              TestFeishuConfigurationReqV1AccountTypeEnum.phone
-                            }
-                            defaultNode={
-                              <FormItemNoLabel
-                                style={{ marginBottom: 0 }}
-                                name="receiveEmail"
-                                label={t('dmsSystem.larkAudit.email')}
-                                rules={[
-                                  {
-                                    required: true
-                                  },
-                                  {
-                                    type: 'email'
-                                  }
-                                ]}
-                              >
-                                <BasicInput />
-                              </FormItemNoLabel>
-                            }
-                          >
-                            <FormItemNoLabel
-                              style={{ marginBottom: 0 }}
-                              name="receivePhone"
-                              label={t('dmsSystem.larkAudit.phone')}
-                              rules={[
-                                {
-                                  required: true
-                                },
-                                ...phoneRule()
-                              ]}
-                            >
-                              <BasicInput />
-                            </FormItemNoLabel>
-                          </EmptyBox>
-                        </Form>
-                      </ConfigTestPopoverForm>
-                    }
-                  />
-                  <ConfigModifyBtn onClick={handleClickModify} />
-                </Space>
+                <ConfigExtraButtons
+                  isConfigClosed={isConfigClosed}
+                  extraButtonsVisible={extraButtonsVisible}
+                  enabled={enabled}
+                  handleClickModify={handleClickModify}
+                />
               ),
               configSwitchNode: (
                 <ConfigSwitch
@@ -353,52 +185,12 @@ const LarkAuditSetting: React.FC = () => {
                   onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
                 />
               ),
-              configField: (
-                <>
-                  <FormItemLabel
-                    className="has-required-style"
-                    label="App ID"
-                    name="appKey"
-                    rules={[{ required: true }]}
-                  >
-                    <BasicInput
-                      placeholder={t('common.form.placeholder.input', {
-                        name: 'App Key'
-                      })}
-                    />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-required-style"
-                    label="App Secret"
-                    name="appSecret"
-                    rules={[{ required: true }]}
-                  >
-                    <BasicInput.Password
-                      placeholder={t('common.form.placeholder.input', {
-                        name: 'App Secret'
-                      })}
-                    />
-                  </FormItemLabel>
-                </>
-              ),
+              configField: <ConfigField />,
               submitButtonField: (
-                <FormItemNoLabel label=" " colon={false}>
-                  <Space size={12}>
-                    <BasicButton
-                      onClick={handleClickCancel}
-                      disabled={submitLoading}
-                    >
-                      {t('common.cancel')}
-                    </BasicButton>
-                    <BasicButton
-                      htmlType="submit"
-                      type="primary"
-                      disabled={submitLoading}
-                    >
-                      {t('common.submit')}
-                    </BasicButton>
-                  </Space>
-                </FormItemNoLabel>
+                <ConfigSubmitButtonField
+                  submitLoading={submitLoading}
+                  handleClickCancel={handleClickCancel}
+                />
               ),
               submit: submitLarkAuditConfig
             })}
