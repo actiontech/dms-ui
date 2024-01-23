@@ -1,4 +1,7 @@
-import reducers, { updateGlobalSelectRuleTemplate } from '.';
+import reducers, {
+  updateGlobalSelectRuleTemplate,
+  updateRuleManagerActiveSegmentedKey
+} from '.';
 import { RuleManagerSegmentedKey } from '../../page/RuleManager/index.type';
 import { ruleTemplateListData } from '../../page/RuleTemplate/__testData__';
 
@@ -23,5 +26,20 @@ describe('store/globalRuleTemplate', () => {
       updateGlobalSelectRuleTemplate({ ruleTemplate: ruleTemplateListData[0] })
     );
     expect(newState.selectGlobalRuleTemplate).toBe(ruleTemplateListData[0]);
+  });
+
+  test('should execute action updateRuleManagerActiveSegmentedKey', () => {
+    const state = {
+      selectGlobalRuleTemplate: null,
+      modalStatus: {},
+      activeSegmentedKey: RuleManagerSegmentedKey.CustomRule
+    };
+
+    const newState = reducers(
+      state,
+      updateRuleManagerActiveSegmentedKey(RuleManagerSegmentedKey.CustomRule)
+    );
+
+    expect(newState).toEqual(newState);
   });
 });

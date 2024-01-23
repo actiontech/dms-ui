@@ -3,7 +3,7 @@ import {
   LoginPageLeftStyleWrapper,
   LoginPageRightStyleWrapper
 } from '../style';
-import useSystemConfig from '../../../hooks/useSystemConfig.tsx';
+import useSystemConfig from '../../../hooks/useSystemConfig';
 
 const LoginLayout: React.FC<{
   children?: React.ReactNode;

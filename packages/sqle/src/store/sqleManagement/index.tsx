@@ -4,7 +4,7 @@ import { commonModalReducer } from '../common';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 
 // SqleManagement
-type SqleManagementState = {
+export type SqleManagementState = {
   modalStatus: ModalStatus;
   selectSqleManagement: null | ISqlManage;
   selectSqlIdList: ISqlManage[] | null;
