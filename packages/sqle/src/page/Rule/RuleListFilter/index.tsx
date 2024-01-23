@@ -88,12 +88,12 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     t
   ]);
 
-  const onProjectAfterChange = (v?: string) => {
-    if (!v) {
+  const onProjectAfterChange = (projectName?: string) => {
+    if (!projectName) {
       form.setFieldValue('filter_rule_template', undefined);
       setShowNorRuleTemplatePage(false);
     } else {
-      updateRuleTemplateListSync(v).then((res) => {
+      updateRuleTemplateListSync(projectName).then((res) => {
         const ruleTemplateListByProjectName = res ?? [];
         if (ruleTemplateListByProjectName.length > 0) {
           form.setFieldValue(
@@ -106,7 +106,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
           );
           setShowNorRuleTemplatePage(false);
           getTemplateRules(
-            v,
+            projectName,
             ruleTemplateListByProjectName[0]?.rule_template_name,
             fuzzyKeyword
           );
@@ -118,11 +118,11 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     }
   };
 
-  const onTemplateAfterChange = (v: string) => {
-    if (!v) {
+  const onTemplateAfterChange = (templateName: string) => {
+    if (!templateName) {
       form.setFieldValue('project_name', undefined);
     } else {
-      getTemplateRules(projectName, v, fuzzyKeyword);
+      getTemplateRules(projectName, templateName, fuzzyKeyword);
     }
   };
 
@@ -142,12 +142,12 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onSearchInputPressEnter = (v: string) => {
+  const onSearchInputPressEnter = (keyword: string) => {
     getAllRules();
     if (!filterRuleTemplate) {
       return;
     }
-    getTemplateRules(projectName, filterRuleTemplate, v);
+    getTemplateRules(projectName, filterRuleTemplate, keyword);
   };
 
   return (
