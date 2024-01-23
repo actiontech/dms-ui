@@ -1,22 +1,10 @@
-import { cloneDeep, isObject } from 'lodash';
-
-// 不适合作为 html 属性元素出现的 key 的数据集合
-const customDomKeyData = ['label', 'legend'];
+import { cloneDeep } from 'lodash';
 
 const MockPlots = (props) => {
-  const { onReady, ref, ...othersParams } = cloneDeep(props);
-
-  Object.keys(othersParams).forEach((key) => {
-    if (customDomKeyData.includes(key)) {
-      delete othersParams[key];
-      return;
-    }
-    if (isObject(othersParams[key])) {
-      othersParams[key] = JSON.stringify(othersParams[key]);
-    }
-  });
-
-  return <div {...othersParams} />;
+  const clonePropsData = cloneDeep(props);
+  // 考虑到输入的属性是作为 div 的自定义属性，故而对 params 做了 stringify 的处理
+  const params = JSON.stringify(clonePropsData);
+  return <div data-custom-params={params} />;
 };
 
 const Line = MockPlots;

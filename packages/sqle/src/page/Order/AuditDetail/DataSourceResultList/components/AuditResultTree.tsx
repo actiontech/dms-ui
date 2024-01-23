@@ -8,9 +8,11 @@ import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import AuditResultMessage from '../../../../../components/AuditResultMessage';
 
-const AuditResultTree: React.FC<{ auditResult?: IAuditResult[] }> = ({
-  auditResult
-}) => {
+export interface AuditResultTreeProps {
+  auditResult?: IAuditResult[];
+}
+
+const AuditResultTree: React.FC<AuditResultTreeProps> = ({ auditResult }) => {
   const { t } = useTranslation();
 
   const [treeData, setTreeData] = useState<DataNode[]>([
@@ -99,7 +101,7 @@ const AuditResultTree: React.FC<{ auditResult?: IAuditResult[] }> = ({
       treeData={treeData}
       selectable={false}
       loadData={onLoadData}
-    ></DataSourceAuditResultTreeStyleWrapper>
+    />
   );
 };
 

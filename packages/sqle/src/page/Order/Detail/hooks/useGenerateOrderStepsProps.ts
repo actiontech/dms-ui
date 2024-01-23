@@ -8,7 +8,7 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { TasksStatusNumberType } from '../index.type';
 import { MaintenanceTimeInfoType } from '../PageHeaderExtra/index.type';
 
-type HooksParamType = {
+export type HooksParamType = {
   workflowId: string;
   refreshOrder: () => void;
   refreshOverviewAction: (value?: boolean | undefined) => void;

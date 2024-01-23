@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/SqlAudit/SqlAuditStatusTag should match snap shot when status is auditing 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+    >
+      审核中
+    </span>
+  </div>
+</body>
+`;
+
+exports[`sqle/SqlAudit/SqlAuditStatusTag should match snap shot when status is successfully 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    >
+      审核成功
+    </span>
+  </div>
+</body>
+`;

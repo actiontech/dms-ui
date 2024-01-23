@@ -1,51 +1,25 @@
 import { useTranslation } from 'react-i18next';
-import { ReactNode, useContext, useEffect, useState } from 'react';
-
+import { useContext, useEffect } from 'react';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
-
 import {
   SQLStatementFormProps,
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
-import { UploadTypeStyleWrapper } from '../../../Order/SQLStatementForm/style';
-import UploadTypeItem from '../../../Order/SQLStatementForm/UploadTypeItem';
-import {
-  IconOrderFileUpload,
-  IconOrderSQLUpload
-} from '../../../../icon/Order';
-import { SQLUploadTypeKeys, TypeUploadKeys } from './index.type';
-import { SettingOutlined } from '@ant-design/icons';
 import { BasicInput, EmptyBox } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
-
-const uploadItemIcon: {
-  [key in TypeUploadKeys]: ReactNode;
-} = {
-  sql: <IconOrderSQLUpload />,
-  git: <SettingOutlined style={{ color: '#c3c6cd' }} />,
-  sqlFile: <IconOrderFileUpload />,
-  mybatisFile: <IconOrderFileUpload />,
-  zipFile: <IconOrderFileUpload />
-};
+import SqlUploadType from './SqlUploadType';
 
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useContext(FormSubmitStatusContext);
 
   const uploadType = Form.useWatch('uploadType', form);
-  const [currentSQLInputType, setCurrentSQLInputType] = useState(
-    UploadTypeEnum.sql
-  );
 
-  const currentSQLInputTypeChange = (value: UploadTypeEnum) => {
-    if (submitLoading) {
-      return;
-    }
-    setCurrentSQLInputType(value);
+  useEffect(() => {
     form.resetFields([
       'sql',
       'sqlFile',
@@ -55,19 +29,6 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
       'gitUserName',
       'gitUserPassword'
     ]);
-  };
-
-  useEffect(() => {
-    form.setFieldsValue({ uploadType: currentSQLInputType });
-  }, [currentSQLInputType, form]);
-
-  useEffect(() => {
-    if (
-      uploadType === UploadTypeEnum.sql &&
-      currentSQLInputType !== UploadTypeEnum.sql
-    ) {
-      setCurrentSQLInputType(UploadTypeEnum.sql);
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadType]);
 
@@ -85,29 +46,13 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
         }
         initialValue={UploadTypeEnum.sql}
         style={{ marginBottom: 16 }}
-      />
-      <div style={{ marginBottom: 16 }}>
-        <UploadTypeStyleWrapper>
-          {SQLUploadTypeKeys.map((type) => {
-            return (
-              <UploadTypeItem
-                key={`upload-item-${type}`}
-                onClick={() =>
-                  currentSQLInputTypeChange?.(UploadTypeEnum[type])
-                }
-                active={currentSQLInputType === UploadTypeEnum[type]}
-              >
-                {uploadItemIcon[type]}
-                <span className="text">
-                  {t(`sqlAudit.create.sqlInfo.uploadTypeEnum.${type}`)}
-                </span>
-              </UploadTypeItem>
-            );
-          })}
-        </UploadTypeStyleWrapper>
-      </div>
+        wrapperCol={{ span: 24 }}
+        labelCol={{ span: 24 }}
+      >
+        <SqlUploadType />
+      </FormItemLabel>
       <EmptyBox
-        if={currentSQLInputType === UploadTypeEnum.git}
+        if={uploadType === UploadTypeEnum.git}
         defaultNode={<SqlUploadFileCont form={form} />}
       >
         {/* git form info */}

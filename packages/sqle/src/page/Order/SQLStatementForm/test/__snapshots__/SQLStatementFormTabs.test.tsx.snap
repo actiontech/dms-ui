@@ -1,0 +1,934 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/Order/SQLStatementFormTabs render snap when has SQLStatementInfo 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block css-dev-only-do-not-override-txh9fw"
+        style="margin-bottom: 16px;"
+      >
+        <div
+          class="ant-segmented-group"
+        >
+          <label
+            class="ant-segmented-item"
+          >
+            <input
+              checked=""
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+              title="instance name a-schema name"
+            >
+              instance name a-schema name
+            </div>
+          </label>
+          <label
+            class="ant-segmented-item ant-segmented-item-selected"
+          >
+            <input
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+              title="instance name b"
+            >
+              instance name b
+            </div>
+          </label>
+        </div>
+      </div>
+      <div
+        hidden=""
+      >
+        <div
+          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class=""
+                for="statement 1_sqlInputType"
+                title=""
+              />
+            </div>
+            <div
+              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="css-8qroj2"
+                  >
+                    <div
+                      class="update-type-item-wrapper css-16nz79o"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        输入SQL语句
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="update-type-item-wrapper css-1xajf28"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        上传SQL文件
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                        hidden=""
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="update-type-item-wrapper css-1xajf28"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        上传ZIP文件
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                        hidden=""
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class=""
+                for="statement 2_sqlInputType"
+                title=""
+              />
+            </div>
+            <div
+              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="css-8qroj2"
+                  >
+                    <div
+                      class="update-type-item-wrapper css-16nz79o"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        输入SQL语句
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="update-type-item-wrapper css-1xajf28"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        上传SQL文件
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                        hidden=""
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="update-type-item-wrapper css-1xajf28"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        上传ZIP文件
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                        hidden=""
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/SQLStatementFormTabs render snap when has SQLStatementInfo 2`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block css-dev-only-do-not-override-txh9fw"
+        style="margin-bottom: 16px;"
+      >
+        <div
+          class="ant-segmented-group"
+        >
+          <label
+            class="ant-segmented-item"
+          >
+            <input
+              checked=""
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+              title="instance name a-schema name"
+            >
+              instance name a-schema name
+            </div>
+          </label>
+          <label
+            class="ant-segmented-item ant-segmented-item-selected"
+          >
+            <input
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+              title="instance name b"
+            >
+              instance name b
+            </div>
+          </label>
+        </div>
+      </div>
+      <div
+        hidden=""
+      >
+        <div
+          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class=""
+                for="statement 1_sqlInputType"
+                title=""
+              />
+            </div>
+            <div
+              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="css-8qroj2"
+                  >
+                    <div
+                      class="update-type-item-wrapper css-16nz79o"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        输入SQL语句
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="update-type-item-wrapper css-1xajf28"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        上传SQL文件
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                        hidden=""
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="update-type-item-wrapper css-1xajf28"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        上传ZIP文件
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                        hidden=""
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class=""
+                for="statement 2_sqlInputType"
+                title=""
+              />
+            </div>
+            <div
+              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="css-8qroj2"
+                  >
+                    <div
+                      class="update-type-item-wrapper css-16nz79o"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        输入SQL语句
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="update-type-item-wrapper css-1xajf28"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        上传SQL文件
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                        hidden=""
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="update-type-item-wrapper css-1xajf28"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="text"
+                      >
+                        上传ZIP文件
+                      </span>
+                      <div
+                        class="active-icon-wrapper"
+                        hidden=""
+                      >
+                        <span
+                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="Frame"
+                            >
+                              <path
+                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                id="Vector"
+                                stroke="#FCFBF9"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/SQLStatementFormTabs render when SQLStatementInfo data is empty 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal"
+      >
+        <div
+          class="ant-empty-image"
+        >
+          <svg
+            height="41"
+            viewBox="0 0 64 41"
+            width="64"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              transform="translate(0 1)"
+            >
+              <ellipse
+                cx="32"
+                cy="33"
+                fill="#f5f5f5"
+                rx="32"
+                ry="7"
+              />
+              <g
+                fill-rule="nonzero"
+                stroke="#d9d9d9"
+              >
+                <path
+                  d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
+                />
+                <path
+                  d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
+                  fill="#fafafa"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div
+          class="ant-empty-description"
+        >
+          请选择数据源
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;

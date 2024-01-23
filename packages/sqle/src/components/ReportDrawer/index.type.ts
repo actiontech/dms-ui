@@ -5,6 +5,7 @@ export type TypeData = {
   auditResult: Array<{ annotation?: string } & IAuditResult>;
   sql: string;
   sqlSourceFile?: string;
+  sqlStartLine?: number;
 };
 
 export interface DetailReportDrawerProps {
