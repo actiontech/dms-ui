@@ -5,9 +5,11 @@ import ConfigField from './ConfigField';
 
 describe('base/System/PushNotification/LarkSetting/ConfigField', () => {
   it('render snap', () => {
-    const { baseElement } = renderWithTheme(<Form>
-    <ConfigField />
-    </Form>);
+    const { baseElement } = renderWithTheme(
+      <Form>
+        <ConfigField />
+      </Form>
+    );
     expect(baseElement).toMatchSnapshot();
   });
 });

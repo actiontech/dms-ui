@@ -2,7 +2,13 @@ import LarkSetting from '.';
 
 import system from '../../../../testUtils/mockApi/system';
 
-import { cleanup, fireEvent, act, screen, getAllByText } from '@testing-library/react';
+import {
+  cleanup,
+  fireEvent,
+  act,
+  screen,
+  getAllByText
+} from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -86,8 +92,6 @@ describe('base/System/PushNotification/LarkSetting', () => {
   });
 
   describe('render submit lark setting', () => {
-    it('render submit success', async () => {
-      
-    })
-  })
+    it('render submit success', async () => {});
+  });
 });
