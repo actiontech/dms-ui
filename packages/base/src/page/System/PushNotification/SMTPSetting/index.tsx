@@ -188,7 +188,7 @@ const SMTPSetting = () => {
           columns: readonlyColumnsConfig,
           configExtraButtons: (
             <ConfigExtraButtons
-              smtpInfo={smtpInfo}
+              isConfigClosed={isConfigClosed}
               enabled={enabled}
               extraButtonsVisible={extraButtonsVisible}
               handleClickModify={handleClickModify}

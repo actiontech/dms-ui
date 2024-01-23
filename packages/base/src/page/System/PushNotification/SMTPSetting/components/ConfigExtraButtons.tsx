@@ -12,17 +12,16 @@ import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { ISMTPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 
-type typeConfigExtraButtons = {
-  smtpInfo: ISMTPConfigurationResData | undefined;
+export type typeConfigExtraButtons = {
+  isConfigClosed: boolean;
   enabled: string | number | boolean;
   extraButtonsVisible: boolean;
   handleClickModify: () => void;
 };
 
 const ConfigExtraButtons = ({
-  smtpInfo,
+  isConfigClosed,
   enabled,
   extraButtonsVisible,
   handleClickModify
@@ -33,10 +32,6 @@ const ConfigExtraButtons = ({
   const [testForm] = useForm<{ receiveEmail?: string }>();
 
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
-
-  const isConfigClosed = useMemo(() => {
-    return !smtpInfo?.enable_smtp_notify;
-  }, [smtpInfo]);
 
   const testTing = useRef(false);
 
@@ -119,7 +114,11 @@ const ConfigExtraButtons = ({
                     }
                   ]}
                 >
-                  <BasicInput />
+                  <BasicInput
+                    placeholder={t('common.form.placeholder.input', {
+                      name: t('dmsSystem.smtp.receiver')
+                    })}
+                  />
                 </FormItemLabel>
               </Form>
             </ConfigTestPopoverForm>
