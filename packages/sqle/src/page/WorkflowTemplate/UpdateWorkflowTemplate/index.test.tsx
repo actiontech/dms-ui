@@ -52,7 +52,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
   it('render update workflow template and submit success', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
     const updateInfoRequest = workflowTemplate.updateWorkflowTemplate();
-    const userInfoRequest = user.getUserTip();
+    const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userInfoRequest).toBeCalledWith({
@@ -99,7 +99,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
         message: 'error'
       })
     );
-    const userInfoRequest = user.getUserTip();
+    const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userInfoRequest).toBeCalledWith({
@@ -124,7 +124,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
   it('update workflow template info', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
     const updateInfoRequest = workflowTemplate.updateWorkflowTemplate();
-    const userInfoRequest = user.getUserTip();
+    const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userInfoRequest).toBeCalledWith({
@@ -165,7 +165,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
       cloneDeep(workflowTemplateData).workflow_step_template_list;
     tempList.splice(tempList.length - 1, 0, {
       approved_by_authorized: false,
-      assignee_user_id_list: ['700200'],
+      assignee_user_id_list: ['700300'],
       desc: 'desc',
       type: 'sql_review'
     });
@@ -179,7 +179,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
 
   it('change workflow template node number and reset template', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
-    const userInfoRequest = user.getUserTip();
+    const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userInfoRequest).toBeCalledWith({

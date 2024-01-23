@@ -58,7 +58,7 @@ describe('page/SqlManagement/AssignmentBatch', () => {
 
   it('update batch assign and submit change', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const optionRequest = user.getUserTip();
+    const optionRequest = user.getUserTipList();
     const submitRequest = sqlManage.batchUpdateSqlManage();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));

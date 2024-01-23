@@ -150,7 +150,7 @@ export const SqlManagementRowAction = (
       },
       {
         text: t('sqlManagement.table.action.analyze'),
-        key: 'change-status-single',
+        key: 'analyze-sql',
         buttonProps: (record) => {
           return {
             onClick: () => {
