@@ -30,7 +30,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
 
   it('render workflow template detail', async () => {
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
-    const userInfoRequest = user.getUserTip();
+    const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInfoRequest).toBeCalled();
@@ -54,7 +54,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
   it('render workflow template detail without permission', async () => {
     mockUseCurrentUser({ isAdmin: false });
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
-    const userInfoRequest = user.getUserTip();
+    const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInfoRequest).toBeCalled();
@@ -66,7 +66,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
   it('render workflow template detail with not projectArchive', async () => {
     mockUseCurrentProject({ projectArchive: false });
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
-    const userInfoRequest = user.getUserTip();
+    const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInfoRequest).toBeCalled();

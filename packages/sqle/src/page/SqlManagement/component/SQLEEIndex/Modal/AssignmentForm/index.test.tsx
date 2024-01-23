@@ -50,7 +50,7 @@ describe('page/SqlManagement/AssignmentForm', () => {
   });
 
   it('render form when init', async () => {
-    const request = user.getUserTip();
+    const request = user.getUserTipList();
     const { baseElement } = customRender();
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -68,7 +68,7 @@ describe('page/SqlManagement/AssignmentForm', () => {
   });
 
   it('disable select', async () => {
-    const request = user.getUserTip();
+    const request = user.getUserTipList();
     const { baseElement } = customRender({ submitLoading: true });
     expect(request).toBeCalled();
     await act(async () => jest.advanceTimersByTime(3000));
