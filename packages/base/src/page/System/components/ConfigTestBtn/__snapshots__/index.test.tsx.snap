@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/System/components/ConfigTestBtn render snap when Popover cont show 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+          type="submit"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="flashlight-fill"
+              >
+                <path
+                  d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-arrow"
+        style="position: absolute;"
+      />
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <span>
+              popoverForm
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/System/components/ConfigTestBtn render snap when btn hover 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+          type="submit"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="flashlight-fill"
+              >
+                <path
+                  d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-1lkd6d8"
+            width="54"
+          >
+            测试
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/System/components/ConfigTestBtn render snap when btn is default 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+          type="submit"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="flashlight-fill"
+              >
+                <path
+                  d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/System/components/ConfigTestBtn render snap when btn is loading 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
+          disabled=""
+          type="submit"
+        >
+          <span
+            class="ant-btn-icon ant-btn-loading-icon"
+          >
+            <span
+              aria-label="loading"
+              class="anticon anticon-loading anticon-spin"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="loading"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="0 0 1024 1024"
+                width="1em"
+              >
+                <path
+                  d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
