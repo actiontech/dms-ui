@@ -25,14 +25,11 @@ describe('sqle/Order/Common/AuditResultList', () => {
     requestUpdateAuditTaskSQLs = order.updateAuditTaskSQLs();
     requestGetAuditTaskSQLs = order.getAuditTaskSQLs();
     order.mockAllApi();
-    //  MUI: the styled(component)(...args) API requires all its args to be defined.
-    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
     jest.useRealTimers();
     jest.clearAllMocks();
-    (console.error as jest.Mock).mockRestore();
     cleanup();
   });
 
