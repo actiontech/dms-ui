@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 
-import { Form, Spin, Typography, message as messageApi } from 'antd';
+import { Form, Spin, Typography } from 'antd';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import ConfigSwitch from '../../components/ConfigSwitch';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
