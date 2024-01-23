@@ -1,17 +1,17 @@
-import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { OrderDetailAuditResultListProps } from './index.type';
 import { useRequest } from 'ahooks';
+import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import useOverviewActions from './useOverviewActions';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
-import {
-  auditResultOverviewActions,
-  auditResultOverviewColumn
-} from './column';
+import ScheduleTimeModal from '../ScheduleTimeModal';
 import {
   ActiontechTable,
   useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import ScheduleTimeModal from '../ScheduleTimeModal';
+import {
+  auditResultOverviewActions,
+  auditResultOverviewColumn
+} from './column';
+import { OrderDetailAuditResultListProps } from './index.type';
 
 const OrderDetailAuditResultList: React.FC<OrderDetailAuditResultListProps> = ({
   workflowID,
