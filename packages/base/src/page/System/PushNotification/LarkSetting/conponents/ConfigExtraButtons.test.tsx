@@ -114,7 +114,9 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
           account_type: TestFeishuConfigurationAccountTypeEnum.phone
         }
       });
-      expect(screen.getByText('已成功将消息推送至指定账号')).toBeInTheDocument();
+      expect(
+        screen.getByText('已成功将消息推送至指定账号')
+      ).toBeInTheDocument();
     });
 
     it('render form when api error', async () => {
@@ -151,5 +153,5 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
         }
       });
     });
-  })
+  });
 });

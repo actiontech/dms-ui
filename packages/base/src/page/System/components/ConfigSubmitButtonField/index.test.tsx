@@ -6,8 +6,13 @@ import ConfigSubmitButtonField from '.';
 describe('base/System/components/ConfigSubmitButtonField', () => {
   const handleClickCancelFn = jest.fn();
   const customRender = (submitLoading: boolean) => {
-    return renderWithTheme(<ConfigSubmitButtonField submitLoading={submitLoading} handleClickCancel={handleClickCancelFn}  />);
-  }
+    return renderWithTheme(
+      <ConfigSubmitButtonField
+        submitLoading={submitLoading}
+        handleClickCancel={handleClickCancelFn}
+      />
+    );
+  };
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -35,5 +40,5 @@ describe('base/System/components/ConfigSubmitButtonField', () => {
     fireEvent.click(screen.getByText('取 消'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(handleClickCancelFn).toBeCalled();
-  })
+  });
 });

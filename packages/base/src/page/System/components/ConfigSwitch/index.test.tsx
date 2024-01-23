@@ -27,14 +27,14 @@ describe('base/System/components/ConfigSwitch', () => {
     );
   };
 
-   beforeEach(() => {
-     jest.useFakeTimers();
-   });
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
 
-   afterEach(() => {
-     jest.useRealTimers();
-     cleanup();
-   });
+  afterEach(() => {
+    jest.useRealTimers();
+    cleanup();
+  });
 
   it('render snap when switch disabled', () => {
     const { baseElement } = customRender({
@@ -82,5 +82,5 @@ describe('base/System/components/ConfigSwitch', () => {
     fireEvent.click(switchHandle);
     await act(async () => jest.advanceTimersByTime(500));
     expect(onSwitchChangeFn).toBeCalled();
-  })
+  });
 });

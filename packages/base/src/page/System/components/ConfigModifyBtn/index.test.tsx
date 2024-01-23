@@ -16,7 +16,9 @@ describe('base/System/components/ConfigModifyBtn', () => {
 
   it('render snap', async () => {
     const onClickFn = jest.fn();
-    const { baseElement } = renderWithTheme(<ConfigModifyBtn onClick={onClickFn} />);
+    const { baseElement } = renderWithTheme(
+      <ConfigModifyBtn onClick={onClickFn} />
+    );
     expect(baseElement).toMatchSnapshot();
 
     const btnEle = getBySelector('.ant-btn', baseElement);
@@ -27,5 +29,5 @@ describe('base/System/components/ConfigModifyBtn', () => {
 
     fireEvent.click(btnEle);
     expect(onClickFn).toBeCalled();
-  })
+  });
 });
