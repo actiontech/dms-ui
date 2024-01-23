@@ -2,13 +2,7 @@ import LarkSetting from '.';
 
 import system from '../../../../testUtils/mockApi/system';
 
-import {
-  cleanup,
-  fireEvent,
-  act,
-  screen,
-  getAllByText
-} from '@testing-library/react';
+import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -92,6 +86,45 @@ describe('base/System/PushNotification/LarkSetting', () => {
   });
 
   describe('render submit lark setting', () => {
-    it('render submit success', async () => {});
+    it('render submit success', async () => {
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+      const switchEle = getBySelector(
+        '.basic-switch-wrapper .ant-switch-inner',
+        baseElement
+      );
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.change(getBySelector('#appKey', baseElement), {
+        target: {
+          value: 'app key'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#appSecret', baseElement), {
+        target: {
+          value: 'app secret'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      expect(screen.getByText('提 交')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('提 交'));
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(baseElement).toMatchSnapshot();
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestUpdateFeishuConfiguration).toBeCalled();
+      expect(requestUpdateFeishuConfiguration).toBeCalledWith({
+        update_feishu_configuration: {
+          app_id: 'app key',
+          app_secret: 'app secret',
+          is_feishu_notification_enabled: true
+        }
+      });
+      expect(requestGetFeishuConfiguration).toBeCalled();
+    });
   });
 });
