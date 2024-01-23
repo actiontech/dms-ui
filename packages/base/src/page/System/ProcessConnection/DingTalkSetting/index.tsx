@@ -1,29 +1,27 @@
-import { useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import { Form, message, Space, Spin, Typography } from 'antd';
-import { BasicToolTips, BasicButton, BasicInput } from '@actiontech/shared';
+import { useCallback, useMemo } from 'react';
+
+import { Form, Spin, Typography } from 'antd';
+import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
+import ConfigSwitch from '../../components/ConfigSwitch';
+import ConfigExtraButtons from './components/ConfigExtraButtons';
+import ConfigField from './components/ConfigField';
+
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
+import useConfigSwitch from '../../hooks/useConfigSwitch';
+
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { IDingTalkConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
-import {
-  CustomLabelContent,
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
-import ConfigModifyBtn from '../../components/ConfigModifyBtn';
-import { IconTest } from '../../../../icon/system';
-import ConfigSwitch from '../../components/ConfigSwitch';
+import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 
 const DingTalkSetting: React.FC = () => {
   const { t } = useTranslation();
-  const [messageApi, messageContextHolder] = message.useMessage();
   const {
     form,
     renderConfigForm,
@@ -132,30 +130,6 @@ const DingTalkSetting: React.FC = () => {
     handleToggleSwitch
   });
 
-  const testTing = useRef(false);
-  const testDingTalkConfiguration = () => {
-    if (testTing.current) {
-      return;
-    }
-    testTing.current = true;
-    configuration
-      .testDingTalkConfigV1()
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          if (res.data.data?.is_ding_talk_send_normal) {
-            messageApi.success(t('dmsSystem.dingTalk.testSuccess'));
-          } else {
-            messageApi.error(
-              res.data.data?.send_error_message ?? t('common.unknownError')
-            );
-          }
-        }
-      })
-      .finally(() => {
-        testTing.current = false;
-      });
-  };
-
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IDingTalkConfigurationV1> =
     useMemo(() => {
       return [
@@ -174,26 +148,15 @@ const DingTalkSetting: React.FC = () => {
   return (
     <div className="config-form-wrapper">
       <Spin spinning={loading}>
-        {messageContextHolder}
-
         {renderConfigForm({
           data: dingTalkInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
-              <BasicToolTips title={t('common.test')} titleWidth={54}>
-                <BasicButton
-                  htmlType="submit"
-                  type="text"
-                  className="system-config-button"
-                  loading={testTing.current}
-                  disabled={testTing.current}
-                  icon={<IconTest />}
-                  onClick={testDingTalkConfiguration}
-                />
-              </BasicToolTips>
-              <ConfigModifyBtn onClick={handleClickModify} />
-            </Space>
+            <ConfigExtraButtons
+              isConfigClosed={isConfigClosed}
+              extraButtonsVisible={extraButtonsVisible}
+              handleClickModify={handleClickModify}
+            />
           ),
           configSwitchNode: (
             <ConfigSwitch
@@ -207,53 +170,12 @@ const DingTalkSetting: React.FC = () => {
               onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
-          configField: (
-            <>
-              <FormItemLabel
-                className="has-required-style"
-                label="AppKey"
-                name="appKey"
-                rules={[{ required: true }]}
-              >
-                <BasicInput
-                  placeholder={t('common.form.placeholder.input', {
-                    name: 'AppKey'
-                  })}
-                />
-              </FormItemLabel>
-              <FormItemLabel
-                className="has-required-style"
-                label="AppSecret"
-                name="appSecret"
-                rules={[{ required: true }]}
-              >
-                <BasicInput.Password
-                  placeholder={t('common.form.placeholder.input', {
-                    name: 'AppSecret'
-                  })}
-                />
-              </FormItemLabel>
-            </>
-          ),
+          configField: <ConfigField />,
           submitButtonField: (
-            <FormItemNoLabel>
-              <Space size={12}>
-                <BasicButton
-                  onClick={handleClickCancel}
-                  disabled={submitLoading}
-                >
-                  {t('common.cancel')}
-                </BasicButton>
-                <BasicButton
-                  htmlType="submit"
-                  type="primary"
-                  disabled={submitLoading}
-                  loading={submitLoading}
-                >
-                  {t('common.submit')}
-                </BasicButton>
-              </Space>
-            </FormItemNoLabel>
+            <ConfigSubmitButtonField
+              submitLoading={submitLoading}
+              handleClickCancel={handleClickCancel}
+            />
           ),
           submit: submitDingTalkConfig
         })}
