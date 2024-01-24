@@ -3,7 +3,7 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { exportSqlManageData, ruleTipsData, sqlManageListData } from './data';
+import { ruleTipsData, sqlManageListData } from './data';
 
 class MockSqlManageApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -46,7 +46,7 @@ class MockSqlManageApi implements MockSpyApy {
 
   public exportSqlManage() {
     const spy = jest.spyOn(SqlManage, 'exportSqlManageV1');
-    spy.mockImplementation(() => createSpySuccessResponse(exportSqlManageData));
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
