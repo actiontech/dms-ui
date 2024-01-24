@@ -4,7 +4,10 @@ import system from '../../../../testUtils/mockApi/system';
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import { getAllBySelector, getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('base/System/PushNotification/SMTPSetting', () => {
   let requestGetSMTPConfiguration: jest.SpyInstance;
@@ -79,7 +82,7 @@ describe('base/System/PushNotification/SMTPSetting', () => {
       fireEvent.click(screen.getByText('OK'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
-    })
+    });
   });
 
   describe('render submit SMTP setting', () => {
@@ -147,6 +150,6 @@ describe('base/System/PushNotification/SMTPSetting', () => {
       });
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestGetSMTPConfiguration).toBeCalled();
-    })
+    });
   });
 });

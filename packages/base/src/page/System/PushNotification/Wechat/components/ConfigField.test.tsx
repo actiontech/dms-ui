@@ -11,7 +11,7 @@ describe('base/System/PushNotification/Wechat/ConfigField', () => {
       <Form>
         <ConfigField />
       </Form>
-    )
+    );
   };
 
   beforeEach(() => {

@@ -46,7 +46,11 @@ const ConfigField = () => {
         <BasicInputNumber min={1} max={5} />
       </FormItemLabel>
       <FormItemLabel label="token" name="token">
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: 'token'
+          })}
+        />
       </FormItemLabel>
     </>
   );

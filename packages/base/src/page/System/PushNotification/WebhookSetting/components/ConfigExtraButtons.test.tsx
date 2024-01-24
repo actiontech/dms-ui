@@ -62,10 +62,7 @@ describe('base/System/PushNotification/WebhookSetting/ConfigExtraButtons', () =>
         msgUrl: ''
       });
 
-      const btnSubmit = getBySelector(
-        '.ant-btn[type="submit"]',
-        baseElement
-      );
+      const btnSubmit = getBySelector('.ant-btn[type="submit"]', baseElement);
       fireEvent.mouseOver(btnSubmit);
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
@@ -93,6 +90,6 @@ describe('base/System/PushNotification/WebhookSetting/ConfigExtraButtons', () =>
       await act(async () => jest.advanceTimersByTime(3300));
       expect(requestTestWebHookConfiguration).toBeCalled();
       expect(baseElement).toMatchSnapshot();
-    })
+    });
   });
 });
