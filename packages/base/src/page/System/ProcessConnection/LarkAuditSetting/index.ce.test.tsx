@@ -10,7 +10,7 @@ describe('base/System/ProcessConnection/LarkAuditSetting-ce', () => {
     return superRender(<LarkAuditSetting />);
   };
 
-  it('render snap',  () => {
+  it('render snap', () => {
     const { baseElement } = customRender();
 
     expect(baseElement).toMatchSnapshot();

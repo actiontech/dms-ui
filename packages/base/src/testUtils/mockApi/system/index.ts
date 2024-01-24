@@ -38,71 +38,12 @@ class MockSystemApi implements MockSpyApy {
     this.updateWebhookConfig();
     this.testWebhookConfig();
     this.updatePersonalizationConfig();
-
     this.testDingTalkConfig();
     this.getDingTalkConfiguration();
     this.updateDingTalkConfiguration();
     this.testFeishuAuditConfig();
-
     this.getFeishuAuditConfiguration();
     this.updateFeishuAuditConfiguration();
-  }
-
-  public getFeishuAuditConfiguration() {
-    const spy = jest.spyOn(configuration, 'getFeishuAuditConfigurationV1');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        is_message_sent_normally: true
-      })
-    );
-    return spy;
-  }
-
-  public updateFeishuAuditConfiguration() {
-    const spy = jest.spyOn(configuration, 'updateFeishuAuditConfigurationV1');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
-    return spy;
-  }
-
-  public testFeishuAuditConfig() {
-    const spy = jest.spyOn(configuration, 'testFeishuAuditConfigV1');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        is_message_sent_normally: true
-      })
-    );
-    return spy;
-  }
-
-  public getDingTalkConfiguration() {
-    const spy = jest.spyOn(configuration, 'getDingTalkConfigurationV1');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: {
-          app_key: '',
-          is_enable_ding_talk_notify: false
-        }
-      })
-    );
-    return spy;
-  }
-
-  public updateDingTalkConfiguration() {
-    const spy = jest.spyOn(configuration, 'updateDingTalkConfigurationV1');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
-    return spy;
-  }
-
-  public testDingTalkConfig() {
-    const spy = jest.spyOn(configuration, 'testDingTalkConfigV1');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: {
-          is_ding_talk_send_normal: true
-        }
-      })
-    );
-    return spy;
   }
 
   public getLDAPConfig() {
@@ -256,6 +197,63 @@ class MockSystemApi implements MockSpyApy {
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   };
+
+  public getFeishuAuditConfiguration() {
+    const spy = jest.spyOn(configuration, 'getFeishuAuditConfigurationV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        is_message_sent_normally: true
+      })
+    );
+    return spy;
+  }
+
+  public updateFeishuAuditConfiguration() {
+    const spy = jest.spyOn(configuration, 'updateFeishuAuditConfigurationV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public testFeishuAuditConfig() {
+    const spy = jest.spyOn(configuration, 'testFeishuAuditConfigV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        is_message_sent_normally: true
+      })
+    );
+    return spy;
+  }
+
+  public getDingTalkConfiguration() {
+    const spy = jest.spyOn(configuration, 'getDingTalkConfigurationV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          app_key: '',
+          is_enable_ding_talk_notify: false
+        }
+      })
+    );
+    return spy;
+  }
+
+  public updateDingTalkConfiguration() {
+    const spy = jest.spyOn(configuration, 'updateDingTalkConfigurationV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public testDingTalkConfig() {
+    const spy = jest.spyOn(configuration, 'testDingTalkConfigV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_ding_talk_send_normal: true
+        }
+      })
+    );
+    return spy;
+  }
 }
 
 export default new MockSystemApi();
