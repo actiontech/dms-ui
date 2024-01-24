@@ -18,7 +18,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.wechat.corp_id')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-required-style"
@@ -33,7 +37,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.wechat.agent_id')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-required-style"
@@ -45,7 +53,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput.Password />
+        <BasicInput.Password
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.wechat.corp_secret')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         label={t('dmsSystem.wechat.safe_enabled')}
@@ -55,7 +67,11 @@ const ConfigField = () => {
         <BasicSwitch />
       </FormItemLabel>
       <FormItemLabel label={t('dmsSystem.wechat.proxy_ip')} name="proxy_ip">
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.wechat.proxy_ip')
+          })}
+        />
       </FormItemLabel>
     </>
   );
