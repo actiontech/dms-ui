@@ -9,7 +9,7 @@ import { IconTest } from '../../../../../icon/system';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-interface ConfigExtraButtonsProps {
+export interface ConfigExtraButtonsProps {
   enabled: string | number | boolean;
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
