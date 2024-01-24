@@ -1,9 +1,9 @@
 import { cleanup, fireEvent, act } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import { Form } from 'antd';
 import ConfigField from './ConfigField';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('base/System/PushNotification/SMTPSetting/ConfigField', () => {
   const customRender = () => {
