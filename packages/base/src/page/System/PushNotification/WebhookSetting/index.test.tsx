@@ -1,25 +1,23 @@
-import Wechat from '.';
-
 import system from '../../../../testUtils/mockApi/system';
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
-describe('base/System/PushNotification/Wechat', () => {
-  let requestGetWeChatConfiguration: jest.SpyInstance;
-  let requestUpdateWeChatConfiguration: jest.SpyInstance;
+import WebHook from '.';
+
+describe('base/System/PushNotification/WebhookSetting', () => {
+  let requestGetWebHookConfiguration: jest.SpyInstance;
+  let requestUpdateWebHookConfiguration: jest.SpyInstance;
+
   const customRender = () => {
-    return renderWithTheme(<Wechat />);
+    return superRender(<WebHook />);
   };
 
   beforeEach(() => {
     jest.useFakeTimers();
-    requestGetWeChatConfiguration = system.getWeChatConfig();
-    requestUpdateWeChatConfiguration = system.updateWeChatConfig();
+    requestGetWebHookConfiguration = system.getWebhookConfig();
+    requestUpdateWebHookConfiguration = system.updateWebhookConfig();
   });
 
   afterEach(() => {
@@ -34,7 +32,7 @@ describe('base/System/PushNotification/Wechat', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetWeChatConfiguration).toBeCalled();
+    expect(requestGetWebHookConfiguration).toBeCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -43,14 +41,13 @@ describe('base/System/PushNotification/Wechat', () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(screen.getByText('是否启用微信通知')).toBeInTheDocument();
+      expect(screen.getByText('是否开启Webhook通知')).toBeInTheDocument();
 
-      const switchEle = getAllBySelector(
+      const switchEle = getBySelector(
         '.basic-switch-wrapper .ant-switch-inner',
         baseElement
       );
-      expect(switchEle.length).toBe(2);
-      fireEvent.click(switchEle[0]);
+      fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
 
@@ -62,17 +59,19 @@ describe('base/System/PushNotification/Wechat', () => {
 
     it('render snap when click switch change', async () => {
       const { baseElement } = customRender();
+
       await act(async () => jest.advanceTimersByTime(3300));
 
-      const switchEle = getAllBySelector(
+      const switchEle = getBySelector(
         '.basic-switch-wrapper .ant-switch-inner',
         baseElement
       );
-      fireEvent.click(switchEle[0]);
+      fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
 
-      fireEvent.click(switchEle[0]);
+      fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
       expect(
         screen.getByText(
           '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
@@ -84,7 +83,7 @@ describe('base/System/PushNotification/Wechat', () => {
       fireEvent.click(screen.getByText('Cancel'));
       await act(async () => jest.advanceTimersByTime(500));
 
-      fireEvent.click(switchEle[0]);
+      fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
       fireEvent.click(screen.getByText('OK'));
       await act(async () => jest.advanceTimersByTime(500));
@@ -92,57 +91,52 @@ describe('base/System/PushNotification/Wechat', () => {
     });
   });
 
-  describe('render submit wechat setting', () => {
-    it('render submit success', async () => {
+  describe('render submit lark setting', () => {
+    it.only('render submit success', async () => {
       const { baseElement } = customRender();
+
       await act(async () => jest.advanceTimersByTime(3300));
-      const switchEle = getAllBySelector(
+      const switchEle = getBySelector(
         '.basic-switch-wrapper .ant-switch-inner',
         baseElement
       );
-      fireEvent.click(switchEle[0]);
+      fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
 
-      fireEvent.change(getBySelector('#corp_id', baseElement), {
+      fireEvent.change(getBySelector('#url', baseElement), {
         target: {
-          value: 'corp id'
+          value: 'http://a.com'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(500));
 
-      fireEvent.change(getBySelector('#agent_id', baseElement), {
+      fireEvent.change(getBySelector('#maxRetryTimes', baseElement), {
         target: {
-          value: '1234'
+          value: '1'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(500));
 
-      fireEvent.change(getBySelector('#corp_secret', baseElement), {
+      fireEvent.change(getBySelector('#retryIntervalSeconds', baseElement), {
         target: {
-          value: 'abcd'
+          value: '2'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(500));
 
       expect(screen.getByText('提 交')).toBeInTheDocument();
       fireEvent.click(screen.getByText('提 交'));
-      await act(async () => jest.advanceTimersByTime(300));
-      expect(baseElement).toMatchSnapshot();
-      await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestUpdateWeChatConfiguration).toBeCalled();
-      expect(requestUpdateWeChatConfiguration).toBeCalledWith({
-        update_wechat_configuration: {
-          enable_wechat_notify: true,
-          corp_id: 'corp id',
-          corp_secret: 'abcd',
-          agent_id: 1234,
-          safe_enabled: false,
-          proxy_ip: '1.1.1.1'
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(requestUpdateWebHookConfiguration).toBeCalled();
+      expect(requestUpdateWebHookConfiguration).toBeCalledWith({
+        webhook_config: {
+          enable: true,
+          max_retry_times: 1,
+          retry_interval_seconds: 2,
+          token: undefined,
+          url: 'http://a.com'
         }
       });
-
-      await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetWeChatConfiguration).toBeCalled();
     });
   });
 });

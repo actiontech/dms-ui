@@ -1,4 +1,6 @@
-import ConfigExtraButtons, { typeConfigExtraButtons } from './ConfigExtraButtons';
+import ConfigExtraButtons, {
+  typeConfigExtraButtons
+} from './ConfigExtraButtons';
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
@@ -131,6 +133,6 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
           recipient_id: 'id val2'
         }
       });
-    })
-  })
+    });
+  });
 });
