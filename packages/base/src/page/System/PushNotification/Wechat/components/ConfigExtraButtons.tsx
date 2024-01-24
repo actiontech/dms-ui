@@ -14,7 +14,7 @@ import { BasicInput } from '@actiontech/shared';
 
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 
-type typeConfigExtraButtons = {
+export type typeConfigExtraButtons = {
   extraButtonsVisible: boolean;
   isConfigClosed: boolean;
   enabled: string | boolean | undefined;
@@ -110,7 +110,11 @@ const ConfigExtraButtons = ({
                     }
                   ]}
                 >
-                  <BasicInput />
+                  <BasicInput
+                    placeholder={t('common.form.placeholder.input', {
+                      name: t('dmsSystem.wechat.receiveWechat')
+                    })}
+                  />
                 </FormItemLabel>
               </Form>
             </ConfigTestPopoverForm>
