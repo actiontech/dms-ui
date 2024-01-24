@@ -1,0 +1,39 @@
+import { cleanup, screen } from '@testing-library/react';
+import SqlManagement from '.';
+import { superRender } from '../../testUtils/customRender';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { useSelector } from 'react-redux';
+import { driverMeta } from '../../hooks/useDatabaseType/index.test.data';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
+
+describe('page/SqlManagement', () => {
+  beforeEach(() => {
+    mockUseCurrentProject();
+    mockUseCurrentUser();
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        database: { driverMeta: driverMeta },
+        sqleManagement: {
+          modalStatus: {}
+        }
+      });
+    });
+  });
+
+  afterEach(() => {
+    cleanup();
+  });
+
+  it('render sql management page', () => {
+    const { baseElement } = superRender(<SqlManagement />);
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('SQL管控')).toBeInTheDocument();
+  });
+});
