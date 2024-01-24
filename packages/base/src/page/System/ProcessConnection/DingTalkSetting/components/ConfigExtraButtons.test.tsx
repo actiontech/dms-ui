@@ -9,7 +9,6 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import system from '../../../../../testUtils/mockApi/system';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
-
 describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () => {
   let requestTestDingTalkConfig: jest.SpyInstance;
   const handleClickModifyFn = jest.fn();
@@ -36,7 +35,7 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
     it('render isConfigClosed is true', () => {
       const { baseElement } = customRender({
         isConfigClosed: true,
-        extraButtonsVisible: true,
+        extraButtonsVisible: true
       });
       expect(baseElement).toMatchSnapshot();
     });
@@ -44,7 +43,7 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
     it('render extraButtonsVisible is false', () => {
       const { baseElement } = customRender({
         isConfigClosed: false,
-        extraButtonsVisible: false,
+        extraButtonsVisible: false
       });
       expect(baseElement).toMatchSnapshot();
     });
@@ -54,7 +53,7 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
     it('render submit btn event change', async () => {
       const { baseElement } = customRender({
         isConfigClosed: false,
-        extraButtonsVisible: true,
+        extraButtonsVisible: true
       });
 
       const btnSubmit = getBySelector('.ant-btn[type="submit"]', baseElement);
@@ -75,7 +74,7 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
       );
       const { baseElement } = customRender({
         isConfigClosed: false,
-        extraButtonsVisible: true,
+        extraButtonsVisible: true
       });
 
       const btnSubmit = getBySelector('.ant-btn[type="submit"]', baseElement);

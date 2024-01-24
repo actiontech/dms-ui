@@ -37,7 +37,7 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
       const { baseElement } = customRender({
         isConfigClosed: true,
         extraButtonsVisible: true,
-        enabled: false,
+        enabled: false
       });
       expect(baseElement).toMatchSnapshot();
     });
@@ -139,7 +139,7 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
 
     it('render form submit error', async () => {
       requestTestFeishuAuditConfig.mockImplementation(() =>
-        createSpySuccessResponse({ error_message : 'error message'})
+        createSpySuccessResponse({ error_message: 'error message' })
       );
       const { baseElement } = customRender({
         isConfigClosed: false,
