@@ -514,7 +514,7 @@ exports[`base/System/PushNotification/WebhookSetting render snap 1`] = `
                         <input
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="token"
-                          placeholder="请输入{{name}}"
+                          placeholder="请输入token"
                           type="text"
                           value=""
                         />
@@ -1082,7 +1082,7 @@ exports[`base/System/PushNotification/WebhookSetting render snap 2`] = `
                         <input
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="token"
-                          placeholder="请输入{{name}}"
+                          placeholder="请输入token"
                           type="text"
                           value=""
                         />
@@ -1651,7 +1651,7 @@ exports[`base/System/PushNotification/WebhookSetting render switch cancel btn re
                         <input
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="token"
-                          placeholder="请输入{{name}}"
+                          placeholder="请输入token"
                           type="text"
                           value=""
                         />
@@ -2223,7 +2223,7 @@ exports[`base/System/PushNotification/WebhookSetting render switch cancel btn re
                         <input
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="token"
-                          placeholder="请输入{{name}}"
+                          placeholder="请输入token"
                           type="text"
                           value=""
                         />
@@ -2792,7 +2792,7 @@ exports[`base/System/PushNotification/WebhookSetting render switch cancel btn re
                         <input
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="token"
-                          placeholder="请输入{{name}}"
+                          placeholder="请输入token"
                           type="text"
                           value=""
                         />
@@ -3472,7 +3472,7 @@ exports[`base/System/PushNotification/WebhookSetting render switch cancel btn re
                         <input
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="token"
-                          placeholder="请输入{{name}}"
+                          placeholder="请输入token"
                           type="text"
                           value=""
                         />
