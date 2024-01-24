@@ -24,7 +24,7 @@ import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import { TestFormFields } from '../index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-interface ConfigExtraButtonsProps {
+export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
   enabled: string | boolean;
@@ -160,7 +160,11 @@ const ConfigExtraButtons = ({
                         }
                       ]}
                     >
-                      <BasicInput />
+                      <BasicInput
+                        placeholder={t('common.form.placeholder.input', {
+                          name: t('dmsSystem.larkAudit.email')
+                        })}
+                      />
                     </FormItemNoLabel>
                   }
                 >
@@ -175,7 +179,11 @@ const ConfigExtraButtons = ({
                       ...phoneRule()
                     ]}
                   >
-                    <BasicInput />
+                    <BasicInput
+                      placeholder={t('common.form.placeholder.input', {
+                        name: t('dmsSystem.larkAudit.phone')
+                      })}
+                    />
                   </FormItemNoLabel>
                 </EmptyBox>
               </Form>
