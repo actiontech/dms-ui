@@ -34,7 +34,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.smtp.host')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-required-style"
@@ -49,7 +53,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.smtp.port')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-required-style"
@@ -64,7 +72,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.smtp.username')
+          })}
+        />
       </FormItemLabel>
 
       <FormItemLabel
@@ -77,7 +89,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput.Password placeholder={t('common.form.placeholder.input')} />
+        <BasicInput.Password
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.smtp.password')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-required-style"
@@ -100,7 +116,11 @@ const ConfigField = () => {
           })
         ]}
       >
-        <BasicInput.Password placeholder={t('common.form.placeholder.input')} />
+        <BasicInput.Password
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.smtp.passwordConfirm')
+          })}
+        />
       </FormItemLabel>
     </>
   );

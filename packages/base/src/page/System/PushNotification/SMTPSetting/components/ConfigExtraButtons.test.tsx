@@ -1,4 +1,6 @@
-import ConfigExtraButtons, { typeConfigExtraButtons } from './ConfigExtraButtons';
+import ConfigExtraButtons, {
+  typeConfigExtraButtons
+} from './ConfigExtraButtons';
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
@@ -33,7 +35,7 @@ describe('base/System/PushNotification/SMTPSetting/ConfigExtraButtons', () => {
       const { baseElement } = customRender({
         isConfigClosed: true,
         extraButtonsVisible: true,
-        enabled: false,
+        enabled: false
       });
       expect(baseElement).toMatchSnapshot();
     });
@@ -135,6 +137,6 @@ describe('base/System/PushNotification/SMTPSetting/ConfigExtraButtons', () => {
         }
       });
       expect(baseElement).toMatchSnapshot();
-    })
-  })
+    });
+  });
 });
