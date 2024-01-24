@@ -82,6 +82,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     );
     const { baseElement } = superRender(<SQLEEIndex />);
     expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -144,15 +145,10 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     });
   });
 
-  it('filter data with status, sort and export data', async () => {
+  it('filter data with status', async () => {
     const request = sqlManage.getSqlManageList();
-    const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
-    const instanceTipsRequest = instance.getInstanceTipList();
-    const exportRequest = sqlManage.exportSqlManage();
     const { baseElement } = superRender(<SQLEEIndex />);
     expect(request).toBeCalled();
-    expect(ruleTipsRequest).toBeCalled();
-    expect(instanceTipsRequest).toBeCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('已解决')).toBeInTheDocument();
     fireEvent.click(screen.getByText('已解决'));
@@ -161,28 +157,69 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       ...requestParams,
       filter_status: 'solved'
     });
+  });
+
+  it('filter data with sort', async () => {
+    const request = sqlManage.getSqlManageList();
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
 
     const sortButtons = getAllBySelector('.ant-table-column-sorter');
     expect(sortButtons.length).toBe(3);
     fireEvent.click(sortButtons[sortButtons.length - 1]);
     expect(request).toBeCalledWith({
       ...requestParams,
-      filter_status: 'solved',
       sort_field: 'fp_count',
       sort_order: 'desc'
     });
+  });
+
+  it('filter data with search', async () => {
+    const request = sqlManage.getSqlManageList();
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
+    const searchText = 'search text';
+    const inputEle = getBySelector('#actiontech-table-search-input');
+    fireEvent.change(inputEle, {
+      target: { value: searchText }
+    });
+
+    await act(async () => {
+      fireEvent.keyDown(inputEle, {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toBeCalledWith({
+      ...requestParams,
+      fuzzy_search_sql_fingerprint: searchText
+    });
+  });
+
+  it('export data', async () => {
+    const request = sqlManage.getSqlManageList();
+    const exportRequest = sqlManage.exportSqlManage();
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('导出')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导出'));
     expect(exportRequest).toBeCalledWith(
       {
-        ...exportParams,
-        filter_status: 'solved'
+        ...exportParams
       },
       {
         responseType: 'blob'
       }
     );
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(screen.getByText('导出文件成功')).toBeInTheDocument();
   });
 
   it('batch assignment operation for sql', async () => {

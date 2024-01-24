@@ -123,5 +123,3 @@ export const sqlManageListData = {
   sql_manage_optimized_num: 1,
   sql_manage_total_num: 2
 };
-
-export const exportSqlManageData = 'test';
