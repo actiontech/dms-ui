@@ -36,7 +36,10 @@ class MockSqlManageApi implements MockSpyApy {
   public getSqlManageList() {
     const spy = jest.spyOn(SqlManage, 'GetSqlManageListV2');
     spy.mockImplementation(() =>
-      createSpySuccessResponse({ ...sqlManageListData })
+      createSpySuccessResponse({
+        ...sqlManageListData,
+        data: [sqlManageListData.data[0]]
+      })
     );
     return spy;
   }
