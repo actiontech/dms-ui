@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/components/ChartCom/ChartTooltip render snap title 1`] = `
+<body>
+  <div>
+    <div
+      class="tooltip-box-wrapper tooltip-box-database-source-order wrapper-class-name-custom css-4m33fd"
+    >
+      <header
+        class="tooltip-title"
+        style="color: rgb(138, 143, 153);"
+      >
+        <span
+          class="dot"
+          style="background: red;"
+        />
+        this is a text
+      </header>
+      <span>
+        this is a children
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/ChartCom/ChartTooltip render snap when has children 1`] = `
+<body>
+  <div>
+    <div
+      class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
+    >
+      this is a custom render text
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/ChartCom/ChartTooltip render snap when render list 1`] = `
+<body>
+  <div>
+    <div
+      class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
+    >
+      <header
+        class="tooltip-title"
+        style="color: rgb(138, 143, 153);"
+      >
+        <span
+          class="dot"
+          style="background: red;"
+        />
+        this is a text
+      </header>
+      <dl
+        class="tooltip-list"
+      >
+        <dt
+          class="tooltip-name"
+        >
+          <span
+            class="dot"
+            style="background: red;"
+          />
+          label text
+        </dt>
+        <dd
+          class="tooltip-value"
+        >
+          value text
+        </dd>
+      </dl>
+    </div>
+  </div>
+</body>
+`;
