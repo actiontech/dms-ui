@@ -92,7 +92,7 @@ describe('base/System/PushNotification/WebhookSetting', () => {
   });
 
   describe('render submit lark setting', () => {
-    it.only('render submit success', async () => {
+    it('render submit success', async () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
