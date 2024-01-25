@@ -30,7 +30,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
   } = useDbService();
   useEffect(() => {
     updateRoleList();
-    updateDbServiceList(projectID);
+    updateDbServiceList({ project_uid: projectID });
   }, [projectID, updateDbServiceList, updateRoleList]);
 
   return (
