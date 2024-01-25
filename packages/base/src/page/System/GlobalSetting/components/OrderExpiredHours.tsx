@@ -7,13 +7,17 @@ import {
 } from '@actiontech/shared/lib/components/ConfigItem';
 
 import useValidatorNumber from './useValidatorNumber';
+import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export interface OrderExpiredHoursProps {
-  expiredHours: any;
-  fieldVisible: any;
-  showField: any;
-  hideField: any;
-  submitGlobalConfig: any;
+  expiredHours: number | undefined;
+  fieldVisible: boolean;
+  showField: () => void;
+  hideField: () => void;
+  submitGlobalConfig: (
+    value: string | number,
+    fieldName: keyof IUpdateSystemVariablesReqV1
+  ) => void;
 }
 
 const OrderExpiredHours = ({

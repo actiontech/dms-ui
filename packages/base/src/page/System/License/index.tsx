@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
-import { updateSystemModalStatus } from '../../../store/system';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { updateSystemModalStatus } from '../../../store/system';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 
