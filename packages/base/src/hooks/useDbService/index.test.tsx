@@ -8,12 +8,13 @@ import {
 import useDbService from '.';
 import { Select } from 'antd';
 import dbServices from '../../testUtils/mockApi/dbServices';
-import { dbServices as dbServicesList } from '../../testUtils/mockApi/dbServices/data';
+import { dbServicesTips } from '../../testUtils/mockApi/dbServices/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 
 const projectID = '7200';
 
@@ -21,7 +22,7 @@ describe('useDbService', () => {
   let listDbServicesSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
-    listDbServicesSpy = dbServices.ListDBServices();
+    listDbServicesSpy = dbServices.ListDBServicesTips();
   });
 
   afterEach(() => {
@@ -33,16 +34,23 @@ describe('useDbService', () => {
     const { result } = renderHooksWithRedux(() => useDbService(), {});
     expect(result.current.loading).toBeFalsy();
     expect(result.current.dbServiceList).toEqual([]);
-    act(() => result.current.updateDbServiceList(projectID));
+    act(() =>
+      result.current.updateDbServiceList({
+        project_uid: projectID,
+        functional_module:
+          ListDBServiceTipsFunctionalModuleEnum.create_audit_plan
+      })
+    );
     expect(listDbServicesSpy).toBeCalled();
     expect(listDbServicesSpy).toBeCalledWith({
-      page_size: 9999,
+      functional_module:
+        ListDBServiceTipsFunctionalModuleEnum.create_audit_plan,
       project_uid: projectID
     });
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.loading).toBeFalsy();
-    expect(result.current.dbServiceList).toEqual(dbServicesList);
+    expect(result.current.dbServiceList).toEqual(dbServicesTips);
   });
 
   it('should set list to empty array when response code is not equal success code', async () => {
@@ -52,7 +60,7 @@ describe('useDbService', () => {
     );
     const { result } = renderHooksWithRedux(() => useDbService(), {});
     act(() => {
-      result.current.updateDbServiceList(projectID);
+      result.current.updateDbServiceList({ project_uid: projectID });
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.dbServiceList).toEqual([]);
@@ -65,7 +73,7 @@ describe('useDbService', () => {
     );
     const { result } = renderHooksWithRedux(() => useDbService(), {});
     act(() => {
-      result.current.updateDbServiceList(projectID);
+      result.current.updateDbServiceList({ project_uid: projectID });
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.dbServiceList).toEqual([]);

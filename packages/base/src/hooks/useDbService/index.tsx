@@ -3,26 +3,24 @@ import { useBoolean } from 'ahooks';
 import { Select } from 'antd';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceTipItem } from '@actiontech/shared/lib/api/base/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IListDBServiceTipsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 
 const useDbService = () => {
-  const [dbServiceList, setDbServiceList] = React.useState<IListDBService[]>(
-    []
-  );
+  const [dbServiceList, setDbServiceList] = React.useState<
+    IListDBServiceTipItem[]
+  >([]);
 
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const updateDbServiceList = React.useCallback(
-    (project_uid: string) => {
+    (params: IListDBServiceTipsParams) => {
       setTrue();
       dms
-        .ListDBServices({
-          page_size: 9999,
-          project_uid
-        })
+        .ListDBServiceTips(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setDbServiceList(res.data?.data ?? []);
@@ -45,79 +43,55 @@ const useDbService = () => {
     [dbServiceList]
   );
 
+  const generateCommonOptions = React.useCallback(
+    (valueType: 'id' | 'name') => {
+      return dbTypeList.map((type) => {
+        return (
+          <Select.OptGroup
+            label={
+              <DatabaseTypeLogo
+                dbType={type ?? ''}
+                logoUrl={getLogoUrlByDbType(type ?? '')}
+              />
+            }
+            key={type}
+          >
+            {dbServiceList
+              .filter((db) => db.db_type === type)
+              .map((db) => {
+                const id = db.id ?? '';
+                const name = db.name ?? '';
+                const label =
+                  !!db.host && !!db.port
+                    ? `${db.name} (${db.host}:${db.port})`
+                    : db.name;
+                return (
+                  <Select.Option
+                    key={db.id}
+                    value={valueType === 'id' ? id : name}
+                    label={label}
+                  >
+                    {label}
+                  </Select.Option>
+                );
+              })}
+          </Select.OptGroup>
+        );
+      });
+    },
+    [dbServiceList, dbTypeList, getLogoUrlByDbType]
+  );
+
   /**
    * 提供 value 为 id 的 数据源options
    */
   const generateDbServiceIDSelectOptions = React.useCallback(() => {
-    return dbTypeList.map((type) => {
-      return (
-        <Select.OptGroup
-          label={
-            <DatabaseTypeLogo
-              dbType={type ?? ''}
-              logoUrl={getLogoUrlByDbType(type ?? '')}
-            />
-          }
-          key={type}
-        >
-          {dbServiceList
-            .filter((db) => db.db_type === type)
-            .map((db) => {
-              return (
-                <Select.Option
-                  key={db.uid}
-                  value={db.uid ?? ''}
-                  label={
-                    !!db.host && !!db.port
-                      ? `${db.name} (${db.host}:${db.port})`
-                      : db.name
-                  }
-                >
-                  {!!db.host && !!db.port
-                    ? `${db.name} (${db.host}:${db.port})`
-                    : db.name}
-                </Select.Option>
-              );
-            })}
-        </Select.OptGroup>
-      );
-    });
-  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
+    return generateCommonOptions('id');
+  }, [generateCommonOptions]);
+
   const generateDbServiceSelectOptions = React.useCallback(() => {
-    return dbTypeList.map((type) => {
-      return (
-        <Select.OptGroup
-          label={
-            <DatabaseTypeLogo
-              dbType={type ?? ''}
-              logoUrl={getLogoUrlByDbType(type ?? '')}
-            />
-          }
-          key={type}
-        >
-          {dbServiceList
-            .filter((db) => db.db_type === type)
-            .map((db) => {
-              return (
-                <Select.Option
-                  key={db.uid}
-                  value={db.name ?? ''}
-                  label={
-                    !!db.host && !!db.port
-                      ? `${db.name} (${db.host}:${db.port})`
-                      : db.name
-                  }
-                >
-                  {!!db.host && !!db.port
-                    ? `${db.name} (${db.host}:${db.port})`
-                    : db.name}
-                </Select.Option>
-              );
-            })}
-        </Select.OptGroup>
-      );
-    });
-  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
+    return generateCommonOptions('name');
+  }, [generateCommonOptions]);
 
   const dbServiceOptions = useMemo(() => {
     return dbTypeList.map((type) => ({
