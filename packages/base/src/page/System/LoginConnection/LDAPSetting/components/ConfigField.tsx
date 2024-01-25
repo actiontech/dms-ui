@@ -34,7 +34,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.ldap.ldapServerPort')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
@@ -46,13 +50,21 @@ const ConfigField = () => {
         }
         name="ldap_connect_dn"
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.ldap.ldapConnectDn')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         label={t('dmsSystem.ldap.ldapConnectPwd')}
         name="ldap_connect_pwd"
       >
-        <BasicInput.Password placeholder={t('common.form.placeholder.input')} />
+        <BasicInput.Password
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.ldap.ldapConnectPwd')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
@@ -64,7 +76,11 @@ const ConfigField = () => {
         }
         name="ldap_search_base_dn"
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.ldap.ldapSearchBaseDn')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
@@ -88,7 +104,11 @@ const ConfigField = () => {
         }
         name="ldap_user_email_rdn_key"
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.ldap.ldapUserEmailRdnKey')
+          })}
+        />
       </FormItemLabel>
     </>
   );
