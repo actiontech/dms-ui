@@ -2,7 +2,6 @@
  * @test_version ce
  */
 
-
 import { cleanup, act } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
@@ -29,4 +28,4 @@ describe('base/System/LoginConnection/Oauth-ce', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
   });
-})
+});
