@@ -143,3 +143,10 @@ export const customRuleMockData = [
     type: '命名规范'
   }
 ];
+
+export const projectRulesMockData = {
+  rule_template_name: 'default_MySQL',
+  desc: '',
+  db_type: 'MySQL',
+  rule_list: [ruleListData[0]]
+};
