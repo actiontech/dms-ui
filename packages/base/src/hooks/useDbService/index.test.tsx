@@ -79,13 +79,48 @@ describe('useDbService', () => {
     expect(result.current.dbServiceList).toEqual([]);
   });
 
-  it('should render options when use generateRoleSelectOption', async () => {
+  it('should render options when use generateDbServiceIDSelectOptions', async () => {
     const { result } = renderHooksWithRedux(() => useDbService(), {});
+
+    act(() => {
+      result.current.updateDbServiceList({ project_uid: projectID });
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
     const { baseElement: baseElementWithOptions } = render(
       <Select data-testid="testId" value="123123">
         {result.current.generateDbServiceIDSelectOptions()}
       </Select>
     );
+
+    expect(result.current.dbServiceIDOptions).toMatchSnapshot();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElementWithOptions).toMatchSnapshot();
+
+    await act(() => {
+      fireEvent.mouseDown(screen.getByText('test (127.0.0.1:3306)'));
+      jest.runAllTimers();
+    });
+
+    await screen.findAllByText('test (127.0.0.1:3306)');
+    expect(baseElementWithOptions).toMatchSnapshot();
+  });
+
+  it('should render options when use generateDbServiceSelectOptions', async () => {
+    const { result } = renderHooksWithRedux(() => useDbService(), {});
+
+    act(() => {
+      result.current.updateDbServiceList({ project_uid: projectID });
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const { baseElement: baseElementWithOptions } = render(
+      <Select data-testid="testId" value="123123">
+        {result.current.generateDbServiceSelectOptions()}
+      </Select>
+    );
+    expect(result.current.dbServiceOptions).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElementWithOptions).toMatchSnapshot();
