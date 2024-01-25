@@ -11,6 +11,7 @@ export interface IBasicTypographyEllipsis {
     text: string | ReactNode;
     route: string;
   };
+  copyable?: boolean;
 }
 
 // 外层需要一个 max-width 容器 "例如：.ellipsis-column-width"
@@ -18,7 +19,8 @@ const BasicTypographyEllipsis = ({
   textCont,
   linkData,
   tooltipLimitLength,
-  limitMaxLength
+  limitMaxLength,
+  copyable = true
 }: IBasicTypographyEllipsis) => {
   const { tooltipLimitLengthVal, limitMaxLengthVal } = useMemo(() => {
     return {
@@ -29,7 +31,7 @@ const BasicTypographyEllipsis = ({
 
   return (
     <TypographyStyleWrapper
-      copyable
+      copyable={copyable}
       ellipsis={{
         expandable: false,
         tooltip: {
