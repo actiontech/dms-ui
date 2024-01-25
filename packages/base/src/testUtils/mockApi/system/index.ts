@@ -44,21 +44,10 @@ class MockSystemApi implements MockSpyApy {
     this.testFeishuAuditConfig();
     this.getFeishuAuditConfiguration();
     this.updateFeishuAuditConfiguration();
-
     this.CheckLicense();
     this.SetLicense();
-  }
-
-  public CheckLicense() {
-    const spy = jest.spyOn(dms, 'CheckLicense');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
-    return spy;
-  }
-
-  public SetLicense() {
-    const spy = jest.spyOn(dms, 'SetLicense');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
-    return spy;
+    this.GetLicense();
+    this.GetLicenseInfo();
   }
 
   public getLDAPConfig() {
@@ -267,6 +256,30 @@ class MockSystemApi implements MockSpyApy {
         }
       })
     );
+    return spy;
+  }
+
+  public GetLicenseInfo() {
+    const spy = jest.spyOn(dms, 'GetLicenseInfo');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public GetLicense() {
+    const spy = jest.spyOn(dms, 'GetLicense');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public CheckLicense() {
+    const spy = jest.spyOn(dms, 'CheckLicense');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public SetLicense() {
+    const spy = jest.spyOn(dms, 'SetLicense');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
