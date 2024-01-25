@@ -24,6 +24,7 @@ export default {
   permissionTemplate: '权限模板',
   authList: '授权清单',
   permissionOrder: '权限工单',
+  dataExportManagement: '数据导出',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
@@ -34,6 +35,7 @@ export default {
 
   groupLabel: {
     SQLAudit: 'SQL审核',
+    SQLDev: 'SQL开发',
     dataSecurity: '数据安全'
   },
 
