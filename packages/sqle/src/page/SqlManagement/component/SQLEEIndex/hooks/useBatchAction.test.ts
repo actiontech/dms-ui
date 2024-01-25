@@ -1,4 +1,4 @@
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
 import useBatchAction from './useBatchAction';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -23,7 +23,7 @@ describe('SqlManagement/useBatchAction', () => {
 
   it('send request with no actionPermission', async () => {
     const request = sqlManage.batchUpdateSqlManage();
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = renderHooksWithRedux(() =>
       useBatchAction(false, ['249'], mockBatch)
     );
     expect(result.current.batchActionsLoading).toBe(false);
@@ -37,7 +37,7 @@ describe('SqlManagement/useBatchAction', () => {
 
   it('send request with empty row key', async () => {
     const request = sqlManage.batchUpdateSqlManage();
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = renderHooksWithRedux(() =>
       useBatchAction(true, [], mockBatch)
     );
     expect(result.current.batchActionsLoading).toBe(false);
@@ -51,7 +51,7 @@ describe('SqlManagement/useBatchAction', () => {
 
   it('send batch solve request', async () => {
     const request = sqlManage.batchUpdateSqlManage();
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = renderHooksWithRedux(() =>
       useBatchAction(true, ['249'], mockBatch)
     );
     expect(result.current.batchActionsLoading).toBe(false);
@@ -71,7 +71,7 @@ describe('SqlManagement/useBatchAction', () => {
 
   it('send batch ignore request', async () => {
     const request = sqlManage.batchUpdateSqlManage();
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = renderHooksWithRedux(() =>
       useBatchAction(true, ['249'], mockBatch)
     );
     expect(result.current.batchActionsLoading).toBe(false);

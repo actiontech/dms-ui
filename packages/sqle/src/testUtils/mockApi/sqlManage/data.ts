@@ -51,7 +51,7 @@ export const sqlManageListData = {
     {
       id: 248,
       sql_fingerprint:
-        'CREATE TABLE `plugins` (\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `add_db_service_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_db_service_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_user_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `del_user_group_pre_check_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `operate_data_resource_handle_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  PRIMARY KEY (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
+        'CREATE TABLE `plugins` (\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       source: {
         type: 'audit_plan',
         audit_plan_name: 'audit-plan-task1',
@@ -67,8 +67,8 @@ export const sqlManageListData = {
     {
       id: 247,
       sql_fingerprint:
-        "CREATE TABLE `projects` (\n  `uid` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `created_at` datetime(3) DEFAULT NULL,\n  `updated_at` datetime(3) DEFAULT NULL,\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `desc` longtext COLLATE utf8mb4_unicode_ci,\n  `create_user_uid` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `status` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT 'active',\n  PRIMARY KEY (`uid`),\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci",
-      sql: "CREATE TABLE `projects` (\n  `uid` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `created_at` datetime(3) DEFAULT NULL,\n  `updated_at` datetime(3) DEFAULT NULL,\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `desc` longtext COLLATE utf8mb4_unicode_ci,\n  `create_user_uid` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `status` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT 'active',\n  PRIMARY KEY (`uid`),\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci",
+        'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
+      sql: 'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       source: {
         type: 'sql_audit_record',
         audit_plan_name: 'audit-record-task1',
@@ -94,8 +94,8 @@ export const sqlManageListData = {
     {
       id: 246,
       sql_fingerprint:
-        "CREATE TABLE `projects` (\n  `uid` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `created_at` datetime(3) DEFAULT NULL,\n  `updated_at` datetime(3) DEFAULT NULL,\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `desc` longtext COLLATE utf8mb4_unicode_ci,\n  `create_user_uid` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `status` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT 'active',\n  PRIMARY KEY (`uid`),\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci",
-      sql: "CREATE TABLE `projects` (\n  `uid` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,\n  `created_at` datetime(3) DEFAULT NULL,\n  `updated_at` datetime(3) DEFAULT NULL,\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `desc` longtext COLLATE utf8mb4_unicode_ci,\n  `create_user_uid` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\n  `status` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT 'active',\n  PRIMARY KEY (`uid`),\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci",
+        'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
+      sql: 'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       source: {
         type: 'sql_audit_record',
         audit_plan_name: 'audit-record-task1',

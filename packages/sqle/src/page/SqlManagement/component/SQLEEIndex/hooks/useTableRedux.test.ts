@@ -1,11 +1,9 @@
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import useTableRedux from './useTableRedux';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import sqlManage from '../../../../../testUtils/mockApi/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { sqlManageListData } from '../../../../../testUtils/mockApi/sqlManage/data';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useDispatch, useSelector } from 'react-redux';
+import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -39,14 +37,14 @@ describe('SqlManagement/useTableRedux', () => {
   });
 
   it('get redux data', async () => {
-    const { result } = renderHooksWithTheme(() => useTableRedux('test'));
+    const { result } = renderHooksWithRedux(() => useTableRedux('test'));
     expect(result.current.open).toBe(true);
     expect(result.current.selectedSqlIdList).toBe(null);
     expect(result.current.selectedSqleManagement).toBe(null);
   });
 
   it('init modal status', async () => {
-    const { result } = renderHooksWithTheme(() => useTableRedux());
+    const { result } = renderHooksWithRedux(() => useTableRedux());
     await act(async () => {
       result.current.initModalStatus({ test: true });
       jest.advanceTimersByTime(3000);
@@ -63,7 +61,7 @@ describe('SqlManagement/useTableRedux', () => {
   });
 
   it('set select data', async () => {
-    const { result } = renderHooksWithTheme(() => useTableRedux());
+    const { result } = renderHooksWithRedux(() => useTableRedux());
     await act(async () => {
       result.current.setSelectData(sqlManageListData?.data[0] as ISqlManage);
       jest.advanceTimersByTime(3000);
@@ -76,7 +74,7 @@ describe('SqlManagement/useTableRedux', () => {
   });
 
   it('update modal status', async () => {
-    const { result } = renderHooksWithTheme(() => useTableRedux());
+    const { result } = renderHooksWithRedux(() => useTableRedux());
     await act(async () => {
       result.current.updateModalStatus('test', true);
       jest.advanceTimersByTime(3000);
@@ -92,7 +90,7 @@ describe('SqlManagement/useTableRedux', () => {
   });
 
   it('update sql id list', async () => {
-    const { result } = renderHooksWithTheme(() => useTableRedux());
+    const { result } = renderHooksWithRedux(() => useTableRedux());
     await act(async () => {
       result.current.updateIdList(sqlManageListData.data as ISqlManage[]);
       jest.advanceTimersByTime(3000);
