@@ -14,996 +14,833 @@ exports[`page/SqlManagement render ce sql management page 1`] = `
         </div>
         <div
           class="extra"
-        >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-            type="button"
-          >
-            <span
-              class="ant-btn-icon"
-            >
-              <span
-                class="custom-icon custom-icon-download css-u3jcp4"
-                role="img"
-              >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              导出
-            </span>
-          </button>
-        </div>
+        />
       </div>
-      <div
-        class="css-wl13ms"
+      <section
+        class="css-11itpgv"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-row common-mode-wrapper css-dev-only-do-not-override-txh9fw"
         >
-          <div>
-            <div
-              aria-busy="true"
-              aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-            >
-              <span
-                class="ant-spin-dot ant-spin-dot-spin"
-              >
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-              </span>
-            </div>
-          </div>
           <div
-            class="ant-spin-container ant-spin-blur"
+            class="ant-col ant-col-17 css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
+              class="left"
             >
-              <div
-                class="ant-card-body"
+              <h5
+                class="ant-typography title css-dev-only-do-not-override-txh9fw"
               >
-                <div
-                  class="cont-item"
-                >
-                  <strong
-                    class="num total"
-                  >
-                    0
-                  </strong>
-                  <span
-                    class="desc"
-                  >
-                    SQL总数
-                  </span>
-                </div>
-                <div
-                  class="cont-item"
-                >
-                  <div>
-                    <strong
-                      class="num problem"
-                    >
-                      0
-                    </strong>
-                    <span
-                      class="desc problemSQlNum"
-                    >
-                      问题SQL数
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="cont-item"
-                >
-                  <strong
-                    class="num optimized"
-                  >
-                    0
-                  </strong>
-                  <span
-                    class="desc"
-                  >
-                    已优化SQL数
-                  </span>
-                </div>
+                功能说明
+              </h5>
+              <div
+                class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
+              >
+                SQL管控为用户提供SQL全生命周期监控，面板将整合所有的业务SQL，用户可以在该面板中查看项目中采集并审核的所有SQL，暴露其中的问题SQL，同时支持用户解决问题SQL。
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
-      >
-        <div
-          class="ant-spin-container"
-        >
-          <div
-            class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-            style="flex-wrap: wrap; margin-bottom: -8px;"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 8px; padding-bottom: 8px;"
-            >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                class="full-width-element css-g2rnzt"
               >
+                <span
+                  class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-large-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+                >
+                  当前版本
+                  : 
+                  SQLE
+                  社区版
+                </span>
                 <div
-                  class="ant-space-item"
-                  style="margin-right: 12px;"
+                  class="content-wrap"
                 >
                   <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
+                    class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
                   >
                     <div
-                      class="ant-segmented-group"
+                      class="ant-card-body"
                     >
-                      <label
-                        class="ant-segmented-item"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
                       >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
                         <div
-                          class="ant-segmented-item-label"
-                          title="全部"
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
                         >
-                          全部
+                          <h5
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            社区版
+                          </h5>
                         </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item ant-segmented-item-selected"
-                      >
-                        <input
-                          checked=""
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
                         <div
-                          class="ant-segmented-item-label"
-                          title="未处理"
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
                         >
-                          未处理
+                          <div
+                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                            role="separator"
+                          />
                         </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
                         <div
-                          class="ant-segmented-item-label"
-                          title="已解决"
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
                         >
-                          已解决
+                          <a
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                            href="http://demo.sqle.actionsky.com/"
+                            target="_blank"
+                          >
+                            <span>
+                              开始试用
+                            </span>
+                          </a>
                         </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
                         <div
-                          class="ant-segmented-item-label"
-                          title="已忽略"
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
                         >
-                          已忽略
+                          <a
+                            class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                            href="https://actiontech.github.io/sqle-docs/docs/support/community-support"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            联系我们
+                          </a>
                         </div>
-                      </label>
-                      <label
-                        class="ant-segmented-item"
-                      >
-                        <input
-                          class="ant-segmented-item-input"
-                          type="radio"
-                        />
                         <div
-                          class="ant-segmented-item-label"
-                          title="已人工审核"
+                          class="ant-space-item"
                         >
-                          已人工审核
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                MySQL插件
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                100+规则
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                SQL快捷审核
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                创建工单时支持单数据源审核
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                支持库表元数据、MyBatis等扫描任务
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                单一项目
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                自定义审批流程模板
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                自定义审核规则模板
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                钉钉审批
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                邮件、企业微信、飞书推送告警
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                免费
+                              </span>
+                            </div>
+                          </div>
                         </div>
-                      </label>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 12px;"
-                >
-                  <span
-                    class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
-                  >
-                    <input
-                      class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                      id="actiontech-table-search-input"
-                      placeholder="输入关键字搜索"
-                      type="text"
-                      value=""
-                    />
-                    <span
-                      class="ant-input-suffix"
-                    >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="ant-space-item"
-                >
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                    style="padding: 0px 6px 0px 10px;"
-                    type="button"
-                  >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
-                    >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 2px;"
-                      >
-                        筛选
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-space-item"
-              style="padding-bottom: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
-              >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 12px;"
-                >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                    class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
                   >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 8px;"
+                      class="ant-card-body"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button switch-btn-default basic-button-wrapper css-geipcv"
-                        type="button"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
                       >
-                        <span>
-                          与我相关
-                        </span>
-                      </button>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <h5
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            企业体验版
+                          </h5>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <div
+                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                            role="separator"
+                          />
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <a
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                            href="https://jinshuju.net/f/daLFaG"
+                            target="_blank"
+                          >
+                            <span>
+                              开始试用
+                            </span>
+                          </a>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <a
+                            class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                            href="https://actiontech.github.io/sqle-docs/docs/support/community-support"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            联系我们
+                          </a>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                全量数据库插件
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                每种插件15+规则
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                SQL快捷审核
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                创建工单时支持多数据源审核
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                白名单审核
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                SQL下钻分析
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                在社区版基础上，支持慢日志扫描
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                SQL管控
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                多项目
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                自定义审批流程模板
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                自定义审核规则模板
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                钉钉、飞书审批
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                在社区版基础上，支持webhook告警
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                免费
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div
+                    class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+                  >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 8px;"
+                      class="ant-card-body"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                        disabled=""
-                        type="button"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
                       >
-                        <span>
-                          批量指派
-                        </span>
-                      </button>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 8px;"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                        disabled=""
-                        type="button"
-                      >
-                        <span>
-                          批量解决
-                        </span>
-                      </button>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                        disabled=""
-                        type="button"
-                      >
-                        <span>
-                          批量忽略
-                        </span>
-                      </button>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <h5
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            企业版
+                          </h5>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <div
+                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                            role="separator"
+                          />
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <a
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                            href="http://demo.sqle.actionsky.com:8889/"
+                            target="_blank"
+                          >
+                            <span>
+                              开始试用
+                            </span>
+                          </a>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 16px;"
+                        >
+                          <a
+                            class="ant-typography ant-typography-secondary contact-link css-dev-only-do-not-override-txh9fw"
+                            href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            联系我们
+                          </a>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                全量数据库插件
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                900+规则
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                SQL快捷审核
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                创建工单时支持多数据源审核
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                白名单审核
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                SQL下钻分析
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                在社区版基础上，支持慢日志扫描
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                SQL管控
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                多项目
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                自定义审批流程模板
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                自定义审核规则模板
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                钉钉、飞书审批
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                在社区版基础上，支持webhook告警
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span
+                                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                              >
+                                付费
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 12px;"
-                >
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                    style="padding: 0px 6px 0px 8px;"
-                    type="button"
-                  >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
-                    >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 5px;"
-                      >
-                        <span
-                          class="custom-icon custom-icon-setting css-u3jcp4"
-                          role="img"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="11"
-                            viewBox="0 0 13 11"
-                            width="13"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M0.166687 8.50004H4.25002V9.66671H0.166687V8.50004ZM0.166687 4.41671H5.41669V5.58337H0.166687V4.41671ZM0.166687 0.333374H11.8334V1.50004H0.166687V0.333374ZM11.0599 5.59796L11.7342 5.36987L12.3175 6.38021L11.7832 6.84979C11.8504 7.16867 11.8504 7.49808 11.7832 7.81696L12.3175 8.28654L11.7342 9.29687L11.0599 9.06879C10.8207 9.28463 10.536 9.45088 10.2228 9.55296L10.0834 10.25H8.91669L8.77669 9.55237C8.46709 9.4512 8.18213 9.28627 7.94019 9.06821L7.26585 9.29687L6.68252 8.28654L7.21685 7.81696C7.1496 7.49808 7.1496 7.16867 7.21685 6.84979L6.68252 6.38021L7.26585 5.36987L7.94019 5.59796C8.17935 5.38212 8.46402 5.21587 8.77727 5.11379L8.91669 4.41671H10.0834L10.2234 5.11437C10.536 5.21587 10.8207 5.38271 11.0599 5.59854V5.59796ZM9.50002 8.50004C9.80944 8.50004 10.1062 8.37712 10.325 8.15833C10.5438 7.93954 10.6667 7.64279 10.6667 7.33337C10.6667 7.02396 10.5438 6.72721 10.325 6.50842C10.1062 6.28962 9.80944 6.16671 9.50002 6.16671C9.1906 6.16671 8.89386 6.28962 8.67506 6.50842C8.45627 6.72721 8.33335 7.02396 8.33335 7.33337C8.33335 7.64279 8.45627 7.93954 8.67506 8.15833C8.89386 8.37712 9.1906 8.50004 9.50002 8.50004Z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 5px;"
-                      >
-                        表格设置
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-                <div
-                  class="ant-space-item"
-                >
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                    disabled=""
-                    type="button"
-                  >
-                    <span
-                      class="ant-btn-icon"
-                    >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </button>
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
-      >
-        <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
-        >
-          <div>
-            <div
-              aria-busy="true"
-              aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
-            >
-              <span
-                class="ant-spin-dot ant-spin-dot-spin"
-              >
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-              </span>
             </div>
           </div>
           <div
-            class="ant-spin-container ant-spin-blur"
+            class="ant-col ant-col-7 css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+              class="right"
             >
+              <h5
+                class="ant-typography title css-dev-only-do-not-override-txh9fw"
+              >
+                更多关注
+              </h5>
               <div
-                class="ant-table-container"
+                class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-table-content"
-                  style="overflow-x: auto; overflow-y: hidden;"
+                  class="ant-card-body"
                 >
-                  <table
-                    style="min-width: 100%; table-layout: auto;"
+                  <span
+                    class="anticon bg-icon"
+                    role="img"
                   >
-                    <colgroup>
-                      <col
-                        class="ant-table-selection-col"
-                      />
-                      <col />
-                      <col />
-                      <col />
-                      <col
-                        style="width: 200px;"
-                      />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col
-                        style="width: 200px;"
-                      />
-                      <col />
-                      <col />
-                      <col />
-                      <col
-                        style="width: 246px;"
-                      />
-                    </colgroup>
-                    <thead
-                      class="ant-table-thead"
+                    <svg
+                      fill="none"
+                      height="140"
+                      viewBox="0 0 160 140"
+                      width="160"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <tr>
-                        <th
-                          class="ant-table-cell ant-table-selection-column"
-                          scope="col"
-                        >
-                          <div
-                            class="ant-table-selection"
-                          >
-                            <label
-                              class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-bj9uhl"
-                            >
-                              <span
-                                class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
-                              >
-                                <input
-                                  aria-label="Select all"
-                                  class="ant-checkbox-input"
-                                  disabled=""
-                                  type="checkbox"
-                                />
-                                <span
-                                  class="ant-checkbox-inner"
-                                />
-                              </span>
-                            </label>
-                          </div>
-                        </th>
-                        <th
-                          class="ant-table-cell ellipsis-column-width"
-                          scope="col"
-                        >
-                          SQL指纹
-                        </th>
-                        <th
-                          class="ant-table-cell ellipsis-column-width"
-                          scope="col"
-                        >
-                          SQL
-                        </th>
-                        <th
-                          class="ant-table-cell"
-                          scope="col"
-                        >
-                          来源
-                        </th>
-                        <th
-                          class="ant-table-cell"
-                          scope="col"
-                        >
-                          审核结果
-                        </th>
-                        <th
-                          class="ant-table-cell"
-                          scope="col"
-                        >
-                          数据源
-                        </th>
-                        <th
-                          class="ant-table-cell"
-                          scope="col"
-                        >
-                          Schema
-                        </th>
-                        <th
-                          aria-label="初次出现时间"
-                          class="ant-table-cell ant-table-column-has-sorters"
-                          scope="col"
-                          tabindex="0"
-                        >
-                          <div
-                            class="ant-table-column-sorters"
-                          >
-                            <span
-                              class="ant-table-column-title"
-                            >
-                              初次出现时间
-                            </span>
-                            <span
-                              class="ant-table-column-sorter ant-table-column-sorter-full"
-                            >
-                              <span
-                                aria-hidden="true"
-                                class="ant-table-column-sorter-inner"
-                              >
-                                <span
-                                  aria-label="caret-up"
-                                  class="anticon anticon-caret-up ant-table-column-sorter-up"
-                                  role="img"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    data-icon="caret-up"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height="1em"
-                                    viewBox="0 0 1024 1024"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"
-                                    />
-                                  </svg>
-                                </span>
-                                <span
-                                  aria-label="caret-down"
-                                  class="anticon anticon-caret-down ant-table-column-sorter-down"
-                                  role="img"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    data-icon="caret-down"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height="1em"
-                                    viewBox="0 0 1024 1024"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"
-                                    />
-                                  </svg>
-                                </span>
-                              </span>
-                            </span>
-                          </div>
-                        </th>
-                        <th
-                          aria-label="最后一次出现时间"
-                          class="ant-table-cell ant-table-column-has-sorters"
-                          scope="col"
-                          tabindex="0"
-                        >
-                          <div
-                            class="ant-table-column-sorters"
-                          >
-                            <span
-                              class="ant-table-column-title"
-                            >
-                              最后一次出现时间
-                            </span>
-                            <span
-                              class="ant-table-column-sorter ant-table-column-sorter-full"
-                            >
-                              <span
-                                aria-hidden="true"
-                                class="ant-table-column-sorter-inner"
-                              >
-                                <span
-                                  aria-label="caret-up"
-                                  class="anticon anticon-caret-up ant-table-column-sorter-up"
-                                  role="img"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    data-icon="caret-up"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height="1em"
-                                    viewBox="0 0 1024 1024"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"
-                                    />
-                                  </svg>
-                                </span>
-                                <span
-                                  aria-label="caret-down"
-                                  class="anticon anticon-caret-down ant-table-column-sorter-down"
-                                  role="img"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    data-icon="caret-down"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height="1em"
-                                    viewBox="0 0 1024 1024"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"
-                                    />
-                                  </svg>
-                                </span>
-                              </span>
-                            </span>
-                          </div>
-                        </th>
-                        <th
-                          aria-label="出现数量"
-                          class="ant-table-cell ant-table-column-has-sorters"
-                          scope="col"
-                          style="text-align: right;"
-                          tabindex="0"
-                        >
-                          <div
-                            class="ant-table-column-sorters"
-                          >
-                            <span
-                              class="ant-table-column-title"
-                            >
-                              出现数量
-                            </span>
-                            <span
-                              class="ant-table-column-sorter ant-table-column-sorter-full"
-                            >
-                              <span
-                                aria-hidden="true"
-                                class="ant-table-column-sorter-inner"
-                              >
-                                <span
-                                  aria-label="caret-up"
-                                  class="anticon anticon-caret-up ant-table-column-sorter-up"
-                                  role="img"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    data-icon="caret-up"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height="1em"
-                                    viewBox="0 0 1024 1024"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"
-                                    />
-                                  </svg>
-                                </span>
-                                <span
-                                  aria-label="caret-down"
-                                  class="anticon anticon-caret-down ant-table-column-sorter-down"
-                                  role="img"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    data-icon="caret-down"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height="1em"
-                                    viewBox="0 0 1024 1024"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"
-                                    />
-                                  </svg>
-                                </span>
-                              </span>
-                            </span>
-                          </div>
-                        </th>
-                        <th
-                          class="ant-table-cell"
-                          scope="col"
-                        >
-                          负责人
-                        </th>
-                        <th
-                          class="ant-table-cell"
-                          scope="col"
-                        >
-                          端点信息
-                        </th>
-                        <th
-                          class="ant-table-cell"
-                          scope="col"
-                        >
-                          状态
-                        </th>
-                        <th
-                          class="ant-table-cell ellipsis-column-width"
-                          scope="col"
-                        >
-                          备注
-                        </th>
-                        <th
-                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                          scope="col"
-                          style="position: sticky; right: 0px;"
-                        >
-                          操作
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody
-                      class="ant-table-tbody"
-                    >
-                      <tr
-                        aria-hidden="true"
-                        class="ant-table-measure-row"
-                        style="height: 0px; font-size: 0px;"
+                      <g
+                        opacity="0.06"
                       >
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
+                        <path
+                          d="M140 33.3333C143.536 33.3333 146.927 34.7381 149.428 37.2386C151.928 39.7391 153.333 43.1304 153.333 46.6667V73.3333C153.333 76.8695 151.928 80.2609 149.428 82.7614C146.927 85.2619 143.536 86.6667 140 86.6667H132.92C131.295 99.5553 125.022 111.408 115.278 120C105.535 128.592 92.9906 133.333 79.9998 133.333V120C90.6085 120 100.783 115.786 108.284 108.284C115.786 100.783 120 90.6087 120 80V40C120 29.3913 115.786 19.2172 108.284 11.7157C100.783 4.21426 90.6085 -1.33514e-05 79.9998 -1.33514e-05C69.3912 -1.33514e-05 59.217 4.21426 51.7156 11.7157C44.2141 19.2172 39.9998 29.3913 39.9998 40V86.6667H19.9998C16.4636 86.6667 13.0722 85.2619 10.5717 82.7614C8.07126 80.2609 6.6665 76.8695 6.6665 73.3333V46.6667C6.6665 43.1304 8.07126 39.7391 10.5717 37.2386C13.0722 34.7381 16.4636 33.3333 19.9998 33.3333H27.0798C28.7067 20.446 34.9804 8.59514 44.7237 0.00449276C54.4669 -8.58615 67.0102 -13.3262 79.9998 -13.3262C92.9895 -13.3262 105.533 -8.58615 115.276 0.00449276C125.019 8.59514 131.293 20.446 132.92 33.3333H140ZM51.7332 85.2333L58.7998 73.9267C65.1537 77.9069 72.5023 80.0121 79.9998 80C87.4974 80.0121 94.846 77.9069 101.2 73.9267L108.266 85.2333C99.7949 90.541 89.9968 93.3487 79.9998 93.3333C70.0029 93.3487 60.2048 90.541 51.7332 85.2333Z"
+                          fill="url(#paint0_linear_2190_5865)"
+                        />
+                      </g>
+                      <defs>
+                        <lineargradient
+                          gradientUnits="userSpaceOnUse"
+                          id="paint0_linear_2190_5865"
+                          x1="79.9998"
+                          x2="79.9998"
+                          y1="-13.3262"
+                          y2="133.333"
                         >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="ant-table-placeholder"
-                      >
-                        <td
-                          class="ant-table-cell"
-                          colspan="15"
-                        >
-                          <div
-                            class="ant-table-expanded-row-fixed"
-                            style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                          <stop
+                            stop-color="#2E6BE6"
+                            stop-opacity="0.4"
                           />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                          <stop
+                            offset="1"
+                            stop-color="#2E6BE6"
+                          />
+                        </lineargradient>
+                      </defs>
+                    </svg>
+                  </span>
+                  <div
+                    class="info-cont-wrapper"
+                  >
+                    <div
+                      class="title"
+                    >
+                      Action 
+                      SQLE
+                    </div>
+                    <p
+                      class="cont-tip"
+                    >
+                      SQL管控为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                    </p>
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
+                      >
+                        <a
+                          href="https://github.com/actiontech/sqle"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              SQLE Github
+                            </span>
+                          </button>
+                        </a>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <a
+                          href="https://www.actionsky.com/"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              爱可生官网
+                            </span>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <span
+                    class="anticon bg-icon"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="140"
+                      viewBox="0 0 160 140"
+                      width="160"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        opacity="0.06"
+                      >
+                        <path
+                          d="M20 103.333V13.3333C20 2.28759 28.9543 -6.66675 40 -6.66675H133.333C137.015 -6.66675 140 -3.68195 140 -8.10623e-05V120C140 123.682 137.015 126.667 133.333 126.667H43.3333C30.4467 126.667 20 116.22 20 103.333ZM126.667 113.333V93.3333H43.3333C37.8105 93.3333 33.3333 97.8106 33.3333 103.333C33.3333 108.856 37.8105 113.333 43.3333 113.333H126.667ZM66.6667 6.66659H40C36.3181 6.66659 33.3333 9.65139 33.3333 13.3333V82.2453C36.3642 80.8053 39.7547 79.9999 43.3333 79.9999H126.667V6.66659H113.333V59.9999L90 46.6666L66.6667 59.9999V6.66659Z"
+                          fill="url(#paint0_linear_2190_5858)"
+                        />
+                      </g>
+                      <defs>
+                        <lineargradient
+                          gradientUnits="userSpaceOnUse"
+                          id="paint0_linear_2190_5858"
+                          x1="80"
+                          x2="80"
+                          y1="-6.66675"
+                          y2="126.667"
+                        >
+                          <stop
+                            stop-color="#169E75"
+                            stop-opacity="0.4"
+                          />
+                          <stop
+                            offset="1"
+                            stop-color="#169E75"
+                          />
+                        </lineargradient>
+                      </defs>
+                    </svg>
+                  </span>
+                  <div
+                    class="info-cont-wrapper"
+                  >
+                    <div
+                      class="title"
+                    >
+                      Action 
+                      SQLE
+                    </div>
+                    <p
+                      class="cont-tip"
+                    >
+                      如您想了解更多关于企业版及社区版功能的差异，可参考用户手册
+                    </p>
+                    <div
+                      class="button-group-wrapper"
+                    >
+                      <a
+                        href="https://actiontech.github.io/sqle-docs/docs/support/compare"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span>
+                            用户手册
+                          </span>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </article>
   </div>
 </body>
