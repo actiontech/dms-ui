@@ -2,7 +2,8 @@ import {
   IListUser,
   IListUserGroup,
   IListOpPermission,
-  IListRole
+  IListRole,
+  IListMemberTipsItem
 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ListUserStatEnum,
@@ -105,5 +106,16 @@ export const roleList: IListRole[] = [
     desc: 'Test default role',
     uid: '7001',
     stat: ListRoleStatEnum.正常
+  }
+];
+
+export const memberTips: IListMemberTipsItem[] = [
+  {
+    user_id: '1',
+    user_name: 'a1'
+  },
+  {
+    user_id: '2',
+    user_name: 'a2'
   }
 ];
