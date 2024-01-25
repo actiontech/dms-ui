@@ -8,7 +8,7 @@ import { RenderSQLStyleWrapper } from './style';
 const RenderSQL: React.FC<RenderSQLProps> = ({
   sql,
   rows = 10,
-  tooltip,
+  tooltip = true,
   onClick
 }) => {
   if (!sql) {
