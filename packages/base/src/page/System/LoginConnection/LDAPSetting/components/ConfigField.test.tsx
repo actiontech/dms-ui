@@ -1,10 +1,9 @@
-import { cleanup, fireEvent, act, screen } from '@testing-library/react';
+import { cleanup, fireEvent, act } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import { Form } from 'antd';
 import ConfigField from './ConfigField';
-
 
 describe('base/System/LoginConnection/LDAPSetting/ConfigField', () => {
   const customRender = () => {

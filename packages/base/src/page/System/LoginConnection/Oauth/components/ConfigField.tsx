@@ -29,7 +29,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.clientId')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
@@ -41,7 +45,11 @@ const ConfigField = () => {
         }
         name="clientSecret"
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.clientSecret')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip has-required-style"
@@ -61,7 +69,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.clientHost')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip has-required-style"
@@ -81,7 +93,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.serverAuthUrl')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip has-required-style"
@@ -101,7 +117,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.serverTokenUrl')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip has-required-style"
@@ -121,7 +141,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.serverUserIdUrl')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
@@ -133,7 +157,11 @@ const ConfigField = () => {
         }
         name="scopes"
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.scopes')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip has-required-style"
@@ -153,7 +181,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.accessTokenKeyName')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip has-required-style"
@@ -173,7 +205,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.userIdKeyName')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
@@ -185,7 +221,11 @@ const ConfigField = () => {
         }
         name="userEmailTag"
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.userEmailTagName')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
@@ -197,7 +237,11 @@ const ConfigField = () => {
         }
         name="userWechatTag"
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.userWechatTagName')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
@@ -216,7 +260,11 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInput />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.loginButtonText')
+          })}
+        />
       </FormItemLabel>
     </>
   );
