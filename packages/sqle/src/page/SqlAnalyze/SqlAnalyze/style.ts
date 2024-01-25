@@ -28,16 +28,12 @@ export const SqlContStyleWrapper = styled('section')`
   }
 
   .basic-cont-wrapper {
+    height: auto;
     min-height: 100px;
   }
 
   .sql-cont {
     padding: 24px 40px;
-
-    pre {
-      width: 100%;
-      white-space: pre-wrap;
-    }
   }
 
   .line-wrapper {
