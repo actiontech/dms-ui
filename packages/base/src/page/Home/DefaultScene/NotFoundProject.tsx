@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { IconProjectFlag } from 'sqle/src/icon/Rule';
 import { ProjectSelectorLabelStyleWrapper } from '../../Nav/SideMenu/ProjectSelector/style';
 import ProjectSelectorModal from '../../Project/Detail/NotFoundRecentlyProject/ProjectSelectorModal';
-import { RuleUrlParamKey } from 'sqle/src/page/Rule/hooks/useRuleFilterFormItem';
+import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { IUserBindProject } from '@actiontech/shared/lib/api/base/service/common';
 
 const NotFoundProject: React.FC<{
