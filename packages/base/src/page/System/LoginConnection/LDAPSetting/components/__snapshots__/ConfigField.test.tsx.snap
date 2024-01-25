@@ -125,7 +125,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                 <input
                   class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                   id="ldap_server_port"
-                  placeholder="请输入{{name}}"
+                  placeholder="请输入LDAP服务器端口"
                   type="text"
                   value=""
                 />
@@ -174,7 +174,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                 <input
                   class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                   id="ldap_connect_dn"
-                  placeholder="请输入{{name}}"
+                  placeholder="请输入连接用户DN"
                   type="text"
                   value=""
                 />
@@ -215,7 +215,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                   <input
                     class="ant-input css-dev-only-do-not-override-txh9fw"
                     id="ldap_connect_pwd"
-                    placeholder="请输入{{name}}"
+                    placeholder="请输入连接用户密码"
                     type="password"
                     value=""
                   />
@@ -292,7 +292,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                 <input
                   class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                   id="ldap_search_base_dn"
-                  placeholder="请输入{{name}}"
+                  placeholder="请输入查询根DN"
                   type="text"
                   value=""
                 />
@@ -390,7 +390,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                 <input
                   class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                   id="ldap_user_email_rdn_key"
-                  placeholder="请输入{{name}}"
+                  placeholder="请输入用户邮箱属性名"
                   type="text"
                   value=""
                 />
