@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/components/ChartCom/ChartTooltip/useGetConfig render useGetConfig when width is 200 1`] = `
+Object {
+  "g2-tooltip": Object {
+    "background": "#fcfbf9",
+    "border": "1px solid #ebe9e8",
+    "borderRadius": "8px",
+    "boxShadow": "0 3px 12px 0 #332c1f1a",
+    "height": "auto",
+    "padding": "0 12px",
+    "width": "200px",
+  },
+}
+`;

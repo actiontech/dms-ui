@@ -365,36 +365,32 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       <section
         className="basic-cont-wrapper sql-cont"
       >
-        <pre
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<span class=\\"hljs-keyword\\">CREATE</span> <span class=\\"hljs-keyword\\">TABLE</span> \`execute_sql_detail\` (
-  \`id\` <span class=\\"hljs-type\\">int</span>(<span class=\\"hljs-number\\">10</span>) unsigned <span class=\\"hljs-keyword\\">NOT</span> <span class=\\"hljs-keyword\\">NULL</span> AUTO_INCREMENT,
-  \`created_at\` datetime <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span>,
-  \`updated_at\` datetime <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span> <span class=\\"hljs-keyword\\">ON</span> <span class=\\"hljs-keyword\\">UPDATE</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span>,
-  \`deleted_at\` datetime <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`task_id\` <span class=\\"hljs-type\\">int</span>(<span class=\\"hljs-number\\">10</span>) unsigned <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`number\` <span class=\\"hljs-type\\">int</span>(<span class=\\"hljs-number\\">10</span>) unsigned <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`content\` longtext <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci,
-  \`description\` text <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci,
-  \`start_binlog_file\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`start_binlog_pos\` <span class=\\"hljs-type\\">bigint</span>(<span class=\\"hljs-number\\">20</span>) <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`end_binlog_file\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`end_binlog_pos\` <span class=\\"hljs-type\\">bigint</span>(<span class=\\"hljs-number\\">20</span>) <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`row_affects\` <span class=\\"hljs-type\\">bigint</span>(<span class=\\"hljs-number\\">20</span>) <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`exec_status\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-string\\">&#x27;initialized&#x27;</span>,
-  \`exec_result\` text <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci,
-  \`audit_status\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-string\\">&#x27;initialized&#x27;</span>,
-  \`audit_result\` text <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci,
-  \`audit_fingerprint\` <span class=\\"hljs-type\\">char</span>(<span class=\\"hljs-number\\">32</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  \`audit_level\` <span class=\\"hljs-type\\">varchar</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">COLLATE</span> utf8mb4_unicode_ci <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-keyword\\">NULL</span>,
-  <span class=\\"hljs-keyword\\">PRIMARY</span> KEY (\`id\`),
+        <RenderSQL
+          sql="CREATE TABLE \`execute_sql_detail\` (
+  \`id\` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  \`created_at\` datetime DEFAULT CURRENT_TIMESTAMP,
+  \`updated_at\` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  \`deleted_at\` datetime DEFAULT NULL,
+  \`task_id\` int(10) unsigned DEFAULT NULL,
+  \`number\` int(10) unsigned DEFAULT NULL,
+  \`content\` longtext COLLATE utf8mb4_unicode_ci,
+  \`description\` text COLLATE utf8mb4_unicode_ci,
+  \`start_binlog_file\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  \`start_binlog_pos\` bigint(20) DEFAULT NULL,
+  \`end_binlog_file\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  \`end_binlog_pos\` bigint(20) DEFAULT NULL,
+  \`row_affects\` bigint(20) DEFAULT NULL,
+  \`exec_status\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'initialized',
+  \`exec_result\` text COLLATE utf8mb4_unicode_ci,
+  \`audit_status\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'initialized',
+  \`audit_result\` text COLLATE utf8mb4_unicode_ci,
+  \`audit_fingerprint\` char(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  \`audit_level\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (\`id\`),
   KEY \`idx_execute_sql_detail_deleted_at\` (\`deleted_at\`),
   KEY \`idx_execute_sql_detail_task_id\` (\`task_id\`),
   KEY \`idx_execute_sql_detail_audit_fingerprint\` (\`audit_fingerprint\`)
-) ENGINE<span class=\\"hljs-operator\\">=</span>InnoDB AUTO_INCREMENT<span class=\\"hljs-operator\\">=</span><span class=\\"hljs-number\\">4</span> <span class=\\"hljs-keyword\\">DEFAULT</span> CHARSET<span class=\\"hljs-operator\\">=</span>utf8mb4 <span class=\\"hljs-keyword\\">COLLATE</span><span class=\\"hljs-operator\\">=</span>utf8mb4_unicode_ci",
-            }
-          }
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"
         />
       </section>
     </React.Fragment>
@@ -450,12 +446,8 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       <section
         className="basic-cont-wrapper sql-cont"
       >
-        <pre
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "",
-            }
-          }
+        <RenderSQL
+          sql=""
         />
       </section>
     </React.Fragment>
@@ -505,12 +497,8 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       <section
         className="basic-cont-wrapper sql-cont"
       >
-        <pre
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "",
-            }
-          }
+        <RenderSQL
+          sql=""
         />
       </section>
     </React.Fragment>

@@ -15,12 +15,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
     <section
       className="basic-cont-wrapper sql-cont"
     >
-      <pre
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<span class=\\"hljs-keyword\\">CREATE</span> <span class=\\"hljs-keyword\\">TABLE</span> IF <span class=\\"hljs-keyword\\">NOT</span> <span class=\\"hljs-keyword\\">EXISTS</span> task (  id <span class=\\"hljs-type\\">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class=\\"hljs-keyword\\">PRIMARY</span> KEY,  title <span class=\\"hljs-type\\">VARCHAR</span>(<span class=\\"hljs-number\\">255</span>) <span class=\\"hljs-keyword\\">NOT</span> <span class=\\"hljs-keyword\\">NULL</span> <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-string\\">&#x27;&#x27;</span>,  description TEXT,  status ENUM(<span class=\\"hljs-string\\">&#x27;pending&#x27;</span>, <span class=\\"hljs-string\\">&#x27;completed&#x27;</span>) <span class=\\"hljs-keyword\\">NOT</span> <span class=\\"hljs-keyword\\">NULL</span> <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-string\\">&#x27;pending&#x27;</span>,  created_at <span class=\\"hljs-type\\">TIMESTAMP</span> <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span>,  updated_at <span class=\\"hljs-type\\">TIMESTAMP</span> <span class=\\"hljs-keyword\\">DEFAULT</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span> <span class=\\"hljs-keyword\\">ON</span> <span class=\\"hljs-keyword\\">UPDATE</span> <span class=\\"hljs-built_in\\">CURRENT_TIMESTAMP</span>);",
-          }
-        }
+      <RenderSQL
+        sql="CREATE TABLE IF NOT EXISTS task (  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,  title VARCHAR(255) NOT NULL DEFAULT '',  description TEXT,  status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending',  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);"
       />
     </section>
   </React.Fragment>
@@ -112,12 +108,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
     <section
       className="basic-cont-wrapper sql-cont"
     >
-      <pre
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "",
-          }
-        }
+      <RenderSQL
+        sql=""
       />
     </section>
   </React.Fragment>
@@ -289,12 +281,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
     <section
       className="basic-cont-wrapper sql-cont"
     >
-      <pre
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "",
-          }
-        }
+      <RenderSQL
+        sql=""
       />
     </section>
   </React.Fragment>
@@ -386,12 +374,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
     <section
       className="basic-cont-wrapper sql-cont"
     >
-      <pre
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "",
-          }
-        }
+      <RenderSQL
+        sql=""
       />
     </section>
   </React.Fragment>
@@ -483,12 +467,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
     <section
       className="basic-cont-wrapper sql-cont"
     >
-      <pre
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "",
-          }
-        }
+      <RenderSQL
+        sql=""
       />
     </section>
   </React.Fragment>
@@ -580,12 +560,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
     <section
       className="basic-cont-wrapper sql-cont"
     >
-      <pre
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "",
-          }
-        }
+      <RenderSQL
+        sql=""
       />
     </section>
   </React.Fragment>
