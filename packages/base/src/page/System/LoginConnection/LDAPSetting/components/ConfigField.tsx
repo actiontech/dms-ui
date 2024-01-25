@@ -23,7 +23,11 @@ const ConfigField = () => {
         label={t('dmsSystem.ldap.ldapServerHost')}
         name="ldap_server_host"
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.ldap.ldapServerHost')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         label={t('dmsSystem.ldap.ldapServerPort')}
