@@ -44,6 +44,21 @@ class MockSystemApi implements MockSpyApy {
     this.testFeishuAuditConfig();
     this.getFeishuAuditConfiguration();
     this.updateFeishuAuditConfiguration();
+
+    this.CheckLicense();
+    this.SetLicense();
+  }
+
+  public CheckLicense() {
+    const spy = jest.spyOn(dms, 'CheckLicense');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public SetLicense() {
+    const spy = jest.spyOn(dms, 'SetLicense');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
   }
 
   public getLDAPConfig() {
