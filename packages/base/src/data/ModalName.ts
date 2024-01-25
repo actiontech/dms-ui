@@ -23,5 +23,8 @@ export enum ModalName {
   DMS_Import_License = 'DMS_IMPORT_LICENSE',
 
   // header
-  Company_Notice = 'Company_Notice'
+  Company_Notice = 'Company_Notice',
+
+  //data export
+  DMS_UPDATE_EXPORT_TASK_INFO = 'DMS_UPDATE_EXPORT_TASK_INFO'
 }
