@@ -38,6 +38,6 @@ describe('page/SqlManagement', () => {
   it('render ce sql management page', () => {
     const { baseElement } = superRender(<SqlManagement />);
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('SQL管控')).toBeInTheDocument();
+    expect(screen.getAllByText('SQL管控')?.[0]).toBeInTheDocument();
   });
 });
