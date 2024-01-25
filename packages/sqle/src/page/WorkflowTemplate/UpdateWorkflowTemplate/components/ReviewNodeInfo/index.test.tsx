@@ -106,8 +106,8 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
       ...workflowTemplateData.workflow_step_template_list[0],
       assignee_user_id_list: ['1739544663515205632']
     });
-    expect(screen.getByText('one')).toBeInTheDocument();
-    expect(screen.getByText('two')).toBeInTheDocument();
+    expect(screen.getAllByText('test')?.[0]).toBeInTheDocument();
+    expect(screen.getByText('admin')).toBeInTheDocument();
     const desc = 'this is desc';
     fireEvent.change(getBySelector('#desc'), {
       target: { value: desc }

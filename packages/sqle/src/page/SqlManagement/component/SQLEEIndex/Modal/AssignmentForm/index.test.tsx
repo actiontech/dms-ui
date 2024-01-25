@@ -58,7 +58,7 @@ describe('page/SqlManagement/AssignmentForm', () => {
     fireEvent.mouseDown(getBySelector('#assignees'));
     await act(async () => jest.advanceTimersByTime(300));
     const options = getAllBySelector('.ant-select-item-option');
-    expect(options.length).toBe(4);
+    expect(options.length).toBe(2);
     fireEvent.click(options[0]);
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getAllByText(userTipListData[0].user_name).length).toBe(2);
