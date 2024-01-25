@@ -57,7 +57,7 @@ const ExportWorkflowList: React.FC = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const { dbServiceOptions, updateDbServiceList } = useDbService();
+  const { dbServiceIDOptions, updateDbServiceList } = useDbService();
   const { memberOptions, updateMemberTips } = useMemberTips();
 
   const {
@@ -99,7 +99,7 @@ const ExportWorkflowList: React.FC = () => {
       [
         'db_service_uid',
         {
-          options: dbServiceOptions
+          options: dbServiceIDOptions
         }
       ],
       ['created_at', { showTime: true }],
@@ -107,7 +107,7 @@ const ExportWorkflowList: React.FC = () => {
       ['creater', { options: memberOptions }],
       ['current_step_assignee_user_list', { options: memberOptions }]
     ]);
-  }, [dbServiceOptions, memberOptions]);
+  }, [dbServiceIDOptions, memberOptions]);
 
   const rowSelection = {
     selectedRowKeys,

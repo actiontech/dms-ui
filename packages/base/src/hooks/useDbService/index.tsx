@@ -93,25 +93,36 @@ const useDbService = () => {
     return generateCommonOptions('name');
   }, [generateCommonOptions]);
 
+  const generateCommonDbServiceOptions = React.useCallback(
+    (valueType: 'id' | 'name') => {
+      return dbTypeList.map((type) => ({
+        label: (
+          <DatabaseTypeLogo
+            dbType={type ?? ''}
+            logoUrl={getLogoUrlByDbType(type ?? '')}
+          />
+        ),
+        options: dbServiceList
+          .filter((db) => db.db_type === type)
+          .map((db) => ({
+            value: valueType === 'id' ? db?.id : db?.name,
+            label:
+              !!db.host && !!db.port
+                ? `${db.name} (${db.host}:${db.port})`
+                : db.name
+          }))
+      }));
+    },
+    [dbServiceList, dbTypeList, getLogoUrlByDbType]
+  );
+
   const dbServiceOptions = useMemo(() => {
-    return dbTypeList.map((type) => ({
-      label: (
-        <DatabaseTypeLogo
-          dbType={type ?? ''}
-          logoUrl={getLogoUrlByDbType(type ?? '')}
-        />
-      ),
-      options: dbServiceList
-        .filter((db) => db.db_type === type)
-        .map((db) => ({
-          value: db?.name ?? '',
-          label:
-            !!db.host && !!db.port
-              ? `${db.name} (${db.host}:${db.port})`
-              : db.name
-        }))
-    }));
-  }, [dbServiceList, dbTypeList, getLogoUrlByDbType]);
+    return generateCommonDbServiceOptions('name');
+  }, [generateCommonDbServiceOptions]);
+
+  const dbServiceIDOptions = useMemo(() => {
+    return generateCommonDbServiceOptions('id');
+  }, [generateCommonDbServiceOptions]);
 
   return {
     dbServiceList,
@@ -119,7 +130,8 @@ const useDbService = () => {
     loading,
     updateDbServiceList,
     generateDbServiceSelectOptions,
-    generateDbServiceIDSelectOptions
+    generateDbServiceIDSelectOptions,
+    dbServiceIDOptions
   };
 };
 
