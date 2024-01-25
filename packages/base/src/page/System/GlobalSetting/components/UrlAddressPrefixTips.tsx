@@ -5,13 +5,17 @@ import {
   EditInput,
   LabelContent
 } from '@actiontech/shared/lib/components/ConfigItem';
+import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export interface UrlAddressPrefixTipsProps {
-  url: any;
-  fieldVisible: any;
-  showField: any;
-  hideField: any;
-  submitGlobalConfig: any;
+  url: string | undefined;
+  fieldVisible: boolean;
+  showField: () => void;
+  hideField: () => void;
+  submitGlobalConfig: (
+    value: string | number,
+    fieldName: keyof IUpdateSystemVariablesReqV1
+  ) => void;
 }
 
 const UrlAddressPrefixTips = ({
