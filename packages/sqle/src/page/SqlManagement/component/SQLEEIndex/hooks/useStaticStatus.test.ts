@@ -1,4 +1,4 @@
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
 import useStaticStatus from './useStaticStatus';
 import {
   GetSqlManageListV2FilterAuditLevelEnum,
@@ -7,7 +7,7 @@ import {
 
 describe('SqlManagement/useStaticStatus', () => {
   it('render select options', async () => {
-    const { result } = renderHooksWithTheme(() => useStaticStatus());
+    const { result } = renderHooksWithRedux(() => useStaticStatus());
     expect(result.current.generateSourceSelectOptions.length).toBe(2);
     expect(result.current.generateSourceSelectOptions[0].value).toBe(
       GetSqlManageListV2FilterSourceEnum.sql_audit_record

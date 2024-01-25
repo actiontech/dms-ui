@@ -8,7 +8,5 @@ export const userTipListData = [
   {
     user_id: mockProjectInfo.projectID,
     user_name: 'admin'
-  },
-  { user_id: '700201', user_name: 'one' },
-  { user_id: '700202', user_name: 'two' }
+  }
 ];

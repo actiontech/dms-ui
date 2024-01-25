@@ -87,8 +87,7 @@ export const renderHooksWithReduxAndRouter = <TProps, TResult>(
 };
 
 export const renderHooksWithTheme = <TProps, TResult>(
-  hooks: (props: TProps) => TResult,
-  initStore?: any
+  hooks: (props: TProps) => TResult
 ) => {
   return renderHook(hooks, {
     wrapper: ({ children }) => (
@@ -96,11 +95,9 @@ export const renderHooksWithTheme = <TProps, TResult>(
         locale={zhCN}
         theme={{ algorithm: antdTheme.defaultAlgorithm }}
       >
-        <Provider store={storeFactory(initStore)}>
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
-          </StyledEngineProvider>
-        </Provider>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+        </StyledEngineProvider>
       </ConfigProvider>
     )
   });

@@ -1,4 +1,3 @@
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import useGetTableFilterInfo from './useGetTableFilterInfo';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import sqlManage from '../../../../../testUtils/mockApi/sqlManage';
@@ -6,6 +5,15 @@ import { act, cleanup } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import instance from '../../../../../testUtils/mockApi/instance';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
+import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
+import { useSelector } from 'react-redux';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('SqlManagement/useGetTableFilterInfo', () => {
   beforeEach(() => {
@@ -13,6 +21,11 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     instance.mockAllApi();
     sqlManage.mockAllApi();
     jest.useFakeTimers();
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        database: { driverMeta: [] }
+      });
+    });
   });
 
   afterEach(() => {
@@ -24,7 +37,7 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
   it('send request and render select options', async () => {
     const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
     const instanceRequest = instance.getInstanceTipList();
-    const { result } = renderHooksWithTheme(() => useGetTableFilterInfo());
+    const { result } = renderHooksWithRedux(() => useGetTableFilterInfo());
     expect(ruleTipsRequest).toBeCalledWith({
       project_name: mockProjectInfo.projectName
     });
