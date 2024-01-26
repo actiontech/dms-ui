@@ -1,14 +1,13 @@
 import { styled } from '@mui/material/styles';
+import { Space, Card } from 'antd';
+import { BasicTagColor } from '../../theme/theme.type';
 
 export const CEIndexStyleWrapper = styled('section')`
   background: ${({ theme }) => theme.sharedTheme.basic.colorBgLayoutGray};
 
   .common-mode-wrapper {
-    height: calc(100vh - 60px);
-
     .ant-col {
       padding: 40px;
-      height: calc(100vh - 60px);
     }
   }
 
@@ -87,17 +86,20 @@ export const CEIndexStyleWrapper = styled('section')`
     .left {
       margin-top: 12px;
     }
+
+    .version-subTitle-wrap {
+      display: inline-block;
+      height: 44px;
+      text-align: center;
+    }
+
+    .version-desc-wrap {
+      width: auto;
+    }
   }
 `;
 
-export const VersionComparisonStyleWrapper = styled('div')`
-  width: 100%;
-
-  & .ant-tag.ant-tag-geekblue.basic-tag-wrapper {
-    display: inline-block;
-    margin-bottom: 16px;
-  }
-
+export const VersionComparisonStyleWrapper = styled(Space)`
   .content-wrap {
     width: 100%;
     display: flex;
@@ -107,14 +109,33 @@ export const VersionComparisonStyleWrapper = styled('div')`
       width: 32%;
     }
   }
+`;
 
-  & .ant-card.ant-card-hoverable .ant-card-body {
-    padding: 24px 0;
+export const VersionComparisonItemCardStyleWrapper = styled(Card)<{
+  color: BasicTagColor;
+}>`
+  &.ant-card.ant-card-bordered {
+    border: 2px solid
+      ${({ theme, color }) =>
+        theme.sharedTheme.components.basicTag[color].color};
+
+    &:hover {
+      border: 2px solid
+        ${({ theme, color }) =>
+          theme.sharedTheme.components.basicTag[color].color};
+    }
   }
 
-  & .ant-row .ant-col {
-    padding-top: 0;
-    height: 100%;
+  &.ant-card.ant-card-hoverable .ant-card-body {
+    padding: 24px 16px;
+  }
+
+  &.ant-card.ant-card-hoverable {
+    border-radius: 20px;
+  }
+
+  .version-tag-wrap {
+    margin-bottom: 20px;
   }
 
   .version-item {
@@ -134,29 +155,21 @@ export const VersionComparisonStyleWrapper = styled('div')`
       }
     }
 
-    .contact-link {
-      text-decoration: underline;
-    }
-
-    h5.ant-typography {
-      margin: 0;
-    }
-
     .apply-button {
-      width: 80%;
+      width: 50%;
     }
   }
 
-  .content-list .ant-typography {
-    padding-left: 18px;
-    position: relative;
+  .term-wrap {
     display: inline-block;
+    height: 22px;
+  }
 
-    &::before {
-      content: '•';
-      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
-      position: absolute;
-      left: 0;
-    }
+  & .content-list {
+    width: 216px;
+  }
+
+  & .content-list .ant-space-item {
+    width: auto;
   }
 `;
