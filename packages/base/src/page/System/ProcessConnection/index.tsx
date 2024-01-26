@@ -1,18 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import DingTalkSetting from './DingTalkSetting';
 import LarkAuditSetting from './LarkAuditSetting';
+import SystemBasicTitle from '../components/BasicTitle';
 
 const ProcessConnection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="system-form-wrapper">
-      <div className="config-title-wrapper">
-        {t('dmsSystem.tabPaneTitle.processConnection')}
-      </div>
-      <DingTalkSetting />
-      <LarkAuditSetting />
-    </section>
+    <SystemBasicTitle title={t('dmsSystem.tabPaneTitle.processConnection')}>
+      <>
+        <DingTalkSetting />
+        <LarkAuditSetting />
+      </>
+    </SystemBasicTitle>
   );
 };
 
