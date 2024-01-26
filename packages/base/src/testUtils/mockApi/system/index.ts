@@ -48,6 +48,8 @@ class MockSystemApi implements MockSpyApy {
     this.SetLicense();
     this.GetLicense();
     this.GetLicenseInfo();
+    this.getSystemVariables();
+    this.updateSystemVariables();
   }
 
   public getLDAPConfig() {
@@ -279,6 +281,26 @@ class MockSystemApi implements MockSpyApy {
 
   public SetLicense() {
     const spy = jest.spyOn(dms, 'SetLicense');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getSystemVariables() {
+    const spy = jest.spyOn(configuration, 'getSystemVariablesV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          workflow_expired_hours: 7211,
+          url: 'http://demo.com',
+          operation_record_expired_hours: 3161
+        }
+      })
+    );
+    return spy;
+  }
+
+  public updateSystemVariables() {
+    const spy = jest.spyOn(configuration, 'updateSystemVariablesV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
