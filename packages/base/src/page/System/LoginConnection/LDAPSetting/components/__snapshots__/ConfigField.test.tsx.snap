@@ -87,7 +87,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                 <input
                   class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                   id="ldap_server_host"
-                  placeholder="请输入{{name}}"
+                  placeholder="请输入LDAP服务器地址"
                   type="text"
                   value=""
                 />
