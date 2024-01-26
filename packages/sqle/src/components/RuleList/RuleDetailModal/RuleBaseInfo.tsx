@@ -5,11 +5,17 @@ import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
 import { EmptyBox } from '@actiontech/shared';
 
-const RuleBaseInfo: React.FC<{
+export type typeRuleBaseInfo = {
   dataSource: IRuleResV1 | undefined;
   children?: ReactNode;
   showKnowledge?: boolean;
-}> = ({ dataSource, children, showKnowledge }) => {
+};
+
+const RuleBaseInfo: React.FC<typeRuleBaseInfo> = ({
+  dataSource,
+  children,
+  showKnowledge
+}) => {
   const { t } = useTranslation();
 
   return (

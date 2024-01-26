@@ -1,3 +1,13 @@
+export enum GetDataExportTaskStatusEnum {
+  'init' = 'init',
+
+  'exporting' = 'exporting',
+
+  'finish' = 'finish',
+
+  'failed' = 'failed'
+}
+
 export enum GetUserAuthenticationTypeEnum {
   'ldap' = 'ldap',
 
@@ -14,6 +24,22 @@ export enum GetUserStatEnum {
   '被禁用' = '被禁用',
 
   '未知' = '未知'
+}
+
+export enum ListDataExportWorkflowStatusEnum {
+  'wait_for_approve' = 'wait_for_approve',
+
+  'wait_for_export' = 'wait_for_export',
+
+  'exporting' = 'exporting',
+
+  'rejected' = 'rejected',
+
+  'cancel' = 'cancel',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
 }
 
 export enum ListMemberRoleWithOpRangeOpRangeTypeEnum {
@@ -128,4 +154,28 @@ export enum TestFeishuConfigurationAccountTypeEnum {
   'email' = 'email',
 
   'phone' = 'phone'
+}
+
+export enum WorkflowRecordStatusEnum {
+  'wait_for_approve' = 'wait_for_approve',
+
+  'wait_for_export' = 'wait_for_export',
+
+  'exporting' = 'exporting',
+
+  'rejected' = 'rejected',
+
+  'cancel' = 'cancel',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
+}
+
+export enum WorkflowStepStateEnum {
+  'init' = 'init',
+
+  'rejected' = 'rejected',
+
+  'finish' = 'finish'
 }
