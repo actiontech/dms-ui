@@ -34,7 +34,7 @@ export const ExportWorkflowExtraFilterMeta: () => ActiontechTableFilterMeta<
       'db_service_uid',
       {
         filterCustomType: 'select',
-        filterKey: 'filter_db_service_uid',
+        filterKey: 'filter_by_db_service_uid',
         filterLabel: t('dmsDataExport.list.column.dbService'),
         checked: false
       }
@@ -110,7 +110,7 @@ export const ExportWorkflowListColumn: (
         return user?.name ?? '-';
       },
       filterCustomType: 'select',
-      filterKey: 'filter_create_user_uid'
+      filterKey: 'filter_by_create_user_uid'
     },
     {
       dataIndex: 'status',
