@@ -3,26 +3,35 @@ import { VersionComparisonItem } from './index.type';
 export const versionList: VersionComparisonItem[] = [
   {
     key: 'version_ce',
-    title: 'common.version.ce',
-    applyLink: 'http://demo.sqle.actionsky.com/',
-    contactLink:
-      'https://actiontech.github.io/sqle-docs/docs/support/community-support',
+    color: 'green',
+    type: 'common.version.ce',
+    title: 'common.version.ceTitle',
+    subtitle: 'common.version.ceSubTitle',
+    buttonText: 'common.version.ceButtonText',
+    termText: 'common.version.ceTerm',
+    applyLink:
+      'https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro',
     contentDesc: 'common.version.ceDesc'
   },
   {
     key: 'version_demo',
-    title: 'common.version.demo',
+    color: 'blue',
+    type: 'common.version.demo',
+    title: 'common.version.demoTitle',
+    subtitle: 'common.version.demoSubTitle',
+    buttonText: 'common.version.demoButtonText',
+    termText: 'common.version.demoTerm',
     applyLink: 'https://jinshuju.net/f/daLFaG',
-    contactLink:
-      'https://actiontech.github.io/sqle-docs/docs/support/community-support',
     contentDesc: 'common.version.demoDesc'
   },
   {
     key: 'version_ee',
-    title: 'common.version.ee',
-    applyLink: 'http://demo.sqle.actionsky.com:8889/',
-    contactLink:
-      'https://actiontech.github.io/sqle-docs/docs/support/commercial-support',
+    color: 'orange',
+    type: 'common.version.ee',
+    title: 'common.version.eeTitle',
+    subtitle: 'common.version.eeSubTitle',
+    buttonText: 'common.version.eeButtonText',
+    applyLink: 'https://jinshuju.net/f/daLFaG',
     contentDesc: 'common.version.eeDesc'
   }
 ];
