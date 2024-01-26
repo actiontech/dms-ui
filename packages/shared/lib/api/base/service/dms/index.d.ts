@@ -340,11 +340,11 @@ export interface IListDataExportWorkflowsParams {
 
   filter_by_status?: ListDataExportWorkflowsFilterByStatusEnum;
 
-  filter_create_user_uid?: string;
+  filter_by_create_user_uid?: string;
 
   filter_current_step_assignee_user_uid?: string;
 
-  filter_db_service_uid?: string;
+  filter_by_db_service_uid?: string;
 
   filter_create_time_from?: string;
 
