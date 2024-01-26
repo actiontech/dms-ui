@@ -177,7 +177,7 @@ const RuleSelect = (props: RuleSelectProps) => {
           rules={rulesData}
           activeDataKeys={rulesData.map((item) => item?.rule_name ?? '')}
           onActionHandle={(record, type) => onAction(record, type)}
-          pageHeaderHeight={118}
+          pageHeaderHeight={110}
         />
       </Spin>
       <EditRuleTemplate
