@@ -1,0 +1,120 @@
+import { BackendFormProps } from '..';
+import AutoCreatedFormItemByApi from '../AutoCreatedFormItemByApi';
+
+import { renderWithTheme } from '../../../testUtils/customRender';
+import Form from 'antd/es/form/Form';
+
+describe('sqle/components/BackendForm', () => {
+  const customRender = (params: BackendFormProps) => {
+    return renderWithTheme(
+      <Form>
+        <AutoCreatedFormItemByApi {...params} />
+      </Form>
+    );
+  };
+
+  describe('render type is bool', () => {
+    it('render layout is fullLine', () => {
+      const { baseElement } = customRender({
+        isFullLine: true,
+        params: [
+          {
+            key: 'bool1',
+            type: 'bool',
+            desc: 'this is a tip'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render layout is spaceBetween & no desc', () => {
+      const { baseElement } = customRender({
+        isFullLine: false,
+        params: [
+          {
+            key: 'bool2',
+            type: 'bool',
+            desc: 'this is a tip'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render layout has desc', () => {
+      const { baseElement } = customRender({
+        isFullLine: false,
+        disabled: true,
+        params: [
+          {
+            key: 'bool3',
+            type: 'bool',
+            desc: 'desc 。desc1',
+            value: 'true'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+  });
+  describe('render type is spaceBetween', () => {
+    it('render layout is fullLine', () => {
+      const { baseElement } = customRender({
+        params: [
+          {
+            key: 'int1',
+            type: 'int',
+            desc: 'desc 。desc1'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render layout is spaceBetween & no desc', () => {
+      const { baseElement } = customRender({
+        isFullLine: false,
+        disabled: true,
+        params: [
+          {
+            key: 'int2',
+            type: 'int',
+            desc: 'desc (desc2)'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+  });
+
+  describe('render type is input', () => {
+    it('render layout is fullLine', () => {
+      const { baseElement } = customRender({
+        params: [
+          {
+            key: 'input1',
+            type: 'input',
+            desc: 'desc 。desc1'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render layout is spaceBetween & no desc', () => {
+      const { baseElement } = customRender({
+        isFullLine: false,
+        disabled: true,
+        params: [
+          {
+            key: 'input2',
+            type: 'input',
+            desc: 'desc (desc2)'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+  });
+});

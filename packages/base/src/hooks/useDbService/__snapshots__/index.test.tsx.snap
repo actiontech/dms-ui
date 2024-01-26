@@ -1,6 +1,303 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`useDbService should render options when use generateRoleSelectOption 1`] = `
+exports[`useDbService should render options when use generateDbServiceIDSelectOptions 1`] = `
+Array [
+  Object {
+    "label": <DatabaseTypeLogo
+      dbType="MySQL"
+      logoUrl=""
+    />,
+    "options": Array [
+      Object {
+        "label": "test (127.0.0.1:3306)",
+        "value": "123123",
+      },
+      Object {
+        "label": "test2 (localhost:3306)",
+        "value": "300123",
+      },
+    ],
+  },
+]
+`;
+
+exports[`useDbService should render options when use generateDbServiceIDSelectOptions 2`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
+      data-testid="testId"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+          title="test (127.0.0.1:3306)"
+        >
+          test (127.0.0.1:3306)
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          aria-label="down"
+          class="anticon anticon-down ant-select-suffix"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="down"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`useDbService should render options when use generateDbServiceIDSelectOptions 3`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
+      data-testid="testId"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_1"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+          title="test (127.0.0.1:3306)"
+        >
+          test (127.0.0.1:3306)
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          aria-label="down"
+          class="anticon anticon-down ant-select-suffix"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="down"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
+    >
+      <div>
+        <div
+          id="rc_select_TEST_OR_SSR_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="presentation"
+          />
+          <div
+            aria-label="test (127.0.0.1:3306)"
+            aria-selected="true"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
+          >
+            123123
+          </div>
+          <div
+            aria-label="test2 (localhost:3306)"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_2"
+            role="option"
+          >
+            300123
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="MySQL"
+                    >
+                      MySQL
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  label="test (127.0.0.1:3306)"
+                  title="test (127.0.0.1:3306)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    test (127.0.0.1:3306)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="test2 (localhost:3306)"
+                  title="test2 (localhost:3306)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    test2 (localhost:3306)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`useDbService should render options when use generateDbServiceSelectOptions 1`] = `
+Array [
+  Object {
+    "label": <DatabaseTypeLogo
+      dbType="MySQL"
+      logoUrl=""
+    />,
+    "options": Array [
+      Object {
+        "label": "test (127.0.0.1:3306)",
+        "value": "test",
+      },
+      Object {
+        "label": "test2 (localhost:3306)",
+        "value": "test2",
+      },
+    ],
+  },
+]
+`;
+
+exports[`useDbService should render options when use generateDbServiceSelectOptions 2`] = `
 <body>
   <div />
   <div>
@@ -70,7 +367,7 @@ exports[`useDbService should render options when use generateRoleSelectOption 1`
 </body>
 `;
 
-exports[`useDbService should render options when use generateRoleSelectOption 2`] = `
+exports[`useDbService should render options when use generateDbServiceSelectOptions 3`] = `
 <body>
   <div />
   <div>
@@ -85,7 +382,7 @@ exports[`useDbService should render options when use generateRoleSelectOption 2`
           class="ant-select-selection-search"
         >
           <input
-            aria-activedescendant="rc_select_TEST_OR_SSR_list_-1"
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_1"
             aria-autocomplete="list"
             aria-controls="rc_select_TEST_OR_SSR_list"
             aria-expanded="true"
@@ -139,59 +436,114 @@ exports[`useDbService should render options when use generateRoleSelectOption 2`
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-empty ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
     >
       <div>
         <div
-          class="ant-select-item-empty"
           id="rc_select_TEST_OR_SSR_list"
           role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal ant-empty-small"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_0"
+            role="presentation"
+          />
+          <div
+            aria-label="test (127.0.0.1:3306)"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_1"
+            role="option"
+          >
+            test
+          </div>
+          <div
+            aria-label="test2 (localhost:3306)"
+            aria-selected="false"
+            id="rc_select_TEST_OR_SSR_list_2"
+            role="option"
+          >
+            test2
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                    <span
+                      title="MySQL"
+                    >
+                      MySQL
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active"
+                  label="test (127.0.0.1:3306)"
+                  title="test (127.0.0.1:3306)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    test (127.0.0.1:3306)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  label="test2 (localhost:3306)"
+                  title="test2 (localhost:3306)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    test2 (localhost:3306)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
           >
             <div
-              class="ant-empty-image"
-            >
-              <svg
-                height="41"
-                viewBox="0 0 64 41"
-                width="64"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  fill="none"
-                  fill-rule="evenodd"
-                  transform="translate(0 1)"
-                >
-                  <ellipse
-                    cx="32"
-                    cy="33"
-                    fill="#f5f5f5"
-                    rx="32"
-                    ry="7"
-                  />
-                  <g
-                    fill-rule="nonzero"
-                    stroke="#d9d9d9"
-                  >
-                    <path
-                      d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
-                    />
-                    <path
-                      d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
-                      fill="#fafafa"
-                    />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div
-              class="ant-empty-description"
-            >
-              No data
-            </div>
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
