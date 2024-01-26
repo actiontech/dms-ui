@@ -63,6 +63,27 @@ import {
   IDelProjectReturn,
   IArchiveProjectParams,
   IArchiveProjectReturn,
+  IBatchGetDataExportTaskParams,
+  IBatchGetDataExportTaskReturn,
+  IAddDataExportTaskParams,
+  IAddDataExportTaskReturn,
+  IListDataExportTaskSQLsParams,
+  IListDataExportTaskSQLsReturn,
+  IDownloadDataExportTaskParams,
+  IListDataExportWorkflowsParams,
+  IListDataExportWorkflowsReturn,
+  IAddDataExportWorkflowParams,
+  IAddDataExportWorkflowReturn,
+  ICancelDataExportWorkflowParams,
+  ICancelDataExportWorkflowReturn,
+  IGetDataExportWorkflowParams,
+  IGetDataExportWorkflowReturn,
+  IApproveDataExportWorkflowParams,
+  IApproveDataExportWorkflowReturn,
+  IExportDataExportWorkflowParams,
+  IExportDataExportWorkflowReturn,
+  IRejectDataExportWorkflowParams,
+  IRejectDataExportWorkflowReturn,
   IListDatabaseSourceServicesParams,
   IListDatabaseSourceServicesReturn,
   IAddDatabaseSourceServiceParams,
@@ -83,6 +104,8 @@ import {
   IAddDBServiceReturn,
   ICheckDBServiceIsConnectableParams,
   ICheckDBServiceIsConnectableReturn,
+  IListDBServiceTipsParams,
+  IListDBServiceTipsReturn,
   IUpdateDBServiceParams,
   IUpdateDBServiceReturn,
   IDelDBServiceParams,
@@ -105,6 +128,8 @@ import {
   IAddMemberReturn,
   IListMembersForInternalParams,
   IListMembersForInternalReturn,
+  IListMemberTipsParams,
+  IListMemberTipsReturn,
   IUpdateMemberParams,
   IUpdateMemberReturn,
   IDelMemberParams,
@@ -547,6 +572,189 @@ class DmsService extends ServiceBase {
     );
   }
 
+  public BatchGetDataExportTask(
+    params: IBatchGetDataExportTaskParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IBatchGetDataExportTaskReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_tasks`,
+      paramsData,
+      options
+    );
+  }
+
+  public AddDataExportTask(
+    params: IAddDataExportTaskParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<IAddDataExportTaskReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_tasks`,
+      paramsData,
+      options
+    );
+  }
+
+  public ListDataExportTaskSQLs(
+    params: IListDataExportTaskSQLsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const data_export_task_uid = paramsData.data_export_task_uid;
+    delete paramsData.data_export_task_uid;
+
+    return this.get<IListDataExportTaskSQLsReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_tasks/${data_export_task_uid}/data_export_task_sqls`,
+      paramsData,
+      options
+    );
+  }
+
+  public DownloadDataExportTask(
+    params: IDownloadDataExportTaskParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const data_export_task_uid = paramsData.data_export_task_uid;
+    delete paramsData.data_export_task_uid;
+
+    return this.get(
+      `/v1/dms/projects/${project_uid}/data_export_tasks/${data_export_task_uid}/download`,
+      paramsData,
+      options
+    );
+  }
+
+  public ListDataExportWorkflows(
+    params: IListDataExportWorkflowsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IListDataExportWorkflowsReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_workflows`,
+      paramsData,
+      options
+    );
+  }
+
+  public AddDataExportWorkflow(
+    params: IAddDataExportWorkflowParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<IAddDataExportWorkflowReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_workflows`,
+      paramsData,
+      options
+    );
+  }
+
+  public CancelDataExportWorkflow(
+    params: ICancelDataExportWorkflowParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<ICancelDataExportWorkflowReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_workflows/cancel`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetDataExportWorkflow(
+    params: IGetDataExportWorkflowParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const data_export_workflow_uid = paramsData.data_export_workflow_uid;
+    delete paramsData.data_export_workflow_uid;
+
+    return this.get<IGetDataExportWorkflowReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_workflows/${data_export_workflow_uid}`,
+      paramsData,
+      options
+    );
+  }
+
+  public ApproveDataExportWorkflow(
+    params: IApproveDataExportWorkflowParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const data_export_workflow_uid = paramsData.data_export_workflow_uid;
+    delete paramsData.data_export_workflow_uid;
+
+    return this.post<IApproveDataExportWorkflowReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_workflows/${data_export_workflow_uid}/approve`,
+      paramsData,
+      options
+    );
+  }
+
+  public ExportDataExportWorkflow(
+    params: IExportDataExportWorkflowParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const data_export_workflow_uid = paramsData.data_export_workflow_uid;
+    delete paramsData.data_export_workflow_uid;
+
+    return this.post<IExportDataExportWorkflowReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_workflows/${data_export_workflow_uid}/export`,
+      paramsData,
+      options
+    );
+  }
+
+  public RejectDataExportWorkflow(
+    params: IRejectDataExportWorkflowParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const data_export_workflow_uid = paramsData.data_export_workflow_uid;
+    delete paramsData.data_export_workflow_uid;
+
+    return this.post<IRejectDataExportWorkflowReturn>(
+      `/v1/dms/projects/${project_uid}/data_export_workflows/${data_export_workflow_uid}/reject`,
+      paramsData,
+      options
+    );
+  }
+
   public ListDatabaseSourceServices(
     params: IListDatabaseSourceServicesParams,
     options?: AxiosRequestConfig
@@ -704,6 +912,21 @@ class DmsService extends ServiceBase {
 
     return this.post<ICheckDBServiceIsConnectableReturn>(
       `/v1/dms/projects/${project_uid}/db_services/connection`,
+      paramsData,
+      options
+    );
+  }
+
+  public ListDBServiceTips(
+    params: IListDBServiceTipsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IListDBServiceTipsReturn>(
+      `/v1/dms/projects/${project_uid}/db_services/tips`,
       paramsData,
       options
     );
@@ -881,6 +1104,21 @@ class DmsService extends ServiceBase {
 
     return this.get<IListMembersForInternalReturn>(
       `/v1/dms/projects/${project_uid}/members/internal`,
+      paramsData,
+      options
+    );
+  }
+
+  public ListMemberTips(
+    params: IListMemberTipsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IListMemberTipsReturn>(
+      `/v1/dms/projects/${project_uid}/members/tips`,
       paramsData,
       options
     );

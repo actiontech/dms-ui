@@ -14,7 +14,7 @@ describe('base/Member/Modal/AddMemberGroup', () => {
   beforeEach(() => {
     mockUseDbServiceDriver();
     jest.useFakeTimers();
-    litDBServices = dbServices.ListDBServices();
+    litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
   });
 

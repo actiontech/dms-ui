@@ -2,7 +2,13 @@ import {
   createSpySuccessResponse,
   MockSpyApy
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { userList, userGroupList, opPermissionList, roleList } from './data';
+import {
+  userList,
+  userGroupList,
+  opPermissionList,
+  roleList,
+  memberTips
+} from './data';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 class MockUserCenterApi implements MockSpyApy {
@@ -28,6 +34,16 @@ class MockUserCenterApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: userList
+      })
+    );
+    return spy;
+  }
+
+  public getMemberTips() {
+    const spy = jest.spyOn(dms, 'ListMemberTips');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: memberTips
       })
     );
     return spy;
