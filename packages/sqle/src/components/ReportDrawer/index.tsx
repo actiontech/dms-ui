@@ -37,6 +37,7 @@ const ReportDrawer = ({
       !data?.auditResult
     );
   }, [data?.auditResult]);
+
   return (
     <>
       <BasicDrawer

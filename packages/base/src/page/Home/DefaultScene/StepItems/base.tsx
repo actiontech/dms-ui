@@ -117,3 +117,30 @@ export const getSqlEditorStep: (
     ]
   };
 };
+
+export const getDataExportTask: (
+  arg: DevopsStepsProps
+) => UserDevopsStepsFactory[0]['children'][0] = ({ navigate, projectID }) => {
+  return {
+    key: 'exportTask',
+    title: t('dmsHome.defaultScene.steps.queryAndModify.innerContents.title_2'),
+    content: t(
+      'dmsHome.defaultScene.steps.queryAndModify.innerContents.content_2'
+    ),
+    buttons: [
+      {
+        key: 'enter-cloud-beaver',
+        label: t(
+          'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_2_0'
+        ),
+        action: () => {
+          // #if [ee]
+          navigate(`project/${projectID}/data/export/create`);
+          // #elif [ce]
+          navigate(`project/${projectID}/data/export`);
+          // #endif
+        }
+      }
+    ]
+  };
+};

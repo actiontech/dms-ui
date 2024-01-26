@@ -1,34 +1,27 @@
-import { useBoolean, useRequest } from 'ahooks';
-import { Form, message, Space, Spin } from 'antd';
-import { useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useBoolean, useRequest } from 'ahooks';
+import { useCallback, useMemo } from 'react';
+import { Form, Spin } from 'antd';
 import { Link } from 'react-router-dom';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { WebhookFormFields } from './index.type';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/service/common';
+
 import { DEFAULT_CONSTANT, switchFieldName } from './index.data';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
+
 import ConfigSwitch from '../../components/ConfigSwitch';
-import ConfigModifyBtn from '../../components/ConfigModifyBtn';
-import {
-  BasicButton,
-  BasicInput,
-  BasicInputNumber,
-  BasicToolTips
-} from '@actiontech/shared';
-import { IconTest } from '../../../../icon/system';
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+import ConfigExtraButtons from './components/ConfigExtraButtons';
+import ConfigField from './components/ConfigField';
+import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
+
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/service/common';
+import { WebhookFormFields } from './index.type';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const WebHook: React.FC = () => {
   const { t } = useTranslation();
-  const [messageApi, messageContextHolder] = message.useMessage();
 
   const {
     form,
@@ -157,38 +150,6 @@ const WebHook: React.FC = () => {
     handleToggleSwitch
   });
 
-  const testTing = useRef(false);
-  const test = () => {
-    if (testTing.current) {
-      return;
-    }
-
-    testTing.current = true;
-    const hide = messageApi.loading(
-      t('dmsSystem.webhook.testing', { url: webhookConfig?.url ?? '' }),
-      0
-    );
-    dms
-      .TestWebHookConfiguration()
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          const resData = res.data?.data;
-
-          if (resData?.is_message_sent_normally) {
-            messageApi.success(t('dmsSystem.webhook.testSuccess'));
-          } else {
-            messageApi.error(
-              resData?.send_error_message ?? t('common.unknownError')
-            );
-          }
-        }
-      })
-      .finally(() => {
-        hide();
-        testTing.current = false;
-      });
-  };
-
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IWebHookConfigurationData> =
     useMemo(() => {
       return [
@@ -204,29 +165,17 @@ const WebHook: React.FC = () => {
   return (
     <div className="config-form-wrapper">
       <Spin spinning={loading || submitLoading}>
-        {messageContextHolder}
-
         {renderConfigForm({
           data: webhookConfig ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
-              <BasicToolTips title={t('common.test')} titleWidth={54}>
-                <BasicButton
-                  htmlType="submit"
-                  type="text"
-                  className="system-config-button"
-                  loading={testTing.current}
-                  disabled={testTing.current}
-                  icon={<IconTest />}
-                  onClick={() => {
-                    if (!enabled) return;
-                    test();
-                  }}
-                />
-              </BasicToolTips>
-              <ConfigModifyBtn onClick={handleClickModify} />
-            </Space>
+            <ConfigExtraButtons
+              enabled={enabled}
+              isConfigClosed={isConfigClosed}
+              extraButtonsVisible={extraButtonsVisible}
+              handleClickModify={handleClickModify}
+              msgUrl={webhookConfig?.url ?? ''}
+            />
           ),
           configSwitchNode: (
             <ConfigSwitch
@@ -240,68 +189,12 @@ const WebHook: React.FC = () => {
               onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
-          configField: (
-            <>
-              <FormItemLabel
-                className="has-required-style"
-                label="Webhook url"
-                name="url"
-                rules={[
-                  {
-                    required: true,
-                    type: 'url'
-                  }
-                ]}
-              >
-                <BasicInput />
-              </FormItemLabel>
-              <FormItemLabel
-                className="has-required-style"
-                label={t('dmsSystem.webhook.maxRetryTimes')}
-                name="maxRetryTimes"
-                rules={[
-                  {
-                    required: true
-                  }
-                ]}
-              >
-                <BasicInputNumber min={0} max={5} />
-              </FormItemLabel>
-              <FormItemLabel
-                className="has-required-style"
-                label={t('dmsSystem.webhook.retryIntervalSeconds')}
-                name="retryIntervalSeconds"
-                rules={[
-                  {
-                    required: true
-                  }
-                ]}
-              >
-                <BasicInputNumber min={1} max={5} />
-              </FormItemLabel>
-              <FormItemLabel label="token" name="token">
-                <BasicInput />
-              </FormItemLabel>
-            </>
-          ),
+          configField: <ConfigField />,
           submitButtonField: (
-            <FormItemNoLabel>
-              <Space size={12}>
-                <BasicButton
-                  disabled={submitLoading}
-                  onClick={handleClickCancel}
-                >
-                  {t('common.cancel')}
-                </BasicButton>
-                <BasicButton
-                  htmlType="submit"
-                  type="primary"
-                  loading={submitLoading}
-                >
-                  {t('common.submit')}
-                </BasicButton>
-              </Space>
-            </FormItemNoLabel>
+            <ConfigSubmitButtonField
+              submitLoading={submitLoading}
+              handleClickCancel={handleClickCancel}
+            />
           ),
           submit
         })}

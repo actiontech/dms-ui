@@ -9,7 +9,8 @@ enum EmitterKey {
   Update_Recently_Opened_Projects = 'Update_Recently_Opened_Projects',
   Update_Current_Project_ID = 'Update_Current_Project_ID',
   DMS_Refresh_License_List = 'DMS_REFRESH_LICENSE_LIST',
-  DMS_Sync_Project_Archived_Status = 'DMS_Sync_Project_Archived_Status'
+  DMS_Sync_Project_Archived_Status = 'DMS_Sync_Project_Archived_Status',
+  DMS_Refresh_Export_Data_Workflow = 'DMS_Refresh_Export_Data_Workflow'
 }
 
 export default EmitterKey;

@@ -1,6 +1,8 @@
 import {
+  GetDataExportTaskStatusEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
+  ListDataExportWorkflowStatusEnum,
   ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListOpPermissionRangeTypeEnum,
   ListRoleStatEnum,
@@ -11,7 +13,9 @@ import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
-  TestFeishuConfigurationAccountTypeEnum
+  TestFeishuConfigurationAccountTypeEnum,
+  WorkflowRecordStatusEnum,
+  WorkflowStepStateEnum
 } from './common.enum';
 
 export interface IAddDBServicePreCheckReply {
@@ -25,6 +29,26 @@ export interface IAddDBServiceReply {
 
   data?: {
     uid?: string;
+  };
+
+  message?: string;
+}
+
+export interface IAddDataExportTaskReply {
+  code?: number;
+
+  data?: {
+    data_export_task_uids?: string[];
+  };
+
+  message?: string;
+}
+
+export interface IAddDataExportWorkflowReply {
+  code?: number;
+
+  data?: {
+    export_data_workflow_uid?: string;
   };
 
   message?: string;
@@ -126,12 +150,38 @@ export interface IAdditionalParam {
   value?: string;
 }
 
+export interface IAuditSQLResult {
+  db_type?: string;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
+}
+
+export interface IAuditTaskResult {
+  audit_level?: string;
+
+  pass_rate?: number;
+
+  score?: number;
+}
+
 export interface IBasicInfo {
   components?: IComponentNameWithVersion[];
 
   logo_url?: string;
 
   title?: string;
+}
+
+export interface IBatchGetDataExportTaskReply {
+  code?: number;
+
+  data?: IGetDataExportTask[];
+
+  message?: string;
 }
 
 export interface IBindOauth2UserReply {
@@ -144,6 +194,10 @@ export interface IBindOauth2UserReply {
 
 export interface IBindOauth2UserResData {
   token?: string;
+}
+
+export interface ICancelDataExportWorkflowPayload {
+  data_export_workflow_uids: string[];
 }
 
 export interface ICheckDBServiceIsConnectableReply {
@@ -232,6 +286,22 @@ export interface IDMSProxyTarget {
   version: string;
 }
 
+export interface IDataExportTask {
+  database_name?: string;
+
+  db_service_uid: string;
+
+  export_sql?: string;
+}
+
+export interface IDataExportWorkflow {
+  desc?: string;
+
+  name: string;
+
+  tasks: ITask[];
+}
+
 export interface IDatabaseDriverAdditionalParam {
   description?: string;
 
@@ -314,6 +384,50 @@ export interface IGetCompanyNoticeReply {
   code?: number;
 
   data?: ICompanyNotice;
+
+  message?: string;
+}
+
+export interface IGetDataExportTask {
+  audit_result?: IAuditTaskResult;
+
+  db_info?: ITaskDBInfo;
+
+  export_end_time?: string;
+
+  export_file_type?: string;
+
+  export_start_time?: string;
+
+  export_type?: string;
+
+  file_name?: string;
+
+  status?: GetDataExportTaskStatusEnum;
+
+  task_uid?: string;
+}
+
+export interface IGetDataExportWorkflow {
+  create_time?: string;
+
+  create_user?: IUidWithName;
+
+  desc?: string;
+
+  workflow_name?: string;
+
+  workflow_record?: IWorkflowRecord;
+
+  workflow_record_history?: IWorkflowRecord[];
+
+  workflow_uid?: string;
+}
+
+export interface IGetDataExportWorkflowReply {
+  code?: number;
+
+  data?: IGetDataExportWorkflow;
 
   message?: string;
 }
@@ -411,9 +525,9 @@ export interface IGetOauth2ConfigurationResData {
 
   server_user_id_url?: string;
 
-  user_id_tag?: string;
-
   user_email_tag?: string;
+
+  user_id_tag?: string;
 
   user_wechat_tag?: string;
 }
@@ -656,6 +770,80 @@ export interface IListDBServiceReply {
   total_nums?: number;
 }
 
+export interface IListDBServiceTipItem {
+  db_type?: string;
+
+  host?: string;
+
+  id?: string;
+
+  name?: string;
+
+  port?: string;
+}
+
+export interface IListDBServiceTipsReply {
+  code?: number;
+
+  data?: IListDBServiceTipItem[];
+
+  message?: string;
+}
+
+export interface IListDataExportTaskSQL {
+  audit_level?: string;
+
+  audit_sql_result?: IAuditSQLResult[];
+
+  export_status?: string;
+
+  sql?: string;
+
+  uid?: number;
+}
+
+export interface IListDataExportTaskSQLsReply {
+  code?: number;
+
+  data?: IListDataExportTaskSQL[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListDataExportWorkflow {
+  created_at?: string;
+
+  creater?: IUidWithName;
+
+  current_step_assignee_user_list?: IUidWithName[];
+
+  current_step_type?: string;
+
+  desc?: string;
+
+  exported_at?: string;
+
+  project_uid?: string;
+
+  status?: ListDataExportWorkflowStatusEnum;
+
+  workflow_name?: string;
+
+  workflow_uid?: string;
+}
+
+export interface IListDataExportWorkflowsReply {
+  code?: number;
+
+  data?: IListDataExportWorkflow[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListDatabaseSourceService {
   cron_express: string;
 
@@ -744,6 +932,20 @@ export interface IListMemberRoleWithOpRange {
   range_uids?: IUidWithName[];
 
   role_uid?: IUidWithName;
+}
+
+export interface IListMemberTipsItem {
+  user_id?: string;
+
+  user_name?: string;
+}
+
+export interface IListMemberTipsReply {
+  code?: number;
+
+  data?: IListMemberTipsItem[];
+
+  message?: string;
 }
 
 export interface IListMembersForInternalItem {
@@ -949,9 +1151,9 @@ export interface IOauth2Configuration {
 
   server_user_id_url?: string;
 
-  user_id_tag?: string;
-
   user_email_tag?: string;
+
+  user_id_tag?: string;
 
   user_wechat_tag?: string;
 }
@@ -1002,6 +1204,10 @@ export interface IRegisterDMSProxyTargetReply {
   message?: string;
 }
 
+export interface IRejectDataExportWorkflowPayload {
+  reason: string;
+}
+
 export interface IRole {
   desc?: string;
 
@@ -1038,6 +1244,20 @@ export interface ISQLQueryConfig {
   max_pre_query_rows?: number;
 
   query_timeout_second?: number;
+}
+
+export interface ITask {
+  task_uid?: string;
+}
+
+export interface ITaskDBInfo {
+  database_name?: string;
+
+  db_type?: string;
+
+  name?: string;
+
+  uid?: string;
 }
 
 export interface ITestFeishuConfiguration {
@@ -1328,4 +1548,32 @@ export interface IWebHooksMessage {
   message?: string;
 
   trigger_event_type?: string;
+}
+
+export interface IWorkflowRecord {
+  current_step_number?: number;
+
+  status?: WorkflowRecordStatusEnum;
+
+  tasks?: ITask[];
+
+  workflow_step_list?: IWorkflowStep[];
+}
+
+export interface IWorkflowStep {
+  assignee_user_list?: IUidWithName[];
+
+  desc?: string;
+
+  number?: number;
+
+  operation_time?: string;
+
+  operation_user?: IUidWithName;
+
+  reason?: string;
+
+  state?: WorkflowStepStateEnum;
+
+  type?: string;
 }

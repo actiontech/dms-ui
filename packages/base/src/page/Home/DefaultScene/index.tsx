@@ -9,6 +9,13 @@ import {
 import { DevopsStepsProps, UserDevopsStepsFactory } from './index.type';
 
 import {
+  getDataExportTask,
+  getDatabaseManagerSteps,
+  getMemberAndPermissionSteps,
+  getSqlEditorStep
+} from './StepItems/base';
+
+import {
   getAuditProgressStep,
   getAuditManageStep,
   getDataModifyStep,
@@ -19,12 +26,6 @@ import {
   getAuthAuditStepItems,
   getDatabaseAuthStep
 } from './StepItems/provision';
-
-import {
-  getDatabaseManagerSteps,
-  getMemberAndPermissionSteps,
-  getSqlEditorStep
-} from './StepItems/base';
 
 export const UserTypeDictionary: StringDictionary = {
   admin: t('dmsHome.defaultScene.header.adminUser'),
@@ -71,8 +72,10 @@ export const AdminUserDevopsSteps: (
       getSqlEditorStep({ navigate }),
 
       // #if [sqle]
-      getDataModifyStep({ navigate, projectID })
+      getDataModifyStep({ navigate, projectID }),
       // #endif
+
+      getDataExportTask({ navigate, projectID })
     ]
   },
 
@@ -114,8 +117,10 @@ export const NormalUserDevopsSteps: (
       getSqlEditorStep({ navigate }),
 
       // #if [sqle]
-      getDataModifyStep({ navigate, projectID })
+      getDataModifyStep({ navigate, projectID }),
       // #endif
+
+      getDataExportTask({ navigate, projectID })
     ]
   },
 

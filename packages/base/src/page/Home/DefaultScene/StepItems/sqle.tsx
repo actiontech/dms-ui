@@ -1,4 +1,4 @@
-import { RuleUrlParamKey } from 'sqle/src/page/Rule/hooks/useRuleFilterFormItem';
+import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { t } from '../../../../locale';
 import {
   DevopsStepsProps,

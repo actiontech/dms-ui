@@ -225,7 +225,7 @@ const DataSourceList = () => {
   useEffect(() => {
     if (projectID) {
       updateDriverList();
-      updateDbServiceList(projectID);
+      updateDbServiceList({ project_uid: projectID });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectID]);

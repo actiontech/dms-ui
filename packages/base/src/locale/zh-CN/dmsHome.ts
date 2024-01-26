@@ -56,7 +56,10 @@ export default {
           title_1: '数据变更',
           content_1: '在线提起SQL变更申请，经由审批流程完成上线',
           action_1_0: '发起SQL工单',
-          action_1_1: ' 发起提权工单'
+          action_1_1: ' 发起提权工单',
+          title_2: '数据导出',
+          content_2: '发起数据导出工单，审核通过后获取数据集。',
+          action_2_0: '发起导出工单'
         }
       },
       devopsAndAudit: {

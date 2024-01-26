@@ -1,20 +1,22 @@
 import React from 'react';
+import { t } from 'i18next';
 import {
   AuditOutlined,
   InfoCircleOutlined,
   WarningOutlined
 } from '@ant-design/icons';
 import { Tooltip, Space, Typography } from 'antd';
-
-import './index.less';
-import { t } from 'i18next';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-const RuleLevelIcon: React.FC<{
+import './index.less';
+
+export type typeRuleLevelIcon = {
   ruleLevel?: string;
   iconFontSize?: number;
   onlyShowIcon?: boolean;
-}> = ({
+};
+
+const RuleLevelIcon: React.FC<typeRuleLevelIcon> = ({
   ruleLevel = RuleResV1LevelEnum.normal,
   iconFontSize = 25,
   onlyShowIcon = false

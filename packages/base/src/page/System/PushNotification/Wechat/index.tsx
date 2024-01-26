@@ -1,32 +1,27 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
-import { useBoolean, useRequest } from 'ahooks';
-import { Form, message, Space, Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { WechatFormFields } from './index.type';
+import { useCallback, useMemo } from 'react';
+
+import { useBoolean, useRequest } from 'ahooks';
+
+import { switchFieldName } from './index.data';
+import { Form, Spin } from 'antd';
+import ConfigSwitch from '../../components/ConfigSwitch';
+import useConfigSwitch from '../../hooks/useConfigSwitch';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
+
+import ConfigExtraButtons from './components/ConfigExtraButtons';
+import ConfigField from './components/ConfigField';
+import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
+
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { WechatFormFields } from './index.type';
 import { IWeChatConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
-import { BasicButton, BasicInput, BasicSwitch } from '@actiontech/shared';
-import { switchFieldName } from './index.data';
-import {
-  CustomLabelContent,
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import ConfigModifyBtn from '../../components/ConfigModifyBtn';
-import ConfigTestBtn from '../../components/ConfigTestBtn';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
-import ConfigTestPopoverForm from '../../components/ConfigTestPopoverForm';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 
 const Wechat = () => {
   const { t } = useTranslation();
-  const [testForm] = Form.useForm<{ receiveId?: string }>();
-  const [messageApi, messageContextHolder] = message.useMessage();
 
   const {
     data: wechatConfig,
@@ -57,10 +52,6 @@ const Wechat = () => {
     switchFieldName,
     switchFieldLabel: t('dmsSystem.wechat.enable_wechat_notify')
   });
-
-  const isConfigClosed = useMemo(() => {
-    return !wechatConfig?.enable_wechat_notify;
-  }, [wechatConfig]);
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
@@ -105,6 +96,10 @@ const Wechat = () => {
     setFormDefaultValue();
     startModify();
   };
+  const isConfigClosed = useMemo(() => {
+    return !wechatConfig?.enable_wechat_notify;
+  }, [wechatConfig]);
+
   const handleClickCancel = () => {
     if (isConfigClosed) form.setFieldsValue({ [switchFieldName]: false });
     setFormDefaultValue();
@@ -141,53 +136,6 @@ const Wechat = () => {
     handleToggleSwitch
   });
 
-  const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
-  const testTing = useRef(false);
-  const test = async () => {
-    if (testTing.current) {
-      return;
-    }
-    const values = await testForm.validateFields();
-
-    testTing.current = true;
-    toggleTestPopoverVisible(false);
-    const hide = messageApi.loading(
-      t('dmsSystem.wechat.testing', { id: values.receiveId }),
-      0
-    );
-    dms
-      .TestWeChatConfiguration({
-        test_wechat_configuration: {
-          recipient_id: values.receiveId
-        }
-      })
-      .then((res) => {
-        const resData = res.data?.data;
-        if (resData?.is_wechat_send_normal) {
-          messageApi.success(t('dmsSystem.wechat.testSuccess'));
-        } else {
-          messageApi.error(
-            resData?.send_error_message ?? t('common.unknownError')
-          );
-        }
-      })
-      .finally(() => {
-        hide();
-        testTing.current = false;
-        testForm.resetFields();
-      });
-  };
-
-  const onTestPopoverOpen = (open: boolean) => {
-    if (!enabled) {
-      return;
-    }
-    if (!open) {
-      testForm.resetFields();
-    }
-    toggleTestPopoverVisible(open);
-  };
-
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IWeChatConfigurationResData> =
     useMemo(() => {
       return [
@@ -222,53 +170,16 @@ const Wechat = () => {
   return (
     <div className="config-form-wrapper">
       <Spin spinning={loading || submitLoading}>
-        {messageContextHolder}
         {renderConfigForm({
           data: wechatConfig ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
-              <ConfigTestBtn
-                popoverOpen={testPopoverVisible}
-                onPopoverOpenChange={onTestPopoverOpen}
-                popoverForm={
-                  <ConfigTestPopoverForm
-                    handleTest={test}
-                    handleCancel={() => toggleTestPopoverVisible(false)}
-                  >
-                    <Form
-                      form={testForm}
-                      colon={false}
-                      {...formItemLayout.fullLine}
-                    >
-                      <FormItemLabel
-                        className="has-required-style has-label-tip"
-                        label={
-                          <CustomLabelContent
-                            title={t('dmsSystem.wechat.receiveWechat')}
-                            tips={t('dmsSystem.wechat.receiveWechatTips')}
-                          />
-                        }
-                        style={{ marginBottom: 0 }}
-                        name="receiveId"
-                        rules={[
-                          {
-                            required: true,
-                            message: t('common.form.placeholder.input', {
-                              name: t('dmsSystem.wechat.receiveWechat')
-                            })
-                          }
-                        ]}
-                      >
-                        <BasicInput />
-                      </FormItemLabel>
-                    </Form>
-                  </ConfigTestPopoverForm>
-                }
-                testingRef={testTing}
-              />
-              <ConfigModifyBtn onClick={handleClickModify} />
-            </Space>
+            <ConfigExtraButtons
+              isConfigClosed={isConfigClosed}
+              extraButtonsVisible={extraButtonsVisible}
+              enabled={enabled}
+              handleClickModify={handleClickModify}
+            />
           ),
           configSwitchNode: (
             <ConfigSwitch
@@ -282,81 +193,12 @@ const Wechat = () => {
               onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />
           ),
-          configField: (
-            <>
-              <FormItemLabel
-                className="has-required-style"
-                label={t('dmsSystem.wechat.corp_id')}
-                name="corp_id"
-                rules={[
-                  {
-                    required: true
-                  }
-                ]}
-              >
-                <BasicInput />
-              </FormItemLabel>
-              <FormItemLabel
-                className="has-required-style"
-                label={t('dmsSystem.wechat.agent_id')}
-                name="agent_id"
-                rules={[
-                  {
-                    required: true
-                  },
-                  {
-                    pattern: /^\d*$/
-                  }
-                ]}
-              >
-                <BasicInput />
-              </FormItemLabel>
-              <FormItemLabel
-                className="has-required-style"
-                label={t('dmsSystem.wechat.corp_secret')}
-                name="corp_secret"
-                rules={[
-                  {
-                    required: true
-                  }
-                ]}
-              >
-                <BasicInput.Password />
-              </FormItemLabel>
-              <FormItemLabel
-                label={t('dmsSystem.wechat.safe_enabled')}
-                name="safe_enabled"
-                valuePropName="checked"
-              >
-                <BasicSwitch />
-              </FormItemLabel>
-              <FormItemLabel
-                label={t('dmsSystem.wechat.proxy_ip')}
-                name="proxy_ip"
-              >
-                <BasicInput />
-              </FormItemLabel>
-            </>
-          ),
+          configField: <ConfigField />,
           submitButtonField: (
-            <FormItemNoLabel>
-              <Space size={12}>
-                <BasicButton
-                  disabled={submitLoading}
-                  onClick={handleClickCancel}
-                >
-                  {t('common.cancel')}
-                </BasicButton>
-                <BasicButton
-                  htmlType="submit"
-                  type="primary"
-                  disabled={submitLoading}
-                  loading={submitLoading}
-                >
-                  {t('common.submit')}
-                </BasicButton>
-              </Space>
-            </FormItemNoLabel>
+            <ConfigSubmitButtonField
+              submitLoading={submitLoading}
+              handleClickCancel={handleClickCancel}
+            />
           ),
           submit
         })}

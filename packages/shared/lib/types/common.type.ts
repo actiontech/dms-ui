@@ -37,3 +37,7 @@ export type RouterConfigItem = RouteObject & {
   children?: RouterConfigItem[];
   role?: Array<SystemRole | ''>;
 };
+
+export enum RuleUrlParamKey {
+  projectID = 'projectID'
+}

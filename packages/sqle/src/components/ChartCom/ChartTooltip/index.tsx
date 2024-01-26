@@ -9,7 +9,7 @@ type typeListItem = {
   value?: string | ReactNode;
 };
 
-interface IChartTooltip {
+export interface IChartTooltip {
   titleData: {
     dotColor: string;
     text: string | ReactNode;
