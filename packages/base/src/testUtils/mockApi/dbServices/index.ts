@@ -5,7 +5,7 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { resolveThreeSecond } from 'sqle/src/testUtils/mockRequest';
-import { checkConnectableReply, dbServices } from './data';
+import { checkConnectableReply, dbServices, dbServicesTips } from './data';
 
 class MockDbServicesApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -22,6 +22,16 @@ class MockDbServicesApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: dbServices
+      })
+    );
+    return spy;
+  }
+
+  public ListDBServicesTips() {
+    const spy = jest.spyOn(dms, 'ListDBServiceTips');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: dbServicesTips
       })
     );
     return spy;

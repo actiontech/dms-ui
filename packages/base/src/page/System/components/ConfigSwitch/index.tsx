@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { BasicSwitch } from '@actiontech/shared';
 
-interface ConfigSwitchParams {
+export interface ConfigSwitchParams {
   switchFieldName: string;
   switchOpen?: boolean;
   modifyFlag: boolean;

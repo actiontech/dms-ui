@@ -16,8 +16,34 @@ export enum ListProjectsOrderByEnum {
   'name' = 'name'
 }
 
+export enum ListDataExportWorkflowsFilterByStatusEnum {
+  'wait_for_approve' = 'wait_for_approve',
+
+  'wait_for_export' = 'wait_for_export',
+
+  'exporting' = 'exporting',
+
+  'rejected' = 'rejected',
+
+  'cancel' = 'cancel',
+
+  'failed' = 'failed',
+
+  'finish' = 'finish'
+}
+
 export enum ListDBServicesOrderByEnum {
   'name' = 'name'
+}
+
+export enum ListDBServiceTipsFunctionalModuleEnum {
+  'create_audit_plan' = 'create_audit_plan',
+
+  'create_workflow' = 'create_workflow',
+
+  'sql_manage' = 'sql_manage',
+
+  'create_export_task' = 'create_export_task'
 }
 
 export enum ListMemberGroupsOrderByEnum {

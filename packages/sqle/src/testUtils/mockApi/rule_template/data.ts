@@ -68,23 +68,9 @@ export const ruleKnowledgeData = {
   }
 };
 
-export const projectRuleTemplate = [
-  {
-    rule_template_name: 'mysql',
-    desc: '',
-    db_type: 'MySQL'
-  },
-  {
-    rule_template_name: 'mysql-aa',
-    desc: 'aa',
-    db_type: 'MySQL'
-  }
-];
-
-export const getRuleTemplate = [
-  {
-    rule_template_name: 'default_MySQL',
-    desc: '默认规则模板',
-    db_type: 'MySQL'
-  }
-];
+export const projectRulesMockData = {
+  rule_template_name: 'default_MySQL',
+  desc: '',
+  db_type: 'MySQL',
+  rule_list: [ruleListData[0]]
+};
