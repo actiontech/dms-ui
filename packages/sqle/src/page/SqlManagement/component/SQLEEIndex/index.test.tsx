@@ -57,7 +57,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         database: { driverMeta: driverMeta },
-        sqleManagement: {
+        sqlManagement: {
           modalStatus: {}
         }
       });
@@ -236,14 +236,14 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     fireEvent.click(actionButtons[1]);
     await act(async () => jest.advanceTimersByTime(300));
     expect(mockDispatch).toBeCalledWith({
-      type: 'sqleManagement/updateModalStatus',
+      type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Batch,
         status: true
       }
     });
     expect(mockDispatch).toBeCalledWith({
-      type: 'sqleManagement/updateSqlIdList',
+      type: 'sqlManagement/setSqlManagementBatchSelectData',
       payload: [sqlManageListData.data[0]]
     });
   });
@@ -367,14 +367,14 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     fireEvent.click(screen.getAllByText('指派负责人')[0]);
     await act(async () => jest.advanceTimersByTime(300));
     expect(mockDispatch).toBeCalledWith({
-      type: 'sqleManagement/updateModalStatus',
+      type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Single,
         status: true
       }
     });
     expect(mockDispatch).toBeCalledWith({
-      type: 'sqleManagement/updateSqleManagement',
+      type: 'sqlManagement/setSqlManagementSelectData',
       payload: sqlManageListData.data[0]
     });
   });

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { act, cleanup } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
 import { ModalName } from '../../../../../data/ModalName';
-import SqleManagementModal from './index';
+import SqlManagementModal from './index';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => {
@@ -22,7 +22,7 @@ describe('test init sql manage modal', () => {
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
-        sqleManagement: {
+        sqlManagement: {
           modalStatus: {}
         }
       });
@@ -38,7 +38,7 @@ describe('test init sql manage modal', () => {
   });
 
   it('init modal status data', async () => {
-    const { container } = superRender(<SqleManagementModal />);
+    const { container } = superRender(<SqlManagementModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
     expect(mockDispatch).toBeCalledTimes(1);
@@ -51,7 +51,7 @@ describe('test init sql manage modal', () => {
           [ModalName.View_Audit_Result_Drawer]: false
         }
       },
-      type: 'sqleManagement/initModalStatus'
+      type: 'sqlManagement/initModalStatus'
     });
   });
 });

@@ -14,17 +14,17 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import { AssignmentFormField } from '../AssignmentForm/index.type';
-import useTableRedux from '../../hooks/useTableRedux';
+import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 
 const AssignmentSingle = () => {
   const { t } = useTranslation();
 
   const {
     open,
-    selectedSqleManagement: currentSelected,
+    selectSqlManagement: currentSelected,
     setSelectData,
     updateModalStatus
-  } = useTableRedux(ModalName.Assignment_Member_Single);
+  } = useSqlManagementRedux(ModalName.Assignment_Member_Single);
 
   const [messageApi, contextMessageHolder] = message.useMessage();
 

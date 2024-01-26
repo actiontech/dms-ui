@@ -36,11 +36,11 @@ describe('page/SqlManagement/ChangeStatus', () => {
   const customRender = (data?: boolean) => {
     return superRender(<ChangeStatus />, undefined, {
       initStore: {
-        sqleManagement: {
+        sqlManagement: {
           modalStatus: {
             [ModalName.Change_Status_Single]: data ?? true
           },
-          selectSqleManagement: sqlManageListData.data[0]
+          selectSqlManagement: sqlManageListData.data[0]
         }
       }
     });
@@ -76,14 +76,14 @@ describe('page/SqlManagement/ChangeStatus', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     expect(dispatchSpy).toBeCalledTimes(2);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateModalStatus',
+      type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Change_Status_Single,
         status: false
       }
     });
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateSqleManagement',
+      type: 'sqlManagement/setSqlManagementSelectData',
       payload: null
     });
     expect(eventEmitSpy).toBeCalledTimes(1);
@@ -99,14 +99,14 @@ describe('page/SqlManagement/ChangeStatus', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(dispatchSpy).toBeCalledTimes(2);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateModalStatus',
+      type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Change_Status_Single,
         status: false
       }
     });
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateSqleManagement',
+      type: 'sqlManagement/setSqlManagementSelectData',
       payload: null
     });
   });

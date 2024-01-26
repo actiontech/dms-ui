@@ -41,11 +41,11 @@ describe('page/SqlManagement/AssignmentBatch', () => {
   const customRender = (data?: boolean) => {
     return superRender(<AssignmentBatch />, undefined, {
       initStore: {
-        sqleManagement: {
+        sqlManagement: {
           modalStatus: {
             [ModalName.Assignment_Member_Batch]: data ?? true
           },
-          selectSqlIdList: [sqlManageListData.data[0]]
+          batchSelectSqlManagement: [sqlManageListData.data[0]]
         }
       }
     });
@@ -84,14 +84,14 @@ describe('page/SqlManagement/AssignmentBatch', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     expect(dispatchSpy).toBeCalledTimes(2);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateModalStatus',
+      type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Batch,
         status: false
       }
     });
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateSqlIdList',
+      type: 'sqlManagement/setSqlManagementBatchSelectData',
       payload: null
     });
     expect(eventEmitSpy).toBeCalledTimes(1);
@@ -107,14 +107,14 @@ describe('page/SqlManagement/AssignmentBatch', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(dispatchSpy).toBeCalledTimes(2);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateModalStatus',
+      type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Batch,
         status: false
       }
     });
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateSqlIdList',
+      type: 'sqlManagement/setSqlManagementBatchSelectData',
       payload: null
     });
   });
