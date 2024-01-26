@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/hooks/useServiceOptions should get service data from request 1`] = `
+Array [
+  Object {
+    "label": <DatabaseTypeLogo
+      dbType="MySQL"
+      logoUrl=""
+    />,
+    "options": Array [
+      Object {
+        "label": "Julian Lueilwitz (aromatic-hammock.org)",
+        "value": "42343",
+      },
+      Object {
+        "label": "Gloria Kessler (zigzag-loneliness.com)",
+        "value": "30152",
+      },
+      Object {
+        "label": "Tyler Mitchell (guilty-marmalade.org)",
+        "value": "5801",
+      },
+      Object {
+        "label": "Brent West (oddball-doughnut.com)",
+        "value": "16515",
+      },
+      Object {
+        "label": "Tabitha Herzog (disloyal-sunlamp.org)",
+        "value": "22995",
+      },
+      Object {
+        "label": "Nicole Barrows (delightful-sense.net)",
+        "value": "27015",
+      },
+      Object {
+        "label": "Nicolas Sawayn (active-hosiery.name)",
+        "value": "86240",
+      },
+      Object {
+        "label": "Miguel Spinka II (droopy-footrest.com)",
+        "value": "48495",
+      },
+      Object {
+        "label": "Roger Gutkowski (well-made-modification.name)",
+        "value": "13543",
+      },
+      Object {
+        "label": "Brett Rippin (plush-wind.name)",
+        "value": "53533",
+      },
+      Object {
+        "label": "Gilberto Feil (quixotic-scheduling.info)",
+        "value": "67069",
+      },
+      Object {
+        "label": "Ms. Christine Bradtke I (palatable-workout.biz)",
+        "value": "45638",
+      },
+      Object {
+        "label": "Jermaine Ondricka (massive-guacamole.biz)",
+        "value": "20534",
+      },
+      Object {
+        "label": "Dr. Blanca Olson (gentle-retirement.info)",
+        "value": "22430",
+      },
+      Object {
+        "label": "Cory Lesch (soulful-dhow.biz)",
+        "value": "68337",
+      },
+      Object {
+        "label": "Frances Kris (elegant-bra.info)",
+        "value": "47972",
+      },
+      Object {
+        "label": "Shannon Flatley (unnatural-finish.info)",
+        "value": "24435",
+      },
+      Object {
+        "label": "Kendra Christiansen (pointless-current.info)",
+        "value": "92836",
+      },
+      Object {
+        "label": "Ethel Pagac (canine-bench.biz)",
+        "value": "61669",
+      },
+      Object {
+        "label": "Mrs. Marlene Miller (same-moose.biz)",
+        "value": "70731",
+      },
+    ],
+  },
+]
+`;
+
+exports[`provision/hooks/useServiceOptions should get service data from request 2`] = `
+Array [
+  Object {
+    "label": <DatabaseTypeLogo
+      dbType="MySQL"
+      logoUrl=""
+    />,
+    "options": Array [
+      Object {
+        "label": "Julian Lueilwitz (aromatic-hammock.org)",
+        "value": "Julian Lueilwitz",
+      },
+      Object {
+        "label": "Gloria Kessler (zigzag-loneliness.com)",
+        "value": "Gloria Kessler",
+      },
+      Object {
+        "label": "Tyler Mitchell (guilty-marmalade.org)",
+        "value": "Tyler Mitchell",
+      },
+      Object {
+        "label": "Brent West (oddball-doughnut.com)",
+        "value": "Brent West",
+      },
+      Object {
+        "label": "Tabitha Herzog (disloyal-sunlamp.org)",
+        "value": "Tabitha Herzog",
+      },
+      Object {
+        "label": "Nicole Barrows (delightful-sense.net)",
+        "value": "Nicole Barrows",
+      },
+      Object {
+        "label": "Nicolas Sawayn (active-hosiery.name)",
+        "value": "Nicolas Sawayn",
+      },
+      Object {
+        "label": "Miguel Spinka II (droopy-footrest.com)",
+        "value": "Miguel Spinka II",
+      },
+      Object {
+        "label": "Roger Gutkowski (well-made-modification.name)",
+        "value": "Roger Gutkowski",
+      },
+      Object {
+        "label": "Brett Rippin (plush-wind.name)",
+        "value": "Brett Rippin",
+      },
+      Object {
+        "label": "Gilberto Feil (quixotic-scheduling.info)",
+        "value": "Gilberto Feil",
+      },
+      Object {
+        "label": "Ms. Christine Bradtke I (palatable-workout.biz)",
+        "value": "Ms. Christine Bradtke I",
+      },
+      Object {
+        "label": "Jermaine Ondricka (massive-guacamole.biz)",
+        "value": "Jermaine Ondricka",
+      },
+      Object {
+        "label": "Dr. Blanca Olson (gentle-retirement.info)",
+        "value": "Dr. Blanca Olson",
+      },
+      Object {
+        "label": "Cory Lesch (soulful-dhow.biz)",
+        "value": "Cory Lesch",
+      },
+      Object {
+        "label": "Frances Kris (elegant-bra.info)",
+        "value": "Frances Kris",
+      },
+      Object {
+        "label": "Shannon Flatley (unnatural-finish.info)",
+        "value": "Shannon Flatley",
+      },
+      Object {
+        "label": "Kendra Christiansen (pointless-current.info)",
+        "value": "Kendra Christiansen",
+      },
+      Object {
+        "label": "Ethel Pagac (canine-bench.biz)",
+        "value": "Ethel Pagac",
+      },
+      Object {
+        "label": "Mrs. Marlene Miller (same-moose.biz)",
+        "value": "Mrs. Marlene Miller",
+      },
+    ],
+  },
+]
+`;

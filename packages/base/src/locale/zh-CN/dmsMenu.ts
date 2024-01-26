@@ -11,7 +11,7 @@ export default {
   templateAudit: '权限模版审计',
   instanceAudit: '数据源操作审计',
   SQLEOperateRecord: 'SQLE操作记录',
-  inspectionAndDiagnosis: '巡检与诊断',
+  inspectionAndDiagnosis: '巡检中心',
   SQLQuery: 'SQL工作台',
   ruleTemplate: '规则模板',
   whitelist: '白名单',
@@ -25,6 +25,8 @@ export default {
   authList: '授权清单',
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',
+  monitorSourceConfig: '监控源配置',
+  diagnosisList: '巡检列表',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
