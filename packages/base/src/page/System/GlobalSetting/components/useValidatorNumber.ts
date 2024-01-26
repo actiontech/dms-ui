@@ -9,6 +9,7 @@ const useValidatorNumber = () => {
 
   const integerValidator = (value: string) => {
     if (!integerValidate(value)) {
+      console.log(999, value);
       messageApi.error(t('common.form.rule.integer'));
       return false;
     }
