@@ -24,6 +24,7 @@ export function renderReadOnlyModeConfig<T>(
 ) {
   const { data = {} as T, columns, modifyFlag } = params;
   const hasConfig = columns.some((column) => !column.hidden);
+
   return (
     !modifyFlag &&
     hasConfig && (

@@ -44,7 +44,7 @@ describe('base/Member/Modal/AddMemberGroup', () => {
     jest.useFakeTimers();
     addMemberGroupSpy = member.addMemberGroup();
     listUsersSpy = userCenter.getUserList();
-    litDBServices = dbServices.ListDBServices();
+    litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
   });
 

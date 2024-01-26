@@ -5,6 +5,18 @@ import { lazy } from 'react';
 
 // #if [ee]
 const Project = lazy(() => import('../page/Project'));
+
+const ExportTaskList = lazy(() => import('../page/DataExportManagement/List'));
+const CreateExportTask = lazy(
+  () => import('../page/DataExportManagement/Create')
+);
+const ExportTaskDetail = lazy(
+  () => import('../page/DataExportManagement/Detail')
+);
+
+const SyncTaskList = lazy(() => import('../page/SyncDataSource/List'));
+const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddPage'));
+const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
 // #endif
 
 const Home = lazy(() => import('../page/Home'));
@@ -22,10 +34,8 @@ const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 const System = lazy(() => import('../page/System'));
 const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
 const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
-const SyncTaskList = lazy(() => import('../page/SyncDataSource/List'));
-const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddPage'));
-const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
 const Account = lazy(() => import('../page/Account'));
+const ExportTaskManagement = lazy(() => import('../page/DataExportManagement'));
 
 export const BaseRouterConfig: RouterConfigItem[] = [
   {
@@ -63,7 +73,6 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     element: <Project />
   },
   // #endif
-
   {
     key: 'projectDetail',
     path: 'project/*',
@@ -101,6 +110,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         label: 'menu.syncDataSource',
         key: 'syncDataSource',
         element: <SyncDataSource />,
+        // #if [ee]
         children: [
           {
             index: true,
@@ -118,6 +128,31 @@ export const BaseRouterConfig: RouterConfigItem[] = [
             key: 'syncDataSourceUpdate'
           }
         ]
+        // #endif
+      },
+      {
+        path: `${PROJECT_ROUTER_PARAM}/data/export`,
+        key: 'dataExportManagement',
+        element: <ExportTaskManagement />,
+        // #if [ee]
+        children: [
+          {
+            index: true,
+            key: 'dataExportManagement',
+            element: <ExportTaskList />
+          },
+          {
+            path: 'create',
+            element: <CreateExportTask />,
+            key: 'CreateExportTask'
+          },
+          {
+            path: ':workflowID',
+            element: <ExportTaskDetail />,
+            key: 'ExportTaskDetail'
+          }
+        ]
+        // #endif
       }
     ] as RouterConfigItem[]
   }

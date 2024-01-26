@@ -18,6 +18,7 @@ import { useMemo } from 'react';
 import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
 import useSystemConfig from '../../../hooks/useSystemConfig';
+import SystemBasicTitle from '../components/BasicTitle';
 
 const PersonalizeSetting: React.FC = () => {
   const { t } = useTranslation();
@@ -87,10 +88,7 @@ const PersonalizeSetting: React.FC = () => {
   };
 
   return (
-    <section className="system-form-wrapper">
-      <div className="config-title-wrapper has-border">
-        {t('dmsSystem.tabPaneTitle.personalize')}
-      </div>
+    <SystemBasicTitle title={t('dmsSystem.tabPaneTitle.personalize')}>
       <Spin spinning={loading}>
         <ConfigItem
           label={
@@ -132,7 +130,7 @@ const PersonalizeSetting: React.FC = () => {
           }
         />
       </Spin>
-    </section>
+    </SystemBasicTitle>
   );
 };
 

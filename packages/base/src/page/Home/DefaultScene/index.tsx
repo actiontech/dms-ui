@@ -9,6 +9,7 @@ import {
 import { DevopsStepsProps, UserDevopsStepsFactory } from './index.type';
 
 import {
+  getDataExportTask,
   getDatabaseManagerSteps,
   getMemberAndPermissionSteps,
   getSqlEditorStep
@@ -60,8 +61,10 @@ export const AdminUserDevopsSteps: (
       getSqlEditorStep({ navigate }),
 
       // #if [sqle]
-      getDataModifyStep({ navigate, projectID })
+      getDataModifyStep({ navigate, projectID }),
       // #endif
+
+      getDataExportTask({ navigate, projectID })
     ]
   },
 
@@ -97,8 +100,10 @@ export const NormalUserDevopsSteps: (
       getSqlEditorStep({ navigate }),
 
       // #if [sqle]
-      getDataModifyStep({ navigate, projectID })
+      getDataModifyStep({ navigate, projectID }),
       // #endif
+
+      getDataExportTask({ navigate, projectID })
     ]
   }
 ];
