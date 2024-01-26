@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+
 import { Typography } from 'antd';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import LarkAuditSettingEEIndex from './index.ee';

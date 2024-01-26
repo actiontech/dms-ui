@@ -1,19 +1,20 @@
 import { useBoolean, useRequest } from 'ahooks';
-import { Space } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import EmitterKey from '../../../data/EmitterKey';
+
 import { updateSystemModalStatus } from '../../../store/system';
-import EventEmitter from '../../../utils/EventEmitter';
-import { Row } from 'antd';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
-import { LicenseColumn } from './index.data';
-import { IconTipGray } from '@actiontech/shared/lib/Icon';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
-import { ModalName } from '../../../data/ModalName';
-import ImportLicense from './Modal/ImportLicense';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import EventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+
+import { Space } from 'antd';
+import { BasicButton } from '@actiontech/shared';
+import { ModalName } from '../../../data/ModalName';
+import SystemBasicTitle from '../components/BasicTitle';
+import ImportLicense from './Modal/ImportLicense';
+import { LicenseColumn } from './index.data';
+import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 
 const License = () => {
   const { t } = useTranslation();
@@ -54,19 +55,11 @@ const License = () => {
   }, [refreshLicenseList]);
 
   return (
-    <section className="system-form-wrapper">
-      <Row
-        className="config-title-wrapper has-border"
-        justify={'space-between'}
-        align={'middle'}
-      >
-        <Space>
-          {t('dmsSystem.tabPaneTitle.license')}
-          {/* todo: 此处提示语待产品给出后调整 */}
-          <BasicToolTips title={t('dmsSystem.license.productName')}>
-            <IconTipGray />
-          </BasicToolTips>
-        </Space>
+    <SystemBasicTitle
+      title={t('dmsSystem.tabPaneTitle.license')}
+      // todo: 此处提示语待产品给出后调整
+      titleTip={t('dmsSystem.license.productName')}
+      titleExtra={
         <Space key="button-wrapper">
           <BasicButton
             type="primary"
@@ -79,16 +72,19 @@ const License = () => {
             {t('dmsSystem.license.import')}
           </BasicButton>
         </Space>
-      </Row>
-      <ActiontechTable
-        rowKey="name"
-        columns={LicenseColumn}
-        dataSource={data?.list}
-        loading={loading}
-        className="clear-padding-bottom"
-      />
-      <ImportLicense />
-    </section>
+      }
+    >
+      <>
+        <ActiontechTable
+          rowKey="name"
+          columns={LicenseColumn}
+          dataSource={data?.list}
+          loading={loading}
+          className="clear-padding-bottom"
+        />
+        <ImportLicense />
+      </>
+    </SystemBasicTitle>
   );
 };
 

@@ -1,0 +1,142 @@
+import system from '../../../../testUtils/mockApi/system';
+
+import { cleanup, fireEvent, act, screen } from '@testing-library/react';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+
+import WebHook from '.';
+
+describe('base/System/PushNotification/WebhookSetting', () => {
+  let requestGetWebHookConfiguration: jest.SpyInstance;
+  let requestUpdateWebHookConfiguration: jest.SpyInstance;
+
+  const customRender = () => {
+    return superRender(<WebHook />);
+  };
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+    requestGetWebHookConfiguration = system.getWebhookConfig();
+    requestUpdateWebHookConfiguration = system.updateWebhookConfig();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    jest.clearAllMocks();
+    cleanup();
+  });
+
+  it('render snap', async () => {
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(2600));
+    expect(requestGetWebHookConfiguration).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  describe('render switch cancel btn', () => {
+    it('render snap when click cont cancel btn', async () => {
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+      expect(screen.getByText('是否开启Webhook通知')).toBeInTheDocument();
+
+      const switchEle = getBySelector(
+        '.basic-switch-wrapper .ant-switch-inner',
+        baseElement
+      );
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+
+      expect(screen.getByText('取 消')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('取 消'));
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render snap when click switch change', async () => {
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      const switchEle = getBySelector(
+        '.basic-switch-wrapper .ant-switch-inner',
+        baseElement
+      );
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+      expect(
+        screen.getByText(
+          '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
+        )
+      ).toBeInTheDocument();
+      expect(screen.getByText('Cancel')).toBeInTheDocument();
+      expect(screen.getByText('OK')).toBeInTheDocument();
+
+      fireEvent.click(screen.getByText('Cancel'));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(500));
+      fireEvent.click(screen.getByText('OK'));
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+    });
+  });
+
+  describe('render submit lark setting', () => {
+    it('render submit success', async () => {
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+      const switchEle = getBySelector(
+        '.basic-switch-wrapper .ant-switch-inner',
+        baseElement
+      );
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.change(getBySelector('#url', baseElement), {
+        target: {
+          value: 'http://a.com'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.change(getBySelector('#maxRetryTimes', baseElement), {
+        target: {
+          value: '1'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.change(getBySelector('#retryIntervalSeconds', baseElement), {
+        target: {
+          value: '2'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(screen.getByText('提 交')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('提 交'));
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(requestUpdateWebHookConfiguration).toBeCalled();
+      expect(requestUpdateWebHookConfiguration).toBeCalledWith({
+        webhook_config: {
+          enable: true,
+          max_retry_times: 1,
+          retry_interval_seconds: 2,
+          token: undefined,
+          url: 'http://a.com'
+        }
+      });
+    });
+  });
+});
