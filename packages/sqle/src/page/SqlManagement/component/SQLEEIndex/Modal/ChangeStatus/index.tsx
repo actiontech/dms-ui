@@ -13,7 +13,7 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
-import useTableRedux from '../../hooks/useTableRedux';
+import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 
 export type ChangeStatusFields = {
   status: BatchUpdateSqlManageReqStatusEnum;
@@ -25,10 +25,10 @@ const ChangeStatus = () => {
 
   const {
     open,
-    selectedSqleManagement: currentSelected,
+    selectSqlManagement: currentSelected,
     setSelectData,
     updateModalStatus
-  } = useTableRedux(ModalName.Change_Status_Single);
+  } = useSqlManagementRedux(ModalName.Change_Status_Single);
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean(false);

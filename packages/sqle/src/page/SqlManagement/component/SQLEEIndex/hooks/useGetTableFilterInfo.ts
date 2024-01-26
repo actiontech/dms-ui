@@ -15,13 +15,13 @@ const useGetTableFilterInfo = () => {
   const {
     instanceOptions,
     updateInstanceList,
-    loading: instanceLoading
+    loading: getInstanceLoading
   } = useInstance();
 
   const {
     generateRuleTipsSelectOptions,
     updateRuleTips,
-    loading: ruleTipsLoading
+    loading: getRuleTipsLoading
   } = useRuleTips();
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const useGetTableFilterInfo = () => {
       ['filter_source', { options: generateSourceSelectOptions }],
       [
         'filter_instance_name',
-        { options: instanceOptions, loading: instanceLoading }
+        { options: instanceOptions, loading: getInstanceLoading }
       ],
       ['filter_audit_level', { options: generateAuditLevelSelectOptions }],
       ['time', { showTime: true }],
@@ -52,18 +52,18 @@ const useGetTableFilterInfo = () => {
         'filter_rule_name',
         {
           options: generateRuleTipsSelectOptions,
-          loading: ruleTipsLoading,
+          loading: getRuleTipsLoading,
           popupMatchSelectWidth: 400
         }
       ]
     ]);
   }, [
-    instanceLoading,
+    getInstanceLoading,
     instanceOptions,
     generateSourceSelectOptions,
     generateAuditLevelSelectOptions,
     generateRuleTipsSelectOptions,
-    ruleTipsLoading
+    getRuleTipsLoading
   ]);
 
   return {

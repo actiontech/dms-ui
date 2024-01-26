@@ -1,12 +1,12 @@
 import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
-import useBatchAction from './useBatchAction';
+import useBatchIgnoreOrSolve from './useBatchIgnoreOrSolve';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import sqlManage from '../../../../../testUtils/mockApi/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
-describe('SqlManagement/useBatchAction', () => {
+describe('SqlManagement/useBatchIgnoreOrSolve', () => {
   const mockBatch = jest.fn();
 
   beforeEach(() => {
@@ -24,9 +24,10 @@ describe('SqlManagement/useBatchAction', () => {
   it('send request with no actionPermission', async () => {
     const request = sqlManage.batchUpdateSqlManage();
     const { result } = renderHooksWithRedux(() =>
-      useBatchAction(false, ['249'], mockBatch)
+      useBatchIgnoreOrSolve(false, ['249'], mockBatch)
     );
-    expect(result.current.batchActionsLoading).toBe(false);
+    expect(result.current.batchIgnoreLoading).toBe(false);
+    expect(result.current.batchSolveLoading).toBe(false);
     await act(async () => {
       result.current.onBatchIgnore();
       result.current.onBatchSolve();
@@ -38,9 +39,10 @@ describe('SqlManagement/useBatchAction', () => {
   it('send request with empty row key', async () => {
     const request = sqlManage.batchUpdateSqlManage();
     const { result } = renderHooksWithRedux(() =>
-      useBatchAction(true, [], mockBatch)
+      useBatchIgnoreOrSolve(true, [], mockBatch)
     );
-    expect(result.current.batchActionsLoading).toBe(false);
+    expect(result.current.batchIgnoreLoading).toBe(false);
+    expect(result.current.batchSolveLoading).toBe(false);
     await act(async () => {
       result.current.onBatchIgnore();
       result.current.onBatchSolve();
@@ -52,13 +54,13 @@ describe('SqlManagement/useBatchAction', () => {
   it('send batch solve request', async () => {
     const request = sqlManage.batchUpdateSqlManage();
     const { result } = renderHooksWithRedux(() =>
-      useBatchAction(true, ['249'], mockBatch)
+      useBatchIgnoreOrSolve(true, ['249'], mockBatch)
     );
-    expect(result.current.batchActionsLoading).toBe(false);
+    expect(result.current.batchSolveLoading).toBe(false);
     await act(async () => {
       result.current.onBatchSolve();
     });
-    expect(result.current.batchActionsLoading).toBe(true);
+    expect(result.current.batchSolveLoading).toBe(true);
     expect(request).toBeCalledWith({
       project_name: mockProjectInfo.projectName,
       status: BatchUpdateSqlManageReqStatusEnum.solved,
@@ -66,15 +68,15 @@ describe('SqlManagement/useBatchAction', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockBatch).toBeCalledWith('批量解决SQL成功');
-    expect(result.current.batchActionsLoading).toBe(false);
+    expect(result.current.batchSolveLoading).toBe(false);
   });
 
   it('send batch ignore request', async () => {
     const request = sqlManage.batchUpdateSqlManage();
     const { result } = renderHooksWithRedux(() =>
-      useBatchAction(true, ['249'], mockBatch)
+      useBatchIgnoreOrSolve(true, ['249'], mockBatch)
     );
-    expect(result.current.batchActionsLoading).toBe(false);
+    expect(result.current.batchIgnoreLoading).toBe(false);
     await act(async () => {
       result.current.onBatchIgnore();
     });
@@ -85,6 +87,6 @@ describe('SqlManagement/useBatchAction', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockBatch).toBeCalledWith('批量忽略SQL成功');
-    expect(result.current.batchActionsLoading).toBe(false);
+    expect(result.current.batchIgnoreLoading).toBe(false);
   });
 });

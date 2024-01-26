@@ -3,11 +3,11 @@ import AssignmentBatch from './AssignmentBatch';
 import AssignmentSingle from './AssignmentSingle';
 import ChangeStatus from './ChangeStatus';
 import StatusDrawer from './StatusDrawer';
-import useTableRedux from '../hooks/useTableRedux';
+import useSqlManagementRedux from '../hooks/useSqlManagementRedux';
 import { ModalName } from '../../../../../data/ModalName';
 
-const SqleManagementModal = () => {
-  const { initModalStatus } = useTableRedux();
+const SqlManagementModal = () => {
+  const { initModalStatus } = useSqlManagementRedux();
 
   useEffect(() => {
     initModalStatus({
@@ -29,4 +29,4 @@ const SqleManagementModal = () => {
   );
 };
 
-export default SqleManagementModal;
+export default SqlManagementModal;

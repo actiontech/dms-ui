@@ -7,8 +7,8 @@ import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sq
 import { useMemo } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-const useBatchAction = (
-  actionPermission: boolean,
+const useBatchIgnoreOrSolve = (
+  hasPermissionAndNotArchive: boolean,
   selectedRowKeys: Key[],
   batchSuccessOperate: (message: string) => void
 ) => {
@@ -20,15 +20,19 @@ const useBatchAction = (
   );
 
   const [
-    batchActionsLoading,
-    { setFalse: finishBatchAction, setTrue: startBatchAction }
+    batchIgnoreLoading,
+    { setFalse: finishBatchIgnore, setTrue: startBatchIgnore }
+  ] = useBoolean();
+  const [
+    batchSolveLoading,
+    { setFalse: finishBatchSolve, setTrue: startBatchSolve }
   ] = useBoolean();
 
   const onBatchSolve = () => {
-    if (!actionPermission || selectedRowKeys.length === 0) {
+    if (!hasPermissionAndNotArchive || selectedRowKeys.length === 0) {
       return;
     }
-    startBatchAction();
+    startBatchSolve();
     SqlManage.BatchUpdateSqlManage({
       project_name: projectName,
       status: BatchUpdateSqlManageReqStatusEnum.solved,
@@ -42,14 +46,15 @@ const useBatchAction = (
         }
       })
       .finally(() => {
-        finishBatchAction();
+        finishBatchSolve();
       });
   };
+
   const onBatchIgnore = () => {
-    if (!actionPermission || selectedRowKeys.length === 0) {
+    if (!hasPermissionAndNotArchive || selectedRowKeys.length === 0) {
       return;
     }
-    startBatchAction();
+    startBatchIgnore();
     SqlManage.BatchUpdateSqlManage({
       project_name: projectName,
       status: BatchUpdateSqlManageReqStatusEnum.ignored,
@@ -63,15 +68,16 @@ const useBatchAction = (
         }
       })
       .finally(() => {
-        finishBatchAction();
+        finishBatchIgnore();
       });
   };
 
   return {
-    batchActionsLoading,
+    batchSolveLoading,
+    batchIgnoreLoading,
     onBatchSolve,
     onBatchIgnore
   };
 };
 
-export default useBatchAction;
+export default useBatchIgnoreOrSolve;

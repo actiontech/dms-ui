@@ -14,17 +14,17 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import { AssignmentFormField } from '../AssignmentForm/index.type';
-import useTableRedux from '../../hooks/useTableRedux';
+import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 
 const AssignmentBatch = () => {
   const { t } = useTranslation();
 
   const {
     open,
-    selectedSqlIdList: currentSelected,
-    updateIdList,
+    batchSelectSqlManagement: currentSelected,
+    setBatchSelectData,
     updateModalStatus
-  } = useTableRedux(ModalName.Assignment_Member_Batch);
+  } = useSqlManagementRedux(ModalName.Assignment_Member_Batch);
 
   const [messageApi, contextMessageHolder] = message.useMessage();
 
@@ -40,7 +40,7 @@ const AssignmentBatch = () => {
 
   const onCloseModal = () => {
     updateModalStatus(ModalName.Assignment_Member_Batch, false);
-    updateIdList(null);
+    setBatchSelectData(null);
   };
 
   const onSubmit = async () => {

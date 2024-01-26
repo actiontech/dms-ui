@@ -24,7 +24,8 @@ export const defaultActionButton = (
 
 export const actionsButtonData = (
   disabled: boolean,
-  batchActionsLoading: boolean,
+  batchSolveLoading: boolean,
+  batchIgnoreLoading: boolean,
   onBatchAssignment: () => void,
   onBatchSolve: () => void,
   onBatchIgnore: () => void
@@ -50,7 +51,7 @@ export const actionsButtonData = (
         onConfirm: onBatchSolve,
         title: i18n.t('sqlManagement.table.action.batch.solveTips'),
         okButtonProps: {
-          disabled: batchActionsLoading
+          disabled: batchSolveLoading
         }
       }
     },
@@ -64,7 +65,7 @@ export const actionsButtonData = (
         onConfirm: onBatchIgnore,
         title: i18n.t('sqlManagement.table.action.batch.ignoreTips'),
         okButtonProps: {
-          disabled: batchActionsLoading
+          disabled: batchIgnoreLoading
         }
       }
     }

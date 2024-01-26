@@ -1,4 +1,4 @@
-import useTableRedux from './useTableRedux';
+import useSqlManagementRedux from './useSqlManagementRedux';
 import { act, cleanup } from '@testing-library/react';
 import { sqlManageListData } from '../../../../../testUtils/mockApi/sqlManage/data';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -11,19 +11,19 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn()
 }));
 
-describe('SqlManagement/useTableRedux', () => {
+describe('SqlManagement/useSqlManagementRedux', () => {
   const dispatchSpy = jest.fn();
 
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
-        sqleManagement: {
+        sqlManagement: {
           modalStatus: {
             test: true
           },
-          selectSqlIdList: null,
-          selectSqleManagement: null
+          batchSelectSqlManagement: null,
+          selectSqlManagement: null
         }
       });
     });
@@ -37,21 +37,23 @@ describe('SqlManagement/useTableRedux', () => {
   });
 
   it('get redux data', async () => {
-    const { result } = renderHooksWithRedux(() => useTableRedux('test'));
+    const { result } = renderHooksWithRedux(() =>
+      useSqlManagementRedux('test')
+    );
     expect(result.current.open).toBe(true);
-    expect(result.current.selectedSqlIdList).toBe(null);
-    expect(result.current.selectedSqleManagement).toBe(null);
+    expect(result.current.batchSelectSqlManagement).toBe(null);
+    expect(result.current.selectSqlManagement).toBe(null);
   });
 
   it('init modal status', async () => {
-    const { result } = renderHooksWithRedux(() => useTableRedux());
+    const { result } = renderHooksWithRedux(() => useSqlManagementRedux());
     await act(async () => {
       result.current.initModalStatus({ test: true });
       jest.advanceTimersByTime(3000);
     });
     expect(dispatchSpy).toBeCalledTimes(1);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/initModalStatus',
+      type: 'sqlManagement/initModalStatus',
       payload: {
         modalStatus: {
           test: true
@@ -61,27 +63,27 @@ describe('SqlManagement/useTableRedux', () => {
   });
 
   it('set select data', async () => {
-    const { result } = renderHooksWithRedux(() => useTableRedux());
+    const { result } = renderHooksWithRedux(() => useSqlManagementRedux());
     await act(async () => {
       result.current.setSelectData(sqlManageListData?.data[0] as ISqlManage);
       jest.advanceTimersByTime(3000);
     });
     expect(dispatchSpy).toBeCalledTimes(1);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateSqleManagement',
+      type: 'sqlManagement/setSqlManagementSelectData',
       payload: sqlManageListData?.data[0] as ISqlManage
     });
   });
 
   it('update modal status', async () => {
-    const { result } = renderHooksWithRedux(() => useTableRedux());
+    const { result } = renderHooksWithRedux(() => useSqlManagementRedux());
     await act(async () => {
       result.current.updateModalStatus('test', true);
       jest.advanceTimersByTime(3000);
     });
     expect(dispatchSpy).toBeCalledTimes(1);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateModalStatus',
+      type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: 'test',
         status: true
@@ -89,15 +91,15 @@ describe('SqlManagement/useTableRedux', () => {
     });
   });
 
-  it('update sql id list', async () => {
-    const { result } = renderHooksWithRedux(() => useTableRedux());
+  it('set batch select data', async () => {
+    const { result } = renderHooksWithRedux(() => useSqlManagementRedux());
     await act(async () => {
-      result.current.updateIdList(sqlManageListData.data as ISqlManage[]);
+      result.current.setBatchSelectData(sqlManageListData.data as ISqlManage[]);
       jest.advanceTimersByTime(3000);
     });
     expect(dispatchSpy).toBeCalledTimes(1);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateSqlIdList',
+      type: 'sqlManagement/setSqlManagementBatchSelectData',
       payload: sqlManageListData.data as ISqlManage[]
     });
   });

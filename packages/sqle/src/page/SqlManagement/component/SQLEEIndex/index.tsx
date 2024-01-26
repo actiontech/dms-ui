@@ -41,12 +41,12 @@ import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { message } from 'antd';
-import SqleManagementModal from './Modal';
+import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
-import useTableRedux from './hooks/useTableRedux';
-import useBatchAction from './hooks/useBatchAction';
+import useSqlManagementRedux from './hooks/useSqlManagementRedux';
+import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
 import { actionsButtonData, defaultActionButton } from './index.data';
 import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 
@@ -62,7 +62,8 @@ const SQLEEIndex = () => {
     GetSqlManageListV2FilterStatusEnum.unhandled
   );
 
-  const { setSelectData, updateIdList, updateModalStatus } = useTableRedux();
+  const { setSelectData, setBatchSelectData, updateModalStatus } =
+    useSqlManagementRedux();
 
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
   const {
@@ -173,8 +174,8 @@ const SQLEEIndex = () => {
   }, [isAdmin, isProjectManager, jumpToAnalyze, openModal, projectName]);
 
   const actionPermission = useMemo(() => {
-    return !projectArchive && (isAdmin || isProjectManager(projectName));
-  }, [isAdmin, isProjectManager, projectName, projectArchive]);
+    return isAdmin || isProjectManager(projectName);
+  }, [isAdmin, isProjectManager, projectName]);
 
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
   const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
@@ -182,7 +183,10 @@ const SQLEEIndex = () => {
   const updateRemarkProtect = useRef(false);
   const updateRemark = useCallback(
     (id: number, remark: string) => {
-      if (updateRemarkProtect.current || !actionPermission) {
+      if (
+        updateRemarkProtect.current ||
+        !(actionPermission && !projectArchive)
+      ) {
         return;
       }
       updateRemarkProtect.current = true;
@@ -200,13 +204,18 @@ const SQLEEIndex = () => {
           updateRemarkProtect.current = false;
         });
     },
-    [actionPermission, projectName, refresh]
+    [actionPermission, projectName, refresh, projectArchive]
   );
 
   const columns = useMemo(
     () =>
-      SqlManagementColumn(projectID, actionPermission, updateRemark, openModal),
-    [projectID, actionPermission, updateRemark, openModal]
+      SqlManagementColumn(
+        projectID,
+        actionPermission && !projectArchive,
+        updateRemark,
+        openModal
+      ),
+    [projectID, actionPermission, projectArchive, updateRemark, openModal]
   );
 
   const tableSetting = useMemo<ColumnsSettingProps>(
@@ -236,11 +245,12 @@ const SQLEEIndex = () => {
     refresh();
   };
 
-  const { batchActionsLoading, onBatchIgnore, onBatchSolve } = useBatchAction(
-    actionPermission,
-    selectedRowKeys,
-    batchSuccessOperate
-  );
+  const { batchIgnoreLoading, batchSolveLoading, onBatchIgnore, onBatchSolve } =
+    useBatchIgnoreOrSolve(
+      actionPermission && !projectArchive,
+      selectedRowKeys,
+      batchSuccessOperate
+    );
 
   // export
   const [
@@ -292,19 +302,20 @@ const SQLEEIndex = () => {
   const onBatchAssignment = () => {
     updateModalStatus(ModalName.Assignment_Member_Batch, true);
     // selectedRowData
-    updateIdList(selectedRowData);
+    setBatchSelectData(selectedRowData);
   };
 
   const getTableActions = () => {
     const defaultButton = defaultActionButton(isAssigneeSelf, setAssigneeSelf);
     const actionButton = actionsButtonData(
       selectedRowKeys?.length === 0,
-      batchActionsLoading,
+      batchSolveLoading,
+      batchIgnoreLoading,
       onBatchAssignment,
       onBatchSolve,
       onBatchIgnore
     );
-    return actionPermission
+    return actionPermission && !projectArchive
       ? [...defaultButton, ...actionButton]
       : defaultButton;
   };
@@ -375,7 +386,7 @@ const SQLEEIndex = () => {
         actions={projectArchive ? undefined : actions}
       />
       {/* modal & drawer */}
-      <SqleManagementModal />
+      <SqlManagementModal />
     </>
   );
 };

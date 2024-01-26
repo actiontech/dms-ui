@@ -3,17 +3,17 @@ import { ModalName } from '../../../../../../data/ModalName';
 
 import ReportDrawer from '../../../../../../components/ReportDrawer';
 import useAuditResultRuleInfo from '../../../../../../page/Order/hooks/useAuditResultRuleInfo';
-import useTableRedux from '../../hooks/useTableRedux';
+import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 
 const StatusDrawer = () => {
   const { t } = useTranslation();
 
   const {
     open: visible,
-    selectedSqleManagement: selectedData,
+    selectSqlManagement: selectedData,
     setSelectData,
     updateModalStatus
-  } = useTableRedux(ModalName.View_Audit_Result_Drawer);
+  } = useSqlManagementRedux(ModalName.View_Audit_Result_Drawer);
 
   const { auditResultRuleInfo } = useAuditResultRuleInfo(
     selectedData?.audit_result ?? []

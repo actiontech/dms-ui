@@ -24,7 +24,7 @@ describe('page/SqlManagement', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         database: { driverMeta: driverMeta },
-        sqleManagement: {
+        sqlManagement: {
           modalStatus: {}
         }
       });

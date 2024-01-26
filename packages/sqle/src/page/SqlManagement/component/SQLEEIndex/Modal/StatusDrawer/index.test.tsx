@@ -40,11 +40,11 @@ describe('page/SqlManagement/StatusDrawer', () => {
   const customRender = (open?: boolean, selectData?: ISqlManage) => {
     return superRender(<StatusDrawer />, undefined, {
       initStore: {
-        sqleManagement: {
+        sqlManagement: {
           modalStatus: {
             [ModalName.View_Audit_Result_Drawer]: open ?? true
           },
-          selectSqleManagement: selectData ?? sqlManageListData.data[0]
+          selectSqlManagement: selectData ?? sqlManageListData.data[0]
         }
       }
     });
@@ -88,14 +88,14 @@ describe('page/SqlManagement/StatusDrawer', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(dispatchSpy).toBeCalledTimes(2);
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateModalStatus',
+      type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.View_Audit_Result_Drawer,
         status: false
       }
     });
     expect(dispatchSpy).toBeCalledWith({
-      type: 'sqleManagement/updateSqleManagement',
+      type: 'sqlManagement/setSqlManagementSelectData',
       payload: null
     });
   });

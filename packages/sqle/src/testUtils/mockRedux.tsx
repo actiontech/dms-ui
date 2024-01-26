@@ -3,11 +3,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { Dictionary } from '@actiontech/shared/lib/types/common.type';
-import sqleManagement from '../store/sqleManagement';
+import sqlManagement from '../store/sqlManagement';
 
 const reducers = combineReducers({
   whitelist,
-  sqleManagement
+  sqlManagement
 });
 
 export const storeFactory = (initStore: Dictionary = {}) => {
