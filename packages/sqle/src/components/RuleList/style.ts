@@ -71,13 +71,20 @@ export const RuleTypeItemStyleWrapper = styled('div')<{ active?: boolean }>`
 
 export const RulesStyleWrapper = styled('div')<{ pageHeaderHeight: number }>`
   display: flex;
-  padding: 0 30px 8px 40px;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
+  // #if [demo || ce]
+  height: calc(
+    100vh - ${({ pageHeaderHeight }) => 59 + 68 + 55 + pageHeaderHeight}px
+  );
+  padding: 0 30px 0 40px;
+  // #else
   height: calc(
     100vh - ${({ pageHeaderHeight }) => 59 + 68 + pageHeaderHeight}px
   );
+  padding: 0 30px 8px 40px;
+  // #endif
   overflow: hidden;
 
   .end-bottom-cont {
