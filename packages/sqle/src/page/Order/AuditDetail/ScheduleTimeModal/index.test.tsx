@@ -4,7 +4,6 @@ import { ScheduleTimeModalProps } from './index.type';
 import { renderWithTheme } from '../../../../testUtils/customRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import MockDate from 'mockdate';
-import dayjs from 'dayjs';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
