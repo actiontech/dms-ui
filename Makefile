@@ -5,11 +5,6 @@ override GID           = ${shell id -g}
 
 DOCKER_IMAGE  ?= reg.actiontech.com/actiontech-dev/pnpm:8.3.1-node16
 
-command         		= pnpm
-
-run:
-		$(DOCKER) run -v $(MAIN_MODULE):/app -w /app --rm $(DOCKER_IMAGE) sh -c "$(command)"
-
 pull_image:
 	$(DOCKER) pull ${DOCKER_IMAGE}
 
