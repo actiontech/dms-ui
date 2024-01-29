@@ -1,17 +1,10 @@
 import { useTranslation } from 'react-i18next';
 
 import { Space, message, Form, Radio } from 'antd';
-import { useDispatch } from 'react-redux';
 import { useBoolean } from 'ahooks';
-import { useSelector } from 'react-redux';
-import { IReduxState } from '../../../../../../../../base/src/store';
 import { useForm } from 'antd/es/form/Form';
 import { BasicButton, BasicModal } from '@actiontech/shared';
 import { ModalName } from '../../../../../../data/ModalName';
-import {
-  updateSqleManagementModalStatus,
-  updateSqleManagement
-} from '../../../../../../store/sqleManagement';
 import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
 import { IBatchUpdateSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -20,6 +13,7 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
+import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 
 export type ChangeStatusFields = {
   status: BatchUpdateSqlManageReqStatusEnum;
@@ -28,14 +22,14 @@ export type ChangeStatusFields = {
 const ChangeStatus = () => {
   const { t } = useTranslation();
   const [messageApi, contextMessageHolder] = message.useMessage();
-  const dispatch = useDispatch();
 
-  const open = useSelector<IReduxState, boolean>(
-    (state) => state.sqleManagement.modalStatus[ModalName.Change_Status_Single]
-  );
-  const currentSelected = useSelector<IReduxState, any | null>(
-    (state) => state.sqleManagement.selectSqleManagement
-  );
+  const {
+    open,
+    selectSqlManagement: currentSelected,
+    setSelectData,
+    updateModalStatus
+  } = useSqlManagementRedux(ModalName.Change_Status_Single);
+
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean(false);
   const [form] = useForm<ChangeStatusFields>();
@@ -47,13 +41,8 @@ const ChangeStatus = () => {
   };
 
   const onCloseModal = () => {
-    dispatch(
-      updateSqleManagementModalStatus({
-        modalName: ModalName.Change_Status_Single,
-        status: false
-      })
-    );
-    dispatch(updateSqleManagement(null));
+    updateModalStatus(ModalName.Change_Status_Single, false);
+    setSelectData(null);
     handleReset();
   };
 
@@ -62,7 +51,7 @@ const ChangeStatus = () => {
     startSubmit();
     const params: IBatchUpdateSqlManageParams = {
       project_name: projectName,
-      sql_manage_id_list: [currentSelected?.id],
+      sql_manage_id_list: [currentSelected?.id as number],
       status: values.status
     };
     SqlManage.BatchUpdateSqlManage(params)

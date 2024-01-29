@@ -1,11 +1,9 @@
 import { superRender } from '../../../../../testUtils/customRender';
 import WorkflowTemplateStepInfo from '.';
-import {
-  userTipListData,
-  workflowTemplateData
-} from '../../../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
 import { screen } from '@testing-library/react';
 import { IWorkflowTemplateStepInfoProps } from './index.type';
+import { userTipListData } from '../../../../../testUtils/mockApi/user/data';
 
 describe('page/WorkflowTemplate/WorkflowTemplateStepInfo', () => {
   beforeEach(() => {
