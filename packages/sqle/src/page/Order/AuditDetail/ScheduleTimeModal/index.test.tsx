@@ -24,7 +24,6 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
   };
 
   beforeEach(() => {
-    MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
     jest.useFakeTimers();
     // date picker : custom attr [hideSuperIcon]
     jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -33,7 +32,6 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
   afterEach(() => {
     jest.useRealTimers();
     jest.clearAllMocks();
-    MockDate.reset();
     (console.error as jest.Mock).mockRestore();
     cleanup();
   });
@@ -98,6 +96,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
   });
 
   it('render submit btn', async () => {
+    MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
     submitFn.mockImplementation(() => new Promise(() => 1));
     const { baseElement } = customRender({
       open: true
@@ -120,6 +119,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     fireEvent.click(submitBtn);
     await act(async () => jest.advanceTimersByTime(300));
     expect(submitFn).toBeCalled();
-    expect(submitFn).toBeCalledWith('2024-01-29T00:00:00+08:00');
+    expect(submitFn).toBeCalledWith('2024-12-29T00:00:00+08:00');
+    MockDate.reset();
   });
 });
