@@ -3,7 +3,7 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { userTipListData, workflowTemplateData } from './data';
+import { workflowTemplateData } from './data';
 import user from '@actiontech/shared/lib/api/sqle/service/user';
 import { cloneDeep } from 'lodash';
 
@@ -11,7 +11,6 @@ class MockWorkflowTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
     this.updateWorkflowTemplate();
     this.getWorkflowTemplate();
-    this.getUserTip();
   }
 
   public updateWorkflowTemplate() {
@@ -27,16 +26,6 @@ class MockWorkflowTemplateApi implements MockSpyApy {
         data: cloneDeep(workflowTemplateData)
       });
     });
-    return spy;
-  }
-
-  public getUserTip() {
-    const spy = jest.spyOn(user, 'getUserTipListV1');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: userTipListData
-      })
-    );
     return spy;
   }
 }

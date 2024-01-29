@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/SqlManagement/StatusTag render ignored status tag 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-1u3lh6f css-dev-only-do-not-override-txh9fw"
+      style="background-color: gray;"
+    >
+      已忽略
+    </span>
+  </div>
+</body>
+`;
+
+exports[`page/SqlManagement/StatusTag render manual_audited status tag 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+    >
+      已人工审核
+    </span>
+  </div>
+</body>
+`;
+
+exports[`page/SqlManagement/StatusTag render solved status tag 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    >
+      已解决
+    </span>
+  </div>
+</body>
+`;
+
+exports[`page/SqlManagement/StatusTag render unhandled status tag 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+    >
+      未处理
+    </span>
+  </div>
+</body>
+`;
