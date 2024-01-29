@@ -4,10 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { CEIndexStyleWrapper } from './style';
 import Icon from '@ant-design/icons';
 import BasicButton from '../BasicButton';
-import {
-  IconBookMark,
-  IconCustomService
-} from '../Icons/EnterpriseFeatureDisplay';
+import { IconBookMark, IconCustomService } from '../../Icon/common';
 import { DMS_DEFAULT_WEB_TITLE } from '../../data/common';
 import EmptyBox from '../EmptyBox';
 import VersionComparison from './components/VersionComparison';

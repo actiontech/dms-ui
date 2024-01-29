@@ -69,15 +69,22 @@ export const RuleTypeItemStyleWrapper = styled('div')<{ active?: boolean }>`
   }
 `;
 
-export const RulesStyleWrapper = styled('div')<{ pageHeaderHeight: number }>`
+export const RulesStyleWrapper = styled('div')<{
+  pageHeaderHeight: number;
+  paddingBottomNone: boolean;
+}>`
   display: flex;
-  padding: 0 30px 8px 40px;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  height: calc(
-    100vh - ${({ pageHeaderHeight }) => 59 + 68 + pageHeaderHeight}px
-  );
+  height: ${({ paddingBottomNone, pageHeaderHeight }) =>
+    `calc(100vh - ${
+      paddingBottomNone
+        ? 59 + 68 + 55 + pageHeaderHeight
+        : 59 + 68 + pageHeaderHeight
+    }px)`};
+  padding: 0 30px ${({ paddingBottomNone }) => (paddingBottomNone ? 0 : '8px')}
+    40px;
   overflow: hidden;
 
   .end-bottom-cont {

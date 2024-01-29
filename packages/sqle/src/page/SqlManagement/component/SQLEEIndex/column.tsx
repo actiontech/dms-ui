@@ -150,7 +150,7 @@ export const SqlManagementRowAction = (
       },
       {
         text: t('sqlManagement.table.action.analyze'),
-        key: 'change-status-single',
+        key: 'analyze-sql',
         buttonProps: (record) => {
           return {
             onClick: () => {
@@ -165,12 +165,12 @@ export const SqlManagementRowAction = (
 
 const SqlManagementColumn: (
   projectID: string,
-  actionPermission: boolean,
+  hasPermissionAndNotArchive: boolean,
   updateRemark: (id: number, remark: string) => void,
   openModal: (name: ModalName, row?: ISqlManage) => void
 ) => ActiontechTableColumn<ISqlManage, SqlManagementTableFilterParamType> = (
   projectID,
-  actionPermission,
+  hasPermissionAndNotArchive,
   updateRemark,
   openModal
 ) => {
@@ -369,7 +369,7 @@ const SqlManagementColumn: (
       title: () => t('sqlManagement.table.column.comment'),
       className: 'ellipsis-column-width',
       render: (remark: string, record) => {
-        if (!actionPermission)
+        if (!hasPermissionAndNotArchive)
           return remark ? <BasicTypographyEllipsis textCont={remark} /> : '-';
         return (
           <EditText

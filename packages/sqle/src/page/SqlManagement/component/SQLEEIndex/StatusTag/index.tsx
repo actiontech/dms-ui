@@ -10,6 +10,20 @@ export interface IStatusTag {
 
 const StatusTag = ({ status }: IStatusTag) => {
   const { t } = useTranslation();
+
+  const statusText = {
+    [SqlManageStatusEnum.ignored]: t(
+      'sqlManagement.table.filter.status.ignored'
+    ),
+    [SqlManageStatusEnum.manual_audited]: t(
+      'sqlManagement.table.filter.status.manual_audited'
+    ),
+    [SqlManageStatusEnum.solved]: t('sqlManagement.table.filter.status.solved'),
+    [SqlManageStatusEnum.unhandled]: t(
+      'sqlManagement.table.filter.status.unhandled'
+    )
+  };
+
   const color = useMemo(() => {
     const allColor = {
       unhandled: 'red',
@@ -23,7 +37,7 @@ const StatusTag = ({ status }: IStatusTag) => {
   return (
     <>
       <BasicTag size="small" color={color as BasicTagColor}>
-        {t(`sqlManagement.table.filter.status.${status}`)}
+        {statusText[status]}
       </BasicTag>
     </>
   );

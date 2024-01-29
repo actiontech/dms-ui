@@ -215,6 +215,9 @@ const RuleList: React.FC<RuleListProps> = ({
       <RulesStyleWrapper
         pageHeaderHeight={pageHeaderHeight}
         className="rule-list-wrapper"
+        // #if [demo || ce]
+        paddingBottomNone={true}
+        // #endif
       >
         <EmptyBox
           if={rules.length > 0}

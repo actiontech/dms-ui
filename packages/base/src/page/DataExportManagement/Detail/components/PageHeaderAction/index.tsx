@@ -30,23 +30,22 @@ const ExportDetailPageHeaderAction: React.FC = () => {
     <ExportDetailPageHeaderExtraStyleWrapper>
       {messageContentHolder}
 
-      <div hidden={closeWorkflowButtonMeta.hidden}>
-        <BasicButton
-          disabled={closeWorkflowButtonMeta.loading}
-          loading={closeWorkflowButtonMeta.loading}
-          danger
-          onClick={closeWorkflowButtonMeta.action}
-        >
-          {t('dmsDataExport.detail.action.close.text')}
-        </BasicButton>
-
-        <Divider
-          type="vertical"
-          className="export-detail-page-header-divider"
-        />
-      </div>
-
       <EmptyBox if={!projectArchive}>
+        <div hidden={closeWorkflowButtonMeta.hidden}>
+          <BasicButton
+            disabled={closeWorkflowButtonMeta.loading}
+            loading={closeWorkflowButtonMeta.loading}
+            danger
+            onClick={closeWorkflowButtonMeta.action}
+          >
+            {t('dmsDataExport.detail.action.close.text')}
+          </BasicButton>
+
+          <Divider
+            type="vertical"
+            className="export-detail-page-header-divider"
+          />
+        </div>
         <BasicButton
           hidden={rejectWorkflowButtonMeta.hidden}
           onClick={rejectWorkflowButtonMeta.action}

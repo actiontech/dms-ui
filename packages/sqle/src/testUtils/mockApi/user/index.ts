@@ -2,9 +2,8 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-
 import user from '@actiontech/shared/lib/api/sqle/service/user';
-import { UserTipListData } from './data';
+import { userTipListData } from './data';
 
 class MockUserApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -15,7 +14,7 @@ class MockUserApi implements MockSpyApy {
     const spy = jest.spyOn(user, 'getUserTipListV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: UserTipListData
+        data: userTipListData
       })
     );
     return spy;
