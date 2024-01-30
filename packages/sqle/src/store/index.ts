@@ -4,7 +4,7 @@ import ruleTemplate from './ruleTemplate';
 import auditPlan from './auditPlan';
 import reportStatistics from './reportStatistics';
 import globalRuleTemplate from './globalRuleTemplate';
-import sqleManagement from './sqleManagement';
+import sqlManagement from './sqlManagement';
 
 export const SQLEStoreData = {
   whitelist,
@@ -12,7 +12,7 @@ export const SQLEStoreData = {
   auditPlan,
   reportStatistics,
   globalRuleTemplate,
-  sqleManagement
+  sqlManagement
 };
 
 const store = configureStore({

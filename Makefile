@@ -1,23 +1,18 @@
 override DOCKER        = $(shell which docker)
 override MAIN_MODULE   = ${shell pwd}
-override PROJECT_NAME  = dms-ui
-override VERSION = 99.99.99
+override UID           = ${shell id -u}
+override GID           = ${shell id -g}
 
 DOCKER_IMAGE  ?= reg.actiontech.com/actiontech-dev/pnpm:8.3.1-node16
-RELEASE_FTPD_HOST ?= ftpadmin:KFQsB9g0aut7@10.186.18.90
-OUTER_BUILD_NAME = $(PROJECT_NAME).tar.gz
-FTP_BUILD_NAME = $(PROJECT_NAME)-$(VERSION).tar.gz
-
 
 pull_image:
 	$(DOCKER) pull ${DOCKER_IMAGE}
 
 docker_install_node_modules:
-	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm config set registry https://registry.npm.taobao.org && pnpm install --no-frozen-lockfile"
+	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm install --frozen-lockfile"
 
 docker_check: pull_image docker_install_node_modules
 	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app -w /usr/src/app --rm $(DOCKER_IMAGE) pnpm checker
-
 
 docker_test: pull_image docker_install_node_modules
 	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app -w /usr/src/app --rm $(DOCKER_IMAGE) pnpm test:ci
@@ -25,10 +20,11 @@ docker_test: pull_image docker_install_node_modules
 docker_clean:
 	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "git config --global --add safe.directory /usr/src/app && git clean -dfx"
 
-docker_build: pull_image docker_install_node_modules
-	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app -w /usr/src/app --rm $(DOCKER_IMAGE) pnpm build && tar zcf ${OUTER_BUILD_NAME} ./packages/base/dist
+docker_build_ce: pull_image docker_install_node_modules
+	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build"
 
+docker_build_ee: pull_image docker_install_node_modules
+	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build:ee"
 
-upload:
-	curl -T $(OUTER_BUILD_NAME)  \
-	ftp://$(RELEASE_FTPD_HOST)/actiontech-$(PROJECT_NAME)/$(VERSION)/$(FTP_BUILD_NAME) --ftp-create-dirs
+docker_build_demo: pull_image docker_install_node_modules
+	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build:demo"
