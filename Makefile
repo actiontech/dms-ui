@@ -32,5 +32,8 @@ docker_build_sqle_demo: pull_image docker_install_node_modules
 docker_build_provision: pull_image docker_install_node_modules
 	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build:provision"
 
+docker_build_diagnosis: pull_image docker_install_node_modules
+	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build:diagnosis"
+
 docker_build_dms: pull_image docker_install_node_modules
 	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build"
