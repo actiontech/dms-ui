@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/page/Nav/SideMenu/ProjectTitle render snap 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="title"
+      >
+        <span
+          class="label label-primary"
+        >
+          Action
+        </span>
+        <span
+          class="label label-base"
+        >
+          SQLE
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
