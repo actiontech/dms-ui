@@ -2,6 +2,24 @@
 
 exports[`test base/hooks/useThemeStyleData should match snapshot 1`] = `
 Object {
+  "dataExport": Object {
+    "create": Object {
+      "form": Object {
+        "baseInfoTitleIconColor": "#c3c6cd",
+      },
+    },
+    "statistics": Object {
+      "auditResultStatusColor": Object {
+        "cancel": "#7D8CA8",
+        "exporting": "#6094FC",
+        "failed": "#F59957",
+        "finish": "#41BF9A",
+        "rejected": "#EBAD1C",
+        "wait_for_approve": "#7453DA",
+        "wait_for_export": "#7470ED",
+      },
+    },
+  },
   "guidance": Object {
     "gap": 24,
     "guidanceButton": Object {

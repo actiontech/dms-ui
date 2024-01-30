@@ -16,8 +16,9 @@ import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 import { IAuditPlanSQLHeadV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { AuditPlanSQLHeadV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import HighlightCode from '../../../../utils/HighlightCode';
 import { useTableRequestParams } from '@actiontech/shared/lib/components/ActiontechTable';
+
+import RenderSQL from '../../../../components/RenderSQL';
 
 const DetailCom = () => {
   const { t } = useTranslation();
@@ -71,18 +72,12 @@ const DetailCom = () => {
           (head as IAuditPlanSQLHeadV1[]).map((item) => ({
             title: item.desc,
             dataIndex: item.name,
-            width: item.type === AuditPlanSQLHeadV1TypeEnum.sql ? 300 : 'auto',
+            width: item.type === AuditPlanSQLHeadV1TypeEnum.sql ? 500 : 'auto',
             render: (text) => {
               if (item.type === AuditPlanSQLHeadV1TypeEnum.sql) {
-                // todo: RenderSQL
                 return (
-                  <div className="sql-cont-width">
-                    <pre
-                      dangerouslySetInnerHTML={{
-                        __html: HighlightCode.highlightSql(text)
-                      }}
-                      className="pre-warp-break-all"
-                    ></pre>
+                  <div className="sql-cont-width" style={{ width: 500 }}>
+                    <RenderSQL sql={text} />
                   </div>
                 );
               }
