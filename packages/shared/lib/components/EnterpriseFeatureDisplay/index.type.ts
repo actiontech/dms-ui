@@ -1,4 +1,5 @@
 import { I18nKey } from '../../locale';
+import { BasicTagColor } from '../../theme/theme.type';
 
 export type EnterpriseFeatureDisplayProps = {
   children: React.ReactNode;
@@ -9,8 +10,12 @@ export type EnterpriseFeatureDisplayProps = {
 
 export type VersionComparisonItem = {
   key: string;
+  color: BasicTagColor;
+  type: I18nKey;
   title: I18nKey;
+  subtitle: I18nKey;
+  buttonText: I18nKey;
+  termText?: I18nKey;
   applyLink: string;
-  contactLink: string;
   contentDesc: I18nKey;
 };

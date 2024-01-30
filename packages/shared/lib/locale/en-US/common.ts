@@ -218,14 +218,26 @@ export default {
     currentVersion: '当前版本',
     ce: '社区版',
     ee: '企业版',
-    demo: '企业体验版',
+    demo: '专业版',
     startApply: '开始试用',
-    contactUs: '联系我们',
     ceDesc:
-      'MySQL插件\n100+规则\nSQL快捷审核\n创建工单时支持单数据源审核\n支持库表元数据、MyBatis等扫描任务\n单一项目\n自定义审批流程模板\n自定义审核规则模板\n钉钉审批\n邮件、企业微信、飞书推送告警\n免费',
+      '支持纳管MySQL数据源\n支持资源权限隔离\n集成CloudBeaver在线查询\n提供专业SQL审核能力\n支持多方式采集MySQL数据\n无实例限制',
     demoDesc:
-      '全量数据库插件\n每种插件15+规则\nSQL快捷审核\n创建工单时支持多数据源审核\n白名单审核\nSQL下钻分析\n在社区版基础上，支持慢日志扫描\nSQL管控\n多项目\n自定义审批流程模板\n自定义审核规则模板\n钉钉、飞书审批\n在社区版基础上，支持webhook告警\n免费',
+      '支持纳管10多种主流数据源\n支持资源权限隔离\n集成CloudBeaver在线查询\n提供专业SQL审核能力\n支持多方式采集各数据源数据\n最大实例个数20',
     eeDesc:
-      '全量数据库插件\n900+规则\nSQL快捷审核\n创建工单时支持多数据源审核\n白名单审核\nSQL下钻分析\n在社区版基础上，支持慢日志扫描\nSQL管控\n多项目\n自定义审批流程模板\n自定义审核规则模板\n钉钉、飞书审批\n在社区版基础上，支持webhook告警\n付费'
+      '支持纳管10多种主流数据源\n支持资源权限隔离\n集成CloudBeaver在线查询\n提供专业SQL审核能力\n支持多方式采集各数据源数据\n无实例限制\n多维度智能统计\n个性化定制',
+    ceSubTitle: '适用于MySQL基础审核场景',
+    demoSubTitle: '适用于多种数据源类型体验场景',
+    eeSubTitle: '适用于私有云用户定制场景',
+    ceTitle: 'Free',
+    demoTitle: 'Free',
+    eeTitle: 'Custom',
+    ceTerm: '永久',
+    demoTerm: '永久',
+    ceButtonText: '快速部署',
+    demoButtonText: '立即申请',
+    eeButtonText: '联系我们',
+    bottomDesc: '各版本完整功能对比请参考：',
+    functionalComparison: '功能对比'
   }
 };

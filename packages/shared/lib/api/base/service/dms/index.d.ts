@@ -35,6 +35,16 @@ import {
   IProject,
   IAddProjectReply,
   IUpdateProject,
+  IBatchGetDataExportTaskReply,
+  IDataExportTask,
+  IAddDataExportTaskReply,
+  IListDataExportTaskSQLsReply,
+  IListDataExportWorkflowsReply,
+  IDataExportWorkflow,
+  IAddDataExportWorkflowReply,
+  ICancelDataExportWorkflowPayload,
+  IGetDataExportWorkflowReply,
+  IRejectDataExportWorkflowPayload,
   IListDatabaseSourceServicesReply,
   IDatabaseSourceService,
   IAddDatabaseSourceServiceReply,
@@ -45,6 +55,7 @@ import {
   IAddDBServiceReply,
   ICheckDbConnectable,
   ICheckDBServiceIsConnectableReply,
+  IListDBServiceTipsReply,
   IUpdateDBService,
   IListMemberGroupsReply,
   IMemberGroup,
@@ -55,6 +66,7 @@ import {
   IMember,
   IAddMemberReply,
   IListMembersForInternalReply,
+  IListMemberTipsReply,
   IUpdateMember,
   IDMSProxyTarget,
   IListRoleReply,
@@ -84,7 +96,9 @@ import {
   ListOpPermissionsOrderByEnum,
   ListOpPermissionsFilterByTargetEnum,
   ListProjectsOrderByEnum,
+  ListDataExportWorkflowsFilterByStatusEnum,
   ListDBServicesOrderByEnum,
+  ListDBServiceTipsFunctionalModuleEnum,
   ListMemberGroupsOrderByEnum,
   ListMembersOrderByEnum,
   ListRolesOrderByEnum,
@@ -281,6 +295,119 @@ export interface IArchiveProjectParams {
 
 export interface IArchiveProjectReturn extends IGenericResp {}
 
+export interface IBatchGetDataExportTaskParams {
+  project_uid: string;
+
+  data_export_task_uids: string;
+}
+
+export interface IBatchGetDataExportTaskReturn
+  extends IBatchGetDataExportTaskReply {}
+
+export interface IAddDataExportTaskParams {
+  project_uid: string;
+
+  data_export_tasks?: IDataExportTask[];
+}
+
+export interface IAddDataExportTaskReturn extends IAddDataExportTaskReply {}
+
+export interface IListDataExportTaskSQLsParams {
+  project_uid: string;
+
+  data_export_task_uid: string;
+
+  page_size: number;
+
+  page_index?: number;
+}
+
+export interface IListDataExportTaskSQLsReturn
+  extends IListDataExportTaskSQLsReply {}
+
+export interface IDownloadDataExportTaskParams {
+  project_uid: string;
+
+  data_export_task_uid: string;
+}
+
+export interface IListDataExportWorkflowsParams {
+  project_uid: string;
+
+  page_size: number;
+
+  page_index?: number;
+
+  filter_by_status?: ListDataExportWorkflowsFilterByStatusEnum;
+
+  filter_by_create_user_uid?: string;
+
+  filter_current_step_assignee_user_uid?: string;
+
+  filter_by_db_service_uid?: string;
+
+  filter_create_time_from?: string;
+
+  filter_create_time_to?: string;
+
+  fuzzy_keyword?: string;
+}
+
+export interface IListDataExportWorkflowsReturn
+  extends IListDataExportWorkflowsReply {}
+
+export interface IAddDataExportWorkflowParams {
+  project_uid: string;
+
+  data_export_workflow?: IDataExportWorkflow;
+}
+
+export interface IAddDataExportWorkflowReturn
+  extends IAddDataExportWorkflowReply {}
+
+export interface ICancelDataExportWorkflowParams {
+  project_uid: string;
+
+  payload: ICancelDataExportWorkflowPayload;
+}
+
+export interface ICancelDataExportWorkflowReturn extends IGenericResp {}
+
+export interface IGetDataExportWorkflowParams {
+  data_export_workflow_uid: string;
+
+  project_uid: string;
+}
+
+export interface IGetDataExportWorkflowReturn
+  extends IGetDataExportWorkflowReply {}
+
+export interface IApproveDataExportWorkflowParams {
+  project_uid: string;
+
+  data_export_workflow_uid: string;
+}
+
+export interface IApproveDataExportWorkflowReturn extends IGenericResp {}
+
+export interface IExportDataExportWorkflowParams {
+  project_uid: string;
+
+  data_export_workflow_uid: string;
+}
+
+export interface IExportDataExportWorkflowReturn extends IGenericResp {}
+
+export interface IRejectDataExportWorkflowParams {
+  project_uid: string;
+
+  data_export_workflow_uid: string;
+
+  payload: IRejectDataExportWorkflowPayload;
+}
+
+export interface IRejectDataExportWorkflowReturn extends IGenericResp {}
+
 export interface IListDatabaseSourceServicesParams {
   project_uid: string;
 }
@@ -381,6 +508,16 @@ export interface ICheckDBServiceIsConnectableParams {
 
 export interface ICheckDBServiceIsConnectableReturn
   extends ICheckDBServiceIsConnectableReply {}
+
+export interface IListDBServiceTipsParams {
+  project_uid: string;
+
+  filter_db_type?: string;
+
+  functional_module?: ListDBServiceTipsFunctionalModuleEnum;
+}
+
+export interface IListDBServiceTipsReturn extends IListDBServiceTipsReply {}
 
 export interface IUpdateDBServiceParams {
   project_uid: string;
@@ -489,6 +626,12 @@ export interface IListMembersForInternalParams {
 
 export interface IListMembersForInternalReturn
   extends IListMembersForInternalReply {}
+
+export interface IListMemberTipsParams {
+  project_uid: string;
+}
+
+export interface IListMemberTipsReturn extends IListMemberTipsReply {}
 
 export interface IUpdateMemberParams {
   project_uid: string;

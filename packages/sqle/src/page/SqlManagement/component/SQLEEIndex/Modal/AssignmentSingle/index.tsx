@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../data/ModalName';
 
@@ -6,12 +5,6 @@ import { Space, message } from 'antd';
 import AssignmentForm from '../AssignmentForm';
 
 import { useBoolean } from 'ahooks';
-import { useSelector } from 'react-redux';
-import { IReduxState } from '../../../../../../../../base/src/store';
-import {
-  updateSqleManagementModalStatus,
-  updateSqleManagement
-} from '../../../../../../store/sqleManagement';
 import { useForm } from 'antd/es/form/Form';
 import { BasicButton, BasicModal } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -21,21 +14,20 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import { AssignmentFormField } from '../AssignmentForm/index.type';
-import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
+import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 
 const AssignmentSingle = () => {
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const {
+    open,
+    selectSqlManagement: currentSelected,
+    setSelectData,
+    updateModalStatus
+  } = useSqlManagementRedux(ModalName.Assignment_Member_Single);
 
   const [messageApi, contextMessageHolder] = message.useMessage();
-  const open = useSelector<IReduxState, boolean>(
-    (state) =>
-      state.sqleManagement.modalStatus[ModalName.Assignment_Member_Single]
-  );
-  const currentSelected = useSelector<IReduxState, ISqlManage | null>(
-    (state) => state.sqleManagement.selectSqleManagement
-  );
+
   const { projectName } = useCurrentProject();
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
@@ -47,13 +39,8 @@ const AssignmentSingle = () => {
   };
 
   const onCloseModal = () => {
-    dispatch(
-      updateSqleManagementModalStatus({
-        modalName: ModalName.Assignment_Member_Single,
-        status: false
-      })
-    );
-    dispatch(updateSqleManagement(null));
+    updateModalStatus(ModalName.Assignment_Member_Single, false);
+    setSelectData(null);
   };
 
   const onSubmit = async () => {

@@ -13,6 +13,7 @@ import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 import DataSourceList from '.';
+import dbServices from '../../../../testUtils/mockApi/dbServices';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -64,6 +65,7 @@ describe('page/DataSource/DataSourceList', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     useParamsMock.mockReturnValue({ projectID });
     dms.mockAllApi();
+    dbServices.ListDBServicesTips();
   });
 
   afterEach(() => {
@@ -89,6 +91,7 @@ describe('page/DataSource/DataSourceList', () => {
 
   it('render table for api return no data', async () => {
     const requestTableList = dms.getListDBServices();
+    const dbServiceTips = dbServices.ListDBServicesTips();
     requestTableList.mockImplementationOnce(() =>
       createSpySuccessResponse({ total_nums: 0, data: [] })
     );
@@ -98,7 +101,11 @@ describe('page/DataSource/DataSourceList', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestListDBServiceDriver).toBeCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestTableList).toBeCalledTimes(2);
+    expect(dbServiceTips).toBeCalledTimes(1);
+    expect(dbServiceTips).nthCalledWith(1, {
+      project_uid: projectID
+    });
+    expect(requestTableList).toBeCalledTimes(1);
     expect(requestTableList).nthCalledWith(1, {
       fuzzy_keyword: '',
       page_index: 1,
@@ -108,10 +115,6 @@ describe('page/DataSource/DataSourceList', () => {
     expect(baseElement).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestTableList).nthCalledWith(2, {
-      page_size: 9999,
-      project_uid: projectID
-    });
     expect(baseElement).toMatchSnapshot();
   });
 

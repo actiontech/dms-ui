@@ -2,16 +2,14 @@ import { superRender } from '../../../../../testUtils/customRender';
 import ReviewAndExecNodeInfo from '.';
 import { Form, Select } from 'antd';
 import { NodeTypeEnum } from './index.type';
-import {
-  userTipListData,
-  workflowTemplateData
-} from '../../../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
 import { act, fireEvent, screen, renderHook } from '@testing-library/react';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { userTipListData } from '../../../../../testUtils/mockApi/user/data';
 
 describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
   beforeEach(() => {
@@ -108,8 +106,8 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
       ...workflowTemplateData.workflow_step_template_list[0],
       assignee_user_id_list: ['1739544663515205632']
     });
-    expect(screen.getByText('one')).toBeInTheDocument();
-    expect(screen.getByText('two')).toBeInTheDocument();
+    expect(screen.getAllByText('test')?.[0]).toBeInTheDocument();
+    expect(screen.getByText('admin')).toBeInTheDocument();
     const desc = 'this is desc';
     fireEvent.change(getBySelector('#desc'), {
       target: { value: desc }

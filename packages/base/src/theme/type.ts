@@ -1,3 +1,5 @@
+import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+
 export type SideMenuTheme = {
   suffixIconColor: string;
   projectSelector: {
@@ -65,5 +67,18 @@ export type SystemTheme = {
   };
   logo: {
     boxShadow: string;
+  };
+};
+
+export type DataExportTheme = {
+  create: {
+    form: {
+      baseInfoTitleIconColor: string;
+    };
+  };
+  statistics: {
+    auditResultStatusColor: {
+      [key in WorkflowRecordStatusEnum]: string;
+    };
   };
 };
