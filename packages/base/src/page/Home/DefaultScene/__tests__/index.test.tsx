@@ -5,7 +5,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 import { useNavigate } from 'react-router-dom';
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
-import { RuleUrlParamKey } from 'sqle/src/page/Rule/hooks/useRuleFilterFormItem';
+import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 
 jest.mock('react-router-dom', () => {
   return {

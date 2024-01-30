@@ -5,7 +5,7 @@ import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 import { useNavigate } from 'react-router-dom';
-import { RuleUrlParamKey } from 'sqle/src/page/Rule/hooks/useRuleFilterFormItem';
+import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 
 jest.mock('react-router-dom', () => {
   return {

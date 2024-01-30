@@ -1,8 +1,8 @@
 import { cleanup, fireEvent, screen } from '@testing-library/react';
-import StepItems from '.';
-import { superRender } from '../../../../../testUtils/customRender';
-import { AdminUserDevopsSteps, NormalUserDevopsSteps } from './index.data';
-import { RuleUrlParamKey } from 'sqle/src/page/Rule/hooks/useRuleFilterFormItem';
+import StepItems from '..';
+import { superRender } from '../../../../../../testUtils/customRender';
+import { AdminUserDevopsSteps, NormalUserDevopsSteps } from '../index.data';
+import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 
 describe('test base/Home/StepItems', () => {
   it('should match snapshot', () => {
@@ -82,6 +82,12 @@ describe('test base/Home/StepItems', () => {
     expect(navigateSpy).toBeCalledTimes(13);
     expect(navigateSpy).toBeCalledWith(
       `/sqle/project/${projectID}/operationRecord`
+    );
+
+    fireEvent.click(screen.getByText('发起导出工单'));
+    expect(navigateSpy).toBeCalledTimes(14);
+    expect(navigateSpy).toBeCalledWith(
+      `project/${projectID}/data/export/create`
     );
 
     cleanup();
