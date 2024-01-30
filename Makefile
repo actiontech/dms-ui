@@ -4,6 +4,19 @@ override UID           = ${shell id -u}
 override GID           = ${shell id -g}
 
 DOCKER_IMAGE  ?= reg.actiontech.com/actiontech-dev/pnpm:8.3.1-node16
+COMMAND       ?=
+EDITION       ?=ce
+
+ifeq ($(EDITION),ce)
+    COMMAND :=pnpm start
+else ifeq ($(EDITION),ee)
+    COMMAND :=pnpm start:ee
+else ifeq ($(EDITION),demo)
+    COMMAND :=pnpm start:demo
+endif
+
+start:
+	$(DOCKER) run -v $(MAIN_MODULE):/app -w /app -p 30201:3020 --name=dms_ui_dev_${EDITION} $(DOCKER_IMAGE) sh -c "${COMMAND} --no-open"	
 
 pull_image:
 	$(DOCKER) pull ${DOCKER_IMAGE}
