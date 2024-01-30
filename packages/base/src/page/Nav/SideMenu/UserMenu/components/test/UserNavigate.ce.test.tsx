@@ -37,7 +37,6 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
   const versionModalOpenFn = jest.fn();
   const navigateSpy = jest.fn();
   const scopeDispatch = jest.fn();
-  let requestGetCompanyNotice: jest.SpyInstance;
   let requestDelSession: jest.SpyInstance;
   const customRender = () => {
     return superRender(
@@ -52,7 +51,6 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => scopeDispatch);
     jest.useFakeTimers();
-    requestGetCompanyNotice = dms.getCompanyNotice();
     requestDelSession = dms.delSession();
     mockUseUserInfo();
   });
