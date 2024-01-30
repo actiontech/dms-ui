@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+      searchinputref="[object Object]"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+        >
+          <span
+            class="custom-select-option-content css-vgjuov"
+          >
+            <span
+              class="custom-select-option-content-prefix"
+            >
+              <span>
+                prefix node
+              </span>
+            </span>
+            <span
+              class="custom-select-option-content-label"
+            >
+              testA
+            </span>
+          </span>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
+          role="img"
+        >
+          <svg
+            fill="currentColor"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+      searchinputref="[object Object]"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+        >
+          <span
+            class="custom-select-option-content css-vgjuov"
+          >
+            <span
+              class="custom-select-option-content-prefix"
+            >
+              <span>
+                prefix node
+              </span>
+            </span>
+            <span
+              class="custom-select-option-content-label"
+            >
+              testA
+            </span>
+          </span>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
+          role="img"
+        >
+          <svg
+            fill="currentColor"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 3`] = `
+<body>
+  <div>
+    <div
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+      searchinputref="[object Object]"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+        >
+          <span
+            class="custom-select-option-content css-vgjuov"
+          >
+            <span
+              class="custom-select-option-content-prefix"
+            >
+              <span>
+                prefix node
+              </span>
+            </span>
+            <span
+              class="custom-select-option-content-label"
+            >
+              testA
+            </span>
+          </span>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
+          role="img"
+        >
+          <svg
+            fill="currentColor"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/ProjectSelector render snap when has data 4`] = `
+<body>
+  <div>
+    <div
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+      searchinputref="[object Object]"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+        >
+          <span
+            class="custom-select-option-content css-vgjuov"
+          >
+            <span
+              class="custom-select-option-content-prefix"
+            >
+              <span>
+                prefix node
+              </span>
+            </span>
+            <span
+              class="custom-select-option-content-label"
+            >
+              testA
+            </span>
+          </span>
+        </span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
+          role="img"
+        >
+          <svg
+            fill="currentColor"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/page/Nav/SideMenu/ProjectSelector render snap when no data 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+      searchinputref="[object Object]"
+    >
+      <div
+        class="ant-select-selector"
+      >
+        <span
+          class="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+            aria-autocomplete="list"
+            aria-controls="rc_select_TEST_OR_SSR_list"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="rc_select_TEST_OR_SSR_list"
+            autocomplete="off"
+            class="ant-select-selection-search-input"
+            id="rc_select_TEST_OR_SSR"
+            readonly=""
+            role="combobox"
+            style="opacity: 0;"
+            type="search"
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          class="ant-select-selection-item"
+          title=""
+        />
+      </div>
+      <span
+        aria-hidden="true"
+        class="ant-select-arrow"
+        style="user-select: none;"
+        unselectable="on"
+      >
+        <span
+          class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
+          role="img"
+        >
+          <svg
+            fill="currentColor"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;
