@@ -3,12 +3,22 @@ import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { OverviewListAction, OverviewListColumn } from './column';
 import { IGetDataExportTask } from '@actiontech/shared/lib/api/base/service/common';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import { useBoolean } from 'ahooks';
+import { useMemo } from 'react';
 
 const OverviewList: React.FC = () => {
-  const { taskInfos, updateCurTaskID } = useDataExportDetailReduxManage();
+  const { taskInfos, updateCurTaskID, workflowInfo } =
+    useDataExportDetailReduxManage();
   const { projectID } = useCurrentProject();
+  const { uid } = useCurrentUser();
+
+  const isCreateWorkflowUser = useMemo(() => {
+    return uid === workflowInfo?.create_user?.uid;
+  }, [uid, workflowInfo?.create_user?.uid]);
 
   const [
     downloadLoading,
@@ -36,7 +46,11 @@ const OverviewList: React.FC = () => {
       dataSource={taskInfos ?? []}
       pagination={false}
       columns={OverviewListColumn()}
-      actions={OverviewListAction(downloadLoading, downloadAction)}
+      actions={
+        isCreateWorkflowUser
+          ? OverviewListAction(downloadLoading, downloadAction)
+          : undefined
+      }
       onRow={(record: IGetDataExportTask) => {
         return {
           onClick() {

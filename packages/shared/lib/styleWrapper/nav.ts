@@ -345,5 +345,17 @@ export const LayoutStyleWrapper = styled('section')`
     min-width: 1060px;
     background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .copyright-information {
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+      font-size: 13px;
+      text-align: center;
+      margin-top: auto;
+      z-index: 1000;
+      padding: 20px 0;
+      background-color: transparent;
+    }
   }
 `;
