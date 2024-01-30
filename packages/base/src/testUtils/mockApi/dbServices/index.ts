@@ -1,4 +1,5 @@
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import {
   MockSpyApy,
@@ -59,6 +60,11 @@ class MockDbServicesApi implements MockSpyApy {
     return spy;
   }
 
+  public AuthSyncService() {
+    const spy = jest.spyOn(auth, 'AuthSyncService');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
   public checkInstanceIsConnectableByNameV1() {
     const spy = jest.spyOn(instance, 'checkInstanceIsConnectableByNameV1');
     spy.mockImplementation(() =>
