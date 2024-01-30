@@ -19,6 +19,12 @@ class MockDataExportApi implements MockSpyApy {
     );
     return spy;
   }
+
+  public batchCloseWorkflowAction() {
+    const spy = jest.spyOn(dms, 'CancelDataExportWorkflow');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
 }
 
 export default new MockDataExportApi();

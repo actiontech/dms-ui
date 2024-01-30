@@ -15,7 +15,7 @@ else ifeq ($(EDITION),demo)
     COMMAND :=pnpm start:demo
 endif
 
-start:
+docker_start_dev:
 	$(DOCKER) run -v $(MAIN_MODULE):/app -w /app -p 30201:3020 --name=dms_ui_dev_${EDITION} $(DOCKER_IMAGE) sh -c "${COMMAND} --no-open"	
 
 pull_image:
