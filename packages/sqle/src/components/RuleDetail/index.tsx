@@ -217,7 +217,7 @@ const RuleDetail = () => {
             />
           )}
           <RuleList
-            pageHeaderHeight={180}
+            pageHeaderHeight={170}
             rules={getCurrentTypeRules(allRules, ruleData, templateName)}
             enableCheckDetail
           />

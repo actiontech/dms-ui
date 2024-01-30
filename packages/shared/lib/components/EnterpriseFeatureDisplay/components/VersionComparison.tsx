@@ -1,36 +1,37 @@
-import { Typography, Space, Divider, Card } from 'antd';
-import { DMS_DEFAULT_WEB_TITLE } from '../../../data/common';
+import { Typography, Space, Divider } from 'antd';
 import BasicButton from '../../BasicButton';
-import { VersionComparisonStyleWrapper } from '../style';
+import {
+  VersionComparisonStyleWrapper,
+  VersionComparisonItemCardStyleWrapper
+} from '../style';
 import { useTranslation } from 'react-i18next';
 import BasicTag from '../../BasicTag';
 import { versionList } from '../index.data';
-import { I18nKey } from '../../../locale';
+import { VersionComparisonItem } from '../index.type';
+import { IconCheckout } from '../../../Icon/common';
 
 const VersionComparison: React.FC = () => {
   const { t } = useTranslation();
 
-  const renderHeader = (title: I18nKey, buttonLink: string, aLink: string) => {
+  const renderHeader = (data: VersionComparisonItem) => {
     return (
       <>
-        <Typography.Title level={5}>{t(title)}</Typography.Title>
-        <Divider />
+        <Typography.Title level={4}>{t(data.title)}</Typography.Title>
+        <Typography.Text className="term-wrap">
+          {data.termText ? t(data.termText) : ''}
+        </Typography.Text>
         <BasicButton
           type="primary"
-          href={buttonLink}
+          href={data.applyLink}
           target="_blank"
           className="apply-button"
         >
-          {t('common.version.startApply')}
+          {t(data.buttonText)}
         </BasicButton>
-        <Typography.Link
-          className="contact-link"
-          href={aLink}
-          type="secondary"
-          target="_blank"
-        >
-          {t('common.version.contactUs')}
-        </Typography.Link>
+        <Typography.Text className="version-subTitle-wrap">
+          {t(data.subtitle)}
+        </Typography.Text>
+        <Divider />
       </>
     );
   };
@@ -40,9 +41,14 @@ const VersionComparison: React.FC = () => {
       <Space direction="vertical" size={8} className="content-list">
         {content.split('\n').map((item, index) => {
           return (
-            <Typography.Text type="secondary" key={index}>
-              {item}
-            </Typography.Text>
+            <Space
+              key={index}
+              align="start"
+              className="full-width-element version-desc-wrap"
+            >
+              <IconCheckout></IconCheckout>
+              <Typography.Text key={index}>{item}</Typography.Text>
+            </Space>
           );
         })}
       </Space>
@@ -52,32 +58,46 @@ const VersionComparison: React.FC = () => {
   const renderContent = () => {
     return versionList.map((item) => {
       return (
-        <Card hoverable key={item.key}>
+        <VersionComparisonItemCardStyleWrapper
+          hoverable
+          key={item.key}
+          color={item.color}
+          className="version-card"
+        >
+          <Space className="version-tag-wrap">
+            <BasicTag size="large" color={item.color}>
+              {t(item.type)}
+            </BasicTag>
+          </Space>
           <Space
             direction="vertical"
             className="version-item"
             align="center"
             size={16}
           >
-            {renderHeader(item.title, item.applyLink, item.contactLink)}
+            {renderHeader(item)}
             {renderDesc(t(item.contentDesc))}
           </Space>
-        </Card>
+        </VersionComparisonItemCardStyleWrapper>
       );
     });
   };
 
   return (
-    <VersionComparisonStyleWrapper className="full-width-element">
-      <BasicTag color="geekblue" size="large">
-        {t('common.version.currentVersion')}: {DMS_DEFAULT_WEB_TITLE}
-        {/* #if [demo] */}
-        {t('common.version.demo')}
-        {/*#elif [ce] */}
-        {t('common.version.ce')}
-        {/* #endif */}
-      </BasicTag>
+    <VersionComparisonStyleWrapper
+      className="full-width-element version-comparison-wrap"
+      direction="vertical"
+    >
       <div className="content-wrap">{renderContent()}</div>
+      <div>
+        <Typography.Text>{t('common.version.bottomDesc')}</Typography.Text>
+        <Typography.Link
+          href="https://actiontech.github.io/sqle-docs/docs/support/compare"
+          target="_blank"
+        >
+          {t('common.version.functionalComparison')}
+        </Typography.Link>
+      </div>
     </VersionComparisonStyleWrapper>
   );
 };

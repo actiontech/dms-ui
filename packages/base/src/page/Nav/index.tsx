@@ -7,6 +7,10 @@ import EESideMenu from './SideMenu';
 import CESideMenu from './SideMenu/index.ce';
 // #endif
 
+// #if [demo || ce]
+import CopyrightInformation from './Copyright';
+// #endif
+
 const Nav: React.FC<{ children?: ReactNode }> = (props) => {
   return (
     <LayoutStyleWrapper>
@@ -16,7 +20,12 @@ const Nav: React.FC<{ children?: ReactNode }> = (props) => {
       <CESideMenu />
       {/* #endif */}
 
-      <div className="dms-layout-content">{props.children}</div>
+      <div className="dms-layout-content">
+        {props.children}
+        {/* #if [demo || ce] */}
+        <CopyrightInformation />
+        {/* #endif */}
+      </div>
     </LayoutStyleWrapper>
   );
 };
