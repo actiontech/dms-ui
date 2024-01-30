@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/DataExport should match snapshot 1`] = `
+<div>
+  <article />
+</div>
+`;

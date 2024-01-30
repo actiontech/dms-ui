@@ -130,7 +130,6 @@ const ExportWorkflowList: React.FC = () => {
         status === ListDataExportWorkflowStatusEnum.rejected
       );
     });
-
     if (canCancel) {
       setBatchCloseConfirmLoading(true);
 
@@ -216,7 +215,8 @@ const ExportWorkflowList: React.FC = () => {
             text: t('dmsDataExport.batchClose.button'),
             buttonProps: {
               icon: <IconMinus />,
-              disabled: selectedRowKeys?.length === 0
+              disabled: selectedRowKeys?.length === 0,
+              loading: batchCloseConfirmLoading
             },
             permissions: allowClose,
             confirm: {
