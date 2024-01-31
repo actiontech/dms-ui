@@ -1,6 +1,6 @@
-import { t } from '../../../../locale';
-import { IconStepDatabase, IconStepMember } from '../../../../icon/home';
-import { DevopsStepsProps, UserDevopsStepsFactory } from '../index.type';
+import { t } from '../../../../../locale';
+import { IconStepDatabase, IconStepMember } from '../../../../../icon/home';
+import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
 
 export const getDatabaseManagerSteps: (
   arg: DevopsStepsProps
