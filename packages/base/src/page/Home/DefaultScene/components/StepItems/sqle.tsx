@@ -1,10 +1,10 @@
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
-import { t } from '../../../../locale';
+import { t } from '../../../../../locale';
 import {
   DevopsStepsProps,
   UserDevopsStepButtonItem,
   UserDevopsStepChildren
-} from '../index.type';
+} from '../../index.type';
 
 export const getAuditManageStep: (
   arg: DevopsStepsProps

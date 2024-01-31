@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/Home/GuidanceButton should match snapshot 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+    type="button"
+  />
+</div>
+`;
+
+exports[`test base/Home/GuidanceButton should render children 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+    type="button"
+  >
+    <div
+      class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+      >
+        children
+      </div>
+    </div>
+  </button>
+</div>
+`;

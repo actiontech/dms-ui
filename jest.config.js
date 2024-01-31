@@ -36,7 +36,9 @@ module.exports = {
   collectCoverageFrom: [
     'packages/**/{src,lib}/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
     'packages/**/src/App.tsx',
-    'packages/shared/api/common/**'
+    'packages/shared/api/common/**',
+    '!packages/**/index.type.ts',
+    '!packages/sqle/src/page/AuditPlan/**'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   reporters: [

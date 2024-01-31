@@ -31,7 +31,8 @@ export const versionList: VersionComparisonItem[] = [
     title: 'common.version.eeTitle',
     subtitle: 'common.version.eeSubTitle',
     buttonText: 'common.version.eeButtonText',
-    applyLink: 'https://jinshuju.net/f/daLFaG',
+    applyLink:
+      'https://actiontech.github.io/sqle-docs/docs/support/commercial-support/',
     contentDesc: 'common.version.eeDesc'
   }
 ];
