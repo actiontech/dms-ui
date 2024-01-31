@@ -5,9 +5,7 @@ import { superRender } from '../../../../../../../testUtils/customRender';
 
 describe('base/Nav/SideMenu/UserMenu/VersionModal-ee', () => {
   const VersionModalCloseFn = jest.fn();
-  const customRender = (
-    open: boolean = false,
-  ) => {
+  const customRender = (open: boolean = false) => {
     return superRender(
       <VersionModal open={open} setVersionModalClose={VersionModalCloseFn} />
     );

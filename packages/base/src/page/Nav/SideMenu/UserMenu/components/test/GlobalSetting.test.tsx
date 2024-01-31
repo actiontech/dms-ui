@@ -4,18 +4,21 @@ import { SupportTheme } from 'sqle/src/theme';
 
 import { superRender } from '../../../../../../testUtils/customRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { getAllBySelector, getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn(),
+    useNavigate: jest.fn()
   };
 });
 
 describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   const navigateSpy = jest.fn();
-  const customRender = (isAdmin=false) => {
+  const customRender = (isAdmin = false) => {
     return superRender(
       <GlobalSetting
         updateTheme={jest.fn()}

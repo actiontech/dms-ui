@@ -115,7 +115,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            chore/DMS-625   6e614e1
+                            feature/add-make-command   ba9c9c5
                           </article>
                         </div>
                         <div
@@ -911,7 +911,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                   >
                                     <a
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
-                                      href="https://jinshuju.net/f/daLFaG"
+                                      href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                       target="_blank"
                                     >
                                       <span>
@@ -1462,7 +1462,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            chore/DMS-625   6e614e1
+                            feature/add-make-command   ba9c9c5
                           </article>
                         </div>
                         <div
@@ -2258,7 +2258,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                   >
                                     <a
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
-                                      href="https://jinshuju.net/f/daLFaG"
+                                      href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                       target="_blank"
                                     >
                                       <span>

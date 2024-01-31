@@ -5,7 +5,6 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
-
 const mockBindProjects = [
   {
     project_id: '1',

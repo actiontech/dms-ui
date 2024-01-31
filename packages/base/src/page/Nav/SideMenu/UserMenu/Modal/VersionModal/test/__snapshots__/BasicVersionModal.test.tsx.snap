@@ -115,7 +115,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            chore/DMS-625   6e614e1
+                            feature/add-make-command   ba9c9c5
                           </article>
                         </div>
                         <div
@@ -355,7 +355,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
                             UI: 
-                            chore/DMS-625   6e614e1
+                            feature/add-make-command   ba9c9c5
                           </article>
                         </div>
                         <div
