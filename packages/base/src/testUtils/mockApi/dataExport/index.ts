@@ -6,7 +6,9 @@ import {
 import {
   AddDataExportTaskResponseData,
   AddDataExportWorkflowResponseData,
-  DataExportWorkflowList
+  BatchGetDataExportTaskResponseData,
+  DataExportWorkflowList,
+  ListDataExportTaskSQLsResponseData
 } from './data';
 
 class MockDataExportApi implements MockSpyApy {
@@ -48,6 +50,26 @@ class MockDataExportApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: AddDataExportWorkflowResponseData
+      })
+    );
+    return spy;
+  }
+
+  public BatchGetDataExportTask() {
+    const spy = jest.spyOn(dms, 'BatchGetDataExportTask');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: BatchGetDataExportTaskResponseData
+      })
+    );
+    return spy;
+  }
+
+  public ListDataExportTaskSQLs() {
+    const spy = jest.spyOn(dms, 'ListDataExportTaskSQLs');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: ListDataExportTaskSQLsResponseData
       })
     );
     return spy;
