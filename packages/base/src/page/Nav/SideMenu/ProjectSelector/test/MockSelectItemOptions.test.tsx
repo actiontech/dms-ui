@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn(),
+    useNavigate: jest.fn()
   };
 });
 

@@ -7,19 +7,17 @@ const projectID = '700300';
 
 describe('base/page/Nav/SideMenu/MenuList', () => {
   const customRender = (isAdmin = false) => {
-    return superRender(
-      <MenuList projectID={projectID} isAdmin={isAdmin} />
-    );
+    return superRender(<MenuList projectID={projectID} isAdmin={isAdmin} />);
   };
 
   beforeEach(() => {
-    jest.useFakeTimers()
+    jest.useFakeTimers();
   });
 
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
-  })
+  });
 
   it('render snap when is not admin', async () => {
     const { baseElement } = customRender();
@@ -43,7 +41,8 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
         routerProps: {
           initialEntries: [`/project/${projectID}/member`]
         }
-      });
+      }
+    );
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
   });

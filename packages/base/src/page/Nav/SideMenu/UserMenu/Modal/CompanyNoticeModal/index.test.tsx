@@ -8,7 +8,6 @@ import dms from '../../../../../../testUtils/mockApi/global';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { ModalName } from '../../../../../../data/ModalName';
 
-
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),

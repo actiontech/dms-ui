@@ -8,15 +8,11 @@ import { useDispatch } from 'react-redux';
 
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../../../../testUtils/customRender';
-import {
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import dms from '../../../../../../testUtils/mockApi/global';
 import { LocalStorageWrapper } from '@actiontech/shared';
-import {
-  CompanyNoticeDisplayStatusEnum,
-} from '@actiontech/shared/lib/enum';
+import { CompanyNoticeDisplayStatusEnum } from '@actiontech/shared/lib/enum';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 
 jest.mock('react-redux', () => {
