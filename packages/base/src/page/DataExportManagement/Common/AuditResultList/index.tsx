@@ -11,7 +11,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const AuditResultList: React.FC<AuditResultListProps> = ({
   taskIDs,
-  projectID
+  projectID,
+  updateExecuteSQLsTypeIsDQL
 }) => {
   const [tasks, setTasks] = useState<IGetDataExportTask[]>([]);
 
@@ -56,7 +57,11 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         />
       </SegmentedRowStyleWrapper>
 
-      <AuditResultTable taskID={currentTaskID} projectID={projectID} />
+      <AuditResultTable
+        taskID={currentTaskID}
+        projectID={projectID}
+        updateExecuteSQLsTypeIsDQL={updateExecuteSQLsTypeIsDQL}
+      />
     </AuditResultStyleWrapper>
   );
 };

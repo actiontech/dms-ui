@@ -5,16 +5,24 @@ import {
   mockCreateDataExportRedux,
   mockUseCreateDataExportReduxManage
 } from '../../../testUtils/mockUseCreateDataExportReduxManage';
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { ModalName } from '../../../../../../data/ModalName';
 import dataExport from '../../../../../../testUtils/mockApi/dataExport';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { AddDataExportWorkflowResponseData } from '../../../../../../testUtils/mockApi/dataExport/data';
+import {
+  AddDataExportWorkflowResponseData,
+  ListDataExportTaskSQLsResponseData
+} from '../../../../../../testUtils/mockApi/dataExport/data';
 import { CreateDataExportPageEnum } from '../../../../../../store/dataExport';
-import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('test base/DataExport/Create/SubmitWorkflow', () => {
   beforeEach(() => {
+    dataExport.BatchGetDataExportTask();
+    dataExport.ListDataExportTaskSQLs();
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCreateDataExportReduxManage();
@@ -23,13 +31,19 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     jest.clearAllMocks();
     jest.clearAllTimers();
     jest.useRealTimers();
+    cleanup();
   });
 
-  it('should match snapshot', () => {
+  it('should match snapshot', async () => {
     const { container } = superRender(<SubmitExportWorkflow />);
 
     expect(container).toMatchSnapshot();
     expect(mockCreateDataExportRedux.initModalStatus).toBeCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(container).toMatchSnapshot();
   });
 
   it('should execute updateModalStatus when clicked edit button', () => {
@@ -96,5 +110,31 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockCreateDataExportRedux.updateWorkflowID).toBeCalledTimes(0);
     expect(mockCreateDataExportRedux.updatePageState).toBeCalledTimes(0);
+  });
+
+  it('should disabled submit button when sqls is exits dml type', async () => {
+    dataExport.ListDataExportTaskSQLs().mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          ...ListDataExportTaskSQLsResponseData,
+          {
+            uid: 10,
+            sql: 'SELECT 1;',
+            export_status: '',
+            export_sql_type: 'dml',
+            audit_level: ''
+          }
+        ]
+      })
+    );
+
+    superRender(<SubmitExportWorkflow />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('提交工单').closest('button')).toBeDisabled();
+    fireEvent.mouseOver(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    expect(screen.getByText('仅支持对DQL语句创建导出工单')).toBeInTheDocument();
   });
 });

@@ -1232,6 +1232,12 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                         执行语句
                       </th>
                       <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        语句类型
+                      </th>
+                      <th
                         class="ant-table-cell audit-result-column"
                         scope="col"
                       >
@@ -1274,13 +1280,22 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="3"
+                        colspan="4"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"

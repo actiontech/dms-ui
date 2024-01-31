@@ -1,9 +1,14 @@
 import {
   IAddDataExportTaskReply,
   IAddDataExportWorkflowReply,
+  IGetDataExportTask,
+  IListDataExportTaskSQL,
   IListDataExportWorkflow
 } from '@actiontech/shared/lib/api/base/service/common';
-import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import {
+  GetDataExportTaskStatusEnum,
+  ListDataExportWorkflowStatusEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const DataExportWorkflowList: IListDataExportWorkflow[] = [
   {
@@ -51,3 +56,69 @@ export const AddDataExportWorkflowResponseData: IAddDataExportWorkflowReply['dat
   {
     export_data_workflow_uid: '1483489234842342'
   };
+
+export const BatchGetDataExportTaskResponseData: IGetDataExportTask[] = [
+  {
+    task_uid: '1752623436938612736',
+    db_info: {
+      uid: '1752583372904861696',
+      name: 'bl1',
+      db_type: '',
+      database_name: ''
+    },
+    status: GetDataExportTaskStatusEnum.init,
+    file_name: '',
+    audit_result: {
+      audit_level: '',
+      score: 100,
+      pass_rate: 1
+    },
+    export_type: 'SQL',
+    export_file_type: 'CSV'
+  }
+];
+
+export const ListDataExportTaskSQLsResponseData: IListDataExportTaskSQL[] = [
+  {
+    uid: 1,
+    sql: 'SELECT 1;',
+    export_status: '',
+    export_sql_type: 'dql',
+    audit_level: ''
+  },
+  {
+    uid: 2,
+    sql: 'SELECT 1;',
+    export_status: '',
+    export_sql_type: 'dql',
+    audit_level: ''
+  },
+  {
+    uid: 3,
+    sql: 'SELECT 1;',
+    export_status: '',
+    export_sql_type: 'dql',
+    audit_level: ''
+  },
+  {
+    uid: 4,
+    sql: 'SELECT 1;',
+    export_status: '',
+    export_sql_type: 'dql',
+    audit_level: ''
+  },
+  {
+    uid: 5,
+    sql: 'SELECT 1;',
+    export_status: '',
+    export_sql_type: 'dql',
+    audit_level: ''
+  },
+  {
+    uid: 6,
+    sql: 'SELECT 1;',
+    export_status: '',
+    export_sql_type: 'dql',
+    audit_level: ''
+  }
+];
