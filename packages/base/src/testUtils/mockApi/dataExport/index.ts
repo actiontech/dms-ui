@@ -3,11 +3,18 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { DataExportWorkflowList } from './data';
+import {
+  AddDataExportTaskResponseData,
+  AddDataExportWorkflowResponseData,
+  DataExportWorkflowList
+} from './data';
 
 class MockDataExportApi implements MockSpyApy {
   public mockAllApi() {
     this.ListDataExportWorkflows();
+    this.batchCloseWorkflowAction();
+    this.AddDataExportTask();
+    this.AddDataExportWorkflow();
   }
 
   public ListDataExportWorkflows() {
@@ -23,6 +30,26 @@ class MockDataExportApi implements MockSpyApy {
   public batchCloseWorkflowAction() {
     const spy = jest.spyOn(dms, 'CancelDataExportWorkflow');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public AddDataExportTask() {
+    const spy = jest.spyOn(dms, 'AddDataExportTask');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: AddDataExportTaskResponseData
+      })
+    );
+    return spy;
+  }
+
+  public AddDataExportWorkflow() {
+    const spy = jest.spyOn(dms, 'AddDataExportWorkflow');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: AddDataExportWorkflowResponseData
+      })
+    );
     return spy;
   }
 }

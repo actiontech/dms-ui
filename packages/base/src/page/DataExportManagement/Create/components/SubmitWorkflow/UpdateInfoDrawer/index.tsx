@@ -1,6 +1,6 @@
 import { BasicDrawer } from '@actiontech/shared';
 import useCreateDataExportReduxManage from '../../../hooks/index.redux';
-import useCreateExportTaskFrom from '../../../hooks/useCreateExportTaskForm';
+import useCreateExportTaskForm from '../../../hooks/useCreateExportTaskForm';
 import { useRef } from 'react';
 import { ModalName } from '../../../../../../data/ModalName';
 import { Divider, Spin } from 'antd';
@@ -39,7 +39,7 @@ const UpdateInfoDrawer: React.FC = () => {
     auditAction,
     formatSQLAction,
     auditLoading
-  } = useCreateExportTaskFrom();
+  } = useCreateExportTaskForm();
 
   const closeHandle = () => {
     if (auditLoading) {
