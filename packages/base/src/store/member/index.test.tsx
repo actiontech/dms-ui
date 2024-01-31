@@ -1,8 +1,5 @@
 import { IReduxState } from '..';
-import reducers, {
-  updateSelectMember,
-  updateSelectMemberGroup
-} from '.';
+import reducers, { updateSelectMember, updateSelectMemberGroup } from '.';
 
 describe('store/member', () => {
   const state: IReduxState['member'] = {

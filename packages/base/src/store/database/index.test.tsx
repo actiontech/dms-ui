@@ -1,7 +1,5 @@
 import { IReduxState } from '..';
-import reducers, {
-  updateDriverMeta
-} from '.';
+import reducers, { updateDriverMeta } from '.';
 
 describe('store/database', () => {
   const state: IReduxState['database'] = {
@@ -29,5 +27,5 @@ describe('store/database', () => {
         }
       ]
     });
-  })
+  });
 });
