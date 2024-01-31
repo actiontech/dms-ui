@@ -1,18 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-import { useBoolean } from 'ahooks';
 import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import useRuleTemplateForm from '../hooks/useRuleTemplateForm';
-import useImportRuleTemplate from '../hooks/useImportRuleTemplate';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-
-import { Upload, message, Space, Spin } from 'antd';
+import { Upload, Space, Spin } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   BasicButton,
@@ -37,43 +31,40 @@ import {
 import Icon from '@ant-design/icons';
 import { IconRuleTitle } from '../../../icon/Rule';
 import RuleTemplateForm from '../RuleTemplateForm';
+import {
+  useImportRuleTemplateForm,
+  useBackToListPage
+} from '../../../hooks/useRuleTemplateForm';
 
 const ImportRuleTemplate = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const [messageApi, messageContextHolder] = message.useMessage();
 
   const { projectName, projectID } = useCurrentProject();
 
-  const {
-    form: ruleTemplateForm,
-    activeRule,
-    step,
-    submitSuccessStatus,
-    baseInfoFormSubmitLoading,
-    baseInfoFormSubmit,
-    dbType,
-    setActiveRule,
-    prevStep,
-    nextStep,
-    resetAll: resetBaseInfoForm
-  } = useRuleTemplateForm(true);
+  const { onGotoRuleTemplateList } = useBackToListPage(projectID);
 
   const {
     ruleTemplateFormVisibility,
     selectFileForm,
+    ruleTemplateForm,
     allRules,
     getAllRulesLoading,
     importFile,
-    importActiveRuleData
-  } = useImportRuleTemplate({ ruleTemplateForm, setActiveRule, messageApi });
-
-  const [createLoading, { setTrue: startCreate, setFalse: finishCreate }] =
-    useBoolean();
-
-  const onGoRuleList = () => {
-    navigate(`/sqle/project/${projectID}/rule/template`);
-  };
+    activeRule,
+    setActiveRule,
+    step,
+    submitSuccessStatus,
+    baseInfoFormSubmit,
+    baseInfoFormSubmitLoading,
+    prevStep,
+    nextStep,
+    resetAll,
+    dbType,
+    messageContextHolder,
+    createLoading,
+    startCreate,
+    finishCreate
+  } = useImportRuleTemplateForm();
 
   const submit = useCallback(() => {
     startCreate();
@@ -113,18 +104,16 @@ const ImportRuleTemplate = () => {
     projectName
   ]);
 
-  const resetAllForms = () => {
-    resetBaseInfoForm();
-    selectFileForm.resetFields();
-  };
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       {messageContextHolder}
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton onClick={onGoRuleList} icon={<IconLeftArrow />}>
+          <BasicButton
+            onClick={onGotoRuleTemplateList}
+            icon={<IconLeftArrow />}
+          >
             {t('ruleTemplate.backToList')}
           </BasicButton>
         }
@@ -136,7 +125,7 @@ const ImportRuleTemplate = () => {
               </BasicButton>
             )}
             {ruleTemplateFormVisibility && step === 0 && (
-              <BasicButton onClick={resetAllForms} disabled={createLoading}>
+              <BasicButton onClick={resetAll} disabled={createLoading}>
                 {t('common.reset')}
               </BasicButton>
             )}
@@ -223,9 +212,7 @@ const ImportRuleTemplate = () => {
               step={step}
               dbType={dbType}
               updateActiveRule={setActiveRule}
-              baseInfoSubmit={() =>
-                baseInfoFormSubmit('', importActiveRuleData)
-              }
+              baseInfoSubmit={baseInfoFormSubmit}
               submit={submit}
               projectName={projectName}
               mode="import"
@@ -241,7 +228,7 @@ const ImportRuleTemplate = () => {
             <BasicButton
               type="primary"
               key="view-rule-template-list"
-              onClick={onGoRuleList}
+              onClick={onGotoRuleTemplateList}
             >
               {t('ruleTemplate.backToList')}
             </BasicButton>
