@@ -1,1 +1,1 @@
-export const UI_VERSION = 'chore/DMS-625   6e614e1';
+export const UI_VERSION = 'feature/add-make-command   ba9c9c5';

@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`slqe/OperationRecord CE should match snap shot 1`] = `
-<body>
-  <div>
+exports[`test base/DataExport ce should match snapshot 1`] = `
+<div>
+  <article>
     <div
       class="actiontech-page-header-namespace css-1xspr0w"
     >
       <div
         class="title"
       >
-        操作记录列表
+        数据导出
       </div>
       <div
         class="extra"
@@ -35,7 +35,7 @@ exports[`slqe/OperationRecord CE should match snap shot 1`] = `
             <div
               class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
             >
-              当出现问题或错误时，您可以通过分析操作记录，查看导致问题产生的步骤或操作，以便更好地解决和预防类似问题，保证操作的安全与合规性。
+              当您没有某个数据源的查看权限，但需要导出其中的数据时，可以利用数据导出功能。通过进行审批流程，您可以获取相应的数据。这样，即使没有直接的查看权限，您仍然可以获得所需的数据。
             </div>
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
@@ -758,7 +758,7 @@ exports[`slqe/OperationRecord CE should match snap shot 1`] = `
                         >
                           <a
                             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
-                            href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
+                            href="https://jinshuju.net/f/daLFaG"
                             target="_blank"
                           >
                             <span>
@@ -1216,7 +1216,7 @@ exports[`slqe/OperationRecord CE should match snap shot 1`] = `
                   <p
                     class="cont-tip"
                   >
-                    操作记录列表为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                    数据导出为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                   </p>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
@@ -1347,6 +1347,6 @@ exports[`slqe/OperationRecord CE should match snap shot 1`] = `
         </div>
       </div>
     </section>
-  </div>
-</body>
+  </article>
+</div>
 `;

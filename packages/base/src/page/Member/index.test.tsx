@@ -18,7 +18,7 @@ describe('base/Member', () => {
     member.mockAllApi();
     mockUseCurrentProject();
     userCenter.getUserList();
-    dbServices.ListDBServices();
+    dbServices.ListDBServicesTips();
     userCenter.getRoleList();
   });
 
