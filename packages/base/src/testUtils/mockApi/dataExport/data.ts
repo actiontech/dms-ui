@@ -1,4 +1,8 @@
-import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  IAddDataExportTaskReply,
+  IAddDataExportWorkflowReply,
+  IListDataExportWorkflow
+} from '@actiontech/shared/lib/api/base/service/common';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const DataExportWorkflowList: IListDataExportWorkflow[] = [
@@ -38,3 +42,12 @@ export const DataExportWorkflowList: IListDataExportWorkflow[] = [
     current_step_type: ''
   }
 ];
+
+export const AddDataExportTaskResponseData: IAddDataExportTaskReply['data'] = {
+  data_export_task_uids: ['1752522203951271936']
+};
+
+export const AddDataExportWorkflowResponseData: IAddDataExportWorkflowReply['data'] =
+  {
+    export_data_workflow_uid: '1483489234842342'
+  };

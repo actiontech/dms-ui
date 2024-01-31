@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/DataExport/Create/SubmitWorkflow should match snapshot 1`] = `
+<div>
+  <div
+    class="actiontech-page-header-namespace css-1xspr0w"
+  >
+    <div
+      class="title"
+    >
+      <a
+        href="/project/700300/data/export"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回工单列表
+          </span>
+        </button>
+      </a>
+    </div>
+    <div
+      class="extra"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              编辑工单信息
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              提交工单
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class=" css-13tocah"
+  >
+    <div
+      class="workflow-base-info-title"
+    >
+      test
+    </div>
+    <div
+      class="workflow-base-info-desc"
+    >
+      desc
+    </div>
+  </div>
+  <section
+    class="css-zgknaj"
+  >
+    <div
+      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-segmented-group"
+        />
+      </div>
+    </div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup>
+                    <col
+                      style="width: 100px;"
+                    />
+                  </colgroup>
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        序号
+                      </th>
+                      <th
+                        class="ant-table-cell audit-result-exec-sql-column"
+                        scope="col"
+                      >
+                        执行语句
+                      </th>
+                      <th
+                        class="ant-table-cell audit-result-column"
+                        scope="col"
+                      >
+                        审核结果
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-placeholder"
+                    >
+                      <td
+                        class="ant-table-cell"
+                        colspan="3"
+                      >
+                        <div
+                          class="ant-table-expanded-row-fixed"
+                          style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

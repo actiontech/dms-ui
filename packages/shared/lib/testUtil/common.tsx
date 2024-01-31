@@ -146,3 +146,23 @@ export const ignoreComponentAutoCreatedListNoKey = () => {
     console.error = error;
   });
 };
+
+export const ignoreInvalidValueForCSSStyleProperty = () => {
+  const error = console.error;
+
+  beforeAll(() => {
+    console.error = (...arg) => {
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes('`NaN` is an invalid value for the')
+      ) {
+        return;
+      }
+      error(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.error = error;
+  });
+};

@@ -20,7 +20,7 @@ const SubmitExportWorkflow: React.FC = () => {
     initModalStatus,
     submitLoading,
     updateModalStatus,
-    updateSubmitState,
+    updateSubmitLoading,
     taskIDs,
     updatePageState,
     updateWorkflowID
@@ -28,7 +28,7 @@ const SubmitExportWorkflow: React.FC = () => {
   const { projectID } = useCurrentProject();
 
   const submit = () => {
-    updateSubmitState(true);
+    updateSubmitLoading(true);
     dms
       .AddDataExportWorkflow({
         project_uid: projectID,
@@ -45,7 +45,7 @@ const SubmitExportWorkflow: React.FC = () => {
         }
       })
       .finally(() => {
-        updateSubmitState(false);
+        updateSubmitLoading(false);
       });
   };
 
