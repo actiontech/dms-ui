@@ -1,3 +1,6 @@
+/**
+ * @test_version ce
+ */
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { superRender } from '../../../../testUtils/customRender';
 import CEDefaultScene from '../index.ce';
