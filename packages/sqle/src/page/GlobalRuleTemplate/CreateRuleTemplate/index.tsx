@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useBoolean } from 'ahooks';
 import { Space } from 'antd';
 import classNames from 'classnames';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
@@ -15,13 +14,16 @@ import {
 } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
-import useRuleTemplateForm from '../../RuleTemplate/hooks/useRuleTemplateForm';
+import {
+  useCreateRuleTemplateForm,
+  useBackToListPage
+} from '../../../hooks/useRuleTemplateForm';
 
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
-  const [createLoading, { setFalse: finishSubmit, setTrue: startSubmit }] =
-    useBoolean(false);
+
   const { projectName } = useCurrentProject();
+
   const {
     form,
     getAllRulesLoading,
@@ -36,8 +38,12 @@ const CreateRuleTemplate = () => {
     nextStep,
     baseInfoFormSubmit,
     resetAll,
-    onGoToGlobalRuleTemplateList
-  } = useRuleTemplateForm();
+    createLoading,
+    startSubmit,
+    finishSubmit
+  } = useCreateRuleTemplateForm();
+
+  const { onGoToGlobalRuleTemplateList } = useBackToListPage();
 
   const submit = useCallback(() => {
     startSubmit();
@@ -122,7 +128,7 @@ const CreateRuleTemplate = () => {
           step={step}
           dbType={dbType}
           updateActiveRule={setActiveRule}
-          baseInfoSubmit={() => baseInfoFormSubmit('create')}
+          baseInfoSubmit={baseInfoFormSubmit}
           submit={submit}
           projectName={projectName}
           mode="create"

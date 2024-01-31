@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import useRuleTemplateForm from '../../RuleTemplate/hooks/useRuleTemplateForm';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   IconLeftArrow,
@@ -17,6 +16,10 @@ import classNames from 'classnames';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useUpdateRuleTemplateForm,
+  useBackToListPage
+} from '../../../hooks/useRuleTemplateForm';
 
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -35,17 +38,18 @@ const UpdateRuleTemplate = () => {
     nextStep,
     baseInfoFormSubmit,
     resetAll,
-    onGoToGlobalRuleTemplateList,
     ruleTemplate,
-    setRuleTemplate
-  } = useRuleTemplateForm(false, true);
+    setRuleTemplate,
+    updateTemplateLoading,
+    startSubmit,
+    finishSubmit
+  } = useUpdateRuleTemplateForm();
+
+  const { onGoToGlobalRuleTemplateList } = useBackToListPage();
+
   const [
     updateTemplateFormLoading,
     { setTrue: startLoad, setFalse: finishLoad }
-  ] = useBoolean();
-  const [
-    updateTemplateLoading,
-    { setTrue: startSubmit, setFalse: finishSubmit }
   ] = useBoolean();
 
   const urlParams = useParams<{ templateName: string }>();
@@ -161,9 +165,7 @@ const UpdateRuleTemplate = () => {
             step={step}
             dbType={dbType}
             updateActiveRule={setActiveRule}
-            baseInfoSubmit={() =>
-              baseInfoFormSubmit('global-update', ruleTemplate?.rule_list ?? [])
-            }
+            baseInfoSubmit={baseInfoFormSubmit}
             submit={submit}
             projectName={projectName}
             defaultData={ruleTemplate}
