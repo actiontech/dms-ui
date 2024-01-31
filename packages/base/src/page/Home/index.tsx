@@ -1,6 +1,7 @@
 import DefaultScene from './DefaultScene';
 import { PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
+import CEDefaultScene from './DefaultScene/index.ce';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -8,9 +9,11 @@ const Home: React.FC = () => {
   return (
     <>
       <PageHeader title={t('dmsHome.pageTitle')} />
-      <section>
-        <DefaultScene />
-      </section>
+      {/* #if [ee] */}
+      <DefaultScene />
+      {/* #elif [ce] */}
+      <CEDefaultScene />
+      {/* #endif */}
     </>
   );
 };
