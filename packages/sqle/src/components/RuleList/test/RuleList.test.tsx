@@ -151,16 +151,16 @@ describe('sqle/components/RuleList', () => {
       rules: mockInfiniteList
     });
     await act(async () => jest.advanceTimersByTime(3000));
-     fireEvent.scroll(getBySelector('#rule-list-wrapper-id', baseElement), {
-       y: 50
-     });
-     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.scroll(getBySelector('#rule-list-wrapper-id', baseElement), {
-      y: 100,
+      y: 50
     });
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.scroll(getBySelector('#rule-list-wrapper-id', baseElement), {
-       y: 200
+      y: 100
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.scroll(getBySelector('#rule-list-wrapper-id', baseElement), {
+      y: 200
     });
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.scroll(getBySelector('#rule-list-wrapper-id', baseElement), {

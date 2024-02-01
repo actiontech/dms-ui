@@ -70,11 +70,7 @@ describe('sqle/components/RuleList/useRuleList', () => {
     expect(rules).toEqual([]);
 
     await act(async () => {
-      rules = result.current.getCurrentStatusRules(
-        undefined,
-        [],
-        'test'
-      );
+      rules = result.current.getCurrentStatusRules(undefined, [], 'test');
       await jest.advanceTimersByTime(100);
     });
     expect(rules).toEqual([]);
