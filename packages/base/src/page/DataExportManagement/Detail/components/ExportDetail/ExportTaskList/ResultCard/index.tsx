@@ -6,9 +6,11 @@ import HighlightCode from 'sqle/src/utils/HighlightCode';
 import AuditResultTree from './AuditResultTree';
 import {
   ExportContentStyleWrapper,
-  ExportResultCardStyleWrapper
+  ExportResultCardStyleWrapper,
+  ExportResultTreeStyleWrapper
 } from '../../style';
 import AuditResultTag from './AuditResultTag';
+import { IconArrowDown } from '@actiontech/shared/lib/Icon';
 
 const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
   const { t } = useTranslation();
@@ -61,26 +63,23 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
           </pre>
         </div>
         <AuditResultTree auditResult={props.audit_sql_result} />
-        {/* 后端暂时给不到数据，先隐藏 */}
-        {/* <DataSourceAuditResultTreeStyleWrapper
+        <ExportResultTreeStyleWrapper
           treeData={[
             {
               title: t(
                 'dmsDataExport.detail.exportResult.taskDetail.exportResult'
               ),
-              key: 'exec_result_wrap',
+              key: 'export_result_wrap',
               children: [
                 {
-                  title: props.export_status || '-',
-                  key: 'export_status'
+                  title: props.export_result || '-',
+                  key: 'export_result'
                 }
               ]
             }
           ]}
-          switcherIcon={
-            <IconArrowDown width={16} height={16} color="#C3C6CD" />
-          }
-        /> */}
+          switcherIcon={<IconArrowDown width={16} height={16} />}
+        />
       </div>
     </ExportResultCardStyleWrapper>
   );
