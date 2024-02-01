@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/router- un Auth -ee should render BindUser 1`] = `
+<body>
+  <div>
+    <div>
+      /user/bind
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router- un Auth -ee should render login 1`] = `
+<body>
+  <div>
+    <div>
+      /login
+    </div>
+  </div>
+</body>
+`;

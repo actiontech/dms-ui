@@ -1,0 +1,445 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/router-sqle-ee render route sqle index page 1`] = `
+<body>
+  <div>
+    <div>
+      null
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route customCreate 1`] = `
+<body>
+  <div>
+    <div>
+      createCustomRule
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route customUpdate 1`] = `
+<body>
+  <div>
+    <div>
+      updateCustomRule
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route globalCreate 1`] = `
+<body>
+  <div>
+    <div>
+      globalRuleTemplateCreate
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route globalDetail 1`] = `
+<body>
+  <div>
+    <div>
+      globalRuleTemplateDetail
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route globalImport 1`] = `
+<body>
+  <div>
+    <div>
+      globalRuleTemplateImport
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route globalUpdate 1`] = `
+<body>
+  <div>
+    <div>
+      globalRuleTemplateUpdate
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route reportStatistics 1`] = `
+<body>
+  <div>
+    <div>
+      reportStatistics
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route rule 1`] = `
+<body>
+  <div>
+    <div>
+      rule
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route ruleManager 1`] = `
+<body>
+  <div />
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle global router render sqle router when version is ee render route ruleKnowledge 1`] = `
+<body>
+  <div>
+    <div>
+      ruleKnowledge
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render operationRecord 1`] = `
+<body>
+  <div>
+    <div>
+      operationRecord
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route dashboard 1`] = `
+<body>
+  <div>
+    <div>
+      dashboard
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    >
+      <div>
+        orderCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    >
+      <div>
+        orderDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetailReport 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanDetailReport
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanUpdate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route progress render progressDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="progress"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route progress render progressUpdate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="progress"
+    >
+      <div>
+        progressUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route projectOverview 1`] = `
+<body>
+  <div>
+    <div>
+      projectOverview
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate create 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplateCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate import 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplateImport
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate list 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplateDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplateDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplateUpdate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplateUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlAudit"
+    >
+      <div>
+        sqlAuditCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlAudit"
+    >
+      <div>
+        sqlAuditDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlAudit"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagement render sqlManagement 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlManagement"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
+<body>
+  <div>
+    <div>
+      Whitelist
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render SQLManagementAnalyze 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlManagement"
+    >
+      <div>
+        SQLManagementAnalyze
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render route auditPlanDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanDetailAnalyze
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render route orderAnalyze 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    >
+      <div>
+        orderAnalyze
+      </div>
+    </div>
+  </div>
+</body>
+`;
