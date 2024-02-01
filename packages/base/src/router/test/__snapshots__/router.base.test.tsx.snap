@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/router-base-ee render base router when version is ce render router account 1`] = `
+<body>
+  <div>
+    <div>
+      account
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router cloudBeaver 1`] = `
+<body>
+  <div>
+    <div>
+      cloudBeaver
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router home 1`] = `
+<body>
+  <div>
+    <div>
+      home
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router project render route dataSourceCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="dataSource"
+    >
+      <div>
+        dataSourceCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router project render route dataSourceList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="dataSource"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router project render route dataSourceUpdate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="dataSource"
+    >
+      <div>
+        dataSourceUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router project render route member 1`] = `
+<body>
+  <div>
+    <div>
+      member
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router system 1`] = `
+<body>
+  <div>
+    <div>
+      system
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router userCenter 1`] = `
+<body>
+  <div>
+    <div>
+      userCenter
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route dataExportManagement render route CreateExportTask 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="dataExportManagement"
+    >
+      <div>
+        CreateExportTask
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route dataExportManagement render route ExportTaskDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="dataExportManagement"
+    >
+      <div>
+        ExportTaskDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route dataExportManagement render route dataExportManagement 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="dataExportManagement"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route syncDataSource render route syncDataSourceList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="syncDataSource"
+    />
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route syncDataSource render route syncDataSourceList 2`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="syncDataSource"
+    >
+      <div>
+        syncDataSourceCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route syncDataSource render route syncDataSourceList 3`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="syncDataSource"
+    >
+      <div>
+        syncDataSourceUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render router project 1`] = `
+<body>
+  <div>
+    <div>
+      project
+    </div>
+  </div>
+</body>
+`;

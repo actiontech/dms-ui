@@ -7,7 +7,7 @@ import { storeFactory } from '@actiontech/shared/lib/testUtil/mockRedux';
 import lightTheme from '@actiontech/shared/lib/theme/light';
 import basePackageTheme from '../theme/light';
 
-type RenderParams = Parameters<typeof render>;
+export type RenderParams = Parameters<typeof render>;
 
 const themeData = {
   ...lightTheme,
