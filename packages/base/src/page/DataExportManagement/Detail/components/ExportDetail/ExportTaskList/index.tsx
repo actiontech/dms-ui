@@ -1,5 +1,4 @@
 import { List, Result } from 'antd';
-import { DataSourceResultListStyleWrapper } from 'sqle/src/page/Order/AuditDetail/style';
 import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
@@ -10,8 +9,9 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
 import ResultCard from './ResultCard';
+import { ExportTaskListStyleWrapper } from '../style';
 
-const TaskDetail: React.FC = () => {
+const ExportTaskList: React.FC = () => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   const { pagination } = useTableRequestParams();
@@ -34,7 +34,7 @@ const TaskDetail: React.FC = () => {
     }
   );
   return (
-    <DataSourceResultListStyleWrapper>
+    <ExportTaskListStyleWrapper>
       <List
         bordered={false}
         itemLayout="vertical"
@@ -74,8 +74,8 @@ const TaskDetail: React.FC = () => {
           )
         }}
       />
-    </DataSourceResultListStyleWrapper>
+    </ExportTaskListStyleWrapper>
   );
 };
 
-export default TaskDetail;
+export default ExportTaskList;
