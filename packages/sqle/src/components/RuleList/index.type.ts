@@ -28,7 +28,6 @@ export type RuleListProps = {
   isAction?: boolean;
   actionType?: RuleStatusEnum;
   renderDisableNode?: (rule: IRuleResV1) => ReactNode;
-  isShowEndText?: boolean;
   activeDataKeys?: string[];
   onActionHandle?: (record: IRuleResV1, type: typeActionType) => void;
   enableCheckDetail?: boolean;

@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/components/RuleStatus should match snap shot when disabled 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented-group"
+      >
+        <label
+          class="enabled-rule ant-segmented-item ant-segmented-item-selected"
+        >
+          <input
+            checked=""
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="已启用"
+          >
+            已启用
+          </div>
+        </label>
+        <label
+          class="disabled-rule ant-segmented-item"
+        >
+          <input
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="已禁用"
+          >
+            已禁用
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/RuleStatus should match snap shot when enabled 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented-group"
+      >
+        <label
+          class="enabled-rule ant-segmented-item ant-segmented-item-selected"
+        >
+          <input
+            checked=""
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="已启用"
+          >
+            已启用
+          </div>
+        </label>
+        <label
+          class="disabled-rule ant-segmented-item"
+        >
+          <input
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="已禁用"
+          >
+            已禁用
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/components/RuleStatus should match snap shot when has ruleStatusChange 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented-group"
+      >
+        <label
+          class="enabled-rule ant-segmented-item"
+        >
+          <input
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="已启用"
+          >
+            已启用
+          </div>
+        </label>
+        <label
+          class="disabled-rule ant-segmented-item ant-segmented-item-selected"
+        >
+          <input
+            checked=""
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="已禁用"
+          >
+            已禁用
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+`;
