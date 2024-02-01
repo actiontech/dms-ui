@@ -3,11 +3,20 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { DataExportWorkflowList } from './data';
+import {
+  AddDataExportTaskResponseData,
+  AddDataExportWorkflowResponseData,
+  BatchGetDataExportTaskResponseData,
+  DataExportWorkflowList,
+  ListDataExportTaskSQLsResponseData
+} from './data';
 
 class MockDataExportApi implements MockSpyApy {
   public mockAllApi() {
     this.ListDataExportWorkflows();
+    this.batchCloseWorkflowAction();
+    this.AddDataExportTask();
+    this.AddDataExportWorkflow();
   }
 
   public ListDataExportWorkflows() {
@@ -23,6 +32,46 @@ class MockDataExportApi implements MockSpyApy {
   public batchCloseWorkflowAction() {
     const spy = jest.spyOn(dms, 'CancelDataExportWorkflow');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public AddDataExportTask() {
+    const spy = jest.spyOn(dms, 'AddDataExportTask');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: AddDataExportTaskResponseData
+      })
+    );
+    return spy;
+  }
+
+  public AddDataExportWorkflow() {
+    const spy = jest.spyOn(dms, 'AddDataExportWorkflow');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: AddDataExportWorkflowResponseData
+      })
+    );
+    return spy;
+  }
+
+  public BatchGetDataExportTask() {
+    const spy = jest.spyOn(dms, 'BatchGetDataExportTask');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: BatchGetDataExportTaskResponseData
+      })
+    );
+    return spy;
+  }
+
+  public ListDataExportTaskSQLs() {
+    const spy = jest.spyOn(dms, 'ListDataExportTaskSQLs');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: ListDataExportTaskSQLsResponseData
+      })
+    );
     return spy;
   }
 }

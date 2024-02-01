@@ -11,7 +11,8 @@ export default {
     export_failed: '导出失败',
     expired: '已过期',
     rejected: '已驳回',
-    canceled: '已关闭'
+    canceled: '已关闭',
+    file_deleted: '已移除'
   },
   batchCancel: {
     messageWarn:
@@ -49,7 +50,8 @@ export default {
       sourceTitle: '工单导出对象',
       methodTitle: '导出方式',
       updateInfoAction: '编辑工单信息',
-      submitAction: '提交工单'
+      submitAction: '提交工单',
+      submitTips: '仅支持对DQL语句创建导出工单'
     },
     result: {
       success: '工单创建成功',
@@ -162,6 +164,7 @@ export default {
       column: {
         number: '序号',
         execSql: '执行语句',
+        sqlType: '语句类型',
         auditResult: '审核结果'
       }
     }
