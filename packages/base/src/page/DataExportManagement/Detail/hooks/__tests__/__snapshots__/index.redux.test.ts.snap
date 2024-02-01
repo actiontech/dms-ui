@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test useDataExportDetailReduxManage should match snapshot 1`] = `
+Object {
+  "canRejectWorkflow": false,
+  "clearAllDetailState": [Function],
+  "curTaskId": "1752172791873933312",
+  "taskInfos": Array [
+    Object {
+      "audit_result": Object {
+        "audit_level": "",
+        "pass_rate": 1,
+        "score": 100,
+      },
+      "db_info": Object {
+        "database_name": "test",
+        "db_type": "",
+        "name": "mysql-1",
+        "uid": "1752170583749038080",
+      },
+      "export_end_time": "2024-01-30T11:32:15.085+08:00",
+      "export_file_type": "CSV",
+      "export_start_time": "2024-01-30T11:32:15.085+08:00",
+      "export_type": "SQL",
+      "file_name": "mysql-1_20240130113114-1752172791873933312.zip",
+      "status": "finish",
+      "task_uid": "1752172791873933312",
+    },
+    Object {
+      "audit_result": Object {
+        "audit_level": "",
+        "pass_rate": 1,
+        "score": 100,
+      },
+      "db_info": Object {
+        "database_name": "test",
+        "db_type": "",
+        "name": "mysql-1",
+        "uid": "1752170583749038080",
+      },
+      "export_end_time": "2024-01-30T11:32:15.085+08:00",
+      "export_file_type": "CSV",
+      "export_start_time": "2024-01-30T11:32:15.085+08:00",
+      "export_type": "SQL",
+      "file_name": "mysql-1_20240130113114-1752172791873933313.zip",
+      "status": "exporting",
+      "task_uid": "1752172791873933313",
+    },
+    Object {
+      "audit_result": Object {
+        "audit_level": "",
+        "pass_rate": 1,
+        "score": 100,
+      },
+      "db_info": Object {
+        "database_name": "test",
+        "db_type": "",
+        "name": "mysql-1",
+        "uid": "1752170583749038080",
+      },
+      "export_end_time": "2024-01-30T11:32:15.085+08:00",
+      "export_file_type": "CSV",
+      "export_start_time": "2024-01-30T11:32:15.085+08:00",
+      "export_type": "SQL",
+      "file_name": "mysql-1_20240130113114-1752172791873933314.zip",
+      "status": "failed",
+      "task_uid": "1752172791873933314",
+    },
+  ],
+  "taskStatusNumber": Object {
+    "exporting": 0,
+    "failed": 0,
+    "success": 1,
+  },
+  "updateCanRejectWorkflow": [Function],
+  "updateCurTaskID": [Function],
+  "updateTaskInfos": [Function],
+  "updateTaskStatusNumber": [Function],
+  "updateWorkflowInfo": [Function],
+  "updateWorkflowRejectOpen": [Function],
+  "updateWorkflowStepOpen": [Function],
+  "workflowInfo": Object {
+    "create_time": "2024-01-30T11:32:06.051+08:00",
+    "create_user": Object {
+      "name": "admin",
+      "uid": "700200",
+    },
+    "desc": "desc",
+    "workflow_name": "mysql-1_20240130113114",
+    "workflow_record": Object {
+      "current_step_number": 1,
+      "status": "finish",
+      "tasks": Array [
+        Object {
+          "task_uid": "1752172791873933312",
+        },
+      ],
+      "workflow_step_list": Array [
+        Object {
+          "assignee_user_list": Array [
+            Object {
+              "name": "admin",
+              "uid": "700200",
+            },
+          ],
+          "number": 1,
+          "operation_time": "2024-01-30T11:32:12.271+08:00",
+          "operation_user": Object {
+            "name": "admin",
+            "uid": "700200",
+          },
+          "state": "finish",
+          "type": "",
+        },
+      ],
+    },
+    "workflow_record_history": Array [],
+    "workflow_uid": "1752172808714063872",
+  },
+  "workflowRejectOpen": false,
+  "workflowStepOpen": false,
+}
+`;

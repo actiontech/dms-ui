@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { RejectWorkflowModalFormFields } from './index.type';
 import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { RejectWorkflowModalAlertStyleWrapper } from './style';
-import { useParams } from 'react-router-dom';
 import { useBoolean } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -13,13 +12,12 @@ import EmitterKey from '../../../../../../data/EmitterKey';
 import eventEmitter from '../../../../../../utils/EventEmitter';
 
 const RejectWorkflowModal: React.FC = () => {
-  const { workflowRejectOpen, updateWorkflowRejectOpen } =
+  const { workflowRejectOpen, updateWorkflowRejectOpen, workflowInfo } =
     useDataExportDetailReduxManage();
 
   const closeModal = () => {
     updateWorkflowRejectOpen(false);
   };
-  const { workflowID } = useParams<{ workflowID: string }>();
   const { projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -82,7 +80,7 @@ const RejectWorkflowModal: React.FC = () => {
             disabled={rejectWorkflowLoading}
             onClick={async () => {
               const values = await form.validateFields();
-              await rejectWorkflow(workflowID ?? '', values);
+              await rejectWorkflow(workflowInfo?.workflow_uid ?? '', values);
               resetAndCloseRejectModal();
             }}
           >
