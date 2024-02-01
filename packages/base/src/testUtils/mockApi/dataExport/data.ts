@@ -2,12 +2,15 @@ import {
   IAddDataExportTaskReply,
   IAddDataExportWorkflowReply,
   IGetDataExportTask,
+  IGetDataExportWorkflow,
   IListDataExportTaskSQL,
   IListDataExportWorkflow
 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   GetDataExportTaskStatusEnum,
-  ListDataExportWorkflowStatusEnum
+  ListDataExportWorkflowStatusEnum,
+  WorkflowRecordStatusEnum,
+  WorkflowStepStateEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const DataExportWorkflowList: IListDataExportWorkflow[] = [
@@ -82,43 +85,82 @@ export const ListDataExportTaskSQLsResponseData: IListDataExportTaskSQL[] = [
   {
     uid: 1,
     sql: 'SELECT 1;',
-    export_status: '',
+    export_result: '',
     export_sql_type: 'dql',
     audit_level: ''
   },
   {
     uid: 2,
     sql: 'SELECT 1;',
-    export_status: '',
+    export_result: 'ok',
     export_sql_type: 'dql',
     audit_level: ''
   },
   {
     uid: 3,
     sql: 'SELECT 1;',
-    export_status: '',
+    export_result: 'ok',
     export_sql_type: 'dql',
     audit_level: ''
   },
   {
     uid: 4,
     sql: 'SELECT 1;',
-    export_status: '',
+    export_result: 'ok',
     export_sql_type: 'dql',
     audit_level: ''
   },
   {
     uid: 5,
     sql: 'SELECT 1;',
-    export_status: '',
+    export_result: 'ok',
     export_sql_type: 'dql',
     audit_level: ''
   },
   {
     uid: 6,
     sql: 'SELECT 1;',
-    export_status: '',
+    export_result: 'ok',
     export_sql_type: 'dql',
     audit_level: ''
   }
 ];
+
+export const GetDataExportWorkflowResponseData: IGetDataExportWorkflow = {
+  workflow_name: 'mysql-1_20240130113114',
+  workflow_uid: '1752172808714063872',
+  desc: 'desc',
+  create_user: {
+    uid: '700200',
+    name: 'admin'
+  },
+  create_time: '2024-01-30T11:32:06.051+08:00',
+  workflow_record: {
+    tasks: [
+      {
+        task_uid: '1752172791873933312'
+      }
+    ],
+    current_step_number: 1,
+    status: WorkflowRecordStatusEnum.finish,
+    workflow_step_list: [
+      {
+        number: 1,
+        type: '',
+        assignee_user_list: [
+          {
+            uid: '700200',
+            name: 'admin'
+          }
+        ],
+        operation_user: {
+          uid: '700200',
+          name: 'admin'
+        },
+        operation_time: '2024-01-30T11:32:12.271+08:00',
+        state: WorkflowStepStateEnum.finish
+      }
+    ]
+  },
+  workflow_record_history: []
+};

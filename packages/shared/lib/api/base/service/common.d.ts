@@ -795,9 +795,9 @@ export interface IListDataExportTaskSQL {
 
   audit_sql_result?: IAuditSQLResult[];
 
-  export_sql_type?: string;
+  export_result?: string;
 
-  export_status?: string;
+  export_sql_type?: string;
 
   sql?: string;
 

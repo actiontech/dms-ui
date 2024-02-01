@@ -15,6 +15,8 @@ import { useForm } from 'antd/es/form/Form';
 import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../data/ModalName';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
   ignoreInvalidValueForCSSStyleProperty();
@@ -45,12 +47,11 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
   };
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    MockDate.set(dayjs('2024-01-31 12:00:00').valueOf());
     mockUseCurrentUser();
     mockUseCurrentProject();
   });
   afterEach(() => {
-    jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
   });
@@ -79,6 +80,7 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
   });
 
   it('should close drawer when after audited success', async () => {
+    jest.useFakeTimers();
     mockUseCreateExportTaskFormReturn.auditAction.mockImplementation(() =>
       Promise.resolve(true)
     );
@@ -104,5 +106,6 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(mockCreateDataExportRedux.updateModalStatus).toBeCalledTimes(0);
+    jest.useRealTimers();
   });
 });
