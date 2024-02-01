@@ -1,3 +1,5 @@
+import { CustomRuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
 export const ruleTemplateList = [
   {
     rule_template_id: '9',
@@ -73,4 +75,48 @@ export const projectRulesMockData = {
   desc: '',
   db_type: 'MySQL',
   rule_list: [ruleListData[0]]
+};
+
+export const projectRuleTemplate = [
+  {
+    rule_template_name: 'mysql',
+    desc: '',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: 'mysql-aa',
+    desc: 'aa',
+    db_type: 'MySQL'
+  }
+];
+
+export const getRuleTemplate = [
+  {
+    rule_template_name: 'default_MySQL',
+    desc: '默认规则模板',
+    db_type: 'MySQL'
+  }
+];
+
+export const ruleTypeByDbMockData = [
+  {
+    rule_type: '规范1',
+    rule_count: 0,
+    is_custom_rule_type: false
+  },
+  {
+    rule_type: '规范2',
+    rule_count: 0,
+    is_custom_rule_type: false
+  }
+];
+
+export const customRuleDetailMockData = {
+  rule_id: 'rule_id_123',
+  desc: 'test_custom_rule',
+  annotation: 'anno',
+  db_type: 'mysql',
+  level: CustomRuleResV1LevelEnum.error,
+  type: '规范1',
+  rule_script: 'SELECT 1;'
 };

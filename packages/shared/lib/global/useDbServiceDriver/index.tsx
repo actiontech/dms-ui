@@ -20,7 +20,7 @@ const useDbServiceDriver = () => {
   const {
     loading,
     run: updateDriverList,
-    runAsync: updateDriverListSync
+    runAsync: updateDriverListAsync
   } = useRequest(() => dms.ListDBServiceDriverOption(), {
     manual: true,
     onSuccess: (res) => {
@@ -77,7 +77,7 @@ const useDbServiceDriver = () => {
     driverMeta,
     dbDriverOptions,
     updateDriverList,
-    updateDriverListSync,
+    updateDriverListAsync,
     getLogoUrlByDbType,
     generateDriverSelectOptions,
     driverInfoFetched,
