@@ -33,9 +33,7 @@ describe('base/router-sqle-ee', () => {
   });
 
   it('render route sqle index page', () => {
-    const { baseElement } = customRender([
-      `/sqle-test-router`
-    ]);
+    const { baseElement } = customRender([`/sqle-test-router`]);
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -140,7 +138,7 @@ describe('base/router-sqle-ee', () => {
 
   describe('render sqle project detail router', () => {
     describe('render sqle project detail router when version is ce', () => {
-      it('render route projectOverview', async  () => {
+      it('render route projectOverview', async () => {
         const { baseElement } = customRender([
           `/sqle/project/${projectID}/overview`
         ]);
@@ -160,7 +158,7 @@ describe('base/router-sqle-ee', () => {
           expect(baseElement).toMatchSnapshot();
         });
 
-        it('render route orderCreate', async  () => {
+        it('render route orderCreate', async () => {
           const { baseElement } = customRender([
             `/sqle/project/${projectID}/order/create`
           ]);
