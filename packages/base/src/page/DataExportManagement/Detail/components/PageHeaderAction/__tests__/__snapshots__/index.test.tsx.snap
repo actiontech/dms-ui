@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/DataExport/Detail/PageHeaderAction clicked workflow detail button 1`] = `
+<div>
+  <div
+    class="css-1217j6x"
+  >
+    <div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          关闭工单
+        </span>
+      </button>
+      <div
+        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical export-detail-page-header-divider"
+        role="separator"
+      />
+    </div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        审核驳回
+      </span>
+    </button>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        审核通过
+      </span>
+    </button>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        执行导出
+      </span>
+    </button>
+    <div
+      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical export-detail-page-header-divider"
+      role="separator"
+    />
+    <div
+      class="toggle-export-detail-wrapper"
+    >
+      工单详情
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test base/DataExport/Detail/PageHeaderAction should match snapshot 1`] = `
+<div>
+  <div
+    class="css-1217j6x"
+  >
+    <div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          关闭工单
+        </span>
+      </button>
+      <div
+        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical export-detail-page-header-divider"
+        role="separator"
+      />
+    </div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        审核驳回
+      </span>
+    </button>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        审核通过
+      </span>
+    </button>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        执行导出
+      </span>
+    </button>
+    <div
+      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical export-detail-page-header-divider"
+      role="separator"
+    />
+    <div
+      class="toggle-export-detail-wrapper"
+    >
+      工单详情
+    </div>
+  </div>
+</div>
+`;

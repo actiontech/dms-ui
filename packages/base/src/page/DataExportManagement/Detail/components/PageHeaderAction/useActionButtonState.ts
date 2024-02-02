@@ -1,9 +1,9 @@
-import { message } from 'antd';
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import useExportDetailAction from '../../hooks/useExportDetailAction';
 import { useMemo } from 'react';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { MessageInstance } from 'antd/es/message/interface';
 
 type ActionMeta = {
   action: () => void;
@@ -11,26 +11,24 @@ type ActionMeta = {
   hidden: boolean;
 };
 
-const useActionButtonState: () => {
-  messageContentHolder: ReturnType<typeof message.useMessage>[1];
+const useActionButtonState: (messageApi: MessageInstance) => {
   closeWorkflowButtonMeta: ActionMeta;
   approveWorkflowButtonMeta: ActionMeta;
   rejectWorkflowButtonMeta: ActionMeta;
   executeExportButtonMeta: ActionMeta;
-} = () => {
+} = (messageApi) => {
   const { uid } = useCurrentUser();
-  const { workflowInfo, updateWorkflowRejectOpen, canRejectWorkflow } =
+  const { workflowInfo, updateWorkflowRejectOpen } =
     useDataExportDetailReduxManage();
 
   const {
-    messageContentHolder,
     closeWorkflowLoading,
     closeWorkflow,
     approveWorkflowLoading,
     approveWorkflow,
     executeExportLoading,
     executeExport
-  } = useExportDetailAction();
+  } = useExportDetailAction(messageApi);
 
   const workflowStatus = workflowInfo?.workflow_record?.status;
   const workflowID = workflowInfo?.workflow_uid ?? '';
@@ -79,10 +77,9 @@ const useActionButtonState: () => {
     }
     return (
       workflowStatus === WorkflowRecordStatusEnum.wait_for_approve &&
-      canRejectWorkflow &&
       allowOperateStep
     );
-  }, [allowOperateStep, canRejectWorkflow, currentStep, workflowStatus]);
+  }, [allowOperateStep, currentStep, workflowStatus]);
 
   const executingButtonVisibility = useMemo(() => {
     if (!workflowStatus || !currentStep) {
@@ -95,7 +92,6 @@ const useActionButtonState: () => {
   }, [currentStep, uid, workflowInfo?.create_user?.uid, workflowStatus]);
 
   return {
-    messageContentHolder,
     closeWorkflowButtonMeta: {
       action: () => closeWorkflow(workflowID),
       hidden: !closeWorkflowButtonVisibility,
