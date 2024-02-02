@@ -7,7 +7,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { SelectFileFormFields } from '../../page/RuleTemplate/ImportRuleTemplate/index.type';
+import { SelectFileFormFields } from './index.type';
 import { RuleTemplateFormProps } from '../../page/RuleTemplate/RuleTemplateForm/index.type';
 import { message, Form } from 'antd';
 

@@ -1,8 +1,6 @@
 import { useCallback, useState, useEffect } from 'react';
 import { IRuleTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { cloneDeep } from 'lodash';
-import EventEmitter from '../../utils/EventEmitter';
-import EmitterKey from '../../data/EmitterKey';
 import useRules from './useRules';
 import useFormStep from './useFormStep';
 import { useBoolean } from 'ahooks';
@@ -28,7 +26,8 @@ const useUpdateRuleTemplateForm = () => {
     databaseRule,
     setDatabaseRule,
     dbType,
-    setDbType
+    setDbType,
+    clearSearchValue
   } = useRules();
 
   const [
@@ -70,8 +69,8 @@ const useUpdateRuleTemplateForm = () => {
     });
     setDbType('');
     setActiveRule([...(ruleTemplate?.rule_list ?? [])]);
-    EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);
-  }, [form, ruleTemplate, setStep, setActiveRule, setDbType]);
+    clearSearchValue();
+  }, [form, ruleTemplate, setStep, setActiveRule, setDbType, clearSearchValue]);
 
   useEffect(() => {
     if (dbType) {

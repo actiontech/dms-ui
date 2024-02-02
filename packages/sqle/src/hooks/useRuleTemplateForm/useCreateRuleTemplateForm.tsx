@@ -63,7 +63,6 @@ const useCreateRuleTemplateForm = () => {
     setStep(0);
     form.resetFields();
     setDbType('');
-    // EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);
     clearSearchValue();
   }, [form, setStep, setDbType, clearSearchValue]);
 
