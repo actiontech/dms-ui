@@ -12,6 +12,7 @@ const routeData = {
 
 type typeMockRouteCate = keyof typeof routeData;
 
+// todo: 期望单元测试不是用侵入式修改 route 数据的方式测试整个 route
 const generateLazyElement = (route: any): RouterConfigItem => {
   const { children, element, ...rest } = route;
   if (children) {
