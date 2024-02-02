@@ -3,8 +3,6 @@ import reducers, {
   CreateDataExportPageEnum,
   updateCreateDataExportFormValues,
   updateCreateDataExportPageState,
-  updateCreateDataExportAuditState,
-  updateCreateDataExportSubmitState,
   updateDataExportAuditedTaskID,
   updateDataExportCreatedWorkflowID,
   clearDataExportAllCreateState,
@@ -15,7 +13,9 @@ import reducers, {
   updateDataExportDetailCurTaskID,
   updateDataExportDetailTaskStatusNumber,
   updateDataExportDetailCanRejectWorkflow,
-  clearDataExportAllDetailState
+  clearDataExportAllDetailState,
+  updateCreateDataExportAuditLoading,
+  updateCreateDataExportSubmitLoading
 } from '.';
 import { ExportMethodEnum } from '../../page/DataExportManagement/Create/components/CreateTask/ExportMethodForm/index.enum';
 
@@ -113,10 +113,10 @@ describe('store/dataExport', () => {
     });
   });
 
-  it('should execute updateCreateDataExportAuditState', () => {
+  it('should execute updateCreateDataExportAuditLoading', () => {
     const newState = reducers(
       state,
-      updateCreateDataExportAuditState({
+      updateCreateDataExportAuditLoading({
         auditLoading: true
       })
     );
@@ -142,10 +142,10 @@ describe('store/dataExport', () => {
     });
   });
 
-  it('should execute updateCreateDataExportSubmitState', () => {
+  it('should execute updateCreateDataExportSubmitLoading', () => {
     const newState = reducers(
       state,
-      updateCreateDataExportSubmitState({
+      updateCreateDataExportSubmitLoading({
         submitLoading: true
       })
     );
