@@ -3,13 +3,13 @@ import { ExportMethodEnum } from './ExportMethodForm/index.enum';
 
 export type BaseFormFieldsType = {
   workflow_subject: string;
-  desc: string;
+  desc?: string;
 };
 
 export type SourceFormFieldsType = {
-  business: string;
+  business?: string;
   dbService: string;
-  schema: string;
+  schema?: string;
 };
 
 export type MethodFormFieldsType = {

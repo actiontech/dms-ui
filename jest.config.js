@@ -36,6 +36,9 @@ module.exports = {
     'packages/**/{src,lib}/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
     'packages/**/src/App.tsx',
     'packages/shared/api/common/**',
+    '!packages/**/index.type.ts',
+    '!packages/**/index.enum.ts',
+    '!packages/sqle/src/page/AuditPlan/**',
     '!packages/provision/src/store/**/*.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],

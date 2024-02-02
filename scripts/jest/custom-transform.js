@@ -6,6 +6,7 @@ const testEnv = process.env?.JEST_TEST_VERSION_ENV;
 const { transform } = vitePlugin({
   env: {
     sqle: true,
+    provision: true,
     ee: testEnv === 'ee',
     ce: testEnv === 'ce'
   }

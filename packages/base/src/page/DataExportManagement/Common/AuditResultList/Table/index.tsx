@@ -13,7 +13,8 @@ import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   taskID,
-  projectID
+  projectID,
+  updateExecuteSQLsTypeIsDQL
 }) => {
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IListDataExportTaskSQL>();
@@ -44,10 +45,12 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       ready: typeof taskID === 'string',
       refreshDeps: [pagination, taskID],
       onSuccess(res) {
-        // updateTaskRecordTotalNum?.(taskID ?? '', res.total ?? 0);
+        updateExecuteSQLsTypeIsDQL?.(
+          !!res.list?.every((item) => item.export_sql_type === 'dql')
+        );
       },
       onError() {
-        // updateTaskRecordTotalNum?.(taskID ?? '', 0);
+        updateExecuteSQLsTypeIsDQL?.(true);
       }
     }
   );
@@ -56,7 +59,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     <>
       <ActiontechTable
         errorMessage={requestErrorMessage}
-        rowKey="number"
+        rowKey="uid"
         columns={AuditResultForCreateOrderColumn(onClickAuditResult)}
         loading={loading}
         dataSource={data?.list}

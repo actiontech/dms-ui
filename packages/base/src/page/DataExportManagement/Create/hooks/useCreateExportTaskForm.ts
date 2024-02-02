@@ -10,12 +10,12 @@ import {
 } from '../components/CreateTask/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-const useCreateExportTaskFrom = () => {
+const useCreateExportTaskForm = () => {
   const [baseForm] = useForm<BaseFormFieldsType>();
   const [sourceForm] = useForm<SourceFormFieldsType>();
   const [methodForm] = useForm<MethodFormFieldsType>();
   const { projectID } = useCurrentProject();
-  const { auditLoading, updateAuditState, updateFormValues, updateTaskIDs } =
+  const { auditLoading, updateAuditLoading, updateFormValues, updateTaskIDs } =
     useCreateDataExportReduxManage();
 
   const formatSQLAction = () => {
@@ -50,12 +50,18 @@ const useCreateExportTaskFrom = () => {
     }
   };
 
+  const resetAllForms = () => {
+    baseForm.resetFields();
+    sourceForm.resetFields();
+    methodForm.resetFields();
+  };
+
   const auditAction = async () => {
     const baseValues = await baseForm.validateFields();
     const sourceValues = await sourceForm.validateFields();
     const methodValues = await methodForm.validateFields();
 
-    updateAuditState(true);
+    updateAuditLoading(true);
 
     return dms
       .AddDataExportTask({
@@ -77,7 +83,7 @@ const useCreateExportTaskFrom = () => {
         return false;
       })
       .finally(() => {
-        updateAuditState(false);
+        updateAuditLoading(false);
       });
   };
 
@@ -87,8 +93,9 @@ const useCreateExportTaskFrom = () => {
     methodForm,
     auditLoading,
     formatSQLAction,
-    auditAction
+    auditAction,
+    resetAllForms
   };
 };
 
-export default useCreateExportTaskFrom;
+export default useCreateExportTaskForm;

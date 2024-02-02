@@ -33,6 +33,11 @@ export const AuditResultForCreateOrderColumn = (
       }
     },
     {
+      dataIndex: 'export_sql_type',
+      title: () => t('dmsDataExport.common.auditResult.column.sqlType'),
+      render: (type: string) => type || '-'
+    },
+    {
       dataIndex: 'audit_sql_result',
       title: () => t('dmsDataExport.common.auditResult.column.auditResult'),
       className: 'audit-result-column',
