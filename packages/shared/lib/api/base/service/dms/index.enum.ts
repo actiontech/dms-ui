@@ -37,11 +37,9 @@ export enum ListDBServicesOrderByEnum {
 }
 
 export enum ListDBServiceTipsFunctionalModuleEnum {
-  'create_audit_plan' = 'create_audit_plan',
+  'save_audit_plan' = 'save_audit_plan',
 
   'create_workflow' = 'create_workflow',
-
-  'sql_manage' = 'sql_manage',
 
   'create_export_task' = 'create_export_task'
 }

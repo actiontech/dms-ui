@@ -1,6 +1,4 @@
 import { BasicTag } from '@actiontech/shared';
-import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
-
 import { useTranslation } from 'react-i18next';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
@@ -11,8 +9,9 @@ import {
   IconOrderAuditResultWarning,
   IconOrderAuditResultError
 } from 'sqle/src/icon/Order';
+import { IAuditSQLResult } from '@actiontech/shared/lib/api/base/service/common';
 
-const AuditResultTag: React.FC<{ auditResult?: IAuditResult[] }> = ({
+const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
   auditResult
 }) => {
   const { t } = useTranslation();

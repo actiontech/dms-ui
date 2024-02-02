@@ -1,14 +1,16 @@
 import { BasicButton, Copy } from '@actiontech/shared';
 import { Divider, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import {
-  DataSourceResultCardStyleWrapper,
-  DataSourceResultSqlOptionsStyleWrapper
-} from 'sqle/src/page/Order/AuditDetail/style';
 import { ExportResultCardProp } from './index.type';
 import HighlightCode from 'sqle/src/utils/HighlightCode';
-import AuditResultTag from 'sqle/src/page/Order/AuditDetail/DataSourceResultList/components/AuditResultTag';
 import AuditResultTree from './AuditResultTree';
+import {
+  ExportContentStyleWrapper,
+  ExportResultCardStyleWrapper,
+  ExportResultTreeStyleWrapper
+} from '../../style';
+import AuditResultTag from './AuditResultTag';
+import { IconArrowDown } from '@actiontech/shared/lib/Icon';
 
 const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
   const { t } = useTranslation();
@@ -21,7 +23,7 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
   };
 
   return (
-    <DataSourceResultCardStyleWrapper>
+    <ExportResultCardStyleWrapper>
       {contextHolder}
       <div className="result-card-header">
         <Space>
@@ -39,9 +41,9 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
       </div>
       <div className="result-card-content">
         <div className="result-card-content-options">
-          <DataSourceResultSqlOptionsStyleWrapper active>
+          <ExportContentStyleWrapper active>
             {t('dmsDataExport.detail.exportResult.taskDetail.exportContent')}
-          </DataSourceResultSqlOptionsStyleWrapper>
+          </ExportContentStyleWrapper>
         </div>
         <div className="result-card-sql-wrap">
           <pre>
@@ -61,28 +63,25 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
           </pre>
         </div>
         <AuditResultTree auditResult={props.audit_sql_result} />
-        {/* 后端暂时给不到数据，先隐藏 */}
-        {/* <DataSourceAuditResultTreeStyleWrapper
+        <ExportResultTreeStyleWrapper
           treeData={[
             {
               title: t(
                 'dmsDataExport.detail.exportResult.taskDetail.exportResult'
               ),
-              key: 'exec_result_wrap',
+              key: 'export_result_wrap',
               children: [
                 {
-                  title: props.export_status || '-',
-                  key: 'export_status'
+                  title: props.export_result || '-',
+                  key: 'export_result'
                 }
               ]
             }
           ]}
-          switcherIcon={
-            <IconArrowDown width={16} height={16} color="#C3C6CD" />
-          }
-        /> */}
+          switcherIcon={<IconArrowDown width={16} height={16} />}
+        />
       </div>
-    </DataSourceResultCardStyleWrapper>
+    </ExportResultCardStyleWrapper>
   );
 };
 
