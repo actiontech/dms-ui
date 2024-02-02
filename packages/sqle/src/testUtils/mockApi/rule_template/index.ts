@@ -14,7 +14,8 @@ import {
   customRuleDetailMockData,
   projectRuleTemplateListMockData,
   publicRuleTemplateListMockData,
-  customRuleMockData
+  customRuleMockData,
+  importRuleTemplateMockData
 } from './data';
 
 class MockRuleTemplateApi implements MockSpyApy {
@@ -44,6 +45,7 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.deleteCustomRule();
     this.createProjectRuleTemplate();
     this.updateProjectRuleTemplate();
+    this.importProjectRuleTemplate();
   }
 
   public getRuleTemplateTips() {
@@ -255,6 +257,16 @@ class MockRuleTemplateApi implements MockSpyApy {
   public updateProjectRuleTemplate() {
     const spy = jest.spyOn(rule_template, 'updateProjectRuleTemplateV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public importProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'importProjectRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: importRuleTemplateMockData
+      })
+    );
     return spy;
   }
 }
