@@ -13,7 +13,10 @@ import {
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import rule_template from '../../../testUtils/mockApi/rule_template';
-import { ruleType } from '../../../testUtils/mockApi/rule_template/data';
+import {
+  ruleType,
+  ruleListData
+} from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
@@ -112,9 +115,19 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     expect(getBySelector('#templateDesc')).not.toHaveValue('desc');
     expect(getBySelector('#templateName')).not.toHaveValue('test1');
     expect(selectValue).not.toBeInTheDocument();
+    await act(async () => {
+      fireEvent.click(screen.getByText('下一步'));
+      await jest.advanceTimersByTime(100);
+    });
+    expect(screen.getByTestId('base-form')).toBeVisible();
+    expect(screen.getByTestId('rule-list')).not.toBeVisible();
   });
 
   it('create global rule template', async () => {
+    getAllRuleSpy.mockClear();
+    getAllRuleSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [] })
+    );
     const { baseElement } = renderWithReduxAndTheme(<CreateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRuleSpy).toBeCalledTimes(1);
@@ -135,6 +148,12 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByTestId('base-form')).not.toBeVisible();
     expect(screen.getByTestId('rule-list')).toBeVisible();
+
+    getAllRuleSpy.mockClear();
+    getAllRuleSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: ruleListData })
+    );
+
     const searchInput = getBySelector(
       'input[placeholder="请输入规则关键词搜索"]'
     );

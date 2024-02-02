@@ -13,7 +13,10 @@ import {
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import rule_template from '../../../testUtils/mockApi/rule_template';
-import { ruleType } from '../../../testUtils/mockApi/rule_template/data';
+import {
+  ruleType,
+  ruleListData
+} from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
@@ -112,7 +115,33 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     expect(selectValue).toBeInTheDocument();
   });
 
+  it('rule detail api return null', async () => {
+    getProjectRuleTemplateSpy.mockClear();
+    getProjectRuleTemplateSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: {} })
+    );
+    renderWithReduxAndTheme(<UpdateRuleTemplate />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getBySelector('#templateName')).toBeDisabled();
+    fireEvent.input(getBySelector('#templateDesc'), {
+      target: { value: 'desc' }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(getBySelector('#templateDesc')).toHaveValue('desc');
+    expect(getBySelector('#db_type')).toBeDisabled();
+    await act(async () => {
+      fireEvent.click(screen.getByText('下一步'));
+      await jest.advanceTimersByTime(100);
+    });
+    expect(screen.getByTestId('base-form')).toBeVisible();
+    expect(screen.getByTestId('rule-list')).not.toBeVisible();
+  });
+
   it('update rule template', async () => {
+    getAllRuleSpy.mockClear();
+    getAllRuleSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [] })
+    );
     const { baseElement } = renderWithReduxAndTheme(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRuleSpy).toBeCalledTimes(1);
@@ -125,6 +154,10 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByTestId('base-form')).not.toBeVisible();
     expect(screen.getByTestId('rule-list')).toBeVisible();
+    getAllRuleSpy.mockClear();
+    getAllRuleSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: ruleListData })
+    );
     const searchInput = getBySelector(
       'input[placeholder="请输入规则关键词搜索"]'
     );

@@ -13,7 +13,10 @@ import {
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import rule_template from '../../../testUtils/mockApi/rule_template';
-import { ruleType } from '../../../testUtils/mockApi/rule_template/data';
+import {
+  ruleType,
+  ruleListData
+} from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
@@ -82,6 +85,14 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.mouseMove(getBySelector('.ant-upload-list-item'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-upload-list-item-action'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('导 入'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('正在导入文件...')).toBeVisible();
@@ -106,6 +117,13 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     expect(getBySelector('#templateName')).not.toHaveValue();
     expect(selectValue).not.toBeInTheDocument();
 
+    await act(async () => {
+      fireEvent.click(screen.getByText('下一步'));
+      await jest.advanceTimersByTime(100);
+    });
+    expect(screen.getByTestId('base-form')).toBeVisible();
+    expect(screen.getByTestId('rule-list')).not.toBeVisible();
+
     fireEvent.click(
       getBySelector('.actiontech-page-header-namespace .title .ant-btn')
     );
@@ -114,6 +132,10 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   });
 
   it('import global rule template', async () => {
+    getAllRuleSpy.mockClear();
+    getAllRuleSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [] })
+    );
     const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(100));
     const file = new File([''], 'test.json');
@@ -142,6 +164,12 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByTestId('base-form')).not.toBeVisible();
     expect(screen.getByTestId('rule-list')).toBeVisible();
+
+    getAllRuleSpy.mockClear();
+    getAllRuleSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: ruleListData })
+    );
+
     const searchInput = getBySelector(
       'input[placeholder="请输入规则关键词搜索"]'
     );
@@ -157,7 +185,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       });
       await act(() => jest.advanceTimersByTime(300));
     });
-    expect(getAllRuleSpy).toHaveBeenNthCalledWith(2, {
+    expect(getAllRuleSpy).toBeCalledWith({
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test'
     });
