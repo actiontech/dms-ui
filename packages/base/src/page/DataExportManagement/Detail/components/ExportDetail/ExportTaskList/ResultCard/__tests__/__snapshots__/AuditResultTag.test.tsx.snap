@@ -1,0 +1,1292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag should match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="custom-icon  css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="checkbox-circle-fill"
+            >
+              <path
+                d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+                fill="#41BF9A"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+        <span>
+          审核通过
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    >
+      <span
+        class="custom-icon  css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="checkbox-circle-fill"
+          >
+            <path
+              d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+              fill="#41BF9A"
+              id="Vector"
+            />
+          </g>
+        </svg>
+      </span>
+      <span>
+        审核通过
+      </span>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag should match snapshot 2`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="custom-icon  css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="checkbox-circle-fill"
+            >
+              <path
+                d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+                fill="#41BF9A"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+        <span>
+          审核通过
+        </span>
+      </span>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="close-circle-fill"
+                >
+                  <path
+                    d="M7.99992 14.6666C4.31792 14.6666 1.33325 11.6819 1.33325 7.99992C1.33325 4.31792 4.31792 1.33325 7.99992 1.33325C11.6819 1.33325 14.6666 4.31792 14.6666 7.99992C14.6666 11.6819 11.6819 14.6666 7.99992 14.6666ZM7.99992 7.05725L6.11459 5.17125L5.17125 6.11459L7.05725 7.99992L5.17125 9.88525L6.11459 10.8286L7.99992 8.94258L9.88525 10.8286L10.8286 9.88525L8.94258 7.99992L10.8286 6.11459L9.88525 5.17125L7.99992 7.05725Z"
+                    fill="#F66074"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="close-circle-fill"
+              >
+                <path
+                  d="M7.99992 14.6666C4.31792 14.6666 1.33325 11.6819 1.33325 7.99992C1.33325 4.31792 4.31792 1.33325 7.99992 1.33325C11.6819 1.33325 14.6666 4.31792 14.6666 7.99992C14.6666 11.6819 11.6819 14.6666 7.99992 14.6666ZM7.99992 7.05725L6.11459 5.17125L5.17125 6.11459L7.05725 7.99992L5.17125 9.88525L6.11459 10.8286L7.99992 8.94258L9.88525 10.8286L10.8286 9.88525L8.94258 7.99992L10.8286 6.11459L9.88525 5.17125L7.99992 7.05725Z"
+                  fill="#F66074"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag should match snapshot 3`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="custom-icon  css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="checkbox-circle-fill"
+            >
+              <path
+                d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+                fill="#41BF9A"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+        <span>
+          审核通过
+        </span>
+      </span>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="close-circle-fill"
+                >
+                  <path
+                    d="M7.99992 14.6666C4.31792 14.6666 1.33325 11.6819 1.33325 7.99992C1.33325 4.31792 4.31792 1.33325 7.99992 1.33325C11.6819 1.33325 14.6666 4.31792 14.6666 7.99992C14.6666 11.6819 11.6819 14.6666 7.99992 14.6666ZM7.99992 7.05725L6.11459 5.17125L5.17125 6.11459L7.05725 7.99992L5.17125 9.88525L6.11459 10.8286L7.99992 8.94258L9.88525 10.8286L10.8286 9.88525L8.94258 7.99992L10.8286 6.11459L9.88525 5.17125L7.99992 7.05725Z"
+                    fill="#F66074"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag should match snapshot 4`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="custom-icon  css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="checkbox-circle-fill"
+            >
+              <path
+                d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+                fill="#41BF9A"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+        <span>
+          审核通过
+        </span>
+      </span>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="close-circle-fill"
+                >
+                  <path
+                    d="M7.99992 14.6666C4.31792 14.6666 1.33325 11.6819 1.33325 7.99992C1.33325 4.31792 4.31792 1.33325 7.99992 1.33325C11.6819 1.33325 14.6666 4.31792 14.6666 7.99992C14.6666 11.6819 11.6819 14.6666 7.99992 14.6666ZM7.99992 7.05725L6.11459 5.17125L5.17125 6.11459L7.05725 7.99992L5.17125 9.88525L6.11459 10.8286L7.99992 8.94258L9.88525 10.8286L10.8286 9.88525L8.94258 7.99992L10.8286 6.11459L9.88525 5.17125L7.99992 7.05725Z"
+                    fill="#F66074"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      />
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="spam-2-fill"
+                >
+                  <path
+                    d="M10.6234 1.66724L14.3334 5.37722V10.6239L10.6234 14.3339H5.37673L1.66675 10.6239V5.37722L5.37673 1.66724H10.6234ZM7.33295 10V11.3334H8.66628V10H7.33295ZM7.33295 4.66674V8.66672H8.66628V4.66674H7.33295Z"
+                    fill="#6094FC"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="spam-2-fill"
+              >
+                <path
+                  d="M10.6234 1.66724L14.3334 5.37722V10.6239L10.6234 14.3339H5.37673L1.66675 10.6239V5.37722L5.37673 1.66724H10.6234ZM7.33295 10V11.3334H8.66628V10H7.33295ZM7.33295 4.66674V8.66672H8.66628V4.66674H7.33295Z"
+                  fill="#6094FC"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag should match snapshot 5`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="custom-icon  css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="checkbox-circle-fill"
+            >
+              <path
+                d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+                fill="#41BF9A"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+        <span>
+          审核通过
+        </span>
+      </span>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="close-circle-fill"
+                >
+                  <path
+                    d="M7.99992 14.6666C4.31792 14.6666 1.33325 11.6819 1.33325 7.99992C1.33325 4.31792 4.31792 1.33325 7.99992 1.33325C11.6819 1.33325 14.6666 4.31792 14.6666 7.99992C14.6666 11.6819 11.6819 14.6666 7.99992 14.6666ZM7.99992 7.05725L6.11459 5.17125L5.17125 6.11459L7.05725 7.99992L5.17125 9.88525L6.11459 10.8286L7.99992 8.94258L9.88525 10.8286L10.8286 9.88525L8.94258 7.99992L10.8286 6.11459L9.88525 5.17125L7.99992 7.05725Z"
+                    fill="#F66074"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      />
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="spam-2-fill"
+                >
+                  <path
+                    d="M10.6234 1.66724L14.3334 5.37722V10.6239L10.6234 14.3339H5.37673L1.66675 10.6239V5.37722L5.37673 1.66724H10.6234ZM7.33295 10V11.3334H8.66628V10H7.33295ZM7.33295 4.66674V8.66672H8.66628V4.66674H7.33295Z"
+                    fill="#6094FC"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="alert-fill"
+                >
+                  <path
+                    d="M8.57658 2.0002L14.9274 13.0002C15.1115 13.3191 15.0022 13.7268 14.6834 13.9109C14.582 13.9694 14.4671 14.0002 14.35 14.0002H1.64836C1.28016 14.0002 0.981689 13.7017 0.981689 13.3335C0.981689 13.2165 1.01249 13.1015 1.071 13.0002L7.42185 2.0002C7.60598 1.68133 8.01365 1.57208 8.33252 1.75618C8.43392 1.81469 8.51805 1.89885 8.57658 2.0002ZM7.33252 10.6669V12.0002H8.66585V10.6669H7.33252ZM7.33252 6.0002V9.33355H8.66585V6.0002H7.33252Z"
+                    fill="#EBAD1C"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="alert-fill"
+              >
+                <path
+                  d="M8.57658 2.0002L14.9274 13.0002C15.1115 13.3191 15.0022 13.7268 14.6834 13.9109C14.582 13.9694 14.4671 14.0002 14.35 14.0002H1.64836C1.28016 14.0002 0.981689 13.7017 0.981689 13.3335C0.981689 13.2165 1.01249 13.1015 1.071 13.0002L7.42185 2.0002C7.60598 1.68133 8.01365 1.57208 8.33252 1.75618C8.43392 1.81469 8.51805 1.89885 8.57658 2.0002ZM7.33252 10.6669V12.0002H8.66585V10.6669H7.33252ZM7.33252 6.0002V9.33355H8.66585V6.0002H7.33252Z"
+                  fill="#EBAD1C"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTag should match snapshot 6`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="custom-icon  css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              id="checkbox-circle-fill"
+            >
+              <path
+                d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+                fill="#41BF9A"
+                id="Vector"
+              />
+            </g>
+          </svg>
+        </span>
+        <span>
+          审核通过
+        </span>
+      </span>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="close-circle-fill"
+                >
+                  <path
+                    d="M7.99992 14.6666C4.31792 14.6666 1.33325 11.6819 1.33325 7.99992C1.33325 4.31792 4.31792 1.33325 7.99992 1.33325C11.6819 1.33325 14.6666 4.31792 14.6666 7.99992C14.6666 11.6819 11.6819 14.6666 7.99992 14.6666ZM7.99992 7.05725L6.11459 5.17125L5.17125 6.11459L7.05725 7.99992L5.17125 9.88525L6.11459 10.8286L7.99992 8.94258L9.88525 10.8286L10.8286 9.88525L8.94258 7.99992L10.8286 6.11459L9.88525 5.17125L7.99992 7.05725Z"
+                    fill="#F66074"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      />
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="spam-2-fill"
+                >
+                  <path
+                    d="M10.6234 1.66724L14.3334 5.37722V10.6239L10.6234 14.3339H5.37673L1.66675 10.6239V5.37722L5.37673 1.66724H10.6234ZM7.33295 10V11.3334H8.66628V10H7.33295ZM7.33295 4.66674V8.66672H8.66628V4.66674H7.33295Z"
+                    fill="#6094FC"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="alert-fill"
+                >
+                  <path
+                    d="M8.57658 2.0002L14.9274 13.0002C15.1115 13.3191 15.0022 13.7268 14.6834 13.9109C14.582 13.9694 14.4671 14.0002 14.35 14.0002H1.64836C1.28016 14.0002 0.981689 13.7017 0.981689 13.3335C0.981689 13.2165 1.01249 13.1015 1.071 13.0002L7.42185 2.0002C7.60598 1.68133 8.01365 1.57208 8.33252 1.75618C8.43392 1.81469 8.51805 1.89885 8.57658 2.0002ZM7.33252 10.6669V12.0002H8.66585V10.6669H7.33252ZM7.33252 6.0002V9.33355H8.66585V6.0002H7.33252Z"
+                    fill="#EBAD1C"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <span
+            class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="spam-2-fill"
+                >
+                  <path
+                    d="M10.6234 1.66724L14.3334 5.37722V10.6239L10.6234 14.3339H5.37673L1.66675 10.6239V5.37722L5.37673 1.66724H10.6234ZM7.33295 10V11.3334H8.66628V10H7.33295ZM7.33295 4.66674V8.66672H8.66628V4.66674H7.33295Z"
+                    fill="#6094FC"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <span
+            class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="alert-fill"
+                >
+                  <path
+                    d="M8.57658 2.0002L14.9274 13.0002C15.1115 13.3191 15.0022 13.7268 14.6834 13.9109C14.582 13.9694 14.4671 14.0002 14.35 14.0002H1.64836C1.28016 14.0002 0.981689 13.7017 0.981689 13.3335C0.981689 13.2165 1.01249 13.1015 1.071 13.0002L7.42185 2.0002C7.60598 1.68133 8.01365 1.57208 8.33252 1.75618C8.43392 1.81469 8.51805 1.89885 8.57658 2.0002ZM7.33252 10.6669V12.0002H8.66585V10.6669H7.33252ZM7.33252 6.0002V9.33355H8.66585V6.0002H7.33252Z"
+                    fill="#EBAD1C"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="custom-icon  css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="close-circle-fill"
+                >
+                  <path
+                    d="M7.99992 14.6666C4.31792 14.6666 1.33325 11.6819 1.33325 7.99992C1.33325 4.31792 4.31792 1.33325 7.99992 1.33325C11.6819 1.33325 14.6666 4.31792 14.6666 7.99992C14.6666 11.6819 11.6819 14.6666 7.99992 14.6666ZM7.99992 7.05725L6.11459 5.17125L5.17125 6.11459L7.05725 7.99992L5.17125 9.88525L6.11459 10.8286L7.99992 8.94258L9.88525 10.8286L10.8286 9.88525L8.94258 7.99992L10.8286 6.11459L9.88525 5.17125L7.99992 7.05725Z"
+                    fill="#F66074"
+                    id="Vector"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              1
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="spam-2-fill"
+              >
+                <path
+                  d="M10.6234 1.66724L14.3334 5.37722V10.6239L10.6234 14.3339H5.37673L1.66675 10.6239V5.37722L5.37673 1.66724H10.6234ZM7.33295 10V11.3334H8.66628V10H7.33295ZM7.33295 4.66674V8.66672H8.66628V4.66674H7.33295Z"
+                  fill="#6094FC"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="alert-fill"
+              >
+                <path
+                  d="M8.57658 2.0002L14.9274 13.0002C15.1115 13.3191 15.0022 13.7268 14.6834 13.9109C14.582 13.9694 14.4671 14.0002 14.35 14.0002H1.64836C1.28016 14.0002 0.981689 13.7017 0.981689 13.3335C0.981689 13.2165 1.01249 13.1015 1.071 13.0002L7.42185 2.0002C7.60598 1.68133 8.01365 1.57208 8.33252 1.75618C8.43392 1.81469 8.51805 1.89885 8.57658 2.0002ZM7.33252 10.6669V12.0002H8.66585V10.6669H7.33252ZM7.33252 6.0002V9.33355H8.66585V6.0002H7.33252Z"
+                  fill="#EBAD1C"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="close-circle-fill"
+              >
+                <path
+                  d="M7.99992 14.6666C4.31792 14.6666 1.33325 11.6819 1.33325 7.99992C1.33325 4.31792 4.31792 1.33325 7.99992 1.33325C11.6819 1.33325 14.6666 4.31792 14.6666 7.99992C14.6666 11.6819 11.6819 14.6666 7.99992 14.6666ZM7.99992 7.05725L6.11459 5.17125L5.17125 6.11459L7.05725 7.99992L5.17125 9.88525L6.11459 10.8286L7.99992 8.94258L9.88525 10.8286L10.8286 9.88525L8.94258 7.99992L10.8286 6.11459L9.88525 5.17125L7.99992 7.05725Z"
+                  fill="#F66074"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

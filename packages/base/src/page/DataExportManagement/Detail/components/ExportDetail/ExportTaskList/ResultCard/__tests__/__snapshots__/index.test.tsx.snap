@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/DataExport/Detail/ExportTaskList/ResultCard should match snapshot 1`] = `
+<div>
+  <div
+    class="css-1nwg602"
+  >
+    <div
+      class="result-card-header"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <span
+            class="number"
+          >
+            #
+            2
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="result-card-status-wrap"
+          >
+            <div
+              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+              role="separator"
+            />
+            <span
+              class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+            >
+              <span
+                class="custom-icon  css-u3jcp4"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    id="checkbox-circle-fill"
+                  >
+                    <path
+                      d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+                      fill="#41BF9A"
+                      id="Vector"
+                    />
+                  </g>
+                </svg>
+              </span>
+              <span>
+                审核通过
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              复制SQL语句
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="result-card-content"
+    >
+      <div
+        class="result-card-content-options"
+      >
+        <div
+          class="css-lkzhcc"
+        >
+          导出内容
+        </div>
+      </div>
+      <div
+        class="result-card-sql-wrap"
+      >
+        <pre>
+          <code>
+            <div
+              class="code-line"
+            >
+              <span
+                class="code-line-number"
+              >
+                1
+              </span>
+              <span
+                class="hljs-keyword"
+              >
+                SELECT
+              </span>
+               
+              <span
+                class="hljs-number"
+              >
+                1
+              </span>
+              ;
+            </div>
+          </code>
+        </pre>
+      </div>
+      <div
+        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+        role="tree"
+      >
+        <div>
+          <input
+            aria-label="for screen reader"
+            style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+            tabindex="0"
+            value=""
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          class="ant-tree-treenode"
+          style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+        >
+          <div
+            class="ant-tree-indent"
+          >
+            <div
+              class="ant-tree-indent-unit"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-tree-list"
+          style="position: relative;"
+        >
+          <div
+            class="ant-tree-list-holder"
+          >
+            <div>
+              <div
+                class="ant-tree-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-grabbed="false"
+                  class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                  draggable="false"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="ant-tree-indent"
+                  />
+                  <span
+                    class="ant-tree-switcher ant-tree-switcher_close"
+                  >
+                    <span
+                      class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                    title=""
+                  >
+                    <span
+                      class="ant-tree-title"
+                    >
+                      <span
+                        class="audit-result-tree-title"
+                      >
+                        审核结果
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-tree ant-tree-icon-hide css-p78ydn css-dev-only-do-not-override-txh9fw"
+        role="tree"
+      >
+        <div>
+          <input
+            aria-label="for screen reader"
+            style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+            tabindex="0"
+            value=""
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          class="ant-tree-treenode"
+          style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+        >
+          <div
+            class="ant-tree-indent"
+          >
+            <div
+              class="ant-tree-indent-unit"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-tree-list"
+          style="position: relative;"
+        >
+          <div
+            class="ant-tree-list-holder"
+          >
+            <div>
+              <div
+                class="ant-tree-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-grabbed="false"
+                  class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                  draggable="false"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="ant-tree-indent"
+                  />
+                  <span
+                    class="ant-tree-switcher ant-tree-switcher_close"
+                  >
+                    <span
+                      class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                    title="导出结果"
+                  >
+                    <span
+                      class="ant-tree-title"
+                    >
+                      导出结果
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
