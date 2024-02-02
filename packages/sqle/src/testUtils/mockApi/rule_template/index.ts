@@ -46,6 +46,7 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.createProjectRuleTemplate();
     this.updateProjectRuleTemplate();
     this.importProjectRuleTemplate();
+    this.createRuleTemplate();
   }
 
   public getRuleTemplateTips() {
@@ -267,6 +268,12 @@ class MockRuleTemplateApi implements MockSpyApy {
         data: importRuleTemplateMockData
       })
     );
+    return spy;
+  }
+
+  public createRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'createRuleTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
