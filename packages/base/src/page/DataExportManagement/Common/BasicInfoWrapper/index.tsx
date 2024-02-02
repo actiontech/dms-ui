@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import { BasicInfoStyleWrapper } from '../style';
 import { BasicInfoWrapperProps } from './index.type';
 import { EmptyBox } from '@actiontech/shared';
 import { IconOrderStatusWrapper } from 'sqle/src/icon/Order';
 import { DataExportStatusDictionary } from '../index.data';
+import { BasicInfoStyleWrapper } from './style';
 
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   title,
