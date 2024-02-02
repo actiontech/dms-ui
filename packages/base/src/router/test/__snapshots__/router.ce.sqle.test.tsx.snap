@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base/router-sqle-ee render route sqle index page 1`] = `
+exports[`base/router-sqle-ce render route sqle index page 1`] = `
 <body>
   <div>
     <div>
@@ -10,7 +10,7 @@ exports[`base/router-sqle-ee render route sqle index page 1`] = `
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route customCreate 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route customCreate 1`] = `
 <body>
   <div>
     <div>
@@ -20,7 +20,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route customUpdate 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route customUpdate 1`] = `
 <body>
   <div>
     <div>
@@ -30,7 +30,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route globalCreate 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalCreate 1`] = `
 <body>
   <div>
     <div>
@@ -40,7 +40,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route globalDetail 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalDetail 1`] = `
 <body>
   <div>
     <div>
@@ -50,7 +50,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route globalImport 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalImport 1`] = `
 <body>
   <div>
     <div>
@@ -60,7 +60,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route globalUpdate 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalUpdate 1`] = `
 <body>
   <div>
     <div>
@@ -70,7 +70,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route reportStatistics 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route reportStatistics 1`] = `
 <body>
   <div>
     <div>
@@ -80,7 +80,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route rule 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route rule 1`] = `
 <body>
   <div>
     <div>
@@ -90,7 +90,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route ruleManager 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route ruleManager 1`] = `
 <body>
   <div>
     <div>
@@ -100,17 +100,7 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle global router render sqle router when version is ee render route ruleKnowledge 1`] = `
-<body>
-  <div>
-    <div>
-      ruleKnowledge
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render operationRecord 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render operationRecord 1`] = `
 <body>
   <div>
     <div>
@@ -120,7 +110,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route dashboard 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route dashboard 1`] = `
 <body>
   <div>
     <div>
@@ -130,7 +120,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderCreate 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderCreate 1`] = `
 <body>
   <div>
     <div
@@ -144,7 +134,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderDetail 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderDetail 1`] = `
 <body>
   <div>
     <div
@@ -158,7 +148,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderList 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderList 1`] = `
 <body>
   <div>
     <div
@@ -172,7 +162,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanCreate 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanCreate 1`] = `
 <body>
   <div>
     <div
@@ -186,7 +176,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetail 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetail 1`] = `
 <body>
   <div>
     <div
@@ -200,7 +190,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetailReport 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetailReport 1`] = `
 <body>
   <div>
     <div
@@ -214,7 +204,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanList 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanList 1`] = `
 <body>
   <div>
     <div
@@ -228,7 +218,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanUpdate 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanUpdate 1`] = `
 <body>
   <div>
     <div
@@ -242,7 +232,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route progress render progressDetail 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route progress render progressDetail 1`] = `
 <body>
   <div>
     <div
@@ -256,7 +246,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route progress render progressUpdate 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route progress render progressUpdate 1`] = `
 <body>
   <div>
     <div
@@ -270,7 +260,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route projectOverview 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route projectOverview 1`] = `
 <body>
   <div>
     <div>
@@ -280,7 +270,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate 1`] = `
 <body>
   <div>
     <div
@@ -294,7 +284,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate create 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate create 1`] = `
 <body>
   <div>
     <div
@@ -308,7 +298,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate import 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate import 1`] = `
 <body>
   <div>
     <div
@@ -322,7 +312,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate list 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate list 1`] = `
 <body>
   <div>
     <div
@@ -336,7 +326,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplateDetail 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplateDetail 1`] = `
 <body>
   <div>
     <div
@@ -350,7 +340,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplateUpdate 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplateUpdate 1`] = `
 <body>
   <div>
     <div
@@ -364,7 +354,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditCreate 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditCreate 1`] = `
 <body>
   <div>
     <div
@@ -378,7 +368,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditDetail 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditDetail 1`] = `
 <body>
   <div>
     <div
@@ -392,7 +382,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditList 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditList 1`] = `
 <body>
   <div>
     <div
@@ -406,7 +396,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagement render sqlManagement 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlManagement render sqlManagement 1`] = `
 <body>
   <div>
     <div
@@ -420,7 +410,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
 <body>
   <div>
     <div>
@@ -430,49 +420,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render SQLManagementAnalyze 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="sqlManagement"
-    >
-      <div>
-        SQLManagementAnalyze
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render route auditPlanDetail 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="plane"
-    >
-      <div>
-        auditPlanDetailAnalyze
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render route orderAnalyze 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="order"
-    >
-      <div>
-        orderAnalyze
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle route data snap 1`] = `
+exports[`base/router-sqle-ce render sqle route data snap 1`] = `
 Array [
   Object {
     "element": <div>
@@ -508,13 +456,6 @@ Array [
     </div>,
     "key": "account",
     "path": "account",
-  },
-  Object {
-    "element": <div>
-      project
-    </div>,
-    "key": "project",
-    "path": "project",
   },
   Object {
     "children": Array [
@@ -558,65 +499,15 @@ Array [
         "path": ":projectID/db-services",
       },
       Object {
-        "children": Array [
-          Object {
-            "element": <div>
-              syncDataSourceList
-            </div>,
-            "key": "syncDataSourceList",
-            "path": "",
-          },
-          Object {
-            "element": <div>
-              syncDataSourceCreate
-            </div>,
-            "key": "syncDataSourceCreate",
-            "path": "create",
-          },
-          Object {
-            "element": <div>
-              syncDataSourceUpdate
-            </div>,
-            "key": "syncDataSourceUpdate",
-            "path": "update/:taskId",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="syncDataSource"
-        >
-          <Outlet />
+        "element": <div>
+          syncDataSource
         </div>,
         "key": "syncDataSource",
         "path": ":projectID/syncDataSource",
       },
       Object {
-        "children": Array [
-          Object {
-            "element": <div>
-              dataExportManagement
-            </div>,
-            "key": "dataExportManagement",
-            "path": "",
-          },
-          Object {
-            "element": <div>
-              CreateExportTask
-            </div>,
-            "key": "CreateExportTask",
-            "path": "create",
-          },
-          Object {
-            "element": <div>
-              ExportTaskDetail
-            </div>,
-            "key": "ExportTaskDetail",
-            "path": ":workflowID",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="dataExportManagement"
-        >
-          <Outlet />
+        "element": <div>
+          dataExportManagement
         </div>,
         "key": "dataExportManagement",
         "path": ":projectID/data/export",
@@ -699,13 +590,6 @@ Array [
     ],
   },
   Object {
-    "element": <div>
-      ruleKnowledge
-    </div>,
-    "key": "ruleKnowledge",
-    "path": "sqle/rule/knowledge/:ruleName/:dbType",
-  },
-  Object {
     "children": Array [
       Object {
         "element": <div>
@@ -736,13 +620,6 @@ Array [
             </div>,
             "key": "orderDetail",
             "path": ":orderId",
-          },
-          Object {
-            "element": <div>
-              orderAnalyze
-            </div>,
-            "key": "orderAnalyze",
-            "path": ":taskId/:sqlNum/analyze",
           },
         ],
         "element": <div
@@ -828,13 +705,6 @@ Array [
             </div>,
             "key": "auditPlanDetailReport",
             "path": "detail/:auditPlanName/report/:reportId",
-          },
-          Object {
-            "element": <div>
-              auditPlanDetailAnalyze
-            </div>,
-            "key": "auditPlanDetailAnalyze",
-            "path": ":reportId/:sqlNum/:auditPlanName/analyze",
           },
         ],
         "element": <div
@@ -945,13 +815,6 @@ Array [
             </div>,
             "key": "SQLManagement",
             "path": "",
-          },
-          Object {
-            "element": <div>
-              SQLManagementAnalyze
-            </div>,
-            "key": "SQLManagementAnalyze",
-            "path": ":sqlManageId/analyze",
           },
         ],
         "element": <div

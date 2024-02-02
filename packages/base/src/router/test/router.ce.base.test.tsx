@@ -1,3 +1,7 @@
+/**
+ * @test_version ce
+ */
+
 import { MemoryRouterProps } from 'react-router-dom';
 import { act, screen, cleanup } from '@testing-library/react';
 
@@ -5,7 +9,7 @@ import mockUseRoutes, { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
-describe('base/router-base-ee', () => {
+describe('base/router-base-ce', () => {
   const projectID = mockProjectInfo.projectID;
 
   const customRender = (
@@ -104,77 +108,6 @@ describe('base/router-base-ee', () => {
         await act(async () => jest.advanceTimersByTime(0));
         expect(screen.getByText('dataSourceUpdate')).toBeInTheDocument();
         expect(baseElement).toMatchSnapshot();
-      });
-    });
-  });
-
-  describe('render base router when version is ee', () => {
-    it('render router project', async () => {
-      const { baseElement } = customRender(['/project']);
-
-      expect(screen.getByText('project')).toBeInTheDocument();
-      expect(baseElement).toMatchSnapshot();
-    });
-
-    describe('render route syncDataSource', () => {
-      it('render route syncDataSourceList', async () => {
-        const { baseElement } = customRender([
-          `/project/${projectID}/syncDataSource`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(0));
-        expect(baseElement).toMatchSnapshot();
-      });
-
-      it('render route syncDataSourceList', async () => {
-        const { baseElement } = customRender([
-          `/project/${projectID}/syncDataSource/create`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(0));
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('syncDataSourceCreate')).toBeInTheDocument();
-      });
-
-      it('render route syncDataSourceList', async () => {
-        const { baseElement } = customRender([
-          `/project/${projectID}/syncDataSource/update/taskId`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(0));
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('syncDataSourceUpdate')).toBeInTheDocument();
-      });
-    });
-
-    describe('render route dataExportManagement', () => {
-      it('render route dataExportManagement', async () => {
-        const { baseElement } = customRender([
-          `/project/${projectID}/data/export`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(0));
-        expect(baseElement).toMatchSnapshot();
-      });
-
-      it('render route CreateExportTask', async () => {
-        const { baseElement } = customRender([
-          `/project/${projectID}/data/export/create`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(0));
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('CreateExportTask')).toBeInTheDocument();
-      });
-
-      it('render route ExportTaskDetail', async () => {
-        const { baseElement } = customRender([
-          `/project/${projectID}/data/export/workflowID`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(0));
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('ExportTaskDetail')).toBeInTheDocument();
       });
     });
   });

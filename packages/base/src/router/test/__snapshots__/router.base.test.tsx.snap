@@ -1,5 +1,162 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`base/router-base-ee render base route data snap 1`] = `
+Array [
+  Object {
+    "element": <div>
+      home
+    </div>,
+    "key": "home",
+    "path": "/",
+  },
+  Object {
+    "element": <div>
+      userCenter
+    </div>,
+    "key": "userCenter",
+    "path": "userCenter",
+  },
+  Object {
+    "element": <div>
+      system
+    </div>,
+    "key": "system",
+    "path": "system",
+  },
+  Object {
+    "element": <div>
+      cloudBeaver
+    </div>,
+    "key": "cloudBeaver",
+    "path": "cloudBeaver",
+  },
+  Object {
+    "element": <div>
+      account
+    </div>,
+    "key": "account",
+    "path": "account",
+  },
+  Object {
+    "element": <div>
+      project
+    </div>,
+    "key": "project",
+    "path": "project",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "element": <div>
+          member
+        </div>,
+        "key": "member",
+        "path": ":projectID/member",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              dataSourceList
+            </div>,
+            "key": "dataSourceList",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              dataSourceCreate
+            </div>,
+            "key": "dataSourceCreate",
+            "path": "create",
+          },
+          Object {
+            "element": <div>
+              dataSourceUpdate
+            </div>,
+            "key": "dataSourceUpdate",
+            "path": "update/:dbServiceUid",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="dataSource"
+        >
+          <Outlet />
+        </div>,
+        "key": "dataSource",
+        "path": ":projectID/db-services",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              syncDataSourceList
+            </div>,
+            "key": "syncDataSourceList",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              syncDataSourceCreate
+            </div>,
+            "key": "syncDataSourceCreate",
+            "path": "create",
+          },
+          Object {
+            "element": <div>
+              syncDataSourceUpdate
+            </div>,
+            "key": "syncDataSourceUpdate",
+            "path": "update/:taskId",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="syncDataSource"
+        >
+          <Outlet />
+        </div>,
+        "key": "syncDataSource",
+        "path": ":projectID/syncDataSource",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              dataExportManagement
+            </div>,
+            "key": "dataExportManagement",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              CreateExportTask
+            </div>,
+            "key": "CreateExportTask",
+            "path": "create",
+          },
+          Object {
+            "element": <div>
+              ExportTaskDetail
+            </div>,
+            "key": "ExportTaskDetail",
+            "path": ":workflowID",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="dataExportManagement"
+        >
+          <Outlet />
+        </div>,
+        "key": "dataExportManagement",
+        "path": ":projectID/data/export",
+      },
+    ],
+    "element": <UNDEFINED />,
+    "key": "projectDetail",
+    "path": "project/*",
+  },
+]
+`;
+
 exports[`base/router-base-ee render base router when version is ce render router account 1`] = `
 <body>
   <div>
@@ -49,7 +206,11 @@ exports[`base/router-base-ee render base router when version is ce render router
   <div>
     <div
       data-test-parent-id="dataSource"
-    />
+    >
+      <div>
+        dataSourceList
+      </div>
+    </div>
   </div>
 </body>
 `;
@@ -131,7 +292,11 @@ exports[`base/router-base-ee render base router when version is ee render route 
   <div>
     <div
       data-test-parent-id="dataExportManagement"
-    />
+    >
+      <div>
+        dataExportManagement
+      </div>
+    </div>
   </div>
 </body>
 `;
@@ -141,7 +306,11 @@ exports[`base/router-base-ee render base router when version is ee render route 
   <div>
     <div
       data-test-parent-id="syncDataSource"
-    />
+    >
+      <div>
+        syncDataSourceList
+      </div>
+    </div>
   </div>
 </body>
 `;

@@ -1,7 +1,7 @@
 import { MemoryRouterProps } from 'react-router-dom';
-import { act, screen, cleanup } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 
-import { RenderRouterComponent } from './data';
+import mockUseRoutes, { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 
 describe('base/router- un Auth -ee', () => {
@@ -23,6 +23,10 @@ describe('base/router- un Auth -ee', () => {
     jest.clearAllMocks();
     jest.useRealTimers();
     cleanup();
+  });
+
+  it('render un auth route data snap', () => {
+    expect(mockUseRoutes('unAuth')).toMatchSnapshot();
   });
 
   it('should render login', () => {
