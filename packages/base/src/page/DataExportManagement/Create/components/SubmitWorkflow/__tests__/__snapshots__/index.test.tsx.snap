@@ -333,9 +333,19 @@ exports[`test base/DataExport/Create/SubmitWorkflow should match snapshot 2`] = 
             />
             <div
               class="ant-segmented-item-label"
-              title="bl1"
             >
-              bl1
+              <div
+                class="db-service-segmented-label css-1jeaof"
+              >
+                <span
+                  class="db-service-segmented-label-text"
+                >
+                  bl1
+                </span>
+                <span
+                  class="db-service-segmented-label-icon"
+                />
+              </div>
             </div>
           </label>
         </div>

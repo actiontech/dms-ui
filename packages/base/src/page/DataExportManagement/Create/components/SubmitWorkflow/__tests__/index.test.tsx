@@ -18,11 +18,9 @@ import {
   createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import MockDate from 'mockdate';
 
 describe('test base/DataExport/Create/SubmitWorkflow', () => {
   beforeEach(() => {
-    MockDate.set('2024-01-31');
     dataExport.BatchGetDataExportTask();
     dataExport.ListDataExportTaskSQLs();
     jest.useFakeTimers();
@@ -30,7 +28,6 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     mockUseCreateDataExportReduxManage();
   });
   afterEach(() => {
-    MockDate.reset();
     jest.clearAllMocks();
     jest.clearAllTimers();
     jest.useRealTimers();
