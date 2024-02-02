@@ -1,3 +1,6 @@
+/**
+ * @test_version ce
+ */
 import { MemoryRouterProps } from 'react-router-dom';
 import { act, screen, cleanup } from '@testing-library/react';
 
@@ -5,7 +8,7 @@ import mockUseRoutes, { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
-describe('base/router-sqle-ee', () => {
+describe('base/router-sqle-ce', () => {
   const projectID = mockProjectInfo.projectID;
 
   const customRender = (
@@ -33,9 +36,7 @@ describe('base/router-sqle-ee', () => {
   });
 
   it('render route sqle index page', () => {
-    const { baseElement } = customRender([
-      `/sqle-test-router`
-    ]);
+    const { baseElement } = customRender([`/sqle-test-router`]);
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -125,22 +126,11 @@ describe('base/router-sqle-ee', () => {
         expect(screen.getByText('updateCustomRule')).toBeInTheDocument();
       });
     });
-
-    describe('render sqle router when version is ee', () => {
-      it('render route ruleKnowledge', () => {
-        const { baseElement } = customRender([
-          '/sqle/rule/knowledge/ruleName/dbType'
-        ]);
-
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('ruleKnowledge')).toBeInTheDocument();
-      });
-    });
   });
 
   describe('render sqle project detail router', () => {
     describe('render sqle project detail router when version is ce', () => {
-      it('render route projectOverview', async  () => {
+      it('render route projectOverview', async () => {
         const { baseElement } = customRender([
           `/sqle/project/${projectID}/overview`
         ]);
@@ -160,7 +150,7 @@ describe('base/router-sqle-ee', () => {
           expect(baseElement).toMatchSnapshot();
         });
 
-        it('render route orderCreate', async  () => {
+        it('render route orderCreate', async () => {
           const { baseElement } = customRender([
             `/sqle/project/${projectID}/order/create`
           ]);
@@ -373,36 +363,6 @@ describe('base/router-sqle-ee', () => {
           await act(async () => jest.advanceTimersByTime(300));
           expect(baseElement).toMatchSnapshot();
         });
-      });
-    });
-
-    describe('render sqle project detail router when version is ee', () => {
-      it('render route orderAnalyze', () => {
-        const { baseElement } = customRender([
-          `/sqle/project/${projectID}/order/taskId/sqlNum/analyze`
-        ]);
-
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('orderAnalyze')).toBeInTheDocument();
-      });
-
-      it('render route auditPlanDetail', () => {
-        const { baseElement } = customRender([
-          `/sqle/project/${projectID}/auditPlan/reportId/sqlNum/:auditPlanName/analyze`
-        ]);
-
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('auditPlanDetailAnalyze')).toBeInTheDocument();
-      });
-
-      it('render SQLManagementAnalyze', async () => {
-        const { baseElement } = customRender([
-          `/sqle/project/${projectID}/sqlManagement/sqlManageId/analyze`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(300));
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('SQLManagementAnalyze')).toBeInTheDocument();
       });
     });
   });

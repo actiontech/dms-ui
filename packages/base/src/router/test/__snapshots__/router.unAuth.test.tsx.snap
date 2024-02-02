@@ -1,5 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`base/router- un Auth -ee render un auth route data snap 1`] = `
+Array [
+  Object {
+    "element": <div>
+      /login
+    </div>,
+    "key": undefined,
+    "path": "/login",
+  },
+  Object {
+    "element": <div>
+      /user/bind
+    </div>,
+    "key": undefined,
+    "path": "/user/bind",
+  },
+  Object {
+    "element": <div>
+      *
+    </div>,
+    "key": undefined,
+    "path": "*",
+  },
+]
+`;
+
 exports[`base/router- un Auth -ee should render BindUser 1`] = `
 <body>
   <div>

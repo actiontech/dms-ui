@@ -1,4 +1,6 @@
 import { RouteObject, useRoutes, Outlet } from 'react-router-dom';
+import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
+
 import { AuthRouterConfig, unAuthRouterConfig } from '../router';
 import { BaseRouterConfig } from '../router.base';
 
@@ -10,49 +12,48 @@ const routeData = {
 
 type typeMockRouteCate = keyof typeof routeData;
 
-/**
-  todo: 筛选数据 毕竟这个数据是给 menu 用的
-  index: true
-  有 children 且 element 不为空的
-  重定向的
-
-  还需要一个全部的 route 数据快照
- */
-const generateLazyElement = (route: any) => {
+const generateLazyElement = (route: any): RouterConfigItem => {
   const { children, element, ...rest } = route;
   if (children) {
     return {
-      ...rest,
+      key: rest?.key ?? rest.path,
+      path: rest.path,
       element:
         element || children[0].index ? (
-          <div data-test-parent-id={rest.key}>
+          <div data-test-parent-id={rest?.key ?? rest.path}>
             <Outlet />
           </div>
         ) : undefined,
-      children: children.map((item) => generateLazyElement(item))
+      children: children.map((item: RouterConfigItem) =>
+        generateLazyElement(item)
+      )
     };
   } else {
     const { key, path } = route;
+    const content = key === '*' ? `${JSON.stringify(route)}` : key ?? path;
     return {
       key,
-      path,
-      element: <div key={`key-${key}`}>{key ?? path}</div>
+      path: path ?? '',
+      element: <div key={`key-${key}`}>{content}</div>
     };
   }
 };
 
-const mockUseRoutes = (type: typeMockRouteCate) => {
-  const processedRoutes = routeData[type].map((route) => {
-    const { children, ...rest } = route;
-    if (children) {
-      return {
-        ...rest,
-        children: children.map((item) => generateLazyElement(item))
-      };
-    } else {
-      return generateLazyElement(route);
+export const mockUseRoutes = (type: typeMockRouteCate) => {
+  const processedRoutes = routeData[type].map(
+    (route: RouterConfigItem | RouteObject) => {
+      const { children, ...rest } = route;
+      if (children) {
+        return {
+          ...rest,
+          children: children.map((item) => generateLazyElement(item))
+        };
+      } else {
+        return generateLazyElement(route);
+      }
     }
-  });
+  );
+
   return processedRoutes;
 };
 
