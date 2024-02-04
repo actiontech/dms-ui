@@ -168,11 +168,7 @@ describe('sqle/components/RuleList', () => {
     });
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.scroll(getBySelector('#rule-list-wrapper-id', baseElement), {
-      y: 300
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.scroll(getBySelector('#rule-list-wrapper-id', baseElement), {
-      y: 500
+      y: 400
     });
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();

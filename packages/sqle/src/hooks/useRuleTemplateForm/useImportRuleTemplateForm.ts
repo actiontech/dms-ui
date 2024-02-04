@@ -12,7 +12,7 @@ import { RuleTemplateFormProps } from '../../page/RuleTemplate/RuleTemplateForm/
 import { message, Form } from 'antd';
 
 import useFormStep from './useFormStep';
-import useAllRules from './useRules';
+import useRules from './useRules';
 
 const useImportRuleTemplate = () => {
   const { t } = useTranslation();
@@ -57,7 +57,7 @@ const useImportRuleTemplate = () => {
     setDbType,
     subscribe,
     clearSearchValue
-  } = useAllRules(true);
+  } = useRules(true);
 
   const getAllRulesByDbTypeAndFilterActiveRuleList = (
     importRuleList: IRuleResV1[],
