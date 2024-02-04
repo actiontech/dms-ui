@@ -8,7 +8,7 @@ import { IBasicInfo } from '@actiontech/shared/lib/api/base/service/common';
 import { useDispatch } from 'react-redux';
 import { updateWebTitleAndLogo } from '../../store/system';
 
-const DefaultWebTitle: React.FC = () => (
+export const DefaultWebTitle: React.FC = () => (
   <div className="title">
     <span className="label label-primary">Action</span>
     <span className="label label-base">{DMS_DEFAULT_WEB_TITLE}</span>
