@@ -18,6 +18,8 @@ import {
   useCreateRuleTemplateForm,
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
+import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -44,6 +46,13 @@ const CreateRuleTemplate = () => {
   } = useCreateRuleTemplateForm();
 
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
+
+  const { updateActiveSegmentedKey } = useRuleManagerSegmented();
+
+  const gotoListPage = () => {
+    updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
+    onGoToGlobalRuleTemplateList();
+  };
 
   const submit = useCallback(() => {
     startSubmit();
@@ -80,10 +89,7 @@ const CreateRuleTemplate = () => {
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton
-            onClick={onGoToGlobalRuleTemplateList}
-            icon={<IconLeftArrow />}
-          >
+          <BasicButton onClick={gotoListPage} icon={<IconLeftArrow />}>
             {t('ruleManager.backToGlobalRuleTemplateList')}
           </BasicButton>
         }
@@ -145,7 +151,7 @@ const CreateRuleTemplate = () => {
             <BasicButton
               type="primary"
               key="view-rule-template-list"
-              onClick={onGoToGlobalRuleTemplateList}
+              onClick={gotoListPage}
             >
               {t('ruleManager.backToGlobalRuleTemplateList')}
             </BasicButton>
