@@ -2,7 +2,7 @@ import BaseInfoForm from './BaseInfoForm';
 import ExportMethodForm from './ExportMethodForm';
 import ExportSourceForm from './ExportSourceForm';
 import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
-import useCreateExportTaskFrom from '../../hooks/useCreateExportTaskForm';
+import useCreateExportTaskForm from '../../hooks/useCreateExportTaskForm';
 import ExportFormAction from './ExportFormAction';
 import { Spin } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
@@ -21,14 +21,9 @@ const CreateExportTask: React.FC = () => {
     methodForm,
     auditAction,
     formatSQLAction,
-    auditLoading
-  } = useCreateExportTaskFrom();
-
-  const resetAllForm = () => {
-    baseForm.resetFields();
-    sourceForm.resetFields();
-    methodForm.resetFields();
-  };
+    auditLoading,
+    resetAllForms
+  } = useCreateExportTaskForm();
 
   return (
     <Spin spinning={auditLoading}>
@@ -37,7 +32,7 @@ const CreateExportTask: React.FC = () => {
           fixed
           title={<BackToWorkflowList />}
           extra={
-            <BasicButton onClick={resetAllForm} disabled={auditLoading}>
+            <BasicButton onClick={resetAllForms} disabled={auditLoading}>
               {t('common.reset')}
             </BasicButton>
           }

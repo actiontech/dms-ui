@@ -6,7 +6,7 @@ import {
 import { t } from '../../../../../../locale';
 import ExportTaskStatus from '../../../../Common/TaskStatus';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicToolTips } from '@actiontech/shared';
 import { IconTipOrange } from '@actiontech/shared/lib/Icon';

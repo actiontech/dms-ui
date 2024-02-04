@@ -1,111 +1,52 @@
-import DefaultScene from './DefaultScene';
-import { StringDictionary } from '@actiontech/shared/lib/types/common.type';
-import { t } from '../../../locale/index';
+import { useNavigate } from 'react-router-dom';
 import {
-  IconStepDataQuery,
-  IconStepOperation,
-  IconStepSafetyRule
-} from '../../../icon/home';
-import { DevopsStepsProps, UserDevopsStepsFactory } from './index.type';
+  AdminUserDevopsSteps,
+  NormalUserDevopsSteps
+} from './components/StepItems/index.data';
+import { DefaultSceneStepContainerWrapper } from '../style';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
+import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
+import NotFoundProject from './components/NotFoundProject';
+import { useState } from 'react';
+import StepItems from './components/StepItems';
 
-import {
-  getDataExportTask,
-  getDatabaseManagerSteps,
-  getMemberAndPermissionSteps,
-  getSqlEditorStep
-} from './StepItems/base';
+const DefaultScene: React.FC = () => {
+  const { isAdmin, bindProjects } = useCurrentUser();
+  const navigate = useNavigate();
 
-import {
-  getAuditProgressStep,
-  getAuditManageStep,
-  getDataModifyStep,
-  getSQLEOperateStepItem
-} from './StepItems/sqle';
+  const [
+    openRulePageProjectSelectorModal,
+    setOpenRulePageProjectSelectorModal
+  ] = useState(false);
+  const { currentProjectID, updateRecentlyProject } =
+    useRecentlyOpenedProjects();
 
-export const UserTypeDictionary: StringDictionary = {
-  admin: t('dmsHome.defaultScene.header.adminUser'),
-  normal: t('dmsHome.defaultScene.header.normalUser')
-};
-
-export const AdminUserDevopsSteps: (
-  arg: DevopsStepsProps
-) => UserDevopsStepsFactory = ({
-  navigate,
-  projectID = '',
-  setOpenRulePageProjectSelectorModal
-}) => [
-  getDatabaseManagerSteps({ navigate, projectID }),
-  getMemberAndPermissionSteps({ navigate, projectID }),
-
-  // #if [sqle]
-  {
-    key: 'safetyRule',
-    title: t('dmsHome.defaultScene.steps.safetyRule.title'),
-    icon: <IconStepSafetyRule />,
-    children: [
-      getAuditManageStep({
+  const steps = isAdmin
+    ? AdminUserDevopsSteps({
         navigate,
-        projectID,
+        projectID: currentProjectID,
         setOpenRulePageProjectSelectorModal
-      }),
-      getAuditProgressStep({ navigate, projectID })
-    ]
-  },
-  // #endif
+      })
+    : NormalUserDevopsSteps({
+        navigate,
+        projectID: currentProjectID,
+        setOpenRulePageProjectSelectorModal
+      });
 
-  {
-    key: 'queryAndModify',
-    title: t('dmsHome.defaultScene.steps.queryAndModify.title'),
-    icon: <IconStepDataQuery />,
-    children: [
-      getSqlEditorStep({ navigate }),
+  return (
+    <>
+      <DefaultSceneStepContainerWrapper>
+        <StepItems steps={steps} />
+      </DefaultSceneStepContainerWrapper>
 
-      // #if [sqle]
-      getDataModifyStep({ navigate, projectID }),
-      // #endif
-
-      getDataExportTask({ navigate, projectID })
-    ]
-  },
-
-  // #if [sqle]
-  {
-    key: 'devopsAndAudit',
-    title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
-    icon: <IconStepOperation />,
-    children: [
-      {
-        key: 'operationCheck',
-        title: t(
-          'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.title_1'
-        ),
-        content: t(
-          'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
-        ),
-        buttons: [...getSQLEOperateStepItem({ navigate, projectID })]
-      }
-    ]
-  }
-  // #endif
-];
-
-export const NormalUserDevopsSteps: (
-  arg: DevopsStepsProps
-) => UserDevopsStepsFactory = ({ navigate, projectID }) => [
-  {
-    key: 'queryAndModify',
-    title: t('dmsHome.defaultScene.steps.queryAndModify.title'),
-    icon: <IconStepDataQuery />,
-    children: [
-      getSqlEditorStep({ navigate }),
-
-      // #if [sqle]
-      getDataModifyStep({ navigate, projectID }),
-      // #endif
-
-      getDataExportTask({ navigate, projectID })
-    ]
-  }
-];
+      <NotFoundProject
+        open={openRulePageProjectSelectorModal}
+        setOpen={setOpenRulePageProjectSelectorModal}
+        bindProjects={bindProjects}
+        updateRecentlyProject={updateRecentlyProject}
+      />
+    </>
+  );
+};
 
 export default DefaultScene;

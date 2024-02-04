@@ -146,3 +146,27 @@ export const ignoreComponentAutoCreatedListNoKey = () => {
     console.error = error;
   });
 };
+
+/**
+ * 过滤 NaN is an invalid value for the height css style property. 问题
+ * 看起来应该是测试环境中某个原因导致 TextArea 组件高度设置错误了。 需要后面细究下啥原因。
+ */
+export const ignoreInvalidValueForCSSStyleProperty = () => {
+  const error = console.error;
+
+  beforeAll(() => {
+    console.error = (...arg) => {
+      if (
+        typeof arg[0] === 'string' &&
+        arg[0].includes('`NaN` is an invalid value for the')
+      ) {
+        return;
+      }
+      error(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.error = error;
+  });
+};

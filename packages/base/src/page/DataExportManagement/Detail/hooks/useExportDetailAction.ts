@@ -3,14 +3,13 @@ import EmitterKey from '../../../../data/EmitterKey';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
+import { MessageInstance } from 'antd/es/message/interface';
 
-const useExportDetailAction = () => {
+const useExportDetailAction = (messageApi: MessageInstance) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
-  const [messageApi, messageContentHolder] = message.useMessage();
 
   const refreshWorkflow = () => {
     eventEmitter.emit(EmitterKey.DMS_Refresh_Export_Data_Workflow);
@@ -93,7 +92,6 @@ const useExportDetailAction = () => {
   };
 
   return {
-    messageContentHolder,
     refreshWorkflow,
     closeWorkflowLoading,
     closeWorkflow,
