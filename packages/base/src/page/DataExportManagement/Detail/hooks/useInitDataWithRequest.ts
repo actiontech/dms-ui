@@ -12,12 +12,8 @@ import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/ser
 const useInitDataWithRequest = () => {
   const { workflowID } = useParams<{ workflowID: string }>();
   const { projectID } = useCurrentProject();
-  const {
-    updateTaskInfos,
-    updateWorkflowInfo,
-    workflowInfo,
-    updateTaskStatusNumber
-  } = useDataExportDetailReduxManage();
+  const { updateTaskInfos, updateWorkflowInfo, updateTaskStatusNumber } =
+    useDataExportDetailReduxManage();
 
   const { refresh: refreshWorkflow, loading: getWorkflowLoading } = useRequest(
     () =>
@@ -29,60 +25,51 @@ const useInitDataWithRequest = () => {
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS && res.data.data) {
             updateWorkflowInfo(res.data.data);
+            batchGetDataExportTask(
+              res.data.data?.workflow_record?.tasks
+                ?.map((v) => v.task_uid ?? '')
+                ?.join(',') ?? ''
+            );
           }
         })
   );
 
-  const { loading: getTaskInfosLoading } = useRequest(
-    () =>
-      dms
-        .BatchGetDataExportTask({
-          project_uid: projectID,
-          data_export_task_uids:
-            workflowInfo?.workflow_record?.tasks
-              ?.map((v) => v.task_uid ?? '')
-              ?.join(',') ?? ''
-        })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            const list = res.data.data ?? [];
-            updateTaskInfos(list);
+  const { loading: getTaskInfosLoading, run: batchGetDataExportTask } =
+    useRequest(
+      (taskIDs: string) =>
+        dms
+          .BatchGetDataExportTask({
+            project_uid: projectID,
+            data_export_task_uids: taskIDs
+          })
+          .then((res) => {
+            if (res.data.code === ResponseCode.SUCCESS) {
+              const list = res.data.data ?? [];
+              updateTaskInfos(list);
 
-            // const canRejectWorkflow = list.every(
-            //   (v) =>
-            //     !!v.status &&
-            //     ![
-            //       GetDataExportTaskStatusEnum.finish,
-            //       GetDataExportTaskStatusEnum.exporting,
-            //       GetDataExportTaskStatusEnum.failed
-            //     ].includes(v.status)
-            // );
-
-            // updateCanRejectWorkflow(canRejectWorkflow);
-            let succeededNumber = 0,
-              exportingNumber = 0,
-              failedNumber = 0;
-            list.forEach((v) => {
-              if (v.status === GetDataExportTaskStatusEnum.finish) {
-                succeededNumber++;
-              } else if (v.status === GetDataExportTaskStatusEnum.exporting) {
-                exportingNumber++;
-              } else if (v.status === GetDataExportTaskStatusEnum.failed) {
-                failedNumber++;
-              }
-            });
-            updateTaskStatusNumber({
-              failed: failedNumber,
-              success: succeededNumber,
-              exporting: exportingNumber
-            });
-          }
-        }),
-    {
-      ready: !!workflowInfo,
-      refreshDeps: [workflowInfo]
-    }
-  );
+              let succeededNumber = 0,
+                exportingNumber = 0,
+                failedNumber = 0;
+              list.forEach((v) => {
+                if (v.status === GetDataExportTaskStatusEnum.finish) {
+                  succeededNumber++;
+                } else if (v.status === GetDataExportTaskStatusEnum.exporting) {
+                  exportingNumber++;
+                } else if (v.status === GetDataExportTaskStatusEnum.failed) {
+                  failedNumber++;
+                }
+              });
+              updateTaskStatusNumber({
+                failed: failedNumber,
+                success: succeededNumber,
+                exporting: exportingNumber
+              });
+            }
+          }),
+      {
+        manual: true
+      }
+    );
 
   useEffect(() => {
     const { unsubscribe } = eventEmitter.subscribe(

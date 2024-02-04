@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem should match snapshot with slot 1`] = `
+<div>
+  <form
+    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+        >
+          <label
+            class="ant-form-item-required"
+            for="workflow_subject"
+            title=""
+          />
+        </div>
+        <div
+          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <input
+                aria-required="true"
+                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                id="workflow_subject"
+                placeholder="请输入数据导出工单名称"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span>
+      slot
+    </span>
+    <div
+      class="ant-form-item order-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+        >
+          <label
+            class=""
+            for="desc"
+            title="工单描述"
+          >
+            工单描述
+          </label>
+        </div>
+        <div
+          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <span
+                class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count css-dev-only-do-not-override-txh9fw ant-input-show-count"
+                data-count="0 / 3000"
+              >
+                <textarea
+                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                  id="desc"
+                  placeholder="点击添加数据导出描述"
+                  style="overflow-y: hidden; resize: none;"
+                />
+                <span
+                  class="ant-input-suffix"
+                >
+                  <span
+                    class="ant-input-data-count"
+                  >
+                    0 / 3000
+                  </span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

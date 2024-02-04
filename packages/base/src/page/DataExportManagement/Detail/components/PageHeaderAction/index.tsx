@@ -2,12 +2,14 @@ import { useTranslation } from 'react-i18next';
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import { ExportDetailPageHeaderExtraStyleWrapper } from './style';
 import { BasicButton, EmptyBox } from '@actiontech/shared';
-import { Divider, Popconfirm } from 'antd';
+import { Divider, Popconfirm, message } from 'antd';
 import useActionButtonState from './useActionButtonState';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 const ExportDetailPageHeaderAction: React.FC = () => {
   const { t } = useTranslation();
+
+  const [messageApi, messageContextHolder] = message.useMessage();
 
   const { projectArchive } = useCurrentProject();
 
@@ -19,16 +21,15 @@ const ExportDetailPageHeaderAction: React.FC = () => {
   };
 
   const {
-    messageContentHolder,
     closeWorkflowButtonMeta,
     approveWorkflowButtonMeta,
     executeExportButtonMeta,
     rejectWorkflowButtonMeta
-  } = useActionButtonState();
+  } = useActionButtonState(messageApi);
 
   return (
     <ExportDetailPageHeaderExtraStyleWrapper>
-      {messageContentHolder}
+      {messageContextHolder}
 
       <EmptyBox if={!projectArchive}>
         <div hidden={closeWorkflowButtonMeta.hidden}>

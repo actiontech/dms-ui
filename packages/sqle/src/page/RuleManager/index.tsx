@@ -1,35 +1,45 @@
-import { useCallback, useMemo } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Col, Row, Space, Typography } from 'antd';
+import { Space, Typography } from 'antd';
 import {
   BasicButton,
-  BasicSegmented,
   EnterpriseFeatureDisplay,
   PageHeader
 } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { IconAdd, IconImport } from '@actiontech/shared/lib/Icon';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import CustomRuleList from '../CustomRule/CustomRuleList';
 import RuleTemplateList from '../GlobalRuleTemplate/RuleTemplateList';
-import useRuleManagerSegmented from './useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from './index.type';
+import {
+  BasicSegmentedPage,
+  useSegmentedPageParams
+} from '@actiontech/shared/lib/components/BasicSegmentedPage';
+import useRuleManagerSegmented from './useRuleManagerSegmented';
 
 const RuleManager: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { activeKey, onSegmentedChange } = useRuleManagerSegmented();
 
-  const options = useMemo(
-    () => [
+  const { activeKey } = useRuleManagerSegmented();
+
+  const {
+    updateSegmentedPageData,
+    renderExtraButton,
+    onChange,
+    ...otherProps
+  } = useSegmentedPageParams<RuleManagerSegmentedKey>();
+
+  useEffect(() => {
+    updateSegmentedPageData([
       {
         label: t('ruleTemplate.globalRuleTemplateListTitle'),
         value: RuleManagerSegmentedKey.GlobalRuleTemplate,
-        components: <RuleTemplateList />,
-        toolbarActions: (
+        content: <RuleTemplateList />,
+        extraButton: (
           <Space size={12}>
             <BasicButton
               type="text"
@@ -52,7 +62,7 @@ const RuleManager: React.FC = () => {
       {
         label: t('customRule.title'),
         value: RuleManagerSegmentedKey.CustomRule,
-        components: (
+        content: (
           <EnterpriseFeatureDisplay
             featureName={t('customRule.title')}
             eeFeatureDescription={
@@ -65,7 +75,7 @@ const RuleManager: React.FC = () => {
           </EnterpriseFeatureDisplay>
         ),
         // #if [ee]
-        toolbarActions: (
+        extraButton: (
           <BasicButton
             type="primary"
             onClick={() => navigate('/sqle/ruleManager/customCreate')}
@@ -75,19 +85,20 @@ const RuleManager: React.FC = () => {
         )
         // #endif
       }
-    ],
+    ]);
+  }, [navigate, t, updateSegmentedPageData]);
+
+  useEffect(() => {
+    if (activeKey) {
+      onChange(activeKey);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [t]
-  );
+  }, []);
 
   const refresh = () => {
     eventEmitter.emit(EmitterKey.Refresh_Global_Rule_Template_List);
     eventEmitter.emit(EmitterKey.Refresh_Custom_Rule_Template_List);
   };
-
-  const renderActiveTab = useCallback(() => {
-    return options.find((item) => item.value === activeKey)?.components;
-  }, [activeKey, options]);
 
   return (
     <article>
@@ -98,21 +109,9 @@ const RuleManager: React.FC = () => {
             <TableRefreshButton refresh={refresh} />
           </Space>
         }
-        extra={
-          options.find((option) => option.value === activeKey)?.toolbarActions
-        }
+        extra={renderExtraButton()}
       />
-      <SegmentedRowStyleWrapper>
-        <BasicSegmented
-          value={activeKey}
-          options={options}
-          onChange={onSegmentedChange}
-        />
-      </SegmentedRowStyleWrapper>
-
-      <Row justify={'center'}>
-        <Col span={24}>{renderActiveTab()}</Col>
-      </Row>
+      <BasicSegmentedPage onChange={onChange} {...otherProps} />
     </article>
   );
 };
