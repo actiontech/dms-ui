@@ -7,12 +7,13 @@ import {
   initDataExportModalStatus,
   updateCreateDataExportFormValues,
   updateCreateDataExportPageState,
-  updateCreateDataExportAuditState,
-  updateCreateDataExportSubmitState,
+  updateCreateDataExportAuditLoading,
+  updateCreateDataExportSubmitLoading,
   updateDataExportModalStatus,
   updateDataExportAuditedTaskID,
   updateDataExportCreatedWorkflowID,
-  clearDataExportAllCreateState
+  clearDataExportAllCreateState,
+  CreateFormValuesType
 } from '../../../../store/dataExport';
 import { ModalName } from '../../../../data/ModalName';
 
@@ -28,7 +29,7 @@ const useCreateDataExportReduxManage = () => {
   const dispatch = useDispatch();
 
   const updateFormValues = useCallback(
-    (formValues: any) => {
+    (formValues: CreateFormValuesType) => {
       dispatch(updateCreateDataExportFormValues({ formValues }));
     },
     [dispatch]
@@ -41,16 +42,16 @@ const useCreateDataExportReduxManage = () => {
     [dispatch]
   );
 
-  const updateAuditState = useCallback(
+  const updateAuditLoading = useCallback(
     (auditLoading: boolean) => {
-      dispatch(updateCreateDataExportAuditState({ auditLoading }));
+      dispatch(updateCreateDataExportAuditLoading({ auditLoading }));
     },
     [dispatch]
   );
 
-  const updateSubmitState = useCallback(
+  const updateSubmitLoading = useCallback(
     (submitLoading: boolean) => {
-      dispatch(updateCreateDataExportSubmitState({ submitLoading }));
+      dispatch(updateCreateDataExportSubmitLoading({ submitLoading }));
     },
     [dispatch]
   );
@@ -94,8 +95,8 @@ const useCreateDataExportReduxManage = () => {
     ...state,
     updateFormValues,
     updatePageState,
-    updateAuditState,
-    updateSubmitState,
+    updateAuditLoading,
+    updateSubmitLoading,
     initModalStatus,
     updateModalStatus,
     updateTaskIDs,

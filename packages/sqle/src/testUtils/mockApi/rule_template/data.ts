@@ -70,13 +70,6 @@ export const ruleKnowledgeData = {
   }
 };
 
-export const projectRulesMockData = {
-  rule_template_name: 'default_MySQL',
-  desc: '',
-  db_type: 'MySQL',
-  rule_list: [ruleListData[0]]
-};
-
 export const projectRuleTemplate = [
   {
     rule_template_name: 'mysql',
@@ -97,6 +90,68 @@ export const getRuleTemplate = [
     db_type: 'MySQL'
   }
 ];
+
+export const projectRuleTemplateListMockData = [
+  {
+    rule_template_name: 'test1',
+    desc: 'test desc',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: 't1',
+    desc: '',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: '',
+    desc: '',
+    db_type: ''
+  }
+];
+
+export const publicRuleTemplateListMockData = [
+  {
+    rule_template_name: 'default_template',
+    desc: 'test desc',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: 'global_test',
+    desc: '',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: '',
+    desc: '',
+    db_type: ''
+  }
+];
+
+export const customRuleMockData = [
+  {
+    rule_id: 'rule_id_123456',
+    desc: 'test-custom-rule1',
+    annotation: '',
+    db_type: 'MySQL',
+    level: 'notice',
+    type: '命名规范'
+  },
+  {
+    rule_id: 'rule_id_234567',
+    desc: 'test-custom-rule2',
+    annotation: '',
+    db_type: 'MySQL',
+    level: 'notice',
+    type: '命名规范'
+  }
+];
+
+export const projectRulesMockData = {
+  rule_template_name: 'default_MySQL',
+  desc: '',
+  db_type: 'MySQL',
+  rule_list: [ruleListData[0]]
+};
 
 export const ruleTypeByDbMockData = [
   {

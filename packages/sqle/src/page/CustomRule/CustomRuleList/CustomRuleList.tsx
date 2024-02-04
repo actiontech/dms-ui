@@ -39,6 +39,7 @@ const CustomRuleList: React.FC = () => {
         (res) =>
           res.data.data?.map((v) => ({
             ...v,
+            rule_name: v.rule_id,
             level: v.level as RuleResV1LevelEnum | undefined
           })) ?? []
       )

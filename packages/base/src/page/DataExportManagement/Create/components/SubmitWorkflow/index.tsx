@@ -1,8 +1,13 @@
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useCreateDataExportReduxManage from '../../hooks/index.redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import UpdateInfoDrawer from './UpdateInfoDrawer';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicToolTips,
+  EmptyBox,
+  PageHeader
+} from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import BackToWorkflowList from '../../../Common/BackToWorkflowList';
 import { Space } from 'antd';
@@ -20,15 +25,17 @@ const SubmitExportWorkflow: React.FC = () => {
     initModalStatus,
     submitLoading,
     updateModalStatus,
-    updateSubmitState,
+    updateSubmitLoading,
     taskIDs,
     updatePageState,
     updateWorkflowID
   } = useCreateDataExportReduxManage();
   const { projectID } = useCurrentProject();
 
+  const [executeSQLsIsDQL, updateExecuteSQLsTypeIsDQL] = useState(true);
+
   const submit = () => {
-    updateSubmitState(true);
+    updateSubmitLoading(true);
     dms
       .AddDataExportWorkflow({
         project_uid: projectID,
@@ -45,7 +52,7 @@ const SubmitExportWorkflow: React.FC = () => {
         }
       })
       .finally(() => {
-        updateSubmitState(false);
+        updateSubmitLoading(false);
       });
   };
 
@@ -70,13 +77,27 @@ const SubmitExportWorkflow: React.FC = () => {
             >
               {t('dmsDataExport.create.update.updateInfoAction')}
             </BasicButton>
-            <BasicButton
-              disabled={submitLoading}
-              type="primary"
-              onClick={submit}
+
+            <EmptyBox
+              if={executeSQLsIsDQL}
+              defaultNode={
+                <BasicToolTips
+                  title={t('dmsDataExport.create.update.submitTips')}
+                >
+                  <BasicButton disabled={true} type="primary">
+                    {t('dmsDataExport.create.update.submitAction')}
+                  </BasicButton>
+                </BasicToolTips>
+              }
             >
-              {t('dmsDataExport.create.update.submitAction')}
-            </BasicButton>
+              <BasicButton
+                disabled={submitLoading}
+                type="primary"
+                onClick={submit}
+              >
+                {t('dmsDataExport.create.update.submitAction')}
+              </BasicButton>
+            </EmptyBox>
           </Space>
         }
       />
@@ -85,7 +106,11 @@ const SubmitExportWorkflow: React.FC = () => {
         desc={formValues?.baseValues?.desc}
       />
 
-      <AuditResultList projectID={projectID} taskIDs={taskIDs ?? []} />
+      <AuditResultList
+        projectID={projectID}
+        taskIDs={taskIDs ?? []}
+        updateExecuteSQLsTypeIsDQL={updateExecuteSQLsTypeIsDQL}
+      />
 
       <UpdateInfoDrawer />
     </>

@@ -4,7 +4,6 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { workflowTemplateData } from './data';
-import user from '@actiontech/shared/lib/api/sqle/service/user';
 import { cloneDeep } from 'lodash';
 
 class MockWorkflowTemplateApi implements MockSpyApy {

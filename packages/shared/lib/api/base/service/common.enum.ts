@@ -5,7 +5,9 @@ export enum GetDataExportTaskStatusEnum {
 
   'finish' = 'finish',
 
-  'failed' = 'failed'
+  'failed' = 'failed',
+
+  'file_deleted' = 'file_deleted'
 }
 
 export enum GetUserAuthenticationTypeEnum {
@@ -127,7 +129,11 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'save_audit_plan' = 'save_audit_plan',
 
-  'sql_query' = 'sql_query'
+  'sql_query' = 'sql_query',
+
+  'create_export_task' = 'create_export_task',
+
+  'audit_export_workflow' = 'audit_export_workflow'
 }
 
 export enum OpPermissionItemRangeTypeEnum {
