@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import useRuleTemplateForm from '../../RuleTemplate/hooks/useRuleTemplateForm';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   IconLeftArrow,
@@ -17,6 +16,12 @@ import classNames from 'classnames';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useUpdateRuleTemplateForm,
+  useBackToListPage
+} from '../../../hooks/useRuleTemplateForm';
+import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -35,21 +40,29 @@ const UpdateRuleTemplate = () => {
     nextStep,
     baseInfoFormSubmit,
     resetAll,
-    onGoToGlobalRuleTemplateList,
     ruleTemplate,
-    setRuleTemplate
-  } = useRuleTemplateForm(false, true);
+    setRuleTemplate,
+    updateTemplateLoading,
+    startSubmit,
+    finishSubmit
+  } = useUpdateRuleTemplateForm();
+
+  const { onGoToGlobalRuleTemplateList } = useBackToListPage();
+
   const [
     updateTemplateFormLoading,
     { setTrue: startLoad, setFalse: finishLoad }
   ] = useBoolean();
-  const [
-    updateTemplateLoading,
-    { setTrue: startSubmit, setFalse: finishSubmit }
-  ] = useBoolean();
 
   const urlParams = useParams<{ templateName: string }>();
   const { projectName } = useCurrentProject();
+
+  const { updateActiveSegmentedKey } = useRuleManagerSegmented();
+
+  const gotoListPage = () => {
+    updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
+    onGoToGlobalRuleTemplateList();
+  };
 
   const submit = useCallback(() => {
     startSubmit();
@@ -109,10 +122,7 @@ const UpdateRuleTemplate = () => {
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton
-            onClick={onGoToGlobalRuleTemplateList}
-            icon={<IconLeftArrow />}
-          >
+          <BasicButton onClick={gotoListPage} icon={<IconLeftArrow />}>
             {t('ruleManager.backToGlobalRuleTemplateList')}
           </BasicButton>
         }
@@ -161,9 +171,7 @@ const UpdateRuleTemplate = () => {
             step={step}
             dbType={dbType}
             updateActiveRule={setActiveRule}
-            baseInfoSubmit={() =>
-              baseInfoFormSubmit('global-update', ruleTemplate?.rule_list ?? [])
-            }
+            baseInfoSubmit={baseInfoFormSubmit}
             submit={submit}
             projectName={projectName}
             defaultData={ruleTemplate}
@@ -181,7 +189,7 @@ const UpdateRuleTemplate = () => {
             <BasicButton
               type="primary"
               key="view-rule-template-list"
-              onClick={onGoToGlobalRuleTemplateList}
+              onClick={gotoListPage}
             >
               {t('ruleManager.backToGlobalRuleTemplateList')}
             </BasicButton>
