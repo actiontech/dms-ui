@@ -255,10 +255,10 @@ const RuleList: React.FC<RuleListProps> = ({
               }
               scrollableTarget="rule-list-wrapper-id"
             >
-              {scrollData?.map((v) => {
+              {scrollData?.map((v, index) => {
                 return (
                   <RuleItemStyleWrapper
-                    key={v.rule_name}
+                    key={v.rule_name || index}
                     style={{
                       cursor:
                         isAction || enableCheckDetail ? 'pointer' : 'default'

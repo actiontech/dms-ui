@@ -4,7 +4,7 @@ import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/el
 import { BasicSegmented, EmptyBox } from '@actiontech/shared';
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import OverviewList from './OverviewList';
-import TaskDetail from './TaskDetail';
+import ExportTaskList from './ExportTaskList';
 import DbServiceSegmentedLabel from '../../../Common/DbServiceSegmentedLabel';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
@@ -64,7 +64,7 @@ const ExportDetail: React.FC = () => {
       </SegmentedRowStyleWrapper>
 
       <EmptyBox if={!!curTaskID} defaultNode={<OverviewList />}>
-        <TaskDetail />
+        <ExportTaskList />
       </EmptyBox>
     </WorkflowDetailExportResultStyleWrapper>
   );

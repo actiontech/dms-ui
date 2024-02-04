@@ -1,0 +1,473 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is false 1`] = `
+<body>
+  <div />
+</body>
+`;
+
+exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is true & version data 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 960px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <span
+                  class="custom-icon custom-icon-close css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 24px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <h2
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        SQLE
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 24px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        版本信息
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <article
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            UI: 
+                            feature/add-make-command   ba9c9c5
+                          </article>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <article
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            DMS: 
+                            dms-ce 081d27e60f
+                          </article>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <article
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQLE: 
+                            sqle-ce 081d27e699
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 24px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        产品简介
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        desc
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start full-width-element css-ac649q"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        功能特点
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      feature
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <a
+                      href="https://actiontech.github.io/sqle-docs/"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      查看更多
+                    </a>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      知道了
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is true & version data is empty 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 960px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <span
+                  class="custom-icon custom-icon-close css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 24px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <h2
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        SQLE
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 24px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        版本信息
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <article
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            UI: 
+                            feature/add-make-command   ba9c9c5
+                          </article>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        />
+                        <div
+                          class="ant-space-item"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 24px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        产品简介
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        desc
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start full-width-element css-ac649q"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <h5
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        功能特点
+                      </h5>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      feature
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <a
+                      href="https://actiontech.github.io/sqle-docs/"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      查看更多
+                    </a>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      知道了
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
