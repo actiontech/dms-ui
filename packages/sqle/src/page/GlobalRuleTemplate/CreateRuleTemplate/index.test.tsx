@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import CreateRuleTemplate from '.';
-import { ModalName } from '../../../data/ModalName';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import {
   getBySelector,
@@ -45,7 +44,6 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         globalRuleTemplate: {
-          modalStatus: { [ModalName.Clone_Rule_Template]: false },
           activeSegmentedKey: RuleManagerSegmentedKey.GlobalRuleTemplate
         }
       })
