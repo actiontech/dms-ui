@@ -29,6 +29,7 @@ import { IconDisabledRule, IconEnabledRule } from '../../icon/Rule';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import RuleDetailModal from './RuleDetailModal';
 import { useBoolean } from 'ahooks';
+import { isEqual } from 'lodash';
 
 const scrollStepRange = 30;
 
@@ -203,10 +204,16 @@ const RuleList: React.FC<RuleListProps> = ({
     }
   };
 
+  const rulesRef = useRef<IRuleResV1[]>();
+
   useEffect(() => {
-    stepRef.current = 0;
-    setScrollData([]);
-    onScroll();
+    // fix Warning: Maximum update depth exceeded
+    if (!isEqual(rulesRef.current, rules)) {
+      rulesRef.current = rules;
+      stepRef.current = 0;
+      setScrollData([]);
+      onScroll();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rules]);
 
@@ -240,10 +247,10 @@ const RuleList: React.FC<RuleListProps> = ({
               }
               scrollableTarget="rule-list-wrapper-id"
             >
-              {scrollData?.map((v) => {
+              {scrollData?.map((v, index) => {
                 return (
                   <RuleItemStyleWrapper
-                    key={v.rule_name}
+                    key={v.rule_name || index}
                     style={{
                       cursor:
                         isAction || enableCheckDetail ? 'pointer' : 'default'

@@ -9,6 +9,9 @@ import {
   ruleKnowledgeData,
   ruleListData,
   ruleTemplateList,
+  projectRuleTemplateListMockData,
+  publicRuleTemplateListMockData,
+  customRuleMockData,
   projectRulesMockData
 } from './data';
 
@@ -23,6 +26,16 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.updateRuleKnowledge();
     this.getProjectRuleTemplate();
     this.getRuleTemplate();
+    this.getProjectRuleTemplateList();
+    this.getRuleTemplateList();
+    this.deleteProjectRuleTemplate();
+    this.exportProjectRuleTemplate();
+    this.cloneProjectRuleTemplate();
+    this.getCustomRules();
+    this.deleteRuleTemplate();
+    this.exportRuleTemplate();
+    this.cloneRuleTemplate();
+    this.deleteCustomRule();
   }
 
   public getRuleTemplateTips() {
@@ -97,6 +110,17 @@ class MockRuleTemplateApi implements MockSpyApy {
     return spy;
   }
 
+  public getProjectRuleTemplateList() {
+    const spy = jest.spyOn(rule_template, 'getProjectRuleTemplateListV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: projectRuleTemplateListMockData,
+        total_nums: projectRuleTemplateListMockData.length
+      })
+    );
+    return spy;
+  }
+
   public getRuleTemplate() {
     const spy = jest.spyOn(rule_template, 'getRuleTemplateV1');
     spy.mockImplementation(() =>
@@ -104,6 +128,81 @@ class MockRuleTemplateApi implements MockSpyApy {
         data: projectRulesMockData
       })
     );
+    return spy;
+  }
+
+  public getRuleTemplateList() {
+    const spy = jest.spyOn(rule_template, 'getRuleTemplateListV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: publicRuleTemplateListMockData,
+        total_nums: publicRuleTemplateListMockData.length
+      })
+    );
+    return spy;
+  }
+
+  public deleteProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'deleteProjectRuleTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public exportProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'exportProjectRuleTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public cloneProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'cloneProjectRuleTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getCustomRules() {
+    const spy = jest.spyOn(rule_template, 'getCustomRulesV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: customRuleMockData
+      })
+    );
+    return spy;
+  }
+
+  public deleteRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'deleteRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: customRuleMockData
+      })
+    );
+    return spy;
+  }
+
+  public exportRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'exportRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: customRuleMockData
+      })
+    );
+    return spy;
+  }
+
+  public cloneRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'CloneRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: customRuleMockData
+      })
+    );
+    return spy;
+  }
+
+  public deleteCustomRule() {
+    const spy = jest.spyOn(rule_template, 'deleteCustomRuleV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
