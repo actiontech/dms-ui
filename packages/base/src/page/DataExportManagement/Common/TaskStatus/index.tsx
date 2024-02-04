@@ -6,6 +6,7 @@ import {
 } from 'sqle/src/icon/Order';
 import { t } from '../../../../locale';
 import { StatusStyleWrapper } from '../style';
+import { IconDelete } from '@actiontech/shared/lib/Icon/common';
 
 const taskStatusMap = () => {
   return new Map<GetDataExportTaskStatusEnum, React.ReactNode>([
@@ -35,6 +36,13 @@ const taskStatusMap = () => {
       <>
         <IconOrderStatusIsExecuting />
         <span>{t('dmsDataExport.status.wait_for_export')}</span>
+      </>
+    ],
+    [
+      GetDataExportTaskStatusEnum.file_deleted,
+      <>
+        <IconDelete />
+        <span>{t('dmsDataExport.status.file_deleted')}</span>
       </>
     ]
   ]);

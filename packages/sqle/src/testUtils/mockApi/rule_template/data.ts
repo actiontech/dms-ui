@@ -1,7 +1,8 @@
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   RuleResV1LevelEnum,
-  RuleParamResV1TypeEnum
+  RuleParamResV1TypeEnum,
+  CustomRuleResV1LevelEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const ruleTemplateList = [
@@ -74,6 +75,82 @@ export const ruleKnowledgeData = {
   }
 };
 
+export const projectRuleTemplate = [
+  {
+    rule_template_name: 'mysql',
+    desc: '',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: 'mysql-aa',
+    desc: 'aa',
+    db_type: 'MySQL'
+  }
+];
+
+export const getRuleTemplate = [
+  {
+    rule_template_name: 'default_MySQL',
+    desc: '默认规则模板',
+    db_type: 'MySQL'
+  }
+];
+
+export const projectRuleTemplateListMockData = [
+  {
+    rule_template_name: 'test1',
+    desc: 'test desc',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: 't1',
+    desc: '',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: '',
+    desc: '',
+    db_type: ''
+  }
+];
+
+export const publicRuleTemplateListMockData = [
+  {
+    rule_template_name: 'default_template',
+    desc: 'test desc',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: 'global_test',
+    desc: '',
+    db_type: 'MySQL'
+  },
+  {
+    rule_template_name: '',
+    desc: '',
+    db_type: ''
+  }
+];
+
+export const customRuleMockData = [
+  {
+    rule_id: 'rule_id_123456',
+    desc: 'test-custom-rule1',
+    annotation: '',
+    db_type: 'MySQL',
+    level: 'notice',
+    type: '命名规范'
+  },
+  {
+    rule_id: 'rule_id_234567',
+    desc: 'test-custom-rule2',
+    annotation: '',
+    db_type: 'MySQL',
+    level: 'notice',
+    type: '命名规范'
+  }
+];
+
 export const projectRulesMockData = {
   rule_template_name: 'default_MySQL',
   desc: '',
@@ -128,3 +205,26 @@ export const ruleListMockData: IRuleResV1[] = [
     type: '索引规范'
   }
 ];
+
+export const ruleTypeByDbMockData = [
+  {
+    rule_type: '规范1',
+    rule_count: 0,
+    is_custom_rule_type: false
+  },
+  {
+    rule_type: '规范2',
+    rule_count: 0,
+    is_custom_rule_type: false
+  }
+];
+
+export const customRuleDetailMockData = {
+  rule_id: 'rule_id_123',
+  desc: 'test_custom_rule',
+  annotation: 'anno',
+  db_type: 'mysql',
+  level: CustomRuleResV1LevelEnum.error,
+  type: '规范1',
+  rule_script: 'SELECT 1;'
+};
