@@ -1,26 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useBoolean } from 'ahooks';
-import { Link } from 'react-router-dom';
-
 import { IReduxState } from '../../../store';
 import { ModalName } from '../../../data/ModalName';
 import { updateRuleTemplateListModalStatus } from '../../../store/ruleTemplate';
-
-import { Col, Form, message, Row, Space, Typography } from 'antd';
-import { BasicButton, BasicDrawer, BasicInput } from '@actiontech/shared';
+import { message } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-
-import { CloneRuleTemplateFormFields } from './index.type';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
-import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import CloneRuleTemplateModal from '../../../page/GlobalRuleTemplate/CloneRuleTemplateModal';
+import { CloneRuleTemplateFormFields } from '../../../page/GlobalRuleTemplate/CloneRuleTemplateModal/index.type';
 
 const CloneRuleTemplate = () => {
   const { t } = useTranslation();
@@ -36,11 +29,13 @@ const CloneRuleTemplate = () => {
     IReduxState,
     IProjectRuleTemplateResV1 | null
   >((state) => state.ruleTemplate.selectRuleTemplate);
+
   const [form] = useForm<CloneRuleTemplateFormFields>();
+
   const [requestPending, { setTrue: startRequest, setFalse: requestFinished }] =
     useBoolean();
 
-  const close = () => {
+  const onClose = () => {
     form.resetFields();
     dispatch(
       updateRuleTemplateListModalStatus({
@@ -50,7 +45,7 @@ const CloneRuleTemplate = () => {
     );
   };
 
-  const submit = async () => {
+  const onSubmit = async () => {
     const value = await form.validateFields();
     startRequest();
     rule_template
@@ -67,7 +62,7 @@ const CloneRuleTemplate = () => {
               name: currentRuleTemplate?.rule_template_name
             })
           );
-          close();
+          onClose();
           EventEmitter.emit(EmitterKey.Refresh_Rule_Template_List);
         }
       })
@@ -79,76 +74,15 @@ const CloneRuleTemplate = () => {
   return (
     <>
       {contextMessageHolder}
-      <BasicDrawer
-        open={visible}
-        title={t('ruleTemplate.cloneRuleTemplate.title')}
-        closable={false}
-        showClosedIcon
-        onClose={close}
-        footer={
-          <Space>
-            <BasicButton onClick={close} disabled={requestPending}>
-              {t('common.close')}
-            </BasicButton>
-            <BasicButton
-              type="primary"
-              onClick={submit}
-              loading={requestPending}
-            >
-              {t('common.submit')}
-            </BasicButton>
-          </Space>
-        }
-      >
-        <Space direction="vertical" className="full-width-element">
-          <Row>
-            <Col>
-              {t('ruleTemplate.cloneRuleTemplate.currentTemplateTips')}
-              <Link
-                target="_blank"
-                to={`/sqle/project/${projectID}/rule/template/update/${currentRuleTemplate?.rule_template_name}`}
-              >
-                {currentRuleTemplate?.rule_template_name}
-              </Link>
-            </Col>
-            <Col>
-              <Typography.Text type="secondary">
-                {t('ruleTemplate.cloneRuleTemplate.cloneDesc')}
-              </Typography.Text>
-            </Col>
-          </Row>
-        </Space>
-        <Form form={form} {...formItemLayout.fullLine}>
-          <Form.Item
-            label={t('ruleTemplate.ruleTemplateForm.templateName')}
-            name="templateName"
-            validateFirst
-            rules={[
-              {
-                required: true
-              },
-              ...nameRule()
-            ]}
-          >
-            <BasicInput
-              placeholder={t('common.form.placeholder.input', {
-                name: t('ruleTemplate.ruleTemplateForm.templateName')
-              })}
-            />
-          </Form.Item>
-          <Form.Item
-            label={t('ruleTemplate.ruleTemplateForm.templateDesc')}
-            name="templateDesc"
-          >
-            <BasicInput.TextArea
-              className="textarea-no-resize"
-              placeholder={t('common.form.placeholder.input', {
-                name: t('ruleTemplate.ruleTemplateForm.templateDesc')
-              })}
-            />
-          </Form.Item>
-        </Form>
-      </BasicDrawer>
+      <CloneRuleTemplateModal
+        visible={visible}
+        loading={requestPending}
+        onClose={onClose}
+        onSubmit={onSubmit}
+        link={`/sqle/project/${projectID}/rule/template/update/${currentRuleTemplate?.rule_template_name}`}
+        templateName={currentRuleTemplate?.rule_template_name}
+        form={form}
+      />
     </>
   );
 };

@@ -31,20 +31,19 @@ const ExportSourceFormItem: React.FC<
   }, [dbServiceID, dbServiceList]);
 
   //todo 暂时先使用 sqle 接口。。
-  const { updateSchemaList, generateInstanceSchemaSelectOption } =
-    useInstanceSchema(projectName, dbServiceName);
+  const { generateInstanceSchemaSelectOption } = useInstanceSchema(
+    projectName,
+    dbServiceName
+  );
 
-  const setDefaultWorkflowName: SelectProps['onChange'] = (dbServiceID) => {
+  const dbServiceChangeHandle: SelectProps['onChange'] = (dbServiceID) => {
     const name = dbServiceList.find((v) => v.id === dbServiceID)?.name;
-
     if (!baseForm.getFieldValue('workflow_subject')) {
       baseForm.setFieldValue(
         'workflow_subject',
         `${name}_${dayjs().format('YYYYMMDDhhmmss')}`
       );
     }
-
-    updateSchemaList();
   };
 
   useEffect(() => {
@@ -95,7 +94,7 @@ const ExportSourceFormItem: React.FC<
         ]}
       >
         <BasicSelect
-          onChange={setDefaultWorkflowName}
+          onChange={dbServiceChangeHandle}
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsDataExport.create.form.source.dbService')
           })}

@@ -1,0 +1,559 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree  should match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+        role="tree"
+      >
+        <div>
+          <input
+            aria-label="for screen reader"
+            style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+            tabindex="0"
+            value=""
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          class="ant-tree-treenode"
+          style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+        >
+          <div
+            class="ant-tree-indent"
+          >
+            <div
+              class="ant-tree-indent-unit"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-tree-list"
+          style="position: relative;"
+        >
+          <div
+            class="ant-tree-list-holder"
+          >
+            <div>
+              <div
+                class="ant-tree-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-grabbed="false"
+                  class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                  draggable="false"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="ant-tree-indent"
+                  />
+                  <span
+                    class="ant-tree-switcher ant-tree-switcher_close"
+                  >
+                    <span
+                      class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                    title=""
+                  >
+                    <span
+                      class="ant-tree-title"
+                    >
+                      <span
+                        class="audit-result-tree-title"
+                      >
+                        审核结果
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          tabindex="0"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-tree-indent"
+        >
+          <div
+            class="ant-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-tree-list-holder"
+        >
+          <div>
+            <div
+              class="ant-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                />
+                <span
+                  class="ant-tree-switcher ant-tree-switcher_close"
+                >
+                  <span
+                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <span
+                      class="audit-result-tree-title"
+                    >
+                      审核结果
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree  should match snapshot 2`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+        role="tree"
+      >
+        <div>
+          <input
+            aria-label="for screen reader"
+            style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+            tabindex="0"
+            value=""
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          class="ant-tree-treenode"
+          style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+        >
+          <div
+            class="ant-tree-indent"
+          >
+            <div
+              class="ant-tree-indent-unit"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-tree-list"
+          style="position: relative;"
+        >
+          <div
+            class="ant-tree-list-holder"
+          >
+            <div>
+              <div
+                class="ant-tree-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-grabbed="false"
+                  class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                  draggable="false"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="ant-tree-indent"
+                  />
+                  <span
+                    class="ant-tree-switcher ant-tree-switcher_close"
+                  >
+                    <span
+                      class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                    title=""
+                  >
+                    <span
+                      class="ant-tree-title"
+                    >
+                      <span
+                        class="audit-result-tree-title"
+                      >
+                        审核结果
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+        role="tree"
+      >
+        <div>
+          <input
+            aria-label="for screen reader"
+            style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+            tabindex="0"
+            value=""
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          class="ant-tree-treenode"
+          style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+        >
+          <div
+            class="ant-tree-indent"
+          >
+            <div
+              class="ant-tree-indent-unit"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-tree-list"
+          style="position: relative;"
+        >
+          <div
+            class="ant-tree-list-holder"
+          >
+            <div>
+              <div
+                class="ant-tree-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-grabbed="false"
+                  class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                  draggable="false"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="ant-tree-indent"
+                  />
+                  <span
+                    class="ant-tree-switcher ant-tree-switcher_close"
+                  >
+                    <span
+                      class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                    title=""
+                  >
+                    <span
+                      class="ant-tree-title"
+                    >
+                      <span
+                        class="audit-result-tree-title"
+                      >
+                        审核结果
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          tabindex="0"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-tree-indent"
+        >
+          <div
+            class="ant-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-tree-list-holder"
+        >
+          <div>
+            <div
+              class="ant-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                />
+                <span
+                  class="ant-tree-switcher ant-tree-switcher_close"
+                >
+                  <span
+                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <span
+                      class="audit-result-tree-title"
+                    >
+                      审核结果
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

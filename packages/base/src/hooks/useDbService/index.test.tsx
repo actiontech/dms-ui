@@ -38,13 +38,13 @@ describe('useDbService', () => {
       result.current.updateDbServiceList({
         project_uid: projectID,
         functional_module:
-          ListDBServiceTipsFunctionalModuleEnum.create_audit_plan
+          ListDBServiceTipsFunctionalModuleEnum.create_export_task
       })
     );
     expect(listDbServicesSpy).toBeCalled();
     expect(listDbServicesSpy).toBeCalledWith({
       functional_module:
-        ListDBServiceTipsFunctionalModuleEnum.create_audit_plan,
+        ListDBServiceTipsFunctionalModuleEnum.create_export_task,
       project_uid: projectID
     });
     expect(result.current.loading).toBeTruthy();

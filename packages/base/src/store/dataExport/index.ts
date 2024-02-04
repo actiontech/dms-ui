@@ -182,8 +182,8 @@ const dataExportManagement = createSlice({
 export const {
   updateFormValues: updateCreateDataExportFormValues,
   updatePageState: updateCreateDataExportPageState,
-  updateAuditLoading: updateCreateDataExportAuditState,
-  updateSubmitLoading: updateCreateDataExportSubmitState,
+  updateAuditLoading: updateCreateDataExportAuditLoading,
+  updateSubmitLoading: updateCreateDataExportSubmitLoading,
   initModalStatus: initDataExportModalStatus,
   updateModalStatus: updateDataExportModalStatus,
   updateAuditedTaskID: updateDataExportAuditedTaskID,
