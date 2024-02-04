@@ -35,6 +35,8 @@ import {
   useImportRuleTemplateForm,
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
+import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 const ImportRuleTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -65,6 +67,13 @@ const ImportRuleTemplate: React.FC = () => {
   } = useImportRuleTemplateForm();
 
   const { projectName } = useCurrentProject();
+
+  const { updateActiveSegmentedKey } = useRuleManagerSegmented();
+
+  const gotoListPage = () => {
+    updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
+    onGoToGlobalRuleTemplateList();
+  };
 
   const submit = useCallback(() => {
     startCreate();
@@ -101,10 +110,7 @@ const ImportRuleTemplate: React.FC = () => {
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton
-            onClick={onGoToGlobalRuleTemplateList}
-            icon={<IconLeftArrow />}
-          >
+          <BasicButton onClick={gotoListPage} icon={<IconLeftArrow />}>
             {t('ruleManager.backToGlobalRuleTemplateList')}
           </BasicButton>
         }
@@ -219,7 +225,7 @@ const ImportRuleTemplate: React.FC = () => {
             <BasicButton
               type="primary"
               key="view-rule-template-list"
-              onClick={onGoToGlobalRuleTemplateList}
+              onClick={gotoListPage}
             >
               {t('ruleManager.backToGlobalRuleTemplateList')}
             </BasicButton>
