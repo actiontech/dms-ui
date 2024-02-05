@@ -14,7 +14,8 @@ import {
   customRuleDetailMockData,
   projectRuleTemplateListMockData,
   publicRuleTemplateListMockData,
-  customRuleMockData
+  customRuleMockData,
+  importRuleTemplateMockData
 } from './data';
 
 class MockRuleTemplateApi implements MockSpyApy {
@@ -42,6 +43,11 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.exportRuleTemplate();
     this.cloneRuleTemplate();
     this.deleteCustomRule();
+    this.createProjectRuleTemplate();
+    this.updateProjectRuleTemplate();
+    this.importProjectRuleTemplate();
+    this.createRuleTemplate();
+    this.updateRuleTemplate();
   }
 
   public getRuleTemplateTips() {
@@ -240,6 +246,40 @@ class MockRuleTemplateApi implements MockSpyApy {
 
   public deleteCustomRule() {
     const spy = jest.spyOn(rule_template, 'deleteCustomRuleV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public createProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'createProjectRuleTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'updateProjectRuleTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public importProjectRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'importProjectRuleTemplateV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: importRuleTemplateMockData
+      })
+    );
+    return spy;
+  }
+
+  public createRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'createRuleTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateRuleTemplate() {
+    const spy = jest.spyOn(rule_template, 'updateRuleTemplateV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

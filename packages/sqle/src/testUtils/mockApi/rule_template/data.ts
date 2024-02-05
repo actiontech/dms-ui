@@ -228,3 +228,10 @@ export const customRuleDetailMockData = {
   type: '规范1',
   rule_script: 'SELECT 1;'
 };
+
+export const importRuleTemplateMockData = {
+  name: 'default_MySQL',
+  desc: '',
+  db_type: 'MySQL',
+  rule_list: [ruleListData[0]]
+};
