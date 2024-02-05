@@ -1,0 +1,848 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/router-sqle-ce render route sqle index page 1`] = `
+<body>
+  <div>
+    <div>
+      null
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route customCreate 1`] = `
+<body>
+  <div>
+    <div>
+      createCustomRule
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route customUpdate 1`] = `
+<body>
+  <div>
+    <div>
+      updateCustomRule
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalCreate 1`] = `
+<body>
+  <div>
+    <div>
+      globalRuleTemplateCreate
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalDetail 1`] = `
+<body>
+  <div>
+    <div>
+      globalRuleTemplateDetail
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalImport 1`] = `
+<body>
+  <div>
+    <div>
+      globalRuleTemplateImport
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalUpdate 1`] = `
+<body>
+  <div>
+    <div>
+      globalRuleTemplateUpdate
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route reportStatistics 1`] = `
+<body>
+  <div>
+    <div>
+      reportStatistics
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route rule 1`] = `
+<body>
+  <div>
+    <div>
+      rule
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route ruleManager 1`] = `
+<body>
+  <div>
+    <div>
+      ruleTemplateManagement
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render operationRecord 1`] = `
+<body>
+  <div>
+    <div>
+      operationRecord
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route dashboard 1`] = `
+<body>
+  <div>
+    <div>
+      dashboard
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    >
+      <div>
+        orderCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    >
+      <div>
+        orderDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    >
+      <div>
+        orderList
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetailReport 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanDetailReport
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanList
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanUpdate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route progress render progressDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="progress"
+    >
+      <div>
+        progressDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route progress render progressUpdate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="progress"
+    >
+      <div>
+        progressUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route projectOverview 1`] = `
+<body>
+  <div>
+    <div>
+      projectOverview
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate create 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplateCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate import 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplateImport
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplate list 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplateDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplateDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route ruleTemplate render route ruleTemplateUpdate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="ruleTemplate"
+    >
+      <div>
+        ruleTemplateUpdate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlAudit"
+    >
+      <div>
+        sqlAuditCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlAudit"
+    >
+      <div>
+        sqlAuditDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlAudit render route sqlAuditList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlAudit"
+    >
+      <div>
+        sqlAuditList
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlManagement render sqlManagement 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlManagement"
+    >
+      <div>
+        SQLManagement
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
+<body>
+  <div>
+    <div>
+      Whitelist
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle route data snap 1`] = `
+Array [
+  Object {
+    "element": <div>
+      home
+    </div>,
+    "key": "home",
+    "path": "/",
+  },
+  Object {
+    "element": <div>
+      userCenter
+    </div>,
+    "key": "userCenter",
+    "path": "userCenter",
+  },
+  Object {
+    "element": <div>
+      system
+    </div>,
+    "key": "system",
+    "path": "system",
+  },
+  Object {
+    "element": <div>
+      cloudBeaver
+    </div>,
+    "key": "cloudBeaver",
+    "path": "cloudBeaver",
+  },
+  Object {
+    "element": <div>
+      account
+    </div>,
+    "key": "account",
+    "path": "account",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "element": <div>
+          member
+        </div>,
+        "key": "member",
+        "path": ":projectID/member",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              dataSourceList
+            </div>,
+            "key": "dataSourceList",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              dataSourceCreate
+            </div>,
+            "key": "dataSourceCreate",
+            "path": "create",
+          },
+          Object {
+            "element": <div>
+              dataSourceUpdate
+            </div>,
+            "key": "dataSourceUpdate",
+            "path": "update/:dbServiceUid",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="dataSource"
+        >
+          <Outlet />
+        </div>,
+        "key": "dataSource",
+        "path": ":projectID/db-services",
+      },
+      Object {
+        "element": <div>
+          syncDataSource
+        </div>,
+        "key": "syncDataSource",
+        "path": ":projectID/syncDataSource",
+      },
+      Object {
+        "element": <div>
+          dataExportManagement
+        </div>,
+        "key": "dataExportManagement",
+        "path": ":projectID/data/export",
+      },
+    ],
+    "element": <UNDEFINED />,
+    "key": "projectDetail",
+    "path": "project/*",
+  },
+  Object {
+    "element": <div>
+      reportStatistics
+    </div>,
+    "key": "reportStatistics",
+    "path": "sqle/reportStatistics",
+  },
+  Object {
+    "element": <div>
+      rule
+    </div>,
+    "key": "rule",
+    "path": "sqle/rule",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "element": <div>
+          ruleTemplateManagement
+        </div>,
+        "key": "ruleTemplateManagement",
+        "path": "",
+      },
+      Object {
+        "element": <div>
+          globalRuleTemplateCreate
+        </div>,
+        "key": "globalRuleTemplateCreate",
+        "path": "globalCreate",
+      },
+      Object {
+        "element": <div>
+          globalRuleTemplateImport
+        </div>,
+        "key": "globalRuleTemplateImport",
+        "path": "globalImport",
+      },
+      Object {
+        "element": <div>
+          globalRuleTemplateUpdate
+        </div>,
+        "key": "globalRuleTemplateUpdate",
+        "path": "globalUpdate/:templateName",
+      },
+      Object {
+        "element": <div>
+          globalRuleTemplateDetail
+        </div>,
+        "key": "globalRuleTemplateDetail",
+        "path": "globalDetail/:templateName/:dbType",
+      },
+      Object {
+        "element": <div>
+          createCustomRule
+        </div>,
+        "key": "createCustomRule",
+        "path": "customCreate",
+      },
+      Object {
+        "element": <div>
+          updateCustomRule
+        </div>,
+        "key": "updateCustomRule",
+        "path": "customUpdate/:ruleID",
+      },
+    ],
+    "key": "ruleManager",
+    "path": "sqle/ruleManager",
+    "role": Array [
+      "admin",
+    ],
+  },
+  Object {
+    "children": Array [
+      Object {
+        "element": <div>
+          projectOverview
+        </div>,
+        "key": "projectOverview",
+        "path": ":projectID/overview",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              orderList
+            </div>,
+            "key": "orderList",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              orderCreate
+            </div>,
+            "key": "orderCreate",
+            "path": "create",
+          },
+          Object {
+            "element": <div>
+              orderDetail
+            </div>,
+            "key": "orderDetail",
+            "path": ":orderId",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="order"
+        >
+          <Outlet />
+        </div>,
+        "key": "order",
+        "path": ":projectID/order",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              sqlAuditList
+            </div>,
+            "key": "sqlAuditList",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              sqlAuditCreate
+            </div>,
+            "key": "sqlAuditCreate",
+            "path": "create",
+          },
+          Object {
+            "element": <div>
+              sqlAuditDetail
+            </div>,
+            "key": "sqlAuditDetail",
+            "path": "detail/:sql_audit_record_id",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="sqlAudit"
+        >
+          <Outlet />
+        </div>,
+        "key": "sqlAudit",
+        "path": ":projectID/sqlAudit",
+      },
+      Object {
+        "element": <div>
+          dashboard
+        </div>,
+        "key": "dashboard",
+        "path": ":projectID/dashboard",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              auditPlanList
+            </div>,
+            "key": "auditPlanList",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              auditPlanCreate
+            </div>,
+            "key": "auditPlanCreate",
+            "path": "create",
+          },
+          Object {
+            "element": <div>
+              auditPlanUpdate
+            </div>,
+            "key": "auditPlanUpdate",
+            "path": "update/:auditPlanName",
+          },
+          Object {
+            "element": <div>
+              auditPlanDetail
+            </div>,
+            "key": "auditPlanDetail",
+            "path": "detail/:auditPlanName",
+          },
+          Object {
+            "element": <div>
+              auditPlanDetailReport
+            </div>,
+            "key": "auditPlanDetailReport",
+            "path": "detail/:auditPlanName/report/:reportId",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="plane"
+        >
+          <Outlet />
+        </div>,
+        "key": "plane",
+        "path": ":projectID/auditPlan",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              ruleTemplate
+            </div>,
+            "key": "ruleTemplate",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              ruleTemplate
+            </div>,
+            "key": "ruleTemplate",
+            "path": "list",
+          },
+          Object {
+            "element": <div>
+              ruleTemplateCreate
+            </div>,
+            "key": "ruleTemplateCreate",
+            "path": "create",
+          },
+          Object {
+            "element": <div>
+              ruleTemplateImport
+            </div>,
+            "key": "ruleTemplateImport",
+            "path": "import",
+          },
+          Object {
+            "element": <div>
+              ruleTemplateDetail
+            </div>,
+            "key": "ruleTemplateDetail",
+            "path": "detail/:templateName/:dbType",
+          },
+          Object {
+            "element": <div>
+              ruleTemplateUpdate
+            </div>,
+            "key": "ruleTemplateUpdate",
+            "path": "update/:templateName",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <Outlet />
+        </div>,
+        "key": "ruleTemplate",
+        "path": ":projectID/rule/template",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              progressDetail
+            </div>,
+            "key": "progressDetail",
+            "path": "",
+          },
+          Object {
+            "element": <div>
+              progressUpdate
+            </div>,
+            "key": "progressUpdate",
+            "path": "update/:workflowName",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="progress"
+        >
+          <Outlet />
+        </div>,
+        "key": "progress",
+        "path": ":projectID/progress",
+      },
+      Object {
+        "element": <div>
+          Whitelist
+        </div>,
+        "key": "Whitelist",
+        "path": ":projectID/whitelist",
+      },
+      Object {
+        "element": <div>
+          operationRecord
+        </div>,
+        "key": "operationRecord",
+        "path": ":projectID/operationRecord",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              SQLManagement
+            </div>,
+            "key": "SQLManagement",
+            "path": "",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="sqlManagement"
+        >
+          <Outlet />
+        </div>,
+        "key": "sqlManagement",
+        "path": ":projectID/sqlManagement",
+      },
+      Object {
+        "element": <div>
+          projectRedirect
+        </div>,
+        "key": "projectRedirect",
+        "path": "*",
+      },
+    ],
+    "element": <UNDEFINED />,
+    "key": "projectDetail",
+    "path": "sqle/project/*",
+  },
+  Object {
+    "element": <div>
+      null
+    </div>,
+    "key": "null",
+    "path": "*",
+  },
+]
+`;

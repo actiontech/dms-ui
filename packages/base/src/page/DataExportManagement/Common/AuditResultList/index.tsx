@@ -8,6 +8,8 @@ import { useRequest } from 'ahooks';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IGetDataExportTask } from '@actiontech/shared/lib/api/base/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import DbServiceSegmentedLabel from '../DbServiceSegmentedLabel';
+import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const AuditResultList: React.FC<AuditResultListProps> = ({
   taskIDs,
@@ -50,7 +52,15 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
           value={currentTaskID}
           onChange={(v) => handleChangeCurrentTask(v as string)}
           options={tasks.map((v) => ({
-            label: v.db_info?.name,
+            label: (
+              <DbServiceSegmentedLabel
+                dbServiceName={v.db_info?.name ?? ''}
+                auditLevel={
+                  (v.audit_result
+                    ?.audit_level as AuditTaskResV1AuditLevelEnum) ?? ''
+                }
+              />
+            ),
             value: !!v?.task_uid ? `${v.task_uid}` : '',
             key: v.task_uid
           }))}

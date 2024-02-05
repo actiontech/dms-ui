@@ -57,7 +57,7 @@ describe('sqle/Rule', () => {
           text: 'MySQL1'
         }
       ],
-      updateDriverListSync: jest.fn().mockImplementation(() => {
+      updateDriverListAsync: jest.fn().mockImplementation(() => {
         return createSpySuccessResponse({
           data: [
             {

@@ -88,7 +88,7 @@ export const mockDBServiceDriverInfo = {
     }
   ],
   updateDriverList: jest.fn(),
-  updateDriverListSync: jest.fn(),
+  updateDriverListAsync: jest.fn(),
   getLogoUrlByDbType: jest.fn(),
   generateDriverSelectOptions: jest.fn(),
   driverInfoFetched: true,

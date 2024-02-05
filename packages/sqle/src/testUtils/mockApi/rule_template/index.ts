@@ -9,10 +9,12 @@ import {
   ruleKnowledgeData,
   ruleListData,
   ruleTemplateList,
+  projectRulesMockData,
+  ruleTypeByDbMockData,
+  customRuleDetailMockData,
   projectRuleTemplateListMockData,
   publicRuleTemplateListMockData,
-  customRuleMockData,
-  projectRulesMockData
+  customRuleMockData
 } from './data';
 
 class MockRuleTemplateApi implements MockSpyApy {
@@ -26,6 +28,10 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.updateRuleKnowledge();
     this.getProjectRuleTemplate();
     this.getRuleTemplate();
+    this.updateCustomRule();
+    this.createCustomRule();
+    this.getRuleTypeByDBType();
+    this.getCustomRule();
     this.getProjectRuleTemplateList();
     this.getRuleTemplateList();
     this.deleteProjectRuleTemplate();
@@ -131,12 +137,44 @@ class MockRuleTemplateApi implements MockSpyApy {
     return spy;
   }
 
+  public createCustomRule() {
+    const spy = jest.spyOn(rule_template, 'createCustomRuleV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateCustomRule() {
+    const spy = jest.spyOn(rule_template, 'updateCustomRuleV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getRuleTypeByDBType() {
+    const spy = jest.spyOn(rule_template, 'getRuleTypeByDBTypeV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: ruleTypeByDbMockData
+      })
+    );
+    return spy;
+  }
+
   public getRuleTemplateList() {
     const spy = jest.spyOn(rule_template, 'getRuleTemplateListV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: publicRuleTemplateListMockData,
         total_nums: publicRuleTemplateListMockData.length
+      })
+    );
+    return spy;
+  }
+
+  public getCustomRule() {
+    const spy = jest.spyOn(rule_template, 'getCustomRuleV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: customRuleDetailMockData
       })
     );
     return spy;

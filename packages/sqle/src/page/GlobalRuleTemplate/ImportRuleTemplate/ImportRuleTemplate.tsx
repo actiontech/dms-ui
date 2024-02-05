@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useBoolean } from 'ahooks';
-import { Upload, message, Space, Spin } from 'antd';
+import { Upload, Space, Spin } from 'antd';
 import classNames from 'classnames';
 import {
   BasicButton,
@@ -23,7 +22,6 @@ import {
   IconSuccessResult
 } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
-import useRuleTemplateForm from '../../RuleTemplate/hooks/useRuleTemplateForm';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import {
@@ -31,41 +29,51 @@ import {
   FormStyleWrapper,
   formItemLayout
 } from '@actiontech/shared/lib/components/FormCom/style';
-import useImportRuleTemplate from '../../RuleTemplate/hooks/useImportRuleTemplate';
 import Icon from '@ant-design/icons';
 import { IconRuleTitle } from '../../../icon/Rule';
+import {
+  useImportRuleTemplateForm,
+  useBackToListPage
+} from '../../../hooks/useRuleTemplateForm';
+import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 const ImportRuleTemplate: React.FC = () => {
   const { t } = useTranslation();
-  const [messageApi, messageContextHolder] = message.useMessage();
 
-  const {
-    form: ruleTemplateForm,
-    activeRule,
-    step,
-    submitSuccessStatus,
-    baseInfoFormSubmitLoading,
-    baseInfoFormSubmit,
-    dbType,
-    setActiveRule,
-    prevStep,
-    nextStep,
-    resetAll: resetBaseInfoForm,
-    onGoToGlobalRuleTemplateList
-  } = useRuleTemplateForm(true);
+  const { onGoToGlobalRuleTemplateList } = useBackToListPage();
 
   const {
     ruleTemplateFormVisibility,
     selectFileForm,
+    ruleTemplateForm,
     allRules,
     getAllRulesLoading,
     importFile,
-    importActiveRuleData
-  } = useImportRuleTemplate({ ruleTemplateForm, setActiveRule, messageApi });
+    activeRule,
+    setActiveRule,
+    step,
+    submitSuccessStatus,
+    baseInfoFormSubmit,
+    baseInfoFormSubmitLoading,
+    prevStep,
+    nextStep,
+    resetAll,
+    dbType,
+    messageContextHolder,
+    createLoading,
+    startCreate,
+    finishCreate
+  } = useImportRuleTemplateForm();
 
-  const [createLoading, { setTrue: startCreate, setFalse: finishCreate }] =
-    useBoolean();
   const { projectName } = useCurrentProject();
+
+  const { updateActiveSegmentedKey } = useRuleManagerSegmented();
+
+  const gotoListPage = () => {
+    updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
+    onGoToGlobalRuleTemplateList();
+  };
 
   const submit = useCallback(() => {
     startCreate();
@@ -96,21 +104,13 @@ const ImportRuleTemplate: React.FC = () => {
       });
   }, [activeRule, finishCreate, nextStep, ruleTemplateForm, startCreate]);
 
-  const resetAllForms = () => {
-    resetBaseInfoForm();
-    selectFileForm.resetFields();
-  };
-
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       {messageContextHolder}
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton
-            onClick={onGoToGlobalRuleTemplateList}
-            icon={<IconLeftArrow />}
-          >
+          <BasicButton onClick={gotoListPage} icon={<IconLeftArrow />}>
             {t('ruleManager.backToGlobalRuleTemplateList')}
           </BasicButton>
         }
@@ -122,7 +122,7 @@ const ImportRuleTemplate: React.FC = () => {
               </BasicButton>
             )}
             {ruleTemplateFormVisibility && step === 0 && (
-              <BasicButton onClick={resetAllForms} disabled={createLoading}>
+              <BasicButton onClick={resetAll} disabled={createLoading}>
                 {t('common.reset')}
               </BasicButton>
             )}
@@ -209,9 +209,7 @@ const ImportRuleTemplate: React.FC = () => {
               step={step}
               dbType={dbType}
               updateActiveRule={setActiveRule}
-              baseInfoSubmit={() =>
-                baseInfoFormSubmit('', importActiveRuleData)
-              }
+              baseInfoSubmit={baseInfoFormSubmit}
               submit={submit}
               projectName={projectName}
               mode="import"
@@ -227,7 +225,7 @@ const ImportRuleTemplate: React.FC = () => {
             <BasicButton
               type="primary"
               key="view-rule-template-list"
-              onClick={onGoToGlobalRuleTemplateList}
+              onClick={gotoListPage}
             >
               {t('ruleManager.backToGlobalRuleTemplateList')}
             </BasicButton>
