@@ -48,7 +48,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
   }, [bindProjects]);
 
   const {
-    updateDriverListSync,
+    updateDriverListAsync,
     dbDriverOptions,
     loading: getDbTypeLoading
   } = useDbServiceDriver();
@@ -129,7 +129,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
   useEffect(() => {
     updateGlobalRuleTemplateList();
 
-    updateDriverListSync().then((res) => {
+    updateDriverListAsync().then((res) => {
       form.setFieldValue('filter_db_type', res.data.data?.[0]?.db_type);
     });
 

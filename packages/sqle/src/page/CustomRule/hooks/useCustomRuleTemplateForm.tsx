@@ -33,7 +33,7 @@ const useCustomRuleTemplateForm = (isUpdate = false) => {
   const resetAll = () => {
     setStep(0);
     if (isUpdate) {
-      form.resetFields(['desc', 'annotation', 'ruleType', 'level']);
+      form.resetFields(['annotation', 'ruleType', 'level']);
       return;
     }
     form.resetFields();

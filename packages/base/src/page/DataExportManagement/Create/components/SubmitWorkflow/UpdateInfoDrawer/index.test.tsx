@@ -17,6 +17,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../data/ModalName';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
+import dbServices from '../../../../../../testUtils/mockApi/dbServices';
 
 describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
   ignoreInvalidValueForCSSStyleProperty();
@@ -50,6 +51,7 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
     MockDate.set(dayjs('2024-01-31 12:00:00').valueOf());
     mockUseCurrentUser();
     mockUseCurrentProject();
+    dbServices.ListDBServicesTips();
   });
   afterEach(() => {
     jest.clearAllMocks();

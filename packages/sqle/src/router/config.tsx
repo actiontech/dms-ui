@@ -268,7 +268,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       // #if [ee]
       {
         path: ':reportId/:sqlNum/:auditPlanName/analyze',
-        key: 'auditPlanDetail',
+        key: 'auditPlanDetailAnalyze',
         element: <AuditPlanSqlAnalyze />
       }
       // #endif
@@ -309,7 +309,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         path: 'update/:templateName',
         element: <UpdateRuleTemplate />,
-        key: 'ruleTemplateImport'
+        key: 'ruleTemplateUpdate'
       }
     ]
   },
@@ -392,6 +392,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
     children: [
       {
         index: true,
+        key: 'ruleTemplateManagement',
         element: <RuleManager />
       },
       {

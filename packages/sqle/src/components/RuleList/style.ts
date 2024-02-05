@@ -77,12 +77,7 @@ export const RulesStyleWrapper = styled('div')<{
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  height: ${({ paddingBottomNone, pageHeaderHeight }) =>
-    `calc(100vh - ${
-      paddingBottomNone
-        ? 59 + 68 + 55 + pageHeaderHeight
-        : 59 + 68 + pageHeaderHeight
-    }px)`};
+  height: ${({ pageHeaderHeight }) => `calc(100vh - ${pageHeaderHeight}px)`};
   padding: 0 30px ${({ paddingBottomNone }) => (paddingBottomNone ? 0 : '8px')}
     40px;
   overflow: hidden;

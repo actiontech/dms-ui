@@ -217,10 +217,18 @@ const RuleList: React.FC<RuleListProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rules]);
 
+  const pageRemainingHeight = useMemo(() => {
+    // #if [demo || ce]
+    return pageHeaderHeight + 182;
+    // #else
+    return pageHeaderHeight + 127;
+    // #endif
+  }, [pageHeaderHeight]);
+
   return (
     <>
       <RulesStyleWrapper
-        pageHeaderHeight={pageHeaderHeight}
+        pageHeaderHeight={pageRemainingHeight}
         className="rule-list-wrapper"
         // #if [demo || ce]
         paddingBottomNone={true}

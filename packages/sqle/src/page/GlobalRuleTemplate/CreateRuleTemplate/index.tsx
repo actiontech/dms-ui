@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useBoolean } from 'ahooks';
 import { Space } from 'antd';
 import classNames from 'classnames';
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
@@ -15,13 +14,18 @@ import {
 } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
-import useRuleTemplateForm from '../../RuleTemplate/hooks/useRuleTemplateForm';
+import {
+  useCreateRuleTemplateForm,
+  useBackToListPage
+} from '../../../hooks/useRuleTemplateForm';
+import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
-  const [createLoading, { setFalse: finishSubmit, setTrue: startSubmit }] =
-    useBoolean(false);
+
   const { projectName } = useCurrentProject();
+
   const {
     form,
     getAllRulesLoading,
@@ -36,8 +40,19 @@ const CreateRuleTemplate = () => {
     nextStep,
     baseInfoFormSubmit,
     resetAll,
-    onGoToGlobalRuleTemplateList
-  } = useRuleTemplateForm();
+    createLoading,
+    startSubmit,
+    finishSubmit
+  } = useCreateRuleTemplateForm();
+
+  const { onGoToGlobalRuleTemplateList } = useBackToListPage();
+
+  const { updateActiveSegmentedKey } = useRuleManagerSegmented();
+
+  const gotoListPage = () => {
+    updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
+    onGoToGlobalRuleTemplateList();
+  };
 
   const submit = useCallback(() => {
     startSubmit();
@@ -74,10 +89,7 @@ const CreateRuleTemplate = () => {
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton
-            onClick={onGoToGlobalRuleTemplateList}
-            icon={<IconLeftArrow />}
-          >
+          <BasicButton onClick={gotoListPage} icon={<IconLeftArrow />}>
             {t('ruleManager.backToGlobalRuleTemplateList')}
           </BasicButton>
         }
@@ -122,7 +134,7 @@ const CreateRuleTemplate = () => {
           step={step}
           dbType={dbType}
           updateActiveRule={setActiveRule}
-          baseInfoSubmit={() => baseInfoFormSubmit('create')}
+          baseInfoSubmit={baseInfoFormSubmit}
           submit={submit}
           projectName={projectName}
           mode="create"
@@ -139,7 +151,7 @@ const CreateRuleTemplate = () => {
             <BasicButton
               type="primary"
               key="view-rule-template-list"
-              onClick={onGoToGlobalRuleTemplateList}
+              onClick={gotoListPage}
             >
               {t('ruleManager.backToGlobalRuleTemplateList')}
             </BasicButton>
