@@ -419,7 +419,7 @@ exports[`sqle/Order/Detail render snap detail 1`] = `
                 </div>
               </div>
               <div
-                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1574,7 +1574,7 @@ exports[`sqle/Order/Detail render snap detail 2`] = `
                 </div>
               </div>
               <div
-                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

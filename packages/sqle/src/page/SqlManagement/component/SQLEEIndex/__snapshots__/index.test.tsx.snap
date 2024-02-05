@@ -454,7 +454,7 @@ exports[`page/SqlManagement/SQLEEIndex batch assignment operation for sql 1`] = 
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -1806,7 +1806,7 @@ exports[`page/SqlManagement/SQLEEIndex batch ignore operation for sql 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -3158,7 +3158,7 @@ exports[`page/SqlManagement/SQLEEIndex batch solve operation for sql 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -4535,7 +4535,7 @@ exports[`page/SqlManagement/SQLEEIndex export data 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -5542,7 +5542,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data about myself 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -6549,7 +6549,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -7837,7 +7837,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 2`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -9408,7 +9408,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with search 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -10415,7 +10415,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with sort 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -11422,7 +11422,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with status 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -12420,7 +12420,7 @@ exports[`page/SqlManagement/SQLEEIndex jump to analyze and open modal when click
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -13797,7 +13797,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -14779,7 +14779,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -17201,7 +17201,7 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -18541,7 +18541,7 @@ exports[`page/SqlManagement/SQLEEIndex update remark 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

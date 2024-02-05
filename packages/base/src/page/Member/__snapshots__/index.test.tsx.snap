@@ -118,7 +118,7 @@ exports[`base/Member should render member list when it first entered the member 
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-555x9n css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -735,7 +735,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-555x9n css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

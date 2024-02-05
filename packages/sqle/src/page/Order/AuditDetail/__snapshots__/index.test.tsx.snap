@@ -314,7 +314,7 @@ exports[`sqle/Order/AuditDetail render snap when has order info data 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -852,7 +852,7 @@ exports[`sqle/Order/AuditDetail render snap when has order info data 2`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2139,7 +2139,7 @@ exports[`sqle/Order/AuditDetail render snap when no taskInfos 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -2653,7 +2653,7 @@ exports[`sqle/Order/AuditDetail render snap when order info has action btn 1`] =
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-555x9n css-dev-only-do-not-override-bj9uhl"
       >
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

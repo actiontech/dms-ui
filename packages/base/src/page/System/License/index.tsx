@@ -80,7 +80,7 @@ const License = () => {
           columns={LicenseColumn}
           dataSource={data?.list}
           loading={loading}
-          className="clear-padding-bottom"
+          className="clear-padding-bottom clear-right-box-shadow"
         />
         <ImportLicense />
       </>

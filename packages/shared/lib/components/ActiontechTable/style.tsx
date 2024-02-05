@@ -178,7 +178,15 @@ export const ActiontechTableStyleWrapper = styled(Table)`
     }
   }
 
-  &.ant-table-wrapper.actiontech-table-namespace.clear-padding-bottom {
-    padding-bottom: 0;
+  &.ant-table-wrapper.actiontech-table-namespace {
+    &.clear-padding-bottom {
+      padding-bottom: 0;
+    }
+    &.clear-right-box-shadow {
+      .ant-table-ping-right:not(.ant-table-has-fix-right)
+        .ant-table-container::after {
+        box-shadow: none;
+      }
+    }
   }
 `;
