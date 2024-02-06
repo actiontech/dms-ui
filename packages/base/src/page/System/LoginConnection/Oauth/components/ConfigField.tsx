@@ -1,0 +1,273 @@
+import { useTranslation } from 'react-i18next';
+
+import { BasicInput } from '@actiontech/shared';
+import {
+  FormItemLabel,
+  CustomLabelContent
+} from '@actiontech/shared/lib/components/FormCom';
+
+const ConfigField = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <FormItemLabel
+        className="has-label-tip has-required-style"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.clientId')}
+            tips={t('dmsSystem.oauth.clientIdTips')}
+          />
+        }
+        name="clientId"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t('dmsSystem.oauth.clientId')
+            })
+          }
+        ]}
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.clientId')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.clientSecret')}
+            tips={t('dmsSystem.oauth.clientSecretTips')}
+          />
+        }
+        name="clientSecret"
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.clientSecret')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip has-required-style"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.clientHost')}
+            tips={t('dmsSystem.oauth.clientHostTips')}
+          />
+        }
+        name="clientHost"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t('dmsSystem.oauth.clientHost')
+            })
+          }
+        ]}
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.clientHost')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip has-required-style"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.serverAuthUrl')}
+            tips={t('dmsSystem.oauth.serverAuthUrlTips')}
+          />
+        }
+        name="serverAuthUrl"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t('dmsSystem.oauth.serverAuthUrl')
+            })
+          }
+        ]}
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.serverAuthUrl')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip has-required-style"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.serverTokenUrl')}
+            tips={t('dmsSystem.oauth.serverTokenUrlTips')}
+          />
+        }
+        name="serverTokenUrl"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t('dmsSystem.oauth.serverTokenUrl')
+            })
+          }
+        ]}
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.serverTokenUrl')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip has-required-style"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.serverUserIdUrl')}
+            tips={t('dmsSystem.oauth.serverUserIdUrlTips')}
+          />
+        }
+        name="serverUserIdUrl"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t('dmsSystem.oauth.serverUserIdUrl')
+            })
+          }
+        ]}
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.serverUserIdUrl')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.scopes')}
+            tips={t('dmsSystem.oauth.scopesTips')}
+          />
+        }
+        name="scopes"
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.scopes')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip has-required-style"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.accessTokenKeyName')}
+            tips={t('dmsSystem.oauth.accessTokenKeyNameTips')}
+          />
+        }
+        name="accessTokenKeyName"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t('dmsSystem.oauth.accessTokenKeyName')
+            })
+          }
+        ]}
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.accessTokenKeyName')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip has-required-style"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.userIdKeyName')}
+            tips={t('dmsSystem.oauth.userIdKeyNameTips')}
+          />
+        }
+        name="userIdKeyName"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t('dmsSystem.oauth.userIdKeyName')
+            })
+          }
+        ]}
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.userIdKeyName')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.userEmailTagName')}
+            tips={t('dmsSystem.oauth.userEmailTagNameTips')}
+          />
+        }
+        name="userEmailTag"
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.userEmailTagName')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.userWechatTagName')}
+            tips={t('dmsSystem.oauth.userWechatTagNameTips')}
+          />
+        }
+        name="userWechatTag"
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.userWechatTagName')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.loginButtonText')}
+            tips={t('dmsSystem.oauth.loginButtonTextTips')}
+          />
+        }
+        name="loginButtonText"
+        rules={[
+          {
+            type: 'string',
+            max: 28,
+            message: t('dmsSystem.oauth.loginButtonTextValidateMessage')
+          }
+        ]}
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.loginButtonText')
+          })}
+        />
+      </FormItemLabel>
+    </>
+  );
+};
+
+export default ConfigField;
