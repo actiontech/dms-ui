@@ -41,6 +41,7 @@ dayjs.updateLocale('zh-cn', {
 });
 
 console.log('test robot');
+console.log('test robot');
 
 Spin.setDefaultIndicator(<IconSpin />);
 
