@@ -35,33 +35,27 @@ describe('page/DataSource/MaintenanceTimePicker', () => {
     fireEvent.click(screen.getByText('添 加'));
     await act(async () => jest.advanceTimersByTime(300));
 
-    const inputEle = getAllBySelector('.ant-picker-input input', baseElement);
+    const inputEle = getAllBySelector('.ant-picker-input', baseElement);
     expect(inputEle.length).toBe(2);
 
-    fireEvent.change(inputEle[0], {
-      target: { value: '11:11' }
-    });
+    fireEvent.click(inputEle[0].parentElement!);
     await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.keyDown(inputEle[0], {
-      key: 'Enter',
-      code: 'Enter',
-      keyCode: 13
-    });
+    fireEvent.click(screen.getAllByText('01')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('01')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
     await act(async () => jest.advanceTimersByTime(300));
-
-    fireEvent.change(inputEle[1], {
-      target: { value: '22:22' }
-    });
+    fireEvent.click(screen.getAllByText('03')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('03')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
     await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.keyDown(inputEle[1], {
-      key: 'Enter',
-      code: 'Enter',
-      keyCode: 13
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-
+    expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(300));
+    expect(onChangeFn).toBeCalled();
   });
 
   it('render has value', async () => {
@@ -69,11 +63,11 @@ describe('page/DataSource/MaintenanceTimePicker', () => {
       {
         startTime: {
           hour: 1,
-          minute: 31
+          minute: 5
         },
         endTime: {
           hour: 5,
-          minute: 55
+          minute: 5
         }
       }
     ]);
@@ -81,6 +75,30 @@ describe('page/DataSource/MaintenanceTimePicker', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
 
+    fireEvent.click(screen.getByText('添 加'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    const inputEle = getAllBySelector('.ant-picker-input', baseElement);
+    expect(inputEle.length).toBe(2);
+
+    fireEvent.click(inputEle[0].parentElement!);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('01')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('05')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('05')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getAllByText('05')[1]);
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(getBySelector('.ant-picker-ok .ant-btn'));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('不可重复添加相同的时间段')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(300));
     const closedIcon = getBySelector('.ant-tag-close-icon', baseElement);
     fireEvent.click(closedIcon);
     await act(async () => jest.advanceTimersByTime(300));
