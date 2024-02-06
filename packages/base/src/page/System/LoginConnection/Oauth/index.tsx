@@ -1,30 +1,29 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
+
 import { Form, Space, Spin, Tag, Typography } from 'antd';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
-  BasicButton,
-  BasicInput,
   BasicToolTips,
   EmptyBox,
   EnterpriseFeatureDisplay
 } from '@actiontech/shared';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
+import ConfigModifyBtn from '../../components/ConfigModifyBtn';
+import ConfigSwitch from '../../components/ConfigSwitch';
+import ConfigField from './components/ConfigField';
+import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
+
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
-import ConfigModifyBtn from '../../components/ConfigModifyBtn';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import {
-  FormItemLabel,
-  FormItemNoLabel,
-  CustomLabelContent
-} from '@actiontech/shared/lib/components/FormCom';
+
 import { switchFieldName } from './index.data';
-import { OauthFormField } from './index.type';
+
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { OauthFormField } from './index.type';
 import {
   IGetOauth2ConfigurationResData,
   IOauth2Configuration
@@ -323,238 +322,12 @@ const Oauth = () => {
                   onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
                 />
               ),
-              configField: (
-                <>
-                  <FormItemLabel
-                    className="has-label-tip has-required-style"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.clientId')}
-                        tips={t('dmsSystem.oauth.clientIdTips')}
-                      />
-                    }
-                    name="clientId"
-                    rules={[
-                      {
-                        required: true,
-                        message: t('common.form.rule.require', {
-                          name: t('dmsSystem.oauth.clientId')
-                        })
-                      }
-                    ]}
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.clientSecret')}
-                        tips={t('dmsSystem.oauth.clientSecretTips')}
-                      />
-                    }
-                    name="clientSecret"
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip has-required-style"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.clientHost')}
-                        tips={t('dmsSystem.oauth.clientHostTips')}
-                      />
-                    }
-                    name="clientHost"
-                    rules={[
-                      {
-                        required: true,
-                        message: t('common.form.rule.require', {
-                          name: t('dmsSystem.oauth.clientHost')
-                        })
-                      }
-                    ]}
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip has-required-style"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.serverAuthUrl')}
-                        tips={t('dmsSystem.oauth.serverAuthUrlTips')}
-                      />
-                    }
-                    name="serverAuthUrl"
-                    rules={[
-                      {
-                        required: true,
-                        message: t('common.form.rule.require', {
-                          name: t('dmsSystem.oauth.serverAuthUrl')
-                        })
-                      }
-                    ]}
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip has-required-style"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.serverTokenUrl')}
-                        tips={t('dmsSystem.oauth.serverTokenUrlTips')}
-                      />
-                    }
-                    name="serverTokenUrl"
-                    rules={[
-                      {
-                        required: true,
-                        message: t('common.form.rule.require', {
-                          name: t('dmsSystem.oauth.serverTokenUrl')
-                        })
-                      }
-                    ]}
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip has-required-style"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.serverUserIdUrl')}
-                        tips={t('dmsSystem.oauth.serverUserIdUrlTips')}
-                      />
-                    }
-                    name="serverUserIdUrl"
-                    rules={[
-                      {
-                        required: true,
-                        message: t('common.form.rule.require', {
-                          name: t('dmsSystem.oauth.serverUserIdUrl')
-                        })
-                      }
-                    ]}
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.scopes')}
-                        tips={t('dmsSystem.oauth.scopesTips')}
-                      />
-                    }
-                    name="scopes"
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip has-required-style"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.accessTokenKeyName')}
-                        tips={t('dmsSystem.oauth.accessTokenKeyNameTips')}
-                      />
-                    }
-                    name="accessTokenKeyName"
-                    rules={[
-                      {
-                        required: true,
-                        message: t('common.form.rule.require', {
-                          name: t('dmsSystem.oauth.accessTokenKeyName')
-                        })
-                      }
-                    ]}
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip has-required-style"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.userIdKeyName')}
-                        tips={t('dmsSystem.oauth.userIdKeyNameTips')}
-                      />
-                    }
-                    name="userIdKeyName"
-                    rules={[
-                      {
-                        required: true,
-                        message: t('common.form.rule.require', {
-                          name: t('dmsSystem.oauth.userIdKeyName')
-                        })
-                      }
-                    ]}
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.userEmailTagName')}
-                        tips={t('dmsSystem.oauth.userEmailTagNameTips')}
-                      />
-                    }
-                    name="userEmailTag"
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.userWechatTagName')}
-                        tips={t('dmsSystem.oauth.userWechatTagNameTips')}
-                      />
-                    }
-                    name="userWechatTag"
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                  <FormItemLabel
-                    className="has-label-tip"
-                    label={
-                      <CustomLabelContent
-                        title={t('dmsSystem.oauth.loginButtonText')}
-                        tips={t('dmsSystem.oauth.loginButtonTextTips')}
-                      />
-                    }
-                    name="loginButtonText"
-                    rules={[
-                      {
-                        type: 'string',
-                        max: 28,
-                        message: t(
-                          'dmsSystem.oauth.loginButtonTextValidateMessage'
-                        )
-                      }
-                    ]}
-                  >
-                    <BasicInput />
-                  </FormItemLabel>
-                </>
-              ),
+              configField: <ConfigField />,
               submitButtonField: (
-                <FormItemNoLabel>
-                  <Space size={12}>
-                    <BasicButton
-                      disabled={submitLoading}
-                      onClick={handleClickCancel}
-                    >
-                      {t('common.cancel')}
-                    </BasicButton>
-                    <BasicButton
-                      disabled={submitLoading}
-                      loading={submitLoading}
-                      htmlType="submit"
-                      type="primary"
-                    >
-                      {t('common.submit')}
-                    </BasicButton>
-                  </Space>
-                </FormItemNoLabel>
+                <ConfigSubmitButtonField
+                  submitLoading={submitLoading}
+                  handleClickCancel={handleClickCancel}
+                />
               ),
               submit: handleSubmit
             })}

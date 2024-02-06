@@ -1,24 +1,27 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useBoolean } from 'ahooks';
+
 import { Form, message, Upload } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { RcFile } from 'antd/es/upload';
-import { useDispatch, useSelector } from 'react-redux';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { BasicButton, BasicModal } from '@actiontech/shared';
+import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { LicenseColumn } from '../index.data';
+
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
+import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
 import { IReduxState } from '../../../../store';
 import { updateSystemModalStatus } from '../../../../store/system';
-import EventEmitter from '../../../../utils/EventEmitter';
-import { ILicenseItem } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ModalSize, ResponseCode } from '@actiontech/shared/lib/enum';
-import { LicenseColumn } from '../index.data';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 
-const ImportModal = () => {
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { ModalSize, ResponseCode } from '@actiontech/shared/lib/enum';
+import { ILicenseItem } from '@actiontech/shared/lib/api/sqle/service/common';
+
+const ImportLicenseModal = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -131,4 +134,4 @@ const ImportModal = () => {
   );
 };
 
-export default ImportModal;
+export default ImportLicenseModal;

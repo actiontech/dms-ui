@@ -1,6 +1,7 @@
 import { useBoolean, useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { useMemo } from 'react';
+
 import { Spin } from 'antd';
 import { ConfigItem } from '@actiontech/shared';
 import {
@@ -8,17 +9,20 @@ import {
   ImageUploader,
   LabelContent
 } from '@actiontech/shared/lib/components/ConfigItem';
-import { IPersonalizationParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import SystemBasicTitle from '../components/BasicTitle';
+
 import {
   DMS_DEFAULT_WEB_LOGO_URL,
   DMS_DEFAULT_WEB_TITLE
 } from '@actiontech/shared/lib/data/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useMemo } from 'react';
-import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
+
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
 import useSystemConfig from '../../../hooks/useSystemConfig';
-import SystemBasicTitle from '../components/BasicTitle';
+
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { IPersonalizationParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 
 const PersonalizeSetting: React.FC = () => {
   const { t } = useTranslation();

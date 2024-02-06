@@ -1,24 +1,23 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-import { Spin, message } from 'antd';
-import { ConfigItem } from '@actiontech/shared';
+
+import useHideConfigInputNode from '../../../../../shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
+
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import {
-  EditInput,
-  EditInputNumber,
-  LabelContent
-} from '@actiontech/shared/lib/components/ConfigItem';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { integerValidate } from '@actiontech/shared/lib/utils/Common';
-import useHideConfigInputNode from '../../../../../shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
 import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
+
+import { Spin } from 'antd';
 import SystemBasicTitle from '../components/BasicTitle';
+import OrderExpiredHours from './components/OrderExpiredHours';
+import OperationRecordExpiredHours from './components/OperationRecordExpiredHours';
+import UrlAddressPrefixTips from './components/UrlAddressPrefixTips';
 
 const GlobalSetting = () => {
   const { t } = useTranslation();
-  const [messageApi, messageContextHolder] = message.useMessage();
+
   const [
     orderExpiredHoursFieldVisible,
     {
@@ -35,12 +34,14 @@ const GlobalSetting = () => {
   ] = useBoolean();
   const [urlFieldVisible, { setTrue: showUrlField, setFalse: hideUrlField }] =
     useBoolean();
+
   const hideFieldsAction = () => {
     if (orderExpiredHoursFieldVisible) hideOrderExpiredHoursField();
     if (operationRecordExpiredHoursField)
       hideOperationRecordExpiredHoursField();
     if (urlFieldVisible) hideUrlField();
   };
+
   const hasOneFieldVisible = useMemo(
     () =>
       orderExpiredHoursFieldVisible ||
@@ -54,14 +55,6 @@ const GlobalSetting = () => {
   );
 
   useHideConfigInputNode(hasOneFieldVisible, hideFieldsAction);
-
-  const integerValidator = (value: string) => {
-    if (!integerValidate(value)) {
-      messageApi.error(t('common.form.rule.integer'));
-      return false;
-    }
-    return true;
-  };
 
   const fieldMetaMap = new Map<
     keyof IUpdateSystemVariablesReqV1,
@@ -125,76 +118,26 @@ const GlobalSetting = () => {
     <SystemBasicTitle title={t('dmsSystem.tabPaneTitle.globalConfiguration')}>
       <>
         <Spin spinning={getConfigLoading || submitLoading}>
-          {messageContextHolder}
-          <ConfigItem
-            label={
-              <LabelContent>{`${t('dmsSystem.global.orderExpiredHours')}(${t(
-                'common.time.hour'
-              )})`}</LabelContent>
-            }
-            descNode={String(globalConfig?.workflow_expired_hours ?? '-')}
+          <OrderExpiredHours
+            expiredHours={globalConfig?.workflow_expired_hours}
             fieldVisible={orderExpiredHoursFieldVisible}
             showField={showOrderExpiredHoursField}
             hideField={hideOrderExpiredHoursField}
-            inputNode={
-              <EditInputNumber
-                fieldValue={globalConfig?.workflow_expired_hours ?? 2160}
-                validator={(value: number) => integerValidator(String(value))}
-                hideField={hideOrderExpiredHoursField}
-                onSubmit={(value: number) => {
-                  submitGlobalConfig(value, 'workflow_expired_hours');
-                }}
-              />
-            }
+            submitGlobalConfig={submitGlobalConfig}
           />
-          <ConfigItem
-            label={
-              <LabelContent>{`${t(
-                'dmsSystem.global.operationRecordExpiredHours'
-              )}(${t('common.time.hour')})`}</LabelContent>
-            }
-            descNode={String(
-              globalConfig?.operation_record_expired_hours ?? '-'
-            )}
+          <OperationRecordExpiredHours
+            expiredHours={globalConfig?.operation_record_expired_hours}
             fieldVisible={operationRecordExpiredHoursField}
             showField={showOperationRecordExpiredHoursField}
             hideField={hideOperationRecordExpiredHoursField}
-            inputNode={
-              <EditInputNumber
-                fieldValue={
-                  globalConfig?.operation_record_expired_hours ?? 2160
-                }
-                validator={(value: number) => integerValidator(String(value))}
-                hideField={hideOperationRecordExpiredHoursField}
-                onSubmit={(value: number) => {
-                  submitGlobalConfig(value, 'operation_record_expired_hours');
-                }}
-              />
-            }
+            submitGlobalConfig={submitGlobalConfig}
           />
-          <ConfigItem
-            label={
-              <LabelContent
-                tips={`${t('dmsSystem.global.urlAddressPrefixTips')}, ${t(
-                  'dmsSystem.global.urlAddressFormatTips'
-                )} `}
-              >
-                {t('dmsSystem.global.urlAddressPrefix')}
-              </LabelContent>
-            }
-            descNode={!!globalConfig?.url ? globalConfig.url : '-'}
+          <UrlAddressPrefixTips
+            url={globalConfig?.url}
             fieldVisible={urlFieldVisible}
             showField={showUrlField}
             hideField={hideUrlField}
-            inputNode={
-              <EditInput
-                fieldValue={globalConfig?.url ?? ''}
-                hideField={hideUrlField}
-                onSubmit={(value: string) => {
-                  submitGlobalConfig(value, 'url');
-                }}
-              />
-            }
+            submitGlobalConfig={submitGlobalConfig}
           />
         </Spin>
       </>
