@@ -9,7 +9,7 @@ import { IconTest } from '../../../../../icon/system';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-interface ConfigExtraButtonsProps {
+export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;
   extraButtonsVisible: boolean;
   handleClickModify: () => void;

@@ -1,0 +1,751 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-row flex-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-segmented-group"
+        >
+          <label
+            class="enabled-rule ant-segmented-item ant-segmented-item-selected"
+          >
+            <input
+              checked=""
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+              title="已启用"
+            >
+              已启用
+            </div>
+          </label>
+          <label
+            class="disabled-rule ant-segmented-item"
+          >
+            <input
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+              title="已禁用"
+            >
+              已禁用
+            </div>
+          </label>
+        </div>
+      </div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          禁用全部规则
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-ulo9hd ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+        >
+          <input
+            class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+            placeholder="请输入规则关键词搜索"
+            type="text"
+            value=""
+          />
+          <span
+            class="ant-input-suffix"
+          >
+            <span
+              class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+              role="button"
+              tabindex="-1"
+            >
+              <span
+                class="custom-icon custom-icon-close css-u3jcp4"
+                role="img"
+              >
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span
+              class="pointer custom-icon custom-icon-search css-u3jcp4"
+              role="img"
+            >
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
+                />
+              </svg>
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    >
+      <div>
+        <div
+          aria-busy="true"
+          aria-live="polite"
+          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="ant-spin-dot ant-spin-dot-spin"
+          >
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-spin-container ant-spin-blur"
+      >
+        <div
+          class="css-1yvqaly"
+        >
+          <div
+            class="css-1n3gq8r"
+          >
+            ALL
+            <span
+              class="number-wrapper"
+            >
+              4
+            </span>
+          </div>
+          <div
+            class="css-zvt316"
+          >
+            使用建议
+            <span
+              class="number-wrapper"
+            >
+              1
+            </span>
+          </div>
+          <div
+            class="css-zvt316"
+          >
+            DDL规范
+            <span
+              class="number-wrapper"
+            >
+              1
+            </span>
+          </div>
+          <div
+            class="css-zvt316"
+          >
+            命名规范
+            <span
+              class="number-wrapper"
+            >
+              1
+            </span>
+          </div>
+          <div
+            class="css-zvt316"
+          >
+            索引规范
+            <span
+              class="number-wrapper"
+            >
+              1
+            </span>
+          </div>
+        </div>
+        <div
+          class="rule-list-wrapper css-im4ulm"
+        >
+          <div
+            id="rule-list-wrapper-id"
+          >
+            <div
+              class="infinite-scroll-component__outerdiv"
+            >
+              <div
+                class="infinite-scroll-component "
+                style="height: auto; overflow: auto;"
+              >
+                <div
+                  class="has-top-margin css-16p38ka"
+                  style="cursor: pointer;"
+                >
+                  <div
+                    class="level-icon"
+                  >
+                    <span
+                      class="custom-icon custom-icon-level-error css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="none"
+                        height="19"
+                        viewBox="0 0 18 19"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
+                          fill="#F66074"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="level-icon-text"
+                    >
+                      error
+                    </span>
+                  </div>
+                  <div
+                    class="level-content"
+                  >
+                    <span
+                      class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                    >
+                      绑定的变量个数不建议超过阈值
+                    </span>
+                    <div
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                    >
+                      因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+                    </div>
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                      style="flex-wrap: wrap; margin-bottom: -8px;"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="padding-bottom: 8px;"
+                      >
+                        <div
+                          class="level-content-params-item"
+                        >
+                          最大绑定变量数量
+                           
+                          : 
+                          100
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <section
+                    class="action-wrapper"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 10px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <span
+                                  class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
+                                  role="img"
+                                >
+                                  <svg
+                                    fill="currentColor"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="10"
+                                  viewBox="0 0 10 10"
+                                  width="10"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
+                                    id="Vector"
+                                    stroke="#F66074"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="has-top-margin css-16p38ka"
+                  style="cursor: pointer;"
+                >
+                  <div
+                    class="level-icon"
+                  >
+                    <span
+                      class="custom-icon custom-icon-level-normal css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="none"
+                        height="19"
+                        viewBox="0 0 18 19"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15 17H3C2.80109 17 2.61032 16.921 2.46967 16.7803C2.32902 16.6397 2.25 16.4489 2.25 16.25V2.75C2.25 2.55109 2.32902 2.36032 2.46967 2.21967C2.61032 2.07902 2.80109 2 3 2H15C15.1989 2 15.3897 2.07902 15.5303 2.21967C15.671 2.36032 15.75 2.55109 15.75 2.75V16.25C15.75 16.4489 15.671 16.6397 15.5303 16.7803C15.3897 16.921 15.1989 17 15 17ZM6 5.75V7.25H12V5.75H6ZM6 8.75V10.25H12V8.75H6ZM6 11.75V13.25H9.75V11.75H6Z"
+                          fill="#7D8CA8"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="level-icon-text"
+                    >
+                      normal
+                    </span>
+                  </div>
+                  <div
+                    class="level-content"
+                  >
+                    <span
+                      class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                    >
+                      test desc2
+                    </span>
+                    <div
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                    >
+                      test rule2
+                    </div>
+                  </div>
+                  <section
+                    class="action-wrapper"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 10px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <span
+                                  class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
+                                  role="img"
+                                >
+                                  <svg
+                                    fill="currentColor"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="10"
+                                  viewBox="0 0 10 10"
+                                  width="10"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
+                                    id="Vector"
+                                    stroke="#F66074"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="has-top-margin css-16p38ka"
+                  style="cursor: pointer;"
+                >
+                  <div
+                    class="level-icon"
+                  >
+                    <span
+                      class="custom-icon custom-icon-level-notice css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="none"
+                        height="19"
+                        viewBox="0 0 18 19"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.9513 2.37573L16.125 6.54946V12.452L11.9513 16.6257H6.04873L1.875 12.452V6.54946L6.04873 2.37573H11.9513ZM8.24948 11.7501V13.2501H9.74948V11.7501H8.24948ZM8.24948 5.75018V10.2501H9.74948V5.75018H8.24948Z"
+                          fill="#6094FC"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="level-icon-text"
+                    >
+                      notice
+                    </span>
+                  </div>
+                  <div
+                    class="level-content"
+                  >
+                    <span
+                      class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                    >
+                      test desc3
+                    </span>
+                    <div
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                    >
+                      test rule3
+                    </div>
+                  </div>
+                  <section
+                    class="action-wrapper"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 10px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <span
+                                  class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
+                                  role="img"
+                                >
+                                  <svg
+                                    fill="currentColor"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="10"
+                                  viewBox="0 0 10 10"
+                                  width="10"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
+                                    id="Vector"
+                                    stroke="#F66074"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="has-top-margin css-16p38ka"
+                  style="cursor: pointer;"
+                >
+                  <div
+                    class="level-icon"
+                  >
+                    <span
+                      class="custom-icon custom-icon-level-warn css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="none"
+                        height="19"
+                        viewBox="0 0 18 19"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
+                          fill="#EBAD1C"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="level-icon-text"
+                    >
+                      warn
+                    </span>
+                  </div>
+                  <div
+                    class="level-content"
+                  >
+                    <span
+                      class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                    >
+                      test desc4
+                    </span>
+                    <div
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                    >
+                      test rule4
+                    </div>
+                  </div>
+                  <section
+                    class="action-wrapper"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 10px;"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <span
+                                  class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
+                                  role="img"
+                                >
+                                  <svg
+                                    fill="currentColor"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="10"
+                                  viewBox="0 0 10 10"
+                                  width="10"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
+                                    id="Vector"
+                                    stroke="#F66074"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <section
+                  class="end-bottom-cont"
+                >
+                  暂无更多规则
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

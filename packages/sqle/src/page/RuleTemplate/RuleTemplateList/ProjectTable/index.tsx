@@ -4,15 +4,9 @@ import { useDispatch } from 'react-redux';
 import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
-import {
-  useCurrentProject,
-  useDbServiceDriver
-} from '@actiontech/shared/lib/global';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
-
 import { RuleTemplateTableColumn, RuleTemplateTableActions } from '../columns';
 import {
   updateSelectRuleTemplate,
@@ -20,9 +14,7 @@ import {
   updateRuleTemplateListModalStatus
 } from '../../../../store/ruleTemplate';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-
 import { TemplateTableProps } from '../index.type';
-
 import {
   useTableRequestError,
   ActiontechTable,
@@ -31,9 +23,13 @@ import {
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
+import {
+  useCurrentProject,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 
 const ProjectTable = (props: TemplateTableProps) => {
-  const { hidden, actionPermission } = props;
+  const { actionPermission } = props;
   const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const { t } = useTranslation();
@@ -61,20 +57,13 @@ const ProjectTable = (props: TemplateTableProps) => {
     );
   });
 
-  const refreshTable = useCallback(() => {
-    if (hidden) return;
-    refreshRuleTemplate();
-  }, [hidden, refreshRuleTemplate]);
-
   useEffect(() => {
-    EventEmitter.subscribe(EmitterKey.Refresh_Rule_Template_List, refreshTable);
-    return () => {
-      EventEmitter.unsubscribe(
-        EmitterKey.Refresh_Rule_Template_List,
-        refreshTable
-      );
-    };
-  }, [refreshTable]);
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Refresh_Rule_Template_List,
+      refreshRuleTemplate
+    );
+    return unsubscribe;
+  }, [refreshRuleTemplate]);
 
   const deleteTemplate = useCallback(
     (templateName: string) => {
@@ -207,21 +196,19 @@ const ProjectTable = (props: TemplateTableProps) => {
   return (
     <>
       {contextMessageHolder}
-      <section hidden={hidden}>
-        <ActiontechTable
-          key="project-rule-list"
-          rowKey="rule_template_name"
-          loading={loading}
-          dataSource={ruleTemplateList?.list ?? []}
-          pagination={{
-            total: ruleTemplateList?.total ?? 0
-          }}
-          onChange={tableChange}
-          columns={columns}
-          errorMessage={requestErrorMessage}
-          actions={actions}
-        />
-      </section>
+      <ActiontechTable
+        key="project-rule-list"
+        rowKey="rule_template_name"
+        loading={loading}
+        dataSource={ruleTemplateList?.list ?? []}
+        pagination={{
+          total: ruleTemplateList?.total ?? 0
+        }}
+        onChange={tableChange}
+        columns={columns}
+        errorMessage={requestErrorMessage}
+        actions={actions}
+      />
     </>
   );
 };

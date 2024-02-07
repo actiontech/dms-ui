@@ -1,0 +1,607 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="clientId"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  应用 ID
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  应用的唯一标识, 从要对接的平台申请 , 在OAuth2.0认证过程中，appid的值即为oauth_consumer_key的值。
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-required="true"
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="clientId"
+                  placeholder="请输入应用 ID"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="clientSecret"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  应用密钥
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  appid对应的密钥，访问用户资源时用来验证应用的合法性。在OAuth2.0认证过程中，appkey的值即为oauth_consumer_secret的值。如果之前配置过该项，更新时不填写该项代表不更新密钥。
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="clientSecret"
+                  placeholder="请输入应用密钥"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="clientHost"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  外部访问SQLE的地址
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  格式为 http(s)://ip:port
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-required="true"
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="clientHost"
+                  placeholder="请输入外部访问SQLE的地址"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="serverAuthUrl"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  OAuth2.0登录授权页面地址
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  格式类似于 http(s)://ip:port/xxx
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-required="true"
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="serverAuthUrl"
+                  placeholder="请输入OAuth2.0登录授权页面地址"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="serverTokenUrl"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  OAuth2.0 access_token 获取地址
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  格式类似于 http(s)://ip:port/xxx
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-required="true"
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="serverTokenUrl"
+                  placeholder="请输入OAuth2.0 access_token 获取地址"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="serverUserIdUrl"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  OAuth2.0 user id 获取地址
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  格式类似于 http(s)://ip:port/xxx
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-required="true"
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="serverUserIdUrl"
+                  placeholder="请输入OAuth2.0 user id 获取地址"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="scopes"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  请求资源范围
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  	此范围由验证服务器定义,多个范围用逗号分隔
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="scopes"
+                  placeholder="请输入请求资源范围"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="accessTokenKeyName"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  access_token Key名称
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  sqle会在获取用户ID时将access_token放在这个key对应的value中, 此参数会作为get请求的参数发送给用户ID获取地址
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-required="true"
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="accessTokenKeyName"
+                  placeholder="请输入access_token Key名称"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class="ant-form-item-required"
+              for="userIdKeyName"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  用户UID的JSON路径
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  sqle会尝试使用此路径，从第三方平台获取用户信息的响应中解析出用户ID，用户ID应当为唯一ID
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  aria-required="true"
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="userIdKeyName"
+                  placeholder="请输入用户UID的JSON路径"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="userEmailTag"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  用户邮箱的JSON路径
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  sqle会尝试使用此路径，从第三方平台获取用户信息的响应中解析出用户邮箱
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="userEmailTag"
+                  placeholder="请输入用户邮箱的JSON路径"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="userWechatTag"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  用户微信ID的JSON路径
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  sqle会尝试使用此路径，从第三方平台获取用户信息的响应中解析出用户微信ID
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="userWechatTag"
+                  placeholder="请输入用户微信ID的JSON路径"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="loginButtonText"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  登录按钮文字
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  login页面OAuth2.0登录按钮文字
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="loginButtonText"
+                  placeholder="请输入登录按钮文字"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;

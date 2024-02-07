@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { RuleTypesProps } from './index.type';
 import { RuleTypeItemStyleWrapper, RuleTypeStyleWrapper } from './style';
 import useRuleType from '../../hooks/useRuleType';
 import { useControllableValue } from 'ahooks';
+import { isEqual } from 'lodash';
+import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export const ALL_RULE_TYPE_CONSTANT = 'ALL';
 
@@ -12,6 +14,9 @@ const RuleTypes: React.FC<RuleTypesProps> = ({
   allRulesData,
   rules = []
 }) => {
+  const allRulesDataRef = useRef<IRuleResV1[]>();
+  const rulesRef = useRef<IRuleResV1[]>();
+
   const { getRuleTypeDataSource, ruleTypeData } = useRuleType();
 
   const [internalRuleType, setInternalRuleType] = useControllableValue<string>(
@@ -27,7 +32,11 @@ const RuleTypes: React.FC<RuleTypesProps> = ({
   );
 
   useEffect(() => {
-    getRuleTypeDataSource(allRulesData, rules);
+    if (!isEqual(allRulesDataRef, allRulesData) || !isEqual(rulesRef, rules)) {
+      allRulesDataRef.current = allRulesData;
+      allRulesDataRef.current = rules;
+      getRuleTypeDataSource(allRulesData, rules);
+    }
   }, [allRulesData, rules, getRuleTypeDataSource]);
 
   return (

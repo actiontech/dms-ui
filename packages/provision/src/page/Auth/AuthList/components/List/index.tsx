@@ -158,6 +158,7 @@ const AuthListItem = () => {
         filter_by_purpose: defaultPurpose
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultPurpose]);
 
   return (
