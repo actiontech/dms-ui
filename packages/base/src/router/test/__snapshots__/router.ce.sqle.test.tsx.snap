@@ -838,6 +838,111 @@ Array [
     "path": "sqle/project/*",
   },
   Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              authList
+            </div>,
+            "key": "authList",
+            "path": ":projectID/auth/list",
+          },
+          Object {
+            "element": <div>
+              filteredAuthList
+            </div>,
+            "key": "filteredAuthList",
+            "path": ":projectID/auth/list/:purpose",
+          },
+          Object {
+            "element": <div>
+              addAuth
+            </div>,
+            "key": "addAuth",
+            "path": ":projectID/auth/list/add",
+          },
+          Object {
+            "element": <div>
+              authTemplate
+            </div>,
+            "key": "authTemplate",
+            "path": ":projectID/auth/template",
+          },
+          Object {
+            "element": <div>
+              filteredAuthTemplate
+            </div>,
+            "key": "filteredAuthTemplate",
+            "path": ":projectID/auth/template/:name",
+          },
+          Object {
+            "element": <div>
+              addTemplate
+            </div>,
+            "key": "addTemplate",
+            "path": ":projectID/auth/template/edit_template",
+          },
+        ],
+        "element": undefined,
+        "key": "authManageWrapper",
+        "path": undefined,
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              operation
+            </div>,
+            "key": "operation",
+            "path": ":projectID/data/operation",
+          },
+        ],
+        "element": undefined,
+        "key": "dataObjectWrapper",
+        "path": undefined,
+      },
+      Object {
+        "children": Array [
+          Object {
+            "element": <div>
+              authAudit
+            </div>,
+            "key": "authAudit",
+            "path": ":projectID/audit/auth",
+          },
+          Object {
+            "element": <div>
+              templateAudit
+            </div>,
+            "key": "templateAudit",
+            "path": ":projectID/audit/template",
+          },
+          Object {
+            "element": <div>
+              serviceAudit
+            </div>,
+            "key": "serviceAudit",
+            "path": ":projectID/audit/service",
+          },
+        ],
+        "element": undefined,
+        "key": "auditWrapper",
+        "path": undefined,
+      },
+      Object {
+        "element": <div>
+          null
+        </div>,
+        "key": "null",
+        "path": "*",
+      },
+    ],
+    "element": <UNDEFINED />,
+    "key": "provision",
+    "path": "provision/project/*",
+  },
+  Object {
     "element": <div>
       null
     </div>,
