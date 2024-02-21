@@ -3715,7 +3715,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
           placeholder="请输入审核时间"
           style="text-align: center;"
           type="text"
-          value="-"
+          value="0 0 * * *"
         />
       </div>
       <div
@@ -3755,7 +3755,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
       </div>
     </div>
     <section
-      class="error-style css-17jkxu1"
+      class=" css-17jkxu1"
       hidden=""
     >
       <div
@@ -3772,7 +3772,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
           style="padding-left: 8px; padding-right: 8px; flex: 0 0 94px;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -3798,7 +3798,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
           style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -3811,7 +3811,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
           style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -3824,7 +3824,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
           style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -3837,7 +3837,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
           style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -3850,7 +3850,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
           style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -3863,7 +3863,7 @@ exports[`lib/CronInputCom render error for select style 1`] = `
           style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
