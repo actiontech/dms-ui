@@ -152,3 +152,54 @@ exports[`ReportStatistics/DatabaseSourceOrder render chart snap when api return 
   </div>
 </body>
 `;
+
+exports[`ReportStatistics/DatabaseSourceOrder render with miss data 1`] = `
+<body>
+  <div>
+    <div
+      class="chart-wrapper css-1hgbe7b"
+    >
+      <div
+        class="icon-center-wrapper MuiBox-root css-0"
+      >
+        <div
+          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+        >
+          <div
+            class="ant-empty-image"
+          >
+            <div
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            >
+              <span
+                class="ant-spin-dot ant-spin-dot-spin"
+              >
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-empty-description"
+          />
+          <div
+            class="ant-empty-footer"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

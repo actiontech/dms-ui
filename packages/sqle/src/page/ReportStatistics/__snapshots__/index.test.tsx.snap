@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/ReportStatistics should match snap shot 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1de50ze"
+    />
+  </div>
+</body>
+`;
