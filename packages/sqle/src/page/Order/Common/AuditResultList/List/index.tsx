@@ -107,9 +107,7 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
         pagination={{
           total: data?.total ?? 0
         }}
-        // #if [ee]
         actions={AuditResultForCreateOrderActions(handleClickAnalyze)}
-        // #endif
       />
       <AuditResultDrawer
         open={auditResultDrawerVisibility}

@@ -111,17 +111,10 @@ const UpdateRuleTemplate = React.lazy(
     )
 );
 
-const UpdateWorkflowTemplate = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
-    )
-);
-
 const WorkflowTemplateDetail = React.lazy(
   () =>
     import(
-      /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
+      /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/index'
     )
 );
 const SQLManagement = React.lazy(
@@ -134,14 +127,24 @@ const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
 
-// #if [ee]
-const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
 const OrderSqlAnalyze = React.lazy(() => import('../page/SqlAnalyze/Order'));
+
 const AuditPlanSqlAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/AuditPlan')
 );
+
+// #if [ee]
+const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
+
 const SQLManagementAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/SqlManage')
+);
+
+const UpdateWorkflowTemplate = React.lazy(
+  () =>
+    import(
+      /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
+    )
 );
 // #endif
 
@@ -197,13 +200,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <OrderDetail />,
         key: 'orderDetail'
       },
-      // #if [ee]
       {
         path: ':taskId/:sqlNum/analyze',
         element: <OrderSqlAnalyze />,
         key: 'orderAnalyze'
       }
-      // #endif
     ]
   },
   {
@@ -265,13 +266,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'auditPlanDetailReport',
         element: <AuditPlanReport />
       },
-      // #if [ee]
       {
         path: ':reportId/:sqlNum/:auditPlanName/analyze',
         key: 'auditPlanDetailAnalyze',
         element: <AuditPlanSqlAnalyze />
       }
-      // #endif
     ]
   },
   {
@@ -322,11 +321,13 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <WorkflowTemplateDetail />,
         key: 'progressDetail'
       },
+      // #if [ee]
       {
         path: 'update/:workflowName',
         element: <UpdateWorkflowTemplate />,
         key: 'progressUpdate'
       }
+      // #endif
     ]
   },
   {

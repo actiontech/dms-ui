@@ -8,12 +8,14 @@ import { IconBookMark, IconCustomService } from '../../Icon/common';
 import { DMS_DEFAULT_WEB_TITLE } from '../../data/common';
 import EmptyBox from '../EmptyBox';
 import VersionComparison from './components/VersionComparison';
+import classNames from 'classnames';
 
 const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
   children,
   eeFeatureDescription,
   featureName,
-  isConfigPage = false
+  isConfigPage = false,
+  showTitle = true
 }) => {
   const { t } = useTranslation();
 
@@ -100,8 +102,14 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
       {/* #if [ce] */}
       <CEIndexStyleWrapper>
         {isConfigPage ? (
-          <section className="config-mode-wrapper">
-            <div className="title">{featureName}</div>
+          <section
+            className={classNames('config-mode-wrapper', {
+              'none-padding-top': !showTitle
+            })}
+          >
+            <div hidden={!showTitle} className="title">
+              {featureName}
+            </div>
             {renderFeatureDescNode()}
             {renderAdditionalAttentionNode()}
           </section>

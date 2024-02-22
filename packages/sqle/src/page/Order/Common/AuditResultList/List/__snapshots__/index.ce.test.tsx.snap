@@ -13,7 +13,7 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 1`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-scroll-horizontal"
+            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -28,6 +28,12 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 1`] = `
                   <colgroup>
                     <col
                       style="width: 100px;"
+                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -58,6 +64,13 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 1`] = `
                       >
                         说明
                       </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
+                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -68,6 +81,15 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 1`] = `
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -226,6 +248,31 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 1`] = `
                               />
                             </svg>
                           </span>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  分 析
+                                </span>
+                              </button>
+                            </div>
+                          </div>
                         </div>
                       </td>
                     </tr>
@@ -420,7 +467,7 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 2`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-scroll-horizontal"
+            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -435,6 +482,12 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 2`] = `
                   <colgroup>
                     <col
                       style="width: 100px;"
+                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -465,6 +518,13 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 2`] = `
                       >
                         说明
                       </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
+                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -475,6 +535,15 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 2`] = `
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -633,6 +702,31 @@ exports[`sqle/Order/Common/AuditResultList render snap when add note 2`] = `
                               />
                             </svg>
                           </span>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  分 析
+                                </span>
+                              </button>
+                            </div>
+                          </div>
                         </div>
                       </td>
                     </tr>
@@ -827,7 +921,7 @@ exports[`sqle/Order/Common/AuditResultList render snap when data is empty 1`] = 
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+            class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -842,6 +936,12 @@ exports[`sqle/Order/Common/AuditResultList render snap when data is empty 1`] = 
                   <colgroup>
                     <col
                       style="width: 100px;"
+                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -871,6 +971,13 @@ exports[`sqle/Order/Common/AuditResultList render snap when data is empty 1`] = 
                         scope="col"
                       >
                         说明
+                      </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
                       </th>
                     </tr>
                   </thead>
@@ -918,13 +1025,22 @@ exports[`sqle/Order/Common/AuditResultList render snap when data is empty 1`] = 
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="4"
+                        colspan="5"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"
@@ -957,7 +1073,7 @@ exports[`sqle/Order/Common/AuditResultList render snap when get table error 1`] 
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+            class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -972,6 +1088,12 @@ exports[`sqle/Order/Common/AuditResultList render snap when get table error 1`] 
                   <colgroup>
                     <col
                       style="width: 100px;"
+                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -1001,6 +1123,13 @@ exports[`sqle/Order/Common/AuditResultList render snap when get table error 1`] 
                         scope="col"
                       >
                         说明
+                      </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
                       </th>
                     </tr>
                   </thead>
@@ -1048,13 +1177,22 @@ exports[`sqle/Order/Common/AuditResultList render snap when get table error 1`] 
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="4"
+                        colspan="5"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"

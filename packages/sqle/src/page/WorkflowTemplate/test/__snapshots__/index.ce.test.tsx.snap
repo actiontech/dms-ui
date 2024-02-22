@@ -1,29 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base/System/ProcessConnection/LarkAuditSetting-ce render snap 1`] = `
+exports[`page/WorkflowTemplate CE should match snap shot 1`] = `
 <body>
   <div>
     <div
-      class="config-form-wrapper"
+      class="actiontech-page-header-namespace css-1xspr0w"
     >
-      <section
-        class="css-569lt7"
+      <div
+        class="title"
       >
-        <section
-          class="config-mode-wrapper"
+        审批流程模版
+      </div>
+      <div
+        class="extra"
+      />
+    </div>
+    <section
+      class="css-1oy5rw9"
+    >
+      <div
+        class="ant-row common-mode-wrapper css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-col ant-col-17 css-dev-only-do-not-override-txh9fw"
         >
-          <div
-            class="title"
-          >
-            飞书审批
-          </div>
           <div
             class="left"
           >
+            <h5
+              class="ant-typography title css-dev-only-do-not-override-txh9fw"
+            >
+              功能说明
+            </h5>
             <div
               class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
             >
-              如果您使用飞书作为协作平台，并且希望在飞书上进行工单审批，您可以启用飞书审批功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。    
+              通过使用审批流程模板，您可以轻松地进行工单审批流程的节点变更，并指定特定成员来进行审批和上线操作。此外，您还可以方便地修改阻碍工单创建的审核等级，从而增强对工单的管控能力，并提高流程的规范性。
             </div>
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
@@ -1134,9 +1146,18 @@ exports[`base/System/ProcessConnection/LarkAuditSetting-ce render snap 1`] = `
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="ant-col ant-col-7 css-dev-only-do-not-override-txh9fw"
+        >
           <div
             class="right"
           >
+            <h5
+              class="ant-typography title css-dev-only-do-not-override-txh9fw"
+            >
+              更多关注
+            </h5>
             <div
               class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
             >
@@ -1195,7 +1216,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting-ce render snap 1`] = `
                   <p
                     class="cont-tip"
                   >
-                    飞书审批为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                    审批流程模版为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                   </p>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
@@ -1323,9 +1344,9 @@ exports[`base/System/ProcessConnection/LarkAuditSetting-ce render snap 1`] = `
               </div>
             </div>
           </div>
-        </section>
-      </section>
-    </div>
+        </div>
+      </div>
+    </section>
   </div>
 </body>
 `;

@@ -1,41 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test base/DataExport ce should match snapshot 1`] = `
-<div>
-  <article>
-    <div
-      class="actiontech-page-header-namespace css-1xspr0w"
-    >
-      <div
-        class="title"
-      >
-        数据导出
-      </div>
-      <div
-        class="extra"
-      />
-    </div>
+exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
+<body>
+  <div>
     <section
-      class="css-1oy5rw9"
+      class="system-form-wrapper"
     >
       <div
-        class="ant-row common-mode-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
       >
         <div
-          class="ant-col ant-col-17 css-dev-only-do-not-override-txh9fw"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
+          <div
+            class="ant-space-item"
+          >
+            流程对接
+          </div>
+        </div>
+      </div>
+      <section
+        class="css-1oy5rw9"
+      >
+        <section
+          class="config-mode-wrapper none-padding-top"
+        >
+          <div
+            class="title"
+            hidden=""
+          >
+            流程对接
+          </div>
           <div
             class="left"
           >
-            <h5
-              class="ant-typography title css-dev-only-do-not-override-txh9fw"
-            >
-              功能说明
-            </h5>
             <div
               class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
             >
-              当您没有某个数据源的查看权限，但需要导出其中的数据时，可以利用数据导出功能。通过进行审批流程，您可以获取相应的数据。这样，即使没有直接的查看权限，您仍然可以获得所需的数据。
+              如果您使用钉钉、飞书作为协作平台，并且希望在这些外部平台上进行工单审批，您可以启用流程对接功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。
             </div>
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
@@ -1146,18 +1148,9 @@ exports[`test base/DataExport ce should match snapshot 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ant-col ant-col-7 css-dev-only-do-not-override-txh9fw"
-        >
           <div
             class="right"
           >
-            <h5
-              class="ant-typography title css-dev-only-do-not-override-txh9fw"
-            >
-              更多关注
-            </h5>
             <div
               class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
             >
@@ -1216,7 +1209,7 @@ exports[`test base/DataExport ce should match snapshot 1`] = `
                   <p
                     class="cont-tip"
                   >
-                    数据导出为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                    流程对接为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                   </p>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
@@ -1344,9 +1337,9 @@ exports[`test base/DataExport ce should match snapshot 1`] = `
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
     </section>
-  </article>
-</div>
+  </div>
+</body>
 `;
