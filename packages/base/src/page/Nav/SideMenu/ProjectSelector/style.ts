@@ -1,4 +1,5 @@
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
+import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
 
 import { styled } from '@mui/material/styles';
 
@@ -98,4 +99,11 @@ export const ProjectSelectorPopupMenuStyleWrapper = styled('div')`
       padding: 0 12px;
     }
   }
+`;
+
+export const MockSelectItemOptionsStyleWrapper = styled(
+  CustomSelectPopupMenuStyleWrapper
+)`
+  max-height: 120px;
+  overflow-y: auto;
 `;
