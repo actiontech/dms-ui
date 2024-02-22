@@ -2,7 +2,7 @@ import { formatParamsBySeparator, fuzzySearchAndSortByWeight } from '../Tool';
 
 describe('test utils/Tool', () => {
   it('test formatParamsBySeparator', () => {
-    expect(formatParamsBySeparator(NaN)).toBe(NaN);
+    expect(formatParamsBySeparator(NaN)).toBe('NaN');
 
     expect(formatParamsBySeparator(0)).toBe('0');
     expect(formatParamsBySeparator(33)).toBe('33');
@@ -38,9 +38,15 @@ describe('test utils/Tool', () => {
       { a: 'test1' },
       { a: 'test-1' }
     ]);
+    expect(fuzzySearchAndSortByWeight('tes', data, 'a')).toEqual([
+      { a: 'tes' },
+      { a: 'test1' },
+      { a: 'test-1' }
+    ]);
     expect(fuzzySearchAndSortByWeight('test', data, 'a')).toEqual([
       { a: 'test1' },
       { a: 'test-1' }
     ]);
+    expect(fuzzySearchAndSortByWeight('test', data, 'a1' as any)).toEqual([]);
   });
 });
