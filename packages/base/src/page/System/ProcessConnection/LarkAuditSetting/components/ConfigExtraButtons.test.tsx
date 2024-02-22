@@ -4,7 +4,10 @@ import ConfigExtraButtons, {
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 import system from '../../../../../testUtils/mockApi/system';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -50,9 +53,57 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
       });
       expect(baseElement).toMatchSnapshot();
     });
+
+    it('render enabled is false', async () => {
+      const { baseElement } = customRender({
+        isConfigClosed: false,
+        extraButtonsVisible: true,
+        enabled: false
+      });
+
+      const systemIconBtn = getAllBySelector(
+        '.system-config-button',
+        baseElement
+      );
+      fireEvent.click(systemIconBtn[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
   });
 
   describe('render snap form', () => {
+    it('render diff mode info for input', async () => {
+      const { baseElement } = customRender({
+        isConfigClosed: false,
+        extraButtonsVisible: true,
+        enabled: true
+      });
+
+      const systemIconBtn = getAllBySelector(
+        '.system-config-button',
+        baseElement
+      );
+      fireEvent.click(systemIconBtn[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      const radioItems = getAllBySelector(
+        '.ant-radio-button-wrapper-in-form-item',
+        baseElement
+      );
+      expect(radioItems.length).toBe(2);
+
+      fireEvent.click(radioItems[1]);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(baseElement).toMatchSnapshot();
+
+      fireEvent.click(radioItems[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      expect(screen.getByText('取 消')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('取 消'));
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+    });
+
     it('render popover cancel btn', async () => {
       const { baseElement } = customRender({
         isConfigClosed: false,
@@ -129,17 +180,31 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
       await act(async () => jest.advanceTimersByTime(500));
 
       fireEvent.click(screen.getByText('确 认'));
-      await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTestFeishuAuditConfig).toBeCalled();
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(screen.getByText('正在向飞书推送消息...')).toBeInTheDocument();
+
+      await act(async () => jest.advanceTimersByTime(2600));
+      expect(requestTestFeishuAuditConfig).toBeCalledTimes(1);
       expect(requestTestFeishuAuditConfig).toBeCalledWith({
         account: '1@a.com',
         account_type: TestFeishuConfigurationReqV1AccountTypeEnum.email
       });
+
+      await act(async () => jest.advanceTimersByTime(400));
+      expect(
+        screen.getByText('已成功将审批消息推送至指定账号')
+      ).toBeInTheDocument();
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
     });
 
     it('render form submit error', async () => {
       requestTestFeishuAuditConfig.mockImplementation(() =>
-        createSpySuccessResponse({ error_message: 'error message' })
+        createSpySuccessResponse({
+          data: {
+            is_message_sent_normally: false
+          }
+        })
       );
       const { baseElement } = customRender({
         isConfigClosed: false,
@@ -147,29 +212,44 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
         enabled: true
       });
 
-      await act(async () => jest.advanceTimersByTime(3300));
-      const btnPopoverOpen = getBySelector(
-        '.ant-btn[type="submit"]',
+      const systemIconBtn = getAllBySelector(
+        '.system-config-button',
         baseElement
       );
-      fireEvent.click(btnPopoverOpen);
-      await act(async () => jest.advanceTimersByTime(500));
+      fireEvent.click(systemIconBtn[0]);
+      await act(async () => jest.advanceTimersByTime(300));
 
-      fireEvent.change(getBySelector('#receiveEmail', baseElement), {
+      const radioItems = getAllBySelector(
+        '.ant-radio-button-wrapper-in-form-item',
+        baseElement
+      );
+
+      fireEvent.click(radioItems[1]);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#receivePhone', baseElement), {
         target: {
-          value: '1@a.com'
+          value: '12345678919'
         }
       });
       await act(async () => jest.advanceTimersByTime(500));
 
       fireEvent.click(screen.getByText('确 认'));
-      await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTestFeishuAuditConfig).toBeCalled();
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(300));
+
+      expect(screen.getByText('正在向飞书推送消息...')).toBeInTheDocument();
+      await act(async () => jest.advanceTimersByTime(2400));
+      expect(requestTestFeishuAuditConfig).toBeCalledTimes(1);
       expect(requestTestFeishuAuditConfig).toBeCalledWith({
-        account: '1@a.com',
-        account_type: TestFeishuConfigurationReqV1AccountTypeEnum.email
+        account: '12345678919',
+        account_type: TestFeishuConfigurationReqV1AccountTypeEnum.phone
       });
-      expect(baseElement).toMatchSnapshot();
+
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(screen.getByText('未知错误...')).toBeInTheDocument()
     });
   });
 });
