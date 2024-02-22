@@ -3,14 +3,14 @@
  */
 
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
-import LarkAuditSetting from '.';
+import ProcessConnection from '.';
 
-describe('base/System/ProcessConnection/LarkAuditSetting-ce', () => {
+describe('base/System/ProcessConnection ce', () => {
   const customRender = () => {
-    return superRender(<LarkAuditSetting />);
+    return superRender(<ProcessConnection />);
   };
 
-  it('render snap', () => {
+  it('should match snap shots', () => {
     const { baseElement } = customRender();
 
     expect(baseElement).toMatchSnapshot();
