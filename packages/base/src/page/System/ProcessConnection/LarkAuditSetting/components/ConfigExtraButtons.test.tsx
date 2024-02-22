@@ -249,7 +249,7 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
       });
 
       await act(async () => jest.advanceTimersByTime(300));
-      expect(screen.getByText('未知错误...')).toBeInTheDocument()
+      expect(screen.getByText('未知错误...')).toBeInTheDocument();
     });
   });
 });

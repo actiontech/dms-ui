@@ -2,12 +2,7 @@ import ConfigExtraButtons, {
   ConfigExtraButtonsProps
 } from './ConfigExtraButtons';
 
-import {
-  cleanup,
-  fireEvent,
-  act,
-  screen,
-} from '@testing-library/react';
+import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import {
   getAllBySelector,
@@ -256,7 +251,9 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
     });
 
     it('render snap when send api error', async () => {
-      requestTestFeishuConfiguration.mockImplementation(() => createSpySuccessResponse({}));
+      requestTestFeishuConfiguration.mockImplementation(() =>
+        createSpySuccessResponse({})
+      );
       const { baseElement } = customRender({
         enabled: true,
         isConfigClosed: false,
@@ -293,6 +290,7 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
       expect(screen.getByText('确 认')).toBeInTheDocument();
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(300));
+
       expect(screen.getByText('正在向飞书推送消息...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(2700));
       fireEvent.click(screen.getByText('确 认'));

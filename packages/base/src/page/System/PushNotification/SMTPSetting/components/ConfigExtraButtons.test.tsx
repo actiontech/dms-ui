@@ -4,9 +4,13 @@ import ConfigExtraButtons, {
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 import system from '../../../../../testUtils/mockApi/system';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/System/PushNotification/SMTPSetting/ConfigExtraButtons', () => {
   let requestTestSMTPConfigurationSuccess: jest.SpyInstance;
@@ -33,12 +37,13 @@ describe('base/System/PushNotification/SMTPSetting/ConfigExtraButtons', () => {
   describe('render snap when hidden val is true', () => {
     it('render isConfigClosed is true', () => {
       const { baseElement } = customRender({
+        enabled: false,
         isConfigClosed: true,
-        extraButtonsVisible: true,
-        enabled: false
+        extraButtonsVisible: false
       });
       expect(baseElement).toMatchSnapshot();
     });
+
     it('render extraButtonsVisible is false', () => {
       const { baseElement } = customRender({
         isConfigClosed: false,
@@ -49,94 +54,179 @@ describe('base/System/PushNotification/SMTPSetting/ConfigExtraButtons', () => {
     });
   });
 
-  describe('render snap form', () => {
-    it('render popover cancel btn', async () => {
+  describe('render snap when ui interaction', () => {
+    it('render click edit btn', async () => {
       const { baseElement } = customRender({
+        enabled: false,
         isConfigClosed: false,
-        extraButtonsVisible: true,
-        enabled: true
+        extraButtonsVisible: true
+      });
+      expect(baseElement).toMatchSnapshot();
+
+      const iconBtn = getAllBySelector('.system-config-button', baseElement);
+      expect(iconBtn.length).toBe(2);
+      const editBtn = iconBtn[1];
+      fireEvent.mouseOver(editBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(screen.getByText('修改')).toBeInTheDocument();
+
+      fireEvent.click(editBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(handleClickModifyFn).toBeCalledTimes(1);
+    });
+
+    it('render test btn snap when click test btn no show', async () => {
+      const { baseElement } = customRender({
+        enabled: false,
+        isConfigClosed: false,
+        extraButtonsVisible: true
       });
 
-      const btnPopoverOpen = getBySelector(
-        '.ant-btn[type="submit"]',
-        baseElement
-      );
-      fireEvent.click(btnPopoverOpen);
-      await act(async () => jest.advanceTimersByTime(500));
-      expect(screen.getByText('取 消')).toBeInTheDocument();
+      const iconBtn = getAllBySelector('.system-config-button', baseElement);
+
+      const testBtn = iconBtn[0];
+      fireEvent.mouseOver(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(screen.getByText('测试')).toBeInTheDocument();
+
+      fireEvent.click(testBtn);
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('render form validate', async () => {
+    it('render test btn snap when click cancel btn', async () => {
       const { baseElement } = customRender({
+        enabled: true,
         isConfigClosed: false,
-        extraButtonsVisible: true,
-        enabled: true
+        extraButtonsVisible: true
       });
 
-      const btnPopoverOpen = getBySelector(
-        '.ant-btn[type="submit"]',
-        baseElement
-      );
-      fireEvent.click(btnPopoverOpen);
-      await act(async () => jest.advanceTimersByTime(500));
+      const [testBtn] = getAllBySelector('.system-config-button', baseElement);
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
-      expect(
-        getBySelector('input[ placeholder="请输入接收邮箱"]', baseElement)
-      ).toBeInTheDocument();
 
-      fireEvent.change(getBySelector('#receiveEmail', baseElement), {
-        target: {
-          value: '1@q.com'
-        }
-      });
-      await act(async () => jest.advanceTimersByTime(500));
-
-      fireEvent.click(screen.getByText('确 认'));
-      await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTestSMTPConfigurationSuccess).toBeCalled();
-      expect(requestTestSMTPConfigurationSuccess).toBeCalledWith({
-        test_smtp_configuration: {
-          recipient_addr: '1@q.com'
-        }
-      });
+      expect(screen.getByText('取 消')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('取 消'));
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(baseElement).toMatchSnapshot();
     });
 
-    it('render form submit error', async () => {
-      const requestTestSMTPConfigurationError = system.testSMTPConfigFail();
-
+    it('render test btn snap when validate item', async () => {
       const { baseElement } = customRender({
+        enabled: true,
         isConfigClosed: false,
-        extraButtonsVisible: true,
-        enabled: true
+        extraButtonsVisible: true
       });
 
-      const btnPopoverOpen = getBySelector(
-        '.ant-btn[type="submit"]',
-        baseElement
-      );
-      fireEvent.click(btnPopoverOpen);
-      await act(async () => jest.advanceTimersByTime(500));
+      const [testBtn] = getAllBySelector('.system-config-button', baseElement);
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
 
-      expect(
-        getBySelector('input[ placeholder="请输入接收邮箱"]', baseElement)
-      ).toBeInTheDocument();
+      expect(getBySelector('#receiveEmail', baseElement)).toBeInTheDocument();
 
       fireEvent.change(getBySelector('#receiveEmail', baseElement), {
         target: {
-          value: '2@a.com'
+          value: '123'
         }
       });
-      await act(async () => jest.advanceTimersByTime(500));
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+  });
+
+  describe('render snap when send api', () => {
+    it('render snap when send api success', async () => {
+      const { baseElement } = customRender({
+        enabled: true,
+        isConfigClosed: false,
+        extraButtonsVisible: true
+      });
+
+      const [testBtn] = getAllBySelector('.system-config-button', baseElement);
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      expect(getBySelector('#receiveEmail', baseElement)).toHaveAttribute(
+        'value',
+        ''
+      );
+      const emailData = '1@a.com';
+      fireEvent.change(getBySelector('#receiveEmail', baseElement), {
+        target: {
+          value: emailData
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      expect(screen.getByText('确 认')).toBeInTheDocument();
       fireEvent.click(screen.getByText('确 认'));
-      await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTestSMTPConfigurationError).toBeCalledWith({
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(
+        screen.getByText(`正在向 “${emailData}” 发送测试邮件...`)
+      ).toBeInTheDocument();
+      await act(async () => jest.advanceTimersByTime(2700));
+
+      expect(requestTestSMTPConfigurationSuccess).toBeCalledTimes(1);
+      expect(requestTestSMTPConfigurationSuccess).toBeCalledWith({
         test_smtp_configuration: {
-          recipient_addr: '2@a.com'
+          recipient_addr: emailData
         }
       });
+      await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render snap when send api error', async () => {
+      requestTestSMTPConfigurationSuccess.mockImplementation(() =>
+        createSpySuccessResponse({})
+      );
+      const { baseElement } = customRender({
+        enabled: true,
+        isConfigClosed: false,
+        extraButtonsVisible: true
+      });
+
+      const [testBtn] = getAllBySelector('.system-config-button', baseElement);
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      expect(getBySelector('#receiveEmail', baseElement)).toHaveAttribute(
+        'value',
+        ''
+      );
+      const emailData = '2@b.com';
+      fireEvent.change(getBySelector('#receiveEmail', baseElement), {
+        target: {
+          value: emailData
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      expect(screen.getByText('确 认')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 认'));
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(
+        screen.getByText(`正在向 “${emailData}” 发送测试邮件...`)
+      ).toBeInTheDocument();
+      await act(async () => jest.advanceTimersByTime(2700));
+
+      expect(requestTestSMTPConfigurationSuccess).toBeCalledTimes(1);
+      expect(requestTestSMTPConfigurationSuccess).toBeCalledWith({
+        test_smtp_configuration: {
+          recipient_addr: emailData
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(screen.getByText('未知错误...')).toBeInTheDocument();
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+
+      fireEvent.click(screen.getByText('取 消'));
+      await act(async () => jest.advanceTimersByTime(300));
+      fireEvent.click(testBtn);
+      await act(async () => jest.advanceTimersByTime(300));
     });
   });
 });
