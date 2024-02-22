@@ -72,13 +72,13 @@ describe('base/System/GlobalSetting', () => {
   });
 
   it('render api return no data', async () => {
-    requestGetSystemVariables.mockImplementation(
-      () => createSpySuccessResponse({})
+    requestGetSystemVariables.mockImplementation(() =>
+      createSpySuccessResponse({})
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3100));
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 
   describe('render form validate error', () => {
     it('render workflow_expired_hours', async () => {
@@ -215,5 +215,4 @@ describe('base/System/GlobalSetting', () => {
       expect(requestGetSystemVariables).toBeCalled();
     });
   });
-
 });
