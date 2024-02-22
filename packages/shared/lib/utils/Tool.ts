@@ -1,6 +1,6 @@
-export function formatParamsBySeparator(formatParams: string | number) {
+export function formatParamsBySeparator(formatParams: string | number): string {
   if (Number.isNaN(formatParams)) {
-    return formatParams;
+    return 'NaN';
   }
   const val =
     typeof formatParams === 'number' ? formatParams + '' : formatParams;
