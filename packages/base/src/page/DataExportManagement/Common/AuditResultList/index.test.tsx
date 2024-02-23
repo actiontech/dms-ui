@@ -6,9 +6,15 @@ import {
   BatchGetDataExportTaskResponseData,
   ListDataExportTaskSQLsResponseData
 } from '../../../../testUtils/mockApi/dataExport/data';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpySuccessResponse,
+  createSpyFailResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('test DataExport/Common/AuditResultList', () => {
   let batchGetTaskSpy: jest.SpyInstance;
@@ -53,8 +59,79 @@ describe('test DataExport/Common/AuditResultList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
 
-    fireEvent.click(getAllBySelector('.audit-result-exec-sql-column')[0]);
+    fireEvent.click(
+      getAllBySelector(
+        '.audit-result-exec-sql-column .ant-typography-ellipsis'
+      )[0]
+    );
     expect(baseElement).toMatchSnapshot();
+    expect(getBySelector('.ant-drawer-content-wrapper')).not.toHaveClass(
+      'ant-drawer-content-wrapper-hidden'
+    );
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('.closed-icon-custom'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(getBySelector('.ant-drawer-content-wrapper')).toHaveClass(
+      'ant-drawer-content-wrapper-hidden'
+    );
+    fireEvent.click(getAllBySelector('.audit-result-column')[1].children[0]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(getBySelector('.ant-drawer-content-wrapper')).not.toHaveClass(
+      'ant-drawer-content-wrapper-hidden'
+    );
+  });
+
+  it('should match snapshot when data is null', async () => {
+    getTaskSQLsSpy.mockClear();
+    getTaskSQLsSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            uid: 1,
+            sql: null,
+            export_status: '',
+            export_sql_type: '',
+            audit_level: '',
+            audit_sql_result: [
+              {
+                level: 'error',
+                message: '除了自增列及大字段列之外，每个列都必须添加默认值',
+                rule_name: 'ddl_check_column_without_default',
+                db_type: ''
+              }
+            ]
+          },
+          {
+            uid: 2,
+            sql: 'SELECT 1;',
+            export_status: '',
+            export_sql_type: 'dql',
+            audit_level: '',
+            audit_sql_result: [
+              {
+                level: 'error',
+                message: '除了自增列及大字段列之外，每个列都必须添加默认值',
+                rule_name: 'ddl_check_column_without_default',
+                db_type: ''
+              },
+              {
+                level: null,
+                message: '主键建议使用 BIGINT 无符号类型，即 BIGINT UNSIGNED',
+                rule_name: 'ddl_check_pk_without_bigint_unsigned',
+                db_type: ''
+              }
+            ]
+          }
+        ]
+      })
+    );
+    const { container } = superRender(
+      <AuditResultList taskIDs={taskIDs} projectID={projectID} />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getTaskSQLsSpy).toBeCalledTimes(1);
+    expect(container).toMatchSnapshot();
   });
 
   it('should switch tab when click label', async () => {
@@ -146,5 +223,21 @@ describe('test DataExport/Common/AuditResultList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledTimes(1);
     expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledWith(false);
+
+    jest.clearAllMocks();
+    cleanup();
+
+    getTaskSQLsSpy.mockImplementation(() => createSpyFailResponse({}));
+    superRender(
+      <AuditResultList
+        taskIDs={taskIDs}
+        projectID={projectID}
+        updateExecuteSQLsTypeIsDQL={updateExecuteSQLsTypeIsDQLSpy}
+      />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledTimes(1);
+    expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledWith(true);
   });
 });
