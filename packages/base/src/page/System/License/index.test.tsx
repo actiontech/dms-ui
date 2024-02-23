@@ -6,6 +6,7 @@ import system from '../../../testUtils/mockApi/system';
 
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -43,6 +44,24 @@ describe('base/System/License', () => {
     await act(async () => jest.advanceTimersByTime(2600));
     expect(baseElement).toMatchSnapshot();
     expect(requestGetLicense).toBeCalled();
+  });
+
+  it('render snap when limit data name is `info`', async () => {
+    requestGetLicense.mockImplementation(() =>
+      createSpySuccessResponse({
+        license: [
+          {
+            name: 'info',
+            limit: 'limit string cont',
+            description: 'this is license desc info'
+          }
+        ]
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetLicense).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render snap when click import btn', async () => {
