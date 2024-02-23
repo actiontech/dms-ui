@@ -37,9 +37,7 @@ const UserEmail: React.FC<UpdateComponentCommonProps> = ({
       });
   };
   const emailValidator = (value: string): boolean => {
-    if (!value) return false;
-
-    if (!emailValidate(value)) {
+    if (value && !emailValidate(value)) {
       messageApi.error(t('dmsAccount.emailErrorMessage.type'));
       return false;
     }
