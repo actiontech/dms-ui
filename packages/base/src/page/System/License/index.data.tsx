@@ -14,9 +14,12 @@ export const LicenseColumn: ActiontechTableColumn<ILicenseItem> = [
     className: 'ellipsis-column-width',
     render: (text = '-', record) => {
       if (record.name === 'info') {
-        return <BasicTypographyEllipsis textCont={text} />;
+        return (
+          <div style={{ width: 350 }}>
+            <BasicTypographyEllipsis textCont={text} />
+          </div>
+        );
       }
-
       return text;
     }
   }
