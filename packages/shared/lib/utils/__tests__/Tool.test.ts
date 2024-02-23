@@ -38,6 +38,10 @@ describe('test utils/Tool', () => {
       { a: 'test1' },
       { a: 'test-1' }
     ]);
+    expect(fuzzySearchAndSortByWeight('est', data, 'a')).toEqual([
+      { a: 'test1' },
+      { a: 'test-1' }
+    ]);
     expect(fuzzySearchAndSortByWeight('tes', data, 'a')).toEqual([
       { a: 'tes' },
       { a: 'test1' },
