@@ -1,3 +1,9 @@
+export enum DMSProxyTargetScenarioEnum {
+  'internal_service' = 'internal_service',
+
+  'thrid_party_integrate' = 'thrid_party_integrate'
+}
+
 export enum GetDataExportTaskStatusEnum {
   'init' = 'init',
 
