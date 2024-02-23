@@ -13,6 +13,7 @@ import {
   WorkflowRejectedPercentGroupByCreatorData,
   WorkflowStatusCountData
 } from './data';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 class StatisticAPI implements MockSpyApy {
   public mockAllApi(): void {
@@ -112,7 +113,7 @@ class StatisticAPI implements MockSpyApy {
   }
 
   public getLicenseUsage() {
-    const spy = jest.spyOn(statistic, 'getLicenseUsageV1');
+    const spy = jest.spyOn(dms, 'GetLicenseUsage');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: LicenseUsageData

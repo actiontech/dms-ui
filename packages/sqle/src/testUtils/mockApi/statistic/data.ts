@@ -57,7 +57,7 @@ export const LicenseUsageData = {
     resource_type_desc: 'resource_type_desc',
     used: 5
   },
-  instances_usage: [
+  db_services_usage: [
     {
       is_limited: true,
       limit: 1,
