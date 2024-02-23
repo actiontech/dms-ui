@@ -5,6 +5,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import DingTalkSetting from '.';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/System/ProcessConnection/DingTalkSetting', () => {
   let requestGetDingTalkConfiguration: jest.SpyInstance;
@@ -66,6 +67,8 @@ describe('base/System/ProcessConnection/DingTalkSetting', () => {
         '.basic-switch-wrapper .ant-switch-inner',
         baseElement
       );
+      fireEvent.mouseEnter(switchEle);
+      await act(async () => jest.advanceTimersByTime(500));
       fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
 
@@ -88,6 +91,59 @@ describe('base/System/ProcessConnection/DingTalkSetting', () => {
       fireEvent.click(screen.getByText('OK'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
+      await act(async () => jest.advanceTimersByTime(2600));
+    });
+
+    it('render snap when click switch change and edit form info', async () => {
+      requestGetDingTalkConfiguration.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            app_key: '',
+            is_enable_ding_talk_notify: true
+          }
+        })
+      );
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+
+      const switchEle = getBySelector(
+        '.basic-switch-wrapper .ant-switch-inner',
+        baseElement
+      );
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(300));
+
+      const mockFormData = {
+        appKey: 'app Key',
+        appSecret: 'app Secret'
+      };
+
+      fireEvent.change(getBySelector('#appKey', baseElement), {
+        target: {
+          value: mockFormData.appKey
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(getBySelector('#appKey', baseElement)).toHaveAttribute(
+        'value',
+        mockFormData.appKey
+      );
+
+      fireEvent.change(screen.getByLabelText('AppSecret'), {
+        target: { value: mockFormData.appSecret }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(screen.getByText('是否确认关闭当前配置？')).toBeInTheDocument();
+      expect(screen.getByText('Cancel')).toBeInTheDocument();
+      expect(screen.getByText('OK')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('OK'));
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+      await act(async () => jest.advanceTimersByTime(2800));
     });
   });
 

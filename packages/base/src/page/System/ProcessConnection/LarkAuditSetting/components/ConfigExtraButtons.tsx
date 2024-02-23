@@ -68,7 +68,6 @@ const ConfigExtraButtons = ({
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const resData = res.data?.data;
-
           if (resData?.is_message_sent_normally) {
             message.success(t('dmsSystem.larkAudit.testSuccess'));
           } else {
@@ -117,7 +116,9 @@ const ConfigExtraButtons = ({
           popoverForm={
             <ConfigTestPopoverForm
               handleTest={testLarkAuditConfiguration}
-              handleCancel={() => toggleTestPopoverVisible(false)}
+              handleCancel={() => {
+                toggleTestPopoverVisible(false);
+              }}
             >
               <Form form={testForm} colon={false} {...formItemLayout.fullLine}>
                 <FormItemLabel
