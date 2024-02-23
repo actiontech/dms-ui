@@ -3,6 +3,7 @@ import system from '../../../../testUtils/mockApi/system';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { DEFAULT_CONSTANT } from './index.data';
 
 import WebHook from '.';
 
@@ -126,7 +127,7 @@ describe('base/System/PushNotification/WebhookSetting', () => {
 
       expect(screen.getByText('提 交')).toBeInTheDocument();
       fireEvent.click(screen.getByText('提 交'));
-      await act(async () => jest.advanceTimersByTime(500));
+      await act(async () => jest.advanceTimersByTime(300));
       expect(requestUpdateWebHookConfiguration).toBeCalled();
       expect(requestUpdateWebHookConfiguration).toBeCalledWith({
         webhook_config: {
@@ -135,6 +136,42 @@ describe('base/System/PushNotification/WebhookSetting', () => {
           retry_interval_seconds: 2,
           token: undefined,
           url: 'http://a.com'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(requestGetWebHookConfiguration).toBeCalled();
+    });
+
+    it('render submit success when no input val', async () => {
+      const { baseElement } = customRender();
+
+      await act(async () => jest.advanceTimersByTime(3300));
+      const switchEle = getBySelector(
+        '.basic-switch-wrapper .ant-switch-inner',
+        baseElement
+      );
+      fireEvent.click(switchEle);
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.change(getBySelector('#url', baseElement), {
+        target: {
+          value: 'http://b.com'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(500));
+
+      expect(screen.getByText('提 交')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('提 交'));
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(requestUpdateWebHookConfiguration).toBeCalled();
+      expect(requestUpdateWebHookConfiguration).toBeCalledWith({
+        webhook_config: {
+          enable: true,
+          max_retry_times: DEFAULT_CONSTANT.maxRetryTimes,
+          retry_interval_seconds: DEFAULT_CONSTANT.retryIntervalSeconds,
+          token: undefined,
+          url: 'http://b.com'
         }
       });
     });
