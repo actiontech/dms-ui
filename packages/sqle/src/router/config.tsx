@@ -114,7 +114,7 @@ const UpdateRuleTemplate = React.lazy(
 const WorkflowTemplateDetail = React.lazy(
   () =>
     import(
-      /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/index'
+      /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
 );
 const SQLManagement = React.lazy(

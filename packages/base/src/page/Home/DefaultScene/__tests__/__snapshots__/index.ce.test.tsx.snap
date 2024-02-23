@@ -450,7 +450,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
                     <div
                       class="ant-space-item"
                     >
-                      配置审批流程模板
+                      查看审批流程模板
                     </div>
                   </div>
                 </button>
