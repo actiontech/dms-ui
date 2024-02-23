@@ -44,7 +44,8 @@ export default {
           action_1_1: '授权清单',
           title_2: '审批流程',
           content_2: '根据实际业务流转变更流程模板',
-          action_2_0: '配置审批流程模板'
+          action_2_0: '配置审批流程模板',
+          action_2_1: '查看审批流程模板'
         }
       },
       queryAndModify: {
