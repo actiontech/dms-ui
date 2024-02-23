@@ -25,7 +25,7 @@ exports[`test base/page/Account/UserEmail execute the onSubmit after triggering 
         class="ant-space-item"
         style="margin-right: 8px;"
       >
-        -
+        test@gmail.com
       </div>
       <div
         class="ant-space-item"

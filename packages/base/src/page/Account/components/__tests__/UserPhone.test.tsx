@@ -7,11 +7,20 @@ import account from '../../../../testUtils/mockApi/account';
 describe('test base/page/Account/UserPhone', () => {
   const updateUserInfoSpy = jest.fn();
   const messageSuccessSpy = jest.fn();
+  const messageErrorSpy = jest.fn();
 
   const customRender = (phone?: string) => {
     return renderWithTheme(
       <UserPhone
-        messageApi={{ success: messageSuccessSpy } as any}
+        messageApi={{
+          success: messageSuccessSpy,
+          error: messageErrorSpy,
+          info: jest.fn(),
+          warning: jest.fn(),
+          loading: jest.fn(),
+          open: jest.fn(),
+          destroy: jest.fn()
+        }}
         updateUserInfo={updateUserInfoSpy}
         userBaseInfo={{ phone }}
       />
@@ -34,7 +43,7 @@ describe('test base/page/Account/UserPhone', () => {
   });
 
   it('execute the onSubmit after triggering the enter event', async () => {
-    const { container } = customRender();
+    const { container } = customRender('13112134353');
 
     fireEvent.mouseEnter(
       getBySelector('.ant-row,.ant-row-space-between.ant-row-middle', container)
@@ -43,6 +52,33 @@ describe('test base/page/Account/UserPhone', () => {
     fireEvent.click(getBySelector('.config-item-filed-edit-button', container));
 
     const inputEle = getBySelector('input.ant-input#editInput', container);
+
+    fireEvent.change(inputEle, {
+      target: {
+        value: 'submit.com'
+      }
+    });
+    fireEvent.keyDown(inputEle, {
+      key: 'Enter',
+      code: 'Enter',
+      keyCode: 13
+    });
+    expect(messageErrorSpy).toBeCalledTimes(1);
+    expect(messageErrorSpy).toBeCalledWith('请输入正确格式的手机号码');
+
+    fireEvent.change(inputEle, {
+      target: {
+        value: '13112134353'
+      }
+    });
+    fireEvent.keyDown(inputEle, {
+      key: 'Enter',
+      code: 'Enter',
+      keyCode: 13
+    });
+    expect(messageErrorSpy).toBeCalledTimes(2);
+    expect(messageErrorSpy).toBeCalledWith('新手机号码不能与旧号码一致');
+    expect(updateCurrentUserSpy).toBeCalledTimes(0);
 
     fireEvent.change(inputEle, {
       target: {
