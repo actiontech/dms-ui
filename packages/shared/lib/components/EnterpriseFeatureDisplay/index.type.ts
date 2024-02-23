@@ -6,6 +6,7 @@ export type EnterpriseFeatureDisplayProps = {
   eeFeatureDescription: React.ReactNode;
   featureName: string;
   isConfigPage?: boolean;
+  showTitle?: boolean;
 };
 
 export type VersionComparisonItem = {

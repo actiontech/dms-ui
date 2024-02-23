@@ -64,13 +64,23 @@ export const getAuditProgressStep: (
     title: t('dmsHome.defaultScene.steps.safetyRule.innerContents.title_2'),
     content: t('dmsHome.defaultScene.steps.safetyRule.innerContents.content_2'),
     buttons: [
+      // #if [ee]
       {
         key: 'progress-list',
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_2_0'
         ),
         action: () => navigate(`/sqle/project/${projectID}/progress`)
+      },
+      // #else
+      {
+        key: 'progress-list',
+        label: t(
+          'dmsHome.defaultScene.steps.safetyRule.innerContents.action_2_1'
+        ),
+        action: () => navigate(`/sqle/project/${projectID}/progress`)
       }
+      // #endif
     ]
   };
 };

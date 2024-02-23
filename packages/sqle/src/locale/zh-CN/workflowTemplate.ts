@@ -2,6 +2,7 @@
 export default {
   pageTitle: '审批流程模版',
   pageDesc: '你可以在这里管理默认审批流程模版。',
+
   list: {
     title: {
       listTable: '审批流程模版列表'

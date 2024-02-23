@@ -90,11 +90,9 @@ const ResultCard: React.FC<ResultCardProps> = ({
           <BasicButton size="small" onClick={onCopyExecSql}>
             {t('audit.copyExecSql')}
           </BasicButton>
-          {/* #if [ee] */}
           <BasicButton size="small" onClick={onClickAnalyze}>
             {t('audit.table.analyze')}
           </BasicButton>
-          {/* #endif */}
         </Space>
       </div>
       <div className="result-card-content">
