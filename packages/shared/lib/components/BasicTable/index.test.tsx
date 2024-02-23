@@ -33,7 +33,10 @@ describe('lib/BasicTable', () => {
         {
           demo: 1
         }
-      ]
+      ],
+      pagination: {
+        total: 1
+      }
     });
     expect(container).toMatchSnapshot();
   });

@@ -100,6 +100,34 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 </body>
 `;
 
+exports[`base/router-sqle-ce render sqle project detail router render route analyze render route auditPlanDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="plane"
+    >
+      <div>
+        auditPlanDetailAnalyze
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ce render sqle project detail router render route analyze render route orderAnalyze 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    >
+      <div>
+        orderAnalyze
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render operationRecord 1`] = `
 <body>
   <div>
@@ -240,20 +268,6 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
     >
       <div>
         progressDetail
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route progress render progressUpdate 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="progress"
-    >
-      <div>
-        progressUpdate
       </div>
     </div>
   </div>
@@ -621,6 +635,13 @@ Array [
             "key": "orderDetail",
             "path": ":orderId",
           },
+          Object {
+            "element": <div>
+              orderAnalyze
+            </div>,
+            "key": "orderAnalyze",
+            "path": ":taskId/:sqlNum/analyze",
+          },
         ],
         "element": <div
           data-test-parent-id="order"
@@ -706,6 +727,13 @@ Array [
             "key": "auditPlanDetailReport",
             "path": "detail/:auditPlanName/report/:reportId",
           },
+          Object {
+            "element": <div>
+              auditPlanDetailAnalyze
+            </div>,
+            "key": "auditPlanDetailAnalyze",
+            "path": ":reportId/:sqlNum/:auditPlanName/analyze",
+          },
         ],
         "element": <div
           data-test-parent-id="plane"
@@ -776,13 +804,6 @@ Array [
             </div>,
             "key": "progressDetail",
             "path": "",
-          },
-          Object {
-            "element": <div>
-              progressUpdate
-            </div>,
-            "key": "progressUpdate",
-            "path": "update/:workflowName",
           },
         ],
         "element": <div

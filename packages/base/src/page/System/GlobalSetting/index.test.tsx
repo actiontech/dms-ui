@@ -8,6 +8,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/System/GlobalSetting', () => {
   let requestGetSystemVariables: jest.SpyInstance;
@@ -35,6 +36,47 @@ describe('base/System/GlobalSetting', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(requestGetSystemVariables).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render hide form element node when click white place', async () => {
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3200));
+
+    expect(screen.getByText('7211')).toBeInTheDocument();
+
+    const editBtn = getAllBySelector(
+      '.config-item-filed-edit-button',
+      baseElement
+    );
+    expect(editBtn.length).toBe(3);
+    expect(editBtn[0]).toHaveAttribute('hidden');
+
+    fireEvent.mouseOver(screen.getByText('7211'));
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(editBtn[0]).not.toHaveAttribute('hidden');
+
+    fireEvent.mouseDown(screen.getByText('已完成的工单自动过期时间(小时)'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(editBtn[1]);
+    await act(async () => jest.advanceTimersByTime(500));
+    fireEvent.mouseDown(screen.getByText('操作记录过期时间(小时)'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.click(editBtn[2]);
+    await act(async () => jest.advanceTimersByTime(500));
+    fireEvent.mouseDown(screen.getByText('URL地址前缀'));
+    await act(async () => jest.advanceTimersByTime(300));
+  });
+
+  it('render api return no data', async () => {
+    requestGetSystemVariables.mockImplementation(() =>
+      createSpySuccessResponse({})
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3100));
     expect(baseElement).toMatchSnapshot();
   });
 

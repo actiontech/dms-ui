@@ -16,6 +16,7 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import rule_template from 'sqle/src/testUtils/mockApi/rule_template';
+import dbServices from '../../../../testUtils/mockApi/dbServices';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -79,8 +80,9 @@ describe('page/DataSource/UpdateDataSource', () => {
   });
 
   it('render edit data when has all value', async () => {
-    const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const requestTableList = dms.getListDBServices();
+    const checkDBServiceIsConnectableSpy =
+      dbServices.checkDbServiceIsConnectable();
     requestTableList.mockImplementationOnce(() =>
       createSpySuccessResponse({
         total_nums: 1,
@@ -117,7 +119,15 @@ describe('page/DataSource/UpdateDataSource', () => {
                 query_timeout_second: 0,
                 audit_enabled: false
               }
-            }
+            },
+            additional_params: [
+              {
+                description: 'test_params',
+                name: 'params_key',
+                type: 'string',
+                value: 'test'
+              }
+            ]
           }
         ]
       })
@@ -125,11 +135,31 @@ describe('page/DataSource/UpdateDataSource', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
 
-    expect(baseElement).toMatchSnapshot();
+    const updatePasswordLabel = getBySelector('label[title="更新连接密码"]');
+    expect(updatePasswordLabel).not.toHaveClass('ant-form-item-required');
+    const needUpdatePassword = getBySelector('#needUpdatePassword');
+    fireEvent.click(needUpdatePassword);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(updatePasswordLabel).toHaveClass('ant-form-item-required');
     fireEvent.change(getBySelector('#password', baseElement), {
       target: { value: '123' }
     });
     await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => {
+      fireEvent.click(screen.getByText('测试数据库连通性'));
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByText('未能成功链接到数据库')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+    expect(checkDBServiceIsConnectableSpy).toBeCalled();
+    await act(async () => {
+      EventEmitter.emit(EmitterKey.Reset_Test_Data_Source_Connect);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    expect(screen.queryByText('未能成功链接到数据库')).not.toBeInTheDocument();
+    const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(300));

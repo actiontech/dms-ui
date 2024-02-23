@@ -75,6 +75,10 @@ export const CEIndexStyleWrapper = styled('section')`
     }
   }
 
+  .config-mode-wrapper.none-padding-top {
+    padding-top: 0;
+  }
+
   .config-mode-wrapper {
     padding: 32px 0;
 

@@ -72,6 +72,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
         >
           <div
             class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -79,6 +80,18 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
             >
               <span>
                 复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
               </span>
             </button>
           </div>
@@ -406,6 +419,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
         >
           <div
             class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -413,6 +427,18 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
             >
               <span>
                 复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
               </span>
             </button>
           </div>
@@ -740,6 +766,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
         >
           <div
             class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -747,6 +774,18 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
             >
               <span>
                 复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
               </span>
             </button>
           </div>
@@ -1074,6 +1113,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 1`] = `
         >
           <div
             class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -1081,6 +1121,18 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 1`] = `
             >
               <span>
                 复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
               </span>
             </button>
           </div>
@@ -1407,6 +1459,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 2`] = `
         >
           <div
             class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -1414,6 +1467,18 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 2`] = `
             >
               <span>
                 复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
               </span>
             </button>
           </div>
@@ -1739,6 +1804,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when has resu
         >
           <div
             class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -1746,6 +1812,18 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when has resu
             >
               <span>
                 复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
               </span>
             </button>
           </div>
@@ -2135,6 +2213,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when no cont 
         >
           <div
             class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -2142,6 +2221,18 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when no cont 
             >
               <span>
                 复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
               </span>
             </button>
           </div>
@@ -2526,6 +2617,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render snap when data is empty 1`] = 
         >
           <div
             class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -2533,6 +2625,18 @@ exports[`sqle/Order/AuditDetail/ResultCard render snap when data is empty 1`] = 
             >
               <span>
                 复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
               </span>
             </button>
           </div>

@@ -3,7 +3,9 @@ import reducers, {
   updateTheme,
   updateUser,
   updateUserUid,
-  updateUserInfoFetchStatus
+  updateUserInfoFetchStatus,
+  updateBindProjects,
+  updateManagementPermissions
 } from '.';
 import { IReduxState } from '..';
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -121,6 +123,55 @@ describe('store user', () => {
       managementPermissions: [],
       role: '',
       useInfoFetched: true
+    });
+  });
+
+  it('should update user bind project when dispatch updateBindProjects action', () => {
+    const mockBindProjects = [
+      {
+        is_manager: true,
+        project_name: 'default',
+        project_id: 'project_id',
+        archived: false
+      }
+    ];
+    const newState = reducers(
+      state,
+      updateBindProjects({
+        bindProjects: mockBindProjects
+      })
+    );
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      username: '',
+      uid: '',
+      token: '',
+      theme: SupportTheme.LIGHT,
+      bindProjects: mockBindProjects,
+      managementPermissions: [],
+      role: '',
+      useInfoFetched: false
+    });
+  });
+
+  it('should update user ManagementPermissions when dispatch updateManagementPermissions action', () => {
+    const mockManagementPermissions = [{ name: 'default', uid: 'uid' }];
+    const newState = reducers(
+      state,
+      updateManagementPermissions({
+        managementPermissions: mockManagementPermissions
+      })
+    );
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      username: '',
+      uid: '',
+      token: '',
+      theme: SupportTheme.LIGHT,
+      bindProjects: [],
+      managementPermissions: mockManagementPermissions,
+      role: '',
+      useInfoFetched: false
     });
   });
 });

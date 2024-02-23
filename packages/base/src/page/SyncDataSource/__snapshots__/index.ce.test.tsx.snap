@@ -1,47 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
+exports[`base/page/SyncDataSource-ce render index page 1`] = `
 <body>
   <div>
-    <section
-      class="css-1de50ze"
-    >
+    <article>
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
           class="title"
         >
-          报表统计
+          同步任务列表
         </div>
         <div
           class="extra"
         />
       </div>
       <section
-        class="css-1oy5rw9"
+        class="css-569lt7"
       >
         <div
-          class="ant-row common-mode-wrapper css-dev-only-do-not-override-oz76h1"
+          class="ant-row common-mode-wrapper css-dev-only-do-not-override-txh9fw"
         >
           <div
-            class="ant-col ant-col-17 css-dev-only-do-not-override-oz76h1"
+            class="ant-col ant-col-17 css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="left"
             >
               <h5
-                class="ant-typography title css-dev-only-do-not-override-oz76h1"
+                class="ant-typography title css-dev-only-do-not-override-txh9fw"
               >
                 功能说明
               </h5>
               <div
-                class="ant-typography paragraph css-dev-only-do-not-override-oz76h1"
+                class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
               >
-                如果管理员需要全面了解平台业务的审核进度以及平台的使用情况，可以使用报表统计功能。该功能提供多维度的业务分析视角，协助管理员了解工单的审核效率和提交的SQL质量，从而更高效、灵活地开展SQL审核工作。
+                当用户在其他平台上添加了数据源后，如果想要对这些数据源进行 SQL 质量监控，可以使用 SQLE 平台的外部数据源同步功能，将外部平台的数据源同步至 SQLE。
+由此可避免在两个平台上重复添加数据源，降低管理难度。
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
               >
                 <div
                   class="ant-space-item"
@@ -51,34 +50,34 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                     class="content-wrap"
                   >
                     <div
-                      class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx css-dev-only-do-not-override-oz76h1"
+                      class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx css-dev-only-do-not-override-txh9fw"
                       color="green"
                     >
                       <div
                         class="ant-card-body"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-center version-tag-wrap"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-oz76h1"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
                             >
                               社区版
                             </span>
                           </div>
                         </div>
                         <div
-                          class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-vertical ant-space-align-center version-item"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 16px;"
                           >
                             <h4
-                              class="ant-typography css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography css-dev-only-do-not-override-txh9fw"
                             >
                               Free
                             </h4>
@@ -88,7 +87,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <span
-                              class="ant-typography term-wrap css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
                             >
                               永久
                             </span>
@@ -98,7 +97,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                               href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                               target="_blank"
                             >
@@ -112,7 +111,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <span
-                              class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
                             >
                               适用于MySQL基础审核场景
                             </span>
@@ -122,7 +121,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <div
-                              class="ant-divider css-dev-only-do-not-override-oz76h1 ant-divider-horizontal"
+                              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
                               role="separator"
                             />
                           </div>
@@ -130,14 +129,14 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-vertical content-list"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -166,7 +165,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持纳管MySQL数据源
                                     </span>
@@ -178,7 +177,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -207,7 +206,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持资源权限隔离
                                     </span>
@@ -219,7 +218,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -248,7 +247,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       集成CloudBeaver在线查询
                                     </span>
@@ -260,7 +259,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -289,7 +288,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       提供专业SQL审核能力
                                     </span>
@@ -301,7 +300,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -330,7 +329,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持多方式采集MySQL数据
                                     </span>
@@ -341,7 +340,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -370,7 +369,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       无实例限制
                                     </span>
@@ -383,34 +382,34 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps css-dev-only-do-not-override-oz76h1"
+                      class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps css-dev-only-do-not-override-txh9fw"
                       color="blue"
                     >
                       <div
                         class="ant-card-body"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-center version-tag-wrap"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-oz76h1"
+                              class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
                             >
                               专业版
                             </span>
                           </div>
                         </div>
                         <div
-                          class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-vertical ant-space-align-center version-item"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 16px;"
                           >
                             <h4
-                              class="ant-typography css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography css-dev-only-do-not-override-txh9fw"
                             >
                               Free
                             </h4>
@@ -420,7 +419,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <span
-                              class="ant-typography term-wrap css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
                             >
                               永久
                             </span>
@@ -430,7 +429,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                               href="https://jinshuju.net/f/daLFaG"
                               target="_blank"
                             >
@@ -444,7 +443,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <span
-                              class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
                             >
                               适用于多种数据源类型体验场景
                             </span>
@@ -454,7 +453,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <div
-                              class="ant-divider css-dev-only-do-not-override-oz76h1 ant-divider-horizontal"
+                              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
                               role="separator"
                             />
                           </div>
@@ -462,14 +461,14 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-vertical content-list"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -498,7 +497,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持纳管10多种主流数据源
                                     </span>
@@ -510,7 +509,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -539,7 +538,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持资源权限隔离
                                     </span>
@@ -551,7 +550,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -580,7 +579,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       集成CloudBeaver在线查询
                                     </span>
@@ -592,7 +591,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -621,7 +620,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       提供专业SQL审核能力
                                     </span>
@@ -633,7 +632,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -662,7 +661,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持多方式采集各数据源数据
                                     </span>
@@ -673,7 +672,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -702,7 +701,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       最大实例个数20
                                     </span>
@@ -715,34 +714,34 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r css-dev-only-do-not-override-oz76h1"
+                      class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r css-dev-only-do-not-override-txh9fw"
                       color="orange"
                     >
                       <div
                         class="ant-card-body"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-center version-tag-wrap"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-oz76h1"
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
                             >
                               企业版
                             </span>
                           </div>
                         </div>
                         <div
-                          class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-vertical ant-space-align-center version-item"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 16px;"
                           >
                             <h4
-                              class="ant-typography css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography css-dev-only-do-not-override-txh9fw"
                             >
                               Custom
                             </h4>
@@ -752,7 +751,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <span
-                              class="ant-typography term-wrap css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
                             />
                           </div>
                           <div
@@ -760,7 +759,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <a
-                              class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                               href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                               target="_blank"
                             >
@@ -774,7 +773,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <span
-                              class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-oz76h1"
+                              class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
                             >
                               适用于私有云用户定制场景
                             </span>
@@ -784,7 +783,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             style="margin-bottom: 16px;"
                           >
                             <div
-                              class="ant-divider css-dev-only-do-not-override-oz76h1 ant-divider-horizontal"
+                              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
                               role="separator"
                             />
                           </div>
@@ -792,14 +791,14 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-vertical content-list"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -828,7 +827,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持纳管10多种主流数据源
                                     </span>
@@ -840,7 +839,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -869,7 +868,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持资源权限隔离
                                     </span>
@@ -881,7 +880,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -910,7 +909,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       集成CloudBeaver在线查询
                                     </span>
@@ -922,7 +921,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -951,7 +950,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       提供专业SQL审核能力
                                     </span>
@@ -963,7 +962,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -992,7 +991,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       支持多方式采集各数据源数据
                                     </span>
@@ -1004,7 +1003,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -1033,7 +1032,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       无实例限制
                                     </span>
@@ -1045,7 +1044,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 style="margin-bottom: 8px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -1074,7 +1073,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       多维度智能统计
                                     </span>
@@ -1085,7 +1084,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -1114,7 +1113,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                                     >
                                       个性化定制
                                     </span>
@@ -1133,12 +1132,12 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                 >
                   <div>
                     <span
-                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                     >
                       各版本完整功能对比请参考：
                     </span>
                     <a
-                      class="ant-typography css-dev-only-do-not-override-oz76h1"
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
                       href="https://actiontech.github.io/sqle-docs/docs/support/compare"
                       rel="noopener noreferrer"
                       target="_blank"
@@ -1151,18 +1150,18 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
             </div>
           </div>
           <div
-            class="ant-col ant-col-7 css-dev-only-do-not-override-oz76h1"
+            class="ant-col ant-col-7 css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="right"
             >
               <h5
-                class="ant-typography title css-dev-only-do-not-override-oz76h1"
+                class="ant-typography title css-dev-only-do-not-override-txh9fw"
               >
                 更多关注
               </h5>
               <div
-                class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-oz76h1"
+                class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-card-body"
@@ -1219,10 +1218,10 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                     <p
                       class="cont-tip"
                     >
-                      报表统计为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                      外部数据源同步为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                     </p>
                     <div
-                      class="ant-space css-dev-only-do-not-override-oz76h1 ant-space-horizontal ant-space-align-center button-group-wrapper"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
                     >
                       <div
                         class="ant-space-item"
@@ -1234,7 +1233,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span>
@@ -1252,7 +1251,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span>
@@ -1266,7 +1265,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-oz76h1"
+                class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-card-body"
@@ -1334,7 +1333,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                         target="_blank"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-primary basic-button-wrapper css-geipcv"
+                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1350,7 +1349,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
           </div>
         </div>
       </section>
-    </section>
+    </article>
   </div>
 </body>
 `;
