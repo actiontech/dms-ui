@@ -1,3 +1,4 @@
+import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
@@ -29,9 +30,56 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
+import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 
 const dateFormat = 'YYYY-MM-DD';
 type RangeValue = [Dayjs | null, Dayjs | null] | null;
+
+const renderAreaStyle = (sharedTheme: SharedTheme) => {
+  return {
+    fill: `l(90) 0:${sharedTheme.uiToken.colorPrimary}  1:#4583ff00`
+  };
+};
+
+const renderAnnotationsContent = (value: number) => {
+  return value;
+};
+
+const renderAnnotationsPosition = (maxVal: { date: string; value: number }) => {
+  return [maxVal.date, maxVal.value];
+};
+
+const renderTooltipFormatter = (item: any) => {
+  return {
+    name: item.date,
+    value: item.value
+  };
+};
+
+const renderTooltipCustomContent = (
+  dataSource: any,
+  sharedTheme: SharedTheme
+) => {
+  const data = dataSource[0];
+  if (!data) return null;
+  return (
+    <ChartTooltip
+      titleData={{
+        dotColor: sharedTheme.uiToken.colorPrimary,
+        text: data.name
+      }}
+      listData={[
+        {
+          label: i18n.t(
+            'reportStatistics.orderQuantityTrend.toolTip.label'
+          ) as string,
+          value: formatParamsBySeparator(data.value ?? 0)
+        }
+      ]}
+      sharedTheme={sharedTheme}
+    />
+  );
+};
 
 const OrderQuantityTrend = () => {
   const { t } = useTranslation();
@@ -135,11 +183,7 @@ const OrderQuantityTrend = () => {
       animate: false,
       label: null
     },
-    areaStyle: () => {
-      return {
-        fill: `l(90) 0:${sharedTheme.uiToken.colorPrimary}  1:#4583ff00`
-      };
-    },
+    areaStyle: renderAreaStyle(sharedTheme),
     line: {
       size: 3,
       color: sharedTheme.uiToken.colorPrimary
@@ -148,12 +192,8 @@ const OrderQuantityTrend = () => {
     annotations: [
       {
         type: 'text',
-        content: (text) => {
-          return maxVal.value;
-        },
-        position: (xScale, yScale) => {
-          return [maxVal.date, maxVal.value];
-        },
+        content: renderAnnotationsContent(maxVal.value),
+        position: renderAnnotationsPosition(maxVal) as [string, number],
         /** 图形样式属性 */
         style: {
           textAlign: 'center',
@@ -190,31 +230,9 @@ const OrderQuantityTrend = () => {
     ],
     tooltip: {
       fields: ['date', 'value'],
-      formatter: (item: any) => {
-        return {
-          name: item.date,
-          value: item.value
-        };
-      },
-      customContent: (title: string, dataSource: any) => {
-        const data = dataSource[0];
-        if (!data) return null;
-        return (
-          <ChartTooltip
-            titleData={{
-              dotColor: sharedTheme.uiToken.colorPrimary,
-              text: data.name
-            }}
-            listData={[
-              {
-                label: t('reportStatistics.orderQuantityTrend.toolTip.label'),
-                value: formatParamsBySeparator(data.value ?? 0)
-              }
-            ]}
-            sharedTheme={sharedTheme}
-          />
-        );
-      }
+      formatter: renderTooltipFormatter,
+      customContent: (title: string, dataSource: any) =>
+        renderTooltipCustomContent(dataSource, sharedTheme)
     },
     interactions: [
       {
@@ -266,3 +284,11 @@ const OrderQuantityTrend = () => {
 };
 
 export default OrderQuantityTrend;
+
+export {
+  renderAreaStyle,
+  renderAnnotationsContent,
+  renderAnnotationsPosition,
+  renderTooltipFormatter,
+  renderTooltipCustomContent
+};

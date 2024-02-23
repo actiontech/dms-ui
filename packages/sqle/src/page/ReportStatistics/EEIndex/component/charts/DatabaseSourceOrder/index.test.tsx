@@ -1,12 +1,21 @@
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
+import {
+  renderWithThemeAndRedux,
+  renderHooksWithTheme
+} from '../../../../../../testUtils/customRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
-import DatabaseSourceOrder from '.';
+import DatabaseSourceOrder, {
+  renderTooltipFormatter,
+  renderTooltipCustomContent
+} from '.';
+import { ThemeData, SupportTheme } from '../../../../../../theme';
+
+const themeData = ThemeData[SupportTheme.LIGHT];
 
 describe('ReportStatistics/DatabaseSourceOrder', () => {
   ignoreAntdPlotsAttr();
@@ -47,17 +56,27 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     expect(requestPlotsData).toBeCalled();
   });
 
-  it('render with miss data', async () => {
-    requestPlotsData.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: {
-          instance_total_num: 98,
-          instance_type_percents: [{ percent: 98 }]
-        }
-      })
+  it('render tooltip formatter', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipFormatter({ name: '', value: '' })
     );
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot();
+    expect(result.current).toStrictEqual({ name: '', value: '' });
+  });
+
+  it('render empty tooltip customContent', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipCustomContent([], themeData.sharedTheme)
+    );
+    expect(result.current).toBe(null);
+  });
+
+  it('render tooltip customContent', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipCustomContent(
+        [{ color: 'red', name: 'test', value: '12' }],
+        themeData.sharedTheme
+      )
+    );
+    expect(result.current).toMatchSnapshot();
   });
 });

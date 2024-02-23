@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AxiosResponse } from 'axios';
 import { Pie, PieConfig } from '@ant-design/plots';
+import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
@@ -14,6 +15,46 @@ import { IGetInstancesTypePercentV1Return } from '@actiontech/shared/lib/api/sql
 import { IInstanceTypePercent } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
+import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+
+const renderTooltipFormatter = (item: any) => {
+  return {
+    name: item.name,
+    value: item.value
+  };
+};
+
+const renderTooltipCustomContent = (
+  dataSource: any,
+  sharedTheme: SharedTheme
+) => {
+  const data = dataSource[0];
+  if (!data) return null;
+  const currentColor = data?.color;
+  return (
+    <ChartTooltip
+      sharedTheme={sharedTheme}
+      titleData={{
+        dotColor: currentColor,
+        text: data.name
+      }}
+      listData={[
+        {
+          label: i18n.t(
+            'reportStatistics.databaseSourceOrder.sourceNumItem'
+          ) as string,
+          value: data.value
+        },
+        {
+          label: i18n.t(
+            'reportStatistics.databaseSourceOrder.sourceProportionItem'
+          ) as string,
+          value: data.value + '%'
+        }
+      ]}
+    />
+  );
+};
 
 const DatabaseSourceOrder = () => {
   const { t } = useTranslation();
@@ -118,38 +159,9 @@ const DatabaseSourceOrder = () => {
     },
     tooltip: {
       fields: ['name', 'value'],
-      formatter: (item: any) => {
-        return {
-          name: item.name,
-          value: item.value
-        };
-      },
-      customContent: (title: string, dataSource: any) => {
-        const data = dataSource[0];
-        if (!data) return null;
-        const currentColor = data?.color;
-        return (
-          <ChartTooltip
-            sharedTheme={sharedTheme}
-            titleData={{
-              dotColor: currentColor,
-              text: data.name
-            }}
-            listData={[
-              {
-                label: t('reportStatistics.databaseSourceOrder.sourceNumItem'),
-                value: data.value
-              },
-              {
-                label: t(
-                  'reportStatistics.databaseSourceOrder.sourceProportionItem'
-                ),
-                value: data.value + '%'
-              }
-            ]}
-          />
-        );
-      },
+      formatter: renderTooltipFormatter,
+      customContent: (title: string, dataSource: any) =>
+        renderTooltipCustomContent(dataSource, sharedTheme),
       domStyles: getDomStyles(170)
     },
     interactions: [
@@ -187,3 +199,4 @@ const DatabaseSourceOrder = () => {
 };
 
 export default DatabaseSourceOrder;
+export { renderTooltipFormatter, renderTooltipCustomContent };
