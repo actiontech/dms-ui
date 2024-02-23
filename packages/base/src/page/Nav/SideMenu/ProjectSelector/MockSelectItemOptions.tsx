@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
-import { ProjectSelectorLabelStyleWrapper } from './style';
+import {
+  MockSelectItemOptionsStyleWrapper,
+  ProjectSelectorLabelStyleWrapper
+} from './style';
 import {
   IconProjectArchived,
   IconProjectFlag
 } from '@actiontech/shared/lib/Icon/common';
-import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
 import { IBindProject } from './index.type';
 
 const MockSelectItemOptions: React.FC<{
@@ -16,7 +18,7 @@ const MockSelectItemOptions: React.FC<{
   const navigate = useNavigate();
   const [activeId, setActiveId] = useState('');
   return (
-    <CustomSelectPopupMenuStyleWrapper>
+    <MockSelectItemOptionsStyleWrapper>
       {list.map((v) => {
         return (
           <div
@@ -47,7 +49,7 @@ const MockSelectItemOptions: React.FC<{
           </div>
         );
       })}
-    </CustomSelectPopupMenuStyleWrapper>
+    </MockSelectItemOptionsStyleWrapper>
   );
 };
 

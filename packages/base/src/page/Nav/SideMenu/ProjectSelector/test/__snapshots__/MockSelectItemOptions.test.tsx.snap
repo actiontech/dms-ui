@@ -4,7 +4,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
 <body>
   <div>
     <div
-      class="css-15pnbqu"
+      class="css-11lv9el"
     >
       <div
         class="ant-select-item ant-select-item-option"
@@ -82,7 +82,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
 <body>
   <div>
     <div
-      class="css-15pnbqu"
+      class="css-11lv9el"
     >
       <div
         class="ant-select-item ant-select-item-option"
@@ -160,7 +160,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when ha
 <body>
   <div>
     <div
-      class="css-15pnbqu"
+      class="css-11lv9el"
     >
       <div
         class="ant-select-item ant-select-item-option"
@@ -238,7 +238,7 @@ exports[`base/page/Nav/SideMenu/MockSelectItemOptions should render snap when li
 <body>
   <div>
     <div
-      class="css-15pnbqu"
+      class="css-11lv9el"
     />
   </div>
 </body>

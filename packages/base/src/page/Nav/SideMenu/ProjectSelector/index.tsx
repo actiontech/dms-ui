@@ -13,6 +13,7 @@ import {
 import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/components/CustomSelect/style';
 import MockSelectItemOptions from './MockSelectItemOptions';
 import { ProjectSelectorProps } from './index.type';
+import { fuzzySearchAndSortByWeight } from '@actiontech/shared/lib/utils/Tool';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
@@ -31,10 +32,10 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   >();
 
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
-    const filterBindProjects = (bindProjects ?? []).filter((v) =>
-      v.project_name
-        ?.toLocaleLowerCase()
-        .includes(searchValue.toLocaleLowerCase())
+    const filterBindProjects = fuzzySearchAndSortByWeight(
+      searchValue,
+      bindProjects ?? [],
+      'project_name'
     );
 
     return (
@@ -83,7 +84,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
                   setOpen(false);
                   setSearchValue('');
                 }}
-                list={filterBindProjects?.slice(0, 3) ?? []}
+                list={filterBindProjects ?? []}
               />
             )}
           </EmptyBox>
