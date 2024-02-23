@@ -1,21 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base/System/ProcessConnection/LarkAuditSetting-ce render snap 1`] = `
+exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
 <body>
   <div>
-    <div
-      class="config-form-wrapper"
+    <section
+      class="system-form-wrapper"
     >
+      <div
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            流程对接
+          </div>
+        </div>
+      </div>
       <section
-        class="css-569lt7"
+        class="css-1oy5rw9"
       >
         <section
-          class="config-mode-wrapper"
+          class="config-mode-wrapper none-padding-top"
         >
           <div
             class="title"
+            hidden=""
           >
-            飞书审批
+            流程对接
           </div>
           <div
             class="left"
@@ -23,7 +37,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting-ce render snap 1`] = `
             <div
               class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
             >
-              如果您使用飞书作为协作平台，并且希望在飞书上进行工单审批，您可以启用飞书审批功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。    
+              如果您使用钉钉、飞书作为协作平台，并且希望在这些外部平台上进行工单审批，您可以启用流程对接功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。
             </div>
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
@@ -1195,7 +1209,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting-ce render snap 1`] = `
                   <p
                     class="cont-tip"
                   >
-                    飞书审批为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                    流程对接为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                   </p>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
@@ -1325,7 +1339,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting-ce render snap 1`] = `
           </div>
         </section>
       </section>
-    </div>
+    </section>
   </div>
 </body>
 `;

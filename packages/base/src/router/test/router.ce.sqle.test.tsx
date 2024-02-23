@@ -324,16 +324,6 @@ describe('base/router-sqle-ce', () => {
           await act(async () => jest.advanceTimersByTime(300));
           expect(baseElement).toMatchSnapshot();
         });
-
-        it('render progressUpdate', async () => {
-          const { baseElement } = customRender([
-            `/sqle/project/${projectID}/progress/update/workflowName`
-          ]);
-
-          await act(async () => jest.advanceTimersByTime(300));
-          expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('progressUpdate')).toBeInTheDocument();
-        });
       });
 
       it('render whitelist', () => {
@@ -363,6 +353,26 @@ describe('base/router-sqle-ce', () => {
           await act(async () => jest.advanceTimersByTime(300));
           expect(baseElement).toMatchSnapshot();
         });
+      });
+    });
+
+    describe('render route analyze', () => {
+      it('render route orderAnalyze', () => {
+        const { baseElement } = customRender([
+          `/sqle/project/${projectID}/order/taskId/sqlNum/analyze`
+        ]);
+
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('orderAnalyze')).toBeInTheDocument();
+      });
+
+      it('render route auditPlanDetail', () => {
+        const { baseElement } = customRender([
+          `/sqle/project/${projectID}/auditPlan/reportId/sqlNum/:auditPlanName/analyze`
+        ]);
+
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('auditPlanDetailAnalyze')).toBeInTheDocument();
       });
     });
   });
