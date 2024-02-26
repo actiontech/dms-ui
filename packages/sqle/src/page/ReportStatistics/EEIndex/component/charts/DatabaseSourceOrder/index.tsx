@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AxiosResponse } from 'axios';
-import { Pie, PieConfig } from '@ant-design/plots';
+import { Pie, PieConfig, Tooltip } from '@ant-design/plots';
 import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
@@ -17,7 +17,7 @@ import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 
-const renderTooltipFormatter = (item: any) => {
+const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
     name: item.name,
     value: item.value
@@ -25,7 +25,7 @@ const renderTooltipFormatter = (item: any) => {
 };
 
 const renderTooltipCustomContent = (
-  dataSource: any,
+  dataSource: any[],
   sharedTheme: SharedTheme
 ) => {
   const data = dataSource[0];
@@ -160,7 +160,7 @@ const DatabaseSourceOrder = () => {
     tooltip: {
       fields: ['name', 'value'],
       formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any) =>
+      customContent: (title: string, dataSource: any[]) =>
         renderTooltipCustomContent(dataSource, sharedTheme),
       domStyles: getDomStyles(170)
     },

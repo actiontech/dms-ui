@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import { throttle, isEqual } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { memo, useEffect, useMemo, useState, useRef } from 'react';
-import { Column, ColumnConfig, Plot } from '@ant-design/plots';
+import { Column, ColumnConfig, Plot, Tooltip } from '@ant-design/plots';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 import useGetConfig from '../../../../../../components/ChartCom/ChartTooltip/useGetConfig';
@@ -29,7 +29,7 @@ const renderLabelContent = (data: { [key: string]: any }) => {
     : `${floatToNumberPercent(data.value, data.limit)}`;
 };
 
-const renderTooltipFormatter = (item: any) => {
+const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
     name: item.type,
     value: item.value
@@ -37,7 +37,7 @@ const renderTooltipFormatter = (item: any) => {
 };
 
 const renderTooltipCustomContent = (
-  dataSource: any,
+  dataSource: any[],
   sharedTheme: SharedTheme
 ) => {
   const data = dataSource[0]?.data;
@@ -171,7 +171,7 @@ const LicenseColumn = memo(
           showMarkers: false,
           fields: ['type', 'value'],
           formatter: renderTooltipFormatter,
-          customContent: (title: string, dataSource: any) =>
+          customContent: (title: string, dataSource: any[]) =>
             renderTooltipCustomContent(dataSource, sharedTheme),
           domStyles: getDomStyles(190)
         },

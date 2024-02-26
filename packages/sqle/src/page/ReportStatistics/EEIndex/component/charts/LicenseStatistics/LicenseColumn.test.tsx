@@ -123,7 +123,7 @@ describe('ReportStatistics/LicenseStatistics/LicenseColumn', () => {
 
   it('render tooltip formatter', async () => {
     const { result } = renderHooksWithTheme(() =>
-      renderTooltipFormatter({ type: '', value: '' })
+      renderTooltipFormatter?.({ type: '', value: '' })
     );
     expect(result.current).toStrictEqual({ name: '', value: '' });
   });

@@ -58,7 +58,7 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
 
   it('render tooltip formatter', async () => {
     const { result } = renderHooksWithTheme(() =>
-      renderTooltipFormatter({ name: '', value: '' })
+      renderTooltipFormatter?.({ name: '', value: '' })
     );
     expect(result.current).toStrictEqual({ name: '', value: '' });
   });
