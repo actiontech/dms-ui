@@ -6,10 +6,10 @@ import ChartContTitle from '../../base/ChartContTitle';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import LicenseColumn from './licenseColumn';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
-import { IGetLicenseUsageV1Return } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import { ILicenseUsageItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
-import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IGetLicenseUsageReturn } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 
 type typeDctItem = {
   type: string;
@@ -43,7 +43,7 @@ const LicenseStatistics = () => {
 
   const [data, setData] = useState<typeDctItem[] | []>([]);
 
-  const onSuccess = (res: AxiosResponse<IGetLicenseUsageV1Return>) => {
+  const onSuccess = (res: AxiosResponse<IGetLicenseUsageReturn>) => {
     // ??? todo: 暂时注释 有效期， 设计图有，但是数据接口暂时没有返回
     // const validityData: typeDctItem = {
     //   type: t('reportStatistics.licenseStatistics.charts.validity'),
@@ -63,7 +63,7 @@ const LicenseStatistics = () => {
     setFocusData(userData);
     const allData = [];
     allData.push(...[userData]);
-    const otherData = (res.data.data?.instances_usage ?? []).map(
+    const otherData = (res.data.data?.db_services_usage ?? []).map(
       (item: ILicenseUsageItem) => {
         return {
           type: item?.resource_type ?? '',
@@ -77,7 +77,7 @@ const LicenseStatistics = () => {
   };
 
   const { loading, errorMessage, getApiData } = usePanelCommonRequest(
-    () => statistic.getLicenseUsageV1(),
+    () => dms.GetLicenseUsage(),
     { onSuccess }
   );
 

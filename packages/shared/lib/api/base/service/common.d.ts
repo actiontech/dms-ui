@@ -1,4 +1,5 @@
 import {
+  DMSProxyTargetScenarioEnum,
   GetDataExportTaskStatusEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
@@ -283,6 +284,8 @@ export interface IDMSProxyTarget {
 
   proxy_url_prefixs: string[];
 
+  scenario?: DMSProxyTargetScenarioEnum;
+
   version: string;
 }
 
@@ -486,6 +489,14 @@ export interface IGetLicenseReply {
   message?: string;
 }
 
+export interface IGetLicenseUsageReply {
+  code?: number;
+
+  data?: ILicenseUsage;
+
+  message?: string;
+}
+
 export interface IGetMemberGroup {
   is_project_admin?: boolean;
 
@@ -588,6 +599,8 @@ export interface IGetUser {
   phone?: string;
 
   stat?: GetUserStatEnum;
+
+  third_party_user_info?: string;
 
   uid?: string;
 
@@ -720,6 +733,24 @@ export interface ILicenseItem {
   limit?: string;
 
   name?: string;
+}
+
+export interface ILicenseUsage {
+  db_services_usage?: ILicenseUsageItem[];
+
+  users_usage?: ILicenseUsageItem;
+}
+
+export interface ILicenseUsageItem {
+  is_limited?: boolean;
+
+  limit?: number;
+
+  resource_type?: string;
+
+  resource_type_desc?: string;
+
+  used?: number;
 }
 
 export interface IListDBService {

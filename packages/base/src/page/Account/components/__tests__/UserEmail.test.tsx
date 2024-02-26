@@ -7,11 +7,20 @@ import account from '../../../../testUtils/mockApi/account';
 describe('test base/page/Account/UserEmail', () => {
   const updateUserInfoSpy = jest.fn();
   const messageSuccessSpy = jest.fn();
+  const messageErrorSpy = jest.fn();
 
   const customRender = (email?: string) => {
     return renderWithTheme(
       <UserEmail
-        messageApi={{ success: messageSuccessSpy } as any}
+        messageApi={{
+          success: messageSuccessSpy,
+          error: messageErrorSpy,
+          info: jest.fn(),
+          warning: jest.fn(),
+          loading: jest.fn(),
+          open: jest.fn(),
+          destroy: jest.fn()
+        }}
         updateUserInfo={updateUserInfoSpy}
         userBaseInfo={{ email }}
       />
@@ -34,7 +43,7 @@ describe('test base/page/Account/UserEmail', () => {
   });
 
   it('execute the onSubmit after triggering the enter event', async () => {
-    const { container } = customRender();
+    const { container } = customRender('test@gmail.com');
 
     fireEvent.mouseEnter(
       getBySelector('.ant-row,.ant-row-space-between.ant-row-middle', container)
@@ -46,10 +55,36 @@ describe('test base/page/Account/UserEmail', () => {
 
     fireEvent.change(inputEle, {
       target: {
+        value: 'submit.com'
+      }
+    });
+    fireEvent.keyDown(inputEle, {
+      key: 'Enter',
+      code: 'Enter',
+      keyCode: 13
+    });
+    expect(messageErrorSpy).toBeCalledTimes(1);
+    expect(messageErrorSpy).toBeCalledWith('请输入正确格式的邮箱地址');
+
+    fireEvent.change(inputEle, {
+      target: {
+        value: 'test@gmail.com'
+      }
+    });
+    fireEvent.keyDown(inputEle, {
+      key: 'Enter',
+      code: 'Enter',
+      keyCode: 13
+    });
+    expect(messageErrorSpy).toBeCalledTimes(2);
+    expect(messageErrorSpy).toBeCalledWith('新邮箱地址不能与旧地址一致');
+    expect(updateCurrentUserSpy).toBeCalledTimes(0);
+
+    fireEvent.change(inputEle, {
+      target: {
         value: 'submit@gmail.com'
       }
     });
-
     fireEvent.keyDown(inputEle, {
       key: 'Enter',
       code: 'Enter',
