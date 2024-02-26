@@ -1,13 +1,15 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../testUtils/customRender';
+import { renderWithThemeAndRedux } from '../../testUtils/customRender';
 import { mockThemeStyleData } from '../../testUtils/mockHooks/mockThemeStyleData';
 
 import ReportStatistics from '.';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/ReportStatistics', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockThemeStyleData();
+    mockUseCurrentUser();
   });
 
   afterEach(() => {
@@ -17,7 +19,7 @@ describe('sqle/ReportStatistics', () => {
   });
 
   it('should match snap shot', async () => {
-    const { baseElement } = renderWithTheme(<ReportStatistics />);
+    const { baseElement } = renderWithThemeAndRedux(<ReportStatistics />);
     expect(baseElement).toMatchSnapshot();
   });
 });
