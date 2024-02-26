@@ -73,6 +73,7 @@ const WorkflowTemplateDetail: React.FC = () => {
     <WorkflowTemplateStyleWrapper>
       <PageHeader
         title={t('workflowTemplate.pageTitle')}
+        // #if [ee]
         extra={[
           <EmptyBox
             if={actionPermission && !projectArchive}
@@ -87,6 +88,7 @@ const WorkflowTemplateDetail: React.FC = () => {
             </Link>
           </EmptyBox>
         ]}
+        // #endif
       />
       <Spin spinning={getUsernameListLoading || getWorkflowTemplateLoading}>
         <Row className="workflow-template-wrapper">

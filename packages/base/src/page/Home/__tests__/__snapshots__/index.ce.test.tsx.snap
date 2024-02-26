@@ -520,7 +520,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        配置审批流程模板
+                        查看审批流程模板
                       </div>
                     </div>
                   </button>

@@ -11,6 +11,7 @@ import {
   ILDAPConfiguration,
   IGetLicenseReply,
   ICheckLicenseReply,
+  IGetLicenseUsageReply,
   IGetOauth2ConfigurationResDataReply,
   IOauth2Configuration,
   IGetSMTPConfigurationReply,
@@ -154,6 +155,8 @@ export interface ICheckLicenseParams {
 }
 
 export interface ICheckLicenseReturn extends ICheckLicenseReply {}
+
+export interface IGetLicenseUsageReturn extends IGetLicenseUsageReply {}
 
 export interface IGetOauth2ConfigurationReturn
   extends IGetOauth2ConfigurationResDataReply {}

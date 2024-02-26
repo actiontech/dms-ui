@@ -421,8 +421,8 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                             id="needUpdatePassword"
                             role="switch"
                             type="button"
@@ -456,7 +456,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="password"
                         title="更新连接密码"
                       >
@@ -476,10 +476,12 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                             class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                           >
                             <input
+                              aria-required="true"
                               class="ant-input css-dev-only-do-not-override-txh9fw"
                               id="password"
                               placeholder="请输入密码"
                               type="password"
+                              value="123"
                             />
                             <span
                               class="ant-input-suffix"
@@ -603,7 +605,38 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                             </div>
                             <div
                               class="ant-space-item"
-                            />
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <div
+                                    class="css-dgcbul"
+                                  >
+                                    <span
+                                      class="custom-icon css-u3jcp4"
+                                      role="img"
+                                    >
+                                      <svg
+                                        fill="none"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M8.00001 14.6666C4.31801 14.6666 1.33334 11.682 1.33334 7.99998C1.33334 4.31798 4.31801 1.33331 8.00001 1.33331C11.682 1.33331 14.6667 4.31798 14.6667 7.99998C14.6667 11.682 11.682 14.6666 8.00001 14.6666ZM8.00001 13.3333C9.4145 13.3333 10.7711 12.7714 11.7712 11.7712C12.7714 10.771 13.3333 9.41447 13.3333 7.99998C13.3333 6.58549 12.7714 5.22894 11.7712 4.22874C10.7711 3.22855 9.4145 2.66665 8.00001 2.66665C6.58552 2.66665 5.22897 3.22855 4.22877 4.22874C3.22858 5.22894 2.66668 6.58549 2.66668 7.99998C2.66668 9.41447 3.22858 10.771 4.22877 11.7712C5.22897 12.7714 6.58552 13.3333 8.00001 13.3333ZM8.00001 7.05731L9.88534 5.17131L10.8287 6.11465L8.94268 7.99998L10.8287 9.88531L9.88534 10.8286L8.00001 8.94265L6.11468 10.8286L5.17134 9.88531L7.05734 7.99998L5.17134 6.11465L6.11468 5.17131L8.00001 7.05731Z"
+                                          fill="#F66074"
+                                        />
+                                      </svg>
+                                    </span>
+                                    未能成功链接到数据库
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1549,8 +1582,8 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                             id="needUpdatePassword"
                             role="switch"
                             type="button"
@@ -1584,7 +1617,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="password"
                         title="更新连接密码"
                       >
@@ -1604,6 +1637,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                             class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                           >
                             <input
+                              aria-required="true"
                               class="ant-input css-dev-only-do-not-override-txh9fw"
                               id="password"
                               placeholder="请输入密码"

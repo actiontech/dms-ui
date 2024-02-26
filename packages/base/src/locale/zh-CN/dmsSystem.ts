@@ -6,7 +6,8 @@ export default {
   confirmCloseConfigTips: '是否确认关闭当前配置？',
   confirmResetConfigTips:
     '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？',
-
+  processConnectionCETips:
+    '如果您使用钉钉、飞书作为协作平台，并且希望在这些外部平台上进行工单审批，您可以启用流程对接功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。',
   tabPaneTitle: {
     pushNotification: '消息推送',
     processConnection: '流程对接',
