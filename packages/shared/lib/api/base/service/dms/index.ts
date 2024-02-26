@@ -24,6 +24,7 @@ import {
   ISetLicenseReturn,
   ICheckLicenseParams,
   ICheckLicenseReturn,
+  IGetLicenseUsageReturn,
   IGetOauth2ConfigurationReturn,
   IUpdateOauth2ConfigurationParams,
   IUpdateOauth2ConfigurationReturn,
@@ -315,6 +316,14 @@ class DmsService extends ServiceBase {
 
   public GetLicenseInfo(options?: AxiosRequestConfig) {
     return this.get('/v1/dms/configurations/license/info', undefined, options);
+  }
+
+  public GetLicenseUsage(options?: AxiosRequestConfig) {
+    return this.get<IGetLicenseUsageReturn>(
+      '/v1/dms/configurations/license/usage',
+      undefined,
+      options
+    );
   }
 
   public GetOauth2Configuration(options?: AxiosRequestConfig) {
