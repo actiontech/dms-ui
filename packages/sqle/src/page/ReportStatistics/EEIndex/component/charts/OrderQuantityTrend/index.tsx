@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 import { useEffect, useMemo, useState } from 'react';
-import { Area } from '@ant-design/plots';
+import { Area, Tooltip } from '@ant-design/plots';
 import { AreaConfig } from '@ant-design/plots';
 import { RangePickerProps } from 'antd/es/date-picker';
 
@@ -49,7 +49,7 @@ const renderAnnotationsPosition = (maxVal: { date: string; value: number }) => {
   return [maxVal.date, maxVal.value];
 };
 
-const renderTooltipFormatter = (item: any) => {
+const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
     name: item.date,
     value: item.value
@@ -57,7 +57,7 @@ const renderTooltipFormatter = (item: any) => {
 };
 
 const renderTooltipCustomContent = (
-  dataSource: any,
+  dataSource: any[],
   sharedTheme: SharedTheme
 ) => {
   const data = dataSource[0];
@@ -231,7 +231,7 @@ const OrderQuantityTrend = () => {
     tooltip: {
       fields: ['date', 'value'],
       formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any) =>
+      customContent: (title: string, dataSource: any[]) =>
         renderTooltipCustomContent(dataSource, sharedTheme)
     },
     interactions: [

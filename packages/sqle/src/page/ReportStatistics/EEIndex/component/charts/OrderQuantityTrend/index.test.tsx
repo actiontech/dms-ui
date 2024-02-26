@@ -128,7 +128,7 @@ describe('ReportStatistics/OrderQuantityTrend', () => {
 
   it('render tooltip formatter', async () => {
     const { result } = renderHooksWithTheme(() =>
-      renderTooltipFormatter({ date: '', value: '' })
+      renderTooltipFormatter?.({ date: '', value: '' })
     );
     expect(result.current).toStrictEqual({ name: '', value: '' });
   });

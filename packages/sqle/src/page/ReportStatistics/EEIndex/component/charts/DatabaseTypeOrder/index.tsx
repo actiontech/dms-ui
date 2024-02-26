@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
 import { useState } from 'react';
-import { Treemap } from '@ant-design/plots';
+import { Tooltip, Treemap } from '@ant-design/plots';
 import { TreemapConfig } from '@ant-design/plots/es/components/treemap';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 
@@ -23,7 +23,7 @@ const renderLabelContent = (obj: { [key: string]: any }) => {
   return obj.name ?? '';
 };
 
-const renderTooltipFormatter = (item: any) => {
+const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
     name: item.name,
     value: item.value
@@ -31,7 +31,7 @@ const renderTooltipFormatter = (item: any) => {
 };
 
 const renderTooltipCustomContent = (
-  dataSource: any,
+  dataSource: any[],
   sharedTheme: SharedTheme,
   totalNum: number
 ) => {
@@ -146,7 +146,7 @@ const DatabaseTypeOrder = () => {
     tooltip: {
       fields: ['name', 'value'],
       formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any) =>
+      customContent: (title: string, dataSource: any[]) =>
         renderTooltipCustomContent(dataSource, sharedTheme, totalNum),
       domStyles: getDomStyles(170)
     }
