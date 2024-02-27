@@ -6,6 +6,8 @@ import ReportStatistics from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 import statistic from '../../testUtils/mockApi/statistic';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -19,6 +21,7 @@ describe('sqle/ReportStatistics', () => {
   beforeEach(() => {
     statistic.mockAllApi();
     jest.useFakeTimers();
+    MockDate.set(dayjs('2022-01-01 12:00:00').valueOf());
     mockThemeStyleData();
     mockUseCurrentUser();
   });
