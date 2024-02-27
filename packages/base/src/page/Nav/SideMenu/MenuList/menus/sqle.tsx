@@ -1,4 +1,4 @@
-import { t } from '../../../../locale';
+import { t } from '../../../../../locale';
 import {
   IconAuditPlan,
   IconEllipse,
@@ -11,7 +11,7 @@ import {
   IconTodoList,
   IconWhitelist,
   IconWorkflowTemplate
-} from '../../../../icon/sideMenu';
+} from '../../../../../icon/sideMenu';
 import Icon from '@ant-design/icons';
 import {
   GenerateMenuItemsType,
