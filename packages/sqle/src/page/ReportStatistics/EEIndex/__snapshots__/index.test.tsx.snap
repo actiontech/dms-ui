@@ -1,0 +1,1235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 10px;"
+          >
+            <div>
+              报表统计
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <span
+              aria-label="sync"
+              class="anticon anticon-sync refresh-icon"
+              role="img"
+              tabindex="-1"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="sync"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M168 504.2c1-43.7 10-86.1 26.9-126 17.3-41 42.1-77.7 73.7-109.4S337 212.3 378 195c42.4-17.9 87.4-27 133.9-27s91.5 9.1 133.8 27A341.5 341.5 0 01755 268.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 003 14.1l175.7 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c0-6.7-7.7-10.5-12.9-6.3l-56.4 44.1C765.8 155.1 646.2 92 511.8 92 282.7 92 96.3 275.6 92 503.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8zm756 7.8h-60c-4.4 0-7.9 3.5-8 7.8-1 43.7-10 86.1-26.9 126-17.3 41-42.1 77.8-73.7 109.4A342.45 342.45 0 01512.1 856a342.24 342.24 0 01-243.2-100.8c-9.9-9.9-19.2-20.4-27.8-31.4l60.2-47a8 8 0 00-3-14.1l-175.7-43c-5-1.2-9.9 2.6-9.9 7.7l-.7 181c0 6.7 7.7 10.5 12.9 6.3l56.4-44.1C258.2 868.9 377.8 932 512.2 932c229.2 0 415.5-183.7 419.8-411.8a8 8 0 00-8-8.2z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="extra"
+      />
+    </div>
+    <section
+      class="report-wrapper css-1h3og1q"
+    >
+      <div
+        class="ant-row ant-row-center ant-row-top card-box css-dev-only-do-not-override-txh9fw"
+        style="margin-left: -10px; margin-right: -10px;"
+      >
+        <div
+          class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper card-wrapper marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-title"
+                >
+                  <span
+                    class="title-cont"
+                  >
+                    工单总数
+                  </span>
+                  <span
+                    class="title-extra"
+                  >
+                    <span
+                      class="anticon"
+                      role="img"
+                      style="color: rgb(69, 131, 255);"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="12"
+                          opacity="0.5"
+                          rx="1.5"
+                          width="16"
+                          x="6"
+                          y="10"
+                        />
+                        <path
+                          d="M2 4C2 2.89543 2.89543 2 4 2H17C18.1046 2 19 2.89543 19 4V22H4C2.89543 22 2 21.1046 2 20V4Z"
+                          fill="currentColor"
+                        />
+                        <rect
+                          fill="white"
+                          height="2"
+                          rx="0.5"
+                          width="7"
+                          x="7"
+                          y="8"
+                        />
+                        <rect
+                          fill="white"
+                          height="2"
+                          rx="0.5"
+                          width="7"
+                          x="7"
+                          y="13"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="number-cont"
+                  >
+                    <div
+                      class="ant-statistic css-dev-only-do-not-override-13rucla"
+                    >
+                      <div
+                        class="ant-statistic-content"
+                        style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51);"
+                      >
+                        <span
+                          class="ant-statistic-content-value"
+                        >
+                          <span
+                            class="ant-statistic-content-value-int"
+                          >
+                            0
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="note-cont"
+                  >
+                    截止 
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper card-wrapper marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-title"
+                >
+                  <span
+                    class="title-cont"
+                  >
+                    今日新增
+                  </span>
+                  <span
+                    class="title-extra"
+                  >
+                    <span
+                      class="anticon"
+                      role="img"
+                      style="color: rgb(69, 131, 255);"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="16"
+                          opacity="0.5"
+                          rx="1.5"
+                          width="14"
+                          x="5"
+                          y="2"
+                        />
+                        <rect
+                          fill="currentColor"
+                          height="17"
+                          rx="2"
+                          width="20"
+                          x="2"
+                          y="5"
+                        />
+                        <path
+                          d="M16.2426 12.0884L13.4142 14.9169L10.5858 12.0884L7.75736 14.9169"
+                          stroke="white"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="number-cont"
+                  >
+                    <div
+                      class="ant-statistic css-dev-only-do-not-override-13rucla"
+                    >
+                      <div
+                        class="ant-statistic-content"
+                        style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51);"
+                      >
+                        <span
+                          class="ant-statistic-content-value"
+                        >
+                          <span
+                            class="ant-statistic-content-value-int"
+                          >
+                            0
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="note-cont"
+                  >
+                    截止 
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper card-wrapper marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-title"
+                >
+                  <span
+                    class="title-cont"
+                  >
+                    工单平均审核时间
+                  </span>
+                  <span
+                    class="title-extra"
+                  >
+                    <span
+                      class="anticon"
+                      role="img"
+                      style="color: rgb(69, 131, 255);"
+                    >
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          fill="currentColor"
+                          r="11"
+                        />
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="white"
+                          stroke-opacity="0.5"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M12 7.5V12H15.5"
+                          stroke="white"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="number-cont"
+                  >
+                    0
+                  </div>
+                  <div
+                    class="note-cont"
+                  >
+                    <div
+                      class="note-wrapper"
+                    />
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper card-wrapper marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-title"
+                >
+                  <span
+                    class="title-cont"
+                  >
+                    审核通过率
+                  </span>
+                  <span
+                    class="title-extra"
+                  >
+                    <span
+                      class="anticon"
+                      role="img"
+                      style="color: rgb(69, 131, 255);"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="15"
+                          opacity="0.5"
+                          rx="1.5"
+                          width="15"
+                          x="8"
+                          y="1"
+                        />
+                        <rect
+                          fill="currentColor"
+                          height="18"
+                          rx="2"
+                          width="18"
+                          x="2"
+                          y="4"
+                        />
+                        <path
+                          d="M7.79999 13L10.2749 15.4749L14.5175 11.2322"
+                          stroke="white"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="number-cont"
+                  >
+                    0
+                  </div>
+                  <div
+                    class="note-cont"
+                  >
+                    <div
+                      class="note-wrapper"
+                    />
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-row ant-row-center ant-row-top css-dev-only-do-not-override-txh9fw"
+        style="margin-left: -10px; margin-right: -10px;"
+      >
+        <div
+          class="ant-col ant-col-24 ant-col-xxl-12 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper order-wrapper marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-header"
+                >
+                  <div
+                    class="title"
+                  >
+                    <div
+                      class="title-cont"
+                    >
+                      工单趋势
+                    </div>
+                  </div>
+                  <div
+                    class="extra"
+                  >
+                    <div
+                      class="css-12dt3lx"
+                    >
+                      <span
+                        class="label"
+                      >
+                        时间段：
+                      </span>
+                      <div
+                        class="css-1y8q0oh"
+                      >
+                        <div
+                          class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                        >
+                          <div
+                            class="ant-picker-input ant-picker-input-active"
+                          >
+                            <input
+                              autocomplete="off"
+                              placeholder="Start date"
+                              readonly=""
+                              size="12"
+                              value="2024-01-27"
+                            />
+                          </div>
+                          <div
+                            class="ant-picker-range-separator"
+                          >
+                            <span
+                              class="custom-icon custom-icon-arrow-right css-u3jcp4"
+                              role="img"
+                            >
+                              <svg
+                                fill="currentColor"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-picker-input"
+                          >
+                            <input
+                              autocomplete="off"
+                              placeholder="End date"
+                              readonly=""
+                              size="12"
+                              value="2024-02-26"
+                            />
+                          </div>
+                          <div
+                            class="ant-picker-active-bar"
+                            style="left: 0px; width: 0px; position: absolute;"
+                          />
+                          <span
+                            class="ant-picker-suffix"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="chart-wrapper css-1hgbe7b"
+                  >
+                    <div
+                      class="icon-center-wrapper MuiBox-root css-0"
+                    >
+                      <div
+                        class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                      >
+                        <div
+                          class="ant-empty-image"
+                        >
+                          <div
+                            aria-busy="true"
+                            aria-live="polite"
+                            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                          >
+                            <span
+                              class="ant-spin-dot ant-spin-dot-spin"
+                            >
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-empty-description"
+                        />
+                        <div
+                          class="ant-empty-footer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-24 ant-col-xxl-12 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper order-wrapper marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-header"
+                >
+                  <div
+                    class="title"
+                  >
+                    <div
+                      class="title-cont"
+                    >
+                      按工单状态的工单构成
+                    </div>
+                  </div>
+                  <div
+                    class="extra"
+                  />
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="chart-wrapper css-1hgbe7b"
+                  >
+                    <div
+                      class="icon-center-wrapper MuiBox-root css-0"
+                    >
+                      <div
+                        class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                      >
+                        <div
+                          class="ant-empty-image"
+                        >
+                          <div
+                            aria-busy="true"
+                            aria-live="polite"
+                            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                          >
+                            <span
+                              class="ant-spin-dot ant-spin-dot-spin"
+                            >
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-empty-description"
+                        />
+                        <div
+                          class="ant-empty-footer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-row ant-row-center ant-row-top css-dev-only-do-not-override-txh9fw"
+        style="margin-left: -10px; margin-right: -10px;"
+      >
+        <div
+          class="ant-col ant-col-24 ant-col-lg-24 ant-col-xl-8 ant-col-xxl-8 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper order-wrapper2 marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-header"
+                >
+                  <div
+                    class="title"
+                  >
+                    <div
+                      class="title-cont"
+                    >
+                      按数据库类型的工单构成
+                    </div>
+                  </div>
+                  <div
+                    class="extra"
+                  />
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="chart-wrapper css-1hgbe7b"
+                  >
+                    <div
+                      class="icon-center-wrapper MuiBox-root css-0"
+                    >
+                      <div
+                        class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                      >
+                        <div
+                          class="ant-empty-image"
+                        >
+                          <div
+                            aria-busy="true"
+                            aria-live="polite"
+                            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                          >
+                            <span
+                              class="ant-spin-dot ant-spin-dot-spin"
+                            >
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-empty-description"
+                        />
+                        <div
+                          class="ant-empty-footer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-24 ant-col-lg-24 ant-col-xl-8 ant-col-xxl-8 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper order-wrapper2 marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-header"
+                >
+                  <div
+                    class="title"
+                  >
+                    <div
+                      class="title-cont"
+                    >
+                      按数据库类型的数据源构成
+                    </div>
+                  </div>
+                  <div
+                    class="extra"
+                  />
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="chart-wrapper css-1hgbe7b"
+                  >
+                    <div
+                      class="icon-center-wrapper MuiBox-root css-0"
+                    >
+                      <div
+                        class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                      >
+                        <div
+                          class="ant-empty-image"
+                        >
+                          <div
+                            aria-busy="true"
+                            aria-live="polite"
+                            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                          >
+                            <span
+                              class="ant-spin-dot ant-spin-dot-spin"
+                            >
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-empty-description"
+                        />
+                        <div
+                          class="ant-empty-footer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-24 ant-col-lg-24 ant-col-xl-8 ant-col-xxl-8 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper order-wrapper2 marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-header"
+                >
+                  <div
+                    class="title"
+                  >
+                    <div
+                      class="title-cont"
+                    >
+                      License 使用情况
+                    </div>
+                  </div>
+                  <div
+                    class="extra"
+                  />
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="chart-wrapper css-1hgbe7b"
+                  >
+                    <div
+                      class="icon-center-wrapper MuiBox-root css-0"
+                    >
+                      <div
+                        class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                      >
+                        <div
+                          class="ant-empty-image"
+                        >
+                          <div
+                            aria-busy="true"
+                            aria-live="polite"
+                            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                          >
+                            <span
+                              class="ant-spin-dot ant-spin-dot-spin"
+                            >
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-empty-description"
+                        />
+                        <div
+                          class="ant-empty-footer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-row ant-row-center ant-row-top css-dev-only-do-not-override-txh9fw"
+        style="margin-left: -10px; margin-right: -10px;"
+      >
+        <div
+          class="ant-col ant-col-24 ant-col-xxl-12 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper top-list-wrapper marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-header"
+                >
+                  <div
+                    class="title"
+                  >
+                    <div
+                      class="title-cont"
+                    >
+                      不同用户工单驳回率(Top10)
+                    </div>
+                  </div>
+                  <div
+                    class="extra"
+                  />
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="report-base-table-wrapper css-dyc61v"
+                  >
+                    <div
+                      class="ant-table-wrapper report-base-table no-table-data-style css-dev-only-do-not-override-1ror0i4"
+                    >
+                      <div
+                        class="ant-spin-nested-loading css-dev-only-do-not-override-1ror0i4"
+                      >
+                        <div
+                          class="ant-spin-container"
+                        >
+                          <div
+                            class="ant-table ant-table-empty"
+                          >
+                            <div
+                              class="ant-table-container"
+                            >
+                              <div
+                                class="ant-table-content"
+                              >
+                                <table
+                                  style="table-layout: auto;"
+                                >
+                                  <colgroup>
+                                    <col
+                                      style="width: 280px;"
+                                    />
+                                    <col
+                                      style="width: 200px;"
+                                    />
+                                  </colgroup>
+                                  <thead
+                                    class="ant-table-thead"
+                                  >
+                                    <tr>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                      >
+                                        用户名
+                                      </th>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                        style="text-align: right;"
+                                      >
+                                        工单总数
+                                      </th>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                        style="text-align: right;"
+                                      >
+                                        驳回率
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody
+                                    class="ant-table-tbody"
+                                  >
+                                    <tr
+                                      class="ant-table-placeholder"
+                                    >
+                                      <td
+                                        class="ant-table-cell"
+                                        colspan="3"
+                                      >
+                                        <div
+                                          class="css-dev-only-do-not-override-1ror0i4 ant-empty is-icon-loading css-1hr7xjo"
+                                        >
+                                          <div
+                                            class="ant-empty-image"
+                                          >
+                                            <div
+                                              aria-busy="true"
+                                              aria-live="polite"
+                                              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1ror0i4"
+                                            >
+                                              <span
+                                                class="ant-spin-dot ant-spin-dot-spin"
+                                              >
+                                                <i
+                                                  class="ant-spin-dot-item"
+                                                />
+                                                <i
+                                                  class="ant-spin-dot-item"
+                                                />
+                                                <i
+                                                  class="ant-spin-dot-item"
+                                                />
+                                                <i
+                                                  class="ant-spin-dot-item"
+                                                />
+                                              </span>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="ant-empty-description"
+                                          />
+                                          <div
+                                            class="ant-empty-footer"
+                                          />
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="data-bottom-tip"
+                      hidden=""
+                    >
+                      暂无更多数据
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-24 ant-col-xxl-12 css-dev-only-do-not-override-txh9fw"
+          style="padding-left: 10px; padding-right: 10px;"
+        >
+          <div
+            class="item-wrapper top-list-wrapper marginTop20"
+          >
+            <div
+              class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-card-body"
+              >
+                <header
+                  class="card-header"
+                >
+                  <div
+                    class="title"
+                  >
+                    <div
+                      class="title-cont"
+                    >
+                      SQL上线平均耗时 (Top10)
+                    </div>
+                  </div>
+                  <div
+                    class="extra"
+                  />
+                </header>
+                <section
+                  class="card-cont"
+                >
+                  <div
+                    class="report-base-table-wrapper css-dyc61v"
+                  >
+                    <div
+                      class="ant-table-wrapper report-base-table no-table-data-style css-dev-only-do-not-override-1ror0i4"
+                    >
+                      <div
+                        class="ant-spin-nested-loading css-dev-only-do-not-override-1ror0i4"
+                      >
+                        <div
+                          class="ant-spin-container"
+                        >
+                          <div
+                            class="ant-table ant-table-empty"
+                          >
+                            <div
+                              class="ant-table-container"
+                            >
+                              <div
+                                class="ant-table-content"
+                              >
+                                <table
+                                  style="table-layout: auto;"
+                                >
+                                  <colgroup />
+                                  <thead
+                                    class="ant-table-thead"
+                                  >
+                                    <tr>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                      >
+                                        数据源名称
+                                      </th>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                        style="text-align: right;"
+                                      >
+                                        平均上线耗时
+                                      </th>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                        style="text-align: right;"
+                                      >
+                                        最长上线耗时
+                                      </th>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                        style="text-align: right;"
+                                      >
+                                        最短上线耗时
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody
+                                    class="ant-table-tbody"
+                                  >
+                                    <tr
+                                      class="ant-table-placeholder"
+                                    >
+                                      <td
+                                        class="ant-table-cell"
+                                        colspan="4"
+                                      >
+                                        <div
+                                          class="css-dev-only-do-not-override-1ror0i4 ant-empty is-icon-loading css-1hr7xjo"
+                                        >
+                                          <div
+                                            class="ant-empty-image"
+                                          >
+                                            <div
+                                              aria-busy="true"
+                                              aria-live="polite"
+                                              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1ror0i4"
+                                            >
+                                              <span
+                                                class="ant-spin-dot ant-spin-dot-spin"
+                                              >
+                                                <i
+                                                  class="ant-spin-dot-item"
+                                                />
+                                                <i
+                                                  class="ant-spin-dot-item"
+                                                />
+                                                <i
+                                                  class="ant-spin-dot-item"
+                                                />
+                                                <i
+                                                  class="ant-spin-dot-item"
+                                                />
+                                              </span>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="ant-empty-description"
+                                          />
+                                          <div
+                                            class="ant-empty-footer"
+                                          />
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="data-bottom-tip"
+                      hidden=""
+                    >
+                      暂无更多数据
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;

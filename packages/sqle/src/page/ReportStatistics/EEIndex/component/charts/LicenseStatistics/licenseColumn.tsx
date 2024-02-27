@@ -1,17 +1,70 @@
+import i18n from 'i18next';
 import { throttle, isEqual } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { memo, useEffect, useMemo, useState, useRef } from 'react';
-import { Column, ColumnConfig, Plot } from '@ant-design/plots';
+import { Column, ColumnConfig, Plot, Tooltip } from '@ant-design/plots';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 import useGetConfig from '../../../../../../components/ChartCom/ChartTooltip/useGetConfig';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
+import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 
 export interface ILicenseColumn {
   data: ColumnConfig['data'];
   onReady: ColumnConfig['onReady'];
 }
+
+const renderLabelFormatter = (text: string, singleWidth: number) => {
+  const currentLength = text.length;
+  const subNum = singleWidth - 2 <= 0 ? 1 : singleWidth - 2;
+  return singleWidth && currentLength > singleWidth
+    ? text.substring(0, subNum) + '...'
+    : text;
+};
+
+const renderLabelContent = (data: { [key: string]: any }) => {
+  return !data.limit
+    ? data.value
+    : `${floatToNumberPercent(data.value, data.limit)}`;
+};
+
+const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
+  return {
+    name: item.type,
+    value: item.value
+  };
+};
+
+const renderTooltipCustomContent = (
+  dataSource: any[],
+  sharedTheme: SharedTheme
+) => {
+  const data = dataSource[0]?.data;
+  if (!data) return null;
+  const currentColor = dataSource[0]?.color;
+  const listData = [
+    {
+      label: i18n.t('reportStatistics.licenseStatistics.used') as string,
+      value: data.value
+    }
+  ];
+  data.limit &&
+    listData.push({
+      label: i18n.t('reportStatistics.licenseStatistics.proportion') as string,
+      value: floatToNumberPercent(data.value, data.limit)
+    });
+  return (
+    <ChartTooltip
+      sharedTheme={sharedTheme}
+      titleData={{
+        dotColor: currentColor,
+        text: data.type
+      }}
+      listData={listData}
+    />
+  );
+};
 
 const labelFontSize = 12;
 
@@ -80,13 +133,8 @@ const LicenseColumn = memo(
             todo: 实现label的字符溢出隐藏的问题
             目前实现方式：当前图表的容器宽度发生改变时，计算当前单个柱形图需要的字符个数；当前 label 的字符宽度大于柱形单个宽度，截取当前的字符 + '...'；否则展示全部字符。
              */
-            formatter: (text: string) => {
-              const currentLength = text.length;
-              const subNum = singleWidth - 2 <= 0 ? 1 : singleWidth - 2;
-              return singleWidth && currentLength > singleWidth
-                ? text.substring(0, subNum) + '...'
-                : text;
-            },
+            formatter: (text: string) =>
+              renderLabelFormatter(text, singleWidth),
             style: {
               fill: sqleTheme.reportStatistics.LicenseStatistics.LicenseColumn
                 .fillColor.xAxis,
@@ -107,11 +155,7 @@ const LicenseColumn = memo(
         },
         label: {
           offsetY: 10,
-          content: (data) => {
-            return !data.limit
-              ? data.value
-              : `${floatToNumberPercent(data.value, data.limit)}`;
-          },
+          content: renderLabelContent,
           fields: ['value'],
           position: 'top',
           style: {
@@ -126,38 +170,9 @@ const LicenseColumn = memo(
         tooltip: {
           showMarkers: false,
           fields: ['type', 'value'],
-          formatter: (item: any) => {
-            return {
-              name: item.type,
-              value: item.value
-            };
-          },
-          customContent: (title: string, dataSource: any) => {
-            const data = dataSource[0]?.data;
-            if (!data) return null;
-            const currentColor = dataSource[0]?.color;
-            const listData = [
-              {
-                label: t('reportStatistics.licenseStatistics.used'),
-                value: data.value
-              }
-            ];
-            data.limit &&
-              listData.push({
-                label: t('reportStatistics.licenseStatistics.proportion'),
-                value: floatToNumberPercent(data.value, data.limit)
-              });
-            return (
-              <ChartTooltip
-                sharedTheme={sharedTheme}
-                titleData={{
-                  dotColor: currentColor,
-                  text: data.type
-                }}
-                listData={listData}
-              />
-            );
-          },
+          formatter: renderTooltipFormatter,
+          customContent: (title: string, dataSource: any[]) =>
+            renderTooltipCustomContent(dataSource, sharedTheme),
           domStyles: getDomStyles(190)
         },
         interactions: [{ type: 'element-highlight' }],
@@ -196,3 +211,10 @@ const LicenseColumn = memo(
 );
 
 export default LicenseColumn;
+
+export {
+  renderLabelFormatter,
+  renderLabelContent,
+  renderTooltipFormatter,
+  renderTooltipCustomContent
+};
