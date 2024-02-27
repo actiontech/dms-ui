@@ -1,5 +1,5 @@
 import { GenerateMenuItemsType } from './common';
-import { t } from '../../../../locale';
+import { t } from '../../../../../locale';
 import {
   IconDataExport,
   IconInstanceManager,
@@ -7,7 +7,7 @@ import {
   IconSQLQuery,
   IconSubmenuExpandDown,
   IconSubmenuExpandTop
-} from '../../../../icon/sideMenu';
+} from '../../../../../icon/sideMenu';
 import Icon from '@ant-design/icons';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 
@@ -53,13 +53,13 @@ export const BaseMenuItems: GenerateMenuItemsType = ({
           label: t('dmsMenu.SQLQuery'),
           icon: <Icon component={IconSQLQuery} />,
           key: `cloudBeaver`,
-          onClick: () => navigate(`cloudBeaver`)
+          onClick: () => navigate(`/cloudBeaver`)
         },
         {
           label: t('dmsMenu.dataExportManagement'),
           key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data/export`,
           icon: <Icon component={IconDataExport} />,
-          onClick: () => navigate(`project/${projectID}/data/export`)
+          onClick: () => navigate(`/project/${projectID}/data/export`)
         }
       ]
     }
