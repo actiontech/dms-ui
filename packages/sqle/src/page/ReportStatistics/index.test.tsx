@@ -20,8 +20,8 @@ describe('sqle/ReportStatistics', () => {
   ignoreAntdPlotsAttr();
   beforeEach(() => {
     statistic.mockAllApi();
-    MockDate.set(dayjs('2022-01-01 12:00:00').valueOf());
     jest.useFakeTimers();
+    MockDate.set(dayjs('2022-01-01 12:00:00').valueOf());
     mockThemeStyleData();
     mockUseCurrentUser();
   });
