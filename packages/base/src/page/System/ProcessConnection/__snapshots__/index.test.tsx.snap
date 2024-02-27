@@ -204,7 +204,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -598,7 +598,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -992,7 +992,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -1362,7 +1362,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enabled"
                                           role="switch"
                                           type="button"
