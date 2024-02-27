@@ -1,6 +1,598 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lib/ActiontechTable-ColumnsSetting render setting button 1`] = `
+exports[`lib/ActiontechTable-ColumnsSetting render icon popover ui snap when click icon setting render popover cont has all column when click icon setting 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-setting-namespace ant-popover-open basic-button-wrapper css-geipcv"
+      style="padding: 0px 6px 0px 8px;"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon custom-icon-setting css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="11"
+              viewBox="0 0 13 11"
+              width="13"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.166687 8.50004H4.25002V9.66671H0.166687V8.50004ZM0.166687 4.41671H5.41669V5.58337H0.166687V4.41671ZM0.166687 0.333374H11.8334V1.50004H0.166687V0.333374ZM11.0599 5.59796L11.7342 5.36987L12.3175 6.38021L11.7832 6.84979C11.8504 7.16867 11.8504 7.49808 11.7832 7.81696L12.3175 8.28654L11.7342 9.29687L11.0599 9.06879C10.8207 9.28463 10.536 9.45088 10.2228 9.55296L10.0834 10.25H8.91669L8.77669 9.55237C8.46709 9.4512 8.18213 9.28627 7.94019 9.06821L7.26585 9.29687L6.68252 8.28654L7.21685 7.81696C7.1496 7.49808 7.1496 7.16867 7.21685 6.84979L6.68252 6.38021L7.26585 5.36987L7.94019 5.59796C8.17935 5.38212 8.46402 5.21587 8.77727 5.11379L8.91669 4.41671H10.0834L10.2234 5.11437C10.536 5.21587 10.8207 5.38271 11.0599 5.59854V5.59796ZM9.50002 8.50004C9.80944 8.50004 10.1062 8.37712 10.325 8.15833C10.5438 7.93954 10.6667 7.64279 10.6667 7.33337C10.6667 7.02396 10.5438 6.72721 10.325 6.50842C10.1062 6.28962 9.80944 6.16671 9.50002 6.16671C9.1906 6.16671 8.89386 6.28962 8.67506 6.50842C8.45627 6.72721 8.33335 7.02396 8.33335 7.33337C8.33335 7.64279 8.45627 7.93954 8.67506 8.15833C8.89386 8.37712 9.1906 8.50004 9.50002 8.50004Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          表格设置
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-up css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big actiontech-setting-button-overlay-namespace css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-45kc3h"
+            >
+              <div
+                class="actiontech-table-setting-fixed-left"
+              >
+                <div
+                  class="actiontech-table-setting-fixed-title"
+                >
+                  固定在左侧
+                </div>
+                <div
+                  aria-describedby="DndDescribedBy-1"
+                  aria-disabled="false"
+                  aria-roledescription="sortable"
+                  class="columns-setting-item-wrapper"
+                  role="button"
+                  style="cursor: move;"
+                  tabindex="0"
+                >
+                  <span
+                    class="custom-icon custom-icon-draggable css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.66675 4.66663C6.21903 4.66663 6.66675 4.21891 6.66675 3.66663C6.66675 3.11434 6.21903 2.66663 5.66675 2.66663C5.11446 2.66663 4.66675 3.11434 4.66675 3.66663C4.66675 4.21891 5.11446 4.66663 5.66675 4.66663ZM5.66675 8.99996C6.21903 8.99996 6.66675 8.55223 6.66675 7.99996C6.66675 7.44769 6.21903 6.99996 5.66675 6.99996C5.11446 6.99996 4.66675 7.44769 4.66675 7.99996C4.66675 8.55223 5.11446 8.99996 5.66675 8.99996ZM6.66675 12.3333C6.66675 12.8856 6.21903 13.3333 5.66675 13.3333C5.11446 13.3333 4.66675 12.8856 4.66675 12.3333C4.66675 11.781 5.11446 11.3333 5.66675 11.3333C6.21903 11.3333 6.66675 11.781 6.66675 12.3333ZM10.3334 4.66663C10.8857 4.66663 11.3334 4.21891 11.3334 3.66663C11.3334 3.11434 10.8857 2.66663 10.3334 2.66663C9.78115 2.66663 9.33341 3.11434 9.33341 3.66663C9.33341 4.21891 9.78115 4.66663 10.3334 4.66663ZM11.3334 7.99996C11.3334 8.55223 10.8857 8.99996 10.3334 8.99996C9.78115 8.99996 9.33341 8.55223 9.33341 7.99996C9.33341 7.44769 9.78115 6.99996 10.3334 6.99996C10.8857 6.99996 11.3334 7.44769 11.3334 7.99996ZM10.3334 13.3333C10.8857 13.3333 11.3334 12.8856 11.3334 12.3333C11.3334 11.781 10.8857 11.3333 10.3334 11.3333C9.78115 11.3333 9.33341 11.781 9.33341 12.3333C9.33341 12.8856 9.78115 13.3333 10.3334 13.3333Z"
+                      />
+                    </svg>
+                  </span>
+                  <div
+                    class="columns-setting-item"
+                  >
+                    <label
+                      class="ant-checkbox-wrapper ant-checkbox-wrapper-checked css-dev-only-do-not-override-txh9fw"
+                    >
+                      <span
+                        class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                      >
+                        <input
+                          checked=""
+                          class="ant-checkbox-input"
+                          type="checkbox"
+                        />
+                        <span
+                          class="ant-checkbox-inner"
+                        />
+                      </span>
+                      <span>
+                        <div
+                          style="width: 90px;"
+                        >
+                          <div
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+                          >
+                            工单号
+                          </div>
+                        </div>
+                      </span>
+                    </label>
+                  </div>
+                  <div
+                    class="fixed-options"
+                  >
+                    <span>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-middle"
+                            class="anticon anticon-vertical-align-middle fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-middle"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 474H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zm-353.6-74.7c2.9 3.7 8.5 3.7 11.3 0l100.8-127.5c3.7-4.7.4-11.7-5.7-11.7H550V104c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v156h-62.8c-6 0-9.4 7-5.7 11.7l100.8 127.6zm11.4 225.4a7.14 7.14 0 00-11.3 0L405.6 752.3a7.23 7.23 0 005.7 11.7H474v156c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V764h62.8c6 0 9.4-7 5.7-11.7L517.7 624.7z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                    <span
+                      hidden=""
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-top"
+                            class="anticon anticon-vertical-align-top fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-top"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 168H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zM518.3 355a8 8 0 00-12.6 0l-112 141.7a7.98 7.98 0 006.3 12.9h73.9V848c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V509.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 355z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                    <span>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-bottom"
+                            class="anticon anticon-vertical-align-bottom fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-bottom"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 780H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zM505.7 669a8 8 0 0012.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V176c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="actiontech-table-setting-not-fixed"
+              >
+                <div
+                  class="actiontech-table-setting-fixed-title"
+                >
+                  不固定
+                </div>
+                <div
+                  aria-describedby="DndDescribedBy-1"
+                  aria-disabled="false"
+                  aria-roledescription="sortable"
+                  class="columns-setting-item-wrapper"
+                  role="button"
+                  style="cursor: move;"
+                  tabindex="0"
+                >
+                  <span
+                    class="custom-icon custom-icon-draggable css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.66675 4.66663C6.21903 4.66663 6.66675 4.21891 6.66675 3.66663C6.66675 3.11434 6.21903 2.66663 5.66675 2.66663C5.11446 2.66663 4.66675 3.11434 4.66675 3.66663C4.66675 4.21891 5.11446 4.66663 5.66675 4.66663ZM5.66675 8.99996C6.21903 8.99996 6.66675 8.55223 6.66675 7.99996C6.66675 7.44769 6.21903 6.99996 5.66675 6.99996C5.11446 6.99996 4.66675 7.44769 4.66675 7.99996C4.66675 8.55223 5.11446 8.99996 5.66675 8.99996ZM6.66675 12.3333C6.66675 12.8856 6.21903 13.3333 5.66675 13.3333C5.11446 13.3333 4.66675 12.8856 4.66675 12.3333C4.66675 11.781 5.11446 11.3333 5.66675 11.3333C6.21903 11.3333 6.66675 11.781 6.66675 12.3333ZM10.3334 4.66663C10.8857 4.66663 11.3334 4.21891 11.3334 3.66663C11.3334 3.11434 10.8857 2.66663 10.3334 2.66663C9.78115 2.66663 9.33341 3.11434 9.33341 3.66663C9.33341 4.21891 9.78115 4.66663 10.3334 4.66663ZM11.3334 7.99996C11.3334 8.55223 10.8857 8.99996 10.3334 8.99996C9.78115 8.99996 9.33341 8.55223 9.33341 7.99996C9.33341 7.44769 9.78115 6.99996 10.3334 6.99996C10.8857 6.99996 11.3334 7.44769 11.3334 7.99996ZM10.3334 13.3333C10.8857 13.3333 11.3334 12.8856 11.3334 12.3333C11.3334 11.781 10.8857 11.3333 10.3334 11.3333C9.78115 11.3333 9.33341 11.781 9.33341 12.3333C9.33341 12.8856 9.78115 13.3333 10.3334 13.3333Z"
+                      />
+                    </svg>
+                  </span>
+                  <div
+                    class="columns-setting-item"
+                  >
+                    <label
+                      class="ant-checkbox-wrapper ant-checkbox-wrapper-checked css-dev-only-do-not-override-txh9fw"
+                    >
+                      <span
+                        class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                      >
+                        <input
+                          checked=""
+                          class="ant-checkbox-input"
+                          type="checkbox"
+                        />
+                        <span
+                          class="ant-checkbox-inner"
+                        />
+                      </span>
+                      <span>
+                        <div
+                          style="width: 90px;"
+                        >
+                          <div
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+                          >
+                            创建时间
+                          </div>
+                        </div>
+                      </span>
+                    </label>
+                  </div>
+                  <div
+                    class="fixed-options"
+                  >
+                    <span
+                      hidden=""
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-middle"
+                            class="anticon anticon-vertical-align-middle fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-middle"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 474H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zm-353.6-74.7c2.9 3.7 8.5 3.7 11.3 0l100.8-127.5c3.7-4.7.4-11.7-5.7-11.7H550V104c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v156h-62.8c-6 0-9.4 7-5.7 11.7l100.8 127.6zm11.4 225.4a7.14 7.14 0 00-11.3 0L405.6 752.3a7.23 7.23 0 005.7 11.7H474v156c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V764h62.8c6 0 9.4-7 5.7-11.7L517.7 624.7z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                    <span>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-top"
+                            class="anticon anticon-vertical-align-top fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-top"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 168H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zM518.3 355a8 8 0 00-12.6 0l-112 141.7a7.98 7.98 0 006.3 12.9h73.9V848c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V509.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 355z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                    <span>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-bottom"
+                            class="anticon anticon-vertical-align-bottom fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-bottom"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 780H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zM505.7 669a8 8 0 0012.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V176c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="actiontech-table-setting-fixed-right"
+              >
+                <div
+                  class="actiontech-table-setting-fixed-title"
+                >
+                  固定在右侧
+                </div>
+                <div
+                  aria-describedby="DndDescribedBy-1"
+                  aria-disabled="false"
+                  aria-roledescription="sortable"
+                  class="columns-setting-item-wrapper"
+                  role="button"
+                  style="cursor: move;"
+                  tabindex="0"
+                >
+                  <span
+                    class="custom-icon custom-icon-draggable css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.66675 4.66663C6.21903 4.66663 6.66675 4.21891 6.66675 3.66663C6.66675 3.11434 6.21903 2.66663 5.66675 2.66663C5.11446 2.66663 4.66675 3.11434 4.66675 3.66663C4.66675 4.21891 5.11446 4.66663 5.66675 4.66663ZM5.66675 8.99996C6.21903 8.99996 6.66675 8.55223 6.66675 7.99996C6.66675 7.44769 6.21903 6.99996 5.66675 6.99996C5.11446 6.99996 4.66675 7.44769 4.66675 7.99996C4.66675 8.55223 5.11446 8.99996 5.66675 8.99996ZM6.66675 12.3333C6.66675 12.8856 6.21903 13.3333 5.66675 13.3333C5.11446 13.3333 4.66675 12.8856 4.66675 12.3333C4.66675 11.781 5.11446 11.3333 5.66675 11.3333C6.21903 11.3333 6.66675 11.781 6.66675 12.3333ZM10.3334 4.66663C10.8857 4.66663 11.3334 4.21891 11.3334 3.66663C11.3334 3.11434 10.8857 2.66663 10.3334 2.66663C9.78115 2.66663 9.33341 3.11434 9.33341 3.66663C9.33341 4.21891 9.78115 4.66663 10.3334 4.66663ZM11.3334 7.99996C11.3334 8.55223 10.8857 8.99996 10.3334 8.99996C9.78115 8.99996 9.33341 8.55223 9.33341 7.99996C9.33341 7.44769 9.78115 6.99996 10.3334 6.99996C10.8857 6.99996 11.3334 7.44769 11.3334 7.99996ZM10.3334 13.3333C10.8857 13.3333 11.3334 12.8856 11.3334 12.3333C11.3334 11.781 10.8857 11.3333 10.3334 11.3333C9.78115 11.3333 9.33341 11.781 9.33341 12.3333C9.33341 12.8856 9.78115 13.3333 10.3334 13.3333Z"
+                      />
+                    </svg>
+                  </span>
+                  <div
+                    class="columns-setting-item"
+                  >
+                    <label
+                      class="ant-checkbox-wrapper ant-checkbox-wrapper-checked css-dev-only-do-not-override-txh9fw"
+                    >
+                      <span
+                        class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                      >
+                        <input
+                          checked=""
+                          class="ant-checkbox-input"
+                          type="checkbox"
+                        />
+                        <span
+                          class="ant-checkbox-inner"
+                        />
+                      </span>
+                      <span>
+                        <div
+                          style="width: 90px;"
+                        >
+                          <div
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line columns-setting-item-label margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+                          >
+                            工单描述
+                          </div>
+                        </div>
+                      </span>
+                    </label>
+                  </div>
+                  <div
+                    class="fixed-options"
+                  >
+                    <span>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-middle"
+                            class="anticon anticon-vertical-align-middle fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-middle"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 474H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zm-353.6-74.7c2.9 3.7 8.5 3.7 11.3 0l100.8-127.5c3.7-4.7.4-11.7-5.7-11.7H550V104c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v156h-62.8c-6 0-9.4 7-5.7 11.7l100.8 127.6zm11.4 225.4a7.14 7.14 0 00-11.3 0L405.6 752.3a7.23 7.23 0 005.7 11.7H474v156c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V764h62.8c6 0 9.4-7 5.7-11.7L517.7 624.7z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                    <span>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-top"
+                            class="anticon anticon-vertical-align-top fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-top"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 168H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zM518.3 355a8 8 0 00-12.6 0l-112 141.7a7.98 7.98 0 006.3 12.9h73.9V848c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V509.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 355z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                    <span
+                      hidden=""
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            aria-label="vertical-align-bottom"
+                            class="anticon anticon-vertical-align-bottom fixed-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="vertical-align-bottom"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M859.9 780H164.1c-4.5 0-8.1 3.6-8.1 8v60c0 4.4 3.6 8 8.1 8h695.8c4.5 0 8.1-3.6 8.1-8v-60c0-4.4-3.6-8-8.1-8zM505.7 669a8 8 0 0012.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V176c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="DndDescribedBy-1"
+                style="display: none;"
+              >
+                
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+              </div>
+              <div
+                aria-atomic="true"
+                aria-live="assertive"
+                id="DndLiveRegion-1"
+                role="status"
+                style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`lib/ActiontechTable-ColumnsSetting render icon setting snap when in diff scene render icon setting when default scene 1`] = `
 <body>
   <div>
     <button
@@ -64,7 +656,7 @@ exports[`lib/ActiontechTable-ColumnsSetting render setting button 1`] = `
 </body>
 `;
 
-exports[`lib/ActiontechTable-ColumnsSetting render ui change when click setting btn 1`] = `
+exports[`lib/ActiontechTable-ColumnsSetting render icon setting snap when in diff scene render popover cont empty when click icon setting 1`] = `
 <body>
   <div>
     <button
