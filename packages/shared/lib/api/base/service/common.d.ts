@@ -541,6 +541,8 @@ export interface IGetOauth2ConfigurationResData {
   user_id_tag?: string;
 
   user_wechat_tag?: string;
+
+  auto_create_user?: boolean;
 }
 
 export interface IGetOauth2ConfigurationResDataReply {
@@ -1189,6 +1191,8 @@ export interface IOauth2Configuration {
   user_id_tag?: string;
 
   user_wechat_tag?: string;
+
+  auto_create_user?: boolean;
 }
 
 export interface IOpPermissionItem {

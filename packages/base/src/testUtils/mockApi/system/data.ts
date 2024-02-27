@@ -30,7 +30,8 @@ export const oauthConfig = {
   server_auth_url: 'prospero://tpmui.cf/timilp',
   server_token_url: 'mid://juckyny.na/xxsxnmf',
   server_user_id_url: 'cid://hqpbmxvbpl.cd/lcfyjtlkuj',
-  user_id_tag: 'NFkVxY[4Xv^UFU&x&t5y'
+  user_id_tag: 'NFkVxY[4Xv^UFU&x&t5y',
+  auto_create_user: false
 };
 
 export const SMTPConfig: ISMTPConfigurationResData = {
