@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 import { useState } from 'react';
-import { Treemap } from '@ant-design/plots';
+import { Tooltip, Treemap } from '@ant-design/plots';
 import { TreemapConfig } from '@ant-design/plots/es/components/treemap';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 
@@ -16,6 +17,51 @@ import { IWorkflowPercentCountedByInstanceType } from '@actiontech/shared/lib/ap
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
+import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+
+const renderLabelContent = (obj: { [key: string]: any }) => {
+  return obj.name ?? '';
+};
+
+const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
+  return {
+    name: item.name,
+    value: item.value
+  };
+};
+
+const renderTooltipCustomContent = (
+  dataSource: any[],
+  sharedTheme: SharedTheme,
+  totalNum: number
+) => {
+  const data = dataSource[0]?.data?.data;
+  if (!data) return null;
+  const currentColor = dataSource[0]?.color;
+  return (
+    <ChartTooltip
+      sharedTheme={sharedTheme}
+      titleData={{
+        dotColor: currentColor,
+        text: data.name
+      }}
+      listData={[
+        {
+          label: i18n.t(
+            'reportStatistics.databaseTypeOrder.tooltip.number'
+          ) as string,
+          value: formatParamsBySeparator(data.value)
+        },
+        {
+          label: i18n.t(
+            'reportStatistics.databaseTypeOrder.tooltip.proportion'
+          ) as string,
+          value: floatToNumberPercent(data.value, totalNum)
+        }
+      ]}
+    />
+  );
+};
 
 /**
  * todo: 图表的多行 label
@@ -93,46 +139,15 @@ const DatabaseTypeOrder = () => {
       /**
        * todo: label text 多行的文本的居中问题
        */
-      content: (obj, data) => {
-        return obj.name ?? '';
-      },
+      content: renderLabelContent,
       fields: ['name', 'value']
     },
     // ------
     tooltip: {
       fields: ['name', 'value'],
-      formatter: (item: any) => {
-        return {
-          name: item.name,
-          value: item.value
-        };
-      },
-      customContent: (title: string, dataSource: any) => {
-        const data = dataSource[0]?.data?.data;
-        if (!data) return null;
-        const currentColor = dataSource[0]?.color;
-        return (
-          <ChartTooltip
-            sharedTheme={sharedTheme}
-            titleData={{
-              dotColor: currentColor,
-              text: data.name
-            }}
-            listData={[
-              {
-                label: t('reportStatistics.databaseTypeOrder.tooltip.number'),
-                value: formatParamsBySeparator(data.value)
-              },
-              {
-                label: t(
-                  'reportStatistics.databaseTypeOrder.tooltip.proportion'
-                ),
-                value: floatToNumberPercent(data.value, totalNum)
-              }
-            ]}
-          />
-        );
-      },
+      formatter: renderTooltipFormatter,
+      customContent: (title: string, dataSource: any[]) =>
+        renderTooltipCustomContent(dataSource, sharedTheme, totalNum),
       domStyles: getDomStyles(170)
     }
   };
@@ -155,3 +170,9 @@ const DatabaseTypeOrder = () => {
 };
 
 export default DatabaseTypeOrder;
+
+export {
+  renderLabelContent,
+  renderTooltipFormatter,
+  renderTooltipCustomContent
+};
