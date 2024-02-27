@@ -6,6 +6,8 @@ import EEIndex from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import statistic from '../../../testUtils/mockApi/statistic';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -19,6 +21,7 @@ describe('sqle/ReportStatistics/EEIndex', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    MockDate.set(dayjs('2022-01-01 12:00:00').valueOf());
     requestPlotsData = statistic.getInstancesTypePercent();
     mockThemeStyleData();
     mockUseCurrentUser();
