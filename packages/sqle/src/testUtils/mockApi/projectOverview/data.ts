@@ -8,17 +8,18 @@ export const instanceHealthData = [
   },
   {
     db_type: 'Redis',
-    health_instance_names: null,
-    unhealth_instance_names: null
+    health_instance_names: ['redis-1'],
+    unhealth_instance_names: ['redis-2']
   },
   {
-    health_instance_names: null,
-    unhealth_instance_names: null
+    db_type: 'Oracle',
+    health_instance_names: ['oracle-1'],
+    unhealth_instance_names: ['oracle-2']
   },
   {
     db_type: 'PostgreSQL',
     health_instance_names: ['progres-1'],
-    unhealth_instance_names: null
+    unhealth_instance_names: ['progres-2']
   }
 ];
 
