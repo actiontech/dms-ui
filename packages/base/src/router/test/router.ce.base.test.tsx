@@ -58,13 +58,6 @@ describe('base/router-base-ce', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('render router cloudBeaver', async () => {
-      const { baseElement } = customRender(['/cloudBeaver']);
-
-      expect(screen.getByText('cloudBeaver')).toBeInTheDocument();
-      expect(baseElement).toMatchSnapshot();
-    });
-
     it('render router account', async () => {
       const { baseElement } = customRender(['/account']);
 
@@ -73,6 +66,16 @@ describe('base/router-base-ce', () => {
     });
 
     describe('render router project', () => {
+      it('render router cloudBeaver', async () => {
+        const { baseElement } = customRender([
+          `/project/${projectID}/cloudBeaver`
+        ]);
+
+        await act(async () => jest.advanceTimersByTime(0));
+        expect(screen.getByText('cloudBeaver')).toBeInTheDocument();
+        expect(baseElement).toMatchSnapshot();
+      });
+
       it('render route member', async () => {
         const { baseElement } = customRender([`/project/${projectID}/member`]);
 

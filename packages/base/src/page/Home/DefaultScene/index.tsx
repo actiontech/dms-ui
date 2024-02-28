@@ -24,12 +24,12 @@ const DefaultScene: React.FC = () => {
   const steps = isAdmin
     ? AdminUserDevopsSteps({
         navigate,
-        projectID: currentProjectID,
+        projectID: currentProjectID ?? '',
         setOpenRulePageProjectSelectorModal
       })
     : NormalUserDevopsSteps({
         navigate,
-        projectID: currentProjectID,
+        projectID: currentProjectID ?? '',
         setOpenRulePageProjectSelectorModal
       });
 

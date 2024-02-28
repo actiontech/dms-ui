@@ -56,11 +56,6 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     role: [SystemRole.admin]
   },
   {
-    path: 'cloudBeaver',
-    key: 'cloudBeaver',
-    element: <CloudBeaver />
-  },
-  {
     path: 'account',
     hideInMenu: true,
     key: 'account',
@@ -82,6 +77,11 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         path: `${PROJECT_ROUTER_PARAM}/member`,
         key: 'member',
         element: <Member />
+      },
+      {
+        path: `${PROJECT_ROUTER_PARAM}/cloudBeaver`,
+        key: 'cloudBeaver',
+        element: <CloudBeaver />
       },
       {
         path: `${PROJECT_ROUTER_PARAM}/db-services`,

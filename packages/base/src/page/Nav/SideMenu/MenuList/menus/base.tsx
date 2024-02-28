@@ -53,7 +53,7 @@ export const BaseMenuItems: GenerateMenuItemsType = ({
           label: t('dmsMenu.SQLQuery'),
           icon: <Icon component={IconSQLQuery} />,
           key: `cloudBeaver`,
-          onClick: () => navigate(`/cloudBeaver`)
+          onClick: () => navigate(`/project/${projectID}/cloudBeaver`)
         },
         {
           label: t('dmsMenu.dataExportManagement'),

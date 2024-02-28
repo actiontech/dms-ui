@@ -11,16 +11,21 @@ import {
   CloudBeaverContentIconStyleWrapper
 } from './style';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 const CloudBeaver = () => {
   const { t } = useTranslation();
+  const { projectID } = useCurrentProject();
   const location = useLocation();
   const cloudBeaverUrl = useRef('');
 
   const { data, loading } = useRequest(() => {
     return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
-      if (res?.data.data?.enable_sql_query) {
-        cloudBeaverUrl.current = res?.data.data.sql_query_root_uri as string;
+      if (
+        res?.data.data?.enable_sql_query &&
+        res.data.data.sql_query_root_uri
+      ) {
+        cloudBeaverUrl.current = `${res.data.data.sql_query_root_uri}?project_uid=${projectID}`;
 
         const params = new URLSearchParams(location.search);
 

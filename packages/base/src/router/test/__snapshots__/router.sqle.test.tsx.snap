@@ -497,13 +497,6 @@ Array [
   },
   Object {
     "element": <div>
-      cloudBeaver
-    </div>,
-    "key": "cloudBeaver",
-    "path": "cloudBeaver",
-  },
-  Object {
-    "element": <div>
       account
     </div>,
     "key": "account",
@@ -524,6 +517,13 @@ Array [
         </div>,
         "key": "member",
         "path": ":projectID/member",
+      },
+      Object {
+        "element": <div>
+          cloudBeaver
+        </div>,
+        "key": "cloudBeaver",
+        "path": ":projectID/cloudBeaver",
       },
       Object {
         "children": Array [

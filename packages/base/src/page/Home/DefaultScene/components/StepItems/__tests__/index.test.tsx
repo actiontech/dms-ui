@@ -44,7 +44,7 @@ describe('test base/Home/StepItems', () => {
 
     fireEvent.click(screen.getByText('进入SQL工作台'));
     expect(navigateSpy).toBeCalledTimes(6);
-    expect(navigateSpy).toBeCalledWith(`/cloudBeaver`);
+    expect(navigateSpy).toBeCalledWith(`/project/${projectID}/cloudBeaver`);
 
     fireEvent.click(screen.getByText('查看审核规则'));
     expect(navigateSpy).toBeCalledTimes(7);
@@ -87,7 +87,7 @@ describe('test base/Home/StepItems', () => {
     fireEvent.click(screen.getByText('发起导出工单'));
     expect(navigateSpy).toBeCalledTimes(14);
     expect(navigateSpy).toBeCalledWith(
-      `project/${projectID}/data/export/create`
+      `/project/${projectID}/data/export/create`
     );
 
     cleanup();
@@ -95,7 +95,7 @@ describe('test base/Home/StepItems', () => {
 
     const steps_admin_not_project = AdminUserDevopsSteps({
       navigate: navigateSpy,
-      projectID: undefined,
+      projectID: '',
       setOpenRulePageProjectSelectorModal:
         setOpenRulePageProjectSelectorModalSpy
     });
@@ -109,6 +109,7 @@ describe('test base/Home/StepItems', () => {
     cleanup();
 
     const steps_normal = NormalUserDevopsSteps({
+      projectID: '',
       navigate: navigateSpy
     });
 
