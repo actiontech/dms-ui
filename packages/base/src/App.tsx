@@ -63,18 +63,15 @@ export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 function App() {
-  const { token, theme, role } = useSelector((state: IReduxState) => ({
-    token: state.user.token,
-    userUid: state.user.uid,
-    theme: state.user.theme,
-    role: state.user.role
+  const { token } = useSelector((state: IReduxState) => ({
+    token: state.user.token
   }));
 
   const { notificationContextHolder } = useNotificationContext();
 
   const { getUserBySession } = useSessionUser();
 
-  const { useInfoFetched } = useCurrentUser();
+  const { useInfoFetched, isAdmin, theme, role } = useCurrentUser();
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
 
   // #if [ee]
@@ -82,9 +79,9 @@ function App() {
   useRequest(
     () =>
       dms.GetBasicInfo().then((res) => {
-        const basicInfoRes = res.data.data;
-
-        if (basicInfoRes) syncWebTitleAndLogo(basicInfoRes);
+        if (res.data.data) {
+          syncWebTitleAndLogo(res.data.data);
+        }
       }),
     {
       ready: !!token
@@ -125,13 +122,12 @@ function App() {
     );
   };
   const AuthRouterConfigData = useMemo(() => {
-    const isAdmin: boolean = role === SystemRole.admin;
     if (isAdmin) {
       return AuthRouterConfig;
     }
     return filterRoutesByRole(AuthRouterConfig, role);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [role]);
+  }, [isAdmin]);
 
   const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
   useChangeTheme();
