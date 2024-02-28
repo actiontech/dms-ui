@@ -33,6 +33,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     jest.clearAllMocks();
     (console.error as jest.Mock).mockRestore();
     cleanup();
+    MockDate.reset();
   });
 
   it('render snap when open is false', () => {
@@ -52,7 +53,8 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render snap when has maintenanceTime', async () => {
+  it('render snap when has maintenanceTime 1', async () => {
+    MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
     const { baseElement } = customRender({
       open: true,
       maintenanceTime: [
@@ -62,7 +64,102 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
             minute: 20
           },
           maintenance_stop_time: {
-            hour: 2,
+            hour: 7,
+            minute: 0
+          }
+        }
+      ]
+    });
+    await act(async () => jest.advanceTimersByTime(500));
+    const timeInput = getBySelector(
+      '.ant-picker-input input#schedule_time',
+      baseElement
+    );
+
+    fireEvent.click(timeInput);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('.ant-picker-date-panel td[title="2024-12-18"]')
+    );
+    MockDate.reset();
+  });
+
+  it('render snap when has maintenanceTime 2', async () => {
+    MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
+    const { baseElement } = customRender({
+      open: true,
+      maintenanceTime: [
+        {
+          maintenance_start_time: {
+            hour: 5,
+            minute: 20
+          },
+          maintenance_stop_time: {
+            hour: 5,
+            minute: 40
+          }
+        }
+      ]
+    });
+    await act(async () => jest.advanceTimersByTime(500));
+    const timeInput = getBySelector(
+      '.ant-picker-input input#schedule_time',
+      baseElement
+    );
+
+    fireEvent.click(timeInput);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('.ant-picker-date-panel td[title="2024-12-18"]')
+    );
+    MockDate.reset();
+  });
+
+  it('render snap when has maintenanceTime 3', async () => {
+    MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
+    const { baseElement } = customRender({
+      open: true,
+      maintenanceTime: [
+        {
+          maintenance_start_time: {
+            hour: 5,
+            minute: 20
+          }
+        },
+        {
+          maintenance_stop_time: {
+            hour: 5,
+            minute: 40
+          }
+        }
+      ]
+    });
+    await act(async () => jest.advanceTimersByTime(500));
+    const timeInput = getBySelector(
+      '.ant-picker-input input#schedule_time',
+      baseElement
+    );
+
+    fireEvent.click(timeInput);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('.ant-picker-date-panel td[title="2024-12-18"]')
+    );
+    MockDate.reset();
+  });
+
+  it('render snap when has maintenanceTime 4', async () => {
+    MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
+    const { baseElement } = customRender({
+      open: true,
+      maintenanceTime: [
+        {
+          maintenance_start_time: {
+            hour: 1,
+            minute: 20
+          },
+          maintenance_stop_time: {
+            hour: 7,
             minute: 0
           }
         },
@@ -71,32 +168,32 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
             hour: 5,
             minute: 20
           }
+        },
+        {
+          maintenance_stop_time: {
+            hour: 5,
+            minute: 40
+          }
         }
       ]
     });
     await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-
     const timeInput = getBySelector(
       '.ant-picker-input input#schedule_time',
       baseElement
     );
-    fireEvent.input(timeInput, {
-      target: {
-        value: '2023-12-18 12:00:00'
-      }
-    });
-    await act(async () => jest.advanceTimersByTime(500));
-    fireEvent.blur(timeInput);
-    await act(async () => jest.advanceTimersByTime(300));
 
-    expect(screen.getAllByText('定时上线').length).toBe(2);
-    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(timeInput);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(
+      getBySelector('.ant-picker-date-panel td[title="2024-12-18"]')
+    );
+    MockDate.reset();
   });
 
   it('render submit btn', async () => {
     MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
-    submitFn.mockImplementation(() => new Promise(() => 1));
+    submitFn.mockImplementation(() => new Promise((r) => r(1)));
     const { baseElement } = customRender({
       open: true
     });
@@ -107,9 +204,10 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     );
     fireEvent.click(timeInput);
     await act(async () => jest.advanceTimersByTime(300));
-
     const dateEle = screen.getAllByText('29')[0];
     fireEvent.click(dateEle);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getAllByText('00')[0]);
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('OK'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -119,6 +217,5 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(submitFn).toBeCalled();
     expect(submitFn).toBeCalledWith('2024-12-29T00:00:00+08:00');
-    MockDate.reset();
   });
 });

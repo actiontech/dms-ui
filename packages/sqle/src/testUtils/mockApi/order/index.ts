@@ -8,7 +8,8 @@ import {
   AuditTaskSQLsData,
   WorkflowTasksItemData,
   WorkflowTemplateData,
-  orderListData
+  orderListData,
+  workflowsOverviewListData
 } from './data';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
@@ -34,6 +35,9 @@ class MockOrderApi implements MockSpyApy {
     this.downloadAuditTaskSQLFile();
     this.downloadAuditTaskSQLReport();
     this.getWorkflow();
+    this.approveWorkflow();
+    this.rejectWorkflow();
+    this.executeTasksOnWorkflow();
   }
 
   public getWorkflows() {
@@ -76,20 +80,15 @@ class MockOrderApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: {
-          task_group_id: 13,
-          tasks: [
-            {
-              task_id: 18,
-              instance_name: 'mysql2',
-              instance_db_type: 'MySQL',
-              instance_schema: 'dms',
-              audit_level: '',
-              score: 100,
-              pass_rate: 1,
-              status: 'audited',
-              sql_source: 'form_data'
-            }
-          ]
+          task_id: 18,
+          instance_name: 'mysql2',
+          instance_db_type: 'MySQL',
+          instance_schema: 'dms',
+          audit_level: '',
+          score: 100,
+          pass_rate: 1,
+          status: 'audited',
+          sql_source: 'form_data'
         }
       })
     );
@@ -220,6 +219,40 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
 
   public getWorkflow() {
     const spy = jest.spyOn(workflow, 'getWorkflowV2');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: workflowsOverviewListData
+      })
+    );
+    return spy;
+  }
+
+  public approveWorkflow() {
+    const spy = jest.spyOn(workflow, 'approveWorkflowV2');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public rejectWorkflow() {
+    const spy = jest.spyOn(workflow, 'rejectWorkflowV2');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public executeTasksOnWorkflow() {
+    const spy = jest.spyOn(workflow, 'executeTasksOnWorkflowV2');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public batchCompleteWorkflows() {
+    const spy = jest.spyOn(workflow, 'batchCompleteWorkflowsV2');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public terminateMultipleTaskByWorkflow() {
+    const spy = jest.spyOn(workflow, 'terminateMultipleTaskByWorkflowV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
