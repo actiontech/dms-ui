@@ -1,5 +1,8 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
+import {
+  renderWithThemeAndRedux,
+  renderHooksWithTheme
+} from '../../../../../../testUtils/customRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
 import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
@@ -7,7 +10,14 @@ import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockTh
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
-import DatabaseTypeOrder from '.';
+import DatabaseTypeOrder, {
+  renderLabelContent,
+  renderTooltipFormatter,
+  renderTooltipCustomContent
+} from '.';
+import { ThemeData, SupportTheme } from '../../../../../../theme';
+
+const themeData = ThemeData[SupportTheme.LIGHT];
 
 describe('ReportStatistics/DatabaseTypeOrder', () => {
   ignoreAntdPlotsAttr();
@@ -43,5 +53,55 @@ describe('ReportStatistics/DatabaseTypeOrder', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(requestPlotsData).toBeCalled();
+  });
+
+  it('render empty count for workflow', async () => {
+    requestPlotsData.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          workflow_total_num: 2,
+          workflow_percents: [
+            undefined,
+            {
+              percent: 91
+            }
+          ]
+        }
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(requestPlotsData).toBeCalled();
+  });
+
+  it('render label content', async () => {
+    const { result } = renderHooksWithTheme(() => renderLabelContent({}));
+    expect(result.current).toStrictEqual('');
+  });
+
+  it('render tooltip formatter', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipFormatter?.({ name: '', value: '' })
+    );
+    expect(result.current).toStrictEqual({ name: '', value: '' });
+  });
+
+  it('render empty tooltip customContent', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipCustomContent([], themeData.sharedTheme, 1)
+    );
+    expect(result.current).toBe(null);
+  });
+
+  it('render tooltip customContent', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipCustomContent(
+        [{ color: 'red', data: { data: { name: 'test', value: '12' } } }],
+        themeData.sharedTheme,
+        1
+      )
+    );
+    expect(result.current).toMatchSnapshot();
   });
 });

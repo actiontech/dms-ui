@@ -1,9 +1,21 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
+import {
+  renderHooksWithTheme,
+  renderWithThemeAndRedux
+} from '../../../../../../testUtils/customRender';
 
 import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import LicenseColumn, { ILicenseColumn } from './licenseColumn';
+import LicenseColumn, {
+  ILicenseColumn,
+  renderLabelFormatter,
+  renderLabelContent,
+  renderTooltipFormatter,
+  renderTooltipCustomContent
+} from './licenseColumn';
+import { ThemeData, SupportTheme } from '../../../../../../theme';
+
+const themeData = ThemeData[SupportTheme.LIGHT];
 
 describe('ReportStatistics/LicenseStatistics/LicenseColumn', () => {
   const ignoreAntdPlotsAttrAndFCRef = () => {
@@ -81,5 +93,64 @@ describe('ReportStatistics/LicenseStatistics/LicenseColumn', () => {
       }
     ]);
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render label formatter with full text', async () => {
+    const { result } = renderHooksWithTheme(() => renderLabelFormatter('1', 1));
+    expect(result.current).toStrictEqual('1');
+  });
+
+  it('render label formatter with ellipsis', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderLabelFormatter('1234', 3)
+    );
+    expect(result.current).toStrictEqual('1...');
+  });
+
+  it('render label content with limit', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderLabelContent({ value: 1, limit: 1 })
+    );
+    expect(result.current).toStrictEqual('100.00%');
+  });
+
+  it('render label content without limit', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderLabelContent({ value: 1 })
+    );
+    expect(result.current).toStrictEqual(1);
+  });
+
+  it('render tooltip formatter', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipFormatter?.({ type: '', value: '' })
+    );
+    expect(result.current).toStrictEqual({ name: '', value: '' });
+  });
+
+  it('render empty tooltip customContent', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipCustomContent([], themeData.sharedTheme)
+    );
+    expect(result.current).toBe(null);
+  });
+
+  it('render tooltip customContent', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipCustomContent(
+        [
+          {
+            color: 'red',
+            data: {
+              type: 'User',
+              value: 0,
+              limit: 0
+            }
+          }
+        ],
+        themeData.sharedTheme
+      )
+    );
+    expect(result.current).toMatchSnapshot();
   });
 });
