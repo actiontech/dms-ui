@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test useNotificationContext test openNotification 1`] = `
+Object {
+  "className": "cls",
+  "description": <Styled(span)>
+    description
+  </Styled(span)>,
+  "message": <Styled(span)>
+    message
+  </Styled(span)>,
+}
+`;
+
+exports[`test useNotificationContext test openNotification 2`] = `
+Object {
+  "className": "cls",
+  "description": <span>
+    description
+  </span>,
+  "message": <span>
+    message
+  </span>,
+}
+`;
+
+exports[`test useNotificationContext test openNotification 3`] = `
+<div>
+  <span
+    class="css-1un16i1"
+  >
+    message
+  </span>
+</div>
+`;
+
+exports[`test useNotificationContext test openNotification 4`] = `
+<div>
+  <span
+    class="css-53w91z"
+  >
+    description
+  </span>
+</div>
+`;
