@@ -5,7 +5,7 @@ import { BasicSegmented, EmptyBox } from '@actiontech/shared';
 import { GetAuditTaskPrams, OrderDetailAuditResultProps } from './index.type';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import InstanceSegmentedLabel from '../Common/InstanceSegmentedLabel';
-import { useState, useRef, useCallback, useMemo } from 'react';
+import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import OrderDetailAuditResultList from './List';
 import {
   TableFilterButton,
@@ -122,7 +122,6 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
         pagination,
         duplicate,
         auditResultActiveKey,
-        auditLevelFilterValue,
         currentListLayout,
         orderStatus
       ]
@@ -251,6 +250,11 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
     [auditResultActiveKey, taskInfos]
   );
 
+  useEffect(() => {
+    setPagination({ page_index: 1, page_size: pagination.page_size });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auditLevelFilterValue]);
+
   return (
     <OrderDetailAuditResultStyleWrapper>
       <div className="audit-result-title">{t('audit.result')}</div>
@@ -298,7 +302,6 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
           />
         </Space>
       </SegmentedRowStyleWrapper>
-
       <TableFilterContainer
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
@@ -308,7 +311,6 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
           ])
         }
       />
-
       <EmptyBox if={auditResultActiveKey === OVERVIEW_TAB_KEY}>
         <OrderDetailAuditResultList
           workflowID={orderInfo?.workflow_id ?? ''}
@@ -317,7 +319,6 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
           {...props}
         />
       </EmptyBox>
-
       <EmptyBox if={auditResultActiveKey !== OVERVIEW_TAB_KEY}>
         {/* todo: 数据需要后端接口支持 http://10.186.18.11/jira/browse/DMS-424*/}
         <AuditResultFilterContainer<AuditResultExecStatusFilterType>
