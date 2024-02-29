@@ -176,4 +176,19 @@ describe('App', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should jump to provision when url contains', async () => {
+    useLocationMock.mockReturnValue({
+      pathname: '/provision',
+      search: '',
+      hash: '',
+      state: null,
+      key: '5nvxpbdafa'
+    });
+    const { container } = superRender(<App />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -190,42 +190,62 @@ exports[`base/page/Nav/SideMenu/MenuList render is admin snap when has location 
         </span>
       </li>
       <li
-        class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operationRecord"
-        role="menuitem"
-        style="padding-left: 24px;"
-        tabindex="-1"
+        class="ant-menu-submenu ant-menu-submenu-inline"
+        role="none"
       >
-        <span
-          class="anticon ant-menu-item-icon"
-          role="img"
+        <div
+          aria-controls="rc-menu-uuid-test-operateAndAudit-popup"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="ant-menu-submenu-title"
+          data-menu-id="rc-menu-uuid-test-operateAndAudit"
+          role="menuitem"
+          style="padding-left: 24px;"
+          tabindex="-1"
         >
+          <span
+            class="anticon ant-menu-item-icon"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
+                fill="#C3C6CD"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
+                fill="#8A8F99"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span
+            class="ant-menu-title-content"
+          >
+            操作与审计
+          </span>
           <svg
             fill="none"
-            height="18"
-            viewBox="0 0 18 18"
-            width="18"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"
-              d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
-              fill="#C3C6CD"
-              fill-rule="evenodd"
-            />
-            <path
-              clip-rule="evenodd"
-              d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
-              fill="#8A8F99"
-              fill-rule="evenodd"
+              d="M8.00048 8.78132L11.3005 5.48132L12.2431 6.42399L8.00048 10.6667L3.75781 6.42399L4.70048 5.48132L8.00048 8.78132Z"
+              fill="currentColor"
             />
           </svg>
-        </span>
-        <span
-          class="ant-menu-title-content"
-        >
-          操作与审计
-        </span>
+        </div>
       </li>
       <li
         class="ant-menu-item-group"
@@ -595,6 +615,127 @@ exports[`base/page/Nav/SideMenu/MenuList render is admin snap when has location 
               class="ant-menu-title-content"
             >
               扫描任务
+            </span>
+          </li>
+        </ul>
+      </li>
+      <li
+        class="ant-menu-item-divider"
+      />
+      <li
+        class="ant-menu-item-group"
+        order="10"
+        role="presentation"
+      >
+        <div
+          class="ant-menu-item-group-title"
+          role="presentation"
+          title="数据安全"
+        >
+          数据安全
+        </div>
+        <ul
+          class="ant-menu-item-group-list"
+          role="group"
+        >
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/data/operation"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 6H15C15.1989 6 15.3897 6.07902 15.5303 6.21967C15.671 6.36032 15.75 6.55109 15.75 6.75V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V6.75C2.25 6.55109 2.32902 6.36032 2.46967 6.21967C2.61032 6.07902 2.80109 6 3 6H4.5V5.25C4.5 4.05653 4.97411 2.91193 5.81802 2.06802C6.66193 1.22411 7.80653 0.75 9 0.75C10.1935 0.75 11.3381 1.22411 12.182 2.06802C13.0259 2.91193 13.5 4.05653 13.5 5.25V6ZM12 6V5.25C12 4.45435 11.6839 3.69129 11.1213 3.12868C10.5587 2.56607 9.79565 2.25 9 2.25C8.20435 2.25 7.44129 2.56607 6.87868 3.12868C6.31607 3.69129 6 4.45435 6 5.25V6H12ZM8.25 10.5V12H9.75V10.5H8.25ZM5.25 10.5V12H6.75V10.5H5.25ZM11.25 10.5V12H12.75V10.5H11.25Z"
+                  fill="#C3C6CD"
+                />
+                <path
+                  d="M12 6V5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25V6H4.5V5.25C4.5 2.76472 6.51472 0.75 9 0.75C11.4853 0.75 13.5 2.76472 13.5 5.25V6H12Z"
+                  fill="#8A8F99"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              权限组
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/template"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              权限模板
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/list"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.49414 10.5H12.7502V13.5H15.7502V10.5H17.2502V7.5H9.49414V10.5Z"
+                  fill="#8A8F99"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M5.25 13.5C7.73528 13.5 9.75 11.4853 9.75 9C9.75 6.51472 7.73528 4.5 5.25 4.5C2.76472 4.5 0.75 6.51472 0.75 9C0.75 11.4853 2.76472 13.5 5.25 13.5ZM5.25 10.5C6.07843 10.5 6.75 9.82843 6.75 9C6.75 8.17157 6.07843 7.5 5.25 7.5C4.42157 7.5 3.75 8.17157 3.75 9C3.75 9.82843 4.42157 10.5 5.25 10.5Z"
+                  fill="#C3C6CD"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              授权清单
             </span>
           </li>
         </ul>
@@ -798,6 +939,64 @@ exports[`base/page/Nav/SideMenu/MenuList render is not admin snap when has locat
         </span>
       </li>
       <li
+        class="ant-menu-submenu ant-menu-submenu-inline"
+        role="none"
+      >
+        <div
+          aria-controls="rc-menu-uuid-test-operateAndAudit-popup"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="ant-menu-submenu-title"
+          data-menu-id="rc-menu-uuid-test-operateAndAudit"
+          role="menuitem"
+          style="padding-left: 24px;"
+          tabindex="-1"
+        >
+          <span
+            class="anticon ant-menu-item-icon"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
+                fill="#C3C6CD"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
+                fill="#8A8F99"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span
+            class="ant-menu-title-content"
+          >
+            操作与审计
+          </span>
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.00048 8.78132L11.3005 5.48132L12.2431 6.42399L8.00048 10.6667L3.75781 6.42399L4.70048 5.48132L8.00048 8.78132Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
         class="ant-menu-item-group"
         order="6"
         role="presentation"
@@ -1165,6 +1364,127 @@ exports[`base/page/Nav/SideMenu/MenuList render is not admin snap when has locat
               class="ant-menu-title-content"
             >
               扫描任务
+            </span>
+          </li>
+        </ul>
+      </li>
+      <li
+        class="ant-menu-item-divider"
+      />
+      <li
+        class="ant-menu-item-group"
+        order="10"
+        role="presentation"
+      >
+        <div
+          class="ant-menu-item-group-title"
+          role="presentation"
+          title="数据安全"
+        >
+          数据安全
+        </div>
+        <ul
+          class="ant-menu-item-group-list"
+          role="group"
+        >
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/data/operation"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 6H15C15.1989 6 15.3897 6.07902 15.5303 6.21967C15.671 6.36032 15.75 6.55109 15.75 6.75V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V6.75C2.25 6.55109 2.32902 6.36032 2.46967 6.21967C2.61032 6.07902 2.80109 6 3 6H4.5V5.25C4.5 4.05653 4.97411 2.91193 5.81802 2.06802C6.66193 1.22411 7.80653 0.75 9 0.75C10.1935 0.75 11.3381 1.22411 12.182 2.06802C13.0259 2.91193 13.5 4.05653 13.5 5.25V6ZM12 6V5.25C12 4.45435 11.6839 3.69129 11.1213 3.12868C10.5587 2.56607 9.79565 2.25 9 2.25C8.20435 2.25 7.44129 2.56607 6.87868 3.12868C6.31607 3.69129 6 4.45435 6 5.25V6H12ZM8.25 10.5V12H9.75V10.5H8.25ZM5.25 10.5V12H6.75V10.5H5.25ZM11.25 10.5V12H12.75V10.5H11.25Z"
+                  fill="#C3C6CD"
+                />
+                <path
+                  d="M12 6V5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25V6H4.5V5.25C4.5 2.76472 6.51472 0.75 9 0.75C11.4853 0.75 13.5 2.76472 13.5 5.25V6H12Z"
+                  fill="#8A8F99"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              权限组
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/template"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              权限模板
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/list"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.49414 10.5H12.7502V13.5H15.7502V10.5H17.2502V7.5H9.49414V10.5Z"
+                  fill="#8A8F99"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M5.25 13.5C7.73528 13.5 9.75 11.4853 9.75 9C9.75 6.51472 7.73528 4.5 5.25 4.5C2.76472 4.5 0.75 6.51472 0.75 9C0.75 11.4853 2.76472 13.5 5.25 13.5ZM5.25 10.5C6.07843 10.5 6.75 9.82843 6.75 9C6.75 8.17157 6.07843 7.5 5.25 7.5C4.42157 7.5 3.75 8.17157 3.75 9C3.75 9.82843 4.42157 10.5 5.25 10.5Z"
+                  fill="#C3C6CD"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              授权清单
             </span>
           </li>
         </ul>
@@ -1368,42 +1688,62 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 1`] = `
         </span>
       </li>
       <li
-        class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operationRecord"
-        role="menuitem"
-        style="padding-left: 24px;"
-        tabindex="-1"
+        class="ant-menu-submenu ant-menu-submenu-inline"
+        role="none"
       >
-        <span
-          class="anticon ant-menu-item-icon"
-          role="img"
+        <div
+          aria-controls="rc-menu-uuid-test-operateAndAudit-popup"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="ant-menu-submenu-title"
+          data-menu-id="rc-menu-uuid-test-operateAndAudit"
+          role="menuitem"
+          style="padding-left: 24px;"
+          tabindex="-1"
         >
+          <span
+            class="anticon ant-menu-item-icon"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
+                fill="#C3C6CD"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
+                fill="#8A8F99"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span
+            class="ant-menu-title-content"
+          >
+            操作与审计
+          </span>
           <svg
             fill="none"
-            height="18"
-            viewBox="0 0 18 18"
-            width="18"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"
-              d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
-              fill="#C3C6CD"
-              fill-rule="evenodd"
-            />
-            <path
-              clip-rule="evenodd"
-              d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
-              fill="#8A8F99"
-              fill-rule="evenodd"
+              d="M8.00048 8.78132L11.3005 5.48132L12.2431 6.42399L8.00048 10.6667L3.75781 6.42399L4.70048 5.48132L8.00048 8.78132Z"
+              fill="currentColor"
             />
           </svg>
-        </span>
-        <span
-          class="ant-menu-title-content"
-        >
-          操作与审计
-        </span>
+        </div>
       </li>
       <li
         class="ant-menu-item-group"
@@ -1773,6 +2113,127 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 1`] = `
               class="ant-menu-title-content"
             >
               扫描任务
+            </span>
+          </li>
+        </ul>
+      </li>
+      <li
+        class="ant-menu-item-divider"
+      />
+      <li
+        class="ant-menu-item-group"
+        order="10"
+        role="presentation"
+      >
+        <div
+          class="ant-menu-item-group-title"
+          role="presentation"
+          title="数据安全"
+        >
+          数据安全
+        </div>
+        <ul
+          class="ant-menu-item-group-list"
+          role="group"
+        >
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/data/operation"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 6H15C15.1989 6 15.3897 6.07902 15.5303 6.21967C15.671 6.36032 15.75 6.55109 15.75 6.75V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V6.75C2.25 6.55109 2.32902 6.36032 2.46967 6.21967C2.61032 6.07902 2.80109 6 3 6H4.5V5.25C4.5 4.05653 4.97411 2.91193 5.81802 2.06802C6.66193 1.22411 7.80653 0.75 9 0.75C10.1935 0.75 11.3381 1.22411 12.182 2.06802C13.0259 2.91193 13.5 4.05653 13.5 5.25V6ZM12 6V5.25C12 4.45435 11.6839 3.69129 11.1213 3.12868C10.5587 2.56607 9.79565 2.25 9 2.25C8.20435 2.25 7.44129 2.56607 6.87868 3.12868C6.31607 3.69129 6 4.45435 6 5.25V6H12ZM8.25 10.5V12H9.75V10.5H8.25ZM5.25 10.5V12H6.75V10.5H5.25ZM11.25 10.5V12H12.75V10.5H11.25Z"
+                  fill="#C3C6CD"
+                />
+                <path
+                  d="M12 6V5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25V6H4.5V5.25C4.5 2.76472 6.51472 0.75 9 0.75C11.4853 0.75 13.5 2.76472 13.5 5.25V6H12Z"
+                  fill="#8A8F99"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              权限组
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/template"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              权限模板
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/list"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.49414 10.5H12.7502V13.5H15.7502V10.5H17.2502V7.5H9.49414V10.5Z"
+                  fill="#8A8F99"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M5.25 13.5C7.73528 13.5 9.75 11.4853 9.75 9C9.75 6.51472 7.73528 4.5 5.25 4.5C2.76472 4.5 0.75 6.51472 0.75 9C0.75 11.4853 2.76472 13.5 5.25 13.5ZM5.25 10.5C6.07843 10.5 6.75 9.82843 6.75 9C6.75 8.17157 6.07843 7.5 5.25 7.5C4.42157 7.5 3.75 8.17157 3.75 9C3.75 9.82843 4.42157 10.5 5.25 10.5Z"
+                  fill="#C3C6CD"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              授权清单
             </span>
           </li>
         </ul>
@@ -3899,6 +4360,64 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is not admin 1`] = `
         </span>
       </li>
       <li
+        class="ant-menu-submenu ant-menu-submenu-inline"
+        role="none"
+      >
+        <div
+          aria-controls="rc-menu-uuid-test-operateAndAudit-popup"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="ant-menu-submenu-title"
+          data-menu-id="rc-menu-uuid-test-operateAndAudit"
+          role="menuitem"
+          style="padding-left: 24px;"
+          tabindex="-1"
+        >
+          <span
+            class="anticon ant-menu-item-icon"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
+                fill="#C3C6CD"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
+                fill="#8A8F99"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span
+            class="ant-menu-title-content"
+          >
+            操作与审计
+          </span>
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.00048 8.78132L11.3005 5.48132L12.2431 6.42399L8.00048 10.6667L3.75781 6.42399L4.70048 5.48132L8.00048 8.78132Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
         class="ant-menu-item-group"
         order="6"
         role="presentation"
@@ -4266,6 +4785,127 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is not admin 1`] = `
               class="ant-menu-title-content"
             >
               扫描任务
+            </span>
+          </li>
+        </ul>
+      </li>
+      <li
+        class="ant-menu-item-divider"
+      />
+      <li
+        class="ant-menu-item-group"
+        order="10"
+        role="presentation"
+      >
+        <div
+          class="ant-menu-item-group-title"
+          role="presentation"
+          title="数据安全"
+        >
+          数据安全
+        </div>
+        <ul
+          class="ant-menu-item-group-list"
+          role="group"
+        >
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/data/operation"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 6H15C15.1989 6 15.3897 6.07902 15.5303 6.21967C15.671 6.36032 15.75 6.55109 15.75 6.75V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V6.75C2.25 6.55109 2.32902 6.36032 2.46967 6.21967C2.61032 6.07902 2.80109 6 3 6H4.5V5.25C4.5 4.05653 4.97411 2.91193 5.81802 2.06802C6.66193 1.22411 7.80653 0.75 9 0.75C10.1935 0.75 11.3381 1.22411 12.182 2.06802C13.0259 2.91193 13.5 4.05653 13.5 5.25V6ZM12 6V5.25C12 4.45435 11.6839 3.69129 11.1213 3.12868C10.5587 2.56607 9.79565 2.25 9 2.25C8.20435 2.25 7.44129 2.56607 6.87868 3.12868C6.31607 3.69129 6 4.45435 6 5.25V6H12ZM8.25 10.5V12H9.75V10.5H8.25ZM5.25 10.5V12H6.75V10.5H5.25ZM11.25 10.5V12H12.75V10.5H11.25Z"
+                  fill="#C3C6CD"
+                />
+                <path
+                  d="M12 6V5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25V6H4.5V5.25C4.5 2.76472 6.51472 0.75 9 0.75C11.4853 0.75 13.5 2.76472 13.5 5.25V6H12Z"
+                  fill="#8A8F99"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              权限组
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/template"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              权限模板
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/list"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.49414 10.5H12.7502V13.5H15.7502V10.5H17.2502V7.5H9.49414V10.5Z"
+                  fill="#8A8F99"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M5.25 13.5C7.73528 13.5 9.75 11.4853 9.75 9C9.75 6.51472 7.73528 4.5 5.25 4.5C2.76472 4.5 0.75 6.51472 0.75 9C0.75 11.4853 2.76472 13.5 5.25 13.5ZM5.25 10.5C6.07843 10.5 6.75 9.82843 6.75 9C6.75 8.17157 6.07843 7.5 5.25 7.5C4.42157 7.5 3.75 8.17157 3.75 9C3.75 9.82843 4.42157 10.5 5.25 10.5Z"
+                  fill="#C3C6CD"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              授权清单
             </span>
           </li>
         </ul>
