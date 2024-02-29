@@ -126,7 +126,7 @@ class StatisticAPI implements MockSpyApy {
     const spy = jest.spyOn(statistic, 'getWorkflowCreatedCountEachDayV1');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: WorkflowCreatedCountEachDayData
+        data: { samples: WorkflowCreatedCountEachDayData }
       })
     );
     return spy;
