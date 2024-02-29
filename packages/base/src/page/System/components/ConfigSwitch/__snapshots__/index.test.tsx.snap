@@ -23,7 +23,7 @@ exports[`base/System/components/ConfigSwitch render snap when modifyFlag is fals
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                  class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
                   disabled=""
                   id="enabled"
                   role="switch"
@@ -160,7 +160,7 @@ exports[`base/System/components/ConfigSwitch render snap when switch disabled 1`
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                  class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
                   disabled=""
                   id="enabled"
                   role="switch"

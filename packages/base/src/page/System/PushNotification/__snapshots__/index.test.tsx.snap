@@ -193,7 +193,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enable"
                                           role="switch"
                                           type="button"
@@ -786,7 +786,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enable_wechat_notify"
                                           role="switch"
                                           type="button"
@@ -1298,7 +1298,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -1698,7 +1698,7 @@ exports[`base/setting/pushNotification render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enable"
                                           role="switch"
                                           type="button"
@@ -2266,7 +2266,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="true"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                           id="enable"
                                           role="switch"
                                           type="button"
@@ -2965,7 +2965,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enable_wechat_notify"
                                           role="switch"
                                           type="button"
@@ -3453,7 +3453,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="true"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -3869,7 +3869,7 @@ exports[`base/setting/pushNotification render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enable"
                                           role="switch"
                                           type="button"
