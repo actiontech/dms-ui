@@ -1,9 +1,9 @@
-import { t } from '../../../../locale';
+import { t } from '../../../../../locale';
 import {
   IconPermissionGroup,
   IconPermissionTemplate,
   IconAuthList
-} from '../../../../icon/sideMenu';
+} from '../../../../../icon/sideMenu';
 import Icon from '@ant-design/icons';
 import {
   GenerateMenuItemsType,

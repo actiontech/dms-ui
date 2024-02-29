@@ -134,7 +134,11 @@ export default {
 
     loginButtonText: '登录按钮文字',
     loginButtonTextTips: 'login页面OAuth2.0登录按钮文字',
-    loginButtonTextValidateMessage: '最多输入28个字符'
+    loginButtonTextValidateMessage: '最多输入28个字符',
+
+    autoCreateUser: '自动创建并绑定用户',
+    autoCreateUserTips:
+      '若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。'
   },
 
   dingTalk: {

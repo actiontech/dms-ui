@@ -7,6 +7,7 @@ const { transform } = vitePlugin({
   env: {
     sqle: true,
     provision: true,
+    dms: true,
     ee: testEnv === 'ee',
     ce: testEnv === 'ce'
   }

@@ -79,7 +79,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                       <h2
                         class="ant-typography css-dev-only-do-not-override-txh9fw"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -142,7 +142,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                         </div>
                         <div
                           class="ant-space-item"
-                        />
+                        >
+                          <article
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQLE: 
+                            -
+                          </article>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -331,7 +338,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                       <h2
                         class="ant-typography css-dev-only-do-not-override-txh9fw"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -394,7 +401,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                         </div>
                         <div
                           class="ant-space-item"
-                        />
+                        >
+                          <article
+                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          >
+                            SQLE: 
+                            -
+                          </article>
+                        </div>
                       </div>
                     </div>
                   </div>

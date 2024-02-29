@@ -10,8 +10,11 @@ import EmitterKey from '../../../../data/EmitterKey';
 import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import { formatterLegendItemName, getLegendMarkerStyle } from './index.data';
+import { DBHealthEnum } from './index.enum';
+import { SqleTheme } from '../../../../types/theme.type';
+import ToolTipCustomContent from './ToolTipCustomContent';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -83,5 +86,56 @@ describe('page/ProjectOverview/DataSourceCount', () => {
     fireEvent.click(screen.getByText('刷新'));
     expect(eventEmitSpy).toBeCalledTimes(1);
     expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Project_Overview);
+  });
+
+  it('test formatterLegendItemName', () => {
+    expect(formatterLegendItemName(DBHealthEnum.health)).toMatchSnapshot();
+    expect(formatterLegendItemName(DBHealthEnum.risk)).toMatchSnapshot();
+  });
+
+  it('test getLegendMarkerStyle', () => {
+    expect(
+      getLegendMarkerStyle({ name: DBHealthEnum.risk, value: '33' }, {
+        projectOverview: {
+          DataSourceCount: { risk: '#eee', health: '#fff' }
+        }
+      } as SqleTheme)
+    ).toMatchSnapshot();
+
+    expect(
+      getLegendMarkerStyle({ name: DBHealthEnum.health, value: '33' }, {
+        projectOverview: {
+          DataSourceCount: { risk: '#eee', health: '#fff' }
+        }
+      } as SqleTheme)
+    ).toMatchSnapshot();
+  });
+
+  it('test ToolTipCustomContent', () => {
+    expect(
+      superRender(<ToolTipCustomContent dataSource={[]} />).container
+    ).toMatchSnapshot();
+
+    expect(
+      superRender(
+        <ToolTipCustomContent
+          dataSource={[
+            { data: { value: '33', category: DBHealthEnum.health } },
+            {
+              data: { value: '33', category: DBHealthEnum.health },
+              value: 'mysql'
+            },
+            {
+              data: { value: '44', category: DBHealthEnum.risk },
+              value: 'redis'
+            },
+            {
+              data: { value: '44444', category: DBHealthEnum.risk },
+              value: 'pg'
+            }
+          ]}
+        />
+      ).container
+    ).toMatchSnapshot();
   });
 });

@@ -1211,7 +1211,7 @@ exports[`test base/DataExport ce should match snapshot 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"
@@ -1315,7 +1315,7 @@ exports[`test base/DataExport ce should match snapshot 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"

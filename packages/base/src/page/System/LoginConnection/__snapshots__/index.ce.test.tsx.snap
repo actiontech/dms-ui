@@ -154,7 +154,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enable_ldap"
                                           role="switch"
                                           type="button"
@@ -1841,7 +1841,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="title"
                         >
                           Action 
-                          SQLE
+                          DMS
                         </div>
                         <p
                           class="cont-tip"
@@ -1945,7 +1945,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="title"
                         >
                           Action 
-                          SQLE
+                          DMS
                         </div>
                         <p
                           class="cont-tip"
@@ -2114,7 +2114,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                           id="enable_ldap"
                                           role="switch"
                                           type="button"
@@ -3801,7 +3801,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="title"
                         >
                           Action 
-                          SQLE
+                          DMS
                         </div>
                         <p
                           class="cont-tip"
@@ -3905,7 +3905,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="title"
                         >
                           Action 
-                          SQLE
+                          DMS
                         </div>
                         <p
                           class="cont-tip"

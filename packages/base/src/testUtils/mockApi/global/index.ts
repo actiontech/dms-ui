@@ -11,6 +11,7 @@ import {
   UserInfo
 } from './data';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { mockProjectList } from '../project/data';
 
 class MockDMSGlobalApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -29,6 +30,7 @@ class MockDMSGlobalApi implements MockSpyApy {
     this.UpdateDBService();
     this.DelDBService();
     this.CheckDBServiceIsConnectable();
+    this.getProjectList();
   }
 
   public getCurrentUser() {
@@ -165,6 +167,17 @@ class MockDMSGlobalApi implements MockSpyApy {
   public CheckDBServiceIsConnectable() {
     const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectableById');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getProjectList() {
+    const spy = jest.spyOn(dms, 'ListProjects');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        total_nums: mockProjectList.length,
+        data: mockProjectList
+      })
+    );
     return spy;
   }
 }
