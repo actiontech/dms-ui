@@ -1204,7 +1204,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"
@@ -1308,7 +1308,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"

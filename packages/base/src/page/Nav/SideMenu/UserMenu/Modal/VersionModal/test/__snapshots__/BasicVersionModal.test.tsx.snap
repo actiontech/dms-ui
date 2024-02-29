@@ -79,7 +79,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       <h2
                         class="ant-typography css-dev-only-do-not-override-txh9fw"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -323,7 +323,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       <h2
                         class="ant-typography css-dev-only-do-not-override-txh9fw"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
