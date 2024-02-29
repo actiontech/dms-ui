@@ -117,6 +117,115 @@ exports[`sqle/Order/Detail/OrderDetailPageHeaderExtra render snap when btn is hi
     >
       <div
         class="close-order-button-wrapper"
+        hidden=""
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span>
+            关闭工单
+          </span>
+        </button>
+        <div
+          class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical order-detail-page-header-divider"
+          role="separator"
+        />
+      </div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          全部驳回
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          审核通过
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          批量立即上线
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          标记为人工上线
+        </span>
+      </button>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        hidden=""
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 0px;"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              中止上线
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 0px;"
+        >
+          <div
+            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical order-detail-page-header-divider"
+            role="separator"
+          />
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              刷新工单
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="toggle-order-detail-wrapper"
+        hidden=""
+      >
+        工单详情
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/Detail/OrderDetailPageHeaderExtra render snap when btn is hidden 2`] = `
+<body>
+  <div>
+    <div
+      class="css-eocfs5"
+    >
+      <div
+        class="close-order-button-wrapper"
       >
         <button
           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"

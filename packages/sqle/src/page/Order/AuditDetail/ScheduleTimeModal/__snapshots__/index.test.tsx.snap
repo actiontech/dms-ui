@@ -1,5 +1,415 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`sqle/Order/AuditDetail/ScheduleTimeModal render snap when has maintenanceTime 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          role="dialog"
+          style="width: 480px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                定时上线
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <form
+                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="css-haw22i"
+                >
+                  <span
+                    class="whitespace-pre-line"
+                  >
+                    定时上线的时间点必须在运维时间之内，当前数据源的运维时间为: 
+
+                  </span>
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                  >
+                    01
+                    :
+                     
+                    20
+                    -
+                    02
+                    :
+                     
+                    00
+                  </span>
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                  >
+                    05
+                    :
+                     
+                    20
+                    -
+                    00
+                    :
+                     
+                    00
+                  </span>
+                </div>
+                <div
+                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="basic-date-picker-wrapper css-1d7co14"
+                          >
+                            <span
+                              class="custom-icon prefix-icon css-u3jcp4"
+                            >
+                              <svg
+                                fill="none"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g
+                                  id="time-fill"
+                                >
+                                  <path
+                                    d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
+                                    fill="#C3C6CD"
+                                    id="Vector"
+                                  />
+                                </g>
+                              </svg>
+                            </span>
+                            <div
+                              class="ant-picker css-dev-only-do-not-override-1xo6ltj"
+                            >
+                              <div
+                                class="ant-picker-input"
+                              >
+                                <input
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  id="schedule_time"
+                                  placeholder="Select date"
+                                  readonly=""
+                                  size="21"
+                                  title=""
+                                  value=""
+                                />
+                                <span
+                                  class="ant-picker-suffix"
+                                >
+                                  <span
+                                    class="custom-icon css-u3jcp4"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <g
+                                        id="arrow-m-down-line"
+                                      >
+                                        <path
+                                          d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
+                                          fill="#C3C6CD"
+                                          id="Vector"
+                                        />
+                                      </g>
+                                    </svg>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  取 消
+                </span>
+              </button>
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                data-testid="confirm-button"
+                type="button"
+              >
+                <span>
+                  定时上线
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/AuditDetail/ScheduleTimeModal render snap when has maintenanceTime 2`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          role="dialog"
+          style="width: 480px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                定时上线
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <form
+                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="css-haw22i"
+                >
+                  <span
+                    class="whitespace-pre-line"
+                  >
+                    定时上线的时间点必须在运维时间之内，当前数据源的运维时间为: 
+
+                  </span>
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                  >
+                    01
+                    :
+                     
+                    20
+                    -
+                    02
+                    :
+                     
+                    00
+                  </span>
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                  >
+                    05
+                    :
+                     
+                    20
+                    -
+                    00
+                    :
+                     
+                    00
+                  </span>
+                </div>
+                <div
+                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="basic-date-picker-wrapper css-1d7co14"
+                          >
+                            <span
+                              class="custom-icon prefix-icon css-u3jcp4"
+                            >
+                              <svg
+                                fill="none"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g
+                                  id="time-fill"
+                                >
+                                  <path
+                                    d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
+                                    fill="#C3C6CD"
+                                    id="Vector"
+                                  />
+                                </g>
+                              </svg>
+                            </span>
+                            <div
+                              class="ant-picker css-dev-only-do-not-override-1xo6ltj"
+                            >
+                              <div
+                                class="ant-picker-input"
+                              >
+                                <input
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  id="schedule_time"
+                                  placeholder="Select date"
+                                  readonly=""
+                                  size="21"
+                                  title=""
+                                  value=""
+                                />
+                                <span
+                                  class="ant-picker-suffix"
+                                >
+                                  <span
+                                    class="custom-icon css-u3jcp4"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <g
+                                        id="arrow-m-down-line"
+                                      >
+                                        <path
+                                          d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
+                                          fill="#C3C6CD"
+                                          id="Vector"
+                                        />
+                                      </g>
+                                    </svg>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  取 消
+                </span>
+              </button>
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                data-testid="confirm-button"
+                type="button"
+              >
+                <span>
+                  定时上线
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`sqle/Order/AuditDetail/ScheduleTimeModal render snap when open is false 1`] = `
 <body>
   <div />

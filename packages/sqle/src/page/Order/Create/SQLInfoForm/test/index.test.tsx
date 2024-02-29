@@ -32,17 +32,24 @@ describe('sqle/Order/Create/SQLInfoForm', () => {
       setInstanceInfo: jest.fn(),
       auditLoading: false
     };
-    return superRender(<SQLInfoForm form={result.current[0]} {...params} />);
+    return superRender(
+      <Form>
+        <SQLInfoForm form={result.current[0]} {...params} />
+      </Form>
+    );
   };
 
   beforeEach(() => {
     jest.useFakeTimers();
     mockDatabaseType();
+    // Warning: validateDOMNesting(...): <form> cannot appear as a descendant of <form>
+    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();
+    (console.error as jest.Mock).mockRestore();
     cleanup();
   });
 

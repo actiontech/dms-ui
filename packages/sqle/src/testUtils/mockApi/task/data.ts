@@ -20,15 +20,3 @@ export const AuditTaskSQLsMockData: IAuditTaskSQLResV2[] = [
     description: 'test'
   }
 ];
-
-export const workflowTaskDetailMockData = {
-  task_id: 'test_task_id',
-  instance_name: 'mysql-1',
-  instance_db_type: 'MySQL',
-  instance_schema: 'test',
-  audit_level: '',
-  score: 100,
-  pass_rate: 1,
-  status: 'audited',
-  sql_source: ''
-};
