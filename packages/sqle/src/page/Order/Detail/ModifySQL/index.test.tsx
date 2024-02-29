@@ -9,6 +9,8 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { AuditTaskResData } from '../../../../testUtils/mockApi/order/data';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 const projectName = 'project name';
 const projectID = 'project ID';
@@ -130,9 +132,74 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.click(screen.getByText('上传SQL文件'));
+    await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('SQL美化')).toBeInTheDocument();
     fireEvent.click(screen.getByText('SQL美化'));
-    await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
+
+    cleanup();
+    customRender({
+      open: true,
+      currentOrderTasks: [AuditTaskResData[0]],
+      modifiedOrderTasks: [AuditTaskResData[1]],
+      sqlMode: WorkflowResV2ModeEnum.different_sqls
+    });
+    await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.input(getBySelector('.custom-monaco-editor'), {
+      target: { value: 'SELECT 1;' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('SQL美化'));
+
+    cleanup();
+    customRender({
+      open: true,
+      currentOrderTasks: [AuditTaskResData[0]],
+      modifiedOrderTasks: [AuditTaskResData[1]],
+      sqlMode: WorkflowResV2ModeEnum.different_sqls
+    });
+    await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.click(screen.getByText('上传SQL文件'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getByText('SQL美化'));
+  });
+
+  it('click submit when modified order tasks is empty', async () => {
+    customRender({
+      open: true,
+      currentOrderTasks: [AuditTaskResData[0]]
+    });
+    await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(refreshOrderFn).not.toBeCalled();
+  });
+
+  it('click submit when modified order tasks is empty', async () => {
+    const getAuditTaskSQLsSpy = order.getAuditTaskSQLs();
+    getAuditTaskSQLsSpy.mockClear();
+    getAuditTaskSQLsSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [], total_nums: 0 })
+    );
+    customRender({
+      open: true,
+      currentOrderTasks: [AuditTaskResData[0]],
+      modifiedOrderTasks: [AuditTaskResData[1]]
+    });
+    await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.input(getBySelector('.custom-monaco-editor'), {
+      target: { value: 'SELECT 1;' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('审 核'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAuditTaskSQLsSpy).toBeCalledTimes(1);
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(
+      screen.getByText('不能使用审核结果为空的SQL更新当前工单')
+    ).toBeInTheDocument();
+    expect(refreshOrderFn).not.toBeCalled();
   });
 });
