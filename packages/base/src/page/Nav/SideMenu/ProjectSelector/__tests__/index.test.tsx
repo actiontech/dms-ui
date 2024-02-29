@@ -4,6 +4,7 @@ import { ProjectSelectorProps } from '../index.type';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 
 const mockBindProjects = [
   {
@@ -48,10 +49,10 @@ describe('base/page/Nav/SideMenu/ProjectSelector', () => {
     );
   };
 
+  ignoreComponentCustomAttr();
+
   beforeEach(() => {
     jest.useFakeTimers();
-    //  Warning: React does not recognize the `searchInputRef` prop on a DOM element.
-    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {

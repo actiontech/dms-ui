@@ -230,3 +230,157 @@ export const workflowsOverviewListData = {
     }
   ]
 };
+
+export const workflowsDetailData = {
+  workflow_name: 'workflow_name',
+  workflow_id: '1747444197486497792',
+  desc: 'this is a desc',
+  mode: WorkflowResV2ModeEnum.different_sqls,
+  create_user_name: 'admin',
+  create_time: '2024-01-17T02:22:17Z',
+  record: {
+    tasks: [
+      {
+        task_id: 40
+      }
+    ],
+    status: WorkflowRecordResV2StatusEnum.rejected,
+    current_step_number: 2,
+    workflow_step_list: [
+      {
+        number: 1,
+        type: WorkflowStepResV1TypeEnum.update_workflow,
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T02:58:37Z'
+      },
+      {
+        workflow_step_id: 23,
+        number: 2,
+        type: WorkflowStepResV1TypeEnum.sql_review,
+        assignee_user_name_list: ['admin'],
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T03:36:25Z',
+        state: WorkflowStepResV1StateEnum.rejected,
+        reason: '1'
+      },
+      {
+        workflow_step_id: 24,
+        number: 3,
+        type: WorkflowStepResV1TypeEnum.sql_execute,
+        assignee_user_name_list: ['admin'],
+        state: WorkflowStepResV1StateEnum.initialized
+      }
+    ]
+  }
+};
+
+export const workflowsDetailWaitForAuditData = {
+  ...workflowsDetailData,
+  record: {
+    tasks: [
+      {
+        task_id: 40
+      }
+    ],
+    status: WorkflowRecordResV2StatusEnum.wait_for_audit,
+    current_step_number: 2,
+    workflow_step_list: [
+      {
+        number: 1,
+        type: WorkflowStepResV1TypeEnum.update_workflow,
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T02:58:37Z'
+      },
+      {
+        workflow_step_id: 23,
+        number: 2,
+        type: WorkflowStepResV1TypeEnum.sql_review,
+        assignee_user_name_list: ['admin'],
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T03:36:25Z',
+        state: WorkflowStepResV1StateEnum.initialized
+      },
+      {
+        workflow_step_id: 24,
+        number: 3,
+        type: WorkflowStepResV1TypeEnum.sql_execute,
+        assignee_user_name_list: ['admin'],
+        state: WorkflowStepResV1StateEnum.initialized
+      }
+    ]
+  }
+};
+
+export const workflowsDetailWaitForExecutionData = {
+  ...workflowsDetailData,
+  record: {
+    tasks: [
+      {
+        task_id: 40
+      }
+    ],
+    status: WorkflowRecordResV2StatusEnum.wait_for_execution,
+    current_step_number: 3,
+    workflow_step_list: [
+      {
+        number: 1,
+        type: WorkflowStepResV1TypeEnum.update_workflow,
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T02:58:37Z'
+      },
+      {
+        workflow_step_id: 23,
+        number: 2,
+        type: WorkflowStepResV1TypeEnum.sql_review,
+        assignee_user_name_list: ['admin'],
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T03:36:25Z',
+        state: WorkflowStepResV1StateEnum.approved
+      },
+      {
+        workflow_step_id: 24,
+        number: 3,
+        type: WorkflowStepResV1TypeEnum.sql_execute,
+        assignee_user_name_list: ['admin'],
+        state: WorkflowStepResV1StateEnum.initialized
+      }
+    ]
+  }
+};
+
+export const workflowsDetailExecutingData = {
+  ...workflowsDetailData,
+  record: {
+    tasks: [
+      {
+        task_id: 40
+      }
+    ],
+    status: WorkflowRecordResV2StatusEnum.executing,
+    current_step_number: 3,
+    workflow_step_list: [
+      {
+        number: 1,
+        type: WorkflowStepResV1TypeEnum.update_workflow,
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T02:58:37Z'
+      },
+      {
+        workflow_step_id: 23,
+        number: 2,
+        type: WorkflowStepResV1TypeEnum.sql_review,
+        assignee_user_name_list: ['admin'],
+        operation_user_name: 'admin',
+        operation_time: '2024-01-17T03:36:25Z',
+        state: WorkflowStepResV1StateEnum.approved
+      },
+      {
+        workflow_step_id: 24,
+        number: 3,
+        type: WorkflowStepResV1TypeEnum.sql_execute,
+        assignee_user_name_list: ['admin'],
+        state: WorkflowStepResV1StateEnum.initialized
+      }
+    ]
+  }
+};
