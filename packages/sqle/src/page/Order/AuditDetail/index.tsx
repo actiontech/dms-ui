@@ -120,7 +120,6 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
       refreshDeps: [
         tableFilterInfo,
         pagination,
-        duplicate,
         auditResultActiveKey,
         currentListLayout,
         orderStatus
@@ -172,8 +171,8 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
       reloadDeps: [
         currentListLayout,
         auditResultActiveKey,
-        duplicate,
         tableFilterInfo,
+        duplicate,
         auditLevelFilterValue,
         orderStatus
       ],
@@ -250,10 +249,11 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
     [auditResultActiveKey, taskInfos]
   );
 
+  // @feature: useTableRequestParams 整合自定义filter info
   useEffect(() => {
     setPagination({ page_index: 1, page_size: pagination.page_size });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [auditLevelFilterValue]);
+  }, [auditLevelFilterValue, duplicate]);
 
   return (
     <OrderDetailAuditResultStyleWrapper>
