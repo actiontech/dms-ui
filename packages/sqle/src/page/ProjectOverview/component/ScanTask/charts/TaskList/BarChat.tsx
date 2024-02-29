@@ -1,15 +1,16 @@
 import { useMemo, memo } from 'react';
 import { isEqual } from 'lodash';
 import { useTranslation } from 'react-i18next';
-
 import { Bar, BarConfig } from '@ant-design/plots';
-import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
-
 import { typeTaskItem } from './index';
-import { limitDataLength, defaultItemKey } from '../../index.data';
-
+import { limitDataLength } from '../../index.data';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
+import {
+  barChartLabelContent,
+  barChartStateActive,
+  barChartToolTipCustomContent
+} from './index.data';
 
 interface IBarChat {
   onReady: BarConfig['onReady'];
@@ -23,7 +24,7 @@ const BarChat = memo(
     const { sharedTheme, sqleTheme } = useThemeStyleData();
     const { t } = useTranslation();
 
-    const config = useMemo(() => {
+    const config: BarConfig = useMemo(() => {
       return {
         data,
         xField: 'value',
@@ -63,18 +64,8 @@ const BarChat = memo(
             opacity: 1
           },
           labelHeight: 28,
-          content: (
-            data: typeTaskItem,
-            mappingData: unknown,
-            index: number
-          ) => {
-            if (!data.type) return '';
-            if (data.type.startsWith(defaultItemKey)) {
-              return t(
-                'projectManage.projectOverview.auditPlanClassification.dataSourceType'
-              );
-            }
-            return data.type;
+          content: (data: typeTaskItem) => {
+            return barChartLabelContent(data);
           }
         },
         tooltip: {
@@ -82,26 +73,10 @@ const BarChat = memo(
           showNil: false,
           fields: ['type', 'value'],
           customContent: (title: string, dataSource: any) => {
-            if (!dataSource.length) return null;
-            if (dataSource[0].title.startsWith(defaultItemKey)) return null;
-            const [, itemData] = dataSource ?? [];
-            return (
-              <ChartTooltip
-                sharedTheme={sharedTheme}
-                titleData={{
-                  dotColor:
-                    sqleTheme.projectOverview.ScanTask.bar.toolTip.dotColor,
-                  text: itemData.data.type
-                }}
-                listData={[
-                  {
-                    label: t(
-                      'projectManage.projectOverview.auditPlanClassification.taskTotal'
-                    ),
-                    value: itemData.data.value
-                  }
-                ]}
-              />
+            return barChartToolTipCustomContent(
+              sharedTheme,
+              sqleTheme,
+              dataSource
             );
           }
         },
@@ -109,12 +84,8 @@ const BarChat = memo(
         interactions: [{ type: 'element-active' }],
         state: {
           active: {
-            style: (element: Element) => {
-              return {
-                lineWidth: 0,
-                fill: sqleTheme.projectOverview.ScanTask.bar.activeColor,
-                stroke: sqleTheme.projectOverview.ScanTask.bar.activeColor
-              };
+            style: () => {
+              return barChartStateActive(sqleTheme);
             }
           }
         },
