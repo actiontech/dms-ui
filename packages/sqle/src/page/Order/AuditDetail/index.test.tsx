@@ -285,7 +285,7 @@ describe('sqle/Order/AuditDetail', () => {
     });
   });
 
-  it('render snap when change segmented tab & change page index', async () => {
+  it('render snap when change segmented tab & change page index & duplicate', async () => {
     const taskSQLsData: IAuditTaskSQLResV2[] = [];
     for (let i = 0; i < 50; i++) {
       const index = i + 1;
@@ -356,6 +356,15 @@ describe('sqle/Order/AuditDetail', () => {
       filter_exec_status: undefined,
       no_duplicate: false,
       page_index: '3',
+      page_size: '20',
+      task_id: '2'
+    });
+    fireEvent.click(screen.getByText('数据去重'));
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+      filter_exec_status: undefined,
+      no_duplicate: true,
+      page_index: '1',
       page_size: '20',
       task_id: '2'
     });

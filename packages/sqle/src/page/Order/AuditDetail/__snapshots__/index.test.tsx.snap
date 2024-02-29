@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/Order/AuditDetail render snap when change segmented tab & change page index 1`] = `
+exports[`sqle/Order/AuditDetail render snap when change segmented tab & change page index & duplicate 1`] = `
 <body>
   <div>
     <section
