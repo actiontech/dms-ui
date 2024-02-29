@@ -1,11 +1,13 @@
 import { renderWithTheme } from '../../../../testUtils/customRender';
-import { cleanup } from '@testing-library/react';
+import { cleanup, fireEvent, act } from '@testing-library/react';
 
 import { DataSourceResultWaterfallListProps } from '../index.type';
 import DataSourceWaterfallList from './WaterfallList';
 
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import task from '../../../../testUtils/mockApi/task';
 
 const mockListData: IAuditTaskSQLResV2[] = [];
 for (let i = 0; i < 50; i++) {
@@ -64,6 +66,35 @@ describe('sqle/Order/AuditDetail/DataSourceWaterfallList', () => {
       list: mockListData
     });
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render update description', async () => {
+    const updateAuditTaskSQLsSpy = task.updateAuditTaskSQLs();
+    const refreshScrollListSpy = jest.fn();
+    customRender({
+      hasMore: false,
+      loading: false,
+      taskId: 'task id',
+      scrollPage: 1,
+      refreshScrollList: refreshScrollListSpy,
+      list: mockListData
+    });
+    const inputEle = getAllBySelector('.result-describe-input')[21];
+    await act(async () => {
+      fireEvent.change(inputEle, {
+        target: {
+          value: 'descriptionTest1'
+        }
+      });
+      await jest.advanceTimersByTime(100);
+    });
+    await act(async () => {
+      fireEvent.blur(inputEle);
+      await jest.advanceTimersByTime(100);
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateAuditTaskSQLsSpy).toBeCalledTimes(1);
+    expect(refreshScrollListSpy).toBeCalledTimes(1);
   });
 
   it('render has more data', async () => {
