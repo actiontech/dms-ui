@@ -11,6 +11,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 
 const workflowID = 'workflow ID';
 const projectName = 'project Name default';
@@ -46,14 +47,14 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
     );
   };
 
+  ignoreComponentCustomAttr();
+
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
     order.mockAllApi();
     requestGetSummaryOfInstanceTasks = order.getSummaryOfInstanceTasks();
     terminateSingleTaskByWorkflow = order.terminateSingleTaskByWorkflow();
-    // date picker : custom attr [hideSuperIcon]
-    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
