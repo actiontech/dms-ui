@@ -520,6 +520,8 @@ export interface IGetMemberGroupReply {
 export interface IGetOauth2ConfigurationResData {
   access_token_tag?: string;
 
+  auto_create_user?: boolean;
+
   client_host?: string;
 
   client_id?: string;
@@ -541,8 +543,6 @@ export interface IGetOauth2ConfigurationResData {
   user_id_tag?: string;
 
   user_wechat_tag?: string;
-
-  auto_create_user?: boolean;
 }
 
 export interface IGetOauth2ConfigurationResDataReply {
@@ -1168,6 +1168,8 @@ export interface INotificationReply {
 export interface IOauth2Configuration {
   access_token_tag?: string;
 
+  auto_create_user?: boolean;
+
   client_host?: string;
 
   client_id?: string;
@@ -1191,8 +1193,6 @@ export interface IOauth2Configuration {
   user_id_tag?: string;
 
   user_wechat_tag?: string;
-
-  auto_create_user?: boolean;
 }
 
 export interface IOpPermissionItem {
