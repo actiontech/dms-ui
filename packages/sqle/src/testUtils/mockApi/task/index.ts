@@ -3,13 +3,12 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { AuditTaskSQLsMockData, workflowTaskDetailMockData } from './data';
+import { AuditTaskSQLsMockData } from './data';
 
 class TaskMockApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getAuditTaskSQLs();
     this.updateAuditTaskSQLs();
-    this.getAuditTask();
   }
 
   public getAuditTaskSQLs() {
@@ -26,16 +25,6 @@ class TaskMockApi implements MockSpyApy {
   public updateAuditTaskSQLs() {
     const spy = jest.spyOn(task, 'updateAuditTaskSQLsV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
-    return spy;
-  }
-
-  public getAuditTask() {
-    const spy = jest.spyOn(task, 'getAuditTaskV1');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: workflowTaskDetailMockData
-      })
-    );
     return spy;
   }
 }
