@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { cleanup, act, fireEvent } from '@testing-library/react';
 import { renderWithTheme } from '../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
+
 import BaseInfoFormItem from './BaseInfoFormItem';
 
 describe('sqle/Order/CreateOrder/BaseInfoFormItem', () => {
@@ -15,15 +15,16 @@ describe('sqle/Order/CreateOrder/BaseInfoFormItem', () => {
     );
   };
 
-  ignoreInvalidValueForCSSStyleProperty();
-
   beforeEach(() => {
     jest.useFakeTimers();
+    // ignore error: Warning: `NaN` is an invalid value for the `height` css style property.
+    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();
+    (console.error as jest.Mock).mockRestore();
     cleanup();
   });
 
