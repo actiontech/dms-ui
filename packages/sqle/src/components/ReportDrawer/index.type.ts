@@ -1,8 +1,13 @@
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
 
+export type IAuditResultItem = IAuditResult & {
+  deleteStatus?: boolean;
+  annotation?: string;
+};
+
 export type TypeData = {
-  auditResult: Array<{ annotation?: string } & IAuditResult>;
+  auditResult: Array<IAuditResultItem>;
   sql: string;
   sqlSourceFile?: string;
   sqlStartLine?: number;

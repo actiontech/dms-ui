@@ -14,7 +14,7 @@ import {
 } from './style';
 import { EmptyBox } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
-import { Typography } from 'antd';
+import { Tag, Typography } from 'antd';
 
 const passStatusLevelData = ['normal', 'UNKNOWN'];
 
@@ -22,7 +22,8 @@ const AuditResultMessage = ({
   auditResult,
   styleClass,
   showAnnotation,
-  moreBtnLink
+  moreBtnLink,
+  deleteStatus
 }: AuditResultMessageProps) => {
   const { t } = useTranslation();
   const [visible, { set }] = useBoolean(true);
@@ -63,9 +64,17 @@ const AuditResultMessage = ({
 
   return (
     <AuditResultMessageWithAnnotationStyleWrapper
-      className={classNames([styleClass])}
+      className={classNames([
+        styleClass,
+        deleteStatus ? 'has-delete-rule-wrapper' : ''
+      ])}
       showAnnotation={showAnnotation}
     >
+      {deleteStatus ? (
+        <Tag color="volcano" className="message-rule-disabled">
+          {t('sqlAudit.result.deleteRuleTip')}
+        </Tag>
+      ) : null}
       <AuditResultMessageStyleWrapper onClick={() => set(!visible)}>
         <span className="icon-wrapper">{renderIcon}</span>
         <span className="text-wrapper">{renderMessage}</span>
