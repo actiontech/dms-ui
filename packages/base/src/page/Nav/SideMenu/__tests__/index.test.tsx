@@ -98,8 +98,6 @@ describe('test Base/Nav/SideMenu/index', () => {
     });
     expect(baseElement).toMatchSnapshot();
 
-    expect(baseElement).toMatchSnapshot();
-
     fireEvent.mouseDown(getBySelector('.ant-select-selector'), baseElement);
     await act(async () => jest.advanceTimersByTime(0));
 
