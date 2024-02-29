@@ -2,6 +2,7 @@ import { Form } from 'antd';
 import { cleanup, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../../../testUtils/customRender';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
 
 import { OrderBaseInfoFormFields } from './index.type';
 import BaseInfoForm from '.';
@@ -14,14 +15,7 @@ describe('sqle/Order/CreateOrder/BaseInfoForm', () => {
     return renderWithTheme(<BaseInfoForm form={result.current[0]} />);
   };
 
-  beforeEach(() => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
-  });
-
-  afterEach(() => {
-    (console.error as jest.Mock).mockRestore();
-    cleanup();
-  });
+  ignoreInvalidValueForCSSStyleProperty();
 
   it('render snap BaseInfoForm', () => {
     const { baseElement } = customRender();
