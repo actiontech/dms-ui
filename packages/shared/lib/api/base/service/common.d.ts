@@ -520,6 +520,8 @@ export interface IGetMemberGroupReply {
 export interface IGetOauth2ConfigurationResData {
   access_token_tag?: string;
 
+  auto_create_user?: boolean;
+
   client_host?: string;
 
   client_id?: string;
@@ -1165,6 +1167,8 @@ export interface INotificationReply {
 
 export interface IOauth2Configuration {
   access_token_tag?: string;
+
+  auto_create_user?: boolean;
 
   client_host?: string;
 

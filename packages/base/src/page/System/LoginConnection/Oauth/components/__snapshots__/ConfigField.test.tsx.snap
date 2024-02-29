@@ -601,6 +601,69 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
           </div>
         </div>
       </div>
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="autoCreateUser"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  自动创建并绑定用户
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <button
+                  aria-checked="false"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  id="autoCreateUser"
+                  role="switch"
+                  type="button"
+                >
+                  <div
+                    class="ant-switch-handle"
+                  />
+                  <span
+                    class="ant-switch-inner"
+                  >
+                    <span
+                      class="ant-switch-inner-checked"
+                    />
+                    <span
+                      class="ant-switch-inner-unchecked"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
 </body>
