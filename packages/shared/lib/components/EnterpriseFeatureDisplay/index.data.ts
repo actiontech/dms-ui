@@ -21,7 +21,7 @@ export const versionList: VersionComparisonItem[] = [
     subtitle: 'common.version.demoSubTitle',
     buttonText: 'common.version.demoButtonText',
     termText: 'common.version.demoTerm',
-    applyLink: 'https://jinshuju.net/f/daLFaG',
+    applyLink: 'https://www.actionsky.com/sqle?question=true',
     contentDesc: 'common.version.demoDesc'
   },
   {
