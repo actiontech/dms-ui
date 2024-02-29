@@ -138,7 +138,7 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable"
                                         role="switch"
                                         type="button"
@@ -764,6 +764,69 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                           type="text"
                           value=""
                         />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="autoCreateUser"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          自动创建并绑定用户
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="false"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          id="autoCreateUser"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -952,7 +1015,7 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable"
                                         role="switch"
                                         type="button"
@@ -1584,6 +1647,69 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                 </div>
               </div>
               <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="autoCreateUser"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          自动创建并绑定用户
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="false"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          id="autoCreateUser"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
                 class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
               >
                 <div
@@ -1750,7 +1876,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                             >
                               <div
                                 class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1765,9 +1891,8 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                                       class="ant-form-item-control-input-content"
                                     >
                                       <button
-                                        aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
-                                        disabled=""
+                                        aria-checked="false"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable"
                                         role="switch"
                                         type="button"
@@ -1801,9 +1926,10 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
             </div>
             <div
               class="config-field-wrapper"
+              hidden=""
             >
               <div
-                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1841,11 +1967,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                       >
                         <input
                           aria-required="true"
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="clientId"
                           placeholder="请输入应用 ID"
                           type="text"
-                          value="6lq#s#aRibpMvhp48ztHOg@sZ3PxA2e(MYdS!CJANzLPBdg]m)"
+                          value=""
                         />
                       </div>
                     </div>
@@ -1902,7 +2028,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1940,11 +2066,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                       >
                         <input
                           aria-required="true"
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="clientHost"
                           placeholder="请输入外部访问SQLE的地址"
                           type="text"
-                          value="news://egyolphgg.tm/lundgwlpz"
+                          value=""
                         />
                       </div>
                     </div>
@@ -1952,7 +2078,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1990,11 +2116,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                       >
                         <input
                           aria-required="true"
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="serverAuthUrl"
                           placeholder="请输入OAuth2.0登录授权页面地址"
                           type="text"
-                          value="prospero://tpmui.cf/timilp"
+                          value=""
                         />
                       </div>
                     </div>
@@ -2002,7 +2128,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2040,11 +2166,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                       >
                         <input
                           aria-required="true"
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="serverTokenUrl"
                           placeholder="请输入OAuth2.0 access_token 获取地址"
                           type="text"
-                          value="mid://juckyny.na/xxsxnmf"
+                          value=""
                         />
                       </div>
                     </div>
@@ -2052,7 +2178,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2090,11 +2216,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                       >
                         <input
                           aria-required="true"
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="serverUserIdUrl"
                           placeholder="请输入OAuth2.0 user id 获取地址"
                           type="text"
-                          value="cid://hqpbmxvbpl.cd/lcfyjtlkuj"
+                          value=""
                         />
                       </div>
                     </div>
@@ -2102,7 +2228,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2139,11 +2265,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="scopes"
                           placeholder="请输入请求资源范围"
                           type="text"
-                          value="1XGCBu%brJrwjse@R^Ox,lpSLVoFnqZBfGHeI8023"
+                          value=""
                         />
                       </div>
                     </div>
@@ -2151,7 +2277,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2189,11 +2315,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                       >
                         <input
                           aria-required="true"
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="accessTokenKeyName"
                           placeholder="请输入access_token Key名称"
                           type="text"
-                          value="rpYV2tN4&545Jvkd3%J6"
+                          value=""
                         />
                       </div>
                     </div>
@@ -2201,7 +2327,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2239,11 +2365,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                       >
                         <input
                           aria-required="true"
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="userIdKeyName"
                           placeholder="请输入用户UID的JSON路径"
                           type="text"
-                          value="NFkVxY[4Xv^UFU&x&t5y"
+                          value=""
                         />
                       </div>
                     </div>
@@ -2349,7 +2475,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2386,12 +2512,75 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="loginButtonText"
                           placeholder="请输入登录按钮文字"
                           type="text"
-                          value="VT[9[I$M(EW5R9o12*&Z"
+                          value=""
                         />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="autoCreateUser"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          自动创建并绑定用户
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="false"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          id="autoCreateUser"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -2431,7 +2620,6 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                           >
                             <button
                               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                              disabled=""
                               type="button"
                             >
                               <span>
@@ -2443,33 +2631,9 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
-                              disabled=""
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
                               type="submit"
                             >
-                              <span
-                                class="ant-btn-icon ant-btn-loading-icon"
-                              >
-                                <span
-                                  aria-label="loading"
-                                  class="anticon anticon-loading anticon-spin"
-                                  role="img"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    data-icon="loading"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height="1em"
-                                    viewBox="0 0 1024 1024"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
-                                    />
-                                  </svg>
-                                </span>
-                              </span>
                               <span>
                                 提 交
                               </span>
@@ -2483,9 +2647,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
               </div>
             </div>
           </form>
-          <div
-            hidden=""
-          />
+          <div />
         </div>
       </div>
     </div>
@@ -2607,7 +2769,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
                                         disabled=""
                                         id="enable"
                                         role="switch"
@@ -2694,7 +2856,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2731,11 +2893,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="clientSecret"
                           placeholder="请输入应用密钥"
                           type="text"
-                          value=""
+                          value="client secret"
                         />
                       </div>
                     </div>
@@ -2885,7 +3047,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                           id="serverTokenUrl"
                           placeholder="请输入OAuth2.0 access_token 获取地址"
                           type="text"
-                          value="server token Url"
+                          value="server token url"
                         />
                       </div>
                     </div>
@@ -2984,7 +3146,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                           id="scopes"
                           placeholder="请输入请求资源范围"
                           type="text"
-                          value="1XGCBu%brJrwjse@R^Ox,lpSLVoFnqZBfGHeI8023"
+                          value="scope1,scope2,scope3"
                         />
                       </div>
                     </div>
@@ -3092,7 +3254,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3129,11 +3291,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="userEmailTag"
                           placeholder="请输入用户邮箱的JSON路径"
                           type="text"
-                          value=""
+                          value="user email tag"
                         />
                       </div>
                     </div>
@@ -3141,7 +3303,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3178,11 +3340,11 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                           id="userWechatTag"
                           placeholder="请输入用户微信ID的JSON路径"
                           type="text"
-                          value=""
+                          value="user wechat tag"
                         />
                       </div>
                     </div>
@@ -3231,8 +3393,71 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                           id="loginButtonText"
                           placeholder="请输入登录按钮文字"
                           type="text"
-                          value="VT[9[I$M(EW5R9o12*&Z"
+                          value="login button text"
                         />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="autoCreateUser"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          自动创建并绑定用户
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="true"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                          id="autoCreateUser"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -3448,7 +3673,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                         id="enable"
                                         role="switch"
                                         type="button"
@@ -4079,6 +4304,69 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                 </div>
               </div>
               <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="autoCreateUser"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          自动创建并绑定用户
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="false"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          id="autoCreateUser"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
                 class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
               >
                 <div
@@ -4263,7 +4551,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable"
                                         role="switch"
                                         type="button"
@@ -4889,6 +5177,69 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                           type="text"
                           value="VT[9[I$M(EW5R9o12*&Z"
                         />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="autoCreateUser"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          自动创建并绑定用户
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="false"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          id="autoCreateUser"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -5101,7 +5452,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                         id="enable"
                                         role="switch"
                                         type="button"
@@ -5727,6 +6078,69 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                           type="text"
                           value="VT[9[I$M(EW5R9o12*&Z"
                         />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="autoCreateUser"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          自动创建并绑定用户
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="false"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          id="autoCreateUser"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </div>

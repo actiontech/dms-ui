@@ -138,7 +138,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 1`] = `
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable_ldap"
                                         role="switch"
                                         type="button"
@@ -749,7 +749,7 @@ exports[`base/System/LoginConnection/LDAPSetting render snap 2`] = `
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable_ldap"
                                         role="switch"
                                         type="button"
@@ -1360,7 +1360,7 @@ exports[`base/System/LoginConnection/LDAPSetting render submit LDAP setting rend
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
                                         disabled=""
                                         id="enable_ldap"
                                         role="switch"
@@ -1998,7 +1998,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                         id="enable_ldap"
                                         role="switch"
                                         type="button"
@@ -2610,7 +2610,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable_ldap"
                                         role="switch"
                                         type="button"
@@ -3221,7 +3221,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                         id="enable_ldap"
                                         role="switch"
                                         type="button"
@@ -3941,7 +3941,7 @@ exports[`base/System/LoginConnection/LDAPSetting render switch cancel btn render
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                         id="enable_ldap"
                                         role="switch"
                                         type="button"

@@ -177,7 +177,7 @@ exports[`base/System/PushNotification/Wechat render snap 1`] = `
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable_wechat_notify"
                                         role="switch"
                                         type="button"
@@ -672,7 +672,7 @@ exports[`base/System/PushNotification/Wechat render snap 2`] = `
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable_wechat_notify"
                                         role="switch"
                                         type="button"
@@ -1167,7 +1167,7 @@ exports[`base/System/PushNotification/Wechat render submit wechat setting render
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
                                         disabled=""
                                         id="enable_wechat_notify"
                                         role="switch"
@@ -1690,7 +1690,7 @@ exports[`base/System/PushNotification/Wechat render switch cancel btn render sna
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                         id="enable_wechat_notify"
                                         role="switch"
                                         type="button"
@@ -2186,7 +2186,7 @@ exports[`base/System/PushNotification/Wechat render switch cancel btn render sna
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
                                         id="enable_wechat_notify"
                                         role="switch"
                                         type="button"
@@ -2705,7 +2705,7 @@ exports[`base/System/PushNotification/Wechat render switch cancel btn render sna
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                                         id="enable_wechat_notify"
                                         role="switch"
                                         type="button"
