@@ -99,7 +99,7 @@ export const getMemberAndPermissionSteps: (
 
 export const getSqlEditorStep: (
   arg: DevopsStepsProps
-) => UserDevopsStepsFactory[0]['children'][0] = ({ navigate }) => {
+) => UserDevopsStepsFactory[0]['children'][0] = ({ navigate, projectID }) => {
   return {
     key: 'sqlEditor',
     title: t('dmsHome.defaultScene.steps.queryAndModify.innerContents.title_0'),
@@ -112,7 +112,7 @@ export const getSqlEditorStep: (
         label: t(
           'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_0_0'
         ),
-        action: () => navigate('/cloudBeaver')
+        action: () => navigate(`/project/${projectID}/cloudBeaver`)
       }
     ]
   };
@@ -129,15 +129,15 @@ export const getDataExportTask: (
     ),
     buttons: [
       {
-        key: 'enter-cloud-beaver',
+        key: 'create-data-export',
         label: t(
           'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_2_0'
         ),
         action: () => {
           // #if [ee]
-          navigate(`project/${projectID}/data/export/create`);
+          navigate(`/project/${projectID}/data/export/create`);
           // #elif [ce]
-          navigate(`project/${projectID}/data/export`);
+          navigate(`/project/${projectID}/data/export`);
           // #endif
         }
       }

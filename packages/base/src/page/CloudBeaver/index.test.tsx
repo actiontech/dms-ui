@@ -5,12 +5,15 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { enableSqlQueryUrlData } from '../../testUtils/mockApi/cloudBeaver/data';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('test base/page/CloudBeaver', () => {
   let getSqlQueryUrlSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     getSqlQueryUrlSpy = cloudBeaver.getSqlQueryUrl();
+    mockUseCurrentProject();
   });
 
   afterEach(() => {
@@ -47,7 +50,7 @@ describe('test base/page/CloudBeaver', () => {
     fireEvent.click(screen.getByText('打开SQL工作台'));
     expect(global.open).toBeCalledTimes(1);
     expect(global.open).toBeCalledWith(
-      enableSqlQueryUrlData.sql_query_root_uri
+      `${enableSqlQueryUrlData.sql_query_root_uri}?project_uid=${mockProjectInfo.projectID}`
     );
   });
 
@@ -76,7 +79,7 @@ describe('test base/page/CloudBeaver', () => {
 
     expect(global.open).toBeCalledTimes(1);
     expect(global.open).toBeCalledWith(
-      enableSqlQueryUrlData.sql_query_root_uri
+      `${enableSqlQueryUrlData.sql_query_root_uri}?project_uid=${mockProjectInfo.projectID}`
     );
   });
 });

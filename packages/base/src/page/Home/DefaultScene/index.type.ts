@@ -23,7 +23,7 @@ export type UserDevopsStepButtonItem = {
 
 export type DevopsStepsProps = {
   navigate: NavigateFunction;
-  projectID?: string;
+  projectID: string;
   iconColor?: string;
   setOpenRulePageProjectSelectorModal?: (v: boolean) => void;
 };

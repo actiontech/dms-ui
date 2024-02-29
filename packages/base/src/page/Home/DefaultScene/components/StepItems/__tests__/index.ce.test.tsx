@@ -21,6 +21,6 @@ describe('test base/Home/StepItems', () => {
 
     fireEvent.click(screen.getByText('发起导出工单'));
     expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(`project/${projectID}/data/export`);
+    expect(navigateSpy).toBeCalledWith(`/project/${projectID}/data/export`);
   });
 });

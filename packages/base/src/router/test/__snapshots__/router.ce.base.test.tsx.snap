@@ -25,13 +25,6 @@ Array [
   },
   Object {
     "element": <div>
-      cloudBeaver
-    </div>,
-    "key": "cloudBeaver",
-    "path": "cloudBeaver",
-  },
-  Object {
-    "element": <div>
       account
     </div>,
     "key": "account",
@@ -45,6 +38,13 @@ Array [
         </div>,
         "key": "member",
         "path": ":projectID/member",
+      },
+      Object {
+        "element": <div>
+          cloudBeaver
+        </div>,
+        "key": "cloudBeaver",
+        "path": ":projectID/cloudBeaver",
       },
       Object {
         "children": Array [
@@ -110,16 +110,6 @@ exports[`base/router-base-ce render base router when version is ce render router
 </body>
 `;
 
-exports[`base/router-base-ce render base router when version is ce render router cloudBeaver 1`] = `
-<body>
-  <div>
-    <div>
-      cloudBeaver
-    </div>
-  </div>
-</body>
-`;
-
 exports[`base/router-base-ce render base router when version is ce render router home 1`] = `
 <body>
   <div>
@@ -177,6 +167,16 @@ exports[`base/router-base-ce render base router when version is ce render router
   <div>
     <div>
       member
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ce render base router when version is ce render router project render router cloudBeaver 1`] = `
+<body>
+  <div>
+    <div>
+      cloudBeaver
     </div>
   </div>
 </body>
