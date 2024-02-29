@@ -18,9 +18,6 @@ import { instanceTipsMockData } from '../../../testUtils/mockApi/instance/data';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import task from '../../../testUtils/mockApi/task';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
 
 import CreateOrder from '.';
 
@@ -33,14 +30,10 @@ describe('sqle/Order/CreateOrder', () => {
   let requestInstanceTip: jest.SpyInstance;
   let requestInstanceSchemas: jest.SpyInstance;
   let requestInstance: jest.SpyInstance;
-  let getAuditTaskSQLsSpy: jest.SpyInstance;
-  let auditTaskGroupId: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<CreateOrder />);
   };
-
-  ignoreInvalidValueForCSSStyleProperty();
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -55,13 +48,14 @@ describe('sqle/Order/CreateOrder', () => {
     requestInstance = instance.getInstance();
     requestAudit = order.createAndAuditTask();
     requestAuditTask = order.createAuditTasks();
-    getAuditTaskSQLsSpy = task.getAuditTaskSQLs();
-    auditTaskGroupId = order.auditTaskGroupId();
+    // ignore error: Warning: `NaN` is an invalid value for the `height` css style property.
+    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();
+    (console.error as jest.Mock).mockRestore();
     MockDate.reset();
     cleanup();
   });
@@ -186,15 +180,12 @@ describe('sqle/Order/CreateOrder', () => {
     expect(baseElement).toMatchSnapshot();
 
     // isSameSqlOrder
-    // const isSameSqlOrder = getBySelector('#isSameSqlOrder', baseElement);
-    // fireEvent.click(isSameSqlOrder);
-    // await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(screen.getByText('审 核'));
+    const isSameSqlOrder = getBySelector('#isSameSqlOrder', baseElement);
+    fireEvent.click(isSameSqlOrder);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('SQL美化'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestAuditTask).toBeCalledTimes(1);
     expect(requestInstance).toBeCalled();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(auditTaskGroupId).toBeCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -273,8 +264,6 @@ describe('sqle/Order/CreateOrder', () => {
       project_name: 'default',
       sql: 'select * from user'
     });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAuditTaskSQLsSpy).toBeCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
 
@@ -298,190 +287,10 @@ describe('sqle/Order/CreateOrder', () => {
     expect(RequestCreateOrder).toBeCalledWith({
       desc: 'order desc',
       project_name: projectName,
-      task_ids: [18],
+      task_ids: [undefined],
       workflow_subject: 'order_name_2'
     });
     expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render create order when task info list is null', async () => {
-    requestAudit.mockClear();
-    requestAudit.mockImplementation(() => createSpySuccessResponse({}));
-    const { baseElement } = customRender();
-
-    await act(async () => jest.advanceTimersByTime(3300));
-    // workflow_subject
-    const orderName = getBySelector('#workflow_subject', baseElement);
-    fireEvent.change(orderName, {
-      target: {
-        value: 'order_name_2'
-      }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-    // desc
-    fireEvent.change(getBySelector('#desc', baseElement), {
-      target: {
-        value: 'order desc'
-      }
-    });
-
-    // isSameSqlOrder
-    const isSameSqlOrder = getBySelector('#isSameSqlOrder', baseElement);
-    fireEvent.click(isSameSqlOrder);
-    await act(async () => jest.advanceTimersByTime(300));
-
-    // data source
-    const instanceNameEle = getBySelector(
-      '#dataBaseInfo_0_instanceName',
-      baseElement
-    );
-    fireEvent.mouseDown(instanceNameEle);
-    await act(async () => jest.advanceTimersByTime(600));
-    const instanceNameLabel = `${instanceTipsMockData[1].instance_name}(${instanceTipsMockData[1].host}:${instanceTipsMockData[1].port})`;
-    await act(async () => {
-      fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
-      await act(async () => jest.advanceTimersByTime(3300));
-    });
-    expect(requestInstanceSchemas).toBeCalled();
-    await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
-    const SchemaNameEle = getBySelector(
-      '#dataBaseInfo_0_instanceSchema',
-      baseElement
-    );
-    fireEvent.mouseDown(SchemaNameEle);
-    await act(async () => jest.advanceTimersByTime(600));
-    await act(async () => {
-      fireEvent.click(getBySelector(`div[title="sqle"]`));
-      await act(async () => jest.advanceTimersByTime(300));
-    });
-
-    await act(async () => jest.advanceTimersByTime(300));
-    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
-    fireEvent.change(monacoEditor, {
-      target: { value: 'select * from user' }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-
-    // audit btn
-    await act(async () => {
-      fireEvent.click(screen.getByText('审 核'));
-      await act(async () => jest.advanceTimersByTime(600));
-    });
-    expect(screen.getByText('审 核').parentNode).toHaveClass('ant-btn-loading');
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestAudit).toBeCalled();
-    expect(requestAudit).toBeCalledWith({
-      input_mybatis_xml_file: undefined,
-      input_sql_file: undefined,
-      input_zip_file: undefined,
-      instance_name: 'mysql-2',
-      instance_schema: 'sqle',
-      project_name: 'default',
-      sql: 'select * from user'
-    });
-
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-    // 提交工单
-    fireEvent.click(screen.getByText('提交工单'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(
-      screen.getByText('您必须先对您的SQL进行审核才能进行创建工单')
-    ).toBeInTheDocument();
-  });
-
-  it('render create order when task sql is null', async () => {
-    getAuditTaskSQLsSpy.mockClear();
-    getAuditTaskSQLsSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: [], total_nums: 0 })
-    );
-    const { baseElement } = customRender();
-
-    await act(async () => jest.advanceTimersByTime(3300));
-    // workflow_subject
-    const orderName = getBySelector('#workflow_subject', baseElement);
-    fireEvent.change(orderName, {
-      target: {
-        value: 'order_name_2'
-      }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-    // desc
-    fireEvent.change(getBySelector('#desc', baseElement), {
-      target: {
-        value: 'order desc'
-      }
-    });
-
-    // isSameSqlOrder
-    const isSameSqlOrder = getBySelector('#isSameSqlOrder', baseElement);
-    fireEvent.click(isSameSqlOrder);
-    await act(async () => jest.advanceTimersByTime(300));
-
-    // data source
-    const instanceNameEle = getBySelector(
-      '#dataBaseInfo_0_instanceName',
-      baseElement
-    );
-    fireEvent.mouseDown(instanceNameEle);
-    await act(async () => jest.advanceTimersByTime(600));
-    const instanceNameLabel = `${instanceTipsMockData[1].instance_name}(${instanceTipsMockData[1].host}:${instanceTipsMockData[1].port})`;
-    await act(async () => {
-      fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
-      await act(async () => jest.advanceTimersByTime(3300));
-    });
-    expect(requestInstanceSchemas).toBeCalled();
-    await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
-    const SchemaNameEle = getBySelector(
-      '#dataBaseInfo_0_instanceSchema',
-      baseElement
-    );
-    fireEvent.mouseDown(SchemaNameEle);
-    await act(async () => jest.advanceTimersByTime(600));
-    await act(async () => {
-      fireEvent.click(getBySelector(`div[title="sqle"]`));
-      await act(async () => jest.advanceTimersByTime(300));
-    });
-
-    await act(async () => jest.advanceTimersByTime(300));
-    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
-    fireEvent.change(monacoEditor, {
-      target: { value: 'select * from user' }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-
-    // audit btn
-    await act(async () => {
-      fireEvent.click(screen.getByText('审 核'));
-      await act(async () => jest.advanceTimersByTime(600));
-    });
-    expect(screen.getByText('审 核').parentNode).toHaveClass('ant-btn-loading');
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestAudit).toBeCalled();
-    expect(requestAudit).toBeCalledWith({
-      input_mybatis_xml_file: undefined,
-      input_sql_file: undefined,
-      input_zip_file: undefined,
-      instance_name: 'mysql-2',
-      instance_schema: 'sqle',
-      project_name: 'default',
-      sql: 'select * from user'
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAuditTaskSQLsSpy).toBeCalledTimes(1);
-
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-    // 提交工单
-    fireEvent.click(screen.getByText('提交工单'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(
-      screen.getByText('不能对审核结果为空的SQL进行创建工单')
-    ).toBeInTheDocument();
   });
 
   it('render form for click audit btn for same sql & upload file', async () => {

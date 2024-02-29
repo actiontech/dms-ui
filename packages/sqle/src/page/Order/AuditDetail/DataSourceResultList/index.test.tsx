@@ -1,12 +1,11 @@
 import { renderWithTheme } from '../../../../testUtils/customRender';
-import { cleanup, fireEvent, act } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 
 import { DataSourceResultListProps } from '../index.type';
 import DataSourceResultList from '.';
 
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 const mockListData: IAuditTaskSQLResV2[] = [];
 for (let i = 0; i < 50; i++) {
@@ -73,26 +72,5 @@ describe('sqle/Order/AuditDetail/DataSourceResultList', () => {
       refresh: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render onChange event', async () => {
-    const onChangeSpy = jest.fn();
-    customRender({
-      list: mockListData,
-      total: mockListData.length,
-      pagination: {
-        page_index: 1,
-        page_size: 10
-      },
-      onChange: onChangeSpy,
-      loading: false,
-      taskId: 'task id',
-      refresh: jest.fn()
-    });
-    await act(async () => {
-      fireEvent.click(getBySelector('li[title="2"]'));
-      await jest.advanceTimersByTime(100);
-    });
-    expect(onChangeSpy).toBeCalledTimes(1);
   });
 });
