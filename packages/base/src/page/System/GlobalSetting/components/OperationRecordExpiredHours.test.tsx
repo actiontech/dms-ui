@@ -70,6 +70,6 @@ describe('base/System/GlobalSetting/OperationRecordExpiredHours', () => {
       keyCode: 13
     });
     await act(async () => jest.advanceTimersByTime(500));
-    expect(submitGlobalConfigFn).toBeCalled();
+    expect(submitGlobalConfigFn).toHaveBeenCalled();
   });
 });

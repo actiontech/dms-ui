@@ -39,7 +39,7 @@ describe('sqle/RuleTemplate/RuleTemplateDetail', () => {
     const { baseElement } = renderWithThemeAndRedux(<RuleTemplateDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetProjectRule).toBeCalledTimes(1);
-    expect(requestGetAllRule).toBeCalledTimes(1);
+    expect(requestGetProjectRule).toHaveBeenCalledTimes(1);
+    expect(requestGetAllRule).toHaveBeenCalledTimes(1);
   });
 });

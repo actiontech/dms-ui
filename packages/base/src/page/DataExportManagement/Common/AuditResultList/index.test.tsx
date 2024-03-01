@@ -39,8 +39,8 @@ describe('test DataExport/Common/AuditResultList', () => {
     );
     expect(baseElement).toMatchSnapshot();
 
-    expect(batchGetTaskSpy).toBeCalledTimes(1);
-    expect(batchGetTaskSpy).toBeCalledWith({
+    expect(batchGetTaskSpy).toHaveBeenCalledTimes(1);
+    expect(batchGetTaskSpy).toHaveBeenCalledWith({
       project_uid: projectID,
       data_export_task_uids: '1233234654,324234234'
     });
@@ -48,8 +48,8 @@ describe('test DataExport/Common/AuditResultList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
 
-    expect(getTaskSQLsSpy).toBeCalledTimes(1);
-    expect(getTaskSQLsSpy).toBeCalledWith({
+    expect(getTaskSQLsSpy).toHaveBeenCalledTimes(1);
+    expect(getTaskSQLsSpy).toHaveBeenCalledWith({
       project_uid: projectID,
       data_export_task_uid: BatchGetDataExportTaskResponseData[0].task_uid,
       page_index: 1,
@@ -130,7 +130,7 @@ describe('test DataExport/Common/AuditResultList', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getTaskSQLsSpy).toBeCalledTimes(1);
+    expect(getTaskSQLsSpy).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 
@@ -169,8 +169,8 @@ describe('test DataExport/Common/AuditResultList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(screen.getByText('test-mysql-1'));
-    expect(getTaskSQLsSpy).toBeCalledTimes(2);
-    expect(getTaskSQLsSpy).toBeCalledWith({
+    expect(getTaskSQLsSpy).toHaveBeenCalledTimes(2);
+    expect(getTaskSQLsSpy).toHaveBeenCalledWith({
       project_uid: projectID,
       data_export_task_uid: '1752623436938612735',
       page_index: 1,
@@ -192,8 +192,8 @@ describe('test DataExport/Common/AuditResultList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledTimes(1);
-    expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledWith(true);
+    expect(updateExecuteSQLsTypeIsDQLSpy).toHaveBeenCalledTimes(1);
+    expect(updateExecuteSQLsTypeIsDQLSpy).toHaveBeenCalledWith(true);
 
     jest.clearAllMocks();
     cleanup();
@@ -221,8 +221,8 @@ describe('test DataExport/Common/AuditResultList', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledTimes(1);
-    expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledWith(false);
+    expect(updateExecuteSQLsTypeIsDQLSpy).toHaveBeenCalledTimes(1);
+    expect(updateExecuteSQLsTypeIsDQLSpy).toHaveBeenCalledWith(false);
 
     jest.clearAllMocks();
     cleanup();
@@ -237,7 +237,7 @@ describe('test DataExport/Common/AuditResultList', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledTimes(1);
-    expect(updateExecuteSQLsTypeIsDQLSpy).toBeCalledWith(true);
+    expect(updateExecuteSQLsTypeIsDQLSpy).toHaveBeenCalledTimes(1);
+    expect(updateExecuteSQLsTypeIsDQLSpy).toHaveBeenCalledWith(true);
   });
 });

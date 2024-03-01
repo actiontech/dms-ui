@@ -214,7 +214,7 @@ exports[`sqle/Order/Common/AuditResultList/AuditResultDrawer render snap when ti
                       class="custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
-                      options="{\\"readOnly\\":true,\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value="exec sql"
                       width="100%"
                     />

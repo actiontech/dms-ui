@@ -111,10 +111,10 @@ describe('sqle/Rule', () => {
   it('should match snap shot', async () => {
     const { baseElement } = renderWithThemeAndRedux(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalTemplateListSpy).toBeCalledTimes(1);
+    expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(getAllRulesSpy).toBeCalledTimes(1);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('查看规则')).toBeInTheDocument();
     expect(screen.getByText('MySQL')).toBeInTheDocument();
     expect(screen.getByText('ALL')).toBeInTheDocument();
@@ -144,9 +144,9 @@ describe('sqle/Rule', () => {
   it('filter list based on rule name', async () => {
     const { baseElement } = renderWithThemeAndRedux(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalTemplateListSpy).toBeCalledTimes(1);
+    expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toBeCalledTimes(1);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
 
     const searchInputEle = getBySelector('#fuzzy_keyword', baseElement);
     await act(async () => {
@@ -164,7 +164,7 @@ describe('sqle/Rule', () => {
       await act(() => jest.advanceTimersByTime(300));
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toBeCalledTimes(2);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test'
@@ -174,8 +174,8 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('custom_template'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getRuleTemplateSpy).toBeCalledTimes(1);
-    expect(getRuleTemplateSpy).toBeCalledWith({
+    expect(getRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(getRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: 'custom_template',
       fuzzy_keyword_rule: 'test'
     });
@@ -195,12 +195,12 @@ describe('sqle/Rule', () => {
       await act(() => jest.advanceTimersByTime(300));
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toBeCalledTimes(3);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(3);
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(3, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test1'
     });
-    expect(getRuleTemplateSpy).toBeCalledTimes(2);
+    expect(getRuleTemplateSpy).toHaveBeenCalledTimes(2);
     expect(getRuleTemplateSpy).toHaveBeenNthCalledWith(2, {
       rule_template_name: 'custom_template',
       fuzzy_keyword_rule: 'test1'
@@ -210,7 +210,7 @@ describe('sqle/Rule', () => {
   it('filter list based on project name', async () => {
     const { baseElement } = renderWithThemeAndRedux(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalTemplateListSpy).toBeCalledTimes(1);
+    expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('已启用')).not.toBeInTheDocument();
     expect(screen.queryByText('已禁用')).not.toBeInTheDocument();
@@ -219,7 +219,7 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('default'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getProjectRuleTemplateTipsSpy).toBeCalledTimes(1);
+    expect(getProjectRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);
     expect(getProjectRuleTemplateTipsSpy).toHaveBeenNthCalledWith(1, {
       project_name: 'default'
     });
@@ -227,8 +227,8 @@ describe('sqle/Rule', () => {
     expect(screen.getByText('已启用')).toBeInTheDocument();
     expect(screen.getByText('已禁用')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getProjectRuleTemplateSpy).toBeCalledTimes(1);
-    expect(getProjectRuleTemplateSpy).toBeCalledWith({
+    expect(getProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(getProjectRuleTemplateSpy).toHaveBeenCalledWith({
       project_name: 'default',
       rule_template_name: 'default_MySQL',
       fuzzy_keyword_rule: undefined
@@ -263,9 +263,9 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('default'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getProjectRuleTemplateTipsSpy).toBeCalledTimes(1);
-    expect(getProjectListSpy).toBeCalledTimes(1);
-    expect(getProjectListSpy).toBeCalledWith({
+    expect(getProjectRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);
+    expect(getProjectListSpy).toHaveBeenCalledTimes(1);
+    expect(getProjectListSpy).toHaveBeenCalledWith({
       filter_by_uid: '1',
       page_size: 10
     });
@@ -287,7 +287,7 @@ describe('sqle/Rule', () => {
   it('filter list based on template name', async () => {
     const { baseElement } = renderWithThemeAndRedux(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalTemplateListSpy).toBeCalledTimes(1);
+    expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('已启用')).not.toBeInTheDocument();
     expect(screen.queryByText('已禁用')).not.toBeInTheDocument();
@@ -296,8 +296,8 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('custom_template'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getRuleTemplateSpy).toBeCalledTimes(1);
-    expect(getRuleTemplateSpy).toBeCalledWith({
+    expect(getRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(getRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: 'custom_template',
       fuzzy_keyword_rule: undefined
     });
@@ -318,14 +318,14 @@ describe('sqle/Rule', () => {
   it('filter list based on database type', async () => {
     const { baseElement } = renderWithThemeAndRedux(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getGlobalTemplateListSpy).toBeCalledTimes(1);
+    expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.mouseDown(getBySelector('#filter_db_type', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('MySQL1'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getAllRulesSpy).toBeCalledTimes(2);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL1',
       fuzzy_keyword_rule: undefined
@@ -361,9 +361,9 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('default'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getProjectRuleTemplateTipsSpy).toBeCalledTimes(1);
+    expect(getProjectRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);
     expect(getBySelector('.ant-empty', baseElement)).toBeInTheDocument();
-    expect(getProjectListSpy).toBeCalledTimes(1);
+    expect(getProjectListSpy).toHaveBeenCalledTimes(1);
     expect(getBySelector('.ant-empty', baseElement)).toBeInTheDocument();
     expect(screen.queryByText('创建规则模板')).not.toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -385,16 +385,16 @@ describe('sqle/Rule', () => {
       </BrowserRouter>
     );
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getGlobalTemplateListSpy).toBeCalledTimes(1);
-    expect(getProjectRuleTemplateTipsSpy).toBeCalledTimes(1);
+    expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
+    expect(getProjectRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateSpy).toBeCalledTimes(1);
-    expect(getProjectRuleTemplateSpy).toBeCalledWith({
+    expect(getProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(getProjectRuleTemplateSpy).toHaveBeenCalledWith({
       project_name: 'default',
       rule_template_name: 'default_MySQL',
       fuzzy_keyword_rule: undefined
     });
-    expect(getAllRulesSpy).toBeCalledTimes(1);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('default')).toBeInTheDocument();
     expect(screen.getByText('default_MySQL')).toBeInTheDocument();
   });

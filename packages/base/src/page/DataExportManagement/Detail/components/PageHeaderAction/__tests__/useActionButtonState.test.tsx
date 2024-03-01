@@ -203,25 +203,29 @@ describe('test useActionButtonState', () => {
     const { result } = renderHook(() => useActionButtonState(messageApiSpy));
 
     result.current.approveWorkflowButtonMeta.action();
-    expect(mockExportDetailActionData.approveWorkflow).toBeCalledTimes(1);
-    expect(mockExportDetailActionData.approveWorkflow).toBeCalledWith(
+    expect(mockExportDetailActionData.approveWorkflow).toHaveBeenCalledTimes(1);
+    expect(mockExportDetailActionData.approveWorkflow).toHaveBeenCalledWith(
       workflowID
     );
 
     result.current.closeWorkflowButtonMeta.action();
-    expect(mockExportDetailActionData.closeWorkflow).toBeCalledTimes(1);
-    expect(mockExportDetailActionData.closeWorkflow).toBeCalledWith(workflowID);
+    expect(mockExportDetailActionData.closeWorkflow).toHaveBeenCalledTimes(1);
+    expect(mockExportDetailActionData.closeWorkflow).toHaveBeenCalledWith(
+      workflowID
+    );
 
     result.current.rejectWorkflowButtonMeta.action();
-    expect(mockDataExportDetailRedux.updateWorkflowRejectOpen).toBeCalledTimes(
-      1
-    );
-    expect(mockDataExportDetailRedux.updateWorkflowRejectOpen).toBeCalledWith(
-      true
-    );
+    expect(
+      mockDataExportDetailRedux.updateWorkflowRejectOpen
+    ).toHaveBeenCalledTimes(1);
+    expect(
+      mockDataExportDetailRedux.updateWorkflowRejectOpen
+    ).toHaveBeenCalledWith(true);
 
     result.current.executeExportButtonMeta.action();
-    expect(mockExportDetailActionData.executeExport).toBeCalledTimes(1);
-    expect(mockExportDetailActionData.executeExport).toBeCalledWith(workflowID);
+    expect(mockExportDetailActionData.executeExport).toHaveBeenCalledTimes(1);
+    expect(mockExportDetailActionData.executeExport).toHaveBeenCalledWith(
+      workflowID
+    );
   });
 });

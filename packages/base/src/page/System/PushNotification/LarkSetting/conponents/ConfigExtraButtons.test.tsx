@@ -73,7 +73,7 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
 
       fireEvent.click(editBtn);
       await act(async () => jest.advanceTimersByTime(300));
-      expect(handleClickModifyFn).toBeCalledTimes(1);
+      expect(handleClickModifyFn).toHaveBeenCalledTimes(1);
     });
 
     it('render test btn snap when click test btn no show', async () => {
@@ -235,8 +235,8 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(screen.getByText('正在向飞书推送消息...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(2700));
-      expect(requestTestFeishuConfiguration).toBeCalledTimes(1);
-      expect(requestTestFeishuConfiguration).toBeCalledWith({
+      expect(requestTestFeishuConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestTestFeishuConfiguration).toHaveBeenCalledWith({
         test_feishu_configuration: {
           account: '1@a.com',
           account_type: TestFeishuConfigurationAccountTypeEnum.email
@@ -295,8 +295,8 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
       await act(async () => jest.advanceTimersByTime(2700));
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(requestTestFeishuConfiguration).toBeCalledTimes(1);
-      expect(requestTestFeishuConfiguration).toBeCalledWith({
+      expect(requestTestFeishuConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestTestFeishuConfiguration).toHaveBeenCalledWith({
         test_feishu_configuration: {
           account: '12345678910',
           account_type: TestFeishuConfigurationAccountTypeEnum.phone

@@ -65,7 +65,7 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestTestDingTalkConfig).toBeCalled();
+      expect(requestTestDingTalkConfig).toHaveBeenCalled();
     });
 
     it('render submit btn when api error', async () => {
@@ -80,7 +80,7 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
       const btnSubmit = getBySelector('.ant-btn[type="submit"]', baseElement);
       fireEvent.click(btnSubmit);
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTestDingTalkConfig).toBeCalled();
+      expect(requestTestDingTalkConfig).toHaveBeenCalled();
       expect(baseElement).toMatchSnapshot();
     });
   });

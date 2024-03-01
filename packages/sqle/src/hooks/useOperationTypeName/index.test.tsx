@@ -43,14 +43,14 @@ describe('sqle/hooks/useOperationTypeName', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual(
       operationTypeNameMockData
     );
@@ -84,14 +84,14 @@ describe('sqle/hooks/useOperationTypeName', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual(
       operationTypeNameMockData
     );
@@ -104,7 +104,7 @@ describe('sqle/hooks/useOperationTypeName', () => {
       result.current.updateOperationTypeNameList();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual(
       operationTypeNameMockData
     );
@@ -113,7 +113,7 @@ describe('sqle/hooks/useOperationTypeName', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual([]);
   });
 
@@ -129,14 +129,14 @@ describe('sqle/hooks/useOperationTypeName', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual(
       operationTypeNameMockData
     );
@@ -149,7 +149,7 @@ describe('sqle/hooks/useOperationTypeName', () => {
       result.current.updateOperationTypeNameList();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual(
       operationTypeNameMockData
     );
@@ -158,7 +158,7 @@ describe('sqle/hooks/useOperationTypeName', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.operationTypeNameList).toEqual([]);
   });
 });

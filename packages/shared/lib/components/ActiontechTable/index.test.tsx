@@ -94,7 +94,7 @@ describe('lib/ActiontechTable', () => {
         fireEvent.click(pageIndex2);
         await jest.advanceTimersByTime(300);
       });
-      expect(onChangeFn).toBeCalledTimes(1);
+      expect(onChangeFn).toHaveBeenCalledTimes(1);
       expect(baseElement).toMatchSnapshot();
     });
   });

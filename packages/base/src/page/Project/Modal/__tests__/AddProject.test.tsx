@@ -45,7 +45,7 @@ describe('test base/page/project/modal/add', () => {
 
   it('should send create project request when clicking submit button', async () => {
     superRender(<AddProject />);
-    expect(addProjectSpy).toBeCalledTimes(0);
+    expect(addProjectSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.input(screen.getByLabelText('项目名称'), {
       target: { value: 'name' }
@@ -60,20 +60,20 @@ describe('test base/page/project/modal/add', () => {
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
 
-    expect(addProjectSpy).toBeCalledTimes(1);
-    expect(addProjectSpy).toBeCalledWith({
+    expect(addProjectSpy).toHaveBeenCalledTimes(1);
+    expect(addProjectSpy).toHaveBeenCalledWith({
       project: { name: 'name', desc: 'desc' }
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(screen.getByText('创建项目name成功')).toBeInTheDocument();
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Project_List);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(EmitterKey.DMS_Refresh_Project_List);
     expect(screen.getByLabelText('项目名称')).toHaveValue('');
     expect(screen.getByLabelText('项目描述')).toHaveValue('');
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.DMS_Add_Project,
         status: false

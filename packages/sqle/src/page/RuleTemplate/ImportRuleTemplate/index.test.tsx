@@ -95,11 +95,11 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('正在导入文件...')).toBeVisible();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(importProjectRuleTemplateSpy).toBeCalledTimes(1);
+    expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(getAllRuleSpy).toBeCalledTimes(1);
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId('base-form')).toBeVisible();
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
 
@@ -126,7 +126,7 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
       getBySelector('.actiontech-page-header-namespace .title .ant-btn')
     );
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('import rule template', async () => {
@@ -145,10 +145,10 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('正在导入文件...')).toBeVisible();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(importProjectRuleTemplateSpy).toBeCalledTimes(1);
+    expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRuleSpy).toBeCalledTimes(1);
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId('base-form')).toBeVisible();
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
 
@@ -182,7 +182,7 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
       });
       await act(() => jest.advanceTimersByTime(300));
     });
-    expect(getAllRuleSpy).toBeCalledWith({
+    expect(getAllRuleSpy).toHaveBeenCalledWith({
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test'
     });
@@ -213,12 +213,12 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('禁用全部规则').parentElement).not.toBeDisabled();
     fireEvent.click(screen.getByText('提 交'));
-    expect(createProjectRuleTemplateSpy).toBeCalledTimes(1);
+    expect(createProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
     expect(screen.getByText('导入审核规则模版成功')).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-result .basic-button-wrapper'));
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('rule list action', async () => {
@@ -233,7 +233,7 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('正在导入文件...')).toBeVisible();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(importProjectRuleTemplateSpy).toBeCalledTimes(1);
+    expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.input(getBySelector('#templateName'), {
       target: { value: 'test1' }
@@ -293,7 +293,7 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     fireEvent.click(enabledButton);
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('提 交'));
-    expect(createProjectRuleTemplateSpy).toBeCalledTimes(1);
+    expect(createProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
   });

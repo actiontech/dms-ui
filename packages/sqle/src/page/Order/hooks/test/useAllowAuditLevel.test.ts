@@ -48,8 +48,8 @@ describe('sqle/order/hooks/useAllowAuditLevel', () => {
       );
       await act(async () => jest.advanceTimersByTime(3000));
     });
-    expect(requestGetWorkflowTemplate).toBeCalled;
-    expect(resetBtnDisabledFn).toBeCalled();
+    expect(requestGetWorkflowTemplate).toHaveBeenCalled;
+    expect(resetBtnDisabledFn).toHaveBeenCalled();
     expect(result.current.disabledOperatorOrderBtnTips).toBe('');
   });
 });

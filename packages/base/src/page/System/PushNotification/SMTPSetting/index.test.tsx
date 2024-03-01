@@ -34,7 +34,7 @@ describe('base/System/PushNotification/SMTPSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetSMTPConfiguration).toBeCalled();
+    expect(requestGetSMTPConfiguration).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -137,8 +137,8 @@ describe('base/System/PushNotification/SMTPSetting', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestUpdateSMTPConfiguration).toBeCalled();
-      expect(requestUpdateSMTPConfiguration).toBeCalledWith({
+      expect(requestUpdateSMTPConfiguration).toHaveBeenCalled();
+      expect(requestUpdateSMTPConfiguration).toHaveBeenCalledWith({
         smtp_configuration: {
           enable_smtp_notify: true,
           is_skip_verify: undefined,
@@ -149,7 +149,7 @@ describe('base/System/PushNotification/SMTPSetting', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetSMTPConfiguration).toBeCalled();
+      expect(requestGetSMTPConfiguration).toHaveBeenCalled();
     });
   });
 });

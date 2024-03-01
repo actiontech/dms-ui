@@ -35,7 +35,7 @@ describe('base/Nav/SideMenu/UserMenu/VersionModal-ce', () => {
 
     fireEvent.click(screen.getByText('知道了'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(VersionModalCloseFn).toBeCalled();
+    expect(VersionModalCloseFn).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 });

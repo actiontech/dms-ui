@@ -51,8 +51,8 @@ describe('SqlAnalyze/Order', () => {
     const { container, baseElement } = renderWithReduxAndTheme(
       <OrderSqlAnalyze />
     );
-    expect(spy).toBeCalledTimes(1);
-    expect(spy).toBeCalledWith({
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
       task_id: 'taskId1',
       number: 123
     });

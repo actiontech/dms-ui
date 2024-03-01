@@ -67,7 +67,7 @@ describe('lib/ConfigItem-EditInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(validatorFn).toBeCalledTimes(1);
+    expect(validatorFn).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -99,7 +99,7 @@ describe('lib/ConfigItem-EditInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(onSubmitFn).toBeCalledTimes(1);
+    expect(onSubmitFn).toHaveBeenCalledTimes(1);
 
     await act(async () => {
       fireEvent.keyDown(inputEle, {
@@ -109,6 +109,6 @@ describe('lib/ConfigItem-EditInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(hideFieldFn).toBeCalledTimes(1);
+    expect(hideFieldFn).toHaveBeenCalledTimes(1);
   });
 });

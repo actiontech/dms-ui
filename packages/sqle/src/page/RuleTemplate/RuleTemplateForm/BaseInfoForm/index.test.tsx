@@ -43,7 +43,7 @@ describe('sqle/RuleTemplate/BaseInfoForm', () => {
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 });

@@ -32,7 +32,7 @@ describe('base/System/LoginConnection/Oauth', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetOauth2Configuration).toBeCalled();
+    expect(requestGetOauth2Configuration).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -160,8 +160,8 @@ describe('base/System/LoginConnection/Oauth', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestUpdateOauth2Configuration).toBeCalled();
-      expect(requestUpdateOauth2Configuration).toBeCalledWith({
+      expect(requestUpdateOauth2Configuration).toHaveBeenCalled();
+      expect(requestUpdateOauth2Configuration).toHaveBeenCalledWith({
         oauth2: {
           access_token_tag: 'rpYV2tN4&545Jvkd3%J6',
           client_host: 'news://egyolphgg.tm/lundgwlpz',
@@ -179,7 +179,7 @@ describe('base/System/LoginConnection/Oauth', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetOauth2Configuration).toBeCalled();
+      expect(requestGetOauth2Configuration).toHaveBeenCalled();
     });
   });
 });

@@ -23,8 +23,8 @@ describe('base/Member/Modal', () => {
 
   it('should dispatch init action', () => {
     renderWithReduxAndTheme(<MemberModal />);
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       payload: {
         modalStatus: {
           [ModalName.DMS_Add_Member]: false,

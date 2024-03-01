@@ -61,7 +61,7 @@ exports[`page/ProjectOverview/DataSourceCount render data source count and check
               class="chart-box"
             >
               <div
-                data-custom-params="{\\"data\\":[{\\"type\\":\\"MySQL\\",\\"value\\":1,\\"category\\":\\"health\\",\\"instanceNames\\":\\"mysql-1\\"},{\\"type\\":\\"MySQL\\",\\"value\\":1,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"mysql-2\\"},{\\"type\\":\\"Redis\\",\\"value\\":1,\\"category\\":\\"health\\",\\"instanceNames\\":\\"redis-1\\"},{\\"type\\":\\"Redis\\",\\"value\\":1,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"redis-2\\"},{\\"type\\":\\"Oracle\\",\\"value\\":1,\\"category\\":\\"health\\",\\"instanceNames\\":\\"oracle-1\\"},{\\"type\\":\\"Oracle\\",\\"value\\":1,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"oracle-2\\"},{\\"type\\":\\"PostgreSQL\\",\\"value\\":1,\\"category\\":\\"health\\",\\"instanceNames\\":\\"progres-1\\"},{\\"type\\":\\"PostgreSQL\\",\\"value\\":1,\\"category\\":\\"risk\\",\\"instanceNames\\":\\"progres-2\\"}],\\"xField\\":\\"type\\",\\"yField\\":\\"value\\",\\"color\\":[\\"#7470ED\\",\\"#EBAD1C\\"],\\"minColumnWidth\\":12,\\"maxColumnWidth\\":12,\\"columnWidthRatio\\":0.8,\\"columnStyle\\":{\\"radius\\":[4,4,0,0]},\\"isGroup\\":true,\\"seriesField\\":\\"category\\",\\"xAxis\\":{\\"animate\\":false,\\"line\\":null,\\"label\\":{\\"autoEllipsis\\":true,\\"autoHide\\":false,\\"style\\":{\\"fill\\":\\"#8a8f99\\",\\"lineHeight\\":20,\\"textAlign\\":\\"center\\",\\"textBaseline\\":\\"middle\\",\\"width\\":20}}},\\"yAxis\\":false,\\"legend\\":{\\"layout\\":\\"horizontal\\",\\"position\\":\\"top-left\\",\\"itemName\\":{\\"spacing\\":8,\\"style\\":{\\"fontSize\\":12,\\"lineHeight\\":20,\\"fontWeight\\":\\"normal\\",\\"fill\\":\\"#8a8f99\\"}}},\\"tooltip\\":{\\"showMarkers\\":false,\\"fields\\":[\\"type\\",\\"value\\"]},\\"theme\\":\\"light\\"}"
+                data-custom-params="{"data":[{"type":"MySQL","value":1,"category":"health","instanceNames":"mysql-1"},{"type":"MySQL","value":1,"category":"risk","instanceNames":"mysql-2"},{"type":"Redis","value":1,"category":"health","instanceNames":"redis-1"},{"type":"Redis","value":1,"category":"risk","instanceNames":"redis-2"},{"type":"Oracle","value":1,"category":"health","instanceNames":"oracle-1"},{"type":"Oracle","value":1,"category":"risk","instanceNames":"oracle-2"},{"type":"PostgreSQL","value":1,"category":"health","instanceNames":"progres-1"},{"type":"PostgreSQL","value":1,"category":"risk","instanceNames":"progres-2"}],"xField":"type","yField":"value","color":["#7470ED","#EBAD1C"],"minColumnWidth":12,"maxColumnWidth":12,"columnWidthRatio":0.8,"columnStyle":{"radius":[4,4,0,0]},"isGroup":true,"seriesField":"category","xAxis":{"animate":false,"line":null,"label":{"autoEllipsis":true,"autoHide":false,"style":{"fill":"#8a8f99","lineHeight":20,"textAlign":"center","textBaseline":"middle","width":20}}},"yAxis":false,"legend":{"layout":"horizontal","position":"top-left","itemName":{"spacing":8,"style":{"fontSize":12,"lineHeight":20,"fontWeight":"normal","fill":"#8a8f99"}}},"tooltip":{"showMarkers":false,"fields":["type","value"]},"theme":"light"}"
               />
             </div>
           </div>
@@ -272,8 +272,8 @@ exports[`page/ProjectOverview/DataSourceCount test formatterLegendItemName 1`] =
 exports[`page/ProjectOverview/DataSourceCount test formatterLegendItemName 2`] = `"风险实例"`;
 
 exports[`page/ProjectOverview/DataSourceCount test getLegendMarkerStyle 1`] = `
-Object {
-  "style": Object {
+{
+  "style": {
     "fill": "#eee",
     "lineJoin": "round",
     "lineWidth": 4,
@@ -284,8 +284,8 @@ Object {
 `;
 
 exports[`page/ProjectOverview/DataSourceCount test getLegendMarkerStyle 2`] = `
-Object {
-  "style": Object {
+{
+  "style": {
     "fill": "#fff",
     "lineJoin": "round",
     "lineWidth": 4,

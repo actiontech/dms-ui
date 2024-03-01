@@ -48,8 +48,8 @@ describe('sqle/CustomRuleList', () => {
   it('should match snap shot', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getCustomRulesSpy).toBeCalledTimes(1);
-    expect(getDrivers).toBeCalledTimes(1);
+    expect(getCustomRulesSpy).toHaveBeenCalledTimes(1);
+    expect(getDrivers).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -58,22 +58,22 @@ describe('sqle/CustomRuleList', () => {
     getCustomRulesSpy.mockImplementation(() => createSpySuccessResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getCustomRulesSpy).toBeCalledTimes(1);
-    expect(getDrivers).toBeCalledTimes(1);
+    expect(getCustomRulesSpy).toHaveBeenCalledTimes(1);
+    expect(getDrivers).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
   it('filter custom rule list', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getCustomRulesSpy).toBeCalledTimes(1);
+    expect(getCustomRulesSpy).toHaveBeenCalledTimes(1);
     fireEvent.mouseDown(getBySelector('.ant-select-selection-search-input'));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(
       getBySelector('.ant-select-item-option-content', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getCustomRulesSpy).toBeCalledWith({
+    expect(getCustomRulesSpy).toHaveBeenCalledWith({
       filter_db_type: 'mysql',
       filter_desc: ''
     });
@@ -95,7 +95,7 @@ describe('sqle/CustomRuleList', () => {
       });
       await act(() => jest.advanceTimersByTime(300));
     });
-    expect(getCustomRulesSpy).toBeCalledWith({
+    expect(getCustomRulesSpy).toHaveBeenCalledWith({
       filter_db_type: 'mysql',
       filter_desc: 'test'
     });
@@ -104,12 +104,12 @@ describe('sqle/CustomRuleList', () => {
   it('should refresh table when emit "Refresh_Custom_Rule_Template_List" event', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getCustomRulesSpy).toBeCalledTimes(1);
+    expect(getCustomRulesSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
       EventEmitter.emit(EmitterKey.Refresh_Custom_Rule_Template_List)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getCustomRulesSpy).toBeCalledTimes(2);
+    expect(getCustomRulesSpy).toHaveBeenCalledTimes(2);
   });
 
   it('click rule item', async () => {
@@ -145,7 +145,7 @@ describe('sqle/CustomRuleList', () => {
     );
     fireEvent.click(editButton);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('delete rule item', async () => {
@@ -167,8 +167,8 @@ describe('sqle/CustomRuleList', () => {
     expect(screen.getByText('是否确认删除该规则？')).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(deleteCustomRuleSpy).toBeCalledTimes(1);
-    expect(deleteCustomRuleSpy).toBeCalledWith({
+    expect(deleteCustomRuleSpy).toHaveBeenCalledTimes(1);
+    expect(deleteCustomRuleSpy).toHaveBeenCalledWith({
       rule_id: customRuleMockData[0].rule_id
     });
     expect(

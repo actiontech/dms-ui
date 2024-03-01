@@ -46,7 +46,7 @@ describe('base/UserCenter/Modal/AddUser', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('添加用户')).toBeInTheDocument();
-    expect(opPermissionListSpy).toBeCalledTimes(1);
+    expect(opPermissionListSpy).toHaveBeenCalledTimes(1);
     const userName = 'test1';
     fireEvent.input(screen.getByLabelText('用户名'), {
       target: { value: userName }
@@ -73,11 +73,11 @@ describe('base/UserCenter/Modal/AddUser', () => {
     selectOptionByIndex('平台管理权限', '创建项目', 0);
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(addUserSpy).toBeCalledTimes(1);
+    expect(addUserSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(addUserSpy).toBeCalledWith({
+    expect(addUserSpy).toHaveBeenCalledWith({
       user: {
         name: userName,
         password: '123',
@@ -87,8 +87,8 @@ describe('base/UserCenter/Modal/AddUser', () => {
         op_permission_uids: ['700001']
       }
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_User,
@@ -96,8 +96,8 @@ describe('base/UserCenter/Modal/AddUser', () => {
       }
     });
     expect(screen.getByText(`添加用户 "${userName}" 成功`)).toBeInTheDocument();
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Refresh_User_Center_List
     );
   });
@@ -106,8 +106,8 @@ describe('base/UserCenter/Modal/AddUser', () => {
     const { baseElement } = renderWithReduxAndTheme(<AddUser />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_User,

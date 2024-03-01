@@ -102,7 +102,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render use rende
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render action when actions is empty 1`] = `undefined`;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render button & moreButtons 1`] = `
-Object {
+{
   "className": "actiontech-table-actions-column",
   "dataIndex": "operator",
   "fixed": "right",
@@ -115,7 +115,7 @@ Object {
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render buttons | moreButtons is empty 1`] = `undefined`;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render buttons 1`] = `
-Object {
+{
   "className": "actiontech-table-actions-column",
   "dataIndex": "operator",
   "fixed": "right",
@@ -126,7 +126,7 @@ Object {
 `;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render moreButtons 1`] = `
-Object {
+{
   "className": "actiontech-table-actions-column",
   "dataIndex": "operator",
   "fixed": "right",
@@ -137,7 +137,7 @@ Object {
 `;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render normal columns 1`] = `
-Object {
+{
   "className": "actiontech-table-actions-column",
   "dataIndex": "operator",
   "fixed": "right",

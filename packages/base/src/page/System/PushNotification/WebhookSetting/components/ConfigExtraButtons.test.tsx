@@ -71,7 +71,7 @@ describe('base/System/PushNotification/WebhookSetting/ConfigExtraButtons', () =>
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestTestWebHookConfiguration).toBeCalled();
+      expect(requestTestWebHookConfiguration).toHaveBeenCalled();
     });
 
     it('render submit btn when api error', async () => {
@@ -88,7 +88,7 @@ describe('base/System/PushNotification/WebhookSetting/ConfigExtraButtons', () =>
       const btnSubmit = getBySelector('.ant-btn[type="submit"]', baseElement);
       fireEvent.click(btnSubmit);
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTestWebHookConfiguration).toBeCalled();
+      expect(requestTestWebHookConfiguration).toHaveBeenCalled();
       expect(baseElement).toMatchSnapshot();
     });
   });

@@ -46,14 +46,14 @@ describe('page/ProjectOverview/OrderStatus', () => {
       EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('工单')).toBeInTheDocument();
     expect(screen.getByText('创建工单')).toBeInTheDocument();
     fireEvent.click(screen.getByText('创建工单'));
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${mockProjectInfo.projectID}/order/create`
     );
   });
@@ -71,15 +71,17 @@ describe('page/ProjectOverview/OrderStatus', () => {
       EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('暂无数据')).toBeInTheDocument();
     expect(screen.getByText('刷新')).toBeInTheDocument();
     fireEvent.click(screen.getByText('刷新'));
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Project_Overview);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Project_Overview
+    );
   });
 
   it('no permission for create order', async () => {

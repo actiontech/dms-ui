@@ -27,7 +27,7 @@ describe('page/WorkflowTemplate/StepButton', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('下一步')).toBeInTheDocument();
     fireEvent.click(screen.getByText('下一步'));
-    expect(nextMock).toBeCalled();
+    expect(nextMock).toHaveBeenCalled();
   });
 
   it('render step button with prev button and next button', async () => {
@@ -36,6 +36,6 @@ describe('page/WorkflowTemplate/StepButton', () => {
     expect(screen.getByText('上一步')).toBeInTheDocument();
     expect(screen.getByText('下一步')).toBeInTheDocument();
     fireEvent.click(screen.getByText('上一步'));
-    expect(prevMock).toBeCalled();
+    expect(prevMock).toHaveBeenCalled();
   });
 });

@@ -23,14 +23,14 @@ describe('page/Home', () => {
     const request = home.getWorkflows();
     const staticsRequest = home.getDashboard();
     const { baseElement } = superRender(<Home />);
-    expect(request).toBeCalled();
-    expect(staticsRequest).toBeCalled();
+    expect(request).toHaveBeenCalled();
+    expect(staticsRequest).toHaveBeenCalled();
     expect(screen.getByText('工作台')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
 
     expect(getAllBySelector('.ant-btn').length).toBe(3);
     fireEvent.click(getAllBySelector('.ant-btn')?.[0]);
-    expect(request).toBeCalled();
-    expect(staticsRequest).toBeCalled();
+    expect(request).toHaveBeenCalled();
+    expect(staticsRequest).toHaveBeenCalled();
   });
 });

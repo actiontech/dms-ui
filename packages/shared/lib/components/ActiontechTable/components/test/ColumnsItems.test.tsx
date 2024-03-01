@@ -75,8 +75,11 @@ describe('lib/ActiontechTable-ColumnsItems', () => {
       fireEvent.click(fixedIcon);
       await jest.advanceTimersByTime(300);
     });
-    expect(onFixedClickFn).toBeCalledTimes(1);
-    expect(onFixedClickFn).toBeCalledWith('no-fixed', columnsData.dataIndex);
+    expect(onFixedClickFn).toHaveBeenCalledTimes(1);
+    expect(onFixedClickFn).toHaveBeenCalledWith(
+      'no-fixed',
+      columnsData.dataIndex
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -97,8 +100,8 @@ describe('lib/ActiontechTable-ColumnsItems', () => {
       fireEvent.click(fixedIcon);
       await jest.advanceTimersByTime(300);
     });
-    expect(onFixedClickFn).toBeCalledTimes(1);
-    expect(onFixedClickFn).toBeCalledWith('left', columnsData.dataIndex);
+    expect(onFixedClickFn).toHaveBeenCalledTimes(1);
+    expect(onFixedClickFn).toHaveBeenCalledWith('left', columnsData.dataIndex);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -119,8 +122,8 @@ describe('lib/ActiontechTable-ColumnsItems', () => {
       fireEvent.click(fixedIcon);
       await jest.advanceTimersByTime(300);
     });
-    expect(onFixedClickFn).toBeCalledTimes(1);
-    expect(onFixedClickFn).toBeCalledWith('right', columnsData.dataIndex);
+    expect(onFixedClickFn).toHaveBeenCalledTimes(1);
+    expect(onFixedClickFn).toHaveBeenCalledWith('right', columnsData.dataIndex);
     expect(baseElement).toMatchSnapshot();
   });
 });

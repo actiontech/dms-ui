@@ -46,8 +46,6 @@ describe('sqle/Order/AuditDetail', () => {
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
     jest.useFakeTimers();
-    // date picker : custom attr [hideSuperIcon]
-    jest.spyOn(console, 'error').mockImplementation(() => {});
     order.mockAllApi();
     mockUseCurrentUser();
     requestGetAuditTaskSQLs = order.getAuditTaskSQLs();
@@ -57,16 +55,16 @@ describe('sqle/Order/AuditDetail', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     MockDate.reset();
-    (console.error as jest.Mock).mockRestore();
     cleanup();
   });
 
-  it('render snap when no taskInfos', () => {
+  it('render snap when no taskInfos', async () => {
     const { baseElement } = customRender({
       taskInfos: [],
       isArchive: true,
       refreshOverviewFlag: true
     });
+    await act(async () => jest.advanceTimersByTime(0));
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -92,7 +90,7 @@ describe('sqle/Order/AuditDetail', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2800));
-    expect(requestGetAuditTaskSQLs).toBeCalled();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
   });
 
   it('render snap when order info has action btn', async () => {
@@ -127,8 +125,8 @@ describe('sqle/Order/AuditDetail', () => {
     );
     fireEvent.click(segmentItems[1]);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).toBeCalled();
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_exec_status: undefined,
       no_duplicate: false,
       page_index: '1',

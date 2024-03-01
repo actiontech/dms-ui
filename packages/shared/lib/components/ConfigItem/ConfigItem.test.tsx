@@ -99,7 +99,7 @@ describe('lib/ConfigItem', () => {
       fireEvent.click(btnEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(showFieldFn).toBeCalledTimes(1);
+    expect(showFieldFn).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -114,7 +114,7 @@ describe('lib/ConfigItem', () => {
     );
 
     fireEvent.mouseDown(screen.getByText('outside'));
-    expect(hideField).not.toBeCalled();
+    expect(hideField).not.toHaveBeenCalled();
 
     cleanup();
     renderWithTheme(
@@ -124,7 +124,7 @@ describe('lib/ConfigItem', () => {
       </>
     );
     fireEvent.mouseDown(screen.getByText('outside'));
-    expect(hideField).toBeCalledTimes(1);
+    expect(hideField).toHaveBeenCalledTimes(1);
 
     cleanup();
     renderWithTheme(
@@ -136,6 +136,6 @@ describe('lib/ConfigItem', () => {
       </>
     );
     fireEvent.mouseDown(screen.getByText('outside'));
-    expect(hideField).toBeCalledTimes(1);
+    expect(hideField).toHaveBeenCalledTimes(1);
   });
 });

@@ -52,27 +52,27 @@ describe('useUserInfo', () => {
     expect(result.current.getUserInfoLoading).toBeFalsy();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalled();
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalled();
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         role: 'admin',
         username: 'test'
       },
       type: 'user/updateUser'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         bindProjects: GetUserPayload.user_bind_projects
       },
       type: 'user/updateBindProjects'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         managementPermissions: []
       },
       type: 'user/updateManagementPermissions'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: true,
       type: 'user/updateUserInfoFetchStatus'
     });
@@ -86,7 +86,7 @@ describe('useUserInfo', () => {
     const { result } = renderHook(() => useUserInfo());
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalledTimes(12);
+    expect(mockDispatch).toHaveBeenCalledTimes(12);
     expect(mockDispatch).nthCalledWith(1, {
       payload: { username: '', role: '' },
       type: 'user/updateUser'
@@ -111,8 +111,8 @@ describe('useUserInfo', () => {
       },
       type: 'user/updateManagementPermissions'
     });
-    // expect(navigateSpy).toBeCalledTimes(1);
-    // expect(navigateSpy).toBeCalledWith('/login', { replace: true });
+    // expect(navigateSpy).toHaveBeenCalledTimes(1);
+    // expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
   });
 
   it('should clear userInfo and navigate to login request error', async () => {
@@ -123,7 +123,7 @@ describe('useUserInfo', () => {
     const { result } = renderHook(() => useUserInfo());
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalledTimes(6);
+    expect(mockDispatch).toHaveBeenCalledTimes(6);
     expect(mockDispatch).nthCalledWith(1, {
       payload: { username: '', role: '' },
       type: 'user/updateUser'
@@ -148,7 +148,7 @@ describe('useUserInfo', () => {
       },
       type: 'user/updateManagementPermissions'
     });
-    // expect(navigateSpy).toBeCalledTimes(1);
-    // expect(navigateSpy).toBeCalledWith('/login', { replace: true });
+    // expect(navigateSpy).toHaveBeenCalledTimes(1);
+    // expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
   });
 });

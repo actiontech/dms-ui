@@ -44,7 +44,7 @@ describe('sqle/Order/Detail/OrderRecordInfo', () => {
     const closedIcon = getBySelector('.custom-icon-close', baseElement);
     fireEvent.click(closedIcon);
     await act(async () => jest.advanceTimersByTime(500));
-    expect(closeFn).toBeCalled();
+    expect(closeFn).toHaveBeenCalled();
   });
 
   it('render snap when has order info', () => {

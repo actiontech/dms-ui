@@ -23,7 +23,7 @@ describe('test base/page/CloudBeaver', () => {
     const { container } = renderWithThemeAndRouter(<CloudBeaver />);
 
     expect(container).toMatchSnapshot();
-    expect(getSqlQueryUrlSpy).toBeCalledTimes(1);
+    expect(getSqlQueryUrlSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -60,7 +60,7 @@ describe('test base/page/CloudBeaver', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(global.open).not.toBeCalled();
+    expect(global.open).not.toHaveBeenCalled();
 
     cleanup();
 

@@ -120,10 +120,12 @@ describe('page/DataSource/AddDataSource', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(eventEmitSpy).toBeCalled();
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_Submit_DataSource_Form);
-    expect(requestAddDBService).toBeCalled();
-    expect(requestAddDBService).toBeCalledWith({
+    expect(eventEmitSpy).toHaveBeenCalled();
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Submit_DataSource_Form
+    );
+    expect(requestAddDBService).toHaveBeenCalled();
+    expect(requestAddDBService).toHaveBeenCalledWith({
       db_service: {
         additional_params: [
           {
@@ -175,9 +177,9 @@ describe('page/DataSource/AddDataSource', () => {
     const requestListDBServiceDriverOption = dms.getListDBServiceDriverOption();
     customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(requestRuleTemplateList).toBeCalled();
-    expect(requestProjectRuleTemplateTips).toBeCalled();
-    expect(requestListDBServiceDriverOption).toBeCalled();
+    expect(requestRuleTemplateList).toHaveBeenCalled();
+    expect(requestProjectRuleTemplateTips).toHaveBeenCalled();
+    expect(requestListDBServiceDriverOption).toHaveBeenCalled();
   });
 
   it('render skip to database list', async () => {
@@ -185,8 +187,10 @@ describe('page/DataSource/AddDataSource', () => {
     expect(screen.getByText('返回数据源列表')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回数据源列表'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith(`/project/${projectID}/db-services`);
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/project/${projectID}/db-services`
+    );
   });
 
   it('render reset form data', async () => {
@@ -203,7 +207,9 @@ describe('page/DataSource/AddDataSource', () => {
 
     fireEvent.click(screen.getByText('重 置'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(eventEmitSpy).toBeCalled();
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_Reset_DataSource_Form);
+    expect(eventEmitSpy).toHaveBeenCalled();
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Reset_DataSource_Form
+    );
   });
 });

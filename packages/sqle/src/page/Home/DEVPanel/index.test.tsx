@@ -43,8 +43,8 @@ describe('page/Home/DEVPanel', () => {
   it('render normal table', async () => {
     const request = home.getWorkflows();
     const { baseElement } = customRender();
-    expect(request).toBeCalled();
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalled();
+    expect(request).toHaveBeenCalledWith({
       page_index: 1,
       page_size: DASHBOARD_COMMON_GET_ORDER_NUMBER,
       filter_status: getWorkflowsV1FilterStatusEnum.wait_for_audit,
@@ -62,20 +62,20 @@ describe('page/Home/DEVPanel', () => {
     expect(screen.getAllByText('-').length).toBe(2);
 
     fireEvent.click(getBySelector('.ant-btn'));
-    expect(request).toBeCalled();
-    expect(mockRequest).toBeCalled();
+    expect(request).toHaveBeenCalled();
+    expect(mockRequest).toHaveBeenCalled();
   });
 
   it('send request when click diff filter status', async () => {
     const request = home.getWorkflows();
     const { baseElement } = customRender();
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('待上线')).toBeInTheDocument();
     fireEvent.click(screen.getByText('待上线'));
-    expect(request).toBeCalled();
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalled();
+    expect(request).toHaveBeenCalledWith({
       page_index: 1,
       page_size: DASHBOARD_COMMON_GET_ORDER_NUMBER,
       filter_status: getWorkflowsV1FilterStatusEnum.wait_for_execution,
@@ -92,7 +92,7 @@ describe('page/Home/DEVPanel', () => {
       my_need_execute_workflow_number: 1,
       my_rejected_workflow_number: 1
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('待上线')).toBeInTheDocument();
@@ -109,7 +109,7 @@ describe('page/Home/DEVPanel', () => {
       })
     );
     const { baseElement } = customRender();
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 });

@@ -39,7 +39,7 @@ describe('base/UserCenter/RoleList', () => {
     const { baseElement } = renderWithReduxAndTheme(<RoleList />);
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(roleListSpy).toBeCalledTimes(1);
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('test role 1')).toBeInTheDocument();
     expect(screen.getAllByText('编 辑')).toHaveLength(3);
@@ -81,7 +81,7 @@ describe('base/UserCenter/RoleList', () => {
       await jest.advanceTimersByTime(300);
     });
 
-    expect(roleListSpy).toBeCalledTimes(2);
+    expect(roleListSpy).toHaveBeenCalledTimes(2);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -90,7 +90,7 @@ describe('base/UserCenter/RoleList', () => {
     await act(async () =>
       EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List)
     );
-    expect(roleListSpy).toBeCalledTimes(2);
+    expect(roleListSpy).toHaveBeenCalledTimes(2);
   });
 
   it('should send delete role request', async () => {
@@ -104,7 +104,7 @@ describe('base/UserCenter/RoleList', () => {
     const roleName = roleList[0].name;
     renderWithReduxAndTheme(<RoleList />);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(roleListSpy).toBeCalledTimes(1);
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
@@ -112,13 +112,13 @@ describe('base/UserCenter/RoleList', () => {
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(deleteRoleSpy).toBeCalledTimes(1);
-    expect(deleteRoleSpy).toBeCalledWith({
+    expect(deleteRoleSpy).toHaveBeenCalledTimes(1);
+    expect(deleteRoleSpy).toHaveBeenCalledWith({
       role_uid: roleList[0].uid
     });
     expect(screen.getByText(`删除角色 "${roleName}" 成功`)).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3600));
-    expect(roleListSpy).toBeCalled();
+    expect(roleListSpy).toHaveBeenCalled();
   });
 
   it('should dispatch action when edit role info', async () => {
@@ -130,10 +130,10 @@ describe('base/UserCenter/RoleList', () => {
     );
     renderWithReduxAndTheme(<RoleList />);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(roleListSpy).toBeCalledTimes(1);
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       type: 'userCenter/updateSelectRole',
       payload: {

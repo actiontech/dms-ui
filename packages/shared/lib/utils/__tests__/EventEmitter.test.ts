@@ -13,8 +13,8 @@ describe('utils/EventEmitter', () => {
     const willCall = jest.fn();
     eventEmitter.subscribe(TEST_KEY, willCall);
     eventEmitter.emit(TEST_KEY, 'test');
-    expect(willCall).toBeCalledTimes(1);
-    expect(willCall).toBeCalledWith('test');
+    expect(willCall).toHaveBeenCalledTimes(1);
+    expect(willCall).toHaveBeenCalledWith('test');
     eventEmitter.unsubscribe(TEST_KEY, willCall);
   });
 
@@ -23,16 +23,16 @@ describe('utils/EventEmitter', () => {
     eventEmitter.subscribe(TEST_KEY, willCall);
     eventEmitter.unsubscribe(TEST_KEY, willCall);
     eventEmitter.emit(TEST_KEY, 'test');
-    expect(willCall).not.toBeCalled();
+    expect(willCall).not.toHaveBeenCalled();
   });
 
   test('should only toggle once when user subscribe event by once method', () => {
     const willCall = jest.fn();
     eventEmitter.once(TEST_KEY, willCall);
     eventEmitter.emit(TEST_KEY, 'test');
-    expect(willCall).toBeCalledTimes(1);
-    expect(willCall).toBeCalledWith('test');
+    expect(willCall).toHaveBeenCalledTimes(1);
+    expect(willCall).toHaveBeenCalledWith('test');
     eventEmitter.emit(TEST_KEY, 'test2');
-    expect(willCall).toBeCalledTimes(1);
+    expect(willCall).toHaveBeenCalledTimes(1);
   });
 });

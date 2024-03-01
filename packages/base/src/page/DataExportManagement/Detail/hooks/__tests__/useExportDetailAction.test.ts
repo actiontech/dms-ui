@@ -35,8 +35,10 @@ describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {
 
     result.current.refreshWorkflow();
 
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Export_Data_Workflow);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Export_Data_Workflow
+    );
   });
 
   it('execute closeWorkflow action', async () => {
@@ -47,8 +49,8 @@ describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {
       result.current.closeWorkflow('110');
     });
 
-    expect(closeWorkflowSpy).toBeCalledTimes(1);
-    expect(closeWorkflowSpy).toBeCalledWith({
+    expect(closeWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(closeWorkflowSpy).toHaveBeenCalledWith({
       payload: {
         data_export_workflow_uids: ['110']
       },
@@ -59,10 +61,12 @@ describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.closeWorkflowLoading).toBeFalsy();
-    expect(messageApiSpy.success).toBeCalledTimes(1);
-    expect(messageApiSpy.success).toBeCalledWith('工单关闭成功！');
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Export_Data_Workflow);
+    expect(messageApiSpy.success).toHaveBeenCalledTimes(1);
+    expect(messageApiSpy.success).toHaveBeenCalledWith('工单关闭成功！');
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Export_Data_Workflow
+    );
   });
 
   it('execute approveWorkflow action', async () => {
@@ -73,8 +77,8 @@ describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {
       result.current.approveWorkflow('110');
     });
 
-    expect(approveWorkflowSpy).toBeCalledTimes(1);
-    expect(approveWorkflowSpy).toBeCalledWith({
+    expect(approveWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(approveWorkflowSpy).toHaveBeenCalledWith({
       data_export_workflow_uid: '110',
       project_uid: mockProjectInfo.projectID
     });
@@ -83,10 +87,12 @@ describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.approveWorkflowLoading).toBeFalsy();
-    expect(messageApiSpy.success).toBeCalledTimes(1);
-    expect(messageApiSpy.success).toBeCalledWith('工单审核通过！');
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Export_Data_Workflow);
+    expect(messageApiSpy.success).toHaveBeenCalledTimes(1);
+    expect(messageApiSpy.success).toHaveBeenCalledWith('工单审核通过！');
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Export_Data_Workflow
+    );
   });
 
   it('execute executeExport action', async () => {
@@ -97,8 +103,8 @@ describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {
       result.current.executeExport('110');
     });
 
-    expect(exportDataSpy).toBeCalledTimes(1);
-    expect(exportDataSpy).toBeCalledWith({
+    expect(exportDataSpy).toHaveBeenCalledTimes(1);
+    expect(exportDataSpy).toHaveBeenCalledWith({
       data_export_workflow_uid: '110',
       project_uid: mockProjectInfo.projectID
     });
@@ -107,9 +113,11 @@ describe('test base/DataExport/Detail/hooks/useExportDetailAction', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.executeExportLoading).toBeFalsy();
-    expect(messageApiSpy.success).toBeCalledTimes(1);
-    expect(messageApiSpy.success).toBeCalledWith('工单执行导出成功！');
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Export_Data_Workflow);
+    expect(messageApiSpy.success).toHaveBeenCalledTimes(1);
+    expect(messageApiSpy.success).toHaveBeenCalledWith('工单执行导出成功！');
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Export_Data_Workflow
+    );
   });
 });

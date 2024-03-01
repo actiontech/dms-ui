@@ -38,10 +38,10 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
     const instanceRequest = instance.getInstanceTipList();
     const { result } = renderHooksWithRedux(() => useGetTableFilterInfo());
-    expect(ruleTipsRequest).toBeCalledWith({
+    expect(ruleTipsRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
-    expect(instanceRequest).toBeCalledWith({
+    expect(instanceRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(

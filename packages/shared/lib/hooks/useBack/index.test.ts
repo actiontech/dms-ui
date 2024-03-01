@@ -13,7 +13,7 @@ describe('useBack', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     const { result } = renderHook(() => useBack());
     result.current.goBack();
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(-1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(-1);
   });
 });

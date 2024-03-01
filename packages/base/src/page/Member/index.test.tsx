@@ -35,7 +35,7 @@ describe('base/Member', () => {
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });
-    expect(memberListSpy).toBeCalledTimes(1);
+    expect(memberListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(
       screen.getByText(`共 ${memberList.length} 条数据`)
@@ -54,9 +54,11 @@ describe('base/Member', () => {
     const { baseElement } = renderWithReduxAndTheme(<Member />);
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberListSpy).toBeCalledTimes(2);
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Member_List);
+    expect(memberListSpy).toHaveBeenCalledTimes(2);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Member_List
+    );
   });
 
   it('should update content when change segmented value', async () => {
@@ -65,7 +67,7 @@ describe('base/Member', () => {
     fireEvent.click(screen.getByText('成员组列表'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(memberGroupListSpy).toBeCalledTimes(1);
+    expect(memberGroupListSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should render add button when current user is admin or project manager', async () => {

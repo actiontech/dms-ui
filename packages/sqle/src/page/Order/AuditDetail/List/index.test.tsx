@@ -58,8 +58,8 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2000));
-    expect(requestGetSummaryOfInstanceTasks).toBeCalled();
-    expect(requestGetSummaryOfInstanceTasks).toBeCalledWith({
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalled();
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalledWith({
       workflow_id: workflowID,
       project_name: projectName
     });
@@ -71,7 +71,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
       refreshOverviewFlag: true
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetSummaryOfInstanceTasks).toBeCalled();
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 });

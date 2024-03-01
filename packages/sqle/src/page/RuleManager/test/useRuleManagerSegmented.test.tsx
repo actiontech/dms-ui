@@ -41,8 +41,8 @@ describe('slqe/RuleManager/useRuleManagerSegmented', () => {
       );
       await jest.advanceTimersByTime(300);
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'globalRuleTemplate/updateRuleManagerActiveSegmentedKey',
       payload: RuleManagerSegmentedKey.CustomRule
     });
