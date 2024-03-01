@@ -72,9 +72,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: ce-coverage-artifacts
-          path: ce-coverage
+          path: ce_coverage
 
-      - name: Get CE Coverage
+      - name: Get EE Coverage
         uses: actions/download-artifact@v3
         with:
           name: coverage-artifacts
