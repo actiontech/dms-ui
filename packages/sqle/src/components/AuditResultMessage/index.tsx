@@ -23,7 +23,7 @@ const AuditResultMessage = ({
   styleClass,
   showAnnotation,
   moreBtnLink,
-  deleteStatus
+  isRuleDeleted
 }: AuditResultMessageProps) => {
   const { t } = useTranslation();
   const [visible, { set }] = useBoolean(true);
@@ -64,17 +64,16 @@ const AuditResultMessage = ({
 
   return (
     <AuditResultMessageWithAnnotationStyleWrapper
-      className={classNames([
-        styleClass,
-        deleteStatus ? 'has-delete-rule-wrapper' : ''
-      ])}
+      className={classNames(styleClass, {
+        'has-delete-rule-wrapper': isRuleDeleted
+      })}
       showAnnotation={showAnnotation}
     >
-      {deleteStatus ? (
+      <EmptyBox if={isRuleDeleted}>
         <Tag color="volcano" className="message-rule-disabled">
           {t('sqlAudit.result.deleteRuleTip')}
         </Tag>
-      ) : null}
+      </EmptyBox>
       <AuditResultMessageStyleWrapper onClick={() => set(!visible)}>
         <span className="icon-wrapper">{renderIcon}</span>
         <span className="text-wrapper">{renderMessage}</span>

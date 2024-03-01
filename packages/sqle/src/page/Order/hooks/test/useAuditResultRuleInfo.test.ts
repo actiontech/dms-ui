@@ -53,7 +53,7 @@ describe('sqle/order/hooks/useAuditResultRuleInfo', () => {
         db_type: 'mysql',
         level: '',
         message: 'mes str',
-        deleteStatus: false
+        isRuleDeleted: false
       }
     ]);
   });
@@ -75,7 +75,7 @@ describe('sqle/order/hooks/useAuditResultRuleInfo', () => {
         level: '',
         message: 'mes str',
         rule_name: 'rule name',
-        deleteStatus: true
+        isRuleDeleted: true
       }
     ]);
   });

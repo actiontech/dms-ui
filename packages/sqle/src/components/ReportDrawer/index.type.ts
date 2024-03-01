@@ -2,7 +2,7 @@ import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
 
 export type IAuditResultItem = IAuditResult & {
-  deleteStatus?: boolean;
+  isRuleDeleted?: boolean;
   annotation?: string;
 };
 
