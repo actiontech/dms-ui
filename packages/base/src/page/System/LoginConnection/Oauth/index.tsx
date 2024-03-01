@@ -98,7 +98,8 @@ const Oauth = () => {
       login_tip: value.loginButtonText,
       user_id_tag: value.userIdKeyName,
       user_email_tag: value.userEmailTag,
-      user_wechat_tag: value.userWechatTag
+      user_wechat_tag: value.userWechatTag,
+      auto_create_user: value.autoCreateUser
     };
 
     if (!!value.scopes) {
@@ -134,7 +135,8 @@ const Oauth = () => {
       loginButtonText: oauthConfig?.login_tip,
       userIdKeyName: oauthConfig?.user_id_tag,
       userEmailTag: oauthConfig?.user_email_tag,
-      userWechatTag: oauthConfig?.user_wechat_tag
+      userWechatTag: oauthConfig?.user_wechat_tag,
+      autoCreateUser: oauthConfig?.auto_create_user
     });
   }, [form, oauthConfig]);
 
@@ -285,6 +287,19 @@ const Oauth = () => {
           span: 3,
           dataIndex: 'login_tip',
           hidden: !oauthConfig?.enable_oauth2
+        },
+        {
+          label: (
+            <BasicToolTips title={t('dmsSystem.oauth.autoCreateUserTips')}>
+              {t('dmsSystem.oauth.autoCreateUser')}
+            </BasicToolTips>
+          ),
+          span: 3,
+          dataIndex: 'auto_create_user',
+          hidden: !oauthConfig?.enable_oauth2,
+          render: (enable) => (
+            <>{!!enable ? t('common.open') : t('common.close')}</>
+          )
         }
       ];
     }, [oauthConfig?.enable_oauth2, t]);

@@ -1,4 +1,11 @@
-import { cleanup, act, renderHook } from '@testing-library/react';
+import {
+  cleanup,
+  act,
+  renderHook,
+  render,
+  fireEvent,
+  screen
+} from '@testing-library/react';
 import useOpPermission from '.';
 import userCenter from '../../testUtils/mockApi/userCenter';
 import { opPermissionList } from '../../testUtils/mockApi/userCenter/data';
@@ -6,6 +13,7 @@ import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
+import { Select } from 'antd';
 
 describe('test useManagerPermission', () => {
   let listOpPermissionSpy: jest.SpyInstance;
@@ -57,5 +65,25 @@ describe('test useManagerPermission', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.opPermissionList).toEqual([]);
+  });
+
+  it('should render options when use generateOpPermissionSelectOptions', async () => {
+    const { result } = renderHook(() => useOpPermission());
+    const { baseElement: baseElementWithOptions } = render(
+      <Select data-testid="testId" value="test opPermission 1">
+        {result.current.generateOpPermissionSelectOptions()}
+      </Select>
+    );
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElementWithOptions).toMatchSnapshot();
+
+    await act(() => {
+      fireEvent.mouseDown(screen.getByText('test opPermission 1'));
+      jest.runAllTimers();
+    });
+
+    await screen.findAllByText('test opPermission 1');
+    expect(baseElementWithOptions).toMatchSnapshot();
   });
 });

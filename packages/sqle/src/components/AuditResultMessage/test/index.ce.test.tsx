@@ -80,4 +80,28 @@ describe('sqle/components/AuditResultMessage', () => {
     });
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('render snap when current result is delete from rule manage & showAnnotation is true', () => {
+    const { baseElement } = customRender({
+      showAnnotation: true,
+      isRuleDeleted: true,
+      auditResult: {
+        annotation: 'annotation text',
+        level: ''
+      }
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when current result is delete from rule manage & showAnnotation is false', () => {
+    const { baseElement } = customRender({
+      showAnnotation: false,
+      isRuleDeleted: true,
+      auditResult: {
+        annotation: 'annotation text',
+        level: ''
+      }
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
 });

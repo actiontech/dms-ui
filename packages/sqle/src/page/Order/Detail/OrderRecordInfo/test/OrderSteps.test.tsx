@@ -59,8 +59,6 @@ const workflowSteps = [
     assignee_user_name_list: ['a', 'b', 'c'],
     desc: 'desc info',
     number: 1,
-    operation_time: '2024-01-05T13:36:57+08:00',
-    operation_user_name: 'admin',
     reason: 'reason str',
     state: WorkflowStepResV2StateEnum.initialized,
     workflow_step_id: 5
@@ -100,7 +98,6 @@ describe('sqle/Order/Detail/OrderSteps', () => {
   it('render snap order finished', () => {
     const { baseElement } = customRender({
       workflowSteps,
-      currentStepNumber: 1,
       orderStatus: WorkflowRecordResV2StatusEnum.finished,
       tasksStatusNumber: {
         success: 0,
@@ -114,7 +111,6 @@ describe('sqle/Order/Detail/OrderSteps', () => {
   it('render snap order exec_failed', () => {
     const { baseElement } = customRender({
       workflowSteps,
-      currentStepNumber: 1,
       orderStatus: WorkflowRecordResV2StatusEnum.exec_failed,
       tasksStatusNumber: {
         success: 0,
@@ -129,6 +125,19 @@ describe('sqle/Order/Detail/OrderSteps', () => {
     const { baseElement } = customRender({
       workflowSteps,
       currentStepNumber: 1,
+      orderStatus: WorkflowRecordResV2StatusEnum.rejected,
+      tasksStatusNumber: {
+        success: 0,
+        failed: 0,
+        executing: 1
+      }
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap order rejected when currentStepNumber is null', () => {
+    const { baseElement } = customRender({
+      workflowSteps,
       orderStatus: WorkflowRecordResV2StatusEnum.rejected,
       tasksStatusNumber: {
         success: 0,

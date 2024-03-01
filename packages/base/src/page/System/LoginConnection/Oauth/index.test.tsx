@@ -5,6 +5,7 @@ import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import Oauth from '.';
+import { oauthConfig } from '../../../../testUtils/mockApi/system/data';
 
 describe('base/System/LoginConnection/Oauth', () => {
   let requestGetOauth2Configuration: jest.SpyInstance;
@@ -44,7 +45,7 @@ describe('base/System/LoginConnection/Oauth', () => {
       expect(screen.getByText('是否启用OAuth2.0登录')).toBeInTheDocument();
 
       const switchEle = getBySelector(
-        '.basic-switch-wrapper .ant-switch-inner',
+        '.system-config-switch .ant-switch-inner',
         baseElement
       );
       fireEvent.click(switchEle);
@@ -63,7 +64,7 @@ describe('base/System/LoginConnection/Oauth', () => {
       await act(async () => jest.advanceTimersByTime(3300));
 
       const switchEle = getBySelector(
-        '.basic-switch-wrapper .ant-switch-inner',
+        '.system-config-switch .ant-switch-inner',
         baseElement
       );
       fireEvent.click(switchEle);
@@ -94,92 +95,136 @@ describe('base/System/LoginConnection/Oauth', () => {
     it('render submit success', async () => {
       const { baseElement } = customRender();
 
-      await act(async () => jest.advanceTimersByTime(3300));
-      const switchEle = getBySelector(
-        '.basic-switch-wrapper .ant-switch-inner',
-        baseElement
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.click(
+        getBySelector('.system-config-switch .ant-switch-inner', baseElement)
       );
-      fireEvent.click(switchEle);
-      await act(async () => jest.advanceTimersByTime(500));
+      await act(async () => jest.advanceTimersByTime(0));
 
       expect(screen.getByText('提 交')).toBeInTheDocument();
       fireEvent.click(screen.getByText('提 交'));
-      await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      expect(requestUpdateOauth2Configuration).toBeCalledTimes(1);
+      expect(requestUpdateOauth2Configuration).nthCalledWith(1, {
+        oauth2: { ...oauthConfig, enable_oauth2: true }
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestGetOauth2Configuration).toBeCalledTimes(2);
+
       expect(baseElement).toMatchSnapshot();
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      fireEvent.click(
+        getBySelector('.system-config-switch .ant-switch-inner', baseElement)
+      );
+      await act(async () => jest.advanceTimersByTime(0));
 
       fireEvent.change(getBySelector('#clientId', baseElement), {
         target: {
           value: 'client Id'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
 
       fireEvent.change(getBySelector('#clientHost', baseElement), {
         target: {
           value: 'client Host'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#clientSecret', baseElement), {
+        target: {
+          value: 'client secret'
+        }
+      });
+
+      fireEvent.change(getBySelector('#clientSecret', baseElement), {
+        target: {
+          value: 'client secret'
+        }
+      });
 
       fireEvent.change(getBySelector('#serverAuthUrl', baseElement), {
         target: {
           value: 'server Auth Url'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
 
-      fireEvent.change(getBySelector('#serverTokenUrl', baseElement), {
+      fireEvent.change(getBySelector('#loginButtonText', baseElement), {
         target: {
-          value: 'server token Url'
+          value: 'login button text'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#scopes', baseElement), {
+        target: {
+          value: 'scope1,scope2,scope3'
+        }
+      });
 
       fireEvent.change(getBySelector('#serverUserIdUrl', baseElement), {
         target: {
           value: 'server user id Url'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#serverTokenUrl', baseElement), {
+        target: {
+          value: 'server token url'
+        }
+      });
 
       fireEvent.change(getBySelector('#accessTokenKeyName', baseElement), {
         target: {
           value: 'access Token Key Name'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#userEmailTag', baseElement), {
+        target: {
+          value: 'user email tag'
+        }
+      });
 
       fireEvent.change(getBySelector('#userIdKeyName', baseElement), {
         target: {
           value: 'user Id Key Name'
         }
       });
-      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.change(getBySelector('#userWechatTag', baseElement), {
+        target: {
+          value: 'user wechat tag'
+        }
+      });
+
+      fireEvent.click(getBySelector('#autoCreateUser', baseElement));
 
       fireEvent.click(screen.getByText('提 交'));
-      await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(0));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestUpdateOauth2Configuration).toHaveBeenCalled();
-      expect(requestUpdateOauth2Configuration).toHaveBeenCalledWith({
+      expect(requestUpdateOauth2Configuration).toBeCalledTimes(2);
+      expect(requestUpdateOauth2Configuration).nthCalledWith(2, {
         oauth2: {
-          access_token_tag: 'rpYV2tN4&545Jvkd3%J6',
-          client_host: 'news://egyolphgg.tm/lundgwlpz',
-          client_id: '6lq#s#aRibpMvhp48ztHOg@sZ3PxA2e(MYdS!CJANzLPBdg]m)',
-          client_key: undefined,
+          access_token_tag: 'access Token Key Name',
+          client_host: 'client Host',
+          client_id: 'client Id',
+          client_key: 'client secret',
           enable_oauth2: true,
-          login_tip: 'VT[9[I$M(EW5R9o12*&Z',
-          scopes: ['1XGCBu%brJrwjse@R^Ox', 'lpSLVoFnqZBfGHeI8023'],
-          server_auth_url: 'prospero://tpmui.cf/timilp',
-          server_token_url: 'mid://juckyny.na/xxsxnmf',
-          server_user_id_url: 'cid://hqpbmxvbpl.cd/lcfyjtlkuj',
-          user_email_tag: undefined,
-          user_id_tag: 'NFkVxY[4Xv^UFU&x&t5y',
-          user_wechat_tag: undefined
+          login_tip: 'login button text',
+          scopes: ['scope1', 'scope2', 'scope3'],
+          server_auth_url: 'server Auth Url',
+          server_token_url: 'server token url',
+          server_user_id_url: 'server user id Url',
+          user_email_tag: 'user email tag',
+          user_id_tag: 'user Id Key Name',
+          user_wechat_tag: 'user wechat tag',
+          auto_create_user: true
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetOauth2Configuration).toHaveBeenCalled();
+      expect(requestGetOauth2Configuration).toBeCalledTimes(3);
     });
   });
 });

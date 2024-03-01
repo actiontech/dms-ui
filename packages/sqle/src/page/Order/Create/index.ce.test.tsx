@@ -19,6 +19,7 @@ import { instanceTipsMockData } from '../../../testUtils/mockApi/instance/data';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
 
 import CreateOrder from '.';
 
@@ -36,6 +37,8 @@ describe('sqle/Order/CreateOrder', () => {
     return superRender(<CreateOrder />);
   };
 
+  ignoreInvalidValueForCSSStyleProperty();
+
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
@@ -49,14 +52,11 @@ describe('sqle/Order/CreateOrder', () => {
     requestInstance = instance.getInstance();
     requestAudit = order.createAndAuditTask();
     requestAuditTask = order.createAuditTasks();
-    // ignore error: Warning: `NaN` is an invalid value for the `height` css style property.
-    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();
-    (console.error as jest.Mock).mockRestore();
     MockDate.reset();
     cleanup();
   });

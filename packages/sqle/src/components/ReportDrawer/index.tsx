@@ -7,8 +7,7 @@ import {
   BasicToolTips
 } from '@actiontech/shared';
 import { MonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
-import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
-import { DetailReportDrawerProps } from './index.type';
+import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
 import {
@@ -58,11 +57,8 @@ const ReportDrawer = ({
                 <AuditResultMessage styleClass="result-item" />
               ) : (
                 (data?.auditResult ?? [])?.map(
-                  (
-                    item: IAuditResult & { annotation?: string },
-                    index: number
-                  ) => {
-                    if (!showAnnotation) {
+                  (item: IAuditResultItem, index: number) => {
+                    if (!showAnnotation || item.isRuleDeleted) {
                       return (
                         <AuditResultMessage
                           styleClass="result-item"
@@ -73,6 +69,7 @@ const ReportDrawer = ({
                             level: item?.level ?? '',
                             message: item?.message ?? ''
                           }}
+                          isRuleDeleted={item.isRuleDeleted}
                         />
                       );
                     }

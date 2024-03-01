@@ -1,8 +1,10 @@
-import { StringDictionary } from '@actiontech/shared/lib/types/common.type';
 import { t } from '../../locale';
 import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
-const rangeTypeDictionary: StringDictionary = {
+const rangeTypeDictionary: Record<
+  keyof typeof ListMemberRoleWithOpRangeOpRangeTypeEnum,
+  string
+> = {
   [ListMemberRoleWithOpRangeOpRangeTypeEnum.global]: t(
     'dmsUserCenter.role.opPermissionList.rangeTypeDictionary.global'
   ),
