@@ -58,7 +58,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: ce-coverage-artifacts
-          path: ce-coverage/
+          path: ce_coverage/
 
   report:
     runs-on: ubuntu-latest
