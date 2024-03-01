@@ -5,6 +5,13 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { statisticAuditPlanData } from '../../../../../../testUtils/mockApi/projectOverview/data';
 import TaskList, { ITaskList } from './index';
 import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  barChartLabelContent,
+  barChartStateActive,
+  barChartToolTipCustomContent
+} from './index.data';
+import { SqleTheme } from '../../../../../../types/theme.type';
+import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 
 describe('page/ProjectOverview/TaskList', () => {
   ignoreAntdPlotsAttr();
@@ -77,5 +84,60 @@ describe('page/ProjectOverview/TaskList', () => {
     expect(screen.getByText('刷新')).toBeInTheDocument();
     fireEvent.click(screen.getByText('刷新'));
     expect(mockRefresh).toBeCalled();
+  });
+
+  it('test barChartLabelContent', () => {
+    expect(barChartLabelContent({ type: '', value: 22 })).toBe('');
+    expect(
+      barChartLabelContent({ type: 'default-custom-bar-mysql', value: 22 })
+    ).toBe('数据源类型');
+
+    expect(barChartLabelContent({ type: 'mysql', value: 22 })).toBe('mysql');
+  });
+
+  it('test barChartToolTipCustomContent', () => {
+    expect(
+      barChartToolTipCustomContent(
+        {} as SharedTheme,
+        {
+          projectOverview: {
+            ScanTask: { bar: { toolTip: { dotColor: '#eee' } } }
+          }
+        } as SqleTheme,
+        []
+      )
+    ).toBeNull();
+
+    expect(
+      barChartToolTipCustomContent(
+        {} as SharedTheme,
+        {
+          projectOverview: {
+            ScanTask: { bar: { toolTip: { dotColor: '#eee' } } }
+          }
+        } as SqleTheme,
+        [{ title: 'default-custom-bar-mysql' }]
+      )
+    ).toBeNull();
+
+    expect(
+      barChartToolTipCustomContent(
+        {} as SharedTheme,
+        {
+          projectOverview: {
+            ScanTask: { bar: { toolTip: { dotColor: '#eee' } } }
+          }
+        } as SqleTheme,
+        [undefined, { data: { type: 'mysql', value: 22 } }]
+      )
+    ).toMatchSnapshot();
+  });
+
+  it('test barChartStateActive', () => {
+    expect(
+      barChartStateActive({
+        projectOverview: { ScanTask: { bar: { activeColor: '#eee' } } }
+      } as SqleTheme)
+    ).toMatchSnapshot();
   });
 });

@@ -79,8 +79,8 @@ const ScanTask = () => {
           <TaskList
             {...chartChildrenProps}
             dataSource={data}
-            onReady={(plot: any) => {
-              plot.on('element:click', function (event: any) {
+            onReady={(plot) => {
+              plot.on('element:click', (event: any) => {
                 const { data: item } = event;
                 handleChartEleCallBack(item);
               });

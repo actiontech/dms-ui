@@ -214,3 +214,31 @@ exports[`page/ProjectOverview/TaskList render task list more than 11 1`] = `
   </div>
 </body>
 `;
+
+exports[`page/ProjectOverview/TaskList test barChartStateActive 1`] = `
+Object {
+  "fill": "#eee",
+  "lineWidth": 0,
+  "stroke": "#eee",
+}
+`;
+
+exports[`page/ProjectOverview/TaskList test barChartToolTipCustomContent 1`] = `
+<ChartTooltip
+  listData={
+    Array [
+      Object {
+        "label": "扫描任务总数",
+        "value": 22,
+      },
+    ]
+  }
+  sharedTheme={Object {}}
+  titleData={
+    Object {
+      "dotColor": "#eee",
+      "text": "mysql",
+    }
+  }
+/>
+`;

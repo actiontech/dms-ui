@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { BasicInput } from '@actiontech/shared';
+import { BasicInput, BasicSwitch } from '@actiontech/shared';
 import {
   FormItemLabel,
   CustomLabelContent
@@ -265,6 +265,19 @@ const ConfigField = () => {
             name: t('dmsSystem.oauth.loginButtonText')
           })}
         />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.autoCreateUser')}
+            tips={t('dmsSystem.oauth.autoCreateUserTips')}
+          />
+        }
+        name="autoCreateUser"
+        valuePropName="checked"
+      >
+        <BasicSwitch />
       </FormItemLabel>
     </>
   );

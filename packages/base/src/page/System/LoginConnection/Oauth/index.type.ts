@@ -12,4 +12,5 @@ export type OauthFormField = {
   loginButtonText: string;
   userEmailTag: string;
   userWechatTag: string;
+  autoCreateUser: boolean;
 };
