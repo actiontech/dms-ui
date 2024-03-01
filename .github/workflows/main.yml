@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
       - name: Coverage test report ee
-        run: pnpm test:ci-ee ${{ matrix.shard }} ${{ strategy.job-total }}
+        run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
 
   test-ce:
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
       - name: Coverage test report ce
-        run: pnpm test:ci-ce
+        run: sh ./scripts/jest/run-ce-ce.sh
 
   report:
     runs-on: ubuntu-latest
