@@ -82,4 +82,19 @@ describe('SqlAnalyze/Order', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should render error result of type "error" when response code is not 8001', async () => {
+    const spy = mockGetAnalyzeData();
+    spy.mockImplementation(() =>
+      resolveErrorThreeSecond(OrderSqlAnalyzeData, {
+        otherData: {
+          code: 8000
+        }
+      })
+    );
+    const { container } = renderWithReduxAndTheme(<OrderSqlAnalyze />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(container).toMatchSnapshot();
+  });
 });

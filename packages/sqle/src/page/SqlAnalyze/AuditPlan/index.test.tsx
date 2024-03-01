@@ -107,4 +107,32 @@ describe('SqlAnalyze/AuditPlan', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  test('should render error result of type "error" when response code is not 8001', async () => {
+    const spy = mockGetAnalyzeData();
+    spy.mockImplementation(() =>
+      resolveErrorThreeSecond(AuditPlanSqlAnalyzeData, {
+        otherData: {
+          code: 8000
+        }
+      })
+    );
+    const { container } = renderWithReduxAndTheme(
+      <AuditPlanSqlAnalyze />,
+      undefined,
+      {
+        user: {
+          bindProjects: [
+            {
+              project_id: '',
+              project_name: projectName
+            }
+          ]
+        } as any
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(container).toMatchSnapshot();
+  });
 });

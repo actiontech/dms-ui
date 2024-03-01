@@ -206,4 +206,39 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllBySelector('.ant-card').length).toBe(3);
   });
+
+  it('no review node in template', async () => {
+    const getInfoRequest = workflowTemplate.getWorkflowTemplate();
+    const tempData = cloneDeep(workflowTemplateData);
+    getInfoRequest.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...tempData,
+          workflow_step_template_list: [tempData.workflow_step_template_list[2]]
+        }
+      })
+    );
+    const userInfoRequest = user.getUserTipList();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(userInfoRequest).toBeCalledWith({
+      filter_project: mockProjectInfo.projectName
+    });
+    expect(getInfoRequest).toBeCalled();
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllBySelector('.ant-card').length).toBe(3);
+
+    fireEvent.click(screen.getByText('下一步'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(getBySelector('#execute_by_authorized'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.mouseDown(getBySelector('.ant-select-selection-search-input'));
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+  });
 });

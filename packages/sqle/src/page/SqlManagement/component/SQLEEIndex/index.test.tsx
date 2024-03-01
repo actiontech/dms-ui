@@ -387,4 +387,114 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('change single status when click row button', async () => {
+    const request = sqlManage.getSqlManageList();
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getAllByText('变更状态').length).toBe(1);
+    fireEvent.click(screen.getAllByText('变更状态')[0]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(mockDispatch).toBeCalledWith({
+      type: 'sqlManagement/updateModalStatus',
+      payload: {
+        modalName: ModalName.Change_Status_Single,
+        status: true
+      }
+    });
+    expect(mockDispatch).toBeCalledWith({
+      type: 'sqlManagement/setSqlManagementSelectData',
+      payload: sqlManageListData.data[0]
+    });
+  });
+
+  it('click sql fingerprint and open sql audit result', async () => {
+    const selectRecord = {
+      ...sqlManageListData.data[0],
+      sql: 'SELECT *',
+      sql_fingerprint: 'SELECT *'
+    };
+    const request = sqlManage.getSqlManageList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        ...sqlManageListData,
+        data: [selectRecord]
+      })
+    );
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getAllByText('SELECT').length).toBe(2);
+    fireEvent.click(screen.getAllByText('SELECT')[0]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(mockDispatch).toBeCalledWith({
+      type: 'sqlManagement/updateModalStatus',
+      payload: {
+        modalName: ModalName.View_Audit_Result_Drawer,
+        status: true
+      }
+    });
+    expect(mockDispatch).toBeCalledWith({
+      type: 'sqlManagement/setSqlManagementSelectData',
+      payload: selectRecord
+    });
+  });
+
+  it('click sql and open sql audit result', async () => {
+    const selectRecord = {
+      ...sqlManageListData.data[0],
+      sql: 'SELECT *',
+      sql_fingerprint: 'SELECT *'
+    };
+    const request = sqlManage.getSqlManageList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        ...sqlManageListData,
+        data: [selectRecord]
+      })
+    );
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getAllByText('SELECT').length).toBe(2);
+    fireEvent.click(screen.getAllByText('SELECT')[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(mockDispatch).toBeCalledWith({
+      type: 'sqlManagement/updateModalStatus',
+      payload: {
+        modalName: ModalName.View_Audit_Result_Drawer,
+        status: true
+      }
+    });
+    expect(mockDispatch).toBeCalledWith({
+      type: 'sqlManagement/setSqlManagementSelectData',
+      payload: selectRecord
+    });
+  });
+
+  it('click audit result and open sql audit result', async () => {
+    const request = sqlManage.getSqlManageList();
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toBeCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(getAllBySelector('.audit-result-wrapper').length).toBe(1);
+    fireEvent.click(getAllBySelector('.audit-result-wrapper')[0]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(mockDispatch).toBeCalledWith({
+      type: 'sqlManagement/updateModalStatus',
+      payload: {
+        modalName: ModalName.View_Audit_Result_Drawer,
+        status: true
+      }
+    });
+    expect(mockDispatch).toBeCalledWith({
+      type: 'sqlManagement/setSqlManagementSelectData',
+      payload: sqlManageListData.data[0]
+    });
+  });
 });

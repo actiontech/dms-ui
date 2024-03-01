@@ -79,22 +79,16 @@ const WhitelistList = () => {
   );
 
   const openAddWhitelistModal = useCallback(() => {
-    if (!actionPermission) {
-      return;
-    }
     dispatch(
       updateWhitelistModalStatus({
         modalName: ModalName.Add_Whitelist,
         status: true
       })
     );
-  }, [actionPermission, dispatch]);
+  }, [dispatch]);
 
   const openUpdateWhitelistModal = useCallback(
     (whitelist: IAuditWhitelistResV1) => {
-      if (!actionPermission) {
-        return;
-      }
       dispatch(
         updateSelectWhitelist({
           whitelist
@@ -107,14 +101,11 @@ const WhitelistList = () => {
         })
       );
     },
-    [actionPermission, dispatch]
+    [dispatch]
   );
 
   const removeWhitelist = useCallback(
     (whitelistId: number) => {
-      if (!actionPermission) {
-        return;
-      }
       const hide = messageApi.loading(t('whitelist.operate.deleting'));
       audit_whitelist
         .deleteAuditWhitelistByIdV1({
@@ -131,7 +122,7 @@ const WhitelistList = () => {
           hide();
         });
     },
-    [actionPermission, messageApi, projectName, refresh, t]
+    [messageApi, projectName, refresh, t]
   );
 
   const whitelistActionsInTable: ActiontechTableActionMeta<IAuditWhitelistResV1>[] =
@@ -155,12 +146,9 @@ const WhitelistList = () => {
     ];
 
   useEffect(() => {
-    const scopeRefresh = () => {
-      refresh();
-    };
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Whitelist_List,
-      scopeRefresh
+      refresh
     );
     return unsubscribe;
   }, [refresh]);
