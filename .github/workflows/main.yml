@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Install dependencies
         uses: ./.github/actions/action.yml
       - name: Code lint checker
@@ -24,6 +26,8 @@ jobs:
       matrix:
         shard: [1, 2, 3, 4]
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Install dependencies
         uses: ./.github/actions/action.yml
       - name: Coverage test report ee
@@ -33,6 +37,8 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Install dependencies
         uses: ./.github/actions/action.yml
       - name: Coverage test report ce
@@ -43,6 +49,8 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     needs: [test-ee, test-ce]
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Install dependencies
         uses: ./.github/actions/action.yml
       - name: Coverage test report
