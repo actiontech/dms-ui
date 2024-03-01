@@ -39,7 +39,7 @@ describe('sqle/Order/Common/AuditResultList/AuditResultDrawer', () => {
     const closedIcon = getBySelector('.closed-icon-custom', baseElement);
     fireEvent.click(closedIcon);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onCloseFn).toBeCalled();
+    expect(onCloseFn).toHaveBeenCalled();
   });
 
   it('render snap when title has data', () => {

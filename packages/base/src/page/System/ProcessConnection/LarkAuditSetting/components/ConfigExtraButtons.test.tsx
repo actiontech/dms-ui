@@ -184,8 +184,8 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
       expect(screen.getByText('正在向飞书推送消息...')).toBeInTheDocument();
 
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestTestFeishuAuditConfig).toBeCalledTimes(1);
-      expect(requestTestFeishuAuditConfig).toBeCalledWith({
+      expect(requestTestFeishuAuditConfig).toHaveBeenCalledTimes(1);
+      expect(requestTestFeishuAuditConfig).toHaveBeenCalledWith({
         account: '1@a.com',
         account_type: TestFeishuConfigurationReqV1AccountTypeEnum.email
       });
@@ -242,8 +242,8 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
 
       expect(screen.getByText('正在向飞书推送消息...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(2400));
-      expect(requestTestFeishuAuditConfig).toBeCalledTimes(1);
-      expect(requestTestFeishuAuditConfig).toBeCalledWith({
+      expect(requestTestFeishuAuditConfig).toHaveBeenCalledTimes(1);
+      expect(requestTestFeishuAuditConfig).toHaveBeenCalledWith({
         account: '12345678919',
         account_type: TestFeishuConfigurationReqV1AccountTypeEnum.phone
       });

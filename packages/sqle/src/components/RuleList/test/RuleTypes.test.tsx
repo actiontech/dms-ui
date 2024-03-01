@@ -51,10 +51,10 @@ describe('sqle/components/RueTypes', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('使用建议'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(ruleTypeChangeSpy).toBeCalled();
+    expect(ruleTypeChangeSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText(ALL_RULE_TYPE_CONSTANT));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(ruleTypeChangeSpy).toBeCalled();
+    expect(ruleTypeChangeSpy).toHaveBeenCalled();
   });
 });

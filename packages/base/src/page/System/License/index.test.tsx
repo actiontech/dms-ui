@@ -43,7 +43,7 @@ describe('base/System/License', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetLicense).toBeCalled();
+    expect(requestGetLicense).toHaveBeenCalled();
   });
 
   it('render snap when limit data name is `info`', async () => {
@@ -60,7 +60,7 @@ describe('base/System/License', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetLicense).toBeCalled();
+    expect(requestGetLicense).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -72,8 +72,8 @@ describe('base/System/License', () => {
     expect(screen.getByText('导入许可信息')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导入许可信息'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(modalStatusDispatch).toBeCalled();
-    expect(modalStatusDispatch).toBeCalledWith({
+    expect(modalStatusDispatch).toHaveBeenCalled();
+    expect(modalStatusDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.DMS_Import_License,
         status: true
@@ -93,7 +93,7 @@ describe('base/System/License', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetLicenseInfo).toBeCalled();
+    expect(requestGetLicenseInfo).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 });

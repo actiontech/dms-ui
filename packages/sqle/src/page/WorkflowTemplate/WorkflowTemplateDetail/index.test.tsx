@@ -33,8 +33,8 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInfoRequest).toBeCalled();
-    expect(userInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
+    expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('审批流程模版')).toBeInTheDocument();
     expect(getBySelector('a')).toBeInTheDocument();
@@ -57,8 +57,8 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInfoRequest).toBeCalled();
-    expect(userInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
+    expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('审批流程模版')).toBeInTheDocument();
   });
@@ -69,8 +69,8 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInfoRequest).toBeCalled();
-    expect(userInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
+    expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('审批流程模版')).toBeInTheDocument();
   });
@@ -89,7 +89,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     });
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('审批流程模版')).toBeInTheDocument();
     expect(screen.getByText('执行上线')).toBeInTheDocument();

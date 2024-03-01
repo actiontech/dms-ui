@@ -54,8 +54,8 @@ describe('test base/page/Account/UpdatePassword', () => {
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(updateCurrentUserSpy).toBeCalledTimes(1);
-    expect(updateCurrentUserSpy).toBeCalledWith({
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(1);
+    expect(updateCurrentUserSpy).toHaveBeenCalledWith({
       current_user: { old_password: 'admin', password: 'admin1' }
     });
 
@@ -65,8 +65,8 @@ describe('test base/page/Account/UpdatePassword', () => {
     expect(screen.getByText('关 闭').closest('button')).toBeDisabled();
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(scopeDispatch).toBeCalledTimes(1);
-    expect(scopeDispatch).toBeCalledWith({
+    expect(scopeDispatch).toHaveBeenCalledTimes(1);
+    expect(scopeDispatch).toHaveBeenCalledWith({
       payload: {
         token: ''
       },
@@ -84,6 +84,6 @@ describe('test base/page/Account/UpdatePassword', () => {
     expect(screen.getByLabelText('旧密码')).toHaveValue('');
     expect(screen.getByLabelText('新密码')).toHaveValue('');
     expect(screen.getByLabelText('确认新密码')).toHaveValue('');
-    expect(onCloseSpy).toBeCalledTimes(1);
+    expect(onCloseSpy).toHaveBeenCalledTimes(1);
   });
 });

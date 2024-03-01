@@ -39,7 +39,7 @@ describe('sqle/components/RuleDetail/CustomSearchInput', () => {
     const iconSearch = getBySelector('.pointer', baseElement);
     fireEvent.click(iconSearch);
     await act(async () => jest.advanceTimersByTime(500));
-    expect(onCustomPressEnterFn).toBeCalled();
+    expect(onCustomPressEnterFn).toHaveBeenCalled();
   });
 
   it('render snap when dispatch event', async () => {
@@ -65,7 +65,7 @@ describe('sqle/components/RuleDetail/CustomSearchInput', () => {
       });
       await act(async () => jest.advanceTimersByTime(500));
     });
-    expect(onCustomPressEnterFn).toBeCalled();
+    expect(onCustomPressEnterFn).toHaveBeenCalled();
 
     await act(async () => {
       EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);

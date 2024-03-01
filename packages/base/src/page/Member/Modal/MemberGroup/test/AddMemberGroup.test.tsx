@@ -57,9 +57,9 @@ describe('base/Member/Modal/AddMemberGroup', () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const { baseElement } = renderWithReduxAndTheme(<AddMemberGroup />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(listUsersSpy).toBeCalledTimes(1);
-    expect(litDBServices).toBeCalledTimes(1);
-    expect(listRoleSpy).toBeCalledTimes(1);
+    expect(listUsersSpy).toHaveBeenCalledTimes(1);
+    expect(litDBServices).toHaveBeenCalledTimes(1);
+    expect(listRoleSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('添加成员组')).toBeInTheDocument();
     expect(screen.getByText('添加平台角色与操作范围')).toBeInTheDocument();
@@ -78,8 +78,8 @@ describe('base/Member/Modal/AddMemberGroup', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
-    expect(addMemberGroupSpy).toBeCalledTimes(1);
-    expect(addMemberGroupSpy).toBeCalledWith({
+    expect(addMemberGroupSpy).toHaveBeenCalledTimes(1);
+    expect(addMemberGroupSpy).toHaveBeenCalledWith({
       member_group: {
         is_project_admin: true,
         user_uids: [userList[0].uid, userList[1].uid],
@@ -89,16 +89,18 @@ describe('base/Member/Modal/AddMemberGroup', () => {
       project_uid: mockProjectInfo.projectID
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'member/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_Member_Group,
         status: false
       }
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Member_List);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Member_List
+    );
     expect(screen.getByText('提 交').parentNode).not.toHaveClass(
       'ant-btn-loading'
     );
@@ -135,8 +137,8 @@ describe('base/Member/Modal/AddMemberGroup', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
-    expect(addMemberGroupSpy).toBeCalledTimes(1);
-    expect(addMemberGroupSpy).toBeCalledWith({
+    expect(addMemberGroupSpy).toHaveBeenCalledTimes(1);
+    expect(addMemberGroupSpy).toHaveBeenCalledWith({
       member_group: {
         is_project_admin: false,
         name: 'testGroup',
@@ -157,8 +159,8 @@ describe('base/Member/Modal/AddMemberGroup', () => {
     const { baseElement } = renderWithReduxAndTheme(<AddMemberGroup />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'member/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_Member_Group,

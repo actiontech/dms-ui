@@ -33,7 +33,7 @@ describe('base/page/Nav/SideMenu/ProjectTitle', () => {
     expect(screen.getByText('SQLE')).toBeInTheDocument();
     fireEvent.click(screen.getByText('SQLE'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith('/');
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith('/');
   });
 });

@@ -30,8 +30,8 @@ describe('sqle/SqlAudit/Detail', () => {
       </BrowserRouter>
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getSqlAuditRecordDetailSpy).toBeCalledTimes(1);
-    expect(getAuditTaskSqlSpy).toBeCalledTimes(1);
+    expect(getSqlAuditRecordDetailSpy).toHaveBeenCalledTimes(1);
+    expect(getAuditTaskSqlSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });

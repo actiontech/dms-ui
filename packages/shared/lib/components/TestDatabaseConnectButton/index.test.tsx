@@ -36,7 +36,7 @@ describe('TestDatabaseConnectButton', () => {
         connectAble: true
       });
       fireEvent.click(screen.getByText(buttonText));
-      expect(handleClickButton).not.toBeCalled();
+      expect(handleClickButton).not.toHaveBeenCalled();
 
       const { container: container1 } = customRender({
         onClickTestButton: handleClickButton,
@@ -45,7 +45,7 @@ describe('TestDatabaseConnectButton', () => {
       });
       expect(container1).toMatchSnapshot();
       fireEvent.click(screen.getAllByText(buttonText)[1]);
-      expect(handleClickButton).toBeCalledTimes(1);
+      expect(handleClickButton).toHaveBeenCalledTimes(1);
       expect(container1).toMatchSnapshot();
 
       handleClickButton.mockClear();
@@ -60,7 +60,7 @@ describe('TestDatabaseConnectButton', () => {
 
       expect(disableContainer).toMatchSnapshot();
       fireEvent.click(screen.getByText(buttonText));
-      expect(handleClickButton).toBeCalledTimes(1);
+      expect(handleClickButton).toHaveBeenCalledTimes(1);
       expect(disableContainer).toMatchSnapshot();
     });
   });
@@ -124,7 +124,7 @@ describe('TestDatabaseConnectButton', () => {
       );
       expect(container).toMatchSnapshot();
       fireEvent.click(screen.getByText(buttonText));
-      expect(handleClickTestButton).toBeCalledTimes(1);
+      expect(handleClickTestButton).toHaveBeenCalledTimes(1);
       expect(container).toMatchSnapshot();
     });
   });

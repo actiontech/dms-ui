@@ -34,7 +34,7 @@ describe('base/System/LoginConnection/LDAPSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetLDAPConfiguration).toBeCalled();
+    expect(requestGetLDAPConfiguration).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -124,8 +124,8 @@ describe('base/System/LoginConnection/LDAPSetting', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestUpdateLDAPConfiguration).toBeCalled();
-      expect(requestUpdateLDAPConfiguration).toBeCalledWith({
+      expect(requestUpdateLDAPConfiguration).toHaveBeenCalled();
+      expect(requestUpdateLDAPConfiguration).toHaveBeenCalledWith({
         ldap: {
           enable_ldap: true,
           enable_ssl: true,
@@ -139,7 +139,7 @@ describe('base/System/LoginConnection/LDAPSetting', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetLDAPConfiguration).toBeCalled();
+      expect(requestGetLDAPConfiguration).toHaveBeenCalled();
     });
   });
 });

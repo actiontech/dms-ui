@@ -57,9 +57,9 @@ describe('base/page/Nav/SideMenu/MockSelectItemOptions', () => {
 
     fireEvent.click(screen.getByText('test1'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith(`/sqle/project/1/overview`);
-    expect(closeSelectDropdownFn).toBeCalled();
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(`/sqle/project/1/overview`);
+    expect(closeSelectDropdownFn).toHaveBeenCalled();
 
     fireEvent.mouseEnter(screen.getByText('test2'));
     await act(async () => jest.advanceTimersByTime(500));

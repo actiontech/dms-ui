@@ -2,7 +2,7 @@
 
 exports[`sqle/Order/Create/hooks/useCreateOrderFormState render instanceInfo 1`] = `
 Map {
-  0 => Object {
+  0 => {
     "instanceName": "",
   },
 }
@@ -10,7 +10,7 @@ Map {
 
 exports[`sqle/Order/Create/hooks/useCreateOrderFormState render instanceInfo 2`] = `
 Map {
-  0 => Object {
+  0 => {
     "instanceName": "instance name 1",
   },
 }
@@ -24,7 +24,7 @@ Map {
 
 exports[`sqle/Order/Create/hooks/useCreateOrderFormState render ruleTemplates 2`] = `
 Map {
-  0 => Object {
+  0 => {
     "dbType": "dbType1",
   },
 }
@@ -32,13 +32,13 @@ Map {
 
 exports[`sqle/Order/Create/hooks/useCreateOrderFormState render schemaList 1`] = `
 Map {
-  0 => Array [],
+  0 => [],
 }
 `;
 
 exports[`sqle/Order/Create/hooks/useCreateOrderFormState render schemaList 2`] = `
 Map {
-  0 => Array [
+  0 => [
     "schema1",
   ],
 }

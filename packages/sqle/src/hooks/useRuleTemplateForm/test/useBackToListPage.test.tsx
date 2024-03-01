@@ -28,7 +28,7 @@ describe('sqle/hooks/useRuleTemplateForm/useBackToListPage', () => {
       result.current.onGoToGlobalRuleTemplateList();
       await jest.advanceTimersByTime(1000);
     });
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('come back to project rule template list', async () => {
@@ -37,6 +37,6 @@ describe('sqle/hooks/useRuleTemplateForm/useBackToListPage', () => {
       result.current.onGotoRuleTemplateList();
       await jest.advanceTimersByTime(1000);
     });
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 });

@@ -35,8 +35,8 @@ describe('sqle/order/hooks/useAuditResultRuleInfo', () => {
       useAuditResultRuleInfo(auditResultData)
     );
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetRuleList).toBeCalled();
-    expect(requestGetRuleList).toBeCalledWith({
+    expect(requestGetRuleList).toHaveBeenCalled();
+    expect(requestGetRuleList).toHaveBeenCalledWith({
       filter_db_type: undefined,
       filter_rule_names: 'rule name'
     });

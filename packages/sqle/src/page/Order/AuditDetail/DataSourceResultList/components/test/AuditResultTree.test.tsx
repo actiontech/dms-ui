@@ -49,8 +49,8 @@ describe('sqle/Order/AuditDetail/AuditResultTree', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2300));
-    expect(requestRuleList).toBeCalled();
-    expect(requestRuleList).toBeCalledWith({
+    expect(requestRuleList).toHaveBeenCalled();
+    expect(requestRuleList).toHaveBeenCalledWith({
       filter_rule_names: 'rule name a,rule name b'
     });
     expect(baseElement).toMatchSnapshot();

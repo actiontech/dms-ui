@@ -33,8 +33,8 @@ describe('page/WorkflowTemplate CE', () => {
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInfoRequest).toBeCalled();
-    expect(userInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
+    expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.queryByText('修改当前审批流程模版')).not.toBeInTheDocument();
   });

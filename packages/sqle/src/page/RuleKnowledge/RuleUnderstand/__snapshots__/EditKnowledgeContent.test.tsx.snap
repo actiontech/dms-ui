@@ -6,8 +6,8 @@ exports[`page/RuleKnowledge/EditKnowledgeContent input text for edit knowledge c
     <input
       class="css-1pemazk"
       height="500px"
-      previewoptions="{\\"rehypePlugins\\":[[null]]}"
-      textareaprops="{\\"placeholder\\":\\"在此处输入..\\"}"
+      previewoptions="{"rehypePlugins":[[null]]}"
+      textareaprops="{"placeholder":"在此处输入.."}"
       value="123"
     />
   </div>
@@ -20,8 +20,8 @@ exports[`page/RuleKnowledge/EditKnowledgeContent render default content 1`] = `
     <input
       class="css-1pemazk"
       height="500px"
-      previewoptions="{\\"rehypePlugins\\":[[null]]}"
-      textareaprops="{\\"placeholder\\":\\"在此处输入..\\"}"
+      previewoptions="{"rehypePlugins":[[null]]}"
+      textareaprops="{"placeholder":"在此处输入.."}"
       value="edit text"
     />
   </div>
@@ -34,8 +34,8 @@ exports[`page/RuleKnowledge/EditKnowledgeContent render empty content 1`] = `
     <input
       class="css-1pemazk"
       height="500px"
-      previewoptions="{\\"rehypePlugins\\":[[null]]}"
-      textareaprops="{\\"placeholder\\":\\"在此处输入..\\"}"
+      previewoptions="{"rehypePlugins":[[null]]}"
+      textareaprops="{"placeholder":"在此处输入.."}"
       value=""
     />
   </div>

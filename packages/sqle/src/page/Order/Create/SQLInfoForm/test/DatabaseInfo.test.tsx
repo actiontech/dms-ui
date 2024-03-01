@@ -78,7 +78,7 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
     expect(screen.getByText('测试数据库连通性')).toBeInTheDocument();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstanceTip).toBeCalled();
+    expect(requestInstanceTip).toHaveBeenCalled();
     const instanceLine = getAllBySelector(
       '.ant-space.ant-space-horizontal .ant-select-selector',
       baseElement
@@ -93,8 +93,8 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstanceTip).toBeCalled();
-    expect(requestInstanceTip).toBeCalledWith({
+    expect(requestInstanceTip).toHaveBeenCalled();
+    expect(requestInstanceTip).toHaveBeenCalledWith({
       functional_module:
         getInstanceTipListV1FunctionalModuleEnum.create_workflow,
       project_name: projectName
@@ -114,14 +114,14 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
       await act(async () => jest.advanceTimersByTime(3300));
     });
 
-    expect(requestInstanceSchemas).toBeCalled();
-    expect(requestInstanceSchemas).toBeCalledWith({
+    expect(requestInstanceSchemas).toHaveBeenCalled();
+    expect(requestInstanceSchemas).toHaveBeenCalledWith({
       instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
-    expect(requestInstance).toBeCalledWith({
+    expect(requestInstance).toHaveBeenCalled();
+    expect(requestInstance).toHaveBeenCalledWith({
       instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
@@ -154,6 +154,6 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestConnectCheck).toBeCalled();
+    expect(requestConnectCheck).toHaveBeenCalled();
   });
 });

@@ -39,6 +39,6 @@ describe('lib/ActiontechTable-RefreshButton', () => {
       fireEvent.click(refreshBtn);
       await jest.advanceTimersByTime(300);
     });
-    expect(refreshFn).toBeCalledTimes(1);
+    expect(refreshFn).toHaveBeenCalledTimes(1);
   });
 });

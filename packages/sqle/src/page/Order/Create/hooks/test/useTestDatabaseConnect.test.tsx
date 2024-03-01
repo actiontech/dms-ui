@@ -44,7 +44,7 @@ describe('sqle/Order/Create/useTestDatabaseConnect', () => {
     expect(result.current.testLoading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.testLoading).toBeFalsy();
-    expect(requestConnectCheck).toBeCalled();
+    expect(requestConnectCheck).toHaveBeenCalled();
 
     await act(async () => {
       const DatabasesConnectInfo =

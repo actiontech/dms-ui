@@ -58,8 +58,8 @@ describe('test ExportSourceFormItem', () => {
 
     customRender();
 
-    expect(dbServiceTipsSpy).toBeCalledTimes(1);
-    expect(dbServiceTipsSpy).toBeCalledWith({
+    expect(dbServiceTipsSpy).toHaveBeenCalledTimes(1);
+    expect(dbServiceTipsSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
       functional_module:
         ListDBServiceTipsFunctionalModuleEnum.create_export_task
@@ -69,17 +69,17 @@ describe('test ExportSourceFormItem', () => {
     selectOptionByIndex('数据源', 'test (127.0.0.1:3306)', 0);
 
     await act(async () => jest.advanceTimersByTime(0));
-    expect(getBaseFormFieldValueSpy).toBeCalledTimes(1);
-    expect(getBaseFormFieldValueSpy).toBeCalledWith('workflow_subject');
+    expect(getBaseFormFieldValueSpy).toHaveBeenCalledTimes(1);
+    expect(getBaseFormFieldValueSpy).toHaveBeenCalledWith('workflow_subject');
 
-    expect(setBaseFormFieldValueSpy).toBeCalledTimes(1);
-    expect(setBaseFormFieldValueSpy).toBeCalledWith(
+    expect(setBaseFormFieldValueSpy).toHaveBeenCalledTimes(1);
+    expect(setBaseFormFieldValueSpy).toHaveBeenCalledWith(
       'workflow_subject',
       `test_20231218120000`
     );
 
-    expect(schemaTipsSpy).toBeCalledTimes(1);
-    expect(schemaTipsSpy).toBeCalledWith({
+    expect(schemaTipsSpy).toHaveBeenCalledTimes(1);
+    expect(schemaTipsSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       instance_name: 'test'
     });
@@ -88,12 +88,12 @@ describe('test ExportSourceFormItem', () => {
     selectOptionByIndex('数据源', 'test2 (localhost:3306)', 0);
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(schemaTipsSpy).toBeCalledTimes(2);
-    expect(schemaTipsSpy).toBeCalledWith({
+    expect(schemaTipsSpy).toHaveBeenCalledTimes(2);
+    expect(schemaTipsSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       instance_name: 'test2'
     });
-    expect(setBaseFormFieldValueSpy).toBeCalledTimes(1);
+    expect(setBaseFormFieldValueSpy).toHaveBeenCalledTimes(1);
 
     MockDate.reset();
   });

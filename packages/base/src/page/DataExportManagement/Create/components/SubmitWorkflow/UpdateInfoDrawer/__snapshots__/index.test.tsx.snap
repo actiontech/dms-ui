@@ -666,7 +666,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                                 height="400px"
                                 id="sql"
                                 language="sql"
-                                options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                                 value="select 1;"
                                 width="100%"
                               />
@@ -1473,7 +1473,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                                 height="400px"
                                 id="sql"
                                 language="sql"
-                                options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                                 value="select 1;"
                                 width="100%"
                               />

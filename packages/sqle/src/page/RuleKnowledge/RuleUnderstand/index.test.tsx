@@ -86,14 +86,14 @@ describe('page/RuleUnderstand', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(submitRequest).toBeCalledTimes(1);
-    expect(submitRequest).toBeCalledWith({
+    expect(submitRequest).toHaveBeenCalledTimes(1);
+    expect(submitRequest).toHaveBeenCalledWith({
       rule_name: ruleName,
       knowledge_content: '1',
       db_type: dbType
     });
     expect(screen.getByText('规则理解修改成功')).toBeInTheDocument();
-    expect(mockRefresh).toBeCalled();
+    expect(mockRefresh).toHaveBeenCalled();
   });
 
   it('update rule and submit data failed', async () => {
@@ -127,8 +127,8 @@ describe('page/RuleUnderstand', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(submitRequest).toBeCalledTimes(1);
-    expect(submitRequest).toBeCalledWith({
+    expect(submitRequest).toHaveBeenCalledTimes(1);
+    expect(submitRequest).toHaveBeenCalledWith({
       rule_name: ruleName,
       knowledge_content: '12',
       db_type: dbType

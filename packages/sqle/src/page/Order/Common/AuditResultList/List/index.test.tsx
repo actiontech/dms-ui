@@ -51,8 +51,8 @@ describe('sqle/Order/Common/AuditResultList/List', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetAuditTaskSQLs).toBeCalled();
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_audit_level: 'normal',
       no_duplicate: true,
       page_index: '1',
@@ -64,8 +64,8 @@ describe('sqle/Order/Common/AuditResultList/List', () => {
     expect(analyzeBtn.length).toBe(1);
     fireEvent.click(screen.getByText('分 析'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(openSpy).toBeCalled();
-    expect(openSpy).toBeCalledWith(
+    expect(openSpy).toHaveBeenCalled();
+    expect(openSpy).toHaveBeenCalledWith(
       `/sqle/project/projectID/order/taskID/1/analyze`
     );
     openSpy.mockRestore();
@@ -84,8 +84,8 @@ describe('sqle/Order/Common/AuditResultList/List', () => {
 
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetAuditTaskSQLs).toBeCalled();
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_audit_level: 'normal',
       no_duplicate: true,
       page_index: '1',

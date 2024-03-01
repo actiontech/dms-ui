@@ -54,9 +54,9 @@ describe('base/Member/Modal/UpdateMember', () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const { baseElement } = renderWithReduxAndTheme(<UpdateMember />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(listUsersSpy).toBeCalledTimes(1);
-    expect(litDBServices).toBeCalledTimes(1);
-    expect(listRoleSpy).toBeCalledTimes(1);
+    expect(listUsersSpy).toHaveBeenCalledTimes(1);
+    expect(litDBServices).toHaveBeenCalledTimes(1);
+    expect(listRoleSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('编辑成员')).toBeInTheDocument();
     expect(screen.getByText('test')).toBeInTheDocument();
@@ -73,8 +73,8 @@ describe('base/Member/Modal/UpdateMember', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
-    expect(updateMemberSpy).toBeCalledTimes(1);
-    expect(updateMemberSpy).toBeCalledWith({
+    expect(updateMemberSpy).toHaveBeenCalledTimes(1);
+    expect(updateMemberSpy).toHaveBeenCalledWith({
       member: {
         is_project_admin: true,
         role_with_op_ranges: undefined
@@ -83,16 +83,18 @@ describe('base/Member/Modal/UpdateMember', () => {
       project_uid: mockProjectInfo.projectID
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'member/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Update_Member,
         status: false
       }
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Member_List);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Member_List
+    );
     expect(screen.getByText('提 交').parentNode).not.toHaveClass(
       'ant-btn-loading'
     );
@@ -105,8 +107,8 @@ describe('base/Member/Modal/UpdateMember', () => {
     const { baseElement } = renderWithReduxAndTheme(<UpdateMember />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'member/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Update_Member,

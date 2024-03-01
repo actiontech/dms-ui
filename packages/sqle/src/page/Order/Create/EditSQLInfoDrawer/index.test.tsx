@@ -55,8 +55,9 @@ describe('sqle/Order/Create/EditSQLInfoDrawer', () => {
   };
 
   beforeEach(() => {
-    jest.useFakeTimers();
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
+
     mockDatabaseType();
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
@@ -89,7 +90,7 @@ describe('sqle/Order/Create/EditSQLInfoDrawer', () => {
     const closeIcon = getBySelector('div.closed-icon-custom', baseElement);
     fireEvent.click(closeIcon);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onCloseFn).toBeCalled();
+    expect(onCloseFn).toHaveBeenCalled();
   });
 
   it('render snap when open & audit', async () => {

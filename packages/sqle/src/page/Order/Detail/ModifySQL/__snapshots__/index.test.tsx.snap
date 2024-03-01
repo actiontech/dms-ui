@@ -317,7 +317,7 @@ exports[`sqle/Order/Detail/ModifySQL render snap when click formatter sql 1`] = 
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="INSERT INTO
   your_table_name (
     telephone_number,
@@ -1422,7 +1422,7 @@ exports[`sqle/Order/Detail/ModifySQL render snap when open is false 1`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="/* input your sql */"
                             width="100%"
                           />
@@ -1812,7 +1812,7 @@ exports[`sqle/Order/Detail/ModifySQL render snap when open is true 1`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="/* input your sql */"
                             width="100%"
                           />
@@ -2652,7 +2652,7 @@ exports[`sqle/Order/Detail/ModifySQL render snap when open is true 2`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="INSERT INTO your_table_name (telephone_number, email_address, china_id_card, debit_card_account_number, credit_card, name, mac_address, bitcoin, age)
 VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '1234567890123456', 'John Doe', '00:11:22:33:44:55', '1AbC2dEfG3hI4jK5mN6pQ7rStU8vW9xY0z', 30);"
                             width="100%"
@@ -3733,7 +3733,7 @@ exports[`sqle/Order/Detail/ModifySQL render snap when open is true 3`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="INSERT INTO your_table_name (telephone_number, email_address, china_id_card, debit_card_account_number, credit_card, name, mac_address, bitcoin, age)
 VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '1234567890123456', 'John Doe', '00:11:22:33:44:55', '1AbC2dEfG3hI4jK5mN6pQ7rStU8vW9xY0z', 30);"
                             width="100%"

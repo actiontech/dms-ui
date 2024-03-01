@@ -68,7 +68,7 @@ describe('sqle/RuleTemplate/List', () => {
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });
-    expect(getProjectRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(
       screen.getByText(`共 ${projectRuleTemplateListMockData.length} 条数据`)
@@ -87,9 +87,11 @@ describe('sqle/RuleTemplate/List', () => {
 
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toBeCalledTimes(2);
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Rule_Template_List);
+    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(2);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Rule_Template_List
+    );
   });
 
   it('should render public rule template list', async () => {
@@ -99,7 +101,7 @@ describe('sqle/RuleTemplate/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('公共规则模板'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -110,10 +112,10 @@ describe('sqle/RuleTemplate/List', () => {
     expect(screen.getByText('创建规则模版')).toBeInTheDocument();
     fireEvent.click(screen.getByText('创建规则模版'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('导入规则模板'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalledTimes(2);
+    expect(navigateSpy).toHaveBeenCalledTimes(2);
     cleanup();
     mockUseCurrentUserSpy.mockClear();
     mockUseCurrentUserSpy.mockImplementation(() => {

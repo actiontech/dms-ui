@@ -8,48 +8,54 @@ on:
   workflow_dispatch:
 
 jobs:
-  cache-and-install:
+  checker:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install
-
+      - uses: ./catch-and-install-pnpm.yml
       - name: Code lint checker
         run: pnpm checker
 
+
+  test-ee:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4]     
+
+      - uses: ./catch-and-install-pnpm.yml
+        name: Coverage test report ee
+        with:
+          skip-step: install
+          test-script: pnpm test:ci-ee ${{ matrix.shard }} ${{ strategy.job-total }}
+          package-manager: pnpm
+
+  test-ce:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - uses: ./catch-and-install-pnpm.yml
+      - name: Coverage test report ce
+        with:
+          skip-step: install
+          test-script: pnpm test:ci-ce
+          package-manager: pnpm
+
+  report:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
       - uses: ArtiomTr/jest-coverage-report-action@v2
-        name: Coverage test report
+      - name: Coverage test report
         with:
           skip-step: install
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          test-script: pnpm test:ci
+          test-script: node ./scripts/jest/merge-report-json.js
           package-manager: pnpm
+
+
+
+
+

@@ -60,15 +60,15 @@ describe('page/Login-ce', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestLogin).toBeCalledTimes(1);
-    expect(requestLogin).toBeCalledWith({
+    expect(requestLogin).toHaveBeenCalledTimes(1);
+    expect(requestLogin).toHaveBeenCalledWith({
       session: {
         username: 'admin',
         password: 'admin'
       }
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'user/updateToken',
       payload: {
         token: `Bearer ${UserInfo.token}`
@@ -100,8 +100,8 @@ describe('page/Login-ce', () => {
 
     fireEvent.click(screen.getByText('登 录'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestLogin).toBeCalledTimes(1);
-    expect(requestLogin).toBeCalledWith({
+    expect(requestLogin).toHaveBeenCalledTimes(1);
+    expect(requestLogin).toHaveBeenCalledWith({
       session: {
         username: 'admin',
         password: 'admin'

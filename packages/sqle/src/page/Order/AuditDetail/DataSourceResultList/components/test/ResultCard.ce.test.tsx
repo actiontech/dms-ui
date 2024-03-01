@@ -78,13 +78,13 @@ describe('sqle/Order/AuditDetail/ResultCard', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2800));
-    expect(requestUpdateSqlDesc).toBeCalled();
-    expect(requestUpdateSqlDesc).toBeCalledWith({
+    expect(requestUpdateSqlDesc).toHaveBeenCalled();
+    expect(requestUpdateSqlDesc).toHaveBeenCalledWith({
       number: '1',
       description: 'desc text',
       task_id: taskId
     });
-    expect(onUpdateDescriptionFn).toBeCalled();
+    expect(onUpdateDescriptionFn).toHaveBeenCalled();
   });
 
   it('render click icon arrow when has result cont', async () => {
@@ -157,7 +157,7 @@ describe('sqle/Order/AuditDetail/ResultCard', () => {
     });
     expect(screen.getByText('复制执行语句')).toBeInTheDocument();
     fireEvent.click(screen.getByText('复制执行语句'));
-    expect(mockCopyTextByTextarea).toBeCalled();
+    expect(mockCopyTextByTextarea).toHaveBeenCalled();
     expect(screen.getByText('复制成功')).toBeInTheDocument();
   });
 });

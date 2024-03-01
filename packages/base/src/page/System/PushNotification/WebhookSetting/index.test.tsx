@@ -33,7 +33,7 @@ describe('base/System/PushNotification/WebhookSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetWebHookConfiguration).toBeCalled();
+    expect(requestGetWebHookConfiguration).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -128,8 +128,8 @@ describe('base/System/PushNotification/WebhookSetting', () => {
       expect(screen.getByText('提 交')).toBeInTheDocument();
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(requestUpdateWebHookConfiguration).toBeCalled();
-      expect(requestUpdateWebHookConfiguration).toBeCalledWith({
+      expect(requestUpdateWebHookConfiguration).toHaveBeenCalled();
+      expect(requestUpdateWebHookConfiguration).toHaveBeenCalledWith({
         webhook_config: {
           enable: true,
           max_retry_times: 1,
@@ -140,7 +140,7 @@ describe('base/System/PushNotification/WebhookSetting', () => {
       });
       await act(async () => jest.advanceTimersByTime(3000));
 
-      expect(requestGetWebHookConfiguration).toBeCalled();
+      expect(requestGetWebHookConfiguration).toHaveBeenCalled();
     });
 
     it('render submit success when no input val', async () => {
@@ -164,8 +164,8 @@ describe('base/System/PushNotification/WebhookSetting', () => {
       expect(screen.getByText('提 交')).toBeInTheDocument();
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(requestUpdateWebHookConfiguration).toBeCalled();
-      expect(requestUpdateWebHookConfiguration).toBeCalledWith({
+      expect(requestUpdateWebHookConfiguration).toHaveBeenCalled();
+      expect(requestUpdateWebHookConfiguration).toHaveBeenCalledWith({
         webhook_config: {
           enable: true,
           max_retry_times: DEFAULT_CONSTANT.maxRetryTimes,

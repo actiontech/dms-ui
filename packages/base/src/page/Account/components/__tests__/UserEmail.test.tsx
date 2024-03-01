@@ -63,8 +63,8 @@ describe('test base/page/Account/UserEmail', () => {
       code: 'Enter',
       keyCode: 13
     });
-    expect(messageErrorSpy).toBeCalledTimes(1);
-    expect(messageErrorSpy).toBeCalledWith('请输入正确格式的邮箱地址');
+    expect(messageErrorSpy).toHaveBeenCalledTimes(1);
+    expect(messageErrorSpy).toHaveBeenCalledWith('请输入正确格式的邮箱地址');
 
     fireEvent.change(inputEle, {
       target: {
@@ -76,9 +76,9 @@ describe('test base/page/Account/UserEmail', () => {
       code: 'Enter',
       keyCode: 13
     });
-    expect(messageErrorSpy).toBeCalledTimes(2);
-    expect(messageErrorSpy).toBeCalledWith('新邮箱地址不能与旧地址一致');
-    expect(updateCurrentUserSpy).toBeCalledTimes(0);
+    expect(messageErrorSpy).toHaveBeenCalledTimes(2);
+    expect(messageErrorSpy).toHaveBeenCalledWith('新邮箱地址不能与旧地址一致');
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.change(inputEle, {
       target: {
@@ -91,17 +91,17 @@ describe('test base/page/Account/UserEmail', () => {
       keyCode: 13
     });
 
-    expect(updateCurrentUserSpy).toBeCalledTimes(1);
-    expect(updateCurrentUserSpy).toBeCalledWith({
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(1);
+    expect(updateCurrentUserSpy).toHaveBeenCalledWith({
       current_user: {
         email: 'submit@gmail.com'
       }
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(messageSuccessSpy).toBeCalledTimes(1);
-    expect(messageSuccessSpy).toBeCalledWith('邮箱地址更新成功');
-    expect(updateCurrentUserSpy).toBeCalledTimes(1);
+    expect(messageSuccessSpy).toHaveBeenCalledTimes(1);
+    expect(messageSuccessSpy).toHaveBeenCalledWith('邮箱地址更新成功');
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(1);
 
     expect(container).toMatchSnapshot();
   });

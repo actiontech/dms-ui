@@ -72,7 +72,7 @@ describe('base/System/PushNotification/SMTPSetting/ConfigExtraButtons', () => {
 
       fireEvent.click(editBtn);
       await act(async () => jest.advanceTimersByTime(300));
-      expect(handleClickModifyFn).toBeCalledTimes(1);
+      expect(handleClickModifyFn).toHaveBeenCalledTimes(1);
     });
 
     it('render test btn snap when click test btn no show', async () => {
@@ -166,8 +166,8 @@ describe('base/System/PushNotification/SMTPSetting/ConfigExtraButtons', () => {
       ).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(2700));
 
-      expect(requestTestSMTPConfigurationSuccess).toBeCalledTimes(1);
-      expect(requestTestSMTPConfigurationSuccess).toBeCalledWith({
+      expect(requestTestSMTPConfigurationSuccess).toHaveBeenCalledTimes(1);
+      expect(requestTestSMTPConfigurationSuccess).toHaveBeenCalledWith({
         test_smtp_configuration: {
           recipient_addr: emailData
         }
@@ -212,8 +212,8 @@ describe('base/System/PushNotification/SMTPSetting/ConfigExtraButtons', () => {
       ).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(2700));
 
-      expect(requestTestSMTPConfigurationSuccess).toBeCalledTimes(1);
-      expect(requestTestSMTPConfigurationSuccess).toBeCalledWith({
+      expect(requestTestSMTPConfigurationSuccess).toHaveBeenCalledTimes(1);
+      expect(requestTestSMTPConfigurationSuccess).toHaveBeenCalledWith({
         test_smtp_configuration: {
           recipient_addr: emailData
         }

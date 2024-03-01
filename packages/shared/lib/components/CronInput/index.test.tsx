@@ -205,7 +205,7 @@ describe('lib/CronInputCom', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(updateErrorMessageSpy).toBeCalled();
+    expect(updateErrorMessageSpy).toHaveBeenCalled();
     await act(async () => {
       fireEvent.change(inputEle, {
         target: {

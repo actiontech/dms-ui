@@ -58,12 +58,12 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     const { baseElement } = renderWithThemeAndRedux(<CreateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('返回自定义规则列表')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回自定义规则列表'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('reset form values', async () => {
@@ -125,7 +125,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
       await jest.advanceTimersByTime(3000);
     });
     expect(ruleTypeEle).not.toBeDisabled();
-    expect(getRuleTypeByDBTypeSpy).toBeCalledTimes(1);
+    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
     await act(async () => {
       fireEvent.mouseDown(ruleTypeEle);
       await jest.advanceTimersByTime(100);
@@ -176,8 +176,8 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(100));
 
-    expect(createCustomRuleSpy).toBeCalledTimes(1);
-    expect(createCustomRuleSpy).toBeCalledWith({
+    expect(createCustomRuleSpy).toHaveBeenCalledTimes(1);
+    expect(createCustomRuleSpy).toHaveBeenCalledWith({
       db_type: 'mysql',
       desc: 'test_custom_rule',
       level: CreateCustomRuleReqV1LevelEnum.warn,
@@ -195,8 +195,8 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     expect(screen.getByText('查看创建的自定义规则')).toBeVisible();
     fireEvent.click(screen.getByText('查看创建的自定义规则'));
     expect(baseElement).toMatchSnapshot();
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('when create custom rule request fail', async () => {
@@ -220,7 +220,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(getBySelector('span[title="mysql"]'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTypeByDBTypeSpy).toBeCalledTimes(1);
+    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
     await act(async () => {
       fireEvent.mouseDown(ruleTypeEle);
       await jest.advanceTimersByTime(100);
@@ -250,8 +250,8 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     });
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(createCustomRuleSpy).toBeCalledTimes(1);
-    expect(createCustomRuleSpy).toBeCalledWith({
+    expect(createCustomRuleSpy).toHaveBeenCalledTimes(1);
+    expect(createCustomRuleSpy).toHaveBeenCalledWith({
       db_type: 'mysql',
       desc: 'test_custom_rule',
       level: CreateCustomRuleReqV1LevelEnum.warn,

@@ -45,8 +45,8 @@ describe('sqle/Order/Detail', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(baseElement).toMatchSnapshot();
-    expect(requestTaskInfo).toBeCalled();
-    expect(requestTaskInfo).toBeCalledWith({
+    expect(requestTaskInfo).toHaveBeenCalled();
+    expect(requestTaskInfo).toHaveBeenCalledWith({
       project_name: 'default',
       workflow_id: 'orderId'
     });

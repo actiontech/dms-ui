@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`useDbService should render options when use generateDbServiceIDSelectOptions 1`] = `
-Array [
-  Object {
+[
+  {
     "label": <DatabaseTypeLogo
       dbType="MySQL"
       logoUrl=""
     />,
-    "options": Array [
-      Object {
+    "options": [
+      {
         "label": "test (127.0.0.1:3306)",
         "value": "123123",
       },
-      Object {
+      {
         "label": "test2 (localhost:3306)",
         "value": "300123",
       },
@@ -277,18 +277,18 @@ exports[`useDbService should render options when use generateDbServiceIDSelectOp
 `;
 
 exports[`useDbService should render options when use generateDbServiceSelectOptions 1`] = `
-Array [
-  Object {
+[
+  {
     "label": <DatabaseTypeLogo
       dbType="MySQL"
       logoUrl=""
     />,
-    "options": Array [
-      Object {
+    "options": [
+      {
         "label": "test (127.0.0.1:3306)",
         "value": "test",
       },
-      Object {
+      {
         "label": "test2 (localhost:3306)",
         "value": "test2",
       },

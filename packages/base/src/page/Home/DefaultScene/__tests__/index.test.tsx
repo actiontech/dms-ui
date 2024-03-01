@@ -27,7 +27,7 @@ describe('test base/home/DefaultScene', () => {
     const { container } = superRender(<DefaultScene />);
     expect(container).toMatchSnapshot();
     fireEvent.click(screen.getByText('查看审核规则'));
-    expect(navigateSpy).not.toBeCalled();
+    expect(navigateSpy).not.toHaveBeenCalled();
   });
 
   it('should match snapshot when role is not admin', () => {
@@ -45,7 +45,7 @@ describe('test base/home/DefaultScene', () => {
 
     fireEvent.click(screen.getByText('查看审核规则'));
 
-    expect(navigateSpy).not.toBeCalled();
+    expect(navigateSpy).not.toHaveBeenCalled();
     expect(screen.getByText('选择项目')).toBeInTheDocument();
   });
 
@@ -57,8 +57,8 @@ describe('test base/home/DefaultScene', () => {
 
     fireEvent.click(screen.getByText('查看审核规则'));
 
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/rule?${RuleUrlParamKey.projectID}=1`
     );
     expect(screen.queryByText('选择项目')).not.toBeInTheDocument();
