@@ -274,7 +274,7 @@ describe('sqle/Order/AuditDetail', () => {
       page_size: '20',
       task_id: '2'
     });
-    
+
     fireEvent.click(screen.getByText('分页展示'));
     await act(async () => jest.advanceTimersByTime(300));
     const recordItem = getAllBySelector('.download-record-item', baseElement);
