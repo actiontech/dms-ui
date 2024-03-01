@@ -107,8 +107,16 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
       assignee_user_id_list: ['1739544663515205632']
     });
     expect(screen.getAllByText('test')?.[0]).toBeInTheDocument();
-    expect(screen.getByText('admin')).toBeInTheDocument();
+    expect(screen.getAllByText('admin')?.[0]).toBeInTheDocument();
     const desc = 'this is desc';
+    let exceedDesc = '';
+    for (let i = 0; i < 25; i++) {
+      exceedDesc += desc;
+    }
+    fireEvent.change(getBySelector('#desc'), {
+      target: { value: exceedDesc }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
     fireEvent.change(getBySelector('#desc'), {
       target: { value: desc }
     });
@@ -134,5 +142,36 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
       screen.getByText('匹配拥有数据源上线权限的成员')
     ).toBeInTheDocument();
     expect(screen.getByText('执行人')).toBeInTheDocument();
+  });
+
+  it('validate assignee user number', async () => {
+    const allUsers = userTipListData.map((item) => item.user_id);
+    const { baseElement } = customRender({
+      defaultData: {
+        ...workflowTemplateData.workflow_step_template_list[0],
+        assignee_user_id_list: allUsers,
+        approved_by_authorized: false
+      }
+    });
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(3000));
+    const removeAssigneeUserIcon = getAllBySelector(
+      '.ant-select-selection-item-remove'
+    );
+    expect(removeAssigneeUserIcon.length).toBe(5);
+    fireEvent.mouseDown(getBySelector('.ant-select-selection-search-input'));
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[4]);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    fireEvent.click(removeAssigneeUserIcon?.[2]);
+    fireEvent.click(removeAssigneeUserIcon?.[3]);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateMock).toBeCalledWith({
+      ...workflowTemplateData.workflow_step_template_list[0],
+      assignee_user_id_list: ['1739544663515205632', '700300'],
+      approved_by_authorized: false
+    });
   });
 });
