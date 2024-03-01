@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install dependencies
-        uses: ./.github/actions/action.yml
+        uses: ./.github/actions/catch-install-pnpm
       - name: Code lint checker
         run: pnpm checker
 
@@ -29,7 +29,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install dependencies
-        uses: ./.github/actions/action.yml
+        uses: ./.github/actions/catch-install-pnpm
       - name: Coverage test report ee
         run: pnpm test:ci-ee ${{ matrix.shard }} ${{ strategy.job-total }}
 
@@ -40,7 +40,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install dependencies
-        uses: ./.github/actions/action.yml
+        uses: ./.github/actions/catch-install-pnpm
       - name: Coverage test report ce
         run: pnpm test:ci-ce
 
@@ -52,7 +52,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install dependencies
-        uses: ./.github/actions/action.yml
+        uses: ./.github/actions/catch-install-pnpm
       - name: Coverage test report
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
