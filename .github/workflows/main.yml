@@ -14,8 +14,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
       - name: Code lint checker
         run: pnpm checker
 
@@ -28,10 +30,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
       - name: Coverage test report ee
         run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage-artifacts
+          path: coverage/
 
   test-ce:
     runs-on: ubuntu-latest
@@ -39,10 +48,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
       - name: Coverage test report ce
         run: sh ./scripts/jest/run-ci-ce.sh
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ce-coverage-artifacts
+          path: ce-coverage/
 
   report:
     runs-on: ubuntu-latest
@@ -51,8 +67,22 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Get CE Coverage
+        uses: actions/download-artifact@v3
+        with:
+          name: ce-coverage-artifacts
+          path: ce-coverage
+
+      - name: Get CE Coverage
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage-artifacts
+          path: coverage
+
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
+
       - name: Coverage test report
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
