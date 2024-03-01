@@ -42,7 +42,7 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
       - name: Coverage test report ce
-        run: sh ./scripts/jest/run-ce-ce.sh
+        run: sh ./scripts/jest/run-ci-ce.sh
 
   report:
     runs-on: ubuntu-latest

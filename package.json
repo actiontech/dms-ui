@@ -20,7 +20,7 @@
     "checker": "pnpm ts-check && pnpm eslint && pnpm stylelint && pnpm prettier:c",
     "test": "sh ./scripts/jest/run.sh",
     "test:c": "sh ./scripts/jest/run-coverage.sh",
-    "test:ci": "sh ./scripts/jest/run-ci-ee.sh && sh ./scripts/jest/run-ce-ce.sh && node ./scripts/jest/merge-report-json.js",
+    "test:ci": "sh ./scripts/jest/run-ci-ee.sh && sh ./scripts/jest/run-ci-ce.sh && node ./scripts/jest/merge-report-json.js",
     "test:clean": "jest --clearCache",
     "test:merge": "nyc merge coverage/ report.json"
   },
