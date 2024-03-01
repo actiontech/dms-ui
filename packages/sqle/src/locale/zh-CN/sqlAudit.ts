@@ -84,5 +84,8 @@ export default {
         zipFile: '点击选择ZIP文件或将文件拖拽到此区域'
       }
     }
+  },
+  result: {
+    deleteRuleTip: '该规则已删除'
   }
 };
