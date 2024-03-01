@@ -7456,7 +7456,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 2`] = 
                               height="400px"
                               id="0_sql"
                               language="sql"
-                              options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                               value="select * from user"
                               width="100%"
                             />
@@ -9855,7 +9855,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               height="400px"
                               id="0_sql"
                               language="sql"
-                              options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                               value="select * from user"
                               width="100%"
                             />
@@ -11899,7 +11899,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               height="400px"
                               id="0_sql"
                               language="sql"
-                              options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                               value="select * from user"
                               width="100%"
                             />
@@ -12457,7 +12457,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               >
                                 <div>
                                   <div
-                                    class=" css-30pox0"
+                                    class=" css-1v03opz"
                                   >
                                     <div
                                       class="css-1avyf41"
@@ -14649,7 +14649,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               height="400px"
                               id="0_sql"
                               language="sql"
-                              options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                               value="select * from user"
                               width="100%"
                             />
@@ -15207,7 +15207,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               >
                                 <div>
                                   <div
-                                    class=" css-30pox0"
+                                    class=" css-1v03opz"
                                   >
                                     <div
                                       class="css-1avyf41"
@@ -19243,7 +19243,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               >
                                 <div>
                                   <div
-                                    class=" css-30pox0"
+                                    class=" css-1v03opz"
                                   >
                                     <div
                                       class="css-1avyf41"
@@ -31327,7 +31327,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 4`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="select
   *
 from
