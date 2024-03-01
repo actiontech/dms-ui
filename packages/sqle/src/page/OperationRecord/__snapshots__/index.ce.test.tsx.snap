@@ -77,7 +77,7 @@ exports[`slqe/OperationRecord CE should match snap shot 1`] = `
                           <h4
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
-                            Free
+                            免费
                           </h4>
                         </div>
                         <div
@@ -409,7 +409,7 @@ exports[`slqe/OperationRecord CE should match snap shot 1`] = `
                           <h4
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
-                            Free
+                            免费
                           </h4>
                         </div>
                         <div
@@ -428,7 +428,7 @@ exports[`slqe/OperationRecord CE should match snap shot 1`] = `
                         >
                           <a
                             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
-                            href="https://jinshuju.net/f/daLFaG"
+                            href="https://www.actionsky.com/sqle?question=true"
                             target="_blank"
                           >
                             <span>
@@ -741,7 +741,7 @@ exports[`slqe/OperationRecord CE should match snap shot 1`] = `
                           <h4
                             class="ant-typography css-dev-only-do-not-override-txh9fw"
                           >
-                            Custom
+                            定制
                           </h4>
                         </div>
                         <div

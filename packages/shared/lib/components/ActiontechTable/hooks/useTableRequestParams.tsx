@@ -7,6 +7,8 @@ import { isEmpty, isEqual } from 'lodash';
 /**
  * @notice 为了控制 Table 的 page_index，含有 TableFilterContainer 组件的 Table, pagination.current 需要可控，数据源为 当前 hooks 的 pagination.page_index, 需要 size 也可使用 pagination.page_size
  * 示例：packages/sqle/src/page/SqlManagement/component/SQLEEIndex/index.tsx
+ * @notice：tableFilterInfo 之外的 filter 参数，需要自行处理数据变更， pagination index 重置的问题
+ * todo: 预期所有 table 的 filter data 变更引起的副作用，都会在这个 hooks 内完成
  */
 const useTableRequestParams = <
   R extends Record<string, any>,

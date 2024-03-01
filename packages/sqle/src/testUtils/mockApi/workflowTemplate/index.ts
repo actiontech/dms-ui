@@ -10,6 +10,7 @@ class MockWorkflowTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
     this.updateWorkflowTemplate();
     this.getWorkflowTemplate();
+    this.cancelWorkflow();
   }
 
   public updateWorkflowTemplate() {
@@ -24,6 +25,14 @@ class MockWorkflowTemplateApi implements MockSpyApy {
       return createSpySuccessResponse({
         data: cloneDeep(workflowTemplateData)
       });
+    });
+    return spy;
+  }
+
+  public cancelWorkflow() {
+    const spy = jest.spyOn(workflow, 'cancelWorkflowV2');
+    spy.mockImplementation(() => {
+      return createSpySuccessResponse({});
     });
     return spy;
   }

@@ -4,6 +4,7 @@ import { ProjectSelectorProps } from '../index.type';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 
 const mockBindProjects = [
   {
@@ -21,11 +22,15 @@ const mockBindProjects = [
 const mockOptions = [
   {
     value: '1',
-    label: 'testA'
+    label: 'test1'
   },
   {
     value: '2',
-    label: 'testB'
+    label: 'test2'
+  },
+  {
+    value: '3',
+    label: 'test3'
   }
 ];
 
@@ -48,10 +53,10 @@ describe('base/page/Nav/SideMenu/ProjectSelector', () => {
     );
   };
 
+  ignoreComponentCustomAttr();
+
   beforeEach(() => {
     jest.useFakeTimers();
-    //  Warning: React does not recognize the `searchInputRef` prop on a DOM element.
-    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -68,20 +73,16 @@ describe('base/page/Nav/SideMenu/ProjectSelector', () => {
     const { baseElement } = customRender(mockBindProjects, mockOptions, '1');
     expect(baseElement).toMatchSnapshot();
 
-    const dropDownIcon = getBySelector(
-      '.custom-icon-right-arrow-select-suffix',
-      baseElement
-    );
-    fireEvent.click(dropDownIcon);
-    await act(async () => jest.advanceTimersByTime(500));
+    fireEvent.mouseDown(getBySelector('.ant-select-selector'));
+
     expect(baseElement).toMatchSnapshot();
 
-    expect(screen.getByText('testA')).toBeInTheDocument();
-    fireEvent.mouseEnter(screen.getByText('testA'));
+    fireEvent.mouseEnter(screen.getAllByText('test2')[0]);
     await act(async () => jest.advanceTimersByTime(500));
+
     expect(baseElement).toMatchSnapshot();
 
-    fireEvent.mouseLeave(screen.getByText('testA'));
+    fireEvent.mouseLeave(screen.getAllByText('test2')[0]);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
 
@@ -91,6 +92,36 @@ describe('base/page/Nav/SideMenu/ProjectSelector', () => {
       }
     });
     await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when clicked more projects button', async () => {
+    const { baseElement } = customRender();
+
+    fireEvent.mouseDown(getBySelector('.ant-select-selector'));
+
+    expect(screen.queryByText('查看更多项目')).toBeInTheDocument();
+
+    fireEvent.change(getBySelector('.ant-input'), {
+      target: { value: 'search value' }
+    });
+
+    fireEvent.click(screen.getByText('查看更多项目'));
+
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when closed select dropdown', async () => {
+    const { baseElement } = customRender();
+
+    fireEvent.mouseDown(getBySelector('.ant-select-selector'));
+
+    fireEvent.change(getBySelector('.ant-input'), {
+      target: { value: 'search value' }
+    });
+
+    fireEvent.mouseDown(getBySelector('.ant-select-selector'));
+
     expect(baseElement).toMatchSnapshot();
   });
 });
