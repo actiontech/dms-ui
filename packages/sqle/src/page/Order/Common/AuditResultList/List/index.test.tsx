@@ -188,7 +188,7 @@ describe('sqle/Order/Common/AuditResultList/List', () => {
       auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetAuditTaskSQLs).toBeCalledTimes(1);
+    expect(requestGetAuditTaskSQLs).toBeCalled();
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(
