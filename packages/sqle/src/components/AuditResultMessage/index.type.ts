@@ -5,5 +5,5 @@ export type AuditResultMessageProps = {
   styleClass?: string;
   showAnnotation?: boolean;
   moreBtnLink?: string;
-  deleteStatus?: boolean;
+  isRuleDeleted?: boolean;
 };

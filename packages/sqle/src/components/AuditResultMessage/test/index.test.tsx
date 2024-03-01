@@ -92,7 +92,7 @@ describe('sqle/components/AuditResultMessage', () => {
   it('render snap when current result is delete from rule manage & showAnnotation is true', () => {
     const { baseElement } = customRender({
       showAnnotation: true,
-      deleteStatus: true,
+      isRuleDeleted: true,
       auditResult: {
         annotation: 'annotation text',
         level: ''
@@ -104,7 +104,7 @@ describe('sqle/components/AuditResultMessage', () => {
   it('render snap when current result is delete from rule manage & showAnnotation is false', () => {
     const { baseElement } = customRender({
       showAnnotation: false,
-      deleteStatus: true,
+      isRuleDeleted: true,
       auditResult: {
         annotation: 'annotation text',
         level: ''

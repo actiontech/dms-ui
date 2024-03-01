@@ -58,7 +58,7 @@ const ReportDrawer = ({
               ) : (
                 (data?.auditResult ?? [])?.map(
                   (item: IAuditResultItem, index: number) => {
-                    if (!showAnnotation || item.deleteStatus) {
+                    if (!showAnnotation || item.isRuleDeleted) {
                       return (
                         <AuditResultMessage
                           styleClass="result-item"
@@ -69,7 +69,7 @@ const ReportDrawer = ({
                             level: item?.level ?? '',
                             message: item?.message ?? ''
                           }}
-                          deleteStatus={item.deleteStatus}
+                          isRuleDeleted={item.isRuleDeleted}
                         />
                       );
                     }

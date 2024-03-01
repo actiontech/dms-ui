@@ -104,7 +104,7 @@ describe('sqle/components/ReportDrawer', () => {
             level: 'level',
             annotation: 'annotation',
             db_type: 'mysql',
-            deleteStatus: true
+            isRuleDeleted: true
           },
           {
             rule_name: 'rule b',

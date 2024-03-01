@@ -34,7 +34,7 @@ const useAuditResultRuleInfo = (
         return {
           ...findData,
           ...item,
-          deleteStatus: item.rule_name
+          isRuleDeleted: item.rule_name
             ? JSON.stringify(findData) === '{}'
             : false
         };
