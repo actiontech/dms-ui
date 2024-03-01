@@ -13,7 +13,8 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
 
     steps:
-      - uses: ./catch-and-install-pnpm.yml
+      - name: Install dependencies
+        uses: ./catch-and-install-pnpm.yml
       - name: Code lint checker
         run: pnpm checker
 
@@ -25,8 +26,9 @@ jobs:
         shard: [1, 2, 3, 4]
 
     steps:
-      - uses: ./catch-and-install-pnpm.yml
-        name: Coverage test report ee
+      - name: Install dependencies
+        uses: ./catch-and-install-pnpm.yml
+      - name: Coverage test report ee
         with:
           skip-step: install
           test-script: pnpm test:ci-ee ${{ matrix.shard }} ${{ strategy.job-total }}
@@ -36,7 +38,8 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - uses: ./catch-and-install-pnpm.yml
+      - name: Install dependencies
+        uses: ./catch-and-install-pnpm.yml
       - name: Coverage test report ce
         with:
           skip-step: install
@@ -47,7 +50,8 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - uses: ArtiomTr/jest-coverage-report-action@v2
+      - name: Install dependencies
+        uses: ArtiomTr/jest-coverage-report-action@v2
       - name: Coverage test report
         with:
           skip-step: install
