@@ -8,6 +8,7 @@ import { EditSQLInfoDrawerProps } from './index.type';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
+import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -54,19 +55,19 @@ describe('sqle/Order/Create/EditSQLInfoDrawer', () => {
     );
   };
 
+  ignoreInvalidValueForCSSStyleProperty();
+
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
 
     mockDatabaseType();
-    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();
     MockDate.reset();
-    (console.error as jest.Mock).mockRestore();
     cleanup();
   });
 

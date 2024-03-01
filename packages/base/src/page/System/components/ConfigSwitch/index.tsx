@@ -38,6 +38,7 @@ const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
     >
       <FormItemLabel name={switchFieldName} valuePropName="checked">
         <BasicSwitch
+          className="system-config-switch"
           checked={switchOpen}
           disabled={submitLoading}
           onChange={onSwitchChange}
