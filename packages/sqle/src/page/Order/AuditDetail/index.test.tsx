@@ -16,12 +16,16 @@ import {
   IAuditTaskSQLResV2,
   IWorkflowResV2
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   AuditTaskResV1StatusEnum,
   WorkflowRecordResV2StatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 
 const projectName = 'project name';
 
@@ -47,11 +51,11 @@ describe('sqle/Order/AuditDetail', () => {
     );
   };
 
+  ignoreComponentCustomAttr();
+
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
     jest.useFakeTimers();
-    // date picker : custom attr [hideSuperIcon]
-    jest.spyOn(console, 'error').mockImplementation(() => {});
     order.mockAllApi();
     mockUseCurrentUser();
     requestGetAuditTaskSQLs = order.getAuditTaskSQLs();
@@ -61,16 +65,17 @@ describe('sqle/Order/AuditDetail', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     MockDate.reset();
-    (console.error as jest.Mock).mockRestore();
     cleanup();
   });
 
-  it('render snap when no taskInfos', () => {
-    const { baseElement } = customRender({
-      taskInfos: [],
-      isArchive: true,
-      refreshOverviewFlag: true
-    });
+  it('render snap when no taskInfos', async () => {
+    const { baseElement } = await act(async () =>
+      customRender({
+        taskInfos: [],
+        isArchive: true,
+        refreshOverviewFlag: true
+      })
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -269,7 +274,7 @@ describe('sqle/Order/AuditDetail', () => {
       page_size: '20',
       task_id: '2'
     });
-
+    
     fireEvent.click(screen.getByText('分页展示'));
     await act(async () => jest.advanceTimersByTime(300));
     const recordItem = getAllBySelector('.download-record-item', baseElement);

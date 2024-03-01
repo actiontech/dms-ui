@@ -1,33 +1,20 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
 import { BasicButton } from '@actiontech/shared';
-
 import { Column, ColumnConfig } from '@ant-design/plots';
-
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
-import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { IDBTypeHealth } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
-
-export enum DBHealthEnum {
-  health = 'health',
-  risk = 'risk'
-}
-
-export type typeItem = {
-  type: string;
-  value: number;
-  category: DBHealthEnum;
-  instanceNames: string;
-};
+import { DBHealthEnum } from './index.enum';
+import { DataSourceCountDataType } from './index.type';
+import ToolTipCustomContent from './ToolTipCustomContent';
+import { formatterLegendItemName, getLegendMarkerStyle } from './index.data';
 
 /**
   todo: 柱形图的 柱子宽度 与边距（组之间，单柱子之间）不能同时设置
@@ -45,7 +32,7 @@ const DataSourceCount = () => {
   const { projectName, projectID } = useCurrentProject();
   const { sharedTheme, sqleTheme } = useThemeStyleData();
 
-  const [data, setData] = useState<typeItem[]>([
+  const [data, setData] = useState<DataSourceCountDataType[]>([
     {
       type: 'MySQL',
       value: 0,
@@ -67,7 +54,7 @@ const DataSourceCount = () => {
           }
         ];
         if (dbHealths.length > 0) {
-          comData = dbHealths.reduce<typeItem[]>((acc, cur) => {
+          comData = dbHealths.reduce<DataSourceCountDataType[]>((acc, cur) => {
             const health = {
               type: cur.db_type ?? '',
               value: cur.health_instance_names?.length ?? 0,
@@ -87,35 +74,6 @@ const DataSourceCount = () => {
       }
     }
   );
-
-  const comListDataBySource = (data: any[]) => {
-    const sourceData = data.filter(
-      (item) => typeof item?.value !== 'undefined'
-    );
-    const tipData = {
-      health: {
-        dotColor: sqleTheme.projectOverview.DataSourceCount.health,
-        label: t('projectManage.projectOverview.dataSourceCount.health'),
-        value: '-'
-      },
-      risk: {
-        dotColor: sqleTheme.projectOverview.DataSourceCount.risk,
-        label: t('projectManage.projectOverview.dataSourceCount.risk'),
-        value: '-'
-      }
-    };
-
-    sourceData.forEach((item: any) => {
-      const type: DBHealthEnum = item.data?.category;
-      if (tipData[type]) {
-        tipData[type].value = item.data?.value
-          ? formatParamsBySeparator(item.data?.value)
-          : '-';
-      }
-    });
-
-    return Object.values(tipData);
-  };
 
   const config: ColumnConfig = useMemo(() => {
     return {
@@ -157,10 +115,8 @@ const DataSourceCount = () => {
         position: 'top-left',
         itemName: {
           spacing: 8,
-          formatter: (text: string) => {
-            return text === DBHealthEnum.health
-              ? t('projectManage.projectOverview.dataSourceCount.health')
-              : t('projectManage.projectOverview.dataSourceCount.risk');
+          formatter: (text) => {
+            formatterLegendItemName(text);
           },
           style: {
             fontSize: 12,
@@ -169,38 +125,16 @@ const DataSourceCount = () => {
             fill: sharedTheme.uiToken.colorTextTertiary
           }
         },
-        marker: (text: string, index: number, item: any) => {
-          const color =
-            item.name === DBHealthEnum.risk
-              ? sqleTheme.projectOverview.DataSourceCount.risk
-              : sqleTheme.projectOverview.DataSourceCount.health;
-          return {
-            style: {
-              fill: color,
-              r: 2,
-              stroke: color,
-              lineWidth: 4,
-              lineJoin: 'round'
-            }
-          };
+        marker: (text, index, item) => {
+          return getLegendMarkerStyle(item, sqleTheme);
         }
       },
       tooltip: {
         showMarkers: false,
         fields: ['type', 'value'],
-        customContent: (title: string, dataSource: any[]) => {
-          if (!dataSource.length) return null;
-          return (
-            <ChartTooltip
-              sharedTheme={sharedTheme}
-              titleData={{
-                dotColor: '',
-                text: t('projectManage.projectOverview.dataSourceCount.title')
-              }}
-              listData={comListDataBySource(dataSource)}
-            />
-          );
-        }
+        customContent: (_, dataSource) => (
+          <ToolTipCustomContent dataSource={dataSource} />
+        )
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

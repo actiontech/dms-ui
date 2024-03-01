@@ -39,7 +39,8 @@ module.exports = {
     'packages/shared/api/common/**',
     '!packages/**/index.type.ts',
     '!packages/**/index.enum.ts',
-    '!packages/sqle/src/page/AuditPlan/**'
+    '!packages/sqle/src/page/AuditPlan/**',
+    '!packages/shared/lib/hooks/usePrompt/index.tsx'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   reporters: [

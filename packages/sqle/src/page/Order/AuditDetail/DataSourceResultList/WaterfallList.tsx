@@ -37,6 +37,7 @@ const DataSourceWaterfallList: React.FC<DataSourceResultWaterfallListProps> = ({
         next={loadMore}
         loader={null}
         dataLength={list?.length || 0}
+        scrollableTarget="test-wrap"
       >
         <List
           bordered={false}
