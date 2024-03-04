@@ -1,7 +1,7 @@
 import RuleDetail from '.';
 
 import { useNavigate, useParams } from 'react-router-dom';
-import { act, cleanup, fireEvent } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import rule_template from '../../testUtils/mockApi/rule_template';
 import { renderWithTheme } from '../../testUtils/customRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -106,5 +106,35 @@ describe('sqle/components/RuleDetail', () => {
       fuzzy_keyword_rule: undefined
     });
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('click return button', async () => {
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(2600));
+    expect(requestGetProjectRule).toHaveBeenCalled();
+    expect(requestGetProjectRule).toHaveBeenCalledWith({
+      fuzzy_keyword_rule: undefined,
+      project_name: 'default',
+      rule_template_name: ''
+    });
+    expect(screen.getByText('返回规则模版列表')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('返回规则模版列表'));
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(-1);
+  });
+
+  it('send global request when not select project', async () => {
+    mockUseCurrentProject({ projectName: undefined });
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(2600));
+    expect(requestGetGlobalRule).toHaveBeenCalled();
+    expect(requestGetGlobalRule).toHaveBeenCalledWith({
+      fuzzy_keyword_rule: undefined,
+      rule_template_name: ''
+    });
   });
 });

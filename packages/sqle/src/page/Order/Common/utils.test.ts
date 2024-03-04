@@ -44,6 +44,33 @@ describe('sqle/Order/Common/utils', () => {
         {
           maintenance_start_time: {
             hour: 12,
+            minute: 30
+          },
+          maintenance_stop_time: {
+            hour: 12,
+            minute: 40
+          }
+        }
+      ])
+    ).toBeTruthy();
+    expect(
+      checkTimeInWithMaintenanceTime(currentTime, [
+        {
+          maintenance_start_time: {
+            hour: 10
+          },
+          maintenance_stop_time: {
+            hour: 12,
+            minute: 40
+          }
+        }
+      ])
+    ).toBeTruthy();
+    expect(
+      checkTimeInWithMaintenanceTime(currentTime, [
+        {
+          maintenance_start_time: {
+            hour: 12,
             minute: 34
           },
           maintenance_stop_time: {
