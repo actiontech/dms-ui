@@ -194,10 +194,10 @@ describe('sqle/Order/CreateOrder', () => {
     // await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestAuditTask).toBeCalledTimes(1);
-    expect(requestInstance).toBeCalled();
+    expect(requestAuditTask).toHaveBeenCalledTimes(1);
+    expect(requestInstance).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(auditTaskGroupId).toBeCalledTimes(1);
+    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -277,7 +277,7 @@ describe('sqle/Order/CreateOrder', () => {
       sql: 'select * from user'
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAuditTaskSQLsSpy).toBeCalledTimes(1);
+    expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
 
@@ -345,9 +345,9 @@ describe('sqle/Order/CreateOrder', () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3300));
     });
-    expect(requestInstanceSchemas).toBeCalled();
+    expect(requestInstanceSchemas).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
+    expect(requestInstance).toHaveBeenCalled();
     const SchemaNameEle = getBySelector(
       '#dataBaseInfo_0_instanceSchema',
       baseElement
@@ -374,8 +374,8 @@ describe('sqle/Order/CreateOrder', () => {
     expect(screen.getByText('审 核').parentNode).toHaveClass('ant-btn-loading');
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestAudit).toBeCalled();
-    expect(requestAudit).toBeCalledWith({
+    expect(requestAudit).toHaveBeenCalled();
+    expect(requestAudit).toHaveBeenCalledWith({
       input_mybatis_xml_file: undefined,
       input_sql_file: undefined,
       input_zip_file: undefined,
@@ -435,9 +435,9 @@ describe('sqle/Order/CreateOrder', () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3300));
     });
-    expect(requestInstanceSchemas).toBeCalled();
+    expect(requestInstanceSchemas).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
+    expect(requestInstance).toHaveBeenCalled();
     const SchemaNameEle = getBySelector(
       '#dataBaseInfo_0_instanceSchema',
       baseElement
@@ -464,8 +464,8 @@ describe('sqle/Order/CreateOrder', () => {
     expect(screen.getByText('审 核').parentNode).toHaveClass('ant-btn-loading');
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestAudit).toBeCalled();
-    expect(requestAudit).toBeCalledWith({
+    expect(requestAudit).toHaveBeenCalled();
+    expect(requestAudit).toHaveBeenCalledWith({
       input_mybatis_xml_file: undefined,
       input_sql_file: undefined,
       input_zip_file: undefined,
@@ -475,7 +475,7 @@ describe('sqle/Order/CreateOrder', () => {
       sql: 'select * from user'
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAuditTaskSQLsSpy).toBeCalledTimes(1);
+    expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();

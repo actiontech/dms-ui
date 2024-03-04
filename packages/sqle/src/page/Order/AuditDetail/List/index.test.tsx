@@ -75,7 +75,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
     });
     const tableRows = getAllBySelector('.ant-table-row');
     fireEvent.click(tableRows[1]);
-    expect(setAuditResultActiveKeyFn).toBeCalledTimes(1);
+    expect(setAuditResultActiveKeyFn).toHaveBeenCalledTimes(1);
   });
 
   it('render snap list when isArchive is true', async () => {
@@ -95,7 +95,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
       orderStatus: WorkflowRecordResV2StatusEnum.finished
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetSummaryOfInstanceTasks).toBeCalled();
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -125,7 +125,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
       orderStatus: WorkflowRecordResV2StatusEnum.finished
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetSummaryOfInstanceTasks).toBeCalled();
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('中止上线')).toBeInTheDocument();
     fireEvent.click(screen.getByText('中止上线'));
@@ -137,7 +137,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(terminateSingleTaskByWorkflow).toBeCalledTimes(1);
+    expect(terminateSingleTaskByWorkflow).toHaveBeenCalledTimes(1);
   });
 
   it('render execute btn', async () => {
@@ -166,7 +166,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
       orderStatus: WorkflowRecordResV2StatusEnum.wait_for_execution
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetSummaryOfInstanceTasks).toBeCalled();
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalled();
     expect(screen.getByText('立即上线')).toBeInTheDocument();
     fireEvent.click(screen.getByText('立即上线'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -205,7 +205,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
       orderStatus: WorkflowRecordResV2StatusEnum.wait_for_execution
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetSummaryOfInstanceTasks).toBeCalled();
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalled();
     expect(screen.getByText('定时上线')).toBeInTheDocument();
     fireEvent.click(screen.getByText('定时上线'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -237,7 +237,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
       orderStatus: WorkflowRecordResV2StatusEnum.wait_for_execution
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetSummaryOfInstanceTasks).toBeCalled();
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalled();
     expect(screen.getByText('取消定时上线')).toBeInTheDocument();
     fireEvent.click(screen.getByText('取消定时上线'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -280,7 +280,7 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList', () => {
       orderStatus: WorkflowRecordResV2StatusEnum.wait_for_execution
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetSummaryOfInstanceTasks).toBeCalled();
+    expect(requestGetSummaryOfInstanceTasks).toHaveBeenCalled();
     expect(screen.getByText('立即上线')).toBeInTheDocument();
     fireEvent.click(screen.getByText('立即上线'));
   });

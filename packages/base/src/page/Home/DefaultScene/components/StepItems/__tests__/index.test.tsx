@@ -47,8 +47,8 @@ describe('test base/Home/StepItems', () => {
     expect(navigateSpy).toHaveBeenCalledWith(`/project/${projectID}/member`);
 
     fireEvent.click(screen.getByText('进入SQL工作台'));
-    expect(navigateSpy).toBeCalledTimes(6);
-    expect(navigateSpy).toBeCalledWith(`/cloudBeaver`);
+    expect(navigateSpy).toHaveBeenCalledTimes(6);
+    expect(navigateSpy).toHaveBeenCalledWith(`/cloudBeaver`);
 
     fireEvent.click(screen.getByText('查看审核规则'));
     expect(navigateSpy).toHaveBeenCalledTimes(7);
@@ -93,8 +93,8 @@ describe('test base/Home/StepItems', () => {
     );
 
     fireEvent.click(screen.getByText('发起导出工单'));
-    expect(navigateSpy).toBeCalledTimes(14);
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledTimes(14);
+    expect(navigateSpy).toHaveBeenCalledWith(
       `project/${projectID}/data/export/create`
     );
 

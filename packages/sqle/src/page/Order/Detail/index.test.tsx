@@ -165,13 +165,13 @@ describe('sqle/Order/Detail', () => {
       );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
-    expect(requestTaskInfo).toBeCalledWith({
+    expect(requestTaskInfo).toHaveBeenCalled();
+    expect(requestTaskInfo).toHaveBeenCalledWith({
       project_name: 'default',
       workflow_id: 'orderId'
     });
-    expect(getSummaryOfInstanceTasksSpy).toBeCalledTimes(1);
-    expect(getAuditTaskSpy).toBeCalledTimes(1);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+    expect(getAuditTaskSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('工单信息'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -204,13 +204,13 @@ describe('sqle/Order/Detail', () => {
     );
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
-    expect(requestTaskInfo).toBeCalledWith({
+    expect(requestTaskInfo).toHaveBeenCalled();
+    expect(requestTaskInfo).toHaveBeenCalledWith({
       project_name: 'default',
       workflow_id: 'orderId'
     });
-    expect(getSummaryOfInstanceTasksSpy).toBeCalledTimes(1);
-    expect(getAuditTaskSpy).toBeCalledTimes(1);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+    expect(getAuditTaskSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('工单信息'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -239,15 +239,15 @@ describe('sqle/Order/Detail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('审核通过'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(approveWorkflowSpy).toBeCalledTimes(1);
-    expect(approveWorkflowSpy).toBeCalledWith({
+    expect(approveWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(approveWorkflowSpy).toHaveBeenCalledWith({
       workflow_id: workflowsDetailData.workflow_id,
       workflow_step_id: '23',
 
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
+    expect(requestTaskInfo).toHaveBeenCalled();
 
     cleanup();
     customRender();
@@ -267,17 +267,17 @@ describe('sqle/Order/Detail', () => {
       fireEvent.click(screen.getByText('驳 回'));
       await jest.advanceTimersByTime(100);
     });
-    expect(rejectWorkflowSpy).toBeCalledTimes(1);
+    expect(rejectWorkflowSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(4000));
 
-    expect(rejectWorkflowSpy).toBeCalledWith({
+    expect(rejectWorkflowSpy).toHaveBeenCalledWith({
       workflow_id: workflowsDetailData.workflow_id,
       workflow_step_id: '23',
       reason: 'test',
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
+    expect(requestTaskInfo).toHaveBeenCalled();
 
     cleanup();
     customRender();
@@ -285,13 +285,13 @@ describe('sqle/Order/Detail', () => {
     fireEvent.click(screen.getByText('关闭工单'));
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(cancelWorkflowSpy).toBeCalledTimes(1);
-    expect(cancelWorkflowSpy).toBeCalledWith({
+    expect(cancelWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(cancelWorkflowSpy).toHaveBeenCalledWith({
       workflow_id: workflowsDetailData.workflow_id,
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
+    expect(requestTaskInfo).toHaveBeenCalled();
   });
 
   it('render current order status is wait for execution', async () => {
@@ -315,13 +315,13 @@ describe('sqle/Order/Detail', () => {
       await jest.advanceTimersByTime(3000);
     });
 
-    expect(executeTasksOnWorkflow).toBeCalledTimes(1);
-    expect(executeTasksOnWorkflow).toBeCalledWith({
+    expect(executeTasksOnWorkflow).toHaveBeenCalledTimes(1);
+    expect(executeTasksOnWorkflow).toHaveBeenCalledWith({
       workflow_id: workflowsDetailData.workflow_id,
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
+    expect(requestTaskInfo).toHaveBeenCalled();
 
     cleanup();
     customRender();
@@ -340,13 +340,13 @@ describe('sqle/Order/Detail', () => {
       await jest.advanceTimersByTime(3000);
     });
 
-    expect(batchCompleteWorkflowsSpy).toBeCalledTimes(1);
-    expect(batchCompleteWorkflowsSpy).toBeCalledWith({
+    expect(batchCompleteWorkflowsSpy).toHaveBeenCalledTimes(1);
+    expect(batchCompleteWorkflowsSpy).toHaveBeenCalledWith({
       workflow_id_list: [workflowsDetailData.workflow_id],
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
+    expect(requestTaskInfo).toHaveBeenCalled();
   });
 
   it('render current order status is executing', async () => {
@@ -360,7 +360,7 @@ describe('sqle/Order/Detail', () => {
     expect(screen.getByText('刷新工单')).toBeVisible();
     fireEvent.click(screen.getByText('刷新工单'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
+    expect(requestTaskInfo).toHaveBeenCalled();
 
     await act(async () => {
       fireEvent.click(screen.getByText('中止上线'));
@@ -375,12 +375,12 @@ describe('sqle/Order/Detail', () => {
       fireEvent.click(screen.getByText('确 认'));
       await jest.advanceTimersByTime(3000);
     });
-    expect(terminateMultipleTaskByWorkflowSpy).toBeCalledTimes(1);
-    expect(terminateMultipleTaskByWorkflowSpy).toBeCalledWith({
+    expect(terminateMultipleTaskByWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(terminateMultipleTaskByWorkflowSpy).toHaveBeenCalledWith({
       workflow_id: workflowsDetailData.workflow_id,
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskInfo).toBeCalled();
+    expect(requestTaskInfo).toHaveBeenCalled();
   });
 });

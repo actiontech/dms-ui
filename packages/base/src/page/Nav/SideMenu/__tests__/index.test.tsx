@@ -74,9 +74,9 @@ describe('test Base/Nav/SideMenu/index', () => {
   it('mount and unmount component', async () => {
     const { baseElement, unmount } = superRender(<SideMenu />);
     expect(baseElement).toMatchSnapshot();
-    expect(getProjectsSpy).toBeCalledTimes(1);
-    expect(getProjectsSpy).toBeCalledWith({ page_size: 9999 });
-    expect(subscribeSpy).toBeCalledTimes(1);
+    expect(getProjectsSpy).toHaveBeenCalledTimes(1);
+    expect(getProjectsSpy).toHaveBeenCalledWith({ page_size: 9999 });
+    expect(subscribeSpy).toHaveBeenCalledTimes(1);
     expect(subscribeSpy.mock.calls[0][0]).toBe(
       EmitterKey.DMS_Sync_Project_Archived_Status
     );
@@ -104,7 +104,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     expect(baseElement).toMatchSnapshot();
 
     unmount();
-    expect(unsubscribeSpy).toBeCalledTimes(1);
+    expect(unsubscribeSpy).toHaveBeenCalledTimes(1);
   });
 
   it('Click on the menu of the project selector', async () => {
@@ -113,8 +113,8 @@ describe('test Base/Nav/SideMenu/index', () => {
     fireEvent.mouseDown(getBySelector('.ant-select-selector'), baseElement);
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText(mockBindProjects[1].project_name));
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${mockBindProjects[1].project_id}/overview`
     );
   });
