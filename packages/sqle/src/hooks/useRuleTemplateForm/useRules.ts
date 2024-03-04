@@ -11,6 +11,8 @@ const useRules = (manual = false) => {
 
   const [databaseRule, setDatabaseRule] = useState<IRuleResV1[]>([]);
 
+  const [filteredRule, setFilteredRule] = useState<IRuleResV1[]>([]);
+
   const [dbType, setDbType] = useState<string>('');
 
   const {
@@ -67,7 +69,9 @@ const useRules = (manual = false) => {
     dbType,
     setDbType,
     subscribe,
-    clearSearchValue
+    clearSearchValue,
+    filteredRule,
+    setFilteredRule
   };
 };
 

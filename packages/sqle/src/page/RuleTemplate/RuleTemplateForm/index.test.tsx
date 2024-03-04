@@ -56,6 +56,8 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
         baseInfoFormSubmitLoading={false}
         baseInfoSubmit={jest.fn()}
         submit={jest.fn()}
+        filteredRule={ruleListMockData}
+        updateFilteredRule={jest.fn()}
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));
