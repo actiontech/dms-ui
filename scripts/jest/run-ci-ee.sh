@@ -11,7 +11,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-mv coverage/coverage-final.json coverage/report-$shard_index.json
+mv coverage/report.json coverage/report-$shard_index.json
+mv coverage/coverage-final.json coverage/coverage-final-$shard_index.json
 if [ $? -ne 0 ]; then
   echo "Jest test failed."
   exit 1
