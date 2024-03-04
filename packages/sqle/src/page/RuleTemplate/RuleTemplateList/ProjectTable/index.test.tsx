@@ -74,7 +74,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   it('render project rule template list when actionPermission is falsy', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(
       screen.getByText(`共 ${projectRuleTemplateListMockData.length} 条数据`)
@@ -86,7 +86,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   it('render project rule template list when actionPermission is true', async () => {
     const { baseElement } = customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     const length = projectRuleTemplateListMockData.length;
     expect(screen.getByText(`共 ${length} 条数据`)).toBeInTheDocument();
@@ -102,7 +102,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     }));
     const { baseElement } = customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     const length = projectRuleTemplateListMockData.length;
     expect(screen.getByText(`共 ${length} 条数据`)).toBeInTheDocument();
@@ -127,12 +127,12 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   it('should refresh table when emit "Refresh_Rule_Template_List" event', async () => {
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
       EventEmitter.emit(EmitterKey.Refresh_Rule_Template_List)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toBeCalledTimes(2);
+    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(2);
   });
 
   it('click edit button', async () => {
@@ -144,7 +144,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('click delete button', async () => {
@@ -173,8 +173,8 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(
       screen.queryByText(`正在删除模版 "${templateName}"...`)
     ).not.toBeInTheDocument();
-    expect(deleteProjectRuleTemplateSpy).toBeCalledTimes(1);
-    expect(deleteProjectRuleTemplateSpy).toBeCalledWith({
+    expect(deleteProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(deleteProjectRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: projectRuleTemplateListMockData[0].rule_template_name,
       project_name: mockProjectInfo.projectName
     });
@@ -207,8 +207,8 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(
       screen.queryByText(`正在导出模版 "${templateName}"...`)
     ).not.toBeInTheDocument();
-    expect(exportProjectRuleTemplateSpy).toBeCalledTimes(1);
-    expect(exportProjectRuleTemplateSpy).toBeCalledWith(
+    expect(exportProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(exportProjectRuleTemplateSpy).toHaveBeenCalledWith(
       {
         rule_template_name:
           projectRuleTemplateListMockData[0].rule_template_name,
@@ -227,7 +227,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     );
     const { baseElement } = customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       payload: {
         modalStatus: {
@@ -243,7 +243,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(screen.getByText('克隆规则模版')).toBeInTheDocument();
     fireEvent.click(screen.getByText('克隆规则模版'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(dispatchSpy).toBeCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
         ruleTemplate: projectRuleTemplateListMockData[0]
@@ -287,8 +287,8 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(
       screen.queryByText(`正在导出模版 "${templateName}"...`)
     ).not.toBeInTheDocument();
-    expect(exportProjectRuleTemplateSpy).toBeCalledTimes(1);
-    expect(exportProjectRuleTemplateSpy).toBeCalledWith(
+    expect(exportProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(exportProjectRuleTemplateSpy).toHaveBeenCalledWith(
       {
         rule_template_name:
           projectRuleTemplateListMockData[0].rule_template_name,
@@ -312,7 +312,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     }));
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       payload: {
         modalStatus: {
@@ -324,7 +324,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(screen.getByText('克 隆')).toBeInTheDocument();
     fireEvent.click(screen.getByText('克 隆'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(dispatchSpy).toBeCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
         ruleTemplate: projectRuleTemplateListMockData[0]

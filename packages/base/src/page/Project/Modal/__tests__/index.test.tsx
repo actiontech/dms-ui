@@ -17,8 +17,8 @@ describe('test base/page/Project/Modal', () => {
 
     const { baseElement } = superRender(<ProjectManageModal />);
     expect(baseElement).toMatchSnapshot();
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       payload: {
         modalStatus: {
           DMS_ADD_PROJECT: false,

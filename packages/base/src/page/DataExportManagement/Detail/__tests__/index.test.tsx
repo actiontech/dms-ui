@@ -94,6 +94,8 @@ describe('test base/DataExport/Detail', () => {
   it('should executed clearAllDetailState when unmount component', () => {
     const { unmount } = superRender(<WorkflowDetail />);
     unmount();
-    expect(mockDataExportDetailRedux.clearAllDetailState).toBeCalledTimes(1);
+    expect(mockDataExportDetailRedux.clearAllDetailState).toHaveBeenCalledTimes(
+      1
+    );
   });
 });

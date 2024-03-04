@@ -59,14 +59,14 @@ describe('test base/home/NotFoundProject', () => {
   it('should match snapshot when clicked cancel button', () => {
     const { baseElement } = customRender();
     fireEvent.click(screen.getByText('取 消'));
-    expect(setOpenSpy).toBeCalledTimes(1);
-    expect(setOpenSpy).toBeCalledWith(false);
+    expect(setOpenSpy).toHaveBeenCalledTimes(1);
+    expect(setOpenSpy).toHaveBeenCalledWith(false);
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should execute "navigate" when clicked ok button', async () => {
     const { baseElement } = customRender();
-    expect(navigateSpy).toBeCalledTimes(0);
+    expect(navigateSpy).toHaveBeenCalledTimes(0);
 
     expect(screen.getByText('确 认').closest('button')).toBeDisabled();
 
@@ -79,14 +79,14 @@ describe('test base/home/NotFoundProject', () => {
     expect(screen.getByText('确 认').closest('button')).not.toBeDisabled();
 
     fireEvent.click(screen.getByText('确 认'));
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/rule?${RuleUrlParamKey.projectID}=${mockCurrentUserReturn.bindProjects[0].project_id}`,
       { replace: true }
     );
 
-    expect(updateRecentlyProjectSpy).toBeCalledTimes(1);
-    expect(updateRecentlyProjectSpy).toBeCalledWith(
+    expect(updateRecentlyProjectSpy).toHaveBeenCalledTimes(1);
+    expect(updateRecentlyProjectSpy).toHaveBeenCalledWith(
       mockCurrentUserReturn.bindProjects[0].project_id,
       mockCurrentUserReturn.bindProjects[0].project_name
     );

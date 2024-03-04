@@ -39,7 +39,7 @@ describe('sqle/Order/AuditDetail/ResultDescribe', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.blur(descInput);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onSubmitFn).toBeCalled();
-    expect(onSubmitFn).toBeCalledWith('desc text');
+    expect(onSubmitFn).toHaveBeenCalled();
+    expect(onSubmitFn).toHaveBeenCalledWith('desc text');
   });
 });

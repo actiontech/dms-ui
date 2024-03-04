@@ -22,8 +22,8 @@ describe('test base/DataExport/Detail/ExportTaskList/ResultCard', () => {
     expect(container).toMatchSnapshot();
 
     fireEvent.click(screen.getAllByText('复制SQL语句')[0]);
-    expect(mockCopyTextByTextareaSpy).toBeCalledTimes(1);
-    expect(mockCopyTextByTextareaSpy).toBeCalledWith(
+    expect(mockCopyTextByTextareaSpy).toHaveBeenCalledTimes(1);
+    expect(mockCopyTextByTextareaSpy).toHaveBeenCalledWith(
       ListDataExportTaskSQLsResponseData[1].sql
     );
   });

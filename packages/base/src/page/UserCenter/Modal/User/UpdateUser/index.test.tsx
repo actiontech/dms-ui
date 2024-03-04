@@ -46,7 +46,7 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
     const { baseElement } = renderWithReduxAndTheme(<UpdateUser />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(opPermissionListSpy).toBeCalledTimes(1);
+    expect(opPermissionListSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByLabelText('用户名')).toHaveValue(mockUserData.name);
     expect(screen.getByLabelText('用户名')).toHaveAttribute('disabled');
     expect(screen.getByLabelText('是否需要更新密码')).not.toBeChecked();
@@ -63,8 +63,8 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
-    expect(updateUserSpy).toBeCalledTimes(1);
-    expect(updateUserSpy).toBeCalledWith({
+    expect(updateUserSpy).toHaveBeenCalledTimes(1);
+    expect(updateUserSpy).toHaveBeenCalledWith({
       user: {
         email: 'test@163.com',
         password: undefined,
@@ -77,16 +77,16 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText(`编辑用户 "${mockUserData.name}" 成功`));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Update_User,
         status: false
       }
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Refresh_User_Center_List
     );
     expect(screen.getByText('提 交').parentNode).not.toHaveClass(
@@ -114,8 +114,8 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(updateUserSpy).toBeCalledTimes(1);
-    expect(updateUserSpy).toBeCalledWith({
+    expect(updateUserSpy).toHaveBeenCalledTimes(1);
+    expect(updateUserSpy).toHaveBeenCalledWith({
       user: {
         email: '',
         password: '123',
@@ -146,15 +146,15 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(updateUserSpy).toBeCalledTimes(1);
+    expect(updateUserSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should close modal when click close button', async () => {
     const { baseElement } = renderWithReduxAndTheme(<UpdateUser />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Update_User,

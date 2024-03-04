@@ -973,7 +973,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 1`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="/* input your sql */"
                             width="100%"
                           />
@@ -2510,7 +2510,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 2`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="/* input your sql */"
                             width="100%"
                           />
@@ -4413,7 +4413,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 3`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="select * from user.list join in all"
                             width="100%"
                           />
@@ -7823,7 +7823,7 @@ exports[`sqle/Order/CreateOrder render reset form 2`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="/* input your sql */"
                             width="100%"
                           />
@@ -9345,7 +9345,7 @@ exports[`sqle/Order/CreateOrder render snap when create order init 6`] = `
                             height="400px"
                             id="0_sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="/* input your sql */"
                             width="100%"
                           />

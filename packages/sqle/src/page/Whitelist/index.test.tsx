@@ -38,7 +38,7 @@ describe('slqe/Whitelist', () => {
     const { baseElement } = renderWithReduxAndTheme(<WhiteList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(whiteListSpy).toBeCalledTimes(1);
+    expect(whiteListSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('添加白名单')).toBeInTheDocument();
     expect(
       getBySelector('.custom-icon-refresh', baseElement)

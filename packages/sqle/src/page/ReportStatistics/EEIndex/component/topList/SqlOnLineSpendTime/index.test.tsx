@@ -40,7 +40,7 @@ describe('ReportStatistics/topList/SqlOnLineSpendTime', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getSqlAverageExecutionTime).toBeCalled();
+    expect(getSqlAverageExecutionTime).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -51,7 +51,7 @@ describe('ReportStatistics/topList/SqlOnLineSpendTime', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getSqlAverageExecutionTime).toBeCalled();
+    expect(getSqlAverageExecutionTime).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 

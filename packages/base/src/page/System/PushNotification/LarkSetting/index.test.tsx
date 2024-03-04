@@ -31,7 +31,7 @@ describe('base/System/PushNotification/LarkSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetFeishuConfiguration).toBeCalled();
+    expect(requestGetFeishuConfiguration).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -116,15 +116,15 @@ describe('base/System/PushNotification/LarkSetting', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestUpdateFeishuConfiguration).toBeCalled();
-      expect(requestUpdateFeishuConfiguration).toBeCalledWith({
+      expect(requestUpdateFeishuConfiguration).toHaveBeenCalled();
+      expect(requestUpdateFeishuConfiguration).toHaveBeenCalledWith({
         update_feishu_configuration: {
           app_id: 'app key',
           app_secret: 'app secret',
           is_feishu_notification_enabled: true
         }
       });
-      expect(requestGetFeishuConfiguration).toBeCalled();
+      expect(requestGetFeishuConfiguration).toHaveBeenCalled();
     });
   });
 });

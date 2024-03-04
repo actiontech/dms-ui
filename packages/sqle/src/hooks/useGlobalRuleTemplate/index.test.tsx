@@ -55,7 +55,7 @@ describe('useRuleTemplate', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
     expect(result.current.globalRuleTemplateList).toEqual([]);
 
@@ -63,7 +63,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.globalRuleTemplateList).toEqual(
       mockMysqlRuleTemplate
     );
@@ -99,7 +99,7 @@ describe('useRuleTemplate', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
     expect(result.current.globalRuleTemplateList).toEqual([]);
 
@@ -107,7 +107,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.globalRuleTemplateList).toEqual(
       mockMysqlRuleTemplate
     );
@@ -120,7 +120,7 @@ describe('useRuleTemplate', () => {
       result.current.updateGlobalRuleTemplateList();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
     expect(result.current.globalRuleTemplateList).toEqual(
       mockMysqlRuleTemplate
@@ -130,7 +130,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.globalRuleTemplateList).toEqual([]);
   });
 
@@ -148,7 +148,7 @@ describe('useRuleTemplate', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
     expect(result.current.globalRuleTemplateList).toEqual([]);
 
@@ -156,7 +156,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.globalRuleTemplateList).toEqual(
       mockMysqlRuleTemplate
     );
@@ -169,7 +169,7 @@ describe('useRuleTemplate', () => {
       result.current.updateGlobalRuleTemplateList();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
     expect(result.current.globalRuleTemplateList).toEqual(
       mockMysqlRuleTemplate
@@ -179,7 +179,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.globalRuleTemplateList).toEqual([]);
   });
 
@@ -208,7 +208,7 @@ describe('useRuleTemplate', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
     expect(result.current.globalRuleTemplateList).toEqual([]);
 
@@ -216,7 +216,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
     expect(result.current.globalRuleTemplateList).toEqual([
       {

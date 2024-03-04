@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test base/hooks/useThemeStyleData should match snapshot 1`] = `
-Object {
-  "dataExport": Object {
-    "create": Object {
-      "form": Object {
+{
+  "dataExport": {
+    "create": {
+      "form": {
         "baseInfoTitleIconColor": "#c3c6cd",
       },
     },
-    "statistics": Object {
-      "auditResultStatusColor": Object {
+    "statistics": {
+      "auditResultStatusColor": {
         "cancel": "#7D8CA8",
         "exporting": "#6094FC",
         "failed": "#F59957",
@@ -20,56 +20,56 @@ Object {
       },
     },
   },
-  "guidance": Object {
+  "guidance": {
     "gap": 24,
-    "guidanceButton": Object {
-      "default": Object {
+    "guidanceButton": {
+      "default": {
         "background": "rgba(125, 140, 168, 0.10)",
         "color": "#7D8CA8",
       },
-      "hover": Object {
+      "hover": {
         "background": "#f0f7ff",
         "color": "#6094FC",
       },
     },
     "padding": 40,
-    "sceneSegmented": Object {
+    "sceneSegmented": {
       "backgroundColor": "#fcfbf9",
       "borderBottom": "1px solid #E8E7E6",
     },
-    "steps": Object {
-      "connection": Object {
+    "steps": {
+      "connection": {
         "backgroundColor": "#E8E7E6",
         "gap": 8,
         "width": 2,
       },
-      "icon": Object {
+      "icon": {
         "backgroundColor": "#4583ff",
         "height": 40,
         "width": 40,
       },
-      "step": Object {
+      "step": {
         "border": "1px solid #E8E7E6",
-        "content": Object {
-          "desc": Object {
+        "content": {
+          "desc": {
             "color": "#8a8f99",
           },
         },
-        "title": Object {
+        "title": {
           "borderRight": "1px solid #E8E7E6",
-          "index": Object {
+          "index": {
             "color": "#4583ff",
           },
-          "text": Object {
+          "text": {
             "color": "#292C33",
           },
         },
       },
     },
   },
-  "sideMenu": Object {
-    "projectSelector": Object {
-      "dropdown": Object {
+  "sideMenu": {
+    "projectSelector": {
+      "dropdown": {
         "activeIconColor": "#EBAD1C",
         "groupLabelColor": "#8a8f99",
         "iconColor": "#c3c6cd",
@@ -78,12 +78,12 @@ Object {
     },
     "suffixIconColor": "#c3c6cd",
   },
-  "system": Object {
-    "configButton": Object {
+  "system": {
+    "configButton": {
       "backgroundColor": "#f2f1ef",
       "border": "1px solid #E8E7E6",
     },
-    "logo": Object {
+    "logo": {
       "boxShadow": "0 1px 4px 0 rgba(51, 44, 31, 0.12)",
     },
   },
@@ -91,8 +91,8 @@ Object {
 `;
 
 exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
-Object {
-  "basic": Object {
+{
+  "basic": {
     "borderRadius4": 4,
     "colorBgLayoutGray": "#fcfbf9",
     "colorDangerousActive": "#FAAFB9",
@@ -112,172 +112,172 @@ Object {
     "controlHeightSM": 28,
     "paddingNumber": 20,
   },
-  "components": Object {
-    "basicButton": Object {
-      "dangerous": Object {
-        "default": Object {
+  "components": {
+    "basicButton": {
+      "dangerous": {
+        "default": {
           "color": "#f66074",
         },
-        "disabled": Object {
+        "disabled": {
           "color": "#FAAFB9",
         },
       },
-      "dashed": Object {
-        "default": Object {
+      "dashed": {
+        "default": {
           "border": "1px dashed #C7C6C3",
         },
       },
-      "default": Object {
-        "active": Object {
+      "default": {
+        "active": {
           "background": "#F2F1EF",
         },
-        "default": Object {
+        "default": {
           "background": "#FFFFFF",
           "boxShadow": "0 1px 4px 0 #332C1F1F",
           "color": "#292C33",
         },
-        "disabled": Object {
+        "disabled": {
           "background": "#FFFFFF",
           "color": "#C3C6CD",
         },
-        "hover": Object {
+        "hover": {
           "background": "#F7F6F4",
         },
       },
-      "primary": Object {
-        "active": Object {
+      "primary": {
+        "active": {
           "background": "#3B6FD9",
         },
-        "default": Object {
+        "default": {
           "background": "#4583ff",
           "boxShadow": "0 1px 4px 0 #4583FF66",
           "color": "#FFFFFF",
         },
-        "disabled": Object {
+        "disabled": {
           "background": "#B5CDFF",
           "color": "#FFFFFF",
         },
-        "hover": Object {
+        "hover": {
           "background": "#6A9CFF",
         },
       },
     },
-    "basicChart": Object {
+    "basicChart": {
       "border": "1px solid #f2f1f0",
       "borderRadius": "8px",
     },
-    "basicDrawer": Object {
+    "basicDrawer": {
       "backgroundColor": "#fcfbf9",
       "boxShadow": "-20px 0px 40px 0px rgba(0, 26, 65, 0.05)",
       "color": "#292C33",
     },
-    "basicEmpty": Object {
+    "basicEmpty": {
       "description": "#c3c6cd",
-      "info": Object {
+      "info": {
         "color": "#C3C6CD",
         "fontSize": "13px",
         "fontWeight": 400,
       },
-      "title": Object {
+      "title": {
         "color": "#8a8f99",
         "fontSize": "16px",
         "fontWeight": 500,
       },
     },
-    "basicInfoList": Object {
+    "basicInfoList": {
       "bodyBoxShadow": "none",
       "borderRadius": "8px",
-      "title": Object {
+      "title": {
         "backgroundColor": "#f7f6f4",
         "border": "1px solid #f2f1f0",
         "color": "#575c66",
         "fontSize": "13px",
         "fontWeight": 500,
       },
-      "value": Object {
+      "value": {
         "border": "1px solid #f2f1f0",
         "color": "#8a8f99",
         "fontSize": "13px",
         "fontWeight": 500,
       },
     },
-    "basicInput": Object {
-      "default": Object {
+    "basicInput": {
+      "default": {
         "border": "1px solid #E8E7E6",
         "dataCountColor": "#c3c6cd",
-        "placeholder": Object {
+        "placeholder": {
           "color": "#c3c6cd",
         },
       },
-      "disabled": Object {
+      "disabled": {
         "background": "#f7f6f4",
         "border": "1px solid #E8E7E6",
       },
-      "error": Object {
+      "error": {
         "border": "1px solid #f66074",
       },
-      "focus": Object {
+      "focus": {
         "border": "1px solid #4583ff",
         "caretColor": "#4583ff",
       },
-      "hover": Object {
+      "hover": {
         "border": "1px solid #C7C6C3",
       },
     },
-    "basicModal": Object {
-      "content": Object {
+    "basicModal": {
+      "content": {
         "backgroundColor": "#fcfbf9",
-        "body": Object {
+        "body": {
           "color": "#292C33",
         },
         "border": "1px solid #E8E7E6",
-        "footer": Object {
+        "footer": {
           "backgroundColor": "#f7f6f4",
         },
-        "header": Object {
+        "header": {
           "border": "1px solid #E8E7E6",
-          "title": Object {
+          "title": {
             "color": "#292C33",
           },
         },
       },
     },
-    "basicRangePicker": Object {
-      "active": Object {
+    "basicRangePicker": {
+      "active": {
         "border": "1px solid #4583ff",
       },
-      "default": Object {
+      "default": {
         "border": "1px solid #E8E7E6",
-        "placeholder": Object {
+        "placeholder": {
           "color": "#c3c6cd",
         },
       },
-      "disabled": Object {
+      "disabled": {
         "background": "#f7f6f4",
         "border": "1px solid #E8E7E6",
       },
-      "dropdown": Object {
-        "icon": Object {
+      "dropdown": {
+        "icon": {
           "boxShadow": "0 1px 4px 0 rgba(51, 44, 31, 0.12)",
         },
       },
-      "error": Object {
+      "error": {
         "border": "1px solid #f66074",
       },
-      "hover": Object {
+      "hover": {
         "border": "1px solid #C7C6C3",
       },
     },
-    "basicResult": Object {
-      "subTitle": Object {
+    "basicResult": {
+      "subTitle": {
         "color": "#8a8f99",
       },
-      "title": Object {
+      "title": {
         "color": "#292c33",
       },
     },
-    "basicSegmented": Object {
-      "active": Object {
+    "basicSegmented": {
+      "active": {
         "border": "#f7f6f4",
         "boxShadow": "0px 1px 4px 0px #332C1F1F",
         "color": "#4583ff",
@@ -287,168 +287,168 @@ Object {
       "hoverBackgroundColor": "#E8EAE7",
       "noticeCountColor": "#f66074",
     },
-    "basicSelect": Object {
-      "active": Object {
+    "basicSelect": {
+      "active": {
         "border": "1px solid #4583ff",
       },
-      "default": Object {
+      "default": {
         "border": "1px solid #E8E7E6",
-        "placeholder": Object {
+        "placeholder": {
           "color": "#c3c6cd",
         },
       },
-      "disabled": Object {
+      "disabled": {
         "background": "#f7f6f4",
         "border": "1px solid #E8E7E6",
       },
-      "error": Object {
+      "error": {
         "border": "1px solid #f66074",
       },
-      "hover": Object {
+      "hover": {
         "border": "1px solid #C7C6C3",
       },
     },
-    "basicTag": Object {
-      "Grape": Object {
+    "basicTag": {
+      "Grape": {
         "backgroundColor": "rgba(116, 83, 218, 0.10)",
         "color": "#7453DA",
       },
-      "blue": Object {
+      "blue": {
         "backgroundColor": "rgba(61, 181, 241, 0.10)",
         "color": "#3DB5F1",
       },
-      "cyan": Object {
+      "cyan": {
         "backgroundColor": "rgba(26, 206, 219, 0.10)",
         "color": "#15C7D4",
       },
-      "default": Object {
+      "default": {
         "backgroundColor": "#fffff",
         "color": "#575C66",
       },
-      "geekblue": Object {
+      "geekblue": {
         "backgroundColor": "rgba(96, 148, 252, 0.10)",
         "color": "#6094FC",
       },
-      "gold": Object {
+      "gold": {
         "backgroundColor": "rgba(235, 173, 28, 0.10)",
         "color": "#EBAD1C",
       },
-      "gray": Object {
+      "gray": {
         "backgroundColor": "rgba(125, 140, 168, 0.10)",
         "color": "#7D8CA8",
       },
-      "green": Object {
+      "green": {
         "backgroundColor": "rgba(65, 191, 154, 0.10)",
         "color": "#41BF9A",
       },
-      "lilac": Object {
+      "lilac": {
         "backgroundColor": "rgba(159, 107, 233, 0.10)",
         "color": "#9F6BE9",
       },
-      "orange": Object {
+      "orange": {
         "backgroundColor": "rgba(245, 153, 87, 0.10)",
         "color": "#F59957",
       },
-      "purple": Object {
+      "purple": {
         "backgroundColor": "rgba(116, 112, 237, 0.10)",
         "color": "#7470ED",
       },
-      "red": Object {
+      "red": {
         "backgroundColor": "rgba(246, 96, 116, 0.10)",
         "color": "#F66074",
       },
     },
-    "columnsSetting": Object {
-      "dropdown": Object {
+    "columnsSetting": {
+      "dropdown": {
         "backgroundColor": "#fcfbf9",
         "border": "1px solid #E8E7E6",
         "boxShadow": "0px 3px 12px 0px #332C1F1A",
-        "item": Object {
+        "item": {
           "hoverBackgroundColor": "#f7f6f4",
           "iconColor": "#C3C6CD",
           "labelColor": "#292c33",
         },
-        "title": Object {
+        "title": {
           "color": "#8a8f99",
         },
       },
     },
-    "configItem": Object {
+    "configItem": {
       "maskBg": "rgba(0, 0, 0, 0.6)",
     },
-    "customDraggerUpload": Object {
+    "customDraggerUpload": {
       "backgroundColor": "#f7f6f4",
       "border": "#E8E7E6",
       "color": "#c3c6cd",
     },
-    "customFilter": Object {
-      "rangePicker": Object {
+    "customFilter": {
+      "rangePicker": {
         "borderColor": "#E8E7E6",
         "filterLabelColor": "#8a8f99",
         "focusBackgroundColor": "#f2f1ef",
         "hoverBackgroundColor": "#f7f6f4",
-        "placeholder": Object {
+        "placeholder": {
           "color": "#8a8f99",
         },
       },
     },
-    "customMonacoEditor": Object {
+    "customMonacoEditor": {
       "border": "1px solid #E8E7E6",
       "linesContentBackgroundColor": "#fcfbf9",
       "marginBackgroundColor": "#f7f6f4",
       "marginViewOverlaysColor": "#8a8f99",
     },
-    "customSelect": Object {
+    "customSelect": {
       "border": "1px solid #E8E7E6",
-      "content": Object {
+      "content": {
         "labelColor": "#292C33",
         "prefixColor": "#8a8f99",
       },
-      "disabled": Object {
+      "disabled": {
         "background": "#f7f6f4",
         "border": "1px solid #E8E7E6",
       },
       "focusBackGroundColor": "#f2f1ef",
       "hoverBackgroundColor": "#f7f6f4",
       "iconColor": "#f2f1ef",
-      "placeholder": Object {
+      "placeholder": {
         "color": "#8a8f99",
       },
-      "searchInput": Object {
+      "searchInput": {
         "borderBottom": "1px solid #E8E7E6",
         "hoverBorderBottom": "1px solid #E8E7E6",
       },
     },
-    "filterContainer": Object {
+    "filterContainer": {
       "backgroundColor": "#fcfbf9",
       "border": "1px solid #E8E7E6",
     },
-    "pageHeader": Object {
+    "pageHeader": {
       "background": "#fcfbf9",
       "borderBottom": "1px solid #E8E7E6",
-      "title": Object {
+      "title": {
         "color": "#292c33",
       },
     },
-    "ruleComponent": Object {
-      "ruleList": Object {
+    "ruleComponent": {
+      "ruleList": {
         "backgroundColor": "#f7f6f4",
         "border": "1px solid #f2f1f0",
         "endContentColor": "#c3c6cd",
         "hoverBackgroundColor": "#fcfbf9",
         "hoverBorder": "1px solid #E8E7E6",
-        "levelContent": Object {
+        "levelContent": {
           "annotationColor": "#8a8f99",
           "paramsBackgroundColor": "#9F6BE91A",
           "paramsColor": "#9f6be9",
         },
         "levelIconTextColor": "#8a8f99",
       },
-      "ruleStatus": Object {
+      "ruleStatus": {
         "disabledColor": "#f66074",
         "enableColor": "#1cb889",
       },
-      "ruleType": Object {
+      "ruleType": {
         "activeBackgroundColor": "#f0f7ff",
         "activeColor": "#4583ff",
         "backgroundColor": "#f7f6f4",
@@ -458,35 +458,35 @@ Object {
         "countBackgroundColor": "#f2f1ef",
       },
     },
-    "searchInput": Object {
+    "searchInput": {
       "searchIconColor": "#c3c6cd",
     },
-    "table": Object {
-      "pagination": Object {
+    "table": {
+      "pagination": {
         "backgroundColor": "#fcfbf9",
         "border": "1px solid #F2F1F0",
-        "item": Object {
+        "item": {
           "activeBackgroundColor": "#FFFFFF",
           "activeBorder": "1px solid #E8E7E6",
           "activeColor": "#292C33",
           "color": "#8a8f99",
           "hoverBackgroundColor": "#f2f1ef",
         },
-        "options": Object {
+        "options": {
           "backgroundColor": "#FFFFFF",
           "border": "1px solid #F2F1F0",
           "boxShadow": "0px 1px 4px 0px #332C1F1F",
           "hoverBorder": "1px solid #F2F1F0",
           "itemColor": "#8a8f99",
         },
-        "total": Object {
+        "total": {
           "color": "#575c66",
         },
       },
-      "row": Object {
+      "row": {
         "border": "1px solid #F2F1F0",
         "color": "#292c33",
-        "moreButtonInActions": Object {
+        "moreButtonInActions": {
           "backgroundColor": "#fcfbf9",
           "border": "1px solid #E8E7E6",
           "boxShadow": "0px 3px 12px 0px rgba(51, 44, 31, 0.10)",
@@ -494,24 +494,24 @@ Object {
           "hoverItemBackgroundColor": "#f2f1ef",
         },
       },
-      "thead": Object {
+      "thead": {
         "border": "1px solid #F2F1F0",
         "color": "#8a8f99",
       },
     },
-    "toolbar": Object {
+    "toolbar": {
       "backgroundColor": "#fcfbf9",
       "border": "1px solid #E8E7E6",
     },
   },
-  "nav": Object {
+  "nav": {
     "backgroundColor": "#fcfbf9",
     "border": "1px solid #f2f1f0",
     "boxShadow": "2px 0 6px 0 rgba(51, 48, 41, 0.04)",
-    "globalSystem": Object {
+    "globalSystem": {
       "backgroundColor": "#f7f6f4",
     },
-    "menu": Object {
+    "menu": {
       "dividerColor": "#f2f1f0",
       "groupLabelColor": "#8a8f99",
       "hoverBackgroundColor": "#f2f1ef",
@@ -519,40 +519,40 @@ Object {
       "labelColor": "#575c66",
     },
     "padding": 16,
-    "title": Object {
-      "color": Array [
+    "title": {
+      "color": [
         "#4583ff",
         "#292C33",
       ],
     },
-    "userNavigate": Object {
+    "userNavigate": {
       "backgroundColor": "#fcfbf9",
       "border": "1px solid #E8E7E6",
       "boxShadow": "0 3px 12px 0 rgba(51, 44, 31, 0.10)",
-      "content": Object {
+      "content": {
         "color": "#292C33",
         "hoverBackgroundColor": "#f2f1ef",
       },
-      "footer": Object {
-        "iconWrapper": Object {
+      "footer": {
+        "iconWrapper": {
           "activeBackgroundColor": "#FFFFFF",
           "activeColor": "#292C33",
           "backgroundColor": "#f7f6f4",
           "border": "1px solid #E8E7E6",
           "color": "#8a8f99",
         },
-        "text": Object {
+        "text": {
           "color": "#292C33",
         },
       },
-      "title": Object {
+      "title": {
         "border": "1px solid #f2f1f0",
         "color": "#292C33",
       },
     },
     "width": 220,
   },
-  "uiToken": Object {
+  "uiToken": {
     "colorBgBase": "#fcfbf9",
     "colorBgLayout": "#f2f1ef",
     "colorBorder": "#C7C6C3",
@@ -578,33 +578,33 @@ Object {
 `;
 
 exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
-Object {
-  "auditPlan": Object {
-    "detail": Object {
-      "tag": Object {
-        "default": Object {
+{
+  "auditPlan": {
+    "detail": {
+      "tag": {
+        "default": {
           "background": "#fff",
         },
-        "icon": Object {
+        "icon": {
           "color": "#7453da1a",
         },
-        "primary": Object {
+        "primary": {
           "background": "#6094fc1a",
         },
       },
     },
   },
-  "order": Object {
-    "common": Object {
-      "auditResultFilter": Object {
-        "auditResultInfo": Object {
+  "order": {
+    "common": {
+      "auditResultFilter": {
+        "auditResultInfo": {
           "itemBgColor": "#fcfbf9",
           "schemaValueColor": "#7d8ca8",
           "textColor": "#8a8f99",
         },
         "bgColor": "#fcfbf9",
         "borderColor": "#f2f1f0",
-        "options": Object {
+        "options": {
           "activeBgColor": "#f0f7ff",
           "bgColor": "#f7f6f4",
           "numActiveColor": "#4583ff",
@@ -613,19 +613,19 @@ Object {
           "textColor": "#8a8f99",
         },
       },
-      "basicInfo": Object {
+      "basicInfo": {
         "bgColor": "#fcfbf9",
         "borderColor": "#f2f1f0",
         "descColor": "#8a8f99",
         "titleColor": "#292C33",
       },
     },
-    "createOrder": Object {
-      "auditResult": Object {
-        "auditResultDrawer": Object {
+    "createOrder": {
+      "auditResult": {
+        "auditResultDrawer": {
           "numberColor": "#4583ff",
         },
-        "download": Object {
+        "download": {
           "bgColor": "#fcfbf9",
           "borderColor": "#E8E7E6",
           "boxShadow": "0px 3px 12px 0px rgba(51, 44, 31, 0.1)",
@@ -633,7 +633,7 @@ Object {
           "itemHoverColor": "#f7f6f4",
           "itemIconColor": "#8a8f99",
         },
-        "toggleButton": Object {
+        "toggleButton": {
           "activeBgColor": "#f0f7ff",
           "activeColor": "#4583ff",
           "bgColor": "#f7f6f4",
@@ -641,101 +641,101 @@ Object {
           "color": "#575c66",
         },
       },
-      "editForm": Object {
+      "editForm": {
         "projectFlagIconColor": "#ebad1c",
         "titleColor": "#8a8f99",
       },
-      "form": Object {
+      "form": {
         "baseInfoTitleIconColor": "#c3c6cd",
       },
     },
-    "orderList": Object {
-      "orderDesc": Object {
+    "orderList": {
+      "orderDesc": {
         "copyIconColor": "#4583ff",
         "hoverCopyIconBackgroundColor": "#E8F3FF",
       },
     },
-    "orderSteps": Object {
+    "orderSteps": {
       "boxShadow": "0px 1px 4px 0px rgba(51, 44, 31, 0.12)",
     },
   },
-  "projectOverview": Object {
-    "DataSourceCount": Object {
+  "projectOverview": {
+    "DataSourceCount": {
       "health": "#7470ED",
       "risk": "#EBAD1C",
     },
-    "ProjectScore": Object {
-      "indicator": Object {
-        "pin": Object {
+    "ProjectScore": {
+      "indicator": {
+        "pin": {
           "fill": "#fcfbf9",
           "stroke": "#c3c6cd",
         },
         "pointer": "#c3c6cd",
       },
-      "level": Object {
+      "level": {
         "dangerous": "#F66074",
         "excellent": "#4BCCA6",
         "good": "#6094FC",
         "warning": "#EBAD1C",
       },
     },
-    "ScanTask": Object {
-      "bar": Object {
+    "ScanTask": {
+      "bar": {
         "activeColor": "#3B6FD9",
         "bg": "#f7f6f4",
         "fill": "#6094FC",
-        "label": Object {
+        "label": {
           "fill": "#dad9d9",
         },
-        "toolTip": Object {
+        "toolTip": {
           "dotColor": "#6094FC",
         },
       },
-      "detail": Object {
+      "detail": {
         "stroke": "#FFFFFF",
       },
     },
-    "SqlCount": Object {
+    "SqlCount": {
       "baseColor": "#EBAD1C",
       "grayColor": "#f2f1f0",
     },
   },
-  "reportStatistics": Object {
-    "CardWrapper": Object {
+  "reportStatistics": {
+    "CardWrapper": {
       "titleBorderColor": "#E8E7E6",
       "titleColor": "#575C66",
     },
-    "ChartContTitle": Object {
+    "ChartContTitle": {
       "mainColor": "#292c33",
       "mainSubColor": "#C4C6C9",
       "subContColor": "#8a8f99",
     },
-    "DatabaseSourceOrder": Object {
-      "default": Object {
+    "DatabaseSourceOrder": {
+      "default": {
         "colorText": "#292C33",
         "colorTextTertiary": "#8a8f99",
       },
     },
-    "DatabaseTypeOrder": Object {
-      "default": Object {
+    "DatabaseTypeOrder": {
+      "default": {
         "fontSize": 16,
       },
-      "tooltip": Object {
+      "tooltip": {
         "background": "#fcfbf9",
         "border": "1px solid #ebe9e8",
         "boxShadow": "0 3px 12px 0 #332c1f1a",
       },
     },
-    "LicenseStatistics": Object {
-      "ChartContTitle": Object {
+    "LicenseStatistics": {
+      "ChartContTitle": {
         "lineColor": "#6094FC",
       },
-      "LicenseColumn": Object {
+      "LicenseColumn": {
         "defaultColor": "#6094FC",
-        "fillColor": Object {
+        "fillColor": {
           "column": "#6094FC",
           "columnBackground": "#F7F6F4",
-          "state": Object {
+          "state": {
             "active": "#6094FC",
           },
           "xAxis": "#8a8f99",
@@ -743,8 +743,8 @@ Object {
         },
       },
     },
-    "TableTopList": Object {
-      "bgColor": Object {
+    "TableTopList": {
+      "bgColor": {
         "line1": "#f54e7810",
         "line2": "#8549e710",
         "line3": "#308bf510",
@@ -754,14 +754,14 @@ Object {
       "noteTipColor": "#C3C6CD",
       "titleColor": "#8a8f99",
     },
-    "WorkOrderState": Object {
-      "ChartContTitle": Object {
+    "WorkOrderState": {
+      "ChartContTitle": {
         "color": "#4BCCA6",
         "noteSubColor": "#4BCCA6",
       },
     },
     "bgColor": "#fcfbf9",
-    "cardShow": Object {
+    "cardShow": {
       "contentFontSize": 32,
       "contentFontWeight": 700,
       "iconColor": "#4583ff",
@@ -771,26 +771,26 @@ Object {
     },
     "loadingColor": "#4583ff",
   },
-  "statistics": Object {
-    "auditRateStatus": Object {
-      "error": Object {
+  "statistics": {
+    "auditRateStatus": {
+      "error": {
         "bg": "#fff0f0",
         "color": "#F66074",
       },
-      "success": Object {
+      "success": {
         "bg": "#e9f7f0",
         "color": "#1cb889",
       },
-      "tip": Object {
+      "tip": {
         "bg": "#6094fc1a",
         "color": "#6094FC",
       },
-      "warning": Object {
+      "warning": {
         "bg": "#ebad1c1a",
         "color": "#EBAD1C",
       },
     },
-    "auditResultStatusColor": Object {
+    "auditResultStatusColor": {
       "canceled": "#7D8CA8",
       "exec_failed": "#F59957",
       "executing": "#6094FC",
@@ -799,14 +799,14 @@ Object {
       "wait_for_audit": "#7453DA",
       "wait_for_execution": "#7470ED",
     },
-    "rectColor": Array [
+    "rectColor": [
       "#7470ED",
       "#6094FC",
       "#3DB5F1",
       "#1ACEDB",
       "#4BCCA6",
     ],
-    "rectColorName": Object {
+    "rectColorName": {
       "color1": "#7470ED",
       "color10": "#EBAD1C",
       "color11": "#F66074",
@@ -822,26 +822,26 @@ Object {
       "color9": "#7D8CA8",
     },
   },
-  "workflowTemplate": Object {
-    "progress": Object {
+  "workflowTemplate": {
+    "progress": {
       "error": "#F66074",
       "normal": "#7D8CA8",
       "notice": "#6094FC",
       "remainColor": "#ebeae7",
       "warning": "#EBAD1C",
     },
-    "step": Object {
+    "step": {
       "addFile": "#7453DA",
       "audit": "#6094FC",
       "honour": "#EBAD1C",
       "sendPlane": "#41BF9A",
     },
-    "stepCard": Object {
+    "stepCard": {
       "authTextColor": "#1cb889",
       "backgroundColor": "#FFFFFF",
       "boxShadow": "0px 1px 4px 0px rgba(51, 44, 31, 0.12)",
       "cardDesc": "#8a8f99",
-      "cardOperator": Object {
+      "cardOperator": {
         "borderTop": "1px solid #f2f1f0",
         "titleColor": "#8a8f99",
       },
@@ -859,23 +859,23 @@ Object {
       "stepReviewIndexTextFontWeight": 700,
       "userAvatarBorder": "2px solid #ffffff",
     },
-    "updateWorkflowTemplateStepInfo": Object {
-      "info": Object {
+    "updateWorkflowTemplateStepInfo": {
+      "info": {
         "titleColor": "#292C33",
       },
       "infoFontSize": "13px",
-      "stepInfoWrapper": Object {
+      "stepInfoWrapper": {
         "backgroundColor": "#fcfbf9",
         "border": "1px dashed
       #E8E7E6",
         "textColor": "#292c33",
       },
-      "stepNodeAlert": Object {
+      "stepNodeAlert": {
         "alertContentColor": "#8a8f99",
         "alertTitleColor": "#8a8f99",
         "backgroundColor": "#f7f6f4",
       },
-      "title": Object {
+      "title": {
         "titleColor": "#292C33",
         "titleInfoColor": "#8a8f99",
         "titleWrapperBorderBottom": "#E8E7E6",
@@ -883,7 +883,7 @@ Object {
       "titleFontSize": "16px",
       "titleFontWeight": 500,
     },
-    "workflowTemplateAuthInfo": Object {
+    "workflowTemplateAuthInfo": {
       "authInfoColor": "#8a8f99",
       "authInfoFontSize": "13px",
       "authLevelFontSize": "18px",

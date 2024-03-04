@@ -38,7 +38,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     const { container } = superRender(<SubmitExportWorkflow />);
 
     expect(container).toMatchSnapshot();
-    expect(mockCreateDataExportRedux.initModalStatus).toBeCalledTimes(1);
+    expect(mockCreateDataExportRedux.initModalStatus).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -49,8 +49,10 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
   it('should execute updateModalStatus when clicked edit button', () => {
     superRender(<SubmitExportWorkflow />);
     fireEvent.click(screen.getByText('编辑工单信息'));
-    expect(mockCreateDataExportRedux.updateModalStatus).toBeCalledTimes(1);
-    expect(mockCreateDataExportRedux.updateModalStatus).toBeCalledWith({
+    expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledTimes(
+      1
+    );
+    expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledWith({
       modalName: ModalName.DMS_UPDATE_EXPORT_TASK_INFO,
       status: true
     });
@@ -69,14 +71,16 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     superRender(<SubmitExportWorkflow />);
 
     fireEvent.click(screen.getByText('提交工单'));
-    expect(mockCreateDataExportRedux.updateSubmitLoading).toBeCalledTimes(1);
+    expect(mockCreateDataExportRedux.updateSubmitLoading).toHaveBeenCalledTimes(
+      1
+    );
     expect(mockCreateDataExportRedux.updateSubmitLoading).nthCalledWith(
       1,
       true
     );
 
-    expect(addDataExportWorkflowSpy).toBeCalledTimes(1);
-    expect(addDataExportWorkflowSpy).toBeCalledWith({
+    expect(addDataExportWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(addDataExportWorkflowSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
       data_export_workflow: {
         name: mockCreateDataExportRedux.formValues.baseValues.workflow_subject,
@@ -86,16 +90,18 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockCreateDataExportRedux.updateWorkflowID).toBeCalledTimes(1);
-    expect(mockCreateDataExportRedux.updateWorkflowID).toBeCalledWith(
+    expect(mockCreateDataExportRedux.updateWorkflowID).toHaveBeenCalledTimes(1);
+    expect(mockCreateDataExportRedux.updateWorkflowID).toHaveBeenCalledWith(
       AddDataExportWorkflowResponseData?.export_data_workflow_uid
     );
-    expect(mockCreateDataExportRedux.updatePageState).toBeCalledTimes(1);
-    expect(mockCreateDataExportRedux.updatePageState).toBeCalledWith(
+    expect(mockCreateDataExportRedux.updatePageState).toHaveBeenCalledTimes(1);
+    expect(mockCreateDataExportRedux.updatePageState).toHaveBeenCalledWith(
       CreateDataExportPageEnum.SUBMIT_RESULT
     );
 
-    expect(mockCreateDataExportRedux.updateSubmitLoading).toBeCalledTimes(2);
+    expect(mockCreateDataExportRedux.updateSubmitLoading).toHaveBeenCalledTimes(
+      2
+    );
     expect(mockCreateDataExportRedux.updateSubmitLoading).nthCalledWith(
       2,
       false
@@ -108,8 +114,8 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     );
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockCreateDataExportRedux.updateWorkflowID).toBeCalledTimes(0);
-    expect(mockCreateDataExportRedux.updatePageState).toBeCalledTimes(0);
+    expect(mockCreateDataExportRedux.updateWorkflowID).toHaveBeenCalledTimes(0);
+    expect(mockCreateDataExportRedux.updatePageState).toHaveBeenCalledTimes(0);
   });
 
   it('should disabled submit button when sqls is exits dml type', async () => {

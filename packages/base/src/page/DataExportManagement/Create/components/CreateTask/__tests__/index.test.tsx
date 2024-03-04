@@ -66,7 +66,7 @@ describe('test base/DataExport/Create/CreateExportTask', () => {
     const resetAllFormsSpy = jest.fn();
     customRender({ resetAllForms: resetAllFormsSpy });
     fireEvent.click(screen.getByText('重 置'));
-    expect(resetAllFormsSpy).toBeCalledTimes(1);
+    expect(resetAllFormsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should execute "auditAction" and "formatSQLAction" when clicked audit and format button', async () => {
@@ -84,20 +84,20 @@ describe('test base/DataExport/Create/CreateExportTask', () => {
 
     auditActionSpy.mockImplementation(() => Promise.resolve(true));
     fireEvent.click(screen.getByText('审 核'));
-    expect(auditActionSpy).toBeCalledTimes(1);
+    expect(auditActionSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(updatePageStateSpy).toBeCalledTimes(1);
-    expect(updatePageStateSpy).toBeCalledWith(
+    expect(updatePageStateSpy).toHaveBeenCalledTimes(1);
+    expect(updatePageStateSpy).toHaveBeenCalledWith(
       CreateDataExportPageEnum.SUBMIT_WORKFLOW
     );
 
     auditActionSpy.mockImplementation(() => Promise.resolve(false));
     fireEvent.click(screen.getByText('审 核'));
-    expect(auditActionSpy).toBeCalledTimes(2);
+    expect(auditActionSpy).toHaveBeenCalledTimes(2);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(updatePageStateSpy).toBeCalledTimes(1);
+    expect(updatePageStateSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('SQL美化'));
-    expect(formatSQLActionSpy).toBeCalledTimes(1);
+    expect(formatSQLActionSpy).toHaveBeenCalledTimes(1);
   });
 });

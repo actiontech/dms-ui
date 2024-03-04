@@ -72,7 +72,7 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
 
       fireEvent.click(editBtn);
       await act(async () => jest.advanceTimersByTime(300));
-      expect(handleClickModifyFn).toBeCalledTimes(1);
+      expect(handleClickModifyFn).toHaveBeenCalledTimes(1);
     });
 
     it('render test btn snap when click test btn no show', async () => {
@@ -138,8 +138,8 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
 
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTestWeChatConfiguration).toBeCalled();
-      expect(requestTestWeChatConfiguration).toBeCalledWith({
+      expect(requestTestWeChatConfiguration).toHaveBeenCalled();
+      expect(requestTestWeChatConfiguration).toHaveBeenCalledWith({
         test_wechat_configuration: {
           recipient_id: 'id val'
         }
@@ -174,8 +174,8 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
         screen.getByText(`正在向${receiveIdVal}发送测试消息...`)
       ).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(2700));
-      expect(requestTestWeChatConfiguration).toBeCalledTimes(1);
-      expect(requestTestWeChatConfiguration).toBeCalledWith({
+      expect(requestTestWeChatConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestTestWeChatConfiguration).toHaveBeenCalledWith({
         test_wechat_configuration: {
           recipient_id: receiveIdVal
         }
@@ -215,8 +215,8 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
         screen.getByText(`正在向${receiveIdVal}发送测试消息...`)
       ).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(2700));
-      expect(requestTestWeChatConfiguration).toBeCalledTimes(1);
-      expect(requestTestWeChatConfiguration).toBeCalledWith({
+      expect(requestTestWeChatConfiguration).toHaveBeenCalledTimes(1);
+      expect(requestTestWeChatConfiguration).toHaveBeenCalledWith({
         test_wechat_configuration: {
           recipient_id: receiveIdVal
         }

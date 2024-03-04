@@ -23,9 +23,11 @@ describe('test base/DataExport/Detail/WorkflowRecordInfo', () => {
     expect(container).toMatchSnapshot();
 
     fireEvent.click(getBySelector('.custom-icon-close'));
-    expect(mockDataExportDetailRedux.updateWorkflowStepOpen).toBeCalledTimes(1);
-    expect(mockDataExportDetailRedux.updateWorkflowStepOpen).toBeCalledWith(
-      false
-    );
+    expect(
+      mockDataExportDetailRedux.updateWorkflowStepOpen
+    ).toHaveBeenCalledTimes(1);
+    expect(
+      mockDataExportDetailRedux.updateWorkflowStepOpen
+    ).toHaveBeenCalledWith(false);
   });
 });

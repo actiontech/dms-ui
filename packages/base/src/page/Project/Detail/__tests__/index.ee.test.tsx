@@ -30,7 +30,7 @@ describe('test base/page/project/detail/ee', () => {
     });
 
     const { baseElement } = superRender(<EEIndexProjectDetail />);
-    expect(mockUpdateRecentlyProject).not.toBeCalled();
+    expect(mockUpdateRecentlyProject).not.toHaveBeenCalled();
 
     expect(baseElement).toMatchSnapshot();
 
@@ -44,7 +44,7 @@ describe('test base/page/project/detail/ee', () => {
     });
 
     superRender(<EEIndexProjectDetail />);
-    expect(mockUpdateRecentlyProject).toBeCalledTimes(1);
-    expect(mockUpdateRecentlyProject).toBeCalledWith('1', 'test');
+    expect(mockUpdateRecentlyProject).toHaveBeenCalledTimes(1);
+    expect(mockUpdateRecentlyProject).toHaveBeenCalledWith('1', 'test');
   });
 });

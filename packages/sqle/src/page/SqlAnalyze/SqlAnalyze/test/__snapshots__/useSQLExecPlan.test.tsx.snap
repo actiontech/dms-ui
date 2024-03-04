@@ -35,8 +35,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
       if={true}
     >
       <BasicTable
-        columns={Array []}
-        dataSource={Array []}
+        columns={[]}
+        dataSource={[]}
         pagination={false}
       />
     </EmptyBox>
@@ -129,63 +129,63 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
     >
       <BasicTable
         columns={
-          Array [
-            Object {
+          [
+            {
               "dataIndex": "id",
               "render": [Function],
               "title": "id",
             },
-            Object {
+            {
               "dataIndex": "select_type",
               "render": [Function],
               "title": "select_type",
             },
-            Object {
+            {
               "dataIndex": "table",
               "render": [Function],
               "title": "table",
             },
-            Object {
+            {
               "dataIndex": "partitions",
               "render": [Function],
               "title": "partitions",
             },
-            Object {
+            {
               "dataIndex": "type",
               "render": [Function],
               "title": "type",
             },
-            Object {
+            {
               "dataIndex": "possible_keys",
               "render": [Function],
               "title": "possible_keys",
             },
-            Object {
+            {
               "dataIndex": "key",
               "render": [Function],
               "title": "key",
             },
-            Object {
+            {
               "dataIndex": "key_len",
               "render": [Function],
               "title": "key_len",
             },
-            Object {
+            {
               "dataIndex": "ref",
               "render": [Function],
               "title": "ref",
             },
-            Object {
+            {
               "dataIndex": "rows",
               "render": [Function],
               "title": "rows",
             },
-            Object {
+            {
               "dataIndex": "filtered",
               "render": [Function],
               "title": "filtered",
             },
-            Object {
+            {
               "dataIndex": "Extra",
               "render": [Function],
               "title": "Extra",
@@ -193,8 +193,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           ]
         }
         dataSource={
-          Array [
-            Object {
+          [
+            {
               "Extra": "",
               "filtered": "100.00",
               "id": "1",
@@ -301,8 +301,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
       if={true}
     >
       <BasicTable
-        columns={Array []}
-        dataSource={Array []}
+        columns={[]}
+        dataSource={[]}
         pagination={false}
       />
     </EmptyBox>
@@ -394,8 +394,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
       if={true}
     >
       <BasicTable
-        columns={Array []}
-        dataSource={Array []}
+        columns={[]}
+        dataSource={[]}
         pagination={false}
       />
     </EmptyBox>
@@ -487,8 +487,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
       if={true}
     >
       <BasicTable
-        columns={Array []}
-        dataSource={Array []}
+        columns={[]}
+        dataSource={[]}
         pagination={false}
       />
     </EmptyBox>
@@ -581,8 +581,8 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
       if={false}
     >
       <BasicTable
-        columns={Array []}
-        dataSource={Array []}
+        columns={[]}
+        dataSource={[]}
         pagination={false}
       />
     </EmptyBox>

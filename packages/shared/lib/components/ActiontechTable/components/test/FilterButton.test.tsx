@@ -84,7 +84,7 @@ describe('lib/ActiontechTable-FilterButton', () => {
       fireEvent.click(filterBtn);
       await jest.advanceTimersByTime(300);
     });
-    expect(updateAllSelectedFilterItemFn).toBeCalledTimes(1);
+    expect(updateAllSelectedFilterItemFn).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 });

@@ -39,6 +39,6 @@ describe('sqle/Order/UploadType', () => {
     const { baseElement } = customRender();
     fireEvent.click(screen.getByText('上传SQL文件'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onChangeFn).toBeCalled();
+    expect(onChangeFn).toHaveBeenCalled();
   });
 });

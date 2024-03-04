@@ -87,7 +87,9 @@ describe('page/SyncDataSource/AddPage', () => {
       fireEvent.click(screen.getByText('重 置'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_SYNC_TASK_RESET_FORM);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_SYNC_TASK_RESET_FORM
+    );
     await act(async () => jest.advanceTimersByTime(300));
   });
 
@@ -98,14 +100,14 @@ describe('page/SyncDataSource/AddPage', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestTaskSourceListTips).toBeCalled();
+    expect(requestTaskSourceListTips).toHaveBeenCalled();
 
     // source
     fireEvent.mouseDown(getBySelector('#source', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('div[title="source1"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(requestTaskSourceListTips).toBeCalledWith({
+    expect(requestTaskSourceListTips).toHaveBeenCalledWith({
       project_uid: projectID
     });
 
@@ -114,8 +116,8 @@ describe('page/SyncDataSource/AddPage', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
     await act(async () => jest.advanceTimersByTime(6300));
-    expect(requestRuleGlobal).toBeCalled();
-    expect(requestRuleProject).toBeCalled();
+    expect(requestRuleGlobal).toHaveBeenCalled();
+    expect(requestRuleProject).toHaveBeenCalled();
 
     // ant-select-clear
     const clearIcon = getAllBySelector('.ant-select-clear', baseElement);
@@ -179,8 +181,8 @@ describe('page/SyncDataSource/AddPage', () => {
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('重 置').parentNode).toHaveAttribute('disabled');
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestSubmit).toBeCalled();
-    expect(requestSubmit).toBeCalledWith({
+    expect(requestSubmit).toHaveBeenCalled();
+    expect(requestSubmit).toHaveBeenCalledWith({
       database_source_service: {
         name: 'name-sync-source',
         db_type: 'mysql',

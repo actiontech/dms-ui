@@ -57,24 +57,26 @@ describe('slqe/Whitelist/AddWhitelist', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
-    expect(addWhitelistSpy).toBeCalledTimes(1);
-    expect(addWhitelistSpy).toBeCalledWith({
+    expect(addWhitelistSpy).toHaveBeenCalledTimes(1);
+    expect(addWhitelistSpy).toHaveBeenCalledWith({
       value: 'SELECT 1;',
       desc: 'test desc',
       match_type: CreateAuditWhitelistReqV1MatchTypeEnum.fp_match,
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/updateModalStatus',
       payload: {
         modalName: ModalName.Add_Whitelist,
         status: false
       }
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Whitelist_List);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Whitelist_List
+    );
     expect(screen.getByText('提 交').parentNode).not.toHaveClass(
       'ant-btn-loading'
     );
@@ -87,8 +89,8 @@ describe('slqe/Whitelist/AddWhitelist', () => {
     const { baseElement } = renderWithReduxAndTheme(<AddWhitelist />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/updateModalStatus',
       payload: {
         modalName: ModalName.Add_Whitelist,

@@ -32,8 +32,8 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
       result.current.onBatchIgnore();
       result.current.onBatchSolve();
     });
-    expect(request).not.toBeCalled();
-    expect(request).not.toBeCalled();
+    expect(request).not.toHaveBeenCalled();
+    expect(request).not.toHaveBeenCalled();
   });
 
   it('send request with empty row key', async () => {
@@ -47,8 +47,8 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
       result.current.onBatchIgnore();
       result.current.onBatchSolve();
     });
-    expect(request).not.toBeCalled();
-    expect(request).not.toBeCalled();
+    expect(request).not.toHaveBeenCalled();
+    expect(request).not.toHaveBeenCalled();
   });
 
   it('send batch solve request', async () => {
@@ -61,13 +61,13 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
       result.current.onBatchSolve();
     });
     expect(result.current.batchSolveLoading).toBe(true);
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       status: BatchUpdateSqlManageReqStatusEnum.solved,
       sql_manage_id_list: [249]
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockBatch).toBeCalledWith('批量解决SQL成功');
+    expect(mockBatch).toHaveBeenCalledWith('批量解决SQL成功');
     expect(result.current.batchSolveLoading).toBe(false);
   });
 
@@ -80,13 +80,13 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
     await act(async () => {
       result.current.onBatchIgnore();
     });
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       status: BatchUpdateSqlManageReqStatusEnum.ignored,
       sql_manage_id_list: [249]
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockBatch).toBeCalledWith('批量忽略SQL成功');
+    expect(mockBatch).toHaveBeenCalledWith('批量忽略SQL成功');
     expect(result.current.batchIgnoreLoading).toBe(false);
   });
 });

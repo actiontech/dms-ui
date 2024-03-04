@@ -52,6 +52,6 @@ describe('first', () => {
     const { unmount } = superRender(<CreateDataExport />);
     unmount();
 
-    expect(clearAllStateSpy).toBeCalledTimes(1);
+    expect(clearAllStateSpy).toHaveBeenCalledTimes(1);
   });
 });

@@ -51,6 +51,6 @@ describe('sqle/Order/Detail/RejectReason', () => {
 
     fireEvent.click(screen.getByText('修改审核语句'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(openModifySqlModalFn).toBeCalled();
+    expect(openModifySqlModalFn).toHaveBeenCalled();
   });
 });

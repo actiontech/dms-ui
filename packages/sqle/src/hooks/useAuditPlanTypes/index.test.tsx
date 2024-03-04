@@ -43,14 +43,14 @@ describe('useAuditPlanTypes', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual(AuditPlanTypesData);
     cleanup();
 
@@ -80,14 +80,14 @@ describe('useAuditPlanTypes', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual(AuditPlanTypesData);
     requestSpy.mockClear();
     requestSpy.mockImplementation(() =>
@@ -98,14 +98,14 @@ describe('useAuditPlanTypes', () => {
       result.current.updateAuditPlanTypes();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual(AuditPlanTypesData);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual([]);
   });
 
@@ -119,14 +119,14 @@ describe('useAuditPlanTypes', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual(AuditPlanTypesData);
     requestSpy.mockClear();
     requestSpy.mockImplementation(() =>
@@ -137,14 +137,14 @@ describe('useAuditPlanTypes', () => {
       result.current.updateAuditPlanTypes();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual(AuditPlanTypesData);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditPlanTypes).toEqual([]);
   });
 });

@@ -63,8 +63,8 @@ describe('test base/page/Account/UserPhone', () => {
       code: 'Enter',
       keyCode: 13
     });
-    expect(messageErrorSpy).toBeCalledTimes(1);
-    expect(messageErrorSpy).toBeCalledWith('请输入正确格式的手机号码');
+    expect(messageErrorSpy).toHaveBeenCalledTimes(1);
+    expect(messageErrorSpy).toHaveBeenCalledWith('请输入正确格式的手机号码');
 
     fireEvent.change(inputEle, {
       target: {
@@ -76,9 +76,9 @@ describe('test base/page/Account/UserPhone', () => {
       code: 'Enter',
       keyCode: 13
     });
-    expect(messageErrorSpy).toBeCalledTimes(2);
-    expect(messageErrorSpy).toBeCalledWith('新手机号码不能与旧号码一致');
-    expect(updateCurrentUserSpy).toBeCalledTimes(0);
+    expect(messageErrorSpy).toHaveBeenCalledTimes(2);
+    expect(messageErrorSpy).toHaveBeenCalledWith('新手机号码不能与旧号码一致');
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.change(inputEle, {
       target: {
@@ -92,17 +92,17 @@ describe('test base/page/Account/UserPhone', () => {
       keyCode: 13
     });
 
-    expect(updateCurrentUserSpy).toBeCalledTimes(1);
-    expect(updateCurrentUserSpy).toBeCalledWith({
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(1);
+    expect(updateCurrentUserSpy).toHaveBeenCalledWith({
       current_user: {
         phone: '13214334343'
       }
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(messageSuccessSpy).toBeCalledTimes(1);
-    expect(messageSuccessSpy).toBeCalledWith('手机号更新成功');
-    expect(updateCurrentUserSpy).toBeCalledTimes(1);
+    expect(messageSuccessSpy).toHaveBeenCalledTimes(1);
+    expect(messageSuccessSpy).toHaveBeenCalledWith('手机号更新成功');
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(1);
 
     expect(container).toMatchSnapshot();
   });

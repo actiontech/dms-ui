@@ -68,8 +68,8 @@ describe('sqle/SqlAudit/Create', () => {
   it('enter default content to create sql audit', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledTimes(1);
-    expect(getInstanceTipListSpy).toBeCalledTimes(1);
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledTimes(1);
+    expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.mouseDown(screen.getByLabelText('业务标签'));
     await act(async () => await jest.advanceTimersByTime(100));
     expect(baseElement).toMatchSnapshot();
@@ -93,8 +93,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(dataSourcesSelectors[1]).not.toHaveClass('ant-select-disabled');
-    expect(getInstanceSchemaSpy).toBeCalledTimes(1);
-    expect(getInstanceSpy).toBeCalledTimes(1);
+    expect(getInstanceSchemaSpy).toHaveBeenCalledTimes(1);
+    expect(getInstanceSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.mouseDown(getBySelector('#instanceSchema', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -131,8 +131,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(2800);
     });
-    expect(createSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(createSQLAuditRecordSpy).toBeCalledWith({
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
       db_type: undefined,
       git_http_url: undefined,
       git_user_name: undefined,
@@ -148,8 +148,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(updateSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(updateSQLAuditRecordSpy).toBeCalledWith({
+    expect(updateSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(updateSQLAuditRecordSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       sql_audit_record_id: createSqlAuditResponseMockData.sql_audit_record_id,
       tags: ['test']
@@ -158,7 +158,7 @@ describe('sqle/SqlAudit/Create', () => {
       await jest.advanceTimersByTime(3000);
     });
     expect(screen.getByText('创建审核成功')).toBeInTheDocument();
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('select static audit type', async () => {
@@ -167,7 +167,7 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.click(screen.getByText('静态审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('数据库类型')).toBeInTheDocument();
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -185,8 +185,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(createSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(createSQLAuditRecordSpy).toBeCalledWith({
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
       db_type: 'mysql',
       git_http_url: undefined,
       git_user_name: undefined,
@@ -203,9 +203,9 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(updateSQLAuditRecordSpy).not.toBeCalled();
+    expect(updateSQLAuditRecordSpy).not.toHaveBeenCalled();
     expect(screen.getByText('创建审核成功')).toBeInTheDocument();
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('upload sql file', async () => {
@@ -246,8 +246,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(createSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(createSQLAuditRecordSpy).toBeCalledWith({
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
       db_type: 'mysql',
       git_http_url: undefined,
       git_user_name: undefined,
@@ -284,8 +284,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(createSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(createSQLAuditRecordSpy).toBeCalledWith({
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
       db_type: 'mysql',
       git_http_url: undefined,
       git_user_name: undefined,
@@ -322,8 +322,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(createSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(createSQLAuditRecordSpy).toBeCalledWith({
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
       db_type: 'mysql',
       git_http_url: undefined,
       git_user_name: undefined,
@@ -370,8 +370,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(createSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(createSQLAuditRecordSpy).toBeCalledWith({
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
       db_type: 'mysql',
       git_http_url: 'https://test.com',
       git_user_name: 'test',
@@ -465,7 +465,7 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('静态审核'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('数据库类型')).toBeInTheDocument();
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -482,8 +482,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(createSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(createSQLAuditRecordSpy).toBeCalledWith({
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
       db_type: 'mysql',
       git_http_url: undefined,
       git_user_name: undefined,
@@ -499,8 +499,8 @@ describe('sqle/SqlAudit/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(updateSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(updateSQLAuditRecordSpy).toBeCalledWith({
+    expect(updateSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(updateSQLAuditRecordSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       sql_audit_record_id: createSqlAuditResponseMockData.sql_audit_record_id,
       tags: ['test3']

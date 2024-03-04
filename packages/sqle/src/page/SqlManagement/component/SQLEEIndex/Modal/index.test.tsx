@@ -41,8 +41,8 @@ describe('test init sql manage modal', () => {
     const { container } = superRender(<SqlManagementModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalStatus: {
           [ModalName.Assignment_Member_Single]: false,

@@ -74,8 +74,8 @@ describe('useInstance', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([]);
@@ -84,8 +84,8 @@ describe('useInstance', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([
@@ -134,8 +134,8 @@ describe('useInstance', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([]);
@@ -144,8 +144,8 @@ describe('useInstance', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([
@@ -166,8 +166,8 @@ describe('useInstance', () => {
       result.current.updateInstanceList({ project_name: projectName });
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([
@@ -182,7 +182,7 @@ describe('useInstance', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.instanceList).toEqual([]);
   });
 
@@ -200,8 +200,8 @@ describe('useInstance', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([]);
@@ -210,8 +210,8 @@ describe('useInstance', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([
@@ -226,8 +226,8 @@ describe('useInstance', () => {
       result.current.updateInstanceList({ project_name: projectName });
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([
@@ -240,8 +240,8 @@ describe('useInstance', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([]);
@@ -264,8 +264,8 @@ describe('useInstance', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([]);
@@ -274,8 +274,8 @@ describe('useInstance', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([
@@ -321,8 +321,8 @@ describe('useInstance', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([]);
@@ -331,8 +331,8 @@ describe('useInstance', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.instanceList).toEqual([

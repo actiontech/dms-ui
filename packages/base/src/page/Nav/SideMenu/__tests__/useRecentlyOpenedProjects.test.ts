@@ -68,7 +68,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
     );
 
     renderHook(() => useRecentlyOpenedProjects());
-    expect(errorSpy).toBeCalledTimes(1);
+    expect(errorSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should perform as expected with update operation', () => {
@@ -80,20 +80,20 @@ describe('test useRecentlyOpenedProjects.test', () => {
     const LocalStorageWrapperSetSpy = jest.spyOn(LocalStorageWrapper, 'set');
     const { result } = renderHook(() => useRecentlyOpenedProjects());
 
-    expect(emitSpy).toBeCalledTimes(0);
-    expect(LocalStorageWrapperSetSpy).toBeCalledTimes(0);
+    expect(emitSpy).toHaveBeenCalledTimes(0);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(0);
 
     act(() => {
       result.current.updateRecentlyProject('401', 'not_bind_project');
     });
 
-    expect(LocalStorageWrapperSetSpy).toBeCalledTimes(0);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(0);
 
     act(() => {
       result.current.updateRecentlyProject('400', 'default1');
     });
     expect(result.current.currentProjectID).toBe('400');
-    expect(emitSpy).toBeCalledTimes(2);
+    expect(emitSpy).toHaveBeenCalledTimes(2);
     expect(emitSpy).nthCalledWith(
       1,
       EmitterKey.Update_Current_Project_ID,
@@ -106,7 +106,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
         [username1]: [{ project_id: '400', project_name: 'default1' }]
       }
     );
-    expect(LocalStorageWrapperSetSpy).toBeCalledTimes(1);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(1);
     expect(LocalStorageWrapperSetSpy).nthCalledWith(
       1,
       StorageKey.DMS_Project_Catch,
@@ -124,7 +124,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
     });
 
     expect(result.current.currentProjectID).toBe('500');
-    expect(emitSpy).toBeCalledTimes(4);
+    expect(emitSpy).toHaveBeenCalledTimes(4);
     expect(emitSpy).nthCalledWith(
       3,
       EmitterKey.Update_Current_Project_ID,
@@ -140,7 +140,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
         ]
       }
     );
-    expect(LocalStorageWrapperSetSpy).toBeCalledTimes(2);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(2);
     expect(LocalStorageWrapperSetSpy).nthCalledWith(
       2,
       StorageKey.DMS_Project_Catch,
@@ -162,7 +162,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
     });
 
     expect(result.current.currentProjectID).toBe('600');
-    expect(emitSpy).toBeCalledTimes(6);
+    expect(emitSpy).toHaveBeenCalledTimes(6);
     expect(emitSpy).nthCalledWith(
       5,
       EmitterKey.Update_Current_Project_ID,
@@ -179,7 +179,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
         ]
       }
     );
-    expect(LocalStorageWrapperSetSpy).toBeCalledTimes(3);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(3);
     expect(LocalStorageWrapperSetSpy).nthCalledWith(
       3,
       StorageKey.DMS_Project_Catch,
@@ -203,7 +203,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
     });
 
     expect(result.current.currentProjectID).toBe('700');
-    expect(emitSpy).toBeCalledTimes(8);
+    expect(emitSpy).toHaveBeenCalledTimes(8);
     expect(emitSpy).nthCalledWith(
       7,
       EmitterKey.Update_Current_Project_ID,
@@ -220,7 +220,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
         ]
       }
     );
-    expect(LocalStorageWrapperSetSpy).toBeCalledTimes(4);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(4);
     expect(LocalStorageWrapperSetSpy).nthCalledWith(
       4,
       StorageKey.DMS_Project_Catch,
@@ -244,7 +244,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
     });
 
     expect(result.current.currentProjectID).toBe('600');
-    expect(emitSpy).toBeCalledTimes(10);
+    expect(emitSpy).toHaveBeenCalledTimes(10);
     expect(emitSpy).nthCalledWith(
       9,
       EmitterKey.Update_Current_Project_ID,
@@ -261,7 +261,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
         ]
       }
     );
-    expect(LocalStorageWrapperSetSpy).toBeCalledTimes(5);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(5);
     expect(LocalStorageWrapperSetSpy).nthCalledWith(
       5,
       StorageKey.DMS_Project_Catch,
@@ -289,8 +289,8 @@ describe('test useRecentlyOpenedProjects.test', () => {
 
     expect(result.current.recentlyProjects).toEqual([]);
 
-    expect(unsubscribeSpy).toBeCalledTimes(0);
-    expect(subscribeSpy).toBeCalledTimes(2);
+    expect(unsubscribeSpy).toHaveBeenCalledTimes(0);
+    expect(subscribeSpy).toHaveBeenCalledTimes(2);
     expect(subscribeSpy.mock.calls[0][0]).toBe(
       EmitterKey.Update_Recently_Opened_Projects
     );
@@ -300,7 +300,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
 
     unmount();
 
-    expect(unsubscribeSpy).toBeCalledTimes(2);
+    expect(unsubscribeSpy).toHaveBeenCalledTimes(2);
     expect(unsubscribeSpy.mock.calls[0][0]).toBe(
       EmitterKey.Update_Recently_Opened_Projects
     );

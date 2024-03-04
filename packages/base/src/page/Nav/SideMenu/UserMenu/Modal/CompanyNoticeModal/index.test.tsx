@@ -53,11 +53,11 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetCompanyNotice).toBeCalled();
+    expect(requestGetCompanyNotice).toHaveBeenCalled();
 
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(scopeDispatch).toBeCalled();
+    expect(scopeDispatch).toHaveBeenCalled();
     expect(scopeDispatch).nthCalledWith(1, {
       type: 'nav/initModalStatus',
       payload: {
@@ -94,7 +94,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
       fireEvent.click(screen.getByText('取 消'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
-      expect(scopeDispatch).toBeCalledWith({
+      expect(scopeDispatch).toHaveBeenCalledWith({
         payload: { modalStatus: { [ModalName.Company_Notice]: false } },
         type: 'nav/initModalStatus'
       });
@@ -118,12 +118,12 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestUpdateCompanyNotice).toBeCalled();
-      expect(requestUpdateCompanyNotice).toBeCalledWith({
+      expect(requestUpdateCompanyNotice).toHaveBeenCalled();
+      expect(requestUpdateCompanyNotice).toHaveBeenCalledWith({
         company_notice: { notice_str: '公告信息' }
       });
       expect(screen.getByText('成功发布系统公告!')).toBeInTheDocument();
-      expect(scopeDispatch).toBeCalledWith({
+      expect(scopeDispatch).toHaveBeenCalledWith({
         payload: { modalStatus: { [ModalName.Company_Notice]: false } },
         type: 'nav/initModalStatus'
       });
@@ -142,11 +142,11 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(2600));
       expect(baseElement).toMatchSnapshot();
-      expect(requestGetCompanyNotice).toBeCalled();
+      expect(requestGetCompanyNotice).toHaveBeenCalled();
 
       fireEvent.click(screen.getByText('关 闭'));
       await act(async () => jest.advanceTimersByTime(500));
-      expect(scopeDispatch).toBeCalled();
+      expect(scopeDispatch).toHaveBeenCalled();
       expect(scopeDispatch).nthCalledWith(1, {
         type: 'nav/initModalStatus',
         payload: {

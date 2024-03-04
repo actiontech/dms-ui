@@ -57,7 +57,7 @@ describe('sqle/SqlAudit/List', () => {
     const { baseElement } = renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(sqlAuditRecordsSpy).toBeCalledTimes(1);
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(`共 ${sqlAuditRecordMockData.length} 条数据`)
     ).toBeInTheDocument();
@@ -88,8 +88,8 @@ describe('sqle/SqlAudit/List', () => {
     });
     renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(sqlAuditRecordsSpy).toBeCalledTimes(1);
-    expect(sqlAuditRecordsSpy).toBeCalledWith({
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 20,
       project_name: mockProjectInfo.projectName,
@@ -112,7 +112,7 @@ describe('sqle/SqlAudit/List', () => {
   it('render table list when action filter', async () => {
     const { baseElement } = renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(sqlAuditRecordsSpy).toBeCalledTimes(1);
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
     const searchInputEle = getBySelector(
       '.basic-input-wrapper #actiontech-table-search-input',
       baseElement
@@ -132,8 +132,8 @@ describe('sqle/SqlAudit/List', () => {
       await act(() => jest.advanceTimersByTime(300));
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(sqlAuditRecordsSpy).toBeCalled();
-    expect(sqlAuditRecordsSpy).toBeCalledWith({
+    expect(sqlAuditRecordsSpy).toHaveBeenCalled();
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       fuzzy_search_tags: 'test',
       page_index: 1,
@@ -145,7 +145,7 @@ describe('sqle/SqlAudit/List', () => {
   it('render action when filter item show', async () => {
     const { baseElement } = renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(sqlAuditRecordsSpy).toBeCalledTimes(1);
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('筛选'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -189,13 +189,13 @@ describe('sqle/SqlAudit/List', () => {
       )!
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateSQLAuditRecordSpy).toBeCalledTimes(1);
-    expect(updateSQLAuditRecordSpy).toBeCalledWith({
+    expect(updateSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
+    expect(updateSQLAuditRecordSpy).toHaveBeenCalledWith({
       tags: [],
       sql_audit_record_id: sqlAuditRecordMockData[0].sql_audit_record_id,
       project_name: mockProjectInfo.projectName
     });
     expect(screen.getByText('更新业务标签成功')).toBeInTheDocument();
-    expect(sqlAuditRecordsSpy).toBeCalled();
+    expect(sqlAuditRecordsSpy).toHaveBeenCalled();
   });
 });

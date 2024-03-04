@@ -55,7 +55,7 @@ describe('page/DataSource/MaintenanceTimePicker', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onChangeFn).toBeCalled();
+    expect(onChangeFn).toHaveBeenCalled();
   });
 
   it('render has value', async () => {
@@ -102,6 +102,6 @@ describe('page/DataSource/MaintenanceTimePicker', () => {
     const closedIcon = getBySelector('.ant-tag-close-icon', baseElement);
     fireEvent.click(closedIcon);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onChangeFn).toBeCalled();
+    expect(onChangeFn).toHaveBeenCalled();
   });
 });

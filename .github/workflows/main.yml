@@ -8,48 +8,87 @@ on:
   workflow_dispatch:
 
 jobs:
-  cache-and-install:
+  checker:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
-
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
       - name: Install dependencies
-        run: pnpm install
+        uses: ./.github/actions/catch-install-pnpm
 
       - name: Code lint checker
         run: pnpm checker
 
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        name: Coverage test report
+  test-ee:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        uses: ./.github/actions/catch-install-pnpm
+
+      - name: Coverage test report ee
+        run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
+
+      - uses: actions/upload-artifact@v3
         with:
-          skip-step: install
+          name: coverage-artifacts
+          path: coverage/
+
+  test-ce:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        uses: ./.github/actions/catch-install-pnpm
+
+      - name: Coverage test report ce
+        run: sh ./scripts/jest/run-ci-ce.sh
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ce-coverage-artifacts
+          path: ce_coverage/
+
+  report:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    needs: [test-ee, test-ce]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get CE Coverage
+        uses: actions/download-artifact@v3
+        with:
+          name: ce-coverage-artifacts
+          path: ce_coverage
+
+      - name: Get EE Coverage
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage-artifacts
+          path: coverage
+
+      - name: Install dependencies
+        uses: ./.github/actions/catch-install-pnpm
+
+      - name: Merge coverage reports
+        run: node ./scripts/jest/merge-report-json.js
+
+      - name: Coverage test report
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          test-script: pnpm test:ci
-          package-manager: pnpm
+          base-coverage-file: coverage-merged.json
+          coverage-file: coverage-merged.json

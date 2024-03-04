@@ -56,7 +56,7 @@ describe('test base/page/project/modal/update', () => {
   it('should send update project request when user click submit button', async () => {
     superRender(<UpdateProject />);
 
-    expect(updateProjectSpy).toBeCalledTimes(0);
+    expect(updateProjectSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.input(screen.getByLabelText('项目描述'), {
       target: { value: 'update_desc' }
@@ -70,8 +70,8 @@ describe('test base/page/project/modal/update', () => {
     );
     expect(screen.getByText('关 闭').closest('button')).toBeDisabled();
 
-    expect(updateProjectSpy).toBeCalledTimes(1);
-    expect(updateProjectSpy).toBeCalledWith({
+    expect(updateProjectSpy).toHaveBeenCalledTimes(1);
+    expect(updateProjectSpy).toHaveBeenCalledWith({
       project_uid: mockProjectList[1].uid,
       project: {
         desc: 'update_desc'
@@ -84,13 +84,13 @@ describe('test base/page/project/modal/update', () => {
       screen.getByText(`更新项目${mockProjectList[1].name}成功`)
     ).toBeInTheDocument();
 
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Project_List);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(EmitterKey.DMS_Refresh_Project_List);
     expect(screen.getByLabelText('项目名称')).toHaveValue('');
     expect(screen.getByLabelText('项目描述')).toHaveValue('');
 
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.DMS_Update_Project,
         status: false

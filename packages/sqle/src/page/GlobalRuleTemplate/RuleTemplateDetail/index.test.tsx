@@ -37,7 +37,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateDetail', () => {
     const { baseElement } = renderWithThemeAndRedux(<RuleTemplateDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetGlobalRule).toBeCalledTimes(1);
-    expect(requestGetAllRule).toBeCalledTimes(1);
+    expect(requestGetGlobalRule).toHaveBeenCalledTimes(1);
+    expect(requestGetAllRule).toHaveBeenCalledTimes(1);
   });
 });

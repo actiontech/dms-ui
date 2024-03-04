@@ -38,7 +38,7 @@ describe('base/UserCenter/UserList', () => {
   it('render user table', async () => {
     const { baseElement } = renderWithReduxAndTheme(<UserList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userListSpy).toBeCalledTimes(1);
+    expect(userListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('admin')).toBeInTheDocument();
     expect(screen.getByText('test')).toBeInTheDocument();
@@ -84,7 +84,7 @@ describe('base/UserCenter/UserList', () => {
       await jest.advanceTimersByTime(300);
     });
 
-    expect(userListSpy).toBeCalledTimes(2);
+    expect(userListSpy).toHaveBeenCalledTimes(2);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -93,7 +93,7 @@ describe('base/UserCenter/UserList', () => {
     await act(async () =>
       EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List)
     );
-    expect(userListSpy).toBeCalledTimes(2);
+    expect(userListSpy).toHaveBeenCalledTimes(2);
   });
 
   it('should send delete user request', async () => {
@@ -107,7 +107,7 @@ describe('base/UserCenter/UserList', () => {
     const deleteUserSpy = userCenter.deleteUser();
     renderWithReduxAndTheme(<UserList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userListSpy).toBeCalledTimes(1);
+    expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(
@@ -115,13 +115,13 @@ describe('base/UserCenter/UserList', () => {
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(deleteUserSpy).toBeCalledTimes(1);
-    expect(deleteUserSpy).toBeCalledWith({
+    expect(deleteUserSpy).toHaveBeenCalledTimes(1);
+    expect(deleteUserSpy).toHaveBeenCalledWith({
       user_uid: userList[0].uid
     });
     expect(screen.getByText(`删除用户 "${userName}" 成功`)).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userListSpy).toBeCalled();
+    expect(userListSpy).toHaveBeenCalled();
   });
 
   it('should dispatch action when edit user info', async () => {
@@ -133,10 +133,10 @@ describe('base/UserCenter/UserList', () => {
     );
     renderWithReduxAndTheme(<UserList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userListSpy).toBeCalledTimes(1);
+    expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('管 理'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       type: 'userCenter/updateSelectUser',
       payload: {

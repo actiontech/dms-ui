@@ -97,7 +97,7 @@ describe('sqle/Order/Detail/OrderDetailPageHeaderExtra', () => {
       fireEvent.click(screen.getByText('关闭工单'));
       await jest.advanceTimersByTime(3000);
     });
-    expect(cancelWorkflowSpy).toBeCalledTimes(1);
+    expect(cancelWorkflowSpy).toHaveBeenCalledTimes(1);
   });
 
   it('render close button when status is executing', async () => {
@@ -125,7 +125,7 @@ describe('sqle/Order/Detail/OrderDetailPageHeaderExtra', () => {
       fireEvent.click(screen.getByText('关闭工单'));
       await jest.advanceTimersByTime(3000);
     });
-    expect(cancelWorkflowSpy).not.toBeCalled();
+    expect(cancelWorkflowSpy).not.toHaveBeenCalled();
   });
 
   it('render reject button', async () => {

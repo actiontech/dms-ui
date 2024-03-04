@@ -1,26 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test useCreateDataExportReduxManage should match snapshot 1`] = `
-Object {
+{
   "auditLoading": false,
   "clearAllState": [Function],
-  "formValues": Object {
-    "baseValues": Object {
+  "formValues": {
+    "baseValues": {
       "desc": "desc",
       "workflow_subject": "test",
     },
-    "methodValues": Object {
+    "methodValues": {
       "exportMethod": "sql",
       "sql": "select 1;",
     },
-    "sourceValues": Object {
+    "sourceValues": {
       "dbService": "121",
     },
   },
   "initModalStatus": [Function],
   "pageState": "CREATE_TASK",
   "submitLoading": false,
-  "taskIDs": Array [
+  "taskIDs": [
     "11111",
   ],
   "updateAuditLoading": [Function],

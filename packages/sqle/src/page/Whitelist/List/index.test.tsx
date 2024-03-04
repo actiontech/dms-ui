@@ -49,7 +49,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
     const { baseElement } = renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(whitelistSpy).toBeCalledTimes(1);
+    expect(whitelistSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('添加白名单')).toBeInTheDocument();
     expect(
       getBySelector('.custom-icon-refresh', baseElement)
@@ -65,10 +65,10 @@ describe('slqe/Whitelist/WhitelistList', () => {
   test('refresh whitelist list', async () => {
     const { baseElement } = renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(whitelistSpy).toBeCalledTimes(1);
+    expect(whitelistSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(whitelistSpy).toBeCalledTimes(2);
+    expect(whitelistSpy).toHaveBeenCalledTimes(2);
   });
 
   it('should hide table actions', async () => {
@@ -109,8 +109,8 @@ describe('slqe/Whitelist/WhitelistList', () => {
   test('add whitelist', async () => {
     const { baseElement } = renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(whitelistSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(whitelistSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/initModalStatus',
       payload: {
         modalStatus: {
@@ -123,7 +123,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
       getBySelector('.ant-btn-primary.basic-button-wrapper', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toBeCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       type: 'whitelist/updateModalStatus',
       payload: {
@@ -143,20 +143,20 @@ describe('slqe/Whitelist/WhitelistList', () => {
     const deleteAuthWhitelistSpy = auditWhiteList.deleteAuthWhitelist();
     renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(whitelistSpy).toBeCalledTimes(1);
+    expect(whitelistSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('确认删除这条白名单么？')).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(deleteAuthWhitelistSpy).toBeCalledTimes(1);
-    expect(deleteAuthWhitelistSpy).toBeCalledWith({
+    expect(deleteAuthWhitelistSpy).toHaveBeenCalledTimes(1);
+    expect(deleteAuthWhitelistSpy).toHaveBeenCalledWith({
       audit_whitelist_id: `${auditWhiteListMockData[1].audit_whitelist_id}`,
       project_name: mockProjectInfo.projectName
     });
     expect(screen.getByText('删除白名单语句成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(whitelistSpy).toBeCalled();
+    expect(whitelistSpy).toHaveBeenCalled();
   });
 
   it('edit whitelist', async () => {
@@ -168,8 +168,8 @@ describe('slqe/Whitelist/WhitelistList', () => {
     );
     renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(whitelistSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(whitelistSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/initModalStatus',
       payload: {
         modalStatus: {
@@ -180,7 +180,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
     });
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       type: 'whitelist/updateSelectWhitelist',
       payload: {

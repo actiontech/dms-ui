@@ -30,9 +30,9 @@ describe('test ExportTaskList', () => {
     expect(container).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getDataExportTaskSQLsSpy).toBeCalledTimes(1);
+    expect(getDataExportTaskSQLsSpy).toHaveBeenCalledTimes(1);
 
-    expect(getDataExportTaskSQLsSpy).toBeCalledWith({
+    expect(getDataExportTaskSQLsSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
       data_export_task_uid: mockDataExportDetailRedux.curTaskID,
       page_index: 1,

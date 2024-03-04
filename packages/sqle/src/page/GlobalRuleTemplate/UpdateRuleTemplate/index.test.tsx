@@ -81,16 +81,16 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
     const { baseElement } = renderWithReduxAndTheme(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(getAllRuleSpy).toBeCalledTimes(1);
-    expect(getDriversSpy).toBeCalledTimes(1);
-    expect(getRuleTemplateSpy).toBeCalledTimes(1);
+    expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
+    expect(getRuleTemplateSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId('base-form')).toBeVisible();
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
     fireEvent.click(
       getBySelector('.actiontech-page-header-namespace .title .ant-btn')
     );
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('reset form value', async () => {
@@ -142,7 +142,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
     );
     const { baseElement } = renderWithReduxAndTheme(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRuleSpy).toBeCalledTimes(1);
+    expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.input(getBySelector('#templateDesc'), {
       target: { value: 'desc' }
@@ -171,7 +171,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
       });
       await act(() => jest.advanceTimersByTime(300));
     });
-    expect(getAllRuleSpy).toBeCalledWith({
+    expect(getAllRuleSpy).toHaveBeenCalledWith({
       fuzzy_keyword_rule: 'test'
     });
     await act(async () => jest.advanceTimersByTime(3000));
@@ -200,7 +200,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('禁用全部规则').parentElement).not.toBeDisabled();
     fireEvent.click(screen.getByText('提 交'));
-    expect(updateRuleTemplateSpy).toBeCalledTimes(1);
+    expect(updateRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
     expect(baseElement).toMatchSnapshot();
@@ -208,13 +208,13 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
       screen.getByText('更新审核规则模版 (test) 成功')
     ).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-result .basic-button-wrapper'));
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('rule list action', async () => {
     const { baseElement } = renderWithReduxAndTheme(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRuleSpy).toBeCalledTimes(1);
+    expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     fireEvent.input(getBySelector('#templateDesc'), {
       target: { value: 'desc' }
     });
@@ -273,7 +273,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
     fireEvent.click(enabledButton);
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('提 交'));
-    expect(updateRuleTemplateSpy).toBeCalledTimes(1);
+    expect(updateRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
   });
