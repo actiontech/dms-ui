@@ -59,7 +59,7 @@ describe('lib/BasicDrawer', () => {
       fireEvent.click(closedIcon);
       await jest.advanceTimersByTime(300);
     });
-    expect(onCloseFn).toBeCalledTimes(1);
+    expect(onCloseFn).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 });

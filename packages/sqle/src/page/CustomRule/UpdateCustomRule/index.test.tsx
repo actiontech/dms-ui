@@ -64,20 +64,20 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
     const { baseElement } = renderWithThemeAndRedux(<UpdateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(getCustomRuleSpy).toBeCalledTimes(1);
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getCustomRuleSpy).toHaveBeenCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('返回自定义规则列表')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回自定义规则列表'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('reset form values', async () => {
     renderWithThemeAndRedux(<UpdateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getCustomRuleSpy).toBeCalledTimes(1);
-    expect(getRuleTypeByDBTypeSpy).toBeCalledTimes(1);
+    expect(getCustomRuleSpy).toHaveBeenCalledTimes(1);
+    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
     const descEle = getBySelector('#desc');
     expect(descEle).toHaveValue('test_custom_rule');
     expect(getBySelector('#dbType')).toBeDisabled();
@@ -108,7 +108,7 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(ruleTypeEle).not.toBeDisabled();
-    expect(getRuleTypeByDBTypeSpy).toBeCalledTimes(1);
+    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
     await act(async () => {
       fireEvent.mouseDown(ruleTypeEle);
       await jest.advanceTimersByTime(100);
@@ -143,8 +143,8 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
     });
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(updateCustomRuleSpy).toBeCalledTimes(1);
-    expect(updateCustomRuleSpy).toBeCalledWith({
+    expect(updateCustomRuleSpy).toHaveBeenCalledTimes(1);
+    expect(updateCustomRuleSpy).toHaveBeenCalledWith({
       desc: 'test_custom_rule',
       level: CreateCustomRuleReqV1LevelEnum.warn,
       annotation: 'anno',
@@ -162,8 +162,8 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
     expect(screen.getByText('提交成功')).toBeVisible();
     expect(screen.getByText('查看创建的自定义规则')).toBeVisible();
     fireEvent.click(screen.getByText('查看创建的自定义规则'));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('when update custom rule return fail', async () => {
@@ -175,8 +175,8 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateCustomRuleSpy).toBeCalledTimes(1);
-    expect(updateCustomRuleSpy).toBeCalledWith({
+    expect(updateCustomRuleSpy).toHaveBeenCalledTimes(1);
+    expect(updateCustomRuleSpy).toHaveBeenCalledWith({
       desc: 'test_custom_rule',
       level: CreateCustomRuleReqV1LevelEnum.error,
       annotation: 'anno',

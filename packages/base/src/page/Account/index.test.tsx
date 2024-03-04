@@ -32,7 +32,7 @@ describe('test base/page/Account', () => {
     const { baseElement } = renderWithTheme(<Account />);
     expect(baseElement).toMatchSnapshot();
 
-    expect(mockUserInfo.getUserInfo).toBeCalledTimes(1);
+    expect(mockUserInfo.getUserInfo).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('修改密码'));
 

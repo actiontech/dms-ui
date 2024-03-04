@@ -35,7 +35,7 @@ describe('base/System/components/ConfigTestPopoverForm', () => {
 
     expect(screen.getByText('取 消')).toBeInTheDocument();
     fireEvent.click(screen.getByText('取 消'));
-    expect(handleCancelFn).toBeCalled();
+    expect(handleCancelFn).toHaveBeenCalled();
   });
 
   it('render snap when click submit btn', async () => {
@@ -43,6 +43,6 @@ describe('base/System/components/ConfigTestPopoverForm', () => {
 
     expect(screen.getByText('确 认')).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
-    expect(handleTestFn).toBeCalled();
+    expect(handleTestFn).toHaveBeenCalled();
   });
 });

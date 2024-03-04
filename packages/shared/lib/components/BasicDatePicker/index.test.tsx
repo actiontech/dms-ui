@@ -17,11 +17,12 @@ describe('lib/BasicDatePicker', () => {
 
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-04').valueOf());
-    jest.useFakeTimers();
+    jest.useFakeTimers({ legacyFakeTimers: true });
   });
 
   afterEach(() => {
     MockDate.reset();
+    jest.useRealTimers();
     cleanup();
   });
 
@@ -65,7 +66,7 @@ describe('lib/BasicDatePicker', () => {
       fireEvent.mouseDown(dateInputEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(onOpenChangeFn).toBeCalledTimes(1);
+    expect(onOpenChangeFn).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
     unmount();
   });
@@ -83,7 +84,7 @@ describe('lib/BasicDatePicker', () => {
       fireEvent.mouseDown(dateInputEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(onOpenChangeFn).toBeCalledTimes(1);
+    expect(onOpenChangeFn).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
     unmount();
   });

@@ -2362,7 +2362,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                     height="400px"
                     id="sql"
                     language="sql"
-                    options="{\\"automaticLayout\\":true,\\"readOnly\\":false,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                    options="{"automaticLayout":true,"readOnly":false,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                     value="/* input your sql */"
                     width="100%"
                   />
@@ -3669,7 +3669,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                     height="400px"
                     id="sql"
                     language="sql"
-                    options="{\\"automaticLayout\\":true,\\"readOnly\\":false,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                    options="{"automaticLayout":true,"readOnly":false,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                     value="/* input your sql */"
                     width="100%"
                   />

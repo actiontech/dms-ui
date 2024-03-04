@@ -64,7 +64,7 @@ describe('page/RuleKnowledge/EditKnowledgeContent', () => {
       });
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockChange).toBeCalledWith('1');
-    expect(mockSetHasDirtyData).toBeCalledWith(true);
+    expect(mockChange).toHaveBeenCalledWith('1');
+    expect(mockSetHasDirtyData).toHaveBeenCalledWith(true);
   });
 });

@@ -2010,7 +2010,7 @@ exports[`sqle/Order/Common/AuditResultList/List should match snapshot when has a
                       >
                         <div>
                           <div
-                            class=" css-30pox0"
+                            class=" css-1v03opz"
                           >
                             <div
                               class="css-1avyf41"
@@ -2578,7 +2578,7 @@ exports[`sqle/Order/Common/AuditResultList/List should match snapshot when has a
                       >
                         <div>
                           <div
-                            class=" css-30pox0"
+                            class=" css-1v03opz"
                           >
                             <div
                               class="css-1avyf41"
@@ -3025,8 +3025,13 @@ exports[`sqle/Order/Common/AuditResultList/List should match snapshot when has a
                     class="wrapper-cont"
                   >
                     <div
-                      class="result-item css-30pox0"
+                      class="result-item has-delete-rule-wrapper css-1v03opz"
                     >
+                      <span
+                        class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+                      >
+                        该规则已删除
+                      </span>
                       <div
                         class="css-1avyf41"
                       >
@@ -3168,7 +3173,7 @@ exports[`sqle/Order/Common/AuditResultList/List should match snapshot when has a
                       class="custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
-                      options="{\\"readOnly\\":true,\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value="SELECT * "
                       width="100%"
                     />

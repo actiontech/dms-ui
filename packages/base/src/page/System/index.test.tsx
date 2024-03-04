@@ -54,8 +54,8 @@ describe('base/System-ee', () => {
     await act(async () => jest.advanceTimersByTime(2600));
     expect(baseElement).toMatchSnapshot();
 
-    expect(dispatchSpy).toBeCalled();
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalled();
+    expect(dispatchSpy).toHaveBeenCalledWith({
       payload: { modalStatus: { [ModalName.DMS_Import_License]: false } },
       type: 'system/initModalStatus'
     });

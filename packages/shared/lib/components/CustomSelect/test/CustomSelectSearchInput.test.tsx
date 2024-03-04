@@ -35,8 +35,8 @@ describe('lib/CustomSelectSearchInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(onChangeFn).toBeCalled();
-    expect(onChangeFn).toBeCalledTimes(1);
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 });

@@ -83,8 +83,8 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestDetail).toBeCalled();
-    expect(requestDetail).toBeCalledWith({
+    expect(requestDetail).toHaveBeenCalled();
+    expect(requestDetail).toHaveBeenCalledWith({
       database_source_service_uid: taskId,
       project_uid: projectID
     });
@@ -92,7 +92,9 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
 
     fireEvent.click(screen.getByText('重 置'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_SYNC_TASK_RESET_FORM);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_SYNC_TASK_RESET_FORM
+    );
   });
 
   it('render update task submit', async () => {
@@ -104,14 +106,14 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
     delete detailInfo.project_uid;
     customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestDetail).toBeCalled();
+    expect(requestDetail).toHaveBeenCalled();
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('重 置').parentNode).toHaveAttribute('disabled');
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestUpdate).toBeCalled();
-    expect(requestUpdate).toBeCalledWith({
+    expect(requestUpdate).toHaveBeenCalled();
+    expect(requestUpdate).toHaveBeenCalledWith({
       database_source_service: {
         ...detailInfo
       },
@@ -120,9 +122,12 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
     });
     expect(screen.getByText('同步任务编辑成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith(`/project/${projectID}/syncDataSource`, {
-      replace: true
-    });
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/project/${projectID}/syncDataSource`,
+      {
+        replace: true
+      }
+    );
   });
 });

@@ -577,7 +577,7 @@ exports[`first should match snapshot when pageState is equal CREATE_TASK 1`] = `
                         height="400px"
                         id="sql"
                         language="sql"
-                        options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                         value="/* input your sql */"
                         width="100%"
                       />

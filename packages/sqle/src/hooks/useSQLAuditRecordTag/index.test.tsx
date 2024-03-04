@@ -40,14 +40,14 @@ describe('sqle/hooks/useSQLAuditRecordTag', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledTimes(1);
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditRecordTags).toEqual([]);
     expect(result.current.auditRecordTagsOptions).toEqual([]);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.loading).toBe(false);
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledTimes(1);
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditRecordTags).toEqual(
       sqlAuditRecordTagTipsMockData
     );
@@ -94,7 +94,7 @@ describe('sqle/hooks/useSQLAuditRecordTag', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.loading).toBe(false);
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledTimes(1);
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditRecordTags).toEqual([]);
     expect(result.current.auditRecordTagsOptions).toEqual([]);
   });
@@ -120,7 +120,7 @@ describe('sqle/hooks/useSQLAuditRecordTag', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.loading).toBe(false);
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledTimes(1);
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledTimes(1);
     expect(result.current.auditRecordTags).toEqual([]);
     expect(result.current.auditRecordTagsOptions).toEqual([]);
   });

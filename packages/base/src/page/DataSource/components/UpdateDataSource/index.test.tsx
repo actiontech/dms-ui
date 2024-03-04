@@ -73,8 +73,8 @@ describe('page/DataSource/UpdateDataSource', () => {
 
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(requestRuleTemplateList).toBeCalled();
-    expect(requestDriverOptions).toBeCalled();
+    expect(requestRuleTemplateList).toHaveBeenCalled();
+    expect(requestDriverOptions).toHaveBeenCalled();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -153,7 +153,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('未能成功链接到数据库')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
-    expect(checkDBServiceIsConnectableSpy).toBeCalled();
+    expect(checkDBServiceIsConnectableSpy).toHaveBeenCalled();
     await act(async () => {
       EventEmitter.emit(EmitterKey.Reset_Test_Data_Source_Connect);
       await act(async () => jest.advanceTimersByTime(300));
@@ -166,15 +166,20 @@ describe('page/DataSource/UpdateDataSource', () => {
     });
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(eventEmitSpy).toBeCalled();
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_Submit_DataSource_Form);
+    expect(eventEmitSpy).toHaveBeenCalled();
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Submit_DataSource_Form
+    );
     expect(screen.getByText(`数据源"mysql-1"更新成功`)).toBeInTheDocument();
 
     await act(async () => jest.advanceTimersByTime(800));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith(`/project/${projectID}/db-services`, {
-      replace: true
-    });
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/project/${projectID}/db-services`,
+      {
+        replace: true
+      }
+    );
   });
 
   it('render get default val error', async () => {
@@ -190,6 +195,6 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestDetail).toBeCalled();
+    expect(requestDetail).toHaveBeenCalled();
   });
 });

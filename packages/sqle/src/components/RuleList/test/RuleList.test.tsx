@@ -58,7 +58,7 @@ describe('sqle/components/RuleList', () => {
     expect(screen.getByText('禁用该规则')).toBeInTheDocument();
     fireEvent.click(enabledButton);
     await act(async () => jest.advanceTimersByTime(100));
-    expect(onActionHandleSpy).toBeCalledTimes(1);
+    expect(onActionHandleSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should match snap shot when actionType is enabled', async () => {
@@ -80,7 +80,7 @@ describe('sqle/components/RuleList', () => {
     expect(screen.getByText('编辑该规则')).toBeInTheDocument();
     fireEvent.click(editButton);
     await act(async () => jest.advanceTimersByTime(100));
-    expect(onActionHandleSpy).toBeCalledTimes(1);
+    expect(onActionHandleSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should match snap shot when actionType is disabled', async () => {
@@ -103,7 +103,7 @@ describe('sqle/components/RuleList', () => {
     expect(screen.getByText('启用该规则')).toBeInTheDocument();
     fireEvent.click(enabledButton);
     await act(async () => jest.advanceTimersByTime(100));
-    expect(onActionHandleSpy).toBeCalledTimes(1);
+    expect(onActionHandleSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should match snap shot when has renderDisableNode', async () => {

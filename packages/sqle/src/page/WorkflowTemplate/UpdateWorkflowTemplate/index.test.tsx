@@ -55,10 +55,10 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userInfoRequest).toBeCalledWith({
+    expect(userInfoRequest).toHaveBeenCalledWith({
       filter_project: mockProjectInfo.projectName
     });
-    expect(getInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('返回审批流程模版')).toBeInTheDocument();
@@ -74,7 +74,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
       fireEvent.click(screen.getByText('保 存'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(updateInfoRequest).toBeCalledWith({
+    expect(updateInfoRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       workflow_step_template_list:
         workflowTemplateData.workflow_step_template_list,
@@ -102,17 +102,17 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userInfoRequest).toBeCalledWith({
+    expect(userInfoRequest).toHaveBeenCalledWith({
       filter_project: mockProjectInfo.projectName
     });
-    expect(getInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => {
       fireEvent.click(screen.getByText('保 存'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(updateInfoRequest).toBeCalledWith({
+    expect(updateInfoRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       workflow_step_template_list:
         workflowTemplateData.workflow_step_template_list,
@@ -127,10 +127,10 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userInfoRequest).toBeCalledWith({
+    expect(userInfoRequest).toHaveBeenCalledWith({
       filter_project: mockProjectInfo.projectName
     });
-    expect(getInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('.ant-select-selection-search-input'));
@@ -169,7 +169,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
       desc: 'desc',
       type: 'sql_review'
     });
-    expect(updateInfoRequest).toBeCalledWith({
+    expect(updateInfoRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       workflow_step_template_list: tempList,
       allow_submit_when_less_audit_level:
@@ -182,10 +182,10 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userInfoRequest).toBeCalledWith({
+    expect(userInfoRequest).toHaveBeenCalledWith({
       filter_project: mockProjectInfo.projectName
     });
-    expect(getInfoRequest).toBeCalled();
+    expect(getInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
 

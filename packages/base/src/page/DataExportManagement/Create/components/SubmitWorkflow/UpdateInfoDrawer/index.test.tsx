@@ -67,15 +67,17 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
     const { baseElement } = customRender({ auditLoading: true });
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(getBySelector('.closed-icon-custom'));
-    expect(mockCreateDataExportRedux.updateModalStatus).not.toBeCalled();
+    expect(mockCreateDataExportRedux.updateModalStatus).not.toHaveBeenCalled();
   });
 
   it('should execute updateModalStatus when closed drawer', () => {
     customRender();
 
     fireEvent.click(getBySelector('.closed-icon-custom'));
-    expect(mockCreateDataExportRedux.updateModalStatus).toBeCalledTimes(1);
-    expect(mockCreateDataExportRedux.updateModalStatus).toBeCalledWith({
+    expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledTimes(
+      1
+    );
+    expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledWith({
       modalName: ModalName.DMS_UPDATE_EXPORT_TASK_INFO,
       status: false
     });
@@ -90,12 +92,16 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
 
     fireEvent.click(screen.getByText('审 核'));
 
-    expect(mockUseCreateExportTaskFormReturn.auditAction).toBeCalledTimes(1);
+    expect(mockUseCreateExportTaskFormReturn.auditAction).toHaveBeenCalledTimes(
+      1
+    );
 
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(mockCreateDataExportRedux.updateModalStatus).toBeCalledTimes(1);
-    expect(mockCreateDataExportRedux.updateModalStatus).toBeCalledWith({
+    expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledTimes(
+      1
+    );
+    expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledWith({
       modalName: ModalName.DMS_UPDATE_EXPORT_TASK_INFO,
       status: false
     });
@@ -107,7 +113,9 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
 
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(mockCreateDataExportRedux.updateModalStatus).toBeCalledTimes(0);
+    expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledTimes(
+      0
+    );
     jest.useRealTimers();
   });
 });

@@ -13,11 +13,10 @@ dist
 **/dist/*
 
 # testing
-/ee_coverage
 /ce_coverage
 /coverage
-/packages/*/coverage
 /report.json
+/coverage-merged.json
 
 # production
 /build

@@ -23,8 +23,8 @@ describe('base/UserCenter/UserManageModal', () => {
 
   it('should dispatch init action', () => {
     renderWithReduxAndTheme(<UserManageModal />);
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       payload: {
         modalStatus: {
           [ModalName.DMS_Add_User]: false,

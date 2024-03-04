@@ -107,8 +107,8 @@ describe('App', () => {
         routerProps: { initialEntries: ['/order'] }
       }
     );
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/order`,
       { replace: true }
     );
@@ -118,12 +118,14 @@ describe('App', () => {
     const { container } = superRender(<App />, undefined, {
       routerProps: { initialEntries: ['/'] }
     });
-    expect(requestGetBasicInfo).toBeCalledTimes(1);
-    expect(getUserBySessionSpy).toBeCalledTimes(1);
-    expect(mockDBServiceDriverInfo.updateDriverList).toBeCalledTimes(1);
+    expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
+    expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockSystemConfigData.syncWebTitleAndLogo).toBeCalledTimes(1);
-    expect(mockSystemConfigData.syncWebTitleAndLogo).toBeCalledWith(BasicInfo);
+    expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledTimes(1);
+    expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledWith(
+      BasicInfo
+    );
     expect(container).toMatchSnapshot();
   });
 
@@ -164,11 +166,11 @@ describe('App', () => {
       routerProps: { initialEntries: ['/order'] }
     });
 
-    expect(requestGetBasicInfo).toBeCalledTimes(0);
-    expect(getUserBySessionSpy).toBeCalledTimes(0);
-    expect(mockDBServiceDriverInfo.updateDriverList).toBeCalledTimes(0);
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(
+    expect(requestGetBasicInfo).toHaveBeenCalledTimes(0);
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(0);
+    expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(0);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/order`,
       { replace: true }
     );

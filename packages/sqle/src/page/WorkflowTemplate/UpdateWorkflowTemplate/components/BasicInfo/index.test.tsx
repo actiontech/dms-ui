@@ -49,16 +49,16 @@ describe('page/WorkflowTemplate/BasicInfo', () => {
       fireEvent.click(selectOptions[0]);
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(updateMock).toBeCalledWith(
+    expect(updateMock).toHaveBeenCalledWith(
       WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum.normal
     );
     expect(screen.getAllByText('普通(Normal)')?.[0]).toBeInTheDocument();
     fireEvent.click(screen.getByText('下一步'));
-    expect(updateMock).toBeCalledWith(
+    expect(updateMock).toHaveBeenCalledWith(
       WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum.normal
     );
     await act(async () => jest.advanceTimersByTime(300));
-    expect(nextStepMock).toBeCalled();
+    expect(nextStepMock).toHaveBeenCalled();
   });
 
   it('render basic info without default data', async () => {

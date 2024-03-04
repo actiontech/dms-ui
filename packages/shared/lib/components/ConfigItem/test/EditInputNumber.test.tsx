@@ -50,7 +50,7 @@ describe('lib/ConfigItem-EditInputNumber', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(validatorFn).toBeCalledTimes(1);
+    expect(validatorFn).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -75,8 +75,8 @@ describe('lib/ConfigItem-EditInputNumber', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(validatorFn).toBeCalledTimes(1);
-    expect(onSubmitFn).toBeCalledTimes(1);
+    expect(validatorFn).toHaveBeenCalledTimes(1);
+    expect(onSubmitFn).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -99,7 +99,7 @@ describe('lib/ConfigItem-EditInputNumber', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(hideFieldFn).toBeCalledTimes(1);
+    expect(hideFieldFn).toHaveBeenCalledTimes(1);
   });
 
   it('render input val change', async () => {

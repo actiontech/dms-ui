@@ -67,7 +67,7 @@ describe('base/System/components/ConfigSwitch', () => {
     expect(screen.getByText('OK')).toBeInTheDocument();
     fireEvent.click(screen.getByText('OK'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(onConfirmFn).toBeCalled();
+    expect(onConfirmFn).toHaveBeenCalled();
   });
 
   it('render snap when click switch', async () => {
@@ -81,6 +81,6 @@ describe('base/System/components/ConfigSwitch', () => {
     const switchHandle = getBySelector('.ant-switch-handle', baseElement);
     fireEvent.click(switchHandle);
     await act(async () => jest.advanceTimersByTime(500));
-    expect(onSwitchChangeFn).toBeCalled();
+    expect(onSwitchChangeFn).toHaveBeenCalled();
   });
 });

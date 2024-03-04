@@ -39,8 +39,8 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
       await jest.advanceTimersByTime(3000);
     });
 
-    expect(getRuleTemplateSpy).toBeCalledTimes(1);
-    expect(getRuleTemplateSpy).toBeCalledWith({
+    expect(getRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(getRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: ''
     });
     expect(hookResult.current.templateRules).toEqual([]);
@@ -65,8 +65,8 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
       await jest.advanceTimersByTime(3000);
     });
 
-    expect(getProjectRuleTemplateSpy).toBeCalledTimes(1);
-    expect(getProjectRuleTemplateSpy).toBeCalledWith({
+    expect(getProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(getProjectRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: '',
       project_name: mockProjectInfo.projectName
     });

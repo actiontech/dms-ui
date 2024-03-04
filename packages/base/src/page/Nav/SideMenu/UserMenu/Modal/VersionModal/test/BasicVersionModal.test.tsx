@@ -52,6 +52,6 @@ describe('base/Nav/SideMenu/UserMenu/BasicVersionModal', () => {
     const iconClosed = getBySelector('.ant-modal-close', baseElement);
     fireEvent.click(iconClosed);
     await act(async () => jest.advanceTimersByTime(500));
-    expect(VersionModalCloseFn).toBeCalled();
+    expect(VersionModalCloseFn).toHaveBeenCalled();
   });
 });

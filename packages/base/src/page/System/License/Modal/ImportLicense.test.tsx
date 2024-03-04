@@ -55,8 +55,8 @@ describe('base/System/License/ImportLicenseModal', () => {
 
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(modalStatusDispatch).toBeCalled();
-    expect(modalStatusDispatch).toBeCalledWith({
+    expect(modalStatusDispatch).toHaveBeenCalled();
+    expect(modalStatusDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.DMS_Import_License,
         status: false
@@ -84,17 +84,17 @@ describe('base/System/License/ImportLicenseModal', () => {
     );
     await act(async () => jest.advanceTimersByTime(2000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestCheckLicense).toBeCalled();
+    expect(requestCheckLicense).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(1200));
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestSetLicense).toBeCalled();
+    expect(requestSetLicense).toHaveBeenCalled();
 
-    expect(modalStatusDispatch).toBeCalled();
-    expect(modalStatusDispatch).toBeCalledWith({
+    expect(modalStatusDispatch).toHaveBeenCalled();
+    expect(modalStatusDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.DMS_Import_License,
         status: false
@@ -102,8 +102,10 @@ describe('base/System/License/ImportLicenseModal', () => {
       type: 'system/updateModalStatus'
     });
 
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_License_List);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_License_List
+    );
     expect(baseElement).toMatchSnapshot();
   });
 });

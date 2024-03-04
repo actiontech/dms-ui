@@ -50,12 +50,12 @@ describe('page/RuleKnowledge', () => {
     const knowledgeRequest = rule_template.getRuleKnowledge();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       filter_rule_names: ruleNameFirst,
       filter_db_type: dbType
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(knowledgeRequest).toBeCalledWith({
+    expect(knowledgeRequest).toHaveBeenCalledWith({
       rule_name: ruleNameFirst,
       db_type: dbType
     });
@@ -71,12 +71,12 @@ describe('page/RuleKnowledge', () => {
     const submitRequest = rule_template.updateRuleKnowledge();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       filter_rule_names: ruleNameFirst,
       filter_db_type: dbType
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(knowledgeRequest).toBeCalledWith({
+    expect(knowledgeRequest).toHaveBeenCalledWith({
       rule_name: ruleNameFirst,
       db_type: dbType
     });
@@ -95,13 +95,13 @@ describe('page/RuleKnowledge', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(submitRequest).toBeCalledWith({
+    expect(submitRequest).toHaveBeenCalledWith({
       rule_name: ruleNameFirst,
       knowledge_content: '1',
       db_type: dbType
     });
     expect(screen.getByText('规则理解修改成功')).toBeInTheDocument();
-    expect(knowledgeRequest).toBeCalledWith({
+    expect(knowledgeRequest).toHaveBeenCalledWith({
       rule_name: ruleNameFirst,
       db_type: dbType
     });
@@ -116,12 +116,12 @@ describe('page/RuleKnowledge', () => {
     const customKnowledgeRequest = rule_template.getCustomRuleKnowledge();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       filter_rule_names: ruleNameSecond,
       filter_db_type: dbType
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(customKnowledgeRequest).toBeCalledWith({
+    expect(customKnowledgeRequest).toHaveBeenCalledWith({
       rule_name: ruleNameSecond,
       db_type: dbType
     });

@@ -51,15 +51,15 @@ describe('useUsername', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith(param);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith(param);
     expect(result.current.usernameList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([
       { user_name: 'user_name1', user_id: 'user_id1' }
     ]);
@@ -95,14 +95,14 @@ describe('useUsername', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([{ user_name: 'user_name1' }]);
     requestSpy.mockClear();
     requestSpy.mockImplementation(() =>
@@ -113,7 +113,7 @@ describe('useUsername', () => {
       result.current.updateUsernameList(param);
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([
       {
         user_name: 'user_name1'
@@ -124,7 +124,7 @@ describe('useUsername', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([]);
   });
 
@@ -142,14 +142,14 @@ describe('useUsername', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([{ user_name: 'user_name1' }]);
     requestSpy.mockClear();
     requestSpy.mockImplementation(() =>
@@ -160,7 +160,7 @@ describe('useUsername', () => {
       result.current.updateUsernameList(param);
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([
       {
         user_name: 'user_name1'
@@ -171,7 +171,7 @@ describe('useUsername', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.usernameList).toEqual([]);
   });
 });

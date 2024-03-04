@@ -44,8 +44,8 @@ describe('ReportStatistics/OrderQuantityTrend', () => {
   };
 
   beforeEach(() => {
-    jest.useFakeTimers();
     MockDate.set(dayjs('2022-01-01 12:00:00').valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
     requestPlotsData = statistic.getWorkflowCreatedCountEachDay();
     mockUseCurrentUser();
     mockThemeStyleData();
@@ -64,7 +64,7 @@ describe('ReportStatistics/OrderQuantityTrend', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('render chart snap when api return empty', async () => {
@@ -72,7 +72,7 @@ describe('ReportStatistics/OrderQuantityTrend', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('refresh order quantity trend', async () => {
@@ -83,7 +83,7 @@ describe('ReportStatistics/OrderQuantityTrend', () => {
       eventEmitter.emit(EmitterKey.Refresh_Report_Statistics);
     });
     await act(async () => jest.advanceTimersByTime(300));
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('select diff time to show trend', async () => {
@@ -104,7 +104,7 @@ describe('ReportStatistics/OrderQuantityTrend', () => {
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getAllByText('15')[1]);
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('render area style', async () => {

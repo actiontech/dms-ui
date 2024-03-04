@@ -150,7 +150,7 @@ describe('lib/ActiontechTable-hooks-useTableFilterContainer', () => {
     await act(() => {
       result.current.updateAllSelectedFilterItem(true);
       const filterContainerMeta = result.current.filterContainerMeta;
-      expect(UpdateTableFilterInfoTypeFn).toBeCalledTimes(1);
+      expect(UpdateTableFilterInfoTypeFn).toHaveBeenCalledTimes(1);
       expect(filterContainerMeta).toEqual([]);
     });
 

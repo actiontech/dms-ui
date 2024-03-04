@@ -40,8 +40,8 @@ describe('sqle/Order/CreateOrder', () => {
   ignoreInvalidValueForCSSStyleProperty();
 
   beforeEach(() => {
-    jest.useFakeTimers();
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
     mockDatabaseType();
     mockUseCurrentProject();
     mockUseCurrentUser();
@@ -94,8 +94,10 @@ describe('sqle/Order/CreateOrder', () => {
 
     fireEvent.click(screen.getByText('重 置'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Reset_Create_Order_Form);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Reset_Create_Order_Form
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -103,8 +105,8 @@ describe('sqle/Order/CreateOrder', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstanceTip).toBeCalled();
-    expect(requestInstanceTip).toBeCalledWith({
+    expect(requestInstanceTip).toHaveBeenCalled();
+    expect(requestInstanceTip).toHaveBeenCalledWith({
       functional_module:
         getInstanceTipListV1FunctionalModuleEnum.create_workflow,
       project_name: projectName
@@ -123,14 +125,14 @@ describe('sqle/Order/CreateOrder', () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3300));
     });
-    expect(requestInstanceSchemas).toBeCalled();
-    expect(requestInstanceSchemas).toBeCalledWith({
+    expect(requestInstanceSchemas).toHaveBeenCalled();
+    expect(requestInstanceSchemas).toHaveBeenCalledWith({
       instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
-    expect(requestInstance).toBeCalledWith({
+    expect(requestInstance).toHaveBeenCalled();
+    expect(requestInstance).toHaveBeenCalledWith({
       instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
@@ -156,7 +158,7 @@ describe('sqle/Order/CreateOrder', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('SQL美化'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
+    expect(requestInstance).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -164,7 +166,7 @@ describe('sqle/Order/CreateOrder', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstanceTip).toBeCalled();
+    expect(requestInstanceTip).toHaveBeenCalled();
 
     // workflow_subject
     const orderName = getBySelector('#workflow_subject', baseElement);
@@ -187,9 +189,9 @@ describe('sqle/Order/CreateOrder', () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3300));
     });
-    expect(requestInstanceSchemas).toBeCalled();
+    expect(requestInstanceSchemas).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
+    expect(requestInstance).toHaveBeenCalled();
     const SchemaNameEle = getBySelector(
       '#dataBaseInfo_0_instanceSchema',
       baseElement
@@ -222,8 +224,8 @@ describe('sqle/Order/CreateOrder', () => {
       fireEvent.click(screen.getByText('审 核'));
       await act(async () => jest.advanceTimersByTime(600));
     });
-    expect(requestAuditTask).toBeCalled();
-    expect(requestAuditTask).toBeCalledWith({
+    expect(requestAuditTask).toHaveBeenCalled();
+    expect(requestAuditTask).toHaveBeenCalledWith({
       instances: [
         { instance_name: 'xin-test-database', instance_schema: 'test' }
       ],

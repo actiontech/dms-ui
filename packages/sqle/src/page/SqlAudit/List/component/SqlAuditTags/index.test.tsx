@@ -44,7 +44,7 @@ describe('sqle/SqlAudit/SqlAuditTags', () => {
       )!
     );
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(updateTagsSpy).toBeCalledTimes(1);
+    expect(updateTagsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('add tag', async () => {
@@ -53,15 +53,15 @@ describe('sqle/SqlAudit/SqlAuditTags', () => {
     const { baseElement } = customRender();
     fireEvent.click(queryBySelector('.add-tag-focus-btn', baseElement)!);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledTimes(1);
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledWith({
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledTimes(1);
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('新增业务标签')).toBeInTheDocument();
     fireEvent.click(screen.getByText(sqlAuditRecordTagTipsMockData[1]));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(updateTagsSpy).toBeCalledTimes(1);
+    expect(updateTagsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('add repetitive tag', async () => {
@@ -70,8 +70,8 @@ describe('sqle/SqlAudit/SqlAuditTags', () => {
     const { baseElement } = customRender();
     fireEvent.click(queryBySelector('.add-tag-focus-btn', baseElement)!);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledTimes(1);
-    expect(getSQLAuditRecordTagTipsSpy).toBeCalledWith({
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledTimes(1);
+    expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(screen.getByText('新增业务标签')).toBeInTheDocument();
@@ -98,6 +98,6 @@ describe('sqle/SqlAudit/SqlAuditTags', () => {
     });
     fireEvent.click(screen.getByText('新增业务标签'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(updateTagsSpy).toBeCalledTimes(1);
+    expect(updateTagsSpy).toHaveBeenCalledTimes(1);
   });
 });

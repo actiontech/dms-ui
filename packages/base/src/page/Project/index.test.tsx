@@ -58,19 +58,19 @@ describe('test base/page/project', () => {
   it('should be refresh table when clicking refresh button', async () => {
     superRender(<Project />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).not.toBeCalled();
+    expect(emitSpy).not.toHaveBeenCalled();
     fireEvent.click(getBySelector('.custom-icon-refresh'));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Project_List);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(EmitterKey.DMS_Refresh_Project_List);
   });
 
   it('should open the modal for creating a project when click the Create Project button', () => {
     mockUseCurrentUser({ isAdmin: true });
     superRender(<Project />);
-    expect(dispatchSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('创建项目'));
-    expect(dispatchSpy).toBeCalledTimes(2);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'project/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_Project,
@@ -86,9 +86,9 @@ describe('test base/page/project', () => {
       isAdmin: false
     });
     superRender(<Project />);
-    expect(dispatchSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('创建项目'));
-    expect(dispatchSpy).toBeCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
 
     cleanup();
     jest.clearAllMocks();

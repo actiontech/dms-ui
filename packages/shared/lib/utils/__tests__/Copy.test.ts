@@ -32,11 +32,11 @@ describe('utils/Copy', () => {
       top: '-9999px',
       opacity: '0'
     });
-    expect(appendChildSpy).toBeCalledWith(input);
+    expect(appendChildSpy).toHaveBeenCalledWith(input);
     expect(input.value).toBe('123');
-    expect(input.select).toBeCalledTimes(1);
-    expect(command).toBeCalledWith('copy');
-    expect(removeChildSpy).toBeCalledWith(input);
+    expect(input.select).toHaveBeenCalledTimes(1);
+    expect(command).toHaveBeenCalledWith('copy');
+    expect(removeChildSpy).toHaveBeenCalledWith(input);
   });
 
   test('should create element textarea for copy textarea text', () => {
@@ -65,16 +65,16 @@ describe('utils/Copy', () => {
       top: '-9999px',
       opacity: '0'
     });
-    expect(appendChildSpy).toBeCalledWith(textarea);
+    expect(appendChildSpy).toHaveBeenCalledWith(textarea);
     expect(textarea.value).toBe(normalStr);
-    expect(textarea.select).toBeCalledTimes(1);
-    expect(removeChildSpy).toBeCalledWith(textarea);
+    expect(textarea.select).toHaveBeenCalledTimes(1);
+    expect(removeChildSpy).toHaveBeenCalledWith(textarea);
 
     const moreLineStr = 'sql select *\n from user_table\n left join users.id';
     copy.copyTextByTextarea(moreLineStr);
     expect(textarea).toMatchSnapshot();
     expect(textarea.value).toBe(moreLineStr);
-    expect(textarea.select).toBeCalled();
-    expect(removeChildSpy).toBeCalledWith(textarea);
+    expect(textarea.select).toHaveBeenCalled();
+    expect(removeChildSpy).toHaveBeenCalledWith(textarea);
   });
 });

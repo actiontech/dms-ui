@@ -29,8 +29,8 @@ describe('test base/DataExport/Detail/ExportDetail', () => {
     const { container } = superRender(<ExportDetail />);
     expect(container).toMatchSnapshot();
 
-    expect(getDataExportTaskSQLs).toBeCalledTimes(1);
-    expect(getDataExportTaskSQLs).toBeCalledWith({
+    expect(getDataExportTaskSQLs).toHaveBeenCalledTimes(1);
+    expect(getDataExportTaskSQLs).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
       data_export_task_uid: mockDataExportDetailRedux.curTaskID,
       page_size: 20,
@@ -40,8 +40,10 @@ describe('test base/DataExport/Detail/ExportDetail', () => {
     expect(container).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('概览'));
-    expect(mockDataExportDetailRedux.updateCurTaskID).toBeCalledTimes(1);
-    expect(mockDataExportDetailRedux.updateCurTaskID).toBeCalledWith(null);
+    expect(mockDataExportDetailRedux.updateCurTaskID).toHaveBeenCalledTimes(1);
+    expect(mockDataExportDetailRedux.updateCurTaskID).toHaveBeenCalledWith(
+      null
+    );
   });
 
   it('should match snapshot when curTaskID is undefined', async () => {
@@ -49,13 +51,13 @@ describe('test base/DataExport/Detail/ExportDetail', () => {
 
     const { container } = superRender(<ExportDetail />);
     expect(container).toMatchSnapshot();
-    expect(getDataExportTaskSQLs).toBeCalledTimes(0);
+    expect(getDataExportTaskSQLs).toHaveBeenCalledTimes(0);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(getAllBySelector('.db-service-segmented-label-text')[1]);
 
-    expect(mockDataExportDetailRedux.updateCurTaskID).toBeCalledTimes(1);
-    expect(mockDataExportDetailRedux.updateCurTaskID).toBeCalledWith(
+    expect(mockDataExportDetailRedux.updateCurTaskID).toHaveBeenCalledTimes(1);
+    expect(mockDataExportDetailRedux.updateCurTaskID).toHaveBeenCalledWith(
       mockDataExportDetailRedux.taskInfos[1].task_uid
     );
   });

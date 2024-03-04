@@ -76,7 +76,7 @@ describe('lib/EditText', () => {
       fireEvent.focusOut(textareaEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(onChangeFn).toBeCalledTimes(1);
+    expect(onChangeFn).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 
@@ -109,7 +109,7 @@ describe('lib/EditText', () => {
     );
     await jest.advanceTimersByTime(300);
     // not excute onEndFn
-    // expect(onEndFn).toBeCalledTimes(1);
+    // expect(onEndFn).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 
@@ -133,7 +133,7 @@ describe('lib/EditText', () => {
       fireEvent.focusOut(textareaEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(onChangeFn).toBeCalledTimes(1);
+    expect(onChangeFn).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 
@@ -157,7 +157,7 @@ describe('lib/EditText', () => {
     );
     await jest.advanceTimersByTime(300);
     // not excute onEndFn
-    // expect(onEndFn).toBeCalledTimes(1);
+    // expect(onEndFn).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 });

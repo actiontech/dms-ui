@@ -54,7 +54,7 @@ describe('lib/CopyIcon', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(execCommandFn).toHaveBeenCalledWith('copy');
-    expect(execCommandFn).toBeCalledTimes(1);
+    expect(execCommandFn).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
     execCommandFn.mockRestore();
   });
@@ -74,8 +74,8 @@ describe('lib/CopyIcon', () => {
       fireEvent.click(copyEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(mockCopyTextByTextarea).toBeCalledTimes(1);
-    expect(mockCopyTextByTextarea).toBeCalledWith(textVal);
+    expect(mockCopyTextByTextarea).toHaveBeenCalledTimes(1);
+    expect(mockCopyTextByTextarea).toHaveBeenCalledWith(textVal);
     mockCopyTextByTextarea.mockRestore();
   });
 });

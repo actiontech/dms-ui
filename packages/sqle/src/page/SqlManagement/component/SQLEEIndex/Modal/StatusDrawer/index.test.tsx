@@ -71,7 +71,7 @@ describe('page/SqlManagement/StatusDrawer', () => {
     const ruleNames = (sqlManageListData.data[0].audit_result ?? [])
       .map((v) => v.rule_name ?? '')
       .filter((v) => !!v);
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       filter_rule_names: ruleNames.join(',')
     });
     expect(baseElement).toMatchSnapshot();
@@ -86,15 +86,15 @@ describe('page/SqlManagement/StatusDrawer', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(getBySelector('.closed-icon-custom'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledTimes(2);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.View_Audit_Result_Drawer,
         status: false
       }
     });
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: null
     });

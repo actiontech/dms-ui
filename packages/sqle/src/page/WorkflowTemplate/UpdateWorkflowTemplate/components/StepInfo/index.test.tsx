@@ -57,14 +57,14 @@ describe('page/WorkflowTemplate/StepInfo', () => {
       fireEvent.click(getBySelector('.add-review-node-icon button'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(addReviewMock).toBeCalledTimes(2);
+    expect(addReviewMock).toHaveBeenCalledTimes(2);
     await act(async () => jest.advanceTimersByTime(300));
     expect(getBySelector('.ant-card-body .ant-btn')).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-card-body .ant-btn'));
-    expect(removeReviewMock).toBeCalled();
+    expect(removeReviewMock).toHaveBeenCalled();
 
     expect(getAllBySelector('.ant-card').length).toBe(5);
     fireEvent.click(getAllBySelector('.ant-card')?.[0]);
-    expect(clickReviewMock).toBeCalledWith(0);
+    expect(clickReviewMock).toHaveBeenCalledWith(0);
   });
 });

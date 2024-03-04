@@ -28,6 +28,6 @@ describe('base/System/components/ConfigModifyBtn', () => {
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(btnEle);
-    expect(onClickFn).toBeCalled();
+    expect(onClickFn).toHaveBeenCalled();
   });
 });
