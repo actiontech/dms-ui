@@ -63,7 +63,9 @@ const ImportRuleTemplate: React.FC = () => {
     messageContextHolder,
     createLoading,
     startCreate,
-    finishCreate
+    finishCreate,
+    filteredRule,
+    setFilteredRule
   } = useImportRuleTemplateForm();
 
   const { projectName } = useCurrentProject();
@@ -202,6 +204,8 @@ const ImportRuleTemplate: React.FC = () => {
               title={t('ruleTemplate.importRuleTemplate.title')}
               form={ruleTemplateForm}
               activeRule={activeRule}
+              filteredRule={filteredRule}
+              updateFilteredRule={setFilteredRule}
               allRules={allRules ?? []}
               ruleListLoading={getAllRulesLoading}
               submitLoading={createLoading}

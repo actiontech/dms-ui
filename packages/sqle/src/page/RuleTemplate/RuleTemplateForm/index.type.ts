@@ -17,7 +17,9 @@ export type RuleTemplateFormProps = {
   ruleListLoading: boolean;
   activeRule: IRuleResV1[];
   allRules: IRuleResV1[];
+  filteredRule: IRuleResV1[];
   updateActiveRule: (value: IRuleResV1[]) => void;
+  updateFilteredRule: (value: IRuleResV1[]) => void;
   baseInfoFormSubmitLoading?: boolean;
   submitLoading: boolean;
   baseInfoSubmit: () => void;
