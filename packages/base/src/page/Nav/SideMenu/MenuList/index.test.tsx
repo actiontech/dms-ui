@@ -62,7 +62,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('SQL工作台'));
-    expect(navigateSpy).toBeCalledTimes(4);
+    expect(navigateSpy).toHaveBeenCalledTimes(4);
     expect(navigateSpy).nthCalledWith(4, `/cloudBeaver`);
 
     fireEvent.click(screen.getByText('数据导出'));

@@ -188,7 +188,7 @@ describe('sqle/Order/Common/AuditResultList/List', () => {
       auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetAuditTaskSQLs).toBeCalled();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(
@@ -218,7 +218,7 @@ describe('sqle/Order/Common/AuditResultList/List', () => {
       });
       await act(() => jest.advanceTimersByTime(3300));
     });
-    expect(requestUpdateAuditTaskSQLs).toBeCalledTimes(1);
+    expect(requestUpdateAuditTaskSQLs).toHaveBeenCalledTimes(1);
 
     fireEvent.click(
       getAllBySelector(

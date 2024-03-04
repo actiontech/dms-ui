@@ -47,7 +47,7 @@ describe('sqle/order/hooks/useAuditResultRuleInfo', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(result.current.ruleInfo).toEqual(undefined);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetRuleList).not.toBeCalled();
+    expect(requestGetRuleList).not.toHaveBeenCalled();
     expect(result.current.auditResultRuleInfo).toEqual([
       {
         db_type: 'mysql',

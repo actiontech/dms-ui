@@ -37,14 +37,14 @@ describe('test useNotificationContext', () => {
     const unsubscribeSpy = jest.spyOn(eventEmitter, 'unsubscribe');
     const { unmount } = renderHook(() => useNotificationContext());
 
-    expect(subscribeSpy).toBeCalledTimes(1);
+    expect(subscribeSpy).toHaveBeenCalledTimes(1);
     expect(subscribeSpy.mock.calls[0][0]).toBe(
       EmitterKey.OPEN_GLOBAL_NOTIFICATION
     );
 
     unmount();
-    expect(api.destroy).toBeCalledTimes(1);
-    expect(unsubscribeSpy).toBeCalledTimes(1);
+    expect(api.destroy).toHaveBeenCalledTimes(1);
+    expect(unsubscribeSpy).toHaveBeenCalledTimes(1);
     expect(unsubscribeSpy.mock.calls[0][0]).toBe(
       EmitterKey.OPEN_GLOBAL_NOTIFICATION
     );
@@ -59,7 +59,7 @@ describe('test useNotificationContext', () => {
       className: 'cls'
     });
 
-    expect(api.success).toBeCalledTimes(1);
+    expect(api.success).toHaveBeenCalledTimes(1);
     expect(api.success.mock.calls[0][0]).toMatchSnapshot();
 
     result.current.openNotification('error', {
@@ -68,7 +68,7 @@ describe('test useNotificationContext', () => {
       className: 'cls'
     });
 
-    expect(api.error).toBeCalledTimes(1);
+    expect(api.error).toHaveBeenCalledTimes(1);
     expect(api.error.mock.calls[0][0]).toMatchSnapshot();
     expect(result.current.notificationContextHolder).toEqual(contextHolder);
 

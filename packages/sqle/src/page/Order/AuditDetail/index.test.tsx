@@ -281,7 +281,7 @@ describe('sqle/Order/AuditDetail', () => {
     expect(recordItem.length).toBe(2);
     fireEvent.click(recordItem[1]);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_exec_status: undefined,
       no_duplicate: false,
       page_index: '1',
@@ -341,7 +341,7 @@ describe('sqle/Order/AuditDetail', () => {
     );
     fireEvent.click(segmentItems[1]);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_exec_status: undefined,
       no_duplicate: false,
       page_index: '1',
@@ -357,7 +357,7 @@ describe('sqle/Order/AuditDetail', () => {
     expect(paginationItems.length).toBe(3);
     fireEvent.click(paginationItems[2]);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_exec_status: undefined,
       no_duplicate: false,
       page_index: '3',
@@ -366,7 +366,7 @@ describe('sqle/Order/AuditDetail', () => {
     });
     fireEvent.click(screen.getByText('数据去重'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_exec_status: undefined,
       no_duplicate: true,
       page_index: '1',

@@ -105,12 +105,12 @@ describe('base/System/LoginConnection/Oauth', () => {
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(0));
 
-      expect(requestUpdateOauth2Configuration).toBeCalledTimes(1);
+      expect(requestUpdateOauth2Configuration).toHaveBeenCalledTimes(1);
       expect(requestUpdateOauth2Configuration).nthCalledWith(1, {
         oauth2: { ...oauthConfig, enable_oauth2: true }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetOauth2Configuration).toBeCalledTimes(2);
+      expect(requestGetOauth2Configuration).toHaveBeenCalledTimes(2);
 
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
@@ -204,7 +204,7 @@ describe('base/System/LoginConnection/Oauth', () => {
       await act(async () => jest.advanceTimersByTime(0));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestUpdateOauth2Configuration).toBeCalledTimes(2);
+      expect(requestUpdateOauth2Configuration).toHaveBeenCalledTimes(2);
       expect(requestUpdateOauth2Configuration).nthCalledWith(2, {
         oauth2: {
           access_token_tag: 'access Token Key Name',
@@ -224,7 +224,7 @@ describe('base/System/LoginConnection/Oauth', () => {
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetOauth2Configuration).toBeCalledTimes(3);
+      expect(requestGetOauth2Configuration).toHaveBeenCalledTimes(3);
     });
   });
 });
