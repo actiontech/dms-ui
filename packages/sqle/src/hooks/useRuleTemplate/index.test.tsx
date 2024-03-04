@@ -14,6 +14,7 @@ import {
 import { Select } from 'antd';
 import useRuleTemplate from '.';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('useRuleTemplate', () => {
   const projectName = 'default';
@@ -302,5 +303,112 @@ describe('useRuleTemplate', () => {
 
     await screen.findAllByText('rule_template_name_oracle');
     expect(baseElementWithOptions).toMatchSnapshot();
+  });
+
+  test('should set list data when sync request return data', async () => {
+    const requestSpy = mockRequest();
+    requestSpy.mockImplementation(() =>
+      resolveThreeSecond([
+        {
+          rule_template_name: 'rule_template_name1',
+          rule_template_id: '1',
+          db_type: 'mysql'
+        }
+      ])
+    );
+    const { result, waitForNextUpdate } = renderHook(() => useRuleTemplate());
+    expect(result.current.loading).toBe(false);
+    expect(result.current.ruleTemplateList).toEqual([]);
+
+    act(() => {
+      result.current.updateRuleTemplateListSync(projectName);
+    });
+
+    expect(result.current.loading).toBe(true);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
+      project_name: projectName
+    });
+    expect(result.current.ruleTemplateList).toEqual([]);
+
+    jest.advanceTimersByTime(3000);
+    await waitForNextUpdate();
+
+    expect(result.current.loading).toBe(false);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(result.current.ruleTemplateList).toEqual([
+      {
+        rule_template_name: 'rule_template_name1',
+        rule_template_id: '1',
+        db_type: 'mysql'
+      }
+    ]);
+    expect(result.current.ruleTemplateTipsOptions()).toEqual([]);
+    expect(result.current.ruleTemplateTipsOptions('all')).toEqual([
+      {
+        label: 'rule_template_name1',
+        value: 'rule_template_name1'
+      }
+    ]);
+    expect(result.current.ruleTemplateTipsOptions('mysql')).toEqual([
+      {
+        label: 'rule_template_name1',
+        value: 'rule_template_name1'
+      }
+    ]);
+  });
+
+  test('should set empty array when sync request response code is not equal success code', async () => {
+    const requestSpy = mockRequest();
+    requestSpy.mockImplementation(() =>
+      createSpySuccessResponse({ code: '500' })
+    );
+    const { result, waitForNextUpdate } = renderHook(() => useRuleTemplate());
+    expect(result.current.loading).toBe(false);
+    expect(result.current.ruleTemplateList).toEqual([]);
+
+    act(() => {
+      result.current.updateRuleTemplateListSync(projectName);
+    });
+
+    expect(result.current.loading).toBe(true);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
+      project_name: projectName
+    });
+    expect(result.current.ruleTemplateList).toEqual([]);
+
+    jest.advanceTimersByTime(3000);
+    await waitForNextUpdate();
+
+    expect(result.current.loading).toBe(false);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(result.current.ruleTemplateList).toEqual([]);
+  });
+
+  test('should set empty array when sync request response throw error', async () => {
+    const requestSpy = mockRequest();
+    requestSpy.mockImplementation(() => Promise.reject('error'));
+    const { result, waitForNextUpdate } = renderHook(() => useRuleTemplate());
+    expect(result.current.loading).toBe(false);
+    expect(result.current.ruleTemplateList).toEqual([]);
+
+    act(() => {
+      result.current.updateRuleTemplateListSync(projectName);
+    });
+
+    expect(result.current.loading).toBe(true);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
+      project_name: projectName
+    });
+    expect(result.current.ruleTemplateList).toEqual([]);
+
+    jest.advanceTimersByTime(3000);
+    await waitForNextUpdate();
+
+    expect(result.current.loading).toBe(false);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(result.current.ruleTemplateList).toEqual([]);
   });
 });

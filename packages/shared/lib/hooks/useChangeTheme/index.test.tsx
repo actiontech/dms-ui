@@ -3,6 +3,8 @@ import { act } from '@testing-library/react';
 
 import { SupportTheme } from '../../enum';
 import useChangeTheme from './useChangeTheme';
+import { mockCurrentUserReturn } from '../../testUtil/mockHook/data';
+import { mockUseCurrentUser } from '../../testUtil/mockHook/mockUseCurrentUser';
 
 describe('useChangeTheme', () => {
   const customRender = () => {
@@ -35,5 +37,15 @@ describe('useChangeTheme', () => {
     });
     expect(result.current.currentTheme).toBe(SupportTheme.LIGHT);
     expect(result.current.currentEditorTheme).toBe('vs');
+  });
+
+  it('set dark theme for default theme', async () => {
+    mockUseCurrentUser({ theme: SupportTheme.DARK });
+    const { result } = customRender();
+    act(() => {
+      result.current.changeTheme(SupportTheme.DARK);
+    });
+    expect(result.current.currentTheme).toBe(SupportTheme.DARK);
+    expect(result.current.currentEditorTheme).toBe('vs-dark');
   });
 });

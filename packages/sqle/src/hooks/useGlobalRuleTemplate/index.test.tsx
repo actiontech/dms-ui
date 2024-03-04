@@ -246,4 +246,45 @@ describe('useRuleTemplate', () => {
     await screen.findAllByText('rule_template_name_oracle');
     expect(baseElementWithOptions).toMatchSnapshot();
   });
+
+  test('should render tip options', async () => {
+    const requestSpy = mockRequest();
+    requestSpy.mockImplementation(() =>
+      resolveThreeSecond(mockMysqlRuleTemplate)
+    );
+    const { result, waitForNextUpdate } = renderHook(() => useRuleTemplate());
+    expect(result.current.loading).toBe(false);
+    expect(result.current.globalRuleTemplateList).toEqual([]);
+
+    act(() => {
+      result.current.updateGlobalRuleTemplateList();
+    });
+
+    expect(result.current.loading).toBe(true);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+
+    expect(result.current.globalRuleTemplateList).toEqual([]);
+
+    jest.advanceTimersByTime(3000);
+    await waitForNextUpdate();
+
+    expect(result.current.loading).toBe(false);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(result.current.globalRuleTemplateList).toEqual(
+      mockMysqlRuleTemplate
+    );
+    expect(result.current.globalRuleTemplateTipsOptions()).toEqual([]);
+    expect(result.current.globalRuleTemplateTipsOptions('all')).toEqual([
+      {
+        label: 'rule_template_name1',
+        value: 'rule_template_name1'
+      }
+    ]);
+    expect(result.current.globalRuleTemplateTipsOptions('mysql')).toEqual([
+      {
+        label: 'rule_template_name1',
+        value: 'rule_template_name1'
+      }
+    ]);
+  });
 });
