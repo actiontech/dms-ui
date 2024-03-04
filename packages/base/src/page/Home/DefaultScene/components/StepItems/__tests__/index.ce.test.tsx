@@ -20,7 +20,9 @@ describe('test base/Home/StepItems', () => {
     superRender(<StepItems steps={steps_admin} />);
 
     fireEvent.click(screen.getByText('发起导出工单'));
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(`project/${projectID}/data/export`);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `project/${projectID}/data/export`
+    );
   });
 });

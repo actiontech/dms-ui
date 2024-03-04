@@ -57,7 +57,7 @@ describe('page/Login-ee', () => {
     const requestGetOauth2Tip = dms.getOauth2Tips();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetOauth2Tip).toBeCalledTimes(1);
+    expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
     expect(screen.queryByText('已阅读并同意')).toBeInTheDocument();
     expect(screen.queryByText('用户协议')).toBeInTheDocument();
     expect(screen.queryByText('Login With Oauth2')).toBeInTheDocument();
@@ -77,7 +77,7 @@ describe('page/Login-ee', () => {
 
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetOauth2Tip).toBeCalledTimes(1);
+    expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
 
     fireEvent.change(getBySelector('#username', baseElement), {
       target: {
@@ -113,7 +113,7 @@ describe('page/Login-ee', () => {
 
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestGetOauth2Tip).toBeCalledTimes(1);
+      expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
 
       fireEvent.change(getBySelector('#username', baseElement), {
         target: {
@@ -131,24 +131,24 @@ describe('page/Login-ee', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestLogin).toBeCalledTimes(1);
-      expect(requestLogin).toBeCalledWith({
+      expect(requestLogin).toHaveBeenCalledTimes(1);
+      expect(requestLogin).toHaveBeenCalledWith({
         session: {
           username: 'admin1',
           password: 'admin1'
         }
       });
-      expect(dispatchSpy).toBeCalledTimes(1);
-      expect(dispatchSpy).toBeCalledWith({
+      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledWith({
         type: 'user/updateToken',
         payload: {
           token: `Bearer ${UserInfo.token}`
         }
       });
-      expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith('/index1');
-      expect(LocalStorageWrapperSet).toBeCalled();
-      expect(LocalStorageWrapperSet).toBeCalledWith(
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith('/index1');
+      expect(LocalStorageWrapperSet).toHaveBeenCalled();
+      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
         StorageKey.SHOW_COMPANY_NOTICE,
         CompanyNoticeDisplayStatusEnum.NotDisplayed
       );
@@ -167,7 +167,7 @@ describe('page/Login-ee', () => {
 
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestGetOauth2Tip).toBeCalledTimes(1);
+      expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
 
       fireEvent.change(getBySelector('#username', baseElement), {
         target: {
@@ -185,26 +185,26 @@ describe('page/Login-ee', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestLogin).toBeCalledTimes(1);
-      expect(requestLogin).toBeCalledWith({
+      expect(requestLogin).toHaveBeenCalledTimes(1);
+      expect(requestLogin).toHaveBeenCalledWith({
         session: {
           username: 'admin1',
           password: 'admin1'
         }
       });
-      expect(dispatchSpy).toBeCalledTimes(1);
-      expect(dispatchSpy).toBeCalledWith({
+      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledWith({
         type: 'user/updateToken',
         payload: {
           token: `Bearer ${UserInfo.token}`
         }
       });
-      expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith(
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith(
         `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
       );
-      expect(LocalStorageWrapperSet).toBeCalled();
-      expect(LocalStorageWrapperSet).toBeCalledWith(
+      expect(LocalStorageWrapperSet).toHaveBeenCalled();
+      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
         StorageKey.SHOW_COMPANY_NOTICE,
         CompanyNoticeDisplayStatusEnum.NotDisplayed
       );

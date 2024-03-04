@@ -51,8 +51,8 @@ describe('useRuleType', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       db_type: 'oracle'
     });
     expect(result.current.ruleTypeList).toEqual([]);
@@ -61,7 +61,7 @@ describe('useRuleType', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual(ruleTypes);
     cleanup();
 
@@ -93,14 +93,14 @@ describe('useRuleType', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual(ruleTypes);
     requestSpy.mockClear();
     requestSpy.mockImplementation(() => resolveErrorThreeSecond(ruleTypes));
@@ -109,14 +109,14 @@ describe('useRuleType', () => {
       result.current.updateRuleTypeList('oracle');
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual(ruleTypes);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual([]);
   });
 
@@ -132,14 +132,14 @@ describe('useRuleType', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual(ruleTypes);
     requestSpy.mockClear();
     requestSpy.mockImplementation(() => rejectThreeSecond(ruleTypes));
@@ -148,14 +148,14 @@ describe('useRuleType', () => {
       result.current.updateRuleTypeList('mysql');
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual(ruleTypes);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTypeList).toEqual([]);
   });
 });

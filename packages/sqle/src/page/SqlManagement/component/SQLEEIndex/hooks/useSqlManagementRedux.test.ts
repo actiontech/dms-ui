@@ -51,8 +51,8 @@ describe('SqlManagement/useSqlManagementRedux', () => {
       result.current.initModalStatus({ test: true });
       jest.advanceTimersByTime(3000);
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/initModalStatus',
       payload: {
         modalStatus: {
@@ -68,8 +68,8 @@ describe('SqlManagement/useSqlManagementRedux', () => {
       result.current.setSelectData(sqlManageListData?.data[0] as ISqlManage);
       jest.advanceTimersByTime(3000);
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: sqlManageListData?.data[0] as ISqlManage
     });
@@ -81,8 +81,8 @@ describe('SqlManagement/useSqlManagementRedux', () => {
       result.current.updateModalStatus('test', true);
       jest.advanceTimersByTime(3000);
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: 'test',
@@ -97,8 +97,8 @@ describe('SqlManagement/useSqlManagementRedux', () => {
       result.current.setBatchSelectData(sqlManageListData.data as ISqlManage[]);
       jest.advanceTimersByTime(3000);
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementBatchSelectData',
       payload: sqlManageListData.data as ISqlManage[]
     });

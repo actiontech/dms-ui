@@ -77,6 +77,6 @@ describe('lib/BasicEmpty', () => {
       fireEvent.click(refreshBtn);
       await jest.advanceTimersByTime(300);
     });
-    expect(onRefreshFn).toBeCalledTimes(1);
+    expect(onRefreshFn).toHaveBeenCalledTimes(1);
   });
 });

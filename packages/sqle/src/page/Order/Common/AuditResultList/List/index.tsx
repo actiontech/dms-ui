@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 
 import task from '@actiontech/shared/lib/api/sqle/service/task';
@@ -31,7 +31,7 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
     auditResultDrawerVisibility,
     { setFalse: closeAuditResultDrawer, setTrue: openAuditResultDrawer }
   ] = useBoolean();
-  const { pagination, tableChange } = useTableRequestParams();
+  const { pagination, tableChange, setPagination } = useTableRequestParams();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
@@ -82,7 +82,7 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
       ),
     {
       ready: typeof taskID === 'string',
-      refreshDeps: [pagination, duplicate, auditLevelFilterValue, taskID],
+      refreshDeps: [pagination, taskID],
       onSuccess(res) {
         updateTaskRecordTotalNum?.(taskID ?? '', res.total ?? 0);
       },
@@ -91,6 +91,15 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
       }
     }
   );
+
+  // @feature: useTableRequestParams 整合自定义filter info
+  useEffect(() => {
+    setPagination({
+      page_index: 1,
+      page_size: pagination.page_size
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auditLevelFilterValue, duplicate]);
 
   return (
     <>
@@ -105,7 +114,8 @@ const AuditResultForCreateList: React.FC<AuditResultForCreateListProps> = ({
         dataSource={data?.list}
         onChange={tableChange}
         pagination={{
-          total: data?.total ?? 0
+          total: data?.total ?? 0,
+          current: pagination.page_index ?? 1
         }}
         actions={AuditResultForCreateOrderActions(handleClickAnalyze)}
       />

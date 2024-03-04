@@ -47,7 +47,7 @@ describe('base/MemberGroupList', () => {
   it('render member group table', async () => {
     const { baseElement } = renderWithReduxAndTheme(<MemberGroupList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberGroupListSpy).toBeCalledTimes(1);
+    expect(memberGroupListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('member-group1')).toBeInTheDocument();
     expect(screen.getByText('member-group2')).toBeInTheDocument();
@@ -104,12 +104,12 @@ describe('base/MemberGroupList', () => {
   it('should refresh member group table when emit "DMS_Refresh_Member_List" event', async () => {
     renderWithReduxAndTheme(<MemberGroupList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberGroupListSpy).toBeCalledTimes(1);
+    expect(memberGroupListSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
       EventEmitter.emit(EmitterKey.DMS_Refresh_Member_List)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberGroupListSpy).toBeCalledTimes(2);
+    expect(memberGroupListSpy).toHaveBeenCalledTimes(2);
   });
 
   it('should send delete member request', async () => {
@@ -123,7 +123,7 @@ describe('base/MemberGroupList', () => {
     const deleteUserSpy = member.deleteMemberGroup();
     renderWithReduxAndTheme(<MemberGroupList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberGroupListSpy).toBeCalledTimes(1);
+    expect(memberGroupListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(
@@ -131,8 +131,8 @@ describe('base/MemberGroupList', () => {
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(deleteUserSpy).toBeCalledTimes(1);
-    expect(deleteUserSpy).toBeCalledWith({
+    expect(deleteUserSpy).toHaveBeenCalledTimes(1);
+    expect(deleteUserSpy).toHaveBeenCalledWith({
       member_group_uid: memberGroupList[1].uid,
       project_uid: mockProjectInfo.projectID
     });
@@ -140,7 +140,7 @@ describe('base/MemberGroupList', () => {
       screen.getByText(`删除成员组${memberGroupName}成功`)
     ).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberGroupListSpy).toBeCalled();
+    expect(memberGroupListSpy).toHaveBeenCalled();
   });
   it('should dispatch action when edit member group info', async () => {
     memberGroupListSpy.mockClear();
@@ -151,10 +151,10 @@ describe('base/MemberGroupList', () => {
     );
     renderWithReduxAndTheme(<MemberGroupList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberGroupListSpy).toBeCalledTimes(1);
+    expect(memberGroupListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       type: 'member/updateSelectMemberGroup',
       payload: {

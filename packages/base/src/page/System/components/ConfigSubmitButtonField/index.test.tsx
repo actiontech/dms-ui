@@ -39,6 +39,6 @@ describe('base/System/components/ConfigSubmitButtonField', () => {
     expect(screen.getByText('取 消')).toBeInTheDocument();
     fireEvent.click(screen.getByText('取 消'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(handleClickCancelFn).toBeCalled();
+    expect(handleClickCancelFn).toHaveBeenCalled();
   });
 });

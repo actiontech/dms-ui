@@ -82,9 +82,9 @@ describe('page/SyncDataSource/SyncTaskForm', () => {
     const requestTemplateProject = ruleTemplate.getProjectRuleTemplateTips();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(requestTaskSourceList).toBeCalled();
-    expect(requestTemplateTips).toBeCalled();
-    expect(requestTemplateProject).toBeCalled();
+    expect(requestTaskSourceList).toHaveBeenCalled();
+    expect(requestTemplateTips).toHaveBeenCalled();
+    expect(requestTemplateProject).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -96,7 +96,7 @@ describe('page/SyncDataSource/SyncTaskForm', () => {
     const typeEle = getBySelector('#source');
     fireEvent.mouseDown(typeEle, baseElement);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskSourceList).toBeCalled();
+    expect(requestTaskSourceList).toHaveBeenCalled();
     fireEvent.click(getBySelector('div[title="source1"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
@@ -111,7 +111,7 @@ describe('page/SyncDataSource/SyncTaskForm', () => {
     const sourceEle = getBySelector('#source');
     fireEvent.mouseDown(sourceEle, baseElement);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTaskSourceList).toBeCalled();
+    expect(requestTaskSourceList).toHaveBeenCalled();
     fireEvent.click(getBySelector('div[title="source1"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
 
@@ -124,8 +124,8 @@ describe('page/SyncDataSource/SyncTaskForm', () => {
     expect(baseElement).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(6300));
-    expect(requestTemplateTips).toBeCalled();
-    expect(requestTemplateProject).toBeCalled();
+    expect(requestTemplateTips).toHaveBeenCalled();
+    expect(requestTemplateProject).toHaveBeenCalled();
 
     const ruleTemplateEle = getBySelector('#ruleTemplateName');
     fireEvent.mouseDown(ruleTemplateEle, baseElement);

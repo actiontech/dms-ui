@@ -62,7 +62,7 @@ describe('page/SqlManagement/AssignmentSingle', () => {
     const submitRequest = sqlManage.batchUpdateSqlManage();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(optionRequest).toBeCalledWith({
+    expect(optionRequest).toHaveBeenCalledWith({
       filter_project: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
@@ -74,7 +74,7 @@ describe('page/SqlManagement/AssignmentSingle', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(submitRequest).toBeCalledWith({
+    expect(submitRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       sql_manage_id_list: [sqlManageListData.data[0].id],
       assignees: [userTipListData[0].user_id]
@@ -82,20 +82,22 @@ describe('page/SqlManagement/AssignmentSingle', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('指派负责人成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(dispatchSpy).toBeCalledTimes(2);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Single,
         status: false
       }
     });
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: null
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_SQL_Management);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_SQL_Management
+    );
   });
 
   it('close modal by click button', async () => {
@@ -105,15 +107,15 @@ describe('page/SqlManagement/AssignmentSingle', () => {
     expect(screen.getByText('指派负责人')).toBeInTheDocument();
     fireEvent.click(screen.getByText('取 消'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledTimes(2);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Single,
         status: false
       }
     });
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: null
     });

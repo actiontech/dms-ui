@@ -25,6 +25,6 @@ describe('BackButton', () => {
     render(<BackButton />);
     fireEvent.click(screen.getByText('返 回'));
 
-    expect(goBack).toBeCalledTimes(1);
+    expect(goBack).toHaveBeenCalledTimes(1);
   });
 });

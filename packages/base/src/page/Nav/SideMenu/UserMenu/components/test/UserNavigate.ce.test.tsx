@@ -73,8 +73,8 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
     fireEvent.click(screen.getByText('个人中心'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith('/account');
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith('/account');
   });
 
   it('render snap when click logout btn', async () => {
@@ -87,9 +87,9 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
     expect(screen.getByText('退出登录')).toBeInTheDocument();
     fireEvent.click(screen.getByText('退出登录'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(requestDelSession).toBeCalled();
+    expect(requestDelSession).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith('/login', { replace: true });
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
   });
 });

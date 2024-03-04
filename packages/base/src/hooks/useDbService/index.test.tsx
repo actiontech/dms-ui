@@ -41,8 +41,8 @@ describe('useDbService', () => {
           ListDBServiceTipsFunctionalModuleEnum.create_export_task
       })
     );
-    expect(listDbServicesSpy).toBeCalled();
-    expect(listDbServicesSpy).toBeCalledWith({
+    expect(listDbServicesSpy).toHaveBeenCalled();
+    expect(listDbServicesSpy).toHaveBeenCalledWith({
       functional_module:
         ListDBServiceTipsFunctionalModuleEnum.create_export_task,
       project_uid: projectID

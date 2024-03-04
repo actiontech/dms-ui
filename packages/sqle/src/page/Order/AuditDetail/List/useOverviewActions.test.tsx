@@ -101,8 +101,8 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList/useOverviewActions',
     expect(screen.getByText('sqlExecuteHandle')).toBeInTheDocument();
     fireEvent.click(screen.getByText('sqlExecuteHandle'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestSqlExecute).toBeCalled();
-    expect(requestSqlExecute).toBeCalledWith({
+    expect(requestSqlExecute).toHaveBeenCalled();
+    expect(requestSqlExecute).toHaveBeenCalledWith({
       workflow_id: workflowID,
       task_id: 'params string for mock component',
       project_name: projectName
@@ -115,8 +115,8 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList/useOverviewActions',
     expect(screen.getByText('sqlTerminateHandle')).toBeInTheDocument();
     fireEvent.click(screen.getByText('sqlTerminateHandle'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestSqlTerminateTime).toBeCalled();
-    expect(requestSqlTerminateTime).toBeCalledWith({
+    expect(requestSqlTerminateTime).toHaveBeenCalled();
+    expect(requestSqlTerminateTime).toHaveBeenCalledWith({
       workflow_id: workflowID,
       task_id: 'params string for mock component',
       project_name: projectName
@@ -129,8 +129,8 @@ describe('sqle/Order/AuditDetail/OrderDetailAuditResultList/useOverviewActions',
     expect(screen.getByText('scheduleTimeHandle')).toBeInTheDocument();
     fireEvent.click(screen.getByText('scheduleTimeHandle'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestScheduleTime).toBeCalled();
-    expect(requestScheduleTime).toBeCalledWith({
+    expect(requestScheduleTime).toHaveBeenCalled();
+    expect(requestScheduleTime).toHaveBeenCalledWith({
       workflow_id: workflowID,
       task_id: '',
       schedule_time: 'params string for mock component',

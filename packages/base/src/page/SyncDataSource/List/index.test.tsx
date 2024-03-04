@@ -57,7 +57,7 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestList).toBeCalled();
+    expect(requestList).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -67,7 +67,7 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestList).toBeCalled();
+    expect(requestList).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -107,7 +107,7 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestTableList).toBeCalled();
+    expect(requestTableList).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -136,8 +136,8 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/project/${projectID}/syncDataSource/update/1234`
     );
   });
@@ -173,14 +173,14 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('正在删除任务...')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestDel).toBeCalled();
-    expect(requestDel).toBeCalledWith({
+    expect(requestDel).toHaveBeenCalled();
+    expect(requestDel).toHaveBeenCalledWith({
       database_source_service_uid: '1234',
       project_uid: projectID
     });
     expect(screen.getByText('删除任务成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTableList).toBeCalled();
+    expect(requestTableList).toHaveBeenCalled();
   });
 
   it('render async btn action', async () => {
@@ -211,14 +211,14 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('正在同步任务...')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestSyncTask).toBeCalled();
-    expect(requestSyncTask).toBeCalledWith({
+    expect(requestSyncTask).toHaveBeenCalled();
+    expect(requestSyncTask).toHaveBeenCalledWith({
       database_source_service_uid: '1234',
       project_uid: projectID
     });
     expect(screen.getByText('同步任务成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTableList).toBeCalled();
+    expect(requestTableList).toHaveBeenCalled();
   });
 
   // 同 步

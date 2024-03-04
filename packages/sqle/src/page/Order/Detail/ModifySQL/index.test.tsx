@@ -82,13 +82,13 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     expect(screen.getByText('返回工单详情')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回工单详情'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(cancelFn).toBeCalled();
+    expect(cancelFn).toHaveBeenCalled();
 
     expect(screen.getByText('提交工单')).toBeInTheDocument();
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(requestUpdateWorkflow).toBeCalled();
-    expect(requestUpdateWorkflow).toBeCalledWith({
+    expect(requestUpdateWorkflow).toHaveBeenCalled();
+    expect(requestUpdateWorkflow).toHaveBeenCalledWith({
       project_name: projectName,
       workflow_id: workflowID,
       task_ids: [2]
@@ -108,7 +108,7 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     expect(screen.getByText('审 核')).toBeInTheDocument();
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(auditFn).toBeCalled();
+    expect(auditFn).toHaveBeenCalled();
   });
 
   it('render snap when click input sql', async () => {
@@ -173,7 +173,7 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(refreshOrderFn).not.toBeCalled();
+    expect(refreshOrderFn).not.toHaveBeenCalled();
   });
 
   it('click submit when modified order tasks is empty', async () => {
@@ -194,12 +194,12 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAuditTaskSQLsSpy).toBeCalledTimes(1);
+    expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(
       screen.getByText('不能使用审核结果为空的SQL更新当前工单')
     ).toBeInTheDocument();
-    expect(refreshOrderFn).not.toBeCalled();
+    expect(refreshOrderFn).not.toHaveBeenCalled();
   });
 });

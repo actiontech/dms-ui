@@ -21,6 +21,6 @@ describe('page/Home/CustomToolbar', () => {
       )
     );
     fireEvent.click(getBySelector('.ant-btn'));
-    expect(clickMock).toBeCalled();
+    expect(clickMock).toHaveBeenCalled();
   });
 });

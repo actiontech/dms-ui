@@ -15,7 +15,7 @@ import MockDate from 'mockdate';
 describe('test base/DataExport/Detail/OverviewList', () => {
   beforeEach(() => {
     MockDate.set('2024-01-30 10:00:00');
-    jest.useFakeTimers();
+    jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
     mockUseCurrentUser({
       uid: mockDataExportDetailRedux.workflowInfo.create_user?.uid
@@ -27,7 +27,7 @@ describe('test base/DataExport/Detail/OverviewList', () => {
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();
-    jest.useFakeTimers();
+    jest.useRealTimers();
     MockDate.reset();
   });
 
@@ -37,8 +37,8 @@ describe('test base/DataExport/Detail/OverviewList', () => {
     expect(container).toMatchSnapshot();
 
     fireEvent.click(getAllBySelector('.ant-table-row')[0]);
-    expect(mockDataExportDetailRedux.updateCurTaskID).toBeCalledTimes(1);
-    expect(mockDataExportDetailRedux.updateCurTaskID).toBeCalledWith(
+    expect(mockDataExportDetailRedux.updateCurTaskID).toHaveBeenCalledTimes(1);
+    expect(mockDataExportDetailRedux.updateCurTaskID).toHaveBeenCalledWith(
       mockDataExportDetailRedux.taskInfos[0].task_uid
     );
   });
@@ -59,14 +59,14 @@ describe('test base/DataExport/Detail/OverviewList', () => {
     expect(screen.queryByText('操作')).toBeInTheDocument();
 
     fireEvent.click(screen.getAllByText('下载数据')[0]);
-    expect(mockDataExportDetailRedux.updateCurTaskID).not.toBeCalled();
+    expect(mockDataExportDetailRedux.updateCurTaskID).not.toHaveBeenCalled();
 
     expect(screen.getAllByText('下载数据')[1].closest('button')).toHaveClass(
       'ant-btn-loading'
     );
 
-    expect(downloadSpy).toBeCalledTimes(1);
-    expect(downloadSpy).toBeCalledWith(
+    expect(downloadSpy).toHaveBeenCalledTimes(1);
+    expect(downloadSpy).toHaveBeenCalledWith(
       {
         project_uid: mockProjectInfo.projectID,
         data_export_task_uid: mockDataExportDetailRedux.taskInfos[0].task_uid
@@ -88,7 +88,7 @@ describe('test base/DataExport/Detail/OverviewList', () => {
 
     expect(screen.getAllByText('下载数据')[1].closest('button')).toBeDisabled();
 
-    expect(downloadSpy).toBeCalledTimes(0);
+    expect(downloadSpy).toHaveBeenCalledTimes(0);
 
     MockDate.reset();
   });

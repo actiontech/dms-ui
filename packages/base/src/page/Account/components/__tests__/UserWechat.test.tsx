@@ -56,17 +56,17 @@ describe('test base/page/Account/UserWechat', () => {
       keyCode: 13
     });
 
-    expect(updateCurrentUserSpy).toBeCalledTimes(1);
-    expect(updateCurrentUserSpy).toBeCalledWith({
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(1);
+    expect(updateCurrentUserSpy).toHaveBeenCalledWith({
       current_user: {
         wxid: 'test_id'
       }
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(messageSuccessSpy).toBeCalledTimes(1);
-    expect(messageSuccessSpy).toBeCalledWith('微信号更新成功');
-    expect(updateCurrentUserSpy).toBeCalledTimes(1);
+    expect(messageSuccessSpy).toHaveBeenCalledTimes(1);
+    expect(messageSuccessSpy).toHaveBeenCalledWith('微信号更新成功');
+    expect(updateCurrentUserSpy).toHaveBeenCalledTimes(1);
 
     expect(container).toMatchSnapshot();
   });

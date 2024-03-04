@@ -44,7 +44,7 @@ describe('ReportStatistics/DatabaseTypeOrder', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('render chart snap when api return empty', async () => {
@@ -52,7 +52,7 @@ describe('ReportStatistics/DatabaseTypeOrder', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('render empty count for workflow', async () => {
@@ -72,7 +72,7 @@ describe('ReportStatistics/DatabaseTypeOrder', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('render label content', async () => {

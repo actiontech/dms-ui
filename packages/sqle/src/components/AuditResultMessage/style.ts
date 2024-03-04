@@ -43,4 +43,15 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
     margin-left: 8px;
     font-size: 12px;
   }
+
+  &.has-delete-rule-wrapper {
+    position: relative;
+    padding-top: 26px !important;
+
+    .message-rule-disabled {
+      position: absolute;
+      top: 4px;
+      right: -4px;
+    }
+  }
 `;

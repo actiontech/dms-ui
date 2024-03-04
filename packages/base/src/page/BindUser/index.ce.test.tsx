@@ -86,8 +86,8 @@ describe('page/BindUser-ce', () => {
         fireEvent.click(getBySelector('.login-btn', baseElement));
         await act(async () => jest.advanceTimersByTime(300));
       });
-      expect(eventEmitSpy).toBeCalledTimes(1);
-      expect(eventEmitSpy).toBeCalledWith(
+      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
@@ -124,21 +124,21 @@ describe('page/BindUser-ce', () => {
       });
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestFn).toBeCalled();
-      expect(requestFn).toBeCalledWith({
+      expect(requestFn).toHaveBeenCalled();
+      expect(requestFn).toHaveBeenCalledWith({
         oauth2_token: 'oauth2_token_val',
         user_name: 'oauth2_admin',
         pwd: 'oauth2_admin'
       });
-      expect(dispatchSpy).toBeCalledTimes(1);
-      expect(dispatchSpy).toBeCalledWith({
+      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledWith({
         type: 'user/updateToken',
         payload: {
           token: 'Bearer token'
         }
       });
-      expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith('/');
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith('/');
     });
   });
 
@@ -149,8 +149,8 @@ describe('page/BindUser-ce', () => {
       const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
       customRender();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(eventEmitSpy).toBeCalledTimes(1);
-      expect(eventEmitSpy).toBeCalledWith(
+      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
@@ -174,8 +174,8 @@ describe('page/BindUser-ce', () => {
       const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
       customRender();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(eventEmitSpy).toBeCalledTimes(1);
-      expect(eventEmitSpy).toBeCalledWith(
+      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
@@ -191,15 +191,15 @@ describe('page/BindUser-ce', () => {
       window.history.pushState({}, 'Test Page Title', `/user/bind?${search}`);
       customRender();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(dispatchSpy).toBeCalledTimes(1);
-      expect(dispatchSpy).toBeCalledWith({
+      expect(dispatchSpy).toHaveBeenCalledTimes(1);
+      expect(dispatchSpy).toHaveBeenCalledWith({
         type: 'user/updateToken',
         payload: {
           token: 'Bearer 111111'
         }
       });
-      expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith('/');
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith('/');
     });
   });
 });

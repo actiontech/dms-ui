@@ -21,7 +21,7 @@ describe('sqle/hooks/useRuleTemplateForm/useUpdateRuleTemplateForm', () => {
     const { result } = renderHooksWithRedux(useUpdateRuleTemplateForm, {});
     expect(result.current.getAllRulesLoading).toEqual(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRulesSpy).toBeCalledTimes(1);
+    expect(getRulesSpy).toHaveBeenCalledTimes(1);
     expect(result.current.activeRule).toEqual([]);
     expect(result.current.getAllRulesLoading).toEqual(false);
     expect(result.current.databaseRule).toEqual([]);
@@ -43,8 +43,8 @@ describe('sqle/hooks/useRuleTemplateForm/useUpdateRuleTemplateForm', () => {
       await jest.advanceTimersByTime(3000);
     });
     expect(result.current.getAllRulesLoading).toEqual(false);
-    expect(getRulesSpy).toBeCalledTimes(2);
-    expect(getRulesSpy).toBeCalledWith({
+    expect(getRulesSpy).toHaveBeenCalledTimes(2);
+    expect(getRulesSpy).toHaveBeenCalledWith({
       fuzzy_keyword_rule: 'test'
     });
   });

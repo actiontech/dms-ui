@@ -45,13 +45,13 @@ describe('test base/page/project/detail/notFoundRecentlyProject/ProjectSelectorM
 
   it('should executed "onModalCancel" and "onModalOk" when clicked modal footer button', () => {
     customRender();
-    expect(param.onModalCancel).toBeCalledTimes(0);
-    expect(param.onModalOk).toBeCalledTimes(0);
+    expect(param.onModalCancel).toHaveBeenCalledTimes(0);
+    expect(param.onModalOk).toHaveBeenCalledTimes(0);
 
     fireEvent.click(screen.getByText('取 消'));
-    expect(param.onModalCancel).toBeCalledTimes(1);
+    expect(param.onModalCancel).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('确 认'));
-    expect(param.onModalOk).toBeCalledTimes(1);
+    expect(param.onModalOk).toHaveBeenCalledTimes(1);
   });
 });

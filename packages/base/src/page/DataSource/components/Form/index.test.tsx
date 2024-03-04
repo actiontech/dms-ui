@@ -96,7 +96,7 @@ describe('page/DataSource/DataSourceForm', () => {
     const typeEle = getBySelector('#type');
     fireEvent.mouseDown(typeEle, baseElement);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestListDBServiceDriver).toBeCalled();
+    expect(requestListDBServiceDriver).toHaveBeenCalled();
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
 
@@ -164,8 +164,8 @@ describe('page/DataSource/DataSourceForm', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(requestRuleTemplateTip).toBeCalled();
-    expect(requestProjectRuleTemplateTips).toBeCalled();
+    expect(requestRuleTemplateTip).toHaveBeenCalled();
+    expect(requestProjectRuleTemplateTips).toHaveBeenCalled();
 
     const ruleTemplateId = getBySelector('#ruleTemplateId', baseElement);
     expect(screen.getByText('custom_template_b')).toBeInTheDocument();

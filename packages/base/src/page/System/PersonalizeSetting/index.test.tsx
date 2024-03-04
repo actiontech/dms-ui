@@ -34,7 +34,7 @@ describe('base/System/PersonalizeSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetBasicInfo).toBeCalled();
+    expect(requestGetBasicInfo).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -73,14 +73,14 @@ describe('base/System/PersonalizeSetting', () => {
     });
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPersonalization).toBeCalled();
+    expect(requestPersonalization).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestPersonalization).toBeCalledWith(
+    expect(requestPersonalization).toHaveBeenCalledWith(
       { title: 'SQLE-test-title' },
       { headers: { 'content-type': 'multipart/form-data' } }
     );
     await act(async () => jest.advanceTimersByTime(3100));
-    expect(requestGetBasicInfo).toBeCalled();
+    expect(requestGetBasicInfo).toHaveBeenCalled();
   });
 
   it('render upgrade logo img', async () => {
@@ -101,6 +101,6 @@ describe('base/System/PersonalizeSetting', () => {
       }
     );
     await act(async () => jest.advanceTimersByTime(2000));
-    expect(requestPersonalization).toBeCalled();
+    expect(requestPersonalization).toHaveBeenCalled();
   });
 });

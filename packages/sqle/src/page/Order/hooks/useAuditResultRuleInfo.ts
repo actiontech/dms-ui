@@ -1,6 +1,6 @@
-import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useMemo } from 'react';
 import { useRequest } from 'ahooks';
+import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template/index';
 
 const useAuditResultRuleInfo = (
@@ -29,9 +29,14 @@ const useAuditResultRuleInfo = (
   const auditResultRuleInfo = useMemo(() => {
     return (
       auditResult?.map((item) => {
+        const findData =
+          ruleInfo?.find((i) => i.rule_name === item.rule_name) ?? {};
         return {
-          ...(ruleInfo?.find((i) => i.rule_name === item.rule_name) ?? {}),
-          ...item
+          ...findData,
+          ...item,
+          isRuleDeleted: item.rule_name
+            ? JSON.stringify(findData) === '{}'
+            : false
         };
       }) ?? []
     );

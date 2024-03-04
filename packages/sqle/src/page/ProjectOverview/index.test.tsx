@@ -31,7 +31,9 @@ describe('page/ProjectOverview', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('项目概览')).toBeInTheDocument();
     fireEvent.click(getBySelector('.refresh-icon'));
-    expect(eventEmitSpy).toBeCalled();
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Project_Overview);
+    expect(eventEmitSpy).toHaveBeenCalled();
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Project_Overview
+    );
   });
 });

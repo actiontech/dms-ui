@@ -32,7 +32,7 @@ describe('base/System/ProcessConnection/LarkAuditSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetFeishuAuditConfiguration).toBeCalled();
+    expect(requestGetFeishuAuditConfiguration).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -120,15 +120,15 @@ describe('base/System/ProcessConnection/LarkAuditSetting', () => {
       expect(screen.getByText('提 交')).toBeInTheDocument();
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(500));
-      expect(requestUpdateFeishuAuditConfiguration).toBeCalled();
+      expect(requestUpdateFeishuAuditConfiguration).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestUpdateFeishuAuditConfiguration).toBeCalledWith({
+      expect(requestUpdateFeishuAuditConfiguration).toHaveBeenCalledWith({
         app_id: 'app Key',
         app_secret: 'app Secret',
         is_feishu_notification_enabled: true
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetFeishuAuditConfiguration).toBeCalled();
+      expect(requestGetFeishuAuditConfiguration).toHaveBeenCalled();
     });
   });
 });

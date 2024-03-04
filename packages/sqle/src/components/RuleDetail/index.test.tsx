@@ -52,8 +52,8 @@ describe('sqle/components/RuleDetail', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetProjectRule).toBeCalled();
-    expect(requestGetProjectRule).toBeCalledWith({
+    expect(requestGetProjectRule).toHaveBeenCalled();
+    expect(requestGetProjectRule).toHaveBeenCalledWith({
       fuzzy_keyword_rule: undefined,
       project_name: 'default',
       rule_template_name: ''

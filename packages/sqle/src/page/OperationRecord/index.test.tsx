@@ -22,7 +22,7 @@ describe('slqe/OperationRecord', () => {
   test('should render operation record list', async () => {
     const { baseElement } = renderWithReduxAndTheme(<OperationRecord />);
     expect(baseElement).toMatchSnapshot();
-    expect(operationRecordListSpy).toBeCalledTimes(1);
+    expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('导出')).toBeInTheDocument();
   });
 });

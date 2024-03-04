@@ -12,7 +12,7 @@ describe('test ExportMethodItems', () => {
 
     expect(container).toMatchSnapshot();
     fireEvent.click(screen.getByText('输入SQL语句'));
-    expect(changeSpy).toBeCalledTimes(1);
-    expect(changeSpy).toBeCalledWith(ExportMethodEnum.sql);
+    expect(changeSpy).toHaveBeenCalledTimes(1);
+    expect(changeSpy).toHaveBeenCalledWith(ExportMethodEnum.sql);
   });
 });

@@ -48,7 +48,7 @@ describe('sqle/CustomRule/Form', () => {
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -65,8 +65,8 @@ describe('sqle/CustomRule/Form', () => {
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTypeByDBTypeSpy).toBeCalledTimes(1);
-    expect(getDriversSpy).toBeCalledTimes(1);
+    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
+    expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('下一步'));
     await act(async () => jest.advanceTimersByTime(3000));

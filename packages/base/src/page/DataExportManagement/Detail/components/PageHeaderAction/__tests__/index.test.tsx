@@ -30,10 +30,12 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
   it('clicked workflow detail button', () => {
     const { container } = superRender(<ExportDetailPageHeaderAction />);
     fireEvent.click(screen.getByText('工单详情'));
-    expect(mockDataExportDetailRedux.updateWorkflowStepOpen).toBeCalledTimes(1);
-    expect(mockDataExportDetailRedux.updateWorkflowStepOpen).toBeCalledWith(
-      true
-    );
+    expect(
+      mockDataExportDetailRedux.updateWorkflowStepOpen
+    ).toHaveBeenCalledTimes(1);
+    expect(
+      mockDataExportDetailRedux.updateWorkflowStepOpen
+    ).toHaveBeenCalledWith(true);
     expect(container).toMatchSnapshot();
   });
 
@@ -42,7 +44,7 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
     fireEvent.click(screen.getByText('关闭工单'));
     expect(
       mockActionButtonStateData.closeWorkflowButtonMeta.action
-    ).toBeCalledTimes(1);
+    ).toHaveBeenCalledTimes(1);
   });
 
   it('clicked approve workflow button', () => {
@@ -50,7 +52,7 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
     fireEvent.click(screen.getByText('审核通过'));
     expect(
       mockActionButtonStateData.approveWorkflowButtonMeta.action
-    ).toBeCalledTimes(1);
+    ).toHaveBeenCalledTimes(1);
   });
 
   it('clicked rejected workflow button', () => {
@@ -58,7 +60,7 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
     fireEvent.click(screen.getByText('审核驳回'));
     expect(
       mockActionButtonStateData.rejectWorkflowButtonMeta.action
-    ).toBeCalledTimes(1);
+    ).toHaveBeenCalledTimes(1);
   });
 
   it('clicked execute export workflow button', () => {
@@ -72,6 +74,6 @@ describe('test base/DataExport/Detail/PageHeaderAction', () => {
     fireEvent.click(screen.getByText('确 认'));
     expect(
       mockActionButtonStateData.executeExportButtonMeta.action
-    ).toBeCalledTimes(1);
+    ).toHaveBeenCalledTimes(1);
   });
 });

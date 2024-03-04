@@ -51,7 +51,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     expect(getAllBySelector('.content-item-text').length).toBe(1);
     fireEvent.click(screen.getByText('查看规则'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(navigateSpy).toBeCalledWith('/sqle/rule');
+    expect(navigateSpy).toHaveBeenCalledWith('/sqle/rule');
   });
 
   it('render snap when is admin', async () => {
@@ -67,6 +67,6 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     expect(getAllBySelector('.content-item-text').length).toBe(5);
     fireEvent.click(screen.getByText('用户中心'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(navigateSpy).toBeCalledWith('/userCenter');
+    expect(navigateSpy).toHaveBeenCalledWith('/userCenter');
   });
 });

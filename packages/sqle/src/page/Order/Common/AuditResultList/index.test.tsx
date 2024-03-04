@@ -2,13 +2,16 @@ import AuditResultList from '.';
 import { AuditResultListProps } from './index.type';
 
 import { superRender } from '../../../../testUtils/customRender';
-import { act, cleanup } from '@testing-library/react';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import order from '../../../../testUtils/mockApi/order';
 import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 const projectID = 'project ID';
 const tasksData = [
@@ -42,6 +45,7 @@ const tasksData = [
 
 describe('sqle/Order/Common/AuditResultList', () => {
   const updateTaskRecordTotalNumFn = jest.fn();
+  let requestGetAuditTaskSQLs: jest.SpyInstance;
   const customRender = (
     params: Pick<AuditResultListProps, 'tasks' | 'mode'>
   ) => {
@@ -57,6 +61,7 @@ describe('sqle/Order/Common/AuditResultList', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     order.mockAllApi();
+    requestGetAuditTaskSQLs = order.getAuditTaskSQLs();
   });
 
   afterEach(() => {
@@ -101,5 +106,84 @@ describe('sqle/Order/Common/AuditResultList', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3200));
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render expect page index set 1 when change exec status & duplicate', async () => {
+    const taskSQLsData: IAuditTaskSQLResV2[] = [];
+    for (let i = 0; i < 50; i++) {
+      const index = i + 1;
+      taskSQLsData.push({
+        number: index,
+        exec_sql: 'SELECT * from ' + index,
+        sql_source_file: '',
+        audit_level: '',
+        audit_status: 'finished',
+        exec_result: '',
+        exec_status: 'initialized',
+        description: ''
+      });
+    }
+    requestGetAuditTaskSQLs.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: taskSQLsData,
+        total_nums: taskSQLsData.length
+      })
+    );
+    const { baseElement } = customRender({
+      tasks: tasksData
+    });
+    await act(async () => jest.advanceTimersByTime(3200));
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
+      filter_audit_level: undefined,
+      no_duplicate: false,
+      page_index: '1',
+      page_size: '20',
+      task_id: '1'
+    });
+
+    const paginationItems = getAllBySelector(
+      '.ant-pagination-item',
+      baseElement
+    );
+    expect(paginationItems.length).toBe(3);
+    fireEvent.click(paginationItems[2]);
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
+      filter_audit_level: undefined,
+      no_duplicate: false,
+      page_index: '3',
+      page_size: '20',
+      task_id: '1'
+    });
+
+    fireEvent.click(screen.getByText('数据去重'));
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
+      filter_audit_level: undefined,
+      no_duplicate: true,
+      page_index: '1',
+      page_size: '20',
+      task_id: '1'
+    });
+
+    fireEvent.click(paginationItems[1]);
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
+      filter_audit_level: undefined,
+      no_duplicate: true,
+      page_index: '2',
+      page_size: '20',
+      task_id: '1'
+    });
+
+    fireEvent.click(screen.getByText('普通(Normal)'));
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
+      filter_audit_level: undefined,
+      no_duplicate: true,
+      page_index: '1',
+      page_size: '20',
+      task_id: '1'
+    });
   });
 });

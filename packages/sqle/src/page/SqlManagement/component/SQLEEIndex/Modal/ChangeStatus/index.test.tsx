@@ -66,7 +66,7 @@ describe('page/SqlManagement/ChangeStatus', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(submitRequest).toBeCalledWith({
+    expect(submitRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       sql_manage_id_list: [sqlManageListData.data[0].id],
       status: BatchUpdateSqlManageReqStatusEnum.ignored
@@ -74,20 +74,22 @@ describe('page/SqlManagement/ChangeStatus', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('更新SQL状态成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(dispatchSpy).toBeCalledTimes(2);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Change_Status_Single,
         status: false
       }
     });
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: null
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_SQL_Management);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_SQL_Management
+    );
   });
 
   it('close modal by click button', async () => {
@@ -97,15 +99,15 @@ describe('page/SqlManagement/ChangeStatus', () => {
     expect(screen.getByText('变更状态')).toBeInTheDocument();
     fireEvent.click(screen.getByText('取 消'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledTimes(2);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Change_Status_Single,
         status: false
       }
     });
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: null
     });

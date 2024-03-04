@@ -27,7 +27,7 @@ describe('base/UserCenter/PermissionList', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(permissionListSpy).toBeCalledTimes(1);
+    expect(permissionListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('创建项目')).toHaveLength(2);
     expect(screen.getByText('修改项目')).toBeInTheDocument();
@@ -73,7 +73,7 @@ describe('base/UserCenter/PermissionList', () => {
       await jest.advanceTimersByTime(300);
     });
 
-    expect(permissionListSpy).toBeCalledTimes(2);
+    expect(permissionListSpy).toHaveBeenCalledTimes(2);
     expect(baseElement).toMatchSnapshot();
   });
 });

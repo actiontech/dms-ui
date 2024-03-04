@@ -64,8 +64,8 @@ describe('SqlAnalyze/SQLManage', () => {
         } as any
       }
     );
-    expect(spy).toBeCalledTimes(1);
-    expect(spy).toBeCalledWith({
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
       project_name: projectName,
       sql_manage_id: 'sqlManageId1'
     });

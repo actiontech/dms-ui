@@ -53,20 +53,20 @@ describe('test base/DataExport/List', () => {
 
     expect(container).toMatchSnapshot();
 
-    expect(memberTipsSpy).toBeCalledTimes(1);
-    expect(memberTipsSpy).toBeCalledWith({
+    expect(memberTipsSpy).toHaveBeenCalledTimes(1);
+    expect(memberTipsSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID
     });
 
-    expect(dbServiceTipsSpy).toBeCalledTimes(1);
-    expect(dbServiceTipsSpy).toBeCalledWith({
+    expect(dbServiceTipsSpy).toHaveBeenCalledTimes(1);
+    expect(dbServiceTipsSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
       functional_module:
         ListDBServiceTipsFunctionalModuleEnum.create_export_task
     });
 
-    expect(exportWorkflowListSpy).toBeCalledTimes(1);
-    expect(exportWorkflowListSpy).toBeCalledWith({
+    expect(exportWorkflowListSpy).toHaveBeenCalledTimes(1);
+    expect(exportWorkflowListSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 20,
       fuzzy_keyword: '',
@@ -75,8 +75,8 @@ describe('test base/DataExport/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(getBySelector('.custom-icon-refresh'));
-    expect(exportWorkflowListSpy).toBeCalledTimes(2);
-    expect(exportWorkflowListSpy).toBeCalledWith({
+    expect(exportWorkflowListSpy).toHaveBeenCalledTimes(2);
+    expect(exportWorkflowListSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 20,
       fuzzy_keyword: '',
@@ -132,7 +132,7 @@ describe('test base/DataExport/List', () => {
     fireEvent.click(screen.getByText('批量关闭'));
     expect(screen.getByText('您确认关闭所选导出工单吗？'));
     fireEvent.click(screen.getByText('确 认'));
-    expect(batchCloseSpy).toBeCalledTimes(0);
+    expect(batchCloseSpy).toHaveBeenCalledTimes(0);
     expect(
       screen.getByText(
         '您所选的工单包含不可关闭的工单!（只有工单状态为“待审核”和“已驳回”的工单可以关闭。）'
@@ -145,8 +145,8 @@ describe('test base/DataExport/List', () => {
     fireEvent.click(screen.getByText('批量关闭'));
     fireEvent.click(screen.getByText('确 认'));
 
-    expect(batchCloseSpy).toBeCalledTimes(1);
-    expect(batchCloseSpy).toBeCalledWith({
+    expect(batchCloseSpy).toHaveBeenCalledTimes(1);
+    expect(batchCloseSpy).toHaveBeenCalledWith({
       payload: {
         data_export_workflow_uids: [DataExportWorkflowList[1].workflow_uid]
       },
@@ -157,7 +157,7 @@ describe('test base/DataExport/List', () => {
       'ant-btn-loading'
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(exportWorkflowListSpy).toBeCalledTimes(2);
+    expect(exportWorkflowListSpy).toHaveBeenCalledTimes(2);
     expect(screen.getByText('批量关闭').closest('button')).not.toHaveClass(
       'ant-btn-loading'
     );
@@ -169,8 +169,8 @@ describe('test base/DataExport/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('待导出'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(exportWorkflowListSpy).toBeCalledTimes(2);
-    expect(exportWorkflowListSpy).toBeCalledWith({
+    expect(exportWorkflowListSpy).toHaveBeenCalledTimes(2);
+    expect(exportWorkflowListSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 20,
       fuzzy_keyword: '',
@@ -203,8 +203,8 @@ describe('test base/DataExport/List', () => {
     superRender(<ExportWorkflowList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText(DataExportWorkflowList[0].workflow_name!));
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/project/${mockProjectInfo.projectID}/data/export/${DataExportWorkflowList[0].workflow_uid}`
     );
   });

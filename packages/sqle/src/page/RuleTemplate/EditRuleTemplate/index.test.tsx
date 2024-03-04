@@ -30,10 +30,10 @@ describe('sqle/RuleTemplate/EditRuleTemplate', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('保 存'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(submitSpy).toBeCalledTimes(1);
+    expect(submitSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('取 消'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(closeSpy).toBeCalledTimes(1);
+    expect(closeSpy).toHaveBeenCalledTimes(1);
   });
 
   it('when dataSource is empty object', async () => {
@@ -74,6 +74,6 @@ describe('sqle/RuleTemplate/EditRuleTemplate', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('保 存'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(submitSpy).toBeCalledTimes(1);
+    expect(submitSpy).toHaveBeenCalledTimes(1);
   });
 });

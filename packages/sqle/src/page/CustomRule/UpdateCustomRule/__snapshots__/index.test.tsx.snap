@@ -548,7 +548,7 @@ exports[`sqle/CustomRule/UpdateCustomRule return to custom list page 1`] = `
                               height="500px"
                               id="script"
                               language="regexp"
-                              options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                               value="SELECT 1;"
                               width="720px"
                             />
@@ -1553,7 +1553,7 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 1`] = `
                               height="500px"
                               id="script"
                               language="regexp"
-                              options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                               value="SELECT 1;"
                               width="720px"
                             />
@@ -2813,7 +2813,7 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 2`] = `
                               height="500px"
                               id="script"
                               language="regexp"
-                              options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                               value="SELECT 1"
                               width="720px"
                             />

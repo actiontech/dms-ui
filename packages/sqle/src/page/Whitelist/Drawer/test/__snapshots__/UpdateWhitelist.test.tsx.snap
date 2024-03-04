@@ -217,7 +217,7 @@ exports[`slqe/Whitelist/UpdateWhitelist should send update whitelist request whe
                             height="500px"
                             id="sql"
                             language="sql"
-                            options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                             value="SELECT 1;"
                             width="100%"
                           />

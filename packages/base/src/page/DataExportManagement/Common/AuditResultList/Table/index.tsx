@@ -65,7 +65,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         dataSource={data?.list}
         onChange={tableChange}
         pagination={{
-          total: data?.total ?? 0
+          total: data?.total ?? 0,
+          current: pagination.page_index
         }}
       />
       <AuditResultDrawer

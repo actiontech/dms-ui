@@ -31,7 +31,7 @@ describe('page/Home/AuditPlanRiskList', () => {
     const request = home.getRiskAuditPlan();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('待处理扫描任务')).toBeInTheDocument();
     expect(
@@ -52,7 +52,7 @@ describe('page/Home/AuditPlanRiskList', () => {
     expect(screen.getAllByText('-').length).toBe(2);
 
     fireEvent.click(getBySelector('.ant-btn'));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
   });
@@ -67,7 +67,7 @@ describe('page/Home/AuditPlanRiskList', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 });

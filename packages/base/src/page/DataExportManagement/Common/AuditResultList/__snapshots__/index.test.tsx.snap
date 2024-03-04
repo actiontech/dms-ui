@@ -2202,7 +2202,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                       class="custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
-                      options="{\\"readOnly\\":true,\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value="SELECT 1;"
                       width="100%"
                     />
@@ -2394,7 +2394,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                       >
                         <div>
                           <div
-                            class=" css-30pox0"
+                            class=" css-1v03opz"
                           >
                             <div
                               class="css-1avyf41"
