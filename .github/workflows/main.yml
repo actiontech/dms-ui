@@ -83,10 +83,12 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
 
+      - name: Merge coverage reports
+        run: node ./scripts/jest/merge-report-json.js
+
       - name: Coverage test report
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          skip-step: install
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          test-script: node ./scripts/jest/merge-report-json.js
-          package-manager: pnpm
+          base-coverage-file: coverage-merged.json
+          coverage-file: coverage-merged.json

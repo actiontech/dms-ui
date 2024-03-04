@@ -22,7 +22,7 @@
     "test:c": "sh ./scripts/jest/run-coverage.sh",
     "test:ci": "sh ./scripts/jest/run-ci-ee.sh && sh ./scripts/jest/run-ci-ce.sh && node ./scripts/jest/merge-report-json.js",
     "test:clean": "jest --clearCache",
-    "test:merge": "nyc merge coverage/ report.json"
+    "test:merge": "istanbul-merge --out coverage-merged.json ce_coverage/coverage-final.json coverage/coverage-final-1.json coverage/coverage-final-2.json coverage/coverage-final-3.json coverage/coverage-final-4.json"
   },
   "keywords": [],
   "author": "",
@@ -67,7 +67,6 @@
     "less": "^4.1.3",
     "mockdate": "^3.0.5",
     "msw": "^0.45.0",
-    "nyc": "^15.1.0",
     "postcss-less": "^6.0.0",
     "prettier": "^2.7.1",
     "stylelint": "^15.10.2",

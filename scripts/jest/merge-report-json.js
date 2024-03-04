@@ -7,7 +7,10 @@ const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
 
-const finalReportJSONFilePath = path.resolve(process.cwd(), 'report.json');
+const finalReportJSONFilePath = path.resolve(
+  process.cwd(),
+  'coverage-merged.json'
+);
 
 const ceReportJSONFilePath = path.resolve(
   process.cwd(),
@@ -61,16 +64,6 @@ const coverage2Report = require(report2JSONFilePath);
 const coverage3Report = require(report3JSONFilePath);
 const coverage4Report = require(report4JSONFilePath);
 
-const mergeSnapshot = (accSnapshot, curSnapshot) => {
-  return Object.keys(accSnapshot ?? {}).reduce(
-    (acc, key) => ({
-      ...acc,
-      [key]: (accSnapshot[key] ?? 0) + (curSnapshot[key] ?? 0)
-    }),
-    {}
-  );
-};
-
 const coverageJsonReport = [
   ceCoverageReport,
   coverage1Report,
@@ -79,19 +72,21 @@ const coverageJsonReport = [
   coverage4Report
 ].reduce((acc, cur) => {
   return {
-    numFailedTestSuites: acc.numFailedTestSuites + cur.numFailedTestSuites,
-    numFailedTests: acc.numFailedTests + cur.numFailedTests,
-    numPassedTestSuites: acc.numPassedTestSuites + cur.numPassedTestSuites,
-    numPassedTests: acc.numPassedTests + cur.numPassedTests,
-    numPendingTestSuites: acc.numPendingTestSuites + cur.numPendingTestSuites,
-    numPendingTests: acc.numPendingTests + cur.numPendingTests,
+    numFailedTestSuites:
+      (acc.numFailedTestSuites ?? 0) + cur.numFailedTestSuites,
+    numFailedTests: (acc.numFailedTests ?? 0) + cur.numFailedTests,
+    numPassedTestSuites:
+      (acc.numPassedTestSuites ?? 0) + cur.numPassedTestSuites,
+    numPassedTests: (acc.numPassedTests ?? 0) + cur.numPassedTests,
+    numPendingTestSuites:
+      (acc.numPendingTestSuites ?? 0) + cur.numPendingTestSuites,
+    numPendingTests: (acc.numPendingTests ?? 0) + cur.numPendingTests,
     numRuntimeErrorTestSuites:
-      acc.numRuntimeErrorTestSuites + cur.numRuntimeErrorTestSuites,
-    numTodoTests: acc.numTodoTests + cur.numTodoTests,
-    numTotalTestSuites: acc.numTotalTestSuites + cur.numTotalTestSuites,
-    numTotalTests: acc.numTotalTests + cur.numTotalTests,
-    success: acc.success && cur.success,
-    snapshot: mergeSnapshot(acc.snapshot, cur.snapshot)
+      (acc.numRuntimeErrorTestSuites ?? 0) + cur.numRuntimeErrorTestSuites,
+    numTodoTests: (acc.numTodoTests ?? 0) + cur.numTodoTests,
+    numTotalTestSuites: (acc.numTotalTestSuites ?? 0) + cur.numTotalTestSuites,
+    numTotalTests: (acc.numTotalTests ?? 0) + cur.numTotalTests,
+    success: (acc.success ?? true) && cur.success
   };
 }, {});
 
