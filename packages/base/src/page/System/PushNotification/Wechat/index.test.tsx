@@ -34,7 +34,7 @@ describe('base/System/PushNotification/Wechat', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetWeChatConfiguration).toBeCalled();
+    expect(requestGetWeChatConfiguration).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -129,8 +129,8 @@ describe('base/System/PushNotification/Wechat', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestUpdateWeChatConfiguration).toBeCalled();
-      expect(requestUpdateWeChatConfiguration).toBeCalledWith({
+      expect(requestUpdateWeChatConfiguration).toHaveBeenCalled();
+      expect(requestUpdateWeChatConfiguration).toHaveBeenCalledWith({
         update_wechat_configuration: {
           enable_wechat_notify: true,
           corp_id: 'corp id',
@@ -142,7 +142,7 @@ describe('base/System/PushNotification/Wechat', () => {
       });
 
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetWeChatConfiguration).toBeCalled();
+      expect(requestGetWeChatConfiguration).toHaveBeenCalled();
     });
   });
 });

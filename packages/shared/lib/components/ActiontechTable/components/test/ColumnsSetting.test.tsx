@@ -103,8 +103,8 @@ describe('lib/ActiontechTable-ColumnsSetting', () => {
         fireEvent.click(checkboxInput);
         await jest.advanceTimersByTime(300);
       });
-      expect(eventEmitSpy).toBeCalled();
-      expect(eventEmitSpy).toBeCalledWith(
+      expect(eventEmitSpy).toHaveBeenCalled();
+      expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.UPDATE_LOCAL_COLUMNS,
         {
           workflow_id: {
@@ -145,8 +145,8 @@ describe('lib/ActiontechTable-ColumnsSetting', () => {
         fireEvent.click(iconTop[0]);
         await jest.advanceTimersByTime(300);
       });
-      expect(eventEmitSpy).toBeCalled();
-      expect(eventEmitSpy).toBeCalledWith(
+      expect(eventEmitSpy).toHaveBeenCalled();
+      expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.UPDATE_LOCAL_COLUMNS,
         {
           workflow_id: {

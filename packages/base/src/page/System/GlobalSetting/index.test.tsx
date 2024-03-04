@@ -35,7 +35,7 @@ describe('base/System/GlobalSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetSystemVariables).toBeCalled();
+    expect(requestGetSystemVariables).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -119,15 +119,15 @@ describe('base/System/GlobalSetting', () => {
         keyCode: 13
       });
       await act(async () => jest.advanceTimersByTime(500));
-      expect(requestUpdateSystemVariables).toBeCalled();
+      expect(requestUpdateSystemVariables).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestUpdateSystemVariables).toBeCalledWith({
+      expect(requestUpdateSystemVariables).toHaveBeenCalledWith({
         operation_record_expired_hours: 3161,
         url: 'http://demo.com',
         workflow_expired_hours: 8866
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetSystemVariables).toBeCalled();
+      expect(requestGetSystemVariables).toHaveBeenCalled();
     });
 
     it('render operation_record_expired_hours', async () => {
@@ -165,15 +165,15 @@ describe('base/System/GlobalSetting', () => {
         keyCode: 13
       });
       await act(async () => jest.advanceTimersByTime(500));
-      expect(requestUpdateSystemVariables).toBeCalled();
+      expect(requestUpdateSystemVariables).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestUpdateSystemVariables).toBeCalledWith({
+      expect(requestUpdateSystemVariables).toHaveBeenCalledWith({
         operation_record_expired_hours: 9988,
         url: 'http://demo.com',
         workflow_expired_hours: 7211
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetSystemVariables).toBeCalled();
+      expect(requestGetSystemVariables).toHaveBeenCalled();
     });
 
     it('render url', async () => {
@@ -204,15 +204,15 @@ describe('base/System/GlobalSetting', () => {
         keyCode: 13
       });
       await act(async () => jest.advanceTimersByTime(500));
-      expect(requestUpdateSystemVariables).toBeCalled();
+      expect(requestUpdateSystemVariables).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestUpdateSystemVariables).toBeCalledWith({
+      expect(requestUpdateSystemVariables).toHaveBeenCalledWith({
         operation_record_expired_hours: 3161,
         url: 'this is a url string',
         workflow_expired_hours: 7211
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetSystemVariables).toBeCalled();
+      expect(requestGetSystemVariables).toHaveBeenCalled();
     });
   });
 });

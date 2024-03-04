@@ -47,7 +47,7 @@ describe('globalAuthInvalid', () => {
       globalAuthInvalid();
     });
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(scopeDispatch).toBeCalledTimes(6);
+    expect(scopeDispatch).toHaveBeenCalledTimes(6);
     expect(scopeDispatch).nthCalledWith(1, {
       payload: { token: '' },
       type: 'user/updateToken'

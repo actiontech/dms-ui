@@ -64,9 +64,9 @@ describe('page/WorkflowTemplate/StepCard', () => {
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('.step-card-style')).toBeInTheDocument();
     fireEvent.click(getBySelector('.step-card-style'));
-    expect(clickMock).toBeCalledWith(0);
+    expect(clickMock).toHaveBeenCalledWith(0);
     expect(getBySelector('.ant-btn')).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-btn'));
-    expect(closeMock).toBeCalled();
+    expect(closeMock).toHaveBeenCalled();
   });
 });

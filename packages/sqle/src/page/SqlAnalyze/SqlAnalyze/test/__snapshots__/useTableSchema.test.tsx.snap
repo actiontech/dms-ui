@@ -18,43 +18,43 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       </h3>
       <BasicTable
         columns={
-          Array [
-            Object {
+          [
+            {
               "dataIndex": "COLUMN_NAME",
               "render": [Function],
               "title": "列名",
             },
-            Object {
+            {
               "dataIndex": "COLUMN_TYPE",
               "render": [Function],
               "title": "列类型",
             },
-            Object {
+            {
               "dataIndex": "CHARACTER_SET_NAME",
               "render": [Function],
               "title": "列字符集",
             },
-            Object {
+            {
               "dataIndex": "IS_NULLABLE",
               "render": [Function],
               "title": "是否可以为空",
             },
-            Object {
+            {
               "dataIndex": "COLUMN_KEY",
               "render": [Function],
               "title": "列索引",
             },
-            Object {
+            {
               "dataIndex": "COLUMN_DEFAULT",
               "render": [Function],
               "title": "默认值",
             },
-            Object {
+            {
               "dataIndex": "EXTRA",
               "render": [Function],
               "title": "拓展信息",
             },
-            Object {
+            {
               "dataIndex": "COLUMN_COMMENT",
               "render": [Function],
               "title": "列说明",
@@ -62,8 +62,8 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
           ]
         }
         dataSource={
-          Array [
-            Object {
+          [
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -73,7 +73,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "auto_increment",
               "IS_NULLABLE": "NO",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "CURRENT_TIMESTAMP",
@@ -83,7 +83,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "CURRENT_TIMESTAMP",
@@ -93,7 +93,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "on update CURRENT_TIMESTAMP",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -103,7 +103,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -113,7 +113,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -123,7 +123,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -133,7 +133,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -143,7 +143,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -153,7 +153,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -163,7 +163,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -173,7 +173,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -183,7 +183,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -193,7 +193,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "initialized",
@@ -203,7 +203,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -213,7 +213,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "initialized",
@@ -223,7 +223,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -233,7 +233,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -243,7 +243,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "EXTRA": "",
               "IS_NULLABLE": "YES",
             },
-            Object {
+            {
               "CHARACTER_SET_NAME": "utf8mb4",
               "COLUMN_COMMENT": "",
               "COLUMN_DEFAULT": "",
@@ -266,43 +266,43 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       </h3>
       <BasicTable
         columns={
-          Array [
-            Object {
+          [
+            {
               "dataIndex": "Column_name",
               "render": [Function],
               "title": "列名",
             },
-            Object {
+            {
               "dataIndex": "Key_name",
               "render": [Function],
               "title": "索引名",
             },
-            Object {
+            {
               "dataIndex": "Unique",
               "render": [Function],
               "title": "唯一性",
             },
-            Object {
+            {
               "dataIndex": "Seq_in_index",
               "render": [Function],
               "title": "列序列",
             },
-            Object {
+            {
               "dataIndex": "Cardinality",
               "render": [Function],
               "title": "基数",
             },
-            Object {
+            {
               "dataIndex": "Null",
               "render": [Function],
               "title": "是否可以为空",
             },
-            Object {
+            {
               "dataIndex": "Index_type",
               "render": [Function],
               "title": "索引类型",
             },
-            Object {
+            {
               "dataIndex": "Comment",
               "render": [Function],
               "title": "备注",
@@ -310,8 +310,8 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
           ]
         }
         dataSource={
-          Array [
-            Object {
+          [
+            {
               "Cardinality": "3",
               "Column_name": "id",
               "Comment": "",
@@ -321,7 +321,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "Seq_in_index": "1",
               "Unique": "YES",
             },
-            Object {
+            {
               "Cardinality": "1",
               "Column_name": "deleted_at",
               "Comment": "",
@@ -331,7 +331,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "Seq_in_index": "1",
               "Unique": "NO",
             },
-            Object {
+            {
               "Cardinality": "1",
               "Column_name": "task_id",
               "Comment": "",
@@ -341,7 +341,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
               "Seq_in_index": "1",
               "Unique": "NO",
             },
-            Object {
+            {
               "Cardinality": "3",
               "Column_name": "audit_fingerprint",
               "Comment": "",
@@ -422,7 +422,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
         列信息
       </h3>
       <BasicTable
-        columns={Array []}
+        columns={[]}
         pagination={false}
       />
     </React.Fragment>
@@ -433,7 +433,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
         索引信息
       </h3>
       <BasicTable
-        columns={Array []}
+        columns={[]}
         pagination={false}
       />
     </React.Fragment>
@@ -473,7 +473,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
         列信息
       </h3>
       <BasicTable
-        columns={Array []}
+        columns={[]}
         pagination={false}
       />
     </React.Fragment>
@@ -484,7 +484,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
         索引信息
       </h3>
       <BasicTable
-        columns={Array []}
+        columns={[]}
         pagination={false}
       />
     </React.Fragment>
@@ -534,7 +534,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
         列信息
       </h3>
       <BasicTable
-        columns={Array []}
+        columns={[]}
         pagination={false}
       />
     </React.Fragment>
@@ -545,7 +545,7 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
         索引信息
       </h3>
       <BasicTable
-        columns={Array []}
+        columns={[]}
         pagination={false}
       />
     </React.Fragment>
@@ -567,62 +567,62 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
 </EmptyBox>
 `;
 
-exports[`SqlAnalyze/useTableSchema render table Schema data get table Schemas data error 1`] = `Array []`;
+exports[`SqlAnalyze/useTableSchema render table Schema data get table Schemas data error 1`] = `[]`;
 
-exports[`SqlAnalyze/useTableSchema render table Schema data get table Schemas data error 2`] = `Array []`;
+exports[`SqlAnalyze/useTableSchema render table Schema data get table Schemas data error 2`] = `[]`;
 
 exports[`SqlAnalyze/useTableSchema render table Schema data get table Schemas data error 3`] = `
-Array [
-  Object {
+[
+  {
     "errorMessage": "error",
     "id": "table-test-name-test-schema-name-dataSource-name",
-    "tableMeta": Array [],
+    "tableMeta": [],
   },
 ]
 `;
 
-exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 1`] = `Array []`;
+exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 1`] = `[]`;
 
-exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 2`] = `Array []`;
+exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 2`] = `[]`;
 
 exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 3`] = `
-Array [
-  Object {
+[
+  {
     "errorMessage": "",
     "id": "table-test-name-test-schema-name-dataSource-name",
-    "tableMeta": Object {
-      "columns": Object {
-        "head": Array [
-          Object {
+    "tableMeta": {
+      "columns": {
+        "head": [
+          {
             "desc": "",
             "field_name": "id",
           },
-          Object {
+          {
             "desc": "",
             "field_name": "select_type",
           },
         ],
-        "rows": Array [
-          Object {
+        "rows": [
+          {
             "id": "1",
             "select_type": "SIMPLE",
           },
         ],
       },
       "create_table_sql": "select * user",
-      "indexes": Object {
-        "head": Array [
-          Object {
+      "indexes": {
+        "head": [
+          {
             "desc": "",
             "field_name": "id",
           },
-          Object {
+          {
             "desc": "",
             "field_name": "select_type",
           },
         ],
-        "rows": Array [
-          Object {
+        "rows": [
+          {
             "id": "1",
             "select_type": "SIMPLE",
           },

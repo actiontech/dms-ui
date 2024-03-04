@@ -12,7 +12,10 @@ import {
   AuditTaskResData,
   workflowsOverviewListData
 } from '../../../testUtils/mockApi/order/data';
-import { IWorkflowResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IAuditTaskSQLResV2,
+  IWorkflowResV2
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   getAllBySelector,
   getBySelector
@@ -21,7 +24,6 @@ import {
   AuditTaskResV1StatusEnum,
   WorkflowRecordResV2StatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 
@@ -77,6 +79,51 @@ describe('sqle/Order/AuditDetail', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('render snap when has single taskInfos', async () => {
+    const { baseElement } = customRender({
+      taskInfos: [AuditTaskResData[0]],
+      isArchive: true,
+      refreshOverviewFlag: true
+    });
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(2600));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when has more taskInfos', async () => {
+    const { baseElement } = customRender({
+      taskInfos: AuditTaskResData,
+      isArchive: true,
+      refreshOverviewFlag: true
+    });
+    await act(async () => jest.advanceTimersByTime(3100));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when click instance name is empty', async () => {
+    const { baseElement } = customRender({
+      taskInfos: [
+        {
+          ...AuditTaskResData[0],
+          instance_name: ''
+        }
+      ],
+      isArchive: true,
+      refreshOverviewFlag: true
+    });
+    await act(async () => jest.advanceTimersByTime(3100));
+
+    const segmentedLabelItems = getAllBySelector(
+      '.ant-segmented-item-label',
+      baseElement
+    );
+    expect(segmentedLabelItems.length).toBe(2);
+    expect(segmentedLabelItems[1]).toHaveAttribute('title', '-');
+    fireEvent.click(segmentedLabelItems[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+  });
+
   it('render snap when has order info data', async () => {
     const { baseElement } = customRender({
       taskInfos: AuditTaskResData,
@@ -99,7 +146,7 @@ describe('sqle/Order/AuditDetail', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2800));
-    expect(requestGetAuditTaskSQLs).toBeCalled();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
   });
 
   it('render snap when order info has action btn', async () => {
@@ -134,8 +181,8 @@ describe('sqle/Order/AuditDetail', () => {
     );
     fireEvent.click(segmentItems[1]);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).toBeCalled();
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_exec_status: undefined,
       no_duplicate: false,
       page_index: '1',
@@ -228,70 +275,64 @@ describe('sqle/Order/AuditDetail', () => {
       task_id: '2'
     });
 
-    const actionList = getBySelector('.audit-result-actions-wrap').children;
-    fireEvent.click(actionList[3]);
-    await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('分页展示'));
-    await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(segmentItems[0]);
+    await act(async () => jest.advanceTimersByTime(300));
+    const recordItem = getAllBySelector('.download-record-item', baseElement);
+    expect(recordItem.length).toBe(2);
+    fireEvent.click(recordItem[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
+      filter_exec_status: undefined,
+      no_duplicate: false,
+      page_index: '1',
+      page_size: '20',
+      task_id: '2'
+    });
   });
 
-  it('render snap when refresh waterfall list', async () => {
-    const updateAuditTaskSQLsSpy = order.updateAuditTaskSQLs();
-    const mockListData: IAuditTaskSQLResV2[] = [];
-    for (let i = 0; i < 20; i++) {
-      mockListData.push({
-        number: i + 1,
+  it('render snap when change segmented tab & change page index & duplicate', async () => {
+    const taskSQLsData: IAuditTaskSQLResV2[] = [];
+    for (let i = 0; i < 50; i++) {
+      const index = i + 1;
+      taskSQLsData.push({
+        number: index,
+        exec_sql: 'SELECT * from ' + index,
+        sql_source_file: '',
         audit_level: '',
-        audit_result: [
-          {
-            level: 'level'
-          }
-        ],
-        audit_status: 'audit_status' + i,
-        description: 'description' + i,
-        exec_result: 'exec_result' + i,
-        exec_sql: 'exec_sql' + i,
-        exec_status: 'exec_status' + i,
-        rollback_sql: 'rollback_sql' + i
+        audit_status: 'finished',
+        exec_result: '',
+        exec_status: 'initialized',
+        description: ''
       });
     }
-    requestGetAuditTaskSQLs.mockClear();
     requestGetAuditTaskSQLs.mockImplementation(() =>
       createSpySuccessResponse({
-        data: mockListData,
-        total_nums: 30
+        data: taskSQLsData,
+        total_nums: taskSQLsData.length
       })
     );
-    const { baseElement } = renderWithTheme(
-      <div id="test-wrap" style={{ height: '1000px', overflow: 'auto' }}>
-        <AuditDetail
-          taskInfos={[
-            {
-              ...AuditTaskResData[0],
-              status: AuditTaskResV1StatusEnum.exec_success
-            },
-            {
-              ...AuditTaskResData[1],
-              status: AuditTaskResV1StatusEnum.initialized
-            }
-          ]}
-          orderInfo={{
-            ...workflowsOverviewListData,
-            record: {
-              status: WorkflowRecordResV2StatusEnum.wait_for_execution,
-              workflow_step_list: []
-            },
-            record_history_list: []
-          }}
-          isArchive={true}
-          refreshOverviewFlag={false}
-          projectName={projectName}
-          refreshOrder={refreshOrderFn}
-          getOverviewListSuccessHandle={getOverviewListSuccessFn}
-        />
-      </div>
-    );
+    const { baseElement } = customRender({
+      taskInfos: [
+        {
+          ...AuditTaskResData[0],
+          status: AuditTaskResV1StatusEnum.exec_success
+        },
+        {
+          ...AuditTaskResData[1],
+          status: AuditTaskResV1StatusEnum.initialized
+        }
+      ],
+      orderInfo: {
+        ...workflowsOverviewListData,
+        record: {
+          status: WorkflowRecordResV2StatusEnum.wait_for_execution,
+          workflow_step_list: []
+        },
+        record_history_list: []
+      } as unknown as IWorkflowResV2,
+      isArchive: true,
+      refreshOverviewFlag: false
+    });
     await act(async () => jest.advanceTimersByTime(3300));
 
     const segmentItems = getAllBySelector(
@@ -299,67 +340,36 @@ describe('sqle/Order/AuditDetail', () => {
       baseElement
     );
     fireEvent.click(segmentItems[1]);
-
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).nthCalledWith(1, {
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_exec_status: undefined,
       no_duplicate: false,
       page_index: '1',
       page_size: '20',
       task_id: '2'
     });
+    expect(baseElement).toMatchSnapshot();
 
-    expect(screen.getByText('分页展示')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('分页展示'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByText('瀑布流展示')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('瀑布流展示'));
+    const paginationItems = getAllBySelector(
+      '.ant-pagination-item',
+      baseElement
+    );
+    expect(paginationItems.length).toBe(3);
+    fireEvent.click(paginationItems[2]);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).nthCalledWith(2, {
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_exec_status: undefined,
       no_duplicate: false,
+      page_index: '3',
+      page_size: '20',
+      task_id: '2'
+    });
+    fireEvent.click(screen.getByText('数据去重'));
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
+      filter_exec_status: undefined,
+      no_duplicate: true,
       page_index: '1',
-      page_size: '20',
-      task_id: '2'
-    });
-    await act(async () => {
-      fireEvent.scroll(getBySelector('#test-wrap'), {
-        y: 8000
-      });
-      await jest.advanceTimersByTime(3100);
-    });
-    expect(requestGetAuditTaskSQLs).nthCalledWith(3, {
-      filter_exec_status: undefined,
-      no_duplicate: false,
-      page_index: '2',
-      page_size: '20',
-      task_id: '2'
-    });
-
-    const inputEle = getAllBySelector('.result-describe-input')[21];
-    await act(async () => {
-      fireEvent.change(inputEle, {
-        target: {
-          value: 'descriptionTest1'
-        }
-      });
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.blur(inputEle);
-      await jest.advanceTimersByTime(100);
-    });
-    expect(updateAuditTaskSQLsSpy).nthCalledWith(1, {
-      description: 'descriptionTest1',
-      number: '2',
-      task_id: '2'
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestGetAuditTaskSQLs).nthCalledWith(4, {
-      filter_exec_status: undefined,
-      no_duplicate: false,
-      page_index: '2',
       page_size: '20',
       task_id: '2'
     });

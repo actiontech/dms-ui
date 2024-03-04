@@ -35,12 +35,12 @@ describe('sqle/ReportStatistics/EEIndex', () => {
 
   it('render report statics page', async () => {
     const { baseElement } = renderWithThemeAndRedux(<EEIndex />);
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('报表统计')).toBeInTheDocument();
     expect(getBySelector('.refresh-icon')).toBeInTheDocument();
     fireEvent.click(getBySelector('.refresh-icon'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 });

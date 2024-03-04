@@ -41,7 +41,7 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('render chart snap when api return empty', async () => {
@@ -49,11 +49,11 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
     expect(screen.getByText('刷新')).toBeInTheDocument();
     fireEvent.click(screen.getByText('刷新'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('render tooltip formatter', async () => {

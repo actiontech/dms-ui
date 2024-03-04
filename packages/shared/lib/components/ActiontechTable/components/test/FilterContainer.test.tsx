@@ -17,11 +17,12 @@ describe('lib/ActiontechTable-FilterContainer', () => {
 
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-12').valueOf());
-    jest.useFakeTimers();
+    jest.useFakeTimers({ legacyFakeTimers: true });
   });
 
   afterEach(() => {
     MockDate.reset();
+    jest.useRealTimers();
     jest.clearAllTimers();
     cleanup();
   });
@@ -104,8 +105,8 @@ describe('lib/ActiontechTable-FilterContainer', () => {
       fireEvent.click(screen.getByText('a'));
       await jest.advanceTimersByTime(300);
     });
-    expect(onChangeFn).toBeCalledTimes(1);
-    expect(updateTableFilterInfoFn).toBeCalledTimes(1);
+    expect(onChangeFn).toHaveBeenCalledTimes(1);
+    expect(updateTableFilterInfoFn).toHaveBeenCalledTimes(1);
     expect(updateTableFilterInfoFn).toHaveBeenCalledWith(
       expect.objectContaining({})
     );
@@ -156,8 +157,8 @@ describe('lib/ActiontechTable-FilterContainer', () => {
       fireEvent.click(screen.getByText('c'));
       await jest.advanceTimersByTime(300);
     });
-    expect(onChangeFn).toBeCalledTimes(1);
-    expect(updateTableFilterInfoFn).toBeCalledTimes(1);
+    expect(onChangeFn).toHaveBeenCalledTimes(1);
+    expect(updateTableFilterInfoFn).toHaveBeenCalledTimes(1);
     expect(updateTableFilterInfoFn).toHaveBeenCalledWith(
       expect.objectContaining({})
     );
@@ -216,8 +217,8 @@ describe('lib/ActiontechTable-FilterContainer', () => {
       fireEvent.focusOut(toDateEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(onChangeFn).toBeCalledTimes(1);
-    expect(updateTableFilterInfoFn).toBeCalledTimes(1);
+    expect(onChangeFn).toHaveBeenCalledTimes(1);
+    expect(updateTableFilterInfoFn).toHaveBeenCalledTimes(1);
     expect(updateTableFilterInfoFn).toHaveBeenCalledWith(
       expect.objectContaining({})
     );
@@ -274,9 +275,9 @@ describe('lib/ActiontechTable-FilterContainer', () => {
         keyCode: 13
       });
       await jest.advanceTimersByTime(300);
-      expect(onCustomPressEnterFn).toBeCalledWith(mockInputVal);
+      expect(onCustomPressEnterFn).toHaveBeenCalledWith(mockInputVal);
     });
-    expect(updateTableFilterInfoFn).toBeCalledTimes(1);
+    expect(updateTableFilterInfoFn).toHaveBeenCalledTimes(1);
     expect(updateTableFilterInfoFn).toHaveBeenCalledWith(
       expect.objectContaining({})
     );
@@ -331,7 +332,7 @@ describe('lib/ActiontechTable-FilterContainer', () => {
       fireEvent.click(iconEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(updateTableFilterInfoFn).toBeCalledTimes(1);
+    expect(updateTableFilterInfoFn).toHaveBeenCalledTimes(1);
     expect(updateTableFilterInfoFn).toHaveBeenCalledWith(
       expect.objectContaining({})
     );
@@ -346,6 +347,6 @@ describe('lib/ActiontechTable-FilterContainer', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(onCustomPressEnterFn).toBeCalledWith(mockInputVal);
+    expect(onCustomPressEnterFn).toHaveBeenCalledWith(mockInputVal);
   });
 });

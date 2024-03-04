@@ -39,7 +39,7 @@ describe('sqle/RuleTemplate/List/CommonTable', () => {
   it('render common rule template list', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(
       screen.getByText(`共 ${publicRuleTemplateListMockData.length} 条数据`)
@@ -61,11 +61,11 @@ describe('sqle/RuleTemplate/List/CommonTable', () => {
   it('should refresh table when emit "Refresh_Rule_Template_List" event', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
       EventEmitter.emit(EmitterKey.Refresh_Rule_Template_List)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(2);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(2);
   });
 });

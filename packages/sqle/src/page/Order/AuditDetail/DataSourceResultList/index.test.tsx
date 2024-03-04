@@ -93,6 +93,6 @@ describe('sqle/Order/AuditDetail/DataSourceResultList', () => {
       fireEvent.click(getBySelector('li[title="2"]'));
       await jest.advanceTimersByTime(100);
     });
-    expect(onChangeSpy).toBeCalledTimes(1);
+    expect(onChangeSpy).toHaveBeenCalledTimes(1);
   });
 });

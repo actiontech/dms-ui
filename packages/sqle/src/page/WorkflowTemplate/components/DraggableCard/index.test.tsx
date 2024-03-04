@@ -64,6 +64,6 @@ describe('page/WorkflowTemplate/DraggableCard', () => {
     expect(screen.getByText(descText)).toBeInTheDocument();
     expect(getBySelector('.ant-btn')).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-btn'));
-    expect(removeMock).toBeCalled();
+    expect(removeMock).toHaveBeenCalled();
   });
 });

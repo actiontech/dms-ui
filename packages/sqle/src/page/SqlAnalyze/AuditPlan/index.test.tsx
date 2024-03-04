@@ -63,8 +63,8 @@ describe('SqlAnalyze/AuditPlan', () => {
         } as any
       }
     );
-    expect(spy).toBeCalledTimes(1);
-    expect(spy).toBeCalledWith({
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
       project_name: projectName,
       audit_plan_report_id: 'reportId1',
       number: '123',

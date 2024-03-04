@@ -93,8 +93,8 @@ describe('sqle/Order/AuditDetail/DataSourceWaterfallList', () => {
       await jest.advanceTimersByTime(100);
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateAuditTaskSQLsSpy).toBeCalledTimes(1);
-    expect(refreshScrollListSpy).toBeCalledTimes(1);
+    expect(updateAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
+    expect(refreshScrollListSpy).toHaveBeenCalledTimes(1);
   });
 
   it('render has more data', async () => {

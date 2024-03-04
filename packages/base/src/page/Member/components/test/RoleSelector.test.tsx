@@ -30,8 +30,8 @@ describe('base/Member/Modal/AddMemberGroup', () => {
       </Form>
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(litDBServices).toBeCalledTimes(1);
-    expect(listRoleSpy).toBeCalledTimes(1);
+    expect(litDBServices).toHaveBeenCalledTimes(1);
+    expect(listRoleSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 

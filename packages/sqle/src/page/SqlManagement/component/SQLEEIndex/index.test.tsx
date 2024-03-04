@@ -81,7 +81,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       })
     );
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
@@ -97,7 +97,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       })
     );
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('0').length).toBe(3);
     expect(screen.getAllByText('0')?.[0]).toHaveClass('total');
@@ -107,8 +107,8 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const request = sqlManage.getSqlManageList();
     const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
-    expect(ruleTipsRequest).toBeCalled();
+    expect(request).toHaveBeenCalled();
+    expect(ruleTipsRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('筛选')).toBeInTheDocument();
     fireEvent.click(screen.getByText('筛选'));
@@ -124,7 +124,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       await act(async () => jest.advanceTimersByTime(3000));
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       ...requestParams,
       filter_db_type: 'MySQL',
       filter_rule_name: 'test'
@@ -134,12 +134,12 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('filter data about myself', async () => {
     const request = sqlManage.getSqlManageList();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('与我相关')).toBeInTheDocument();
     fireEvent.click(screen.getByText('与我相关'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       ...requestParams,
       filter_assignee: mockCurrentUserReturn.uid
     });
@@ -148,12 +148,12 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('filter data with status', async () => {
     const request = sqlManage.getSqlManageList();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('已解决')).toBeInTheDocument();
     fireEvent.click(screen.getByText('已解决'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       ...requestParams,
       filter_status: 'solved'
     });
@@ -162,13 +162,13 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('filter data with sort', async () => {
     const request = sqlManage.getSqlManageList();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
 
     const sortButtons = getAllBySelector('.ant-table-column-sorter');
     expect(sortButtons.length).toBe(3);
     fireEvent.click(sortButtons[sortButtons.length - 1]);
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       ...requestParams,
       sort_field: 'fp_count',
       sort_order: 'desc'
@@ -178,7 +178,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('filter data with search', async () => {
     const request = sqlManage.getSqlManageList();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
@@ -195,7 +195,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       await jest.advanceTimersByTime(300);
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       ...requestParams,
       fuzzy_search_sql_fingerprint: searchText
     });
@@ -205,12 +205,12 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const request = sqlManage.getSqlManageList();
     const exportRequest = sqlManage.exportSqlManage();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('导出')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导出'));
-    expect(exportRequest).toBeCalledWith(
+    expect(exportRequest).toHaveBeenCalledWith(
       {
         ...exportParams
       },
@@ -225,7 +225,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('batch assignment operation for sql', async () => {
     const request = sqlManage.getSqlManageList();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     const batchCheckbox = getBySelector('.ant-table-thead .ant-checkbox-input');
@@ -235,14 +235,14 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const actionButtons = getAllBySelector('.actiontech-table-actions-button');
     fireEvent.click(actionButtons[1]);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Batch,
         status: true
       }
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementBatchSelectData',
       payload: [sqlManageListData.data[0]]
     });
@@ -252,7 +252,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     const request = sqlManage.getSqlManageList();
     const batchRequest = sqlManage.batchUpdateSqlManage();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     const batchCheckbox = getBySelector('.ant-table-thead .ant-checkbox-input');
@@ -267,20 +267,20 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(batchRequest).toBeCalledWith({
+    expect(batchRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       status: 'solved',
       sql_manage_id_list: [sqlManageListData.data[0].id]
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
   });
 
   it('batch ignore operation for sql', async () => {
     const request = sqlManage.getSqlManageList();
     const batchRequest = sqlManage.batchUpdateSqlManage();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     const batchCheckbox = getBySelector('.ant-table-thead .ant-checkbox-input');
@@ -295,20 +295,20 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(batchRequest).toBeCalledWith({
+    expect(batchRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       status: 'ignored',
       sql_manage_id_list: [sqlManageListData.data[0].id]
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
   });
 
   it('update remark', async () => {
     const request = sqlManage.getSqlManageList();
     const batchRequest = sqlManage.batchUpdateSqlManage();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('this is remark text')).toBeInTheDocument();
@@ -339,26 +339,26 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       await jest.advanceTimersByTime(300);
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(batchRequest).toBeCalledTimes(1);
-    expect(batchRequest).toBeCalledWith({
+    expect(batchRequest).toHaveBeenCalledTimes(1);
+    expect(batchRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       sql_manage_id_list: [sqlManageListData.data[0].id],
       remark: remarkText
     });
     await act(async () => jest.advanceTimersByTime(300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
   });
 
   it('jump to analyze and open modal when click row button', async () => {
     const openSpy = jest.spyOn(window, 'open').mockImplementation(() => null);
     const request = sqlManage.getSqlManageList();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('分 析').length).toBe(1);
     fireEvent.click(screen.getAllByText('分 析')[0]);
-    expect(openSpy).toBeCalledWith(
+    expect(openSpy).toHaveBeenCalledWith(
       `/sqle/project/${mockProjectInfo.projectID}/sqlManagement/${sqlManageListData.data[0].id}/analyze`,
       '_blank'
     );
@@ -366,14 +366,14 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     expect(screen.getAllByText('指派负责人').length).toBe(1);
     fireEvent.click(screen.getAllByText('指派负责人')[0]);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Single,
         status: true
       }
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: sqlManageListData.data[0]
     });
@@ -383,7 +383,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     mockUseCurrentUser({ isAdmin: false });
     const request = sqlManage.getSqlManageList();
     const { baseElement } = superRender(<SQLEEIndex />);
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });

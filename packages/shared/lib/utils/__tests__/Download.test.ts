@@ -25,9 +25,9 @@ describe('utils/Download', () => {
     Download.downloadByCreateElementA('test', 'test.txt');
     expect(link.download).toBe('test.txt');
     expect(link.href).toBe('http://test.com');
-    expect(appendChildSpy).toBeCalledWith(link);
-    expect(link.click).toBeCalledTimes(1);
-    expect(removeChildSpy).toBeCalledWith(link);
+    expect(appendChildSpy).toHaveBeenCalledWith(link);
+    expect(link.click).toHaveBeenCalledTimes(1);
+    expect(removeChildSpy).toHaveBeenCalledWith(link);
   });
 
   test('should create element a for download file blob', () => {
@@ -49,8 +49,8 @@ describe('utils/Download', () => {
     Download.downloadBlobFile(new Blob(['test']), 'test.txt');
     expect(link.download).toBe('test.txt');
     expect(link.href).toBe('http://test.com');
-    expect(appendChildSpy).toBeCalledWith(link);
-    expect(link.click).toBeCalledTimes(1);
-    expect(removeChildSpy).toBeCalledWith(link);
+    expect(appendChildSpy).toHaveBeenCalledWith(link);
+    expect(link.click).toHaveBeenCalledTimes(1);
+    expect(removeChildSpy).toHaveBeenCalledWith(link);
   });
 });

@@ -41,13 +41,13 @@ describe('useTaskSource', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([]);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual(taskListTips);
     cleanup();
 
@@ -77,13 +77,13 @@ describe('useTaskSource', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([]);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([
       { source: 'source1', db_types: ['mysql'] },
       { source: 'source2', db_types: ['oracle'] }
@@ -100,7 +100,7 @@ describe('useTaskSource', () => {
       result.current.updateTaskSourceList();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([
       { source: 'source1', db_types: ['mysql'] },
       { source: 'source2', db_types: ['oracle'] }
@@ -109,7 +109,7 @@ describe('useTaskSource', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([]);
   });
 
@@ -123,13 +123,13 @@ describe('useTaskSource', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([]);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([
       { source: 'source1', db_types: ['mysql'] },
       { source: 'source2', db_types: ['oracle'] }
@@ -146,7 +146,7 @@ describe('useTaskSource', () => {
       result.current.updateTaskSourceList();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([
       { source: 'source1', db_types: ['mysql'] },
       { source: 'source2', db_types: ['oracle'] }
@@ -155,7 +155,7 @@ describe('useTaskSource', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([]);
   });
 

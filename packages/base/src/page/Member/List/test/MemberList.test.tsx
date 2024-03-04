@@ -47,7 +47,7 @@ describe('base/MemberList', () => {
   it('render member table', async () => {
     const { baseElement } = renderWithReduxAndTheme(<MemberList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberListSpy).toBeCalledTimes(1);
+    expect(memberListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('admin')).toBeInTheDocument();
     expect(screen.getByText('test1')).toBeInTheDocument();
@@ -105,12 +105,12 @@ describe('base/MemberList', () => {
   it('should refresh member table when emit "DMS_Refresh_Member_List" event', async () => {
     renderWithReduxAndTheme(<MemberList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberListSpy).toBeCalledTimes(1);
+    expect(memberListSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
       EventEmitter.emit(EmitterKey.DMS_Refresh_Member_List)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberListSpy).toBeCalledTimes(2);
+    expect(memberListSpy).toHaveBeenCalledTimes(2);
   });
 
   it('should send delete member request', async () => {
@@ -124,20 +124,20 @@ describe('base/MemberList', () => {
     const deleteUserSpy = member.deleteMember();
     renderWithReduxAndTheme(<MemberList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberListSpy).toBeCalledTimes(1);
+    expect(memberListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText(`确定要删除成员:${userName}?`)).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(deleteUserSpy).toBeCalledTimes(1);
-    expect(deleteUserSpy).toBeCalledWith({
+    expect(deleteUserSpy).toHaveBeenCalledTimes(1);
+    expect(deleteUserSpy).toHaveBeenCalledWith({
       member_uid: memberList[1].uid,
       project_uid: mockProjectInfo.projectID
     });
     expect(screen.getByText(`删除成员${userName}成功`)).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberListSpy).toBeCalled();
+    expect(memberListSpy).toHaveBeenCalled();
   });
   it('should dispatch action when edit member info', async () => {
     memberListSpy.mockClear();
@@ -148,10 +148,10 @@ describe('base/MemberList', () => {
     );
     renderWithReduxAndTheme(<MemberList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(memberListSpy).toBeCalledTimes(1);
+    expect(memberListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       type: 'member/updateSelectMember',
       payload: {

@@ -45,14 +45,14 @@ describe('lib/ActiontechTable-SearchInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(onChangeFn).toBeCalledTimes(1);
+    expect(onChangeFn).toHaveBeenCalledTimes(1);
 
     const iconSearch = getBySelector('.custom-icon-search', baseElement);
     await act(async () => {
       fireEvent.click(iconSearch);
       await jest.advanceTimersByTime(300);
     });
-    expect(onSearchFn).toBeCalledTimes(1);
+    expect(onSearchFn).toHaveBeenCalledTimes(1);
   });
 
   it('render enter key fn', async () => {
@@ -79,6 +79,6 @@ describe('lib/ActiontechTable-SearchInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(onSearchFn).toBeCalledTimes(1);
+    expect(onSearchFn).toHaveBeenCalledTimes(1);
   });
 });

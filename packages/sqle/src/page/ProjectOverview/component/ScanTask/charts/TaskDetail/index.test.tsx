@@ -49,7 +49,7 @@ describe('page/ProjectOverview/TaskDetail', () => {
     expect(screen.getByText('暂无数据')).toBeInTheDocument();
     expect(screen.getByText('刷新')).toBeInTheDocument();
     fireEvent.click(screen.getByText('刷新'));
-    expect(mockRefresh).toBeCalled();
+    expect(mockRefresh).toHaveBeenCalled();
   });
 
   it('render error info', async () => {
@@ -63,6 +63,6 @@ describe('page/ProjectOverview/TaskDetail', () => {
     expect(screen.getByText(errorInfo)).toBeInTheDocument();
     expect(screen.getByText('刷新')).toBeInTheDocument();
     fireEvent.click(screen.getByText('刷新'));
-    expect(mockRefresh).toBeCalled();
+    expect(mockRefresh).toHaveBeenCalled();
   });
 });

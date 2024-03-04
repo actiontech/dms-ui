@@ -46,8 +46,8 @@ describe('test RejectWorkflowModal', () => {
     expect(screen.getByText('驳 回').closest('button')).toHaveClass(
       'ant-btn-loading'
     );
-    expect(rejectSpy).toBeCalledTimes(1);
-    expect(rejectSpy).toBeCalledWith({
+    expect(rejectSpy).toHaveBeenCalledTimes(1);
+    expect(rejectSpy).toHaveBeenCalledWith({
       data_export_workflow_uid:
         mockDataExportDetailRedux.workflowInfo.workflow_uid,
       project_uid: mockProjectInfo.projectID,
@@ -63,15 +63,17 @@ describe('test RejectWorkflowModal', () => {
       'ant-btn-loading'
     );
     expect(screen.queryByText('工单驳回成功！')).toBeInTheDocument();
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Refresh_Export_Data_Workflow);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Export_Data_Workflow
+    );
     expect(screen.getByLabelText('驳回原因')).toHaveValue('');
-    expect(mockDataExportDetailRedux.updateWorkflowRejectOpen).toBeCalledTimes(
-      1
-    );
-    expect(mockDataExportDetailRedux.updateWorkflowRejectOpen).toBeCalledWith(
-      false
-    );
+    expect(
+      mockDataExportDetailRedux.updateWorkflowRejectOpen
+    ).toHaveBeenCalledTimes(1);
+    expect(
+      mockDataExportDetailRedux.updateWorkflowRejectOpen
+    ).toHaveBeenCalledWith(false);
   });
 
   it('should clear form and close modal', async () => {
@@ -84,11 +86,11 @@ describe('test RejectWorkflowModal', () => {
 
     fireEvent.click(screen.getByText('取 消'));
     expect(screen.getByLabelText('驳回原因')).toHaveValue('');
-    expect(mockDataExportDetailRedux.updateWorkflowRejectOpen).toBeCalledTimes(
-      1
-    );
-    expect(mockDataExportDetailRedux.updateWorkflowRejectOpen).toBeCalledWith(
-      false
-    );
+    expect(
+      mockDataExportDetailRedux.updateWorkflowRejectOpen
+    ).toHaveBeenCalledTimes(1);
+    expect(
+      mockDataExportDetailRedux.updateWorkflowRejectOpen
+    ).toHaveBeenCalledWith(false);
   });
 });

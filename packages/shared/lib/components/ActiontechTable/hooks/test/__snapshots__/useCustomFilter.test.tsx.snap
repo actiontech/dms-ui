@@ -6,7 +6,7 @@ exports[`lib/ActiontechTable-hooks render use generateDataRangeFilter 1`] = `
   disabledDate={[Function]}
   onChange={[Function]}
   placeholder={
-    Array [
+    [
       "开始时间",
       "结束时间",
     ]
@@ -20,7 +20,7 @@ exports[`lib/ActiontechTable-hooks render use generateDataRangeFilter 1`] = `
   }
   size="small"
   style={
-    Object {
+    {
       "minWidth": 320,
     }
   }

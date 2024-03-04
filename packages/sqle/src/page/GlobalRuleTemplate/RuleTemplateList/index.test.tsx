@@ -74,7 +74,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
   it('render rule template list when hiddenOperations is falsy', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(
       screen.getByText(`共 ${publicRuleTemplateListMockData.length} 条数据`)
@@ -86,7 +86,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
   it('render rule template list when hiddenOperations is true', async () => {
     const { baseElement } = customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     const length = publicRuleTemplateListMockData.length;
     expect(screen.getByText(`共 ${length} 条数据`)).toBeInTheDocument();
@@ -102,7 +102,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     }));
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     const length = publicRuleTemplateListMockData.length;
     expect(screen.getByText(`共 ${length} 条数据`)).toBeInTheDocument();
     expect(screen.queryByText('编 辑')).not.toBeInTheDocument();
@@ -124,12 +124,12 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
   it('should refresh table when emit "Refresh_Global_Rule_Template_List" event', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
       EventEmitter.emit(EmitterKey.Refresh_Global_Rule_Template_List)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(2);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(2);
   });
 
   it('click edit button', async () => {
@@ -141,7 +141,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('click delete button', async () => {
@@ -169,8 +169,8 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     expect(
       screen.queryByText(`正在删除模版 "${templateName}"...`)
     ).not.toBeInTheDocument();
-    expect(deleteRuleTemplateSpy).toBeCalledTimes(1);
-    expect(deleteRuleTemplateSpy).toBeCalledWith({
+    expect(deleteRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(deleteRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: publicRuleTemplateListMockData[0].rule_template_name
     });
   });
@@ -201,8 +201,8 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     expect(
       screen.queryByText(`正在导出模版 "${templateName}"...`)
     ).not.toBeInTheDocument();
-    expect(exportRuleTemplateSpy).toBeCalledTimes(1);
-    expect(exportRuleTemplateSpy).toBeCalledWith(
+    expect(exportRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(exportRuleTemplateSpy).toHaveBeenCalledWith(
       {
         rule_template_name: publicRuleTemplateListMockData[0].rule_template_name
       },
@@ -219,7 +219,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toBeCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       payload: {
         modalStatus: {
@@ -235,7 +235,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     expect(screen.getByText('克隆规则模版')).toBeInTheDocument();
     fireEvent.click(screen.getByText('克隆规则模版'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(dispatchSpy).toBeCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
         ruleTemplate: publicRuleTemplateListMockData[0]

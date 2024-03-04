@@ -48,13 +48,13 @@ describe('Api', () => {
   test('should execute authInvalid  when request return 401', async () => {
     let result;
     try {
-      expect(authInvalid).toBeCalledTimes(0);
+      expect(authInvalid).toHaveBeenCalledTimes(0);
 
       await apiInstance.post('/test/401');
     } catch (error: any) {
       result = error;
     } finally {
-      expect(authInvalid).toBeCalledTimes(1);
+      expect(authInvalid).toHaveBeenCalledTimes(1);
       expect(result?.response?.data).toEqual({
         code: 2,
         msg: 'error'
@@ -65,14 +65,17 @@ describe('Api', () => {
 
   test('should download file when request header includes content-disposition and attachment', async () => {
     const result = await apiInstance.post('/download/en');
-    expect(downloadSpy).toBeCalledTimes(1);
-    expect(downloadSpy).toBeCalledWith(result.data, 'exec_sql_db1_5.sql');
+    expect(downloadSpy).toHaveBeenCalledTimes(1);
+    expect(downloadSpy).toHaveBeenCalledWith(result.data, 'exec_sql_db1_5.sql');
   });
 
   test('should get truthy filename when request header includes content-disposition and attachment and filename includes *=', async () => {
     const result = await apiInstance.post('/download/cn');
-    expect(downloadSpy).toBeCalledTimes(1);
-    expect(downloadSpy).toBeCalledWith(result.data, 'SQL审核报告_db1_5.csv');
+    expect(downloadSpy).toHaveBeenCalledTimes(1);
+    expect(downloadSpy).toHaveBeenCalledWith(
+      result.data,
+      'SQL审核报告_db1_5.csv'
+    );
   });
 
   test('should show error message when response status code is not equal 200', async () => {
@@ -87,8 +90,8 @@ describe('Api', () => {
         msg: 'error message'
       });
       expect(result?.response?.status).toBe(500);
-      expect(emitSpy).toBeCalledTimes(1);
-      expect(emitSpy).toBeCalledWith(
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
@@ -106,8 +109,8 @@ describe('Api', () => {
       token = res.data.token;
     } finally {
       expect(token).toBe(token);
-      expect(emitSpy).toBeCalledTimes(1);
-      expect(emitSpy).toBeCalledWith(
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {

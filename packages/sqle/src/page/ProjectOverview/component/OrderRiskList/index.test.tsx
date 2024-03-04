@@ -48,7 +48,7 @@ describe('page/ProjectOverview/OrderRiskList', () => {
       EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
@@ -61,7 +61,7 @@ describe('page/ProjectOverview/OrderRiskList', () => {
     );
     expect(screen.getByText('查看更多')).toBeInTheDocument();
     fireEvent.click(screen.getByText('查看更多'));
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${mockProjectInfo.projectID}/order`
     );
   });
@@ -79,14 +79,16 @@ describe('page/ProjectOverview/OrderRiskList', () => {
       EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('暂无数据')).toBeInTheDocument();
     expect(screen.getByText('刷新')).toBeInTheDocument();
     fireEvent.click(screen.getByText('刷新'));
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Project_Overview);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Project_Overview
+    );
   });
 });

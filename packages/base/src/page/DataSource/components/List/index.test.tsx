@@ -99,13 +99,13 @@ describe('page/DataSource/DataSourceList', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestListDBServiceDriver).toBeCalledTimes(1);
+    expect(requestListDBServiceDriver).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(dbServiceTips).toBeCalledTimes(1);
+    expect(dbServiceTips).toHaveBeenCalledTimes(1);
     expect(dbServiceTips).nthCalledWith(1, {
       project_uid: projectID
     });
-    expect(requestTableList).toBeCalledTimes(1);
+    expect(requestTableList).toHaveBeenCalledTimes(1);
     expect(requestTableList).nthCalledWith(1, {
       fuzzy_keyword: '',
       page_index: 1,
@@ -139,7 +139,7 @@ describe('page/DataSource/DataSourceList', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestTableList).toBeCalled();
+    expect(requestTableList).toHaveBeenCalled();
   });
 
   it('render table for filter input', async () => {
@@ -162,7 +162,7 @@ describe('page/DataSource/DataSourceList', () => {
 
     fireEvent.click(getBySelector('.custom-icon-search'));
     await act(async () => jest.advanceTimersByTime(3200));
-    expect(requestTableList).toBeCalledWith({
+    expect(requestTableList).toHaveBeenCalledWith({
       fuzzy_keyword: 'fuzzy_keyword_text',
       page_index: 1,
       page_size: 20,
@@ -263,8 +263,8 @@ describe('page/DataSource/DataSourceList', () => {
       // edit
       fireEvent.click(actionBtn[0]);
       await act(async () => jest.advanceTimersByTime(300));
-      expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith(
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith(
         `/project/${projectID}/db-services/update/${DBServicesList[0].uid}`
       );
     });
@@ -291,13 +291,13 @@ describe('page/DataSource/DataSourceList', () => {
       expect(screen.getByText(`确认删除数据源 "${DBServicesList[0].name}"?`));
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestDelDBService).toBeCalled();
-      expect(requestDelDBService).toBeCalledWith({
+      expect(requestDelDBService).toHaveBeenCalled();
+      expect(requestDelDBService).toHaveBeenCalledWith({
         db_service_uid: DBServicesList[0].uid,
         project_uid: projectID
       });
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTableList).toBeCalled();
+      expect(requestTableList).toHaveBeenCalled();
     });
 
     it('render table for test connect action success', async () => {
@@ -325,7 +325,7 @@ describe('page/DataSource/DataSourceList', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestTestConnect).toBeCalled();
+      expect(requestTestConnect).toHaveBeenCalled();
       expect(screen.getByText('数据库连通性测试成功')).toBeInTheDocument();
     });
 
@@ -356,7 +356,7 @@ describe('page/DataSource/DataSourceList', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestTestConnect).toBeCalled();
+      expect(requestTestConnect).toHaveBeenCalled();
       expect(baseElement).toMatchSnapshot();
     });
 
@@ -385,7 +385,7 @@ describe('page/DataSource/DataSourceList', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestTestConnect).toBeCalled();
+      expect(requestTestConnect).toHaveBeenCalled();
       expect(baseElement).toMatchSnapshot();
     });
   });

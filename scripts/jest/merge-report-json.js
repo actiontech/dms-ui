@@ -7,82 +7,88 @@ const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
 
-const finalReportJSONFilePath = path.resolve(process.cwd(), 'report.json');
+const finalReportJSONFilePath = path.resolve(
+  process.cwd(),
+  'coverage-merged.json'
+);
 
 const ceReportJSONFilePath = path.resolve(
   process.cwd(),
   'ce_coverage/report.json'
 );
-const reportJSONFilePath = path.resolve(process.cwd(), 'coverage/report.json');
+const report1JSONFilePath = path.resolve(
+  process.cwd(),
+  'coverage/report-1.json'
+);
+const report2JSONFilePath = path.resolve(
+  process.cwd(),
+  'coverage/report-2.json'
+);
+const report3JSONFilePath = path.resolve(
+  process.cwd(),
+  'coverage/report-3.json'
+);
+const report4JSONFilePath = path.resolve(
+  process.cwd(),
+  'coverage/report-4.json'
+);
 
 if (!fs.existsSync(ceReportJSONFilePath)) {
   console.error(`not found ce report.json ${ceReportJSONFilePath}`);
   process.exit(1);
 }
 
-if (!fs.existsSync(reportJSONFilePath)) {
-  console.error(`not found report.json: ${reportJSONFilePath}`);
+if (!fs.existsSync(report1JSONFilePath)) {
+  console.error(`not found report1.json: ${report1JSONFilePath}`);
+  process.exit(1);
+}
+
+if (!fs.existsSync(report2JSONFilePath)) {
+  console.error(`not found report2.json: ${report2JSONFilePath}`);
+  process.exit(1);
+}
+
+if (!fs.existsSync(report3JSONFilePath)) {
+  console.error(`not found report3.json: ${report3JSONFilePath}`);
+  process.exit(1);
+}
+
+if (!fs.existsSync(report4JSONFilePath)) {
+  console.error(`not found report4.json: ${report4JSONFilePath}`);
   process.exit(1);
 }
 
 const ceCoverageReport = require(ceReportJSONFilePath);
-const coverageReport = require(reportJSONFilePath);
+const coverage1Report = require(report1JSONFilePath);
+const coverage2Report = require(report2JSONFilePath);
+const coverage3Report = require(report3JSONFilePath);
+const coverage4Report = require(report4JSONFilePath);
 
-const numFailedTestSuites =
-  ceCoverageReport.numFailedTestSuites + coverageReport.numFailedTestSuites;
-const numFailedTests =
-  ceCoverageReport.numFailedTests + coverageReport.numFailedTests;
-const numPassedTestSuites =
-  ceCoverageReport.numPassedTestSuites + coverageReport.numPassedTestSuites;
-const numPassedTests =
-  ceCoverageReport.numPassedTests + coverageReport.numPassedTests;
-const numPendingTestSuites =
-  ceCoverageReport.numPendingTestSuites + coverageReport.numPendingTestSuites;
-const numPendingTests =
-  ceCoverageReport.numPendingTests + coverageReport.numPendingTests;
-const numRuntimeErrorTestSuites =
-  ceCoverageReport.numRuntimeErrorTestSuites +
-  coverageReport.numRuntimeErrorTestSuites;
-const numTodoTests =
-  ceCoverageReport.numTodoTests + coverageReport.numTodoTests;
-const numTotalTestSuites =
-  ceCoverageReport.numTotalTestSuites + coverageReport.numTotalTestSuites;
-const numTotalTests =
-  ceCoverageReport.numTotalTests + coverageReport.numTotalTests;
-const snapshot = Object.keys(ceCoverageReport.snapshot ?? {}).reduce(
-  (acc, key) => ({
-    ...acc,
-    [key]: (ceCoverageReport[key] ?? 0) + (coverageReport[key] ?? 0)
-  }),
-  {}
-);
-const success = ceCoverageReport.success && coverageReport.success;
-
-fs.writeFile(
-  ceReportJSONFilePath,
-  JSON.stringify(ceCoverageReport.coverageMap),
-  (err) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-
-    console.log('Coverage report appended to ' + ceReportJSONFilePath);
-  }
-);
-
-fs.writeFile(
-  reportJSONFilePath,
-  JSON.stringify(coverageReport.coverageMap),
-  (err) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-
-    console.log('Coverage report appended to ' + reportJSONFilePath);
-  }
-);
+const coverageJsonReport = [
+  ceCoverageReport,
+  coverage1Report,
+  coverage2Report,
+  coverage3Report,
+  coverage4Report
+].reduce((acc, cur) => {
+  return {
+    numFailedTestSuites:
+      (acc.numFailedTestSuites ?? 0) + cur.numFailedTestSuites,
+    numFailedTests: (acc.numFailedTests ?? 0) + cur.numFailedTests,
+    numPassedTestSuites:
+      (acc.numPassedTestSuites ?? 0) + cur.numPassedTestSuites,
+    numPassedTests: (acc.numPassedTests ?? 0) + cur.numPassedTests,
+    numPendingTestSuites:
+      (acc.numPendingTestSuites ?? 0) + cur.numPendingTestSuites,
+    numPendingTests: (acc.numPendingTests ?? 0) + cur.numPendingTests,
+    numRuntimeErrorTestSuites:
+      (acc.numRuntimeErrorTestSuites ?? 0) + cur.numRuntimeErrorTestSuites,
+    numTodoTests: (acc.numTodoTests ?? 0) + cur.numTodoTests,
+    numTotalTestSuites: (acc.numTotalTestSuites ?? 0) + cur.numTotalTestSuites,
+    numTotalTests: (acc.numTotalTests ?? 0) + cur.numTotalTests,
+    success: (acc.success ?? true) && cur.success
+  };
+}, {});
 
 const command = 'pnpm test:merge';
 
@@ -99,21 +105,7 @@ exec(command, (error, stdout, stderr) => {
 
   const mergeCoverageReport = require(finalReportJSONFilePath);
 
-  const coverageJsonReport = {
-    numFailedTestSuites,
-    numFailedTests,
-    numPassedTestSuites,
-    numPassedTests,
-    numPendingTestSuites,
-    numPendingTests,
-    numRuntimeErrorTestSuites,
-    numTodoTests,
-    numTotalTestSuites,
-    numTotalTests,
-    success,
-    snapshot,
-    coverageMap: mergeCoverageReport
-  };
+  coverageJsonReport.coverageMap = mergeCoverageReport;
 
   fs.writeFile(
     finalReportJSONFilePath,

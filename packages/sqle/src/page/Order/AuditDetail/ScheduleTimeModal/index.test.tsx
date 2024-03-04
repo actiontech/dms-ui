@@ -26,7 +26,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
   ignoreComponentCustomAttr();
 
   beforeEach(() => {
-    jest.useFakeTimers('legacy');
+    jest.useFakeTimers({ legacyFakeTimers: true });
 
     MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
   });
@@ -51,7 +51,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     expect(screen.getByText('取 消')).toBeInTheDocument();
     fireEvent.click(screen.getByText('取 消'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(closeScheduleModalFn).toBeCalled();
+    expect(closeScheduleModalFn).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -213,7 +213,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     const submitBtn = screen.getAllByText('定时上线')[1];
     fireEvent.click(submitBtn);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(submitFn).toBeCalled();
-    expect(submitFn).toBeCalledWith('2024-12-29T06:06:06+08:00');
+    expect(submitFn).toHaveBeenCalled();
+    expect(submitFn).toHaveBeenCalledWith('2024-12-29T06:06:06+08:00');
   });
 });
