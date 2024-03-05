@@ -31,7 +31,8 @@ export const oauthConfig = {
   server_token_url: 'mid://juckyny.na/xxsxnmf',
   server_user_id_url: 'cid://hqpbmxvbpl.cd/lcfyjtlkuj',
   user_id_tag: 'NFkVxY[4Xv^UFU&x&t5y',
-  auto_create_user: false
+  auto_create_user: false,
+  skip_check_state: false
 };
 
 export const SMTPConfig: ISMTPConfigurationResData = {

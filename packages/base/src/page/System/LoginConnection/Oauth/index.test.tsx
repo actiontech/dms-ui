@@ -106,7 +106,7 @@ describe('base/System/LoginConnection/Oauth', () => {
       await act(async () => jest.advanceTimersByTime(0));
 
       expect(requestUpdateOauth2Configuration).toHaveBeenCalledTimes(1);
-      expect(requestUpdateOauth2Configuration).nthCalledWith(1, {
+      expect(requestUpdateOauth2Configuration).toHaveBeenNthCalledWith(1, {
         oauth2: { ...oauthConfig, enable_oauth2: true }
       });
       await act(async () => jest.advanceTimersByTime(3000));
@@ -199,13 +199,16 @@ describe('base/System/LoginConnection/Oauth', () => {
       });
 
       fireEvent.click(getBySelector('#autoCreateUser', baseElement));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(getBySelector('#skipCheckState', baseElement));
 
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(0));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestUpdateOauth2Configuration).toHaveBeenCalledTimes(2);
-      expect(requestUpdateOauth2Configuration).nthCalledWith(2, {
+      expect(requestUpdateOauth2Configuration).toHaveBeenNthCalledWith(2, {
         oauth2: {
           access_token_tag: 'access Token Key Name',
           client_host: 'client Host',
@@ -220,7 +223,8 @@ describe('base/System/LoginConnection/Oauth', () => {
           user_email_tag: 'user email tag',
           user_id_tag: 'user Id Key Name',
           user_wechat_tag: 'user wechat tag',
-          auto_create_user: true
+          auto_create_user: true,
+          skip_check_state: true
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));

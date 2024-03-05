@@ -99,7 +99,8 @@ const Oauth = () => {
       user_id_tag: value.userIdKeyName,
       user_email_tag: value.userEmailTag,
       user_wechat_tag: value.userWechatTag,
-      auto_create_user: value.autoCreateUser
+      auto_create_user: value.autoCreateUser,
+      skip_check_state: value.skipCheckState
     };
 
     if (!!value.scopes) {
@@ -136,7 +137,8 @@ const Oauth = () => {
       userIdKeyName: oauthConfig?.user_id_tag,
       userEmailTag: oauthConfig?.user_email_tag,
       userWechatTag: oauthConfig?.user_wechat_tag,
-      autoCreateUser: oauthConfig?.auto_create_user
+      autoCreateUser: oauthConfig?.auto_create_user,
+      skipCheckState: oauthConfig?.skip_check_state
     });
   }, [form, oauthConfig]);
 
@@ -299,6 +301,19 @@ const Oauth = () => {
           hidden: !oauthConfig?.enable_oauth2,
           render: (enable) => (
             <>{!!enable ? t('common.open') : t('common.close')}</>
+          )
+        },
+        {
+          label: (
+            <BasicToolTips title={t('dmsSystem.oauth.skipStateCheckTips')}>
+              {t('dmsSystem.oauth.skipCheckState')}
+            </BasicToolTips>
+          ),
+          span: 3,
+          dataIndex: 'skip_check_state',
+          hidden: !oauthConfig?.enable_oauth2,
+          render: (skipCheck) => (
+            <>{skipCheck ? t('common.open') : t('common.close')}</>
           )
         }
       ];
