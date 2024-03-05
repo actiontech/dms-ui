@@ -51,7 +51,6 @@ export const mockDataExportDetailRedux = {
       task_uid: '1752172791873933314',
       db_info: {
         uid: '1752170583749038080',
-        name: 'mysql-1',
         db_type: '',
         database_name: 'test'
       },

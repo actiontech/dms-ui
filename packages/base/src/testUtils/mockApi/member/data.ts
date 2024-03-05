@@ -81,7 +81,6 @@ export const memberGroupList: IListMemberGroup[] = [
     ]
   },
   {
-    is_project_admin: false,
     name: 'member-group2',
 
     role_with_op_ranges: [
@@ -119,5 +118,19 @@ export const memberGroupList: IListMemberGroup[] = [
       },
       { uid: '1647895752866795520', name: 'test666' }
     ]
+  },
+  {
+    name: 'member-group9',
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [
+          { uid: '70121', name: 'Range14' },
+          { uid: '70211', name: 'Range25' }
+        ],
+        role_uid: { uid: '5005', name: 'Role12' }
+      }
+    ],
+    uid: '10029385'
   }
 ];

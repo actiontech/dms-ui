@@ -9,8 +9,10 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 import DiffOrderReject from '.';
+import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
 
 describe('ReportStatistics/topList/DiffOrderReject', () => {
+  ignoreComponentAutoCreatedListNoKey();
   const customRender = () => {
     return renderWithTheme(<DiffOrderReject />);
   };
