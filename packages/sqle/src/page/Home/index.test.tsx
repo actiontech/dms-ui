@@ -3,7 +3,7 @@ import Home from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import home from '../../testUtils/mockApi/home';
-import { cleanup, fireEvent, screen } from '@testing-library/react';
+import { cleanup, fireEvent, screen, act } from '@testing-library/react';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('page/Home', () => {
@@ -19,10 +19,11 @@ describe('page/Home', () => {
     cleanup();
   });
 
-  it('render Home page', () => {
+  it('render Home page', async () => {
     const request = home.getWorkflows();
     const staticsRequest = home.getDashboard();
     const { baseElement } = superRender(<Home />);
+    await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toHaveBeenCalled();
     expect(staticsRequest).toHaveBeenCalled();
     expect(screen.getByText('工作台')).toBeInTheDocument();

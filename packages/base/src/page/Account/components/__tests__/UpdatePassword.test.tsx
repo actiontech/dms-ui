@@ -48,6 +48,10 @@ describe('test base/page/Account/UpdatePassword', () => {
     });
 
     fireEvent.change(screen.getByLabelText('确认新密码'), {
+      target: { value: 'admin12' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.change(screen.getByLabelText('确认新密码'), {
       target: { value: 'admin1' }
     });
 

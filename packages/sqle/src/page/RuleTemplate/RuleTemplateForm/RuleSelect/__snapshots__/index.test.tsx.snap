@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
+exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
 <body>
   <div>
     <div

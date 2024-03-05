@@ -744,6 +744,538 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate change workflow template n
 </body>
 `;
 
+exports[`page/WorkflowTemplate/UpdateWorkflowTemplate no review node in template 1`] = `
+<body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+  <div>
+    <div
+      class="css-1w47t3a"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="actiontech-page-header-namespace css-1xspr0w"
+          >
+            <div
+              class="title"
+            >
+              <a
+                href="/sqle/project/700300/progress"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <span
+                      aria-label="arrow-left"
+                      class="anticon anticon-arrow-left"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="arrow-left"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 000 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span>
+                    返回审批流程模版
+                  </span>
+                </button>
+              </a>
+            </div>
+            <div
+              class="extra"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      重 置
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      保 存
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-row workflow-template-wrapper css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col css-dev-only-do-not-override-txh9fw"
+              style="flex-basis: auto;"
+            >
+              <div
+                class="css-1j4pcp2"
+              >
+                <div
+                  class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="honour-icon"
+                    >
+                      <svg
+                        fill="none"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          id="honour-fill"
+                        >
+                          <path
+                            d="M12.25 2.33341V10.9207C12.2501 10.9773 12.2337 11.0327 12.2028 11.0801C12.172 11.1275 12.1279 11.165 12.0762 11.1878L7.00001 13.4342L1.92384 11.1884C1.87189 11.1655 1.82776 11.1279 1.79688 11.0802C1.766 11.0325 1.74971 10.9769 1.75001 10.9201V2.33341H0.583344V1.16675H13.4167V2.33341H12.25ZM4.66668 7.00008V8.16675H9.33334V7.00008H4.66668ZM4.66668 4.66675V5.83341H9.33334V4.66675H4.66668Z"
+                            fill="white"
+                            id="Vector"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-card-body"
+                        >
+                          <span
+                            class="step-card-title"
+                          >
+                            允许创建工单的最高审核等级
+                          </span>
+                          <div
+                            class="step-card-desc"
+                          >
+                            <div
+                              class="css-ao34mv"
+                            >
+                              <span
+                                class="level-step-desc"
+                              >
+                                最高等级
+                              </span>
+                              <span
+                                style="color: rgb(235, 173, 28);"
+                              >
+                                告警(Warning)
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="add-file-icon"
+                    >
+                      <svg
+                        fill="none"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          id="file-add-fill"
+                        >
+                          <path
+                            d="M9.33333 1.16666L12.25 4.08332V12.2547C12.2498 12.4082 12.1887 12.5554 12.0801 12.6639C11.9715 12.7724 11.8243 12.8333 11.6707 12.8333H2.32925C2.17605 12.8323 2.02943 12.771 1.92104 12.6627C1.81266 12.5544 1.75122 12.4079 1.75 12.2547V1.74532C1.75 1.42566 2.00958 1.16666 2.32925 1.16666H9.33333ZM6.41667 6.41666H4.66667V7.58332H6.41667V9.33332H7.58333V7.58332H9.33333V6.41666H7.58333V4.66666H6.41667V6.41666Z"
+                            fill="white"
+                            id="Vector"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-card-body"
+                        >
+                          <span
+                            class="step-card-title"
+                          >
+                            工单发起/工单更新SQL语句
+                          </span>
+                          <div
+                            class="step-card-desc"
+                          >
+                            工单被创建，或者工单被驳回后等待修改SQL语句
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-row add-review-node-icon workflow-step-container css-dev-only-do-not-override-txh9fw"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-dashed basic-button-wrapper css-1o7grex"
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <span
+                        aria-label="plus"
+                        class="anticon anticon-plus"
+                        role="img"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          data-icon="plus"
+                          fill="currentColor"
+                          focusable="false"
+                          height="1em"
+                          viewBox="64 64 896 896"
+                          width="1em"
+                        >
+                          <defs>
+                            <style />
+                          </defs>
+                          <path
+                            d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
+                          />
+                          <path
+                            d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span>
+                      添加审核节点
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="send-plane-icon"
+                    >
+                      <svg
+                        fill="none"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          id="send-plane-fill"
+                        >
+                          <path
+                            d="M1.13517 5.43373C0.830674 5.33223 0.827757 5.16832 1.14101 5.0639L12.2751 1.35273C12.5837 1.25007 12.7604 1.42273 12.6741 1.7249L9.49259 12.8584C9.40509 13.167 9.22717 13.1775 9.09651 12.8846L7.00001 8.16665L10.5 3.49998L5.83334 6.99998L1.13517 5.43373Z"
+                            fill="white"
+                            id="Vector"
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-card-body"
+                        >
+                          <span
+                            class="step-card-title"
+                          >
+                            执行上线
+                          </span>
+                          <div
+                            class="step-card-desc"
+                          >
+                            -
+                          </div>
+                          <div
+                            class="step-card-operator"
+                          >
+                            <div
+                              class="operator-title"
+                            >
+                              执行人
+                            </div>
+                            <div
+                              class="operator-content"
+                            >
+                              <svg
+                                fill="none"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g
+                                  id="account-circle-fill"
+                                >
+                                  <path
+                                    d="M9 1.5C13.14 1.5 16.5 4.86 16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5ZM4.51725 11.562C5.61825 13.2045 7.27125 14.25 9.12 14.25C10.968 14.25 12.6217 13.2052 13.722 11.562C12.4738 10.3954 10.8285 9.74761 9.12 9.75C7.41128 9.74742 5.76563 10.3953 4.51725 11.562ZM9 8.25C9.59674 8.25 10.169 8.01295 10.591 7.59099C11.0129 7.16903 11.25 6.59674 11.25 6C11.25 5.40326 11.0129 4.83097 10.591 4.40901C10.169 3.98705 9.59674 3.75 9 3.75C8.40326 3.75 7.83097 3.98705 7.40901 4.40901C6.98705 4.83097 6.75 5.40326 6.75 6C6.75 6.59674 6.98705 7.16903 7.40901 7.59099C7.83097 8.01295 8.40326 8.25 9 8.25Z"
+                                    fill="#1CB889"
+                                    id="Vector"
+                                  />
+                                </g>
+                              </svg>
+                              <span
+                                class="review-exec-auth-text"
+                              >
+                                匹配拥有数据源上线权限的成员
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="DndDescribedBy-4"
+                style="display: none;"
+              >
+                
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+              </div>
+              <div
+                aria-atomic="true"
+                aria-live="assertive"
+                id="DndLiveRegion-4"
+                role="status"
+                style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+              />
+            </div>
+            <div
+              class="ant-col workflow-template-right-module css-dev-only-do-not-override-txh9fw"
+              style="flex: 0 0 360px;"
+            >
+              <div
+                class="css-u6p6f9"
+              >
+                <div
+                  class="step-title-wrapper"
+                >
+                  <div
+                    class="step-title"
+                  >
+                    基本信息
+                  </div>
+                  <div
+                    class="step-title-info"
+                  >
+                    设定模版的基本信息
+                  </div>
+                </div>
+                <div
+                  class="step-info-wrapper"
+                >
+                  <form
+                    class="ant-form ant-form-vertical ant-form-hide-required-mark css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        >
+                          <label
+                            class="ant-form-item-required"
+                            for="allowSubmitWhenLessAuditLevel"
+                            title="允许创建工单的最高审核等级"
+                          >
+                            允许创建工单的最高审核等级
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                aria-required="true"
+                                class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                              >
+                                <div
+                                  class="ant-select-selector"
+                                >
+                                  <span
+                                    class="ant-select-selection-search"
+                                  >
+                                    <input
+                                      aria-activedescendant="allowSubmitWhenLessAuditLevel_list_0"
+                                      aria-autocomplete="list"
+                                      aria-controls="allowSubmitWhenLessAuditLevel_list"
+                                      aria-expanded="false"
+                                      aria-haspopup="listbox"
+                                      aria-owns="allowSubmitWhenLessAuditLevel_list"
+                                      aria-required="true"
+                                      autocomplete="off"
+                                      class="ant-select-selection-search-input"
+                                      id="allowSubmitWhenLessAuditLevel"
+                                      readonly=""
+                                      role="combobox"
+                                      style="opacity: 0;"
+                                      type="search"
+                                      unselectable="on"
+                                      value=""
+                                    />
+                                  </span>
+                                  <span
+                                    class="ant-select-selection-item"
+                                    title="告警(Warning)"
+                                  >
+                                    告警(Warning)
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  class="ant-select-arrow"
+                                  style="user-select: none;"
+                                  unselectable="on"
+                                >
+                                  <span
+                                    aria-label="down"
+                                    class="anticon anticon-down ant-select-suffix"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="down"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1uvv7g7"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          下一步
+                        </span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow template and submit failed 1`] = `
 <body>
   <div>

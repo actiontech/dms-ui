@@ -91,19 +91,9 @@ exports[`test base/DataExport/Detail/ExportDetail should match snapshot 1`] = `
             />
             <div
               class="ant-segmented-item-label"
+              title="-"
             >
-              <div
-                class="db-service-segmented-label css-1jeaof"
-              >
-                <span
-                  class="db-service-segmented-label-text"
-                >
-                  mysql-1
-                </span>
-                <span
-                  class="db-service-segmented-label-icon"
-                />
-              </div>
+              -
             </div>
           </label>
         </div>
@@ -401,19 +391,9 @@ exports[`test base/DataExport/Detail/ExportDetail should match snapshot 2`] = `
             />
             <div
               class="ant-segmented-item-label"
+              title="-"
             >
-              <div
-                class="db-service-segmented-label css-1jeaof"
-              >
-                <span
-                  class="db-service-segmented-label-text"
-                >
-                  mysql-1
-                </span>
-                <span
-                  class="db-service-segmented-label-icon"
-                />
-              </div>
+              -
             </div>
           </label>
         </div>
@@ -2446,19 +2426,9 @@ exports[`test base/DataExport/Detail/ExportDetail should match snapshot when cur
             />
             <div
               class="ant-segmented-item-label"
+              title="-"
             >
-              <div
-                class="db-service-segmented-label css-1jeaof"
-              >
-                <span
-                  class="db-service-segmented-label-text"
-                >
-                  mysql-1
-                </span>
-                <span
-                  class="db-service-segmented-label-icon"
-                />
-              </div>
+              -
             </div>
           </label>
         </div>
@@ -2727,7 +2697,7 @@ exports[`test base/DataExport/Detail/ExportDetail should match snapshot when cur
                       <td
                         class="ant-table-cell"
                       >
-                        mysql-1
+                        -
                       </td>
                       <td
                         class="ant-table-cell"

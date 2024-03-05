@@ -274,7 +274,9 @@ describe('sqle/Order/AuditDetail', () => {
       page_size: '20',
       task_id: '2'
     });
-
+    fireEvent.click(screen.getAllByText('瀑布流展示')?.[0]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('分页展示')).toBeInTheDocument();
     fireEvent.click(screen.getByText('分页展示'));
     await act(async () => jest.advanceTimersByTime(300));
     const recordItem = getAllBySelector('.download-record-item', baseElement);
@@ -287,6 +289,9 @@ describe('sqle/Order/AuditDetail', () => {
       page_index: '1',
       page_size: '20',
       task_id: '2'
+    });
+    await act(async () => {
+      fireEvent.click(screen.getByText('概览'));
     });
   });
 

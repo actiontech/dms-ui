@@ -1323,3 +1323,525 @@ exports[`page/WorkflowTemplate/ReviewNodeInfo render review node with default as
   </div>
 </body>
 `;
+
+exports[`page/WorkflowTemplate/ReviewNodeInfo validate assignee user number 1`] = `
+<body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+  <div>
+    <div
+      class="css-u6p6f9"
+    >
+      <div
+        class="step-title-wrapper"
+      >
+        <div
+          class="step-title"
+        >
+          审核节点
+        </div>
+        <div
+          class="step-title-info"
+        >
+          编辑审核流程，拖拽移动审核节点顺序，审核人在该步骤可以执行「审核通过」或「驳回」操作
+        </div>
+      </div>
+      <div
+        class="step-info-wrapper"
+      >
+        <form
+          class="ant-form ant-form-vertical ant-form-hide-required-mark css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-form-item css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class=""
+                  for="desc"
+                  title="步骤描述"
+                >
+                  步骤描述
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <textarea
+                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper step-desc-textarea css-1pd1cd5"
+                      data-testid="exec-user-desc"
+                      id="desc"
+                      placeholder="请输入{{name}}"
+                      style="resize: none; height: 2px;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item authorized-item-switch css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required"
+                  for="approved_by_authorized"
+                  title="匹配拥有数据源审核权限的成员"
+                >
+                  匹配拥有数据源审核权限的成员
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="false"
+                      aria-required="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      id="approved_by_authorized"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required"
+                  for="assignee_user_id_list"
+                  title="审核人"
+                >
+                  审核人
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <div
+                      aria-required="true"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                      data-testid="exec-user-select"
+                    >
+                      <div
+                        class="ant-select-selector"
+                      >
+                        <div
+                          class="ant-select-selection-overflow"
+                        >
+                          <div
+                            class="ant-select-selection-overflow-item"
+                            style="opacity: 1;"
+                          >
+                            <span
+                              class="ant-select-selection-item"
+                              title="test"
+                            >
+                              <span
+                                class="ant-select-selection-item-content"
+                              >
+                                test
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-selection-item-remove"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="close"
+                                  class="anticon anticon-close"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="close"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-select-selection-overflow-item"
+                            style="opacity: 1;"
+                          >
+                            <span
+                              class="ant-select-selection-item"
+                              title="admin"
+                            >
+                              <span
+                                class="ant-select-selection-item-content"
+                              >
+                                admin
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-selection-item-remove"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="close"
+                                  class="anticon anticon-close"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="close"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-select-selection-overflow-item"
+                            style="opacity: 1;"
+                          >
+                            <span
+                              class="ant-select-selection-item"
+                              title="test1"
+                            >
+                              <span
+                                class="ant-select-selection-item-content"
+                              >
+                                test1
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-selection-item-remove"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="close"
+                                  class="anticon anticon-close"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="close"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-select-selection-overflow-item"
+                            style="opacity: 1;"
+                          >
+                            <span
+                              class="ant-select-selection-item"
+                              title="test2"
+                            >
+                              <span
+                                class="ant-select-selection-item-content"
+                              >
+                                test2
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-selection-item-remove"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="close"
+                                  class="anticon anticon-close"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="close"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-select-selection-overflow-item"
+                            style="opacity: 1;"
+                          >
+                            <span
+                              class="ant-select-selection-item"
+                              title="test3"
+                            >
+                              <span
+                                class="ant-select-selection-item-content"
+                              >
+                                test3
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-selection-item-remove"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="close"
+                                  class="anticon anticon-close"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="close"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+                            style="opacity: 1;"
+                          >
+                            <div
+                              class="ant-select-selection-search"
+                              style="width: 0px;"
+                            >
+                              <input
+                                aria-activedescendant="assignee_user_id_list_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="assignee_user_id_list_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="assignee_user_id_list_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="assignee_user_id_list"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-selection-search-mirror"
+                              >
+                                 
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <span
+                        aria-hidden="true"
+                        class="ant-select-arrow"
+                        style="user-select: none;"
+                        unselectable="on"
+                      >
+                        <span
+                          aria-label="down"
+                          class="anticon anticon-down ant-select-suffix"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="down"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-1uvv7g7"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                上一步
+              </span>
+            </button>
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                下一步
+              </span>
+            </button>
+          </div>
+        </form>
+        <div
+          class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal step-info-divider"
+          role="separator"
+        />
+        <div
+          class="css-4a4iba"
+        >
+          <span
+            class="ant-typography step-alert-title css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              aria-label="info-circle"
+              class="anticon anticon-info-circle step-alert-title-tips-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="info-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                />
+                <path
+                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                />
+              </svg>
+            </span>
+            创建/更新审批流程时请注意以下几点：
+          </span>
+          <div
+            class="ant-typography step-alert-content css-dev-only-do-not-override-txh9fw"
+          >
+            <ul
+              class="step-alert-item-icon"
+            >
+              <li>
+                审核流程自工单发起开始，通过设置的审核步骤后，最后以执行上线结束；
+              </li>
+              <li>
+                审核流程模板最多可设置4个审核步骤，也可不设置审核步骤；
+              </li>
+              <li>
+                单个步骤指定执行人时，最少需要添加一个指定人，最多只能添加三个指定人。
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

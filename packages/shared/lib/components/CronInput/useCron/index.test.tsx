@@ -140,4 +140,23 @@ describe('useCron', () => {
     expect(result.current.week).toEqual([1, 2, 3]);
     expect(result.current.error).toBe('');
   });
+
+  test('should update time when user call updateTime method', () => {
+    const { result } = renderHook(() => useCron({ defaultValue: '* * * * *' }));
+    act(() => {
+      result.current.updateTime(999, 888);
+    });
+    expect(result.current.week).toEqual([]);
+    expect(result.current.error).toBe(
+      '您的表达式中包含不合法的数值范围， minute(0-59), hour(0-23), day(1,31), month(1-12), week(0-6)'
+    );
+
+    act(() => {
+      result.current.updateTime(2, 1);
+    });
+
+    expect(result.current.hour).toEqual([2]);
+    expect(result.current.minute).toEqual([1]);
+    expect(result.current.error).toBe('');
+  });
 });
