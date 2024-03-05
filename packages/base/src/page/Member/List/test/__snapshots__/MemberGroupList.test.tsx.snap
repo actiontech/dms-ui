@@ -374,7 +374,13 @@ exports[`base/MemberGroupList render member group table 1`] = `
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        <span
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test、test666
+                        </span>
+                      </td>
                       <td
                         class="ant-table-cell"
                       >
@@ -479,6 +485,87 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         </div>
                       </td>
                     </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="10029385"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        member-group9
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      />
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                >
+                                  Role12: [ Range14,Range25 ]
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        未知状态...
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  删 除
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -491,7 +578,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
               class="ant-pagination-total-text"
             >
               <span>
-                共 3 条数据
+                共 4 条数据
               </span>
             </li>
             <li
