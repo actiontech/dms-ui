@@ -116,7 +116,7 @@ const DataSourceCount = () => {
         itemName: {
           spacing: 8,
           formatter: (text) => {
-            formatterLegendItemName(text);
+            return formatterLegendItemName(text);
           },
           style: {
             fontSize: 12,
