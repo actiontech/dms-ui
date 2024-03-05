@@ -41,7 +41,7 @@ describe('provision/hooks/useProvisionUser', () => {
     act(() => result.current.updateUserList());
 
     expect(result.current.loading).toBeTruthy();
-    expect(authListUserSpy).toBeCalledTimes(1);
+    expect(authListUserSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3000));
 

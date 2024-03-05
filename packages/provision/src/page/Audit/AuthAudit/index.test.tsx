@@ -42,9 +42,9 @@ describe('page/auth/AuthAudit', () => {
     ).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userListSpy).toBeCalledTimes(1);
-    expect(requestListSpy).toBeCalledTimes(1);
-    expect(requestListSpy).toBeCalledWith({
+    expect(userListSpy).toHaveBeenCalledTimes(1);
+    expect(requestListSpy).toHaveBeenCalledTimes(1);
+    expect(requestListSpy).toHaveBeenCalledWith({
       filter_by_namespace_uid: projectID,
       keyword: '',
       page_index: 1,
@@ -53,14 +53,14 @@ describe('page/auth/AuthAudit', () => {
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
-    expect(requestListSpy).toBeCalledTimes(2);
+    expect(requestListSpy).toHaveBeenCalledTimes(2);
   });
 
   it('render table list when api return data', async () => {
     const requestListSpy = auth.listAuthorizationEvents();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestListSpy).toBeCalledTimes(1);
+    expect(requestListSpy).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(`共 ${authAuditList.length} 条数据`)
     ).toBeInTheDocument();
@@ -105,7 +105,7 @@ describe('page/auth/AuthAudit', () => {
     const requestListSpy = auth.listAuthorizationEvents();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestListSpy).toBeCalledTimes(1);
+    expect(requestListSpy).toHaveBeenCalledTimes(1);
     const searchInputEle = getBySelector(
       '.basic-input-wrapper #actiontech-table-search-input',
       baseElement
@@ -125,8 +125,8 @@ describe('page/auth/AuthAudit', () => {
       await act(() => jest.advanceTimersByTime(300));
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestListSpy).toBeCalled();
-    expect(requestListSpy).toBeCalledWith({
+    expect(requestListSpy).toHaveBeenCalled();
+    expect(requestListSpy).toHaveBeenCalledWith({
       filter_by_namespace_uid: projectID,
       keyword: '123',
       page_index: 1,
@@ -138,7 +138,7 @@ describe('page/auth/AuthAudit', () => {
     const requestListSpy = auth.listAuthorizationEvents();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestListSpy).toBeCalledTimes(1);
+    expect(requestListSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('筛选'));
     await act(async () => jest.advanceTimersByTime(300));

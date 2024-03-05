@@ -40,7 +40,7 @@ describe('SqlManagement/useRuleTips', () => {
     });
     expect(result.current.loading).toBe(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(result.current.loading).toBe(false);
@@ -67,7 +67,7 @@ describe('SqlManagement/useRuleTips', () => {
       result.current.updateRuleTips(mockProjectInfo.projectName);
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(result.current.ruleTips).toStrictEqual([]);
@@ -82,7 +82,7 @@ describe('SqlManagement/useRuleTips', () => {
       result.current.updateRuleTips(mockProjectInfo.projectName);
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(result.current.ruleTips).toStrictEqual([]);

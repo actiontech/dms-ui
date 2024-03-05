@@ -81,7 +81,7 @@ describe('CopyTemplate', () => {
     await act(() => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('提 交'));
     await act(() => jest.advanceTimersByTime(100));
-    expect(copyDataPermissionTemplateSpy).toBeCalledWith({
+    expect(copyDataPermissionTemplateSpy).toHaveBeenCalledWith({
       data_permission_template_uid: '123',
       new_template: {
         name: 'new-temp-1'

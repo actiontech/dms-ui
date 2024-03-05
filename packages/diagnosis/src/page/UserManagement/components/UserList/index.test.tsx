@@ -63,7 +63,7 @@ describe('diagnosis/test user table', () => {
     const request = userManagement.getUserList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('共 2 条数据')).toBeInTheDocument();
@@ -76,7 +76,7 @@ describe('diagnosis/test user table', () => {
     const request = userManagement.getUserList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -84,13 +84,13 @@ describe('diagnosis/test user table', () => {
 
     mockDispatch.mockClear();
     fireEvent.click(screen.getAllByText('管 理')[0]);
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: userListData[0],
       type: 'userManagement/updateSelectUserData'
     });
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Update_User,
         status: true
@@ -104,7 +104,7 @@ describe('diagnosis/test user table', () => {
     const deleteRequest = userManagement.deleteUser();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -115,11 +115,11 @@ describe('diagnosis/test user table', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('正在删除用户: "test..."')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(deleteRequest).toBeCalled();
+    expect(deleteRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('删除用户 "test" 成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
   });
 
   it('delete user failed', async () => {
@@ -135,7 +135,7 @@ describe('diagnosis/test user table', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -146,7 +146,7 @@ describe('diagnosis/test user table', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('正在删除用户: "..."')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(deleteRequest).toBeCalled();
+    expect(deleteRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(1000));
   });
 
@@ -154,7 +154,7 @@ describe('diagnosis/test user table', () => {
     const request = userManagement.getUserList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     fireEvent.mouseDown(getBySelector('.ant-select-selection-search input'));
@@ -162,7 +162,7 @@ describe('diagnosis/test user table', () => {
     expect(screen.getByText('10 条/页')).toBeInTheDocument();
     fireEvent.click(screen.getByText('10 条/页'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(screen.getByText('共 2 条数据')).toBeInTheDocument();
   });
 });

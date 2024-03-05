@@ -36,7 +36,7 @@ describe('provision/hooks/useBusinessOptions', () => {
     });
 
     expect(result.current.loading).toBeTruthy();
-    expect(authListBusinessSpy).toBeCalledTimes(1);
+    expect(authListBusinessSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3000));
 

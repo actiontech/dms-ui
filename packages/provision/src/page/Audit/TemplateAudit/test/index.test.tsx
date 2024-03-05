@@ -45,8 +45,8 @@ describe('page/Auth/TemplateAudit', () => {
     expect(baseElement).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(9000));
-    expect(requestListFn).toBeCalledTimes(1);
-    expect(requestListFn).toBeCalledWith({
+    expect(requestListFn).toHaveBeenCalledTimes(1);
+    expect(requestListFn).toHaveBeenCalledWith({
       filter_by_namespace_uid: projectID,
       keyword: '',
       page_index: 1,
@@ -60,7 +60,7 @@ describe('page/Auth/TemplateAudit', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(requestListFn).toBeCalledTimes(1);
+    expect(requestListFn).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(`共 ${templateAuditList.length} 条数据`)
     ).toBeInTheDocument();
@@ -85,8 +85,8 @@ describe('page/Auth/TemplateAudit', () => {
       const requestListFn = auth.listDataPermissionTemplateEvents();
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      expect(requestServiceList).toBeCalledTimes(1);
-      expect(requestUserList).toBeCalledTimes(1);
+      expect(requestServiceList).toHaveBeenCalledTimes(1);
+      expect(requestUserList).toHaveBeenCalledTimes(1);
 
       const searchInputEle = getBySelector(
         '.basic-input-wrapper #actiontech-table-search-input',
@@ -109,8 +109,8 @@ describe('page/Auth/TemplateAudit', () => {
         await act(() => jest.advanceTimersByTime(300));
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestListFn).toBeCalled();
-      expect(requestListFn).toBeCalledWith({
+      expect(requestListFn).toHaveBeenCalled();
+      expect(requestListFn).toHaveBeenCalledWith({
         filter_by_namespace_uid: projectID,
         keyword: '123',
         page_index: 1,
@@ -122,7 +122,7 @@ describe('page/Auth/TemplateAudit', () => {
       const requestListFn = auth.listDataPermissionTemplateEvents();
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       fireEvent.click(screen.getByText('筛选'));
       await act(async () => jest.advanceTimersByTime(300));
@@ -145,7 +145,7 @@ describe('page/Auth/TemplateAudit', () => {
       );
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       await act(async () => {
         fireEvent.click(screen.getByText('创建权限模版'));
@@ -153,7 +153,7 @@ describe('page/Auth/TemplateAudit', () => {
       });
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalled();
+      expect(requestListFn).toHaveBeenCalled();
       expect(requestListFn).nthCalledWith(2, {
         filter_by_event_type: EventTypeEnum.data_permission_template_created,
         filter_by_namespace_uid: projectID,
@@ -167,12 +167,12 @@ describe('page/Auth/TemplateAudit', () => {
       const requestListFn = auth.listDataPermissionTemplateEvents();
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       const refreshBtn = getBySelector('.custom-icon-refresh', baseElement);
       fireEvent.click(refreshBtn);
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalled();
+      expect(requestListFn).toHaveBeenCalled();
     });
   });
 

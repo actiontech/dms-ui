@@ -44,8 +44,8 @@ describe('sqle/Order/Common/ListLayoutSelector', () => {
     expect(screen.getByText('瀑布流展示')).toBeInTheDocument();
     fireEvent.click(screen.getByText('瀑布流展示'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onChangeFn).toBeCalled();
-    expect(onChangeFn).toBeCalledWith(ListLayoutEnum.scroll);
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn).toHaveBeenCalledWith(ListLayoutEnum.scroll);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -60,8 +60,8 @@ describe('sqle/Order/Common/ListLayoutSelector', () => {
     expect(screen.getByText('分页展示')).toBeInTheDocument();
     fireEvent.click(screen.getByText('分页展示'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onChangeFn).toBeCalled();
-    expect(onChangeFn).toBeCalledWith(ListLayoutEnum.pagination);
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn).toHaveBeenCalledWith(ListLayoutEnum.pagination);
     expect(baseElement).toMatchSnapshot();
   });
 });

@@ -39,8 +39,8 @@ describe('test init monitor item config modal', () => {
     const { container } = superRender(<DatabaseMonitorModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalStatus: {
           [ModalName.Check_Monitor_Config]: false

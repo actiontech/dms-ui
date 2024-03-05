@@ -1,27 +1,23 @@
 import { cleanup, act } from '@testing-library/react';
 import { renderWithTheme } from '../../../../../testUtils/customRender';
 import { mockThemeStyleData } from '../../../../../testUtils/mockHooks/mockThemeStyleData';
-
+import MockDate from 'mockdate';
 import statistic from '../../../../../testUtils/mockApi/statistic';
 import {
   createSpySuccessResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-
 import CardNumberShow from '.';
+import dayjs from 'dayjs';
 
 describe('ReportStatistics/CardNumberShow', () => {
-  let DateSpy: jest.SpyInstance;
   const customRender = () => {
-    const mockDate = new Date('2010-01-01T00:00:00Z');
-    DateSpy = jest
-      .spyOn(global, 'Date')
-      .mockImplementation(() => mockDate as any);
     return renderWithTheme(<CardNumberShow />);
   };
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    MockDate.set(dayjs('2010-01-01 08:00:00').valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
     mockThemeStyleData();
     statistic.mockAllApi();
   });
@@ -30,7 +26,6 @@ describe('ReportStatistics/CardNumberShow', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
-    DateSpy.mockRestore();
     cleanup();
   });
 
@@ -55,13 +50,13 @@ describe('ReportStatistics/CardNumberShow', () => {
 
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getWorkflowCount).toBeCalled();
+    expect(getWorkflowCount).toHaveBeenCalled();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getWorkflowDurationOfWaitingForAudit).toBeCalled();
+    expect(getWorkflowDurationOfWaitingForAudit).toHaveBeenCalled();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getWorkflowAuditPassPercent).toBeCalled();
+    expect(getWorkflowAuditPassPercent).toHaveBeenCalled();
 
     expect(baseElement).toMatchSnapshot();
   });

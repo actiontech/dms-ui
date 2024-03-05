@@ -37,7 +37,7 @@ describe('diagnosis/useGetUserScope', () => {
     await act(() => {
       result.current.getUserScopeByRoleId({ role_id: '10000' });
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(result.current.getUserScopeLoading).toBe(true);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.userScope?.data).toStrictEqual({
@@ -45,8 +45,8 @@ describe('diagnosis/useGetUserScope', () => {
       message: 'ok',
       data: adminPermission
     });
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         userScope: adminPermission
       },
@@ -65,7 +65,7 @@ describe('diagnosis/useGetUserScope', () => {
     await act(() => {
       result.current.getUserScopeByRoleId({ role_id: '10000' });
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(result.current.getUserScopeLoading).toBe(true);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.userScope?.data).toStrictEqual({
@@ -73,8 +73,8 @@ describe('diagnosis/useGetUserScope', () => {
       message: 'ok',
       data: undefined
     });
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         userScope: []
       },
@@ -94,7 +94,7 @@ describe('diagnosis/useGetUserScope', () => {
     await act(() => {
       result.current.getUserScopeByRoleId({ role_id: '10000' });
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(result.current.getUserScopeLoading).toBe(true);
     await act(async () => jest.advanceTimersByTime(3000));
   });

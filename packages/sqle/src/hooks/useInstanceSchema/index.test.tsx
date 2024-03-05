@@ -41,8 +41,8 @@ describe('useInstanceSchema', () => {
     );
     expect(baseElement).toMatchSnapshot();
 
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName,
       instance_name: 'instanceId'
     });
@@ -52,7 +52,7 @@ describe('useInstanceSchema', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.schemaList).toEqual(['schema1']);
     cleanup();
 
@@ -79,13 +79,13 @@ describe('useInstanceSchema', () => {
     );
     const { result } = renderHook(() => useInstanceSchema(projectName));
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).not.toBeCalled();
+    expect(requestSpy).not.toHaveBeenCalled();
 
     act(() => {
       result.current.updateSchemaList();
     });
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).not.toBeCalled();
+    expect(requestSpy).not.toHaveBeenCalled();
   });
 });

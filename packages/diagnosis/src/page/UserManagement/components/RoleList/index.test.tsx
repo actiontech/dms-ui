@@ -66,7 +66,7 @@ describe('diagnosis/test role table', () => {
     const request = userManagement.getRoleList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('共 2 条数据')).toBeInTheDocument();
@@ -77,8 +77,8 @@ describe('diagnosis/test role table', () => {
     expect(getAllBySelector('.anticon-ellipsis').length).toBe(1);
     fireEvent.click(getBySelector('.anticon-ellipsis'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(mockDispatch).toBeCalled();
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalled();
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: roleListData?.[0].id,
       type: 'userManagement/updatePermissionRoleId'
     });
@@ -93,7 +93,7 @@ describe('diagnosis/test role table', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('共 1 条数据')).toBeInTheDocument();
@@ -107,7 +107,7 @@ describe('diagnosis/test role table', () => {
     const request = userManagement.getRoleList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
 
@@ -115,13 +115,13 @@ describe('diagnosis/test role table', () => {
 
     mockDispatch.mockClear();
     fireEvent.click(screen.getAllByText('编 辑')[0]);
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: roleListData[1],
       type: 'userManagement/updateSelectRoleData'
     });
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Update_Role,
         status: true
@@ -135,7 +135,7 @@ describe('diagnosis/test role table', () => {
     const deleteRequest = userManagement.deleteRole();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
 
@@ -146,11 +146,11 @@ describe('diagnosis/test role table', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('正在删除角色 "test"...')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(deleteRequest).toBeCalled();
+    expect(deleteRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('删除角色 "test" 成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
   });
 
   it('delete role failed', async () => {
@@ -166,7 +166,7 @@ describe('diagnosis/test role table', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
 
@@ -177,7 +177,7 @@ describe('diagnosis/test role table', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('正在删除角色 ""...')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(deleteRequest).toBeCalled();
+    expect(deleteRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(1000));
   });
 
@@ -185,7 +185,7 @@ describe('diagnosis/test role table', () => {
     const request = userManagement.getRoleList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     fireEvent.mouseDown(getBySelector('.ant-select-selection-search input'));
@@ -193,7 +193,7 @@ describe('diagnosis/test role table', () => {
     expect(screen.getByText('10 条/页')).toBeInTheDocument();
     fireEvent.click(screen.getByText('10 条/页'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(screen.getByText('共 2 条数据')).toBeInTheDocument();
   });
 });

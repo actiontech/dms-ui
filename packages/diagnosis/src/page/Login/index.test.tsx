@@ -66,21 +66,21 @@ describe('diagnosis/login', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(getBySelector('.ant-btn-loading-icon')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(loginRequest).toBeCalled();
-    expect(loginRequest).toBeCalledWith({
+    expect(loginRequest).toHaveBeenCalled();
+    expect(loginRequest).toHaveBeenCalledWith({
       username: 'root',
       password: '123456'
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         token: 'Bearer login'
       },
       type: 'user/updateToken'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         username: 'root',
         userId: '1',
@@ -149,13 +149,13 @@ describe('diagnosis/login', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(getBySelector('.ant-btn-loading-icon')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(loginRequest).toBeCalled();
-    expect(loginRequest).toBeCalledWith({
+    expect(loginRequest).toHaveBeenCalled();
+    expect(loginRequest).toHaveBeenCalledWith({
       username: 'root',
       password: '123456'
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).not.toBeCalled();
+    expect(mockDispatch).not.toHaveBeenCalled();
   });
 
   it('not return user id when login', async () => {
@@ -190,21 +190,21 @@ describe('diagnosis/login', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(getBySelector('.ant-btn-loading-icon')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(loginRequest).toBeCalled();
-    expect(loginRequest).toBeCalledWith({
+    expect(loginRequest).toHaveBeenCalled();
+    expect(loginRequest).toHaveBeenCalledWith({
       username: 'root',
       password: '123456'
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         token: 'Bearer login'
       },
       type: 'user/updateToken'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         username: 'root',
         userId: null,

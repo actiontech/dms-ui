@@ -13,6 +13,7 @@ import { useNavigate, BrowserRouter } from 'react-router-dom';
 import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../index.type';
+import { mockDriver } from '../../../testUtils/mockRequest';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -69,7 +70,7 @@ describe('sqle/RuleManager', () => {
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });
-    expect(getRuleTemplateListSpy).toBeCalledTimes(1);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(
       screen.getByText(`共 ${publicRuleTemplateListMockData.length} 条数据`)
@@ -84,10 +85,10 @@ describe('sqle/RuleManager', () => {
     expect(screen.getByText('创建规则模版')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导入规则模板'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalled();
+    expect(navigateSpy).toHaveBeenCalled();
     fireEvent.click(screen.getByText('创建规则模版'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalled();
+    expect(navigateSpy).toHaveBeenCalled();
   });
 
   it('click refresh icon', async () => {
@@ -96,8 +97,8 @@ describe('sqle/RuleManager', () => {
 
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTemplateListSpy).toBeCalledTimes(2);
-    expect(eventEmitSpy).toBeCalledTimes(2);
+    expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(2);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(2);
     expect(eventEmitSpy).toHaveBeenNthCalledWith(
       1,
       EmitterKey.Refresh_Global_Rule_Template_List
@@ -110,15 +111,16 @@ describe('sqle/RuleManager', () => {
 
   it('should render custom rule list', async () => {
     const getCustomRulesSpy = rule_template.getCustomRules();
+    mockDriver();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('自定义规则'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getCustomRulesSpy).toBeCalledTimes(1);
+    expect(getCustomRulesSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('新 建')).toBeInTheDocument();
     fireEvent.click(screen.getByText('新 建'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toBeCalled();
+    expect(navigateSpy).toHaveBeenCalled();
   });
 });

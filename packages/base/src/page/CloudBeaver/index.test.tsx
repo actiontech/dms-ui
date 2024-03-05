@@ -23,7 +23,7 @@ describe('test base/page/CloudBeaver', () => {
     const { container } = renderWithThemeAndRouter(<CloudBeaver />);
 
     expect(container).toMatchSnapshot();
-    expect(getSqlQueryUrlSpy).toBeCalledTimes(1);
+    expect(getSqlQueryUrlSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -45,8 +45,8 @@ describe('test base/page/CloudBeaver', () => {
     expect(screen.getByText('打开SQL工作台')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('打开SQL工作台'));
-    expect(global.open).toBeCalledTimes(1);
-    expect(global.open).toBeCalledWith(
+    expect(global.open).toHaveBeenCalledTimes(1);
+    expect(global.open).toHaveBeenCalledWith(
       enableSqlQueryUrlData.sql_query_root_uri
     );
   });
@@ -60,7 +60,7 @@ describe('test base/page/CloudBeaver', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(global.open).not.toBeCalled();
+    expect(global.open).not.toHaveBeenCalled();
 
     cleanup();
 
@@ -74,8 +74,8 @@ describe('test base/page/CloudBeaver', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(global.open).toBeCalledTimes(1);
-    expect(global.open).toBeCalledWith(
+    expect(global.open).toHaveBeenCalledTimes(1);
+    expect(global.open).toHaveBeenCalledWith(
       enableSqlQueryUrlData.sql_query_root_uri
     );
   });

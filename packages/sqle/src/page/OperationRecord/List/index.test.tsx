@@ -30,9 +30,9 @@ describe('sqle/OperationRecord/List', () => {
     const { baseElement } = renderWithReduxAndTheme(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(operationRecordListSpy).toBeCalledTimes(1);
-    expect(actionSpy).toBeCalledTimes(1);
-    expect(typeNameSpy).toBeCalledTimes(1);
+    expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
+    expect(actionSpy).toHaveBeenCalledTimes(1);
+    expect(typeNameSpy).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(`共 ${operationRecordListMockData.length} 条数据`)
     ).toBeInTheDocument();
@@ -54,7 +54,7 @@ describe('sqle/OperationRecord/List', () => {
     const operationRecordListSpy = operationRecord.getOperationRecordList();
     const { baseElement } = renderWithReduxAndTheme(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(operationRecordListSpy).toBeCalledTimes(1);
+    expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
     const searchInputEle = getBySelector(
       '.basic-input-wrapper #actiontech-table-search-input',
       baseElement
@@ -74,8 +74,8 @@ describe('sqle/OperationRecord/List', () => {
       await act(() => jest.advanceTimersByTime(300));
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(operationRecordListSpy).toBeCalled();
-    expect(operationRecordListSpy).toBeCalledWith({
+    expect(operationRecordListSpy).toHaveBeenCalled();
+    expect(operationRecordListSpy).toHaveBeenCalledWith({
       filter_operate_project_name: mockProjectInfo.projectName,
       fuzzy_search_operate_user_name: 'test',
       page_index: 1,
@@ -87,7 +87,7 @@ describe('sqle/OperationRecord/List', () => {
     const operationRecordListSpy = operationRecord.getOperationActionList();
     const { baseElement } = renderWithReduxAndTheme(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(operationRecordListSpy).toBeCalledTimes(1);
+    expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('筛选'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -106,8 +106,8 @@ describe('sqle/OperationRecord/List', () => {
     fireEvent.click(screen.getByText('导出'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('正在导出操作记录列表...')).toBeInTheDocument();
-    expect(exportListSpy).toBeCalledTimes(1);
-    expect(exportListSpy).toBeCalledWith(
+    expect(exportListSpy).toHaveBeenCalledTimes(1);
+    expect(exportListSpy).toHaveBeenCalledWith(
       {
         filter_operate_project_name: mockProjectInfo.projectName,
         fuzzy_search_operate_user_name: ''

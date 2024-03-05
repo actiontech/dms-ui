@@ -49,7 +49,7 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(getProjectListSpy).not.toBeCalled();
+    expect(getProjectListSpy).not.toHaveBeenCalled();
   });
 
   it('should not call getProjectList when showNotRuleTemplatePage is falsy', async () => {
@@ -64,7 +64,7 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(getProjectListSpy).not.toBeCalled();
+    expect(getProjectListSpy).not.toHaveBeenCalled();
   });
 
   it('should set allowCreateRuleTemplate to be true', async () => {
@@ -79,7 +79,7 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(getProjectListSpy).toBeCalled();
+    expect(getProjectListSpy).toHaveBeenCalled();
     expect(result.current.allowCreateRuleTemplate).toEqual(true);
   });
 

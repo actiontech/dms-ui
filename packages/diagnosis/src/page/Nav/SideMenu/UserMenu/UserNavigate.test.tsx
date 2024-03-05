@@ -49,8 +49,8 @@ describe('diagnosis/UserNavigate', () => {
     fireEvent.click(getBySelector('.content-item'));
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalledTimes(3);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(3);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         username: '',
         userId: null,
@@ -58,13 +58,13 @@ describe('diagnosis/UserNavigate', () => {
       },
       type: 'user/updateUser'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         token: ''
       },
       type: 'user/updateToken'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         userScope: []
       },

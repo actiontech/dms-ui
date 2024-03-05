@@ -67,8 +67,8 @@ describe('page/Auth/AuthList/UpdateTemplate', () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTempFn).toBeCalled();
-      expect(requestTempFn).toBeCalledWith({
+      expect(requestTempFn).toHaveBeenCalled();
+      expect(requestTempFn).toHaveBeenCalledWith({
         filter_by_namespace_uid: projectID,
         page_index: 1,
         page_size: 999
@@ -133,8 +133,8 @@ describe('page/Auth/AuthList/UpdateTemplate', () => {
       });
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestFn).toBeCalled();
-      expect(requestFn).toBeCalledWith({
+      expect(requestFn).toHaveBeenCalled();
+      expect(requestFn).toHaveBeenCalledWith({
         authorization: {
           data_permission_template_uid: '46'
         },
@@ -172,12 +172,14 @@ describe('page/Auth/AuthList/UpdateTemplate', () => {
       });
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestFn).toBeCalled();
+      expect(requestFn).toHaveBeenCalled();
 
       expect(screen.getByText('更新成功')).toBeInTheDocument();
       expect(baseElement).toMatchSnapshot();
-      expect(emitSpy).toBeCalledTimes(1);
-      expect(emitSpy).toBeCalledWith(EventEmitterKey.Refresh_Auth_List_Table);
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(
+        EventEmitterKey.Refresh_Auth_List_Table
+      );
       emitSpy.mockClear();
     });
   });

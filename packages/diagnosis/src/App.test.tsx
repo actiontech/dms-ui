@@ -51,10 +51,10 @@ describe('test diagnosis App', () => {
     const { container } = superRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
-    expect(getUserInfoSpy).toBeCalled();
+    expect(getUserInfoSpy).toHaveBeenCalled();
 
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         username: 'admin',
         userId: '1',
@@ -63,16 +63,16 @@ describe('test diagnosis App', () => {
       type: 'user/updateUser'
     });
 
-    expect(getUserScopeSpy).toBeCalled();
+    expect(getUserScopeSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(mockDispatch).toBeCalledTimes(3);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(3);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         userScope: adminPermission
       },
       type: 'user/updateUserScope'
     });
-    expect(getServerMonitorListSpy).toBeCalled();
+    expect(getServerMonitorListSpy).toHaveBeenCalled();
   });
 });

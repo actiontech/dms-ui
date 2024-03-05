@@ -31,14 +31,14 @@ const hasJsxRuntime = (() => {
 const babelJestConfig = babelJest.createTransformer({
   presets: [
     [
-      require.resolve('babel-preset-react-app'),
+      'babel-preset-react-app',
       {
         runtime: hasJsxRuntime ? 'automatic' : 'classic'
       }
-    ],
-    ['@babel/preset-env', { targets: { node: 'current' } }],
-    '@babel/preset-typescript'
-  ]
+    ]
+  ],
+  babelrc: false,
+  configFile: false
 });
 
 const config = {

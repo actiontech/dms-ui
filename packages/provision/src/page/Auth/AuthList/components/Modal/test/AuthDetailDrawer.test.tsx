@@ -53,8 +53,8 @@ describe('page/Auth/AuthList/AuthDetailDrawer', () => {
 
       await act(async () => jest.advanceTimersByTime(2300));
       expect(baseElement).toMatchSnapshot();
-      expect(requestGetConnection).toBeCalled();
-      expect(requestGetConnection).toBeCalledWith({
+      expect(requestGetConnection).toHaveBeenCalled();
+      expect(requestGetConnection).toHaveBeenCalledWith({
         authorization_uid: selectData.uid
       });
     });
@@ -99,7 +99,7 @@ describe('page/Auth/AuthList/AuthDetailDrawer', () => {
       await act(async () => jest.advanceTimersByTime(3300));
       fireEvent.click(screen.getByText('复制连接串'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(execCommandFn).toBeCalled();
+      expect(execCommandFn).toHaveBeenCalled();
       expect(screen.queryByText('复制成功')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(500));
       execCommandFn.mockRestore();

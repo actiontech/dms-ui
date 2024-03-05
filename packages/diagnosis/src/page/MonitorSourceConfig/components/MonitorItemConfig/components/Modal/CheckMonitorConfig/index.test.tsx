@@ -65,7 +65,7 @@ describe('test check monitor config modal', () => {
     const request = monitorSourceConfig.getMonitorRoutineMetrics();
     const { baseElement } = superRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('共 1 条数据')).toBeInTheDocument();
@@ -81,22 +81,22 @@ describe('test check monitor config modal', () => {
     const request = monitorSourceConfig.getMonitorRoutineMetrics();
     const { baseElement } = superRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
     mockDispatch.mockClear();
     fireEvent.click(getBySelector('.ant-modal-close'));
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Check_Monitor_Config,
         status: false
       },
       type: 'monitorSourceConfig/updateModalStatus'
     });
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: null,
       type: 'monitorSourceConfig/updateSelectMonitorConfigData'
     });
@@ -106,7 +106,7 @@ describe('test check monitor config modal', () => {
     const request = monitorSourceConfig.getMonitorRoutineMetrics();
     const { baseElement } = superRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     fireEvent.mouseDown(getBySelector('.ant-select-selection-search input'));
@@ -114,7 +114,7 @@ describe('test check monitor config modal', () => {
     expect(screen.getByText('10 条/页')).toBeInTheDocument();
     fireEvent.click(screen.getByText('10 条/页'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(screen.getByText('共 1 条数据')).toBeInTheDocument();
   });
 

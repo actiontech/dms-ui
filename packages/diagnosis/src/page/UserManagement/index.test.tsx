@@ -62,7 +62,7 @@ describe('test user management', () => {
     const request = userManagement.getUserList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('共 2 条数据')).toBeInTheDocument();
@@ -75,15 +75,15 @@ describe('test user management', () => {
     const request = userManagement.getUserList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
     mockDispatch.mockClear();
-    expect(mockDispatch).toBeCalledTimes(0);
+    expect(mockDispatch).toHaveBeenCalledTimes(0);
     fireEvent.click(screen.getByText('添加用户'));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Add_User,
         status: true
@@ -98,15 +98,15 @@ describe('test user management', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('角色列表'));
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
     mockDispatch.mockClear();
-    expect(mockDispatch).toBeCalledTimes(0);
+    expect(mockDispatch).toHaveBeenCalledTimes(0);
     fireEvent.click(screen.getByText('添加角色'));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Add_Role,
         status: true
@@ -120,29 +120,29 @@ describe('test user management', () => {
     const request = userManagement.getUserList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(getBySelector('.title .basic-button-wrapper'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
-    expect(request).toBeCalled();
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(EmitterKey.Refresh_User_Management);
+    expect(request).toHaveBeenCalled();
   });
 
   it('should reset select permission id', async () => {
     const request = userManagement.getUserList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('操作权限列表'));
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('角色列表'));
 
-    expect(mockDispatch).toBeCalled();
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalled();
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: undefined,
       type: 'userManagement/updatePermissionRoleId'
     });

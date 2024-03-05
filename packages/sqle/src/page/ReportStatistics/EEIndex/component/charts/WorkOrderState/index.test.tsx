@@ -34,7 +34,7 @@ describe('ReportStatistics/WorkOrderState', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 
   it('render chart snap when api return empty', async () => {
@@ -42,6 +42,6 @@ describe('ReportStatistics/WorkOrderState', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(requestPlotsData).toBeCalled();
+    expect(requestPlotsData).toHaveBeenCalled();
   });
 });

@@ -28,11 +28,11 @@ describe('Data/Operation', () => {
     const { container } = superRender(<Operation />);
     await screen.findByText('权限组');
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(listOperationSetsSpy).toBeCalledTimes(1);
+    expect(listOperationSetsSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(getBySelector('.custom-icon-refresh'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('.ant-spin-spinning')).toBeInTheDocument();
-    expect(listOperationSetsSpy).toBeCalledTimes(2);
+    expect(listOperationSetsSpy).toHaveBeenCalledTimes(2);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
   });

@@ -52,8 +52,8 @@ describe('diagnosis/test user table', () => {
     const filterRequest = userManagement.getRoleList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
-    expect(filterRequest).toBeCalled();
+    expect(request).toHaveBeenCalled();
+    expect(filterRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('共 3 条数据')).toBeInTheDocument();
@@ -67,7 +67,7 @@ describe('diagnosis/test user table', () => {
     const request = userManagement.getScopeList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('权限')).toBeInTheDocument();
@@ -81,8 +81,8 @@ describe('diagnosis/test user table', () => {
     const filterRequest = userManagement.getRoleList();
     const { baseElement } = customRender('10000');
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
-    expect(filterRequest).toBeCalled();
+    expect(request).toHaveBeenCalled();
+    expect(filterRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -98,10 +98,10 @@ describe('diagnosis/test user table', () => {
       fireEvent.click(selectOptions[1]);
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalled();
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalled();
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: roleListData?.[1].id,
       type: 'userManagement/updatePermissionRoleId'
     });
@@ -112,8 +112,8 @@ describe('diagnosis/test user table', () => {
     const filterRequest = userManagement.getRoleList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
-    expect(filterRequest).toBeCalled();
+    expect(request).toHaveBeenCalled();
+    expect(filterRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -130,13 +130,13 @@ describe('diagnosis/test user table', () => {
       await act(async () => jest.advanceTimersByTime(300));
     });
     expect(screen.getAllByText('admin')?.[0]).toBeInTheDocument();
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
 
     fireEvent.click(screen.getByText('收起筛选'));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
 
-    expect(mockDispatch).toBeCalled();
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalled();
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: undefined,
       type: 'userManagement/updatePermissionRoleId'
     });

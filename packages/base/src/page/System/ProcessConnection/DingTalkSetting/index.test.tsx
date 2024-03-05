@@ -33,7 +33,7 @@ describe('base/System/ProcessConnection/DingTalkSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(requestGetDingTalkConfiguration).toBeCalled();
+    expect(requestGetDingTalkConfiguration).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -176,15 +176,15 @@ describe('base/System/ProcessConnection/DingTalkSetting', () => {
       expect(screen.getByText('提 交')).toBeInTheDocument();
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(500));
-      expect(requestUpdateDingTalkConfiguration).toBeCalled();
+      expect(requestUpdateDingTalkConfiguration).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestUpdateDingTalkConfiguration).toBeCalledWith({
+      expect(requestUpdateDingTalkConfiguration).toHaveBeenCalledWith({
         app_key: 'app Key',
         app_secret: 'app Secret',
         is_enable_ding_talk_notify: true
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetDingTalkConfiguration).toBeCalled();
+      expect(requestGetDingTalkConfiguration).toHaveBeenCalled();
     });
   });
 });

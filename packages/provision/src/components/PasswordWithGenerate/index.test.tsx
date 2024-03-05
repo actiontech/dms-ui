@@ -16,7 +16,7 @@ describe.skip('InputPassword', () => {
     document.execCommand = jest.fn();
     superRender(<InputPassword clickGeneratePassword={generateFn} />);
     await act(() => fireEvent.click(screen.getByText('生 成')));
-    expect(generateFn).toBeCalledTimes(1);
+    expect(generateFn).toHaveBeenCalledTimes(1);
     await sleep(300);
     expect(
       screen.queryByText('已生成16位密码并复制在剪贴板中')

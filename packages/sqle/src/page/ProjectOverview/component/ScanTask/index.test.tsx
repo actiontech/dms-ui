@@ -49,13 +49,13 @@ describe('page/ProjectOverview/ScanTask', () => {
       EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('创建扫描任务')).toBeInTheDocument();
     fireEvent.click(screen.getByText('创建扫描任务'));
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${mockProjectInfo.projectID}/auditPlan/create`
     );
   });
@@ -82,7 +82,7 @@ describe('page/ProjectOverview/ScanTask', () => {
       EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
@@ -103,13 +103,15 @@ describe('page/ProjectOverview/ScanTask', () => {
       EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalledWith({
+    expect(request).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('刷新')?.[0]).toBeInTheDocument();
     fireEvent.click(screen.getAllByText('刷新')?.[0]);
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Project_Overview);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Project_Overview
+    );
   });
 });

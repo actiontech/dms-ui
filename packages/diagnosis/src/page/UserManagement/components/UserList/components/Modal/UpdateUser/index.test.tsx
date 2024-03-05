@@ -70,8 +70,8 @@ describe('diagnosis/update user modal', () => {
 
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Update_User,
         status: false
@@ -102,7 +102,7 @@ describe('diagnosis/update user modal', () => {
     const getRoleRequest = userManagement.getRoleList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(getRoleRequest).toBeCalled();
+    expect(getRoleRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     // isNeedUpdatePassword
     fireEvent.click(getBySelector('#isNeedUpdatePassword'));
@@ -127,16 +127,16 @@ describe('diagnosis/update user modal', () => {
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateUserRequest).toBeCalled();
-    expect(updateUserRequest).toBeCalledWith({
+    expect(updateUserRequest).toHaveBeenCalled();
+    expect(updateUserRequest).toHaveBeenCalledWith({
       user_id: '1735126216567947264',
       password: '123',
       role_id: '10000'
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('编辑用户 "test" 成功')).toBeInTheDocument();
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Update_User,
         status: false
@@ -144,8 +144,8 @@ describe('diagnosis/update user modal', () => {
       type: 'userManagement/updateModalStatus'
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(EmitterKey.Refresh_User_Management);
   });
 
   it('should send request failed', async () => {
@@ -156,7 +156,7 @@ describe('diagnosis/update user modal', () => {
     const getRoleRequest = userManagement.getRoleList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(getRoleRequest).toBeCalled();
+    expect(getRoleRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     // isNeedUpdatePassword
     fireEvent.click(getBySelector('#isNeedUpdatePassword'));
@@ -181,8 +181,8 @@ describe('diagnosis/update user modal', () => {
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateUserRequest).toBeCalled();
-    expect(updateUserRequest).toBeCalledWith({
+    expect(updateUserRequest).toHaveBeenCalled();
+    expect(updateUserRequest).toHaveBeenCalledWith({
       user_id: '1735126216567947264',
       password: '123',
       role_id: '10000'

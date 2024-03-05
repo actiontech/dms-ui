@@ -107,8 +107,8 @@ describe('page/Auth/AuthList/UpdateExpiration', () => {
       });
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestFn).toBeCalled();
-      expect(requestFn).toBeCalledWith({
+      expect(requestFn).toHaveBeenCalled();
+      expect(requestFn).toHaveBeenCalledWith({
         authorization: { renewal_effective_time_day: 7 },
         authorization_uid: selectData.uid
       });
@@ -142,15 +142,17 @@ describe('page/Auth/AuthList/UpdateExpiration', () => {
       });
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestFn).toBeCalled();
-      expect(requestFn).toBeCalledWith({
+      expect(requestFn).toHaveBeenCalled();
+      expect(requestFn).toHaveBeenCalledWith({
         authorization: { renewal_effective_time_day: -1 },
         authorization_uid: selectData.uid
       });
       expect(screen.getByText('更新成功')).toBeInTheDocument();
       expect(baseElement).toMatchSnapshot();
-      expect(emitSpy).toBeCalledTimes(1);
-      expect(emitSpy).toBeCalledWith(EventEmitterKey.Refresh_Auth_List_Table);
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(
+        EventEmitterKey.Refresh_Auth_List_Table
+      );
       emitSpy.mockClear();
     });
   });

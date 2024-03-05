@@ -104,8 +104,8 @@ describe('test update server monitor', () => {
 
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Update_Server_Monitor,
         status: false
@@ -151,8 +151,8 @@ describe('test update server monitor', () => {
 
     await fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestUpdateServerMonitor).toBeCalled();
-    expect(requestUpdateServerMonitor).toBeCalledWith({
+    expect(requestUpdateServerMonitor).toHaveBeenCalled();
+    expect(requestUpdateServerMonitor).toHaveBeenCalledWith({
       server: {
         host: '172.20.134.1',
         name: 'test',
@@ -166,8 +166,8 @@ describe('test update server monitor', () => {
     expect(
       screen.queryByText('修改服务器监控源test成功！')
     ).toBeInTheDocument();
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Update_Server_Monitor,
         status: false
@@ -175,8 +175,10 @@ describe('test update server monitor', () => {
       type: 'monitorSourceConfig/updateModalStatus'
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Monitor_Source_Config
+    );
   });
 
   it('should send request failed', async () => {
@@ -218,8 +220,8 @@ describe('test update server monitor', () => {
 
     await fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestUpdateServerMonitor).toBeCalled();
-    expect(requestUpdateServerMonitor).toBeCalledWith({
+    expect(requestUpdateServerMonitor).toHaveBeenCalled();
+    expect(requestUpdateServerMonitor).toHaveBeenCalledWith({
       server: {
         host: '172.20.134.1',
         name: 'test',

@@ -57,12 +57,12 @@ describe('hooks/useDatabaseType', () => {
     act(() => {
       result.current.updateDriverNameList();
     });
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.loading).toBeTruthy();
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
     expect(result.current.loading).toBeFalsy();
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual(['mysql']);
     expect(result.current.driverMeta).toEqual([driverMeta[1]]);
     cleanup();
@@ -94,14 +94,14 @@ describe('hooks/useDatabaseType', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual([]);
 
     jest.advanceTimersByTime(3000);
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual(['mysql']);
     expect(result.current.driverMeta).toEqual([driverMeta[1]]);
 
@@ -114,7 +114,7 @@ describe('hooks/useDatabaseType', () => {
       result.current.updateDriverNameList();
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual(['mysql']);
     expect(result.current.driverMeta).toEqual([driverMeta[1]]);
 
@@ -122,7 +122,7 @@ describe('hooks/useDatabaseType', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual([]);
     expect(result.current.driverMeta).toEqual([]);
   });
@@ -139,7 +139,7 @@ describe('hooks/useDatabaseType', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual([]);
     expect(result.current.driverMeta).toEqual([]);
 
@@ -147,7 +147,7 @@ describe('hooks/useDatabaseType', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual(['mysql']);
     expect(result.current.driverMeta).toEqual([driverMeta[1]]);
 
@@ -158,7 +158,7 @@ describe('hooks/useDatabaseType', () => {
       result.current.updateDriverNameList();
     });
     expect(result.current.loading).toBeTruthy();
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual(['mysql']);
     expect(result.current.driverMeta).toEqual([driverMeta[1]]);
 
@@ -166,7 +166,7 @@ describe('hooks/useDatabaseType', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.driverNameList).toEqual([]);
     expect(result.current.driverMeta).toEqual([]);
   });

@@ -49,7 +49,7 @@ describe('useChatsDataByAPI', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.loading).toBe(false);
-    expect(mockSuccess).toBeCalledWith(responseDataObject);
+    expect(mockSuccess).toHaveBeenCalledWith(responseDataObject);
     expect(result.current.errorMessage).toBe('');
 
     await act(async () => result.current.getApiData());

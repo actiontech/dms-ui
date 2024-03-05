@@ -50,8 +50,8 @@ describe('page/Auth/AddAuth/PreviewModal', () => {
     const requestGetStatements = auth.getStatementsByDataPermissionTemplate();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetStatements).toBeCalled();
-    expect(requestGetStatements).toBeCalledWith({
+    expect(requestGetStatements).toHaveBeenCalled();
+    expect(requestGetStatements).toHaveBeenCalledWith({
       data_permission_template_uid: paramsData.data_permission_template_uid,
       db_account_hostname: params_db_account.hostname,
       db_account_password: params_db_account.password,
@@ -66,8 +66,8 @@ describe('page/Auth/AddAuth/PreviewModal', () => {
 
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(setParamsFn).toBeCalled();
-    expect(setParamsFn).toBeCalledWith();
+    expect(setParamsFn).toHaveBeenCalled();
+    expect(setParamsFn).toHaveBeenCalledWith();
   });
 
   it('render submit data for api return success', async () => {
@@ -75,16 +75,16 @@ describe('page/Auth/AddAuth/PreviewModal', () => {
     const requestSubmitFn = auth.addAuthorization();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetStatements).toBeCalled();
+    expect(requestGetStatements).toHaveBeenCalled();
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestSubmitFn).toBeCalled();
-    expect(requestSubmitFn).toBeCalledWith({ authorization: paramsData });
+    expect(requestSubmitFn).toHaveBeenCalled();
+    expect(requestSubmitFn).toHaveBeenCalledWith({ authorization: paramsData });
 
-    expect(onSuccessFn).toBeCalled();
+    expect(onSuccessFn).toHaveBeenCalled();
   });
 
   it('render submit data for api return error', async () => {
@@ -93,12 +93,12 @@ describe('page/Auth/AddAuth/PreviewModal', () => {
     requestSubmitFn.mockImplementation(() => createSpyFailResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetStatements).toBeCalled();
+    expect(requestGetStatements).toHaveBeenCalled();
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3300));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestSubmitFn).toBeCalled();
+    expect(requestSubmitFn).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 });

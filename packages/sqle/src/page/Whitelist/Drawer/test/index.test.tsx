@@ -36,7 +36,7 @@ describe('slqe/Whitelist/Drawer', () => {
   test('should dispatch init modal status action', async () => {
     renderWithReduxAndTheme(<WhitelistDrawer />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/initModalStatus',
       payload: {
         modalStatus: {

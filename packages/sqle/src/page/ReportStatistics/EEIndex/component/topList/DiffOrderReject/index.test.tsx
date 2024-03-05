@@ -41,7 +41,7 @@ describe('ReportStatistics/topList/DiffOrderReject', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestInstance).toBeCalled();
+    expect(requestInstance).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 

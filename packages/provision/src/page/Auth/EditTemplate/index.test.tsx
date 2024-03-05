@@ -121,8 +121,8 @@ describe('Auth/EditTemplate', () => {
         />
       </>
     );
-    expect(templateDetailModalStatusChangeSpy).toBeCalledTimes(1);
-    expect(templateDetailModalStatusChangeSpy).toBeCalledWith({
+    expect(templateDetailModalStatusChangeSpy).toHaveBeenCalledTimes(1);
+    expect(templateDetailModalStatusChangeSpy).toHaveBeenCalledWith({
       [ModalName.DataPermissionModal]: false
     });
   });
@@ -149,7 +149,7 @@ describe('Auth/EditTemplate', () => {
     fireEvent.click(screen.getByText('添加数据权限'));
     await act(async () => jest.advanceTimersByTime(1000));
 
-    expect(templateDetailModalStatusChangeSpy).toBeCalledTimes(2);
+    expect(templateDetailModalStatusChangeSpy).toHaveBeenCalledTimes(2);
     expect(templateDetailModalStatusChangeSpy).nthCalledWith(2, {
       [ModalName.DataPermissionModal]: true
     });
@@ -183,7 +183,7 @@ describe('Auth/EditTemplate', () => {
   //   await act(async () => jest.advanceTimersByTime(300));
   //   await act(async () => jest.advanceTimersByTime(1000));
   // fireEvent.click(screen.getByText('保 存'));
-  // expect(addDataPermissionTemplateSpy).toBeCalledWith({
+  // expect(addDataPermissionTemplateSpy).toHaveBeenCalledWith({
   //   template: {
   //     data_permissions: [
   //       {
@@ -230,7 +230,7 @@ describe('Auth/EditTemplate', () => {
     await act(() => fireEvent.click(screen.getByText('保 存')));
     await act(async () => jest.advanceTimersByTime(300));
 
-    expect(updateDataPermissionTemplateSpy).toBeCalledWith({
+    expect(updateDataPermissionTemplateSpy).toHaveBeenCalledWith({
       data_permission_template_uid: '123',
       template: {
         data_permissions: [
@@ -263,7 +263,7 @@ describe('Auth/EditTemplate', () => {
     });
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('返回权限模板列表'));
-    expect(confirmSpy).toBeCalledTimes(1);
+    expect(confirmSpy).toHaveBeenCalledTimes(1);
     confirmSpy.mockRestore();
   });
 });

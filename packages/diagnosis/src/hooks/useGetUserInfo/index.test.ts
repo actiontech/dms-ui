@@ -52,7 +52,7 @@ describe('diagnosis/useGetUserInfo', () => {
     await act(() => {
       result.current.getUserInfo({ user_id: '1' });
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(result.current.getUserInfoLoading).toBe(true);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.userInfo?.data).toStrictEqual({
@@ -64,8 +64,8 @@ describe('diagnosis/useGetUserInfo', () => {
       },
       message: 'ok'
     });
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         username: 'admin',
         userId: '1',
@@ -73,7 +73,7 @@ describe('diagnosis/useGetUserInfo', () => {
       },
       type: 'user/updateUser'
     });
-    expect(getScopeRequest).toBeCalled();
+    expect(getScopeRequest).toHaveBeenCalled();
   });
 
   it('request get user info success but nothing return', async () => {
@@ -87,10 +87,10 @@ describe('diagnosis/useGetUserInfo', () => {
     act(() => {
       result.current.getUserInfo({ user_id: '1' });
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         username: '',
         userId: null,
@@ -112,10 +112,10 @@ describe('diagnosis/useGetUserInfo', () => {
     act(() => {
       result.current.getUserInfo({ user_id: '1' });
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalledTimes(3);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(3);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         username: '',
         userId: null,
@@ -123,20 +123,20 @@ describe('diagnosis/useGetUserInfo', () => {
       },
       type: 'user/updateUser'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         token: ''
       },
       type: 'user/updateToken'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         userScope: []
       },
       type: 'user/updateUserScope'
     });
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith('/login', { replace: true });
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
   });
 
   it('request get user info failed', async () => {
@@ -146,11 +146,11 @@ describe('diagnosis/useGetUserInfo', () => {
     act(() => {
       result.current.getUserInfo({ user_id: '1' });
     });
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toBeCalledTimes(3);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(3);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         username: '',
         userId: null,
@@ -158,19 +158,19 @@ describe('diagnosis/useGetUserInfo', () => {
       },
       type: 'user/updateUser'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         token: ''
       },
       type: 'user/updateToken'
     });
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         userScope: []
       },
       type: 'user/updateUserScope'
     });
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith('/login', { replace: true });
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
   });
 });

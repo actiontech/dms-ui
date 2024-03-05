@@ -67,7 +67,7 @@ describe('test monitor source config', () => {
     const request = monitorSourceConfig.serverMonitorList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('共 3 条数据')).toBeInTheDocument();
@@ -83,15 +83,15 @@ describe('test monitor source config', () => {
     const request = monitorSourceConfig.serverMonitorList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
     mockDispatch.mockClear();
-    expect(mockDispatch).toBeCalledTimes(0);
+    expect(mockDispatch).toHaveBeenCalledTimes(0);
     fireEvent.click(screen.getByText('添加服务器监控源'));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Add_Server_Monitor,
         status: true
@@ -110,7 +110,7 @@ describe('test monitor source config', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -127,7 +127,7 @@ describe('test monitor source config', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     emitSpy.mockClear();
     expect(screen.getByText('共 1 条数据')).toBeInTheDocument();
     expect(screen.getAllByText('test12')?.[0]).toBeInTheDocument();
@@ -137,9 +137,11 @@ describe('test monitor source config', () => {
       getBySelector('.ant-space-horizontal .custom-icon-refresh')
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
-    expect(request).toBeCalled();
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Monitor_Source_Config
+    );
+    expect(request).toHaveBeenCalled();
   });
 
   it('should render search result for database table ', async () => {
@@ -155,7 +157,7 @@ describe('test monitor source config', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('添加数据库监控源')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -172,7 +174,7 @@ describe('test monitor source config', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(screen.getByText('共 1 条数据')).toBeInTheDocument();
     expect(screen.getAllByText('first')?.[0]).toBeInTheDocument();
     expect(screen.getAllByText('正常')?.[0]).toBeInTheDocument();
@@ -197,7 +199,7 @@ describe('test monitor source config', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('数据库监控源'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     emitSpy.mockClear();
     expect(screen.getByText('添加数据库监控源')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -208,14 +210,16 @@ describe('test monitor source config', () => {
       getBySelector('.ant-space-horizontal .custom-icon-refresh')
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
-    expect(request).toBeCalled();
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Monitor_Source_Config
+    );
+    expect(request).toHaveBeenCalled();
 
     mockDispatch.mockClear();
     fireEvent.click(screen.getByText('添加数据库监控源'));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Add_Database_Monitor,
         status: true

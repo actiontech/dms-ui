@@ -120,8 +120,8 @@ describe('test update database monitor', () => {
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestUpdateDatabaseMonitor).toBeCalled();
-    expect(requestUpdateDatabaseMonitor).toBeCalledWith({
+    expect(requestUpdateDatabaseMonitor).toHaveBeenCalled();
+    expect(requestUpdateDatabaseMonitor).toHaveBeenCalledWith({
       username: 'root123',
       password: '123456789',
       id: '1731574922989273088'
@@ -130,8 +130,8 @@ describe('test update database monitor', () => {
     expect(
       screen.queryByText('修改数据库监控源first成功！')
     ).toBeInTheDocument();
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Update_Database_Monitor,
         status: false
@@ -139,8 +139,10 @@ describe('test update database monitor', () => {
       type: 'monitorSourceConfig/updateModalStatus'
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Monitor_Source_Config
+    );
   }, 40000);
 
   it('send update request failed', async () => {
@@ -182,8 +184,8 @@ describe('test update database monitor', () => {
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestUpdateDatabaseMonitor).toBeCalled();
-    expect(requestUpdateDatabaseMonitor).toBeCalledWith({
+    expect(requestUpdateDatabaseMonitor).toHaveBeenCalled();
+    expect(requestUpdateDatabaseMonitor).toHaveBeenCalledWith({
       username: 'root',
       password: '123456789',
       id: '1731574922989273088'

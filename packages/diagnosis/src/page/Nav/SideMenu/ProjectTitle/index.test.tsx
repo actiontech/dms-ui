@@ -34,7 +34,7 @@ describe('diagnosis/ProjectTitle', () => {
     const { baseElement } = renderWithRouter(<ProjectTitle />);
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(getBySelector('.home-page-shortcut'));
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith('/');
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith('/');
   });
 });

@@ -83,8 +83,8 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestUser).toBeCalled();
-      expect(requestUser).toBeCalledWith({
+      expect(requestUser).toHaveBeenCalled();
+      expect(requestUser).toHaveBeenCalledWith({
         namespace_uid: projectID,
         page_index: 1,
         page_size: 999
@@ -127,7 +127,7 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
         fireEvent.click(screen.getByText('生 成'));
         await act(() => jest.advanceTimersByTime(300));
       });
-      expect(execCommandFn).toBeCalled();
+      expect(execCommandFn).toHaveBeenCalled();
       expect(baseElement).toMatchSnapshot();
       fireEvent.click(screen.getByText('关 闭'));
       await act(() => jest.advanceTimersByTime(300));
@@ -187,8 +187,8 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
         await act(() => jest.advanceTimersByTime(300));
       });
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestFn).toBeCalled();
-      expect(requestFn).toBeCalledWith({
+      expect(requestFn).toHaveBeenCalled();
+      expect(requestFn).toHaveBeenCalledWith({
         authorization_uid: selectData.uid,
         authorization: {
           update_authorization_user: {
@@ -212,8 +212,8 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
         await act(() => jest.advanceTimersByTime(300));
       });
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestFn).toBeCalled();
-      expect(requestFn).toBeCalledWith({
+      expect(requestFn).toHaveBeenCalled();
+      expect(requestFn).toHaveBeenCalledWith({
         authorization_uid: selectData.uid,
         authorization: {
           update_authorization_user: {
@@ -223,8 +223,10 @@ describe('page/Auth/AuthList/UpdateUserInAuth', () => {
       });
       expect(screen.getByText('更新成功')).toBeInTheDocument();
       expect(baseElement).toMatchSnapshot();
-      expect(emitSpy).toBeCalledTimes(1);
-      expect(emitSpy).toBeCalledWith(EventEmitterKey.Refresh_Auth_List_Table);
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(
+        EventEmitterKey.Refresh_Auth_List_Table
+      );
       emitSpy.mockClear();
     });
   });

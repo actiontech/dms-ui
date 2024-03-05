@@ -117,8 +117,8 @@ describe('SqlAnalyze/useTableSchema', () => {
         result.current.getTableSchemas('table-test-name', 'default-name');
         expect(result.current.tableSchemas).toMatchSnapshot();
         await act(async () => jest.advanceTimersByTime(3300));
-        expect(spy).toBeCalled();
-        expect(spy).toBeCalledWith({
+        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith({
           instance_name: 'dataSource-name',
           schema_name: 'test-schema-name',
           table_name: 'table-test-name',

@@ -71,8 +71,8 @@ describe('diagnosis/add role modal', () => {
 
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Add_Role,
         status: false
@@ -87,7 +87,7 @@ describe('diagnosis/add role modal', () => {
     const getScopeRequest = userManagement.getScopeList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(getScopeRequest).toBeCalled();
+    expect(getScopeRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     // role name
     fireEvent.change(getBySelector('#role_name'), {
@@ -115,16 +115,16 @@ describe('diagnosis/add role modal', () => {
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(addRoleRequest).toBeCalled();
-    expect(addRoleRequest).toBeCalledWith({
+    expect(addRoleRequest).toHaveBeenCalled();
+    expect(addRoleRequest).toHaveBeenCalledWith({
       role_desc: 'this is role desc',
       role_name: 'test',
       scopes: ['auth.UpdatePassword']
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('添加角色 "test" 成功')).toBeInTheDocument();
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Add_Role,
         status: false
@@ -132,8 +132,8 @@ describe('diagnosis/add role modal', () => {
       type: 'userManagement/updateModalStatus'
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_User_Management);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(EmitterKey.Refresh_User_Management);
   });
 
   it('should send request failed', async () => {
@@ -144,7 +144,7 @@ describe('diagnosis/add role modal', () => {
     const getScopeRequest = userManagement.getScopeList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(getScopeRequest).toBeCalled();
+    expect(getScopeRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     // role name
     fireEvent.change(getBySelector('#role_name'), {
@@ -172,8 +172,8 @@ describe('diagnosis/add role modal', () => {
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(addRoleRequest).toBeCalled();
-    expect(addRoleRequest).toBeCalledWith({
+    expect(addRoleRequest).toHaveBeenCalled();
+    expect(addRoleRequest).toHaveBeenCalledWith({
       role_desc: 'this is role desc',
       role_name: 'test',
       scopes: ['auth.UpdatePassword']

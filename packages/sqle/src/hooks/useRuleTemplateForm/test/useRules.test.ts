@@ -22,7 +22,7 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
     const { result } = renderHooksWithRedux(() => useRules(), {});
     expect(result.current.getAllRulesLoading).toEqual(true);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRulesSpy).toBeCalledTimes(1);
+    expect(getRulesSpy).toHaveBeenCalledTimes(1);
     expect(result.current.allRules).toEqual(ruleListData);
     expect(result.current.getAllRulesLoading).toEqual(false);
     expect(result.current.databaseRule).toEqual([]);
@@ -35,8 +35,8 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
       );
       await jest.advanceTimersByTime(3000);
     });
-    expect(getRulesSpy).toBeCalledTimes(2);
-    expect(getRulesSpy).toBeCalledWith({
+    expect(getRulesSpy).toHaveBeenCalledTimes(2);
+    expect(getRulesSpy).toHaveBeenCalledWith({
       fuzzy_keyword_rule: 'test'
     });
   });
@@ -46,7 +46,7 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
     const { result } = renderHooksWithRedux(() => useRules(true), {});
     expect(result.current.getAllRulesLoading).toEqual(false);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRulesSpy).not.toBeCalled();
+    expect(getRulesSpy).not.toHaveBeenCalled();
     expect(result.current.allRules).toEqual(undefined);
     expect(result.current.getAllRulesLoading).toEqual(false);
     expect(result.current.databaseRule).toEqual([]);
@@ -60,6 +60,6 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
       );
       await jest.advanceTimersByTime(3000);
     });
-    expect(mockDescribe).toBeCalledTimes(1);
+    expect(mockDescribe).toHaveBeenCalledTimes(1);
   });
 });

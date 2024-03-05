@@ -66,6 +66,6 @@ describe('sqle/Order/Detail/RejectOrderModal', () => {
 
     fireEvent.click(screen.getByText('取 消'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(closeFn).toBeCalled();
+    expect(closeFn).toHaveBeenCalled();
   });
 });

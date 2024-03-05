@@ -76,8 +76,8 @@ describe('lib/ActiontechTable-hooks-useTableSettings', () => {
           title: '性别'
         }
       ]);
-      expect(LocalStorageWrapperSet).toBeCalledTimes(2);
-      expect(LocalStorageWrapperSet).toBeCalledWith(
+      expect(LocalStorageWrapperSet).toHaveBeenCalledTimes(2);
+      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
         tableName,
         JSON.stringify({
           [username]: {
@@ -89,8 +89,8 @@ describe('lib/ActiontechTable-hooks-useTableSettings', () => {
           }
         })
       );
-      expect(emitSpy).toBeCalledTimes(1);
-      expect(emitSpy).toBeCalledWith(
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(
         EmitterKey.UPDATE_LOCAL_COLUMNS,
         {
           sex: {

@@ -44,14 +44,14 @@ describe('test base/hooks/useSqlReviewTemplateToggle', () => {
     await act(() => {
       result.current.changeAuditRequired(false);
     });
-    expect(mockSetFieldsForm).not.toBeCalled();
+    expect(mockSetFieldsForm).not.toHaveBeenCalled();
 
     await act(() => {
       result.current.changeAuditRequired(true);
     });
 
-    expect(mockSetFieldsForm).toBeCalledTimes(1);
-    expect(mockSetFieldsForm).toBeCalledWith({
+    expect(mockSetFieldsForm).toHaveBeenCalledTimes(1);
+    expect(mockSetFieldsForm).toHaveBeenCalledWith({
       needSqlAuditService: true
     });
   });
@@ -62,9 +62,9 @@ describe('test base/hooks/useSqlReviewTemplateToggle', () => {
     await act(() => {
       result.current.clearRuleTemplate();
     });
-    expect(mockSetFieldsForm).toBeCalledTimes(1);
+    expect(mockSetFieldsForm).toHaveBeenCalledTimes(1);
 
-    expect(mockSetFieldsForm).toBeCalledWith({
+    expect(mockSetFieldsForm).toHaveBeenCalledWith({
       needSqlAuditService: false,
       ruleTemplateId: undefined,
       ruleTemplateName: undefined

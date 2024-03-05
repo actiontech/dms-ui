@@ -51,10 +51,10 @@ describe('page/Auth/AddAuth', () => {
     customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestTemplateListFn).toBeCalled();
+    expect(requestTemplateListFn).toHaveBeenCalled();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestUserListFn).toBeCalled();
+    expect(requestUserListFn).toHaveBeenCalled();
   });
 
   it('render reset form data when click reset btn', async () => {
@@ -83,8 +83,8 @@ describe('page/Auth/AddAuth', () => {
 
     fireEvent.click(screen.getByText('返回授权清单列表'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith(-1);
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(-1);
   });
 
   it('render location search has id', async () => {
@@ -107,7 +107,7 @@ describe('page/Auth/AddAuth', () => {
       routerProps: { initialEntries: ['?id=69'] }
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestTemplateListFn).toBeCalled();
+    expect(requestTemplateListFn).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -118,7 +118,7 @@ describe('page/Auth/AddAuth', () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTemplateListFn).toBeCalled();
+      expect(requestTemplateListFn).toHaveBeenCalled();
 
       fireEvent.mouseDown(
         getBySelector('#data_permission_template_uid', baseElement)
@@ -139,8 +139,8 @@ describe('page/Auth/AddAuth', () => {
       await act(async () => jest.advanceTimersByTime(300));
       fireEvent.focusOut(getBySelector('#username', baseElement));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(requestVerifyDBAccountFn).toBeCalled();
-      expect(requestVerifyDBAccountFn).toBeCalledWith({
+      expect(requestVerifyDBAccountFn).toHaveBeenCalled();
+      expect(requestVerifyDBAccountFn).toHaveBeenCalledWith({
         data_permission_template_uid: '69',
         hostname: '1.2.3.4',
         username: 'test'
@@ -158,7 +158,7 @@ describe('page/Auth/AddAuth', () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestTemplateListFn).toBeCalled();
+      expect(requestTemplateListFn).toHaveBeenCalled();
 
       fireEvent.mouseDown(
         getBySelector('#data_permission_template_uid', baseElement)
@@ -179,7 +179,7 @@ describe('page/Auth/AddAuth', () => {
       await act(async () => jest.advanceTimersByTime(300));
       fireEvent.focusOut(getBySelector('#username', baseElement));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(requestVerifyDBAccountFn).toBeCalled();
+      expect(requestVerifyDBAccountFn).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(3000));
       expect(baseElement).toMatchSnapshot();
     });
@@ -271,13 +271,13 @@ describe('page/Auth/AddAuth', () => {
 
       // submit && preview
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestVerifyDBAccountFn).toBeCalled();
+      expect(requestVerifyDBAccountFn).toHaveBeenCalled();
       expect(screen.getByText('账号名检测通过')).toBeInTheDocument();
 
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestVerifyDBAccountFn).toBeCalled();
-      expect(requestVerifyDBAccountFn).toBeCalledWith({
+      expect(requestVerifyDBAccountFn).toHaveBeenCalled();
+      expect(requestVerifyDBAccountFn).toHaveBeenCalledWith({
         data_permission_template_uid: '69',
         hostname: '1.1.1.1',
         username: 'test'

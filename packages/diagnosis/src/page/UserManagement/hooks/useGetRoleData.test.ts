@@ -22,7 +22,7 @@ describe('diagnosis/useGetRoleData', () => {
   it('request get user info success', async () => {
     const request = user.getRoleList();
     const { result } = customRender();
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.loading).toBe(false);
     expect(result.current.roleList?.data).toStrictEqual({

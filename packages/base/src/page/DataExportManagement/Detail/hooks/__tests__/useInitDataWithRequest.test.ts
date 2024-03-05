@@ -49,8 +49,8 @@ describe('test base/DataExport/Detail/hooks/useInitDataWithRequest', () => {
 
     expect(result.current.getWorkflowLoading).toBeTruthy();
     expect(result.current.getTaskInfosLoading).toBeFalsy();
-    expect(getWorkflowSpy).toBeCalledTimes(1);
-    expect(getWorkflowSpy).toBeCalledWith({
+    expect(getWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(getWorkflowSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
       data_export_workflow_uid: workflowID
     });
@@ -58,13 +58,15 @@ describe('test base/DataExport/Detail/hooks/useInitDataWithRequest', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.getWorkflowLoading).toBeFalsy();
     expect(result.current.getTaskInfosLoading).toBeTruthy();
-    expect(mockDataExportDetailRedux.updateWorkflowInfo).toBeCalledTimes(1);
-    expect(mockDataExportDetailRedux.updateWorkflowInfo).toBeCalledWith(
+    expect(mockDataExportDetailRedux.updateWorkflowInfo).toHaveBeenCalledTimes(
+      1
+    );
+    expect(mockDataExportDetailRedux.updateWorkflowInfo).toHaveBeenCalledWith(
       GetDataExportWorkflowResponseData
     );
 
-    expect(batchGetTaskSpy).toBeCalledTimes(1);
-    expect(batchGetTaskSpy).toBeCalledWith({
+    expect(batchGetTaskSpy).toHaveBeenCalledTimes(1);
+    expect(batchGetTaskSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
       data_export_task_uids: '1752172791873933312'
     });
@@ -72,13 +74,17 @@ describe('test base/DataExport/Detail/hooks/useInitDataWithRequest', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.getTaskInfosLoading).toBeFalsy();
 
-    expect(mockDataExportDetailRedux.updateTaskInfos).toBeCalledTimes(1);
-    expect(mockDataExportDetailRedux.updateTaskInfos).toBeCalledWith(
+    expect(mockDataExportDetailRedux.updateTaskInfos).toHaveBeenCalledTimes(1);
+    expect(mockDataExportDetailRedux.updateTaskInfos).toHaveBeenCalledWith(
       mockDataExportDetailRedux.taskInfos
     );
 
-    expect(mockDataExportDetailRedux.updateTaskStatusNumber).toBeCalledTimes(1);
-    expect(mockDataExportDetailRedux.updateTaskStatusNumber).toBeCalledWith({
+    expect(
+      mockDataExportDetailRedux.updateTaskStatusNumber
+    ).toHaveBeenCalledTimes(1);
+    expect(
+      mockDataExportDetailRedux.updateTaskStatusNumber
+    ).toHaveBeenCalledWith({
       failed: 1,
       success: 1,
       exporting: 1
@@ -87,14 +93,14 @@ describe('test base/DataExport/Detail/hooks/useInitDataWithRequest', () => {
 
   it('should refresh workflow when executed emit event', async () => {
     renderHook(() => useInitDataWithRequest());
-    expect(getWorkflowSpy).toBeCalledTimes(1);
+    expect(getWorkflowSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
 
     act(() => {
       eventEmitter.emit(EmitterKey.DMS_Refresh_Export_Data_Workflow);
     });
 
-    expect(getWorkflowSpy).toBeCalledTimes(2);
+    expect(getWorkflowSpy).toHaveBeenCalledTimes(2);
     expect(getWorkflowSpy).nthCalledWith(2, {
       project_uid: mockProjectInfo.projectID,
       data_export_workflow_uid: workflowID

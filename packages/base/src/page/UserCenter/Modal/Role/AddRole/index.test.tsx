@@ -43,7 +43,7 @@ describe('base/UserCenter/Modal/Role/AddRole', () => {
     const { baseElement } = renderWithReduxAndTheme(<AddRole />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(opPermissionListSpy).toBeCalledTimes(1);
+    expect(opPermissionListSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('添加角色')).toBeInTheDocument();
     fireEvent.input(screen.getByLabelText('角色名'), {
       target: { value: mockRoleName }
@@ -56,8 +56,8 @@ describe('base/UserCenter/Modal/Role/AddRole', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
-    expect(addRoleSpy).toBeCalledTimes(1);
-    expect(addRoleSpy).toBeCalledWith({
+    expect(addRoleSpy).toHaveBeenCalledTimes(1);
+    expect(addRoleSpy).toHaveBeenCalledWith({
       role: {
         name: mockRoleName,
         desc: 'test1',
@@ -66,16 +66,16 @@ describe('base/UserCenter/Modal/Role/AddRole', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText(`添加角色 "${mockRoleName}" 成功`));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_Role,
         status: false
       }
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Refresh_User_Center_List
     );
     expect(screen.getByText('提 交').parentNode).not.toHaveClass(
@@ -90,8 +90,8 @@ describe('base/UserCenter/Modal/Role/AddRole', () => {
     const { baseElement } = renderWithReduxAndTheme(<AddRole />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_Role,

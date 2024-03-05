@@ -50,8 +50,8 @@ describe('page/Auth/AuthList', () => {
     await act(async () => {
       fireEvent.click(screen.getByText(authBtnText));
       await jest.advanceTimersByTime(300);
-      expect(navigateSpy).toBeCalledTimes(1);
-      expect(navigateSpy).toBeCalledWith(
+      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenCalledWith(
         `/provision/project/${mockProjectInfo.projectID}/auth/list/add`
       );
     });

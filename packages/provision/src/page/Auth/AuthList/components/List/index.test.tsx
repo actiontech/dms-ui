@@ -92,8 +92,8 @@ describe('page/Auth/AuthList/List', () => {
       getBySelector('.ant-spin-dot-spin', baseElement)
     ).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(2000));
-    expect(requestListFn).toBeCalledTimes(1);
-    expect(requestListFn).toBeCalledWith({
+    expect(requestListFn).toHaveBeenCalledTimes(1);
+    expect(requestListFn).toHaveBeenCalledWith({
       filter_by_namespace_uid: projectID,
       filter_by_status: undefined,
       page_index: 1,
@@ -107,7 +107,7 @@ describe('page/Auth/AuthList/List', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestListFn).toBeCalledTimes(1);
+    expect(requestListFn).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(`共 ${authorizationList.length} 条数据`)
     ).toBeInTheDocument();
@@ -120,7 +120,7 @@ describe('page/Auth/AuthList/List', () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
       expect(
         screen.getByText(`共 ${authorizationList.length} 条数据`)
       ).toBeInTheDocument();
@@ -130,7 +130,7 @@ describe('page/Auth/AuthList/List', () => {
       const expiredVal = ListAuthorizationStatusEnum.expired;
       fireEvent.click(cateExpiredItem);
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(2);
+      expect(requestListFn).toHaveBeenCalledTimes(2);
       expect(requestListFn).toHaveBeenNthCalledWith(2, {
         filter_by_namespace_uid: projectID,
         filter_by_status: expiredVal,
@@ -145,12 +145,12 @@ describe('page/Auth/AuthList/List', () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       const refreshBtn = getBySelector('.custom-icon-refresh', baseElement);
       fireEvent.click(refreshBtn);
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalled();
+      expect(requestListFn).toHaveBeenCalled();
     });
 
     it('render action when filter item show', async () => {
@@ -158,7 +158,7 @@ describe('page/Auth/AuthList/List', () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       fireEvent.click(screen.getByText('筛选'));
       await act(async () => jest.advanceTimersByTime(300));
@@ -184,13 +184,13 @@ describe('page/Auth/AuthList/List', () => {
       );
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListTipsByAuthorizationKeyFn).toBeCalled();
+      expect(requestListTipsByAuthorizationKeyFn).toHaveBeenCalled();
       expect(baseElement).toMatchSnapshot();
 
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(2);
+      expect(requestListFn).toHaveBeenCalledTimes(2);
       expect(requestListFn).toHaveBeenNthCalledWith(1, {
         filter_by_namespace_uid: projectID,
         filter_by_status: undefined,
@@ -237,7 +237,7 @@ describe('page/Auth/AuthList/List', () => {
         </>
       );
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
       const actionMoreBtn = getAllBySelector(
         '.ant-table-row.ant-table-row-level-0 .actiontech-table-actions-more-button',
         baseElement
@@ -247,7 +247,7 @@ describe('page/Auth/AuthList/List', () => {
       expect(screen.getByText('续期')).toBeInTheDocument();
       fireEvent.click(screen.getByText('续期'));
       await act(async () => jest.advanceTimersByTime(1000));
-      expect(modalStatusChangeSpy).toBeCalledTimes(2);
+      expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
       expect(modalStatusChangeSpy).nthCalledWith(2, {
         [ModalName.UpdateExpirationInAuth]: true,
         [ModalName.GetConnection]: false,
@@ -279,11 +279,11 @@ describe('page/Auth/AuthList/List', () => {
         </>
       );
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       fireEvent.click(screen.getByText('授权信息'));
       await act(async () => jest.advanceTimersByTime(1000));
-      expect(modalStatusChangeSpy).toBeCalledTimes(2);
+      expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
       expect(modalStatusChangeSpy).nthCalledWith(2, {
         [ModalName.GetConnection]: true,
         [ModalName.UpdateExpirationInAuth]: false,
@@ -308,7 +308,7 @@ describe('page/Auth/AuthList/List', () => {
 
       customRender();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       fireEvent.click(screen.getByText('回收权限'));
       await act(async () => jest.advanceTimersByTime(300));
@@ -319,13 +319,13 @@ describe('page/Auth/AuthList/List', () => {
       );
       fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestRemoveFn).toBeCalledTimes(1);
-      expect(requestRemoveFn).toBeCalledWith({
+      expect(requestRemoveFn).toHaveBeenCalledTimes(1);
+      expect(requestRemoveFn).toHaveBeenCalledWith({
         authorization_uid: authorizationList[1].uid
       });
       expect(screen.getByText('权限回收成功')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3600));
-      expect(requestListFn).toBeCalled();
+      expect(requestListFn).toHaveBeenCalled();
     });
 
     it('render click user text', async () => {
@@ -352,13 +352,13 @@ describe('page/Auth/AuthList/List', () => {
         </>
       );
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       expect(screen.getByText('permission_user_xin')).toBeInTheDocument();
       fireEvent.click(screen.getByText('permission_user_xin'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith('/userCenter');
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith('/userCenter');
 
       fireEvent.mouseOver(screen.getByText('permission_user_xin'));
       await act(async () => jest.advanceTimersByTime(300));
@@ -370,7 +370,7 @@ describe('page/Auth/AuthList/List', () => {
         )[0]
       );
       await act(async () => jest.advanceTimersByTime(1000));
-      expect(modalStatusChangeSpy).toBeCalledTimes(2);
+      expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
       expect(modalStatusChangeSpy).nthCalledWith(2, {
         [ModalName.UpdateUserInAuth]: true,
         [ModalName.UpdateExpirationInAuth]: false,
@@ -403,13 +403,13 @@ describe('page/Auth/AuthList/List', () => {
         </>
       );
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       expect(screen.getByText('auth_template_xin')).toBeInTheDocument();
       fireEvent.click(screen.getByText('auth_template_xin'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith(
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith(
         `/provision/project/${projectID}/auth/template/edit_template/?name=auth_template_xin`
       );
 
@@ -423,7 +423,7 @@ describe('page/Auth/AuthList/List', () => {
         )[1]
       );
       await act(async () => jest.advanceTimersByTime(1000));
-      expect(modalStatusChangeSpy).toBeCalledTimes(2);
+      expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
       expect(modalStatusChangeSpy).nthCalledWith(2, {
         [ModalName.UpdateTemplateInAuth]: true,
         [ModalName.UpdateUserInAuth]: false,
@@ -455,13 +455,13 @@ describe('page/Auth/AuthList/List', () => {
         </>
       );
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
 
       expect(screen.getByText(serviceText)).toBeInTheDocument();
       fireEvent.click(screen.getByText(serviceText));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(navigateSpy).toBeCalled();
-      expect(navigateSpy).toBeCalledWith(
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith(
         `/project/${projectID}/db-services?address=${
           serviceData[0].data_object_service_dns?.split(':')[0]
         }`
@@ -479,7 +479,7 @@ describe('page/Auth/AuthList/List', () => {
       );
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toBeCalledTimes(1);
+      expect(requestListFn).toHaveBeenCalledTimes(1);
       const effectiveStatusText = screen.getAllByText('生效中');
       expect(effectiveStatusText.length).toBe(2);
       fireEvent.mouseOver(effectiveStatusText[1]);

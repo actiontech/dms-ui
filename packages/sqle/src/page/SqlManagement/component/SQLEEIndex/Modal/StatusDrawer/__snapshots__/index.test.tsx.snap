@@ -181,7 +181,7 @@ exports[`page/SqlManagement/StatusDrawer close modal by click close button 1`] =
                       class="custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
-                      options="{\\"readOnly\\":true,\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value=""
                       width="100%"
                     />
@@ -331,7 +331,7 @@ exports[`page/SqlManagement/StatusDrawer render empty status drawer info 1`] = `
                       class="custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
-                      options="{\\"readOnly\\":true,\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value=""
                       width="100%"
                     />
@@ -540,7 +540,7 @@ exports[`page/SqlManagement/StatusDrawer render status drawer info 1`] = `
                       class="custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
-                      options="{\\"readOnly\\":true,\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value=""
                       width="100%"
                     />

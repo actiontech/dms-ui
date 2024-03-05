@@ -47,8 +47,8 @@ describe('diagnosis/Api', () => {
         msg: 'error message'
       });
       expect(result?.response?.status).toBe(500);
-      expect(emitSpy).toBeCalledTimes(1);
-      expect(emitSpy).toBeCalledWith(
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
@@ -66,8 +66,8 @@ describe('diagnosis/Api', () => {
       token = res.data.token;
     } finally {
       expect(token).toBe(token);
-      expect(emitSpy).toBeCalledTimes(1);
-      expect(emitSpy).toBeCalledWith(
+      expect(emitSpy).toHaveBeenCalledTimes(1);
+      expect(emitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {

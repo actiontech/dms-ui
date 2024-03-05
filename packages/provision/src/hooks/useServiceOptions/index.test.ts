@@ -34,8 +34,8 @@ describe('provision/hooks/useServiceOptions', () => {
     });
 
     expect(result.current.loading).toBeTruthy();
-    expect(authListServicesSpy).toBeCalledTimes(1);
-    expect(authListServicesSpy).toBeCalledWith({
+    expect(authListServicesSpy).toHaveBeenCalledTimes(1);
+    expect(authListServicesSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 999,
       filter_by_namespace: '',

@@ -55,8 +55,8 @@ describe('sqle/Order/Common/AuditResultList', () => {
 
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetAuditTaskSQLs).toBeCalled();
-    expect(requestGetAuditTaskSQLs).toBeCalledWith({
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_audit_level: 'normal',
       no_duplicate: true,
       page_index: '1',

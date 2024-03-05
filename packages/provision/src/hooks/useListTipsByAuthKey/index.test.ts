@@ -29,7 +29,7 @@ describe('provision/hooks/useListTipsByAuthKey', () => {
     expect(result.current.businessOptions).toBeUndefined();
     expect(result.current.purposeOptions).toBeUndefined();
     expect(result.current.serviceOptions).toBeUndefined();
-    expect(listTipsByAuthKeySpy).toBeCalledTimes(3);
+    expect(listTipsByAuthKeySpy).toHaveBeenCalledTimes(3);
 
     await act(async () => jest.advanceTimersByTime(3000));
 

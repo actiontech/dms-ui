@@ -54,8 +54,8 @@ describe('page/Auth/AddAuth/UserSelect', () => {
       className: 'is-custom-class'
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(updateUserListUserSpy).toBeCalled();
-    expect(updateUserListUserSpy).toBeCalledWith({
+    expect(updateUserListUserSpy).toHaveBeenCalled();
+    expect(updateUserListUserSpy).toHaveBeenCalledWith({
       namespace_uid: projectID,
       page_index: 1,
       page_size: 999

@@ -83,14 +83,14 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
       fireEvent.click(screen.getByText('上一步'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(prevMock).toBeCalled();
+    expect(prevMock).toHaveBeenCalled();
   });
 
   it('render review node and update review node info', async () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(getBySelector('#approved_by_authorized'));
-    expect(updateMock).toBeCalledWith({
+    expect(updateMock).toHaveBeenCalledWith({
       ...workflowTemplateData.workflow_step_template_list[0],
       assignee_user_id_list: [],
       approved_by_authorized: false
@@ -102,7 +102,7 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
       fireEvent.click(selectOptions[0]);
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(updateMock).toBeCalledWith({
+    expect(updateMock).toHaveBeenCalledWith({
       ...workflowTemplateData.workflow_step_template_list[0],
       assignee_user_id_list: ['1739544663515205632']
     });
@@ -117,7 +117,7 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
       fireEvent.click(screen.getByText('下一步'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(updateMock).toBeCalledWith({
+    expect(updateMock).toHaveBeenCalledWith({
       ...workflowTemplateData.workflow_step_template_list[0],
       desc
     });

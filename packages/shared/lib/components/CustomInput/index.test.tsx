@@ -51,7 +51,7 @@ describe('lib/CustomInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(onPressEnterFn).toBeCalled();
-    expect(onPressEnterFn).toBeCalledTimes(1);
+    expect(onPressEnterFn).toHaveBeenCalled();
+    expect(onPressEnterFn).toHaveBeenCalledTimes(1);
   });
 });

@@ -54,8 +54,8 @@ describe('useRuleTemplate', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.ruleTemplateList).toEqual([]);
@@ -64,7 +64,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTemplateList).toEqual([
       {
         rule_template_name: 'rule_template_name1',
@@ -110,8 +110,8 @@ describe('useRuleTemplate', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.ruleTemplateList).toEqual([]);
@@ -120,7 +120,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTemplateList).toEqual([
       {
         rule_template_name: 'rule_template_name1',
@@ -143,8 +143,8 @@ describe('useRuleTemplate', () => {
       result.current.updateRuleTemplateList(projectName);
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.ruleTemplateList).toEqual([
@@ -159,7 +159,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTemplateList).toEqual([]);
   });
 
@@ -183,8 +183,8 @@ describe('useRuleTemplate', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.ruleTemplateList).toEqual([]);
@@ -193,7 +193,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTemplateList).toEqual([
       {
         rule_template_name: 'rule_template_name1',
@@ -216,8 +216,8 @@ describe('useRuleTemplate', () => {
       result.current.updateRuleTemplateList(projectName);
     });
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.ruleTemplateList).toEqual([
@@ -232,7 +232,7 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.ruleTemplateList).toEqual([]);
   });
 
@@ -261,8 +261,8 @@ describe('useRuleTemplate', () => {
     });
 
     expect(result.current.loading).toBe(true);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.ruleTemplateList).toEqual([]);
@@ -271,8 +271,8 @@ describe('useRuleTemplate', () => {
     await waitForNextUpdate();
 
     expect(result.current.loading).toBe(false);
-    expect(requestSpy).toBeCalledTimes(1);
-    expect(requestSpy).toBeCalledWith({
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(requestSpy).toHaveBeenCalledWith({
       project_name: projectName
     });
     expect(result.current.ruleTemplateList).toEqual([

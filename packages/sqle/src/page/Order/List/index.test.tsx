@@ -64,17 +64,19 @@ describe('sqle/Order/List', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(RequestUserTipList).toBeCalledWith({ filter_project: projectName });
+    expect(RequestUserTipList).toHaveBeenCalledWith({
+      filter_project: projectName
+    });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(RequestInstanceTipList).toBeCalledWith({
+    expect(RequestInstanceTipList).toHaveBeenCalledWith({
       project_name: projectName
     });
 
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot;
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(RequestOrderList).toBeCalledWith({
+    expect(RequestOrderList).toHaveBeenCalledWith({
       project_name: projectName,
       filter_status: undefined,
       fuzzy_keyword: '',
@@ -106,7 +108,7 @@ describe('sqle/Order/List', () => {
     RequestOrderList.mockImplementation(() => createSpySuccessResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot;
   });
 
@@ -114,7 +116,7 @@ describe('sqle/Order/List', () => {
     RequestOrderList.mockImplementation(() => createSpyFailResponse({}));
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot;
   });
 
@@ -141,13 +143,13 @@ describe('sqle/Order/List', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot;
 
     fireEvent.click(screen.getByText(workflowName));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith(
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${projectID}/order/${workflowId}`
     );
   });
@@ -155,7 +157,7 @@ describe('sqle/Order/List', () => {
   it('render filter when cate val change', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestOrderList).toBeCalledWith({
+    expect(RequestOrderList).toHaveBeenCalledWith({
       project_name: projectName,
       filter_status: undefined,
       fuzzy_keyword: '',
@@ -171,7 +173,7 @@ describe('sqle/Order/List', () => {
     expect(OrderStatusSegmented[1]).toHaveAttribute('title', '待审核');
     fireEvent.click(OrderStatusSegmented[1]);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(RequestOrderList).toBeCalledWith({
+    expect(RequestOrderList).toHaveBeenCalledWith({
       project_name: projectName,
       filter_status: 'wait_for_audit',
       fuzzy_keyword: '',
@@ -184,7 +186,7 @@ describe('sqle/Order/List', () => {
     const fuzzyVal = 'fuzzy value';
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
 
     const inputFuzzyEle = getBySelector(
       'input#actiontech-table-search-input',
@@ -215,12 +217,12 @@ describe('sqle/Order/List', () => {
   it('render refresh btn when click refresh', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
 
     const refreshIcon = getBySelector('.custom-icon-refresh', baseElement);
     fireEvent.click(refreshIcon);
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
   });
 
   it('render click create btn', async () => {
@@ -246,8 +248,8 @@ describe('sqle/Order/List', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(RequestExportOrderList).toBeCalled();
-    expect(RequestExportOrderList).toBeCalledWith(
+    expect(RequestExportOrderList).toHaveBeenCalled();
+    expect(RequestExportOrderList).toHaveBeenCalledWith(
       {
         filter_create_time_from: undefined,
         filter_create_time_to: undefined,
@@ -320,7 +322,7 @@ describe('sqle/Order/List', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
 
     const checkboxEle = getAllBySelector(
       '.ant-checkbox-wrapper .ant-checkbox-input',
@@ -371,7 +373,7 @@ describe('sqle/Order/List', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
 
     const checkboxEle = getAllBySelector(
       '.ant-checkbox-wrapper .ant-checkbox-input',
@@ -395,12 +397,12 @@ describe('sqle/Order/List', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(RequestBatchCancel).toBeCalled();
-    expect(RequestBatchCancel).toBeCalledWith({
+    expect(RequestBatchCancel).toHaveBeenCalled();
+    expect(RequestBatchCancel).toHaveBeenCalledWith({
       project_name: projectName,
       workflow_id_list: ['1']
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(RequestOrderList).toBeCalled();
+    expect(RequestOrderList).toHaveBeenCalled();
   });
 });

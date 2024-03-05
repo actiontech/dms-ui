@@ -70,7 +70,7 @@ describe('test database monitor table', () => {
     const request = monitorSourceConfig.databaseMonitorList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('共 3 条数据')).toBeInTheDocument();
@@ -86,7 +86,7 @@ describe('test database monitor table', () => {
     const request = monitorSourceConfig.databaseMonitorList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('正常').length).toBe(1);
@@ -101,13 +101,13 @@ describe('test database monitor table', () => {
 
     mockDispatch.mockClear();
     fireEvent.click(screen.getAllByText('编 辑')[0]);
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: databaseMonitorListData[0],
       type: 'monitorSourceConfig/updateSelectDatabaseMonitorData'
     });
-    expect(mockDispatch).toBeCalledTimes(2);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Update_Database_Monitor,
         status: true
@@ -121,7 +121,7 @@ describe('test database monitor table', () => {
     const deleteRequest = monitorSourceConfig.deleteDatabaseMonitor();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -134,11 +134,11 @@ describe('test database monitor table', () => {
       screen.getByText('正在删除数据库监控源first...')
     ).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(deleteRequest).toBeCalled();
+    expect(deleteRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('删除数据库监控源first成功！')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
   });
 
   it('delete database monitor failed', async () => {
@@ -154,7 +154,7 @@ describe('test database monitor table', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
 
@@ -165,7 +165,7 @@ describe('test database monitor table', () => {
     await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('正在删除数据库监控源...')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(deleteRequest).toBeCalled();
+    expect(deleteRequest).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(1000));
   });
 
@@ -180,7 +180,7 @@ describe('test database monitor table', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('-')).toBeInTheDocument();
@@ -192,7 +192,7 @@ describe('test database monitor table', () => {
     const request = monitorSourceConfig.databaseMonitorList();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
     fireEvent.mouseDown(getBySelector('.ant-select-selection-search input'));
@@ -200,7 +200,7 @@ describe('test database monitor table', () => {
     expect(screen.getByText('10 条/页')).toBeInTheDocument();
     fireEvent.click(screen.getByText('10 条/页'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(request).toBeCalled();
+    expect(request).toHaveBeenCalled();
     expect(screen.getByText('共 3 条数据')).toBeInTheDocument();
   });
 });

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`provision/hooks/useProvisionUser should get provision user data from request 1`] = `
-Array [
-  Object {
+[
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="D"
@@ -15,7 +15,7 @@ Array [
     "text": "Dewey Connelly",
     "value": "Dewey Connelly",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="E"
@@ -28,7 +28,7 @@ Array [
     "text": "Edwin Schneider III",
     "value": "Edwin Schneider III",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="J"
@@ -41,7 +41,7 @@ Array [
     "text": "Javier Beier IV",
     "value": "Javier Beier IV",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="G"
@@ -54,7 +54,7 @@ Array [
     "text": "Glenda Goyette",
     "value": "Glenda Goyette",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="V"
@@ -67,7 +67,7 @@ Array [
     "text": "Valerie Gerhold",
     "value": "Valerie Gerhold",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="M"
@@ -80,7 +80,7 @@ Array [
     "text": "Mona Reinger",
     "value": "Mona Reinger",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="K"
@@ -93,7 +93,7 @@ Array [
     "text": "Kari Bode",
     "value": "Kari Bode",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="B"
@@ -106,7 +106,7 @@ Array [
     "text": "Bryan Emard",
     "value": "Bryan Emard",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="C"
@@ -119,7 +119,7 @@ Array [
     "text": "Clinton Gleason III",
     "value": "Clinton Gleason III",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="T"
@@ -132,7 +132,7 @@ Array [
     "text": "Thelma Keeling",
     "value": "Thelma Keeling",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="D"
@@ -145,7 +145,7 @@ Array [
     "text": "Duane Hyatt",
     "value": "Duane Hyatt",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="M"
@@ -158,7 +158,7 @@ Array [
     "text": "Mr. Nancy Yundt",
     "value": "Mr. Nancy Yundt",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="K"
@@ -171,7 +171,7 @@ Array [
     "text": "Kristi Dickinson",
     "value": "Kristi Dickinson",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="C"
@@ -184,7 +184,7 @@ Array [
     "text": "Cecelia Grimes",
     "value": "Cecelia Grimes",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="D"
@@ -197,7 +197,7 @@ Array [
     "text": "Dr. Miriam Brekke",
     "value": "Dr. Miriam Brekke",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="K"
@@ -210,7 +210,7 @@ Array [
     "text": "Karen Herzog",
     "value": "Karen Herzog",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="M"
@@ -223,7 +223,7 @@ Array [
     "text": "Mr. Taylor Rempel",
     "value": "Mr. Taylor Rempel",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="K"
@@ -236,7 +236,7 @@ Array [
     "text": "Kristina Hessel",
     "value": "Kristina Hessel",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="D"
@@ -249,7 +249,7 @@ Array [
     "text": "Delores Rowe IV",
     "value": "Delores Rowe IV",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="T"
@@ -266,8 +266,8 @@ Array [
 `;
 
 exports[`provision/hooks/useProvisionUser should get provision user data from request 2`] = `
-Array [
-  Object {
+[
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="D"
@@ -280,7 +280,7 @@ Array [
     "text": "Dewey Connelly",
     "value": "85315",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="E"
@@ -293,7 +293,7 @@ Array [
     "text": "Edwin Schneider III",
     "value": "48548",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="J"
@@ -306,7 +306,7 @@ Array [
     "text": "Javier Beier IV",
     "value": "28060",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="G"
@@ -319,7 +319,7 @@ Array [
     "text": "Glenda Goyette",
     "value": "56796",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="V"
@@ -332,7 +332,7 @@ Array [
     "text": "Valerie Gerhold",
     "value": "4066",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="M"
@@ -345,7 +345,7 @@ Array [
     "text": "Mona Reinger",
     "value": "64872",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="K"
@@ -358,7 +358,7 @@ Array [
     "text": "Kari Bode",
     "value": "67483",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="B"
@@ -371,7 +371,7 @@ Array [
     "text": "Bryan Emard",
     "value": "39891",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="C"
@@ -384,7 +384,7 @@ Array [
     "text": "Clinton Gleason III",
     "value": "42706",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="T"
@@ -397,7 +397,7 @@ Array [
     "text": "Thelma Keeling",
     "value": "80115",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="D"
@@ -410,7 +410,7 @@ Array [
     "text": "Duane Hyatt",
     "value": "34369",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="M"
@@ -423,7 +423,7 @@ Array [
     "text": "Mr. Nancy Yundt",
     "value": "63949",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="K"
@@ -436,7 +436,7 @@ Array [
     "text": "Kristi Dickinson",
     "value": "47815",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="C"
@@ -449,7 +449,7 @@ Array [
     "text": "Cecelia Grimes",
     "value": "36601",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="D"
@@ -462,7 +462,7 @@ Array [
     "text": "Dr. Miriam Brekke",
     "value": "19951",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="K"
@@ -475,7 +475,7 @@ Array [
     "text": "Karen Herzog",
     "value": "97690",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="M"
@@ -488,7 +488,7 @@ Array [
     "text": "Mr. Taylor Rempel",
     "value": "27809",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="K"
@@ -501,7 +501,7 @@ Array [
     "text": "Kristina Hessel",
     "value": "56330",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="D"
@@ -514,7 +514,7 @@ Array [
     "text": "Delores Rowe IV",
     "value": "15376",
   },
-  Object {
+  {
     "label": <Styled(Space)>
       <AvatarCom
         name="T"

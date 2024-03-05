@@ -42,8 +42,8 @@ describe('useModalStatus', () => {
       });
     });
 
-    expect(authListModalStatusChange).toBeCalledTimes(1);
-    expect(authListModalStatusChange).toBeCalledWith({
+    expect(authListModalStatusChange).toHaveBeenCalledTimes(1);
+    expect(authListModalStatusChange).toHaveBeenCalledWith({
       a: true,
       b: false
     });
@@ -59,8 +59,8 @@ describe('useModalStatus', () => {
       result.current.toggleModal(ModalName.UpdateUserInAuth, true);
     });
 
-    expect(authListModalStatusChange).toBeCalledTimes(1);
-    expect(authListModalStatusChange).toBeCalledWith({
+    expect(authListModalStatusChange).toHaveBeenCalledTimes(1);
+    expect(authListModalStatusChange).toHaveBeenCalledWith({
       UPDATE_USER_IN_AUTH: true
     });
   });

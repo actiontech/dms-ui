@@ -78,8 +78,8 @@ describe('test add database monitor', () => {
 
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Add_Database_Monitor,
         status: false
@@ -149,8 +149,8 @@ describe('test add database monitor', () => {
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestAddDatabaseMonitor).toBeCalled();
-    expect(requestAddDatabaseMonitor).toBeCalledWith({
+    expect(requestAddDatabaseMonitor).toHaveBeenCalled();
+    expect(requestAddDatabaseMonitor).toHaveBeenCalledWith({
       dbs: [
         {
           monitor_type: 'MySQL',
@@ -166,8 +166,8 @@ describe('test add database monitor', () => {
     expect(
       screen.queryByText('添加数据库监控源test成功！')
     ).toBeInTheDocument();
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalName: ModalName.Add_Database_Monitor,
         status: false
@@ -175,8 +175,10 @@ describe('test add database monitor', () => {
       type: 'monitorSourceConfig/updateModalStatus'
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.Refresh_Monitor_Source_Config);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Monitor_Source_Config
+    );
   }, 40000);
 
   it('should send request failed', async () => {
@@ -242,8 +244,8 @@ describe('test add database monitor', () => {
 
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestAddDatabaseMonitor).toBeCalled();
-    expect(requestAddDatabaseMonitor).toBeCalledWith({
+    expect(requestAddDatabaseMonitor).toHaveBeenCalled();
+    expect(requestAddDatabaseMonitor).toHaveBeenCalledWith({
       dbs: [
         {
           monitor_type: 'MySQL',

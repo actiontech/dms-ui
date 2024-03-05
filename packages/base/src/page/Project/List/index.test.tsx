@@ -46,15 +46,15 @@ describe('test base/project/list', () => {
   it('should be get data from the request to render the table', async () => {
     const subscriptSpy = jest.spyOn(EventEmitter, 'subscribe');
 
-    expect(getProjectListSpy).toBeCalledTimes(0);
+    expect(getProjectListSpy).toHaveBeenCalledTimes(0);
     const { container } = superRender(<ProjectList />);
     expect(container).toMatchSnapshot();
-    expect(getProjectListSpy).toBeCalledTimes(1);
+    expect(getProjectListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
 
-    expect(subscriptSpy).toBeCalledTimes(1);
+    expect(subscriptSpy).toHaveBeenCalledTimes(1);
     expect(subscriptSpy.mock.calls[0][0]).toBe(
       EmitterKey.DMS_Refresh_Project_List
     );
@@ -64,7 +64,7 @@ describe('test base/project/list', () => {
     superRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(deleteProjectList).toBeCalledTimes(0);
+    expect(deleteProjectList).toHaveBeenCalledTimes(0);
 
     expect(screen.getAllByText('删 除')[0].closest('button')).toBeDisabled();
 
@@ -72,11 +72,11 @@ describe('test base/project/list', () => {
     expect(
       screen.getByText(`确认要删除项目"${mockProjectList[1].name}"么?`)
     ).toBeInTheDocument();
-    expect(deleteProjectList).toBeCalledTimes(0);
+    expect(deleteProjectList).toHaveBeenCalledTimes(0);
 
     fireEvent.click(screen.getByText('确 认'));
-    expect(deleteProjectList).toBeCalledTimes(1);
-    expect(deleteProjectList).toBeCalledWith({
+    expect(deleteProjectList).toHaveBeenCalledTimes(1);
+    expect(deleteProjectList).toHaveBeenCalledWith({
       project_uid: mockProjectList[1].uid
     });
     await act(async () => jest.advanceTimersByTime(3000));
@@ -84,7 +84,7 @@ describe('test base/project/list', () => {
     expect(
       screen.queryByText(`删除项目"${mockProjectList[1].name}"成功`)
     ).toBeInTheDocument();
-    expect(getProjectListSpy).toBeCalledTimes(2);
+    expect(getProjectListSpy).toHaveBeenCalledTimes(2);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -97,18 +97,18 @@ describe('test base/project/list', () => {
     superRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(archiveProjectSpy).toBeCalledTimes(0);
+    expect(archiveProjectSpy).toHaveBeenCalledTimes(0);
     expect(screen.getAllByText('冻 结')[0]).toBeInTheDocument();
 
     fireEvent.click(screen.getAllByText('冻 结')[0]);
     expect(
       screen.queryByText(`确认要冻结项目"${mockProjectList[1].name}"么?`)
     ).toBeInTheDocument();
-    expect(archiveProjectSpy).toBeCalledTimes(0);
+    expect(archiveProjectSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.click(screen.getByText('确 认'));
-    expect(archiveProjectSpy).toBeCalledTimes(1);
-    expect(archiveProjectSpy).toBeCalledWith({
+    expect(archiveProjectSpy).toHaveBeenCalledTimes(1);
+    expect(archiveProjectSpy).toHaveBeenCalledWith({
       project_uid: mockProjectList[1].uid
     });
     await act(async () => jest.advanceTimersByTime(3000));
@@ -116,9 +116,11 @@ describe('test base/project/list', () => {
     expect(
       screen.queryByText(`冻结项目"${mockProjectList[1].name}"成功`)
     ).toBeInTheDocument();
-    expect(getProjectListSpy).toBeCalledTimes(2);
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Sync_Project_Archived_Status);
+    expect(getProjectListSpy).toHaveBeenCalledTimes(2);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Sync_Project_Archived_Status
+    );
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -131,7 +133,7 @@ describe('test base/project/list', () => {
     superRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(unarchiveProjectSpy).toBeCalledTimes(0);
+    expect(unarchiveProjectSpy).toHaveBeenCalledTimes(0);
 
     expect(screen.getAllByText('启 用')[0]).toBeInTheDocument();
 
@@ -139,11 +141,11 @@ describe('test base/project/list', () => {
     expect(
       screen.queryByText(`确认要启用项目"${mockProjectList[0].name}"么?`)
     ).toBeInTheDocument();
-    expect(unarchiveProjectSpy).toBeCalledTimes(0);
+    expect(unarchiveProjectSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.click(screen.getByText('确 认'));
-    expect(unarchiveProjectSpy).toBeCalledTimes(1);
-    expect(unarchiveProjectSpy).toBeCalledWith({
+    expect(unarchiveProjectSpy).toHaveBeenCalledTimes(1);
+    expect(unarchiveProjectSpy).toHaveBeenCalledWith({
       project_uid: mockProjectList[0].uid
     });
     await act(async () => jest.advanceTimersByTime(3000));
@@ -151,9 +153,11 @@ describe('test base/project/list', () => {
     expect(
       screen.queryByText(`启用项目"${mockProjectList[0].name}"成功`)
     ).toBeInTheDocument();
-    expect(getProjectListSpy).toBeCalledTimes(2);
-    expect(emitSpy).toBeCalledTimes(1);
-    expect(emitSpy).toBeCalledWith(EmitterKey.DMS_Sync_Project_Archived_Status);
+    expect(getProjectListSpy).toHaveBeenCalledTimes(2);
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Sync_Project_Archived_Status
+    );
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -170,7 +174,7 @@ describe('test base/project/list', () => {
 
     fireEvent.click(screen.getAllByText('编 辑')[1]);
 
-    expect(dispatchSpy).toBeCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
     expect(dispatchSpy).nthCalledWith(1, {
       type: 'project/updateModalStatus',
       payload: {
@@ -202,10 +206,10 @@ describe('test base/project/list', () => {
     ).not.toBeInTheDocument();
 
     expect(screen.queryAllByText('编 辑')[1].closest('button')).toBeDisabled();
-    expect(dispatchSpy).toBeCalledTimes(0);
+    expect(dispatchSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.click(screen.getAllByText('编 辑')[1]);
-    expect(dispatchSpy).toBeCalledTimes(0);
+    expect(dispatchSpy).toHaveBeenCalledTimes(0);
 
     expect(screen.queryAllByText('启 用')[0].closest('button')).toBeDisabled();
     fireEvent.click(screen.queryAllByText('启 用')[0]);

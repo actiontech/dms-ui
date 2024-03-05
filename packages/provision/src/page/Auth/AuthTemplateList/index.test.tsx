@@ -56,14 +56,14 @@ describe('Auth/AuthTemplateList', () => {
     listDataPermissionTemplateSpy.mockImplementation(tempListAuthorizationsSpy);
     const { container } = superRender(<AuthTemplateList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(listDataPermissionTemplateSpy).toBeCalledTimes(1);
+    expect(listDataPermissionTemplateSpy).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
     fireEvent.click(getBySelector('.custom-icon-refresh'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('.ant-spin-spinning')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(listDataPermissionTemplateSpy).toBeCalledTimes(2);
+    expect(listDataPermissionTemplateSpy).toHaveBeenCalledTimes(2);
     expect(queryBySelector('.ant-spin-spinning')).not.toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
@@ -98,7 +98,7 @@ describe('Auth/AuthTemplateList', () => {
       }
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(listDataPermissionTemplateSpy).toBeCalledWith({
+    expect(listDataPermissionTemplateSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 20,
       filter_by_name: 'asd',
@@ -121,7 +121,7 @@ describe('Auth/AuthTemplateList', () => {
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(300));
 
-    expect(removeDataPermissionTemplateSpy).toBeCalledWith({
+    expect(removeDataPermissionTemplateSpy).toHaveBeenCalledWith({
       data_permission_template_uid: String(templateList[0].uid)
     });
     await act(async () => jest.advanceTimersByTime(100));
@@ -173,10 +173,10 @@ describe('Auth/AuthTemplateList', () => {
     fireEvent.click(screen.getByText('类似创建'));
 
     await act(async () => jest.advanceTimersByTime(300));
-    expect(TemplateListModalStatusChangeSpy).toBeCalledTimes(2);
+    expect(TemplateListModalStatusChangeSpy).toHaveBeenCalledTimes(2);
     expect(TemplateListModalStatusChangeSpy).nthCalledWith(2, {
       [ModalName.CopyTemplate]: true
     });
-    expect(AuthListUpdateSelectDataSpy).toBeCalledTimes(1);
+    expect(AuthListUpdateSelectDataSpy).toHaveBeenCalledTimes(1);
   });
 });

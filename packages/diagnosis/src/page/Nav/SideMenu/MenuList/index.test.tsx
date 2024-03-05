@@ -63,7 +63,7 @@ describe('diagnosis/MenuList', () => {
     });
     fireEvent.click(getAllBySelector('.ant-menu-item')?.[0]);
 
-    expect(navigateSpy).toBeCalledTimes(1);
-    expect(navigateSpy).toBeCalledWith('/monitorSourceConfig');
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith('/monitorSourceConfig');
   });
 });

@@ -49,6 +49,6 @@ describe('sqle/Order/UploadTypeItem', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('children node'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(onClickFn).toBeCalled();
+    expect(onClickFn).toHaveBeenCalled();
   });
 });

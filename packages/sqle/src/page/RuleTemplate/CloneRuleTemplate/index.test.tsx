@@ -65,22 +65,24 @@ describe('sqle/RuleTemplate/CloneRuleTemplate', () => {
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(cloneProjectRuleTemplateSpy).toBeCalledTimes(1);
-    expect(cloneProjectRuleTemplateSpy).toBeCalledWith({
+    expect(cloneProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(cloneProjectRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: templateName,
       new_rule_template_name: 'test2',
       project_name: mockProjectInfo.projectName
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'ruleTemplate/updateModalStatus',
       payload: {
         modalName: ModalName.Clone_Rule_Template,
         status: false
       }
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Rule_Template_List);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Rule_Template_List
+    );
     expect(screen.getByText('提 交').parentNode).not.toHaveClass(
       'ant-btn-loading'
     );
@@ -108,23 +110,25 @@ describe('sqle/RuleTemplate/CloneRuleTemplate', () => {
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(cloneProjectRuleTemplateSpy).toBeCalledTimes(1);
-    expect(cloneProjectRuleTemplateSpy).toBeCalledWith({
+    expect(cloneProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(cloneProjectRuleTemplateSpy).toHaveBeenCalledWith({
       rule_template_name: templateName,
       new_rule_template_name: 'test2',
       project_name: mockProjectInfo.projectName,
       desc: 'test desc'
     });
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'ruleTemplate/updateModalStatus',
       payload: {
         modalName: ModalName.Clone_Rule_Template,
         status: false
       }
     });
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(EmitterKey.Refresh_Rule_Template_List);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
+      EmitterKey.Refresh_Rule_Template_List
+    );
     expect(screen.getByText('提 交').parentNode).not.toHaveClass(
       'ant-btn-loading'
     );
@@ -137,8 +141,8 @@ describe('sqle/RuleTemplate/CloneRuleTemplate', () => {
     const { baseElement } = customRender();
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(dispatchSpy).toBeCalledTimes(1);
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'ruleTemplate/updateModalStatus',
       payload: {
         modalName: ModalName.Clone_Rule_Template,

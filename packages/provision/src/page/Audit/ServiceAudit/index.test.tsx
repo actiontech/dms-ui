@@ -43,8 +43,8 @@ describe('page/Audit/ServiceAudit', () => {
     expect(baseElement).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestListFn).toBeCalledTimes(1);
-    expect(requestListFn).toBeCalledWith({
+    expect(requestListFn).toHaveBeenCalledTimes(1);
+    expect(requestListFn).toHaveBeenCalledWith({
       filter_by_namespace_uid: projectID,
       keyword: '',
       page_index: 1,
@@ -53,7 +53,7 @@ describe('page/Audit/ServiceAudit', () => {
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
-    expect(requestListFn).toBeCalledTimes(2);
+    expect(requestListFn).toHaveBeenCalledTimes(2);
     await act(async () => jest.advanceTimersByTime(3000));
   });
 
@@ -62,7 +62,7 @@ describe('page/Audit/ServiceAudit', () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestListFn).toBeCalledTimes(1);
+    expect(requestListFn).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(`共 ${serviceAuditList.length} 条数据`)
     ).toBeInTheDocument();
@@ -137,18 +137,18 @@ describe('page/Audit/ServiceAudit', () => {
       getBySelector('#actiontech-table-search-input', baseElement),
       { target: { value: 'test' } }
     );
-    expect(serviceListFn).toBeCalledTimes(1);
-    expect(serviceListFn).toBeCalledWith({
+    expect(serviceListFn).toHaveBeenCalledTimes(1);
+    expect(serviceListFn).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 999,
       filter_by_namespace: projectID
     });
-    expect(businessListFn).toBeCalledTimes(1);
-    expect(businessListFn).toBeCalledWith({
+    expect(businessListFn).toHaveBeenCalledTimes(1);
+    expect(businessListFn).toHaveBeenCalledWith({
       namespace_uid: projectID
     });
 
-    expect(requestListFn).toBeCalledTimes(1);
+    expect(requestListFn).toHaveBeenCalledTimes(1);
     expect(requestListFn).nthCalledWith(1, {
       page_index: 1,
       page_size: 20,
@@ -165,7 +165,7 @@ describe('page/Audit/ServiceAudit', () => {
       }
     );
 
-    expect(requestListFn).toBeCalledTimes(2);
+    expect(requestListFn).toHaveBeenCalledTimes(2);
     expect(requestListFn).nthCalledWith(2, {
       page_index: 1,
       page_size: 20,

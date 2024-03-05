@@ -39,8 +39,8 @@ describe('test init server monitor modal', () => {
     const { container } = superRender(<ServerMonitorModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
-    expect(mockDispatch).toBeCalledTimes(1);
-    expect(mockDispatch).toBeCalledWith({
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalStatus: {
           [ModalName.Add_Server_Monitor]: false,

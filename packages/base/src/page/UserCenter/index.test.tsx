@@ -38,10 +38,10 @@ describe('base/UserCenter', () => {
     const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(userListSpy).toBeCalledTimes(1);
+    expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('添加用户'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_User,
@@ -61,8 +61,8 @@ describe('base/UserCenter', () => {
     const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
     fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(eventEmitSpy).toBeCalledTimes(1);
-    expect(eventEmitSpy).toBeCalledWith(
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Refresh_User_Center_List
     );
   });
@@ -70,14 +70,14 @@ describe('base/UserCenter', () => {
   it('switch to role list', async () => {
     const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userListSpy).toBeCalledTimes(1);
+    expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('角色列表'));
     await act(async () => jest.advanceTimersByTime(3100));
-    expect(roleListSpy).toBeCalledTimes(1);
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('添加角色'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toBeCalledWith({
+    expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'userCenter/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Add_Role,
@@ -89,10 +89,10 @@ describe('base/UserCenter', () => {
   it('switch to operate permission list', async () => {
     const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(userListSpy).toBeCalledTimes(1);
+    expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('操作权限列表'));
     await act(async () => jest.advanceTimersByTime(3100));
-    expect(permissionListSpy).toBeCalledTimes(1);
+    expect(permissionListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 });

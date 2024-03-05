@@ -36,8 +36,8 @@ describe('useRemoveTemplate', () => {
 
     render(<Component />);
 
-    expect(removeDataPermissionTemplateSpy).toBeCalledTimes(1);
-    expect(removeDataPermissionTemplateSpy).toBeCalledWith({
+    expect(removeDataPermissionTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(removeDataPermissionTemplateSpy).toHaveBeenCalledWith({
       data_permission_template_uid: '123'
     });
     expect(screen.queryByText('正在删除模板 "123"...')).toBeInTheDocument();
@@ -46,7 +46,7 @@ describe('useRemoveTemplate', () => {
     expect(screen.queryByText('正在删除模板 "123"...')).not.toBeInTheDocument();
     const successEl = await screen.findByText(`模板 "123" 删除成功`);
 
-    expect(refresh).toBeCalledTimes(1);
+    expect(refresh).toHaveBeenCalledTimes(1);
     expect(successEl).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText(`模板 "123" 删除成功`)).not.toBeInTheDocument();

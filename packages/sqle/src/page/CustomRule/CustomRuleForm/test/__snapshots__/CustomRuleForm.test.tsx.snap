@@ -446,7 +446,7 @@ exports[`sqle/CustomRule/Form should match snap 1`] = `
                       height="500px"
                       id="script"
                       language="regexp"
-                      options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value=""
                       width="720px"
                     />
@@ -947,7 +947,7 @@ exports[`sqle/CustomRule/Form should match snap when provide defaultData 1`] = `
                       height="500px"
                       id="script"
                       language="regexp"
-                      options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value="SELECT 1;"
                       width="720px"
                     />
@@ -1448,7 +1448,7 @@ exports[`sqle/CustomRule/Form should match snap when provide defaultData 2`] = `
                       height="500px"
                       id="script"
                       language="regexp"
-                      options="{\\"automaticLayout\\":true,\\"minimap\\":{\\"enabled\\":false},\\"fontFamily\\":\\"SF Mono\\",\\"fontSize\\":14,\\"fontWeight\\":\\"400\\",\\"lineNumbersMinChars\\":2,\\"suggestFontSize\\":14}"
+                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
                       value="SELECT 1;"
                       width="720px"
                     />

@@ -63,9 +63,9 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
 
     await act(async () => jest.advanceTimersByTime(3300));
     expect(baseElement).toMatchSnapshot();
-    expect(requestGetCompanyNotice).toBeCalled();
-    expect(scopeDispatch).toBeCalled();
-    expect(scopeDispatch).toBeCalledWith({
+    expect(requestGetCompanyNotice).toHaveBeenCalled();
+    expect(scopeDispatch).toHaveBeenCalled();
+    expect(scopeDispatch).toHaveBeenCalledWith({
       payload: { modalName: ModalName.Company_Notice, status: true },
       type: 'nav/updateModalStatus'
     });
@@ -79,8 +79,8 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     fireEvent.click(screen.getByText('个人中心'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith('/account');
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith('/account');
   });
 
   it('render snap when click logout btn', async () => {
@@ -95,9 +95,9 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     expect(screen.getByText('退出登录')).toBeInTheDocument();
     fireEvent.click(screen.getByText('退出登录'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(requestDelSession).toBeCalled();
+    expect(requestDelSession).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(2600));
-    expect(navigateSpy).toBeCalled();
-    expect(navigateSpy).toBeCalledWith('/login', { replace: true });
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
   });
 });

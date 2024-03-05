@@ -111,7 +111,7 @@ describe('/Auth/AddDataPermission', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     selectOptionByIndex('业务', 'business-2', 1);
     await act(async () => jest.advanceTimersByTime(300));
-    expect(listServicesSpy).toBeCalled();
+    expect(listServicesSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(
       getBySelector('.data-service-select .ant-select-selector input')
@@ -121,7 +121,7 @@ describe('/Auth/AddDataPermission', () => {
       fireEvent.click(screen.getAllByText('Julian Lueilwitz(MySQL)')[0])
     );
     await act(async () => jest.advanceTimersByTime(300));
-    expect(listDataBasesSpy).toBeCalled();
+    expect(listDataBasesSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(
       getBySelector(
@@ -134,7 +134,7 @@ describe('/Auth/AddDataPermission', () => {
     );
     await screen.findByText('database-1');
     await act(() => fireEvent.click(screen.getByText('database-1')));
-    expect(listTablesSpy).toBeCalled();
+    expect(listTablesSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(
       getBySelector(
@@ -154,8 +154,8 @@ describe('/Auth/AddDataPermission', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('提 交'));
-    expect(setDataPermissions).toBeCalledTimes(0);
-    expect(listDataBasesSpy).toBeCalledTimes(1);
+    expect(setDataPermissions).toHaveBeenCalledTimes(0);
+    expect(listDataBasesSpy).toHaveBeenCalledTimes(1);
     await screen.findByText(
       '已存在相同数据源、相同数据对象、相同数据操作的权限'
     );
@@ -192,7 +192,7 @@ describe('/Auth/AddDataPermission', () => {
     selectOptionByIndex('选择操作', '查询', 0);
 
     await act(() => fireEvent.click(screen.getByText('提 交')));
-    expect(setDataPermissions).toBeCalledTimes(1);
+    expect(setDataPermissions).toHaveBeenCalledTimes(1);
   });
 
   it('remove table options when click remove database field icon', async () => {

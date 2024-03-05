@@ -101,7 +101,7 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
     });
 
     fireEvent.click(screen.getByText('formatSQLAction'));
-    expect(listDbServiceSpy).toBeCalledTimes(0);
+    expect(listDbServiceSpy).toHaveBeenCalledTimes(0);
     expect(screen.getByLabelText('sql')).toHaveValue(formatterSQL('select 1;'));
 
     fireEvent.change(screen.getByLabelText('dbService'), {
@@ -112,7 +112,7 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
     });
 
     fireEvent.click(screen.getByText('formatSQLAction'));
-    expect(listDbServiceSpy).toBeCalledTimes(1);
+    expect(listDbServiceSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -154,11 +154,11 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
     fireEvent.click(screen.getByText('auditAction'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(updateAuditLoadingSpy).toBeCalledTimes(1);
-    expect(updateAuditLoadingSpy).toBeCalledWith(true);
+    expect(updateAuditLoadingSpy).toHaveBeenCalledTimes(1);
+    expect(updateAuditLoadingSpy).toHaveBeenCalledWith(true);
 
-    expect(addDataExportTaskSpy).toBeCalledTimes(1);
-    expect(addDataExportTaskSpy).toBeCalledWith({
+    expect(addDataExportTaskSpy).toHaveBeenCalledTimes(1);
+    expect(addDataExportTaskSpy).toHaveBeenCalledWith({
       project_uid: mockProjectInfo.projectID,
       data_export_tasks: [
         {
@@ -169,8 +169,8 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
       ]
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(updateFormValuesSpy).toBeCalledTimes(1);
-    expect(updateFormValuesSpy).toBeCalledWith({
+    expect(updateFormValuesSpy).toHaveBeenCalledTimes(1);
+    expect(updateFormValuesSpy).toHaveBeenCalledWith({
       baseValues: {
         name: 'name'
       },
@@ -182,13 +182,13 @@ describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
         schema: 'schema'
       }
     });
-    expect(updateTaskIDsSpy).toBeCalledTimes(1);
-    expect(updateTaskIDsSpy).toBeCalledWith(
+    expect(updateTaskIDsSpy).toHaveBeenCalledTimes(1);
+    expect(updateTaskIDsSpy).toHaveBeenCalledWith(
       AddDataExportTaskResponseData?.data_export_task_uids
     );
 
-    expect(updateAuditLoadingSpy).toBeCalledTimes(2);
-    expect(updateAuditLoadingSpy).toBeCalledWith(false);
+    expect(updateAuditLoadingSpy).toHaveBeenCalledTimes(2);
+    expect(updateAuditLoadingSpy).toHaveBeenCalledWith(false);
     expect(screen.getByTestId('audit-result-content')).toHaveTextContent(
       'audit action return value: true'
     );
