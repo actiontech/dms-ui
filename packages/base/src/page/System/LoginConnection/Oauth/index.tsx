@@ -292,7 +292,10 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips title={t('dmsSystem.oauth.autoCreateUserTips')}>
+            <BasicToolTips
+              suffixIcon={<IconTipGray />}
+              title={t('dmsSystem.oauth.autoCreateUserTips')}
+            >
               {t('dmsSystem.oauth.autoCreateUser')}
             </BasicToolTips>
           ),
@@ -305,7 +308,10 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips title={t('dmsSystem.oauth.skipStateCheckTips')}>
+            <BasicToolTips
+              suffixIcon={<IconTipGray />}
+              title={t('dmsSystem.oauth.skipStateCheckTips')}
+            >
               {t('dmsSystem.oauth.skipCheckState')}
             </BasicToolTips>
           ),
