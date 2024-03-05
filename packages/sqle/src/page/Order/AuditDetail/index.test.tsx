@@ -235,7 +235,7 @@ describe('sqle/Order/AuditDetail', () => {
     expect(screen.getByText('执行失败')).toBeInTheDocument();
     fireEvent.click(screen.getByText('执行失败'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).nthCalledWith(1, {
+    expect(requestGetAuditTaskSQLs).toHaveBeenNthCalledWith(1, {
       filter_exec_status: undefined,
       no_duplicate: false,
       page_index: '1',
@@ -246,14 +246,14 @@ describe('sqle/Order/AuditDetail', () => {
     expect(screen.getByText('数据去重')).toBeInTheDocument();
     fireEvent.click(screen.getByText('数据去重'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).nthCalledWith(2, {
+    expect(requestGetAuditTaskSQLs).toHaveBeenNthCalledWith(2, {
       filter_exec_status: 'failed',
       no_duplicate: false,
       page_index: '1',
       page_size: '20',
       task_id: '2'
     });
-    expect(requestGetAuditTaskSQLs).nthCalledWith(3, {
+    expect(requestGetAuditTaskSQLs).toHaveBeenNthCalledWith(3, {
       filter_exec_status: 'failed',
       no_duplicate: true,
       page_index: '1',
@@ -267,7 +267,7 @@ describe('sqle/Order/AuditDetail', () => {
     expect(screen.getByText('瀑布流展示')).toBeInTheDocument();
     fireEvent.click(screen.getByText('瀑布流展示'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetAuditTaskSQLs).nthCalledWith(4, {
+    expect(requestGetAuditTaskSQLs).toHaveBeenNthCalledWith(4, {
       filter_exec_status: 'failed',
       no_duplicate: true,
       page_index: '1',
