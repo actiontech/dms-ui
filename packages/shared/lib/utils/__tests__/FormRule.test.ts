@@ -1,10 +1,14 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {
+  integerRule,
+  integerValidator,
   nameRuleValidator,
   phoneRuleValidator,
   roleNameRuleValidator,
+  tagNameRule,
   validatorPort,
-  whiteSpaceSqlValidator
+  whiteSpaceSqlValidator,
+  workflowNameRule
 } from '../FormRule';
 
 describe('utils/FormRule', () => {
@@ -158,5 +162,55 @@ describe('utils/FormRule', () => {
       message = error;
     }
     expect(message).toBe('');
+  });
+
+  it('should check workflow name rule', async () => {
+    const check = workflowNameRule();
+    let message = '';
+    try {
+      await check?.({} as any, '1xxxx', () => {});
+    } catch (error: any) {
+      message = error;
+    }
+    expect(message).toBe('必须要以字母、中文开头');
+    try {
+      await check?.({} as any, 'xx123xz+xcxx', () => {});
+    } catch (error: any) {
+      message = error;
+    }
+    expect(message).toBe('只能包含字母、数字、中文、中划线和下划线');
+  });
+
+  it('should check tag name rule', async () => {
+    const check = tagNameRule();
+    let message = '';
+    try {
+      await check?.({} as any, 'xx123xz+xcxx', () => {});
+    } catch (error: any) {
+      message = error;
+    }
+    expect(message).toBe('只能包含汉字、字母、数字、中划线和下划线');
+  });
+
+  it('should check integer rule with name', async () => {
+    const check = integerValidator('test', 0, 10);
+    let message = '';
+    try {
+      await check?.({} as any, 'xx123xz+xcxx', () => {});
+    } catch (error: any) {
+      message = error;
+    }
+    expect(message).toBe('只能输入正整数');
+    try {
+      await check?.({} as any, 12, () => {});
+    } catch (error: any) {
+      message = error;
+    }
+    expect(message).toBe('test范围是0-10间的正整数');
+  });
+
+  it('should check integer rule', async () => {
+    const check = integerRule('test', 0, 10);
+    expect(check.length).toBe(1);
   });
 });

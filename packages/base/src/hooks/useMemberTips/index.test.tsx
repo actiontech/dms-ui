@@ -69,6 +69,11 @@ describe('useUsername', () => {
 
   it('should render options when use generateUsernameSelectOption', async () => {
     const { result } = renderHook(() => useMemberTips());
+    act(() => {
+      result.current.updateMemberTips({ project_uid: projectID });
+    });
+    expect(result.current.loading).toBeTruthy();
+    await act(async () => jest.advanceTimersByTime(3000));
     const { baseElement: baseElementWithOptions } = render(
       <Select data-testid="testId" value="test">
         {result.current.generateMemberSelectOptions()}

@@ -367,7 +367,7 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                     <td
                       class="ant-table-cell"
                     >
-                      mysql-1
+                      -
                     </td>
                     <td
                       class="ant-table-cell"

@@ -54,8 +54,8 @@ describe('base/MemberGroupList', () => {
     expect(
       screen.getByText(`共 ${memberGroupList.length} 条数据`)
     ).toBeInTheDocument();
-    expect(screen.getAllByText('删 除')).toHaveLength(3);
-    expect(screen.getAllByText('编 辑')).toHaveLength(3);
+    expect(screen.getAllByText('删 除')).toHaveLength(4);
+    expect(screen.getAllByText('编 辑')).toHaveLength(4);
   });
 
   it('should render empty tips when request not success', async () => {
@@ -88,8 +88,8 @@ describe('base/MemberGroupList', () => {
     }));
     renderWithReduxAndTheme(<MemberGroupList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('删 除')).toHaveLength(3);
-    expect(screen.queryAllByText('编 辑')).toHaveLength(3);
+    expect(screen.queryAllByText('删 除')).toHaveLength(4);
+    expect(screen.queryAllByText('编 辑')).toHaveLength(4);
     useCurrentUserSpy.mockClear();
     cleanup();
     useCurrentProjectSpy.mockImplementation(() => ({

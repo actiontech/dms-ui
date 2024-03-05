@@ -1117,6 +1117,21 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
                           </div>
                         </td>
                       </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="test"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          this is license desc info 2
+                        </td>
+                        <td
+                          class="ant-table-cell ellipsis-column-width"
+                        >
+                          limit string cont 2
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>

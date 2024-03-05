@@ -100,6 +100,28 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
       });
     });
 
+    it('click cancel btn and confirm to cancel', async () => {
+      const { baseElement } = customRender();
+
+      expect(screen.getByText('编 辑')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('编 辑'));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      const inputEle = getBySelector('textarea.ant-input', baseElement);
+      fireEvent.change(inputEle, {
+        target: {
+          value: '这是一条公告信息'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.click(screen.getByText('取 消'));
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 认'));
+    });
+
     it('click submit btn', async () => {
       const { baseElement } = customRender();
 

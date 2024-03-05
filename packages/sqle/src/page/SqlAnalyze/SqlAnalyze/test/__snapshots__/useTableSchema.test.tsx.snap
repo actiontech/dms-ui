@@ -506,6 +506,81 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
 </EmptyBox>
 `;
 
+exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele when tableMeta hasError message 1`] = `
+<EmptyBox
+  defaultNode={
+    <BasicResult
+      icon={
+        <AntdIcon
+          component={[Function]}
+        />
+      }
+      status="error"
+      title="error"
+    />
+  }
+  if={false}
+>
+  <Space
+    className="full-width-element"
+    direction="vertical"
+    hidden={false}
+    size={0}
+  >
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        列信息
+      </h3>
+      <BasicTable
+        columns={[]}
+        pagination={false}
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        索引信息
+      </h3>
+      <BasicTable
+        columns={[]}
+        pagination={false}
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <h3
+        className="header-title"
+      >
+        建表语句
+      </h3>
+      <section
+        className="basic-cont-wrapper sql-cont"
+      >
+        <RenderSQL
+          sql=""
+        />
+      </section>
+    </React.Fragment>
+  </Space>
+</EmptyBox>
+`;
+
+exports[`SqlAnalyze/useTableSchema render table Schema data get table Schemas data error 1`] = `[]`;
+
+exports[`SqlAnalyze/useTableSchema render table Schema data get table Schemas data error 2`] = `[]`;
+
+exports[`SqlAnalyze/useTableSchema render table Schema data get table Schemas data error 3`] = `
+[
+  {
+    "errorMessage": "error",
+    "id": "table-test-name-test-schema-name-dataSource-name",
+    "tableMeta": [],
+  },
+]
+`;
+
 exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 1`] = `[]`;
 
 exports[`SqlAnalyze/useTableSchema render table Schema data it render table Schemas data 2`] = `[]`;

@@ -57,4 +57,22 @@ describe('lib/BasicInfoList', () => {
     });
     expect(container).toMatchSnapshot();
   });
+
+  it('render diff info list cont', () => {
+    const { container } = customRender({
+      loading: false,
+      title: 'info list 标题',
+      data: [
+        {
+          key: <>key1</>,
+          value: <>value1</>
+        },
+        {
+          key: <>key2</>,
+          value: <>value2</>
+        }
+      ]
+    });
+    expect(container).toMatchSnapshot();
+  });
 });
