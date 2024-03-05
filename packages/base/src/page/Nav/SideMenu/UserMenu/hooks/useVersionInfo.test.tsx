@@ -92,4 +92,34 @@ describe('base/page/Nav/SideMenu/useVersionInfo', () => {
     expect(result.current.dmsVersion).toBe('');
     expect(result.current.sqleVersion).toBe('');
   });
+
+  it('should execute when api return special version', async () => {
+    const { result } = customRender();
+
+    expect(result.current.dmsVersion).toBe('');
+    expect(result.current.sqleVersion).toBe('');
+
+    requestGetBasicInfo.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          components: [
+            {
+              name: 'dms',
+              version: 'main-ce'
+            },
+            {
+              name: 'sqle',
+              version: 'main-ce'
+            }
+          ]
+        }
+      })
+    );
+    await act(async () => {
+      result.current.updateVersionInfo();
+      await act(async () => jest.advanceTimersByTime(3300));
+    });
+    expect(result.current.dmsVersion).toBe('main-ce');
+    expect(result.current.sqleVersion).toBe('main-ce');
+  });
 });

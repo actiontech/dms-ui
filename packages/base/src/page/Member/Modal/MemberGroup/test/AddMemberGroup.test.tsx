@@ -112,7 +112,6 @@ describe('base/Member/Modal/AddMemberGroup', () => {
   it('should send add member group request when click submit button with role', async () => {
     const { baseElement } = renderWithReduxAndTheme(<AddMemberGroup />);
     await act(async () => jest.advanceTimersByTime(3000));
-
     fireEvent.input(screen.getByLabelText('成员组名'), {
       target: { value: 'testGroup' }
     });
@@ -124,7 +123,12 @@ describe('base/Member/Modal/AddMemberGroup', () => {
     expect(screen.getByText('平台角色')).toBeInTheDocument();
     expect(screen.getByText('操作范围')).toBeInTheDocument();
     expect(screen.queryAllByText('平台角色')).toHaveLength(1);
-    selectOptionByIndex('平台角色', roleList[0].name ?? '', 0);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseDown(screen.getByLabelText('平台角色'));
+    const option = screen.getAllByText(roleList[0].name ?? '')[0];
+    expect(option).toHaveClass('full-width-element');
+    fireEvent.click(option);
+    await act(async () => jest.advanceTimersByTime(3000));
     const firstDb = dbServicesList[0];
     selectOptionByIndex(
       '操作范围',

@@ -1,5 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lib/ConfigItem-EditInput render input and click select icon 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <span
+          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+        >
+          <span
+            class="ant-input-wrapper ant-input-group css-dev-only-do-not-override-ywkr0o"
+          >
+            <input
+              class="ant-input css-dev-only-do-not-override-ywkr0o"
+              id="editInput"
+              placeholder="请输入{{name}}"
+              type="text"
+              value="val key"
+            />
+            <span
+              class="ant-input-group-addon"
+            >
+              <span
+                class="custom-icon custom-icon-selected css-u3jcp4"
+                role="img"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    id="selected"
+                  >
+                    <path
+                      d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669"
+                      id="Vector"
+                      stroke="#4583FF"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </g>
+                </svg>
+              </span>
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`lib/ConfigItem-EditInput render input for error 1`] = `
 <body>
   <div>

@@ -1,10 +1,6 @@
 import Router, { useNavigate } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../testUtils/customRender';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
 
 import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
@@ -16,6 +12,7 @@ import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 
 import UpdateSyncTask from '.';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -129,5 +126,25 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
         replace: true
       }
     );
+  });
+
+  it('get task source failed', async () => {
+    const requestDetail = syncTaskList.getTaskSource();
+    requestDetail.mockImplementation(() =>
+      createSpySuccessResponse({
+        code: '500',
+        message: 'error'
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestDetail).toHaveBeenCalled();
+    expect(requestDetail).toHaveBeenCalledWith({
+      database_source_service_uid: taskId,
+      project_uid: projectID
+    });
+    expect(baseElement).toMatchSnapshot();
   });
 });

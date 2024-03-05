@@ -111,4 +111,31 @@ describe('lib/ConfigItem-EditInput', () => {
     });
     expect(hideFieldFn).toHaveBeenCalledTimes(1);
   });
+
+  it('render input and click select icon', async () => {
+    const hideFieldFn = jest.fn();
+    const onSubmitFn = jest.fn();
+    const { baseElement } = customRender({
+      submitLoading: false,
+      fieldValue: 'default val',
+      hideField: hideFieldFn,
+      onSubmit: onSubmitFn
+    });
+    const inputEle = getBySelector('input.ant-input#editInput', baseElement);
+    await act(async () => {
+      fireEvent.change(inputEle, {
+        target: {
+          value: 'val key'
+        }
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    expect(baseElement).toMatchSnapshot();
+
+    await act(async () => {
+      fireEvent.click(getBySelector('.custom-icon-selected'));
+      await jest.advanceTimersByTime(300);
+    });
+    expect(onSubmitFn).toHaveBeenCalledTimes(1);
+  });
 });

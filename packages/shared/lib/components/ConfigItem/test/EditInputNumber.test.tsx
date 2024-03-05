@@ -132,4 +132,31 @@ describe('lib/ConfigItem-EditInputNumber', () => {
     });
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('render input val change and click select icon', async () => {
+    const onSubmitFn = jest.fn();
+    const { baseElement } = customRender({
+      fieldValue: 4,
+      hideField: jest.fn(),
+      onSubmit: onSubmitFn
+    });
+    const inputEle = getBySelector(
+      'input.ant-input-number-input#editInputNumber',
+      baseElement
+    );
+    await act(async () => {
+      fireEvent.change(inputEle, {
+        target: {
+          value: 0
+        }
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => {
+      fireEvent.click(getBySelector('.custom-icon-selected'));
+      await jest.advanceTimersByTime(300);
+    });
+    expect(onSubmitFn).toHaveBeenCalledTimes(1);
+  });
 });

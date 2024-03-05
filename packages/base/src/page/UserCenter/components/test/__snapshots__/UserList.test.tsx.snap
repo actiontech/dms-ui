@@ -425,7 +425,9 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"

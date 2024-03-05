@@ -304,7 +304,7 @@ describe('page/DataSource/DataSourceList', () => {
       const requestTestConnect = dms.CheckDBServiceIsConnectable();
       requestTestConnect.mockImplementationOnce(() =>
         createSpySuccessResponse({
-          connections: [{ is_connectable: true }]
+          data: [{ is_connectable: true }]
         })
       );
       const requestTableList = dms.getListDBServices();
@@ -333,9 +333,7 @@ describe('page/DataSource/DataSourceList', () => {
       const requestTestConnect = dms.CheckDBServiceIsConnectable();
       requestTestConnect.mockImplementationOnce(() =>
         createSpySuccessResponse({
-          connections: [
-            { is_connectable: false, connect_error_message: 'error' }
-          ]
+          data: [{ is_connectable: false, connect_error_message: 'error' }]
         })
       );
       const requestTableList = dms.getListDBServices();
@@ -364,7 +362,7 @@ describe('page/DataSource/DataSourceList', () => {
       const requestTestConnect = dms.CheckDBServiceIsConnectable();
       requestTestConnect.mockImplementationOnce(() =>
         createSpySuccessResponse({
-          connections: [{ is_connectable: false }]
+          data: [{ is_connectable: false }]
         })
       );
       const requestTableList = dms.getListDBServices();

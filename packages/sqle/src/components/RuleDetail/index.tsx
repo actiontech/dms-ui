@@ -133,7 +133,6 @@ const RuleDetail = () => {
   }, [projectRuleData, globalTemplateRules, projectName]);
 
   useEffect(() => {
-    console.log(projectName);
     projectName
       ? getProjectTemplateRules(projectName, templateName)
       : getGlobalTemplateRules(templateName);
