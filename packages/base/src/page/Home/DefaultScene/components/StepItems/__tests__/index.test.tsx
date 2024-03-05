@@ -98,6 +98,36 @@ describe('test base/Home/StepItems', () => {
       `project/${projectID}/data/export/create`
     );
 
+    fireEvent.click(screen.getByText('权限模板'));
+    expect(navigateSpy).toHaveBeenCalledTimes(15);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/provision/project/${projectID}/auth/template`
+    );
+
+    fireEvent.click(screen.getByText('授权清单'));
+    expect(navigateSpy).toHaveBeenCalledTimes(16);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/provision/project/${projectID}/auth/list`
+    );
+
+    fireEvent.click(screen.getByText('授权审计'));
+    expect(navigateSpy).toHaveBeenCalledTimes(17);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/provision/project/${projectID}/audit/auth`
+    );
+
+    fireEvent.click(screen.getByText('权限模板审计'));
+    expect(navigateSpy).toHaveBeenCalledTimes(18);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/provision/project/${projectID}/audit/template`
+    );
+
+    fireEvent.click(screen.getByText('数据源操作审计'));
+    expect(navigateSpy).toHaveBeenCalledTimes(19);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/provision/project/${projectID}/audit/service`
+    );
+
     cleanup();
     jest.clearAllMocks();
 

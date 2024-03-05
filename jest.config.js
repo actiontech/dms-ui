@@ -2,7 +2,6 @@
 process.env.TZ = 'Asia/Shanghai';
 
 const path = require('path');
-
 const { compilerOptions } = require('./tsconfig.json');
 const { pathsToModuleNameMapper } = require('ts-jest');
 
@@ -41,7 +40,8 @@ module.exports = {
     '!packages/**/index.enum.ts',
     '!packages/sqle/src/page/AuditPlan/**',
     '!packages/sqle/src/page/SqlAnalyze/SqlAnalyze/ProcessListCom/**',
-    '!packages/shared/lib/hooks/usePrompt/index.tsx'
+    '!packages/shared/lib/hooks/usePrompt/index.tsx',
+    '!packages/provision/src/store/**/*.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   reporters: [
