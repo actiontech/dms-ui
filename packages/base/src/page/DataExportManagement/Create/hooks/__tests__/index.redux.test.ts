@@ -57,7 +57,7 @@ describe('test useCreateDataExportReduxManage', () => {
 
     result.current.updatePageState(mockCreateDataExportRedux.pageState);
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
-    expect(dispatchSpy).nthCalledWith(2, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
         pageState: mockCreateDataExportRedux.pageState
       },
@@ -66,7 +66,7 @@ describe('test useCreateDataExportReduxManage', () => {
 
     result.current.updateAuditLoading(mockCreateDataExportRedux.auditLoading);
     expect(dispatchSpy).toHaveBeenCalledTimes(3);
-    expect(dispatchSpy).nthCalledWith(3, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
       payload: {
         auditLoading: mockCreateDataExportRedux.auditLoading
       },
@@ -75,7 +75,7 @@ describe('test useCreateDataExportReduxManage', () => {
 
     result.current.updateSubmitLoading(mockCreateDataExportRedux.submitLoading);
     expect(dispatchSpy).toHaveBeenCalledTimes(4);
-    expect(dispatchSpy).nthCalledWith(4, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(4, {
       payload: {
         submitLoading: mockCreateDataExportRedux.submitLoading
       },
@@ -84,7 +84,7 @@ describe('test useCreateDataExportReduxManage', () => {
 
     result.current.initModalStatus();
     expect(dispatchSpy).toHaveBeenCalledTimes(5);
-    expect(dispatchSpy).nthCalledWith(5, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(5, {
       payload: {
         modalStatus: {
           [ModalName.DMS_UPDATE_EXPORT_TASK_INFO]: false
@@ -98,7 +98,7 @@ describe('test useCreateDataExportReduxManage', () => {
       status: true
     });
     expect(dispatchSpy).toHaveBeenCalledTimes(6);
-    expect(dispatchSpy).nthCalledWith(6, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(6, {
       payload: {
         modalName: ModalName.DMS_UPDATE_EXPORT_TASK_INFO,
         status: true
@@ -108,7 +108,7 @@ describe('test useCreateDataExportReduxManage', () => {
 
     result.current.updateTaskIDs(mockCreateDataExportRedux.taskIDs);
     expect(dispatchSpy).toHaveBeenCalledTimes(7);
-    expect(dispatchSpy).nthCalledWith(7, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(7, {
       payload: {
         taskIDs: mockCreateDataExportRedux.taskIDs
       },
@@ -117,7 +117,7 @@ describe('test useCreateDataExportReduxManage', () => {
 
     result.current.updateWorkflowID(mockCreateDataExportRedux.workflowID);
     expect(dispatchSpy).toHaveBeenCalledTimes(8);
-    expect(dispatchSpy).nthCalledWith(8, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(8, {
       payload: {
         workflowID: mockCreateDataExportRedux.workflowID
       },
@@ -126,7 +126,7 @@ describe('test useCreateDataExportReduxManage', () => {
 
     result.current.clearAllState();
     expect(dispatchSpy).toHaveBeenCalledTimes(9);
-    expect(dispatchSpy).nthCalledWith(9, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(9, {
       type: 'dataExportManagement/clearAllCreateState'
     });
   });

@@ -60,7 +60,7 @@ describe('test useDataExportDetailReduxManage', () => {
       mockDataExportDetailRedux.workflowRejectOpen
     );
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
-    expect(dispatchSpy).nthCalledWith(2, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
         workflowRejectOpen: mockDataExportDetailRedux.workflowRejectOpen
       },
@@ -69,7 +69,7 @@ describe('test useDataExportDetailReduxManage', () => {
 
     result.current.updateWorkflowInfo(mockDataExportDetailRedux.workflowInfo);
     expect(dispatchSpy).toHaveBeenCalledTimes(3);
-    expect(dispatchSpy).nthCalledWith(3, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
       payload: {
         workflowInfo: mockDataExportDetailRedux.workflowInfo
       },
@@ -78,7 +78,7 @@ describe('test useDataExportDetailReduxManage', () => {
 
     result.current.updateTaskInfos(mockDataExportDetailRedux.taskInfos);
     expect(dispatchSpy).toHaveBeenCalledTimes(4);
-    expect(dispatchSpy).nthCalledWith(4, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(4, {
       payload: {
         taskInfos: mockDataExportDetailRedux.taskInfos
       },
@@ -87,7 +87,7 @@ describe('test useDataExportDetailReduxManage', () => {
 
     result.current.updateCurTaskID(mockDataExportDetailRedux.curTaskID);
     expect(dispatchSpy).toHaveBeenCalledTimes(5);
-    expect(dispatchSpy).nthCalledWith(5, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(5, {
       payload: {
         taskID: mockDataExportDetailRedux.curTaskID
       },
@@ -98,7 +98,7 @@ describe('test useDataExportDetailReduxManage', () => {
       mockDataExportDetailRedux.taskStatusNumber
     );
     expect(dispatchSpy).toHaveBeenCalledTimes(6);
-    expect(dispatchSpy).nthCalledWith(6, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(6, {
       payload: {
         taskStatusNumber: mockDataExportDetailRedux.taskStatusNumber
       },
@@ -109,7 +109,7 @@ describe('test useDataExportDetailReduxManage', () => {
       mockDataExportDetailRedux.canRejectWorkflow
     );
     expect(dispatchSpy).toHaveBeenCalledTimes(7);
-    expect(dispatchSpy).nthCalledWith(7, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(7, {
       payload: {
         canRejectWorkflow: mockDataExportDetailRedux.canRejectWorkflow
       },
@@ -118,7 +118,7 @@ describe('test useDataExportDetailReduxManage', () => {
 
     result.current.clearAllDetailState();
     expect(dispatchSpy).toHaveBeenCalledTimes(8);
-    expect(dispatchSpy).nthCalledWith(8, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(8, {
       type: 'dataExportManagement/clearAllDetailState'
     });
   });

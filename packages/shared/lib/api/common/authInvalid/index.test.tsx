@@ -48,23 +48,23 @@ describe('globalAuthInvalid', () => {
     });
     await act(async () => jest.advanceTimersByTime(1000));
     expect(scopeDispatch).toHaveBeenCalledTimes(6);
-    expect(scopeDispatch).nthCalledWith(1, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
       payload: { token: '' },
       type: 'user/updateToken'
     });
-    expect(scopeDispatch).nthCalledWith(2, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(2, {
       payload: { username: '', role: '' },
       type: 'user/updateUser'
     });
-    expect(scopeDispatch).nthCalledWith(3, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(3, {
       payload: { uid: '' },
       type: 'user/updateUserUid'
     });
-    expect(scopeDispatch).nthCalledWith(4, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(4, {
       payload: { managementPermissions: [] },
       type: 'user/updateManagementPermissions'
     });
-    expect(scopeDispatch).nthCalledWith(5, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(5, {
       payload: { bindProjects: [] },
       type: 'user/updateBindProjects'
     });

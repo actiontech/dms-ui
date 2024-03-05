@@ -102,11 +102,11 @@ describe('page/DataSource/DataSourceList', () => {
     expect(requestListDBServiceDriver).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3300));
     expect(dbServiceTips).toHaveBeenCalledTimes(1);
-    expect(dbServiceTips).nthCalledWith(1, {
+    expect(dbServiceTips).toHaveBeenNthCalledWith(1, {
       project_uid: projectID
     });
     expect(requestTableList).toHaveBeenCalledTimes(1);
-    expect(requestTableList).nthCalledWith(1, {
+    expect(requestTableList).toHaveBeenNthCalledWith(1, {
       fuzzy_keyword: '',
       page_index: 1,
       page_size: 20,
@@ -123,7 +123,7 @@ describe('page/DataSource/DataSourceList', () => {
 
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(requestTableList).nthCalledWith(1, {
+    expect(requestTableList).toHaveBeenNthCalledWith(1, {
       fuzzy_keyword: '',
       page_index: 1,
       page_size: 20,

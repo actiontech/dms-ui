@@ -85,7 +85,7 @@ describe('sqle/components/RuleDetail', () => {
       keyCode: 13
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetProjectRule).nthCalledWith(2, {
+    expect(requestGetProjectRule).toHaveBeenNthCalledWith(2, {
       fuzzy_keyword_rule: 'text1',
       project_name: 'default',
       rule_template_name: ''
@@ -100,7 +100,7 @@ describe('sqle/components/RuleDetail', () => {
     });
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetProjectRule).nthCalledWith(1, {
+    expect(requestGetProjectRule).toHaveBeenNthCalledWith(1, {
       project_name: 'default',
       rule_template_name: 'template-a',
       fuzzy_keyword_rule: undefined

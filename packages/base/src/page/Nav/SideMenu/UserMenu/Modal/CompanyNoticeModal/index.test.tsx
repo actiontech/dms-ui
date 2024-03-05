@@ -58,7 +58,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(scopeDispatch).toHaveBeenCalled();
-    expect(scopeDispatch).nthCalledWith(1, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
       type: 'nav/initModalStatus',
       payload: {
         modalStatus: {
@@ -66,7 +66,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
         }
       }
     });
-    expect(scopeDispatch).nthCalledWith(2, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(2, {
       type: 'nav/updateModalStatus',
       payload: {
         modalName: ModalName.Company_Notice,
@@ -169,7 +169,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
       fireEvent.click(screen.getByText('关 闭'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(scopeDispatch).toHaveBeenCalled();
-      expect(scopeDispatch).nthCalledWith(1, {
+      expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
         type: 'nav/initModalStatus',
         payload: {
           modalStatus: {
@@ -177,7 +177,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
           }
         }
       });
-      expect(scopeDispatch).nthCalledWith(2, {
+      expect(scopeDispatch).toHaveBeenNthCalledWith(2, {
         type: 'nav/updateModalStatus',
         payload: {
           modalName: ModalName.Company_Notice,
