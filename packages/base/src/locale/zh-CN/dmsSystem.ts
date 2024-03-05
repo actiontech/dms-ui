@@ -138,7 +138,10 @@ export default {
 
     autoCreateUser: '自动创建并绑定用户',
     autoCreateUserTips:
-      '若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。'
+      '若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。',
+    skipCheckState: '跳过请求来源验证',
+    skipStateCheckTips:
+      '跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。'
   },
 
   dingTalk: {
