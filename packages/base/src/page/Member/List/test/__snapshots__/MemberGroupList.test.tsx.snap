@@ -322,42 +322,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        <div
-                          class="css-q547fy"
-                        >
-                          <span
-                            class="css-u3jcp4"
-                          >
-                            <svg
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                stroke="#7D8CA8"
-                                stroke-width="1.5"
-                              />
-                              <path
-                                d="M5.91675 5.91663L10.0834 10.0833"
-                                stroke="#7D8CA8"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
-                              />
-                              <path
-                                d="M5.91675 10.0833L10.0834 5.91663"
-                                stroke="#7D8CA8"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
-                              />
-                            </svg>
-                          </span>
-                          <span>
-                            否
-                          </span>
-                        </div>
+                        未知状态...
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -520,6 +485,87 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         </div>
                       </td>
                     </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="10029385"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        member-group9
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      />
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                >
+                                  Role12: [ Range14,Range25 ]
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        未知状态...
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  编 辑
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  删 除
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -532,7 +578,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
               class="ant-pagination-total-text"
             >
               <span>
-                共 3 条数据
+                共 4 条数据
               </span>
             </li>
             <li

@@ -410,7 +410,11 @@ exports[`base/Member/Modal/UpdateMemberGroup should send update member group req
                                   <span
                                     class="ant-select-selection-item"
                                   >
-                                    test role 1
+                                    <div
+                                      class="full-width-element"
+                                    >
+                                      test role 1
+                                    </div>
                                   </span>
                                 </div>
                                 <span

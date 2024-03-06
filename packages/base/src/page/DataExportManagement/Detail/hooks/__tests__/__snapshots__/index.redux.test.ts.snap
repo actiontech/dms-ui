@@ -55,7 +55,6 @@ exports[`test useDataExportDetailReduxManage should match snapshot 1`] = `
       "db_info": {
         "database_name": "test",
         "db_type": "",
-        "name": "mysql-1",
         "uid": "1752170583749038080",
       },
       "export_end_time": "2024-01-30T11:32:15.085+08:00",

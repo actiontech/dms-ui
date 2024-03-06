@@ -74,10 +74,9 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     expect(mockCreateDataExportRedux.updateSubmitLoading).toHaveBeenCalledTimes(
       1
     );
-    expect(mockCreateDataExportRedux.updateSubmitLoading).nthCalledWith(
-      1,
-      true
-    );
+    expect(
+      mockCreateDataExportRedux.updateSubmitLoading
+    ).toHaveBeenNthCalledWith(1, true);
 
     expect(addDataExportWorkflowSpy).toHaveBeenCalledTimes(1);
     expect(addDataExportWorkflowSpy).toHaveBeenCalledWith({
@@ -102,10 +101,9 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     expect(mockCreateDataExportRedux.updateSubmitLoading).toHaveBeenCalledTimes(
       2
     );
-    expect(mockCreateDataExportRedux.updateSubmitLoading).nthCalledWith(
-      2,
-      false
-    );
+    expect(
+      mockCreateDataExportRedux.updateSubmitLoading
+    ).toHaveBeenNthCalledWith(2, false);
 
     jest.clearAllMocks();
 

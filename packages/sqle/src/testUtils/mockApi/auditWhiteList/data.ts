@@ -19,5 +19,9 @@ export const auditWhiteListMockData: IAuditWhitelistResV1[] = [
     desc: 'test3',
     match_type: CreateAuditWhitelistReqV1MatchTypeEnum.exact_match,
     value: 'SELECT 1;'
+  },
+  {
+    audit_whitelist_id: 4,
+    desc: 'test4'
   }
 ];

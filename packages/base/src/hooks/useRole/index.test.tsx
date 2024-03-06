@@ -70,9 +70,44 @@ describe('useRole', () => {
 
   it('should render options when use generateRoleSelectOption', async () => {
     const { result } = renderHook(() => useRole());
+    act(() => {
+      result.current.updateRoleList();
+    });
+
+    expect(result.current.loading).toBeTruthy();
+    await act(async () => jest.advanceTimersByTime(3000));
     const { baseElement: baseElementWithOptions } = render(
       <Select data-testid="testId" value="test role 1">
         {result.current.generateRoleSelectOption()}
+      </Select>
+    );
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElementWithOptions).toMatchSnapshot();
+
+    await act(() => {
+      fireEvent.mouseDown(screen.getByText('test role 1'));
+      jest.runAllTimers();
+    });
+
+    await screen.findAllByText('test role 1');
+    expect(baseElementWithOptions).toMatchSnapshot();
+  });
+
+  it('should exclude disabled options when use generateRoleSelectOption', async () => {
+    const { result } = renderHook(() => useRole());
+    act(() => {
+      result.current.updateRoleList();
+    });
+
+    expect(result.current.loading).toBeTruthy();
+    await act(async () => jest.advanceTimersByTime(3000));
+    const { baseElement: baseElementWithOptions } = render(
+      <Select data-testid="testId" value="test role 1">
+        {result.current.generateRoleSelectOption({
+          showTooltip: true,
+          excludeDisabled: true
+        })}
       </Select>
     );
 

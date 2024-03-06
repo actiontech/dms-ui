@@ -276,7 +276,11 @@ exports[`base/Member/Modal/UpdateMember should send update member request when c
                                   <span
                                     class="ant-select-selection-item"
                                   >
-                                    test role 1
+                                    <div
+                                      class="full-width-element"
+                                    >
+                                      test role 1
+                                    </div>
                                   </span>
                                 </div>
                                 <span

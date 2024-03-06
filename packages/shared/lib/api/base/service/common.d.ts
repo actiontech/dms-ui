@@ -538,6 +538,8 @@ export interface IGetOauth2ConfigurationResData {
 
   server_user_id_url?: string;
 
+  skip_check_state?: boolean;
+
   user_email_tag?: string;
 
   user_id_tag?: string;
@@ -1187,6 +1189,8 @@ export interface IOauth2Configuration {
   server_token_url?: string;
 
   server_user_id_url?: string;
+
+  skip_check_state?: boolean;
 
   user_email_tag?: string;
 

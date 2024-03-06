@@ -62,6 +62,19 @@ describe('cron tool method', () => {
     expect(checkCronItem('1,2,3/2', CronItemType.Day)).toBe(
       CronErrorMessage.invalid
     );
+    expect(checkCronItem(',2,3/2', CronItemType.Day)).toBe(
+      CronErrorMessage.invalid
+    );
+    expect(checkCronItem('3/1-1', CronItemType.Day)).toBe(
+      CronErrorMessage.invalid
+    );
+    expect(checkCronItem('1-1', CronItemType.Day)).toBe(
+      CronErrorMessage.invalid
+    );
+    expect(checkCronItem('null', CronItemType.Day)).toBe(
+      CronErrorMessage.onlyHaveValidChar
+    );
+    expect(checkCronItem('40', CronItemType.Day)).toBe(CronErrorMessage.limit);
   });
 
   test('should check cron expression is valid', () => {
@@ -72,6 +85,7 @@ describe('cron tool method', () => {
     expect(checkCron(123 as any)).toBe(CronErrorMessage.mustBeString);
     expect(checkCron('* * * * * *')).toBe(CronErrorMessage.lenMustBeFive);
     expect(checkCron('* * * * ')).toBe(CronErrorMessage.lenMustBeFive);
+    expect(checkCron('* * * * null')).toBe(CronErrorMessage.onlyHaveValidChar);
   });
 
   test('should parse cron item to number array', () => {
@@ -83,6 +97,9 @@ describe('cron tool method', () => {
       1, 3, 5
     ]);
     expect(parseToNumberFromCronItem('*', CronItemType.Day)).toEqual([]);
+    expect(parseToNumberFromCronItem('*/5', CronItemType.Day)).toEqual([
+      1, 6, 11, 16, 21, 26, 31
+    ]);
     expect(parseToNumberFromCronItem('1,2,3,4,5', CronItemType.Day)).toEqual([
       1, 2, 3, 4, 5
     ]);
@@ -101,6 +118,7 @@ describe('cron tool method', () => {
     expect(checkNumber('a' as any, CronItemType.Day)).toBe(
       CronErrorMessage.mustBeArray
     );
+    expect(checkNumber([], CronItemType.Day)).toBe('');
   });
 
   test('should parse to cron item from number array', () => {

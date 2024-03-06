@@ -13,4 +13,5 @@ export type OauthFormField = {
   userEmailTag: string;
   userWechatTag: string;
   autoCreateUser: boolean;
+  skipCheckState: boolean;
 };

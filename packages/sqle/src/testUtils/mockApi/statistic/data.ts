@@ -13,6 +13,13 @@ export const WorkflowRejectedPercentGroupByCreatorData = [
     creator: 'b1',
     rejected_percent: 2,
     workflow_total_num: 299
+  },
+  {
+    creator: 'c1'
+  },
+  {
+    rejected_percent: 3,
+    workflow_total_num: 20
   }
 ];
 
@@ -28,6 +35,14 @@ export const SqlAverageExecutionTimeData = [
     instance_name: 'instance_2',
     max_execution_seconds: 15,
     min_execution_seconds: 10
+  },
+  {
+    max_execution_seconds: 11,
+    min_execution_seconds: 8
+  },
+  {
+    average_execution_seconds: 8.5,
+    instance_name: 'instance_3'
   }
 ];
 

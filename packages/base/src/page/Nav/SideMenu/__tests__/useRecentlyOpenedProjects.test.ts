@@ -94,12 +94,12 @@ describe('test useRecentlyOpenedProjects.test', () => {
     });
     expect(result.current.currentProjectID).toBe('400');
     expect(emitSpy).toHaveBeenCalledTimes(2);
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       1,
       EmitterKey.Update_Current_Project_ID,
       '400'
     );
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       2,
       EmitterKey.Update_Recently_Opened_Projects,
       {
@@ -107,7 +107,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
       }
     );
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(1);
-    expect(LocalStorageWrapperSetSpy).nthCalledWith(
+    expect(LocalStorageWrapperSetSpy).toHaveBeenNthCalledWith(
       1,
       StorageKey.DMS_Project_Catch,
       JSON.stringify({
@@ -125,12 +125,12 @@ describe('test useRecentlyOpenedProjects.test', () => {
 
     expect(result.current.currentProjectID).toBe('500');
     expect(emitSpy).toHaveBeenCalledTimes(4);
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       3,
       EmitterKey.Update_Current_Project_ID,
       '500'
     );
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       4,
       EmitterKey.Update_Recently_Opened_Projects,
       {
@@ -141,7 +141,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
       }
     );
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(2);
-    expect(LocalStorageWrapperSetSpy).nthCalledWith(
+    expect(LocalStorageWrapperSetSpy).toHaveBeenNthCalledWith(
       2,
       StorageKey.DMS_Project_Catch,
       JSON.stringify({
@@ -163,12 +163,12 @@ describe('test useRecentlyOpenedProjects.test', () => {
 
     expect(result.current.currentProjectID).toBe('600');
     expect(emitSpy).toHaveBeenCalledTimes(6);
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       5,
       EmitterKey.Update_Current_Project_ID,
       '600'
     );
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       6,
       EmitterKey.Update_Recently_Opened_Projects,
       {
@@ -180,7 +180,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
       }
     );
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(3);
-    expect(LocalStorageWrapperSetSpy).nthCalledWith(
+    expect(LocalStorageWrapperSetSpy).toHaveBeenNthCalledWith(
       3,
       StorageKey.DMS_Project_Catch,
       JSON.stringify({
@@ -204,12 +204,12 @@ describe('test useRecentlyOpenedProjects.test', () => {
 
     expect(result.current.currentProjectID).toBe('700');
     expect(emitSpy).toHaveBeenCalledTimes(8);
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       7,
       EmitterKey.Update_Current_Project_ID,
       '700'
     );
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       8,
       EmitterKey.Update_Recently_Opened_Projects,
       {
@@ -221,7 +221,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
       }
     );
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(4);
-    expect(LocalStorageWrapperSetSpy).nthCalledWith(
+    expect(LocalStorageWrapperSetSpy).toHaveBeenNthCalledWith(
       4,
       StorageKey.DMS_Project_Catch,
       JSON.stringify({
@@ -245,12 +245,12 @@ describe('test useRecentlyOpenedProjects.test', () => {
 
     expect(result.current.currentProjectID).toBe('600');
     expect(emitSpy).toHaveBeenCalledTimes(10);
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       9,
       EmitterKey.Update_Current_Project_ID,
       '600'
     );
-    expect(emitSpy).nthCalledWith(
+    expect(emitSpy).toHaveBeenNthCalledWith(
       10,
       EmitterKey.Update_Recently_Opened_Projects,
       {
@@ -262,7 +262,7 @@ describe('test useRecentlyOpenedProjects.test', () => {
       }
     );
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(5);
-    expect(LocalStorageWrapperSetSpy).nthCalledWith(
+    expect(LocalStorageWrapperSetSpy).toHaveBeenNthCalledWith(
       5,
       StorageKey.DMS_Project_Catch,
       JSON.stringify({

@@ -6,6 +6,7 @@ import { tableSchemas } from '../../__testData__';
 import { resolveThreeSecond } from '../../../../testUtils/mockRequest';
 
 import useTableSchema from '../useTableSchema';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('SqlAnalyze/useTableSchema', () => {
   describe('render generateTableSchemaContent', () => {
@@ -45,6 +46,19 @@ describe('SqlAnalyze/useTableSchema', () => {
           tableMeta: tableSchemas[1].tableMeta
         });
         expect(tableSchemasData).toMatchSnapshot();
+      });
+    });
+
+    it('render ele when tableMeta hasError message', async () => {
+      const { result } = renderHooksWithTheme(() => useTableSchema());
+
+      await act(async () => {
+        const tableSchemasError = result.current.generateTableSchemaContent({
+          isShow: true,
+          errorMessage: 'tableSchemas ERROR',
+          tableMeta: { message: 'error' }
+        });
+        expect(tableSchemasError).toMatchSnapshot();
       });
     });
   });
@@ -119,6 +133,38 @@ describe('SqlAnalyze/useTableSchema', () => {
         await act(async () => jest.advanceTimersByTime(3300));
         expect(spy).toHaveBeenCalled();
         expect(spy).toHaveBeenCalledWith({
+          instance_name: 'dataSource-name',
+          schema_name: 'test-schema-name',
+          table_name: 'table-test-name',
+          project_name: 'default-name'
+        });
+        expect(result.current.tableSchemas).toMatchSnapshot();
+      });
+
+      await act(async () => {
+        result.current.closeTableSchema('1');
+        expect(result.current.tableSchemas).toMatchSnapshot();
+      });
+    });
+
+    it('get table Schemas data error', async () => {
+      const spy = mockGetAnalyzeData();
+      spy.mockImplementation(() =>
+        createSpySuccessResponse({ data: [], message: 'error', code: 500 })
+      );
+      const { result } = renderHooksWithTheme(() =>
+        useTableSchema({
+          schemaName: 'test-schema-name',
+          dataSourceName: 'dataSource-name'
+        })
+      );
+
+      await act(async () => {
+        result.current.getTableSchemas('table-test-name', 'default-name');
+        expect(result.current.tableSchemas).toMatchSnapshot();
+        await act(async () => jest.advanceTimersByTime(3300));
+        expect(spy).toBeCalled();
+        expect(spy).toBeCalledWith({
           instance_name: 'dataSource-name',
           schema_name: 'test-schema-name',
           table_name: 'table-test-name',
