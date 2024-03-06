@@ -20,5 +20,8 @@ export default {
     errorTitle: 'oauth登录错误',
     lostToken: '没有找到token，请返回登录页面重试',
     lostOauth2Token: '没有找到oauth token，请返回登录页面重试'
-  }
+  },
+  browserVersionTile: '浏览器版本不兼容',
+  browserVersionDesc:
+    '为了正常使用平台功能，请使用 Chrome 80 或更高版本进行访问'
 };

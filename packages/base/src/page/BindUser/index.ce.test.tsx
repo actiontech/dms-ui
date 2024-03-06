@@ -45,7 +45,7 @@ describe('page/BindUser-ce', () => {
   });
 
   it('render bind user ui snap', async () => {
-    const { baseElement } = customRender();
+    const { baseElement } = await act(async () => customRender());
     expect(
       screen.queryByText('如果用户名不存在，会自动创建')
     ).toBeInTheDocument();
@@ -86,7 +86,7 @@ describe('page/BindUser-ce', () => {
         fireEvent.click(getBySelector('.login-btn', baseElement));
         await act(async () => jest.advanceTimersByTime(300));
       });
-      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledTimes(2);
       expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
@@ -149,7 +149,7 @@ describe('page/BindUser-ce', () => {
       const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
       customRender();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledTimes(2);
       expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
@@ -174,7 +174,7 @@ describe('page/BindUser-ce', () => {
       const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
       customRender();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledTimes(2);
       expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
