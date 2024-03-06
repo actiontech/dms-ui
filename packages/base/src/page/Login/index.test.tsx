@@ -9,7 +9,7 @@ import { UserInfo } from '../../testUtils/mockApi/global/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { LocalStorageWrapper } from '@actiontech/shared';
-
+import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import Login from '.';
 import {
   CompanyNoticeDisplayStatusEnum,
@@ -209,5 +209,44 @@ describe('page/Login-ee', () => {
         CompanyNoticeDisplayStatusEnum.NotDisplayed
       );
     });
+  });
+
+  it('render login snap when current browser is not chrome', async () => {
+    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
+    const languageGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    languageGetter.mockReturnValue(
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15'
+    );
+    const requestGetOauth2Tip = dms.getOauth2Tips();
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('render login snap when chrome version less than 80', async () => {
+    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
+    const languageGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    languageGetter.mockReturnValue(
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.0.0 Safari/537.36'
+    );
+    const requestGetOauth2Tip = dms.getOauth2Tips();
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('render login snap when chrome version more than 80', async () => {
+    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
+    const languageGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    languageGetter.mockReturnValue(
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.0.0 Safari/537.36'
+    );
+    const requestGetOauth2Tip = dms.getOauth2Tips();
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    expect(eventEmitSpy).not.toHaveBeenCalled();
   });
 });

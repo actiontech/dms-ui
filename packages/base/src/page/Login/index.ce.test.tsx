@@ -34,7 +34,7 @@ describe('page/Login-ce', () => {
   });
 
   it('render login page snap', async () => {
-    const { baseElement } = customRender();
+    const { baseElement } = await act(async () => customRender());
     expect(baseElement).toMatchSnapshot();
   });
 
