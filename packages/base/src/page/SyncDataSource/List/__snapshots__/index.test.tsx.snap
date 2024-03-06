@@ -51,40 +51,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
       </div>
       <div
         class="extra"
-      >
-        <a
-          href="/project/700300/syncDataSource/create"
-        >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
-          >
-            <span
-              class="ant-btn-icon"
-            >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
-              >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加同步任务
-            </span>
-          </button>
-        </a>
-      </div>
+      />
     </div>
     <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
@@ -128,7 +95,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据源名
+                        同步任务名
                       </th>
                       <th
                         class="ant-table-cell"
@@ -572,7 +539,7 @@ exports[`page/SyncDataSource/SyncTaskList render list column data for table 1`] 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据源名
+                        同步任务名
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1082,7 +1049,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据源名
+                        同步任务名
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1363,7 +1330,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据源名
+                        同步任务名
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1861,7 +1828,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap when no projectID 1`]
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据源名
+                        同步任务名
                       </th>
                       <th
                         class="ant-table-cell"
@@ -2142,7 +2109,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap when no projectID 2`]
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据源名
+                        同步任务名
                       </th>
                       <th
                         class="ant-table-cell"

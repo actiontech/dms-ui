@@ -103,7 +103,7 @@ const SyncTaskList: React.FC = () => {
           </Space>
         }
         extra={[
-          <EmptyBox if={!projectArchive} key="addSyncTask">
+          <EmptyBox if={!projectArchive && actionPermission} key="addSyncTask">
             <Link to={`/project/${projectID}/syncDataSource/create`}>
               <BasicButton type="primary" icon={<IconAdd />}>
                 {t('dmsSyncDataSource.syncTaskList.addSyncTask')}
