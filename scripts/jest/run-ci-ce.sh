@@ -6,7 +6,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-rm -rf ce_coverage/lcov-report clover.xml locv.info
+rm -rf ce_coverage/lcov-report ce_coverage/clover.xml ce_coverage/locv.info
 if [ $? -ne 0 ]; then
   echo "Jest test ce failed."
   exit 1
