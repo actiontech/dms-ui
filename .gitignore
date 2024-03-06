@@ -16,6 +16,7 @@ dist
 /ce_coverage
 /coverage
 /report.json
+/coverage-merged
 /coverage-merged.json
 
 # production
