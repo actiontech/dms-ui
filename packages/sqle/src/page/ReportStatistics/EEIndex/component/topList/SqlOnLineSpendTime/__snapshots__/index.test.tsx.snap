@@ -395,6 +395,73 @@ exports[`ReportStatistics/topList/SqlOnLineSpendTime render snap when api return
                           10s
                         </td>
                       </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="2"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          11s
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          8s
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-row ant-table-row-level-0"
+                        data-row-key="3"
+                      >
+                        <td
+                          class="ant-table-cell"
+                        >
+                          <div
+                            class="css-2dr1r5"
+                          >
+                            <span
+                              class="index-box"
+                            >
+                              4
+                            </span>
+                            <span>
+                              instance_3
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          8.5s
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          -
+                        </td>
+                        <td
+                          class="ant-table-cell"
+                          style="text-align: right;"
+                        >
+                          -
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>

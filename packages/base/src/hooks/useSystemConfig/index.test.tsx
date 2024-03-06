@@ -77,7 +77,7 @@ describe('test base/hooks/useSystemConfig', () => {
     );
 
     expect(scopeDispatch).toHaveBeenCalledTimes(1);
-    expect(scopeDispatch).nthCalledWith(1, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
       payload: {
         webLogoUrl: `/logo_custom.png?temp=${dayjs(
           '2023-12-18 12:00:00'
@@ -95,7 +95,7 @@ describe('test base/hooks/useSystemConfig', () => {
     expect(mockedElement.href).toBe(DMS_DEFAULT_WEB_LOGO_URL);
 
     expect(scopeDispatch).toHaveBeenCalledTimes(2);
-    expect(scopeDispatch).nthCalledWith(2, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(2, {
       payload: {
         webLogoUrl: DMS_DEFAULT_WEB_LOGO_URL,
         webTitle: DMS_DEFAULT_WEB_TITLE

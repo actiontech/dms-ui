@@ -54,6 +54,11 @@ describe('base/System/License', () => {
             name: 'info',
             limit: 'limit string cont',
             description: 'this is license desc info'
+          },
+          {
+            name: 'test',
+            limit: 'limit string cont 2',
+            description: 'this is license desc info 2'
           }
         ]
       })

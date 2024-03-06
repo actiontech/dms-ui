@@ -69,6 +69,11 @@ describe('test useManagerPermission', () => {
 
   it('should render options when use generateOpPermissionSelectOptions', async () => {
     const { result } = renderHook(() => useOpPermission());
+    act(() => {
+      result.current.updateOpPermissionList();
+    });
+    expect(result.current.loading).toBeTruthy();
+    await act(async () => jest.advanceTimersByTime(3000));
     const { baseElement: baseElementWithOptions } = render(
       <Select data-testid="testId" value="test opPermission 1">
         {result.current.generateOpPermissionSelectOptions()}

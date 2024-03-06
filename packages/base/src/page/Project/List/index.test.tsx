@@ -175,14 +175,14 @@ describe('test base/project/list', () => {
     fireEvent.click(screen.getAllByText('编 辑')[1]);
 
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
-    expect(dispatchSpy).nthCalledWith(1, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       type: 'project/updateModalStatus',
       payload: {
         modalName: ModalName.DMS_Update_Project,
         status: true
       }
     });
-    expect(dispatchSpy).nthCalledWith(2, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
         project: mockProjectList[1]
       },

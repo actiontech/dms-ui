@@ -10,6 +10,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -107,5 +108,53 @@ describe('base/System/License/ImportLicenseModal', () => {
       EmitterKey.DMS_Refresh_License_List
     );
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when change license file success with error code', async () => {
+    requestCheckLicense.mockImplementation(() =>
+      createSpySuccessResponse({ code: '500' })
+    );
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(screen.getByText('导入许可信息')).toBeInTheDocument();
+    expect(screen.getByText('License文件')).toBeInTheDocument();
+    expect(screen.getByText('选择文件上传')).toBeInTheDocument();
+    expect(screen.getByText('提 交')).toBeInTheDocument();
+
+    const mockFileTxt = new File([''], 'test.txt');
+    fireEvent.change(
+      getBySelector('.ant-upload input[type=file]', baseElement),
+      {
+        target: { files: [mockFileTxt] }
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(2000));
+    expect(baseElement).toMatchSnapshot();
+    expect(requestCheckLicense).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(1200));
+  });
+
+  it('render snap when change license file success with error code', async () => {
+    requestCheckLicense.mockImplementation(() => Promise.reject('error'));
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(screen.getByText('导入许可信息')).toBeInTheDocument();
+    expect(screen.getByText('License文件')).toBeInTheDocument();
+    expect(screen.getByText('选择文件上传')).toBeInTheDocument();
+    expect(screen.getByText('提 交')).toBeInTheDocument();
+
+    const mockFileTxt = new File([''], 'test.txt');
+    fireEvent.change(
+      getBySelector('.ant-upload input[type=file]', baseElement),
+      {
+        target: { files: [mockFileTxt] }
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(2000));
+    expect(baseElement).toMatchSnapshot();
+    expect(requestCheckLicense).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(1200));
   });
 });

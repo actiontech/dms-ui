@@ -5,12 +5,14 @@ import { Pie, PieConfig } from '@ant-design/plots';
 
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
-import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 import { typeChartChildrenProps } from '../..';
-import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 import { IDBTypeAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
+import {
+  renderTooltipCustomContent,
+  renderTooltipFormatter
+} from './index.data';
 
 export interface ITaskDetail extends typeChartChildrenProps {
   dataSource: IDBTypeAuditPlan;
@@ -133,38 +135,9 @@ const TaskDetail = (props: ITaskDetail) => {
     },
     tooltip: {
       fields: ['name', 'value'],
-      formatter: (item: any) => {
-        return {
-          name: item.name,
-          value: item.value
-        };
-      },
-      customContent: (title: string, dataSource: any) => {
-        const data = dataSource[0];
-        if (!data) return null;
-        const currentColor = data?.color;
-        return (
-          <ChartTooltip
-            sharedTheme={sharedTheme}
-            titleData={{
-              dotColor: currentColor,
-              text: data.name
-            }}
-            listData={[
-              {
-                label: t('reportStatistics.databaseSourceOrder.sourceNumItem'),
-                value: data.value
-              },
-              {
-                label: t(
-                  'reportStatistics.databaseSourceOrder.sourceProportionItem'
-                ),
-                value: floatToNumberPercent(data.value, taskNumber)
-              }
-            ]}
-          />
-        );
-      }
+      formatter: renderTooltipFormatter,
+      customContent: (title: string, dataSource: any) =>
+        renderTooltipCustomContent(dataSource, sharedTheme, taskNumber)
     },
     interactions: [
       {

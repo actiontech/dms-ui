@@ -4,7 +4,7 @@ exports[`sqle/components/RuleList scroll infinite list 1`] = `
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-1to6nm5"
+      class="rule-list-wrapper css-1r6bun"
     >
       <div
         id="rule-list-wrapper-id"
@@ -933,7 +933,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is disa
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-sgtujk"
+      class="rule-list-wrapper css-1bhqk71"
     >
       <div
         id="rule-list-wrapper-id"
@@ -1336,7 +1336,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-sgtujk"
+      class="rule-list-wrapper css-1bhqk71"
     >
       <div
         id="rule-list-wrapper-id"
@@ -1891,7 +1891,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-sgtujk"
+      class="rule-list-wrapper css-1bhqk71"
     >
       <div
         id="rule-list-wrapper-id"
@@ -2294,7 +2294,7 @@ exports[`sqle/components/RuleList should match snap shot when enableCheckDetail 
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-sgtujk"
+      class="rule-list-wrapper css-1bhqk71"
     >
       <div
         id="rule-list-wrapper-id"
@@ -3054,7 +3054,7 @@ exports[`sqle/components/RuleList should match snap shot when has props 1`] = `
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-sgtujk"
+      class="rule-list-wrapper css-1bhqk71"
     >
       <div
         id="rule-list-wrapper-id"
@@ -3281,7 +3281,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-sgtujk"
+      class="rule-list-wrapper css-1bhqk71"
     >
       <div
         id="rule-list-wrapper-id"
@@ -3720,7 +3720,7 @@ exports[`sqle/components/RuleList should match snap shot when isAction is true 1
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-sgtujk"
+      class="rule-list-wrapper css-1bhqk71"
     >
       <div
         id="rule-list-wrapper-id"
@@ -4123,7 +4123,7 @@ exports[`sqle/components/RuleList should match snap shot when no rule data 1`] =
 <body>
   <div>
     <div
-      class="rule-list-wrapper css-s5p0b8"
+      class="rule-list-wrapper css-5u6w7h"
     >
       <div
         class="css-1br6ibb"

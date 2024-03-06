@@ -49,6 +49,8 @@ const useImportRuleTemplate = () => {
   const [createLoading, { setTrue: startCreate, setFalse: finishCreate }] =
     useBoolean();
 
+  const activeRuleRef = useRef<IRuleResV1[]>();
+
   const {
     getAllRulesAsync,
     activeRule,
@@ -56,11 +58,18 @@ const useImportRuleTemplate = () => {
     dbType,
     setDbType,
     subscribe,
-    clearSearchValue
+    clearSearchValue,
+    filteredRule,
+    setFilteredRule
   } = useRules(true);
+
+  useEffect(() => {
+    activeRuleRef.current = activeRule;
+  }, [activeRule]);
 
   const getAllRulesByDbTypeAndFilterActiveRuleList = (
     importRuleList: IRuleResV1[],
+    init: boolean,
     dbType?: string,
     keyword?: string
   ) => {
@@ -71,10 +80,18 @@ const useImportRuleTemplate = () => {
     })
       .then((res) => {
         setAllRules(res ?? []);
-        const activeRules = importRuleList.filter((rule) => {
-          return res?.some((allRule) => allRule.rule_name === rule.rule_name);
-        });
-        setActiveRule(activeRules);
+        if (init) {
+          const activeRules = importRuleList.filter((rule) => {
+            return res?.some((allRule) => allRule.rule_name === rule.rule_name);
+          });
+          setActiveRule(activeRules);
+          setFilteredRule(activeRules);
+        } else {
+          const rules = activeRuleRef.current?.filter((rule) => {
+            return res?.some((allRule) => allRule.rule_name === rule.rule_name);
+          });
+          setFilteredRule(rules ?? []);
+        }
       })
       .finally(() => {
         finishGetAllRules();
@@ -99,6 +116,7 @@ const useImportRuleTemplate = () => {
             showRuleTemplateForm();
             getAllRulesByDbTypeAndFilterActiveRuleList(
               parseFileData.rule_list ?? [],
+              true,
               parseFileData.db_type
             );
             importFileData.current = parseFileData;
@@ -130,6 +148,9 @@ const useImportRuleTemplate = () => {
   const resetAll = () => {
     selectFileForm.resetFields();
 
+    setActiveRule([...(importFileData.current?.rule_list ?? [])]);
+    setFilteredRule([...(importFileData.current?.rule_list ?? [])]);
+
     setStep(0);
     ruleTemplateForm.resetFields();
     setDbType('');
@@ -140,6 +161,7 @@ const useImportRuleTemplate = () => {
     const unsubscribe = subscribe((value: string) => {
       getAllRulesByDbTypeAndFilterActiveRuleList(
         importFileData.current?.rule_list ?? [],
+        false,
         importFileData.current?.db_type,
         value
       );
@@ -170,7 +192,9 @@ const useImportRuleTemplate = () => {
     setDbType,
     createLoading,
     startCreate,
-    finishCreate
+    finishCreate,
+    filteredRule,
+    setFilteredRule
   };
 };
 

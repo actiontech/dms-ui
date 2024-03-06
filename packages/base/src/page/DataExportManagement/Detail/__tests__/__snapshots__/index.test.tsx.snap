@@ -310,19 +310,9 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
                       />
                       <div
                         class="ant-segmented-item-label"
+                        title="-"
                       >
-                        <div
-                          class="db-service-segmented-label css-1jeaof"
-                        >
-                          <span
-                            class="db-service-segmented-label-text"
-                          >
-                            mysql-1
-                          </span>
-                          <span
-                            class="db-service-segmented-label-icon"
-                          />
-                        </div>
+                        -
                       </div>
                     </label>
                   </div>
@@ -1259,19 +1249,9 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                       />
                       <div
                         class="ant-segmented-item-label"
+                        title="-"
                       >
-                        <div
-                          class="db-service-segmented-label css-1jeaof"
-                        >
-                          <span
-                            class="db-service-segmented-label-text"
-                          >
-                            mysql-1
-                          </span>
-                          <span
-                            class="db-service-segmented-label-icon"
-                          />
-                        </div>
+                        -
                       </div>
                     </label>
                   </div>
@@ -3919,19 +3899,9 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                       />
                       <div
                         class="ant-segmented-item-label"
+                        title="-"
                       >
-                        <div
-                          class="db-service-segmented-label css-1jeaof"
-                        >
-                          <span
-                            class="db-service-segmented-label-text"
-                          >
-                            mysql-1
-                          </span>
-                          <span
-                            class="db-service-segmented-label-icon"
-                          />
-                        </div>
+                        -
                       </div>
                     </label>
                   </div>
@@ -6579,19 +6549,9 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                       />
                       <div
                         class="ant-segmented-item-label"
+                        title="-"
                       >
-                        <div
-                          class="db-service-segmented-label css-1jeaof"
-                        >
-                          <span
-                            class="db-service-segmented-label-text"
-                          >
-                            mysql-1
-                          </span>
-                          <span
-                            class="db-service-segmented-label-icon"
-                          />
-                        </div>
+                        -
                       </div>
                     </label>
                   </div>
@@ -9272,19 +9232,9 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                       />
                       <div
                         class="ant-segmented-item-label"
+                        title="-"
                       >
-                        <div
-                          class="db-service-segmented-label css-1jeaof"
-                        >
-                          <span
-                            class="db-service-segmented-label-text"
-                          >
-                            mysql-1
-                          </span>
-                          <span
-                            class="db-service-segmented-label-icon"
-                          />
-                        </div>
+                        -
                       </div>
                     </label>
                   </div>

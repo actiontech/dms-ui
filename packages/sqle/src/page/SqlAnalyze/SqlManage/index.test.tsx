@@ -124,4 +124,47 @@ describe('SqlAnalyze/SQLManage', () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it('should render error result of type "error" when response code is not 8001', async () => {
+    const spy = mockGetAnalyzeData();
+    spy.mockImplementation(() =>
+      resolveErrorThreeSecond(
+        {
+          sql_explain: {
+            err_message: 'error: sql_explain'
+          },
+          table_metas: {
+            err_message: 'error: table_metas'
+          },
+          performance_statistics: {
+            affect_rows: {
+              err_message: 'error: affect_rows'
+            }
+          }
+        },
+        {
+          otherData: {
+            code: 8000
+          }
+        }
+      )
+    );
+    const { container } = renderWithReduxAndTheme(
+      <SQLManageAnalyze />,
+      undefined,
+      {
+        user: {
+          bindProjects: [
+            {
+              project_id: '',
+              project_name: projectName
+            }
+          ]
+        } as any
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(container).toMatchSnapshot();
+  });
 });
