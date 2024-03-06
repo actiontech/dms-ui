@@ -116,7 +116,7 @@ if (
   }
 });
 
-const coverageMap = istanbul.createCoverageMap({});
+const mergeCoverageReport = istanbul.createCoverageMap({});
 
 const reportFiles = fs.readdirSync(
   path.resolve(process.cwd(), 'coverage-merged')
@@ -124,17 +124,10 @@ const reportFiles = fs.readdirSync(
 
 reportFiles.forEach((file) => {
   const json = fs.readFileSync(
-    path.resolve(process.cwd(), `coverage-merged/${file}`)
+    path.resolve(process.cwd(), path.join('coverage-merged', file))
   );
-  coverageMap.merge(JSON.parse(json));
+  mergeCoverageReport.merge(JSON.parse(json));
 });
-
-fs.writeFileSync(
-  path.resolve(process.cwd(), 'coverage-merged.json'),
-  JSON.stringify(coverageMap)
-);
-
-const mergeCoverageReport = require(finalReportJSONFilePath);
 
 coverageJsonReport.coverageMap = mergeCoverageReport;
 
