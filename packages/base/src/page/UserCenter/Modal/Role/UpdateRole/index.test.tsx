@@ -33,7 +33,12 @@ describe('base/UserCenter/Modal/Role/UpdateRole', () => {
             name: 'test',
             desc: 'test desc',
             uid: '1001',
-            op_permissions: []
+            op_permissions: [
+              {
+                name: '创建项目',
+                uid: '700001'
+              }
+            ]
           }
         }
       })
@@ -70,7 +75,7 @@ describe('base/UserCenter/Modal/Role/UpdateRole', () => {
     expect(updateRoleSpy).toHaveBeenCalledWith({
       role: {
         desc: 'test1',
-        op_permission_uids: ['20150'],
+        op_permission_uids: ['700001', '20150'],
         is_disabled: true
       },
       role_uid: '1001'

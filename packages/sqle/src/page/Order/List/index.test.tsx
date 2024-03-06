@@ -205,7 +205,7 @@ describe('sqle/Order/List', () => {
       await jest.advanceTimersByTime(300);
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(RequestOrderList).nthCalledWith(2, {
+    expect(RequestOrderList).toHaveBeenNthCalledWith(2, {
       project_name: projectName,
       filter_status: undefined,
       fuzzy_keyword: fuzzyVal,

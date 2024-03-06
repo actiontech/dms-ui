@@ -1,5 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lib/BasicInfoList render diff info list cont 1`] = `
+<div>
+  <div
+    class="ant-card ant-card-bordered ant-card-contain-grid css-1rz3vnj css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-card-head"
+    >
+      <div
+        class="ant-card-head-wrapper"
+      >
+        <div
+          class="ant-card-head-title"
+        >
+          info list 标题
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-card-body"
+    >
+      <div
+        class="ant-card-grid info-item-wrapper"
+        style="width: 33.333333333333336%;"
+      >
+        <div
+          class="ant-row info-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col info-item-title css-dev-only-do-not-override-txh9fw"
+          >
+            key1
+          </div>
+          <div
+            class="ant-col info-item-value css-dev-only-do-not-override-txh9fw"
+          >
+            value1
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-card-grid info-item-wrapper"
+        style="width: 66.66666666666667%;"
+      >
+        <div
+          class="ant-row info-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col info-item-title css-dev-only-do-not-override-txh9fw"
+          >
+            key2
+          </div>
+          <div
+            class="ant-col info-item-value css-dev-only-do-not-override-txh9fw"
+          >
+            value2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`lib/BasicInfoList render info list has title 1`] = `
 <div>
   <div

@@ -87,25 +87,25 @@ describe('useUserInfo', () => {
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockDispatch).toHaveBeenCalledTimes(12);
-    expect(mockDispatch).nthCalledWith(1, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(1, {
       payload: { username: '', role: '' },
       type: 'user/updateUser'
     });
-    expect(mockDispatch).nthCalledWith(2, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(2, {
       payload: { uid: '' },
       type: 'user/updateUserUid'
     });
-    expect(mockDispatch).nthCalledWith(3, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(3, {
       payload: { token: '' },
       type: 'user/updateToken'
     });
-    expect(mockDispatch).nthCalledWith(4, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(4, {
       payload: {
         bindProjects: []
       },
       type: 'user/updateBindProjects'
     });
-    expect(mockDispatch).nthCalledWith(5, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(5, {
       payload: {
         managementPermissions: []
       },
@@ -124,25 +124,25 @@ describe('useUserInfo', () => {
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockDispatch).toHaveBeenCalledTimes(6);
-    expect(mockDispatch).nthCalledWith(1, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(1, {
       payload: { username: '', role: '' },
       type: 'user/updateUser'
     });
-    expect(mockDispatch).nthCalledWith(2, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(2, {
       payload: { uid: '' },
       type: 'user/updateUserUid'
     });
-    expect(mockDispatch).nthCalledWith(3, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(3, {
       payload: { token: '' },
       type: 'user/updateToken'
     });
-    expect(mockDispatch).nthCalledWith(4, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(4, {
       payload: {
         bindProjects: []
       },
       type: 'user/updateBindProjects'
     });
-    expect(mockDispatch).nthCalledWith(5, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(5, {
       payload: {
         managementPermissions: []
       },

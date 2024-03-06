@@ -46,8 +46,7 @@ export const userList: IListUser[] = [
     authentication_type: ListUserAuthenticationTypeEnum.dms,
     email: '',
     phone: '',
-    wxid: '',
-    op_permissions: []
+    wxid: ''
   }
 ];
 
@@ -76,8 +75,7 @@ export const opPermissionList: IListOpPermission[] = [
   },
   {
     op_permission: { name: '创建项目', uid: '20100' },
-    description: '',
-    range_type: ListOpPermissionRangeTypeEnum.db_service
+    description: ''
   },
   {
     op_permission: { name: '修改项目', uid: '20150' },
@@ -92,7 +90,12 @@ export const roleList: IListRole[] = [
     desc: 'Test role 1',
     uid: '1001',
     stat: ListRoleStatEnum.正常,
-    op_permissions: []
+    op_permissions: [
+      {
+        name: 'test1',
+        uid: '1234'
+      }
+    ]
   },
   {
     name: 'test role 2',

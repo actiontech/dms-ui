@@ -34,6 +34,8 @@ const RuleTemplateForm = (props: RuleTemplateFormProps) => {
           activeRule={props.activeRule}
           updateActiveRule={props.updateActiveRule}
           formSubmitLoading={props.submitLoading}
+          filteredRule={props.filteredRule}
+          updateFilteredRule={props.updateFilteredRule}
         />
       </section>
     </>

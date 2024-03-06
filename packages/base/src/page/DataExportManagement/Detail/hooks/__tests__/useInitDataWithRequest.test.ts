@@ -101,7 +101,7 @@ describe('test base/DataExport/Detail/hooks/useInitDataWithRequest', () => {
     });
 
     expect(getWorkflowSpy).toHaveBeenCalledTimes(2);
-    expect(getWorkflowSpy).nthCalledWith(2, {
+    expect(getWorkflowSpy).toHaveBeenNthCalledWith(2, {
       project_uid: mockProjectInfo.projectID,
       data_export_workflow_uid: workflowID
     });

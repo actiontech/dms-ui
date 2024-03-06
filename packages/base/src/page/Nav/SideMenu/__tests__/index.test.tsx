@@ -82,7 +82,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     );
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).nthCalledWith(1, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       type: 'nav/initModalStatus',
       payload: {
         modalStatus: {
@@ -90,7 +90,7 @@ describe('test Base/Nav/SideMenu/index', () => {
         }
       }
     });
-    expect(dispatchSpy).nthCalledWith(2, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       type: 'user/updateBindProjects',
       payload: {
         bindProjects: mockBindProjects

@@ -253,6 +253,7 @@ const SqlManagementColumn: (
             onClick={() =>
               openModal(ModalName.View_Audit_Result_Drawer, record)
             }
+            className="audit-result-wrapper"
           >
             {result?.length > 1 ? (
               <ResultIconRender

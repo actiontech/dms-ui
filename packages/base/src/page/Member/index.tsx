@@ -44,9 +44,6 @@ const Member: React.FC = () => {
 
   useEffect(() => {
     const onOpenMemberModal = (modalName: ModalName) => {
-      if (!actionPermission) {
-        return;
-      }
       dispatch(
         updateMemberModalStatus({
           modalName,

@@ -31,7 +31,7 @@ describe('base/UserCenter/PermissionList', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('创建项目')).toHaveLength(2);
     expect(screen.getByText('修改项目')).toBeInTheDocument();
-    expect(screen.getAllByText('数据源')).toHaveLength(3);
+    expect(screen.getAllByText('数据源')).toHaveLength(2);
     expect(screen.getByText('共 3 条数据')).toBeInTheDocument();
   });
 

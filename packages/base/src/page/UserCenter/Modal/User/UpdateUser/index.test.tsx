@@ -109,6 +109,10 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
       target: { value: '123' }
     });
     fireEvent.input(screen.getByLabelText('确认密码'), {
+      target: { value: '1234' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.input(screen.getByLabelText('确认密码'), {
       target: { value: '123' }
     });
     await act(async () => jest.advanceTimersByTime(0));

@@ -45,6 +45,14 @@ const waitForExportStatusWorkflow: IGetDataExportWorkflow = {
   }
 };
 
+const noStatusWorkflow: IGetDataExportWorkflow = {
+  ...GetDataExportWorkflowResponseData,
+  workflow_record: {
+    ...GetDataExportWorkflowResponseData.workflow_record,
+    status: undefined
+  }
+};
+
 describe('test useActionButtonState', () => {
   const messageApiSpy = {
     info: jest.fn(),
@@ -71,6 +79,17 @@ describe('test useActionButtonState', () => {
   it('render currentStep is undefined', () => {
     mockUseDataExportDetailReduxManage({
       workflowInfo: notExistCurrentStepWorkflowInfo
+    });
+    const { result } = renderHook(() => useActionButtonState(messageApiSpy));
+    expect(result.current.approveWorkflowButtonMeta.hidden).toBeTruthy();
+    expect(result.current.closeWorkflowButtonMeta.hidden).toBeTruthy();
+    expect(result.current.approveWorkflowButtonMeta.hidden).toBeTruthy();
+    expect(result.current.executeExportButtonMeta.hidden).toBeTruthy();
+  });
+
+  it('render work status is undefined', () => {
+    mockUseDataExportDetailReduxManage({
+      workflowInfo: noStatusWorkflow
     });
     const { result } = renderHook(() => useActionButtonState(messageApiSpy));
     expect(result.current.approveWorkflowButtonMeta.hidden).toBeTruthy();

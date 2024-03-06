@@ -71,9 +71,6 @@ const MemberList: React.FC = () => {
 
   const onEditMemberGroup = useCallback(
     (record?: IListMemberGroup) => {
-      if (!actionPermission) {
-        return;
-      }
       dispatch(updateSelectMemberGroup({ memberGroup: record ?? null }));
       dispatch(
         updateMemberModalStatus({
@@ -87,9 +84,6 @@ const MemberList: React.FC = () => {
 
   const onDeleteMemberGroup = useCallback(
     async (record?: IListMemberGroup) => {
-      if (!actionPermission) {
-        return;
-      }
       const res = await dms.DeleteMemberGroup({
         member_group_uid: record?.uid ?? '',
         project_uid: projectID

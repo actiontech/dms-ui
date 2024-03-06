@@ -44,7 +44,9 @@ const UpdateRuleTemplate = () => {
     finishSubmit,
     startSubmit,
     baseInfoFormSubmitLoading,
-    submitSuccessStatus
+    submitSuccessStatus,
+    filteredRule,
+    setFilteredRule
   } = useUpdateRuleTemplateForm();
 
   const { onGotoRuleTemplateList } = useBackToListPage(projectID);
@@ -62,10 +64,17 @@ const UpdateRuleTemplate = () => {
             const template = res.data.data ?? {};
             setRuleTemplate(template);
             setActiveRule(template?.rule_list ?? []);
+            setFilteredRule(template?.rule_list ?? []);
           }
         });
     },
-    [projectName, urlParams.templateName, setActiveRule, setRuleTemplate]
+    [
+      projectName,
+      urlParams.templateName,
+      setActiveRule,
+      setRuleTemplate,
+      setFilteredRule
+    ]
   );
 
   useEffect(() => {
@@ -155,6 +164,8 @@ const UpdateRuleTemplate = () => {
             title={t('ruleTemplate.updateRuleTemplate.title')}
             form={form}
             activeRule={activeRule}
+            filteredRule={filteredRule}
+            updateFilteredRule={setFilteredRule}
             allRules={databaseRule ?? []}
             ruleListLoading={getAllRulesLoading}
             submitLoading={updateTemplateLoading}

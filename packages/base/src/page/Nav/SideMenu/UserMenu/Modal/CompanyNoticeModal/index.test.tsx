@@ -58,7 +58,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(scopeDispatch).toHaveBeenCalled();
-    expect(scopeDispatch).nthCalledWith(1, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
       type: 'nav/initModalStatus',
       payload: {
         modalStatus: {
@@ -66,7 +66,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
         }
       }
     });
-    expect(scopeDispatch).nthCalledWith(2, {
+    expect(scopeDispatch).toHaveBeenNthCalledWith(2, {
       type: 'nav/updateModalStatus',
       payload: {
         modalName: ModalName.Company_Notice,
@@ -98,6 +98,28 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
         payload: { modalStatus: { [ModalName.Company_Notice]: false } },
         type: 'nav/initModalStatus'
       });
+    });
+
+    it('click cancel btn and confirm to cancel', async () => {
+      const { baseElement } = customRender();
+
+      expect(screen.getByText('编 辑')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('编 辑'));
+      await act(async () => jest.advanceTimersByTime(500));
+
+      const inputEle = getBySelector('textarea.ant-input', baseElement);
+      fireEvent.change(inputEle, {
+        target: {
+          value: '这是一条公告信息'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.click(screen.getByText('取 消'));
+      await act(async () => jest.advanceTimersByTime(500));
+      expect(baseElement).toMatchSnapshot();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('确 认'));
     });
 
     it('click submit btn', async () => {
@@ -147,7 +169,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
       fireEvent.click(screen.getByText('关 闭'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(scopeDispatch).toHaveBeenCalled();
-      expect(scopeDispatch).nthCalledWith(1, {
+      expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
         type: 'nav/initModalStatus',
         payload: {
           modalStatus: {
@@ -155,7 +177,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
           }
         }
       });
-      expect(scopeDispatch).nthCalledWith(2, {
+      expect(scopeDispatch).toHaveBeenNthCalledWith(2, {
         type: 'nav/updateModalStatus',
         payload: {
           modalName: ModalName.Company_Notice,

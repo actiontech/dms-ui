@@ -197,4 +197,17 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestDetail).toHaveBeenCalled();
   });
+
+  it('return list by click return button', async () => {
+    const { baseElement } = customRender();
+
+    expect(screen.getByText('返回数据源列表')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('返回数据源列表'));
+    await act(async () => jest.advanceTimersByTime(800));
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/project/${projectID}/db-services`
+    );
+  });
 });

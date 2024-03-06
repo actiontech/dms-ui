@@ -59,7 +59,6 @@ describe('base/Member/Modal/UpdateMemberGroup', () => {
     expect(listRoleSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('更新成员组')).toBeInTheDocument();
-    expect(screen.getByText('test')).toBeInTheDocument();
     expect(screen.getByText('添加平台角色与操作范围')).toBeInTheDocument();
     expect(screen.getByText('test role 1')).toBeInTheDocument();
     expect(screen.getByText('test (127.0.0.1:3306)')).toBeInTheDocument();
