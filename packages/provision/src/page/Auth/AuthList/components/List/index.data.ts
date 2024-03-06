@@ -1,5 +1,5 @@
 import { AuthListAuthorizationFilterByStatusEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
-import { I18nKey } from '../../../../../locale';
+import { I18nKey, t } from '../../../../../locale';
 
 export const AuthStatusDictionary: {
   [k in AuthListAuthorizationFilterByStatusEnum]: I18nKey;
@@ -8,3 +8,8 @@ export const AuthStatusDictionary: {
   [AuthListAuthorizationFilterByStatusEnum.expired]: 'auth.columns.invalid',
   [AuthListAuthorizationFilterByStatusEnum.expiring]: 'auth.columns.expiring'
 };
+
+export const SQLWorkbenchQueryStatusOptions = [
+  { label: t('common.enabled'), value: 'true' },
+  { label: t('auth.columns.notEnabled'), value: 'false' }
+];

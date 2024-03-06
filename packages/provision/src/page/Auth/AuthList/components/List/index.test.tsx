@@ -166,7 +166,7 @@ describe('page/Auth/AuthList/List', () => {
         '.actiontech-table-filter-container-namespace .ant-space-item',
         baseElement
       );
-      expect(filterItems.length).toBe(3);
+      expect(filterItems.length).toBe(4);
       expect(baseElement).toMatchSnapshot();
     });
 
@@ -248,11 +248,12 @@ describe('page/Auth/AuthList/List', () => {
       fireEvent.click(screen.getByText('续期'));
       await act(async () => jest.advanceTimersByTime(1000));
       expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
-      expect(modalStatusChangeSpy).nthCalledWith(2, {
+      expect(modalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
         [ModalName.UpdateExpirationInAuth]: true,
         [ModalName.GetConnection]: false,
         [ModalName.UpdateTemplateInAuth]: false,
-        [ModalName.UpdateUserInAuth]: false
+        [ModalName.UpdateUserInAuth]: false,
+        [ModalName.UpdateSQLWorkbenchQueryStatus]: false
       });
     });
 
@@ -284,11 +285,12 @@ describe('page/Auth/AuthList/List', () => {
       fireEvent.click(screen.getByText('授权信息'));
       await act(async () => jest.advanceTimersByTime(1000));
       expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
-      expect(modalStatusChangeSpy).nthCalledWith(2, {
+      expect(modalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
         [ModalName.GetConnection]: true,
         [ModalName.UpdateExpirationInAuth]: false,
         [ModalName.UpdateTemplateInAuth]: false,
-        [ModalName.UpdateUserInAuth]: false
+        [ModalName.UpdateUserInAuth]: false,
+        [ModalName.UpdateSQLWorkbenchQueryStatus]: false
       });
     });
 
@@ -371,11 +373,59 @@ describe('page/Auth/AuthList/List', () => {
       );
       await act(async () => jest.advanceTimersByTime(1000));
       expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
-      expect(modalStatusChangeSpy).nthCalledWith(2, {
+      expect(modalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
         [ModalName.UpdateUserInAuth]: true,
         [ModalName.UpdateExpirationInAuth]: false,
         [ModalName.GetConnection]: false,
-        [ModalName.UpdateTemplateInAuth]: false
+        [ModalName.UpdateTemplateInAuth]: false,
+        [ModalName.UpdateSQLWorkbenchQueryStatus]: false
+      });
+    });
+
+    it('render click sql workbench edit button', async () => {
+      const modalStatusChangeSpy = jest.fn();
+      const requestListFn = auth.listAuthorizationReq();
+      requestListFn.mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          total_nums: 1,
+          data: [
+            {
+              ...authorizationList[1],
+              permission_user: 'permission_user_xin'
+            }
+          ]
+        })
+      );
+      const { baseElement } = superRender(
+        <>
+          <AuthListItem />
+          <RecoilObservable
+            state={AuthListModalStatus}
+            onChange={modalStatusChangeSpy}
+          />
+        </>
+      );
+
+      await act(async () => jest.advanceTimersByTime(3300));
+      expect(requestListFn).toHaveBeenCalledTimes(1);
+
+      fireEvent.mouseOver(screen.getByText('未启用'));
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(baseElement).toMatchSnapshot();
+      fireEvent.click(
+        getAllBySelector(
+          '.ant-table-row-level-0 .auth-action-column-editor .anticon-edit',
+          baseElement
+        )[1]
+      );
+      await act(async () => jest.advanceTimersByTime(1000));
+      expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
+      expect(modalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
+        [ModalName.UpdateUserInAuth]: false,
+        [ModalName.UpdateExpirationInAuth]: false,
+        [ModalName.GetConnection]: false,
+        [ModalName.UpdateTemplateInAuth]: false,
+        [ModalName.UpdateSQLWorkbenchQueryStatus]: true
       });
     });
 
@@ -420,15 +470,16 @@ describe('page/Auth/AuthList/List', () => {
         getAllBySelector(
           '.ant-table-row-level-0 .auth-action-column-editor .anticon-edit',
           baseElement
-        )[1]
+        )[2]
       );
       await act(async () => jest.advanceTimersByTime(1000));
       expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
-      expect(modalStatusChangeSpy).nthCalledWith(2, {
+      expect(modalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
         [ModalName.UpdateTemplateInAuth]: true,
         [ModalName.UpdateUserInAuth]: false,
         [ModalName.UpdateExpirationInAuth]: false,
-        [ModalName.GetConnection]: false
+        [ModalName.GetConnection]: false,
+        [ModalName.UpdateSQLWorkbenchQueryStatus]: false
       });
     });
 

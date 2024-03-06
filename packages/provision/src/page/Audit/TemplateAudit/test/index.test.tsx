@@ -154,7 +154,7 @@ describe('page/Auth/TemplateAudit', () => {
       expect(baseElement).toMatchSnapshot();
       await act(async () => jest.advanceTimersByTime(3300));
       expect(requestListFn).toHaveBeenCalled();
-      expect(requestListFn).nthCalledWith(2, {
+      expect(requestListFn).toHaveBeenNthCalledWith(2, {
         filter_by_event_type: EventTypeEnum.data_permission_template_created,
         filter_by_namespace_uid: projectID,
         keyword: '',

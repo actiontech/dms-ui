@@ -410,6 +410,69 @@ exports[`page/Auth/AddAuth render VerifyDBAccount render no pass db account 1`] 
             </div>
           </div>
           <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="used_by_sql_workbench"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      是否用于SQL工作台查询
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      开启后，成员可以在SQL工作台中使用此权限模板所包含的数据权限
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="used_by_sql_workbench"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
             class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
@@ -1227,6 +1290,69 @@ exports[`page/Auth/AddAuth render add auth snap 1`] = `
             </div>
           </div>
           <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="used_by_sql_workbench"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      是否用于SQL工作台查询
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      开启后，成员可以在SQL工作台中使用此权限模板所包含的数据权限
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="used_by_sql_workbench"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
             class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
@@ -1922,6 +2048,69 @@ exports[`page/Auth/AddAuth render form submit render submit when all form item i
                       type="text"
                       value=""
                     />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="used_by_sql_workbench"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      是否用于SQL工作台查询
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      开启后，成员可以在SQL工作台中使用此权限模板所包含的数据权限
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="used_by_sql_workbench"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3529,6 +3718,69 @@ exports[`page/Auth/AddAuth render location search has id 1`] = `
             </div>
           </div>
           <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="used_by_sql_workbench"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      是否用于SQL工作台查询
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      开启后，成员可以在SQL工作台中使用此权限模板所包含的数据权限
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="used_by_sql_workbench"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
             class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
@@ -4221,6 +4473,69 @@ exports[`page/Auth/AddAuth render pwd form item render pwd not same 1`] = `
                       type="text"
                       value=""
                     />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="used_by_sql_workbench"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      是否用于SQL工作台查询
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      开启后，成员可以在SQL工作台中使用此权限模板所包含的数据权限
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="used_by_sql_workbench"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>

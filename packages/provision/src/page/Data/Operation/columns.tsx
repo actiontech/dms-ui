@@ -31,10 +31,6 @@ const dbTypeOptions = [
   {
     value: AuthListDataOperationSetsFilterByDbTypeEnum.OceanBaseMySQL,
     label: 'OceanBaseMySQL'
-  },
-  {
-    value: AuthListDataOperationSetsFilterByDbTypeEnum.DB2,
-    label: 'DB2'
   }
 ];
 

@@ -174,7 +174,7 @@ describe('Auth/AuthTemplateList', () => {
 
     await act(async () => jest.advanceTimersByTime(300));
     expect(TemplateListModalStatusChangeSpy).toHaveBeenCalledTimes(2);
-    expect(TemplateListModalStatusChangeSpy).nthCalledWith(2, {
+    expect(TemplateListModalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
       [ModalName.CopyTemplate]: true
     });
     expect(AuthListUpdateSelectDataSpy).toHaveBeenCalledTimes(1);
