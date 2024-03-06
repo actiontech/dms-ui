@@ -48,15 +48,22 @@ const RuleSelect = (props: RuleSelectProps) => {
   const updateRule = useCallback(
     (ruleItem: IRuleResV1, isDelete = false) => {
       let temp: IRuleResV1[] = [];
+      let newShadowRules: IRuleResV1[] = [];
       if (isDelete) {
         temp = props.activeRule.filter(
+          (e) => e.rule_name !== ruleItem.rule_name
+        );
+        newShadowRules = props.filteredRule.filter(
           (e) => e.rule_name !== ruleItem.rule_name
         );
       } else {
         temp = [...props.activeRule];
         temp.push(ruleItem);
+        newShadowRules = [...props.filteredRule];
+        newShadowRules.push(ruleItem);
       }
       props.updateActiveRule(temp);
+      props.updateFilteredRule(newShadowRules);
     },
     [props]
   );
@@ -65,8 +72,10 @@ const RuleSelect = (props: RuleSelectProps) => {
     (active: boolean) => {
       if (active) {
         props.updateActiveRule([...(props.allRules ?? [])]);
+        props.updateFilteredRule([...(props.allRules ?? [])]);
       } else {
         props.updateActiveRule([]);
+        props.updateFilteredRule([]);
       }
     },
     [props]
@@ -104,12 +113,12 @@ const RuleSelect = (props: RuleSelectProps) => {
   ]);
 
   const rulesData = useMemo(() => {
-    const dataSource = disabledRuleStatus ? disableRule : props.activeRule;
+    const dataSource = disabledRuleStatus ? disableRule : props.filteredRule;
     if (ruleType === ALL_RULE_TYPE_CONSTANT) {
       return dataSource;
     }
     return dataSource.filter((item) => item.type === ruleType);
-  }, [disabledRuleStatus, ruleType, disableRule, props.activeRule]);
+  }, [disabledRuleStatus, ruleType, disableRule, props.filteredRule]);
 
   const onAction = (data: IRuleResV1, type: typeActionType) => {
     if (type === EnumActionType.disabled) {
@@ -135,6 +144,15 @@ const RuleSelect = (props: RuleSelectProps) => {
         }
       });
       props.updateActiveRule(temp);
+      let newShadowRules: IRuleResV1[] = [];
+      newShadowRules = props.filteredRule.map((e: IRuleResV1) => {
+        if (e.rule_name === values.rule_name) {
+          return values;
+        } else {
+          return e;
+        }
+      });
+      props.updateFilteredRule(newShadowRules);
       setEditHidden();
       setRuleData(undefined);
     },
@@ -168,7 +186,7 @@ const RuleSelect = (props: RuleSelectProps) => {
             ruleTypeChange={setRuleType}
             currentRuleType={ruleType}
             allRulesData={props.allRules ?? []}
-            rules={disabledRuleStatus ? disableRule : props.activeRule}
+            rules={disabledRuleStatus ? disableRule : props.filteredRule}
           />
         )}
         <RuleList

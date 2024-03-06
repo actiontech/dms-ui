@@ -42,7 +42,9 @@ const CreateRuleTemplate = () => {
     resetAll,
     createLoading,
     startSubmit,
-    finishSubmit
+    finishSubmit,
+    filteredRule,
+    setFilteredRule
   } = useCreateRuleTemplateForm();
 
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
@@ -127,6 +129,8 @@ const CreateRuleTemplate = () => {
           title={t('ruleTemplate.createRuleTemplate.title')}
           form={form}
           activeRule={activeRule}
+          filteredRule={filteredRule}
+          updateFilteredRule={setFilteredRule}
           allRules={databaseRule ?? []}
           ruleListLoading={getAllRulesLoading}
           submitLoading={createLoading}

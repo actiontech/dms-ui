@@ -470,7 +470,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                 </div>
               </div>
               <div
-                class="rule-list-wrapper css-im4ulm"
+                class="rule-list-wrapper css-ghg9ee"
               >
                 <div
                   id="rule-list-wrapper-id"
@@ -1935,7 +1935,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
               class="ant-spin-container"
             >
               <div
-                class="rule-list-wrapper css-im4ulm"
+                class="rule-list-wrapper css-ghg9ee"
               >
                 <div
                   id="rule-list-wrapper-id"
@@ -2980,7 +2980,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
                 </div>
               </div>
               <div
-                class="rule-list-wrapper css-im4ulm"
+                class="rule-list-wrapper css-ghg9ee"
               >
                 <div
                   id="rule-list-wrapper-id"

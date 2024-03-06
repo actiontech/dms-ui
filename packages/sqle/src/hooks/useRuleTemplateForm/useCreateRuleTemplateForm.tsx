@@ -26,7 +26,9 @@ const useCreateRuleTemplateForm = () => {
     setDatabaseRule,
     dbType,
     setDbType,
-    clearSearchValue
+    clearSearchValue,
+    filteredRule,
+    setFilteredRule
   } = useRules();
 
   const [createLoading, { setFalse: finishSubmit, setTrue: startSubmit }] =
@@ -40,10 +42,13 @@ const useCreateRuleTemplateForm = () => {
       const tempAllRules =
         allRules?.filter((e) => e.db_type === values.db_type) ?? [];
       setDatabaseRule(tempAllRules);
-      const updateActiveData = cloneDeep(
-        tempAllRules.filter((item) => !item.is_custom_rule)
-      );
-      setActiveRule(updateActiveData);
+      if (!activeRule.length) {
+        const updateActiveData = cloneDeep(
+          tempAllRules.filter((item) => !item.is_custom_rule)
+        );
+        setActiveRule(updateActiveData);
+        setFilteredRule(updateActiveData);
+      }
       nextStep();
       setBaseInfoFormSubmitLoading(false);
     } catch (error) {
@@ -56,7 +61,9 @@ const useCreateRuleTemplateForm = () => {
     setActiveRule,
     setDatabaseRule,
     setDbType,
-    setBaseInfoFormSubmitLoading
+    setBaseInfoFormSubmitLoading,
+    setFilteredRule,
+    activeRule
   ]);
 
   const resetAll = useCallback(() => {
@@ -64,15 +71,25 @@ const useCreateRuleTemplateForm = () => {
     form.resetFields();
     setDbType('');
     clearSearchValue();
-  }, [form, setStep, setDbType, clearSearchValue]);
+    setActiveRule([]);
+    setFilteredRule([]);
+  }, [
+    form,
+    setStep,
+    setDbType,
+    clearSearchValue,
+    setActiveRule,
+    setFilteredRule
+  ]);
 
   useEffect(() => {
     if (dbType) {
       const tempAllRules = allRules?.filter((e) => e.db_type === dbType) ?? [];
       setDatabaseRule(tempAllRules);
-      setActiveRule(
-        cloneDeep(tempAllRules.filter((item) => !item.is_custom_rule))
+      const showRuleList = activeRule.filter((item) =>
+        tempAllRules.some((i) => i.rule_name === item.rule_name)
       );
+      setFilteredRule(cloneDeep(showRuleList));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allRules]);
@@ -94,7 +111,9 @@ const useCreateRuleTemplateForm = () => {
     resetAll,
     createLoading,
     finishSubmit,
-    startSubmit
+    startSubmit,
+    filteredRule,
+    setFilteredRule
   };
 };
 

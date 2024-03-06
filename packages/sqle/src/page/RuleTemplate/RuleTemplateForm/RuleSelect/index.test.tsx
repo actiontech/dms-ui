@@ -26,8 +26,10 @@ describe('sqle/RuleTemplate/RuleSelect', () => {
       <RuleSelect
         dbType="MySQL"
         activeRule={ruleListMockData}
+        filteredRule={ruleListMockData}
         allRules={ruleListMockData}
         updateActiveRule={jest.fn()}
+        updateFilteredRule={jest.fn()}
         listLoading={false}
       />
     );

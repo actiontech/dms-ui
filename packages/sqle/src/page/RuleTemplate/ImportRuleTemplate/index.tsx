@@ -63,7 +63,9 @@ const ImportRuleTemplate = () => {
     messageContextHolder,
     createLoading,
     startCreate,
-    finishCreate
+    finishCreate,
+    filteredRule,
+    setFilteredRule
   } = useImportRuleTemplateForm();
 
   const submit = useCallback(() => {
@@ -205,6 +207,8 @@ const ImportRuleTemplate = () => {
               title={t('ruleTemplate.importRuleTemplate.title')}
               form={ruleTemplateForm}
               activeRule={activeRule}
+              filteredRule={filteredRule}
+              updateFilteredRule={setFilteredRule}
               allRules={allRules ?? []}
               ruleListLoading={getAllRulesLoading}
               submitLoading={createLoading}

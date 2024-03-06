@@ -44,7 +44,9 @@ const UpdateRuleTemplate = () => {
     setRuleTemplate,
     updateTemplateLoading,
     startSubmit,
-    finishSubmit
+    finishSubmit,
+    filteredRule,
+    setFilteredRule
   } = useUpdateRuleTemplateForm();
 
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
@@ -104,6 +106,7 @@ const UpdateRuleTemplate = () => {
           const template = res.data.data;
           setRuleTemplate(template);
           setActiveRule(template?.rule_list ?? []);
+          setFilteredRule(template?.rule_list ?? []);
         }
       })
       .finally(() => {
@@ -114,7 +117,8 @@ const UpdateRuleTemplate = () => {
     setActiveRule,
     startLoad,
     urlParams.templateName,
-    setRuleTemplate
+    setRuleTemplate,
+    setFilteredRule
   ]);
 
   return (
@@ -164,6 +168,8 @@ const UpdateRuleTemplate = () => {
             title={t('ruleTemplate.updateRuleTemplate.title')}
             form={form}
             activeRule={activeRule}
+            filteredRule={filteredRule}
+            updateFilteredRule={setFilteredRule}
             allRules={databaseRule ?? []}
             ruleListLoading={getAllRulesLoading}
             submitLoading={updateTemplateLoading}
