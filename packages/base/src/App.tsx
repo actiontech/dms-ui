@@ -32,6 +32,9 @@ import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
+import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { useTranslation } from 'react-i18next';
 
 import './index.less';
 
@@ -63,6 +66,8 @@ export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 function App() {
+  const { t } = useTranslation();
+
   const { token } = useSelector((state: IReduxState) => ({
     token: state.user.token
   }));
@@ -154,6 +159,29 @@ function App() {
       updateDriverList();
     }
   }, [getUserBySession, token, updateDriverList]);
+
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    let isNotSupportBrowser = false;
+    const versionReg = /chrome\/(.*)\s/g;
+    const chromeVersion = versionReg.exec(userAgent);
+    if (!userAgent.includes('chrome')) {
+      isNotSupportBrowser = true;
+    } else if (Array.isArray(chromeVersion) && chromeVersion.length) {
+      const version = chromeVersion[1].split('.')[0];
+      if (Number(version) < 80) {
+        isNotSupportBrowser = true;
+      }
+    }
+    if (isNotSupportBrowser) {
+      eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'warning', {
+        message: t('dmsLogin.browserVersionTile'),
+        description: t('dmsLogin.browserVersionDesc'),
+        duration: null
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Wrapper>
