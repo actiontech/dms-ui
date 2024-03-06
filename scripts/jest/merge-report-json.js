@@ -5,7 +5,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const { exec } = require('child_process');
+const istanbul = require('istanbul-lib-coverage');
 
 const finalReportJSONFilePath = path.resolve(
   process.cwd(),
@@ -90,33 +90,63 @@ const coverageJsonReport = [
   };
 }, {});
 
-const command = 'pnpm test:merge';
+if (!fs.existsSync(path.resolve(process.cwd(), 'coverage-merged'))) {
+  fs.mkdirSync('coverage-merged');
+}
 
-exec(command, (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec command error: ${error.message}`);
-    return;
-  }
-  if (stderr) {
-    console.error(`exec command error: ${stderr}`);
-    return;
-  }
-  console.log(stdout);
-
-  const mergeCoverageReport = require(finalReportJSONFilePath);
-
-  coverageJsonReport.coverageMap = mergeCoverageReport;
-
-  fs.writeFile(
-    finalReportJSONFilePath,
-    JSON.stringify(coverageJsonReport),
-    (err) => {
-      if (err) {
-        console.error(err);
-        process.exit(1);
-      }
-
-      console.log('Coverage report appended to ' + finalReportJSONFilePath);
-    }
+if (
+  fs.existsSync(path.resolve(process.cwd(), 'ce_coverage/coverage-final.json'))
+) {
+  fs.renameSync(
+    path.resolve(process.cwd(), 'ce_coverage/coverage-final.json'),
+    path.resolve(process.cwd(), 'coverage-merged/ce-coverage-final.json')
   );
+}
+
+[1, 2, 3, 4].forEach((num) => {
+  if (
+    fs.existsSync(
+      path.resolve(process.cwd(), `coverage/coverage-final-${num}.json`)
+    )
+  ) {
+    fs.renameSync(
+      path.resolve(process.cwd(), `coverage/coverage-final-${num}.json`),
+      path.resolve(process.cwd(), `coverage-merged/coverage-map-${num}.json`)
+    );
+  }
 });
+
+const coverageMap = istanbul.createCoverageMap({});
+
+const reportFiles = fs.readdirSync(
+  path.resolve(process.cwd(), 'coverage-merged')
+);
+
+reportFiles.forEach((file) => {
+  const json = fs.readFileSync(
+    path.resolve(process.cwd(), `coverage-merged/${file}`)
+  );
+  coverageMap.merge(JSON.parse(json));
+});
+
+fs.writeFileSync(
+  path.resolve(process.cwd(), 'coverage-merged.json'),
+  JSON.stringify(coverageMap)
+);
+
+const mergeCoverageReport = require(finalReportJSONFilePath);
+
+coverageJsonReport.coverageMap = mergeCoverageReport;
+
+fs.writeFile(
+  finalReportJSONFilePath,
+  JSON.stringify(coverageJsonReport),
+  (err) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+
+    console.log('Coverage report appended to ' + finalReportJSONFilePath);
+  }
+);
