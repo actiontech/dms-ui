@@ -2,8 +2,6 @@ import { styled } from '@mui/material/styles';
 
 export const AuthListStyleWrapper = styled('div')`
   .auth-action-column {
-    width: 100%;
-
     .template-name-tag {
       cursor: pointer;
     }

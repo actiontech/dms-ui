@@ -269,9 +269,6 @@ describe('page/Auth/AddAuth', () => {
         target: { value: '111' }
       });
 
-      fireEvent.click(getBySelector('#used_by_sql_workbench'));
-      await act(async () => jest.advanceTimersByTime(300));
-
       // submit && preview
       await act(async () => jest.advanceTimersByTime(3300));
       expect(requestVerifyDBAccountFn).toHaveBeenCalled();

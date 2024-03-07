@@ -45,7 +45,9 @@ export enum ListAuthorizationStatusEnum {
 export enum ListServiceDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'DB2' = 'DB2'
 }
 
 export enum ListServiceTypeEnum {
@@ -123,7 +125,9 @@ export enum OperationInfoDataObjectTypesEnum {
 export enum OperationInfoDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'DB2' = 'DB2'
 }
 
 export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
@@ -139,7 +143,9 @@ export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
 export enum ServiceDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'DB2' = 'DB2'
 }
 
 export enum SyncRuleFieldNameEnum {

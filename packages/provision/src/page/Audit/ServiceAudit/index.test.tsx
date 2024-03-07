@@ -149,7 +149,7 @@ describe('page/Audit/ServiceAudit', () => {
     });
 
     expect(requestListFn).toHaveBeenCalledTimes(1);
-    expect(requestListFn).toHaveBeenNthCalledWith(1, {
+    expect(requestListFn).nthCalledWith(1, {
       page_index: 1,
       page_size: 20,
       filter_by_namespace_uid: projectID,
@@ -166,7 +166,7 @@ describe('page/Audit/ServiceAudit', () => {
     );
 
     expect(requestListFn).toHaveBeenCalledTimes(2);
-    expect(requestListFn).toHaveBeenNthCalledWith(2, {
+    expect(requestListFn).nthCalledWith(2, {
       page_index: 1,
       page_size: 20,
       filter_by_namespace_uid: projectID,

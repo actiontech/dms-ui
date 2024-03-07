@@ -31,8 +31,6 @@ export interface IAddAuthorization {
   permission_user_uid: string;
 
   purpose: string;
-
-  used_by_sql_workbench?: boolean;
 }
 
 export interface IAddAuthorizationReply {
@@ -377,8 +375,6 @@ export interface IListAuthorization {
   status?: ListAuthorizationStatusEnum;
 
   uid?: string;
-
-  used_by_sql_workbench?: boolean;
 }
 
 export interface IListAuthorizationEvent {
@@ -943,8 +939,6 @@ export interface IUpdateAuthorization {
   renewal_effective_time_day?: number;
 
   update_authorization_user?: IUpdateAuthorizationUser;
-
-  used_by_sql_workbench?: boolean;
 }
 
 export interface IUpdateAuthorizationUser {

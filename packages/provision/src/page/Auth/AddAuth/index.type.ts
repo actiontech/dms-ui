@@ -10,7 +10,6 @@ export interface AddAuthFormFields {
   memo: string;
   permission_user_uid: string;
   purpose: string;
-  used_by_sql_workbench: boolean;
 }
 
 export interface UserSelectProps {
