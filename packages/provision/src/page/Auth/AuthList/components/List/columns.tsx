@@ -19,6 +19,8 @@ import dayjs from 'dayjs';
 import { NavigateFunction } from 'react-router-dom';
 import { ModalName } from '~/data/enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { IconIsDisabled, IconIsEnabled } from '../../../../../icon/audit';
 
 export type AuthListFilterParamType = PageInfoWithoutIndexAndSize<
   Omit<IAuthListAuthorizationParams, 'filter_by_namespace_uid'> & {
@@ -54,6 +56,39 @@ export const AuthTableColumns = (
       title: () => <>{t('auth.columns.purpose')}</>,
       filterCustomType: 'select',
       filterKey: 'filter_by_purpose'
+    },
+    {
+      dataIndex: 'used_by_sql_workbench',
+      title: () => <>{t('auth.columns.sqlWorkbenchQuery')}</>,
+      filterCustomType: 'select',
+      filterKey: 'filter_by_used_by_sql_workbench',
+      render: (enable: boolean, record) => {
+        return (
+          <Space className="auth-action-column">
+            <TableColumnWithIconStyleWrapper>
+              {!!enable ? (
+                <>
+                  <IconIsEnabled />
+                  <span>{t('common.enabled')}</span>
+                </>
+              ) : (
+                <>
+                  <IconIsDisabled />
+                  <span>{t('auth.columns.notEnabled')}</span>
+                </>
+              )}
+            </TableColumnWithIconStyleWrapper>
+            <Typography.Link
+              className="auth-action-column-editor"
+              onClick={() =>
+                openModal(record, ModalName.UpdateSQLWorkbenchQueryStatus)
+              }
+            >
+              <EditOutlined />
+            </Typography.Link>
+          </Space>
+        );
+      }
     },
     {
       dataIndex: 'businesses',

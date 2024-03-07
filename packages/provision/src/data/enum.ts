@@ -9,7 +9,9 @@ export enum ModalName {
 
   DataPermissionModal = 'DATA_PERMISSION_MODAL',
 
-  CopyTemplate = 'COPY_TEMPLATE'
+  CopyTemplate = 'COPY_TEMPLATE',
+
+  UpdateSQLWorkbenchQueryStatus = 'UPDATE_SQL_WORKBENCH_QUERY_STATUS'
 }
 
 export enum EventEmitterKey {

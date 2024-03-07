@@ -33,6 +33,7 @@ import EventEmitter from '~/utils/EventEmitter';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 
 import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
+import { SQLWorkbenchQueryStatusOptions } from './index.data';
 
 const AuthListItem = () => {
   const { t } = useTranslation();
@@ -126,6 +127,12 @@ const AuthListItem = () => {
         {
           options: serviceOptions
         }
+      ],
+      [
+        'used_by_sql_workbench',
+        {
+          options: SQLWorkbenchQueryStatusOptions
+        }
       ]
     ]);
   }, [purposeOptions, businessOptions, serviceOptions, defaultPurpose]);
@@ -137,7 +144,8 @@ const AuthListItem = () => {
       [ModalName.GetConnection]: false,
       [ModalName.UpdateTemplateInAuth]: false,
       [ModalName.UpdateUserInAuth]: false,
-      [ModalName.UpdateExpirationInAuth]: false
+      [ModalName.UpdateExpirationInAuth]: false,
+      [ModalName.UpdateSQLWorkbenchQueryStatus]: false
     });
   }, [initModalStatus]);
 

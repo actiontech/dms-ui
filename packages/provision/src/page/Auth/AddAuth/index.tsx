@@ -15,7 +15,8 @@ import {
   BasicSelect,
   BasicInput,
   BasicResult,
-  EmptyBox
+  EmptyBox,
+  BasicSwitch
 } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IAddAuthorization } from '@actiontech/shared/lib/api/provision/service/common';
@@ -116,7 +117,8 @@ const AddAuth: React.FC = () => {
         effective_time_day: values.effective_time_day,
         memo: values.memo,
         permission_user_uid: values.permission_user_uid,
-        purpose: values.purpose
+        purpose: values.purpose,
+        used_by_sql_workbench: values.used_by_sql_workbench
       });
     });
   };
@@ -232,10 +234,30 @@ const AddAuth: React.FC = () => {
               <FormItemLabel
                 name="purpose"
                 label={t('auth.addAuth.purposeForm.purpose')}
-                rules={[{ required: true }]}
+                rules={[
+                  { required: true },
+                  {
+                    max: 20,
+                    message: t('common.form.rule.maxLength', { max: 20 })
+                  }
+                ]}
                 className="has-required-style"
               >
                 <BasicInput />
+              </FormItemLabel>
+              <FormItemLabel
+                name="used_by_sql_workbench"
+                className="has-label-tip"
+                initialValue={true}
+                valuePropName="checked"
+                label={
+                  <CustomLabelContent
+                    title={t('auth.addAuth.purposeForm.cbPermission')}
+                    tips={t('auth.addAuth.purposeForm.cbTips')}
+                  />
+                }
+              >
+                <BasicSwitch />
               </FormItemLabel>
               <FormItemLabel
                 name="memo"
