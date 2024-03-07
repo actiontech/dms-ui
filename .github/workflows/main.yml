@@ -95,3 +95,7 @@ jobs:
 
       - name: Delete artifact
         uses: geekyeggo/delete-artifact@v2
+        with:
+          name: |
+            ce-coverage-artifacts
+            coverage-artifacts
