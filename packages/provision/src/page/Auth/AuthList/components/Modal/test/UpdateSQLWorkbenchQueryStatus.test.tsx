@@ -94,7 +94,7 @@ describe('page/Auth/AuthList/UpdateSQLWorkbenchQueryStatus', () => {
     expect(emitSpy).toHaveBeenCalledWith(
       EventEmitterKey.Refresh_Auth_List_Table
     );
-    await act(() => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
   });
 });

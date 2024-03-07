@@ -755,7 +755,7 @@ exports[`page/Auth/AuthList/UpdateSQLWorkbenchQueryStatus render submit 1`] = `
                 class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -781,9 +781,9 @@ exports[`page/Auth/AuthList/UpdateSQLWorkbenchQueryStatus render submit 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            aria-checked="true"
+                            aria-checked="false"
                             aria-required="true"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
                             id="used_by_sql_workbench"
                             role="switch"
                             type="button"
