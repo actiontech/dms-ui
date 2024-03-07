@@ -52,7 +52,7 @@ exports[`page/SyncDataSource/SyncTaskForm render dbType form item 1`] = `
                           aria-required="true"
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value=""
                         />
@@ -1630,7 +1630,7 @@ exports[`page/SyncDataSource/SyncTaskForm render dbType form item 2`] = `
                           aria-required="true"
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value=""
                         />
@@ -3357,7 +3357,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                           aria-required="true"
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value=""
                         />
@@ -4709,7 +4709,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for prepare api request 1`] = `
                           aria-required="true"
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value=""
                         />
@@ -6063,7 +6063,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                           aria-required="true"
                           class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value="*"
                         />
@@ -7428,7 +7428,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                           aria-required="true"
                           class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value="test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-test-name-"
                         />
@@ -8791,7 +8791,7 @@ exports[`page/SyncDataSource/SyncTaskForm render source form item 1`] = `
                           aria-required="true"
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value=""
                         />
@@ -10258,7 +10258,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                           aria-required="true"
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value=""
                         />
@@ -11621,7 +11621,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                           aria-required="true"
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="name"
-                          placeholder="请输入数据源名称"
+                          placeholder="请输入同步任务名称"
                           type="text"
                           value=""
                         />

@@ -13,7 +13,7 @@ export default {
     deleteTaskLoading: '正在删除任务...',
     deleteTaskSuccessTips: '删除任务成功',
     columns: {
-      name: '数据源名',
+      name: '同步任务名',
       source: '来源',
       version: '版本',
       url: '地址',
@@ -37,7 +37,7 @@ export default {
     getSyncInstanceTaskError: '获取同步任务数据失败'
   },
   syncTaskForm: {
-    name: '数据源名称',
+    name: '同步任务名称',
     source: '来源',
     sourceTips: '支持同步ActionDMP平台',
     version: '版本',
