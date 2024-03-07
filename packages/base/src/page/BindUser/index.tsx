@@ -13,7 +13,7 @@ import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
-// import useBrowserVersionTips from '../Login/hooks/useBrowserVersionTips';
+import useBrowserVersionTips from '../Login/hooks/useBrowserVersionTips';
 
 // #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -30,7 +30,7 @@ const BindUser = () => {
 
   const { t } = useTranslation();
 
-  // useBrowserVersionTips();
+  useBrowserVersionTips();
 
   const loginLock = useRef(false);
 

@@ -1,35 +1,34 @@
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import { notification } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 
-const NotificationKey = 'browser_version_tips';
+const notificationKey = 'dmsLoginBrowserVersionTips';
 
 const useBrowserVersionTips = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
     const userAgent = window.navigator.userAgent.toLowerCase();
-    let flag = false;
-    if (!userAgent.includes('chrome')) {
-      flag = true;
-    }
-
+    let isNotSupportBrowser = false;
     const versionReg = /chrome\/(.*)\s/g;
     const chromeVersion = versionReg.exec(userAgent);
-    if (Array.isArray(chromeVersion) && chromeVersion.length) {
+    if (!userAgent.includes('chrome')) {
+      isNotSupportBrowser = true;
+    } else if (Array.isArray(chromeVersion) && chromeVersion.length) {
       const version = chromeVersion[1].split('.')[0];
       if (Number(version) < 80) {
-        flag = true;
+        isNotSupportBrowser = true;
       }
     }
 
-    if (flag) {
-      notification.destroy(NotificationKey);
+    if (isNotSupportBrowser) {
+      // 因为Login, user/bind/, Nav等都会引入此hooks，所以为了防止出现多个提示，这里加上destroy操作
+      notification.destroy(notificationKey);
       eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'warning', {
+        key: notificationKey,
         message: t('dmsLogin.browserVersionTile'),
-        key: NotificationKey,
         description: t('dmsLogin.browserVersionDesc'),
         duration: null
       });
