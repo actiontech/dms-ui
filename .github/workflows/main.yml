@@ -37,9 +37,9 @@ jobs:
       - name: Coverage test report ee
         run: sh ./scripts/jest/run-ci-ee.sh ${{ matrix.shard }} ${{ strategy.job-total }}
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3
         with:
-          name: coverage-artifacts-${{ matrix.shard }}
+          name: coverage-artifacts
           path: coverage/
 
   test-ce:
@@ -55,7 +55,7 @@ jobs:
       - name: Coverage test report ce
         run: sh ./scripts/jest/run-ci-ce.sh
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3
         with:
           name: ce-coverage-artifacts
           path: ce_coverage/
@@ -69,13 +69,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Get CE Coverage
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: ce-coverage-artifacts
           path: ce_coverage
 
       - name: Get EE Coverage
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: coverage-artifacts
           path: coverage
@@ -94,11 +94,8 @@ jobs:
           coverage-file: coverage-merged.json
 
       - name: Delete artifact
-        uses: geekyeggo/delete-artifact@v4
+        uses: geekyeggo/delete-artifact@v2
         with:
           name: |
             ce-coverage-artifacts
-            coverage-artifacts-1
-            coverage-artifacts-2
-            coverage-artifacts-3
-            coverage-artifacts-4
+            coverage-artifacts
