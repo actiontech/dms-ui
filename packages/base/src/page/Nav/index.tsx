@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { LayoutStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
-import useBrowserVersionTips from '../Login/hooks/useBrowserVersionTips';
+import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 
 // #if [ee]
 import EESideMenu from './SideMenu';

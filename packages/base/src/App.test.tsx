@@ -15,7 +15,6 @@ import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/commo
 import { mockSystemConfigData } from './testUtils/mockHooks/data';
 import { BasicInfo } from './testUtils/mockApi/global/data';
 import { mockDBServiceDriverInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -178,44 +177,5 @@ describe('App', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(container).toMatchSnapshot();
-  });
-
-  it('render App  when current browser is not chrome', async () => {
-    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
-    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
-    userAgentGetter.mockReturnValue(
-      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15'
-    );
-    superRender(<App />, undefined, {
-      routerProps: { initialEntries: ['/'] }
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
-  });
-
-  it('render App  when when chrome version less than 80', async () => {
-    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
-    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
-    userAgentGetter.mockReturnValue(
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.0.0 Safari/537.36'
-    );
-    superRender(<App />, undefined, {
-      routerProps: { initialEntries: ['/'] }
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
-  });
-
-  it('render App  when when chrome version more than 80', async () => {
-    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
-    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
-    userAgentGetter.mockReturnValue(
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.0.0 Safari/537.36'
-    );
-    superRender(<App />, undefined, {
-      routerProps: { initialEntries: ['/'] }
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(eventEmitSpy).not.toHaveBeenCalled();
   });
 });
