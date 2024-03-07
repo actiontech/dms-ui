@@ -4921,20 +4921,6 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 5`] = `
               权限模版审计
             </span>
           </li>
-          <li
-            class="ant-menu-item ant-menu-item-only-child"
-            data-menu-id="rc-menu-uuid-test-provision/project/projectID/audit/service"
-            parentkey="operateAndAudit"
-            role="menuitem"
-            style="padding-left: 48px;"
-            tabindex="-1"
-          >
-            <span
-              class="ant-menu-title-content"
-            >
-              数据源操作审计
-            </span>
-          </li>
         </ul>
       </li>
       <li

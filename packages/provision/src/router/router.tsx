@@ -11,7 +11,7 @@ const EditTemplate = React.lazy(() => import('~/page/Auth/EditTemplate'));
 
 const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
-const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
+// const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
 export type RouterConfigItem = RouteObject & {
   label?: string;
@@ -95,13 +95,13 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         key: 'templateAudit',
         label: 'provisionNav.menu.templateAudit',
         element: <TemplateAudit />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/audit/service`,
-        key: 'serviceAudit',
-        label: 'provisionNav.menu.serviceAudit',
-        element: <ServiceAudit />
       }
+      // {
+      //   path: `${PROJECT_ROUTER_PARAM}/audit/service`,
+      //   key: 'serviceAudit',
+      //   label: 'provisionNav.menu.serviceAudit',
+      //   element: <ServiceAudit />
+      // }
     ]
   },
   {

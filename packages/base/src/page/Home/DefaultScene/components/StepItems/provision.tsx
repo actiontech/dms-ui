@@ -49,13 +49,13 @@ export const getAuthAuditStepItems = ({
         'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_1'
       ),
       action: () => navigate(`/provision/project/${projectID}/audit/template`)
-    },
-    {
-      key: 'audit-service-list',
-      label: t(
-        'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_2'
-      ),
-      action: () => navigate(`/provision/project/${projectID}/audit/service`)
     }
+    // {
+    //   key: 'audit-service-list',
+    //   label: t(
+    //     'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_2'
+    //   ),
+    //   action: () => navigate(`/provision/project/${projectID}/audit/service`)
+    // }
   ];
 };
