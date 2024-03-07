@@ -15,7 +15,7 @@ import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME
 } from '@actiontech/shared/lib/data/common';
 import { useLocation, useNavigate } from 'react-router-dom';
-import useBrowserVersionTips from './hooks/useBrowserVersionTips';
+import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 
 // #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
