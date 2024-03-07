@@ -213,8 +213,8 @@ describe('page/Login-ee', () => {
 
   it('render login snap when current browser is not chrome', async () => {
     const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
-    const languageGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
-    languageGetter.mockReturnValue(
+    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    userAgentGetter.mockReturnValue(
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15'
     );
     const requestGetOauth2Tip = dms.getOauth2Tips();
@@ -226,8 +226,8 @@ describe('page/Login-ee', () => {
 
   it('render login snap when chrome version less than 80', async () => {
     const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
-    const languageGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
-    languageGetter.mockReturnValue(
+    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    userAgentGetter.mockReturnValue(
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.0.0 Safari/537.36'
     );
     const requestGetOauth2Tip = dms.getOauth2Tips();
@@ -239,8 +239,8 @@ describe('page/Login-ee', () => {
 
   it('render login snap when chrome version more than 80', async () => {
     const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
-    const languageGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
-    languageGetter.mockReturnValue(
+    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    userAgentGetter.mockReturnValue(
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.0.0 Safari/537.36'
     );
     const requestGetOauth2Tip = dms.getOauth2Tips();
