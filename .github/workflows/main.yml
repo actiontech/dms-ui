@@ -92,3 +92,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           base-coverage-file: coverage-merged.json
           coverage-file: coverage-merged.json
+
+      - name: Delete artifact
+        uses: geekyeggo/delete-artifact@v2
