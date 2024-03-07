@@ -234,7 +234,13 @@ const AddAuth: React.FC = () => {
               <FormItemLabel
                 name="purpose"
                 label={t('auth.addAuth.purposeForm.purpose')}
-                rules={[{ required: true }]}
+                rules={[
+                  { required: true },
+                  {
+                    max: 20,
+                    message: t('common.form.rule.maxLength', { max: 20 })
+                  }
+                ]}
                 className="has-required-style"
               >
                 <BasicInput />
