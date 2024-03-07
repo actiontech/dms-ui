@@ -16,7 +16,6 @@ export default {
   columns: {
     permissionUser: '使用人',
     purpose: '目的或用途',
-    sqlWorkbenchQuery: '是否用于SQL工作台查询',
     businesses: '数据所在业务',
     dataObjectService: '涉及数据源',
     template: ' 权限模板',
@@ -28,8 +27,7 @@ export default {
     expiring: '即将过期',
     invalid: '过期',
     permanent: '永久',
-    expiration: '到期时间',
-    notEnabled: '未启用'
+    expiration: '到期时间'
   },
   addAuth: {
     backAuthList: '返回授权清单列表',
@@ -74,8 +72,6 @@ export default {
     purposeForm: {
       username: '使用人',
       purpose: '目的或用途',
-      cbPermission: '是否用于SQL工作台查询',
-      cbTips: '开启后，成员可以在SQL工作台中使用此权限模板所包含的数据权限',
       memo: '备注'
     },
     accountForm: {
@@ -105,7 +101,6 @@ export default {
   updateExpirationField: '续期',
   updateExpirationExtra: '说明：续期指在当前时间基础上增加有效期时间',
   updateTemplateSuccess: '更新成功',
-  updateSqlWorkbenchQuery: '编辑SQL工作台查询状态',
   editTemplate: {
     extraEmptyTips: '您还没有为当前模板添加数据权限',
     addTitle: '添加权限模板',
@@ -152,12 +147,6 @@ export default {
     password: '数据库连接密码',
     confirmPassword: '确认数据库连接密码'
   },
-  updateSQLWorkbenchQueryStatus: {
-    title: '变更SQL工作台查询起停状态',
-    label: '是否用于SQL工作台查询',
-    successTips: '更新成功'
-  },
-
   button: {
     copy: '全文复制',
     addAuth: '授权',

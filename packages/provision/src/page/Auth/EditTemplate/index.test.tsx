@@ -150,7 +150,7 @@ describe('Auth/EditTemplate', () => {
     await act(async () => jest.advanceTimersByTime(1000));
 
     expect(templateDetailModalStatusChangeSpy).toHaveBeenCalledTimes(2);
-    expect(templateDetailModalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
+    expect(templateDetailModalStatusChangeSpy).nthCalledWith(2, {
       [ModalName.DataPermissionModal]: true
     });
   });
