@@ -49,7 +49,7 @@ describe('page/BindUser-ee', () => {
   });
 
   it('render bind user ui snap', async () => {
-    const { baseElement } = customRender();
+    const { baseElement } = await act(async () => customRender());
     expect(
       screen.queryByText('如果用户名不存在，会自动创建')
     ).toBeInTheDocument();
@@ -90,7 +90,7 @@ describe('page/BindUser-ee', () => {
         fireEvent.click(getBySelector('.login-btn', baseElement));
         await act(async () => jest.advanceTimersByTime(300));
       });
-      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledTimes(2);
       expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
@@ -160,7 +160,7 @@ describe('page/BindUser-ee', () => {
       const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
       customRender();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledTimes(2);
       expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
@@ -185,7 +185,7 @@ describe('page/BindUser-ee', () => {
       const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
       customRender();
       await act(async () => jest.advanceTimersByTime(300));
-      expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+      expect(eventEmitSpy).toHaveBeenCalledTimes(2);
       expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
@@ -212,5 +212,38 @@ describe('page/BindUser-ee', () => {
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/');
     });
+  });
+
+  it('render login snap when current browser is not chrome', async () => {
+    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
+    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    userAgentGetter.mockReturnValue(
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15'
+    );
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('render login snap when chrome version less than 80', async () => {
+    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
+    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    userAgentGetter.mockReturnValue(
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.0.0 Safari/537.36'
+    );
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(eventEmitSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('render login snap when chrome version more than 80', async () => {
+    const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
+    const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
+    userAgentGetter.mockReturnValue(
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.0.0 Safari/537.36'
+    );
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(eventEmitSpy).not.toHaveBeenCalled();
   });
 });

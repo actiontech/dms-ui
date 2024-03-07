@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { LayoutStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
+import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 
 // #if [ee]
 import EESideMenu from './SideMenu';
@@ -12,6 +13,8 @@ import CopyrightInformation from './Copyright';
 // #endif
 
 const Nav: React.FC<{ children?: ReactNode }> = (props) => {
+  useBrowserVersionTips();
+
   return (
     <LayoutStyleWrapper>
       {/* #if [ee] */}
