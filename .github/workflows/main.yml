@@ -39,7 +39,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: coverage-artifacts
+          name: coverage-artifacts-${{ matrix.shard }}
           path: coverage/
 
   test-ce:
@@ -98,4 +98,7 @@ jobs:
         with:
           name: |
             ce-coverage-artifacts
-            coverage-artifacts
+            coverage-artifacts-1
+            coverage-artifacts-2
+            coverage-artifacts-3
+            coverage-artifacts-4
