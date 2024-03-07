@@ -219,9 +219,9 @@ const RuleList: React.FC<RuleListProps> = ({
 
   const pageRemainingHeight = useMemo(() => {
     // #if [demo || ce]
-    return pageHeaderHeight + 182;
+    return pageHeaderHeight + 184;
     // #else
-    return pageHeaderHeight + 127;
+    return pageHeaderHeight + 128;
     // #endif
   }, [pageHeaderHeight]);
 
