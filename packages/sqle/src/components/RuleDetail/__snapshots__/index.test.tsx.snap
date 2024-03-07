@@ -273,7 +273,7 @@ exports[`sqle/components/RuleDetail click return button 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1v5zyp5"
+            class="rule-list-wrapper css-rhwzhg"
           >
             <div
               class="css-1br6ibb"
@@ -596,7 +596,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1v5zyp5"
+            class="rule-list-wrapper css-rhwzhg"
           >
             <div
               class="css-1br6ibb"
@@ -943,7 +943,7 @@ exports[`sqle/components/RuleDetail render snap 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1v5zyp5"
+            class="rule-list-wrapper css-rhwzhg"
           >
             <div
               class="css-1br6ibb"
@@ -1266,7 +1266,7 @@ exports[`sqle/components/RuleDetail render snap 2`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1v5zyp5"
+            class="rule-list-wrapper css-rhwzhg"
           >
             <div
               class="css-1br6ibb"
@@ -1615,7 +1615,7 @@ exports[`sqle/components/RuleDetail render snap when has params 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1v5zyp5"
+            class="rule-list-wrapper css-rhwzhg"
           >
             <div
               id="rule-list-wrapper-id"
@@ -1955,7 +1955,7 @@ exports[`sqle/components/RuleDetail render snap when input fuzzy test 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1v5zyp5"
+            class="rule-list-wrapper css-rhwzhg"
           >
             <div
               class="css-1br6ibb"
@@ -2303,7 +2303,7 @@ exports[`sqle/components/RuleDetail send global request when not select project 
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1v5zyp5"
+            class="rule-list-wrapper css-rhwzhg"
           >
             <div
               class="css-1br6ibb"

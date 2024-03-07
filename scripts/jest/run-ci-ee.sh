@@ -24,7 +24,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-rm -rf coverage/lcov-report clover.xml locv.info
+rm -rf coverage/lcov-report coverage/clover.xml coverage/locv.info
 if [ $? -ne 0 ]; then
   echo "Jest test failed."
   exit 1

@@ -27,7 +27,9 @@ const useUpdateRuleTemplateForm = () => {
     setDatabaseRule,
     dbType,
     setDbType,
-    clearSearchValue
+    clearSearchValue,
+    filteredRule,
+    setFilteredRule
   } = useRules();
 
   const [
@@ -69,17 +71,26 @@ const useUpdateRuleTemplateForm = () => {
     });
     setDbType('');
     setActiveRule([...(ruleTemplate?.rule_list ?? [])]);
+    setFilteredRule([...(ruleTemplate?.rule_list ?? [])]);
     clearSearchValue();
-  }, [form, ruleTemplate, setStep, setActiveRule, setDbType, clearSearchValue]);
+  }, [
+    form,
+    ruleTemplate,
+    setStep,
+    setActiveRule,
+    setDbType,
+    clearSearchValue,
+    setFilteredRule
+  ]);
 
   useEffect(() => {
     if (dbType) {
       const tempAllRules = allRules?.filter((e) => e.db_type === dbType) ?? [];
       setDatabaseRule(tempAllRules);
-      const templateRule = ruleTemplate?.rule_list ?? [];
-      setActiveRule(
+
+      setFilteredRule(
         cloneDeep(
-          templateRule.filter((item) => {
+          activeRule.filter((item) => {
             return tempAllRules.some(
               (allRule) => allRule.rule_name === item.rule_name
             );
@@ -109,7 +120,9 @@ const useUpdateRuleTemplateForm = () => {
     setRuleTemplate,
     updateTemplateLoading,
     startSubmit,
-    finishSubmit
+    finishSubmit,
+    filteredRule,
+    setFilteredRule
   };
 };
 
