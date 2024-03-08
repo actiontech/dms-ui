@@ -5,6 +5,10 @@ export interface IUpdateUserInAuthFormFields {
   confirm_db_account_password: string;
 }
 
+export interface IUpdateSQLWorkbenchQueryFields {
+  used_by_sql_workbench: boolean;
+}
+
 export interface IUpdateTemplateFormFields {
   data_permission_template_uid: string;
 }
