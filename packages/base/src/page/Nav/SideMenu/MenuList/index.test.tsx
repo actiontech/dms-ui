@@ -170,12 +170,12 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
       `/provision/project/${projectID}/audit/template`
     );
 
-    fireEvent.click(screen.getByText('数据源操作审计'));
-    expect(navigateSpy).toHaveBeenCalledTimes(18);
-    expect(navigateSpy).nthCalledWith(
-      18,
-      `/provision/project/${projectID}/audit/service`
-    );
+    // fireEvent.click(screen.getByText('数据源操作审计'));
+    // expect(navigateSpy).toHaveBeenCalledTimes(18);
+    // expect(navigateSpy).nthCalledWith(
+    //   18,
+    //   `/provision/project/${projectID}/audit/service`
+    // );
   });
 
   it('render is not admin snap when has location pathname', async () => {

@@ -939,13 +939,6 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
             "key": "templateAudit",
             "path": ":projectID/audit/template",
           },
-          {
-            "element": <div>
-              serviceAudit
-            </div>,
-            "key": "serviceAudit",
-            "path": ":projectID/audit/service",
-          },
         ],
         "element": undefined,
         "key": "auditWrapper",

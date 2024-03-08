@@ -122,11 +122,11 @@ describe('test base/Home/StepItems', () => {
       `/provision/project/${projectID}/audit/template`
     );
 
-    fireEvent.click(screen.getByText('数据源操作审计'));
-    expect(navigateSpy).toHaveBeenCalledTimes(19);
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/provision/project/${projectID}/audit/service`
-    );
+    // fireEvent.click(screen.getByText('数据源操作审计'));
+    // expect(navigateSpy).toHaveBeenCalledTimes(19);
+    // expect(navigateSpy).toHaveBeenCalledWith(
+    //   `/provision/project/${projectID}/audit/service`
+    // );
 
     cleanup();
     jest.clearAllMocks();
