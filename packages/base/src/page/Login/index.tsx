@@ -147,9 +147,9 @@ const Login = () => {
           <Checkbox>
             <Space>
               {t('dmsLogin.userAgreementTips')}
-              <Typography.Link href="/user-agreement.html" target="_blank">
+              {/* <Typography.Link href="/user-agreement.html" target="_blank">
                 {t('dmsLogin.userAgreement')}
-              </Typography.Link>
+              </Typography.Link> */}
             </Space>
           </Checkbox>
         </Form.Item>

@@ -40,11 +40,6 @@ exports[`page/Login-ee render login snap 1`] = `
               class="title"
             >
               <span
-                class="label label-primary"
-              >
-                Action
-              </span>
-              <span
                 class="label label-base"
               >
                 SQLE
@@ -230,21 +225,8 @@ exports[`page/Login-ee render login snap 1`] = `
                           >
                             <div
                               class="ant-space-item"
-                              style="margin-right: 8px;"
                             >
                               已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                用户协议
-                              </a>
                             </div>
                           </div>
                         </span>
@@ -317,11 +299,6 @@ exports[`page/Login-ee render login success when has location search val render 
             <div
               class="title"
             >
-              <span
-                class="label label-primary"
-              >
-                Action
-              </span>
               <span
                 class="label label-base"
               >
@@ -509,21 +486,8 @@ exports[`page/Login-ee render login success when has location search val render 
                           >
                             <div
                               class="ant-space-item"
-                              style="margin-right: 8px;"
                             >
                               已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                用户协议
-                              </a>
                             </div>
                           </div>
                         </span>
@@ -620,11 +584,6 @@ exports[`page/Login-ee render login success when has location search val render 
               class="title"
             >
               <span
-                class="label label-primary"
-              >
-                Action
-              </span>
-              <span
                 class="label label-base"
               >
                 SQLE
@@ -811,21 +770,8 @@ exports[`page/Login-ee render login success when has location search val render 
                           >
                             <div
                               class="ant-space-item"
-                              style="margin-right: 8px;"
                             >
                               已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                用户协议
-                              </a>
                             </div>
                           </div>
                         </span>
@@ -921,11 +867,6 @@ exports[`page/Login-ee render login when return no auth 1`] = `
             <div
               class="title"
             >
-              <span
-                class="label label-primary"
-              >
-                Action
-              </span>
               <span
                 class="label label-base"
               >
@@ -1112,21 +1053,8 @@ exports[`page/Login-ee render login when return no auth 1`] = `
                           >
                             <div
                               class="ant-space-item"
-                              style="margin-right: 8px;"
                             >
                               已阅读并同意
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
-                                href="/user-agreement.html"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                用户协议
-                              </a>
                             </div>
                           </div>
                         </span>

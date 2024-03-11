@@ -34,35 +34,35 @@ export const getDatabaseManagerSteps: (
             action: () => navigate(`/project/${projectID}/db-services/create`)
           }
         ]
-      },
-      {
-        key: 'outsideDataSource',
-        title: t(
-          'dmsHome.defaultScene.steps.databaseTarget.innerContents.title_1'
-        ),
-        content: t(
-          'dmsHome.defaultScene.steps.databaseTarget.innerContents.content_1'
-        ),
-        buttons: [
-          {
-            key: 'syncDataSource-list',
-            label: t(
-              'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_0'
-            ),
-            action: () => navigate(`/project/${projectID}/syncDataSource`)
-          },
-          // #if [ee]
-          {
-            key: 'syncDataSource-create',
-            label: t(
-              'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_1'
-            ),
-            action: () =>
-              navigate(`/project/${projectID}/syncDataSource/create`)
-          }
-          // #endif
-        ]
       }
+      // {
+      //   key: 'outsideDataSource',
+      //   title: t(
+      //     'dmsHome.defaultScene.steps.databaseTarget.innerContents.title_1'
+      //   ),
+      //   content: t(
+      //     'dmsHome.defaultScene.steps.databaseTarget.innerContents.content_1'
+      //   ),
+      //   buttons: [
+      //     {
+      //       key: 'syncDataSource-list',
+      //       label: t(
+      //         'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_0'
+      //       ),
+      //       action: () => navigate(`/project/${projectID}/syncDataSource`)
+      //     },
+      //     // #if [ee]
+      //     {
+      //       key: 'syncDataSource-create',
+      //       label: t(
+      //         'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_1'
+      //       ),
+      //       action: () =>
+      //         navigate(`/project/${projectID}/syncDataSource/create`)
+      //     }
+      //     // #endif
+      //   ]
+      // }
     ]
   };
 };

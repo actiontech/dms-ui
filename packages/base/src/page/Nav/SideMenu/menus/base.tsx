@@ -29,12 +29,12 @@ export const BaseMenuItems: GenerateMenuItemsType = ({
           label: t('dmsMenu.instance'),
           key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/db-services`,
           onClick: () => navigate(`/project/${projectID}/db-services`)
-        },
-        {
-          label: t('dmsMenu.externalInstance'),
-          key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/syncDataSource`,
-          onClick: () => navigate(`/project/${projectID}/syncDataSource`)
         }
+        // {
+        //   label: t('dmsMenu.externalInstance'),
+        //   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/syncDataSource`,
+        //   onClick: () => navigate(`/project/${projectID}/syncDataSource`)
+        // }
       ]
     },
     {

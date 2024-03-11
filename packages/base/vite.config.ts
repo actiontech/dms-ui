@@ -17,7 +17,7 @@ export default defineConfig((config) => {
   const isEE = !isCE;
   const isSQLE = buildTypes.includes('SQLE');
   const isDemo = buildTypes.includes('DEMO');
-  const title = 'Action SQLE';
+  const title = 'SQLE';
 
   return {
     plugins: [

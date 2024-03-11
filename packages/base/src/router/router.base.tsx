@@ -14,9 +14,9 @@ const ExportTaskDetail = lazy(
   () => import('../page/DataExportManagement/Detail')
 );
 
-const SyncTaskList = lazy(() => import('../page/SyncDataSource/List'));
-const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddPage'));
-const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
+// const SyncTaskList = lazy(() => import('../page/SyncDataSource/List'));
+// const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddPage'));
+// const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
 // #endif
 
 const Home = lazy(() => import('../page/Home'));
@@ -33,7 +33,7 @@ const Member = lazy(() => import('../page/Member'));
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 const System = lazy(() => import('../page/System'));
 const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
-const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
+// const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
 const Account = lazy(() => import('../page/Account'));
 const ExportTaskManagement = lazy(() => import('../page/DataExportManagement'));
 
@@ -105,31 +105,31 @@ export const BaseRouterConfig: RouterConfigItem[] = [
           }
         ]
       },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/syncDataSource`,
-        label: 'menu.syncDataSource',
-        key: 'syncDataSource',
-        element: <SyncDataSource />,
-        // #if [ee]
-        children: [
-          {
-            index: true,
-            element: <SyncTaskList />,
-            key: 'syncDataSourceList'
-          },
-          {
-            path: 'create',
-            element: <AddSyncTask />,
-            key: 'syncDataSourceCreate'
-          },
-          {
-            path: 'update/:taskId',
-            element: <UpdateSyncTask />,
-            key: 'syncDataSourceUpdate'
-          }
-        ]
-        // #endif
-      },
+      // {
+      //   path: `${PROJECT_ROUTER_PARAM}/syncDataSource`,
+      //   label: 'menu.syncDataSource',
+      //   key: 'syncDataSource',
+      //   element: <SyncDataSource />,
+      //   // #if [ee]
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <SyncTaskList />,
+      //       key: 'syncDataSourceList'
+      //     },
+      //     {
+      //       path: 'create',
+      //       element: <AddSyncTask />,
+      //       key: 'syncDataSourceCreate'
+      //     },
+      //     {
+      //       path: 'update/:taskId',
+      //       element: <UpdateSyncTask />,
+      //       key: 'syncDataSourceUpdate'
+      //     }
+      //   ]
+      //   // #endif
+      // },
       {
         path: `${PROJECT_ROUTER_PARAM}/data/export`,
         key: 'dataExportManagement',

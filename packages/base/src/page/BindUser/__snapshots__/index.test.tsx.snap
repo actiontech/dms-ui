@@ -40,11 +40,6 @@ exports[`page/BindUser-ee render bind user form item render form item error when
               class="title"
             >
               <span
-                class="label label-primary"
-              >
-                Action
-              </span>
-              <span
                 class="label label-base"
               >
                 SQLE
@@ -280,11 +275,6 @@ exports[`page/BindUser-ee render bind user form item render oauth2_token params 
               class="title"
             >
               <span
-                class="label label-primary"
-              >
-                Action
-              </span>
-              <span
                 class="label label-base"
               >
                 SQLE
@@ -493,11 +483,6 @@ exports[`page/BindUser-ee render bind user ui snap 1`] = `
             <div
               class="title"
             >
-              <span
-                class="label label-primary"
-              >
-                Action
-              </span>
               <span
                 class="label label-base"
               >

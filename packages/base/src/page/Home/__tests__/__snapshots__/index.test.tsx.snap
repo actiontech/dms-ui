@@ -135,63 +135,6 @@ exports[`test base/page/Home should match snapshot 1`] = `
                 </div>
               </div>
             </div>
-            <div
-              class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
-            >
-              <div
-                class="sub-title"
-              >
-                外部数据源
-              </div>
-              <div
-                class="desc"
-              >
-                管理外部数据源相关操作
-              </div>
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
-                style="flex-wrap: wrap; margin-bottom: -8px;"
-              >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 8px; padding-bottom: 8px;"
-                >
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                    type="button"
-                  >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
-                    >
-                      <div
-                        class="ant-space-item"
-                      >
-                        查看列表
-                      </div>
-                    </div>
-                  </button>
-                </div>
-                <div
-                  class="ant-space-item"
-                  style="padding-bottom: 8px;"
-                >
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                    type="button"
-                  >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
-                    >
-                      <div
-                        class="ant-space-item"
-                      >
-                        新建同步任务
-                      </div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

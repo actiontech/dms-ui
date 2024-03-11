@@ -119,7 +119,7 @@ const UserNavigate: React.FC<{
                 </span>
               </div>
               {/* #endif */}
-              <div
+              {/* <div
                 className="content-item"
                 onClick={() => {
                   setVersionModalOpen();
@@ -130,7 +130,7 @@ const UserNavigate: React.FC<{
                 <span className="content-item-text">
                   {t('dmsMenu.userNavigate.viewVersion')}
                 </span>
-              </div>
+              </div> */}
               <div
                 className="content-item"
                 onClick={() => {

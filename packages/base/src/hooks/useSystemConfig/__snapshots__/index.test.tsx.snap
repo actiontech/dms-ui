@@ -20,11 +20,6 @@ exports[`test base/hooks/useSystemConfig render default web title and logo 1`] =
     class="title"
   >
     <span
-      class="label label-primary"
-    >
-      Action
-    </span>
-    <span
       class="label label-base"
     >
       SQLE
