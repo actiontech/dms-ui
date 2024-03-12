@@ -12,10 +12,12 @@ import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('test base/DataExport/Detail/ExportDetail', () => {
   let getDataExportTaskSQLs: jest.SpyInstance;
+  let downloadSQLsSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     getDataExportTaskSQLs = dataExport.ListDataExportTaskSQLs();
+    downloadSQLsSpy = dataExport.DownloadDataExportTaskSQLs();
   });
 
   afterEach(() => {
@@ -51,6 +53,10 @@ describe('test base/DataExport/Detail/ExportDetail', () => {
 
     const { container } = superRender(<ExportDetail />);
     expect(container).toMatchSnapshot();
+    expect(screen.getByText('下载SQL语句').closest('button')).toHaveAttribute(
+      'hidden'
+    );
+
     expect(getDataExportTaskSQLs).toHaveBeenCalledTimes(0);
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -59,6 +65,33 @@ describe('test base/DataExport/Detail/ExportDetail', () => {
     expect(mockDataExportDetailRedux.updateCurTaskID).toHaveBeenCalledTimes(1);
     expect(mockDataExportDetailRedux.updateCurTaskID).toHaveBeenCalledWith(
       mockDataExportDetailRedux.taskInfos[1].task_uid
+    );
+  });
+
+  it('should render download sql button when  curTaskID is not undefined', async () => {
+    mockUseDataExportDetailReduxManage();
+    superRender(<ExportDetail />);
+
+    expect(
+      screen.getByText('下载SQL语句').closest('button')
+    ).not.toHaveAttribute('hidden');
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('下载SQL语句'));
+    expect(downloadSQLsSpy).toHaveBeenCalledTimes(1);
+    expect(downloadSQLsSpy).toHaveBeenCalledWith({
+      project_uid: mockProjectInfo.projectID,
+      data_export_task_uid: mockDataExportDetailRedux.curTaskID
+    });
+
+    expect(screen.getByText('下载SQL语句').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(screen.getByText('下载SQL语句').closest('button')).not.toHaveClass(
+      'ant-btn-loading'
     );
   });
 });

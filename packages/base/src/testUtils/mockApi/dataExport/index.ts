@@ -119,6 +119,12 @@ class MockDataExportApi implements MockSpyApy {
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
+
+  public DownloadDataExportTaskSQLs() {
+    const spy = jest.spyOn(dms, 'DownloadDataExportTaskSQLs');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
 }
 
 export default new MockDataExportApi();
