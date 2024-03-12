@@ -1082,6 +1082,8 @@ export interface IListUser {
 
   stat?: ListUserStatEnum;
 
+  third_party_user_info?: string;
+
   uid?: string;
 
   user_groups?: IUidWithName[];

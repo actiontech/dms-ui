@@ -83,10 +83,10 @@ export default defineConfig((config) => {
       open: true,
       proxy: {
         '^(/v|/sqle/v)': {
-          target: 'http://10.186.57.12:7601'
+          target: 'http://10.186.62.13:11000/'
         },
         '^/logo': {
-          target: 'http://10.186.57.12:7601'
+          target: 'http://10.186.62.13:11000/'
         }
       },
       cors: true
