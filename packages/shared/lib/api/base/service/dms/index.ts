@@ -70,6 +70,7 @@ import {
   IAddDataExportTaskReturn,
   IListDataExportTaskSQLsParams,
   IListDataExportTaskSQLsReturn,
+  IDownloadDataExportTaskSQLsParams,
   IDownloadDataExportTaskParams,
   IListDataExportWorkflowsParams,
   IListDataExportWorkflowsReturn,
@@ -624,6 +625,24 @@ class DmsService extends ServiceBase {
 
     return this.get<IListDataExportTaskSQLsReturn>(
       `/v1/dms/projects/${project_uid}/data_export_tasks/${data_export_task_uid}/data_export_task_sqls`,
+      paramsData,
+      options
+    );
+  }
+
+  public DownloadDataExportTaskSQLs(
+    params: IDownloadDataExportTaskSQLsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const data_export_task_uid = paramsData.data_export_task_uid;
+    delete paramsData.data_export_task_uid;
+
+    return this.get(
+      `/v1/dms/projects/${project_uid}/data_export_tasks/${data_export_task_uid}/data_export_task_sqls/download`,
       paramsData,
       options
     );
