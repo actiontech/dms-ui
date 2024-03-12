@@ -5,6 +5,7 @@ import auth from './auth';
 import provisionAudit from './provisionAudit';
 import externalDataSource from './externalDataSource';
 import provisionNav from './provisionNav';
+import dataMaskRuleOverview from './dataMaskRuleOverview';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -15,6 +16,7 @@ export default {
     auth,
     provisionAudit,
     externalDataSource,
-    provisionNav
+    provisionNav,
+    dataMaskRuleOverview
   }
 };

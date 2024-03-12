@@ -16,7 +16,8 @@ export default {
     workflow: '工作流',
     maintenanceTime: '运维时间',
     source: '来源',
-    business: '所属业务'
+    business: '所属业务',
+    dataMask: '数据查询脱敏'
   },
 
   backDesc: '返回数据源列表',
@@ -66,7 +67,11 @@ export default {
     passwordTips:
       '这里不会显示您已经配置的当前数据库密码，提交时如果您没有填写密码，那么将不会对数据库密码进行变更。',
     needUpdatePassword: '是否更新密码',
-    updatePassword: '更新连接密码'
+    updatePassword: '更新连接密码',
+    dataMaskConfig: '数据脱敏配置',
+    dataMaskConfigLabel: '数据源是否开启查询脱敏',
+    dataMaskConfigTips: '开启后，将对SQL工作台的查询结果进行脱敏',
+    checkDataMaskButton: '查看脱敏规则'
   },
 
   testConnectModal: {

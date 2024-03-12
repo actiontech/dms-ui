@@ -77,6 +77,17 @@ export const DataSourceColumns = (
       dataIndex: 'business',
       title: () => t('dmsDataSource.databaseList.business')
     },
+    // #if [dms]
+    {
+      dataIndex: 'is_enable_masking',
+      title: () => t('dmsDataSource.databaseList.dataMask'),
+      filterCustomType: 'select',
+      filterKey: 'is_enable_masking',
+      render: (value: boolean) => {
+        return value ? t('common.enabled') : t('common.notEnabled');
+      }
+    },
+    // #endif
     {
       dataIndex: 'maintenance_times',
       title: () => t('dmsDataSource.databaseList.maintenanceTime'),
@@ -156,3 +167,16 @@ export const DataSourceListActions = (
         ]
       };
 };
+
+export const filterDataMaskOptions = [
+  {
+    value: 'enabled',
+    text: t('common.opened'),
+    label: t('common.opened')
+  },
+  {
+    value: 'disabled',
+    text: t('common.notOpen'),
+    label: t('common.notOpen')
+  }
+];

@@ -23,6 +23,7 @@ export default {
   permissionGroup: '权限组',
   permissionTemplate: '权限模板',
   authList: '授权清单',
+  dataMaskRuleOverview: '脱敏规则概览',
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',
   monitorSourceConfig: '监控源配置',

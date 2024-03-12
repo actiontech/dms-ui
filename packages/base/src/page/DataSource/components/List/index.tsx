@@ -27,7 +27,8 @@ import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   DataSourceColumns,
   DataSourceListActions,
-  DataSourceListParamType
+  DataSourceListParamType,
+  filterDataMaskOptions
 } from './columns';
 
 const DataSourceList = () => {
@@ -197,7 +198,13 @@ const DataSourceList = () => {
         'name',
         { options: dbServiceOptions, loading: getDbServiceOptionsLoading }
       ],
-      ['db_type', { options: dbDriverOptions, loading: getDriveOptionsLoading }]
+      [
+        'db_type',
+        { options: dbDriverOptions, loading: getDriveOptionsLoading }
+      ],
+      // #if [dms]
+      ['is_enable_masking', { options: filterDataMaskOptions }]
+      // #endif
     ]);
   }, [
     dbDriverOptions,

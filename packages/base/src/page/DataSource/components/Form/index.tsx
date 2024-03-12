@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance, Popconfirm } from 'antd';
+import { FormInstance, Popconfirm, Space } from 'antd';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -36,6 +36,8 @@ import { useRequest } from 'ahooks';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateToggle';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 // #endif
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
@@ -79,7 +81,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     useAsyncParams();
 
   // #if [sqle]
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const { data: ruleTemplateList = [], loading: ruleTemplateLoading } =
     useRequest(() =>
       rule_template
@@ -225,6 +227,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     updateDriverList();
   }, [updateDriverList]);
 
+  const hasBorder = () => {
+    let border = false;
+    // #if [dms]
+    border = true;
+    // #endif
+    return border;
+  };
+
   return (
     <FormStyleWrapper
       form={props.form as FormInstance<DataSourceFormField>}
@@ -318,7 +328,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
       {/* #if [sqle] */}
-      <FormAreaLineStyleWrapper>
+      <FormAreaLineStyleWrapper
+        className={classNames({ 'has-border': hasBorder() })}
+      >
         <FormAreaBlockStyleWrapper>
           <FormItemSubTitle>
             {t('dmsDataSource.dataSourceForm.sqlConfig')}
@@ -401,6 +413,42 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                 );
               })}
             </BasicSelect>
+          </FormItemLabel>
+        </FormAreaBlockStyleWrapper>
+      </FormAreaLineStyleWrapper>
+      {/* #endif */}
+
+      {/* #if [dms] */}
+      <FormAreaLineStyleWrapper>
+        <FormAreaBlockStyleWrapper>
+          <FormItemSubTitle>
+            {t('dmsDataSource.dataSourceForm.dataMaskConfig')}
+          </FormItemSubTitle>
+          <FormItemLabel
+            className="has-label-tip"
+            label={
+              <div className="label-cont-custom">
+                <div>
+                  {t('dmsDataSource.dataSourceForm.dataMaskConfigLabel')}
+                </div>
+                <div className="tip-content-box">
+                  <Space>
+                    {t('dmsDataSource.dataSourceForm.dataMaskConfigTips')}
+                    <Link
+                      to={`/provision/project/${projectID}/auth/data_mask_rule_overview`}
+                    >
+                      {t('dmsDataSource.dataSourceForm.checkDataMaskButton')}
+                    </Link>
+                  </Space>
+                </div>
+              </div>
+            }
+            name="is_enable_masking"
+            valuePropName="unchecked"
+            labelCol={{ span: 12 }}
+            wrapperCol={{ span: 11, push: 1 }}
+          >
+            <BasicSwitch />
           </FormItemLabel>
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
