@@ -63,9 +63,7 @@ export type GetErrorMessageParams =
   | string
   | AxiosResponse
   | ISwaggerLoseRequireParamsRes;
-export const getErrorMessage = async (
-  error: GetErrorMessageParams
-): Promise<string> => {
+export const getErrorMessage = (error: GetErrorMessageParams): string => {
   if (typeof error === 'string') {
     return error;
   }
@@ -87,13 +85,6 @@ export const getErrorMessage = async (
       return error.data;
     }
 
-    if (error.data instanceof Blob && error.data.type === 'application/json') {
-      return error.data.text().then((text) => {
-        const json = jsonParse<{ code: number; message: string }>(text);
-        return json.message;
-      });
-    }
-
     return JSON.stringify(error.data);
   }
 
@@ -102,6 +93,25 @@ export const getErrorMessage = async (
   }
 
   return i18n.t('common.unknownError');
+};
+
+export const getResponseErrorMessage = async (
+  error: GetErrorMessageParams
+): Promise<string> => {
+  if (
+    error instanceof Object &&
+    !(error instanceof Error) &&
+    !('code' in error) &&
+    error.data instanceof Blob &&
+    error.data.type === 'application/json'
+  ) {
+    return error.data.text().then((text) => {
+      const json = jsonParse<{ code: number; message: string }>(text);
+      return json.message;
+    });
+  } else {
+    return getErrorMessage(error);
+  }
 };
 
 export const jsonParse = <T>(str: string, defaultVal: any = {}): T => {

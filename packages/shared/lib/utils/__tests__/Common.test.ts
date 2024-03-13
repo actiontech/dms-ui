@@ -7,6 +7,7 @@ import {
   getCookie,
   timeAddZero,
   getErrorMessage,
+  getResponseErrorMessage,
   getFileFromUploadChangeEvent,
   jsonParse,
   translateTimeForRequest
@@ -92,16 +93,13 @@ describe('utils/Common', () => {
     expect(timeAddZero(5)).toEqual('05');
     expect(timeAddZero(15)).toEqual('15');
   });
-  test('should generate error string from error', async () => {
+
+  test('should generate error string from error', () => {
     const error1 = '123';
-    getErrorMessage(error1).then((data) => {
-      expect(data).toBe('123');
-    });
+    expect(getErrorMessage(error1)).toBe('123');
 
     const error2 = new Error('123');
-    getErrorMessage(error2).then((data) => {
-      expect(data).toBe('123');
-    });
+    expect(getErrorMessage(error2)).toBe('123');
 
     const error3: AxiosResponse = {
       data: { msg: '123' },
@@ -110,35 +108,26 @@ describe('utils/Common', () => {
       headers: '' as any,
       config: 'config' as any
     };
-    getErrorMessage(error3).then((data) => {
-      expect(data).toBe('123');
-    });
+    expect(getErrorMessage(error3)).toBe('123');
 
     error3.data = '123';
-    getErrorMessage(error3).then((data) => {
-      expect(data).toBe('123');
-    });
+    expect(getErrorMessage(error3)).toBe('123');
+
     error3.data = ['123'];
-    getErrorMessage(error3).then((data) => {
-      expect(data).toBe('["123"]');
-    });
+    expect(getErrorMessage(error3)).toBe('["123"]');
 
     error3.data = { message: '456' };
-    getErrorMessage(error3).then((data) => {
-      expect(data).toBe('456');
-    });
+    expect(getErrorMessage(error3)).toBe('456');
 
     error3.data = undefined;
-    getErrorMessage(error3).then((data) => {
-      expect(data).toBe('error');
-    });
+    expect(getErrorMessage(error3)).toBe('error');
 
     const error4 = [''];
-    getErrorMessage(error4 as any).then((data) => {
-      expect(data).toBe('未知错误...');
-    });
+    expect(getErrorMessage(error4 as any)).toBe('未知错误...');
+  });
 
-    const error5 = {
+  test('should generate error string from Blob error', async () => {
+    const blobError = {
       data: new Blob([JSON.stringify({ code: 7004, message: 'test Blob' })], {
         type: 'application/json'
       }),
@@ -148,8 +137,13 @@ describe('utils/Common', () => {
       config: 'config' as any
     };
     await act(async () => {
-      const data = await getErrorMessage(error5);
+      const data = await getResponseErrorMessage(blobError);
       expect(data).toBe('test Blob');
+    });
+
+    const stringError = '123';
+    getResponseErrorMessage(stringError).then((error) => {
+      expect(error).toBe('123');
     });
   });
 
