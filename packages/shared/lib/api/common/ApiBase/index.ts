@@ -11,7 +11,7 @@ import EmitterKey from '../../../data/EmitterKey';
 
 class ApiBase {
   public interceptorsResponse(authInvalid: () => void) {
-    const successFn = (res: AxiosResponse<any, any>) => {
+    const successFn = async (res: AxiosResponse<any, any>) => {
       if (res.status === 401) {
         authInvalid();
       } else if (res.headers?.['content-disposition']?.includes('attachment')) {
@@ -32,28 +32,30 @@ class ApiBase {
         (res.status === 200 && res?.data?.code !== ResponseCode.SUCCESS) ||
         res.status !== 200
       ) {
+        const message = await getErrorMessage(res);
         eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
           EmitterKey.OPEN_GLOBAL_NOTIFICATION,
           'error',
           {
             message: `${i18n.t('common.request.noticeFailTitle')}`,
-            description: getErrorMessage(res)
+            description: message
           }
         );
       }
       return res;
     };
 
-    const errorFn = (error: any) => {
+    const errorFn = async (error: any) => {
       if (error?.response?.status === 401) {
         authInvalid();
       } else if (error?.response?.status !== 200) {
+        const message = await getErrorMessage(error.response);
         eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
           EmitterKey.OPEN_GLOBAL_NOTIFICATION,
           'error',
           {
             message: `${i18n.t('common.request.noticeFailTitle')}`,
-            description: getErrorMessage(error.response)
+            description: message
           }
         );
       }

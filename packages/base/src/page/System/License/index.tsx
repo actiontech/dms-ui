@@ -1,5 +1,5 @@
 import { useBoolean, useRequest } from 'ahooks';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
@@ -8,8 +8,8 @@ import { updateSystemModalStatus } from '../../../store/system';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 
-import { Space } from 'antd';
-import { BasicButton } from '@actiontech/shared';
+import { Space, QRCode } from 'antd';
+import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { ModalName } from '../../../data/ModalName';
 import SystemBasicTitle from '../components/BasicTitle';
 import ImportLicense from './Modal/ImportLicense';
@@ -24,6 +24,11 @@ const License = () => {
     { setTrue: startCollect, setFalse: collectFinish }
   ] = useBoolean();
 
+  const [qrCodeVisible, { setTrue: showQRCode, setFalse: hideQRCode }] =
+    useBoolean();
+
+  const [licenseData, setLicenseData] = useState<string>('');
+
   const {
     data,
     loading,
@@ -34,7 +39,23 @@ const License = () => {
 
   const collectLicense = () => {
     startCollect();
-    dms.GetLicenseInfo({ responseType: 'blob' }).finally(() => collectFinish());
+    dms
+      .GetLicenseInfo({ responseType: 'blob' })
+      .then((res) => {
+        if (
+          res.data instanceof Blob &&
+          res.data.type === 'application/octet-stream'
+        ) {
+          const blob = new Blob([res.data], { type: 'application/json' });
+          blob.text().then((text) => {
+            setLicenseData(text);
+            showQRCode();
+          });
+        }
+      })
+      .finally(() => {
+        collectFinish();
+      });
   };
 
   const importLicense = () => {
@@ -61,13 +82,25 @@ const License = () => {
       titleTip={t('dmsSystem.license.productName')}
       titleExtra={
         <Space key="button-wrapper">
-          <BasicButton
-            type="primary"
-            onClick={collectLicense}
-            loading={collectLicenseLoading}
+          <BasicToolTips
+            titleWidth={326}
+            title={<QRCode value={licenseData} size={300} />}
+            open={qrCodeVisible}
+            trigger={['click']}
+            onOpenChange={(open: boolean) => {
+              if (!open) {
+                hideQRCode();
+              }
+            }}
           >
-            {t('dmsSystem.license.collect')}
-          </BasicButton>
+            <BasicButton
+              type="primary"
+              onClick={collectLicense}
+              loading={collectLicenseLoading}
+            >
+              {t('dmsSystem.license.collect')}
+            </BasicButton>
+          </BasicToolTips>
           <BasicButton type="primary" onClick={importLicense}>
             {t('dmsSystem.license.import')}
           </BasicButton>
