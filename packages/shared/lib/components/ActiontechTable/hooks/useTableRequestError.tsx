@@ -33,8 +33,9 @@ const useTableRequestError = () => {
           };
         }
       })
-      .catch((error) => {
-        setRequestErrorMessage(getErrorMessage(error));
+      .catch(async (error) => {
+        const message = await getErrorMessage(error);
+        setRequestErrorMessage(message);
         return error;
       });
   }

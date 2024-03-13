@@ -63,7 +63,9 @@ export type GetErrorMessageParams =
   | string
   | AxiosResponse
   | ISwaggerLoseRequireParamsRes;
-export const getErrorMessage = (error: GetErrorMessageParams): string => {
+export const getErrorMessage = async (
+  error: GetErrorMessageParams
+): Promise<string> => {
   if (typeof error === 'string') {
     return error;
   }
@@ -83,6 +85,13 @@ export const getErrorMessage = (error: GetErrorMessageParams): string => {
 
     if (typeof error.data === 'string') {
       return error.data;
+    }
+
+    if (error.data instanceof Blob && error.data.type === 'application/json') {
+      return error.data.text().then((text) => {
+        const json = jsonParse<{ code: number; message: string }>(text);
+        return json.message;
+      });
     }
 
     return JSON.stringify(error.data);
