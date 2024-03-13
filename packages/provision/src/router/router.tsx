@@ -13,10 +13,6 @@ const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
-const DataMaskRuleOverview = React.lazy(
-  () => import('~/page/DataMaskRuleOverview')
-);
-
 export type RouterConfigItem = RouteObject & {
   label?: string;
   icon?: ReactNode;
@@ -66,15 +62,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         key: 'addTemplate',
         hideInMenu: true,
         element: <EditTemplate />
-      },
-      // #if [dms]
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/data_mask_rule_overview`,
-        key: 'dataMaskRuleOverview',
-        label: 'dataMaskRuleOverview.list.title',
-        element: <DataMaskRuleOverview />
       }
-      // #endif
     ]
   },
 

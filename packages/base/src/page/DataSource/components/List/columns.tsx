@@ -168,15 +168,18 @@ export const DataSourceListActions = (
       };
 };
 
+export enum DataMaskingFilterTypeEnum {
+  'checked' = 'checked',
+  'unchecked' = 'unchecked'
+}
+
 export const filterDataMaskOptions = [
   {
-    value: 'enabled',
-    text: t('common.opened'),
-    label: t('common.opened')
+    value: DataMaskingFilterTypeEnum.checked,
+    label: t('common.enabled')
   },
   {
-    value: 'disabled',
-    text: t('common.notOpen'),
-    label: t('common.notOpen')
+    value: DataMaskingFilterTypeEnum.unchecked,
+    label: t('common.notEnabled')
   }
 ];

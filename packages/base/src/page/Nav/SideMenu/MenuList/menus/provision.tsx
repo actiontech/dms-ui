@@ -2,7 +2,8 @@ import { t } from '../../../../../locale';
 import {
   IconPermissionGroup,
   IconPermissionTemplate,
-  IconAuthList
+  IconAuthList,
+  IconDataMask
 } from '../../../../../icon/sideMenu';
 import Icon from '@ant-design/icons';
 import {
@@ -63,12 +64,9 @@ export const ProvisionMenuItems: GenerateMenuItemsType = ({
       // #if [dms]
       {
         label: t('dmsMenu.dataMaskRuleOverview'),
-        key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/data_mask_rule_overview`,
-        icon: <Icon component={IconAuthList} />,
-        onClick: () =>
-          navigate(
-            `/provision/project/${projectID}/auth/data_mask_rule_overview`
-          )
+        key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data_mask_rule_overview`,
+        icon: <Icon component={IconDataMask} />,
+        onClick: () => navigate(`/project/${projectID}/data_mask_rule_overview`)
       }
       // #endif
     ]

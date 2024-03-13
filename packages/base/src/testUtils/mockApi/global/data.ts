@@ -66,7 +66,8 @@ export const DBServicesList: IListDBService[] = [
         query_timeout_second: 0,
         audit_enabled: false
       }
-    }
+    },
+    is_enable_masking: true
   },
   {
     uid: '1739531942258282496',
@@ -89,6 +90,30 @@ export const DBServicesList: IListDBService[] = [
         query_timeout_second: 0,
         audit_enabled: false
       }
-    }
+    },
+    is_enable_masking: false
+  }
+];
+
+export const maskRuleData = [
+  {
+    effect: '182****8767',
+    id: 1,
+    masking_type: '电话',
+    reference_fields: ['电话', '投诉电话']
+  },
+  {
+    id: 2,
+    masking_type: '护照',
+    reference_fields: ['passport', '护照']
+  },
+  {
+    effect: '182****8780',
+    id: 3,
+    reference_fields: ['SSN']
+  },
+  {
+    effect: '182****8790',
+    id: 4
   }
 ];

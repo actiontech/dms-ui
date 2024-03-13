@@ -170,7 +170,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         // #endif
         needUpdatePassword: false,
         business: props.defaultData.business,
-        password: props.defaultData.password
+        password: props.defaultData.password,
+        // #if [dms]
+        is_enable_masking: props.defaultData.is_enable_masking
+        // #endif
       });
       setDatabaseType(props.defaultData.db_type ?? '');
       setAuditEnabled(
@@ -178,7 +181,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       );
     } else {
       props.form.setFieldsValue({
-        needSqlAuditService: true
+        needSqlAuditService: true,
+        // #if [dms]
+        is_enable_masking: false
+        // #endif
       });
       if (params.length > 0) {
         props.form.setFieldsValue({
@@ -435,7 +441,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                   <Space>
                     {t('dmsDataSource.dataSourceForm.dataMaskConfigTips')}
                     <Link
-                      to={`/provision/project/${projectID}/auth/data_mask_rule_overview`}
+                      to={`/project/${projectID}/data_mask_rule_overview`}
+                      target="_blank"
                     >
                       {t('dmsDataSource.dataSourceForm.checkDataMaskButton')}
                     </Link>
@@ -444,7 +451,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
               </div>
             }
             name="is_enable_masking"
-            valuePropName="unchecked"
+            valuePropName="checked"
             labelCol={{ span: 12 }}
             wrapperCol={{ span: 11, push: 1 }}
           >

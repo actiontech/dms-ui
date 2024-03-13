@@ -25,6 +25,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
+  DataMaskingFilterTypeEnum,
   DataSourceColumns,
   DataSourceListActions,
   DataSourceListParamType,
@@ -70,12 +71,26 @@ const DataSourceList = () => {
   });
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
+
+  const createEnableMaskingParams = (
+    params: DataSourceListParamType,
+    enableMasking: DataMaskingFilterTypeEnum
+  ) => {
+    if (!enableMasking) return;
+    params.is_enable_masking =
+      enableMasking === DataMaskingFilterTypeEnum.checked;
+  };
+
   const {
     data: dataSourceList,
     loading,
     refresh
   } = useRequest(
     () => {
+      createEnableMaskingParams(
+        tableFilterInfo,
+        tableFilterInfo.is_enable_masking as unknown as DataMaskingFilterTypeEnum
+      );
       return handleTableRequestError(
         dms.ListDBServices({
           ...tableFilterInfo,

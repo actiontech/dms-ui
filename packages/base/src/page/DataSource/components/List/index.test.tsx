@@ -185,7 +185,7 @@ describe('page/DataSource/DataSourceList', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(2);
+    expect(filterItems.length).toBe(3);
     expect(baseElement).toMatchSnapshot();
   });
 
