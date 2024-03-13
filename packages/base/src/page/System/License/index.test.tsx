@@ -7,6 +7,9 @@ import system from '../../../testUtils/mockApi/system';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { AxiosResponse } from 'axios';
+import 'blob-polyfill';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -88,16 +91,74 @@ describe('base/System/License', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render snap when click collect btn', async () => {
+  it('click collect btn when request return blob data', async () => {
+    requestGetLicenseInfo.mockClear();
+    requestGetLicenseInfo.mockImplementationOnce(() => {
+      return new Promise<AxiosResponse<Blob>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob(['testBlob'], {
+              type: 'application/octet-stream'
+            })
+          });
+        }, 3000);
+      });
+    });
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
 
     expect(screen.getByText('收集许可信息')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('收集许可信息'));
-    await act(async () => jest.advanceTimersByTime(500));
+    await act(async () => {
+      fireEvent.click(screen.getByText('收集许可信息'));
+      await jest.advanceTimersByTime(3000);
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(requestGetLicenseInfo).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(2600));
+    expect(getBySelector('.ant-qrcode')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => {
+      fireEvent.click(screen.getByText('导入许可信息'));
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('click collect btn when request return error message', async () => {
+    requestGetLicenseInfo.mockClear();
+    requestGetLicenseInfo.mockImplementationOnce(() => {
+      return new Promise<AxiosResponse<Blob>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob(
+              [JSON.stringify({ code: 100, message: 'collect license error' })],
+              {
+                type: 'application/json'
+              }
+            )
+          });
+        }, 3000);
+      });
+    });
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3300));
+
+    expect(screen.getByText('收集许可信息')).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.click(screen.getByText('收集许可信息'));
+      await jest.advanceTimersByTime(3000);
+    });
+    await act(async () => jest.advanceTimersByTime(300));
     expect(requestGetLicenseInfo).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
