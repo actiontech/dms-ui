@@ -3,7 +3,7 @@ import { ResponseCode } from '../../../enum';
 import Download from '../../../utils/Download';
 import i18n from 'i18next';
 import store from '../../../../../base/src/store';
-import { getErrorMessage } from '../../../utils/Common';
+import { getResponseErrorMessage } from '../../../utils/Common';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
 import { ArgsProps } from 'antd/es/notification/interface';
@@ -32,7 +32,7 @@ class ApiBase {
         (res.status === 200 && res?.data?.code !== ResponseCode.SUCCESS) ||
         res.status !== 200
       ) {
-        const message = await getErrorMessage(res);
+        const message = await getResponseErrorMessage(res);
         eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
           EmitterKey.OPEN_GLOBAL_NOTIFICATION,
           'error',
@@ -49,7 +49,7 @@ class ApiBase {
       if (error?.response?.status === 401) {
         authInvalid();
       } else if (error?.response?.status !== 200) {
-        const message = await getErrorMessage(error.response);
+        const message = await getResponseErrorMessage(error.response);
         eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
           EmitterKey.OPEN_GLOBAL_NOTIFICATION,
           'error',
