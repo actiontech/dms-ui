@@ -95,6 +95,25 @@ export const getErrorMessage = (error: GetErrorMessageParams): string => {
   return i18n.t('common.unknownError');
 };
 
+export const getResponseErrorMessage = async (
+  error: GetErrorMessageParams
+): Promise<string> => {
+  if (
+    error instanceof Object &&
+    !(error instanceof Error) &&
+    !('code' in error) &&
+    error.data instanceof Blob &&
+    error.data.type === 'application/json'
+  ) {
+    return error.data.text().then((text) => {
+      const json = jsonParse<{ code: number; message: string }>(text);
+      return json.message;
+    });
+  } else {
+    return getErrorMessage(error);
+  }
+};
+
 export const jsonParse = <T>(str: string, defaultVal: any = {}): T => {
   let val: any;
   try {

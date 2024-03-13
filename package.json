@@ -48,6 +48,7 @@
     "@vitejs/plugin-react": "^2.1.0",
     "babel-jest": "^29.7.0",
     "babel-preset-react-app": "^10.0.1",
+    "blob-polyfill": "^7.0.20220408",
     "comment-parser": "^1.4.1",
     "cross-env": "^7.0.3",
     "enzyme": "^3.11.0",

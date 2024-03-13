@@ -7,10 +7,13 @@ import {
   getCookie,
   timeAddZero,
   getErrorMessage,
+  getResponseErrorMessage,
   getFileFromUploadChangeEvent,
   jsonParse,
   translateTimeForRequest
 } from '../Common';
+import { act } from '@testing-library/react';
+import 'blob-polyfill';
 
 describe('utils/Common', () => {
   test('should check params is a email address', () => {
@@ -90,6 +93,7 @@ describe('utils/Common', () => {
     expect(timeAddZero(5)).toEqual('05');
     expect(timeAddZero(15)).toEqual('15');
   });
+
   test('should generate error string from error', () => {
     const error1 = '123';
     expect(getErrorMessage(error1)).toBe('123');
@@ -120,6 +124,27 @@ describe('utils/Common', () => {
 
     const error4 = [''];
     expect(getErrorMessage(error4 as any)).toBe('未知错误...');
+  });
+
+  test('should generate error string from Blob error', async () => {
+    const blobError = {
+      data: new Blob([JSON.stringify({ code: 7004, message: 'test Blob' })], {
+        type: 'application/json'
+      }),
+      status: 404,
+      statusText: 'error',
+      headers: '' as any,
+      config: 'config' as any
+    };
+    await act(async () => {
+      const data = await getResponseErrorMessage(blobError);
+      expect(data).toBe('test Blob');
+    });
+
+    const stringError = '123';
+    getResponseErrorMessage(stringError).then((error) => {
+      expect(error).toBe('123');
+    });
   });
 
   test('test jsonParse', () => {
