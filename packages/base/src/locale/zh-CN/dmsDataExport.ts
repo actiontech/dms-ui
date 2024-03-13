@@ -109,7 +109,8 @@ export default {
         exportContent: '导出内容',
         exportFileType: '导出格式',
         auditResult: '审核结果',
-        exportResult: '导出结果'
+        exportResult: '导出结果',
+        downloadSQL: '下载SQL语句'
       }
     },
     record: {
