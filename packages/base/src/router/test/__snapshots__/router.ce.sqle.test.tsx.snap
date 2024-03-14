@@ -472,13 +472,6 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
     "path": "account",
   },
   {
-    "element": <div>
-      project
-    </div>,
-    "key": "project",
-    "path": "project",
-  },
-  {
     "children": [
       {
         "element": <div>
@@ -520,65 +513,15 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
         "path": ":projectID/db-services",
       },
       {
-        "children": [
-          {
-            "element": <div>
-              syncDataSourceList
-            </div>,
-            "key": "syncDataSourceList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              syncDataSourceCreate
-            </div>,
-            "key": "syncDataSourceCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              syncDataSourceUpdate
-            </div>,
-            "key": "syncDataSourceUpdate",
-            "path": "update/:taskId",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="syncDataSource"
-        >
-          <Outlet />
+        "element": <div>
+          syncDataSource
         </div>,
         "key": "syncDataSource",
         "path": ":projectID/syncDataSource",
       },
       {
-        "children": [
-          {
-            "element": <div>
-              dataExportManagement
-            </div>,
-            "key": "dataExportManagement",
-            "path": "",
-          },
-          {
-            "element": <div>
-              CreateExportTask
-            </div>,
-            "key": "CreateExportTask",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              ExportTaskDetail
-            </div>,
-            "key": "ExportTaskDetail",
-            "path": ":workflowID",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="dataExportManagement"
-        >
-          <Outlet />
+        "element": <div>
+          dataExportManagement
         </div>,
         "key": "dataExportManagement",
         "path": ":projectID/data/export",
@@ -666,13 +609,6 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
     "role": [
       "admin",
     ],
-  },
-  {
-    "element": <div>
-      ruleKnowledge
-    </div>,
-    "key": "ruleKnowledge",
-    "path": "sqle/rule/knowledge/:ruleName/:dbType",
   },
   {
     "children": [
@@ -876,13 +812,6 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
             "key": "progressDetail",
             "path": "",
           },
-          {
-            "element": <div>
-              progressUpdate
-            </div>,
-            "key": "progressUpdate",
-            "path": "update/:workflowName",
-          },
         ],
         "element": <div
           data-test-parent-id="progress"
@@ -914,13 +843,6 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
             </div>,
             "key": "SQLManagement",
             "path": "",
-          },
-          {
-            "element": <div>
-              SQLManagementAnalyze
-            </div>,
-            "key": "SQLManagementAnalyze",
-            "path": ":sqlManageId/analyze",
           },
         ],
         "element": <div

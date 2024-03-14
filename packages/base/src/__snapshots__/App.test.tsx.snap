@@ -1103,7 +1103,7 @@ exports[`App render App when token is existed 1`] = `
                 >
                   <div
                     class="ant-space-item"
-                    style="padding-bottom: 8px;"
+                    style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
                       class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
@@ -1116,6 +1116,25 @@ exports[`App render App when token is existed 1`] = `
                           class="ant-space-item"
                         >
                           查看列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          新建同步任务
                         </div>
                       </div>
                     </button>
@@ -1469,7 +1488,7 @@ exports[`App render App when token is existed 1`] = `
                         <div
                           class="ant-space-item"
                         >
-                          查看审批流程模板
+                          配置审批流程模板
                         </div>
                       </div>
                     </button>
