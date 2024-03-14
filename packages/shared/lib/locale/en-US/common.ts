@@ -9,7 +9,14 @@ export default {
   status: 'status',
 
   all: '全部',
+  enabled: '已启用',
+  notEnabled: '未启用',
+  disabled: '已禁用',
 
+  opened: '已开启',
+  notOpen: '未开启',
+
+  copied: '复制成功',
   true: 'true',
   false: 'false',
   refresh: 'refresh',
