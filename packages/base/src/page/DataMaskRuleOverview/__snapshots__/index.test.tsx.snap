@@ -10,7 +10,7 @@ exports[`page/DataMaskRuleOverview render empty overview list 1`] = `
         <div
           class="title"
         >
-          脱敏规则概览
+          脱敏规则
         </div>
         <div
           class="extra"
@@ -287,7 +287,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
         <div
           class="title"
         >
-          脱敏规则概览
+          脱敏规则
         </div>
         <div
           class="extra"
@@ -545,27 +545,22 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                             >
                               <div
                                 class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="margin-right: 0px; padding-bottom: 8px;"
+                                  style="margin-right: 8px;"
                                 >
                                   <span
                                     class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                    style="margin-right: 0px;"
                                   >
                                     电话
                                   </span>
                                 </div>
                                 <div
                                   class="ant-space-item"
-                                  style="padding-bottom: 8px;"
                                 >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    投诉电话
-                                  </span>
+                                  ...
                                 </div>
                               </div>
                             </td>
@@ -594,27 +589,22 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                             >
                               <div
                                 class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="margin-right: 0px; padding-bottom: 8px;"
+                                  style="margin-right: 8px;"
                                 >
                                   <span
                                     class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                    style="margin-right: 0px;"
                                   >
                                     passport
                                   </span>
                                 </div>
                                 <div
                                   class="ant-space-item"
-                                  style="padding-bottom: 8px;"
                                 >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    护照
-                                  </span>
+                                  ...
                                 </div>
                               </div>
                             </td>
@@ -639,14 +629,13 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                             >
                               <div
                                 class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="padding-bottom: 8px;"
                                 >
                                   <span
                                     class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                    style="margin-right: 0px;"
                                   >
                                     SSN
                                   </span>
@@ -673,7 +662,9 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                             />
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              -
+                            </td>
                             <td
                               class="ant-table-cell"
                             >

@@ -76,7 +76,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -234,7 +234,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -335,7 +335,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -590,7 +590,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -706,6 +706,44 @@ exports[`test base/page/Home should match snapshot 1`] = `
                 </div>
               </div>
             </div>
+            <div
+              class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="sub-title"
+              >
+                数据脱敏
+              </div>
+              <div
+                class="desc"
+              >
+                开启脱敏，保障敏感数据安全
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+                style="flex-wrap: wrap; margin-bottom: -8px;"
+              >
+                <div
+                  class="ant-space-item"
+                  style="padding-bottom: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                      >
+                        查看脱敏规则
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -767,7 +805,7 @@ exports[`test base/page/Home should match snapshot 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"

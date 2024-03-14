@@ -977,7 +977,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                       class="label-cont-custom"
                     >
                       <div>
-                        数据源是否开启查询脱敏
+                        SQL工作台是否开启脱敏配置
                       </div>
                       <div
                         class="tip-content-box"
@@ -996,6 +996,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                           >
                             <a
                               href="/project/700300/data_mask_rule_overview"
+                              target="_blank"
                             >
                               查看脱敏规则
                             </a>
@@ -2155,7 +2156,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
                       class="label-cont-custom"
                     >
                       <div>
-                        数据源是否开启查询脱敏
+                        SQL工作台是否开启脱敏配置
                       </div>
                       <div
                         class="tip-content-box"
@@ -2174,6 +2175,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
                           >
                             <a
                               href="/project/700300/data_mask_rule_overview"
+                              target="_blank"
                             >
                               查看脱敏规则
                             </a>
@@ -4385,7 +4387,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
                       class="label-cont-custom"
                     >
                       <div>
-                        数据源是否开启查询脱敏
+                        SQL工作台是否开启脱敏配置
                       </div>
                       <div
                         class="tip-content-box"
@@ -4404,6 +4406,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
                           >
                             <a
                               href="/project/700300/data_mask_rule_overview"
+                              target="_blank"
                             >
                               查看脱敏规则
                             </a>

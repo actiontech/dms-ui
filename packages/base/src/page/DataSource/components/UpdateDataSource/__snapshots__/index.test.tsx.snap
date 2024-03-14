@@ -1159,7 +1159,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                           class="label-cont-custom"
                         >
                           <div>
-                            数据源是否开启查询脱敏
+                            SQL工作台是否开启脱敏配置
                           </div>
                           <div
                             class="tip-content-box"
@@ -1178,6 +1178,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                               >
                                 <a
                                   href="/project/700300/data_mask_rule_overview"
+                                  target="_blank"
                                 >
                                   查看脱敏规则
                                 </a>
@@ -2383,7 +2384,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                           class="label-cont-custom"
                         >
                           <div>
-                            数据源是否开启查询脱敏
+                            SQL工作台是否开启脱敏配置
                           </div>
                           <div
                             class="tip-content-box"
@@ -2402,6 +2403,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                               >
                                 <a
                                   href="/project/700300/data_mask_rule_overview"
+                                  target="_blank"
                                 >
                                   查看脱敏规则
                                 </a>
@@ -3471,7 +3473,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                           class="label-cont-custom"
                         >
                           <div>
-                            数据源是否开启查询脱敏
+                            SQL工作台是否开启脱敏配置
                           </div>
                           <div
                             class="tip-content-box"
@@ -3490,6 +3492,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                               >
                                 <a
                                   href="/project/700300/data_mask_rule_overview"
+                                  target="_blank"
                                 >
                                   查看脱敏规则
                                 </a>
@@ -4898,7 +4901,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                           class="label-cont-custom"
                         >
                           <div>
-                            数据源是否开启查询脱敏
+                            SQL工作台是否开启脱敏配置
                           </div>
                           <div
                             class="tip-content-box"
@@ -4917,6 +4920,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                               >
                                 <a
                                   href="/project/700300/data_mask_rule_overview"
+                                  target="_blank"
                                 >
                                   查看脱敏规则
                                 </a>
@@ -5986,7 +5990,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                           class="label-cont-custom"
                         >
                           <div>
-                            数据源是否开启查询脱敏
+                            SQL工作台是否开启脱敏配置
                           </div>
                           <div
                             class="tip-content-box"
@@ -6005,6 +6009,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                               >
                                 <a
                                   href="/project/700300/data_mask_rule_overview"
+                                  target="_blank"
                                 >
                                   查看脱敏规则
                                 </a>

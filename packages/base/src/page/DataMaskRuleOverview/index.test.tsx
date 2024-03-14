@@ -35,7 +35,7 @@ describe('page/DataMaskRuleOverview', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toHaveBeenCalled();
-    expect(screen.getByText('脱敏规则概览')).toBeInTheDocument();
+    expect(screen.getByText('脱敏规则')).toBeInTheDocument();
     expect(screen.getByText('脱敏类型')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });

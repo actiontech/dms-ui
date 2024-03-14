@@ -1030,7 +1030,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
             数据脱敏配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1047,7 +1047,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -1066,6 +1066,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
@@ -1085,8 +1086,8 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="is_enable_masking"
                       role="switch"
                       type="button"
@@ -2206,7 +2207,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
             数据脱敏配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2223,7 +2224,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -2242,6 +2243,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
@@ -2261,8 +2263,8 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="is_enable_masking"
                       role="switch"
                       type="button"
@@ -3349,7 +3351,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
             数据脱敏配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3366,7 +3368,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -3385,6 +3387,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
@@ -3404,8 +3407,8 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="is_enable_masking"
                       role="switch"
                       type="button"
@@ -4408,7 +4411,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
             数据脱敏配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4425,7 +4428,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -4444,6 +4447,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
@@ -4463,8 +4467,8 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="is_enable_masking"
                       role="switch"
                       type="button"
@@ -5467,7 +5471,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
             数据脱敏配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -5484,7 +5488,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -5503,6 +5507,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
@@ -5522,8 +5527,8 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="is_enable_masking"
                       role="switch"
                       type="button"
@@ -6587,7 +6592,7 @@ exports[`page/DataSource/DataSourceForm render form snap 1`] = `
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -6606,6 +6611,7 @@ exports[`page/DataSource/DataSourceForm render form snap 1`] = `
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
@@ -7577,7 +7583,7 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -7596,6 +7602,7 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
@@ -8567,7 +8574,7 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -8586,6 +8593,7 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
@@ -9598,7 +9606,7 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                     class="label-cont-custom"
                   >
                     <div>
-                      数据源是否开启查询脱敏
+                      SQL工作台是否开启脱敏配置
                     </div>
                     <div
                       class="tip-content-box"
@@ -9617,6 +9625,7 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                         >
                           <a
                             href="/project//data_mask_rule_overview"
+                            target="_blank"
                           >
                             查看脱敏规则
                           </a>
