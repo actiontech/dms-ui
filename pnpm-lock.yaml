@@ -173,6 +173,9 @@ importers:
       babel-preset-react-app:
         specifier: ^10.0.1
         version: 10.0.1
+      blob-polyfill:
+        specifier: ^7.0.20220408
+        version: 7.0.20220408
       comment-parser:
         specifier: ^1.4.1
         version: 1.4.1
@@ -4495,6 +4498,10 @@ packages:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
+    dev: true
+
+  /blob-polyfill@7.0.20220408:
+    resolution: {integrity: sha512-oD8Ydw+5lNoqq+en24iuPt1QixdPpe/nUF8azTHnviCZYu9zUC+TwdzIp5orpblJosNlgNbVmmAb//c6d6ImUQ==}
     dev: true
 
   /boolbase@1.0.0:

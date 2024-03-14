@@ -4,7 +4,7 @@ exports[`page/Auth/AuthList render init snap 1`] = `
 <body>
   <div>
     <div
-      class="css-rhjvpr"
+      class="css-11hsaqo"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -250,6 +250,7 @@ exports[`page/Auth/AuthList render init snap 1`] = `
                       <col />
                       <col />
                       <col />
+                      <col />
                       <col
                         style="width: 90px;"
                       />
@@ -274,6 +275,12 @@ exports[`page/Auth/AuthList render init snap 1`] = `
                           scope="col"
                         >
                           目的或用途
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          是否用于SQL工作台查询
                         </th>
                         <th
                           class="ant-table-cell"
@@ -409,13 +416,22 @@ exports[`page/Auth/AuthList render init snap 1`] = `
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="9"
+                          colspan="10"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"

@@ -16,7 +16,8 @@ describe('page/Auth/AddAuth/PreviewModal', () => {
   };
   const paramsData = {
     data_permission_template_uid: 'test-uid',
-    db_account: params_db_account
+    db_account: params_db_account,
+    used_by_sql_workbench: false
   };
 
   const customRender = (params?: any) => {

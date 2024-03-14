@@ -31,12 +31,12 @@ export const ProvisionMenuItems: GenerateMenuItemsType = ({
     onClick: () => navigate(`/provision/project/${projectID}/audit/template`),
     parentKey: 'operateAndAudit'
   },
-  {
-    label: t('dmsMenu.instanceAudit'),
-    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/service`,
-    onClick: () => navigate(`/provision/project/${projectID}/audit/service`),
-    parentKey: 'operateAndAudit'
-  },
+  // {
+  //   label: t('dmsMenu.instanceAudit'),
+  //   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/service`,
+  //   onClick: () => navigate(`/provision/project/${projectID}/audit/service`),
+  //   parentKey: 'operateAndAudit'
+  // },
   {
     order: 10,
     type: 'group',

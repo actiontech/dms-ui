@@ -230,7 +230,7 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
                 导出结果
               </div>
               <div
-                class="ant-row css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
@@ -317,6 +317,34 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
                     </label>
                   </div>
                 </div>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <span
+                      class="custom-icon css-u3jcp4"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.333 6.66667H2.66634V12.6667H13.333V6.66667ZM1.99967 2H13.9997C14.3679 2 14.6663 2.29848 14.6663 2.66667V13.3333C14.6663 13.7015 14.3679 14 13.9997 14H1.99967C1.63149 14 1.33301 13.7015 1.33301 13.3333V2.66667C1.33301 2.29848 1.63149 2 1.99967 2ZM3.33301 4V5.33333H4.66634V4H3.33301ZM5.99967 4V5.33333H7.33301V4H5.99967ZM3.33301 7.33333H5.33301V10.6667H3.33301V7.33333Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span>
+                    下载SQL语句
+                  </span>
+                </button>
               </div>
               <div
                 class="css-1tmg4ni"
@@ -1169,7 +1197,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                 导出结果
               </div>
               <div
-                class="ant-row css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
@@ -1256,6 +1284,34 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                     </label>
                   </div>
                 </div>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <span
+                      class="custom-icon css-u3jcp4"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.333 6.66667H2.66634V12.6667H13.333V6.66667ZM1.99967 2H13.9997C14.3679 2 14.6663 2.29848 14.6663 2.66667V13.3333C14.6663 13.7015 14.3679 14 13.9997 14H1.99967C1.63149 14 1.33301 13.7015 1.33301 13.3333V2.66667C1.33301 2.29848 1.63149 2 1.99967 2ZM3.33301 4V5.33333H4.66634V4H3.33301ZM5.99967 4V5.33333H7.33301V4H5.99967ZM3.33301 7.33333H5.33301V10.6667H3.33301V7.33333Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span>
+                    下载SQL语句
+                  </span>
+                </button>
               </div>
               <div
                 class="css-1tmg4ni"
@@ -3819,7 +3875,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                 导出结果
               </div>
               <div
-                class="ant-row css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
@@ -3906,6 +3962,34 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                     </label>
                   </div>
                 </div>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <span
+                      class="custom-icon css-u3jcp4"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.333 6.66667H2.66634V12.6667H13.333V6.66667ZM1.99967 2H13.9997C14.3679 2 14.6663 2.29848 14.6663 2.66667V13.3333C14.6663 13.7015 14.3679 14 13.9997 14H1.99967C1.63149 14 1.33301 13.7015 1.33301 13.3333V2.66667C1.33301 2.29848 1.63149 2 1.99967 2ZM3.33301 4V5.33333H4.66634V4H3.33301ZM5.99967 4V5.33333H7.33301V4H5.99967ZM3.33301 7.33333H5.33301V10.6667H3.33301V7.33333Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span>
+                    下载SQL语句
+                  </span>
+                </button>
               </div>
               <div
                 class="css-1tmg4ni"
@@ -6469,7 +6553,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                 导出结果
               </div>
               <div
-                class="ant-row css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
@@ -6556,6 +6640,34 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                     </label>
                   </div>
                 </div>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <span
+                      class="custom-icon css-u3jcp4"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.333 6.66667H2.66634V12.6667H13.333V6.66667ZM1.99967 2H13.9997C14.3679 2 14.6663 2.29848 14.6663 2.66667V13.3333C14.6663 13.7015 14.3679 14 13.9997 14H1.99967C1.63149 14 1.33301 13.7015 1.33301 13.3333V2.66667C1.33301 2.29848 1.63149 2 1.99967 2ZM3.33301 4V5.33333H4.66634V4H3.33301ZM5.99967 4V5.33333H7.33301V4H5.99967ZM3.33301 7.33333H5.33301V10.6667H3.33301V7.33333Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span>
+                    下载SQL语句
+                  </span>
+                </button>
               </div>
               <div
                 class="css-1tmg4ni"
@@ -9152,7 +9264,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                 导出结果
               </div>
               <div
-                class="ant-row css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
@@ -9239,6 +9351,34 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                     </label>
                   </div>
                 </div>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <span
+                      class="custom-icon css-u3jcp4"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.333 6.66667H2.66634V12.6667H13.333V6.66667ZM1.99967 2H13.9997C14.3679 2 14.6663 2.29848 14.6663 2.66667V13.3333C14.6663 13.7015 14.3679 14 13.9997 14H1.99967C1.63149 14 1.33301 13.7015 1.33301 13.3333V2.66667C1.33301 2.29848 1.63149 2 1.99967 2ZM3.33301 4V5.33333H4.66634V4H3.33301ZM5.99967 4V5.33333H7.33301V4H5.99967ZM3.33301 7.33333H5.33301V10.6667H3.33301V7.33333Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span>
+                    下载SQL语句
+                  </span>
+                </button>
               </div>
               <div
                 class="css-1tmg4ni"

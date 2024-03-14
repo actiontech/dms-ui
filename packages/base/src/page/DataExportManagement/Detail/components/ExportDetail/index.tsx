@@ -1,17 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowDetailExportResultStyleWrapper } from './style';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicSegmented, EmptyBox } from '@actiontech/shared';
+import { BasicButton, BasicSegmented, EmptyBox } from '@actiontech/shared';
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import OverviewList from './OverviewList';
 import ExportTaskList from './ExportTaskList';
 import DbServiceSegmentedLabel from '../../../Common/DbServiceSegmentedLabel';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IconOrderDownloadSQL } from 'sqle/src/icon/Order';
+import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useBoolean } from 'ahooks';
 
 const OVERVIEW_TAB_KEY = 'OVERVIEW_TAB_KEY';
 
 const ExportDetail: React.FC = () => {
   const { t } = useTranslation();
+  const { projectID } = useCurrentProject();
   const { taskInfos, curTaskID, updateCurTaskID } =
     useDataExportDetailReduxManage();
 
@@ -31,13 +36,29 @@ const ExportDetail: React.FC = () => {
     );
   };
 
+  const [
+    downloadSQLsLoading,
+    { setFalse: finishDownloadSQLs, setTrue: startDownloadSQLs }
+  ] = useBoolean();
+  const downloadSQLs = async () => {
+    startDownloadSQLs();
+    try {
+      await dms.DownloadDataExportTaskSQLs({
+        project_uid: projectID,
+        data_export_task_uid: curTaskID ?? ''
+      });
+    } finally {
+      finishDownloadSQLs();
+    }
+  };
+
   return (
     <WorkflowDetailExportResultStyleWrapper>
       <div className="export-result-title">
         {t('dmsDataExport.detail.exportResult.title')}
       </div>
 
-      <SegmentedRowStyleWrapper>
+      <SegmentedRowStyleWrapper justify="space-between">
         <BasicSegmented
           value={curTaskID ?? OVERVIEW_TAB_KEY}
           onChange={(value) => {
@@ -61,6 +82,15 @@ const ExportDetail: React.FC = () => {
             }))
           ]}
         />
+
+        <BasicButton
+          loading={downloadSQLsLoading}
+          onClick={downloadSQLs}
+          hidden={!curTaskID}
+          icon={<IconOrderDownloadSQL />}
+        >
+          {t('dmsDataExport.detail.exportResult.taskDetail.downloadSQL')}
+        </BasicButton>
       </SegmentedRowStyleWrapper>
 
       <EmptyBox if={!!curTaskID} defaultNode={<OverviewList />}>

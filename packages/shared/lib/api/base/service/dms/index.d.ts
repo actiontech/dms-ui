@@ -331,6 +331,12 @@ export interface IListDataExportTaskSQLsParams {
 export interface IListDataExportTaskSQLsReturn
   extends IListDataExportTaskSQLsReply {}
 
+export interface IDownloadDataExportTaskSQLsParams {
+  project_uid: string;
+
+  data_export_task_uid: string;
+}
+
 export interface IDownloadDataExportTaskParams {
   project_uid: string;
 

@@ -829,25 +829,6 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             </div>
             <div
               class="ant-space-item"
-              style="margin-right: 8px; padding-bottom: 8px;"
-            >
-              <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                type="button"
-              >
-                <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
-                >
-                  <div
-                    class="ant-space-item"
-                  >
-                    数据源操作审计
-                  </div>
-                </div>
-              </button>
-            </div>
-            <div
-              class="ant-space-item"
               style="padding-bottom: 8px;"
             >
               <button
@@ -1152,25 +1133,6 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
             </div>
             <div
               class="ant-space-item"
-              style="margin-right: 8px; padding-bottom: 8px;"
-            >
-              <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                type="button"
-              >
-                <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
-                >
-                  <div
-                    class="ant-space-item"
-                  >
-                    权限模板审计
-                  </div>
-                </div>
-              </button>
-            </div>
-            <div
-              class="ant-space-item"
               style="padding-bottom: 8px;"
             >
               <button
@@ -1183,7 +1145,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
                   <div
                     class="ant-space-item"
                   >
-                    数据源操作审计
+                    权限模板审计
                   </div>
                 </div>
               </button>
