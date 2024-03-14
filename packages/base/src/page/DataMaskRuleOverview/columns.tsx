@@ -1,7 +1,7 @@
-import { Space } from 'antd';
+import { Popover, Space } from 'antd';
 import { t } from '../../locale';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { BasicTag, BasicToolTips } from '@actiontech/shared';
+import { BasicTag } from '@actiontech/shared';
 import { IListMaskingRulesData } from '@actiontech/shared/lib/api/base/service/common';
 
 export const dataMaskRuleOverviewTableColumns =
@@ -21,22 +21,15 @@ export const dataMaskRuleOverviewTableColumns =
         title: () => (
           <>{t('dataMaskRuleOverview.columns.namedFieldReference')}</>
         ),
-        width: 400,
+        width: 240,
         render: (fields?: string[]) => {
-          // return (
-          //   <Space size={[0, 8]} wrap>
-          //     {field?.map((item: string) => (
-          //       <BasicTag key={item}>{item}</BasicTag>
-          //     ))}
-          //   </Space>
-          // );
           const fieldData = fields ?? [];
           if (!fieldData.length) {
             return '-';
           }
           return (
-            <BasicToolTips
-              title={
+            <Popover
+              content={
                 fieldData.length > 1 ? (
                   <Space wrap>
                     {fieldData.map((v) => (
@@ -45,10 +38,16 @@ export const dataMaskRuleOverviewTableColumns =
                   </Space>
                 ) : null
               }
+              overlayStyle={{
+                maxWidth: '480px',
+                paddingTop: 0
+              }}
             >
-              <BasicTag style={{ marginRight: 0 }}>{fieldData[0]}</BasicTag>
-              {fieldData.length > 1 ? '...' : null}
-            </BasicToolTips>
+              <Space>
+                <BasicTag style={{ marginRight: 0 }}>{fieldData[0]}</BasicTag>
+                {fieldData.length > 1 ? '...' : null}
+              </Space>
+            </Popover>
           );
         }
       },

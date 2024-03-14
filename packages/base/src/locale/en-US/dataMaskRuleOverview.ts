@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   list: {
-    title: '脱敏规则概览'
+    title: '脱敏规则'
   },
   columns: {
     number: '序号',

@@ -69,7 +69,7 @@ export default {
     needUpdatePassword: '是否更新密码',
     updatePassword: '更新连接密码',
     dataMaskConfig: '数据脱敏配置',
-    dataMaskConfigLabel: '数据源是否开启查询脱敏',
+    dataMaskConfigLabel: 'SQL工作台是否开启脱敏配置',
     dataMaskConfigTips: '开启后，将对SQL工作台的查询结果进行脱敏',
     checkDataMaskButton: '查看脱敏规则'
   },
