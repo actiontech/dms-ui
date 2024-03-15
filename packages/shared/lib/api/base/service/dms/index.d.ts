@@ -26,6 +26,7 @@ import {
   ITestWeChatConfiguration,
   ITestWeChatConfigurationReply,
   IListDBServiceDriverOptionReply,
+  IListMaskingRulesReply,
   INotification,
   INotificationReply,
   IGetOauth2TipsReply,
@@ -213,6 +214,8 @@ export interface ITestWeChatConfigurationReturn
 
 export interface IListDBServiceDriverOptionReturn
   extends IListDBServiceDriverOptionReply {}
+
+export interface IListMaskingRulesReturn extends IListMaskingRulesReply {}
 
 export interface INotificationParams {
   notification?: INotification;
@@ -497,6 +500,8 @@ export interface IListDBServicesParams {
   project_uid: string;
 
   fuzzy_keyword?: string;
+
+  is_enable_masking?: boolean;
 }
 
 export interface IListDBServicesReturn extends IListDBServiceReply {}

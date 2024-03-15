@@ -264,6 +264,8 @@ export interface IDBService {
 
   host: string;
 
+  is_enable_masking?: boolean;
+
   maintenance_times: IMaintenanceTime[];
 
   name: string;
@@ -768,6 +770,8 @@ export interface IListDBService {
 
   host?: string;
 
+  is_enable_masking?: boolean;
+
   maintenance_times?: IMaintenanceTime[];
 
   name?: string;
@@ -917,6 +921,26 @@ export interface IListDatabaseSourceServicesReply {
   code?: number;
 
   data?: IListDatabaseSourceService[];
+
+  message?: string;
+}
+
+export interface IListMaskingRulesData {
+  description?: string;
+
+  effect?: string;
+
+  id?: number;
+
+  masking_type?: string;
+
+  reference_fields?: string[];
+}
+
+export interface IListMaskingRulesReply {
+  code?: number;
+
+  data?: IListMaskingRulesData[];
 
   message?: string;
 }
@@ -1411,6 +1435,8 @@ export interface IUpdateDBService {
   desc?: string;
 
   host: string;
+
+  is_enable_masking?: boolean;
 
   maintenance_times: IMaintenanceTime[];
 
