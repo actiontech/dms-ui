@@ -926,6 +926,8 @@ export interface IListDatabaseSourceServicesReply {
 }
 
 export interface IListMaskingRulesData {
+  description?: string;
+
   effect?: string;
 
   id?: number;
