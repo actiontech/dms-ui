@@ -68,7 +68,10 @@ const AddDataSource = () => {
         }
       },
       // #endif
-      additional_params: values.asyncParams
+      additional_params: values.asyncParams,
+      // #if [dms]
+      is_enable_masking: values.is_enable_masking
+      // #endif
     };
     return dms
       .AddDBService({ db_service: dbService, project_uid: projectID })

@@ -11,7 +11,8 @@ import {
   getDatabaseManagerSteps,
   getMemberAndPermissionSteps,
   getSqlEditorStep,
-  getDataExportTask
+  getDataExportTask,
+  getDataMask
 } from './base';
 
 import {
@@ -72,7 +73,11 @@ export const AdminUserDevopsSteps: (
       getDataModifyStep({ navigate, projectID }),
       // #endif
 
-      getDataExportTask({ navigate, projectID })
+      getDataExportTask({ navigate, projectID }),
+
+      // #if [dms]
+      getDataMask({ navigate, projectID })
+      // #endif
     ]
   },
 

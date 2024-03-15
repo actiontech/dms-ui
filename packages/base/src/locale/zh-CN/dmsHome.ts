@@ -60,7 +60,10 @@ export default {
           action_1_1: ' 发起提权工单',
           title_2: '数据导出',
           content_2: '发起数据导出工单，审核通过后获取数据集。',
-          action_2_0: '发起导出工单'
+          action_2_0: '发起导出工单',
+          title_3: '数据脱敏',
+          content_3: '开启脱敏，保障敏感数据安全',
+          action_3_0: '查看脱敏规则'
         }
       },
       devopsAndAudit: {

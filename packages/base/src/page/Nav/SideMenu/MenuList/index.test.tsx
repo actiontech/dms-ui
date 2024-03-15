@@ -176,6 +176,13 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     //   18,
     //   `/provision/project/${projectID}/audit/service`
     // );
+
+    fireEvent.click(screen.getByText('脱敏规则'));
+    expect(navigateSpy).toHaveBeenCalledTimes(18);
+    expect(navigateSpy).nthCalledWith(
+      18,
+      `/project/${projectID}/data_mask_rule_overview`
+    );
   });
 
   it('render is not admin snap when has location pathname', async () => {

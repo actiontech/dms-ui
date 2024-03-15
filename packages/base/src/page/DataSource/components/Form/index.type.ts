@@ -25,6 +25,7 @@ export type DataSourceFormField = {
   params?: BackendFormValues;
   asyncParams?: BackendFormRequestParams[];
   needUpdatePassword?: boolean;
+  is_enable_masking?: boolean;
 };
 
 export type IDataSourceFormProps = {
