@@ -43,6 +43,7 @@ import {
   ITestWeChatConfigurationParams,
   ITestWeChatConfigurationReturn,
   IListDBServiceDriverOptionReturn,
+  IListMaskingRulesReturn,
   INotificationParams,
   INotificationReturn,
   IGetOauth2TipsReturn,
@@ -442,6 +443,14 @@ class DmsService extends ServiceBase {
   public ListDBServiceDriverOption(options?: AxiosRequestConfig) {
     return this.get<IListDBServiceDriverOptionReturn>(
       '/v1/dms/db_services/driver_options',
+      undefined,
+      options
+    );
+  }
+
+  public ListMaskingRules(options?: AxiosRequestConfig) {
+    return this.get<IListMaskingRulesReturn>(
+      '/v1/dms/masking/rules',
       undefined,
       options
     );
