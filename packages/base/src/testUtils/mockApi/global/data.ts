@@ -99,6 +99,7 @@ export const maskRuleData = [
   {
     effect: '182****8767',
     id: 1,
+    description: '手机号码',
     masking_type: '电话',
     reference_fields: ['电话', '投诉电话']
   },

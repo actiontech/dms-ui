@@ -3,18 +3,17 @@ import { useRequest } from 'ahooks';
 import { dataMaskRuleOverviewTableColumns } from './columns';
 import { PageHeader } from '@actiontech/shared';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { Spin } from 'antd';
+import { Space } from 'antd';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import {
   ActiontechTable,
   ColumnsSettingProps,
-  TableToolbar
+  TableRefreshButton
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IListMaskingRulesData } from '@actiontech/shared/lib/api/base/service/common';
 import { useMemo } from 'react';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 
-const Operation = () => {
+const DataMaskRuleOverview = () => {
   const { t } = useTranslation();
 
   const { username } = useCurrentUser();
@@ -40,30 +39,28 @@ const Operation = () => {
 
   return (
     <section>
-      <PageHeader title={t('dataMaskRuleOverview.list.title')} />
-      <Spin spinning={getMaskRuleOverviewDataLoading}>
-        <TableToolbar
-          refreshButton={{
-            refresh: refreshMaskRuleOverviewData,
-            disabled: getMaskRuleOverviewDataLoading
-          }}
-          setting={tableSetting}
-        />
-        <ActiontechTable
-          rowKey={(record: IListMaskingRulesData) =>
-            `${record?.effect}-${record?.masking_type}`
-          }
-          setting={tableSetting}
-          dataSource={dataMaskRuleOverviewData?.data}
-          columns={dataMaskRuleOverviewTableColumns()}
-          errorMessage={getErrorMessage(getMaskRuleOverviewError ?? '')}
-          pagination={{
-            total: dataMaskRuleOverviewData?.total ?? 0
-          }}
-        />
-      </Spin>
+      <PageHeader
+        title={
+          <Space>
+            {t('dataMaskRuleOverview.list.title')}
+
+            <TableRefreshButton refresh={refreshMaskRuleOverviewData} />
+          </Space>
+        }
+      />
+      <ActiontechTable
+        rowKey="id"
+        setting={tableSetting}
+        dataSource={dataMaskRuleOverviewData?.data}
+        columns={dataMaskRuleOverviewTableColumns()}
+        errorMessage={getErrorMessage(getMaskRuleOverviewError ?? '')}
+        pagination={{
+          total: dataMaskRuleOverviewData?.total ?? 0
+        }}
+        loading={getMaskRuleOverviewDataLoading}
+      />
     </section>
   );
 };
 
-export default Operation;
+export default DataMaskRuleOverview;

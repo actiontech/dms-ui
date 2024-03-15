@@ -1,7 +1,7 @@
 import { Popover, Space } from 'antd';
 import { t } from '../../locale';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { BasicTag } from '@actiontech/shared';
+import { BasicTag, BasicToolTips } from '@actiontech/shared';
 import { IListMaskingRulesData } from '@actiontech/shared/lib/api/base/service/common';
 
 export const dataMaskRuleOverviewTableColumns =
@@ -17,15 +17,27 @@ export const dataMaskRuleOverviewTableColumns =
         title: () => <>{t('dataMaskRuleOverview.columns.dataMaskType')}</>
       },
       {
+        dataIndex: 'description',
+        title: () => <>{t('dataMaskRuleOverview.columns.description')}</>
+      },
+      {
         dataIndex: 'reference_fields',
-        title: () => (
-          <>{t('dataMaskRuleOverview.columns.namedFieldReference')}</>
-        ),
+        title: () => {
+          return (
+            <BasicToolTips
+              suffixIcon
+              titleWidth={280}
+              title={t('dataMaskRuleOverview.columns.namedFieldReferenceTips')}
+            >
+              {t('dataMaskRuleOverview.columns.namedFieldReference')}
+            </BasicToolTips>
+          );
+        },
         width: 240,
         render: (fields?: string[]) => {
           const fieldData = fields ?? [];
           if (!fieldData.length) {
-            return '-';
+            return 'All';
           }
           return (
             <Popover
