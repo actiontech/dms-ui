@@ -2,7 +2,6 @@ import { cleanup, screen, act } from '@testing-library/react';
 import { superRender } from '../../testUtils/customRender';
 import dms from '../../testUtils/mockApi/global';
 import DataMaskRuleOverview from '.';
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-router-dom', () => {
@@ -19,7 +18,6 @@ describe('page/DataMaskRuleOverview', () => {
   };
 
   beforeEach(() => {
-    mockUseCurrentUser();
     jest.useFakeTimers();
     dms.mockAllApi();
   });

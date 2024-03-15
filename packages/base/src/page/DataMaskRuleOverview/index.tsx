@@ -4,38 +4,25 @@ import { dataMaskRuleOverviewTableColumns } from './columns';
 import { PageHeader } from '@actiontech/shared';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { Space } from 'antd';
-import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import {
   ActiontechTable,
-  ColumnsSettingProps,
-  TableRefreshButton
+  TableRefreshButton,
+  useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useMemo } from 'react';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 const DataMaskRuleOverview = () => {
   const { t } = useTranslation();
 
-  const { username } = useCurrentUser();
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
 
   const {
     data: dataMaskRuleOverviewData,
-    loading: getMaskRuleOverviewDataLoading,
-    refresh: refreshMaskRuleOverviewData,
-    error: getMaskRuleOverviewError
+    loading,
+    refresh
   } = useRequest(() => {
-    return dms.ListMaskingRules().then((res) => {
-      return { data: res.data.data ?? [], total: res.data?.data?.length ?? 0 };
-    });
+    return handleTableRequestError(dms.ListMaskingRules());
   });
-
-  const tableSetting = useMemo<ColumnsSettingProps>(
-    () => ({
-      tableName: 'data_mask_rule_overview',
-      username: username
-    }),
-    [username]
-  );
 
   return (
     <section>
@@ -44,20 +31,19 @@ const DataMaskRuleOverview = () => {
           <Space>
             {t('dataMaskRuleOverview.list.title')}
 
-            <TableRefreshButton refresh={refreshMaskRuleOverviewData} />
+            <TableRefreshButton refresh={refresh} />
           </Space>
         }
       />
       <ActiontechTable
         rowKey="id"
-        setting={tableSetting}
-        dataSource={dataMaskRuleOverviewData?.data}
+        dataSource={dataMaskRuleOverviewData?.list}
         columns={dataMaskRuleOverviewTableColumns()}
-        errorMessage={getErrorMessage(getMaskRuleOverviewError ?? '')}
+        errorMessage={requestErrorMessage}
         pagination={{
           total: dataMaskRuleOverviewData?.total ?? 0
         }}
-        loading={getMaskRuleOverviewDataLoading}
+        loading={loading}
       />
     </section>
   );
