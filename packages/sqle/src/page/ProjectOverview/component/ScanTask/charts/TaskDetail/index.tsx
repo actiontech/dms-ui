@@ -110,8 +110,9 @@ const TaskDetail = (props: ITaskDetail) => {
           fontFamily: 'PlusJakartaSans Medium',
           marginTop: '2px'
         },
-        customHtml: (container, view, datum, data) => {
-          const currentTaskNumber = data?.reduce((r, d) => r + d.value, 0) ?? 0;
+        customHtml: (container, view, datum, filteredData) => {
+          const currentTaskNumber =
+            filteredData?.reduce((prev, next) => prev + next.value, 0) ?? 0;
           taskNumberRef.current = currentTaskNumber;
           return formatParamsBySeparator(currentTaskNumber);
         }

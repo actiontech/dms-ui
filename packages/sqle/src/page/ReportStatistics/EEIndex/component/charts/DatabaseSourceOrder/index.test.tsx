@@ -14,6 +14,36 @@ import DatabaseSourceOrder, {
   renderTooltipCustomContent
 } from '.';
 import { ThemeData, SupportTheme } from '../../../../../../theme';
+import { PieConfig } from '@ant-design/plots';
+
+jest.mock('@ant-design/plots', () => {
+  return {
+    ...jest.requireActual('@ant-design/plots'),
+    Pie: jest.requireActual('@ant-design/plots').PieWithCustomRenderCalled({
+      statistic: {
+        title: {
+          customHtml: (props: PieConfig) => {
+            return [null, null, null, props.data];
+          }
+        }
+      },
+      tooltip: {
+        customContent: (props: PieConfig) => {
+          return [
+            '',
+            [
+              {
+                color: '#6094FC',
+                name: props.data[0]?.name,
+                value: props.data[0]?.value
+              }
+            ]
+          ];
+        }
+      }
+    })
+  };
+});
 
 const themeData = ThemeData[SupportTheme.LIGHT];
 
