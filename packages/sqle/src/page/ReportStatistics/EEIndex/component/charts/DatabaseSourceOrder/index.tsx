@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { AxiosResponse } from 'axios';
 import { Pie, PieConfig, Tooltip } from '@ant-design/plots';
 import i18n from 'i18next';
@@ -16,6 +16,7 @@ import { IInstanceTypePercent } from '@actiontech/shared/lib/api/sqle/service/co
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
@@ -26,7 +27,8 @@ const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
 
 const renderTooltipCustomContent = (
   dataSource: any[],
-  sharedTheme: SharedTheme
+  sharedTheme: SharedTheme,
+  totalNumber: number
 ) => {
   const data = dataSource[0];
   if (!data) return null;
@@ -49,7 +51,7 @@ const renderTooltipCustomContent = (
           label: i18n.t(
             'reportStatistics.databaseSourceOrder.sourceProportionItem'
           ) as string,
-          value: data.value + '%'
+          value: floatToNumberPercent(data.value, totalNumber)
         }
       ]}
     />
@@ -62,7 +64,7 @@ const DatabaseSourceOrder = () => {
   const { sqleTheme, sharedTheme } = useThemeStyleData();
   const { getDomStyles } = useGetConfig(sqleTheme);
   const [dataSource, setData] = useState<PieConfig['data']>([]);
-  const [sourceTotalNum, setSourceTotalNum] = useState(0);
+  const sourceTotalNumberRef = useRef<number>(0);
 
   const onSuccess = (res: AxiosResponse<IGetInstancesTypePercentV1Return>) => {
     setData(
@@ -75,7 +77,6 @@ const DatabaseSourceOrder = () => {
         }
       )
     );
-    setSourceTotalNum(res.data.data?.instance_total_num ?? 0);
   };
 
   const { loading, errorMessage, getApiData } = usePanelCommonRequest(
@@ -131,7 +132,6 @@ const DatabaseSourceOrder = () => {
     // 圆环中心的展示值
     statistic: {
       title: {
-        content: formatParamsBySeparator(sourceTotalNum),
         style: {
           fontSize: '24px',
           lineHeight: '32px',
@@ -141,6 +141,11 @@ const DatabaseSourceOrder = () => {
           fontWeight: 700,
           fontFamily: 'PlusJakartaSans Medium',
           marginTop: '10px'
+        },
+        customHtml: (container, view, datum, data) => {
+          const totalNumber = data?.reduce((r, d) => r + d.value, 0) ?? 0;
+          sourceTotalNumberRef.current = totalNumber;
+          return formatParamsBySeparator(totalNumber);
         }
       },
       content: {
@@ -161,7 +166,11 @@ const DatabaseSourceOrder = () => {
       fields: ['name', 'value'],
       formatter: renderTooltipFormatter,
       customContent: (title: string, dataSource: any[]) =>
-        renderTooltipCustomContent(dataSource, sharedTheme),
+        renderTooltipCustomContent(
+          dataSource,
+          sharedTheme,
+          sourceTotalNumberRef.current
+        ),
       domStyles: getDomStyles(170)
     },
     interactions: [

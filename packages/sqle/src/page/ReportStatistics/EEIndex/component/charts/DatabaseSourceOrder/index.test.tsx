@@ -65,7 +65,7 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
 
   it('render empty tooltip customContent', async () => {
     const { result } = renderHooksWithTheme(() =>
-      renderTooltipCustomContent([], themeData.sharedTheme)
+      renderTooltipCustomContent([], themeData.sharedTheme, 0)
     );
     expect(result.current).toBe(null);
   });
@@ -74,7 +74,8 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     const { result } = renderHooksWithTheme(() =>
       renderTooltipCustomContent(
         [{ color: 'red', name: 'test', value: '12' }],
-        themeData.sharedTheme
+        themeData.sharedTheme,
+        12
       )
     );
     expect(result.current).toMatchSnapshot();

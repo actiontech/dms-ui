@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { Pie, PieConfig } from '@ant-design/plots';
 
@@ -25,7 +25,8 @@ const TaskDetail = (props: ITaskDetail) => {
 
   const { sharedTheme, sqleTheme } = useThemeStyleData();
   const [data, setData] = useState<PieConfig['data']>([]);
-  const [taskNumber, setTaskNumber] = useState(0);
+
+  const taskNumberRef = useRef<number>(0);
 
   useEffect(() => {
     setData(
@@ -38,14 +39,6 @@ const TaskDetail = (props: ITaskDetail) => {
             };
           })
         : []
-    );
-    setTaskNumber(
-      Array.isArray(dataSource?.data)
-        ? dataSource?.data.reduce(
-            (prev, curr) => prev + (curr.audit_plan_count ?? 0),
-            0
-          )
-        : 0
     );
   }, [apiLoading, dataSource]);
 
@@ -107,7 +100,6 @@ const TaskDetail = (props: ITaskDetail) => {
     // 圆环中心的展示值
     statistic: {
       title: {
-        content: formatParamsBySeparator(taskNumber),
         style: {
           fontSize: '24px',
           lineHeight: '32px',
@@ -117,6 +109,11 @@ const TaskDetail = (props: ITaskDetail) => {
           fontWeight: 700,
           fontFamily: 'PlusJakartaSans Medium',
           marginTop: '2px'
+        },
+        customHtml: (container, view, datum, data) => {
+          const currentTaskNumber = data?.reduce((r, d) => r + d.value, 0) ?? 0;
+          taskNumberRef.current = currentTaskNumber;
+          return formatParamsBySeparator(currentTaskNumber);
         }
       },
       content: {
@@ -136,8 +133,13 @@ const TaskDetail = (props: ITaskDetail) => {
     tooltip: {
       fields: ['name', 'value'],
       formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any) =>
-        renderTooltipCustomContent(dataSource, sharedTheme, taskNumber)
+      customContent: (title: string, dataSource: any) => {
+        return renderTooltipCustomContent(
+          dataSource,
+          sharedTheme,
+          taskNumberRef.current
+        );
+      }
     },
     interactions: [
       {
