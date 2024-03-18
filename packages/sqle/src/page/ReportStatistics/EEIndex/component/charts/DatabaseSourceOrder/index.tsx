@@ -142,8 +142,9 @@ const DatabaseSourceOrder = () => {
           fontFamily: 'PlusJakartaSans Medium',
           marginTop: '10px'
         },
-        customHtml: (container, view, datum, data) => {
-          const totalNumber = data?.reduce((r, d) => r + d.value, 0) ?? 0;
+        customHtml: (container, view, datum, filteredData) => {
+          const totalNumber =
+            filteredData?.reduce((prev, next) => prev + next.value, 0) ?? 0;
           sourceTotalNumberRef.current = totalNumber;
           return formatParamsBySeparator(totalNumber);
         }
