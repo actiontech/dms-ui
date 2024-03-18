@@ -175,7 +175,7 @@ describe('page/DataSource/DataSourceForm', () => {
     );
 
     const switchEle = getAllBySelector('.ant-switch', baseElement);
-    expect(switchEle.length).toBe(3);
+    expect(switchEle.length).toBe(4);
     expect(switchEle[1]).toHaveAttribute('aria-checked', 'true');
     fireEvent.click(switchEle[1]);
     await act(async () => jest.advanceTimersByTime(300));

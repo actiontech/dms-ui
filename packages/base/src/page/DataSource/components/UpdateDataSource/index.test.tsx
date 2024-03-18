@@ -92,6 +92,7 @@ describe('page/DataSource/UpdateDataSource', () => {
             name: 'mysql-1',
             db_type: 'mysql',
             host: '1.1.1.1',
+            is_enable_masking: true,
             port: '33061',
             user: 'root',
             password: 'Zgl4cTg5xeIq9c/pkc8Y5A==',
