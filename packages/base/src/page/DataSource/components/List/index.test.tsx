@@ -185,7 +185,7 @@ describe('page/DataSource/DataSourceList', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(2);
+    expect(filterItems.length).toBe(3);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -240,6 +240,40 @@ describe('page/DataSource/DataSourceList', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render table by filter enable masking', async () => {
+    const requestTableList = dms.getListDBServices();
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(6300));
+    expect(requestTableList).toHaveBeenCalled();
+    expect(screen.getByText(`筛选`)).toBeInTheDocument();
+    expect(
+      screen.getByText(`共 ${DBServicesList.length} 条数据`)
+    ).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('筛选'));
+    await act(async () => jest.advanceTimersByTime(300));
+    const filterItems = getAllBySelector(
+      '.actiontech-table-filter-container-namespace .ant-space-item',
+      baseElement
+    );
+    expect(filterItems.length).toBe(3);
+    expect(baseElement).toMatchSnapshot();
+    const enableFilterElement = getBySelector('input', filterItems[2]);
+    fireEvent.mouseDown(enableFilterElement);
+    const selectOptions = getAllBySelector('.ant-select-item-option');
+    await act(async () => {
+      fireEvent.click(selectOptions[0]);
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    expect(requestTableList).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20,
+      project_uid: '700300',
+      fuzzy_keyword: '',
+      is_enable_masking: true
+    });
   });
 
   describe('render table for action btn', () => {
@@ -384,6 +418,24 @@ describe('page/DataSource/DataSourceList', () => {
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestTestConnect).toHaveBeenCalled();
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render table for only have test connect button', async () => {
+      const requestTableList = dms.getListDBServices();
+      const { baseElement } = customRender({
+        bindProjects: [
+          {
+            is_manager: true,
+            project_name: 'default',
+            project_id: projectID,
+            archived: true
+          }
+        ]
+      });
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestTableList).toHaveBeenCalled();
+      expect(screen.getAllByText('测试数据库连通性').length).toBe(2);
       expect(baseElement).toMatchSnapshot();
     });
   });

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance, Popconfirm } from 'antd';
+import { FormInstance, Popconfirm, Space } from 'antd';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -36,6 +36,8 @@ import { useRequest } from 'ahooks';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateToggle';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 // #endif
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
@@ -79,7 +81,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     useAsyncParams();
 
   // #if [sqle]
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const { data: ruleTemplateList = [], loading: ruleTemplateLoading } =
     useRequest(() =>
       rule_template
@@ -168,7 +170,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         // #endif
         needUpdatePassword: false,
         business: props.defaultData.business,
-        password: props.defaultData.password
+        password: props.defaultData.password,
+        // #if [dms]
+        is_enable_masking: props.defaultData.is_enable_masking
+        // #endif
       });
       setDatabaseType(props.defaultData.db_type ?? '');
       setAuditEnabled(
@@ -176,7 +181,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       );
     } else {
       props.form.setFieldsValue({
-        needSqlAuditService: true
+        needSqlAuditService: true,
+        // #if [dms]
+        is_enable_masking: false
+        // #endif
       });
       if (params.length > 0) {
         props.form.setFieldsValue({
@@ -224,6 +232,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   useEffect(() => {
     updateDriverList();
   }, [updateDriverList]);
+
+  const hasBorder = () => {
+    let border = false;
+    // #if [dms]
+    border = true;
+    // #endif
+    return border;
+  };
 
   return (
     <FormStyleWrapper
@@ -318,7 +334,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
       {/* #if [sqle] */}
-      <FormAreaLineStyleWrapper>
+      <FormAreaLineStyleWrapper
+        className={classNames({ 'has-border': hasBorder() })}
+      >
         <FormAreaBlockStyleWrapper>
           <FormItemSubTitle>
             {t('dmsDataSource.dataSourceForm.sqlConfig')}
@@ -401,6 +419,43 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                 );
               })}
             </BasicSelect>
+          </FormItemLabel>
+        </FormAreaBlockStyleWrapper>
+      </FormAreaLineStyleWrapper>
+      {/* #endif */}
+
+      {/* #if [dms] */}
+      <FormAreaLineStyleWrapper>
+        <FormAreaBlockStyleWrapper>
+          <FormItemSubTitle>
+            {t('dmsDataSource.dataSourceForm.dataMaskConfig')}
+          </FormItemSubTitle>
+          <FormItemLabel
+            className="has-label-tip"
+            label={
+              <div className="label-cont-custom">
+                <div>
+                  {t('dmsDataSource.dataSourceForm.dataMaskConfigLabel')}
+                </div>
+                <div className="tip-content-box">
+                  <Space>
+                    {t('dmsDataSource.dataSourceForm.dataMaskConfigTips')}
+                    <Link
+                      to={`/project/${projectID}/data_mask_rule_overview`}
+                      target="_blank"
+                    >
+                      {t('dmsDataSource.dataSourceForm.checkDataMaskButton')}
+                    </Link>
+                  </Space>
+                </div>
+              </div>
+            }
+            name="is_enable_masking"
+            valuePropName="checked"
+            labelCol={{ span: 12 }}
+            wrapperCol={{ span: 11, push: 1 }}
+          >
+            <BasicSwitch />
           </FormItemLabel>
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
