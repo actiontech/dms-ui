@@ -68,7 +68,10 @@ const UpdateDataSource = () => {
         },
         // #endif
         additional_params: values.asyncParams,
-        user: values.user
+        user: values.user,
+        // #if [dms]
+        is_enable_masking: values.is_enable_masking
+        // #endif
       },
       project_uid: projectID
     };

@@ -137,6 +137,7 @@ describe('page/DataSource/AddDataSource', () => {
         db_type: 'mysql',
         desc: undefined,
         host: '1.1.1.1',
+        is_enable_masking: false,
         maintenance_times: [],
         name: 'name-database',
         password: 'root',
@@ -210,6 +211,15 @@ describe('page/DataSource/AddDataSource', () => {
     expect(eventEmitSpy).toHaveBeenCalled();
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Reset_DataSource_Form
+    );
+  });
+
+  it('check enable masking have href', async () => {
+    customRender();
+    expect(screen.getByText('查看脱敏规则')).toBeInTheDocument();
+    expect(screen.getByText('查看脱敏规则')).toHaveAttribute(
+      'href',
+      `/project/${projectID}/data_mask_rule_overview`
     );
   });
 });

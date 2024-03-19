@@ -671,7 +671,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -1011,6 +1011,101 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1779,7 +1874,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -2093,6 +2188,101 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2802,7 +2992,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -3142,6 +3332,101 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3766,7 +4051,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -4107,6 +4392,101 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -4731,7 +5111,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -5072,6 +5452,101 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -5767,7 +6242,7 @@ exports[`page/DataSource/DataSourceForm render form snap 1`] = `
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -6081,6 +6556,101 @@ exports[`page/DataSource/DataSourceForm render form snap 1`] = `
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="false"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -6663,7 +7233,7 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -6977,6 +7547,101 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="false"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -7559,7 +8224,7 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -7873,6 +8538,101 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="false"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -8496,7 +9256,7 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
         </section>
       </section>
       <section
-        class="css-1114g56"
+        class="has-border css-1114g56"
       >
         <section
           class="css-bspaai"
@@ -8810,6 +9570,101 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                         </span>
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section
+        class="css-1114g56"
+      >
+        <section
+          class="css-bspaai"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据脱敏配置
+          </h1>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="is_enable_masking"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      SQL工作台是否开启脱敏配置
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          开启后，将对SQL工作台的查询结果进行脱敏
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <a
+                            href="/project//data_mask_rule_overview"
+                            target="_blank"
+                          >
+                            查看脱敏规则
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <button
+                      aria-checked="false"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      id="is_enable_masking"
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
