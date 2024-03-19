@@ -66,7 +66,8 @@ export const DBServicesList: IListDBService[] = [
         query_timeout_second: 0,
         audit_enabled: false
       }
-    }
+    },
+    is_enable_masking: true
   },
   {
     uid: '1739531942258282496',
@@ -89,6 +90,7 @@ export const DBServicesList: IListDBService[] = [
         query_timeout_second: 0,
         audit_enabled: false
       }
-    }
+    },
+    is_enable_masking: false
   }
 ];
