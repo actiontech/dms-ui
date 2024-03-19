@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash';
+import { cloneDeep, set } from 'lodash';
 
 const MockPlots = (props) => {
   const clonePropsData = cloneDeep(props);
@@ -9,6 +9,30 @@ const MockPlots = (props) => {
 
 const Line = MockPlots;
 const Pie = MockPlots;
+const PieWithCustomRenderCalled = (options) => (props) => {
+  const clonePropsData = cloneDeep(props);
+
+  if (clonePropsData?.statistic?.title?.customHtml) {
+    set(
+      clonePropsData,
+      'statistic.title.customHtml',
+      clonePropsData?.statistic?.title?.customHtml?.(
+        ...(options?.statistic?.title?.customHtml?.(props) ?? [])
+      )
+    );
+  }
+
+  const tooltipCustomContent = clonePropsData?.tooltip?.customContent?.(
+    ...(options?.tooltip?.customContent?.(props) ?? [])
+  );
+
+  const params = JSON.stringify(clonePropsData);
+  if (tooltipCustomContent) {
+    return <div data-custom-params={params}>{tooltipCustomContent}</div>;
+  }
+  return <div data-custom-params={params} />;
+};
+
 const RadialBar = MockPlots;
 const Gauge = MockPlots;
 const Column = MockPlots;
@@ -32,7 +56,8 @@ export {
   Treemap,
   Area,
   Bar,
-  RingProgress
+  RingProgress,
+  PieWithCustomRenderCalled
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export

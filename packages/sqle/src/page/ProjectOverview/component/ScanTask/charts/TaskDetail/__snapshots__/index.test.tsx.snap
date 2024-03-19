@@ -189,8 +189,59 @@ exports[`page/ProjectOverview/TaskDetail render task detail 1`] = `
         class="chart-box"
       >
         <div
-          data-custom-params="{"data":[{"name":"default","value":1,"desc":"自定义"},{"name":"default1","value":2,"desc":"自定义"},{"name":"default2","value":3,"desc":"自定义"}],"autoFit":true,"appendPadding":20,"angleField":"value","colorField":"desc","color":["#7470ED","#6094FC","#3DB5F1","#1ACEDB","#4BCCA6"],"radius":0.9,"innerRadius":0.8,"pieStyle":{"stroke":"#FFFFFF","strokeOpacity":1,"lineWidth":4,"lineCap":"round"},"label":false,"legend":{"layout":"horizontal","position":"bottom","flipPage":true,"maxRow":1,"pageNavigator":{"marker":{"style":{"fill":"#8a8f99","inactiveFill":"#c3c6cd"}}},"reversed":false,"animate":false,"itemSpacing":16,"offsetY":-5,"textAlign":"center","itemName":{"style":{"fill":"#8a8f99","fontSize":12,"fontWeight":500,"fontFamily":"PlusJakartaSans Medium"}},"marker":{"symbol":"circle","style":{"lineWidth":5,"shadowBlur":5,"stroke":"#1ACEDB20","shadowColor":"#4BCCA620","textAlign":"center"}}},"statistic":{"title":{"content":"6","style":{"fontSize":"24px","lineHeight":"32px","height":"32px","color":"#292C33","fontWeight":700,"fontFamily":"PlusJakartaSans Medium","marginTop":"2px"}},"content":{"style":{"fontSize":"12px","lineHeight":"20px","height":"20px","color":"#8a8f99","fontWeight":400,"marginTop":"4px"},"content":"数据源总计"}},"tooltip":{"fields":["name","value"]},"interactions":[{"type":"element-selected"},{"type":"element-active"}],"state":{"active":{"style":{"lineWidth":5,"stroke":"#FFFFFF","offsetY":4}}},"theme":"light"}"
-        />
+          data-custom-params="{"data":[{"name":"default","value":1,"desc":"自定义"},{"name":"default1","value":2,"desc":"自定义"},{"name":"default2","value":3,"desc":"自定义"}],"autoFit":true,"appendPadding":20,"angleField":"value","colorField":"desc","color":["#7470ED","#6094FC","#3DB5F1","#1ACEDB","#4BCCA6"],"radius":0.9,"innerRadius":0.8,"pieStyle":{"stroke":"#FFFFFF","strokeOpacity":1,"lineWidth":4,"lineCap":"round"},"label":false,"legend":{"layout":"horizontal","position":"bottom","flipPage":true,"maxRow":1,"pageNavigator":{"marker":{"style":{"fill":"#8a8f99","inactiveFill":"#c3c6cd"}}},"reversed":false,"animate":false,"itemSpacing":16,"offsetY":-5,"textAlign":"center","itemName":{"style":{"fill":"#8a8f99","fontSize":12,"fontWeight":500,"fontFamily":"PlusJakartaSans Medium"}},"marker":{"symbol":"circle","style":{"lineWidth":5,"shadowBlur":5,"stroke":"#1ACEDB20","shadowColor":"#4BCCA620","textAlign":"center"}}},"statistic":{"title":{"style":{"fontSize":"24px","lineHeight":"32px","height":"32px","color":"#292C33","fontWeight":700,"fontFamily":"PlusJakartaSans Medium","marginTop":"2px"},"customHtml":"6"},"content":{"style":{"fontSize":"12px","lineHeight":"20px","height":"20px","color":"#8a8f99","fontWeight":400,"marginTop":"4px"},"content":"数据源总计"}},"tooltip":{"fields":["name","value"]},"interactions":[{"type":"element-selected"},{"type":"element-active"}],"state":{"active":{"style":{"lineWidth":5,"stroke":"#FFFFFF","offsetY":4}}},"theme":"light"}"
+        >
+          <div
+            class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
+          >
+            <header
+              class="tooltip-title"
+              style="color: rgb(138, 143, 153);"
+            >
+              <span
+                class="dot"
+                style="background: rgb(96, 148, 252);"
+              />
+              default
+            </header>
+            <dl
+              class="tooltip-list"
+            >
+              <dt
+                class="tooltip-name"
+              >
+                <span
+                  class="dot"
+                  hidden=""
+                />
+                数据源数量
+              </dt>
+              <dd
+                class="tooltip-value"
+              >
+                1
+              </dd>
+            </dl>
+            <dl
+              class="tooltip-list"
+            >
+              <dt
+                class="tooltip-name"
+              >
+                <span
+                  class="dot"
+                  hidden=""
+                />
+                数据源占比
+              </dt>
+              <dd
+                class="tooltip-value"
+              >
+                16.67%
+              </dd>
+            </dl>
+          </div>
+        </div>
       </div>
     </div>
   </div>
