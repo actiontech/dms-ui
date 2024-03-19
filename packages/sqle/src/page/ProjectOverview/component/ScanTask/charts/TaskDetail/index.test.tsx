@@ -4,6 +4,36 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { statisticAuditPlanData } from '../../../../../../testUtils/mockApi/projectOverview/data';
+import { PieConfig } from '@ant-design/plots';
+
+jest.mock('@ant-design/plots', () => {
+  return {
+    ...jest.requireActual('@ant-design/plots'),
+    Pie: jest.requireActual('@ant-design/plots').PieWithCustomRenderCalled({
+      statistic: {
+        title: {
+          customHtml: (props: PieConfig) => {
+            return [null, null, null, props.data];
+          }
+        }
+      },
+      tooltip: {
+        customContent: (props: PieConfig) => {
+          return [
+            '',
+            [
+              {
+                color: '#6094FC',
+                name: props.data[0]?.name,
+                value: props.data[0]?.value
+              }
+            ]
+          ];
+        }
+      }
+    })
+  };
+});
 
 describe('page/ProjectOverview/TaskDetail', () => {
   const mockRefresh = jest.fn();
