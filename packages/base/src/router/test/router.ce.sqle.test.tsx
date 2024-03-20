@@ -203,6 +203,16 @@ describe('base/router-sqle-ce', () => {
         });
       });
 
+      it('render route pluginAuditList', async () => {
+        const { baseElement } = customRender([
+          `/sqle/project/${projectID}/plugin-audit`
+        ]);
+
+        await act(async () => jest.advanceTimersByTime(300));
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('pluginAuditList')).toBeInTheDocument();
+      });
+
       it('render route dashboard', async () => {
         const { baseElement } = customRender([
           `/sqle/project/${projectID}/dashboard`

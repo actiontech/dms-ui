@@ -11,5 +11,6 @@ export default {
   workflow: 'Workflow',
   order: 'Order List',
   orderDetail: 'Order Detail',
-  whitelist: 'Whitelist'
+  whitelist: 'Whitelist',
+  pluginAudit: 'IDE插件审核'
 };
