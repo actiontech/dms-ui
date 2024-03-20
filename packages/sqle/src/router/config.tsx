@@ -123,6 +123,8 @@ const SQLManagement = React.lazy(
 
 const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
 
+const PluginAudit = React.lazy(() => import('../page/PluginAudit'));
+
 const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
@@ -362,6 +364,18 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'SQLManagementAnalyze'
       }
       // #endif
+    ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/plugin-audit`,
+    label: 'menu.pluginAudit',
+    key: 'pluginAudit',
+    children: [
+      {
+        index: true,
+        element: <PluginAudit />,
+        key: 'pluginAuditList'
+      }
     ]
   },
   {
