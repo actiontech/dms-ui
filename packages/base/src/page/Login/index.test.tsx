@@ -160,7 +160,7 @@ describe('page/Login-ee', () => {
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useLocationMock.mockReturnValue({
         pathname: '/',
-        search: '?target=/cloudBeaver',
+        search: '?target=/cloud-beaver',
         hash: '',
         state: null
       });
@@ -201,7 +201,7 @@ describe('page/Login-ee', () => {
       });
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith(
-        `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
+        `/cloud-beaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
       );
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
       expect(LocalStorageWrapperSet).toHaveBeenCalledWith(

@@ -67,6 +67,6 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     expect(getAllBySelector('.content-item-text').length).toBe(5);
     fireEvent.click(screen.getByText('用户中心'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(navigateSpy).toHaveBeenCalledWith('/userCenter');
+    expect(navigateSpy).toHaveBeenCalledWith('/user-center');
   });
 });

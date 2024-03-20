@@ -49,7 +49,7 @@ export const getDatabaseManagerSteps: (
             label: t(
               'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_0'
             ),
-            action: () => navigate(`/project/${projectID}/syncDataSource`)
+            action: () => navigate(`/project/${projectID}/sync-data-source`)
           },
           // #if [ee]
           {
@@ -58,7 +58,7 @@ export const getDatabaseManagerSteps: (
               'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_1'
             ),
             action: () =>
-              navigate(`/project/${projectID}/syncDataSource/create`)
+              navigate(`/project/${projectID}/sync-data-source/create`)
           }
           // #endif
         ]
@@ -112,7 +112,7 @@ export const getSqlEditorStep: (
         label: t(
           'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_0_0'
         ),
-        action: () => navigate('/cloudBeaver')
+        action: () => navigate('/cloud-beaver')
       }
     ]
   };

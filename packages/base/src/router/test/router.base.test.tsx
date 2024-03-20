@@ -40,8 +40,8 @@ describe('base/router-base-ee', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('render router userCenter', async () => {
-      const { baseElement } = customRender(['/userCenter']);
+    it('render router user-center', async () => {
+      const { baseElement } = customRender(['/user-center']);
 
       expect(screen.getByText('userCenter')).toBeInTheDocument();
       expect(baseElement).toMatchSnapshot();
@@ -54,8 +54,8 @@ describe('base/router-base-ee', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
-    it('render router cloudBeaver', async () => {
-      const { baseElement } = customRender(['/cloudBeaver']);
+    it('render router cloud-beaver', async () => {
+      const { baseElement } = customRender(['/cloud-beaver']);
 
       expect(screen.getByText('cloudBeaver')).toBeInTheDocument();
       expect(baseElement).toMatchSnapshot();
@@ -119,7 +119,7 @@ describe('base/router-base-ee', () => {
     describe('render route syncDataSource', () => {
       it('render route syncDataSourceList', async () => {
         const { baseElement } = customRender([
-          `/project/${projectID}/syncDataSource`
+          `/project/${projectID}/sync-data-source`
         ]);
 
         await act(async () => jest.advanceTimersByTime(0));
@@ -128,7 +128,7 @@ describe('base/router-base-ee', () => {
 
       it('render route syncDataSourceList', async () => {
         const { baseElement } = customRender([
-          `/project/${projectID}/syncDataSource/create`
+          `/project/${projectID}/sync-data-source/create`
         ]);
 
         await act(async () => jest.advanceTimersByTime(0));
@@ -138,7 +138,7 @@ describe('base/router-base-ee', () => {
 
       it('render route syncDataSourceList', async () => {
         const { baseElement } = customRender([
-          `/project/${projectID}/syncDataSource/update/taskId`
+          `/project/${projectID}/sync-data-source/update/taskId`
         ]);
 
         await act(async () => jest.advanceTimersByTime(0));

@@ -44,7 +44,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     element: <Home />
   },
   {
-    path: 'userCenter',
+    path: 'user-center',
     key: 'userCenter',
     element: <UserCenter />,
     role: [SystemRole.admin]
@@ -56,7 +56,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     role: [SystemRole.admin]
   },
   {
-    path: 'cloudBeaver',
+    path: 'cloud-beaver',
     key: 'cloudBeaver',
     element: <CloudBeaver />
   },
@@ -106,7 +106,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         ]
       },
       {
-        path: `${PROJECT_ROUTER_PARAM}/syncDataSource`,
+        path: `${PROJECT_ROUTER_PARAM}/sync-data-source`,
         label: 'menu.syncDataSource',
         key: 'syncDataSource',
         element: <SyncDataSource />,
