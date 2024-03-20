@@ -367,7 +367,7 @@ exports[`App render App when token is existed 1`] = `
             >
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-cloudBeaver"
+                data-menu-id="rc-menu-uuid-test-cloud-beaver"
                 role="menuitem"
                 style="padding-left: 24px;"
                 tabindex="-1"
@@ -2148,7 +2148,7 @@ exports[`App render App when user role is not admin 1`] = `
             >
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-cloudBeaver"
+                data-menu-id="rc-menu-uuid-test-cloud-beaver"
                 role="menuitem"
                 style="padding-left: 24px;"
                 tabindex="-1"

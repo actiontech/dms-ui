@@ -66,8 +66,10 @@ const Login = () => {
           const params = new URLSearchParams(location.search);
           const target = params.get(DMS_REDIRECT_KEY_PARAMS_NAME);
           if (target) {
-            if (target === '/cloudBeaver') {
-              navigate(`/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+            if (target === '/cloud-beaver') {
+              navigate(
+                `/cloud-beaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
+              );
             } else {
               navigate(target);
             }
