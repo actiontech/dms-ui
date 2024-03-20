@@ -30,5 +30,6 @@ export default {
   syncDataSource: '外部数据源同步',
   operationRecord: 'SQLE操作记录',
   sqlManagement: 'SQL管控',
-  sqlAudit: 'SQL审核'
+  sqlAudit: 'SQL审核',
+  pluginAudit: 'IDE插件审核'
 };
