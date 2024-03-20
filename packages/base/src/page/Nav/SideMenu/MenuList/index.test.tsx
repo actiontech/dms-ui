@@ -54,7 +54,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(2);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       2,
-      `/project/${projectID}/syncDataSource`
+      `/project/${projectID}/sync-data-source`
     );
 
     fireEvent.click(screen.getByText('成员与权限'));
@@ -69,7 +69,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
 
     fireEvent.click(screen.getByText('SQL工作台'));
     expect(navigateSpy).toHaveBeenCalledTimes(4);
-    expect(navigateSpy).toHaveBeenNthCalledWith(4, `/cloudBeaver`);
+    expect(navigateSpy).toHaveBeenNthCalledWith(4, `/cloud-beaver`);
 
     fireEvent.click(screen.getByText('数据导出'));
     expect(navigateSpy).toHaveBeenCalledTimes(5);
