@@ -62,7 +62,7 @@ const GlobalSetting: React.FC<{
             <div className="content">
               <div
                 className="content-item"
-                onClick={() => handleClickItem('/userCenter')}
+                onClick={() => handleClickItem('/user-center')}
               >
                 <IconUserCenter />
                 <span className="content-item-text">

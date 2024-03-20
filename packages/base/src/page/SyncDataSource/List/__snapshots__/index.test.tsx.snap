@@ -464,7 +464,7 @@ exports[`page/SyncDataSource/SyncTaskList render list column data for table 1`] 
         class="extra"
       >
         <a
-          href="/project/700300/syncDataSource/create"
+          href="/project/700300/sync-data-source/create"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -950,7 +950,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 1`] = `
         class="extra"
       >
         <a
-          href="/project/700300/syncDataSource/create"
+          href="/project/700300/sync-data-source/create"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -1255,7 +1255,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
         class="extra"
       >
         <a
-          href="/project/700300/syncDataSource/create"
+          href="/project/700300/sync-data-source/create"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -1753,7 +1753,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap when no projectID 1`]
         class="extra"
       >
         <a
-          href="/project//syncDataSource/create"
+          href="/project//sync-data-source/create"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -2034,7 +2034,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap when no projectID 2`]
         class="extra"
       >
         <a
-          href="/project//syncDataSource/create"
+          href="/project//sync-data-source/create"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"

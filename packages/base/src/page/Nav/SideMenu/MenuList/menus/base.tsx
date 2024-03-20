@@ -32,8 +32,8 @@ export const BaseMenuItems: GenerateMenuItemsType = ({
         },
         {
           label: t('dmsMenu.externalInstance'),
-          key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/syncDataSource`,
-          onClick: () => navigate(`/project/${projectID}/syncDataSource`)
+          key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sync-data-source`,
+          onClick: () => navigate(`/project/${projectID}/sync-data-source`)
         }
       ]
     },
@@ -52,8 +52,8 @@ export const BaseMenuItems: GenerateMenuItemsType = ({
         {
           label: t('dmsMenu.SQLQuery'),
           icon: <Icon component={IconSQLQuery} />,
-          key: `cloudBeaver`,
-          onClick: () => navigate(`/cloudBeaver`)
+          key: `cloud-beaver`,
+          onClick: () => navigate(`/cloud-beaver`)
         },
         {
           label: t('dmsMenu.dataExportManagement'),

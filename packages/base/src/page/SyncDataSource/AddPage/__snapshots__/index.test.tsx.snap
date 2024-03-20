@@ -13,7 +13,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -475,7 +475,7 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
               type="button"
             >
               <a
-                href="/project/700300/syncDataSource"
+                href="/project/700300/sync-data-source"
               >
                 到同步任务列表查看看看添加的同步任务
               </a>
@@ -501,7 +501,7 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1948,7 +1948,7 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"

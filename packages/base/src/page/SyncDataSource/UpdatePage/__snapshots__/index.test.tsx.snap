@@ -13,7 +13,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1484,7 +1484,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1654,7 +1654,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -3125,7 +3125,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -4601,7 +4601,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -6072,7 +6072,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -6242,7 +6242,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
           class="title"
         >
           <a
-            href="/project/700300/syncDataSource"
+            href="/project/700300/sync-data-source"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"

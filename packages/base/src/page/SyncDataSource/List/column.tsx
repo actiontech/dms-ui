@@ -34,7 +34,9 @@ export const SyncTaskListActions: (params: {
         return {
           onClick: () =>
             navigate(
-              `/project/${projectID}/syncDataSource/update/${record?.uid ?? ''}`
+              `/project/${projectID}/sync-data-source/update/${
+                record?.uid ?? ''
+              }`
             )
         };
       }
