@@ -27,6 +27,7 @@ export { default as BasicDatePicker } from './components/BasicDatePicker';
 export { default as AvatarCom } from './components/AvatarCom';
 export { default as DatabaseTypeLogo } from './components/DatabaseTypeLogo';
 export { default as BasicTypographyEllipsis } from './components/BasicTypographyEllipsis';
+export { default as TokenCom } from './components/TokenCom';
 
 export { default as Copy } from './utils/Copy';
 export { default as Download } from './utils/Download';
