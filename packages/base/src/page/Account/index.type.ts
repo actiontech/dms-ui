@@ -12,3 +12,20 @@ export type UpdateComponentCommonProps = {
   messageApi: MessageInstance;
   updateUserInfo: () => void;
 };
+
+export type GenerateTokenModalProps = {
+  open: boolean;
+  onClose: () => void;
+  refresh: () => void;
+};
+
+export type GenerateTokenFields = {
+  expirationDays: number;
+};
+
+export type AccessTokenProps = {
+  token?: string;
+  expiration?: string;
+  hasExpired?: boolean;
+  updateUserInfo: () => void;
+};
