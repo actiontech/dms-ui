@@ -3,9 +3,10 @@ import { GenerateTokenFields, GenerateTokenModalProps } from '../../index.type';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { AccessTokenModalFormItemLabelStyleWrapper } from './style';
 
 const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
   open,
@@ -63,16 +64,14 @@ const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
       }
     >
       <Form form={form} layout="vertical">
-        <FormItemLabel
+        <AccessTokenModalFormItemLabelStyleWrapper
           name="expirationDays"
-          className="has-label-tip"
+          className="has-label-tip has-required-style"
           label={
-            <div className="label-cont-custom">
-              <div>{t('dmsAccount.accessToken.generateToken.expiration')}</div>
-              <div className="tip-content-box">
-                {t('dmsAccount.accessToken.generateToken.generateTips')}
-              </div>
-            </div>
+            <CustomLabelContent
+              title={t('dmsAccount.accessToken.generateToken.expiration')}
+              tips={t('dmsAccount.accessToken.generateToken.generateTips')}
+            />
           }
           rules={[
             {
@@ -100,7 +99,7 @@ const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
               )
             })}
           />
-        </FormItemLabel>
+        </AccessTokenModalFormItemLabelStyleWrapper>
       </Form>
     </BasicDrawer>
   );
