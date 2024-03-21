@@ -20,6 +20,20 @@ export default {
     newPasswordConfirm: '确认新密码'
   },
 
+  accessToken: {
+    label: '访问令牌',
+    desc: '您可以在IDE工具上使用访问令牌，进行用户认证',
+    expiration: '过期时间',
+    hasExpired: '已过期',
+    generateToken: {
+      buttonText: '生成Token',
+      title: '生成访问令牌',
+      expiration: '设置访问令牌过期时间（天）',
+      generateTips: '新生成的访问令牌将会覆盖旧有的令牌',
+      expirationPlaceholder: '过期时间'
+    }
+  },
+
   updateEmailSuccess: '邮箱地址更新成功',
   updateWechatSuccess: '微信号更新成功',
   updatePhoneSuccess: '手机号更新成功',

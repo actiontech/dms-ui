@@ -33,8 +33,8 @@ const ConfigItem: React.FC<ConfigItemProps> = ({
 
   return (
     <ConfigItemStyledWrapper
-      justify={'space-between'}
-      align={'middle'}
+      justify="space-between"
+      align="middle"
       onMouseEnter={onMouseEnterItem}
       onMouseLeave={onMouseLeaveItem}
     >

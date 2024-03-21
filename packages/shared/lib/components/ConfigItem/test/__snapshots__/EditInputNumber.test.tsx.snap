@@ -10,7 +10,7 @@ exports[`lib/ConfigItem-EditInputNumber render input enter key 1`] = `
         class="ant-spin-container"
       >
         <div
-          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-cr6b1y ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
+          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-1fd5hnt ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
         >
           <div
             class="ant-input-number-wrapper ant-input-number-group css-dev-only-do-not-override-ezmdel"
@@ -137,7 +137,7 @@ exports[`lib/ConfigItem-EditInputNumber render input for error 1`] = `
         class="ant-spin-container"
       >
         <div
-          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-cr6b1y ant-input-number-group-wrapper-lg ant-input-number-group-wrapper-status-error css-dev-only-do-not-override-ezmdel"
+          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-1fd5hnt ant-input-number-group-wrapper-lg ant-input-number-group-wrapper-status-error css-dev-only-do-not-override-ezmdel"
         >
           <div
             class="ant-input-number-wrapper ant-input-number-group css-dev-only-do-not-override-ezmdel"
@@ -264,7 +264,7 @@ exports[`lib/ConfigItem-EditInputNumber render input val change 1`] = `
         class="ant-spin-container"
       >
         <div
-          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-cr6b1y ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
+          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-1fd5hnt ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
         >
           <div
             class="ant-input-number-wrapper ant-input-number-group css-dev-only-do-not-override-ezmdel"
@@ -391,7 +391,7 @@ exports[`lib/ConfigItem-EditInputNumber render input val change 2`] = `
         class="ant-spin-container"
       >
         <div
-          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-cr6b1y ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
+          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-1fd5hnt ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
         >
           <div
             class="ant-input-number-wrapper ant-input-number-group css-dev-only-do-not-override-ezmdel"
@@ -518,7 +518,7 @@ exports[`lib/ConfigItem-EditInputNumber render input val change and click select
         class="ant-spin-container"
       >
         <div
-          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-cr6b1y ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
+          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-1fd5hnt ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
         >
           <div
             class="ant-input-number-wrapper ant-input-number-group css-dev-only-do-not-override-ezmdel"
@@ -669,7 +669,7 @@ exports[`lib/ConfigItem-EditInputNumber render loading is true 1`] = `
         class="ant-spin-container ant-spin-blur"
       >
         <div
-          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-cr6b1y ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
+          class="ant-input-number-group-wrapper basic-inputNumber-wrapper css-1fd5hnt ant-input-number-group-wrapper-lg css-dev-only-do-not-override-ezmdel"
         >
           <div
             class="ant-input-number-wrapper ant-input-number-group css-dev-only-do-not-override-ezmdel"
