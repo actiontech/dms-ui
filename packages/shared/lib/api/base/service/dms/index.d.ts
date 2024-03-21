@@ -86,6 +86,7 @@ import {
   IUpdateCurrentUser,
   IUser,
   IAddUserReply,
+  IGenAccessTokenReply,
   IGetUserReply,
   IUpdateUser,
   IUserOpPermission,
@@ -782,6 +783,12 @@ export interface IAddUserParams {
 }
 
 export interface IAddUserReturn extends IAddUserReply {}
+
+export interface IGenAccessTokenParams {
+  expiration_days?: string;
+}
+
+export interface IGenAccessTokenReturn extends IGenAccessTokenReply {}
 
 export interface IGetUserParams {
   user_uid: string;

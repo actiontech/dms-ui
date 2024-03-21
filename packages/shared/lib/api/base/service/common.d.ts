@@ -19,6 +19,14 @@ import {
   WorkflowStepStateEnum
 } from './common.enum';
 
+export interface IAccessTokenInfo {
+  access_token?: string;
+
+  is_expired?: boolean;
+
+  token_expired_timestamp?: string;
+}
+
 export interface IAddDBServicePreCheckReply {
   code?: number;
 
@@ -371,6 +379,14 @@ export interface IFeishuConfigurationResData {
   is_feishu_notification_enabled?: boolean;
 }
 
+export interface IGenAccessTokenReply {
+  code?: number;
+
+  data?: IAccessTokenInfo;
+
+  message?: string;
+}
+
 export interface IGenericResp {
   code?: number;
 
@@ -592,6 +608,8 @@ export interface IGetSQLQueryConfigurationReply {
 }
 
 export interface IGetUser {
+  access_token_info?: IAccessTokenInfo;
+
   authentication_type?: GetUserAuthenticationTypeEnum;
 
   email?: string;
