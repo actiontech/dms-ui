@@ -271,7 +271,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row clear-padding-top css-qaauer css-dev-only-do-not-override-txh9fw"
+              class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="label-content"
@@ -665,7 +665,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
               </div>
             </div>
             <div
-              class="ant-row clear-padding-top css-qaauer css-dev-only-do-not-override-txh9fw"
+              class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="label-content"
@@ -1407,7 +1407,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
               </div>
             </div>
             <div
-              class="ant-row clear-padding-top css-qaauer css-dev-only-do-not-override-txh9fw"
+              class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="label-content"
