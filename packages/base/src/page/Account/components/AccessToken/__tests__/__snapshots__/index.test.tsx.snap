@@ -3,7 +3,7 @@
 exports[`test AccessToken should match snapshot 1`] = `
 <div>
   <div
-    class="ant-row  css-qaauer css-dev-only-do-not-override-txh9fw"
+    class="ant-row  css-nsnt4h css-dev-only-do-not-override-txh9fw"
   >
     <div
       class="label-content"
@@ -38,7 +38,7 @@ exports[`test AccessToken should match snapshot 1`] = `
 exports[`test AccessToken should match snapshot 2`] = `
 <div>
   <div
-    class="ant-row  css-qaauer css-dev-only-do-not-override-txh9fw"
+    class="ant-row  css-nsnt4h css-dev-only-do-not-override-txh9fw"
   >
     <div
       class="label-content"
@@ -73,7 +73,7 @@ exports[`test AccessToken should match snapshot 2`] = `
 exports[`test AccessToken should match snapshot 3`] = `
 <div>
   <div
-    class="ant-row clear-padding-top css-qaauer css-dev-only-do-not-override-txh9fw"
+    class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
   >
     <div
       class="label-content"
@@ -194,7 +194,7 @@ exports[`test AccessToken should match snapshot 3`] = `
 exports[`test AccessToken should match snapshot 4`] = `
 <div>
   <div
-    class="ant-row clear-padding-top css-qaauer css-dev-only-do-not-override-txh9fw"
+    class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
   >
     <div
       class="label-content"
@@ -315,7 +315,7 @@ exports[`test AccessToken should match snapshot 4`] = `
 exports[`test AccessToken should match snapshot 5`] = `
 <div>
   <div
-    class="ant-row clear-padding-top css-qaauer css-dev-only-do-not-override-txh9fw"
+    class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
   >
     <div
       class="label-content"
