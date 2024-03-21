@@ -1,4 +1,5 @@
 import { ConfigItemStyledWrapper } from '@actiontech/shared/lib/components/ConfigItem/style';
+import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { styled } from '@mui/material/styles';
 
 export const AccessTokenConfigStyleWrapper = styled(ConfigItemStyledWrapper)`
@@ -16,7 +17,7 @@ export const AccessTokenConfigStyleWrapper = styled(ConfigItemStyledWrapper)`
   }
 
   .token-content {
-    width: 50%;
+    width: 100%;
 
     &-item {
       width: 100%;
@@ -33,6 +34,16 @@ export const AccessTokenConfigStyleWrapper = styled(ConfigItemStyledWrapper)`
       &-value {
         font-size: 14px;
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+      }
+    }
+  }
+`;
+
+export const AccessTokenModalFormItemLabelStyleWrapper = styled(FormItemLabel)`
+  .ant-form-item-row {
+    .ant-form-item-required {
+      &::after {
+        display: none !important;
       }
     }
   }
