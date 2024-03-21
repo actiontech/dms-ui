@@ -33,13 +33,13 @@ describe('test base/Home/StepItems', () => {
     fireEvent.click(screen.getAllByText('查看列表')[1]);
     expect(navigateSpy).toHaveBeenCalledTimes(3);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/project/${projectID}/syncDataSource`
+      `/project/${projectID}/sync-data-source`
     );
 
     fireEvent.click(screen.getByText('新建同步任务'));
     expect(navigateSpy).toHaveBeenCalledTimes(4);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/project/${projectID}/syncDataSource/create`
+      `/project/${projectID}/sync-data-source/create`
     );
 
     fireEvent.click(screen.getByText('查看成员'));
@@ -48,7 +48,7 @@ describe('test base/Home/StepItems', () => {
 
     fireEvent.click(screen.getByText('进入SQL工作台'));
     expect(navigateSpy).toHaveBeenCalledTimes(6);
-    expect(navigateSpy).toHaveBeenCalledWith(`/cloudBeaver`);
+    expect(navigateSpy).toHaveBeenCalledWith(`/cloud-beaver`);
 
     fireEvent.click(screen.getByText('查看审核规则'));
     expect(navigateSpy).toHaveBeenCalledTimes(7);

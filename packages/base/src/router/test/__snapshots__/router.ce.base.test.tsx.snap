@@ -14,7 +14,7 @@ exports[`base/router-base-ce render base route data snap 1`] = `
       userCenter
     </div>,
     "key": "userCenter",
-    "path": "userCenter",
+    "path": "user-center",
   },
   {
     "element": <div>
@@ -28,7 +28,7 @@ exports[`base/router-base-ce render base route data snap 1`] = `
       cloudBeaver
     </div>,
     "key": "cloudBeaver",
-    "path": "cloudBeaver",
+    "path": "cloud-beaver",
   },
   {
     "element": <div>
@@ -83,7 +83,7 @@ exports[`base/router-base-ce render base route data snap 1`] = `
           syncDataSource
         </div>,
         "key": "syncDataSource",
-        "path": ":projectID/syncDataSource",
+        "path": ":projectID/sync-data-source",
       },
       {
         "element": <div>
@@ -117,7 +117,7 @@ exports[`base/router-base-ce render base router when version is ce render router
 </body>
 `;
 
-exports[`base/router-base-ce render base router when version is ce render router cloudBeaver 1`] = `
+exports[`base/router-base-ce render base router when version is ce render router cloud-beaver 1`] = `
 <body>
   <div>
     <div>
@@ -199,7 +199,7 @@ exports[`base/router-base-ce render base router when version is ce render router
 </body>
 `;
 
-exports[`base/router-base-ce render base router when version is ce render router userCenter 1`] = `
+exports[`base/router-base-ce render base router when version is ce render router user-center 1`] = `
 <body>
   <div>
     <div>

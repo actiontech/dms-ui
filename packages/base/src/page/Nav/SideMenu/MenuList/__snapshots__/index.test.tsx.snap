@@ -265,7 +265,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is admin snap when has location 
         >
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-cloudBeaver"
+            data-menu-id="rc-menu-uuid-test-cloud-beaver"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -1046,7 +1046,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is not admin snap when has locat
         >
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-cloudBeaver"
+            data-menu-id="rc-menu-uuid-test-cloud-beaver"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -1827,7 +1827,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 1`] = `
         >
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-cloudBeaver"
+            data-menu-id="rc-menu-uuid-test-cloud-beaver"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -2518,7 +2518,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 2`] = `
           </li>
           <li
             class="ant-menu-item ant-menu-item-only-child"
-            data-menu-id="rc-menu-uuid-test-project/projectID/syncDataSource"
+            data-menu-id="rc-menu-uuid-test-project/projectID/sync-data-source"
             role="menuitem"
             style="padding-left: 48px;"
             tabindex="-1"
@@ -2641,7 +2641,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 2`] = `
         >
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-cloudBeaver"
+            data-menu-id="rc-menu-uuid-test-cloud-beaver"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -3332,7 +3332,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 3`] = `
           </li>
           <li
             class="ant-menu-item ant-menu-item-only-child"
-            data-menu-id="rc-menu-uuid-test-project/projectID/syncDataSource"
+            data-menu-id="rc-menu-uuid-test-project/projectID/sync-data-source"
             role="menuitem"
             style="padding-left: 48px;"
             tabindex="-1"
@@ -3455,7 +3455,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 3`] = `
         >
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-cloudBeaver"
+            data-menu-id="rc-menu-uuid-test-cloud-beaver"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -4146,7 +4146,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 4`] = `
           </li>
           <li
             class="ant-menu-item ant-menu-item-only-child"
-            data-menu-id="rc-menu-uuid-test-project/projectID/syncDataSource"
+            data-menu-id="rc-menu-uuid-test-project/projectID/sync-data-source"
             role="menuitem"
             style="padding-left: 48px;"
             tabindex="-1"
@@ -4269,7 +4269,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 4`] = `
         >
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-cloudBeaver"
+            data-menu-id="rc-menu-uuid-test-cloud-beaver"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -4960,7 +4960,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 5`] = `
           </li>
           <li
             class="ant-menu-item ant-menu-item-only-child"
-            data-menu-id="rc-menu-uuid-test-project/projectID/syncDataSource"
+            data-menu-id="rc-menu-uuid-test-project/projectID/sync-data-source"
             role="menuitem"
             style="padding-left: 48px;"
             tabindex="-1"
@@ -5133,7 +5133,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 5`] = `
         >
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-cloudBeaver"
+            data-menu-id="rc-menu-uuid-test-cloud-beaver"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -5914,7 +5914,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is not admin 1`] = `
         >
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-cloudBeaver"
+            data-menu-id="rc-menu-uuid-test-cloud-beaver"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
