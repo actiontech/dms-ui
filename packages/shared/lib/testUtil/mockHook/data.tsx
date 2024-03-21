@@ -66,7 +66,12 @@ export const mockUserInfo = {
       }
     ],
     user_groups: [],
-    wxid: 'wx_test_id'
+    wxid: 'wx_test_id',
+    access_token_info: {
+      access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHA',
+      is_expired: false,
+      token_expired_timestamp: '2024-03-31T10:25:10+08:00'
+    }
   }
 };
 

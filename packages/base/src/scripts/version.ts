@@ -1,1 +1,1 @@
-export const UI_VERSION = 'feature/add-make-command   ba9c9c5';
+export const UI_VERSION = 'feature/issue-2309   a55d5006';

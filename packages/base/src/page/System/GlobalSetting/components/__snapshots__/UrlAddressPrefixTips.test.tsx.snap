@@ -4,7 +4,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when field s
 <body>
   <div>
     <div
-      class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -93,7 +93,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when has url
 <body>
   <div>
     <div
-      class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -163,7 +163,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when no url 
 <body>
   <div>
     <div
-      class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"

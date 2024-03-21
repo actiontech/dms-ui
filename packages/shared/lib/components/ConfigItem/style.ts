@@ -24,7 +24,9 @@ export const ConfigItemStyledWrapper = styled(Row)`
 
     .tips {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
-      line-height: 22px;
+      line-height: 20px;
+      font-size: 12px;
+      font-weight: 300;
     }
   }
 
