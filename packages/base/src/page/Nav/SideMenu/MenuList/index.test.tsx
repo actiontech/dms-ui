@@ -93,61 +93,68 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     );
 
     fireEvent.click(screen.getAllByText('SQL审核')[0]);
-    expect(baseElement).toMatchSnapshot();
-
-    fireEvent.click(screen.getByText('规则模板'));
     expect(navigateSpy).toHaveBeenCalledTimes(8);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       8,
+      `/sqle/project/${projectID}/sqlAudit`
+    );
+
+    fireEvent.click(screen.getByText('IDE审核'));
+    expect(navigateSpy).toHaveBeenCalledTimes(9);
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      9,
+      `/sqle/project/${projectID}/plugin-audit`
+    );
+
+    fireEvent.click(screen.getAllByText('SQL审核')[1]);
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('规则模板'));
+    expect(navigateSpy).toHaveBeenCalledTimes(10);
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      10,
       `/sqle/project/${projectID}/rule/template`
     );
 
     fireEvent.click(screen.getByText('白名单'));
-    expect(navigateSpy).toHaveBeenCalledTimes(9);
+    expect(navigateSpy).toHaveBeenCalledTimes(11);
     expect(navigateSpy).toHaveBeenNthCalledWith(
-      9,
+      11,
       `/sqle/project/${projectID}/whitelist`
     );
 
     fireEvent.click(screen.getByText('流程模板'));
-    expect(navigateSpy).toHaveBeenCalledTimes(10);
+    expect(navigateSpy).toHaveBeenCalledTimes(12);
     expect(navigateSpy).toHaveBeenNthCalledWith(
-      10,
+      12,
       `/sqle/project/${projectID}/progress`
     );
 
     fireEvent.click(screen.getByText('SQL管控'));
-    expect(navigateSpy).toHaveBeenCalledTimes(11);
-    expect(navigateSpy).toHaveBeenNthCalledWith(
-      11,
-      `/sqle/project/${projectID}/sqlManagement`
-    );
-
-    fireEvent.click(screen.getAllByText('SQL审核')[1]);
-    expect(navigateSpy).toHaveBeenCalledTimes(12);
-    expect(navigateSpy).toHaveBeenNthCalledWith(
-      12,
-      `/sqle/project/${projectID}/sqlAudit`
-    );
-
-    fireEvent.click(screen.getByText('SQL工单'));
     expect(navigateSpy).toHaveBeenCalledTimes(13);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       13,
+      `/sqle/project/${projectID}/sqlManagement`
+    );
+
+    fireEvent.click(screen.getByText('SQL工单'));
+    expect(navigateSpy).toHaveBeenCalledTimes(14);
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      14,
       `/sqle/project/${projectID}/order`
     );
 
     fireEvent.click(screen.getByText('扫描任务'));
-    expect(navigateSpy).toHaveBeenCalledTimes(14);
+    expect(navigateSpy).toHaveBeenCalledTimes(15);
     expect(navigateSpy).toHaveBeenNthCalledWith(
-      14,
+      15,
       `/sqle/project/${projectID}/auditPlan`
     );
 
     fireEvent.click(screen.getByText('操作与审计'));
-    expect(navigateSpy).toHaveBeenCalledTimes(15);
+    expect(navigateSpy).toHaveBeenCalledTimes(16);
     expect(navigateSpy).toHaveBeenNthCalledWith(
-      15,
+      16,
       `/sqle/project/${projectID}/operationRecord`
     );
   });

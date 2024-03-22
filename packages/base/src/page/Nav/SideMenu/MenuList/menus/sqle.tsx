@@ -10,7 +10,8 @@ import {
   IconSqlManagement,
   IconTodoList,
   IconWhitelist,
-  IconWorkflowTemplate
+  IconWorkflowTemplate,
+  IconPluginAudit
 } from '../../../../../icon/sideMenu';
 import Icon from '@ant-design/icons';
 import {
@@ -77,12 +78,6 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
         onClick: () => navigate(`/sqle/project/${projectID}/sqlManagement`)
       },
       {
-        label: t('dmsMenu.sqlAudit'),
-        key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sqlAudit`,
-        icon: <Icon component={IconSqlAudit} />,
-        onClick: () => navigate(`/sqle/project/${projectID}/sqlAudit`)
-      },
-      {
         label: t('dmsMenu.SQLOrder'),
         key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/order`,
         icon: <Icon component={IconSQLOrder} />,
@@ -108,5 +103,25 @@ export const SQLEOperateConflictMenuItems: GenerateMenuItemsType = ({
     icon: <Icon component={IconOperateAndAudit} />,
     key: isAdminKeys.operate,
     onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`)
+  }
+];
+
+export const SQLESqlDevelopMenuItems: GenerateMenuItemsType = ({
+  navigate,
+  projectID = ''
+}) => [
+  {
+    order: 6,
+    label: t('dmsMenu.sqlAudit'),
+    key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sqlAudit`,
+    icon: <Icon component={IconSqlAudit} />,
+    onClick: () => navigate(`/sqle/project/${projectID}/sqlAudit`)
+  },
+  {
+    order: 6,
+    label: t('dmsMenu.pluginAudit'),
+    key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/plugin-audit`,
+    icon: <Icon component={IconPluginAudit} />,
+    onClick: () => navigate(`/sqle/project/${projectID}/plugin-audit`)
   }
 ];
