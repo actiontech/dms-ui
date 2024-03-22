@@ -17,6 +17,7 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { ModalName } from '../../../data/ModalName';
 import sqlDEVRecord from '../../../testUtils/mockApi/sqlDEVRecord';
 import { sqlDEVRecordListMockData } from '../../../testUtils/mockApi/sqlDEVRecord/data';
+import user from '../../../testUtils/mockApi/user';
 
 jest.mock('react-redux', () => {
   return {
@@ -29,6 +30,7 @@ jest.mock('react-redux', () => {
 describe('sqle/PluginAudit/List', () => {
   const mockDispatch = jest.fn();
   let getAuditWhitelistSpy: jest.SpyInstance;
+  let getUserTipListSpy: jest.SpyInstance;
 
   beforeEach(() => {
     sqlDEVRecord.mockAllApi();
@@ -44,6 +46,7 @@ describe('sqle/PluginAudit/List', () => {
       });
     });
     getAuditWhitelistSpy = sqlDEVRecord.getAuditWhitelist();
+    getUserTipListSpy = user.getUserTipList();
     jest.useFakeTimers();
   });
 
@@ -58,6 +61,7 @@ describe('sqle/PluginAudit/List', () => {
   it('render table data', async () => {
     const { baseElement } = superRender(<PluginAuditList />);
     expect(getAuditWhitelistSpy).toHaveBeenCalled();
+    expect(getUserTipListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
