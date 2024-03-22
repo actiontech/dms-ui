@@ -7,7 +7,7 @@ export const PluginAuditDefaultPromptsWrapper = styled(Space)`
 
   .step-wrap {
     margin-top: 32px;
-    width: 800px;
+    width: 600px;
     padding: 24px;
     border: 1px solid
       ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};

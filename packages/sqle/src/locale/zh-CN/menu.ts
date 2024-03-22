@@ -31,5 +31,5 @@ export default {
   operationRecord: 'SQLE操作记录',
   sqlManagement: 'SQL管控',
   sqlAudit: 'SQL审核',
-  pluginAudit: 'IDE插件审核'
+  pluginAudit: 'IDE审核'
 };

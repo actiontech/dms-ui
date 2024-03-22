@@ -523,7 +523,7 @@ exports[`App render App when token is existed 1`] = `
             <span
               class="ant-menu-title-content"
             >
-              IDE插件审核
+              IDE审核
             </span>
           </li>
           <li
@@ -2359,7 +2359,7 @@ exports[`App render App when user role is not admin 1`] = `
             <span
               class="ant-menu-title-content"
             >
-              IDE插件审核
+              IDE审核
             </span>
           </li>
           <li

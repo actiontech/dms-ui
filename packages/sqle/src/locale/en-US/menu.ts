@@ -12,5 +12,5 @@ export default {
   order: 'Order List',
   orderDetail: 'Order Detail',
   whitelist: 'Whitelist',
-  pluginAudit: 'IDE插件审核'
+  pluginAudit: 'IDE审核'
 };

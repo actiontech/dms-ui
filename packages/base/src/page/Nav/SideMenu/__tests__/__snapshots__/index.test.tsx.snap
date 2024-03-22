@@ -541,7 +541,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
             <span
               class="ant-menu-title-content"
             >
-              IDE插件审核
+              IDE审核
             </span>
           </li>
           <li
@@ -1371,7 +1371,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
             <span
               class="ant-menu-title-content"
             >
-              IDE插件审核
+              IDE审核
             </span>
           </li>
           <li
@@ -2201,7 +2201,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
             <span
               class="ant-menu-title-content"
             >
-              IDE插件审核
+              IDE审核
             </span>
           </li>
           <li

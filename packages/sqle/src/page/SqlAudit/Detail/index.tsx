@@ -19,7 +19,7 @@ const SqlAuditDetail = () => {
   const { projectID, projectName, projectArchive } = useCurrentProject();
 
   // api
-  const { data: auditRecord, loading: dataLoading } = useRequest(() =>
+  const { data: pluginAuditRecord, loading: dataLoading } = useRequest(() =>
     sql_audit_record
       .getSQLAuditRecordV1({
         project_name: projectName,
@@ -30,16 +30,16 @@ const SqlAuditDetail = () => {
 
   const basicInfoData = useMemo(() => {
     return {
-      id: auditRecord?.sql_audit_record_id ?? '',
-      tags: auditRecord?.tags ?? [],
-      status: auditRecord?.sql_audit_status,
-      task: auditRecord?.task
+      id: pluginAuditRecord?.sql_audit_record_id ?? '',
+      tags: pluginAuditRecord?.tags ?? [],
+      status: pluginAuditRecord?.sql_audit_status,
+      task: pluginAuditRecord?.task
     };
-  }, [auditRecord]);
+  }, [pluginAuditRecord]);
 
   const auditResultData = useMemo(() => {
-    return auditRecord?.task ? [auditRecord?.task] : [];
-  }, [auditRecord]);
+    return pluginAuditRecord?.task ? [pluginAuditRecord?.task] : [];
+  }, [pluginAuditRecord]);
 
   return (
     <>

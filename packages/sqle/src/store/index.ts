@@ -5,6 +5,7 @@ import auditPlan from './auditPlan';
 import reportStatistics from './reportStatistics';
 import globalRuleTemplate from './globalRuleTemplate';
 import sqlManagement from './sqlManagement';
+import pluginAudit from './pluginAudit';
 
 export const SQLEStoreData = {
   whitelist,
@@ -12,7 +13,8 @@ export const SQLEStoreData = {
   auditPlan,
   reportStatistics,
   globalRuleTemplate,
-  sqlManagement
+  sqlManagement,
+  pluginAudit
 };
 
 const store = configureStore({

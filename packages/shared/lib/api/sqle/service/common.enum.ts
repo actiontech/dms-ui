@@ -154,6 +154,10 @@ export enum OperationRecordListStatusEnum {
   'failed' = 'failed'
 }
 
+export enum RecordSourceNameEnum {
+  'ide_plugin' = 'ide_plugin'
+}
+
 export enum RuleParamResV1TypeEnum {
   'string' = 'string',
 

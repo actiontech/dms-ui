@@ -221,7 +221,6 @@ describe('base/router-sqle-ee', () => {
         expect(screen.getByText('pluginAuditList')).toBeInTheDocument();
       });
 
-
       it('render route dashboard', async () => {
         const { baseElement } = customRender([
           `/sqle/project/${projectID}/dashboard`

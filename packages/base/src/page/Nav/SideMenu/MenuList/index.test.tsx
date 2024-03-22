@@ -99,13 +99,13 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
       `/sqle/project/${projectID}/sqlAudit`
     );
 
-    fireEvent.click(screen.getByText('IDE插件审核'));
+    fireEvent.click(screen.getByText('IDE审核'));
     expect(navigateSpy).toHaveBeenCalledTimes(9);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       9,
       `/sqle/project/${projectID}/plugin-audit`
     );
-  
+
     fireEvent.click(screen.getAllByText('SQL审核')[1]);
     expect(baseElement).toMatchSnapshot();
 
