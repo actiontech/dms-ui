@@ -11,7 +11,8 @@ import {
   getDatabaseManagerSteps,
   getMemberAndPermissionSteps,
   getSqlEditorStep,
-  getDataExportTask
+  getDataExportTask,
+  getDataMask
 } from './base';
 
 import {
@@ -20,6 +21,8 @@ import {
   getDataModifyStep,
   getSQLEOperateStepItem
 } from './sqle';
+
+import { getAuthAuditStepItems, getDatabaseAuthStep } from './provision';
 
 export const UserTypeDictionary: StringDictionary = {
   admin: t('dmsHome.defaultScene.header.adminUser'),
@@ -36,21 +39,28 @@ export const AdminUserDevopsSteps: (
   getDatabaseManagerSteps({ navigate, projectID }),
   getMemberAndPermissionSteps({ navigate, projectID }),
 
-  // #if [sqle]
   {
     key: 'safetyRule',
     title: t('dmsHome.defaultScene.steps.safetyRule.title'),
     icon: <IconStepSafetyRule />,
     children: [
+      // #if [sqle]
       getAuditManageStep({
         navigate,
         projectID,
         setOpenRulePageProjectSelectorModal
       }),
+      // #endif
+
+      // #if [provision]
+      getDatabaseAuthStep({ navigate, projectID }),
+      // #endif
+
+      // #if [sqle]
       getAuditProgressStep({ navigate, projectID })
+      // #endif
     ]
   },
-  // #endif
 
   {
     key: 'queryAndModify',
@@ -63,11 +73,14 @@ export const AdminUserDevopsSteps: (
       getDataModifyStep({ navigate, projectID }),
       // #endif
 
-      getDataExportTask({ navigate, projectID })
+      getDataExportTask({ navigate, projectID }),
+
+      // #if [dms]
+      getDataMask({ navigate, projectID })
+      // #endif
     ]
   },
 
-  // #if [sqle]
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
@@ -81,11 +94,18 @@ export const AdminUserDevopsSteps: (
         content: t(
           'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
         ),
-        buttons: [...getSQLEOperateStepItem({ navigate, projectID })]
+        buttons: [
+          // #if [provision]
+          ...getAuthAuditStepItems({ navigate, projectID }),
+          // #endif
+
+          // #if [sqle]
+          ...getSQLEOperateStepItem({ navigate, projectID })
+          // #endif
+        ]
       }
     ]
   }
-  // #endif
 ];
 
 export const NormalUserDevopsSteps: (
@@ -104,5 +124,24 @@ export const NormalUserDevopsSteps: (
 
       getDataExportTask({ navigate, projectID })
     ]
+  },
+  // #if [provision]
+  {
+    key: 'devopsAndAudit',
+    title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
+    icon: <IconStepOperation />,
+    children: [
+      {
+        key: 'operationCheck',
+        title: t(
+          'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.title_1'
+        ),
+        content: t(
+          'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
+        ),
+        buttons: [...getAuthAuditStepItems({ navigate, projectID })]
+      }
+    ]
   }
+  // #endif
 ];

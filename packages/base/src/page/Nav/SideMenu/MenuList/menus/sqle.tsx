@@ -44,6 +44,24 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
     key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/dashboard`,
     onClick: () => navigate(`/sqle/project/${projectID}/dashboard`)
   },
+  // #if [dms]
+  {
+    order: 5,
+    label: t('dmsMenu.SQLEOperateRecord'),
+    key: isAdminKeys.operate,
+    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`),
+    parentKey: 'operateAndAudit'
+  },
+  // #else
+  {
+    order: 5,
+    label: t('dmsMenu.operateAndAudit'),
+    icon: <Icon component={IconOperateAndAudit} />,
+    key: isAdminKeys.operate,
+    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`),
+    parentKey: 'operateAndAudit'
+  },
+  // #endif
   {
     order: 7,
     type: 'divider'

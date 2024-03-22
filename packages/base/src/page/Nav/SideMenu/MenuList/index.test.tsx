@@ -1,6 +1,6 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import MenuList from '.';
-
+import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 import { superRender } from '../../../../testUtils/customRender';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,6 +17,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     return superRender(<MenuList projectID={projectID} isAdmin={isAdmin} />);
   };
 
+  ignoreComponentCustomAttr();
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -152,10 +153,42 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     );
 
     fireEvent.click(screen.getByText('操作与审计'));
+    expect(navigateSpy).toHaveBeenCalledTimes(15);
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('SQLE操作记录'));
     expect(navigateSpy).toHaveBeenCalledTimes(16);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       16,
       `/sqle/project/${projectID}/operationRecord`
+    );
+
+    fireEvent.click(screen.getByText('授权审计'));
+    expect(navigateSpy).toHaveBeenCalledTimes(17);
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      17,
+      `/provision/project/${projectID}/audit/auth`
+    );
+
+    fireEvent.click(screen.getByText('权限模版审计'));
+    expect(navigateSpy).toHaveBeenCalledTimes(18);
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      18,
+      `/provision/project/${projectID}/audit/template`
+    );
+
+    // fireEvent.click(screen.getByText('数据源操作审计'));
+    // expect(navigateSpy).toHaveBeenCalledTimes(18);
+    // expect(navigateSpy).nthCalledWith(
+    //   18,
+    //   `/provision/project/${projectID}/audit/service`
+    // );
+
+    fireEvent.click(screen.getByText('脱敏规则'));
+    expect(navigateSpy).toHaveBeenCalledTimes(19);
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      19,
+      `/project/${projectID}/data_mask_rule_overview`
     );
   });
 

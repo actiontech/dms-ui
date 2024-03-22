@@ -30,8 +30,8 @@ describe('base/page/Nav/SideMenu/ProjectTitle', () => {
     const { baseElement } = renderWithTheme(<ProjectTitle />);
     expect(baseElement).toMatchSnapshot();
 
-    expect(screen.getByText('SQLE')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('SQLE'));
+    expect(screen.getByText('DMS')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('DMS'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(navigateSpy).toHaveBeenCalled();
     expect(navigateSpy).toHaveBeenCalledWith('/');
