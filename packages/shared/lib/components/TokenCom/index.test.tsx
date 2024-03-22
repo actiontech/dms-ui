@@ -3,7 +3,7 @@ import { getBySelector } from '../../testUtil/customQuery';
 import TokenCom from '.';
 import { fireEvent, screen, cleanup, act } from '@testing-library/react';
 
-describe('lib/PageHeader', () => {
+describe('lib/TokenCom', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
