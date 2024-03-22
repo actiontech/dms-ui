@@ -270,7 +270,7 @@ exports[`test update database monitor send update request failed 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -779,7 +779,7 @@ exports[`test update database monitor should match snapshot when modal state is 
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1288,7 +1288,7 @@ exports[`test update database monitor should render select Data and update new d
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"

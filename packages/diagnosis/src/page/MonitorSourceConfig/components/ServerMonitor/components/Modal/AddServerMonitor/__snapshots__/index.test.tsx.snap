@@ -137,7 +137,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -559,7 +559,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -981,7 +981,7 @@ exports[`test add server monitor should send request failed 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1403,7 +1403,7 @@ exports[`test add server monitor should send request when input correct fields i
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1825,7 +1825,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"

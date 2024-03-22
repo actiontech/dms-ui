@@ -266,7 +266,7 @@ exports[`test add database monitor close modal by click close button 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -769,7 +769,7 @@ exports[`test add database monitor should match snapshot when modal state is tru
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1272,7 +1272,7 @@ exports[`test add database monitor should send request failed 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1775,7 +1775,7 @@ exports[`test add database monitor should send request when input correct fields
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
