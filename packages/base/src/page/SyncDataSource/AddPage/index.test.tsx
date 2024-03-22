@@ -60,7 +60,7 @@ describe('page/SyncDataSource/AddPage', () => {
     );
     expect(aLink).toHaveAttribute(
       'href',
-      `/project/${projectID}/syncDataSource`
+      `/project/${projectID}/sync-data-source`
     );
   });
 

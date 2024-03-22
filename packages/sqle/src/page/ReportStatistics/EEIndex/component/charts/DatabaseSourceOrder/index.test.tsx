@@ -14,6 +14,36 @@ import DatabaseSourceOrder, {
   renderTooltipCustomContent
 } from '.';
 import { ThemeData, SupportTheme } from '../../../../../../theme';
+import { PieConfig } from '@ant-design/plots';
+
+jest.mock('@ant-design/plots', () => {
+  return {
+    ...jest.requireActual('@ant-design/plots'),
+    Pie: jest.requireActual('@ant-design/plots').PieWithCustomRenderCalled({
+      statistic: {
+        title: {
+          customHtml: (props: PieConfig) => {
+            return [null, null, null, props.data];
+          }
+        }
+      },
+      tooltip: {
+        customContent: (props: PieConfig) => {
+          return [
+            '',
+            [
+              {
+                color: '#6094FC',
+                name: props.data[0]?.name,
+                value: props.data[0]?.value
+              }
+            ]
+          ];
+        }
+      }
+    })
+  };
+});
 
 const themeData = ThemeData[SupportTheme.LIGHT];
 
@@ -65,7 +95,7 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
 
   it('render empty tooltip customContent', async () => {
     const { result } = renderHooksWithTheme(() =>
-      renderTooltipCustomContent([], themeData.sharedTheme)
+      renderTooltipCustomContent([], themeData.sharedTheme, 0)
     );
     expect(result.current).toBe(null);
   });
@@ -74,7 +104,8 @@ describe('ReportStatistics/DatabaseSourceOrder', () => {
     const { result } = renderHooksWithTheme(() =>
       renderTooltipCustomContent(
         [{ color: 'red', name: 'test', value: '12' }],
-        themeData.sharedTheme
+        themeData.sharedTheme,
+        12
       )
     );
     expect(result.current).toMatchSnapshot();

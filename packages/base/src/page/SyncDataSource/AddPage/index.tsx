@@ -83,7 +83,7 @@ const AddSyncTask: React.FC = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/project/${projectID}/syncDataSource`}>
+          <Link to={`/project/${projectID}/sync-data-source`}>
             <BasicButton icon={<IconLeftArrow />}>
               {t('dmsSyncDataSource.addSyncTask.backToList')}
             </BasicButton>
@@ -144,7 +144,7 @@ const AddSyncTask: React.FC = () => {
               {t('common.resetAndClose')}
             </BasicButton>,
             <BasicButton type="primary" key="view-sync-task">
-              <Link to={`/project/${projectID}/syncDataSource`}>
+              <Link to={`/project/${projectID}/sync-data-source`}>
                 {t('dmsSyncDataSource.addSyncTask.successGuide')}
               </Link>
             </BasicButton>

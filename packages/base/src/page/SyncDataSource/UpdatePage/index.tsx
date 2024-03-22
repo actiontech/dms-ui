@@ -65,7 +65,7 @@ const UpdateSyncTask: React.FC = () => {
             t('dmsSyncDataSource.updateSyncTask.successTips'),
             3,
             () => {
-              navigate(`/project/${projectID}/syncDataSource`, {
+              navigate(`/project/${projectID}/sync-data-source`, {
                 replace: true
               });
             }
@@ -115,7 +115,7 @@ const UpdateSyncTask: React.FC = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/project/${projectID}/syncDataSource`}>
+          <Link to={`/project/${projectID}/sync-data-source`}>
             <BasicButton icon={<IconLeftArrow />}>
               {t('dmsSyncDataSource.addSyncTask.backToList')}
             </BasicButton>

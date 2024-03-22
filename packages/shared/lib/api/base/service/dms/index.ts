@@ -168,6 +168,8 @@ import {
   IUpdateCurrentUserReturn,
   IAddUserParams,
   IAddUserReturn,
+  IGenAccessTokenParams,
+  IGenAccessTokenReturn,
   IGetUserParams,
   IGetUserReturn,
   IUpdateUserParams,
@@ -1358,6 +1360,18 @@ class DmsService extends ServiceBase {
   public AddUser(params: IAddUserParams, options?: AxiosRequestConfig) {
     const paramsData = this.cloneDeep(params);
     return this.post<IAddUserReturn>('/v1/dms/users', paramsData, options);
+  }
+
+  public GenAccessToken(
+    params: IGenAccessTokenParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IGenAccessTokenReturn>(
+      '/v1/dms/users/gen_token',
+      paramsData,
+      options
+    );
   }
 
   public GetUser(params: IGetUserParams, options?: AxiosRequestConfig) {

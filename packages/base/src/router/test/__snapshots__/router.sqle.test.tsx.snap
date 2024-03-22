@@ -500,7 +500,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       userCenter
     </div>,
     "key": "userCenter",
-    "path": "userCenter",
+    "path": "user-center",
   },
   {
     "element": <div>
@@ -514,7 +514,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       cloudBeaver
     </div>,
     "key": "cloudBeaver",
-    "path": "cloudBeaver",
+    "path": "cloud-beaver",
   },
   {
     "element": <div>
@@ -601,7 +601,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
           <Outlet />
         </div>,
         "key": "syncDataSource",
-        "path": ":projectID/syncDataSource",
+        "path": ":projectID/sync-data-source",
       },
       {
         "children": [

@@ -138,7 +138,7 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(navigateSpy).toHaveBeenCalled();
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/project/${projectID}/syncDataSource/update/1234`
+      `/project/${projectID}/sync-data-source/update/1234`
     );
   });
 

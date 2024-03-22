@@ -50,7 +50,7 @@ exports[`base/System/PersonalizeSetting render snap 1`] = `
           class="ant-spin-container ant-spin-blur"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -108,7 +108,7 @@ exports[`base/System/PersonalizeSetting render snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -198,7 +198,7 @@ exports[`base/System/PersonalizeSetting render snap 2`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -256,7 +256,7 @@ exports[`base/System/PersonalizeSetting render snap 2`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -346,7 +346,7 @@ exports[`base/System/PersonalizeSetting render title edit 1`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -403,7 +403,7 @@ exports[`base/System/PersonalizeSetting render title edit 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -493,7 +493,7 @@ exports[`base/System/PersonalizeSetting render title edit 2`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -550,7 +550,7 @@ exports[`base/System/PersonalizeSetting render title edit 2`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -640,7 +640,7 @@ exports[`base/System/PersonalizeSetting render title edit 3`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -742,7 +742,7 @@ exports[`base/System/PersonalizeSetting render title edit 3`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -842,7 +842,7 @@ exports[`base/System/PersonalizeSetting render upgrade logo img 1`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
@@ -900,7 +900,7 @@ exports[`base/System/PersonalizeSetting render upgrade logo img 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-yb08f3 css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
