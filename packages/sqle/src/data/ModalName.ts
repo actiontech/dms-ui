@@ -14,5 +14,8 @@ export enum ModalName {
   Assignment_Member_Single = 'Assignment_Member_Single',
   Assignment_Member_Batch = 'Assignment_Member_Batch',
   Change_Status_Single = 'Change_Status_Single',
-  View_Audit_Result_Drawer = 'View_Audit_Result_Drawer'
+  View_Audit_Result_Drawer = 'View_Audit_Result_Drawer',
+
+  // IDE plugin audit
+  View_Plugin_Audit_Result_Drawer = 'View_Plugin_Audit_Result_Drawer'
 }

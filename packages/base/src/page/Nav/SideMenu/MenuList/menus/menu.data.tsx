@@ -4,7 +4,11 @@ import { filterAdminMenusWithKey } from './common';
 import { BaseMenuItems } from './base';
 
 // #if [sqle]
-import { SQLEOperateConflictMenuItems, SQLEMenuItems } from './sqle';
+import {
+  SQLEOperateConflictMenuItems,
+  SQLEMenuItems,
+  SQLESqlDevelopMenuItems
+} from './sqle';
 // #endif
 
 export const sideMenuData: (
@@ -17,7 +21,8 @@ export const sideMenuData: (
 
     // #if [sqle]
     ...SQLEMenuItems({ navigate, projectID }),
-    ...SQLEOperateConflictMenuItems({ navigate, projectID })
+    ...SQLEOperateConflictMenuItems({ navigate, projectID }),
+    ...SQLESqlDevelopMenuItems({ navigate, projectID })
     // #endif
   ];
 

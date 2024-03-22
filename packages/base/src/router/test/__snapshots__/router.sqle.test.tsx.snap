@@ -242,6 +242,20 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route pluginAuditList 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="pluginAudit"
+    >
+      <div>
+        pluginAuditList
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route progress render progressDetail 1`] = `
 <body>
   <div>
@@ -961,6 +975,24 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         </div>,
         "key": "sqlManagement",
         "path": ":projectID/sqlManagement",
+      },
+      {
+        "children": [
+          {
+            "element": <div>
+              pluginAuditList
+            </div>,
+            "key": "pluginAuditList",
+            "path": "",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="pluginAudit"
+        >
+          <Outlet />
+        </div>,
+        "key": "pluginAudit",
+        "path": ":projectID/plugin-audit",
       },
       {
         "element": <div>
