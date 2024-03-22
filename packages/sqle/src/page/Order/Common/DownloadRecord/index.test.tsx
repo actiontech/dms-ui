@@ -60,7 +60,10 @@ describe('sqle/Order/Common/DownloadRecord', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2800));
     expect(requestDownloadFile).toHaveBeenCalled();
-    expect(requestDownloadFile).toHaveBeenCalledWith({ task_id: 'task Id' });
+    expect(requestDownloadFile).toHaveBeenCalledWith(
+      { task_id: 'task Id' },
+      { responseType: 'blob' }
+    );
   });
 
   it('render snap when click down report', async () => {
@@ -77,9 +80,12 @@ describe('sqle/Order/Common/DownloadRecord', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2800));
     expect(requestDownloadReport).toHaveBeenCalled();
-    expect(requestDownloadReport).toHaveBeenCalledWith({
-      task_id: 'task Id',
-      no_duplicate: true
-    });
+    expect(requestDownloadReport).toHaveBeenCalledWith(
+      {
+        task_id: 'task Id',
+        no_duplicate: true
+      },
+      { responseType: 'blob' }
+    );
   });
 });
