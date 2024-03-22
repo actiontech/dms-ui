@@ -42,7 +42,8 @@ const TaskList = (props: ITaskList) => {
       .map((item: IDBTypeAuditPlan, index: number) => {
         return {
           type: item?.db_type ?? defaultItemKey + (emptyDataLength + index),
-          value: item?.data?.length ?? 0
+          value:
+            item?.data?.reduce((r, d) => r + (d?.audit_plan_count ?? 0), 0) ?? 0
         };
       })
       .concat(emptyData);

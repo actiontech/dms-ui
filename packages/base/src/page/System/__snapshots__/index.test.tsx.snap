@@ -1915,7 +1915,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                               >
                                 <div
                                   class="ant-input-number-handler-wrap"
@@ -2023,7 +2023,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                               >
                                 <div
                                   class="ant-input-number-handler-wrap"
@@ -4203,7 +4203,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                               >
                                 <div
                                   class="ant-input-number-handler-wrap"
@@ -4311,7 +4311,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
                               >
                                 <div
                                   class="ant-input-number-handler-wrap"
