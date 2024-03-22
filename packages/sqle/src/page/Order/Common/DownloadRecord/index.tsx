@@ -23,17 +23,23 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
   const [open, setOpen] = useState(false);
 
   const downloadSql = () => {
-    task.downloadAuditTaskSQLFileV1({
-      task_id: taskId
-    });
+    task.downloadAuditTaskSQLFileV1(
+      {
+        task_id: taskId
+      },
+      { responseType: 'blob' }
+    );
     setOpen(false);
   };
 
   const downloadReport = () => {
-    task.downloadAuditTaskSQLReportV1({
-      task_id: taskId,
-      no_duplicate: duplicate
-    });
+    task.downloadAuditTaskSQLReportV1(
+      {
+        task_id: taskId,
+        no_duplicate: duplicate
+      },
+      { responseType: 'blob' }
+    );
     setOpen(false);
   };
 
