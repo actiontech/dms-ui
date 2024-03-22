@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { Typography } from 'antd';
-import { BasicToolTips } from '@actiontech/shared';
-import { IconToken } from '../../../../../../icon/Scan';
 import { TokenWrapperStyleWrapper, TokenRectStyleWrapper } from './style';
+import { IconToken } from '../../Icon/common';
+import BasicToolTips from '../BasicToolTips';
 
 type typeTokenCom = {
   text: string;
