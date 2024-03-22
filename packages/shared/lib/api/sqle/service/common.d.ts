@@ -15,6 +15,7 @@ import {
   DirectAuditReqV1SqlTypeEnum,
   GetWorkflowTasksItemV1StatusEnum,
   OperationRecordListStatusEnum,
+  RecordSourceNameEnum,
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
@@ -975,6 +976,16 @@ export interface IGetSqlAverageExecutionTimeResV1 {
   message?: string;
 }
 
+export interface IGetSqlDEVRecordListResp {
+  code?: number;
+
+  data?: ISqlDEVRecord[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IGetSqlExecutionFailPercentResV1 {
   code?: number;
 
@@ -1389,6 +1400,12 @@ export interface IProjectScore {
   score?: number;
 }
 
+export interface IRecordSource {
+  name?: RecordSourceNameEnum;
+
+  value?: string;
+}
+
 export interface IRejectWorkflowReqV1 {
   reason?: string;
 }
@@ -1611,6 +1628,30 @@ export interface ISqlAverageExecutionTime {
   max_execution_seconds?: number;
 
   min_execution_seconds?: number;
+}
+
+export interface ISqlDEVRecord {
+  audit_result?: IAuditResult[];
+
+  creator?: string;
+
+  first_appear_timestamp?: string;
+
+  fp_count?: number;
+
+  id?: number;
+
+  instance_name?: string;
+
+  last_receive_timestamp?: string;
+
+  schema_name?: string;
+
+  source?: IRecordSource;
+
+  sql?: string;
+
+  sql_fingerprint?: string;
 }
 
 export interface ISqlExecutionFailPercent {
@@ -2155,6 +2196,8 @@ export interface IAuditPlanSQLReqV2 {
   query_time_avg?: number;
 
   query_time_max?: number;
+
+  row_examined_avg?: number;
 }
 
 export interface IAuditResDataV2 {
@@ -2199,6 +2242,8 @@ export interface IAuditTaskSQLResV2 {
   sql_source_file?: string;
 
   sql_start_line?: number;
+
+  sql_type?: string;
 }
 
 export interface IBatchCancelWorkflowsReqV2 {
@@ -2245,6 +2290,10 @@ export interface IDirectAuditFileReqV2 {
 
 export interface IDirectAuditReqV2 {
   instance_type?: string;
+
+  project_id?: string;
+
+  rule_template_name?: string;
 
   sql_content?: string;
 

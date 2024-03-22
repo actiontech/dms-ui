@@ -401,7 +401,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is admin snap when has location 
         <span
           class="ant-menu-title-content"
         >
-          IDE插件审核
+          IDE审核
         </span>
       </li>
       <li
@@ -1026,7 +1026,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is not admin snap when has locat
         <span
           class="ant-menu-title-content"
         >
-          IDE插件审核
+          IDE审核
         </span>
       </li>
       <li
@@ -1689,7 +1689,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 1`] = `
         <span
           class="ant-menu-title-content"
         >
-          IDE插件审核
+          IDE审核
         </span>
       </li>
       <li
@@ -2385,7 +2385,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 2`] = `
         <span
           class="ant-menu-title-content"
         >
-          IDE插件审核
+          IDE审核
         </span>
       </li>
       <li
@@ -3081,7 +3081,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 3`] = `
         <span
           class="ant-menu-title-content"
         >
-          IDE插件审核
+          IDE审核
         </span>
       </li>
       <li
@@ -3777,7 +3777,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 4`] = `
         <span
           class="ant-menu-title-content"
         >
-          IDE插件审核
+          IDE审核
         </span>
       </li>
       <li
@@ -4402,7 +4402,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is not admin 1`] = `
         <span
           class="ant-menu-title-content"
         >
-          IDE插件审核
+          IDE审核
         </span>
       </li>
       <li
