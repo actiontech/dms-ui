@@ -4,6 +4,7 @@ import {
   IconDataExport,
   IconInstanceManager,
   IconMemberAndPermissions,
+  IconOperateAndAudit,
   IconSQLQuery,
   IconSubmenuExpandDown,
   IconSubmenuExpandTop
@@ -44,6 +45,18 @@ export const BaseMenuItems: GenerateMenuItemsType = ({
       key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/member`,
       onClick: () => navigate(`/project/${projectID}/member`)
     },
+    // #if [provision]
+    {
+      order: 5,
+      label: t('dmsMenu.operateAndAudit'),
+      expandIcon({ isOpen }) {
+        return isOpen ? <IconSubmenuExpandTop /> : <IconSubmenuExpandDown />;
+      },
+      icon: <Icon component={IconOperateAndAudit} />,
+      key: 'operateAndAudit',
+      children: []
+    },
+    // #endif
     {
       order: 6,
       type: 'group',
