@@ -1,9 +1,8 @@
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox, TokenCom } from '@actiontech/shared';
 import { LabelContent } from '@actiontech/shared/lib/components/ConfigItem';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { useTranslation } from 'react-i18next';
 import { AccessTokenConfigStyleWrapper } from './style';
-import TokenCom from 'sqle/src/page/AuditPlan/PlanList/TableTaskTypeFilter/component/TokenCom';
 import classNames from 'classnames';
 import { useBoolean } from 'ahooks';
 import GenerateTokenModal from './GenerateTokenModal';
