@@ -711,3 +711,36 @@ export const IconMoon = () => {
     </svg>
   );
 };
+
+export const IconPluginAudit = () => {
+  return (
+    <svg
+      className="icon"
+      viewBox="0 0 1024 1024"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+    >
+      <path
+        d="M953.6 960H70.4V64h883.2v896zM134.4 896h755.2V128H134.4v768z"
+        fill="#C3C6CD"
+      ></path>
+      <path d="M96 320h832v64h-832z" fill="#C3C6CD"></path>
+      <path d="M192 192h64v64H192z" fill="#C3C6CD"></path>
+      <path d="M320 192h64v64H320z" fill="#C3C6CD"></path>
+      <path
+        d="M550.784 417.28l59.776 22.848-137.344 358.592-59.776-22.912z"
+        fill="#C3C6CD"
+      ></path>
+      <path
+        d="M358.4 793.6L211.2 640l147.2-153.6 51.2 51.2L300.8 640l108.8 102.4z"
+        fill="#C3C6CD"
+      ></path>
+      <path
+        d="M665.6 793.6l-51.2-51.2 108.8-102.4-108.8-102.4 51.2-51.2 147.2 153.6z"
+        fill="#C3C6CD"
+      ></path>
+    </svg>
+  );
+};

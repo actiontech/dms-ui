@@ -7,7 +7,7 @@ import {
 import { BaseMenuItems } from './base';
 
 // #if [sqle]
-import { SQLEMenuItems } from './sqle';
+import { SQLEMenuItems, SQLESqlDevelopMenuItems } from './sqle';
 // #endif
 
 // #if [provision]
@@ -24,6 +24,7 @@ export const sideMenuData: (
 
     // #if [sqle]
     ...SQLEMenuItems({ navigate, projectID }),
+    ...SQLESqlDevelopMenuItems({ navigate, projectID }),
     // #endif
 
     // #if [provision]
