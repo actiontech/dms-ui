@@ -138,7 +138,7 @@ exports[`test update server monitor should init data for updateServerMonitor 1`]
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -564,7 +564,7 @@ exports[`test update server monitor should match snapshot when modal state is tr
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -990,7 +990,7 @@ exports[`test update server monitor should send request failed 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1416,7 +1416,7 @@ exports[`test update server monitor should send request when input correct field
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1842,7 +1842,7 @@ exports[`test update server monitor should show error when not input password 1`
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"

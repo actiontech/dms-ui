@@ -13,6 +13,7 @@ import { LabelContent } from '@actiontech/shared/lib/components/ConfigItem';
 import UserWechat from './components/UserWechat';
 import UserPhone from './components/UserPhone';
 import UserEmail from './components/UserEmail';
+import AccessToken from './components/AccessToken';
 
 const Account: React.FC = () => {
   const { t } = useTranslation();
@@ -71,6 +72,13 @@ const Account: React.FC = () => {
           <UpdatePassword
             open={updatePasswordDrawerVisible}
             onClose={hideUpdatePasswordDrawer}
+          />
+
+          <AccessToken
+            token={userInfo?.access_token_info?.access_token}
+            hasExpired={userInfo?.access_token_info?.is_expired}
+            expiration={userInfo?.access_token_info?.token_expired_timestamp}
+            updateUserInfo={updateUserInfo}
           />
         </Spin>
       </AccountContentStyleWrapper>

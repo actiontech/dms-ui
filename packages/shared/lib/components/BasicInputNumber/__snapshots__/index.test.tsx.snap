@@ -3,7 +3,7 @@
 exports[`lib/BasicInputNumber render diff size input number 1`] = `
 <div>
   <div
-    class="ant-input-number ant-input-number-lg css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper custom-input-number-class css-cr6b1y"
+    class="ant-input-number ant-input-number-lg css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper custom-input-number-class css-1fd5hnt"
   >
     <div
       class="ant-input-number-handler-wrap"
@@ -81,7 +81,7 @@ exports[`lib/BasicInputNumber render diff size input number 1`] = `
 exports[`lib/BasicInputNumber render diff size input number 2`] = `
 <div>
   <div
-    class="ant-input-number ant-input-number-lg css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+    class="ant-input-number ant-input-number-lg css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
   >
     <div
       class="ant-input-number-handler-wrap"
@@ -159,7 +159,7 @@ exports[`lib/BasicInputNumber render diff size input number 2`] = `
 exports[`lib/BasicInputNumber render diff size input number 3`] = `
 <div>
   <div
-    class="ant-input-number css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+    class="ant-input-number css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
   >
     <div
       class="ant-input-number-handler-wrap"
@@ -237,7 +237,7 @@ exports[`lib/BasicInputNumber render diff size input number 3`] = `
 exports[`lib/BasicInputNumber render diff size input number 4`] = `
 <div>
   <div
-    class="ant-input-number ant-input-number-sm css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-cr6b1y"
+    class="ant-input-number ant-input-number-sm css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
   >
     <div
       class="ant-input-number-handler-wrap"
