@@ -7,7 +7,7 @@ exports[`App render App when "useInfoFetched" is equal false 1`] = `<div />`;
 exports[`App render App when token is existed 1`] = `
 <div>
   <section
-    class="css-1foplsv"
+    class="css-m36rcd"
   >
     <div
       class="dms-layout-side css-2df5or"
@@ -1881,7 +1881,7 @@ exports[`App render App when token is not existed 1`] = `
 exports[`App render App when user role is not admin 1`] = `
 <div>
   <section
-    class="css-1foplsv"
+    class="css-m36rcd"
   >
     <div
       class="dms-layout-side css-2df5or"
