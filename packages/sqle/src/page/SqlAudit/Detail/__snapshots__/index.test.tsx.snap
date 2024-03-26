@@ -16,7 +16,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
             class="title"
           >
             <a
-              href="/sqle/project/700300/sqlAudit"
+              href="/sqle/project/700300/sql-audit"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -48,7 +48,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
             class="extra"
           >
             <a
-              href="/sqle/project/700300/sqlAudit/create"
+              href="/sqle/project/700300/sql-audit/create"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"

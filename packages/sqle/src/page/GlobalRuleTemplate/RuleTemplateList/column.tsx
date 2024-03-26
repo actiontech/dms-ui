@@ -30,7 +30,7 @@ export const RuleTemplateColumns =
 
           return (
             <Link
-              to={`/sqle/ruleManager/globalDetail/${name}/${
+              to={`/sqle/rule-manager/global-detail/${name}/${
                 row?.db_type ?? ''
               }`}
             >

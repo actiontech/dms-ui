@@ -43,14 +43,14 @@ export const getAuditManageStep: (
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_0_2'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/auditPlan`)
+        action: () => navigate(`/sqle/project/${projectID}/audit-plan`)
       },
       {
         key: 'create-sql-audit',
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_0_3'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/sqlAudit/create`)
+        action: () => navigate(`/sqle/project/${projectID}/sql-audit/create`)
       }
     ]
   };
@@ -126,7 +126,7 @@ export const getSQLEOperateStepItem = ({
       label: t(
         'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_3'
       ),
-      action: () => navigate(`/sqle/project/${projectID}/operationRecord`)
+      action: () => navigate(`/sqle/project/${projectID}/operation-record`)
     }
   ];
 };

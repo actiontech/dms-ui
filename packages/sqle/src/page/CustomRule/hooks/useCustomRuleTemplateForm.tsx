@@ -54,7 +54,7 @@ const useCustomRuleTemplateForm = (isUpdate = false) => {
 
   const onGoCustomRuleList = () => {
     updateActiveSegmentedKey(RuleManagerSegmentedKey.CustomRule);
-    navigate('/sqle/ruleManager');
+    navigate('/sqle/rule-manager');
   };
 
   return {

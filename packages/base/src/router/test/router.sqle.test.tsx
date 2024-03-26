@@ -41,7 +41,7 @@ describe('base/router-sqle-ee', () => {
   describe('render sqle global router', () => {
     describe('render sqle router when version is ce', () => {
       it('render route reportStatistics', () => {
-        const { baseElement } = customRender(['/sqle/reportStatistics']);
+        const { baseElement } = customRender(['/sqle/report-statistics']);
 
         expect(baseElement).toMatchSnapshot();
         expect(screen.getByText('reportStatistics')).toBeInTheDocument();
@@ -55,15 +55,15 @@ describe('base/router-sqle-ee', () => {
       });
 
       it('render route ruleManager', async () => {
-        const { baseElement } = customRender(['/sqle/ruleManager']);
+        const { baseElement } = customRender(['/sqle/rule-manager']);
         await act(async () => jest.advanceTimersByTime(300));
         expect(baseElement).toMatchSnapshot();
         expect(screen.getByText('ruleTemplateManagement')).toBeInTheDocument();
       });
 
-      it('render route globalCreate', () => {
+      it('render route global-create', () => {
         const { baseElement } = customRender([
-          '/sqle/ruleManager/globalCreate'
+          '/sqle/rule-manager/global-create'
         ]);
 
         expect(baseElement).toMatchSnapshot();
@@ -72,9 +72,9 @@ describe('base/router-sqle-ee', () => {
         ).toBeInTheDocument();
       });
 
-      it('render route globalImport', () => {
+      it('render route global-import', () => {
         const { baseElement } = customRender([
-          '/sqle/ruleManager/globalImport'
+          '/sqle/rule-manager/global-import'
         ]);
 
         expect(baseElement).toMatchSnapshot();
@@ -83,9 +83,9 @@ describe('base/router-sqle-ee', () => {
         ).toBeInTheDocument();
       });
 
-      it('render route globalUpdate', () => {
+      it('render route global-update', () => {
         const { baseElement } = customRender([
-          '/sqle/ruleManager/globalUpdate/templateName'
+          '/sqle/rule-manager/global-update/templateName'
         ]);
 
         expect(baseElement).toMatchSnapshot();
@@ -94,9 +94,9 @@ describe('base/router-sqle-ee', () => {
         ).toBeInTheDocument();
       });
 
-      it('render route globalDetail', () => {
+      it('render route global-detail', () => {
         const { baseElement } = customRender([
-          '/sqle/ruleManager/globalDetail/templateName/dbType'
+          '/sqle/rule-manager/global-detail/templateName/dbType'
         ]);
 
         expect(baseElement).toMatchSnapshot();
@@ -105,18 +105,18 @@ describe('base/router-sqle-ee', () => {
         ).toBeInTheDocument();
       });
 
-      it('render route customCreate', () => {
+      it('render route custom-create', () => {
         const { baseElement } = customRender([
-          '/sqle/ruleManager/customCreate'
+          '/sqle/rule-manager/custom-create'
         ]);
 
         expect(baseElement).toMatchSnapshot();
         expect(screen.getByText('createCustomRule')).toBeInTheDocument();
       });
 
-      it('render route customUpdate', () => {
+      it('render route custom-update', () => {
         const { baseElement } = customRender([
-          '/sqle/ruleManager/customUpdate/ruleID'
+          '/sqle/rule-manager/custom-update/ruleID'
         ]);
 
         expect(baseElement).toMatchSnapshot();
@@ -182,7 +182,7 @@ describe('base/router-sqle-ee', () => {
       describe('render route sqlAudit', () => {
         it('render route sqlAuditList', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/sqlAudit`
+            `/sqle/project/${projectID}/sql-audit`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));
@@ -192,7 +192,7 @@ describe('base/router-sqle-ee', () => {
 
         it('render route sqlAuditCreate', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/sqlAudit/create`
+            `/sqle/project/${projectID}/sql-audit/create`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));
@@ -202,7 +202,7 @@ describe('base/router-sqle-ee', () => {
 
         it('render route sqlAuditDetail', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/sqlAudit/detail/sql_audit_record_id`
+            `/sqle/project/${projectID}/sql-audit/detail/sql_audit_record_id`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));
@@ -234,7 +234,7 @@ describe('base/router-sqle-ee', () => {
       describe('render route plan', () => {
         it('render route auditPlanList', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/auditPlan`
+            `/sqle/project/${projectID}/audit-plan`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));
@@ -243,7 +243,7 @@ describe('base/router-sqle-ee', () => {
 
         it('render route auditPlanCreate', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/auditPlan/create`
+            `/sqle/project/${projectID}/audit-plan/create`
           ]);
 
           expect(baseElement).toMatchSnapshot();
@@ -252,7 +252,7 @@ describe('base/router-sqle-ee', () => {
 
         it('render route auditPlanUpdate', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/auditPlan/update/auditPlanName`
+            `/sqle/project/${projectID}/audit-plan/update/auditPlanName`
           ]);
 
           expect(baseElement).toMatchSnapshot();
@@ -261,7 +261,7 @@ describe('base/router-sqle-ee', () => {
 
         it('render route auditPlanDetail', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/auditPlan/detail/auditPlanName`
+            `/sqle/project/${projectID}/audit-plan/detail/auditPlanName`
           ]);
 
           expect(baseElement).toMatchSnapshot();
@@ -269,7 +269,7 @@ describe('base/router-sqle-ee', () => {
         });
         it('render route auditPlanDetailReport', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/auditPlan/detail/auditPlanName/report/reportId`
+            `/sqle/project/${projectID}/audit-plan/detail/auditPlanName/report/reportId`
           ]);
 
           expect(baseElement).toMatchSnapshot();
@@ -365,7 +365,7 @@ describe('base/router-sqle-ee', () => {
 
       it('render operationRecord', () => {
         const { baseElement } = customRender([
-          `/sqle/project/${projectID}/operationRecord`
+          `/sqle/project/${projectID}/operation-record`
         ]);
 
         expect(baseElement).toMatchSnapshot();
@@ -375,7 +375,7 @@ describe('base/router-sqle-ee', () => {
       describe('render route sqlManagement', () => {
         it('render sqlManagement', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/sqlManagement`
+            `/sqle/project/${projectID}/sql-management`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));
@@ -396,7 +396,7 @@ describe('base/router-sqle-ee', () => {
 
       it('render route auditPlanDetail', () => {
         const { baseElement } = customRender([
-          `/sqle/project/${projectID}/auditPlan/reportId/sqlNum/:auditPlanName/analyze`
+          `/sqle/project/${projectID}/audit-plan/reportId/sqlNum/:auditPlanName/analyze`
         ]);
 
         expect(baseElement).toMatchSnapshot();
@@ -405,7 +405,7 @@ describe('base/router-sqle-ee', () => {
 
       it('render SQLManagementAnalyze', async () => {
         const { baseElement } = customRender([
-          `/sqle/project/${projectID}/sqlManagement/sqlManageId/analyze`
+          `/sqle/project/${projectID}/sql-management/sqlManageId/analyze`
         ]);
 
         await act(async () => jest.advanceTimersByTime(300));

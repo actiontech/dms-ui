@@ -30,7 +30,7 @@ const CreatePlan = () => {
 
   const onSkipList = () => {
     onReset();
-    navigate(`/sqle/project/${projectID}/auditPlan`);
+    navigate(`/sqle/project/${projectID}/audit-plan`);
   };
 
   const onReset = () => {
@@ -123,7 +123,7 @@ const CreatePlan = () => {
               key="view-audit-plan"
               onClick={() => {
                 navigate(
-                  `/sqle/project/${projectID}/auditPlan/detail/${form.getFieldValue(
+                  `/sqle/project/${projectID}/audit-plan/detail/${form.getFieldValue(
                     'name'
                   )}`
                 );

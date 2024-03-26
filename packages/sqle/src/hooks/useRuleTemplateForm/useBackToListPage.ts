@@ -4,7 +4,7 @@ const useBackToListPage = (projectID?: string) => {
   const navigate = useNavigate();
 
   const onGoToGlobalRuleTemplateList = () => {
-    navigate('/sqle/ruleManager');
+    navigate('/sqle/rule-manager');
   };
 
   const onGotoRuleTemplateList = () => {

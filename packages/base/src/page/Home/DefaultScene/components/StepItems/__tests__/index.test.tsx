@@ -65,13 +65,13 @@ describe('test base/Home/StepItems', () => {
     fireEvent.click(screen.getByText('查看智能扫描'));
     expect(navigateSpy).toHaveBeenCalledTimes(9);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${projectID}/auditPlan`
+      `/sqle/project/${projectID}/audit-plan`
     );
 
     fireEvent.click(screen.getByText('新建SQL审核'));
     expect(navigateSpy).toHaveBeenCalledTimes(10);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${projectID}/sqlAudit/create`
+      `/sqle/project/${projectID}/sql-audit/create`
     );
 
     fireEvent.click(screen.getByText('配置审批流程模板'));
@@ -89,7 +89,7 @@ describe('test base/Home/StepItems', () => {
     fireEvent.click(screen.getByText('SQLE操作记录'));
     expect(navigateSpy).toHaveBeenCalledTimes(13);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${projectID}/operationRecord`
+      `/sqle/project/${projectID}/operation-record`
     );
 
     fireEvent.click(screen.getByText('发起导出工单'));

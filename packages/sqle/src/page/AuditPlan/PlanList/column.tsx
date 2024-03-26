@@ -107,7 +107,7 @@ const PlanListColumn: (
         return (
           <TableColumnWithIconStyleWrapper>
             <IconOrderId />
-            <Link to={`/sqle/project/${projectID}/auditPlan/detail/${text}`}>
+            <Link to={`/sqle/project/${projectID}/audit-plan/detail/${text}`}>
               <span>{text}</span>
             </Link>
           </TableColumnWithIconStyleWrapper>
@@ -156,7 +156,7 @@ const PlanListColumn: (
         }
 
         const path = ruleTemplate.is_global_rule_template
-          ? `/sqle/ruleManager/globalDetail/${ruleTemplate.name}/${record.audit_plan_db_type}`
+          ? `/sqle/rule-manager/global-detail/${ruleTemplate.name}/${record.audit_plan_db_type}`
           : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
 
         return <Link to={path}>{ruleTemplate.name}</Link>;

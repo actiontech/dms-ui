@@ -107,7 +107,7 @@ const AuditResult = () => {
         key={`${projectID}${data.audit_plan_report_id}`}
         onClick={() => {
           navigater(
-            `/sqle/project/${projectID}/auditPlan/detail/${
+            `/sqle/project/${projectID}/audit-plan/detail/${
               urlParams.auditPlanName ?? ''
             }/report/${data.audit_plan_report_id}`
           );

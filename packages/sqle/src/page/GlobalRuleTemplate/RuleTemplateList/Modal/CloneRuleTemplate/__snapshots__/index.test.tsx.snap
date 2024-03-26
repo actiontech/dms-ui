@@ -83,7 +83,7 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                     >
                       正在克隆审核规则模版
                       <a
-                        href="/sqle/ruleManager/globalUpdate/default_template"
+                        href="/sqle/rule-manager/global-update/default_template"
                         target="_blank"
                       >
                         default_template
