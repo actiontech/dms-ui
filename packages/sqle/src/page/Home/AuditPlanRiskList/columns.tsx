@@ -24,7 +24,7 @@ export const AuditPlanRiskColumns: (
             <IconAuditTaskName />
             <Link
               data-testid="report-time"
-              to={`/sqle/project/${projectID}/auditPlan/detail/${record.audit_plan_name}/report/${record.audit_plan_report_id}`}
+              to={`/sqle/project/${projectID}/audit-plan/detail/${record.audit_plan_name}/report/${record.audit_plan_report_id}`}
             >
               {text}
             </Link>
@@ -42,7 +42,7 @@ export const AuditPlanRiskColumns: (
         }
 
         return (
-          <Link to={`/sqle/project/${projectID}/auditPlan/detail/${name}`}>
+          <Link to={`/sqle/project/${projectID}/audit-plan/detail/${name}`}>
             {name}
           </Link>
         );

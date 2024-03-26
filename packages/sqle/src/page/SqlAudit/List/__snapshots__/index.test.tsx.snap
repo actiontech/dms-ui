@@ -15,7 +15,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
         class="extra"
       >
         <a
-          href="/sqle/project/700300/sqlAudit/create"
+          href="/sqle/project/700300/sql-audit/create"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -624,7 +624,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/sqle/project/700300/sqlAudit/detail/123456"
+                          href="/sqle/project/700300/sql-audit/detail/123456"
                         >
                           123456
                         </a>
@@ -762,7 +762,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/sqle/project/700300/sqlAudit/detail/234567"
+                          href="/sqle/project/700300/sql-audit/detail/234567"
                         >
                           234567
                         </a>
@@ -1127,7 +1127,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
         class="extra"
       >
         <a
-          href="/sqle/project/700300/sqlAudit/create"
+          href="/sqle/project/700300/sql-audit/create"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -1604,7 +1604,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                         class="ant-table-cell"
                       >
                         <a
-                          href="/sqle/project/700300/sqlAudit/detail/123456"
+                          href="/sqle/project/700300/sql-audit/detail/123456"
                         >
                           123456
                         </a>
@@ -1742,7 +1742,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
                         class="ant-table-cell"
                       >
                         <a
-                          href="/sqle/project/700300/sqlAudit/detail/234567"
+                          href="/sqle/project/700300/sql-audit/detail/234567"
                         >
                           234567
                         </a>
@@ -2107,7 +2107,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
         class="extra"
       >
         <a
-          href="/sqle/project/700300/sqlAudit/create"
+          href="/sqle/project/700300/sql-audit/create"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"

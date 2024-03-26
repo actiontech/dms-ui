@@ -60,7 +60,7 @@ const ScanTask = () => {
   }, [data, loading, errorMessage]);
 
   const onCreatedOrder = () => {
-    navigate(`/sqle/project/${projectID}/auditPlan/create`);
+    navigate(`/sqle/project/${projectID}/audit-plan/create`);
   };
 
   return (

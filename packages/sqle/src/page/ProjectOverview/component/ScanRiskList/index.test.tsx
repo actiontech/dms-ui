@@ -57,16 +57,16 @@ describe('page/ProjectOverview/ScanRiskList', () => {
     expect(getAllBySelector('a').length).toBe(2);
     expect(getAllBySelector('a')?.[0]).toHaveAttribute(
       'href',
-      `/sqle/project/${mockProjectInfo.projectID}/auditPlan/detail/${riskAuditPlanData[0].audit_plan_name}/report/${riskAuditPlanData[0].audit_plan_report_id}`
+      `/sqle/project/${mockProjectInfo.projectID}/audit-plan/detail/${riskAuditPlanData[0].audit_plan_name}/report/${riskAuditPlanData[0].audit_plan_report_id}`
     );
     expect(getAllBySelector('a')?.[1]).toHaveAttribute(
       'href',
-      `/project/${mockProjectInfo.projectID}/auditPlan/detail/${riskAuditPlanData[0].audit_plan_name}`
+      `/project/${mockProjectInfo.projectID}/audit-plan/detail/${riskAuditPlanData[0].audit_plan_name}`
     );
     expect(screen.getByText('查看更多')).toBeInTheDocument();
     fireEvent.click(screen.getByText('查看更多'));
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/auditPlan`
+      `/sqle/project/${mockProjectInfo.projectID}/audit-plan`
     );
   });
 

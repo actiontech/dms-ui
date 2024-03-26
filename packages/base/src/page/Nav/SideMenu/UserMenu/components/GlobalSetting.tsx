@@ -72,7 +72,7 @@ const GlobalSetting: React.FC<{
               {/* #if [sqle] */}
               <div
                 className="content-item"
-                onClick={() => handleClickItem('/sqle/reportStatistics')}
+                onClick={() => handleClickItem('/sqle/report-statistics')}
               >
                 <IconReportStatistics />
                 <span className="content-item-text">
@@ -90,7 +90,7 @@ const GlobalSetting: React.FC<{
               </div>
               <div
                 className="content-item"
-                onClick={() => handleClickItem(`/sqle/ruleManager`)}
+                onClick={() => handleClickItem(`/sqle/rule-manager`)}
               >
                 <IconRuleManage />
                 <span className="content-item-text">

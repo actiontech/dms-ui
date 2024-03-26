@@ -43,11 +43,11 @@ describe('page/Home/AuditPlanRiskList', () => {
 
     expect(screen.getByText('生成时间 2023-12-27 12:32:38')).toHaveAttribute(
       'href',
-      `/sqle/project/${mockProjectInfo.projectID}/auditPlan/detail/${authPlanRiskMockData[0].audit_plan_name}/report/${authPlanRiskMockData[0].audit_plan_report_id}`
+      `/sqle/project/${mockProjectInfo.projectID}/audit-plan/detail/${authPlanRiskMockData[0].audit_plan_name}/report/${authPlanRiskMockData[0].audit_plan_report_id}`
     );
     expect(screen.getByText('test-risk')).toHaveAttribute(
       'href',
-      `/sqle/project/${mockProjectInfo.projectID}/auditPlan/detail/${authPlanRiskMockData[0].audit_plan_name}`
+      `/sqle/project/${mockProjectInfo.projectID}/audit-plan/detail/${authPlanRiskMockData[0].audit_plan_name}`
     );
     expect(screen.getAllByText('-').length).toBe(2);
 
