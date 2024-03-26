@@ -52,7 +52,7 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
   );
 
   const navigateToUpdatePage = (templateName: string) => {
-    navigate(`/sqle/ruleManager/globalUpdate/${templateName}`);
+    navigate(`/sqle/rule-manager/global-update/${templateName}`);
   };
 
   const deleteTemplate = React.useCallback(

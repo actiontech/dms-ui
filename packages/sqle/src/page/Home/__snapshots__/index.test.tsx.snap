@@ -983,7 +983,7 @@ exports[`page/Home render Home page 1`] = `
                           </span>
                           <a
                             data-testid="report-time"
-                            href="/sqle/project/700300/auditPlan/detail/test-risk/report/1739836656367702018"
+                            href="/sqle/project/700300/audit-plan/detail/test-risk/report/1739836656367702018"
                           >
                             生成时间 2023-12-27 12:32:38
                           </a>
@@ -993,7 +993,7 @@ exports[`page/Home render Home page 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/sqle/project/700300/auditPlan/detail/test-risk"
+                          href="/sqle/project/700300/audit-plan/detail/test-risk"
                         >
                           test-risk
                         </a>
@@ -1048,7 +1048,7 @@ exports[`page/Home render Home page 1`] = `
                           </span>
                           <a
                             data-testid="report-time"
-                            href="/sqle/project/700300/auditPlan/detail//report/1739836656367702020"
+                            href="/sqle/project/700300/audit-plan/detail//report/1739836656367702020"
                           >
                             生成时间 -
                           </a>

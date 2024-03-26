@@ -125,7 +125,7 @@ export const RuleTemplateTableColumn: (
           return '';
         }
         const skipUrl = isGlobal
-          ? `/sqle/ruleManager/globalDetail/${name}/${record?.db_type ?? ''}`
+          ? `/sqle/rule-manager/global-detail/${name}/${record?.db_type ?? ''}`
           : `/sqle/project/${projectID}/rule/template/detail/${name}/${
               record?.db_type ?? ''
             }`;

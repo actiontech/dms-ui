@@ -85,7 +85,7 @@ const SqlAuditCreate = () => {
 
   useEffect(() => {
     auditId &&
-      navigate(`/sqle/project/${projectID}/sqlAudit/detail/${auditId}`);
+      navigate(`/sqle/project/${projectID}/sql-audit/detail/${auditId}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditId]);
 
@@ -95,7 +95,7 @@ const SqlAuditCreate = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/sqle/project/${projectID}/sqlAudit`}>
+          <Link to={`/sqle/project/${projectID}/sql-audit`}>
             <BasicButton icon={<IconLeftArrow />}>
               {t('sqlAudit.common.goBackList')}
             </BasicButton>
