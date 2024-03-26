@@ -26,7 +26,7 @@ const SideMenu: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { username, theme, updateTheme, isAdmin, bindProjects } =
+  const { username, theme, updateTheme, isAdmin, bindProjects, role } =
     useCurrentUser();
 
   const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
@@ -138,7 +138,7 @@ const SideMenu: React.FC = () => {
           />
         </Spin>
 
-        <MenuList projectID={currentProjectID ?? ''} isAdmin={isAdmin} />
+        <MenuList projectID={currentProjectID ?? ''} role={role} />
       </div>
 
       <UserMenu

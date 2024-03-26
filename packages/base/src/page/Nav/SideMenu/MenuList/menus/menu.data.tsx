@@ -1,36 +1,43 @@
-import { MenuProps } from 'antd';
-import { NavigateFunction } from 'react-router-dom';
-import { filterAdminMenusWithKey } from './common';
-import { BaseMenuItems } from './base';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+import { t } from '../../../../../locale';
+import { MenuStructTreeType } from './index.type';
+import { genMenuItemsWithMenuStructTree } from './common';
 
-// #if [sqle]
-import {
-  SQLEOperateConflictMenuItems,
-  SQLEMenuItems,
-  SQLESqlDevelopMenuItems
-} from './sqle';
-// #endif
-
-export const sideMenuData: (
-  navigate: NavigateFunction,
-  isAdmin: boolean,
-  projectID?: string
-) => MenuProps['items'] = (navigate, isAdmin, projectID = '') => {
-  const allMenus = [
-    ...BaseMenuItems({ navigate, projectID }),
-
-    // #if [sqle]
-    ...SQLEMenuItems({ navigate, projectID }),
-    ...SQLEOperateConflictMenuItems({ navigate, projectID }),
-    ...SQLESqlDevelopMenuItems({ navigate, projectID })
-    // #endif
+export const sideMenuData = (projectID: string, role: SystemRole | '') => {
+  const menuStruct: MenuStructTreeType = [
+    'project-overview',
+    'dashboard',
+    { type: 'divider' },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.SQLDev'),
+      group: ['cloud-beaver', 'data-export', 'sql-audit', 'plugin-audit']
+    },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.SQLExecute'),
+      group: ['sql-order']
+    },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.SQLManagement'),
+      group: ['sql-management', 'audit-plane']
+    },
+    { type: 'divider' },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.projectConfigure'),
+      group: [
+        'instance-management',
+        'rule-template',
+        'whitelist',
+        'workflow-template',
+        'member'
+      ]
+    },
+    { type: 'divider' },
+    'sqle-log'
   ];
 
-  if (!isAdmin) {
-    return filterAdminMenusWithKey(allMenus).sort(
-      (a, b) => (a?.order ?? 0) - (b?.order ?? 0)
-    );
-  }
-
-  return allMenus.sort((a, b) => (a?.order ?? 0) - (b?.order ?? 0));
+  return genMenuItemsWithMenuStructTree(projectID, menuStruct, role);
 };
