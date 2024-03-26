@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/provision/Audit/AuditDetailItem render audit detail item with children 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1m0yqz8"
+    >
+      <div
+        class="audit-info-item-label"
+      >
+        test label
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          <span>
+            test value
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`/provision/Audit/AuditDetailItem render audit detail item with value 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1m0yqz8"
+    >
+      <div
+        class="audit-info-item-label"
+      >
+        test label
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          test value
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`/provision/Audit/AuditDetailItem render diff type detail item 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1m0yqz8"
+    >
+      <div
+        class="audit-info-item-label"
+      >
+        test label
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px; padding-bottom: 8px;"
+        />
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          test value
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`/provision/Audit/AuditDetailItem render diff type detail item 2`] = `
+<body>
+  <div>
+    <div
+      class="css-1m0yqz8"
+    >
+      <div
+        class="audit-info-item-label"
+      >
+        test label
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px; padding-bottom: 8px;"
+        />
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          test value
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="css-1m0yqz8"
+    >
+      <div
+        class="audit-info-item-label"
+      >
+        test label
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px; padding-bottom: 8px;"
+        >
+          <span
+            class="custom-icon css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9 15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.4087 14.3679 5.88258 13.2426 4.75736C12.1174 3.63214 10.5913 3 9 3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.5913 3.63214 12.1174 4.75736 13.2426C5.88258 14.3679 7.4087 15 9 15ZM9.75 9H12.75V10.5H8.25V5.25H9.75V9Z"
+                fill="#8A8F99"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          test value
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`/provision/Audit/AuditDetailItem render diff type detail item 3`] = `
+<body>
+  <div>
+    <div
+      class="css-1m0yqz8"
+    >
+      <div
+        class="audit-info-item-label"
+      >
+        test label
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px; padding-bottom: 8px;"
+        />
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          test value
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="css-1m0yqz8"
+    >
+      <div
+        class="audit-info-item-label"
+      >
+        test label
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px; padding-bottom: 8px;"
+        >
+          <span
+            class="custom-icon css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9 15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.4087 14.3679 5.88258 13.2426 4.75736C12.1174 3.63214 10.5913 3 9 3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.5913 3.63214 12.1174 4.75736 13.2426C5.88258 14.3679 7.4087 15 9 15ZM9.75 9H12.75V10.5H8.25V5.25H9.75V9Z"
+                fill="#8A8F99"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          test value
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="css-1m0yqz8"
+    >
+      <div
+        class="audit-info-item-label"
+      >
+        test label
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+        style="flex-wrap: wrap; margin-bottom: -8px;"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px; padding-bottom: 8px;"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+              >
+                <span
+                  class="ant-avatar-string"
+                  style="transform: scale(1) translateX(-50%);"
+                >
+                  T
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="padding-bottom: 8px;"
+        >
+          test value
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

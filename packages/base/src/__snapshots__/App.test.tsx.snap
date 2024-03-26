@@ -27,7 +27,7 @@ exports[`App render App when token is existed 1`] = `
             <span
               class="label label-base"
             >
-              SQLE
+              DMS
             </span>
           </div>
         </div>
@@ -312,42 +312,62 @@ exports[`App render App when token is existed 1`] = `
             </span>
           </li>
           <li
-            class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operation-record"
-            role="menuitem"
-            style="padding-left: 24px;"
-            tabindex="-1"
+            class="ant-menu-submenu ant-menu-submenu-inline"
+            role="none"
           >
-            <span
-              class="anticon ant-menu-item-icon"
-              role="img"
+            <div
+              aria-controls="rc-menu-uuid-test-operateAndAudit-popup"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="ant-menu-submenu-title"
+              data-menu-id="rc-menu-uuid-test-operateAndAudit"
+              role="menuitem"
+              style="padding-left: 24px;"
+              tabindex="-1"
             >
+              <span
+                class="anticon ant-menu-item-icon"
+                role="img"
+              >
+                <svg
+                  fill="none"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
+                    fill="#C3C6CD"
+                    fill-rule="evenodd"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
+                    fill="#8A8F99"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="ant-menu-title-content"
+              >
+                操作与审计
+              </span>
               <svg
                 fill="none"
-                height="18"
-                viewBox="0 0 18 18"
-                width="18"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
-                  fill="#C3C6CD"
-                  fill-rule="evenodd"
-                />
-                <path
-                  clip-rule="evenodd"
-                  d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
-                  fill="#8A8F99"
-                  fill-rule="evenodd"
+                  d="M8.00048 8.78132L11.3005 5.48132L12.2431 6.42399L8.00048 10.6667L3.75781 6.42399L4.70048 5.48132L8.00048 8.78132Z"
+                  fill="currentColor"
                 />
               </svg>
-            </span>
-            <span
-              class="ant-menu-title-content"
-            >
-              操作与审计
-            </span>
+            </div>
           </li>
           <li
             class="ant-menu-item-group"
@@ -776,6 +796,159 @@ exports[`App render App when token is existed 1`] = `
               </li>
             </ul>
           </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            order="10"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="数据安全"
+            >
+              数据安全
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/data/operation"
+                role="menuitem"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.5 6H15C15.1989 6 15.3897 6.07902 15.5303 6.21967C15.671 6.36032 15.75 6.55109 15.75 6.75V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V6.75C2.25 6.55109 2.32902 6.36032 2.46967 6.21967C2.61032 6.07902 2.80109 6 3 6H4.5V5.25C4.5 4.05653 4.97411 2.91193 5.81802 2.06802C6.66193 1.22411 7.80653 0.75 9 0.75C10.1935 0.75 11.3381 1.22411 12.182 2.06802C13.0259 2.91193 13.5 4.05653 13.5 5.25V6ZM12 6V5.25C12 4.45435 11.6839 3.69129 11.1213 3.12868C10.5587 2.56607 9.79565 2.25 9 2.25C8.20435 2.25 7.44129 2.56607 6.87868 3.12868C6.31607 3.69129 6 4.45435 6 5.25V6H12ZM8.25 10.5V12H9.75V10.5H8.25ZM5.25 10.5V12H6.75V10.5H5.25ZM11.25 10.5V12H12.75V10.5H11.25Z"
+                      fill="#C3C6CD"
+                    />
+                    <path
+                      d="M12 6V5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25V6H4.5V5.25C4.5 2.76472 6.51472 0.75 9 0.75C11.4853 0.75 13.5 2.76472 13.5 5.25V6H12Z"
+                      fill="#8A8F99"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  权限组
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/template"
+                role="menuitem"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
+                      fill="#C3C6CD"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  权限模板
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/list"
+                role="menuitem"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.49414 10.5H12.7502V13.5H15.7502V10.5H17.2502V7.5H9.49414V10.5Z"
+                      fill="#8A8F99"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M5.25 13.5C7.73528 13.5 9.75 11.4853 9.75 9C9.75 6.51472 7.73528 4.5 5.25 4.5C2.76472 4.5 0.75 6.51472 0.75 9C0.75 11.4853 2.76472 13.5 5.25 13.5ZM5.25 10.5C6.07843 10.5 6.75 9.82843 6.75 9C6.75 8.17157 6.07843 7.5 5.25 7.5C4.42157 7.5 3.75 8.17157 3.75 9C3.75 9.82843 4.42157 10.5 5.25 10.5Z"
+                      fill="#C3C6CD"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  授权清单
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data_mask_rule_overview"
+                role="menuitem"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 15 15"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M14.7649 6.07595C14.9991 6.22231 15.0703 6.53078 14.9239 6.76495C14.4849 7.46742 13.9632 8.10644 13.3702 8.66304L14.5712 9.86405C14.7664 10.0593 14.7664 10.3759 14.5712 10.5712C14.3759 10.7664 14.0593 10.7664 13.8641 10.5712L12.6011 9.30816C11.8049 9.90282 10.9089 10.3621 9.93374 10.651L10.383 12.3276C10.4544 12.5944 10.2961 12.8685 10.0294 12.94C9.76266 13.0115 9.4885 12.8532 9.41703 12.5864L8.95916 10.8775C8.48742 10.958 8.00035 10.9999 7.5 10.9999C6.99964 10.9999 6.51257 10.958 6.04082 10.8775L5.58299 12.5864C5.51153 12.8532 5.23737 13.0115 4.97063 12.94C4.7039 12.8685 4.5456 12.5944 4.61706 12.3277L5.06624 10.651C4.09111 10.3621 3.19503 9.90281 2.3989 9.30814L1.1359 10.5711C0.940638 10.7664 0.624058 10.7664 0.428797 10.5711C0.233537 10.3759 0.233537 10.0593 0.428797 9.86404L1.62982 8.66302C1.03682 8.10643 0.515113 7.46742 0.0760677 6.76495C-0.0702867 6.53078 0.000898544 6.22231 0.235064 6.07595C0.46923 5.9296 0.777703 6.00078 0.924057 6.23495C1.40354 7.00212 1.989 7.68056 2.66233 8.2427C2.67315 8.25096 2.6837 8.25971 2.69397 8.26897C4.00897 9.35527 5.65536 9.9999 7.5 9.9999C10.3078 9.9999 12.6563 8.50629 14.0759 6.23495C14.2223 6.00078 14.5308 5.9296 14.7649 6.07595Z"
+                      fill="#C3C6CD"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  脱敏规则
+                </span>
+              </li>
+            </ul>
+          </li>
         </ul>
         <div
           aria-hidden="true"
@@ -907,7 +1080,7 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
                 class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
@@ -1084,7 +1257,7 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
                 class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
@@ -1185,7 +1358,7 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
                 class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
@@ -1276,6 +1449,63 @@ exports[`App render App when token is existed 1`] = `
                           class="ant-space-item"
                         >
                           新建SQL审核
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  数据源授权管理
+                </div>
+                <div
+                  class="desc"
+                >
+                  配置数据权限模版，将数据权限模版授权给指定用户
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          权限模板
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          授权清单
                         </div>
                       </div>
                     </button>
@@ -1383,7 +1613,7 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
                 class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
@@ -1499,6 +1729,44 @@ exports[`App render App when token is existed 1`] = `
                   </div>
                 </div>
               </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  数据脱敏
+                </div>
+                <div
+                  class="desc"
+                >
+                  开启脱敏，保障敏感数据安全
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看脱敏规则
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1560,7 +1828,7 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
                 class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
@@ -1579,6 +1847,44 @@ exports[`App render App when token is existed 1`] = `
                   class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          授权审计
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          权限模板审计
+                        </div>
+                      </div>
+                    </button>
+                  </div>
                   <div
                     class="ant-space-item"
                     style="padding-bottom: 8px;"
@@ -1655,7 +1961,7 @@ exports[`App render App when token is not existed 1`] = `
             <span
               class="label label-base"
             >
-              SQLE
+              DMS
             </span>
           </div>
         </div>
@@ -1901,7 +2207,7 @@ exports[`App render App when user role is not admin 1`] = `
             <span
               class="label label-base"
             >
-              SQLE
+              DMS
             </span>
           </div>
         </div>
@@ -2184,6 +2490,64 @@ exports[`App render App when user role is not admin 1`] = `
             >
               成员与权限
             </span>
+          </li>
+          <li
+            class="ant-menu-submenu ant-menu-submenu-inline"
+            role="none"
+          >
+            <div
+              aria-controls="rc-menu-uuid-test-operateAndAudit-popup"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="ant-menu-submenu-title"
+              data-menu-id="rc-menu-uuid-test-operateAndAudit"
+              role="menuitem"
+              style="padding-left: 24px;"
+              tabindex="-1"
+            >
+              <span
+                class="anticon ant-menu-item-icon"
+                role="img"
+              >
+                <svg
+                  fill="none"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M3 1.5H14.25C14.4489 1.5 14.6396 1.57903 14.7803 1.71968C14.9209 1.86033 15 2.05109 15 2.25V8.25C14.3524 7.76022 13.5619 7.49671 12.75 7.5C11.7554 7.5 10.8016 7.8951 10.0984 8.59836C9.3951 9.30162 9 10.2554 9 11.25C9.00662 11.7673 9.11887 12.2777 9.32996 12.75C8.80856 12.849 8.33896 13.1291 8.00409 13.5408C7.66922 13.9525 7.49069 14.4694 7.5 15V16.5H3C2.80109 16.5 2.61029 16.421 2.46964 16.2803C2.32898 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32898 1.86033 2.46964 1.71968C2.61029 1.57903 2.80109 1.5 3 1.5ZM6 9H8.25V7.5H6V9ZM6 6H11.25V4.5H6V6Z"
+                    fill="#C3C6CD"
+                    fill-rule="evenodd"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M11.2976 9.5287C11.7041 9.1865 12.2186 8.99921 12.75 9C13.2814 8.99921 13.7958 9.1865 14.2023 9.5287C14.6088 9.87089 14.8811 10.3459 14.971 10.8696C15.0608 11.3933 14.9623 11.9319 14.6931 12.39C14.4239 12.8481 14.0012 13.1962 13.5 13.3725V14.25H15.75C15.9489 14.25 16.1396 14.329 16.2803 14.4697C16.4209 14.6103 16.5 14.8011 16.5 15V16.5C16.5 16.6989 16.4209 16.8897 16.2803 17.0303C16.1396 17.171 15.9489 17.25 15.75 17.25H9.75C9.55109 17.25 9.36029 17.171 9.21964 17.0303C9.07898 16.8897 9 16.6989 9 16.5V15C9 14.8011 9.07898 14.6103 9.21964 14.4697C9.36029 14.329 9.55109 14.25 9.75 14.25H12V13.3725C11.4988 13.1962 11.076 12.8481 10.8068 12.39C10.5376 11.9319 10.4392 11.3933 10.529 10.8696C10.6189 10.3459 10.8911 9.87089 11.2976 9.5287ZM12.1263 10.8333C12.0439 10.9567 12 11.1017 12 11.25C12 11.4489 12.079 11.6397 12.2196 11.7803C12.3603 11.921 12.5511 12 12.75 12C12.8983 12 13.0433 11.956 13.1667 11.8736C13.29 11.7912 13.3861 11.6741 13.4429 11.537C13.4996 11.4 13.5145 11.2492 13.4855 11.1037C13.4566 10.9582 13.3852 10.8246 13.2803 10.7197C13.1754 10.6148 13.0418 10.5434 12.8963 10.5144C12.7508 10.4855 12.6 10.5003 12.463 10.5571C12.3259 10.6139 12.2088 10.71 12.1263 10.8333Z"
+                    fill="#8A8F99"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span
+                class="ant-menu-title-content"
+              >
+                操作与审计
+              </span>
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.00048 8.78132L11.3005 5.48132L12.2431 6.42399L8.00048 10.6667L3.75781 6.42399L4.70048 5.48132L8.00048 8.78132Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
           </li>
           <li
             class="ant-menu-item-group"
@@ -2612,6 +2976,159 @@ exports[`App render App when user role is not admin 1`] = `
               </li>
             </ul>
           </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            order="10"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="数据安全"
+            >
+              数据安全
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/data/operation"
+                role="menuitem"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.5 6H15C15.1989 6 15.3897 6.07902 15.5303 6.21967C15.671 6.36032 15.75 6.55109 15.75 6.75V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V6.75C2.25 6.55109 2.32902 6.36032 2.46967 6.21967C2.61032 6.07902 2.80109 6 3 6H4.5V5.25C4.5 4.05653 4.97411 2.91193 5.81802 2.06802C6.66193 1.22411 7.80653 0.75 9 0.75C10.1935 0.75 11.3381 1.22411 12.182 2.06802C13.0259 2.91193 13.5 4.05653 13.5 5.25V6ZM12 6V5.25C12 4.45435 11.6839 3.69129 11.1213 3.12868C10.5587 2.56607 9.79565 2.25 9 2.25C8.20435 2.25 7.44129 2.56607 6.87868 3.12868C6.31607 3.69129 6 4.45435 6 5.25V6H12ZM8.25 10.5V12H9.75V10.5H8.25ZM5.25 10.5V12H6.75V10.5H5.25ZM11.25 10.5V12H12.75V10.5H11.25Z"
+                      fill="#C3C6CD"
+                    />
+                    <path
+                      d="M12 6V5.25C12 3.59315 10.6569 2.25 9 2.25C7.34315 2.25 6 3.59315 6 5.25V6H4.5V5.25C4.5 2.76472 6.51472 0.75 9 0.75C11.4853 0.75 13.5 2.76472 13.5 5.25V6H12Z"
+                      fill="#8A8F99"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  权限组
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/template"
+                role="menuitem"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
+                      fill="#C3C6CD"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  权限模板
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/list"
+                role="menuitem"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.49414 10.5H12.7502V13.5H15.7502V10.5H17.2502V7.5H9.49414V10.5Z"
+                      fill="#8A8F99"
+                    />
+                    <path
+                      clip-rule="evenodd"
+                      d="M5.25 13.5C7.73528 13.5 9.75 11.4853 9.75 9C9.75 6.51472 7.73528 4.5 5.25 4.5C2.76472 4.5 0.75 6.51472 0.75 9C0.75 11.4853 2.76472 13.5 5.25 13.5ZM5.25 10.5C6.07843 10.5 6.75 9.82843 6.75 9C6.75 8.17157 6.07843 7.5 5.25 7.5C4.42157 7.5 3.75 8.17157 3.75 9C3.75 9.82843 4.42157 10.5 5.25 10.5Z"
+                      fill="#C3C6CD"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  授权清单
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data_mask_rule_overview"
+                role="menuitem"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 15 15"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M14.7649 6.07595C14.9991 6.22231 15.0703 6.53078 14.9239 6.76495C14.4849 7.46742 13.9632 8.10644 13.3702 8.66304L14.5712 9.86405C14.7664 10.0593 14.7664 10.3759 14.5712 10.5712C14.3759 10.7664 14.0593 10.7664 13.8641 10.5712L12.6011 9.30816C11.8049 9.90282 10.9089 10.3621 9.93374 10.651L10.383 12.3276C10.4544 12.5944 10.2961 12.8685 10.0294 12.94C9.76266 13.0115 9.4885 12.8532 9.41703 12.5864L8.95916 10.8775C8.48742 10.958 8.00035 10.9999 7.5 10.9999C6.99964 10.9999 6.51257 10.958 6.04082 10.8775L5.58299 12.5864C5.51153 12.8532 5.23737 13.0115 4.97063 12.94C4.7039 12.8685 4.5456 12.5944 4.61706 12.3277L5.06624 10.651C4.09111 10.3621 3.19503 9.90281 2.3989 9.30814L1.1359 10.5711C0.940638 10.7664 0.624058 10.7664 0.428797 10.5711C0.233537 10.3759 0.233537 10.0593 0.428797 9.86404L1.62982 8.66302C1.03682 8.10643 0.515113 7.46742 0.0760677 6.76495C-0.0702867 6.53078 0.000898544 6.22231 0.235064 6.07595C0.46923 5.9296 0.777703 6.00078 0.924057 6.23495C1.40354 7.00212 1.989 7.68056 2.66233 8.2427C2.67315 8.25096 2.6837 8.25971 2.69397 8.26897C4.00897 9.35527 5.65536 9.9999 7.5 9.9999C10.3078 9.9999 12.6563 8.50629 14.0759 6.23495C14.2223 6.00078 14.5308 5.9296 14.7649 6.07595Z"
+                      fill="#C3C6CD"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  脱敏规则
+                </span>
+              </li>
+            </ul>
+          </li>
         </ul>
         <div
           aria-hidden="true"
@@ -2745,7 +3262,7 @@ exports[`App render App when user role is not admin 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
                 class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
@@ -2855,6 +3372,126 @@ exports[`App render App when user role is not admin 1`] = `
                           class="ant-space-item"
                         >
                           发起导出工单
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+        >
+          <div
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            style="flex: 0 0 40px; min-width: 0;"
+          >
+            <span
+              class="step-icon css-u3jcp4"
+            >
+              <svg
+                fill="none"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="icons/tool"
+                >
+                  <path
+                    d="M5.32992 3.271C5.95397 3.04837 6.62839 3.00745 7.27478 3.153C7.92116 3.29855 8.51296 3.62458 8.98136 4.09319C9.44977 4.5618 9.77553 5.15374 9.92079 5.8002C10.066 6.44665 10.0248 7.12105 9.80192 7.745L20.6469 18.59L18.5249 20.711L7.67992 9.867C7.05587 10.0896 6.38145 10.1305 5.73506 9.985C5.08868 9.83945 4.49688 9.51342 4.02848 9.04481C3.56008 8.5762 3.23431 7.98425 3.08905 7.3378C2.9438 6.69135 2.98502 6.01695 3.20792 5.393L5.44392 7.63C5.58229 7.77326 5.74781 7.88754 5.93081 7.96615C6.11382 8.04476 6.31065 8.08614 6.50982 8.08787C6.70899 8.08961 6.90651 8.05165 7.09085 7.97623C7.2752 7.90081 7.44268 7.78943 7.58351 7.64859C7.72435 7.50775 7.83573 7.34027 7.91115 7.15593C7.98658 6.97159 8.02453 6.77407 8.0228 6.5749C8.02107 6.37573 7.97969 6.1789 7.90107 5.99589C7.82246 5.81289 7.70819 5.64737 7.56492 5.509L5.32892 3.27L5.32992 3.271ZM15.6969 5.155L18.8789 3.387L20.2929 4.801L18.5249 7.983L16.7569 8.337L14.6369 10.458L13.2219 9.044L15.3429 6.923L15.6969 5.155ZM8.62592 12.933L10.7469 15.055L5.79692 20.005C5.52396 20.2754 5.15764 20.4308 4.7735 20.439C4.38937 20.4473 4.01671 20.3078 3.73237 20.0494C3.44804 19.791 3.27372 19.4333 3.24535 19.0501C3.21699 18.6669 3.33674 18.2875 3.57992 17.99L3.67692 17.883L8.62692 12.933H8.62592Z"
+                    fill="white"
+                    fill-opacity="0.6"
+                    id="1"
+                  />
+                  <path
+                    d="M15.6969 5.15499L18.8789 3.38699L20.2929 4.80099L18.5249 7.98299L16.7569 8.33699L14.6369 10.458L13.2219 9.04399L15.3429 6.92299L15.6969 5.15499ZM8.62588 12.933L10.7469 15.055L5.79688 20.005C5.52391 20.2754 5.15759 20.4308 4.77346 20.439C4.38932 20.4473 4.01666 20.3078 3.73233 20.0494C3.448 19.791 3.27367 19.4333 3.24531 19.0501C3.21694 18.6669 3.3367 18.2875 3.57988 17.99L3.67688 17.883L8.62588 12.933Z"
+                    fill="white"
+                    id="2"
+                  />
+                </g>
+              </svg>
+            </span>
+          </div>
+          <div
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            style="flex-basis: auto; min-width: 0;"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="inner-title-wrapper"
+              >
+                <div
+                  class="step-index"
+                >
+                  STEP2
+                </div>
+                <div
+                  class="step-title"
+                >
+                  运维与审计
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  操作审计
+                </div>
+                <div
+                  class="desc"
+                >
+                  审计平台内用户操作
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          授权审计
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          权限模板审计
                         </div>
                       </div>
                     </button>

@@ -1,10 +1,12 @@
 import { MenuProps } from 'antd';
 import { ItemType, SubMenuType } from 'antd/es/menu/hooks/useItems';
+import { Key } from 'react';
 import { NavigateFunction } from 'react-router-dom';
 
 export type CustomMenuItemType =
   | (ItemType & {
       order?: number;
+      parentKey?: string;
     })
   | null;
 
@@ -35,4 +37,29 @@ export const filterAdminMenusWithKey = (
       });
     }) ?? []
   );
+};
+
+export const rearrangeMenuItemsByParentKey = (
+  menus: CustomMenuItemType[]
+): CustomMenuItemType[] => {
+  const itemMap = new Map<Key, CustomMenuItemType>();
+
+  menus.forEach((item) => {
+    if (item && item.key) {
+      itemMap.set(item.key, item);
+    }
+  });
+
+  const rootItems: CustomMenuItemType[] = [];
+
+  menus.forEach((item) => {
+    if (item && item.parentKey && itemMap.has(item.parentKey)) {
+      const parentItem = itemMap.get(item.parentKey)! as SubMenuType;
+      parentItem.children?.push(item);
+    } else {
+      rootItems.push(item);
+    }
+  }, []);
+
+  return rootItems;
 };

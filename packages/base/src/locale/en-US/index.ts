@@ -10,6 +10,7 @@ import dmsCloudBeaver from './dmsCloudBeaver';
 import dmsSyncDataSource from './dmsSyncDataSource';
 import dmsMenu from './dmsMenu';
 import dmsDataExport from './dmsDataExport';
+import dataMaskRuleOverview from './dataMaskRuleOverview';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -25,6 +26,7 @@ export default {
     dmsCloudBeaver,
     dmsSyncDataSource,
     dmsMenu,
-    dmsDataExport
+    dmsDataExport,
+    dataMaskRuleOverview
   }
 };
