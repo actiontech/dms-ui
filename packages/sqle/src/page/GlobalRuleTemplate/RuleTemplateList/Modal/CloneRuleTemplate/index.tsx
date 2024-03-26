@@ -78,7 +78,7 @@ const CloneGlobalRuleTemplate = () => {
         loading={requestPending}
         onClose={onClose}
         onSubmit={onSubmit}
-        link={`/sqle/ruleManager/globalUpdate/${currentRuleTemplate?.rule_template_name}`}
+        link={`/sqle/rule-manager/global-update/${currentRuleTemplate?.rule_template_name}`}
         templateName={currentRuleTemplate?.rule_template_name}
         form={form}
       />

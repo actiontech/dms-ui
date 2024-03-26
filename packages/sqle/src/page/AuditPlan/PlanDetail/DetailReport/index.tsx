@@ -217,7 +217,7 @@ const DetailReport = () => {
       const sqlNumber = data.number ?? undefined;
       if (typeof sqlNumber === 'undefined') return;
       window.open(
-        `/sqle/project/${projectID}/auditPlan/${urlParams.reportId}/${sqlNumber}/${urlParams.auditPlanName}/analyze`,
+        `/sqle/project/${projectID}/audit-plan/${urlParams.reportId}/${sqlNumber}/${urlParams.auditPlanName}/analyze`,
         '_blank'
       );
     },

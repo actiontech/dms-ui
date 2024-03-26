@@ -21327,7 +21327,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/sqle/project/700300/auditPlan/detail/audit-plan-task1"
+                          href="/sqle/project/700300/audit-plan/detail/audit-plan-task1"
                         >
                           智能扫描
                         </a>
@@ -21725,7 +21725,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/sqle/project/700300/sqlAudit?SQLAuditRecordID=14311234"
+                          href="/sqle/project/700300/sql-audit?SQLAuditRecordID=14311234"
                         >
                           SQL审核
                         </a>
@@ -22097,7 +22097,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/sqle/project/700300/sqlAudit?SQLAuditRecordID=14311234"
+                          href="/sqle/project/700300/sql-audit?SQLAuditRecordID=14311234"
                         >
                           SQL审核
                         </a>

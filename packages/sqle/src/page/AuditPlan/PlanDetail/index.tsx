@@ -28,7 +28,7 @@ const PlanDetail = () => {
   const [messageApi, contextMessageHolder] = message.useMessage();
 
   const onSkipList = () => {
-    navigater(`/sqle/project/${projectID}/auditPlan`);
+    navigater(`/sqle/project/${projectID}/audit-plan`);
   };
 
   const onAudit = () => {

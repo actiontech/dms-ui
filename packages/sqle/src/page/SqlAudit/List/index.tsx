@@ -164,7 +164,7 @@ const SqlAuditList = () => {
         fixed
         extra={
           !projectArchive ? (
-            <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
+            <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
               <BasicButton type="primary" icon={<IconAdd />}>
                 {t('sqlAudit.list.action.create')}
               </BasicButton>

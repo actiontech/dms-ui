@@ -67,7 +67,7 @@ describe('sqle/SqlAudit/List', () => {
         .closest('a')
     ).toHaveAttribute(
       'href',
-      `/sqle/project/${mockProjectInfo.projectID}/sqlAudit/detail/${sqlAuditRecordMockData[0].sql_audit_record_id}`
+      `/sqle/project/${mockProjectInfo.projectID}/sql-audit/detail/${sqlAuditRecordMockData[0].sql_audit_record_id}`
     );
     expect(
       screen
@@ -75,7 +75,7 @@ describe('sqle/SqlAudit/List', () => {
         .closest('a')
     ).toHaveAttribute(
       'href',
-      `/sqle/project/${mockProjectInfo.projectID}/sqlAudit/detail/${sqlAuditRecordMockData[1].sql_audit_record_id}`
+      `/sqle/project/${mockProjectInfo.projectID}/sql-audit/detail/${sqlAuditRecordMockData[1].sql_audit_record_id}`
     );
   });
 

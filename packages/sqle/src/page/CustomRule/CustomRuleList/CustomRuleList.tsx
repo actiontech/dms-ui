@@ -70,7 +70,7 @@ const CustomRuleList: React.FC = () => {
   const onAction = (record: ICustomRuleResV1, type: EnumActionType) => {
     if (type !== EnumActionType.edit) return;
 
-    navigate(`/sqle/ruleManager/customUpdate/${record.rule_id}`);
+    navigate(`/sqle/rule-manager/custom-update/${record.rule_id}`);
   };
 
   const renderDisabledNode = (item: ICustomRuleResV1) => {

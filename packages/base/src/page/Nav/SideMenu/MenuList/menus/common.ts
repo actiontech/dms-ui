@@ -16,7 +16,7 @@ export type GenerateMenuItemsType = (arg: {
 export const SIDE_MENU_DATA_PLACEHOLDER_KEY = 'projectID';
 
 export const isAdminKeys = {
-  operate: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/operationRecord`
+  operate: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/operation-record`
 } as const;
 
 export const filterAdminMenusWithKey = (

@@ -56,7 +56,7 @@ describe('page/ProjectOverview/ScanTask', () => {
     expect(screen.getByText('创建扫描任务')).toBeInTheDocument();
     fireEvent.click(screen.getByText('创建扫描任务'));
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/auditPlan/create`
+      `/sqle/project/${mockProjectInfo.projectID}/audit-plan/create`
     );
   });
 

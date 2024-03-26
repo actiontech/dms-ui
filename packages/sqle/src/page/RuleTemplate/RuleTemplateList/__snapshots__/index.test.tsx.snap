@@ -1090,7 +1090,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                         style="position: sticky; left: 0px;"
                       >
                         <a
-                          href="/sqle/ruleManager/globalDetail/default_template/MySQL"
+                          href="/sqle/rule-manager/global-detail/default_template/MySQL"
                         >
                           <div
                             class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
@@ -1235,7 +1235,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                         style="position: sticky; left: 0px;"
                       >
                         <a
-                          href="/sqle/ruleManager/globalDetail/global_test/MySQL"
+                          href="/sqle/rule-manager/global-detail/global_test/MySQL"
                         >
                           <div
                             class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"

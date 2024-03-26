@@ -158,7 +158,7 @@ const SQLEEIndex = () => {
   const jumpToAnalyze = useCallback(
     (sqlManageID: string) => {
       window.open(
-        `/sqle/project/${projectID}/sqlManagement/${sqlManageID}/analyze`,
+        `/sqle/project/${projectID}/sql-management/${sqlManageID}/analyze`,
         '_blank'
       );
     },

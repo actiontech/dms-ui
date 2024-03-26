@@ -210,7 +210,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/sqlAudit`,
+    path: `${PROJECT_ROUTER_PARAM}/sql-audit`,
     key: 'sqlAudit',
     children: [
       {
@@ -241,7 +241,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     key: 'plane',
     label: 'menu.auditPlane',
     icon: <CiCircleOutlined />,
-    path: `${PROJECT_ROUTER_PARAM}/auditPlan`,
+    path: `${PROJECT_ROUTER_PARAM}/audit-plan`,
     children: [
       {
         index: true,
@@ -340,14 +340,14 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     icon: <ProfileOutlined />
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/operationRecord`,
+    path: `${PROJECT_ROUTER_PARAM}/operation-record`,
     label: 'menu.operationRecord',
     key: 'operationRecord',
     element: <OperationRecord />,
     role: [SystemRole.admin]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/sqlManagement`,
+    path: `${PROJECT_ROUTER_PARAM}/sql-management`,
     label: 'menu.sqlManagement',
     key: 'sqlManagement',
     children: [
@@ -388,7 +388,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
 
 export const globalRouterConfig: RouterConfigItem[] = [
   {
-    path: 'sqle/reportStatistics',
+    path: 'sqle/report-statistics',
     label: 'menu.reportStatistics',
     element: <ReportStatistics />,
     key: 'reportStatistics',
@@ -402,7 +402,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
   },
   {
     key: 'ruleManager',
-    path: 'sqle/ruleManager',
+    path: 'sqle/rule-manager',
     role: [SystemRole.admin],
     children: [
       {
@@ -411,32 +411,32 @@ export const globalRouterConfig: RouterConfigItem[] = [
         element: <RuleManager />
       },
       {
-        path: 'globalCreate',
+        path: 'global-create',
         key: 'globalRuleTemplateCreate',
         element: <GlobalCreateRuleTemplate />
       },
       {
-        path: 'globalImport',
+        path: 'global-import',
         key: 'globalRuleTemplateImport',
         element: <GlobalImportRuleTemplate />
       },
       {
-        path: 'globalUpdate/:templateName',
+        path: 'global-update/:templateName',
         key: 'globalRuleTemplateUpdate',
         element: <GlobalUpdateRuleTemplate />
       },
       {
-        path: 'globalDetail/:templateName/:dbType',
+        path: 'global-detail/:templateName/:dbType',
         key: 'globalRuleTemplateDetail',
         element: <GlobalRuleTemplateDetail />
       },
       {
-        path: 'customCreate',
+        path: 'custom-create',
         key: 'createCustomRule',
         element: <CreateCustomRule />
       },
       {
-        path: 'customUpdate/:ruleID',
+        path: 'custom-update/:ruleID',
         key: 'updateCustomRule',
         element: <UpdateCustomRule />
       }

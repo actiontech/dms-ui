@@ -359,7 +359,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     expect(screen.getAllByText('分 析').length).toBe(1);
     fireEvent.click(screen.getAllByText('分 析')[0]);
     expect(openSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/sqlManagement/${sqlManageListData.data[0].id}/analyze`,
+      `/sqle/project/${mockProjectInfo.projectID}/sql-management/${sqlManageListData.data[0].id}/analyze`,
       '_blank'
     );
     openSpy.mockRestore();

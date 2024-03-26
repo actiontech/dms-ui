@@ -47,7 +47,7 @@ const SqlAuditDetail = () => {
         <PageHeader
           fixed
           title={
-            <Link to={`/sqle/project/${projectID}/sqlAudit`}>
+            <Link to={`/sqle/project/${projectID}/sql-audit`}>
               <BasicButton icon={<IconLeftArrow />}>
                 {t('sqlAudit.common.goBackList')}
               </BasicButton>
@@ -55,7 +55,7 @@ const SqlAuditDetail = () => {
           }
           extra={
             !projectArchive ? (
-              <Link to={`/sqle/project/${projectID}/sqlAudit/create`}>
+              <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
                 <BasicButton type="primary" icon={<IconAdd />}>
                   {t('sqlAudit.list.action.create')}
                 </BasicButton>

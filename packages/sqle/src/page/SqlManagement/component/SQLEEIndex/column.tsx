@@ -217,7 +217,7 @@ const SqlManagementColumn: (
         if (source.type && source.type === SourceTypeEnum.audit_plan) {
           return (
             <Link
-              to={`/sqle/project/${projectID}/auditPlan/detail/${source.audit_plan_name}`}
+              to={`/sqle/project/${projectID}/audit-plan/detail/${source.audit_plan_name}`}
             >
               {t(sourceDictionary[source.type])}
             </Link>
@@ -228,7 +228,7 @@ const SqlManagementColumn: (
         ) {
           return (
             <Link
-              to={`/sqle/project/${projectID}/sqlAudit?${
+              to={`/sqle/project/${projectID}/sql-audit?${
                 SQLAuditRecordListUrlParamsKey.SQLAuditRecordID
               }=${
                 source.sql_audit_record_ids?.join(

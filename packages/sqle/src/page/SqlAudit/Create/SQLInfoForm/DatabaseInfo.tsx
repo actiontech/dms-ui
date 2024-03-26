@@ -73,7 +73,7 @@ const DatabaseInfo = ({
     }
 
     const path = instanceInfo.rule_template?.is_global_rule_template
-      ? `/sqle/ruleManager/globalDetail/${instanceInfo.rule_template.name}/${instanceInfo.db_type}`
+      ? `/sqle/rule-manager/global-detail/${instanceInfo.rule_template.name}/${instanceInfo.db_type}`
       : `/sqle/project/${projectID}/rule/template/detail/${instanceInfo.rule_template.name}/${instanceInfo.db_type}`;
 
     return (
