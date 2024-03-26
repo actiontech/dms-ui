@@ -97,7 +97,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(8);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       8,
-      `/sqle/project/${projectID}/sqlAudit`
+      `/sqle/project/${projectID}/sql-audit`
     );
 
     fireEvent.click(screen.getByText('IDE审核'));
@@ -135,7 +135,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(13);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       13,
-      `/sqle/project/${projectID}/sqlManagement`
+      `/sqle/project/${projectID}/sql-management`
     );
 
     fireEvent.click(screen.getByText('SQL工单'));
@@ -149,7 +149,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(15);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       15,
-      `/sqle/project/${projectID}/auditPlan`
+      `/sqle/project/${projectID}/audit-plan`
     );
 
     fireEvent.click(screen.getByText('操作与审计'));
@@ -160,7 +160,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(16);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       16,
-      `/sqle/project/${projectID}/operationRecord`
+      `/sqle/project/${projectID}/operation-record`
     );
 
     fireEvent.click(screen.getByText('授权审计'));

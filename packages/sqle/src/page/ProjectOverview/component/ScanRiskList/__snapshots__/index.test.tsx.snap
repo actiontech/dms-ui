@@ -248,7 +248,7 @@ exports[`page/ProjectOverview/ScanRiskList render scan risk list and check more 
                                       </span>
                                       <a
                                         data-testid="report-time"
-                                        href="/sqle/project/700300/auditPlan/detail/test/report/32416134613"
+                                        href="/sqle/project/700300/audit-plan/detail/test/report/32416134613"
                                       >
                                         2023-12-27T10:32:38+08:00
                                       </a>
@@ -258,7 +258,7 @@ exports[`page/ProjectOverview/ScanRiskList render scan risk list and check more 
                                     class="ant-table-cell"
                                   >
                                     <a
-                                      href="/project/700300/auditPlan/detail/test"
+                                      href="/project/700300/audit-plan/detail/test"
                                     >
                                       test
                                     </a>

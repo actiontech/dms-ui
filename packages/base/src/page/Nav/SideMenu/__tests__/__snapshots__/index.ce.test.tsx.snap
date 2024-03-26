@@ -379,7 +379,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
         </li>
         <li
           class="ant-menu-item"
-          data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+          data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
           role="menuitem"
           style="padding-left: 24px;"
           tabindex="-1"
@@ -614,7 +614,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
             </li>
             <li
               class="ant-menu-item"
-              data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+              data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
               role="menuitem"
               style="padding-left: 24px;"
               tabindex="-1"
@@ -686,7 +686,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
             </li>
             <li
               class="ant-menu-item"
-              data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+              data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
               role="menuitem"
               style="padding-left: 24px;"
               tabindex="-1"

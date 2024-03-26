@@ -333,7 +333,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is admin snap when has location 
       </li>
       <li
         class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
         role="menuitem"
         style="padding-left: 24px;"
         tabindex="-1"
@@ -568,7 +568,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is admin snap when has location 
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -640,7 +640,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is admin snap when has location 
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -1169,7 +1169,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is not admin snap when has locat
       </li>
       <li
         class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
         role="menuitem"
         style="padding-left: 24px;"
         tabindex="-1"
@@ -1404,7 +1404,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is not admin snap when has locat
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -1476,7 +1476,7 @@ exports[`base/page/Nav/SideMenu/MenuList render is not admin snap when has locat
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -2005,7 +2005,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 1`] = `
       </li>
       <li
         class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
         role="menuitem"
         style="padding-left: 24px;"
         tabindex="-1"
@@ -2240,7 +2240,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 1`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -2312,7 +2312,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 1`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -2874,7 +2874,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 2`] = `
       </li>
       <li
         class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
         role="menuitem"
         style="padding-left: 24px;"
         tabindex="-1"
@@ -3109,7 +3109,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 2`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -3181,7 +3181,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 2`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -3743,7 +3743,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 3`] = `
       </li>
       <li
         class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
         role="menuitem"
         style="padding-left: 24px;"
         tabindex="-1"
@@ -3978,7 +3978,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 3`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -4050,7 +4050,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 3`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -4612,7 +4612,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 4`] = `
       </li>
       <li
         class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
         role="menuitem"
         style="padding-left: 24px;"
         tabindex="-1"
@@ -4847,7 +4847,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 4`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -4919,7 +4919,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 4`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -5402,7 +5402,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 5`] = `
         >
           <li
             class="ant-menu-item ant-menu-item-only-child"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operationRecord"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operation-record"
             order="5"
             parentkey="operateAndAudit"
             role="menuitem"
@@ -5531,7 +5531,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 5`] = `
       </li>
       <li
         class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
         role="menuitem"
         style="padding-left: 24px;"
         tabindex="-1"
@@ -5766,7 +5766,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 5`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -5838,7 +5838,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is admin 5`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -6367,7 +6367,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is not admin 1`] = `
       </li>
       <li
         class="ant-menu-item"
-        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlAudit"
+        data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
         role="menuitem"
         style="padding-left: 24px;"
         tabindex="-1"
@@ -6602,7 +6602,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is not admin 1`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sqlManagement"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"
@@ -6674,7 +6674,7 @@ exports[`base/page/Nav/SideMenu/MenuList render snap when is not admin 1`] = `
           </li>
           <li
             class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/auditPlan"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"

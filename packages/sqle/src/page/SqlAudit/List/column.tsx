@@ -73,7 +73,7 @@ const SqlAuditListColumn: (
           return '-';
         }
         return (
-          <Link to={`/sqle/project/${projectID}/sqlAudit/detail/${id}`}>
+          <Link to={`/sqle/project/${projectID}/sql-audit/detail/${id}`}>
             {id}
           </Link>
         );

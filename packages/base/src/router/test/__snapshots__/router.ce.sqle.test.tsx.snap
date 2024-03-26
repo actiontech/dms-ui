@@ -10,7 +10,7 @@ exports[`base/router-sqle-ce render route sqle index page 1`] = `
 </body>
 `;
 
-exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route customCreate 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route custom-create 1`] = `
 <body>
   <div>
     <div>
@@ -20,7 +20,7 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route customUpdate 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route custom-update 1`] = `
 <body>
   <div>
     <div>
@@ -30,7 +30,7 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalCreate 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route global-create 1`] = `
 <body>
   <div>
     <div>
@@ -40,7 +40,7 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalDetail 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route global-detail 1`] = `
 <body>
   <div>
     <div>
@@ -50,7 +50,7 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalImport 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route global-import 1`] = `
 <body>
   <div>
     <div>
@@ -60,7 +60,7 @@ exports[`base/router-sqle-ce render sqle global router render sqle router when v
 </body>
 `;
 
-exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route globalUpdate 1`] = `
+exports[`base/router-sqle-ce render sqle global router render sqle router when version is ce render route global-update 1`] = `
 <body>
   <div>
     <div>
@@ -557,7 +557,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
       reportStatistics
     </div>,
     "key": "reportStatistics",
-    "path": "sqle/reportStatistics",
+    "path": "sqle/report-statistics",
   },
   {
     "element": <div>
@@ -580,46 +580,46 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
           globalRuleTemplateCreate
         </div>,
         "key": "globalRuleTemplateCreate",
-        "path": "globalCreate",
+        "path": "global-create",
       },
       {
         "element": <div>
           globalRuleTemplateImport
         </div>,
         "key": "globalRuleTemplateImport",
-        "path": "globalImport",
+        "path": "global-import",
       },
       {
         "element": <div>
           globalRuleTemplateUpdate
         </div>,
         "key": "globalRuleTemplateUpdate",
-        "path": "globalUpdate/:templateName",
+        "path": "global-update/:templateName",
       },
       {
         "element": <div>
           globalRuleTemplateDetail
         </div>,
         "key": "globalRuleTemplateDetail",
-        "path": "globalDetail/:templateName/:dbType",
+        "path": "global-detail/:templateName/:dbType",
       },
       {
         "element": <div>
           createCustomRule
         </div>,
         "key": "createCustomRule",
-        "path": "customCreate",
+        "path": "custom-create",
       },
       {
         "element": <div>
           updateCustomRule
         </div>,
         "key": "updateCustomRule",
-        "path": "customUpdate/:ruleID",
+        "path": "custom-update/:ruleID",
       },
     ],
     "key": "ruleManager",
-    "path": "sqle/ruleManager",
+    "path": "sqle/rule-manager",
     "role": [
       "admin",
     ],
@@ -702,7 +702,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
           <Outlet />
         </div>,
         "key": "sqlAudit",
-        "path": ":projectID/sqlAudit",
+        "path": ":projectID/sql-audit",
       },
       {
         "element": <div>
@@ -762,7 +762,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
           <Outlet />
         </div>,
         "key": "plane",
-        "path": ":projectID/auditPlan",
+        "path": ":projectID/audit-plan",
       },
       {
         "children": [
@@ -847,7 +847,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
           operationRecord
         </div>,
         "key": "operationRecord",
-        "path": ":projectID/operationRecord",
+        "path": ":projectID/operation-record",
       },
       {
         "children": [
@@ -865,7 +865,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
           <Outlet />
         </div>,
         "key": "sqlManagement",
-        "path": ":projectID/sqlManagement",
+        "path": ":projectID/sql-management",
       },
       {
         "children": [

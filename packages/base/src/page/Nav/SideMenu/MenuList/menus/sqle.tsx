@@ -49,7 +49,7 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
     order: 5,
     label: t('dmsMenu.SQLEOperateRecord'),
     key: isAdminKeys.operate,
-    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`),
+    onClick: () => navigate(`/sqle/project/${projectID}/operation-record`),
     parentKey: 'operateAndAudit'
   },
   // #else
@@ -58,7 +58,7 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
     label: t('dmsMenu.operateAndAudit'),
     icon: <Icon component={IconOperateAndAudit} />,
     key: isAdminKeys.operate,
-    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`),
+    onClick: () => navigate(`/sqle/project/${projectID}/operation-record`),
     parentKey: 'operateAndAudit'
   },
   // #endif
@@ -92,8 +92,8 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
       {
         label: t('dmsMenu.sqlManagement'),
         icon: <Icon component={IconSqlManagement} />,
-        key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sqlManagement`,
-        onClick: () => navigate(`/sqle/project/${projectID}/sqlManagement`)
+        key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management`,
+        onClick: () => navigate(`/sqle/project/${projectID}/sql-management`)
       },
       {
         label: t('dmsMenu.SQLOrder'),
@@ -103,9 +103,9 @@ export const SQLEMenuItems: GenerateMenuItemsType = ({
       },
       {
         label: t('dmsMenu.auditPlan'),
-        key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auditPlan`,
+        key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit-plan`,
         icon: <Icon component={IconAuditPlan} />,
-        onClick: () => navigate(`/sqle/project/${projectID}/auditPlan`)
+        onClick: () => navigate(`/sqle/project/${projectID}/audit-plan`)
       }
     ]
   }
@@ -120,7 +120,7 @@ export const SQLEOperateConflictMenuItems: GenerateMenuItemsType = ({
     label: t('dmsMenu.operateAndAudit'),
     icon: <Icon component={IconOperateAndAudit} />,
     key: isAdminKeys.operate,
-    onClick: () => navigate(`/sqle/project/${projectID}/operationRecord`)
+    onClick: () => navigate(`/sqle/project/${projectID}/operation-record`)
   }
 ];
 
@@ -131,9 +131,9 @@ export const SQLESqlDevelopMenuItems: GenerateMenuItemsType = ({
   {
     order: 6,
     label: t('dmsMenu.sqlAudit'),
-    key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sqlAudit`,
+    key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-audit`,
     icon: <Icon component={IconSqlAudit} />,
-    onClick: () => navigate(`/sqle/project/${projectID}/sqlAudit`)
+    onClick: () => navigate(`/sqle/project/${projectID}/sql-audit`)
   },
   {
     order: 6,

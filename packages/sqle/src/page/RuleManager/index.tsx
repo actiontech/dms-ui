@@ -44,7 +44,7 @@ const RuleManager: React.FC = () => {
             <BasicButton
               type="text"
               icon={<IconImport />}
-              onClick={() => navigate('/sqle/ruleManager/globalImport')}
+              onClick={() => navigate('/sqle/rule-manager/global-import')}
             >
               {t('ruleTemplate.importRuleTemplate.button')}
             </BasicButton>
@@ -52,7 +52,7 @@ const RuleManager: React.FC = () => {
             <BasicButton
               type="primary"
               icon={<IconAdd />}
-              onClick={() => navigate('/sqle/ruleManager/globalCreate')}
+              onClick={() => navigate('/sqle/rule-manager/global-create')}
             >
               {t('ruleTemplate.createRuleTemplate.button')}
             </BasicButton>
@@ -78,7 +78,7 @@ const RuleManager: React.FC = () => {
         extraButton: (
           <BasicButton
             type="primary"
-            onClick={() => navigate('/sqle/ruleManager/customCreate')}
+            onClick={() => navigate('/sqle/rule-manager/custom-create')}
           >
             {t('customRule.filterForm.add')}
           </BasicButton>

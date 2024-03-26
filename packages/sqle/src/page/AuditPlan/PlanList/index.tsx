@@ -112,7 +112,7 @@ const AuditPlanList = () => {
   const onEditPlan = useCallback(
     (record: IAuditPlanResV2) => {
       navigate(
-        `/sqle/project/${projectID}/auditPlan/update/${record.audit_plan_name}`
+        `/sqle/project/${projectID}/audit-plan/update/${record.audit_plan_name}`
       );
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -191,7 +191,7 @@ const AuditPlanList = () => {
   }, [onEditPlan, onDeletePlan, openModal, projectArchive]);
 
   const onCreate = () => {
-    navigate(`/sqle/project/${projectID}/auditPlan/create`);
+    navigate(`/sqle/project/${projectID}/audit-plan/create`);
   };
 
   return (

@@ -10,7 +10,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
         class="title"
       >
         <a
-          href="/sqle/project/700300/sqlAudit"
+          href="/sqle/project/700300/sql-audit"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1328,7 +1328,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
         class="title"
       >
         <a
-          href="/sqle/project/700300/sqlAudit"
+          href="/sqle/project/700300/sql-audit"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -2633,7 +2633,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
         class="title"
       >
         <a
-          href="/sqle/project/700300/sqlAudit"
+          href="/sqle/project/700300/sql-audit"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -3756,7 +3756,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
         class="title"
       >
         <a
-          href="/sqle/project/700300/sqlAudit"
+          href="/sqle/project/700300/sql-audit"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -5008,7 +5008,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
         class="title"
       >
         <a
-          href="/sqle/project/700300/sqlAudit"
+          href="/sqle/project/700300/sql-audit"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -6260,7 +6260,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
         class="title"
       >
         <a
-          href="/sqle/project/700300/sqlAudit"
+          href="/sqle/project/700300/sql-audit"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"

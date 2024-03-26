@@ -174,7 +174,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
       }
 
       const path = rule.is_global_rule_template
-        ? `/sqle/ruleManager/globalDetail/${rule.name}/${rule.dbType}`
+        ? `/sqle/rule-manager/global-detail/${rule.name}/${rule.dbType}`
         : `/sqle/project/${projectID}/rule/template/detail/${rule.name}/${rule.dbType}`;
 
       return (

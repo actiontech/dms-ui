@@ -33,7 +33,7 @@ const ScanRiskList = () => {
   );
 
   const onGetMore = () => {
-    navigate(`/sqle/project/${projectID}/auditPlan`);
+    navigate(`/sqle/project/${projectID}/audit-plan`);
   };
 
   const tableProps: ITableTopList<IRiskAuditPlan> = {
@@ -59,7 +59,7 @@ const ScanRiskList = () => {
               </span>
               <Link
                 data-testid="report-time"
-                to={`/sqle/project/${projectID}/auditPlan/detail/${record.audit_plan_name}/report/${record.audit_plan_report_id}`}
+                to={`/sqle/project/${projectID}/audit-plan/detail/${record.audit_plan_name}/report/${record.audit_plan_report_id}`}
               >
                 {name}
               </Link>
@@ -78,7 +78,7 @@ const ScanRiskList = () => {
           }
 
           return (
-            <Link to={`project/${projectID}/auditPlan/detail/${name}`}>
+            <Link to={`project/${projectID}/audit-plan/detail/${name}`}>
               {name}
             </Link>
           );

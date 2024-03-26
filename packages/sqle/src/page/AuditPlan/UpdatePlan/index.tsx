@@ -155,7 +155,7 @@ const UpdatePlan = () => {
               key="view-audit-plan"
               onClick={() => {
                 navigater(
-                  `/sqle/project/${projectID}/auditPlan/detail/${form.getFieldValue(
+                  `/sqle/project/${projectID}/audit-plan/detail/${form.getFieldValue(
                     'name'
                   )}`
                 );
