@@ -2,17 +2,16 @@ import { MenuProps, Menu } from 'antd';
 import { SubMenuType } from 'antd/lib/menu/hooks/useItems';
 import { useMemo, useCallback } from 'react';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { MenuListProps } from './index.type';
 import { sideMenuData } from './menus/menu.data';
 
-const MenuList: React.FC<MenuListProps> = ({ isAdmin, projectID }) => {
-  const navigate = useNavigate();
+const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
   const location = useLocation();
 
   const menuItems = useMemo(
-    () => sideMenuData(navigate, isAdmin, projectID),
-    [navigate, isAdmin, projectID]
+    () => sideMenuData(projectID, role),
+    [projectID, role]
   );
 
   const selectMenu = useCallback(

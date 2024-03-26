@@ -1,4 +1,6 @@
+import { SystemRole } from '@actiontech/shared/lib/enum';
+
 export type MenuListProps = {
   projectID: string;
-  isAdmin: boolean;
+  role: SystemRole | '';
 };

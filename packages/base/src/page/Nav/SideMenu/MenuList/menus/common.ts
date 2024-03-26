@@ -1,38 +1,84 @@
-import { MenuProps } from 'antd';
-import { ItemType, SubMenuType } from 'antd/es/menu/hooks/useItems';
-import { NavigateFunction } from 'react-router-dom';
-
-export type CustomMenuItemType =
-  | (ItemType & {
-      order?: number;
-    })
-  | null;
-
-export type GenerateMenuItemsType = (arg: {
-  navigate: NavigateFunction;
-  projectID?: string;
-}) => CustomMenuItemType[];
+import { SystemRole } from '@actiontech/shared/lib/enum';
+import {
+  cloudBeaverMenuItem,
+  dataExportMenuItem,
+  dbServiceManagementMenuItem,
+  memberManagementMenItem
+} from './base';
+import {
+  CustomMenuItemType,
+  GenerateMenuItemType,
+  MenuStructTreeKey,
+  MenuStructTreeType
+} from './index.type';
+import {
+  projectOverviewMenuItem,
+  dashboardMenuItem,
+  sqlAuditMenuItem,
+  pluginAuditMenuItem,
+  sqlOrderMenuItem,
+  sqlManagementMenuItem,
+  auditPlanMenuItem,
+  projectRuleTemplateMenuItem,
+  whiteListMenuItem,
+  workflowTemplateMenuItem,
+  sqleOperationRecordMenuItem
+} from './sqle';
 
 export const SIDE_MENU_DATA_PLACEHOLDER_KEY = 'projectID';
 
-export const isAdminKeys = {
-  operate: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/operation-record`
-} as const;
-
-export const filterAdminMenusWithKey = (
-  menus: MenuProps['items']
+export const genMenuItemsWithMenuStructTree = (
+  projectID: string,
+  menuStructTree: MenuStructTreeType,
+  role: SystemRole | ''
 ): CustomMenuItemType[] => {
-  return (
-    menus?.filter((v) => {
-      const menu = v as SubMenuType;
-      if (menu.children) {
-        menu.children = filterAdminMenusWithKey(menu.children) ?? [];
-      }
+  const allMenuItems: GenerateMenuItemType[] = [
+    dbServiceManagementMenuItem,
+    memberManagementMenItem,
+    cloudBeaverMenuItem,
+    dataExportMenuItem,
 
-      return Object.keys(isAdminKeys).every((e) => {
-        const isAdminKey = e as keyof typeof isAdminKeys;
-        return isAdminKeys[isAdminKey] !== menu?.key;
-      });
-    }) ?? []
-  );
+    // #if [sqle]
+    projectOverviewMenuItem,
+    dashboardMenuItem,
+    sqlAuditMenuItem,
+    pluginAuditMenuItem,
+    sqlOrderMenuItem,
+    sqlManagementMenuItem,
+    auditPlanMenuItem,
+    projectRuleTemplateMenuItem,
+    whiteListMenuItem,
+    workflowTemplateMenuItem,
+    sqleOperationRecordMenuItem
+    // #endif
+  ];
+
+  const getMenuItemWithKey = (key: MenuStructTreeKey): CustomMenuItemType => {
+    return (
+      allMenuItems.find((v) => {
+        const menu = v(projectID);
+        if (menu?.role) {
+          return menu.role.includes(role) && menu.structKey === key;
+        }
+
+        return menu?.structKey === key;
+      })?.(projectID) ?? null
+    );
+  };
+
+  return menuStructTree.map<CustomMenuItemType>((item) => {
+    if (typeof item === 'string') {
+      return getMenuItemWithKey(item);
+    }
+
+    if (item.type === 'group') {
+      return {
+        type: 'group',
+        label: item.label,
+        children: item.group.map(getMenuItemWithKey)
+      } as CustomMenuItemType;
+    }
+
+    return item as CustomMenuItemType;
+  });
 };
