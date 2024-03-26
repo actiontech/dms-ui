@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { BarConfig } from '@ant-design/plots';
@@ -23,7 +22,7 @@ const TaskList = (props: ITaskList) => {
   const { t } = useTranslation();
   const { apiLoading, errorInfo, dataLength, refreshFuc, dataSource, onReady } =
     props;
-  const [data, setData] = useState<typeTaskItem[]>([]);
+
   // const { getDomStyles } = useGetConfig(sqleTheme); // todo: 现在加上默认样式，0值的时候会出现边框线
 
   const comEmptyLine = (data: IDBTypeAuditPlan[]) => {
@@ -48,10 +47,6 @@ const TaskList = (props: ITaskList) => {
       })
       .concat(emptyData);
   };
-
-  useEffect(() => {
-    setData(comEmptyLine(dataSource));
-  }, [dataSource]);
 
   return (
     <ChartWrapper

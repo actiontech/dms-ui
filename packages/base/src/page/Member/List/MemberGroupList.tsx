@@ -79,7 +79,7 @@ const MemberList: React.FC = () => {
         })
       );
     },
-    [dispatch, actionPermission]
+    [dispatch]
   );
 
   const onDeleteMemberGroup = useCallback(
@@ -98,7 +98,7 @@ const MemberList: React.FC = () => {
         refresh();
       }
     },
-    [messageApi, refresh, t, projectID, actionPermission]
+    [messageApi, refresh, t, projectID]
   );
 
   const memberGroupListActions = useMemo<
