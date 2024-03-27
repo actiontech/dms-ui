@@ -3,7 +3,6 @@ import { act } from '@testing-library/react';
 
 import { SupportTheme } from '../../enum';
 import useChangeTheme from './useChangeTheme';
-import { mockCurrentUserReturn } from '../../testUtil/mockHook/data';
 import { mockUseCurrentUser } from '../../testUtil/mockHook/mockUseCurrentUser';
 
 describe('useChangeTheme', () => {
