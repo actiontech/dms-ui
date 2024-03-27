@@ -157,7 +157,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
       },
       // #if [dms]
       {
-        path: `${PROJECT_ROUTER_PARAM}/data_mask_rule_overview`,
+        path: `${PROJECT_ROUTER_PARAM}/data-mask-rule-overview`,
         key: 'dataMaskRuleOverview',
         label: 'dataMaskRuleOverview.list.title',
         element: <DataMaskRuleOverview />

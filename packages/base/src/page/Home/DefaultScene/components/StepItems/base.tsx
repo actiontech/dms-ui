@@ -161,7 +161,7 @@ export const getDataMask: (
           'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_3_0'
         ),
         action: () => {
-          navigate(`/project/${projectID}/data_mask_rule_overview`);
+          navigate(`/project/${projectID}/data-mask-rule-overview`);
         }
       }
     ]

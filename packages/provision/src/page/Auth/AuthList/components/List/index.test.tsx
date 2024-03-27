@@ -460,7 +460,7 @@ describe('page/Auth/AuthList/List', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith(
-        `/provision/project/${projectID}/auth/template/edit_template/?name=auth_template_xin`
+        `/provision/project/${projectID}/auth/template/edit-template/?name=auth_template_xin`
       );
 
       fireEvent.mouseOver(screen.getByText('auth_template_xin'));

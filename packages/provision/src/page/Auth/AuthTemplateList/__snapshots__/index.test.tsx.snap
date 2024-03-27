@@ -15,7 +15,7 @@ exports[`Auth/AuthTemplateList should match snapshot 1`] = `
         class="extra"
       >
         <a
-          href="/provision/project/700300/auth/template/edit_template"
+          href="/provision/project/700300/auth/template/edit-template"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -306,7 +306,7 @@ exports[`Auth/AuthTemplateList should match snapshot 2`] = `
         class="extra"
       >
         <a
-          href="/provision/project/700300/auth/template/edit_template"
+          href="/provision/project/700300/auth/template/edit-template"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -1179,7 +1179,7 @@ exports[`Auth/AuthTemplateList should refresh table when eventEmitter receive 'R
         class="extra"
       >
         <a
-          href="/provision/project/700300/auth/template/edit_template"
+          href="/provision/project/700300/auth/template/edit-template"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -1445,7 +1445,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
         class="extra"
       >
         <a
-          href="/provision/project/700300/auth/template/edit_template"
+          href="/provision/project/700300/auth/template/edit-template"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -1711,7 +1711,7 @@ exports[`Auth/AuthTemplateList should refresh table when user click refresh butt
         class="extra"
       >
         <a
-          href="/provision/project/700300/auth/template/edit_template"
+          href="/provision/project/700300/auth/template/edit-template"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -1977,7 +1977,7 @@ exports[`Auth/AuthTemplateList should remove auth_template when user click remov
         class="extra"
       >
         <a
-          href="/provision/project/700300/auth/template/edit_template"
+          href="/provision/project/700300/auth/template/edit-template"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"

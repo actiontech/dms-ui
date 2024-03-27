@@ -107,7 +107,7 @@ export const AuthTableColumns = (
               key={name}
               onClick={() =>
                 navigate(
-                  `/provision/project/${projectID}/auth/template/edit_template/?name=${name}`
+                  `/provision/project/${projectID}/auth/template/edit-template/?name=${name}`
                 )
               }
               className="template-name-tag"

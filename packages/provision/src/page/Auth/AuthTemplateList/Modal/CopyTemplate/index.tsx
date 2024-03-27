@@ -67,7 +67,7 @@ const CopyTemplate = () => {
           t('auth.editTemplate.addSuccessTips', { name: values.name })
         );
         navigate(
-          `/provision/project/${projectID}/auth/template/edit_template?name=${values.name}`
+          `/provision/project/${projectID}/auth/template/edit-template?name=${values.name}`
         );
       }
     } finally {

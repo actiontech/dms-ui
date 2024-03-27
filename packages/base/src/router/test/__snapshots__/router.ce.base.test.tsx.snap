@@ -97,7 +97,7 @@ exports[`base/router-base-ce render base route data snap 1`] = `
           dataMaskRuleOverview
         </div>,
         "key": "dataMaskRuleOverview",
-        "path": ":projectID/data_mask_rule_overview",
+        "path": ":projectID/data-mask-rule-overview",
       },
     ],
     "element": <UNDEFINED />,

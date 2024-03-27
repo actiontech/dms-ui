@@ -640,7 +640,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
           dataMaskRuleOverview
         </div>,
         "key": "dataMaskRuleOverview",
-        "path": ":projectID/data_mask_rule_overview",
+        "path": ":projectID/data-mask-rule-overview",
       },
     ],
     "element": <UNDEFINED />,
@@ -1057,7 +1057,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
               addTemplate
             </div>,
             "key": "addTemplate",
-            "path": ":projectID/auth/template/edit_template",
+            "path": ":projectID/auth/template/edit-template",
           },
         ],
         "element": undefined,

@@ -188,7 +188,7 @@ describe('base/page/Nav/SideMenu/MenuList', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(19);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       19,
-      `/project/${projectID}/data_mask_rule_overview`
+      `/project/${projectID}/data-mask-rule-overview`
     );
   });
 

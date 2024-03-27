@@ -78,7 +78,7 @@ const AuthTemplateList = () => {
   };
   const onNavigateToUpdateTemplate = (record: IListDataPermissionTemplate) => {
     navigate(
-      `/provision/project/${projectID}/auth/template/edit_template/?id=${record?.uid}&name=${record.name}`
+      `/provision/project/${projectID}/auth/template/edit-template/?id=${record?.uid}&name=${record.name}`
     );
   };
   const { removeTemplate, messageContextHolder } = useRemoveTemplate(refresh);
@@ -110,7 +110,7 @@ const AuthTemplateList = () => {
         title={t('auth.template.title')}
         extra={
           <Link
-            to={`/provision/project/${projectID}/auth/template/edit_template`}
+            to={`/provision/project/${projectID}/auth/template/edit-template`}
           >
             <BasicButton type="primary" icon={<IconAdd />}>
               {t('auth.button.addTemplate')}
@@ -149,7 +149,7 @@ const AuthTemplateList = () => {
             return {
               onClick() {
                 navigate(
-                  `/provision/project/${projectID}/auth/template/edit_template/?id=${record?.uid}&name=${record.name}&action=${IEditTemplateActionTypeEnum.view}`
+                  `/provision/project/${projectID}/auth/template/edit-template/?id=${record?.uid}&name=${record.name}&action=${IEditTemplateActionTypeEnum.view}`
                 );
               }
             };
