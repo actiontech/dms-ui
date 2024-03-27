@@ -975,7 +975,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                           class="ant-table-cell"
                         >
                           <a
-                            href="/test/1/server_monitor/monitorItemList"
+                            href="/test/1/server_monitor/monitor-item-list"
                           >
                             test
                           </a>
@@ -1052,7 +1052,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                           class="ant-table-cell"
                         >
                           <a
-                            href="/test12/2/server_monitor/monitorItemList"
+                            href="/test12/2/server_monitor/monitor-item-list"
                           >
                             test12
                           </a>
@@ -1129,7 +1129,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                           class="ant-table-cell"
                         >
                           <a
-                            href="/udp/3/server_monitor/monitorItemList"
+                            href="/udp/3/server_monitor/monitor-item-list"
                           >
                             udp
                           </a>
@@ -1703,7 +1703,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                           class="ant-table-cell"
                         >
                           <a
-                            href="/test/1/server_monitor/monitorItemList"
+                            href="/test/1/server_monitor/monitor-item-list"
                           >
                             test
                           </a>
@@ -1780,7 +1780,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                           class="ant-table-cell"
                         >
                           <a
-                            href="/test12/2/server_monitor/monitorItemList"
+                            href="/test12/2/server_monitor/monitor-item-list"
                           >
                             test12
                           </a>
@@ -1857,7 +1857,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                           class="ant-table-cell"
                         >
                           <a
-                            href="/udp/3/server_monitor/monitorItemList"
+                            href="/udp/3/server_monitor/monitor-item-list"
                           >
                             udp
                           </a>
@@ -2431,7 +2431,7 @@ exports[`test monitor source config should render search result for database tab
                           class="ant-table-cell"
                         >
                           <a
-                            href="/first/1731574922989273088/database_monitor/monitorItemList"
+                            href="/first/1731574922989273088/database_monitor/monitor-item-list"
                           >
                             first
                           </a>
@@ -3005,7 +3005,7 @@ exports[`test monitor source config should render search result for table and re
                           class="ant-table-cell"
                         >
                           <a
-                            href="/test12/2/server_monitor/monitorItemList"
+                            href="/test12/2/server_monitor/monitor-item-list"
                           >
                             test12
                           </a>
@@ -3579,7 +3579,7 @@ exports[`test monitor source config should render server monitor table for defau
                           class="ant-table-cell"
                         >
                           <a
-                            href="/test/1/server_monitor/monitorItemList"
+                            href="/test/1/server_monitor/monitor-item-list"
                           >
                             test
                           </a>
@@ -3656,7 +3656,7 @@ exports[`test monitor source config should render server monitor table for defau
                           class="ant-table-cell"
                         >
                           <a
-                            href="/test12/2/server_monitor/monitorItemList"
+                            href="/test12/2/server_monitor/monitor-item-list"
                           >
                             test12
                           </a>
@@ -3733,7 +3733,7 @@ exports[`test monitor source config should render server monitor table for defau
                           class="ant-table-cell"
                         >
                           <a
-                            href="/udp/3/server_monitor/monitorItemList"
+                            href="/udp/3/server_monitor/monitor-item-list"
                           >
                             udp
                           </a>
@@ -4307,7 +4307,7 @@ exports[`test monitor source config should reset search input when click segment
                           class="ant-table-cell"
                         >
                           <a
-                            href="/first/1731574922989273088/database_monitor/monitorItemList"
+                            href="/first/1731574922989273088/database_monitor/monitor-item-list"
                           >
                             first
                           </a>
@@ -4384,7 +4384,7 @@ exports[`test monitor source config should reset search input when click segment
                           class="ant-table-cell"
                         >
                           <a
-                            href="/second/1731574922989273089/database_monitor/monitorItemList"
+                            href="/second/1731574922989273089/database_monitor/monitor-item-list"
                           >
                             second
                           </a>
@@ -4461,7 +4461,7 @@ exports[`test monitor source config should reset search input when click segment
                           class="ant-table-cell"
                         >
                           <a
-                            href="/third/1731574922989273090/database_monitor/monitorItemList"
+                            href="/third/1731574922989273090/database_monitor/monitor-item-list"
                           >
                             third
                           </a>

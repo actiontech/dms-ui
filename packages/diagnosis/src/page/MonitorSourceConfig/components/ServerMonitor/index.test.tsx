@@ -97,7 +97,7 @@ describe('test server monitor table', () => {
     expect(getAllBySelector('.ant-table-cell a').length).toBe(3);
     expect(getAllBySelector('.ant-table-cell a')[0]).toHaveAttribute(
       'href',
-      '/test/1/server_monitor/monitorItemList'
+      '/test/1/server_monitor/monitor-item-list'
     );
 
     mockDispatch.mockClear();

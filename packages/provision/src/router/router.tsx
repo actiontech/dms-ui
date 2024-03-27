@@ -58,7 +58,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         element: <AuthTemplate />
       },
       {
-        path: `${PROJECT_ROUTER_PARAM}/auth/template/edit_template`,
+        path: `${PROJECT_ROUTER_PARAM}/auth/template/edit-template`,
         key: 'addTemplate',
         hideInMenu: true,
         element: <EditTemplate />

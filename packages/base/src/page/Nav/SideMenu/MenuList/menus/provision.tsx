@@ -64,9 +64,9 @@ export const ProvisionMenuItems: GenerateMenuItemsType = ({
       // #if [dms]
       {
         label: t('dmsMenu.dataMaskRuleOverview'),
-        key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data_mask_rule_overview`,
+        key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data-mask-rule-overview`,
         icon: <Icon component={IconDataMask} />,
-        onClick: () => navigate(`/project/${projectID}/data_mask_rule_overview`)
+        onClick: () => navigate(`/project/${projectID}/data-mask-rule-overview`)
       }
       // #endif
     ]

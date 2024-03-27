@@ -28,7 +28,7 @@ export const ServerMonitorColumns = (
         <>
           {hasCheckMonitorPermission ? (
             <Link
-              to={`/${record?.name}/${record?.id}/${MonitorSourceConfigTypeEnum.server_monitor}/monitorItemList`}
+              to={`/${record?.name}/${record?.id}/${MonitorSourceConfigTypeEnum.server_monitor}/monitor-item-list`}
             >
               {name}
             </Link>

@@ -70,7 +70,7 @@ describe('test monitor item config table', () => {
     expect(screen.getByText('监控源类型: 数据库监控')).toBeInTheDocument();
     expect(getBySelector('.title a')).toHaveAttribute(
       'href',
-      '/monitorSourceConfig'
+      '/monitor-source-config'
     );
     expect(baseElement).toMatchSnapshot();
   });
@@ -150,7 +150,7 @@ describe('test monitor item config table', () => {
     expect(screen.getByText('监控源类型: 服务器监控')).toBeInTheDocument();
     expect(getBySelector('.title a')).toHaveAttribute(
       'href',
-      '/monitorSourceConfig'
+      '/monitor-source-config'
     );
     expect(baseElement).toMatchSnapshot();
   });

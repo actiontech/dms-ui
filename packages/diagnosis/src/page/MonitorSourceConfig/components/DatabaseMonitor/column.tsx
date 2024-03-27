@@ -27,7 +27,7 @@ export const DatabaseMonitorColumns = (
       <>
         {hasCheckMonitorPermission ? (
           <Link
-            to={`/${record?.monitor_name}/${record?.id}/${MonitorSourceConfigTypeEnum.database_monitor}/monitorItemList`}
+            to={`/${record?.monitor_name}/${record?.id}/${MonitorSourceConfigTypeEnum.database_monitor}/monitor-item-list`}
           >
             {name}
           </Link>

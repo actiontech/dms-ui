@@ -187,7 +187,7 @@ const EditTemplate = () => {
   const checkCurrentAuthTemplate = useCallback(() => {
     const currentTemplateName = form.getFieldValue('name');
     navigate(
-      `/provision/project/${projectID}/auth/template/edit_template?id=${newlyAddedAuthTemplateId}&name=${currentTemplateName}`
+      `/provision/project/${projectID}/auth/template/edit-template?id=${newlyAddedAuthTemplateId}&name=${currentTemplateName}`
     );
     hideResult();
   }, [form, hideResult, navigate, newlyAddedAuthTemplateId, projectID]);

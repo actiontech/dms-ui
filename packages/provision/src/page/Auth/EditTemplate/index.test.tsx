@@ -46,7 +46,7 @@ describe('Auth/EditTemplate', () => {
       {},
       {
         routerProps: {
-          initialEntries: ['/auth/template/edit_template?id=123&name=aaa']
+          initialEntries: ['/auth/template/edit-template?id=123&name=aaa']
         }
       }
     );
@@ -61,7 +61,7 @@ describe('Auth/EditTemplate', () => {
       {
         routerProps: {
           initialEntries: [
-            '/auth/template/edit_template?id=1588045966282330112&name=aaa'
+            '/auth/template/edit-template?id=1588045966282330112&name=aaa'
           ]
         }
       }
@@ -80,7 +80,7 @@ describe('Auth/EditTemplate', () => {
       {},
       {
         routerProps: {
-          initialEntries: ['/auth/template/edit_template?name=aaa']
+          initialEntries: ['/auth/template/edit-template?name=aaa']
         }
       }
     );
@@ -98,7 +98,7 @@ describe('Auth/EditTemplate', () => {
       {
         routerProps: {
           initialEntries: [
-            `/auth/template/edit_template?id=1588045966282330112&name=aaa&action=${IEditTemplateActionTypeEnum.view}`
+            `/auth/template/edit-template?id=1588045966282330112&name=aaa&action=${IEditTemplateActionTypeEnum.view}`
           ]
         }
       }
@@ -140,7 +140,7 @@ describe('Auth/EditTemplate', () => {
       undefined,
       {
         routerProps: {
-          initialEntries: ['/auth/template/edit_template?id=123&name=aaa']
+          initialEntries: ['/auth/template/edit-template?id=123&name=aaa']
         }
       }
     );

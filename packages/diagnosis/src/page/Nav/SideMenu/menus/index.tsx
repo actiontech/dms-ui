@@ -11,15 +11,15 @@ export const DiagnosisMenuItems: GenerateMenuItemsType = ({ navigate }) => [
   {
     order: 1,
     label: <>{i18n.t('menu.monitorSourceConfig')}</>,
-    key: `/monitorSourceConfig`,
+    key: `/monitor-source-config`,
     icon: <Icon component={IconInspectionAndDiagnosis} />,
-    onClick: () => navigate(`/monitorSourceConfig`)
+    onClick: () => navigate(`/monitor-source-config`)
   },
   {
     order: 2,
     label: <>{i18n.t('menu.userManagement')}</>,
-    key: `/userManagement`,
+    key: `/user-management`,
     icon: <Icon component={IconUserCenter} />,
-    onClick: () => navigate(`/userManagement`)
+    onClick: () => navigate(`/user-management`)
   }
 ];

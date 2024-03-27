@@ -935,7 +935,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-project/projectID/data_mask_rule_overview"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data-mask-rule-overview"
                 role="menuitem"
                 style="padding-left: 24px;"
                 tabindex="-1"
@@ -1938,7 +1938,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-project/projectID/data_mask_rule_overview"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data-mask-rule-overview"
                 role="menuitem"
                 style="padding-left: 24px;"
                 tabindex="-1"
@@ -2941,7 +2941,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-project/projectID/data_mask_rule_overview"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data-mask-rule-overview"
                 role="menuitem"
                 style="padding-left: 24px;"
                 tabindex="-1"
