@@ -96,7 +96,7 @@ describe('test database monitor table', () => {
     expect(getAllBySelector('.ant-table-cell a').length).toBe(3);
     expect(getAllBySelector('.ant-table-cell a')[0]).toHaveAttribute(
       'href',
-      '/first/1731574922989273088/database_monitor/monitorItemList'
+      '/first/1731574922989273088/database_monitor/monitor-item-list'
     );
 
     mockDispatch.mockClear();

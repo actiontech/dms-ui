@@ -90,7 +90,7 @@ const MonitorConfig = () => {
       <MonitorConfigStyleWrapper>
         <PageHeader
           title={
-            <Link to={`/monitorSourceConfig`} key="go-back">
+            <Link to={`/monitor-source-config`} key="go-back">
               <BasicButton icon={<ArrowLeftOutlined />}>
                 {t('monitorSourceConfig.monitorConfig.returnMonitorSource')}
               </BasicButton>

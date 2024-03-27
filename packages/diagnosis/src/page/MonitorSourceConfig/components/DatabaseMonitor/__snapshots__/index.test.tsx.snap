@@ -165,7 +165,7 @@ exports[`test database monitor table can not delete by no id and no status data 
                         class="ant-table-cell"
                       >
                         <a
-                          href="/first/undefined/database_monitor/monitorItemList"
+                          href="/first/undefined/database_monitor/monitor-item-list"
                         >
                           first
                         </a>
@@ -561,7 +561,7 @@ exports[`test database monitor table delete database monitor failed 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/undefined/1731574922989273088/database_monitor/monitorItemList"
+                          href="/undefined/1731574922989273088/database_monitor/monitor-item-list"
                         />
                       </td>
                       <td
@@ -1439,7 +1439,7 @@ exports[`test database monitor table should open model when click edit button 1`
                         class="ant-table-cell"
                       >
                         <a
-                          href="/first/1731574922989273088/database_monitor/monitorItemList"
+                          href="/first/1731574922989273088/database_monitor/monitor-item-list"
                         >
                           first
                         </a>
@@ -1516,7 +1516,7 @@ exports[`test database monitor table should open model when click edit button 1`
                         class="ant-table-cell"
                       >
                         <a
-                          href="/second/1731574922989273089/database_monitor/monitorItemList"
+                          href="/second/1731574922989273089/database_monitor/monitor-item-list"
                         >
                           second
                         </a>
@@ -1593,7 +1593,7 @@ exports[`test database monitor table should open model when click edit button 1`
                         class="ant-table-cell"
                       >
                         <a
-                          href="/third/1731574922989273090/database_monitor/monitorItemList"
+                          href="/third/1731574922989273090/database_monitor/monitor-item-list"
                         >
                           third
                         </a>
@@ -1989,7 +1989,7 @@ exports[`test database monitor table should open query popover when click delete
                         class="ant-table-cell"
                       >
                         <a
-                          href="/first/1731574922989273088/database_monitor/monitorItemList"
+                          href="/first/1731574922989273088/database_monitor/monitor-item-list"
                         >
                           first
                         </a>
@@ -2066,7 +2066,7 @@ exports[`test database monitor table should open query popover when click delete
                         class="ant-table-cell"
                       >
                         <a
-                          href="/second/1731574922989273089/database_monitor/monitorItemList"
+                          href="/second/1731574922989273089/database_monitor/monitor-item-list"
                         >
                           second
                         </a>
@@ -2143,7 +2143,7 @@ exports[`test database monitor table should open query popover when click delete
                         class="ant-table-cell"
                       >
                         <a
-                          href="/third/1731574922989273090/database_monitor/monitorItemList"
+                          href="/third/1731574922989273090/database_monitor/monitor-item-list"
                         >
                           third
                         </a>
@@ -2539,7 +2539,7 @@ exports[`test database monitor table should refresh table when change pagination
                         class="ant-table-cell"
                       >
                         <a
-                          href="/first/1731574922989273088/database_monitor/monitorItemList"
+                          href="/first/1731574922989273088/database_monitor/monitor-item-list"
                         >
                           first
                         </a>
@@ -2616,7 +2616,7 @@ exports[`test database monitor table should refresh table when change pagination
                         class="ant-table-cell"
                       >
                         <a
-                          href="/second/1731574922989273089/database_monitor/monitorItemList"
+                          href="/second/1731574922989273089/database_monitor/monitor-item-list"
                         >
                           second
                         </a>
@@ -2693,7 +2693,7 @@ exports[`test database monitor table should refresh table when change pagination
                         class="ant-table-cell"
                       >
                         <a
-                          href="/third/1731574922989273090/database_monitor/monitorItemList"
+                          href="/third/1731574922989273090/database_monitor/monitor-item-list"
                         >
                           third
                         </a>
@@ -3089,7 +3089,7 @@ exports[`test database monitor table should render normal table 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/first/1731574922989273088/database_monitor/monitorItemList"
+                          href="/first/1731574922989273088/database_monitor/monitor-item-list"
                         >
                           first
                         </a>
@@ -3166,7 +3166,7 @@ exports[`test database monitor table should render normal table 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/second/1731574922989273089/database_monitor/monitorItemList"
+                          href="/second/1731574922989273089/database_monitor/monitor-item-list"
                         >
                           second
                         </a>
@@ -3243,7 +3243,7 @@ exports[`test database monitor table should render normal table 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/third/1731574922989273090/database_monitor/monitorItemList"
+                          href="/third/1731574922989273090/database_monitor/monitor-item-list"
                         >
                           third
                         </a>

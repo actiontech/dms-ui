@@ -32,20 +32,20 @@ export const diagnosisAuthRouterConfig: RouterConfigItem[] = [
     element: <MonitorSourceConfig />
   },
   {
-    path: '/monitorSourceConfig',
+    path: '/monitor-source-config',
     label: 'menu.monitorSourceConfig',
     key: 'monitorSourceConfig',
     icon: <SolutionOutlined />,
     element: <MonitorSourceConfig />
   },
   {
-    path: `/:name/:id/:type/monitorItemList`,
+    path: `/:name/:id/:type/monitor-item-list`,
     key: 'monitorItemList',
     element: <MonitorItemConfig />,
     hideInMenu: true
   },
   {
-    path: '/userManagement',
+    path: '/user-management',
     label: 'menu.userManagement',
     key: 'userManagement',
     icon: <IconUserCenter />,

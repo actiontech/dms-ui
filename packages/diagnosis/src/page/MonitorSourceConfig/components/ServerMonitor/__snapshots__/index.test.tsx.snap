@@ -165,7 +165,7 @@ exports[`test server monitor table can not delete by no id and no status data 1`
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test/undefined/server_monitor/monitorItemList"
+                          href="/test/undefined/server_monitor/monitor-item-list"
                         >
                           test
                         </a>
@@ -561,7 +561,7 @@ exports[`test server monitor table delete server monitor failed 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/undefined/1/server_monitor/monitorItemList"
+                          href="/undefined/1/server_monitor/monitor-item-list"
                         />
                       </td>
                       <td
@@ -1439,7 +1439,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test/1/server_monitor/monitorItemList"
+                          href="/test/1/server_monitor/monitor-item-list"
                         >
                           test
                         </a>
@@ -1516,7 +1516,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test12/2/server_monitor/monitorItemList"
+                          href="/test12/2/server_monitor/monitor-item-list"
                         >
                           test12
                         </a>
@@ -1593,7 +1593,7 @@ exports[`test server monitor table should open model when click edit button 1`] 
                         class="ant-table-cell"
                       >
                         <a
-                          href="/udp/3/server_monitor/monitorItemList"
+                          href="/udp/3/server_monitor/monitor-item-list"
                         >
                           udp
                         </a>
@@ -1989,7 +1989,7 @@ exports[`test server monitor table should open query popover when click delete b
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test/1/server_monitor/monitorItemList"
+                          href="/test/1/server_monitor/monitor-item-list"
                         >
                           test
                         </a>
@@ -2066,7 +2066,7 @@ exports[`test server monitor table should open query popover when click delete b
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test12/2/server_monitor/monitorItemList"
+                          href="/test12/2/server_monitor/monitor-item-list"
                         >
                           test12
                         </a>
@@ -2143,7 +2143,7 @@ exports[`test server monitor table should open query popover when click delete b
                         class="ant-table-cell"
                       >
                         <a
-                          href="/udp/3/server_monitor/monitorItemList"
+                          href="/udp/3/server_monitor/monitor-item-list"
                         >
                           udp
                         </a>
@@ -2539,7 +2539,7 @@ exports[`test server monitor table should refresh table when change pagination i
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test/1/server_monitor/monitorItemList"
+                          href="/test/1/server_monitor/monitor-item-list"
                         >
                           test
                         </a>
@@ -2616,7 +2616,7 @@ exports[`test server monitor table should refresh table when change pagination i
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test12/2/server_monitor/monitorItemList"
+                          href="/test12/2/server_monitor/monitor-item-list"
                         >
                           test12
                         </a>
@@ -2693,7 +2693,7 @@ exports[`test server monitor table should refresh table when change pagination i
                         class="ant-table-cell"
                       >
                         <a
-                          href="/udp/3/server_monitor/monitorItemList"
+                          href="/udp/3/server_monitor/monitor-item-list"
                         >
                           udp
                         </a>
@@ -3089,7 +3089,7 @@ exports[`test server monitor table should render normal table 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test/1/server_monitor/monitorItemList"
+                          href="/test/1/server_monitor/monitor-item-list"
                         >
                           test
                         </a>
@@ -3166,7 +3166,7 @@ exports[`test server monitor table should render normal table 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/test12/2/server_monitor/monitorItemList"
+                          href="/test12/2/server_monitor/monitor-item-list"
                         >
                           test12
                         </a>
@@ -3243,7 +3243,7 @@ exports[`test server monitor table should render normal table 1`] = `
                         class="ant-table-cell"
                       >
                         <a
-                          href="/udp/3/server_monitor/monitorItemList"
+                          href="/udp/3/server_monitor/monitor-item-list"
                         >
                           udp
                         </a>

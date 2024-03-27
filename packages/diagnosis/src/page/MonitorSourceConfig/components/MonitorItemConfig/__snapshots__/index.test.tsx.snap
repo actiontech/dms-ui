@@ -13,7 +13,7 @@ exports[`test monitor item config table render without permission 1`] = `
           class="title"
         >
           <a
-            href="/monitorSourceConfig"
+            href="/monitor-source-config"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -522,7 +522,7 @@ exports[`test monitor item config table return error when no params in url 1`] =
           class="title"
         >
           <a
-            href="/monitorSourceConfig"
+            href="/monitor-source-config"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -802,7 +802,7 @@ exports[`test monitor item config table should open check model when click check
           class="title"
         >
           <a
-            href="/monitorSourceConfig"
+            href="/monitor-source-config"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1329,7 +1329,7 @@ exports[`test monitor item config table should refresh table when change paginat
           class="title"
         >
           <a
-            href="/monitorSourceConfig"
+            href="/monitor-source-config"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1856,7 +1856,7 @@ exports[`test monitor item config table should render normal table 1`] = `
           class="title"
         >
           <a
-            href="/monitorSourceConfig"
+            href="/monitor-source-config"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -2383,7 +2383,7 @@ exports[`test monitor item config table should render table when api return null
           class="title"
         >
           <a
-            href="/monitorSourceConfig"
+            href="/monitor-source-config"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
