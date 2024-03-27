@@ -1,58 +1,20 @@
 import { SystemRole } from '@actiontech/shared/lib/enum';
-import {
-  cloudBeaverMenuItem,
-  dataExportMenuItem,
-  dbServiceManagementMenuItem,
-  memberManagementMenItem
-} from './base';
+
 import {
   CustomMenuItemType,
   GenerateMenuItemType,
   MenuStructTreeKey,
   MenuStructTreeType
 } from './index.type';
-import {
-  projectOverviewMenuItem,
-  dashboardMenuItem,
-  sqlAuditMenuItem,
-  pluginAuditMenuItem,
-  sqlOrderMenuItem,
-  sqlManagementMenuItem,
-  auditPlanMenuItem,
-  projectRuleTemplateMenuItem,
-  whiteListMenuItem,
-  workflowTemplateMenuItem,
-  sqleOperationRecordMenuItem
-} from './sqle';
 
 export const SIDE_MENU_DATA_PLACEHOLDER_KEY = 'projectID';
 
 export const genMenuItemsWithMenuStructTree = (
   projectID: string,
+  allMenuItems: GenerateMenuItemType[],
   menuStructTree: MenuStructTreeType,
   role: SystemRole | ''
 ): CustomMenuItemType[] => {
-  const allMenuItems: GenerateMenuItemType[] = [
-    dbServiceManagementMenuItem,
-    memberManagementMenItem,
-    cloudBeaverMenuItem,
-    dataExportMenuItem,
-
-    // #if [sqle]
-    projectOverviewMenuItem,
-    dashboardMenuItem,
-    sqlAuditMenuItem,
-    pluginAuditMenuItem,
-    sqlOrderMenuItem,
-    sqlManagementMenuItem,
-    auditPlanMenuItem,
-    projectRuleTemplateMenuItem,
-    whiteListMenuItem,
-    workflowTemplateMenuItem,
-    sqleOperationRecordMenuItem
-    // #endif
-  ];
-
   const getMenuItemWithKey = (key: MenuStructTreeKey): CustomMenuItemType => {
     return (
       allMenuItems.find((v) => {
@@ -72,10 +34,14 @@ export const genMenuItemsWithMenuStructTree = (
     }
 
     if (item.type === 'group') {
+      const children = item.group.map(getMenuItemWithKey);
+      if (children.every((v) => v === null)) {
+        return null;
+      }
       return {
         type: 'group',
         label: item.label,
-        children: item.group.map(getMenuItemWithKey)
+        children
       } as CustomMenuItemType;
     }
 

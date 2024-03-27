@@ -6,14 +6,13 @@ export default {
   instance: '数据源',
   externalInstance: '外部数据源',
   memberAndPermissions: '成员与权限',
-  operateAndAudit: '操作与审计',
   authAudit: '授权审计',
   templateAudit: '权限模版审计',
   instanceAudit: '数据源操作审计',
   SQLEOperateRecord: 'SQLE操作记录',
   inspectionAndDiagnosis: '巡检与诊断',
   SQLWorkbench: 'SQL工作台',
-  ruleTemplate: '规则模板',
+  ruleTemplate: '审核规则模板',
   whitelist: '白名单',
   workflowTemplate: '审批流程模板',
   sqlAudit: '快捷审核',
@@ -38,7 +37,8 @@ export default {
     SQLExecute: 'SQL上线',
     SQLDev: 'SQL开发',
     SQLManagement: 'SQL管控',
-    projectConfigure: '项目配置'
+    projectConfigure: '项目配置',
+    operateAndAudit: '操作与审计'
   },
 
   userNavigate: {
