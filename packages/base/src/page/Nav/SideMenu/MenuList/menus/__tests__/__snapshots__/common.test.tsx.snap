@@ -1,0 +1,669 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test genMenuItemsWithMenuStructTree should match snapshot 1`] = `[]`;
+
+exports[`test genMenuItemsWithMenuStructTree should match snapshot 2`] = `[]`;
+
+exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `[]`;
+
+exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
+[
+  null,
+  null,
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "cloud-beaver",
+        "label": <Link
+          to="/cloud-beaver"
+        >
+          SQL工作台
+        </Link>,
+        "structKey": "cloud-beaver",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "project/projectID/data/export",
+        "label": <Link
+          to="/project/600300/data/export"
+        >
+          数据导出
+        </Link>,
+        "structKey": "data-export",
+      },
+      null,
+      null,
+    ],
+    "label": "SQL开发",
+    "type": "group",
+  },
+  null,
+  null,
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "key": "project/projectID/db-services",
+            "label": <Link
+              to="/project/600300/db-services"
+            >
+              数据源
+            </Link>,
+          },
+          {
+            "key": "project/projectID/sync-data-source",
+            "label": <Link
+              to="/project/600300/sync-data-source"
+            >
+              外部数据源
+            </Link>,
+          },
+        ],
+        "expandIcon": [Function],
+        "icon": <IconInstanceManager />,
+        "key": "instance-management",
+        "label": "数据源管理",
+        "structKey": "instance-management",
+      },
+      null,
+      null,
+      null,
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "project/projectID/member",
+        "label": <Link
+          to="/project/600300/member"
+        >
+          成员与权限
+        </Link>,
+        "structKey": "member",
+      },
+    ],
+    "label": "项目配置",
+    "type": "group",
+  },
+  {
+    "type": "divider",
+  },
+  null,
+]
+`;
+
+exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
+[
+  null,
+  null,
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "cloud-beaver",
+        "label": <Link
+          to="/cloud-beaver"
+        >
+          SQL工作台
+        </Link>,
+        "structKey": "cloud-beaver",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "project/projectID/data/export",
+        "label": <Link
+          to="/project/600300/data/export"
+        >
+          数据导出
+        </Link>,
+        "structKey": "data-export",
+      },
+      null,
+      null,
+    ],
+    "label": "SQL开发",
+    "type": "group",
+  },
+  null,
+  null,
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "key": "project/projectID/db-services",
+            "label": <Link
+              to="/project/600300/db-services"
+            >
+              数据源
+            </Link>,
+          },
+          {
+            "key": "project/projectID/sync-data-source",
+            "label": <Link
+              to="/project/600300/sync-data-source"
+            >
+              外部数据源
+            </Link>,
+          },
+        ],
+        "expandIcon": [Function],
+        "icon": <IconInstanceManager />,
+        "key": "instance-management",
+        "label": "数据源管理",
+        "structKey": "instance-management",
+      },
+      null,
+      null,
+      null,
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "project/projectID/member",
+        "label": <Link
+          to="/project/600300/member"
+        >
+          成员与权限
+        </Link>,
+        "structKey": "member",
+      },
+    ],
+    "label": "项目配置",
+    "type": "group",
+  },
+  {
+    "type": "divider",
+  },
+  null,
+]
+`;
+
+exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
+[
+  {
+    "icon": <AntdIcon
+      component={[Function]}
+    />,
+    "key": "sqle/project/projectID/overview",
+    "label": <Link
+      to="/sqle/project/600300/overview"
+    >
+      项目概览
+    </Link>,
+    "structKey": "project-overview",
+  },
+  {
+    "className": "menu-todo-list-item",
+    "icon": <AntdIcon
+      component={[Function]}
+    />,
+    "key": "sqle/project/projectID/dashboard",
+    "label": <React.Fragment>
+      <Link
+        to="/sqle/project/600300/dashboard"
+      >
+        待关注清单
+      </Link>
+      <IconEllipse />
+    </React.Fragment>,
+    "structKey": "dashboard",
+  },
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "cloud-beaver",
+        "label": <Link
+          to="/cloud-beaver"
+        >
+          SQL工作台
+        </Link>,
+        "structKey": "cloud-beaver",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "project/projectID/data/export",
+        "label": <Link
+          to="/project/600300/data/export"
+        >
+          数据导出
+        </Link>,
+        "structKey": "data-export",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/sql-audit",
+        "label": <Link
+          to="/sqle/project/600300/sql-audit"
+        >
+          快捷审核
+        </Link>,
+        "structKey": "sql-audit",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/plugin-audit",
+        "label": <Link
+          to="/sqle/project/600300/plugin-audit"
+        >
+          IDE审核
+        </Link>,
+        "structKey": "plugin-audit",
+      },
+    ],
+    "label": "SQL开发",
+    "type": "group",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/order",
+        "label": <Link
+          to="/sqle/project/600300/order"
+        >
+          SQL工单
+        </Link>,
+        "structKey": "sql-order",
+      },
+    ],
+    "label": "SQL上线",
+    "type": "group",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/sql-management",
+        "label": <Link
+          to="/sqle/project/600300/sql-management"
+        >
+          SQL管控
+        </Link>,
+        "structKey": "sql-management",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/audit-plan",
+        "label": <Link
+          to="/sqle/project/600300/audit-plan"
+        >
+          智能扫描
+        </Link>,
+        "structKey": "audit-plane",
+      },
+    ],
+    "label": "SQL管控",
+    "type": "group",
+  },
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "key": "project/projectID/db-services",
+            "label": <Link
+              to="/project/600300/db-services"
+            >
+              数据源
+            </Link>,
+          },
+          {
+            "key": "project/projectID/sync-data-source",
+            "label": <Link
+              to="/project/600300/sync-data-source"
+            >
+              外部数据源
+            </Link>,
+          },
+        ],
+        "expandIcon": [Function],
+        "icon": <IconInstanceManager />,
+        "key": "instance-management",
+        "label": "数据源管理",
+        "structKey": "instance-management",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/rule/template",
+        "label": <Link
+          to="/sqle/project/600300/rule/template"
+        >
+          审核规则模板
+        </Link>,
+        "structKey": "rule-template",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/whitelist",
+        "label": <Link
+          to="/sqle/project/600300/whitelist"
+        >
+          白名单
+        </Link>,
+        "structKey": "whitelist",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/progress",
+        "label": <Link
+          to="/sqle/project/600300/progress"
+        >
+          审批流程模板
+        </Link>,
+        "structKey": "workflow-template",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "project/projectID/member",
+        "label": <Link
+          to="/project/600300/member"
+        >
+          成员与权限
+        </Link>,
+        "structKey": "member",
+      },
+    ],
+    "label": "项目配置",
+    "type": "group",
+  },
+  {
+    "type": "divider",
+  },
+  null,
+]
+`;
+
+exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
+[
+  {
+    "icon": <AntdIcon
+      component={[Function]}
+    />,
+    "key": "sqle/project/projectID/overview",
+    "label": <Link
+      to="/sqle/project/600300/overview"
+    >
+      项目概览
+    </Link>,
+    "structKey": "project-overview",
+  },
+  {
+    "className": "menu-todo-list-item",
+    "icon": <AntdIcon
+      component={[Function]}
+    />,
+    "key": "sqle/project/projectID/dashboard",
+    "label": <React.Fragment>
+      <Link
+        to="/sqle/project/600300/dashboard"
+      >
+        待关注清单
+      </Link>
+      <IconEllipse />
+    </React.Fragment>,
+    "structKey": "dashboard",
+  },
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "cloud-beaver",
+        "label": <Link
+          to="/cloud-beaver"
+        >
+          SQL工作台
+        </Link>,
+        "structKey": "cloud-beaver",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "project/projectID/data/export",
+        "label": <Link
+          to="/project/600300/data/export"
+        >
+          数据导出
+        </Link>,
+        "structKey": "data-export",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/sql-audit",
+        "label": <Link
+          to="/sqle/project/600300/sql-audit"
+        >
+          快捷审核
+        </Link>,
+        "structKey": "sql-audit",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/plugin-audit",
+        "label": <Link
+          to="/sqle/project/600300/plugin-audit"
+        >
+          IDE审核
+        </Link>,
+        "structKey": "plugin-audit",
+      },
+    ],
+    "label": "SQL开发",
+    "type": "group",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/order",
+        "label": <Link
+          to="/sqle/project/600300/order"
+        >
+          SQL工单
+        </Link>,
+        "structKey": "sql-order",
+      },
+    ],
+    "label": "SQL上线",
+    "type": "group",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/sql-management",
+        "label": <Link
+          to="/sqle/project/600300/sql-management"
+        >
+          SQL管控
+        </Link>,
+        "structKey": "sql-management",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/audit-plan",
+        "label": <Link
+          to="/sqle/project/600300/audit-plan"
+        >
+          智能扫描
+        </Link>,
+        "structKey": "audit-plane",
+      },
+    ],
+    "label": "SQL管控",
+    "type": "group",
+  },
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "key": "project/projectID/db-services",
+            "label": <Link
+              to="/project/600300/db-services"
+            >
+              数据源
+            </Link>,
+          },
+          {
+            "key": "project/projectID/sync-data-source",
+            "label": <Link
+              to="/project/600300/sync-data-source"
+            >
+              外部数据源
+            </Link>,
+          },
+        ],
+        "expandIcon": [Function],
+        "icon": <IconInstanceManager />,
+        "key": "instance-management",
+        "label": "数据源管理",
+        "structKey": "instance-management",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/rule/template",
+        "label": <Link
+          to="/sqle/project/600300/rule/template"
+        >
+          审核规则模板
+        </Link>,
+        "structKey": "rule-template",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/whitelist",
+        "label": <Link
+          to="/sqle/project/600300/whitelist"
+        >
+          白名单
+        </Link>,
+        "structKey": "whitelist",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/progress",
+        "label": <Link
+          to="/sqle/project/600300/progress"
+        >
+          审批流程模板
+        </Link>,
+        "structKey": "workflow-template",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "project/projectID/member",
+        "label": <Link
+          to="/project/600300/member"
+        >
+          成员与权限
+        </Link>,
+        "structKey": "member",
+      },
+    ],
+    "label": "项目配置",
+    "type": "group",
+  },
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/operation-record",
+        "label": <Link
+          to="/sqle/project/600300/operation-record"
+        >
+          SQLE操作记录
+        </Link>,
+        "role": [
+          "admin",
+        ],
+        "structKey": "sqle-log",
+      },
+    ],
+    "label": "操作与审计",
+    "type": "group",
+  },
+]
+`;

@@ -4,15 +4,28 @@ import { useMemo, useCallback } from 'react';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
 import { useLocation } from 'react-router-dom';
 import { MenuListProps } from './index.type';
+
+// #if [sqle && !dms]
 import { sideMenuData } from './menus/menu.data';
+// #else
+import { dmsSideMenuData } from './menus/menu.data.dms';
+import { CustomMenuItemType } from './menus/index.type';
+// #endif
 
 const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
   const location = useLocation();
 
-  const menuItems = useMemo(
-    () => sideMenuData(projectID, role),
-    [projectID, role]
-  );
+  const menuItems = useMemo(() => {
+    let menus: CustomMenuItemType[] = [];
+
+    // #if [sqle && !dms]
+    menus = sideMenuData(projectID, role);
+    // #else
+    menus = dmsSideMenuData(projectID, role);
+    // #endif
+
+    return menus;
+  }, [projectID, role]);
 
   const selectMenu = useCallback(
     (config: MenuProps['items'] = [], pathname: string): string[] => {

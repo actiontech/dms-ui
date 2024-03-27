@@ -138,7 +138,7 @@ export const sqleOperationRecordMenuItem: GenerateMenuItemType = (
 ) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/operation-record`}>
-      {t('dmsMenu.operateAndAudit')}
+      {t('dmsMenu.SQLEOperateRecord')}
     </Link>
   ),
   icon: <Icon component={IconOperateAndAudit} />,

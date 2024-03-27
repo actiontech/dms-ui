@@ -1,9 +1,48 @@
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../locale';
-import { MenuStructTreeType } from './index.type';
+import { GenerateMenuItemType, MenuStructTreeType } from './index.type';
 import { genMenuItemsWithMenuStructTree } from './common';
+import {
+  dbServiceManagementMenuItem,
+  memberManagementMenItem,
+  cloudBeaverMenuItem,
+  dataExportMenuItem
+} from './base';
+import {
+  projectOverviewMenuItem,
+  dashboardMenuItem,
+  sqlAuditMenuItem,
+  pluginAuditMenuItem,
+  sqlOrderMenuItem,
+  sqlManagementMenuItem,
+  auditPlanMenuItem,
+  projectRuleTemplateMenuItem,
+  whiteListMenuItem,
+  workflowTemplateMenuItem,
+  sqleOperationRecordMenuItem
+} from './sqle';
 
 export const sideMenuData = (projectID: string, role: SystemRole | '') => {
+  const allMenuItems: GenerateMenuItemType[] = [
+    dbServiceManagementMenuItem,
+    memberManagementMenItem,
+    cloudBeaverMenuItem,
+    dataExportMenuItem,
+
+    // #if [sqle]
+    projectOverviewMenuItem,
+    dashboardMenuItem,
+    sqlAuditMenuItem,
+    pluginAuditMenuItem,
+    sqlOrderMenuItem,
+    sqlManagementMenuItem,
+    auditPlanMenuItem,
+    projectRuleTemplateMenuItem,
+    whiteListMenuItem,
+    workflowTemplateMenuItem,
+    sqleOperationRecordMenuItem
+    // #endif
+  ];
   const menuStruct: MenuStructTreeType = [
     'project-overview',
     'dashboard',
@@ -36,8 +75,17 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
       ]
     },
     { type: 'divider' },
-    'sqle-log'
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.operateAndAudit'),
+      group: ['sqle-log']
+    }
   ];
 
-  return genMenuItemsWithMenuStructTree(projectID, menuStruct, role);
+  return genMenuItemsWithMenuStructTree(
+    projectID,
+    allMenuItems,
+    menuStruct,
+    role
+  );
 };
