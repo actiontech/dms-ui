@@ -4,12 +4,12 @@ import { useMemo, useCallback } from 'react';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
 import { useLocation } from 'react-router-dom';
 import { MenuListProps } from './index.type';
+import { CustomMenuItemType } from './menus/index.type';
 
 // #if [sqle && !dms]
 import { sideMenuData } from './menus/menu.data';
 // #else
 import { dmsSideMenuData } from './menus/menu.data.dms';
-import { CustomMenuItemType } from './menus/index.type';
 // #endif
 
 const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
