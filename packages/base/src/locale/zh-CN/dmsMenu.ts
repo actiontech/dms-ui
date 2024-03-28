@@ -41,7 +41,8 @@ export default {
     SQLDev: 'SQL开发',
     SQLManagement: 'SQL管控',
     projectConfigure: '项目配置',
-    operateAndAudit: '操作与审计'
+    operateAndAudit: '操作与审计',
+    dataSecurity: '数据安全'
   },
 
   userNavigate: {

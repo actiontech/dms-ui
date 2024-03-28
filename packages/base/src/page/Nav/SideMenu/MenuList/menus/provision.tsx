@@ -1,74 +1,74 @@
+import Icon from '@ant-design/icons';
 import { t } from '../../../../../locale';
 import {
+  IconAuthAudit,
+  IconAuthList,
   IconPermissionGroup,
   IconPermissionTemplate,
-  IconAuthList,
-  IconDataMask
+  IconTemplateAudit
 } from '../../../../../icon/sideMenu';
-import Icon from '@ant-design/icons';
-import {
-  GenerateMenuItemsType,
-  SIDE_MENU_DATA_PLACEHOLDER_KEY
-} from './common';
+import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
+import { Link } from 'react-router-dom';
+import { GenerateMenuItemType } from './index.type';
 
-export const ProvisionMenuItems: GenerateMenuItemsType = ({
-  navigate,
-  projectID = ''
-}) => [
-  {
-    order: 9,
-    type: 'divider'
-  },
-  {
-    label: t('dmsMenu.authAudit'),
-    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/auth`,
-    onClick: () => navigate(`/provision/project/${projectID}/audit/auth`),
-    parentKey: 'operateAndAudit'
-  },
-  {
-    label: t('dmsMenu.templateAudit'),
-    key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/template`,
-    onClick: () => navigate(`/provision/project/${projectID}/audit/template`),
-    parentKey: 'operateAndAudit'
-  },
-  // {
-  //   label: t('dmsMenu.instanceAudit'),
-  //   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/service`,
-  //   onClick: () => navigate(`/provision/project/${projectID}/audit/service`),
-  //   parentKey: 'operateAndAudit'
-  // },
-  {
-    order: 10,
-    type: 'group',
-    label: t('dmsMenu.groupLabel.dataSecurity'),
-    children: [
-      {
-        label: t('dmsMenu.permissionGroup'),
-        key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data/operation`,
-        icon: <Icon component={IconPermissionGroup} />,
-        onClick: () =>
-          navigate(`/provision/project/${projectID}/data/operation`)
-      },
-      {
-        label: t('dmsMenu.permissionTemplate'),
-        key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/template`,
-        icon: <Icon component={IconPermissionTemplate} />,
-        onClick: () => navigate(`/provision/project/${projectID}/auth/template`)
-      },
-      {
-        label: t('dmsMenu.authList'),
-        key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/list`,
-        icon: <Icon component={IconAuthList} />,
-        onClick: () => navigate(`/provision/project/${projectID}/auth/list`)
-      },
-      // #if [dms]
-      {
-        label: t('dmsMenu.dataMaskRuleOverview'),
-        key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data-mask-rule-overview`,
-        icon: <Icon component={IconDataMask} />,
-        onClick: () => navigate(`/project/${projectID}/data-mask-rule-overview`)
-      }
-      // #endif
-    ]
-  }
-];
+export const permissionGroupMenuItem: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/data/operation`}>
+      {t('dmsMenu.permissionGroup')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data/operation`,
+  icon: <Icon component={IconPermissionGroup} />,
+  structKey: 'permission-group'
+});
+
+export const permissionTemplateMenuItem: GenerateMenuItemType = (
+  projectID
+) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/auth/template`}>
+      {t('dmsMenu.permissionTemplate')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/template`,
+  icon: <Icon component={IconPermissionTemplate} />,
+  structKey: 'permission-template'
+});
+
+export const authListMenuItem: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/auth/list`}>
+      {t('dmsMenu.authList')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/list`,
+  icon: <Icon component={IconAuthList} />,
+  structKey: 'auth-list'
+});
+
+export const authAuditMenuItem: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/audit/auth`}>
+      {t('dmsMenu.authAudit')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/auth`,
+  icon: <Icon component={IconAuthAudit} />,
+  structKey: 'auth-audit'
+});
+
+export const templateAuditMenuItem: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/audit/template`}>
+      {t('dmsMenu.templateAudit')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/template`,
+  icon: <Icon component={IconTemplateAudit} />,
+  structKey: 'template-audit'
+});
