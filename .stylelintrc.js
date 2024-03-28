@@ -16,7 +16,7 @@ module.exports = {
     },
     {
       files: 'packages/*/{src,lib}/**/{style.ts,element.ts}',
-      customSyntax: '@stylelint/postcss-css-in-js'
+      customSyntax: 'postcss-styled-syntax'
     }
   ],
   rules: {
