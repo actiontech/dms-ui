@@ -352,10 +352,11 @@ export const LayoutStyleWrapper = styled('section')`
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
       font-size: 13px;
       text-align: center;
-      margin-top: auto;
       z-index: 1000;
       padding: 20px 0;
       background-color: transparent;
+      width: 350px;
+      margin: auto auto 0;
     }
   }
 `;
