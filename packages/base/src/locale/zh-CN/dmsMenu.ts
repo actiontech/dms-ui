@@ -23,8 +23,11 @@ export default {
   permissionGroup: '权限组',
   permissionTemplate: '权限模板',
   authList: '授权清单',
+  dataMaskRuleOverview: '脱敏规则',
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',
+  monitorSourceConfig: '监控源配置',
+  diagnosisList: '巡检列表',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',

@@ -219,7 +219,7 @@ describe('page/DataSource/AddDataSource', () => {
     expect(screen.getByText('查看脱敏规则')).toBeInTheDocument();
     expect(screen.getByText('查看脱敏规则')).toHaveAttribute(
       'href',
-      `/project/${projectID}/data_mask_rule_overview`
+      `/project/${projectID}/data-mask-rule-overview`
     );
   });
 });

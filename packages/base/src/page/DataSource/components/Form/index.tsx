@@ -441,7 +441,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                   <Space>
                     {t('dmsDataSource.dataSourceForm.dataMaskConfigTips')}
                     <Link
-                      to={`/project/${projectID}/data_mask_rule_overview`}
+                      to={`/project/${projectID}/data-mask-rule-overview`}
                       target="_blank"
                     >
                       {t('dmsDataSource.dataSourceForm.checkDataMaskButton')}
