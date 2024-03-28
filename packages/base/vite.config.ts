@@ -3,8 +3,6 @@ import react from '@vitejs/plugin-react';
 import eslint from 'vite-plugin-eslint';
 import vitePluginConditionalCompile from 'vite-plugin-conditional-compile';
 import { createHtmlPlugin } from 'vite-plugin-html';
-
-// Do not delete it. After deletion, it will be synchronized to dms-ui-ee, causing an error.
 import * as path from 'path';
 
 // https://vitejs.dev/config/
@@ -119,7 +117,7 @@ export default defineConfig((config) => {
           target: 'http://10.186.62.13:11000/'
         },
         '^/provision/v': {
-          target: 'http://10.186.62.13:11000'
+          target: 'http://10.186.62.13:11000/'
         },
         '^/logo': {
           target: 'http://10.186.62.13:11000/'

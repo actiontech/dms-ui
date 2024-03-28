@@ -21,8 +21,16 @@ import {
   workflowTemplateMenuItem,
   sqleOperationRecordMenuItem
 } from './sqle';
+import {
+  authAuditMenuItem,
+  authListMenuItem,
+  permissionGroupMenuItem,
+  permissionTemplateMenuItem,
+  templateAuditMenuItem
+} from './provision';
+import { dataMaskRuleMenuItem } from './dms';
 
-export const sideMenuData = (projectID: string, role: SystemRole | '') => {
+export const dmsSideMenuData = (projectID: string, role: SystemRole | '') => {
   const allMenuItems: GenerateMenuItemType[] = [
     dbServiceManagementMenuItem,
     memberManagementMenItem,
@@ -40,7 +48,19 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
     projectRuleTemplateMenuItem,
     whiteListMenuItem,
     workflowTemplateMenuItem,
-    sqleOperationRecordMenuItem
+    sqleOperationRecordMenuItem,
+    // #endif
+
+    // #if [provision]
+    permissionGroupMenuItem,
+    permissionTemplateMenuItem,
+    authListMenuItem,
+    authAuditMenuItem,
+    templateAuditMenuItem,
+    // #endif
+
+    // #if [dms]
+    dataMaskRuleMenuItem
     // #endif
   ];
   const menuStruct: MenuStructTreeType = [
@@ -65,6 +85,17 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
     { type: 'divider' },
     {
       type: 'group',
+      label: t('dmsMenu.groupLabel.dataSecurity'),
+      group: [
+        'permission-group',
+        'permission-template',
+        'auth-list',
+        'data-mask-rule'
+      ]
+    },
+    { type: 'divider' },
+    {
+      type: 'group',
       label: t('dmsMenu.groupLabel.projectConfigure'),
       group: [
         'instance-management',
@@ -78,7 +109,7 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.operateAndAudit'),
-      group: ['sqle-log']
+      group: ['sqle-log', 'auth-audit', 'template-audit']
     }
   ];
 
