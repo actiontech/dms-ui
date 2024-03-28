@@ -351,9 +351,7 @@ const DetailReport = () => {
           columns={columns}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
-          // #if [ee]
           actions={actions}
-          // #endif
           onRow={(record) => {
             return {
               onClick: (event) => {
