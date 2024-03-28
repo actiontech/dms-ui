@@ -1,38 +1,50 @@
-import { MenuProps } from 'antd';
-import { ItemType, SubMenuType } from 'antd/es/menu/hooks/useItems';
-import { NavigateFunction } from 'react-router-dom';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
-export type CustomMenuItemType =
-  | (ItemType & {
-      order?: number;
-    })
-  | null;
-
-export type GenerateMenuItemsType = (arg: {
-  navigate: NavigateFunction;
-  projectID?: string;
-}) => CustomMenuItemType[];
+import {
+  CustomMenuItemType,
+  GenerateMenuItemType,
+  MenuStructTreeKey,
+  MenuStructTreeType
+} from './index.type';
 
 export const SIDE_MENU_DATA_PLACEHOLDER_KEY = 'projectID';
 
-export const isAdminKeys = {
-  operate: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/operation-record`
-} as const;
-
-export const filterAdminMenusWithKey = (
-  menus: MenuProps['items']
+export const genMenuItemsWithMenuStructTree = (
+  projectID: string,
+  allMenuItems: GenerateMenuItemType[],
+  menuStructTree: MenuStructTreeType,
+  role: SystemRole | ''
 ): CustomMenuItemType[] => {
-  return (
-    menus?.filter((v) => {
-      const menu = v as SubMenuType;
-      if (menu.children) {
-        menu.children = filterAdminMenusWithKey(menu.children) ?? [];
-      }
+  const getMenuItemWithKey = (key: MenuStructTreeKey): CustomMenuItemType => {
+    return (
+      allMenuItems.find((v) => {
+        const menu = v(projectID);
+        if (menu?.role) {
+          return menu.role.includes(role) && menu.structKey === key;
+        }
 
-      return Object.keys(isAdminKeys).every((e) => {
-        const isAdminKey = e as keyof typeof isAdminKeys;
-        return isAdminKeys[isAdminKey] !== menu?.key;
-      });
-    }) ?? []
-  );
+        return menu?.structKey === key;
+      })?.(projectID) ?? null
+    );
+  };
+
+  return menuStructTree.map<CustomMenuItemType>((item) => {
+    if (typeof item === 'string') {
+      return getMenuItemWithKey(item);
+    }
+
+    if (item.type === 'group') {
+      const children = item.group.map(getMenuItemWithKey);
+      if (children.every((v) => v === null)) {
+        return null;
+      }
+      return {
+        type: 'group',
+        label: item.label,
+        children
+      } as CustomMenuItemType;
+    }
+
+    return item as CustomMenuItemType;
+  });
 };

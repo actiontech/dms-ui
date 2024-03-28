@@ -187,7 +187,7 @@ export const IconInspectionAndDiagnosis = () => {
   );
 };
 
-export const IconSQLQuery = () => {
+export const IconCloudBeaver = () => {
   return (
     <svg
       width="18"

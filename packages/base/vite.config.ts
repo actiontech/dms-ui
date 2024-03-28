@@ -3,8 +3,6 @@ import react from '@vitejs/plugin-react';
 import eslint from 'vite-plugin-eslint';
 import vitePluginConditionalCompile from 'vite-plugin-conditional-compile';
 import { createHtmlPlugin } from 'vite-plugin-html';
-
-// Do not delete it. After deletion, it will be synchronized to dms-ui-ee, causing an error.
 import * as path from 'path';
 
 // https://vitejs.dev/config/
@@ -15,15 +13,42 @@ export default defineConfig((config) => {
    */
   const isCE = buildTypes.includes('ce') && buildTypes.includes('SQLE');
   const isEE = !isCE;
+
   const isSQLE = buildTypes.includes('SQLE');
   const isDemo = buildTypes.includes('DEMO');
-  const title = 'Action SQLE';
+  const isPROVISION = buildTypes.includes('PROVISION');
+  const isDMS = isSQLE && isPROVISION;
+
+  const genTitle = () => {
+    if (isDMS) {
+      return 'DMS';
+    }
+
+    if (isSQLE) {
+      return 'SQLE';
+    }
+
+    if (isPROVISION) {
+      return 'provision';
+    }
+
+    return 'DMS';
+  };
+
+  const title = `Action ${genTitle()}`;
 
   return {
     plugins: [
       vitePluginConditionalCompile({
         include: [/^.+\/packages\/.+\/.+.(ts|tsx)$/],
-        env: { ee: isEE, ce: isCE, sqle: isSQLE, demo: isDemo }
+        env: {
+          ee: isEE,
+          ce: isCE,
+          sqle: isSQLE,
+          provision: isPROVISION,
+          dms: isDMS,
+          demo: isDemo
+        }
       }),
       eslint({
         exclude: [
@@ -41,6 +66,11 @@ export default defineConfig((config) => {
         }
       })
     ],
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, '../provision/src')
+      }
+    },
     css: {
       preprocessorOptions: {
         less: {
@@ -76,6 +106,7 @@ export default defineConfig((config) => {
       watch: {
         ignored: [
           '!**/node_modules/sqle/**',
+          '!**/node_modules/provision/**',
           '!**/node_modules/@actiontech/shared/**'
         ]
       },
@@ -83,6 +114,9 @@ export default defineConfig((config) => {
       open: true,
       proxy: {
         '^(/v|/sqle/v)': {
+          target: 'http://10.186.62.13:11000/'
+        },
+        '^/provision/v': {
           target: 'http://10.186.62.13:11000/'
         },
         '^/logo': {
