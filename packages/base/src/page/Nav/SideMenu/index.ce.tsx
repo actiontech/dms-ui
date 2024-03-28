@@ -12,7 +12,7 @@ import { useCurrentUser } from '@actiontech/shared/lib/global';
 import MenuList from './MenuList';
 
 const CESideMenu = () => {
-  const { username, theme, updateTheme, isAdmin } = useCurrentUser();
+  const { username, theme, updateTheme, isAdmin, role } = useCurrentUser();
 
   return (
     <SideMenuStyleWrapper className="dms-layout-side">
@@ -26,7 +26,7 @@ const CESideMenu = () => {
           </Typography.Text>
         </CEModeProjectWrapperStyleWrapper>
 
-        <MenuList projectID={DEFAULT_PROJECT_ID} isAdmin={isAdmin} />
+        <MenuList projectID={DEFAULT_PROJECT_ID} role={role} />
       </div>
 
       <UserMenu
