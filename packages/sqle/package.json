@@ -20,7 +20,6 @@
   },
   "scripts": {
     "start": "PORT=3030 craco start",
-    "prebuild": "node ./scripts/moveAntdCss.js && node ./scripts/getGitVersion.js",
     "build": "craco build",
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",

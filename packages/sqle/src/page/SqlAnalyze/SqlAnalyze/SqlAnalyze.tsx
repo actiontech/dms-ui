@@ -85,9 +85,10 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
             <section className="tab-cont-wrapper">
               <SqlContStyleWrapper>
                 {tabStatus === 'sql' &&
-                  generateSQLExecPlanContent(
-                    { ...sqlExplain, ...performanceStatistics } ?? {}
-                  )}
+                  generateSQLExecPlanContent({
+                    ...sqlExplain,
+                    ...performanceStatistics
+                  })}
                 {tableMetas?.table_meta_items?.map((table) => {
                   return (
                     <React.Fragment key={table.name}>
