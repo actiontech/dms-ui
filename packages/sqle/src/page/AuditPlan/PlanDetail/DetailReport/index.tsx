@@ -140,7 +140,7 @@ const DetailReport = () => {
       ? floatToPercent(dataSource?.pass_rate) + '%'
       : typeof dataSource?.pass_rate === 'undefined'
       ? '--'
-      : dataSource?.pass_rate + '' ?? '';
+      : dataSource?.pass_rate?.toString() ?? '';
     return [
       {
         localKey: 'sourceLabel',

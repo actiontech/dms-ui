@@ -166,7 +166,7 @@ const PlanForm: React.FC<PlanFormProps> = ({
                 placeholder={t('common.form.placeholder.input', {
                   name: t('auditPlan.create.form.name')
                 })}
-                disabled={!!props?.defaultValue ?? submitLoading}
+                disabled={!!props?.defaultValue || submitLoading}
               ></FormInputBotBorder>
             </FormItemNoLabel>
             <FormItemSubTitle>
