@@ -3,7 +3,7 @@ override MAIN_MODULE   = ${shell pwd}
 override UID           = ${shell id -u}
 override GID           = ${shell id -g}
 
-DOCKER_IMAGE  ?= reg.actiontech.com/actiontech-dev/pnpm:8.3.1-node16
+DOCKER_IMAGE  ?= reg.actiontech.com/actiontech-dev/pnpm:8.3.1-node20
 COMMAND       ?=
 EDITION       ?=ce
 
