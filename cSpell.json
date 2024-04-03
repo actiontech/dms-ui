@@ -43,6 +43,7 @@
     "packages/*/craco.config.js"
   ],
   "words": [
+    "actiontech",
     "ahooks",
     "wechat",
     "weibo",

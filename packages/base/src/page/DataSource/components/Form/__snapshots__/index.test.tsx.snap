@@ -1065,7 +1065,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
@@ -2242,7 +2242,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
@@ -3386,7 +3386,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
@@ -4446,7 +4446,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
@@ -5506,7 +5506,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
@@ -6610,7 +6610,7 @@ exports[`page/DataSource/DataSourceForm render form snap 1`] = `
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
@@ -7601,7 +7601,7 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
@@ -8592,7 +8592,7 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
@@ -9624,7 +9624,7 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则
