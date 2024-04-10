@@ -1,7 +1,9 @@
+import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
 export type FormItem = {
   desc?: string;
   key?: string;
-  type?: string;
+  type?: AuditPlanParamResV1TypeEnum;
   value?: string;
 };
 
@@ -19,6 +21,7 @@ export type BackendFormProps = {
   paramsKey?: string;
   disabled?: boolean;
   isFullLine?: boolean;
+  formMode?: 'update' | 'create';
 };
 
 export { default } from './AutoCreatedFormItemByApi';

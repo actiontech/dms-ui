@@ -1,14 +1,14 @@
 import { BackendFormProps } from '..';
 import AutoCreatedFormItemByApi from '../AutoCreatedFormItemByApi';
-
 import { renderWithTheme } from '../../../testUtils/customRender';
 import Form from 'antd/es/form/Form';
+import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('sqle/components/BackendForm', () => {
   const customRender = (params: BackendFormProps) => {
     return renderWithTheme(
       <Form>
-        <AutoCreatedFormItemByApi {...params} />
+        <AutoCreatedFormItemByApi {...params} formMode="create" />
       </Form>
     );
   };
@@ -20,7 +20,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'bool1',
-            type: 'bool',
+            type: AuditPlanParamResV1TypeEnum.bool,
             desc: 'this is a tip'
           }
         ]
@@ -34,7 +34,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'bool2',
-            type: 'bool',
+            type: AuditPlanParamResV1TypeEnum.bool,
             desc: 'this is a tip'
           }
         ]
@@ -49,7 +49,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'bool3',
-            type: 'bool',
+            type: AuditPlanParamResV1TypeEnum.bool,
             desc: 'desc 。desc1',
             value: 'true'
           }
@@ -64,7 +64,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'int1',
-            type: 'int',
+            type: AuditPlanParamResV1TypeEnum.int,
             desc: 'desc 。desc1'
           }
         ]
@@ -79,7 +79,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'int2',
-            type: 'int',
+            type: AuditPlanParamResV1TypeEnum.int,
             desc: 'desc (desc2)'
           }
         ]
@@ -88,13 +88,27 @@ describe('sqle/components/BackendForm', () => {
     });
   });
 
-  describe('render type is input', () => {
+  describe('render type is password', () => {
     it('render layout is fullLine', () => {
       const { baseElement } = customRender({
         params: [
           {
             key: 'input1',
-            type: 'input',
+            type: AuditPlanParamResV1TypeEnum.password,
+            desc: 'desc 。desc1'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render form mode is update', () => {
+      const { baseElement } = customRender({
+        formMode: 'update',
+        params: [
+          {
+            key: 'input1',
+            type: AuditPlanParamResV1TypeEnum.password,
             desc: 'desc 。desc1'
           }
         ]
@@ -109,7 +123,37 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'input2',
-            type: 'input',
+            type: AuditPlanParamResV1TypeEnum.password,
+            desc: 'desc (desc2)'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+  });
+
+  describe('render type is input', () => {
+    it('render layout is fullLine', () => {
+      const { baseElement } = customRender({
+        params: [
+          {
+            key: 'input1',
+            type: AuditPlanParamResV1TypeEnum.string,
+            desc: 'desc 。desc1'
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render layout is spaceBetween & no desc', () => {
+      const { baseElement } = customRender({
+        isFullLine: false,
+        disabled: true,
+        params: [
+          {
+            key: 'input2',
+            type: AuditPlanParamResV1TypeEnum.string,
             desc: 'desc (desc2)'
           }
         ]

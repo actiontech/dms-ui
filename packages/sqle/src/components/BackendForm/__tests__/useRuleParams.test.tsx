@@ -1,4 +1,4 @@
-import useRuleParams from './useRuleParams';
+import useRuleParams from '../useRuleParams';
 
 import { renderHook } from '@testing-library/react';
 
