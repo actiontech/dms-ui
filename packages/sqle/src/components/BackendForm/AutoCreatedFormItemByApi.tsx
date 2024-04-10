@@ -8,6 +8,8 @@ import { BackendFormProps } from '.';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { BasicInput, BasicSwitch } from '@actiontech/shared';
 import useRuleParams from './useRuleParams';
+import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import FormPasswordWithPlaceholder from './FormPasswordWithPlaceholder';
 
 const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
   const { t } = useTranslation();
@@ -27,7 +29,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
     <>
       {formItemData.map((item) => {
         const { labelTip, label } = item;
-        if (item.type === 'bool') {
+        if (item.type === AuditPlanParamResV1TypeEnum.bool) {
           return (
             <FormItemLabel
               key={item.key}
@@ -50,7 +52,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-        if (item.type === 'int') {
+        if (item.type === AuditPlanParamResV1TypeEnum.int) {
           return (
             <FormItemLabel
               key={item.key}
@@ -75,6 +77,31 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
               ]}
             >
               <BasicInput disabled={props.disabled} />
+            </FormItemLabel>
+          );
+        }
+        if (item.type === AuditPlanParamResV1TypeEnum.password) {
+          return (
+            <FormItemLabel
+              key={item.key}
+              className={classNames({
+                'has-label-tip': !!labelTip
+              })}
+              label={
+                <div className="label-cont-custom">
+                  <div>{label}</div>
+                  <div hidden={!labelTip} className="tip-content-box">
+                    {labelTip}
+                  </div>
+                </div>
+              }
+              {...formItemLayoutVal}
+              name={[paramsKey, item.key ?? '']}
+            >
+              <FormPasswordWithPlaceholder
+                enabled={props.formMode === 'update'}
+                disabled={props.disabled}
+              />
             </FormItemLabel>
           );
         }

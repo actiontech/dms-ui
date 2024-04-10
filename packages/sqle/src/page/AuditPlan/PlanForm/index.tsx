@@ -59,26 +59,25 @@ const PlanForm: React.FC<PlanFormProps> = ({
 
   const { mergeFromValueIntoParams } = useAsyncParams();
 
-  const onSubmitForm = async () => {
-    const values = await form.validateFields();
-    if (values.params && asyncParamsRef.current) {
-      const params = values.params;
-      delete values.params;
-      values.asyncParams = mergeFromValueIntoParams(
-        params,
-        asyncParamsRef.current
-      );
-    }
-    props.submit(values);
-  };
-
   useEffect(() => {
+    const onSubmitForm = async () => {
+      const values = await form.validateFields();
+      if (values.params && asyncParamsRef.current) {
+        const params = values.params;
+        delete values.params;
+        values.asyncParams = mergeFromValueIntoParams(
+          params,
+          asyncParamsRef.current
+        );
+      }
+      props.submit(values);
+    };
     EventEmitter.subscribe(EmitterKey.Submit_Audit_Plan_Form, onSubmitForm);
     return () => {
       EventEmitter.unsubscribe(EmitterKey.Submit_Audit_Plan_Form, onSubmitForm);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [props.defaultValue]);
 
   useEffect(() => {
     if (props.defaultValue) {
