@@ -8,7 +8,6 @@ import { BackendFormProps } from '.';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { BasicInput, BasicSwitch } from '@actiontech/shared';
 import useRuleParams from './useRuleParams';
-import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import FormPasswordWithPlaceholder from './FormPasswordWithPlaceholder';
 
 const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
@@ -29,7 +28,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
     <>
       {formItemData.map((item) => {
         const { labelTip, label } = item;
-        if (item.type === AuditPlanParamResV1TypeEnum.bool) {
+        if (item.type === 'bool') {
           return (
             <FormItemLabel
               key={item.key}
@@ -52,7 +51,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-        if (item.type === AuditPlanParamResV1TypeEnum.int) {
+        if (item.type === 'int') {
           return (
             <FormItemLabel
               key={item.key}
@@ -80,7 +79,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-        if (item.type === AuditPlanParamResV1TypeEnum.password) {
+        if (item.type === 'password') {
           return (
             <FormItemLabel
               key={item.key}
