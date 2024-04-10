@@ -2,7 +2,6 @@ import { BackendFormProps } from '..';
 import AutoCreatedFormItemByApi from '../AutoCreatedFormItemByApi';
 import { renderWithTheme } from '../../../testUtils/customRender';
 import Form from 'antd/es/form/Form';
-import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('sqle/components/BackendForm', () => {
   const customRender = (params: BackendFormProps) => {
@@ -20,7 +19,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'bool1',
-            type: AuditPlanParamResV1TypeEnum.bool,
+            type: 'bool',
             desc: 'this is a tip'
           }
         ]
@@ -34,7 +33,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'bool2',
-            type: AuditPlanParamResV1TypeEnum.bool,
+            type: 'bool',
             desc: 'this is a tip'
           }
         ]
@@ -49,7 +48,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'bool3',
-            type: AuditPlanParamResV1TypeEnum.bool,
+            type: 'bool',
             desc: 'desc 。desc1',
             value: 'true'
           }
@@ -64,7 +63,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'int1',
-            type: AuditPlanParamResV1TypeEnum.int,
+            type: 'int',
             desc: 'desc 。desc1'
           }
         ]
@@ -79,7 +78,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'int2',
-            type: AuditPlanParamResV1TypeEnum.int,
+            type: 'int',
             desc: 'desc (desc2)'
           }
         ]
@@ -94,7 +93,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'input1',
-            type: AuditPlanParamResV1TypeEnum.password,
+            type: 'password',
             desc: 'desc 。desc1'
           }
         ]
@@ -108,7 +107,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'input1',
-            type: AuditPlanParamResV1TypeEnum.password,
+            type: 'password',
             desc: 'desc 。desc1'
           }
         ]
@@ -123,7 +122,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'input2',
-            type: AuditPlanParamResV1TypeEnum.password,
+            type: 'password',
             desc: 'desc (desc2)'
           }
         ]
@@ -138,7 +137,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'input1',
-            type: AuditPlanParamResV1TypeEnum.string,
+            type: 'string',
             desc: 'desc 。desc1'
           }
         ]
@@ -153,7 +152,7 @@ describe('sqle/components/BackendForm', () => {
         params: [
           {
             key: 'input2',
-            type: AuditPlanParamResV1TypeEnum.string,
+            type: 'string',
             desc: 'desc (desc2)'
           }
         ]

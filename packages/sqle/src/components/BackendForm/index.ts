@@ -1,9 +1,7 @@
-import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-
 export type FormItem = {
   desc?: string;
   key?: string;
-  type?: AuditPlanParamResV1TypeEnum;
+  type?: string;
   value?: string;
 };
 
