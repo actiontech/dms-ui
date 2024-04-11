@@ -25,6 +25,10 @@ import {
   IGetSystemVariablesV1Return,
   IUpdateSystemVariablesV1Params,
   IUpdateSystemVariablesV1Return,
+  IGetWechatAuditConfigurationV1Return,
+  IUpdateWechatAuditConfigurationV1Params,
+  IUpdateWechatAuditConfigurationV1Return,
+  ITestWechatAuditConfigV1Return,
   IGetDriversV2Return
 } from './index.d';
 
@@ -175,6 +179,34 @@ class ConfigurationService extends ServiceBase {
     return this.patch<IUpdateSystemVariablesV1Return>(
       '/v1/configurations/system_variables',
       paramsData,
+      options
+    );
+  }
+
+  public getWechatAuditConfigurationV1(options?: AxiosRequestConfig) {
+    return this.get<IGetWechatAuditConfigurationV1Return>(
+      '/v1/configurations/wechat_audit',
+      undefined,
+      options
+    );
+  }
+
+  public updateWechatAuditConfigurationV1(
+    params: IUpdateWechatAuditConfigurationV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateWechatAuditConfigurationV1Return>(
+      '/v1/configurations/wechat_audit',
+      paramsData,
+      options
+    );
+  }
+
+  public testWechatAuditConfigV1(options?: AxiosRequestConfig) {
+    return this.post<ITestWechatAuditConfigV1Return>(
+      '/v1/configurations/wechat_audit/test',
+      undefined,
       options
     );
   }

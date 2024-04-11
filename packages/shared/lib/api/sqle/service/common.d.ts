@@ -56,6 +56,10 @@ export interface IAffectRows {
   err_message?: string;
 }
 
+export interface IAuditFileResp {
+  file_name?: string;
+}
+
 export interface IAuditPlanCount {
   audit_plan_count?: number;
 
@@ -219,6 +223,8 @@ export interface IAuditTaskGroupResV1 {
 }
 
 export interface IAuditTaskResV1 {
+  audit_files?: IAuditFileResp[];
+
   audit_level?: AuditTaskResV1AuditLevelEnum;
 
   exec_end_time?: string;
@@ -1062,6 +1068,14 @@ export interface IGetUserTipsResV1 {
   message?: string;
 }
 
+export interface IGetWechatAuditConfigurationResV1 {
+  code?: number;
+
+  data?: IWechatConfigurationV1;
+
+  message?: string;
+}
+
 export interface IGetWorkflowAuditPassPercentResV1 {
   code?: number;
 
@@ -1818,6 +1832,20 @@ export interface ITestFeishuConfigurationReqV1 {
   account_type?: TestFeishuConfigurationReqV1AccountTypeEnum;
 }
 
+export interface ITestWechatConfigResDataV1 {
+  error_message?: string;
+
+  is_message_sent_normally?: boolean;
+}
+
+export interface ITestWechatConfigResV1 {
+  code?: number;
+
+  data?: ITestWechatConfigResDataV1;
+
+  message?: string;
+}
+
 export interface ITimeResV1 {
   hour?: number;
 
@@ -1930,6 +1958,16 @@ export interface IUpdateSystemVariablesReqV1 {
   workflow_expired_hours?: number;
 }
 
+export interface IUpdateWechatConfigurationReqV1 {
+  corp_id?: string;
+
+  corp_secret?: string;
+
+  is_wechat_notification_enabled: boolean;
+
+  template_id?: string;
+}
+
 export interface IUpdateWorkflowReqV1 {
   task_ids?: number[];
 }
@@ -1950,6 +1988,14 @@ export interface IUserTipResV1 {
   user_id?: string;
 
   user_name?: string;
+}
+
+export interface IWechatConfigurationV1 {
+  corp_id?: string;
+
+  is_wechat_notification_enabled?: boolean;
+
+  template_id?: string;
 }
 
 export interface IWorkFlowStepTemplateReqV1 {
@@ -2172,6 +2218,8 @@ export interface IAuditPlanResV2 {
   audit_plan_name?: string;
 
   audit_plan_token?: string;
+
+  create_user_id?: string;
 
   rule_template?: IRuleTemplateV2;
 }
