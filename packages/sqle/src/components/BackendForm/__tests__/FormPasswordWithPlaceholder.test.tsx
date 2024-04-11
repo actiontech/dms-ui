@@ -18,6 +18,16 @@ describe('FormPasswordWithPlaceholder', () => {
     );
   });
 
+  it('should display the value when value is provided', () => {
+    superRender(
+      <FormPasswordWithPlaceholder {...defaultProps} value="default value" />
+    );
+    expect(getBySelector('.ant-input')).toHaveAttribute(
+      'value',
+      'default value'
+    );
+  });
+
   it('should clear the value on focus when enabled', () => {
     const { baseElement } = superRender(
       <FormPasswordWithPlaceholder {...defaultProps} />
