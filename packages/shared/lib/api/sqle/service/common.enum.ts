@@ -3,7 +3,9 @@ export enum AuditPlanParamResV1TypeEnum {
 
   'int' = 'int',
 
-  'bool' = 'bool'
+  'bool' = 'bool',
+
+  'password' = 'password'
 }
 
 export enum AuditPlanReportResV1AuditLevelEnum {

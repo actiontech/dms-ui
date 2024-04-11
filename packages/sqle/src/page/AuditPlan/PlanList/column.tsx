@@ -22,16 +22,27 @@ export type PlanListTableFilterParamType = PageInfoWithoutIndexAndSize<
   'project_name'
 >;
 
-export const PlanListAction = (
-  onEditPlan: (record: IAuditPlanResV2) => void,
-  onDeletePlan: (name: string) => void,
-  openModal: (name: ModalName, row?: IAuditPlanResV2) => void,
-  isArchive: boolean
-): {
+export const PlanListAction = ({
+  onDeletePlan,
+  onEditPlan,
+  openModal,
+  projectArchive,
+  isAdmin,
+  isProjectManager,
+  userID
+}: {
+  onEditPlan: (record: IAuditPlanResV2) => void;
+  onDeletePlan: (name: string) => void;
+  openModal: (name: ModalName, row?: IAuditPlanResV2) => void;
+  projectArchive: boolean;
+  isAdmin: boolean;
+  isProjectManager: boolean;
+  userID: string;
+}): {
   buttons: ActiontechTableActionMeta<IAuditPlanResV2>[];
   moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IAuditPlanResV2>[];
 } => {
-  return !isArchive
+  return !projectArchive
     ? {
         buttons: [
           {
@@ -43,6 +54,11 @@ export const PlanListAction = (
                   onEditPlan(record as IAuditPlanResV2);
                 }
               };
+            },
+            permissions: (record) => {
+              return (
+                isAdmin || isProjectManager || record?.create_user_id === userID
+              );
             }
           },
           {
@@ -60,12 +76,16 @@ export const PlanListAction = (
                   onDeletePlan(record?.audit_plan_name ?? '');
                 }
               };
+            },
+            permissions: (record) => {
+              return (
+                isAdmin || isProjectManager || record?.create_user_id === userID
+              );
             }
           }
         ],
         moreButtons: [
           {
-            icon: <></>,
             text: t('auditPlan.list.operator.notice'),
             key: 'subscribe',
             onClick: (record) => {
