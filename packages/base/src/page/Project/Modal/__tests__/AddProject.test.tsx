@@ -69,7 +69,12 @@ describe('test base/page/project/modal/add', () => {
 
     expect(addProjectSpy).toHaveBeenCalledTimes(1);
     expect(addProjectSpy).toHaveBeenCalledWith({
-      project: { name: 'name', desc: 'desc', is_fixed_business: false, business: undefined }
+      project: {
+        name: 'name',
+        desc: 'desc',
+        is_fixed_business: false,
+        business: undefined
+      }
     });
 
     await act(async () => jest.advanceTimersByTime(3000));

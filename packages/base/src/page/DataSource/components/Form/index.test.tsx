@@ -18,7 +18,7 @@ import DataSourceForm from '.';
 
 describe('page/DataSource/DataSourceForm', () => {
   const submitFn = jest.fn();
-   let getProjectTipsSpy: jest.SpyInstance;
+  let getProjectTipsSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate: boolean;
     defaultData?: IListDBService;
