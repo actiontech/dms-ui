@@ -30,7 +30,7 @@ describe('page/DataSource/UpdateDataSource', () => {
   const navigateSpy = jest.fn();
   const projectID = mockProjectInfo.projectID;
   const uId = '1739531854064652288';
-   let getProjectTipsSpy: jest.SpyInstance;
+  let getProjectTipsSpy: jest.SpyInstance;
   const customRender = () => {
     return superRender(<UpdateDataSource />, undefined, {
       routerProps: {
@@ -137,7 +137,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    
+
     expect(getProjectTipsSpy).toHaveBeenCalled();
     const updatePasswordLabel = getBySelector('label[title="更新连接密码"]');
     expect(updatePasswordLabel).not.toHaveClass('ant-form-item-required');
@@ -168,7 +168,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('div[title="business2"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
-  
+
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));

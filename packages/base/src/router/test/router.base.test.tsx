@@ -123,7 +123,7 @@ describe('base/router-base-ee', () => {
         expect(screen.getByText('projectImport')).toBeInTheDocument();
         expect(baseElement).toMatchSnapshot();
       });
-    })
+    });
 
     describe('render route syncDataSource', () => {
       it('render route syncDataSourceList', async () => {
