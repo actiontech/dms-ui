@@ -8,6 +8,10 @@ export const PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE =
 /**
  * 一个奇葩的 密码输入框 组件
  *
+ * 使用场景：
+ * 类似密码、secret id 之内的敏感数据，后端不会返回，前端会填充一些默认值，表示这里有值。
+ * 但是这个默认值不会干涉到 Form 组件，也就是在没修改的情况下，提交时通过 form 获取的依旧是空值。当用户修改后， 内外状态会同步，Form 就能正确获取到值了。
+ *
  * 当处于 Form 下时，在某些情况下内部 value 与 Form 管理的 value 会有差异。
  *
  * 当 enabled 为 true 时， 拥有以下特性：
