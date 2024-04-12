@@ -8,6 +8,7 @@ import { deriversMockData } from './data';
 class ConfigurationMockApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getDrivers();
+    this.getWechatAuditConfiguration();
   }
 
   public getDrivers() {
@@ -15,6 +16,19 @@ class ConfigurationMockApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: deriversMockData
+      })
+    );
+    return spy;
+  }
+
+  public getWechatAuditConfiguration() {
+    const spy = jest.spyOn(configuration, 'getWechatAuditConfigurationV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          corp_id: '',
+          is_wechat_notification_enabled: false
+        }
       })
     );
     return spy;

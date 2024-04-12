@@ -52,10 +52,11 @@ const ConfigExtraButtons = ({
     if (testing.current) {
       return;
     }
+    const values = await testForm.validateFields();
+
     testing.current = true;
     toggleTestPopoverVisible(false);
     const hide = message.loading(t('dmsSystem.larkAudit.testing'), 0);
-    const values = await testForm.validateFields();
 
     configuration
       .testFeishuAuditConfigV1({
@@ -117,7 +118,7 @@ const ConfigExtraButtons = ({
             <ConfigTestPopoverForm
               handleTest={testLarkAuditConfiguration}
               handleCancel={() => {
-                toggleTestPopoverVisible(false);
+                onTestPopoverOpen(false);
               }}
             >
               <Form form={testForm} colon={false} {...formItemLayout.fullLine}>

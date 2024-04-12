@@ -4,6 +4,7 @@ import LarkAuditSetting from './LarkAuditSetting';
 import SystemBasicTitle from '../components/BasicTitle';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { Typography } from 'antd';
+import WechatAuditSetting from './WechatAuditSetting';
 
 const ProcessConnection = () => {
   const { t } = useTranslation();
@@ -22,6 +23,7 @@ const ProcessConnection = () => {
       >
         <DingTalkSetting />
         <LarkAuditSetting />
+        <WechatAuditSetting />
       </EnterpriseFeatureDisplay>
     </SystemBasicTitle>
   );
