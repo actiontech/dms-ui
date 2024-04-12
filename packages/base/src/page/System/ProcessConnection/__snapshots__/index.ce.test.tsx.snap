@@ -37,7 +37,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
             <div
               class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
             >
-              如果您使用钉钉、飞书作为协作平台，并且希望在这些外部平台上进行工单审批，您可以启用流程对接功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。
+              如果您使用钉钉、飞书、企业微信作为协作平台，并且希望在这些外部平台上进行工单审批，您可以启用流程对接功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。
             </div>
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"

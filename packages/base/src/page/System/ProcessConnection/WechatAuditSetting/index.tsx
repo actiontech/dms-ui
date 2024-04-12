@@ -1,26 +1,23 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
-
 import { Form, Spin, Typography } from 'antd';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
 import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
-
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
-
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { IDingTalkConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
+import { IWechatConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
-const DingTalkSetting: React.FC = () => {
+const WechatAuditSetting: React.FC = () => {
   const { t } = useTranslation();
   const {
     form,
@@ -28,31 +25,32 @@ const DingTalkSetting: React.FC = () => {
     startModify,
     modifyFinish,
     modifyFlag,
-    extraButtonsVisible
+    extraButtonsVisible,
+    enabled
   } = useConfigRender<FormFields>({
     switchFieldName,
     switchFieldLabel: (
       <CustomLabelContent
-        title={t('dmsSystem.dingTalk.enable')}
-        tips={t('dmsSystem.dingTalk.titleTips')}
+        title={t('dmsSystem.wechatAudit.enable')}
+        tips={t('dmsSystem.wechatAudit.titleTips')}
       />
     )
   });
 
   const {
-    data: dingTalkInfo,
+    data: wechatAuditInfo,
     loading,
-    refresh: refreshDingTalkInfo
+    refresh: refreshWechatAuditInfo
   } = useRequest(
     () =>
       configuration
-        .getDingTalkConfigurationV1()
+        .getWechatAuditConfigurationV1()
         .then((res) => res.data.data ?? {}),
     {
       onSuccess(res) {
         if (res) {
           form.setFieldsValue({
-            enabled: !!res.is_enable_ding_talk_notify
+            enabled: !!res.is_wechat_notification_enabled
           });
         }
       }
@@ -60,15 +58,15 @@ const DingTalkSetting: React.FC = () => {
   );
 
   const isConfigClosed = useMemo(() => {
-    return !dingTalkInfo?.is_enable_ding_talk_notify;
-  }, [dingTalkInfo]);
+    return !wechatAuditInfo?.is_wechat_notification_enabled;
+  }, [wechatAuditInfo]);
 
   const setFormDefaultValue = useCallback(() => {
     form.setFieldsValue({
-      appKey: dingTalkInfo?.app_key,
-      appSecret: undefined
+      corpID: wechatAuditInfo?.corp_id,
+      corpSecret: undefined
     });
-  }, [form, dingTalkInfo]);
+  }, [form, wechatAuditInfo]);
 
   const handleClickModify = () => {
     setFormDefaultValue();
@@ -86,19 +84,19 @@ const DingTalkSetting: React.FC = () => {
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
-  const submitDingTalkConfig = (values: FormFields) => {
+  const submitWechatAuditConfig = (values: FormFields) => {
     startSubmit();
     configuration
-      .updateDingTalkConfigurationV1({
-        is_enable_ding_talk_notify: values.enabled,
-        app_key: values.appKey,
-        app_secret: values.appSecret
+      .updateWechatAuditConfigurationV1({
+        is_wechat_notification_enabled: values.enabled,
+        corp_id: values.corpID,
+        corp_secret: values.corpSecret
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           modifyFinish();
           form.resetFields();
-          refreshDingTalkInfo();
+          refreshWechatAuditInfo();
         }
       })
       .finally(() => {
@@ -121,41 +119,42 @@ const DingTalkSetting: React.FC = () => {
     submitFinish,
     handleClickModify,
     handleUpdateConfig: () =>
-      configuration.updateDingTalkConfigurationV1({
+      configuration.updateWechatAuditConfigurationV1({
         ...defaultFormData,
-        is_enable_ding_talk_notify: false
+        is_wechat_notification_enabled: false
       }),
     handleClickCancel,
-    refreshConfig: refreshDingTalkInfo,
+    refreshConfig: refreshWechatAuditInfo,
     handleToggleSwitch
   });
 
-  const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IDingTalkConfigurationV1> =
+  const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IWechatConfigurationV1> =
     useMemo(() => {
       return [
         {
-          label: 'AppKey',
+          label: t('dmsSystem.wechatAudit.corpID'),
           span: 3,
-          dataIndex: 'app_key',
-          hidden: !dingTalkInfo?.is_enable_ding_talk_notify,
+          dataIndex: 'corp_id',
+          hidden: !wechatAuditInfo?.is_wechat_notification_enabled,
           render: (val) => (
             <Typography.Paragraph>{val || '--'}</Typography.Paragraph>
           )
         }
       ];
-    }, [dingTalkInfo]);
+    }, [t, wechatAuditInfo?.is_wechat_notification_enabled]);
 
   return (
     <div className="config-form-wrapper">
       <Spin spinning={loading}>
         {renderConfigForm({
-          data: dingTalkInfo ?? {},
+          data: wechatAuditInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
             <ConfigExtraButtons
               isConfigClosed={isConfigClosed}
               extraButtonsVisible={extraButtonsVisible}
               handleClickModify={handleClickModify}
+              enabled={!!enabled}
             />
           ),
           configSwitchNode: (
@@ -177,11 +176,11 @@ const DingTalkSetting: React.FC = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          submit: submitDingTalkConfig
+          submit: submitWechatAuditConfig
         })}
       </Spin>
     </div>
   );
 };
 
-export default DingTalkSetting;
+export default WechatAuditSetting;

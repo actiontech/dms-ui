@@ -6,11 +6,11 @@ import { BasicTypographyEllipsis } from '@actiontech/shared';
 export const LicenseColumn: ActiontechTableColumn<ILicenseItem> = [
   {
     dataIndex: 'description',
-    title: t('system.license.table.name')
+    title: t('dmsSystem.license.table.name')
   },
   {
     dataIndex: 'limit',
-    title: t('system.license.table.limit'),
+    title: t('dmsSystem.license.table.limit'),
     className: 'ellipsis-column-width',
     render: (text = '-', record) => {
       if (record.name === 'info') {

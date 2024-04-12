@@ -4,6 +4,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   GetWorkflowTasksItemV2StatusEnum,
+  UpdateWorkflowScheduleReqV2NotifyTypeEnum,
   WorkflowRecordResV2StatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
@@ -25,7 +26,9 @@ export const auditResultOverviewActions: (params: {
   orderStatus?: WorkflowRecordResV2StatusEnum;
   openScheduleModalAndSetCurrentTask: (record: IGetWorkflowTasksItemV2) => void;
   scheduleTimeHandle: (
-    scheduleTime?: string | undefined,
+    scheduleTime?: string,
+    is_notify?: boolean,
+    notify_type?: UpdateWorkflowScheduleReqV2NotifyTypeEnum,
     taskId?: string
   ) => Promise<void>;
 }) => ActiontechTableProps<IGetWorkflowTasksItemV2>['actions'] = ({
@@ -175,7 +178,12 @@ export const auditResultOverviewActions: (params: {
         buttonProps(record) {
           return {
             onClick: () => {
-              scheduleTimeHandle(undefined, record?.task_id?.toString() ?? '');
+              scheduleTimeHandle(
+                undefined,
+                undefined,
+                undefined,
+                record?.task_id?.toString() ?? ''
+              );
             },
             disabled: !enableCancelSqlScheduleTime(record?.status)
           };

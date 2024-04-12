@@ -398,7 +398,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
                   class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
                 >
                   <div
-                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                     style="margin-bottom: 0px;"
                   >
                     <div
@@ -1658,7 +1658,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
                     </div>
                   </div>
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                     style="margin-bottom: 0px;"
                   >
                     <div
@@ -1686,11 +1686,11 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                               id="receiveEmail"
                               placeholder="请输入邮箱"
                               type="text"
-                              value=""
+                              value="aa@qq.com"
                             />
                           </div>
                         </div>

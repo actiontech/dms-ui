@@ -38,6 +38,7 @@ import {
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
   GetWorkflowTasksItemV2StatusEnum,
+  UpdateWorkflowScheduleReqV2NotifyTypeEnum,
   WorkflowRecordResV2StatusEnum,
   WorkflowResV2ModeEnum,
   WorkflowStepResV2StateEnum,
@@ -1846,6 +1847,10 @@ export interface ITestWechatConfigResV1 {
   message?: string;
 }
 
+export interface ITestWechatConfigurationReqV1 {
+  wechat_id?: string;
+}
+
 export interface ITimeResV1 {
   hour?: number;
 
@@ -1964,8 +1969,6 @@ export interface IUpdateWechatConfigurationReqV1 {
   corp_secret?: string;
 
   is_wechat_notification_enabled: boolean;
-
-  template_id?: string;
 }
 
 export interface IUpdateWorkflowReqV1 {
@@ -1994,8 +1997,6 @@ export interface IWechatConfigurationV1 {
   corp_id?: string;
 
   is_wechat_notification_enabled?: boolean;
-
-  template_id?: string;
 }
 
 export interface IWorkFlowStepTemplateReqV1 {
@@ -2521,6 +2522,10 @@ export interface IUpdateWorkflowReqV2 {
 }
 
 export interface IUpdateWorkflowScheduleReqV2 {
+  is_notify?: boolean;
+
+  notify_type?: UpdateWorkflowScheduleReqV2NotifyTypeEnum;
+
   schedule_time?: string;
 }
 
