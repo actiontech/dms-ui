@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 import { useForm } from 'antd/es/form/Form';
@@ -30,7 +30,7 @@ import {
 const UpdatePlan = () => {
   const { t } = useTranslation();
 
-  const navigater = useNavigate();
+  const navigate = useNavigate();
   const { goBack } = useBack();
 
   const urlParams = useParams<UpdateAuditPlanUrlParams>();
@@ -42,27 +42,43 @@ const UpdatePlan = () => {
   const [submitSuccessStatus, setSubmitSuccessStatus] = useState(false);
   const [defaultValue, setDefaultValue] = useState<IAuditPlanResV1>();
 
-  const updateAuditPlan = (values: PlanFormField) => {
-    setSubmitLoading(true);
-    return audit_plan
-      .updateAuditPlanV1({
-        audit_plan_cron: values.cron,
-        audit_plan_instance_database: values.schema ?? '',
-        audit_plan_instance_name: values.databaseName ?? '',
-        audit_plan_name: urlParams.auditPlanName ?? '',
-        audit_plan_params: values.asyncParams,
-        rule_template_name: values.ruleTemplateName,
-        project_name: projectName
-      })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setSubmitSuccessStatus(true);
-        }
-      })
-      .finally(() => {
-        setSubmitLoading(false);
-      });
-  };
+  const updateAuditPlan = useCallback(
+    (values: PlanFormField) => {
+      setSubmitLoading(true);
+      return audit_plan
+        .updateAuditPlanV1({
+          audit_plan_cron: values.cron,
+          audit_plan_instance_database: values.schema ?? '',
+          audit_plan_instance_name: values.databaseName ?? '',
+          audit_plan_name: urlParams.auditPlanName ?? '',
+          audit_plan_params: values.asyncParams?.filter((v) => {
+            const meta = defaultValue?.audit_plan_meta?.audit_plan_params?.find(
+              (p) => p.key === v.key
+            );
+            if (!meta) {
+              return true;
+            }
+
+            return meta.value !== v.value;
+          }),
+          rule_template_name: values.ruleTemplateName,
+          project_name: projectName
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            setSubmitSuccessStatus(true);
+          }
+        })
+        .finally(() => {
+          setSubmitLoading(false);
+        });
+    },
+    [
+      defaultValue?.audit_plan_meta?.audit_plan_params,
+      projectName,
+      urlParams.auditPlanName
+    ]
+  );
 
   const getCurrentAuditPlan = () => {
     setDetailLoading(true);
@@ -131,7 +147,7 @@ const UpdatePlan = () => {
                 type="primary"
                 htmlType="submit"
                 onClick={onSubmit}
-                loading={submitLoading}
+                loading={submitLoading || detailLoading}
               >
                 {t('common.submit')}
               </BasicButton>
@@ -154,7 +170,7 @@ const UpdatePlan = () => {
               type="primary"
               key="view-audit-plan"
               onClick={() => {
-                navigater(
+                navigate(
                   `/sqle/project/${projectID}/audit-plan/detail/${form.getFieldValue(
                     'name'
                   )}`

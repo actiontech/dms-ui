@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { BackendFormRequestParams, BackendFormValues, FormItem } from '.';
-import useAsyncParams from './useAsyncParams';
+import { BackendFormRequestParams, BackendFormValues, FormItem } from '..';
+import useAsyncParams from '../useAsyncParams';
 import { IAuditPlanParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
