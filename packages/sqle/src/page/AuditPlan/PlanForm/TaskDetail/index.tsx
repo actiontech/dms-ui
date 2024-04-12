@@ -126,6 +126,7 @@ const TaskDetail = (props: ITaskDetail) => {
       </FormItemLabel>
       <EmptyBox if={!!formMate}>
         <AutoCreatedFormItemByApi
+          formMode={!!defaultValue ? 'update' : 'create'}
           params={formMate ?? []}
           disabled={submitLoading}
         />
