@@ -12,6 +12,10 @@ import {
   ICheckLicenseResV1,
   IGetSystemVariablesResV1,
   IUpdateSystemVariablesReqV1,
+  IGetWechatAuditConfigurationResV1,
+  IUpdateWechatConfigurationReqV1,
+  ITestWechatConfigurationReqV1,
+  ITestWechatConfigResV1,
   IGetDriversRes
 } from '../common.d';
 
@@ -61,5 +65,19 @@ export interface IUpdateSystemVariablesV1Params
   extends IUpdateSystemVariablesReqV1 {}
 
 export interface IUpdateSystemVariablesV1Return extends IBaseRes {}
+
+export interface IGetWechatAuditConfigurationV1Return
+  extends IGetWechatAuditConfigurationResV1 {}
+
+export interface IUpdateWechatAuditConfigurationV1Params
+  extends IUpdateWechatConfigurationReqV1 {}
+
+export interface IUpdateWechatAuditConfigurationV1Return extends IBaseRes {}
+
+export interface ITestWechatAuditConfigV1Params
+  extends ITestWechatConfigurationReqV1 {}
+
+export interface ITestWechatAuditConfigV1Return
+  extends ITestWechatConfigResV1 {}
 
 export interface IGetDriversV2Return extends IGetDriversRes {}

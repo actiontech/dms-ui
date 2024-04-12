@@ -3,7 +3,9 @@ export enum AuditPlanParamResV1TypeEnum {
 
   'int' = 'int',
 
-  'bool' = 'bool'
+  'bool' = 'bool',
+
+  'password' = 'password'
 }
 
 export enum AuditPlanReportResV1AuditLevelEnum {
@@ -370,6 +372,10 @@ export enum GetWorkflowTasksItemV2StatusEnum {
   'terminate_succeeded' = 'terminate_succeeded',
 
   'terminate_failed' = 'terminate_failed'
+}
+
+export enum UpdateWorkflowScheduleReqV2NotifyTypeEnum {
+  'Wechat' = 'Wechat'
 }
 
 export enum WorkflowRecordResV2StatusEnum {
