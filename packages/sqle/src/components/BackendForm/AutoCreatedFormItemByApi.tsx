@@ -8,6 +8,7 @@ import { BackendFormProps } from '.';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { BasicInput, BasicSwitch } from '@actiontech/shared';
 import useRuleParams from './useRuleParams';
+import FormPasswordWithPlaceholder from './FormPasswordWithPlaceholder';
 
 const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
   const { t } = useTranslation();
@@ -75,6 +76,31 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
               ]}
             >
               <BasicInput disabled={props.disabled} />
+            </FormItemLabel>
+          );
+        }
+        if (item.type === 'password') {
+          return (
+            <FormItemLabel
+              key={item.key}
+              className={classNames({
+                'has-label-tip': !!labelTip
+              })}
+              label={
+                <div className="label-cont-custom">
+                  <div>{label}</div>
+                  <div hidden={!labelTip} className="tip-content-box">
+                    {labelTip}
+                  </div>
+                </div>
+              }
+              {...formItemLayoutVal}
+              name={[paramsKey, item.key ?? '']}
+            >
+              <FormPasswordWithPlaceholder
+                enabled={props.formMode === 'update'}
+                disabled={props.disabled}
+              />
             </FormItemLabel>
           );
         }

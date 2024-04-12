@@ -19,6 +19,7 @@ export type BackendFormProps = {
   paramsKey?: string;
   disabled?: boolean;
   isFullLine?: boolean;
+  formMode?: 'update' | 'create';
 };
 
 export { default } from './AutoCreatedFormItemByApi';

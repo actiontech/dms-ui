@@ -3,10 +3,10 @@ import {
   ICreateAuditTasksGroupResV1,
   IGetAuditTaskResV1,
   IAuditTaskGroupResV1,
+  IBaseRes,
   IGetAuditTaskSQLContentResV1,
   IGetAuditTaskSQLsResV1,
   IUpdateAuditTaskSQLsReqV1,
-  IBaseRes,
   IGetTaskAnalysisDataResV1,
   IGetAuditTaskSQLsResV2,
   IGetTaskAnalysisDataResV2
@@ -65,6 +65,12 @@ export interface IGetAuditTaskV1Params {
 }
 
 export interface IGetAuditTaskV1Return extends IGetAuditTaskResV1 {}
+
+export interface IDownloadAuditFileParams {
+  task_id: string;
+}
+
+export interface IDownloadAuditFileReturn extends IBaseRes {}
 
 export interface IGetAuditTaskSQLContentV1Params {
   task_id: string;
