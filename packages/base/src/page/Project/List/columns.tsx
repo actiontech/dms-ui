@@ -2,7 +2,8 @@ import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import {
   IListProject,
-  IUidWithName
+  IUidWithName,
+  IBusiness
 } from '@actiontech/shared/lib/api/base/service/common';
 import { Link } from 'react-router-dom';
 import {
@@ -17,6 +18,8 @@ import {
 } from '@actiontech/shared/lib/Icon/common';
 import { ProjectArchiveStyledWrapper } from './style';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
+import { BasicTag, BasicToolTips } from '@actiontech/shared';
+import { Space } from 'antd';
 
 export const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProject> => {
@@ -27,6 +30,35 @@ export const ProjectListTableColumnFactory =
         render(name: string, record) {
           return (
             <Link to={`/sqle/project/${record.uid}/overview`}>{name}</Link>
+          );
+        }
+      },
+      {
+        dataIndex: 'business',
+        title: () => t('dmsProject.projectForm.business'),
+        render: (business: IBusiness[]) => {
+          if (!business || !business.length) {
+            return '-';
+          }
+          return (
+            <BasicToolTips
+              title={
+                business.length > 1 ? (
+                  <Space wrap>
+                    {business.map((v) => (
+                      <BasicTag key={v.id}>{v.name}</BasicTag>
+                    ))}
+                  </Space>
+                ) : null
+              }
+            >
+              <Space>
+                <BasicTag style={{ marginRight: 0 }}>
+                  {business[0].name}
+                </BasicTag>
+                {business.length > 1 ? '...' : null}
+              </Space>
+            </BasicToolTips>
           );
         }
       },

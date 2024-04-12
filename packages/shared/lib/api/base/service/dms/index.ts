@@ -59,6 +59,12 @@ import {
   IListProjectsReturn,
   IAddProjectParams,
   IAddProjectReturn,
+  IImportProjectsParams,
+  IImportProjectsReturn,
+  IPreviewImportProjectsParams,
+  IPreviewImportProjectsReturn,
+  IGetProjectTipsParams,
+  IGetProjectTipsReturn,
   IUpdateProjectParams,
   IUpdateProjectReturn,
   IDelProjectParams,
@@ -546,6 +552,63 @@ class DmsService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.post<IAddProjectReturn>(
       '/v1/dms/projects',
+      paramsData,
+      options
+    );
+  }
+
+  public ExportProjects(options?: AxiosRequestConfig) {
+    return this.get('/v1/dms/projects/export', undefined, options);
+  }
+
+  public ImportProjects(
+    params: IImportProjectsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IImportProjectsReturn>(
+      '/v1/dms/projects/import',
+      paramsData,
+      options
+    );
+  }
+
+  public GetImportProjectsTemplate(options?: AxiosRequestConfig) {
+    return this.get('/v1/dms/projects/import_template', undefined, options);
+  }
+
+  public PreviewImportProjects(
+    params: IPreviewImportProjectsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.projects_file != undefined) {
+      paramsData.append('projects_file', params.projects_file as any);
+    }
+
+    return this.post<IPreviewImportProjectsReturn>(
+      '/v1/dms/projects/preview_import',
+      paramsData,
+      config
+    );
+  }
+
+  public GetProjectTips(
+    params: IGetProjectTipsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetProjectTipsReturn>(
+      '/v1/dms/projects/tips',
       paramsData,
       options
     );
