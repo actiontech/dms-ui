@@ -11,6 +11,7 @@ import useMessage from 'antd/es/message/useMessage';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { OrderDetailAuditResultListActionsParams } from './index.type';
+import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const useOverviewActions = ({
   projectName,
@@ -61,13 +62,17 @@ const useOverviewActions = ({
 
   const scheduleTimeHandle = (
     scheduleTime?: string,
+    isNotify?: boolean,
+    notifyType?: UpdateWorkflowScheduleReqV2NotifyTypeEnum,
     taskId = currentTask?.task_id?.toString()
   ) => {
     const param: IUpdateWorkflowScheduleV2Params = {
       workflow_id: workflowID ?? '',
       task_id: taskId ?? '',
       schedule_time: scheduleTime,
-      project_name: projectName
+      project_name: projectName,
+      is_notify: isNotify,
+      notify_type: notifyType
     };
     return workflow.updateWorkflowScheduleV2(param).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {

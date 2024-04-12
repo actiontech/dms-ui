@@ -1,12 +1,13 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
-import { useBoolean } from 'ahooks';
-import { Form } from 'antd';
+import { useBoolean, useRequest } from 'ahooks';
+import { Form, Spin } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { range } from 'lodash';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import {
   BasicButton,
   BasicModal,
+  BasicSwitch,
   BasicTag,
   EmptyBox
 } from '@actiontech/shared';
@@ -16,6 +17,13 @@ import { FormItemNoLabelStyleWrapper } from '@actiontech/shared/lib/components/F
 import dayjs, { Dayjs } from 'dayjs';
 import { BasicDatePicker } from '@actiontech/shared';
 import { ScheduleTimeModelDescribeStyleWrapper } from '../style';
+import {
+  CustomLabelContent,
+  FormItemLabel
+} from '@actiontech/shared/lib/components/FormCom';
+import { Link } from 'react-router-dom';
+import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
+import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
   open,
@@ -29,6 +37,24 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     scheduleLoading,
     { setTrue: scheduleStart, setFalse: scheduleFinish }
   ] = useBoolean();
+
+  // #if [ee]
+  const enableWechatNotificationConfirm = Form.useWatch(
+    'wechat_notification_confirmation',
+    form
+  );
+
+  const { data: wechatAuditInfo, loading: getWechatAuditConfigInfoLoading } =
+    useRequest(
+      () =>
+        configuration
+          .getWechatAuditConfigurationV1()
+          .then((res) => res.data.data ?? {}),
+      {
+        ready: !!enableWechatNotificationConfirm && !!open
+      }
+    );
+  // #endif
 
   const resetAndCloseScheduleModal = () => {
     form.resetFields();
@@ -131,7 +157,13 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     const values = await form.validateFields();
     scheduleStart();
     submit(
-      values?.schedule_time?.format('YYYY-MM-DDTHH:mm:ssZ')?.toString()
+      values?.schedule_time?.format('YYYY-MM-DDTHH:mm:ssZ')?.toString(),
+      // #if [ee]
+      !!enableWechatNotificationConfirm,
+      !!enableWechatNotificationConfirm
+        ? UpdateWorkflowScheduleReqV2NotifyTypeEnum.Wechat
+        : undefined
+      // #endif
     ).finally(() => {
       scheduleFinish();
       resetAndCloseScheduleModal();
@@ -148,6 +180,13 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
             {t('common.cancel')}
           </BasicButton>
           <BasicButton
+            // #if [ee]
+            disabled={
+              !!enableWechatNotificationConfirm &&
+              !wechatAuditInfo?.is_wechat_notification_enabled
+            }
+            // #endif
+
             type="primary"
             onClick={scheduleTimeHandle}
             loading={scheduleLoading}
@@ -158,7 +197,7 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
         </>
       }
     >
-      <Form form={form}>
+      <Form form={form} labelAlign={'left'} colon={false}>
         <ScheduleTimeModelDescribeStyleWrapper>
           <span className="whitespace-pre-line">
             {t('order.operator.maintenanceTime')}
@@ -183,7 +222,10 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
           validateFirst
           rules={[
             {
-              required: true
+              required: true,
+              message: t('common.form.placeholder.select', {
+                name: t('order.operator.scheduleTime')
+              })
             },
             {
               validator(_, rule: Dayjs) {
@@ -211,6 +253,63 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
             }}
           />
         </FormItemNoLabelStyleWrapper>
+
+        {/* #if [ee] */}
+        <Spin spinning={getWechatAuditConfigInfoLoading} delay={400}>
+          <FormItemLabel
+            className="has-label-tip"
+            label={
+              <CustomLabelContent
+                title={t('order.operator.scheduleTimeExecuteConfirmLabel')}
+                tips={t('order.operator.scheduleTimeExecuteConfirmTips')}
+              />
+            }
+            name="wechat_notification_confirmation"
+            labelCol={{ span: 20 }}
+            wrapperCol={{ span: 2, push: 1 }}
+            valuePropName="checked"
+          >
+            <BasicSwitch />
+          </FormItemLabel>
+
+          <EmptyBox if={enableWechatNotificationConfirm}>
+            <FormItemLabel
+              className="has-label-tip"
+              label={
+                <CustomLabelContent
+                  title={t('order.operator.scheduleTimeExecuteConfirmMethod')}
+                  tips={
+                    <Trans
+                      i18nKey={
+                        'order.operator.scheduleTimeExecuteConfirmMethodTips'
+                      }
+                    >
+                      {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+                      <Link
+                        target="_blank"
+                        to="/system?active_tab=process_connection"
+                      />
+                    </Trans>
+                  }
+                />
+              }
+              name="confirmation_method"
+              labelCol={{ span: 16 }}
+              wrapperCol={{ span: 6, push: 2 }}
+            >
+              <EmptyBox if={!!wechatAuditInfo?.is_wechat_notification_enabled}>
+                <BasicButton
+                  style={{ width: '100%', height: 36 }}
+                  type="primary"
+                >
+                  {t('order.operator.confirmMethodWechat')}
+                </BasicButton>
+              </EmptyBox>
+            </FormItemLabel>
+          </EmptyBox>
+        </Spin>
+
+        {/* #endif */}
       </Form>
     </BasicModal>
   );
