@@ -120,6 +120,14 @@ export default {
     sqlExecuteDisableTips:
       '只能在运维时间之内执行立即上线，当前数据源的运维时间为',
     emptyMaintenanceTime: '任意时间',
+    scheduleTime: '定时上线时间',
+    scheduleTimeExecuteConfirmLabel: '上线前是否发送通知进行确认',
+    scheduleTimeExecuteConfirmTips:
+      '若开启，到达上线时间点，平台将发送一则上线确认信息，确认后执行上线操作；若不开启，到达上线时间将自动执行上线操作',
+    scheduleTimeExecuteConfirmMethod: '确认方式',
+    scheduleTimeExecuteConfirmMethodTips:
+      '目前仅支持企业微信，如您尚未配置企业微信对接能力，请先到<0>系统设置-流程对接</0>处开启',
+    confirmMethodWechat: '企业微信',
 
     approveSuccessTips: '审批通过',
     rejectSuccessTips: '驳回成功',
@@ -127,7 +135,6 @@ export default {
     rejectReason: '驳回原因',
     rejectAllTips: '当前操作将驳回工单下所有SQL语句，请谨慎操作！',
     onlineRegularly: '定时上线',
-    scheduleTime: '定时时间',
     execScheduledErrorMessage: '定时上线时间必须在运维时间之内',
     execScheduledBeforeNow: '定时上线时间必须在当前时间之后',
     execScheduleTips: '定时上线设置成功',
