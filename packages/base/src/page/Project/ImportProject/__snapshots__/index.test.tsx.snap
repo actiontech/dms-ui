@@ -791,6 +791,21 @@ exports[`base/Project/Import render upload file 1`] = `
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
+                            data-row-key="project3"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              project3
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
                             data-row-key=""
                           >
                             <td

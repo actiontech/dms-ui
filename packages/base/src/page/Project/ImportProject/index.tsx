@@ -56,9 +56,18 @@ const ImportProject = () => {
   const onSubmit = async () => {
     await selectFileForm.validateFields();
     setImportPending();
+    const projects = importProjects.map((project) => {
+      if (project.business?.length === 1 && project.business[0] === '') {
+        return {
+          ...project,
+          business: []
+        };
+      }
+      return project;
+    });
     dms
       .ImportProjects({
-        projects: importProjects
+        projects: projects
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

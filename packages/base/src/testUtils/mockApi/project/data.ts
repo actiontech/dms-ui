@@ -78,6 +78,10 @@ export const mockPreviewImportProjects: IPreviewImportProjects[] = [
     desc: ''
   },
   {
+    name: 'project3',
+    business: ['']
+  },
+  {
     name: ''
   }
 ];
