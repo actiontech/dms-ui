@@ -17,6 +17,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import rule_template from 'sqle/src/testUtils/mockApi/rule_template';
 import dbServices from '../../../../testUtils/mockApi/dbServices';
+import project from '../../../../testUtils/mockApi/project';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -29,7 +30,7 @@ describe('page/DataSource/UpdateDataSource', () => {
   const navigateSpy = jest.fn();
   const projectID = mockProjectInfo.projectID;
   const uId = '1739531854064652288';
-
+  let getProjectTipsSpy: jest.SpyInstance;
   const customRender = () => {
     return superRender(<UpdateDataSource />, undefined, {
       routerProps: {
@@ -47,6 +48,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     });
     ruleTemplate.mockAllApi();
     mockUseCurrentProject();
+    getProjectTipsSpy = project.getProjectTips();
   });
 
   afterEach(() => {
@@ -96,7 +98,7 @@ describe('page/DataSource/UpdateDataSource', () => {
             port: '33061',
             user: 'root',
             password: 'Zgl4cTg5xeIq9c/pkc8Y5A==',
-            business: 'test',
+            business: 'business1',
             maintenance_times: [
               {
                 maintenance_start_time: {
@@ -136,6 +138,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
 
+    expect(getProjectTipsSpy).toHaveBeenCalled();
     const updatePasswordLabel = getBySelector('label[title="更新连接密码"]');
     expect(updatePasswordLabel).not.toHaveClass('ant-form-item-required');
     const needUpdatePassword = getBySelector('#needUpdatePassword');
@@ -160,6 +163,12 @@ describe('page/DataSource/UpdateDataSource', () => {
       await act(async () => jest.advanceTimersByTime(300));
     });
     expect(screen.queryByText('未能成功链接到数据库')).not.toBeInTheDocument();
+    // business
+    fireEvent.mouseDown(getBySelector('#business', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('div[title="business2"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     await act(async () => {
       fireEvent.click(screen.getByText('提 交'));

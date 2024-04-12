@@ -9,7 +9,8 @@ import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-
+import project from '../../../../testUtils/mockApi/project';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import AddDataSource from '.';
 
 jest.mock('react-router-dom', () => {
@@ -22,6 +23,7 @@ jest.mock('react-router-dom', () => {
 describe('page/DataSource/AddDataSource', () => {
   const navigateSpy = jest.fn();
   const projectID = mockProjectInfo.projectID;
+  let getProjectTipsSpy: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<AddDataSource />);
@@ -31,6 +33,7 @@ describe('page/DataSource/AddDataSource', () => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     dms.mockAllApi();
+    getProjectTipsSpy = project.getProjectTips();
     ruleTemplate.mockAllApi();
     mockUseCurrentProject();
   });
@@ -54,6 +57,10 @@ describe('page/DataSource/AddDataSource', () => {
   });
 
   it('render submit when add database api success', async () => {
+    getProjectTipsSpy.mockClear();
+    getProjectTipsSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [{ is_fixed_business: false }] })
+    );
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const requestAddDBService = dms.AddDBService();
     const { baseElement } = customRender();
@@ -221,5 +228,18 @@ describe('page/DataSource/AddDataSource', () => {
       'href',
       `/project/${projectID}/data_mask_rule_overview`
     );
+  });
+
+  it('render isFixedBusiness is true', async () => {
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getProjectTipsSpy).toHaveBeenCalled();
+    // business
+    fireEvent.mouseDown(getBySelector('#business', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('div[title="business1"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(300));
+    // ruleTemplateName
+    expect(baseElement).toMatchSnapshot();
   });
 });

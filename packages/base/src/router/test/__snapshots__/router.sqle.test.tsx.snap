@@ -524,9 +524,22 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "path": "account",
   },
   {
-    "element": <div>
-      project
-    </div>,
+    "children": [
+      {
+        "element": <div>
+          projectList
+        </div>,
+        "key": "projectList",
+        "path": "",
+      },
+      {
+        "element": <div>
+          projectImport
+        </div>,
+        "key": "projectImport",
+        "path": "import",
+      },
+    ],
     "key": "project",
     "path": "project",
   },

@@ -8,7 +8,12 @@ import {
   useCurrentProject,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
-import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
+import {
+  BasicInput,
+  BasicSelect,
+  BasicSwitch,
+  EmptyBox
+} from '@actiontech/shared';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
@@ -39,6 +44,7 @@ import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateTo
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 // #endif
+import useProjectTips from '../../../../hooks/useProjectTips';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -58,6 +64,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     updateDriverList,
     generateDriverSelectOptions
   } = useDbServiceDriver();
+
+  const { updateProjectTips, projectBusinessOption, isFixedBusiness } =
+    useProjectTips();
 
   const databaseTypeChange = useCallback(
     (value: string) => {
@@ -231,7 +240,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   useEffect(() => {
     updateDriverList();
-  }, [updateDriverList]);
+    updateProjectTips();
+  }, [updateDriverList, updateProjectTips]);
 
   const hasBorder = () => {
     let border = false;
@@ -285,7 +295,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
               })}
             ></FormInputBotBorder>
           </FormItemNoLabel>
-
           <FormItemSubTitle>
             {t('dmsDataSource.dataSourceForm.baseConfig')}
           </FormItemSubTitle>
@@ -309,14 +318,28 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             currentAsyncParams={params}
             isExternalInstance={isExternalInstance}
           />
-          <FormItemLabel
-            className="has-required-style"
-            label={t('dmsDataSource.dataSourceForm.business')}
-            name="business"
-            rules={[{ required: true }]}
+          <EmptyBox
+            if={isFixedBusiness}
+            defaultNode={
+              <FormItemLabel
+                className="has-required-style"
+                label={t('dmsDataSource.dataSourceForm.business')}
+                name="business"
+                rules={[{ required: true }]}
+              >
+                <BasicInput />
+              </FormItemLabel>
+            }
           >
-            <BasicInput />
-          </FormItemLabel>
+            <FormItemLabel
+              className="has-required-style"
+              label={t('dmsDataSource.dataSourceForm.business')}
+              name="business"
+              rules={[{ required: true }]}
+            >
+              <BasicSelect options={projectBusinessOption()} />
+            </FormItemLabel>
+          </EmptyBox>
           <FormItemLabel
             className="has-label-tip"
             label={

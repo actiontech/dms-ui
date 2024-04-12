@@ -36,6 +36,9 @@ import {
   IListProjectReply,
   IProject,
   IAddProjectReply,
+  IImportProjects,
+  IPreviewImportProjectsReply,
+  IGetProjectTipsReply,
   IUpdateProject,
   IBatchGetDataExportTaskReply,
   IDataExportTask,
@@ -281,6 +284,25 @@ export interface IAddProjectParams {
 }
 
 export interface IAddProjectReturn extends IAddProjectReply {}
+
+export interface IImportProjectsParams {
+  projects?: IImportProjects[];
+}
+
+export interface IImportProjectsReturn extends IGenericResp {}
+
+export interface IPreviewImportProjectsParams {
+  projects_file?: any;
+}
+
+export interface IPreviewImportProjectsReturn
+  extends IPreviewImportProjectsReply {}
+
+export interface IGetProjectTipsParams {
+  project_uid?: string;
+}
+
+export interface IGetProjectTipsReturn extends IGetProjectTipsReply {}
 
 export interface IUpdateProjectParams {
   project_uid: string;

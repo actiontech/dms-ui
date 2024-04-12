@@ -8,6 +8,7 @@ export default {
     deleteSuccessTips: '删除项目"{{name}}"成功',
     archiveProjectSuccessTips: '冻结项目"{{name}}"成功',
     unarchiveProjectSuccessTips: '启用项目"{{name}}"成功',
+    exportMessage: '正在导出项目',
     columns: {
       status: '项目状态',
       available: '可用',
@@ -23,7 +24,14 @@ export default {
   },
   projectForm: {
     name: '项目名称',
-    desc: '项目描述'
+    desc: '项目描述',
+    business: '可用业务',
+    addBusiness: '添加业务',
+    deleteTip: '当前业务已有关联资源，无法删除',
+    fixedBusiness: '是否固定可选业务标签',
+    fixedBusinessExtra:
+      '若开启，项目内可用的业务标签将被固定，仅能由管理员管理',
+    businessName: '业务名称'
   },
   createProject: {
     modalTitle: '创建项目',
@@ -37,5 +45,20 @@ export default {
     modalTitle: '选择项目',
     modalTips: ' 暂无最近打开的项目, 请选择一个项目!',
     projectSelectorDropdownSlot: '项目列表'
-  }
+  },
+  exportProject: {
+    buttonText: '导出'
+  },
+  importProject: {
+    buttonText: '导入',
+    title: '导入项目及业务',
+    selectFile: '请选择导入文件',
+    submitText: '导入',
+    fileRequireTips: '当前未选择任何文件',
+    successTitle: '导入项目及业务成功',
+    successTips: '到项目列表查看刚刚导入的项目',
+    importingFile: '正在导入文件...',
+    downloadTemplate: '下载导入模板'
+  },
+  backToList: '返回项目列表'
 };
