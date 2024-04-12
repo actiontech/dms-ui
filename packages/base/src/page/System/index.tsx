@@ -6,6 +6,8 @@ import { BasicSegmented, PageHeader } from '@actiontech/shared';
 import { SystemStyleWrapper } from './style';
 import { initSystemModalStatus } from '../../store/system';
 import { ModalName } from '../../data/ModalName';
+import { useSearchParams } from 'react-router-dom';
+import { SystemSegmentedKeyEnum } from './index.enum';
 
 // #if [sqle]
 import PushNotification from './PushNotification';
@@ -20,19 +22,11 @@ import License from './License';
 import PersonalizeSetting from './PersonalizeSetting';
 // #endif
 
-enum SystemSegmentedKeyEnum {
-  PushNotification = 'push_notification',
-  ProcessConnection = 'process_connection',
-  LoginConnection = 'login_connection',
-  GlobalConfiguration = 'global_configuration',
-  License = 'license',
-  PersonalizeSetting = 'personalize'
-}
-
 const System = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
+  const [urlSearchParams] = useSearchParams();
 
   const options = useMemo(
     () => [
@@ -87,6 +81,12 @@ const System = () => {
     return options.find((item) => item.value === activeTabKey)?.components;
   }, [activeTabKey, options]);
 
+  useEffect(() => {
+    if (urlSearchParams && urlSearchParams.has('active_tab')) {
+      setActiveTabKey(urlSearchParams.get('active_tab')!);
+    }
+  }, [urlSearchParams]);
+
   // #if [ee]
   useEffect(() => {
     dispatch(
@@ -105,8 +105,11 @@ const System = () => {
       <PageHeader title={t('dmsSystem.pageTitle')} />
       <Row className="segmented-wrapper" align={'middle'}>
         <BasicSegmented
+          value={activeTabKey}
           options={options}
-          onChange={(value) => setActiveTabKey(value as SystemSegmentedKeyEnum)}
+          onChange={(value) => {
+            setActiveTabKey(value as SystemSegmentedKeyEnum);
+          }}
         />
       </Row>
       <Row justify={'center'}>{renderActiveTab()}</Row>
