@@ -14,7 +14,11 @@ export const importProjectListColumn: ActiontechTableColumn<IPreviewImportProjec
       dataIndex: 'business',
       title: '业务',
       render: (business: IPreviewImportProjects['business']) => {
-        if (!business || !business.length) {
+        if (
+          !business ||
+          !business.length ||
+          (business.length === 1 && business[0] === '')
+        ) {
           return '-';
         }
         return (
