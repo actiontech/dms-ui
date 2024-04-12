@@ -1,18 +1,12 @@
 import SystemEEPage from './';
 import { useDispatch } from 'react-redux';
-
-import { cleanup, act, fireEvent } from '@testing-library/react';
+import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../testUtils/customRender';
-
 import system from '../../testUtils/mockApi/system';
 import dms from '../../testUtils/mockApi/global';
-
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import { ModalName } from '../../data/ModalName';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -21,7 +15,7 @@ jest.mock('react-redux', () => ({
 
 describe('base/System-ee', () => {
   const dispatchSpy = jest.fn();
-  const customRender = () => {
+  const customRender = (initialEntry: string[] = ['/system']) => {
     return superRender(<SystemEEPage />, undefined, {
       initStore: {
         system: {
@@ -29,6 +23,9 @@ describe('base/System-ee', () => {
           webTitle: DMS_DEFAULT_WEB_TITLE,
           webLogoUrl: ''
         }
+      },
+      routerProps: {
+        initialEntries: initialEntry
       }
     });
   };
@@ -67,6 +64,17 @@ describe('base/System-ee', () => {
     expect(segmentedEle.length).toBe(6);
     fireEvent.click(segmentedEle[1]);
     await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should changed current active tab when url params is exist "active_tab"', async () => {
+    const { baseElement } = customRender([
+      '/system?active_tab=process_connection'
+    ]);
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(screen.getByTitle('流程对接').parentElement).toHaveClass(
+      'ant-segmented-item-selected'
+    );
     expect(baseElement).toMatchSnapshot();
   });
 });

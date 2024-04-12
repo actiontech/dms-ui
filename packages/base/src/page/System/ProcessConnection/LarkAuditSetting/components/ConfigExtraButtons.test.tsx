@@ -117,9 +117,28 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
       );
       fireEvent.click(btnPopoverOpen);
       await act(async () => jest.advanceTimersByTime(500));
+
+      fireEvent.change(getBySelector('#receiveEmail', baseElement), {
+        target: {
+          value: 'aa@qq.com'
+        }
+      });
+
+      expect(getBySelector('#receiveEmail', baseElement)).toHaveAttribute(
+        'value',
+        'aa@qq.com'
+      );
+
       expect(screen.getByText('取 消')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
+
+      fireEvent.click(screen.getByText('取 消'));
+      fireEvent.click(btnPopoverOpen);
+      expect(getBySelector('#receiveEmail', baseElement)).toHaveAttribute(
+        'value',
+        ''
+      );
     });
 
     it('render form item validate', async () => {

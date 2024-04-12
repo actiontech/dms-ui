@@ -50,6 +50,9 @@ class MockSystemApi implements MockSpyApy {
     this.GetLicenseInfo();
     this.getSystemVariables();
     this.updateSystemVariables();
+    this.getWechatAuditConfiguration();
+    this.updateWechatAuditConfiguration();
+    this.testWechatAuditConfig();
   }
 
   public getLDAPConfig() {
@@ -304,6 +307,37 @@ class MockSystemApi implements MockSpyApy {
   public updateSystemVariables() {
     const spy = jest.spyOn(configuration, 'updateSystemVariablesV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getWechatAuditConfiguration() {
+    const spy = jest.spyOn(configuration, 'getWechatAuditConfigurationV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          corp_id: '',
+          is_wechat_notification_enabled: false
+        }
+      })
+    );
+    return spy;
+  }
+
+  public updateWechatAuditConfiguration() {
+    const spy = jest.spyOn(configuration, 'updateWechatAuditConfigurationV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public testWechatAuditConfig() {
+    const spy = jest.spyOn(configuration, 'testWechatAuditConfigV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_message_sent_normally: true
+        }
+      })
+    );
     return spy;
   }
 }
