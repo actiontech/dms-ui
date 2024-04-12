@@ -109,12 +109,21 @@ describe('base/router-base-ee', () => {
   });
 
   describe('render base router when version is ee', () => {
-    it('render router project', async () => {
-      const { baseElement } = customRender(['/project']);
+    describe('render route project', () => {
+      it('render router project list', async () => {
+        const { baseElement } = customRender(['/project']);
 
-      expect(screen.getByText('project')).toBeInTheDocument();
-      expect(baseElement).toMatchSnapshot();
-    });
+        expect(screen.getByText('projectList')).toBeInTheDocument();
+        expect(baseElement).toMatchSnapshot();
+      });
+
+      it('render router import project', async () => {
+        const { baseElement } = customRender(['/project/import']);
+
+        expect(screen.getByText('projectImport')).toBeInTheDocument();
+        expect(baseElement).toMatchSnapshot();
+      });
+    })
 
     describe('render route syncDataSource', () => {
       it('render route syncDataSourceList', async () => {

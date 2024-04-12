@@ -205,6 +205,14 @@ export interface IBindOauth2UserResData {
   token?: string;
 }
 
+export interface IBusiness {
+  id?: string;
+
+  is_used?: boolean;
+
+  name?: string;
+}
+
 export interface ICancelDataExportWorkflowPayload {
   data_export_workflow_uids: string[];
 }
@@ -587,6 +595,14 @@ export interface IGetOauth2TipsResData {
   login_tip?: string;
 }
 
+export interface IGetProjectTipsReply {
+  code?: number;
+
+  data?: IProjectTips[];
+
+  message?: string;
+}
+
 export interface IGetSMTPConfigurationReply {
   code?: number;
 
@@ -711,6 +727,14 @@ export interface IIPluginDBService {
   SQLERuleTemplateName?: string;
 
   User?: string;
+}
+
+export interface IImportProjects {
+  business?: string[];
+
+  desc?: string;
+
+  name?: string;
 }
 
 export interface ILDAPConfiguration {
@@ -1066,11 +1090,15 @@ export interface IListOpPermissionReply {
 export interface IListProject {
   archived?: boolean;
 
+  business?: IBusiness[];
+
   create_time?: string;
 
   create_user?: IUidWithName;
 
   desc?: string;
+
+  is_fixed_business?: boolean;
 
   name?: string;
 
@@ -1271,10 +1299,36 @@ export interface IPlugin {
   operate_data_resource_handle_url?: string;
 }
 
-export interface IProject {
+export interface IPreviewImportProjects {
+  business?: string[];
+
   desc?: string;
 
   name?: string;
+}
+
+export interface IPreviewImportProjectsReply {
+  code?: number;
+
+  data?: IPreviewImportProjects[];
+
+  message?: string;
+}
+
+export interface IProject {
+  business?: string[];
+
+  desc?: string;
+
+  is_fixed_business?: boolean;
+
+  name?: string;
+}
+
+export interface IProjectTips {
+  business?: string[];
+
+  is_fixed_business?: boolean;
 }
 
 export interface IRegisterDMSPluginReply {
@@ -1500,7 +1554,11 @@ export interface IUpdateMemberGroup {
 }
 
 export interface IUpdateProject {
+  business?: IBusiness[];
+
   desc?: string;
+
+  is_fixed_business?: boolean;
 }
 
 export interface IUpdateRole {
