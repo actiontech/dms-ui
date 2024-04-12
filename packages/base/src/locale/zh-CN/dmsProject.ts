@@ -29,7 +29,9 @@ export default {
     addBusiness: '添加业务',
     deleteTip: '当前业务已有关联资源，无法删除',
     fixedBusiness: '是否固定可选业务标签',
-    fixedBusinessExtra: '若开启，项目内可用的业务标签将被固定，仅能由管理员管理'
+    fixedBusinessExtra:
+      '若开启，项目内可用的业务标签将被固定，仅能由管理员管理',
+    businessName: '业务名称'
   },
   createProject: {
     modalTitle: '创建项目',

@@ -14,13 +14,11 @@ export const importProjectListColumn: ActiontechTableColumn<IPreviewImportProjec
       dataIndex: 'business',
       title: '业务',
       render: (business: IPreviewImportProjects['business']) => {
-        if (
-          !business ||
-          !business.length ||
-          (business.length === 1 && business[0] === '')
-        ) {
+        // 判断是否全为'' 因为后端会把文件中的空列解析为[''] 所以加此判断
+        if (!business || !business.length || business.every((i) => i === '')) {
           return '-';
         }
+
         return (
           <Space>
             {business.map((item, index) => (

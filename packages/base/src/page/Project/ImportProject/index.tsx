@@ -57,7 +57,8 @@ const ImportProject = () => {
     await selectFileForm.validateFields();
     setImportPending();
     const projects = importProjects.map((project) => {
-      if (project.business?.length === 1 && project.business[0] === '') {
+      // 判断是否全为'' 因为后端会把文件中的空列解析为[''] 所以加此判断
+      if (project?.business?.every((i) => i === '')) {
         return {
           ...project,
           business: []
