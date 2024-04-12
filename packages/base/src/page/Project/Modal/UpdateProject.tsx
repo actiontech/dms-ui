@@ -47,7 +47,9 @@ const UpdateProject: React.FC = () => {
     const params: IUpdateProjectParams = {
       project_uid: selectProjectItem?.uid ?? '',
       project: {
-        desc: values.desc
+        desc: values.desc,
+        is_fixed_business: values.isFixedBusiness,
+        business: values.business
       }
     };
     startSubmit();
@@ -73,10 +75,12 @@ const UpdateProject: React.FC = () => {
     if (visible) {
       form.setFieldsValue({
         desc: selectProjectItem?.desc ?? '',
-        name: selectProjectItem?.name ?? ''
+        name: selectProjectItem?.name ?? '',
+        isFixedBusiness: selectProjectItem?.is_fixed_business ?? false,
+        business: selectProjectItem?.business
       });
     }
-  }, [form, visible, selectProjectItem?.desc, selectProjectItem?.name]);
+  }, [form, visible, selectProjectItem]);
 
   return (
     <>

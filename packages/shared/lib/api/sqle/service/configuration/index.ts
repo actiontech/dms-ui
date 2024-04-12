@@ -28,6 +28,7 @@ import {
   IGetWechatAuditConfigurationV1Return,
   IUpdateWechatAuditConfigurationV1Params,
   IUpdateWechatAuditConfigurationV1Return,
+  ITestWechatAuditConfigV1Params,
   ITestWechatAuditConfigV1Return,
   IGetDriversV2Return
 } from './index.d';
@@ -203,10 +204,14 @@ class ConfigurationService extends ServiceBase {
     );
   }
 
-  public testWechatAuditConfigV1(options?: AxiosRequestConfig) {
+  public testWechatAuditConfigV1(
+    params: ITestWechatAuditConfigV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
     return this.post<ITestWechatAuditConfigV1Return>(
       '/v1/configurations/wechat_audit/test',
-      undefined,
+      paramsData,
       options
     );
   }

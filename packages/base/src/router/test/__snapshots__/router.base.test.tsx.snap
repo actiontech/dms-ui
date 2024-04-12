@@ -38,9 +38,22 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     "path": "account",
   },
   {
-    "element": <div>
-      project
-    </div>,
+    "children": [
+      {
+        "element": <div>
+          projectList
+        </div>,
+        "key": "projectList",
+        "path": "",
+      },
+      {
+        "element": <div>
+          projectImport
+        </div>,
+        "key": "projectImport",
+        "path": "import",
+      },
+    ],
     "key": "project",
     "path": "project",
   },
@@ -308,6 +321,26 @@ exports[`base/router-base-ee render base router when version is ee render route 
 </body>
 `;
 
+exports[`base/router-base-ee render base router when version is ee render route project render router import project 1`] = `
+<body>
+  <div>
+    <div>
+      projectImport
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route project render router project list 1`] = `
+<body>
+  <div>
+    <div>
+      projectList
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-base-ee render base router when version is ee render route syncDataSource render route syncDataSourceList 1`] = `
 <body>
   <div>
@@ -345,16 +378,6 @@ exports[`base/router-base-ee render base router when version is ee render route 
       <div>
         syncDataSourceUpdate
       </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-base-ee render base router when version is ee render router project 1`] = `
-<body>
-  <div>
-    <div>
-      project
     </div>
   </div>
 </body>

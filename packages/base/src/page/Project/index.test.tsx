@@ -9,6 +9,8 @@ import Project from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../data/EmitterKey';
+import { useNavigate } from 'react-router-dom';
+import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -18,16 +20,24 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: jest.fn()
+}));
+
 describe('test base/page/project', () => {
   let emitSpy: jest.SpyInstance;
   const useSelectorMock = useSelector as jest.Mock;
   const dispatchSpy = jest.fn();
+  const navigateSpy = jest.fn();
+  let exportProjectsSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.useFakeTimers();
     emitSpy = jest.spyOn(EventEmitter, 'emit');
-
+    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     project.getProjectList();
+    exportProjectsSpy = project.exportProjects();
     mockUseCurrentUser();
     mockUseUserInfo();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -65,7 +75,7 @@ describe('test base/page/project', () => {
   });
 
   it('should open the modal for creating a project when click the Create Project button', () => {
-    mockUseCurrentUser({ isAdmin: true });
+    // mockUseCurrentUser({ isAdmin: true });
     superRender(<Project />);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('创建项目'));
@@ -83,7 +93,13 @@ describe('test base/page/project', () => {
     jest.clearAllTimers();
 
     mockUseCurrentUser({
-      isAdmin: false
+      isAdmin: false,
+      managementPermissions: [
+        {
+          uid: OpPermissionTypeUid.project_admin,
+          name: '项目管理'
+        }
+      ]
     });
     superRender(<Project />);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
@@ -100,5 +116,24 @@ describe('test base/page/project', () => {
     });
     superRender(<Project />);
     expect(screen.queryByText('创建项目')).not.toBeInTheDocument();
+  });
+
+  it('render navigate to import page', async () => {
+    superRender(<Project />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('导 入'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(navigateSpy).toHaveBeenCalledWith('/project/import');
+  });
+
+  it('should export project info', async () => {
+    superRender(<Project />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('导 出'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('正在导出项目')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(exportProjectsSpy).toHaveBeenCalledTimes(1);
+    expect(exportProjectsSpy).toHaveBeenCalledWith({ responseType: 'blob' });
   });
 });

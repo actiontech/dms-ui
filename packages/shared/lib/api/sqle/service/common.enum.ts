@@ -374,6 +374,10 @@ export enum GetWorkflowTasksItemV2StatusEnum {
   'terminate_failed' = 'terminate_failed'
 }
 
+export enum UpdateWorkflowScheduleReqV2NotifyTypeEnum {
+  'Wechat' = 'Wechat'
+}
+
 export enum WorkflowRecordResV2StatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 

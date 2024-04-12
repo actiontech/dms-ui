@@ -5,6 +5,7 @@ import { lazy } from 'react';
 
 // #if [ee]
 const Project = lazy(() => import('../page/Project'));
+const ImportProject = lazy(() => import('../page/Project/ImportProject'));
 
 const ExportTaskList = lazy(() => import('../page/DataExportManagement/List'));
 const CreateExportTask = lazy(
@@ -71,7 +72,18 @@ export const BaseRouterConfig: RouterConfigItem[] = [
   {
     path: 'project',
     key: 'project',
-    element: <Project />
+    children: [
+      {
+        index: true,
+        key: 'projectList',
+        element: <Project />
+      },
+      {
+        path: 'import',
+        key: 'projectImport',
+        element: <ImportProject />
+      }
+    ]
   },
   // #endif
   {
