@@ -6720,7 +6720,7 @@ exports[`page/DataSource/DataSourceForm render form snap when isFixedBusiness is
                           class="ant-space-item"
                         >
                           <a
-                            href="/project//data_mask_rule_overview"
+                            href="/project//data-mask-rule-overview"
                             target="_blank"
                           >
                             查看脱敏规则

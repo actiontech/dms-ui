@@ -2098,7 +2098,7 @@ exports[`page/DataSource/AddDataSource render isFixedBusiness is true 1`] = `
                             class="ant-space-item"
                           >
                             <a
-                              href="/project/700300/data_mask_rule_overview"
+                              href="/project/700300/data-mask-rule-overview"
                               target="_blank"
                             >
                               查看脱敏规则
