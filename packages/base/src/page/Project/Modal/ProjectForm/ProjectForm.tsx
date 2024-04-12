@@ -65,7 +65,14 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
                     label={
                       index === 0 ? t('dmsProject.projectForm.business') : ''
                     }
-                    rules={[{ required: true, message: '请输入业务名称' }]}
+                    rules={[
+                      {
+                        required: true,
+                        message: t('common.form.rule.require', {
+                          name: t('dmsProject.projectForm.businessName')
+                        })
+                      }
+                    ]}
                   >
                     <BusinessListField
                       onDelete={() => {
