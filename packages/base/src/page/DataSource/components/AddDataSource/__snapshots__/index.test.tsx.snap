@@ -995,7 +995,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
                             class="ant-space-item"
                           >
                             <a
-                              href="/project/700300/data_mask_rule_overview"
+                              href="/project/700300/data-mask-rule-overview"
                               target="_blank"
                             >
                               查看脱敏规则
@@ -3385,7 +3385,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
                             class="ant-space-item"
                           >
                             <a
-                              href="/project/700300/data_mask_rule_overview"
+                              href="/project/700300/data-mask-rule-overview"
                               target="_blank"
                             >
                               查看脱敏规则
@@ -5616,7 +5616,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
                             class="ant-space-item"
                           >
                             <a
-                              href="/project/700300/data_mask_rule_overview"
+                              href="/project/700300/data-mask-rule-overview"
                               target="_blank"
                             >
                               查看脱敏规则
