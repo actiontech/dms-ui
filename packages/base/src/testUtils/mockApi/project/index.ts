@@ -2,7 +2,11 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockProjectList } from './data';
+import {
+  mockProjectList,
+  mockPreviewImportProjects,
+  mockProjectTips
+} from './data';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 
 class MockProjectApi implements MockSpyApy {
@@ -13,6 +17,11 @@ class MockProjectApi implements MockSpyApy {
     this.deleteProject();
     this.archiveProject();
     this.unarchiveProject();
+    this.exportProjects();
+    this.importProjects();
+    this.getImportProjectsTemplate();
+    this.previewImportProjects();
+    this.getProjectTips();
   }
 
   public getProjectList() {
@@ -70,6 +79,40 @@ class MockProjectApi implements MockSpyApy {
           uid: '123'
         }
       })
+    );
+    return spy;
+  }
+
+  public exportProjects() {
+    const spy = jest.spyOn(dms, 'ExportProjects');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public importProjects() {
+    const spy = jest.spyOn(dms, 'ImportProjects');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getImportProjectsTemplate() {
+    const spy = jest.spyOn(dms, 'GetImportProjectsTemplate');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public previewImportProjects() {
+    const spy = jest.spyOn(dms, 'PreviewImportProjects');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockPreviewImportProjects })
+    );
+    return spy;
+  }
+
+  public getProjectTips() {
+    const spy = jest.spyOn(dms, 'GetProjectTips');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockProjectTips })
     );
     return spy;
   }

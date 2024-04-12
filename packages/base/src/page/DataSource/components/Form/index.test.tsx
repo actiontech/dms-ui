@@ -5,10 +5,10 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-
+import project from '../../../../testUtils/mockApi/project';
 import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
-
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import dms from '../../../../testUtils/mockApi/global';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
@@ -18,7 +18,7 @@ import DataSourceForm from '.';
 
 describe('page/DataSource/DataSourceForm', () => {
   const submitFn = jest.fn();
-
+   let getProjectTipsSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate: boolean;
     defaultData?: IListDBService;
@@ -40,6 +40,7 @@ describe('page/DataSource/DataSourceForm', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    getProjectTipsSpy = project.getProjectTips();
     dms.mockAllApi();
     ruleTemplate.mockAllApi();
   });
@@ -50,7 +51,18 @@ describe('page/DataSource/DataSourceForm', () => {
     cleanup();
   });
 
-  it('render form snap', async () => {
+  it('render form snap when isFixedBusiness is true', async () => {
+    const { baseElement } = customRender();
+
+    expect(screen.getByText('添加数据源')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render form snap when isFixedBusiness is false', async () => {
+    getProjectTipsSpy.mockClear();
+    getProjectTipsSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [{ is_fixed_business: false }] })
+    );
     const { baseElement } = customRender();
 
     expect(screen.getByText('添加数据源')).toBeInTheDocument();

@@ -45,7 +45,9 @@ const AddProject: React.FC = () => {
     const params: IAddProjectParams = {
       project: {
         name: values.name,
-        desc: values.desc
+        desc: values.desc,
+        is_fixed_business: values.isFixedBusiness,
+        business: values.business?.map((i) => i.name ?? '')
       }
     };
     startSubmit();
