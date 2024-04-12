@@ -1,11 +1,9 @@
 import audit from './audit';
 import dashboard from './dashboard';
-import login from './login';
 import menu from './menu';
 import order from './order';
 import rule from './rule';
 import ruleTemplate from './ruleTemplate';
-import system from './system';
 import whitelist from './whitelist';
 import workflowTemplate from './workflowTemplate';
 import auditPlan from './auditPlan';
@@ -24,7 +22,6 @@ import pluginAudit from './pluginAudit';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   translation: {
-    login,
     menu,
     ruleTemplate,
     rule,
@@ -32,7 +29,6 @@ export default {
     order,
     dashboard,
     whitelist,
-    system,
     workflowTemplate,
     auditPlan,
     sqlQuery,
