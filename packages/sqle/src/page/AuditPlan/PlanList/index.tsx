@@ -42,7 +42,7 @@ import {
 const AuditPlanList = () => {
   const { t } = useTranslation();
   const { projectName, projectID, projectArchive } = useCurrentProject();
-  const { username } = useCurrentUser();
+  const { username, isAdmin, isProjectManager, uid } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
@@ -187,8 +187,25 @@ const AuditPlanList = () => {
   );
 
   const actions = useMemo(() => {
-    return PlanListAction(onEditPlan, onDeletePlan, openModal, projectArchive);
-  }, [onEditPlan, onDeletePlan, openModal, projectArchive]);
+    return PlanListAction({
+      onDeletePlan,
+      onEditPlan,
+      openModal,
+      projectArchive,
+      isAdmin,
+      isProjectManager: isProjectManager(projectName),
+      userID: uid
+    });
+  }, [
+    onDeletePlan,
+    onEditPlan,
+    openModal,
+    projectArchive,
+    isAdmin,
+    isProjectManager,
+    projectName,
+    uid
+  ]);
 
   const onCreate = () => {
     navigate(`/sqle/project/${projectID}/audit-plan/create`);
