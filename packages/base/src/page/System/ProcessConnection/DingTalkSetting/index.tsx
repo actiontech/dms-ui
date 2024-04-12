@@ -34,7 +34,7 @@ const DingTalkSetting: React.FC = () => {
     switchFieldLabel: (
       <CustomLabelContent
         title={t('dmsSystem.dingTalk.enable')}
-        tips={t('system.dingTalk.titleTips')}
+        tips={t('dmsSystem.dingTalk.titleTips')}
       />
     )
   });

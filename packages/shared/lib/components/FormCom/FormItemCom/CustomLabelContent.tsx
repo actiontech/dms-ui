@@ -1,6 +1,8 @@
+import { ReactElement } from 'react';
+
 export interface CustomLabelContentProps {
   title: string;
-  tips: string;
+  tips: string | ReactElement;
 }
 
 const CustomLabelContent: React.FC<CustomLabelContentProps> = (props) => {
