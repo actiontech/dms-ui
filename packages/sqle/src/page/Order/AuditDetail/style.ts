@@ -175,6 +175,7 @@ export const DataSourceResultCardStyleWrapper = styled('div')`
 
     .result-card-content-options {
       display: flex;
+      justify-content: space-between;
     }
 
     .result-card-sql-wrap {

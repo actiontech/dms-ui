@@ -25,6 +25,12 @@ export default {
     highestAuditLevel: '最高审核告警等级'
   },
 
+  sqlFileSource: {
+    tips: '当前仅支持查看SQL/ZIP文件中的SQL来源',
+    source: '所在文件',
+    fileLine: '所在行'
+  },
+
   execStatus: {
     initialized: '准备执行',
     doing: '正在执行',
