@@ -79,12 +79,9 @@ const ResultCard: React.FC<ResultCardProps> = ({
       });
   };
 
-  const sqlContent = useMemo(() => {
-    return (showExecSql ? props.exec_sql : props.rollback_sql) || '';
-  }, [props.exec_sql, props.rollback_sql, showExecSql]);
-
   const sqlTemplate = useMemo(() => {
-    const lines = HighlightCode.highlightSql(sqlContent).split(/\r?\n|\r/g);
+    const renderSql = (showExecSql ? props.exec_sql : props.rollback_sql) || '';
+    const lines = HighlightCode.highlightSql(renderSql).split(/\r?\n|\r/g);
 
     return lines
       .map((w, i) => {
@@ -93,7 +90,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
         }</span>${w}</div>`;
       })
       .join('');
-  }, [sqlContent]);
+  }, [props.exec_sql, props.rollback_sql, showExecSql]);
 
   return (
     <DataSourceResultCardStyleWrapper>
