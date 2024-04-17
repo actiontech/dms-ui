@@ -7,7 +7,13 @@ import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/comm
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { useTranslation } from 'react-i18next';
 import { Space, message, Divider, Spin } from 'antd';
-import { BasicButton, Copy } from '@actiontech/shared';
+import {
+  BasicButton,
+  Copy,
+  BasicTag,
+  BasicToolTips,
+  EmptyBox
+} from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
 import HighlightCode from '../../../../../utils/HighlightCode';
 import AuditResultTag from './AuditResultTag';
@@ -17,6 +23,12 @@ import ExecStatusTag from './ExecStatusTag';
 import ResultDescribe from './ResultDescribe';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useMemo } from 'react';
+import { RenderSQLStyleWrapper } from '../../../../../components/RenderSQL/style';
+import {
+  IconFillListActive,
+  IconPosition
+} from '@actiontech/shared/lib/Icon/common';
 
 export type ResultCardProps = IAuditTaskSQLResV2 & {
   projectName: string;
@@ -67,6 +79,22 @@ const ResultCard: React.FC<ResultCardProps> = ({
       });
   };
 
+  const sqlContent = useMemo(() => {
+    return (showExecSql ? props.exec_sql : props.rollback_sql) || '';
+  }, [props.exec_sql, props.rollback_sql, showExecSql]);
+
+  const sqlTemplate = useMemo(() => {
+    const lines = HighlightCode.highlightSql(sqlContent).split(/\r?\n|\r/g);
+
+    return lines
+      .map((w, i) => {
+        return `<div class="code-line"><span class="code-line-number">${
+          i + 1
+        }</span>${w}</div>`;
+      })
+      .join('');
+  }, [sqlContent]);
+
   return (
     <DataSourceResultCardStyleWrapper>
       {contextHolder}
@@ -97,38 +125,61 @@ const ResultCard: React.FC<ResultCardProps> = ({
       </div>
       <div className="result-card-content">
         <div className="result-card-content-options">
-          <DataSourceResultSqlOptionsStyleWrapper
-            active={showExecSql}
-            onClick={setTrue}
-          >
-            {t('audit.table.execSql')}
-          </DataSourceResultSqlOptionsStyleWrapper>
-          <DataSourceResultSqlOptionsStyleWrapper
-            active={!showExecSql}
-            onClick={setFalse}
-          >
-            {t('audit.table.rollback')}
-          </DataSourceResultSqlOptionsStyleWrapper>
+          <Space size={0}>
+            <DataSourceResultSqlOptionsStyleWrapper
+              active={showExecSql}
+              onClick={setTrue}
+            >
+              {t('audit.table.execSql')}
+            </DataSourceResultSqlOptionsStyleWrapper>
+            <DataSourceResultSqlOptionsStyleWrapper
+              active={!showExecSql}
+              onClick={setFalse}
+            >
+              {t('audit.table.rollback')}
+            </DataSourceResultSqlOptionsStyleWrapper>
+          </Space>
+
+          <Space size={0}>
+            <EmptyBox
+              if={!!props?.sql_source_file}
+              defaultNode={
+                <BasicToolTips title={t('audit.sqlFileSource.tips')}>
+                  <Space>
+                    <BasicTag icon={<IconFillListActive />}>
+                      <span className="sql-source-title">
+                        {t('audit.sqlFileSource.source')}
+                      </span>
+                      -
+                    </BasicTag>
+                  </Space>
+                </BasicToolTips>
+              }
+            >
+              <BasicTag icon={<IconFillListActive />}>
+                <span className="sql-source-title">
+                  {t('audit.sqlFileSource.source')}
+                </span>
+                {props?.sql_source_file}
+              </BasicTag>
+            </EmptyBox>
+            <BasicTag icon={<IconPosition />}>
+              <span className="sql-source-title">
+                {t('audit.sqlFileSource.fileLine')}
+              </span>
+              {props?.sql_start_line || '-'}
+            </BasicTag>
+          </Space>
         </div>
-        <div className="result-card-sql-wrap">
+        <RenderSQLStyleWrapper className="result-card-sql-wrap">
           <pre>
             <code
               dangerouslySetInnerHTML={{
-                __html: HighlightCode.highlightSql(
-                  showExecSql ? props.exec_sql || '' : props.rollback_sql || ''
-                )
-                  .split('\n')
-                  .map(
-                    (w, i) =>
-                      `<div class="code-line"><span class="code-line-number">${
-                        i + 1
-                      }</span>${w}</div>`
-                  )
-                  .join('')
+                __html: sqlTemplate
               }}
-            ></code>
+            />
           </pre>
-        </div>
+        </RenderSQLStyleWrapper>
         <AuditResultTree auditResult={props.audit_result} />
         <DataSourceAuditResultTreeStyleWrapper
           treeData={[
