@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap 1`] = `
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap when rule name is has value 1`] = `
 <body>
   <div>
     <div
@@ -94,7 +94,7 @@ exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap 1`] = `
 </body>
 `;
 
-exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap 2`] = `
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap when rule name is has value 2`] = `
 <body>
   <div>
     <div
@@ -224,7 +224,7 @@ exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap 2`] = `
 </body>
 `;
 
-exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap 3`] = `
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap when rule name is has value 3`] = `
 <body>
   <div>
     <div
@@ -352,22 +352,105 @@ exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap 3`] = `
                             width="20"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM9.16925 13.3334L15.0609 7.44092L13.8826 6.26258L9.16925 10.9767L6.81175 8.61925L5.63341 9.79758L9.16925 13.3334Z"
-                              fill="#41BF9A"
-                            />
+                            <g
+                              id="close-circle-fill"
+                            >
+                              <path
+                                d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 8.82175L7.64341 6.46425L6.46425 7.64341L8.82175 10.0001L6.46425 12.3567L7.64341 13.5359L10.0001 11.1784L12.3567 13.5359L13.5359 12.3567L11.1784 10.0001L13.5359 7.64341L12.3567 6.46425L10.0001 8.82175Z"
+                                fill="#F66074"
+                                id="Vector"
+                              />
+                            </g>
                           </svg>
                         </span>
                         <span
                           class="text-wrapper"
-                        />
+                        >
+                          除了自增列及大字段列之外，每个列都必须添加默认值
+                        </span>
                       </div>
                       <div
                         class="annotation-wrapper"
                       >
                         <a
                           class="ant-typography css-dev-only-do-not-override-txh9fw"
-                          href="/sqle/rule/knowledge/rule name a/undefined"
+                          href="/sqle/rule/knowledge/ddl_check_column_without_default/MySQL"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          查看更多
+                        </a>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </div>
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                >
+                  <span
+                    class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                  />
+                </span>
+                <span
+                  class="ant-tree-switcher ant-tree-switcher-noop"
+                >
+                  <span
+                    class="ant-tree-switcher-leaf-line"
+                  />
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <div
+                      class=" css-1v03opz"
+                    >
+                      <div
+                        class="css-1avyf41"
+                      >
+                        <span
+                          class="icon-wrapper"
+                        >
+                          <svg
+                            fill="none"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="close-circle-fill"
+                            >
+                              <path
+                                d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 8.82175L7.64341 6.46425L6.46425 7.64341L8.82175 10.0001L6.46425 12.3567L7.64341 13.5359L10.0001 11.1784L12.3567 13.5359L13.5359 12.3567L11.1784 10.0001L13.5359 7.64341L12.3567 6.46425L10.0001 8.82175Z"
+                                fill="#F66074"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-wrapper"
+                        >
+                          主键建议使用 BIGINT 无符号类型，即 BIGINT UNSIGNED
+                        </span>
+                      </div>
+                      <div
+                        class="annotation-wrapper"
+                      >
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          href="/sqle/rule/knowledge/ddl_check_pk_without_bigint_unsigned/MySQL"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -421,22 +504,973 @@ exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap 3`] = `
                             width="20"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM9.16925 13.3334L15.0609 7.44092L13.8826 6.26258L9.16925 10.9767L6.81175 8.61925L5.63341 9.79758L9.16925 13.3334Z"
-                              fill="#41BF9A"
-                            />
+                            <g
+                              id="close-circle-fill"
+                            >
+                              <path
+                                d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 8.82175L7.64341 6.46425L6.46425 7.64341L8.82175 10.0001L6.46425 12.3567L7.64341 13.5359L10.0001 11.1784L12.3567 13.5359L13.5359 12.3567L11.1784 10.0001L13.5359 7.64341L12.3567 6.46425L10.0001 8.82175Z"
+                                fill="#F66074"
+                                id="Vector"
+                              />
+                            </g>
                           </svg>
                         </span>
                         <span
                           class="text-wrapper"
-                        />
+                        >
+                          新建表建议加入 IF NOT EXISTS，保证重复执行不报错
+                        </span>
                       </div>
                       <div
                         class="annotation-wrapper"
                       >
                         <a
                           class="ant-typography css-dev-only-do-not-override-txh9fw"
-                          href="/sqle/rule/knowledge/rule name b/undefined"
+                          href="/sqle/rule/knowledge/ddl_check_table_without_if_not_exists/MySQL"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          查看更多
+                        </a>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap when rule name is not has value 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          tabindex="0"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-tree-indent"
+        >
+          <div
+            class="ant-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-tree-list-holder"
+        >
+          <div>
+            <div
+              class="ant-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                />
+                <span
+                  class="ant-tree-switcher ant-tree-switcher_close"
+                >
+                  <span
+                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        fill="#C3C6CD"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <span
+                      class="audit-result-tree-title"
+                    >
+                      审核结果
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap when rule name is not has value 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          tabindex="0"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-tree-indent"
+        >
+          <div
+            class="ant-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-tree-list-holder"
+        >
+          <div>
+            <div
+              class="ant-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                />
+                <span
+                  class="ant-tree-switcher ant-tree-switcher_open"
+                >
+                  <span
+                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        fill="#C3C6CD"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <span
+                      class="audit-result-tree-title"
+                    >
+                      审核结果
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                >
+                  <span
+                    class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                  />
+                </span>
+                <span
+                  class="ant-tree-switcher ant-tree-switcher-noop"
+                >
+                  <span
+                    class="ant-tree-switcher-leaf-line"
+                  />
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <div
+                      class=" css-1v03opz"
+                    >
+                      <div
+                        class="css-1avyf41"
+                      >
+                        <span
+                          class="icon-wrapper"
+                        >
+                          <svg
+                            fill="none"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="close-circle-fill"
+                            >
+                              <path
+                                d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 8.82175L7.64341 6.46425L6.46425 7.64341L8.82175 10.0001L6.46425 12.3567L7.64341 13.5359L10.0001 11.1784L12.3567 13.5359L13.5359 12.3567L11.1784 10.0001L13.5359 7.64341L12.3567 6.46425L10.0001 8.82175Z"
+                                fill="#F66074"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-wrapper"
+                        >
+                          schema test 已存在
+                        </span>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap when rule name is not has value 3`] = `
+<body>
+  <div>
+    <div
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          tabindex="0"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-tree-indent"
+        >
+          <div
+            class="ant-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-tree-list-holder"
+        >
+          <div>
+            <div
+              class="ant-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                />
+                <span
+                  class="ant-tree-switcher ant-tree-switcher_open"
+                >
+                  <span
+                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        fill="#C3C6CD"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <span
+                      class="audit-result-tree-title"
+                    >
+                      审核结果
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                >
+                  <span
+                    class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                  />
+                </span>
+                <span
+                  class="ant-tree-switcher ant-tree-switcher-noop"
+                >
+                  <span
+                    class="ant-tree-switcher-leaf-line"
+                  />
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <div
+                      class=" css-1v03opz"
+                    >
+                      <div
+                        class="css-1avyf41"
+                      >
+                        <span
+                          class="icon-wrapper"
+                        >
+                          <svg
+                            fill="none"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="close-circle-fill"
+                            >
+                              <path
+                                d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 8.82175L7.64341 6.46425L6.46425 7.64341L8.82175 10.0001L6.46425 12.3567L7.64341 13.5359L10.0001 11.1784L12.3567 13.5359L13.5359 12.3567L11.1784 10.0001L13.5359 7.64341L12.3567 6.46425L10.0001 8.82175Z"
+                                fill="#F66074"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-wrapper"
+                        >
+                          schema test 已存在
+                        </span>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap with rule_name and without rule_name 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          tabindex="0"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-tree-indent"
+        >
+          <div
+            class="ant-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-tree-list-holder"
+        >
+          <div>
+            <div
+              class="ant-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                />
+                <span
+                  class="ant-tree-switcher ant-tree-switcher_close"
+                >
+                  <span
+                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        fill="#C3C6CD"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <span
+                      class="audit-result-tree-title"
+                    >
+                      审核结果
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap with rule_name and without rule_name 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          tabindex="0"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-tree-indent"
+        >
+          <div
+            class="ant-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-tree-list-holder"
+        >
+          <div>
+            <div
+              class="ant-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-loading ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                />
+                <span
+                  class="ant-tree-switcher ant-tree-switcher_open"
+                >
+                  <span
+                    aria-label="loading"
+                    class="anticon anticon-loading anticon-spin ant-tree-switcher-loading-icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="loading"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="0 0 1024 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-iconEle ant-tree-icon__open ant-tree-icon_loading"
+                  />
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <span
+                      class="audit-result-tree-title"
+                    >
+                      审核结果
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                >
+                  <span
+                    class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                  />
+                </span>
+                <span
+                  class="ant-tree-switcher ant-tree-switcher-noop"
+                >
+                  <span
+                    class="ant-tree-switcher-leaf-line"
+                  />
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                  title="-"
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    -
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/Order/AuditDetail/AuditResultTree render tree snap with rule_name and without rule_name 3`] = `
+<body>
+  <div>
+    <div
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          tabindex="0"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-tree-indent"
+        >
+          <div
+            class="ant-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-tree-list-holder"
+        >
+          <div>
+            <div
+              class="ant-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                />
+                <span
+                  class="ant-tree-switcher ant-tree-switcher_open"
+                >
+                  <span
+                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        fill="#C3C6CD"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <span
+                      class="audit-result-tree-title"
+                    >
+                      审核结果
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                >
+                  <span
+                    class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                  />
+                </span>
+                <span
+                  class="ant-tree-switcher ant-tree-switcher-noop"
+                >
+                  <span
+                    class="ant-tree-switcher-leaf-line"
+                  />
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <div
+                      class=" css-1v03opz"
+                    >
+                      <div
+                        class="css-1avyf41"
+                      >
+                        <span
+                          class="icon-wrapper"
+                        >
+                          <svg
+                            fill="none"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="close-circle-fill"
+                            >
+                              <path
+                                d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 8.82175L7.64341 6.46425L6.46425 7.64341L8.82175 10.0001L6.46425 12.3567L7.64341 13.5359L10.0001 11.1784L12.3567 13.5359L13.5359 12.3567L11.1784 10.0001L13.5359 7.64341L12.3567 6.46425L10.0001 8.82175Z"
+                                fill="#F66074"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-wrapper"
+                        >
+                          schema test 已存在
+                        </span>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </div>
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                >
+                  <span
+                    class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                  />
+                </span>
+                <span
+                  class="ant-tree-switcher ant-tree-switcher-noop"
+                >
+                  <span
+                    class="ant-tree-switcher-leaf-line"
+                  />
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <div
+                      class=" css-1v03opz"
+                    >
+                      <div
+                        class="css-1avyf41"
+                      >
+                        <span
+                          class="icon-wrapper"
+                        >
+                          <svg
+                            fill="none"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="close-circle-fill"
+                            >
+                              <path
+                                d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 8.82175L7.64341 6.46425L6.46425 7.64341L8.82175 10.0001L6.46425 12.3567L7.64341 13.5359L10.0001 11.1784L12.3567 13.5359L13.5359 12.3567L11.1784 10.0001L13.5359 7.64341L12.3567 6.46425L10.0001 8.82175Z"
+                                fill="#F66074"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-wrapper"
+                        >
+                          主键建议使用 BIGINT 无符号类型，即 BIGINT UNSIGNED
+                        </span>
+                      </div>
+                      <div
+                        class="annotation-wrapper"
+                      >
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          href="/sqle/rule/knowledge/ddl_check_pk_without_bigint_unsigned/MySQL"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          查看更多
+                        </a>
+                      </div>
+                    </div>
+                  </span>
+                </span>
+              </div>
+              <div
+                aria-grabbed="false"
+                class="ant-tree-treenode ant-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-tree-indent"
+                >
+                  <span
+                    class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                  />
+                </span>
+                <span
+                  class="ant-tree-switcher ant-tree-switcher-noop"
+                >
+                  <span
+                    class="ant-tree-switcher-leaf-line"
+                  />
+                </span>
+                <span
+                  class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                  title=""
+                >
+                  <span
+                    class="ant-tree-title"
+                  >
+                    <div
+                      class=" css-1v03opz"
+                    >
+                      <div
+                        class="css-1avyf41"
+                      >
+                        <span
+                          class="icon-wrapper"
+                        >
+                          <svg
+                            fill="none"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              id="close-circle-fill"
+                            >
+                              <path
+                                d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 8.82175L7.64341 6.46425L6.46425 7.64341L8.82175 10.0001L6.46425 12.3567L7.64341 13.5359L10.0001 11.1784L12.3567 13.5359L13.5359 12.3567L11.1784 10.0001L13.5359 7.64341L12.3567 6.46425L10.0001 8.82175Z"
+                                fill="#F66074"
+                                id="Vector"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-wrapper"
+                        >
+                          新建表建议加入 IF NOT EXISTS，保证重复执行不报错
+                        </span>
+                      </div>
+                      <div
+                        class="annotation-wrapper"
+                      >
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          href="/sqle/rule/knowledge/ddl_check_table_without_if_not_exists/MySQL"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
