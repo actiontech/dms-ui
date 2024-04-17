@@ -1,6 +1,6 @@
 import { DataSourceAuditResultTreeStyleWrapper } from '../../style';
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
-import type { DataNode } from 'antd/es/tree';
+import type { DataNode, TreeProps } from 'antd/es/tree';
 import { IconArrowDown } from '@actiontech/shared/lib/Icon';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -33,14 +33,45 @@ const AuditResultTree: React.FC<AuditResultTreeProps> = ({ auditResult }) => {
     }
   ]);
 
-  const onLoadData = (node: DataNode) => {
+  const onLoadData: TreeProps['loadData'] = (node) => {
+    if (!auditResult?.length) {
+      return Promise.resolve();
+    }
+
     const filterRuleNames = (
       auditResult?.map((v) => v.rule_name ?? '') ?? []
     ).filter((v) => !!v);
 
-    if (!filterRuleNames.length) {
-      return Promise.resolve();
+    if (!filterRuleNames?.length) {
+      return new Promise<void>((res) => {
+        if (auditResult) {
+          setTreeData([
+            {
+              ...node,
+              children: auditResult.map((item, index) => {
+                return {
+                  title: (
+                    <AuditResultMessage
+                      key={`${item.rule_name ?? ''}${
+                        item.message ?? ''
+                      }-${index}`}
+                      auditResult={{
+                        level: item?.level ?? '',
+                        message: item?.message ?? ''
+                      }}
+                    />
+                  ),
+                  key: index,
+                  isLeaf: true
+                };
+              })
+            }
+          ]);
+        }
+        res();
+      });
     }
+
     return rule_template
       .getRuleListV1({
         filter_rule_names: filterRuleNames.join(',')
@@ -58,7 +89,6 @@ const AuditResultTree: React.FC<AuditResultTreeProps> = ({ auditResult }) => {
               ...item
             };
           });
-
           if (newResult) {
             setTreeData([
               {
