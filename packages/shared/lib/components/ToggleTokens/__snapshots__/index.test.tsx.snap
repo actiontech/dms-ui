@@ -1,0 +1,610 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test ToggleTokens/multiple render snapshot with Array<object> type options 1`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test ToggleTokens/multiple render snapshot with Array<object> type options 2`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test ToggleTokens/multiple render snapshot with Array<object> type options and control 1`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label3
+        </span>
+      </button>
+    </div>
+  </div>
+  value1,value2
+</div>
+`;
+
+exports[`test ToggleTokens/multiple render snapshot with Array<object> type options and control 2`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test ToggleTokens/multiple render snapshot with Array<string> type options 1`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <label
+          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        >
+          <span
+            class="ant-checkbox css-dev-only-do-not-override-674gwq"
+          >
+            <input
+              class="ant-checkbox-input"
+              type="checkbox"
+            />
+            <span
+              class="ant-checkbox-inner"
+            />
+          </span>
+        </label>
+        <span>
+          key1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <label
+          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        >
+          <span
+            class="ant-checkbox css-dev-only-do-not-override-674gwq"
+          >
+            <input
+              class="ant-checkbox-input"
+              type="checkbox"
+            />
+            <span
+              class="ant-checkbox-inner"
+            />
+          </span>
+        </label>
+        <span>
+          key2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <label
+          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        >
+          <span
+            class="ant-checkbox css-dev-only-do-not-override-674gwq"
+          >
+            <input
+              class="ant-checkbox-input"
+              type="checkbox"
+            />
+            <span
+              class="ant-checkbox-inner"
+            />
+          </span>
+        </label>
+        <span>
+          key3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test ToggleTokens/multiple render snapshot with Array<string> type options 2`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <label
+          class="ant-checkbox-wrapper ant-checkbox-wrapper-checked css-dev-only-do-not-override-674gwq"
+        >
+          <span
+            class="ant-checkbox css-dev-only-do-not-override-674gwq ant-checkbox-checked"
+          >
+            <input
+              class="ant-checkbox-input"
+              type="checkbox"
+            />
+            <span
+              class="ant-checkbox-inner"
+            />
+          </span>
+        </label>
+        <span>
+          key1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <label
+          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        >
+          <span
+            class="ant-checkbox css-dev-only-do-not-override-674gwq"
+          >
+            <input
+              class="ant-checkbox-input"
+              type="checkbox"
+            />
+            <span
+              class="ant-checkbox-inner"
+            />
+          </span>
+        </label>
+        <span>
+          key2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <label
+          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        >
+          <span
+            class="ant-checkbox css-dev-only-do-not-override-674gwq"
+          >
+            <input
+              class="ant-checkbox-input"
+              type="checkbox"
+            />
+            <span
+              class="ant-checkbox-inner"
+            />
+          </span>
+        </label>
+        <span>
+          key3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test ToggleTokens/single render snapshot with Array<object> type options 1`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test ToggleTokens/single render snapshot with Array<object> type options 2`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test ToggleTokens/single render snapshot with Array<object> type options and control 1`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          label3
+        </span>
+      </button>
+    </div>
+  </div>
+  value3
+</div>
+`;
+
+exports[`test ToggleTokens/single render snapshot with Array<string> type options 1`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          key1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          key2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          key3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test ToggleTokens/single render snapshot with Array<string> type options 2`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+  >
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          key1
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          key2
+        </span>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          key3
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -43,7 +43,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw clearPaddingBottom css-19jfn7e"
               >
                 <div
                   class="css-haw22i"

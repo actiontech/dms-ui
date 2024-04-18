@@ -13,6 +13,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
   const closeScheduleModalFn = jest.fn();
   let submitFn = jest.fn();
   let getWechatAuditConfigSpy: jest.SpyInstance;
+  let getFeishuAuditConfigSpy: jest.SpyInstance;
 
   const customRender = (
     params: Pick<ScheduleTimeModalProps, 'open' | 'maintenanceTime'>
@@ -30,6 +31,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
 
   beforeEach(() => {
     getWechatAuditConfigSpy = configuration.getWechatAuditConfiguration();
+    getFeishuAuditConfigSpy = configuration.getFeishuAuditConfiguration();
     jest.useFakeTimers({ legacyFakeTimers: true });
 
     MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
@@ -226,8 +228,9 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     expect(
       screen.queryByText('上线前是否发送通知进行确认')
     ).toBeInTheDocument();
-    fireEvent.click(getBySelector('#wechat_notification_confirmation'));
+    fireEvent.click(getBySelector('#notification_confirmation'));
     expect(getWechatAuditConfigSpy).toHaveBeenCalledTimes(1);
+    expect(getFeishuAuditConfigSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(submitBtn.closest('button')).toBeDisabled();
@@ -246,6 +249,15 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
         }
       })
     );
+
+    getFeishuAuditConfigSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_feishu_notification_enabled: true
+        }
+      })
+    );
+
     const { baseElement } = customRender({
       open: true
     });
@@ -268,10 +280,14 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     fireEvent.click(screen.getByText('OK'));
     await act(async () => jest.advanceTimersByTime(300));
 
-    fireEvent.click(getBySelector('#wechat_notification_confirmation'));
+    fireEvent.click(getBySelector('#notification_confirmation'));
     expect(getWechatAuditConfigSpy).toHaveBeenCalledTimes(1);
+    expect(getFeishuAuditConfigSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('企业微信'));
+    fireEvent.click(screen.getByText('飞书'));
 
     const submitBtn = screen.getAllByText('定时上线')[1];
     expect(submitBtn.closest('button')).not.toBeDisabled();
@@ -282,7 +298,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     expect(submitFn).toHaveBeenCalledWith(
       '2024-12-29T06:06:06+08:00',
       true,
-      UpdateWorkflowScheduleReqV2NotifyTypeEnum.Wechat
+      UpdateWorkflowScheduleReqV2NotifyTypeEnum.Feishu
     );
   });
 });
