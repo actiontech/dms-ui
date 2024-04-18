@@ -24,7 +24,6 @@ describe.skip('base/page/Nav/SideMenu/MenuList', () => {
   };
 
   ignoreComponentCustomAttr();
-
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
