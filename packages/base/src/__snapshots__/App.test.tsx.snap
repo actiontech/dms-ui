@@ -1650,35 +1650,107 @@ exports[`App render App when token is existed 1`] = `
                   </div>
                 </div>
               </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  数据源授权管理
+                </div>
+                <div
+                  class="desc"
+                >
+                  配置数据权限模版，将数据权限模版授权给指定用户
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          权限模板
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          授权清单
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  审批流程
+                </div>
+                <div
+                  class="desc"
+                >
+                  根据实际业务流转变更流程模板
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          配置审批流程模板
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <button
-            class="ant-btn css-dev-only-do-not-override-4mxe6b ant-btn-primary login-btn basic-button-wrapper css-geipcv"
-            type="submit"
-          >
-            <span>
-              登 录
-            </span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-</div>
-`;
-
-exports[`App render App when user role is not admin 1`] = `
-<div>
-  <section
-    class="css-m36rcd"
-  >
-    <div
-      class="dms-layout-side css-13dah2i"
-    >
-      <div
-        class="dms-layout-side-start"
-      >
-        <div>
+        </div>
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+        >
           <div
             class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
             style="flex: 0 0 40px; min-width: 0;"
@@ -2313,7 +2385,7 @@ exports[`App render App when user role is not admin 1`] = `
     class="css-m36rcd"
   >
     <div
-      class="dms-layout-side css-2df5or"
+      class="dms-layout-side css-13dah2i"
     >
       <div
         class="dms-layout-side-start"
