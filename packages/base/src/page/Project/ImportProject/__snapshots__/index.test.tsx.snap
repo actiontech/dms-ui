@@ -4,7 +4,7 @@ exports[`base/Project/Import render delete file 1`] = `
 <body>
   <div>
     <div
-      class="css-1k6w0v5"
+      class="css-kg31ms"
     >
       <div
         class="actiontech-page-header-namespace fixed-style css-1xspr0w"
@@ -246,7 +246,7 @@ exports[`base/Project/Import render return to list page 1`] = `
 <body>
   <div>
     <div
-      class="css-1k6w0v5"
+      class="css-kg31ms"
     >
       <div
         class="actiontech-page-header-namespace fixed-style css-1xspr0w"
@@ -416,7 +416,7 @@ exports[`base/Project/Import render upload file 1`] = `
 <body>
   <div>
     <div
-      class="css-1k6w0v5"
+      class="css-kg31ms"
     >
       <div
         class="actiontech-page-header-namespace fixed-style css-1xspr0w"
@@ -675,13 +675,19 @@ exports[`base/Project/Import render upload file 1`] = `
                         >
                           <tr>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
                               scope="col"
                             >
                               项目
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
+                              scope="col"
+                            >
+                              描述
+                            </th>
+                            <th
+                              class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
                               业务
@@ -714,25 +720,115 @@ exports[`base/Project/Import render upload file 1`] = `
                                  
                               </div>
                             </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
                             data-row-key="project1"
                           >
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
                             >
                               project1
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
+                            >
+                              <div
+                                aria-label="desc1"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              >
+                                desc1
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="Copy"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
                             >
                               <div
                                 class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="margin-right: 8px;"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
                                     class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
@@ -742,7 +838,7 @@ exports[`base/Project/Import render upload file 1`] = `
                                 </div>
                                 <div
                                   class="ant-space-item"
-                                  style="margin-right: 8px;"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
                                     class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
@@ -752,6 +848,7 @@ exports[`base/Project/Import render upload file 1`] = `
                                 </div>
                                 <div
                                   class="ant-space-item"
+                                  style="padding-bottom: 8px;"
                                 >
                                   <span
                                     class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
@@ -767,18 +864,25 @@ exports[`base/Project/Import render upload file 1`] = `
                             data-row-key="project2"
                           >
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
                             >
                               project2
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
                             >
                               <div
                                 class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
+                                  style="padding-bottom: 8px;"
                                 >
                                   <span
                                     class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
@@ -794,12 +898,17 @@ exports[`base/Project/Import render upload file 1`] = `
                             data-row-key="project3"
                           >
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
                             >
                               project3
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
                             >
                               -
                             </td>
@@ -809,12 +918,17 @@ exports[`base/Project/Import render upload file 1`] = `
                             data-row-key=""
                           >
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
                             >
                               -
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-small-width"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell ellipsis-column-width"
                             >
                               -
                             </td>
@@ -838,7 +952,7 @@ exports[`base/Project/Import render upload file 2`] = `
 <body>
   <div>
     <div
-      class="css-1k6w0v5"
+      class="css-kg31ms"
     >
       <div
         class="actiontech-page-header-namespace fixed-style css-1xspr0w"
