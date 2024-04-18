@@ -1,29 +1,25 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
-import { useBoolean, useRequest } from 'ahooks';
-import { Form, Spin } from 'antd';
+import { useBoolean } from 'ahooks';
+import { Form } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { range } from 'lodash';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import {
   BasicButton,
   BasicModal,
-  BasicSwitch,
   BasicTag,
   EmptyBox
 } from '@actiontech/shared';
-import { ScheduleTimeModalProps } from './index.type';
+import { ScheduleTimeFormFields, ScheduleTimeModalProps } from './index.type';
 import { checkTimeInWithMaintenanceTime } from '../../Common/utils';
 import { FormItemNoLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
 import dayjs, { Dayjs } from 'dayjs';
 import { BasicDatePicker } from '@actiontech/shared';
 import { ScheduleTimeModelDescribeStyleWrapper } from '../style';
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
-import { Link } from 'react-router-dom';
-import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import ConfirmationSettingForm from './components/ConfirmationSettingForm';
+import { useEffect, useState } from 'react';
+import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/ToggleTokens/index.type';
+import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
 
 const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
   open,
@@ -32,31 +28,34 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
   submit
 }) => {
   const { t } = useTranslation();
-  const [form] = useForm();
+  const [form] = useForm<ScheduleTimeFormFields>();
   const [
     scheduleLoading,
     { setTrue: scheduleStart, setFalse: scheduleFinish }
   ] = useBoolean();
 
   // #if [ee]
-  const enableWechatNotificationConfirm = Form.useWatch(
-    'wechat_notification_confirmation',
+  const enableNotificationConfirm = Form.useWatch(
+    'notification_confirmation',
     form
   );
 
-  const { data: wechatAuditInfo, loading: getWechatAuditConfigInfoLoading } =
-    useRequest(
-      () =>
-        configuration
-          .getWechatAuditConfigurationV1()
-          .then((res) => res.data.data ?? {}),
-      {
-        ready: !!enableWechatNotificationConfirm && !!open
-      }
-    );
+  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+
+  const [confirmTypeTokens, setConfirmTypeTokens] =
+    useState<ToggleTokensOptionsType>([]);
+
+  useEffect(() => {
+    form.setFieldValue('confirmation_method', undefined);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [enableNotificationConfirm]);
   // #endif
 
   const resetAndCloseScheduleModal = () => {
+    // #if [ee]
+    setConfirmTypeTokens([]);
+    setSubmitButtonDisabled(false);
+    // #endif
     form.resetFields();
     closeScheduleModal();
   };
@@ -159,16 +158,15 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
     submit(
       values?.schedule_time?.format('YYYY-MM-DDTHH:mm:ssZ')?.toString(),
       // #if [ee]
-      !!enableWechatNotificationConfirm,
-      !!enableWechatNotificationConfirm
-        ? UpdateWorkflowScheduleReqV2NotifyTypeEnum.Wechat
-        : undefined
+      !!enableNotificationConfirm,
+      !!enableNotificationConfirm ? values.confirmation_method : undefined
       // #endif
     ).finally(() => {
       scheduleFinish();
       resetAndCloseScheduleModal();
     });
   };
+
   return (
     <BasicModal
       title={t('order.operator.onlineRegularly')}
@@ -181,10 +179,7 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
           </BasicButton>
           <BasicButton
             // #if [ee]
-            disabled={
-              !!enableWechatNotificationConfirm &&
-              !wechatAuditInfo?.is_wechat_notification_enabled
-            }
+            disabled={submitButtonDisabled}
             // #endif
 
             type="primary"
@@ -197,7 +192,12 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
         </>
       }
     >
-      <Form form={form} labelAlign={'left'} colon={false}>
+      <FormStyleWrapper
+        form={form}
+        labelAlign="left"
+        colon={false}
+        className="clearPaddingBottom"
+      >
         <ScheduleTimeModelDescribeStyleWrapper>
           <span className="whitespace-pre-line">
             {t('order.operator.maintenanceTime')}
@@ -255,62 +255,14 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
         </FormItemNoLabelStyleWrapper>
 
         {/* #if [ee] */}
-        <Spin spinning={getWechatAuditConfigInfoLoading} delay={400}>
-          <FormItemLabel
-            className="has-label-tip"
-            label={
-              <CustomLabelContent
-                title={t('order.operator.scheduleTimeExecuteConfirmLabel')}
-                tips={t('order.operator.scheduleTimeExecuteConfirmTips')}
-              />
-            }
-            name="wechat_notification_confirmation"
-            labelCol={{ span: 20 }}
-            wrapperCol={{ span: 2, push: 1 }}
-            valuePropName="checked"
-          >
-            <BasicSwitch />
-          </FormItemLabel>
-
-          <EmptyBox if={enableWechatNotificationConfirm}>
-            <FormItemLabel
-              className="has-label-tip"
-              label={
-                <CustomLabelContent
-                  title={t('order.operator.scheduleTimeExecuteConfirmMethod')}
-                  tips={
-                    <Trans
-                      i18nKey={
-                        'order.operator.scheduleTimeExecuteConfirmMethodTips'
-                      }
-                    >
-                      {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                      <Link
-                        target="_blank"
-                        to="/system?active_tab=process_connection"
-                      />
-                    </Trans>
-                  }
-                />
-              }
-              name="confirmation_method"
-              labelCol={{ span: 16 }}
-              wrapperCol={{ span: 6, push: 2 }}
-            >
-              <EmptyBox if={!!wechatAuditInfo?.is_wechat_notification_enabled}>
-                <BasicButton
-                  style={{ width: '100%', height: 36 }}
-                  type="primary"
-                >
-                  {t('order.operator.confirmMethodWechat')}
-                </BasicButton>
-              </EmptyBox>
-            </FormItemLabel>
-          </EmptyBox>
-        </Spin>
-
+        <ConfirmationSettingForm
+          enable={open && !!enableNotificationConfirm}
+          setSubmitButtonDisabled={setSubmitButtonDisabled}
+          confirmTypeTokens={confirmTypeTokens}
+          setConfirmTypeTokens={setConfirmTypeTokens}
+        />
         {/* #endif */}
-      </Form>
+      </FormStyleWrapper>
     </BasicModal>
   );
 };

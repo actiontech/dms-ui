@@ -1,0 +1,142 @@
+import { Spin } from 'antd';
+import { ConfirmationSettingFormProps } from './index.type';
+import { useBoolean } from 'ahooks';
+import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
+import {
+  CustomLabelContent,
+  FormItemLabel
+} from '@actiontech/shared/lib/components/FormCom';
+import { BasicSwitch, EmptyBox, ToggleTokens } from '@actiontech/shared';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/ToggleTokens/index.type';
+import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { ConfirmMethodFormItemLabelStyleWrapper } from './style';
+
+const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
+  enable,
+  setSubmitButtonDisabled,
+  confirmTypeTokens,
+  setConfirmTypeTokens
+}) => {
+  const { t } = useTranslation();
+
+  const [
+    getConfigLoading,
+    { setFalse: getConfigFinish, setTrue: startGetConfig }
+  ] = useBoolean(false);
+
+  useEffect(() => {
+    if (enable) {
+      startGetConfig();
+      Promise.all([
+        configuration.getFeishuAuditConfigurationV1(),
+        configuration.getWechatAuditConfigurationV1()
+      ])
+        .then((res) => {
+          const [enableFeishu, enableWechat] = [
+            res[0].data.data?.is_feishu_notification_enabled,
+            res[1].data.data?.is_wechat_notification_enabled
+          ];
+          const list: ToggleTokensOptionsType = [];
+          if (enableWechat) {
+            list.push({
+              label: t('order.operator.confirmMethodWechat'),
+              value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.Wechat
+            });
+          }
+
+          if (enableFeishu) {
+            list.push({
+              label: t('order.operator.confirmMethodFeishu'),
+              value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.Feishu
+            });
+          }
+
+          if (list.length === 0) {
+            setSubmitButtonDisabled(true);
+          }
+
+          setConfirmTypeTokens(list);
+        })
+        .catch(() => {
+          setSubmitButtonDisabled(true);
+        })
+        .finally(() => {
+          getConfigFinish();
+        });
+    } else {
+      setSubmitButtonDisabled(false);
+    }
+  }, [
+    enable,
+    getConfigFinish,
+    setConfirmTypeTokens,
+    setSubmitButtonDisabled,
+    startGetConfig,
+    t
+  ]);
+
+  return (
+    <Spin spinning={getConfigLoading} delay={400}>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('order.operator.scheduleTimeExecuteConfirmLabel')}
+            tips={t('order.operator.scheduleTimeExecuteConfirmTips')}
+          />
+        }
+        name="notification_confirmation"
+        labelCol={{ span: 20 }}
+        wrapperCol={{ span: 2, push: 1 }}
+        valuePropName="checked"
+      >
+        <BasicSwitch />
+      </FormItemLabel>
+      <EmptyBox if={enable}>
+        <ConfirmMethodFormItemLabelStyleWrapper
+          className="has-label-tip has-required-style"
+          label={
+            <CustomLabelContent
+              title={t('order.operator.scheduleTimeExecuteConfirmMethod')}
+              tips={
+                <Trans
+                  i18nKey={
+                    'order.operator.scheduleTimeExecuteConfirmMethodTips'
+                  }
+                >
+                  {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+                  <Link
+                    target="_blank"
+                    to="/system?active_tab=process_connection"
+                  />
+                </Trans>
+              }
+            />
+          }
+          name="confirmation_method"
+          labelCol={{ span: 16 }}
+          wrapperCol={{ span: 6, push: 2 }}
+          rules={[
+            {
+              required: true,
+              message: t('common.form.placeholder.select', {
+                name: t('order.operator.scheduleTimeExecuteConfirmMethod')
+              })
+            }
+          ]}
+        >
+          <ToggleTokens<UpdateWorkflowScheduleReqV2NotifyTypeEnum>
+            direction="vertical"
+            options={confirmTypeTokens}
+            className="full-width-element"
+          />
+        </ConfirmMethodFormItemLabelStyleWrapper>
+      </EmptyBox>
+    </Spin>
+  );
+};
+
+export default ConfirmationSettingForm;
