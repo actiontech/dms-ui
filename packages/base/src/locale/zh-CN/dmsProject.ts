@@ -58,7 +58,12 @@ export default {
     successTitle: '导入项目及业务成功',
     successTips: '到项目列表查看刚刚导入的项目',
     importingFile: '正在导入文件...',
-    downloadTemplate: '下载导入模板'
+    downloadTemplate: '下载导入模板',
+    table: {
+      project: '项目',
+      desc: '描述',
+      business: '业务'
+    }
   },
   backToList: '返回项目列表'
 };
