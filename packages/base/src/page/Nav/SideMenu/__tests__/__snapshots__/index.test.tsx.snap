@@ -4,7 +4,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-2df5or"
+      class="dms-layout-side css-13dah2i"
     >
       <div
         class="dms-layout-side-start"
@@ -1225,7 +1225,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-2df5or"
+      class="dms-layout-side css-13dah2i"
     >
       <div
         class="dms-layout-side-start"
@@ -2423,7 +2423,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-2df5or"
+      class="dms-layout-side css-13dah2i"
     >
       <div
         class="dms-layout-side-start"

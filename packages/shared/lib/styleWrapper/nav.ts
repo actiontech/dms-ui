@@ -16,6 +16,10 @@ export const SideMenuStyleWrapper = styled('div')`
     box-shadow: ${({ theme }) => theme.sharedTheme.nav.boxShadow};
     border-right: ${({ theme }) => theme.sharedTheme.nav.border};
 
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
     &:hover {
       overflow-y: auto;
     }
