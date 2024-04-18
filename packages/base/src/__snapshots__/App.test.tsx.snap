@@ -10,7 +10,7 @@ exports[`App render App when token is existed 1`] = `
     class="css-m36rcd"
   >
     <div
-      class="dms-layout-side css-2df5or"
+      class="dms-layout-side css-13dah2i"
     >
       <div
         class="dms-layout-side-start"
@@ -1238,7 +1238,7 @@ exports[`App render App when user role is not admin 1`] = `
     class="css-m36rcd"
   >
     <div
-      class="dms-layout-side css-2df5or"
+      class="dms-layout-side css-13dah2i"
     >
       <div
         class="dms-layout-side-start"
