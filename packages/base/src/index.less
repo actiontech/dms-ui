@@ -28,3 +28,16 @@ body * {
 a {
   text-decoration: none;
 }
+
+body,
+body * {
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--scrollbar-background-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-background-color);
+    border-radius: 2px;
+  }
+}
