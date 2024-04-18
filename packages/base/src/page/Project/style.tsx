@@ -16,4 +16,12 @@ export const ImportProjectUploadFileWrapper = styled('div')`
     padding-top: 60px;
     padding-bottom: 80px;
   }
+
+  & .ellipsis-column-small-width {
+    max-width: 160px;
+
+    .ant-typography-copy {
+      visibility: hidden;
+    }
+  }
 `;
