@@ -8,10 +8,23 @@ export type ToggleTokensOptionsType = Array<
   | string
 >;
 
-export type ToggleTokensProps<V = string> = {
+type BaseToggleTokenPropsType = Omit<SpaceProps, 'onChange'> & {
   options: ToggleTokensOptionsType;
+  withCheckbox?: boolean;
+};
+
+type ToggleTokensMultipleModeProps<V = string> = {
+  value?: V[];
+  onChange?: (val?: V[]) => void;
+  multiple: true;
+};
+
+type ToggleTokensSingleModeProps<V = string> = {
   value?: V;
   onChange?: (val?: V) => void;
-  multiple?: boolean;
-  withCheckbox?: boolean;
-} & Omit<SpaceProps, 'onChange'>;
+  multiple?: false;
+};
+
+export type ToggleTokensProps<V = string> =
+  | (BaseToggleTokenPropsType & ToggleTokensMultipleModeProps<V>)
+  | (BaseToggleTokenPropsType & ToggleTokensSingleModeProps<V>);

@@ -24,7 +24,7 @@ const ToggleTokens = <V = string,>({
   // #endif
 
   const [internalValue, setInternalValue] = useControllableValue<V | V[]>(
-    typeof value !== 'undefined' || onChange
+    typeof value !== 'undefined' && onChange
       ? {
           value,
           onChange
