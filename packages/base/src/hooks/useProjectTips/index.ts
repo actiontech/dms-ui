@@ -11,6 +11,7 @@ const useProjectTips = () => {
   const { projectID } = useCurrentProject();
 
   const updateProjectTips = useCallback(() => {
+    // #if [ee]
     setTrue();
     dms
       .GetProjectTips({
@@ -32,6 +33,7 @@ const useProjectTips = () => {
       .finally(() => {
         setFalse();
       });
+    // #endif
   }, [setFalse, setTrue, projectID]);
 
   const projectBusinessOption = useCallback(() => {
