@@ -9,6 +9,7 @@ class ConfigurationMockApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getDrivers();
     this.getWechatAuditConfiguration();
+    this.getFeishuAuditConfiguration();
   }
 
   public getDrivers() {
@@ -28,6 +29,18 @@ class ConfigurationMockApi implements MockSpyApy {
         data: {
           corp_id: '',
           is_wechat_notification_enabled: false
+        }
+      })
+    );
+    return spy;
+  }
+
+  public getFeishuAuditConfiguration() {
+    const spy = jest.spyOn(configuration, 'getFeishuAuditConfigurationV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_feishu_notification_enabled: false
         }
       })
     );

@@ -126,8 +126,9 @@ export default {
       '若开启，到达上线时间点，平台将发送一则上线确认信息，确认后执行上线操作；若不开启，到达上线时间将自动执行上线操作',
     scheduleTimeExecuteConfirmMethod: '确认方式',
     scheduleTimeExecuteConfirmMethodTips:
-      '目前仅支持企业微信，如您尚未配置企业微信对接能力，请先到<0>系统设置-流程对接</0>处开启',
+      '目前仅支持企业微信、飞书，如果您尚未配置相应流程的对接能力，请先到<0>系统设置-流程对接</0>处开启',
     confirmMethodWechat: '企业微信',
+    confirmMethodFeishu: '飞书',
 
     approveSuccessTips: '审批通过',
     rejectSuccessTips: '驳回成功',
