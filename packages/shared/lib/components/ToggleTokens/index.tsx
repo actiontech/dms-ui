@@ -6,7 +6,7 @@ import { useControllableValue } from 'ahooks';
 import { Checkbox } from 'antd';
 import EmptyBox from '../EmptyBox';
 
-const ToggleTokens = <V = string,>({
+const ToggleTokens = <V extends string | number | null = string>({
   className,
   options,
   value,

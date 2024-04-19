@@ -50,7 +50,7 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
           if (enableFeishu) {
             list.push({
               label: t('order.operator.confirmMethodFeishu'),
-              value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.Feishu
+              value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.feishu
             });
           }
 

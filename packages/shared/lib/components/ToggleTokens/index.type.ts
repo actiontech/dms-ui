@@ -13,18 +13,19 @@ type BaseToggleTokenPropsType = Omit<SpaceProps, 'onChange'> & {
   withCheckbox?: boolean;
 };
 
-type ToggleTokensMultipleModeProps<V = string> = {
-  value?: V[];
-  onChange?: (val?: V[]) => void;
-  multiple: true;
-};
+type ToggleTokensMultipleModeProps<V extends string | number | null = string> =
+  {
+    value?: V[];
+    onChange?: (val?: V[]) => void;
+    multiple: true;
+  };
 
-type ToggleTokensSingleModeProps<V = string> = {
+type ToggleTokensSingleModeProps<V extends string | number | null = string> = {
   value?: V;
   onChange?: (val?: V) => void;
   multiple?: false;
 };
 
-export type ToggleTokensProps<V = string> =
+export type ToggleTokensProps<V extends string | number | null = string> =
   | (BaseToggleTokenPropsType & ToggleTokensMultipleModeProps<V>)
   | (BaseToggleTokenPropsType & ToggleTokensSingleModeProps<V>);
