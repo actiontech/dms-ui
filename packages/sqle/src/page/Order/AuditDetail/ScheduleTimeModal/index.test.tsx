@@ -298,7 +298,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     expect(submitFn).toHaveBeenCalledWith(
       '2024-12-29T06:06:06+08:00',
       true,
-      UpdateWorkflowScheduleReqV2NotifyTypeEnum.Feishu
+      UpdateWorkflowScheduleReqV2NotifyTypeEnum.feishu
     );
   });
 });

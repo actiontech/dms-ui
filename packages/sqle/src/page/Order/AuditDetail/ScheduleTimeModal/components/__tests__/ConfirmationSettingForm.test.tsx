@@ -33,7 +33,7 @@ describe('test ConfirmationSettingForm.test', () => {
     },
     {
       label: '飞书',
-      value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.Feishu
+      value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.feishu
     }
   ];
 
