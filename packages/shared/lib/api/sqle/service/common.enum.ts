@@ -375,7 +375,9 @@ export enum GetWorkflowTasksItemV2StatusEnum {
 }
 
 export enum UpdateWorkflowScheduleReqV2NotifyTypeEnum {
-  'Wechat' = 'Wechat'
+  'Wechat' = 'Wechat',
+
+  'feishu' = 'feishu'
 }
 
 export enum WorkflowRecordResV2StatusEnum {
