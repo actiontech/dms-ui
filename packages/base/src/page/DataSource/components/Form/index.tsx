@@ -240,8 +240,13 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   useEffect(() => {
     updateDriverList();
+  }, [updateDriverList]);
+
+  // #if [ee]
+  useEffect(() => {
     updateProjectTips();
-  }, [updateDriverList, updateProjectTips]);
+  }, [updateProjectTips]);
+  // #endif
 
   const hasBorder = () => {
     let border = false;
