@@ -88,4 +88,25 @@ describe('sqle/Order/Common/DownloadRecord', () => {
       { responseType: 'blob' }
     );
   });
+
+  it('render down report when duplicate is false', async () => {
+    customRender({
+      taskId: 'task Id',
+      duplicate: false
+    });
+    fireEvent.click(screen.getByText('下载'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('下载审核报告')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('下载审核报告'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestDownloadReport).toHaveBeenCalled();
+    expect(requestDownloadReport).toHaveBeenCalledWith(
+      {
+        task_id: 'task Id',
+        no_duplicate: false
+      },
+      { responseType: 'blob' }
+    );
+  });
 });
