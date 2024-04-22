@@ -295,7 +295,7 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
           >
             {t('order.createOrder.auditResult.duplicate')}
           </ToggleButtonStyleWrapper>
-          <DownloadRecord taskId={auditResultActiveKey} duplicate />
+          <DownloadRecord taskId={auditResultActiveKey} duplicate={duplicate} />
           <ListLayoutSelector
             value={currentListLayout}
             onChange={onLayoutChange}
