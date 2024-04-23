@@ -1,6 +1,7 @@
 import {
   ICreateAuditTasksGroupReqV1,
   ICreateAuditTasksGroupResV1,
+  ICreateAuditTaskReqV1,
   IGetAuditTaskResV1,
   IAuditTaskGroupResV1,
   IBaseRes,
@@ -28,7 +29,7 @@ export interface ICreateAuditTasksV1Params extends ICreateAuditTasksGroupReqV1 {
 export interface ICreateAuditTasksV1Return
   extends ICreateAuditTasksGroupResV1 {}
 
-export interface ICreateAndAuditTaskV1Params {
+export interface ICreateAndAuditTaskV1Params extends ICreateAuditTaskReqV1 {
   project_name: string;
 
   instance_name: string;

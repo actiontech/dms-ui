@@ -8,6 +8,8 @@ import {
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
   BatchUpdateSqlManageReqStatusEnum,
+  CreateAuditTaskReqV1ExecModeEnum,
+  CreateAuditTasksGroupReqV1ExecuteModeEnum,
   CreateAuditWhitelistReqV1MatchTypeEnum,
   CreateCustomRuleReqV1LevelEnum,
   CustomRuleResV1LevelEnum,
@@ -40,6 +42,7 @@ import {
   GetWorkflowTasksItemV2StatusEnum,
   UpdateWorkflowScheduleReqV2NotifyTypeEnum,
   WorkflowRecordResV2StatusEnum,
+  WorkflowResV2ExecModeEnum,
   WorkflowResV2ModeEnum,
   WorkflowStepResV2StateEnum,
   WorkflowStepResV2TypeEnum
@@ -367,7 +370,19 @@ export interface ICreateAuditPlanReqV1 {
   rule_template_name?: string;
 }
 
+export interface ICreateAuditTaskReqV1 {
+  exec_mode?: CreateAuditTaskReqV1ExecModeEnum;
+
+  instance_name?: string;
+
+  instance_schema?: string;
+
+  sql?: string;
+}
+
 export interface ICreateAuditTasksGroupReqV1 {
+  execute_mode?: CreateAuditTasksGroupReqV1ExecuteModeEnum;
+
   instances?: IInstanceForCreatingTask[];
 }
 
@@ -531,6 +546,18 @@ export interface IExplainClassicResult {
   rows?: Array<{
     [key: string]: string;
   }>;
+}
+
+export interface IExplainValidationDetail {
+  after_cost?: number;
+
+  after_plan?: string;
+
+  before_cost?: number;
+
+  before_plan?: string;
+
+  perform_improve_per?: number;
 }
 
 export interface IFeishuConfigurationV1 {
@@ -795,6 +822,14 @@ export interface IGetLicenseUsageResV1 {
   message?: string;
 }
 
+export interface IGetModuleStatusResV1 {
+  code?: number;
+
+  data?: IModuleStatusRes;
+
+  message?: string;
+}
+
 export interface IGetOperationActionListResV1 {
   code?: number;
 
@@ -827,6 +862,42 @@ export interface IGetOperationsResV1 {
   data?: IOperationResV1[];
 
   message?: string;
+}
+
+export interface IGetOptimizationRecordRes {
+  code?: number;
+
+  data?: IOptimizationDetail;
+
+  message?: string;
+}
+
+export interface IGetOptimizationRecordsRes {
+  code?: number;
+
+  data?: IOptimizationRecord[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetOptimizationSQLRes {
+  code?: number;
+
+  data?: IOptimizationSQLDetail;
+
+  message?: string;
+}
+
+export interface IGetOptimizationSQLsRes {
+  code?: number;
+
+  data?: IOptimizationSQL[];
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IGetProjectRuleTemplateResV1 {
@@ -1333,6 +1404,10 @@ export interface IMaintenanceTimeResV1 {
   maintenance_stop_time?: ITimeResV1;
 }
 
+export interface IModuleStatusRes {
+  is_supported?: boolean;
+}
+
 export interface IOperationActionList {
   desc?: string;
 
@@ -1375,6 +1450,110 @@ export interface IOperationUser {
   ip?: string;
 
   user_name?: string;
+}
+
+export interface IOptimizationDetail {
+  basic_summary?: IOptimizationsummary;
+
+  created_time?: string;
+
+  created_user?: string;
+
+  db_type?: string;
+
+  index_recommendations?: string[];
+
+  instance_name?: string;
+
+  optimization_id?: string;
+
+  optimization_name?: string;
+}
+
+export interface IOptimizationRecord {
+  created_time?: string;
+
+  created_user?: string;
+
+  db_type?: string;
+
+  instance_name?: string;
+
+  optimization_id?: string;
+
+  optimization_name?: string;
+
+  performance_gain?: number;
+}
+
+export interface IOptimizationSQL {
+  contributing_indices?: string;
+
+  number?: number;
+
+  number_of_hit_index?: number;
+
+  number_of_index?: number;
+
+  number_of_rewrite?: number;
+
+  number_of_syntax_error?: number;
+
+  original_sql?: string;
+
+  performance?: number;
+}
+
+export interface IOptimizationSQLDetail {
+  explain_validation_details?: IExplainValidationDetail;
+
+  index_recommendations?: string[];
+
+  optimized_sql?: string;
+
+  original_sql?: string;
+
+  triggered_rule?: IRewriteRule[];
+}
+
+export interface IOptimizationsummary {
+  number_of_index?: number;
+
+  number_of_query?: number;
+
+  number_of_query_index?: number;
+
+  number_of_rewrite?: number;
+
+  number_of_rewritten_query?: number;
+
+  number_of_syntax_error?: number;
+
+  performance_gain?: number;
+}
+
+export interface IOptimizeSQLReq {
+  db_type?: string;
+
+  instance_name?: string;
+
+  optimization_name?: string;
+
+  schema_name?: string;
+
+  sql_content?: string;
+}
+
+export interface IOptimizeSQLRes {
+  code?: number;
+
+  data?: IOptimizeSQLResData;
+
+  message?: string;
+}
+
+export interface IOptimizeSQLResData {
+  sql_optimization_record_id?: string;
 }
 
 export interface IParseProjectRuleTemplateFileResDataV1 {
@@ -1423,6 +1602,18 @@ export interface IRecordSource {
 
 export interface IRejectWorkflowReqV1 {
   reason?: string;
+}
+
+export interface IRewriteRule {
+  message?: string;
+
+  rewritten_queries_str?: string;
+
+  rule_code?: string;
+
+  rule_name?: string;
+
+  violated_queries_str?: string;
 }
 
 export interface IRiskAuditPlan {
@@ -2545,6 +2736,8 @@ export interface IWorkflowResV2 {
   create_user_name?: string;
 
   desc?: string;
+
+  exec_mode?: WorkflowResV2ExecModeEnum;
 
   mode?: WorkflowResV2ModeEnum;
 
