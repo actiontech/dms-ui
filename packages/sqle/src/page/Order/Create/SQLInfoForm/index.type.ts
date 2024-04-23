@@ -4,6 +4,7 @@ import { SQLStatementFields } from '../../SQLStatementForm';
 import { CreateOrderFormStateType } from '../index.type';
 import { OrderBaseInfoFormFields } from '../BaseInfoForm/index.type';
 import { Key } from 'react';
+import { CreateAuditTasksGroupReqV1ExecuteModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type SQLInfoFormProps = {
   form: FormInstance<SQLInfoFormFields>;
@@ -14,6 +15,8 @@ export type SQLInfoFormProps = {
   instanceNameChange: (name: string) => void;
   projectName: string;
   projectID: string;
+  isSupportFileModeExecuteSQL: boolean;
+  setIsSupportFileModeExecuteSQL: (val: boolean) => void;
 } & CreateOrderFormStateType;
 
 export type DatabaseInfoFields = {
@@ -24,7 +27,12 @@ export type DatabaseInfoFields = {
 export type SQLInfoFormFields = {
   isSameSqlOrder: boolean;
   dataBaseInfo: Array<DatabaseInfoFields>;
-  [key: string]: SQLStatementFields | boolean | Array<DatabaseInfoFields>;
+  executeMode: CreateAuditTasksGroupReqV1ExecuteModeEnum;
+  [key: string]:
+    | SQLStatementFields
+    | boolean
+    | Array<DatabaseInfoFields>
+    | CreateAuditTasksGroupReqV1ExecuteModeEnum;
 };
 
 export type DatabaseInfoProps = Pick<
@@ -38,6 +46,7 @@ export type DatabaseInfoProps = Pick<
   | 'setSchemaList'
   | 'ruleTemplates'
   | 'setRuleTemplates'
+  | 'setIsSupportFileModeExecuteSQL'
 > & {
   setChangeSqlModeDisabled: (disabled: boolean) => void;
 };

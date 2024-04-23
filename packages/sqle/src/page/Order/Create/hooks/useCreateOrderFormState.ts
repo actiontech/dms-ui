@@ -17,6 +17,9 @@ const useCreateOrderFormState = () => {
   );
 
   const [changeSqlModeDisabled, setChangeSqlModeDisabled] = useState(false);
+  const [isSupportFileModeExecuteSQL, setIsSupportFileModeExecuteSQL] =
+    useState(false);
+
   const [currentSqlMode, setCurrentSqlMode] = useState(
     WorkflowResV2ModeEnum.same_sqls
   );
@@ -39,7 +42,9 @@ const useCreateOrderFormState = () => {
     setInstanceInfo,
     auditLoading,
     finishAudit,
-    startAudit
+    startAudit,
+    isSupportFileModeExecuteSQL,
+    setIsSupportFileModeExecuteSQL
   };
 };
 

@@ -381,7 +381,7 @@ export interface ICreateAuditTaskReqV1 {
 }
 
 export interface ICreateAuditTasksGroupReqV1 {
-  execute_mode?: CreateAuditTasksGroupReqV1ExecuteModeEnum;
+  exec_mode?: CreateAuditTasksGroupReqV1ExecuteModeEnum;
 
   instances?: IInstanceForCreatingTask[];
 }

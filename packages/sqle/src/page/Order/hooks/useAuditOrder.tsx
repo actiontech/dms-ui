@@ -4,7 +4,10 @@ import { ResponseCode } from '../../../data/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useAllowAuditLevel } from './useAllowAuditLevel';
 import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  CreateAuditTaskReqV1ExecModeEnum,
+  WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   ICreateAuditTasksV1Params,
   IAuditTaskGroupIdV1Params,
@@ -65,6 +68,8 @@ const useAuditOrder = () => {
    * 相同 sql 模式下的表单提交
    * @param values 提交的表单数据
    *
+   * 2024.04.23 changelog: 支持sql上线、文件上线模式
+   *
    * values 数据格式:
    * {
    *    0: SqlStatementFields, sql语句信息, 因为相同sql模式下只会有一份该数据, 所以默认 key 值取 ‘0’, 这里的 ‘0’ 来自 SqlStatementForm 中的 generateFieldName
@@ -80,6 +85,9 @@ const useAuditOrder = () => {
       const sqlStatementInfo = values['0'] as SQLStatementFields;
 
       const createAuditTasksParams: ICreateAuditTasksV1Params = {
+        // #if [ee]
+        exec_mode: values.executeMode,
+        // #endif
         project_name: projectName,
         instances:
           values.dataBaseInfo.map((v) => ({
@@ -121,6 +129,8 @@ const useAuditOrder = () => {
    *
    * 2023.09.19 changelog: 审核多数据源时批量审核
    *
+   * 2024.04.23 changelog: 支持sql上线、文件上线模式
+   *
    * @param values 提交的表单数据
    *
    * values 数据格式
@@ -145,7 +155,11 @@ const useAuditOrder = () => {
             sql: sqlStatementInfo.sql,
             input_sql_file: sqlStatementInfo.sqlFile?.[0],
             input_mybatis_xml_file: sqlStatementInfo.mybatisFile?.[0],
-            input_zip_file: sqlStatementInfo.zipFile?.[0]
+            input_zip_file: sqlStatementInfo.zipFile?.[0],
+            // #if [ee]
+            exec_mode:
+              values.executeMode as unknown as CreateAuditTaskReqV1ExecModeEnum
+            // #endif
           };
         });
 

@@ -4,7 +4,6 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { renderWithThemeAndRedux } from '../../../../../testUtils/customRender';
 import { mockDatabaseType } from '../../../../../testUtils/mockHooks/mockDatabaseType';
-
 import SQLInfoFormItem from '../SQLInfoFormItem';
 import { SQLInfoFormFields, SQLInfoFormItemProps } from '../index.type';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -19,6 +18,7 @@ describe('sqle/Order/Create/SQLInfoFormItem', () => {
   const setChangeSqlModeDisabledFn = jest.fn();
   const setInstanceInfoFn = jest.fn();
   const setCurrentSqlModeFn = jest.fn();
+  const setIsSupportFileModeExecuteSQLFn = jest.fn();
 
   const customRender = () => {
     const { result } = renderHooksWithTheme(() =>
@@ -40,7 +40,9 @@ describe('sqle/Order/Create/SQLInfoFormItem', () => {
       setCurrentSqlMode: setCurrentSqlModeFn,
       instanceInfo: new Map([[0, { instanceName: 'instance name 1' }]]),
       setInstanceInfo: setInstanceInfoFn,
-      auditLoading: false
+      auditLoading: false,
+      isSupportFileModeExecuteSQL: false,
+      setIsSupportFileModeExecuteSQL: setIsSupportFileModeExecuteSQLFn
     };
     return renderWithThemeAndRedux(
       <Form>

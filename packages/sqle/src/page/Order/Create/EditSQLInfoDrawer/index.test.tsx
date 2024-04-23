@@ -48,7 +48,9 @@ describe('sqle/Order/Create/EditSQLInfoDrawer', () => {
           }
         ]
       ]),
-      setInstanceInfo: jest.fn()
+      setInstanceInfo: jest.fn(),
+      isSupportFileModeExecuteSQL: false,
+      setIsSupportFileModeExecuteSQL: jest.fn()
     };
     return renderWithThemeAndRedux(
       <EditSQLInfoDrawer {...params} {...intoParams} />
