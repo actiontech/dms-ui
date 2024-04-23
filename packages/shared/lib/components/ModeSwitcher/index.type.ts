@@ -16,4 +16,5 @@ export type ModeSwitcherProps<V extends string | number = string> = {
   options: ModeSwitcherOptionsType;
   className?: string;
   rowProps?: RowProps;
+  disabled?: boolean;
 };

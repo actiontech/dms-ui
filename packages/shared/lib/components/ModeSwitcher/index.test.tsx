@@ -127,4 +127,31 @@ describe('test ModeSwitcher', () => {
 
     expect(screen.getByText('value2')).toBeInTheDocument();
   });
+
+  it('render snapshot when disabled props is equal true', () => {
+    const { container } = superRender(
+      <ModeSwitcher options={list_2} disabled />
+    );
+
+    expect(container).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('label1'));
+
+    expect(screen.getByText('label1').parentNode).not.toHaveClass(
+      'actiontech-mode-switcher-item-active'
+    );
+
+    fireEvent.click(screen.getByText('label2'));
+    expect(screen.getByText('label1').parentNode).not.toHaveClass(
+      'actiontech-mode-switcher-item-active'
+    );
+    expect(screen.getByText('label2').parentNode).not.toHaveClass(
+      'actiontech-mode-switcher-item-active'
+    );
+    fireEvent.click(screen.getByText('label3'));
+
+    expect(screen.getByText('label3').parentNode).not.toHaveClass(
+      'actiontech-mode-switcher-item-active'
+    );
+  });
 });

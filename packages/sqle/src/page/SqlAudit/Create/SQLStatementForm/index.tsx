@@ -6,12 +6,12 @@ import {
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
-import { BasicInput, EmptyBox } from '@actiontech/shared';
+import { BasicInput, EmptyBox, ModeSwitcher } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
-import SqlUploadType from './SqlUploadType';
+import { uploadTypeOptions } from './index.data';
 
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
@@ -49,7 +49,11 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
         wrapperCol={{ span: 24 }}
         labelCol={{ span: 24 }}
       >
-        <SqlUploadType />
+        <ModeSwitcher
+          rowProps={{ gutter: [10, 10] }}
+          options={uploadTypeOptions}
+          disabled={submitLoading}
+        />
       </FormItemLabel>
       <EmptyBox
         if={uploadType === UploadTypeEnum.git}
