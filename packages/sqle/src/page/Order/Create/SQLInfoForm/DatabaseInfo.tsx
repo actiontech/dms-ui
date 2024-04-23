@@ -29,6 +29,11 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import useTestDatabaseConnect from '../hooks/useTestDatabaseConnect';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import system from '@actiontech/shared/lib/api/sqle/service/system';
+import {
+  getSystemModuleStatusDbTypeEnum,
+  getSystemModuleStatusModuleNameEnum
+} from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 
 const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   form,
@@ -40,7 +45,8 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   schemaList,
   setSchemaList,
   ruleTemplates,
-  setRuleTemplates
+  setRuleTemplates,
+  setIsSupportFileModeExecuteSQL
 }) => {
   const { t } = useTranslation();
   const [getSchemaListLoading, setGetSchemaListLoading] = useState<
@@ -120,6 +126,23 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
       });
   };
 
+  // #if [ee]
+  const getSupportedFileModeByInstanceType = (types: string[]) => {
+    Promise.all(
+      types.map((type) => {
+        return system.getSystemModuleStatus({
+          db_type: type as getSystemModuleStatusDbTypeEnum,
+          module_name: getSystemModuleStatusModuleNameEnum.execute_sql_file_mode
+        });
+      })
+    ).then((res) => {
+      setIsSupportFileModeExecuteSQL(
+        res.every((item) => !!item.data.data?.is_supported)
+      );
+    });
+  };
+  // #endif
+
   const getInstanceTypeWithAction = (
     key: number,
     type: 'add' | 'remove',
@@ -133,6 +156,12 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
     const instanceTypeSet = new Set(instanceTypeMap.current.values());
     const isExistDifferentInstanceType = instanceTypeSet.size > 1;
     setChangeSqlModeDisabled(isExistDifferentInstanceType);
+
+    // #if [ee]
+    getSupportedFileModeByInstanceType(
+      Array.from(instanceTypeMap.current).map(([name, value]) => value)
+    );
+    // #endif
   };
 
   const handleInstanceNameChange = (name: string, fieldKey: number) => {

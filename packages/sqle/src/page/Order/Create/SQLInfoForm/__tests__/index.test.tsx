@@ -30,7 +30,9 @@ describe('sqle/Order/Create/SQLInfoForm', () => {
       setCurrentSqlMode: jest.fn(),
       instanceInfo: new Map([[0, { instanceName: 'instance name 1' }]]),
       setInstanceInfo: jest.fn(),
-      auditLoading: false
+      auditLoading: false,
+      isSupportFileModeExecuteSQL: false,
+      setIsSupportFileModeExecuteSQL: jest.fn()
     };
     return superRender(<SQLInfoForm form={result.current[0]} {...params} />);
   };
