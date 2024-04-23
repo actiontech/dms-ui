@@ -4,13 +4,15 @@ import { ModeSwitcherItemStyleWrapper } from './style';
 import classNames from 'classnames';
 import { IconModeSwitcherChecked } from '../../Icon/common';
 import { Col, Row } from 'antd';
+import EmptyBox from '../EmptyBox';
 
 const ModeSwitcher = <V extends string | number = string>({
   className,
   options,
   value,
   onChange,
-  rowProps
+  rowProps,
+  disabled
 }: ModeSwitcherProps) => {
   const [internalValue, setInternalValue] = useControllableValue<V>(
     typeof value !== 'undefined' && onChange
@@ -41,15 +43,21 @@ const ModeSwitcher = <V extends string | number = string>({
         return (
           <Col {...colProps} key={itemValue}>
             <ModeSwitcherItemStyleWrapper
-              active={active}
               className={classNames('actiontech-mode-switcher-item', {
-                'actiontech-mode-switcher-item-active': active
+                'actiontech-mode-switcher-item-active': active,
+                'actiontech-mode-switcher-item-disabled': disabled
               })}
               onClick={() => {
-                setInternalValue(itemValue);
+                if (!disabled) {
+                  setInternalValue(itemValue);
+                }
               }}
             >
-              <span className="actiontech-mode-switcher-item-icon">{icon}</span>
+              <EmptyBox if={!!icon}>
+                <span className="actiontech-mode-switcher-item-icon">
+                  {icon}
+                </span>
+              </EmptyBox>
               <span className="actiontech-mode-switcher-item-text">
                 {label}
               </span>
