@@ -888,7 +888,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -949,7 +949,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -1011,7 +1011,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -1152,7 +1152,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -1213,7 +1213,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -3122,7 +3122,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -3183,7 +3183,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -3245,7 +3245,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -3386,7 +3386,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -3447,7 +3447,7 @@ exports[`sqle/Order/CreateOrder render create order when task info list is null 
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -5604,7 +5604,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 1`] = 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -5665,7 +5665,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 1`] = 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -5727,7 +5727,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 1`] = 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -5868,7 +5868,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 1`] = 
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -5930,7 +5930,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 1`] = 
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -7838,7 +7838,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 2`] = 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -7899,7 +7899,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 2`] = 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -7961,7 +7961,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 2`] = 
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -8102,7 +8102,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 2`] = 
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -8164,7 +8164,7 @@ exports[`sqle/Order/CreateOrder render create order when task sql is null 2`] = 
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -10427,7 +10427,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -10488,7 +10488,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -10550,7 +10550,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -10691,7 +10691,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -10752,7 +10752,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -12661,7 +12661,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -12722,7 +12722,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -12784,7 +12784,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -12925,7 +12925,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -12986,7 +12986,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -15601,7 +15601,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -15662,7 +15662,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -15724,7 +15724,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -15865,7 +15865,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -15926,7 +15926,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -18547,7 +18547,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -18608,7 +18608,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-17cv6jf"
+                                      class="actiontech-mode-switcher-item css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -18670,7 +18670,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-17cv6jf"
+                                      class="actiontech-mode-switcher-item css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -18811,7 +18811,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                   style="padding-left: 5px; padding-right: 5px;"
                                 >
                                   <div
-                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                   >
                                     <span
                                       class="actiontech-mode-switcher-item-icon"
@@ -18872,7 +18872,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                   style="padding-left: 5px; padding-right: 5px;"
                                 >
                                   <div
-                                    class="actiontech-mode-switcher-item css-17cv6jf"
+                                    class="actiontech-mode-switcher-item css-1x7j8vu"
                                   >
                                     <span
                                       class="actiontech-mode-switcher-item-icon"
@@ -19971,7 +19971,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -20032,7 +20032,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -20094,7 +20094,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -20235,7 +20235,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -20296,7 +20296,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -22987,7 +22987,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -23048,7 +23048,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-17cv6jf"
+                                      class="actiontech-mode-switcher-item css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -23110,7 +23110,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-17cv6jf"
+                                      class="actiontech-mode-switcher-item css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -23251,7 +23251,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                   style="padding-left: 5px; padding-right: 5px;"
                                 >
                                   <div
-                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                   >
                                     <span
                                       class="actiontech-mode-switcher-item-icon"
@@ -23312,7 +23312,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                   style="padding-left: 5px; padding-right: 5px;"
                                 >
                                   <div
-                                    class="actiontech-mode-switcher-item css-17cv6jf"
+                                    class="actiontech-mode-switcher-item css-1x7j8vu"
                                   >
                                     <span
                                       class="actiontech-mode-switcher-item-icon"
@@ -24400,7 +24400,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -24461,7 +24461,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -24523,7 +24523,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-17cv6jf"
+                                  class="actiontech-mode-switcher-item css-1x7j8vu"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -24664,7 +24664,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -24725,7 +24725,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -26617,7 +26617,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -26678,7 +26678,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-17cv6jf"
+                                      class="actiontech-mode-switcher-item css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -26740,7 +26740,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-17cv6jf"
+                                      class="actiontech-mode-switcher-item css-1x7j8vu"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -26881,7 +26881,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                   style="padding-left: 5px; padding-right: 5px;"
                                 >
                                   <div
-                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                                   >
                                     <span
                                       class="actiontech-mode-switcher-item-icon"
@@ -26942,7 +26942,7 @@ exports[`sqle/Order/CreateOrder render form for click audit btn for diff same sq
                                   style="padding-left: 5px; padding-right: 5px;"
                                 >
                                   <div
-                                    class="actiontech-mode-switcher-item css-17cv6jf"
+                                    class="actiontech-mode-switcher-item css-1x7j8vu"
                                   >
                                     <span
                                       class="actiontech-mode-switcher-item-icon"
@@ -27930,7 +27930,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 1`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -27991,7 +27991,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 1`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -28053,7 +28053,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 1`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -29535,7 +29535,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 2`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -29596,7 +29596,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 2`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -29658,7 +29658,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 2`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -29798,7 +29798,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 2`] = `
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -29859,7 +29859,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 2`] = `
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -31668,7 +31668,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 3`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -31729,7 +31729,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 3`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -31791,7 +31791,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 3`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -31931,7 +31931,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 3`] = `
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -31992,7 +31992,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 3`] = `
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -33827,7 +33827,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 4`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -33888,7 +33888,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 4`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -33950,7 +33950,7 @@ exports[`sqle/Order/CreateOrder render format sql for diff mode 4`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -34094,7 +34094,7 @@ from
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -34155,7 +34155,7 @@ from
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -36291,7 +36291,7 @@ exports[`sqle/Order/CreateOrder render reset form 1`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -36353,7 +36353,7 @@ exports[`sqle/Order/CreateOrder render reset form 1`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -36414,7 +36414,7 @@ exports[`sqle/Order/CreateOrder render reset form 1`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -36594,7 +36594,7 @@ exports[`sqle/Order/CreateOrder render reset form 1`] = `
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -36655,7 +36655,7 @@ exports[`sqle/Order/CreateOrder render reset form 1`] = `
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -38063,7 +38063,7 @@ exports[`sqle/Order/CreateOrder render reset form 2`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -38124,7 +38124,7 @@ exports[`sqle/Order/CreateOrder render reset form 2`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -38186,7 +38186,7 @@ exports[`sqle/Order/CreateOrder render reset form 2`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -39653,7 +39653,7 @@ exports[`sqle/Order/CreateOrder render snap when create order init 6`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -39714,7 +39714,7 @@ exports[`sqle/Order/CreateOrder render snap when create order init 6`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -39776,7 +39776,7 @@ exports[`sqle/Order/CreateOrder render snap when create order init 6`] = `
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-17cv6jf"
+                                class="actiontech-mode-switcher-item css-1x7j8vu"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"

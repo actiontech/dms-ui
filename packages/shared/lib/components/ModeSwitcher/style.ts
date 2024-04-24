@@ -31,7 +31,12 @@ export const ModeSwitcherItemStyleWrapper = styled('div')`
       text-align: center;
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
     }
+
+    .actiontech-mode-switcher-item-text.only-text {
+      width: 100%;
+    }
   }
+
   &.actiontech-mode-switcher-item-active {
     border: 1px solid ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
 
@@ -62,10 +67,12 @@ export const ModeSwitcherItemStyleWrapper = styled('div')`
       }
     }
   }
+
   &.actiontech-mode-switcher-item-disabled {
     cursor: not-allowed;
     background-color: ${({ theme }) =>
       theme.sharedTheme.uiToken.colorFillTertiary};
+
     .actiontech-mode-switcher-item-icon {
       color: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorTextTertiary} !important;

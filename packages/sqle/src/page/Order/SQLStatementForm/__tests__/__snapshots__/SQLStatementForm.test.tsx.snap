@@ -40,7 +40,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for input sqle code 1`] 
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -101,7 +101,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for input sqle code 1`] 
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item css-17cv6jf"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -163,7 +163,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for input sqle code 1`] 
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item css-17cv6jf"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -271,7 +271,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for upload sqle file 1`]
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item css-17cv6jf"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -333,7 +333,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for upload sqle file 1`]
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -394,7 +394,7 @@ exports[`sqle/Order/SQLStatementForm render change mode for upload sqle file 1`]
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item css-17cv6jf"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -502,7 +502,7 @@ exports[`sqle/Order/SQLStatementForm render click hideUpdateMybatisFile & isClea
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -563,7 +563,7 @@ exports[`sqle/Order/SQLStatementForm render click hideUpdateMybatisFile & isClea
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item css-17cv6jf"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -625,7 +625,7 @@ exports[`sqle/Order/SQLStatementForm render click hideUpdateMybatisFile & isClea
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item css-17cv6jf"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -733,7 +733,7 @@ exports[`sqle/Order/SQLStatementForm render snap 1`] = `
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -794,7 +794,7 @@ exports[`sqle/Order/SQLStatementForm render snap 1`] = `
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item css-17cv6jf"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -856,7 +856,7 @@ exports[`sqle/Order/SQLStatementForm render snap 1`] = `
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item css-17cv6jf"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"

@@ -58,7 +58,11 @@ const ModeSwitcher = <V extends string | number = string>({
                   {icon}
                 </span>
               </EmptyBox>
-              <span className="actiontech-mode-switcher-item-text">
+              <span
+                className={classNames('actiontech-mode-switcher-item-text', {
+                  'only-text': !icon
+                })}
+              >
                 {label}
               </span>
               <div className="active-icon-wrapper" hidden={!active}>
