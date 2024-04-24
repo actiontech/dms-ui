@@ -2,16 +2,13 @@ import { SQLUploadTypeKeys } from './index.type';
 import { UploadTypeStyleWrapper } from '../../../Order/SQLStatementForm/style';
 import UploadTypeItem from '../../../Order/SQLStatementForm/UploadTypeItem';
 import { UploadTypeEnum } from '../SQLInfoForm/index.type';
-import { useContext } from 'react';
-import { FormSubmitStatusContext } from '..';
 import { uploadItem } from './index.data';
 
 const SqlUploadType: React.FC<{
   value?: UploadTypeEnum;
   onChange?: (v: UploadTypeEnum) => void;
-}> = ({ value, onChange }) => {
-  const submitLoading = useContext(FormSubmitStatusContext);
-
+  submitLoading: boolean;
+}> = ({ value, onChange, submitLoading }) => {
   return (
     <UploadTypeStyleWrapper>
       {SQLUploadTypeKeys.map((type) => {

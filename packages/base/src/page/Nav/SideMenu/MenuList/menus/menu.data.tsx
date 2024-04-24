@@ -13,6 +13,7 @@ import {
   dashboardMenuItem,
   sqlAuditMenuItem,
   pluginAuditMenuItem,
+  sqlOptimizationMenuItem,
   sqlOrderMenuItem,
   sqlManagementMenuItem,
   auditPlanMenuItem,
@@ -34,6 +35,7 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
     dashboardMenuItem,
     sqlAuditMenuItem,
     pluginAuditMenuItem,
+    sqlOptimizationMenuItem,
     sqlOrderMenuItem,
     sqlManagementMenuItem,
     auditPlanMenuItem,
@@ -50,7 +52,13 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLDev'),
-      group: ['cloud-beaver', 'data-export', 'sql-audit', 'plugin-audit']
+      group: [
+        'cloud-beaver',
+        'data-export',
+        'sql-audit',
+        'plugin-audit',
+        'sql-optimization'
+      ]
     },
     {
       type: 'group',

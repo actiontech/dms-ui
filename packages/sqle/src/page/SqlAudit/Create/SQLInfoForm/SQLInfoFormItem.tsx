@@ -134,7 +134,7 @@ const SQLInfoFormItem = ({
         instanceLoading={instanceLoading}
         instanceOptions={instanceOptions}
       />
-      <SQLStatementForm form={form} />
+      <SQLStatementForm form={form} submitLoading={submitLoading} />
       <Space size={12}>
         <BasicButton
           onClick={internalSubmit}
