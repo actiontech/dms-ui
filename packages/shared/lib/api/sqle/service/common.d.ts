@@ -453,6 +453,12 @@ export interface ICustomRuleResV1 {
   type?: string;
 }
 
+export interface IDBPerformanceImproveOverview {
+  avg_performance_improve?: number;
+
+  instance_name?: string;
+}
+
 export interface IDBTypeAuditPlan {
   data?: IAuditPlanCount[];
 
@@ -531,6 +537,18 @@ export interface IExplainClassicResult {
   rows?: Array<{
     [key: string]: string;
   }>;
+}
+
+export interface IExplainValidationDetail {
+  after_cost?: number;
+
+  after_plan?: string;
+
+  before_cost?: number;
+
+  before_plan?: string;
+
+  perform_improve_per?: number;
 }
 
 export interface IFeishuConfigurationV1 {
@@ -705,6 +723,14 @@ export interface IGetCustomRulesResV1 {
   message?: string;
 }
 
+export interface IGetDBPerformanceImproveOverviewResp {
+  code?: number;
+
+  data?: IDBPerformanceImproveOverview[];
+
+  message?: string;
+}
+
 export interface IGetDashboardResV1 {
   code?: number;
 
@@ -827,6 +853,50 @@ export interface IGetOperationsResV1 {
   data?: IOperationResV1[];
 
   message?: string;
+}
+
+export interface IGetOptimizationOverviewResp {
+  code?: number;
+
+  data?: IOptimizationRecordOverview[];
+
+  message?: string;
+}
+
+export interface IGetOptimizationRecordRes {
+  code?: number;
+
+  data?: IOptimizationDetail;
+
+  message?: string;
+}
+
+export interface IGetOptimizationRecordsRes {
+  code?: number;
+
+  data?: IOptimizationRecord[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetOptimizationSQLRes {
+  code?: number;
+
+  data?: IOptimizationSQLDetail;
+
+  message?: string;
+}
+
+export interface IGetOptimizationSQLsRes {
+  code?: number;
+
+  data?: IOptimizationSQL[];
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IGetProjectRuleTemplateResV1 {
@@ -1377,6 +1447,116 @@ export interface IOperationUser {
   user_name?: string;
 }
 
+export interface IOptimizationDetail {
+  basic_summary?: IOptimizationsummary;
+
+  created_time?: string;
+
+  created_user?: string;
+
+  db_type?: string;
+
+  index_recommendations?: string[];
+
+  instance_name?: string;
+
+  optimization_id?: string;
+
+  optimization_name?: string;
+}
+
+export interface IOptimizationRecord {
+  created_time?: string;
+
+  created_user?: string;
+
+  db_type?: string;
+
+  instance_name?: string;
+
+  optimization_id?: string;
+
+  optimization_name?: string;
+
+  performance_gain?: number;
+}
+
+export interface IOptimizationRecordOverview {
+  record_number?: number;
+
+  time?: string;
+}
+
+export interface IOptimizationSQL {
+  contributing_indices?: string;
+
+  number?: number;
+
+  number_of_hit_index?: number;
+
+  number_of_index?: number;
+
+  number_of_rewrite?: number;
+
+  number_of_syntax_error?: number;
+
+  original_sql?: string;
+
+  performance?: number;
+}
+
+export interface IOptimizationSQLDetail {
+  explain_validation_details?: IExplainValidationDetail;
+
+  index_recommendations?: string[];
+
+  optimized_sql?: string;
+
+  original_sql?: string;
+
+  triggered_rule?: IRewriteRule[];
+}
+
+export interface IOptimizationsummary {
+  number_of_index?: number;
+
+  number_of_query?: number;
+
+  number_of_query_index?: number;
+
+  number_of_rewrite?: number;
+
+  number_of_rewritten_query?: number;
+
+  number_of_syntax_error?: number;
+
+  performance_gain?: number;
+}
+
+export interface IOptimizeSQLReq {
+  db_type?: string;
+
+  instance_name?: string;
+
+  optimization_name?: string;
+
+  schema_name?: string;
+
+  sql_content?: string;
+}
+
+export interface IOptimizeSQLRes {
+  code?: number;
+
+  data?: IOptimizeSQLResData;
+
+  message?: string;
+}
+
+export interface IOptimizeSQLResData {
+  sql_optimization_record_id?: string;
+}
+
 export interface IParseProjectRuleTemplateFileResDataV1 {
   db_type?: string;
 
@@ -1423,6 +1603,18 @@ export interface IRecordSource {
 
 export interface IRejectWorkflowReqV1 {
   reason?: string;
+}
+
+export interface IRewriteRule {
+  message?: string;
+
+  rewritten_queries_str?: string;
+
+  rule_code?: string;
+
+  rule_name?: string;
+
+  violated_queries_str?: string;
 }
 
 export interface IRiskAuditPlan {
