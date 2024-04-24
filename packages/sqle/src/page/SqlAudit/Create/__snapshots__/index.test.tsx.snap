@@ -761,8 +761,28 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
+                        <span
+                          class="actiontech-mode-switcher-item-icon"
+                        >
+                          <span
+                            class="custom-icon  css-u3jcp4"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                        </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
                         >
@@ -803,7 +823,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -865,7 +885,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -927,7 +947,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -989,7 +1009,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2091,8 +2111,28 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
+                        <span
+                          class="actiontech-mode-switcher-item-icon"
+                        >
+                          <span
+                            class="custom-icon  css-u3jcp4"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                        </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
                         >
@@ -2132,7 +2172,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2194,7 +2234,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2256,7 +2296,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2318,7 +2358,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3424,8 +3464,28 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
+                        <span
+                          class="actiontech-mode-switcher-item-icon"
+                        >
+                          <span
+                            class="custom-icon  css-u3jcp4"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                        </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
                         >
@@ -3465,7 +3525,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3527,7 +3587,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3589,7 +3649,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3651,7 +3711,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4585,8 +4645,28 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
+                        <span
+                          class="actiontech-mode-switcher-item-icon"
+                        >
+                          <span
+                            class="custom-icon  css-u3jcp4"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                        </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
                         >
@@ -4627,7 +4707,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4688,7 +4768,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4750,7 +4830,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4812,7 +4892,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -5863,8 +5943,28 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
+                        <span
+                          class="actiontech-mode-switcher-item-icon"
+                        >
+                          <span
+                            class="custom-icon  css-u3jcp4"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                        </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
                         >
@@ -5905,7 +6005,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -5967,7 +6067,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6028,7 +6128,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6090,7 +6190,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7141,8 +7241,28 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
+                        <span
+                          class="actiontech-mode-switcher-item-icon"
+                        >
+                          <span
+                            class="custom-icon  css-u3jcp4"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                        </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
                         >
@@ -7183,7 +7303,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7245,7 +7365,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7307,7 +7427,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7368,7 +7488,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-17cv6jf"
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"

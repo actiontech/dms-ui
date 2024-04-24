@@ -518,7 +518,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                           class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
                         >
                           <div
-                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                           >
                             <span
                               class="actiontech-mode-switcher-item-icon"
@@ -1225,7 +1225,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                           class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
                         >
                           <div
-                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-17cv6jf"
+                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                           >
                             <span
                               class="actiontech-mode-switcher-item-icon"

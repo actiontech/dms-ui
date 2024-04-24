@@ -9,7 +9,7 @@ import { UploadTypeEnum } from '../SQLInfoForm/index.type';
 
 export const uploadTypeOptions: ModeSwitcherOptionsType = [
   {
-    // icon: <IconOrderSQLUpload />,
+    icon: <IconOrderSQLUpload />,
     label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sql'),
     value: UploadTypeEnum.sql,
     colProps: {
