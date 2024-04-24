@@ -13,6 +13,8 @@ import OrderStatus from './component/OrderStatus';
 import OrderRiskList from './component/OrderRiskList';
 import ScanRiskList from './component/ScanRiskList';
 import ScanTask from './component/ScanTask';
+import DataSourcePerformance from './component/DataSourcePerformance';
+import OptimizationDistribution from './component/OptimizationDistribution';
 
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
@@ -94,6 +96,20 @@ const Overview = () => {
           </Col>
           <Col span={6} className="right-chart">
             <ScanTask />
+          </Col>
+          <Col span={24}>
+            <Row className="marginTop20" gutter={20}>
+              <Col span={12}>
+                <div className="item-wrapper height352 order-risk">
+                  <OptimizationDistribution />
+                </div>
+              </Col>
+              <Col span={12}>
+                <div className="item-wrapper height352 scan-risk">
+                  <DataSourcePerformance />
+                </div>
+              </Col>
+            </Row>
           </Col>
           <Col span={24}>
             <Row className="marginTop20" gutter={20}>

@@ -44,5 +44,14 @@ export const projectOverviewTheme: ProjectOverviewTheme = {
     detail: {
       stroke: darkThemeBasic.basic.colorWhite
     }
+  },
+  DataSourcePerformance: {
+    bar: {
+      fill: rectColorName.color5,
+      bg: 'rgba(0,0,0,0.1)'
+    },
+    toolTip: {
+      dotColor: rectColorName.color5
+    }
   }
 };

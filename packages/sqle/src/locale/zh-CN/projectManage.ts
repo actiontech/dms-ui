@@ -135,6 +135,19 @@ export default {
       review: '工单审批',
       exec: '工单上线',
       match: '匹配权限'
+    },
+    optimizationDistribution: {
+      title: '优化查询分布',
+      timeLabel: '时间段',
+      toolTip: {
+        label: '新增优化'
+      }
+    },
+    dataSourcePerformance: {
+      title: '数据源性能提升情况',
+      toolTip: {
+        label: '性能提升'
+      }
     }
   }
 };
