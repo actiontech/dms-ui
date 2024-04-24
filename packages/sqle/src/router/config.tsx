@@ -125,6 +125,20 @@ const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
 
 const PluginAudit = React.lazy(() => import('../page/PluginAudit'));
 
+const SqlOptimization = React.lazy(() => import('../page/SqlOptimization'));
+
+const SqlOptimizationCreate = React.lazy(
+  () => import('../page/SqlOptimization/Create')
+);
+
+const SqlOptimizationOverview = React.lazy(
+  () => import('../page/SqlOptimization/Overview')
+);
+
+const SqlOptimizationDetail = React.lazy(
+  () => import('../page/SqlOptimization/Detail')
+);
+
 const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
@@ -375,6 +389,33 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         index: true,
         element: <PluginAudit />,
         key: 'pluginAuditList'
+      }
+    ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sql-optimization`,
+    label: 'menu.sqlOptimization',
+    key: 'sqlOptimization',
+    children: [
+      {
+        index: true,
+        element: <SqlOptimization />,
+        key: 'sqlOptimizationList'
+      },
+      {
+        path: 'create',
+        element: <SqlOptimizationCreate />,
+        key: 'sqlOptimizationCreate'
+      },
+      {
+        path: 'overview/:optimizationId',
+        element: <SqlOptimizationOverview />,
+        key: 'sqlOptimizationOverview'
+      },
+      {
+        path: 'detail/:optimizationId/:number',
+        element: <SqlOptimizationDetail />,
+        key: 'sqlOptimizationDetail'
       }
     ]
   },

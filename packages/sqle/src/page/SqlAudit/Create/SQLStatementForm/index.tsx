@@ -1,21 +1,23 @@
 import { useTranslation } from 'react-i18next';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import {
-  SQLStatementFormProps,
-  UploadTypeEnum
+  UploadTypeEnum,
+  SQLStatementFormType
 } from '../SQLInfoForm/index.type';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { BasicInput, EmptyBox } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
-import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
 import SqlUploadType from './SqlUploadType';
 
-const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
+const SQLStatementFormWrapper = <T extends SQLStatementFormType>(props: {
+  form: T;
+  submitLoading: boolean;
+}) => {
+  const { form, submitLoading } = props;
   const { t } = useTranslation();
-  const submitLoading = useContext(FormSubmitStatusContext);
 
   const uploadType = Form.useWatch('uploadType', form);
 
@@ -49,11 +51,13 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
         wrapperCol={{ span: 24 }}
         labelCol={{ span: 24 }}
       >
-        <SqlUploadType />
+        <SqlUploadType submitLoading={submitLoading} />
       </FormItemLabel>
       <EmptyBox
         if={uploadType === UploadTypeEnum.git}
-        defaultNode={<SqlUploadFileCont form={form} />}
+        defaultNode={
+          <SqlUploadFileCont form={form} submitLoading={submitLoading} />
+        }
       >
         {/* git form info */}
         <FormItemLabel
