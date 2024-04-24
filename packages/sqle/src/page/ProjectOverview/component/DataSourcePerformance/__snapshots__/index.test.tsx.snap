@@ -1,0 +1,822 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectOverview/DataSourcePerformance render chart snap 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <header
+          class="card-header"
+        >
+          <div
+            class="title"
+          >
+            <div
+              class="title-cont"
+            >
+              数据源性能提升情况
+            </div>
+          </div>
+          <div
+            class="extra"
+          />
+        </header>
+        <section
+          class="card-cont"
+        >
+          <div
+            class="chart-wrapper css-1hgbe7b"
+          >
+            <div
+              class="icon-center-wrapper MuiBox-root css-0"
+            >
+              <div
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+              >
+                <div
+                  class="ant-empty-image"
+                >
+                  <span
+                    class="anticon"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      width="80"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        clip-path="url(#clip0_1412_15009)"
+                      >
+                        <path
+                          d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
+                          fill="#EBEAE7"
+                        />
+                        <path
+                          d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
+                          fill="#F2F1EF"
+                        />
+                        <path
+                          d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
+                          fill="#E6E4E3"
+                        />
+                      </g>
+                      <defs>
+                        <clippath
+                          id="clip0_1412_15009"
+                        >
+                          <rect
+                            fill="white"
+                            height="80"
+                            width="80"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-empty-description"
+                >
+                  <span
+                    class="no-data-cont tip-without-title"
+                  >
+                    暂无数据
+                  </span>
+                </div>
+                <div
+                  class="ant-empty-footer"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      刷新
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProjectOverview/DataSourcePerformance render chart snap 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <header
+          class="card-header"
+        >
+          <div
+            class="title"
+          >
+            <div
+              class="title-cont"
+            >
+              数据源性能提升情况
+            </div>
+          </div>
+          <div
+            class="extra"
+          />
+        </header>
+        <section
+          class="card-cont"
+        >
+          <div
+            class="chart-wrapper css-1hgbe7b"
+          >
+            <div
+              class="chart-box"
+            >
+              <div
+                data-custom-params="{"data":[{"instance_name":"dd1","avg_performance_improve":369.4151552596671},{"instance_name":"rds-0423","avg_performance_improve":0.1292965074445121}],"xField":"avg_performance_improve","yField":"instance_name","autoFit":true,"yAxis":{"line":{"style":{"lineWidth":0}},"tickLine":{"style":{"lineWidth":0}}},"xAxis":false,"legend":{"position":"top-left"},"barStyle":{"radius":4,"fill":"#4BCCA6","strokeOpacity":0},"barBackground":{"style":{"fill":"rgba(0,0,0,0.1)"}},"interactions":[{"type":"active-region","enable":false}],"tooltip":{"fields":["instance_name","avg_performance_improve"]},"minBarWidth":20,"maxBarWidth":20,"theme":"light"}"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProjectOverview/DataSourcePerformance render chart snap when api return empty 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <header
+          class="card-header"
+        >
+          <div
+            class="title"
+          >
+            <div
+              class="title-cont"
+            >
+              数据源性能提升情况
+            </div>
+          </div>
+          <div
+            class="extra"
+          />
+        </header>
+        <section
+          class="card-cont"
+        >
+          <div
+            class="chart-wrapper css-1hgbe7b"
+          >
+            <div
+              class="icon-center-wrapper MuiBox-root css-0"
+            >
+              <div
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+              >
+                <div
+                  class="ant-empty-image"
+                >
+                  <span
+                    class="anticon"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      width="80"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        clip-path="url(#clip0_1412_15009)"
+                      >
+                        <path
+                          d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
+                          fill="#EBEAE7"
+                        />
+                        <path
+                          d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
+                          fill="#F2F1EF"
+                        />
+                        <path
+                          d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
+                          fill="#E6E4E3"
+                        />
+                      </g>
+                      <defs>
+                        <clippath
+                          id="clip0_1412_15009"
+                        >
+                          <rect
+                            fill="white"
+                            height="80"
+                            width="80"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-empty-description"
+                >
+                  <span
+                    class="no-data-cont tip-without-title"
+                  >
+                    暂无数据
+                  </span>
+                </div>
+                <div
+                  class="ant-empty-footer"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      刷新
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProjectOverview/DataSourcePerformance render data source performance list more than 8 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <header
+          class="card-header"
+        >
+          <div
+            class="title"
+          >
+            <div
+              class="title-cont"
+            >
+              数据源性能提升情况
+            </div>
+          </div>
+          <div
+            class="extra"
+          />
+        </header>
+        <section
+          class="card-cont"
+        >
+          <div
+            class="chart-wrapper css-1hgbe7b"
+          >
+            <div
+              class="chart-box"
+            >
+              <div
+                data-custom-params="{"data":[{"avg_performance_improve":0,"instance_name":"0name"},{"avg_performance_improve":1,"instance_name":"1name"},{"avg_performance_improve":2,"instance_name":"2name"},{"avg_performance_improve":3,"instance_name":"3name"},{"avg_performance_improve":4,"instance_name":"4name"},{"avg_performance_improve":5,"instance_name":"5name"},{"avg_performance_improve":6,"instance_name":"6name"},{"avg_performance_improve":7,"instance_name":"7name"},{"avg_performance_improve":8,"instance_name":"8name"},{"avg_performance_improve":9,"instance_name":"9name"}],"xField":"avg_performance_improve","yField":"instance_name","autoFit":true,"yAxis":{"line":{"style":{"lineWidth":0}},"tickLine":{"style":{"lineWidth":0}}},"xAxis":false,"legend":{"position":"top-left"},"barStyle":{"radius":4,"fill":"#4BCCA6","strokeOpacity":0},"barBackground":{"style":{"fill":"rgba(0,0,0,0.1)"}},"interactions":[{"type":"active-region","enable":false}],"tooltip":{"fields":["instance_name","avg_performance_improve"]},"scrollbar":{"type":"vertical","animate":false,"padding":[0,0,0,0]},"minBarWidth":20,"maxBarWidth":20,"theme":"light"}"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProjectOverview/DataSourcePerformance render tooltip customContent 1`] = `
+<ChartTooltip
+  listData={
+    [
+      {
+        "label": "性能提升",
+        "value": "100%",
+      },
+    ]
+  }
+  sharedTheme={
+    {
+      "basic": {
+        "borderRadius4": 4,
+        "colorBgLayoutGray": "#fcfbf9",
+        "colorDangerousActive": "#FAAFB9",
+        "colorDefaultIcon": "#575C66",
+        "colorFontGrayByWhite": "#C3C6CD",
+        "colorGrayLine": "#f2f1f0",
+        "colorPrimaryActive": "#3B6FD9",
+        "colorPrimaryBgActive": "#f0f7ff",
+        "colorPrimaryBgHover": "#E8F3FF",
+        "colorPrimaryDisabled": "#B5CDFF",
+        "colorPrimaryHover": "#6A9CFF",
+        "colorPrimaryShadow": "#4583FF66",
+        "colorShadowByWhite": "#332C1F1F",
+        "colorWhite": "#FFFFFF",
+        "controlHeight": 32,
+        "controlHeightLG": 36,
+        "controlHeightSM": 28,
+        "paddingNumber": 20,
+      },
+      "components": {
+        "basicButton": {
+          "dangerous": {
+            "default": {
+              "color": "#f66074",
+            },
+            "disabled": {
+              "color": "#FAAFB9",
+            },
+          },
+          "dashed": {
+            "default": {
+              "border": "1px dashed #C7C6C3",
+            },
+          },
+          "default": {
+            "active": {
+              "background": "#F2F1EF",
+            },
+            "default": {
+              "background": "#FFFFFF",
+              "boxShadow": "0 1px 4px 0 #332C1F1F",
+              "color": "#292C33",
+            },
+            "disabled": {
+              "background": "#FFFFFF",
+              "color": "#C3C6CD",
+            },
+            "hover": {
+              "background": "#F7F6F4",
+            },
+          },
+          "primary": {
+            "active": {
+              "background": "#3B6FD9",
+            },
+            "default": {
+              "background": "#4583ff",
+              "boxShadow": "0 1px 4px 0 #4583FF66",
+              "color": "#FFFFFF",
+            },
+            "disabled": {
+              "background": "#B5CDFF",
+              "color": "#FFFFFF",
+            },
+            "hover": {
+              "background": "#6A9CFF",
+            },
+          },
+        },
+        "basicChart": {
+          "border": "1px solid #f2f1f0",
+          "borderRadius": "8px",
+        },
+        "basicDrawer": {
+          "backgroundColor": "#fcfbf9",
+          "boxShadow": "-20px 0px 40px 0px rgba(0, 26, 65, 0.05)",
+          "color": "#292C33",
+        },
+        "basicEmpty": {
+          "description": "#c3c6cd",
+          "info": {
+            "color": "#C3C6CD",
+            "fontSize": "13px",
+            "fontWeight": 400,
+          },
+          "title": {
+            "color": "#8a8f99",
+            "fontSize": "16px",
+            "fontWeight": 500,
+          },
+        },
+        "basicInfoList": {
+          "bodyBoxShadow": "none",
+          "borderRadius": "8px",
+          "title": {
+            "backgroundColor": "#f7f6f4",
+            "border": "1px solid #f2f1f0",
+            "color": "#575c66",
+            "fontSize": "13px",
+            "fontWeight": 500,
+          },
+          "value": {
+            "border": "1px solid #f2f1f0",
+            "color": "#8a8f99",
+            "fontSize": "13px",
+            "fontWeight": 500,
+          },
+        },
+        "basicInput": {
+          "default": {
+            "border": "1px solid #E8E7E6",
+            "dataCountColor": "#c3c6cd",
+            "placeholder": {
+              "color": "#c3c6cd",
+            },
+          },
+          "disabled": {
+            "background": "#f7f6f4",
+            "border": "1px solid #E8E7E6",
+          },
+          "error": {
+            "border": "1px solid #f66074",
+          },
+          "focus": {
+            "border": "1px solid #4583ff",
+            "caretColor": "#4583ff",
+          },
+          "hover": {
+            "border": "1px solid #C7C6C3",
+          },
+        },
+        "basicModal": {
+          "content": {
+            "backgroundColor": "#fcfbf9",
+            "body": {
+              "color": "#292C33",
+            },
+            "border": "1px solid #E8E7E6",
+            "footer": {
+              "backgroundColor": "#f7f6f4",
+            },
+            "header": {
+              "border": "1px solid #E8E7E6",
+              "title": {
+                "color": "#292C33",
+              },
+            },
+          },
+        },
+        "basicRangePicker": {
+          "active": {
+            "border": "1px solid #4583ff",
+          },
+          "default": {
+            "border": "1px solid #E8E7E6",
+            "placeholder": {
+              "color": "#c3c6cd",
+            },
+          },
+          "disabled": {
+            "background": "#f7f6f4",
+            "border": "1px solid #E8E7E6",
+          },
+          "dropdown": {
+            "icon": {
+              "boxShadow": "0 1px 4px 0 rgba(51, 44, 31, 0.12)",
+            },
+          },
+          "error": {
+            "border": "1px solid #f66074",
+          },
+          "hover": {
+            "border": "1px solid #C7C6C3",
+          },
+        },
+        "basicResult": {
+          "subTitle": {
+            "color": "#8a8f99",
+          },
+          "title": {
+            "color": "#292c33",
+          },
+        },
+        "basicSegmented": {
+          "active": {
+            "border": "#f7f6f4",
+            "boxShadow": "0px 1px 4px 0px #332C1F1F",
+            "color": "#4583ff",
+          },
+          "backgroundColor": "#f2f1ef",
+          "color": "#575c66",
+          "hoverBackgroundColor": "#E8EAE7",
+          "noticeCountColor": "#f66074",
+        },
+        "basicSelect": {
+          "active": {
+            "border": "1px solid #4583ff",
+          },
+          "default": {
+            "border": "1px solid #E8E7E6",
+            "placeholder": {
+              "color": "#c3c6cd",
+            },
+          },
+          "disabled": {
+            "background": "#f7f6f4",
+            "border": "1px solid #E8E7E6",
+          },
+          "error": {
+            "border": "1px solid #f66074",
+          },
+          "hover": {
+            "border": "1px solid #C7C6C3",
+          },
+        },
+        "basicTag": {
+          "Grape": {
+            "backgroundColor": "rgba(116, 83, 218, 0.10)",
+            "color": "#7453DA",
+          },
+          "blue": {
+            "backgroundColor": "rgba(61, 181, 241, 0.10)",
+            "color": "#3DB5F1",
+          },
+          "cyan": {
+            "backgroundColor": "rgba(26, 206, 219, 0.10)",
+            "color": "#15C7D4",
+          },
+          "default": {
+            "backgroundColor": "#fffff",
+            "color": "#575C66",
+          },
+          "geekblue": {
+            "backgroundColor": "rgba(96, 148, 252, 0.10)",
+            "color": "#6094FC",
+          },
+          "gold": {
+            "backgroundColor": "rgba(235, 173, 28, 0.10)",
+            "color": "#EBAD1C",
+          },
+          "gray": {
+            "backgroundColor": "rgba(125, 140, 168, 0.10)",
+            "color": "#7D8CA8",
+          },
+          "green": {
+            "backgroundColor": "rgba(65, 191, 154, 0.10)",
+            "color": "#41BF9A",
+          },
+          "lilac": {
+            "backgroundColor": "rgba(159, 107, 233, 0.10)",
+            "color": "#9F6BE9",
+          },
+          "orange": {
+            "backgroundColor": "rgba(245, 153, 87, 0.10)",
+            "color": "#F59957",
+          },
+          "purple": {
+            "backgroundColor": "rgba(116, 112, 237, 0.10)",
+            "color": "#7470ED",
+          },
+          "red": {
+            "backgroundColor": "rgba(246, 96, 116, 0.10)",
+            "color": "#F66074",
+          },
+        },
+        "columnsSetting": {
+          "dropdown": {
+            "backgroundColor": "#fcfbf9",
+            "border": "1px solid #E8E7E6",
+            "boxShadow": "0px 3px 12px 0px #332C1F1A",
+            "item": {
+              "hoverBackgroundColor": "#f7f6f4",
+              "iconColor": "#C3C6CD",
+              "labelColor": "#292c33",
+            },
+            "title": {
+              "color": "#8a8f99",
+            },
+          },
+        },
+        "configItem": {
+          "maskBg": "rgba(0, 0, 0, 0.6)",
+        },
+        "customDraggerUpload": {
+          "backgroundColor": "#f7f6f4",
+          "border": "#E8E7E6",
+          "color": "#c3c6cd",
+        },
+        "customFilter": {
+          "rangePicker": {
+            "borderColor": "#E8E7E6",
+            "filterLabelColor": "#8a8f99",
+            "focusBackgroundColor": "#f2f1ef",
+            "hoverBackgroundColor": "#f7f6f4",
+            "placeholder": {
+              "color": "#8a8f99",
+            },
+          },
+        },
+        "customMonacoEditor": {
+          "border": "1px solid #E8E7E6",
+          "linesContentBackgroundColor": "#fcfbf9",
+          "marginBackgroundColor": "#f7f6f4",
+          "marginViewOverlaysColor": "#8a8f99",
+        },
+        "customSelect": {
+          "border": "1px solid #E8E7E6",
+          "content": {
+            "labelColor": "#292C33",
+            "prefixColor": "#8a8f99",
+          },
+          "disabled": {
+            "background": "#f7f6f4",
+            "border": "1px solid #E8E7E6",
+          },
+          "focusBackGroundColor": "#f2f1ef",
+          "hoverBackgroundColor": "#f7f6f4",
+          "iconColor": "#f2f1ef",
+          "placeholder": {
+            "color": "#8a8f99",
+          },
+          "searchInput": {
+            "borderBottom": "1px solid #E8E7E6",
+            "hoverBorderBottom": "1px solid #E8E7E6",
+          },
+        },
+        "filterContainer": {
+          "backgroundColor": "#fcfbf9",
+          "border": "1px solid #E8E7E6",
+        },
+        "pageHeader": {
+          "background": "#fcfbf9",
+          "borderBottom": "1px solid #E8E7E6",
+          "title": {
+            "color": "#292c33",
+          },
+        },
+        "ruleComponent": {
+          "ruleList": {
+            "backgroundColor": "#f7f6f4",
+            "border": "1px solid #f2f1f0",
+            "endContentColor": "#c3c6cd",
+            "hoverBackgroundColor": "#fcfbf9",
+            "hoverBorder": "1px solid #E8E7E6",
+            "levelContent": {
+              "annotationColor": "#8a8f99",
+              "paramsBackgroundColor": "#9F6BE91A",
+              "paramsColor": "#9f6be9",
+            },
+            "levelIconTextColor": "#8a8f99",
+          },
+          "ruleStatus": {
+            "disabledColor": "#f66074",
+            "enableColor": "#1cb889",
+          },
+          "ruleType": {
+            "activeBackgroundColor": "#f0f7ff",
+            "activeColor": "#4583ff",
+            "backgroundColor": "#f7f6f4",
+            "border": "1px solid #f2f1f0",
+            "color": "#575c66",
+            "countActiveBackgroundColor": "#E8F3FF",
+            "countBackgroundColor": "#f2f1ef",
+          },
+        },
+        "searchInput": {
+          "searchIconColor": "#c3c6cd",
+        },
+        "table": {
+          "pagination": {
+            "backgroundColor": "#fcfbf9",
+            "border": "1px solid #F2F1F0",
+            "item": {
+              "activeBackgroundColor": "#FFFFFF",
+              "activeBorder": "1px solid #E8E7E6",
+              "activeColor": "#292C33",
+              "color": "#8a8f99",
+              "hoverBackgroundColor": "#f2f1ef",
+            },
+            "options": {
+              "backgroundColor": "#FFFFFF",
+              "border": "1px solid #F2F1F0",
+              "boxShadow": "0px 1px 4px 0px #332C1F1F",
+              "hoverBorder": "1px solid #F2F1F0",
+              "itemColor": "#8a8f99",
+            },
+            "total": {
+              "color": "#575c66",
+            },
+          },
+          "row": {
+            "border": "1px solid #F2F1F0",
+            "color": "#292c33",
+            "moreButtonInActions": {
+              "backgroundColor": "#fcfbf9",
+              "border": "1px solid #E8E7E6",
+              "boxShadow": "0px 3px 12px 0px rgba(51, 44, 31, 0.10)",
+              "color": "#292c33",
+              "hoverItemBackgroundColor": "#f2f1ef",
+            },
+          },
+          "thead": {
+            "border": "1px solid #F2F1F0",
+            "color": "#8a8f99",
+          },
+        },
+        "toolbar": {
+          "backgroundColor": "#fcfbf9",
+          "border": "1px solid #E8E7E6",
+        },
+      },
+      "nav": {
+        "backgroundColor": "#fcfbf9",
+        "border": "1px solid #f2f1f0",
+        "boxShadow": "2px 0 6px 0 rgba(51, 48, 41, 0.04)",
+        "globalSystem": {
+          "backgroundColor": "#f7f6f4",
+        },
+        "menu": {
+          "dividerColor": "#f2f1f0",
+          "groupLabelColor": "#8a8f99",
+          "hoverBackgroundColor": "#f2f1ef",
+          "hoverLabelColor": "#292C33",
+          "labelColor": "#575c66",
+        },
+        "padding": 16,
+        "title": {
+          "color": [
+            "#4583ff",
+            "#292C33",
+          ],
+        },
+        "userNavigate": {
+          "backgroundColor": "#fcfbf9",
+          "border": "1px solid #E8E7E6",
+          "boxShadow": "0 3px 12px 0 rgba(51, 44, 31, 0.10)",
+          "content": {
+            "color": "#292C33",
+            "hoverBackgroundColor": "#f2f1ef",
+          },
+          "footer": {
+            "iconWrapper": {
+              "activeBackgroundColor": "#FFFFFF",
+              "activeColor": "#292C33",
+              "backgroundColor": "#f7f6f4",
+              "border": "1px solid #E8E7E6",
+              "color": "#8a8f99",
+            },
+            "text": {
+              "color": "#292C33",
+            },
+          },
+          "title": {
+            "border": "1px solid #f2f1f0",
+            "color": "#292C33",
+          },
+        },
+        "width": 220,
+      },
+      "uiToken": {
+        "colorBgBase": "#fcfbf9",
+        "colorBgLayout": "#f2f1ef",
+        "colorBorder": "#C7C6C3",
+        "colorBorderSecondary": "#E8E7E6",
+        "colorError": "#f66074",
+        "colorErrorBgHover": "#FEE5E5",
+        "colorFill": "#ebeae7",
+        "colorFillQuaternary": "#fcfbf9",
+        "colorFillSecondary": "#f2f1ef",
+        "colorFillTertiary": "#f7f6f4",
+        "colorInfo": "#4583ff",
+        "colorPrimary": "#4583ff",
+        "colorSuccess": "#1cb889",
+        "colorText": "#292C33",
+        "colorTextBase": "#292c33",
+        "colorTextQuaternary": "#c3c6cd",
+        "colorTextSecondary": "#575c66",
+        "colorTextTertiary": "#8a8f99",
+        "colorWarning": "#edb054",
+        "colorWarningBgHover": "#FFF7E0",
+      },
+    }
+  }
+  titleData={
+    {
+      "dotColor": "#4BCCA6",
+      "text": "1",
+    }
+  }
+/>
+`;
