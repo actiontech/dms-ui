@@ -3,6 +3,7 @@ import {
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
+import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
 
 const BaseInfoFormItem = () => {
   const { t } = useTranslation();
@@ -17,6 +18,12 @@ const BaseInfoFormItem = () => {
             message: t('common.form.placeholder.input', {
               name: t('sqlOptimization.create.base.name')
             })
+          },
+          {
+            validator: workflowNameRule()
+          },
+          {
+            max: 59
           }
         ]}
       >

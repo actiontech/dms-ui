@@ -40,9 +40,3 @@ export type SqlOptimizationOverviewUrlParams = { optimizationId: string };
 export type SqlOptimizationDetailUrlParams = {
   number: string;
 } & SqlOptimizationOverviewUrlParams;
-
-export enum SqlOptimizationPerformanceVerificationEnum {
-  perform_improve_per = 'perform_improve_per',
-  before_plan = 'before_plan',
-  after_plan = 'after_plan'
-}

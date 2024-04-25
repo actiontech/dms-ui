@@ -4,11 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
-import {
-  SqlOptimizationDetailUrlParams,
-  SqlOptimizationPerformanceVerificationEnum
-} from '../index.type';
-import { useRequest } from 'ahooks';
+import { SqlOptimizationDetailUrlParams } from '../index.type';
+import { useBoolean, useRequest } from 'ahooks';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import {
   SqlOptimizationDetailStyleWrapper,
@@ -19,11 +16,6 @@ import CardWrapper from '../../../components/CardWrapper';
 import HighlightCode from '../../../utils/HighlightCode';
 import CopyIcon from '@actiontech/shared/lib/components/CopyIcon';
 import RenderSQL from '../../../components/RenderSQL';
-// import {
-//   BasicSegmentedPage,
-//   useSegmentedPageParams
-// } from '@actiontech/shared/lib/components/BasicSegmentedPage';
-// import { useEffect } from 'react';
 import CodeBlock from '../components/CodeBlock';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';
@@ -36,65 +28,25 @@ const OptimizationDetail = () => {
 
   const urlParams = useParams<SqlOptimizationDetailUrlParams>();
 
-  // const { updateSegmentedPageData, ...otherProps } =
-  //   useSegmentedPageParams<SqlOptimizationPerformanceVerificationEnum>();
+  const [showRewriteSql, { setTrue: showRewriteSqlTrue }] = useBoolean();
 
-  const { data: optimizationDetail, loading: recordLoading } = useRequest(() =>
-    sqlOptimization
-      .GetOptimizationReq({
-        project_name: projectName,
-        optimization_record_id: urlParams.optimizationId ?? '',
-        number: urlParams.number ?? ''
-      })
-      .then((res) => res.data.data)
+  const { data: optimizationDetail, loading: recordLoading } = useRequest(
+    () =>
+      sqlOptimization
+        .GetOptimizationReq({
+          project_name: projectName,
+          optimization_record_id: urlParams.optimizationId ?? '',
+          number: urlParams.number ?? ''
+        })
+        .then((res) => res.data.data),
+    {
+      onSuccess: (res) => {
+        if (!!res?.optimized_sql) {
+          showRewriteSqlTrue();
+        }
+      }
+    }
   );
-
-  // useEffect(() => {
-  //   updateSegmentedPageData([
-  //     {
-  //       value: SqlOptimizationPerformanceVerificationEnum.perform_improve_per,
-  //       label: t('sqlOptimization.detail.performanceValidation.performImprove'),
-  //       content: (
-  //         <SqlOptimizationSqlBlockStyleWrapper>
-  //           <Typography.Text>
-  //             {t(
-  //               'sqlOptimization.detail.performanceValidation.performImproveDesc'
-  //             )}
-  //             <Typography.Text type="success">
-  //               {floatToPercent(
-  //                 optimizationDetail?.explain_validation_details
-  //                   ?.perform_improve_per ?? 0
-  //               )}
-  //               %
-  //             </Typography.Text>
-  //           </Typography.Text>
-  //         </SqlOptimizationSqlBlockStyleWrapper>
-  //       )
-  //     },
-  //     {
-  //       value: SqlOptimizationPerformanceVerificationEnum.before_plan,
-  //       label: t('sqlOptimization.detail.performanceValidation.beforePlan'),
-  //       content: (
-  //         <CodeBlock
-  //           code={
-  //             optimizationDetail?.explain_validation_details?.before_plan ?? ''
-  //           }
-  //         ></CodeBlock>
-  //       )
-  //     },
-  //     {
-  //       value: SqlOptimizationPerformanceVerificationEnum.after_plan,
-  //       label: t('sqlOptimization.detail.performanceValidation.afterPlan'),
-  //       content: (
-  //         <CodeBlock
-  //           code={
-  //             optimizationDetail?.explain_validation_details?.after_plan ?? ''
-  //           }
-  //         ></CodeBlock>
-  //       )
-  //     }
-  //   ]);
-  // }, [updateSegmentedPageData, optimizationDetail, t]);
 
   return (
     <>
@@ -116,7 +68,7 @@ const OptimizationDetail = () => {
             {t('sqlOptimization.detail.sqlRewrite.title')}
           </Typography.Title>
           <Row justify="center" gutter={20}>
-            <Col span={12}>
+            <Col span={showRewriteSql ? 12 : 24}>
               <CardWrapper
                 title={t('sqlOptimization.detail.sqlRewrite.originalSql')}
                 extraNode={
@@ -133,23 +85,25 @@ const OptimizationDetail = () => {
                 />
               </CardWrapper>
             </Col>
-            <Col span={12}>
-              <CardWrapper
-                title={t('sqlOptimization.detail.sqlRewrite.optimizedSql')}
-                extraNode={
-                  <CopyIcon text={optimizationDetail?.optimized_sql ?? ''} />
-                }
-              >
-                <pre
-                  className="code-pre"
-                  dangerouslySetInnerHTML={{
-                    __html: HighlightCode.highlightSql(
-                      optimizationDetail?.optimized_sql ?? ''
-                    )
-                  }}
-                />
-              </CardWrapper>
-            </Col>
+            <EmptyBox if={showRewriteSql}>
+              <Col span={12}>
+                <CardWrapper
+                  title={t('sqlOptimization.detail.sqlRewrite.optimizedSql')}
+                  extraNode={
+                    <CopyIcon text={optimizationDetail?.optimized_sql ?? ''} />
+                  }
+                >
+                  <pre
+                    className="code-pre"
+                    dangerouslySetInnerHTML={{
+                      __html: HighlightCode.highlightSql(
+                        optimizationDetail?.optimized_sql ?? ''
+                      )
+                    }}
+                  />
+                </CardWrapper>
+              </Col>
+            </EmptyBox>
           </Row>
           <EmptyBox
             if={
@@ -184,18 +138,9 @@ const OptimizationDetail = () => {
           <Typography.Title level={5} className="title-wrap">
             {t('sqlOptimization.detail.recommenderIndex.title')}
           </Typography.Title>
-          {/* <SqlOptimizationSqlBlockStyleWrapper>
-              {optimizationDetail?.index_recommendations?.map((item, index) => (
-                <RenderSQL sql={item} key={index} rows={1} />
-              ))}
-            </SqlOptimizationSqlBlockStyleWrapper> */}
           <RecommendIndex
             recommendations={optimizationDetail?.index_recommendations}
           />
-          {/* <Typography.Title level={5} className="title-wrap">
-            {t('sqlOptimization.detail.performanceValidation.title')}
-          </Typography.Title>
-          <BasicSegmentedPage {...otherProps} /> */}
           <Typography.Title level={5} className="title-wrap">
             {t('sqlOptimization.detail.performanceValidation.performImprove')}
           </Typography.Title>
