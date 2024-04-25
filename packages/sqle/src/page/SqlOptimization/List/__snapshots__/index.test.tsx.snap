@@ -401,7 +401,7 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        optmz_20240417112938231
+                        UI20240417112938231
                       </td>
                       <td
                         class="ant-table-cell"
@@ -469,7 +469,7 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        optmz_20240417112938232
+                        SQLfile20240417112938232
                       </td>
                       <td
                         class="ant-table-cell"
@@ -508,6 +508,74 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
                         -
                       </td>
                     </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="12345678"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        12345678
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        GIT20240417112938233
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        dd1
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="css-1uw16ge"
+                        >
+                          <img
+                            alt=""
+                          />
+                          <span
+                            title="MySQL"
+                          >
+                            MySQL
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        110824.55%
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2024-04-17 11:33:09
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-bj9uhl"
+                            >
+                              <span
+                                class="ant-avatar-string"
+                                style="transform: scale(1) translateX(-50%);"
+                              >
+                                A
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -520,7 +588,7 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
               class="ant-pagination-total-text"
             >
               <span>
-                共 2 条数据
+                共 3 条数据
               </span>
             </li>
             <li
