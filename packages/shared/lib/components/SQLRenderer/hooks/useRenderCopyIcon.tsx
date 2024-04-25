@@ -3,7 +3,12 @@ import { SQLRendererProps } from '../index.type';
 import { useCallback } from 'react';
 import CopyIcon from '../../CopyIcon';
 
-const useRenderCopyIcon = (params: SQLRendererProps) => {
+const useRenderCopyIcon = (
+  params: Pick<
+    SQLRendererProps,
+    'showCopyIcon' | 'onCopyComplete' | 'sql' | 'copyIconClassName'
+  >
+) => {
   const { showCopyIcon, onCopyComplete, sql, copyIconClassName } = params;
   const renderCopyIcon = useCallback(() => {
     if (!showCopyIcon || !sql) {

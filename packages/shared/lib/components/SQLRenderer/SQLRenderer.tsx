@@ -5,10 +5,32 @@ import { Spin } from 'antd';
 import useRenderSQLTemplate from './hooks/useRenderSQLTemplate';
 import useRenderCopyIcon from './hooks/useRenderCopyIcon';
 
-const SQLRenderer: React.FC<SQLRendererProps> = (props) => {
-  const { renderSQLTemplateContent } = useRenderSQLTemplate(props);
-  const { renderCopyIcon } = useRenderCopyIcon(props);
-  const { showCopyIcon, onClick, className, loading } = props;
+const SQLRenderer: React.FC<SQLRendererProps> = ({
+  showCopyIcon = false,
+  showLineNumbers = false,
+  onClick,
+  className,
+  loading,
+  preserveOriginalFormat = true,
+  emptySqlContent = '-',
+  highlightSyntax = true,
+  sql,
+  onCopyComplete,
+  copyIconClassName
+}) => {
+  const { renderSQLTemplateContent } = useRenderSQLTemplate({
+    showLineNumbers,
+    sql,
+    emptySqlContent,
+    highlightSyntax,
+    preserveOriginalFormat
+  });
+  const { renderCopyIcon } = useRenderCopyIcon({
+    showCopyIcon,
+    sql,
+    onCopyComplete,
+    copyIconClassName
+  });
 
   const render = () => {
     const content = (

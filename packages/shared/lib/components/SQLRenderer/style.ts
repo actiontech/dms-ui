@@ -2,11 +2,11 @@ import { styled } from '@mui/material/styles';
 
 export const SQLRendererStyleWrapper = styled('div')`
   &.actiontech-sql-snippet-renderer-wrapper,
-  .actiontech-sql-renderer-wrapper {
+  &.actiontech-sql-renderer-wrapper {
     display: flex;
     max-width: 100%;
 
-    span {
+    code {
       font-family: 'SF Mono', 'PlusJakartaSans Medium', -apple-system,
         'Microsoft YaHei', BlinkMacSystemFont, 'Segoe UI', Roboto,
         'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
@@ -47,14 +47,14 @@ export const SQLRendererStyleWrapper = styled('div')`
   }
 
   &.actiontech-sql-snippet-renderer-wrapper.copy-icon-hover,
-  .actiontech-sql-renderer-wrapper.copy-icon-hover {
+  &.actiontech-sql-renderer-wrapper.copy-icon-hover {
     .actiontech-sql-renderer-copy-icon {
       opacity: 0;
     }
   }
 
   &.actiontech-sql-snippet-renderer-wrapper.copy-icon-hover:hover,
-  .actiontech-sql-renderer-wrapper.copy-icon-hover:hover {
+  &.actiontech-sql-renderer-wrapper.copy-icon-hover:hover {
     .actiontech-sql-renderer-copy-icon {
       opacity: 1;
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
