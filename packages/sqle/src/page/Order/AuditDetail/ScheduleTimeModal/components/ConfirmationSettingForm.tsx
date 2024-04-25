@@ -1,6 +1,6 @@
-import { Spin } from 'antd';
+import { Form, Spin } from 'antd';
 import { ConfirmationSettingFormProps } from './index.type';
-import { useBoolean } from 'ahooks';
+import { useBoolean, useRequest } from 'ahooks';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import {
   CustomLabelContent,
@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/ToggleTokens/index.type';
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ConfirmMethodFormItemLabelStyleWrapper } from './style';
+import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 
 const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
   enable,
@@ -21,11 +22,34 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
   setConfirmTypeTokens
 }) => {
   const { t } = useTranslation();
+  const form = Form.useFormInstance();
 
   const [
     getConfigLoading,
     { setFalse: getConfigFinish, setTrue: startGetConfig }
   ] = useBoolean(false);
+
+  const { loading: getDefaultSelectorLoading, run: getDefaultSelector } =
+    useRequest(
+      (enableConfirmList: ToggleTokensOptionsType) =>
+        workflow.getScheduledTaskDefaultOptionV1().then((res) => {
+          const defaultSelector = res.data.data?.default_selector;
+          if (
+            defaultSelector &&
+            enableConfirmList.some((item) => {
+              if (typeof item === 'string') {
+                return item === defaultSelector;
+              }
+              return item.value === defaultSelector;
+            })
+          ) {
+            form.setFieldValue('confirmation_method', defaultSelector);
+          }
+        }),
+      {
+        manual: true
+      }
+    );
 
   useEffect(() => {
     if (enable) {
@@ -43,7 +67,7 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
           if (enableWechat) {
             list.push({
               label: t('order.operator.confirmMethodWechat'),
-              value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.Wechat
+              value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.wechat
             });
           }
 
@@ -56,6 +80,8 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
 
           if (list.length === 0) {
             setSubmitButtonDisabled(true);
+          } else {
+            getDefaultSelector(list);
           }
 
           setConfirmTypeTokens(list);
@@ -72,6 +98,7 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
   }, [
     enable,
     getConfigFinish,
+    getDefaultSelector,
     setConfirmTypeTokens,
     setSubmitButtonDisabled,
     startGetConfig,
@@ -79,7 +106,7 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
   ]);
 
   return (
-    <Spin spinning={getConfigLoading} delay={400}>
+    <Spin spinning={getConfigLoading || getDefaultSelectorLoading} delay={400}>
       <FormItemLabel
         className="has-label-tip"
         label={

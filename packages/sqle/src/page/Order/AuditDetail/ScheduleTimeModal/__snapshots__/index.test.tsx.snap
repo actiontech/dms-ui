@@ -3054,7 +3054,7 @@ exports[`sqle/Order/AuditDetail/ScheduleTimeModal should render notification met
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
