@@ -4,6 +4,7 @@ export interface CopyIconProps {
   tooltips?: boolean | React.ReactNode;
   format?: 'text/plain' | 'text/html';
   children?: React.ReactNode;
+  className?: string;
 }
 
 export { default } from './CopyIcon';

@@ -1,7 +1,6 @@
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useForm } from 'antd/es/form/Form';
-import { formatterSQL } from 'sqle/src/utils/FormatterSQL';
 import useCreateDataExportReduxManage from './index.redux';
 import {
   BaseFormFieldsType,
@@ -9,6 +8,7 @@ import {
   SourceFormFieldsType
 } from '../components/CreateTask/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 const useCreateExportTaskForm = () => {
   const [baseForm] = useForm<BaseFormFieldsType>();

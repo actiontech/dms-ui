@@ -18,8 +18,8 @@ import {
   instanceInfoMockData,
   instanceTipsMockData
 } from '../../../testUtils/mockApi/instance/data';
-import { formatterSQL } from '../../../utils/FormatterSQL';
 import configuration from '../../../testUtils/mockApi/configuration';
+import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 jest.mock('react-router-dom', () => {
   return {

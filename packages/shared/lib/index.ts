@@ -29,11 +29,14 @@ export { default as DatabaseTypeLogo } from './components/DatabaseTypeLogo';
 export { default as BasicTypographyEllipsis } from './components/BasicTypographyEllipsis';
 export { default as TokenCom } from './components/TokenCom';
 export { default as ToggleTokens } from './components/ToggleTokens';
+export { default as SQLRenderer } from './components/SQLRenderer';
 
 export { default as Copy } from './utils/Copy';
 export { default as Download } from './utils/Download';
 export { default as LocalStorageWrapper } from './utils/LocalStorageWrapper';
 export { default as EventEmitter } from './utils/EventEmitter';
+export { default as HighlightCode } from './utils/HighlightCode';
+export * as FormatterSQL from './utils/FormatterSQL';
 export * as Common from './utils/Common';
 export * as Math from './utils/Math';
 export * as Enum from './enum';
