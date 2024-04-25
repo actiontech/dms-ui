@@ -125,6 +125,7 @@ const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
 
 const PluginAudit = React.lazy(() => import('../page/PluginAudit'));
 
+// #if [major]
 const SqlOptimization = React.lazy(() => import('../page/SqlOptimization'));
 
 const SqlOptimizationCreate = React.lazy(
@@ -138,7 +139,7 @@ const SqlOptimizationOverview = React.lazy(
 const SqlOptimizationDetail = React.lazy(
   () => import('../page/SqlOptimization/Detail')
 );
-
+// #endif
 const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
@@ -392,6 +393,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       }
     ]
   },
+  // #if [major]
   {
     path: `${PROJECT_ROUTER_PARAM}/sql-optimization`,
     label: 'menu.sqlOptimization',
@@ -419,6 +421,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       }
     ]
   },
+  // #endif
   {
     path: '*',
     key: 'projectRedirect',

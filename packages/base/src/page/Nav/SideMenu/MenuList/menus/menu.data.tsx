@@ -35,14 +35,16 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
     dashboardMenuItem,
     sqlAuditMenuItem,
     pluginAuditMenuItem,
-    sqlOptimizationMenuItem,
     sqlOrderMenuItem,
     sqlManagementMenuItem,
     auditPlanMenuItem,
     projectRuleTemplateMenuItem,
     whiteListMenuItem,
     workflowTemplateMenuItem,
-    sqleOperationRecordMenuItem
+    sqleOperationRecordMenuItem,
+    // #endif
+    // #if [major]
+    sqlOptimizationMenuItem
     // #endif
   ];
   const menuStruct: MenuStructTreeType = [
@@ -57,7 +59,9 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
         'data-export',
         'sql-audit',
         'plugin-audit',
+        // #if [major]
         'sql-optimization'
+        // #endif
       ]
     },
     {
