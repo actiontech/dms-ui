@@ -11,16 +11,16 @@ import {
   IGetOptimizationRecordsReturn,
   IOptimizeSQLReqParams,
   IOptimizeSQLReqReturn,
-  IGetDBPerformanceImproveOverviewParams,
-  IGetDBPerformanceImproveOverviewReturn,
-  IGetOptimizationOverviewParams,
-  IGetOptimizationOverviewReturn,
   IGetOptimizationRecordReqParams,
   IGetOptimizationRecordReqReturn,
   IGetOptimizationSQLsParams,
   IGetOptimizationSQLsReturn,
   IGetOptimizationReqParams,
-  IGetOptimizationReqReturn
+  IGetOptimizationReqReturn,
+  IGetDBPerformanceImproveOverviewParams,
+  IGetDBPerformanceImproveOverviewReturn,
+  IGetOptimizationOverviewParams,
+  IGetOptimizationOverviewReturn
 } from './index.d';
 
 class SqlOptimizationService extends ServiceBase {
@@ -109,36 +109,6 @@ class SqlOptimizationService extends ServiceBase {
     );
   }
 
-  public getDBPerformanceImproveOverview(
-    params: IGetDBPerformanceImproveOverviewParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    return this.get<IGetDBPerformanceImproveOverviewReturn>(
-      `/v1/projects/${project_name}/sql_optimization_records/performance_improve_overview`,
-      paramsData,
-      options
-    );
-  }
-
-  public getOptimizationOverview(
-    params: IGetOptimizationOverviewParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    return this.get<IGetOptimizationOverviewReturn>(
-      `/v1/projects/${project_name}/sql_optimization_records/record_overview`,
-      paramsData,
-      options
-    );
-  }
-
   public GetOptimizationRecordReq(
     params: IGetOptimizationRecordReqParams,
     options?: AxiosRequestConfig
@@ -191,6 +161,36 @@ class SqlOptimizationService extends ServiceBase {
 
     return this.get<IGetOptimizationReqReturn>(
       `/v1/projects/${project_name}/sql_optimization_records/${optimization_record_id}/sqls/${number}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public getDBPerformanceImproveOverview(
+    params: IGetDBPerformanceImproveOverviewParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetDBPerformanceImproveOverviewReturn>(
+      `/v1/projects/${project_name}/statistic/optimization_performance_improve_overview`,
+      paramsData,
+      options
+    );
+  }
+
+  public getOptimizationOverview(
+    params: IGetOptimizationOverviewParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetOptimizationOverviewReturn>(
+      `/v1/projects/${project_name}/statistic/optimization_record_overview`,
       paramsData,
       options
     );
