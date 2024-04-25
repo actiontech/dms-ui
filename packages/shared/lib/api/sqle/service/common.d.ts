@@ -821,6 +821,14 @@ export interface IGetLicenseUsageResV1 {
   message?: string;
 }
 
+export interface IGetModuleStatusResV1 {
+  code?: number;
+
+  data?: IModuleStatusRes;
+
+  message?: string;
+}
+
 export interface IGetOperationActionListResV1 {
   code?: number;
 
@@ -1403,6 +1411,10 @@ export interface IMaintenanceTimeResV1 {
   maintenance_stop_time?: ITimeResV1;
 }
 
+export interface IModuleStatusRes {
+  is_supported?: boolean;
+}
+
 export interface IOperationActionList {
   desc?: string;
 
@@ -1463,6 +1475,8 @@ export interface IOptimizationDetail {
   optimization_id?: string;
 
   optimization_name?: string;
+
+  status?: string;
 }
 
 export interface IOptimizationRecord {
@@ -1479,6 +1493,8 @@ export interface IOptimizationRecord {
   optimization_name?: string;
 
   performance_gain?: number;
+
+  status?: string;
 }
 
 export interface IOptimizationRecordOverview {
@@ -1803,6 +1819,10 @@ export interface ISQLQueryConfigResV1 {
   max_pre_query_rows?: number;
 
   query_timeout_second?: number;
+}
+
+export interface IScheduleTaskDefaultOption {
+  default_selector?: string;
 }
 
 export interface ISource {
