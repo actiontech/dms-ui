@@ -97,6 +97,7 @@ const Overview = () => {
           <Col span={6} className="right-chart">
             <ScanTask />
           </Col>
+          {/* #if [major] */}
           <Col span={24}>
             <Row className="marginTop20" gutter={20}>
               <Col span={12}>
@@ -111,6 +112,7 @@ const Overview = () => {
               </Col>
             </Row>
           </Col>
+          {/* #endif */}
           <Col span={24}>
             <Row className="marginTop20" gutter={20}>
               <Col span={12}>
