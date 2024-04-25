@@ -256,6 +256,18 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
+
+  public getScheduledTaskDefaultOption() {
+    const spy = jest.spyOn(workflow, 'getScheduledTaskDefaultOptionV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          default_selector: 'feishu'
+        }
+      })
+    );
+    return spy;
+  }
 }
 
 export default new MockOrderApi();
