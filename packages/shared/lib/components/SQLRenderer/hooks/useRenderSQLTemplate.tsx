@@ -2,7 +2,16 @@ import { useCallback } from 'react';
 import { SQLRendererProps } from '../index.type';
 import HighlightCode from '../../../utils/HighlightCode';
 
-const useRenderSQLTemplate = (params: SQLRendererProps) => {
+const useRenderSQLTemplate = (
+  params: Pick<
+    SQLRendererProps,
+    | 'sql'
+    | 'showLineNumbers'
+    | 'emptySqlContent'
+    | 'highlightSyntax'
+    | 'preserveOriginalFormat'
+  >
+) => {
   const {
     showLineNumbers,
     sql,
@@ -16,7 +25,6 @@ const useRenderSQLTemplate = (params: SQLRendererProps) => {
     }
 
     const sqlContent = highlightSyntax ? HighlightCode.highlightSql(sql) : sql;
-
     let template = '';
     if (preserveOriginalFormat) {
       const lines = sqlContent.split(/\r?\n|\r/g);
@@ -37,11 +45,13 @@ const useRenderSQLTemplate = (params: SQLRendererProps) => {
     }
 
     return (
-      <span
-        dangerouslySetInnerHTML={{
-          __html: template
-        }}
-      />
+      <pre>
+        <code
+          dangerouslySetInnerHTML={{
+            __html: template
+          }}
+        />
+      </pre>
     );
   }, [
     emptySqlContent,

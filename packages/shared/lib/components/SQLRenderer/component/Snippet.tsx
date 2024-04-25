@@ -12,18 +12,29 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
   rows = 10,
   tooltip = true,
   paragraph,
-  ...props
+  showCopyIcon = false,
+  onClick,
+  className,
+  loading,
+  emptySqlContent = '-',
+  highlightSyntax = true,
+  sql,
+  onCopyComplete,
+  copyIconClassName
 }) => {
-  const { renderSQLTemplateContent } = useRenderSQLTemplate(props);
-  const { renderCopyIcon } = useRenderCopyIcon(props);
-  const {
+  const { renderSQLTemplateContent } = useRenderSQLTemplate({
+    showLineNumbers: false,
     sql,
+    emptySqlContent,
+    highlightSyntax,
+    preserveOriginalFormat: false
+  });
+  const { renderCopyIcon } = useRenderCopyIcon({
     showCopyIcon,
-    onClick,
-    className,
-    loading,
-    emptySqlContent = '-'
-  } = props;
+    sql,
+    onCopyComplete,
+    copyIconClassName
+  });
 
   const render = () => {
     const content = (
