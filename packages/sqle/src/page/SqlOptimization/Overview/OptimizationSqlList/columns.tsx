@@ -81,7 +81,8 @@ export const SqlOptimizationListActions = (
       buttonProps: (record) => ({
         onClick: () => {
           gotoDetailPage(record);
-        }
+        },
+        disabled: !!record?.number_of_syntax_error
       })
     }
   ]

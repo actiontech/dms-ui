@@ -11,18 +11,30 @@ import {
 export const sqlOptimizationRecordsMockData: IOptimizationRecord[] = [
   {
     optimization_id: '123456',
-    optimization_name: 'optmz_20240417112938231',
+    optimization_name: 'UI20240417112938231',
     instance_name: 'dd1',
     db_type: 'MySQL',
     performance_gain: 1108.2454657790013,
     created_time: '2024-04-17T03:33:09Z',
-    created_user: 'admin'
+    created_user: 'admin',
+    status: 'finish'
   },
   {
     optimization_id: '1234567',
-    optimization_name: 'optmz_20240417112938232',
+    optimization_name: 'SQLfile20240417112938232',
     instance_name: 'dd1',
-    db_type: 'MySQL'
+    db_type: 'MySQL',
+    status: 'failed'
+  },
+  {
+    optimization_id: '12345678',
+    optimization_name: 'GIT20240417112938233',
+    instance_name: 'dd1',
+    db_type: 'MySQL',
+    performance_gain: 1108.2454657790013,
+    created_time: '2024-04-17T03:33:09Z',
+    created_user: 'admin',
+    status: 'optimizing'
   }
 ];
 

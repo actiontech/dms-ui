@@ -55,6 +55,20 @@ describe('sqle/SqlOptimization/Detail', () => {
     expect(getOptimizationReqSpy).toHaveBeenCalled();
   });
 
+  it('render detail page when optimized sql is empty', async () => {
+    getOptimizationReqSpy.mockClear();
+    getOptimizationReqSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        ...optimizationDetailMockData,
+        optimized_sql: ''
+      })
+    );
+    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(getOptimizationReqSpy).toHaveBeenCalled();
+  });
+
   it('render link to overview page', async () => {
     superRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
