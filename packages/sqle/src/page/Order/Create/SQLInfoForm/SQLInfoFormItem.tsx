@@ -21,15 +21,15 @@ import {
   SQLStatementFormTabsRefType
 } from '../../SQLStatementForm';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import {
-  FormatLanguageSupport,
-  formatterSQL
-} from '../../../../utils/FormatterSQL';
 import SQLStatementForm from '../../SQLStatementForm/SQLStatementForm';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
+import {
+  FormatLanguageSupport,
+  formatterSQL
+} from '@actiontech/shared/lib/utils/FormatterSQL';
 
 const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
   form,

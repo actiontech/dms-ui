@@ -5,12 +5,14 @@ import { CopyIconProps } from '.';
 import Copy from '../../utils/Copy';
 import { CopyIconStyleWrapper } from './style';
 import BasicToolTips from '../BasicToolTips';
+import classNames from 'classnames';
 
 const CopyIcon: React.FC<CopyIconProps> = ({
   text,
   children,
   tooltips = true,
-  onCopy
+  onCopy,
+  className
 }) => {
   const { t } = useTranslation();
   const [copied, setCopied] = React.useState(false);
@@ -51,7 +53,11 @@ const CopyIcon: React.FC<CopyIconProps> = ({
 
   return (
     <BasicToolTips key="copy" title={tooltipsTitle}>
-      <CopyIconStyleWrapper onClick={onCopyClick} copied={copied}>
+      <CopyIconStyleWrapper
+        onClick={onCopyClick}
+        copied={copied}
+        className={classNames('actiontech-copy-icon', className)}
+      >
         {copied ? <CheckOutlined /> : <CopyOutlined />}
       </CopyIconStyleWrapper>
     </BasicToolTips>

@@ -1,12 +1,16 @@
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { EmptyBox, BasicTable, BasicResult } from '@actiontech/shared';
+import {
+  EmptyBox,
+  BasicTable,
+  BasicResult,
+  SQLRenderer
+} from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable1';
 import { SQLExecPlanItem } from './index.type';
 import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
 import { IconSqlLine } from '@actiontech/shared/lib/Icon/common';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
-import RenderSQL from '../../../components/RenderSQL';
 
 const useSQLExecPlan = () => {
   const { t } = useTranslation();
@@ -25,7 +29,7 @@ const useSQLExecPlan = () => {
         <>
           <h3 className="header-title">{t('sqlQuery.executePlan.sql')}</h3>
           <section className="basic-cont-wrapper sql-cont">
-            <RenderSQL sql={sql ?? ''} />
+            <SQLRenderer.Snippet showCopyIcon sql={sql ?? ''} />
           </section>
         </>
       );
