@@ -12,6 +12,7 @@ const EditorView: React.FC<SQLEditorViewRendererProps> = ({
       {...props}
       language="sql"
       options={{
+        ...props.options,
         readOnly: true
       }}
     />
