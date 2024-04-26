@@ -10,7 +10,7 @@ exports[`slqe/SqlOptimization CE should match snap shot 1`] = `
         <div
           class="title"
         >
-          性能优化
+          智能调优
         </div>
         <div
           class="extra"
@@ -36,7 +36,7 @@ exports[`slqe/SqlOptimization CE should match snap shot 1`] = `
               <div
                 class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
               >
-                当您需要获得SQL重写建议、优化SQL执行性能时，可以使用平台提供的SQL调优功能，同时获取SQL改写、索引优化、性能验证等多重优化结果
+                当您需要获得SQL重写建议、优化SQL执行性能时，可以使用平台提供的智能调优功能，同时获取SQL改写、索引优化、性能验证等多重优化结果
               </div>
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
@@ -1217,7 +1217,7 @@ exports[`slqe/SqlOptimization CE should match snap shot 1`] = `
                     <p
                       class="cont-tip"
                     >
-                      性能优化为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                      智能调优为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                     </p>
                     <div
                       class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"

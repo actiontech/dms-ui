@@ -5,5 +5,7 @@ export enum getInstanceTipListV1FunctionalModuleEnum {
 
   'create_workflow' = 'create_workflow',
 
-  'sql_manage' = 'sql_manage'
+  'sql_manage' = 'sql_manage',
+
+  'create_optimization' = 'create_optimization'
 }

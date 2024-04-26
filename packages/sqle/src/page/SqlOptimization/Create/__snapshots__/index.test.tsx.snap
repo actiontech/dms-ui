@@ -33,7 +33,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               </svg>
             </span>
             <span>
-              返回性能优化列表
+              返回智能调优列表
             </span>
           </button>
         </a>
@@ -80,7 +80,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               </svg>
             </span>
             <span>
-              创建性能优化
+              创建智能调优
             </span>
           </h3>
           <div
@@ -111,7 +111,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       aria-required="true"
                       class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
-                      placeholder="请输入优化名称"
+                      placeholder="请输入智能调优名称"
                       type="text"
                       value="GIT20240101120000000"
                     />
@@ -972,7 +972,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               type="button"
             >
               <span>
-                创建SQL优化
+                优 化
               </span>
             </button>
           </div>
@@ -1430,7 +1430,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               </svg>
             </span>
             <span>
-              返回性能优化列表
+              返回智能调优列表
             </span>
           </button>
         </a>
@@ -1477,7 +1477,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               </svg>
             </span>
             <span>
-              创建性能优化
+              创建智能调优
             </span>
           </h3>
           <div
@@ -1508,7 +1508,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       aria-required="true"
                       class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
-                      placeholder="请输入优化名称"
+                      placeholder="请输入智能调优名称"
                       type="text"
                       value="UI20240101120000000"
                     />
@@ -2263,7 +2263,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               type="button"
             >
               <span>
-                创建SQL优化
+                优 化
               </span>
             </button>
           </div>
@@ -2749,7 +2749,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               </svg>
             </span>
             <span>
-              返回性能优化列表
+              返回智能调优列表
             </span>
           </button>
         </a>
@@ -2796,7 +2796,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               </svg>
             </span>
             <span>
-              创建性能优化
+              创建智能调优
             </span>
           </h3>
           <div
@@ -2827,7 +2827,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       aria-required="true"
                       class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
-                      placeholder="请输入优化名称"
+                      placeholder="请输入智能调优名称"
                       type="text"
                       value="SQLfile20240101120000000"
                     />
@@ -3622,7 +3622,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               type="button"
             >
               <span>
-                创建SQL优化
+                优 化
               </span>
             </button>
           </div>
@@ -4080,7 +4080,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               </svg>
             </span>
             <span>
-              返回性能优化列表
+              返回智能调优列表
             </span>
           </button>
         </a>
@@ -4127,7 +4127,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               </svg>
             </span>
             <span>
-              创建性能优化
+              创建智能调优
             </span>
           </h3>
           <div
@@ -4158,7 +4158,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       aria-required="true"
                       class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
-                      placeholder="请输入优化名称"
+                      placeholder="请输入智能调优名称"
                       type="text"
                       value="MYBATISfile20240101120000000"
                     />
@@ -4953,7 +4953,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               type="button"
             >
               <span>
-                创建SQL优化
+                优 化
               </span>
             </button>
           </div>
@@ -5411,7 +5411,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               </svg>
             </span>
             <span>
-              返回性能优化列表
+              返回智能调优列表
             </span>
           </button>
         </a>
@@ -5458,7 +5458,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               </svg>
             </span>
             <span>
-              创建性能优化
+              创建智能调优
             </span>
           </h3>
           <div
@@ -5489,7 +5489,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       aria-required="true"
                       class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
-                      placeholder="请输入优化名称"
+                      placeholder="请输入智能调优名称"
                       type="text"
                       value="ZIPfile20240101120000000"
                     />
@@ -6312,7 +6312,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               type="button"
             >
               <span>
-                创建SQL优化
+                优 化
               </span>
             </button>
           </div>

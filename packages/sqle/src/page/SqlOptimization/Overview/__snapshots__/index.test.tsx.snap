@@ -39,7 +39,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
                   </svg>
                 </span>
                 <span>
-                  返回性能优化列表
+                  返回智能调优列表
                 </span>
               </button>
             </a>
@@ -1129,7 +1129,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
                   </svg>
                 </span>
                 <span>
-                  返回性能优化列表
+                  返回智能调优列表
                 </span>
               </button>
             </a>

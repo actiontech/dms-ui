@@ -64,8 +64,8 @@ describe('sqle/SqlOptimization/Create', () => {
 
   it('render return back to optimization list page', async () => {
     renderWithThemeAndRedux(customRender());
-    expect(screen.getByText('返回性能优化列表')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('返回性能优化列表'));
+    expect(screen.getByText('返回智能调优列表')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('返回智能调优列表'));
   });
 
   it('enter default content to create sql optimization', async () => {
@@ -128,7 +128,7 @@ describe('sqle/SqlOptimization/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(screen.getByText('创建性能优化成功')).toBeInTheDocument();
+    expect(screen.getByText('创建智能调优成功')).toBeInTheDocument();
     expect(optimizeSQLReqSpy).toHaveBeenCalledTimes(1);
     expect(optimizeSQLReqSpy).toHaveBeenCalledWith({
       optimization_name: 'UI20240101120000000',
@@ -223,7 +223,7 @@ describe('sqle/SqlOptimization/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(screen.getByText('创建性能优化成功')).toBeInTheDocument();
+    expect(screen.getByText('创建智能调优成功')).toBeInTheDocument();
 
     expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
@@ -286,7 +286,7 @@ describe('sqle/SqlOptimization/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(screen.getByText('创建性能优化成功')).toBeInTheDocument();
+    expect(screen.getByText('创建智能调优成功')).toBeInTheDocument();
 
     expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
@@ -349,7 +349,7 @@ describe('sqle/SqlOptimization/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(screen.getByText('创建性能优化成功')).toBeInTheDocument();
+    expect(screen.getByText('创建智能调优成功')).toBeInTheDocument();
 
     expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
@@ -422,7 +422,7 @@ describe('sqle/SqlOptimization/Create', () => {
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
-    expect(screen.getByText('创建性能优化成功')).toBeInTheDocument();
+    expect(screen.getByText('创建智能调优成功')).toBeInTheDocument();
 
     expect(navigateSpy).toHaveBeenCalledTimes(1);
   });

@@ -10,6 +10,6 @@ describe('slqe/SqlOptimization CE', () => {
   test('should match snap shot', async () => {
     const { baseElement } = renderWithReduxAndTheme(<SqlOptimization />);
     expect(baseElement).toMatchSnapshot();
-    expect(screen.queryByText('性能优化')).toBeInTheDocument();
+    expect(screen.queryByText('智能调优')).toBeInTheDocument();
   });
 });
