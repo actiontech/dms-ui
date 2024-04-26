@@ -7,8 +7,9 @@ import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
 import { useTranslation } from 'react-i18next';
 import { SqlFiledInitialValue } from 'sqle/src/data/common';
 import { CreateExportTaskFormEntryProps } from '../index.type';
-import ExportMethodItems from './ExportMethodItems';
 import { ExportMethodEnum } from './index.enum';
+import { IconOrderSQLUpload } from 'sqle/src/icon/Order';
+import { ModeSwitcher } from '@actiontech/shared';
 
 const ExportMethodFormItem: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'methodForm'>
@@ -21,7 +22,16 @@ const ExportMethodFormItem: React.FC<
   return (
     <>
       <FormItemNoLabel name="exportMethod" initialValue={ExportMethodEnum.sql}>
-        <ExportMethodItems />
+        <ModeSwitcher
+          options={[
+            {
+              label: t('dmsDataExport.create.form.method.manualInput'),
+              value: ExportMethodEnum.sql,
+              colProps: { span: 8 },
+              icon: <IconOrderSQLUpload />
+            }
+          ]}
+        />
       </FormItemNoLabel>
 
       <FormItemNoLabel

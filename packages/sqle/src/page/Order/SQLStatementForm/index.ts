@@ -1,3 +1,4 @@
+import { ModeSwitcherOptionsType } from '@actiontech/shared/lib/components/ModeSwitcher/index.type';
 import { FormInstance } from 'antd';
 
 export interface SQLStatementFormProps {
@@ -5,7 +6,7 @@ export interface SQLStatementFormProps {
   isClearFormWhenChangeSqlType?: boolean;
   sqlStatement?: string;
   fieldName?: string;
-  hideUpdateMybatisFile?: boolean;
+  uploadTypeOptions?: ModeSwitcherOptionsType;
 }
 export interface SQLStatementFormTabsProps
   extends Omit<SQLStatementFormProps, 'sqlStatement'> {

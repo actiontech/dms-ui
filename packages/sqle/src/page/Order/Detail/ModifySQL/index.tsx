@@ -245,7 +245,6 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
           });
       }
     };
-
     if (open) {
       getAllSqlStatement();
       if (sqlMode === WorkflowResV2ModeEnum.different_sqls) {
@@ -261,8 +260,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
     open,
     sqlMode,
     startGetAllSqlStatement,
-    finishGetAllSqlStatement,
-    form
+    finishGetAllSqlStatement
   ]);
 
   return (
@@ -318,7 +316,6 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                     sqlStatement={
                       sqlStatementValue?.[currentOrderTasks[0]?.task_id ?? '']
                     }
-                    hideUpdateMybatisFile={true}
                   />
                 }
               >
@@ -326,7 +323,6 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                   ref={sqlStatementFormTabsRef}
                   form={form}
                   SQLStatementInfo={sqlStatementInfo}
-                  hideUpdateMybatisFile={true}
                 />
               </EmptyBox>
 

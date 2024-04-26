@@ -37,8 +37,7 @@ describe('sqle/Order/SQLStatementForm', () => {
   it('render click hideUpdateMybatisFile & isClearFormWhenChangeSqlType', () => {
     const { baseElement } = customRender({
       fieldName: 'sql-demo',
-      isClearFormWhenChangeSqlType: true,
-      hideUpdateMybatisFile: true
+      isClearFormWhenChangeSqlType: true
     });
     expect(baseElement).toMatchSnapshot();
   });
