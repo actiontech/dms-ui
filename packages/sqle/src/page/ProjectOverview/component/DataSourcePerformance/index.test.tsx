@@ -3,8 +3,6 @@ import {
   renderHooksWithTheme,
   renderWithThemeAndRedux
 } from '../../../../testUtils/customRender';
-// import MockDate from 'mockdate';
-// import dayjs from 'dayjs';
 import sqlOptimization from '../../../../testUtils/mockApi/sqlOptimization';
 import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 import { mockThemeStyleData } from '../../../../testUtils/mockHooks/mockThemeStyleData';
@@ -18,6 +16,28 @@ import { ThemeData, SupportTheme } from '../../../../theme';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { IDBPerformanceImproveOverview } from '@actiontech/shared/lib/api/sqle/service/common';
+import { BarConfig } from '@ant-design/plots';
+
+jest.mock('@ant-design/plots', () => {
+  return {
+    ...jest.requireActual('@ant-design/plots'),
+    Bar: jest.requireActual('@ant-design/plots').BarWithCustomRenderCalled({
+      tooltip: {
+        customContent: (props: BarConfig) => {
+          return [
+            '',
+            [
+              {
+                name: props.data[0]?.instance_name,
+                value: props.data[0]?.avg_performance_improve
+              }
+            ]
+          ];
+        }
+      }
+    })
+  };
+});
 
 const themeData = ThemeData[SupportTheme.LIGHT];
 

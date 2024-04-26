@@ -8,12 +8,7 @@ import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimiz
 import { useRequest } from 'ahooks';
 import { Spin, Col, Row, Statistic, Typography, Card } from 'antd';
 import { SqlOptimizationOverviewBaseInfoStyleWrapper } from '../style';
-import RenderSQL from '../../../components/RenderSQL';
-import {
-  DetailComStyleWrapper,
-  HeaderSpaceTagStyleWrapper,
-  SqlOptimizationSqlBlockStyleWrapper
-} from '../style';
+import { DetailComStyleWrapper, HeaderSpaceTagStyleWrapper } from '../style';
 import {
   IconDatabaseActive,
   IconDatabaseSchemaActive

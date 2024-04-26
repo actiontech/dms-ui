@@ -480,18 +480,7 @@ exports[`sqle/SqlOptimization render table data 1`] = `
                         <td
                           class="ant-table-cell"
                         >
-                          <div
-                            class="css-1uw16ge"
-                          >
-                            <img
-                              alt=""
-                            />
-                            <span
-                              title="MySQL"
-                            >
-                              MySQL
-                            </span>
-                          </div>
+                          -
                         </td>
                         <td
                           class="ant-table-cell"

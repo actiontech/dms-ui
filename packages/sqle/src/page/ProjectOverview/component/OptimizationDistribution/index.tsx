@@ -68,7 +68,7 @@ const renderTooltipCustomContent = (
 
 const dateFormat = 'YYYY-MM-DD';
 
-type RangeValue = [Dayjs | null, Dayjs | null] | null;
+type RangeValue = [Dayjs | null, Dayjs | null];
 
 const OptimizationDistribution = () => {
   const { t } = useTranslation();
@@ -206,9 +206,6 @@ const OptimizationDistribution = () => {
   };
 
   const disabledDate: RangePickerProps['disabledDate'] = (current: Dayjs) => {
-    if (!range) {
-      return false;
-    }
     const noAfterToday = current && current > dayjs().endOf('day');
     const exceedLimitDay = 90;
     const tooLate = range[0] && current.diff(range[0], 'days') > exceedLimitDay;
@@ -217,8 +214,8 @@ const OptimizationDistribution = () => {
     return noAfterToday || !!tooEarly || !!tooLate;
   };
 
-  const onChange = (values: RangeValue) => {
-    setRange(values);
+  const onChange = (values: RangeValue | null) => {
+    setRange(values!);
   };
 
   useEffect(() => {
