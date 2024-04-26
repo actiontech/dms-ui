@@ -8,6 +8,7 @@ import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/commo
 import configuration from '../../../../testUtils/mockApi/configuration';
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import order from '../../../../testUtils/mockApi/order';
 
 describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
   const closeScheduleModalFn = jest.fn();
@@ -32,6 +33,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
   beforeEach(() => {
     getWechatAuditConfigSpy = configuration.getWechatAuditConfiguration();
     getFeishuAuditConfigSpy = configuration.getFeishuAuditConfiguration();
+    order.getScheduledTaskDefaultOption();
     jest.useFakeTimers({ legacyFakeTimers: true });
 
     MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
@@ -283,6 +285,7 @@ describe('sqle/Order/AuditDetail/ScheduleTimeModal', () => {
     fireEvent.click(getBySelector('#notification_confirmation'));
     expect(getWechatAuditConfigSpy).toHaveBeenCalledTimes(1);
     expect(getFeishuAuditConfigSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
 
