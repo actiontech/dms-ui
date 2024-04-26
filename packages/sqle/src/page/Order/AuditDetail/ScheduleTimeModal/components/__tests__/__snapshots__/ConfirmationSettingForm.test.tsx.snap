@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test ConfirmationSettingForm.test render snapshot when enable is equal false 1`] = `
+exports[`test ConfirmationSettingForm render snapshot when enable is equal false 1`] = `
 <div>
   <form
     class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
@@ -80,167 +80,7 @@ exports[`test ConfirmationSettingForm.test render snapshot when enable is equal 
 </div>
 `;
 
-exports[`test ConfirmationSettingForm.test render snapshot when enable is equal true and close the config 1`] = `
-<div>
-  <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
-  >
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-    >
-      <div
-        class="ant-spin-container"
-      >
-        <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
-        >
-          <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-          >
-            <div
-              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
-            >
-              <label
-                class=""
-                for="notification_confirmation"
-                title=""
-              >
-                <div
-                  class="label-cont-custom"
-                >
-                  <div>
-                    上线前是否发送通知进行确认
-                  </div>
-                  <div
-                    class="tip-content-box"
-                  >
-                    若开启，到达上线时间点，平台将发送一则上线确认信息，确认后执行上线操作；若不开启，到达上线时间将自动执行上线操作
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div
-              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
-            >
-              <div
-                class="ant-form-item-control-input"
-              >
-                <div
-                  class="ant-form-item-control-input-content"
-                >
-                  <button
-                    aria-checked="false"
-                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                    id="notification_confirmation"
-                    role="switch"
-                    type="button"
-                  >
-                    <div
-                      class="ant-switch-handle"
-                    />
-                    <span
-                      class="ant-switch-inner"
-                    >
-                      <span
-                        class="ant-switch-inner-checked"
-                      />
-                      <span
-                        class="ant-switch-inner-unchecked"
-                      />
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="ant-form-item has-label-tip has-required-style css-15ihijf css-dev-only-do-not-override-txh9fw"
-        >
-          <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-          >
-            <div
-              class="ant-col ant-col-16 ant-form-item-label css-dev-only-do-not-override-txh9fw"
-            >
-              <label
-                class="ant-form-item-required"
-                for="confirmation_method"
-                title=""
-              >
-                <div
-                  class="label-cont-custom"
-                >
-                  <div>
-                    确认方式
-                  </div>
-                  <div
-                    class="tip-content-box"
-                  >
-                    目前仅支持企业微信、飞书，如果您尚未配置相应流程的对接能力，请先到
-                    <a
-                      href="/system?active_tab=process_connection"
-                      target="_blank"
-                    >
-                      系统设置-流程对接
-                    </a>
-                    处开启
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div
-              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
-            >
-              <div
-                class="ant-form-item-control-input"
-              >
-                <div
-                  class="ant-form-item-control-input-content"
-                >
-                  <div
-                    aria-required="true"
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-e8wfcg"
-                    id="confirmation_method"
-                  >
-                    <div
-                      class="ant-space-item"
-                      style="margin-bottom: 8px;"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
-                        type="button"
-                      >
-                        <span>
-                          企业微信
-                        </span>
-                      </button>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
-                        type="button"
-                      >
-                        <span>
-                          飞书
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`test ConfirmationSettingForm.test render snapshot when enable is equal true and open the config 1`] = `
+exports[`test ConfirmationSettingForm render snapshot when enable is equal true and close the config 1`] = `
 <div>
   <form
     class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
@@ -400,7 +240,167 @@ exports[`test ConfirmationSettingForm.test render snapshot when enable is equal 
 </div>
 `;
 
-exports[`test ConfirmationSettingForm.test render snapshot when enable is equal true and open the feishu config 1`] = `
+exports[`test ConfirmationSettingForm render snapshot when enable is equal true and open the config 1`] = `
+<div>
+  <form
+    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class=""
+                for="notification_confirmation"
+                title=""
+              >
+                <div
+                  class="label-cont-custom"
+                >
+                  <div>
+                    上线前是否发送通知进行确认
+                  </div>
+                  <div
+                    class="tip-content-box"
+                  >
+                    若开启，到达上线时间点，平台将发送一则上线确认信息，确认后执行上线操作；若不开启，到达上线时间将自动执行上线操作
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <button
+                    aria-checked="false"
+                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                    id="notification_confirmation"
+                    role="switch"
+                    type="button"
+                  >
+                    <div
+                      class="ant-switch-handle"
+                    />
+                    <span
+                      class="ant-switch-inner"
+                    >
+                      <span
+                        class="ant-switch-inner-checked"
+                      />
+                      <span
+                        class="ant-switch-inner-unchecked"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item has-label-tip has-required-style css-15ihijf css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-16 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-required"
+                for="confirmation_method"
+                title=""
+              >
+                <div
+                  class="label-cont-custom"
+                >
+                  <div>
+                    确认方式
+                  </div>
+                  <div
+                    class="tip-content-box"
+                  >
+                    目前仅支持企业微信、飞书，如果您尚未配置相应流程的对接能力，请先到
+                    <a
+                      href="/system?active_tab=process_connection"
+                      target="_blank"
+                    >
+                      系统设置-流程对接
+                    </a>
+                    处开启
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    aria-required="true"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-e8wfcg"
+                    id="confirmation_method"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          企业微信
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          飞书
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`test ConfirmationSettingForm render snapshot when enable is equal true and open the feishu config 1`] = `
 <div>
   <form
     class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
@@ -560,7 +560,7 @@ exports[`test ConfirmationSettingForm.test render snapshot when enable is equal 
 </div>
 `;
 
-exports[`test ConfirmationSettingForm.test render snapshot when enable is equal true and open the wechat config 1`] = `
+exports[`test ConfirmationSettingForm render snapshot when enable is equal true and open the wechat config 1`] = `
 <div>
   <form
     class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
@@ -720,7 +720,7 @@ exports[`test ConfirmationSettingForm.test render snapshot when enable is equal 
 </div>
 `;
 
-exports[`test ConfirmationSettingForm.test render snapshot when enable is equal true and request throw catch 1`] = `
+exports[`test ConfirmationSettingForm render snapshot when enable is equal true and request throw catch 1`] = `
 <div>
   <form
     class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
