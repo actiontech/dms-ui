@@ -74,7 +74,7 @@ import {
 class WorkflowService extends ServiceBase {
   public getScheduledTaskDefaultOptionV1(options?: AxiosRequestConfig) {
     return this.get<IGetScheduledTaskDefaultOptionV1Return>(
-      '/configurations/workflows/schedule/default_option',
+      '/v1/configurations/workflows/schedule/default_option',
       undefined,
       options
     );

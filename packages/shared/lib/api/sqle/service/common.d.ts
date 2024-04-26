@@ -19,6 +19,7 @@ import {
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
+  ScheduleTaskDefaultOptionDefaultSelectorEnum,
   SourceTypeEnum,
   SqlManageStatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
@@ -1718,6 +1719,10 @@ export interface IRuleResV1 {
 
   desc?: string;
 
+  has_audit_power?: boolean;
+
+  has_rewrite_power?: boolean;
+
   is_custom_rule?: boolean;
 
   level?: RuleResV1LevelEnum;
@@ -1822,7 +1827,15 @@ export interface ISQLQueryConfigResV1 {
 }
 
 export interface IScheduleTaskDefaultOption {
-  default_selector?: string;
+  default_selector?: ScheduleTaskDefaultOptionDefaultSelectorEnum;
+}
+
+export interface IScheduledTaskDefaultOptionV1Rsp {
+  code?: number;
+
+  data?: IScheduleTaskDefaultOption;
+
+  message?: string;
 }
 
 export interface ISource {
