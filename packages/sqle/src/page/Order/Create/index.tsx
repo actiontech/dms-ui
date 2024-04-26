@@ -98,12 +98,17 @@ const Create: React.FC = () => {
         }
         finishAudit();
       };
-      startAudit();
+      try {
+        await baseForm.validateFields();
+        startAudit();
 
-      if (values.isSameSqlOrder) {
-        auditOrderWithSameSql(values).finally(finallyFn);
-      } else {
-        auditOrderWthDifferenceSql(values, instanceInfo).finally(finallyFn);
+        if (values.isSameSqlOrder) {
+          auditOrderWithSameSql(values).finally(finallyFn);
+        } else {
+          auditOrderWthDifferenceSql(values, instanceInfo).finally(finallyFn);
+        }
+      } catch (error) {
+        /* empty */
       }
     },
     [
