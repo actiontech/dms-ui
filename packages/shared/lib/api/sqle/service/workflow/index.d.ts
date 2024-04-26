@@ -1,5 +1,5 @@
 import {
-  IScheduleTaskDefaultOption,
+  IScheduledTaskDefaultOptionV1Rsp,
   IGetWorkflowTemplateResV1,
   IUpdateWorkflowTemplateReqV1,
   IBaseRes,
@@ -30,7 +30,7 @@ import {
 } from './index.enum';
 
 export interface IGetScheduledTaskDefaultOptionV1Return
-  extends IScheduleTaskDefaultOption {}
+  extends IScheduledTaskDefaultOptionV1Rsp {}
 
 export interface IGetWorkflowTemplateV1Params {
   project_name: string;

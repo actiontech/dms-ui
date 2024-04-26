@@ -9,7 +9,8 @@ import { RuleListProps, RuleStatusEnum, EnumActionType } from './index.type';
 import {
   EmptyRuleStyleWrapper,
   RuleItemStyleWrapper,
-  RulesStyleWrapper
+  RulesStyleWrapper,
+  RuleItemTagStyleWrapper
 } from './style';
 import { useTranslation } from 'react-i18next';
 import { FloatButton, Space, Spin, Typography } from 'antd';
@@ -85,7 +86,23 @@ const RuleList: React.FC<RuleListProps> = ({
         >
           {rule.annotation}
         </Typography.Paragraph>
-        {renderParams(rule.params)}
+        <EmptyBox
+          if={!!rule.params || rule.has_audit_power || rule.has_rewrite_power}
+        >
+          <Space className="level-content-params">
+            {renderParams(rule.params)}
+            <EmptyBox if={rule.has_audit_power}>
+              <RuleItemTagStyleWrapper className="rule-audit-tag">
+                {t('ruleTemplate.detail.auditCapability')}
+              </RuleItemTagStyleWrapper>
+            </EmptyBox>
+            <EmptyBox if={rule.has_rewrite_power}>
+              <RuleItemTagStyleWrapper className="rule-rewrite-tag">
+                {t('ruleTemplate.detail.rewriteCapability')}
+              </RuleItemTagStyleWrapper>
+            </EmptyBox>
+          </Space>
+        </EmptyBox>
       </div>
     );
   };
@@ -95,14 +112,14 @@ const RuleList: React.FC<RuleListProps> = ({
       return undefined;
     }
     return (
-      <Space size={8} wrap className="level-content-params">
+      <RuleItemTagStyleWrapper className="rule-param-tag">
         {params?.map((v) => (
           <div className="level-content-params-item" key={v.key}>
             {v.desc} {': '}
             {v.value}
           </div>
         ))}
-      </Space>
+      </RuleItemTagStyleWrapper>
     );
   };
 

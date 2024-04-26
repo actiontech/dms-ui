@@ -32,7 +32,9 @@ export default {
   detail: {
     project: '项目',
     dbType: '数据源类型',
-    error: '获取规则详细信息异常'
+    error: '获取规则详细信息异常',
+    auditCapability: '审核能力',
+    rewriteCapability: '重写能力'
   },
 
   deleteRuleTemplate: {
