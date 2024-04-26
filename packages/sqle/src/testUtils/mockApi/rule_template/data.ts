@@ -49,7 +49,9 @@ export const ruleListData = [
       { key: 'first_key', value: '100', desc: '最大绑定变量数量', type: 'int' }
     ],
     rule_name: ruleNameFirst,
-    type: '使用建议'
+    type: '使用建议',
+    has_audit_power: false,
+    has_rewrite_power: false
   },
   {
     annotation:
@@ -62,7 +64,9 @@ export const ruleListData = [
       { key: 'first_key', value: '100', desc: '最大绑定变量数量', type: 'int' }
     ],
     rule_name: ruleNameSecond,
-    type: '使用建议'
+    type: '使用建议',
+    has_audit_power: true,
+    has_rewrite_power: true
   }
 ];
 
