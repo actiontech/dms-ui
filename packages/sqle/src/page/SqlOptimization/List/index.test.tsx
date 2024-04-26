@@ -48,9 +48,9 @@ describe('sqle/SqlOptimizationList', () => {
   it('render create optimization button', async () => {
     superRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
-    expect(screen.getByText('创建优化')).toBeInTheDocument();
-    expect(screen.getByText('创建优化').closest('a')).toHaveAttribute('href');
-    fireEvent.click(screen.getByText('创建优化'));
+    expect(screen.getByText('创建智能调优')).toBeInTheDocument();
+    expect(screen.getByText('创建智能调优').closest('a')).toHaveAttribute('href');
+    fireEvent.click(screen.getByText('创建智能调优'));
   });
 
   it('filter data with search', async () => {

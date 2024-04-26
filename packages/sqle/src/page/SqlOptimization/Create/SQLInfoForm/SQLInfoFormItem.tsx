@@ -34,7 +34,7 @@ const SQLInfoFormItem = ({ form, submit }: SqlInfoFormProps) => {
     updateInstanceList({
       project_name: projectName,
       functional_module:
-        getInstanceTipListV1FunctionalModuleEnum.create_workflow
+        getInstanceTipListV1FunctionalModuleEnum.create_optimization
     });
   }, [projectName, updateInstanceList]);
 
@@ -64,7 +64,7 @@ const SQLInfoFormItem = ({ form, submit }: SqlInfoFormProps) => {
           type="primary"
           loading={submitLoading}
         >
-          {t('sqlOptimization.create.sqlInfo.title')}
+          {t('sqlOptimization.create.sqlInfo.optimize')}
         </BasicButton>
         <Space hidden={uploadType !== UploadTypeEnum.sql}>
           <BasicButton onClick={formatSql} loading={submitLoading}>

@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '性能优化',
+  pageTitle: '智能调优',
   ceTips:
-    '当您需要获得SQL重写建议、优化SQL执行性能时，可以使用平台提供的SQL调优功能，同时获取SQL改写、索引优化、性能验证等多重优化结果',
+    '当您需要获得SQL重写建议、优化SQL执行性能时，可以使用平台提供的智能调优功能，同时获取SQL改写、索引优化、性能验证等多重优化结果',
   table: {
     optimizationId: '优化ID',
     optimizationName: '名称',
@@ -13,14 +13,12 @@ export default {
     creator: '创建人'
   },
   create: {
-    linkButton: '创建优化',
-    returnButton: '返回性能优化列表',
-    successTips: '创建性能优化成功',
+    linkButton: '创建智能调优',
+    returnButton: '返回智能调优列表',
+    successTips: '创建智能调优成功',
     base: {
-      title: '创建性能优化',
-      name: '优化名称',
-      desc: '优化描述',
-      descPlaceholder: '点此添加优化描述(选填)'
+      title: '创建智能调优',
+      name: '智能调优名称'
     },
     sqlInfo: {
       title: '创建SQL优化',

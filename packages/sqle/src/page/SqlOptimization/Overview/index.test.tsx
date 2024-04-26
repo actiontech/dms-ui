@@ -69,8 +69,8 @@ describe('sqle/SqlOptimization/Overview', () => {
 
   it('render return back to optimization list page', async () => {
     superRender(<SqlOptimizationOverview />);
-    expect(screen.getByText('返回性能优化列表')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('返回性能优化列表'));
+    expect(screen.getByText('返回智能调优列表')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('返回智能调优列表'));
   });
 
   it('render link to detail page', async () => {

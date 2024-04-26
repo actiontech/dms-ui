@@ -9,7 +9,7 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
       <div
         class="title"
       >
-        性能优化
+        智能调优
       </div>
       <div
         class="extra"
@@ -42,7 +42,7 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
               </span>
             </span>
             <span>
-              创建优化
+              创建智能调优
             </span>
           </button>
         </a>
