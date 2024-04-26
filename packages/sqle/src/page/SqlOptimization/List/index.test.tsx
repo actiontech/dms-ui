@@ -49,7 +49,9 @@ describe('sqle/SqlOptimizationList', () => {
     superRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     expect(screen.getByText('创建智能调优')).toBeInTheDocument();
-    expect(screen.getByText('创建智能调优').closest('a')).toHaveAttribute('href');
+    expect(screen.getByText('创建智能调优').closest('a')).toHaveAttribute(
+      'href'
+    );
     fireEvent.click(screen.getByText('创建智能调优'));
   });
 
