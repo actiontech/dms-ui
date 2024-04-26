@@ -12,7 +12,6 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate } from 'react-router-dom';
-import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -51,29 +50,6 @@ describe('sqle/SqlOptimizationList', () => {
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     expect(screen.getByText('创建优化')).toBeInTheDocument();
     expect(screen.getByText('创建优化').closest('a')).toHaveAttribute('href');
-    fireEvent.click(screen.getByText('创建优化'));
-  });
-
-  it('render create optimization button when current user is not admin', async () => {
-    mockUseCurrentUser({ isAdmin: false });
-    superRender(<SqlOptimizationList />);
-    expect(getOptimizationRecordsSpy).toHaveBeenCalled();
-    expect(screen.queryByText('创建优化')).not.toBeInTheDocument();
-  });
-
-  it('render create optimization button when Permissions include project_admin', async () => {
-    mockUseCurrentUser({
-      isAdmin: false,
-      managementPermissions: [
-        {
-          uid: OpPermissionTypeUid.create_optimization,
-          name: '创建优化'
-        }
-      ]
-    });
-    superRender(<SqlOptimizationList />);
-    expect(getOptimizationRecordsSpy).toHaveBeenCalled();
-    expect(screen.getByText('创建优化')).toBeInTheDocument();
     fireEvent.click(screen.getByText('创建优化'));
   });
 

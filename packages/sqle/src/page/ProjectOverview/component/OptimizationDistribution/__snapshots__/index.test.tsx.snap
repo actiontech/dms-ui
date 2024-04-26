@@ -395,7 +395,40 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 2`] = `
             >
               <div
                 data-custom-params="{"data":[{"record_number":1,"time":"2024-04-17"},{"record_number":0,"time":"2024-04-18"},{"record_number":0,"time":"2024-04-19"},{"record_number":0,"time":"2024-04-20"},{"record_number":0,"time":"2024-04-21"},{"record_number":0,"time":"2024-04-22"},{"record_number":9,"time":"2024-04-23"}],"xField":"time","yField":"record_number","appendPadding":[30,0],"xAxis":{"range":[0,1],"tickCount":7},"yAxis":{"animate":false,"label":null},"areaStyle":{"fill":"l(90) 0:#4583ff  1:#4583ff00"},"line":{"size":3,"color":"#4583ff"},"smooth":true,"annotations":[{"type":"text","content":9,"position":["2024-04-23",9],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"type":"dataMarker","position":["2024-04-23",9],"text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false}],"tooltip":{"fields":["time","record_number"]},"interactions":[{"type":"element-selected"},{"type":"element-active"}],"theme":"light"}"
-              />
+              >
+                <div
+                  class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
+                >
+                  <header
+                    class="tooltip-title"
+                    style="color: rgb(138, 143, 153);"
+                  >
+                    <span
+                      class="dot"
+                      style="background: rgb(69, 131, 255);"
+                    />
+                    2024-04-17
+                  </header>
+                  <dl
+                    class="tooltip-list"
+                  >
+                    <dt
+                      class="tooltip-name"
+                    >
+                      <span
+                        class="dot"
+                        hidden=""
+                      />
+                      新增优化
+                    </dt>
+                    <dd
+                      class="tooltip-value"
+                    >
+                      1
+                    </dd>
+                  </dl>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -22,6 +22,28 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ThemeData, SupportTheme } from '../../../../theme';
+import { AreaConfig } from '@ant-design/plots';
+
+jest.mock('@ant-design/plots', () => {
+  return {
+    ...jest.requireActual('@ant-design/plots'),
+    Area: jest.requireActual('@ant-design/plots').BarWithCustomRenderCalled({
+      tooltip: {
+        customContent: (props: AreaConfig) => {
+          return [
+            '',
+            [
+              {
+                name: props.data[0]?.time,
+                value: props.data[0]?.record_number
+              }
+            ]
+          ];
+        }
+      }
+    })
+  };
+});
 
 const themeData = ThemeData[SupportTheme.LIGHT];
 

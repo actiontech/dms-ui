@@ -7,7 +7,6 @@ import {
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import useInstance from '../../../hooks/useInstance';
-import { EmptyBox } from '@actiontech/shared';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -26,7 +25,6 @@ import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimiz
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { PageHeader, BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -37,18 +35,9 @@ const SqlOptimizationList = () => {
 
   const { projectName, projectID } = useCurrentProject();
 
-  const { username, isAdmin, managementPermissions } = useCurrentUser();
+  const { username } = useCurrentUser();
 
   const { getLogoUrlByDbType, updateDriverList } = useDbServiceDriver();
-
-  const allowCreateOptimizationTask = useMemo(() => {
-    return (
-      isAdmin ||
-      managementPermissions.some(
-        (v) => OpPermissionTypeUid['create_optimization'] === (v?.uid ?? '')
-      )
-    );
-  }, [isAdmin, managementPermissions]);
 
   const { instanceOptions, updateInstanceList } = useInstance();
 
@@ -123,13 +112,11 @@ const SqlOptimizationList = () => {
       <PageHeader
         title={t('sqlOptimization.pageTitle')}
         extra={
-          <EmptyBox if={allowCreateOptimizationTask}>
-            <Link to={`/sqle/project/${projectID}/sql-optimization/create`}>
-              <BasicButton type="primary" icon={<IconAdd />}>
-                {t('sqlOptimization.create.linkButton')}
-              </BasicButton>
-            </Link>
-          </EmptyBox>
+          <Link to={`/sqle/project/${projectID}/sql-optimization/create`}>
+            <BasicButton type="primary" icon={<IconAdd />}>
+              {t('sqlOptimization.create.linkButton')}
+            </BasicButton>
+          </Link>
         }
       />
       <TableToolbar

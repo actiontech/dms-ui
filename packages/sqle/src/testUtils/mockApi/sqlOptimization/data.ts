@@ -23,7 +23,7 @@ export const sqlOptimizationRecordsMockData: IOptimizationRecord[] = [
     optimization_id: '1234567',
     optimization_name: 'SQLfile20240417112938232',
     instance_name: 'dd1',
-    db_type: 'MySQL',
+    db_type: '',
     status: 'failed'
   },
   {

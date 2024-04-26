@@ -39,9 +39,6 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
     useInstanceSchema(projectName, instanceName);
 
   const updateRuleTemplateName = (name: string) => {
-    if (!name) {
-      setInstanceInfo(undefined);
-    }
     instance
       .getInstanceV2({ instance_name: name, project_name: projectName })
       .then((res) => {

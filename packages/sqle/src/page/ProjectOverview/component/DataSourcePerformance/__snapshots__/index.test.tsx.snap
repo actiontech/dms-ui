@@ -148,7 +148,40 @@ exports[`ProjectOverview/DataSourcePerformance render chart snap 2`] = `
             >
               <div
                 data-custom-params="{"data":[{"instance_name":"dd1","avg_performance_improve":369.4151552596671},{"instance_name":"rds-0423","avg_performance_improve":0.1292965074445121}],"xField":"avg_performance_improve","yField":"instance_name","autoFit":true,"yAxis":{"line":{"style":{"lineWidth":0}},"tickLine":{"style":{"lineWidth":0}}},"xAxis":false,"legend":{"position":"top-left"},"barStyle":{"radius":4,"fill":"#4BCCA6","strokeOpacity":0},"barBackground":{"style":{"fill":"rgba(0,0,0,0.1)"}},"interactions":[{"type":"active-region","enable":false}],"tooltip":{"fields":["instance_name","avg_performance_improve"]},"minBarWidth":20,"maxBarWidth":20,"theme":"light"}"
-              />
+              >
+                <div
+                  class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
+                >
+                  <header
+                    class="tooltip-title"
+                    style="color: rgb(138, 143, 153);"
+                  >
+                    <span
+                      class="dot"
+                      style="background: rgb(75, 204, 166);"
+                    />
+                    dd1
+                  </header>
+                  <dl
+                    class="tooltip-list"
+                  >
+                    <dt
+                      class="tooltip-name"
+                    >
+                      <span
+                        class="dot"
+                        hidden=""
+                      />
+                      性能提升
+                    </dt>
+                    <dd
+                      class="tooltip-value"
+                    >
+                      36941.52%
+                    </dd>
+                  </dl>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -306,7 +339,40 @@ exports[`ProjectOverview/DataSourcePerformance render data source performance li
             >
               <div
                 data-custom-params="{"data":[{"avg_performance_improve":0,"instance_name":"0name"},{"avg_performance_improve":1,"instance_name":"1name"},{"avg_performance_improve":2,"instance_name":"2name"},{"avg_performance_improve":3,"instance_name":"3name"},{"avg_performance_improve":4,"instance_name":"4name"},{"avg_performance_improve":5,"instance_name":"5name"},{"avg_performance_improve":6,"instance_name":"6name"},{"avg_performance_improve":7,"instance_name":"7name"},{"avg_performance_improve":8,"instance_name":"8name"},{"avg_performance_improve":9,"instance_name":"9name"}],"xField":"avg_performance_improve","yField":"instance_name","autoFit":true,"yAxis":{"line":{"style":{"lineWidth":0}},"tickLine":{"style":{"lineWidth":0}}},"xAxis":false,"legend":{"position":"top-left"},"barStyle":{"radius":4,"fill":"#4BCCA6","strokeOpacity":0},"barBackground":{"style":{"fill":"rgba(0,0,0,0.1)"}},"interactions":[{"type":"active-region","enable":false}],"tooltip":{"fields":["instance_name","avg_performance_improve"]},"scrollbar":{"type":"vertical","animate":false,"padding":[0,0,0,0]},"minBarWidth":20,"maxBarWidth":20,"theme":"light"}"
-              />
+              >
+                <div
+                  class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
+                >
+                  <header
+                    class="tooltip-title"
+                    style="color: rgb(138, 143, 153);"
+                  >
+                    <span
+                      class="dot"
+                      style="background: rgb(75, 204, 166);"
+                    />
+                    0name
+                  </header>
+                  <dl
+                    class="tooltip-list"
+                  >
+                    <dt
+                      class="tooltip-name"
+                    >
+                      <span
+                        class="dot"
+                        hidden=""
+                      />
+                      性能提升
+                    </dt>
+                    <dd
+                      class="tooltip-value"
+                    >
+                      0%
+                    </dd>
+                  </dl>
+                </div>
+              </div>
             </div>
           </div>
         </section>
