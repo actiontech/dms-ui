@@ -179,7 +179,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                     style="height: auto; overflow: auto;"
                   >
                     <div
-                      class="has-top-margin css-16p38ka"
+                      class="has-top-margin css-4znel3"
                       style="cursor: pointer;"
                     >
                       <div
@@ -407,7 +407,23 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                             class="css-lk9s71"
                             id="desc"
                           >
-                            test-custom-rule1
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <div>
+                                  test-custom-rule1
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <section />
+                              </div>
+                            </div>
                           </section>
                         </div>
                       </div>
@@ -799,7 +815,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                     style="height: auto; overflow: auto;"
                   >
                     <div
-                      class="has-top-margin css-16p38ka"
+                      class="has-top-margin css-4znel3"
                       style="cursor: pointer;"
                     >
                       <div
@@ -916,7 +932,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                       </section>
                     </div>
                     <div
-                      class="has-top-margin css-16p38ka"
+                      class="has-top-margin css-4znel3"
                       style="cursor: pointer;"
                     >
                       <div
