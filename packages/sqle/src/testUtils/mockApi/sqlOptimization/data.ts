@@ -61,7 +61,8 @@ export const optimizationRecordMockData: IOptimizationDetail = {
   index_recommendations: [
     'CREATE INDEX PAWSQL_IDX0725431411 ON optimization.orders(o_custkey);',
     'CREATE INDEX PAWSQL_IDX0423139512 ON optimization.orders(o_orderdate,o_custkey);'
-  ]
+  ],
+  status: 'finish'
 };
 
 export const optimizationRecordSqlMockData: IOptimizationSQL[] = [

@@ -10,7 +10,13 @@ export default {
     dbType: '数据库类型',
     performanceGain: '优化提升性能',
     createTime: '创建时间',
+    status: '状态',
     creator: '创建人'
+  },
+  status: {
+    finish: '调优成功',
+    failed: '调优失败',
+    optimizing: '调优进行中'
   },
   create: {
     linkButton: '创建智能调优',
@@ -50,7 +56,9 @@ export default {
     },
     recommendedIndex: '推荐索引',
     sqlTableTitle: 'SQL语句列表',
-    indexTips: '暂无需要优化的索引'
+    indexTips: '暂无需要优化的索引',
+    optimizingStatusTips: '调优进行中，请刷新获取最新结果',
+    failedStatusTips: '调优失败'
   },
   detail: {
     returnButton: '返回性能优化概览',

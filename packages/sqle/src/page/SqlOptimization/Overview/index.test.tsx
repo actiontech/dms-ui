@@ -12,6 +12,8 @@ import {
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { SqlOptimizationStatusEnum } from '../index.data';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -52,12 +54,54 @@ describe('sqle/SqlOptimization/Overview', () => {
     expect(getOptimizationSQLsSpy).toHaveBeenCalled();
   });
 
+  it('render overview page when status is optimizing', async () => {
+    getOptimizationRecordReqSpy.mockClear();
+    getOptimizationRecordReqSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...optimizationRecordMockData,
+          basic_summary: {},
+          index_recommendations: [],
+          status: SqlOptimizationStatusEnum.optimizing
+        }
+      })
+    );
+    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(getOptimizationRecordReqSpy).toHaveBeenCalledTimes(1);
+    expect(getOptimizationSQLsSpy).toHaveBeenCalledTimes(1);
+    expect(getBySelector('.refresh-icon')).toBeInTheDocument();
+    fireEvent.click(getBySelector('.refresh-icon'));
+    expect(getOptimizationRecordReqSpy).toHaveBeenCalledTimes(2);
+    expect(getOptimizationSQLsSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('render overview page when status is failed', async () => {
+    getOptimizationRecordReqSpy.mockClear();
+    getOptimizationRecordReqSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...optimizationRecordMockData,
+          status: SqlOptimizationStatusEnum.failed
+        }
+      })
+    );
+    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(getOptimizationRecordReqSpy).toHaveBeenCalled();
+    expect(getOptimizationSQLsSpy).toHaveBeenCalled();
+  });
+
   it('render overview page when index_recommendations is empty list', async () => {
     getOptimizationRecordReqSpy.mockClear();
     getOptimizationRecordReqSpy.mockImplementation(() =>
       createSpySuccessResponse({
-        ...optimizationRecordMockData,
-        index_recommendations: []
+        data: {
+          ...optimizationRecordMockData,
+          index_recommendations: []
+        }
       })
     );
     const { baseElement } = superRender(<SqlOptimizationOverview />);

@@ -7,3 +7,9 @@ export const OptimizationNameUploadTypePrefix = {
   [UploadTypeEnum.zipFile]: 'ZIPfile',
   [UploadTypeEnum.git]: 'GIT'
 };
+
+export enum SqlOptimizationStatusEnum {
+  'finish' = 'finish',
+  'failed' = 'failed',
+  'optimizing' = 'optimizing'
+}

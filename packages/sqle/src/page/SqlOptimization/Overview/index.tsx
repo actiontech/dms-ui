@@ -1,4 +1,4 @@
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader, EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
@@ -17,6 +17,12 @@ import OptimizationSqlList from './OptimizationSqlList';
 import { useState } from 'react';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import RecommendIndex from '../components/RecommendIndex';
+import {
+  IconOrderStatusIsExecuting,
+  IconOrderStatusIsFailed
+} from '../../../icon/Order';
+import { SyncOutlined } from '@ant-design/icons';
+import { SqlOptimizationStatusEnum } from '../index.data';
 
 const OptimizationOverview = () => {
   const { t } = useTranslation();
@@ -27,7 +33,13 @@ const OptimizationOverview = () => {
 
   const [sqlListLoading, setSqlListLoading] = useState<boolean>(false);
 
-  const { data: optimizationRecord, loading: recordLoading } = useRequest(() =>
+  const [refreshSqlList, setRefreshSqlList] = useState<boolean>(false);
+
+  const {
+    data: optimizationRecord,
+    loading: recordLoading,
+    refresh
+  } = useRequest(() =>
     sqlOptimization
       .GetOptimizationRecordReq({
         project_name: projectName,
@@ -35,6 +47,11 @@ const OptimizationOverview = () => {
       })
       .then((res) => res.data.data)
   );
+
+  const onRefresh = () => {
+    refresh();
+    setRefreshSqlList(!refreshSqlList);
+  };
 
   return (
     <>
@@ -55,6 +72,18 @@ const OptimizationOverview = () => {
               <h3 className="header-cont-text">
                 {optimizationRecord?.optimization_name || '-'}
               </h3>
+              <EmptyBox
+                if={
+                  optimizationRecord?.status ===
+                  SqlOptimizationStatusEnum.optimizing
+                }
+              >
+                <SyncOutlined
+                  onClick={onRefresh}
+                  spin={recordLoading}
+                  className="refresh-icon"
+                />
+              </EmptyBox>
             </section>
             <section className="tag-wrapper">
               <div className="custom-tag-item">
@@ -82,6 +111,43 @@ const OptimizationOverview = () => {
                 </HeaderSpaceTagStyleWrapper>
               </div>
             </section>
+            <EmptyBox
+              if={
+                optimizationRecord?.status ===
+                SqlOptimizationStatusEnum.optimizing
+              }
+            >
+              <section className="status-wrapper">
+                <div className="custom-tag-item">
+                  <HeaderSpaceTagStyleWrapper
+                    size={6}
+                    className="database-type-space"
+                  >
+                    <IconOrderStatusIsExecuting />
+                    <div>
+                      {t('sqlOptimization.overview.optimizingStatusTips')}
+                    </div>
+                  </HeaderSpaceTagStyleWrapper>
+                </div>
+              </section>
+            </EmptyBox>
+            <EmptyBox
+              if={
+                optimizationRecord?.status === SqlOptimizationStatusEnum.failed
+              }
+            >
+              <section className="status-wrapper">
+                <div className="custom-tag-item">
+                  <HeaderSpaceTagStyleWrapper
+                    size={6}
+                    className="database-type-space"
+                  >
+                    <IconOrderStatusIsFailed />
+                    <div>{t('sqlOptimization.overview.failedStatusTips')}</div>
+                  </HeaderSpaceTagStyleWrapper>
+                </div>
+              </section>
+            </EmptyBox>
           </section>
         </DetailComStyleWrapper>
         <SqlOptimizationOverviewBaseInfoStyleWrapper>
@@ -140,16 +206,12 @@ const OptimizationOverview = () => {
             projectID={projectID}
             optimizationId={urlParams.optimizationId ?? ''}
             setSqlListLoading={setSqlListLoading}
+            refresh={refreshSqlList}
           />
-          <section className=" last-title">
+          <section className="last-title">
             <Typography.Title level={5} className="title-wrap">
               {t('sqlOptimization.overview.recommendedIndex')}
             </Typography.Title>
-            {/* <SqlOptimizationSqlBlockStyleWrapper>
-              {optimizationRecord?.index_recommendations?.map((item, index) => (
-                <RenderSQL sql={item} key={index} rows={1} />
-              ))}
-            </SqlOptimizationSqlBlockStyleWrapper> */}
             <RecommendIndex
               recommendations={optimizationRecord?.index_recommendations}
             />
