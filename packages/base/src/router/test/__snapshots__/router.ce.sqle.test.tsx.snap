@@ -879,6 +879,45 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
         "path": ":projectID/plugin-audit",
       },
       {
+        "children": [
+          {
+            "element": <div>
+              sqlOptimizationList
+            </div>,
+            "key": "sqlOptimizationList",
+            "path": "",
+          },
+          {
+            "element": <div>
+              sqlOptimizationCreate
+            </div>,
+            "key": "sqlOptimizationCreate",
+            "path": "create",
+          },
+          {
+            "element": <div>
+              sqlOptimizationOverview
+            </div>,
+            "key": "sqlOptimizationOverview",
+            "path": "overview/:optimizationId",
+          },
+          {
+            "element": <div>
+              sqlOptimizationDetail
+            </div>,
+            "key": "sqlOptimizationDetail",
+            "path": "detail/:optimizationId/:number",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="sqlOptimization"
+        >
+          <Outlet />
+        </div>,
+        "key": "sqlOptimization",
+        "path": ":projectID/sql-optimization",
+      },
+      {
         "element": <div>
           projectRedirect
         </div>,
