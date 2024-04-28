@@ -2484,6 +2484,16 @@ export interface IAuditResDataV2 {
   sql_results?: IAuditSQLResV2[];
 }
 
+export interface IAuditResultFlags {
+  has_error?: boolean;
+
+  has_normal?: boolean;
+
+  has_notice?: boolean;
+
+  has_warning?: boolean;
+}
+
 export interface IAuditSQLResV2 {
   audit_level?: string;
 
@@ -2590,6 +2600,18 @@ export interface IDriverMeta {
   logo_url?: string;
 }
 
+export interface IFileOverview {
+  audit_result_flags?: IAuditResultFlags;
+
+  exec_order?: number;
+
+  exec_status?: string;
+
+  file_id?: string;
+
+  file_name?: string;
+}
+
 export interface IFullSyncAuditPlanSQLsReqV2 {
   audit_plan_sql_list?: IAuditPlanSQLReqV2[];
 }
@@ -2616,6 +2638,16 @@ export interface IGetAuditPlansResV2 {
   code?: number;
 
   data?: IAuditPlanResV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetAuditTaskFileOverviewRes {
+  code?: number;
+
+  data?: IFileOverview[];
 
   message?: string;
 

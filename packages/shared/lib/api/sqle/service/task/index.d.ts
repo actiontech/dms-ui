@@ -8,6 +8,7 @@ import {
   IGetAuditTaskSQLsResV1,
   IUpdateAuditTaskSQLsReqV1,
   IGetTaskAnalysisDataResV1,
+  IGetAuditTaskFileOverviewRes,
   IGetAuditTaskSQLsResV2,
   IGetTaskAnalysisDataResV2
 } from '../common.d';
@@ -124,6 +125,13 @@ export interface IGetTaskAnalysisDataParams {
 
 export interface IGetTaskAnalysisDataReturn extends IGetTaskAnalysisDataResV1 {}
 
+export interface IGetAuditTaskFileOverviewParams {
+  task_id: string;
+}
+
+export interface IGetAuditTaskFileOverviewReturn
+  extends IGetAuditTaskFileOverviewRes {}
+
 export interface IGetAuditTaskSQLsV2Params {
   task_id: string;
 
@@ -134,6 +142,8 @@ export interface IGetAuditTaskSQLsV2Params {
   filter_audit_level?: getAuditTaskSQLsV2FilterAuditLevelEnum;
 
   no_duplicate?: boolean;
+
+  filter_audit_file_id?: number;
 
   page_index: string;
 
