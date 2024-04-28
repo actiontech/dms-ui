@@ -1,4 +1,7 @@
-import reducers, { updateWebTitleAndLogo, updateSqlOptimizationIsSupported } from '.';
+import reducers, {
+  updateWebTitleAndLogo,
+  updateSqlOptimizationIsSupported
+} from '.';
 
 import { IReduxState } from '..';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
@@ -23,7 +26,7 @@ describe('store system', () => {
       modalStatus: {},
       webTitle: 'this is a title',
       webLogoUrl: 'this is a web logo url',
-      sqlOptimizationIsSupported: false,
+      sqlOptimizationIsSupported: false
     });
   });
 
