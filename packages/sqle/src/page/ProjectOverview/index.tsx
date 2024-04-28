@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ConfigProvider, Space, Row, Col } from 'antd';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader, EmptyBox } from '@actiontech/shared';
 import { SyncOutlined } from '@ant-design/icons';
 
 import useThemeStyleData from '../../hooks/useThemeStyleData';
@@ -20,11 +20,14 @@ import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { useCallback, useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import useSystemModuleStatus from '@actiontech/shared/lib/global/useSystemModuleStatus';
 
 const Overview = () => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
   const { projectID } = useCurrentProject();
+
+  const { sqlOptimizationIsSupported } = useSystemModuleStatus(true);
 
   const onRefreshPage = useCallback(() => {
     eventEmitter.emit(EmitterKey.Refresh_Project_Overview);
@@ -97,21 +100,23 @@ const Overview = () => {
           <Col span={6} className="right-chart">
             <ScanTask />
           </Col>
-          {/* #if [major] */}
-          <Col span={24}>
-            <Row className="marginTop20" gutter={20}>
-              <Col span={12}>
-                <div className="item-wrapper height352 order-risk">
-                  <OptimizationDistribution />
-                </div>
-              </Col>
-              <Col span={12}>
-                <div className="item-wrapper height352 scan-risk">
-                  <DataSourcePerformance />
-                </div>
-              </Col>
-            </Row>
-          </Col>
+          {/* #if [ee] */}
+          <EmptyBox if={sqlOptimizationIsSupported}>
+            <Col span={24}>
+              <Row className="marginTop20" gutter={20}>
+                <Col span={12}>
+                  <div className="item-wrapper height352 order-risk">
+                    <OptimizationDistribution />
+                  </div>
+                </Col>
+                <Col span={12}>
+                  <div className="item-wrapper height352 scan-risk">
+                    <DataSourcePerformance />
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+          </EmptyBox>
           {/* #endif */}
           <Col span={24}>
             <Row className="marginTop20" gutter={20}>

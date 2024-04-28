@@ -1,6 +1,10 @@
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../locale';
-import { GenerateMenuItemType, MenuStructTreeType } from './index.type';
+import {
+  GenerateMenuItemType,
+  MenuStructTreeType,
+  MenuStructTreeKey
+} from './index.type';
 import { genMenuItemsWithMenuStructTree } from './common';
 import {
   dbServiceManagementMenuItem,
@@ -23,7 +27,11 @@ import {
   sqleOperationRecordMenuItem
 } from './sqle';
 
-export const sideMenuData = (projectID: string, role: SystemRole | '') => {
+export const sideMenuData = (
+  projectID: string,
+  role: SystemRole | '',
+  sqlOptimizationIsSupport: boolean
+) => {
   const allMenuItems: GenerateMenuItemType[] = [
     dbServiceManagementMenuItem,
     memberManagementMenItem,
@@ -43,10 +51,26 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
     workflowTemplateMenuItem,
     sqleOperationRecordMenuItem,
     // #endif
-    // #if [major]
     sqlOptimizationMenuItem
-    // #endif
   ];
+
+  const getSQLDevGroup = (): MenuStructTreeKey[] => {
+    const sqlDevGroup: MenuStructTreeKey[] = [
+      'cloud-beaver',
+      'data-export',
+      'sql-audit',
+      'plugin-audit'
+    ];
+    // #if [ce]
+    return [...sqlDevGroup, 'sql-optimization'];
+    // #endif
+    // #if [ee]
+    return sqlOptimizationIsSupport
+      ? [...sqlDevGroup, 'sql-optimization']
+      : sqlDevGroup;
+    // #endif
+  };
+
   const menuStruct: MenuStructTreeType = [
     'project-overview',
     'dashboard',
@@ -54,15 +78,7 @@ export const sideMenuData = (projectID: string, role: SystemRole | '') => {
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLDev'),
-      group: [
-        'cloud-beaver',
-        'data-export',
-        'sql-audit',
-        'plugin-audit',
-        // #if [major]
-        'sql-optimization'
-        // #endif
-      ]
+      group: getSQLDevGroup()
     },
     {
       type: 'group',

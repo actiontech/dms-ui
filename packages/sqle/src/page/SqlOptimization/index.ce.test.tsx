@@ -6,6 +6,13 @@ import { screen } from '@testing-library/react';
 import SqlOptimization from '.';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
+jest.mock('react-router-dom', () => {
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: jest.fn()
+  };
+});
+
 describe('slqe/SqlOptimization CE', () => {
   test('should match snap shot', async () => {
     const { baseElement } = renderWithReduxAndTheme(<SqlOptimization />);
