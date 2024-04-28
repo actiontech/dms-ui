@@ -9,7 +9,7 @@ export const SqlOptimizationOverviewBaseInfoStyleWrapper = styled('section')`
     margin: 24px 0;
   }
 
-  & .ant-table-wrapper.actiontech-table-namespace {
+  & .ant-table-wrapper.actiontech-table-namespace.optimization-sql-table {
     padding-bottom: 0;
   }
 
@@ -83,6 +83,17 @@ export const TriggeredRuleStyleWrapper = styled('section')`
   }
 `;
 
+export const OptimizationStatusStyleWrapper = styled('section')`
+  display: flex;
+  align-items: center;
+
+  span {
+    &:last-of-type {
+      margin-left: 8px;
+    }
+  }
+`;
+
 export const DetailComStyleWrapper = styled('section')`
   height: 100%;
   padding-top: 60px;
@@ -103,6 +114,18 @@ export const DetailComStyleWrapper = styled('section')`
         font-weight: 600;
         line-height: 32px;
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+      }
+
+      .refresh-icon {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        margin-left: 8px;
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
       }
     }
 
@@ -136,6 +159,19 @@ export const DetailComStyleWrapper = styled('section')`
         }
       }
     }
+
+    .status-wrapper {
+      margin-top: 12px;
+      padding: 12px 8px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorFillTertiary};
+    }
   }
 `;
 
@@ -152,7 +188,7 @@ export const HeaderSpaceTagStyleWrapper = styled(Space)`
   &.project-name-space {
     .project-flag-icon {
       background-color: ${({ theme }) =>
-        theme.sqleTheme.statistics.rectColorName.color10}1a;
+        theme.sqleTheme.statistics.rectColorName.color10};
 
       * {
         color: ${({ theme }) =>
@@ -164,7 +200,7 @@ export const HeaderSpaceTagStyleWrapper = styled(Space)`
   &.database-type-space {
     .database-type-icon {
       background-color: ${({ theme }) =>
-        theme.sqleTheme.statistics.rectColorName.color5}1a;
+        theme.sqleTheme.statistics.rectColorName.color5};
 
       * {
         color: ${({ theme }) =>

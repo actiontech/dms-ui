@@ -11,6 +11,8 @@ import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { AvatarCom, DatabaseTypeLogo } from '@actiontech/shared';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+import OptimizationStatus from '../components/OptimizationStatus';
+import { SqlOptimizationStatusEnum } from '../index.data';
 
 export type SqlOptimizationListTableFilterParamType =
   PageInfoWithoutIndexAndSize<IGetOptimizationRecordsParams, 'project_name'>;
@@ -62,6 +64,13 @@ export const SqlOptimizationListColumns: (
       title: () => t('sqlOptimization.table.createTime'),
       render: (value) => {
         return formatTime(value, '-');
+      }
+    },
+    {
+      dataIndex: 'status',
+      title: () => t('sqlOptimization.table.status'),
+      render: (status: SqlOptimizationStatusEnum) => {
+        return <OptimizationStatus status={status} />;
       }
     },
     {

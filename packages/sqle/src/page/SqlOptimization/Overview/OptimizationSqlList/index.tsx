@@ -19,7 +19,14 @@ const OptimizationSqlList: React.FC<{
   projectID: string;
   optimizationId: string;
   setSqlListLoading: (v: boolean) => void;
-}> = ({ projectName, projectID, optimizationId, setSqlListLoading }) => {
+  refresh: boolean;
+}> = ({
+  projectName,
+  projectID,
+  optimizationId,
+  setSqlListLoading,
+  refresh
+}) => {
   const navigate = useNavigate();
 
   const { tableChange, pagination } = useTableRequestParams<IOptimizationSQL>();
@@ -39,7 +46,7 @@ const OptimizationSqlList: React.FC<{
       );
     },
     {
-      refreshDeps: [pagination],
+      refreshDeps: [pagination, refresh],
       onBefore: () => {
         setSqlListLoading(true);
       },
@@ -61,7 +68,7 @@ const OptimizationSqlList: React.FC<{
   return (
     <>
       <ActiontechTable
-        className="table-row-cursor"
+        className="table-row-cursor optimization-sql-table"
         dataSource={data?.list}
         rowKey={(record: IOptimizationSQL) => {
           return `${record?.number}`;
