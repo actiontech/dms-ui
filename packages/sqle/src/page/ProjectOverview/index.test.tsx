@@ -7,19 +7,23 @@ import EmitterKey from '../../data/EmitterKey';
 import eventEmitter from '../../utils/EventEmitter';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseSystemModuleStatus } from '@actiontech/shared/lib/testUtil/mockHook/mockUseSystemModuleStatus';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 describe('page/ProjectOverview', () => {
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseSystemModuleStatus();
-    jest.useFakeTimers();
+    MockDate.set(dayjs('2022-01-01 12:00:00').valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
   });
 
   afterEach(() => {
     jest.useRealTimers();
     jest.clearAllMocks();
     cleanup();
+    MockDate.reset();
   });
 
   const customRender = () => {

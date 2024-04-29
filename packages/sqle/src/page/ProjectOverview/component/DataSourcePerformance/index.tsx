@@ -17,6 +17,8 @@ import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 
 const limitDataLength = 8;
 
+const defaultItemKey = 'performance-default-key';
+
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
     name: item.instance_name,
@@ -31,6 +33,7 @@ const renderTooltipCustomContent = (
 ) => {
   const data = dataSource[0];
   if (!data) return null;
+  if (data.name.startsWith(defaultItemKey)) return null;
   return (
     <ChartTooltip
       titleData={{
@@ -51,6 +54,9 @@ const renderTooltipCustomContent = (
   );
 };
 
+const labelFormatter = (value: string) =>
+  value.startsWith(defaultItemKey) ? '' : value;
+
 const DataSourcePerformance = () => {
   const { t } = useTranslation();
 
@@ -68,7 +74,23 @@ const DataSourcePerformance = () => {
     },
     {
       onSuccess: (res) => {
-        setData(res.data.data ?? []);
+        const { data = [] } = res.data;
+        const emptyData: IDBPerformanceImproveOverview[] = [];
+        if (data.length) {
+          const emptyDataLength =
+            limitDataLength - data.length > 0
+              ? limitDataLength - data.length
+              : 0;
+          if (emptyDataLength) {
+            for (let i = 0; i < emptyDataLength; i++) {
+              emptyData.push({
+                instance_name: defaultItemKey + i,
+                avg_performance_improve: 0
+              });
+            }
+          }
+        }
+        setData(data.concat(emptyData));
       }
     }
   );
@@ -81,6 +103,9 @@ const DataSourcePerformance = () => {
     yField: 'instance_name',
     autoFit: true,
     yAxis: {
+      label: {
+        formatter: labelFormatter
+      },
       line: { style: { lineWidth: 0 } },
       tickLine: { style: { lineWidth: 0 } }
     },
@@ -141,4 +166,9 @@ const DataSourcePerformance = () => {
 
 export default DataSourcePerformance;
 
-export { renderTooltipFormatter, renderTooltipCustomContent };
+export {
+  renderTooltipFormatter,
+  renderTooltipCustomContent,
+  defaultItemKey,
+  labelFormatter
+};

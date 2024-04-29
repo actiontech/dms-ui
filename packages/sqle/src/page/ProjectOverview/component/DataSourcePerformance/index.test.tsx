@@ -10,7 +10,9 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import DataSourcePerformance, {
   renderTooltipFormatter,
-  renderTooltipCustomContent
+  renderTooltipCustomContent,
+  defaultItemKey,
+  labelFormatter
 } from '.';
 import { ThemeData, SupportTheme } from '../../../../theme';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -131,6 +133,17 @@ describe('ProjectOverview/DataSourcePerformance', () => {
     expect(result.current).toBe(null);
   });
 
+  it('render tooltip name start with defaultItemKey', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      renderTooltipCustomContent(
+        [{ name: `${defaultItemKey}1`, value: 0 }],
+        themeData.sqleTheme,
+        themeData.sharedTheme
+      )
+    );
+    expect(result.current).toMatchSnapshot();
+  });
+
   it('render tooltip customContent', async () => {
     const { result } = renderHooksWithTheme(() =>
       renderTooltipCustomContent(
@@ -140,5 +153,17 @@ describe('ProjectOverview/DataSourcePerformance', () => {
       )
     );
     expect(result.current).toMatchSnapshot();
+  });
+
+  it('render label', async () => {
+    const { result } = renderHooksWithTheme(() => labelFormatter('test-label'));
+    expect(result.current).toEqual('test-label');
+  });
+
+  it('render label when start with defaultItemKey', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      labelFormatter(`${defaultItemKey}1`)
+    );
+    expect(result.current).toEqual('');
   });
 });
