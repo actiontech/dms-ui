@@ -132,7 +132,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
         <h1
           class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
         >
-          创建SQL优化
+          输入SQL
         </h1>
         <div>
           <div
@@ -972,7 +972,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               type="button"
             >
               <span>
-                优 化
+                调 优
               </span>
             </button>
           </div>
@@ -1529,7 +1529,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
         <h1
           class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
         >
-          创建SQL优化
+          输入SQL
         </h1>
         <div>
           <div
@@ -2263,7 +2263,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               type="button"
             >
               <span>
-                优 化
+                调 优
               </span>
             </button>
           </div>
@@ -2848,7 +2848,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
         <h1
           class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
         >
-          创建SQL优化
+          输入SQL
         </h1>
         <div>
           <div
@@ -3622,7 +3622,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               type="button"
             >
               <span>
-                优 化
+                调 优
               </span>
             </button>
           </div>
@@ -4179,7 +4179,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
         <h1
           class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
         >
-          创建SQL优化
+          输入SQL
         </h1>
         <div>
           <div
@@ -4953,7 +4953,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               type="button"
             >
               <span>
-                优 化
+                调 优
               </span>
             </button>
           </div>
@@ -5510,7 +5510,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
         <h1
           class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
         >
-          创建SQL优化
+          输入SQL
         </h1>
         <div>
           <div
@@ -6312,7 +6312,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               type="button"
             >
               <span>
-                优 化
+                调 优
               </span>
             </button>
           </div>

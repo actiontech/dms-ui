@@ -4,7 +4,7 @@ export default {
   ceTips:
     '当您需要获得SQL重写建议、优化SQL执行性能时，可以使用平台提供的智能调优功能，同时获取SQL改写、索引优化、性能验证等多重优化结果',
   table: {
-    optimizationId: '优化ID',
+    optimizationId: '调优ID',
     optimizationName: '名称',
     instanceName: '数据源',
     dbType: '数据库类型',
@@ -27,12 +27,12 @@ export default {
       name: '智能调优名称'
     },
     sqlInfo: {
-      title: '创建SQL优化',
+      title: '输入SQL',
       dbType: '数据库类型',
       instanceName: '数据源',
       instanceSchema: '数据库',
       uploadType: '选择SQL语句上传方式',
-      optimize: '优化'
+      optimize: '调优'
     }
   },
   overview: {

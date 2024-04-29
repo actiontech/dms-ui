@@ -277,7 +277,7 @@ exports[`sqle/SqlOptimizationList render table data 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        优化ID
+                        调优ID
                       </th>
                       <th
                         class="ant-table-cell"

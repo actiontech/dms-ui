@@ -18,7 +18,7 @@ exports[`ProjectOverview/OptimizationDistribution refresh optimization distribut
             <div
               class="title-cont"
             >
-              优化查询分布
+              调优查询分布
             </div>
           </div>
           <div
@@ -164,7 +164,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 1`] = `
             <div
               class="title-cont"
             >
-              优化查询分布
+              调优查询分布
             </div>
           </div>
           <div
@@ -310,7 +310,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 2`] = `
             <div
               class="title-cont"
             >
-              优化查询分布
+              调优查询分布
             </div>
           </div>
           <div
@@ -456,7 +456,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
             <div
               class="title-cont"
             >
-              优化查询分布
+              调优查询分布
             </div>
           </div>
           <div
@@ -1140,7 +1140,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
             <div
               class="title-cont"
             >
-              优化查询分布
+              调优查询分布
             </div>
           </div>
           <div
@@ -1286,7 +1286,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
             <div
               class="title-cont"
             >
-              优化查询分布
+              调优查询分布
             </div>
           </div>
           <div
