@@ -1630,7 +1630,7 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                                   placeholder="Start date"
                                   readonly=""
                                   size="12"
-                                  value="2024-03-29"
+                                  value="2021-12-02"
                                 />
                               </div>
                               <div
@@ -1661,7 +1661,7 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                                   placeholder="End date"
                                   readonly=""
                                   size="12"
-                                  value="2024-04-28"
+                                  value="2022-01-01"
                                 />
                               </div>
                               <div
