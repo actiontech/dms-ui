@@ -21,7 +21,11 @@ describe('sqle/SqlOptimization/Detail', () => {
   const paramNumber = '1';
 
   beforeEach(() => {
-    useParamsMock.mockReturnValue({ optimizationId, number: paramNumber });
+    useParamsMock.mockReturnValue({
+      optimizationId,
+      number: paramNumber,
+      dbType: 'MySQL'
+    });
     getOptimizationReqSpy = sqlOptimization.getOptimizationReq();
     mockUseCurrentProject();
     jest.useFakeTimers();

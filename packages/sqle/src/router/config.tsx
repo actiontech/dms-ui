@@ -401,6 +401,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     label: 'menu.sqlOptimization',
     key: 'sqlOptimization',
     element: <SqlOptimization />,
+    // #if [ee]
     children: [
       {
         index: true,
@@ -418,11 +419,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'sqlOptimizationOverview'
       },
       {
-        path: 'detail/:optimizationId/:number',
+        path: 'detail/:dbType/:optimizationId/:number',
         element: <SqlOptimizationDetail />,
         key: 'sqlOptimizationDetail'
       }
     ]
+    // #endif
   },
   {
     path: '*',

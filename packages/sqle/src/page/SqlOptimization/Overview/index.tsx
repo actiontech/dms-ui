@@ -207,6 +207,7 @@ const OptimizationOverview = () => {
             optimizationId={urlParams.optimizationId ?? ''}
             setSqlListLoading={setSqlListLoading}
             refresh={refreshSqlList}
+            dbType={optimizationRecord?.db_type ?? ''}
           />
           <section className="last-title">
             <Typography.Title level={5} className="title-wrap">

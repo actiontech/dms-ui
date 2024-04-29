@@ -122,7 +122,11 @@ const OptimizationDetail = () => {
                 );
                 return (
                   <TriggeredRuleStyleWrapper key={rule.rule_name}>
-                    <Typography.Link className="rule-name">
+                    <Typography.Link
+                      href={`/sqle/rule/knowledge/${rule.rule_name}/${urlParams.dbType}`}
+                      target="_blank"
+                      className="rule-name"
+                    >
                       {rule.message}
                     </Typography.Link>
                     <SqlOptimizationSqlBlockStyleWrapper>

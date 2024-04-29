@@ -20,12 +20,14 @@ const OptimizationSqlList: React.FC<{
   optimizationId: string;
   setSqlListLoading: (v: boolean) => void;
   refresh: boolean;
+  dbType: string;
 }> = ({
   projectName,
   projectID,
   optimizationId,
   setSqlListLoading,
-  refresh
+  refresh,
+  dbType
 }) => {
   const navigate = useNavigate();
 
@@ -59,10 +61,10 @@ const OptimizationSqlList: React.FC<{
   const gotoDetailPage = useCallback(
     (record?: IOptimizationSQL) => {
       navigate(
-        `/sqle/project/${projectID}/sql-optimization/detail/${optimizationId}/${record?.number}`
+        `/sqle/project/${projectID}/sql-optimization/detail/${dbType}/${optimizationId}/${record?.number}`
       );
     },
-    [navigate, projectID, optimizationId]
+    [navigate, projectID, optimizationId, dbType]
   );
 
   return (
