@@ -39,4 +39,5 @@ export type SqlOptimizationOverviewUrlParams = { optimizationId: string };
 
 export type SqlOptimizationDetailUrlParams = {
   number: string;
+  dbType: string;
 } & SqlOptimizationOverviewUrlParams;

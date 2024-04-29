@@ -434,6 +434,62 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimization 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlOptimization"
+    >
+      <div>
+        sqlOptimizationList
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlOptimization"
+    >
+      <div>
+        sqlOptimizationCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlOptimization"
+    >
+      <div>
+        sqlOptimizationDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationOverview 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlOptimization"
+    >
+      <div>
+        sqlOptimizationOverview
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
 <body>
   <div>
@@ -1035,7 +1091,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
               sqlOptimizationDetail
             </div>,
             "key": "sqlOptimizationDetail",
-            "path": "detail/:optimizationId/:number",
+            "path": "detail/:dbType/:optimizationId/:number",
           },
         ],
         "element": <div

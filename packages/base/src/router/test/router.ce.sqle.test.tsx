@@ -213,6 +213,16 @@ describe('base/router-sqle-ce', () => {
         expect(screen.getByText('pluginAuditList')).toBeInTheDocument();
       });
 
+      it('render route sqlOptimization', async () => {
+        const { baseElement } = customRender([
+          `/sqle/project/${projectID}/sql-optimization`
+        ]);
+
+        await act(async () => jest.advanceTimersByTime(300));
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('sqlOptimization')).toBeInTheDocument();
+      });
+
       it('render route dashboard', async () => {
         const { baseElement } = customRender([
           `/sqle/project/${projectID}/dashboard`

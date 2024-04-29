@@ -368,6 +368,9 @@ exports[`sqle/SqlOptimization/Detail render detail page 1`] = `
             >
               <a
                 class="ant-typography rule-name css-dev-only-do-not-override-txh9fw"
+                href="/sqle/rule/knowledge/RuleInSubqueryRewrite/MySQL"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 IN子查询优化
               </a>

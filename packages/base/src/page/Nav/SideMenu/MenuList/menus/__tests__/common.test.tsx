@@ -13,6 +13,7 @@ import {
   dashboardMenuItem,
   sqlAuditMenuItem,
   pluginAuditMenuItem,
+  sqlOptimizationMenuItem,
   sqlOrderMenuItem,
   sqlManagementMenuItem,
   auditPlanMenuItem,
@@ -29,7 +30,13 @@ const menuStruct: MenuStructTreeType = [
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLDev'),
-    group: ['cloud-beaver', 'data-export', 'sql-audit', 'plugin-audit']
+    group: [
+      'cloud-beaver',
+      'data-export',
+      'sql-audit',
+      'plugin-audit',
+      'sql-optimization'
+    ]
   },
   {
     type: 'group',
@@ -134,6 +141,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
           dashboardMenuItem,
           sqlAuditMenuItem,
           pluginAuditMenuItem,
+          sqlOptimizationMenuItem,
           sqlOrderMenuItem,
           sqlManagementMenuItem,
           auditPlanMenuItem,
@@ -159,6 +167,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
           dashboardMenuItem,
           sqlAuditMenuItem,
           pluginAuditMenuItem,
+          sqlOptimizationMenuItem,
           sqlOrderMenuItem,
           sqlManagementMenuItem,
           auditPlanMenuItem,

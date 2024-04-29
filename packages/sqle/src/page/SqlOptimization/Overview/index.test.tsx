@@ -131,7 +131,7 @@ describe('sqle/SqlOptimization/Overview', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(navigateSpy).toHaveBeenCalled();
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/sql-optimization/detail/${optimizationId}/${optimizationRecordSqlMockData[0]?.number}`
+      `/sqle/project/${mockProjectInfo.projectID}/sql-optimization/detail/MySQL/${optimizationId}/${optimizationRecordSqlMockData[0]?.number}`
     );
   });
 });
