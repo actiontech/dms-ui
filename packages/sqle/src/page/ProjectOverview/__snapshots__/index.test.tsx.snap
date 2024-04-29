@@ -1602,7 +1602,7 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                         <div
                           class="title-cont"
                         >
-                          优化查询分布
+                          调优查询分布
                         </div>
                       </div>
                       <div
