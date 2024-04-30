@@ -5,6 +5,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import { useParams } from 'react-router-dom';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -22,6 +23,7 @@ describe('sqle/RuleTemplate/RuleTemplateDetail', () => {
     jest.useFakeTimers();
     mockUseCurrentUser();
     mockUseCurrentProject();
+    mockUseCurrentPermission();
     requestGetProjectRule = rule_template.getProjectRuleTemplate();
     requestGetAllRule = rule_template.getRuleList();
     useParamsMock.mockReturnValue({

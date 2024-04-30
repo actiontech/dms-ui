@@ -489,7 +489,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           style="height: auto; overflow: auto;"
                         >
                           <div
-                            class="has-top-margin css-16p38ka"
+                            class="has-top-margin css-4znel3"
                             style="cursor: pointer;"
                           >
                             <div
@@ -533,21 +533,35 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                               </div>
                               <div
                                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="padding-bottom: 8px;"
+                                  style="margin-right: 8px;"
                                 >
                                   <div
-                                    class="level-content-params-item"
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-rncbf4"
                                   >
-                                    最大绑定变量数量
-                                     
-                                    : 
-                                    100
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <div
+                                        class="level-content-params-item"
+                                      >
+                                        最大绑定变量数量
+                                         
+                                        : 
+                                        100
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                />
+                                <div
+                                  class="ant-space-item"
+                                />
                               </div>
                             </div>
                             <section
@@ -1200,7 +1214,23 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                             id="desc"
                             value="绑定的变量个数不建议超过阈值"
                           >
-                            绑定的变量个数不建议超过阈值
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <div>
+                                  绑定的变量个数不建议超过阈值
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <section />
+                              </div>
+                            </div>
                           </section>
                         </div>
                       </div>
@@ -1962,7 +1992,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                           style="height: auto; overflow: auto;"
                         >
                           <div
-                            class="has-top-margin css-16p38ka"
+                            class="has-top-margin css-4znel3"
                             style="cursor: pointer;"
                           >
                             <div
@@ -2006,21 +2036,35 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate should match snap shot 1`] =
                               </div>
                               <div
                                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="padding-bottom: 8px;"
+                                  style="margin-right: 8px;"
                                 >
                                   <div
-                                    class="level-content-params-item"
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-rncbf4"
                                   >
-                                    最大绑定变量数量
-                                     
-                                    : 
-                                    100
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <div
+                                        class="level-content-params-item"
+                                      >
+                                        最大绑定变量数量
+                                         
+                                        : 
+                                        100
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                />
+                                <div
+                                  class="ant-space-item"
+                                />
                               </div>
                             </div>
                             <section
@@ -3015,7 +3059,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                           style="height: auto; overflow: auto;"
                         >
                           <div
-                            class="has-top-margin css-16p38ka"
+                            class="has-top-margin css-4znel3"
                             style="cursor: pointer;"
                           >
                             <div
@@ -3059,21 +3103,35 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                               </div>
                               <div
                                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="padding-bottom: 8px;"
+                                  style="margin-right: 8px;"
                                 >
                                   <div
-                                    class="level-content-params-item"
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-rncbf4"
                                   >
-                                    最大绑定变量数量
-                                     
-                                    : 
-                                    100
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <div
+                                        class="level-content-params-item"
+                                      >
+                                        最大绑定变量数量
+                                         
+                                        : 
+                                        100
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                />
+                                <div
+                                  class="ant-space-item"
+                                />
                               </div>
                             </div>
                             <section
@@ -3160,7 +3218,7 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                             </section>
                           </div>
                           <div
-                            class="has-top-margin css-16p38ka"
+                            class="has-top-margin css-4znel3"
                             style="cursor: pointer;"
                           >
                             <div
@@ -3204,19 +3262,53 @@ exports[`sqle/GlobalRuleTemplate/UpdateRuleTemplate update global rule template 
                               </div>
                               <div
                                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="padding-bottom: 8px;"
+                                  style="margin-right: 8px;"
                                 >
                                   <div
-                                    class="level-content-params-item"
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-rncbf4"
                                   >
-                                    最大绑定变量数量
-                                     
-                                    : 
-                                    100
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <div
+                                        class="level-content-params-item"
+                                      >
+                                        最大绑定变量数量
+                                         
+                                        : 
+                                        100
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-rncbf4"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      审核能力
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-rncbf4"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      重写能力
+                                    </div>
                                   </div>
                                 </div>
                               </div>

@@ -18,6 +18,7 @@ export default {
   workflowTemplate: '流程模板',
   sqlAudit: 'SQL审核',
   pluginAudit: 'IDE审核',
+  sqlOptimization: '智能调优',
   sqlManagement: 'SQL管控',
   SQLOrder: 'SQL工单',
   auditPlan: '扫描任务',
