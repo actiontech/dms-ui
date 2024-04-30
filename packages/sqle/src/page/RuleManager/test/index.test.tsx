@@ -14,6 +14,7 @@ import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../index.type';
 import { mockDriver } from '../../../testUtils/mockRequest';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -36,6 +37,7 @@ describe('sqle/RuleManager', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
+    mockUseCurrentPermission();
     mockUseCurrentUserSpy = mockUseCurrentUser();
     mockUseDbServiceDriver();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);

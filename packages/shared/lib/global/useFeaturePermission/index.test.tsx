@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
-import useSystemModuleStatus from '.';
+import { useDispatch } from 'react-redux';
+import useFeaturePermission from '.';
 import { act, cleanup } from '@testing-library/react';
 import system from '../../api/sqle/service/system';
 import { renderHooksWithRedux } from '../../testUtil/customRender';
@@ -8,12 +8,11 @@ import { createSpySuccessResponse } from '../../testUtil/mockApi';
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
-    useSelector: jest.fn(),
     useDispatch: jest.fn()
   };
 });
 
-describe('hooks/useSystemModuleStatus', () => {
+describe('hooks/useFeaturePermission', () => {
   const mockDispatch = jest.fn();
   let getSystemModuleStatusSpy: jest.SpyInstance;
   beforeEach(() => {
@@ -22,11 +21,6 @@ describe('hooks/useSystemModuleStatus', () => {
       createSpySuccessResponse({ data: { is_supported: false } })
     );
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        system: { sqlOptimizationIsSupported: false }
-      });
-    });
     jest.useFakeTimers();
   });
 
@@ -35,38 +29,28 @@ describe('hooks/useSystemModuleStatus', () => {
     jest.useFakeTimers();
   });
 
-  it('should request when manual is false', async () => {
-    const { result } = renderHooksWithRedux(useSystemModuleStatus, {});
+  it('should no request', async () => {
+    const { result } = renderHooksWithRedux(useFeaturePermission, {});
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.sqlOptimizationIsSupported).toEqual(false);
+    expect(getSystemModuleStatusSpy).not.toHaveBeenCalled();
     expect(result.current.loading).toEqual(false);
-    expect(mockDispatch).toHaveBeenCalledTimes(1);
-    expect(mockDispatch).toHaveBeenCalledWith({
-      payload: { isSupported: false },
-      type: 'system/updateSqlOptimizationIsSupported'
-    });
   });
 
-  it('should request when manual is true', async () => {
+  it('should request when updateFeaturePermission called', async () => {
     getSystemModuleStatusSpy.mockClear();
     getSystemModuleStatusSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: { is_supported: true } })
     );
-    const { result } = renderHooksWithRedux(
-      () => useSystemModuleStatus(true),
-      {}
-    );
+    const { result } = renderHooksWithRedux(useFeaturePermission, {});
     await act(async () => {
-      result.current.updateSystemModalStatus();
+      result.current.updateFeaturePermission();
       await jest.advanceTimersByTime(3000);
     });
     expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.sqlOptimizationIsSupported).toEqual(false);
     expect(result.current.loading).toEqual(false);
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: { isSupported: true },
-      type: 'system/updateSqlOptimizationIsSupported'
+      type: 'permission/updateSqlOptimizationIsSupported'
     });
   });
 });

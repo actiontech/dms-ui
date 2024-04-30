@@ -27,7 +27,7 @@ const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
 };
 
 const renderTooltipCustomContent = (
-  dataSource: any[],
+  dataSource: Array<{ name: string; value: number }>,
   sqleTheme: SqleTheme,
   sharedTheme: SharedTheme
 ) => {
@@ -132,7 +132,7 @@ const DataSourcePerformance = () => {
     tooltip: {
       fields: ['instance_name', 'avg_performance_improve'],
       formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any[]) =>
+      customContent: (title: string, dataSource) =>
         renderTooltipCustomContent(dataSource, sqleTheme, sharedTheme)
     },
     scrollbar:

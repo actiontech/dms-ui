@@ -3,9 +3,9 @@ import { useCallback, useContext } from 'react';
 
 import {
   SQLStatementFields,
-  SqlUploadFileContProps,
+  SQLStatementFormProps,
   UploadTypeEnum
-} from '../SQLInfoForm/index.type';
+} from '../../index.type';
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import { Form } from 'antd';
 import {
@@ -18,7 +18,7 @@ import { FormSubmitStatusContext } from '..';
 import { SqlFiledInitialValue } from '../../../../data/common';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
 
-const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
+const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
   const submitLoading = useContext(FormSubmitStatusContext);
 

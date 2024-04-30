@@ -20,7 +20,8 @@ export type SQLStatementFields = {
   zipFile: File[];
 };
 
-export type SQLUploadTypeFields = {
+export type SQLInfoFormFields = {
+  auditType: AuditTypeEnum;
   uploadType: UploadTypeEnum;
   sql: string;
   sqlFile: File[];
@@ -33,10 +34,6 @@ export type SQLUploadTypeFields = {
   gitUserName: string;
   gitUserPassword: string;
 };
-
-export type SQLInfoFormFields = {
-  auditType: AuditTypeEnum;
-} & SQLUploadTypeFields;
 
 export type SQLInfoFormProps = {
   form: FormInstance<SQLInfoFormFields>;
@@ -53,7 +50,5 @@ export type DatabaseInfoProps = Pick<SQLInfoFormItemProps, 'form'> &
   };
 
 export type SQLStatementFormProps = Pick<SQLInfoFormItemProps, 'form'>;
-
-export type SQLStatementFormType = FormInstance<SQLUploadTypeFields>;
 
 export type SqlUploadFileContProps = Pick<SQLInfoFormItemProps, 'form'>;

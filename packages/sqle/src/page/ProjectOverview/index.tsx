@@ -20,14 +20,14 @@ import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { useCallback, useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import useSystemModuleStatus from '@actiontech/shared/lib/global/useSystemModuleStatus';
+import useCurrentPermission from '@actiontech/shared/lib/global/useCurrentPermission';
 
 const Overview = () => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
   const { projectID } = useCurrentProject();
 
-  const { sqlOptimizationIsSupported } = useSystemModuleStatus(true);
+  const { sqlOptimizationIsSupported } = useCurrentPermission();
 
   const onRefreshPage = useCallback(() => {
     eventEmitter.emit(EmitterKey.Refresh_Project_Overview);
@@ -100,7 +100,6 @@ const Overview = () => {
           <Col span={6} className="right-chart">
             <ScanTask />
           </Col>
-          {/* #if [ee] */}
           <EmptyBox if={sqlOptimizationIsSupported}>
             <Col span={24}>
               <Row className="marginTop20" gutter={20}>
@@ -117,7 +116,6 @@ const Overview = () => {
               </Row>
             </Col>
           </EmptyBox>
-          {/* #endif */}
           <Col span={24}>
             <Row className="marginTop20" gutter={20}>
               <Col span={12}>

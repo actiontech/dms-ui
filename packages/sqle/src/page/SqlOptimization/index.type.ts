@@ -1,5 +1,12 @@
 import { FormInstance, SelectProps } from 'antd';
-import { UploadTypeEnum } from '../SqlAudit/Create/SQLInfoForm/index.type';
+
+export enum UploadTypeEnum {
+  sql,
+  sqlFile,
+  mybatisFile,
+  zipFile,
+  git
+}
 
 export type BaseFormFields = {
   optimizationName: string;
@@ -41,3 +48,18 @@ export type SqlOptimizationDetailUrlParams = {
   number: string;
   dbType: string;
 } & SqlOptimizationOverviewUrlParams;
+
+export type SQLStatementFormProps = Pick<SqlInfoFormProps, 'form'>;
+
+export type SQLStatementFields = {
+  sql: string;
+  sqlFile: File[];
+  mybatisFile: File[];
+  zipFile: File[];
+};
+
+export type TypeUploadKeys = keyof typeof UploadTypeEnum;
+
+export const SQLUploadTypeKeys: TypeUploadKeys[] = Object.keys(
+  UploadTypeEnum
+).filter((key) => isNaN(parseInt(key))) as TypeUploadKeys[];

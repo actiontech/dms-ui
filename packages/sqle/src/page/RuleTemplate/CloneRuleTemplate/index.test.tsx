@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import { projectRuleTemplateListMockData } from '../../../testUtils/mockApi/rule_template/data';
 import { BrowserRouter } from 'react-router-dom';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -32,6 +33,7 @@ describe('sqle/RuleTemplate/CloneRuleTemplate', () => {
         }
       })
     );
+    mockUseCurrentPermission();
     mockUseCurrentProject();
     jest.useFakeTimers();
     cloneProjectRuleTemplateSpy = rule_template.cloneProjectRuleTemplate();

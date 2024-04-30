@@ -115,18 +115,6 @@ export const DetailComStyleWrapper = styled('section')`
         line-height: 32px;
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
       }
-
-      .refresh-icon {
-        width: 28px;
-        height: 28px;
-        line-height: 28px;
-        margin-left: 8px;
-        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-      }
     }
 
     .tag-wrapper {
@@ -171,6 +159,18 @@ export const DetailComStyleWrapper = styled('section')`
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
       background-color: ${({ theme }) =>
         theme.sharedTheme.uiToken.colorFillTertiary};
+
+      .refresh-icon {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+
+        svg {
+          color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+          font-size: 16px;
+        }
+      }
     }
   }
 `;

@@ -15,7 +15,8 @@ import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/commo
 import { mockSystemConfigData } from './testUtils/mockHooks/data';
 import { BasicInfo } from './testUtils/mockApi/global/data';
 import { mockDBServiceDriverInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { mockUseSystemModuleStatus } from '@actiontech/shared/lib/testUtil/mockHook/mockUseSystemModuleStatus';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUseFeaturePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseFeaturePermission';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -42,7 +43,8 @@ describe('App', () => {
     mockUseDbServiceDriver();
     mockUseCurrentUser();
     mockSystemConfig();
-    mockUseSystemModuleStatus();
+    mockUseCurrentPermission();
+    mockUseFeaturePermission();
     mockDMSGlobalApi.mockAllApi();
 
     requestGetBasicInfo = mockDMSGlobalApi.getBasicInfo();

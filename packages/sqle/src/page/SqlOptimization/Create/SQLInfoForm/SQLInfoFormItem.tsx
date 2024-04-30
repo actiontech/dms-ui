@@ -7,7 +7,7 @@ import { Form, Space } from 'antd';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';
 import useInstance from '../../../../hooks/useInstance';
-import SQLStatementForm from '../../../SqlAudit/Create/SQLStatementForm';
+import SQLStatementForm from '../SQLStatementForm';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import {
   FormatLanguageSupport,
@@ -16,7 +16,7 @@ import {
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { FormSubmitStatusContext } from '..';
 
-const SQLInfoFormItem = ({ form, submit }: SqlInfoFormProps) => {
+const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const submitLoading = useContext(FormSubmitStatusContext);
@@ -56,7 +56,7 @@ const SQLInfoFormItem = ({ form, submit }: SqlInfoFormProps) => {
         instanceLoading={instanceLoading}
         instanceOptions={instanceOptions}
       />
-      <SQLStatementForm form={form} submitLoading={submitLoading} />
+      <SQLStatementForm form={form} />
       <Space size={12}>
         <BasicButton
           className="create-optimization-button"

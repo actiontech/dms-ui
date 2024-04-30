@@ -7,13 +7,11 @@ type SystemReduxState = {
   modalStatus: ModalStatus;
   webTitle: string;
   webLogoUrl?: string;
-  sqlOptimizationIsSupported: boolean;
 };
 
 const initialState: SystemReduxState = {
   modalStatus: {},
-  webTitle: DMS_DEFAULT_WEB_TITLE,
-  sqlOptimizationIsSupported: false
+  webTitle: DMS_DEFAULT_WEB_TITLE
 };
 
 const dmsSystem = createSlice({
@@ -31,19 +29,12 @@ const dmsSystem = createSlice({
       state.webLogoUrl = webLogoUrl;
       state.webTitle = webTitle;
     },
-    updateSqlOptimizationIsSupported(
-      state,
-      { payload: { isSupported } }: PayloadAction<{ isSupported: boolean }>
-    ) {
-      state.sqlOptimizationIsSupported = isSupported;
-    },
     ...commonModalReducer()
   }
 });
 
 export const {
   updateWebTitleAndLogo,
-  updateSqlOptimizationIsSupported,
   initModalStatus: initSystemModalStatus,
   updateModalStatus: updateSystemModalStatus
 } = dmsSystem.actions;

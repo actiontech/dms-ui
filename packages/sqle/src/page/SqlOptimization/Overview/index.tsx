@@ -72,18 +72,6 @@ const OptimizationOverview = () => {
               <h3 className="header-cont-text">
                 {optimizationRecord?.optimization_name || '-'}
               </h3>
-              <EmptyBox
-                if={
-                  optimizationRecord?.status ===
-                  SqlOptimizationStatusEnum.optimizing
-                }
-              >
-                <SyncOutlined
-                  onClick={onRefresh}
-                  spin={recordLoading}
-                  className="refresh-icon"
-                />
-              </EmptyBox>
             </section>
             <section className="tag-wrapper">
               <div className="custom-tag-item">
@@ -127,6 +115,11 @@ const OptimizationOverview = () => {
                     <div>
                       {t('sqlOptimization.overview.optimizingStatusTips')}
                     </div>
+                    <SyncOutlined
+                      onClick={onRefresh}
+                      spin={recordLoading}
+                      className="refresh-icon"
+                    />
                   </HeaderSpaceTagStyleWrapper>
                 </div>
               </section>
