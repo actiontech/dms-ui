@@ -59,6 +59,8 @@ export const sideMenuData = (
     'plugin-audit'
   ];
 
+  // 现状: SQL优化页面在CE中会展示预览引导页面 但是在EE中需要根据 sqlOptimizationIsSupport（接口查询返回）权限来决定是否展示 没有任何提示信息 会导致用户无法感知此功能的存在 不太合理
+  // todo: 下一期需求周期把此问题给产品抛出 希望解决此问题
   const menuStruct: MenuStructTreeType = [
     'project-overview',
     'dashboard',
