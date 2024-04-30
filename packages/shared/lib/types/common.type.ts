@@ -29,6 +29,10 @@ export interface IStore {
   [key: string]: any;
 }
 
+export type PermissionReduxState = {
+  sqlOptimizationIsSupported: boolean;
+};
+
 export type RouterConfigItem = RouteObject & {
   label?: string;
   icon?: ReactNode;
@@ -36,6 +40,7 @@ export type RouterConfigItem = RouteObject & {
   key: string;
   children?: RouterConfigItem[];
   role?: Array<SystemRole | ''>;
+  permission?: Array<keyof PermissionReduxState>;
 };
 
 export enum RuleUrlParamKey {

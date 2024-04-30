@@ -205,6 +205,15 @@ export type ProjectOverviewTheme = {
       stroke: string;
     };
   };
+  DataSourcePerformance: {
+    bar: {
+      fill: string;
+      bg: string;
+    };
+    toolTip: {
+      dotColor: string;
+    };
+  };
 };
 
 export type AuditPlanTheme = {

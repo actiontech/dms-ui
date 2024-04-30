@@ -1,9 +1,11 @@
-import { Form, Typography } from 'antd';
+import { Form, Typography, Space } from 'antd';
 import { RuleDetailItemStyleWrapper } from './style';
 import { useTranslation } from 'react-i18next';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
 import { EmptyBox } from '@actiontech/shared';
+import { RuleItemTagStyleWrapper } from '../style';
+import { useCurrentPermission } from '@actiontech/shared/lib/global';
 
 export type typeRuleBaseInfo = {
   dataSource: IRuleResV1 | undefined;
@@ -18,11 +20,31 @@ const RuleBaseInfo: React.FC<typeRuleBaseInfo> = ({
 }) => {
   const { t } = useTranslation();
 
+  const { sqlOptimizationIsSupported } = useCurrentPermission();
+
   return (
     <>
       <Form.Item label={t('ruleTemplate.editModal.rule')} name="desc">
         <RuleDetailItemStyleWrapper>
-          {dataSource?.desc}
+          <Space direction="vertical">
+            <div>{dataSource?.desc}</div>
+            <section>
+              <EmptyBox
+                if={dataSource?.has_audit_power && sqlOptimizationIsSupported}
+              >
+                <RuleItemTagStyleWrapper className="rule-audit-tag">
+                  {t('ruleTemplate.detail.auditCapability')}
+                </RuleItemTagStyleWrapper>
+              </EmptyBox>
+              <EmptyBox
+                if={dataSource?.has_rewrite_power && sqlOptimizationIsSupported}
+              >
+                <RuleItemTagStyleWrapper className="rule-rewrite-tag">
+                  {t('ruleTemplate.detail.rewriteCapability')}
+                </RuleItemTagStyleWrapper>
+              </EmptyBox>
+            </section>
+          </Space>
         </RuleDetailItemStyleWrapper>
       </Form.Item>
       <Form.Item

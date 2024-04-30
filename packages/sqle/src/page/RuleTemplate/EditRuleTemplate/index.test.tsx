@@ -3,12 +3,14 @@ import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
 import EditRuleTemplate from '.';
 import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
 import { RuleParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 describe('sqle/RuleTemplate/EditRuleTemplate', () => {
   const closeSpy = jest.fn();
   const submitSpy = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
+    mockUseCurrentPermission();
   });
 
   afterEach(() => {
