@@ -28,9 +28,9 @@ describe('sqle/RuleManager CE', () => {
   beforeEach(() => {
     mockUseCurrentPermission();
   });
-   afterEach(() => {
-     cleanup();
-   });
+  afterEach(() => {
+    cleanup();
+  });
   it('should match snapshot', () => {
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({

@@ -13,7 +13,7 @@ describe('sqle/components/RuleList/RuleBaseInfo', () => {
   afterEach(() => {
     cleanup();
   });
-  
+
   const customRender = (params: typeRuleBaseInfo) => {
     return renderWithTheme(
       <Form>

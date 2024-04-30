@@ -1,6 +1,4 @@
-import reducers, {
-  updateSqlOptimizationIsSupported
-} from '.';
+import reducers, { updateSqlOptimizationIsSupported } from '.';
 
 import { IReduxState } from '..';
 
