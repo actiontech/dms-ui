@@ -11,13 +11,13 @@ import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHo
 import { cleanup } from '@testing-library/react';
 
 describe('sqle/components/RuleList/RuleBaseInfo', () => {
-   beforeEach(() => {
-     mockUseCurrentPermission();
-   });
+  beforeEach(() => {
+    mockUseCurrentPermission();
+  });
 
-   afterEach(() => {
-     cleanup();
-   });
+  afterEach(() => {
+    cleanup();
+  });
 
   const customRender = (params: typeRuleBaseInfo) => {
     return renderWithTheme(

@@ -1,6 +1,4 @@
-import reducers, {
-  updateWebTitleAndLogo,
-} from '.';
+import reducers, { updateWebTitleAndLogo } from '.';
 
 import { IReduxState } from '..';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
@@ -8,7 +6,7 @@ import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 describe('store system', () => {
   const state: IReduxState['system'] = {
     modalStatus: {},
-    webTitle: DMS_DEFAULT_WEB_TITLE,
+    webTitle: DMS_DEFAULT_WEB_TITLE
   };
 
   it('should update web info for execute updateWebTitleAndLogo', () => {
@@ -23,7 +21,7 @@ describe('store system', () => {
     expect(newState).toEqual({
       modalStatus: {},
       webTitle: 'this is a title',
-      webLogoUrl: 'this is a web logo url',
+      webLogoUrl: 'this is a web logo url'
     });
   });
 });
