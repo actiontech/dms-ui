@@ -1,10 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useContext, useEffect } from 'react';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
-import {
-  SQLStatementFormProps,
-  UploadTypeEnum
-} from '../SQLInfoForm/index.type';
+import { SQLStatementFormProps, UploadTypeEnum } from '../../index.type';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { BasicInput, EmptyBox } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';

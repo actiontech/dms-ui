@@ -78,6 +78,7 @@ const OptimizationDetail = () => {
                 <pre
                   className="code-pre"
                   dangerouslySetInnerHTML={{
+                    // todo RenderSQL调整后需要更换为RenderSQL
                     __html: HighlightCode.highlightSql(
                       optimizationDetail?.original_sql ?? ''
                     )

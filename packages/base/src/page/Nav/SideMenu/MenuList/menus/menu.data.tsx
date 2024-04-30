@@ -54,32 +54,33 @@ export const sideMenuData = (
     sqlOptimizationMenuItem
   ];
 
-  const getSQLDevGroup = (): MenuStructTreeKey[] => {
-    const sqlDevGroup: MenuStructTreeKey[] = [
-      'cloud-beaver',
-      'data-export',
-      'sql-audit',
-      'plugin-audit'
-    ];
-    // #if [ce]
-    return [...sqlDevGroup, 'sql-optimization'];
-    // #endif
-    // #if [ee]
-    return sqlOptimizationIsSupport
-      ? [...sqlDevGroup, 'sql-optimization']
-      : sqlDevGroup;
-    // #endif
-  };
+  const sqlDevGroup: MenuStructTreeKey[] = [
+    'cloud-beaver',
+    'data-export',
+    'sql-audit',
+    'plugin-audit'
+  ];
 
   const menuStruct: MenuStructTreeType = [
     'project-overview',
     'dashboard',
     { type: 'divider' },
+    // #if [ce]
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLDev'),
-      group: getSQLDevGroup()
+      group: [...sqlDevGroup, 'sql-optimization']
     },
+    // #endif
+    // #if [ee]
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.SQLDev'),
+      group: sqlOptimizationIsSupport
+        ? [...sqlDevGroup, 'sql-optimization']
+        : sqlDevGroup
+    },
+    // #endif
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLExecute'),

@@ -402,6 +402,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     key: 'sqlOptimization',
     element: <SqlOptimization />,
     // #if [ee]
+    permission: ['sqlOptimizationIsSupported'],
     children: [
       {
         index: true,

@@ -2,18 +2,16 @@ import system from '../../api/sqle/service/system';
 import { getSystemModuleStatusModuleNameEnum } from '../../api/sqle/service/system/index.enum';
 import { ResponseCode } from '../../enum';
 import { useRequest } from 'ahooks';
-import { updateSqlOptimizationIsSupported } from '../../../../base/src/store/system';
-import { useSelector, useDispatch } from 'react-redux';
-import { IReduxState } from '../../../../base/src/store';
+import { updateSqlOptimizationIsSupported } from '../../../../base/src/store/permission';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
-const useSystemModuleStatus = (manual = false) => {
+const useFeaturePermission = () => {
   const dispatch = useDispatch();
+  const [featurePermissionFetched, setFeaturePermissionFetched] =
+    useState(false);
 
-  const sqlOptimizationIsSupported = useSelector(
-    (state: IReduxState) => state.system.sqlOptimizationIsSupported
-  );
-
-  const { loading, run: updateSystemModalStatus } = useRequest(
+  const { loading, run: updateFeaturePermission } = useRequest(
     () => {
       return system.getSystemModuleStatus({
         module_name: getSystemModuleStatusModuleNameEnum.sql_optimization
@@ -29,15 +27,18 @@ const useSystemModuleStatus = (manual = false) => {
           );
         }
       },
-      manual
+      onFinally: () => {
+        setFeaturePermissionFetched(true);
+      },
+      manual: true
     }
   );
 
   return {
-    sqlOptimizationIsSupported,
     loading,
-    updateSystemModalStatus
+    updateFeaturePermission,
+    featurePermissionFetched
   };
 };
 
-export default useSystemModuleStatus;
+export default useFeaturePermission;

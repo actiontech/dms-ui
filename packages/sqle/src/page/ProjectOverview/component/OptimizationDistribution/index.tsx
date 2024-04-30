@@ -41,7 +41,7 @@ const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
 };
 
 const renderTooltipCustomContent = (
-  dataSource: any[],
+  dataSource: Array<{ name: string; value: number }>,
   sharedTheme: SharedTheme
 ) => {
   const data = dataSource[0];
@@ -192,7 +192,7 @@ const OptimizationDistribution = () => {
     tooltip: {
       fields: ['time', 'record_number'],
       formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any[]) =>
+      customContent: (title: string, dataSource) =>
         renderTooltipCustomContent(dataSource, sharedTheme)
     },
     interactions: [

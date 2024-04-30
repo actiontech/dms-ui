@@ -31,6 +31,7 @@ import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import RuleDetailModal from './RuleDetailModal';
 import { useBoolean } from 'ahooks';
 import { isEqual } from 'lodash';
+import { useCurrentPermission } from '@actiontech/shared/lib/global';
 
 const scrollStepRange = 30;
 
@@ -44,6 +45,9 @@ const RuleList: React.FC<RuleListProps> = ({
   enableCheckDetail
 }) => {
   const { t } = useTranslation();
+
+  const { sqlOptimizationIsSupported } = useCurrentPermission();
+
   const isDisabled = useMemo(
     () => actionType === RuleStatusEnum.disabled,
     [actionType]
@@ -91,12 +95,12 @@ const RuleList: React.FC<RuleListProps> = ({
         >
           <Space className="level-content-params">
             {renderParams(rule.params)}
-            <EmptyBox if={rule.has_audit_power}>
+            <EmptyBox if={rule.has_audit_power && sqlOptimizationIsSupported}>
               <RuleItemTagStyleWrapper className="rule-audit-tag">
                 {t('ruleTemplate.detail.auditCapability')}
               </RuleItemTagStyleWrapper>
             </EmptyBox>
-            <EmptyBox if={rule.has_rewrite_power}>
+            <EmptyBox if={rule.has_rewrite_power && sqlOptimizationIsSupported}>
               <RuleItemTagStyleWrapper className="rule-rewrite-tag">
                 {t('ruleTemplate.detail.rewriteCapability')}
               </RuleItemTagStyleWrapper>

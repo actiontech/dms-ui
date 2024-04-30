@@ -6,7 +6,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import EmitterKey from '../../data/EmitterKey';
 import eventEmitter from '../../utils/EventEmitter';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { mockUseSystemModuleStatus } from '@actiontech/shared/lib/testUtil/mockHook/mockUseSystemModuleStatus';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 
@@ -14,7 +14,7 @@ describe('page/ProjectOverview', () => {
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
-    mockUseSystemModuleStatus();
+    mockUseCurrentPermission();
     MockDate.set(dayjs('2022-01-01 12:00:00').valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
   });
@@ -44,8 +44,8 @@ describe('page/ProjectOverview', () => {
   });
 
   it('render over view when sql optimization is not supported', async () => {
-    mockUseSystemModuleStatus({
-      sqlOptimizationIsSupported: true
+    mockUseCurrentPermission({
+      sqlOptimizationIsSupported: false
     });
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));

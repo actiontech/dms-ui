@@ -7,8 +7,18 @@ import RuleBaseInfo, { typeRuleBaseInfo } from '../RuleBaseInfo';
 
 import { renderWithTheme } from '../../../../testUtils/customRender';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { cleanup } from '@testing-library/react';
 
 describe('sqle/components/RuleList/RuleBaseInfo', () => {
+   beforeEach(() => {
+     mockUseCurrentPermission();
+   });
+
+   afterEach(() => {
+     cleanup();
+   });
+
   const customRender = (params: typeRuleBaseInfo) => {
     return renderWithTheme(
       <Form>

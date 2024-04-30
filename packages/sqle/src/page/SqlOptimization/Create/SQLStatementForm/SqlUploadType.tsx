@@ -1,7 +1,6 @@
-import { SQLUploadTypeKeys } from './index.type';
 import { UploadTypeStyleWrapper } from '../../../Order/SQLStatementForm/style';
 import UploadTypeItem from '../../../Order/SQLStatementForm/UploadTypeItem';
-import { UploadTypeEnum } from '../SQLInfoForm/index.type';
+import { UploadTypeEnum, SQLUploadTypeKeys } from '../../index.type';
 import { useContext } from 'react';
 import { FormSubmitStatusContext } from '..';
 import { uploadItem } from './index.data';

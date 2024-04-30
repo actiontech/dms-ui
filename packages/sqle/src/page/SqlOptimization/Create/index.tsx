@@ -14,6 +14,7 @@ import { useBoolean } from 'ahooks';
 import dayjs from 'dayjs';
 import { OptimizationNameUploadTypePrefix } from '../index.data';
 
+// todo 后续统一移除掉 context 尽量统一用 redux 来管理
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
 
 const SqlOptimizationCreate = () => {
