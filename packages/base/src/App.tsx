@@ -74,7 +74,7 @@ function App() {
 
   const { getUserBySession } = useSessionUser();
 
-  const { useInfoFetched, theme, role } = useCurrentUser();
+  const { useInfoFetched, theme, role, isAdmin } = useCurrentUser();
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
   const { updateFeaturePermission, featurePermissionFetched } =
     useFeaturePermission();
@@ -99,11 +99,7 @@ function App() {
     routes: RouterConfigItem[],
     targetRole: SystemRole | '',
     currentPermissions: PermissionReduxState
-  ) => RouterConfigItem[] = (
-    routes: RouterConfigItem[],
-    targetRole: SystemRole | '',
-    currentPermissions: PermissionReduxState
-  ) => {
+  ) => RouterConfigItem[] = (routes, targetRole, currentPermissions) => {
     return routes.reduce(
       (filtered: RouterConfigItem[], route: RouterConfigItem) => {
         let currentRote: RouterConfigItem | undefined = undefined;
@@ -120,7 +116,8 @@ function App() {
           route.children &&
           Array.isArray(route.children) &&
           route.children.length &&
-          !route.permission
+          !route.permission &&
+          !route.role
         ) {
           currentRote = {
             ...route,
@@ -140,7 +137,7 @@ function App() {
   const AuthRouterConfigData = useMemo(() => {
     return filterRoutesByRole(AuthRouterConfig, role, currentPermissions);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [featurePermissionFetched]);
+  }, [featurePermissionFetched, isAdmin]);
 
   const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
   useChangeTheme();
