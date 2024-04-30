@@ -38,7 +38,6 @@ export const sideMenuData = (
     cloudBeaverMenuItem,
     dataExportMenuItem,
 
-    // #if [sqle]
     projectOverviewMenuItem,
     dashboardMenuItem,
     sqlAuditMenuItem,
@@ -50,7 +49,6 @@ export const sideMenuData = (
     whiteListMenuItem,
     workflowTemplateMenuItem,
     sqleOperationRecordMenuItem,
-    // #endif
     sqlOptimizationMenuItem
   ];
 
