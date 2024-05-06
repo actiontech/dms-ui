@@ -12,6 +12,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useNavigate } from 'react-router-dom';
 import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
 import { ModalName } from '../../../../data/ModalName';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-redux', () => {
   return {
@@ -48,6 +49,7 @@ describe('test Base/Nav/SideMenu/index', () => {
       .spyOn(eventEmitter, 'subscribe')
       .mockImplementation(() => ({ unsubscribe: unsubscribeSpy }));
     jest.useFakeTimers();
+    mockUseCurrentPermission();
     mockUseCurrentUser({
       bindProjects: mockBindProjects
     });

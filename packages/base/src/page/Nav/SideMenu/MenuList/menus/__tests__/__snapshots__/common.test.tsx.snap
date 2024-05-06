@@ -41,6 +41,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
       },
       null,
       null,
+      null,
     ],
     "label": "SQL开发",
     "type": "group",
@@ -136,6 +137,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
         </Link>,
         "structKey": "data-export",
       },
+      null,
       null,
       null,
     ],
@@ -282,6 +284,18 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
           IDE审核
         </Link>,
         "structKey": "plugin-audit",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/sql-optimization",
+        "label": <Link
+          to="/sqle/project/600300/sql-optimization"
+        >
+          智能调优
+        </Link>,
+        "structKey": "sql-optimization",
       },
     ],
     "label": "SQL开发",
@@ -506,6 +520,18 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
           IDE审核
         </Link>,
         "structKey": "plugin-audit",
+      },
+      {
+        "icon": <AntdIcon
+          component={[Function]}
+        />,
+        "key": "sqle/project/projectID/sql-optimization",
+        "label": <Link
+          to="/sqle/project/600300/sql-optimization"
+        >
+          智能调优
+        </Link>,
+        "structKey": "sql-optimization",
       },
     ],
     "label": "SQL开发",

@@ -9,6 +9,18 @@ const MockPlots = (props) => {
 
 const Line = MockPlots;
 const Pie = MockPlots;
+const RadialBar = MockPlots;
+const Gauge = MockPlots;
+const Column = MockPlots;
+const Treemap = MockPlots;
+const Area = MockPlots;
+const Bar = MockPlots;
+const RingProgress = MockPlots;
+const mockRegisterShape = jest.fn();
+const G2 = {
+  registerShape: jest.fn()
+};
+
 const PieWithCustomRenderCalled = (options) => (props) => {
   const clonePropsData = cloneDeep(props);
 
@@ -33,16 +45,32 @@ const PieWithCustomRenderCalled = (options) => (props) => {
   return <div data-custom-params={params} />;
 };
 
-const RadialBar = MockPlots;
-const Gauge = MockPlots;
-const Column = MockPlots;
-const Treemap = MockPlots;
-const Area = MockPlots;
-const Bar = MockPlots;
-const RingProgress = MockPlots;
-const mockRegisterShape = jest.fn();
-const G2 = {
-  registerShape: jest.fn()
+const BarWithCustomRenderCalled = (options) => (props) => {
+  const clonePropsData = cloneDeep(props);
+
+  const tooltipCustomContent = clonePropsData?.tooltip?.customContent?.(
+    ...(options?.tooltip?.customContent?.(props) ?? [])
+  );
+
+  const params = JSON.stringify(clonePropsData);
+  if (tooltipCustomContent) {
+    return <div data-custom-params={params}>{tooltipCustomContent}</div>;
+  }
+  return <div data-custom-params={params} />;
+};
+
+const AreaWithCustomRenderCalled = (options) => (props) => {
+  const clonePropsData = cloneDeep(props);
+
+  const tooltipCustomContent = clonePropsData?.tooltip?.customContent?.(
+    ...(options?.tooltip?.customContent?.(props) ?? [])
+  );
+
+  const params = JSON.stringify(clonePropsData);
+  if (tooltipCustomContent) {
+    return <div data-custom-params={params}>{tooltipCustomContent}</div>;
+  }
+  return <div data-custom-params={params} />;
 };
 
 export {
@@ -57,7 +85,9 @@ export {
   Area,
   Bar,
   RingProgress,
-  PieWithCustomRenderCalled
+  PieWithCustomRenderCalled,
+  BarWithCustomRenderCalled,
+  AreaWithCustomRenderCalled
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export

@@ -5,6 +5,7 @@ import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
 import { useLocation } from 'react-router-dom';
 import { MenuListProps } from './index.type';
 import { CustomMenuItemType } from './menus/index.type';
+import useCurrentPermission from '@actiontech/shared/lib/global/useCurrentPermission';
 
 // #if [sqle && !dms]
 import { sideMenuData } from './menus/menu.data';
@@ -15,17 +16,19 @@ import { dmsSideMenuData } from './menus/menu.data.dms';
 const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
   const location = useLocation();
 
+  const { sqlOptimizationIsSupported } = useCurrentPermission();
+
   const menuItems = useMemo(() => {
     let menus: CustomMenuItemType[] = [];
 
     // #if [sqle && !dms]
-    menus = sideMenuData(projectID, role);
+    menus = sideMenuData(projectID, role, sqlOptimizationIsSupported);
     // #else
     menus = dmsSideMenuData(projectID, role);
     // #endif
 
     return menus;
-  }, [projectID, role]);
+  }, [projectID, role, sqlOptimizationIsSupported]);
 
   const selectMenu = useCallback(
     (config: MenuProps['items'] = [], pathname: string): string[] => {
