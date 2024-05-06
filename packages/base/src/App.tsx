@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useRoutes } from 'react-router-dom';
 import { AuthRouterConfig, unAuthRouterConfig } from './router/router';
 import { IReduxState } from './store';
 import { useSelector } from 'react-redux';
+import SyncRecoil from 'provision/src/utils/SyncRecoil';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import { EmptyBox, HeaderProgress } from '@actiontech/shared';
 import zhCN from 'antd/locale/zh_CN';
@@ -215,6 +216,7 @@ function App() {
             }
           }}
         >
+          <SyncRecoil />
           <StyledEngineProvider injectFirst>
             <ThemeProvider theme={themeData}>
               {notificationContextHolder}

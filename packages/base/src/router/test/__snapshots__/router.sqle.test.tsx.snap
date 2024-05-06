@@ -704,6 +704,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "key": "dataExportManagement",
         "path": ":projectID/data/export",
       },
+      {
+        "element": <div>
+          dataMaskRuleOverview
+        </div>,
+        "key": "dataMaskRuleOverview",
+        "path": ":projectID/data-mask-rule-overview",
+      },
     ],
     "element": <UNDEFINED />,
     "key": "projectDetail",
@@ -1113,6 +1120,104 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "element": <UNDEFINED />,
     "key": "projectDetail",
     "path": "sqle/project/*",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "element": <div>
+              authList
+            </div>,
+            "key": "authList",
+            "path": ":projectID/auth/list",
+          },
+          {
+            "element": <div>
+              filteredAuthList
+            </div>,
+            "key": "filteredAuthList",
+            "path": ":projectID/auth/list/:purpose",
+          },
+          {
+            "element": <div>
+              addAuth
+            </div>,
+            "key": "addAuth",
+            "path": ":projectID/auth/list/add",
+          },
+          {
+            "element": <div>
+              authTemplate
+            </div>,
+            "key": "authTemplate",
+            "path": ":projectID/auth/template",
+          },
+          {
+            "element": <div>
+              filteredAuthTemplate
+            </div>,
+            "key": "filteredAuthTemplate",
+            "path": ":projectID/auth/template/:name",
+          },
+          {
+            "element": <div>
+              addTemplate
+            </div>,
+            "key": "addTemplate",
+            "path": ":projectID/auth/template/edit-template",
+          },
+        ],
+        "element": undefined,
+        "key": "authManageWrapper",
+        "path": undefined,
+      },
+      {
+        "children": [
+          {
+            "element": <div>
+              operation
+            </div>,
+            "key": "operation",
+            "path": ":projectID/data/operation",
+          },
+        ],
+        "element": undefined,
+        "key": "dataObjectWrapper",
+        "path": undefined,
+      },
+      {
+        "children": [
+          {
+            "element": <div>
+              authAudit
+            </div>,
+            "key": "authAudit",
+            "path": ":projectID/audit/auth",
+          },
+          {
+            "element": <div>
+              templateAudit
+            </div>,
+            "key": "templateAudit",
+            "path": ":projectID/audit/template",
+          },
+        ],
+        "element": undefined,
+        "key": "auditWrapper",
+        "path": undefined,
+      },
+      {
+        "element": <div>
+          null
+        </div>,
+        "key": "null",
+        "path": "*",
+      },
+    ],
+    "element": <UNDEFINED />,
+    "key": "provision",
+    "path": "provision/project/*",
   },
   {
     "element": <div>

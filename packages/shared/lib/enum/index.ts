@@ -1,5 +1,6 @@
 export enum PackageNameEnum {
-  SQLE = 'sqle'
+  SQLE = 'sqle',
+  PROVISION = 'provision'
 }
 
 export enum SupportLanguage {
@@ -41,7 +42,9 @@ export enum StorageKey {
   Token = 'TOKEN',
   DMS_Project_Catch = 'DMS_Project_Catch',
   USER_UID = 'DMS_USER_UID',
-  SHOW_COMPANY_NOTICE = 'SHOW_COMPANY_NOTICE'
+  SHOW_COMPANY_NOTICE = 'SHOW_COMPANY_NOTICE',
+  // diagnosis user id
+  DIAGNOSIS_USER_ID = 'DIAGNOSIS_USER_ID'
 }
 
 /**
@@ -63,4 +66,8 @@ export enum OpPermissionTypeUid {
 export enum CompanyNoticeDisplayStatusEnum {
   Displayed = '1',
   NotDisplayed = '0'
+}
+
+export enum KeyboardType {
+  Enter = 'Enter'
 }
