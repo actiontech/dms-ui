@@ -98,9 +98,9 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         .then((res) => res.data.data);
     };
     if (currentSqlMode === WorkflowResV2ModeEnum.same_sqls) {
-      const SQLStatementInfo = params['0'] as SQLStatementFields;
+      const SQLStatementValue = params['0'] as SQLStatementFields;
       const instanceName = params.dataBaseInfo[0].instanceName;
-      if (SQLStatementInfo?.sqlInputType !== SQLInputType.manualInput) {
+      if (SQLStatementValue?.sqlInputType !== SQLInputType.manualInput) {
         return;
       }
       if (instanceName) {
@@ -108,7 +108,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
           form.setFields([
             {
               name: ['0', 'sql'],
-              value: formatterSQL(SQLStatementInfo.sql, res?.db_type)
+              value: formatterSQL(SQLStatementValue.sql, res?.db_type)
             }
           ]);
         });
@@ -116,19 +116,19 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         form.setFields([
           {
             name: ['0', 'sql'],
-            value: formatterSQL(SQLStatementInfo.sql)
+            value: formatterSQL(SQLStatementValue.sql)
           }
         ]);
       }
     } else {
-      const SQLStatementInfo = params[
+      const SQLStatementValue = params[
         sqlStatementFormTabsRef.current?.activeKey ?? ''
       ] as SQLStatementFields;
 
       const instanceName = params.dataBaseInfo.filter((v) => v.instanceName)[
         sqlStatementFormTabsRef.current?.activeIndex ?? 0
       ].instanceName;
-      if (SQLStatementInfo?.sqlInputType !== SQLInputType.manualInput) {
+      if (SQLStatementValue?.sqlInputType !== SQLInputType.manualInput) {
         return;
       }
 
@@ -137,7 +137,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
           form.setFields([
             {
               name: [sqlStatementFormTabsRef.current?.activeKey ?? '', 'sql'],
-              value: formatterSQL(SQLStatementInfo.sql, res?.db_type)
+              value: formatterSQL(SQLStatementValue.sql, res?.db_type)
             }
           ]);
         });
@@ -145,7 +145,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         form.setFields([
           {
             name: [sqlStatementFormTabsRef.current?.activeKey ?? '', 'sql'],
-            value: formatterSQL(SQLStatementInfo.sql)
+            value: formatterSQL(SQLStatementValue.sql)
           }
         ]);
       }

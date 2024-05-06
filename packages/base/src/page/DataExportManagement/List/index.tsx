@@ -111,8 +111,8 @@ const ExportWorkflowList: React.FC = () => {
 
   const rowSelection = {
     selectedRowKeys,
-    onChange: (selectedRowKeys: string[]) => {
-      setSelectedRowKeys(selectedRowKeys);
+    onChange: (keys: string[]) => {
+      setSelectedRowKeys(keys);
     }
   };
 

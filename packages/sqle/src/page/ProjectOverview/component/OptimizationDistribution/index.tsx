@@ -3,12 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useMemo } from 'react';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { Area, AreaConfig, Tooltip } from '@ant-design/plots';
+import { Area, AreaConfig } from '@ant-design/plots';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
-import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
-import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { IOptimizationRecordOverview } from '@actiontech/shared/lib/api/sqle/service/common';
 import { OrderQuantityTrendExtraStyleWrapper } from '../../../ReportStatistics/EEIndex/component/charts/OrderQuantityTrend/style';
@@ -17,54 +15,13 @@ import Icon from '@ant-design/icons/lib/components/Icon';
 import { IconRightArrow } from '@actiontech/shared/lib/Icon';
 import { RangePickerProps } from 'antd/es/date-picker';
 import dayjs, { Dayjs } from 'dayjs';
-import { t } from '../../../../locale';
-
-const renderAreaStyle = (sharedTheme: SharedTheme) => {
-  return {
-    fill: `l(90) 0:${sharedTheme.uiToken.colorPrimary}  1:#4583ff00`
-  };
-};
-
-const renderAnnotationsContent = (value: number) => {
-  return value;
-};
-
-const renderAnnotationsPosition = (maxVal: IOptimizationRecordOverview) => {
-  return [maxVal.time, maxVal.record_number];
-};
-
-const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
-  return {
-    name: item.time,
-    value: item.record_number
-  };
-};
-
-const renderTooltipCustomContent = (
-  dataSource: Array<{ name: string; value: number }>,
-  sharedTheme: SharedTheme
-) => {
-  const data = dataSource[0];
-  if (!data) return null;
-
-  return (
-    <ChartTooltip
-      titleData={{
-        dotColor: sharedTheme.uiToken.colorPrimary,
-        text: data.name
-      }}
-      listData={[
-        {
-          label: t(
-            'projectManage.projectOverview.optimizationDistribution.toolTip.label'
-          ),
-          value: data.value
-        }
-      ]}
-      sharedTheme={sharedTheme}
-    />
-  );
-};
+import {
+  renderAnnotationsContent,
+  renderAnnotationsPosition,
+  renderAreaStyle,
+  renderTooltipCustomContent,
+  renderTooltipFormatter
+} from './index.data';
 
 const dateFormat = 'YYYY-MM-DD';
 
@@ -263,11 +220,3 @@ const OptimizationDistribution = () => {
 };
 
 export default OptimizationDistribution;
-
-export {
-  renderAreaStyle,
-  renderAnnotationsContent,
-  renderAnnotationsPosition,
-  renderTooltipFormatter,
-  renderTooltipCustomContent
-};

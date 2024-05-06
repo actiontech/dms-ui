@@ -19,7 +19,7 @@ import {
 } from '@actiontech/shared/lib/api/base/service/common';
 
 const useDataExportDetailReduxManage = () => {
-  const state = useSelector((state: IReduxState) => {
+  const reduxState = useSelector((state: IReduxState) => {
     return state.dataExport.detail;
   });
 
@@ -83,7 +83,7 @@ const useDataExportDetailReduxManage = () => {
   }, [dispatch]);
 
   return {
-    ...state,
+    ...reduxState,
     updateWorkflowStepOpen,
     updateWorkflowRejectOpen,
     updateWorkflowInfo,

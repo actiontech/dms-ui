@@ -134,7 +134,7 @@ const ProjectList: React.FC = () => {
           status: true
         })
       );
-      dispatch(updateSelectProject({ project: record }));
+      dispatch(updateSelectProject({ selectProject: record }));
     },
     [allowOperateProject, dispatch]
   );
