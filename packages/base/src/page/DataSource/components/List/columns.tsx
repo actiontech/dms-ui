@@ -92,12 +92,12 @@ export const DataSourceColumns = (
       dataIndex: 'maintenance_times',
       title: () => t('dmsDataSource.databaseList.maintenanceTime'),
       render(value: IListDBService['maintenance_times']) {
-        return value?.map((t, i) => (
+        return value?.map((time, i) => (
           <Tag key={i}>
-            {timeAddZero(t.maintenance_start_time?.hour ?? 0)}:
-            {timeAddZero(t.maintenance_start_time?.minute ?? 0)} -
-            {timeAddZero(t.maintenance_stop_time?.hour ?? 0)}:
-            {timeAddZero(t.maintenance_stop_time?.minute ?? 0)}
+            {timeAddZero(time.maintenance_start_time?.hour ?? 0)}:
+            {timeAddZero(time.maintenance_start_time?.minute ?? 0)} -
+            {timeAddZero(time.maintenance_stop_time?.hour ?? 0)}:
+            {timeAddZero(time.maintenance_stop_time?.minute ?? 0)}
           </Tag>
         ));
       }

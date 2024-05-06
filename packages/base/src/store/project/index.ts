@@ -19,9 +19,11 @@ const project = createSlice({
   reducers: {
     updateSelectProject(
       state,
-      { payload: { project } }: PayloadAction<{ project: IListProject | null }>
+      {
+        payload: { selectProject }
+      }: PayloadAction<{ selectProject: IListProject | null }>
     ) {
-      state.selectProject = project;
+      state.selectProject = selectProject;
     },
     ...commonModalReducer()
   }

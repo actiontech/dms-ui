@@ -10,19 +10,20 @@ import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 import { mockThemeStyleData } from '../../../../testUtils/mockHooks/mockThemeStyleData';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import OptimizationDistribution, {
-  renderAreaStyle,
-  renderAnnotationsContent,
-  renderAnnotationsPosition,
-  renderTooltipFormatter,
-  renderTooltipCustomContent
-} from '.';
+import OptimizationDistribution from '.';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ThemeData, SupportTheme } from '../../../../theme';
 import { AreaConfig } from '@ant-design/plots';
+import {
+  renderAreaStyle,
+  renderAnnotationsContent,
+  renderAnnotationsPosition,
+  renderTooltipFormatter,
+  renderTooltipCustomContent
+} from './index.data';
 
 jest.mock('@ant-design/plots', () => {
   return {

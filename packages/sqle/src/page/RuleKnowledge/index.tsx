@@ -29,16 +29,16 @@ const RuleKnowledge: React.FC = () => {
     refresh,
     run: getRuleKnowledge
   } = useRequest(
-    (isCustomType: boolean, dbType: string) => {
+    (isCustomType: boolean, type: string) => {
       if (isCustomType) {
         return rule_template
-          .getCustomRuleKnowledgeV1({ rule_name: ruleName, db_type: dbType })
+          .getCustomRuleKnowledgeV1({ rule_name: ruleName, db_type: type })
           .then((res) => {
             return res.data.data;
           });
       }
       return rule_template
-        .getRuleKnowledgeV1({ rule_name: ruleName, db_type: dbType })
+        .getRuleKnowledgeV1({ rule_name: ruleName, db_type: type })
         .then((res) => {
           return res.data.data;
         });

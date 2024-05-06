@@ -23,9 +23,9 @@ const EditText: React.FC<EditTypeProps> = ({
           editable={{
             triggerType: ['icon', 'text'],
             ...editable,
-            onChange: (value) => {
-              internalValue.current = value;
-              editable?.onChange?.(value);
+            onChange: (data) => {
+              internalValue.current = data;
+              editable?.onChange?.(data);
             },
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
@@ -63,9 +63,9 @@ const EditText: React.FC<EditTypeProps> = ({
             triggerType: ['icon', 'text'],
             ...editable,
             editing: showEdit,
-            onChange: (value) => {
-              internalValue.current = value;
-              editable?.onChange?.(value);
+            onChange: (data) => {
+              internalValue.current = data;
+              editable?.onChange?.(data);
               setShowEdit(false);
             },
             onEnd: () => {

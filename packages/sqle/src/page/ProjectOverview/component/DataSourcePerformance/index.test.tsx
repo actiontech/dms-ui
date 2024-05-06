@@ -8,17 +8,18 @@ import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
 import { mockThemeStyleData } from '../../../../testUtils/mockHooks/mockThemeStyleData';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import DataSourcePerformance, {
-  renderTooltipFormatter,
-  renderTooltipCustomContent,
-  defaultItemKey,
-  labelFormatter
-} from '.';
+import DataSourcePerformance from '.';
 import { ThemeData, SupportTheme } from '../../../../theme';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { IDBPerformanceImproveOverview } from '@actiontech/shared/lib/api/sqle/service/common';
 import { BarConfig } from '@ant-design/plots';
+import {
+  defaultItemKey,
+  labelFormatter,
+  renderTooltipCustomContent,
+  renderTooltipFormatter
+} from './index.data';
 
 jest.mock('@ant-design/plots', () => {
   return {

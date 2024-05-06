@@ -94,10 +94,10 @@ const ConfigExtraButtons = ({
   };
 
   const handleChangeReceiveType: RadioGroupProps['onChange'] = (e) => {
-    const receiveType = e.target.value;
-    setReceiveType(receiveType);
+    const type = e.target.value;
+    setReceiveType(type);
 
-    if (receiveType === TestFeishuConfigurationAccountTypeEnum.email) {
+    if (type === TestFeishuConfigurationAccountTypeEnum.email) {
       testForm.resetFields(['receivePhone']);
     } else {
       testForm.resetFields(['receiveEmail']);

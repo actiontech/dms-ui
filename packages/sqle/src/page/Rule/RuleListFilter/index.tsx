@@ -88,12 +88,12 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     t
   ]);
 
-  const onProjectAfterChange = (projectName?: string) => {
-    if (!projectName) {
+  const onProjectAfterChange = (name?: string) => {
+    if (!name) {
       form.setFieldValue('filter_rule_template', undefined);
       setShowNorRuleTemplatePage(false);
     } else {
-      updateRuleTemplateListSync(projectName).then((res) => {
+      updateRuleTemplateListSync(name).then((res) => {
         const ruleTemplateListByProjectName = res ?? [];
         if (ruleTemplateListByProjectName.length > 0) {
           form.setFieldValue(
@@ -106,7 +106,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
           );
           setShowNorRuleTemplatePage(false);
           getTemplateRules(
-            projectName,
+            name,
             ruleTemplateListByProjectName[0]?.rule_template_name,
             fuzzyKeyword
           );

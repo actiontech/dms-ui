@@ -104,21 +104,21 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
           const endHour = item.maintenance_stop_time?.hour ?? 0;
           const endMinute = item.maintenance_stop_time?.minute ?? 0;
           if (startHour === endHour && startHour === hour) {
-            range(startMinute, endMinute).forEach((item) => {
-              allMinutes.add(item);
+            range(startMinute, endMinute).forEach((minute) => {
+              allMinutes.add(minute);
             });
           } else if (hour === startHour) {
-            range(startMinute, 60).forEach((item) => {
-              allMinutes.add(item);
+            range(startMinute, 60).forEach((minute) => {
+              allMinutes.add(minute);
             });
           } else if (hour === endHour) {
-            range(0, endMinute).forEach((item) => {
-              allMinutes.add(item);
+            range(0, endMinute).forEach((minute) => {
+              allMinutes.add(minute);
             });
           }
           if (hour > startHour && hour < endHour) {
-            range(0, 60).forEach((item) => {
-              allMinutes.add(item);
+            range(0, 60).forEach((minute) => {
+              allMinutes.add(minute);
             });
           }
         });

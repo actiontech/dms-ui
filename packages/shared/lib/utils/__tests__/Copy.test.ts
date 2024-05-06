@@ -20,10 +20,10 @@ describe('utils/Copy', () => {
     const command = jest.spyOn(document, 'execCommand');
     const appendChildSpy = jest
       .spyOn(document.body, 'appendChild')
-      .mockImplementation((input) => input);
+      .mockImplementation((_input) => _input);
     const removeChildSpy = jest
       .spyOn(document.body, 'removeChild')
-      .mockImplementation((input) => input);
+      .mockImplementation((_input) => _input);
 
     copy.copyText('123');
     expect(input.style).toEqual({
@@ -52,10 +52,10 @@ describe('utils/Copy', () => {
     document.execCommand = jest.fn();
     const appendChildSpy = jest
       .spyOn(document.body, 'appendChild')
-      .mockImplementation((textarea) => textarea);
+      .mockImplementation((_textarea) => _textarea);
     const removeChildSpy = jest
       .spyOn(document.body, 'removeChild')
-      .mockImplementation((textarea) => textarea);
+      .mockImplementation((_textarea) => _textarea);
 
     const normalStr = '123';
     copy.copyTextByTextarea(normalStr);

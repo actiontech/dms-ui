@@ -51,9 +51,9 @@ const UpdateDataSource = () => {
         desc: values.describe,
         host: values.ip,
         maintenance_times:
-          values.maintenanceTime?.map((t) => ({
-            maintenance_start_time: t.startTime,
-            maintenance_stop_time: t.endTime
+          values.maintenanceTime?.map((time) => ({
+            maintenance_start_time: time.startTime,
+            maintenance_stop_time: time.endTime
           })) ?? [],
         port: `${values.port}`,
         // #if [sqle]
