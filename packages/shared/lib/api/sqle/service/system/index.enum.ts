@@ -17,5 +17,7 @@ export enum getSystemModuleStatusDbTypeEnum {
 }
 
 export enum getSystemModuleStatusModuleNameEnum {
-  'execute_sql_file_mode' = 'execute_sql_file_mode'
+  'execute_sql_file_mode' = 'execute_sql_file_mode',
+
+  'sql_optimization' = 'sql_optimization'
 }

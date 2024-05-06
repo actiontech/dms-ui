@@ -1,5 +1,5 @@
 import { BasicSegmented } from '@actiontech/shared';
-
+import { Space } from 'antd';
 import { styled } from '@mui/material/styles';
 
 export const RuleStatusSegmentedStyleWrapper = styled(BasicSegmented)`
@@ -166,26 +166,7 @@ export const RuleItemStyleWrapper = styled('div')`
     }
 
     &-params {
-      color: ${({ theme }) =>
-        theme.sharedTheme.components.ruleComponent.ruleList.levelContent
-          .paramsColor};
-      display: flex;
-      height: 22px;
-      padding: 0 6px;
-      justify-content: center;
-      align-items: center;
-      border-radius: 4px;
       margin-top: 8px;
-      background-color: ${({ theme }) =>
-        theme.sharedTheme.components.ruleComponent.ruleList.levelContent
-          .paramsBackgroundColor};
-
-      &-item {
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 19px;
-      }
     }
   }
 
@@ -235,6 +216,40 @@ export const RuleItemStyleWrapper = styled('div')`
         color: pink !important;
       }
     }
+  }
+`;
+
+export const RuleItemTagStyleWrapper = styled(Space)`
+  display: flex;
+  height: 22px;
+  padding: 0 6px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+
+  &.rule-param-tag {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.ruleComponent.ruleList.levelContent
+        .paramsBackgroundColor};
+    color: ${({ theme }) =>
+      theme.sharedTheme.components.ruleComponent.ruleList.levelContent
+        .paramsColor};
+  }
+
+  &.rule-audit-tag {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.blue.backgroundColor};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.blue.color};
+  }
+
+  &.rule-rewrite-tag {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.green.backgroundColor};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.green.color};
   }
 `;
 
