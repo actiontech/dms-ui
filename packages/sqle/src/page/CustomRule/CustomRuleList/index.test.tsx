@@ -10,6 +10,7 @@ import { customRuleMockData } from '../../../testUtils/mockApi/rule_template/dat
 import configuration from '../../../testUtils/mockApi/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useNavigate } from 'react-router-dom';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -32,6 +33,7 @@ describe('sqle/CustomRuleList', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
     mockUseDbServiceDriver();
+    mockUseCurrentPermission();
     getCustomRulesSpy = rule_template.getCustomRules();
     getDrivers = configuration.getDrivers();
   });

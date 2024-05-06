@@ -664,6 +664,15 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
       "health": "#7470ED",
       "risk": "#EBAD1C",
     },
+    "DataSourcePerformance": {
+      "bar": {
+        "bg": "rgba(0,0,0,0.1)",
+        "fill": "#4BCCA6",
+      },
+      "toolTip": {
+        "dotColor": "#4BCCA6",
+      },
+    },
     "ProjectScore": {
       "indicator": {
         "pin": {

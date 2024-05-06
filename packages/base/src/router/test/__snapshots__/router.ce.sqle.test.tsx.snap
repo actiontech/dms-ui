@@ -438,6 +438,16 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization 1`] = `
+<body>
+  <div>
+    <div>
+      sqlOptimization
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
 <body>
   <div>
@@ -884,6 +894,13 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
         </div>,
         "key": "pluginAudit",
         "path": ":projectID/plugin-audit",
+      },
+      {
+        "element": <div>
+          sqlOptimization
+        </div>,
+        "key": "sqlOptimization",
+        "path": ":projectID/sql-optimization",
       },
       {
         "element": <div>

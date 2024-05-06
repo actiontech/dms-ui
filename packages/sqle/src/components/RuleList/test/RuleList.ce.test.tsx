@@ -7,10 +7,12 @@ import { act, cleanup } from '@testing-library/react';
 import { renderWithTheme } from '../../../testUtils/customRender';
 import { RuleListProps, RuleStatusEnum } from '../index.type';
 import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 describe('sqle/components/RuleList CE', () => {
   const onActionHandleSpy = jest.fn();
   beforeEach(() => {
+    mockUseCurrentPermission();
     jest.useFakeTimers();
   });
 
