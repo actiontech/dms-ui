@@ -128,8 +128,8 @@ const PlanForm: React.FC<PlanFormProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const dbTypeChange: DataSourceProps['dbTypeChange'] = (dbType) => {
-    setDbType(dbType);
+  const dbTypeChange: DataSourceProps['dbTypeChange'] = (type) => {
+    setDbType(type);
     form.setFieldsValue({
       ruleTemplateName: undefined
     });

@@ -20,10 +20,10 @@ const ruleTemplate = createSlice({
     updateSelectRuleTemplate(
       state,
       {
-        payload: { ruleTemplate }
-      }: PayloadAction<{ ruleTemplate: IProjectRuleTemplateResV1 | null }>
+        payload: { selectRow }
+      }: PayloadAction<{ selectRow: IProjectRuleTemplateResV1 | null }>
     ) {
-      state.selectRuleTemplate = ruleTemplate;
+      state.selectRuleTemplate = selectRow;
     },
     ...commonModalReducer()
   }

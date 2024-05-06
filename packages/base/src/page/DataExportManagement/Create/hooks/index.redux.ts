@@ -18,7 +18,7 @@ import {
 import { ModalName } from '../../../../data/ModalName';
 
 const useCreateDataExportReduxManage = () => {
-  const state = useSelector((state: IReduxState) => {
+  const reduxState = useSelector((state: IReduxState) => {
     return {
       updateDataExportInfoOpen:
         state.dataExport.modalStatus[ModalName.DMS_UPDATE_EXPORT_TASK_INFO],
@@ -92,7 +92,7 @@ const useCreateDataExportReduxManage = () => {
   }, [dispatch]);
 
   return {
-    ...state,
+    ...reduxState,
     updateFormValues,
     updatePageState,
     updateAuditLoading,
