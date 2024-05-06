@@ -43,16 +43,16 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
     loading: getTemplateRulesLoading,
     run: getTemplateRules
   } = useRequest(
-    (projectName?: string, ruleTemplateName?: string, fuzzyKeyword?: string) =>
-      (projectName
+    (name?: string, ruleTemplateName?: string, keyword?: string) =>
+      (name
         ? rule_template.getProjectRuleTemplateV1({
             rule_template_name: ruleTemplateName ?? '',
-            project_name: projectName,
-            fuzzy_keyword_rule: fuzzyKeyword
+            project_name: name,
+            fuzzy_keyword_rule: keyword
           })
         : rule_template.getRuleTemplateV1({
             rule_template_name: ruleTemplateName ?? '',
-            fuzzy_keyword_rule: fuzzyKeyword
+            fuzzy_keyword_rule: keyword
           })
       ).then((res) => {
         if (ResponseCode.SUCCESS === res.data.code) {

@@ -22,14 +22,14 @@ const useSegmentedPageParams = <T extends string>() => {
 
   const updateSegmentedPageData = useCallback(
     (list: BasicSegmentedPageOptions<T>[]) => {
-      const options = list.map((i) => {
+      const realOptions = list.map((i) => {
         return {
           label: i.label,
           value: i.value
         };
       });
-      setOptions(options);
-      setValue(value ?? options[0]?.value);
+      setOptions(realOptions);
+      setValue(value ?? realOptions[0]?.value);
       dataSource.current = list.reduce((prev, next) => {
         return {
           ...prev,

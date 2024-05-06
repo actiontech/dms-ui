@@ -134,9 +134,9 @@ const TaskDetail = (props: ITaskDetail) => {
     tooltip: {
       fields: ['name', 'value'],
       formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any) => {
+      customContent: (title: string, _dataSource: any) => {
         return renderTooltipCustomContent(
-          dataSource,
+          _dataSource,
           sharedTheme,
           taskNumberRef.current
         );

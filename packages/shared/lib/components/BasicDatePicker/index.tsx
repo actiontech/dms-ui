@@ -46,9 +46,9 @@ const BasicDatePicker: React.FC<IBasicDatePicker> = ({
         <DatePicker
           {...otherProps}
           suffixIcon={!open ? <IconDatePickerDown /> : <IconDatePickerUp />}
-          onOpenChange={(open: boolean) => {
-            set(open);
-            onOpenChange && onOpenChange(open);
+          onOpenChange={(data: boolean) => {
+            set(data);
+            onOpenChange && onOpenChange(data);
           }}
           getPopupContainer={() => {
             return ref.current!;

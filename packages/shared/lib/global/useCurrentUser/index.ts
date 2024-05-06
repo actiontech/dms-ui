@@ -35,8 +35,8 @@ const useCurrentUser = () => {
     [bindProjects]
   );
   const updateTheme = useCallback(
-    (theme: SupportTheme) => {
-      dispatch(_updateTheme({ theme }));
+    (_theme: SupportTheme) => {
+      dispatch(_updateTheme({ theme: _theme }));
     },
     [dispatch]
   );

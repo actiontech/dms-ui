@@ -20,10 +20,10 @@ const whitelist = createSlice({
     updateSelectWhitelist(
       state,
       {
-        payload: { whitelist }
-      }: PayloadAction<{ whitelist: IAuditWhitelistResV1 | null }>
+        payload: { selectRow }
+      }: PayloadAction<{ selectRow: IAuditWhitelistResV1 | null }>
     ) {
-      state.selectWhitelist = whitelist;
+      state.selectWhitelist = selectRow;
     },
     ...commonModalReducer()
   }
