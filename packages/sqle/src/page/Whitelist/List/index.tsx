@@ -88,10 +88,10 @@ const WhitelistList = () => {
   }, [dispatch]);
 
   const openUpdateWhitelistModal = useCallback(
-    (whitelist: IAuditWhitelistResV1) => {
+    (selectRow: IAuditWhitelistResV1) => {
       dispatch(
         updateSelectWhitelist({
-          whitelist
+          selectRow
         })
       );
       dispatch(

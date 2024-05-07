@@ -103,13 +103,13 @@ export const superRenderHooksWrapperFactory = (
 };
 
 export const superRenderHooks = <Result, Props>(
-  render: (initialProps: Props) => Result,
+  _render: (initialProps: Props) => Result,
   options?: RenderHookOptions<Props> & {
     otherChildren?: React.ReactNode;
     recoilRootProps?: RecoilRootPropsCustom;
   }
 ): RenderHookResult<Result, Props> => {
-  return renderHook(render, {
+  return renderHook(_render, {
     wrapper: superRenderHooksWrapperFactory(
       options?.otherChildren,
       options?.recoilRootProps

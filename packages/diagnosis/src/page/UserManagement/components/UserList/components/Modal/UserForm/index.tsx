@@ -77,6 +77,7 @@ const UserForm: React.FC<IUserFormProps> = ({
                         name: t('common.password')
                       })
                     },
+                    // eslint-disable-next-line @typescript-eslint/no-shadow
                     ({ getFieldValue }) => ({
                       validator(_, value) {
                         if (!value || getFieldValue('password') === value) {

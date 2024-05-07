@@ -21,9 +21,9 @@ const useCron = (options?: CronOptions) => {
   const [Minute, setMinute] = useState<number[]>([]);
 
   const updateCron = (cron: string) => {
-    const error = checkCron(cron);
-    if (error !== '') {
-      setError(t(error as any) as string);
+    const errorMsg = checkCron(cron);
+    if (errorMsg !== '') {
+      setError(t(errorMsg as any) as string);
       setValue(cron);
     } else {
       setError('');

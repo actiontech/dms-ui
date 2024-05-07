@@ -64,8 +64,8 @@ const BarChat = memo(
             opacity: 1
           },
           labelHeight: 28,
-          content: (data: typeTaskItem) => {
-            return barChartLabelContent(data);
+          content: (_data: typeTaskItem) => {
+            return barChartLabelContent(_data);
           }
         },
         tooltip: {

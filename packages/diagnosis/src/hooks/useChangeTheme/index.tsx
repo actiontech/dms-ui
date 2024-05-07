@@ -22,8 +22,8 @@ const useChangeTheme = () => {
   }, [theme]);
 
   const changeTheme = React.useCallback(
-    (theme: SupportTheme) => {
-      dispatch(updateTheme({ theme }));
+    (_theme: SupportTheme) => {
+      dispatch(updateTheme({ theme: _theme }));
     },
     [dispatch]
   );

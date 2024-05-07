@@ -61,20 +61,20 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
     };
 
     return props.options
-      ?.map((v) => {
-        if (v.options) {
+      ?.map((option) => {
+        if (option.options) {
           return {
             label: (
               <span className="custom-select-options-group-label">
-                {v.label}
+                {option.label}
               </span>
             ),
-            options: v.options
+            options: option.options
               .map(calcOptions)
               .filter((v: DefaultOptionType) => !!v)
           };
         } else {
-          return calcOptions(v);
+          return calcOptions(option);
         }
       })
       .filter((v) => !!v) as SelectProps['options'];

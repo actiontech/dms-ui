@@ -38,8 +38,8 @@ const DiffOrderReject = () => {
     { onSuccess }
   );
 
-  const renderRejectProgress = (data: any) => {
-    return <ColumnProgress barWidth={data} />;
+  const renderRejectProgress = (percent: number) => {
+    return <ColumnProgress barWidth={percent} />;
   };
 
   const columnData: () => ITableTopList<IWorkflowRejectedPercentGroupByCreator>['columns'] =

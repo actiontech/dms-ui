@@ -73,7 +73,9 @@ const useRecentlyOpenedProjects = () => {
   }, [recentlyProjects]);
 
   useEffect(() => {
-    const updateRecentlyProject = (value: RecentlyProjectsRecordType) => {
+    const updateRecentlyProjectsRecord = (
+      value: RecentlyProjectsRecordType
+    ) => {
       setRecentlyProjectsRecord(value);
     };
     const updateCurrentProjectID = (id: string) => {
@@ -81,7 +83,7 @@ const useRecentlyOpenedProjects = () => {
     };
     EventEmitter.subscribe(
       EmitterKey.Update_Recently_Opened_Projects,
-      updateRecentlyProject
+      updateRecentlyProjectsRecord
     );
 
     EventEmitter.subscribe(
@@ -92,7 +94,7 @@ const useRecentlyOpenedProjects = () => {
     return () => {
       EventEmitter.unsubscribe(
         EmitterKey.Update_Recently_Opened_Projects,
-        updateRecentlyProject
+        updateRecentlyProjectsRecord
       );
       EventEmitter.unsubscribe(
         EmitterKey.Update_Current_Project_ID,

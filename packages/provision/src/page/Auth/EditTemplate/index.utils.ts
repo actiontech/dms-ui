@@ -44,9 +44,7 @@ export const generateDataPermissionValueByDataPermission = (
         if (name) {
           objectsLabel.push(name);
         }
-        const value = objectsValue.find(
-          (item) => item.database === database_uid
-        );
+        const value = objectsValue.find((obj) => obj.database === database_uid);
 
         if (database_uid && value) {
           if (!table_uid) return;

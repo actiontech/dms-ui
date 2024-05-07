@@ -70,8 +70,11 @@ const AuthTemplateList = () => {
     AuthTemplateModalStatus
   );
   const updateSelectData = useSetRecoilState(AuthTemplateListSelectData);
-  const openModal = (name: ModalName, record?: IListDataPermissionTemplate) => {
-    toggleModal(name, true);
+  const openModal = (
+    modalName: ModalName,
+    record?: IListDataPermissionTemplate
+  ) => {
+    toggleModal(modalName, true);
     if (record) {
       updateSelectData(record);
     }

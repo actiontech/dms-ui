@@ -158,17 +158,19 @@ const useGenerateOrderStepsProps = ({
       }))
     );
 
-    const canRejectOrder = list.every(
-      (v) =>
-        !!v.status &&
-        ![
-          GetWorkflowTasksItemV2StatusEnum.exec_succeeded,
-          GetWorkflowTasksItemV2StatusEnum.executing,
-          GetWorkflowTasksItemV2StatusEnum.exec_failed,
-          GetWorkflowTasksItemV2StatusEnum.exec_scheduled
-        ].includes(v.status)
+    setCanRejectOrder(
+      list.every(
+        (v) =>
+          !!v.status &&
+          ![
+            GetWorkflowTasksItemV2StatusEnum.exec_succeeded,
+            GetWorkflowTasksItemV2StatusEnum.executing,
+            GetWorkflowTasksItemV2StatusEnum.exec_failed,
+            GetWorkflowTasksItemV2StatusEnum.exec_scheduled
+          ].includes(v.status)
+      )
     );
-    setCanRejectOrder(canRejectOrder);
+
     let succeededNumber = 0,
       executingNumber = 0,
       failedNumber = 0;

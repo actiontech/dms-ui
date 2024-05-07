@@ -184,7 +184,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       type: 'whitelist/updateSelectWhitelist',
       payload: {
-        whitelist: auditWhiteListMockData[1]
+        selectRow: auditWhiteListMockData[1]
       }
     });
     expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
