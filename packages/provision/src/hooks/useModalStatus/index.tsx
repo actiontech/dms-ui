@@ -17,8 +17,8 @@ const useModalStatus = (state: RecoilState<ModalStatus>, name?: ModalName) => {
   };
 
   const initModalStatus = useCallback(
-    (modalStatus: ModalStatus) => {
-      updateModalStatus(modalStatus);
+    (status: ModalStatus) => {
+      updateModalStatus(status);
     },
     [updateModalStatus]
   );

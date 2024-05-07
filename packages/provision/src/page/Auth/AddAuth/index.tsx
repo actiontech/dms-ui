@@ -147,20 +147,23 @@ const AddAuth: React.FC = () => {
   }, [template_uid, username, hostname, form]);
 
   const userValidator: FormValidatorRule = async (_, value: string) => {
-    const { data_permission_template_uid, username, hostname } =
-      form.getFieldsValue([
-        'data_permission_template_uid',
-        'username',
-        'hostname'
-      ]);
+    const values = form.getFieldsValue([
+      'data_permission_template_uid',
+      'username',
+      'hostname'
+    ]);
 
-    if (!data_permission_template_uid || !username || !hostname) {
+    if (
+      !values.data_permission_template_uid ||
+      !values.username ||
+      !values.hostname
+    ) {
       return Promise.resolve();
     }
     const res = await verifyDBAccount({
-      data_permission_template_uid,
-      username,
-      hostname
+      data_permission_template_uid: values.data_permission_template_uid,
+      username: values.username,
+      hostname: values.hostname
     });
     if (res.data.code === ResponseCode.SUCCESS) {
       return Promise.resolve();

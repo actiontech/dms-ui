@@ -161,19 +161,25 @@ const AddDataPermission: FC<IAddDataPermission> = ({
 
   useEffect(() => {
     if (visible && editIndex !== undefined) {
-      const { business, serviceValue, objectsValue, operationsValue } =
-        dataPermissions[editIndex];
+      const {
+        business: innerBusiness,
+        serviceValue,
+        objectsValue,
+        operationsValue
+      } = dataPermissions[editIndex];
       updateTableOptions(objectsValue?.map((item) => item.database ?? ''));
       form.setFieldsValue({
-        business,
+        business: innerBusiness,
         service: serviceValue,
         data_objects: objectsValue,
         data_operations: operationsValue.map((id) => String(id))
       });
-      const selectedDatabase = objectsValue
-        ?.map((item) => item.database ?? '')
-        .filter((database) => !!database);
-      setSelectedDatabase(selectedDatabase ?? []);
+
+      setSelectedDatabase(
+        objectsValue
+          ?.map((item) => item.database ?? '')
+          .filter((database) => !!database) ?? []
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible, editIndex]);
@@ -186,9 +192,9 @@ const AddDataPermission: FC<IAddDataPermission> = ({
   };
 
   const handleDatabaseChange = (index: number, value: string) => {
-    const dataObjects = form.getFieldValue('data_objects');
+    const innerDataObjects = form.getFieldValue('data_objects');
     setSelectedDatabase(
-      dataObjects.map((item: IDataObjects) => item?.database ?? '')
+      innerDataObjects.map((item: IDataObjects) => item?.database ?? '')
     );
     const options = cloneDeep(tableOptions);
     if (value) {
@@ -203,7 +209,7 @@ const AddDataPermission: FC<IAddDataPermission> = ({
       setTableOptions(options);
     }
     form.setFieldsValue({
-      data_objects: dataObjects.map((item: IDataObjects, i: number) => {
+      data_objects: innerDataObjects.map((item: IDataObjects, i: number) => {
         if (i === index) {
           return {
             database: item.database,
@@ -216,9 +222,9 @@ const AddDataPermission: FC<IAddDataPermission> = ({
   };
 
   const handleRemoveDataObject = (index: number) => {
-    const dataObjects = form.getFieldValue('data_objects');
+    const innerDataObjects = form.getFieldValue('data_objects');
     setSelectedDatabase(
-      dataObjects.map((item: IDataObjects) => item?.database ?? '')
+      innerDataObjects.map((item: IDataObjects) => item?.database ?? '')
     );
     const options = cloneDeep(tableOptions);
     options.splice(index, 1);
