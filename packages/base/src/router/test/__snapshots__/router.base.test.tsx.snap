@@ -162,6 +162,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
         "key": "dataExportManagement",
         "path": ":projectID/data/export",
       },
+      {
+        "element": <div>
+          dataMaskRuleOverview
+        </div>,
+        "key": "dataMaskRuleOverview",
+        "path": ":projectID/data-mask-rule-overview",
+      },
     ],
     "element": <UNDEFINED />,
     "key": "projectDetail",
