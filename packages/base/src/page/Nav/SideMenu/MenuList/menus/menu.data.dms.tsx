@@ -1,6 +1,10 @@
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../locale';
-import { GenerateMenuItemType, MenuStructTreeType } from './index.type';
+import {
+  GenerateMenuItemType,
+  MenuStructTreeKey,
+  MenuStructTreeType
+} from './index.type';
 import { genMenuItemsWithMenuStructTree } from './common';
 import {
   dbServiceManagementMenuItem,
@@ -19,7 +23,8 @@ import {
   projectRuleTemplateMenuItem,
   whiteListMenuItem,
   workflowTemplateMenuItem,
-  sqleOperationRecordMenuItem
+  sqleOperationRecordMenuItem,
+  sqlOptimizationMenuItem
 } from './sqle';
 import {
   authAuditMenuItem,
@@ -30,7 +35,11 @@ import {
 } from './provision';
 import { dataMaskRuleMenuItem } from './dms';
 
-export const dmsSideMenuData = (projectID: string, role: SystemRole | '') => {
+export const dmsSideMenuData = (
+  projectID: string,
+  role: SystemRole | '',
+  sqlOptimizationIsSupport: boolean
+) => {
   const allMenuItems: GenerateMenuItemType[] = [
     dbServiceManagementMenuItem,
     memberManagementMenItem,
@@ -49,6 +58,7 @@ export const dmsSideMenuData = (projectID: string, role: SystemRole | '') => {
     whiteListMenuItem,
     workflowTemplateMenuItem,
     sqleOperationRecordMenuItem,
+    sqlOptimizationMenuItem,
     // #endif
 
     // #if [provision]
@@ -63,15 +73,34 @@ export const dmsSideMenuData = (projectID: string, role: SystemRole | '') => {
     dataMaskRuleMenuItem
     // #endif
   ];
+
+  const sqlDevGroup: MenuStructTreeKey[] = [
+    'cloud-beaver',
+    'data-export',
+    'sql-audit',
+    'plugin-audit'
+  ];
+
   const menuStruct: MenuStructTreeType = [
     'project-overview',
     'dashboard',
     { type: 'divider' },
+    // #if [ce]
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLDev'),
-      group: ['cloud-beaver', 'data-export', 'sql-audit', 'plugin-audit']
+      group: [...sqlDevGroup, 'sql-optimization']
     },
+    // #endif
+    // #if [ee]
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.SQLDev'),
+      group: sqlOptimizationIsSupport
+        ? [...sqlDevGroup, 'sql-optimization']
+        : sqlDevGroup
+    },
+    // #endif
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLExecute'),
