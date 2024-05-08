@@ -45,24 +45,19 @@ const OptimizationSqlList: React.FC<{
         optimization_record_id: optimizationId
       };
       return handleTableRequestError(
-        sqlOptimization.getOptimizationSQLs(params).then((res) => {
-          return {
-            ...res,
-            data: {
-              ...res.data,
-              data: res.data.data?.map((item, index) => {
-                return {
-                  ...item,
-                  order:
-                    index +
-                    1 +
-                    (pagination.page_index - 1) * pagination.page_size
-                };
-              })
-            }
-          };
-        })
-      );
+        sqlOptimization.getOptimizationSQLs(params)
+      ).then((res) => {
+        return {
+          ...res,
+          list: res.list?.map((item, index) => {
+            return {
+              ...item,
+              order:
+                index + 1 + (pagination.page_index - 1) * pagination.page_size
+            };
+          })
+        };
+      });
     },
     {
       refreshDeps: [pagination, refresh],
