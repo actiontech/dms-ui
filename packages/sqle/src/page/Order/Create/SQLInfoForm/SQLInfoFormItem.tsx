@@ -52,6 +52,8 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
   setCurrentSqlMode,
   isSupportFileModeExecuteSQL,
   setIsSupportFileModeExecuteSQL,
+  currentSQLInputType,
+  setCurrentSQLInputType,
   ...otherProps
 }) => {
   const { t } = useTranslation();
@@ -239,13 +241,23 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
             form={form}
             isClearFormWhenChangeSqlType={true}
             SQLStatementInfo={SQLStatementInfo}
+            sqlInputTypeChangeHandle={setCurrentSQLInputType}
           />
         }
       >
-        <SQLStatementForm form={form} isClearFormWhenChangeSqlType={true} />
+        <SQLStatementForm
+          form={form}
+          isClearFormWhenChangeSqlType={true}
+          sqlInputTypeChangeHandle={setCurrentSQLInputType}
+        />
       </EmptyBox>
 
-      <EmptyBox if={isSupportFileModeExecuteSQL}>
+      <EmptyBox
+        if={
+          isSupportFileModeExecuteSQL &&
+          currentSQLInputType !== SQLInputType.manualInput
+        }
+      >
         <FormItemSubTitle>
           {t('order.sqlInfo.selectExecuteMode')}
         </FormItemSubTitle>
@@ -261,7 +273,11 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
       </EmptyBox>
 
       {/* #else */}
-      <SQLStatementForm form={form} isClearFormWhenChangeSqlType={true} />
+      <SQLStatementForm
+        form={form}
+        isClearFormWhenChangeSqlType={true}
+        sqlInputTypeChangeHandle={setCurrentSQLInputType}
+      />
 
       {/* #endif */}
 
@@ -274,15 +290,21 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
           >
             {t('order.sqlInfo.audit')}
           </BasicButton>
-          <BasicButton onClick={formatSql} loading={auditLoading}>
+          <BasicButton
+            hidden={currentSQLInputType !== SQLInputType.manualInput}
+            onClick={formatSql}
+            loading={auditLoading}
+          >
             {t('order.sqlInfo.format')}
           </BasicButton>
-          <BasicToolTips
-            prefixIcon={<IconTipGray />}
-            title={t('order.sqlInfo.formatTips', {
-              supportType: Object.keys(FormatLanguageSupport).join('、')
-            })}
-          />
+          {currentSQLInputType === SQLInputType.manualInput && (
+            <BasicToolTips
+              prefixIcon={<IconTipGray />}
+              title={t('order.sqlInfo.formatTips', {
+                supportType: Object.keys(FormatLanguageSupport).join('、')
+              })}
+            />
+          )}
         </Space>
       </FormItemNoLabel>
     </>

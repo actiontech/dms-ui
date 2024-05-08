@@ -7,6 +7,7 @@ export interface SQLStatementFormProps {
   sqlStatement?: string;
   fieldName?: string;
   uploadTypeOptions?: ModeSwitcherOptionsType;
+  sqlInputTypeChangeHandle?: (type: SQLInputType) => void;
 }
 export interface SQLStatementFormTabsProps
   extends Omit<SQLStatementFormProps, 'sqlStatement'> {
