@@ -744,7 +744,7 @@ exports[`base/Project/Import render upload file 1`] = `
                             >
                               <div
                                 aria-label="desc1"
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                               >
                                 desc1
                                 <div
@@ -831,7 +831,7 @@ exports[`base/Project/Import render upload file 1`] = `
                                   style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                   >
                                     business1
                                   </span>
@@ -841,7 +841,7 @@ exports[`base/Project/Import render upload file 1`] = `
                                   style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                   >
                                     business2
                                   </span>
@@ -851,7 +851,7 @@ exports[`base/Project/Import render upload file 1`] = `
                                   style="padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                   >
                                     business3
                                   </span>
@@ -885,7 +885,7 @@ exports[`base/Project/Import render upload file 1`] = `
                                   style="padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                   >
                                     business1
                                   </span>

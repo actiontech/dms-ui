@@ -70,7 +70,8 @@ describe('sqle/components/ReportDrawer', () => {
       showSourceFile: true,
       data: {
         sql: 'select 1',
-        sqlSourceFile: 'file_source',
+        sqlSourceFile:
+          'file_source/file_1/file_2/file_3/file_4/file_5/source.sql',
         sqlStartLine: 3,
         auditResult: [
           {

@@ -417,7 +417,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render tooltip customContent 1`] = `
             "color": "#15C7D4",
           },
           "default": {
-            "backgroundColor": "#fffff",
+            "backgroundColor": "#f7f6f4",
             "color": "#575C66",
           },
           "geekblue": {
