@@ -118,7 +118,7 @@ const OptimizationDetail = () => {
               </Typography.Title>
               {optimizationDetail?.triggered_rule?.map((rule) => {
                 const queriesStr: string[] = jsonParse(
-                  rule.rewritten_queries_str ?? '[]',
+                  rule.violated_queries_str ?? '[]',
                   []
                 );
                 return (
