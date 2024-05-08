@@ -6,6 +6,8 @@ import {
 import { GetAuditTaskPrams } from './index.type';
 import { t } from '../../../locale';
 
+export const OVERVIEW_TAB_KEY = 'OVERVIEW_TAB_KEY';
+
 export const AuditTaskExtraFilterMeta: () => ActiontechTableFilterMeta<
   IAuditTaskSQLResV2 & {
     audit_level?: string;

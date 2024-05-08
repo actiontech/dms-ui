@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Order/TaskResultList/PaginationList should match snapshot 1`] = `
+<Styled(div)
+  className="task-result-pagination-list sql-mode-task-result-pagination-list"
+>
+  <SQLExecuteMode
+    auditLevelFilterValue="all"
+    auditResultActiveKey="123"
+    currentListLayout="pagination"
+    duplicate={false}
+    pagination={
+      {
+        "page_index": 1,
+        "page_size": 10,
+      }
+    }
+    tableChange={[MockFunction]}
+    tableFilterInfo={{}}
+    taskId="123"
+  />
+</Styled(div)>
+`;
