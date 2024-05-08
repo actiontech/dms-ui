@@ -28,10 +28,11 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   isClearFormWhenChangeSqlType = false,
   sqlStatement,
   fieldName = '0',
-  uploadTypeOptions
+  uploadTypeOptions,
+  sqlInputTypeChangeHandle
 }) => {
   const { t } = useTranslation();
-  const currentSQLInputTypeChange = () => {
+  const currentSQLInputTypeChange = (type: SQLInputType) => {
     if (isClearFormWhenChangeSqlType) {
       form.resetFields([
         generateFieldName('sql'),
@@ -39,8 +40,8 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
         generateFieldName('mybatisFile'),
         generateFieldName('zipFile')
       ]);
-      // setCurrentSQLInputTYpe(SQLInputType.manualInput);
     }
+    sqlInputTypeChangeHandle?.(type);
   };
 
   const removeFile = useCallback(
@@ -95,10 +96,12 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
         name={sqlInputTypeName}
         initialValue={SQLInputType.manualInput}
       >
-        <ModeSwitcher
+        <ModeSwitcher<SQLInputType>
           rowProps={{ gutter: 12 }}
           options={uploadTypeOptions ?? defaultUploadTypeOptions}
-          onChange={currentSQLInputTypeChange}
+          onChange={(type) => {
+            currentSQLInputTypeChange(type);
+          }}
         />
       </FormItemNoLabel>
       <EmptyBox if={currentSQLInputType === SQLInputType.manualInput}>

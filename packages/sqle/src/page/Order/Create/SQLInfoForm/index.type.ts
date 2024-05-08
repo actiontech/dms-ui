@@ -15,8 +15,6 @@ export type SQLInfoFormProps = {
   instanceNameChange: (name: string) => void;
   projectName: string;
   projectID: string;
-  isSupportFileModeExecuteSQL: boolean;
-  setIsSupportFileModeExecuteSQL: (val: boolean) => void;
 } & CreateOrderFormStateType;
 
 export type DatabaseInfoFields = {

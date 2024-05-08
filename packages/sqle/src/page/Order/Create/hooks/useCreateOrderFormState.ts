@@ -6,6 +6,7 @@ import {
 } from '../SQLInfoForm/index.type';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useBoolean } from 'ahooks';
+import { SQLInputType } from '../../SQLStatementForm';
 
 //todo 目前只提取一些 state 至最外层, 提供给 create 和 edit 使用, 后续考虑抽取逻辑
 const useCreateOrderFormState = () => {
@@ -19,6 +20,9 @@ const useCreateOrderFormState = () => {
   const [changeSqlModeDisabled, setChangeSqlModeDisabled] = useState(false);
   const [isSupportFileModeExecuteSQL, setIsSupportFileModeExecuteSQL] =
     useState(false);
+  const [currentSQLInputType, setCurrentSQLInputType] = useState(
+    SQLInputType.manualInput
+  );
 
   const [currentSqlMode, setCurrentSqlMode] = useState(
     WorkflowResV2ModeEnum.same_sqls
@@ -44,7 +48,9 @@ const useCreateOrderFormState = () => {
     finishAudit,
     startAudit,
     isSupportFileModeExecuteSQL,
-    setIsSupportFileModeExecuteSQL
+    setIsSupportFileModeExecuteSQL,
+    currentSQLInputType,
+    setCurrentSQLInputType
   };
 };
 
