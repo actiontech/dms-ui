@@ -12,16 +12,19 @@ const ModeSwitcher = <V extends string | number = string>({
   value,
   onChange,
   rowProps,
-  disabled
-}: ModeSwitcherProps) => {
+  disabled,
+  defaultValue
+}: ModeSwitcherProps<V>) => {
   const [internalValue, setInternalValue] = useControllableValue<V>(
     typeof value !== 'undefined' && onChange
       ? {
           value,
-          onChange
+          onChange,
+          defaultValue
         }
       : {
-          onChange
+          onChange,
+          defaultValue
         }
   );
 
