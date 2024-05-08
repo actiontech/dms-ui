@@ -3,7 +3,7 @@ import DatabaseInfo from './DatabaseInfo';
 import { SQLInfoFormItemProps } from './index.type';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import {
-  CreateAuditTasksGroupReqV1ExecuteModeEnum,
+  CreateAuditTasksGroupReqV1ExecModeEnum,
   WorkflowResV2ModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
@@ -263,7 +263,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         </FormItemSubTitle>
         <FormItemNoLabel
           name="executeMode"
-          initialValue={CreateAuditTasksGroupReqV1ExecuteModeEnum.sqls}
+          initialValue={CreateAuditTasksGroupReqV1ExecModeEnum.sqls}
         >
           <ModeSwitcher
             rowProps={{ gutter: 10 }}
