@@ -344,7 +344,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              ID
+                              序号
                             </th>
                             <th
                               class="ant-table-cell ellipsis-column-width"
@@ -1434,7 +1434,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
                               class="ant-table-cell"
                               scope="col"
                             >
-                              ID
+                              序号
                             </th>
                             <th
                               class="ant-table-cell ellipsis-column-width"
@@ -2520,7 +2520,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
                               class="ant-table-cell"
                               scope="col"
                             >
-                              ID
+                              序号
                             </th>
                             <th
                               class="ant-table-cell ellipsis-column-width"
@@ -3682,7 +3682,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
                               class="ant-table-cell"
                               scope="col"
                             >
-                              ID
+                              序号
                             </th>
                             <th
                               class="ant-table-cell ellipsis-column-width"
