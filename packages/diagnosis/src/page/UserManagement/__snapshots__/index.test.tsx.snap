@@ -744,7 +744,7 @@ exports[`test user management should open add role model when click add button 1
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 更新任何用户的密码
                               </span>
@@ -754,7 +754,7 @@ exports[`test user management should open add role model when click add button 1
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 访问操作权限列表
                               </span>
@@ -764,7 +764,7 @@ exports[`test user management should open add role model when click add button 1
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 添加服务器
                               </span>
@@ -846,7 +846,7 @@ exports[`test user management should open add role model when click add button 1
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 更新任何用户的密码
                               </span>
@@ -856,7 +856,7 @@ exports[`test user management should open add role model when click add button 1
                               style="padding-bottom: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 访问操作权限列表
                               </span>

@@ -708,7 +708,7 @@ exports[`sqle/Order/List render click batch cancel btn when has not closed  1`] 
                         >
                           <div
                             aria-label="desc demo"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             desc demo
                             <div
@@ -898,7 +898,7 @@ exports[`sqle/Order/List render click batch cancel btn when has not closed  1`] 
                         >
                           <div
                             aria-label="desc demo2"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             desc demo2
                             <div
@@ -1083,7 +1083,7 @@ exports[`sqle/Order/List render click batch cancel btn when has not closed  1`] 
                         >
                           <div
                             aria-label="desc demo3"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             desc demo3
                             <div
@@ -1272,7 +1272,7 @@ exports[`sqle/Order/List render click batch cancel btn when has not closed  1`] 
                         >
                           <div
                             aria-label="desc demo4"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             desc demo4
                             <div
@@ -2399,7 +2399,7 @@ exports[`sqle/Order/List render click batch cancel when action success 1`] = `
                         >
                           <div
                             aria-label="desc demo"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             desc demo
                             <div

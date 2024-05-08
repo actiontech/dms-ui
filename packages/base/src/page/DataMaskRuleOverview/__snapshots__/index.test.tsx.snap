@@ -478,7 +478,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                 style="margin-right: 0px;"
                               >
                                 电话
@@ -525,7 +525,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                 style="margin-right: 0px;"
                               >
                                 passport
@@ -567,7 +567,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                 style="margin-right: 0px;"
                               >
                                 SSN

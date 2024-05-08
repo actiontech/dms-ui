@@ -607,7 +607,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render copy btn render click copy p
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.columns_priv
                             </span>
@@ -617,7 +617,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render copy btn render click copy p
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.table1
                             </span>
@@ -627,7 +627,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render copy btn render click copy p
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.table2
                             </span>
@@ -651,7 +651,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render copy btn render click copy p
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               读取
                             </span>
@@ -661,7 +661,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render copy btn render click copy p
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               全部
                             </span>
@@ -1339,7 +1339,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when h
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.columns_priv
                             </span>
@@ -1349,7 +1349,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when h
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.table1
                             </span>
@@ -1359,7 +1359,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when h
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.table2
                             </span>
@@ -1383,7 +1383,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when h
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               读取
                             </span>
@@ -1393,7 +1393,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when h
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               全部
                             </span>
@@ -2071,7 +2071,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when n
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.columns_priv
                             </span>
@@ -2081,7 +2081,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when n
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.table1
                             </span>
@@ -2091,7 +2091,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when n
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               mysql.table2
                             </span>
@@ -2115,7 +2115,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when n
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               读取
                             </span>
@@ -2125,7 +2125,7 @@ exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when n
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                             >
                               全部
                             </span>

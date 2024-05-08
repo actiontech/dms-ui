@@ -69,7 +69,7 @@ exports[`page/SqlManagement/StatusDrawer close modal by click close button 1`] =
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-14msg9y"
+                class="audit-report-wrapper css-126skhi"
               >
                 <section
                   class="wrapper-item"
@@ -272,7 +272,7 @@ exports[`page/SqlManagement/StatusDrawer render empty status drawer info 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-14msg9y"
+                class="audit-report-wrapper css-126skhi"
               >
                 <section
                   class="wrapper-item"
@@ -428,7 +428,7 @@ exports[`page/SqlManagement/StatusDrawer render status drawer info 1`] = `
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-14msg9y"
+                class="audit-report-wrapper css-126skhi"
               >
                 <section
                   class="wrapper-item"

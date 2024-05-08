@@ -634,7 +634,7 @@ exports[`Auth/EditTemplate should match snapshot 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.CHARACTER_SETS
                               </span>
@@ -644,7 +644,7 @@ exports[`Auth/EditTemplate should match snapshot 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.COLLATIONS
                               </span>
@@ -653,7 +653,7 @@ exports[`Auth/EditTemplate should match snapshot 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 mysql.*
                               </span>
@@ -671,7 +671,7 @@ exports[`Auth/EditTemplate should match snapshot 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 全部
                               </span>
@@ -681,7 +681,7 @@ exports[`Auth/EditTemplate should match snapshot 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 601003
                               </span>
@@ -691,7 +691,7 @@ exports[`Auth/EditTemplate should match snapshot 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 变更
                               </span>
@@ -700,7 +700,7 @@ exports[`Auth/EditTemplate should match snapshot 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 授权
                               </span>
@@ -1091,7 +1091,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 1`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.CHARACTER_SETS
                               </span>
@@ -1101,7 +1101,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 1`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.COLLATIONS
                               </span>
@@ -1110,7 +1110,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 mysql.*
                               </span>
@@ -1128,7 +1128,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 1`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 全部
                               </span>
@@ -1138,7 +1138,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 1`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 601003
                               </span>
@@ -1148,7 +1148,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 1`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 变更
                               </span>
@@ -1157,7 +1157,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 授权
                               </span>
@@ -1548,7 +1548,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.CHARACTER_SETS
                               </span>
@@ -1558,7 +1558,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.COLLATIONS
                               </span>
@@ -1567,7 +1567,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 mysql.*
                               </span>
@@ -1585,7 +1585,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 全部
                               </span>
@@ -1595,7 +1595,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 601003
                               </span>
@@ -1605,7 +1605,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 2`] = `
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 变更
                               </span>
@@ -1614,7 +1614,7 @@ exports[`Auth/EditTemplate should match snapshot when click edit button 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 授权
                               </span>
@@ -2005,7 +2005,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 1`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.CHARACTER_SETS
                               </span>
@@ -2015,7 +2015,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 1`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.COLLATIONS
                               </span>
@@ -2024,7 +2024,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 1`] = 
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 mysql.*
                               </span>
@@ -2042,7 +2042,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 1`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 全部
                               </span>
@@ -2052,7 +2052,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 1`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 601003
                               </span>
@@ -2062,7 +2062,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 1`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 变更
                               </span>
@@ -2071,7 +2071,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 1`] = 
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 授权
                               </span>
@@ -2462,7 +2462,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 2`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.CHARACTER_SETS
                               </span>
@@ -2472,7 +2472,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 2`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.COLLATIONS
                               </span>
@@ -2481,7 +2481,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 2`] = 
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 mysql.*
                               </span>
@@ -2499,7 +2499,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 2`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 全部
                               </span>
@@ -2509,7 +2509,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 2`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 601003
                               </span>
@@ -2519,7 +2519,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 2`] = 
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 变更
                               </span>
@@ -2528,7 +2528,7 @@ exports[`Auth/EditTemplate should match snapshot when click remove button 2`] = 
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 授权
                               </span>
@@ -3165,7 +3165,7 @@ exports[`Auth/EditTemplate should match snapshot when the url contain view actio
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.CHARACTER_SETS
                               </span>
@@ -3175,7 +3175,7 @@ exports[`Auth/EditTemplate should match snapshot when the url contain view actio
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 information_schema.COLLATIONS
                               </span>
@@ -3184,7 +3184,7 @@ exports[`Auth/EditTemplate should match snapshot when the url contain view actio
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 mysql.*
                               </span>
@@ -3202,7 +3202,7 @@ exports[`Auth/EditTemplate should match snapshot when the url contain view actio
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 全部
                               </span>
@@ -3212,7 +3212,7 @@ exports[`Auth/EditTemplate should match snapshot when the url contain view actio
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 601003
                               </span>
@@ -3222,7 +3222,7 @@ exports[`Auth/EditTemplate should match snapshot when the url contain view actio
                               style="margin-right: 0px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 变更
                               </span>
@@ -3231,7 +3231,7 @@ exports[`Auth/EditTemplate should match snapshot when the url contain view actio
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 授权
                               </span>
