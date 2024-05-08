@@ -1,6 +1,5 @@
 import { useRequest } from 'ahooks';
 import { useCallback } from 'react';
-import { IOptimizationSQL } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTable,
   useTableRequestError,
@@ -8,7 +7,8 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import {
   SqlOptimizationListColumns,
-  SqlOptimizationListActions
+  SqlOptimizationListActions,
+  IOptimizationSQLIncludeOrder
 } from './columns';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { IGetOptimizationSQLsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
@@ -31,7 +31,8 @@ const OptimizationSqlList: React.FC<{
 }) => {
   const navigate = useNavigate();
 
-  const { tableChange, pagination } = useTableRequestParams<IOptimizationSQL>();
+  const { tableChange, pagination } =
+    useTableRequestParams<IOptimizationSQLIncludeOrder>();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -44,7 +45,23 @@ const OptimizationSqlList: React.FC<{
         optimization_record_id: optimizationId
       };
       return handleTableRequestError(
-        sqlOptimization.getOptimizationSQLs(params)
+        sqlOptimization.getOptimizationSQLs(params).then((res) => {
+          return {
+            ...res,
+            data: {
+              ...res.data,
+              data: res.data.data?.map((item, index) => {
+                return {
+                  ...item,
+                  order:
+                    index +
+                    1 +
+                    (pagination.page_index - 1) * pagination.page_size
+                };
+              })
+            }
+          };
+        })
       );
     },
     {
@@ -59,7 +76,7 @@ const OptimizationSqlList: React.FC<{
   );
 
   const gotoDetailPage = useCallback(
-    (record?: IOptimizationSQL) => {
+    (record?: IOptimizationSQLIncludeOrder) => {
       navigate(
         `/sqle/project/${projectID}/sql-optimization/detail/${dbType}/${optimizationId}/${record?.number}`
       );
@@ -72,7 +89,7 @@ const OptimizationSqlList: React.FC<{
       <ActiontechTable
         className="table-row-cursor optimization-sql-table"
         dataSource={data?.list}
-        rowKey={(record: IOptimizationSQL) => {
+        rowKey={(record: IOptimizationSQLIncludeOrder) => {
           return `${record?.number}`;
         }}
         pagination={{
