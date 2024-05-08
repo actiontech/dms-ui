@@ -12,7 +12,8 @@ export type ModeSwitcherOptionsType = Array<
 
 export type ModeSwitcherProps<V extends string | number = string> = {
   value?: V;
-  onChange?: (val?: V) => void;
+  defaultValue?: V;
+  onChange?: (val: V) => void;
   options: ModeSwitcherOptionsType;
   className?: string;
   rowProps?: RowProps;
