@@ -4,7 +4,8 @@ import {
   BasicDrawer,
   BasicTag,
   EmptyBox,
-  BasicToolTips
+  BasicToolTips,
+  BasicTypographyEllipsis
 } from '@actiontech/shared';
 import { MonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
@@ -121,11 +122,19 @@ const ReportDrawer = ({
                       </BasicToolTips>
                     }
                   >
-                    <BasicTag icon={<IconFillListActive />}>
+                    <BasicTag
+                      icon={<IconFillListActive />}
+                      className="ellipsis-column-width"
+                    >
                       <span className="sql-source-title">
                         {t('auditPlan.report.drawer.source')}
                       </span>
-                      {data?.sqlSourceFile}
+                      <BasicTypographyEllipsis
+                        className="margin-bottom-0 sql-source-content"
+                        textCont={data?.sqlSourceFile!}
+                        copyable={false}
+                        tooltipsMaxWidth={220}
+                      />
                     </BasicTag>
                   </EmptyBox>
                   <BasicTag icon={<IconPosition />}>

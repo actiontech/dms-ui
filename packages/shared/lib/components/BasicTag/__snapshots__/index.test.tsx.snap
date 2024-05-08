@@ -4,7 +4,7 @@ exports[`lib/BasicTag render diff color tag 1`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
 </body>
@@ -14,7 +14,7 @@ exports[`lib/BasicTag render diff color tag 2`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -29,7 +29,7 @@ exports[`lib/BasicTag render diff color tag 3`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -49,7 +49,7 @@ exports[`lib/BasicTag render diff color tag 4`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -74,7 +74,7 @@ exports[`lib/BasicTag render diff color tag 5`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -104,7 +104,7 @@ exports[`lib/BasicTag render diff color tag 6`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -139,7 +139,7 @@ exports[`lib/BasicTag render diff color tag 7`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -179,7 +179,7 @@ exports[`lib/BasicTag render diff color tag 8`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -224,7 +224,7 @@ exports[`lib/BasicTag render diff color tag 9`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -274,7 +274,7 @@ exports[`lib/BasicTag render diff color tag 10`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -329,7 +329,7 @@ exports[`lib/BasicTag render diff color tag 11`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -389,7 +389,7 @@ exports[`lib/BasicTag render diff color tag 12`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
@@ -455,7 +455,7 @@ exports[`lib/BasicTag render diff size tag 1`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
 </body>
@@ -465,12 +465,12 @@ exports[`lib/BasicTag render diff size tag 2`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
 </body>
@@ -480,17 +480,17 @@ exports[`lib/BasicTag render diff size tag 3`] = `
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
   <div>
     <span
-      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
     />
   </div>
 </body>

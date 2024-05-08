@@ -141,7 +141,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                       >
                         <div
                           aria-label="Test role 1"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           Test role 1
                           <div
@@ -262,7 +262,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                             >
                               test1
                             </span>
@@ -322,7 +322,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                       >
                         <div
                           aria-label="Test role 2"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           Test role 2
                           <div
@@ -493,7 +493,7 @@ exports[`base/UserCenter/RoleList render role table 1`] = `
                       >
                         <div
                           aria-label="Test default role"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           Test default role
                           <div

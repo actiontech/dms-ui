@@ -572,7 +572,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           mysql-1_20240130113114
                         </div>
@@ -582,7 +582,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                       >
                         <div
                           aria-label="desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           desc
                           <div
@@ -743,7 +743,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           mysql-2_20240130113114
                         </div>
@@ -753,7 +753,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                       >
                         <div
                           aria-label="desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           desc
                           <div
@@ -2369,7 +2369,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           mysql-1_20240130113114
                         </div>
@@ -2379,7 +2379,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                       >
                         <div
                           aria-label="desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           desc
                           <div
@@ -2560,7 +2560,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           mysql-2_20240130113114
                         </div>
@@ -2570,7 +2570,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                       >
                         <div
                           aria-label="desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           desc
                           <div
@@ -3777,7 +3777,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           mysql-1_20240130113114
                         </div>
@@ -3787,7 +3787,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                       >
                         <div
                           aria-label="desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           desc
                           <div
@@ -3968,7 +3968,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           mysql-2_20240130113114
                         </div>
@@ -3978,7 +3978,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                       >
                         <div
                           aria-label="desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           desc
                           <div

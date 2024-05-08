@@ -3,7 +3,7 @@ import { BasicTagTheme } from '../../theme.type';
 const tagTheme: BasicTagTheme = {
   default: {
     color: '#575C66',
-    backgroundColor: '#fffff'
+    backgroundColor: '#f7f6f4'
   },
   gray: {
     color: '#7d8ca8',

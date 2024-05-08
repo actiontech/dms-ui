@@ -144,7 +144,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                       >
                         <div
                           aria-label="test desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           test desc
                           <div

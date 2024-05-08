@@ -102,7 +102,7 @@ export enum CreateAuditTaskReqV1ExecModeEnum {
   'sqls' = 'sqls'
 }
 
-export enum CreateAuditTasksGroupReqV1ExecuteModeEnum {
+export enum CreateAuditTasksGroupReqV1ExecModeEnum {
   'sql_file' = 'sql_file',
 
   'sqls' = 'sqls'

@@ -1304,7 +1304,7 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
                           >
                             <div
                               aria-label="limit string cont"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                             >
                               limit string cont
                               <div

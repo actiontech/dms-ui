@@ -7,12 +7,14 @@ import { t } from '../../../../locale';
 import RenderSQL from '../../../../components/RenderSQL';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 
-export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizationSQL> =
+export type IOptimizationSQLIncludeOrder = IOptimizationSQL & { order: number };
+
+export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizationSQLIncludeOrder> =
   () => {
     return [
       {
-        dataIndex: 'number',
-        title: () => t('sqlOptimization.overview.sqlTable.id')
+        dataIndex: 'order',
+        title: () => t('sqlOptimization.overview.sqlTable.order')
       },
       {
         dataIndex: 'original_sql',
@@ -70,9 +72,9 @@ export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizati
   };
 
 export const SqlOptimizationListActions = (
-  gotoDetailPage: (record?: IOptimizationSQL) => void
+  gotoDetailPage: (record?: IOptimizationSQLIncludeOrder) => void
 ): {
-  buttons: ActiontechTableActionMeta<IOptimizationSQL>[];
+  buttons: ActiontechTableActionMeta<IOptimizationSQLIncludeOrder>[];
 } => ({
   buttons: [
     {

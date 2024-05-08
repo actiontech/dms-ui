@@ -9,11 +9,13 @@ import {
 
 export interface IBasicTable<T = Record<string, any>> extends TableProps<T> {
   errorMessage?: string;
+  isPaginationFixed?: boolean;
 }
 
 const BasicTable = <T extends Record<string, any>>({
   className,
   errorMessage,
+  isPaginationFixed,
   ...props
 }: IBasicTable<T>) => {
   const { t } = useTranslation();
@@ -48,7 +50,9 @@ const BasicTable = <T extends Record<string, any>>({
                     })}
                   </span>
                 ),
-                className: 'actiontech-table-pagination',
+                className: classnames('actiontech-table-pagination', {
+                  'actiontech-table-pagination-fixed': isPaginationFixed
+                }),
                 ...props.pagination
               }
         }

@@ -1001,7 +1001,7 @@ exports[`page/DataSource/MaintenanceTimePicker render has value 1`] = `
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-default basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
         >
           01
           :
