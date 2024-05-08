@@ -1,4 +1,5 @@
 import {
+  IScheduledTaskDefaultOptionV1Rsp,
   IGetWorkflowTemplateResV1,
   IUpdateWorkflowTemplateReqV1,
   IBaseRes,
@@ -27,6 +28,9 @@ import {
   exportWorkflowV1FilterStatusEnum,
   getGlobalWorkflowsV1FilterStatusEnum
 } from './index.enum';
+
+export interface IGetScheduledTaskDefaultOptionV1Return
+  extends IScheduledTaskDefaultOptionV1Rsp {}
 
 export interface IGetWorkflowTemplateV1Params {
   project_name: string;

@@ -21,6 +21,7 @@ import {
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
+  ScheduleTaskDefaultOptionDefaultSelectorEnum,
   SourceTypeEnum,
   SqlManageStatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
@@ -468,6 +469,12 @@ export interface ICustomRuleResV1 {
   type?: string;
 }
 
+export interface IDBPerformanceImproveOverview {
+  avg_performance_improve?: number;
+
+  instance_name?: string;
+}
+
 export interface IDBTypeAuditPlan {
   data?: IAuditPlanCount[];
 
@@ -732,6 +739,14 @@ export interface IGetCustomRulesResV1 {
   message?: string;
 }
 
+export interface IGetDBPerformanceImproveOverviewResp {
+  code?: number;
+
+  data?: IDBPerformanceImproveOverview[];
+
+  message?: string;
+}
+
 export interface IGetDashboardResV1 {
   code?: number;
 
@@ -860,6 +875,14 @@ export interface IGetOperationsResV1 {
   code?: number;
 
   data?: IOperationResV1[];
+
+  message?: string;
+}
+
+export interface IGetOptimizationOverviewResp {
+  code?: number;
+
+  data?: IOptimizationRecordOverview[];
 
   message?: string;
 }
@@ -1468,6 +1491,8 @@ export interface IOptimizationDetail {
   optimization_id?: string;
 
   optimization_name?: string;
+
+  status?: string;
 }
 
 export interface IOptimizationRecord {
@@ -1484,6 +1509,14 @@ export interface IOptimizationRecord {
   optimization_name?: string;
 
   performance_gain?: number;
+
+  status?: string;
+}
+
+export interface IOptimizationRecordOverview {
+  record_number?: number;
+
+  time?: string;
 }
 
 export interface IOptimizationSQL {
@@ -1701,6 +1734,10 @@ export interface IRuleResV1 {
 
   desc?: string;
 
+  has_audit_power?: boolean;
+
+  has_rewrite_power?: boolean;
+
   is_custom_rule?: boolean;
 
   level?: RuleResV1LevelEnum;
@@ -1802,6 +1839,18 @@ export interface ISQLQueryConfigResV1 {
   max_pre_query_rows?: number;
 
   query_timeout_second?: number;
+}
+
+export interface IScheduleTaskDefaultOption {
+  default_selector?: ScheduleTaskDefaultOptionDefaultSelectorEnum;
+}
+
+export interface IScheduledTaskDefaultOptionV1Rsp {
+  code?: number;
+
+  data?: IScheduleTaskDefaultOption;
+
+  message?: string;
 }
 
 export interface ISource {
@@ -2450,6 +2499,16 @@ export interface IAuditResDataV2 {
   sql_results?: IAuditSQLResV2[];
 }
 
+export interface IAuditResultFlags {
+  has_error?: boolean;
+
+  has_normal?: boolean;
+
+  has_notice?: boolean;
+
+  has_warning?: boolean;
+}
+
 export interface IAuditSQLResV2 {
   audit_level?: string;
 
@@ -2556,6 +2615,18 @@ export interface IDriverMeta {
   logo_url?: string;
 }
 
+export interface IFileOverview {
+  audit_result_flags?: IAuditResultFlags;
+
+  exec_order?: number;
+
+  exec_status?: string;
+
+  file_id?: string;
+
+  file_name?: string;
+}
+
 export interface IFullSyncAuditPlanSQLsReqV2 {
   audit_plan_sql_list?: IAuditPlanSQLReqV2[];
 }
@@ -2582,6 +2653,16 @@ export interface IGetAuditPlansResV2 {
   code?: number;
 
   data?: IAuditPlanResV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetAuditTaskFileOverviewRes {
+  code?: number;
+
+  data?: IFileOverview[];
 
   message?: string;
 

@@ -33,10 +33,10 @@ const useUsername = () => {
   );
 
   const generateUsernameSelectOption = React.useCallback(() => {
-    return usernameList.map((user) => {
+    return usernameList.map((item) => {
       return (
-        <Select.Option key={user.user_id} value={user.user_id ?? ''}>
-          {user.user_name}
+        <Select.Option key={item.user_id} value={item.user_id ?? ''}>
+          {item.user_name}
         </Select.Option>
       );
     });

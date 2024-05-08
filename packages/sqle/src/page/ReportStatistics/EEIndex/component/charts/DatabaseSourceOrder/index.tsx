@@ -166,9 +166,9 @@ const DatabaseSourceOrder = () => {
     tooltip: {
       fields: ['name', 'value'],
       formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any[]) =>
+      customContent: (title: string, data: any[]) =>
         renderTooltipCustomContent(
-          dataSource,
+          data,
           sharedTheme,
           sourceTotalNumberRef.current
         ),

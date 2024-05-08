@@ -1,10 +1,10 @@
 import hljs from 'highlight.js/lib/core';
-import sql from 'highlight.js/lib/languages/sql';
+import sqlCore from 'highlight.js/lib/languages/sql';
 import 'highlight.js/styles/github.css';
 
 class HighlightCode {
   constructor() {
-    hljs.registerLanguage('sql', sql);
+    hljs.registerLanguage('sql', sqlCore);
   }
 
   public highlightSql(sql: string) {

@@ -70,12 +70,12 @@ const useImportRuleTemplate = () => {
   const getAllRulesByDbTypeAndFilterActiveRuleList = (
     importRuleList: IRuleResV1[],
     init: boolean,
-    dbType?: string,
+    type?: string,
     keyword?: string
   ) => {
     startGetAllRules();
     getAllRulesAsync({
-      filter_db_type: dbType,
+      filter_db_type: type,
       fuzzy_keyword_rule: keyword
     })
       .then((res) => {

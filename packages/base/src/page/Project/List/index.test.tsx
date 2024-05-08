@@ -184,7 +184,7 @@ describe('test base/project/list', () => {
     });
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
-        project: mockProjectList[1]
+        selectProject: mockProjectList[1]
       },
       type: 'project/updateSelectProject'
     });

@@ -129,7 +129,42 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                             id="desc"
                             value="绑定的变量个数不建议超过阈值"
                           >
-                            绑定的变量个数不建议超过阈值
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <div>
+                                  绑定的变量个数不建议超过阈值
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <section>
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-rncbf4"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      审核能力
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-rncbf4"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      重写能力
+                                    </div>
+                                  </div>
+                                </section>
+                              </div>
+                            </div>
                           </section>
                         </div>
                       </div>
@@ -569,7 +604,23 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when dataSource is empty object 1`] 
                             class="css-lk9s71"
                             id="desc"
                             value=""
-                          />
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <div />
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <section />
+                              </div>
+                            </div>
+                          </section>
                         </div>
                       </div>
                     </div>
@@ -954,7 +1005,42 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                             id="desc"
                             value="绑定的变量个数不建议超过阈值"
                           >
-                            绑定的变量个数不建议超过阈值
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <div>
+                                  绑定的变量个数不建议超过阈值
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <section>
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-rncbf4"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      审核能力
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-rncbf4"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      重写能力
+                                    </div>
+                                  </div>
+                                </section>
+                              </div>
+                            </div>
                           </section>
                         </div>
                       </div>

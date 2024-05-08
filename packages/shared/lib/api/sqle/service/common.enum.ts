@@ -204,6 +204,12 @@ export enum SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum {
   'error' = 'error'
 }
 
+export enum ScheduleTaskDefaultOptionDefaultSelectorEnum {
+  'wechat' = 'wechat',
+
+  'feishu' = 'feishu'
+}
+
 export enum SourceTypeEnum {
   'audit_plan' = 'audit_plan',
 
@@ -391,7 +397,7 @@ export enum GetWorkflowTasksItemV2StatusEnum {
 }
 
 export enum UpdateWorkflowScheduleReqV2NotifyTypeEnum {
-  'Wechat' = 'Wechat',
+  'wechat' = 'wechat',
 
   'feishu' = 'feishu'
 }

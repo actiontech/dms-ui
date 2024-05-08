@@ -49,7 +49,9 @@ export const ruleListData = [
       { key: 'first_key', value: '100', desc: '最大绑定变量数量', type: 'int' }
     ],
     rule_name: ruleNameFirst,
-    type: '使用建议'
+    type: '使用建议',
+    has_audit_power: false,
+    has_rewrite_power: false
   },
   {
     annotation:
@@ -62,7 +64,9 @@ export const ruleListData = [
       { key: 'first_key', value: '100', desc: '最大绑定变量数量', type: 'int' }
     ],
     rule_name: ruleNameSecond,
-    type: '使用建议'
+    type: '使用建议',
+    has_audit_power: true,
+    has_rewrite_power: true
   }
 ];
 
@@ -175,7 +179,9 @@ export const ruleListMockData: IRuleResV1[] = [
       }
     ],
     rule_name: 'testName1',
-    type: '使用建议'
+    type: '使用建议',
+    has_audit_power: true,
+    has_rewrite_power: true
   },
   {
     annotation: 'test rule2',
@@ -184,7 +190,9 @@ export const ruleListMockData: IRuleResV1[] = [
     is_custom_rule: true,
     level: RuleResV1LevelEnum.normal,
     rule_name: 'testName2',
-    type: 'DDL规范'
+    type: 'DDL规范',
+    has_audit_power: true,
+    has_rewrite_power: false
   },
   {
     annotation: 'test rule3',
@@ -193,7 +201,9 @@ export const ruleListMockData: IRuleResV1[] = [
     is_custom_rule: true,
     level: RuleResV1LevelEnum.notice,
     rule_name: 'testName3',
-    type: '命名规范'
+    type: '命名规范',
+    has_audit_power: false,
+    has_rewrite_power: true
   },
   {
     annotation: 'test rule4',
@@ -202,7 +212,9 @@ export const ruleListMockData: IRuleResV1[] = [
     is_custom_rule: true,
     level: RuleResV1LevelEnum.warn,
     rule_name: 'testName4',
-    type: '索引规范'
+    type: '索引规范',
+    has_audit_power: false,
+    has_rewrite_power: false
   }
 ];
 

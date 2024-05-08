@@ -90,7 +90,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
   const [sqlStatementValue, setSqlStatementValue] =
     useState<Record<string, string>>();
 
-  const sqlStatementInfo = useMemo(() => {
+  const SQLStatementInfo = useMemo(() => {
     return currentOrderTasks.map((v) => {
       return {
         key: v.task_id?.toString() ?? '',
@@ -152,7 +152,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
         })) ?? [];
       const instanceInfo: InstanceInfoType = new Map();
       if (sqlMode === WorkflowResV2ModeEnum.different_sqls) {
-        sqlStatementInfo.forEach((v) => {
+        SQLStatementInfo.forEach((v) => {
           instanceInfo.set(v.key, {
             instanceName: v.instanceName,
             instanceSchemaName: v.instanceSchemaName
@@ -177,32 +177,32 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
   const formatSql = async () => {
     const params = await form.getFieldsValue();
     if (sqlMode === WorkflowResV2ModeEnum.same_sqls) {
-      const sqlStatementInfo = params['0'] as SQLStatementFields;
-      if (sqlStatementInfo?.sqlInputType !== SQLInputType.manualInput) {
+      const SQLStatementValue = params['0'] as SQLStatementFields;
+      if (SQLStatementValue?.sqlInputType !== SQLInputType.manualInput) {
         return;
       }
       form.setFields([
         {
           name: ['0', 'sql'],
           value: formatterSQL(
-            sqlStatementInfo.sql,
+            SQLStatementValue.sql,
             currentOrderTasks?.[0].instance_db_type
           )
         }
       ]);
     } else {
-      const sqlStatementInfo = params[
+      const SQLStatementValue = params[
         sqlStatementFormTabsRef.current?.activeKey ?? ''
       ] as SQLStatementFields;
 
-      if (sqlStatementInfo?.sqlInputType !== SQLInputType.manualInput) {
+      if (SQLStatementValue?.sqlInputType !== SQLInputType.manualInput) {
         return;
       }
       form.setFields([
         {
           name: [sqlStatementFormTabsRef.current?.activeKey ?? '', 'sql'],
           value: formatterSQL(
-            sqlStatementInfo.sql,
+            SQLStatementValue.sql,
             currentOrderTasks[sqlStatementFormTabsRef.current?.activeIndex ?? 0]
               ?.instance_db_type
           )
@@ -326,7 +326,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                 <SQLStatementFormTabs
                   ref={sqlStatementFormTabsRef}
                   form={form}
-                  SQLStatementInfo={sqlStatementInfo}
+                  SQLStatementInfo={SQLStatementInfo}
                 />
               </EmptyBox>
 
