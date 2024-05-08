@@ -384,53 +384,25 @@ exports[`sqle/SqlOptimization/Detail render detail page 1`] = `
                     class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
                   >
                     <span>
+                      customer.c_custkey 
+                      <span
+                        class="hljs-keyword"
+                      >
+                        in
+                      </span>
+                       ( 
                       <span
                         class="hljs-keyword"
                       >
                         select
                       </span>
-                       
-                      <span
-                        class="hljs-operator"
-                      >
-                        *
-                      </span>
-                      
-
+                       orders.o_custkey 
                       <span
                         class="hljs-keyword"
                       >
                         from
                       </span>
-                       customer
-
-                      <span
-                        class="hljs-keyword"
-                      >
-                        where
-                      </span>
-                       
-                      <span
-                        class="hljs-keyword"
-                      >
-                        exists
-                      </span>
-                       (
-          
-                      <span
-                        class="hljs-keyword"
-                      >
-                        select
-                      </span>
-                       orders.o_custkey
-          
-                      <span
-                        class="hljs-keyword"
-                      >
-                        from
-                      </span>
-                       orders
-          
+                       orders 
                       <span
                         class="hljs-keyword"
                       >
@@ -472,22 +444,7 @@ exports[`sqle/SqlOptimization/Detail render detail page 1`] = `
                       >
                         YEAR
                       </span>
-                      
-          
-                      <span
-                        class="hljs-keyword"
-                      >
-                        and
-                      </span>
-                       orders.o_custkey 
-                      <span
-                        class="hljs-operator"
-                      >
-                        =
-                      </span>
-                       customer.c_custkey
-          )
-
+                       )
                     </span>
                   </div>
                   <div

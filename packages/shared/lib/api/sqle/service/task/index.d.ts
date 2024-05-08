@@ -128,6 +128,12 @@ export interface IGetTaskAnalysisDataReturn extends IGetTaskAnalysisDataResV1 {}
 
 export interface IGetAuditTaskFileOverviewParams {
   task_id: string;
+
+  page_index: string;
+
+  page_size: string;
+
+  filter_file_id: string;
 }
 
 export interface IGetAuditTaskFileOverviewReturn

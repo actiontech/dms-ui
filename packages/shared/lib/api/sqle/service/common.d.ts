@@ -9,7 +9,7 @@ import {
   AuditTaskResV1StatusEnum,
   BatchUpdateSqlManageReqStatusEnum,
   CreateAuditTaskReqV1ExecModeEnum,
-  CreateAuditTasksGroupReqV1ExecuteModeEnum,
+  CreateAuditTasksGroupReqV1ExecModeEnum,
   CreateAuditWhitelistReqV1MatchTypeEnum,
   CreateCustomRuleReqV1LevelEnum,
   CustomRuleResV1LevelEnum,
@@ -382,7 +382,7 @@ export interface ICreateAuditTaskReqV1 {
 }
 
 export interface ICreateAuditTasksGroupReqV1 {
-  exec_mode?: CreateAuditTasksGroupReqV1ExecuteModeEnum;
+  exec_mode?: CreateAuditTasksGroupReqV1ExecModeEnum;
 
   instances?: IInstanceForCreatingTask[];
 }
@@ -2499,14 +2499,14 @@ export interface IAuditResDataV2 {
   sql_results?: IAuditSQLResV2[];
 }
 
-export interface IAuditResultFlags {
-  has_error?: boolean;
+export interface IAuditResultCount {
+  error_sql_count?: number;
 
-  has_normal?: boolean;
+  normal_sql_count?: number;
 
-  has_notice?: boolean;
+  notice_sql_count?: number;
 
-  has_warning?: boolean;
+  warning_sql_count?: number;
 }
 
 export interface IAuditSQLResV2 {
@@ -2615,10 +2615,28 @@ export interface IDriverMeta {
   logo_url?: string;
 }
 
+export interface IExecResultCount {
+  doing_count?: number;
+
+  failed_count?: number;
+
+  initialized_count?: number;
+
+  manually_executed_count?: number;
+
+  succeeded_count?: number;
+
+  terminate_failed_count?: number;
+
+  terminate_succeeded_count?: number;
+}
+
 export interface IFileOverview {
-  audit_result_flags?: IAuditResultFlags;
+  audit_result_count?: IAuditResultCount;
 
   exec_order?: number;
+
+  exec_result_count?: IExecResultCount;
 
   exec_status?: string;
 

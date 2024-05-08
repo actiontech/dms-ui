@@ -37,7 +37,7 @@ export default {
   },
   overview: {
     sqlTable: {
-      id: 'ID',
+      order: '序号',
       sql: 'SQL文本',
       syntaxError: '语法错误',
       recommendedIndex: '推荐索引',

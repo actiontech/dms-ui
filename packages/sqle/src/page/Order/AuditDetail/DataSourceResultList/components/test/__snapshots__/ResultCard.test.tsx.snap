@@ -30,7 +30,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -146,7 +146,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="custom-icon css-u3jcp4"
@@ -183,7 +183,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="custom-icon css-u3jcp4"
@@ -478,7 +478,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -594,7 +594,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="custom-icon css-u3jcp4"
@@ -631,7 +631,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="custom-icon css-u3jcp4"
@@ -926,7 +926,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -1042,7 +1042,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="custom-icon css-u3jcp4"
@@ -1079,7 +1079,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="custom-icon css-u3jcp4"
@@ -1374,7 +1374,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 1`] = `
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -1490,7 +1490,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 1`] = `
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="custom-icon css-u3jcp4"
@@ -1527,7 +1527,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 1`] = `
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="custom-icon css-u3jcp4"
@@ -1821,7 +1821,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 2`] = `
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -1937,7 +1937,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 2`] = `
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="custom-icon css-u3jcp4"
@@ -1974,7 +1974,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 2`] = `
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="custom-icon css-u3jcp4"
@@ -2292,7 +2292,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when has resu
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -2383,7 +2383,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when has resu
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="custom-icon css-u3jcp4"
@@ -2420,7 +2420,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when has resu
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="custom-icon css-u3jcp4"
@@ -2777,7 +2777,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when no cont 
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -2893,7 +2893,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when no cont 
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="custom-icon css-u3jcp4"
@@ -2930,7 +2930,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when no cont 
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="custom-icon css-u3jcp4"
@@ -3282,7 +3282,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render snap when data is empty 1`] = 
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               />
               <div
                 class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
@@ -3398,7 +3398,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render snap when data is empty 1`] = 
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="custom-icon css-u3jcp4"
@@ -3435,7 +3435,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render snap when data is empty 1`] = 
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="custom-icon css-u3jcp4"
