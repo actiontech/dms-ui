@@ -356,7 +356,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 temp-2
                               </span>
@@ -853,7 +853,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
                       style="padding-bottom: 8px;"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
                       >
                         temp-2
                       </span>
@@ -1569,7 +1569,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 temp-1
                               </span>
@@ -1704,7 +1704,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 temp-2
                               </span>
@@ -1839,7 +1839,7 @@ exports[`page/auth/AuthAudit render action when filter item show 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 temp-3
                               </span>
@@ -3148,7 +3148,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 temp-1
                               </span>
@@ -3283,7 +3283,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 temp-2
                               </span>
@@ -3418,7 +3418,7 @@ exports[`page/auth/AuthAudit render table list when api return data 1`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               >
                                 temp-3
                               </span>
