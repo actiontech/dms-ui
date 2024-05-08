@@ -24,7 +24,7 @@ const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
     // #if [sqle && !dms]
     menus = sideMenuData(projectID, role, sqlOptimizationIsSupported);
     // #else
-    menus = dmsSideMenuData(projectID, role);
+    menus = dmsSideMenuData(projectID, role, sqlOptimizationIsSupported);
     // #endif
 
     return menus;
