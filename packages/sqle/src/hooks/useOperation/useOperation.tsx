@@ -29,10 +29,10 @@ const useOperation = () => {
   }, [setFalse, setTrue]);
 
   const generateOperationSelectOption = useCallback(() => {
-    return operationList.map((operation) => {
+    return operationList.map((item) => {
       return (
-        <Select.Option key={operation.op_code} value={operation.op_code ?? ''}>
-          {operation.op_desc}
+        <Select.Option key={item.op_code} value={item.op_code ?? ''}>
+          {item.op_desc}
         </Select.Option>
       );
     });

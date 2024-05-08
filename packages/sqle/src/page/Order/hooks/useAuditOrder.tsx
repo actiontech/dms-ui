@@ -95,7 +95,6 @@ const useAuditOrder = () => {
             instance_schema: v.instanceSchema
           })) ?? []
       };
-      let taskInfos: IAuditTaskResV1[] = [];
       const taskGroupInfo = await task.createAuditTasksV1(
         createAuditTasksParams
       );
@@ -112,11 +111,11 @@ const useAuditOrder = () => {
         };
         const res = await task.auditTaskGroupIdV1(auditTaskPrams);
         if (res && res.data.code === ResponseCode.SUCCESS) {
-          taskInfos = res.data.data?.tasks ?? [];
-          setTaskInfos(taskInfos);
+          const tasks = res.data.data?.tasks ?? [];
+          setTaskInfos(tasks);
 
-          if (taskInfos.length > 0) {
-            commonJudgeAuditLevel(taskInfos);
+          if (tasks.length > 0) {
+            commonJudgeAuditLevel(tasks);
           }
         }
       }

@@ -7,6 +7,7 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IGetScheduledTaskDefaultOptionV1Return,
   IGetWorkflowTemplateV1Params,
   IGetWorkflowTemplateV1Return,
   IUpdateWorkflowTemplateV1Params,
@@ -71,6 +72,14 @@ import {
 } from './index.d';
 
 class WorkflowService extends ServiceBase {
+  public getScheduledTaskDefaultOptionV1(options?: AxiosRequestConfig) {
+    return this.get<IGetScheduledTaskDefaultOptionV1Return>(
+      '/v1/configurations/workflows/schedule/default_option',
+      undefined,
+      options
+    );
+  }
+
   public getWorkflowTemplateV1(
     params: IGetWorkflowTemplateV1Params,
     options?: AxiosRequestConfig

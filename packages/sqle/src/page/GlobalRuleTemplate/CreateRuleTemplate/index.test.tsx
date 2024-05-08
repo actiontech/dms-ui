@@ -18,6 +18,7 @@ import {
 } from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -48,6 +49,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
         }
       })
     );
+    mockUseCurrentPermission();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();

@@ -14,7 +14,9 @@ import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
-  useDbServiceDriver
+  useDbServiceDriver,
+  useFeaturePermission,
+  useCurrentPermission
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
@@ -32,6 +34,7 @@ import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
+import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
 
 import './index.less';
 
@@ -71,8 +74,11 @@ function App() {
 
   const { getUserBySession } = useSessionUser();
 
-  const { useInfoFetched, isAdmin, theme, role } = useCurrentUser();
+  const { useInfoFetched, theme, role } = useCurrentUser();
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
+  const { updateFeaturePermission, featurePermissionFetched } =
+    useFeaturePermission();
+  const currentPermissions = useCurrentPermission();
 
   // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
@@ -89,45 +95,48 @@ function App() {
   );
   // #endif
 
-  const filterRoutesByRole: (
-    routes: RouterConfigItem[],
-    targetRole: SystemRole | ''
-  ) => RouterConfigItem[] = (
-    routes: RouterConfigItem[],
-    targetRole: SystemRole | ''
-  ) => {
-    return routes.reduce(
-      (filtered: RouterConfigItem[], route: RouterConfigItem) => {
-        let currentRote: RouterConfigItem | undefined = undefined;
-        if (
-          !route.role ||
-          (Array.isArray(route.role) && route.role.includes(targetRole))
-        ) {
-          currentRote = route;
-        }
-        if (
-          route.children &&
-          Array.isArray(route.children) &&
-          route.children.length
-        ) {
-          currentRote = {
-            ...route,
-            children: filterRoutesByRole(route.children, targetRole)
-          };
-        }
-        currentRote && filtered.push(currentRote);
-        return filtered;
-      },
-      []
-    );
-  };
   const AuthRouterConfigData = useMemo(() => {
-    if (isAdmin) {
-      return AuthRouterConfig;
-    }
-    return filterRoutesByRole(AuthRouterConfig, role);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAdmin]);
+    const filterRoutesByRole: (
+      routes: RouterConfigItem[],
+      targetRole: SystemRole | '',
+      permissions: PermissionReduxState
+    ) => RouterConfigItem[] = (routes, targetRole, permissions) => {
+      return routes.reduce(
+        (filtered: RouterConfigItem[], route: RouterConfigItem) => {
+          let currentRote: RouterConfigItem | undefined = undefined;
+          if (
+            (!route.permission && !route.role) ||
+            (Array.isArray(route.role) && route.role.includes(targetRole)) ||
+            (route.permission && route.permission.every((p) => permissions[p]))
+          ) {
+            currentRote = route;
+          }
+
+          if (
+            route.children &&
+            Array.isArray(route.children) &&
+            route.children.length &&
+            !route.permission &&
+            !route.role
+          ) {
+            currentRote = {
+              ...route,
+              children: filterRoutesByRole(
+                route.children,
+                targetRole,
+                permissions
+              )
+            };
+          }
+          currentRote && filtered.push(currentRote);
+          return filtered;
+        },
+        []
+      );
+    };
+
+    return filterRoutesByRole(AuthRouterConfig, role, currentPermissions);
+  }, [currentPermissions, role]);
 
   const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
   useChangeTheme();
@@ -137,7 +146,7 @@ function App() {
   }, [theme]);
 
   const body = useMemo(() => {
-    if (!useInfoFetched || !driverInfoFetched) {
+    if (!useInfoFetched || !driverInfoFetched || !featurePermissionFetched) {
       return <HeaderProgress />;
     }
 
@@ -146,14 +155,15 @@ function App() {
         <Suspense fallback={<HeaderProgress />}>{elements}</Suspense>
       </Nav>
     );
-  }, [useInfoFetched, driverInfoFetched, elements]);
+  }, [useInfoFetched, driverInfoFetched, featurePermissionFetched, elements]);
 
   useEffect(() => {
     if (token) {
       getUserBySession({});
       updateDriverList();
+      updateFeaturePermission();
     }
-  }, [getUserBySession, token, updateDriverList]);
+  }, [getUserBySession, token, updateDriverList, updateFeaturePermission]);
 
   return (
     <Wrapper>

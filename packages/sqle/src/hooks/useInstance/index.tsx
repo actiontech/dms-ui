@@ -62,16 +62,16 @@ const useInstance = () => {
             key={type}
           >
             {filterInstanceList
-              .filter((instance) => instance.instance_type === type)
-              .map((instance) => {
+              .filter((item) => item.instance_type === type)
+              .map((item) => {
                 return (
                   <Select.Option
-                    key={instance.instance_name}
-                    value={instance.instance_name ?? ''}
+                    key={item.instance_name}
+                    value={item.instance_name ?? ''}
                   >
-                    {!!instance.host && !!instance.port
-                      ? `${instance.instance_name} (${instance.host}:${instance.port})`
-                      : instance.instance_name}
+                    {!!item.host && !!item.port
+                      ? `${item.instance_name} (${item.host}:${item.port})`
+                      : item.instance_name}
                   </Select.Option>
                 );
               })}

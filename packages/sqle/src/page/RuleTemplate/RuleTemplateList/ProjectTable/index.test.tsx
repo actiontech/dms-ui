@@ -246,7 +246,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
-        ruleTemplate: projectRuleTemplateListMockData[0]
+        selectRow: projectRuleTemplateListMockData[0]
       },
       type: 'ruleTemplate/updateSelectRuleTemplate'
     });
@@ -327,7 +327,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
       payload: {
-        ruleTemplate: projectRuleTemplateListMockData[0]
+        selectRow: projectRuleTemplateListMockData[0]
       },
       type: 'ruleTemplate/updateSelectRuleTemplate'
     });

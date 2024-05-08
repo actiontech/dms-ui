@@ -6,6 +6,7 @@ import system from './system';
 import database from './database';
 import nav from './nav';
 import dataExport from './dataExport';
+import permission from './permission';
 
 export const baseStoreData = {
   user,
@@ -15,5 +16,6 @@ export const baseStoreData = {
   system,
   database,
   nav,
-  dataExport
+  dataExport,
+  permission
 };

@@ -46,10 +46,10 @@ const DataSourceResultList: React.FC<DataSourceResultListProps> = ({
           total,
           pageSize: pagination.page_size,
           current: pagination.page_index,
-          showTotal: (total) => (
+          showTotal: (_total) => (
             <span>
               {t('common.actiontechTable.pagination.total', {
-                total
+                total: _total
               })}
             </span>
           ),

@@ -127,10 +127,10 @@ const ProjectTable = (props: TemplateTableProps) => {
   );
 
   const openCloneRuleTemplateModal = useCallback(
-    (ruleTemplate: IProjectRuleTemplateResV1) => {
+    (selectRow: IProjectRuleTemplateResV1) => {
       dispatch(
         updateSelectRuleTemplate({
-          ruleTemplate
+          selectRow
         })
       );
       dispatch(
