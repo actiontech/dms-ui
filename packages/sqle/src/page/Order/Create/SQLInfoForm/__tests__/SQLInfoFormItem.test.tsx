@@ -7,6 +7,7 @@ import { mockDatabaseType } from '../../../../../testUtils/mockHooks/mockDatabas
 import SQLInfoFormItem from '../SQLInfoFormItem';
 import { SQLInfoFormFields, SQLInfoFormItemProps } from '../index.type';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SQLInputType } from '../../../SQLStatementForm';
 
 describe('sqle/Order/Create/SQLInfoFormItem', () => {
   const projectName = mockProjectInfo.projectName;
@@ -42,7 +43,9 @@ describe('sqle/Order/Create/SQLInfoFormItem', () => {
       setInstanceInfo: setInstanceInfoFn,
       auditLoading: false,
       isSupportFileModeExecuteSQL: false,
-      setIsSupportFileModeExecuteSQL: setIsSupportFileModeExecuteSQLFn
+      setIsSupportFileModeExecuteSQL: setIsSupportFileModeExecuteSQLFn,
+      currentSQLInputType: SQLInputType.manualInput,
+      setCurrentSQLInputType: jest.fn()
     };
     return renderWithThemeAndRedux(
       <Form>

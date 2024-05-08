@@ -18,7 +18,7 @@ import {
 import {
   WorkflowResV2ModeEnum,
   AuditTaskResV1SqlSourceEnum,
-  CreateAuditTasksGroupReqV1ExecuteModeEnum
+  CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { SQLInputType, SQLStatementFields } from '../../SQLStatementForm';
@@ -165,7 +165,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
           dataBaseInfo,
           isSameSqlOrder: sqlMode === WorkflowResV2ModeEnum.same_sqls,
           executeMode:
-            executeMode as unknown as CreateAuditTasksGroupReqV1ExecuteModeEnum
+            executeMode as unknown as CreateAuditTasksGroupReqV1ExecModeEnum
         },
         instanceInfo
       );
