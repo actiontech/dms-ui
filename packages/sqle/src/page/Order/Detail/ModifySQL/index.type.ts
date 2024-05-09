@@ -1,5 +1,8 @@
 import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  WorkflowResV2ExecModeEnum,
+  WorkflowResV2ModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   InstanceInfoType,
   SQLInfoFormFields
@@ -22,4 +25,5 @@ export type ModifySQLProps = {
   workflowID: string;
   refreshOrder: () => void;
   refreshOverviewAction: () => void;
+  executeMode?: WorkflowResV2ExecModeEnum;
 };

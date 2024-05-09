@@ -2,16 +2,21 @@ import { useTranslation } from 'react-i18next';
 import DatabaseInfo from './DatabaseInfo';
 import { SQLInfoFormItemProps } from './index.type';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  CreateAuditTasksGroupReqV1ExecModeEnum,
+  WorkflowResV2ModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   FormItemLabel,
-  FormItemNoLabel
+  FormItemNoLabel,
+  FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import {
   BasicButton,
   BasicSwitch,
   BasicToolTips,
-  EmptyBox
+  EmptyBox,
+  ModeSwitcher
 } from '@actiontech/shared';
 import { Space, SwitchProps } from 'antd';
 import SQLStatementFormTabs from '../../SQLStatementForm/SQLStatementFormTabs';
@@ -30,6 +35,7 @@ import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
+import { sqlExecuteModeOptions } from './index.data';
 
 const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
   form,
@@ -44,6 +50,10 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
   setChangeSqlModeDisabled,
   currentSqlMode,
   setCurrentSqlMode,
+  isSupportFileModeExecuteSQL,
+  setIsSupportFileModeExecuteSQL,
+  currentSQLInputType,
+  setCurrentSQLInputType,
   ...otherProps
 }) => {
   const { t } = useTranslation();
@@ -156,6 +166,8 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
     const resetAlreadySubmit = () => {
       setInstanceInfo(new Map([[0, { instanceName: '' }]]));
       setCurrentSqlMode(WorkflowResV2ModeEnum.same_sqls);
+      setChangeSqlModeDisabled(false);
+      setIsSupportFileModeExecuteSQL(false);
     };
     EventEmitter.subscribe(
       EmitterKey.Reset_Create_Order_Form,
@@ -179,6 +191,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         setInstanceInfo={setInstanceInfo}
         instanceNameChange={instanceNameChange}
         setChangeSqlModeDisabled={setChangeSqlModeDisabledAndSetValue}
+        setIsSupportFileModeExecuteSQL={setIsSupportFileModeExecuteSQL}
         {...otherProps}
       />
       <FormItemLabel
@@ -228,14 +241,43 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
             form={form}
             isClearFormWhenChangeSqlType={true}
             SQLStatementInfo={SQLStatementInfo}
+            sqlInputTypeChangeHandle={setCurrentSQLInputType}
           />
         }
       >
-        <SQLStatementForm form={form} isClearFormWhenChangeSqlType={true} />
+        <SQLStatementForm
+          form={form}
+          isClearFormWhenChangeSqlType={true}
+          sqlInputTypeChangeHandle={setCurrentSQLInputType}
+        />
+      </EmptyBox>
+
+      <EmptyBox
+        if={
+          isSupportFileModeExecuteSQL &&
+          currentSQLInputType !== SQLInputType.manualInput
+        }
+      >
+        <FormItemSubTitle>
+          {t('order.sqlInfo.selectExecuteMode')}
+        </FormItemSubTitle>
+        <FormItemNoLabel
+          name="executeMode"
+          initialValue={CreateAuditTasksGroupReqV1ExecModeEnum.sqls}
+        >
+          <ModeSwitcher
+            rowProps={{ gutter: 10 }}
+            options={sqlExecuteModeOptions}
+          />
+        </FormItemNoLabel>
       </EmptyBox>
 
       {/* #else */}
-      <SQLStatementForm form={form} isClearFormWhenChangeSqlType={true} />
+      <SQLStatementForm
+        form={form}
+        isClearFormWhenChangeSqlType={true}
+        sqlInputTypeChangeHandle={setCurrentSQLInputType}
+      />
 
       {/* #endif */}
 
@@ -248,15 +290,21 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
           >
             {t('order.sqlInfo.audit')}
           </BasicButton>
-          <BasicButton onClick={formatSql} loading={auditLoading}>
+          <BasicButton
+            hidden={currentSQLInputType !== SQLInputType.manualInput}
+            onClick={formatSql}
+            loading={auditLoading}
+          >
             {t('order.sqlInfo.format')}
           </BasicButton>
-          <BasicToolTips
-            prefixIcon={<IconTipGray />}
-            title={t('order.sqlInfo.formatTips', {
-              supportType: Object.keys(FormatLanguageSupport).join('、')
-            })}
-          />
+          {currentSQLInputType === SQLInputType.manualInput && (
+            <BasicToolTips
+              prefixIcon={<IconTipGray />}
+              title={t('order.sqlInfo.formatTips', {
+                supportType: Object.keys(FormatLanguageSupport).join('、')
+              })}
+            />
+          )}
         </Space>
       </FormItemNoLabel>
     </>

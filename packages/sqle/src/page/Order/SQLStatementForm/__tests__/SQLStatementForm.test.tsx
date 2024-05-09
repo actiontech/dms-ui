@@ -37,8 +37,7 @@ describe('sqle/Order/SQLStatementForm', () => {
   it('render click hideUpdateMybatisFile & isClearFormWhenChangeSqlType', () => {
     const { baseElement } = customRender({
       fieldName: 'sql-demo',
-      isClearFormWhenChangeSqlType: true,
-      hideUpdateMybatisFile: true
+      isClearFormWhenChangeSqlType: true
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -54,12 +53,15 @@ describe('sqle/Order/SQLStatementForm', () => {
   });
 
   it('render change mode for upload sqle file', async () => {
+    const sqlInputChangeSpy = jest.fn();
     const { baseElement } = customRender({
-      fieldName: 'sql-demo'
+      fieldName: 'sql-demo',
+      sqlInputTypeChangeHandle: sqlInputChangeSpy
     });
 
     fireEvent.click(screen.getByText('上传SQL文件'));
     await act(async () => jest.advanceTimersByTime(300));
+    expect(sqlInputChangeSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 });

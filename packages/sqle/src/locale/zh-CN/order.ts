@@ -196,7 +196,11 @@ export default {
     analyze: 'SQL分析',
     format: 'SQL美化',
     formatTips:
-      '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。'
+      '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。',
+
+    selectExecuteMode: '选择上线模式',
+    executeSqlMode: 'SQL模式',
+    executeFileMode: '文件模式'
   },
 
   modifySql: {

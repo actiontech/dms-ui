@@ -3,33 +3,49 @@ import {
   IconOrderSQLUpload
 } from '../../../../icon/Order';
 import { SettingOutlined } from '@ant-design/icons';
-import { TypeUploadKeys } from './index.type';
 import { t } from '../../../../locale/index';
+import { ModeSwitcherOptionsType } from '@actiontech/shared/lib/components/ModeSwitcher/index.type';
+import { UploadTypeEnum } from '../SQLInfoForm/index.type';
 
-export const uploadItem: {
-  [key in TypeUploadKeys]: {
-    icon: React.ReactNode;
-    title: string;
-  };
-} = {
-  sql: {
+export const uploadTypeOptions: ModeSwitcherOptionsType = [
+  {
     icon: <IconOrderSQLUpload />,
-    title: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sql')
+    label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sql'),
+    value: UploadTypeEnum.sql,
+    colProps: {
+      span: 8
+    }
   },
-  git: {
-    icon: <SettingOutlined className="custom-icon" />,
-    title: t('sqlAudit.create.sqlInfo.uploadTypeEnum.git')
-  },
-  sqlFile: {
+  {
     icon: <IconOrderFileUpload />,
-    title: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sqlFile')
+    label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sqlFile'),
+    value: UploadTypeEnum.sqlFile,
+    colProps: {
+      span: 8
+    }
   },
-  mybatisFile: {
+  {
     icon: <IconOrderFileUpload />,
-    title: t('sqlAudit.create.sqlInfo.uploadTypeEnum.mybatisFile')
+    label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.mybatisFile'),
+    value: UploadTypeEnum.mybatisFile,
+    colProps: {
+      span: 8
+    }
   },
-  zipFile: {
+  {
     icon: <IconOrderFileUpload />,
-    title: t('sqlAudit.create.sqlInfo.uploadTypeEnum.zipFile')
+    label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.zipFile'),
+    value: UploadTypeEnum.zipFile,
+    colProps: {
+      span: 8
+    }
+  },
+  {
+    icon: <SettingOutlined />,
+    label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.git'),
+    value: UploadTypeEnum.git,
+    colProps: {
+      span: 8
+    }
   }
-};
+];
