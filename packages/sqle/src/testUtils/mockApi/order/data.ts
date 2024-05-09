@@ -8,6 +8,7 @@ import {
   AuditTaskResV1StatusEnum,
   GetWorkflowTasksItemV2StatusEnum,
   WorkflowRecordResV2StatusEnum,
+  WorkflowResV2ExecModeEnum,
   WorkflowResV2ModeEnum,
   WorkflowStepResV1StateEnum,
   WorkflowStepResV1TypeEnum,
@@ -228,7 +229,8 @@ export const workflowsOverviewListData = {
         }
       ]
     }
-  ]
+  ],
+  exec_mode: WorkflowResV2ExecModeEnum.sqls
 };
 
 export const workflowsDetailData = {

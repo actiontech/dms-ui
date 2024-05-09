@@ -1,11 +1,9 @@
 import AuditDetail from '.';
 import { OrderDetailAuditResultProps } from './index.type';
-
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../../testUtils/customRender';
-
 import order from '../../../testUtils/mockApi/order';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import {
@@ -16,13 +14,11 @@ import {
   IAuditTaskSQLResV2,
   IWorkflowResV2
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   AuditTaskResV1StatusEnum,
-  WorkflowRecordResV2StatusEnum
+  WorkflowRecordResV2StatusEnum,
+  WorkflowResV2ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
@@ -378,5 +374,19 @@ describe('sqle/Order/AuditDetail', () => {
       page_size: '20',
       task_id: '2'
     });
+  });
+
+  it('render snap when exec_mode is equal sql_file', async () => {
+    const { baseElement } = customRender({
+      taskInfos: AuditTaskResData,
+      orderInfo: {
+        ...workflowsOverviewListData,
+        exec_mode: WorkflowResV2ExecModeEnum.sql_file
+      } as unknown as IWorkflowResV2,
+      isArchive: true,
+      refreshOverviewFlag: true
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
   });
 });

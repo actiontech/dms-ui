@@ -1,0 +1,27 @@
+import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { TasksResultListStyleWrapper } from '../../style';
+import { WaterfallListProps } from './index.type';
+import SQLExecuteMode from './SQLExecuteMode';
+import classNames from 'classnames';
+
+const WaterfallList: React.FC<WaterfallListProps> = ({
+  executeMode,
+  ...props
+}) => {
+  return (
+    <TasksResultListStyleWrapper
+      className={classNames('task-result-scroll-infinite-list', {
+        'file-mode-task-result-infinite-list':
+          executeMode === WorkflowResV2ExecModeEnum.sql_file,
+        'sql-mode-task-result-infinite-list':
+          executeMode === WorkflowResV2ExecModeEnum.sqls
+      })}
+    >
+      {executeMode === WorkflowResV2ExecModeEnum.sqls ? (
+        <SQLExecuteMode {...props} />
+      ) : null}
+    </TasksResultListStyleWrapper>
+  );
+};
+
+export default WaterfallList;
