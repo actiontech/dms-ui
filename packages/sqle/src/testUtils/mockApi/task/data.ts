@@ -32,3 +32,84 @@ export const workflowTaskDetailMockData = {
   status: 'audited',
   sql_source: ''
 };
+
+export const TaskFileListMockData = [
+  {
+    file_id: '538',
+    file_name: 'create_table_if_not_exist.sql',
+    exec_order: 1,
+    exec_status: 'initialized',
+    audit_result_count: {
+      error_sql_count: 0,
+      warning_sql_count: 2,
+      normal_sql_count: 0,
+      notice_sql_count: 2
+    },
+    exec_result_count: null
+  },
+  {
+    file_id: '539',
+    file_name: 'create_table_roll_back.sql',
+    exec_order: 2,
+    exec_status: 'initialized',
+    audit_result_count: {
+      error_sql_count: 0,
+      warning_sql_count: 0,
+      normal_sql_count: 0,
+      notice_sql_count: 2
+    },
+    exec_result_count: null
+  },
+  {
+    file_id: '540',
+    file_name: 'new_folder/create_table_if_not_exist.sql',
+    exec_order: 3,
+    exec_status: 'initialized',
+    audit_result_count: {
+      error_sql_count: 0,
+      warning_sql_count: 2,
+      normal_sql_count: 0,
+      notice_sql_count: 2
+    },
+    exec_result_count: null
+  },
+  {
+    file_id: '541',
+    file_name: 'new_folder/create_table_roll_back.sql',
+    exec_order: 4,
+    exec_status: 'initialized',
+    audit_result_count: {
+      error_sql_count: 0,
+      warning_sql_count: 0,
+      normal_sql_count: 0,
+      notice_sql_count: 2
+    },
+    exec_result_count: null
+  },
+  {
+    file_id: '542',
+    file_name: 'new_folder/in_folder/create_table_if_not_exist.sql',
+    exec_order: 5,
+    exec_status: 'initialized',
+    audit_result_count: {
+      error_sql_count: 0,
+      warning_sql_count: 2,
+      normal_sql_count: 0,
+      notice_sql_count: 2
+    },
+    exec_result_count: null
+  },
+  {
+    file_id: '543',
+    file_name: 'new_folder/in_folder/create_table_roll_back.sql',
+    exec_order: 6,
+    exec_status: 'initialized',
+    audit_result_count: {
+      error_sql_count: 0,
+      warning_sql_count: 0,
+      normal_sql_count: 0,
+      notice_sql_count: 2
+    },
+    exec_result_count: null
+  }
+];

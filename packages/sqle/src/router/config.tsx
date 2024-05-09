@@ -166,6 +166,10 @@ const UpdateWorkflowTemplate = React.lazy(
       /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
     )
 );
+
+const SQLFileStatementOverview = React.lazy(
+  () => import('../page/Order/AuditDetail/SQLFileStatementOverview')
+);
 // #endif
 
 //sqle global page
@@ -224,7 +228,14 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         path: ':taskId/:sqlNum/analyze',
         element: <OrderSqlAnalyze />,
         key: 'orderAnalyze'
+      },
+      // #if [ee]
+      {
+        path: ':taskId/files/:fileId/sqls',
+        element: <SQLFileStatementOverview />,
+        key: 'SQLFileStatementOverview'
       }
+      // #endif
     ]
   },
   {

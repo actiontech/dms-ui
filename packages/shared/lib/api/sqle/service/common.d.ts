@@ -2437,6 +2437,26 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_template_name?: string;
 }
 
+export interface IAuditFileExecStatistic {
+  exec_result_count?: IExecResultCount;
+
+  file_id?: string;
+
+  file_name?: string;
+}
+
+export interface IAuditFileStatistic {
+  audit_result_count?: IAuditResultCount;
+
+  exec_order?: number;
+
+  exec_status?: string;
+
+  file_id?: string;
+
+  file_name?: string;
+}
+
 export interface IAuditPlanReportSQLResV2 {
   audit_plan_report_sql?: string;
 
@@ -2631,22 +2651,26 @@ export interface IExecResultCount {
   terminate_succeeded_count?: number;
 }
 
-export interface IFileOverview {
-  audit_result_count?: IAuditResultCount;
-
-  exec_order?: number;
-
-  exec_result_count?: IExecResultCount;
-
-  exec_status?: string;
-
-  file_id?: string;
-
-  file_name?: string;
-}
-
 export interface IFullSyncAuditPlanSQLsReqV2 {
   audit_plan_sql_list?: IAuditPlanSQLReqV2[];
+}
+
+export interface IGetAuditFileExecStatisticRes {
+  code?: number;
+
+  data?: IAuditFileExecStatistic;
+
+  message?: string;
+}
+
+export interface IGetAuditFileListRes {
+  code?: number;
+
+  data?: IAuditFileStatistic[];
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IGetAuditPlanAnalysisDataResV2 {
@@ -2671,16 +2695,6 @@ export interface IGetAuditPlansResV2 {
   code?: number;
 
   data?: IAuditPlanResV2[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
-export interface IGetAuditTaskFileOverviewRes {
-  code?: number;
-
-  data?: IFileOverview[];
 
   message?: string;
 

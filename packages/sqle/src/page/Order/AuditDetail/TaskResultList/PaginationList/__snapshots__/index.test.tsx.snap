@@ -4,20 +4,86 @@ exports[`test Order/TaskResultList/PaginationList should match snapshot 1`] = `
 <Styled(div)
   className="task-result-pagination-list sql-mode-task-result-pagination-list"
 >
-  <SQLExecuteMode
-    auditLevelFilterValue="all"
-    auditResultActiveKey="123"
-    currentListLayout="pagination"
-    duplicate={false}
-    pagination={
-      {
-        "page_index": 1,
-        "page_size": 10,
-      }
+  <ExecModeController
+    executeMode="sqls"
+    sqlComponent={
+      <SQLExecuteMode
+        auditLevelFilterValue="all"
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        duplicate={false}
+        pagination={
+          {
+            "page_index": 1,
+            "page_size": 10,
+          }
+        }
+        tableChange={[MockFunction]}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
     }
-    tableChange={[MockFunction]}
-    tableFilterInfo={{}}
-    taskId="123"
+    sqlFileComponent={
+      <FileExecuteMode
+        auditLevelFilterValue="all"
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        duplicate={false}
+        pagination={
+          {
+            "page_index": 1,
+            "page_size": 10,
+          }
+        }
+        tableChange={[MockFunction]}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+  />
+</Styled(div)>
+`;
+
+exports[`test Order/TaskResultList/PaginationList should match snapshot 2`] = `
+<Styled(div)
+  className="task-result-pagination-list file-mode-task-result-pagination-list"
+>
+  <ExecModeController
+    executeMode="sql_file"
+    sqlComponent={
+      <SQLExecuteMode
+        auditLevelFilterValue="all"
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        duplicate={false}
+        pagination={
+          {
+            "page_index": 1,
+            "page_size": 10,
+          }
+        }
+        tableChange={[MockFunction]}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+    sqlFileComponent={
+      <FileExecuteMode
+        auditLevelFilterValue="all"
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        duplicate={false}
+        pagination={
+          {
+            "page_index": 1,
+            "page_size": 10,
+          }
+        }
+        tableChange={[MockFunction]}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
   />
 </Styled(div)>
 `;
