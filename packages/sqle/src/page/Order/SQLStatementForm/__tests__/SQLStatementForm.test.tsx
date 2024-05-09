@@ -6,6 +6,7 @@ import { Form } from 'antd';
 
 import SQLStatementForm from '../SQLStatementForm';
 import { SQLStatementFormProps } from '../index';
+import { defaultUploadTypeOptions } from '../index.data';
 
 describe('sqle/Order/SQLStatementForm', () => {
   const customRender = (params: Omit<SQLStatementFormProps, 'form'> = {}) => {
@@ -58,10 +59,21 @@ describe('sqle/Order/SQLStatementForm', () => {
       fieldName: 'sql-demo',
       sqlInputTypeChangeHandle: sqlInputChangeSpy
     });
+    expect(sqlInputChangeSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('上传SQL文件'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(sqlInputChangeSpy).toHaveBeenCalledTimes(1);
+    expect(sqlInputChangeSpy).toHaveBeenCalledTimes(2);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render custom uploadTypeOptions', () => {
+    const { baseElement } = customRender({
+      fieldName: 'sql-demo',
+      sqlInputTypeChangeHandle: jest.fn(),
+      uploadTypeOptions: [defaultUploadTypeOptions[1]]
+    });
+
     expect(baseElement).toMatchSnapshot();
   });
 });

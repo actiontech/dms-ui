@@ -70,6 +70,18 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   });
 
   useEffect(() => {
+    if (uploadTypeOptions && uploadTypeOptions.length > 0) {
+      sqlInputTypeChangeHandle?.(uploadTypeOptions[0].value as SQLInputType);
+      form.setFieldValue(sqlInputTypeName, uploadTypeOptions[0].value);
+    } else {
+      sqlInputTypeChangeHandle?.(
+        defaultUploadTypeOptions[0].value as SQLInputType
+      );
+      form.setFieldValue(sqlInputTypeName, defaultUploadTypeOptions[0].value);
+    }
+  }, [form, sqlInputTypeChangeHandle, sqlInputTypeName, uploadTypeOptions]);
+
+  useEffect(() => {
     if (sqlStatement) {
       form.setFieldsValue({
         [fieldName]: {
@@ -92,10 +104,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
 
   return (
     <>
-      <FormItemNoLabel
-        name={sqlInputTypeName}
-        initialValue={SQLInputType.manualInput}
-      >
+      <FormItemNoLabel name={sqlInputTypeName}>
         <ModeSwitcher<SQLInputType>
           rowProps={{ gutter: 12 }}
           options={uploadTypeOptions ?? defaultUploadTypeOptions}
