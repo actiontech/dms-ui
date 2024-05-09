@@ -17,7 +17,8 @@ import {
 } from '@actiontech/shared';
 import {
   WorkflowResV2ModeEnum,
-  AuditTaskResV1SqlSourceEnum
+  AuditTaskResV1SqlSourceEnum,
+  CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { SQLInputType, SQLStatementFields } from '../../SQLStatementForm';
@@ -52,6 +53,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
   currentOrderTasks = [],
   modifiedOrderTasks,
   sqlMode,
+  executeMode,
   audit,
   cancel,
   open,
@@ -161,7 +163,9 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
         {
           ...values,
           dataBaseInfo,
-          isSameSqlOrder: sqlMode === WorkflowResV2ModeEnum.same_sqls
+          isSameSqlOrder: sqlMode === WorkflowResV2ModeEnum.same_sqls,
+          executeMode:
+            executeMode as unknown as CreateAuditTasksGroupReqV1ExecModeEnum
         },
         instanceInfo
       );
@@ -245,7 +249,6 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
           });
       }
     };
-
     if (open) {
       getAllSqlStatement();
       if (sqlMode === WorkflowResV2ModeEnum.different_sqls) {
@@ -261,8 +264,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
     open,
     sqlMode,
     startGetAllSqlStatement,
-    finishGetAllSqlStatement,
-    form
+    finishGetAllSqlStatement
   ]);
 
   return (
@@ -318,7 +320,6 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                     sqlStatement={
                       sqlStatementValue?.[currentOrderTasks[0]?.task_id ?? '']
                     }
-                    hideUpdateMybatisFile={true}
                   />
                 }
               >
@@ -326,7 +327,6 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                   ref={sqlStatementFormTabsRef}
                   form={form}
                   SQLStatementInfo={SQLStatementInfo}
-                  hideUpdateMybatisFile={true}
                 />
               </EmptyBox>
 

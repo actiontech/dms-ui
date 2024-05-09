@@ -163,6 +163,7 @@ const OrderDetail: React.FC = () => {
         audit={modifySqlAudit}
         currentOrderTasks={taskInfos}
         sqlMode={orderInfo?.mode ?? WorkflowResV2ModeEnum.same_sqls}
+        executeMode={orderInfo?.exec_mode}
         projectName={projectName}
         projectID={projectID}
         workflowID={orderInfo?.workflow_id ?? ''}

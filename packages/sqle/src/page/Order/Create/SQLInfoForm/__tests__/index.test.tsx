@@ -9,6 +9,7 @@ import { SQLInfoFormItemProps } from '../index.type';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockDatabaseType } from '../../../../../testUtils/mockHooks/mockDatabaseType';
+import { SQLInputType } from '../../../SQLStatementForm';
 
 describe('sqle/Order/Create/SQLInfoForm', () => {
   const projectName = mockProjectInfo.projectName;
@@ -30,7 +31,11 @@ describe('sqle/Order/Create/SQLInfoForm', () => {
       setCurrentSqlMode: jest.fn(),
       instanceInfo: new Map([[0, { instanceName: 'instance name 1' }]]),
       setInstanceInfo: jest.fn(),
-      auditLoading: false
+      auditLoading: false,
+      isSupportFileModeExecuteSQL: false,
+      setIsSupportFileModeExecuteSQL: jest.fn(),
+      currentSQLInputType: SQLInputType.manualInput,
+      setCurrentSQLInputType: jest.fn()
     };
     return superRender(<SQLInfoForm form={result.current[0]} {...params} />);
   };

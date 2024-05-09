@@ -23,6 +23,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
 
 import CreateOrder from '.';
+import system from '../../../testUtils/mockApi/system';
 
 describe('sqle/Order/CreateOrder', () => {
   const projectName = mockProjectInfo.projectName;
@@ -35,6 +36,7 @@ describe('sqle/Order/CreateOrder', () => {
   let requestInstance: jest.SpyInstance;
   let getAuditTaskSQLsSpy: jest.SpyInstance;
   let auditTaskGroupId: jest.SpyInstance;
+  let requestGetModalStatus: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<CreateOrder />);
@@ -58,6 +60,7 @@ describe('sqle/Order/CreateOrder', () => {
     requestAuditTask = order.createAuditTasks();
     getAuditTaskSQLsSpy = task.getAuditTaskSQLs();
     auditTaskGroupId = order.auditTaskGroupId();
+    requestGetModalStatus = system.getSystemModuleStatus();
   });
 
   afterEach(() => {
@@ -255,6 +258,7 @@ describe('sqle/Order/CreateOrder', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAudit).toHaveBeenCalled();
     expect(requestAudit).toHaveBeenCalledWith({
+      exec_mode: undefined,
       input_mybatis_xml_file: undefined,
       input_sql_file: undefined,
       input_zip_file: undefined,
@@ -363,6 +367,7 @@ describe('sqle/Order/CreateOrder', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAudit).toHaveBeenCalled();
     expect(requestAudit).toHaveBeenCalledWith({
+      exec_mode: undefined,
       input_mybatis_xml_file: undefined,
       input_sql_file: undefined,
       input_zip_file: undefined,
@@ -443,6 +448,8 @@ describe('sqle/Order/CreateOrder', () => {
     });
     await act(async () => jest.advanceTimersByTime(0));
 
+    expect(screen.queryByText('文件模式')).not.toBeInTheDocument();
+
     // audit btn
     await act(async () => {
       fireEvent.click(screen.getByText('审 核'));
@@ -453,6 +460,7 @@ describe('sqle/Order/CreateOrder', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAudit).toHaveBeenCalled();
     expect(requestAudit).toHaveBeenCalledWith({
+      exec_mode: undefined,
       input_mybatis_xml_file: undefined,
       input_sql_file: undefined,
       input_zip_file: undefined,
@@ -530,6 +538,7 @@ describe('sqle/Order/CreateOrder', () => {
       }
     );
     await act(async () => jest.advanceTimersByTime(2000));
+    fireEvent.click(screen.getByText('文件模式'));
 
     // audit btn
     await act(async () => {
@@ -538,6 +547,7 @@ describe('sqle/Order/CreateOrder', () => {
     });
     expect(requestAuditTask).toHaveBeenCalled();
     expect(requestAuditTask).toHaveBeenCalledWith({
+      exec_mode: 'sql_file',
       instances: [
         { instance_name: 'xin-test-database', instance_schema: 'test' }
       ],

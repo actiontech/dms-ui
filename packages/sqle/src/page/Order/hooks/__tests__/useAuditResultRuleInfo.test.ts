@@ -2,7 +2,6 @@ import useAuditResultRuleInfo from '../useAuditResultRuleInfo';
 
 import { act, cleanup, renderHook } from '@testing-library/react';
 import rule_template from '../../../../testUtils/mockApi/rule_template';
-import { ruleNameFirst } from '../../../../testUtils/mockApi/rule_template/data';
 
 const auditResultData = [
   {
