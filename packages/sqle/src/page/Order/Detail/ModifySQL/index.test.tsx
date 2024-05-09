@@ -7,10 +7,15 @@ import ModifySQL from '.';
 import order from '../../../../testUtils/mockApi/order';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  AuditTaskResV1SqlSourceEnum,
+  WorkflowResV2ModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { AuditTaskResData } from '../../../../testUtils/mockApi/order/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import eventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 
 const projectName = 'project name';
 const projectID = 'project ID';
@@ -63,6 +68,7 @@ describe('sqle/Order/Detail/ModifySQL', () => {
   });
 
   it('render snap when open is true', async () => {
+    const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const { baseElement } = customRender({
       open: true,
       currentOrderTasks: [AuditTaskResData[0]],
@@ -76,8 +82,8 @@ describe('sqle/Order/Detail/ModifySQL', () => {
 
     expect(screen.getByText('修改审核语句')).toBeInTheDocument();
     expect(screen.getByText('输入SQL语句')).toBeInTheDocument();
-    expect(screen.getByText('上传SQL文件')).toBeInTheDocument();
-    expect(screen.getByText('上传ZIP文件')).toBeInTheDocument();
+    expect(screen.queryByText('上传SQL文件')).not.toBeInTheDocument();
+    expect(screen.queryByText('上传ZIP文件')).not.toBeInTheDocument();
 
     expect(screen.getByText('返回工单详情')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回工单详情'));
@@ -95,6 +101,11 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     });
     await act(async () => jest.advanceTimersByTime(2600));
     expect(baseElement).toMatchSnapshot();
+
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.Reset_Tasks_Result_Active_Key
+    );
   });
 
   it('render snap when click sql audit btn', async () => {
@@ -131,9 +142,6 @@ describe('sqle/Order/Detail/ModifySQL', () => {
       modifiedOrderTasks: [AuditTaskResData[1]]
     });
 
-    await act(async () => jest.advanceTimersByTime(3300));
-    fireEvent.click(screen.getByText('上传SQL文件'));
-    await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('SQL美化')).toBeInTheDocument();
     fireEvent.click(screen.getByText('SQL美化'));
     expect(baseElement).toMatchSnapshot();
@@ -155,8 +163,18 @@ describe('sqle/Order/Detail/ModifySQL', () => {
     cleanup();
     customRender({
       open: true,
-      currentOrderTasks: [AuditTaskResData[0]],
-      modifiedOrderTasks: [AuditTaskResData[1]],
+      currentOrderTasks: [
+        {
+          ...AuditTaskResData[0],
+          sql_source: AuditTaskResV1SqlSourceEnum.sql_file
+        }
+      ],
+      modifiedOrderTasks: [
+        {
+          ...AuditTaskResData[1],
+          sql_source: AuditTaskResV1SqlSourceEnum.sql_file
+        }
+      ],
       sqlMode: WorkflowResV2ModeEnum.different_sqls
     });
     await act(async () => jest.advanceTimersByTime(3300));

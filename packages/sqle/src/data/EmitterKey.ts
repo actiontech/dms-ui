@@ -7,6 +7,8 @@ enum EmitterKey {
 
   Reset_Create_Order_Form = 'RESET_CREATE_ORDER_FORM',
 
+  Reset_Tasks_Result_Active_Key = 'Update_Tasks_Result_Active_Key',
+
   Reset_Test_Data_Source_Connect = 'RESET_TEST_DATA_SOURCE_CONNECT',
 
   Submit_Audit_Plan_Form = 'SUBMIT_AUDIT_PLAN_FORM',
