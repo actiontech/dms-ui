@@ -1,25 +1,22 @@
 import {
   IAuditTaskSQLResV2,
-  IFileOverview
+  IAuditFileStatistic
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  WorkflowRecordResV2StatusEnum,
-  WorkflowResV2ExecModeEnum
-} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 type BaseProps = {
-  projectName: string;
   taskId: string;
 };
 
 export type SQLExecuteResultCardProps = BaseProps &
   IAuditTaskSQLResV2 & {
     onUpdateDescription?: () => void;
+    projectName: string;
   };
 
 export type FileExecuteResultCardProps = BaseProps &
-  IFileOverview & {
-    orderStatus?: WorkflowRecordResV2StatusEnum;
+  IAuditFileStatistic & {
+    projectID: string;
   };
 
 export type ResultCardProps =

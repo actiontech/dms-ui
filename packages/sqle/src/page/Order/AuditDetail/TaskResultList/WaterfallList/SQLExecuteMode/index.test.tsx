@@ -3,10 +3,11 @@ import SQLExecuteMode from '.';
 import { renderWithTheme } from '../../../../../../testUtils/customRender';
 import task from '../../../../../../testUtils/mockApi/task';
 import { SQLExecuteModeProps } from './index.type';
-import { act, cleanup } from '@testing-library/react';
+import { act, cleanup, fireEvent } from '@testing-library/react';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ListLayoutEnum } from '../../../../Common/ListLayoutSelector/index.types';
 import { OVERVIEW_TAB_KEY } from '../../../index.data';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 const mockListData: IAuditTaskSQLResV2[] = [];
 for (let i = 0; i < 50; i++) {
@@ -89,5 +90,38 @@ describe('test WaterfallList/SQLExecuteMode', () => {
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(0);
 
     await act(async () => jest.advanceTimersByTime(0));
+  });
+
+  it('render onUpdateDescription', async () => {
+    const getAuditTaskSQLsSpy = task.getAuditTaskSQLs();
+    const updateAuditTaskSpy = task.updateAuditTaskSQLs();
+    const { container } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.change(getBySelector('.result-describe-input'), {
+      target: { value: 'update description' }
+    });
+    fireEvent.blur(getBySelector('.result-describe-input'));
+
+    expect(updateAuditTaskSpy).toHaveBeenCalledTimes(1);
+    expect(updateAuditTaskSpy).toHaveBeenCalledWith({
+      number: '1',
+      description: 'update description',
+      task_id: '123'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(2);
+    expect(getAuditTaskSQLsSpy).toHaveBeenNthCalledWith(2, {
+      task_id: '123',
+      page_index: '1',
+      page_size: '20',
+      no_duplicate: false,
+      filter_exec_status: undefined
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(container).toMatchSnapshot();
   });
 });

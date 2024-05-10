@@ -3,6 +3,8 @@ import { TasksResultListStyleWrapper } from '../../style';
 import { WaterfallListProps } from './index.type';
 import SQLExecuteMode from './SQLExecuteMode';
 import classNames from 'classnames';
+import FileExecuteMode from './FileExecuteMode';
+import ExecModeController from '../Common/ExecModeController';
 
 const WaterfallList: React.FC<WaterfallListProps> = ({
   executeMode,
@@ -17,9 +19,11 @@ const WaterfallList: React.FC<WaterfallListProps> = ({
           executeMode === WorkflowResV2ExecModeEnum.sqls
       })}
     >
-      {executeMode === WorkflowResV2ExecModeEnum.sqls ? (
-        <SQLExecuteMode {...props} />
-      ) : null}
+      <ExecModeController
+        sqlComponent={<SQLExecuteMode {...props} />}
+        sqlFileComponent={<FileExecuteMode {...props} />}
+        executeMode={executeMode}
+      />
     </TasksResultListStyleWrapper>
   );
 };
