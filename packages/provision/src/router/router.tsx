@@ -13,6 +13,12 @@ const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 // const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
+const AccountManagement = React.lazy(() => import('../page/AccountManagement'));
+
+const PasswordManagement = React.lazy(
+  () => import('../page/PasswordManagement')
+);
+
 export type RouterConfigItem = RouteObject & {
   label?: string;
   icon?: ReactNode;
@@ -65,7 +71,18 @@ export const AuthRouterConfig: RouterConfigItem[] = [
       }
     ]
   },
-
+  {
+    path: `${PROJECT_ROUTER_PARAM}/account-management`,
+    label: 'provisionNav.menu.accountManagement',
+    key: 'accountManagement',
+    element: <AccountManagement />
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/password-management`,
+    label: 'provisionNav.menu.passwordManagement',
+    key: 'passwordManagement',
+    element: <PasswordManagement />
+  },
   {
     label: 'provisionNav.menu.dataObjectWrapper',
     key: 'dataObjectWrapper',

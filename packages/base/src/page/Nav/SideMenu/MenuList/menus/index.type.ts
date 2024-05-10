@@ -38,4 +38,6 @@ export type MenuStructTreeKey =
   | 'auth-list'
   | 'data-mask-rule'
   | 'auth-audit'
-  | 'template-audit';
+  | 'template-audit'
+  | 'account-management'
+  | 'password-management';

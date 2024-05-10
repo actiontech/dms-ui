@@ -31,7 +31,9 @@ import {
   authListMenuItem,
   permissionGroupMenuItem,
   permissionTemplateMenuItem,
-  templateAuditMenuItem
+  templateAuditMenuItem,
+  accountManagementMenuItem,
+  passwordManagementMenuItem
 } from './provision';
 import { dataMaskRuleMenuItem } from './dms';
 
@@ -67,6 +69,8 @@ export const dmsSideMenuData = (
     authListMenuItem,
     authAuditMenuItem,
     templateAuditMenuItem,
+    accountManagementMenuItem,
+    passwordManagementMenuItem,
     // #endif
 
     // #if [dms]
@@ -119,7 +123,9 @@ export const dmsSideMenuData = (
         'permission-group',
         'permission-template',
         'auth-list',
-        'data-mask-rule'
+        'data-mask-rule',
+        'account-management',
+        'password-management'
       ]
     },
     { type: 'divider' },

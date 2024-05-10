@@ -49,6 +49,32 @@ export const authListMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'auth-list'
 });
 
+export const accountManagementMenuItem: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/account-management`}>
+      {t('dmsMenu.accountManagement')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/account-management`,
+  icon: <Icon component={IconAuthList} />,
+  structKey: 'account-management'
+});
+
+export const passwordManagementMenuItem: GenerateMenuItemType = (
+  projectID
+) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/password-management`}>
+      {t('dmsMenu.passwordManagement')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/password-management`,
+  icon: <Icon component={IconPermissionTemplate} />,
+  structKey: 'password-management'
+});
+
 export const authAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/provision/project/${projectID}/audit/auth`}>
