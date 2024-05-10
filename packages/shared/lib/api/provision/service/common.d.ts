@@ -1,10 +1,13 @@
 import {
   AddDataObjectSourceNameEnum,
+  DMSProxyTargetScenarioEnum,
   DataObjectSourceNameEnum,
   DelDataObjectSourceDeleteModEnum,
+  StatusEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
   ListAuthorizationStatusEnum,
+  ListDBAccountStatusEnum,
   ListServiceDbTypeEnum,
   ListServiceTypeEnum,
   ListUserAuthenticationTypeEnum,
@@ -18,6 +21,38 @@ import {
   SyncRuleFieldNameEnum,
   SyncRuleRuleNameEnum
 } from './common.enum';
+
+export interface IAccessTokenInfo {
+  access_token?: string;
+
+  is_expired?: boolean;
+
+  token_expired_timestamp?: string;
+}
+
+export interface IAccountDetail {
+  address?: string;
+
+  connect_string?: string;
+
+  expired_time?: number;
+
+  explanation?: string;
+
+  hostname?: string;
+
+  password?: string;
+
+  password_create_time?: number;
+
+  user?: string;
+}
+
+export interface IAccountInfo {
+  hostname?: string;
+
+  user?: string;
+}
 
 export interface IAddAuthorization {
   data_permission_template_uid: string;
@@ -40,6 +75,32 @@ export interface IAddAuthorizationReply {
 
   data?: {
     uid?: string;
+  };
+
+  message?: string;
+}
+
+export interface IAddDBAccount {
+  data_permissions?: IDataPermission[];
+
+  db_account: IDBAccount;
+
+  db_service_uid: string;
+
+  effective_time_day?: number;
+
+  explanation?: string;
+
+  password_security_policy?: string;
+
+  used_by_sql_workbench: boolean;
+}
+
+export interface IAddDBAccountReply {
+  code?: number;
+
+  data?: {
+    db_account_uid?: string;
   };
 
   message?: string;
@@ -93,6 +154,22 @@ export interface IAddDataPermissionTemplateReply {
   message?: string;
 }
 
+export interface IAddPasswordSecurityPolicy {
+  name: string;
+
+  password_expiration_period: number;
+}
+
+export interface IAddPasswordSecurityPolicyReply {
+  code?: number;
+
+  data?: {
+    uid?: string;
+  };
+
+  message?: string;
+}
+
 export interface IAddServiceReply {
   code?: number;
 
@@ -111,6 +188,14 @@ export interface IAdditionalParam {
   type?: string;
 
   value?: string;
+}
+
+export interface IBusiness {
+  id?: string;
+
+  is_used?: boolean;
+
+  name?: string;
 }
 
 export interface ICopyDataPermissionTemplate {
@@ -137,12 +222,28 @@ export interface IDBAccount {
   username: string;
 }
 
+export interface IDBAccountBody {
+  hostname?: string;
+
+  permission_info?: IPermissionInfo;
+
+  user?: string;
+}
+
+export interface IDBAccountDataPermission {
+  data_objects?: IDataObjectInDataPermission[];
+
+  data_operation_sets?: IDataOperationSetInDataPermission[];
+}
+
 export interface IDMSProxyTarget {
   addr: string;
 
   name: string;
 
   proxy_url_prefixs: string[];
+
+  scenario?: DMSProxyTargetScenarioEnum;
 
   version: string;
 }
@@ -233,6 +334,24 @@ export interface IDelUserPreCheckReply {
   message?: string;
 }
 
+export interface IDiscoveryDBAccountReply {
+  code?: number;
+
+  data?: {
+    accounts?: IDBAccountBody[];
+  };
+
+  message?: string;
+}
+
+export interface IGenAccessTokenReply {
+  code?: number;
+
+  data?: IAccessTokenInfo;
+
+  message?: string;
+}
+
 export interface IGenericResp {
   code?: number;
 
@@ -254,6 +373,30 @@ export interface IGetAuthorizationReply {
     permission_user?: string;
 
     purpose?: string;
+  };
+
+  message?: string;
+}
+
+export interface IGetDBAccountReply {
+  code?: number;
+
+  data?: {
+    account_info?: IAccountDetail;
+
+    auth_users?: string[];
+
+    data_permissions?: IDBAccountDataPermission[];
+
+    db_account_uid?: string;
+
+    db_service?: string;
+
+    password_managed?: boolean;
+
+    password_security_policy?: string;
+
+    status?: StatusEnum;
   };
 
   message?: string;
@@ -287,7 +430,17 @@ export interface IGetStatementsByDataPermissionTemplateReply {
   message?: string;
 }
 
+export interface IGetStatementsReply {
+  code?: number;
+
+  data?: IStatement[];
+
+  message?: string;
+}
+
 export interface IGetUser {
+  access_token_info?: IAccessTokenInfo;
+
   authentication_type?: GetUserAuthenticationTypeEnum;
 
   email?: string;
@@ -301,6 +454,8 @@ export interface IGetUser {
   phone?: string;
 
   stat?: GetUserStatEnum;
+
+  third_party_user_info?: string;
 
   uid?: string;
 
@@ -440,21 +595,25 @@ export interface IListBusinessFromDBServiceReply {
 }
 
 export interface IListDBAccount {
-  connection_cmd?: string;
+  account_info?: IAccountInfo;
 
-  datasource_dns?: string;
+  auth_users?: IUidWithName[];
 
-  db_service_uid?: string;
+  db_account_uid?: string;
+
+  db_service?: IUidWithName;
+
+  expired_time?: number;
 
   explanation?: string;
 
-  hostname?: string;
+  password_security_policy?: string;
 
-  password?: string;
+  platform_managed?: boolean;
 
-  uid?: string;
+  status?: ListDBAccountStatusEnum;
 
-  user?: string;
+  used_by_workbench?: boolean;
 }
 
 export interface IListDBAccountByAuth {
@@ -503,6 +662,8 @@ export interface IListDBService {
   desc?: string;
 
   host?: string;
+
+  is_enable_masking?: boolean;
 
   maintenance_times?: IMaintenanceTime[];
 
@@ -691,14 +852,28 @@ export interface IListOperationsReply {
   total_nums?: number;
 }
 
+export interface IListPasswordSecurityPolicysReply {
+  code?: number;
+
+  data?: IPasswordSecurityPolicy[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListProject {
   archived?: boolean;
+
+  business?: IBusiness[];
 
   create_time?: string;
 
   create_user?: IUidWithName;
 
   desc?: string;
+
+  is_fixed_business?: boolean;
 
   name?: string;
 
@@ -780,6 +955,8 @@ export interface IListUser {
 
   stat?: ListUserStatEnum;
 
+  third_party_user_info?: string;
+
   uid?: string;
 
   user_groups?: IUidWithName[];
@@ -843,6 +1020,38 @@ export interface IOperationInfo {
   data_operations?: IOperation[];
 
   db_type?: OperationInfoDbTypeEnum;
+}
+
+export interface IPasswordConfig {
+  db_account_password?: string;
+
+  password_security_policy?: string;
+
+  renewal_effective_time_day?: number;
+}
+
+export interface IPasswordSecurityPolicy {
+  is_default?: boolean;
+
+  name?: string;
+
+  password_expiration_period?: number;
+
+  uid?: string;
+}
+
+export interface IPermissionInfo {
+  grants?: string[];
+}
+
+export interface IPermissionUsers {
+  permission_user_uids?: string[];
+}
+
+export interface IPlatformManaged {
+  manage_password?: string;
+
+  platform_managed?: boolean;
 }
 
 export interface IPlugin {
@@ -953,6 +1162,20 @@ export interface IUpdateAuthorizationUser {
   permission_user_uid?: string;
 }
 
+export interface IUpdateDBAccount {
+  explanation?: string;
+
+  lock?: boolean;
+
+  password_config?: IPasswordConfig;
+
+  permission_users?: IPermissionUsers;
+
+  platform_managed?: IPlatformManaged;
+
+  used_by_sql_workbench?: boolean;
+}
+
 export interface IUpdateDataObjectSource {
   address: string;
 
@@ -971,6 +1194,12 @@ export interface IUpdateDataPermissionTemplateReply {
   code?: number;
 
   message?: string;
+}
+
+export interface IUpdatePasswordSecurityPolicy {
+  name?: string;
+
+  password_expiration_period?: number;
 }
 
 export interface IUpdateService {
