@@ -628,7 +628,7 @@ exports[`sqle/Order/Create/SQLInfoFormItem render snap page 1`] = `
                     style="padding-left: 6px; padding-right: 6px;"
                   >
                     <div
-                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                      class="actiontech-mode-switcher-item css-1x7j8vu"
                     >
                       <span
                         class="actiontech-mode-switcher-item-icon"
@@ -657,6 +657,7 @@ exports[`sqle/Order/Create/SQLInfoFormItem render snap page 1`] = `
                       </span>
                       <div
                         class="active-icon-wrapper"
+                        hidden=""
                       >
                         <span
                           class="icon-mode-switcher-checked active-icon css-u3jcp4"

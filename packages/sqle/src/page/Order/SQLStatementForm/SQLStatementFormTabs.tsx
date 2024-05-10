@@ -18,7 +18,15 @@ import SQLStatementForm from './SQLStatementForm';
 const SQLStatementFormTabs: React.ForwardRefRenderFunction<
   SQLStatementFormTabsRefType,
   SQLStatementFormTabsProps
-> = ({ SQLStatementInfo, tabsChangeHandle: onChange, ...props }, ref) => {
+> = (
+  {
+    SQLStatementInfo,
+    tabsChangeHandle: onChange,
+    autoNavigateToLastTab = true,
+    ...props
+  },
+  ref
+) => {
   const { t } = useTranslation();
   const [activeKey, setActiveKey] = useState(SQLStatementInfo[0]?.key ?? '');
 
@@ -41,10 +49,12 @@ const SQLStatementFormTabs: React.ForwardRefRenderFunction<
   );
 
   useEffect(() => {
-    setActiveKey(
-      (v) => SQLStatementInfo[SQLStatementInfo.length - 1]?.key ?? v ?? ''
-    );
-  }, [SQLStatementInfo]);
+    if (autoNavigateToLastTab) {
+      setActiveKey(
+        (v) => SQLStatementInfo[SQLStatementInfo.length - 1]?.key ?? v ?? ''
+      );
+    }
+  }, [SQLStatementInfo, autoNavigateToLastTab]);
 
   return (
     <>

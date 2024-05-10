@@ -3965,7 +3965,7 @@ exports[`sqle/Order/Detail render snap detail when have multiple states 1`] = `
                     class="ant-segmented-group"
                   >
                     <label
-                      class="ant-segmented-item ant-segmented-item-selected"
+                      class="ant-segmented-item"
                     >
                       <input
                         class="ant-segmented-item-input"
@@ -3980,7 +3980,9 @@ exports[`sqle/Order/Detail render snap detail when have multiple states 1`] = `
                     </label>
                   </div>
                 </div>
-                <div>
+                <div
+                  hidden=""
+                >
                   <div
                     class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                   >
