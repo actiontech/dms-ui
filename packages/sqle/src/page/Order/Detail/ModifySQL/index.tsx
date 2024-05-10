@@ -52,6 +52,7 @@ import { defaultUploadTypeOptions } from '../../SQLStatementForm/index.data';
 import { ModeSwitcherOptionsType } from '@actiontech/shared/lib/components/ModeSwitcher/index.type';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { SQLInputTypeMapType } from '../../Create/index.type';
 
 const ModifySQL: React.FC<ModifySQLProps> = ({
   currentOrderTasks = [],
@@ -220,47 +221,46 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
     }
   };
 
-  const getUploadTypeOptions = useCallback(
-    (key?: string) => {
-      const sqlSource =
-        sqlMode === WorkflowResV2ModeEnum.same_sqls
-          ? currentOrderTasks[0]?.sql_source
-          : currentOrderTasks.find((v) => v.task_id?.toString() === key)
-              ?.sql_source;
-      return defaultUploadTypeOptions.filter((item) => {
-        if (!sqlSource) {
-          return true;
-        }
+  const [sqlInputTypeMap, setSqlInputTypeMap] = useState<SQLInputTypeMapType>(
+    new Map([['0', SQLInputType.manualInput]])
+  );
+  const [differentModeActiveKey, setDifferentModeActiveKey] =
+    useState<string>('');
 
-        if (sqlSource === AuditTaskResV1SqlSourceEnum.form_data) {
-          return item.value === SQLInputType.manualInput;
-        }
+  const currentSQLInputType = useMemo(() => {
+    return sqlInputTypeMap.get(differentModeActiveKey || '0');
+  }, [differentModeActiveKey, sqlInputTypeMap]);
 
-        if (sqlSource === AuditTaskResV1SqlSourceEnum.sql_file) {
-          return item.value === SQLInputType.uploadFile;
-        }
-
-        if (sqlSource === AuditTaskResV1SqlSourceEnum.zip_file) {
-          return item.value === SQLInputType.zipFile;
-        }
+  const uploadTypeOptions = useMemo(() => {
+    const sqlSource =
+      sqlMode === WorkflowResV2ModeEnum.same_sqls
+        ? currentOrderTasks[0]?.sql_source
+        : currentOrderTasks.find(
+            (v) => v.task_id?.toString() === differentModeActiveKey
+          )?.sql_source;
+    return defaultUploadTypeOptions.filter((item) => {
+      if (!sqlSource) {
         return true;
-      });
-    },
-    [currentOrderTasks, sqlMode]
-  );
-  const [uploadTypeOptions, setUploadTypeOptions] =
-    useState<ModeSwitcherOptionsType>([]);
+      }
 
-  const sqlStatementFormTabsChangeHandle = useCallback(
-    (activeKey: string) => {
-      setUploadTypeOptions(getUploadTypeOptions(activeKey));
-    },
-    [getUploadTypeOptions]
-  );
+      if (sqlSource === AuditTaskResV1SqlSourceEnum.form_data) {
+        return item.value === SQLInputType.manualInput;
+      }
 
-  useEffect(() => {
-    setUploadTypeOptions(getUploadTypeOptions());
-  }, [getUploadTypeOptions]);
+      if (sqlSource === AuditTaskResV1SqlSourceEnum.sql_file) {
+        return item.value === SQLInputType.uploadFile;
+      }
+
+      if (sqlSource === AuditTaskResV1SqlSourceEnum.zip_file) {
+        return item.value === SQLInputType.zipFile;
+      }
+      return true;
+    });
+  }, [currentOrderTasks, differentModeActiveKey, sqlMode]);
+
+  const sqlStatementFormTabsChangeHandle = useCallback((activeKey: string) => {
+    setDifferentModeActiveKey(activeKey);
+  }, []);
 
   useEffect(() => {
     const getAllSqlStatement = () => {
@@ -372,6 +372,9 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                       sqlStatementValue?.[currentOrderTasks[0]?.task_id ?? '']
                     }
                     uploadTypeOptions={uploadTypeOptions}
+                    sqlInputTypeMap={sqlInputTypeMap}
+                    setSqlInputTypeMap={setSqlInputTypeMap}
+                    autoSetDefaultSqlInput
                   />
                 }
               >
@@ -382,6 +385,10 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                   uploadTypeOptions={uploadTypeOptions}
                   autoNavigateToLastTab={false}
                   tabsChangeHandle={sqlStatementFormTabsChangeHandle}
+                  sqlInputTypeMap={sqlInputTypeMap}
+                  setSqlInputTypeMap={setSqlInputTypeMap}
+                  activeKey={differentModeActiveKey}
+                  autoSetDefaultSqlInput
                 />
               </EmptyBox>
 
@@ -394,18 +401,21 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                   {t('order.sqlInfo.audit')}
                 </BasicButton>
                 <BasicButton
+                  hidden={currentSQLInputType !== SQLInputType.manualInput}
                   onClick={formatSql}
                   loading={auditLoading || submitLoading}
                 >
                   {t('order.sqlInfo.format')}
                 </BasicButton>
 
-                <BasicToolTips
-                  prefixIcon={<IconTipGray />}
-                  title={t('order.sqlInfo.formatTips', {
-                    supportType: Object.keys(FormatLanguageSupport).join('、')
-                  })}
-                />
+                {currentSQLInputType === SQLInputType.manualInput && (
+                  <BasicToolTips
+                    prefixIcon={<IconTipGray />}
+                    title={t('order.sqlInfo.formatTips', {
+                      supportType: Object.keys(FormatLanguageSupport).join('、')
+                    })}
+                  />
+                )}
               </Space>
             </FormAreaBlockStyleWrapper>
           </FormAreaLineStyleWrapper>
