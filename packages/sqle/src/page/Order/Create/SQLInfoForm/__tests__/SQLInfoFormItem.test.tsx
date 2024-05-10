@@ -44,8 +44,10 @@ describe('sqle/Order/Create/SQLInfoFormItem', () => {
       auditLoading: false,
       isSupportFileModeExecuteSQL: false,
       setIsSupportFileModeExecuteSQL: setIsSupportFileModeExecuteSQLFn,
-      currentSQLInputType: SQLInputType.manualInput,
-      setCurrentSQLInputType: jest.fn()
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: jest.fn(),
+      differentModeActiveKey: '0',
+      setDifferentModeActiveKey: jest.fn()
     };
     return renderWithThemeAndRedux(
       <Form>

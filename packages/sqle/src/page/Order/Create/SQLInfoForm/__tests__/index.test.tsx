@@ -34,8 +34,10 @@ describe('sqle/Order/Create/SQLInfoForm', () => {
       auditLoading: false,
       isSupportFileModeExecuteSQL: false,
       setIsSupportFileModeExecuteSQL: jest.fn(),
-      currentSQLInputType: SQLInputType.manualInput,
-      setCurrentSQLInputType: jest.fn()
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: jest.fn(),
+      differentModeActiveKey: '0',
+      setDifferentModeActiveKey: jest.fn()
     };
     return superRender(<SQLInfoForm form={result.current[0]} {...params} />);
   };
