@@ -163,7 +163,6 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
       }
     }
   };
-
   const currentSQLInputType = useMemo(() => {
     return sqlInputTypeMap.get(differentModeActiveKey || '0');
   }, [differentModeActiveKey, sqlInputTypeMap]);
@@ -198,6 +197,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         instanceNameChange={instanceNameChange}
         setChangeSqlModeDisabled={setChangeSqlModeDisabledAndSetValue}
         setIsSupportFileModeExecuteSQL={setIsSupportFileModeExecuteSQL}
+        setSqlInputTypeMap={setSqlInputTypeMap}
         {...otherProps}
       />
       <FormItemLabel

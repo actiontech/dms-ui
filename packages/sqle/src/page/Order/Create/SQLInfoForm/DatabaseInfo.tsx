@@ -34,6 +34,7 @@ import {
   getSystemModuleStatusDbTypeEnum,
   getSystemModuleStatusModuleNameEnum
 } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
+import { SQLInputType } from '../../SQLStatementForm';
 
 const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   form,
@@ -46,7 +47,8 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   setSchemaList,
   ruleTemplates,
   setRuleTemplates,
-  setIsSupportFileModeExecuteSQL
+  setIsSupportFileModeExecuteSQL,
+  setSqlInputTypeMap
 }) => {
   const { t } = useTranslation();
   const [getSchemaListLoading, setGetSchemaListLoading] = useState<
@@ -150,8 +152,16 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   ) => {
     if (type === 'add') {
       instanceTypeMap.current.set(key, instanceType);
+      setSqlInputTypeMap((map) => {
+        map.set(key.toString(), SQLInputType.manualInput);
+        return new Map(map);
+      });
     } else if (type === 'remove') {
       instanceTypeMap.current.delete(key);
+      setSqlInputTypeMap((map) => {
+        map.delete(key.toString());
+        return new Map(map);
+      });
     }
     const instanceTypeSet = new Set(instanceTypeMap.current.values());
     const isExistDifferentInstanceType = instanceTypeSet.size > 1;
