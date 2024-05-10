@@ -48,6 +48,10 @@ import { IconOrderCreateTitleStyleWrapper } from '../../Create/BaseInfoForm/styl
 import AuditResultList from '../../Common/AuditResultList';
 import { cloneDeep } from 'lodash';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
+import { defaultUploadTypeOptions } from '../../SQLStatementForm/index.data';
+import { ModeSwitcherOptionsType } from '@actiontech/shared/lib/components/ModeSwitcher/index.type';
+import eventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 
 const ModifySQL: React.FC<ModifySQLProps> = ({
   currentOrderTasks = [],
@@ -122,6 +126,11 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
           refreshOverviewAction();
 
           cancel();
+
+          /**
+           * 驳回成功后 task 更新，需要同步更新外层 active 的key
+           */
+          eventEmitter.emit(EmitterKey.Reset_Tasks_Result_Active_Key);
         }
       })
       .finally(() => {
@@ -210,6 +219,48 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
       ]);
     }
   };
+
+  const getUploadTypeOptions = useCallback(
+    (key?: string) => {
+      const sqlSource =
+        sqlMode === WorkflowResV2ModeEnum.same_sqls
+          ? currentOrderTasks[0]?.sql_source
+          : currentOrderTasks.find((v) => v.task_id?.toString() === key)
+              ?.sql_source;
+      return defaultUploadTypeOptions.filter((item) => {
+        if (!sqlSource) {
+          return true;
+        }
+
+        if (sqlSource === AuditTaskResV1SqlSourceEnum.form_data) {
+          return item.value === SQLInputType.manualInput;
+        }
+
+        if (sqlSource === AuditTaskResV1SqlSourceEnum.sql_file) {
+          return item.value === SQLInputType.uploadFile;
+        }
+
+        if (sqlSource === AuditTaskResV1SqlSourceEnum.zip_file) {
+          return item.value === SQLInputType.zipFile;
+        }
+        return true;
+      });
+    },
+    [currentOrderTasks, sqlMode]
+  );
+  const [uploadTypeOptions, setUploadTypeOptions] =
+    useState<ModeSwitcherOptionsType>([]);
+
+  const sqlStatementFormTabsChangeHandle = useCallback(
+    (activeKey: string) => {
+      setUploadTypeOptions(getUploadTypeOptions(activeKey));
+    },
+    [getUploadTypeOptions]
+  );
+
+  useEffect(() => {
+    setUploadTypeOptions(getUploadTypeOptions());
+  }, [getUploadTypeOptions]);
 
   useEffect(() => {
     const getAllSqlStatement = () => {
@@ -320,6 +371,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                     sqlStatement={
                       sqlStatementValue?.[currentOrderTasks[0]?.task_id ?? '']
                     }
+                    uploadTypeOptions={uploadTypeOptions}
                   />
                 }
               >
@@ -327,6 +379,9 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                   ref={sqlStatementFormTabsRef}
                   form={form}
                   SQLStatementInfo={SQLStatementInfo}
+                  uploadTypeOptions={uploadTypeOptions}
+                  autoNavigateToLastTab={false}
+                  tabsChangeHandle={sqlStatementFormTabsChangeHandle}
                 />
               </EmptyBox>
 

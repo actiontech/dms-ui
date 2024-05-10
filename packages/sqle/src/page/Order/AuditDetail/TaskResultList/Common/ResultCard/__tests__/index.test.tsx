@@ -5,15 +5,29 @@ import toJson from 'enzyme-to-json';
 
 describe('test Order/ResultCard', () => {
   it('should match snapshot', () => {
-    const wrapper = shallow(
-      <ResultCard
-        executeMode={WorkflowResV2ExecModeEnum.sqls}
-        onUpdateDescription={jest.fn()}
-        projectName="default"
-        taskId="123"
-      />
-    );
+    expect(
+      toJson(
+        shallow(
+          <ResultCard
+            executeMode={WorkflowResV2ExecModeEnum.sqls}
+            onUpdateDescription={jest.fn()}
+            projectName="default"
+            taskId="123"
+          />
+        )
+      )
+    ).toMatchSnapshot();
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(
+      toJson(
+        shallow(
+          <ResultCard
+            executeMode={WorkflowResV2ExecModeEnum.sql_file}
+            projectID="300200"
+            taskId="123"
+          />
+        )
+      )
+    ).toMatchSnapshot();
   });
 });

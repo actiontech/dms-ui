@@ -4,28 +4,8 @@ import { renderWithTheme } from '../../../../../../testUtils/customRender';
 import task from '../../../../../../testUtils/mockApi/task';
 import { SQLExecuteModeProps } from './index.type';
 import { act, cleanup } from '@testing-library/react';
-import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ListLayoutEnum } from '../../../../Common/ListLayoutSelector/index.types';
 import { OVERVIEW_TAB_KEY } from '../../../index.data';
-
-const mockListData: IAuditTaskSQLResV2[] = [];
-for (let i = 0; i < 50; i++) {
-  mockListData.push({
-    number: i + 1,
-    audit_level: '',
-    audit_result: [
-      {
-        level: 'level'
-      }
-    ],
-    audit_status: 'audit_status' + i,
-    description: 'description' + i,
-    exec_result: 'exec_result' + i,
-    exec_sql: 'exec_sql' + i,
-    exec_status: 'exec_status' + i,
-    rollback_sql: 'rollback_sql' + i
-  });
-}
 
 describe('test PaginationList/SQLExecuteMode', () => {
   const customRender = (params?: Partial<SQLExecuteModeProps>) => {

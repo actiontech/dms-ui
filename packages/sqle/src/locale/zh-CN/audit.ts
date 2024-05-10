@@ -49,5 +49,19 @@ export default {
     finished: '审核完毕'
   },
   copyExecSql: '复制执行语句',
-  auditSuccess: '审核通过'
+  auditSuccess: '审核通过',
+
+  fileModeExecute: {
+    headerTitle: '文件信息概览',
+    sqlsTips: '当前仅展示前5条数据，<0>查看更多<0>'
+  },
+  fileModeSqls: {
+    backToDetail: '返回工单详情',
+    title: '文件信息详情',
+
+    statistics: {
+      audit: '审核结果信息',
+      execute: '执行结果信息'
+    }
+  }
 };
