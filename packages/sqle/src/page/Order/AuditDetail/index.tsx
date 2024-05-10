@@ -30,6 +30,8 @@ import { execStatusDictionary } from '../../../hooks/useStaticStatus/index.data'
 import ListLayoutSelector from '../Common/ListLayoutSelector';
 import { ListLayoutEnum } from '../Common/ListLayoutSelector/index.types';
 import TaskResultList from './TaskResultList';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
   taskInfos,
@@ -112,6 +114,17 @@ const AuditDetail: React.FC<OrderDetailAuditResultProps> = ({
     setPagination({ page_index: 1, page_size: pagination.page_size });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditLevelFilterValue, duplicate]);
+
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.Reset_Tasks_Result_Active_Key,
+      () => {
+        setAuditResultActiveKey(OVERVIEW_TAB_KEY);
+      }
+    );
+
+    return unsubscribe;
+  }, []);
 
   return (
     <OrderDetailAuditResultStyleWrapper>
