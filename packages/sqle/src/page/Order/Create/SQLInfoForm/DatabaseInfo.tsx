@@ -153,7 +153,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
     const isSameSQLMode = form.getFieldValue('isSameSqlOrder');
     if (type === 'add') {
       instanceTypeMap.current.set(key, instanceType);
-      if (!isSameSQLMode) {
+      if (!isSameSQLMode || instanceTypeMap.current.size > 1) {
         setSqlInputTypeMap((map) => {
           map.set(key.toString(), SQLInputType.manualInput);
           return new Map(map);
@@ -161,7 +161,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
       }
     } else if (type === 'remove') {
       instanceTypeMap.current.delete(key);
-      if (!isSameSQLMode) {
+      if (!isSameSQLMode || instanceTypeMap.current.size > 1) {
         setSqlInputTypeMap((map) => {
           map.delete(key.toString());
           return new Map(map);
