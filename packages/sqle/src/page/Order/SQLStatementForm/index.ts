@@ -1,5 +1,7 @@
 import { ModeSwitcherOptionsType } from '@actiontech/shared/lib/components/ModeSwitcher/index.type';
 import { FormInstance } from 'antd';
+import { SQLInputTypeMapType } from '../Create/index.type';
+import { Dispatch, SetStateAction } from 'react';
 
 export interface SQLStatementFormProps {
   form: FormInstance;
@@ -7,7 +9,9 @@ export interface SQLStatementFormProps {
   sqlStatement?: string;
   fieldName?: string;
   uploadTypeOptions?: ModeSwitcherOptionsType;
-  sqlInputTypeChangeHandle?: (type: SQLInputType) => void;
+  sqlInputTypeMap: SQLInputTypeMapType;
+  setSqlInputTypeMap: Dispatch<SetStateAction<SQLInputTypeMapType>>;
+  autoSetDefaultSqlInput?: boolean;
 }
 export interface SQLStatementFormTabsProps
   extends Omit<SQLStatementFormProps, 'sqlStatement'> {
@@ -25,6 +29,8 @@ export interface SQLStatementFormTabsProps
    * default value: true
    */
   autoNavigateToLastTab?: boolean;
+  activeKey?: string;
+  defaultActiveKey?: string;
 }
 
 export type SQLStatementFormTabsRefType = {

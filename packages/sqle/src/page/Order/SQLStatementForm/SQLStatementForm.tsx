@@ -29,7 +29,9 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   sqlStatement,
   fieldName = '0',
   uploadTypeOptions,
-  sqlInputTypeChangeHandle
+  sqlInputTypeMap,
+  setSqlInputTypeMap,
+  autoSetDefaultSqlInput
 }) => {
   const { t } = useTranslation();
   const currentSQLInputTypeChange = (type: SQLInputType) => {
@@ -41,7 +43,10 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
         generateFieldName('zipFile')
       ]);
     }
-    sqlInputTypeChangeHandle?.(type);
+    setSqlInputTypeMap((map) => {
+      map.set(fieldName, type);
+      return new Map(map);
+    });
   };
 
   const removeFile = useCallback(
@@ -70,16 +75,29 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   });
 
   useEffect(() => {
-    if (uploadTypeOptions && uploadTypeOptions.length > 0) {
-      sqlInputTypeChangeHandle?.(uploadTypeOptions[0].value as SQLInputType);
-      form.setFieldValue(sqlInputTypeName, uploadTypeOptions[0].value);
-    } else {
-      sqlInputTypeChangeHandle?.(
-        defaultUploadTypeOptions[0].value as SQLInputType
-      );
-      form.setFieldValue(sqlInputTypeName, defaultUploadTypeOptions[0].value);
+    if (autoSetDefaultSqlInput) {
+      if (uploadTypeOptions && uploadTypeOptions.length > 0) {
+        setSqlInputTypeMap((map) => {
+          map.set(fieldName, uploadTypeOptions[0].value as SQLInputType);
+          return new Map(map);
+        });
+        form.setFieldValue(sqlInputTypeName, uploadTypeOptions[0].value);
+      } else {
+        setSqlInputTypeMap((map) => {
+          map.set(fieldName, defaultUploadTypeOptions[0].value as SQLInputType);
+          return new Map(map);
+        });
+        form.setFieldValue(sqlInputTypeName, defaultUploadTypeOptions[0].value);
+      }
     }
-  }, [form, sqlInputTypeChangeHandle, sqlInputTypeName, uploadTypeOptions]);
+  }, [
+    autoSetDefaultSqlInput,
+    fieldName,
+    form,
+    setSqlInputTypeMap,
+    sqlInputTypeName,
+    uploadTypeOptions
+  ]);
 
   useEffect(() => {
     if (sqlStatement) {
@@ -94,6 +112,12 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   useEffect(() => {
     const reset = () => {
       form.setFieldValue(sqlInputTypeName, SQLInputType.manualInput);
+      setSqlInputTypeMap((map) => {
+        map.forEach((_, key) => {
+          map.set(key, SQLInputType.manualInput);
+        });
+        return new Map(map);
+      });
     };
     EventEmitter.subscribe(EmitterKey.Reset_Create_Order_Form, reset);
     return () => {
@@ -104,13 +128,17 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
 
   return (
     <>
-      <FormItemNoLabel name={sqlInputTypeName}>
+      <FormItemNoLabel
+        name={sqlInputTypeName}
+        initialValue={(uploadTypeOptions ?? defaultUploadTypeOptions)[0].value}
+      >
         <ModeSwitcher<SQLInputType>
           rowProps={{ gutter: 12 }}
           options={uploadTypeOptions ?? defaultUploadTypeOptions}
           onChange={(type) => {
             currentSQLInputTypeChange(type);
           }}
+          value={sqlInputTypeMap.get(fieldName)}
         />
       </FormItemNoLabel>
       <EmptyBox if={currentSQLInputType === SQLInputType.manualInput}>

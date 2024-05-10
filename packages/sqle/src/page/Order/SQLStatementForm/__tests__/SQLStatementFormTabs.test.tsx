@@ -5,8 +5,9 @@ import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRend
 import { Form } from 'antd';
 
 import SQLStatementFormTabs from '../SQLStatementFormTabs';
-import { SQLStatementInfoType } from '..';
+import { SQLInputType, SQLStatementInfoType } from '..';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { SQLInputTypeMapType } from '../../Create/index.type';
 
 describe('sqle/Order/SQLStatementFormTabs', () => {
   const tabsChangeHandleFn = jest.fn();
@@ -18,6 +19,8 @@ describe('sqle/Order/SQLStatementFormTabs', () => {
           form={result.current[0]}
           SQLStatementInfo={params}
           tabsChangeHandle={tabsChangeHandleFn}
+          sqlInputTypeMap={new Map([['0', SQLInputType.manualInput]])}
+          setSqlInputTypeMap={jest.fn()}
         />
       </Form>
     );
