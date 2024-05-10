@@ -5,6 +5,7 @@ import {
   RuleTemplateListType,
   InstanceInfoType
 } from './SQLInfoForm/index.type';
+import { SQLInputType } from '../SQLStatementForm';
 
 export type CreateOrderFormStateType = {
   schemaList: SchemaListType;
@@ -18,4 +19,8 @@ export type CreateOrderFormStateType = {
   instanceInfo: InstanceInfoType;
   setInstanceInfo: Dispatch<SetStateAction<InstanceInfoType>>;
   auditLoading: boolean;
+  isSupportFileModeExecuteSQL: boolean;
+  setIsSupportFileModeExecuteSQL: (val: boolean) => void;
+  currentSQLInputType: SQLInputType;
+  setCurrentSQLInputType: (val: SQLInputType) => void;
 };

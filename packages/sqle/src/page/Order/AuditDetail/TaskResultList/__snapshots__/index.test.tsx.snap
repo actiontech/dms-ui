@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Order/TaskResultList should match snapshot when currentListLayout is equal pagination 1`] = `
+<PaginationList
+  auditLevelFilterValue="all"
+  auditResultActiveKey="123"
+  currentListLayout="pagination"
+  duplicate={false}
+  executeMode="sqls"
+  pagination={
+    {
+      "page_index": 1,
+      "page_size": 10,
+    }
+  }
+  tableChange={[MockFunction]}
+  tableFilterInfo={{}}
+  taskId="123"
+/>
+`;
+
+exports[`test Order/TaskResultList should match snapshot when currentListLayout is equal scroll 1`] = `
+<WaterfallList
+  auditLevelFilterValue="all"
+  auditResultActiveKey="123"
+  currentListLayout="scroll"
+  duplicate={false}
+  executeMode="sqls"
+  pagination={
+    {
+      "page_index": 1,
+      "page_size": 10,
+    }
+  }
+  tableChange={[MockFunction]}
+  tableFilterInfo={{}}
+  taskId="123"
+/>
+`;
