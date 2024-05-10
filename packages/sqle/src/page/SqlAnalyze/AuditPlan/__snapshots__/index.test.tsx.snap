@@ -79,9 +79,15 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
                   <section
                     class="basic-cont-wrapper sql-cont"
                   >
-                    <span>
-                      -
-                    </span>
+                    <div
+                      class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                    >
+                      <span
+                        class="empty-sql-placeholder"
+                      >
+                        -
+                      </span>
+                    </div>
                   </section>
                 </div>
                 <div
@@ -2244,7 +2250,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="css-4mzo37"
+                      class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -2640,7 +2646,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                         </span>
                       </div>
                       <div
-                        class="css-1s8kb8e"
+                        class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                       >
                         <span
                           aria-label="copy"
@@ -5425,7 +5431,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                     class="basic-cont-wrapper sql-cont"
                   >
                     <div
-                      class="css-4mzo37"
+                      class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                     >
                       <div
                         class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -5918,7 +5924,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
                         </span>
                       </div>
                       <div
-                        class="css-1s8kb8e"
+                        class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                       >
                         <span
                           aria-label="copy"

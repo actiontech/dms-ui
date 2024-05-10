@@ -138,7 +138,7 @@ const ReportDrawer = ({
               </EmptyBox>
             </div>
             <div className="wrapper-cont">
-              <SQLRenderer.EditorView
+              <SQLRenderer.ViewOnlyEditor
                 value={data?.sql}
                 width="100%"
                 height="90%"

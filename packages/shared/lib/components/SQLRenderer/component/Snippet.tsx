@@ -4,9 +4,8 @@ import useRenderSQLTemplate from '../hooks/useRenderSQLTemplate';
 import { SQLSnippetRendererProps } from '../index.type';
 import { SQLRendererStyleWrapper } from '../style';
 import { Spin, Typography } from 'antd';
-import HighlightCode from '../../../utils/HighlightCode';
 import { tooltipsCommonProps } from '../../BasicToolTips';
-import EmptyBox from '../../EmptyBox';
+import HighlightCode from '../../../utils/HighlightCode';
 
 const Snippet: React.FC<SQLSnippetRendererProps> = ({
   rows = 10,
@@ -48,12 +47,7 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
         )}
         onClick={onClick}
       >
-        <EmptyBox
-          if={!!sql}
-          defaultNode={
-            <span className="empty-sql-placeholder">{emptySqlContent}</span>
-          }
-        >
+        {sql ? (
           <Typography.Paragraph
             ellipsis={{
               expandable: false,
@@ -70,11 +64,13 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
           >
             <span
               dangerouslySetInnerHTML={{
-                __html: HighlightCode.highlightSql(sql!)
+                __html: HighlightCode.highlightSql(sql)
               }}
             />
           </Typography.Paragraph>
-        </EmptyBox>
+        ) : (
+          <span className="empty-sql-placeholder">{emptySqlContent}</span>
+        )}
 
         {renderCopyIcon()}
       </SQLRendererStyleWrapper>

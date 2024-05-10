@@ -365,7 +365,8 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       <section
         className="basic-cont-wrapper sql-cont"
       >
-        <RenderSQL
+        <Snippet
+          showCopyIcon={true}
           sql="CREATE TABLE \`execute_sql_detail\` (
   \`id\` int(10) unsigned NOT NULL AUTO_INCREMENT,
   \`created_at\` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -446,7 +447,8 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       <section
         className="basic-cont-wrapper sql-cont"
       >
-        <RenderSQL
+        <Snippet
+          showCopyIcon={true}
           sql=""
         />
       </section>
@@ -497,7 +499,8 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       <section
         className="basic-cont-wrapper sql-cont"
       >
-        <RenderSQL
+        <Snippet
+          showCopyIcon={true}
           sql=""
         />
       </section>
@@ -558,7 +561,8 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
       <section
         className="basic-cont-wrapper sql-cont"
       >
-        <RenderSQL
+        <Snippet
+          showCopyIcon={true}
           sql=""
         />
       </section>
