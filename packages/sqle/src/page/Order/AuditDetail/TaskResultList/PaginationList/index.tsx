@@ -3,6 +3,8 @@ import { TasksResultListStyleWrapper } from '../../style';
 import SQLExecuteMode from './SQLExecuteMode';
 import { PaginationListProps } from './index.type';
 import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import FileExecuteMode from './FileExecuteMode';
+import ExecModeController from '../Common/ExecModeController';
 
 const PaginationList: React.FC<PaginationListProps> = ({
   executeMode,
@@ -17,9 +19,11 @@ const PaginationList: React.FC<PaginationListProps> = ({
           executeMode === WorkflowResV2ExecModeEnum.sqls
       })}
     >
-      {executeMode === WorkflowResV2ExecModeEnum.sqls ? (
-        <SQLExecuteMode {...props} />
-      ) : null}
+      <ExecModeController
+        sqlComponent={<SQLExecuteMode {...props} />}
+        sqlFileComponent={<FileExecuteMode {...props} />}
+        executeMode={executeMode}
+      />
     </TasksResultListStyleWrapper>
   );
 };

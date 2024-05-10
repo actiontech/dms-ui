@@ -177,6 +177,18 @@ describe('base/router-sqle-ee', () => {
           expect(baseElement).toMatchSnapshot();
           expect(screen.getByText('orderDetail')).toBeInTheDocument();
         });
+
+        it('render SQLFileStatementOverview', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/order/123/files/434/sqls`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(300));
+          expect(baseElement).toMatchSnapshot();
+          expect(
+            screen.getByText('SQLFileStatementOverview')
+          ).toBeInTheDocument();
+        });
       });
 
       describe('render route sqlAudit', () => {
