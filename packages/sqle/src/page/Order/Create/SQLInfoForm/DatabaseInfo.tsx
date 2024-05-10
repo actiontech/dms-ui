@@ -150,18 +150,23 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
     type: 'add' | 'remove',
     instanceType = ''
   ) => {
+    const isSameSQLMode = form.getFieldValue('isSameSqlOrder');
     if (type === 'add') {
       instanceTypeMap.current.set(key, instanceType);
-      setSqlInputTypeMap((map) => {
-        map.set(key.toString(), SQLInputType.manualInput);
-        return new Map(map);
-      });
+      if (!isSameSQLMode) {
+        setSqlInputTypeMap((map) => {
+          map.set(key.toString(), SQLInputType.manualInput);
+          return new Map(map);
+        });
+      }
     } else if (type === 'remove') {
       instanceTypeMap.current.delete(key);
-      setSqlInputTypeMap((map) => {
-        map.delete(key.toString());
-        return new Map(map);
-      });
+      if (!isSameSQLMode) {
+        setSqlInputTypeMap((map) => {
+          map.delete(key.toString());
+          return new Map(map);
+        });
+      }
     }
     const instanceTypeSet = new Set(instanceTypeMap.current.values());
     const isExistDifferentInstanceType = instanceTypeSet.size > 1;
