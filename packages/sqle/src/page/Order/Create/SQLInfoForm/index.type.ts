@@ -45,6 +45,7 @@ export type DatabaseInfoProps = Pick<
   | 'ruleTemplates'
   | 'setRuleTemplates'
   | 'setIsSupportFileModeExecuteSQL'
+  | 'setSqlInputTypeMap'
 > & {
   setChangeSqlModeDisabled: (disabled: boolean) => void;
 };

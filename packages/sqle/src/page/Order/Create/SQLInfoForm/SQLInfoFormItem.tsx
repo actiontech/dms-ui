@@ -52,8 +52,10 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
   setCurrentSqlMode,
   isSupportFileModeExecuteSQL,
   setIsSupportFileModeExecuteSQL,
-  currentSQLInputType,
-  setCurrentSQLInputType,
+  sqlInputTypeMap,
+  setSqlInputTypeMap,
+  differentModeActiveKey,
+  setDifferentModeActiveKey,
   ...otherProps
 }) => {
   const { t } = useTranslation();
@@ -161,6 +163,9 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
       }
     }
   };
+  const currentSQLInputType = useMemo(() => {
+    return sqlInputTypeMap.get(differentModeActiveKey || '0');
+  }, [differentModeActiveKey, sqlInputTypeMap]);
 
   useEffect(() => {
     const resetAlreadySubmit = () => {
@@ -192,6 +197,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         instanceNameChange={instanceNameChange}
         setChangeSqlModeDisabled={setChangeSqlModeDisabledAndSetValue}
         setIsSupportFileModeExecuteSQL={setIsSupportFileModeExecuteSQL}
+        setSqlInputTypeMap={setSqlInputTypeMap}
         {...otherProps}
       />
       <FormItemLabel
@@ -241,14 +247,18 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
             form={form}
             isClearFormWhenChangeSqlType={true}
             SQLStatementInfo={SQLStatementInfo}
-            sqlInputTypeChangeHandle={setCurrentSQLInputType}
+            sqlInputTypeMap={sqlInputTypeMap}
+            setSqlInputTypeMap={setSqlInputTypeMap}
+            tabsChangeHandle={setDifferentModeActiveKey}
+            activeKey={differentModeActiveKey}
           />
         }
       >
         <SQLStatementForm
           form={form}
           isClearFormWhenChangeSqlType={true}
-          sqlInputTypeChangeHandle={setCurrentSQLInputType}
+          setSqlInputTypeMap={setSqlInputTypeMap}
+          sqlInputTypeMap={sqlInputTypeMap}
         />
       </EmptyBox>
 
@@ -276,7 +286,8 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
       <SQLStatementForm
         form={form}
         isClearFormWhenChangeSqlType={true}
-        sqlInputTypeChangeHandle={setCurrentSQLInputType}
+        setSqlInputTypeMap={setSqlInputTypeMap}
+        sqlInputTypeMap={sqlInputTypeMap}
       />
 
       {/* #endif */}

@@ -5,11 +5,13 @@ import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRend
 import { Form } from 'antd';
 
 import SQLStatementForm from '../SQLStatementForm';
-import { SQLStatementFormProps } from '../index';
+import { SQLInputType, SQLStatementFormProps } from '../index';
 import { defaultUploadTypeOptions } from '../index.data';
 
 describe('sqle/Order/SQLStatementForm', () => {
-  const customRender = (params: Omit<SQLStatementFormProps, 'form'> = {}) => {
+  const customRender = (
+    params: Omit<SQLStatementFormProps, 'form'> = {} as any
+  ) => {
     const { result } = renderHooksWithTheme(() => Form.useForm<any>());
     return renderWithTheme(
       <Form>
@@ -30,7 +32,9 @@ describe('sqle/Order/SQLStatementForm', () => {
 
   it('render snap', () => {
     const { baseElement } = customRender({
-      fieldName: 'sql-demo'
+      fieldName: 'sql-demo',
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -38,14 +42,18 @@ describe('sqle/Order/SQLStatementForm', () => {
   it('render click hideUpdateMybatisFile & isClearFormWhenChangeSqlType', () => {
     const { baseElement } = customRender({
       fieldName: 'sql-demo',
-      isClearFormWhenChangeSqlType: true
+      isClearFormWhenChangeSqlType: true,
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render change mode for input sqle code', async () => {
     const { baseElement } = customRender({
-      fieldName: 'sql-demo'
+      fieldName: 'sql-demo',
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: jest.fn()
     });
 
     fireEvent.click(screen.getByText('输入SQL语句'));
@@ -57,20 +65,21 @@ describe('sqle/Order/SQLStatementForm', () => {
     const sqlInputChangeSpy = jest.fn();
     const { baseElement } = customRender({
       fieldName: 'sql-demo',
-      sqlInputTypeChangeHandle: sqlInputChangeSpy
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: sqlInputChangeSpy
     });
-    expect(sqlInputChangeSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.click(screen.getByText('上传SQL文件'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(sqlInputChangeSpy).toHaveBeenCalledTimes(2);
+    expect(sqlInputChangeSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render custom uploadTypeOptions', () => {
     const { baseElement } = customRender({
       fieldName: 'sql-demo',
-      sqlInputTypeChangeHandle: jest.fn(),
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: jest.fn(),
       uploadTypeOptions: [defaultUploadTypeOptions[1]]
     });
 

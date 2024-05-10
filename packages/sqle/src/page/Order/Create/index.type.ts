@@ -7,6 +7,8 @@ import {
 } from './SQLInfoForm/index.type';
 import { SQLInputType } from '../SQLStatementForm';
 
+export type SQLInputTypeMapType = Map<string, SQLInputType>;
+
 export type CreateOrderFormStateType = {
   schemaList: SchemaListType;
   setSchemaList: Dispatch<SetStateAction<SchemaListType>>;
@@ -21,6 +23,8 @@ export type CreateOrderFormStateType = {
   auditLoading: boolean;
   isSupportFileModeExecuteSQL: boolean;
   setIsSupportFileModeExecuteSQL: (val: boolean) => void;
-  currentSQLInputType: SQLInputType;
-  setCurrentSQLInputType: (val: SQLInputType) => void;
+  sqlInputTypeMap: SQLInputTypeMapType;
+  setSqlInputTypeMap: Dispatch<SetStateAction<SQLInputTypeMapType>>;
+  differentModeActiveKey: string;
+  setDifferentModeActiveKey: Dispatch<SetStateAction<string>>;
 };

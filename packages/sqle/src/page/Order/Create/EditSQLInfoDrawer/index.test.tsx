@@ -52,8 +52,10 @@ describe('sqle/Order/Create/EditSQLInfoDrawer', () => {
       setInstanceInfo: jest.fn(),
       isSupportFileModeExecuteSQL: false,
       setIsSupportFileModeExecuteSQL: jest.fn(),
-      currentSQLInputType: SQLInputType.manualInput,
-      setCurrentSQLInputType: jest.fn()
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: jest.fn(),
+      differentModeActiveKey: '0',
+      setDifferentModeActiveKey: jest.fn()
     };
     return renderWithThemeAndRedux(
       <EditSQLInfoDrawer {...params} {...intoParams} />
