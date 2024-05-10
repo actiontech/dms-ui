@@ -125,7 +125,7 @@ exports[`sqle/components/ReportDrawer render snap is empty 1`] = `
                     class="wrapper-cont"
                   >
                     <input
-                      class="custom-monaco-editor css-baixa9"
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
                       options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
@@ -285,7 +285,7 @@ exports[`sqle/components/ReportDrawer render snap when has data 1`] = `
                     class="wrapper-cont"
                   >
                     <input
-                      class="custom-monaco-editor css-baixa9"
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
                       options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
@@ -532,7 +532,7 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                     class="wrapper-cont"
                   >
                     <input
-                      class="custom-monaco-editor css-baixa9"
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
                       options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
@@ -758,7 +758,7 @@ exports[`sqle/components/ReportDrawer render snap when showSourceFile is true 1`
                     class="wrapper-cont"
                   >
                     <input
-                      class="custom-monaco-editor css-baixa9"
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
                       options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"

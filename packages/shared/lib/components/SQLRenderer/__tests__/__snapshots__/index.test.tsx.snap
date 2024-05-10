@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SQLrenderer should match snapshot 1`] = `
+<Styled(div)
+  className="actiontech-sql-renderer-wrapper"
+>
+  <pre>
+    <code
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<div class="code-line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span></div><div class="code-line">    task (</div><div class="code-line">      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,</div><div class="code-line">      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,</div><div class="code-line">      description TEXT,</div><div class="code-line">      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,</div><div class="code-line">      created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,</div><div class="code-line">      updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span></div><div class="code-line">    );</div>",
+        }
+      }
+    />
+  </pre>
+</Styled(div)>
+`;
+
+exports[`test SQLrenderer should match snapshot 2`] = `
+<Styled(div)
+  className="actiontech-sql-snippet-renderer-wrapper"
+>
+  <ForwardRef
+    className="margin-bottom-0"
+    ellipsis={
+      {
+        "expandable": false,
+        "rows": 10,
+        "tooltip": {
+          "arrow": false,
+          "overlayInnerStyle": {
+            "borderRadius": "10px",
+            "padding": 0,
+          },
+          "title": <Styled(div)
+            width={640}
+          >
+            <pre>
+              <code
+                dangerouslySetInnerHTML={
+                  {
+                    "__html": "<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>
+    task (
+      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
+      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,
+      description TEXT,
+      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,
+      created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,
+      updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>
+    );",
+                  }
+                }
+              />
+            </pre>
+          </Styled(div)>,
+        },
+      }
+    }
+  >
+    <span
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>
+    task (
+      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
+      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,
+      description TEXT,
+      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,
+      created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,
+      updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>
+    );",
+        }
+      }
+    />
+  </ForwardRef>
+</Styled(div)>
+`;
+
+exports[`test SQLrenderer should match snapshot 3`] = `
+<CustomMonacoEditor
+  className="actiontech-sql-view-only-editor-renderer-wrapper"
+  language="sql"
+  options={
+    {
+      "readOnly": true,
+    }
+  }
+  value="CREATE TABLE IF NOT EXISTS
+    task (
+      id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      title VARCHAR(255) NOT NULL DEFAULT '',
+      description TEXT,
+      status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending',
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    );"
+/>
+`;

@@ -1,13 +1,13 @@
 import { MonacoEditor } from '../../MonacoEditor';
-import { SQLEditorViewRendererProps } from '../index.type';
+import { SQLViewOnlyEditorRendererProps } from '../index.type';
 
-const EditorView: React.FC<SQLEditorViewRendererProps> = ({
+const ViewOnlyEditor: React.FC<SQLViewOnlyEditorRendererProps> = ({
   sql,
   ...props
 }) => {
   return (
     <MonacoEditor
-      className="actiontech-sql-editor-view-renderer-wrapper"
+      className="actiontech-sql-view-only-editor-renderer-wrapper"
       value={sql ?? ''}
       {...props}
       language="sql"
@@ -19,4 +19,4 @@ const EditorView: React.FC<SQLEditorViewRendererProps> = ({
   );
 };
 
-export default EditorView;
+export default ViewOnlyEditor;

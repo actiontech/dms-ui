@@ -102,6 +102,6 @@ export type SQLSnippetRendererProps = Omit<
   paragraph?: ParagraphProps;
 };
 
-export type SQLEditorViewRendererProps = {
+export type SQLViewOnlyEditorRendererProps = {
   sql?: string;
 } & Omit<EditorProps, 'theme' | 'language'>;
