@@ -1194,6 +1194,20 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "path": undefined,
       },
       {
+        "element": <div>
+          accountManagement
+        </div>,
+        "key": "accountManagement",
+        "path": ":projectID/account-management",
+      },
+      {
+        "element": <div>
+          passwordManagement
+        </div>,
+        "key": "passwordManagement",
+        "path": ":projectID/password-management",
+      },
+      {
         "children": [
           {
             "element": <div>
