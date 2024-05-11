@@ -4,7 +4,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
 <body>
   <div>
     <div
-      class="css-zccyu0"
+      class="css-1ht1tp6"
     >
       <div
         class="result-card-header"
@@ -216,7 +216,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
           </div>
         </div>
         <div
-          class="result-card-sql-wrap css-4mzo37"
+          class="actiontech-sql-renderer-wrapper css-dz7fl9"
         >
           <pre>
             <code>
@@ -452,7 +452,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
 <body>
   <div>
     <div
-      class="css-zccyu0"
+      class="css-1ht1tp6"
     >
       <div
         class="result-card-header"
@@ -664,7 +664,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
           </div>
         </div>
         <div
-          class="result-card-sql-wrap css-4mzo37"
+          class="actiontech-sql-renderer-wrapper css-dz7fl9"
         >
           <pre>
             <code>
@@ -900,7 +900,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
 <body>
   <div>
     <div
-      class="css-zccyu0"
+      class="css-1ht1tp6"
     >
       <div
         class="result-card-header"
@@ -1112,7 +1112,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render change exec_sql & rollback_sql
           </div>
         </div>
         <div
-          class="result-card-sql-wrap css-4mzo37"
+          class="actiontech-sql-renderer-wrapper css-dz7fl9"
         >
           <pre>
             <code>
@@ -1348,7 +1348,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 1`] = `
 <body>
   <div>
     <div
-      class="css-zccyu0"
+      class="css-1ht1tp6"
     >
       <div
         class="result-card-header"
@@ -1560,21 +1560,13 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 1`] = `
           </div>
         </div>
         <div
-          class="result-card-sql-wrap css-4mzo37"
+          class="actiontech-sql-renderer-wrapper css-dz7fl9"
         >
-          <pre>
-            <code>
-              <div
-                class="code-line"
-              >
-                <span
-                  class="code-line-number"
-                >
-                  1
-                </span>
-              </div>
-            </code>
-          </pre>
+          <span
+            class="empty-sql-placeholder"
+          >
+            -
+          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -1795,7 +1787,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 2`] = `
 <body>
   <div>
     <div
-      class="css-zccyu0"
+      class="css-1ht1tp6"
     >
       <div
         class="result-card-header"
@@ -2007,21 +1999,13 @@ exports[`sqle/Order/AuditDetail/ResultCard render click add desc 2`] = `
           </div>
         </div>
         <div
-          class="result-card-sql-wrap css-4mzo37"
+          class="actiontech-sql-renderer-wrapper css-dz7fl9"
         >
-          <pre>
-            <code>
-              <div
-                class="code-line"
-              >
-                <span
-                  class="code-line-number"
-                >
-                  1
-                </span>
-              </div>
-            </code>
-          </pre>
+          <span
+            class="empty-sql-placeholder"
+          >
+            -
+          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -2266,7 +2250,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when has resu
 <body>
   <div>
     <div
-      class="css-zccyu0"
+      class="css-1ht1tp6"
     >
       <div
         class="result-card-header"
@@ -2453,21 +2437,13 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when has resu
           </div>
         </div>
         <div
-          class="result-card-sql-wrap css-4mzo37"
+          class="actiontech-sql-renderer-wrapper css-dz7fl9"
         >
-          <pre>
-            <code>
-              <div
-                class="code-line"
-              >
-                <span
-                  class="code-line-number"
-                >
-                  1
-                </span>
-              </div>
-            </code>
-          </pre>
+          <span
+            class="empty-sql-placeholder"
+          >
+            -
+          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -2751,7 +2727,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when no cont 
 <body>
   <div>
     <div
-      class="css-zccyu0"
+      class="css-1ht1tp6"
     >
       <div
         class="result-card-header"
@@ -2963,21 +2939,13 @@ exports[`sqle/Order/AuditDetail/ResultCard render click icon arrow when no cont 
           </div>
         </div>
         <div
-          class="result-card-sql-wrap css-4mzo37"
+          class="actiontech-sql-renderer-wrapper css-dz7fl9"
         >
-          <pre>
-            <code>
-              <div
-                class="code-line"
-              >
-                <span
-                  class="code-line-number"
-                >
-                  1
-                </span>
-              </div>
-            </code>
-          </pre>
+          <span
+            class="empty-sql-placeholder"
+          >
+            -
+          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -3256,7 +3224,7 @@ exports[`sqle/Order/AuditDetail/ResultCard render snap when data is empty 1`] = 
 <body>
   <div>
     <div
-      class="css-zccyu0"
+      class="css-1ht1tp6"
     >
       <div
         class="result-card-header"
@@ -3468,21 +3436,13 @@ exports[`sqle/Order/AuditDetail/ResultCard render snap when data is empty 1`] = 
           </div>
         </div>
         <div
-          class="result-card-sql-wrap css-4mzo37"
+          class="actiontech-sql-renderer-wrapper css-dz7fl9"
         >
-          <pre>
-            <code>
-              <div
-                class="code-line"
-              >
-                <span
-                  class="code-line-number"
-                >
-                  1
-                </span>
-              </div>
-            </code>
-          </pre>
+          <span
+            class="empty-sql-placeholder"
+          >
+            -
+          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"

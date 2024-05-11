@@ -7,8 +7,7 @@ import {
   ActiontechTableColumn
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../../locale';
-import RenderSQL from '../../../../../components/RenderSQL';
-import { EditText } from '@actiontech/shared';
+import { EditText, SQLRenderer } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import ResultIconRender from '../../../../../components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from '../../../../../components/AuditResultMessage';
@@ -29,11 +28,12 @@ export const AuditResultForCreateOrderColumn = (
       className: 'audit-result-exec-sql-column',
       render: (sql = '', record) => {
         return (
-          <RenderSQL
+          <SQLRenderer.Snippet
             sql={sql}
             rows={1}
             tooltip={false}
             onClick={() => onClickAuditResult(record)}
+            showCopyIcon
           />
         );
       }

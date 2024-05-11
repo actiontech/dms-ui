@@ -3,7 +3,7 @@
 exports[`lib/CopyIcon should render ui snap for no tip 1`] = `
 <div>
   <div
-    class="css-1s8kb8e"
+    class="actiontech-copy-icon css-1s8kb8e"
   >
     <span
       aria-label="copy"
@@ -31,7 +31,7 @@ exports[`lib/CopyIcon should render ui snap for no tip 1`] = `
 exports[`lib/CopyIcon should render ui snap for only text 1`] = `
 <div>
   <div
-    class="css-1s8kb8e"
+    class="actiontech-copy-icon css-1s8kb8e"
   >
     <span
       aria-label="copy"
@@ -65,7 +65,7 @@ exports[`lib/CopyIcon should render ui when click copy btn 1`] = `
       class="ant-space-item"
     >
       <div
-        class="css-m0ctvy"
+        class="actiontech-copy-icon css-m0ctvy"
       >
         <span
           aria-label="check"
@@ -95,7 +95,7 @@ exports[`lib/CopyIcon should render ui when click copy btn 1`] = `
 exports[`lib/CopyIcon should render ui when click copy btn 2`] = `
 <div>
   <div
-    class="css-1s8kb8e"
+    class="actiontech-copy-icon css-1s8kb8e"
   >
     <span
       aria-label="copy"

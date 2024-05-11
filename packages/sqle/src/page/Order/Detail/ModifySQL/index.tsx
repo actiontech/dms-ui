@@ -26,10 +26,6 @@ import {
   DatabaseInfoFields,
   InstanceInfoType
 } from '../../Create/SQLInfoForm/index.type';
-import {
-  FormatLanguageSupport,
-  formatterSQL
-} from '../../../../utils/FormatterSQL';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import SQLStatementForm from '../../SQLStatementForm/SQLStatementForm';
 import SQLStatementFormTabs from '../../SQLStatementForm/SQLStatementFormTabs';
@@ -47,6 +43,10 @@ import { IconOrderCreateTitleStyleWrapper } from '../../Create/BaseInfoForm/styl
 import AuditResultList from '../../Common/AuditResultList';
 import { cloneDeep } from 'lodash';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
+import {
+  FormatLanguageSupport,
+  formatterSQL
+} from '@actiontech/shared/lib/utils/FormatterSQL';
 
 const ModifySQL: React.FC<ModifySQLProps> = ({
   currentOrderTasks = [],
