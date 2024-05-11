@@ -1,6 +1,5 @@
-import { BasicTable, EmptyBox } from '@actiontech/shared';
+import { BasicTable, EmptyBox, SQLRenderer } from '@actiontech/shared';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
-import RenderSQL from '../../../../components/RenderSQL';
 
 import { ProcessListComStyleWrapper } from './style';
 
@@ -29,7 +28,8 @@ const ProcessListCom = () => {
       <section className="basic-cont-wrapper sql-cont">
         <EmptyBox if={true} defaultNode={<BasicEmpty />}>
           <div className="pre-warp-break-all">
-            <RenderSQL
+            <SQLRenderer.Snippet
+              showCopyIcon
               sql={`SELECT DISTINCT db,time,info
 FROM information_schema.processlist
 WHERE ID != connection_id() AND info != '' AND db NOT IN ('information_schema','performance_schema','mysql','sys')`}

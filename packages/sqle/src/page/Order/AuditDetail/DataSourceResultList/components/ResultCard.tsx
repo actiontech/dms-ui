@@ -12,10 +12,10 @@ import {
   Copy,
   BasicTag,
   BasicToolTips,
-  EmptyBox
+  EmptyBox,
+  SQLRenderer
 } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
-import HighlightCode from '../../../../../utils/HighlightCode';
 import AuditResultTag from './AuditResultTag';
 import AuditResultTree from './AuditResultTree';
 import { IconArrowDown } from '@actiontech/shared/lib/Icon';
@@ -24,7 +24,6 @@ import ResultDescribe from './ResultDescribe';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useMemo } from 'react';
-import { RenderSQLStyleWrapper } from '../../../../../components/RenderSQL/style';
 import {
   IconFillListActive,
   IconPosition
@@ -81,15 +80,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
 
   const sqlTemplate = useMemo(() => {
     const renderSql = (showExecSql ? props.exec_sql : props.rollback_sql) || '';
-    const lines = HighlightCode.highlightSql(renderSql).split(/\r?\n|\r/g);
-
-    return lines
-      .map((w, i) => {
-        return `<div class="code-line"><span class="code-line-number">${
-          i + 1
-        }</span>${w}</div>`;
-      })
-      .join('');
+    return renderSql;
   }, [props.exec_sql, props.rollback_sql, showExecSql]);
 
   return (
@@ -168,15 +159,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
             </BasicTag>
           </Space>
         </div>
-        <RenderSQLStyleWrapper className="result-card-sql-wrap">
-          <pre>
-            <code
-              dangerouslySetInnerHTML={{
-                __html: sqlTemplate
-              }}
-            />
-          </pre>
-        </RenderSQLStyleWrapper>
+        <SQLRenderer sql={sqlTemplate} showLineNumbers />
         <AuditResultTree auditResult={props.audit_result} />
         <DataSourceAuditResultTreeStyleWrapper
           treeData={[

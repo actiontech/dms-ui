@@ -840,7 +840,7 @@ exports[`sqle/Order/Detail/ModifySQL render snap when click formatter sql 1`] = 
                                 class="ant-table-cell audit-result-exec-sql-column"
                               >
                                 <div
-                                  class="css-4mzo37"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -861,7 +861,7 @@ exports[`sqle/Order/Detail/ModifySQL render snap when click formatter sql 1`] = 
                                     </span>
                                   </div>
                                   <div
-                                    class="css-1s8kb8e"
+                                    class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                                   >
                                     <span
                                       aria-label="copy"
@@ -3153,7 +3153,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                 class="ant-table-cell audit-result-exec-sql-column"
                               >
                                 <div
-                                  class="css-4mzo37"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -3174,7 +3174,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                     </span>
                                   </div>
                                   <div
-                                    class="css-1s8kb8e"
+                                    class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                                   >
                                     <span
                                       aria-label="copy"
@@ -4234,7 +4234,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                 class="ant-table-cell audit-result-exec-sql-column"
                               >
                                 <div
-                                  class="css-4mzo37"
+                                  class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                 >
                                   <div
                                     class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -4255,7 +4255,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                     </span>
                                   </div>
                                   <div
-                                    class="css-1s8kb8e"
+                                    class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                                   >
                                     <span
                                       aria-label="copy"

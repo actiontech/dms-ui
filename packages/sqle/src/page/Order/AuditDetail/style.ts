@@ -178,24 +178,6 @@ export const DataSourceResultCardStyleWrapper = styled('div')`
       justify-content: space-between;
     }
 
-    .result-card-sql-wrap {
-      margin-top: 8px;
-      padding-bottom: 2px;
-    }
-
-    .code-line {
-      height: 26px;
-      line-height: 26px;
-
-      .code-line-number {
-        display: inline-block;
-        width: 24px;
-        text-align: center;
-        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextQuaternary};
-        user-select: none;
-      }
-    }
-
     & .ant-collapse.result-record-collapse .ant-collapse-header {
       padding: 8px 0;
 
