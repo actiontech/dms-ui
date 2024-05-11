@@ -67,7 +67,11 @@ export enum AuditTaskResV1SqlSourceEnum {
 
   'mybatis_xml_file' = 'mybatis_xml_file',
 
-  'audit_plan' = 'audit_plan'
+  'audit_plan' = 'audit_plan',
+
+  'zip_file' = 'zip_file',
+
+  'git_repository' = 'git_repository'
 }
 
 export enum AuditTaskResV1StatusEnum {
@@ -90,6 +94,18 @@ export enum BatchUpdateSqlManageReqStatusEnum {
   'ignored' = 'ignored',
 
   'manual_audited' = 'manual_audited'
+}
+
+export enum CreateAuditTaskReqV1ExecModeEnum {
+  'sql_file' = 'sql_file',
+
+  'sqls' = 'sqls'
+}
+
+export enum CreateAuditTasksGroupReqV1ExecModeEnum {
+  'sql_file' = 'sql_file',
+
+  'sqls' = 'sqls'
 }
 
 export enum CreateAuditWhitelistReqV1MatchTypeEnum {
@@ -400,6 +416,12 @@ export enum WorkflowRecordResV2StatusEnum {
   'executing' = 'executing',
 
   'finished' = 'finished'
+}
+
+export enum WorkflowResV2ExecModeEnum {
+  'sql_file' = 'sql_file',
+
+  'sqls' = 'sqls'
 }
 
 export enum WorkflowResV2ModeEnum {

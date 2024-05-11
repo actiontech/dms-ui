@@ -1698,3 +1698,54 @@ export const IconCustomService = () => {
     </svg>
   );
 };
+
+export const IconModeSwitcherChecked: React.FC<CustomIconProps> = ({
+  className
+}) => {
+  return (
+    <CommonIconStyleWrapper
+      className={classNames('icon-mode-switcher-checked', className)}
+    >
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="Frame">
+          <path
+            id="Vector"
+            d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+            stroke="#FCFBF9"
+            strokeWidth="1.5"
+            strokeLinejoin="round"
+          />
+        </g>
+      </svg>
+    </CommonIconStyleWrapper>
+  );
+};
+
+export const IconFile: React.FC<CustomIconProps> = ({
+  width = 18,
+  height = 18
+}) => {
+  return (
+    <CommonIconStyleWrapper role="img" className="custom-icon">
+      <svg
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={height}
+        fill="none"
+      >
+        <path
+          fill="#4583FF"
+          d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3z m0 0M815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3z m0 0"
+        />
+      </svg>
+    </CommonIconStyleWrapper>
+  );
+};

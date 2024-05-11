@@ -13,6 +13,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { DatabaseTypeLogo } from '@actiontech/shared';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -30,6 +31,7 @@ describe('sqle/Rule', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
+    mockUseCurrentPermission();
     mockUseDbServiceDriver({
       driverNameList: ['MySQL', 'MySQL1'],
       loading: false,

@@ -10,25 +10,31 @@ import {
   SQLStatementFields,
   SQLStatementFormProps
 } from './index';
-import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
+import {
+  CustomDraggerUpload,
+  EmptyBox,
+  ModeSwitcher
+} from '@actiontech/shared';
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
-import UploadType from './UploadType';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import { Form } from 'antd';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
 import { SqlFiledInitialValue } from '../../../data/common';
+import { defaultUploadTypeOptions } from './index.data';
 
 const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   form,
   isClearFormWhenChangeSqlType = false,
   sqlStatement,
-  fieldName,
-  hideUpdateMybatisFile = false
+  fieldName = '0',
+  uploadTypeOptions,
+  sqlInputTypeMap,
+  setSqlInputTypeMap,
+  autoSetDefaultSqlInput
 }) => {
   const { t } = useTranslation();
-
-  const currentSQLInputTypeChange = (value: SQLInputType) => {
+  const currentSQLInputTypeChange = (type: SQLInputType) => {
     if (isClearFormWhenChangeSqlType) {
       form.resetFields([
         generateFieldName('sql'),
@@ -36,14 +42,17 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
         generateFieldName('mybatisFile'),
         generateFieldName('zipFile')
       ]);
-      // setCurrentSQLInputTYpe(SQLInputType.manualInput);
     }
+    setSqlInputTypeMap((map) => {
+      map.set(fieldName, type);
+      return new Map(map);
+    });
   };
 
   const removeFile = useCallback(
     (fileName: keyof SQLStatementFields) => {
       form.setFieldsValue({
-        [fieldName ?? '0']: {
+        [fieldName]: {
           [fileName]: []
         }
       });
@@ -56,7 +65,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   };
 
   const sqlInputTypeName = useMemo(() => {
-    return [fieldName ?? '0', 'sqlInputType'];
+    return [fieldName, 'sqlInputType'];
   }, [fieldName]);
 
   const currentSQLInputType = Form.useWatch(sqlInputTypeName, form);
@@ -66,9 +75,34 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   });
 
   useEffect(() => {
+    if (autoSetDefaultSqlInput) {
+      if (uploadTypeOptions && uploadTypeOptions.length > 0) {
+        setSqlInputTypeMap((map) => {
+          map.set(fieldName, uploadTypeOptions[0].value as SQLInputType);
+          return new Map(map);
+        });
+        form.setFieldValue(sqlInputTypeName, uploadTypeOptions[0].value);
+      } else {
+        setSqlInputTypeMap((map) => {
+          map.set(fieldName, defaultUploadTypeOptions[0].value as SQLInputType);
+          return new Map(map);
+        });
+        form.setFieldValue(sqlInputTypeName, defaultUploadTypeOptions[0].value);
+      }
+    }
+  }, [
+    autoSetDefaultSqlInput,
+    fieldName,
+    form,
+    setSqlInputTypeMap,
+    sqlInputTypeName,
+    uploadTypeOptions
+  ]);
+
+  useEffect(() => {
     if (sqlStatement) {
       form.setFieldsValue({
-        [fieldName ?? '0']: {
+        [fieldName]: {
           sql: sqlStatement
         }
       });
@@ -78,6 +112,12 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
   useEffect(() => {
     const reset = () => {
       form.setFieldValue(sqlInputTypeName, SQLInputType.manualInput);
+      setSqlInputTypeMap((map) => {
+        map.forEach((_, key) => {
+          map.set(key, SQLInputType.manualInput);
+        });
+        return new Map(map);
+      });
     };
     EventEmitter.subscribe(EmitterKey.Reset_Create_Order_Form, reset);
     return () => {
@@ -90,11 +130,15 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
     <>
       <FormItemNoLabel
         name={sqlInputTypeName}
-        initialValue={SQLInputType.manualInput}
+        initialValue={(uploadTypeOptions ?? defaultUploadTypeOptions)[0].value}
       >
-        <UploadType
-          hideUpdateMybatisFile={hideUpdateMybatisFile}
-          onChange={currentSQLInputTypeChange}
+        <ModeSwitcher<SQLInputType>
+          rowProps={{ gutter: 12 }}
+          options={uploadTypeOptions ?? defaultUploadTypeOptions}
+          onChange={(type) => {
+            currentSQLInputTypeChange(type);
+          }}
+          value={sqlInputTypeMap.get(fieldName)}
         />
       </FormItemNoLabel>
       <EmptyBox if={currentSQLInputType === SQLInputType.manualInput}>
@@ -144,12 +188,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
           />
         </FormItemNoLabel>
       </EmptyBox>
-      <EmptyBox
-        if={
-          currentSQLInputType === SQLInputType.uploadMybatisFile &&
-          !hideUpdateMybatisFile
-        }
-      >
+      {/* <EmptyBox if={currentSQLInputType === SQLInputType.uploadMybatisFile}>
         <FormItemNoLabel
           valuePropName="fileList"
           name={generateFieldName('mybatisFile')}
@@ -170,7 +209,7 @@ const SQLStatementForm: React.FC<SQLStatementFormProps> = ({
             title={t('order.sqlInfo.mybatisFileTips')}
           />
         </FormItemNoLabel>
-      </EmptyBox>
+      </EmptyBox> */}
       <EmptyBox if={currentSQLInputType === SQLInputType.zipFile}>
         <FormItemNoLabel
           valuePropName="fileList"

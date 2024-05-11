@@ -43,8 +43,8 @@ const EditSQLInfoDrawer: React.FC<EditSQLInfoDrawerProps> = ({
 
   return (
     <BasicDrawer
-      afterOpenChange={(open) => {
-        if (open && !syncDataReady.current) {
+      afterOpenChange={(_open) => {
+        if (_open && !syncDataReady.current) {
           baseInfoForm.setFieldsValue({ ...baseFormValues });
           sqlInfoForm.setFieldsValue({ ...sqlInfoFormValues });
           syncDataReady.current = true;

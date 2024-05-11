@@ -4,7 +4,9 @@ import {
   IOptimizeSQLRes,
   IGetOptimizationRecordRes,
   IGetOptimizationSQLsRes,
-  IGetOptimizationSQLRes
+  IGetOptimizationSQLRes,
+  IGetDBPerformanceImproveOverviewResp,
+  IGetOptimizationOverviewResp
 } from '../common.d';
 
 export interface IGetOptimizationRecordsParams {
@@ -86,3 +88,21 @@ export interface IGetOptimizationReqParams {
 }
 
 export interface IGetOptimizationReqReturn extends IGetOptimizationSQLRes {}
+
+export interface IGetDBPerformanceImproveOverviewParams {
+  project_name: string;
+}
+
+export interface IGetDBPerformanceImproveOverviewReturn
+  extends IGetDBPerformanceImproveOverviewResp {}
+
+export interface IGetOptimizationOverviewParams {
+  filter_create_time_from: string;
+
+  filter_create_time_to: string;
+
+  project_name: string;
+}
+
+export interface IGetOptimizationOverviewReturn
+  extends IGetOptimizationOverviewResp {}

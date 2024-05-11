@@ -4,6 +4,7 @@ import { SQLStatementFields } from '../../SQLStatementForm';
 import { CreateOrderFormStateType } from '../index.type';
 import { OrderBaseInfoFormFields } from '../BaseInfoForm/index.type';
 import { Key } from 'react';
+import { CreateAuditTasksGroupReqV1ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type SQLInfoFormProps = {
   form: FormInstance<SQLInfoFormFields>;
@@ -24,7 +25,12 @@ export type DatabaseInfoFields = {
 export type SQLInfoFormFields = {
   isSameSqlOrder: boolean;
   dataBaseInfo: Array<DatabaseInfoFields>;
-  [key: string]: SQLStatementFields | boolean | Array<DatabaseInfoFields>;
+  executeMode: CreateAuditTasksGroupReqV1ExecModeEnum;
+  [key: string]:
+    | SQLStatementFields
+    | boolean
+    | Array<DatabaseInfoFields>
+    | CreateAuditTasksGroupReqV1ExecModeEnum;
 };
 
 export type DatabaseInfoProps = Pick<
@@ -38,6 +44,8 @@ export type DatabaseInfoProps = Pick<
   | 'setSchemaList'
   | 'ruleTemplates'
   | 'setRuleTemplates'
+  | 'setIsSupportFileModeExecuteSQL'
+  | 'setSqlInputTypeMap'
 > & {
   setChangeSqlModeDisabled: (disabled: boolean) => void;
 };

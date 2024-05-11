@@ -22,7 +22,9 @@ const dmsSystem = createSlice({
       state,
       {
         payload: { webTitle, webLogoUrl }
-      }: PayloadAction<Omit<SystemReduxState, 'modalStatus'>>
+      }: PayloadAction<
+        Omit<SystemReduxState, 'modalStatus' | 'sqlOptimizationIsSupported'>
+      >
     ) {
       state.webLogoUrl = webLogoUrl;
       state.webTitle = webTitle;

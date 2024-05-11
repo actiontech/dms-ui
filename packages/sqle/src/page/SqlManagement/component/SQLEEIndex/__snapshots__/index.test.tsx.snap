@@ -1051,7 +1051,7 @@ exports[`page/SqlManagement/SQLEEIndex batch assignment operation for sql 1`] = 
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -2405,7 +2405,7 @@ exports[`page/SqlManagement/SQLEEIndex batch ignore operation for sql 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -3759,7 +3759,7 @@ exports[`page/SqlManagement/SQLEEIndex batch solve operation for sql 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -5129,7 +5129,7 @@ exports[`page/SqlManagement/SQLEEIndex change single status when click row butto
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -6499,7 +6499,7 @@ exports[`page/SqlManagement/SQLEEIndex click audit result and open sql audit res
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -7959,7 +7959,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql and open sql audit result 1`] =
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -9419,7 +9419,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql fingerprint and open sql audit 
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -14100,7 +14100,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 2`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -18685,7 +18685,7 @@ exports[`page/SqlManagement/SQLEEIndex jump to analyze and open modal when click
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -21046,7 +21046,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -22186,7 +22186,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             style="margin-right: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                               style="margin-right: 0px;"
                             >
                               12
@@ -23476,7 +23476,7 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12
@@ -23496,7 +23496,7 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                       >
                         <div
                           aria-label="this is remark text"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                         >
                           this is remark text
                           <div
@@ -24818,7 +24818,7 @@ exports[`page/SqlManagement/SQLEEIndex update remark 1`] = `
                         class="ant-table-cell"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                           style="margin-right: 0px;"
                         >
                           12

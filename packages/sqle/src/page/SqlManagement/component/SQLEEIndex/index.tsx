@@ -232,15 +232,15 @@ const SQLEEIndex = () => {
 
   const rowSelection: TableRowSelection<ISqlManage> = {
     selectedRowKeys,
-    onChange: (selectedRowKeys, data) => {
-      setSelectedRowKeys(selectedRowKeys.filter((v) => v) as number[]);
+    onChange: (keys, data) => {
+      setSelectedRowKeys(keys.filter((v) => v) as number[]);
       setSelectedRowData(data);
     }
   };
 
   // batch action
-  const batchSuccessOperate = (message: string) => {
-    messageApi.success(message);
+  const batchSuccessOperate = (msg: string) => {
+    messageApi.success(msg);
     setSelectedRowKeys([]);
     refresh();
   };

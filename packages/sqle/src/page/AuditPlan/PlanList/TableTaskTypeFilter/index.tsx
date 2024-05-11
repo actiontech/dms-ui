@@ -56,10 +56,9 @@ const TableTaskTypeFilter = (props: ITableTaskTypeFilter) => {
       };
     }
     const auditPlanTypesDictionary = groupBy(auditPlanTypes, 'instance_type');
-    const allDataSource = Object.keys(auditPlanTypesDictionary);
 
     const dataTypeSource: Set<string> = new Set();
-    const relationalData: {
+    const innerRelationalData: {
       [key: string]: {
         desc?: string;
         instance_type?: AuditPlanTypesV1InstanceTypeEnum;
@@ -79,30 +78,30 @@ const TableTaskTypeFilter = (props: ITableTaskTypeFilter) => {
         return;
       }
       const mainCateKey = instance_type ?? 'custom_action_main_cate';
-      if (!relationalData[mainCateKey]) {
-        relationalData[mainCateKey] = [
+      if (!innerRelationalData[mainCateKey]) {
+        innerRelationalData[mainCateKey] = [
           {
             ...item,
             showDesc: currentDesc
           }
         ];
       } else {
-        relationalData[mainCateKey].push({
+        innerRelationalData[mainCateKey].push({
           ...item,
           showDesc: currentDesc
         });
       }
       // child cate -> main cate
       const typeCate = currentDesc ?? 'custom_action_type';
-      if (!relationalData[typeCate]) {
-        relationalData[typeCate] = [
+      if (!innerRelationalData[typeCate]) {
+        innerRelationalData[typeCate] = [
           {
             ...item,
             showDesc: currentDesc
           }
         ];
       } else {
-        relationalData[typeCate].push({
+        innerRelationalData[typeCate].push({
           ...item,
           showDesc: currentDesc
         });
@@ -110,9 +109,9 @@ const TableTaskTypeFilter = (props: ITableTaskTypeFilter) => {
     });
 
     return {
-      allDataSource: allDataSource,
+      allDataSource: Object.keys(auditPlanTypesDictionary),
       allTaskType: Array.from(dataTypeSource),
-      relationalData
+      relationalData: innerRelationalData
     };
   }, [auditPlanTypes]);
 

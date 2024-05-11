@@ -17,7 +17,8 @@ import {
 } from '@actiontech/shared';
 import {
   WorkflowResV2ModeEnum,
-  AuditTaskResV1SqlSourceEnum
+  AuditTaskResV1SqlSourceEnum,
+  CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { SQLInputType, SQLStatementFields } from '../../SQLStatementForm';
@@ -47,11 +48,16 @@ import {
   FormatLanguageSupport,
   formatterSQL
 } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { defaultUploadTypeOptions } from '../../SQLStatementForm/index.data';
+import eventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
+import { SQLInputTypeMapType } from '../../Create/index.type';
 
 const ModifySQL: React.FC<ModifySQLProps> = ({
   currentOrderTasks = [],
   modifiedOrderTasks,
   sqlMode,
+  executeMode,
   audit,
   cancel,
   open,
@@ -88,7 +94,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
   const [sqlStatementValue, setSqlStatementValue] =
     useState<Record<string, string>>();
 
-  const sqlStatementInfo = useMemo(() => {
+  const SQLStatementInfo = useMemo(() => {
     return currentOrderTasks.map((v) => {
       return {
         key: v.task_id?.toString() ?? '',
@@ -120,6 +126,11 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
           refreshOverviewAction();
 
           cancel();
+
+          /**
+           * 驳回成功后 task 更新，需要同步更新外层 active 的key
+           */
+          eventEmitter.emit(EmitterKey.Reset_Tasks_Result_Active_Key);
         }
       })
       .finally(() => {
@@ -150,7 +161,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
         })) ?? [];
       const instanceInfo: InstanceInfoType = new Map();
       if (sqlMode === WorkflowResV2ModeEnum.different_sqls) {
-        sqlStatementInfo.forEach((v) => {
+        SQLStatementInfo.forEach((v) => {
           instanceInfo.set(v.key, {
             instanceName: v.instanceName,
             instanceSchemaName: v.instanceSchemaName
@@ -161,7 +172,9 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
         {
           ...values,
           dataBaseInfo,
-          isSameSqlOrder: sqlMode === WorkflowResV2ModeEnum.same_sqls
+          isSameSqlOrder: sqlMode === WorkflowResV2ModeEnum.same_sqls,
+          executeMode:
+            executeMode as unknown as CreateAuditTasksGroupReqV1ExecModeEnum
         },
         instanceInfo
       );
@@ -173,32 +186,32 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
   const formatSql = async () => {
     const params = await form.getFieldsValue();
     if (sqlMode === WorkflowResV2ModeEnum.same_sqls) {
-      const sqlStatementInfo = params['0'] as SQLStatementFields;
-      if (sqlStatementInfo?.sqlInputType !== SQLInputType.manualInput) {
+      const SQLStatementValue = params['0'] as SQLStatementFields;
+      if (SQLStatementValue?.sqlInputType !== SQLInputType.manualInput) {
         return;
       }
       form.setFields([
         {
           name: ['0', 'sql'],
           value: formatterSQL(
-            sqlStatementInfo.sql,
+            SQLStatementValue.sql,
             currentOrderTasks?.[0].instance_db_type
           )
         }
       ]);
     } else {
-      const sqlStatementInfo = params[
+      const SQLStatementValue = params[
         sqlStatementFormTabsRef.current?.activeKey ?? ''
       ] as SQLStatementFields;
 
-      if (sqlStatementInfo?.sqlInputType !== SQLInputType.manualInput) {
+      if (SQLStatementValue?.sqlInputType !== SQLInputType.manualInput) {
         return;
       }
       form.setFields([
         {
           name: [sqlStatementFormTabsRef.current?.activeKey ?? '', 'sql'],
           value: formatterSQL(
-            sqlStatementInfo.sql,
+            SQLStatementValue.sql,
             currentOrderTasks[sqlStatementFormTabsRef.current?.activeIndex ?? 0]
               ?.instance_db_type
           )
@@ -206,6 +219,47 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
       ]);
     }
   };
+
+  const [sqlInputTypeMap, setSqlInputTypeMap] = useState<SQLInputTypeMapType>(
+    new Map([['0', SQLInputType.manualInput]])
+  );
+  const [differentModeActiveKey, setDifferentModeActiveKey] =
+    useState<string>('');
+
+  const currentSQLInputType = useMemo(() => {
+    return sqlInputTypeMap.get(differentModeActiveKey || '0');
+  }, [differentModeActiveKey, sqlInputTypeMap]);
+
+  const uploadTypeOptions = useMemo(() => {
+    const sqlSource =
+      sqlMode === WorkflowResV2ModeEnum.same_sqls
+        ? currentOrderTasks[0]?.sql_source
+        : currentOrderTasks.find(
+            (v) => v.task_id?.toString() === differentModeActiveKey
+          )?.sql_source;
+    return defaultUploadTypeOptions.filter((item) => {
+      if (!sqlSource) {
+        return true;
+      }
+
+      if (sqlSource === AuditTaskResV1SqlSourceEnum.form_data) {
+        return item.value === SQLInputType.manualInput;
+      }
+
+      if (sqlSource === AuditTaskResV1SqlSourceEnum.sql_file) {
+        return item.value === SQLInputType.uploadFile;
+      }
+
+      if (sqlSource === AuditTaskResV1SqlSourceEnum.zip_file) {
+        return item.value === SQLInputType.zipFile;
+      }
+      return true;
+    });
+  }, [currentOrderTasks, differentModeActiveKey, sqlMode]);
+
+  const sqlStatementFormTabsChangeHandle = useCallback((activeKey: string) => {
+    setDifferentModeActiveKey(activeKey);
+  }, []);
 
   useEffect(() => {
     const getAllSqlStatement = () => {
@@ -245,7 +299,6 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
           });
       }
     };
-
     if (open) {
       getAllSqlStatement();
       if (sqlMode === WorkflowResV2ModeEnum.different_sqls) {
@@ -261,8 +314,7 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
     open,
     sqlMode,
     startGetAllSqlStatement,
-    finishGetAllSqlStatement,
-    form
+    finishGetAllSqlStatement
   ]);
 
   return (
@@ -318,15 +370,24 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                     sqlStatement={
                       sqlStatementValue?.[currentOrderTasks[0]?.task_id ?? '']
                     }
-                    hideUpdateMybatisFile={true}
+                    uploadTypeOptions={uploadTypeOptions}
+                    sqlInputTypeMap={sqlInputTypeMap}
+                    setSqlInputTypeMap={setSqlInputTypeMap}
+                    autoSetDefaultSqlInput
                   />
                 }
               >
                 <SQLStatementFormTabs
                   ref={sqlStatementFormTabsRef}
                   form={form}
-                  SQLStatementInfo={sqlStatementInfo}
-                  hideUpdateMybatisFile={true}
+                  SQLStatementInfo={SQLStatementInfo}
+                  uploadTypeOptions={uploadTypeOptions}
+                  autoNavigateToLastTab={false}
+                  tabsChangeHandle={sqlStatementFormTabsChangeHandle}
+                  sqlInputTypeMap={sqlInputTypeMap}
+                  setSqlInputTypeMap={setSqlInputTypeMap}
+                  activeKey={differentModeActiveKey}
+                  autoSetDefaultSqlInput
                 />
               </EmptyBox>
 
@@ -339,18 +400,21 @@ const ModifySQL: React.FC<ModifySQLProps> = ({
                   {t('order.sqlInfo.audit')}
                 </BasicButton>
                 <BasicButton
+                  hidden={currentSQLInputType !== SQLInputType.manualInput}
                   onClick={formatSql}
                   loading={auditLoading || submitLoading}
                 >
                   {t('order.sqlInfo.format')}
                 </BasicButton>
 
-                <BasicToolTips
-                  prefixIcon={<IconTipGray />}
-                  title={t('order.sqlInfo.formatTips', {
-                    supportType: Object.keys(FormatLanguageSupport).join('、')
-                  })}
-                />
+                {currentSQLInputType === SQLInputType.manualInput && (
+                  <BasicToolTips
+                    prefixIcon={<IconTipGray />}
+                    title={t('order.sqlInfo.formatTips', {
+                      supportType: Object.keys(FormatLanguageSupport).join('、')
+                    })}
+                  />
+                )}
               </Space>
             </FormAreaBlockStyleWrapper>
           </FormAreaLineStyleWrapper>

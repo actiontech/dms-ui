@@ -272,7 +272,7 @@ exports[`page/Home render Home page 1`] = `
                         >
                           <div
                             aria-label="this is desc for order"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             this is desc for order
                             <div
@@ -653,7 +653,7 @@ exports[`page/Home render Home page 1`] = `
                         >
                           <div
                             aria-label="this is desc for order"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             this is desc for order
                             <div

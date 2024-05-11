@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Order/TaskResultList/WaterfallList should match snapshot 1`] = `
+<Styled(div)
+  className="task-result-scroll-infinite-list sql-mode-task-result-infinite-list"
+>
+  <ExecModeController
+    executeMode="sqls"
+    sqlComponent={
+      <SQLExecuteMode
+        auditLevelFilterValue="all"
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        duplicate={false}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+    sqlFileComponent={
+      <FileExecuteMode
+        auditLevelFilterValue="all"
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        duplicate={false}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+  />
+</Styled(div)>
+`;
+
+exports[`test Order/TaskResultList/WaterfallList should match snapshot 2`] = `
+<Styled(div)
+  className="task-result-scroll-infinite-list file-mode-task-result-infinite-list"
+>
+  <ExecModeController
+    executeMode="sql_file"
+    sqlComponent={
+      <SQLExecuteMode
+        auditLevelFilterValue="all"
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        duplicate={false}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+    sqlFileComponent={
+      <FileExecuteMode
+        auditLevelFilterValue="all"
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        duplicate={false}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+  />
+</Styled(div)>
+`;

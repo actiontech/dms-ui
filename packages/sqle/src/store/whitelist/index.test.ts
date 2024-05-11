@@ -5,7 +5,7 @@ describe('store/user', () => {
   test('should create action', () => {
     expect(
       updateSelectWhitelist({
-        whitelist: {
+        selectRow: {
           audit_whitelist_id: 2,
           desc: 'desc',
           match_type: 'aaaaa',
@@ -14,7 +14,7 @@ describe('store/user', () => {
       })
     ).toEqual({
       payload: {
-        whitelist: {
+        selectRow: {
           audit_whitelist_id: 2,
           desc: 'desc',
           match_type: 'aaaaa',
@@ -34,7 +34,7 @@ describe('store/user', () => {
     const newState = reducers(
       state,
       updateSelectWhitelist({
-        whitelist: {
+        selectRow: {
           audit_whitelist_id: 2,
           desc: 'desc',
           match_type: 'aaaaa',

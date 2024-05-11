@@ -7,6 +7,7 @@ import configuration from '../../../../testUtils/mockApi/configuration';
 import rule_template from '../../../../testUtils/mockApi/rule_template';
 import CustomRuleForm from '../CustomRuleForm';
 import { customRuleDetailMockData } from '../../../../testUtils/mockApi/rule_template/data';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -26,6 +27,7 @@ describe('sqle/CustomRule/Form', () => {
   let getRuleTypeByDBTypeSpy: jest.SpyInstance;
   beforeEach(() => {
     mockUseDbServiceDriver();
+    mockUseCurrentPermission();
     getDriversSpy = configuration.getDrivers();
     getRuleTypeByDBTypeSpy = rule_template.getRuleTypeByDBType();
     jest.useFakeTimers();

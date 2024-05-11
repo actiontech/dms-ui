@@ -125,6 +125,24 @@ const SqlAudit = React.lazy(() => import('../page/SqlAudit/List'));
 
 const PluginAudit = React.lazy(() => import('../page/PluginAudit'));
 
+const SqlOptimization = React.lazy(() => import('../page/SqlOptimization'));
+
+const SqlOptimizationList = React.lazy(
+  () => import('../page/SqlOptimization/List')
+);
+
+const SqlOptimizationCreate = React.lazy(
+  () => import('../page/SqlOptimization/Create')
+);
+
+const SqlOptimizationOverview = React.lazy(
+  () => import('../page/SqlOptimization/Overview')
+);
+
+const SqlOptimizationDetail = React.lazy(
+  () => import('../page/SqlOptimization/Detail')
+);
+
 const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
@@ -147,6 +165,10 @@ const UpdateWorkflowTemplate = React.lazy(
     import(
       /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
     )
+);
+
+const SQLFileStatementOverview = React.lazy(
+  () => import('../page/Order/AuditDetail/SQLFileStatementOverview')
 );
 // #endif
 
@@ -206,7 +228,14 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         path: ':taskId/:sqlNum/analyze',
         element: <OrderSqlAnalyze />,
         key: 'orderAnalyze'
+      },
+      // #if [ee]
+      {
+        path: ':taskId/files/:fileId/sqls',
+        element: <SQLFileStatementOverview />,
+        key: 'SQLFileStatementOverview'
       }
+      // #endif
     ]
   },
   {
@@ -377,6 +406,37 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'pluginAuditList'
       }
     ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sql-optimization`,
+    label: 'menu.sqlOptimization',
+    key: 'sqlOptimization',
+    element: <SqlOptimization />,
+    // #if [ee]
+    permission: ['sqlOptimizationIsSupported'],
+    children: [
+      {
+        index: true,
+        element: <SqlOptimizationList />,
+        key: 'sqlOptimizationList'
+      },
+      {
+        path: 'create',
+        element: <SqlOptimizationCreate />,
+        key: 'sqlOptimizationCreate'
+      },
+      {
+        path: 'overview/:optimizationId',
+        element: <SqlOptimizationOverview />,
+        key: 'sqlOptimizationOverview'
+      },
+      {
+        path: 'detail/:dbType/:optimizationId/:number',
+        element: <SqlOptimizationDetail />,
+        key: 'sqlOptimizationDetail'
+      }
+    ]
+    // #endif
   },
   {
     path: '*',
