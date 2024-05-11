@@ -300,7 +300,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                       style="height: auto; overflow: auto;"
                     >
                       <div
-                        class="has-top-margin css-16p38ka"
+                        class="has-top-margin css-4znel3"
                         style="cursor: pointer;"
                       >
                         <div
@@ -417,7 +417,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                         </section>
                       </div>
                       <div
-                        class="has-top-margin css-16p38ka"
+                        class="has-top-margin css-4znel3"
                         style="cursor: pointer;"
                       >
                         <div
@@ -896,7 +896,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                         >
                           <div
                             aria-label="test desc"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             test desc
                             <div

@@ -4,8 +4,7 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
-  useMemo,
-  useState
+  useMemo
 } from 'react';
 import {
   SQLStatementFormTabsProps,
@@ -14,13 +13,32 @@ import {
 import { BasicSegmented, EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import SQLStatementForm from './SQLStatementForm';
+import { useControllableValue } from 'ahooks';
 
 const SQLStatementFormTabs: React.ForwardRefRenderFunction<
   SQLStatementFormTabsRefType,
   SQLStatementFormTabsProps
-> = ({ SQLStatementInfo, tabsChangeHandle: onChange, ...props }, ref) => {
+> = (
+  {
+    SQLStatementInfo,
+    tabsChangeHandle: onChange,
+    autoNavigateToLastTab = true,
+    activeKey: key,
+    defaultActiveKey,
+    ...props
+  },
+  ref
+) => {
   const { t } = useTranslation();
-  const [activeKey, setActiveKey] = useState(SQLStatementInfo[0]?.key ?? '');
+  const [activeKey, setActiveKey] = useControllableValue<string>(
+    typeof key !== 'undefined' && onChange
+      ? {
+          value: key,
+          onChange: onChange,
+          defaultValue: defaultActiveKey
+        }
+      : { onChange: onChange, defaultValue: defaultActiveKey }
+  );
 
   const activeIndex = useMemo(() => {
     return SQLStatementInfo.findIndex((v) => v.key === activeKey);
@@ -31,9 +49,14 @@ const SQLStatementFormTabs: React.ForwardRefRenderFunction<
       onChange?.(tab);
       setActiveKey(tab);
     },
-    [onChange]
+    [onChange, setActiveKey]
   );
 
+  /**
+   * 作茧自缚的 ref 设计
+   * 通过 ref 获取 activeKey 或者 index 无法满足 tab 切换后引发重渲染。。
+   * 重构需要改掉。
+   */
   useImperativeHandle(
     ref,
     () => ({ activeKey, activeIndex, tabsChangeHandle }),
@@ -41,10 +64,12 @@ const SQLStatementFormTabs: React.ForwardRefRenderFunction<
   );
 
   useEffect(() => {
-    setActiveKey(
-      (v) => SQLStatementInfo[SQLStatementInfo.length - 1]?.key ?? v ?? ''
-    );
-  }, [SQLStatementInfo]);
+    if (autoNavigateToLastTab) {
+      tabsChangeHandle(
+        SQLStatementInfo[SQLStatementInfo.length - 1]?.key ?? ''
+      );
+    }
+  }, [SQLStatementInfo, autoNavigateToLastTab, tabsChangeHandle]);
 
   return (
     <>

@@ -5,6 +5,7 @@ import {
   IconEllipse,
   IconOperateAndAudit,
   IconPluginAudit,
+  IconSqlOptimization,
   IconProjectOverview,
   IconRuleTemplate,
   IconSQLOrder,
@@ -65,6 +66,17 @@ export const pluginAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   icon: <Icon component={IconPluginAudit} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/plugin-audit`,
   structKey: 'plugin-audit'
+});
+
+export const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/sqle/project/${projectID}/sql-optimization`}>
+      {t('dmsMenu.sqlOptimization')}
+    </Link>
+  ),
+  icon: <Icon component={IconSqlOptimization} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-optimization`,
+  structKey: 'sql-optimization'
 });
 
 export const sqlOrderMenuItem: GenerateMenuItemType = (projectID) => ({

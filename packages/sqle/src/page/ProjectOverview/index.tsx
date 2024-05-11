@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ConfigProvider, Space, Row, Col } from 'antd';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader, EmptyBox } from '@actiontech/shared';
 import { SyncOutlined } from '@ant-design/icons';
 
 import useThemeStyleData from '../../hooks/useThemeStyleData';
@@ -13,16 +13,21 @@ import OrderStatus from './component/OrderStatus';
 import OrderRiskList from './component/OrderRiskList';
 import ScanRiskList from './component/ScanRiskList';
 import ScanTask from './component/ScanTask';
+import DataSourcePerformance from './component/DataSourcePerformance';
+import OptimizationDistribution from './component/OptimizationDistribution';
 
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { useCallback, useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import useCurrentPermission from '@actiontech/shared/lib/global/useCurrentPermission';
 
 const Overview = () => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
   const { projectID } = useCurrentProject();
+
+  const { sqlOptimizationIsSupported } = useCurrentPermission();
 
   const onRefreshPage = useCallback(() => {
     eventEmitter.emit(EmitterKey.Refresh_Project_Overview);
@@ -95,6 +100,22 @@ const Overview = () => {
           <Col span={6} className="right-chart">
             <ScanTask />
           </Col>
+          <EmptyBox if={sqlOptimizationIsSupported}>
+            <Col span={24}>
+              <Row className="marginTop20" gutter={20}>
+                <Col span={12}>
+                  <div className="item-wrapper height352 order-risk">
+                    <OptimizationDistribution />
+                  </div>
+                </Col>
+                <Col span={12}>
+                  <div className="item-wrapper height352 scan-risk">
+                    <DataSourcePerformance />
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+          </EmptyBox>
           <Col span={24}>
             <Row className="marginTop20" gutter={20}>
               <Col span={12}>

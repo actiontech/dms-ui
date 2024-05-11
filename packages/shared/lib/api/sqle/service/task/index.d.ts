@@ -1,6 +1,7 @@
 import {
   ICreateAuditTasksGroupReqV1,
   ICreateAuditTasksGroupResV1,
+  ICreateAuditTaskReqV1,
   IGetAuditTaskResV1,
   IAuditTaskGroupResV1,
   IBaseRes,
@@ -8,6 +9,8 @@ import {
   IGetAuditTaskSQLsResV1,
   IUpdateAuditTaskSQLsReqV1,
   IGetTaskAnalysisDataResV1,
+  IGetAuditFileListRes,
+  IGetAuditFileExecStatisticRes,
   IGetAuditTaskSQLsResV2,
   IGetTaskAnalysisDataResV2
 } from '../common.d';
@@ -28,7 +31,7 @@ export interface ICreateAuditTasksV1Params extends ICreateAuditTasksGroupReqV1 {
 export interface ICreateAuditTasksV1Return
   extends ICreateAuditTasksGroupResV1 {}
 
-export interface ICreateAndAuditTaskV1Params {
+export interface ICreateAndAuditTaskV1Params extends ICreateAuditTaskReqV1 {
   project_name: string;
 
   instance_name: string;
@@ -124,6 +127,25 @@ export interface IGetTaskAnalysisDataParams {
 
 export interface IGetTaskAnalysisDataReturn extends IGetTaskAnalysisDataResV1 {}
 
+export interface IGetAuditFileListParams {
+  task_id: string;
+
+  page_index: string;
+
+  page_size: string;
+}
+
+export interface IGetAuditFileListReturn extends IGetAuditFileListRes {}
+
+export interface IGetAuditFileExecStatisticParams {
+  task_id: string;
+
+  file_id: string;
+}
+
+export interface IGetAuditFileExecStatisticReturn
+  extends IGetAuditFileExecStatisticRes {}
+
 export interface IGetAuditTaskSQLsV2Params {
   task_id: string;
 
@@ -134,6 +156,8 @@ export interface IGetAuditTaskSQLsV2Params {
   filter_audit_level?: getAuditTaskSQLsV2FilterAuditLevelEnum;
 
   no_duplicate?: boolean;
+
+  filter_audit_file_id?: number;
 
   page_index: string;
 

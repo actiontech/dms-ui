@@ -99,3 +99,13 @@ export const mockDBServiceDriverInfo = {
   driverInfoFetched: true,
   setDriverInfoFetched: jest.fn()
 };
+
+export const mockFeaturePermissionData = {
+  loading: false,
+  updateFeaturePermission: jest.fn(),
+  featurePermissionFetched: true
+};
+
+export const mockCurrentPermissionData = {
+  sqlOptimizationIsSupported: true
+};

@@ -6,18 +6,24 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import EmitterKey from '../../data/EmitterKey';
 import eventEmitter from '../../utils/EventEmitter';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 describe('page/ProjectOverview', () => {
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
-    jest.useFakeTimers();
+    mockUseCurrentPermission();
+    MockDate.set(dayjs('2022-01-01 12:00:00').valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
   });
 
   afterEach(() => {
     jest.useRealTimers();
     jest.clearAllMocks();
     cleanup();
+    MockDate.reset();
   });
 
   const customRender = () => {
@@ -35,5 +41,15 @@ describe('page/ProjectOverview', () => {
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.Refresh_Project_Overview
     );
+  });
+
+  it('render over view when sql optimization is not supported', async () => {
+    mockUseCurrentPermission({
+      sqlOptimizationIsSupported: false
+    });
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('项目概览')).toBeInTheDocument();
   });
 });

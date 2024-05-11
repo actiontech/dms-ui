@@ -8,6 +8,8 @@ import {
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
   BatchUpdateSqlManageReqStatusEnum,
+  CreateAuditTaskReqV1ExecModeEnum,
+  CreateAuditTasksGroupReqV1ExecModeEnum,
   CreateAuditWhitelistReqV1MatchTypeEnum,
   CreateCustomRuleReqV1LevelEnum,
   CustomRuleResV1LevelEnum,
@@ -41,6 +43,7 @@ import {
   GetWorkflowTasksItemV2StatusEnum,
   UpdateWorkflowScheduleReqV2NotifyTypeEnum,
   WorkflowRecordResV2StatusEnum,
+  WorkflowResV2ExecModeEnum,
   WorkflowResV2ModeEnum,
   WorkflowStepResV2StateEnum,
   WorkflowStepResV2TypeEnum
@@ -368,7 +371,19 @@ export interface ICreateAuditPlanReqV1 {
   rule_template_name?: string;
 }
 
+export interface ICreateAuditTaskReqV1 {
+  exec_mode?: CreateAuditTaskReqV1ExecModeEnum;
+
+  instance_name?: string;
+
+  instance_schema?: string;
+
+  sql?: string;
+}
+
 export interface ICreateAuditTasksGroupReqV1 {
+  exec_mode?: CreateAuditTasksGroupReqV1ExecModeEnum;
+
   instances?: IInstanceForCreatingTask[];
 }
 
@@ -452,6 +467,12 @@ export interface ICustomRuleResV1 {
   rule_script?: string;
 
   type?: string;
+}
+
+export interface IDBPerformanceImproveOverview {
+  avg_performance_improve?: number;
+
+  instance_name?: string;
 }
 
 export interface IDBTypeAuditPlan {
@@ -718,6 +739,14 @@ export interface IGetCustomRulesResV1 {
   message?: string;
 }
 
+export interface IGetDBPerformanceImproveOverviewResp {
+  code?: number;
+
+  data?: IDBPerformanceImproveOverview[];
+
+  message?: string;
+}
+
 export interface IGetDashboardResV1 {
   code?: number;
 
@@ -846,6 +875,14 @@ export interface IGetOperationsResV1 {
   code?: number;
 
   data?: IOperationResV1[];
+
+  message?: string;
+}
+
+export interface IGetOptimizationOverviewResp {
+  code?: number;
+
+  data?: IOptimizationRecordOverview[];
 
   message?: string;
 }
@@ -1476,6 +1513,12 @@ export interface IOptimizationRecord {
   status?: string;
 }
 
+export interface IOptimizationRecordOverview {
+  record_number?: number;
+
+  time?: string;
+}
+
 export interface IOptimizationSQL {
   contributing_indices?: string;
 
@@ -1690,6 +1733,10 @@ export interface IRuleResV1 {
   db_type?: string;
 
   desc?: string;
+
+  has_audit_power?: boolean;
+
+  has_rewrite_power?: boolean;
 
   is_custom_rule?: boolean;
 
@@ -2390,6 +2437,26 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_template_name?: string;
 }
 
+export interface IAuditFileExecStatistic {
+  exec_result_count?: IExecResultCount;
+
+  file_id?: string;
+
+  file_name?: string;
+}
+
+export interface IAuditFileStatistic {
+  audit_result_count?: IAuditResultCount;
+
+  exec_order?: number;
+
+  exec_status?: string;
+
+  file_id?: string;
+
+  file_name?: string;
+}
+
 export interface IAuditPlanReportSQLResV2 {
   audit_plan_report_sql?: string;
 
@@ -2450,6 +2517,16 @@ export interface IAuditResDataV2 {
   score?: number;
 
   sql_results?: IAuditSQLResV2[];
+}
+
+export interface IAuditResultCount {
+  error_sql_count?: number;
+
+  normal_sql_count?: number;
+
+  notice_sql_count?: number;
+
+  warning_sql_count?: number;
 }
 
 export interface IAuditSQLResV2 {
@@ -2558,8 +2635,42 @@ export interface IDriverMeta {
   logo_url?: string;
 }
 
+export interface IExecResultCount {
+  doing_count?: number;
+
+  failed_count?: number;
+
+  initialized_count?: number;
+
+  manually_executed_count?: number;
+
+  succeeded_count?: number;
+
+  terminate_failed_count?: number;
+
+  terminate_succeeded_count?: number;
+}
+
 export interface IFullSyncAuditPlanSQLsReqV2 {
   audit_plan_sql_list?: IAuditPlanSQLReqV2[];
+}
+
+export interface IGetAuditFileExecStatisticRes {
+  code?: number;
+
+  data?: IAuditFileExecStatistic;
+
+  message?: string;
+}
+
+export interface IGetAuditFileListRes {
+  code?: number;
+
+  data?: IAuditFileStatistic[];
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IGetAuditPlanAnalysisDataResV2 {
@@ -2738,6 +2849,8 @@ export interface IWorkflowResV2 {
   create_user_name?: string;
 
   desc?: string;
+
+  exec_mode?: WorkflowResV2ExecModeEnum;
 
   mode?: WorkflowResV2ModeEnum;
 

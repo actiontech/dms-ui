@@ -13,6 +13,8 @@ export const OrderDetailAuditResultStyleWrapper = styled('section')`
   }
 
   .ant-space.audit-result-actions-wrap {
+    margin-right: 12px;
+
     .ant-divider.audit-result-actions-divider {
       margin: 0;
       height: 28px;
@@ -24,19 +26,38 @@ export const ScheduleTimeModelDescribeStyleWrapper = styled('div')`
   margin-bottom: 16px;
 `;
 
-export const DataSourceResultListStyleWrapper = styled('div')`
+export const TasksResultListStyleWrapper = styled('div')`
   padding: 0 40px;
   margin-bottom: 80px;
 
-  &.data-source-result-scroll-infinite-list {
+  &.file-mode-task-result-pagination-list,
+  &.file-mode-task-result-infinite-list {
+    margin-top: 20px;
+
+    .file-mode-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+      margin-bottom: 28px;
+    }
+  }
+
+  &.task-result-scroll-infinite-list {
     margin-bottom: 0;
   }
 
   & .ant-list-items .ant-list-item {
-    padding: 0;
+    padding: 0 !important;
+
+    .ant-collapse .ant-collapse-item .ant-collapse-content {
+      .ant-table.ant-table-ping-right:not(.ant-table-has-fix-right)
+        > .ant-table-container::after {
+        box-shadow: none;
+      }
+    }
   }
 
-  & .data-source-result-list-pagination.result-list-pagination.ant-pagination {
+  & .task-result-pagination-list.ant-pagination {
     justify-content: space-between;
     margin: 0 !important;
     padding: 16px 40px;
@@ -137,7 +158,7 @@ export const DataSourceResultListStyleWrapper = styled('div')`
   }
 `;
 
-export const DataSourceResultCardStyleWrapper = styled('div')`
+export const TasksResultCardStyleWrapper = styled('div')`
   width: 100%;
   border-radius: 8px;
   border: 1px solid
@@ -184,6 +205,27 @@ export const DataSourceResultCardStyleWrapper = styled('div')`
       .ant-collapse-header-text {
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
         font-weight: 500;
+      }
+    }
+  }
+
+  .file-result-collapse-wrapper {
+    .ant-collapse-header {
+      align-items: center !important;
+      padding: 0 0 0 12px !important;
+    }
+
+    .file-result-card-wrapper {
+      cursor: pointer;
+
+      .file-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-name {
+          margin-left: 8px;
+        }
       }
     }
   }

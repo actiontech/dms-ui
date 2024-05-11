@@ -753,273 +753,319 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="css-8qroj2"
+                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        输入SQL语句
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          输入SQL语句
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传SQL文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传SQL文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传Mybatis的XML文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传Mybatis的XML文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传ZIP文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传ZIP文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-16nz79o"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        aria-label="setting"
-                        class="anticon anticon-setting custom-icon"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="setting"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="64 64 896 896"
-                          width="1em"
-                        >
-                          <path
-                            d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        配置GIT仓库
-                      </span>
                       <div
-                        class="active-icon-wrapper"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            aria-label="setting"
+                            class="anticon anticon-setting"
+                            role="img"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              aria-hidden="true"
+                              data-icon="setting"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          配置GIT仓库
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2057,273 +2103,319 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="css-8qroj2"
+                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="update-type-item-wrapper css-16nz79o"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        输入SQL语句
-                      </span>
                       <div
-                        class="active-icon-wrapper"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          输入SQL语句
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传SQL文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传SQL文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传Mybatis的XML文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传Mybatis的XML文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传ZIP文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传ZIP文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        aria-label="setting"
-                        class="anticon anticon-setting custom-icon"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="setting"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="64 64 896 896"
-                          width="1em"
-                        >
-                          <path
-                            d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        配置GIT仓库
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            aria-label="setting"
+                            class="anticon anticon-setting"
+                            role="img"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              aria-hidden="true"
+                              data-icon="setting"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          配置GIT仓库
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -3364,273 +3456,319 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="css-8qroj2"
+                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="update-type-item-wrapper css-16nz79o"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        输入SQL语句
-                      </span>
                       <div
-                        class="active-icon-wrapper"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          输入SQL语句
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传SQL文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传SQL文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传Mybatis的XML文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传Mybatis的XML文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传ZIP文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传ZIP文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        aria-label="setting"
-                        class="anticon anticon-setting custom-icon"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="setting"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="64 64 896 896"
-                          width="1em"
-                        >
-                          <path
-                            d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        配置GIT仓库
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            aria-label="setting"
+                            class="anticon anticon-setting"
+                            role="img"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              aria-hidden="true"
+                              data-icon="setting"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          配置GIT仓库
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -4499,273 +4637,319 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="css-8qroj2"
+                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        输入SQL语句
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          输入SQL语句
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-16nz79o"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传SQL文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传SQL文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传Mybatis的XML文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传Mybatis的XML文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传ZIP文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传ZIP文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        aria-label="setting"
-                        class="anticon anticon-setting custom-icon"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="setting"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="64 64 896 896"
-                          width="1em"
-                        >
-                          <path
-                            d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        配置GIT仓库
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            aria-label="setting"
+                            class="anticon anticon-setting"
+                            role="img"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              aria-hidden="true"
+                              data-icon="setting"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          配置GIT仓库
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -5751,273 +5935,319 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="css-8qroj2"
+                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        输入SQL语句
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          输入SQL语句
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传SQL文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传SQL文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-16nz79o"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传Mybatis的XML文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传Mybatis的XML文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传ZIP文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传ZIP文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        aria-label="setting"
-                        class="anticon anticon-setting custom-icon"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="setting"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="64 64 896 896"
-                          width="1em"
-                        >
-                          <path
-                            d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        配置GIT仓库
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            aria-label="setting"
+                            class="anticon anticon-setting"
+                            role="img"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              aria-hidden="true"
+                              data-icon="setting"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          配置GIT仓库
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -7003,273 +7233,319 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="css-8qroj2"
+                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        输入SQL语句
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          输入SQL语句
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传SQL文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传SQL文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传Mybatis的XML文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传Mybatis的XML文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-16nz79o"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        上传ZIP文件
-                      </span>
                       <div
-                        class="active-icon-wrapper"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="custom-icon  css-u3jcp4"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                                fill="currentColor"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          上传ZIP文件
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="update-type-item-wrapper css-1xajf28"
+                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      style="padding: 5px 5px 5px 5px;"
                     >
-                      <span
-                        aria-label="setting"
-                        class="anticon anticon-setting custom-icon"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="setting"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="64 64 896 896"
-                          width="1em"
-                        >
-                          <path
-                            d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="text"
-                      >
-                        配置GIT仓库
-                      </span>
                       <div
-                        class="active-icon-wrapper"
-                        hidden=""
+                        class="actiontech-mode-switcher-item css-1x7j8vu"
                       >
                         <span
-                          class="icon-order-upload-checked active-icon css-u3jcp4"
+                          class="actiontech-mode-switcher-item-icon"
                         >
-                          <svg
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            aria-label="setting"
+                            class="anticon anticon-setting"
+                            role="img"
                           >
-                            <g
-                              id="Frame"
+                            <svg
+                              aria-hidden="true"
+                              data-icon="setting"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
                             >
                               <path
-                                d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-                                id="Vector"
-                                stroke="#FCFBF9"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
+                                d="M924.8 625.7l-65.5-56c3.1-19 4.7-38.4 4.7-57.8s-1.6-38.8-4.7-57.8l65.5-56a32.03 32.03 0 009.3-35.2l-.9-2.6a443.74 443.74 0 00-79.7-137.9l-1.8-2.1a32.12 32.12 0 00-35.1-9.5l-81.3 28.9c-30-24.6-63.5-44-99.7-57.6l-15.7-85a32.05 32.05 0 00-25.8-25.7l-2.7-.5c-52.1-9.4-106.9-9.4-159 0l-2.7.5a32.05 32.05 0 00-25.8 25.7l-15.8 85.4a351.86 351.86 0 00-99 57.4l-81.9-29.1a32 32 0 00-35.1 9.5l-1.8 2.1a446.02 446.02 0 00-79.7 137.9l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.3 56.6c-3.1 18.8-4.6 38-4.6 57.1 0 19.2 1.5 38.4 4.6 57.1L99 625.5a32.03 32.03 0 00-9.3 35.2l.9 2.6c18.1 50.4 44.9 96.9 79.7 137.9l1.8 2.1a32.12 32.12 0 0035.1 9.5l81.9-29.1c29.8 24.5 63.1 43.9 99 57.4l15.8 85.4a32.05 32.05 0 0025.8 25.7l2.7.5a449.4 449.4 0 00159 0l2.7-.5a32.05 32.05 0 0025.8-25.7l15.7-85a350 350 0 0099.7-57.6l81.3 28.9a32 32 0 0035.1-9.5l1.8-2.1c34.8-41.1 61.6-87.5 79.7-137.9l.9-2.6c4.5-12.3.8-26.3-9.3-35zM788.3 465.9c2.5 15.1 3.8 30.6 3.8 46.1s-1.3 31-3.8 46.1l-6.6 40.1 74.7 63.9a370.03 370.03 0 01-42.6 73.6L721 702.8l-31.4 25.8c-23.9 19.6-50.5 35-79.3 45.8l-38.1 14.3-17.9 97a377.5 377.5 0 01-85 0l-17.9-97.2-37.8-14.5c-28.5-10.8-55-26.2-78.7-45.7l-31.4-25.9-93.4 33.2c-17-22.9-31.2-47.6-42.6-73.6l75.5-64.5-6.5-40c-2.4-14.9-3.7-30.3-3.7-45.5 0-15.3 1.2-30.6 3.7-45.5l6.5-40-75.5-64.5c11.3-26.1 25.6-50.7 42.6-73.6l93.4 33.2 31.4-25.9c23.7-19.5 50.2-34.9 78.7-45.7l37.9-14.3 17.9-97.2c28.1-3.2 56.8-3.2 85 0l17.9 97 38.1 14.3c28.7 10.8 55.4 26.2 79.3 45.8l31.4 25.8 92.8-32.9c17 22.9 31.2 47.6 42.6 73.6L781.8 426l6.5 39.9zM512 326c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 614c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 502c0-29.9 11.7-58 32.8-79.2C454 401.6 482.1 390 512 390c29.9 0 58 11.6 79.2 32.8A111.6 111.6 0 01624 502c0 29.9-11.7 58-32.8 79.2z"
                               />
-                            </g>
-                          </svg>
+                            </svg>
+                          </span>
                         </span>
+                        <span
+                          class="actiontech-mode-switcher-item-text"
+                        >
+                          配置GIT仓库
+                        </span>
+                        <div
+                          class="active-icon-wrapper"
+                          hidden=""
+                        >
+                          <span
+                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                          >
+                            <svg
+                              fill="none"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                id="Frame"
+                              >
+                                <path
+                                  d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                                  id="Vector"
+                                  stroke="#FCFBF9"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </g>
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>

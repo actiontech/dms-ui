@@ -30,6 +30,7 @@ export { default as BasicTypographyEllipsis } from './components/BasicTypography
 export { default as TokenCom } from './components/TokenCom';
 export { default as ToggleTokens } from './components/ToggleTokens';
 export { default as SQLRenderer } from './components/SQLRenderer';
+export { default as ModeSwitcher } from './components/ModeSwitcher';
 
 export { default as Copy } from './utils/Copy';
 export { default as Download } from './utils/Download';

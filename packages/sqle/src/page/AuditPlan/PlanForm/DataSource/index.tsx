@@ -59,15 +59,15 @@ const DataSource = (props: DataSourceProps) => {
     instanceOptions
   } = useInstance();
 
-  const handleDataSourceChange = (dataSource: string) => {
-    props.dataSourceChange?.(dataSource);
+  const handleDataSourceChange = (data: string) => {
+    props.dataSourceChange?.(data);
     form.setFieldsValue({
       schema: undefined
     });
-    if (!!dataSource) {
+    if (!!data) {
       instance
         .getInstanceV2({
-          instance_name: dataSource,
+          instance_name: data,
           project_name: projectName
         })
         .then((res) => {

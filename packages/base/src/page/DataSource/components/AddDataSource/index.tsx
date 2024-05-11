@@ -53,9 +53,9 @@ const AddDataSource = () => {
       password: values.password,
       business: values.business,
       maintenance_times:
-        values.maintenanceTime?.map((t) => ({
-          maintenance_start_time: t.startTime,
-          maintenance_stop_time: t.endTime
+        values.maintenanceTime?.map((time) => ({
+          maintenance_start_time: time.startTime,
+          maintenance_stop_time: time.endTime
         })) ?? [],
       // #if [sqle]
       sqle_config: {

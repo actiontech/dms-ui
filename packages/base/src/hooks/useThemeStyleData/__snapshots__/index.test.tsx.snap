@@ -322,7 +322,7 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
         "color": "#15C7D4",
       },
       "default": {
-        "backgroundColor": "#fffff",
+        "backgroundColor": "#f7f6f4",
         "color": "#575C66",
       },
       "geekblue": {
@@ -663,6 +663,15 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
     "DataSourceCount": {
       "health": "#7470ED",
       "risk": "#EBAD1C",
+    },
+    "DataSourcePerformance": {
+      "bar": {
+        "bg": "rgba(0,0,0,0.1)",
+        "fill": "#4BCCA6",
+      },
+      "toolTip": {
+        "dotColor": "#4BCCA6",
+      },
     },
     "ProjectScore": {
       "indicator": {

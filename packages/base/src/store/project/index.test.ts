@@ -9,10 +9,10 @@ describe('store/project', () => {
   };
 
   it('should create action', () => {
-    expect(updateSelectProject({ project: mockProjectList[0] })).toEqual({
+    expect(updateSelectProject({ selectProject: mockProjectList[0] })).toEqual({
       type: 'project/updateSelectProject',
       payload: {
-        project: mockProjectList[0]
+        selectProject: mockProjectList[0]
       }
     });
   });
@@ -21,7 +21,7 @@ describe('store/project', () => {
     const newState = reducers(
       state,
       updateSelectProject({
-        project: mockProjectList[0]
+        selectProject: mockProjectList[0]
       })
     );
     expect(newState).not.toBe(state);

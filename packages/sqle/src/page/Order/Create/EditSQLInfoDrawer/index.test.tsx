@@ -9,6 +9,7 @@ import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/c
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
+import { SQLInputType } from '../../SQLStatementForm';
 
 jest.mock('react-redux', () => {
   return {
@@ -48,7 +49,13 @@ describe('sqle/Order/Create/EditSQLInfoDrawer', () => {
           }
         ]
       ]),
-      setInstanceInfo: jest.fn()
+      setInstanceInfo: jest.fn(),
+      isSupportFileModeExecuteSQL: false,
+      setIsSupportFileModeExecuteSQL: jest.fn(),
+      sqlInputTypeMap: new Map([['0', SQLInputType.manualInput]]),
+      setSqlInputTypeMap: jest.fn(),
+      differentModeActiveKey: '0',
+      setDifferentModeActiveKey: jest.fn()
     };
     return renderWithThemeAndRedux(
       <EditSQLInfoDrawer {...params} {...intoParams} />

@@ -581,7 +581,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                         >
                           <div
                             aria-label="test project 1 desc"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             test project 1 desc
                             <div
@@ -781,7 +781,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                 style="margin-right: 0px;"
                               >
                                 business1
@@ -794,7 +794,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                         >
                           <div
                             aria-label="test project 2 desc"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             test project 2 desc
                             <div
@@ -998,7 +998,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                                   style="margin-right: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-f4phf8 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
                                     style="margin-right: 0px;"
                                   >
                                     business1
@@ -1018,7 +1018,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                         >
                           <div
                             aria-label="test project 3 desc"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
                           >
                             test project 3 desc
                             <div

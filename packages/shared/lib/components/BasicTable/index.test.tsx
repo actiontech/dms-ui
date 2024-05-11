@@ -40,4 +40,25 @@ describe('lib/BasicTable', () => {
     });
     expect(container).toMatchSnapshot();
   });
+
+  it('render fixed pagination for table', () => {
+    const { container } = customRender({
+      rowKey: 'demo',
+      columns: [
+        {
+          dataIndex: 'demo'
+        }
+      ],
+      dataSource: [
+        {
+          demo: 1
+        }
+      ],
+      pagination: {
+        total: 1
+      },
+      isPaginationFixed: true
+    });
+    expect(container).toMatchSnapshot();
+  });
 });

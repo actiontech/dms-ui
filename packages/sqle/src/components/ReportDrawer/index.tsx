@@ -5,7 +5,8 @@ import {
   BasicTag,
   EmptyBox,
   BasicToolTips,
-  SQLRenderer
+  SQLRenderer,
+  BasicTypographyEllipsis
 } from '@actiontech/shared';
 import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
 import { AuditReportStyleWrapper } from './style';
@@ -121,11 +122,19 @@ const ReportDrawer = ({
                       </BasicToolTips>
                     }
                   >
-                    <BasicTag icon={<IconFillListActive />}>
+                    <BasicTag
+                      icon={<IconFillListActive />}
+                      className="ellipsis-column-width"
+                    >
                       <span className="sql-source-title">
                         {t('auditPlan.report.drawer.source')}
                       </span>
-                      {data?.sqlSourceFile}
+                      <BasicTypographyEllipsis
+                        className="margin-bottom-0 sql-source-content"
+                        textCont={data?.sqlSourceFile!}
+                        copyable={false}
+                        tooltipsMaxWidth={220}
+                      />
                     </BasicTag>
                   </EmptyBox>
                   <BasicTag icon={<IconPosition />}>

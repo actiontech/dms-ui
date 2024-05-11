@@ -27,6 +27,10 @@ import {
   IUpdateAuditTaskSQLsV1Return,
   IGetTaskAnalysisDataParams,
   IGetTaskAnalysisDataReturn,
+  IGetAuditFileListParams,
+  IGetAuditFileListReturn,
+  IGetAuditFileExecStatisticParams,
+  IGetAuditFileExecStatisticReturn,
   IGetAuditTaskSQLsV2Params,
   IGetAuditTaskSQLsV2Return,
   IGetTaskAnalysisDataV2Params,
@@ -264,6 +268,39 @@ class TaskService extends ServiceBase {
 
     return this.get<IGetTaskAnalysisDataReturn>(
       `/v1/tasks/audits/${task_id}/sqls/${number}/analysis`,
+      paramsData,
+      options
+    );
+  }
+
+  public getAuditFileList(
+    params: IGetAuditFileListParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    return this.get<IGetAuditFileListReturn>(
+      `/v2/tasks/audits/${task_id}/files`,
+      paramsData,
+      options
+    );
+  }
+
+  public getAuditFileExecStatistic(
+    params: IGetAuditFileExecStatisticParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    const file_id = paramsData.file_id;
+    delete paramsData.file_id;
+
+    return this.get<IGetAuditFileExecStatisticReturn>(
+      `/v2/tasks/audits/${task_id}/files/${file_id}/`,
       paramsData,
       options
     );

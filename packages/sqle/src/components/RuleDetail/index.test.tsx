@@ -7,6 +7,7 @@ import { renderWithTheme } from '../../testUtils/customRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -40,6 +41,7 @@ describe('sqle/components/RuleDetail', () => {
     requestGetGlobalRule = rule_template.getRuleTemplate();
     requestGetAllRule = rule_template.getRuleList();
     mockUseCurrentProject();
+    mockUseCurrentPermission();
   });
 
   afterEach(() => {

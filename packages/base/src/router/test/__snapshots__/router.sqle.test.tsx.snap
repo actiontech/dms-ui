@@ -130,6 +130,20 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render SQLFileStatementOverview 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="order"
+    >
+      <div>
+        SQLFileStatementOverview
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderCreate 1`] = `
 <body>
   <div>
@@ -428,6 +442,62 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
     >
       <div>
         SQLManagement
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimization 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlOptimization"
+    >
+      <div>
+        sqlOptimizationList
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlOptimization"
+    >
+      <div>
+        sqlOptimizationCreate
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlOptimization"
+    >
+      <div>
+        sqlOptimizationDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlOptimization render route sqlOptimizationOverview 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlOptimization"
+    >
+      <div>
+        sqlOptimizationOverview
       </div>
     </div>
   </div>
@@ -771,6 +841,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
             "key": "orderAnalyze",
             "path": ":taskId/:sqlNum/analyze",
           },
+          {
+            "element": <div>
+              SQLFileStatementOverview
+            </div>,
+            "key": "SQLFileStatementOverview",
+            "path": ":taskId/files/:fileId/sqls",
+          },
         ],
         "element": <div
           data-test-parent-id="order"
@@ -1006,6 +1083,45 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         </div>,
         "key": "pluginAudit",
         "path": ":projectID/plugin-audit",
+      },
+      {
+        "children": [
+          {
+            "element": <div>
+              sqlOptimizationList
+            </div>,
+            "key": "sqlOptimizationList",
+            "path": "",
+          },
+          {
+            "element": <div>
+              sqlOptimizationCreate
+            </div>,
+            "key": "sqlOptimizationCreate",
+            "path": "create",
+          },
+          {
+            "element": <div>
+              sqlOptimizationOverview
+            </div>,
+            "key": "sqlOptimizationOverview",
+            "path": "overview/:optimizationId",
+          },
+          {
+            "element": <div>
+              sqlOptimizationDetail
+            </div>,
+            "key": "sqlOptimizationDetail",
+            "path": "detail/:dbType/:optimizationId/:number",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="sqlOptimization"
+        >
+          <Outlet />
+        </div>,
+        "key": "sqlOptimization",
+        "path": ":projectID/sql-optimization",
       },
       {
         "element": <div>

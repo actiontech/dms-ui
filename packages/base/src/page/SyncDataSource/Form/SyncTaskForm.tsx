@@ -64,8 +64,8 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     // #endif
   };
 
-  const sourceChange = (source: string) => {
-    setSource(source);
+  const sourceChange = (data: string) => {
+    setSource(data);
     form.setFieldsValue({
       instanceType: undefined
     });

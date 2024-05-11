@@ -2,16 +2,21 @@ import { useTranslation } from 'react-i18next';
 import DatabaseInfo from './DatabaseInfo';
 import { SQLInfoFormItemProps } from './index.type';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  CreateAuditTasksGroupReqV1ExecModeEnum,
+  WorkflowResV2ModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   FormItemLabel,
-  FormItemNoLabel
+  FormItemNoLabel,
+  FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import {
   BasicButton,
   BasicSwitch,
   BasicToolTips,
-  EmptyBox
+  EmptyBox,
+  ModeSwitcher
 } from '@actiontech/shared';
 import { Space, SwitchProps } from 'antd';
 import SQLStatementFormTabs from '../../SQLStatementForm/SQLStatementFormTabs';
@@ -30,6 +35,7 @@ import {
   FormatLanguageSupport,
   formatterSQL
 } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { sqlExecuteModeOptions } from './index.data';
 
 const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
   form,
@@ -44,6 +50,12 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
   setChangeSqlModeDisabled,
   currentSqlMode,
   setCurrentSqlMode,
+  isSupportFileModeExecuteSQL,
+  setIsSupportFileModeExecuteSQL,
+  sqlInputTypeMap,
+  setSqlInputTypeMap,
+  differentModeActiveKey,
+  setDifferentModeActiveKey,
   ...otherProps
 }) => {
   const { t } = useTranslation();
@@ -98,9 +110,9 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         .then((res) => res.data.data);
     };
     if (currentSqlMode === WorkflowResV2ModeEnum.same_sqls) {
-      const SQLStatementInfo = params['0'] as SQLStatementFields;
+      const SQLStatementValue = params['0'] as SQLStatementFields;
       const instanceName = params.dataBaseInfo[0].instanceName;
-      if (SQLStatementInfo?.sqlInputType !== SQLInputType.manualInput) {
+      if (SQLStatementValue?.sqlInputType !== SQLInputType.manualInput) {
         return;
       }
       if (instanceName) {
@@ -108,7 +120,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
           form.setFields([
             {
               name: ['0', 'sql'],
-              value: formatterSQL(SQLStatementInfo.sql, res?.db_type)
+              value: formatterSQL(SQLStatementValue.sql, res?.db_type)
             }
           ]);
         });
@@ -116,19 +128,19 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         form.setFields([
           {
             name: ['0', 'sql'],
-            value: formatterSQL(SQLStatementInfo.sql)
+            value: formatterSQL(SQLStatementValue.sql)
           }
         ]);
       }
     } else {
-      const SQLStatementInfo = params[
+      const SQLStatementValue = params[
         sqlStatementFormTabsRef.current?.activeKey ?? ''
       ] as SQLStatementFields;
 
       const instanceName = params.dataBaseInfo.filter((v) => v.instanceName)[
         sqlStatementFormTabsRef.current?.activeIndex ?? 0
       ].instanceName;
-      if (SQLStatementInfo?.sqlInputType !== SQLInputType.manualInput) {
+      if (SQLStatementValue?.sqlInputType !== SQLInputType.manualInput) {
         return;
       }
 
@@ -137,7 +149,7 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
           form.setFields([
             {
               name: [sqlStatementFormTabsRef.current?.activeKey ?? '', 'sql'],
-              value: formatterSQL(SQLStatementInfo.sql, res?.db_type)
+              value: formatterSQL(SQLStatementValue.sql, res?.db_type)
             }
           ]);
         });
@@ -145,17 +157,22 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         form.setFields([
           {
             name: [sqlStatementFormTabsRef.current?.activeKey ?? '', 'sql'],
-            value: formatterSQL(SQLStatementInfo.sql)
+            value: formatterSQL(SQLStatementValue.sql)
           }
         ]);
       }
     }
   };
+  const currentSQLInputType = useMemo(() => {
+    return sqlInputTypeMap.get(differentModeActiveKey || '0');
+  }, [differentModeActiveKey, sqlInputTypeMap]);
 
   useEffect(() => {
     const resetAlreadySubmit = () => {
       setInstanceInfo(new Map([[0, { instanceName: '' }]]));
       setCurrentSqlMode(WorkflowResV2ModeEnum.same_sqls);
+      setChangeSqlModeDisabled(false);
+      setIsSupportFileModeExecuteSQL(false);
     };
     EventEmitter.subscribe(
       EmitterKey.Reset_Create_Order_Form,
@@ -179,6 +196,8 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
         setInstanceInfo={setInstanceInfo}
         instanceNameChange={instanceNameChange}
         setChangeSqlModeDisabled={setChangeSqlModeDisabledAndSetValue}
+        setIsSupportFileModeExecuteSQL={setIsSupportFileModeExecuteSQL}
+        setSqlInputTypeMap={setSqlInputTypeMap}
         {...otherProps}
       />
       <FormItemLabel
@@ -228,14 +247,48 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
             form={form}
             isClearFormWhenChangeSqlType={true}
             SQLStatementInfo={SQLStatementInfo}
+            sqlInputTypeMap={sqlInputTypeMap}
+            setSqlInputTypeMap={setSqlInputTypeMap}
+            tabsChangeHandle={setDifferentModeActiveKey}
+            activeKey={differentModeActiveKey}
           />
         }
       >
-        <SQLStatementForm form={form} isClearFormWhenChangeSqlType={true} />
+        <SQLStatementForm
+          form={form}
+          isClearFormWhenChangeSqlType={true}
+          setSqlInputTypeMap={setSqlInputTypeMap}
+          sqlInputTypeMap={sqlInputTypeMap}
+        />
+      </EmptyBox>
+
+      <EmptyBox
+        if={
+          isSupportFileModeExecuteSQL &&
+          currentSQLInputType !== SQLInputType.manualInput
+        }
+      >
+        <FormItemSubTitle>
+          {t('order.sqlInfo.selectExecuteMode')}
+        </FormItemSubTitle>
+        <FormItemNoLabel
+          name="executeMode"
+          initialValue={CreateAuditTasksGroupReqV1ExecModeEnum.sqls}
+        >
+          <ModeSwitcher
+            rowProps={{ gutter: 10 }}
+            options={sqlExecuteModeOptions}
+          />
+        </FormItemNoLabel>
       </EmptyBox>
 
       {/* #else */}
-      <SQLStatementForm form={form} isClearFormWhenChangeSqlType={true} />
+      <SQLStatementForm
+        form={form}
+        isClearFormWhenChangeSqlType={true}
+        setSqlInputTypeMap={setSqlInputTypeMap}
+        sqlInputTypeMap={sqlInputTypeMap}
+      />
 
       {/* #endif */}
 
@@ -248,15 +301,21 @@ const SQLInfoFormItem: React.FC<SQLInfoFormItemProps> = ({
           >
             {t('order.sqlInfo.audit')}
           </BasicButton>
-          <BasicButton onClick={formatSql} loading={auditLoading}>
+          <BasicButton
+            hidden={currentSQLInputType !== SQLInputType.manualInput}
+            onClick={formatSql}
+            loading={auditLoading}
+          >
             {t('order.sqlInfo.format')}
           </BasicButton>
-          <BasicToolTips
-            prefixIcon={<IconTipGray />}
-            title={t('order.sqlInfo.formatTips', {
-              supportType: Object.keys(FormatLanguageSupport).join('、')
-            })}
-          />
+          {currentSQLInputType === SQLInputType.manualInput && (
+            <BasicToolTips
+              prefixIcon={<IconTipGray />}
+              title={t('order.sqlInfo.formatTips', {
+                supportType: Object.keys(FormatLanguageSupport).join('、')
+              })}
+            />
+          )}
         </Space>
       </FormItemNoLabel>
     </>
