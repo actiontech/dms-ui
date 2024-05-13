@@ -14,6 +14,7 @@ const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 // const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
 const AccountManagement = React.lazy(() => import('../page/AccountManagement'));
+const AccountList = React.lazy(() => import('../page/AccountManagement/List'));
 
 const PasswordManagement = React.lazy(
   () => import('../page/PasswordManagement')
@@ -75,7 +76,14 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     path: `${PROJECT_ROUTER_PARAM}/account-management`,
     label: 'provisionNav.menu.accountManagement',
     key: 'accountManagement',
-    element: <AccountManagement />
+    element: <AccountManagement />,
+    children: [
+      {
+        index: true,
+        key: 'accountList',
+        element: <AccountList />
+      }
+    ]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/password-management`,
