@@ -7,13 +7,14 @@ import {
   IListDBAccountReply,
   IAddDBAccount,
   IAddDBAccountReply,
+  IDiscoveryDBAccountReply,
+  IDBAccountBody,
+  IGenericResp,
   IDBAccount,
   IDataPermission,
   IGetStatementsReply,
-  IDBAccountBody,
-  IGenericResp,
   IGetDBAccountReply,
-  IDiscoveryDBAccountReply
+  IUpdateDBAccount
 } from '../common.d';
 
 export interface IAuthListDBAccountParams {
@@ -52,6 +53,25 @@ export interface IAuthAddDBAccountParams {
 
 export interface IAuthAddDBAccountReturn extends IAddDBAccountReply {}
 
+export interface IAuthDiscoveryDBAccountParams {
+  project_uid: string;
+
+  db_service_uid: string;
+}
+
+export interface IAuthDiscoveryDBAccountReturn
+  extends IDiscoveryDBAccountReply {}
+
+export interface IAuthSyncDBAccountParams {
+  project_uid: string;
+
+  db_service_uid: string;
+
+  accounts?: IDBAccountBody[];
+}
+
+export interface IAuthSyncDBAccountReturn extends IGenericResp {}
+
 export interface IAuthGetStatementParams {
   project_uid: string;
 
@@ -63,16 +83,6 @@ export interface IAuthGetStatementParams {
 }
 
 export interface IAuthGetStatementReturn extends IGetStatementsReply {}
-
-export interface IAuthSyncDBAccountParams {
-  project_uid: string;
-
-  db_service_uid: string;
-
-  accounts?: IDBAccountBody[];
-}
-
-export interface IAuthSyncDBAccountReturn extends IGenericResp {}
 
 export interface IAuthDelDBAccountParams {
   project_uid: string;
@@ -90,11 +100,12 @@ export interface IAuthGetDBAccountParams {
 
 export interface IAuthGetDBAccountReturn extends IGetDBAccountReply {}
 
-export interface IAuthDiscoveryDBAccountParams {
+export interface IAuthUpdateDBAccountParams {
   project_uid: string;
 
-  db_service_uid: string;
+  db_account_uid: string;
+
+  db_account?: IUpdateDBAccount;
 }
 
-export interface IAuthDiscoveryDBAccountReturn
-  extends IDiscoveryDBAccountReply {}
+export interface IAuthUpdateDBAccountReturn extends IGenericResp {}
