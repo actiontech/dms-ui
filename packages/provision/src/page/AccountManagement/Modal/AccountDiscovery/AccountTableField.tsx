@@ -51,8 +51,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
       rowSelection={{
         selectedRowKeys,
         onChange: onSelectChange,
-        fixed: true,
-        columnWidth: 60
+        fixed: true
       }}
       loading={loading}
       scroll={{
