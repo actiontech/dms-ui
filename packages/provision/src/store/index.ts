@@ -15,7 +15,9 @@ export enum StoreKey {
 
   Password_Security_policy_Select_Data = 'Password_Security_policy_Select_Data',
 
-  Account_Management_Modal_Status = 'Account_Management_Modal_Status'
+  Account_Management_Modal_Status = 'Account_Management_Modal_Status',
+
+  Account_Management_Modal_Select_Data = 'Account_Management_Modal_Select_Data'
 }
 
 export const recoilIsInstanceOfDefaultValue = (

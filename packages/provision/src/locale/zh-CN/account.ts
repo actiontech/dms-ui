@@ -76,10 +76,51 @@ export default {
       desc: '账号说明',
       descPlaceholder: '点击添加账户说明（选填）',
       removeConfirmTips: '是否确认删除当前数据权限信息?',
-      clearConfirmTips: '是否确认清除当前数据权限信息？'
-    }
+      clearConfirmTips: '是否确认清除当前数据权限信息？',
+      objects: '数据对象',
+      operation: '数据操作',
+      permissionErrorTips: '请添加数据权限',
+      syncSuccessTips: '同步字典数据成功',
+      extraEmptyTips: '您还没有为当前模板添加数据权限',
+      addDataPermission: '添加数据权限',
+      editDataPermission: '编辑数据权限',
+      resetPermission: '清除所有权限',
+      selectObjects: '选择数据库表',
+      addDatabaseTable: '添加数据库表',
+      selectPermission: '选择权限',
+      duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限'
+    },
+    previewModal: '账号创建预览'
   },
   update: {
     title: '更新数据库账号'
+  },
+  detail: {
+    title: '账号详情',
+    accountInfo: '连接信息',
+    address: '链接地址',
+    explanation: '说明',
+    copyString: '复制连接串',
+    getConnection: '授权信息',
+    createTime: '本次密码生成时间',
+    expireTime: '过期时间',
+    copyAll: '全文复制',
+    authInfo: '授权信息',
+    authUser: '授权成员'
+  },
+  authorize: {
+    title: '账号授权',
+    currentAccount: '当前账号',
+    selectUser: '授权成员',
+    successTip: '授权成功'
+  },
+  modifyPassword: {
+    title: '修改密码',
+    successTip: '修改密码成功'
+  },
+  renewalPassword: {
+    title: '续用当前密码',
+    dateTime: '设置续用时间（天）',
+    successTip: '续用当前密码成功'
   }
 };

@@ -13,6 +13,7 @@ import { AvatarCom } from '@actiontech/shared';
 import { Space, Typography } from 'antd';
 import { DBAccountStatusDictionary } from '../index.data';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { ModalName } from '~/data/enum';
 
 export type AccountListFilterParamType = PageInfoWithoutIndexAndSize<
   IAuthListDBAccountParams & {
@@ -137,7 +138,9 @@ export const AccountListColumns = (
   ];
 };
 
-export const AccountListActions = (): {
+export const AccountListActions = (
+  onOpenModal: (name: ModalName, record?: IListDBAccount) => void
+): {
   moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IListDBAccount>[];
   buttons: ActiontechTableActionMeta<IListDBAccount>[];
 } => ({
@@ -146,26 +149,30 @@ export const AccountListActions = (): {
       key: 'account_view',
       text: t('account.list.action.view'),
       buttonProps: (record) => ({
-        // onClick: () => {}
+        onClick: () => onOpenModal(ModalName.AccountDetailModal, record)
       })
     }
   ],
   moreButtons: [
     {
       key: 'account_authorize',
-      text: t('account.list.action.authorize')
-      // onClick: (record) => openModal(record!, ModalName.UpdateExpirationInAuth),
+      text: t('account.list.action.authorize'),
+      onClick: (record) => onOpenModal(ModalName.AccountAuthorizeModal, record)
       // disabled: (record) => {
       //   return record?.expiration === -1;
       // }
     },
     {
       key: 'modifyPassword',
-      text: t('account.list.action.modifyPassword')
+      text: t('account.list.action.modifyPassword'),
+      onClick: (record) =>
+        onOpenModal(ModalName.AccountModifyPasswordModal, record)
     },
     {
       key: 'account_renewal',
-      text: t('account.list.action.renewal')
+      text: t('account.list.action.renewal'),
+      onClick: (record) =>
+        onOpenModal(ModalName.AccountRenewalPasswordModal, record)
     },
     {
       key: 'modifyPermission',

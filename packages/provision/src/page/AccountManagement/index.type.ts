@@ -4,6 +4,7 @@ import {
 } from '@actiontech/shared/lib/api/provision/service/common';
 import { SelectProps } from 'antd';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
+import { IGetDBAccountReply } from '@actiontech/shared/lib/api/provision/service/common.d';
 
 export type AccountDiscoveryFormType = {
   business: string;
@@ -79,4 +80,17 @@ export type PreviewModalProps = {
   params?: IAuthAddDBAccountParams;
   onSuccess: () => void;
   setParams: (params?: IAuthAddDBAccountParams) => void;
+};
+
+export interface IAccountDetailCustomConfig {
+  key: keyof Required<IGetDBAccountReply>['data'];
+  type: 'p' | 'table';
+  prefix: string;
+  headers?: string[];
+}
+
+export type ModifyPasswordFormType = {
+  policy: string;
+  password: string;
+  confirm_password: string;
 };

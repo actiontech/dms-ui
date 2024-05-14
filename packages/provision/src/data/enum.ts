@@ -17,7 +17,15 @@ export enum ModalName {
 
   UpdatePasswordSecurityPolicyModal = 'UpdatePasswordSecurityPolicyModal',
 
-  AccountDiscoveryModal = 'AccountDiscoveryModal'
+  AccountDiscoveryModal = 'AccountDiscoveryModal',
+
+  AccountDetailModal = 'AccountDetailModal',
+
+  AccountAuthorizeModal = 'AccountAuthorizeModal',
+
+  AccountModifyPasswordModal = 'AccountModifyPasswordModal',
+
+  AccountRenewalPasswordModal = 'AccountRenewalPasswordModal'
 }
 
 export enum EventEmitterKey {

@@ -33,11 +33,16 @@ import {
 import useProvisionUser from '~/hooks/useProvisionUser';
 import useServiceOptions from '~/hooks/useServiceOptions';
 import useModalStatus from '~/hooks/useModalStatus';
-import { AccountManagementModalStatus } from '~/store/accountManagement';
+import {
+  AccountManagementModalStatus,
+  AccountManagementSelectData
+} from '~/store/accountManagement';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import AccountDiscoveryModal from '../Modal/AccountDiscovery';
 import EventEmitter from '~/utils/EventEmitter';
 import { Link } from 'react-router-dom';
+import AccountDetailModal from '../Modal/Detail';
+import { useSetRecoilState } from 'recoil';
 
 const AccountList = () => {
   const { t } = useTranslation();
@@ -55,6 +60,8 @@ const AccountList = () => {
   const { toggleModal, initModalStatus } = useModalStatus(
     AccountManagementModalStatus
   );
+
+  const updateSelectData = useSetRecoilState(AccountManagementSelectData);
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -99,7 +106,8 @@ const AccountList = () => {
       [
         'expired_time',
         {
-          showTime: true
+          showTime: true,
+          disabledDate: undefined
         }
       ],
       [
@@ -146,10 +154,16 @@ const AccountList = () => {
     return AccountListColumns(onUpdateFilter);
   }, [onUpdateFilter]);
 
+  const onOpenModal = useCallback(
+    (name: ModalName, record?: IListDBAccount) => {
+      toggleModal(name, true);
+      updateSelectData(record ?? null);
+    },
+    [toggleModal, updateSelectData]
+  );
   const actions = useMemo(() => {
-    return AccountListActions();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return AccountListActions(onOpenModal);
+  }, [onOpenModal]);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
@@ -165,7 +179,11 @@ const AccountList = () => {
 
   useEffect(() => {
     initModalStatus({
-      [ModalName.AccountDiscoveryModal]: false
+      [ModalName.AccountDiscoveryModal]: false,
+      [ModalName.AccountDetailModal]: false,
+      [ModalName.AccountAuthorizeModal]: false,
+      [ModalName.AccountModifyPasswordModal]: false,
+      [ModalName.AccountRenewalPasswordModal]: false
     });
   }, [initModalStatus]);
 
@@ -246,6 +264,7 @@ const AccountList = () => {
         }}
       />
       <AccountDiscoveryModal />
+      <AccountDetailModal />
     </>
   );
 };
