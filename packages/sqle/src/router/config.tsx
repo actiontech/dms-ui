@@ -1,13 +1,5 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import {
-  PieChartOutlined,
-  AuditOutlined,
-  ConsoleSqlOutlined,
-  ProfileOutlined,
-  CiCircleOutlined,
-  ProjectOutlined
-} from '@ant-design/icons';
 import { SystemRole } from '../data/common';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
@@ -172,6 +164,14 @@ const SQLFileStatementOverview = React.lazy(
 );
 // #endif
 
+//workflow
+const SQLExecWorkflowList = React.lazy(
+  () => import('../page/SqlExecWorkflow/List')
+);
+const CreateSQLExecWorkflow = React.lazy(
+  () => import('../page/SqlExecWorkflow/Create')
+);
+
 //sqle global page
 const Rule = React.lazy(() => import('../page/Rule'));
 const RuleManager = React.lazy(() => import('../page/RuleManager'));
@@ -197,16 +197,45 @@ const ReportStatistics = React.lazy(() => import('../page/ReportStatistics'));
 
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
-    label: 'menu.projectOverview',
     key: 'projectOverview',
-    icon: <ProjectOutlined />,
     path: `${PROJECT_ROUTER_PARAM}/overview`,
     element: <ProjectOverview />
   },
   {
-    label: 'menu.order',
+    key: 'sqlExecWorkflow',
+    path: `${PROJECT_ROUTER_PARAM}/exec-workflow`,
+    children: [
+      {
+        index: true,
+        element: <SQLExecWorkflowList />,
+        key: 'sqlExecWorkflowList'
+      },
+      {
+        path: 'create',
+        element: <CreateSQLExecWorkflow />,
+        key: 'createSQLExecWorkflow'
+      },
+      {
+        path: ':taskId/:sqlNum/analyze',
+        element: <OrderSqlAnalyze />,
+        key: 'orderAnalyze'
+      },
+      {
+        path: ':orderId',
+        element: <OrderDetail />,
+        key: 'orderDetail'
+      },
+      // #if [ee]
+      {
+        path: ':taskId/files/:fileId/sqls',
+        element: <SQLFileStatementOverview />,
+        key: 'SQLFileStatementOverview'
+      }
+      // #endif
+    ]
+  },
+  {
     key: 'order',
-    icon: <ConsoleSqlOutlined />,
     path: `${PROJECT_ROUTER_PARAM}/order`,
     children: [
       {
@@ -261,15 +290,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/dashboard`,
-    label: 'menu.dashboard',
     element: <Home />,
-    icon: <PieChartOutlined />,
     key: 'dashboard'
   },
   {
     key: 'plane',
-    label: 'menu.auditPlane',
-    icon: <CiCircleOutlined />,
     path: `${PROJECT_ROUTER_PARAM}/audit-plan`,
     children: [
       {
@@ -307,8 +332,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: `${PROJECT_ROUTER_PARAM}/rule/template`,
     key: 'ruleTemplate',
-    label: 'menu.ruleTemplate',
-    icon: <AuditOutlined />,
     element: <RuleTemplate />,
     children: [
       {
@@ -364,20 +387,16 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: `${PROJECT_ROUTER_PARAM}/whitelist`,
     key: 'Whitelist',
-    label: 'menu.whitelist',
-    element: <Whitelist />,
-    icon: <ProfileOutlined />
+    element: <Whitelist />
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/operation-record`,
-    label: 'menu.operationRecord',
     key: 'operationRecord',
     element: <OperationRecord />,
     role: [SystemRole.admin]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/sql-management`,
-    label: 'menu.sqlManagement',
     key: 'sqlManagement',
     children: [
       {
@@ -397,7 +416,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/plugin-audit`,
-    label: 'menu.pluginAudit',
     key: 'pluginAudit',
     children: [
       {
@@ -409,7 +427,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/sql-optimization`,
-    label: 'menu.sqlOptimization',
     key: 'sqlOptimization',
     element: <SqlOptimization />,
     // #if [ee]
@@ -441,8 +458,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: '*',
     key: 'projectRedirect',
-    element: <Navigate to="/" />,
-    label: 'menu.projectOverview'
+    element: <Navigate to="/" />
   }
 ];
 

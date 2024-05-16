@@ -305,6 +305,27 @@ export const IconSQLOrder = () => {
   );
 };
 
+export const IconSQLExecWorkflow = () => {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.5 3V6H13.5V3H15.0049C15.4164 3 15.75 3.33371 15.75 3.74505V15.7549C15.75 16.1664 15.4163 16.5 15.0049 16.5H2.99505C2.58357 16.5 2.25 16.1663 2.25 15.7549V3.74505C2.25 3.33357 2.58371 3 2.99505 3H4.5ZM6.75 12.75H5.25V14.25H6.75V12.75ZM6.75 10.5H5.25V12H6.75V10.5ZM6.75 8.25H5.25V9.75H6.75V8.25Z"
+        fill="#C3C6CD"
+      />
+      <path
+        d="M11 1.5C11.5523 1.5 12 1.94772 12 2.5V3.5C12 4.05228 11.5523 4.5 11 4.5H7C6.44772 4.5 6 4.05228 6 3.5V2.5C6 1.94772 6.44772 1.5 7 1.5H11Z"
+        fill="#8A8F99"
+      />
+    </svg>
+  );
+};
+
 export const IconAuditPlan = () => {
   return (
     <svg
