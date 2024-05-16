@@ -1,5 +1,5 @@
 import { Form } from 'antd';
-import { BasicInput } from '@actiontech/shared';
+import { BasicInput, BasicInputNumber } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { PolicyFormType } from '../../index.type';
 
@@ -37,10 +37,11 @@ const PolicyForm: React.FC<{
           }
         ]}
       >
-        <BasicInput
+        <BasicInputNumber
           placeholder={t('common.form.placeholder.input', {
             name: t('passwordSecurityPolicy.policy.modal.periodOfValidity')
           })}
+          min="0"
         />
       </Form.Item>
     </Form>
