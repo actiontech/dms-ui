@@ -5,9 +5,9 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
-import useModalStatus from '~/hooks/useModalStatus';
-import { AccountManagementModalStatus } from '~/store/accountManagement';
-import { EventEmitterKey, ModalName } from '~/data/enum';
+import useModalStatus from '../../../../hooks/useModalStatus';
+import { DatabaseAccountModalStatus } from '../../../../store/databaseAccount';
+import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import DataBaseInfoField from './DataBaseInfoField';
 import { AccountDiscoveryFormType } from '../../index.type';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
@@ -23,15 +23,15 @@ const AccountDiscoveryModal: React.FC = () => {
     useBoolean();
 
   const { toggleModal, visible } = useModalStatus(
-    AccountManagementModalStatus,
-    ModalName.AccountDiscoveryModal
+    DatabaseAccountModalStatus,
+    ModalName.DatabaseAccountDiscoveryModal
   );
 
   const { projectID } = useCurrentProject();
 
   const onClose = () => {
     form.resetFields();
-    toggleModal(ModalName.AccountDiscoveryModal, false);
+    toggleModal(ModalName.DatabaseAccountDiscoveryModal, false);
   };
 
   const onSubmit = async () => {
@@ -45,7 +45,7 @@ const AccountDiscoveryModal: React.FC = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('account.discovery.syncSuccess'));
+          messageApi.success(t('databaseAccount.discovery.syncSuccess'));
           onClose();
           EventEmitter.emit(
             EventEmitterKey.Refresh_Account_Management_List_Table
@@ -62,7 +62,7 @@ const AccountDiscoveryModal: React.FC = () => {
       open={visible}
       size="large"
       placement="right"
-      title={t('account.discovery.title')}
+      title={t('databaseAccount.discovery.title')}
       onClose={onClose}
       footer={
         <Space>
@@ -74,7 +74,7 @@ const AccountDiscoveryModal: React.FC = () => {
             onClick={onSubmit}
             loading={submitLoading}
           >
-            {t('account.discovery.syncAccount')}
+            {t('databaseAccount.discovery.syncAccount')}
           </BasicButton>
         </Space>
       }

@@ -13,15 +13,25 @@ export default {
     availableAccount: '可用账号',
     disabledAccount: '禁用账号',
     expirationAccount: '临期账号',
+    lockSuccessTips: '账号已禁用',
+    usedByWorkbenchTips: '开启工作台查询成功',
+    cancelUsedByWorkbenchTips: '取消工作台查询成功',
+    unlockSuccessTips: '账号已启用',
+    managedSuccessTips: '密码已托管',
+    unmanagedSuccessTips: '密码已取消托管',
+    deleteSuccessTips: '账号删除成功',
+    deleteConfirm: '确定要删除账号：{{name}}？',
     column: {
       account: '账号',
       desc: '说明',
       dbService: '数据源',
       permission: '权限',
       expiredTime: '密码有效期',
+      remainingDay: '密码有效时间',
       policy: '密码安全策略',
       status: '账号状态',
       deposit: '托管密码',
+      workbench: '是否用于SQL工作台',
       auth: '账号授权'
     },
     action: {
@@ -31,9 +41,12 @@ export default {
       renewal: '续用当前密码',
       modifyPermission: '变更账号权限',
       disable: '禁用',
+      enable: '启用',
       delete: '删除',
       manage: '托管密码',
-      cancelManage: '取消托管'
+      cancelManage: '取消托管',
+      usedByWorkbench: '开启工作台查询',
+      cancelUsedByWorkbench: '取消工作台查询'
     },
     batchAction: {
       authorize: '批量授权',
@@ -93,7 +106,10 @@ export default {
     previewModal: '账号创建预览'
   },
   update: {
-    title: '更新数据库账号'
+    title: '更新数据库账号',
+    result: {
+      success: '变更账号权限成功'
+    }
   },
   detail: {
     title: '账号详情',
@@ -122,5 +138,13 @@ export default {
     title: '续用当前密码',
     dateTime: '设置续用时间（天）',
     successTip: '续用当前密码成功'
+  },
+  batchModifyPassword: {
+    selectedAccount: '已选账号',
+    successTip: '批量修改密码成功',
+    password: '密码'
+  },
+  manageAccount: {
+    successTip: '托管密码成功'
   }
 };

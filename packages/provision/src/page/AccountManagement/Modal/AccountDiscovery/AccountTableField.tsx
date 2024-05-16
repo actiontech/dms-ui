@@ -27,11 +27,11 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
   const columns = [
     {
       dataIndex: 'user',
-      title: t('account.list.column.account')
+      title: t('databaseAccount.list.column.account')
     },
     {
       dataIndex: 'permission_info',
-      title: t('account.list.column.permission'),
+      title: t('databaseAccount.list.column.permission'),
       render: (permission: IDBAccountBody['permission_info']) => {
         return (
           <Space>

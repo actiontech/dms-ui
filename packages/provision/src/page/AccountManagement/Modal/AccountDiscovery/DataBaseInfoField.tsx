@@ -3,8 +3,8 @@ import { BasicSelect } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { AccountDiscoveryFormType } from '../../index.type';
 import { FormInstance } from 'antd/lib/form/Form';
-import useBusinessOptions from '~/hooks/useBusinessOptions';
-import useServiceOptions from '~/hooks/useServiceOptions';
+import useBusinessOptions from '../../../../hooks/useBusinessOptions';
+import useServiceOptions from '../../../../hooks/useServiceOptions';
 import { useEffect, useState } from 'react';
 import AccountTableField from './AccountTableField';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
@@ -81,19 +81,19 @@ const DataBaseInfoField: React.FC<{
     <Form form={form} layout="vertical">
       <Form.Item
         name="business"
-        label={t('account.discovery.business')}
+        label={t('databaseAccount.discovery.business')}
         rules={[{ required: true }]}
       >
         <BasicSelect
           loading={loading}
           options={businessOptions}
           placeholder={t('common.form.placeholder.select', {
-            name: t('account.discovery.business')
+            name: t('databaseAccount.discovery.business')
           })}
         />
       </Form.Item>
       <Form.Item
-        label={t('account.discovery.service')}
+        label={t('databaseAccount.discovery.service')}
         name="service"
         rules={[
           {
@@ -106,12 +106,12 @@ const DataBaseInfoField: React.FC<{
           loading={servicesLoading}
           options={serviceOptions}
           placeholder={t('common.form.placeholder.select', {
-            name: t('account.discovery.service')
+            name: t('databaseAccount.discovery.service')
           })}
         />
       </Form.Item>
       <Form.Item
-        label={t('account.discovery.dbAccount')}
+        label={t('databaseAccount.discovery.dbAccount')}
         name="account"
         rules={[
           {

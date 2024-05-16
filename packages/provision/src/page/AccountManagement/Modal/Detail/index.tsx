@@ -6,13 +6,13 @@ import {
   AvatarCom,
   EmptyBox
 } from '@actiontech/shared';
-import useModalStatus from '~/hooks/useModalStatus';
+import useModalStatus from '../../../../hooks/useModalStatus';
 import { useTranslation } from 'react-i18next';
 import {
-  AccountManagementModalStatus,
-  AccountManagementSelectData
-} from '~/store/accountManagement';
-import { ModalName } from '~/data/enum';
+  DatabaseAccountModalStatus,
+  DatabaseAccountSelectData
+} from '../../../../store/databaseAccount';
+import { ModalName } from '../../../../data/enum';
 import { useRecoilState } from 'recoil';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { useRequest } from 'ahooks';
@@ -24,7 +24,7 @@ import AccountInfoItem from '../../components/AccountInfoItem';
 import json2md, { DataObject } from 'json2md';
 import { accountDetailCustomConfig } from './accountDetailCustomConfig';
 
-const AccountDetailModal = () => {
+const DatabaseAccountDetailModal = () => {
   const { t } = useTranslation();
 
   const { projectID } = useCurrentProject();
@@ -32,12 +32,12 @@ const AccountDetailModal = () => {
   const [messageApi, contextHolder] = message.useMessage();
 
   const { toggleModal, visible } = useModalStatus(
-    AccountManagementModalStatus,
-    ModalName.AccountDetailModal
+    DatabaseAccountModalStatus,
+    ModalName.DatabaseAccountDetailModal
   );
 
   const [selectData, updateSelectData] = useRecoilState(
-    AccountManagementSelectData
+    DatabaseAccountSelectData
   );
 
   const { data, loading } = useRequest(
@@ -53,7 +53,7 @@ const AccountDetailModal = () => {
   );
 
   const onClose = () => {
-    toggleModal(ModalName.AccountDetailModal, false);
+    toggleModal(ModalName.DatabaseAccountDetailModal, false);
     updateSelectData({});
   };
 
@@ -113,13 +113,13 @@ const AccountDetailModal = () => {
       open={visible}
       size="large"
       placement="right"
-      title={t('account.detail.title')}
+      title={t('databaseAccount.detail.title')}
       onClose={onClose}
       footer={
         <Space>
           <BasicButton onClick={onClose}>{t('common.close')}</BasicButton>
           <BasicButton type="primary" onClick={handleCopy}>
-            {t('account.detail.copyAll')}
+            {t('databaseAccount.detail.copyAll')}
           </BasicButton>
         </Space>
       }
@@ -128,24 +128,24 @@ const AccountDetailModal = () => {
       <Spin spinning={loading}>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
-            {t('account.detail.accountInfo')}
+            {t('databaseAccount.detail.accountInfo')}
           </div>
           <div className="audit-card">
             <AccountInfoItem
-              label={t('account.create.form.username')}
+              label={t('databaseAccount.create.form.username')}
               value={data?.account_info?.user}
             />
             <AccountInfoItem
-              label={t('account.create.form.hostname')}
+              label={t('databaseAccount.create.form.hostname')}
               value={data?.account_info?.hostname}
             />
-            <AccountInfoItem label={t('account.create.form.password')}>
+            <AccountInfoItem label={t('databaseAccount.create.form.password')}>
               <EmptyBox if={!!data?.account_info?.password} defaultNode="-">
                 <TokenCom text={data?.account_info?.password ?? ''} />
               </EmptyBox>
             </AccountInfoItem>
             <AccountInfoItem
-              label={t('account.detail.createTime')}
+              label={t('databaseAccount.detail.createTime')}
               value={
                 data?.account_info?.password_create_time
                   ? formatTime(`${data?.account_info?.password_create_time}`)
@@ -153,7 +153,7 @@ const AccountDetailModal = () => {
               }
             ></AccountInfoItem>
             <AccountInfoItem
-              label={t('account.detail.expireTime')}
+              label={t('databaseAccount.detail.expireTime')}
               value={
                 data?.account_info?.expired_time
                   ? formatTime(`${data?.account_info?.expired_time}`)
@@ -171,22 +171,22 @@ const AccountDetailModal = () => {
                   messageApi.success(t('common.copySuccess'));
                 }}
               >
-                {t('account.detail.copyString')}
+                {t('databaseAccount.detail.copyString')}
               </BasicButton>
             </AccountInfoItem>
           </div>
         </div>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
-            {t('account.create.permissionInfo')}
+            {t('databaseAccount.create.permissionInfo')}
           </div>
           {data?.data_permissions?.map((permission, index) => (
             <div className="audit-card" key={index}>
               <AccountInfoItem
-                label={t('account.discovery.service')}
+                label={t('databaseAccount.discovery.service')}
                 value={data.db_service?.name}
               />
-              <AccountInfoItem label={t('account.create.form.objects')}>
+              <AccountInfoItem label={t('databaseAccount.create.form.objects')}>
                 {permission.data_objects?.map((obj) => {
                   return (
                     <BasicTag key={`${obj.database_uid}${obj.table_uid}`}>
@@ -195,7 +195,9 @@ const AccountDetailModal = () => {
                   );
                 })}
               </AccountInfoItem>
-              <AccountInfoItem label={t('account.create.form.operation')}>
+              <AccountInfoItem
+                label={t('databaseAccount.create.form.operation')}
+              >
                 {permission.data_operation_sets?.map((operation) => {
                   return (
                     <BasicTag key={operation.uid}>{operation.name}</BasicTag>
@@ -206,9 +208,11 @@ const AccountDetailModal = () => {
           ))}
         </div>
         <div className="audit-info-wrapper">
-          <div className="audit-info-title">{t('account.detail.authInfo')}</div>
+          <div className="audit-info-title">
+            {t('databaseAccount.detail.authInfo')}
+          </div>
           <div className="audit-card">
-            <AccountInfoItem label={t('account.detail.authUser')}>
+            <AccountInfoItem label={t('databaseAccount.detail.authUser')}>
               <EmptyBox if={!!data?.auth_users?.length} defaultNode="-">
                 {data?.auth_users?.map((user, index) => {
                   return (
@@ -224,4 +228,4 @@ const AccountDetailModal = () => {
   );
 };
 
-export default AccountDetailModal;
+export default DatabaseAccountDetailModal;

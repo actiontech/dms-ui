@@ -9,6 +9,8 @@ import { AxiosRequestConfig } from 'axios';
 import {
   IAuthListDBAccountParams,
   IAuthListDBAccountReturn,
+  IAuthBatchUpdateDBAccountPasswordParams,
+  IAuthBatchUpdateDBAccountPasswordReturn,
   IAuthAddDBAccountParams,
   IAuthAddDBAccountReturn,
   IAuthDiscoveryDBAccountParams,
@@ -17,12 +19,14 @@ import {
   IAuthSyncDBAccountReturn,
   IAuthGetStatementParams,
   IAuthGetStatementReturn,
-  IAuthDelDBAccountParams,
-  IAuthDelDBAccountReturn,
+  IAuthGetAccountStaticsParams,
+  IAuthGetAccountStaticsReturn,
   IAuthGetDBAccountParams,
   IAuthGetDBAccountReturn,
   IAuthUpdateDBAccountParams,
-  IAuthUpdateDBAccountReturn
+  IAuthUpdateDBAccountReturn,
+  IAuthDelDBAccountParams,
+  IAuthDelDBAccountReturn
 } from './index.d';
 
 class DbAccountService extends ServiceBase {
@@ -35,6 +39,21 @@ class DbAccountService extends ServiceBase {
     delete paramsData.project_uid;
 
     return this.get<IAuthListDBAccountReturn>(
+      `/v1/auth/projects/${project_uid}/db_accounts`,
+      paramsData,
+      options
+    );
+  }
+
+  public AuthBatchUpdateDBAccountPassword(
+    params: IAuthBatchUpdateDBAccountPasswordParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.put<IAuthBatchUpdateDBAccountPasswordReturn>(
       `/v1/auth/projects/${project_uid}/db_accounts`,
       paramsData,
       options
@@ -100,26 +119,23 @@ class DbAccountService extends ServiceBase {
     const project_uid = paramsData.project_uid;
     delete paramsData.project_uid;
 
-    return this.get<IAuthGetStatementReturn>(
+    return this.put<IAuthGetStatementReturn>(
       `/v1/auth/projects/${project_uid}/db_accounts/statements`,
       paramsData,
       options
     );
   }
 
-  public AuthDelDBAccount(
-    params: IAuthDelDBAccountParams,
+  public AuthGetAccountStatics(
+    params: IAuthGetAccountStaticsParams,
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
     const project_uid = paramsData.project_uid;
     delete paramsData.project_uid;
 
-    const authorization_uid = paramsData.authorization_uid;
-    delete paramsData.authorization_uid;
-
-    return this.delete<IAuthDelDBAccountReturn>(
-      `/v1/auth/projects/${project_uid}/db_accounts/${authorization_uid}`,
+    return this.get<IAuthGetAccountStaticsReturn>(
+      `/v1/auth/projects/${project_uid}/db_accounts/statics`,
       paramsData,
       options
     );
@@ -155,6 +171,24 @@ class DbAccountService extends ServiceBase {
     delete paramsData.db_account_uid;
 
     return this.put<IAuthUpdateDBAccountReturn>(
+      `/v1/auth/projects/${project_uid}/db_accounts/${db_account_uid}`,
+      paramsData,
+      options
+    );
+  }
+
+  public AuthDelDBAccount(
+    params: IAuthDelDBAccountParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const db_account_uid = paramsData.db_account_uid;
+    delete paramsData.db_account_uid;
+
+    return this.delete<IAuthDelDBAccountReturn>(
       `/v1/auth/projects/${project_uid}/db_accounts/${db_account_uid}`,
       paramsData,
       options

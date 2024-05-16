@@ -15,6 +15,12 @@ const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 
 const AccountManagement = React.lazy(() => import('../page/AccountManagement'));
 const AccountList = React.lazy(() => import('../page/AccountManagement/List'));
+const CreateAccount = React.lazy(
+  () => import('../page/AccountManagement/Create')
+);
+const UpdateAccount = React.lazy(
+  () => import('../page/AccountManagement/Update')
+);
 
 const PasswordManagement = React.lazy(
   () => import('../page/PasswordManagement')
@@ -82,6 +88,16 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         index: true,
         key: 'accountList',
         element: <AccountList />
+      },
+      {
+        path: 'create',
+        key: 'createAccount',
+        element: <CreateAccount />
+      },
+      {
+        path: 'update/:id',
+        key: 'updateAccount',
+        element: <UpdateAccount />
       }
     ]
   },

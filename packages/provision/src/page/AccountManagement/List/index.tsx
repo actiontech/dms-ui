@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { PageHeader, BasicButton } from '@actiontech/shared';
-import { Space } from 'antd';
+import { Space, message } from 'antd';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -21,31 +21,44 @@ import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/s
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import { useMemo, useEffect, useState, useCallback } from 'react';
 import {
-  AccountListColumns,
-  AccountListFilterParamType,
-  ExtraFilterMeta,
-  AccountListActions
+  DatabaseAccountListColumns,
+  DatabaseAccountListFilterParamType,
+  DatabaseAccountListActions
 } from './column';
 import {
   DBAccountStatusOptions,
-  DBAccountPasswordManagedOptions
+  DBAccountPasswordManagedOptions,
+  DBAccountPasswordUsedByWorkbenchOptions
 } from '../index.data';
-import useProvisionUser from '~/hooks/useProvisionUser';
-import useServiceOptions from '~/hooks/useServiceOptions';
-import useModalStatus from '~/hooks/useModalStatus';
+import useProvisionUser from '../../../hooks/useProvisionUser';
+import useServiceOptions from '../../../hooks/useServiceOptions';
+import useModalStatus from '../../../hooks/useModalStatus';
 import {
-  AccountManagementModalStatus,
-  AccountManagementSelectData
-} from '~/store/accountManagement';
-import { EventEmitterKey, ModalName } from '~/data/enum';
+  DatabaseAccountModalStatus,
+  DatabaseAccountSelectData,
+  DatabaseAccountBatchActionSelectedData
+} from '../../../store/databaseAccount';
+import { EventEmitterKey, ModalName } from '../../../data/enum';
 import AccountDiscoveryModal from '../Modal/AccountDiscovery';
-import EventEmitter from '~/utils/EventEmitter';
+import EventEmitter from '../../../utils/EventEmitter';
 import { Link } from 'react-router-dom';
 import AccountDetailModal from '../Modal/Detail';
+import AccountAuthorizeModal from '../Modal/Authorize';
+import ModifyPasswordModal from '../Modal/ModifyPassword';
+import RenewalPasswordModal from '../Modal/RenewalPassword';
+import BatchModifyPasswordModal from '../Modal/BatchModifyPassword';
+import ManagePasswordModal from '../Modal/ManagePassword';
 import { useSetRecoilState } from 'recoil';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useNavigate } from 'react-router-dom';
+import AccountStatistics from '../components/AccountStatistics';
 
-const AccountList = () => {
+const DatabaseAccountList = () => {
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const [messageApi, contextHolder] = message.useMessage();
 
   const { projectID } = useCurrentProject();
 
@@ -58,10 +71,14 @@ const AccountList = () => {
   const { updateServiceList, serviceOptions } = useServiceOptions();
 
   const { toggleModal, initModalStatus } = useModalStatus(
-    AccountManagementModalStatus
+    DatabaseAccountModalStatus
   );
 
-  const updateSelectData = useSetRecoilState(AccountManagementSelectData);
+  const updateSelectData = useSetRecoilState(DatabaseAccountSelectData);
+
+  const updateBatchActionSelectedData = useSetRecoilState(
+    DatabaseAccountBatchActionSelectedData
+  );
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -74,7 +91,10 @@ const AccountList = () => {
     setSearchKeyword,
     refreshBySearchKeyword,
     searchKeyword
-  } = useTableRequestParams<IListDBAccount, AccountListFilterParamType>();
+  } = useTableRequestParams<
+    IListDBAccount,
+    DatabaseAccountListFilterParamType
+  >();
 
   const { data, loading, refresh } = useRequest(
     () => {
@@ -95,7 +115,7 @@ const AccountList = () => {
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
-      tableName: 'provision_account_list',
+      tableName: 'provision_database_account_list',
       username: username
     }),
     [username]
@@ -125,7 +145,8 @@ const AccountList = () => {
       [
         'auth_users',
         {
-          options: userIDOptions
+          options: userIDOptions,
+          value: tableFilterInfo.filter_by_user
         }
       ],
       [
@@ -134,12 +155,18 @@ const AccountList = () => {
           options: serviceOptions,
           value: tableFilterInfo.filter_by_db_service
         }
+      ],
+      [
+        'used_by_workbench',
+        {
+          options: DBAccountPasswordUsedByWorkbenchOptions
+        }
       ]
     ]);
   }, [userIDOptions, serviceOptions, tableFilterInfo]);
 
   const onUpdateFilter = useCallback(
-    (key: keyof AccountListFilterParamType, value: string) => {
+    (key: keyof DatabaseAccountListFilterParamType, value: string) => {
       updateAllSelectedFilterItem(true);
       updateTableFilterInfo({
         ...tableFilterInfo,
@@ -150,8 +177,95 @@ const AccountList = () => {
     [tableFilterInfo]
   );
 
+  const onSetLockedStatus = useCallback(
+    (lock: boolean, id: string) => {
+      dbAccountService
+        .AuthUpdateDBAccount({
+          project_uid: projectID,
+          db_account_uid: id ?? '',
+          db_account: {
+            lock
+          }
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(
+              lock
+                ? t('databaseAccount.list.lockSuccessTips')
+                : t('databaseAccount.list.unlockSuccessTips')
+            );
+            refresh();
+          }
+        });
+    },
+    [messageApi, projectID, refresh, t]
+  );
+
+  const onSetManagedStatus = useCallback(
+    (managed: boolean, id: string) => {
+      dbAccountService
+        .AuthUpdateDBAccount({
+          project_uid: projectID,
+          db_account_uid: id ?? '',
+          db_account: {
+            platform_managed: {
+              platform_managed: managed
+            }
+          }
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(t('databaseAccount.list.unmanagedSuccessTips'));
+            refresh();
+          }
+        });
+    },
+    [messageApi, projectID, refresh, t]
+  );
+
+  const onSetUsedByWorkbench = useCallback(
+    (used: boolean, id: string) => {
+      dbAccountService
+        .AuthUpdateDBAccount({
+          project_uid: projectID,
+          db_account_uid: id ?? '',
+          db_account: {
+            used_by_sql_workbench: used
+          }
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(
+              used
+                ? t('databaseAccount.list.usedByWorkbenchTips')
+                : t('databaseAccount.list.cancelUsedByWorkbenchTips')
+            );
+            refresh();
+          }
+        });
+    },
+    [messageApi, projectID, refresh, t]
+  );
+
+  const onDeleteAccount = useCallback(
+    (id: string) => {
+      dbAccountService
+        .AuthDelDBAccount({
+          project_uid: projectID,
+          db_account_uid: id
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(t('databaseAccount.list.deleteSuccessTips'));
+            refresh();
+          }
+        });
+    },
+    [messageApi, projectID, refresh, t]
+  );
+
   const columns = useMemo(() => {
-    return AccountListColumns(onUpdateFilter);
+    return DatabaseAccountListColumns(onUpdateFilter);
   }, [onUpdateFilter]);
 
   const onOpenModal = useCallback(
@@ -161,12 +275,45 @@ const AccountList = () => {
     },
     [toggleModal, updateSelectData]
   );
+
+  const onNavigateToUpdatePage = useCallback(
+    (id: string) => {
+      navigate(
+        `/provision/project/${projectID}/account-management/update/${id}`
+      );
+    },
+    [navigate, projectID]
+  );
+
   const actions = useMemo(() => {
-    return AccountListActions(onOpenModal);
-  }, [onOpenModal]);
+    return DatabaseAccountListActions(
+      onOpenModal,
+      onSetLockedStatus,
+      onSetManagedStatus,
+      onDeleteAccount,
+      onNavigateToUpdatePage,
+      onSetUsedByWorkbench
+    );
+  }, [
+    onOpenModal,
+    onSetLockedStatus,
+    onSetManagedStatus,
+    onDeleteAccount,
+    onNavigateToUpdatePage,
+    onSetUsedByWorkbench
+  ]);
+
+  const onBatchAction = (name: ModalName) => {
+    toggleModal(name, true);
+    updateBatchActionSelectedData(
+      data?.list?.filter((i) =>
+        selectedRowKeys.includes(i.db_account_uid ?? '')
+      ) ?? []
+    );
+  };
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
+    useTableFilterContainer(columns, updateTableFilterInfo);
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     setSelectedRowKeys(newSelectedRowKeys);
@@ -179,11 +326,13 @@ const AccountList = () => {
 
   useEffect(() => {
     initModalStatus({
-      [ModalName.AccountDiscoveryModal]: false,
-      [ModalName.AccountDetailModal]: false,
-      [ModalName.AccountAuthorizeModal]: false,
-      [ModalName.AccountModifyPasswordModal]: false,
-      [ModalName.AccountRenewalPasswordModal]: false
+      [ModalName.DatabaseAccountDiscoveryModal]: false,
+      [ModalName.DatabaseAccountDetailModal]: false,
+      [ModalName.DatabaseAccountAuthorizeModal]: false,
+      [ModalName.DatabaseAccountModifyPasswordModal]: false,
+      [ModalName.DatabaseAccountRenewalPasswordModal]: false,
+      [ModalName.DatabaseAccountBatchModifyPasswordModal]: false,
+      [ModalName.DatabaseAccountManagePasswordModal]: false
     });
   }, [initModalStatus]);
 
@@ -197,33 +346,39 @@ const AccountList = () => {
 
   return (
     <>
+      {contextHolder}
       <PageHeader
-        title={t('account.list.title')}
+        title={t('databaseAccount.list.title')}
         extra={
           <Space>
             <BasicButton
-              onClick={() => toggleModal(ModalName.AccountDiscoveryModal, true)}
+              onClick={() =>
+                toggleModal(ModalName.DatabaseAccountDiscoveryModal, true)
+              }
             >
-              {t('account.list.findAccount')}
+              {t('databaseAccount.list.findAccount')}
             </BasicButton>
             <Link
               to={`/provision/project/${projectID}/account-management/create`}
             >
               <BasicButton type="primary">
-                {t('account.list.createAccount')}
+                {t('databaseAccount.list.createAccount')}
               </BasicButton>
             </Link>
           </Space>
         }
       />
+      <AccountStatistics />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         actions={[
           {
             key: 'modifyPassword',
-            text: t('account.list.batchAction.modifyPassword'),
+            text: t('databaseAccount.list.batchAction.modifyPassword'),
             buttonProps: {
-              disabled: selectedRowKeys?.length === 0
+              disabled: selectedRowKeys?.length === 0,
+              onClick: () =>
+                onBatchAction(ModalName.DatabaseAccountBatchModifyPasswordModal)
             }
           }
         ]}
@@ -265,8 +420,13 @@ const AccountList = () => {
       />
       <AccountDiscoveryModal />
       <AccountDetailModal />
+      <AccountAuthorizeModal />
+      <ModifyPasswordModal />
+      <RenewalPasswordModal />
+      <BatchModifyPasswordModal />
+      <ManagePasswordModal />
     </>
   );
 };
 
-export default AccountList;
+export default DatabaseAccountList;

@@ -2,62 +2,46 @@ import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize,
   ActiontechTableActionMeta,
-  InlineActiontechTableMoreActionsButtonMeta,
-  ActiontechTableFilterMeta,
-  ActiontechTableFilterMetaValue
+  InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
-import { t } from '~/locale';
+import { t } from '../../../locale';
 import { AvatarCom } from '@actiontech/shared';
 import { Space, Typography } from 'antd';
 import { DBAccountStatusDictionary } from '../index.data';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { ModalName } from '~/data/enum';
+import { ModalName } from '../../../data/enum';
+import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import { accountNameRender } from '../index.utils';
 
-export type AccountListFilterParamType = PageInfoWithoutIndexAndSize<
+export type DatabaseAccountListFilterParamType = PageInfoWithoutIndexAndSize<
   IAuthListDBAccountParams & {
     page_index: number;
   },
   'project_uid'
 >;
 
-export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
+export const DatabaseAccountListColumns = (
+  onUpdateFilter: (
+    key: keyof DatabaseAccountListFilterParamType,
+    value: string
+  ) => void
+): ActiontechTableColumn<
   IListDBAccount,
-  AccountListFilterParamType
-> = () => {
-  return new Map<
-    keyof IListDBAccount,
-    ActiontechTableFilterMetaValue<AccountListFilterParamType>
-  >([
-    [
-      'auth_users',
-      {
-        filterCustomType: 'select',
-        filterKey: 'filter_by_user',
-        filterLabel: t('account.list.member')
-      }
-    ]
-  ]);
-};
-
-export const AccountListColumns = (
-  onUpdateFilter: (key: keyof AccountListFilterParamType, value: string) => void
-): ActiontechTableColumn<IListDBAccount, AccountListFilterParamType> => {
+  DatabaseAccountListFilterParamType
+> => {
   return [
     {
       dataIndex: 'account_info',
-      title: t('account.list.column.account'),
+      title: t('databaseAccount.list.column.account'),
       render: (value: IListDBAccount['account_info']) => {
-        if (!value?.hostname) {
-          return value?.user ?? '-';
-        }
-        return `${value?.user}@${value.hostname}`;
+        return accountNameRender(value);
       }
     },
     {
       dataIndex: 'db_service',
-      title: t('account.list.column.dbService'),
+      title: t('databaseAccount.list.column.dbService'),
       render: (value: IListDBAccount['db_service']) => {
         return (
           <Typography.Link
@@ -74,21 +58,21 @@ export const AccountListColumns = (
     },
     {
       dataIndex: 'expired_time',
-      title: t('account.list.column.expiredTime'),
+      title: t('databaseAccount.list.column.expiredTime'),
       render: (val) => (val ? formatTime(val) : '-'),
       filterKey: ['filter_by_expired_time_from', 'filter_by_expired_time_to'],
       filterCustomType: 'date-range'
     },
     {
       dataIndex: 'password_security_policy',
-      title: t('account.list.column.policy'),
+      title: t('databaseAccount.list.column.policy'),
       render: (value: IListDBAccount['password_security_policy']) => {
         return value || '-';
       }
     },
     {
       dataIndex: 'status',
-      title: t('account.list.column.status'),
+      title: t('databaseAccount.list.column.status'),
       filterKey: 'filter_by_status',
       filterCustomType: 'select',
       render: (value: IListDBAccount['status']) => {
@@ -97,17 +81,31 @@ export const AccountListColumns = (
     },
     {
       dataIndex: 'platform_managed',
-      title: t('account.list.column.deposit'),
+      title: t('databaseAccount.list.column.deposit'),
       render: (value: IListDBAccount['platform_managed']) => {
-        return value ? t('account.list.managed') : t('account.list.unmanaged');
+        return value
+          ? t('databaseAccount.list.managed')
+          : t('databaseAccount.list.unmanaged');
       },
       filterKey: 'filter_by_password_managed',
       filterCustomType: 'select'
     },
     {
+      dataIndex: 'used_by_workbench',
+      title: t('databaseAccount.list.column.workbench'),
+      filterKey: 'filter_by_used_by_sql_workbench',
+      filterCustomType: 'select',
+      render: (value: IListDBAccount['used_by_workbench']) => {
+        return value ? t('common.true') : t('common.false');
+      },
+      align: 'center'
+    },
+    {
       dataIndex: 'auth_users',
       className: 'ellipsis-column-width',
-      title: t('account.list.column.auth'),
+      title: t('databaseAccount.list.column.auth'),
+      filterKey: 'filter_by_user',
+      filterCustomType: 'select',
       render: (value: IListDBAccount['auth_users']) => {
         if (!value || !value.length) {
           return '-';
@@ -130,7 +128,7 @@ export const AccountListColumns = (
     },
     {
       dataIndex: 'explanation',
-      title: t('account.list.column.desc'),
+      title: t('databaseAccount.list.column.desc'),
       render: (value: IListDBAccount['explanation']) => {
         return value || '-';
       }
@@ -138,8 +136,13 @@ export const AccountListColumns = (
   ];
 };
 
-export const AccountListActions = (
-  onOpenModal: (name: ModalName, record?: IListDBAccount) => void
+export const DatabaseAccountListActions = (
+  onOpenModal: (name: ModalName, record?: IListDBAccount) => void,
+  onSetLockedStatus: (lock: boolean, id: string) => void,
+  onSetManagedStatus: (managed: boolean, id: string) => void,
+  onDeleteAccount: (id: string) => void,
+  onNavigateToUpdatePage: (id: string) => void,
+  onSetUsedByWorkbench: (used: boolean, id: string) => void
 ): {
   moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IListDBAccount>[];
   buttons: ActiontechTableActionMeta<IListDBAccount>[];
@@ -147,48 +150,93 @@ export const AccountListActions = (
   buttons: [
     {
       key: 'account_view',
-      text: t('account.list.action.view'),
+      text: t('databaseAccount.list.action.view'),
       buttonProps: (record) => ({
-        onClick: () => onOpenModal(ModalName.AccountDetailModal, record)
+        onClick: () => onOpenModal(ModalName.DatabaseAccountDetailModal, record)
       })
     }
   ],
   moreButtons: [
     {
       key: 'account_authorize',
-      text: t('account.list.action.authorize'),
-      onClick: (record) => onOpenModal(ModalName.AccountAuthorizeModal, record)
-      // disabled: (record) => {
-      //   return record?.expiration === -1;
-      // }
+      text: t('databaseAccount.list.action.authorize'),
+      onClick: (record) =>
+        onOpenModal(ModalName.DatabaseAccountAuthorizeModal, record),
+      permissions: (record) => !!record?.platform_managed
     },
     {
       key: 'modifyPassword',
-      text: t('account.list.action.modifyPassword'),
+      text: t('databaseAccount.list.action.modifyPassword'),
       onClick: (record) =>
-        onOpenModal(ModalName.AccountModifyPasswordModal, record)
+        onOpenModal(ModalName.DatabaseAccountModifyPasswordModal, record)
     },
     {
       key: 'account_renewal',
-      text: t('account.list.action.renewal'),
+      text: t('databaseAccount.list.action.renewal'),
       onClick: (record) =>
-        onOpenModal(ModalName.AccountRenewalPasswordModal, record)
+        onOpenModal(ModalName.DatabaseAccountRenewalPasswordModal, record),
+      permissions: (record) => !!record?.expired_time
     },
     {
-      key: 'modifyPermission',
-      text: t('account.list.action.modifyPermission')
+      key: 'modify_permission',
+      text: t('databaseAccount.list.action.modifyPermission'),
+      onClick: (record) => onNavigateToUpdatePage(record?.db_account_uid ?? '')
     },
     {
       key: 'account_disable',
-      text: t('account.list.action.disable')
+      text: t('databaseAccount.list.action.disable'),
+      onClick: (record) =>
+        onSetLockedStatus(true, record?.db_account_uid ?? ''),
+      permissions: (record) => record?.status === ListDBAccountStatusEnum.unlock
+    },
+    {
+      key: 'account_enable',
+      text: t('databaseAccount.list.action.enable'),
+      onClick: (record) =>
+        onSetLockedStatus(false, record?.db_account_uid ?? ''),
+      permissions: (record) => record?.status === ListDBAccountStatusEnum.lock
     },
     {
       key: 'account_delete',
-      text: t('account.list.action.delete')
+      text: t('databaseAccount.list.action.delete'),
+      confirm: (record) => ({
+        title: t('databaseAccount.list.deleteConfirm', {
+          name: accountNameRender(record?.account_info)
+        }),
+        okText: t('common.ok'),
+        cancelText: t('common.cancel'),
+        onConfirm: () => {
+          onDeleteAccount(record?.db_account_uid ?? '');
+        }
+      })
     },
     {
       key: 'account_manage',
-      text: t('account.list.action.manage')
+      text: t('databaseAccount.list.action.manage'),
+      onClick: (record) =>
+        onOpenModal(ModalName.DatabaseAccountManagePasswordModal, record),
+      permissions: (record) => !record?.platform_managed
+    },
+    {
+      key: 'account_cancelManage',
+      text: t('databaseAccount.list.action.cancelManage'),
+      onClick: (record) =>
+        onSetManagedStatus(false, record?.db_account_uid ?? ''),
+      permissions: (record) => !!record?.platform_managed
+    },
+    {
+      key: 'account_usedByWorkbench',
+      text: t('databaseAccount.list.action.usedByWorkbench'),
+      onClick: (record) =>
+        onSetUsedByWorkbench(true, record?.db_account_uid ?? ''),
+      permissions: (record) => !record?.used_by_workbench
+    },
+    {
+      key: 'account_cancelUsedByWorkbench',
+      text: t('databaseAccount.list.action.cancelUsedByWorkbench'),
+      onClick: (record) =>
+        onSetUsedByWorkbench(false, record?.db_account_uid ?? ''),
+      permissions: (record) => !!record?.used_by_workbench
     }
   ]
 });
