@@ -11,6 +11,16 @@ import { getWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/
 import { StaticEnumDictionary } from './index.type';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { GetSqlManageListFilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { t } from '../../locale';
+
+export const translateDictionaryI18nLabel = <T extends string>(
+  dic: StaticEnumDictionary<T>
+) => {
+  return Object.keys(dic).reduce<Record<keyof T, string>>((acc, cur) => {
+    const key = cur as keyof StaticEnumDictionary<T>;
+    return { ...acc, [key]: t(dic[key]) };
+  }, {} as Record<keyof T, string>);
+};
 
 export const execStatusDictionary: StaticEnumDictionary<getAuditTaskSQLsV2FilterExecStatusEnum> =
   {
