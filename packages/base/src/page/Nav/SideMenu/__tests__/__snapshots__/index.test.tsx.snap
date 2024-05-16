@@ -814,7 +814,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/account-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
                 role="menuitem"
                 structkey="account-management"
                 style="padding-left: 24px;"
@@ -847,7 +847,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project/100121/account-management"
+                    href="/provision/project/100121/database-account"
                   >
                     账号管理
                   </a>
@@ -855,7 +855,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/password-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
                 role="menuitem"
                 structkey="password-management"
                 style="padding-left: 24px;"
@@ -882,7 +882,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project/100121/password-management"
+                    href="/provision/project/100121/database-account-password"
                   >
                     账号密码管理
                   </a>
@@ -2127,7 +2127,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/account-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
                 role="menuitem"
                 structkey="account-management"
                 style="padding-left: 24px;"
@@ -2160,7 +2160,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project/100121/account-management"
+                    href="/provision/project/100121/database-account"
                   >
                     账号管理
                   </a>
@@ -2168,7 +2168,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/password-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
                 role="menuitem"
                 structkey="password-management"
                 style="padding-left: 24px;"
@@ -2195,7 +2195,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project/100121/password-management"
+                    href="/provision/project/100121/database-account-password"
                   >
                     账号密码管理
                   </a>
@@ -3440,7 +3440,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/account-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
                 role="menuitem"
                 structkey="account-management"
                 style="padding-left: 24px;"
@@ -3473,7 +3473,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project/100121/account-management"
+                    href="/provision/project/100121/database-account"
                   >
                     账号管理
                   </a>
@@ -3481,7 +3481,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/password-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
                 role="menuitem"
                 structkey="password-management"
                 style="padding-left: 24px;"
@@ -3508,7 +3508,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project/100121/password-management"
+                    href="/provision/project/100121/database-account-password"
                   >
                     账号密码管理
                   </a>

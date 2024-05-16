@@ -51,12 +51,12 @@ export const authListMenuItem: GenerateMenuItemType = (projectID) => ({
 
 export const accountManagementMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/account-management`}>
-      {t('dmsMenu.accountManagement')}
+    <Link to={`/provision/project/${projectID}/database-account`}>
+      {t('dmsMenu.databaseAccount')}
     </Link>
   ),
 
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/account-management`,
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account`,
   icon: <Icon component={IconAuthList} />,
   structKey: 'account-management'
 });
@@ -65,12 +65,12 @@ export const passwordManagementMenuItem: GenerateMenuItemType = (
   projectID
 ) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/password-management`}>
-      {t('dmsMenu.passwordManagement')}
+    <Link to={`/provision/project/${projectID}/database-account-password`}>
+      {t('dmsMenu.databaseAccountPassword')}
     </Link>
   ),
 
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/password-management`,
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account-password`,
   icon: <Icon component={IconPermissionTemplate} />,
   structKey: 'password-management'
 });

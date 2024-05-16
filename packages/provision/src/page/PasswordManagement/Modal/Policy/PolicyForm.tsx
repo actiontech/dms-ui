@@ -3,17 +3,17 @@ import { BasicInput } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { PolicyFormType } from '../../index.type';
 
-const PolicyForm: React.FC<{ form: PolicyFormType; disabled?: boolean }> = ({
-  form,
-  disabled = false
-}) => {
+const PolicyForm: React.FC<{
+  form: PolicyFormType;
+  disablePassword?: boolean;
+}> = ({ form, disablePassword = false }) => {
   const { t } = useTranslation();
 
   return (
     <Form form={form} layout="vertical">
       <Form.Item
         name="name"
-        label={t('password.policy.modal.name')}
+        label={t('passwordSecurityPolicy.policy.modal.name')}
         rules={[
           {
             required: true
@@ -22,15 +22,15 @@ const PolicyForm: React.FC<{ form: PolicyFormType; disabled?: boolean }> = ({
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
-            name: t('password.policy.modal.name')
+            name: t('passwordSecurityPolicy.policy.modal.name')
           })}
-          disabled={disabled}
+          disabled={disablePassword}
         />
       </Form.Item>
 
       <Form.Item
         name="passwordExpirationPeriod"
-        label={t('password.policy.modal.periodOfValidity')}
+        label={t('passwordSecurityPolicy.policy.modal.periodOfValidity')}
         rules={[
           {
             required: true
@@ -39,7 +39,7 @@ const PolicyForm: React.FC<{ form: PolicyFormType; disabled?: boolean }> = ({
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
-            name: t('password.policy.modal.periodOfValidity')
+            name: t('passwordSecurityPolicy.policy.modal.periodOfValidity')
           })}
         />
       </Form.Item>

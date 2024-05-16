@@ -6,12 +6,12 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import PolicyForm from './PolicyForm';
-import useModalStatus from '~/hooks/useModalStatus';
+import useModalStatus from '../../../../hooks/useModalStatus';
 import {
   PasswordSecurityPolicyModalStatus,
   PasswordSecurityPolicySelectData
-} from '~/store/passwordManagement';
-import { EventEmitterKey, ModalName } from '~/data/enum';
+} from '../../../../store/databaseAccountPassword';
+import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import { PolicyFormValues } from '../../index.type';
 import passwordSecurityPolicy from '@actiontech/shared/lib/api/provision/service/password_secury_policy/index';
 import { useEffect } from 'react';
@@ -56,7 +56,9 @@ const UpdatePolicy: React.FC = () => {
           EventEmitter.emit(
             EventEmitterKey.Refresh_Password_Management_list_Table
           );
-          messageApi.success(t('password.policy.modal.updateSuccess'));
+          messageApi.success(
+            t('passwordSecurityPolicy.policy.modal.updateSuccess')
+          );
         }
       })
       .finally(() => {
@@ -83,7 +85,7 @@ const UpdatePolicy: React.FC = () => {
     <BasicDrawer
       open={visible}
       placement="right"
-      title={t('password.policy.modal.update')}
+      title={t('passwordSecurityPolicy.policy.modal.update')}
       onClose={onClose}
       footer={
         <Space>
@@ -97,7 +99,7 @@ const UpdatePolicy: React.FC = () => {
       }
     >
       {contextHolder}
-      <PolicyForm form={form} disabled={selectData?.is_default} />
+      <PolicyForm form={form} disablePassword={selectData?.is_default} />
     </BasicDrawer>
   );
 };

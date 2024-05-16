@@ -796,7 +796,7 @@ exports[`App render App when token is existed 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/account-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
                 role="menuitem"
                 structkey="account-management"
                 style="padding-left: 24px;"
@@ -829,7 +829,7 @@ exports[`App render App when token is existed 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project//account-management"
+                    href="/provision/project//database-account"
                   >
                     账号管理
                   </a>
@@ -837,7 +837,7 @@ exports[`App render App when token is existed 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/password-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
                 role="menuitem"
                 structkey="password-management"
                 style="padding-left: 24px;"
@@ -864,7 +864,7 @@ exports[`App render App when token is existed 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project//password-management"
+                    href="/provision/project//database-account-password"
                   >
                     账号密码管理
                   </a>
@@ -3286,7 +3286,7 @@ exports[`App render App when user role is not admin 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/account-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
                 role="menuitem"
                 structkey="account-management"
                 style="padding-left: 24px;"
@@ -3319,7 +3319,7 @@ exports[`App render App when user role is not admin 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project//account-management"
+                    href="/provision/project//database-account"
                   >
                     账号管理
                   </a>
@@ -3327,7 +3327,7 @@ exports[`App render App when user role is not admin 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/password-management"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
                 role="menuitem"
                 structkey="password-management"
                 style="padding-left: 24px;"
@@ -3354,7 +3354,7 @@ exports[`App render App when user role is not admin 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project//password-management"
+                    href="/provision/project//database-account-password"
                   >
                     账号密码管理
                   </a>
