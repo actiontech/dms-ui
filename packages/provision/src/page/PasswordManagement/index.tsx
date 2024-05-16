@@ -12,6 +12,7 @@ import PasswordSecurityPolicyModal from './Modal';
 import useModalStatus from '~/hooks/useModalStatus';
 import { PasswordSecurityPolicyModalStatus } from '~/store/passwordManagement';
 import { ModalName } from '~/data/enum';
+import ExpirationAccountList from './ExpirationAccount';
 
 const PasswordManagement = () => {
   const { t } = useTranslation();
@@ -30,7 +31,7 @@ const PasswordManagement = () => {
       {
         value: PasswordManagementTypeEnum.advent,
         label: t('password.advent.title'),
-        content: null
+        content: <ExpirationAccountList />
       },
       {
         value: PasswordManagementTypeEnum.policy,
