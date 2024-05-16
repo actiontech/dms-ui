@@ -9,11 +9,11 @@ export const PasswordPolicyListColumns: ActiontechTableColumn<IPasswordSecurityP
   [
     {
       dataIndex: 'name',
-      title: t('password.policy.column.name')
+      title: t('passwordSecurityPolicy.policy.column.name')
     },
     {
       dataIndex: 'password_expiration_period',
-      title: t('password.policy.column.expirationPeriod')
+      title: t('passwordSecurityPolicy.policy.column.expirationPeriod')
     }
   ];
 
@@ -40,7 +40,7 @@ export const PasswordPolicyListActions = (
     key: 'deletePolicy',
     confirm: (record) => {
       return {
-        title: t('password.policy.deleteTip', {
+        title: t('passwordSecurityPolicy.policy.deleteTip', {
           name: record?.name ?? ''
         }),
         onConfirm: () => {

@@ -84,7 +84,7 @@ const CreateDatabaseAccount = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/provision/project/${projectID}/account-management`}>
+          <Link to={`/provision/project/${projectID}/database-account`}>
             <BasicButton icon={<IconLeftArrow />}>
               {t('databaseAccount.create.returnText')}
             </BasicButton>

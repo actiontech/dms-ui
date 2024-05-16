@@ -1,28 +1,25 @@
 import React, { ReactNode } from 'react';
 import { Navigate, RouteObject } from 'react-router-dom';
-import { DatabaseOutlined, SolutionOutlined } from '@ant-design/icons';
+import { DatabaseOutlined } from '@ant-design/icons';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 
 const Operation = React.lazy(() => import('../page/Data/Operation'));
-const AuthList = React.lazy(() => import('../page/Auth/AuthList'));
-const AddAuth = React.lazy(() => import('../page/Auth/AddAuth'));
-const AuthTemplate = React.lazy(() => import('~/page/Auth/AuthTemplateList'));
-const EditTemplate = React.lazy(() => import('~/page/Auth/EditTemplate'));
 
 const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 // const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
-const AccountManagement = React.lazy(() => import('../page/AccountManagement'));
-const AccountList = React.lazy(() => import('../page/AccountManagement/List'));
-const CreateAccount = React.lazy(
+const DatabaseAccountList = React.lazy(
+  () => import('../page/AccountManagement/List')
+);
+const CreateDatabaseAccount = React.lazy(
   () => import('../page/AccountManagement/Create')
 );
-const UpdateAccount = React.lazy(
+const UpdateDatabaseAccount = React.lazy(
   () => import('../page/AccountManagement/Update')
 );
 
-const PasswordManagement = React.lazy(
+const DatabaseAccountPassword = React.lazy(
   () => import('../page/PasswordManagement')
 );
 
@@ -36,76 +33,32 @@ export type RouterConfigItem = RouteObject & {
 
 export const AuthRouterConfig: RouterConfigItem[] = [
   {
-    label: 'provisionNav.menu.authManage',
-    key: 'authManageWrapper',
-    icon: <SolutionOutlined />,
-    children: [
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/list`,
-        key: 'authList',
-        label: 'provisionNav.menu.authList',
-        element: <AuthList />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/list/:purpose`,
-        key: 'filteredAuthList',
-        hideInMenu: true,
-        element: <AuthList />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/list/add`,
-        key: 'addAuth',
-        hideInMenu: true,
-        element: <AddAuth />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/template`,
-        key: 'authTemplate',
-        label: 'provisionNav.menu.authTemplate',
-        element: <AuthTemplate />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/template/:name`,
-        key: 'filteredAuthTemplate',
-        hideInMenu: true,
-        element: <AuthTemplate />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/template/edit-template`,
-        key: 'addTemplate',
-        hideInMenu: true,
-        element: <EditTemplate />
-      }
-    ]
-  },
-  {
-    path: `${PROJECT_ROUTER_PARAM}/account-management`,
-    label: 'provisionNav.menu.accountManagement',
-    key: 'accountManagement',
-    element: <AccountManagement />,
+    path: `${PROJECT_ROUTER_PARAM}/database-account`,
+    label: 'provisionNav.menu.databaseAccount',
+    key: 'databaseAccount',
     children: [
       {
         index: true,
-        key: 'accountList',
-        element: <AccountList />
+        key: 'databaseAccountList',
+        element: <DatabaseAccountList />
       },
       {
         path: 'create',
-        key: 'createAccount',
-        element: <CreateAccount />
+        key: 'createDatabaseAccount',
+        element: <CreateDatabaseAccount />
       },
       {
         path: 'update/:id',
-        key: 'updateAccount',
-        element: <UpdateAccount />
+        key: 'updateDatabaseAccount',
+        element: <UpdateDatabaseAccount />
       }
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/password-management`,
-    label: 'provisionNav.menu.passwordManagement',
-    key: 'passwordManagement',
-    element: <PasswordManagement />
+    path: `${PROJECT_ROUTER_PARAM}/database-account-password`,
+    label: 'provisionNav.menu.databaseAccountPassword',
+    key: 'databaseAccountPassword',
+    element: <DatabaseAccountPassword />
   },
   {
     label: 'provisionNav.menu.dataObjectWrapper',
@@ -118,7 +71,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         label: 'provisionNav.menu.operation',
         element: <Operation />
       }
-    ]
+    ] as RouterConfigItem[]
   },
   {
     label: 'provisionNav.menu.auditWrapper',
@@ -143,7 +96,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
       //   label: 'provisionNav.menu.serviceAudit',
       //   element: <ServiceAudit />
       // }
-    ]
+    ] as RouterConfigItem[]
   },
   {
     path: '*',

@@ -23,40 +23,14 @@ export const permissionGroupMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'permission-group'
 });
 
-export const permissionTemplateMenuItem: GenerateMenuItemType = (
-  projectID
-) => ({
-  label: (
-    <Link to={`/provision/project/${projectID}/auth/template`}>
-      {t('dmsMenu.permissionTemplate')}
-    </Link>
-  ),
-
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/template`,
-  icon: <Icon component={IconPermissionTemplate} />,
-  structKey: 'permission-template'
-});
-
-export const authListMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <Link to={`/provision/project/${projectID}/auth/list`}>
-      {t('dmsMenu.authList')}
-    </Link>
-  ),
-
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/list`,
-  icon: <Icon component={IconAuthList} />,
-  structKey: 'auth-list'
-});
-
 export const accountManagementMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/account-management`}>
-      {t('dmsMenu.accountManagement')}
+    <Link to={`/provision/project/${projectID}/database-account`}>
+      {t('dmsMenu.databaseAccount')}
     </Link>
   ),
 
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/account-management`,
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account`,
   icon: <Icon component={IconAuthList} />,
   structKey: 'account-management'
 });
@@ -65,12 +39,12 @@ export const passwordManagementMenuItem: GenerateMenuItemType = (
   projectID
 ) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/password-management`}>
-      {t('dmsMenu.passwordManagement')}
+    <Link to={`/provision/project/${projectID}/database-account-password`}>
+      {t('dmsMenu.databaseAccountPassword')}
     </Link>
   ),
 
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/password-management`,
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account-password`,
   icon: <Icon component={IconPermissionTemplate} />,
   structKey: 'password-management'
 });

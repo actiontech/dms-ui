@@ -278,9 +278,7 @@ const DatabaseAccountList = () => {
 
   const onNavigateToUpdatePage = useCallback(
     (id: string) => {
-      navigate(
-        `/provision/project/${projectID}/account-management/update/${id}`
-      );
+      navigate(`/provision/project/${projectID}/database-account/update/${id}`);
     },
     [navigate, projectID]
   );
@@ -359,7 +357,7 @@ const DatabaseAccountList = () => {
               {t('databaseAccount.list.findAccount')}
             </BasicButton>
             <Link
-              to={`/provision/project/${projectID}/account-management/create`}
+              to={`/provision/project/${projectID}/database-account/create`}
             >
               <BasicButton type="primary">
                 {t('databaseAccount.list.createAccount')}

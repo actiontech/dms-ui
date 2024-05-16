@@ -28,9 +28,7 @@ import {
 } from './sqle';
 import {
   authAuditMenuItem,
-  authListMenuItem,
   permissionGroupMenuItem,
-  permissionTemplateMenuItem,
   templateAuditMenuItem,
   accountManagementMenuItem,
   passwordManagementMenuItem
@@ -65,8 +63,6 @@ export const dmsSideMenuData = (
 
     // #if [provision]
     permissionGroupMenuItem,
-    permissionTemplateMenuItem,
-    authListMenuItem,
     authAuditMenuItem,
     templateAuditMenuItem,
     accountManagementMenuItem,
@@ -121,11 +117,9 @@ export const dmsSideMenuData = (
       label: t('dmsMenu.groupLabel.dataSecurity'),
       group: [
         'permission-group',
-        'permission-template',
-        'auth-list',
-        'data-mask-rule',
         'account-management',
-        'password-management'
+        'password-management',
+        'data-mask-rule'
       ]
     },
     { type: 'divider' },

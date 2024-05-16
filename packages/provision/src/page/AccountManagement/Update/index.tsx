@@ -106,7 +106,7 @@ const UpdateDatabaseAccount = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/provision/project/${projectID}/account-management`}>
+          <Link to={`/provision/project/${projectID}/database-account`}>
             <BasicButton icon={<IconLeftArrow />}>
               {t('databaseAccount.create.returnText')}
             </BasicButton>
@@ -154,7 +154,7 @@ const UpdateDatabaseAccount = () => {
           title={t('databaseAccount.update.result.success')}
           extra={
             <Space>
-              <Link to={`/provision/project/${projectID}/account-management`}>
+              <Link to={`/provision/project/${projectID}/database-account`}>
                 <BasicButton type="primary">
                   {t('databaseAccount.create.returnText')}
                 </BasicButton>

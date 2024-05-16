@@ -917,67 +917,18 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
   {
     "children": [
       {
-        "children": [
-          {
-            "element": <div>
-              authList
-            </div>,
-            "key": "authList",
-            "path": ":projectID/auth/list",
-          },
-          {
-            "element": <div>
-              filteredAuthList
-            </div>,
-            "key": "filteredAuthList",
-            "path": ":projectID/auth/list/:purpose",
-          },
-          {
-            "element": <div>
-              addAuth
-            </div>,
-            "key": "addAuth",
-            "path": ":projectID/auth/list/add",
-          },
-          {
-            "element": <div>
-              authTemplate
-            </div>,
-            "key": "authTemplate",
-            "path": ":projectID/auth/template",
-          },
-          {
-            "element": <div>
-              filteredAuthTemplate
-            </div>,
-            "key": "filteredAuthTemplate",
-            "path": ":projectID/auth/template/:name",
-          },
-          {
-            "element": <div>
-              addTemplate
-            </div>,
-            "key": "addTemplate",
-            "path": ":projectID/auth/template/edit-template",
-          },
-        ],
-        "element": undefined,
-        "key": "authManageWrapper",
-        "path": undefined,
+        "element": <div>
+          databaseAccount
+        </div>,
+        "key": "databaseAccount",
+        "path": ":projectID/database-account",
       },
       {
         "element": <div>
-          accountManagement
+          databaseAccountPassword
         </div>,
-        "key": "accountManagement",
-        "path": ":projectID/account-management",
-      },
-      {
-        "element": <div>
-          passwordManagement
-        </div>,
-        "key": "passwordManagement",
-        "path": ":projectID/password-management",
+        "key": "databaseAccountPassword",
+        "path": ":projectID/database-account-password",
       },
       {
         "children": [

@@ -9,12 +9,12 @@ import { useEffect } from 'react';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import PolicyList from './PolicyList';
 import PasswordSecurityPolicyModal from './Modal';
-import useModalStatus from '~/hooks/useModalStatus';
-import { PasswordSecurityPolicyModalStatus } from '~/store/passwordManagement';
-import { ModalName } from '~/data/enum';
+import useModalStatus from '../../hooks/useModalStatus';
+import { PasswordSecurityPolicyModalStatus } from '../../store/databaseAccountPassword';
+import { ModalName } from '../../data/enum';
 import ExpirationAccountList from './ExpirationAccount';
 
-const PasswordManagement = () => {
+const DatabaseAccountPassword = () => {
   const { t } = useTranslation();
 
   const { toggleModal } = useModalStatus(PasswordSecurityPolicyModalStatus);
@@ -30,12 +30,12 @@ const PasswordManagement = () => {
     updateSegmentedPageData([
       {
         value: PasswordManagementTypeEnum.advent,
-        label: t('password.advent.title'),
+        label: t('passwordSecurityPolicy.advent.title'),
         content: <ExpirationAccountList />
       },
       {
         value: PasswordManagementTypeEnum.policy,
-        label: t('password.policy.title'),
+        label: t('passwordSecurityPolicy.policy.title'),
         content: <PolicyList />,
         extraButton: (
           <BasicButton
@@ -43,7 +43,7 @@ const PasswordManagement = () => {
             icon={<IconAdd />}
             onClick={onCreatePolicy}
           >
-            {t('password.policy.create')}
+            {t('passwordSecurityPolicy.policy.create')}
           </BasicButton>
         )
       }
@@ -53,11 +53,14 @@ const PasswordManagement = () => {
 
   return (
     <>
-      <PageHeader title={t('password.title')} extra={renderExtraButton()} />
+      <PageHeader
+        title={t('passwordSecurityPolicy.title')}
+        extra={renderExtraButton()}
+      />
       <BasicSegmentedPage {...otherProps} />
       <PasswordSecurityPolicyModal />
     </>
   );
 };
 
-export default PasswordManagement;
+export default DatabaseAccountPassword;

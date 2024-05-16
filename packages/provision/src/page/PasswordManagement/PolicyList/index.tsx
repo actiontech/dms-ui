@@ -17,7 +17,7 @@ import { useSetRecoilState } from 'recoil';
 import {
   PasswordSecurityPolicyModalStatus,
   PasswordSecurityPolicySelectData
-} from '~/store/passwordManagement';
+} from '../../../store/databaseAccountPassword';
 import EventEmitter from '~/utils/EventEmitter';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -80,7 +80,9 @@ const PolicyList = () => {
               EventEmitter.emit(
                 EventEmitterKey.Refresh_Password_Management_list_Table
               );
-              messageApi.success(t('password.policy.deleteSuccessTips'));
+              messageApi.success(
+                t('passwordSecurityPolicy.policy.deleteSuccessTips')
+              );
             }
           });
       }
@@ -111,9 +113,7 @@ const PolicyList = () => {
       />
       <ActiontechTable
         dataSource={data?.list}
-        rowKey={(record: IPasswordSecurityPolicy) => {
-          return `${record?.uid}`;
-        }}
+        rowKey="uid"
         pagination={{
           total: data?.total ?? 0,
           current: pagination.page_index
