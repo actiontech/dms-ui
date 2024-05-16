@@ -47,7 +47,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         label: 'provisionNav.menu.operation',
         element: <Operation />
       }
-    ]
+    ] as RouterConfigItem[]
   },
   {
     label: 'provisionNav.menu.auditWrapper',
@@ -72,7 +72,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
       //   label: 'provisionNav.menu.serviceAudit',
       //   element: <ServiceAudit />
       // }
-    ]
+    ] as RouterConfigItem[]
   },
   {
     path: '*',

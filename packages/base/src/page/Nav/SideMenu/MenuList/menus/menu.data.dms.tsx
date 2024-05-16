@@ -117,9 +117,9 @@ export const dmsSideMenuData = (
       label: t('dmsMenu.groupLabel.dataSecurity'),
       group: [
         'permission-group',
-        'data-mask-rule',
         'account-management',
-        'password-management'
+        'password-management',
+        'data-mask-rule'
       ]
     },
     { type: 'divider' },
