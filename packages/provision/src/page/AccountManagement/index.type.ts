@@ -93,4 +93,18 @@ export type ModifyPasswordFormType = {
   policy: string;
   password: string;
   confirm_password: string;
+  effective_time_day: number;
+};
+
+export type ModifyPasswordItemType = {
+  id: string;
+  name: string;
+  password: string;
+  confirm_password: string;
+};
+
+export type BatchModifyPasswordFormType = {
+  policy: string;
+  effective_time_day: number;
+  passwords: ModifyPasswordItemType[];
 };

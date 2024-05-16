@@ -1,9 +1,9 @@
 import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
-import { t } from '~/locale';
+import { t } from '../../locale';
 
 export const DBAccountStatusDictionary = {
-  [ListDBAccountStatusEnum.lock]: t('account.list.lock'),
-  [ListDBAccountStatusEnum.unlock]: t('account.list.unlock')
+  [ListDBAccountStatusEnum.lock]: t('databaseAccount.list.lock'),
+  [ListDBAccountStatusEnum.unlock]: t('databaseAccount.list.unlock')
 };
 
 export const DBAccountStatusOptions = [
@@ -19,11 +19,22 @@ export const DBAccountStatusOptions = [
 
 export const DBAccountPasswordManagedOptions = [
   {
-    label: t('account.list.managed'),
+    label: t('databaseAccount.list.managed'),
     value: 'true'
   },
   {
-    label: t('account.list.unmanaged'),
+    label: t('databaseAccount.list.unmanaged'),
+    value: 'false'
+  }
+];
+
+export const DBAccountPasswordUsedByWorkbenchOptions = [
+  {
+    label: t('common.true'),
+    value: 'true'
+  },
+  {
+    label: t('common.false'),
     value: 'false'
   }
 ];
