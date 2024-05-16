@@ -98,16 +98,16 @@ describe('test base/Home/StepItems', () => {
       `project/${projectID}/data/export/create`
     );
 
-    fireEvent.click(screen.getByText('权限模板'));
+    fireEvent.click(screen.getByText('账号列表'));
     expect(navigateSpy).toHaveBeenCalledTimes(15);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/provision/project/${projectID}/auth/template`
+      `/provision/project/${projectID}/database-account`
     );
 
-    fireEvent.click(screen.getByText('授权清单'));
+    fireEvent.click(screen.getByText('临期列表'));
     expect(navigateSpy).toHaveBeenCalledTimes(16);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/provision/project/${projectID}/auth/list`
+      `/provision/project/${projectID}/database-account-password`
     );
 
     fireEvent.click(screen.getByText('授权审计'));

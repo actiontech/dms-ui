@@ -1,13 +1,9 @@
 import React, { ReactNode } from 'react';
 import { Navigate, RouteObject } from 'react-router-dom';
-import { DatabaseOutlined, SolutionOutlined } from '@ant-design/icons';
+import { DatabaseOutlined } from '@ant-design/icons';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 
 const Operation = React.lazy(() => import('../page/Data/Operation'));
-const AuthList = React.lazy(() => import('../page/Auth/AuthList'));
-const AddAuth = React.lazy(() => import('../page/Auth/AddAuth'));
-const AuthTemplate = React.lazy(() => import('~/page/Auth/AuthTemplateList'));
-const EditTemplate = React.lazy(() => import('~/page/Auth/EditTemplate'));
 
 const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
@@ -28,49 +24,6 @@ export type RouterConfigItem = RouteObject & {
 };
 
 export const AuthRouterConfig: RouterConfigItem[] = [
-  {
-    label: 'provisionNav.menu.authManage',
-    key: 'authManageWrapper',
-    icon: <SolutionOutlined />,
-    children: [
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/list`,
-        key: 'authList',
-        label: 'provisionNav.menu.authList',
-        element: <AuthList />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/list/:purpose`,
-        key: 'filteredAuthList',
-        hideInMenu: true,
-        element: <AuthList />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/list/add`,
-        key: 'addAuth',
-        hideInMenu: true,
-        element: <AddAuth />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/template`,
-        key: 'authTemplate',
-        label: 'provisionNav.menu.authTemplate',
-        element: <AuthTemplate />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/template/:name`,
-        key: 'filteredAuthTemplate',
-        hideInMenu: true,
-        element: <AuthTemplate />
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/auth/template/edit-template`,
-        key: 'addTemplate',
-        hideInMenu: true,
-        element: <EditTemplate />
-      }
-    ]
-  },
   {
     path: `${PROJECT_ROUTER_PARAM}/database-account`,
     label: 'provisionNav.menu.databaseAccount',

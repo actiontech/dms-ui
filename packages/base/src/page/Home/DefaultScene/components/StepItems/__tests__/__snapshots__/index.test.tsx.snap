@@ -441,12 +441,12 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
           <div
             class="sub-title"
           >
-            数据源授权管理
+            数据源账号管理
           </div>
           <div
             class="desc"
           >
-            配置数据权限模版，将数据权限模版授权给指定用户
+            兼顾账号发现及管理，监控数据源账号安全
           </div>
           <div
             class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
@@ -466,7 +466,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
                   <div
                     class="ant-space-item"
                   >
-                    权限模板
+                    账号列表
                   </div>
                 </div>
               </button>
@@ -485,7 +485,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
                   <div
                     class="ant-space-item"
                   >
-                    授权清单
+                    临期列表
                   </div>
                 </div>
               </button>
