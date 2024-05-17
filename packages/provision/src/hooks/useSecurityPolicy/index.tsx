@@ -41,7 +41,7 @@ const useSecurityPolicy = () => {
   }, [setFalse, setTrue, projectID]);
 
   const securityPolicyOptions = useCallback(
-    (normal = true) => {
+    (includeNormalPolicy = true) => {
       const options =
         securityPolicyList?.map((policy) => {
           return {
@@ -49,7 +49,7 @@ const useSecurityPolicy = () => {
             label: policy.name
           };
         }) ?? [];
-      if (normal) {
+      if (includeNormalPolicy) {
         return [normalPolicy, ...options];
       }
       return options;
