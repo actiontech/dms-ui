@@ -9,10 +9,10 @@ const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 // const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
-const DatabaseAccount = React.lazy(() => import('../page/AccountManagement'));
+const DatabaseAccount = React.lazy(() => import('../page/DatabaseAccount'));
 
 const DatabaseAccountPassword = React.lazy(
-  () => import('../page/PasswordManagement')
+  () => import('../page/DatabaseAccountPassword')
 );
 
 export type RouterConfigItem = RouteObject & {
@@ -26,13 +26,11 @@ export type RouterConfigItem = RouteObject & {
 export const AuthRouterConfig: RouterConfigItem[] = [
   {
     path: `${PROJECT_ROUTER_PARAM}/database-account`,
-    label: 'provisionNav.menu.databaseAccount',
     key: 'databaseAccount',
     element: <DatabaseAccount />
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/database-account-password`,
-    label: 'provisionNav.menu.databaseAccountPassword',
     key: 'databaseAccountPassword',
     element: <DatabaseAccountPassword />
   },
