@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { PageHeader, BasicButton } from '@actiontech/shared';
-import { Space, message } from 'antd';
+import { Space, message, Spin } from 'antd';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -113,6 +113,21 @@ const DatabaseAccountList = () => {
     }
   );
 
+  const {
+    data: accountStatic,
+    loading: accountStaticLoading,
+    refresh: refreshAccountStatic
+  } = useRequest(() =>
+    dbAccountService
+      .AuthGetAccountStatics({ project_uid: projectID })
+      .then((res) => res.data.data)
+  );
+
+  const onRefresh = useCallback(() => {
+    refreshAccountStatic();
+    refresh();
+  }, [refreshAccountStatic, refresh]);
+
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
       tableName: 'provision_database_account_list',
@@ -194,11 +209,11 @@ const DatabaseAccountList = () => {
                 ? t('databaseAccount.list.lockSuccessTips')
                 : t('databaseAccount.list.unlockSuccessTips')
             );
-            refresh();
+            onRefresh();
           }
         });
     },
-    [messageApi, projectID, refresh, t]
+    [messageApi, projectID, onRefresh, t]
   );
 
   const onSetManagedStatus = useCallback(
@@ -216,11 +231,11 @@ const DatabaseAccountList = () => {
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.success(t('databaseAccount.list.unmanagedSuccessTips'));
-            refresh();
+            onRefresh();
           }
         });
     },
-    [messageApi, projectID, refresh, t]
+    [messageApi, projectID, onRefresh, t]
   );
 
   const onSetUsedByWorkbench = useCallback(
@@ -240,11 +255,11 @@ const DatabaseAccountList = () => {
                 ? t('databaseAccount.list.usedByWorkbenchTips')
                 : t('databaseAccount.list.cancelUsedByWorkbenchTips')
             );
-            refresh();
+            onRefresh();
           }
         });
     },
-    [messageApi, projectID, refresh, t]
+    [messageApi, projectID, onRefresh, t]
   );
 
   const onDeleteAccount = useCallback(
@@ -257,11 +272,11 @@ const DatabaseAccountList = () => {
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.success(t('databaseAccount.list.deleteSuccessTips'));
-            refresh();
+            onRefresh();
           }
         });
     },
-    [messageApi, projectID, refresh, t]
+    [messageApi, projectID, onRefresh, t]
   );
 
   const columns = useMemo(() => {
@@ -337,10 +352,10 @@ const DatabaseAccountList = () => {
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EventEmitterKey.Refresh_Account_Management_List_Table,
-      refresh
+      onRefresh
     );
     return unsubscribe;
-  }, [refresh]);
+  }, [onRefresh]);
 
   return (
     <>
@@ -366,56 +381,59 @@ const DatabaseAccountList = () => {
           </Space>
         }
       />
-      <AccountStatistics />
-      <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        actions={[
-          {
-            key: 'modifyPassword',
-            text: t('databaseAccount.list.batchAction.modifyPassword'),
-            buttonProps: {
-              disabled: selectedRowKeys?.length === 0,
-              onClick: () =>
-                onBatchAction(ModalName.DatabaseAccountBatchModifyPasswordModal)
+      <Spin spinning={accountStaticLoading || loading}>
+        <AccountStatistics data={accountStatic} />
+        <TableToolbar
+          refreshButton={{ refresh: onRefresh, disabled: loading }}
+          actions={[
+            {
+              key: 'modifyPassword',
+              text: t('databaseAccount.list.batchAction.modifyPassword'),
+              buttonProps: {
+                disabled: selectedRowKeys?.length === 0,
+                onClick: () =>
+                  onBatchAction(
+                    ModalName.DatabaseAccountBatchModifyPasswordModal
+                  )
+              }
             }
-          }
-        ]}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        setting={tableSetting}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          }
-        }}
-        loading={loading}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
-      <ActiontechTable
-        rowKey="db_account_uid"
-        setting={tableSetting}
-        dataSource={data?.list ?? []}
-        pagination={{
-          total: data?.total || 0
-        }}
-        loading={loading}
-        columns={columns}
-        onChange={tableChange}
-        errorMessage={requestErrorMessage}
-        actions={actions}
-        rowSelection={{
-          selectedRowKeys,
-          onChange: onSelectChange
-        }}
-      />
+          ]}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          setting={tableSetting}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
+          }}
+        />
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={loading}
+          filterCustomProps={filterCustomProps}
+        />
+        <ActiontechTable
+          rowKey="db_account_uid"
+          setting={tableSetting}
+          dataSource={data?.list ?? []}
+          pagination={{
+            total: data?.total || 0
+          }}
+          columns={columns}
+          onChange={tableChange}
+          errorMessage={requestErrorMessage}
+          actions={actions}
+          rowSelection={{
+            selectedRowKeys,
+            onChange: onSelectChange
+          }}
+        />
+      </Spin>
+
       <AccountDiscoveryModal />
       <AccountDetailModal />
       <AccountAuthorizeModal />
