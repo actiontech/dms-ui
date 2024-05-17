@@ -14,7 +14,6 @@ import {
   OperateDataResourceHandleOperationTypeEnum,
   OperateDataResourceHandleOperationTimingEnum,
   AuthListDatabaseOrderByEnum,
-  AuthListDBAccountOrderByEnum,
   AuthListOperationsOrderByEnum,
   AuthListServiceOrderByEnum,
   AuthListTableOrderByEnum
@@ -48,7 +47,6 @@ import {
   IGetDataPermissionsInDataPermissionTemplateReply,
   IGetStatementsByDataPermissionTemplateReply,
   IListDatabaseReply,
-  IListDBAccountReply,
   IListOperationsReply,
   IListServiceReply,
   IAddServiceReply,
@@ -386,20 +384,6 @@ export interface IAuthListDatabaseParams {
 }
 
 export interface IAuthListDatabaseReturn extends IListDatabaseReply {}
-
-export interface IAuthListDBAccountParams {
-  page_size: number;
-
-  page_index?: number;
-
-  order_by?: AuthListDBAccountOrderByEnum;
-
-  keyword?: string;
-
-  owner_user_id?: string;
-}
-
-export interface IAuthListDBAccountReturn extends IListDBAccountReply {}
 
 export interface IAuthListOperationsParams {
   data_object_uids?: string[];

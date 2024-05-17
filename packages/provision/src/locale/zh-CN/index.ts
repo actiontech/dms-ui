@@ -5,6 +5,8 @@ import auth from './auth';
 import provisionAudit from './provisionAudit';
 import externalDataSource from './externalDataSource';
 import provisionNav from './provisionNav';
+import account from './account';
+import passwordSecurityPolicy from './passwordSecurityPolicy';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -15,6 +17,8 @@ export default {
     auth,
     provisionAudit,
     externalDataSource,
-    provisionNav
+    provisionNav,
+    account,
+    passwordSecurityPolicy
   }
 };

@@ -11,11 +11,23 @@ export enum ModalName {
 
   CopyTemplate = 'COPY_TEMPLATE',
 
-  UpdateSQLWorkbenchQueryStatus = 'UPDATE_SQL_WORKBENCH_QUERY_STATUS'
+  UpdateSQLWorkbenchQueryStatus = 'UPDATE_SQL_WORKBENCH_QUERY_STATUS',
+
+  CreatePasswordSecurityPolicyModal = 'CreatePasswordSecurityPolicyModal',
+
+  UpdatePasswordSecurityPolicyModal = 'UpdatePasswordSecurityPolicyModal',
+
+  AccountDiscoveryModal = 'AccountDiscoveryModal'
 }
 
 export enum EventEmitterKey {
   Refresh_Auth_List_Table = 'Refresh_Auth_List_Table',
 
-  Refresh_Auth_Template_List_Table = 'Refresh_Auth_Template_List_Table'
+  Refresh_Auth_Template_List_Table = 'Refresh_Auth_Template_List_Table',
+
+  Refresh_Password_Management_list_Table = 'Refresh_Password_Management_list_Table',
+
+  Refresh_Account_Management_List_Table = 'Refresh_Account_Management_List_Table',
+
+  Create_Account_Sync_Service = 'Create_Account_Sync_Service'
 }

@@ -18,14 +18,16 @@ export const getDatabaseAuthStep: (
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_1_0'
         ),
-        action: () => navigate(`/provision/project/${projectID}/auth/template`)
+        action: () =>
+          navigate(`/provision/project/${projectID}/database-account`)
       },
       {
         key: 'auth-list',
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_1_1'
         ),
-        action: () => navigate(`/provision/project/${projectID}/auth/list`)
+        action: () =>
+          navigate(`/provision/project/${projectID}/database-account-password`)
       }
     ]
   };

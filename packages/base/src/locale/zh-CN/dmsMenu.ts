@@ -24,6 +24,8 @@ export default {
   permissionGroup: '权限组',
   permissionTemplate: '权限模板',
   authList: '授权清单',
+  databaseAccount: '账号管理',
+  databaseAccountPassword: '账号密码管理',
   dataMaskRuleOverview: '脱敏规则',
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',

@@ -683,44 +683,9 @@ exports[`App render App when token is existed 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/template"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
                 role="menuitem"
-                structkey="permission-template"
-                style="padding-left: 24px;"
-                tabindex="-1"
-              >
-                <span
-                  class="anticon ant-menu-item-icon"
-                  role="img"
-                >
-                  <svg
-                    fill="none"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    width="18"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
-                      fill="#C3C6CD"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="ant-menu-title-content"
-                >
-                  <a
-                    href="/provision/project//auth/template"
-                  >
-                    权限模板
-                  </a>
-                </span>
-              </li>
-              <li
-                class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/list"
-                role="menuitem"
-                structkey="auth-list"
+                structkey="account-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
               >
@@ -751,9 +716,44 @@ exports[`App render App when token is existed 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project//auth/list"
+                    href="/provision/project//database-account"
                   >
-                    授权清单
+                    账号管理
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
+                role="menuitem"
+                structkey="password-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
+                      fill="#C3C6CD"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/provision/project//database-account-password"
+                  >
+                    账号密码管理
                   </a>
                 </span>
               </li>
@@ -1695,12 +1695,12 @@ exports[`App render App when token is existed 1`] = `
                 <div
                   class="sub-title"
                 >
-                  数据源授权管理
+                  数据源账号管理
                 </div>
                 <div
                   class="desc"
                 >
-                  配置数据权限模版，将数据权限模版授权给指定用户
+                  兼顾账号发现及管理，监控数据源账号安全
                 </div>
                 <div
                   class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
@@ -1720,7 +1720,7 @@ exports[`App render App when token is existed 1`] = `
                         <div
                           class="ant-space-item"
                         >
-                          权限模板
+                          账号列表
                         </div>
                       </div>
                     </button>
@@ -1739,7 +1739,7 @@ exports[`App render App when token is existed 1`] = `
                         <div
                           class="ant-space-item"
                         >
-                          授权清单
+                          临期列表
                         </div>
                       </div>
                     </button>
@@ -3097,44 +3097,9 @@ exports[`App render App when user role is not admin 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/template"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
                 role="menuitem"
-                structkey="permission-template"
-                style="padding-left: 24px;"
-                tabindex="-1"
-              >
-                <span
-                  class="anticon ant-menu-item-icon"
-                  role="img"
-                >
-                  <svg
-                    fill="none"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    width="18"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
-                      fill="#C3C6CD"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="ant-menu-title-content"
-                >
-                  <a
-                    href="/provision/project//auth/template"
-                  >
-                    权限模板
-                  </a>
-                </span>
-              </li>
-              <li
-                class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-provision/project/projectID/auth/list"
-                role="menuitem"
-                structkey="auth-list"
+                structkey="account-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
               >
@@ -3165,9 +3130,44 @@ exports[`App render App when user role is not admin 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/provision/project//auth/list"
+                    href="/provision/project//database-account"
                   >
-                    授权清单
+                    账号管理
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
+                role="menuitem"
+                structkey="password-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <span
+                  class="anticon ant-menu-item-icon"
+                  role="img"
+                >
+                  <svg
+                    fill="none"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.8373 2.11948L9 0.75L15.1627 2.11948C15.5059 2.19574 15.75 2.5001 15.75 2.85163V10.3417C15.75 11.8463 14.998 13.2513 13.7461 14.0859L9 17.25L4.25385 14.0859C3.00196 13.2513 2.25 11.8463 2.25 10.3417V2.85163C2.25 2.5001 2.49415 2.19574 2.8373 2.11948ZM9.75 7.5V3.75L6 9H8.25V12.75L12 7.5H9.75Z"
+                      fill="#C3C6CD"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/provision/project//database-account-password"
+                  >
+                    账号密码管理
                   </a>
                 </span>
               </li>

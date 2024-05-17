@@ -33,7 +33,9 @@ export enum ListTipsByAuthorizationKeyKeyEnum {
 }
 
 export enum AuthListDBAccountByAuthorizationOrderByEnum {
-  'user' = 'user'
+  'name' = 'name',
+
+  'create_at' = 'create_at'
 }
 
 export enum AuthListDataObjectSourcesOrderByEnum {
@@ -80,10 +82,6 @@ export enum OperateDataResourceHandleOperationTimingEnum {
 
 export enum AuthListDatabaseOrderByEnum {
   'name' = 'name'
-}
-
-export enum AuthListDBAccountOrderByEnum {
-  'user' = 'user'
 }
 
 export enum AuthListOperationsOrderByEnum {

@@ -28,10 +28,10 @@ import {
 } from './sqle';
 import {
   authAuditMenuItem,
-  authListMenuItem,
   permissionGroupMenuItem,
-  permissionTemplateMenuItem,
-  templateAuditMenuItem
+  templateAuditMenuItem,
+  accountManagementMenuItem,
+  passwordManagementMenuItem
 } from './provision';
 import { dataMaskRuleMenuItem } from './dms';
 
@@ -63,10 +63,10 @@ export const dmsSideMenuData = (
 
     // #if [provision]
     permissionGroupMenuItem,
-    permissionTemplateMenuItem,
-    authListMenuItem,
     authAuditMenuItem,
     templateAuditMenuItem,
+    accountManagementMenuItem,
+    passwordManagementMenuItem,
     // #endif
 
     // #if [dms]
@@ -117,8 +117,8 @@ export const dmsSideMenuData = (
       label: t('dmsMenu.groupLabel.dataSecurity'),
       group: [
         'permission-group',
-        'permission-template',
-        'auth-list',
+        'account-management',
+        'password-management',
         'data-mask-rule'
       ]
     },

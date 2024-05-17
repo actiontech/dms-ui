@@ -15,6 +15,8 @@ export default {
     auditWrapper: '审计',
     authAudit: '授权审计',
     templateAudit: '权限模版审计',
-    serviceAudit: '数据源操作审计'
+    serviceAudit: '数据源操作审计',
+    databaseAccount: '账号管理',
+    databaseAccountPassword: '账号密码管理'
   }
 };

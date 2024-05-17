@@ -23,30 +23,30 @@ export const permissionGroupMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'permission-group'
 });
 
-export const permissionTemplateMenuItem: GenerateMenuItemType = (
+export const accountManagementMenuItem: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/database-account`}>
+      {t('dmsMenu.databaseAccount')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account`,
+  icon: <Icon component={IconAuthList} />,
+  structKey: 'account-management'
+});
+
+export const passwordManagementMenuItem: GenerateMenuItemType = (
   projectID
 ) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/auth/template`}>
-      {t('dmsMenu.permissionTemplate')}
+    <Link to={`/provision/project/${projectID}/database-account-password`}>
+      {t('dmsMenu.databaseAccountPassword')}
     </Link>
   ),
 
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/template`,
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account-password`,
   icon: <Icon component={IconPermissionTemplate} />,
-  structKey: 'permission-template'
-});
-
-export const authListMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <Link to={`/provision/project/${projectID}/auth/list`}>
-      {t('dmsMenu.authList')}
-    </Link>
-  ),
-
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/auth/list`,
-  icon: <Icon component={IconAuthList} />,
-  structKey: 'auth-list'
+  structKey: 'password-management'
 });
 
 export const authAuditMenuItem: GenerateMenuItemType = (projectID) => ({

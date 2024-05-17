@@ -61,8 +61,6 @@ import {
   IOperateDataResourceHandleReturn,
   IAuthListDatabaseParams,
   IAuthListDatabaseReturn,
-  IAuthListDBAccountParams,
-  IAuthListDBAccountReturn,
   IAuthListOperationsParams,
   IAuthListOperationsReturn,
   IAuthListServiceParams,
@@ -460,18 +458,6 @@ class AuthService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IAuthListDatabaseReturn>(
       '/v1/auth/databases',
-      paramsData,
-      options
-    );
-  }
-
-  public AuthListDBAccount(
-    params: IAuthListDBAccountParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<IAuthListDBAccountReturn>(
-      '/v1/auth/dbaccounts',
       paramsData,
       options
     );

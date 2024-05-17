@@ -4,6 +4,12 @@ export enum AddDataObjectSourceNameEnum {
   'Actiontech DMS' = 'Actiontech DMS'
 }
 
+export enum DMSProxyTargetScenarioEnum {
+  'internal_service' = 'internal_service',
+
+  'thrid_party_integrate' = 'thrid_party_integrate'
+}
+
 export enum DataObjectSourceNameEnum {
   'Actiontech DMP' = 'Actiontech DMP',
 
@@ -14,6 +20,12 @@ export enum DelDataObjectSourceDeleteModEnum {
   'Delete' = 'Delete',
 
   'DeleteIgnoreDataPermissionTemplate' = 'DeleteIgnoreDataPermissionTemplate'
+}
+
+export enum StatusEnum {
+  'lock' = 'lock',
+
+  'unlock' = 'unlock'
 }
 
 export enum GetUserAuthenticationTypeEnum {
@@ -40,6 +52,12 @@ export enum ListAuthorizationStatusEnum {
   'expiring' = 'expiring',
 
   'effective' = 'effective'
+}
+
+export enum ListDBAccountStatusEnum {
+  'lock' = 'lock',
+
+  'unlock' = 'unlock'
 }
 
 export enum ListServiceDbTypeEnum {
@@ -97,7 +115,11 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'save_audit_plan' = 'save_audit_plan',
 
-  'sql_query' = 'sql_query'
+  'sql_query' = 'sql_query',
+
+  'create_export_task' = 'create_export_task',
+
+  'audit_export_workflow' = 'audit_export_workflow'
 }
 
 export enum OpPermissionItemRangeTypeEnum {
