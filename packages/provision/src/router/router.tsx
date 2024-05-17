@@ -10,17 +10,17 @@ const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 // const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
 const DatabaseAccountList = React.lazy(
-  () => import('../page/AccountManagement/List')
+  () => import('../page/DatabaseAccount/List')
 );
 const CreateDatabaseAccount = React.lazy(
-  () => import('../page/AccountManagement/Create')
+  () => import('../page/DatabaseAccount/Create')
 );
 const UpdateDatabaseAccount = React.lazy(
-  () => import('../page/AccountManagement/Update')
+  () => import('../page/DatabaseAccount/Update')
 );
 
 const DatabaseAccountPassword = React.lazy(
-  () => import('../page/PasswordManagement')
+  () => import('../page/DatabaseAccountPassword')
 );
 
 export type RouterConfigItem = RouteObject & {

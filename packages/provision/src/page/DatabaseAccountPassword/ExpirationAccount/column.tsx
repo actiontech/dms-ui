@@ -8,10 +8,10 @@ import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/s
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import { t } from '~/locale';
 import { Typography } from 'antd';
-import { DBAccountStatusDictionary } from '../../AccountManagement/index.data';
+import { DBAccountStatusDictionary } from '../../DatabaseAccount/index.data';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ModalName } from '~/data/enum';
-import { accountNameRender } from '../../AccountManagement/index.utils';
+import { accountNameRender } from '../../DatabaseAccount/index.utils';
 
 export type ExpirationAccountListFilterParamType = PageInfoWithoutIndexAndSize<
   IAuthListDBAccountParams & {

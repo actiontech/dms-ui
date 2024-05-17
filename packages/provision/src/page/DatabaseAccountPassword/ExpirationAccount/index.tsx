@@ -30,8 +30,8 @@ import {
 } from '~/store/databaseAccount';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 import EventEmitter from '~/utils/EventEmitter';
-import ModifyPasswordModal from '../../AccountManagement/Modal/ModifyPassword';
-import RenewalPasswordModal from '../../AccountManagement/Modal/RenewalPassword';
+import ModifyPasswordModal from '../../DatabaseAccount/Modal/ModifyPassword';
+import RenewalPasswordModal from '../../DatabaseAccount/Modal/RenewalPassword';
 import { useSetRecoilState } from 'recoil';
 import useSecurityPolicy from '~/hooks/useSecurityPolicy';
 import dayjs from 'dayjs';
