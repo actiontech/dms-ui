@@ -15,13 +15,14 @@ import { useEffect } from 'react';
 import PermissionsField from './PermissionsField';
 import { EventEmitterKey } from '../../../../data/enum';
 import EventEmitter from '../../../../utils/EventEmitter';
+import { CreateAccountFormType } from '../../index.type';
 
 const DataPermissionsForm: React.FC<{ disabled?: boolean }> = ({
   disabled = false
 }) => {
   const { t } = useTranslation();
 
-  const form = Form.useFormInstance();
+  const form = Form.useFormInstance<CreateAccountFormType>();
 
   const [messageApi, contextHolder] = message.useMessage();
 

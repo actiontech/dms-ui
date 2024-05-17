@@ -3,11 +3,12 @@ import InputPassword from '../../../../components/PasswordWithGenerate';
 import Password from '../../../../utils/Password';
 import { BasicInput } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
+import { ModifyPasswordFormType } from '../../index.type';
 
 const PasswordField = () => {
   const { t } = useTranslation();
 
-  const form = Form.useFormInstance();
+  const form = Form.useFormInstance<ModifyPasswordFormType>();
 
   const generatePassword = () => {
     const password = Password.generateMySQLPassword(16);

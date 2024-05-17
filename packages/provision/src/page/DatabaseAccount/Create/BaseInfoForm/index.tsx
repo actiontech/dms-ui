@@ -13,21 +13,25 @@ import InputPassword from '../../../../components/PasswordWithGenerate';
 import Password from '../../../../utils/Password';
 import { Form } from 'antd';
 import useSecurityPolicy, {
-  normalPolicyValue
+  NORMAL_POLICY_VALUE
 } from '../../../../hooks/useSecurityPolicy';
 import { useEffect } from 'react';
+import { CreateAccountFormType } from '../../index.type';
 
 const BaseInfoForm: React.FC<{ disabled?: boolean }> = ({
   disabled = false
 }) => {
   const { t } = useTranslation();
 
-  const form = Form.useFormInstance();
+  const form = Form.useFormInstance<CreateAccountFormType>();
 
   const policy = Form.useWatch('policy', form);
 
-  const { updateSecurityPolicyList, policyOptions, policyList } =
-    useSecurityPolicy();
+  const {
+    updateSecurityPolicyList,
+    securityPolicyOptions,
+    securityPolicyList
+  } = useSecurityPolicy();
 
   const generatePassword = () => {
     const password = Password.generateMySQLPassword(16);
@@ -39,8 +43,8 @@ const BaseInfoForm: React.FC<{ disabled?: boolean }> = ({
   };
 
   useEffect(() => {
-    if (policy !== normalPolicyValue) {
-      const value = policyList.find(
+    if (policy !== NORMAL_POLICY_VALUE) {
+      const value = securityPolicyList.find(
         (i) => i.uid === policy
       )?.password_expiration_period;
       form.setFieldValue('effective_time_day', value);
@@ -112,7 +116,7 @@ const BaseInfoForm: React.FC<{ disabled?: boolean }> = ({
         rules={[{ required: true }]}
         className="has-required-style"
       >
-        <BasicSelect options={policyOptions()} disabled={disabled} />
+        <BasicSelect options={securityPolicyOptions()} disabled={disabled} />
       </FormItemLabel>
       <EmptyBox if={!disabled}>
         <FormItemLabel
@@ -123,7 +127,8 @@ const BaseInfoForm: React.FC<{ disabled?: boolean }> = ({
         >
           <BasicInputNumber
             disabled={
-              (policy !== undefined && policy !== normalPolicyValue) || disabled
+              (policy !== undefined && policy !== NORMAL_POLICY_VALUE) ||
+              disabled
             }
             min={0}
           />

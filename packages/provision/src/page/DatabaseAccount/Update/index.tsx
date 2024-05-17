@@ -25,7 +25,7 @@ import { useBoolean } from 'ahooks';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { generateDataPermissionValueByDataPermission } from '../index.utils';
-import { normalPolicyValue } from '../../../hooks/useSecurityPolicy';
+import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
 
 const UpdateDatabaseAccount = () => {
   const { t } = useTranslation();
@@ -83,7 +83,7 @@ const UpdateDatabaseAccount = () => {
               password: data?.account_info?.password,
               confirm_password: data?.account_info?.password,
               hostname: data?.account_info?.hostname,
-              policy: data?.password_security_policy || normalPolicyValue,
+              policy: data?.password_security_policy || NORMAL_POLICY_VALUE,
               explanation: data?.account_info?.explanation,
               service: data?.db_service?.uid,
               permissions: generateDataPermissionValueByDataPermission(

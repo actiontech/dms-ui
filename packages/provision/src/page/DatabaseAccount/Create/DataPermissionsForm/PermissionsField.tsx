@@ -1,4 +1,8 @@
-import { PermissionTableFieldProps, PermissionsType } from '../../index.type';
+import {
+  PermissionTableFieldProps,
+  PermissionsType,
+  CreateAccountFormType
+} from '../../index.type';
 import { Form, Typography, Space, Popconfirm } from 'antd';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useTranslation } from 'react-i18next';
@@ -20,7 +24,7 @@ const PermissionsField: React.FC<PermissionTableFieldProps> = ({
   value = [],
   onChange
 }) => {
-  const form = Form.useFormInstance();
+  const form = Form.useFormInstance<CreateAccountFormType>();
 
   const [visible, setVisible] = useState<boolean>(false);
 

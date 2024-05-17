@@ -6,17 +6,19 @@ import passwordSecurityPolicy from '@actiontech/shared/lib/api/provision/service
 import { IPasswordSecurityPolicy } from '@actiontech/shared/lib/api/provision/service/common';
 import { t } from '~/locale';
 
-export const normalPolicyValue = 'NORMAL';
+export const NORMAL_POLICY_VALUE = 'NORMAL';
 
 export const normalPolicy = {
-  value: normalPolicyValue,
+  value: NORMAL_POLICY_VALUE,
   label: t('databaseAccount.create.normalPolicy')
 };
 
 const useSecurityPolicy = () => {
   const { projectID } = useCurrentProject();
 
-  const [policyList, setPolicyList] = useState<IPasswordSecurityPolicy[]>([]);
+  const [securityPolicyList, setSecurityPolicyList] = useState<
+    IPasswordSecurityPolicy[]
+  >([]);
 
   const [loading, { setTrue, setFalse }] = useBoolean();
 
@@ -30,7 +32,7 @@ const useSecurityPolicy = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          setPolicyList(res.data.data ?? []);
+          setSecurityPolicyList(res.data.data ?? []);
         }
       })
       .finally(() => {
@@ -38,10 +40,10 @@ const useSecurityPolicy = () => {
       });
   }, [setFalse, setTrue, projectID]);
 
-  const policyOptions = useCallback(
+  const securityPolicyOptions = useCallback(
     (normal = true) => {
       const options =
-        policyList?.map((policy) => {
+        securityPolicyList?.map((policy) => {
           return {
             value: policy.uid,
             label: policy.name
@@ -52,13 +54,13 @@ const useSecurityPolicy = () => {
       }
       return options;
     },
-    [policyList]
+    [securityPolicyList]
   );
 
   return {
     loading,
-    policyOptions,
-    policyList,
+    securityPolicyOptions,
+    securityPolicyList,
     updateSecurityPolicyList
   };
 };

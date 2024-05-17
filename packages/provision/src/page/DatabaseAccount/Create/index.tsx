@@ -23,7 +23,7 @@ import { useBoolean } from 'ahooks';
 import { useState } from 'react';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import PreviewModal from './PreviewModal';
-import { normalPolicyValue } from '../../../hooks/useSecurityPolicy';
+import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
 
 const CreateDatabaseAccount = () => {
   const { t } = useTranslation();
@@ -59,7 +59,7 @@ const CreateDatabaseAccount = () => {
         data_permissions: permissions,
         used_by_sql_workbench: false,
         password_security_policy:
-          values.policy === normalPolicyValue ? undefined : values.policy
+          values.policy === NORMAL_POLICY_VALUE ? undefined : values.policy
       }
     });
   };

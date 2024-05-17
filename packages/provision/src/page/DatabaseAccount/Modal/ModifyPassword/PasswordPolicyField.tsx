@@ -2,19 +2,25 @@ import { Form } from 'antd';
 import { BasicSelect, BasicInputNumber } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import useSecurityPolicy, {
-  normalPolicyValue
+  NORMAL_POLICY_VALUE
 } from '../../../../hooks/useSecurityPolicy';
 import { useEffect } from 'react';
 
 const PasswordPolicyField: React.FC<{ visible: boolean }> = ({ visible }) => {
   const { t } = useTranslation();
 
-  const form = Form.useFormInstance();
+  const form = Form.useFormInstance<{
+    policy: string;
+    effective_time_day: number;
+  }>();
 
   const policy = Form.useWatch('policy', form);
 
-  const { updateSecurityPolicyList, policyOptions, policyList } =
-    useSecurityPolicy();
+  const {
+    updateSecurityPolicyList,
+    securityPolicyOptions,
+    securityPolicyList
+  } = useSecurityPolicy();
 
   useEffect(() => {
     if (visible) {
@@ -23,8 +29,8 @@ const PasswordPolicyField: React.FC<{ visible: boolean }> = ({ visible }) => {
   }, [updateSecurityPolicyList, visible]);
 
   useEffect(() => {
-    if (policy !== normalPolicyValue) {
-      const value = policyList.find(
+    if (policy !== NORMAL_POLICY_VALUE) {
+      const value = securityPolicyList.find(
         (i) => i.uid === policy
       )?.password_expiration_period;
       form.setFieldValue('effective_time_day', value);
@@ -39,7 +45,7 @@ const PasswordPolicyField: React.FC<{ visible: boolean }> = ({ visible }) => {
         label={t('databaseAccount.create.form.policy')}
         rules={[{ required: true }]}
       >
-        <BasicSelect options={policyOptions()} />
+        <BasicSelect options={securityPolicyOptions()} />
       </Form.Item>
       <Form.Item
         name="effective_time_day"
@@ -47,7 +53,7 @@ const PasswordPolicyField: React.FC<{ visible: boolean }> = ({ visible }) => {
         rules={[{ required: true }]}
       >
         <BasicInputNumber
-          disabled={policy !== undefined && policy !== normalPolicyValue}
+          disabled={policy !== undefined && policy !== NORMAL_POLICY_VALUE}
           min={0}
         />
       </Form.Item>

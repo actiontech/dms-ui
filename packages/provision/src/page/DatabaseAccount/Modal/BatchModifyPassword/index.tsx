@@ -11,7 +11,7 @@ import {
 } from '../../../../store/databaseAccount';
 import { BatchModifyPasswordFormType } from '../../index.type';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
-import { normalPolicyValue } from '../../../../hooks/useSecurityPolicy';
+import { NORMAL_POLICY_VALUE } from '../../../../hooks/useSecurityPolicy';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -60,7 +60,7 @@ const BatchModifyPasswordModal: React.FC = () => {
         project_uid: projectID,
         db_account_password: {
           password_security_policy:
-            values.policy === normalPolicyValue ? '' : values.policy,
+            values.policy === NORMAL_POLICY_VALUE ? '' : values.policy,
           passwords: values.passwords.map((i) => ({
             db_account_uid: i.id,
             db_account_password: i.password
