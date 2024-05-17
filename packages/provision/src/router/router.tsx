@@ -34,7 +34,6 @@ export type RouterConfigItem = RouteObject & {
 export const AuthRouterConfig: RouterConfigItem[] = [
   {
     path: `${PROJECT_ROUTER_PARAM}/database-account`,
-    label: 'provisionNav.menu.databaseAccount',
     key: 'databaseAccount',
     children: [
       {
@@ -56,7 +55,6 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/database-account-password`,
-    label: 'provisionNav.menu.databaseAccountPassword',
     key: 'databaseAccountPassword',
     element: <DatabaseAccountPassword />
   },
