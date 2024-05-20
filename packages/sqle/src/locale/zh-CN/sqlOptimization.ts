@@ -55,6 +55,7 @@ export default {
       performance: '优化后的性能提升'
     },
     recommendedIndex: '推荐索引',
+    recommendedIndexTips: '集中展示基于每一条SQL产生的索引推荐',
     sqlTableTitle: 'SQL语句列表',
     indexTips: '暂无需要优化的索引',
     optimizingStatusTips: '调优进行中，请刷新获取最新结果',
