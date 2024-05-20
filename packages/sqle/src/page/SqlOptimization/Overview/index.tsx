@@ -1,4 +1,9 @@
-import { BasicButton, PageHeader, EmptyBox } from '@actiontech/shared';
+import {
+  BasicButton,
+  PageHeader,
+  EmptyBox,
+  BasicToolTips
+} from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
@@ -204,7 +209,12 @@ const OptimizationOverview = () => {
           />
           <section className="last-title">
             <Typography.Title level={5} className="title-wrap">
-              {t('sqlOptimization.overview.recommendedIndex')}
+              <BasicToolTips
+                title={t('sqlOptimization.overview.recommendedIndexTips')}
+                suffixIcon
+              >
+                {t('sqlOptimization.overview.recommendedIndex')}
+              </BasicToolTips>
             </Typography.Title>
             <RecommendIndex
               recommendations={optimizationRecord?.index_recommendations}
