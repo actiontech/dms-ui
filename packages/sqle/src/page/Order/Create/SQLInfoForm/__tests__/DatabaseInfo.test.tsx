@@ -46,7 +46,8 @@ describe('sqle/Order/Create/DatabaseInfo', () => {
       ruleTemplates: new Map([[0, { dbType: 'dbType1' }]]),
       setRuleTemplates: setRuleTemplatesFn,
       setChangeSqlModeDisabled: setChangeSqlModeDisabledFn,
-      setIsSupportFileModeExecuteSQL: jest.fn()
+      setIsSupportFileModeExecuteSQL: jest.fn(),
+      setSqlInputTypeMap: jest.fn()
     };
     return renderWithThemeAndRedux(
       <Form>
