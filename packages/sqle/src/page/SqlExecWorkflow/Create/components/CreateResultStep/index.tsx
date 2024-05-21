@@ -22,7 +22,7 @@ const CreateResultStep: React.FC<CreateResultStepProps> = ({
         subTitle={desc}
         extra={[
           <Link
-            key="jumpToWorkflowOrderDetail"
+            key="jumpToWorkflowDetail"
             to={`/sqle/project/${projectID}/exec-workflow/${workflowID}`}
           >
             <BasicButton type="primary">

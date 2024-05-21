@@ -6,7 +6,7 @@ import { WorkflowDetailStyleWrapper } from './style';
 import { EmptyBox, PageHeader } from '@actiontech/shared';
 import BackToList from '../Common/BackToList';
 import WorkflowDetailPageHeaderExtra from './components/PageHeaderExtra';
-import useGenerateWorkflowStepsProps from './hooks/useGenerateOrderStepsProps';
+import useGenerateWorkflowStepsProps from './hooks/useGenerateWorkflowStepsProps';
 import BasicInfoWrapper from '../Common/BasicInfoWrapper';
 import {
   WorkflowRecordResV2StatusEnum,
@@ -67,7 +67,6 @@ const SqlWorkflowDetail: React.FC = () => {
     refreshWorkflowInfo,
     refreshOverviewAction
   });
-
   const currentRejectedStep = useMemo(() => {
     return workflowInfo?.record?.workflow_step_list?.find(
       (v) => v.state === WorkflowStepResV2StateEnum.rejected
@@ -154,7 +153,7 @@ const SqlWorkflowDetail: React.FC = () => {
         executeMode={workflowInfo?.exec_mode}
         workflowId={workflowInfo?.workflow_id ?? ''}
         modifiedTasks={modifiedTasks}
-        disabledOperatorOrderBtnTips={disabledOperatorWorkflowBtnTips}
+        disabledOperatorWorkflowBtnTips={disabledOperatorWorkflowBtnTips}
         isDisableFinallySubmitButton={isDisableFinallySubmitButton}
         refreshWorkflow={refreshWorkflowInfo}
         refreshOverviewAction={refreshOverviewAction}

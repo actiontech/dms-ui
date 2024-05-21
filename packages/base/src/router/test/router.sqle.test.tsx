@@ -191,6 +191,50 @@ describe('base/router-sqle-ee', () => {
         });
       });
 
+      describe('render route workflow', () => {
+        it('render route list', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/exec-workflow`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(300));
+          expect(baseElement).toMatchSnapshot();
+          expect(screen.getByText('sqlExecWorkflowList')).toBeInTheDocument();
+        });
+
+        it('render route orderCreate', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/exec-workflow/create`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(0));
+          expect(baseElement).toMatchSnapshot();
+          expect(screen.getByText('createSqlExecWorkflow')).toBeInTheDocument();
+        });
+
+        it('render route orderDetail', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/exec-workflow/workflowId`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(0));
+          expect(baseElement).toMatchSnapshot();
+          expect(screen.getByText('workflowDetail')).toBeInTheDocument();
+        });
+
+        it('render SQLFileStatementOverview', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/exec-workflow/123/files/434/sqls`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(300));
+          expect(baseElement).toMatchSnapshot();
+          expect(
+            screen.getByText('WorkflowSQLFileStatementOverview')
+          ).toBeInTheDocument();
+        });
+      });
+
       describe('render route sqlAudit', () => {
         it('render route sqlAuditList', async () => {
           const { baseElement } = customRender([

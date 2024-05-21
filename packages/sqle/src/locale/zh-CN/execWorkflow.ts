@@ -120,7 +120,109 @@ export default {
     }
   },
 
-  detail: {},
+  detail: {
+    operator: {
+      buttonText: '工单详情',
+      title: '工单信息',
+      baseInfo: {
+        title: '基本信息',
+        createUser: '创建人',
+        createTime: '创建时间'
+      },
+      history: {
+        title: '工单操作历史'
+      },
+      stepsTitle: '工单进度',
+      time: '操作时间',
+      user: '操作人',
+      reject: '驳回',
+      rejectFull: '全部驳回',
+      markManually: '标记为人工上线',
+      markManuallyConfirmTips:
+        '当前操作仅修改工单状态，而不对数据源产生操作，是否确认标记为人工上线?',
+      rejectTips:
+        '当工单被驳回时，工单创建者需要对其进行修改，然后重新提交审核。',
+      wait: '正在等待用户{{username}}进行操作',
+      waitAudit: '等待审核人操作',
+      notArrival: '等待上一步执行',
+      rejectDetail: '{{name}}驳回了当前工单，驳回原因为: ',
+      alreadyRejected: '工单已被驳回',
+      alreadyClosed: '工单已被关闭',
+      modifySql: '修改审核语句',
+      waitModifySql: '等待用户{{username}}修改审核语句',
+      batchSqlExecute: '批量立即上线',
+      batchSqlExecuteConfirmTips:
+        '当前操作将立即执行工单下的所有SQL语句，且已经设置了定时上线的数据源仍然在定时时间上线，不会立即上线，是否确认立即批量上线?',
+      sqlReview: '审核通过',
+      terminate: '中止上线',
+      terminateSuccessTips: '中止上线成功',
+      terminateConfirmTips:
+        '此操作将中断当前上线操作, 并回滚当前正在执行的SQL, 是否确认中止上线?',
+      unknown: '未知步骤',
+      refreshWorkflow: '刷新工单',
+      backToDetail: '返回工单详情',
+
+      maintenanceTime:
+        '定时上线的时间点必须在运维时间之内，当前数据源的运维时间为: \n',
+      sqlExecuteDisableTips:
+        '只能在运维时间之内执行立即上线，当前数据源的运维时间为',
+      emptyMaintenanceTime: '任意时间',
+      scheduleTime: '定时上线时间',
+      scheduleTimeExecuteConfirmLabel: '上线前是否发送通知进行确认',
+      scheduleTimeExecuteConfirmTips:
+        '若开启，到达上线时间点，平台将发送一则上线确认信息，确认后执行上线操作；若不开启，到达上线时间将自动执行上线操作',
+      scheduleTimeExecuteConfirmMethod: '确认方式',
+      scheduleTimeExecuteConfirmMethodTips:
+        '目前仅支持企业微信、飞书，如果您尚未配置相应流程的对接能力，请先到<0>系统设置-流程对接</0>处开启',
+      confirmMethodWechat: '企业微信',
+      confirmMethodFeishu: '飞书',
+
+      approveSuccessTips: '审批通过',
+      rejectSuccessTips: '驳回成功',
+      completeSuccessTips: '同步工单已上线成功',
+      rejectReason: '驳回原因',
+      rejectAllTips: '当前操作将驳回工单下所有SQL语句，请谨慎操作！',
+      onlineRegularly: '定时上线',
+      execScheduledErrorMessage: '定时上线时间必须在运维时间之内',
+      execScheduledBeforeNow: '定时上线时间必须在当前时间之后',
+      execScheduleTips: '定时上线设置成功',
+      status: '上线状态',
+      executingTips: '立即上线设置成功',
+      createWorkflowStep: '创建工单',
+      updateWorkflowStep: '更新工单',
+      reviewWorkflowStep: '审核工单',
+      executeWorkflowStep: '上线工单',
+      stepNumberIsUndefined: '当前节点的步骤数未定义!',
+      closeWorkflow: '关闭工单',
+      closeConfirm: '您确认关闭当前工单？',
+      closeWorkflowSuccessTips: '工单关闭成功'
+    },
+
+    paginationDisplay: '分页展示',
+    waterfallDisplay: '瀑布流展示',
+    overview: {
+      title: '概览',
+      table: {
+        instanceName: '数据源',
+        status: '状态',
+        execStartTime: '上线开始时间',
+        execEndTime: '上线结束时间',
+        scheduleExecuteTime: '定时上线时间',
+        assigneeUserName: '待操作人',
+        executeUserName: '上线人',
+        passRate: '审核通过率',
+        score: '审核结果评分',
+        operator: '操作',
+        sqlExecute: '立即上线',
+        scheduleTime: '定时上线',
+        cancelExecScheduled: '取消定时上线',
+        cancelExecScheduledTips: '取消定时上线成功',
+        sqlExecuteConfirmTips:
+          '当前操作将立即执行该数据源上的SQL语句, 是否确认立即上线'
+      }
+    },
+    taskResult: {}
+  },
 
   audit: {
     result: '审核结果',
@@ -181,7 +283,6 @@ export default {
   common: {
     workflowStatus: {
       process: '处理中',
-      finished: '上线成功',
       canceled: '已关闭',
       executing: '正在上线',
       execFailed: '上线失败',

@@ -17,7 +17,7 @@ const BaseInfoForm: React.FC = () => {
       <FormAreaBlockStyleWrapper>
         <FormItemBigTitle>
           <IconWorkflowCreateTitle
-            color={sqleTheme.order.createOrder.form.baseInfoTitleIconColor}
+            color={sqleTheme.execWorkflow.create.form.baseInfoTitleIconColor}
           />
           <span>{t('execWorkflow.create.title')}</span>
         </FormItemBigTitle>

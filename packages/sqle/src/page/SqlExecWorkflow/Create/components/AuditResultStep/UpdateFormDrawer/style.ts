@@ -3,7 +3,7 @@ import { Form } from 'antd';
 
 export const UpdateWorkflowFormTitleStyleWrapper = styled('div')`
   color: ${({ theme }) =>
-    theme.sqleTheme.order.createOrder.editForm.titleColor};
+    theme.sqleTheme.execWorkflow.create.editForm.titleColor};
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
@@ -35,7 +35,7 @@ export const UpdateBaseInfoFormStyleWrapper = styled(Form)`
 
     .project-flag-icon {
       color: ${({ theme }) =>
-        theme.sqleTheme.order.createOrder.editForm.projectFlagIconColor};
+        theme.sqleTheme.execWorkflow.create.editForm.projectFlagIconColor};
     }
   }
 
