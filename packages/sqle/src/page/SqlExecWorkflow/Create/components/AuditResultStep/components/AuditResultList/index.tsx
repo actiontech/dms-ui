@@ -1,0 +1,128 @@
+import { BasicSegmented, EmptyBox } from '@actiontech/shared';
+import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { Divider, Space } from 'antd';
+import { useTranslation } from 'react-i18next';
+import { AuditResultForCreateWorkflowStyleWrapper } from './style';
+import { useEffect, useMemo, useState } from 'react';
+import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
+import { AuditResultListProps } from './index.type';
+import InstanceSegmentedLabel from '../../../../../Common/InstanceSegmentedLabel';
+import { ToggleButtonStyleWrapper } from '../../../../../Common/style';
+import DownloadRecord from '../../../../../Common/DownloadRecord';
+import AuditResultTable from './Table';
+import AuditResultFilterContainer from '../../../../../Common/AuditResultFilterContainer';
+import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import useAuditResultFilterParams from '../../../../../Common/AuditResultFilterContainer/useAuditResultFilterParams';
+import {
+  auditLevelDictionary,
+  translateDictionaryI18nLabel
+} from '../../../../../../../hooks/useStaticStatus/index.data';
+
+const AuditResultList: React.FC<AuditResultListProps> = ({
+  tasks,
+  updateTaskRecordCount
+}) => {
+  const { t } = useTranslation();
+  const { projectID } = useCurrentProject();
+  const {
+    noDuplicate,
+    setNoDuplicate,
+    auditLevelFilterValue,
+    setAuditLevelFilterValue
+  } = useAuditResultFilterParams();
+
+  const [currentTaskID, setCurrentTaskID] = useState<string>();
+
+  const currentTask = useMemo(
+    () => tasks.find((v) => `${v.task_id}` === currentTaskID),
+    [currentTaskID, tasks]
+  );
+
+  const handleChangeCurrentTask = (taskID?: string) => {
+    setCurrentTaskID(taskID);
+  };
+
+  const generateCurrentTaskLabel = (
+    instanceName?: string,
+    auditLevel?: AuditTaskResV1AuditLevelEnum
+  ) => {
+    if (!instanceName) {
+      return '-';
+    }
+
+    return (
+      <InstanceSegmentedLabel
+        instanceName={instanceName}
+        auditLevel={auditLevel}
+      />
+    );
+  };
+
+  useEffect(() => {
+    if (typeof tasks?.[0]?.task_id !== 'undefined') {
+      setCurrentTaskID(`${tasks[0].task_id}`);
+    }
+  }, [tasks]);
+
+  return (
+    <AuditResultForCreateWorkflowStyleWrapper>
+      <SegmentedRowStyleWrapper justify={'space-between'}>
+        <BasicSegmented
+          value={currentTaskID}
+          onChange={(v) => {
+            handleChangeCurrentTask(v as string);
+          }}
+          options={tasks.map((v) => ({
+            label: generateCurrentTaskLabel(v.instance_name, v.audit_level),
+            value: !!v?.task_id ? `${v.task_id}` : '',
+            key: v.task_id
+          }))}
+        />
+
+        <Space size={4}>
+          <ToggleButtonStyleWrapper
+            active={noDuplicate}
+            onClick={() => {
+              setNoDuplicate(!noDuplicate);
+            }}
+          >
+            {t('execWorkflow.create.auditResult.clearDuplicate')}
+          </ToggleButtonStyleWrapper>
+
+          <Divider type="vertical" style={{ height: 28 }} />
+          <EmptyBox if={!!currentTaskID}>
+            <DownloadRecord noDuplicate={noDuplicate} taskId={currentTaskID!} />
+          </EmptyBox>
+        </Space>
+      </SegmentedRowStyleWrapper>
+      {/* todo: options 中部分数据需要后端接口支持 http://10.186.18.11/jira/browse/DMS-424*/}
+      <AuditResultFilterContainer<
+        getAuditTaskSQLsV2FilterAuditLevelEnum | undefined
+      >
+        passRate={currentTask?.pass_rate}
+        score={currentTask?.score}
+        instanceSchemaName={currentTask?.instance_schema}
+        auditLevel={currentTask?.audit_level}
+        value={auditLevelFilterValue}
+        onChange={setAuditLevelFilterValue}
+        options={Object.keys(getAuditTaskSQLsV2FilterAuditLevelEnum)}
+        withAll={{
+          label: t('execWorkflow.create.auditResult.allLevel'),
+          value: undefined
+        }}
+        labelDictionary={translateDictionaryI18nLabel(auditLevelDictionary)}
+      />
+      <AuditResultTable
+        taskID={currentTaskID}
+        noDuplicate={noDuplicate}
+        auditLevelFilterValue={auditLevelFilterValue}
+        projectID={projectID}
+        updateTaskRecordCount={updateTaskRecordCount}
+        dbType={currentTask?.instance_db_type}
+      />
+    </AuditResultForCreateWorkflowStyleWrapper>
+  );
+};
+
+export default AuditResultList;

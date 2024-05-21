@@ -20,6 +20,7 @@ export default {
   sqlOptimization: '智能调优',
   sqlManagement: 'SQL管控',
   SQLOrder: 'SQL工单',
+  sqlWorkflow: 'SQL工单',
   auditPlan: '智能扫描',
   permissionGroup: '权限组',
   permissionTemplate: '权限模板',
