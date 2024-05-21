@@ -3289,7 +3289,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
             </section>
           </div>
           <div
-            class="lazy-load-wrapper lazy-load-wrapper-show css-18opq43"
+            class="lazy-load-wrapper lazy-load-wrapper-show css-4iwm9i"
           >
             <div
               class="css-z1wi3a"
@@ -3410,7 +3410,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                   <div
                     class="workflow-steps-basic-info-item-label"
                   >
-                    execWorkflow.detail.operator.baseInfo.status
+                    工单状态
                   </div>
                   <div
                     class="workflow-steps-basic-info-item-value"
