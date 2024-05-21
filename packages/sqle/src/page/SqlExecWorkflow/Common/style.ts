@@ -1,6 +1,8 @@
 import { styled } from '@mui/material';
 
-export const ToggleButtonStyleWrapper = styled('div')<{ active: boolean }>`
+export const ToggleButtonStyleWrapper = styled('div')<{
+  active: boolean;
+}>`
   height: 28px;
   padding: 0 8px;
   display: flex;

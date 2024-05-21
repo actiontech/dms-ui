@@ -15,11 +15,11 @@ import {
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
-  DataSourceSchemaCollection,
   SqlAuditInfoFormFields,
-  SqlStatementFields
+  SqlStatementFields,
+  CreateWorkflowDatabaseInfo
 } from '../index.type';
-import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../components/FormStep/SqlAuditInfoForm/SqlAuditInfoFormItem/SqlStatementFormItem/index.data';
+import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 
 const useAuditWorkflow = () => {
   const { projectName } = useCurrentProject();
@@ -83,14 +83,13 @@ const useAuditWorkflow = () => {
    * 4. 返回 taskInfos
    */
   const auditWorkflowWithSameSql = useCallback(
-    async (values: SqlAuditInfoFormFields) => {
+    async (values: SqlAuditInfoFormFields, onSuccess?: () => void) => {
       const sqlStatementInfo = values[
         SAME_SQL_MODE_DEFAULT_FIELD_KEY
       ] as SqlStatementFields;
-
       const createAuditTasksParams: ICreateAuditTasksV1Params = {
         // #if [ee]
-        exec_mode: values.executeMode,
+        exec_mode: sqlStatementInfo.exec_mode,
         // #endif
         project_name: projectName,
         instances:
@@ -116,10 +115,10 @@ const useAuditWorkflow = () => {
         if (res && res.data.code === ResponseCode.SUCCESS) {
           const tasks = res.data.data?.tasks ?? [];
           setTaskInfos(tasks);
-
           if (tasks.length > 0) {
             commonJudgeAuditLevel(tasks);
           }
+          onSuccess?.();
         }
       }
     },
@@ -148,23 +147,21 @@ const useAuditWorkflow = () => {
   const auditWorkflowWthDifferenceSql = useCallback(
     async (
       values: SqlAuditInfoFormFields,
-      dbSourceInfoCollection: DataSourceSchemaCollection
+      databaseInfo: CreateWorkflowDatabaseInfo,
+      onSuccess?: () => void
     ) => {
-      const params: ICreateAndAuditTaskV1Params[] = Object.keys(
-        dbSourceInfoCollection
-      ).map((key) => {
-        const record = dbSourceInfoCollection[key];
-        const sqlStatementInfo = values[key] as SqlStatementFields;
+      const params: ICreateAndAuditTaskV1Params[] = databaseInfo.map((item) => {
+        const sqlStatementInfo = values[item.key] as SqlStatementFields;
         return {
           project_name: projectName,
-          instance_name: record.instanceName!,
-          instance_schema: record.schemaName,
+          instance_name: item.instanceName!,
+          instance_schema: item.schemaName,
           sql: sqlStatementInfo.form_data,
           input_sql_file: sqlStatementInfo.sql_file?.[0],
           input_zip_file: sqlStatementInfo.zip_file?.[0],
           // #if [ee]
           exec_mode:
-            values.executeMode as unknown as CreateAuditTaskReqV1ExecModeEnum
+            sqlStatementInfo.exec_mode as unknown as CreateAuditTaskReqV1ExecModeEnum
           // #endif
         };
       });
@@ -184,6 +181,7 @@ const useAuditWorkflow = () => {
         if (tasks.length > 0) {
           commonJudgeAuditLevel(tasks);
         }
+        onSuccess?.();
       }
     },
     [commonJudgeAuditLevel, projectName]
