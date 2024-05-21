@@ -594,6 +594,71 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
       },
     },
   },
+  "execWorkflow": {
+    "common": {
+      "auditResultFilter": {
+        "auditResultInfo": {
+          "itemBgColor": "#fcfbf9",
+          "schemaValueColor": "#7d8ca8",
+          "textColor": "#8a8f99",
+        },
+        "bgColor": "#fcfbf9",
+        "borderColor": "#f2f1f0",
+        "options": {
+          "activeBgColor": "#f0f7ff",
+          "bgColor": "#f7f6f4",
+          "numActiveColor": "#4583ff",
+          "numColor": "#575c66",
+          "textActiveColor": "#4583ff",
+          "textColor": "#8a8f99",
+        },
+      },
+      "basicInfo": {
+        "bgColor": "#fcfbf9",
+        "borderColor": "#f2f1f0",
+        "descColor": "#8a8f99",
+        "titleColor": "#292C33",
+      },
+    },
+    "create": {
+      "auditResult": {
+        "auditResultDrawer": {
+          "numberColor": "#4583ff",
+        },
+        "download": {
+          "bgColor": "#fcfbf9",
+          "borderColor": "#E8E7E6",
+          "boxShadow": "0px 3px 12px 0px rgba(51, 44, 31, 0.1)",
+          "itemColor": "#292C33",
+          "itemHoverColor": "#f7f6f4",
+          "itemIconColor": "#8a8f99",
+        },
+        "toggleButton": {
+          "activeBgColor": "#f0f7ff",
+          "activeColor": "#4583ff",
+          "bgColor": "#f7f6f4",
+          "borderColor": "#f2f1f0",
+          "color": "#575c66",
+        },
+      },
+      "editForm": {
+        "projectFlagIconColor": "#ebad1c",
+        "titleColor": "#8a8f99",
+      },
+      "form": {
+        "baseInfoTitleIconColor": "#c3c6cd",
+      },
+    },
+    "list": {
+      "desc": {
+        "copyIconColor": "#4583ff",
+        "hoverCopyIconBackgroundColor": "#E8F3FF",
+      },
+    },
+    "steps": {
+      "boxShadow": "0px 1px 4px 0px rgba(51, 44, 31, 0.12)",
+    },
+  },
   "order": {
     "common": {
       "auditResultFilter": {
