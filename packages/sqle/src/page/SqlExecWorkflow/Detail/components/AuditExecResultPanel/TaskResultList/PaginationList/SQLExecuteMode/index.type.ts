@@ -1,3 +1,3 @@
 import { PaginationListProps } from '../index.type';
 
-export type SQLExecuteModeProps = Omit<PaginationListProps, 'executeMode'>;
+export type SqlExecuteModeProps = Omit<PaginationListProps, 'executeMode'>;
