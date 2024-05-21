@@ -180,8 +180,8 @@ describe('sqle/Order/Detail', () => {
     fireEvent.click(getBySelector('.reject-order-reason-content').nextSibling!);
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('输入SQL语句')).toBeVisible();
-    expect(screen.getByText('上传SQL文件')).toBeVisible();
-    expect(screen.getByText('上传ZIP文件')).toBeVisible();
+    expect(screen.queryByText('上传SQL文件')).not.toBeInTheDocument();
+    expect(screen.queryByText('上传ZIP文件')).not.toBeInTheDocument();
 
     fireEvent.input(getBySelector('.custom-monaco-editor'), {
       target: { value: 'SELECT 1;' }
@@ -218,8 +218,8 @@ describe('sqle/Order/Detail', () => {
     fireEvent.click(getBySelector('.reject-order-reason-content').nextSibling!);
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('输入SQL语句')).toBeVisible();
-    expect(screen.getByText('上传SQL文件')).toBeVisible();
-    expect(screen.getByText('上传ZIP文件')).toBeVisible();
+    expect(screen.queryByText('上传SQL文件')).not.toBeInTheDocument();
+    expect(screen.queryByText('上传ZIP文件')).not.toBeInTheDocument();
 
     fireEvent.input(getBySelector('.custom-monaco-editor'), {
       target: { value: 'SELECT 1;' }
