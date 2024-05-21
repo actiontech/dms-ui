@@ -127,7 +127,8 @@ export default {
       baseInfo: {
         title: '基本信息',
         createUser: '创建人',
-        createTime: '创建时间'
+        createTime: '创建时间',
+        status: '工单状态'
       },
       history: {
         title: '工单操作历史'
