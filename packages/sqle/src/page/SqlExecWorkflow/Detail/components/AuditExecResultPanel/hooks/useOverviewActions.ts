@@ -38,7 +38,9 @@ const useOverviewActions = ({
     };
     workflow.executeOneTaskOnWorkflowV2(param).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
-        messageApi.success(t('order.status.finished'));
+        messageApi.success(
+          t('execWorkflow.common.workflowStatus.execSucceeded')
+        );
         refreshOverview();
         refreshWorkflow?.();
       }
@@ -53,7 +55,9 @@ const useOverviewActions = ({
     };
     workflow.terminateSingleTaskByWorkflowV1(param).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
-        messageApi.success(t('order.operator.terminateSuccessTips'));
+        messageApi.success(
+          t('execWorkflow.detail.operator.terminateSuccessTips')
+        );
         refreshOverview();
         refreshWorkflow?.();
       }
@@ -78,8 +82,8 @@ const useOverviewActions = ({
       if (res.data.code === ResponseCode.SUCCESS) {
         messageApi.success(
           scheduleTime
-            ? t('order.operator.execScheduleTips')
-            : t('order.auditResultCollection.table.cancelExecScheduledTips')
+            ? t('execWorkflow.detail.operator.execScheduleTips')
+            : t('execWorkflow.detail.overview.table.cancelExecScheduledTips')
         );
         refreshOverview();
         refreshWorkflow?.();

@@ -41,7 +41,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
           danger
           onClick={() => closeWorkflowButtonMeta.action()}
         >
-          {t('order.closeOrder.button')}
+          {t('execWorkflow.detail.operator.closeWorkflow')}
         </BasicButton>
 
         <Divider
@@ -55,7 +55,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
           hidden={rejectWorkflowButtonMeta.hidden}
           onClick={openRejectModal}
         >
-          {t('order.operator.rejectFull')}
+          {t('execWorkflow.detail.operator.rejectFull')}
         </BasicButton>
         <BasicButton
           hidden={auditPassWorkflowButtonMeta.hidden}
@@ -64,11 +64,11 @@ const WorkflowDetailPageHeaderExtra: React.FC<
           onClick={() => auditPassWorkflowButtonMeta.action()}
           type="primary"
         >
-          {t('order.operator.sqlReview')}
+          {t('execWorkflow.detail.operator.sqlReview')}
         </BasicButton>
 
         <Popconfirm
-          title={t('order.operator.batchSqlExecuteConfirmTips')}
+          title={t('execWorkflow.detail.operator.batchSqlExecuteConfirmTips')}
           onConfirm={() => batchExecutingWorkflowButtonMeta.action()}
           disabled={batchExecutingWorkflowButtonMeta.loading}
           overlayClassName="popconfirm-small"
@@ -80,12 +80,12 @@ const WorkflowDetailPageHeaderExtra: React.FC<
             loading={batchExecutingWorkflowButtonMeta.loading}
             type="primary"
           >
-            {t('order.operator.batchSqlExecute')}
+            {t('execWorkflow.detail.operator.batchSqlExecute')}
           </BasicButton>
         </Popconfirm>
 
         <Popconfirm
-          title={t('order.operator.markManuallyConfirmTips')}
+          title={t('execWorkflow.detail.operator.markManuallyConfirmTips')}
           onConfirm={() => manualExecuteWorkflowButtonMeta.action()}
           disabled={manualExecuteWorkflowButtonMeta.loading}
           overlayClassName="popconfirm-small"
@@ -97,7 +97,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
             loading={manualExecuteWorkflowButtonMeta.loading}
             type="primary"
           >
-            {t('order.operator.markManually')}
+            {t('execWorkflow.detail.operator.markManually')}
           </BasicButton>
         </Popconfirm>
       </EmptyBox>
@@ -105,7 +105,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       <Space hidden={terminateWorkflowButtonMeta.hidden} size={0}>
         <EmptyBox if={!projectArchive}>
           <Popconfirm
-            title={t('order.operator.terminateConfirmTips')}
+            title={t('execWorkflow.detail.operator.terminateConfirmTips')}
             onConfirm={() => terminateWorkflowButtonMeta.action()}
             disabled={terminateWorkflowButtonMeta.loading}
             overlayClassName="popconfirm-small"
@@ -116,7 +116,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
               loading={terminateWorkflowButtonMeta.loading}
               danger
             >
-              {t('order.operator.terminate')}
+              {t('execWorkflow.detail.operator.terminate')}
             </BasicButton>
           </Popconfirm>
         </EmptyBox>
@@ -127,7 +127,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
         />
 
         <BasicButton onClick={props.refreshWorkflow}>
-          {t('order.operator.refreshOrder')}
+          {t('execWorkflow.detail.operator.refreshWorkflow')}
         </BasicButton>
       </Space>
 
@@ -154,7 +154,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
         hidden={props.workflowStepsVisibility}
         onClick={props.showWorkflowSteps}
       >
-        {t('order.pageTitle')}
+        {t('execWorkflow.detail.operator.buttonText')}
       </div>
 
       <RejectWorkflowModal

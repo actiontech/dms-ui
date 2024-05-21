@@ -42,7 +42,7 @@ import { TableRowSelection } from 'antd/es/table/interface';
 import { SqlExecWorkflowListTableFilterParam } from './index.type';
 import { IconMinus } from '../../../icon/SqlExecWorkflow';
 import {
-  orderStatusDictionary,
+  execWorkflowStatusDictionary,
   translateDictionaryI18nLabel
 } from '../../../hooks/useStaticStatus/index.data';
 
@@ -262,7 +262,9 @@ const SqlExecWorkflowList: React.FC = () => {
         <CustomSegmentedFilter
           value={filterStatus}
           onChange={setFilterStatus}
-          labelDictionary={translateDictionaryI18nLabel(orderStatusDictionary)}
+          labelDictionary={translateDictionaryI18nLabel(
+            execWorkflowStatusDictionary
+          )}
           options={Object.keys(getWorkflowsV1FilterStatusEnum)}
           withAll
         />

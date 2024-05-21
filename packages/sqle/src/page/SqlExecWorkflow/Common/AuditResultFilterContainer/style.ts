@@ -7,9 +7,10 @@ export const AuditResultFilterContainerStyleWrapper = styled('div')`
   align-items: center;
   align-self: stretch;
   border-bottom: 1px solid
-    ${({ theme }) => theme.sqleTheme.order.common.auditResultFilter.borderColor};
+    ${({ theme }) =>
+      theme.sqleTheme.execWorkflow.common.auditResultFilter.borderColor};
   background: ${({ theme }) =>
-    theme.sqleTheme.order.common.auditResultFilter.bgColor};
+    theme.sqleTheme.execWorkflow.common.auditResultFilter.bgColor};
 
   &.audit-result-filter-container-borderless {
     border-bottom: 0;
@@ -27,12 +28,12 @@ export const AuditResultFilterContainerStyleWrapper = styled('div')`
       align-items: center;
       border-radius: 4px;
       background: ${({ theme }) =>
-        theme.sqleTheme.order.common.auditResultFilter.auditResultInfo
+        theme.sqleTheme.execWorkflow.common.auditResultFilter.auditResultInfo
           .itemBgColor};
 
       &-text {
         color: ${({ theme }) =>
-          theme.sqleTheme.order.common.auditResultFilter.auditResultInfo
+          theme.sqleTheme.execWorkflow.common.auditResultFilter.auditResultInfo
             .textColor};
         font-size: 12px;
         font-weight: 400;
@@ -47,7 +48,7 @@ export const AuditResultFilterContainerStyleWrapper = styled('div')`
 
       &-schema-value {
         color: ${({ theme }) =>
-          theme.sqleTheme.order.common.auditResultFilter.auditResultInfo
+          theme.sqleTheme.execWorkflow.common.auditResultFilter.auditResultInfo
             .schemaValueColor};
         font-size: 16px;
         font-weight: 700;
@@ -92,21 +93,24 @@ export const AuditResultFilterContainerStyleWrapper = styled('div')`
       align-items: center;
       border-radius: 4px;
       background: ${({ theme }) =>
-        theme.sqleTheme.order.common.auditResultFilter.options.bgColor};
+        theme.sqleTheme.execWorkflow.common.auditResultFilter.options.bgColor};
       transition: background-color 0.3s;
       transition: color 0.3s;
       font-size: 12px;
       font-weight: 500;
       line-height: 20px;
       color: ${({ theme }) =>
-        theme.sqleTheme.order.common.auditResultFilter.options.textColor};
+        theme.sqleTheme.execWorkflow.common.auditResultFilter.options
+          .textColor};
     }
 
     .custom-segmented-filter-item-checked {
       background: ${({ theme }) =>
-        theme.sqleTheme.order.common.auditResultFilter.options.activeBgColor};
+        theme.sqleTheme.execWorkflow.common.auditResultFilter.options
+          .activeBgColor};
       color: ${({ theme }) =>
-        theme.sqleTheme.order.common.auditResultFilter.options.textActiveColor};
+        theme.sqleTheme.execWorkflow.common.auditResultFilter.options
+          .textActiveColor};
     }
   }
 `;
@@ -123,8 +127,9 @@ export const AuditResultFilterOptionsStyleWrapper = styled('div')<{
   border-radius: 4px;
   background: ${({ active, theme }) =>
     active
-      ? theme.sqleTheme.order.common.auditResultFilter.options.activeBgColor
-      : theme.sqleTheme.order.common.auditResultFilter.options.bgColor};
+      ? theme.sqleTheme.execWorkflow.common.auditResultFilter.options
+          .activeBgColor
+      : theme.sqleTheme.execWorkflow.common.auditResultFilter.options.bgColor};
   font-weight: 700;
   line-height: 24px;
   transition: background-color 0.3s;
@@ -136,8 +141,10 @@ export const AuditResultFilterOptionsStyleWrapper = styled('div')<{
     line-height: 20px;
     color: ${({ active, theme }) =>
       active
-        ? theme.sqleTheme.order.common.auditResultFilter.options.textActiveColor
-        : theme.sqleTheme.order.common.auditResultFilter.options.textColor};
+        ? theme.sqleTheme.execWorkflow.common.auditResultFilter.options
+            .textActiveColor
+        : theme.sqleTheme.execWorkflow.common.auditResultFilter.options
+            .textColor};
   }
 
   .num {
@@ -146,7 +153,9 @@ export const AuditResultFilterOptionsStyleWrapper = styled('div')<{
     line-height: 24px;
     color: ${({ active, theme }) =>
       active
-        ? theme.sqleTheme.order.common.auditResultFilter.options.numActiveColor
-        : theme.sqleTheme.order.common.auditResultFilter.options.numColor};
+        ? theme.sqleTheme.execWorkflow.common.auditResultFilter.options
+            .numActiveColor
+        : theme.sqleTheme.execWorkflow.common.auditResultFilter.options
+            .numColor};
   }
 `;
