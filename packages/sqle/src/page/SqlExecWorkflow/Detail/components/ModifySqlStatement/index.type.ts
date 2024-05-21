@@ -16,7 +16,7 @@ export type ModifySqlStatementProps = {
   isSameSqlForAll: boolean;
   modifiedTasks?: IAuditTaskResV1[];
   isDisableFinallySubmitButton: boolean;
-  disabledOperatorOrderBtnTips: string;
+  disabledOperatorWorkflowBtnTips: string;
   workflowId: string;
   refreshWorkflow: () => void;
   refreshOverviewAction: () => void;

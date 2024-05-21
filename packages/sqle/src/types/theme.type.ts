@@ -4,7 +4,8 @@ import {
   StatisticsTheme,
   ProjectOverviewTheme,
   AuditPlanTheme,
-  WorkflowTemplateTheme
+  WorkflowTemplateTheme,
+  ExecWorkflowTheme
 } from '../theme/type';
 
 export interface SqleTheme {
@@ -14,6 +15,7 @@ export interface SqleTheme {
   projectOverview: ProjectOverviewTheme;
   auditPlan: AuditPlanTheme;
   workflowTemplate: WorkflowTemplateTheme;
+  execWorkflow: ExecWorkflowTheme;
 }
 
 interface ThemeCustom {

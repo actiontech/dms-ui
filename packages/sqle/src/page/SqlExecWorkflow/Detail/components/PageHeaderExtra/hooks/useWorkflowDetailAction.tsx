@@ -79,7 +79,9 @@ const useWorkflowDetailAction = ({
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           refreshWorkflow();
-          messageApi.success(t('order.closeWorkflow.closeWorkflowSuccessTips'));
+          messageApi.success(
+            t('execWorkflow.detail.operator.closeWorkflowSuccessTips')
+          );
         }
       })
       .finally(() => {

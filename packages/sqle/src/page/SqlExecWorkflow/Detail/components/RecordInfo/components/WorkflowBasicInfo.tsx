@@ -16,12 +16,12 @@ const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
   return (
     <div className="workflow-steps-basic-info">
       <div className="workflow-steps-basic-info-title">
-        {t('order.orderSteps.basicInfoTitle')}
+        {t('execWorkflow.detail.operator.baseInfo.title')}
       </div>
 
       <div className="workflow-steps-basic-info-item">
         <div className="workflow-steps-basic-info-item-label">
-          {t('order.order.createUser')}
+          {t('创建人')}
         </div>
         <Space className="workflow-steps-basic-info-item-value" align="center">
           <AvatarCom size={20} name={createUserName} noTips />
@@ -31,7 +31,7 @@ const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
 
       <div className="workflow-steps-basic-info-item">
         <div className="workflow-steps-basic-info-item-label">
-          {t('order.order.createTime')}
+          {t('execWorkflow.detail.operator.baseInfo.createTime')}
         </div>
         <Space className="workflow-steps-basic-info-item-value" align="center">
           <IconTimeLine />
@@ -41,7 +41,7 @@ const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
 
       <div className="workflow-steps-basic-info-item">
         <div className="workflow-steps-basic-info-item-label">
-          {t('order.order.status')}
+          {t('execWorkflow.detail.operator.baseInfo.status')}
         </div>
         <div className="workflow-steps-basic-info-item-value">
           {workflowStatus ? (
