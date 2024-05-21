@@ -9,7 +9,7 @@ import CreateResultStep from './components/CreateResultStep';
 import FormStep from './components/FormStep';
 import useSharedStepDetail from './hooks/useSharedStepDetail';
 import useAuditWorkflow from './hooks/useAuditWorkflow';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef } from 'react';
 import AuditResultStep from './components/AuditResultStep';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import { useTranslation } from 'react-i18next';
@@ -17,6 +17,7 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ICreateWorkflowV2Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
+import useCheckTaskAuditSqlCount from './hooks/useCheckTaskAuditSqlCount';
 
 const CreateSqlExecWorkflow: React.FC = () => {
   const { t } = useTranslation();
@@ -25,19 +26,8 @@ const CreateSqlExecWorkflow: React.FC = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName } = useCurrentProject();
   const createdWorkflowID = useRef('');
-  const [taskSqlCountRecord, setTaskSqlCountRecord] = useState<
-    Record<string, number>
-  >({});
-
-  const updateTaskRecordTotalNum = useCallback(
-    (taskId: string, count: number) => {
-      setTaskSqlCountRecord((v) => ({
-        ...v,
-        [taskId]: count
-      }));
-    },
-    []
-  );
+  const { updateTaskRecordCount, checkTaskCountIsEmpty } =
+    useCheckTaskAuditSqlCount();
 
   const {
     isAtFormStep,
@@ -66,22 +56,34 @@ const CreateSqlExecWorkflow: React.FC = () => {
       await baseInfoForm.validateFields();
 
       const finallyFunc = () => {
+        isAuditing.set(false);
+      };
+
+      const onSuccess = () => {
         if (baseInfo) {
           baseInfoForm.setFieldsValue(baseInfo);
         } else {
           goToAuditResultStep();
         }
-        isAuditing.set(false);
       };
 
       isAuditing.set(true);
 
       if (values.isSameSqlForAll) {
-        auditWorkflowWithSameSql(values).finally(finallyFunc);
+        auditWorkflowWithSameSql(values, onSuccess).finally(finallyFunc);
       } else {
         auditWorkflowWthDifferenceSql(
           values,
-          sharedStepDetail.dbSourceInfoCollection.value
+          Object.keys(sharedStepDetail.dbSourceInfoCollection.value).map(
+            (key) => ({
+              key,
+              instanceName:
+                sharedStepDetail.dbSourceInfoCollection.value[key].instanceName,
+              schemaName:
+                sharedStepDetail.dbSourceInfoCollection.value[key].schemaName
+            })
+          ),
+          onSuccess
         ).finally(finallyFunc);
       }
     },
@@ -103,13 +105,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
       return;
     }
 
-    if (
-      Object.keys(taskSqlCountRecord).some(
-        (key) =>
-          taskSqlCountRecord[key] === 0 &&
-          taskInfos.some((v) => v.task_id?.toString() === key)
-      )
-    ) {
+    if (checkTaskCountIsEmpty(taskInfos)) {
       messageApi.error(t('execWorkflow.create.mustHaveAuditResultTips'));
       return;
     }
@@ -128,12 +124,12 @@ const CreateSqlExecWorkflow: React.FC = () => {
     });
   }, [
     baseInfoForm,
+    checkTaskCountIsEmpty,
     goToCreateResultStep,
     messageApi,
     projectName,
     t,
-    taskInfos,
-    taskSqlCountRecord
+    taskInfos
   ]);
 
   usePrompt(t('execWorkflow.create.auditResult.leaveTip'), isAtAuditResultStep);
@@ -159,7 +155,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
           disabledOperatorOrderBtnTips={disabledOperatorWorkflowBtnTips}
           auditAction={auditAction}
           createAction={createAction}
-          updateTaskRecordCount={updateTaskRecordTotalNum}
+          updateTaskRecordCount={updateTaskRecordCount}
           {...sharedStepDetail}
         />
       </div>

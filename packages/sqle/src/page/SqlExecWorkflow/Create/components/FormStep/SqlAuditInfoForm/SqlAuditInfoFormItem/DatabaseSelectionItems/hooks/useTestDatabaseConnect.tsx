@@ -25,8 +25,8 @@ const useTestDatabaseConnect = ({
 
   const disabledTestConnect = useMemo(
     () =>
-      databaseInfo?.map((v) => v?.instanceName)?.filter((v: string) => !!v)
-        .length === 0,
+      databaseInfo?.map((v) => v?.instanceName)?.filter((v) => !!v).length ===
+      0,
     [databaseInfo]
   );
 
@@ -36,7 +36,7 @@ const useTestDatabaseConnect = ({
         .map((v) => ({
           name: v?.instanceName
         }))
-        ?.filter((v: { name: string }) => !!v.name) ?? [];
+        ?.filter((v) => !!v.name) ?? [];
 
     if (instances.length === 0) {
       return;

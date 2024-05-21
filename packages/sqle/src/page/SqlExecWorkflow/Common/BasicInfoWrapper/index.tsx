@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import { BasicInfoStyleWrapper } from './style';
 import { BasicInfoWrapperProps } from './index.type';
-import { IconOrderStatusWrapper } from '../../../../icon/Order';
 import { EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { orderStatusDictionary } from '../../../../hooks/useStaticStatus/index.data';
+import { IconWorkflowStatusWrapper } from '../../../../icon/SqlExecWorkflow';
 
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   title,
@@ -23,7 +23,7 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
     >
       <EmptyBox if={!!status}>
         <div className="workflow-base-info-status">
-          <IconOrderStatusWrapper />
+          <IconWorkflowStatusWrapper />
           <span className="workflow-base-info-status-text">
             {status && t(orderStatusDictionary[status])}
           </span>

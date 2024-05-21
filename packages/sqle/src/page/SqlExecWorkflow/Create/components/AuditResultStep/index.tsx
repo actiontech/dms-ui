@@ -1,12 +1,13 @@
 import BasicInfoWrapper from '../../../Common/BasicInfoWrapper';
 import { AuditResultStepProps } from './index.type';
-import { BasicButton, BasicToolTips, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/shared';
 import BackToList from '../../../Common/BackToList';
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import AuditResultList from './components/AuditResultList';
-import UpdateFormDrawer from './components/UpdateFormDrawer';
+import AuditResultList from '../../../Common/AuditResultList';
+import UpdateFormDrawer from './UpdateFormDrawer';
+import SubmitWorkflowButton from '../../../Common/SubmitWorkflowButton';
 
 const AuditResultStep: React.FC<AuditResultStepProps> = ({
   baseFormValues,
@@ -49,21 +50,12 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
             >
               {t('execWorkflow.create.auditResult.updateInfo')}
             </BasicButton>
-            <BasicToolTips
-              title={
-                isDisableFinallySubmitButton ? disabledOperatorOrderBtnTips : ''
-              }
-              overlayClassName="whitespace-pre-line"
-            >
-              <BasicButton
-                loading={creating}
-                disabled={isDisableFinallySubmitButton || creating}
-                type="primary"
-                onClick={internalCreateWorkflow}
-              >
-                {t('execWorkflow.create.auditResult.submit')}
-              </BasicButton>
-            </BasicToolTips>
+            <SubmitWorkflowButton
+              disabled={isDisableFinallySubmitButton}
+              loading={creating}
+              disabledTips={disabledOperatorOrderBtnTips}
+              onClick={internalCreateWorkflow}
+            />
           </Space>
         }
       />
