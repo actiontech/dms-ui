@@ -1,57 +1,15 @@
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../locale';
-import {
-  GenerateMenuItemType,
-  MenuStructTreeType,
-  MenuStructTreeKey
-} from './index.type';
+import { MenuStructTreeType, MenuStructTreeKey } from './index.type';
 import { genMenuItemsWithMenuStructTree } from './common';
-import {
-  dbServiceManagementMenuItem,
-  memberManagementMenItem,
-  cloudBeaverMenuItem,
-  dataExportMenuItem
-} from './base';
-import {
-  projectOverviewMenuItem,
-  dashboardMenuItem,
-  sqlAuditMenuItem,
-  pluginAuditMenuItem,
-  sqlOptimizationMenuItem,
-  sqlOrderMenuItem,
-  sqlManagementMenuItem,
-  auditPlanMenuItem,
-  projectRuleTemplateMenuItem,
-  whiteListMenuItem,
-  workflowTemplateMenuItem,
-  sqleOperationRecordMenuItem
-} from './sqle';
+import baseMenusCollection from './base';
+import sqleMenusCollection from './sqle';
 
 export const sideMenuData = (
   projectID: string,
   role: SystemRole | '',
   sqlOptimizationIsSupport: boolean
 ) => {
-  const allMenuItems: GenerateMenuItemType[] = [
-    dbServiceManagementMenuItem,
-    memberManagementMenItem,
-    cloudBeaverMenuItem,
-    dataExportMenuItem,
-
-    projectOverviewMenuItem,
-    dashboardMenuItem,
-    sqlAuditMenuItem,
-    pluginAuditMenuItem,
-    sqlOrderMenuItem,
-    sqlManagementMenuItem,
-    auditPlanMenuItem,
-    projectRuleTemplateMenuItem,
-    whiteListMenuItem,
-    workflowTemplateMenuItem,
-    sqleOperationRecordMenuItem,
-    sqlOptimizationMenuItem
-  ];
-
   const sqlDevGroup: MenuStructTreeKey[] = [
     'cloud-beaver',
     'data-export',
@@ -84,7 +42,7 @@ export const sideMenuData = (
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLExecute'),
-      group: ['sql-order']
+      group: ['sql-order', 'exec-workflow']
     },
     {
       type: 'group',
@@ -113,7 +71,7 @@ export const sideMenuData = (
 
   return genMenuItemsWithMenuStructTree(
     projectID,
-    allMenuItems,
+    [...sqleMenusCollection, ...baseMenusCollection],
     menuStruct,
     role
   );

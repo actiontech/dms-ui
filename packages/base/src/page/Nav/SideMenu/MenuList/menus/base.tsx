@@ -71,3 +71,12 @@ export const dataExportMenuItem: GenerateMenuItemType = (projectID) => ({
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data/export`,
   structKey: 'data-export'
 });
+
+const baseMenusCollection = [
+  dbServiceManagementMenuItem,
+  memberManagementMenItem,
+  cloudBeaverMenuItem,
+  dataExportMenuItem
+];
+
+export default baseMenusCollection;
