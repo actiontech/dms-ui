@@ -171,6 +171,38 @@ describe('base/router-sqle-ce', () => {
         });
       });
 
+      describe('render route workflow', () => {
+        it('render route list', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/exec-workflow`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(300));
+          expect(baseElement).toMatchSnapshot();
+          expect(screen.getByText('sqlExecWorkflowList')).toBeInTheDocument();
+        });
+
+        it('render route create', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/exec-workflow/create`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(0));
+          expect(baseElement).toMatchSnapshot();
+          expect(screen.getByText('createSqlExecWorkflow')).toBeInTheDocument();
+        });
+
+        it('render route detail', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/exec-workflow/workflowId`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(0));
+          expect(baseElement).toMatchSnapshot();
+          expect(screen.getByText('workflowDetail')).toBeInTheDocument();
+        });
+      });
+
       describe('render route sqlAudit', () => {
         it('render route sqlAuditList', async () => {
           const { baseElement } = customRender([

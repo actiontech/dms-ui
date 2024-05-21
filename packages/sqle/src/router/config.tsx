@@ -222,7 +222,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         path: 'create',
         element: <CreateSqlExecWorkflow />,
-        key: 'createSQLExecWorkflow'
+        key: 'createSqlExecWorkflow'
       },
       {
         path: ':taskId/:sqlNum/analyze',

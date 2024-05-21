@@ -44,7 +44,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   auditAction,
   backToDetail,
   isAtRejectStep,
-  disabledOperatorOrderBtnTips,
+  disabledOperatorWorkflowBtnTips,
   isDisableFinallySubmitButton,
   workflowId,
   refreshWorkflow,
@@ -138,6 +138,12 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     }
   };
 
+  const innerBackToDetail = () => {
+    backToDetail();
+    form.resetFields();
+    resetAllSharedData();
+  };
+
   useEffect(() => {
     const getAllSqlStatement = () => {
       const request = (taskId: string) => {
@@ -200,9 +206,6 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           );
         });
       }
-    } else {
-      form.resetFields();
-      resetAllSharedData();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
@@ -229,8 +232,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
         <PageHeader
           fixed
           title={
-            <BasicButton icon={<IconLeftArrow />} onClick={backToDetail}>
-              {t('order.operator.backToOrderDetail')}
+            <BasicButton icon={<IconLeftArrow />} onClick={innerBackToDetail}>
+              {t('execWorkflow.detail.operator.backToDetail')}
             </BasicButton>
           }
           extra={
@@ -238,7 +241,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
               <SubmitWorkflowButton
                 disabled={isDisableFinallySubmitButton}
                 loading={submitLoading}
-                disabledTips={disabledOperatorOrderBtnTips}
+                disabledTips={disabledOperatorWorkflowBtnTips}
                 onClick={modifySqlSubmit}
               />
             </EmptyBox>
@@ -255,10 +258,10 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
               <FormItemBigTitle>
                 <IconWorkflowCreateTitle
                   color={
-                    sqleTheme.order.createOrder.form.baseInfoTitleIconColor
+                    sqleTheme.execWorkflow.create.form.baseInfoTitleIconColor
                   }
                 />
-                <span>{t('order.operator.modifySql')}</span>
+                <span>{t('execWorkflow.detail.operator.modifySql')}</span>
               </FormItemBigTitle>
 
               <SqlStatementFormController

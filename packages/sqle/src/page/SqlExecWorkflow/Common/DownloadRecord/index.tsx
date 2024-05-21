@@ -8,12 +8,12 @@ import {
 } from '@actiontech/shared/lib/Icon';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import {
-  IconOrderDownloadReport,
-  IconOrderDownloadSQL
-} from '../../../../icon/Order';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { DownloadDropdownStyleWrapper } from './style';
+import {
+  IconWorkflowDownloadReport,
+  IconWorkflowDownloadSQL
+} from '../../../../icon/SqlExecWorkflow';
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,
@@ -47,12 +47,12 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
     return (
       <DownloadDropdownStyleWrapper>
         <div className="download-record-item" onClick={downloadReport}>
-          <IconOrderDownloadReport className="download-record-item-icon" />
+          <IconWorkflowDownloadReport className="download-record-item-icon" />
           {t('execWorkflow.audit.downloadReport')}
         </div>
 
         <div className="download-record-item" onClick={downloadSql}>
-          <IconOrderDownloadSQL className="download-record-item-icon" />
+          <IconWorkflowDownloadSQL className="download-record-item-icon" />
           {t('execWorkflow.audit.downloadSql')}
         </div>
       </DownloadDropdownStyleWrapper>

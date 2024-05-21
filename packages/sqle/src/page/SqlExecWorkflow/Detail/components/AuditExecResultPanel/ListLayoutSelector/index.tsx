@@ -31,7 +31,7 @@ const ListLayoutSelector: React.FC<{
           }}
         >
           <IconWorkflowResultListLayout className="download-record-item-icon" />
-          {t('order.paginationDisplay')}
+          {t('execWorkflow.detail.paginationDisplay')}
         </div>
 
         <div
@@ -44,7 +44,7 @@ const ListLayoutSelector: React.FC<{
           }}
         >
           <IconWorkflowResultWaterFallLayout className="download-record-item-icon" />
-          {t('order.waterfallDisplay')}
+          {t('execWorkflow.detail.waterfallDisplay')}
         </div>
       </DownloadDropdownStyleWrapper>
     );
@@ -65,8 +65,8 @@ const ListLayoutSelector: React.FC<{
         <Space size={5}>
           <IconWorkflowResultLayout />
           {value === TaskResultListLayoutEnum.pagination
-            ? t('order.paginationDisplay')
-            : t('order.waterfallDisplay')}
+            ? t('execWorkflow.detail.paginationDisplay')
+            : t('execWorkflow.detail.waterfallDisplay')}
           {open ? <IconArrowUp /> : <IconArrowDown />}
         </Space>
       </BasicButton>

@@ -101,7 +101,7 @@ export const auditResultOverviewActions: (params: {
     buttons: [
       {
         key: 'terminate',
-        text: t('order.operator.terminate'),
+        text: t('execWorkflow.detail.operator.terminate'),
         buttonProps(record) {
           return {
             disabled:
@@ -113,7 +113,7 @@ export const auditResultOverviewActions: (params: {
         },
         confirm(record) {
           return {
-            title: t('order.operator.terminateConfirmTips'),
+            title: t('execWorkflow.detail.operator.terminateConfirmTips'),
             placement: 'bottomLeft',
             disabled:
               !record?.current_step_assignee_user_name_list?.includes(
@@ -130,7 +130,7 @@ export const auditResultOverviewActions: (params: {
       },
       {
         key: 'sqlExecute',
-        text: t('order.auditResultCollection.table.sqlExecute'),
+        text: t('execWorkflow.detail.overview.table.sqlExecute'),
         buttonProps(record) {
           return {
             disabled: !enableSqlExecute(
@@ -142,7 +142,9 @@ export const auditResultOverviewActions: (params: {
         },
         confirm(record) {
           return {
-            title: t('order.auditResultCollection.table.sqlExecuteConfirmTips'),
+            title: t(
+              'execWorkflow.detail.overview.table.sqlExecuteConfirmTips'
+            ),
             placement: 'bottomLeft',
             disabled: !enableSqlExecute(
               record?.current_step_assignee_user_name_list,
@@ -160,7 +162,7 @@ export const auditResultOverviewActions: (params: {
       },
       {
         key: 'scheduleTime',
-        text: t('order.auditResultCollection.table.scheduleTime'),
+        text: t('execWorkflow.detail.overview.table.scheduleTime'),
         buttonProps(record) {
           return {
             onClick: () => {
@@ -178,7 +180,7 @@ export const auditResultOverviewActions: (params: {
       },
       {
         key: 'cancelExecScheduled',
-        text: t('order.auditResultCollection.table.cancelExecScheduled'),
+        text: t('execWorkflow.detail.overview.table.cancelExecScheduled'),
         buttonProps(record) {
           return {
             onClick: () => {
@@ -207,29 +209,29 @@ export const auditResultOverviewColumn: () => ActiontechTableColumn<IGetWorkflow
     return [
       {
         dataIndex: 'instance_name',
-        title: () => t('order.auditResultCollection.table.instanceName')
+        title: () => t('execWorkflow.detail.overview.table.instanceName')
       },
       {
         dataIndex: 'status',
-        title: () => t('order.auditResultCollection.table.status'),
+        title: () => t('execWorkflow.detail.overview.table.status'),
         render: (status: GetWorkflowTasksItemV2StatusEnum) => (
           <InstanceTasksStatus status={status} />
         )
       },
       {
         dataIndex: 'task_pass_rate',
-        title: () => t('order.auditResultCollection.table.passRate'),
+        title: () => t('execWorkflow.detail.overview.table.passRate'),
         render: (rate = 0) => <span>{`${floatToPercent(rate)}%`}</span>,
         align: 'right'
       },
       {
         dataIndex: 'task_score',
-        title: () => t('order.auditResultCollection.table.score'),
+        title: () => t('execWorkflow.detail.overview.table.score'),
         align: 'right'
       },
       {
         dataIndex: 'current_step_assignee_user_name_list',
-        title: () => t('order.auditResultCollection.table.assigneeUserName'),
+        title: () => t('execWorkflow.detail.overview.table.assigneeUserName'),
         render: (list: string[]) => {
           return list?.map((v) => {
             return <AvatarCom key={v} name={v} />;
@@ -238,25 +240,26 @@ export const auditResultOverviewColumn: () => ActiontechTableColumn<IGetWorkflow
       },
       {
         dataIndex: 'execution_user_name',
-        title: () => t('order.auditResultCollection.table.executeUserName')
+        title: () => t('execWorkflow.detail.overview.table.executeUserName')
       },
       {
         dataIndex: 'exec_start_time',
-        title: () => t('order.auditResultCollection.table.execStartTime'),
+        title: () => t('execWorkflow.detail.overview.table.execStartTime'),
         render: (time) => {
           return formatTime(time, '-');
         }
       },
       {
         dataIndex: 'exec_end_time',
-        title: () => t('order.auditResultCollection.table.execEndTime'),
+        title: () => t('execWorkflow.detail.overview.table.execEndTime'),
         render: (time) => {
           return formatTime(time, '-');
         }
       },
       {
         dataIndex: 'schedule_time',
-        title: () => t('order.auditResultCollection.table.scheduleExecuteTime'),
+        title: () =>
+          t('execWorkflow.detail.overview.table.scheduleExecuteTime'),
         render: (time) => {
           return formatTime(time, '-');
         }

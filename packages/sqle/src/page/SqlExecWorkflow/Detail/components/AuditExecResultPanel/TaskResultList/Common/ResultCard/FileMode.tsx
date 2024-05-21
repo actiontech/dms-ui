@@ -118,7 +118,7 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
               <div className="flex-display flex-end-horizontal">
                 <Trans i18nKey={'audit.fileModeExecute.sqlsTips'}>
                   <Link
-                    to={`/sqle/project/${projectID}/order/${taskId}/files/${props.file_id}/sqls`}
+                    to={`/sqle/project/${projectID}/exec-workflow/${taskId}/files/${props.file_id}/sqls`}
                   />
                 </Trans>
               </div>

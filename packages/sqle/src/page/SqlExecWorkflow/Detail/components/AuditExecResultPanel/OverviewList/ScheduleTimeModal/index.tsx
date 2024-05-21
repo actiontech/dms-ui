@@ -169,7 +169,7 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
 
   return (
     <BasicModal
-      title={t('order.operator.onlineRegularly')}
+      title={t('execWorkflow.detail.operator.onlineRegularly')}
       open={open}
       closable={false}
       footer={
@@ -187,7 +187,7 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
             loading={scheduleLoading}
             data-testid="confirm-button"
           >
-            {t('order.operator.onlineRegularly')}
+            {t('execWorkflow.detail.operator.onlineRegularly')}
           </BasicButton>
         </>
       }
@@ -200,11 +200,11 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
       >
         <ScheduleTimeModelDescribeStyleWrapper>
           <span className="whitespace-pre-line">
-            {t('order.operator.maintenanceTime')}
+            {t('execWorkflow.detail.operator.maintenanceTime')}
           </span>
           <EmptyBox
             if={maintenanceTime.length > 0}
-            defaultNode={t('order.operator.emptyMaintenanceTime')}
+            defaultNode={t('execWorkflow.detail.operator.emptyMaintenanceTime')}
           >
             {maintenanceTime.map((time, i) => (
               <BasicTag key={i}>
@@ -224,14 +224,14 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
             {
               required: true,
               message: t('common.form.placeholder.select', {
-                name: t('order.operator.scheduleTime')
+                name: t('execWorkflow.detail.operator.scheduleTime')
               })
             },
             {
               validator(_, rule: Dayjs) {
                 if (rule.isBefore(dayjs())) {
                   return Promise.reject(
-                    t('order.operator.execScheduledBeforeNow')
+                    t('execWorkflow.detail.operator.execScheduledBeforeNow')
                   );
                 }
 
@@ -239,7 +239,7 @@ const ScheduleTimeModal: React.FC<ScheduleTimeModalProps> = ({
                   return Promise.resolve();
                 }
                 return Promise.reject(
-                  t('order.operator.execScheduledErrorMessage')
+                  t('execWorkflow.detail.operator.execScheduledErrorMessage')
                 );
               }
             }
