@@ -29,7 +29,6 @@ import {
   execStatusDictionary,
   translateDictionaryI18nLabel
 } from '../../../../../../../hooks/useStaticStatus/index.data';
-import AuditResultFilterContainer from '../../../../../Common/AuditResultFilterContainer';
 import { Divider, Space } from 'antd';
 import { ToggleButtonStyleWrapper } from '../../../../../Common/style';
 import DownloadRecord from '../../../../../Common/DownloadRecord';
