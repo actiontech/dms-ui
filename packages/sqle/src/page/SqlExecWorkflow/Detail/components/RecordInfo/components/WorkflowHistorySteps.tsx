@@ -15,7 +15,7 @@ const WorkflowHistorySteps: React.FC<WorkflowHistoryStepsProps> = ({
   return (
     <WorkflowHistoryStepsStyleWrapper>
       <div className="history-steps-trigger-wrapper" onClick={toggle}>
-        <span>{t('order.history.title')}</span>
+        <span>{t('execWorkflow.detail.operator.history.title')}</span>
         {open ? <IconArrowUp /> : <IconArrowDown />}
       </div>
 

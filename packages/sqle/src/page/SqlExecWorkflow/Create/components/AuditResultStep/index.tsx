@@ -14,7 +14,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
   tasks,
   isAuditing,
   isDisableFinallySubmitButton,
-  disabledOperatorOrderBtnTips,
+  disabledOperatorWorkflowBtnTips,
   updateTaskRecordCount,
   createAction,
   ...props
@@ -53,7 +53,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
             <SubmitWorkflowButton
               disabled={isDisableFinallySubmitButton}
               loading={creating}
-              disabledTips={disabledOperatorOrderBtnTips}
+              disabledTips={disabledOperatorWorkflowBtnTips}
               onClick={internalCreateWorkflow}
             />
           </Space>

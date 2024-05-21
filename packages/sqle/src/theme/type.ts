@@ -67,6 +67,73 @@ export type OrderTheme = {
   };
 };
 
+export type ExecWorkflowTheme = {
+  list: {
+    desc: {
+      copyIconColor: string;
+      hoverCopyIconBackgroundColor: string;
+    };
+  };
+  create: {
+    auditResult: {
+      auditResultDrawer: {
+        numberColor: string;
+      };
+      toggleButton: {
+        borderColor: string;
+        color: string;
+        activeColor: string;
+        bgColor: string;
+        activeBgColor: string;
+      };
+      download: {
+        borderColor: string;
+        bgColor: string;
+        boxShadow: string;
+        itemColor: string;
+        itemHoverColor: string;
+        itemIconColor: string;
+      };
+    };
+    form: {
+      baseInfoTitleIconColor: string;
+    };
+    editForm: {
+      titleColor: string;
+      projectFlagIconColor: string;
+    };
+  };
+  steps: {
+    boxShadow: string;
+  };
+  common: {
+    basicInfo: {
+      borderColor: string;
+      bgColor: string;
+      titleColor: string;
+      descColor: string;
+    };
+    auditResultFilter: {
+      borderColor: string;
+      bgColor: string;
+      auditResultInfo: {
+        itemBgColor: string;
+        textColor: string;
+        schemaValueColor: string;
+      };
+      options: {
+        bgColor: string;
+        activeBgColor: string;
+
+        textColor: string;
+        textActiveColor: string;
+        numColor: string;
+        numActiveColor: string;
+      };
+    };
+  };
+};
+
 export type ReportStatisticsTheme = {
   bgColor: string;
   loadingColor: string;

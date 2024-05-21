@@ -24,7 +24,7 @@ const RejectReason: React.FC<RejectReasonProps> = ({
         <Col xxl={{ span: 22 }} sm={{ span: 20 }}>
           <div className="reject-workflow-reason-content">
             <div className="reject-workflow-reason-content-text">
-              {t('order.operator.rejectDetail', {
+              {t('execWorkflow.detail.operator.rejectDetail', {
                 name: stepInfo.operation_user_name
               })}
               <BasicTypographyEllipsis
@@ -33,7 +33,7 @@ const RejectReason: React.FC<RejectReasonProps> = ({
               />
             </div>
             <div className="reject-workflow-reason-content-tips">
-              {t('order.operator.rejectTips')}
+              {t('execWorkflow.detail.operator.rejectTips')}
             </div>
           </div>
         </Col>
@@ -43,14 +43,14 @@ const RejectReason: React.FC<RejectReasonProps> = ({
             if={currentUsername === createWorkflowUserName}
             defaultNode={
               <div className="wait-operator-modify-sql">
-                {t('order.operator.waitModifySql', {
+                {t('execWorkflow.detail.operator.waitModifySql', {
                   username: createWorkflowUserName
                 })}
               </div>
             }
           >
             <BasicButton type="primary" onClick={showModifySqlStatementStep}>
-              {t('order.operator.modifySql')}
+              {t('execWorkflow.detail.operator.modifySql')}
             </BasicButton>
           </EmptyBox>
         </Col>

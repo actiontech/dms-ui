@@ -77,22 +77,22 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   const renderTitle = useCallback(
     (type?: WorkflowStepResV2TypeEnum) => {
       if (type === WorkflowStepResV2TypeEnum.create_workflow) {
-        return t('order.operator.createOrderStep');
+        return t('execWorkflow.detail.operator.createWorkflowStep');
       }
 
       if (type === WorkflowStepResV2TypeEnum.update_workflow) {
-        return t('order.operator.updateOrderStep');
+        return t('execWorkflow.detail.operator.updateWorkflowStep');
       }
 
       if (type === WorkflowStepResV2TypeEnum.sql_review) {
-        return t('order.operator.reviewOrderStep');
+        return t('execWorkflow.detail.operator.reviewWorkflowStep');
       }
 
       if (type === WorkflowStepResV2TypeEnum.sql_execute) {
-        return t('order.operator.executeOrderStep');
+        return t('execWorkflow.detail.operator.executeWorkflowStep');
       }
 
-      return t('order.operator.unknown');
+      return t('execWorkflow.detail.operator.unknown');
     },
     [t]
   );
@@ -103,15 +103,19 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
         return (
           <>
             <div>
-              <span>{t('order.status.finished')}: </span>
+              <span>
+                {t('execWorkflow.common.workflowStatus.execSucceeded')}:{' '}
+              </span>
               <span>{tasksStatusCount?.success ?? 0}</span>
             </div>
             <div>
-              <span>{t('order.status.exec_failed')}: </span>
+              <span>
+                {t('execWorkflow.common.workflowStatus.execFailed')}:{' '}
+              </span>
               <span>{tasksStatusCount?.failed ?? 0}</span>
             </div>
             <div>
-              <span>{t('order.status.executing')}: </span>
+              <span>{t('execWorkflow.common.workflowStatus.executing')}: </span>
               <span>{tasksStatusCount?.executing ?? 0}</span>
             </div>
           </>
@@ -124,7 +128,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
             if={!!step.operation_user_name && !!step.operation_time}
             defaultNode={
               <div className="step-info-tips">
-                {t('order.operator.waitAudit')}
+                {t('execWorkflow.detail.operator.waitAudit')}
               </div>
             }
           >
@@ -142,7 +146,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
             }
           >
             <div className="step-info-rejected">
-              <span>{t('order.operator.alreadyRejected')}</span>
+              <span>{t('execWorkflow.detail.operator.alreadyRejected')}</span>
             </div>
           </EmptyBox>
 
@@ -150,7 +154,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
             if={workflowStatus === WorkflowRecordResV2StatusEnum.canceled}
           >
             <div className="step-info-rejected">
-              <span>{t('order.operator.alreadyClosed')}</span>
+              <span>{t('execWorkflow.detail.operator.alreadyClosed')}</span>
             </div>
           </EmptyBox>
         </>
@@ -260,7 +264,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   return (
     <div className="custom-steps-wrapper">
       <div className="custom-steps-wrapper-title">
-        {t('order.orderSteps.stepsTitle')}
+        {t('execWorkflow.detail.operator.stepsTitle')}
       </div>
 
       <CustomSteps

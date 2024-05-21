@@ -144,7 +144,7 @@ const SQLFileStatementOverview: React.FC = () => {
             active={noDuplicate}
             onClick={() => setNoDuplicate(!noDuplicate)}
           >
-            {t('order.createOrder.auditResult.duplicate')}
+            {t('execWorkflow.create.auditResult.clearDuplicate')}
           </ToggleButtonStyleWrapper>
           <DownloadRecord taskId={taskId ?? ''} noDuplicate={noDuplicate} />
         </Space>

@@ -3,7 +3,7 @@ import { BasicInfoStyleWrapper } from './style';
 import { BasicInfoWrapperProps } from './index.type';
 import { EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { orderStatusDictionary } from '../../../../hooks/useStaticStatus/index.data';
+import { execWorkflowStatusDictionary } from '../../../../hooks/useStaticStatus/index.data';
 import { IconWorkflowStatusWrapper } from '../../../../icon/SqlExecWorkflow';
 
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
@@ -25,7 +25,7 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
         <div className="workflow-base-info-status">
           <IconWorkflowStatusWrapper />
           <span className="workflow-base-info-status-text">
-            {status && t(orderStatusDictionary[status])}
+            {status && t(execWorkflowStatusDictionary[status])}
           </span>
         </div>
       </EmptyBox>
