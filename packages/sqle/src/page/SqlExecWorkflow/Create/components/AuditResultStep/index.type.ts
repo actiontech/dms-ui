@@ -11,7 +11,7 @@ export type AuditResultStepProps = {
   baseFormValues?: WorkflowBaseInfoFormFields;
   sqlAuditInfoFormValues?: SqlAuditInfoFormFields;
   isDisableFinallySubmitButton: boolean;
-  disabledOperatorOrderBtnTips: string;
+  disabledOperatorWorkflowBtnTips: string;
   createAction: () => Promise<void>;
   auditAction: (
     value: SqlAuditInfoFormFields,

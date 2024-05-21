@@ -21,7 +21,7 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
       <WorkflowStepsStyleWrapper>
         <div className="workflow-record-info-header">
           <span className="workflow-record-info-header-text">
-            {t('order.orderSteps.title')}
+            {t('execWorkflow.detail.operator.title')}
           </span>
           <IconClose onClick={onClose} />
         </div>

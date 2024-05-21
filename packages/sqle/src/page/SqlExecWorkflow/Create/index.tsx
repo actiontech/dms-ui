@@ -53,7 +53,6 @@ const CreateSqlExecWorkflow: React.FC = () => {
       baseInfo?: WorkflowBaseInfoFormFields
     ) => {
       //虽然审核不需要 baseInfo 数据，但还是需要进行校验
-      await baseInfoForm.validateFields();
 
       const finallyFunc = () => {
         isAuditing.set(false);
@@ -67,24 +66,30 @@ const CreateSqlExecWorkflow: React.FC = () => {
         }
       };
 
-      isAuditing.set(true);
+      try {
+        await baseInfoForm.validateFields();
+        isAuditing.set(true);
 
-      if (values.isSameSqlForAll) {
-        auditWorkflowWithSameSql(values, onSuccess).finally(finallyFunc);
-      } else {
-        auditWorkflowWthDifferenceSql(
-          values,
-          Object.keys(sharedStepDetail.dbSourceInfoCollection.value).map(
-            (key) => ({
-              key,
-              instanceName:
-                sharedStepDetail.dbSourceInfoCollection.value[key].instanceName,
-              schemaName:
-                sharedStepDetail.dbSourceInfoCollection.value[key].schemaName
-            })
-          ),
-          onSuccess
-        ).finally(finallyFunc);
+        if (values.isSameSqlForAll) {
+          auditWorkflowWithSameSql(values, onSuccess).finally(finallyFunc);
+        } else {
+          auditWorkflowWthDifferenceSql(
+            values,
+            Object.keys(sharedStepDetail.dbSourceInfoCollection.value).map(
+              (key) => ({
+                key,
+                instanceName:
+                  sharedStepDetail.dbSourceInfoCollection.value[key]
+                    .instanceName,
+                schemaName:
+                  sharedStepDetail.dbSourceInfoCollection.value[key].schemaName
+              })
+            ),
+            onSuccess
+          ).finally(finallyFunc);
+        }
+      } catch (error) {
+        /* empty */
       }
     },
     [
@@ -152,7 +157,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
           sqlAuditInfoFormValues={sqlAuditInfoForm.getFieldsValue()}
           tasks={taskInfos}
           isDisableFinallySubmitButton={isDisableFinallySubmitButton}
-          disabledOperatorOrderBtnTips={disabledOperatorWorkflowBtnTips}
+          disabledOperatorWorkflowBtnTips={disabledOperatorWorkflowBtnTips}
           auditAction={auditAction}
           createAction={createAction}
           updateTaskRecordCount={updateTaskRecordCount}

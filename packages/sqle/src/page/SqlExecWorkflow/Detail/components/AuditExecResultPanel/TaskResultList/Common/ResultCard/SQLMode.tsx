@@ -50,7 +50,7 @@ const SQLMode: React.FC<SQLExecuteResultCardProps> = ({
 
   const onClickAnalyze = () => {
     window.open(
-      `/sqle/project/${projectName}/order/${taskId}/${props.number}/analyze`
+      `/sqle/project/${projectName}/exec-workflow/${taskId}/${props.number}/analyze`
     );
   };
 

@@ -11,8 +11,9 @@ export const BasicInfoStyleWrapper = styled('div')<{
   align-items: flex-start;
   align-self: stretch;
   border-bottom: 1px solid
-    ${({ theme }) => theme.sqleTheme.order.common.basicInfo.borderColor};
-  background: ${({ theme }) => theme.sqleTheme.order.common.basicInfo.bgColor};
+    ${({ theme }) => theme.sqleTheme.execWorkflow.common.basicInfo.borderColor};
+  background: ${({ theme }) =>
+    theme.sqleTheme.execWorkflow.common.basicInfo.bgColor};
 
   &.hasTopHeader {
     padding-top: 60px;
@@ -51,7 +52,8 @@ export const BasicInfoStyleWrapper = styled('div')<{
   }
 
   .workflow-base-info-title {
-    color: ${({ theme }) => theme.sqleTheme.order.common.basicInfo.titleColor};
+    color: ${({ theme }) =>
+      theme.sqleTheme.execWorkflow.common.basicInfo.titleColor};
     font-size: 24px;
     font-weight: 500;
     line-height: 32px;
@@ -59,7 +61,8 @@ export const BasicInfoStyleWrapper = styled('div')<{
   }
 
   .workflow-base-info-desc {
-    color: ${({ theme }) => theme.sqleTheme.order.common.basicInfo.descColor};
+    color: ${({ theme }) =>
+      theme.sqleTheme.execWorkflow.common.basicInfo.descColor};
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
