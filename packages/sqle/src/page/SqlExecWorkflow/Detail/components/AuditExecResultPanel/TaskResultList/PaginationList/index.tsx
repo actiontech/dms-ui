@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import SQLExecuteMode from './SQLExecuteMode';
+import SqlExecuteMode from './SqlExecuteMode';
 import { PaginationListProps } from './index.type';
 import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import FileExecuteMode from './FileExecuteMode';
@@ -20,7 +20,7 @@ const PaginationList: React.FC<PaginationListProps> = ({
       })}
     >
       <ExecModeController
-        sqlComponent={<SQLExecuteMode {...props} />}
+        sqlComponent={<SqlExecuteMode {...props} />}
         sqlFileComponent={<FileExecuteMode {...props} />}
         executeMode={executeMode}
       />

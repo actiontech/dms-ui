@@ -1,6 +1,6 @@
 import { List } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { SQLExecuteModeProps } from './index.type';
+import { SqlExecuteModeProps } from './index.type';
 import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
@@ -9,7 +9,7 @@ import ResultCard from '../../Common/ResultCard';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../hooks/useAuditExecResultPanelSetup';
 import { TaskResultListLayoutEnum } from '../../../index.enum';
 
-const SQLExecuteMode: React.FC<SQLExecuteModeProps> = ({
+const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   tableChange,
   tableFilterInfo,
   taskId,
@@ -56,7 +56,9 @@ const SQLExecuteMode: React.FC<SQLExecuteModeProps> = ({
         pagination,
         auditResultActiveKey,
         currentListLayout,
-        workflowStatus
+        workflowStatus,
+        execStatusFilterValue,
+        noDuplicate
       ]
     }
   );
@@ -109,4 +111,4 @@ const SQLExecuteMode: React.FC<SQLExecuteModeProps> = ({
   );
 };
 
-export default SQLExecuteMode;
+export default SqlExecuteMode;

@@ -1,5 +1,5 @@
 import { List } from 'antd';
-import { SQLExecuteModeProps } from './index.type';
+import { SqlExecuteModeProps } from './index.type';
 import { useInfiniteScroll } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -12,7 +12,7 @@ import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/servi
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../hooks/useAuditExecResultPanelSetup';
 import { TaskResultListLayoutEnum } from '../../../index.enum';
 
-const SQLExecuteMode: React.FC<SQLExecuteModeProps> = ({
+const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   tableFilterInfo,
   taskId,
   execStatusFilterValue,
@@ -170,4 +170,4 @@ const SQLExecuteMode: React.FC<SQLExecuteModeProps> = ({
   );
 };
 
-export default SQLExecuteMode;
+export default SqlExecuteMode;
