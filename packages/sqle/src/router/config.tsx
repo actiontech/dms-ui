@@ -165,7 +165,7 @@ const SQLFileStatementOverview = React.lazy(
 const WorkflowSQLFileStatementOverview = React.lazy(
   () =>
     import(
-      '../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SQLFileStatementOverview'
+      '../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SqlFileStatementOverview'
     )
 );
 // #endif
