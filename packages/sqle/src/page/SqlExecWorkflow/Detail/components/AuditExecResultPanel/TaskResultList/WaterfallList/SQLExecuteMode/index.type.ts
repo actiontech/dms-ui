@@ -1,3 +1,3 @@
 import { WaterfallListProps } from '../index.type';
 
-export type SQLExecuteModeProps = Omit<WaterfallListProps, 'executeMode'>;
+export type SqlExecuteModeProps = Omit<WaterfallListProps, 'executeMode'>;

@@ -36,7 +36,7 @@ const AuditResultFilterContainer = <
 
   return (
     <AuditResultFilterContainerStyleWrapper
-      className={classNames('audit-result-filter-container-wrapper')}
+      className={classNames('audit-result-filter-container-wrapper', className)}
     >
       <CustomSegmentedFilter
         {...filterProps}
