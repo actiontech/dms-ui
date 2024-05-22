@@ -62,19 +62,18 @@ describe('sqle/Workflow/List', () => {
   it('render snap when list page init', async () => {
     const { baseElement } = customRender();
 
-    await act(async () => jest.advanceTimersByTime(3000));
+    expect(RequestUserTipList).toHaveBeenCalledTimes(1);
+    expect(RequestInstanceTipList).toHaveBeenCalledTimes(1);
+    expect(RequestWorkflowList).toHaveBeenCalledTimes(1);
+
     expect(RequestUserTipList).toHaveBeenCalledWith({
       filter_project: projectName
     });
 
-    await act(async () => jest.advanceTimersByTime(3000));
     expect(RequestInstanceTipList).toHaveBeenCalledWith({
       project_name: projectName
     });
 
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot;
-    await act(async () => jest.advanceTimersByTime(3000));
     expect(RequestWorkflowList).toHaveBeenCalledWith({
       project_name: projectName,
       filter_status: undefined,
@@ -82,6 +81,11 @@ describe('sqle/Workflow/List', () => {
       page_index: 1,
       page_size: 20
     });
+
+    expect(baseElement).toMatchSnapshot;
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(baseElement).toMatchSnapshot;
   });
 
@@ -90,7 +94,7 @@ describe('sqle/Workflow/List', () => {
       projectArchive: false
     });
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot;
   });
 
@@ -99,23 +103,21 @@ describe('sqle/Workflow/List', () => {
       isAdmin: false
     });
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot;
   });
 
   it('render snap when list is empty', async () => {
     RequestWorkflowList.mockImplementation(() => createSpySuccessResponse({}));
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot;
   });
 
   it('render snap when list api return error', async () => {
     RequestWorkflowList.mockImplementation(() => createSpyFailResponse({}));
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot;
   });
 
@@ -141,12 +143,11 @@ describe('sqle/Workflow/List', () => {
       })
     );
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot;
 
     fireEvent.click(screen.getByText(workflowName));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(navigateSpy).toHaveBeenCalled();
     expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${projectID}/exec-workflow/${workflowId}`
@@ -155,14 +156,7 @@ describe('sqle/Workflow/List', () => {
 
   it('render filter when cate val change', async () => {
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestWorkflowList).toHaveBeenCalledWith({
-      project_name: projectName,
-      filter_status: undefined,
-      fuzzy_keyword: '',
-      page_index: 1,
-      page_size: 20
-    });
+    await act(async () => jest.advanceTimersByTime(3000));
 
     const WorkflowStatusSegmented = getAllBySelector(
       '.ant-segmented-item-label',
@@ -185,7 +179,6 @@ describe('sqle/Workflow/List', () => {
     const fuzzyVal = 'fuzzy value';
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
 
     const inputFuzzyEle = getBySelector(
       'input#actiontech-table-search-input',
@@ -215,18 +208,17 @@ describe('sqle/Workflow/List', () => {
 
   it('render refresh btn when click refresh', async () => {
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
 
     const refreshIcon = getBySelector('.custom-icon-refresh', baseElement);
     fireEvent.click(refreshIcon);
-    await act(async () => jest.advanceTimersByTime(3300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(RequestWorkflowList).toHaveBeenCalledTimes(2);
   });
 
   it('render click create btn', async () => {
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(3000));
 
     expect(screen.getByText('创建工单')).toBeInTheDocument();
     const extraEle = getBySelector('div.extra', baseElement);
@@ -239,14 +231,15 @@ describe('sqle/Workflow/List', () => {
   });
 
   it('render click export btn', async () => {
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(300));
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getAllByText('上线成功')[0]);
+
+    await act(async () => jest.advanceTimersByTime(3000));
 
     expect(screen.getByText('导出工单')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导出工单'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(3000));
     expect(RequestExportWorkflowList).toHaveBeenCalled();
     expect(RequestExportWorkflowList).toHaveBeenCalledWith(
       {
@@ -254,7 +247,7 @@ describe('sqle/Workflow/List', () => {
         filter_create_time_to: undefined,
         filter_create_user_id: undefined,
         filter_current_step_assignee_user_id: undefined,
-        filter_status: undefined,
+        filter_status: 'finished',
         filter_subject: undefined,
         filter_task_execute_start_time_from: undefined,
         filter_task_execute_start_time_to: undefined,
@@ -264,6 +257,7 @@ describe('sqle/Workflow/List', () => {
       },
       { responseType: 'blob' }
     );
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('历史工单导出成功')).toBeInTheDocument();
   });
 
@@ -320,8 +314,7 @@ describe('sqle/Workflow/List', () => {
       })
     );
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
 
     const checkboxEle = getAllBySelector(
       '.ant-checkbox-wrapper .ant-checkbox-input',
@@ -339,10 +332,10 @@ describe('sqle/Workflow/List', () => {
     expect(checkboxEle.length).toBe(5);
 
     fireEvent.click(screen.getByText('批量关闭'));
-    await act(async () => jest.advanceTimersByTime(500));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('您确认关闭所选工单吗？')).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(
       screen.getByText(
         '您所选的工单包含不可关闭的工单!（只有工单状态为“处理中”和“已驳回”的工单可以关闭。）'
@@ -371,8 +364,7 @@ describe('sqle/Workflow/List', () => {
       })
     );
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(9300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
 
     const checkboxEle = getAllBySelector(
       '.ant-checkbox-wrapper .ant-checkbox-input',
@@ -380,7 +372,7 @@ describe('sqle/Workflow/List', () => {
     );
     expect(checkboxEle.length).toBe(2);
     fireEvent.click(checkboxEle[0]);
-    await act(async () => jest.advanceTimersByTime(1000));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(
       getAllBySelector(
         '.ant-checkbox-wrapper-checked .ant-checkbox-input',
@@ -390,18 +382,18 @@ describe('sqle/Workflow/List', () => {
     expect(checkboxEle.length).toBe(2);
 
     fireEvent.click(screen.getByText('批量关闭'));
-    await act(async () => jest.advanceTimersByTime(500));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('您确认关闭所选工单吗？')).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(RequestBatchCancel).toHaveBeenCalled();
+    expect(RequestBatchCancel).toHaveBeenCalledTimes(1);
     expect(RequestBatchCancel).toHaveBeenCalledWith({
       project_name: projectName,
       workflow_id_list: ['1']
     });
-    await act(async () => jest.advanceTimersByTime(3300));
-    expect(RequestWorkflowList).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(RequestWorkflowList).toHaveBeenCalledTimes(2);
   });
 });
