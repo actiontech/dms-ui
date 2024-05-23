@@ -1,6 +1,6 @@
 import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { WaterfallListProps } from './index.type';
-import SQLExecuteMode from './SQLExecuteMode';
+import SqlExecuteMode from './SqlExecuteMode';
 import classNames from 'classnames';
 import FileExecuteMode from './FileExecuteMode';
 import ExecModeController from '../Common/ExecModeController';
@@ -20,7 +20,7 @@ const WaterfallList: React.FC<WaterfallListProps> = ({
       })}
     >
       <ExecModeController
-        sqlComponent={<SQLExecuteMode {...props} />}
+        sqlComponent={<SqlExecuteMode {...props} />}
         sqlFileComponent={<FileExecuteMode {...props} />}
         executeMode={executeMode}
       />

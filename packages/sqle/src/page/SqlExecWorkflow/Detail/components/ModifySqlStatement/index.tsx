@@ -37,7 +37,7 @@ import useCheckTaskAuditSqlCount from '../../../Create/hooks/useCheckTaskAuditSq
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../hooks/useAuditExecResultPanelSetup';
 
 const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
-  currentTasks = [],
+  currentTasks,
   modifiedTasks,
   isSameSqlForAll,
   executeMode,
@@ -106,7 +106,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   };
 
   const databaseInfo = useMemo<CreateWorkflowDatabaseInfo>(() => {
-    return currentTasks
+    return (currentTasks ?? [])
       .map((item) => {
         return {
           key: item.task_id?.toString() ?? '',
@@ -161,7 +161,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           });
       };
 
-      const formDataTasks = currentTasks.filter(
+      const formDataTasks = (currentTasks ?? []).filter(
         (v) => v.sql_source === AuditTaskResV1SqlSourceEnum.form_data
       );
 
@@ -195,11 +195,13 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       if (isSameSqlForAll) {
         form.setFieldValue(
           [SAME_SQL_MODE_DEFAULT_FIELD_KEY, 'currentUploadType'],
-          currentTasks[0]?.sql_source
+          currentTasks?.[0]?.sql_source
         );
       } else {
-        sqlStatementTabActiveKey.set(currentTasks[0].task_id?.toString() ?? '');
-        currentTasks.forEach((item) => {
+        sqlStatementTabActiveKey.set(
+          currentTasks?.[0].task_id?.toString() ?? ''
+        );
+        currentTasks?.forEach((item) => {
           form.setFieldValue(
             [item.task_id?.toString() ?? '', 'currentUploadType'],
             item.sql_source
