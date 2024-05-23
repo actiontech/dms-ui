@@ -13,6 +13,7 @@ interface IInputPassword extends PasswordProps {
 
 const InputPassword: FC<IInputPassword> = ({
   clickGeneratePassword,
+  disabled,
   ...otherProps
 }) => {
   const { t } = useTranslation();
@@ -28,6 +29,7 @@ const InputPassword: FC<IInputPassword> = ({
     <PasswordWidthGenerateStyleWrapper
       className="action-password-input"
       {...otherProps}
+      disabled={disabled}
       visibilityToggle={{ visible: isEye }}
       iconRender={(visible) => (
         <>
@@ -57,6 +59,7 @@ const InputPassword: FC<IInputPassword> = ({
               size="small"
               onClick={handleGenerateClick}
               onMouseLeave={() => setTipVisible(false)}
+              disabled={disabled}
             >
               {t('common.generate')}
             </BasicButton>

@@ -17,7 +17,19 @@ export enum ModalName {
 
   UpdatePasswordSecurityPolicyModal = 'UpdatePasswordSecurityPolicyModal',
 
-  AccountDiscoveryModal = 'AccountDiscoveryModal'
+  DatabaseAccountDiscoveryModal = 'DatabaseAccountDiscoveryModal',
+
+  DatabaseAccountDetailModal = 'DatabaseAccountDetailModal',
+
+  DatabaseAccountAuthorizeModal = 'DatabaseAccountAuthorizeModal',
+
+  DatabaseAccountModifyPasswordModal = 'DatabaseAccountModifyPasswordModal',
+
+  DatabaseAccountRenewalPasswordModal = 'DatabaseAccountRenewalPasswordModal',
+
+  DatabaseAccountBatchModifyPasswordModal = 'DatabaseAccountBatchModifyPasswordModal',
+
+  DatabaseAccountManagePasswordModal = 'DatabaseAccountManagePasswordModal'
 }
 
 export enum EventEmitterKey {

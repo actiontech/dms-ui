@@ -35,7 +35,7 @@ export interface IAccountDetail {
 
   connect_string?: string;
 
-  expired_time?: number;
+  expired_time?: string;
 
   explanation?: string;
 
@@ -43,7 +43,7 @@ export interface IAccountDetail {
 
   password?: string;
 
-  password_create_time?: number;
+  password_create_time?: string;
 
   user?: string;
 }
@@ -51,7 +51,19 @@ export interface IAccountDetail {
 export interface IAccountInfo {
   hostname?: string;
 
+  password?: string;
+
   user?: string;
+}
+
+export interface IAccountStatics {
+  lock_account_num?: number;
+
+  nearing_expiration_account_num?: number;
+
+  total_account_num?: number;
+
+  unlock_account_num?: number;
 }
 
 export interface IAddAuthorization {
@@ -188,6 +200,28 @@ export interface IAdditionalParam {
   type?: string;
 
   value?: string;
+}
+
+export interface IAuthGetAccountStaticsReply {
+  code?: number;
+
+  data?: IAccountStatics;
+
+  message?: string;
+}
+
+export interface IBatchUpdateDBAccountPassword {
+  password_security_policy?: string;
+
+  passwords?: IBatchUpdatePassword[];
+
+  renewal_effective_time_day?: number;
+}
+
+export interface IBatchUpdatePassword {
+  db_account_password?: string;
+
+  db_account_uid?: string;
 }
 
 export interface IBusiness {
@@ -390,7 +424,7 @@ export interface IGetDBAccountReply {
 
     db_account_uid?: string;
 
-    db_service?: string;
+    db_service?: IUidWithName;
 
     password_managed?: boolean;
 
@@ -420,6 +454,14 @@ export interface IGetDataPermissionsInDataPermissionTemplateReply {
   data?: IGetDataPermissionsInDataPermissionTemplate[];
 
   message?: string;
+}
+
+export interface IGetStatement {
+  data_permissions?: IDataPermission[];
+
+  db_accounts?: IDBAccount[];
+
+  db_service_uid?: string;
 }
 
 export interface IGetStatementsByDataPermissionTemplateReply {
@@ -603,13 +645,15 @@ export interface IListDBAccount {
 
   db_service?: IUidWithName;
 
-  expired_time?: number;
+  expired_time?: string;
 
   explanation?: string;
 
   password_security_policy?: string;
 
   platform_managed?: boolean;
+
+  remaining_days?: string;
 
   status?: ListDBAccountStatusEnum;
 
@@ -1025,9 +1069,9 @@ export interface IOperationInfo {
 export interface IPasswordConfig {
   db_account_password?: string;
 
-  password_security_policy?: string;
+  password_expired_day?: number;
 
-  renewal_effective_time_day?: number;
+  password_security_policy?: string;
 }
 
 export interface IPasswordSecurityPolicy {
@@ -1050,6 +1094,10 @@ export interface IPermissionUsers {
 
 export interface IPlatformManaged {
   manage_password?: string;
+
+  password_expired_day?: number;
+
+  password_security_policy?: string;
 
   platform_managed?: boolean;
 }
@@ -1163,6 +1211,8 @@ export interface IUpdateAuthorizationUser {
 }
 
 export interface IUpdateDBAccount {
+  data_permissions?: IDataPermission[];
+
   explanation?: string;
 
   lock?: boolean;
@@ -1172,6 +1222,8 @@ export interface IUpdateDBAccount {
   permission_users?: IPermissionUsers;
 
   platform_managed?: IPlatformManaged;
+
+  renewal_effective_time_day?: number;
 
   used_by_sql_workbench?: boolean;
 }

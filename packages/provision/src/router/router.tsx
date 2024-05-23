@@ -9,7 +9,15 @@ const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 // const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
-const DatabaseAccount = React.lazy(() => import('../page/DatabaseAccount'));
+const DatabaseAccountList = React.lazy(
+  () => import('../page/DatabaseAccount/List')
+);
+const CreateDatabaseAccount = React.lazy(
+  () => import('../page/DatabaseAccount/Create')
+);
+const UpdateDatabaseAccount = React.lazy(
+  () => import('../page/DatabaseAccount/Update')
+);
 
 const DatabaseAccountPassword = React.lazy(
   () => import('../page/DatabaseAccountPassword')
@@ -27,7 +35,23 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   {
     path: `${PROJECT_ROUTER_PARAM}/database-account`,
     key: 'databaseAccount',
-    element: <DatabaseAccount />
+    children: [
+      {
+        index: true,
+        key: 'databaseAccountList',
+        element: <DatabaseAccountList />
+      },
+      {
+        path: 'create',
+        key: 'createDatabaseAccount',
+        element: <CreateDatabaseAccount />
+      },
+      {
+        path: 'update/:id',
+        key: 'updateDatabaseAccount',
+        element: <UpdateDatabaseAccount />
+      }
+    ]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/database-account-password`,
