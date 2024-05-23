@@ -13,6 +13,7 @@ import {
   MemberRoleWithOpRangeOpRangeTypeEnum,
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
+  OperationOperationTypeEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
   TestFeishuConfigurationAccountTypeEnum,
   WorkflowRecordStatusEnum,
@@ -213,6 +214,30 @@ export interface IBusiness {
   name?: string;
 }
 
+export interface ICBOperationLog {
+  audit_result?: IAuditSQLResult[];
+
+  db_service?: IUidWithDBServiceName;
+
+  exec_result?: string;
+
+  exec_time_second?: number;
+
+  operation?: IOperation;
+
+  operation_ip?: string;
+
+  operation_person?: IUidWithName;
+
+  operation_time?: string;
+
+  result_set_row_count?: number;
+
+  session_id?: string;
+
+  uid?: string;
+}
+
 export interface ICancelDataExportWorkflowPayload {
   data_export_workflow_uids: string[];
 }
@@ -405,6 +430,14 @@ export interface IGetBasicInfoReply {
   code?: number;
 
   data?: IBasicInfo;
+
+  message?: string;
+}
+
+export interface IGetCBOperationLogTipsReply {
+  code?: number;
+
+  data?: ICBOperationLogTips;
 
   message?: string;
 }
@@ -799,6 +832,24 @@ export interface ILicenseUsageItem {
   resource_type_desc?: string;
 
   used?: number;
+}
+
+export interface IListCBOperationLogsReply {
+  audit_intercepted_sql_count?: number;
+
+  code?: number;
+
+  data?: ICBOperationLog[];
+
+  exec_failed_sql_count?: number;
+
+  exec_sql_total?: number;
+
+  exec_success_rate?: number;
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IListDBService {
@@ -1285,6 +1336,12 @@ export interface IOperateDataResourceHandleReply {
   message?: string;
 }
 
+export interface IOperation {
+  operation_detail?: string;
+
+  operation_type?: OperationOperationTypeEnum;
+}
+
 export interface IPlugin {
   add_db_service_pre_check_url?: string;
 
@@ -1473,6 +1530,12 @@ export interface ITime {
   hour?: number;
 
   minute?: number;
+}
+
+export interface IUidWithDBServiceName {
+  name?: string;
+
+  uid?: string;
 }
 
 export interface IUidWithName {
@@ -1721,4 +1784,8 @@ export interface IWorkflowStep {
   state?: WorkflowStepStateEnum;
 
   type?: string;
+}
+
+export interface ICBOperationLogTips {
+  exec_result?: string[];
 }

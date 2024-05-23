@@ -27,6 +27,7 @@ import {
   IUpdateAuditTaskSQLsV1Return,
   IGetTaskAnalysisDataParams,
   IGetTaskAnalysisDataReturn,
+  IGetSqlFileOrderMethodV1Return,
   IGetAuditFileListParams,
   IGetAuditFileListReturn,
   IGetAuditFileExecStatisticParams,
@@ -123,6 +124,10 @@ class TaskService extends ServiceBase {
 
     if (params.sql != undefined) {
       paramsData.append('sql', params.sql as any);
+    }
+
+    if (params.file_order_method != undefined) {
+      paramsData.append('file_order_method', params.file_order_method as any);
     }
 
     if (params.input_sql_file != undefined) {
@@ -269,6 +274,14 @@ class TaskService extends ServiceBase {
     return this.get<IGetTaskAnalysisDataReturn>(
       `/v1/tasks/audits/${task_id}/sqls/${number}/analysis`,
       paramsData,
+      options
+    );
+  }
+
+  public getSqlFileOrderMethodV1(options?: AxiosRequestConfig) {
+    return this.get<IGetSqlFileOrderMethodV1Return>(
+      '/v1/tasks/file_order_methods',
+      undefined,
       options
     );
   }
