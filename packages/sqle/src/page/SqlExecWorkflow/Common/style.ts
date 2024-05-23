@@ -12,16 +12,17 @@ export const ToggleButtonStyleWrapper = styled('div')<{
   border-radius: 4px;
   border: 1px solid
     ${({ theme }) =>
-      theme.sqleTheme.order.createOrder.auditResult.toggleButton.borderColor};
+      theme.sqleTheme.execWorkflow.create.auditResult.toggleButton.borderColor};
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
   color: ${({ active, theme }) =>
     !!active
-      ? theme.sqleTheme.order.createOrder.auditResult.toggleButton.activeColor
-      : theme.sqleTheme.order.createOrder.auditResult.toggleButton.color};
+      ? theme.sqleTheme.execWorkflow.create.auditResult.toggleButton.activeColor
+      : theme.sqleTheme.execWorkflow.create.auditResult.toggleButton.color};
   background: ${({ active, theme }) =>
     !!active
-      ? theme.sqleTheme.order.createOrder.auditResult.toggleButton.activeBgColor
-      : theme.sqleTheme.order.createOrder.auditResult.toggleButton.bgColor};
+      ? theme.sqleTheme.execWorkflow.create.auditResult.toggleButton
+          .activeBgColor
+      : theme.sqleTheme.execWorkflow.create.auditResult.toggleButton.bgColor};
 `;

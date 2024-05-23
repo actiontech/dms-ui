@@ -104,7 +104,7 @@ export const WorkflowStepsItemStyleWrapper = styled('div')`
   align-self: stretch;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
-  box-shadow: ${({ theme }) => theme.sqleTheme.order.orderSteps.boxShadow};
+  box-shadow: ${({ theme }) => theme.sqleTheme.execWorkflow.steps.boxShadow};
   width: 100%;
 
   .step-title {

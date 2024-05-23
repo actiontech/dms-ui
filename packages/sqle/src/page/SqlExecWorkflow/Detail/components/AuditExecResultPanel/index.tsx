@@ -88,7 +88,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
           options={[
             {
               value: WORKFLOW_OVERVIEW_TAB_KEY,
-              label: t('order.auditResultCollection.overview')
+              label: t('execWorkflow.detail.overview.title')
             },
             ...taskInfos.map((v) => ({
               value: `${v.task_id}`,
@@ -117,7 +117,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
                 active={noDuplicate}
                 onClick={() => setNoDuplicate(!noDuplicate)}
               >
-                {t('order.createOrder.auditResult.duplicate')}
+                {t('execWorkflow.create.auditResult.clearDuplicate')}
               </ToggleButtonStyleWrapper>
               <DownloadRecord taskId={activeTabKey} noDuplicate={noDuplicate} />
             </Space>

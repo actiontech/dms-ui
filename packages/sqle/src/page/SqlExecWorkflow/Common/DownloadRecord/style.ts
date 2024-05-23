@@ -9,11 +9,11 @@ export const DownloadDropdownStyleWrapper = styled('div')`
   border-radius: 8px;
   border: 1px solid
     ${({ theme }) =>
-      theme.sqleTheme.order.createOrder.auditResult.download.borderColor};
+      theme.sqleTheme.execWorkflow.create.auditResult.download.borderColor};
   background: ${({ theme }) =>
-    theme.sqleTheme.order.createOrder.auditResult.download.bgColor};
+    theme.sqleTheme.execWorkflow.create.auditResult.download.bgColor};
   box-shadow: ${({ theme }) =>
-    theme.sqleTheme.order.createOrder.auditResult.download.boxShadow};
+    theme.sqleTheme.execWorkflow.create.auditResult.download.boxShadow};
 
   .download-record-item {
     cursor: pointer;
@@ -24,7 +24,7 @@ export const DownloadDropdownStyleWrapper = styled('div')`
     align-self: stretch;
     overflow: hidden;
     color: ${({ theme }) =>
-      theme.sqleTheme.order.createOrder.auditResult.download.itemColor};
+      theme.sqleTheme.execWorkflow.create.auditResult.download.itemColor};
     text-overflow: ellipsis;
     font-size: 13px;
     font-style: normal;
@@ -35,13 +35,14 @@ export const DownloadDropdownStyleWrapper = styled('div')`
     &:hover {
       border-radius: 4px;
       background: ${({ theme }) =>
-        theme.sqleTheme.order.createOrder.auditResult.download.itemHoverColor};
+        theme.sqleTheme.execWorkflow.create.auditResult.download
+          .itemHoverColor};
     }
 
     &-icon {
       margin-right: 6px;
       color: ${({ theme }) =>
-        theme.sqleTheme.order.createOrder.auditResult.download.itemIconColor};
+        theme.sqleTheme.execWorkflow.create.auditResult.download.itemIconColor};
     }
   }
 `;

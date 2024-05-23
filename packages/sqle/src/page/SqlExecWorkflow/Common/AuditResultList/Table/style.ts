@@ -7,7 +7,7 @@ export const AuditResultDrawerTitleStyleWrapper = styled(`div`)`
 
   .audit-result-drawer-number {
     color: ${({ theme }) =>
-      theme.sqleTheme.order.createOrder.auditResult.auditResultDrawer
+      theme.sqleTheme.execWorkflow.create.auditResult.auditResultDrawer
         .numberColor};
     font-size: 14px;
     font-weight: 600;
