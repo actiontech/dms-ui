@@ -26,7 +26,6 @@ export type MenuStructTreeKey =
   | 'sql-audit'
   | 'plugin-audit'
   | 'sql-optimization'
-  | 'sql-order'
   | 'exec-workflow'
   | 'sql-management'
   | 'audit-plane'

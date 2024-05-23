@@ -114,14 +114,14 @@ exports[`base/router-sqle-ce render sqle project detail router render route anal
 </body>
 `;
 
-exports[`base/router-sqle-ce render sqle project detail router render route analyze render route orderAnalyze 1`] = `
+exports[`base/router-sqle-ce render sqle project detail router render route analyze render route workflowAnalyze 1`] = `
 <body>
   <div>
     <div
-      data-test-parent-id="order"
+      data-test-parent-id="sqlExecWorkflow"
     >
       <div>
-        orderAnalyze
+        workflowAnalyze
       </div>
     </div>
   </div>
@@ -143,48 +143,6 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
   <div>
     <div>
       dashboard
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderCreate 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="order"
-    >
-      <div>
-        orderCreate
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderDetail 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="order"
-    >
-      <div>
-        orderDetail
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route order render route orderList 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="order"
-    >
-      <div>
-        orderList
-      </div>
     </div>
   </div>
 </body>
@@ -696,9 +654,9 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
           },
           {
             "element": <div>
-              orderAnalyze
+              workflowAnalyze
             </div>,
-            "key": "orderAnalyze",
+            "key": "workflowAnalyze",
             "path": ":taskId/:sqlNum/analyze",
           },
           {
@@ -716,45 +674,6 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
         </div>,
         "key": "sqlExecWorkflow",
         "path": ":projectID/exec-workflow",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              orderList
-            </div>,
-            "key": "orderList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              orderCreate
-            </div>,
-            "key": "orderCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              orderDetail
-            </div>,
-            "key": "orderDetail",
-            "path": ":orderId",
-          },
-          {
-            "element": <div>
-              orderAnalyze
-            </div>,
-            "key": "orderAnalyze",
-            "path": ":taskId/:sqlNum/analyze",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="order"
-        >
-          <Outlet />
-        </div>,
-        "key": "order",
-        "path": ":projectID/order",
       },
       {
         "children": [

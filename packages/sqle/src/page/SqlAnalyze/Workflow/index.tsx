@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import { ResponseCode } from '../../../data/common';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { OrderSqlAnalyzeUrlParams } from './index.type';
+import { WorkflowSqlAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
   ISQLExplain,
@@ -14,8 +14,8 @@ import {
 
 import SqlAnalyze from '../SqlAnalyze';
 
-const OrderSqlAnalyze = () => {
-  const urlParams = useParams<OrderSqlAnalyzeUrlParams>();
+const WorkflowSqlAnalyze = () => {
+  const urlParams = useParams<WorkflowSqlAnalyzeUrlParams>();
 
   const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -75,4 +75,4 @@ const OrderSqlAnalyze = () => {
   );
 };
 
-export default OrderSqlAnalyze;
+export default WorkflowSqlAnalyze;

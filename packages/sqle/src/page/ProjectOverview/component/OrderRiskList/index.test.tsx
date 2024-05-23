@@ -57,12 +57,12 @@ describe('page/ProjectOverview/OrderRiskList', () => {
     expect(getAllBySelector('a').length).toBe(2);
     expect(getAllBySelector('a')?.[0]).toHaveAttribute(
       'href',
-      `/sqle/project/${mockProjectInfo.projectID}/order/${statisticRiskWorkflowData[0].workflow_id}`
+      `/sqle/project/${mockProjectInfo.projectID}/exec-workflow/${statisticRiskWorkflowData[0].workflow_id}`
     );
     expect(screen.getByText('查看更多')).toBeInTheDocument();
     fireEvent.click(screen.getByText('查看更多'));
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/order`
+      `/sqle/project/${mockProjectInfo.projectID}/exec-workflow`
     );
   });
 

@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { ModalName } from '../../../../../../data/ModalName';
-
 import ReportDrawer from '../../../../../../components/ReportDrawer';
-import useAuditResultRuleInfo from '../../../../../../page/Order/hooks/useAuditResultRuleInfo';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
+import useAuditResultRuleInfo from '../../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 
 const StatusDrawer = () => {
   const { t } = useTranslation();

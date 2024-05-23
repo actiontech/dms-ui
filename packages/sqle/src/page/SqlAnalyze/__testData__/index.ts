@@ -555,7 +555,7 @@ export const AuditPlanSqlAnalyzeData = {
   }
 };
 
-export const OrderSqlAnalyzeData = {
+export const WorkflowSqlAnalyzeData = {
   sql_explain: {
     sql: sqlExecPlans[0].sql,
     classic_result: sqlExecPlans[0].classic_result,
