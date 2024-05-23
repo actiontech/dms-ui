@@ -32,7 +32,7 @@ const WorkflowStatusMap = () => {
       WorkflowDetailResV1StatusEnum.finished,
       <>
         <IconWorkflowStatusIsFinished />
-        <span>{t('execWorkflow.common.workflowStatus.finished')}</span>
+        <span>{t('execWorkflow.common.workflowStatus.execSucceeded')}</span>
       </>
     ],
     [

@@ -69,6 +69,7 @@ const CustomSegmentedFilter = <V extends string | number | undefined = string>(
     }
 
     if (withAll === true) {
+      // Segmented 组件会将 value 设置为 each 组件时的 key，当 value 为 undefined 时 key 设置失败。
       return [
         { label: t('common.all'), value: undefined as V },
         ...transformOptions
@@ -109,7 +110,6 @@ const CustomSegmentedFilter = <V extends string | number | undefined = string>(
         </div>
       );
     }
-
     return (
       <BasicSegmented
         className={mergeClassNames}

@@ -29,7 +29,6 @@ import {
   execStatusDictionary,
   translateDictionaryI18nLabel
 } from '../../../../../../../hooks/useStaticStatus/index.data';
-import AuditResultFilterContainer from '../../../../../Common/AuditResultFilterContainer';
 import { Divider, Space } from 'antd';
 import { ToggleButtonStyleWrapper } from '../../../../../Common/style';
 import DownloadRecord from '../../../../../Common/DownloadRecord';
@@ -144,7 +143,7 @@ const SQLFileStatementOverview: React.FC = () => {
             active={noDuplicate}
             onClick={() => setNoDuplicate(!noDuplicate)}
           >
-            {t('order.createOrder.auditResult.duplicate')}
+            {t('execWorkflow.create.auditResult.clearDuplicate')}
           </ToggleButtonStyleWrapper>
           <DownloadRecord taskId={taskId ?? ''} noDuplicate={noDuplicate} />
         </Space>

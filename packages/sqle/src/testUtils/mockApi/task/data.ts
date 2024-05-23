@@ -30,7 +30,7 @@ export const workflowTaskDetailMockData = {
   score: 100,
   pass_rate: 1,
   status: 'audited',
-  sql_source: ''
+  sql_source: 'form_data'
 };
 
 export const TaskFileListMockData = [

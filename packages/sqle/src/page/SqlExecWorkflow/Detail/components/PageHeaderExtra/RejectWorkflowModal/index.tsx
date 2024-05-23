@@ -23,7 +23,7 @@ const RejectWorkflowModal: React.FC<RejectWorkflowModalProps> = ({
   };
   return (
     <BasicModal
-      title={t('order.operator.reject')}
+      title={t('execWorkflow.detail.operator.reject')}
       open={open}
       closable={false}
       footer={
@@ -41,7 +41,7 @@ const RejectWorkflowModal: React.FC<RejectWorkflowModalProps> = ({
               resetAndCloseRejectModal();
             }}
           >
-            {t('order.operator.reject')}
+            {t('execWorkflow.detail.operator.reject')}
           </BasicButton>
         </>
       }
@@ -49,7 +49,7 @@ const RejectWorkflowModal: React.FC<RejectWorkflowModalProps> = ({
       <>
         <Form form={form} onFinish={reject} layout="vertical">
           <Form.Item
-            label={t('order.operator.rejectReason')}
+            label={t('execWorkflow.detail.operator.rejectReason')}
             name="reason"
             rules={[
               {
@@ -65,7 +65,7 @@ const RejectWorkflowModal: React.FC<RejectWorkflowModalProps> = ({
         </Form>
 
         <RejectWorkflowModalAlertStyleWrapper>
-          {t('order.operator.rejectAllTips')}
+          {t('execWorkflow.detail.operator.rejectAllTips')}
         </RejectWorkflowModalAlertStyleWrapper>
       </>
     </BasicModal>

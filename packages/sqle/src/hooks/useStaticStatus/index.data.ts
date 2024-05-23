@@ -62,6 +62,24 @@ export const orderStatusDictionary: StaticEnumDictionary<getWorkflowsV1FilterSta
     [getWorkflowsV1FilterStatusEnum.executing]: 'order.status.executing'
   };
 
+export const execWorkflowStatusDictionary: StaticEnumDictionary<getWorkflowsV1FilterStatusEnum> =
+  {
+    [getWorkflowsV1FilterStatusEnum.wait_for_audit]:
+      'execWorkflow.common.workflowStatus.waitForAudit',
+    [getWorkflowsV1FilterStatusEnum.wait_for_execution]:
+      'execWorkflow.common.workflowStatus.waitForExecution',
+    [getWorkflowsV1FilterStatusEnum.canceled]:
+      'execWorkflow.common.workflowStatus.canceled',
+    [getWorkflowsV1FilterStatusEnum.rejected]:
+      'execWorkflow.common.workflowStatus.reject',
+    [getWorkflowsV1FilterStatusEnum.exec_failed]:
+      'execWorkflow.common.workflowStatus.execFailed',
+    [getWorkflowsV1FilterStatusEnum.finished]:
+      'execWorkflow.common.workflowStatus.execSucceeded',
+    [getWorkflowsV1FilterStatusEnum.executing]:
+      'execWorkflow.common.workflowStatus.executing'
+  };
+
 export const ruleLevelDictionary: StaticEnumDictionary<RuleResV1LevelEnum> = {
   [RuleResV1LevelEnum.normal]: 'ruleTemplate.ruleLevel.normal',
   [RuleResV1LevelEnum.notice]: 'ruleTemplate.ruleLevel.notice',

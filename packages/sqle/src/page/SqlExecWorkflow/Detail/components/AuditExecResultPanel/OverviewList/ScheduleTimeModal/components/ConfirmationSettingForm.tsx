@@ -66,14 +66,14 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
           const list: ToggleTokensOptionsType = [];
           if (enableWechat) {
             list.push({
-              label: t('order.operator.confirmMethodWechat'),
+              label: t('execWorkflow.detail.operator.confirmMethodWechat'),
               value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.wechat
             });
           }
 
           if (enableFeishu) {
             list.push({
-              label: t('order.operator.confirmMethodFeishu'),
+              label: t('execWorkflow.detail.operator.confirmMethodFeishu'),
               value: UpdateWorkflowScheduleReqV2NotifyTypeEnum.feishu
             });
           }
@@ -111,8 +111,12 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
         className="has-label-tip"
         label={
           <CustomLabelContent
-            title={t('order.operator.scheduleTimeExecuteConfirmLabel')}
-            tips={t('order.operator.scheduleTimeExecuteConfirmTips')}
+            title={t(
+              'execWorkflow.detail.operator.scheduleTimeExecuteConfirmLabel'
+            )}
+            tips={t(
+              'execWorkflow.detail.operator.scheduleTimeExecuteConfirmTips'
+            )}
           />
         }
         name="notification_confirmation"
@@ -127,11 +131,13 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
           className="has-label-tip has-required-style"
           label={
             <CustomLabelContent
-              title={t('order.operator.scheduleTimeExecuteConfirmMethod')}
+              title={t(
+                'execWorkflow.detail.operator.scheduleTimeExecuteConfirmMethod'
+              )}
               tips={
                 <Trans
                   i18nKey={
-                    'order.operator.scheduleTimeExecuteConfirmMethodTips'
+                    'execWorkflow.detail.operator.scheduleTimeExecuteConfirmMethodTips'
                   }
                 >
                   {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
@@ -150,7 +156,9 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
             {
               required: true,
               message: t('common.form.placeholder.select', {
-                name: t('order.operator.scheduleTimeExecuteConfirmMethod')
+                name: t(
+                  'execWorkflow.detail.operator.scheduleTimeExecuteConfirmMethod'
+                )
               })
             }
           ]}

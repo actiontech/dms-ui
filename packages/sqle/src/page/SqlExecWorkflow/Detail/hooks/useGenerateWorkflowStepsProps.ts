@@ -30,7 +30,9 @@ const useGenerateWorkflowStepsProps = ({
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.success(t('order.operator.approveSuccessTips'));
+            messageApi.success(
+              t('execWorkflow.detail.operator.approveSuccessTips')
+            );
             refreshWorkflowInfo();
             refreshOverviewAction();
           }
@@ -54,7 +56,7 @@ const useGenerateWorkflowStepsProps = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('order.operator.executingTips'));
+          messageApi.success(t('execWorkflow.detail.operator.executingTips'));
           refreshWorkflowInfo();
           refreshOverviewAction();
         }
@@ -76,7 +78,9 @@ const useGenerateWorkflowStepsProps = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('order.operator.terminateSuccessTips'));
+          messageApi.success(
+            t('execWorkflow.detail.operator.terminateSuccessTips')
+          );
           refreshWorkflowInfo();
           refreshOverviewAction();
         }
@@ -101,7 +105,9 @@ const useGenerateWorkflowStepsProps = ({
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.success(t('order.operator.rejectSuccessTips'));
+            messageApi.success(
+              t('execWorkflow.detail.operator.rejectSuccessTips')
+            );
             refreshWorkflowInfo();
             refreshOverviewAction();
           }
@@ -125,7 +131,9 @@ const useGenerateWorkflowStepsProps = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('order.operator.completeSuccessTips'));
+          messageApi.success(
+            t('execWorkflow.detail.operator.completeSuccessTips')
+          );
           refreshWorkflowInfo();
           refreshOverviewAction();
         }
