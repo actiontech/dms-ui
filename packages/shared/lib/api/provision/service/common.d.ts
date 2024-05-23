@@ -43,13 +43,15 @@ export interface IAccountDetail {
 
   password?: string;
 
-  password_create_time?: number;
+  password_create_time?: string;
 
   user?: string;
 }
 
 export interface IAccountInfo {
   hostname?: string;
+
+  password?: string;
 
   user?: string;
 }
@@ -651,7 +653,7 @@ export interface IListDBAccount {
 
   platform_managed?: boolean;
 
-  remaining_days?: number;
+  remaining_days?: string;
 
   status?: ListDBAccountStatusEnum;
 

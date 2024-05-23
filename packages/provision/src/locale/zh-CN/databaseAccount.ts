@@ -119,7 +119,7 @@ export default {
     copyString: '复制连接串',
     getConnection: '授权信息',
     createTime: '本次密码生成时间',
-    expireTime: '过期时间',
+    expireTime: '密码有效期',
     copyAll: '全文复制',
     authInfo: '授权信息',
     authUser: '授权成员'
@@ -142,7 +142,8 @@ export default {
   batchModifyPassword: {
     selectedAccount: '已选账号',
     successTip: '批量修改密码成功',
-    password: '密码'
+    password: '密码',
+    batchGenerate: '批量生成密码'
   },
   manageAccount: {
     successTip: '托管密码成功'

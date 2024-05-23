@@ -21,7 +21,7 @@ import PasswordPolicyField from '../ModifyPassword/PasswordPolicyField';
 import Password from '../../../../utils/Password';
 import { BasicInput } from '@actiontech/shared';
 import { BatchModifyPasswordDrawerStyleWrapper } from '../../style';
-import InputPassword from '../../../../components/PasswordWithGenerate';
+import { FormListAddButtonWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const BatchModifyPasswordModal: React.FC = () => {
   const { t } = useTranslation();
@@ -100,14 +100,15 @@ const BatchModifyPasswordModal: React.FC = () => {
     }
   }, [visible, form, selectData]);
 
-  const generatePassword = (index: number) => {
-    const password = Password.generateMySQLPassword(16);
-    passwords[index].password = password;
-    passwords[index].confirm_password = password;
+  const generatePassword = () => {
+    passwords.forEach((item) => {
+      const password = Password.generateMySQLPassword(16);
+      item.password = password;
+      item.confirm_password = password;
+    });
     form.setFieldsValue({
       passwords: [...passwords]
     });
-    return password;
   };
 
   return (
@@ -135,6 +136,15 @@ const BatchModifyPasswordModal: React.FC = () => {
       {contextHolder}
       <Form layout="vertical" form={form}>
         <PasswordPolicyField visible={visible} />
+        <Form.Item>
+          <FormListAddButtonWrapper
+            onClick={generatePassword}
+            disabled={submitLoading}
+            className="form-list-add add-object-button"
+          >
+            {t('databaseAccount.batchModifyPassword.batchGenerate')}
+          </FormListAddButtonWrapper>
+        </Form.Item>
         <Form.List name="passwords">
           {(fields) => (
             <>
@@ -174,10 +184,7 @@ const BatchModifyPasswordModal: React.FC = () => {
                         name={[field.name, 'password']}
                         rules={[{ required: true }]}
                       >
-                        <InputPassword
-                          clickGeneratePassword={() => generatePassword(index)}
-                          className="account-password-item"
-                        />
+                        <BasicInput.Password />
                       </Form.Item>
                     </Col>
                     <Col span={10}>

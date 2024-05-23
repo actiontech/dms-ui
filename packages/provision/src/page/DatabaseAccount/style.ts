@@ -134,11 +134,6 @@ export const PermissionFieldStyleWrapper = styled('section')`
 `;
 
 export const BatchModifyPasswordDrawerStyleWrapper = styled(BasicDrawer)`
-  & .account-password-item .ant-btn-primary {
-    height: 22px !important;
-    font-size: 12px !important;
-  }
-
   & .account-name-item {
     display: block !important;
   }
