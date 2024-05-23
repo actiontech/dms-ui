@@ -23,10 +23,8 @@ import useRenderDatabaseSelectionItems from './hooks/useRenderDatabaseSelectionI
 import { BasicButton } from '@actiontech/shared';
 
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
-  dbSourceInfoCollection,
-  instanceTestConnectResults,
-  sqlStatementTabActiveKey,
-  ...props
+  handleInstanceNameChange,
+  ...sharedStepDetail
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
@@ -39,7 +37,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     disabledTestConnect
   } = useTestDatabaseConnect({
     databaseInfo: Form.useWatch('databaseInfo', form),
-    instanceTestConnectResults: instanceTestConnectResults
+    instanceTestConnectResults: sharedStepDetail.instanceTestConnectResults
   });
 
   const {
@@ -51,8 +49,8 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     renderDeleteItemButton,
     renderAddItemButton
   } = useRenderDatabaseSelectionItems({
-    dbSourceInfoCollection,
-    sqlStatementTabActiveKey
+    dbSourceInfoCollection: sharedStepDetail.dbSourceInfoCollection,
+    sqlStatementTabActiveKey: sharedStepDetail.sqlStatementTabActiveKey
   });
 
   const {
@@ -123,7 +121,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
                             ['databaseInfo', field.name, 'instanceSchema'],
                             undefined
                           );
-                          props.handleInstanceNameChange?.(name);
+                          handleInstanceNameChange?.(name);
                           handleInstanceChange(fieldKey, name);
                         }}
                       />

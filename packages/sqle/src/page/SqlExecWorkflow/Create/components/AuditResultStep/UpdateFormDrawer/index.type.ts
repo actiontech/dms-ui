@@ -10,5 +10,5 @@ export type UpdateFormDrawerProps = {
   onClose: () => void;
   baseFormValues?: WorkflowBaseInfoFormFields;
   sqlAuditInfoFormValues?: SqlAuditInfoFormFields;
-} & Omit<SqlAuditInfoFormProps, 'form'> &
+} & SqlAuditInfoFormProps &
   SharedStepDetails;

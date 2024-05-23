@@ -20,10 +20,10 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   clearSqlContentFormWhenChangeUploadType = true,
   isAuditing,
   auditAction,
-  isSupportFileModeExecuteSql,
   disabledUploadType,
   databaseInfo,
-  isSameSqlForAll
+  isSameSqlForAll,
+  isSupportFileModeExecuteSql
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormProps>();

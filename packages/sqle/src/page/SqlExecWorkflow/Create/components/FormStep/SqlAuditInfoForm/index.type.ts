@@ -8,10 +8,7 @@ export type SqlAuditInfoFormProps = {
 
 export type SqlAuditInfoFormItemProps = SqlAuditInfoFormProps;
 
-export type DatabaseSelectionItemProps = Pick<
-  SqlAuditInfoFormItemProps,
-  | 'dbSourceInfoCollection'
-  | 'instanceTestConnectResults'
-  | 'handleInstanceNameChange'
-  | 'sqlStatementTabActiveKey'
+export type DatabaseSelectionItemProps = Omit<
+  SqlAuditInfoFormProps,
+  'auditAction' | ''
 >;

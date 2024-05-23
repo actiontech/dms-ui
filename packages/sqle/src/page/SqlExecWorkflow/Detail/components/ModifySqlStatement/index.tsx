@@ -61,12 +61,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
-  const {
-    isAuditing,
-    isSupportFileModeExecuteSql,
-    sqlStatementTabActiveKey,
-    resetAllSharedData
-  } = useSharedStepDetail();
+  const { isAuditing, sqlStatementTabActiveKey, resetAllSharedData } =
+    useSharedStepDetail();
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
@@ -269,7 +265,6 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
               <SqlStatementFormController
                 isAuditing={isAuditing}
                 isSameSqlForAll={isSameSqlForAll}
-                isSupportFileModeExecuteSql={isSupportFileModeExecuteSql}
                 activeKey={sqlStatementTabActiveKey.value}
                 onChange={sqlStatementTabActiveKey.set}
                 databaseInfo={databaseInfo}

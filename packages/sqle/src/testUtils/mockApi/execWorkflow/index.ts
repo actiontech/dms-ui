@@ -9,7 +9,8 @@ import {
   WorkflowTasksItemData,
   WorkflowTemplateData,
   WorkflowListData,
-  WorkflowsOverviewListData
+  WorkflowsOverviewListData,
+  AuditTaskResData
 } from './data';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
@@ -122,7 +123,8 @@ class MockWorkflowApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: {
-          task_group_id: 13
+          task_group_id: 13,
+          tasks: AuditTaskResData
         }
       })
     );
