@@ -8,7 +8,7 @@ const DEFAULT_DB_SOURCE_INFO = { '0': {} };
 const useSharedStepDetail = (): SharedStepDetails => {
   const [isAuditing, setIsAuditing] = useState(false);
 
-  const [isSupportFileModeExecuteSQL, setIsSupportFileModeExecuteSQL] =
+  const [isSupportFileModeExecuteSql, setIsSupportFileModeExecuteSql] =
     useState(false);
 
   const [isDisabledForDifferenceSql, setIsDisabledForDifferenceSql] =
@@ -24,7 +24,7 @@ const useSharedStepDetail = (): SharedStepDetails => {
   const [dbSourceInfoCollection, setDbSourceInfoCollection] =
     useState<DataSourceSchemaCollection>(DEFAULT_DB_SOURCE_INFO);
 
-  const updateInstanceRecordInfo = useCallback(
+  const updateDbSourceInfoCollection = useCallback(
     (key: string, info?: DataSourceSchemaCollection[string]) => {
       //remove
       if (!info) {
@@ -60,27 +60,27 @@ const useSharedStepDetail = (): SharedStepDetails => {
     []
   );
 
-  const resetAllSharedData = () => {
+  const resetAllSharedData = useCallback(() => {
     setIsAuditing(false);
-    setIsSupportFileModeExecuteSQL(false);
+    setIsSupportFileModeExecuteSql(false);
     setDbSourceInfoCollection(DEFAULT_DB_SOURCE_INFO);
     setInstanceTestConnectResults([]);
     setIsDisabledForDifferenceSql(false);
     setActiveSqlStatementTabKey('');
-  };
+  }, []);
 
   return {
     isAuditing: {
       value: isAuditing,
       set: setIsAuditing
     },
-    isSupportFileModeExecuteSQL: {
-      value: isSupportFileModeExecuteSQL,
-      set: setIsSupportFileModeExecuteSQL
+    isSupportFileModeExecuteSql: {
+      value: isSupportFileModeExecuteSql,
+      set: setIsSupportFileModeExecuteSql
     },
     dbSourceInfoCollection: {
       value: dbSourceInfoCollection,
-      set: updateInstanceRecordInfo
+      set: updateDbSourceInfoCollection
     },
     instanceTestConnectResults: {
       value: instanceTestConnectResults,

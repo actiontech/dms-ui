@@ -1,4 +1,4 @@
 export type DatabaseSelectionFields = {
-  instanceName: string;
-  instanceSchema: string;
+  instanceName?: string;
+  instanceSchema?: string;
 };

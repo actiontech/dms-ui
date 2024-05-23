@@ -9,7 +9,7 @@ export type CreateWorkflowFormStepProps = {
   baseInfoForm: FormInstance<WorkflowBaseInfoFormFields>;
   sqlAuditInfoForm: FormInstance<SqlAuditInfoFormFields>;
   auditAction: (
-    value: SqlAuditInfoFormFields,
+    values: SqlAuditInfoFormFields,
     baseInfo?: WorkflowBaseInfoFormFields
   ) => Promise<void>;
 } & SharedStepDetails;

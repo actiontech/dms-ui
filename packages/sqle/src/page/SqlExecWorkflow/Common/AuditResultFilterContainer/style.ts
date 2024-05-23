@@ -93,8 +93,6 @@ export const AuditResultFilterContainerStyleWrapper = styled('div')`
       border-radius: 4px;
       background: ${({ theme }) =>
         theme.sqleTheme.order.common.auditResultFilter.options.bgColor};
-      font-weight: 700;
-      line-height: 24px;
       transition: background-color 0.3s;
       transition: color 0.3s;
       font-size: 12px;

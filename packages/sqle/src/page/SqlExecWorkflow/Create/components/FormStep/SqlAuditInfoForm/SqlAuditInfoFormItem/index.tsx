@@ -7,9 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { BasicSwitch } from '@actiontech/shared';
 import { useEffect, useMemo } from 'react';
 import { SqlAuditInfoFormFields } from '../../../../index.type';
-import SqlStatementFormController from './SqlStatementFormController';
-import SqlStatementFormItem from './SqlStatementFormItem';
-import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from './SqlStatementFormItem/index.data';
+import SqlStatementFormController from '../../../../../Common/SqlStatementFormController';
 import system from '@actiontech/shared/lib/api/sqle/service/system';
 import {
   getSystemModuleStatusDbTypeEnum,
@@ -55,7 +53,7 @@ const SqlAuditInfoFormItem: React.FC<SqlAuditInfoFormItemProps> = ({
           });
         })
       ).then((res) => {
-        props.isSupportFileModeExecuteSQL.set(
+        props.isSupportFileModeExecuteSql.set(
           res.every((item) => !!item.data.data?.is_supported)
         );
       });
@@ -107,7 +105,6 @@ const SqlAuditInfoFormItem: React.FC<SqlAuditInfoFormItemProps> = ({
         <BasicSwitch disabled={isDisabledForDifferenceSql.value} />
       </FormItemLabel>
 
-      {/* #if [ee] */}
       <SqlStatementFormController
         activeKey={props.sqlStatementTabActiveKey.value}
         onChange={props.sqlStatementTabActiveKey.set}
@@ -115,12 +112,6 @@ const SqlAuditInfoFormItem: React.FC<SqlAuditInfoFormItemProps> = ({
         databaseInfo={databaseInfo}
         {...props}
       />
-      {/* #elif [ce] */}
-      <SqlStatementFormItem
-        fieldPrefixPath={SAME_SQL_MODE_DEFAULT_FIELD_KEY}
-        {...props}
-      />
-      {/* #endif */}
     </>
   );
 };

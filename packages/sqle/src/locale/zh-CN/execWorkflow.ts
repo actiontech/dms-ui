@@ -120,6 +120,8 @@ export default {
     }
   },
 
+  detail: {},
+
   audit: {
     result: '审核结果',
     passRage: '审核通过率',
@@ -178,6 +180,7 @@ export default {
 
   common: {
     workflowStatus: {
+      process: '处理中',
       finished: '上线成功',
       canceled: '已关闭',
       executing: '正在上线',
@@ -185,8 +188,12 @@ export default {
       waitForAudit: '待审核',
       waitForExecution: '待上线',
       reject: '已驳回',
-
-      process: '处理中'
+      execScheduled: '定时上线',
+      execSucceeded: '上线成功',
+      manuallyExecuted: '人工上线',
+      terminateFailed: '中止失败',
+      terminateSucceeded: '中止成功',
+      terminating: '正在中止'
     },
     execStatus: {
       initialized: '准备执行',
