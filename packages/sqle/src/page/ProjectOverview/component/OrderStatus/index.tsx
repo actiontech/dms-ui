@@ -19,7 +19,7 @@ const OrderStatus = () => {
   const { projectName, projectID, projectArchive } = useCurrentProject();
 
   const onCreated = () => {
-    navigate(`/sqle/project/${projectID}/order/create`);
+    navigate(`/sqle/project/${projectID}/exec-workflow/create`);
   };
 
   const [data, setData] = useState<IWorkflowStatusCountV1>({});

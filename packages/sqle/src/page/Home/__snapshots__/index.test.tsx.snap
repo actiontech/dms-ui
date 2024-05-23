@@ -261,7 +261,7 @@ exports[`page/Home render Home page 1`] = `
                               </svg>
                             </span>
                             <a
-                              href="/sqle/project/700300/order/1739836656367702016"
+                              href="/sqle/project/700300/exec-workflow/1739836656367702016"
                             >
                               mysql-1_20231227103222
                             </a>
@@ -642,7 +642,7 @@ exports[`page/Home render Home page 1`] = `
                               </svg>
                             </span>
                             <a
-                              href="/sqle/project/700300/order/1739836656367702016"
+                              href="/sqle/project/700300/exec-workflow/1739836656367702016"
                             >
                               mysql-1_20231227103222
                             </a>

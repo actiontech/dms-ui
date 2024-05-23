@@ -1,7 +1,7 @@
-import ReportDrawer from '.';
+import ReportDrawer from '..';
 
-import { renderWithTheme } from '../../testUtils/customRender';
-import { DetailReportDrawerProps } from './index.type';
+import { renderWithTheme } from '../../../testUtils/customRender';
+import { DetailReportDrawerProps } from '../index.type';
 import { cleanup } from '@testing-library/react';
 
 describe('sqle/components/ReportDrawer', () => {

@@ -80,15 +80,6 @@ export const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'sql-optimization'
 });
 
-export const sqlOrderMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <Link to={`/sqle/project/${projectID}/order`}>{t('dmsMenu.SQLOrder')}</Link>
-  ),
-  icon: <Icon component={IconSQLOrder} />,
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/order`,
-  structKey: 'sql-order'
-});
-
 export const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/exec-workflow`}>
@@ -177,7 +168,6 @@ const sqleMenusCollection = [
   sqlAuditMenuItem,
   pluginAuditMenuItem,
   sqlOptimizationMenuItem,
-  sqlOrderMenuItem,
   sqlExecWorkflowMenuItem,
   sqlManagementMenuItem,
   auditPlanMenuItem,
