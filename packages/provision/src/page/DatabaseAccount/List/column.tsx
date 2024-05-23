@@ -7,7 +7,7 @@ import {
 import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import { t } from '../../../locale';
-import { AvatarCom } from '@actiontech/shared';
+import { AvatarCom, BasicToolTips } from '@actiontech/shared';
 import { Space, Typography } from 'antd';
 import { DBAccountStatusDictionary } from '../index.data';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
@@ -72,7 +72,14 @@ export const DatabaseAccountListColumns = (
     },
     {
       dataIndex: 'status',
-      title: t('databaseAccount.list.column.status'),
+      title: () => (
+        <BasicToolTips
+          suffixIcon
+          title={t('databaseAccount.list.column.statusTips')}
+        >
+          {t('databaseAccount.list.column.status')}
+        </BasicToolTips>
+      ),
       filterKey: 'filter_by_status',
       filterCustomType: 'select',
       render: (value: IListDBAccount['status']) => {
@@ -81,7 +88,14 @@ export const DatabaseAccountListColumns = (
     },
     {
       dataIndex: 'platform_managed',
-      title: t('databaseAccount.list.column.deposit'),
+      title: () => (
+        <BasicToolTips
+          suffixIcon
+          title={t('databaseAccount.list.column.depositTips')}
+        >
+          {t('databaseAccount.list.column.deposit')}
+        </BasicToolTips>
+      ),
       render: (value: IListDBAccount['platform_managed']) => {
         return value
           ? t('databaseAccount.list.managed')

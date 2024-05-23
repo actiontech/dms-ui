@@ -3,7 +3,12 @@ import { message, Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { BasicButton, BasicDrawer, BasicInput } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicDrawer,
+  BasicInput,
+  BasicToolTips
+} from '@actiontech/shared';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import {
   DatabaseAccountModalStatus,
@@ -101,7 +106,14 @@ const ManagePasswordModal: React.FC = () => {
         <PasswordPolicyField visible={visible} />
         <Form.Item
           name="password"
-          label={t('databaseAccount.create.form.password')}
+          label={
+            <BasicToolTips
+              suffixIcon
+              title={t('databaseAccount.manageAccount.passwordTip')}
+            >
+              {t('databaseAccount.create.form.password')}
+            </BasicToolTips>
+          }
           rules={[{ required: true }]}
         >
           <BasicInput.Password />
