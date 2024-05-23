@@ -9,6 +9,7 @@ import {
   IGetAuditTaskSQLsResV1,
   IUpdateAuditTaskSQLsReqV1,
   IGetTaskAnalysisDataResV1,
+  IGetSqlFileOrderMethodResV1,
   IGetAuditFileListRes,
   IGetAuditFileExecStatisticRes,
   IGetAuditTaskSQLsResV2,
@@ -53,6 +54,8 @@ export interface IAuditTaskGroupIdV1Params {
   task_group_id: number;
 
   sql?: string;
+
+  file_order_method?: string;
 
   input_sql_file?: any;
 
@@ -126,6 +129,9 @@ export interface IGetTaskAnalysisDataParams {
 }
 
 export interface IGetTaskAnalysisDataReturn extends IGetTaskAnalysisDataResV1 {}
+
+export interface IGetSqlFileOrderMethodV1Return
+  extends IGetSqlFileOrderMethodResV1 {}
 
 export interface IGetAuditFileListParams {
   task_id: string;
