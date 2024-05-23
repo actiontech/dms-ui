@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 
-export const SQLFileStatementOverviewStyleWrapper = styled('section')`
+export const SqlFileStatementOverviewStyleWrapper = styled('section')`
   .page-title-wrapper {
     display: flex;
     align-items: center;

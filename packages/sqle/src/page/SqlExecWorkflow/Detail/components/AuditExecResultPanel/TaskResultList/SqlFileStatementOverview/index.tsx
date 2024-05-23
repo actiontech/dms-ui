@@ -15,7 +15,7 @@ import { AuditTaskExtraFilterMeta } from '../../index.data';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { GetAuditTaskSQLsPrams } from '../../index.type';
-import { SQLFileStatementOverviewStyleWrapper } from './style';
+import { SqlFileStatementOverviewStyleWrapper } from './style';
 import {
   BasicButton,
   CustomSegmentedFilter,
@@ -34,7 +34,7 @@ import { ToggleButtonStyleWrapper } from '../../../../../Common/style';
 import DownloadRecord from '../../../../../Common/DownloadRecord';
 import { AuditResultFilterContainerStyleWrapper } from '../../../../../Common/AuditResultFilterContainer/style';
 
-const SQLFileStatementOverview: React.FC = () => {
+const SqlFileStatementOverview: React.FC = () => {
   const { t } = useTranslation();
   const { taskId, fileId } = useParams<{ taskId: string; fileId: string }>();
 
@@ -95,7 +95,7 @@ const SQLFileStatementOverview: React.FC = () => {
   );
 
   return (
-    <SQLFileStatementOverviewStyleWrapper>
+    <SqlFileStatementOverviewStyleWrapper>
       <PageHeader
         title={
           <div className="page-title-wrapper">
@@ -169,8 +169,8 @@ const SQLFileStatementOverview: React.FC = () => {
         onChange={tableChange}
         isPaginationFixed
       />
-    </SQLFileStatementOverviewStyleWrapper>
+    </SqlFileStatementOverviewStyleWrapper>
   );
 };
 
-export default SQLFileStatementOverview;
+export default SqlFileStatementOverview;

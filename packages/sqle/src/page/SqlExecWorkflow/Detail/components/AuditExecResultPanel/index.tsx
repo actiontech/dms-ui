@@ -154,6 +154,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
           <AuditResultFilterContainer<
             getAuditTaskSQLsV2FilterExecStatusEnum | undefined
           >
+            className="audit-result-filter-container-borderless"
             passRate={currentTask?.pass_rate}
             score={currentTask?.score}
             instanceSchemaName={currentTask?.instance_schema}
