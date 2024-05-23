@@ -30,7 +30,11 @@ export default {
       remainingDay: '密码有效时间',
       policy: '密码安全策略',
       status: '账号状态',
+      statusTips:
+        '用于标识账号当前的可用状态，禁用状态意味着账户无法登录，也无法使用任何功能',
       deposit: '托管密码',
+      depositTips:
+        '用于标识账号是否由平台管理密码，如果未托管，就无法授权并用于SQL工作台',
       workbench: '是否用于SQL工作台',
       auth: '账号授权'
     },
@@ -146,6 +150,7 @@ export default {
     batchGenerate: '批量生成密码'
   },
   manageAccount: {
-    successTip: '托管密码成功'
+    successTip: '托管密码成功',
+    passwordTip: '请输入正确的连接密码，连接成功后您将收到“托管成功”的提示'
   }
 };
