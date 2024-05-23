@@ -57,6 +57,7 @@ export type DataSourceSchemaCollection = Record<
     dbType?: string;
     ruleTemplate?: IRuleTemplateV2;
     testConnectResult?: IInstanceConnectionResV1;
+    isSupportFileModeExecuteSql?: boolean;
   }
 >;
 
@@ -68,7 +69,6 @@ export type SharedStepDetails = {
   };
   instanceTestConnectResults: Stateful<IInstanceConnectionResV1[]>;
   isDisabledForDifferenceSql: Stateful<boolean>;
-  isSupportFileModeExecuteSql: Stateful<boolean>;
   sqlStatementTabActiveKey: Stateful<string>;
 
   resetAllSharedData: () => void;

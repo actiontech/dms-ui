@@ -24,7 +24,8 @@ const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
   baseFormValues,
   sqlAuditInfoFormValues,
   auditAction,
-  ...props
+  handleInstanceNameChange,
+  ...sharedStepDetail
 }) => {
   const { t } = useTranslation();
   const syncDataReady = useRef(false);
@@ -32,14 +33,17 @@ const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
   const [sqlAuditInfoForm] = useForm<SqlAuditInfoFormFields>();
 
   const closeHandle = () => {
-    if (props.isAuditing.value) {
+    if (sharedStepDetail.isAuditing.value) {
       return;
     }
 
     onClose();
   };
 
-  const internalSubmit: SqlAuditInfoFormProps['auditAction'] = (values) => {
+  const internalSubmit: SqlAuditInfoFormProps['auditAction'] = async (
+    values
+  ) => {
+    await baseInfoForm.validateFields();
     return auditAction(values, baseInfoForm.getFieldsValue()).finally(() => {
       onClose();
     });
@@ -65,7 +69,7 @@ const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
       width={735}
       noBodyPadding
     >
-      <Spin spinning={props.isAuditing.value}>
+      <Spin spinning={sharedStepDetail.isAuditing.value}>
         <UpdateBaseInfoFormStyleWrapper form={baseInfoForm}>
           <UpdateWorkflowFormTitleStyleWrapper>
             {t('execWorkflow.create.form.baseInfo.title')}
@@ -83,7 +87,11 @@ const UpdateFormDrawer: React.FC<UpdateFormDrawerProps> = ({
           <UpdateWorkflowFormTitleStyleWrapper>
             {t('execWorkflow.create.form.sqlInfo.title')}
           </UpdateWorkflowFormTitleStyleWrapper>
-          <SqlAuditInfoFormItem auditAction={internalSubmit} {...props} />
+          <SqlAuditInfoFormItem
+            auditAction={internalSubmit}
+            handleInstanceNameChange={handleInstanceNameChange}
+            {...sharedStepDetail}
+          />
         </UpdateSqlAuditInfoFormStyleWrapper>
       </Spin>
     </BasicDrawer>

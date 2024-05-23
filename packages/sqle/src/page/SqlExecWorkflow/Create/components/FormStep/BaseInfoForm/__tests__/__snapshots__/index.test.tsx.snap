@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test BaseInfoForm should match snapshot 1`] = `
+<Styled(section)
+  className="has-border"
+>
+  <Styled(section)>
+    <FormItemBigTitle>
+      <IconWorkflowCreateTitle
+        color="#c3c6cd"
+      />
+      <span>
+        创建工单
+      </span>
+    </FormItemBigTitle>
+    <BaseInfoFormItem />
+  </Styled(section)>
+</Styled(section)>
+`;

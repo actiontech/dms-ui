@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test UpdateFormDrawer should match snapshot 1`] = `
+<Space
+  className="base-info-form-item-slot"
+>
+  <BasicTag
+    icon={
+      <IconProjectFlag
+        height={12}
+        width={12}
+      />
+    }
+  >
+    default
+  </BasicTag>
+  <BasicTag
+    icon={
+      <IconClock
+        height={12}
+        width={12}
+      />
+    }
+  >
+    2024-05-23
+  </BasicTag>
+  <BasicTag
+    icon={
+      <IconUser
+        height={12}
+        width={12}
+      />
+    }
+  >
+    admin
+  </BasicTag>
+</Space>
+`;

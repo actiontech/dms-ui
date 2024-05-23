@@ -10,10 +10,6 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { superRender } from '../../../../testUtils/customRender';
 import CreateSqlExecWorkflow from '..';
-import {
-  ignoreComponentAutoCreatedListNoKey,
-  ignoreInvalidValueForCSSStyleProperty
-} from '@actiontech/shared/lib/testUtil/common';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import instance from '../../../../testUtils/mockApi/instance';
@@ -22,6 +18,10 @@ import system from '../../../../testUtils/mockApi/system';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('sqle/SqlExecWorkflow/Create', () => {
   const projectName = mockProjectInfo.projectName;
@@ -35,13 +35,16 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   let getAuditTaskSQLsSpy: jest.SpyInstance;
   let auditTaskGroupId: jest.SpyInstance;
   let requestGetModalStatus: jest.SpyInstance;
+  let batchCheckInstanceIsConnectableByName: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<CreateSqlExecWorkflow />);
   };
 
-  ignoreInvalidValueForCSSStyleProperty();
-  ignoreComponentAutoCreatedListNoKey();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED,
+    UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE
+  ]);
 
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
@@ -60,6 +63,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     getAuditTaskSQLsSpy = task.getAuditTaskSQLs();
     auditTaskGroupId = execWorkflow.auditTaskGroupId();
     requestGetModalStatus = system.getSystemModuleStatus();
+    batchCheckInstanceIsConnectableByName =
+      instance.batchCheckInstanceIsConnectableByName();
   });
 
   afterEach(() => {
@@ -83,10 +88,17 @@ describe('sqle/SqlExecWorkflow/Create', () => {
 
   it('render reset form', async () => {
     const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
 
     // workflow_subject
     const workflowName = getBySelector('#workflow_subject', baseElement);
     fireEvent.change(workflowName, {
+      target: {
+        value: 'workflow_name_1'
+      }
+    });
+
+    fireEvent.change(getBySelector('#desc'), {
       target: {
         value: 'workflow_name_1'
       }
@@ -113,9 +125,45 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     // change upload type
     fireEvent.click(screen.getByText('上传SQL文件'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(baseElement).toMatchSnapshot();
+
+    expect(
+      screen.getByText('测试数据库连通性').closest('button')
+    ).toBeDisabled();
+
+    // select instance
+    const instanceNameEle = getAllBySelector(
+      '#databaseInfo_0_instanceName',
+      baseElement
+    )[0];
+    fireEvent.mouseDown(instanceNameEle);
+    const instanceNameLabel = `${instanceTipsMockData[0].instance_name}(${instanceTipsMockData[0].host}:${instanceTipsMockData[0].port})`;
+    expect(screen.getByText(instanceNameLabel)).toBeInTheDocument();
+    fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(
+      screen.getByText('测试数据库连通性').closest('button')
+    ).not.toBeDisabled();
+
+    fireEvent.click(screen.getByText('测试数据库连通性'));
+    expect(batchCheckInstanceIsConnectableByName).toHaveBeenCalledTimes(1);
+    expect(batchCheckInstanceIsConnectableByName).toHaveBeenNthCalledWith(1, {
+      project_name: projectName,
+      instances: [{ name: instanceTipsMockData[0].instance_name }]
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(screen.queryByText('数据库连通性测试成功')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('重 置'));
+
+    expect(screen.queryByText('数据库连通性测试成功')).not.toBeInTheDocument();
+
+    expect(getBySelector('#workflow_subject')).toHaveValue('');
+    expect(getBySelector('#desc')).toHaveValue('');
+
+    expect(getAllBySelector('.ant-select-disabled', baseElement).length).toBe(
+      1
+    );
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -130,7 +178,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
         getInstanceTipListV1FunctionalModuleEnum.create_workflow,
       project_name: projectName
     });
-    expect(baseElement).toMatchSnapshot();
 
     const instanceNameEle = getBySelector(
       '#databaseInfo_0_instanceName',

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SqlAuditInfoForm should match snapshot 1`] = `
+<Styled(section)>
+  <FormItemSubTitle>
+    审核SQL语句信息
+  </FormItemSubTitle>
+  <SqlAuditInfoFormItem
+    auditAction={[MockFunction]}
+    dbSourceInfoCollection={
+      {
+        "set": [MockFunction],
+        "value": {
+          "0": {},
+        },
+      }
+    }
+    handleInstanceNameChange={[MockFunction]}
+    instanceTestConnectResults={
+      {
+        "set": [MockFunction],
+        "value": [],
+      }
+    }
+    isAuditing={
+      {
+        "set": [MockFunction],
+        "value": false,
+      }
+    }
+    isDisabledForDifferenceSql={
+      {
+        "set": [MockFunction],
+        "value": false,
+      }
+    }
+    resetAllSharedData={[MockFunction]}
+    sqlStatementTabActiveKey={
+      {
+        "set": [MockFunction],
+        "value": "1",
+      }
+    }
+  />
+</Styled(section)>
+`;
