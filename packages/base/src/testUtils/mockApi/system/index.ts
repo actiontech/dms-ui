@@ -297,7 +297,8 @@ class MockSystemApi implements MockSpyApy {
         data: {
           workflow_expired_hours: 7211,
           url: 'http://demo.com',
-          operation_record_expired_hours: 3161
+          operation_record_expired_hours: 3161,
+          cb_operation_logs_expired_hours: 2160
         }
       })
     );
