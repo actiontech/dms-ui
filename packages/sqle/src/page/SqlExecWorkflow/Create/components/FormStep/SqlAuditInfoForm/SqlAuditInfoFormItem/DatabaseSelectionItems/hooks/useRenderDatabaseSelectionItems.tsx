@@ -42,7 +42,10 @@ const useRenderDatabaseSelectionItems = ({
       });
   };
 
-  const updateRuleTemplateName = (key: string, instanceName: string) => {
+  const updateRuleTemplateNameAndDbType = (
+    key: string,
+    instanceName: string
+  ) => {
     instance
       .getInstanceV2({ instance_name: instanceName, project_name: projectName })
       .then((res) => {
@@ -60,10 +63,14 @@ const useRenderDatabaseSelectionItems = ({
       dbSourceInfoCollection.set(key, {
         instanceName,
         schemaName: undefined,
-        getSchemaLoading: true
+        getSchemaLoading: true,
+        schemaList: [],
+        ruleTemplate: undefined,
+        dbType: undefined,
+        testConnectResult: undefined
       });
       updateSchemaList(key, instanceName);
-      updateRuleTemplateName(key, instanceName);
+      updateRuleTemplateNameAndDbType(key, instanceName);
       sqlStatementTabActiveKey.set(key);
     }
   };

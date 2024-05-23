@@ -22,12 +22,20 @@ export type WorkflowBaseInfoFormFields = Pick<
 export type SqlStatementFields = Record<
   keyof typeof AuditTaskResV1SqlSourceEnum,
   string | any
->;
+> & {
+  exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum;
+};
+
+export type CreateWorkflowDatabaseInfo = Array<{
+  key: string;
+  instanceName?: string;
+  schemaName?: string;
+}>;
 
 export type SqlAuditInfoFormFields = {
   isSameSqlForAll: boolean;
   databaseInfo: Array<DatabaseSelectionFields>;
-  executeMode: CreateAuditTasksGroupReqV1ExecModeEnum;
+
   [key: string]:
     | SqlStatementFields
     | AuditTaskResV1SqlSourceEnum
@@ -49,7 +57,6 @@ export type DataSourceSchemaCollection = Record<
     dbType?: string;
     ruleTemplate?: IRuleTemplateV2;
     testConnectResult?: IInstanceConnectionResV1;
-    delete?: boolean;
   }
 >;
 
@@ -61,7 +68,7 @@ export type SharedStepDetails = {
   };
   instanceTestConnectResults: Stateful<IInstanceConnectionResV1[]>;
   isDisabledForDifferenceSql: Stateful<boolean>;
-  isSupportFileModeExecuteSQL: Stateful<boolean>;
+  isSupportFileModeExecuteSql: Stateful<boolean>;
   sqlStatementTabActiveKey: Stateful<string>;
 
   resetAllSharedData: () => void;

@@ -32,6 +32,7 @@ export { default as ToggleTokens } from './components/ToggleTokens';
 export { default as SQLRenderer } from './components/SQLRenderer';
 export { default as ModeSwitcher } from './components/ModeSwitcher';
 export { default as CustomSegmentedFilter } from './components/CustomSegmentedFilter';
+export { default as LazyLoadComponent } from './components/LazyLoadComponent';
 
 export { default as Copy } from './utils/Copy';
 export { default as Download } from './utils/Download';

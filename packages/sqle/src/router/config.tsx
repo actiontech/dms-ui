@@ -162,14 +162,23 @@ const UpdateWorkflowTemplate = React.lazy(
 const SQLFileStatementOverview = React.lazy(
   () => import('../page/Order/AuditDetail/SQLFileStatementOverview')
 );
+const WorkflowSQLFileStatementOverview = React.lazy(
+  () =>
+    import(
+      '../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SQLFileStatementOverview'
+    )
+);
 // #endif
 
 //workflow
-const SQLExecWorkflowList = React.lazy(
+const SqlExecWorkflowList = React.lazy(
   () => import('../page/SqlExecWorkflow/List')
 );
-const CreateSQLExecWorkflow = React.lazy(
+const CreateSqlExecWorkflow = React.lazy(
   () => import('../page/SqlExecWorkflow/Create')
+);
+const SqlWorkflowDetail = React.lazy(
+  () => import('../page/SqlExecWorkflow/Detail')
 );
 
 //sqle global page
@@ -207,12 +216,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     children: [
       {
         index: true,
-        element: <SQLExecWorkflowList />,
+        element: <SqlExecWorkflowList />,
         key: 'sqlExecWorkflowList'
       },
       {
         path: 'create',
-        element: <CreateSQLExecWorkflow />,
+        element: <CreateSqlExecWorkflow />,
         key: 'createSQLExecWorkflow'
       },
       {
@@ -221,15 +230,15 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'orderAnalyze'
       },
       {
-        path: ':orderId',
-        element: <OrderDetail />,
-        key: 'orderDetail'
+        path: ':workflowId',
+        element: <SqlWorkflowDetail />,
+        key: 'workflowDetail'
       },
       // #if [ee]
       {
         path: ':taskId/files/:fileId/sqls',
-        element: <SQLFileStatementOverview />,
-        key: 'SQLFileStatementOverview'
+        element: <WorkflowSQLFileStatementOverview />,
+        key: 'WorkflowSQLFileStatementOverview'
       }
       // #endif
     ]

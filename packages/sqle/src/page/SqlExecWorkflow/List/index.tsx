@@ -40,8 +40,11 @@ import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/s
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { TableRowSelection } from 'antd/es/table/interface';
 import { SqlExecWorkflowListTableFilterParam } from './index.type';
-import { WorkflowStatusDictionary } from './index.data';
 import { IconMinus } from '../../../icon/SqlExecWorkflow';
+import {
+  orderStatusDictionary,
+  translateDictionaryI18nLabel
+} from '../../../hooks/useStaticStatus/index.data';
 
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -259,7 +262,7 @@ const SqlExecWorkflowList: React.FC = () => {
         <CustomSegmentedFilter
           value={filterStatus}
           onChange={setFilterStatus}
-          labelDictionary={WorkflowStatusDictionary}
+          labelDictionary={translateDictionaryI18nLabel(orderStatusDictionary)}
           options={Object.keys(getWorkflowsV1FilterStatusEnum)}
           withAll
         />

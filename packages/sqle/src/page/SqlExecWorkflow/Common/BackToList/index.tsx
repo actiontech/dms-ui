@@ -4,7 +4,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-const BackToList: React.FC<{ isAuditing: boolean }> = ({ isAuditing }) => {
+const BackToList: React.FC<{ isAuditing?: boolean }> = ({ isAuditing }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   return (
