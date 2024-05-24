@@ -545,17 +545,17 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
       },
       {
         "element": <div>
-<<<<<<< HEAD
           cloudBeaver
         </div>,
         "key": "cloudBeaver",
         "path": ":projectID/cloud-beaver",
-=======
+      },
+      {
+        "element": <div>
           dataMaskRuleOverview
         </div>,
         "key": "dataMaskRuleOverview",
         "path": ":projectID/data-mask-rule-overview",
->>>>>>> e35b46d63fc21f45309d3c91065d907ce133fb12
       },
     ],
     "element": <UNDEFINED />,
