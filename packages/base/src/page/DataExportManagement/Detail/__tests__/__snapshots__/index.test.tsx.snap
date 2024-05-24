@@ -138,7 +138,7 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
                 class="workflow-base-info-status"
               >
                 <span
-                  class="icon-order-status-wrapper css-u3jcp4"
+                  class="icon-workflow-status-wrapper css-u3jcp4"
                 >
                   <svg
                     fill="none"
@@ -810,7 +810,7 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
                         class="ant-steps-icon"
                       >
                         <span
-                          class="icon-failed-order-step css-u3jcp4"
+                          class="icon-failed-workflow-step css-u3jcp4"
                         >
                           <svg
                             fill="none"
@@ -1105,7 +1105,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                 class="workflow-base-info-status"
               >
                 <span
-                  class="icon-order-status-wrapper css-u3jcp4"
+                  class="icon-workflow-status-wrapper css-u3jcp4"
                 >
                   <svg
                     fill="none"
@@ -3512,7 +3512,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
                         class="ant-steps-icon"
                       >
                         <span
-                          class="icon-failed-order-step css-u3jcp4"
+                          class="icon-failed-workflow-step css-u3jcp4"
                         >
                           <svg
                             fill="none"
@@ -3783,7 +3783,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                 class="workflow-base-info-status"
               >
                 <span
-                  class="icon-order-status-wrapper css-u3jcp4"
+                  class="icon-workflow-status-wrapper css-u3jcp4"
                 >
                   <svg
                     fill="none"
@@ -6190,7 +6190,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
                         class="ant-steps-icon"
                       >
                         <span
-                          class="icon-failed-order-step css-u3jcp4"
+                          class="icon-failed-workflow-step css-u3jcp4"
                         >
                           <svg
                             fill="none"
@@ -6461,7 +6461,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                 class="workflow-base-info-status"
               >
                 <span
-                  class="icon-order-status-wrapper css-u3jcp4"
+                  class="icon-workflow-status-wrapper css-u3jcp4"
                 >
                   <svg
                     fill="none"
@@ -8868,7 +8868,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
                         class="ant-steps-icon"
                       >
                         <span
-                          class="icon-failed-order-step css-u3jcp4"
+                          class="icon-failed-workflow-step css-u3jcp4"
                         >
                           <svg
                             fill="none"
@@ -9139,7 +9139,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                 class="workflow-base-info-status"
               >
                 <span
-                  class="icon-order-status-wrapper css-u3jcp4"
+                  class="icon-workflow-status-wrapper css-u3jcp4"
                 >
                   <svg
                     fill="none"
@@ -11578,7 +11578,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                         class="ant-steps-icon"
                       >
                         <span
-                          class="icon-failed-order-step css-u3jcp4"
+                          class="icon-failed-workflow-step css-u3jcp4"
                         >
                           <svg
                             fill="none"
@@ -11669,7 +11669,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
                         class="ant-steps-icon"
                       >
                         <span
-                          class="icon-failed-order-step css-u3jcp4"
+                          class="icon-failed-workflow-step css-u3jcp4"
                         >
                           <svg
                             fill="none"
