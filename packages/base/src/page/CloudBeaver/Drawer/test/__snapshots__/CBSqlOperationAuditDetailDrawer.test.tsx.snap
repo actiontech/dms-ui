@@ -178,7 +178,7 @@ exports[`base/CloudBeaver/CBSqlOperationAuditDetailDrawer should match snap shot
                     class="wrapper-cont"
                   >
                     <input
-                      class="custom-monaco-editor css-baixa9"
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
                       height="90%"
                       language="sql"
                       options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"

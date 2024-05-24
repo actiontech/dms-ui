@@ -13,7 +13,6 @@ import {
   ISource,
   ISqlManage
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import RenderSQL from '../../../../components/RenderSQL';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from '../../../../components/AuditResultMessage';
 import {
@@ -22,7 +21,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Link } from 'react-router-dom';
 import { sourceDictionary } from './hooks/useStaticStatus';
-import { AvatarCom, EditText } from '@actiontech/shared';
+import { AvatarCom, EditText, SQLRenderer } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { Avatar, Space } from 'antd';
 import StatusTag from './StatusTag';
@@ -182,12 +181,13 @@ const SqlManagementColumn: (
       render: (sql_fingerprint, record) => {
         if (!sql_fingerprint) return null;
         return (
-          <RenderSQL
+          <SQLRenderer.Snippet
             onClick={() =>
               openModal(ModalName.View_Audit_Result_Drawer, record)
             }
             sql={sql_fingerprint}
             rows={2}
+            showCopyIcon
           />
         );
       }
@@ -199,13 +199,14 @@ const SqlManagementColumn: (
       render: (sql, record) => {
         if (!sql) return null;
         return (
-          <RenderSQL
+          <SQLRenderer.Snippet
             onClick={() =>
               openModal(ModalName.View_Audit_Result_Drawer, record)
             }
             tooltip={false}
             sql={sql}
             rows={2}
+            showCopyIcon
           />
         );
       }

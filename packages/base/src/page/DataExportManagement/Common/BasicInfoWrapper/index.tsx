@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import { BasicInfoWrapperProps } from './index.type';
 import { EmptyBox } from '@actiontech/shared';
-import { IconOrderStatusWrapper } from 'sqle/src/icon/Order';
 import { DataExportStatusDictionary } from '../index.data';
 import { BasicInfoStyleWrapper } from './style';
+import { IconWorkflowStatusWrapper } from 'sqle/src/icon/SqlExecWorkflow';
 
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   title,
@@ -20,7 +20,7 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
     >
       <EmptyBox if={!!status}>
         <div className="workflow-base-info-status">
-          <IconOrderStatusWrapper />
+          <IconWorkflowStatusWrapper />
           <span className="workflow-base-info-status-text">
             {status && DataExportStatusDictionary[status]}
           </span>

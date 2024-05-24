@@ -1,24 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-
 import { DetailComStyleWrapper } from './style';
 import { SyncOutlined } from '@ant-design/icons';
 import { IconTagBookMark } from '@actiontech/shared/lib/Icon/common';
 import { ColumnType, TableProps } from 'antd/es/table';
-import { BasicTable } from '@actiontech/shared';
-
+import { BasicTable, SQLRenderer } from '@actiontech/shared';
 import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { PlanDetailUrlParams } from '../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
-
 import { IAuditPlanSQLHeadV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { AuditPlanSQLHeadV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { useTableRequestParams } from '@actiontech/shared/lib/components/ActiontechTable';
-
-import RenderSQL from '../../../../components/RenderSQL';
 
 const DetailCom = () => {
   const { t } = useTranslation();
@@ -77,7 +72,7 @@ const DetailCom = () => {
               if (item.type === AuditPlanSQLHeadV1TypeEnum.sql) {
                 return (
                   <div className="sql-cont-width" style={{ width: 500 }}>
-                    <RenderSQL sql={text} />
+                    <SQLRenderer.Snippet showCopyIcon sql={text} />
                   </div>
                 );
               }

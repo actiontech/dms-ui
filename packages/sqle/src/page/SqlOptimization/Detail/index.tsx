@@ -1,4 +1,10 @@
-import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
+import {
+  PageHeader,
+  BasicButton,
+  EmptyBox,
+  HighlightCode,
+  SQLRenderer
+} from '@actiontech/shared';
 import { Spin, Typography, Row, Col } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
@@ -13,9 +19,7 @@ import {
   TriggeredRuleStyleWrapper
 } from '../style';
 import CardWrapper from '../../../components/CardWrapper';
-import HighlightCode from '../../../utils/HighlightCode';
 import CopyIcon from '@actiontech/shared/lib/components/CopyIcon';
-import RenderSQL from '../../../components/RenderSQL';
 import CodeBlock from '../components/CodeBlock';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';
@@ -132,7 +136,12 @@ const OptimizationDetail = () => {
                     </Typography.Link>
                     <SqlOptimizationSqlBlockStyleWrapper>
                       {queriesStr?.map((item, index) => (
-                        <RenderSQL sql={item} key={index} rows={1} />
+                        <SQLRenderer.Snippet
+                          showCopyIcon
+                          sql={item}
+                          key={index}
+                          rows={1}
+                        />
                       ))}
                     </SqlOptimizationSqlBlockStyleWrapper>
                   </TriggeredRuleStyleWrapper>

@@ -53,7 +53,7 @@ exports[`sqle/SqlOptimization/RecommendIndex render snap shot when recommendatio
       class="css-1m486f3"
     >
       <div
-        class="css-4mzo37"
+        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
       >
         <div
           class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
@@ -74,7 +74,7 @@ exports[`sqle/SqlOptimization/RecommendIndex render snap shot when recommendatio
           </span>
         </div>
         <div
-          class="css-1s8kb8e"
+          class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
         >
           <span
             aria-label="copy"

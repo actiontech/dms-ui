@@ -18,12 +18,12 @@ import useDatabaseType from '../../../../hooks/useDatabaseType';
 import useInstance from '../../../../hooks/useInstance';
 import SQLStatementForm from '../SQLStatementForm';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
+import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { FormSubmitStatusContext } from '..';
 import {
   FormatLanguageSupport,
   formatterSQL
-} from '../../../../utils/FormatterSQL';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-import { FormSubmitStatusContext } from '..';
+} from '@actiontech/shared/lib/utils/FormatterSQL';
 
 const SQLInfoFormItem = ({
   form,

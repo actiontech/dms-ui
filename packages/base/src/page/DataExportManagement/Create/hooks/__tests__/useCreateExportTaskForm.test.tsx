@@ -12,12 +12,12 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCreateDataExportReduxManage } from '../../testUtils/mockUseCreateDataExportReduxManage';
 import dbServices from '../../../../../testUtils/mockApi/dbServices';
 import { DBServicesList } from '../../../../../testUtils/mockApi/global/data';
-import { formatterSQL } from 'sqle/src/utils/FormatterSQL';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import dataExport from '../../../../../testUtils/mockApi/dataExport';
 import { AddDataExportTaskResponseData } from '../../../../../testUtils/mockApi/dataExport/data';
 import { useState } from 'react';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 describe('test base/DataExport/Create/hooks/useCreateExportTaskForm', () => {
   const CustomCom = ({

@@ -7,8 +7,6 @@ import TableTopList, {
   ITableTopList
 } from '../../../../components/ChartCom/TableTopList';
 import { AvatarCom, BasicButton } from '@actiontech/shared';
-import OrderStatus from '../../../Order/List/components/OrderStatus';
-import { IconOrderId } from '../../../../icon/Order';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
@@ -16,6 +14,8 @@ import { IRiskWorkflow } from '@actiontech/shared/lib/api/sqle/service/common';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
+import { IconWorkflowId } from '../../../../icon/SqlExecWorkflow';
 
 const OrderRiskList = () => {
   const { t } = useTranslation();
@@ -48,9 +48,9 @@ const OrderRiskList = () => {
           if (!name) return '-';
           return (
             <TableColumnWithIconStyleWrapper>
-              <IconOrderId />
+              <IconWorkflowId />
               <Link
-                to={`/sqle/project/${projectID}/order/${record.workflow_id}`}
+                to={`/sqle/project/${projectID}/exec-workflow/${record.workflow_id}`}
               >
                 {name}
               </Link>
@@ -63,7 +63,7 @@ const OrderRiskList = () => {
         title: t('projectManage.projectOverview.orderRisk.tableColumn.status'),
         render: (status: string) => {
           return (
-            <OrderStatus status={status as WorkflowDetailResV1StatusEnum} />
+            <WorkflowStatus status={status as WorkflowDetailResV1StatusEnum} />
           );
         }
       },
@@ -88,7 +88,7 @@ const OrderRiskList = () => {
   };
 
   const onGetMore = () => {
-    navigate(`/sqle/project/${projectID}/order`);
+    navigate(`/sqle/project/${projectID}/exec-workflow`);
   };
 
   return (

@@ -85,7 +85,7 @@ describe('test base/Home/StepItems', () => {
     fireEvent.click(screen.getByText('发起SQL工单'));
     expect(navigateSpy).toHaveBeenCalledTimes(12);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${projectID}/order/create`
+      `/sqle/project/${projectID}/exec-workflow/create`
     );
 
     fireEvent.click(screen.getByText('SQLE操作记录'));

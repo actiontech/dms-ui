@@ -3,7 +3,7 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { WhitelistMatchTypeLabel } from '../Drawer/WhitelistForm';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import RenderSQL from '../../../components/RenderSQL';
+import { SQLRenderer } from '@actiontech/shared';
 
 export const WhitelistColumn =
   (): ActiontechTableColumn<IAuditWhitelistResV1> => {
@@ -14,7 +14,7 @@ export const WhitelistColumn =
         width: 600,
         render: (sql?: string) => {
           if (!!sql) {
-            return <RenderSQL sql={sql} rows={2} />;
+            return <SQLRenderer.Snippet sql={sql} rows={2} showCopyIcon />;
           }
           return null;
         }

@@ -307,13 +307,13 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "icon": <AntdIcon
           component={[Function]}
         />,
-        "key": "sqle/project/projectID/order",
+        "key": "sqle/project/projectID/exec-workflow",
         "label": <Link
-          to="/sqle/project/600300/order"
+          to="/sqle/project/600300/exec-workflow"
         >
           SQL工单
         </Link>,
-        "structKey": "sql-order",
+        "structKey": "exec-workflow",
       },
     ],
     "label": "SQL上线",
@@ -543,13 +543,13 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "icon": <AntdIcon
           component={[Function]}
         />,
-        "key": "sqle/project/projectID/order",
+        "key": "sqle/project/projectID/exec-workflow",
         "label": <Link
-          to="/sqle/project/600300/order"
+          to="/sqle/project/600300/exec-workflow"
         >
           SQL工单
         </Link>,
-        "structKey": "sql-order",
+        "structKey": "exec-workflow",
       },
     ],
     "label": "SQL上线",

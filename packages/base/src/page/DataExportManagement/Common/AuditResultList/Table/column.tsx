@@ -1,12 +1,12 @@
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../../locale';
-import RenderSQL from 'sqle/src/components/RenderSQL';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
 import {
   IAuditSQLResult,
   IListDataExportTaskSQL
 } from '@actiontech/shared/lib/api/base/service/common';
+import { SQLRenderer } from '@actiontech/shared';
 
 export const AuditResultForCreateOrderColumn = (
   onClickAuditResult: (record: IListDataExportTaskSQL) => void
@@ -23,11 +23,12 @@ export const AuditResultForCreateOrderColumn = (
       className: 'audit-result-exec-sql-column',
       render: (sql = '', record) => {
         return (
-          <RenderSQL
+          <SQLRenderer.Snippet
             sql={sql}
             rows={1}
             tooltip={false}
             onClick={() => onClickAuditResult(record)}
+            showCopyIcon
           />
         );
       }

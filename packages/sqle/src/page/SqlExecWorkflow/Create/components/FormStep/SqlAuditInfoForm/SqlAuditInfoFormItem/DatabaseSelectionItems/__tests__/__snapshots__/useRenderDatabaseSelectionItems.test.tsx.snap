@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test useRenderDatabaseSelectionItems should render rule template display correctly with is_global_rule_template is equal false 1`] = `
+<BasicToolTips
+  title={
+    <Link
+      target="_blank"
+      to="/sqle/project/700300/rule/template/detail/template1/mysql"
+    >
+      规则模板
+      : 
+      template1
+    </Link>
+  }
+>
+  <BasicButton
+    className="data-source-row-rule-template"
+  >
+    <IconFillListActive />
+  </BasicButton>
+</BasicToolTips>
+`;
+
+exports[`test useRenderDatabaseSelectionItems should render rule template display correctly with is_global_rule_template is equal true 1`] = `
+<BasicToolTips
+  title={
+    <Link
+      target="_blank"
+      to="/sqle/rule-manager/global-detail/template1/mysql"
+    >
+      规则模板
+      : 
+      template1
+    </Link>
+  }
+>
+  <BasicButton
+    className="data-source-row-rule-template"
+  >
+    <IconFillListActive />
+  </BasicButton>
+</BasicToolTips>
+`;

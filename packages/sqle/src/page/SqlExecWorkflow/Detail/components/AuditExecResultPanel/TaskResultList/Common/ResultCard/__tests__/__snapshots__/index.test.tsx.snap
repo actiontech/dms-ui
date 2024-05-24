@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test ExecWorkflow/ResultCard should match snapshot 1`] = `
+<ExecModeController
+  executeMode="sqls"
+  sqlComponent={
+    <SqlMode
+      onUpdateDescription={[MockFunction]}
+      projectName="default"
+      taskId="123"
+    />
+  }
+  sqlFileComponent={
+    <FileMode
+      onUpdateDescription={[MockFunction]}
+      projectName="default"
+      taskId="123"
+    />
+  }
+/>
+`;
+
+exports[`test ExecWorkflow/ResultCard should match snapshot 2`] = `
+<ExecModeController
+  executeMode="sql_file"
+  sqlComponent={
+    <SqlMode
+      projectID="300200"
+      taskId="123"
+    />
+  }
+  sqlFileComponent={
+    <FileMode
+      projectID="300200"
+      taskId="123"
+    />
+  }
+/>
+`;

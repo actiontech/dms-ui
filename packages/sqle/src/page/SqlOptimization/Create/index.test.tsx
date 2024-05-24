@@ -16,10 +16,10 @@ import {
   instanceInfoMockData,
   instanceTipsMockData
 } from '../../../testUtils/mockApi/instance/data';
-import { formatterSQL } from '../../../utils/FormatterSQL';
 import sqlOptimization from '../../../testUtils/mockApi/sqlOptimization';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
+import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 jest.mock('react-router-dom', () => {
   return {
