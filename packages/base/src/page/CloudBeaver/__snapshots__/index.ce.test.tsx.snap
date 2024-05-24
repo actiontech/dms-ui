@@ -1306,7 +1306,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                   class="title"
                 >
                   Action 
-                  SQLE
+                  DMS
                 </div>
                 <p
                   class="cont-tip"
@@ -1410,7 +1410,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                   class="title"
                 >
                   Action 
-                  SQLE
+                  DMS
                 </div>
                 <p
                   class="cont-tip"
@@ -2727,7 +2727,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                   class="title"
                 >
                   Action 
-                  SQLE
+                  DMS
                 </div>
                 <p
                   class="cont-tip"
@@ -2831,7 +2831,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                   class="title"
                 >
                   Action 
-                  SQLE
+                  DMS
                 </div>
                 <p
                   class="cont-tip"
@@ -4085,7 +4085,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                   class="title"
                 >
                   Action 
-                  SQLE
+                  DMS
                 </div>
                 <p
                   class="cont-tip"
@@ -4189,7 +4189,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                   class="title"
                 >
                   Action 
-                  SQLE
+                  DMS
                 </div>
                 <p
                   class="cont-tip"

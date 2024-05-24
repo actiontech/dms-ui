@@ -79,7 +79,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       <h2
                         class="ant-typography css-dev-only-do-not-override-txh9fw"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -129,6 +129,10 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             dms-ce 081d27e60f
                           </article>
                         </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        />
                         <div
                           class="ant-space-item"
                         >
@@ -319,7 +323,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       <h2
                         class="ant-typography css-dev-only-do-not-override-txh9fw"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -358,6 +362,10 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                             feature/add-make-command   ba9c9c5
                           </article>
                         </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        />
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 8px;"
