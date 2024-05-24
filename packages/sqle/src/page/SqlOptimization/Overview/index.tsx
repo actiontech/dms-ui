@@ -206,6 +206,9 @@ const OptimizationOverview = () => {
             setSqlListLoading={setSqlListLoading}
             refresh={refreshSqlList}
             dbType={optimizationRecord?.db_type ?? ''}
+            disableDetailButton={
+              optimizationRecord?.status === SqlOptimizationStatusEnum.failed
+            }
           />
           <section className="last-title">
             <Typography.Title level={5} className="title-wrap">

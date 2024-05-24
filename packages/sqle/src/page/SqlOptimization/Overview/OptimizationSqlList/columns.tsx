@@ -72,7 +72,8 @@ export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizati
   };
 
 export const SqlOptimizationListActions = (
-  gotoDetailPage: (record?: IOptimizationSQLIncludeOrder) => void
+  gotoDetailPage: (record?: IOptimizationSQLIncludeOrder) => void,
+  disableDetailButton: boolean
 ): {
   buttons: ActiontechTableActionMeta<IOptimizationSQLIncludeOrder>[];
 } => ({
@@ -84,7 +85,7 @@ export const SqlOptimizationListActions = (
         onClick: () => {
           gotoDetailPage(record);
         },
-        disabled: !!record?.number_of_syntax_error
+        disabled: !!record?.number_of_syntax_error || disableDetailButton
       })
     }
   ]
