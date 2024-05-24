@@ -47,7 +47,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 3`] 
       class="workflow-base-info-status"
     >
       <span
-        class="icon-order-status-wrapper css-u3jcp4"
+        class="icon-workflow-status-wrapper css-u3jcp4"
       >
         <svg
           fill="none"
@@ -142,7 +142,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 4`] 
       class="workflow-base-info-status"
     >
       <span
-        class="icon-order-status-wrapper css-u3jcp4"
+        class="icon-workflow-status-wrapper css-u3jcp4"
       >
         <svg
           fill="none"
@@ -237,7 +237,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 5`] 
       class="workflow-base-info-status"
     >
       <span
-        class="icon-order-status-wrapper css-u3jcp4"
+        class="icon-workflow-status-wrapper css-u3jcp4"
       >
         <svg
           fill="none"
@@ -332,7 +332,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 6`] 
       class="workflow-base-info-status"
     >
       <span
-        class="icon-order-status-wrapper css-u3jcp4"
+        class="icon-workflow-status-wrapper css-u3jcp4"
       >
         <svg
           fill="none"
@@ -427,7 +427,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 7`] 
       class="workflow-base-info-status"
     >
       <span
-        class="icon-order-status-wrapper css-u3jcp4"
+        class="icon-workflow-status-wrapper css-u3jcp4"
       >
         <svg
           fill="none"
@@ -522,7 +522,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 8`] 
       class="workflow-base-info-status"
     >
       <span
-        class="icon-order-status-wrapper css-u3jcp4"
+        class="icon-workflow-status-wrapper css-u3jcp4"
       >
         <svg
           fill="none"
@@ -617,7 +617,7 @@ exports[`test base/DataExport/Common/BasicInfoWrapper should match snapshot 9`] 
       class="workflow-base-info-status"
     >
       <span
-        class="icon-order-status-wrapper css-u3jcp4"
+        class="icon-workflow-status-wrapper css-u3jcp4"
       >
         <svg
           fill="none"

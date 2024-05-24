@@ -21,7 +21,8 @@ import {
 
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
-  updateTaskRecordCount
+  updateTaskRecordCount,
+  showTaskTab = true
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -68,17 +69,21 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   return (
     <AuditResultForCreateWorkflowStyleWrapper>
       <SegmentedRowStyleWrapper justify={'space-between'}>
-        <BasicSegmented
-          value={currentTaskID}
-          onChange={(v) => {
-            handleChangeCurrentTask(v as string);
-          }}
-          options={tasks.map((v) => ({
-            label: generateCurrentTaskLabel(v.instance_name, v.audit_level),
-            value: !!v?.task_id ? `${v.task_id}` : '',
-            key: v.task_id
-          }))}
-        />
+        {showTaskTab ? (
+          <BasicSegmented
+            value={currentTaskID}
+            onChange={(v) => {
+              handleChangeCurrentTask(v as string);
+            }}
+            options={tasks.map((v) => ({
+              label: generateCurrentTaskLabel(v.instance_name, v.audit_level),
+              value: !!v?.task_id ? `${v.task_id}` : '',
+              key: v.task_id
+            }))}
+          />
+        ) : (
+          <div />
+        )}
 
         <Space size={4}>
           <ToggleButtonStyleWrapper
