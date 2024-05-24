@@ -374,6 +374,8 @@ export interface ICreateAuditPlanReqV1 {
 export interface ICreateAuditTaskReqV1 {
   exec_mode?: CreateAuditTaskReqV1ExecModeEnum;
 
+  file_order_method?: string;
+
   instance_name?: string;
 
   instance_schema?: string;
@@ -383,6 +385,8 @@ export interface ICreateAuditTaskReqV1 {
 
 export interface ICreateAuditTasksGroupReqV1 {
   exec_mode?: CreateAuditTasksGroupReqV1ExecModeEnum;
+
+  file_order_method?: string;
 
   instances?: IInstanceForCreatingTask[];
 }
@@ -571,6 +575,12 @@ export interface IFeishuConfigurationV1 {
   app_id?: string;
 
   is_feishu_notification_enabled?: boolean;
+}
+
+export interface IFileToSort {
+  file_id?: number;
+
+  new_index?: number;
 }
 
 export interface IFullSyncAuditPlanSQLsReqV1 {
@@ -1091,6 +1101,14 @@ export interface IGetSqlExecutionFailPercentResV1 {
   code?: number;
 
   data?: ISqlExecutionFailPercent[];
+
+  message?: string;
+}
+
+export interface IGetSqlFileOrderMethodResV1 {
+  code?: number;
+
+  data?: ISqlFileOrderMethodRes;
 
   message?: string;
 }
@@ -1915,6 +1933,16 @@ export interface ISqlExecutionFailPercent {
   percent?: number;
 }
 
+export interface ISqlFileOrderMethod {
+  desc?: string;
+
+  order_method?: string;
+}
+
+export interface ISqlFileOrderMethodRes {
+  methods?: ISqlFileOrderMethod[];
+}
+
 export interface ISqlManage {
   assignees?: string[];
 
@@ -1972,6 +2000,8 @@ export interface IStatisticsAuditedSQLResV1 {
 }
 
 export interface ISystemVariablesResV1 {
+  cb_operation_logs_expired_hours?: number;
+
   operation_record_expired_hours?: number;
 
   url?: string;
@@ -2195,7 +2225,13 @@ export interface IUpdateSQLAuditRecordReqV1 {
   tags?: string[];
 }
 
+export interface IUpdateSqlFileOrderV1Req {
+  files_to_sort?: IFileToSort[];
+}
+
 export interface IUpdateSystemVariablesReqV1 {
+  cb_operation_logs_expired_hours?: number;
+
   operation_record_expired_hours?: number;
 
   url?: string;

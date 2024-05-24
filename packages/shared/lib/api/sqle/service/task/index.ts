@@ -11,6 +11,8 @@ import {
   ICreateAuditTasksV1Return,
   ICreateAndAuditTaskV1Params,
   ICreateAndAuditTaskV1Return,
+  IUpdateSqlFileOrderV1Params,
+  IUpdateSqlFileOrderV1Return,
   IAuditTaskGroupIdV1Params,
   IAuditTaskGroupIdV1Return,
   IGetAuditTaskV1Params,
@@ -27,6 +29,7 @@ import {
   IUpdateAuditTaskSQLsV1Return,
   IGetTaskAnalysisDataParams,
   IGetTaskAnalysisDataReturn,
+  IGetSqlFileOrderMethodV1Return,
   IGetAuditFileListParams,
   IGetAuditFileListReturn,
   IGetAuditFileExecStatisticParams,
@@ -94,12 +97,41 @@ class TaskService extends ServiceBase {
       paramsData.append('input_zip_file', params.input_zip_file as any);
     }
 
+    if (params.exec_mode != undefined) {
+      paramsData.append('exec_mode', params.exec_mode as any);
+    }
+
+    if (params.file_order_method != undefined) {
+      paramsData.append('file_order_method', params.file_order_method as any);
+    }
+
     const project_name = params.project_name;
 
     return this.post<ICreateAndAuditTaskV1Return>(
       `/v1/projects/${project_name}/tasks/audits`,
       paramsData,
       config
+    );
+  }
+
+  public updateSqlFileOrderV1(
+    params: IUpdateSqlFileOrderV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const workflow_id = paramsData.workflow_id;
+    delete paramsData.workflow_id;
+
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    return this.post<IUpdateSqlFileOrderV1Return>(
+      `/v1/projects/${project_name}/workflows/${workflow_id}/tasks/${task_id}/order_file`,
+      paramsData,
+      options
     );
   }
 
@@ -123,6 +155,10 @@ class TaskService extends ServiceBase {
 
     if (params.sql != undefined) {
       paramsData.append('sql', params.sql as any);
+    }
+
+    if (params.file_order_method != undefined) {
+      paramsData.append('file_order_method', params.file_order_method as any);
     }
 
     if (params.input_sql_file != undefined) {
@@ -269,6 +305,14 @@ class TaskService extends ServiceBase {
     return this.get<IGetTaskAnalysisDataReturn>(
       `/v1/tasks/audits/${task_id}/sqls/${number}/analysis`,
       paramsData,
+      options
+    );
+  }
+
+  public getSqlFileOrderMethodV1(options?: AxiosRequestConfig) {
+    return this.get<IGetSqlFileOrderMethodV1Return>(
+      '/v1/tasks/file_order_methods',
+      undefined,
       options
     );
   }
