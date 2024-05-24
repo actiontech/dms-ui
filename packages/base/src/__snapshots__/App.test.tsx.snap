@@ -486,9 +486,9 @@ exports[`App render App when token is existed 1`] = `
             >
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/order"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/exec-workflow"
                 role="menuitem"
-                structkey="sql-order"
+                structkey="exec-workflow"
                 style="padding-left: 24px;"
                 tabindex="-1"
               >
@@ -517,7 +517,7 @@ exports[`App render App when token is existed 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/sqle/project//order"
+                    href="/sqle/project//exec-workflow"
                   >
                     SQL工单
                   </a>
@@ -2900,9 +2900,9 @@ exports[`App render App when user role is not admin 1`] = `
             >
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/order"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/exec-workflow"
                 role="menuitem"
-                structkey="sql-order"
+                structkey="exec-workflow"
                 style="padding-left: 24px;"
                 tabindex="-1"
               >
@@ -2931,7 +2931,7 @@ exports[`App render App when user role is not admin 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/sqle/project//order"
+                    href="/sqle/project//exec-workflow"
                   >
                     SQL工单
                   </a>

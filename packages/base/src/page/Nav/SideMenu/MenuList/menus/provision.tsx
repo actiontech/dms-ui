@@ -72,3 +72,13 @@ export const templateAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   icon: <Icon component={IconTemplateAudit} />,
   structKey: 'template-audit'
 });
+
+const provisionMenusCollection = [
+  authAuditMenuItem,
+  permissionGroupMenuItem,
+  templateAuditMenuItem,
+  accountManagementMenuItem,
+  passwordManagementMenuItem
+];
+
+export default provisionMenusCollection;

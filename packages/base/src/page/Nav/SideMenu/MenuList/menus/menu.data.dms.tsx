@@ -6,33 +6,9 @@ import {
   MenuStructTreeType
 } from './index.type';
 import { genMenuItemsWithMenuStructTree } from './common';
-import {
-  dbServiceManagementMenuItem,
-  memberManagementMenItem,
-  cloudBeaverMenuItem,
-  dataExportMenuItem
-} from './base';
-import {
-  projectOverviewMenuItem,
-  dashboardMenuItem,
-  sqlAuditMenuItem,
-  pluginAuditMenuItem,
-  sqlOrderMenuItem,
-  sqlManagementMenuItem,
-  auditPlanMenuItem,
-  projectRuleTemplateMenuItem,
-  whiteListMenuItem,
-  workflowTemplateMenuItem,
-  sqleOperationRecordMenuItem,
-  sqlOptimizationMenuItem
-} from './sqle';
-import {
-  authAuditMenuItem,
-  permissionGroupMenuItem,
-  templateAuditMenuItem,
-  accountManagementMenuItem,
-  passwordManagementMenuItem
-} from './provision';
+import baseMenusCollection from './base';
+import sqleMenusCollection from './sqle';
+import provisionMenusCollection from './provision';
 import { dataMaskRuleMenuItem } from './dms';
 
 export const dmsSideMenuData = (
@@ -41,32 +17,14 @@ export const dmsSideMenuData = (
   sqlOptimizationIsSupport: boolean
 ) => {
   const allMenuItems: GenerateMenuItemType[] = [
-    dbServiceManagementMenuItem,
-    memberManagementMenItem,
-    cloudBeaverMenuItem,
-    dataExportMenuItem,
+    ...baseMenusCollection,
 
     // #if [sqle]
-    projectOverviewMenuItem,
-    dashboardMenuItem,
-    sqlAuditMenuItem,
-    pluginAuditMenuItem,
-    sqlOrderMenuItem,
-    sqlManagementMenuItem,
-    auditPlanMenuItem,
-    projectRuleTemplateMenuItem,
-    whiteListMenuItem,
-    workflowTemplateMenuItem,
-    sqleOperationRecordMenuItem,
-    sqlOptimizationMenuItem,
+    ...sqleMenusCollection,
     // #endif
 
     // #if [provision]
-    permissionGroupMenuItem,
-    authAuditMenuItem,
-    templateAuditMenuItem,
-    accountManagementMenuItem,
-    passwordManagementMenuItem,
+    ...provisionMenusCollection,
     // #endif
 
     // #if [dms]
@@ -104,7 +62,7 @@ export const dmsSideMenuData = (
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLExecute'),
-      group: ['sql-order']
+      group: ['exec-workflow']
     },
     {
       type: 'group',
