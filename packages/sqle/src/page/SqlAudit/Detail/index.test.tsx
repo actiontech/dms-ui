@@ -7,9 +7,16 @@ import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('sqle/SqlAudit/Detail', () => {
   let mockUseCurrentProjectSpy: jest.SpyInstance;
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum['UNIQUE_KEY_REQUIRED']]);
+
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();

@@ -1,64 +1,64 @@
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { t } from '../../../../locale';
-import {
-  IconOrderStatusIsCanceled,
-  IconOrderStatusIsExecuting,
-  IconOrderStatusIsFailed,
-  IconOrderStatusIsFinished,
-  IconOrderStatusIsRejected,
-  IconOrderStatusIsWaitAudit,
-  IconOrderStatusIsWaitExecution
-} from 'sqle/src/icon/Order';
 import { StatusStyleWrapper } from '../style';
+import {
+  IconWorkflowStatusIsCanceled,
+  IconWorkflowStatusIsExecuting,
+  IconWorkflowStatusIsFailed,
+  IconWorkflowStatusIsFinished,
+  IconWorkflowStatusIsRejected,
+  IconWorkflowStatusIsWaitAudit,
+  IconWorkflowStatusIsWaitExecution
+} from 'sqle/src/icon/SqlExecWorkflow';
 
 const workflowStatusMap = () => {
   return new Map<ListDataExportWorkflowStatusEnum, React.ReactNode>([
     [
       ListDataExportWorkflowStatusEnum.cancel,
       <>
-        <IconOrderStatusIsCanceled />
+        <IconWorkflowStatusIsCanceled />
         <span>{t('dmsDataExport.status.canceled')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.exporting,
       <>
-        <IconOrderStatusIsExecuting />
+        <IconWorkflowStatusIsExecuting />
         <span>{t('dmsDataExport.status.exporting')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.finish,
       <>
-        <IconOrderStatusIsFinished />
+        <IconWorkflowStatusIsFinished />
         <span>{t('dmsDataExport.status.finished')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.wait_for_export,
       <>
-        <IconOrderStatusIsWaitExecution />
+        <IconWorkflowStatusIsWaitExecution />
         <span>{t('dmsDataExport.status.wait_for_export')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.failed,
       <>
-        <IconOrderStatusIsFailed />
+        <IconWorkflowStatusIsFailed />
         <span>{t('dmsDataExport.status.export_failed')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.wait_for_approve,
       <>
-        <IconOrderStatusIsWaitAudit />
+        <IconWorkflowStatusIsWaitAudit />
         <span>{t('dmsDataExport.status.wait_for_audit')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.rejected,
       <>
-        <IconOrderStatusIsRejected />
+        <IconWorkflowStatusIsRejected />
         <span>{t('dmsDataExport.status.rejected')}</span>
       </>
     ]

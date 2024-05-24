@@ -8,14 +8,14 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { EmptyBox } from '@actiontech/shared';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import {
-  IconInitializedOrderStep,
-  IconProgressOrderStep,
-  IconFailedOrderStep,
-  IconFinishedOrderStep
-} from 'sqle/src/icon/Order';
 import { IWorkflowStep } from '@actiontech/shared/lib/api/base/service/common';
 import classNames from 'classnames';
+import {
+  IconFailedWorkflowStep,
+  IconFinishedWorkflowStep,
+  IconInitializedWorkflowStep,
+  IconProgressWorkflowStep
+} from 'sqle/src/icon/SqlExecWorkflow';
 
 const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   workflowSteps,
@@ -159,13 +159,13 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   const renderOrderStepsItemIcon = useCallback(
     (type?: string) => {
       if (type === 'create') {
-        return <IconInitializedOrderStep />;
+        return <IconInitializedWorkflowStep />;
       }
 
       if (type === 'approve') {
         const isRejected = workflowStatus === WorkflowRecordStatusEnum.rejected;
         return (
-          <IconProgressOrderStep
+          <IconProgressWorkflowStep
             color={isRejected ? sharedTheme.uiToken.colorWarning : undefined}
           />
         );
@@ -180,16 +180,16 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           ].includes(workflowStatus)
         ) {
           return (
-            <IconFailedOrderStep color={sharedTheme.uiToken.colorWarning} />
+            <IconFailedWorkflowStep color={sharedTheme.uiToken.colorWarning} />
           );
         }
 
         if (workflowStatus === WorkflowRecordStatusEnum.failed) {
           return (
-            <IconFailedOrderStep color={sharedTheme.uiToken.colorWarning} />
+            <IconFailedWorkflowStep color={sharedTheme.uiToken.colorWarning} />
           );
         }
-        return <IconFinishedOrderStep />;
+        return <IconFinishedWorkflowStep />;
       }
     },
     [workflowStatus, sharedTheme.uiToken.colorWarning]
