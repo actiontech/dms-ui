@@ -1,7 +1,7 @@
 import {
-  IconOrderFileUpload,
-  IconOrderSQLUpload
-} from '../../../../icon/Order';
+  IconWorkflowFileUpload,
+  IconWorkflowSQLUpload
+} from '../../../../icon/SqlExecWorkflow';
 import { SettingOutlined } from '@ant-design/icons';
 import { t } from '../../../../locale/index';
 import { ModeSwitcherOptionsType } from '@actiontech/shared/lib/components/ModeSwitcher/index.type';
@@ -9,7 +9,7 @@ import { UploadTypeEnum } from '../SQLInfoForm/index.type';
 
 export const uploadTypeOptions: ModeSwitcherOptionsType = [
   {
-    icon: <IconOrderSQLUpload />,
+    icon: <IconWorkflowSQLUpload />,
     label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sql'),
     value: UploadTypeEnum.sql,
     colProps: {
@@ -17,7 +17,7 @@ export const uploadTypeOptions: ModeSwitcherOptionsType = [
     }
   },
   {
-    icon: <IconOrderFileUpload />,
+    icon: <IconWorkflowFileUpload />,
     label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.sqlFile'),
     value: UploadTypeEnum.sqlFile,
     colProps: {
@@ -25,7 +25,7 @@ export const uploadTypeOptions: ModeSwitcherOptionsType = [
     }
   },
   {
-    icon: <IconOrderFileUpload />,
+    icon: <IconWorkflowFileUpload />,
     label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.mybatisFile'),
     value: UploadTypeEnum.mybatisFile,
     colProps: {
@@ -33,7 +33,7 @@ export const uploadTypeOptions: ModeSwitcherOptionsType = [
     }
   },
   {
-    icon: <IconOrderFileUpload />,
+    icon: <IconWorkflowFileUpload />,
     label: t('sqlAudit.create.sqlInfo.uploadTypeEnum.zipFile'),
     value: UploadTypeEnum.zipFile,
     colProps: {

@@ -11,11 +11,11 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Link } from 'react-router-dom';
 import { t } from '../../../locale';
-import { IconOrderId } from '../../../icon/Order';
 import { ModalName } from '../../../data/ModalName';
 import { BasicToolTips, DatabaseTypeLogo, TokenCom } from '@actiontech/shared';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { IconWorkflowId } from '../../../icon/SqlExecWorkflow';
 
 export type PlanListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetAuditPlansV2Params,
@@ -126,7 +126,7 @@ const PlanListColumn: (
       render: (text: string) => {
         return (
           <TableColumnWithIconStyleWrapper>
-            <IconOrderId />
+            <IconWorkflowId />
             <Link to={`/sqle/project/${projectID}/audit-plan/detail/${text}`}>
               <span>{text}</span>
             </Link>
