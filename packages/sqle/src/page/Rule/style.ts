@@ -4,7 +4,7 @@ import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/A
 export const RuleListProjectFilterStyleWrapper = styled('div')`
   .project-flag-icon {
     color: ${({ theme }) =>
-      theme.sqleTheme.order.createOrder.editForm.projectFlagIconColor};
+      theme.sqleTheme.execWorkflow.create.editForm.projectFlagIconColor};
     margin-right: 8px;
   }
 `;
