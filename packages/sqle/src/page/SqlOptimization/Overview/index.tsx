@@ -22,12 +22,12 @@ import OptimizationSqlList from './OptimizationSqlList';
 import { useState } from 'react';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import RecommendIndex from '../components/RecommendIndex';
-import {
-  IconOrderStatusIsExecuting,
-  IconOrderStatusIsFailed
-} from '../../../icon/Order';
 import { SyncOutlined } from '@ant-design/icons';
 import { SqlOptimizationStatusEnum } from '../index.data';
+import {
+  IconWorkflowStatusIsExecuting,
+  IconWorkflowStatusIsFailed
+} from '../../../icon/SqlExecWorkflow';
 
 const OptimizationOverview = () => {
   const { t } = useTranslation();
@@ -116,7 +116,7 @@ const OptimizationOverview = () => {
                     size={6}
                     className="database-type-space"
                   >
-                    <IconOrderStatusIsExecuting />
+                    <IconWorkflowStatusIsExecuting />
                     <div>
                       {t('sqlOptimization.overview.optimizingStatusTips')}
                     </div>
@@ -140,7 +140,7 @@ const OptimizationOverview = () => {
                     size={6}
                     className="database-type-space"
                   >
-                    <IconOrderStatusIsFailed />
+                    <IconWorkflowStatusIsFailed />
                     <div>{t('sqlOptimization.overview.failedStatusTips')}</div>
                   </HeaderSpaceTagStyleWrapper>
                 </div>
