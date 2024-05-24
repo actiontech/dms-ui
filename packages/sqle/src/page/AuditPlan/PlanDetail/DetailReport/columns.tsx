@@ -11,7 +11,7 @@ import {
 import AuditResultMessage from '../../../../components/AuditResultMessage';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import { t } from '../../../../locale';
-import RenderSQL from '../../../../components/RenderSQL';
+import { SQLRenderer } from '@actiontech/shared';
 
 export type DetailReportListParamType =
   PageInfoWithoutIndexAndSize<IGetAuditPlanReportsSQLsParams>;
@@ -51,7 +51,7 @@ export const DetailReportListColumn: () => ActiontechTableColumn<
         if (!sql) return null;
         return (
           <div style={{ maxWidth: '500px' }}>
-            <RenderSQL sql={sql} />
+            <SQLRenderer showCopyIcon sql={sql} />
           </div>
         );
       }

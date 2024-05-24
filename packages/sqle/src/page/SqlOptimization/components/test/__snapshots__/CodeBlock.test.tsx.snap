@@ -16,7 +16,7 @@ exports[`sqle/SqlOptimization/CodeBlock render copy code 1`] = `
             class="ant-space-item"
           >
             <div
-              class="css-m0ctvy"
+              class="actiontech-copy-icon css-m0ctvy"
             >
               <span
                 aria-label="check"
@@ -65,7 +65,7 @@ exports[`sqle/SqlOptimization/CodeBlock render snap shot 1`] = `
         class="copy-icon"
       >
         <div
-          class="css-1s8kb8e"
+          class="actiontech-copy-icon css-1s8kb8e"
         >
           <span
             aria-label="copy"

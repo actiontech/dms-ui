@@ -14,7 +14,7 @@ import {
   sqlAuditMenuItem,
   pluginAuditMenuItem,
   sqlOptimizationMenuItem,
-  sqlOrderMenuItem,
+  sqlExecWorkflowMenuItem,
   sqlManagementMenuItem,
   auditPlanMenuItem,
   projectRuleTemplateMenuItem,
@@ -41,7 +41,7 @@ const menuStruct: MenuStructTreeType = [
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLExecute'),
-    group: ['sql-order']
+    group: ['exec-workflow']
   },
   {
     type: 'group',
@@ -142,7 +142,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
           sqlAuditMenuItem,
           pluginAuditMenuItem,
           sqlOptimizationMenuItem,
-          sqlOrderMenuItem,
+          sqlExecWorkflowMenuItem,
           sqlManagementMenuItem,
           auditPlanMenuItem,
           projectRuleTemplateMenuItem,
@@ -168,7 +168,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
           sqlAuditMenuItem,
           pluginAuditMenuItem,
           sqlOptimizationMenuItem,
-          sqlOrderMenuItem,
+          sqlExecWorkflowMenuItem,
           sqlManagementMenuItem,
           auditPlanMenuItem,
           projectRuleTemplateMenuItem,

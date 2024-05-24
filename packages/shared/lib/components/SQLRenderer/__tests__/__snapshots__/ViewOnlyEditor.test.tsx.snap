@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SQLrenderer should match snapshot 1`] = `
+<CustomMonacoEditor
+  className="actiontech-sql-view-only-editor-renderer-wrapper"
+  language="sql"
+  options={
+    {
+      "readOnly": true,
+    }
+  }
+  value="CREATE TABLE IF NOT EXISTS
+    task (
+      id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      title VARCHAR(255) NOT NULL DEFAULT '',
+      description TEXT,
+      status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending',
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    );"
+/>
+`;
+
+exports[`test SQLrenderer should match snapshot 2`] = `
+<CustomMonacoEditor
+  className="actiontech-sql-view-only-editor-renderer-wrapper"
+  language="sql"
+  options={
+    {
+      "readOnly": true,
+    }
+  }
+  value=""
+/>
+`;

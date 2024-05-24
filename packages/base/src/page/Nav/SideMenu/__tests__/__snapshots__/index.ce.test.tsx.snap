@@ -410,9 +410,9 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
           >
             <li
               class="ant-menu-item"
-              data-menu-id="rc-menu-uuid-test-sqle/project/projectID/order"
+              data-menu-id="rc-menu-uuid-test-sqle/project/projectID/exec-workflow"
               role="menuitem"
-              structkey="sql-order"
+              structkey="exec-workflow"
               style="padding-left: 24px;"
               tabindex="-1"
             >
@@ -441,7 +441,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
                 class="ant-menu-title-content"
               >
                 <a
-                  href="/sqle/project/700300/order"
+                  href="/sqle/project/700300/exec-workflow"
                 >
                   SQL工单
                 </a>

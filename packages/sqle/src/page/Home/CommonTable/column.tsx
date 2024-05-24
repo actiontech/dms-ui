@@ -22,7 +22,7 @@ export const commonColumn: (
             <TableColumnWithIconStyleWrapper>
               <IconOrderName />
               <Link
-                to={`/sqle/project/${record.project_name}/order/${record.workflow_id}`}
+                to={`/sqle/project/${record.project_name}/exec-workflow/${record.workflow_id}`}
               >
                 {text}
               </Link>
@@ -40,7 +40,7 @@ export const commonColumn: (
           <BasicTypographyEllipsis
             textCont={desc}
             linkData={{
-              route: `/sqle/project/${projectID}/order/${
+              route: `/sqle/project/${projectID}/exec-workflow/${
                 record.workflow_id ?? ''
               }`,
               text: t('order.create.viewOrderDetail')

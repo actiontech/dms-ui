@@ -5,9 +5,9 @@ import {
   BasicTag,
   EmptyBox,
   BasicToolTips,
+  SQLRenderer,
   BasicTypographyEllipsis
 } from '@actiontech/shared';
-import { MonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
 import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
@@ -147,14 +147,10 @@ const ReportDrawer = ({
               </EmptyBox>
             </div>
             <div className="wrapper-cont">
-              <MonacoEditor
-                value={data?.sql ?? ''}
+              <SQLRenderer.ViewOnlyEditor
+                value={data?.sql}
                 width="100%"
                 height="90%"
-                language="sql"
-                options={{
-                  readOnly: true
-                }}
               />
             </div>
           </section>

@@ -11,6 +11,16 @@ import { getWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/
 import { StaticEnumDictionary } from './index.type';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { GetSqlManageListFilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { t } from '../../locale';
+
+export const translateDictionaryI18nLabel = <T extends string>(
+  dic: StaticEnumDictionary<T>
+) => {
+  return Object.keys(dic).reduce<Record<keyof T, string>>((acc, cur) => {
+    const key = cur as keyof StaticEnumDictionary<T>;
+    return { ...acc, [key]: t(dic[key]) };
+  }, {} as Record<keyof T, string>);
+};
 
 export const execStatusDictionary: StaticEnumDictionary<getAuditTaskSQLsV2FilterExecStatusEnum> =
   {
@@ -50,6 +60,24 @@ export const orderStatusDictionary: StaticEnumDictionary<getWorkflowsV1FilterSta
     [getWorkflowsV1FilterStatusEnum.exec_failed]: 'order.status.exec_failed',
     [getWorkflowsV1FilterStatusEnum.finished]: 'order.status.finished',
     [getWorkflowsV1FilterStatusEnum.executing]: 'order.status.executing'
+  };
+
+export const execWorkflowStatusDictionary: StaticEnumDictionary<getWorkflowsV1FilterStatusEnum> =
+  {
+    [getWorkflowsV1FilterStatusEnum.wait_for_audit]:
+      'execWorkflow.common.workflowStatus.waitForAudit',
+    [getWorkflowsV1FilterStatusEnum.wait_for_execution]:
+      'execWorkflow.common.workflowStatus.waitForExecution',
+    [getWorkflowsV1FilterStatusEnum.canceled]:
+      'execWorkflow.common.workflowStatus.canceled',
+    [getWorkflowsV1FilterStatusEnum.rejected]:
+      'execWorkflow.common.workflowStatus.reject',
+    [getWorkflowsV1FilterStatusEnum.exec_failed]:
+      'execWorkflow.common.workflowStatus.execFailed',
+    [getWorkflowsV1FilterStatusEnum.finished]:
+      'execWorkflow.common.workflowStatus.execSucceeded',
+    [getWorkflowsV1FilterStatusEnum.executing]:
+      'execWorkflow.common.workflowStatus.executing'
   };
 
 export const ruleLevelDictionary: StaticEnumDictionary<RuleResV1LevelEnum> = {

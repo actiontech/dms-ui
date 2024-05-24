@@ -374,6 +374,8 @@ export interface ICreateAuditPlanReqV1 {
 export interface ICreateAuditTaskReqV1 {
   exec_mode?: CreateAuditTaskReqV1ExecModeEnum;
 
+  file_order_method?: string;
+
   instance_name?: string;
 
   instance_schema?: string;
@@ -383,6 +385,8 @@ export interface ICreateAuditTaskReqV1 {
 
 export interface ICreateAuditTasksGroupReqV1 {
   exec_mode?: CreateAuditTasksGroupReqV1ExecModeEnum;
+
+  file_order_method?: string;
 
   instances?: IInstanceForCreatingTask[];
 }
@@ -571,6 +575,12 @@ export interface IFeishuConfigurationV1 {
   app_id?: string;
 
   is_feishu_notification_enabled?: boolean;
+}
+
+export interface IFileToSort {
+  file_id?: number;
+
+  new_index?: number;
 }
 
 export interface IFullSyncAuditPlanSQLsReqV1 {
@@ -2213,6 +2223,10 @@ export interface IUpdateRuleTemplateReqV1 {
 
 export interface IUpdateSQLAuditRecordReqV1 {
   tags?: string[];
+}
+
+export interface IUpdateSqlFileOrderV1Req {
+  files_to_sort?: IFileToSort[];
 }
 
 export interface IUpdateSystemVariablesReqV1 {

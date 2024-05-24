@@ -3,6 +3,8 @@ import {
   ICreateAuditTasksGroupResV1,
   ICreateAuditTaskReqV1,
   IGetAuditTaskResV1,
+  IUpdateSqlFileOrderV1Req,
+  IGetSqlFileOrderMethodResV1,
   IAuditTaskGroupResV1,
   IBaseRes,
   IGetAuditTaskSQLContentResV1,
@@ -46,9 +48,24 @@ export interface ICreateAndAuditTaskV1Params extends ICreateAuditTaskReqV1 {
   input_mybatis_xml_file?: any;
 
   input_zip_file?: any;
+
+  exec_mode?: string;
+
+  file_order_method?: string;
 }
 
 export interface ICreateAndAuditTaskV1Return extends IGetAuditTaskResV1 {}
+
+export interface IUpdateSqlFileOrderV1Params extends IUpdateSqlFileOrderV1Req {
+  project_name: string;
+
+  workflow_id: string;
+
+  task_id: string;
+}
+
+export interface IUpdateSqlFileOrderV1Return
+  extends IGetSqlFileOrderMethodResV1 {}
 
 export interface IAuditTaskGroupIdV1Params {
   task_group_id: number;

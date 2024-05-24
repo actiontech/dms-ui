@@ -6,10 +6,14 @@ import { TableSchemaItem, UseTableSchemaOption } from '.';
 import { ResponseCode } from '../../../data/common';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable1';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { EmptyBox, BasicTable, BasicResult } from '@actiontech/shared';
+import {
+  EmptyBox,
+  BasicTable,
+  BasicResult,
+  SQLRenderer
+} from '@actiontech/shared';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { IconError } from '@actiontech/shared/lib/Icon';
-import RenderSQL from '../../../components/RenderSQL';
 
 const useTableSchema = (options?: UseTableSchemaOption) => {
   const { t } = useTranslation();
@@ -105,7 +109,10 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
             {t('sqlQuery.databaseTables.createdTableSql')}
           </h3>
           <section className="basic-cont-wrapper sql-cont">
-            <RenderSQL sql={item.tableMeta.create_table_sql ?? ''} />
+            <SQLRenderer.Snippet
+              showCopyIcon
+              sql={item.tableMeta.create_table_sql ?? ''}
+            />
           </section>
         </>
       );

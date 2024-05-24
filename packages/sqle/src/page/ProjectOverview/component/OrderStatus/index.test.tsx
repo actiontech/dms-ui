@@ -54,7 +54,7 @@ describe('page/ProjectOverview/OrderStatus', () => {
     expect(screen.getByText('创建工单')).toBeInTheDocument();
     fireEvent.click(screen.getByText('创建工单'));
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/order/create`
+      `/sqle/project/${mockProjectInfo.projectID}/exec-workflow/create`
     );
   });
 

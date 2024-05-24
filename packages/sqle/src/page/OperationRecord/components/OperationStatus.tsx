@@ -1,11 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { OperationRecordListStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import {
-  IconOrderStatusIsFinished,
-  IconOrderStatusIsFailed
-} from '../../../icon/Order';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import {
+  IconWorkflowStatusIsFailed,
+  IconWorkflowStatusIsFinished
+} from '../../../icon/SqlExecWorkflow';
 
 const OperationStatus: React.FC<{ status: OperationRecordListStatusEnum }> = ({
   status
@@ -16,12 +16,12 @@ const OperationStatus: React.FC<{ status: OperationRecordListStatusEnum }> = ({
     <TableColumnWithIconStyleWrapper>
       {status === OperationRecordListStatusEnum.succeeded ? (
         <>
-          <IconOrderStatusIsFinished />
+          <IconWorkflowStatusIsFinished />
           <span>{t('common.success')}</span>
         </>
       ) : (
         <>
-          <IconOrderStatusIsFailed />
+          <IconWorkflowStatusIsFailed />
           <span>{t('common.fail')}</span>
         </>
       )}

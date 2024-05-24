@@ -1,0 +1,717 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when click pagination btn 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="layout-bottom-2-line"
+              >
+                <path
+                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          分页展示
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-up css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-887nqg"
+            >
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="layout-bottom-2-fill"
+                    >
+                      <path
+                        d="M13.9999 2C14.3681 2 14.6666 2.29848 14.6666 2.66667V13.3333C14.6666 13.7015 14.3681 14 13.9999 14H1.99992C1.63173 14 1.33325 13.7015 1.33325 13.3333V2.66667C1.33325 2.29848 1.63173 2 1.99992 2H13.9999ZM12.6666 10.6667H3.33325V12H12.6666V10.6667Z"
+                        fill="#8A8F99"
+                        id="Vector"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                分页展示
+              </div>
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="layout-row-fill"
+                    >
+                      <path
+                        d="M12.6667 8H3.33333V12.6667H12.6667V8ZM2.66667 2H13.3333C13.7015 2 14 2.29848 14 2.66667V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V2.66667C2 2.29848 2.29848 2 2.66667 2Z"
+                        fill="#8A8F99"
+                        id="Vector"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                瀑布流展示
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when click pagination btn 2`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="layout-bottom-2-line"
+              >
+                <path
+                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          分页展示
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-down css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-887nqg"
+            >
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="layout-bottom-2-fill"
+                    >
+                      <path
+                        d="M13.9999 2C14.3681 2 14.6666 2.29848 14.6666 2.66667V13.3333C14.6666 13.7015 14.3681 14 13.9999 14H1.99992C1.63173 14 1.33325 13.7015 1.33325 13.3333V2.66667C1.33325 2.29848 1.63173 2 1.99992 2H13.9999ZM12.6666 10.6667H3.33325V12H12.6666V10.6667Z"
+                        fill="#8A8F99"
+                        id="Vector"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                分页展示
+              </div>
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="layout-row-fill"
+                    >
+                      <path
+                        d="M12.6667 8H3.33333V12.6667H12.6667V8ZM2.66667 2H13.3333C13.7015 2 14 2.29848 14 2.66667V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V2.66667C2 2.29848 2.29848 2 2.66667 2Z"
+                        fill="#8A8F99"
+                        id="Vector"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                瀑布流展示
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when click scroll btn 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="layout-bottom-2-line"
+              >
+                <path
+                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          瀑布流展示
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-up css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-887nqg"
+            >
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="layout-bottom-2-fill"
+                    >
+                      <path
+                        d="M13.9999 2C14.3681 2 14.6666 2.29848 14.6666 2.66667V13.3333C14.6666 13.7015 14.3681 14 13.9999 14H1.99992C1.63173 14 1.33325 13.7015 1.33325 13.3333V2.66667C1.33325 2.29848 1.63173 2 1.99992 2H13.9999ZM12.6666 10.6667H3.33325V12H12.6666V10.6667Z"
+                        fill="#8A8F99"
+                        id="Vector"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                分页展示
+              </div>
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="layout-row-fill"
+                    >
+                      <path
+                        d="M12.6667 8H3.33333V12.6667H12.6667V8ZM2.66667 2H13.3333C13.7015 2 14 2.29848 14 2.66667V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V2.66667C2 2.29848 2.29848 2 2.66667 2Z"
+                        fill="#8A8F99"
+                        id="Vector"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                瀑布流展示
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when click scroll btn 2`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="layout-bottom-2-line"
+              >
+                <path
+                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          瀑布流展示
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-down css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
+    >
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+          style="padding: 0px;"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="css-887nqg"
+            >
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="layout-bottom-2-fill"
+                    >
+                      <path
+                        d="M13.9999 2C14.3681 2 14.6666 2.29848 14.6666 2.66667V13.3333C14.6666 13.7015 14.3681 14 13.9999 14H1.99992C1.63173 14 1.33325 13.7015 1.33325 13.3333V2.66667C1.33325 2.29848 1.63173 2 1.99992 2H13.9999ZM12.6666 10.6667H3.33325V12H12.6666V10.6667Z"
+                        fill="#8A8F99"
+                        id="Vector"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                分页展示
+              </div>
+              <div
+                class="download-record-item"
+              >
+                <span
+                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      id="layout-row-fill"
+                    >
+                      <path
+                        d="M12.6667 8H3.33333V12.6667H12.6667V8ZM2.66667 2H13.3333C13.7015 2 14 2.29848 14 2.66667V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V2.66667C2 2.29848 2.29848 2 2.66667 2Z"
+                        fill="#8A8F99"
+                        id="Vector"
+                      />
+                    </g>
+                  </svg>
+                </span>
+                瀑布流展示
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when show pagination btn 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="layout-bottom-2-line"
+              >
+                <path
+                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          分页展示
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-down css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when show scroll btn 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          <span
+            class="custom-icon  css-u3jcp4"
+          >
+            <svg
+              fill="none"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                id="layout-bottom-2-line"
+              >
+                <path
+                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
+                  fill="#292C33"
+                  id="Vector"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 5px;"
+        >
+          瀑布流展示
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="custom-icon custom-icon-arrow-down css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+</body>
+`;

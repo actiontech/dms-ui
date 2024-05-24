@@ -19,6 +19,7 @@ import sqlManagement from './sqlManagement';
 import sqlAudit from './sqlAudit';
 import pluginAudit from './pluginAudit';
 import sqlOptimization from './sqlOptimization';
+import execWorkflow from './execWorkflow';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -43,6 +44,7 @@ export default {
     sqlManagement,
     sqlAudit,
     pluginAudit,
-    sqlOptimization
+    sqlOptimization,
+    execWorkflow
   }
 };

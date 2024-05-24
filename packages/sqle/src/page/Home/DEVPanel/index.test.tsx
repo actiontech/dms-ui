@@ -56,7 +56,7 @@ describe('page/Home/DEVPanel', () => {
     expect(screen.getByText('mysql-1_20231227103222')).toBeInTheDocument();
     expect(screen.getByText('mysql-1_20231227103222')).toHaveAttribute(
       'href',
-      `/sqle/project/${workflowMockData[0].project_name}/order/${workflowMockData[0].workflow_id}`
+      `/sqle/project/${workflowMockData[0].project_name}/exec-workflow/${workflowMockData[0].workflow_id}`
     );
 
     expect(screen.getAllByText('-').length).toBe(2);

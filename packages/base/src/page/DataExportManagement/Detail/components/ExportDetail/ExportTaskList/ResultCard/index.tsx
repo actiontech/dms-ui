@@ -1,8 +1,7 @@
-import { BasicButton, Copy } from '@actiontech/shared';
+import { BasicButton, Copy, HighlightCode } from '@actiontech/shared';
 import { Divider, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ExportResultCardProp } from './index.type';
-import HighlightCode from 'sqle/src/utils/HighlightCode';
 import AuditResultTree from './AuditResultTree';
 import {
   ExportContentStyleWrapper,

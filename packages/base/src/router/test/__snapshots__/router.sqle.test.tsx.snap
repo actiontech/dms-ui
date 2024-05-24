@@ -130,62 +130,6 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render SQLFileStatementOverview 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="order"
-    >
-      <div>
-        SQLFileStatementOverview
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderCreate 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="order"
-    >
-      <div>
-        orderCreate
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderDetail 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="order"
-    >
-      <div>
-        orderDetail
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route order render route orderList 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="order"
-    >
-      <div>
-        orderList
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanCreate 1`] = `
 <body>
   <div>
@@ -504,6 +448,62 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render SQLFileStatementOverview 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlExecWorkflow"
+    >
+      <div>
+        workflowSQLFileStatementOverview
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render route list 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlExecWorkflow"
+    >
+      <div>
+        sqlExecWorkflowList
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render route orderCreate 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlExecWorkflow"
+    >
+      <div>
+        createSqlExecWorkflow
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render route orderDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlExecWorkflow"
+    >
+      <div>
+        workflowDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
 <body>
   <div>
@@ -542,14 +542,14 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render route orderAnalyze 1`] = `
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render route workflowAnalyze 1`] = `
 <body>
   <div>
     <div
-      data-test-parent-id="order"
+      data-test-parent-id="sqlExecWorkflow"
     >
       <div>
-        orderAnalyze
+        workflowAnalyze
       </div>
     </div>
   </div>
@@ -822,47 +822,47 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "children": [
           {
             "element": <div>
-              orderList
+              sqlExecWorkflowList
             </div>,
-            "key": "orderList",
+            "key": "sqlExecWorkflowList",
             "path": "",
           },
           {
             "element": <div>
-              orderCreate
+              createSqlExecWorkflow
             </div>,
-            "key": "orderCreate",
+            "key": "createSqlExecWorkflow",
             "path": "create",
           },
           {
             "element": <div>
-              orderDetail
+              workflowAnalyze
             </div>,
-            "key": "orderDetail",
-            "path": ":orderId",
-          },
-          {
-            "element": <div>
-              orderAnalyze
-            </div>,
-            "key": "orderAnalyze",
+            "key": "workflowAnalyze",
             "path": ":taskId/:sqlNum/analyze",
           },
           {
             "element": <div>
-              SQLFileStatementOverview
+              workflowDetail
             </div>,
-            "key": "SQLFileStatementOverview",
+            "key": "workflowDetail",
+            "path": ":workflowId",
+          },
+          {
+            "element": <div>
+              workflowSQLFileStatementOverview
+            </div>,
+            "key": "workflowSQLFileStatementOverview",
             "path": ":taskId/files/:fileId/sqls",
           },
         ],
         "element": <div
-          data-test-parent-id="order"
+          data-test-parent-id="sqlExecWorkflow"
         >
           <Outlet />
         </div>,
-        "key": "order",
-        "path": ":projectID/order",
+        "key": "sqlExecWorkflow",
+        "path": ":projectID/exec-workflow",
       },
       {
         "children": [

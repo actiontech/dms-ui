@@ -9,7 +9,7 @@ import { SqlFiledInitialValue } from 'sqle/src/data/common';
 import { CreateExportTaskFormEntryProps } from '../index.type';
 import { ExportMethodEnum } from './index.enum';
 import { ModeSwitcher } from '@actiontech/shared';
-import { IconOrderSQLUpload } from 'sqle/src/icon/Order';
+import { IconWorkflowSQLUpload } from 'sqle/src/icon/SqlExecWorkflow';
 
 const ExportMethodFormItem: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'methodForm'>
@@ -28,7 +28,7 @@ const ExportMethodFormItem: React.FC<
               label: t('dmsDataExport.create.form.method.manualInput'),
               value: ExportMethodEnum.sql,
               colProps: { span: 8 },
-              icon: <IconOrderSQLUpload />
+              icon: <IconWorkflowSQLUpload />
             }
           ]}
         />

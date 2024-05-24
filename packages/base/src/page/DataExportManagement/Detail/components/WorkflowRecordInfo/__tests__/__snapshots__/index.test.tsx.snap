@@ -267,7 +267,7 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
                 class="ant-steps-icon"
               >
                 <span
-                  class="icon-failed-order-step css-u3jcp4"
+                  class="icon-failed-workflow-step css-u3jcp4"
                 >
                   <svg
                     fill="none"

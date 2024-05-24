@@ -7,10 +7,10 @@ import OverviewList from './OverviewList';
 import ExportTaskList from './ExportTaskList';
 import DbServiceSegmentedLabel from '../../../Common/DbServiceSegmentedLabel';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { IconOrderDownloadSQL } from 'sqle/src/icon/Order';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean } from 'ahooks';
+import { IconWorkflowDownloadSQL } from 'sqle/src/icon/SqlExecWorkflow';
 
 const OVERVIEW_TAB_KEY = 'OVERVIEW_TAB_KEY';
 
@@ -87,7 +87,7 @@ const ExportDetail: React.FC = () => {
           loading={downloadSQLsLoading}
           onClick={downloadSQLs}
           hidden={!curTaskID}
-          icon={<IconOrderDownloadSQL />}
+          icon={<IconWorkflowDownloadSQL />}
         >
           {t('dmsDataExport.detail.exportResult.taskDetail.downloadSQL')}
         </BasicButton>
