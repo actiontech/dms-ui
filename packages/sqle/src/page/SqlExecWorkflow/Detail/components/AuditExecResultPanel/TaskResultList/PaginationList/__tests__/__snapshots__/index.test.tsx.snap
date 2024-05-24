@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test ExecWorkflow/TaskResultList/PaginationList should match snapshot 1`] = `
+<Styled(div)
+  className="task-result-pagination-list sql-mode-task-result-pagination-list"
+>
+  <ExecModeController
+    executeMode="sqls"
+    sqlComponent={
+      <SqlExecuteMode
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        noDuplicate={false}
+        pagination={
+          {
+            "page_index": 1,
+            "page_size": 10,
+          }
+        }
+        tableChange={[MockFunction]}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+    sqlFileComponent={
+      <FileExecuteMode
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        noDuplicate={false}
+        pagination={
+          {
+            "page_index": 1,
+            "page_size": 10,
+          }
+        }
+        tableChange={[MockFunction]}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+  />
+</Styled(div)>
+`;
+
+exports[`test ExecWorkflow/TaskResultList/PaginationList should match snapshot 2`] = `
+<Styled(div)
+  className="task-result-pagination-list file-mode-task-result-pagination-list"
+>
+  <ExecModeController
+    executeMode="sql_file"
+    sqlComponent={
+      <SqlExecuteMode
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        noDuplicate={false}
+        pagination={
+          {
+            "page_index": 1,
+            "page_size": 10,
+          }
+        }
+        tableChange={[MockFunction]}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+    sqlFileComponent={
+      <FileExecuteMode
+        auditResultActiveKey="123"
+        currentListLayout="pagination"
+        noDuplicate={false}
+        pagination={
+          {
+            "page_index": 1,
+            "page_size": 10,
+          }
+        }
+        tableChange={[MockFunction]}
+        tableFilterInfo={{}}
+        taskId="123"
+      />
+    }
+  />
+</Styled(div)>
+`;

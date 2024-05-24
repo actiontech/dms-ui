@@ -1,3 +1,5 @@
+import { SqlFileStatementOverviewStyleWrapper } from './style';
+import SqlStatementResultTable from '../Common/SqlStatementResultTable';
 import {
   TableFilterButton,
   TableFilterContainer,
@@ -15,7 +17,6 @@ import { AuditTaskExtraFilterMeta } from '../../index.data';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { GetAuditTaskSQLsPrams } from '../../index.type';
-import { SqlFileStatementOverviewStyleWrapper } from './style';
 import {
   BasicButton,
   CustomSegmentedFilter,
@@ -23,7 +24,6 @@ import {
 } from '@actiontech/shared';
 import { IconSQLFile, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import SQLStatementResultTable from '../Common/SQLStatementResultTable';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import {
   execStatusDictionary,
@@ -158,7 +158,7 @@ const SqlFileStatementOverview: React.FC = () => {
         }
       />
 
-      <SQLStatementResultTable
+      <SqlStatementResultTable
         dataSource={data?.list ?? []}
         loading={loading}
         errorMessage={requestErrorMessage}

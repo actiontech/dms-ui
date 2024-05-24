@@ -1,16 +1,16 @@
 import {
   FileExecuteResultCardProps,
   ResultCardProps,
-  SQLExecuteResultCardProps
+  SqlExecuteResultCardProps
 } from './index.type';
-import SQLMode from './SQLMode';
+import SqlMode from './SqlMode';
 import FileMode from './FileMode';
 import ExecModeController from '../ExecModeController';
 
 const ResultCard: React.FC<ResultCardProps> = ({ executeMode, ...props }) => {
   return (
     <ExecModeController
-      sqlComponent={<SQLMode {...(props as SQLExecuteResultCardProps)} />}
+      sqlComponent={<SqlMode {...(props as SqlExecuteResultCardProps)} />}
       sqlFileComponent={<FileMode {...(props as FileExecuteResultCardProps)} />}
       executeMode={executeMode}
     />

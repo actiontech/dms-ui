@@ -457,7 +457,7 @@ exports[`sqle/SqlExecWorkflow/Create/CreatedResult render snap 1`] = `
           class="ant-result-extra"
         >
           <a
-            href="/sqle/project/700300/exec-workflow/createdOrderId"
+            href="/sqle/project/700300/exec-workflow/1234"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"

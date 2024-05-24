@@ -6,7 +6,7 @@ describe('sqle/SqlExecWorkflow/Create/CreatedResult', () => {
   it('render snap', () => {
     mockUseCurrentProject();
     const { baseElement } = superRender(
-      <CreateResultStep workflowID="createdOrderId" desc="desc" />
+      <CreateResultStep workflowID="1234" desc="desc" />
     );
     expect(baseElement).toMatchSnapshot();
   });

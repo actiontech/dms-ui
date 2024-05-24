@@ -257,7 +257,7 @@ describe('sqle/ExecWorkflow/Detail', () => {
     fireEvent.click(screen.getByText('返回工单详情'));
   });
 
-  it('render current order status is wait for audit', async () => {
+  it('render current workflow status is wait for audit', async () => {
     requestWorkflowInfo.mockClear();
     requestWorkflowInfo.mockImplementation(() =>
       createSpySuccessResponse({ data: workflowsDetailWaitForAuditData })
