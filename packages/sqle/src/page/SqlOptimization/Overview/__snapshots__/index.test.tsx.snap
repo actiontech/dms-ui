@@ -2907,6 +2907,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
                                       type="button"
                                     >
                                       <span>
