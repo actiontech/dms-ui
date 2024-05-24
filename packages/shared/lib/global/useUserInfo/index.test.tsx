@@ -1,18 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import useUserInfo from '.';
-import { act, renderHook } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import global from '../../../../base/src/testUtils/mockApi/global';
 import { GetUserPayload } from '../../../../base/src/testUtils/mockApi/global/data';
 import {
   createSpyErrorResponse,
-  createSpyFailResponse
+  createSpyFailResponse,
+  createSpySuccessResponse
 } from '../../testUtil/mockApi';
+import { renderHooksWithRedux } from '../../testUtil/customRender';
+import { IStore } from '../../types/common.type';
 
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
-    useSelector: jest.fn(),
     useDispatch: jest.fn()
   };
 });
@@ -32,11 +34,6 @@ describe('useUserInfo', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
-    (useSelector as jest.Mock).mockImplementation((selector) => {
-      return selector({
-        user: { uid: '111' }
-      });
-    });
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     getCurrentUserSpy = global.getCurrentUser();
   });
@@ -46,8 +43,16 @@ describe('useUserInfo', () => {
     jest.clearAllMocks();
   });
 
+  const customRender = (
+    store: IStore = {
+      user: { uid: '111', bindProjects: [] }
+    }
+  ) => {
+    return renderHooksWithRedux(() => useUserInfo(), store);
+  };
+
   it('should update userInfo when request success', async () => {
-    const { result } = renderHook(() => useUserInfo());
+    const { result } = customRender();
     expect(result.current.userInfo).not.toBeDefined();
     expect(result.current.getUserInfoLoading).toBeFalsy();
     await act(() => result.current.getUserInfo());
@@ -62,7 +67,67 @@ describe('useUserInfo', () => {
     });
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
-        bindProjects: GetUserPayload.user_bind_projects
+        bindProjects: GetUserPayload.user_bind_projects?.map((i) => ({
+          ...i,
+          archived: false
+        }))
+      },
+      type: 'user/updateBindProjects'
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
+      payload: {
+        managementPermissions: []
+      },
+      type: 'user/updateManagementPermissions'
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
+      payload: true,
+      type: 'user/updateUserInfoFetchStatus'
+    });
+  });
+
+  it('should update userInfo when bindProjects is not an empty array', async () => {
+    const projectMock = {
+      is_manager: true,
+      project_id: '700200',
+      project_name: 'test'
+    };
+    getCurrentUserSpy.mockClear();
+    getCurrentUserSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...GetUserPayload,
+          user_bind_projects: [
+            ...(GetUserPayload?.user_bind_projects ?? []),
+            projectMock
+          ]
+        }
+      })
+    );
+    const bindProjectsMock =
+      GetUserPayload.user_bind_projects?.map((i) => ({
+        ...i,
+        archived: true
+      })) ?? [];
+
+    const { result } = customRender({
+      user: { uid: '111', bindProjects: bindProjectsMock }
+    });
+    expect(result.current.userInfo).not.toBeDefined();
+    expect(result.current.getUserInfoLoading).toBeFalsy();
+    await act(() => result.current.getUserInfo());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockDispatch).toHaveBeenCalled();
+    expect(mockDispatch).toHaveBeenCalledWith({
+      payload: {
+        role: 'admin',
+        username: 'test'
+      },
+      type: 'user/updateUser'
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
+      payload: {
+        bindProjects: [...bindProjectsMock, { ...projectMock, archived: false }]
       },
       type: 'user/updateBindProjects'
     });
@@ -83,7 +148,7 @@ describe('useUserInfo', () => {
     getCurrentUserSpy = getCurrentUserSpy.mockImplementation(() =>
       createSpyFailResponse({ name: '', user_uid: '' })
     );
-    const { result } = renderHook(() => useUserInfo());
+    const { result } = customRender();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockDispatch).toHaveBeenCalledTimes(12);
@@ -120,7 +185,7 @@ describe('useUserInfo', () => {
     getCurrentUserSpy = getCurrentUserSpy.mockImplementation(() =>
       createSpyErrorResponse({ name: '', user_uid: '' })
     );
-    const { result } = renderHook(() => useUserInfo());
+    const { result } = customRender();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockDispatch).toHaveBeenCalledTimes(6);
