@@ -4,12 +4,7 @@ import useCreateExportTaskForm from '../../../hooks/useCreateExportTaskForm';
 import { useRef } from 'react';
 import { ModalName } from '../../../../../../data/ModalName';
 import { Divider, Spin } from 'antd';
-import {
-  useCurrentProject,
-  useCurrentUser
-} from '@actiontech/shared/lib/global';
 import BaseInfoFormItem from '../../CreateTask/BaseInfoForm/BaseInfoFormItem';
-import BaseInfoTag from 'sqle/src/page/Order/Create/EditSQLInfoDrawer/BaseInfoTag';
 import { useTranslation } from 'react-i18next';
 import ExportSourceFormItem from '../../CreateTask/ExportSourceForm/ExportSourceFormItem';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
@@ -22,11 +17,10 @@ import {
   UpdateTaskInfoFormTitleStyleWrapper
 } from './style';
 import ExportFormAction from '../../CreateTask/ExportFormAction';
+import BaseInfoTag from './BaseInfoTag';
 
 const UpdateInfoDrawer: React.FC = () => {
   const { t } = useTranslation();
-  const { projectName } = useCurrentProject();
-  const { username } = useCurrentUser();
 
   const syncDataReady = useRef(false);
 
@@ -78,9 +72,7 @@ const UpdateInfoDrawer: React.FC = () => {
           <UpdateTaskInfoFormTitleStyleWrapper>
             {t('dmsDataExport.create.update.baseTitle')}
           </UpdateTaskInfoFormTitleStyleWrapper>
-          <BaseInfoFormItem
-            slot={<BaseInfoTag projectName={projectName} username={username} />}
-          />
+          <BaseInfoFormItem slot={<BaseInfoTag />} />
         </UpdateBseInfoFormStyleWrapper>
 
         <Divider style={{ marginTop: 12 }} />
