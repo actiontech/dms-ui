@@ -12,6 +12,11 @@ import {
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FormListFieldData } from 'antd';
+import system from '@actiontech/shared/lib/api/sqle/service/system';
+import {
+  getSystemModuleStatusDbTypeEnum,
+  getSystemModuleStatusModuleNameEnum
+} from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
@@ -42,23 +47,44 @@ const useRenderDatabaseSelectionItems = ({
       });
   };
 
+  // #if [ee]
+  const getSupportedFileModeByInstanceType = (key: string, dbType: string) => {
+    system
+      .getSystemModuleStatus({
+        db_type: dbType as getSystemModuleStatusDbTypeEnum,
+        module_name: getSystemModuleStatusModuleNameEnum.execute_sql_file_mode
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          dbSourceInfoCollection.set(key, {
+            isSupportFileModeExecuteSql: !!res.data.data?.is_supported
+          });
+        }
+      });
+  };
+  // #endif
+
   const updateRuleTemplateNameAndDbType = (
     key: string,
     instanceName: string
   ) => {
     instance
       .getInstanceV2({ instance_name: instanceName, project_name: projectName })
-      .then((res) => {
+      .then(async (res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dbSourceInfoCollection.set(key, {
             dbType: res.data.data?.db_type,
             ruleTemplate: res.data.data?.rule_template
           });
+
+          // #if [ee]
+          getSupportedFileModeByInstanceType(key, res.data.data?.db_type ?? '');
+          // #endif
         }
       });
   };
 
-  const handleInstanceChange = async (key: string, instanceName?: string) => {
+  const handleInstanceChange = (key: string, instanceName?: string) => {
     if (instanceName) {
       dbSourceInfoCollection.set(key, {
         instanceName,
@@ -67,7 +93,8 @@ const useRenderDatabaseSelectionItems = ({
         schemaList: [],
         ruleTemplate: undefined,
         dbType: undefined,
-        testConnectResult: undefined
+        testConnectResult: undefined,
+        isSupportFileModeExecuteSql: false
       });
       updateSchemaList(key, instanceName);
       updateRuleTemplateNameAndDbType(key, instanceName);

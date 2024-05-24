@@ -7,7 +7,5 @@ export type SqlStatementFormItemProps = {
   disabledUploadType?: boolean;
   databaseInfo: CreateWorkflowDatabaseInfo;
   isSameSqlForAll: boolean;
-} & Pick<
-  SqlAuditInfoFormProps,
-  'isAuditing' | 'auditAction' | 'isSupportFileModeExecuteSql'
->;
+  isSupportFileModeExecuteSql: boolean;
+} & Pick<SqlAuditInfoFormProps, 'isAuditing' | 'auditAction'>;

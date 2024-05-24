@@ -8,9 +8,6 @@ const DEFAULT_DB_SOURCE_INFO = { '0': {} };
 const useSharedStepDetail = (): SharedStepDetails => {
   const [isAuditing, setIsAuditing] = useState(false);
 
-  const [isSupportFileModeExecuteSql, setIsSupportFileModeExecuteSql] =
-    useState(false);
-
   const [isDisabledForDifferenceSql, setIsDisabledForDifferenceSql] =
     useState(false);
 
@@ -62,7 +59,6 @@ const useSharedStepDetail = (): SharedStepDetails => {
 
   const resetAllSharedData = useCallback(() => {
     setIsAuditing(false);
-    setIsSupportFileModeExecuteSql(false);
     setDbSourceInfoCollection(DEFAULT_DB_SOURCE_INFO);
     setInstanceTestConnectResults([]);
     setIsDisabledForDifferenceSql(false);
@@ -73,10 +69,6 @@ const useSharedStepDetail = (): SharedStepDetails => {
     isAuditing: {
       value: isAuditing,
       set: setIsAuditing
-    },
-    isSupportFileModeExecuteSql: {
-      value: isSupportFileModeExecuteSql,
-      set: setIsSupportFileModeExecuteSql
     },
     dbSourceInfoCollection: {
       value: dbSourceInfoCollection,

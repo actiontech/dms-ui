@@ -6,75 +6,87 @@ import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { useTranslation } from 'react-i18next';
 import { BasicSwitch } from '@actiontech/shared';
 import { useEffect, useMemo } from 'react';
-import { SqlAuditInfoFormFields } from '../../../../index.type';
-import SqlStatementFormController from '../../../../../Common/SqlStatementFormController';
-import system from '@actiontech/shared/lib/api/sqle/service/system';
 import {
-  getSystemModuleStatusDbTypeEnum,
-  getSystemModuleStatusModuleNameEnum
-} from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
+  CreateWorkflowDatabaseInfo,
+  SqlAuditInfoFormFields
+} from '../../../../index.type';
+import SqlStatementFormController from '../../../../../Common/SqlStatementFormController';
+import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 
 const SqlAuditInfoFormItem: React.FC<SqlAuditInfoFormItemProps> = ({
-  isDisabledForDifferenceSql,
-  ...props
+  auditAction,
+  handleInstanceNameChange,
+  ...sharedStepDetail
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
 
   const isSameSqlForAll = Form.useWatch('isSameSqlForAll', form);
-  const databaseInfo = useMemo(() => {
-    return Object.keys(props.dbSourceInfoCollection.value)
+
+  const databaseInfo: CreateWorkflowDatabaseInfo = useMemo(() => {
+    return Object.keys(sharedStepDetail.dbSourceInfoCollection.value)
       .map((key) => {
         return {
           key,
-          instanceName: props.dbSourceInfoCollection.value?.[key]?.instanceName,
-          schemaName: props.dbSourceInfoCollection.value?.[key]?.schemaName
+          instanceName:
+            sharedStepDetail.dbSourceInfoCollection.value?.[key]?.instanceName,
+          schemaName:
+            sharedStepDetail.dbSourceInfoCollection.value?.[key]?.schemaName
         };
       })
       .filter((v) => !!v.instanceName);
-  }, [props.dbSourceInfoCollection]);
+  }, [sharedStepDetail.dbSourceInfoCollection]);
+
+  const isSupportFileModeExecuteSqlRecord: Record<string, boolean> =
+    useMemo(() => {
+      if (isSameSqlForAll) {
+        // 相同 SQL 模式下，判断所有数据源是否都支持。虽然 相同 SQL 模式下所有数据源类型会相同，但还是做下校验
+        return {
+          [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: Object.keys(
+            sharedStepDetail.dbSourceInfoCollection.value
+          ).every((key) => {
+            return !!sharedStepDetail.dbSourceInfoCollection?.value?.[key]
+              ?.isSupportFileModeExecuteSql;
+          })
+        };
+      }
+      //不同 SQL 模式下，每个数据源对应各自当前数据源类型是否支持文件上线模式
+      return Object.keys(sharedStepDetail.dbSourceInfoCollection.value).reduce(
+        (acc, key) => {
+          return {
+            ...acc,
+            [key]:
+              !!sharedStepDetail.dbSourceInfoCollection?.value?.[key]
+                ?.isSupportFileModeExecuteSql
+          };
+        },
+        {}
+      );
+    }, [isSameSqlForAll, sharedStepDetail.dbSourceInfoCollection.value]);
 
   useEffect(() => {
     const dbTypeSet = new Set(
-      Object.keys(props.dbSourceInfoCollection.value)
+      Object.keys(sharedStepDetail.dbSourceInfoCollection.value)
         ?.map((key) => {
-          return props.dbSourceInfoCollection.value?.[key].dbType;
+          return sharedStepDetail.dbSourceInfoCollection.value?.[key].dbType;
         })
         .filter((v) => !!v)
     );
-    // #if [ee]
-    const getSupportedFileModeByInstanceType = (types: string[]) => {
-      Promise.all(
-        types.map((type) => {
-          return system.getSystemModuleStatus({
-            db_type: type as getSystemModuleStatusDbTypeEnum,
-            module_name:
-              getSystemModuleStatusModuleNameEnum.execute_sql_file_mode
-          });
-        })
-      ).then((res) => {
-        props.isSupportFileModeExecuteSql.set(
-          res.every((item) => !!item.data.data?.is_supported)
-        );
-      });
-    };
-    if (dbTypeSet.size > 0) {
-      getSupportedFileModeByInstanceType(Array.from(dbTypeSet) as string[]);
-    }
-    // #endif
-
     if (dbTypeSet.size > 1) {
       form.setFieldValue('isSameSqlForAll', false);
-      isDisabledForDifferenceSql.set(true);
+      sharedStepDetail.isDisabledForDifferenceSql.set(true);
     } else {
-      isDisabledForDifferenceSql.set(false);
+      sharedStepDetail.isDisabledForDifferenceSql.set(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [form, props.dbSourceInfoCollection.value]);
+  }, [form, sharedStepDetail.dbSourceInfoCollection.value]);
 
   return (
     <>
-      <DatabaseSelectionItem {...props} />
+      <DatabaseSelectionItem
+        {...sharedStepDetail}
+        handleInstanceNameChange={handleInstanceNameChange}
+      />
 
       <FormItemLabel
         // #if [ce]
@@ -102,15 +114,19 @@ const SqlAuditInfoFormItem: React.FC<SqlAuditInfoFormItemProps> = ({
         labelCol={{ span: 22 }}
         wrapperCol={{ span: 2 }}
       >
-        <BasicSwitch disabled={isDisabledForDifferenceSql.value} />
+        <BasicSwitch
+          disabled={sharedStepDetail.isDisabledForDifferenceSql.value}
+        />
       </FormItemLabel>
 
       <SqlStatementFormController
-        activeKey={props.sqlStatementTabActiveKey.value}
-        onChange={props.sqlStatementTabActiveKey.set}
+        activeKey={sharedStepDetail.sqlStatementTabActiveKey.value}
+        onChange={sharedStepDetail.sqlStatementTabActiveKey.set}
+        auditAction={auditAction}
         isSameSqlForAll={isSameSqlForAll}
         databaseInfo={databaseInfo}
-        {...props}
+        isAuditing={sharedStepDetail.isAuditing}
+        isSupportFileModeExecuteSqlRecord={isSupportFileModeExecuteSqlRecord}
       />
     </>
   );

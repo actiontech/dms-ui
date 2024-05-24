@@ -10,14 +10,15 @@ import UpdateFormDrawer from './UpdateFormDrawer';
 import SubmitWorkflowButton from '../../../Common/SubmitWorkflowButton';
 
 const AuditResultStep: React.FC<AuditResultStepProps> = ({
-  baseFormValues,
   tasks,
-  isAuditing,
+  updateTaskRecordCount,
+  baseFormValues,
+  sqlAuditInfoFormValues,
   isDisableFinallySubmitButton,
   disabledOperatorWorkflowBtnTips,
-  updateTaskRecordCount,
   createAction,
-  ...props
+  auditAction,
+  ...sharedStepDetail
 }) => {
   const { t } = useTranslation();
   const [creating, { setFalse: finishCreate, setTrue: startCreate }] =
@@ -41,7 +42,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
   return (
     <>
       <PageHeader
-        title={<BackToList isAuditing={isAuditing.value} />}
+        title={<BackToList isAuditing={sharedStepDetail.isAuditing.value} />}
         extra={
           <Space>
             <BasicButton
@@ -73,8 +74,9 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
         open={updateSqlAuditInfoOpen}
         onClose={closeUpdateSqlAuditInfoDrawer}
         baseFormValues={baseFormValues}
-        isAuditing={isAuditing}
-        {...props}
+        sqlAuditInfoFormValues={sqlAuditInfoFormValues}
+        auditAction={auditAction}
+        {...sharedStepDetail}
       />
     </>
   );

@@ -28,7 +28,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
     <EmptyBox
       if={
         currentSqlUploadType !== AuditTaskResV1SqlSourceEnum.form_data &&
-        isSupportFileModeExecuteSql.value
+        isSupportFileModeExecuteSql
       }
     >
       <FormItemLabel
