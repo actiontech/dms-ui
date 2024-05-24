@@ -26,5 +26,7 @@ export enum ModalName {
   Company_Notice = 'Company_Notice',
 
   //data export
-  DMS_UPDATE_EXPORT_TASK_INFO = 'DMS_UPDATE_EXPORT_TASK_INFO'
+  DMS_UPDATE_EXPORT_TASK_INFO = 'DMS_UPDATE_EXPORT_TASK_INFO',
+
+  Cloud_Beaver_Sql_Operation_Audit_Detail = 'Cloud_Beaver_Sql_Operation_Audit_Detail'
 }

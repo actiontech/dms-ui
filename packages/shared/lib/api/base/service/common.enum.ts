@@ -139,7 +139,11 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'create_export_task' = 'create_export_task',
 
-  'audit_export_workflow' = 'audit_export_workflow'
+  'audit_export_workflow' = 'audit_export_workflow',
+
+  'create_optimization' = 'create_optimization',
+
+  'view_others_optimization' = 'view_others_optimization'
 }
 
 export enum OpPermissionItemRangeTypeEnum {
@@ -150,6 +154,10 @@ export enum OpPermissionItemRangeTypeEnum {
   'project' = 'project',
 
   'db_service' = 'db_service'
+}
+
+export enum OperationOperationTypeEnum {
+  'SQL' = 'SQL'
 }
 
 export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {

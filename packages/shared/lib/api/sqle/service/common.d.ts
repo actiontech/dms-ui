@@ -1095,6 +1095,14 @@ export interface IGetSqlExecutionFailPercentResV1 {
   message?: string;
 }
 
+export interface IGetSqlFileOrderMethodResV1 {
+  code?: number;
+
+  data?: ISqlFileOrderMethodRes;
+
+  message?: string;
+}
+
 export interface IGetSqlManageListResp {
   code?: number;
 
@@ -1915,6 +1923,16 @@ export interface ISqlExecutionFailPercent {
   percent?: number;
 }
 
+export interface ISqlFileOrderMethod {
+  desc?: string;
+
+  order_method?: string;
+}
+
+export interface ISqlFileOrderMethodRes {
+  methods?: ISqlFileOrderMethod[];
+}
+
 export interface ISqlManage {
   assignees?: string[];
 
@@ -1972,6 +1990,8 @@ export interface IStatisticsAuditedSQLResV1 {
 }
 
 export interface ISystemVariablesResV1 {
+  cb_operation_logs_expired_hours?: number;
+
   operation_record_expired_hours?: number;
 
   url?: string;
@@ -2196,6 +2216,8 @@ export interface IUpdateSQLAuditRecordReqV1 {
 }
 
 export interface IUpdateSystemVariablesReqV1 {
+  cb_operation_logs_expired_hours?: number;
+
   operation_record_expired_hours?: number;
 
   url?: string;
