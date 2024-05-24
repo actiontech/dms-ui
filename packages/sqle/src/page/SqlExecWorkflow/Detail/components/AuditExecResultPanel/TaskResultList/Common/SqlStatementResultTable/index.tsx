@@ -1,5 +1,5 @@
 import { BasicTable } from '@actiontech/shared';
-import { SQLStatementResultTableProps } from './index.type';
+import { SqlStatementResultTableProps } from './index.type';
 import { SQLStatementResultColumns } from './columns';
 import { useBoolean } from 'ahooks';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { SQLStatementResultTableStyleWrapper } from './style';
 import AuditResultDrawer from '../../../../../../Common/AuditResultList/Table/AuditResultDrawer';
 
-const SQLStatementResultTable: React.FC<SQLStatementResultTableProps> = (
+const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
   props
 ) => {
   const [
@@ -41,4 +41,4 @@ const SQLStatementResultTable: React.FC<SQLStatementResultTableProps> = (
   );
 };
 
-export default SQLStatementResultTable;
+export default SqlStatementResultTable;

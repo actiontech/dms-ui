@@ -77,7 +77,9 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       return;
     }
     if (checkTaskCountIsEmpty(modifiedTasks)) {
-      messageApi.error(t('execWorkflow.create.mustHaveAuditResultTips'));
+      messageApi.error(
+        t('execWorkflow.detail.operator.updateEmptyWorkflowTips')
+      );
       return;
     }
 

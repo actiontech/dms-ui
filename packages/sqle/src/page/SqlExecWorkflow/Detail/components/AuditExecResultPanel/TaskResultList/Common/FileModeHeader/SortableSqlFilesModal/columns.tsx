@@ -3,7 +3,7 @@ import { IconSQLFile } from '@actiontech/shared/lib/Icon/common';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { IAuditFileStatistic } from '@actiontech/shared/lib/api/sqle/service/common';
-import { t } from '../../../../../../../../locale';
+import { t } from '../../../../../../../../../locale';
 
 export const SortableSqlFilesModalColumns: () => IBasicTable<
   IAuditFileStatistic & { index: number }

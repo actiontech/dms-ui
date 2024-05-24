@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
-
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-
 import {
   ActiontechTable,
   useTableRequestError,

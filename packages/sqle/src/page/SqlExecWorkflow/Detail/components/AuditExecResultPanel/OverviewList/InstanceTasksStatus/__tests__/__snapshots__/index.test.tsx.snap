@@ -1,0 +1,383 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is exec_failed 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#F59957"
+            stroke-width="1.5"
+          />
+          <path
+            d="M8 10L8 12"
+            stroke="#F59957"
+            stroke-width="1.5"
+          />
+          <path
+            d="M8 4L8.00415 8.5"
+            stroke="#F59957"
+            stroke-width="1.5"
+          />
+        </svg>
+      </span>
+      <span>
+        上线失败
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is exec_scheduled 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#6094FC"
+            stroke-width="1.5"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M7.99995 3.15479V8.00008L3.79321 10.4039C3.87976 10.5616 4.00868 10.6957 4.16982 10.7888L7.49995 12.7114C7.80935 12.89 8.19055 12.89 8.49995 12.7114L11.8301 10.7888C12.1395 10.6101 12.3301 10.28 12.3301 9.92273V6.07744C12.3301 5.72017 12.1395 5.39004 11.8301 5.21141L8.49995 3.28876C8.34525 3.19944 8.1726 3.15478 7.99995 3.15479Z"
+            fill="#6094FC"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <span>
+        定时上线
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is exec_succeeded 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#41BF9A"
+            stroke-width="1.5"
+          />
+          <path
+            d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
+            stroke="#41BF9A"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+        </svg>
+      </span>
+      <span>
+        上线成功
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is executing 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#6094FC"
+            stroke-width="1.5"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M7.99995 3.15466V7.99996L3.79321 10.4038C3.87976 10.5615 4.00868 10.6956 4.16982 10.7886L7.49995 12.7113C7.80935 12.8899 8.19055 12.8899 8.49995 12.7113L11.8301 10.7886C12.1395 10.61 12.3301 10.2799 12.3301 9.92261V6.07731C12.3301 5.72005 12.1395 5.38992 11.8301 5.21129L8.49995 3.28864C8.34525 3.19932 8.1726 3.15466 7.99995 3.15466Z"
+            fill="#6094FC"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <span>
+        正在上线
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is manually_executed 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#41BF9A"
+            stroke-width="1.5"
+          />
+          <path
+            d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
+            stroke="#41BF9A"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+        </svg>
+      </span>
+      <span>
+        人工上线
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is terminate_failed 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#F59957"
+            stroke-width="1.5"
+          />
+          <path
+            d="M8 10L8 12"
+            stroke="#F59957"
+            stroke-width="1.5"
+          />
+          <path
+            d="M8 4L8.00415 8.5"
+            stroke="#F59957"
+            stroke-width="1.5"
+          />
+        </svg>
+      </span>
+      <span>
+        中止失败
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is terminate_succeeded 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#41BF9A"
+            stroke-width="1.5"
+          />
+          <path
+            d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
+            stroke="#41BF9A"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+        </svg>
+      </span>
+      <span>
+        中止成功
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is terminating 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#6094FC"
+            stroke-width="1.5"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M7.99995 3.15466V7.99996L3.79321 10.4038C3.87976 10.5615 4.00868 10.6956 4.16982 10.7886L7.49995 12.7113C7.80935 12.8899 8.19055 12.8899 8.49995 12.7113L11.8301 10.7886C12.1395 10.61 12.3301 10.2799 12.3301 9.92261V6.07731C12.3301 5.72005 12.1395 5.38992 11.8301 5.21129L8.49995 3.28864C8.34525 3.19932 8.1726 3.15466 7.99995 3.15466Z"
+            fill="#6094FC"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <span>
+        正在中止
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is undefined 1`] = `
+<body>
+  <div>
+    <span>
+      -
+    </span>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is wait_for_audit 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#7453DA"
+            stroke-width="1.5"
+          />
+        </svg>
+      </span>
+      <span>
+        待审核
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus render snap when status is wait_for_execution 1`] = `
+<body>
+  <div>
+    <div
+      class="css-3q8fl"
+    >
+      <span
+        class="custom-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
+            stroke="#7470ED"
+            stroke-width="1.5"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M8 3.15466V7.99996L12.2067 10.4038C12.2864 10.2588 12.3301 10.0938 12.3301 9.92261V6.07731C12.3301 5.72005 12.1395 5.38992 11.8301 5.21129L8.5 3.28864C8.3453 3.19932 8.17265 3.15466 8 3.15466Z"
+            fill="#7470ED"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+      <span>
+        待上线
+      </span>
+    </div>
+  </div>
+</body>
+`;
