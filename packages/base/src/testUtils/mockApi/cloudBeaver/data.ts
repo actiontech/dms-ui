@@ -95,11 +95,8 @@ export const listCBOperationLogsMockData: ICBOperationLog[] = [
   },
   {
     uid: '678',
-    session_id: '',
-    operation_ip: '',
     operation_person: {},
     operation: {},
-    exec_result: '',
     db_service: {},
     audit_result: []
   }
@@ -111,7 +108,7 @@ export const listCBOperationLogsMockReturnData = {
   total_nums: listCBOperationLogsMockData.length,
   exec_failed_sql_count: 2,
   exec_sql_total: 50,
-  exec_success_rate: 5
+  exec_success_rate: 0.5
 };
 
 export const CBOperationLogTipsMockData: string[] = ['success', 'fail'];

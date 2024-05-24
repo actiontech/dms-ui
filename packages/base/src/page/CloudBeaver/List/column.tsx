@@ -85,9 +85,11 @@ export const CBOperationListColumns = (
     {
       dataIndex: 'audit_result',
       title: t('dmsCloudBeaver.operationList.column.auditResult'),
-      width: 400,
+      className: 'ellipsis-column-width',
       render: (result: ICBOperationLog['audit_result'], record) => {
-        if (!result || !result.length) {
+        if (
+          record.operation?.operation_type !== OperationOperationTypeEnum.SQL
+        ) {
           return '-';
         }
         return (
@@ -116,7 +118,7 @@ export const CBOperationListColumns = (
       dataIndex: 'exec_result',
       title: t('dmsCloudBeaver.operationList.column.execResult'),
       render: (result: ICBOperationLog['exec_result']) => {
-        return result ?? '-';
+        return result || '-';
       },
       filterCustomType: 'select',
       filterKey: 'filter_exec_result'
