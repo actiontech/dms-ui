@@ -21,13 +21,15 @@ const OptimizationSqlList: React.FC<{
   setSqlListLoading: (v: boolean) => void;
   refresh: boolean;
   dbType: string;
+  disableDetailButton: boolean;
 }> = ({
   projectName,
   projectID,
   optimizationId,
   setSqlListLoading,
   refresh,
-  dbType
+  dbType,
+  disableDetailButton
 }) => {
   const navigate = useNavigate();
 
@@ -92,7 +94,10 @@ const OptimizationSqlList: React.FC<{
           current: pagination.page_index
         }}
         columns={SqlOptimizationListColumns()}
-        actions={SqlOptimizationListActions(gotoDetailPage)}
+        actions={SqlOptimizationListActions(
+          gotoDetailPage,
+          disableDetailButton
+        )}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
       />
