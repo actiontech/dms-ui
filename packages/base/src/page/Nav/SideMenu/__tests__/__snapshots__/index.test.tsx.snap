@@ -269,7 +269,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
             >
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-cloud-beaver"
+                data-menu-id="rc-menu-uuid-test-project/projectID/cloud-beaver"
                 role="menuitem"
                 structkey="cloud-beaver"
                 style="padding-left: 24px;"
@@ -302,7 +302,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/cloud-beaver"
+                    href="/project/100121/cloud-beaver"
                   >
                     SQL工作台
                   </a>
@@ -1506,7 +1506,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
             >
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-cloud-beaver"
+                data-menu-id="rc-menu-uuid-test-project/projectID/cloud-beaver"
                 role="menuitem"
                 structkey="cloud-beaver"
                 style="padding-left: 24px;"
@@ -1539,7 +1539,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/cloud-beaver"
+                    href="/project/100121/cloud-beaver"
                   >
                     SQL工作台
                   </a>
@@ -2743,7 +2743,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
             >
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-cloud-beaver"
+                data-menu-id="rc-menu-uuid-test-project/projectID/cloud-beaver"
                 role="menuitem"
                 structkey="cloud-beaver"
                 style="padding-left: 24px;"
@@ -2776,7 +2776,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/cloud-beaver"
+                    href="/project/100121/cloud-beaver"
                   >
                     SQL工作台
                   </a>

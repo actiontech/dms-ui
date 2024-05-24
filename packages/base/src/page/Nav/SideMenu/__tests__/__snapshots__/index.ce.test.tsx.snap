@@ -175,7 +175,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
           >
             <li
               class="ant-menu-item"
-              data-menu-id="rc-menu-uuid-test-cloud-beaver"
+              data-menu-id="rc-menu-uuid-test-project/projectID/cloud-beaver"
               role="menuitem"
               structkey="cloud-beaver"
               style="padding-left: 24px;"
@@ -208,7 +208,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
                 class="ant-menu-title-content"
               >
                 <a
-                  href="/cloud-beaver"
+                  href="/project/700300/cloud-beaver"
                 >
                   SQL工作台
                 </a>

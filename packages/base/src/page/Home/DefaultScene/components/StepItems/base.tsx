@@ -99,7 +99,7 @@ export const getMemberAndPermissionSteps: (
 
 export const getSqlEditorStep: (
   arg: DevopsStepsProps
-) => UserDevopsStepsFactory[0]['children'][0] = ({ navigate }) => {
+) => UserDevopsStepsFactory[0]['children'][0] = ({ navigate, projectID }) => {
   return {
     key: 'sqlEditor',
     title: t('dmsHome.defaultScene.steps.queryAndModify.innerContents.title_0'),
@@ -112,7 +112,7 @@ export const getSqlEditorStep: (
         label: t(
           'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_0_0'
         ),
-        action: () => navigate('/cloud-beaver')
+        action: () => navigate(`/project/${projectID}/cloud-beaver`)
       }
     ]
   };

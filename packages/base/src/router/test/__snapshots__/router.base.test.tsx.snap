@@ -25,13 +25,6 @@ exports[`base/router-base-ee render base route data snap 1`] = `
   },
   {
     "element": <div>
-      cloudBeaver
-    </div>,
-    "key": "cloudBeaver",
-    "path": "cloud-beaver",
-  },
-  {
-    "element": <div>
       account
     </div>,
     "key": "account",
@@ -164,6 +157,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
       },
       {
         "element": <div>
+          cloudBeaver
+        </div>,
+        "key": "cloudBeaver",
+        "path": ":projectID/cloud-beaver",
+      },
+      {
+        "element": <div>
           dataMaskRuleOverview
         </div>,
         "key": "dataMaskRuleOverview",
@@ -182,16 +182,6 @@ exports[`base/router-base-ee render base router when version is ce render router
   <div>
     <div>
       account
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-base-ee render base router when version is ce render router cloud-beaver 1`] = `
-<body>
-  <div>
-    <div>
-      cloudBeaver
     </div>
   </div>
 </body>
@@ -254,6 +244,16 @@ exports[`base/router-base-ee render base router when version is ce render router
   <div>
     <div>
       member
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router project render router cloud-beaver 1`] = `
+<body>
+  <div>
+    <div>
+      cloudBeaver
     </div>
   </div>
 </body>

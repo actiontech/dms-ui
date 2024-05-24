@@ -40,6 +40,8 @@ import {
   IPreviewImportProjectsReply,
   IGetProjectTipsReply,
   IUpdateProject,
+  IListCBOperationLogsReply,
+  IGetCBOperationLogTipsReply,
   IBatchGetDataExportTaskReply,
   IDataExportTask,
   IAddDataExportTaskReply,
@@ -102,6 +104,7 @@ import {
   ListOpPermissionsOrderByEnum,
   ListOpPermissionsFilterByTargetEnum,
   ListProjectsOrderByEnum,
+  ExportProjectsOrderByEnum,
   ListDataExportWorkflowsFilterByStatusEnum,
   ListDBServicesOrderByEnum,
   ListDBServiceTipsFunctionalModuleEnum,
@@ -285,6 +288,14 @@ export interface IAddProjectParams {
 
 export interface IAddProjectReturn extends IAddProjectReply {}
 
+export interface IExportProjectsParams {
+  order_by?: ExportProjectsOrderByEnum;
+
+  filter_by_name?: string;
+
+  filter_by_uid?: string;
+}
+
 export interface IImportProjectsParams {
   projects?: IImportProjects[];
 }
@@ -323,6 +334,51 @@ export interface IArchiveProjectParams {
 }
 
 export interface IArchiveProjectReturn extends IGenericResp {}
+
+export interface IListCBOperationLogsParams {
+  project_uid: string;
+
+  filter_operation_person_uid?: string;
+
+  filter_operation_time_from?: string;
+
+  filter_operation_time_to?: string;
+
+  filter_db_service_uid?: string;
+
+  filter_exec_result?: string;
+
+  fuzzy_keyword?: string;
+
+  page_size: number;
+
+  page_index?: number;
+}
+
+export interface IListCBOperationLogsReturn extends IListCBOperationLogsReply {}
+
+export interface IExportCBOperationLogsParams {
+  project_uid: string;
+
+  filter_operation_person_uid?: string;
+
+  filter_operation_time_from?: string;
+
+  filter_operation_time_to?: string;
+
+  filter_db_service_uid?: string;
+
+  filter_exec_result?: string;
+
+  fuzzy_keyword?: string;
+}
+
+export interface IGetCBOperationLogTipsParams {
+  project_uid: string;
+}
+
+export interface IGetCBOperationLogTipsReturn
+  extends IGetCBOperationLogTipsReply {}
 
 export interface IBatchGetDataExportTaskParams {
   project_uid: string;
