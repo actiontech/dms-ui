@@ -95,10 +95,10 @@ const SQLMode: React.FC<SQLExecuteResultCardProps> = ({
         </Space>
         <Space>
           <BasicButton size="small" onClick={onCopyExecSql}>
-            {t('audit.copyExecSql')}
+            {t('execWorkflow.audit.copyExecSql')}
           </BasicButton>
           <BasicButton size="small" onClick={onClickAnalyze}>
-            {t('audit.table.analyze')}
+            {t('execWorkflow.audit.table.analyze')}
           </BasicButton>
         </Space>
       </div>
@@ -109,13 +109,13 @@ const SQLMode: React.FC<SQLExecuteResultCardProps> = ({
               active={showExecSql}
               onClick={setTrue}
             >
-              {t('audit.table.execSql')}
+              {t('execWorkflow.audit.table.execSql')}
             </TaskResultSqlOptionsStyleWrapper>
             <TaskResultSqlOptionsStyleWrapper
               active={!showExecSql}
               onClick={setFalse}
             >
-              {t('audit.table.rollback')}
+              {t('execWorkflow.audit.table.rollback')}
             </TaskResultSqlOptionsStyleWrapper>
           </Space>
 
@@ -123,11 +123,13 @@ const SQLMode: React.FC<SQLExecuteResultCardProps> = ({
             <EmptyBox
               if={!!props?.sql_source_file}
               defaultNode={
-                <BasicToolTips title={t('audit.sqlFileSource.tips')}>
+                <BasicToolTips
+                  title={t('execWorkflow.audit.sqlFileSource.tips')}
+                >
                   <Space>
                     <BasicTag icon={<IconFillListActive />}>
                       <span className="sql-source-title">
-                        {t('audit.sqlFileSource.source')}
+                        {t('execWorkflow.audit.sqlFileSource.source')}
                       </span>
                       -
                     </BasicTag>
@@ -137,14 +139,14 @@ const SQLMode: React.FC<SQLExecuteResultCardProps> = ({
             >
               <BasicTag icon={<IconFillListActive />}>
                 <span className="sql-source-title">
-                  {t('audit.sqlFileSource.source')}
+                  {t('execWorkflow.audit.sqlFileSource.source')}
                 </span>
                 {props?.sql_source_file}
               </BasicTag>
             </EmptyBox>
             <BasicTag icon={<IconPosition />}>
               <span className="sql-source-title">
-                {t('audit.sqlFileSource.fileLine')}
+                {t('execWorkflow.audit.sqlFileSource.fileLine')}
               </span>
               {props?.sql_start_line || '-'}
             </BasicTag>
@@ -155,7 +157,7 @@ const SQLMode: React.FC<SQLExecuteResultCardProps> = ({
         <TaskAuditResultTreeStyleWrapper
           treeData={[
             {
-              title: t('audit.table.execResult'),
+              title: t('execWorkflow.audit.table.execResult'),
               key: 'exec_result_wrap',
               children: [
                 {

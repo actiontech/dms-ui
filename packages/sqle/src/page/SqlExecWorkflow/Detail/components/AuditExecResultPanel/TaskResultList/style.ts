@@ -9,10 +9,14 @@ export const TasksResultListStyleWrapper = styled('div')`
     margin-top: 20px;
 
     .file-mode-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+
+      .file-mode-title-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+        margin-left: 6px;
+      }
     }
   }
 

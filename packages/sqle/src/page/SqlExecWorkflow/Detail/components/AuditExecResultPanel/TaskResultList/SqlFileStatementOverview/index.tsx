@@ -21,7 +21,7 @@ import {
   CustomSegmentedFilter,
   PageHeader
 } from '@actiontech/shared';
-import { IconFile, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
+import { IconSQLFile, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import SQLStatementResultTable from '../Common/SQLStatementResultTable';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
@@ -99,7 +99,7 @@ const SqlFileStatementOverview: React.FC = () => {
       <PageHeader
         title={
           <div className="page-title-wrapper">
-            <IconFile width={24} height={24} />
+            <IconSQLFile width={24} height={24} />
             {currentFileOverview?.file_name ?? ''}
           </div>
         }

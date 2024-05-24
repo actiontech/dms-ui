@@ -24,6 +24,7 @@ export type SqlStatementFields = Record<
   string | any
 > & {
   exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum;
+  file_sort_method: string;
 };
 
 export type CreateWorkflowDatabaseInfo = Array<{

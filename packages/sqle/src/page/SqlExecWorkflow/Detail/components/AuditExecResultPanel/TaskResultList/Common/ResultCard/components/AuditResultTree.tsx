@@ -19,7 +19,7 @@ const AuditResultTree: React.FC<AuditResultTreeProps> = ({ auditResult }) => {
     {
       title: (
         <span className="audit-result-tree-title">
-          {t('audit.table.auditResult')}
+          {t('execWorkflow.audit.table.auditResult')}
         </span>
       ),
       key: 'audit_tree_title',
