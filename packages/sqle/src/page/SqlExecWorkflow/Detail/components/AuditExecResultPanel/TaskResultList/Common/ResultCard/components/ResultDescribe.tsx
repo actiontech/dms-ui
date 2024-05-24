@@ -33,7 +33,7 @@ const ResultDescribe: React.FC<{
         className="result-describe-input"
         onBlur={onInputBlur}
         value={inputValue}
-        placeholder={t('audit.table.addDescribe')}
+        placeholder={t('execWorkflow.audit.table.addDescribe')}
         onFocus={setTrue}
         onChange={(e) => {
           setInputValue(e.target.value);

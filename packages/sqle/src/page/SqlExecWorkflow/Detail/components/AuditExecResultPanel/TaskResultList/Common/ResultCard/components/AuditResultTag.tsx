@@ -51,7 +51,7 @@ const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
         icon={<IconWorkflowAuditResultSuccess />}
         bordered={false}
       >
-        {t('audit.auditSuccess')}
+        {t('execWorkflow.audit.auditSuccess')}
       </BasicTag>
     );
   } else {

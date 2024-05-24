@@ -98,7 +98,8 @@ export default {
         selectExecuteModeTips:
           '当选择文件模式上线时，审核结果将以文件为单位进行聚合展示',
         executeSqlMode: 'SQL模式',
-        executeFileMode: '文件模式'
+        executeFileMode: '文件模式',
+        selectFileSortMethod: '选择文件排序方式'
       }
     },
 
@@ -267,7 +268,21 @@ export default {
 
     fileModeExecute: {
       headerTitle: '文件信息概览',
-      sqlsTips: '当前仅展示前5条数据，<0>查看更多<0>'
+      sqlsTips: '当前仅展示前5条数据，<0>查看更多<0>',
+      extraButtonText: '编辑上线顺序',
+
+      sortableSQLFilesModal: {
+        title: '编辑上线顺序',
+        tips: '请拖动表格中的行以重新排序SQL文件的上线顺序。',
+        resetFileOrder: '重置文件顺序',
+        tableColumns: {
+          execOrder: '初始执行编号',
+          index: '排序后执行编号',
+          fileName: '文件',
+          hasDragged: '是否变更顺序'
+        },
+        successTips: '排序成功!'
+      }
     },
 
     fileModeSqls: {

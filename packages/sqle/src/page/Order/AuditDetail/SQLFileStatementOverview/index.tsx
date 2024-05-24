@@ -11,7 +11,7 @@ import {
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { useTranslation } from 'react-i18next';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconFile, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
+import { IconSQLFile, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import {
   AuditResultFilterContainerStyleWrapper,
   AuditResultFilterOptionsStyleWrapper,
@@ -116,7 +116,7 @@ const SQLFileStatementOverview: React.FC = () => {
       <PageHeader
         title={
           <div className="page-title-wrapper">
-            <IconFile width={24} height={24} />
+            <IconSQLFile width={24} height={24} />
             {currentFileOverview?.file_name ?? ''}
           </div>
         }

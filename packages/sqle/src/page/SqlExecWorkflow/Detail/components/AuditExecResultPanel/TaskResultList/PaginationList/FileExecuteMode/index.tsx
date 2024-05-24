@@ -22,7 +22,11 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
 
   const { projectID } = useCurrentProject();
 
-  const { data: currentAuditTaskList, loading } = useRequest(
+  const {
+    data: currentAuditTaskList,
+    loading,
+    refresh
+  } = useRequest(
     () => {
       return task
         .getAuditFileList({
@@ -53,7 +57,11 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
 
   return (
     <>
-      <FileModeHeader />
+      <FileModeHeader
+        taskId={taskId}
+        refresh={refresh}
+        workflowStatus={workflowStatus}
+      />
 
       <List
         className="file-execute-mode-list-wrapper"

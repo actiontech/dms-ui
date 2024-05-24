@@ -8,7 +8,6 @@ import {
   IconSqlOptimization,
   IconProjectOverview,
   IconRuleTemplate,
-  IconSQLOrder,
   IconSqlAudit,
   IconSqlManagement,
   IconTodoList,

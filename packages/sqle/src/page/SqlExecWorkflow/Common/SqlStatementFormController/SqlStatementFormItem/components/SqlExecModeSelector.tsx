@@ -7,12 +7,15 @@ import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { EmptyBox, ModeSwitcher } from '@actiontech/shared';
+import { BasicSelect, EmptyBox, ModeSwitcher } from '@actiontech/shared';
 import { sqlExecModeOptions } from '../index.data';
 import { useTranslation } from 'react-i18next';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { Form } from 'antd';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
+import { useRequest } from 'ahooks';
+import task from '@actiontech/shared/lib/api/sqle/service/task';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
   fieldPrefixPath,
@@ -24,6 +27,36 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
     [fieldPrefixPath, 'currentUploadType'],
     form
   ) as AuditTaskResV1SqlSourceEnum;
+
+  const currentExecuteMode = Form.useWatch(
+    [fieldPrefixPath, 'exec_mode'],
+    form
+  );
+
+  const isSupportsFileSortUpload =
+    currentSqlUploadType === AuditTaskResV1SqlSourceEnum.zip_file &&
+    currentExecuteMode === CreateAuditTasksGroupReqV1ExecModeEnum.sql_file;
+
+  const {
+    data: sqlFileOrderMethodOptions,
+    loading: getSqlFileOrderMethodLoading
+  } = useRequest(
+    () =>
+      task.getSqlFileOrderMethodV1().then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          return res.data.data?.methods?.map((item) => {
+            return {
+              label: item.desc,
+              value: item.order_method
+            };
+          });
+        }
+      }),
+    {
+      ready: isSupportsFileSortUpload
+    }
+  );
+
   return (
     <EmptyBox
       if={
@@ -53,6 +86,18 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
       >
         <ModeSwitcher rowProps={{ gutter: 10 }} options={sqlExecModeOptions} />
       </FormItemNoLabel>
+
+      {isSupportsFileSortUpload && (
+        <FormItemLabel
+          label={t('execWorkflow.create.form.sqlInfo.selectFileSortMethod')}
+          name={[fieldPrefixPath, 'file_sort_method']}
+        >
+          <BasicSelect
+            loading={getSqlFileOrderMethodLoading}
+            options={sqlFileOrderMethodOptions}
+          />
+        </FormItemLabel>
+      )}
     </EmptyBox>
   );
 };
