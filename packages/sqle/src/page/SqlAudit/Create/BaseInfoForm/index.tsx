@@ -15,7 +15,6 @@ import {
   BasicButton,
   BasicTag
 } from '@actiontech/shared';
-import { IconOrderCreateTitleStyleWrapper } from '../../../Order/Create/BaseInfoForm/style';
 import { Divider, Form, InputRef, SelectProps, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
@@ -24,11 +23,14 @@ import useSQLAuditRecordTag from '../../../../hooks/useSQLAuditRecordTag';
 import { useForm } from 'antd/es/form/Form';
 import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { FormSubmitStatusContext } from '..';
+import { IconWorkflowCreateTitle } from '../../../../icon/SqlExecWorkflow';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
 const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const submitLoading = useContext(FormSubmitStatusContext);
+  const { sharedTheme } = useThemeStyleData();
 
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading, updateSQLAuditRecordTag, auditRecordTags } =
@@ -108,7 +110,9 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
         <FormAreaLineStyleWrapper className="has-border">
           <FormAreaBlockStyleWrapper>
             <FormItemBigTitle>
-              <IconOrderCreateTitleStyleWrapper />
+              <IconWorkflowCreateTitle
+                color={sharedTheme.uiToken.colorTextQuaternary}
+              />
               <span>{t('sqlAudit.create.title')}</span>
             </FormItemBigTitle>
             <FormItemLabel

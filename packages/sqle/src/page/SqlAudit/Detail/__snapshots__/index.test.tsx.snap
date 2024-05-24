@@ -215,79 +215,35 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
             </div>
           </div>
           <div
-            class=" css-1x9vax"
+            class="audit-result-filter-container-wrapper css-1c0dogt"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-filter-options"
+              class="custom-segmented-filter-wrapper audit-result-filter-option"
             >
               <div
-                class="ant-space-item"
-                style="margin-right: 8px;"
+                class="custom-segmented-filter-item custom-segmented-filter-item-checked"
               >
-                <div
-                  class="css-cl7oyl"
-                >
-                  <span
-                    class="text"
-                  >
-                    全部等级
-                  </span>
-                </div>
+                全部等级
               </div>
               <div
-                class="ant-space-item"
-                style="margin-right: 8px;"
+                class="custom-segmented-filter-item"
               >
-                <div
-                  class="css-1bvs5o7"
-                >
-                  <span
-                    class="text"
-                  >
-                    普通(Normal)
-                  </span>
-                </div>
+                普通(Normal)
               </div>
               <div
-                class="ant-space-item"
-                style="margin-right: 8px;"
+                class="custom-segmented-filter-item"
               >
-                <div
-                  class="css-1bvs5o7"
-                >
-                  <span
-                    class="text"
-                  >
-                    提示(Notice)
-                  </span>
-                </div>
+                提示(Notice)
               </div>
               <div
-                class="ant-space-item"
-                style="margin-right: 8px;"
+                class="custom-segmented-filter-item"
               >
-                <div
-                  class="css-1bvs5o7"
-                >
-                  <span
-                    class="text"
-                  >
-                    告警(Warning)
-                  </span>
-                </div>
+                告警(Warning)
               </div>
               <div
-                class="ant-space-item"
+                class="custom-segmented-filter-item"
               >
-                <div
-                  class="css-1bvs5o7"
-                >
-                  <span
-                    class="text"
-                  >
-                    错误(Error)
-                  </span>
-                </div>
+                错误(Error)
               </div>
             </div>
             <div
@@ -334,7 +290,22 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               </div>
               <div
                 class="ant-space-item"
-              />
+              >
+                <div
+                  class="audit-result-info-item"
+                >
+                  <span
+                    class="audit-result-info-item-schema-value"
+                  >
+                    test
+                  </span>
+                  <span
+                    class="audit-result-info-item-text"
+                  >
+                    Schema
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <div

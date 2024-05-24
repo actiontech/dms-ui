@@ -1,16 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
-
 import { Spin } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { IconAdd, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import BasicInfoWrapper from './BasicInfoWrapper';
-
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
 import { useMemo } from 'react';
-import AuditResultList from '../../Order/Common/AuditResultList';
+import AuditResultList from '../../SqlExecWorkflow/Common/AuditResultList';
 
 const SqlAuditDetail = () => {
   const { t } = useTranslation();
@@ -68,11 +66,7 @@ const SqlAuditDetail = () => {
           style={{ height: '60px' }}
         />
         <BasicInfoWrapper {...basicInfoData} />
-        <AuditResultList
-          mode="sql-audit"
-          tasks={auditResultData}
-          projectID={projectID}
-        />
+        <AuditResultList tasks={auditResultData} showTaskTab={false} />
       </Spin>
     </>
   );

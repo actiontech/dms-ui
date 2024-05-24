@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
 import {
-  IconOrderStatusIsExecuting,
-  IconOrderStatusIsFailed,
-  IconOrderStatusIsFinished
-} from '../../../icon/Order';
+  IconWorkflowStatusIsExecuting,
+  IconWorkflowStatusIsFailed,
+  IconWorkflowStatusIsFinished
+} from '../../../icon/SqlExecWorkflow';
 import { OptimizationStatusStyleWrapper } from '../style';
 import { SqlOptimizationStatusEnum } from '../index.data';
 
@@ -13,21 +13,21 @@ const optimizationStatusMap = () => {
     [
       SqlOptimizationStatusEnum.optimizing,
       <>
-        <IconOrderStatusIsExecuting />
+        <IconWorkflowStatusIsExecuting />
         <span>{t('sqlOptimization.status.optimizing')}</span>
       </>
     ],
     [
       SqlOptimizationStatusEnum.finish,
       <>
-        <IconOrderStatusIsFinished />
+        <IconWorkflowStatusIsFinished />
         <span>{t('sqlOptimization.status.finish')}</span>
       </>
     ],
     [
       SqlOptimizationStatusEnum.failed,
       <>
-        <IconOrderStatusIsFailed />
+        <IconWorkflowStatusIsFailed />
         <span>{t('sqlOptimization.status.failed')}</span>
       </>
     ]
