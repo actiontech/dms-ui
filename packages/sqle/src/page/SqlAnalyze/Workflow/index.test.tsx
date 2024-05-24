@@ -10,9 +10,9 @@ import {
 } from '../../../testUtils/mockRequest';
 
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { OrderSqlAnalyzeData } from '../__testData__';
+import { WorkflowSqlAnalyzeData } from '../__testData__';
 
-import OrderSqlAnalyze from '.';
+import WorkflowSqlAnalyze from '.';
 
 jest.mock('react-router', () => {
   return {
@@ -21,7 +21,7 @@ jest.mock('react-router', () => {
   };
 });
 
-describe('SqlAnalyze/Order', () => {
+describe('SqlAnalyze/Workflow', () => {
   ignoreComponentAutoCreatedListNoKey();
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
@@ -42,14 +42,14 @@ describe('SqlAnalyze/Order', () => {
 
   const mockGetAnalyzeData = () => {
     const spy = jest.spyOn(task, 'getTaskAnalysisDataV2');
-    spy.mockImplementation(() => resolveThreeSecond(OrderSqlAnalyzeData));
+    spy.mockImplementation(() => resolveThreeSecond(WorkflowSqlAnalyzeData));
     return spy;
   };
 
   it('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
     const { container, baseElement } = renderWithReduxAndTheme(
-      <OrderSqlAnalyze />
+      <WorkflowSqlAnalyze />
     );
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
@@ -71,13 +71,13 @@ describe('SqlAnalyze/Order', () => {
   it('should render error result of type "info" when response code is 8001', async () => {
     const spy = mockGetAnalyzeData();
     spy.mockImplementation(() =>
-      resolveErrorThreeSecond(OrderSqlAnalyzeData, {
+      resolveErrorThreeSecond(WorkflowSqlAnalyzeData, {
         otherData: {
           code: 8001
         }
       })
     );
-    const { container } = renderWithReduxAndTheme(<OrderSqlAnalyze />);
+    const { container } = renderWithReduxAndTheme(<WorkflowSqlAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -86,13 +86,13 @@ describe('SqlAnalyze/Order', () => {
   it('should render error result of type "error" when response code is not 8001', async () => {
     const spy = mockGetAnalyzeData();
     spy.mockImplementation(() =>
-      resolveErrorThreeSecond(OrderSqlAnalyzeData, {
+      resolveErrorThreeSecond(WorkflowSqlAnalyzeData, {
         otherData: {
           code: 8000
         }
       })
     );
-    const { container } = renderWithReduxAndTheme(<OrderSqlAnalyze />);
+    const { container } = renderWithReduxAndTheme(<WorkflowSqlAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();

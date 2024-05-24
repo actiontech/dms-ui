@@ -42,7 +42,7 @@ export const sideMenuData = (
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLExecute'),
-      group: ['sql-order', 'exec-workflow']
+      group: ['exec-workflow']
     },
     {
       type: 'group',

@@ -1,7 +1,6 @@
+import rule_template from '../../../testUtils/mockApi/rule_template';
 import useAuditResultRuleInfo from '../useAuditResultRuleInfo';
-
 import { act, cleanup, renderHook } from '@testing-library/react';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
 
 const auditResultData = [
   {
@@ -12,7 +11,7 @@ const auditResultData = [
   }
 ];
 
-describe('sqle/order/hooks/useAuditResultRuleInfo', () => {
+describe('sqle/hooks/useAuditResultRuleInfo', () => {
   let requestGetRuleList: jest.SpyInstance;
 
   beforeEach(() => {

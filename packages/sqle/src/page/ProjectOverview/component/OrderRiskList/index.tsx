@@ -50,7 +50,7 @@ const OrderRiskList = () => {
             <TableColumnWithIconStyleWrapper>
               <IconOrderId />
               <Link
-                to={`/sqle/project/${projectID}/order/${record.workflow_id}`}
+                to={`/sqle/project/${projectID}/exec-workflow/${record.workflow_id}`}
               >
                 {name}
               </Link>
@@ -88,7 +88,7 @@ const OrderRiskList = () => {
   };
 
   const onGetMore = () => {
-    navigate(`/sqle/project/${projectID}/order`);
+    navigate(`/sqle/project/${projectID}/exec-workflow`);
   };
 
   return (

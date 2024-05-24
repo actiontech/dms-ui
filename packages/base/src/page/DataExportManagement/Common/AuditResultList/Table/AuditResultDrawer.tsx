@@ -1,7 +1,7 @@
-import useAuditResultRuleInfo from 'sqle/src/page/Order/hooks/useAuditResultRuleInfo';
 import { AuditResultDrawerTitleStyleWrapper } from './style';
 import ReportDrawer from 'sqle/src/components/ReportDrawer';
 import { AuditResultDrawerProps } from './index.type';
+import useAuditResultRuleInfo from 'sqle/src/components/ReportDrawer/useAuditResultRuleInfo';
 
 const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   onClose,
