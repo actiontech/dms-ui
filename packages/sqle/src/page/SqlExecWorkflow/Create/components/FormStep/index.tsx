@@ -13,8 +13,7 @@ import BackToList from '../../../Common/BackToList';
 const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
   baseInfoForm,
   sqlAuditInfoForm,
-  isAuditing,
-  resetAllSharedData,
+  auditAction,
   ...sharedStepDetail
 }) => {
   const { t } = useTranslation();
@@ -22,7 +21,7 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
   const resetAllForm = () => {
     baseInfoForm.resetFields();
     sqlAuditInfoForm.resetFields();
-    resetAllSharedData();
+    sharedStepDetail.resetAllSharedData();
   };
 
   const handleInstanceNameChange = useCallback(
@@ -40,9 +39,12 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
         fixed
-        title={<BackToList isAuditing={isAuditing.value} />}
+        title={<BackToList isAuditing={sharedStepDetail.isAuditing.value} />}
         extra={
-          <BasicButton onClick={resetAllForm} disabled={isAuditing.value}>
+          <BasicButton
+            onClick={resetAllForm}
+            disabled={sharedStepDetail.isAuditing.value}
+          >
             {t('common.reset')}
           </BasicButton>
         }
@@ -63,9 +65,8 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
         labelAlign="left"
       >
         <SqlAuditInfoForm
-          isAuditing={isAuditing}
-          resetAllSharedData={resetAllSharedData}
           handleInstanceNameChange={handleInstanceNameChange}
+          auditAction={auditAction}
           {...sharedStepDetail}
         />
       </SqlAuditInfoFormStyleWrapper>

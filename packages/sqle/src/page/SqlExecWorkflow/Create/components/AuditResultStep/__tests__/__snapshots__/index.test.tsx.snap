@@ -1,0 +1,513 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test AuditResultStep should match snapshot 1`] = `
+<div>
+  <div
+    class="actiontech-page-header-namespace css-1xspr0w"
+  >
+    <div
+      class="title"
+    >
+      <a
+        href="/sqle/project/700300/exec-workflow"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回工单列表
+          </span>
+        </button>
+      </a>
+    </div>
+    <div
+      class="extra"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              编辑工单信息
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              提交工单
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class=" css-sjztq0"
+  >
+    <div
+      class="workflow-base-info-title"
+    >
+      workflow_subject
+    </div>
+    <div
+      class="workflow-base-info-desc"
+    >
+      desc
+    </div>
+  </div>
+  <section
+    class="css-zgknaj"
+  >
+    <div
+      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-segmented-group"
+        >
+          <label
+            class="ant-segmented-item ant-segmented-item-selected"
+          >
+            <input
+              checked=""
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+            >
+              <div
+                class="instance-segmented-label css-16xaun1"
+              >
+                <span
+                  class="instance-segmented-label-text"
+                >
+                  instance_name b
+                </span>
+                <span
+                  class="instance-segmented-label-icon"
+                >
+                  <span
+                    class="custom-icon custom-icon-level-error css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 18 19"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
+                        fill="#F66074"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </label>
+          <label
+            class="ant-segmented-item"
+          >
+            <input
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+            >
+              <div
+                class="instance-segmented-label css-16xaun1"
+              >
+                <span
+                  class="instance-segmented-label-text"
+                >
+                  instance_name a
+                </span>
+                <span
+                  class="instance-segmented-label-icon"
+                >
+                  <span
+                    class="custom-icon custom-icon-level-warn css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 18 19"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
+                        fill="#EBAD1C"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 4px;"
+        >
+          <div
+            class="css-rf9vxh"
+          >
+            数据去重
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 4px;"
+        >
+          <div
+            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+            role="separator"
+            style="height: 28px;"
+          />
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 5px;"
+              >
+                <span
+                  class="custom-icon custom-icon-download css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 5px;"
+              >
+                下载
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <span
+                  class="custom-icon custom-icon-arrow-down css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="audit-result-filter-container-wrapper css-1c0dogt"
+    >
+      <div
+        class="custom-segmented-filter-wrapper audit-result-filter-option"
+      >
+        <div
+          class="custom-segmented-filter-item custom-segmented-filter-item-checked"
+        >
+          全部等级
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          普通(Normal)
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          提示(Notice)
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          告警(Warning)
+        </div>
+        <div
+          class="custom-segmented-filter-item"
+        >
+          错误(Error)
+        </div>
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 20px;"
+        >
+          <div
+            class="audit-result-info-item"
+          >
+            <span
+              class="audit-result-info-item-value audit-level-error"
+            >
+              2000
+              %
+            </span>
+            <span
+              class="audit-result-info-item-text"
+            >
+              审核通过率
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 20px;"
+        >
+          <div
+            class="audit-result-info-item"
+          >
+            <span
+              class="audit-result-info-item-value audit-level-error"
+            >
+              30
+            </span>
+            <span
+              class="audit-result-info-item-text"
+            >
+              审核结果评分
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="audit-result-info-item"
+          >
+            <span
+              class="audit-result-info-item-schema-value"
+            >
+              instance_schema
+            </span>
+            <span
+              class="audit-result-info-item-text"
+            >
+              Schema
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+          >
+            <div
+              class="ant-table-container"
+            >
+              <div
+                class="ant-table-content"
+                style="overflow-x: auto; overflow-y: hidden;"
+              >
+                <table
+                  style="min-width: 100%; table-layout: auto;"
+                >
+                  <colgroup>
+                    <col
+                      style="width: 100px;"
+                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 82px;"
+                    />
+                  </colgroup>
+                  <thead
+                    class="ant-table-thead"
+                  >
+                    <tr>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        序号
+                      </th>
+                      <th
+                        class="ant-table-cell audit-result-exec-sql-column"
+                        scope="col"
+                      >
+                        执行语句
+                      </th>
+                      <th
+                        class="ant-table-cell audit-result-column"
+                        scope="col"
+                      >
+                        审核结果
+                      </th>
+                      <th
+                        class="ant-table-cell audit-result-describe-column"
+                        scope="col"
+                      >
+                        说明
+                      </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ant-table-tbody"
+                  >
+                    <tr
+                      aria-hidden="true"
+                      class="ant-table-measure-row"
+                      style="height: 0px; font-size: 0px;"
+                    >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-placeholder"
+                    >
+                      <td
+                        class="ant-table-cell"
+                        colspan="5"
+                      >
+                        <div
+                          class="ant-table-expanded-row-fixed"
+                          style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

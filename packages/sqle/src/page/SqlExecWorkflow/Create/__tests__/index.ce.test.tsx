@@ -5,27 +5,21 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { superRender } from '../../../../testUtils/customRender';
 import CreateSqlExecWorkflow from '..';
 import {
-  ignoreComponentAutoCreatedListNoKey,
-  ignoreInvalidValueForCSSStyleProperty
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import instance from '../../../../testUtils/mockApi/instance';
-import task from '../../../../testUtils/mockApi/task';
-import system from '../../../../testUtils/mockApi/system';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('sqle/SqlExecWorkflow/Create ce', () => {
   const projectName = mockProjectInfo.projectName;
@@ -40,9 +34,10 @@ describe('sqle/SqlExecWorkflow/Create ce', () => {
   const customRender = () => {
     return superRender(<CreateSqlExecWorkflow />);
   };
-
-  ignoreInvalidValueForCSSStyleProperty();
-  ignoreComponentAutoCreatedListNoKey();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED,
+    UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE
+  ]);
 
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());

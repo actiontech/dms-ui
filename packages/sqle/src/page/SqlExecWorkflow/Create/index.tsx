@@ -37,7 +37,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
     goToCreateResultStep
   } = useCreateWorkflowSteps();
 
-  const { isAuditing, ...sharedStepDetail } = useSharedStepDetail();
+  const sharedStepDetail = useSharedStepDetail();
 
   const {
     taskInfos,
@@ -52,10 +52,8 @@ const CreateSqlExecWorkflow: React.FC = () => {
       values: SqlAuditInfoFormFields,
       baseInfo?: WorkflowBaseInfoFormFields
     ) => {
-      //虽然审核不需要 baseInfo 数据，但还是需要进行校验
-
       const finallyFunc = () => {
-        isAuditing.set(false);
+        sharedStepDetail.isAuditing.set(false);
       };
 
       const onSuccess = () => {
@@ -67,8 +65,9 @@ const CreateSqlExecWorkflow: React.FC = () => {
       };
 
       try {
+        //虽然审核不需要 baseInfo 数据，但还是需要进行校验
         await baseInfoForm.validateFields();
-        isAuditing.set(true);
+        sharedStepDetail.isAuditing.set(true);
 
         if (values.isSameSqlForAll) {
           auditWorkflowWithSameSql(values, onSuccess).finally(finallyFunc);
@@ -97,8 +96,8 @@ const CreateSqlExecWorkflow: React.FC = () => {
       auditWorkflowWthDifferenceSql,
       baseInfoForm,
       goToAuditResultStep,
-      isAuditing,
-      sharedStepDetail.dbSourceInfoCollection.value
+      sharedStepDetail.dbSourceInfoCollection.value,
+      sharedStepDetail.isAuditing
     ]
   );
 
@@ -139,20 +138,18 @@ const CreateSqlExecWorkflow: React.FC = () => {
 
   usePrompt(t('execWorkflow.create.auditResult.leaveTip'), isAtAuditResultStep);
   return (
-    <Spin spinning={isAuditing.value}>
+    <Spin spinning={sharedStepDetail.isAuditing.value}>
       {messageContextHolder}
       <div hidden={!isAtFormStep}>
         <FormStep
           baseInfoForm={baseInfoForm}
           sqlAuditInfoForm={sqlAuditInfoForm}
-          isAuditing={isAuditing}
           auditAction={auditAction}
           {...sharedStepDetail}
         />
       </div>
       <div hidden={!isAtAuditResultStep}>
         <AuditResultStep
-          isAuditing={isAuditing}
           baseFormValues={baseInfoForm.getFieldsValue()}
           sqlAuditInfoFormValues={sqlAuditInfoForm.getFieldsValue()}
           tasks={taskInfos}
