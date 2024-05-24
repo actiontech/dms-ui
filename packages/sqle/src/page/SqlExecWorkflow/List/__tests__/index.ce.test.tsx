@@ -26,7 +26,7 @@ describe('sqle/Workflow/List', () => {
   const navigateSpy = jest.fn();
   let RequestUserTipList: jest.SpyInstance;
   let RequestInstanceTipList: jest.SpyInstance;
-  let RequestOrderList: jest.SpyInstance;
+  let RequestWorkflowList: jest.SpyInstance;
   let RequestBatchCancel: jest.SpyInstance;
 
   const customRender = () => {
@@ -40,7 +40,7 @@ describe('sqle/Workflow/List', () => {
     mockDatabaseType();
     RequestUserTipList = user.getUserTipList();
     RequestInstanceTipList = instance.getInstanceTipList();
-    RequestOrderList = execWorkflow.getWorkflows();
+    RequestWorkflowList = execWorkflow.getWorkflows();
     RequestBatchCancel = execWorkflow.batchCancelWorkflows();
     mockUseCurrentProject();
     mockUseCurrentUser();

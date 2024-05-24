@@ -10,7 +10,7 @@ import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
-import SQLStatementResultTable from '../SQLStatementResultTable';
+import SqlStatementResultTable from '../SqlStatementResultTable';
 import { Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { TasksResultCardStyleWrapper } from './style';
@@ -109,7 +109,7 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
           </div>
         ),
         children: (
-          <SQLStatementResultTable
+          <SqlStatementResultTable
             className="clear-padding-bottom"
             dataSource={data?.list ?? []}
             loading={loading}

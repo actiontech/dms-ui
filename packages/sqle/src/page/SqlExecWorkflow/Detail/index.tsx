@@ -18,7 +18,7 @@ import RejectReason from './components/RejectReason';
 import useModifySql from './hooks/useModifySql';
 import WorkflowRecordInfo from './components/RecordInfo';
 import ModifySqlStatement from './components/ModifySqlStatement';
-import useOverviewRequest from './hooks/useAuditExecResultPanelSetup';
+import useAuditExecResultPanelSetup from './hooks/useAuditExecResultPanelSetup';
 import AuditExecResultPanel from './components/AuditExecResultPanel';
 
 const SqlWorkflowDetail: React.FC = () => {
@@ -42,7 +42,7 @@ const SqlWorkflowDetail: React.FC = () => {
     overviewList,
     getOverviewLoading,
     requestErrorMessage: overviewTableErrorMessage
-  } = useOverviewRequest();
+  } = useAuditExecResultPanelSetup();
 
   const {
     taskInfos: modifiedTasks,
