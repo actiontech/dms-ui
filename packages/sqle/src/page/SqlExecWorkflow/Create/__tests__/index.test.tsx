@@ -568,6 +568,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     // 上传SQL文件
     fireEvent.click(screen.getByText('上传SQL文件'));
     await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.queryByText('选择文件排序方式')).not.toBeInTheDocument();
     const sqlFile = new File(
       [new Blob(['this is sql info'], { type: 'file/sql' })],
       'test.sql'

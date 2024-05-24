@@ -22,6 +22,7 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
   const scrollPageNumber = useRef(0);
 
   const {
+    reload,
     data: currentAuditTaskInfiniteList,
     noMore,
     loading: scrollLoading,
@@ -59,7 +60,10 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
     {
       reloadDeps: [currentListLayout, auditResultActiveKey, workflowStatus],
       isNoMore: (d) => {
-        return d ? (d.list.length % 20 > 0 ? true : false) : false;
+        if (!d) {
+          return false;
+        }
+        return d.list.length === d.total;
       }
     }
   );
@@ -70,7 +74,11 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
 
   return (
     <>
-      <FileModeHeader />
+      <FileModeHeader
+        taskId={taskId}
+        refresh={reload}
+        workflowStatus={workflowStatus}
+      />
 
       <InfiniteScroll
         hasMore={!noMore}

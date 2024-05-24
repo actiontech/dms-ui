@@ -10,4 +10,5 @@ export type SQLStatementResultTableProps = Pick<
   | 'dataSource'
   | 'loading'
   | 'isPaginationFixed'
+  | 'className'
 >;

@@ -3,7 +3,7 @@ import { TasksResultCardStyleWrapper } from '../../../style';
 import { FileExecuteResultCardProps } from './index.type';
 import ExecStatusTag from './components/ExecStatusTag';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { IconFile } from '@actiontech/shared/lib/Icon/common';
+import { IconSQLFile } from '@actiontech/shared/lib/Icon/common';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import AuditResultTag from './components/AuditResultTag';
 import { useMemo } from 'react';
@@ -85,7 +85,7 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
               <span className="number">#{props.exec_order}</span>
 
               <div className="file-info">
-                <IconFile />
+                <IconSQLFile />
                 <Link
                   className="file-info-name"
                   to={`/sqle/project/${projectID}/order/${taskId}/files/${props.file_id}/sqls`}
