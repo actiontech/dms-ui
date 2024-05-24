@@ -11,6 +11,7 @@ import {
   IGetAuditTaskSQLsResV1,
   IUpdateAuditTaskSQLsReqV1,
   IGetTaskAnalysisDataResV1,
+  IGetSqlFileOrderMethodResV1,
   IGetAuditFileListRes,
   IGetAuditFileExecStatisticRes,
   IGetAuditTaskSQLsResV2,

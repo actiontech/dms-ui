@@ -12,6 +12,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate } from 'react-router-dom';
+import instance from '../../../testUtils/mockApi/instance';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -22,11 +23,13 @@ jest.mock('react-router-dom', () => {
 
 describe('sqle/SqlOptimizationList', () => {
   let getOptimizationRecordsSpy: jest.SpyInstance;
+  let getInstanceTipListSpy: jest.SpyInstance;
   const navigateSpy = jest.fn();
 
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     getOptimizationRecordsSpy = sqlOptimization.getOptimizationRecords();
+    getInstanceTipListSpy = instance.getInstanceTipList();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
@@ -41,6 +44,7 @@ describe('sqle/SqlOptimizationList', () => {
   it('render table data', async () => {
     const { baseElement } = superRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
+    expect(getInstanceTipListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });

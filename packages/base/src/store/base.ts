@@ -7,6 +7,7 @@ import database from './database';
 import nav from './nav';
 import dataExport from './dataExport';
 import permission from './permission';
+import cloudBeaver from './cloudBeaver';
 
 export const baseStoreData = {
   user,
@@ -17,5 +18,6 @@ export const baseStoreData = {
   database,
   nav,
   dataExport,
-  permission
+  permission,
+  cloudBeaver
 };

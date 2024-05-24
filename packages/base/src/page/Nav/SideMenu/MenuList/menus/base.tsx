@@ -54,10 +54,14 @@ export const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'member'
 });
 
-export const cloudBeaverMenuItem: GenerateMenuItemType = (_) => ({
-  label: <Link to={`/cloud-beaver`}>{t('dmsMenu.SQLWorkbench')}</Link>,
+export const cloudBeaverMenuItem: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/project/${projectID}/cloud-beaver`}>
+      {t('dmsMenu.SQLWorkbench')}
+    </Link>
+  ),
   icon: <Icon component={IconCloudBeaver} />,
-  key: `cloud-beaver`,
+  key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/cloud-beaver`,
   structKey: 'cloud-beaver'
 });
 

@@ -19,9 +19,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "icon": <AntdIcon
           component={[Function]}
         />,
-        "key": "cloud-beaver",
+        "key": "project/projectID/cloud-beaver",
         "label": <Link
-          to="/cloud-beaver"
+          to="/project/600300/cloud-beaver"
         >
           SQL工作台
         </Link>,
@@ -117,9 +117,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
         "icon": <AntdIcon
           component={[Function]}
         />,
-        "key": "cloud-beaver",
+        "key": "project/projectID/cloud-beaver",
         "label": <Link
-          to="/cloud-beaver"
+          to="/project/600300/cloud-beaver"
         >
           SQL工作台
         </Link>,
@@ -241,9 +241,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "icon": <AntdIcon
           component={[Function]}
         />,
-        "key": "cloud-beaver",
+        "key": "project/projectID/cloud-beaver",
         "label": <Link
-          to="/cloud-beaver"
+          to="/project/600300/cloud-beaver"
         >
           SQL工作台
         </Link>,
@@ -477,9 +477,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "icon": <AntdIcon
           component={[Function]}
         />,
-        "key": "cloud-beaver",
+        "key": "project/projectID/cloud-beaver",
         "label": <Link
-          to="/cloud-beaver"
+          to="/project/600300/cloud-beaver"
         >
           SQL工作台
         </Link>,
