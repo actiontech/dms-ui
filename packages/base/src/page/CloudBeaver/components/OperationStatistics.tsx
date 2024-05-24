@@ -1,7 +1,7 @@
 import { Col, Typography, Space } from 'antd';
 import { AccountStatisticsStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
-import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
+import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 
 const OperationStatistics: React.FC<{
   total?: number;
@@ -27,7 +27,7 @@ const OperationStatistics: React.FC<{
             {t('dmsCloudBeaver.statistic.succeedTotal')}
           </Typography.Text>
           <Typography.Title level={5}>
-            {floatToNumberPercent(succeedRate ?? 0, 0)}
+            {floatToPercent(succeedRate ?? 0)}%
           </Typography.Title>
         </Space>
       </Col>

@@ -198,7 +198,8 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 <h5
                   class="ant-typography css-dev-only-do-not-override-txh9fw"
                 >
-                  -
+                  0
+                  %
                 </h5>
               </div>
             </div>
@@ -366,27 +367,6 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                     class="ant-space-item"
                     style="margin-right: 12px;"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
-                    >
-                      <div
-                        class="ant-space-item"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            导 出
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
-                  >
                     <button
                       class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                       style="padding: 0px 6px 0px 8px;"
@@ -501,17 +481,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                     <table
                       style="min-width: 100%; table-layout: auto;"
                     >
-                      <colgroup>
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col
-                          style="width: 400px;"
-                        />
-                      </colgroup>
+                      <colgroup />
                       <thead
                         class="ant-table-thead"
                       >
@@ -553,7 +523,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             操作IP
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
                             审核结果
@@ -568,7 +538,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             class="ant-table-cell"
                             scope="col"
                           >
-                            执行时间
+                            执行时间（毫秒）
                           </th>
                           <th
                             class="ant-table-cell"
@@ -854,7 +824,8 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                 <h5
                   class="ant-typography css-dev-only-do-not-override-txh9fw"
                 >
-                  5%
+                  50
+                  %
                 </h5>
               </div>
             </div>
@@ -1022,27 +993,6 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                     class="ant-space-item"
                     style="margin-right: 12px;"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
-                    >
-                      <div
-                        class="ant-space-item"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            导 出
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
-                  >
                     <button
                       class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                       style="padding: 0px 6px 0px 8px;"
@@ -1157,17 +1107,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                     <table
                       style="min-width: 100%; table-layout: auto;"
                     >
-                      <colgroup>
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col
-                          style="width: 400px;"
-                        />
-                      </colgroup>
+                      <colgroup />
                       <thead
                         class="ant-table-thead"
                       >
@@ -1209,7 +1149,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             操作IP
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
                             审核结果
@@ -1224,7 +1164,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             class="ant-table-cell"
                             scope="col"
                           >
-                            执行时间
+                            执行时间（毫秒）
                           </th>
                           <th
                             class="ant-table-cell"
@@ -1429,7 +1369,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             127.0.0.1
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               class="audit-result-wrapper"
@@ -1577,7 +1517,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             127.0.0.1
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               class="audit-result-wrapper"
@@ -1677,7 +1617,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                             127.0.0.1
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             -
                           </td>
@@ -1730,18 +1670,24 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                           </td>
                           <td
                             class="ant-table-cell"
-                          />
-                          <td
-                            class="ant-table-cell"
-                          />
+                          >
+                            -
+                          </td>
                           <td
                             class="ant-table-cell"
                           >
                             -
                           </td>
                           <td
+                            class="ant-table-cell ellipsis-column-width"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
-                          />
+                          >
+                            -
+                          </td>
                           <td
                             class="ant-table-cell"
                           >
@@ -2004,7 +1950,8 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                 <h5
                   class="ant-typography css-dev-only-do-not-override-txh9fw"
                 >
-                  5%
+                  50
+                  %
                 </h5>
               </div>
             </div>
@@ -2172,27 +2119,6 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                     class="ant-space-item"
                     style="margin-right: 12px;"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
-                    >
-                      <div
-                        class="ant-space-item"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            导 出
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
-                  >
                     <button
                       class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                       style="padding: 0px 6px 0px 8px;"
@@ -2307,17 +2233,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                     <table
                       style="min-width: 100%; table-layout: auto;"
                     >
-                      <colgroup>
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col
-                          style="width: 400px;"
-                        />
-                      </colgroup>
+                      <colgroup />
                       <thead
                         class="ant-table-thead"
                       >
@@ -2359,7 +2275,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             操作IP
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                             scope="col"
                           >
                             审核结果
@@ -2374,7 +2290,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             class="ant-table-cell"
                             scope="col"
                           >
-                            执行时间
+                            执行时间（毫秒）
                           </th>
                           <th
                             class="ant-table-cell"
@@ -2579,7 +2495,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             127.0.0.1
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               class="audit-result-wrapper"
@@ -2727,7 +2643,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             127.0.0.1
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             <div
                               class="audit-result-wrapper"
@@ -2827,7 +2743,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                             127.0.0.1
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell ellipsis-column-width"
                           >
                             -
                           </td>
@@ -2880,18 +2796,24 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                           </td>
                           <td
                             class="ant-table-cell"
-                          />
-                          <td
-                            class="ant-table-cell"
-                          />
+                          >
+                            -
+                          </td>
                           <td
                             class="ant-table-cell"
                           >
                             -
                           </td>
                           <td
+                            class="ant-table-cell ellipsis-column-width"
+                          >
+                            -
+                          </td>
+                          <td
                             class="ant-table-cell"
-                          />
+                          >
+                            -
+                          </td>
                           <td
                             class="ant-table-cell"
                           >

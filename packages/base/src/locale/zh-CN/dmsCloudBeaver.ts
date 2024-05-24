@@ -26,7 +26,7 @@ export default {
       operationIP: '操作IP',
       auditResult: '审核结果',
       execResult: '执行结果',
-      execTime: '执行时间',
+      execTime: '执行时间（毫秒）',
       rowCount: '结果集返回行数'
     }
   }
