@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is audit success 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+    >
+      <span
+        class="custom-icon  css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="checkbox-circle-fill"
+          >
+            <path
+              d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.6819 1.33337 7.99992C1.33337 4.31792 4.31804 1.33325 8.00004 1.33325C11.682 1.33325 14.6667 4.31792 14.6667 7.99992C14.6667 11.6819 11.682 14.6666 8.00004 14.6666ZM7.33537 10.6666L12.0487 5.95259L11.106 5.00992L7.33537 8.78125L5.44937 6.89525L4.50671 7.83792L7.33537 10.6666Z"
+              fill="#41BF9A"
+              id="Vector"
+            />
+          </g>
+        </svg>
+      </span>
+      <span>
+        审核通过
+      </span>
+    </span>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is error 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon custom-icon-level-error css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
+                fill="#F66074"
+              />
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice & warn & error 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon custom-icon-level-notice css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.9513 2.37573L16.125 6.54946V12.452L11.9513 16.6257H6.04873L1.875 12.452V6.54946L6.04873 2.37573H11.9513ZM8.24948 11.7501V13.2501H9.74948V11.7501H8.24948ZM8.24948 5.75018V10.2501H9.74948V5.75018H8.24948Z"
+                fill="#6094FC"
+              />
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <span
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon custom-icon-level-warn css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
+                fill="#EBAD1C"
+              />
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-sd5et5 css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon custom-icon-level-error css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
+                fill="#F66074"
+              />
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-du2j3a css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon custom-icon-level-notice css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.9513 2.37573L16.125 6.54946V12.452L11.9513 16.6257H6.04873L1.875 12.452V6.54946L6.04873 2.37573H11.9513ZM8.24948 11.7501V13.2501H9.74948V11.7501H8.24948ZM8.24948 5.75018V10.2501H9.74948V5.75018H8.24948Z"
+                fill="#6094FC"
+              />
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is warn 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-ima1ur css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="custom-icon custom-icon-level-warn css-u3jcp4"
+            role="img"
+          >
+            <svg
+              fill="none"
+              height="19"
+              viewBox="0 0 18 19"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
+                fill="#EBAD1C"
+              />
+            </svg>
+          </span>
+          <span>
+            1
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
