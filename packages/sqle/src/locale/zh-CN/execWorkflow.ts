@@ -151,6 +151,7 @@ export default {
       alreadyRejected: '工单已被驳回',
       alreadyClosed: '工单已被关闭',
       modifySql: '修改审核语句',
+      updateEmptyWorkflowTips: '不能使用审核结果为空的SQL更新当前工单',
       waitModifySql: '等待用户{{username}}修改审核语句',
       batchSqlExecute: '批量立即上线',
       batchSqlExecuteConfirmTips:

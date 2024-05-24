@@ -1,7 +1,7 @@
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { useTranslation } from 'react-i18next';
 import { BasicButton, EmptyBox } from '@actiontech/shared';
-import SortableSqlFilesModal from '../SortableSqlFilesModal';
+import SortableSqlFilesModal from './SortableSqlFilesModal';
 import { useBoolean } from 'ahooks';
 import { Typography } from 'antd';
 import { useParams } from 'react-router-dom';

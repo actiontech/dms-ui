@@ -18,7 +18,7 @@ import {
   IconFillListActive,
   IconPosition
 } from '@actiontech/shared/lib/Icon/common';
-import { SQLExecuteResultCardProps } from './index.type';
+import { SqlExecuteResultCardProps } from './index.type';
 import ExecStatusTag from './components/ExecStatusTag';
 import AuditResultTag from './components/AuditResultTag';
 import AuditResultTree from './components/AuditResultTree';
@@ -29,7 +29,7 @@ import {
 } from './style';
 import { TaskAuditResultTreeStyleWrapper } from './components/style';
 
-const SQLMode: React.FC<SQLExecuteResultCardProps> = ({
+const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectName,
   taskId,
   onUpdateDescription,
@@ -184,4 +184,4 @@ const SQLMode: React.FC<SQLExecuteResultCardProps> = ({
   );
 };
 
-export default SQLMode;
+export default SqlMode;

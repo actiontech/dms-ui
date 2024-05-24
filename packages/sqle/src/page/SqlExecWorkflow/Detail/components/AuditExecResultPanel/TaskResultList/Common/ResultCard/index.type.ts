@@ -8,7 +8,7 @@ type BaseProps = {
   taskId: string;
 };
 
-export type SQLExecuteResultCardProps = BaseProps &
+export type SqlExecuteResultCardProps = BaseProps &
   IAuditTaskSQLResV2 & {
     onUpdateDescription?: () => void;
     projectName: string;
@@ -20,7 +20,7 @@ export type FileExecuteResultCardProps = BaseProps &
   };
 
 export type ResultCardProps =
-  | (SQLExecuteResultCardProps & {
+  | (SqlExecuteResultCardProps & {
       executeMode: WorkflowResV2ExecModeEnum.sqls;
     })
   | (FileExecuteResultCardProps & {
