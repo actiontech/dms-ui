@@ -4,13 +4,19 @@ import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import cloudBeaver from '@actiontech/shared/lib/api/base/service/cloudbeaver';
-import { PageHeader } from '@actiontech/shared';
+import {
+  PageHeader,
+  EnterpriseFeatureDisplay,
+  BasicButton,
+  EmptyBox
+} from '@actiontech/shared';
 import {
   CloudBeaverContentStyleWrapper,
   CloudBeaverContentSpaceStyleWrapper,
   CloudBeaverContentIconStyleWrapper
 } from './style';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
+import CBOperationLogsList from './List/index';
 
 const CloudBeaver = () => {
   const { t } = useTranslation();
@@ -38,16 +44,21 @@ const CloudBeaver = () => {
 
   return (
     <>
-      <PageHeader title={t('dmsCloudBeaver.pageTitle')} />
-      <CloudBeaverContentStyleWrapper>
-        <CloudBeaverContentSpaceStyleWrapper direction="vertical">
-          <Card>
-            <Spin spinning={loading}>
-              {data?.enable_sql_query ? (
-                <Typography.Link onClick={openCloudBeaver}>
-                  {t('dmsCloudBeaver.jumpToCloudBeaver')}
-                </Typography.Link>
-              ) : (
+      <PageHeader
+        title={t('dmsCloudBeaver.pageTitle')}
+        extra={
+          <EmptyBox if={!!data?.enable_sql_query}>
+            <BasicButton type="primary" onClick={openCloudBeaver}>
+              {t('dmsCloudBeaver.jumpToCloudBeaver')}
+            </BasicButton>
+          </EmptyBox>
+        }
+      />
+      <EmptyBox if={!data?.enable_sql_query}>
+        <CloudBeaverContentStyleWrapper>
+          <CloudBeaverContentSpaceStyleWrapper direction="vertical">
+            <Card>
+              <Spin spinning={loading}>
                 <Space>
                   <CloudBeaverContentIconStyleWrapper />
                   <div>
@@ -62,11 +73,21 @@ const CloudBeaver = () => {
                     </a>
                   </div>
                 </Space>
-              )}
-            </Spin>
-          </Card>
-        </CloudBeaverContentSpaceStyleWrapper>
-      </CloudBeaverContentStyleWrapper>
+              </Spin>
+            </Card>
+          </CloudBeaverContentSpaceStyleWrapper>
+        </CloudBeaverContentStyleWrapper>
+      </EmptyBox>
+      <EnterpriseFeatureDisplay
+        featureName={t('dmsCloudBeaver.pageTitle')}
+        eeFeatureDescription={
+          <Typography.Paragraph className="paragraph">
+            {t('dmsCloudBeaver.ceTips')}
+          </Typography.Paragraph>
+        }
+      >
+        <CBOperationLogsList enableSqlQuery={data?.enable_sql_query} />
+      </EnterpriseFeatureDisplay>
     </>
   );
 };
