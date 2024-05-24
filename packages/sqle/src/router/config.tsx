@@ -12,17 +12,6 @@ const RuleTemplate = React.lazy(
   () => import(/* webpackChunkName: "RuleTemplate" */ '../page/RuleTemplate')
 );
 
-const CreateOrder = React.lazy(
-  () => import(/* webpackChunkName: "CreateOrder" */ '../page/Order/Create')
-);
-
-const OrderDetail = React.lazy(
-  () => import(/* webpackChunkName: "OrderDetail" */ '../page/Order/Detail')
-);
-
-const OrderList = React.lazy(
-  () => import(/* webpackChunkName: "Order" */ '../page/Order/List')
-);
 const Whitelist = React.lazy(
   () => import(/* webpackChunkName: "Whitelist" */ '../page/Whitelist')
 );
@@ -139,7 +128,9 @@ const SqlAuditCreate = React.lazy(() => import('../page/SqlAudit/Create'));
 
 const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
 
-const OrderSqlAnalyze = React.lazy(() => import('../page/SqlAnalyze/Order'));
+const WorkflowSqlAnalyze = React.lazy(
+  () => import('../page/SqlAnalyze/Workflow')
+);
 
 const AuditPlanSqlAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/AuditPlan')
@@ -159,9 +150,6 @@ const UpdateWorkflowTemplate = React.lazy(
     )
 );
 
-const SQLFileStatementOverview = React.lazy(
-  () => import('../page/Order/AuditDetail/SQLFileStatementOverview')
-);
 const WorkflowSQLFileStatementOverview = React.lazy(
   () =>
     import(
@@ -226,8 +214,8 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       },
       {
         path: ':taskId/:sqlNum/analyze',
-        element: <OrderSqlAnalyze />,
-        key: 'orderAnalyze'
+        element: <WorkflowSqlAnalyze />,
+        key: 'workflowAnalyze'
       },
       {
         path: ':workflowId',
@@ -238,40 +226,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         path: ':taskId/files/:fileId/sqls',
         element: <WorkflowSQLFileStatementOverview />,
-        key: 'WorkflowSQLFileStatementOverview'
-      }
-      // #endif
-    ]
-  },
-  {
-    key: 'order',
-    path: `${PROJECT_ROUTER_PARAM}/order`,
-    children: [
-      {
-        index: true,
-        element: <OrderList />,
-        key: 'orderList'
-      },
-      {
-        path: 'create',
-        element: <CreateOrder />,
-        key: 'orderCreate'
-      },
-      {
-        path: ':orderId',
-        element: <OrderDetail />,
-        key: 'orderDetail'
-      },
-      {
-        path: ':taskId/:sqlNum/analyze',
-        element: <OrderSqlAnalyze />,
-        key: 'orderAnalyze'
-      },
-      // #if [ee]
-      {
-        path: ':taskId/files/:fileId/sqls',
-        element: <SQLFileStatementOverview />,
-        key: 'SQLFileStatementOverview'
+        key: 'workflowSQLFileStatementOverview'
       }
       // #endif
     ]

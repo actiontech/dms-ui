@@ -1,7 +1,7 @@
 import ReportDrawer from '../../../../../components/ReportDrawer';
+import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { AuditResultDrawerProps } from '../../../Create/AuditResult/index.type';
 import { AuditResultDrawerTitleStyleWrapper } from './style';
-import useAuditResultRuleInfo from '../../../hooks/useAuditResultRuleInfo';
 
 const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   onClose,

@@ -83,12 +83,14 @@ describe('App', () => {
       </Wrapper>,
       undefined,
       {
-        routerProps: { initialEntries: ['/order'] }
+        routerProps: { initialEntries: ['/exec-workflow'] }
       }
     );
 
     expect(screen.getByText('children')).toBeInTheDocument();
-    expect(screen.getByTestId('location-display')).toHaveTextContent('/order');
+    expect(screen.getByTestId('location-display')).toHaveTextContent(
+      '/exec-workflow'
+    );
   });
 
   it('render Wrapper when token is not existed', () => {
@@ -108,12 +110,12 @@ describe('App', () => {
       </Wrapper>,
       undefined,
       {
-        routerProps: { initialEntries: ['/order'] }
+        routerProps: { initialEntries: ['/exec-workflow'] }
       }
     );
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/order`,
+      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/exec-workflow`,
       { replace: true }
     );
   });
@@ -167,7 +169,7 @@ describe('App', () => {
       });
     });
     const { container } = superRender(<App />, undefined, {
-      routerProps: { initialEntries: ['/order'] }
+      routerProps: { initialEntries: ['/exec-workflow'] }
     });
 
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(0);
@@ -175,7 +177,7 @@ describe('App', () => {
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(0);
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/order`,
+      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/exec-workflow`,
       { replace: true }
     );
     await act(async () => jest.advanceTimersByTime(0));

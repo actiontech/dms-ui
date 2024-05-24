@@ -249,7 +249,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                         </svg>
                                       </span>
                                       <a
-                                        href="/sqle/project/700300/order/1743144533085917184"
+                                        href="/sqle/project/700300/exec-workflow/1743144533085917184"
                                       >
                                         mysql-1_20240105013651
                                       </a>
@@ -344,7 +344,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                         </svg>
                                       </span>
                                       <a
-                                        href="/sqle/project/700300/order/undefined"
+                                        href="/sqle/project/700300/exec-workflow/undefined"
                                       >
                                         mysql-1_20240105013652
                                       </a>

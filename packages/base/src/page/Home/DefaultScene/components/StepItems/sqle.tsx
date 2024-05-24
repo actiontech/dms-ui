@@ -100,18 +100,9 @@ export const getDataModifyStep: (
         label: t(
           'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_1_0'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/order/create`)
+        action: () =>
+          navigate(`/sqle/project/${projectID}/exec-workflow/create`)
       }
-      // {
-      //   key: 'order-create',
-      //   label: t(
-      //     'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_1_1'
-      //   ),
-      //   action: () =>
-      //      () =>
-      //       navigate(`/sqle/project/${projectID}/order/create`)
-      //     )
-      // },
     ]
   };
 };
