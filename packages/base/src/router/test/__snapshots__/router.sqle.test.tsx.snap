@@ -581,13 +581,6 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
   },
   {
     "element": <div>
-      cloudBeaver
-    </div>,
-    "key": "cloudBeaver",
-    "path": "cloud-beaver",
-  },
-  {
-    "element": <div>
       account
     </div>,
     "key": "account",
@@ -717,6 +710,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         </div>,
         "key": "dataExportManagement",
         "path": ":projectID/data/export",
+      },
+      {
+        "element": <div>
+          cloudBeaver
+        </div>,
+        "key": "cloudBeaver",
+        "path": ":projectID/cloud-beaver",
       },
     ],
     "element": <UNDEFINED />,

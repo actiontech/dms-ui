@@ -16,6 +16,10 @@ export enum ListProjectsOrderByEnum {
   'name' = 'name'
 }
 
+export enum ExportProjectsOrderByEnum {
+  'name' = 'name'
+}
+
 export enum ListDataExportWorkflowsFilterByStatusEnum {
   'wait_for_approve' = 'wait_for_approve',
 

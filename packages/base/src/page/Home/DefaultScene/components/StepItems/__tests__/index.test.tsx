@@ -48,7 +48,9 @@ describe('test base/Home/StepItems', () => {
 
     fireEvent.click(screen.getByText('进入SQL工作台'));
     expect(navigateSpy).toHaveBeenCalledTimes(6);
-    expect(navigateSpy).toHaveBeenCalledWith(`/cloud-beaver`);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      `/project/${projectID}/cloud-beaver`
+    );
 
     fireEvent.click(screen.getByText('查看审核规则'));
     expect(navigateSpy).toHaveBeenCalledTimes(7);

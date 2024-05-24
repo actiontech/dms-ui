@@ -57,7 +57,7 @@ export const AdminUserDevopsSteps: (
     title: t('dmsHome.defaultScene.steps.queryAndModify.title'),
     icon: <IconStepDataQuery />,
     children: [
-      getSqlEditorStep({ navigate }),
+      getSqlEditorStep({ navigate, projectID }),
 
       // #if [sqle]
       getDataModifyStep({ navigate, projectID }),
@@ -96,7 +96,7 @@ export const NormalUserDevopsSteps: (
     title: t('dmsHome.defaultScene.steps.queryAndModify.title'),
     icon: <IconStepDataQuery />,
     children: [
-      getSqlEditorStep({ navigate }),
+      getSqlEditorStep({ navigate, projectID }),
 
       // #if [sqle]
       getDataModifyStep({ navigate, projectID }),
