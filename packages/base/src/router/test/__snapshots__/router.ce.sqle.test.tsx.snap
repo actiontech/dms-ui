@@ -545,10 +545,17 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
       },
       {
         "element": <div>
+<<<<<<< HEAD
           cloudBeaver
         </div>,
         "key": "cloudBeaver",
         "path": ":projectID/cloud-beaver",
+=======
+          dataMaskRuleOverview
+        </div>,
+        "key": "dataMaskRuleOverview",
+        "path": ":projectID/data-mask-rule-overview",
+>>>>>>> e35b46d63fc21f45309d3c91065d907ce133fb12
       },
     ],
     "element": <UNDEFINED />,
@@ -906,6 +913,94 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
     "element": <UNDEFINED />,
     "key": "projectDetail",
     "path": "sqle/project/*",
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "element": <div>
+              databaseAccountList
+            </div>,
+            "key": "databaseAccountList",
+            "path": "",
+          },
+          {
+            "element": <div>
+              createDatabaseAccount
+            </div>,
+            "key": "createDatabaseAccount",
+            "path": "create",
+          },
+          {
+            "element": <div>
+              updateDatabaseAccount
+            </div>,
+            "key": "updateDatabaseAccount",
+            "path": "update/:id",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="databaseAccount"
+        >
+          <Outlet />
+        </div>,
+        "key": "databaseAccount",
+        "path": ":projectID/database-account",
+      },
+      {
+        "element": <div>
+          databaseAccountPassword
+        </div>,
+        "key": "databaseAccountPassword",
+        "path": ":projectID/database-account-password",
+      },
+      {
+        "children": [
+          {
+            "element": <div>
+              operation
+            </div>,
+            "key": "operation",
+            "path": ":projectID/data/operation",
+          },
+        ],
+        "element": undefined,
+        "key": "dataObjectWrapper",
+        "path": undefined,
+      },
+      {
+        "children": [
+          {
+            "element": <div>
+              authAudit
+            </div>,
+            "key": "authAudit",
+            "path": ":projectID/audit/auth",
+          },
+          {
+            "element": <div>
+              templateAudit
+            </div>,
+            "key": "templateAudit",
+            "path": ":projectID/audit/template",
+          },
+        ],
+        "element": undefined,
+        "key": "auditWrapper",
+        "path": undefined,
+      },
+      {
+        "element": <div>
+          null
+        </div>,
+        "key": "null",
+        "path": "*",
+      },
+    ],
+    "element": <UNDEFINED />,
+    "key": "provision",
+    "path": "provision/project/*",
   },
   {
     "element": <div>
