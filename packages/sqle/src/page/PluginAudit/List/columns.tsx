@@ -8,11 +8,10 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetSqlDEVRecordListParams } from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord/index.d';
 import { t } from '../../../locale';
-import RenderSQL from '../../../components/RenderSQL';
 import ResultIconRender from '../../../components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from '../../../components/AuditResultMessage';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { AvatarCom } from '@actiontech/shared';
+import { AvatarCom, SQLRenderer } from '@actiontech/shared';
 
 export type PluginAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlDEVRecordListParams,
@@ -32,10 +31,11 @@ export const PluginAuditListColumns: (
       render: (sql_fingerprint, record) => {
         if (!sql_fingerprint) return null;
         return (
-          <RenderSQL
+          <SQLRenderer.Snippet
             onClick={() => onOpenDrawer(record)}
             sql={sql_fingerprint}
             rows={2}
+            showCopyIcon
           />
         );
       }
@@ -47,11 +47,12 @@ export const PluginAuditListColumns: (
       render: (sql, record) => {
         if (!sql) return null;
         return (
-          <RenderSQL
+          <SQLRenderer.Snippet
             onClick={() => onOpenDrawer(record)}
             sql={sql}
             rows={2}
             tooltip={false}
+            showCopyIcon
           />
         );
       }

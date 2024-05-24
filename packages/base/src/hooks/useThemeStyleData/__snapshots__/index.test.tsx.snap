@@ -594,7 +594,7 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
       },
     },
   },
-  "order": {
+  "execWorkflow": {
     "common": {
       "auditResultFilter": {
         "auditResultInfo": {
@@ -620,7 +620,7 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
         "titleColor": "#292C33",
       },
     },
-    "createOrder": {
+    "create": {
       "auditResult": {
         "auditResultDrawer": {
           "numberColor": "#4583ff",
@@ -649,13 +649,13 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
         "baseInfoTitleIconColor": "#c3c6cd",
       },
     },
-    "orderList": {
-      "orderDesc": {
+    "list": {
+      "desc": {
         "copyIconColor": "#4583ff",
         "hoverCopyIconBackgroundColor": "#E8F3FF",
       },
     },
-    "orderSteps": {
+    "steps": {
       "boxShadow": "0px 1px 4px 0px rgba(51, 44, 31, 0.12)",
     },
   },

@@ -4,8 +4,8 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IOptimizationSQL } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../locale';
-import RenderSQL from '../../../../components/RenderSQL';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
+import { SQLRenderer } from '@actiontech/shared';
 
 export type IOptimizationSQLIncludeOrder = IOptimizationSQL & { order: number };
 
@@ -22,7 +22,9 @@ export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizati
         className: 'ellipsis-column-width',
         render: (original_sql) => {
           if (!original_sql) return null;
-          return <RenderSQL sql={original_sql} rows={1} />;
+          return (
+            <SQLRenderer.Snippet showCopyIcon sql={original_sql} rows={1} />
+          );
         }
       },
       {

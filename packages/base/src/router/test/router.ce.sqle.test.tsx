@@ -140,34 +140,35 @@ describe('base/router-sqle-ce', () => {
         expect(screen.getByText('projectOverview')).toBeInTheDocument();
       });
 
-      describe('render route order', () => {
-        it('render route orderList', async () => {
+      describe('render route workflow', () => {
+        it('render route list', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/order`
+            `/sqle/project/${projectID}/exec-workflow`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));
           expect(baseElement).toMatchSnapshot();
+          expect(screen.getByText('sqlExecWorkflowList')).toBeInTheDocument();
         });
 
-        it('render route orderCreate', async () => {
+        it('render route create', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/order/create`
+            `/sqle/project/${projectID}/exec-workflow/create`
           ]);
 
           await act(async () => jest.advanceTimersByTime(0));
           expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('orderCreate')).toBeInTheDocument();
+          expect(screen.getByText('createSqlExecWorkflow')).toBeInTheDocument();
         });
 
-        it('render route orderDetail', async () => {
+        it('render route detail', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/order/orderId`
+            `/sqle/project/${projectID}/exec-workflow/workflowId`
           ]);
 
           await act(async () => jest.advanceTimersByTime(0));
           expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('orderDetail')).toBeInTheDocument();
+          expect(screen.getByText('workflowDetail')).toBeInTheDocument();
         });
       });
 
@@ -377,13 +378,13 @@ describe('base/router-sqle-ce', () => {
     });
 
     describe('render route analyze', () => {
-      it('render route orderAnalyze', () => {
+      it('render route workflowAnalyze', () => {
         const { baseElement } = customRender([
-          `/sqle/project/${projectID}/order/taskId/sqlNum/analyze`
+          `/sqle/project/${projectID}/exec-workflow/taskId/sqlNum/analyze`
         ]);
 
         expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('orderAnalyze')).toBeInTheDocument();
+        expect(screen.getByText('workflowAnalyze')).toBeInTheDocument();
       });
 
       it('render route auditPlanDetail', () => {

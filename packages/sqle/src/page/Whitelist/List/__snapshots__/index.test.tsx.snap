@@ -198,7 +198,7 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         class="ant-table-cell"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -219,7 +219,7 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -300,7 +300,7 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         class="ant-table-cell"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -321,7 +321,7 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -402,7 +402,7 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         class="ant-table-cell"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -423,7 +423,7 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"

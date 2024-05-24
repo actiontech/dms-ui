@@ -1,13 +1,13 @@
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-export type OrderTheme = {
-  orderList: {
-    orderDesc: {
+export type ExecWorkflowTheme = {
+  list: {
+    desc: {
       copyIconColor: string;
       hoverCopyIconBackgroundColor: string;
     };
   };
-  createOrder: {
+  create: {
     auditResult: {
       auditResultDrawer: {
         numberColor: string;
@@ -36,7 +36,7 @@ export type OrderTheme = {
       projectFlagIconColor: string;
     };
   };
-  orderSteps: {
+  steps: {
     boxShadow: string;
   };
   common: {

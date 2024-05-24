@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
 import { Space } from 'antd';
-import {
-  IconOrderAuditResultSuccess,
-  IconOrderAuditResultNotice,
-  IconOrderAuditResultWarning,
-  IconOrderAuditResultError
-} from 'sqle/src/icon/Order';
 import { IAuditSQLResult } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  IconWorkflowAuditResultError,
+  IconWorkflowAuditResultNotice,
+  IconWorkflowAuditResultSuccess,
+  IconWorkflowAuditResultWarning
+} from 'sqle/src/icon/SqlExecWorkflow';
 
 const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
   auditResult
@@ -39,7 +39,7 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
       <BasicTag
         color="green"
         size="large"
-        icon={<IconOrderAuditResultSuccess />}
+        icon={<IconWorkflowAuditResultSuccess />}
         bordered={false}
       >
         {t('audit.auditSuccess')}
@@ -52,7 +52,7 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
           <BasicTag
             color="blue"
             size="large"
-            icon={<IconOrderAuditResultNotice />}
+            icon={<IconWorkflowAuditResultNotice />}
             bordered={false}
           >
             {noticeResult.length}
@@ -62,7 +62,7 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
           <BasicTag
             color="orange"
             size="large"
-            icon={<IconOrderAuditResultWarning />}
+            icon={<IconWorkflowAuditResultWarning />}
             bordered={false}
           >
             {warnResult.length}
@@ -72,7 +72,7 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
           <BasicTag
             color="red"
             size="large"
-            icon={<IconOrderAuditResultError />}
+            icon={<IconWorkflowAuditResultError />}
             bordered={false}
           >
             {errorResult.length}

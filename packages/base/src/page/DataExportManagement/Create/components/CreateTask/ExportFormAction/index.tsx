@@ -3,7 +3,7 @@ import { ExportFormActionProps } from './index.type';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { Space } from 'antd';
-import { FormatLanguageSupport } from 'sqle/src/utils/FormatterSQL';
+import { FormatLanguageSupport } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 const ExportFormAction: React.FC<ExportFormActionProps> = ({
   auditAction,

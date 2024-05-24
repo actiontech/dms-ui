@@ -8,8 +8,8 @@ import {
   updateCloudBeaverModalStatus
 } from '../../../store/cloudBeaver';
 import { useTranslation } from 'react-i18next';
-import useAuditResultRuleInfo from 'sqle/src/page/Order/hooks/useAuditResultRuleInfo';
 import ReportDrawer from 'sqle/src/components/ReportDrawer';
+import useAuditResultRuleInfo from 'sqle/src/components/ReportDrawer/useAuditResultRuleInfo';
 
 const CBSqlOperationAuditDetailDrawer = () => {
   const { t } = useTranslation();

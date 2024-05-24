@@ -7777,7 +7777,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql and open sql audit result 1`] =
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -7797,7 +7797,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql and open sql audit result 1`] =
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -7825,7 +7825,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql and open sql audit result 1`] =
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -7845,7 +7845,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql and open sql audit result 1`] =
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -9237,7 +9237,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql fingerprint and open sql audit 
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -9257,7 +9257,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql fingerprint and open sql audit 
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -9285,7 +9285,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql fingerprint and open sql audit 
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -9305,7 +9305,7 @@ exports[`page/SqlManagement/SQLEEIndex click sql fingerprint and open sql audit 
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -21214,7 +21214,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -21296,7 +21296,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -21553,7 +21553,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -21611,7 +21611,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -21639,7 +21639,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -21697,7 +21697,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -21925,7 +21925,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -21983,7 +21983,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"
@@ -22011,7 +22011,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="css-4mzo37"
+                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
@@ -22069,7 +22069,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             </span>
                           </div>
                           <div
-                            class="css-1s8kb8e"
+                            class="actiontech-copy-icon actiontech-sql-renderer-copy-icon css-1s8kb8e"
                           >
                             <span
                               aria-label="copy"

@@ -1,19 +1,19 @@
 import {
-  OrderTheme,
   ReportStatisticsTheme,
   StatisticsTheme,
   ProjectOverviewTheme,
   AuditPlanTheme,
-  WorkflowTemplateTheme
+  WorkflowTemplateTheme,
+  ExecWorkflowTheme
 } from '../theme/type';
 
 export interface SqleTheme {
   statistics: StatisticsTheme;
   reportStatistics: ReportStatisticsTheme;
-  order: OrderTheme;
   projectOverview: ProjectOverviewTheme;
   auditPlan: AuditPlanTheme;
   workflowTemplate: WorkflowTemplateTheme;
+  execWorkflow: ExecWorkflowTheme;
 }
 
 interface ThemeCustom {

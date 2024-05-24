@@ -9,7 +9,7 @@ import {
   updatePluginAuditModalStatus
 } from '../../../store/pluginAudit';
 import { useTranslation } from 'react-i18next';
-import useAuditResultRuleInfo from '../../Order/hooks/useAuditResultRuleInfo';
+import useAuditResultRuleInfo from '../../../components/ReportDrawer/useAuditResultRuleInfo';
 
 const AuditDetailDrawer = () => {
   const { t } = useTranslation();

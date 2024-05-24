@@ -8,12 +8,12 @@ import {
   IconSqlOptimization,
   IconProjectOverview,
   IconRuleTemplate,
-  IconSQLOrder,
   IconSqlAudit,
   IconSqlManagement,
   IconTodoList,
   IconWhitelist,
-  IconWorkflowTemplate
+  IconWorkflowTemplate,
+  IconSQLExecWorkflow
 } from '../../../../../icon/sideMenu';
 import { t } from '../../../../../locale';
 import { SystemRole } from '@actiontech/shared/lib/enum';
@@ -79,13 +79,15 @@ export const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'sql-optimization'
 });
 
-export const sqlOrderMenuItem: GenerateMenuItemType = (projectID) => ({
+export const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/order`}>{t('dmsMenu.SQLOrder')}</Link>
+    <Link to={`/sqle/project/${projectID}/exec-workflow`}>
+      {t('dmsMenu.sqlWorkflow')}
+    </Link>
   ),
-  icon: <Icon component={IconSQLOrder} />,
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/order`,
-  structKey: 'sql-order'
+  icon: <Icon component={IconSQLExecWorkflow} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/exec-workflow`,
+  structKey: 'exec-workflow'
 });
 
 export const sqlManagementMenuItem: GenerateMenuItemType = (projectID) => ({
@@ -158,3 +160,21 @@ export const sqleOperationRecordMenuItem: GenerateMenuItemType = (
   structKey: 'sqle-log',
   role: [SystemRole.admin]
 });
+
+const sqleMenusCollection = [
+  projectOverviewMenuItem,
+  dashboardMenuItem,
+  sqlAuditMenuItem,
+  pluginAuditMenuItem,
+  sqlOptimizationMenuItem,
+  sqlExecWorkflowMenuItem,
+  sqlManagementMenuItem,
+  auditPlanMenuItem,
+  projectRuleTemplateMenuItem,
+  whiteListMenuItem,
+  workflowTemplateMenuItem,
+  workflowTemplateMenuItem,
+  sqleOperationRecordMenuItem
+];
+
+export default sqleMenusCollection;

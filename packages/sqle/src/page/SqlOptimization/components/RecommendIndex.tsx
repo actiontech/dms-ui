@@ -1,6 +1,5 @@
 import { SqlOptimizationSqlBlockStyleWrapper } from '../style';
-import { EmptyBox } from '@actiontech/shared';
-import RenderSQL from '../../../components/RenderSQL';
+import { EmptyBox, SQLRenderer } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import Icon from '@ant-design/icons';
 import { IconLink } from '../../../icon/sqlOptimization';
@@ -25,7 +24,7 @@ const RecommendIndex: React.FC<{ recommendations?: string[] }> = ({
         }
       >
         {recommendations?.map((item, index) => (
-          <RenderSQL sql={item} key={index} rows={1} />
+          <SQLRenderer.Snippet showCopyIcon sql={item} key={index} rows={1} />
         ))}
       </EmptyBox>
     </SqlOptimizationSqlBlockStyleWrapper>

@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test UpdateFormDrawer should match snapshot 1`] = `
+<BasicDrawer
+  afterOpenChange={[Function]}
+  bodyStyle={
+    {
+      "padding": 0,
+    }
+  }
+  closeIcon={false}
+  noBodyPadding={true}
+  onClose={[Function]}
+  open={true}
+  size="large"
+  title={false}
+  width={735}
+>
+  <Spin
+    spinning={false}
+  >
+    <Styled(Form)
+      form={
+        {
+          "__INTERNAL__": {
+            "itemRef": [Function],
+          },
+          "_init": true,
+          "getFieldError": [Function],
+          "getFieldInstance": [Function],
+          "getFieldValue": [Function],
+          "getFieldWarning": [Function],
+          "getFieldsError": [Function],
+          "getFieldsValue": [Function],
+          "getInternalHooks": [Function],
+          "isFieldTouched": [Function],
+          "isFieldValidating": [Function],
+          "isFieldsTouched": [Function],
+          "isFieldsValidating": [Function],
+          "resetFields": [Function],
+          "scrollToField": [Function],
+          "setFieldValue": [Function],
+          "setFields": [Function],
+          "setFieldsValue": [Function],
+          "submit": [Function],
+          "validateFields": [Function],
+        }
+      }
+    >
+      <Styled(div)>
+        工单基本信息
+      </Styled(div)>
+      <BaseInfoFormItem
+        slot={<BaseInfoTag />}
+      />
+    </Styled(Form)>
+    <Divider
+      style={
+        {
+          "marginTop": 12,
+        }
+      }
+    />
+    <Styled(Form)
+      colon={false}
+      form={
+        {
+          "__INTERNAL__": {
+            "itemRef": [Function],
+          },
+          "_init": true,
+          "getFieldError": [Function],
+          "getFieldInstance": [Function],
+          "getFieldValue": [Function],
+          "getFieldWarning": [Function],
+          "getFieldsError": [Function],
+          "getFieldsValue": [Function],
+          "getInternalHooks": [Function],
+          "isFieldTouched": [Function],
+          "isFieldValidating": [Function],
+          "isFieldsTouched": [Function],
+          "isFieldsValidating": [Function],
+          "resetFields": [Function],
+          "scrollToField": [Function],
+          "setFieldValue": [Function],
+          "setFields": [Function],
+          "setFieldsValue": [Function],
+          "submit": [Function],
+          "validateFields": [Function],
+        }
+      }
+      labelAlign="left"
+    >
+      <Styled(div)>
+        审核SQL语句信息
+      </Styled(div)>
+      <SqlAuditInfoFormItem
+        auditAction={[Function]}
+        dbSourceInfoCollection={
+          {
+            "set": [MockFunction],
+            "value": {
+              "0": {},
+            },
+          }
+        }
+        handleInstanceNameChange={[MockFunction]}
+        instanceTestConnectResults={
+          {
+            "set": [MockFunction],
+            "value": [],
+          }
+        }
+        isAuditing={
+          {
+            "set": [MockFunction],
+            "value": false,
+          }
+        }
+        isDisabledForDifferenceSql={
+          {
+            "set": [MockFunction],
+            "value": false,
+          }
+        }
+        resetAllSharedData={[MockFunction]}
+        sqlStatementTabActiveKey={
+          {
+            "set": [MockFunction],
+            "value": "1",
+          }
+        }
+      />
+    </Styled(Form)>
+  </Spin>
+</BasicDrawer>
+`;

@@ -7,7 +7,7 @@ import { updateAuditPlanModalStatus } from '../../../../../store/auditPlan';
 import { ModalName } from '../../../../../data/ModalName';
 import { IAuditPlanReportSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import ReportDrawer from '../../../../../components/ReportDrawer';
-import useAuditResultRuleInfo from '../../../../Order/hooks/useAuditResultRuleInfo';
+import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 
 type typeDetailReportDrawer = {
   actionMethod: (data: IAuditPlanReportSQLResV2) => void;

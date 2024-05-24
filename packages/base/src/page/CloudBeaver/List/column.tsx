@@ -8,9 +8,8 @@ import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
-import RenderSQL from 'sqle/src/components/RenderSQL';
 import { OperationOperationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { AvatarCom } from '@actiontech/shared';
+import { AvatarCom, SQLRenderer } from '@actiontech/shared';
 
 export type CBOperationListFilterParamType = PageInfoWithoutIndexAndSize<
   IListCBOperationLogsParams & {
@@ -57,11 +56,12 @@ export const CBOperationListColumns = (
       render: (operation: ICBOperationLog['operation'], record) => {
         if (operation?.operation_type === OperationOperationTypeEnum.SQL) {
           return (
-            <RenderSQL
+            <SQLRenderer.Snippet
               onClick={() => onOpenDrawer(record)}
               sql={operation.operation_detail}
               rows={1}
               tooltip={false}
+              showCopyIcon
             />
           );
         }
