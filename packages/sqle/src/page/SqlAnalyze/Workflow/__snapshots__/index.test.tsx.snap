@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SqlAnalyze/Order should get analyze data from origin 1`] = `
+exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
 <div>
   <section
     class="css-doq0dk"
@@ -286,7 +286,7 @@ exports[`SqlAnalyze/Order should get analyze data from origin 1`] = `
 </div>
 `;
 
-exports[`SqlAnalyze/Order should get analyze data from origin 2`] = `
+exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
 <div>
   <section
     class="css-doq0dk"
@@ -6441,7 +6441,7 @@ exports[`SqlAnalyze/Order should get analyze data from origin 2`] = `
 </div>
 `;
 
-exports[`SqlAnalyze/Order should get analyze data from origin 3`] = `
+exports[`SqlAnalyze/Workflow should get analyze data from origin 3`] = `
 <div>
   <section
     class="css-doq0dk"
@@ -12138,7 +12138,7 @@ exports[`SqlAnalyze/Order should get analyze data from origin 3`] = `
 </div>
 `;
 
-exports[`SqlAnalyze/Order should render error result of type "error" when response code is not 8001 1`] = `
+exports[`SqlAnalyze/Workflow should render error result of type "error" when response code is not 8001 1`] = `
 <div>
   <section
     class="css-doq0dk"
@@ -12244,7 +12244,7 @@ exports[`SqlAnalyze/Order should render error result of type "error" when respon
 </div>
 `;
 
-exports[`SqlAnalyze/Order should render error result of type "info" when response code is 8001 1`] = `
+exports[`SqlAnalyze/Workflow should render error result of type "info" when response code is 8001 1`] = `
 <div>
   <section
     class="css-doq0dk"
