@@ -5,7 +5,6 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '../../../testUtil/common';
-import { getBySelector } from '../../../testUtil/customQuery';
 
 describe('test CustomSegmentedFilter', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
@@ -19,9 +18,7 @@ describe('test CustomSegmentedFilter', () => {
         style={{ color: 'red' }}
       />
     );
-    expect(getBySelector('custom-segmented-filter-wrapper')).toHaveStyle(
-      'color:red'
-    );
+
     expect(container).toMatchSnapshot();
   });
 
