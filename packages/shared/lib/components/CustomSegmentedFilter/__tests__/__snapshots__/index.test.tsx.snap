@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test CustomSegmentedFilter renders CustomSegmentedFilter component 1`] = `
+<div>
+  <div
+    class="ant-segmented basic-segmented-wrapper custom-segmented-filter-wrapper custom-class-name css-192b3m1 css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-segmented-group"
+    >
+      <label
+        class="ant-segmented-item ant-segmented-item-selected"
+      >
+        <input
+          checked=""
+          class="ant-segmented-item-input"
+          type="radio"
+        />
+        <div
+          class="ant-segmented-item-label"
+          title="option1"
+        >
+          option1
+        </div>
+      </label>
+      <label
+        class="ant-segmented-item"
+      >
+        <input
+          class="ant-segmented-item-input"
+          type="radio"
+        />
+        <div
+          class="ant-segmented-item-label"
+          title="option2"
+        >
+          option2
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test CustomSegmentedFilter renders without styles when noStyle is true 1`] = `
+<div>
+  <div
+    class="custom-segmented-filter-wrapper no-style-wrapper"
+  >
+    <div
+      class="custom-segmented-filter-item"
+    >
+      option1
+    </div>
+    <div
+      class="custom-segmented-filter-item custom-segmented-filter-item-checked"
+    >
+      option2
+    </div>
+  </div>
+</div>
+`;
