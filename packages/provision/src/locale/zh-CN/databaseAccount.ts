@@ -21,6 +21,8 @@ export default {
     unmanagedSuccessTips: '密码已取消托管',
     deleteSuccessTips: '账号删除成功',
     deleteConfirm: '确定要删除账号：{{name}}？',
+    cancelManage:
+      '取消托管后，平台将不再记录账号密码，成员无法通过CB工作台访问该账号，是否确认取消托管？',
     column: {
       account: '账号',
       desc: '说明',
@@ -67,6 +69,8 @@ export default {
     service: '数据源',
     dbAccount: '数据库账户',
     syncAccount: '同步账户',
+    syncAccountTip:
+      '对同一数据源可以进行多次账号发现，账号发现时将会过滤掉已经在平台上的账号',
     syncSuccess: '同步账户成功'
   },
   create: {
@@ -126,7 +130,8 @@ export default {
     expireTime: '密码有效期',
     copyAll: '全文复制',
     authInfo: '授权信息',
-    authUser: '授权成员'
+    authUser: '授权成员',
+    originPermission: '原始权限'
   },
   authorize: {
     title: '账号授权',

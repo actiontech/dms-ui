@@ -105,16 +105,6 @@ export const DatabaseAccountListColumns = (
       filterCustomType: 'select'
     },
     {
-      dataIndex: 'used_by_workbench',
-      title: t('databaseAccount.list.column.workbench'),
-      filterKey: 'filter_by_used_by_sql_workbench',
-      filterCustomType: 'select',
-      render: (value: IListDBAccount['used_by_workbench']) => {
-        return value ? t('common.true') : t('common.false');
-      },
-      align: 'center'
-    },
-    {
       dataIndex: 'auth_users',
       className: 'ellipsis-column-width',
       title: t('databaseAccount.list.column.auth'),
@@ -155,8 +145,7 @@ export const DatabaseAccountListActions = (
   onSetLockedStatus: (lock: boolean, id: string) => void,
   onSetManagedStatus: (managed: boolean, id: string) => void,
   onDeleteAccount: (id: string) => void,
-  onNavigateToUpdatePage: (id: string) => void,
-  onSetUsedByWorkbench: (used: boolean, id: string) => void
+  onNavigateToUpdatePage: (id: string) => void
 ): {
   moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IListDBAccount>[];
   buttons: ActiontechTableActionMeta<IListDBAccount>[];
@@ -234,23 +223,15 @@ export const DatabaseAccountListActions = (
     {
       key: 'account_cancelManage',
       text: t('databaseAccount.list.action.cancelManage'),
-      onClick: (record) =>
-        onSetManagedStatus(false, record?.db_account_uid ?? ''),
+      confirm: (record) => ({
+        title: t('databaseAccount.list.cancelManage'),
+        okText: t('common.ok'),
+        cancelText: t('common.cancel'),
+        onConfirm: () => {
+          onSetManagedStatus(false, record?.db_account_uid ?? '');
+        }
+      }),
       permissions: (record) => !!record?.platform_managed
-    },
-    {
-      key: 'account_usedByWorkbench',
-      text: t('databaseAccount.list.action.usedByWorkbench'),
-      onClick: (record) =>
-        onSetUsedByWorkbench(true, record?.db_account_uid ?? ''),
-      permissions: (record) => !record?.used_by_workbench
-    },
-    {
-      key: 'account_cancelUsedByWorkbench',
-      text: t('databaseAccount.list.action.cancelUsedByWorkbench'),
-      onClick: (record) =>
-        onSetUsedByWorkbench(false, record?.db_account_uid ?? ''),
-      permissions: (record) => !!record?.used_by_workbench
     }
   ]
 });

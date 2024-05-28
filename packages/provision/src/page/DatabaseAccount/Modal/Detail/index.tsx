@@ -18,7 +18,10 @@ import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_ac
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Space, Spin, message } from 'antd';
-import { AccountDetailDrawerStyleWrapper } from '../../style';
+import {
+  AccountDetailDrawerStyleWrapper,
+  OriginalPermissionStyleWrapper
+} from '../../style';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import AccountInfoItem from '../../components/AccountInfoItem';
 import json2md, { DataObject } from 'json2md';
@@ -123,6 +126,7 @@ const DatabaseAccountDetailModal = () => {
           </BasicButton>
         </Space>
       }
+      destroyOnClose
     >
       {contextHolder}
       <Spin spinning={loading}>
@@ -204,6 +208,23 @@ const DatabaseAccountDetailModal = () => {
                   );
                 })}
               </AccountInfoItem>
+              <EmptyBox
+                if={
+                  !!permission.data_permission_different
+                    ?.original_data_permission
+                }
+              >
+                <AccountInfoItem
+                  label={t('databaseAccount.detail.originPermission')}
+                >
+                  <OriginalPermissionStyleWrapper>
+                    {
+                      permission.data_permission_different
+                        ?.original_data_permission
+                    }
+                  </OriginalPermissionStyleWrapper>
+                </AccountInfoItem>
+              </EmptyBox>
             </div>
           ))}
         </div>

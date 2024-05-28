@@ -268,6 +268,8 @@ export interface IDBAccountDataPermission {
   data_objects?: IDataObjectInDataPermission[];
 
   data_operation_sets?: IDataOperationSetInDataPermission[];
+
+  data_permission_different?: IDataPermissionDifferent;
 }
 
 export interface IDMSProxyTarget {
@@ -332,6 +334,10 @@ export interface IDataPermission {
   data_object_uids: string[];
 
   data_operation_set_uids: string[];
+}
+
+export interface IDataPermissionDifferent {
+  original_data_permission?: string;
 }
 
 export interface IDataPermissionTemplateReply {

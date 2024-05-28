@@ -56,7 +56,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
       loading={loading}
       scroll={{
         x: 'max-content',
-        y: 400
+        y: 540
       }}
       rowKey={(record: IDBAccountBody) => {
         return `${record?.hostname}${record?.user}`;
