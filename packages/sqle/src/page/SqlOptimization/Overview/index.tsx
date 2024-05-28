@@ -19,7 +19,7 @@ import {
   IconDatabaseSchemaActive
 } from '@actiontech/shared/lib/Icon/common';
 import OptimizationSqlList from './OptimizationSqlList';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import RecommendIndex from '../components/RecommendIndex';
 import { SqlOptimizationStatusEnum } from '../index.data';
@@ -48,19 +48,14 @@ const OptimizationOverview = () => {
         .then((res) => res.data.data),
     {
       pollingInterval: 1000,
-      pollingErrorRetryCount: 3
+      pollingErrorRetryCount: 3,
+      onSuccess: (res) => {
+        if (res?.status !== SqlOptimizationStatusEnum.optimizing) {
+          cancel();
+        }
+      }
     }
   );
-
-  useEffect(() => {
-    if (
-      optimizationRecord &&
-      !recordLoading &&
-      optimizationRecord?.status !== SqlOptimizationStatusEnum.optimizing
-    ) {
-      cancel();
-    }
-  }, [optimizationRecord, recordLoading, cancel]);
 
   return (
     <>
