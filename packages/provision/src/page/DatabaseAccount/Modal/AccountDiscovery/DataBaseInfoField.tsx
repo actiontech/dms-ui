@@ -1,5 +1,5 @@
 import { Form } from 'antd';
-import { BasicSelect } from '@actiontech/shared';
+import { BasicSelect, BasicToolTips } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { AccountDiscoveryFormType } from '../../index.type';
 import { FormInstance } from 'antd/lib/form/Form';
@@ -111,7 +111,14 @@ const DataBaseInfoField: React.FC<{
         />
       </Form.Item>
       <Form.Item
-        label={t('databaseAccount.discovery.dbAccount')}
+        label={
+          <BasicToolTips
+            suffixIcon
+            title={t('databaseAccount.discovery.syncAccountTip')}
+          >
+            {t('databaseAccount.discovery.dbAccount')}
+          </BasicToolTips>
+        }
         name="account"
         rules={[
           {

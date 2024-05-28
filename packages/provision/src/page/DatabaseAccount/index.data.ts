@@ -27,14 +27,3 @@ export const DBAccountPasswordManagedOptions = [
     value: 'false'
   }
 ];
-
-export const DBAccountPasswordUsedByWorkbenchOptions = [
-  {
-    label: t('common.true'),
-    value: 'true'
-  },
-  {
-    label: t('common.false'),
-    value: 'false'
-  }
-];

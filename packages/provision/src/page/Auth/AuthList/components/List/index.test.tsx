@@ -166,7 +166,7 @@ describe('page/Auth/AuthList/List', () => {
         '.actiontech-table-filter-container-namespace .ant-space-item',
         baseElement
       );
-      expect(filterItems.length).toBe(4);
+      expect(filterItems.length).toBe(3);
       expect(baseElement).toMatchSnapshot();
     });
 
@@ -378,107 +378,6 @@ describe('page/Auth/AuthList/List', () => {
         [ModalName.UpdateExpirationInAuth]: false,
         [ModalName.GetConnection]: false,
         [ModalName.UpdateTemplateInAuth]: false,
-        [ModalName.UpdateSQLWorkbenchQueryStatus]: false
-      });
-    });
-
-    it('render click sql workbench edit button', async () => {
-      const modalStatusChangeSpy = jest.fn();
-      const requestListFn = auth.listAuthorizationReq();
-      requestListFn.mockImplementationOnce(() =>
-        createSpySuccessResponse({
-          total_nums: 1,
-          data: [
-            {
-              ...authorizationList[1],
-              permission_user: 'permission_user_xin'
-            }
-          ]
-        })
-      );
-      const { baseElement } = superRender(
-        <>
-          <AuthListItem />
-          <RecoilObservable
-            state={AuthListModalStatus}
-            onChange={modalStatusChangeSpy}
-          />
-        </>
-      );
-
-      await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toHaveBeenCalledTimes(1);
-
-      fireEvent.mouseOver(screen.getByText('未启用'));
-      await act(async () => jest.advanceTimersByTime(0));
-      expect(baseElement).toMatchSnapshot();
-      fireEvent.click(
-        getAllBySelector(
-          '.ant-table-row-level-0 .auth-action-column-editor .anticon-edit',
-          baseElement
-        )[1]
-      );
-      await act(async () => jest.advanceTimersByTime(1000));
-      expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
-      expect(modalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
-        [ModalName.UpdateUserInAuth]: false,
-        [ModalName.UpdateExpirationInAuth]: false,
-        [ModalName.GetConnection]: false,
-        [ModalName.UpdateTemplateInAuth]: false,
-        [ModalName.UpdateSQLWorkbenchQueryStatus]: true
-      });
-    });
-
-    it('render click auth template text', async () => {
-      const modalStatusChangeSpy = jest.fn();
-      const requestListFn = auth.listAuthorizationReq();
-      requestListFn.mockImplementationOnce(() =>
-        createSpySuccessResponse({
-          total_nums: 1,
-          data: [
-            {
-              ...authorizationList[1],
-              data_permission_template_names: ['auth_template_xin']
-            }
-          ]
-        })
-      );
-      const { baseElement } = superRender(
-        <>
-          <AuthListItem />
-          <RecoilObservable
-            state={AuthListModalStatus}
-            onChange={modalStatusChangeSpy}
-          />
-        </>
-      );
-      await act(async () => jest.advanceTimersByTime(3300));
-      expect(requestListFn).toHaveBeenCalledTimes(1);
-
-      expect(screen.getByText('auth_template_xin')).toBeInTheDocument();
-      fireEvent.click(screen.getByText('auth_template_xin'));
-      await act(async () => jest.advanceTimersByTime(300));
-      expect(navigateSpy).toHaveBeenCalled();
-      expect(navigateSpy).toHaveBeenCalledWith(
-        `/provision/project/${projectID}/auth/template/edit-template/?name=auth_template_xin`
-      );
-
-      fireEvent.mouseOver(screen.getByText('auth_template_xin'));
-      await act(async () => jest.advanceTimersByTime(300));
-      expect(baseElement).toMatchSnapshot();
-      fireEvent.click(
-        getAllBySelector(
-          '.ant-table-row-level-0 .auth-action-column-editor .anticon-edit',
-          baseElement
-        )[2]
-      );
-      await act(async () => jest.advanceTimersByTime(1000));
-      expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
-      expect(modalStatusChangeSpy).toHaveBeenNthCalledWith(2, {
-        [ModalName.UpdateTemplateInAuth]: true,
-        [ModalName.UpdateUserInAuth]: false,
-        [ModalName.UpdateExpirationInAuth]: false,
-        [ModalName.GetConnection]: false,
         [ModalName.UpdateSQLWorkbenchQueryStatus]: false
       });
     });

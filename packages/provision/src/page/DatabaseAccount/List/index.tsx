@@ -27,8 +27,7 @@ import {
 } from './column';
 import {
   DBAccountStatusOptions,
-  DBAccountPasswordManagedOptions,
-  DBAccountPasswordUsedByWorkbenchOptions
+  DBAccountPasswordManagedOptions
 } from '../index.data';
 import useProvisionUser from '../../../hooks/useProvisionUser';
 import useServiceOptions from '../../../hooks/useServiceOptions';
@@ -170,12 +169,6 @@ const DatabaseAccountList = () => {
           options: serviceOptions,
           value: tableFilterInfo.filter_by_db_service
         }
-      ],
-      [
-        'used_by_workbench',
-        {
-          options: DBAccountPasswordUsedByWorkbenchOptions
-        }
       ]
     ]);
   }, [userIDOptions, serviceOptions, tableFilterInfo]);
@@ -238,30 +231,6 @@ const DatabaseAccountList = () => {
     [messageApi, projectID, onRefresh, t]
   );
 
-  const onSetUsedByWorkbench = useCallback(
-    (used: boolean, id: string) => {
-      dbAccountService
-        .AuthUpdateDBAccount({
-          project_uid: projectID,
-          db_account_uid: id ?? '',
-          db_account: {
-            used_by_sql_workbench: used
-          }
-        })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.success(
-              used
-                ? t('databaseAccount.list.usedByWorkbenchTips')
-                : t('databaseAccount.list.cancelUsedByWorkbenchTips')
-            );
-            onRefresh();
-          }
-        });
-    },
-    [messageApi, projectID, onRefresh, t]
-  );
-
   const onDeleteAccount = useCallback(
     (id: string) => {
       dbAccountService
@@ -304,16 +273,14 @@ const DatabaseAccountList = () => {
       onSetLockedStatus,
       onSetManagedStatus,
       onDeleteAccount,
-      onNavigateToUpdatePage,
-      onSetUsedByWorkbench
+      onNavigateToUpdatePage
     );
   }, [
     onOpenModal,
     onSetLockedStatus,
     onSetManagedStatus,
     onDeleteAccount,
-    onNavigateToUpdatePage,
-    onSetUsedByWorkbench
+    onNavigateToUpdatePage
   ]);
 
   const onBatchAction = (name: ModalName) => {
@@ -352,10 +319,16 @@ const DatabaseAccountList = () => {
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EventEmitterKey.Refresh_Account_Management_List_Table,
-      onRefresh
+      (key: keyof DatabaseAccountListFilterParamType, value: string) => {
+        if (key && value) {
+          onUpdateFilter(key, value);
+        } else {
+          onRefresh();
+        }
+      }
     );
     return unsubscribe;
-  }, [onRefresh]);
+  }, [onRefresh, onUpdateFilter]);
 
   return (
     <>

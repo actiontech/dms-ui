@@ -57,7 +57,6 @@ const CreateDatabaseAccount = () => {
         },
         effective_time_day: values.effective_time_day,
         data_permissions: permissions,
-        used_by_sql_workbench: false,
         password_security_policy:
           values.policy === NORMAL_POLICY_VALUE ? undefined : values.policy
       }

@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Row, Space } from 'antd';
-import { BasicTable, BasicDrawer } from '@actiontech/shared';
+import { BasicTable, BasicDrawer, BasicTag } from '@actiontech/shared';
 
 export const AccountStatisticsStyleWrapper = styled(Row)`
   padding: 24px 40px;
@@ -136,5 +136,14 @@ export const PermissionFieldStyleWrapper = styled('section')`
 export const BatchModifyPasswordDrawerStyleWrapper = styled(BasicDrawer)`
   & .account-name-item {
     display: block !important;
+  }
+`;
+
+export const OriginalPermissionStyleWrapper = styled(BasicTag)`
+  &.ant-tag.ant-tag-default.basic-tag-wrapper {
+    white-space: pre-wrap;
+    padding: 6px;
+    height: auto;
+    /* max-width: 472px; */
   }
 `;

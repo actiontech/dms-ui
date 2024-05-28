@@ -78,8 +78,6 @@ export interface IAddAuthorization {
   permission_user_uid: string;
 
   purpose: string;
-
-  used_by_sql_workbench?: boolean;
 }
 
 export interface IAddAuthorizationReply {
@@ -104,8 +102,6 @@ export interface IAddDBAccount {
   explanation?: string;
 
   password_security_policy?: string;
-
-  used_by_sql_workbench: boolean;
 }
 
 export interface IAddDBAccountReply {
@@ -268,6 +264,8 @@ export interface IDBAccountDataPermission {
   data_objects?: IDataObjectInDataPermission[];
 
   data_operation_sets?: IDataOperationSetInDataPermission[];
+
+  data_permission_different?: IDataPermissionDifferent;
 }
 
 export interface IDMSProxyTarget {
@@ -332,6 +330,10 @@ export interface IDataPermission {
   data_object_uids: string[];
 
   data_operation_set_uids: string[];
+}
+
+export interface IDataPermissionDifferent {
+  original_data_permission?: string;
 }
 
 export interface IDataPermissionTemplateReply {
@@ -574,8 +576,6 @@ export interface IListAuthorization {
   status?: ListAuthorizationStatusEnum;
 
   uid?: string;
-
-  used_by_sql_workbench?: boolean;
 }
 
 export interface IListAuthorizationEvent {
@@ -656,8 +656,6 @@ export interface IListDBAccount {
   remaining_days?: string;
 
   status?: ListDBAccountStatusEnum;
-
-  used_by_workbench?: boolean;
 }
 
 export interface IListDBAccountByAuth {
@@ -1200,8 +1198,6 @@ export interface IUpdateAuthorization {
   renewal_effective_time_day?: number;
 
   update_authorization_user?: IUpdateAuthorizationUser;
-
-  used_by_sql_workbench?: boolean;
 }
 
 export interface IUpdateAuthorizationUser {
@@ -1224,8 +1220,6 @@ export interface IUpdateDBAccount {
   platform_managed?: IPlatformManaged;
 
   renewal_effective_time_day?: number;
-
-  used_by_sql_workbench?: boolean;
 }
 
 export interface IUpdateDataObjectSource {

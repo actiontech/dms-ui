@@ -117,8 +117,7 @@ const AddAuth: React.FC = () => {
         effective_time_day: values.effective_time_day,
         memo: values.memo,
         permission_user_uid: values.permission_user_uid,
-        purpose: values.purpose,
-        used_by_sql_workbench: values.used_by_sql_workbench
+        purpose: values.purpose
       });
     });
   };

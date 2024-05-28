@@ -33,7 +33,6 @@ import EventEmitter from '~/utils/EventEmitter';
 import { EventEmitterKey, ModalName } from '~/data/enum';
 
 import { AuthListModalStatus, AuthListSelectData } from '~/store/auth/list';
-import { SQLWorkbenchQueryStatusOptions } from './index.data';
 
 const AuthListItem = () => {
   const { t } = useTranslation();
@@ -126,12 +125,6 @@ const AuthListItem = () => {
         'data_object_service',
         {
           options: serviceOptions
-        }
-      ],
-      [
-        'used_by_sql_workbench',
-        {
-          options: SQLWorkbenchQueryStatusOptions
         }
       ]
     ]);

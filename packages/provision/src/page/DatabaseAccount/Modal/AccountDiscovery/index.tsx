@@ -48,7 +48,9 @@ const AccountDiscoveryModal: React.FC = () => {
           messageApi.success(t('databaseAccount.discovery.syncSuccess'));
           onClose();
           EventEmitter.emit(
-            EventEmitterKey.Refresh_Account_Management_List_Table
+            EventEmitterKey.Refresh_Account_Management_List_Table,
+            'filter_by_db_service',
+            values.service
           );
         }
       })

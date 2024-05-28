@@ -155,8 +155,6 @@ export interface IAuthListAuthorizationParams {
   keyword?: string;
 
   filter_by_namespace_uid: string;
-
-  filter_by_used_by_sql_workbench?: boolean;
 }
 
 export interface IAuthListAuthorizationReturn extends IListAuthorizationReply {}
