@@ -16,8 +16,9 @@ const CustomSegmentedFilter = <V extends string | number | undefined = string>(
 
   const { labelDictionary, withAll, noStyle, className, style, options } =
     props;
+
   const [value, onChange] = useControllableValue<V>(
-    typeof props.value !== undefined
+    typeof props.value !== 'undefined'
       ? {
           value: props.value,
           onChange: props.onChange,
