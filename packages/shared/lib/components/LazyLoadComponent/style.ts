@@ -6,7 +6,7 @@ export const LazyLoadComponentStyleWrapper = styled('div')<{
   @keyframes slide-right {
     from {
       display: block;
-      transform: ${({ animation }) => animation ?? 'translateX(100%)'};
+      transform: translateX(100%);
     }
 
     to {
@@ -14,7 +14,7 @@ export const LazyLoadComponentStyleWrapper = styled('div')<{
     }
   }
 
-  animation: slide-right 300ms;
+  animation: ${({ animation }) => animation ?? ' slide-right 300ms'};
 
   &.lazy-load-wrapper-hidden {
     display: none;

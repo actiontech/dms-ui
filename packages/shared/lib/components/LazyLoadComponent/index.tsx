@@ -3,7 +3,11 @@ import { LazyLoadComponentProps } from './index.type';
 import { LazyLoadComponentStyleWrapper } from './style';
 import classnames from 'classnames';
 
-// todo export animation
+/**
+ * todo
+ * 1. 提供更多的默认动画效果
+ * 2. 挂载的父节点
+ */
 const LazyLoadComponent: React.FC<LazyLoadComponentProps> = ({
   open,
   destroyOnClose,
@@ -14,22 +18,24 @@ const LazyLoadComponent: React.FC<LazyLoadComponentProps> = ({
 }) => {
   const [status, setStatus] = useState<'show' | 'none' | 'hidden'>();
 
-  /**
-   * 由于严格模式下会执行两次 useEffect, 初始依旧会渲染该组件。。
-   */
   useEffect(() => {
     if (open) {
+      // 显示组件
       setStatus('show');
     } else if (forceRender && !open) {
+      // 初次强制渲染组件
       setStatus('hidden');
-    } else {
+    } else if (!open) {
       if (destroyOnClose) {
+        // 关闭组件时强制销毁
         setStatus('none');
       } else {
         setStatus((v) => {
-          if (!v) {
+          // 初次不进行组件渲染
+          if (!v || v === 'none') {
             return 'none';
           }
+          // 第一次打开组件后关闭组件时通过 css 隐藏组件，而不是销毁
           return 'hidden';
         });
       }
