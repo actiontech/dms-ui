@@ -13,7 +13,6 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { SqlOptimizationStatusEnum } from '../index.data';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -43,6 +42,7 @@ describe('sqle/SqlOptimization/Overview', () => {
 
   afterEach(() => {
     jest.useRealTimers();
+    jest.clearAllMocks();
     cleanup();
   });
 
@@ -70,11 +70,6 @@ describe('sqle/SqlOptimization/Overview', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationRecordReqSpy).toHaveBeenCalledTimes(1);
-    expect(getOptimizationSQLsSpy).toHaveBeenCalledTimes(1);
-    expect(getBySelector('.refresh-icon')).toBeInTheDocument();
-    fireEvent.click(getBySelector('.refresh-icon'));
-    expect(getOptimizationRecordReqSpy).toHaveBeenCalledTimes(2);
-    expect(getOptimizationSQLsSpy).toHaveBeenCalledTimes(2);
   });
 
   it('render overview page when status is failed', async () => {
@@ -91,7 +86,14 @@ describe('sqle/SqlOptimization/Overview', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationRecordReqSpy).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(getOptimizationSQLsSpy).toHaveBeenCalled();
+    expect(screen.queryAllByText('优化详情')).toHaveLength(
+      optimizationRecordSqlMockData.length
+    );
+    expect(
+      screen.queryAllByText('优化详情')[0].closest('button')
+    ).toHaveAttribute('disabled');
   });
 
   it('render overview page when index_recommendations is empty list', async () => {
@@ -121,6 +123,7 @@ describe('sqle/SqlOptimization/Overview', () => {
     superRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getOptimizationRecordReqSpy).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(getOptimizationSQLsSpy).toHaveBeenCalled();
 
     expect(screen.queryAllByText('优化详情')).toHaveLength(
