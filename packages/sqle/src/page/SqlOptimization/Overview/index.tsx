@@ -22,12 +22,8 @@ import OptimizationSqlList from './OptimizationSqlList';
 import { useState } from 'react';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import RecommendIndex from '../components/RecommendIndex';
-import { SyncOutlined } from '@ant-design/icons';
 import { SqlOptimizationStatusEnum } from '../index.data';
-import {
-  IconWorkflowStatusIsExecuting,
-  IconWorkflowStatusIsFailed
-} from '../../../icon/SqlExecWorkflow';
+import { IconWorkflowStatusIsFailed } from '../../../icon/SqlExecWorkflow';
 
 const OptimizationOverview = () => {
   const { t } = useTranslation();
@@ -38,29 +34,38 @@ const OptimizationOverview = () => {
 
   const [sqlListLoading, setSqlListLoading] = useState<boolean>(false);
 
-  const [refreshSqlList, setRefreshSqlList] = useState<boolean>(false);
-
   const {
     data: optimizationRecord,
     loading: recordLoading,
-    refresh
-  } = useRequest(() =>
-    sqlOptimization
-      .GetOptimizationRecordReq({
-        project_name: projectName,
-        optimization_record_id: urlParams.optimizationId ?? ''
-      })
-      .then((res) => res.data.data)
+    cancel
+  } = useRequest(
+    () =>
+      sqlOptimization
+        .GetOptimizationRecordReq({
+          project_name: projectName,
+          optimization_record_id: urlParams.optimizationId ?? ''
+        })
+        .then((res) => res.data.data),
+    {
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3,
+      onSuccess: (res) => {
+        if (res?.status !== SqlOptimizationStatusEnum.optimizing) {
+          cancel();
+        }
+      }
+    }
   );
-
-  const onRefresh = () => {
-    refresh();
-    setRefreshSqlList(!refreshSqlList);
-  };
 
   return (
     <>
-      <Spin spinning={recordLoading || sqlListLoading}>
+      <Spin
+        spinning={
+          recordLoading ||
+          sqlListLoading ||
+          optimizationRecord?.status === SqlOptimizationStatusEnum.optimizing
+        }
+      >
         <PageHeader
           fixed
           title={
@@ -104,31 +109,6 @@ const OptimizationOverview = () => {
                 </HeaderSpaceTagStyleWrapper>
               </div>
             </section>
-            <EmptyBox
-              if={
-                optimizationRecord?.status ===
-                SqlOptimizationStatusEnum.optimizing
-              }
-            >
-              <section className="status-wrapper">
-                <div className="custom-tag-item">
-                  <HeaderSpaceTagStyleWrapper
-                    size={6}
-                    className="database-type-space"
-                  >
-                    <IconWorkflowStatusIsExecuting />
-                    <div>
-                      {t('sqlOptimization.overview.optimizingStatusTips')}
-                    </div>
-                    <SyncOutlined
-                      onClick={onRefresh}
-                      spin={recordLoading}
-                      className="refresh-icon"
-                    />
-                  </HeaderSpaceTagStyleWrapper>
-                </div>
-              </section>
-            </EmptyBox>
             <EmptyBox
               if={
                 optimizationRecord?.status === SqlOptimizationStatusEnum.failed
@@ -204,11 +184,8 @@ const OptimizationOverview = () => {
             projectID={projectID}
             optimizationId={urlParams.optimizationId ?? ''}
             setSqlListLoading={setSqlListLoading}
-            refresh={refreshSqlList}
             dbType={optimizationRecord?.db_type ?? ''}
-            disableDetailButton={
-              optimizationRecord?.status === SqlOptimizationStatusEnum.failed
-            }
+            optimizationStatus={optimizationRecord?.status}
           />
           <section className="last-title">
             <Typography.Title level={5} className="title-wrap">
