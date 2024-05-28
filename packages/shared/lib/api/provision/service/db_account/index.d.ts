@@ -41,8 +41,6 @@ export interface IAuthListDBAccountParams {
 
   filter_by_password_managed?: boolean;
 
-  filter_by_used_by_sql_workbench?: boolean;
-
   fuzzy_keyword?: string;
 }
 
