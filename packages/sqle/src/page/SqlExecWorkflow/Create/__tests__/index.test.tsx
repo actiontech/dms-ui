@@ -22,6 +22,7 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
+import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 describe('sqle/SqlExecWorkflow/Create', () => {
   const projectName = mockProjectInfo.projectName;
@@ -77,11 +78,11 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   it('should snapshot render initial workflow creation UI', async () => {
     const { baseElement } = customRender();
 
-    expect(screen.getByText('创建工单')).toMatchSnapshot();
-    expect(screen.getAllByText('返回工单列表')[0]).toMatchSnapshot();
-    expect(screen.getByText('重 置')).toMatchSnapshot();
-    expect(screen.getByText('工单描述')).toMatchSnapshot();
-    expect(screen.getByText('审核SQL语句信息')).toMatchSnapshot();
+    expect(screen.getByText('创建工单')).toBeInTheDocument();
+    expect(screen.getByText('返回工单列表')).toBeInTheDocument();
+    expect(screen.getByText('重 置')).toBeInTheDocument();
+    expect(screen.getByText('工单描述')).toBeInTheDocument();
+    expect(screen.getByText('审核SQL语句信息')).toBeInTheDocument();
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -229,8 +230,18 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(requestAuditTask).toHaveBeenCalledTimes(1);
+    expect(requestAuditTask).toHaveBeenCalledWith({
+      exec_mode: undefined,
+      file_order_method: undefined,
+      instances: [{ instance_name: 'mysql-1', instance_schema: 'test123' }],
+      project_name: projectName
+    });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+    expect(auditTaskGroupId).toHaveBeenCalledWith({
+      task_group_id: 99,
+      sql: formatterSQL('select * from user.list join in all', 'MySQL')
+    });
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -294,15 +305,13 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       fireEvent.click(screen.getByText('审 核'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(screen.getByText('审 核').parentNode).toHaveClass('ant-btn-loading');
-    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('审 核').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestAudit).toHaveBeenCalled();
-    expect(requestAudit).toHaveBeenCalledWith({
+    expect(requestAudit).toHaveBeenCalledTimes(1);
+    expect(requestAudit).toHaveBeenNthCalledWith(1, {
       exec_mode: undefined,
-      input_mybatis_xml_file: undefined,
-      input_sql_file: undefined,
-      input_zip_file: undefined,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
@@ -318,15 +327,39 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(400));
     expect(baseElement).toMatchSnapshot();
 
+    fireEvent.click(screen.getAllByText('上传SQL文件')[1]);
+    await act(async () => jest.advanceTimersByTime(300));
+    const sqlFile = new File(
+      [new Blob(['this is sql info'], { type: 'file/sql' })],
+      'test.sql'
+    );
+    // 0_sqlFile
+    fireEvent.change(
+      getBySelector('.ant-upload input[type=file]', baseElement),
+      {
+        target: { files: [sqlFile] }
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(2000));
+
     await act(async () => {
       fireEvent.click(screen.getAllByText('审 核')[1]);
       await act(async () => jest.advanceTimersByTime(0));
     });
 
+    expect(requestAudit).toHaveBeenCalledTimes(2);
+    expect(requestAudit).toHaveBeenNthCalledWith(2, {
+      exec_mode: 'sqls',
+      input_sql_file: sqlFile,
+      instance_name: 'mysql-2',
+      instance_schema: 'sqle',
+      project_name: 'default'
+    });
+
     // 提交工单
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(baseElement).toMatchSnapshot();
+
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(RequestCreateWorkflow).toHaveBeenCalled();
@@ -403,22 +436,19 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       fireEvent.click(screen.getByText('审 核'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(screen.getByText('审 核').parentNode).toHaveClass('ant-btn-loading');
-    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('审 核').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAudit).toHaveBeenCalled();
     expect(requestAudit).toHaveBeenCalledWith({
       exec_mode: undefined,
-      input_mybatis_xml_file: undefined,
-      input_sql_file: undefined,
-      input_zip_file: undefined,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
       sql: 'select * from user'
     });
 
-    expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
 
     // 提交工单
@@ -495,15 +525,13 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       fireEvent.click(screen.getByText('审 核'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(screen.getByText('审 核').parentNode).toHaveClass('ant-btn-loading');
-    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('审 核').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAudit).toHaveBeenCalled();
     expect(requestAudit).toHaveBeenCalledWith({
       exec_mode: undefined,
-      input_mybatis_xml_file: undefined,
-      input_sql_file: undefined,
-      input_zip_file: undefined,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
@@ -513,7 +541,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
     // 提交工单
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -593,6 +620,11 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       project_name: projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+    expect(auditTaskGroupId).toHaveBeenCalledWith({
+      task_group_id: 99,
+      input_sql_file: sqlFile
+    });
   });
 
   it('should validate "workflow_subject" and prevent audit with invalid name', async () => {
