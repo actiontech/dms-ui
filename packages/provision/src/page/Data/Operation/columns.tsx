@@ -1,6 +1,5 @@
 import { Space, Typography } from 'antd';
 import { t } from '../../../locale';
-import { IOperationData } from '.';
 import {
   ActiontechTableColumn,
   FilterCustomProps
@@ -8,12 +7,21 @@ import {
 import { BasicTag } from '@actiontech/shared';
 import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { AuthListDataOperationSetsFilterByDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
+import { IOperationInfo } from '@actiontech/shared/lib/api/provision/service/common';
+import { MergeTableRowStyleWrapper } from './style';
 
 /*
  *PS：
  * 没有使用PageInfoWithoutIndexAndSize<IAuthListDataOperationSetsParams>的原因：
  * IAuthListDataOperationSetsParams里的page_index 是可选项，和TablePagination类型不匹配，期望后续后端可以修改。
  */
+
+export type IOperationData = {
+  [key in keyof IOperationInfo]: Array<IOperationInfo[key]>;
+} & {
+  uid?: string;
+  name?: string;
+};
 
 export type OperationListTableFilterParamType = Omit<
   IAuthListDataOperationSetsParams,
@@ -48,9 +56,6 @@ export const operationTableColumns = (): ActiontechTableColumn<
       dataIndex: 'name',
       title: () => <>{t('operation.tableColumns.name')}</>,
       width: 180,
-      onCell: (record) => ({
-        rowSpan: record.rowSpan
-      }),
       render: (name: string) => (
         <Typography.Text className="consolidated-column">
           {name}
@@ -62,31 +67,70 @@ export const operationTableColumns = (): ActiontechTableColumn<
       title: () => <>{t('operation.tableColumns.type')}</>,
       width: 180,
       filterCustomType: 'select',
-      filterKey: 'filter_by_db_type'
+      filterKey: 'filter_by_db_type',
+      className: 'custom-table-cell',
+      render: (db_types: IOperationData['db_type']) => {
+        return (
+          <MergeTableRowStyleWrapper>
+            {db_types?.map((item) => (
+              <div
+                className="custom-table-cell-item custom-table-cell-db-type-item"
+                key={item}
+              >
+                {item}
+              </div>
+            ))}
+          </MergeTableRowStyleWrapper>
+        );
+      }
     },
     {
       dataIndex: 'data_object_types',
       title: () => <>{t('operation.tableColumns.scope')}</>,
       width: 240,
-      render: (types: IOperationData['data_object_types']) => (
-        <Space size={[0, 8]} wrap>
-          {types?.map((type) => (
-            <BasicTag key={type}>{type}</BasicTag>
-          ))}
-        </Space>
-      )
+      className: 'custom-table-cell',
+      render: (types: IOperationData['data_object_types']) => {
+        return (
+          <MergeTableRowStyleWrapper>
+            {types?.map((item, index) => (
+              <Space
+                className="custom-table-cell-item"
+                key={index}
+                size={[0, 8]}
+              >
+                {item?.map((type) => (
+                  <BasicTag key={type}>{type}</BasicTag>
+                ))}
+              </Space>
+            ))}
+          </MergeTableRowStyleWrapper>
+        );
+      }
     },
     {
       dataIndex: 'data_operations',
       title: () => <>{t('operation.tableColumns.operation')}</>,
       width: 240,
-      render: (operations: IOperationData['data_operations']) => (
-        <Space size={[0, 8]} wrap>
-          {operations?.map((operation) => (
-            <BasicTag key={operation.uid}>{operation.name}</BasicTag>
-          ))}
-        </Space>
-      )
+      className: 'custom-table-cell',
+      render: (operations: IOperationData['data_operations']) => {
+        return (
+          <MergeTableRowStyleWrapper>
+            {operations?.map((item, index) => {
+              return (
+                <Space
+                  className="custom-table-cell-item"
+                  key={index}
+                  size={[0, 8]}
+                >
+                  {item?.map((operation) => (
+                    <BasicTag key={operation.uid}>{operation.name}</BasicTag>
+                  ))}
+                </Space>
+              );
+            })}
+          </MergeTableRowStyleWrapper>
+        );
+      }
     }
   ];
 };

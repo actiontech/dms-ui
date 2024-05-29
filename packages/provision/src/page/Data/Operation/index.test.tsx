@@ -36,4 +36,32 @@ describe('Data/Operation', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
   });
+
+  it('should refresh table when user change search input value', async () => {
+    superRender(<Operation />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(listOperationSetsSpy).toHaveBeenCalledTimes(1);
+
+    fireEvent.change(getBySelector('#actiontech-table-search-input'), {
+      target: { value: 'text' }
+    });
+
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => {
+      fireEvent.keyDown(getBySelector('#actiontech-table-search-input'), {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13
+      });
+      await jest.advanceTimersByTime(300);
+    });
+
+    expect(listOperationSetsSpy).toHaveBeenCalledTimes(2);
+    expect(listOperationSetsSpy).toHaveBeenNthCalledWith(2, {
+      keyword: 'text',
+      page_index: 1,
+      page_size: 20
+    });
+  });
 });
