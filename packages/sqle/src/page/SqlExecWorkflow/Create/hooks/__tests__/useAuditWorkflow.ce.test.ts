@@ -1,18 +1,23 @@
-import { act, renderHook } from '@testing-library/react';
-import useAuditWorkflow from '../useAuditWorkflow';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { SqlAuditInfoFormFields, SqlStatementFields } from '../../index.type';
-import { AuditTaskResData } from '../../../../../testUtils/mockApi/execWorkflow/data';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+/**
+ * @test_version ce
+ */
+
 import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { renderHook } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
+import { AuditTaskResData } from '../../../../../testUtils/mockApi/execWorkflow/data';
+import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
+import { SqlAuditInfoFormFields, SqlStatementFields } from '../../index.type';
+import useAuditWorkflow from '../useAuditWorkflow';
+import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
 
-describe('test useAuditWorkflow', () => {
+describe('test useAuditWorkflow ce', () => {
   const sqlFile = new File(
     [new Blob(['this is sql info'], { type: 'file/sql' })],
     'test.sql'
@@ -38,12 +43,6 @@ describe('test useAuditWorkflow', () => {
     jest.clearAllTimers();
   });
 
-  it('should initialize with correct states', () => {
-    const { result } = renderHook(() => useAuditWorkflow());
-    expect(result.current.taskInfos).toEqual([]);
-    expect(result.current.isDisableFinallySubmitButton).toBeFalsy();
-  });
-
   it('should handle same sql workflow audit correctly', async () => {
     const onSuccessSpy = jest.fn();
 
@@ -67,8 +66,6 @@ describe('test useAuditWorkflow', () => {
 
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(1);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(1, {
-      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
-      file_order_method: 'desc',
       project_name: mockProjectInfo.projectName,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
@@ -102,7 +99,6 @@ describe('test useAuditWorkflow', () => {
 
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(2);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(2, {
-      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
       project_name: mockProjectInfo.projectName,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
@@ -133,7 +129,6 @@ describe('test useAuditWorkflow', () => {
 
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(3);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(3, {
-      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
       project_name: mockProjectInfo.projectName,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
@@ -216,23 +211,19 @@ describe('test useAuditWorkflow', () => {
       project_name: mockProjectInfo.projectName,
       instance_name: 'instance1',
       instance_schema: 'schema1',
-      input_zip_file: zipFile,
-      exec_mode: 'sql_file',
-      file_order_method: 'desc'
+      input_zip_file: zipFile
     });
     expect(mockCreateAndAuditTaskV1).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       instance_name: 'instance2',
       instance_schema: 'schema2',
-      input_sql_file: sqlFile,
-      exec_mode: 'sql_file'
+      input_sql_file: sqlFile
     });
     expect(mockCreateAndAuditTaskV1).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       instance_name: 'instance3',
       instance_schema: 'schema3',
-      sql: 'SELECT * FROM table',
-      exec_mode: 'sqls'
+      sql: 'SELECT * FROM table'
     });
     await act(async () => jest.advanceTimersByTime(3000));
 

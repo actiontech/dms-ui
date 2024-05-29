@@ -18,6 +18,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ICreateWorkflowV2Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import useCheckTaskAuditSqlCount from './hooks/useCheckTaskAuditSqlCount';
+import { LazyLoadComponent } from '@actiontech/shared';
 
 const CreateSqlExecWorkflow: React.FC = () => {
   const { t } = useTranslation();
@@ -104,7 +105,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
   const createAction = useCallback(async () => {
     const baseInfo = await baseInfoForm.validateFields();
 
-    if (!taskInfos?.length) {
+    if (!taskInfos?.length || taskInfos.some((v) => !v.task_id)) {
       messageApi.error(t('execWorkflow.create.mustAuditTips'));
       return;
     }
@@ -140,15 +141,16 @@ const CreateSqlExecWorkflow: React.FC = () => {
   return (
     <Spin spinning={sharedStepDetail.isAuditing.value}>
       {messageContextHolder}
-      <div hidden={!isAtFormStep}>
+      <LazyLoadComponent open={isAtFormStep} animation={false}>
         <FormStep
           baseInfoForm={baseInfoForm}
           sqlAuditInfoForm={sqlAuditInfoForm}
           auditAction={auditAction}
           {...sharedStepDetail}
         />
-      </div>
-      <div hidden={!isAtAuditResultStep}>
+      </LazyLoadComponent>
+
+      <LazyLoadComponent open={isAtAuditResultStep} animation={false}>
         <AuditResultStep
           baseFormValues={baseInfoForm.getFieldsValue()}
           sqlAuditInfoFormValues={sqlAuditInfoForm.getFieldsValue()}
@@ -160,13 +162,18 @@ const CreateSqlExecWorkflow: React.FC = () => {
           updateTaskRecordCount={updateTaskRecordCount}
           {...sharedStepDetail}
         />
-      </div>
-      <div hidden={!isAtCreateResultStep}>
+      </LazyLoadComponent>
+
+      <LazyLoadComponent
+        open={isAtCreateResultStep}
+        destroyOnClose
+        animation={false}
+      >
         <CreateResultStep
           desc={baseInfoForm.getFieldValue('desc')}
           workflowID={createdWorkflowID.current}
         />
-      </div>
+      </LazyLoadComponent>
     </Spin>
   );
 };

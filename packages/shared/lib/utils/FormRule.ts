@@ -78,18 +78,20 @@ export const roleNameRuleValidator = (): FormValidatorRule => {
   };
 };
 
-export const whiteSpaceSql = (): Rule[] => {
+export const whiteSpaceSql = (enableRule = true): Rule[] => {
   return [
     {
-      validator: whiteSpaceSqlValidator()
+      validator: whiteSpaceSqlValidator(enableRule)
     }
   ];
 };
 
-export const whiteSpaceSqlValidator = (): FormValidatorRule => {
+export const whiteSpaceSqlValidator = (
+  enableRule = true
+): FormValidatorRule => {
   return (_, values) => {
     const placeholder = '/* input your sql */';
-    if (values === placeholder) {
+    if (values === placeholder && enableRule) {
       return Promise.reject(
         i18n.t('common.form.placeholder.input', {
           name: i18n.t('common.sqlStatements')

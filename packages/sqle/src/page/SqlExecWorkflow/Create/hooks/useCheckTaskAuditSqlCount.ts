@@ -11,7 +11,6 @@ const useCheckTaskAuditSqlCount = () => {
       [taskId]: count
     }));
   }, []);
-
   const checkTaskCountIsEmpty = (tasks: IAuditTaskResV1[]) => {
     if (
       Object.keys(taskSqlCountRecord).some(

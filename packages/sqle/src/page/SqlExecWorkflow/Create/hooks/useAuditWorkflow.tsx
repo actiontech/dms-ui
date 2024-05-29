@@ -4,6 +4,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useAllowAuditLevel } from './useAllowAuditLevel';
 import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
+  AuditTaskResV1SqlSourceEnum,
   CreateAuditTaskReqV1ExecModeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -65,6 +66,33 @@ const useAuditWorkflow = () => {
     ]
   );
 
+  const getSqlSourceWithUploadType = (
+    sqlStatementInfo: SqlStatementFields
+  ):
+    | Pick<
+        IAuditTaskGroupIdV1Params | ICreateAndAuditTaskV1Params,
+        'sql' | 'input_sql_file' | 'input_zip_file'
+      >
+    | undefined => {
+    const currentSqlUpload = sqlStatementInfo.currentUploadType;
+
+    if (currentSqlUpload === AuditTaskResV1SqlSourceEnum.form_data) {
+      return {
+        sql: sqlStatementInfo.form_data
+      };
+    }
+    if (currentSqlUpload === AuditTaskResV1SqlSourceEnum.sql_file) {
+      return {
+        input_sql_file: sqlStatementInfo.sql_file?.[0]
+      };
+    }
+    if (currentSqlUpload === AuditTaskResV1SqlSourceEnum.zip_file) {
+      return {
+        input_zip_file: sqlStatementInfo.zip_file?.[0]
+      };
+    }
+  };
+
   /**
    * 相同 sql 模式下的表单提交
    * @param values 提交的表单数据
@@ -87,6 +115,7 @@ const useAuditWorkflow = () => {
       const sqlStatementInfo = values[
         SAME_SQL_MODE_DEFAULT_FIELD_KEY
       ] as SqlStatementFields;
+
       const createAuditTasksParams: ICreateAuditTasksV1Params = {
         // #if [ee]
         exec_mode: sqlStatementInfo.exec_mode,
@@ -108,9 +137,7 @@ const useAuditWorkflow = () => {
       ) {
         const auditTaskPrams: IAuditTaskGroupIdV1Params = {
           task_group_id: taskGroupInfo.data.data?.task_group_id,
-          sql: sqlStatementInfo.form_data,
-          input_sql_file: sqlStatementInfo.sql_file?.[0],
-          input_zip_file: sqlStatementInfo.zip_file?.[0]
+          ...getSqlSourceWithUploadType(sqlStatementInfo)
         };
         const res = await task.auditTaskGroupIdV1(auditTaskPrams);
         if (res && res.data.code === ResponseCode.SUCCESS) {
@@ -153,13 +180,12 @@ const useAuditWorkflow = () => {
     ) => {
       const params: ICreateAndAuditTaskV1Params[] = databaseInfo.map((item) => {
         const sqlStatementInfo = values[item.key] as SqlStatementFields;
+
         return {
           project_name: projectName,
           instance_name: item.instanceName!,
           instance_schema: item.schemaName,
-          sql: sqlStatementInfo.form_data,
-          input_sql_file: sqlStatementInfo.sql_file?.[0],
-          input_zip_file: sqlStatementInfo.zip_file?.[0],
+          ...getSqlSourceWithUploadType(sqlStatementInfo),
           // #if [ee]
           exec_mode:
             sqlStatementInfo.exec_mode as unknown as CreateAuditTaskReqV1ExecModeEnum,
@@ -171,7 +197,6 @@ const useAuditWorkflow = () => {
       const results = await Promise.all(
         params.map((param) => task.createAndAuditTaskV1(param))
       );
-
       //todo 需要考虑部分成功, 部分失败的情况
       if (
         results.every(

@@ -154,7 +154,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                 </div>
               </div>
               <div
-                class="ant-form-item order-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item workflow-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -861,7 +861,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                 </div>
               </div>
               <div
-                class="ant-form-item order-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item workflow-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
