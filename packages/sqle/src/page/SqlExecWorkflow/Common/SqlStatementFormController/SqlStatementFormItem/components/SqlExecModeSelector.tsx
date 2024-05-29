@@ -19,14 +19,11 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
   fieldPrefixPath,
-  isSupportFileModeExecuteSql
+  isSupportFileModeExecuteSql,
+  currentSqlUploadType
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
-  const currentSqlUploadType = Form.useWatch(
-    [fieldPrefixPath, 'currentUploadType'],
-    form
-  ) as AuditTaskResV1SqlSourceEnum;
 
   const currentExecuteMode = Form.useWatch(
     [fieldPrefixPath, 'exec_mode'],
@@ -60,8 +57,10 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
   return (
     <EmptyBox
       if={
-        currentSqlUploadType !== AuditTaskResV1SqlSourceEnum.form_data &&
-        isSupportFileModeExecuteSql
+        [
+          AuditTaskResV1SqlSourceEnum.sql_file,
+          AuditTaskResV1SqlSourceEnum.zip_file
+        ].includes(currentSqlUploadType) && isSupportFileModeExecuteSql
       }
     >
       <FormItemLabel

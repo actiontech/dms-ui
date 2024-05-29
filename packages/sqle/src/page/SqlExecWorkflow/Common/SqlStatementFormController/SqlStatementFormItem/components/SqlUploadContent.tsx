@@ -1,7 +1,7 @@
 import { Form } from 'antd';
 import { SqlUploadContentProps } from './index.type';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
-import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
+import { CustomDraggerUpload, LazyLoadComponent } from '@actiontech/shared';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
@@ -15,14 +15,11 @@ import {
 import { NamePath } from 'antd/es/form/interface';
 
 const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
-  fieldPrefixPath
+  fieldPrefixPath,
+  currentSqlUploadType
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
-  const currentSqlUploadType = Form.useWatch(
-    [fieldPrefixPath, 'currentUploadType'],
-    form
-  ) as AuditTaskResV1SqlSourceEnum;
 
   const generateFieldName = (name: string) => {
     return [fieldPrefixPath, name];
@@ -38,20 +35,24 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
 
   return (
     <>
-      <EmptyBox
-        if={currentSqlUploadType === AuditTaskResV1SqlSourceEnum.form_data}
+      <LazyLoadComponent
+        open={currentSqlUploadType === AuditTaskResV1SqlSourceEnum.form_data}
+        animation={false}
       >
         <FormItemNoLabel
           name={generateFieldName('form_data')}
           initialValue={SqlFiledInitialValue}
           rules={[
             {
-              required: true,
+              required:
+                currentSqlUploadType === AuditTaskResV1SqlSourceEnum.form_data,
               message: t('common.form.placeholder.input', {
                 name: t('common.sqlStatements')
               })
             },
-            ...whiteSpaceSql()
+            ...whiteSpaceSql(
+              currentSqlUploadType === AuditTaskResV1SqlSourceEnum.form_data
+            )
           ]}
         >
           <MonacoEditor
@@ -64,16 +65,18 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
             }}
           />
         </FormItemNoLabel>
-      </EmptyBox>
-      <EmptyBox
-        if={currentSqlUploadType === AuditTaskResV1SqlSourceEnum.sql_file}
+      </LazyLoadComponent>
+      <LazyLoadComponent
+        open={currentSqlUploadType === AuditTaskResV1SqlSourceEnum.sql_file}
+        animation={false}
       >
         <FormItemNoLabel
           valuePropName="fileList"
           name={generateFieldName('sql_file')}
           rules={[
             {
-              required: true,
+              required:
+                currentSqlUploadType === AuditTaskResV1SqlSourceEnum.sql_file,
               message: t('common.form.placeholder.upload', {
                 name: t('execWorkflow.create.form.sqlInfo.sqlFile')
               })
@@ -88,16 +91,18 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
             title={t('execWorkflow.create.form.sqlInfo.sqlFileTips')}
           />
         </FormItemNoLabel>
-      </EmptyBox>
-      <EmptyBox
-        if={currentSqlUploadType === AuditTaskResV1SqlSourceEnum.zip_file}
+      </LazyLoadComponent>
+      <LazyLoadComponent
+        open={currentSqlUploadType === AuditTaskResV1SqlSourceEnum.zip_file}
+        animation={false}
       >
         <FormItemNoLabel
           valuePropName="fileList"
           name={generateFieldName('zip_file')}
           rules={[
             {
-              required: true,
+              required:
+                currentSqlUploadType === AuditTaskResV1SqlSourceEnum.zip_file,
               message: t('common.form.placeholder.upload', {
                 name: t('execWorkflow.create.form.sqlInfo.zipFile')
               })
@@ -112,7 +117,7 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
             title={t('execWorkflow.create.form.sqlInfo.zipFileTips')}
           />
         </FormItemNoLabel>
-      </EmptyBox>
+      </LazyLoadComponent>
     </>
   );
 };
