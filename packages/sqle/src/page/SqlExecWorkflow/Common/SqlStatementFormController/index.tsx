@@ -1,20 +1,10 @@
 import { Empty } from 'antd';
 import SqlStatementFormItem from './SqlStatementFormItem';
-import { SqlStatementFormItemProps } from './SqlStatementFormItem/index.type';
 import { useControllableValue } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { BasicSegmented, EmptyBox } from '@actiontech/shared';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from './SqlStatementFormItem/index.data';
-
-type SqlStatementFormControllerProps = Omit<
-  SqlStatementFormItemProps,
-  'fieldPrefixPath' | 'instanceName' | 'isSupportFileModeExecuteSql'
-> & {
-  activeKey: string;
-  onChange: (activeKey: string) => void;
-  defaultActiveKey?: string;
-  isSupportFileModeExecuteSqlRecord?: Record<string, boolean>;
-};
+import { SqlStatementFormControllerProps } from './index.type';
 
 const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
   activeKey: key,
@@ -49,6 +39,7 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
         />
       );
     }
+
     return (
       <EmptyBox
         if={props.databaseInfo?.length > 0}

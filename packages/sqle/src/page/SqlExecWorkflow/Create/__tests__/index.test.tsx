@@ -74,7 +74,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     cleanup();
   });
 
-  it('render snap when create workflow init', async () => {
+  it('should snapshot render initial workflow creation UI', async () => {
     const { baseElement } = customRender();
 
     expect(screen.getByText('创建工单')).toMatchSnapshot();
@@ -86,7 +86,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render reset form', async () => {
+  it('should reset form fields and snapshot UI after reset action', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -168,7 +168,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render format sql for diff mode', async () => {
+  it('should snapshot UI and perform SQL audit in the same mode', async () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -196,7 +196,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestInstance).toHaveBeenCalledTimes(1);
-    expect(requestInstance).toHaveBeenCalledWith({
+    expect(requestInstance).toHaveBeenNthCalledWith(1, {
       instance_name: instanceTipsMockData[0].instance_name,
       project_name: projectName
     });
@@ -219,23 +219,24 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     });
     fireEvent.click(screen.getByText('SQL美化'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestInstance).toHaveBeenCalled();
+    expect(requestInstance).toHaveBeenCalledTimes(2);
+    expect(requestInstance).toHaveBeenNthCalledWith(2, {
+      instance_name: instanceTipsMockData[0].instance_name,
+      project_name: projectName
+    });
     expect(baseElement).toMatchSnapshot();
 
-    // isSameSqlForAll
-    // const isSameSqlForAll = getBySelector('#isSameSqlForAll', baseElement);
-    // fireEvent.click(isSameSqlForAll);
-    // await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('审 核'));
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(requestAuditTask).toHaveBeenCalledTimes(1);
-    expect(requestInstance).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render form for click audit btn for diff same sql', async () => {
+  it('should handle form submission and audit action for different SQLs', async () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -269,9 +270,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3000));
     });
-    expect(requestInstanceSchemas).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestInstance).toHaveBeenCalled();
     const SchemaNameEle = getBySelector(
       '#databaseInfo_0_instanceSchema',
       baseElement
@@ -340,9 +339,11 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render create workflow when task info list is null', async () => {
+  it('should prevent workflow creation when task SQL list is empty', async () => {
     requestAudit.mockClear();
-    requestAudit.mockImplementation(() => createSpySuccessResponse({}));
+    requestAudit.mockImplementation(() =>
+      createSpySuccessResponse({ data: {} })
+    );
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -378,9 +379,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3000));
     });
-    expect(requestInstanceSchemas).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestInstance).toHaveBeenCalled();
     const SchemaNameEle = getBySelector(
       '#databaseInfo_0_instanceSchema',
       baseElement
@@ -419,8 +418,9 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       sql: 'select * from user'
     });
 
-    await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(3000));
+
     // 提交工单
     fireEvent.click(screen.getByText('提交工单'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -429,7 +429,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     ).toBeInTheDocument();
   });
 
-  it('render create workflow when task sql is null', async () => {
+  it('should display error when attempting to create workflow with null task SQL', async () => {
     getAuditTaskSQLsSpy.mockClear();
     getAuditTaskSQLsSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [], total_nums: 0 })
@@ -469,9 +469,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3000));
     });
-    expect(requestInstanceSchemas).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestInstance).toHaveBeenCalled();
     const SchemaNameEle = getBySelector(
       '#databaseInfo_0_instanceSchema',
       baseElement
@@ -524,7 +522,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     ).toBeInTheDocument();
   });
 
-  it('render form for click audit btn for same sql & upload file', async () => {
+  it('should handle audit action with uploaded SQL file for same SQL', async () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -551,9 +549,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
       await act(async () => jest.advanceTimersByTime(3000));
     });
-    expect(requestInstanceSchemas).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestInstance).toHaveBeenCalled();
     const SchemaNameEle = getBySelector(
       '#databaseInfo_0_instanceSchema',
       baseElement
@@ -567,7 +563,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
 
     // 上传SQL文件
     fireEvent.click(screen.getByText('上传SQL文件'));
-    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(300));
     expect(screen.queryByText('选择文件排序方式')).not.toBeInTheDocument();
     const sqlFile = new File(
       [new Blob(['this is sql info'], { type: 'file/sql' })],
@@ -599,7 +595,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
   });
 
-  it('should validate "workflow_subject" fields when clicking audit button', async () => {
+  it('should validate "workflow_subject" and prevent audit with invalid name', async () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));

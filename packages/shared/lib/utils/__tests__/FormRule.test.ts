@@ -75,6 +75,17 @@ describe('utils/FormRule', () => {
     expect(message).toBe('请输入SQL语句');
   });
 
+  it('should not check white space sql when enableRule is false', async () => {
+    const check = whiteSpaceSqlValidator(false);
+    let message = '';
+    try {
+      await check?.({} as any, '/* input your sql */', () => {});
+    } catch (error: any) {
+      message = error;
+    }
+    expect(message).toBe('');
+  });
+
   it('should check prot is between min and max', async () => {
     const cases = [
       {

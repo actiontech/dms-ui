@@ -365,39 +365,43 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-required ant-form-item-no-colon"
-                        for="0_form_data"
-                        title=""
-                      />
-                    </div>
-                    <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
                     >
                       <div
-                        class="ant-form-item-control-input"
+                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      >
+                        <label
+                          class="ant-form-item-required ant-form-item-no-colon"
+                          for="0_form_data"
+                          title=""
+                        />
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
                       >
                         <div
-                          class="ant-form-item-control-input-content"
+                          class="ant-form-item-control-input"
                         >
-                          <input
-                            aria-required="true"
-                            class="custom-monaco-editor css-baixa9"
-                            height="400px"
-                            id="0_form_data"
-                            language="sql"
-                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                            value="/* input your sql */"
-                            width="100%"
-                          />
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <input
+                              aria-required="true"
+                              class="custom-monaco-editor css-baixa9"
+                              height="400px"
+                              id="0_form_data"
+                              language="sql"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                              value="/* input your sql */"
+                              width="100%"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1258,39 +1262,43 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-required ant-form-item-no-colon"
-                        for="0_form_data"
-                        title=""
-                      />
-                    </div>
-                    <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
                     >
                       <div
-                        class="ant-form-item-control-input"
+                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      >
+                        <label
+                          class="ant-form-item-required ant-form-item-no-colon"
+                          for="0_form_data"
+                          title=""
+                        />
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
                       >
                         <div
-                          class="ant-form-item-control-input-content"
+                          class="ant-form-item-control-input"
                         >
-                          <input
-                            aria-required="true"
-                            class="custom-monaco-editor css-baixa9"
-                            height="400px"
-                            id="0_form_data"
-                            language="sql"
-                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                            value="/* input your sql */"
-                            width="100%"
-                          />
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <input
+                              aria-required="true"
+                              class="custom-monaco-editor css-baixa9"
+                              height="400px"
+                              id="0_form_data"
+                              language="sql"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                              value="/* input your sql */"
+                              width="100%"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2145,40 +2153,44 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-required ant-form-item-no-colon"
-                        for="0_form_data"
-                        title=""
-                      />
-                    </div>
-                    <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
                     >
                       <div
-                        class="ant-form-item-control-input"
+                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      >
+                        <label
+                          class="ant-form-item-required ant-form-item-no-colon"
+                          for="0_form_data"
+                          title=""
+                        />
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
                       >
                         <div
-                          class="ant-form-item-control-input-content"
+                          class="ant-form-item-control-input"
                         >
-                          <input
-                            aria-required="true"
-                            class="custom-monaco-editor css-baixa9"
-                            height="400px"
-                            id="0_form_data"
-                            language="sql"
-                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                            value="INSERT INTO your_table_name (telephone_number, email_address, china_id_card, debit_card_account_number, credit_card, name, mac_address, bitcoin, age)
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <input
+                              aria-required="true"
+                              class="custom-monaco-editor css-baixa9"
+                              height="400px"
+                              id="0_form_data"
+                              language="sql"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                              value="INSERT INTO your_table_name (telephone_number, email_address, china_id_card, debit_card_account_number, credit_card, name, mac_address, bitcoin, age)
 VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '1234567890123456', 'John Doe', '00:11:22:33:44:55', '1AbC2dEfG3hI4jK5mN6pQ7rStU8vW9xY0z', 30);"
-                            width="100%"
-                          />
+                              width="100%"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3297,39 +3309,43 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-required ant-form-item-no-colon"
-                        for="0_form_data"
-                        title=""
-                      />
-                    </div>
-                    <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
                     >
                       <div
-                        class="ant-form-item-control-input"
+                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      >
+                        <label
+                          class="ant-form-item-required ant-form-item-no-colon"
+                          for="0_form_data"
+                          title=""
+                        />
+                      </div>
+                      <div
+                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
                       >
                         <div
-                          class="ant-form-item-control-input-content"
+                          class="ant-form-item-control-input"
                         >
-                          <input
-                            aria-required="true"
-                            class="custom-monaco-editor css-baixa9"
-                            height="400px"
-                            id="0_form_data"
-                            language="sql"
-                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                            value="/* input your sql */"
-                            width="100%"
-                          />
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <input
+                              aria-required="true"
+                              class="custom-monaco-editor css-baixa9"
+                              height="400px"
+                              id="0_form_data"
+                              language="sql"
+                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                              value="/* input your sql */"
+                              width="100%"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>

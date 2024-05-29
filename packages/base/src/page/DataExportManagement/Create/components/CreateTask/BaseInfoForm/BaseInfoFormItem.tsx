@@ -41,7 +41,7 @@ const BaseInfoFormItem: React.FC<{ slot?: ReactNode }> = ({ slot }) => {
       {slot}
 
       <FormItemLabel
-        className="order-base-info-desc-form-item"
+        className="workflow-base-info-desc-form-item"
         name="desc"
         label={t('dmsDataExport.create.form.base.describe')}
       >
