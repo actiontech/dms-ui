@@ -3,8 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { SelectProps } from 'antd';
 import useDatabaseType from '../../../hooks/useDatabaseType';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
-const useRuleFilterForm = (getCustomRuleList: (dbType: string) => void) => {
+const useRuleFilterForm = (
+  getCustomRuleList: (dbType: string) => void,
+  activeKey: RuleManagerSegmentedKey
+) => {
   const { t } = useTranslation();
   const { updateDriverNameList, driverNameList } = useDatabaseType();
   const [searchRuleName, setSearchRuleName] = useState('');
@@ -30,8 +34,10 @@ const useRuleFilterForm = (getCustomRuleList: (dbType: string) => void) => {
   );
 
   useEffect(() => {
-    updateDriverNameList();
-  }, [updateDriverNameList]);
+    if (activeKey === RuleManagerSegmentedKey.CustomRule) {
+      updateDriverNameList();
+    }
+  }, [activeKey, updateDriverNameList]);
 
   return {
     searchRuleName,

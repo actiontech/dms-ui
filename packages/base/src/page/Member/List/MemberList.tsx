@@ -25,8 +25,11 @@ import {
   updateMemberModalStatus,
   updateSelectMember
 } from '../../../store/member';
+import { MemberListTypeEnum } from '../index.enum';
 
-const MemberList: React.FC = () => {
+const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
+  activePage
+}) => {
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();
@@ -64,7 +67,8 @@ const MemberList: React.FC = () => {
       return handleTableRequestError(dms.ListMembers(params));
     },
     {
-      refreshDeps: [pagination, refreshFlag, projectID]
+      refreshDeps: [pagination, refreshFlag, projectID, activePage],
+      ready: activePage === MemberListTypeEnum.member_list
     }
   );
 
