@@ -1,6 +1,5 @@
 import { useMemo, useEffect, useCallback } from 'react';
 import { message } from 'antd';
-import { useToggle } from 'ahooks';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import {
@@ -26,8 +25,11 @@ import {
 import { ModalName } from '../../../data/ModalName';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import { MemberListTypeEnum } from '../index.enum';
 
-const MemberList: React.FC = () => {
+const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
+  activePage
+}) => {
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();
@@ -41,8 +43,6 @@ const MemberList: React.FC = () => {
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
-
-  const [refreshFlag, { toggle: toggleRefreshFlag }] = useToggle(false);
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -65,7 +65,8 @@ const MemberList: React.FC = () => {
       return handleTableRequestError(dms.ListMemberGroups(params));
     },
     {
-      refreshDeps: [pagination, refreshFlag, projectID]
+      refreshDeps: [pagination, activePage],
+      ready: activePage === MemberListTypeEnum.member_group_list
     }
   );
 
@@ -110,11 +111,11 @@ const MemberList: React.FC = () => {
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.DMS_Refresh_Member_List,
-      toggleRefreshFlag
+      refresh
     );
 
     return unsubscribe;
-  }, [toggleRefreshFlag]);
+  }, [refresh]);
 
   return (
     <>

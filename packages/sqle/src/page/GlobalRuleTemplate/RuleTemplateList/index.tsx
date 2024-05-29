@@ -23,6 +23,8 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
+import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
   hiddenOperations = false
@@ -36,6 +38,7 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
     useTableRequestError();
   const { isAdmin } = useCurrentUser();
   const navigate = useNavigate();
+  const { activeKey } = useRuleManagerSegmented();
 
   const {
     data: ruleTemplateList,
@@ -47,7 +50,8 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
         rule_template.getRuleTemplateListV1({ ...pagination })
       ),
     {
-      refreshDeps: [pagination]
+      refreshDeps: [pagination, activeKey],
+      ready: activeKey === RuleManagerSegmentedKey.GlobalRuleTemplate
     }
   );
 

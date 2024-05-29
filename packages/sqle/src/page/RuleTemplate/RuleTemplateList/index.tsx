@@ -1,10 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import { BasicButton, PageHeader, EmptyBox } from '@actiontech/shared';
+import {
+  BasicButton,
+  PageHeader,
+  EmptyBox,
+  SegmentedTabs
+} from '@actiontech/shared';
 import { IconAdd, IconImport } from '@actiontech/shared/lib/Icon';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useNavigate } from 'react-router-dom';
-import { useMemo, useEffect } from 'react';
+import { useMemo, useState } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { EnumTemplateType } from './index.type';
@@ -12,10 +17,6 @@ import ProjectTable from './ProjectTable';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import CloneRuleTemplate from '../CloneRuleTemplate';
-import {
-  BasicSegmentedPage,
-  useSegmentedPageParams
-} from '@actiontech/shared/lib/components/BasicSegmentedPage';
 import CommonTable from './CommonTable';
 
 const RuleTemplateList = () => {
@@ -34,10 +35,9 @@ const RuleTemplateList = () => {
     EventEmitter.emit(EmitterKey.Refresh_Rule_Template_List);
   };
 
-  const { updateSegmentedPageData, renderExtraButton, ...otherProps } =
-    useSegmentedPageParams<EnumTemplateType>();
+  const [activeKey, setActiveKey] = useState(EnumTemplateType.project);
 
-  useEffect(() => {
+  const renderExtraButton = () => {
     const onCreate = () => {
       navigate(`/sqle/project/${projectID}/rule/template/create`);
     };
@@ -45,42 +45,28 @@ const RuleTemplateList = () => {
     const onImport = () => {
       navigate(`/sqle/project/${projectID}/rule/template/import`);
     };
-
-    updateSegmentedPageData([
-      {
-        label: t('ruleTemplate.ruleTemplateTitle.project'),
-        value: EnumTemplateType.project,
-        content: <ProjectTable actionPermission={actionPermission} />,
-        extraButton: (
-          <EmptyBox
-            if={actionPermission && !projectArchive}
-            key="ruleTemplateButton"
-          >
-            <Space size={12}>
-              <BasicButton icon={<IconImport />} onClick={onImport}>
-                {t('ruleTemplate.importRuleTemplate.button')}
-              </BasicButton>
-              <BasicButton type="primary" icon={<IconAdd />} onClick={onCreate}>
-                {t('ruleTemplate.createRuleTemplate.button')}
-              </BasicButton>
-            </Space>
-          </EmptyBox>
-        )
-      },
-      {
-        label: t('ruleTemplate.ruleTemplateTitle.common'),
-        value: EnumTemplateType.common,
-        content: <CommonTable />
-      }
-    ]);
-  }, [
-    updateSegmentedPageData,
-    t,
-    navigate,
-    actionPermission,
-    projectID,
-    projectArchive
-  ]);
+    return (
+      <>
+        <EmptyBox
+          if={
+            actionPermission &&
+            !projectArchive &&
+            activeKey === EnumTemplateType.project
+          }
+          key="ruleTemplateButton"
+        >
+          <Space size={12}>
+            <BasicButton icon={<IconImport />} onClick={onImport}>
+              {t('ruleTemplate.importRuleTemplate.button')}
+            </BasicButton>
+            <BasicButton type="primary" icon={<IconAdd />} onClick={onCreate}>
+              {t('ruleTemplate.createRuleTemplate.button')}
+            </BasicButton>
+          </Space>
+        </EmptyBox>
+      </>
+    );
+  };
 
   return (
     <>
@@ -93,7 +79,22 @@ const RuleTemplateList = () => {
         }
         extra={renderExtraButton()}
       />
-      <BasicSegmentedPage {...otherProps} />
+      <SegmentedTabs
+        activeKey={activeKey}
+        onChange={setActiveKey}
+        items={[
+          {
+            label: t('ruleTemplate.ruleTemplateTitle.project'),
+            value: EnumTemplateType.project,
+            children: <ProjectTable actionPermission={actionPermission} />
+          },
+          {
+            label: t('ruleTemplate.ruleTemplateTitle.common'),
+            value: EnumTemplateType.common,
+            children: <CommonTable />
+          }
+        ]}
+      />
       <CloneRuleTemplate />
     </>
   );
