@@ -32,6 +32,11 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
     return [fieldPrefixPath, 'currentUploadType'];
   }, [fieldPrefixPath]);
 
+  const currentUploadType = Form.useWatch(
+    currentUploadTypeFieldName,
+    form
+  ) as AuditTaskResV1SqlSourceEnum;
+
   const uploadTypeChangeHandle = () => {
     if (clearSqlContentFormWhenChangeUploadType) {
       form.resetFields([
@@ -66,14 +71,21 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         />
       </FormItemNoLabel>
 
-      <SqlUploadContent fieldPrefixPath={fieldPrefixPath} />
+      <SqlUploadContent
+        currentSqlUploadType={currentUploadType}
+        fieldPrefixPath={fieldPrefixPath}
+      />
 
+      {/* #if [ee] */}
       <SqlExecModeSelector
+        currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}
         isSupportFileModeExecuteSql={isSupportFileModeExecuteSql}
       />
+      {/* #endif */}
 
       <SqlFormatterAndSubmitter
+        currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}
         isAuditing={isAuditing}
         auditAction={auditAction}
