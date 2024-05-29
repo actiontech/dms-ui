@@ -3,7 +3,7 @@
 exports[`Data/Operation should match snapshot 1`] = `
 <div>
   <section
-    class="css-ksegv2"
+    class="css-1ge35cc"
   >
     <div
       class="actiontech-page-header-namespace css-1xspr0w"
@@ -231,19 +231,19 @@ exports[`Data/Operation should match snapshot 1`] = `
                             权限组名
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             权限映射适用种类
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             适用范围
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             操作
@@ -325,7 +325,7 @@ exports[`Data/Operation should match snapshot 1`] = `
 exports[`Data/Operation should match snapshot 2`] = `
 <div>
   <section
-    class="css-ksegv2"
+    class="css-1ge35cc"
   >
     <div
       class="actiontech-page-header-namespace css-1xspr0w"
@@ -528,19 +528,19 @@ exports[`Data/Operation should match snapshot 2`] = `
                             权限组名
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             权限映射适用种类
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             适用范围
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             操作
@@ -594,11 +594,10 @@ exports[`Data/Operation should match snapshot 2`] = `
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
-                          data-row-key="27-MySQL"
+                          data-row-key="27-MySQL,OceanBaseMySQL"
                         >
                           <td
                             class="ant-table-cell"
-                            rowspan="2"
                           >
                             <span
                               class="ant-typography consolidated-column css-dev-only-do-not-override-bj9uhl"
@@ -607,144 +606,138 @@ exports[`Data/Operation should match snapshot 2`] = `
                             </span>
                           </td>
                           <td
-                            class="ant-table-cell"
-                          >
-                            MySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Database
-                                </span>
+                                MySQL
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Table
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                OceanBaseMySQL
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  select
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Table
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Table
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
-                        </tr>
-                        <tr
-                          class="ant-table-row ant-table-row-level-0"
-                          data-row-key="27-OceanBaseMySQL"
-                        >
                           <td
-                            class="ant-table-cell"
-                          >
-                            OceanBaseMySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
                                 >
-                                  Database
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    select
+                                  </span>
+                                </div>
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
                                 >
-                                  Table
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                          <td
-                            class="ant-table-cell"
-                          >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
-                            >
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  select
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    select
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
-                          data-row-key="96-MySQL"
+                          data-row-key="96-MySQL,OceanBaseMySQL"
                         >
                           <td
                             class="ant-table-cell"
-                            rowspan="2"
                           >
                             <span
                               class="ant-typography consolidated-column css-dev-only-do-not-override-bj9uhl"
@@ -753,154 +746,148 @@ exports[`Data/Operation should match snapshot 2`] = `
                             </span>
                           </td>
                           <td
-                            class="ant-table-cell"
-                          >
-                            MySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Service
-                                </span>
+                                MySQL
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                OceanBaseMySQL
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  select
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Service
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  delete
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  add
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="ant-table-row ant-table-row-level-0"
-                          data-row-key="96-OceanBaseMySQL"
-                        >
-                          <td
-                            class="ant-table-cell"
-                          >
-                            OceanBaseMySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
-                          >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
-                            >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Table
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
                                 >
-                                  Database
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Table
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  add
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    select
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    delete
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    add
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    add
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
-                          data-row-key="36-MySQL"
+                          data-row-key="36-MySQL,OceanBaseMySQL"
                         >
                           <td
                             class="ant-table-cell"
-                            rowspan="2"
                           >
                             <span
                               class="ant-typography consolidated-column css-dev-only-do-not-override-bj9uhl"
@@ -909,153 +896,148 @@ exports[`Data/Operation should match snapshot 2`] = `
                             </span>
                           </td>
                           <td
-                            class="ant-table-cell"
-                          >
-                            MySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                MySQL
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Database
-                                </span>
+                                OceanBaseMySQL
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  update
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  select
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  remove
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="ant-table-row ant-table-row-level-0"
-                          data-row-key="36-OceanBaseMySQL"
-                        >
-                          <td
-                            class="ant-table-cell"
-                          >
-                            OceanBaseMySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
-                          >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
-                            >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Table
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
                                 >
-                                  Database
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Table
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  add
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    update
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    select
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    remove
+                                  </span>
+                                </div>
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  update
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    add
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    update
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
@@ -1227,7 +1209,7 @@ exports[`Data/Operation should match snapshot 2`] = `
 exports[`Data/Operation should refresh table when user click refresh button 1`] = `
 <div>
   <section
-    class="css-ksegv2"
+    class="css-1ge35cc"
   >
     <div
       class="actiontech-page-header-namespace css-1xspr0w"
@@ -1430,19 +1412,19 @@ exports[`Data/Operation should refresh table when user click refresh button 1`] 
                             权限组名
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             权限映射适用种类
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             适用范围
                           </th>
                           <th
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                             scope="col"
                           >
                             操作
@@ -1496,11 +1478,10 @@ exports[`Data/Operation should refresh table when user click refresh button 1`] 
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
-                          data-row-key="27-MySQL"
+                          data-row-key="27-MySQL,OceanBaseMySQL"
                         >
                           <td
                             class="ant-table-cell"
-                            rowspan="2"
                           >
                             <span
                               class="ant-typography consolidated-column css-dev-only-do-not-override-bj9uhl"
@@ -1509,144 +1490,138 @@ exports[`Data/Operation should refresh table when user click refresh button 1`] 
                             </span>
                           </td>
                           <td
-                            class="ant-table-cell"
-                          >
-                            MySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Database
-                                </span>
+                                MySQL
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Table
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                OceanBaseMySQL
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  select
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Table
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Table
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
-                        </tr>
-                        <tr
-                          class="ant-table-row ant-table-row-level-0"
-                          data-row-key="27-OceanBaseMySQL"
-                        >
                           <td
-                            class="ant-table-cell"
-                          >
-                            OceanBaseMySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
                                 >
-                                  Database
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    select
+                                  </span>
+                                </div>
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
                                 >
-                                  Table
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                          <td
-                            class="ant-table-cell"
-                          >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
-                            >
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  select
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    select
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
-                          data-row-key="96-MySQL"
+                          data-row-key="96-MySQL,OceanBaseMySQL"
                         >
                           <td
                             class="ant-table-cell"
-                            rowspan="2"
                           >
                             <span
                               class="ant-typography consolidated-column css-dev-only-do-not-override-bj9uhl"
@@ -1655,154 +1630,148 @@ exports[`Data/Operation should refresh table when user click refresh button 1`] 
                             </span>
                           </td>
                           <td
-                            class="ant-table-cell"
-                          >
-                            MySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Service
-                                </span>
+                                MySQL
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                OceanBaseMySQL
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  select
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Service
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  delete
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  add
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="ant-table-row ant-table-row-level-0"
-                          data-row-key="96-OceanBaseMySQL"
-                        >
-                          <td
-                            class="ant-table-cell"
-                          >
-                            OceanBaseMySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
-                          >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
-                            >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Table
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
                                 >
-                                  Database
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Table
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  add
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    select
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    delete
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    add
+                                  </span>
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    add
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
                         </tr>
                         <tr
                           class="ant-table-row ant-table-row-level-0"
-                          data-row-key="36-MySQL"
+                          data-row-key="36-MySQL,OceanBaseMySQL"
                         >
                           <td
                             class="ant-table-cell"
-                            rowspan="2"
                           >
                             <span
                               class="ant-typography consolidated-column css-dev-only-do-not-override-bj9uhl"
@@ -1811,153 +1780,148 @@ exports[`Data/Operation should refresh table when user click refresh button 1`] 
                             </span>
                           </td>
                           <td
-                            class="ant-table-cell"
-                          >
-                            MySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                MySQL
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="custom-table-cell-item custom-table-cell-db-type-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Database
-                                </span>
+                                OceanBaseMySQL
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  update
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  select
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Database
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  remove
-                                </span>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="ant-table-row ant-table-row-level-0"
-                          data-row-key="36-OceanBaseMySQL"
-                        >
-                          <td
-                            class="ant-table-cell"
-                          >
-                            OceanBaseMySQL
-                          </td>
-                          <td
-                            class="ant-table-cell"
-                          >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
-                            >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Table
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
                                 >
-                                  Database
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Table
-                                </span>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
-                              >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
-                                >
-                                  Instance
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    Instance
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>
                           <td
-                            class="ant-table-cell"
+                            class="ant-table-cell custom-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              style="flex-wrap: wrap; margin-bottom: -8px;"
+                              class="css-cjptql"
                             >
                               <div
-                                class="ant-space-item"
-                                style="margin-right: 0px; padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  add
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    update
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    select
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    remove
+                                  </span>
+                                </div>
                               </div>
                               <div
-                                class="ant-space-item"
-                                style="padding-bottom: 8px;"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center custom-table-cell-item"
                               >
-                                <span
-                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px;"
                                 >
-                                  update
-                                </span>
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    add
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                  >
+                                    update
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </td>

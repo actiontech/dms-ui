@@ -2,17 +2,16 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import {
+  IOperationData,
   OperationListTableFilterParamType,
   filterCustomProps,
   operationTableColumns
 } from './columns';
 import { PageHeader } from '@actiontech/shared';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { IOperationInfo } from '@actiontech/shared/lib/api/provision/service/common';
 import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { Spin } from 'antd';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
-import { ConsolidatedListStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -20,12 +19,8 @@ import {
   TableToolbar,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
+import { OperationPageStyleWrapper } from './style';
 
-export interface IOperationData extends IOperationInfo {
-  uid?: string;
-  name?: string;
-  rowSpan: number;
-}
 const Operation = () => {
   const { t } = useTranslation();
 
@@ -57,17 +52,14 @@ const Operation = () => {
       // PS: sort params移除，相关任务暂无排期。issue：http://10.186.18.11/jira/browse/DMS-556
 
       return auth.AuthListDataOperationSets(params).then((res) => {
-        const realData: IOperationData[] = [];
-        res.data.data?.forEach((item) => {
-          const { name, uid, operations } = item;
-          operations?.forEach((operation, index) => {
-            realData.push({
-              ...operation,
-              name,
-              uid,
-              rowSpan: index === 0 ? operations.length : 0
-            });
-          });
+        const realData = res.data.data?.map<IOperationData>((item) => {
+          return {
+            uid: item.uid,
+            name: item.name,
+            db_type: item.operations?.map((v) => v.db_type),
+            data_object_types: item.operations?.map((v) => v.data_object_types),
+            data_operations: item.operations?.map((v) => v.data_operations)
+          };
         });
         return { data: realData, total: res.data.total_nums };
       });
@@ -83,7 +75,7 @@ const Operation = () => {
     useTableFilterContainer(columns, updateTableFilterInfo);
 
   return (
-    <ConsolidatedListStyleWrapper>
+    <OperationPageStyleWrapper>
       <PageHeader title={t('operation.title')} />
       <Spin spinning={getOperationDataLoading}>
         <TableToolbar
@@ -121,7 +113,7 @@ const Operation = () => {
           onChange={tableChange}
         />
       </Spin>
-    </ConsolidatedListStyleWrapper>
+    </OperationPageStyleWrapper>
   );
 };
 
