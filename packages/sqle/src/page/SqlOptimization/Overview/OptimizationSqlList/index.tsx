@@ -13,23 +13,22 @@ import {
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { IGetOptimizationSQLsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { useNavigate } from 'react-router-dom';
+import { SqlOptimizationStatusEnum } from '../../index.data';
 
 const OptimizationSqlList: React.FC<{
   projectName: string;
   projectID: string;
   optimizationId: string;
   setSqlListLoading: (v: boolean) => void;
-  refresh: boolean;
   dbType: string;
-  disableDetailButton: boolean;
+  optimizationStatus?: string;
 }> = ({
   projectName,
   projectID,
   optimizationId,
   setSqlListLoading,
-  refresh,
   dbType,
-  disableDetailButton
+  optimizationStatus
 }) => {
   const navigate = useNavigate();
 
@@ -62,7 +61,10 @@ const OptimizationSqlList: React.FC<{
       });
     },
     {
-      refreshDeps: [pagination, refresh],
+      refreshDeps: [pagination],
+      ready:
+        !!optimizationStatus &&
+        optimizationStatus !== SqlOptimizationStatusEnum.optimizing,
       onBefore: () => {
         setSqlListLoading(true);
       },
@@ -96,7 +98,7 @@ const OptimizationSqlList: React.FC<{
         columns={SqlOptimizationListColumns()}
         actions={SqlOptimizationListActions(
           gotoDetailPage,
-          disableDetailButton
+          optimizationStatus === SqlOptimizationStatusEnum.failed
         )}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
