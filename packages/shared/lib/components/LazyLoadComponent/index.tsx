@@ -47,7 +47,8 @@ const LazyLoadComponent: React.FC<LazyLoadComponentProps> = ({
       animation={animation}
       className={classnames('lazy-load-wrapper', className, {
         'lazy-load-wrapper-hidden': status === 'hidden',
-        'lazy-load-wrapper-show': status === 'show'
+        'lazy-load-wrapper-show': status === 'show',
+        'lazy-load-wrapper-animation': animation !== false
       })}
     >
       {children}

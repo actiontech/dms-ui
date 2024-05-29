@@ -19,15 +19,12 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   isAuditing,
   auditAction,
   databaseInfo,
-  isSameSqlForAll
+  isSameSqlForAll,
+  currentSqlUploadType
 }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
-  const currentSqlUploadType = Form.useWatch(
-    [fieldPrefixPath, 'currentUploadType'],
-    form
-  ) as AuditTaskResV1SqlSourceEnum;
 
   const [
     formatterLoading,
@@ -54,8 +51,9 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
     };
     const originSql = form.getFieldValue([fieldPrefixPath, 'form_data']);
     const instanceName = isSameSqlForAll
-      ? databaseInfo[0].instanceName
+      ? databaseInfo?.[0]?.instanceName
       : databaseInfo.find((v) => v.key === fieldPrefixPath)?.instanceName;
+
     if (originSql && originSql !== SqlFiledInitialValue) {
       if (instanceName) {
         const dbType = (await getInstanceType(instanceName))?.db_type;

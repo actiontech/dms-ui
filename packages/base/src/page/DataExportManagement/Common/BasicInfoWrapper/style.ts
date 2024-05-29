@@ -30,7 +30,7 @@ export const BasicInfoStyleWrapper = styled('div')<{
     justify-content: center;
     margin-bottom: 20px;
 
-    .icon-order-status-wrapper {
+    .icon-workflow-status-wrapper {
       position: absolute;
       z-index: 9;
       color: ${({ theme, status }) =>

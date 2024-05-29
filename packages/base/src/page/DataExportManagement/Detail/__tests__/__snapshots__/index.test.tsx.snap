@@ -132,7 +132,7 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-ppqheb"
+              class="clearPaddingTop css-1pvtba3"
             >
               <div
                 class="workflow-base-info-status"
@@ -1099,7 +1099,7 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-ppqheb"
+              class="clearPaddingTop css-1pvtba3"
             >
               <div
                 class="workflow-base-info-status"
@@ -3777,7 +3777,7 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-ppqheb"
+              class="clearPaddingTop css-1pvtba3"
             >
               <div
                 class="workflow-base-info-status"
@@ -6455,7 +6455,7 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
               </div>
             </div>
             <div
-              class="clearPaddingTop css-ppqheb"
+              class="clearPaddingTop css-1pvtba3"
             >
               <div
                 class="workflow-base-info-status"
@@ -9133,7 +9133,7 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
               </div>
             </div>
             <div
-              class="clearPaddingTop css-8ztf14"
+              class="clearPaddingTop css-14ff2p5"
             >
               <div
                 class="workflow-base-info-status"

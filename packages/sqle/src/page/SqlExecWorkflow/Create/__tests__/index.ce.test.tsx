@@ -61,7 +61,7 @@ describe('sqle/SqlExecWorkflow/Create ce', () => {
     cleanup();
   });
 
-  it('render snap when create workflow init', async () => {
+  it('should snapshot render initial workflow creation UI', async () => {
     const { baseElement } = customRender();
 
     expect(screen.getByText('创建工单')).toMatchSnapshot();
@@ -73,7 +73,7 @@ describe('sqle/SqlExecWorkflow/Create ce', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render reset form', async () => {
+  it('should reset form fields and snapshot UI after reset action', async () => {
     const { baseElement } = customRender();
 
     // workflow_subject
@@ -96,7 +96,7 @@ describe('sqle/SqlExecWorkflow/Create ce', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render format sql for diff mode', async () => {
+  it('should snapshot UI and perform SQL audit in the same mode', async () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
@@ -157,7 +157,7 @@ describe('sqle/SqlExecWorkflow/Create ce', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render form for click audit btn for same sql & upload file', async () => {
+  it('should handle form submission and audit action for different SQLs', async () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));

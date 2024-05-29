@@ -1,7 +1,7 @@
 import { styled } from '@mui/material';
 
 export const LazyLoadComponentStyleWrapper = styled('div')<{
-  animation?: string;
+  animation?: string | false;
 }>`
   @keyframes slide-right {
     from {
@@ -14,7 +14,9 @@ export const LazyLoadComponentStyleWrapper = styled('div')<{
     }
   }
 
-  animation: ${({ animation }) => animation ?? ' slide-right 300ms'};
+  &.lazy-load-wrapper-animation {
+    animation: ${({ animation }) => animation || ' slide-right 300ms'};
+  }
 
   &.lazy-load-wrapper-hidden {
     display: none;

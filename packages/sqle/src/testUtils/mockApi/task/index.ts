@@ -15,6 +15,7 @@ class TaskMockApi implements MockSpyApy {
     this.updateAuditTaskSQLs();
     this.getAuditTask();
     this.getAuditFileList();
+    this.getSqlFileOrderMethod();
   }
 
   public getAuditTaskSQLs() {
@@ -59,6 +60,18 @@ class TaskMockApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: TaskFileListMockData[0]
+      })
+    );
+    return spy;
+  }
+
+  public getSqlFileOrderMethod() {
+    const spy = jest.spyOn(task, 'getSqlFileOrderMethodV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          methods: [{ desc: 'desc1', order_method: 'value1' }]
+        }
       })
     );
     return spy;

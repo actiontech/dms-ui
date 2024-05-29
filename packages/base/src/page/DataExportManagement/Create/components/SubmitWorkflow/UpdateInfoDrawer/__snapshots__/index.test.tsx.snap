@@ -218,7 +218,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                       </div>
                     </div>
                     <div
-                      class="ant-form-item order-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                      class="ant-form-item workflow-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                     >
                       <div
                         class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1033,7 +1033,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                       </div>
                     </div>
                     <div
-                      class="ant-form-item order-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                      class="ant-form-item workflow-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                     >
                       <div
                         class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
