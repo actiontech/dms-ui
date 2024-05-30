@@ -4,7 +4,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
 <body>
   <div>
     <section
-      class="css-xxt89e"
+      class="css-1c1a29h"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -232,6 +232,27 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                   <div
                     class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
                   >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 12px;"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              导 出
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                     <div
                       class="ant-space-item"
                       style="margin-right: 12px;"
@@ -522,7 +543,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
               style="padding-bottom: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace exec-result-filter-item css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -646,7 +667,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               审核结果
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
                               执行结果
@@ -897,9 +918,84 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                             >
-                              success
+                              <div
+                                aria-label="success"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              >
+                                success
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="Copy"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1041,9 +1137,84 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                             >
-                              success
+                              <div
+                                aria-label="success"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              >
+                                success
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="Copy"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1113,9 +1284,84 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               -
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                             >
-                              fail
+                              <div
+                                aria-label="fail"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              >
+                                fail
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="Copy"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1175,7 +1421,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               -
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                             >
                               -
                             </td>
@@ -1359,7 +1605,7 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
 <body>
   <div>
     <section
-      class="css-xxt89e"
+      class="css-1c1a29h"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -1591,6 +1837,27 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                       class="ant-space-item"
                       style="margin-right: 12px;"
                     >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              导 出
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 12px;"
+                    >
                       <button
                         class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                         style="padding: 0px 6px 0px 8px;"
@@ -1753,7 +2020,7 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               审核结果
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
                               执行结果
@@ -2004,9 +2271,84 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                             >
-                              success
+                              <div
+                                aria-label="success"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              >
+                                success
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="Copy"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -2148,9 +2490,84 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               </div>
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                             >
-                              success
+                              <div
+                                aria-label="success"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              >
+                                success
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="Copy"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -2220,9 +2637,84 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               -
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                             >
-                              fail
+                              <div
+                                aria-label="fail"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              >
+                                fail
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                >
+                                  lg
+                                </span>
+                                <span
+                                  aria-hidden="true"
+                                  style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                >
+                                  <span
+                                    aria-hidden="true"
+                                  >
+                                    ...
+                                  </span>
+                                  <div
+                                    aria-label="Copy"
+                                    class="ant-typography-copy"
+                                    role="button"
+                                    style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                    tabindex="0"
+                                  >
+                                    <span
+                                      aria-label="copy"
+                                      class="anticon anticon-copy"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="copy"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </div>
+                                </span>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -2282,7 +2774,7 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               -
                             </td>
                             <td
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                             >
                               -
                             </td>
@@ -2466,7 +2958,7 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
 <body>
   <div>
     <section
-      class="css-xxt89e"
+      class="css-1c1a29h"
     >
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -2698,6 +3190,27 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                       class="ant-space-item"
                       style="margin-right: 12px;"
                     >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              导 出
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 12px;"
+                    >
                       <button
                         class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                         style="padding: 0px 6px 0px 8px;"
@@ -2860,7 +3373,7 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                               审核结果
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
                               执行结果
