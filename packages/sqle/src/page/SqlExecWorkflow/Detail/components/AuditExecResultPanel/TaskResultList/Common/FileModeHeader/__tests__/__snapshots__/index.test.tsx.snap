@@ -1,0 +1,389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test FileModeHeader should render the header with title and extra button when allowExec is true 1`] = `
+<body>
+  <div>
+    <div
+      class="file-mode-title flex-space-between full-width-element"
+    >
+      <div
+        class="flex-display flex-align-center"
+      >
+        <span
+          class="custom-icon-ellipse css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#E8F3FF"
+              height="16"
+              rx="3"
+              width="16"
+            />
+            <circle
+              cx="8"
+              cy="8"
+              fill="white"
+              r="3"
+              stroke="#4583FF"
+              stroke-width="2"
+            />
+          </svg>
+        </span>
+        <span
+          class="ant-typography file-mode-title-text css-dev-only-do-not-override-txh9fw"
+        >
+          文件信息概览
+        </span>
+      </div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          编辑上线顺序
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`test FileModeHeader should render the header with title and extra button when allowExec is true 2`] = `
+<body>
+  <div>
+    <div
+      class="file-mode-title flex-space-between full-width-element"
+    >
+      <div
+        class="flex-display flex-align-center"
+      >
+        <span
+          class="custom-icon-ellipse css-u3jcp4"
+        >
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#E8F3FF"
+              height="16"
+              rx="3"
+              width="16"
+            />
+            <circle
+              cx="8"
+              cy="8"
+              fill="white"
+              r="3"
+              stroke="#4583FF"
+              stroke-width="2"
+            />
+          </svg>
+        </span>
+        <span
+          class="ant-typography file-mode-title-text css-dev-only-do-not-override-txh9fw"
+        >
+          文件信息概览
+        </span>
+      </div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          编辑上线顺序
+        </span>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 960px; transform-origin: NaNpx NaNpx;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <span
+                  class="custom-icon custom-icon-close css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                编辑上线顺序
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-alert ant-alert-info ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+                data-show="true"
+                role="alert"
+                style="margin-bottom: 12px;"
+              >
+                <div
+                  class="ant-alert-content"
+                >
+                  <div
+                    class="ant-alert-message"
+                  >
+                    请拖动表格中的行以重新排序SQL文件的上线顺序。
+                  </div>
+                </div>
+              </div>
+              <div
+                class="infinite-scroll-component__outerdiv"
+              >
+                <div
+                  class="infinite-scroll-component "
+                  style="height: auto; overflow: auto;"
+                >
+                  <div
+                    id="scrollable-target"
+                    style="max-height: 600px; overflow: auto;"
+                  >
+                    <div
+                      class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                    >
+                      <div
+                        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                      >
+                        <div
+                          class="ant-spin-container"
+                        >
+                          <div
+                            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+                          >
+                            <div
+                              class="ant-table-container"
+                            >
+                              <div
+                                class="ant-table-content"
+                                style="overflow-x: auto; overflow-y: hidden;"
+                              >
+                                <table
+                                  style="min-width: 100%; table-layout: auto;"
+                                >
+                                  <colgroup />
+                                  <thead
+                                    class="ant-table-thead"
+                                  >
+                                    <tr>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                      >
+                                        初始执行编号
+                                      </th>
+                                      <th
+                                        class="ant-table-cell"
+                                        scope="col"
+                                      >
+                                        排序后执行编号
+                                      </th>
+                                      <th
+                                        class="ant-table-cell ellipsis-column-width"
+                                        scope="col"
+                                      >
+                                        文件
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody
+                                    class="ant-table-tbody"
+                                  >
+                                    <tr
+                                      aria-hidden="true"
+                                      class="ant-table-measure-row"
+                                      style="height: 0px; font-size: 0px;"
+                                    >
+                                      <td
+                                        style="padding: 0px; border: 0px; height: 0px;"
+                                      >
+                                        <div
+                                          style="height: 0px; overflow: hidden;"
+                                        >
+                                           
+                                        </div>
+                                      </td>
+                                      <td
+                                        style="padding: 0px; border: 0px; height: 0px;"
+                                      >
+                                        <div
+                                          style="height: 0px; overflow: hidden;"
+                                        >
+                                           
+                                        </div>
+                                      </td>
+                                      <td
+                                        style="padding: 0px; border: 0px; height: 0px;"
+                                      >
+                                        <div
+                                          style="height: 0px; overflow: hidden;"
+                                        >
+                                           
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr
+                                      aria-describedby="DndDescribedBy-0"
+                                      aria-disabled="false"
+                                      aria-pressed="true"
+                                      aria-roledescription="sortable"
+                                      class="ant-table-placeholder"
+                                      role="button"
+                                      style="cursor: move; position: relative; z-index: 9999;"
+                                      tabindex="0"
+                                    >
+                                      <td
+                                        class="ant-table-cell"
+                                        colspan="3"
+                                      >
+                                        <div
+                                          class="ant-table-expanded-row-fixed"
+                                          style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                                        />
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="DndDescribedBy-0"
+                style="display: none;"
+              >
+                
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+              </div>
+              <div
+                aria-atomic="true"
+                aria-live="assertive"
+                id="DndLiveRegion-0"
+                role="status"
+                style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+              />
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      重置文件顺序
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

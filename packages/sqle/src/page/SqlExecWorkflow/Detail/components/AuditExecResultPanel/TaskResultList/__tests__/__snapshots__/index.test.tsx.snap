@@ -2,6 +2,11 @@
 
 exports[`test ExecWorkflow/TaskResultList should match snapshot when currentListLayout is equal pagination 1`] = `
 <PaginationList
+  assigneeUserNames={
+    [
+      "admin",
+    ]
+  }
   auditResultActiveKey="123"
   currentListLayout="pagination"
   executeMode="sqls"
@@ -20,6 +25,11 @@ exports[`test ExecWorkflow/TaskResultList should match snapshot when currentList
 
 exports[`test ExecWorkflow/TaskResultList should match snapshot when currentListLayout is equal scroll 1`] = `
 <WaterfallList
+  assigneeUserNames={
+    [
+      "admin",
+    ]
+  }
   auditResultActiveKey="123"
   currentListLayout="scroll"
   executeMode="sqls"

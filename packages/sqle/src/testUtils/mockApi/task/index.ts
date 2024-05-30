@@ -76,6 +76,12 @@ class TaskMockApi implements MockSpyApy {
     );
     return spy;
   }
+
+  public updateSqlFileOrder() {
+    const spy = jest.spyOn(task, 'updateSqlFileOrderV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
 }
 
 export default new TaskMockApi();

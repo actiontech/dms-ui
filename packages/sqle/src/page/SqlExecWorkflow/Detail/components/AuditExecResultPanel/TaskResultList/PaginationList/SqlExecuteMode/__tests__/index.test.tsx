@@ -6,6 +6,7 @@ import { TaskResultListLayoutEnum } from '../../../../index.enum';
 import { superRender } from '../../../../../../../../../testUtils/customRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('test PaginationList/SQLExecuteMode', () => {
   const customRender = (params?: Partial<SqlExecuteModeProps>) => {
@@ -16,7 +17,8 @@ describe('test PaginationList/SQLExecuteMode', () => {
       noDuplicate: false,
       tableFilterInfo: {},
       pagination: { page_index: 1, page_size: 20 },
-      tableChange: jest.fn()
+      tableChange: jest.fn(),
+      assigneeUserNames: [mockCurrentUserReturn.username]
     };
     return superRender(<SQLExecuteMode {...{ ..._params, ...params }} />);
   };
