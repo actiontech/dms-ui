@@ -127,19 +127,28 @@ exports[`base/Member should render member list when it first entered the member 
             class="ant-spin-container"
           >
             <div
-              class="ant-table ant-table-scroll-horizontal"
+              class="ant-table"
             >
               <div
                 class="ant-table-container"
               >
                 <div
                   class="ant-table-content"
-                  style="overflow-x: auto; overflow-y: hidden;"
                 >
                   <table
-                    style="min-width: 100%; table-layout: auto;"
+                    style="table-layout: auto;"
                   >
-                    <colgroup />
+                    <colgroup>
+                      <col
+                        style="width: 25%;"
+                      />
+                      <col
+                        style="width: 45%;"
+                      />
+                      <col
+                        style="width: 20%;"
+                      />
+                    </colgroup>
                     <thead
                       class="ant-table-thead"
                     >
@@ -151,7 +160,7 @@ exports[`base/Member should render member list when it first entered the member 
                           用户名
                         </th>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                           scope="col"
                         >
                           <div
@@ -203,39 +212,6 @@ exports[`base/Member should render member list when it first entered the member 
                       class="ant-table-tbody"
                     >
                       <tr
-                        aria-hidden="true"
-                        class="ant-table-measure-row"
-                        style="height: 0px; font-size: 0px;"
-                      >
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
                         class="ant-table-row ant-table-row-level-0"
                         data-row-key="700501"
                       >
@@ -245,7 +221,7 @@ exports[`base/Member should render member list when it first entered the member 
                           admin
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           ALL
                         </td>
@@ -294,10 +270,10 @@ exports[`base/Member should render member list when it first entered the member 
                           test1
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                           >
                             <div
                               class="ant-space-item"
@@ -369,7 +345,7 @@ exports[`base/Member should render member list when it first entered the member 
                           test2
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           -
                         </td>
@@ -389,10 +365,10 @@ exports[`base/Member should render member list when it first entered the member 
                           test
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                           >
                             <div
                               class="ant-space-item"
@@ -774,7 +750,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           用户名
                         </th>
                         <th
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                           scope="col"
                         >
                           <div
@@ -886,10 +862,10 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           </span>
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                           >
                             <div
                               class="ant-space-item"
@@ -964,10 +940,10 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           </span>
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                           >
                             <div
                               class="ant-space-item"
@@ -1013,10 +989,10 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           </span>
                         </td>
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                           >
                             <div
                               class="ant-space-item"
@@ -1091,10 +1067,10 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           class="ant-table-cell"
                         />
                         <td
-                          class="ant-table-cell"
+                          class="ant-table-cell ellipsis-column-width"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                           >
                             <div
                               class="ant-space-item"
