@@ -42,4 +42,8 @@ export const CloudBeaverOperationLogsListStyleWrapper = styled('section')`
   .ellipsis-column-width .ant-typography {
     cursor: pointer;
   }
+
+  .exec-result-filter-item {
+    width: 300px;
+  }
 `;
