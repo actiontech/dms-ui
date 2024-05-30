@@ -247,10 +247,14 @@ exports[`page/Home/DEVPanel render filter status with statics number id not 0 1`
                     style="min-width: 100%; table-layout: auto;"
                   >
                     <colgroup>
-                      <col />
-                      <col />
                       <col
-                        style="width: 260px;"
+                        style="width: 30%;"
+                      />
+                      <col
+                        style="width: 45%;"
+                      />
+                      <col
+                        style="width: 25%;"
                       />
                     </colgroup>
                     <thead
@@ -529,10 +533,14 @@ exports[`page/Home/DEVPanel render normal table 1`] = `
                     style="min-width: 100%; table-layout: auto;"
                   >
                     <colgroup>
-                      <col />
-                      <col />
                       <col
-                        style="width: 260px;"
+                        style="width: 30%;"
+                      />
+                      <col
+                        style="width: 45%;"
+                      />
+                      <col
+                        style="width: 25%;"
                       />
                     </colgroup>
                     <thead
@@ -811,10 +819,14 @@ exports[`page/Home/DEVPanel render table with return error 1`] = `
                     style="min-width: 100%; table-layout: auto;"
                   >
                     <colgroup>
-                      <col />
-                      <col />
                       <col
-                        style="width: 260px;"
+                        style="width: 30%;"
+                      />
+                      <col
+                        style="width: 45%;"
+                      />
+                      <col
+                        style="width: 25%;"
                       />
                     </colgroup>
                     <thead
@@ -1093,10 +1105,14 @@ exports[`page/Home/DEVPanel send request when click diff filter status 1`] = `
                     style="min-width: 100%; table-layout: auto;"
                   >
                     <colgroup>
-                      <col />
-                      <col />
                       <col
-                        style="width: 260px;"
+                        style="width: 30%;"
+                      />
+                      <col
+                        style="width: 45%;"
+                      />
+                      <col
+                        style="width: 25%;"
                       />
                     </colgroup>
                     <thead

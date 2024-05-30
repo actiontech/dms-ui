@@ -163,10 +163,14 @@ exports[`page/Home render Home page 1`] = `
                     style="min-width: 100%; table-layout: auto;"
                   >
                     <colgroup>
-                      <col />
-                      <col />
                       <col
-                        style="width: 260px;"
+                        style="width: 30%;"
+                      />
+                      <col
+                        style="width: 45%;"
+                      />
+                      <col
+                        style="width: 25%;"
                       />
                     </colgroup>
                     <thead
@@ -544,10 +548,14 @@ exports[`page/Home render Home page 1`] = `
                     style="min-width: 100%; table-layout: auto;"
                   >
                     <colgroup>
-                      <col />
-                      <col />
                       <col
-                        style="width: 260px;"
+                        style="width: 30%;"
+                      />
+                      <col
+                        style="width: 45%;"
+                      />
+                      <col
+                        style="width: 25%;"
                       />
                     </colgroup>
                     <thead
