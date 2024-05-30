@@ -195,7 +195,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left ant-table-has-fix-right"
+            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -208,9 +208,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                   style="min-width: 100%; table-layout: auto;"
                 >
                   <colgroup>
-                    <col
-                      style="width: 300px;"
-                    />
+                    <col />
                     <col />
                     <col />
                     <col
@@ -222,9 +220,8 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                   >
                     <tr>
                       <th
-                        class="ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                        class="ant-table-cell"
                         scope="col"
-                        style="position: sticky; left: 0px;"
                       >
                         模版名称
                       </th>
@@ -299,8 +296,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                       data-row-key="test1"
                     >
                       <td
-                        class="ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last"
-                        style="position: sticky; left: 0px;"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/sqle/project/700300/rule/template/detail/test1/MySQL"
@@ -507,8 +503,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                       data-row-key="t1"
                     >
                       <td
-                        class="ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last"
-                        style="position: sticky; left: 0px;"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/sqle/project/700300/rule/template/detail/t1/MySQL"
@@ -640,8 +635,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                       data-row-key=""
                     >
                       <td
-                        class="ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last"
-                        style="position: sticky; left: 0px;"
+                        class="ant-table-cell"
                       />
                       <td
                         class="ant-table-cell ellipsis-column-width"
@@ -1003,7 +997,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left"
+            class="ant-table ant-table-scroll-horizontal"
           >
             <div
               class="ant-table-container"
@@ -1015,19 +1009,14 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                 <table
                   style="min-width: 100%; table-layout: auto;"
                 >
-                  <colgroup>
-                    <col
-                      style="width: 300px;"
-                    />
-                  </colgroup>
+                  <colgroup />
                   <thead
                     class="ant-table-thead"
                   >
                     <tr>
                       <th
-                        class="ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                        class="ant-table-cell"
                         scope="col"
-                        style="position: sticky; left: 0px;"
                       >
                         模版名称
                       </th>
@@ -1086,8 +1075,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                       data-row-key="default_template"
                     >
                       <td
-                        class="ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last"
-                        style="position: sticky; left: 0px;"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/sqle/rule-manager/global-detail/default_template/MySQL"
@@ -1231,8 +1219,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                       data-row-key="global_test"
                     >
                       <td
-                        class="ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last"
-                        style="position: sticky; left: 0px;"
+                        class="ant-table-cell"
                       >
                         <a
                           href="/sqle/rule-manager/global-detail/global_test/MySQL"
@@ -1301,8 +1288,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                       data-row-key=""
                     >
                       <td
-                        class="ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last"
-                        style="position: sticky; left: 0px;"
+                        class="ant-table-cell"
                       />
                       <td
                         class="ant-table-cell ellipsis-column-width"

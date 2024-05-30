@@ -118,8 +118,6 @@ export const RuleTemplateTableColumn: (
     {
       dataIndex: 'rule_template_name',
       title: () => t('ruleTemplate.ruleTemplateList.table.templateName'),
-      fixed: 'left',
-      width: 300,
       render(name: string, record) {
         if (!name) {
           return '';
