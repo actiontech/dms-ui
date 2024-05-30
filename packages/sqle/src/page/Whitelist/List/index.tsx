@@ -125,8 +125,10 @@ const WhitelistList = () => {
     [messageApi, projectName, refresh, t]
   );
 
-  const whitelistActionsInTable: ActiontechTableActionMeta<IAuditWhitelistResV1>[] =
-    [
+  const whitelistActionsInTable: {
+    buttons: ActiontechTableActionMeta<IAuditWhitelistResV1>[];
+  } = {
+    buttons: [
       {
         key: 'edit-whitelist',
         text: t('common.edit'),
@@ -143,7 +145,8 @@ const WhitelistList = () => {
           onConfirm: removeWhitelist.bind(null, record?.audit_whitelist_id ?? 0)
         })
       }
-    ];
+    ]
+  };
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -198,6 +201,7 @@ const WhitelistList = () => {
         }
         errorMessage={requestErrorMessage}
         onChange={tableChange}
+        scroll={{}}
       />
       <WhitelistDrawer />
     </>

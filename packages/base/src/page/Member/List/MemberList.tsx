@@ -127,6 +127,7 @@ const MemberList: React.FC = () => {
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={!projectArchive && actionPermission ? actions : undefined}
+        scroll={{}}
       />
     </>
   );
