@@ -1,11 +1,14 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import FileExecuteMode from '..';
 import { FileExecuteModeProps } from '../index.type';
-import { act, cleanup } from '@testing-library/react';
+import { act, cleanup, screen } from '@testing-library/react';
 import { TaskResultListLayoutEnum } from '../../../../index.enum';
 import { superRender } from '../../../../../../../../../testUtils/customRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('test PaginationList/FileExecuteMode', () => {
   const customRender = (params?: Partial<FileExecuteModeProps>) => {
@@ -15,14 +18,18 @@ describe('test PaginationList/FileExecuteMode', () => {
       auditResultActiveKey: '123',
       noDuplicate: false,
       pagination: { page_index: 1, page_size: 20 },
-      tableChange: jest.fn()
+      tableChange: jest.fn(),
+      assigneeUserNames: [mockCurrentUserReturn.username],
+      workflowStatus: WorkflowRecordResV2StatusEnum.wait_for_execution,
+      ...params
     };
-    return superRender(<FileExecuteMode {...{ ..._params, ...params }} />);
+    return superRender(<FileExecuteMode {..._params} />);
   };
 
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
+    mockUseCurrentUser();
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -67,5 +74,19 @@ describe('test PaginationList/FileExecuteMode', () => {
     expect(getAuditTaskFileOverviewSpy).toHaveBeenCalledTimes(0);
 
     await act(async () => jest.advanceTimersByTime(0));
+  });
+
+  it('does not display edit file order button if current user is not an assignee or workflow status is not wait_for_execution', () => {
+    task.getAuditFileList();
+    customRender({ assigneeUserNames: ['test'] });
+
+    expect(screen.queryByText('编辑文件上线顺序')).not.toBeInTheDocument();
+
+    cleanup();
+
+    customRender({
+      workflowStatus: WorkflowRecordResV2StatusEnum.wait_for_audit
+    });
+    expect(screen.queryByText('编辑文件上线顺序')).not.toBeInTheDocument();
   });
 });

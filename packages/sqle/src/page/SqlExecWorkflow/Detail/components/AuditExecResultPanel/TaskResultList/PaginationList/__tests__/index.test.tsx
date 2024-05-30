@@ -4,6 +4,7 @@ import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/servi
 import toJson from 'enzyme-to-json';
 import { PaginationListProps } from '../index.type';
 import { TaskResultListLayoutEnum } from '../../../index.enum';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('test ExecWorkflow/TaskResultList/PaginationList', () => {
   it('should match snapshot', () => {
@@ -14,7 +15,8 @@ describe('test ExecWorkflow/TaskResultList/PaginationList', () => {
       auditResultActiveKey: '123',
       noDuplicate: false,
       tableFilterInfo: {},
-      pagination: { page_index: 1, page_size: 10 }
+      pagination: { page_index: 1, page_size: 10 },
+      assigneeUserNames: [mockCurrentUserReturn.username]
     };
 
     expect(
