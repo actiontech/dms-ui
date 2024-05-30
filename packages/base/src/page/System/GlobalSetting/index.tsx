@@ -14,7 +14,7 @@ import SystemBasicTitle from '../components/BasicTitle';
 import OrderExpiredHours from './components/OrderExpiredHours';
 import OperationRecordExpiredHours from './components/OperationRecordExpiredHours';
 import UrlAddressPrefixTips from './components/UrlAddressPrefixTips';
-// import CBOperationLogsExpiredHours from './components/CBOperationLogsExpiredHours';
+import CBOperationLogsExpiredHours from './components/CBOperationLogsExpiredHours';
 
 const GlobalSetting = () => {
   const { t } = useTranslation();
@@ -34,13 +34,13 @@ const GlobalSetting = () => {
     }
   ] = useBoolean();
 
-  // const [
-  //   cbOperationLogsExpiredHoursField,
-  //   {
-  //     setTrue: showCBOperationLogsExpiredHoursField,
-  //     setFalse: hideCBOperationLogsExpiredHoursField
-  //   }
-  // ] = useBoolean();
+  const [
+    cbOperationLogsExpiredHoursField,
+    {
+      setTrue: showCBOperationLogsExpiredHoursField,
+      setFalse: hideCBOperationLogsExpiredHoursField
+    }
+  ] = useBoolean();
 
   const [urlFieldVisible, { setTrue: showUrlField, setFalse: hideUrlField }] =
     useBoolean();
@@ -49,8 +49,8 @@ const GlobalSetting = () => {
     if (orderExpiredHoursFieldVisible) hideOrderExpiredHoursField();
     if (operationRecordExpiredHoursField)
       hideOperationRecordExpiredHoursField();
-    // if (cbOperationLogsExpiredHoursField)
-    //   hideCBOperationLogsExpiredHoursField();
+    if (cbOperationLogsExpiredHoursField)
+      hideCBOperationLogsExpiredHoursField();
     if (urlFieldVisible) hideUrlField();
   };
 
@@ -84,12 +84,12 @@ const GlobalSetting = () => {
         hideField: hideOperationRecordExpiredHoursField
       }
     ],
-    // [
-    //   'cb_operation_logs_expired_hours',
-    //   {
-    //     hideField: hideCBOperationLogsExpiredHoursField
-    //   }
-    // ],
+    [
+      'cb_operation_logs_expired_hours',
+      {
+        hideField: hideCBOperationLogsExpiredHoursField
+      }
+    ],
     [
       'url',
       {
@@ -150,13 +150,13 @@ const GlobalSetting = () => {
             hideField={hideOperationRecordExpiredHoursField}
             submitGlobalConfig={submitGlobalConfig}
           />
-          {/* <CBOperationLogsExpiredHours
+          <CBOperationLogsExpiredHours
             expiredHours={globalConfig?.cb_operation_logs_expired_hours}
             fieldVisible={cbOperationLogsExpiredHoursField}
             showField={showCBOperationLogsExpiredHoursField}
             hideField={hideCBOperationLogsExpiredHoursField}
             submitGlobalConfig={submitGlobalConfig}
-          /> */}
+          />
           <UrlAddressPrefixTips
             url={globalConfig?.url}
             fieldVisible={urlFieldVisible}
