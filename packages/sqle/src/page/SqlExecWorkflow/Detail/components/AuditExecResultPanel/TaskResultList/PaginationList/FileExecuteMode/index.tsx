@@ -1,10 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { FileExecuteModeProps } from './index.type';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { List } from 'antd';
-import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  WorkflowRecordResV2StatusEnum,
+  WorkflowResV2ExecModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ResultCard from '../../Common/ResultCard';
 import FileModeHeader from '../../Common/FileModeHeader';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../hooks/useAuditExecResultPanelSetup';
@@ -16,11 +22,13 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
   pagination,
   currentListLayout,
   workflowStatus,
-  auditResultActiveKey
+  auditResultActiveKey,
+  assigneeUserNames
 }) => {
   const { t } = useTranslation();
 
   const { projectID } = useCurrentProject();
+  const { username } = useCurrentUser();
 
   const {
     data: currentAuditTaskList,
@@ -60,7 +68,10 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
       <FileModeHeader
         taskId={taskId}
         refresh={refresh}
-        workflowStatus={workflowStatus}
+        allowExec={
+          workflowStatus === WorkflowRecordResV2StatusEnum.wait_for_execution &&
+          assigneeUserNames.includes(username)
+        }
       />
 
       <List

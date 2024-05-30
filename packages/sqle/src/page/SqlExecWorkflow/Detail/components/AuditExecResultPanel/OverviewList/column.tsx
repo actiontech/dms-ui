@@ -61,7 +61,10 @@ export const auditResultOverviewActions: (params: {
     }
 
     if (maintenanceTime.length) {
-      return checkTimeInWithMaintenanceTime(dayjs(), maintenanceTime);
+      return (
+        checkTimeInWithMaintenanceTime(dayjs(), maintenanceTime) &&
+        status === GetWorkflowTasksItemV2StatusEnum.wait_for_execution
+      );
     }
 
     return status === GetWorkflowTasksItemV2StatusEnum.wait_for_execution;
@@ -85,11 +88,15 @@ export const auditResultOverviewActions: (params: {
   };
 
   const enableCancelSqlScheduleTime = (
+    currentStepAssigneeUsernameList: string[] = [],
     status?: GetWorkflowTasksItemV2StatusEnum
   ) => {
     if (
       !status ||
-      unusableStatus.includes(workflowStatus as WorkflowRecordResV2StatusEnum)
+      unusableStatus.includes(
+        workflowStatus as WorkflowRecordResV2StatusEnum
+      ) ||
+      !currentStepAssigneeUsernameList.includes(currentUsername)
     ) {
       return false;
     }
@@ -191,7 +198,10 @@ export const auditResultOverviewActions: (params: {
                 record?.task_id?.toString() ?? ''
               );
             },
-            disabled: !enableCancelSqlScheduleTime(record?.status)
+            disabled: !enableCancelSqlScheduleTime(
+              record?.current_step_assignee_user_name_list,
+              record?.status
+            )
           };
         },
         permissions(record) {

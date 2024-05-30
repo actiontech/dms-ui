@@ -1,9 +1,15 @@
 import { FileExecuteModeProps } from './index.type';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import { useInfiniteScroll } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { List } from 'antd';
-import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  WorkflowRecordResV2StatusEnum,
+  WorkflowResV2ExecModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ResultCard from '../../Common/ResultCard';
 import { IAuditFileStatistic } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useRef } from 'react';
@@ -16,10 +22,12 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
   taskId,
   currentListLayout,
   workflowStatus,
-  auditResultActiveKey
+  auditResultActiveKey,
+  assigneeUserNames
 }) => {
   const { projectID } = useCurrentProject();
   const scrollPageNumber = useRef(0);
+  const { username } = useCurrentUser();
 
   const {
     reload,
@@ -77,7 +85,10 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
       <FileModeHeader
         taskId={taskId}
         refresh={reload}
-        workflowStatus={workflowStatus}
+        allowExec={
+          workflowStatus === WorkflowRecordResV2StatusEnum.wait_for_execution &&
+          assigneeUserNames.includes(username)
+        }
       />
 
       <InfiniteScroll

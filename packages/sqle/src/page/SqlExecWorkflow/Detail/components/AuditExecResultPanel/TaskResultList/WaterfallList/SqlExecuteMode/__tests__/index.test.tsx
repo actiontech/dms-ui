@@ -8,6 +8,7 @@ import { TaskResultListLayoutEnum } from '../../../../index.enum';
 import { superRender } from '../../../../../../../../../testUtils/customRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 const mockListData: IAuditTaskSQLResV2[] = [];
 for (let i = 0; i < 50; i++) {
@@ -35,7 +36,8 @@ describe('test WaterfallList/SQLExecuteMode', () => {
       currentListLayout: TaskResultListLayoutEnum.scroll,
       auditResultActiveKey: '123',
       noDuplicate: false,
-      tableFilterInfo: {}
+      tableFilterInfo: {},
+      assigneeUserNames: [mockCurrentUserReturn.username]
     };
     return superRender(<SqlExecuteMode {...{ ..._params, ...params }} />);
   };
