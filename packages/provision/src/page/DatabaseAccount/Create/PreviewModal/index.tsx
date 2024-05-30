@@ -35,9 +35,9 @@ const PreviewModal: React.FC<PreviewModalProps> = ({
           return res.data.data
             ?.map(
               (item) =>
-                `${item.comment}\n${
-                  item.create_statement
-                }\n\t${item.grant_statements?.join('\n\t')}`
+                `${item.comment}\n${item.create_statement}\n\t${
+                  item.grant_statements?.join('\n\t') ?? ''
+                }`
             )
             .join('\n\n');
         }
