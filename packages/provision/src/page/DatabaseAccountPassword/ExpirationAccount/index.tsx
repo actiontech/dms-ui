@@ -73,7 +73,7 @@ const ExpirationAccountList = () => {
       const params: IAuthListDBAccountParams = {
         ...tableFilterInfo,
         ...pagination,
-        filter_by_expired_time_from: dayjs().format('YYYY-MM-DDTHH:mm:ssZ'),
+        filter_by_expired_time_from: '',
         filter_by_expired_time_to: dayjs()
           .add(5, 'day')
           .format('YYYY-MM-DDTHH:mm:ssZ'),
