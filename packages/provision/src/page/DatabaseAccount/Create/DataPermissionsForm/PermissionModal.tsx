@@ -2,7 +2,8 @@ import {
   BasicDrawer,
   BasicSelect,
   EmptyBox,
-  BasicButton
+  BasicButton,
+  BasicToolTips
 } from '@actiontech/shared';
 import { Form, Row, Col, Select, Space, Typography } from 'antd';
 import {
@@ -216,6 +217,15 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
           ?.filter((item) => res.data_operations?.includes(item.value))
           .map((item) => item.label) ?? [];
 
+      const operationsValue =
+        operationOptions
+          ?.filter((item) => res.data_operations?.includes(item.value))
+          .map((item) => item.value) ?? [];
+
+      const includeDatabase = res.data_objects?.some((item) => {
+        return !!item?.database?.length;
+      });
+
       const objectsParams =
         res.data_objects
           ?.map((item) => {
@@ -224,16 +234,21 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
             } else if (item?.database) {
               return item.database;
             }
-            return service ?? '';
+
+            if (!includeDatabase) {
+              return service ?? '';
+            }
+            return '';
           })
-          .flat() ?? [];
+          .flat()
+          .filter((i) => !!i) ?? [];
 
       const curPermission = {
         id:
           editId ??
           customIdGenerator(res.data_objects, res.data_operations || []),
         objectsValue: res.data_objects,
-        operationsValue: res.data_operations ?? [],
+        operationsValue,
         objectsLabel,
         operationsLabel,
         objectsParams
@@ -335,9 +350,16 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
               {fields.map((field, index) => (
                 <Form.Item
                   label={
-                    index === 0
-                      ? t('databaseAccount.create.form.selectObjects')
-                      : ''
+                    index === 0 ? (
+                      <BasicToolTips
+                        suffixIcon
+                        title={t('databaseAccount.create.form.permissionTip')}
+                      >
+                        {t('databaseAccount.create.form.selectObjects')}
+                      </BasicToolTips>
+                    ) : (
+                      ''
+                    )
                   }
                   required={false}
                   key={field.key}

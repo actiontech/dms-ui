@@ -109,7 +109,9 @@ export default {
       selectObjects: '选择数据库表',
       addDatabaseTable: '添加数据库表',
       selectPermission: '选择权限',
-      duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限'
+      duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限',
+      permissionTip:
+        '如果您选定了一个Schema，此时再选中该数据源中的所有数据对象将无意义'
     },
     previewModal: '账号创建预览'
   },
