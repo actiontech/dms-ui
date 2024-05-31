@@ -73,6 +73,17 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
     [activeTabKey, taskInfos]
   );
 
+  const assigneeUserNames = useMemo(() => {
+    return (
+      resetProps.workflowInfo?.record?.workflow_step_list?.find(
+        (v) => v.number === resetProps.workflowInfo?.record?.current_step_number
+      )?.assignee_user_name_list ?? []
+    );
+  }, [
+    resetProps.workflowInfo?.record?.current_step_number,
+    resetProps.workflowInfo?.record?.workflow_step_list
+  ]);
+
   return (
     <AuditExecResultPanelStyleWrapper>
       <div className="audit-result-title">{t('audit.result')}</div>
@@ -178,6 +189,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
           auditResultActiveKey={activeTabKey}
           tableFilterInfo={tableFilterInfo}
           workflowStatus={resetProps.workflowInfo?.record?.status}
+          assigneeUserNames={assigneeUserNames}
           pagination={pagination}
           tableChange={tableChange}
           executeMode={
