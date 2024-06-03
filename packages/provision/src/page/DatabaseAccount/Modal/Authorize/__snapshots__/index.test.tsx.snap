@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/DatabaseAccount/AccountAuthorizeModal render init snap 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          role="dialog"
+          style="width: 480px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <button
+              aria-label="Close"
+              class="ant-modal-close"
+              type="button"
+            >
+              <span
+                class="ant-modal-close-x"
+              >
+                <span
+                  class="custom-icon custom-icon-close css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                账号授权
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <span
+                            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          >
+                            当前账号
+                            :
+                             
+                            test1@%
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class=""
+                        for="userId"
+                        title="授权成员"
+                      >
+                        授权成员
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="userId_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="userId_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="userId_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="userId"
+                                  role="combobox"
+                                  type="search"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="1767103833235787776"
+                              >
+                                1767103833235787776
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-clear"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                class="custom-icon custom-icon-close css-u3jcp4"
+                                role="img"
+                              >
+                                <svg
+                                  fill="currentColor"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
