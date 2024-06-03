@@ -40,6 +40,14 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
         文件信息概览
       </span>
     </div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        编辑上线顺序
+      </span>
+    </button>
   </div>
   <div
     class="ant-list ant-list-vertical ant-list-loading ant-list-something-after-last-item file-execute-mode-list-wrapper css-dev-only-do-not-override-txh9fw"
@@ -277,6 +285,14 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
         文件信息概览
       </span>
     </div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        编辑上线顺序
+      </span>
+    </button>
   </div>
   <div
     class="ant-list ant-list-vertical ant-list-something-after-last-item file-execute-mode-list-wrapper css-dev-only-do-not-override-txh9fw"

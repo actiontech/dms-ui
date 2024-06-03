@@ -4,6 +4,7 @@ import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/servi
 import toJson from 'enzyme-to-json';
 import { WaterfallListProps } from '../index.type';
 import { TaskResultListLayoutEnum } from '../../../index.enum';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('test ExecWorkflow/TaskResultList/WaterfallList', () => {
   it('should match snapshot', () => {
@@ -12,7 +13,8 @@ describe('test ExecWorkflow/TaskResultList/WaterfallList', () => {
       currentListLayout: TaskResultListLayoutEnum.pagination,
       auditResultActiveKey: '123',
       noDuplicate: false,
-      tableFilterInfo: {}
+      tableFilterInfo: {},
+      assigneeUserNames: [mockCurrentUserReturn.username]
     };
 
     expect(

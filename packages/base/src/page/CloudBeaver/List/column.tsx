@@ -9,7 +9,11 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
 import { OperationOperationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { AvatarCom, SQLRenderer } from '@actiontech/shared';
+import {
+  AvatarCom,
+  SQLRenderer,
+  BasicTypographyEllipsis
+} from '@actiontech/shared';
 
 export type CBOperationListFilterParamType = PageInfoWithoutIndexAndSize<
   IListCBOperationLogsParams & {
@@ -117,8 +121,14 @@ export const CBOperationListColumns = (
     {
       dataIndex: 'exec_result',
       title: t('dmsCloudBeaver.operationList.column.execResult'),
+      className: 'ellipsis-column-width',
       render: (result: ICBOperationLog['exec_result']) => {
-        return result || '-';
+        if (!result) {
+          return '-';
+        }
+        return (
+          <BasicTypographyEllipsis tooltipsMaxWidth={500} textCont={result} />
+        );
       },
       filterCustomType: 'select',
       filterKey: 'filter_exec_result'

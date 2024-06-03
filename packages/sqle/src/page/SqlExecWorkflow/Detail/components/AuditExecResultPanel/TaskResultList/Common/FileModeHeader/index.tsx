@@ -5,13 +5,12 @@ import SortableSqlFilesModal from './SortableSqlFilesModal';
 import { useBoolean } from 'ahooks';
 import { Typography } from 'antd';
 import { useParams } from 'react-router-dom';
-import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { FileModeHeaderProps } from './index.type';
 
 const FileModeHeader: React.FC<FileModeHeaderProps> = ({
   taskId,
   refresh,
-  workflowStatus
+  allowExec
 }) => {
   const { t } = useTranslation();
   const { workflowId } = useParams<{ workflowId: string }>();
@@ -30,9 +29,7 @@ const FileModeHeader: React.FC<FileModeHeaderProps> = ({
         </Typography.Text>
       </div>
 
-      <EmptyBox
-        if={workflowStatus === WorkflowRecordResV2StatusEnum.wait_for_execution}
-      >
+      <EmptyBox if={allowExec}>
         <BasicButton onClick={openSortableSQLFilesModal} type="primary">
           {t('execWorkflow.audit.fileModeExecute.extraButtonText')}
         </BasicButton>
