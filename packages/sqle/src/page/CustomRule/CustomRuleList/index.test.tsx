@@ -11,6 +11,8 @@ import configuration from '../../../testUtils/mockApi/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useNavigate } from 'react-router-dom';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import { useSelector } from 'react-redux';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -31,6 +33,13 @@ describe('sqle/CustomRuleList', () => {
   const navigateSpy = jest.fn();
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        globalRuleTemplate: {
+          activeSegmentedKey: RuleManagerSegmentedKey.CustomRule
+        }
+      });
+    });
     jest.useFakeTimers();
     mockUseDbServiceDriver();
     mockUseCurrentPermission();
