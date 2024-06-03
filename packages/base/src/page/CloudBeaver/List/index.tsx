@@ -9,7 +9,7 @@ import {
   ColumnsSettingProps,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useRequest } from 'ahooks';
+import { useRequest, useBoolean } from 'ahooks';
 import {
   useCurrentProject,
   useCurrentUser
@@ -24,7 +24,7 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useMemo, useEffect } from 'react';
 import useMemberTips from '../../../hooks/useMemberTips';
 import useDbService from '../../../hooks/useDbService';
-import { Spin } from 'antd';
+import { Spin, message } from 'antd';
 import useCBOperationTips from '../hooks/useCBOperationTips';
 import CBSqlOperationAuditDetailDrawer from '../Drawer/CBSqlOperationAuditDetailDrawer';
 import { useDispatch } from 'react-redux';
@@ -34,9 +34,14 @@ import {
 } from '../../../store/cloudBeaver';
 import { ModalName } from '../../../data/ModalName';
 import { CloudBeaverOperationLogsListStyleWrapper } from '../style';
+import { useTranslation } from 'react-i18next';
 
 const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
+
+  const [messageApi, contextHolder] = message.useMessage();
 
   const { projectID } = useCurrentProject();
 
@@ -48,8 +53,8 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
 
   const { cbOperationOptions, updateCBOperationList } = useCBOperationTips();
 
-  // const [exporting, { setTrue: exportPending, setFalse: exportDone }] =
-  //   useBoolean();
+  const [exporting, { setTrue: exportPending, setFalse: exportDone }] =
+    useBoolean();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -79,23 +84,26 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
     }
   );
 
-  // const onExport = () => {
-  //   exportPending();
-  //   const hideLoading = messageApi.loading(
-  //     t('dmsCloudBeaver.operationList.exportTips'),
-  //     0
-  //   );
-  //   dms
-  //     .ExportCBOperationLogs({
-  //       project_uid: projectID,
-  //       fuzzy_keyword: searchKeyword,
-  //       ...tableFilterInfo
-  //     })
-  //     .finally(() => {
-  //       exportDone();
-  //       hideLoading();
-  //     });
-  // };
+  const onExport = () => {
+    exportPending();
+    const hideLoading = messageApi.loading(
+      t('dmsCloudBeaver.operationList.exportTips'),
+      0
+    );
+    dms
+      .ExportCBOperationLogs(
+        {
+          project_uid: projectID,
+          fuzzy_keyword: searchKeyword,
+          ...tableFilterInfo
+        },
+        { responseType: 'blob' }
+      )
+      .finally(() => {
+        exportDone();
+        hideLoading();
+      });
+  };
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
@@ -128,7 +136,9 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
       [
         'exec_result',
         {
-          options: cbOperationOptions
+          options: cbOperationOptions,
+          popupMatchSelectWidth: true,
+          className: 'exec-result-filter-item'
         }
       ]
     ]);
@@ -161,6 +171,7 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
 
   return (
     <CloudBeaverOperationLogsListStyleWrapper>
+      {contextHolder}
       <Spin spinning={loading}>
         <OperationStatistics
           total={data?.otherData?.exec_sql_total}
@@ -170,16 +181,16 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
         />
         <TableToolbar
           refreshButton={{ refresh }}
-          // actions={[
-          //   {
-          //     key: 'modifyPassword',
-          //     text: t('dmsCloudBeaver.operationList.exportButton'),
-          //     buttonProps: {
-          //       onClick: onExport,
-          //       loading: exporting
-          //     }
-          //   }
-          // ]}
+          actions={[
+            {
+              key: 'modifyPassword',
+              text: t('dmsCloudBeaver.operationList.exportButton'),
+              buttonProps: {
+                onClick: onExport,
+                loading: exporting
+              }
+            }
+          ]}
           filterButton={{
             filterButtonMeta,
             updateAllSelectedFilterItem

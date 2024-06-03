@@ -14,6 +14,7 @@ import renderRolesInfo from '../Common/renderRolesInfo';
 import IsProjectAdmin from '../components/IsProjectAdmin';
 import { BasicToolTips } from '@actiontech/shared';
 import { SystemRole } from '@actiontech/shared/lib/enum';
+import { MemberPermissionStyleWrapper } from '../style';
 
 const commonRoleOperateRangesRender = (
   roles: IListMemberRoleWithOpRange[],
@@ -34,9 +35,12 @@ const commonRoleOperateRangesRender = (
   }
 
   return (
-    <BasicToolTips title={renderRolesInfo(roles, false)}>
+    <MemberPermissionStyleWrapper
+      titleWidth={500}
+      title={renderRolesInfo(roles, false)}
+    >
       {renderRolesInfo(roles, true)}
-    </BasicToolTips>
+    </MemberPermissionStyleWrapper>
   );
 };
 
@@ -44,12 +48,15 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'user',
     title: t('common.username'),
+    width: '25%',
     render: (user: IUidWithName) => {
       return user?.name ?? '-';
     }
   },
   {
     dataIndex: 'role_with_op_ranges',
+    width: '45%',
+    className: 'ellipsis-column-width',
     title: () => {
       return (
         <BasicToolTips
@@ -73,6 +80,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'is_project_admin',
     title: t('dmsMember.memberList.columns.isProjectAdmin'),
+    width: '20%',
     render: (isAdmin: boolean) => {
       if (typeof isAdmin !== 'boolean') {
         return t('common.unknownStatus');
@@ -140,6 +148,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
   },
   {
     dataIndex: 'role_with_op_ranges',
+    className: 'ellipsis-column-width',
     title: () => {
       return (
         <BasicToolTips

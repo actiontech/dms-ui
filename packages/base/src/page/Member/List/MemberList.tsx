@@ -131,6 +131,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={!projectArchive && actionPermission ? actions : undefined}
+        scroll={{}}
       />
     </>
   );

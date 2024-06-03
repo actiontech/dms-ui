@@ -8,6 +8,11 @@ exports[`test ExecWorkflow/TaskResultList/WaterfallList should match snapshot 1`
     executeMode="sqls"
     sqlComponent={
       <SqlExecuteMode
+        assigneeUserNames={
+          [
+            "admin",
+          ]
+        }
         auditResultActiveKey="123"
         currentListLayout="pagination"
         noDuplicate={false}
@@ -17,6 +22,11 @@ exports[`test ExecWorkflow/TaskResultList/WaterfallList should match snapshot 1`
     }
     sqlFileComponent={
       <FileExecuteMode
+        assigneeUserNames={
+          [
+            "admin",
+          ]
+        }
         auditResultActiveKey="123"
         currentListLayout="pagination"
         noDuplicate={false}
@@ -36,6 +46,11 @@ exports[`test ExecWorkflow/TaskResultList/WaterfallList should match snapshot 2`
     executeMode="sql_file"
     sqlComponent={
       <SqlExecuteMode
+        assigneeUserNames={
+          [
+            "admin",
+          ]
+        }
         auditResultActiveKey="123"
         currentListLayout="pagination"
         noDuplicate={false}
@@ -45,6 +60,11 @@ exports[`test ExecWorkflow/TaskResultList/WaterfallList should match snapshot 2`
     }
     sqlFileComponent={
       <FileExecuteMode
+        assigneeUserNames={
+          [
+            "admin",
+          ]
+        }
         auditResultActiveKey="123"
         currentListLayout="pagination"
         noDuplicate={false}

@@ -3,7 +3,7 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { WhitelistMatchTypeLabel } from '../Drawer/WhitelistForm';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { SQLRenderer } from '@actiontech/shared';
+import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
 
 export const WhitelistColumn =
   (): ActiontechTableColumn<IAuditWhitelistResV1> => {
@@ -11,7 +11,7 @@ export const WhitelistColumn =
       {
         dataIndex: 'value',
         title: () => t('whitelist.table.sql'),
-        width: 600,
+        className: 'ellipsis-column-width',
         render: (sql?: string) => {
           if (!!sql) {
             return <SQLRenderer.Snippet sql={sql} rows={2} showCopyIcon />;
@@ -21,7 +21,12 @@ export const WhitelistColumn =
       },
       {
         dataIndex: 'desc',
-        title: () => t('whitelist.table.desc')
+        title: () => t('whitelist.table.desc'),
+        className: 'ellipsis-column-width',
+        render: (desc?: string) => {
+          if (!desc) return '-';
+          return <BasicTypographyEllipsis textCont={desc} />;
+        }
       },
       {
         dataIndex: 'match_type',

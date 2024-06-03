@@ -16,6 +16,7 @@ export const commonColumn: (
       dataIndex: 'workflow_name',
       title: () => t('order.order.name'),
       className: 'dashboard-common-list-table-name-column',
+      width: '30%',
       render: (text, record) => {
         return (
           <EmptyBox if={!!text && !!record.project_name} defaultNode={text}>
@@ -35,6 +36,7 @@ export const commonColumn: (
       dataIndex: 'desc',
       title: () => t('order.order.desc'),
       className: 'dashboard-common-list-table-desc-column',
+      width: '45%',
       render: (desc: string, record: IWorkflowDetailResV1) =>
         desc ? (
           <BasicTypographyEllipsis
@@ -53,7 +55,7 @@ export const commonColumn: (
     {
       dataIndex: 'create_time',
       title: () => t('order.order.createTime'),
-      width: 260,
+      width: '25%',
       render: (time) => {
         return formatTime(time, '-');
       }

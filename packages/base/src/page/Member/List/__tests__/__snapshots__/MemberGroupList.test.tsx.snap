@@ -51,7 +51,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         用户名
                       </th>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
                         <div
@@ -179,10 +179,10 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         </span>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                         >
                           <div
                             class="ant-space-item"
@@ -295,10 +295,10 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         </span>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                         >
                           <div
                             class="ant-space-item"
@@ -382,10 +382,10 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         </span>
                       </td>
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                         >
                           <div
                             class="ant-space-item"
@@ -498,10 +498,10 @@ exports[`base/MemberGroupList render member group table 1`] = `
                         class="ant-table-cell"
                       />
                       <td
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                         >
                           <div
                             class="ant-space-item"
@@ -779,7 +779,7 @@ exports[`base/MemberGroupList should render empty tips when request not success 
                         用户名
                       </th>
                       <th
-                        class="ant-table-cell"
+                        class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
                         <div

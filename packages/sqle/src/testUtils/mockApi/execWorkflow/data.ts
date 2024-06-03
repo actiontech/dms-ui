@@ -1,6 +1,7 @@
 import {
   IAuditTaskResV1,
-  IGetWorkflowTasksItemV2
+  IGetWorkflowTasksItemV2,
+  IWorkflowResV2
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   AuditTaskResV1AuditLevelEnum,
@@ -164,7 +165,7 @@ export const AuditTaskSQLsData = [
   }
 ];
 
-export const WorkflowsOverviewListData = {
+export const WorkflowsOverviewListData: IWorkflowResV2 = {
   workflow_name: 'workflow_name',
   workflow_id: '1747444197486497792',
   desc: 'this is a desc',
@@ -184,25 +185,25 @@ export const WorkflowsOverviewListData = {
     workflow_step_list: [
       {
         number: 1,
-        type: WorkflowStepResV1TypeEnum.update_workflow,
+        type: WorkflowStepResV2TypeEnum.update_workflow,
         operation_user_name: 'admin',
         operation_time: '2024-01-17T02:58:37Z'
       },
       {
         workflow_step_id: 23,
         number: 2,
-        type: WorkflowStepResV1TypeEnum.sql_review,
+        type: WorkflowStepResV2TypeEnum.sql_review,
         assignee_user_name_list: ['admin'],
         operation_user_name: 'admin',
         operation_time: '2024-01-17T03:36:25Z',
-        state: WorkflowStepResV1StateEnum.approved
+        state: WorkflowStepResV2StateEnum.approved
       },
       {
         workflow_step_id: 24,
         number: 3,
-        type: WorkflowStepResV1TypeEnum.sql_execute,
+        type: WorkflowStepResV2TypeEnum.sql_execute,
         assignee_user_name_list: ['admin'],
-        state: WorkflowStepResV1StateEnum.approved
+        state: WorkflowStepResV2StateEnum.approved
       }
     ]
   },
@@ -220,7 +221,7 @@ export const WorkflowsOverviewListData = {
         {
           workflow_step_id: 21,
           number: 2,
-          type: 'sql_review',
+          type: WorkflowStepResV2TypeEnum.sql_review,
           assignee_user_name_list: ['700200'],
           operation_user_name: 'admin',
           operation_time: '2024-01-17T02:58:16Z',
