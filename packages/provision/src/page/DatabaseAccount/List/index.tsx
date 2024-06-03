@@ -38,15 +38,8 @@ import {
   DatabaseAccountBatchActionSelectedData
 } from '../../../store/databaseAccount';
 import { EventEmitterKey, ModalName } from '../../../data/enum';
-import AccountDiscoveryModal from '../Modal/AccountDiscovery';
 import EventEmitter from '../../../utils/EventEmitter';
 import { Link } from 'react-router-dom';
-import AccountDetailModal from '../Modal/Detail';
-import AccountAuthorizeModal from '../Modal/Authorize';
-import ModifyPasswordModal from '../Modal/ModifyPassword';
-import RenewalPasswordModal from '../Modal/RenewalPassword';
-import BatchModifyPasswordModal from '../Modal/BatchModifyPassword';
-import ManagePasswordModal from '../Modal/ManagePassword';
 import { useSetRecoilState } from 'recoil';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate } from 'react-router-dom';
@@ -322,13 +315,14 @@ const DatabaseAccountList = () => {
       (key: keyof DatabaseAccountListFilterParamType, value: string) => {
         if (key && value) {
           onUpdateFilter(key, value);
+          refreshAccountStatic();
         } else {
           onRefresh();
         }
       }
     );
     return unsubscribe;
-  }, [onRefresh, onUpdateFilter]);
+  }, [onRefresh, onUpdateFilter, refreshAccountStatic]);
 
   return (
     <>
@@ -406,14 +400,6 @@ const DatabaseAccountList = () => {
           }}
         />
       </Spin>
-
-      <AccountDiscoveryModal />
-      <AccountDetailModal />
-      <AccountAuthorizeModal />
-      <ModifyPasswordModal />
-      <RenewalPasswordModal />
-      <BatchModifyPasswordModal />
-      <ManagePasswordModal />
     </>
   );
 };

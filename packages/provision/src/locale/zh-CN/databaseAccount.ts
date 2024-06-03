@@ -102,7 +102,7 @@ export default {
       operation: '数据操作',
       permissionErrorTips: '请添加数据权限',
       syncSuccessTips: '同步字典数据成功',
-      extraEmptyTips: '您还没有为当前模板添加数据权限',
+      extraEmptyTips: '您还没有为当前账号添加数据权限',
       addDataPermission: '添加数据权限',
       editDataPermission: '编辑数据权限',
       resetPermission: '清除所有权限',

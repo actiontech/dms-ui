@@ -77,13 +77,18 @@ const PreviewModal: React.FC<PreviewModalProps> = ({
       size="large"
       footer={
         <>
-          <BasicButton disabled={createLoading} onClick={closeModal}>
+          <BasicButton
+            disabled={createLoading}
+            onClick={closeModal}
+            className="close-preview-button"
+          >
             {t('common.close')}
           </BasicButton>
           <BasicButton
             type="primary"
             loading={createLoading}
             onClick={onCreate}
+            className="submit-preview-button"
           >
             {t('common.submit')}
           </BasicButton>

@@ -35,6 +35,9 @@ const useSecurityPolicy = () => {
           setSecurityPolicyList(res.data.data ?? []);
         }
       })
+      .catch(() => {
+        setSecurityPolicyList([]);
+      })
       .finally(() => {
         setFalse();
       });
