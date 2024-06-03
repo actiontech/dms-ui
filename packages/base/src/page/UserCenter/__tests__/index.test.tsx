@@ -1,0 +1,139 @@
+import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import UserCenter from '../index';
+import { screen, cleanup, fireEvent, act } from '@testing-library/react';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import userCenter from '../../../testUtils/mockApi/userCenter';
+import { useDispatch } from 'react-redux';
+import { ModalName } from '../../../data/ModalName';
+import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useDispatch: jest.fn()
+  };
+});
+
+describe('base/UserCenter', () => {
+  let userListSpy: jest.SpyInstance;
+  let roleListSpy: jest.SpyInstance;
+  let permissionListSpy: jest.SpyInstance;
+  const dispatchSpy = jest.fn();
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+    userListSpy = userCenter.getUserList();
+    roleListSpy = userCenter.getRoleList();
+    permissionListSpy = userCenter.getOpPermissionsList();
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    cleanup();
+  });
+
+  it('should render user list when it first entered the user center', async () => {
+    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(userListSpy).toHaveBeenCalledTimes(1);
+    expect(userListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20
+    });
+    fireEvent.click(screen.getByText('添加用户'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'userCenter/updateModalStatus',
+      payload: {
+        modalName: ModalName.DMS_Add_User,
+        status: true
+      }
+    });
+    expect(
+      getBySelector('.custom-icon-refresh', baseElement)
+    ).toBeInTheDocument();
+    expect(
+      getBySelector('.ant-segmented-group', baseElement)
+    ).toBeInTheDocument();
+  });
+
+  it('switch to role list', async () => {
+    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(userListSpy).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByText('角色列表'));
+    await act(async () => jest.advanceTimersByTime(3100));
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
+    expect(roleListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20
+    });
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('添加角色'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'userCenter/updateModalStatus',
+      payload: {
+        modalName: ModalName.DMS_Add_Role,
+        status: true
+      }
+    });
+  });
+
+  it('switch to operate permission list', async () => {
+    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(userListSpy).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByText('操作权限列表'));
+    await act(async () => jest.advanceTimersByTime(3100));
+    expect(permissionListSpy).toHaveBeenCalledTimes(1);
+    expect(permissionListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20,
+      filter_by_target: ListOpPermissionsFilterByTargetEnum.all
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should refresh table when click refresh icon', async () => {
+    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    expect(userListSpy).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
+
+    expect(userListSpy).toHaveBeenCalledTimes(2);
+    expect(userListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('角色列表'));
+    expect(roleListSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
+    expect(roleListSpy).toHaveBeenCalledTimes(2);
+    expect(roleListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('操作权限列表'));
+    expect(permissionListSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(getBySelector('.custom-icon-refresh', baseElement));
+    expect(permissionListSpy).toHaveBeenCalledTimes(2);
+    expect(permissionListSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20,
+      filter_by_target: ListOpPermissionsFilterByTargetEnum.all
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+  });
+});

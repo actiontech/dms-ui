@@ -112,6 +112,14 @@ describe('sqle/RuleManager', () => {
   });
 
   it('should render custom rule list', async () => {
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        globalRuleTemplate: {
+          modalStatus: { [ModalName.Clone_Rule_Template]: false },
+          activeSegmentedKey: RuleManagerSegmentedKey.CustomRule
+        }
+      })
+    );
     const getCustomRulesSpy = rule_template.getCustomRules();
     mockDriver();
     const { baseElement } = customRender();

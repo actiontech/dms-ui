@@ -18,35 +18,44 @@ import {
 import { IconDisabledRule } from '../../../icon/Rule';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 const CustomRuleList: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [messageApi, messageContextHolder] = message.useMessage();
+  const { activeKey } = useRuleManagerSegmented();
+
   const {
     data: ruleList,
     run: getCustomRuleList,
     loading,
     refresh
-  } = useRequest((dbType: string) =>
-    rule_template
-      .getCustomRulesV1({
-        filter_db_type: dbType,
-        filter_desc: searchRuleName
-      })
-      .then(
-        (res) =>
-          res.data.data?.map((v) => ({
-            ...v,
-            rule_name: v.rule_id,
-            level: v.level as RuleResV1LevelEnum | undefined
-          })) ?? []
-      )
+  } = useRequest(
+    (dbType: string) =>
+      rule_template
+        .getCustomRulesV1({
+          filter_db_type: dbType,
+          filter_desc: searchRuleName
+        })
+        .then(
+          (res) =>
+            res.data.data?.map((v) => ({
+              ...v,
+              rule_name: v.rule_id,
+              level: v.level as RuleResV1LevelEnum | undefined
+            })) ?? []
+        ),
+    {
+      refreshDeps: [activeKey],
+      ready: activeKey === RuleManagerSegmentedKey.CustomRule
+    }
   );
 
   const { searchRuleName, DbFilter, setSearchRuleName } =
-    useCustomRuleFilterForm(getCustomRuleList);
+    useCustomRuleFilterForm(getCustomRuleList, activeKey);
 
   const deleteRule = (item: ICustomRuleResV1) => {
     setDeleteLoading(true);
