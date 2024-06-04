@@ -407,6 +407,231 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
       </div>
     </div>
     <div
+      class="ant-form-item has-label-tip form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+        >
+          <label
+            class=""
+            title=""
+          >
+            <div
+              class="label-cont-custom"
+            >
+              <div>
+                <span
+                  class="custom-icon-ellipse css-u3jcp4"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      fill="#E8F3FF"
+                      height="16"
+                      rx="3"
+                      width="16"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      fill="white"
+                      r="3"
+                      stroke="#4583FF"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </span>
+                <span>
+                  选择上线模式
+                </span>
+              </div>
+              <div
+                class="tip-content-box"
+              >
+                当选择文件模式上线时，审核结果将以文件为单位进行聚合展示
+              </div>
+            </div>
+          </label>
+        </div>
+        <div
+          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+        >
+          <label
+            class=""
+            for="1_exec_mode"
+            title=""
+          />
+        </div>
+        <div
+          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <div
+                class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                style="margin-left: -5px; margin-right: -5px;"
+              >
+                <div
+                  class="ant-col ant-col-12 css-dev-only-do-not-override-txh9fw"
+                  style="padding-left: 5px; padding-right: 5px;"
+                >
+                  <div
+                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                  >
+                    <span
+                      class="actiontech-mode-switcher-item-icon"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class="actiontech-mode-switcher-item-text"
+                    >
+                      SQL模式
+                    </span>
+                    <div
+                      class="active-icon-wrapper"
+                    >
+                      <span
+                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                      >
+                        <svg
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g
+                            id="Frame"
+                          >
+                            <path
+                              d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                              id="Vector"
+                              stroke="#FCFBF9"
+                              stroke-linejoin="round"
+                              stroke-width="1.5"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-col ant-col-12 css-dev-only-do-not-override-txh9fw"
+                  style="padding-left: 5px; padding-right: 5px;"
+                >
+                  <div
+                    class="actiontech-mode-switcher-item css-1x7j8vu"
+                  >
+                    <span
+                      class="actiontech-mode-switcher-item-icon"
+                    >
+                      <span
+                        class="custom-icon  css-u3jcp4"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class="actiontech-mode-switcher-item-text"
+                    >
+                      文件模式
+                    </span>
+                    <div
+                      class="active-icon-wrapper"
+                      hidden=""
+                    >
+                      <span
+                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                      >
+                        <svg
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g
+                            id="Frame"
+                          >
+                            <path
+                              d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                              id="Vector"
+                              stroke="#FCFBF9"
+                              stroke-linejoin="round"
+                              stroke-width="1.5"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
       class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
     >
       <div
