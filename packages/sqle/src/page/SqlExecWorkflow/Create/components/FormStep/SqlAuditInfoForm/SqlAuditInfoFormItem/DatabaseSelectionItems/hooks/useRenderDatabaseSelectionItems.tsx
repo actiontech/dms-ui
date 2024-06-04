@@ -47,7 +47,6 @@ const useRenderDatabaseSelectionItems = ({
       });
   };
 
-  // #if [ee]
   const getSupportedFileModeByInstanceType = (key: string, dbType: string) => {
     system
       .getSystemModuleStatus({
@@ -62,7 +61,6 @@ const useRenderDatabaseSelectionItems = ({
         }
       });
   };
-  // #endif
 
   const updateRuleTemplateNameAndDbType = (
     key: string,
@@ -77,9 +75,7 @@ const useRenderDatabaseSelectionItems = ({
             ruleTemplate: res.data.data?.rule_template
           });
 
-          // #if [ee]
           getSupportedFileModeByInstanceType(key, res.data.data?.db_type ?? '');
-          // #endif
         }
       });
   };
