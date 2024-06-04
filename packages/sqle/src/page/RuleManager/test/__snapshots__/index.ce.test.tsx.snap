@@ -1368,7 +1368,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                         class="title"
                       >
                         Action 
-                        SQLE
+                        DMS
                       </div>
                       <p
                         class="cont-tip"
@@ -1472,7 +1472,7 @@ exports[`sqle/RuleManager CE should match snapshot 1`] = `
                         class="title"
                       >
                         Action 
-                        SQLE
+                        DMS
                       </div>
                       <p
                         class="cont-tip"

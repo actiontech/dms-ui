@@ -1,0 +1,598 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test diagnosis App should render App 1`] = `
+<div>
+  <section
+    class="css-m36rcd"
+  >
+    <div
+      class="dms-layout-side css-13dah2i"
+    >
+      <div
+        class="dms-layout-side-start"
+      >
+        <div
+          class="home-page-shortcut"
+        >
+          <div
+            class="title"
+          >
+            <span
+              class="label label-primary"
+            >
+              Action
+            </span>
+            <span
+              class="label label-base"
+            >
+              Diagnosis
+            </span>
+          </div>
+        </div>
+        <ul
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-1thf7qv"
+          data-menu-list="true"
+          role="menu"
+          tabindex="0"
+        >
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-/monitor-source-config"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.95576 13.5C5.73293 12.5456 4.72809 11.7643 4.31546 11.2494C3.49234 10.2223 3 8.91862 3 7.5C3 4.18629 5.68629 1.5 9 1.5C12.3137 1.5 15 4.18629 15 7.5C15 8.91937 14.5071 10.2236 13.6832 11.251C13.2708 11.7653 12.2669 12.5457 12.0443 13.5H5.95576ZM12 15V15.75C12 16.5785 11.3285 17.25 10.5 17.25H7.5C6.67157 17.25 6 16.5785 6 15.75V15H12ZM9.75 7.5036V4.5L6.375 9.0036H8.25V12.0036L11.625 7.5036H9.75Z"
+                  fill="#C3C6CD"
+                />
+                <path
+                  d="M12 15V15.75C12 16.5784 11.3285 17.25 10.5 17.25H7.5C6.67157 17.25 6 16.5784 6 15.75V15H12Z"
+                  fill="#8A8F99"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              监控源配置
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-/user-management"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="anticon ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.522 1.88408L8 0.666748L13.478 1.88408C13.626 1.91699 13.7584 1.99939 13.8533 2.11768C13.9482 2.23598 14 2.38309 14 2.53475V9.19275C14 9.85124 13.8373 10.4995 13.5266 11.0801C13.2158 11.6606 12.7666 12.1555 12.2187 12.5207L8 15.3334L3.78133 12.5207C3.23352 12.1556 2.78431 11.6608 2.47357 11.0804C2.16282 10.5 2.00016 9.85179 2 9.19341V2.53475C2.00003 2.38309 2.05176 2.23598 2.14666 2.11768C2.24156 1.99939 2.37396 1.91699 2.522 1.88408ZM8 7.33341C8.44203 7.33341 8.86595 7.15782 9.17851 6.84526C9.49107 6.5327 9.66667 6.10878 9.66667 5.66675C9.66667 5.22472 9.49107 4.8008 9.17851 4.48824C8.86595 4.17568 8.44203 4.00008 8 4.00008C7.55797 4.00008 7.13405 4.17568 6.82149 4.48824C6.50893 4.8008 6.33333 5.22472 6.33333 5.66675C6.33333 6.10878 6.50893 6.5327 6.82149 6.84526C7.13405 7.15782 7.55797 7.33341 8 7.33341ZM5.018 10.6667H10.982C10.9012 9.93235 10.5522 9.2536 10.0019 8.76056C9.45168 8.26753 8.73883 7.99489 8 7.99489C7.26117 7.99489 6.54832 8.26753 5.99805 8.76056C5.44779 9.2536 5.09881 9.93235 5.018 10.6667Z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              用户管理
+            </span>
+          </li>
+        </ul>
+        <div
+          aria-hidden="true"
+          style="display: none;"
+        />
+      </div>
+      <div
+        class="dms-layout-side-end"
+      >
+        <span
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-1thf7qv"
+        >
+          <span
+            class="ant-avatar-string"
+            style="transform: scale(1) translateX(-50%);"
+          />
+        </span>
+      </div>
+    </div>
+    <div
+      class="dms-layout-content"
+    >
+      <section>
+        <div
+          class="actiontech-page-header-namespace css-1xspr0w"
+        >
+          <div
+            class="title"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+              >
+                监控源配置
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-4mxe6b ant-btn-primary basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <span
+                  class="custom-icon custom-icon-add css-u3jcp4"
+                  role="img"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span>
+                添加服务器监控源
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="segmented-tabs-wrapper"
+        >
+          <div
+            class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-1thf7qv"
+          >
+            <div
+              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1thf7qv"
+            >
+              <div
+                class="ant-segmented-group"
+              >
+                <label
+                  class="ant-segmented-item ant-segmented-item-selected"
+                >
+                  <input
+                    checked=""
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="服务器监控源"
+                  >
+                    服务器监控源
+                  </div>
+                </label>
+                <label
+                  class="ant-segmented-item"
+                >
+                  <input
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="数据库监控源"
+                  >
+                    数据库监控源
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center flex-space-between "
+              style="margin-left: 12px;"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-1qauwux"
+                >
+                  <input
+                    class="ant-input ant-input-sm css-dev-only-do-not-override-1qauwux"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <span
+                      class="custom-icon custom-icon-search css-u3jcp4"
+                      role="img"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-4mxe6b ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-loading basic-button-wrapper css-geipcv"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon ant-btn-loading-icon"
+                  >
+                    <span
+                      aria-label="loading"
+                      class="anticon anticon-loading anticon-spin"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="loading"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="0 0 1024 1024"
+                        width="1em"
+                      >
+                        <path
+                          d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+          >
+            <div
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-1c67sbi"
+            >
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-1c67sbi"
+              >
+                <div>
+                  <div
+                    aria-busy="true"
+                    aria-live="polite"
+                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1c67sbi"
+                  >
+                    <span
+                      class="custom-icon-spin-dot css-u3jcp4"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="30px"
+                        viewBox="0 0 24 30"
+                        width="24px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="10"
+                          opacity="0.2"
+                          width="4"
+                          x="0"
+                          y="10"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            attributeType="XML"
+                            begin="0s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="0.2; 1; .2"
+                          />
+                          <animate
+                            attributeName="height"
+                            attributeType="XML"
+                            begin="0s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 20; 10"
+                          />
+                          <animate
+                            attributeName="y"
+                            attributeType="XML"
+                            begin="0s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 5; 10"
+                          />
+                        </rect>
+                        <rect
+                          fill="currentColor"
+                          height="10"
+                          opacity="0.2"
+                          width="4"
+                          x="8"
+                          y="10"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            attributeType="XML"
+                            begin="0.15s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="0.2; 1; .2"
+                          />
+                          <animate
+                            attributeName="height"
+                            attributeType="XML"
+                            begin="0.15s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 20; 10"
+                          />
+                          <animate
+                            attributeName="y"
+                            attributeType="XML"
+                            begin="0.15s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 5; 10"
+                          />
+                        </rect>
+                        <rect
+                          fill="currentColor"
+                          height="10"
+                          opacity="0.2"
+                          width="4"
+                          x="16"
+                          y="10"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            attributeType="XML"
+                            begin="0.3s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="0.2; 1; .2"
+                          />
+                          <animate
+                            attributeName="height"
+                            attributeType="XML"
+                            begin="0.3s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 20; 10"
+                          />
+                          <animate
+                            attributeName="y"
+                            attributeType="XML"
+                            begin="0.3s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 5; 10"
+                          />
+                        </rect>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="ant-spin-container ant-spin-blur"
+                >
+                  <div
+                    class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                  >
+                    <div
+                      class="ant-table-container"
+                    >
+                      <div
+                        class="ant-table-content"
+                        style="overflow-x: auto; overflow-y: hidden;"
+                      >
+                        <table
+                          style="min-width: 100%; table-layout: auto;"
+                        >
+                          <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col
+                              style="width: 164px;"
+                            />
+                          </colgroup>
+                          <thead
+                            class="ant-table-thead"
+                          >
+                            <tr>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                监控源名
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                主机IP
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                SSH端口
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                SSH用户名
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                创建时间
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                状态
+                              </th>
+                              <th
+                                class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                scope="col"
+                                style="position: sticky; right: 0px;"
+                              >
+                                操作
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="ant-table-tbody"
+                          >
+                            <tr
+                              aria-hidden="true"
+                              class="ant-table-measure-row"
+                              style="height: 0px; font-size: 0px;"
+                            >
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-placeholder"
+                            >
+                              <td
+                                class="ant-table-cell"
+                                colspan="7"
+                              >
+                                <div
+                                  class="ant-table-expanded-row-fixed"
+                                  style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                                />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
+`;

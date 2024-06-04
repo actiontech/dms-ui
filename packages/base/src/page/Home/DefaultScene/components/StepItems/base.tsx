@@ -144,3 +144,26 @@ export const getDataExportTask: (
     ]
   };
 };
+
+export const getDataMask: (
+  arg: DevopsStepsProps
+) => UserDevopsStepsFactory[0]['children'][0] = ({ navigate, projectID }) => {
+  return {
+    key: 'dataMask',
+    title: t('dmsHome.defaultScene.steps.queryAndModify.innerContents.title_3'),
+    content: t(
+      'dmsHome.defaultScene.steps.queryAndModify.innerContents.content_3'
+    ),
+    buttons: [
+      {
+        key: 'check-data-mask-rule',
+        label: t(
+          'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_3_0'
+        ),
+        action: () => {
+          navigate(`/project/${projectID}/data-mask-rule-overview`);
+        }
+      }
+    ]
+  };
+};

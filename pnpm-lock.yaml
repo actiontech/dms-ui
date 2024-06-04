@@ -284,9 +284,24 @@ importers:
       babel-preset-react-app:
         specifier: ^10.0.1
         version: 10.0.1
+      provision:
+        specifier: workspace:^
+        version: link:../provision
       sqle:
         specifier: workspace:^
         version: link:../sqle
+
+  packages/diagnosis:
+    dependencies:
+      '@actiontech/shared':
+        specifier: workspace:^1.0.0
+        version: link:../shared
+
+  packages/provision:
+    dependencies:
+      '@actiontech/shared':
+        specifier: workspace:^1.0.0
+        version: link:../shared
 
   packages/shared: {}
 
@@ -12479,7 +12494,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
