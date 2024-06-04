@@ -167,7 +167,7 @@ const DatabaseAccountList = () => {
   }, [userIDOptions, serviceOptions, tableFilterInfo]);
 
   const onUpdateFilter = useCallback(
-    (key: keyof DatabaseAccountListFilterParamType, value: string) => {
+    (key: keyof DatabaseAccountListFilterParamType, value?: string) => {
       updateAllSelectedFilterItem(true);
       updateTableFilterInfo({
         ...tableFilterInfo,
@@ -179,7 +179,7 @@ const DatabaseAccountList = () => {
   );
 
   const onSetLockedStatus = useCallback(
-    (lock: boolean, id: string) => {
+    (lock: boolean, id?: string) => {
       dbAccountService
         .AuthUpdateDBAccount({
           project_uid: projectID,
@@ -203,7 +203,7 @@ const DatabaseAccountList = () => {
   );
 
   const onSetManagedStatus = useCallback(
-    (managed: boolean, id: string) => {
+    (managed: boolean, id?: string) => {
       dbAccountService
         .AuthUpdateDBAccount({
           project_uid: projectID,
@@ -225,11 +225,11 @@ const DatabaseAccountList = () => {
   );
 
   const onDeleteAccount = useCallback(
-    (id: string) => {
+    (id?: string) => {
       dbAccountService
         .AuthDelDBAccount({
           project_uid: projectID,
-          db_account_uid: id
+          db_account_uid: id ?? ''
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
@@ -254,7 +254,7 @@ const DatabaseAccountList = () => {
   );
 
   const onNavigateToUpdatePage = useCallback(
-    (id: string) => {
+    (id?: string) => {
       navigate(`/provision/project/${projectID}/database-account/update/${id}`);
     },
     [navigate, projectID]

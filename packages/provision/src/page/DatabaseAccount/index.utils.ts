@@ -3,7 +3,9 @@ import {
   IDBAccountDataPermission,
   IListDBAccount
 } from '@actiontech/shared/lib/api/provision/service/common';
+import { IAuthListDataOperationSetsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 import { PermissionsType, IDataObjects } from './index.type';
+import qs from 'query-string';
 
 export const getObjectsLabelByDataObjects = (
   dataObjects?: IDataObjects[],
@@ -60,10 +62,14 @@ export const generateDataPermissionValueByDataPermission = (
         if (name) {
           objectsLabel.push(name);
         }
-        const value = objectsValue.find((i) => i.database === database_uid);
+        const value = objectsValue.find((i) => {
+          return i.database === database_uid;
+        });
 
         if (database_uid && value) {
-          if (!table_uid) return;
+          if (!table_uid) {
+            return;
+          }
           value.tables = value.tables
             ? [...value.tables, table_uid]
             : [table_uid];
@@ -110,3 +116,7 @@ export const accountNameRender = (account: IListDBAccount['account_info']) => {
   }
   return `${account?.user}@${account.hostname}`;
 };
+
+export const getOperationSetsParamsSerializer = (
+  params: IAuthListDataOperationSetsParams
+) => qs.stringify(params);

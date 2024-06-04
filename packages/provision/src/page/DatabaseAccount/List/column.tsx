@@ -25,7 +25,7 @@ export type DatabaseAccountListFilterParamType = PageInfoWithoutIndexAndSize<
 export const DatabaseAccountListColumns = (
   onUpdateFilter: (
     key: keyof DatabaseAccountListFilterParamType,
-    value: string
+    value?: string
   ) => void
 ): ActiontechTableColumn<
   IListDBAccount,
@@ -45,9 +45,7 @@ export const DatabaseAccountListColumns = (
       render: (value: IListDBAccount['db_service']) => {
         return (
           <Typography.Link
-            onClick={() =>
-              onUpdateFilter('filter_by_db_service', value?.uid ?? '')
-            }
+            onClick={() => onUpdateFilter('filter_by_db_service', value?.uid)}
           >
             {value?.name || '-'}
           </Typography.Link>
@@ -119,10 +117,10 @@ export const DatabaseAccountListColumns = (
             {value.map((i) => {
               return (
                 <AvatarCom
-                  onClick={() => onUpdateFilter('filter_by_user', i?.uid ?? '')}
+                  onClick={() => onUpdateFilter('filter_by_user', i?.uid)}
                   key={i.uid}
                   size="small"
-                  name={i.name ?? ''}
+                  name={i.name}
                 />
               );
             })}
@@ -142,10 +140,10 @@ export const DatabaseAccountListColumns = (
 
 export const DatabaseAccountListActions = (
   onOpenModal: (name: ModalName, record?: IListDBAccount) => void,
-  onSetLockedStatus: (lock: boolean, id: string) => void,
-  onSetManagedStatus: (managed: boolean, id: string) => void,
-  onDeleteAccount: (id: string) => void,
-  onNavigateToUpdatePage: (id: string) => void
+  onSetLockedStatus: (lock: boolean, id?: string) => void,
+  onSetManagedStatus: (managed: boolean, id?: string) => void,
+  onDeleteAccount: (id?: string) => void,
+  onNavigateToUpdatePage: (id?: string) => void
 ): {
   moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IListDBAccount>[];
   buttons: ActiontechTableActionMeta<IListDBAccount>[];
@@ -183,20 +181,18 @@ export const DatabaseAccountListActions = (
     {
       key: 'modify_permission',
       text: t('databaseAccount.list.action.modifyPermission'),
-      onClick: (record) => onNavigateToUpdatePage(record?.db_account_uid ?? '')
+      onClick: (record) => onNavigateToUpdatePage(record?.db_account_uid)
     },
     {
       key: 'account_disable',
       text: t('databaseAccount.list.action.disable'),
-      onClick: (record) =>
-        onSetLockedStatus(true, record?.db_account_uid ?? ''),
+      onClick: (record) => onSetLockedStatus(true, record?.db_account_uid),
       permissions: (record) => record?.status === ListDBAccountStatusEnum.unlock
     },
     {
       key: 'account_enable',
       text: t('databaseAccount.list.action.enable'),
-      onClick: (record) =>
-        onSetLockedStatus(false, record?.db_account_uid ?? ''),
+      onClick: (record) => onSetLockedStatus(false, record?.db_account_uid),
       permissions: (record) => record?.status === ListDBAccountStatusEnum.lock
     },
     {
@@ -209,7 +205,7 @@ export const DatabaseAccountListActions = (
         okText: t('common.ok'),
         cancelText: t('common.cancel'),
         onConfirm: () => {
-          onDeleteAccount(record?.db_account_uid ?? '');
+          onDeleteAccount(record?.db_account_uid);
         }
       })
     },
@@ -228,7 +224,7 @@ export const DatabaseAccountListActions = (
         okText: t('common.ok'),
         cancelText: t('common.cancel'),
         onConfirm: () => {
-          onSetManagedStatus(false, record?.db_account_uid ?? '');
+          onSetManagedStatus(false, record?.db_account_uid);
         }
       }),
       permissions: (record) => !!record?.platform_managed

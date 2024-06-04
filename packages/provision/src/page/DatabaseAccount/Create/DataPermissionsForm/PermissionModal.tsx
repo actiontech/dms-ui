@@ -25,13 +25,13 @@ import { useRequest } from 'ahooks';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { DefaultOptionType } from 'antd/es/select';
 import { cloneDeep, isEqual } from 'lodash';
-import qs from 'query-string';
 import {
   getObjectsLabelByDataObjects,
   customIdGenerator
 } from '../../index.utils';
 import { EventEmitterKey } from '../../../../data/enum';
 import EventEmitter from '../../../../utils/EventEmitter';
+import { getOperationSetsParamsSerializer } from '../../index.utils';
 
 const defaultParams = {
   page_index: 1,
@@ -129,7 +129,7 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
             ...defaultParams
           },
           {
-            paramsSerializer: (params) => qs.stringify(params)
+            paramsSerializer: getOperationSetsParamsSerializer
           }
         )
         .then((res) => {
