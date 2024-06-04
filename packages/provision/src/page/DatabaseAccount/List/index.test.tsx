@@ -121,6 +121,32 @@ describe('provision/DatabaseAccount/List', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('filter data with search', async () => {
+    superRender(<DatabaseAccountList />);
+    expect(authListDBAccountSpy).toHaveBeenCalled();
+    const searchText = 'search text';
+    const inputEle = getBySelector('#actiontech-table-search-input');
+    fireEvent.change(inputEle, {
+      target: { value: searchText }
+    });
+
+    await act(async () => {
+      fireEvent.keyDown(inputEle, {
+        key: 'Enter',
+        code: 'Enter',
+        keyCode: 13
+      });
+      await jest.advanceTimersByTime(300);
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(authListDBAccountSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 20,
+      fuzzy_keyword: searchText,
+      project_uid: mockProjectInfo.projectID
+    });
+  });
+
   test('render emit "Refresh_Account_Management_List_Table" event', async () => {
     superRender(<DatabaseAccountList />);
     await act(async () => jest.advanceTimersByTime(3000));

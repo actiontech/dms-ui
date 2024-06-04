@@ -203,4 +203,25 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(100));
   });
+
+  it('render verify password consistency', async () => {
+    const rejectSpy = jest.spyOn(Promise, 'reject');
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => {
+      fireEvent.change(getBySelector('#passwords_0_password'), {
+        target: { value: '123' }
+      });
+      await jest.advanceTimersByTime(100);
+    });
+
+    await act(async () => {
+      fireEvent.change(getBySelector('#passwords_0_confirm_password'), {
+        target: { value: '234' }
+      });
+      await jest.advanceTimersByTime(100);
+    });
+    expect(rejectSpy).toHaveBeenCalled();
+    expect(rejectSpy).toHaveBeenCalledWith(new Error('您输入的两个密码不匹配'));
+  });
 });

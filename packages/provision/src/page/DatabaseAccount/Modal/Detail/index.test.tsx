@@ -12,6 +12,8 @@ import { ModalName } from '../../../../data/enum';
 import DatabaseAccountDetailModal from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { databaseAccountDetailMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
 
 describe('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
   let authGetDBAccountSpy: jest.SpyInstance;
@@ -51,6 +53,8 @@ describe('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
     expect(authGetDBAccountSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('账号详情')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('关 闭'));
+    await act(async () => jest.advanceTimersByTime(100));
   });
 
   it('render click copy password', async () => {
@@ -78,6 +82,31 @@ describe('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
   });
 
   it('render click copy all', async () => {
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    fireEvent.click(screen.getByText('全文复制'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.queryByText('复制成功')).toBeInTheDocument();
+  });
+
+  it('render click copy all when data is null', async () => {
+    authGetDBAccountSpy.mockClear();
+    authGetDBAccountSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...databaseAccountDetailMockData,
+          auth_users: null,
+          db_service: null,
+          account_info: null,
+          data_permissions: [
+            {
+              data_objects: null,
+              data_operation_sets: null
+            }
+          ]
+        }
+      })
+    );
     customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     fireEvent.click(screen.getByText('全文复制'));

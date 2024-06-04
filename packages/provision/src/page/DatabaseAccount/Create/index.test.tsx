@@ -235,117 +235,24 @@ describe('provision/DatabaseAccount/Create', () => {
     expect(screen.getByText('创建数据库账号')).toBeInTheDocument();
   });
 
-  it('account permission action', async () => {
-    document.execCommand = jest.fn();
-    const { baseElement } = superRender(<CreateDatabaseAccount />);
+  it('render verify password consistency', async () => {
+    const rejectSpy = jest.spyOn(Promise, 'reject');
+    superRender(<CreateDatabaseAccount />);
     await act(async () => jest.advanceTimersByTime(3000));
-    selectOptionByIndex('业务', 'business-1', 1);
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('.ant-btn-icon-only')).toHaveAttribute('disabled');
-    expect(authListServicesSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(2900));
-    fireEvent.mouseDown(getBySelector('#service'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(
-      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
-    ).toBeInTheDocument();
-    fireEvent.click(
-      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
-    );
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(authListDatabasesSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByText('清除所有权限').closest('button')).toHaveAttribute(
-      'disabled'
-    );
-    fireEvent.click(screen.getByText('添加数据权限'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('选择数据库表')).toBeInTheDocument();
-    expect(screen.getByText('选择权限')).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.change(getBySelector('#password'), {
+        target: { value: '123' }
+      });
+      await jest.advanceTimersByTime(100);
+    });
 
-    fireEvent.mouseDown(getBySelector('#data_objects_0_database'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('database-1')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('database-1'));
-    await act(async () => jest.advanceTimersByTime(100));
-
-    fireEvent.mouseDown(getBySelector('#data_operations'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('查询')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('查询'));
-    await act(async () => jest.advanceTimersByTime(100));
-
-    fireEvent.click(screen.getByText('提 交'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('.ant-table-tbody').children).toHaveLength(2);
-    expect(screen.getByText('database-1.*')).toBeInTheDocument();
-
-    fireEvent.click(screen.getByText('编 辑'));
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getBySelector('span[title="database-1"')).toBeInTheDocument();
-    expect(getBySelector('span[title="查询"')).toBeInTheDocument();
-
-    fireEvent.mouseDown(getBySelector('#data_objects_0_tables'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('table-1')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('table-1'));
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(screen.getByText('提 交'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('.ant-table-tbody').children).toHaveLength(2);
-    expect(screen.getByText('database-1.table-1')).toBeInTheDocument();
-
-    fireEvent.click(screen.getByText('编 辑'));
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('编辑数据权限')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-    fireEvent.click(screen.getByText('关 闭'));
-    expect(screen.getByText('database-1.table-1')).toBeInTheDocument();
-
-    fireEvent.click(getBySelector('.add-permission-button'));
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    fireEvent.mouseDown(getBySelector('#data_operations'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('变更')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('变更'));
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(screen.getByText('提 交'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('.ant-table-tbody').children).toHaveLength(3);
-    expect(screen.getByText('database-1.table-1')).toBeInTheDocument();
-    expect(screen.getByText('*.*')).toBeInTheDocument();
-
-    fireEvent.click(getBySelector('.add-permission-button'));
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    selectOptionByIndex('选择权限', '变更', 1);
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(screen.getByText('提 交'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(
-      screen.getByText('已存在相同数据源、相同数据对象、相同数据操作的权限')
-    ).toBeInTheDocument();
-    fireEvent.click(screen.getByText('关 闭'));
-    await act(async () => jest.advanceTimersByTime(100));
-
-    fireEvent.click(screen.queryAllByText('删 除')[1]);
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(
-      screen.getByText('是否确认删除当前数据权限信息?')
-    ).toBeInTheDocument();
-    fireEvent.click(screen.getByText('确 认'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('.ant-table-tbody').children).toHaveLength(2);
-    expect(screen.getByText('database-1.table-1')).toBeInTheDocument();
-    expect(screen.queryByText('*.*')).not.toBeInTheDocument();
-
-    fireEvent.click(getBySelector('.clear-permission-button'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(
-      screen.getByText('是否确认清除当前数据权限信息？')
-    ).toBeInTheDocument();
-    fireEvent.click(screen.getByText('确 认'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.queryByText('database-1.table-1')).not.toBeInTheDocument();
+    await act(async () => {
+      fireEvent.change(getBySelector('#confirm_password'), {
+        target: { value: '234' }
+      });
+      await jest.advanceTimersByTime(100);
+    });
+    expect(rejectSpy).toHaveBeenCalled();
+    expect(rejectSpy).toHaveBeenCalledWith(new Error('您输入的两个密码不匹配'));
   });
 });

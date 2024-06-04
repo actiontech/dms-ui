@@ -136,12 +136,7 @@ export const databaseAccountDetailMockData = {
   password_security_policy: '',
   status: 'unlock',
   password_managed: false,
-  auth_users: [
-    {
-      uid: '1767103833235787776',
-      name: 't3'
-    }
-  ]
+  auth_users: ['t3']
 };
 
 export const discoveryDBAccountMockData: IDBAccountBody[] = [

@@ -411,7 +411,9 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                                   <span
                                     class="ant-avatar-string"
                                     style="transform: scale(1) translateX(-50%);"
-                                  />
+                                  >
+                                    T
+                                  </span>
                                 </span>
                               </div>
                             </div>
@@ -881,7 +883,9 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                                   <span
                                     class="ant-avatar-string"
                                     style="transform: scale(1) translateX(-50%);"
-                                  />
+                                  >
+                                    T
+                                  </span>
                                 </span>
                               </div>
                             </div>
