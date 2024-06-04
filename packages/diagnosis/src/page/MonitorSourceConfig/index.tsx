@@ -17,9 +17,9 @@ import ServerMonitor from './components/ServerMonitor';
 import DatabaseMonitor from './components/DatabaseMonitor';
 import useMonitorSourceConfigRedux from './hooks/useMonitorSourceConfigRedux';
 import useCurrentUser from '../../hooks/useCurrentUser';
+import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
 import { AdminRolePermission } from '../../data/enum';
 import { SearchInput } from '@actiontech/shared/lib/components/ActiontechTable';
-import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
 
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();

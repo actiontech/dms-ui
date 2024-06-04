@@ -25,6 +25,7 @@ const DatabaseAccountPassword = () => {
   const onCreatePolicy = () => {
     toggleModal(ModalName.CreatePasswordSecurityPolicyModal, true);
   };
+
   return (
     <>
       <PageHeader
