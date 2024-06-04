@@ -406,6 +406,20 @@ exports[`base/router-sqle-ce render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route workflow render SQLFileStatementOverview 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlExecWorkflow"
+    >
+      <div>
+        workflowSQLFileStatementOverview
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ce render sqle project detail router render sqle project detail router when version is ce render route workflow render route create 1`] = `
 <body>
   <div>
@@ -665,6 +679,13 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
             </div>,
             "key": "workflowDetail",
             "path": ":workflowId",
+          },
+          {
+            "element": <div>
+              workflowSQLFileStatementOverview
+            </div>,
+            "key": "workflowSQLFileStatementOverview",
+            "path": ":taskId/files/:fileId/sqls",
           },
         ],
         "element": <div
