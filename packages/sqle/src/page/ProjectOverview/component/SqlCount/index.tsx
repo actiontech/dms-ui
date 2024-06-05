@@ -16,6 +16,7 @@ import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { PopoverTooltipStyleWrapper } from '../../../../components/ChartCom/ChartTooltip/style';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
+import { floor } from 'lodash';
 
 const SqlCount = () => {
   const { t } = useTranslation();
@@ -32,7 +33,9 @@ const SqlCount = () => {
     () => statistic.statisticsAuditedSQLV1({ project_name: projectName }),
     {
       onSuccess: (res) => {
-        setData(res.data?.risk_rate ?? 0);
+        const totalSql = res.data.data?.total_sql_count ?? 0;
+        const riskSql = res.data.data?.risk_sql_count ?? 0;
+        setData(floor(riskSql / totalSql, 3));
         setTotalData({
           risk_sql_count: res.data.data?.risk_sql_count
             ? formatParamsBySeparator(res.data.data?.risk_sql_count)
@@ -102,7 +105,7 @@ const SqlCount = () => {
           textAlign: 'center'
         },
         customHtml: (container, view, datum) => {
-          return datum?.percent ? `${datum.percent}%` : '0';
+          return datum?.percent ? `${datum.percent * 100}%` : '0';
         }
       },
       content: {
