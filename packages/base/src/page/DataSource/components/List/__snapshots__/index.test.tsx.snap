@@ -276,7 +276,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -696,7 +696,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1126,7 +1126,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                 <span
                   class="custom-select-placeholder-prefix"
                 >
-                  数据库类型
+                  数据源类型
                 </span>
                 <span
                   class="custom-select-placeholder-value"
@@ -1270,7 +1270,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -2073,7 +2073,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                 <span
                   class="custom-select-placeholder-prefix"
                 >
-                  数据库类型
+                  数据源类型
                 </span>
                 <span
                   class="custom-select-placeholder-value"
@@ -2217,7 +2217,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -2952,7 +2952,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -3143,7 +3143,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -3223,7 +3223,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -3644,7 +3644,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -4068,7 +4068,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                 <span
                   class="more-button-item-text"
                 >
-                  测试数据库连通性
+                  测试数据源连通性
                 </span>
               </div>
             </div>
@@ -4133,7 +4133,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                   <span
                     class="ant-modal-confirm-title"
                   >
-                    数据库{{instanceName}}连通性测试失败
+                    数据源{{instanceName}}连通性测试失败
                   </span>
                   <div
                     class="ant-modal-confirm-content"
@@ -4423,7 +4423,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -4847,7 +4847,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                 <span
                   class="more-button-item-text"
                 >
-                  测试数据库连通性
+                  测试数据源连通性
                 </span>
               </div>
             </div>
@@ -4912,7 +4912,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                   <span
                     class="ant-modal-confirm-title"
                   >
-                    数据库{{instanceName}}连通性测试失败
+                    数据源{{instanceName}}连通性测试失败
                   </span>
                   <div
                     class="ant-modal-confirm-content"
@@ -5202,7 +5202,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -5995,7 +5995,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -6763,7 +6763,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -7158,7 +7158,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -7553,7 +7553,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"

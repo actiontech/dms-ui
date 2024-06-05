@@ -670,7 +670,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -3059,7 +3059,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -5474,7 +5474,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     type="button"
                                   >
                                     <span>
-                                      测试数据库连通性
+                                      测试数据源连通性
                                     </span>
                                   </button>
                                 </div>
@@ -6700,7 +6700,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -9612,7 +9612,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     type="button"
                                   >
                                     <span>
-                                      测试数据库连通性
+                                      测试数据源连通性
                                     </span>
                                   </button>
                                 </div>
@@ -11133,7 +11133,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -12405,7 +12405,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -13985,7 +13985,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -15569,7 +15569,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -17613,7 +17613,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -18843,7 +18843,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
