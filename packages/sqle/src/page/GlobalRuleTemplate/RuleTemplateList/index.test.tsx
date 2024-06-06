@@ -20,6 +20,7 @@ import {
   queryBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -50,7 +51,8 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         globalRuleTemplate: {
-          modalStatus: { [ModalName.Clone_Rule_Template]: false }
+          modalStatus: { [ModalName.Clone_Rule_Template]: false },
+          activeSegmentedKey: RuleManagerSegmentedKey.GlobalRuleTemplate
         }
       })
     );

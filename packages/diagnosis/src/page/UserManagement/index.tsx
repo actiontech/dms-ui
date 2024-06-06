@@ -1,8 +1,13 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { SegmentedValue } from 'antd/es/segmented';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import {
+  BasicButton,
+  EmptyBox,
+  PageHeader,
+  SegmentedTabs
+} from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { ModalName } from '../../data/ModalName';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
@@ -12,10 +17,6 @@ import useUserManagementRedux from './hooks/useUserManagementRedux';
 import UserList from './components/UserList';
 import RoleList from './components/RoleList';
 import PermissionList from './components/PermissionList';
-import {
-  BasicSegmentedPage,
-  useSegmentedPageParams
-} from '@actiontech/shared/lib/components/BasicSegmentedPage';
 import EmitterKey from '../../data/EmitterKey';
 import { AdminRolePermission } from '../../data/enum';
 import useCurrentUser from '../../hooks/useCurrentUser';
@@ -31,76 +32,58 @@ const UserManagement: React.FC = () => {
     EventEmitter.emit(EmitterKey.Refresh_User_Management);
   };
 
-  const {
-    updateSegmentedPageData,
-    renderExtraButton,
-    onChange,
-    ...otherProps
-  } = useSegmentedPageParams<UserManagementTypeEnum>();
+  const [activeTab, setActiveTab] = useState(UserManagementTypeEnum.user_list);
 
   const onChangeListType = (key: SegmentedValue) => {
-    onChange(key);
+    setActiveTab(key as UserManagementTypeEnum);
     if (key !== UserManagementTypeEnum.permission_list) {
       setPermissionRoleId(undefined);
     }
   };
 
-  useEffect(() => {
-    const onAddOperate = (name: ModalName) => {
+  const renderExtraButton = () => {
+    const handleClick = (name: ModalName) => {
       setModalStatus(name, true);
     };
 
-    updateSegmentedPageData([
-      {
-        value: UserManagementTypeEnum.user_list,
-        label: t('userManagement.userList'),
-        content: <UserList />,
-        extraButton: (
-          <EmptyBox
-            if={hasActionPermission(AdminRolePermission.CreateUser)}
-            key={AdminRolePermission.CreateUser}
+    if (activeTab === UserManagementTypeEnum.user_list) {
+      return (
+        <EmptyBox
+          if={hasActionPermission(AdminRolePermission.CreateUser)}
+          key={AdminRolePermission.CreateUser}
+        >
+          <BasicButton
+            type="primary"
+            icon={<IconAdd />}
+            onClick={() => {
+              handleClick(ModalName.Add_User);
+            }}
           >
-            <BasicButton
-              type="primary"
-              icon={<IconAdd />}
-              onClick={() => {
-                onAddOperate(ModalName.Add_User);
-              }}
-            >
-              {t('userManagement.button.addUser')}
-            </BasicButton>
-          </EmptyBox>
-        )
-      },
-      {
-        value: UserManagementTypeEnum.role_list,
-        label: t('userManagement.roleList'),
-        content: <RoleList handleChange={onChangeListType} />,
-        extraButton: (
-          <EmptyBox
-            if={hasActionPermission(AdminRolePermission.CreateRole)}
-            key={AdminRolePermission.CreateRole}
+            {t('userManagement.button.addUser')}
+          </BasicButton>
+        </EmptyBox>
+      );
+    }
+
+    if (activeTab === UserManagementTypeEnum.role_list) {
+      return (
+        <EmptyBox
+          if={hasActionPermission(AdminRolePermission.CreateRole)}
+          key={AdminRolePermission.CreateRole}
+        >
+          <BasicButton
+            type="primary"
+            icon={<IconAdd />}
+            onClick={() => {
+              handleClick(ModalName.Add_Role);
+            }}
           >
-            <BasicButton
-              type="primary"
-              icon={<IconAdd />}
-              onClick={() => {
-                onAddOperate(ModalName.Add_Role);
-              }}
-            >
-              {t('userManagement.button.addRole')}
-            </BasicButton>
-          </EmptyBox>
-        )
-      },
-      {
-        value: UserManagementTypeEnum.permission_list,
-        label: t('userManagement.permissionList'),
-        content: <PermissionList />
-      }
-    ]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [updateSegmentedPageData, t, hasActionPermission]);
+            {t('userManagement.button.addRole')}
+          </BasicButton>
+        </EmptyBox>
+      );
+    }
+  };
 
   return (
     <section>
@@ -113,7 +96,30 @@ const UserManagement: React.FC = () => {
         }
         extra={renderExtraButton()}
       />
-      <BasicSegmentedPage {...otherProps} onChange={onChangeListType} />
+      <SegmentedTabs
+        activeKey={activeTab}
+        onChange={onChangeListType}
+        items={[
+          {
+            value: UserManagementTypeEnum.user_list,
+            label: t('userManagement.userList'),
+            children: <UserList />,
+            destroyInactivePane: true
+          },
+          {
+            value: UserManagementTypeEnum.role_list,
+            label: t('userManagement.roleList'),
+            children: <RoleList handleChange={onChangeListType} />,
+            destroyInactivePane: true
+          },
+          {
+            value: UserManagementTypeEnum.permission_list,
+            label: t('userManagement.permissionList'),
+            children: <PermissionList />,
+            destroyInactivePane: true
+          }
+        ]}
+      />
     </section>
   );
 };

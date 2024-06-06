@@ -175,59 +175,55 @@ exports[`test diagnosis App should render App 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-c38ntt"
+          class="segmented-tabs-wrapper"
         >
           <div
-            class="ant-space-item"
-            style="margin-right: 8px;"
+            class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-1thf7qv"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1thf7qv"
+            >
+              <div
+                class="ant-segmented-group"
+              >
+                <label
+                  class="ant-segmented-item ant-segmented-item-selected"
+                >
+                  <input
+                    checked=""
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="服务器监控源"
+                  >
+                    服务器监控源
+                  </div>
+                </label>
+                <label
+                  class="ant-segmented-item"
+                >
+                  <input
+                    class="ant-segmented-item-input"
+                    type="radio"
+                  />
+                  <div
+                    class="ant-segmented-item-label"
+                    title="数据库监控源"
+                  >
+                    数据库监控源
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center flex-space-between "
+              style="margin-left: 12px;"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 12px;"
-              >
-                <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1thf7qv"
-                >
-                  <div
-                    class="ant-segmented-group"
-                  >
-                    <label
-                      class="ant-segmented-item ant-segmented-item-selected"
-                    >
-                      <input
-                        checked=""
-                        class="ant-segmented-item-input"
-                        type="radio"
-                      />
-                      <div
-                        class="ant-segmented-item-label"
-                        title="服务器监控源"
-                      >
-                        服务器监控源
-                      </div>
-                    </label>
-                    <label
-                      class="ant-segmented-item"
-                    >
-                      <input
-                        class="ant-segmented-item-input"
-                        type="radio"
-                      />
-                      <div
-                        class="ant-segmented-item-label"
-                        title="数据库监控源"
-                      >
-                        数据库监控源
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="ant-space-item"
+                style="margin-right: 8px;"
               >
                 <span
                   class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-1qauwux"
@@ -261,38 +257,33 @@ exports[`test diagnosis App should render App 1`] = `
                   </span>
                 </span>
               </div>
-            </div>
-          </div>
-          <div
-            class="ant-space-item"
-          >
-            <div
-              class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center"
-            >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-4mxe6b ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn css-dev-only-do-not-override-4mxe6b ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-loading basic-button-wrapper css-geipcv"
                   disabled=""
                   type="button"
                 >
                   <span
-                    class="ant-btn-icon"
+                    class="ant-btn-icon ant-btn-loading-icon"
                   >
                     <span
-                      class="custom-icon custom-icon-refresh css-u3jcp4"
+                      aria-label="loading"
+                      class="anticon anticon-loading anticon-spin"
                       role="img"
                     >
                       <svg
+                        aria-hidden="true"
+                        data-icon="loading"
                         fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
+                        focusable="false"
+                        height="1em"
+                        viewBox="0 0 1024 1024"
+                        width="1em"
                       >
                         <path
-                          d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
+                          d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
                         />
                       </svg>
                     </span>
@@ -301,295 +292,299 @@ exports[`test diagnosis App should render App 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-1c67sbi"
-        >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-1c67sbi"
+            class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
           >
-            <div>
-              <div
-                aria-busy="true"
-                aria-live="polite"
-                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1c67sbi"
-              >
-                <span
-                  class="custom-icon-spin-dot css-u3jcp4"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="30px"
-                    viewBox="0 0 24 30"
-                    width="24px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="0"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="8"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="16"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                  </svg>
-                </span>
-              </div>
-            </div>
             <div
-              class="ant-spin-container ant-spin-blur"
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-1c67sbi"
             >
               <div
-                class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                class="ant-spin-nested-loading css-dev-only-do-not-override-1c67sbi"
               >
+                <div>
+                  <div
+                    aria-busy="true"
+                    aria-live="polite"
+                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1c67sbi"
+                  >
+                    <span
+                      class="custom-icon-spin-dot css-u3jcp4"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="30px"
+                        viewBox="0 0 24 30"
+                        width="24px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="currentColor"
+                          height="10"
+                          opacity="0.2"
+                          width="4"
+                          x="0"
+                          y="10"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            attributeType="XML"
+                            begin="0s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="0.2; 1; .2"
+                          />
+                          <animate
+                            attributeName="height"
+                            attributeType="XML"
+                            begin="0s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 20; 10"
+                          />
+                          <animate
+                            attributeName="y"
+                            attributeType="XML"
+                            begin="0s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 5; 10"
+                          />
+                        </rect>
+                        <rect
+                          fill="currentColor"
+                          height="10"
+                          opacity="0.2"
+                          width="4"
+                          x="8"
+                          y="10"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            attributeType="XML"
+                            begin="0.15s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="0.2; 1; .2"
+                          />
+                          <animate
+                            attributeName="height"
+                            attributeType="XML"
+                            begin="0.15s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 20; 10"
+                          />
+                          <animate
+                            attributeName="y"
+                            attributeType="XML"
+                            begin="0.15s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 5; 10"
+                          />
+                        </rect>
+                        <rect
+                          fill="currentColor"
+                          height="10"
+                          opacity="0.2"
+                          width="4"
+                          x="16"
+                          y="10"
+                        >
+                          <animate
+                            attributeName="opacity"
+                            attributeType="XML"
+                            begin="0.3s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="0.2; 1; .2"
+                          />
+                          <animate
+                            attributeName="height"
+                            attributeType="XML"
+                            begin="0.3s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 20; 10"
+                          />
+                          <animate
+                            attributeName="y"
+                            attributeType="XML"
+                            begin="0.3s"
+                            dur="0.6s"
+                            repeatCount="indefinite"
+                            values="10; 5; 10"
+                          />
+                        </rect>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
                 <div
-                  class="ant-table-container"
+                  class="ant-spin-container ant-spin-blur"
                 >
                   <div
-                    class="ant-table-content"
-                    style="overflow-x: auto; overflow-y: hidden;"
+                    class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                   >
-                    <table
-                      style="min-width: 100%; table-layout: auto;"
+                    <div
+                      class="ant-table-container"
                     >
-                      <colgroup>
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col />
-                        <col
-                          style="width: 164px;"
-                        />
-                      </colgroup>
-                      <thead
-                        class="ant-table-thead"
+                      <div
+                        class="ant-table-content"
+                        style="overflow-x: auto; overflow-y: hidden;"
                       >
-                        <tr>
-                          <th
-                            class="ant-table-cell"
-                            scope="col"
-                          >
-                            监控源名
-                          </th>
-                          <th
-                            class="ant-table-cell"
-                            scope="col"
-                          >
-                            主机IP
-                          </th>
-                          <th
-                            class="ant-table-cell"
-                            scope="col"
-                          >
-                            SSH端口
-                          </th>
-                          <th
-                            class="ant-table-cell"
-                            scope="col"
-                          >
-                            SSH用户名
-                          </th>
-                          <th
-                            class="ant-table-cell"
-                            scope="col"
-                          >
-                            创建时间
-                          </th>
-                          <th
-                            class="ant-table-cell"
-                            scope="col"
-                          >
-                            状态
-                          </th>
-                          <th
-                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                            scope="col"
-                            style="position: sticky; right: 0px;"
-                          >
-                            操作
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody
-                        class="ant-table-tbody"
-                      >
-                        <tr
-                          aria-hidden="true"
-                          class="ant-table-measure-row"
-                          style="height: 0px; font-size: 0px;"
+                        <table
+                          style="min-width: 100%; table-layout: auto;"
                         >
-                          <td
-                            style="padding: 0px; border: 0px; height: 0px;"
-                          >
-                            <div
-                              style="height: 0px; overflow: hidden;"
-                            >
-                               
-                            </div>
-                          </td>
-                          <td
-                            style="padding: 0px; border: 0px; height: 0px;"
-                          >
-                            <div
-                              style="height: 0px; overflow: hidden;"
-                            >
-                               
-                            </div>
-                          </td>
-                          <td
-                            style="padding: 0px; border: 0px; height: 0px;"
-                          >
-                            <div
-                              style="height: 0px; overflow: hidden;"
-                            >
-                               
-                            </div>
-                          </td>
-                          <td
-                            style="padding: 0px; border: 0px; height: 0px;"
-                          >
-                            <div
-                              style="height: 0px; overflow: hidden;"
-                            >
-                               
-                            </div>
-                          </td>
-                          <td
-                            style="padding: 0px; border: 0px; height: 0px;"
-                          >
-                            <div
-                              style="height: 0px; overflow: hidden;"
-                            >
-                               
-                            </div>
-                          </td>
-                          <td
-                            style="padding: 0px; border: 0px; height: 0px;"
-                          >
-                            <div
-                              style="height: 0px; overflow: hidden;"
-                            >
-                               
-                            </div>
-                          </td>
-                          <td
-                            style="padding: 0px; border: 0px; height: 0px;"
-                          >
-                            <div
-                              style="height: 0px; overflow: hidden;"
-                            >
-                               
-                            </div>
-                          </td>
-                        </tr>
-                        <tr
-                          class="ant-table-placeholder"
-                        >
-                          <td
-                            class="ant-table-cell"
-                            colspan="7"
-                          >
-                            <div
-                              class="ant-table-expanded-row-fixed"
-                              style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                          <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col
+                              style="width: 164px;"
                             />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                          </colgroup>
+                          <thead
+                            class="ant-table-thead"
+                          >
+                            <tr>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                监控源名
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                主机IP
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                SSH端口
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                SSH用户名
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                创建时间
+                              </th>
+                              <th
+                                class="ant-table-cell"
+                                scope="col"
+                              >
+                                状态
+                              </th>
+                              <th
+                                class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                scope="col"
+                                style="position: sticky; right: 0px;"
+                              >
+                                操作
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="ant-table-tbody"
+                          >
+                            <tr
+                              aria-hidden="true"
+                              class="ant-table-measure-row"
+                              style="height: 0px; font-size: 0px;"
+                            >
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                              <td
+                                style="padding: 0px; border: 0px; height: 0px;"
+                              >
+                                <div
+                                  style="height: 0px; overflow: hidden;"
+                                >
+                                   
+                                </div>
+                              </td>
+                            </tr>
+                            <tr
+                              class="ant-table-placeholder"
+                            >
+                              <td
+                                class="ant-table-cell"
+                                colspan="7"
+                              >
+                                <div
+                                  class="ant-table-expanded-row-fixed"
+                                  style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                                />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
