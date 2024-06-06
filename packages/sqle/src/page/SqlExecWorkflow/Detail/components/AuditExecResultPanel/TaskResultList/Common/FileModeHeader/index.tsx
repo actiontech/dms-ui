@@ -29,6 +29,7 @@ const FileModeHeader: React.FC<FileModeHeaderProps> = ({
         </Typography.Text>
       </div>
 
+      {/* #if [ee] */}
       <EmptyBox if={allowExec}>
         <BasicButton onClick={openSortableSQLFilesModal} type="primary">
           {t('execWorkflow.audit.fileModeExecute.extraButtonText')}
@@ -42,6 +43,7 @@ const FileModeHeader: React.FC<FileModeHeaderProps> = ({
           taskId={taskId}
         />
       </EmptyBox>
+      {/* #endif */}
     </div>
   );
 };

@@ -67,6 +67,7 @@ describe('test useAuditWorkflow ce', () => {
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(1);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
+      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
     await act(() => jest.advanceTimersByTime(3000));
@@ -100,6 +101,7 @@ describe('test useAuditWorkflow ce', () => {
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(2);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(2, {
       project_name: mockProjectInfo.projectName,
+      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
     await act(() => jest.advanceTimersByTime(3000));
@@ -130,6 +132,7 @@ describe('test useAuditWorkflow ce', () => {
     expect(mockCreateAuditTasksV1).toHaveBeenCalledTimes(3);
     expect(mockCreateAuditTasksV1).toHaveBeenNthCalledWith(3, {
       project_name: mockProjectInfo.projectName,
+      exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
       instances: [{ instance_name: 'instance1', instance_schema: 'schema1' }]
     });
     await act(() => jest.advanceTimersByTime(3000));
@@ -209,18 +212,21 @@ describe('test useAuditWorkflow ce', () => {
     );
     expect(mockCreateAndAuditTaskV1).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
+      exec_mode: 'sql_file',
       instance_name: 'instance1',
       instance_schema: 'schema1',
       input_zip_file: zipFile
     });
     expect(mockCreateAndAuditTaskV1).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
+      exec_mode: 'sql_file',
       instance_name: 'instance2',
       instance_schema: 'schema2',
       input_sql_file: sqlFile
     });
     expect(mockCreateAndAuditTaskV1).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
+      exec_mode: 'sqls',
       instance_name: 'instance3',
       instance_schema: 'schema3',
       sql: 'SELECT * FROM table'

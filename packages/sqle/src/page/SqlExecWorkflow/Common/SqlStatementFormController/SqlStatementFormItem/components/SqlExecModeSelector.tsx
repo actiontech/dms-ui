@@ -30,6 +30,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
     form
   );
 
+  // #if [ee]
   const isSupportsFileSortUpload =
     currentSqlUploadType === AuditTaskResV1SqlSourceEnum.zip_file &&
     currentExecuteMode === CreateAuditTasksGroupReqV1ExecModeEnum.sql_file;
@@ -53,6 +54,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
       ready: isSupportsFileSortUpload
     }
   );
+  // #endif
 
   return (
     <EmptyBox
@@ -86,6 +88,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
         <ModeSwitcher rowProps={{ gutter: 10 }} options={sqlExecModeOptions} />
       </FormItemNoLabel>
 
+      {/* #if [ee] */}
       {isSupportsFileSortUpload && (
         <FormItemLabel
           label={t('execWorkflow.create.form.sqlInfo.selectFileSortMethod')}
@@ -97,6 +100,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
           />
         </FormItemLabel>
       )}
+      {/* #endif */}
     </EmptyBox>
   );
 };
