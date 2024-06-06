@@ -159,7 +159,7 @@ describe('base/router-sqle-ee', () => {
           expect(screen.getByText('sqlExecWorkflowList')).toBeInTheDocument();
         });
 
-        it('render route orderCreate', async () => {
+        it('render route createSqlExecWorkflow', async () => {
           const { baseElement } = customRender([
             `/sqle/project/${projectID}/exec-workflow/create`
           ]);
@@ -169,7 +169,7 @@ describe('base/router-sqle-ee', () => {
           expect(screen.getByText('createSqlExecWorkflow')).toBeInTheDocument();
         });
 
-        it('render route orderDetail', async () => {
+        it('render route workflowDetail', async () => {
           const { baseElement } = customRender([
             `/sqle/project/${projectID}/exec-workflow/workflowId`
           ]);

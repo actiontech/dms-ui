@@ -117,8 +117,8 @@ const useAuditWorkflow = () => {
       ] as SqlStatementFields;
 
       const createAuditTasksParams: ICreateAuditTasksV1Params = {
-        // #if [ee]
         exec_mode: sqlStatementInfo.exec_mode,
+        // #if [ee]
         file_order_method: sqlStatementInfo.file_sort_method,
         // #endif
         project_name: projectName,
@@ -186,9 +186,9 @@ const useAuditWorkflow = () => {
           instance_name: item.instanceName!,
           instance_schema: item.schemaName,
           ...getSqlSourceWithUploadType(sqlStatementInfo),
-          // #if [ee]
           exec_mode:
             sqlStatementInfo.exec_mode as unknown as CreateAuditTaskReqV1ExecModeEnum,
+          // #if [ee]
           file_order_method: sqlStatementInfo.file_sort_method
           // #endif
         };

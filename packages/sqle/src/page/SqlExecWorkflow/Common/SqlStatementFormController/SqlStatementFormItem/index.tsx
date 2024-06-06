@@ -76,13 +76,11 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         fieldPrefixPath={fieldPrefixPath}
       />
 
-      {/* #if [ee] */}
       <SqlExecModeSelector
         currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}
         isSupportFileModeExecuteSql={isSupportFileModeExecuteSql}
       />
-      {/* #endif */}
 
       <SqlFormatterAndSubmitter
         currentSqlUploadType={currentUploadType}
