@@ -128,7 +128,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(
-      screen.getByText('测试数据库连通性').closest('button')
+      screen.getByText('测试数据源连通性').closest('button')
     ).toBeDisabled();
 
     // select instance
@@ -142,10 +142,10 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
-      screen.getByText('测试数据库连通性').closest('button')
+      screen.getByText('测试数据源连通性').closest('button')
     ).not.toBeDisabled();
 
-    fireEvent.click(screen.getByText('测试数据库连通性'));
+    fireEvent.click(screen.getByText('测试数据源连通性'));
     expect(batchCheckInstanceIsConnectableByName).toHaveBeenCalledTimes(1);
     expect(batchCheckInstanceIsConnectableByName).toHaveBeenNthCalledWith(1, {
       project_name: projectName,
@@ -153,11 +153,11 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(screen.queryByText('数据库连通性测试成功')).toBeInTheDocument();
+    expect(screen.queryByText('数据源连通性测试成功')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('重 置'));
 
-    expect(screen.queryByText('数据库连通性测试成功')).not.toBeInTheDocument();
+    expect(screen.queryByText('数据源连通性测试成功')).not.toBeInTheDocument();
 
     expect(getBySelector('#workflow_subject')).toHaveValue('');
     expect(getBySelector('#desc')).toHaveValue('');

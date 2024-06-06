@@ -68,7 +68,7 @@ describe('test useTestDatabaseConnect', () => {
     const { container, getByText } = superRender(
       result.current.renderTestDatabasesConnectInfo('mysql-1')
     );
-    expect(getByText('数据库连通性测试成功')).toBeInTheDocument();
+    expect(getByText('数据源连通性测试成功')).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
 
@@ -86,7 +86,7 @@ describe('test useTestDatabaseConnect', () => {
     const { container, queryByText } = superRender(
       result.current.renderTestDatabasesConnectInfo('mysql-1')
     );
-    expect(queryByText('数据库连通性测试成功')).not.toBeInTheDocument();
+    expect(queryByText('数据源连通性测试成功')).not.toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
 });
