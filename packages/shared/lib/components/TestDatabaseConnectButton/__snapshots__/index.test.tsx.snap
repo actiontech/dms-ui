@@ -14,7 +14,7 @@ exports[`TestDatabaseConnectButton controlled mode should call onClickTestButton
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -39,7 +39,7 @@ exports[`TestDatabaseConnectButton controlled mode should call onClickTestButton
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -64,7 +64,7 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -112,7 +112,7 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
           </span>
         </span>
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -160,7 +160,7 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
           </span>
         </span>
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -191,7 +191,7 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -218,7 +218,7 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
             />
           </svg>
         </span>
-        数据库连通性测试成功
+        数据源连通性测试成功
       </div>
     </div>
   </div>
@@ -239,7 +239,7 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -272,7 +272,7 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
                 />
               </svg>
             </span>
-            未能成功链接到数据库
+            未能成功链接到数据源
           </div>
         </div>
       </div>
@@ -318,7 +318,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode should render message by in
           </span>
         </span>
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -343,7 +343,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode should render message by in
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -368,7 +368,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -393,7 +393,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -420,7 +420,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
             />
           </svg>
         </span>
-        数据库连通性测试成功
+        数据源连通性测试成功
       </div>
     </div>
   </div>
@@ -441,7 +441,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -466,7 +466,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
         type="button"
       >
         <span>
-          测试数据库连通性
+          测试数据源连通性
         </span>
       </button>
     </div>
@@ -493,7 +493,7 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
             />
           </svg>
         </span>
-        数据库连通性测试成功
+        数据源连通性测试成功
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@ import { renderWithTheme } from '../../testUtil/customRender';
 import { TestDatabaseConnectButtonProps } from './index.type';
 
 describe('TestDatabaseConnectButton', () => {
-  const buttonText = '测试数据库连通性';
+  const buttonText = '测试数据源连通性';
 
   const customRender = (params: TestDatabaseConnectButtonProps) => {
     return renderWithTheme(<TestDatabaseConnectButton {...params} />);

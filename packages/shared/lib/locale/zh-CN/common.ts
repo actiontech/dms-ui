@@ -190,10 +190,10 @@ export default {
     range: '时间段'
   },
   testDatabaseConnectButton: {
-    testDatabaseConnection: '测试数据库连通性',
+    testDatabaseConnection: '测试数据源连通性',
     testing: '正在尝试进行连接...',
-    testSuccess: '数据库连通性测试成功',
-    testFailed: '未能成功链接到数据库'
+    testSuccess: '数据源连通性测试成功',
+    testFailed: '未能成功链接到数据源'
   },
 
   sqlStatements: 'SQL语句',

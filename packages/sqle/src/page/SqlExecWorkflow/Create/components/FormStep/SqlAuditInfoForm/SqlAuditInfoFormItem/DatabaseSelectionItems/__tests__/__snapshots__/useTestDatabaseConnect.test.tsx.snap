@@ -25,7 +25,7 @@ exports[`test useTestDatabaseConnect should render test database connect info co
           />
         </svg>
       </span>
-      未能成功链接到数据库
+      未能成功链接到数据源
     </div>
   </div>
 </div>
@@ -56,7 +56,7 @@ exports[`test useTestDatabaseConnect should render test database connect info co
           />
         </svg>
       </span>
-      数据库连通性测试成功
+      数据源连通性测试成功
     </div>
   </div>
 </div>
