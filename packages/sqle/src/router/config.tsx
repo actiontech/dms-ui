@@ -149,13 +149,6 @@ const UpdateWorkflowTemplate = React.lazy(
       /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
     )
 );
-
-const WorkflowSQLFileStatementOverview = React.lazy(
-  () =>
-    import(
-      '../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SqlFileStatementOverview'
-    )
-);
 // #endif
 
 //workflow
@@ -167,6 +160,13 @@ const CreateSqlExecWorkflow = React.lazy(
 );
 const SqlWorkflowDetail = React.lazy(
   () => import('../page/SqlExecWorkflow/Detail')
+);
+
+const WorkflowSQLFileStatementOverview = React.lazy(
+  () =>
+    import(
+      '../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SqlFileStatementOverview'
+    )
 );
 
 //sqle global page
@@ -222,13 +222,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <SqlWorkflowDetail />,
         key: 'workflowDetail'
       },
-      // #if [ee]
       {
         path: ':taskId/files/:fileId/sqls',
         element: <WorkflowSQLFileStatementOverview />,
         key: 'workflowSQLFileStatementOverview'
       }
-      // #endif
     ]
   },
   {

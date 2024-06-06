@@ -2,7 +2,7 @@
 export default {
   pageTitle: '数据源',
   pageDesc:
-    '你可以在这里注册需要进行SQL审核的数据库, 并选择是否为该数据源开通各项功能。',
+    '你可以在这里注册需要进行SQL审核的数据源, 并选择是否为该数据源开通各项功能。',
 
   databaseListTitle: '数据源列表',
 
@@ -11,7 +11,7 @@ export default {
     address: '地址',
     describe: '描述',
     role: '角色',
-    type: '数据库类型',
+    type: '数据源类型',
     ruleTemplate: '模版',
     workflow: '工作流',
     maintenanceTime: '运维时间',
@@ -45,10 +45,10 @@ export default {
     sqlConfig: 'SQL审核配置',
     name: '数据源名称',
     describe: '数据源描述',
-    type: '数据库类型',
-    ip: '数据库地址',
-    ipTips: '数据库IP或域名',
-    port: '数据库端口',
+    type: '数据源类型',
+    ip: '数据源地址',
+    ipTips: '数据源IP或域名',
+    port: '数据源端口',
     user: '连接用户',
     password: '密码',
     role: '可访问的角色',
@@ -65,7 +65,7 @@ export default {
     needAuditForSqlQuery: 'SQL查询是否需要审核',
     allowQueryWhenLessThanAuditLevel: '运行查询的最高审核等级',
     passwordTips:
-      '这里不会显示您已经配置的当前数据库密码，提交时如果您没有填写密码，那么将不会对数据库密码进行变更。',
+      '这里不会显示您已经配置的当前数据源密码，提交时如果您没有填写密码，那么将不会对数据源密码进行变更。',
     needUpdatePassword: '是否更新密码',
     updatePassword: '更新连接密码',
     dataMaskConfig: '数据脱敏配置',
@@ -75,7 +75,7 @@ export default {
   },
 
   testConnectModal: {
-    errorTitle: '数据库{{instanceName}}连通性测试失败'
+    errorTitle: '数据源{{instanceName}}连通性测试失败'
   },
 
   deleteDatabase: {
