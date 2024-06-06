@@ -10,7 +10,7 @@ import {
   PermissionFieldTitleStyleWrapper,
   PermissionFieldStyleWrapper
 } from '../../style';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/shared';
 import {
   PermissionTableColumn,
   PermissionTableActions
@@ -70,22 +70,28 @@ const PermissionsField: React.FC<PermissionTableFieldProps> = ({
         <span className="permission-field-title">
           {t('databaseAccount.create.permissionInfoOverview')}
         </span>
-        <EmptyBox if={!!value?.length}>
-          <Space>
-            <Popconfirm
-              title={t('databaseAccount.create.form.clearConfirmTips')}
-              onConfirm={onClear}
-              okText={t('common.ok')}
+        <Space>
+          <Popconfirm
+            title={t('databaseAccount.create.form.clearConfirmTips')}
+            onConfirm={onClear}
+            okText={t('common.ok')}
+          >
+            <BasicButton
+              danger
+              disabled={!value?.length}
+              className="clear-permission-button"
             >
-              <BasicButton danger>
-                {t('databaseAccount.create.form.resetPermission')}
-              </BasicButton>
-            </Popconfirm>
-            <BasicButton onClick={onAdd}>
-              {t('databaseAccount.create.form.addDataPermission')}
+              {t('databaseAccount.create.form.resetPermission')}
             </BasicButton>
-          </Space>
-        </EmptyBox>
+          </Popconfirm>
+          <BasicButton
+            onClick={onAdd}
+            type="primary"
+            className="add-permission-button"
+          >
+            {t('databaseAccount.create.form.addDataPermission')}
+          </BasicButton>
+        </Space>
       </PermissionFieldTitleStyleWrapper>
       <ActiontechTable
         rowKey={(record) => `${record.id}`}
@@ -99,9 +105,6 @@ const PermissionsField: React.FC<PermissionTableFieldProps> = ({
                 <Typography.Paragraph type="secondary">
                   {t('databaseAccount.create.form.extraEmptyTips')}
                 </Typography.Paragraph>
-                <BasicButton type="primary" onClick={onAdd}>
-                  {t('databaseAccount.create.form.addDataPermission')}
-                </BasicButton>
               </>
             </BasicEmpty>
           )

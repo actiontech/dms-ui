@@ -63,16 +63,9 @@ const DatabaseAccountDetailModal = () => {
   const handleCopy = () => {
     const jsonData: DataObject = [];
     accountDetailCustomConfig.forEach((item) => {
-      if (item.type === 'p') {
-        if (item.key === 'auth_users') {
-          const val =
-            data?.auth_users?.reduce((prev, next) => `${prev},${next}`, '') ??
-            '';
-          jsonData.push({ blockquote: `${item.prefix}: ${val}` });
-        } else {
-          const val = data?.[item.key];
-          jsonData.push({ blockquote: `${item.prefix}: ${val}` });
-        }
+      if (item.type === 'p' && item.key === 'auth_users') {
+        const val = data?.auth_users?.join(',') ?? '';
+        jsonData.push({ blockquote: `${item.prefix}: ${val}` });
       } else if (item.type === 'table') {
         let rows: string[][];
         jsonData.push({ blockquote: `${item.prefix}:` });

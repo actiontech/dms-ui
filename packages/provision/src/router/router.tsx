@@ -10,7 +10,7 @@ const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
 // const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
 const DatabaseAccountList = React.lazy(
-  () => import('../page/DatabaseAccount/List')
+  () => import('../page/DatabaseAccount/')
 );
 const CreateDatabaseAccount = React.lazy(
   () => import('../page/DatabaseAccount/Create')
