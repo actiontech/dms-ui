@@ -1,11 +1,12 @@
-import { PageHeader, BasicButton } from '@actiontech/shared';
-import { useTranslation } from 'react-i18next';
 import {
-  BasicSegmentedPage,
-  useSegmentedPageParams
-} from '@actiontech/shared/lib/components/BasicSegmentedPage';
+  PageHeader,
+  BasicButton,
+  SegmentedTabs,
+  EmptyBox
+} from '@actiontech/shared';
+import { useTranslation } from 'react-i18next';
 import { PasswordManagementTypeEnum } from './index.type';
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import PolicyList from './PolicyList';
 import PasswordSecurityPolicyModal from './Modal';
@@ -19,45 +20,47 @@ const DatabaseAccountPassword = () => {
 
   const { toggleModal } = useModalStatus(PasswordSecurityPolicyModalStatus);
 
-  const { updateSegmentedPageData, renderExtraButton, ...otherProps } =
-    useSegmentedPageParams<PasswordManagementTypeEnum>();
+  const [activeTab, setActiveTab] = useState(PasswordManagementTypeEnum.advent);
 
-  useEffect(() => {
-    const onCreatePolicy = () => {
-      toggleModal(ModalName.CreatePasswordSecurityPolicyModal, true);
-    };
-
-    updateSegmentedPageData([
-      {
-        value: PasswordManagementTypeEnum.advent,
-        label: t('passwordSecurityPolicy.advent.title'),
-        content: <ExpirationAccountList />
-      },
-      {
-        value: PasswordManagementTypeEnum.policy,
-        label: t('passwordSecurityPolicy.policy.title'),
-        content: <PolicyList />,
-        extraButton: (
-          <BasicButton
-            type="primary"
-            icon={<IconAdd />}
-            onClick={onCreatePolicy}
-          >
-            {t('passwordSecurityPolicy.policy.create')}
-          </BasicButton>
-        )
-      }
-    ]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const onCreatePolicy = () => {
+    toggleModal(ModalName.CreatePasswordSecurityPolicyModal, true);
+  };
 
   return (
     <>
       <PageHeader
         title={t('passwordSecurityPolicy.title')}
-        extra={renderExtraButton()}
+        extra={
+          <EmptyBox if={activeTab === PasswordManagementTypeEnum.policy}>
+            <BasicButton
+              type="primary"
+              icon={<IconAdd />}
+              onClick={onCreatePolicy}
+            >
+              {t('passwordSecurityPolicy.policy.create')}
+            </BasicButton>
+          </EmptyBox>
+        }
       />
-      <BasicSegmentedPage {...otherProps} />
+
+      <SegmentedTabs
+        activeKey={activeTab}
+        onChange={setActiveTab}
+        items={[
+          {
+            value: PasswordManagementTypeEnum.advent,
+            label: t('passwordSecurityPolicy.advent.title'),
+            children: <ExpirationAccountList />,
+            destroyInactivePane: true
+          },
+          {
+            value: PasswordManagementTypeEnum.policy,
+            label: t('passwordSecurityPolicy.policy.title'),
+            children: <PolicyList />,
+            destroyInactivePane: true
+          }
+        ]}
+      />
       <PasswordSecurityPolicyModal />
     </>
   );

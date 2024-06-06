@@ -1,9 +1,14 @@
-import { useMemo, useEffect } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import MemberModal from './Modal';
 import { Space } from 'antd';
-import { BasicButton, PageHeader, EmptyBox } from '@actiontech/shared';
+import {
+  BasicButton,
+  PageHeader,
+  EmptyBox,
+  SegmentedTabs
+} from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { ProjectMemberStyleWrapper } from './style';
 import { MemberListTypeEnum } from './index.enum';
@@ -18,10 +23,7 @@ import {
   useCurrentProject,
   useCurrentUser
 } from '@actiontech/shared/lib/global';
-import {
-  BasicSegmentedPage,
-  useSegmentedPageParams
-} from '@actiontech/shared/lib/components/BasicSegmentedPage';
+import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 
 const Member: React.FC = () => {
   const { t } = useTranslation();
@@ -35,15 +37,27 @@ const Member: React.FC = () => {
     return isAdmin || isProjectManager(projectName);
   }, [isAdmin, isProjectManager, projectName]);
 
-  const { updateSegmentedPageData, renderExtraButton, ...otherProps } =
-    useSegmentedPageParams<MemberListTypeEnum>();
+  const [activePage, setActivePage] = useState(MemberListTypeEnum.member_list);
 
   const onRefreshTable = () => {
     EventEmitter.emit(EmitterKey.DMS_Refresh_Member_List);
   };
 
-  useEffect(() => {
-    const onOpenMemberModal = (modalName: ModalName) => {
+  const pageItems: SegmentedTabsProps['items'] = [
+    {
+      value: MemberListTypeEnum.member_list,
+      label: t('dmsMember.memberList.title'),
+      children: <MemberList activePage={activePage} />
+    },
+    {
+      value: MemberListTypeEnum.member_group_list,
+      label: t('dmsMember.memberGroupList.title'),
+      children: <MemberGroupList activePage={activePage} />
+    }
+  ];
+
+  const renderExtraButton = () => {
+    const handleClick = (modalName: ModalName) => {
       dispatch(
         updateMemberModalStatus({
           modalName,
@@ -52,39 +66,32 @@ const Member: React.FC = () => {
       );
     };
 
-    const buttonRender = (text: React.ReactNode, modalName: ModalName) => (
+    return (
       <EmptyBox if={!projectArchive && actionPermission}>
         <BasicButton
-          onClick={() => onOpenMemberModal(modalName)}
+          hidden={activePage !== MemberListTypeEnum.member_list}
           type="primary"
           icon={<IconAdd />}
+          onClick={() => {
+            handleClick(ModalName.DMS_Add_Member);
+          }}
         >
-          {text}
+          {t('dmsMember.addMember.modalTitle')}
+        </BasicButton>
+
+        <BasicButton
+          hidden={activePage !== MemberListTypeEnum.member_group_list}
+          type="primary"
+          icon={<IconAdd />}
+          onClick={() => {
+            handleClick(ModalName.DMS_Add_Member_Group);
+          }}
+        >
+          {t('dmsMember.addMemberGroup.modalTitle')}
         </BasicButton>
       </EmptyBox>
     );
-
-    updateSegmentedPageData([
-      {
-        value: MemberListTypeEnum.member_list,
-        label: t('dmsMember.memberList.title'),
-        content: <MemberList />,
-        extraButton: buttonRender(
-          t('dmsMember.addMember.modalTitle'),
-          ModalName.DMS_Add_Member
-        )
-      },
-      {
-        value: MemberListTypeEnum.member_group_list,
-        label: t('dmsMember.memberGroupList.title'),
-        content: <MemberGroupList />,
-        extraButton: buttonRender(
-          t('dmsMember.addMemberGroup.modalTitle'),
-          ModalName.DMS_Add_Member_Group
-        )
-      }
-    ]);
-  }, [updateSegmentedPageData, t, actionPermission, dispatch, projectArchive]);
+  };
 
   return (
     <ProjectMemberStyleWrapper>
@@ -97,7 +104,11 @@ const Member: React.FC = () => {
         }
         extra={renderExtraButton()}
       />
-      <BasicSegmentedPage {...otherProps} />
+      <SegmentedTabs
+        items={pageItems}
+        activeKey={activePage}
+        onChange={setActivePage}
+      />
       <MemberModal />
     </ProjectMemberStyleWrapper>
   );

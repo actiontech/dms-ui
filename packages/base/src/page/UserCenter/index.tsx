@@ -1,22 +1,19 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader, SegmentedTabs } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { UserCenterListType } from './index.type';
+import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
-import EventEmitter from '../../utils/EventEmitter';
 import UserManageModal from './Modal';
 import { updateUserManageModalStatus } from '../../store/userCenter';
-import {
-  useSegmentedPageParams,
-  BasicSegmentedPage
-} from '@actiontech/shared/lib/components/BasicSegmentedPage';
-import UserList from './components/UserList';
-import RoleList from './components/RoleList';
-import OperatePermissionList from './components/PermissionList';
+import UserList from './components/UserList/List';
+import RoleList from './components/RoleList/List';
 import { ModalName } from '../../data/ModalName';
+import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
+import PermissionList from './components/PermissionList/List';
+import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 
 const UserCenter: React.FC = () => {
@@ -24,15 +21,32 @@ const UserCenter: React.FC = () => {
 
   const dispatch = useDispatch();
 
-  const onRefreshTable = () => {
-    EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
+  const [activePage, setActivePage] = useState(UserCenterListEnum.user_list);
+
+  const onRefreshTable = (tab: UserCenterListEnum) => {
+    eventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
   };
 
-  const { updateSegmentedPageData, renderExtraButton, ...otherProps } =
-    useSegmentedPageParams<UserCenterListType>();
+  const pageItems: SegmentedTabsProps['items'] = [
+    {
+      value: UserCenterListEnum.user_list,
+      label: t('dmsUserCenter.user.userList.title'),
+      children: <UserList activePage={activePage} />
+    },
+    {
+      value: UserCenterListEnum.role_list,
+      label: t('dmsUserCenter.role.roleList.title'),
+      children: <RoleList activePage={activePage} />
+    },
+    {
+      value: UserCenterListEnum.operate_permission_list,
+      label: t('dmsUserCenter.role.opPermissionList.title'),
+      children: <PermissionList activePage={activePage} />
+    }
+  ];
 
-  useEffect(() => {
-    const onClick = (modalName: ModalName) => {
+  const renderExtraButton = () => {
+    const handleClick = (modalName: ModalName) => {
       dispatch(
         updateUserManageModalStatus({
           modalName,
@@ -41,46 +55,36 @@ const UserCenter: React.FC = () => {
       );
     };
 
-    updateSegmentedPageData([
-      {
-        value: UserCenterListType.user_list,
-        label: t('dmsUserCenter.user.userList.title'),
-        content: <UserList />,
-        extraButton: (
-          <BasicButton
-            type="primary"
-            icon={<IconAdd />}
-            onClick={() => {
-              onClick(ModalName.DMS_Add_User);
-            }}
-          >
-            {t('dmsUserCenter.user.userList.addUserButton')}
-          </BasicButton>
-        )
-      },
-      {
-        value: UserCenterListType.role_list,
-        label: t('dmsUserCenter.role.roleList.title'),
-        content: <RoleList />,
-        extraButton: (
-          <BasicButton
-            type="primary"
-            icon={<IconAdd />}
-            onClick={() => {
-              onClick(ModalName.DMS_Add_Role);
-            }}
-          >
-            {t('dmsUserCenter.role.createRole.button')}
-          </BasicButton>
-        )
-      },
-      {
-        value: UserCenterListType.operate_permission_list,
-        label: t('dmsUserCenter.role.opPermissionList.title'),
-        content: <OperatePermissionList />
-      }
-    ]);
-  }, [updateSegmentedPageData, t, dispatch]);
+    return (
+      <>
+        <BasicButton
+          hidden={activePage !== UserCenterListEnum.user_list}
+          type="primary"
+          icon={<IconAdd />}
+          onClick={() => {
+            handleClick(ModalName.DMS_Add_User);
+          }}
+        >
+          {t('dmsUserCenter.user.userList.addUserButton')}
+        </BasicButton>
+
+        <BasicButton
+          hidden={activePage !== UserCenterListEnum.role_list}
+          type="primary"
+          icon={<IconAdd />}
+          onClick={() => {
+            handleClick(ModalName.DMS_Add_Role);
+          }}
+        >
+          {t('dmsUserCenter.role.createRole.button')}
+        </BasicButton>
+      </>
+    );
+  };
+
+  const handleTabChange = (key: UserCenterListEnum) => {
+    setActivePage(key);
+  };
 
   return (
     <section>
@@ -88,12 +92,20 @@ const UserCenter: React.FC = () => {
         title={
           <Space size={12}>
             {t('dmsUserCenter.pageTitle')}
-            <TableRefreshButton refresh={onRefreshTable} />
+            <TableRefreshButton
+              refresh={() => {
+                onRefreshTable(activePage);
+              }}
+            />
           </Space>
         }
         extra={renderExtraButton()}
-      ></PageHeader>
-      <BasicSegmentedPage {...otherProps} />
+      />
+      <SegmentedTabs
+        items={pageItems}
+        activeKey={activePage}
+        onChange={handleTabChange}
+      />
       <UserManageModal />
     </section>
   );
