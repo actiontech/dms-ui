@@ -6,8 +6,7 @@ const ExecModeController: React.FC<ExecModeControllerProps> = ({
   sqlFileComponent,
   sqlComponent
 }) => {
-  // #if [ee]
-  const renderEE = () => {
+  const render = () => {
     if (executeMode === WorkflowResV2ExecModeEnum.sqls) {
       return sqlComponent;
     }
@@ -15,22 +14,7 @@ const ExecModeController: React.FC<ExecModeControllerProps> = ({
     return sqlFileComponent;
   };
 
-  // #elif [ce]
-  const renderCE = () => {
-    return sqlComponent;
-  };
-
-  // #endif
-
-  return (
-    <>
-      {/* #if [ee] */}
-      {renderEE()}
-      {/* #elif [ce] */}
-      {renderCE()}
-      {/* #endif */}
-    </>
-  );
+  return <>{render()}</>;
 };
 
 export default ExecModeController;

@@ -46,6 +46,7 @@ describe('test SqlStatementFormItem', () => {
     fireEvent.click(screen.getByText('上传ZIP文件'));
 
     expect(container).toMatchSnapshot();
-    expect(screen.queryByText('选择上线模式')).not.toBeInTheDocument();
+    expect(screen.queryByText('选择上线模式')).toBeInTheDocument();
+    expect(screen.queryByText('选择文件排序方式')).not.toBeInTheDocument();
   });
 });

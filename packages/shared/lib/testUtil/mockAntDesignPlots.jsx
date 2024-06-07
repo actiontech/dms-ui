@@ -73,6 +73,21 @@ const AreaWithCustomRenderCalled = (options) => (props) => {
   return <div data-custom-params={params} />;
 };
 
+const RingProgressWithCustomRenderCalled = (options) => (props) => {
+  const clonePropsData = cloneDeep(props);
+
+  const statisticTitleCustomHtml =
+    clonePropsData?.statistic?.title?.customHtml?.(
+      ...(options?.statistic?.title?.customHtml?.(props) ?? [])
+    );
+
+  const params = JSON.stringify(clonePropsData);
+  if (statisticTitleCustomHtml) {
+    return <div data-custom-params={params}>{statisticTitleCustomHtml}</div>;
+  }
+  return <div data-custom-params={params} />;
+};
+
 export {
   Line,
   Pie,
@@ -87,7 +102,8 @@ export {
   RingProgress,
   PieWithCustomRenderCalled,
   BarWithCustomRenderCalled,
-  AreaWithCustomRenderCalled
+  AreaWithCustomRenderCalled,
+  RingProgressWithCustomRenderCalled
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
