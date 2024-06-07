@@ -613,7 +613,7 @@ export const IconSystem = () => {
 
 export const IconSqlAudit = () => {
   return (
-    <span style={{ display: 'inline-block' }}>
+    <CommonIconStyleWrapper style={{ display: 'inline-block' }}>
       <svg
         viewBox="0 0 1024 1024"
         version="1.1"
@@ -630,7 +630,7 @@ export const IconSqlAudit = () => {
           fill="#C3C6CD"
         ></path>
       </svg>
-    </span>
+    </CommonIconStyleWrapper>
   );
 };
 

@@ -1,0 +1,5 @@
+<!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx -->
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <rect width="16" height="16" rx="3" fill="#E8F3FF" />
+  <circle cx="8" cy="8" r="3" fill="white" stroke="#4583FF" strokeWidth="2" />
+</svg>

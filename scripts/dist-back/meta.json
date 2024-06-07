@@ -1,0 +1,1302 @@
+[
+  {
+    "originSvgName": "IconDeleteActive",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDeleteActive.svg",
+    "name": "minus-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconWorkflowFileUpload",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowFileUpload.svg",
+    "name": "file-upload",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusIsRejected",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsRejected.svg",
+    "name": "hexagon",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconPermissionGroup",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionGroup.svg",
+    "name": "lock",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconRightArrow",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRightArrow.svg",
+    "name": "arrow-right",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconMemberAndPermissions",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberAndPermissions.svg",
+    "name": "member",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconDatabaseSchema",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseSchema.svg",
+    "name": "database-schema",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconSqlManagement",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlManagement.svg",
+    "name": "management",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconPermissionTemplate",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionTemplate.svg",
+    "name": "light-shield",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconAuthList",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuthList.svg",
+    "name": "key",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconSearch",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSearch.svg",
+    "name": "search",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconStepMember",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/home.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepMember.svg",
+    "name": "",
+    "style": "",
+    "desc": "等同于 IconMemberAndPermissions"
+  },
+  {
+    "originSvgName": "IconFlashlight",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFlashlight.svg",
+    "name": "thunder-bolt",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconWorkflowResultWaterFallLayout",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultWaterFallLayout.svg",
+    "name": "square-card",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconTodayIncreased",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTodayIncreased.svg",
+    "name": "trend-card",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconAuditTaskName",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditTaskName.svg",
+    "name": "profile",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconSystem",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSystem.svg",
+    "name": "gear",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconReportStatistics",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconReportStatistics.svg",
+    "name": "signal",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconCustomService",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCustomService.svg",
+    "name": "headphone",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusIsFinished",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsFinished.svg",
+    "name": "check-hexagon",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconEllipse",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEllipse.svg",
+    "name": "ring",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconSendPlane",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSendPlane.svg",
+    "name": "paper-plane",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconPermissionOrder",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionOrder.svg",
+    "name": "profile-shield",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconModify",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/system.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconModify.svg",
+    "name": "edit",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconAuditPassRate",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPassRate.svg",
+    "name": "check-double-square",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconProjectFlag",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectFlag.svg",
+    "name": "flag",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconDisabledRule",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDisabledRule.svg",
+    "name": "close",
+    "style": "outlined",
+    "desc": "建议后续使用 另一个 close 替代"
+  },
+  {
+    "originSvgName": "IconDatabaseType",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseType.svg",
+    "name": "double-database",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconClose",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconClose.svg",
+    "name": "close",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconWorkflowTemplate",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowTemplate.svg",
+    "name": "workflow",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconAuditPlanTaskList",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPlanTaskList.svg",
+    "name": "scan",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconRightArrowSelectSuffix",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRightArrowSelectSuffix.svg",
+    "name": "arrow-right",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconEnabledRule",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEnabledRule.svg",
+    "name": "plus",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconProjectArchived",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectArchived.svg",
+    "name": "lock",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconLevelNormal",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/LevelIcon/index.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelNormal.svg",
+    "name": "profile-square",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconDataExport",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDataExport.svg",
+    "name": "export",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconDatabaseActive",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseActive.svg",
+    "name": "database",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconHonour",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconHonour.svg",
+    "name": "honour",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconUser",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUser.svg",
+    "name": "user",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconStatusSuccess",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusSuccess.svg",
+    "name": "check-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconLogout",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLogout.svg",
+    "name": "arrow-right-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconStepDatabase",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/home.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepDatabase.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconDatabaseActive"
+  },
+  {
+    "originSvgName": "IconWorkflowCreateTitle",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowCreateTitle.svg",
+    "name": "briefcase",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconFormListAdd",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFormListAdd.svg",
+    "name": "plus-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconTodoList",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTodoList.svg",
+    "name": "menu",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconOrderName",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOrderName.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowCreateTitle"
+  },
+  {
+    "originSvgName": "IconSqlLine",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlLine.svg",
+    "name": "horizontal-triple-line",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusIsWaitExecution",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsWaitExecution.svg",
+    "name": "partial-hexagon",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconAdd",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAdd.svg",
+    "name": "plus",
+    "style": "outlined",
+    "desc": "同 IconEnabledRule"
+  },
+  {
+    "originSvgName": "IconLevelNotice",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/LevelIcon/index.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelNotice.svg",
+    "name": "exclamation-hexagon",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconError",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconError.svg",
+    "name": "error",
+    "style": "filled",
+    "desc": "这个应该不用放进 icon 库，而是绑定组件"
+  },
+  {
+    "originSvgName": "IconInspectionAndDiagnosis",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconInspectionAndDiagnosis.svg",
+    "name": "thunder-bulb",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconWorkflowDownloadReport",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowDownloadReport.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconAuditTaskName"
+  },
+  {
+    "originSvgName": "IconAuditPlan",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPlan.svg",
+    "name": "",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconImport",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconImport.svg",
+    "name": "login-box",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusIsExecScheduled",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsExecScheduled.svg",
+    "name": "advanced-hexagon",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconLeftArrow",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLeftArrow.svg",
+    "name": "left-arrow",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconWorkflowAuditResultWarning",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultWarning.svg",
+    "name": "warning",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconArrowRight",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconArrowRight.svg",
+    "name": "right",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconSuccessResult",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSuccessResult.svg",
+    "name": "",
+    "style": "",
+    "desc": "建议集成到组件，而不是作为 icon"
+  },
+  {
+    "originSvgName": "IconRuleItem",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleItem.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconLevelNormal"
+  },
+  {
+    "originSvgName": "IconFailed",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFailed.svg",
+    "name": "close-circle",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconCommonPassword",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCommonPassword.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconPermissionGroup"
+  },
+  {
+    "originSvgName": "IconAccount",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAccount.svg",
+    "name": "user-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconTimeLine",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTimeLine.svg",
+    "name": "clock-circle",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconMinus",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/dataExport.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMinus.svg",
+    "name": "minus-circle",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconExportRule",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconExportRule.svg",
+    "name": "logout-box",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconWorkflowUploadTypeChecked",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowUploadTypeChecked.svg",
+    "name": "",
+    "style": "",
+    "desc": "废弃"
+  },
+  {
+    "originSvgName": "IconProjectFlag-1",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectFlag-1.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconProjectFlag"
+  },
+  {
+    "originSvgName": "IconWorkflowAuditResultNotice",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultNotice.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconLevelNotice"
+  },
+  {
+    "originSvgName": "IconFillList",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFillList.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconLevelNormal"
+  },
+  {
+    "originSvgName": "IconDatePickerUp",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerUp.svg",
+    "name": "up",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconDatePickerPrefix",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerPrefix.svg",
+    "name": "clock-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconStepSafetyRule",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/home.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepSafetyRule.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconPermissionGroup"
+  },
+  {
+    "originSvgName": "IconProjectOverview",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectOverview.svg",
+    "name": "",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconBookMark",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconBookMark.svg",
+    "name": "book-mark",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconMoreFill",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMoreFill.svg",
+    "name": "dash",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconOrderAverageAuditTime",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOrderAverageAuditTime.svg",
+    "name": "clock-circle",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconWorkflowSQLUpload",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowSQLUpload.svg",
+    "name": "panel-card",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconDraggable",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDraggable.svg",
+    "name": "drag",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconLink",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/sqlOptimization.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLink.svg",
+    "name": "like",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconClock",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconClock.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconDatePickerPrefix"
+  },
+  {
+    "originSvgName": "IconTagBookMark",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTagBookMark.svg",
+    "name": "book-mark-tag",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconCreatedTitle",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCreatedTitle.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconAuditPlan"
+  },
+  {
+    "originSvgName": "IconDatePickerDown",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerDown.svg",
+    "name": "down",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconMemberIsAdmin",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/member.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberIsAdmin.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowStatusIsFinished"
+  },
+  {
+    "originSvgName": "IconProgressWorkflowStep",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProgressWorkflowStep.svg",
+    "name": "progress-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconSqlOptimization",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlOptimization.svg",
+    "name": "rise-square",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconSucceeded",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSucceeded.svg",
+    "name": "check-circle",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconUpdateTime",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUpdateTime.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconTimeLine"
+  },
+  {
+    "originSvgName": "IconWhitelist",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWhitelist.svg",
+    "name": "resolve-file",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconWorkflowRejectReason",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowRejectReason.svg",
+    "name": "reject-file",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconArrowDown",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconArrowDown.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconDatePickerDown"
+  },
+  {
+    "originSvgName": "IconCommonEdit",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCommonEdit.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconModify"
+  },
+  {
+    "originSvgName": "IconCheckout",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCheckout.svg",
+    "name": "check-strong",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconUserCenter",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUserCenter.svg",
+    "name": "user-shield",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconDatabaseSchemaActive",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseSchemaActive.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconDatabaseType"
+  },
+  {
+    "originSvgName": "IcoScanId",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Scan.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IcoScanId.svg",
+    "name": "",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconStatusWarning",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusWarning.svg",
+    "name": "warning-triangle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconDatePickerRight",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerRight.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconArrowRight"
+  },
+  {
+    "originSvgName": "IconTipOrange",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTipOrange.svg",
+    "name": "info-circle",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusWrapper",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusWrapper.svg",
+    "name": "",
+    "style": "",
+    "desc": "考虑移出去和组件绑定"
+  },
+  {
+    "originSvgName": "IconSubmenuExpandDown",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSubmenuExpandDown.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconDatePickerDown"
+  },
+  {
+    "originSvgName": "IconStatusTip",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusTip.svg",
+    "name": "info-hexagon",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconSqlAudit",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlAudit.svg",
+    "name": "magnifier",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconSun",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSun.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconSqlAudit"
+  },
+  {
+    "originSvgName": "IconArrowUp",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconArrowUp.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconDatePickerUp"
+  },
+  {
+    "originSvgName": "IconExportWorkflowCreateTitle",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/dataExport.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconExportWorkflowCreateTitle.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowCreateTitle"
+  },
+  {
+    "originSvgName": "IconDirectory",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDirectory.svg",
+    "name": "folder",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconAudit",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAudit.svg",
+    "name": "user",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconEmpty",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEmpty.svg",
+    "name": "",
+    "style": "",
+    "desc": "考虑和组件挂钩"
+  },
+  {
+    "originSvgName": "IconFailedWorkflowStep",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFailedWorkflowStep.svg",
+    "name": "close-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusIsCanceled",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsCanceled.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowStatusIsRejected"
+  },
+  {
+    "originSvgName": "IconEdit",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEdit.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconModify"
+  },
+  {
+    "originSvgName": "IconWorkflowDownloadSQL",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowDownloadSQL.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowSQLUpload"
+  },
+  {
+    "originSvgName": "IconRuleTemplate",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleTemplate.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconLevelNormal"
+  },
+  {
+    "originSvgName": "IconProjectTitle",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectTitle.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconProjectOverview"
+  },
+  {
+    "originSvgName": "IconFormListDelete",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFormListDelete.svg",
+    "name": "minus-circle",
+    "style": "",
+    "desc": "同 IconDeleteActive"
+  },
+  {
+    "originSvgName": "IconTitleMore",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTitleMore.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconMoreFill"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusIsExecuting",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsExecuting.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowStatusIsExecScheduled"
+  },
+  {
+    "originSvgName": "IconWaitForOrderList",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWaitForOrderList.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconTagBookMark"
+  },
+  {
+    "originSvgName": "IconPluginAudit",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPluginAudit.svg",
+    "name": "code",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconSQLFile",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSQLFile.svg",
+    "name": "sql-file",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconViewVersion",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconViewVersion.svg",
+    "name": "info-circle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconStepDataQuery",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/home.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepDataQuery.svg",
+    "name": "snippets",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconStatusError",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusError.svg",
+    "name": "close-circle",
+    "style": "",
+    "desc": "同 IconFailedWorkflowStep"
+  },
+  {
+    "originSvgName": "IconCloneRule",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCloneRule.svg",
+    "name": "checkbox-multiple-blank",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconMemberNotAdmin",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/member.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberNotAdmin.svg",
+    "name": "close-hexagon",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconDatePickerLeft",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerLeft.svg",
+    "name": "left",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconDatabase",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabase.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconStepDatabase"
+  },
+  {
+    "originSvgName": "IconEllipse-1",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEllipse-1.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconEllipse"
+  },
+  {
+    "originSvgName": "IconOperateAndAudit",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOperateAndAudit.svg",
+    "name": "",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconCommonSelected",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCommonSelected.svg",
+    "name": "",
+    "style": "",
+    "desc": "建议绑定到组件"
+  },
+  {
+    "originSvgName": "IconRefresh",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRefresh.svg",
+    "name": "refresh",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconWorkflowResultListLayout",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultListLayout.svg",
+    "name": "list-layout",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconAddFile",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAddFile.svg",
+    "name": "plus-file",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconDate",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDate.svg",
+    "name": "calendar",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconRuleTitle",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleTitle.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconLevelNormal"
+  },
+  {
+    "originSvgName": "IconGlobalSystem",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconGlobalSystem.svg",
+    "name": "center-circle-hexagon",
+    "style": "twotone"
+  },
+  {
+    "originSvgName": "IconWorkflowId",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowId.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowCreateTitle"
+  },
+  {
+    "originSvgName": "IconViewRule",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconViewRule.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconLevelNormal"
+  },
+  {
+    "originSvgName": "IconMinus-1",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMinus-1.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconMinus"
+  },
+  {
+    "originSvgName": "IconDelete",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDelete.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconDeleteActive"
+  },
+  {
+    "originSvgName": "IconWorkflowAuditResultError",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultError.svg",
+    "name": "close-circle",
+    "style": "",
+    "desc": "同 IconFailedWorkflowStep"
+  },
+  {
+    "originSvgName": "IconPosition",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPosition.svg",
+    "name": "environment",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusIsWaitAudit",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsWaitAudit.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowStatusIsRejected"
+  },
+  {
+    "originSvgName": "IconStepOperation",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/home.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepOperation.svg",
+    "name": "util",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconCommonUser",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCommonUser.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconUser"
+  },
+  {
+    "originSvgName": "IconMoon",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMoon.svg",
+    "name": "moon",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconSetting",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSetting.svg",
+    "name": "setting",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconWorkflowResultLayout",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultLayout.svg",
+    "name": "list-layout",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconFillListActive",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFillListActive.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconLevelNormal"
+  },
+  {
+    "originSvgName": "IconTest",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/system.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTest.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconFlashlight"
+  },
+  {
+    "originSvgName": "IconDownload",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDownload.svg",
+    "name": "down-arrow-line",
+    "style": "outlined"
+  },
+  {
+    "originSvgName": "IconLevelWarn",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/LevelIcon/index.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelWarn.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconStatusWarning"
+  },
+  {
+    "originSvgName": "IconSubmenuExpandTop",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSubmenuExpandTop.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconArrowUp"
+  },
+  {
+    "originSvgName": "IconWorkflowStatusIsFailed",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsFailed.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowStatusIsRejected"
+  },
+  {
+    "originSvgName": "IconInstanceManager",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconInstanceManager.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconStepDatabase"
+  },
+  {
+    "originSvgName": "IconSpin-1",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSpin-1.svg",
+    "name": "",
+    "style": "",
+    "desc": "绑定组件"
+  },
+  {
+    "originSvgName": "IconTipGray",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTipGray.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconTipOrange"
+  },
+  {
+    "originSvgName": "IconSQLExecWorkflow",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSQLExecWorkflow.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowCreateTitle"
+  },
+  {
+    "originSvgName": "IconCloudBeaver",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCloudBeaver.svg",
+    "name": "computer",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconTaskType",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTaskType.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconTagBookMark"
+  },
+  {
+    "originSvgName": "IconInitializedWorkflowStep",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconInitializedWorkflowStep.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconFormListAdd"
+  },
+  {
+    "originSvgName": "IconSpin",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSpin.svg",
+    "name": "",
+    "style": "",
+    "desc": "绑定组件"
+  },
+  {
+    "originSvgName": "IconRuleManage",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleManage.svg",
+    "name": "profile-edit",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconToken",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconToken.svg",
+    "name": "token",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconNextStep",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconNextStep.svg",
+    "name": "down-triangle",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconOrderTotalNum",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOrderTotalNum.svg",
+    "name": "",
+    "style": "",
+    "desc": "业务 icon"
+  },
+  {
+    "originSvgName": "IconFinishedWorkflowStep",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFinishedWorkflowStep.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconStatusSuccess"
+  },
+  {
+    "originSvgName": "IconSQLOrder",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSQLOrder.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowCreateTitle"
+  },
+  {
+    "originSvgName": "IconWorkflowAuditResultSuccess",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultSuccess.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowCreateTitle"
+  },
+  {
+    "originSvgName": "IconLevelError",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/LevelIcon/index.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelError.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconFailedWorkflowStep"
+  },
+  {
+    "originSvgName": "IconCircleAccount",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCircleAccount.svg",
+    "name": "",
+    "style": "",
+    "desc": "同 IconAccount"
+  },
+  {
+    "originSvgName": "IconMyOrderList",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMyOrderList.svg",
+    "name": "menu-square",
+    "style": "filled"
+  },
+  {
+    "originSvgName": "IconUploadCloud",
+    "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
+    "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUploadCloud.svg",
+    "name": "upload-cloud",
+    "style": "outlined"
+  }
+]

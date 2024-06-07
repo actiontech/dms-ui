@@ -21,7 +21,8 @@
     "test": "sh ./scripts/jest/run.sh",
     "test:c": "sh ./scripts/jest/run-coverage.sh",
     "test:ci": "sh ./scripts/jest/run-ci-ee.sh && sh ./scripts/jest/run-ci-ce.sh && node ./scripts/jest/merge-report-json.js",
-    "test:clean": "jest --clearCache"
+    "test:clean": "jest --clearCache",
+    "svg:g": "pnpm --filter @actiontech/icons-svg g"
   },
   "keywords": [],
   "author": "",
@@ -101,6 +102,7 @@
     "axios": "^0.27.2",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
+    "highlight.js": "^11.0.1",
     "history": "^5.3.0",
     "i18next": "^21.8.14",
     "json2md": "^2.0.0",
@@ -115,8 +117,8 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.3.0",
     "recoil": "^0.7.4",
-    "highlight.js": "^11.0.1",
-    "sql-formatter": "^12.2.4"
+    "sql-formatter": "^12.2.4",
+    "ts-node": "^8.0.0"
   },
   "resolutions": {
     "headers-polyfill": "3.0.10"

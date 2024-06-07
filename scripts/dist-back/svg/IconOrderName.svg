@@ -1,0 +1,9 @@
+<!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx -->
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <g id="survey-fill">
+      <path id="Vector"
+        d="M4 2.66668V5.33334H12V2.66668H13.3377C13.7035 2.66668 14 2.96331 14 3.32894V14.0044C14 14.3701 13.7034 14.6667 13.3377 14.6667H2.66227C2.29651 14.6667 2 14.3701 2 14.0044V3.32894C2 2.96318 2.29663 2.66668 2.66227 2.66668H4ZM6 11.3333H4.66667V12.6667H6V11.3333ZM6 9.33334H4.66667V10.6667H6V9.33334ZM6 7.33334H4.66667V8.66668H6V7.33334ZM10.6667 1.33334V4.00001H5.33333V1.33334H10.6667Z"
+        fill="#C3C6CD" />
+    </g>
+  </svg></svg>

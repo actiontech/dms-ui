@@ -1699,34 +1699,6 @@ export const IconCustomService = () => {
   );
 };
 
-export const IconModeSwitcherChecked: React.FC<CustomIconProps> = ({
-  className
-}) => {
-  return (
-    <CommonIconStyleWrapper
-      className={classNames('icon-mode-switcher-checked', className)}
-    >
-      <svg
-        width="14"
-        height="14"
-        viewBox="0 0 14 14"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g id="Frame">
-          <path
-            id="Vector"
-            d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
-            stroke="#FCFBF9"
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
-        </g>
-      </svg>
-    </CommonIconStyleWrapper>
-  );
-};
-
 export const IconSQLFile: React.FC<CustomIconProps> = ({
   width = 16,
   height = 16
