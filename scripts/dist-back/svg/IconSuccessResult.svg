@@ -1,0 +1,82 @@
+<!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx -->
+<svg width="1160" height="1160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#filter0_d_3998_2816)">
+    <rect x="15" y="30" width="128" height="100" rx="6" fill="white" />
+    <rect x="15.5" y="30.5" width="127" height="99" rx="5.5" stroke="#F2F1F0" />
+  </g>
+  <circle cx="21.5" cy="36.5" r="1.5" fill="#F66074" />
+  <circle cx="27.5" cy="36.5" r="1.5" fill="#EDB054" />
+  <circle cx="33.5" cy="36.5" r="1.5" fill="#1CB889" />
+  <rect x="27" y="52" width="37" height="5" rx="2" fill="#EBEAE7" />
+  <rect x="27" y="62" width="17" height="4" rx="2" fill="#EBEAE7" />
+  <rect x="70" y="78" width="19" height="4" rx="2" fill="#F2F1EF" />
+  <rect x="27" y="78" width="40" height="4" rx="2" fill="#F2F1EF" />
+  <rect x="42" y="87" width="47" height="4" rx="2" fill="#F2F1EF" />
+  <rect x="27" y="87" width="12" height="4" rx="2" fill="#F66074" />
+  <rect x="79" y="96" width="10" height="4" rx="2" fill="#F66074" />
+  <rect x="63" y="96" width="13" height="4" rx="2" fill="#F2F1EF" />
+  <rect x="27" y="96" width="33" height="4" rx="2" fill="#F2F1EF" />
+  <rect x="55" y="105" width="34" height="4" rx="2" fill="#F2F1EF" />
+  <rect x="27" y="105" width="25" height="4" rx="2" fill="#F66074" />
+  <rect x="27" y="114" width="49" height="4" rx="2" fill="#F2F1EF" />
+  <rect x="99" y="48" width="32" height="72" rx="3" fill="#F7F6F4" />
+  <rect x="103" y="52" width="24" height="6" rx="1" fill="white" stroke="#E8E7E6" />
+  <rect x="103" y="76" width="24" height="6" rx="1" fill="white" stroke="#E8E7E6" />
+  <g filter="url(#filter1_d_3998_2816)">
+    <rect x="102" y="63" width="26" height="8" rx="2" fill="#4583FF" />
+  </g>
+  <rect x="103" y="87" width="24" height="6" rx="1" fill="white" stroke="#E8E7E6" />
+  <rect x="103" y="98" width="24" height="6" rx="1" fill="white" stroke="#E8E7E6" />
+  <rect x="103" y="109" width="24" height="6" rx="1" fill="white" stroke="#E8E7E6" />
+  <g filter="url(#filter2_d_3998_2816)">
+    <path
+      d="M134 136C138.418 136 142.418 134.209 145.314 131.314C148.209 128.418 150 124.418 150 120C150 115.582 148.209 111.582 145.314 108.686C142.418 105.791 138.418 104 134 104C129.582 104 125.582 105.791 122.686 108.686C119.791 111.582 118 115.582 118 120C118 124.418 119.791 128.418 122.686 131.314C125.582 134.209 129.582 136 134 136Z"
+      fill="#1CB889" />
+  </g>
+  <path d="M128.4 120L132.6 124.2L141 115.8" stroke="white" strokeWidth="3" strokeLinecap="round"
+    strokeLinejoin="round" />
+  <rect x="27" y="73" width="37" height="50" fill="url(#paint0_linear_3998_2816)" />
+  <rect x="62" y="73" width="2" height="50" fill="#15C7D4" />
+  <defs>
+    <filter id="filter0_d_3998_2816" x="10" y="27" width="138" height="110" filterUnits="userSpaceOnUse"
+      colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        result="hardAlpha" />
+      <feOffset dy="2" />
+      <feGaussianBlur stdDeviation="2.5" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.173333 0 0 0 0 0.12 0 0 0 0.1 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3998_2816" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3998_2816" result="shape" />
+    </filter>
+    <filter id="filter1_d_3998_2816" x="98" y="60" width="34" height="16" filterUnits="userSpaceOnUse"
+      colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        result="hardAlpha" />
+      <feOffset dy="1" />
+      <feGaussianBlur stdDeviation="2" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.270588 0 0 0 0 0.513726 0 0 0 0 1 0 0 0 0.4 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3998_2816" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3998_2816" result="shape" />
+    </filter>
+    <filter id="filter2_d_3998_2816" x="112" y="100" width="44" height="44" filterUnits="userSpaceOnUse"
+      colorInterpolationFilters="sRGB">
+      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        result="hardAlpha" />
+      <feOffset dy="2" />
+      <feGaussianBlur stdDeviation="3" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.109804 0 0 0 0 0.721569 0 0 0 0 0.537255 0 0 0 0.4 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3998_2816" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3998_2816" result="shape" />
+    </filter>
+    <linearGradient id="paint0_linear_3998_2816" x1="64" y1="73" x2="27" y2="73" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#1ACEDB" stopOpacity="0.3" />
+      <stop offset="1" stopColor="white" stopOpacity="0" />
+    </linearGradient>
+  </defs>
+</svg>

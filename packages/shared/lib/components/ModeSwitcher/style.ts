@@ -59,6 +59,15 @@ export const ModeSwitcherItemStyleWrapper = styled('div')`
       position: absolute;
       top: 0;
       right: 0;
+      display: inline-block;
+      color: inherit;
+      font-style: normal;
+      line-height: 0;
+      text-align: center;
+      text-transform: none;
+      vertical-align: -0.125em;
+      text-rendering: optimizelegibility;
+      -webkit-font-smoothing: antialiased;
 
       .active-icon {
         position: absolute;
