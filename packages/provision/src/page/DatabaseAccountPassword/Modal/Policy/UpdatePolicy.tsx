@@ -47,7 +47,7 @@ const UpdatePolicy: React.FC = () => {
         uid: selectData?.uid ?? '',
         password_security_policy: {
           name: values.name,
-          password_expiration_period: Number(values.passwordExpirationPeriod)
+          password_expiration_period: values.passwordExpirationPeriod
         }
       })
       .then((res) => {
@@ -76,7 +76,7 @@ const UpdatePolicy: React.FC = () => {
     if (visible) {
       form.setFieldsValue({
         name: selectData?.name,
-        passwordExpirationPeriod: `${selectData?.password_expiration_period}`
+        passwordExpirationPeriod: selectData?.password_expiration_period
       });
     }
   }, [form, visible, selectData]);

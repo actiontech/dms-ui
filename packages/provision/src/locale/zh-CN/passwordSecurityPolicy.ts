@@ -8,7 +8,7 @@ export default {
     title: '密码安全策略',
     create: '创建密码安全策略',
     deleteTip: '确认删除密码安全策略:{{name}}?',
-    deleteSuccessTips: '删除密码安全策略{{name}}成功',
+    deleteSuccessTips: '删除密码安全策略成功',
     column: {
       name: '密码安全策略',
       expirationPeriod: '密码修改周期（天）'

@@ -37,7 +37,7 @@ const AddPolicy: React.FC = () => {
         project_uid: projectID,
         password_security_policy: {
           name: values.name,
-          password_expiration_period: Number(values.passwordExpirationPeriod)
+          password_expiration_period: values.passwordExpirationPeriod
         }
       })
       .then((res) => {

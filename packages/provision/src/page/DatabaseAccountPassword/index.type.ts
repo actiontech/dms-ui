@@ -7,7 +7,7 @@ export enum PasswordManagementTypeEnum {
 
 export type PolicyFormValues = {
   name: string;
-  passwordExpirationPeriod: string;
+  passwordExpirationPeriod: number;
 };
 
 export type PolicyFormType = FormInstance<PolicyFormValues>;
