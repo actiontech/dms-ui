@@ -65,34 +65,55 @@ exports[`test base/page/project should match snapshot 1`] = `
                 type="button"
               >
                 <span>
-                  导 出
-                </span>
-              </button>
-            </div>
-            <div
-              class="ant-space-item"
-              style="margin-right: 8px;"
-            >
-              <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                type="button"
-              >
-                <span>
-                  导 入
+                  批量导入数据源
                 </span>
               </button>
             </div>
             <div
               class="ant-space-item"
             >
-              <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                type="button"
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
-                <span>
-                  创建项目
-                </span>
-              </button>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      导 出
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      导 入
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      创建项目
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -369,34 +390,55 @@ exports[`test base/page/project should match snapshot 2`] = `
                 type="button"
               >
                 <span>
-                  导 出
-                </span>
-              </button>
-            </div>
-            <div
-              class="ant-space-item"
-              style="margin-right: 8px;"
-            >
-              <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                type="button"
-              >
-                <span>
-                  导 入
+                  批量导入数据源
                 </span>
               </button>
             </div>
             <div
               class="ant-space-item"
             >
-              <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                type="button"
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
-                <span>
-                  创建项目
-                </span>
-              </button>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      导 出
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      导 入
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      创建项目
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

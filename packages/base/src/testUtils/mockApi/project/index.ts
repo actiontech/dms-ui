@@ -8,6 +8,8 @@ import {
   mockProjectTips
 } from './data';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { AxiosResponse } from 'axios';
+import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
 
 class MockProjectApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -22,6 +24,9 @@ class MockProjectApi implements MockSpyApy {
     this.getImportProjectsTemplate();
     this.previewImportProjects();
     this.getProjectTips();
+    this.importDBServicesOfProjects();
+    this.importDBServicesOfOneProject();
+    this.getImportDBServicesTemplate();
   }
 
   public getProjectList() {
@@ -114,6 +119,52 @@ class MockProjectApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockProjectTips })
     );
+    return spy;
+  }
+
+  public importDBServicesOfProjects() {
+    const spy = jest.spyOn(dms, 'ImportDBServicesOfProjects');
+    spy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob([JSON.stringify({ code: 0, message: 'ok' })], {
+              type: MIMETypeEnum.Application_Json
+            })
+          });
+        }, 3000);
+      });
+    });
+    return spy;
+  }
+
+  public importDBServicesOfOneProject() {
+    const spy = jest.spyOn(dms, 'ImportDBServicesOfOneProject');
+    spy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob([JSON.stringify({ code: 0, message: 'ok' })], {
+              type: MIMETypeEnum.Application_Json
+            })
+          });
+        }, 3000);
+      });
+    });
+    return spy;
+  }
+
+  public getImportDBServicesTemplate() {
+    const spy = jest.spyOn(dms, 'GetImportDBServicesTemplate');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
