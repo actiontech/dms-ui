@@ -79,14 +79,25 @@ describe('page/DataSource/DataSourceList', () => {
 
     expect(screen.getByText('数据源列表')).toBeInTheDocument();
     expect(screen.getByText('添加数据源')).toBeInTheDocument();
+    expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render list no permission', async () => {
-    const { baseElement } = customRender({ role: '' });
-
-    expect(screen.getByText('数据源列表')).toBeInTheDocument();
+    const { baseElement } = customRender({ role: '', bindProjects: [] });
+    expect(screen.queryByText('添加数据源')).not.toBeInTheDocument();
+    expect(screen.queryByText('批量导入数据源')).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
+
+    cleanup();
+    customRender({ role: '' });
+    expect(screen.getByText('添加数据源')).toBeInTheDocument();
+    expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
+
+    cleanup();
+    customRender({ bindProjects: [] });
+    expect(screen.getByText('添加数据源')).toBeInTheDocument();
+    expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
   });
 
   it('render table for api return no data', async () => {

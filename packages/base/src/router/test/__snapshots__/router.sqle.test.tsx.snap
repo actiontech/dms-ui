@@ -602,6 +602,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "key": "projectImport",
         "path": "import",
       },
+      {
+        "element": <div>
+          projectBatchImportDataSource
+        </div>,
+        "key": "projectBatchImportDataSource",
+        "path": "batch-import-data-source",
+      },
     ],
     "key": "project",
     "path": "project",
@@ -637,6 +644,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
             </div>,
             "key": "dataSourceUpdate",
             "path": "update/:dbServiceUid",
+          },
+          {
+            "element": <div>
+              batchImportDataSource
+            </div>,
+            "key": "batchImportDataSource",
+            "path": "batch-import-data-source",
           },
         ],
         "element": <div

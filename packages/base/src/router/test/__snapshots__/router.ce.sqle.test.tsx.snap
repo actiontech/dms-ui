@@ -534,6 +534,13 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
             "key": "dataSourceUpdate",
             "path": "update/:dbServiceUid",
           },
+          {
+            "element": <div>
+              batchImportDataSource
+            </div>,
+            "key": "batchImportDataSource",
+            "path": "batch-import-data-source",
+          },
         ],
         "element": <div
           data-test-parent-id="dataSource"
