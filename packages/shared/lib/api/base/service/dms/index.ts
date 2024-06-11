@@ -62,6 +62,7 @@ import {
   IExportProjectsParams,
   IImportProjectsParams,
   IImportProjectsReturn,
+  IImportDBServicesOfProjectsParams,
   IPreviewImportProjectsParams,
   IPreviewImportProjectsReturn,
   IGetProjectTipsParams,
@@ -119,6 +120,7 @@ import {
   IAddDBServiceReturn,
   ICheckDBServiceIsConnectableParams,
   ICheckDBServiceIsConnectableReturn,
+  IImportDBServicesOfOneProjectParams,
   IListDBServiceTipsParams,
   IListDBServiceTipsReturn,
   IUpdateDBServiceParams,
@@ -563,8 +565,12 @@ class DmsService extends ServiceBase {
     );
   }
 
-  public ExportProjects(options?: AxiosRequestConfig) {
-    return this.get('/v1/dms/projects/export', undefined, options);
+  public ExportProjects(
+    params: IExportProjectsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get('/v1/dms/projects/export', paramsData, options);
   }
 
   public ImportProjects(
@@ -575,6 +581,35 @@ class DmsService extends ServiceBase {
     return this.post<IImportProjectsReturn>(
       '/v1/dms/projects/import',
       paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfProjects(
+    params: IImportDBServicesOfProjectsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.db_services_file != undefined) {
+      paramsData.append('db_services_file', params.db_services_file as any);
+    }
+
+    return this.post('/v1/dms/projects/import_db_services', paramsData, config);
+  }
+
+  public GetImportDBServicesTemplate(options?: AxiosRequestConfig) {
+    return this.get(
+      '/v1/dms/projects/import_db_services_template',
+      undefined,
       options
     );
   }
@@ -1067,6 +1102,33 @@ class DmsService extends ServiceBase {
       `/v1/dms/projects/${project_uid}/db_services/connection`,
       paramsData,
       options
+    );
+  }
+
+  public ImportDBServicesOfOneProject(
+    params: IImportDBServicesOfOneProjectParams,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.db_services_file != undefined) {
+      paramsData.append('db_services_file', params.db_services_file as any);
+    }
+
+    const project_uid = params.project_uid;
+
+    return this.post(
+      `/v1/dms/projects/${project_uid}/db_services/import`,
+      paramsData,
+      config
     );
   }
 

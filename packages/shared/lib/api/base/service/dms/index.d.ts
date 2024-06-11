@@ -302,6 +302,10 @@ export interface IImportProjectsParams {
 
 export interface IImportProjectsReturn extends IGenericResp {}
 
+export interface IImportDBServicesOfProjectsParams {
+  db_services_file?: any;
+}
+
 export interface IPreviewImportProjectsParams {
   projects_file?: any;
 }
@@ -601,6 +605,12 @@ export interface ICheckDBServiceIsConnectableParams {
 
 export interface ICheckDBServiceIsConnectableReturn
   extends ICheckDBServiceIsConnectableReply {}
+
+export interface IImportDBServicesOfOneProjectParams {
+  project_uid: string;
+
+  db_services_file?: any;
+}
 
 export interface IListDBServiceTipsParams {
   project_uid: string;
