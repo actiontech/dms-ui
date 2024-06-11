@@ -6,6 +6,9 @@ import { lazy } from 'react';
 // #if [ee]
 const Project = lazy(() => import('../page/Project'));
 const ImportProject = lazy(() => import('../page/Project/ImportProject'));
+const ProjectBatchImportDataSource = lazy(
+  () => import('../page/Project/BatchImportDataSource')
+);
 
 const ExportTaskList = lazy(() => import('../page/DataExportManagement/List'));
 const CreateExportTask = lazy(
@@ -30,6 +33,9 @@ const UpdateDataSource = lazy(
   () => import('../page/DataSource/components/UpdateDataSource')
 );
 const DataSourceList = lazy(() => import('../page/DataSource/components/List'));
+const BatchImportDataSource = lazy(
+  () => import('../page/DataSource/components/BatchImportDataSource')
+);
 const Member = lazy(() => import('../page/Member'));
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 const System = lazy(() => import('../page/System'));
@@ -76,6 +82,11 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         path: 'import',
         key: 'projectImport',
         element: <ImportProject />
+      },
+      {
+        path: 'batch-import-data-source',
+        key: 'projectBatchImportDataSource',
+        element: <ProjectBatchImportDataSource />
       }
     ]
   },
@@ -109,6 +120,11 @@ export const BaseRouterConfig: RouterConfigItem[] = [
             path: 'update/:dbServiceUid',
             element: <UpdateDataSource />,
             key: 'dataSourceUpdate'
+          },
+          {
+            path: 'batch-import-data-source',
+            element: <BatchImportDataSource />,
+            key: 'batchImportDataSource'
           }
         ]
       },

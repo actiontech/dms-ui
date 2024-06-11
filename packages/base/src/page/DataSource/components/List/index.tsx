@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { message, Modal } from 'antd';
+import { message, Modal, Space } from 'antd';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
@@ -263,11 +263,20 @@ const DataSourceList = () => {
             if={!projectArchive && actionPermission}
             key="add-dataSource"
           >
-            <Link to={`/project/${projectID}/db-services/create`}>
-              <BasicButton type="primary" icon={<IconAdd />}>
-                {t('dmsDataSource.addDatabase')}
-              </BasicButton>
-            </Link>
+            <Space>
+              <Link
+                to={`/project/${projectID}/db-services/batch-import-data-source`}
+              >
+                <BasicButton>
+                  {t('dmsDataSource.batchImportDataSource.buttonText')}
+                </BasicButton>
+              </Link>
+              <Link to={`/project/${projectID}/db-services/create`}>
+                <BasicButton type="primary" icon={<IconAdd />}>
+                  {t('dmsDataSource.addDatabase')}
+                </BasicButton>
+              </Link>
+            </Space>
           </EmptyBox>
         ]}
       />
