@@ -54,7 +54,7 @@ const SqlExecWorkflowList: React.FC = () => {
   const [filterStatus, setFilterStatus] =
     useState<getWorkflowsV1FilterStatusEnum>();
   const { usernameOptions, updateUsernameList } = useUsername();
-  const { instanceOptions, updateInstanceList } = useInstance();
+  const { instanceIDOptions, updateInstanceList } = useInstance();
   const { isAdmin, username } = useCurrentUser();
 
   const {
@@ -118,7 +118,7 @@ const SqlExecWorkflowList: React.FC = () => {
       [
         'instance_name',
         {
-          options: instanceOptions
+          options: instanceIDOptions
         }
       ],
       [
@@ -134,7 +134,7 @@ const SqlExecWorkflowList: React.FC = () => {
         }
       ]
     ]);
-  }, [instanceOptions, usernameOptions]);
+  }, [instanceIDOptions, usernameOptions]);
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
