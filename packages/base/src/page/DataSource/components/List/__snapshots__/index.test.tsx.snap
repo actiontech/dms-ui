@@ -409,7 +409,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -854,7 +854,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1826,7 +1826,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -3457,7 +3457,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -4261,7 +4261,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -5065,7 +5065,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -5858,7 +5858,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -6676,7 +6676,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -7096,7 +7096,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -7516,7 +7516,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
             style="margin-right: 8px;"
           >
             <a
-              href="/project/700300/db-services/batch-import-data-source"
+              href="/project/700300/db-services/batch-import"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"

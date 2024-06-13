@@ -101,7 +101,7 @@ describe('base/router-base-ee', () => {
 
       it('render route batchImportDataSource', async () => {
         const { baseElement } = customRender([
-          `/project/${projectID}/db-services/batch-import-data-source`
+          `/project/${projectID}/db-services/batch-import`
         ]);
 
         await act(async () => jest.advanceTimersByTime(0));
@@ -138,7 +138,7 @@ describe('base/router-base-ee', () => {
 
       it('render router batch projectBatchImportDataSource', async () => {
         const { baseElement } = customRender([
-          '/project/batch-import-data-source'
+          '/project/batch-import'
         ]);
 
         expect(

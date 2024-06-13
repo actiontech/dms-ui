@@ -1,4 +1,3 @@
-import { BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import {
   FormAreaBlockStyleWrapper,
@@ -55,15 +54,8 @@ const BatchImportDataSourceForm: React.FC<{
               });
             }}
             accept=".csv"
-            beforeUpload={(file) => {
-              form.setFieldsValue({
-                files: [file]
-              });
-              return false;
-            }}
-          >
-            <BasicButton>{t('common.upload')}</BasicButton>
-          </FileUpload>
+            beforeUpload={() => false}
+          />
         </FormItemLabel>
       </FormStyleWrapper>
     </FormAreaBlockStyleWrapper>
