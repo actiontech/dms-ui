@@ -264,9 +264,7 @@ const DataSourceList = () => {
             key="add-dataSource"
           >
             <Space>
-              <Link
-                to={`/project/${projectID}/db-services/batch-import-data-source`}
-              >
+              <Link to={`/project/${projectID}/db-services/batch-import`}>
                 <BasicButton>
                   {t('dmsDataSource.batchImportDataSource.buttonText')}
                 </BasicButton>

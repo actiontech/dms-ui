@@ -84,7 +84,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         element: <ImportProject />
       },
       {
-        path: 'batch-import-data-source',
+        path: 'batch-import',
         key: 'projectBatchImportDataSource',
         element: <ProjectBatchImportDataSource />
       }
@@ -122,7 +122,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
             key: 'dataSourceUpdate'
           },
           {
-            path: 'batch-import-data-source',
+            path: 'batch-import',
             element: <BatchImportDataSource />,
             key: 'batchImportDataSource'
           }

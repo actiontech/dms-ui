@@ -51,7 +51,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
           projectBatchImportDataSource
         </div>,
         "key": "projectBatchImportDataSource",
-        "path": "batch-import-data-source",
+        "path": "batch-import",
       },
     ],
     "key": "project",
@@ -94,7 +94,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
               batchImportDataSource
             </div>,
             "key": "batchImportDataSource",
-            "path": "batch-import-data-source",
+            "path": "batch-import",
           },
         ],
         "element": <div

@@ -68,7 +68,7 @@ const Project: React.FC = () => {
   };
 
   const onBatchImportDataSource = () => {
-    navigate('/project/batch-import-data-source');
+    navigate('/project/batch-import');
   };
 
   return (
