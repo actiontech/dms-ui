@@ -44,6 +44,7 @@ const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
 const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
 const Account = lazy(() => import('../page/Account'));
 const ExportTaskManagement = lazy(() => import('../page/DataExportManagement'));
+const DataMaskRuleOverview = lazy(() => import('../page/DataMaskRuleOverview'));
 
 export const BaseRouterConfig: RouterConfigItem[] = [
   {
@@ -184,7 +185,15 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         path: `${PROJECT_ROUTER_PARAM}/cloud-beaver`,
         key: 'cloudBeaver',
         element: <CloudBeaver />
+      },
+      // #if [dms]
+      {
+        path: `${PROJECT_ROUTER_PARAM}/data-mask-rule-overview`,
+        key: 'dataMaskRuleOverview',
+        label: 'dataMaskRuleOverview.list.title',
+        element: <DataMaskRuleOverview />
       }
+      // #endif
     ] as RouterConfigItem[]
   }
 ];

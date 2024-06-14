@@ -38,10 +38,10 @@ export default {
           action_0_1: '查看规则模板',
           action_0_2: ' 查看智能扫描',
           action_0_3: '新建SQL审核',
-          title_1: '数据源授权管理',
-          content_1: '配置数据权限模版，将数据权限模版授权给指定用户',
-          action_1_0: '权限模板',
-          action_1_1: '授权清单',
+          title_1: '数据源账号管理',
+          content_1: '兼顾账号发现及管理，监控数据源账号安全',
+          action_1_0: '账号列表',
+          action_1_1: '临期列表',
           title_2: '审批流程',
           content_2: '根据实际业务流转变更流程模板',
           action_2_0: '配置审批流程模板',
@@ -60,7 +60,10 @@ export default {
           action_1_1: ' 发起提权工单',
           title_2: '数据导出',
           content_2: '发起数据导出工单，审核通过后获取数据集。',
-          action_2_0: '发起导出工单'
+          action_2_0: '发起导出工单',
+          title_3: '数据脱敏',
+          content_3: '开启脱敏，保障敏感数据安全',
+          action_3_0: '查看脱敏规则'
         }
       },
       devopsAndAudit: {
