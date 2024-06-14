@@ -264,11 +264,13 @@ const DataSourceList = () => {
             key="add-dataSource"
           >
             <Space>
+              {/* #if [ee] */}
               <Link to={`/project/${projectID}/db-services/batch-import`}>
                 <BasicButton>
                   {t('dmsDataSource.batchImportDataSource.buttonText')}
                 </BasicButton>
               </Link>
+              {/* #endif */}
               <Link to={`/project/${projectID}/db-services/create`}>
                 <BasicButton type="primary" icon={<IconAdd />}>
                   {t('dmsDataSource.addDatabase')}

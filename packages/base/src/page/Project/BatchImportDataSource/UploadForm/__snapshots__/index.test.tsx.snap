@@ -49,7 +49,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
-                for="dbService"
+                for="files"
                 title="请选择导入文件"
               >
                 请选择导入文件
@@ -81,7 +81,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                           <input
                             accept=".csv"
                             aria-required="true"
-                            id="dbService"
+                            id="files"
                             style="display: none;"
                             type="file"
                           />
