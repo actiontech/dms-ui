@@ -59,10 +59,14 @@ import {
   IListProjectsReturn,
   IAddProjectParams,
   IAddProjectReturn,
+  IDBServicesConnectionParams,
+  IDBServicesConnectionReturn,
   IExportProjectsParams,
   IImportProjectsParams,
   IImportProjectsReturn,
   IImportDBServicesOfProjectsParams,
+  IImportDBServicesOfProjectsReturn,
+  IImportDBServicesOfProjectsCheckParams,
   IPreviewImportProjectsParams,
   IPreviewImportProjectsReturn,
   IGetProjectTipsParams,
@@ -121,6 +125,8 @@ import {
   ICheckDBServiceIsConnectableParams,
   ICheckDBServiceIsConnectableReturn,
   IImportDBServicesOfOneProjectParams,
+  IImportDBServicesOfOneProjectReturn,
+  IImportDBServicesOfOneProjectCheckParams,
   IListDBServiceTipsParams,
   IListDBServiceTipsReturn,
   IUpdateDBServiceParams,
@@ -565,6 +571,18 @@ class DmsService extends ServiceBase {
     );
   }
 
+  public DBServicesConnection(
+    params: IDBServicesConnectionParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IDBServicesConnectionReturn>(
+      '/v1/dms/projects/db_services_connection',
+      paramsData,
+      options
+    );
+  }
+
   public ExportProjects(
     params: IExportProjectsParams,
     options?: AxiosRequestConfig
@@ -589,6 +607,18 @@ class DmsService extends ServiceBase {
     params: IImportDBServicesOfProjectsParams,
     options?: AxiosRequestConfig
   ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IImportDBServicesOfProjectsReturn>(
+      '/v1/dms/projects/import_db_services',
+      paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfProjectsCheck(
+    params: IImportDBServicesOfProjectsCheckParams,
+    options?: AxiosRequestConfig
+  ) {
     const config = options || {};
     const headers = config.headers ? config.headers : {};
     config.headers = {
@@ -603,7 +633,11 @@ class DmsService extends ServiceBase {
       paramsData.append('db_services_file', params.db_services_file as any);
     }
 
-    return this.post('/v1/dms/projects/import_db_services', paramsData, config);
+    return this.post(
+      '/v1/dms/projects/import_db_services_check',
+      paramsData,
+      config
+    );
   }
 
   public GetImportDBServicesTemplate(options?: AxiosRequestConfig) {
@@ -1109,6 +1143,21 @@ class DmsService extends ServiceBase {
     params: IImportDBServicesOfOneProjectParams,
     options?: AxiosRequestConfig
   ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<IImportDBServicesOfOneProjectReturn>(
+      `/v1/dms/projects/${project_uid}/db_services/import`,
+      paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfOneProjectCheck(
+    params: IImportDBServicesOfOneProjectCheckParams,
+    options?: AxiosRequestConfig
+  ) {
     const config = options || {};
     const headers = config.headers ? config.headers : {};
     config.headers = {
@@ -1126,7 +1175,7 @@ class DmsService extends ServiceBase {
     const project_uid = params.project_uid;
 
     return this.post(
-      `/v1/dms/projects/${project_uid}/db_services/import`,
+      `/v1/dms/projects/${project_uid}/db_services/import_check`,
       paramsData,
       config
     );

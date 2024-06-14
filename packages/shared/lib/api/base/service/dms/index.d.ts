@@ -36,7 +36,10 @@ import {
   IListProjectReply,
   IProject,
   IAddProjectReply,
+  ICheckDbsConnectable,
+  IDBServicesConnectionReply,
   IImportProjects,
+  IImportDBService,
   IPreviewImportProjectsReply,
   IGetProjectTipsReply,
   IUpdateProject,
@@ -288,6 +291,13 @@ export interface IAddProjectParams {
 
 export interface IAddProjectReturn extends IAddProjectReply {}
 
+export interface IDBServicesConnectionParams {
+  db_services?: ICheckDbsConnectable[];
+}
+
+export interface IDBServicesConnectionReturn
+  extends IDBServicesConnectionReply {}
+
 export interface IExportProjectsParams {
   order_by?: ExportProjectsOrderByEnum;
 
@@ -303,6 +313,12 @@ export interface IImportProjectsParams {
 export interface IImportProjectsReturn extends IGenericResp {}
 
 export interface IImportDBServicesOfProjectsParams {
+  db_services?: IImportDBService[];
+}
+
+export interface IImportDBServicesOfProjectsReturn extends IGenericResp {}
+
+export interface IImportDBServicesOfProjectsCheckParams {
   db_services_file?: any;
 }
 
@@ -607,6 +623,14 @@ export interface ICheckDBServiceIsConnectableReturn
   extends ICheckDBServiceIsConnectableReply {}
 
 export interface IImportDBServicesOfOneProjectParams {
+  project_uid: string;
+
+  db_services?: IImportDBService[];
+}
+
+export interface IImportDBServicesOfOneProjectReturn extends IGenericResp {}
+
+export interface IImportDBServicesOfOneProjectCheckParams {
   project_uid: string;
 
   db_services_file?: any;
