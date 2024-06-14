@@ -1,6 +1,7 @@
 import { AxiosResponse } from 'axios';
 import moment from 'moment';
 import i18n from 'i18next';
+import { MIMETypeEnum, ResponseBlobJsonType } from '../enum';
 
 export const emailValidate = (email: string): boolean => {
   if (!email || typeof email !== 'string') {
@@ -103,15 +104,38 @@ export const getResponseErrorMessage = async (
     !(error instanceof Error) &&
     !('code' in error) &&
     error.data instanceof Blob &&
-    error.data.type === 'application/json'
+    error.data.type === MIMETypeEnum.Application_Json
   ) {
     return error.data.text().then((text) => {
-      const json = jsonParse<{ code: number; message: string }>(text);
+      const json = jsonParse<ResponseBlobJsonType>(text);
       return json.message;
     });
   } else {
     return getErrorMessage(error);
   }
+};
+
+export const getResponseCode = async (
+  res: AxiosResponse<any, any>
+): Promise<number | undefined> => {
+  if (
+    res instanceof Object &&
+    !(res instanceof Error) &&
+    !('code' in res) &&
+    res.data instanceof Blob &&
+    res.data.type === MIMETypeEnum.Application_Json
+  ) {
+    return res.data.text().then((text) => {
+      const json = jsonParse<ResponseBlobJsonType>(text);
+      return json.code;
+    });
+  }
+
+  return res?.data?.code;
+};
+
+export const isExportFileResponse = (res: AxiosResponse<any, any>): boolean => {
+  return res.headers?.['content-disposition']?.includes('attachment') ?? false;
 };
 
 export const jsonParse = <T>(str: string, defaultVal: any = {}): T => {

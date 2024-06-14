@@ -57,7 +57,7 @@ const Project: React.FC = () => {
       t('dmsProject.projectList.exportMessage'),
       0
     );
-    dms.ExportProjects({ responseType: 'blob' }).finally(() => {
+    dms.ExportProjects({}, { responseType: 'blob' }).finally(() => {
       exportFinish();
       hideLoading();
     });
@@ -65,6 +65,10 @@ const Project: React.FC = () => {
 
   const onImport = () => {
     navigate('/project/import');
+  };
+
+  const onBatchImportDataSource = () => {
+    navigate('/project/batch-import');
   };
 
   return (
@@ -78,19 +82,26 @@ const Project: React.FC = () => {
           </Space>
         }
         extra={
-          <EmptyBox if={allowCreateProject}>
-            <Space>
-              <BasicButton onClick={onExport} loading={exportLoading}>
-                {t('dmsProject.exportProject.buttonText')}
+          <Space>
+            <EmptyBox if={isAdmin}>
+              <BasicButton onClick={onBatchImportDataSource}>
+                {t('dmsProject.batchImportDataSource.buttonText')}
               </BasicButton>
-              <BasicButton onClick={onImport}>
-                {t('dmsProject.importProject.buttonText')}
-              </BasicButton>
-              <BasicButton type="primary" onClick={createProject}>
-                {t('dmsProject.createProject.modalTitle')}
-              </BasicButton>
-            </Space>
-          </EmptyBox>
+            </EmptyBox>
+            <EmptyBox if={allowCreateProject}>
+              <Space>
+                <BasicButton onClick={onExport} loading={exportLoading}>
+                  {t('dmsProject.exportProject.buttonText')}
+                </BasicButton>
+                <BasicButton onClick={onImport}>
+                  {t('dmsProject.importProject.buttonText')}
+                </BasicButton>
+                <BasicButton type="primary" onClick={createProject}>
+                  {t('dmsProject.createProject.modalTitle')}
+                </BasicButton>
+              </Space>
+            </EmptyBox>
+          </Space>
         }
       />
       <ProjectList />
