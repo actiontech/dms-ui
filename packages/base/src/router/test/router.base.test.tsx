@@ -137,9 +137,7 @@ describe('base/router-base-ee', () => {
       });
 
       it('render router batch projectBatchImportDataSource', async () => {
-        const { baseElement } = customRender([
-          '/project/batch-import'
-        ]);
+        const { baseElement } = customRender(['/project/batch-import']);
 
         expect(
           screen.getByText('projectBatchImportDataSource')
