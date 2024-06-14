@@ -68,6 +68,15 @@ export enum CompanyNoticeDisplayStatusEnum {
   NotDisplayed = '0'
 }
 
+export enum MIMETypeEnum {
+  'Application_Json' = 'application/json'
+}
+
+export type ResponseBlobJsonType = {
+  code: number;
+  message: string;
+};
+
 export enum KeyboardType {
   Enter = 'Enter'
 }

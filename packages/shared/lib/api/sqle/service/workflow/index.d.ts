@@ -67,7 +67,7 @@ export interface IGetWorkflowsV1Params {
 
   filter_current_step_assignee_user_id?: string;
 
-  filter_task_instance_name?: string;
+  filter_task_instance_id?: string;
 
   page_index: number;
 
@@ -119,7 +119,7 @@ export interface IExportWorkflowV1Params {
 
   filter_current_step_assignee_user_id?: string;
 
-  filter_task_instance_name?: string;
+  filter_task_instance_id?: string;
 
   project_name: string;
 
@@ -243,7 +243,7 @@ export interface IGetGlobalWorkflowsV1Params {
 
   filter_current_step_assignee_user_id?: string;
 
-  filter_task_instance_name?: string;
+  filter_task_instance_id?: string;
 
   page_index: number;
 
