@@ -103,16 +103,6 @@ describe('base/router-base-ce', () => {
         expect(baseElement).toMatchSnapshot();
       });
 
-      it('render route batchImportDataSource', async () => {
-        const { baseElement } = customRender([
-          `/project/${projectID}/db-services/batch-import`
-        ]);
-
-        await act(async () => jest.advanceTimersByTime(0));
-        expect(screen.getByText('batchImportDataSource')).toBeInTheDocument();
-        expect(baseElement).toMatchSnapshot();
-      });
-
       it('render router cloud-beaver', async () => {
         const { baseElement } = customRender([
           `/project/${projectID}/cloud-beaver`

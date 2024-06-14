@@ -97,7 +97,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
-                for="dbService"
+                for="files"
                 title="请选择导入文件"
               >
                 请选择导入文件
@@ -129,7 +129,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
                           <input
                             accept=".csv"
                             aria-required="true"
-                            id="dbService"
+                            id="files"
                             style="display: none;"
                             type="file"
                           />
@@ -357,7 +357,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
-                for="dbService"
+                for="files"
                 title="请选择导入文件"
               >
                 请选择导入文件
@@ -389,7 +389,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
                           <input
                             accept=".csv"
                             aria-required="true"
-                            id="dbService"
+                            id="files"
                             style="display: none;"
                             type="file"
                           />
@@ -544,7 +544,7 @@ exports[`base/DataSource/BatchImportDataSource render test connection 1`] = `
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
-                for="dbService"
+                for="files"
                 title="请选择导入文件"
               >
                 请选择导入文件
@@ -576,7 +576,7 @@ exports[`base/DataSource/BatchImportDataSource render test connection 1`] = `
                           <input
                             accept=".csv"
                             aria-required="true"
-                            id="dbService"
+                            id="files"
                             style="display: none;"
                             type="file"
                           />

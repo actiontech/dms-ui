@@ -62,13 +62,6 @@ exports[`base/router-base-ce render base route data snap 1`] = `
             "key": "dataSourceUpdate",
             "path": "update/:dbServiceUid",
           },
-          {
-            "element": <div>
-              batchImportDataSource
-            </div>,
-            "key": "batchImportDataSource",
-            "path": "batch-import",
-          },
         ],
         "element": <div
           data-test-parent-id="dataSource"
@@ -122,20 +115,6 @@ exports[`base/router-base-ce render base router when version is ce render router
   <div>
     <div>
       home
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-base-ce render base router when version is ce render router project render route batchImportDataSource 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="dataSource"
-    >
-      <div>
-        batchImportDataSource
-      </div>
     </div>
   </div>
 </body>
