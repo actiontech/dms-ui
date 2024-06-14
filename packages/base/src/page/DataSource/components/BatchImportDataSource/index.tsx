@@ -13,16 +13,10 @@ import {
 import BatchImportDataSourceForm from '../../../Project/BatchImportDataSource/UploadForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { jsonParse } from '@actiontech/shared/lib/utils/Common';
-import {
-  ResponseCode,
-  MIMETypeEnum,
-  ResponseBlobJsonType
-} from '@actiontech/shared/lib/enum';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useBatchImportDataSource from '../../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
-import { isExportFileResponse } from '@actiontech/shared/lib/utils/Common';
+import { UploadProps } from 'antd';
+import { useCallback } from 'react';
 
 const BatchImportDataSource = () => {
   const { t } = useTranslation();
@@ -36,45 +30,53 @@ const BatchImportDataSource = () => {
     resultVisible,
     showResult,
     form,
-    resetAndHideResult
+    resetAndHideResult,
+    setDBservices,
+    dbServices,
+    importServicesCheck
   } = useBatchImportDataSource();
 
   const onSubmit = async () => {
-    const values = await form.validateFields();
+    await form.validateFields();
     setImportPending();
     dms
-      .ImportDBServicesOfOneProject(
-        {
-          db_services_file: values.files[0],
-          project_uid: projectID
-        },
-        { responseType: 'blob' }
-      )
+      .ImportDBServicesOfOneProject({
+        db_services: dbServices,
+        project_uid: projectID
+      })
       .then((res) => {
-        // 导入数据源 如果审核失败 会自动导出审核文件 所以这个接口当做导出文件类型处理 并且导出文件时 需要提供错误提示信息
-        if (
-          res.data instanceof Blob &&
-          res.data.type === MIMETypeEnum.Application_Json
-        ) {
-          res.data.text().then((text) => {
-            const json = jsonParse<ResponseBlobJsonType>(text);
-            if (json.code === ResponseCode.SUCCESS) {
-              showResult();
-            }
-          });
-        } else if (isExportFileResponse(res)) {
-          eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
-            message: t('common.request.noticeFailTitle'),
-            description: t(
-              'dmsDataSource.batchImportDataSource.requestAuditErrorMessage'
-            )
-          });
+        if (res.data.code === ResponseCode.SUCCESS) {
+          showResult();
         }
       })
       .finally(() => {
         setImportDone();
       });
   };
+
+  const onUploadCustomRequest = useCallback<
+    Required<UploadProps>['customRequest']
+  >(
+    (option) => {
+      setDBservices([]);
+      dms
+        .ImportDBServicesOfOneProjectCheck(
+          {
+            project_uid: projectID,
+            db_services_file: option.file
+          },
+          { responseType: 'blob' }
+        )
+        .then((res) => {
+          importServicesCheck(res);
+          option?.onSuccess?.(option?.file);
+        })
+        .catch((error) => {
+          option?.onError?.(error);
+        });
+    },
+    [importServicesCheck, projectID, setDBservices]
+  );
 
   return (
     <>
@@ -92,6 +94,7 @@ const BatchImportDataSource = () => {
               type="primary"
               onClick={onSubmit}
               loading={importLoading}
+              disabled={!dbServices?.length}
             >
               {t('dmsDataSource.batchImportDataSource.importFile')}
             </BasicButton>
@@ -116,7 +119,11 @@ const BatchImportDataSource = () => {
           />
         }
       >
-        <BatchImportDataSourceForm form={form} />
+        <BatchImportDataSourceForm
+          form={form}
+          customRequest={onUploadCustomRequest}
+          dbServices={dbServices}
+        />
       </EmptyBox>
     </>
   );
