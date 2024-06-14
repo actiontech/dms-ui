@@ -88,7 +88,7 @@ const BatchImportDataSourceForm: React.FC<{
         <FormItemLabel
           className="has-required-style"
           label={t('dmsProject.importProject.selectFile')}
-          name="dbService"
+          name="files"
           valuePropName="fileList"
           getValueFromEvent={getFileFromUploadChangeEvent}
           rules={[
