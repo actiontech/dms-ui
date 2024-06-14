@@ -60,7 +60,7 @@ describe('base/Project/BatchImportDataSource', () => {
     const { baseElement } = superRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#dbService', baseElement), {
+    fireEvent.change(getBySelector('#files', baseElement), {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
@@ -98,7 +98,7 @@ describe('base/Project/BatchImportDataSource', () => {
     const { baseElement } = superRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#dbService', baseElement), {
+    fireEvent.change(getBySelector('#files', baseElement), {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
@@ -125,7 +125,7 @@ describe('base/Project/BatchImportDataSource', () => {
       screen.getByText('批量测试数据源连通性').closest('button')
     ).toBeDisabled();
     const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#dbService', baseElement), {
+    fireEvent.change(getBySelector('#files', baseElement), {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
@@ -150,7 +150,7 @@ describe('base/Project/BatchImportDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('导 入').closest('button')).toBeDisabled();
     const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#dbService', baseElement), {
+    fireEvent.change(getBySelector('#files', baseElement), {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
@@ -184,7 +184,7 @@ describe('base/Project/BatchImportDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('导 入').closest('button')).toBeDisabled();
     const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#dbService', baseElement), {
+    fireEvent.change(getBySelector('#files', baseElement), {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
