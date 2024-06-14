@@ -5,7 +5,9 @@ import {
 import {
   mockProjectList,
   mockPreviewImportProjects,
-  mockProjectTips
+  mockProjectTips,
+  mockBatchImportDBCheckData,
+  mockDbServicesConnectionData
 } from './data';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { AxiosResponse } from 'axios';
@@ -27,6 +29,9 @@ class MockProjectApi implements MockSpyApy {
     this.importDBServicesOfProjects();
     this.importDBServicesOfOneProject();
     this.getImportDBServicesTemplate();
+    this.importDBServicesOfProjectsCheck();
+    this.importDBServicesOfOneProjectCheck();
+    this.dbServicesConnection();
   }
 
   public getProjectList() {
@@ -124,47 +129,85 @@ class MockProjectApi implements MockSpyApy {
 
   public importDBServicesOfProjects() {
     const spy = jest.spyOn(dms, 'ImportDBServicesOfProjects');
-    spy.mockImplementation(() => {
-      return new Promise<AxiosResponse<any>>((res) => {
-        setTimeout(() => {
-          res({
-            status: 200,
-            headers: {},
-            config: {},
-            statusText: '',
-            data: new Blob([JSON.stringify({ code: 0, message: 'ok' })], {
-              type: MIMETypeEnum.Application_Json
-            })
-          });
-        }, 3000);
-      });
-    });
+    spy.mockImplementation(() => createSpySuccessResponse({ data: {} }));
     return spy;
   }
 
   public importDBServicesOfOneProject() {
     const spy = jest.spyOn(dms, 'ImportDBServicesOfOneProject');
-    spy.mockImplementation(() => {
-      return new Promise<AxiosResponse<any>>((res) => {
-        setTimeout(() => {
-          res({
-            status: 200,
-            headers: {},
-            config: {},
-            statusText: '',
-            data: new Blob([JSON.stringify({ code: 0, message: 'ok' })], {
-              type: MIMETypeEnum.Application_Json
-            })
-          });
-        }, 3000);
-      });
-    });
+    spy.mockImplementation(() => createSpySuccessResponse({ data: {} }));
     return spy;
   }
 
   public getImportDBServicesTemplate() {
     const spy = jest.spyOn(dms, 'GetImportDBServicesTemplate');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public importDBServicesOfProjectsCheck() {
+    const spy = jest.spyOn(dms, 'ImportDBServicesOfProjectsCheck');
+    spy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob(
+              [
+                JSON.stringify({
+                  code: 0,
+                  message: 'ok',
+                  data: mockBatchImportDBCheckData
+                })
+              ],
+              {
+                type: MIMETypeEnum.Application_Json
+              }
+            )
+          });
+        }, 3000);
+      });
+    });
+    return spy;
+  }
+
+  public importDBServicesOfOneProjectCheck() {
+    const spy = jest.spyOn(dms, 'ImportDBServicesOfOneProjectCheck');
+    spy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob(
+              [
+                JSON.stringify({
+                  code: 0,
+                  message: 'ok',
+                  data: mockBatchImportDBCheckData
+                })
+              ],
+              {
+                type: MIMETypeEnum.Application_Json
+              }
+            )
+          });
+        }, 3000);
+      });
+    });
+    return spy;
+  }
+
+  public dbServicesConnection() {
+    const spy = jest.spyOn(dms, 'DBServicesConnection');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockDbServicesConnectionData })
+    );
     return spy;
   }
 }

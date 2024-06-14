@@ -1,4 +1,5 @@
 import project from '../../../../testUtils/mockApi/project';
+import { mockBatchImportDBCheckData } from '../../../../testUtils/mockApi/project/data';
 import { superRender } from '../../../../testUtils/customRender';
 import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -9,15 +10,23 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { AxiosResponse } from 'axios';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('base/DataSource/BatchImportDataSource', () => {
   let importDBServicesOfOneProjectSpy: jest.SpyInstance;
   let getImportDBServicesTemplateSpy: jest.SpyInstance;
+  let importDBServicesOfOneProjectCheckSpy: jest.SpyInstance;
+  let dbServicesConnectionSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.useFakeTimers();
     importDBServicesOfOneProjectSpy = project.importDBServicesOfOneProject();
     getImportDBServicesTemplateSpy = project.getImportDBServicesTemplate();
+    importDBServicesOfOneProjectCheckSpy =
+      project.importDBServicesOfOneProjectCheck();
+    dbServicesConnectionSpy = project.dbServicesConnection();
+    mockUseCurrentProject();
   });
 
   afterEach(() => {
@@ -25,15 +34,16 @@ describe('base/DataSource/BatchImportDataSource', () => {
     cleanup();
   });
 
-  test('render init snap', async () => {
+  it('render init snap', async () => {
     const { baseElement } = superRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
+    expect(screen.getByText('批量测试数据源连通性')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回数据源列表'));
   });
 
-  test('render download data source template', async () => {
+  it('render download data source template', async () => {
     superRender(<ProjectImport />);
     await act(async () => {
       fireEvent.click(screen.getByText('下载导入模板'));
@@ -49,15 +59,17 @@ describe('base/DataSource/BatchImportDataSource', () => {
     );
   });
 
-  test('render delete file', async () => {
+  it('render delete file', async () => {
     const { baseElement } = superRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#files', baseElement), {
+    fireEvent.change(getBySelector('#dbService', baseElement), {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(importDBServicesOfOneProjectCheckSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     fireEvent.mouseMove(getBySelector('.ant-upload-list-item'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -66,34 +78,9 @@ describe('base/DataSource/BatchImportDataSource', () => {
     expect(screen.queryByText('test.csv')).not.toBeInTheDocument();
   });
 
-  test('render upload file', async () => {
-    const { baseElement } = superRender(<ProjectImport />);
-    await act(async () => jest.advanceTimersByTime(300));
-    const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#files', baseElement), {
-      target: { files: [file] }
-    });
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('test.csv')).toBeInTheDocument();
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => {
-      fireEvent.click(screen.getByText('导 入'));
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(importDBServicesOfOneProjectSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(1000));
-    expect(screen.getByText('批量导入数据源成功')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-    fireEvent.click(screen.getByText('关闭并重置表单'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('请选择导入文件')).toBeInTheDocument();
-  });
-
-  test('render upload file request return audit file', async () => {
-    importDBServicesOfOneProjectSpy.mockClear();
-    const spy = jest.spyOn(dms, 'ImportDBServicesOfOneProject');
+  it('render check api return svg file', async () => {
+    importDBServicesOfOneProjectCheckSpy.mockClear();
+    const spy = jest.spyOn(dms, 'ImportDBServicesOfOneProjectCheck');
     spy.mockImplementation(() => {
       return new Promise<AxiosResponse<any>>((res) => {
         setTimeout(() => {
@@ -114,19 +101,13 @@ describe('base/DataSource/BatchImportDataSource', () => {
     const { baseElement } = superRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#files', baseElement), {
+    fireEvent.change(getBySelector('#dbService', baseElement), {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('test.csv')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => {
-      fireEvent.click(screen.getByText('导 入'));
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(importDBServicesOfOneProjectSpy).toHaveBeenCalledTimes(1);
+    expect(importDBServicesOfOneProjectCheckSpy).toHaveBeenCalledTimes(1);
     expect(eventEmitterSpy).toHaveBeenCalledTimes(1);
     expect(eventEmitterSpy).toHaveBeenNthCalledWith(
       1,
@@ -140,6 +121,64 @@ describe('base/DataSource/BatchImportDataSource', () => {
     );
   });
 
+  it('render test connection', async () => {
+    const { baseElement } = superRender(<ProjectImport />);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(
+      screen.getByText('批量测试数据源连通性').closest('button')
+    ).toBeDisabled();
+    const file = new File([''], 'test.csv');
+    fireEvent.change(getBySelector('#dbService', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(
+      screen.getByText('批量测试数据源连通性').closest('button')
+    ).not.toBeDisabled();
+    fireEvent.click(screen.getByText('批量测试数据源连通性'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(dbServicesConnectionSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('测试连通性成功1个')).toBeInTheDocument();
+    expect(
+      screen.getByText('测试连通性失败1个，数据源为mysql_1')
+    ).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render upload file', async () => {
+    const { baseElement } = superRender(<ProjectImport />);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
+    const file = new File([''], 'test.csv');
+    fireEvent.change(getBySelector('#dbService', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('导 入').closest('button')).not.toBeDisabled();
+    fireEvent.click(screen.getByText('导 入'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('导 入').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(importDBServicesOfOneProjectSpy).toHaveBeenCalledTimes(1);
+    expect(importDBServicesOfOneProjectSpy).toHaveBeenNthCalledWith(1, {
+      db_services: mockBatchImportDBCheckData,
+      project_uid: mockProjectInfo.projectID
+    });
+    await act(async () => jest.advanceTimersByTime(1000));
+    expect(screen.getByText('批量导入数据源成功')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('关闭并重置表单'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('请选择导入文件')).toBeInTheDocument();
+  });
+
   it('render upload file error', async () => {
     importDBServicesOfOneProjectSpy.mockClear();
     importDBServicesOfOneProjectSpy.mockImplementation(() =>
@@ -147,25 +186,22 @@ describe('base/DataSource/BatchImportDataSource', () => {
     );
     const { baseElement } = superRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
     const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#files', baseElement), {
+    fireEvent.change(getBySelector('#dbService', baseElement), {
       target: { files: [file] }
     });
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('test.csv')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => {
-      fireEvent.click(screen.getByText('导 入'));
-    });
+    expect(screen.getByText('导 入').closest('button')).not.toBeDisabled();
+    fireEvent.click(screen.getByText('导 入'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('导 入').closest('button')).toHaveClass(
       'ant-btn-loading'
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(importDBServicesOfOneProjectSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(1000));
     expect(screen.getByText('导 入').closest('button')).not.toHaveClass(
       'ant-btn-loading'
     );

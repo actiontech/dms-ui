@@ -49,7 +49,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
-                for="files"
+                for="dbService"
                 title="请选择导入文件"
               >
                 请选择导入文件
@@ -81,7 +81,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                           <input
                             accept=".csv"
                             aria-required="true"
-                            id="files"
+                            id="dbService"
                             style="display: none;"
                             type="file"
                           />
@@ -112,6 +112,27 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              disabled=""
+              type="button"
+            >
+              <span>
+                批量测试数据源连通性
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          />
         </div>
       </form>
     </section>

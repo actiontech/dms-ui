@@ -1,7 +1,8 @@
 import {
   IListProject,
   IPreviewImportProjects,
-  IProjectTips
+  IProjectTips,
+  IDBService
 } from '@actiontech/shared/lib/api/base/service/common';
 
 export const mockProjectList: IListProject[] = [
@@ -92,3 +93,73 @@ export const mockProjectTips: IProjectTips[] = [
     business: ['business1', 'business2', 'business3']
   }
 ];
+
+export const mockBatchImportDBCheckData: IDBService[] = [
+  {
+    name: 'mysql_1',
+    db_type: 'MySQL',
+    host: '127.0.0.1',
+    port: '3306',
+    user: 'root',
+    password: '123456',
+    business: 'test',
+    maintenance_times: [
+      {
+        maintenance_start_time: {
+          hour: 21,
+          minute: 30
+        },
+        maintenance_stop_time: {
+          hour: 23,
+          minute: 30
+        }
+      }
+    ],
+    desc: 'mysql_1',
+    sqle_config: {
+      rule_template_name: 'default_MySQL',
+      rule_template_id: '1',
+      sql_query_config: {
+        max_pre_query_rows: 0,
+        query_timeout_second: 0,
+        audit_enabled: true
+      }
+    },
+    is_enable_masking: false
+  },
+  {
+    name: 'oracle_1',
+    db_type: 'Oracle',
+    host: '127.0.0.1',
+    port: '1521',
+    user: 'system',
+    password: '123456',
+    business: 'test',
+    maintenance_times: [],
+    desc: 'oracle_1',
+    sqle_config: {
+      rule_template_name: 'default_Oracle',
+      rule_template_id: '2',
+      sql_query_config: {
+        max_pre_query_rows: 0,
+        query_timeout_second: 0,
+        audit_enabled: true
+      }
+    },
+    additional_params: [
+      {
+        name: 'service_name',
+        value: 'xe',
+        description: 'service name',
+        type: 'string'
+      }
+    ],
+    is_enable_masking: false
+  }
+];
+
+export const mockDbServicesConnectionData = {
+  successful_num: 1,
+  failed_num: 1,
+  failed_names: ['mysql_1']
+};
