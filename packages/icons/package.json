@@ -1,0 +1,23 @@
+{
+  "name": "@actiontech/icons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:preview": "dumi preview",
+    "build": "father build",
+    "icon:g": "svgr --template template/template.js -d src svg/ ",
+    "docs:g": "node scripts/generate.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@svgr/cli": "^8.1.0",
+    "dumi": "^2.3.8",
+    "father": "^4.1.0"
+  }
+}

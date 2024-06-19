@@ -22,7 +22,11 @@
     "test:c": "sh ./scripts/jest/run-coverage.sh",
     "test:ci": "sh ./scripts/jest/run-ci-ee.sh && sh ./scripts/jest/run-ci-ce.sh && node ./scripts/jest/merge-report-json.js",
     "test:clean": "jest --clearCache",
-    "svg:g": "pnpm --filter @actiontech/icons-svg g"
+    "icon:g": "pnpm --filter @actiontech/icons icon:g",
+    "docs:g": "pnpm --filter @actiontech/icons docs:g",
+    "docs": "pnpm --filter @actiontech/icons start",
+    "docs:build": "pnpm --filter @actiontech/icons docs:build",
+    "icon:build": "pnpm --filter @actiontech/icons build"
   },
   "keywords": [],
   "author": "",

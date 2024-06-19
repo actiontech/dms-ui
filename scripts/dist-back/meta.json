@@ -4,77 +4,88 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDeleteActive.svg",
     "name": "minus-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowFileUpload",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowFileUpload.svg",
     "name": "file-upload",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowStatusIsRejected",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsRejected.svg",
     "name": "hexagon",
-    "style": "filled"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconPermissionGroup",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionGroup.svg",
     "name": "lock",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconRightArrow",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRightArrow.svg",
     "name": "arrow-right",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconMemberAndPermissions",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberAndPermissions.svg",
     "name": "member",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconDatabaseSchema",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseSchema.svg",
     "name": "database-schema",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconSqlManagement",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlManagement.svg",
     "name": "management",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconPermissionTemplate",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionTemplate.svg",
     "name": "light-shield",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconAuthList",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuthList.svg",
     "name": "key",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconSearch",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSearch.svg",
     "name": "search",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconStepMember",
@@ -89,98 +100,112 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFlashlight.svg",
     "name": "thunder-bolt",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowResultWaterFallLayout",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultWaterFallLayout.svg",
     "name": "square-card",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconTodayIncreased",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTodayIncreased.svg",
     "name": "trend-card",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconAuditTaskName",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditTaskName.svg",
     "name": "profile",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconSystem",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSystem.svg",
     "name": "gear",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconReportStatistics",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconReportStatistics.svg",
     "name": "signal",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconCustomService",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCustomService.svg",
     "name": "headphone",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconWorkflowStatusIsFinished",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsFinished.svg",
     "name": "check-hexagon",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconEllipse",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEllipse.svg",
     "name": "ring",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconSendPlane",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSendPlane.svg",
     "name": "paper-plane",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconPermissionOrder",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionOrder.svg",
     "name": "profile-shield",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconModify",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/system.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconModify.svg",
     "name": "edit",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Editorial"
   },
   {
     "originSvgName": "IconAuditPassRate",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPassRate.svg",
     "name": "check-double-square",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconProjectFlag",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectFlag.svg",
     "name": "flag",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconDisabledRule",
@@ -195,98 +220,112 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseType.svg",
     "name": "double-database",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconClose",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconClose.svg",
     "name": "close",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Editorial"
   },
   {
     "originSvgName": "IconWorkflowTemplate",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowTemplate.svg",
     "name": "workflow",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconAuditPlanTaskList",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPlanTaskList.svg",
     "name": "scan",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconRightArrowSelectSuffix",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRightArrowSelectSuffix.svg",
     "name": "arrow-right",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconEnabledRule",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEnabledRule.svg",
     "name": "plus",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Editorial"
   },
   {
     "originSvgName": "IconProjectArchived",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectArchived.svg",
     "name": "lock",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconLevelNormal",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/LevelIcon/index.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelNormal.svg",
     "name": "profile-square",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconDataExport",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDataExport.svg",
     "name": "export",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconDatabaseActive",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseActive.svg",
     "name": "database",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconHonour",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconHonour.svg",
     "name": "honour",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconUser",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUser.svg",
     "name": "user",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconStatusSuccess",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusSuccess.svg",
     "name": "check-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconLogout",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLogout.svg",
     "name": "arrow-right-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconStepDatabase",
@@ -301,21 +340,24 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowCreateTitle.svg",
     "name": "briefcase",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconFormListAdd",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFormListAdd.svg",
     "name": "plus-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconTodoList",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTodoList.svg",
     "name": "menu",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconOrderName",
@@ -330,21 +372,23 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlLine.svg",
     "name": "horizontal-triple-line",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconWorkflowStatusIsWaitExecution",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsWaitExecution.svg",
     "name": "partial-hexagon",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconAdd",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAdd.svg",
-    "name": "plus",
-    "style": "outlined",
+    "name": "",
+    "style": "",
     "desc": "同 IconEnabledRule"
   },
   {
@@ -352,14 +396,15 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/LevelIcon/index.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelNotice.svg",
     "name": "exclamation-hexagon",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconError",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconError.svg",
-    "name": "error",
-    "style": "filled",
+    "name": "",
+    "style": "",
     "desc": "这个应该不用放进 icon 库，而是绑定组件"
   },
   {
@@ -367,7 +412,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconInspectionAndDiagnosis.svg",
     "name": "thunder-bulb",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconWorkflowDownloadReport",
@@ -381,43 +427,49 @@
     "originSvgName": "IconAuditPlan",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPlan.svg",
-    "name": "",
-    "style": "twotone"
+    "name": "plan",
+    "style": "two-tone",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconImport",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconImport.svg",
     "name": "login-box",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconWorkflowStatusIsExecScheduled",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsExecScheduled.svg",
     "name": "advanced-hexagon",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconLeftArrow",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLeftArrow.svg",
     "name": "left-arrow",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconWorkflowAuditResultWarning",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultWarning.svg",
     "name": "warning",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconArrowRight",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconArrowRight.svg",
     "name": "right",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconSuccessResult",
@@ -440,7 +492,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFailed.svg",
     "name": "close-circle",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconCommonPassword",
@@ -448,35 +501,40 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCommonPassword.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconPermissionGroup"
+    "desc": "同 IconPermissionGroup",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconAccount",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAccount.svg",
     "name": "user-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconTimeLine",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTimeLine.svg",
     "name": "clock-circle",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconMinus",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/dataExport.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMinus.svg",
     "name": "minus-circle",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconExportRule",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconExportRule.svg",
     "name": "logout-box",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconWorkflowUploadTypeChecked",
@@ -515,14 +573,16 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerUp.svg",
     "name": "up",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconDatePickerPrefix",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerPrefix.svg",
     "name": "clock-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconStepSafetyRule",
@@ -536,50 +596,57 @@
     "originSvgName": "IconProjectOverview",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectOverview.svg",
-    "name": "",
-    "style": "twotone"
+    "name": "overview",
+    "style": "two-tone",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconBookMark",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconBookMark.svg",
     "name": "book-mark",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconMoreFill",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMoreFill.svg",
     "name": "dash",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconOrderAverageAuditTime",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOrderAverageAuditTime.svg",
     "name": "clock-circle",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowSQLUpload",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowSQLUpload.svg",
     "name": "panel-card",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconDraggable",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDraggable.svg",
     "name": "drag",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Editorial"
   },
   {
     "originSvgName": "IconLink",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/sqlOptimization.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLink.svg",
     "name": "like",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconClock",
@@ -594,7 +661,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTagBookMark.svg",
     "name": "book-mark-tag",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconCreatedTitle",
@@ -609,7 +677,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerDown.svg",
     "name": "down",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconMemberIsAdmin",
@@ -624,21 +693,24 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProgressWorkflowStep.svg",
     "name": "progress-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconSqlOptimization",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlOptimization.svg",
     "name": "rise-square",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconSucceeded",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSucceeded.svg",
     "name": "check-circle",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconUpdateTime",
@@ -653,14 +725,16 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWhitelist.svg",
     "name": "resolve-file",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconWorkflowRejectReason",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowRejectReason.svg",
     "name": "reject-file",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconArrowDown",
@@ -683,14 +757,16 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCheckout.svg",
     "name": "check-strong",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconUserCenter",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUserCenter.svg",
     "name": "user-shield",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconDatabaseSchemaActive",
@@ -704,15 +780,17 @@
     "originSvgName": "IcoScanId",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Scan.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IcoScanId.svg",
-    "name": "",
-    "style": "filled"
+    "name": "scan-task",
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconStatusWarning",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusWarning.svg",
     "name": "warning-triangle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconDatePickerRight",
@@ -727,7 +805,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTipOrange.svg",
     "name": "info-circle",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconWorkflowStatusWrapper",
@@ -750,14 +829,16 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusTip.svg",
     "name": "info-hexagon",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconSqlAudit",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlAudit.svg",
     "name": "magnifier",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconSun",
@@ -788,14 +869,16 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDirectory.svg",
     "name": "folder",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconAudit",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAudit.svg",
     "name": "user",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconEmpty",
@@ -810,7 +893,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFailedWorkflowStep.svg",
     "name": "close-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowStatusIsCanceled",
@@ -889,28 +973,32 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPluginAudit.svg",
     "name": "code",
-    "style": "outlined"
+    "style": "outlined",
+    "feature":"Common"
   },
   {
     "originSvgName": "IconSQLFile",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSQLFile.svg",
     "name": "sql-file",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconViewVersion",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconViewVersion.svg",
     "name": "info-circle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Suggestive"
   },
   {
     "originSvgName": "IconStepDataQuery",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/home.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepDataQuery.svg",
     "name": "snippets",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconStatusError",
@@ -925,21 +1013,24 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCloneRule.svg",
     "name": "checkbox-multiple-blank",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconMemberNotAdmin",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/member.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberNotAdmin.svg",
     "name": "close-hexagon",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconDatePickerLeft",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerLeft.svg",
     "name": "left",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Directional"
   },
   {
     "originSvgName": "IconDatabase",
@@ -961,8 +1052,9 @@
     "originSvgName": "IconOperateAndAudit",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOperateAndAudit.svg",
-    "name": "",
-    "style": "twotone"
+    "name": "operate-audit",
+    "style": "two-tone",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconCommonSelected",
@@ -977,28 +1069,32 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRefresh.svg",
     "name": "refresh",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowResultListLayout",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultListLayout.svg",
     "name": "list-layout",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconAddFile",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAddFile.svg",
     "name": "plus-file",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconDate",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDate.svg",
     "name": "calendar",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconRuleTitle",
@@ -1013,7 +1109,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconGlobalSystem.svg",
     "name": "center-circle-hexagon",
-    "style": "twotone"
+    "style": "two-tone",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowId",
@@ -1060,7 +1157,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPosition.svg",
     "name": "environment",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowStatusIsWaitAudit",
@@ -1075,7 +1173,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/home.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepOperation.svg",
     "name": "util",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconCommonUser",
@@ -1090,21 +1189,24 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMoon.svg",
     "name": "moon",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconSetting",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSetting.svg",
     "name": "setting",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconWorkflowResultLayout",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultLayout.svg",
     "name": "list-layout",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconFillListActive",
@@ -1127,7 +1229,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDownload.svg",
     "name": "down-arrow-line",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconLevelWarn",
@@ -1190,7 +1293,8 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCloudBeaver.svg",
     "name": "computer",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconTaskType",
@@ -1221,21 +1325,24 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleManage.svg",
     "name": "profile-edit",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconToken",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconToken.svg",
     "name": "token",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconNextStep",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconNextStep.svg",
     "name": "down-triangle",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Common"
   },
   {
     "originSvgName": "IconOrderTotalNum",
@@ -1290,13 +1397,15 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Dashboard.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMyOrderList.svg",
     "name": "menu-square",
-    "style": "filled"
+    "style": "filled",
+    "feature": "Data"
   },
   {
     "originSvgName": "IconUploadCloud",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUploadCloud.svg",
     "name": "upload-cloud",
-    "style": "outlined"
+    "style": "outlined",
+    "feature": "Common"
   }
 ]

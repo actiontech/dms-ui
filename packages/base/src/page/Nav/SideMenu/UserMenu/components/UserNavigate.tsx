@@ -2,10 +2,11 @@ import { Popover, Spin } from 'antd';
 import { CompanyNoticeIconStyleWrapper } from '../../style';
 import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import {
-  IconAccount,
+  // IconAccount,
   IconViewVersion,
   IconLogout
 } from '../../../../../icon/sideMenu';
+import { UserCircleFilled } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
 import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
 import { useState } from 'react';
@@ -95,7 +96,7 @@ const UserNavigate: React.FC<{
                   navigate('/account');
                 }}
               >
-                <IconAccount />
+                <UserCircleFilled />
                 <span className="content-item-text">
                   {t('dmsMenu.userNavigate.account')}
                 </span>
