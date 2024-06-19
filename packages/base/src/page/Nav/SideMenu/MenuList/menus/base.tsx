@@ -4,10 +4,11 @@ import {
   IconSubmenuExpandTop,
   IconSubmenuExpandDown,
   IconInstanceManager,
-  IconMemberAndPermissions,
+  // IconMemberAndPermissions,
   IconCloudBeaver,
   IconDataExport
 } from '../../../../../icon/sideMenu';
+import { MemberTwoTone } from '@actiontech/icons';
 import { t } from '../../../../../locale';
 import { GenerateMenuItemType } from './index.type';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
@@ -49,7 +50,7 @@ export const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.memberAndPermissions')}
     </Link>
   ),
-  icon: <Icon component={IconMemberAndPermissions} />,
+  icon: <MemberTwoTone width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/member`,
   structKey: 'member'
 });

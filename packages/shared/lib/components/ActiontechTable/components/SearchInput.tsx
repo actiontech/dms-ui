@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { TableSearchInputProps } from '../index.type';
-import { IconSearch } from '../../../Icon/common';
+// import { IconSearch } from '../../../Icon/common';
+import { SearchOutlined } from '@actiontech/icons';
 import classnames from 'classnames';
 import { SearchInputStyleWrapper } from './style';
 import { useKeyPress } from 'ahooks';
@@ -29,7 +30,7 @@ const SearchInput: React.FC<TableSearchInputProps> = ({
       onChange={(e) => {
         onChange?.(e.target.value);
       }}
-      suffix={<IconSearch onClick={() => onSearch?.()} />}
+      suffix={<SearchOutlined onClick={() => onSearch?.()} />}
       {...props}
     />
   );
