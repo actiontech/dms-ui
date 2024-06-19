@@ -23,6 +23,7 @@ export default {
   },
   memberForm: {
     username: '用户名称',
+    usernameTips: '需要先在<0>系统设置-用户中心</0>处新增用户',
     isProjectAdmin: '项目管理权限'
   },
 
