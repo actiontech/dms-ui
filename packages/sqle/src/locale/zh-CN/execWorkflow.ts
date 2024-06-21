@@ -98,7 +98,7 @@ export default {
         selectExecuteModeTips:
           '当选择文件模式上线时，审核结果将以文件为单位进行聚合展示',
         execModeDisabledTips:
-          '当前支持MySQL、Oracle、PG类型数据源类型按文件模式上线，且需要以文件方式上传SQL',
+          '当前支持MySQL、Oracle、PG类型数据源按文件模式上线',
         executeSqlMode: 'SQL模式',
         executeFileMode: '文件模式',
         selectFileSortMethod: '选择文件排序方式'
