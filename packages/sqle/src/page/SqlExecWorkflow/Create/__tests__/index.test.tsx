@@ -692,7 +692,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it.only('should clear exec_mode data when disabled execute mode selector', async () => {
+  it('should clear exec_mode data when disabled execute mode selector', async () => {
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -734,10 +734,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     fireEvent.change(monacoEditor, {
       target: { value: 'select * from user' }
     });
-    expect(screen.queryByText('选择上线模式')).toBeInTheDocument();
-    expect(
-      getAllBySelector('.actiontech-mode-switcher-item-disabled')[0]
-    ).toBeInTheDocument();
 
     // audit btn
     await act(async () => {

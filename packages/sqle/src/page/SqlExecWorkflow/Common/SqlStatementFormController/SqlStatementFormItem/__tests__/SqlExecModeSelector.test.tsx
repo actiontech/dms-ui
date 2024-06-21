@@ -5,10 +5,7 @@ import SqlExecModeSelector from '../components/SqlExecModeSelector';
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlExecModeSelectorProps } from '../components/index.type';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('test SqlExecModeSelector', () => {
   let getSqlFileOrderMethodSpy: jest.SpyInstance;
@@ -51,32 +48,16 @@ describe('test SqlExecModeSelector', () => {
     });
 
     expect(
-      screen.getByText(
-        '当前支持MySQL、Oracle、PG类型数据源类型按文件模式上线，且需要以文件方式上传SQL'
-      )
+      screen.getByText('当前支持MySQL、Oracle、PG类型数据源按文件模式上线')
     ).toBeInTheDocument();
   });
 
-  it('should disabled the execute mode selector when the upload type is form data', async () => {
+  it('should not render the execute mode selector when the upload type is form data', async () => {
     customRender({
       isSupportFileModeExecuteSql: true,
       currentSqlUploadType: AuditTaskResV1SqlSourceEnum.form_data
     });
-    expect(screen.queryByText('选择上线模式')).toBeInTheDocument();
-    expect(
-      getAllBySelector('.actiontech-mode-switcher-item-disabled')[0]
-    ).toBeInTheDocument();
-
-    await act(async () => {
-      fireEvent.mouseOver(screen.getByTestId('exec-mode-selector'));
-      await jest.advanceTimersByTime(300);
-    });
-
-    expect(
-      screen.getByText(
-        '当前支持MySQL、Oracle、PG类型数据源类型按文件模式上线，且需要以文件方式上传SQL'
-      )
-    ).toBeInTheDocument();
+    expect(screen.queryByText('选择上线模式')).not.toBeInTheDocument();
   });
 
   it('should render the execute mode selector for SQL file upload with supported file mode execute SQL', () => {

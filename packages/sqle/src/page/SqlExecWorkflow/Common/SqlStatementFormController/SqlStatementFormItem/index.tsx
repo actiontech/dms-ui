@@ -63,7 +63,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         name={currentUploadTypeFieldName}
         initialValue={defaultUploadTypeOptions[0].value}
       >
-        <ModeSwitcher<AuditTaskResV1SqlSourceEnum>
+        <ModeSwitcher
           rowProps={{ gutter: 12 }}
           options={defaultUploadTypeOptions}
           onChange={uploadTypeChangeHandle}
