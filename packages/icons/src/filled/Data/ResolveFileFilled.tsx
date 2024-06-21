@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const ResolveFileTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const ResolveFileFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const ResolveFileTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default ResolveFileTwoTone;
+export default ResolveFileFilled;

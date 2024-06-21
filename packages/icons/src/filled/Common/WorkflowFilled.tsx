@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const WorkflowTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const WorkflowFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,4 +20,4 @@ const WorkflowTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default WorkflowTwoTone;
+export default WorkflowFilled;

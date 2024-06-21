@@ -8,7 +8,10 @@ const DownOutlined = (props: SVGProps<SVGSVGElement>) => {
       height={16}
       {...props}
     >
-      <path d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z" />
+      <path
+        fill="#C3C6CD"
+        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+      />
     </svg>
   );
 };

@@ -9,7 +9,7 @@ const PlusOutlined = (props: SVGProps<SVGSVGElement>) => {
       height={16}
       {...props}
     >
-      <path stroke="#000" d="m5.02.5-.012 9M.5 5h9" />
+      <path stroke="#1CB889" d="m5.02.5-.012 9M.5 5h9" />
     </svg>
   );
 };

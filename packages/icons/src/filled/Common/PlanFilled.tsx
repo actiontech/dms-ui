@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const PlanTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const PlanFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,4 +16,4 @@ const PlanTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default PlanTwoTone;
+export default PlanFilled;

@@ -8,7 +8,10 @@ const ClockCircleOutlined = (props: SVGProps<SVGSVGElement>) => {
       height={16}
       {...props}
     >
-      <path d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z" />
+      <path
+        fill="#8A8F99"
+        d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z"
+      />
     </svg>
   );
 };

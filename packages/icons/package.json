@@ -9,7 +9,7 @@
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
     "build": "father build",
-    "icon:g": "svgr --template template/template.js -d src svg/ ",
+    "icon:g": "svgr --template template/template.cjs -d src svg/ ",
     "docs:g": "node scripts/generate.js"
   },
   "keywords": [],

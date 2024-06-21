@@ -16,19 +16,19 @@ pnpm icon:g
 **生成icon组件文档**
 
 ```shell
-pnpm docs:g
+pnpm doc:g
 ```
 
 **本地查看文档**
 
 ```shell
-pnpm docs
+pnpm doc
 ```
 
 **build文档产物**
 
 ```shell
-pnpm docs:build
+pnpm doc:build
 ```
 
 **build组件产物**
@@ -44,7 +44,6 @@ pnpm icon:build
 
 - **线框风格(outlined)**
 - **实底风格(filled)**
-- **双色风格(two-tone)**
 
 **功能分类**
 

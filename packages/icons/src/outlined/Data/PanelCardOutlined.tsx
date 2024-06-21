@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const PanelCardFilled = (props: SVGProps<SVGSVGElement>) => {
+const PanelCardOutlined = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,4 +12,4 @@ const PanelCardFilled = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default PanelCardFilled;
+export default PanelCardOutlined;

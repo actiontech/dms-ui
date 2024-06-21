@@ -8,7 +8,7 @@ import {
   IconCloudBeaver,
   IconDataExport
 } from '../../../../../icon/sideMenu';
-import { MemberTwoTone } from '@actiontech/icons';
+import { MemberFilled } from '@actiontech/icons';
 import { t } from '../../../../../locale';
 import { GenerateMenuItemType } from './index.type';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
@@ -50,7 +50,7 @@ export const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.memberAndPermissions')}
     </Link>
   ),
-  icon: <MemberTwoTone width={18} height={18} />,
+  icon: <MemberFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/member`,
   structKey: 'member'
 });
