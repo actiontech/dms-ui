@@ -488,12 +488,13 @@ exports[`first should match snapshot when pageState is equal CREATE_TASK 1`] = `
                     >
                       <div
                         class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                        id="exportMethod"
                       >
                         <div
                           class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
                         >
                           <div
-                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                           >
                             <span
                               class="actiontech-mode-switcher-item-icon"

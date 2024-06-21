@@ -5,7 +5,7 @@ import {
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/FormCom';
 import { useCallback, useContext, useState } from 'react';
-import { Form, Space } from 'antd';
+import { Alert, Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import {
   IconDatabase,
@@ -142,6 +142,12 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
         </FormItemNoLabel>
         {renderRuleTemplateDisplay()}
       </Space>
+      <Alert
+        type="warning"
+        message={t('sqlOptimization.create.sqlInfo.tips')}
+        showIcon
+        style={{ marginBottom: 16 }}
+      />
     </div>
   );
 };
