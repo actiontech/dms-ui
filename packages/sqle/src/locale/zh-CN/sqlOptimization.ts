@@ -32,7 +32,8 @@ export default {
       instanceName: '数据源',
       instanceSchema: '数据库',
       uploadType: '选择SQL语句上传方式',
-      optimize: '调优'
+      optimize: '调优',
+      tips: '为了提高调优结果的准确度，系统将执行数据库分析操作'
     }
   },
   overview: {
