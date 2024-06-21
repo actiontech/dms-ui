@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const MemberTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const MemberFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const MemberTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default MemberTwoTone;
+export default MemberFilled;

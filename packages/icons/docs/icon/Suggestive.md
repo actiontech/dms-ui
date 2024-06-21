@@ -46,18 +46,18 @@ import { RejectFileFilled } from '@actiontech/icons';
 export default () => <RejectFileFilled width={32} height={32} />
 ```
 
+## ThunderBulbFilled
+```jsx
+import { ThunderBulbFilled } from '@actiontech/icons';
+
+export default () => <ThunderBulbFilled width={32} height={32} />
+```
+
 ## WarningFilled
 ```jsx
 import { WarningFilled } from '@actiontech/icons';
 
 export default () => <WarningFilled width={32} height={32} />
-```
-
-## WarningTriangleFilled
-```jsx
-import { WarningTriangleFilled } from '@actiontech/icons';
-
-export default () => <WarningTriangleFilled width={32} height={32} />
 ```
 
 ## CheckCircleOutlined
@@ -100,11 +100,4 @@ export default () => <InfoCircleOutlined width={32} height={32} />
 import { LockOutlined } from '@actiontech/icons';
 
 export default () => <LockOutlined width={32} height={32} />
-```
-
-## ThunderBulbTwoTone
-```jsx
-import { ThunderBulbTwoTone } from '@actiontech/icons';
-
-export default () => <ThunderBulbTwoTone width={32} height={32} />
 ```

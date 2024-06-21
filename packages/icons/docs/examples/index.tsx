@@ -3,7 +3,7 @@
  */
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import { message } from 'antd';
+import { message, Segmented } from 'antd';
 import * as ActiontechIcons from '../../src';
 
 const Container = styled('div')`
@@ -44,14 +44,6 @@ const AllIconDemo = () => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const handleSelectChange = React.useCallback(
-    (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const value = e.currentTarget.value;
-      setCurrentTheme(value);
-    },
-    []
-  );
-
   const visibleIconList = React.useMemo(
     () =>
       Object.keys(allIcons).filter((iconName) =>
@@ -64,7 +56,7 @@ const AllIconDemo = () => {
     if (navigator.clipboard) {
       const text = `<${name} />`;
       navigator.clipboard.writeText(text);
-      message.success(`${text} copied`);
+      messageApi.success(`${text} copied`);
     }
   };
 
@@ -72,15 +64,13 @@ const AllIconDemo = () => {
     <div style={{ color: '#555' }}>
       {contextHolder}
       <div style={{ textAlign: 'center' }}>
-        <select
-          name="theme-select"
+        <Segmented
+          options={['Filled', 'Outlined']}
           value={currentTheme}
-          onChange={handleSelectChange}
-        >
-          <option value="Filled">Filled</option>
-          <option value="Outlined">Outlined</option>
-          <option value="TwoTone">Two-Tone</option>
-        </select>
+          onChange={(value) => {
+            setCurrentTheme(value as string);
+          }}
+        />
       </div>
       <Container>
         {visibleIconList.map((iconName) => {

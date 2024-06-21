@@ -9,8 +9,8 @@ const RingOutlined = (props: SVGProps<SVGSVGElement>) => {
       viewBox="0 0 14 12"
       {...props}
     >
-      <circle cx={6} cy={6} r={2.5} fill="#000" />
-      <circle cx={6} cy={6} r={4} stroke="#000" />
+      <circle cx={6} cy={6} r={2.5} fill="#F66074" />
+      <circle cx={6} cy={6} r={4} stroke="#F66074" />
     </svg>
   );
 };

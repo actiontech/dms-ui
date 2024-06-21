@@ -44,7 +44,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberAndPermissions.svg",
     "name": "member",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Common"
   },
   {
@@ -76,7 +76,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuthList.svg",
     "name": "key",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Common"
   },
   {
@@ -116,7 +116,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTodayIncreased.svg",
     "name": "trend-card",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Data"
   },
   {
@@ -180,7 +180,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionOrder.svg",
     "name": "profile-shield",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Data"
   },
   {
@@ -196,7 +196,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPassRate.svg",
     "name": "check-double-square",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Data"
   },
   {
@@ -236,7 +236,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowTemplate.svg",
     "name": "workflow",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Common"
   },
   {
@@ -356,7 +356,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTodoList.svg",
     "name": "menu",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Common"
   },
   {
@@ -412,7 +412,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconInspectionAndDiagnosis.svg",
     "name": "thunder-bulb",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Suggestive"
   },
   {
@@ -428,7 +428,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPlan.svg",
     "name": "plan",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Common"
   },
   {
@@ -597,7 +597,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectOverview.svg",
     "name": "overview",
-    "style": "two-tone",
+    "style": "outlined",
     "feature": "Common"
   },
   {
@@ -621,7 +621,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOrderAverageAuditTime.svg",
     "name": "clock-circle",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Common"
   },
   {
@@ -629,7 +629,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowSQLUpload.svg",
     "name": "panel-card",
-    "style": "filled",
+    "style": "outlined",
     "feature": "Data"
   },
   {
@@ -725,7 +725,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWhitelist.svg",
     "name": "resolve-file",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Data"
   },
   {
@@ -788,9 +788,9 @@
     "originSvgName": "IconStatusWarning",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/AuditPlan.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusWarning.svg",
-    "name": "warning-triangle",
-    "style": "filled",
-    "feature": "Suggestive"
+    "name": "",
+    "style": "",
+    "desc": "同 IconWorkflowAuditResultWarning"
   },
   {
     "originSvgName": "IconDatePickerRight",
@@ -876,7 +876,7 @@
     "originSvgName": "IconAudit",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAudit.svg",
-    "name": "user",
+    "name": "stamp",
     "style": "filled",
     "feature": "Common"
   },
@@ -1053,7 +1053,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOperateAndAudit.svg",
     "name": "operate-audit",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Data"
   },
   {
@@ -1109,7 +1109,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconGlobalSystem.svg",
     "name": "center-circle-hexagon",
-    "style": "two-tone",
+    "style": "filled",
     "feature": "Common"
   },
   {
@@ -1341,7 +1341,7 @@
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/WorkflowTemplate.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconNextStep.svg",
     "name": "down-triangle",
-    "style": "filled",
+    "style": "outlined",
     "feature": "Common"
   },
   {

@@ -4,5 +4,5 @@ export { default as ExportFilled } from './ExportFilled';
 export { default as InfoCircleFilled } from './InfoCircleFilled';
 export { default as InfoHexagonFilled } from './InfoHexagonFilled';
 export { default as RejectFileFilled } from './RejectFileFilled';
+export { default as ThunderBulbFilled } from './ThunderBulbFilled';
 export { default as WarningFilled } from './WarningFilled';
-export { default as WarningTriangleFilled } from './WarningTriangleFilled';

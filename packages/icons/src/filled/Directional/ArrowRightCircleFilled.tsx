@@ -8,7 +8,10 @@ const ArrowRightCircleFilled = (props: SVGProps<SVGSVGElement>) => {
       height={16}
       {...props}
     >
-      <path d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m3.333-4L14.666 8l-3.333-2.667v2H6v1.334h5.333z" />
+      <path
+        fill="#C3C6CD"
+        d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m3.333-4L14.666 8l-3.333-2.667v2H6v1.334h5.333z"
+      />
     </svg>
   );
 };

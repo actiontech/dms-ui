@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const MenuTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const MenuFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const MenuTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default MenuTwoTone;
+export default MenuFilled;

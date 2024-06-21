@@ -7,7 +7,7 @@ import {
   unlinkSync
 } from 'node:fs';
 
-const iconStyleType = ['filled', 'outlined', 'two-tone'];
+const iconStyleType = ['filled', 'outlined'];
 
 const iconFeatureType = {
   'Common': '通用类图标',

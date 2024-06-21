@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const OverviewTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const OverviewOutlined = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const OverviewTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default OverviewTwoTone;
+export default OverviewOutlined;

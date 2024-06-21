@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const CenterCircleHexagonTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const CenterCircleHexagonFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const CenterCircleHexagonTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default CenterCircleHexagonTwoTone;
+export default CenterCircleHexagonFilled;

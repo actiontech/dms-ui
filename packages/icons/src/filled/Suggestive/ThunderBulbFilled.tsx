@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const ThunderBulbTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const ThunderBulbFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const ThunderBulbTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default ThunderBulbTwoTone;
+export default ThunderBulbFilled;

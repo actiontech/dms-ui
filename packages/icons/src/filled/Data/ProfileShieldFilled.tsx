@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const ProfileShieldTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const ProfileShieldFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const ProfileShieldTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default ProfileShieldTwoTone;
+export default ProfileShieldFilled;

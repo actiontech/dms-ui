@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-const TrendCardTwoTone = (props: SVGProps<SVGSVGElement>) => {
+const TrendCardFilled = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,4 @@ const TrendCardTwoTone = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-export default TrendCardTwoTone;
+export default TrendCardFilled;
