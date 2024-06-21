@@ -99,6 +99,8 @@ exports[`test SqlExecModeSelector should not trigger SQL file order method fetch
             >
               <div
                 class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                data-testid="exec-mode-selector"
+                id="prefix_exec_mode"
                 style="margin-left: -5px; margin-right: -5px;"
               >
                 <div
@@ -106,7 +108,7 @@ exports[`test SqlExecModeSelector should not trigger SQL file order method fetch
                   style="padding-left: 5px; padding-right: 5px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item css-1x7j8vu"
+                    class="actiontech-mode-switcher-item css-5exgjg"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
@@ -168,7 +170,7 @@ exports[`test SqlExecModeSelector should not trigger SQL file order method fetch
                   style="padding-left: 5px; padding-right: 5px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
