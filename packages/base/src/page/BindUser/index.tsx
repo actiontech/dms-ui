@@ -9,11 +9,12 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import LoginLayout from '../Login/components/LoginLayout';
 import { BasicButton, BasicInput } from '@actiontech/shared';
-import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
+import { LockFilled, UserFilled } from '@actiontech/icons';
+import useThemeStyleData from '../../hooks/useThemeStyleData';
 
 // #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -25,6 +26,8 @@ import {
 
 const BindUser = () => {
   const navigate = useNavigate();
+
+  const { baseTheme } = useThemeStyleData();
 
   const dispatch = useDispatch();
 
@@ -125,7 +128,13 @@ const BindUser = () => {
             })}
             autoFocus
             className="login-form-field"
-            prefix={<IconCommonUser />}
+            prefix={
+              <UserFilled
+                width="18"
+                height="19"
+                color={baseTheme.icon.bindUser.user}
+              />
+            }
           />
         </Form.Item>
         <Form.Item
@@ -142,7 +151,13 @@ const BindUser = () => {
           <BasicInput.Password
             placeholder={t('common.password')}
             className="login-form-field"
-            prefix={<IconCommonPassword />}
+            prefix={
+              <LockFilled
+                width={18}
+                height={18}
+                color={baseTheme.icon.bindUser.password}
+              />
+            }
           />
         </Form.Item>
         <Typography.Text type="secondary">

@@ -9,7 +9,7 @@ const ScanFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#15C7D4"
+        fill={props.color ? 'currentColor' : '#15C7D4'}
         d="m3.548 4.726 1.78 1.78a5.833 5.833 0 1 0 1.179-1.179l-1.78-1.78a8.333 8.333 0 1 1-1.179 1.179m2.976 2.976L10 11.178 11.178 10 7.703 6.524a4.167 4.167 0 1 1-1.179 1.179"
       />
     </svg>

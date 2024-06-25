@@ -82,3 +82,10 @@ export type DataExportTheme = {
     };
   };
 };
+
+export type IconTheme = {
+  bindUser: {
+    user: string;
+    password: string;
+  };
+};
