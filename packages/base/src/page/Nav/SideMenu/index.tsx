@@ -8,10 +8,6 @@ import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
-import {
-  IconProjectFlag,
-  IconProjectArchived
-} from '@actiontech/shared/lib/Icon/common';
 import UserMenu from './UserMenu';
 import ProjectTitle from './ProjectTitle';
 import MenuList from './MenuList';
@@ -21,6 +17,7 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { useDispatch } from 'react-redux';
 import { updateBindProjects } from '../../../store/user';
+import { FlagFilled, LockOutlined } from '@actiontech/icons';
 
 const SideMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -75,7 +72,11 @@ const SideMenu: React.FC = () => {
         value: v.project_id,
         label: (
           <ProjectSelectorLabelStyleWrapper>
-            {isProjectArchived ? <IconProjectArchived /> : <IconProjectFlag />}
+            {isProjectArchived ? (
+              <LockOutlined width={18} height={18} />
+            ) : (
+              <FlagFilled width={18} height={18} />
+            )}
 
             <span className="project-selector-label-text">
               {v.project_name}
@@ -127,9 +128,9 @@ const SideMenu: React.FC = () => {
             value={currentProjectID}
             prefix={
               isCurrentProjectArchived ? (
-                <IconProjectArchived />
+                <LockOutlined width={18} height={18} />
               ) : (
-                <IconProjectFlag />
+                <FlagFilled width={18} height={18} />
               )
             }
             onChange={projectSelectorChangeHandle}
