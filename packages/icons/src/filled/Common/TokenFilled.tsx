@@ -9,7 +9,7 @@ const TokenFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#8A8F99"
+        fill={props.color ? 'currentColor' : '#8A8F99'}
         d="M11.333 9.333H8.44A4.002 4.002 0 0 1 .667 8a4 4 0 0 1 7.772-1.333h6.894v2.666H14V12h-2.667zm-6.666 0a1.333 1.333 0 1 0 0-2.666 1.333 1.333 0 0 0 0 2.666"
       />
     </svg>

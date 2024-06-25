@@ -9,7 +9,7 @@ const ComputerFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#8A8F99"
+        fill={props.color ? 'currentColor' : '#8A8F99'}
         d="M7.5 12.2c0-.11.09-.2.2-.2h2.6c.11 0 .2.09.2.2v2.182a1 1 0 0 0 .553.894l.836.419a.2.2 0 0 1 .111.179v.426a.2.2 0 0 1-.2.2H6.2a.2.2 0 0 1-.2-.2v-.426a.2.2 0 0 1 .11-.18l.837-.418a1 1 0 0 0 .553-.894z"
       />
       <path
