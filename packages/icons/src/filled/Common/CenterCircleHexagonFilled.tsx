@@ -9,8 +9,10 @@ const CenterCircleHexagonFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#C3C6CD"
+        fill={props.color ? 'currentColor' : '#C3C6CD'}
+        fillRule="evenodd"
         d="M16.125 4.875 9 .75 1.875 4.875v8.25L9 17.25l7.125-4.125zM9 12.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5"
+        clipRule="evenodd"
       />
       <path
         fill={props.color ? 'currentColor' : '#8A8F99'}

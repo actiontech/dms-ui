@@ -9,7 +9,7 @@ const MenuFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#C3C6CD"
+        fill={props.color ? 'currentColor' : '#C3C6CD'}
         d="M10.75 15.75a1 1 0 0 1-1-1v-5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1zm-7.5-6a1 1 0 0 1-1-1v-5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1z"
       />
       <path

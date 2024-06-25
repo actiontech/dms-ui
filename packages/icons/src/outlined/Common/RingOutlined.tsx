@@ -20,6 +20,8 @@ const RingOutlined = (props: SVGProps<SVGSVGElement>) => {
         cy={6}
         r={4}
         stroke={props.color ? 'currentColor' : '#F66074'}
+        strokeOpacity={0.2}
+        strokeWidth={3}
       />
     </svg>
   );

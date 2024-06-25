@@ -1,4 +1,4 @@
 <!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/Rule.tsx -->
 <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path id="Vector" d="M5.01945 0.5L5.00768 9.5M0.5 5H9.5" stroke="#1CB889" strokeWidth="1.5" strokeLinejoin="round" />
+  <path id="Vector" d="M5.01945 0.5L5.00768 9.5M0.5 5H9.5" stroke="#1CB889" stroke-width="1.5" stroke-linejoin="round" />
 </svg>

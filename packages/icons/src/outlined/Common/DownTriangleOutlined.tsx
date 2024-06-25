@@ -9,7 +9,13 @@ const DownTriangleOutlined = (props: SVGProps<SVGSVGElement>) => {
       height={16}
       {...props}
     >
-      <path stroke="#E6E4E3" d="m1 1 8 4 8-4" />
+      <path
+        stroke="#E6E4E3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="m1 1 8 4 8-4"
+      />
     </svg>
   );
 };
